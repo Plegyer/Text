@@ -94,3 +94,9 @@
 - Quest-state может inject special crises 99/100 и напрямую менять Pimp Wars flags/counters.
 - Найден implementation gap: runtime pool выбирает только IDs 0–18 (plus 99/100), хотя UI/resolver полностью содержит IDs 19–23 и seasonal variants. Writers для 19–23 не найдено, поэтому эти branches считаются unreachable в этой версии.
 - Подробности: `original_minor_crises_verified.md`.
+
+
+- Main reactive router дополнительно разобран: Scene 0 является общей reaction point после любых activities, но progression реализована не единым queue/resolver, а серией независимых update-listeners для global progression и отдельных career/story chains. Normal handlers используют `finaleMode == false` + `endingSet == ""` как глобальные stop gates.
+- Поэтому внешняя activity может изменить stat/flag, а соответствующая career scene запускается только после возврата на main. Явного общего event arbitration/consumed flag нет; код полагается на flags и listener/engine ordering.
+- Для successor полезно сохранить central reaction point, но заменить listener-spaghetti на explicit eligible-event queue + priority + one-event-at-a-time resolution.
+- Подробности: `original_main_reactive_router_verified.md`.
