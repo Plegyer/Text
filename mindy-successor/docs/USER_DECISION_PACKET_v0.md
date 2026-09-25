@@ -2,7 +2,7 @@
 
 Дата: 2026-09-25.
 
-Статус: **DECISION CHECKPOINT**, не автоматический lock.
+Статус: **SUPERSEDED DECISION CHECKPOINT**. Resolved decisions are recorded in `USER_DECISIONS_LOCKED_v1.md`.
 
 Цель: собрать только решения, которые уже нельзя качественно закрыть моделью без авторского выбора пользователя.
 
