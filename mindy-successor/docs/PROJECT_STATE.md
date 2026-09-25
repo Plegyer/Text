@@ -117,3 +117,14 @@
 - Рабочая модель сокращает original 11 progression stats до 9 core axes: Сила, Выносливость, Ловкость, Разум, Магия, Смекалка, Обаяние, Манеры, Похоть.
 - Original Sociability+Class предлагается объединить в Манеры; Cleanliness не переносить автоматически как permanent stat, а при необходимости сделать volatile Ухоженностью; Morality держать route/faction state, а не покупаемой характеристикой.
 - Статы не фиксировать до черновой матрицы всех 10 ordinary jobs: сначала нужны остальные 7 профессий, затем coverage/tradeoff check.
+
+
+## Astra handoff / M3.2 integration review
+
+- Прочитаны `ASTRA_HANDOFF.md`, `prior-work/astra/RECONCILIATION.md`, M3.2 core/schema/content/persistence/tests, DS-REF-001 и M3.3 patch как исторический WIP.
+- M3.2 признан полезным ядром-прототипом, а не выбрасываемым макетом и не target architecture целиком.
+- Сохранять: pure core boundary, declarative Condition AST, whitelisted Effects, pack reads/writes, deterministic event ordering, persisted RNG, pending-scene save, immutable dispatch model, unified Run+Meta envelope, explicit migrations, rollback protection for Meta, presentation/mechanics separation.
+- Расширять: Event Resolver/cascade, trigger vocabulary, typed career/quest/relationship state, Effect types, ActivityState, Night resolver, configurable calendar и content migrations.
+- Заменять: historical stat catalog, 28-day seasons/448-day run, old starter jobs, concrete legacy rewards и общий metrics bag.
+- M3.3 автоматически не применять.
+- Создан `docs/PROTOTYPE_M3_2_REUSE_REVIEW.md` с таблицей сохранить/расширить/заменить/удалить и корректировками раннего SOL architecture v0.
