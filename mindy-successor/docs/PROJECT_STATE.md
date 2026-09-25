@@ -413,3 +413,22 @@
 - All Hard Work rewards are automatic, unique and cumulative; repeats do not stack.
 - Full 10/10 pre-allocation profile has every progression stat at least +3 above fresh baseline, several +6, and double the current candidate starting cash.
 - `META_EASING_SIMULATION_v1.md` confirms that this ladder speeds later stat gates; larger easing still comes from complex rule-changing endings.
+
+
+## Mixed-life unlock and meta-perk simulations
+
+- `MIXED_LIFE_UNLOCK_SIMULATION_v1.md` проверяет profession gates при жизни, где минимум 1 Energy/day уходит на relationships/Activity/other content.
+- При normal lodging 2 WU:
+  - Tavern stat-unlock ~day19;
+  - Guard ~day35;
+  - Hunter/Merchant чаще проигрывают Year-2 fallback;
+  - Prostitute/Artist могут stat-unlock in Year2;
+  - Assassin чаще доезжает до Year-3 fallback.
+- При cheap lodging 1 WU те же mixed-life builds открывают mid jobs примерно day15–24 и late jobs day35–38: дешёвое жильё становится настоящей alternative strategy, а не просто штрафом.
+- Создан `META_LOADOUT_MODEL_v1.md`: Hard Work/knowledge/content rewards automatic; major rule-breaking rewards use 2 strong Legacy slots before Palace and 3 after Palace.
+- Создан `COMPLEX_ENDING_META_REWARD_CATALOG_v0.md` с candidate reward roles for complex outcomes across careers, Secret Debt and Activity/School/housing systems.
+- `META_PERK_IMPACT_SIMULATION_v1.md` confirms strong perks should remain genuinely strong:
+  - +1 Energy moves Merchant theoretical unlock ~day21 -> ~11;
+  - No Rent -> ~day8;
+  - +1 Energy + No Rent -> most mid jobs day6–9, late jobs day16–25.
+- Это считается желаемой NG+ кривой: challenge shifts away from rent/basic gates toward complex career routes, Activity, Palace and macro-meta content.
