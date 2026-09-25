@@ -63,6 +63,7 @@ Historical:
 ### Jobs
 - `JOB_ROSTER_RECONCILIATION_v1.md`
 - `JOB_SYSTEM_MATRIX_v0.md`
+- `ORDINARY_JOB_UNLOCK_MODEL_v1.md`
 - `SEASONAL_JOB_STAT_MODEL_v1.md`
 - `SUCCESSOR_JOB_SEASON_MATRIX_v0.csv`
 - `JOB_STAT_TRADEOFF_PASS_v0.md` (historical/superseded)
