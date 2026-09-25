@@ -1,64 +1,177 @@
-# Simply Mindy — night-event layer (corrected model)
+# Simply Mindy — verified night resolver and negative night events
 
-Источник: пользовательское описание фактического прохождения + walkthrough v3.5.0. Точная байткод-трассировка отдельных веток ещё не завершена.
+Источник: SWF bytecode SceneEvents_0, 12, 15, 92, 99, 101, 138 + walkthrough v3.5.0.
 
-## Ночь — не просто "выбрать партнёра"
+## 1. Ночь — отдельный центральный resolver
 
-В оригинале ночной слой имеет минимум три класса исходов:
+Кнопка Sleep на main не всегда ведёт в обычный paid sleep.
 
-1. Добровольные/сюжетные ночные партнёры.
-   Многие карьерные цепочки требуют повторяющихся ночей с конкретным NPC: Jerry, John, Froglord, Su, Chico, Gaspar, Seu, Taro, Emm и др.
+В SceneEvents_0 порядок проверок начинается с forced states. Самый явный пример:
 
-2. Полезные альтернативы ночи.
-   Пример: чтение/обучение ночью даёт прогресс, но уменьшает ресурс следующего дня.
+- если `sexWhitestWhite == true`, игра СРАЗУ переключается в scene 101 `sleepWhitest`;
+- normal rent / partner selection до этого даже не доходит.
 
-3. Негативные/навязанные ночные события.
-   В некоторых состояниях/ветках героиня не просто выбирает партнёра: определённый NPC или событие может перехватить ночной слот, заставить пройти сексуальную сцену и дать штраф к энергии следующего дня.
+Дальше идут Finale-specific sleep branches, landlord/rent branches и только затем обычный sleep/rent flow.
 
-Это отдельный системный слой риска/последствий и его нельзя сводить к "night partner progression".
+То есть night layer имеет приоритеты. Наличие forced-night flag может полностью заблокировать стандартный выбор ночной активности.
 
-## Подтверждение из walkthrough
+## 2. Normal paid sleep — scene 15
 
-Walkthrough прямо описывает обязательный ночной takeover в ветке Bikini Model:
-- после согласия включается "обязательный секс ... каждую ночь";
-- все остальные партнёры на этот период блокируются.
+Scene 15 `sleepPaid` — обычный ночной hub.
 
-Также walkthrough показывает, что многие карьерные ветки считают серии ночей 5+5+5, 10 или 15 раз, то есть ночь является полноценным ресурсом прогрессии, а не декоративной сценой.
+При старте она:
+- stamina = 3;
+- day += 1;
+- newDay = true.
 
-## Пользовательская поправка
+Затем интерфейс может предложить доступных ночных партнёров/активности по persistent flags.
 
-Пользователь отдельно уточнил механику, которую предыдущие заметки упустили:
-- часть негативных сексуальных ночных событий принудительна;
-- они могут стоить энергии следующего дня;
-- поэтому ночь может ухудшить следующий дневной action budget.
+Подтверждённые partner/activity flags:
+- sexFarmerJohn
+- sexFroglord
+- sexGaspar
+- sexShirley
+- sexEmm
+- jerrySex
+- sexSu
+- sexChico
+- sexSeu
+- sexTaro
+- sexJizzBiz
+- sexPimpy
+- sexSoo
+- book, если открыт соответствующий Cosplay progression
+- special self/Mindy option после endFinal
 
-До отдельной SWF-проверки точные значения штрафов и список всех таких событий не выдумываем.
+Выбранные партнёры затем увеличивают собственные counters: johnSexCount, frogLordSexCount, suSexCount и т. п. Эти счётчики читаются карьерными state machines.
 
-## Правильная архитектурная модель
+Следовательно ночь — общий shared resource для разных job/story routes.
 
-Sleep/Night resolver должен учитывать приоритеты примерно так:
+## 3. Forced Bikini Model night — scene 101 sleepWhitest
 
-persistent forced-night state / curse / route takeover
--> mandatory negative event if condition active
--> otherwise route-specific partner/events
--> otherwise chosen optional night activity
--> normal sleep/rest
+Model Scene 04 имеет Yes/No choice.
 
-После ночи отдельный resolver применяет:
-- next-day energy modifiers;
-- stat gains/losses;
-- route counters;
-- partner counters;
-- event flags;
-- possible forced partner lock/unlock.
+Если игрок нажимает Yes:
+- `sexWhitestWhite = true`.
 
-## Почему это важно для successor
+Это включает forced-night override на main.
 
-Если мы переносим принцип, ночной слой должен быть не только "ещё одна кнопка":
-- положительные добровольные активности;
-- сюжетные серии ночей;
-- временные принудительные состояния;
-- последствия на следующий день;
-- конфликт за один и тот же ночной слот.
+Walkthrough также описывает эту ветку как обязательный секс каждую ночь, при котором остальные партнёры становятся недоступны.
 
-Это создаёт связь между карьерными решениями, ночной жизнью и дневной экономикой действий.
+Каждый forced night:
+- whitestSexCount += 1;
+- day += 1;
+- newDay = true;
+- next-day stamina задаётся напрямую, а не просто уменьшается на один.
+
+Точная эскалация:
+
+- до `doneModelScene05Cont` -> stamina = 2
+- после `doneModelScene05Cont`, но до `doneModelScene06Cont` -> stamina = 1
+- после `doneModelScene06Cont` -> stamina = 0
+
+То есть сюжет постепенно ухудшает следующий action budget: 2 -> 1 -> 0.
+
+Scene 99 `modelScene06Cont` даёт ещё один Yes/No choice:
+- No явно пишет `sexWhitestWhite = false`;
+- Yes оставляет forced state активным.
+
+Это подтверждает, что forced-night condition — отдельный persistent route flag, а не разовая сцена.
+
+## 4. Homeless / no-rent sleep — scene 12 noRent
+
+Если player попадает в outdoor/no-rent sleep:
+
+- newDay = true
+- noRentCount += 1
+- randomPick = randomInt(1,2)
+- stamina = 2
+- day += 1
+- Charisma -= 1
+- Cleanliness -= 1
+- Class -= 1
+
+UI прямо пишет:
+`Poor sleep! -1 Stamina! (D)`
+
+Сцена содержит sex-animation controls (`Squirt (S)`, actor animation cycling) и сезонно/random-зависимое создание Mindy/otherGuys actors.
+
+Поэтому outdoor sleep — не просто денежный штраф:
+- следующий день начинается с 2 Stamina;
+- теряются три социальных/образных stat;
+- часть случайных вариантов сна включает сексуальное событие;
+- конкретный actor pool меняется по season/random branch.
+
+Это ещё один отрицательный night-event generator.
+
+## 5. Shirley forced scare — scene 138 sleepScared
+
+Central sleep resolver может направить в scene 138, когда выполнена определённая landlord-haunt progression и `sexShirley == false`.
+
+Scene 138:
+- shirleyScareCount += 1
+- stamina = 2
+- day += 1
+- newDay = true
+
+UI:
+`Stamina restored! Ish! (D)`
+
+То есть эта forced night тоже съедает одно действие следующего дня.
+
+Пока не называем её сексуальной: bytecode подтверждает forced sleep/haunt penalty, но не подтверждает sexual semantics сцены.
+
+## 6. Ночное обучение
+
+Book option живёт в normal sleepPaid:
+- bookRead += 1
+- Intellect += 2
+- Stamina -= 1 после night reset
+
+Поэтому чтение добровольно превращает следующий день из 3 базовых действий в 2 (до meta/title modifiers).
+
+Механически оно использует тот же канал next-day action budget, что и отрицательные forced nights, но инициируется самим игроком.
+
+## 7. Полный census day-transition scenes
+
+Сканирование main ABC на сцены, одновременно работающие с `day`, `newDay` и `stamina`, даёт ключевой набор:
+
+- scene 12 — noRent
+- scene 15 — sleepPaid
+- scene 101 — sleepWhitest
+- scene 138 — sleepScared
+- scene 352 — sleepFrog (Finale-specific, отдельно разобрать при Finale)
+- scene 412 — campScene (dungeon overnight)
+
+Это практически вся центральная семья day/night transition scenes.
+
+## 8. Архитектурная модель
+
+Sleep button
+-> forced-night override?
+-> special mode override?
+-> lodging/rent result?
+-> normal paid sleep partner/activity menu
+
+Night result
+-> advances calendar
+-> establishes next-day Stamina
+-> applies stat changes
+-> increments route/partner counters
+-> may lock/unlock partner availability
+-> may trigger sexual/negative event
+-> returns to main
+
+Это означает, что "ночь" — полноценный resolver состояния мира, а не просто восстановление энергии.
+
+## 9. Что важно для successor
+
+Полезный принцип:
+- одна ночь = один конкурирующий slot;
+- добровольное обучение может стоить next-day energy;
+- отношения используют тот же slot;
+- некоторые route states могут временно перехватывать slot;
+- плохое жильё может генерировать отрицательные события;
+- forced events должны иметь ясное состояние/срок/способ выхода, а не быть хаотическим рандомом.
+
+Конкретное содержание оригинальных sexual scenes переносить не нужно; важна связь night-state -> next-day action economy -> career/story progression.
