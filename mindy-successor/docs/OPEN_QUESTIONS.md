@@ -32,6 +32,7 @@
 Они не должны быть придуманы реализацией самостоятельно:
 
 1. Финальный stat model: проверить рабочую гипотезу 9 progression stats + отдельная Похоть; решить, различаются ли Сексуальность и Похоть, и участвует ли Похоть в стартовом распределении.
+1a. Work tradeoff rule: fixed -1 per profession или 2–3 work-style packages, каждый из которых сохраняет +2/+2/-1. Roster-wide pass рекомендует work styles, но это не user lock.
 2. Ordinary roster: provisional 10 профессий теперь разведены механически; OPEN только возможное расширение roster сверх 10 и окончательные названия/fantasy framing.
 3. Hidden Palace profession: identity зафиксирована как поздняя meta-job; OPEN её конкретный gameplay loop, career/endings и required Hard Work progress.
 4. Точная длина run / календарные числа successor.
@@ -40,7 +41,7 @@
 7. Конкретная replacement large activity вместо original JRPG.
 8. Нужна ли отдельная volatile Ухоженность и другие condition meters.
 9. Relationship model: только stages/counters или нужны affinity/trust axes.
-10. Meta rewards: automatic / selectable loadout / slots-budget; exact reward catalog for ordinary, Secret Debt and Palace endings.
+10. Meta rewards: hierarchy drafted; OPEN automatic / selectable loadout / slots-budget и exact reward catalog for ordinary, Secret Debt and Palace endings.
 10a. Meta macro-goal structure drafted; OPEN concrete mystery, knowledge-fragment catalog, required diversity of lives and final late route.
 11. Successor Final Mode / late meta mode.
 12. Реальные seasonal recurring events/competitions — форма движком поддерживается, content ещё не выбран.
@@ -49,6 +50,7 @@
 12c. Palace: career role/outcome families drafted; OPEN Hard Work count, exact court role, unlock presentation and concrete rewards.
 13. Secret Debt/Slave Career: точный шанс внутри 10–20%, точные суммы около 2000/20000, Energy penalty, доступность школы/большой Activity после блокировки jobs и отношение Сексуальности к Похоти.
 14. Exact meta rewards трёх обязательных endings и засчитывается ли `bound_life` в общий Hard Work progress для открытия 11-й профессии.
+15. Content production budget: ranges drafted; OPEN release-1 exact depth, art/media budget, NPC count and Activity regions.
 
 ## Следующий engineering gate
 
