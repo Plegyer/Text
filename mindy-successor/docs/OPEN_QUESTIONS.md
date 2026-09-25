@@ -40,10 +40,13 @@
 7. Конкретная replacement large activity вместо original JRPG.
 8. Нужна ли отдельная volatile Ухоженность и другие condition meters.
 9. Relationship model: только stages/counters или нужны affinity/trust axes.
-10. Meta rewards: automatic / selectable loadout / slots-budget.
+10. Meta rewards: automatic / selectable loadout / slots-budget; exact reward catalog for ordinary, Secret Debt and Palace endings.
+10a. Meta macro-goal structure drafted; OPEN concrete mystery, knowledge-fragment catalog, required diversity of lives and final late route.
 11. Successor Final Mode / late meta mode.
 12. Реальные seasonal recurring events/competitions — форма движком поддерживается, content ещё не выбран.
 12a. Target UI shell: structure drafted; OPEN visual style, exact navigation/layout, media budgets, Palace discovery UX and editor UX.
+12b. Item system: capability model drafted; OPEN inventory capacity, loadout slots, craft scope, vendors and first production item catalog.
+12c. Palace: career role/outcome families drafted; OPEN Hard Work count, exact court role, unlock presentation and concrete rewards.
 13. Secret Debt/Slave Career: точный шанс внутри 10–20%, точные суммы около 2000/20000, Energy penalty, доступность школы/большой Activity после блокировки jobs и отношение Сексуальности к Похоти.
 14. Exact meta rewards трёх обязательных endings и засчитывается ли `bound_life` в общий Hard Work progress для открытия 11-й профессии.
 
