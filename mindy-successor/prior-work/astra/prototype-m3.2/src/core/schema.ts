@@ -147,13 +147,13 @@ export const runSchema=z.object({
   calendar:calendarSchema,
   character:characterSchema,
   resources:resourceStateSchema,
-  dayState:dayStateSchema,
-  housingState:housingStateSchema,
+  day:dayStateSchema,
+  housing:housingStateSchema,
   progression:progressionStateSchema,
   endings:endingStateSchema,
   flow:flowStateSchema,
-  rngState:rngStateSchema,
-  historyState:historyStateSchema,
+  rng:rngStateSchema,
+  history:historyStateSchema,
   legacyCompat:legacyCompatSchema.optional()
 }).strict();
 
@@ -177,18 +177,14 @@ type MetaCore=SaveCore['meta'];
 
 export type LegacyMetricView=Record<string,number>;
 export interface LegacyRunFacade {
-  day:number;
   slot:number;
   readonly limitDays:number;
-  housing:typeof housing[number];
   metrics:LegacyMetricView;
   flags:Record<string,boolean>;
   inventory:Record<string,number>;
   creation:RunCore['character']['creation'];
-  rng:number;
   lastAction:RunCore['flow']['lastAction'];
-  actionCounts:RunCore['historyState']['actionCounts'];
-  history:RunCore['historyState']['eventHistory'];
+  actionCounts:RunCore['history']['actionCounts'];
   pending:RunCore['flow']['pendingScene'];
   availableEndings:string[];
   acceptedEnding:string|null;
