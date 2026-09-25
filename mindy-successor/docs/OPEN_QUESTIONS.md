@@ -29,28 +29,29 @@
 
 ## Открытые DESIGN decisions
 
-Они не должны быть придуманы реализацией самостоятельно:
+Решения по stat model, seasonal work, calendar и Palace unlock уже закрыты и вынесены в:
+- `NEW_GAME_SPEC_v1.md`;
+- `TARGET_STAT_SYSTEM_v1.md`;
+- `SEASONAL_JOB_STAT_MODEL_v1.md`;
+- `USER_DECISIONS_LOCKED_v1.md`.
 
-1. Финальный stat model: проверить рабочую гипотезу 9 progression stats + отдельная Похоть; решить, различаются ли Сексуальность и Похоть, и участвует ли Похоть в стартовом распределении.
-1a. Work tradeoff rule: fixed -1 per profession или 2–3 work-style packages, каждый из которых сохраняет +2/+2/-1. Roster-wide pass рекомендует work styles, но это не user lock.
-2. Ordinary roster: provisional 10 профессий теперь разведены механически; OPEN только возможное расширение roster сверх 10 и окончательные названия/fantasy framing.
-3. Hidden Palace profession: identity зафиксирована как поздняя meta-job; OPEN её конкретный gameplay loop, career/endings и required Hard Work progress.
-4. Run length: анализ готов; рабочая рекомендация SOL = 160 days (4x40), допустимый medium вариант = 224 days. Требуется user lock перед numeric balance.
-5. Economy: qualitative model + Wage Unit framework drafted; OPEN WU currency scale, exact wages/rent/School prices, starting money, street penalty and scenario simulations after calendar lock.
-6. School: draft tracks/progression готовы; OPEN exact curriculum, цены, teachers, certificates, education endings/meta rewards и нужен ли отдельный special-school equivalent.
-7. Конкретная replacement large activity вместо original JRPG.
-8. Нужна ли отдельная volatile Ухоженность и другие condition meters.
-9. Relationship model: только stages/counters или нужны affinity/trust axes.
-10. Meta rewards: hierarchy drafted; OPEN automatic / selectable loadout / slots-budget и exact reward catalog for ordinary, Secret Debt and Palace endings.
-10a. Meta macro-goal structure drafted; OPEN concrete mystery, knowledge-fragment catalog, required diversity of lives and final late route.
-11. Successor Final Mode / late meta mode.
-12. Реальные seasonal recurring events/competitions — форма движком поддерживается, content ещё не выбран.
-12a. Target UI shell: structure drafted; OPEN visual style, exact navigation/layout, media budgets, Palace discovery UX and editor UX.
-12b. Item system: capability model drafted; OPEN inventory capacity, loadout slots, craft scope, vendors and first production item catalog.
-12c. Palace: career role/outcome families drafted; OPEN Hard Work count, exact court role, unlock presentation and concrete rewards.
-13. Secret Debt/Slave Career: точный шанс внутри 10–20%, точные суммы около 2000/20000, Energy penalty, доступность школы/большой Activity после блокировки jobs и отношение Сексуальности к Похоти.
-14. Exact meta rewards трёх обязательных endings и засчитывается ли `bound_life` в общий Hard Work progress для открытия 11-й профессии.
-15. Content production budget: ranges drafted; OPEN release-1 exact depth, art/media budget, NPC count and Activity regions.
+Остаются:
+
+1. **Seasonal job numbers:** `SUCCESSOR_JOB_SEASON_MATRIX_v0.csv` создан как balance draft; нужны simulations и финальная корректировка annual drift.
+2. **Economy:** exact currency scale, wages, lodging, School prices, starting money, street penalty, Secret Debt calibration.
+3. **School production:** exact teachers, milestone counts, certificates, education endings/meta rewards; target tracks уже описаны в `SCHOOL_SYSTEM_DRAFT_v1.md`.
+4. **Relationships:** major NPC roster, shared NPCs между careers, какие линии имеют endings.
+5. **Large Activity production:** exact region count, encounter mechanics, camp scope, combat presence/absence beyond the accepted expedition umbrella.
+6. **Items:** inventory capacity, contextual loadout slots, craft scope, vendors and first production catalog.
+7. **Meta rewards:** exact catalog and loadout budget/slot count. Policy automatic knowledge + selectable strong modifiers is already fixed.
+8. **Macro-goal:** concrete mystery, knowledge-fragment catalog and final late route.
+9. **Palace:** exact role/title, court structure, discovery presentation, career details and concrete rewards. Unlock rule 10/10 ordinary Hard Work is fixed.
+10. **Secret Debt/Slave Career:** exact chance within current 10–20% direction, exact loan/debt numbers, Energy penalty, access to School/Activity while locked, income/debt flow and exact rewards.
+11. **Successor Final/late meta mode:** whether a separate bespoke mode exists beyond Palace/macro-goal.
+12. **Seasonal recurring events/competitions:** concrete successor content.
+13. **UI/art:** visual style, resolution/layout, media budget, editor UX.
+14. **Production scope:** public 1.0 exact content depth, NPC count, Activity region count and media budget.
+15. **Original SWF low-priority tails** listed above remain non-blocking.
 
 ## Следующий engineering gate
 
