@@ -188,3 +188,26 @@
 - Palace больше не считается неизвестной «11-й профессией»: её identity как скрытой late/meta job восстановлена.
 - Secret Debt / Slave Career остаётся дополнительной hidden career сверх этого roster и не занимает Palace slot.
 - Ферма нежити не обязана вытеснять один из старых архетипов.
+
+
+## Ordinary job roster + stat/school design pass
+
+- Создан `JOB_ROSTER_RECONCILIATION_v1.md`: provisional ordinary roster из 10 механически различимых профессий:
+  1. лесоруб у гномов;
+  2. служанка в баре сатиров;
+  3. помощница на ферме нежити;
+  4. работница таверны/трактира;
+  5. охотница;
+  6. стражница;
+  7. гейша/артистка дома искусств;
+  8. наёмная убийца;
+  9. торговка;
+  10. проститутка.
+- Palace остаётся 11-й скрытой/meta-профессией; Secret Slave Career — отдельной дополнительной hidden career.
+- Tavern и Satyr Maid разведены по системной роли: tavern = информация/поток/экономика; maid = personal service/relationships/night.
+- Для каждой ordinary job зафиксированы distinct gameplay loop, cross-system hooks и минимум 3 family outcomes (Hard Work + personal/identity + systemic/mastery).
+- Создан `JOB_SYSTEM_MATRIX_v0.md`: проверены связи jobs со школой, poverty, relationships, seasons, items, large Activity и Meta.
+- Создан `STAT_COVERAGE_MATRIX_v1.md`. Восемь общих осей хорошо покрываются roster; главный открытый вопрос — Сексуальность vs Похоть.
+- Рабочая гипотеза SOL, НЕ lock: 9 progression stats (включая Сексуальность) + отдельная Похоть как content axis. Сексуальность = навык/уверенность; Похоть = внутренний интерес/добровольные content variants.
+- Создан `SCHOOL_SYSTEM_DRAFT_v0.md`: школа проектируется как самостоятельная progression system с tracks, преподавателями, milestones/exams, certificates/public facts, night study и собственными education endings. Простая модель pay->+stat считается недостаточной.
+- Draft school tracks: грамота/счёт, магические основы, риторика/переговоры, этикет, практическая ловкость/ремесло, физподготовка, сценическое искусство/телесная подача.
