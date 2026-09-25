@@ -453,3 +453,19 @@
 - `RELATIONSHIP_SYSTEM_DRAFT_v0.md` обновлён: stat/visit/interaction gated dialogue is 0-Energy by default.
 - `MIXED_LIFE_UNLOCK_SIMULATION_v1.md` помечен invalid/superseded: он ошибочно резервировал 1 Energy/day на relationships/other life.
 - `JOB_UNLOCK_SIMULATION_REPORT_v2.md` заменяет эту интерпретацию: текущие focused unlock minima остаются useful; future mixed simulations must specify explicit Activity entries rather than generic life tax.
+
+
+## Housing / explicit Energy / relationship-trigger consolidation
+
+- Создан `HOUSING_AND_NIGHT_BALANCE_v1.md`.
+  - normal room candidate: 2 WU, full next-day Energy, full Night/privacy;
+  - cheap lodging: 1 WU, full Energy, reduced Night/privacy;
+  - street: 0 WU, next-day Energy -1, Grooming -1, restricted Night + poverty event pool.
+- `EXPLICIT_ENERGY_BUDGET_SIMULATION_v1.md` считает только реальные Energy consumers. Reactive career/relationship scenes не резервируют action points.
+- При fresh 160-day candidate economy максимальная raw School capacity:
+  - normal housing: ~24 basic lessons без Activity;
+  - cheap housing: ~47;
+  - all-street: ~47, потому что free rent компенсируется потерей 1 Energy/day.
+- Это удачная системная развилка: cheap и street экономят по-разному и ни один не является очевидным "лучшим бесплатным вариантом".
+- `RELATIONSHIP_TRIGGER_MODEL_v1.md` закрепляет relationship progression через stat/visit/night/external-fact thresholds с 0-Energy reactive dialogues; deliberate date/trip может стоить Energy только как explicit exception.
+- `ECONOMY_BALANCE_CANDIDATE_v2.md` уточнён: "other Energy actions" означает только явно платные действия, не диалоги/отношения.
