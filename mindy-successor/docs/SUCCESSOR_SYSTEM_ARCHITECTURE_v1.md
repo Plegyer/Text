@@ -143,7 +143,7 @@ School — data-driven actions:
 - probability/choice gates там, где это задумано;
 - не штрафует salary.
 
-Конкретный Stat catalog ещё OPEN.
+Target stat catalog теперь зафиксирован в `TARGET_STAT_SYSTEM_v1.md`: 12 progression stats + отдельная Lust content-axis.
 
 ## 9. Calendar
 
@@ -155,7 +155,7 @@ Calendar config поддерживает:
 - job/world modifiers;
 - run end rules.
 
-Конкретная длительность successor run не фиксируется v1.
+Target calendar теперь зафиксирован продуктовым решением: 160 days = 4x40, seasons по 10 дней. Calendar engine остаётся configurable.
 
 Calendar события описываются data, а не scatter `if day == N`.
 
@@ -249,10 +249,9 @@ Schema/content migrations обязательны до content scale-up.
 ## 17. Что остаётся OPEN
 
 v1 специально НЕ решает:
-- окончательный набор stats;
-- остальные 7 jobs;
-- 11-ю профессию;
-- run length;
+- exact seasonal stat numbers;
+- expansion ordinary roster beyond current 10;
+- exact Palace content;
 - цены/зарплаты;
 - school catalog;
 - replacement large activity;
