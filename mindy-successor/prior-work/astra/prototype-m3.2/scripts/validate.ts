@@ -1,0 +1,11 @@
+import {readFileSync,readdirSync,existsSync,writeFileSync} from 'node:fs';
+import {z} from 'zod';
+import {loadCatalog} from '../src/core/content.ts';
+import {applyPresentation} from '../src/core/presentation.ts';
+import {packSchema} from '../src/core/schema.ts';
+const files=readdirSync('content/packs').filter(f=>f.endsWith('.json')).sort();
+const catalog=loadCatalog(JSON.parse(readFileSync('content/definitions.json','utf8')),files.map(f=>JSON.parse(readFileSync('content/packs/'+f,'utf8'))));
+const presented=applyPresentation(catalog,JSON.parse(readFileSync('content/presentation.json','utf8')));
+for(const m of presented.media)if(!m.src.startsWith('data:')&&!existsSync(m.src))throw new Error(`Missing media: ${m.src}`);
+writeFileSync('content/pack.schema.json',JSON.stringify(z.toJSONSchema(packSchema),null,2)+'\n');
+console.log(`Content OK: ${files.length} packs, ${catalog.events.length} events, ${catalog.definitions.actions.length} actions, ${catalog.definitions.endings.length} endings.`);

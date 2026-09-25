@@ -1,0 +1,1539 @@
+{
+  "version": "0.1.0",
+  "flags": [
+    "alchemy.intro",
+    "alchemy.order",
+    "alchemy.delivered",
+    "school.enrolled",
+    "school.exam",
+    "bran.met",
+    "bran.declined",
+    "bran.interested",
+    "bran.date",
+    "ds.alchemy.first",
+    "ds.alchemy.second",
+    "ds.alchemy.done",
+    "ds.bran.first",
+    "ds.bran.second",
+    "story.arrived",
+    "story.home",
+    "story.status",
+    "story.mystery",
+    "tavern.met",
+    "tavern.quest",
+    "tavern.resolved",
+    "tavern.guild",
+    "tavern.prince",
+    "woods.met",
+    "hunt.met",
+    "guard.recommendation",
+    "forest.receipt",
+    "satyr.met",
+    "ds.lumber.first",
+    "ds.lumber.second",
+    "ds.lumber.done",
+    "ds.marek.met",
+    "ds.marek.interested",
+    "ds.marek.declined",
+    "ds.marek.done"
+  ],
+  "actions": [
+    {
+      "id": "work",
+      "label": "Практика в учебной лавке",
+      "description": "30 монет, опыт и знакомства. Занимает одно действие.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [],
+      "effects": [
+        {
+          "kind": "metric",
+          "key": "money",
+          "delta": 30
+        },
+        {
+          "kind": "metric",
+          "key": "work",
+          "delta": 1
+        },
+        {
+          "kind": "metric",
+          "key": "organization",
+          "delta": 1
+        }
+      ],
+      "mode": "normal",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "30 монет, опыт и знакомства. Занимает одно действие.",
+          "media": [
+            "stage.school"
+          ],
+          "conditions": []
+        }
+      ]
+    },
+    {
+      "id": "school",
+      "label": "Алхимия",
+      "description": "18 монет. Смекалка +2; подготовка к алхимической практике.",
+      "cost": {
+        "money": 18,
+        "energy": 1
+      },
+      "conditions": [],
+      "effects": [
+        {
+          "kind": "metric",
+          "key": "lessons",
+          "delta": 1
+        },
+        {
+          "kind": "metric",
+          "key": "intelligence",
+          "delta": 2
+        }
+      ],
+      "mode": "normal",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "18 монет. Смекалка +2; подготовка к алхимической практике.",
+          "media": [
+            "stage.school"
+          ],
+          "conditions": []
+        }
+      ]
+    },
+    {
+      "id": "forage",
+      "label": "Собрать травы",
+      "description": "Две порции трав. В зимнем городе сбор заменяет работа с запасами.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [],
+      "effects": [
+        {
+          "kind": "item",
+          "id": "herb",
+          "delta": 2
+        },
+        {
+          "kind": "metric",
+          "key": "perception",
+          "delta": 1
+        }
+      ],
+      "mode": "normal",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "Две порции трав. В зимнем городе сбор заменяет работа с запасами.",
+          "media": [
+            "stage.school"
+          ],
+          "conditions": []
+        }
+      ]
+    },
+    {
+      "id": "brew",
+      "label": "Приготовить микстуру",
+      "description": "Одна трава и один ход. Щадящий нагрев даёт одну микстуру; быстрый — две при мастерстве 3 или наличии весов.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "item",
+          "id": "herb",
+          "count": 1
+        }
+      ],
+      "effects": [],
+      "mode": "brew",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "Одна трава и один ход. Щадящий нагрев даёт одну микстуру; быстрый — две при мастерстве 3 или наличии весов.",
+          "media": [
+            "stage.school"
+          ],
+          "conditions": []
+        }
+      ]
+    },
+    {
+      "id": "sell",
+      "label": "Продать микстуру",
+      "description": "Продажа одной готовой микстуры за 24 монеты.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "item",
+          "id": "tonic",
+          "count": 1
+        }
+      ],
+      "effects": [
+        {
+          "kind": "item",
+          "id": "tonic",
+          "delta": -1
+        },
+        {
+          "kind": "metric",
+          "key": "money",
+          "delta": 24
+        }
+      ],
+      "mode": "normal",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "Продажа одной готовой микстуры за 24 монеты.",
+          "media": [
+            "stage.school"
+          ],
+          "conditions": []
+        }
+      ]
+    },
+    {
+      "id": "scales",
+      "label": "Купить точные весы",
+      "description": "60 монет. Открывают быстрый способ приготовления без риска пены.",
+      "cost": {
+        "money": 60,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "not",
+          "condition": {
+            "kind": "item",
+            "id": "scales",
+            "count": 1
+          }
+        }
+      ],
+      "effects": [
+        {
+          "kind": "item",
+          "id": "scales",
+          "delta": 1
+        }
+      ],
+      "mode": "normal",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "60 монет. Открывают быстрый способ приготовления без риска пены.",
+          "media": [
+            "stage.school"
+          ],
+          "conditions": []
+        }
+      ]
+    },
+    {
+      "id": "exam",
+      "label": "Сдать экзамен",
+      "description": "3 урока, смекалка 7 и мастерство 2. Экзамен стоит 20 монет.",
+      "cost": {
+        "money": 20,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "metric",
+          "key": "lessons",
+          "op": "gte",
+          "value": 3
+        },
+        {
+          "kind": "metric",
+          "key": "intelligence",
+          "op": "gte",
+          "value": 7
+        },
+        {
+          "kind": "metric",
+          "key": "alchemy",
+          "op": "gte",
+          "value": 2
+        },
+        {
+          "kind": "flag",
+          "key": "school.exam",
+          "value": false
+        }
+      ],
+      "effects": [
+        {
+          "kind": "flag",
+          "key": "school.exam",
+          "value": true
+        },
+        {
+          "kind": "metric",
+          "key": "trust",
+          "delta": 3
+        }
+      ],
+      "mode": "normal",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "3 урока, смекалка 7 и мастерство 2. Экзамен стоит 20 монет.",
+          "media": [
+            "stage.school"
+          ],
+          "conditions": []
+        }
+      ]
+    },
+    {
+      "id": "deliver",
+      "label": "Сдать общий заказ",
+      "description": "Передать две микстуры артели: награда 50 монет, доступ к судьбе.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "flag",
+          "key": "alchemy.order",
+          "value": true
+        },
+        {
+          "kind": "flag",
+          "key": "alchemy.delivered",
+          "value": false
+        },
+        {
+          "kind": "item",
+          "id": "tonic",
+          "count": 2
+        }
+      ],
+      "effects": [
+        {
+          "kind": "item",
+          "id": "tonic",
+          "delta": -2
+        },
+        {
+          "kind": "metric",
+          "key": "money",
+          "delta": 50
+        },
+        {
+          "kind": "flag",
+          "key": "alchemy.delivered",
+          "value": true
+        },
+        {
+          "kind": "metric",
+          "key": "trust",
+          "delta": 5
+        }
+      ],
+      "mode": "normal",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "Передать две микстуры артели: награда 50 монет, доступ к судьбе.",
+          "media": [
+            "stage.school"
+          ],
+          "conditions": []
+        }
+      ]
+    },
+    {
+      "id": "visit",
+      "label": "Зайти в чайную",
+      "description": "Поговорить с Браном. Линия открывается после первого знакомства.",
+      "cost": {
+        "money": 5,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "flag",
+          "key": "bran.met",
+          "value": true
+        }
+      ],
+      "effects": [
+        {
+          "kind": "metric",
+          "key": "empathy",
+          "delta": 1
+        }
+      ],
+      "mode": "normal",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "Поговорить с Браном. Линия открывается после первого знакомства.",
+          "media": [
+            "stage.school"
+          ],
+          "conditions": []
+        }
+      ]
+    },
+    {
+      "id": "oddjob",
+      "label": "Мелкая подработка",
+      "description": "10 монет за поручение. Доступна без образования и инструментов.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [],
+      "effects": [
+        {
+          "kind": "metric",
+          "key": "money",
+          "delta": 10
+        }
+      ],
+      "mode": "normal",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "10 монет за поручение. Доступна без образования и инструментов.",
+          "media": [
+            "stage.school"
+          ],
+          "conditions": []
+        }
+      ]
+    },
+    {
+      "id": "repay",
+      "label": "Погасить часть долга",
+      "description": "Вернуть до 10 монет, не больше остатка долга. Долг не исчезает при переезде.",
+      "cost": {
+        "money": 10,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "metric",
+          "key": "debt",
+          "op": "gte",
+          "value": 1
+        }
+      ],
+      "effects": [
+        {
+          "kind": "metric",
+          "key": "debt",
+          "delta": -10
+        }
+      ],
+      "mode": "normal",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "Вернуть до 10 монет, не больше остатка долга. Долг не исчезает при переезде.",
+          "media": [
+            "stage.school"
+          ],
+          "conditions": []
+        }
+      ]
+    },
+    {
+      "id": "rent-room",
+      "label": "Вернуться в комнату",
+      "description": "Снять комнату за 18 монет после погашения старого долга. Ночлег оплачивается отдельно.",
+      "cost": {
+        "money": 18,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "metric",
+          "key": "debt",
+          "op": "eq",
+          "value": 0
+        },
+        {
+          "kind": "not",
+          "condition": {
+            "kind": "housing",
+            "value": "room"
+          }
+        }
+      ],
+      "effects": [
+        {
+          "kind": "housing",
+          "value": "room"
+        }
+      ],
+      "mode": "normal",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "Снять комнату за 18 монет после погашения старого долга. Ночлег оплачивается отдельно.",
+          "media": [
+            "stage.school"
+          ],
+          "conditions": []
+        }
+      ]
+    },
+    {
+      "id": "rest",
+      "label": "Отдохнуть",
+      "description": "Выбрать ночлег. Оплата монетами, помощь хозяину или бесплатный навес.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [],
+      "effects": [],
+      "mode": "normal",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "Выбрать ночлег. Оплата монетами, помощь хозяину или бесплатный навес.",
+          "media": [
+            "stage.school"
+          ],
+          "conditions": []
+        }
+      ]
+    },
+    {
+      "id": "arrival",
+      "label": "Пойти за белым сусликом",
+      "description": "Начать историю. Это вступление не расходует действие.",
+      "cost": {
+        "money": 0,
+        "energy": 0
+      },
+      "conditions": [
+        {
+          "kind": "flag",
+          "key": "story.arrived",
+          "value": false
+        }
+      ],
+      "effects": [],
+      "mode": "story",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "За белым сусликом — в новую жизнь.",
+          "media": [
+            "stage.town"
+          ],
+          "conditions": []
+        }
+      ]
+    },
+    {
+      "id": "tavern",
+      "label": "Таверна «Третий тост»",
+      "description": "Обслуживать гостей. Доход зависит от убеждения и организации; сезон меняет тренировку.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "flag",
+          "key": "story.arrived",
+          "value": true
+        }
+      ],
+      "effects": [],
+      "mode": "normal",
+      "wage": {
+        "base": 14,
+        "weights": [
+          {
+            "stat": "persuasion",
+            "factor": 0.4
+          },
+          {
+            "stat": "organization",
+            "factor": 0.3
+          }
+        ]
+      },
+      "seasonal": {
+        "spring": [
+          {
+            "kind": "metric",
+            "key": "persuasion",
+            "delta": 1
+          },
+          {
+            "kind": "metric",
+            "key": "organization",
+            "delta": 1
+          },
+          {
+            "kind": "metric",
+            "key": "composure",
+            "delta": -1
+          }
+        ],
+        "summer": [
+          {
+            "kind": "metric",
+            "key": "endurance",
+            "delta": 1
+          },
+          {
+            "kind": "metric",
+            "key": "persuasion",
+            "delta": 1
+          },
+          {
+            "kind": "metric",
+            "key": "organization",
+            "delta": -1
+          }
+        ],
+        "autumn": [
+          {
+            "kind": "metric",
+            "key": "organization",
+            "delta": 2
+          },
+          {
+            "kind": "metric",
+            "key": "magic",
+            "delta": -1
+          }
+        ],
+        "winter": [
+          {
+            "kind": "metric",
+            "key": "empathy",
+            "delta": 1
+          },
+          {
+            "kind": "metric",
+            "key": "composure",
+            "delta": 1
+          },
+          {
+            "kind": "metric",
+            "key": "dexterity",
+            "delta": -1
+          }
+        ]
+      },
+      "scenes": [
+        {
+          "id": "spring",
+          "text": "Вы разносите заказы и учитесь отличать комплименты от попытки получить бесплатный ужин. Весенний ветер пахнет свежей зеленью.",
+          "media": [
+            "stage.tavern.spring"
+          ],
+          "conditions": [
+            {
+              "kind": "season",
+              "value": "spring"
+            }
+          ]
+        },
+        {
+          "id": "summer",
+          "text": "Вы разносите заказы и учитесь отличать комплименты от попытки получить бесплатный ужин. В полдень все ищут тень.",
+          "media": [
+            "stage.tavern.summer"
+          ],
+          "conditions": [
+            {
+              "kind": "season",
+              "value": "summer"
+            }
+          ]
+        },
+        {
+          "id": "autumn",
+          "text": "Вы разносите заказы и учитесь отличать комплименты от попытки получить бесплатный ужин. Осенние запасы сами себя не подготовят.",
+          "media": [
+            "stage.tavern.autumn"
+          ],
+          "conditions": [
+            {
+              "kind": "season",
+              "value": "autumn"
+            }
+          ]
+        },
+        {
+          "id": "winter",
+          "text": "Вы разносите заказы и учитесь отличать комплименты от попытки получить бесплатный ужин. Тёплые перчатки сегодня на вес золота.",
+          "media": [
+            "stage.tavern.winter"
+          ],
+          "conditions": [
+            {
+              "kind": "season",
+              "value": "winter"
+            }
+          ]
+        },
+        {
+          "id": "default",
+          "text": "Вы разносите заказы и учитесь отличать комплименты от попытки получить бесплатный ужин.",
+          "media": [
+            "stage.tavern"
+          ],
+          "conditions": []
+        }
+      ]
+    },
+    {
+      "id": "lumber",
+      "label": "Лесорубы: артель «Не падай»",
+      "description": "Заготавливать древесину. Доход от силы и выносливости. Деревья иногда подают жалобы.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "flag",
+          "key": "story.arrived",
+          "value": true
+        }
+      ],
+      "effects": [],
+      "mode": "normal",
+      "wage": {
+        "base": 13,
+        "weights": [
+          {
+            "stat": "strength",
+            "factor": 0.5
+          },
+          {
+            "stat": "endurance",
+            "factor": 0.25
+          }
+        ]
+      },
+      "seasonal": {
+        "spring": [
+          {
+            "kind": "metric",
+            "key": "strength",
+            "delta": 1
+          },
+          {
+            "kind": "metric",
+            "key": "endurance",
+            "delta": 1
+          },
+          {
+            "kind": "metric",
+            "key": "organization",
+            "delta": -1
+          }
+        ],
+        "summer": [
+          {
+            "kind": "metric",
+            "key": "strength",
+            "delta": 2
+          },
+          {
+            "kind": "metric",
+            "key": "composure",
+            "delta": -1
+          }
+        ],
+        "autumn": [
+          {
+            "kind": "metric",
+            "key": "dexterity",
+            "delta": 1
+          },
+          {
+            "kind": "metric",
+            "key": "strength",
+            "delta": 1
+          },
+          {
+            "kind": "metric",
+            "key": "empathy",
+            "delta": -1
+          }
+        ],
+        "winter": [
+          {
+            "kind": "metric",
+            "key": "endurance",
+            "delta": 2
+          },
+          {
+            "kind": "metric",
+            "key": "intelligence",
+            "delta": -1
+          }
+        ]
+      },
+      "scenes": [
+        {
+          "id": "spring",
+          "text": "Вы пилите доски на площадке артели. Работа спорится; Бронн следит, чтобы никто не спорил с пилой. Весенний ветер пахнет свежей зеленью.",
+          "media": [
+            "stage.lumber.spring"
+          ],
+          "conditions": [
+            {
+              "kind": "season",
+              "value": "spring"
+            }
+          ]
+        },
+        {
+          "id": "summer",
+          "text": "Вы пилите доски на площадке артели. Работа спорится; Бронн следит, чтобы никто не спорил с пилой. В полдень все ищут тень.",
+          "media": [
+            "stage.lumber.summer"
+          ],
+          "conditions": [
+            {
+              "kind": "season",
+              "value": "summer"
+            }
+          ]
+        },
+        {
+          "id": "autumn",
+          "text": "Вы пилите доски на площадке артели. Работа спорится; Бронн следит, чтобы никто не спорил с пилой. Осенние запасы сами себя не подготовят.",
+          "media": [
+            "stage.lumber.autumn"
+          ],
+          "conditions": [
+            {
+              "kind": "season",
+              "value": "autumn"
+            }
+          ]
+        },
+        {
+          "id": "winter",
+          "text": "Вы пилите доски на площадке артели. Работа спорится; Бронн следит, чтобы никто не спорил с пилой. Тёплые перчатки сегодня на вес золота.",
+          "media": [
+            "stage.lumber.winter"
+          ],
+          "conditions": [
+            {
+              "kind": "season",
+              "value": "winter"
+            }
+          ]
+        },
+        {
+          "id": "default",
+          "text": "Вы пилите доски на площадке артели. Работа спорится; Бронн следит, чтобы никто не спорил с пилой.",
+          "media": [
+            "stage.lumber"
+          ],
+          "conditions": []
+        }
+      ]
+    },
+    {
+      "id": "hunt",
+      "label": "Охотники: следопытская станция",
+      "description": "Проверять тропы и ловушки. Доход от наблюдательности и ловкости.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "flag",
+          "key": "story.arrived",
+          "value": true
+        }
+      ],
+      "effects": [],
+      "mode": "normal",
+      "wage": {
+        "base": 12,
+        "weights": [
+          {
+            "stat": "perception",
+            "factor": 0.5
+          },
+          {
+            "stat": "dexterity",
+            "factor": 0.3
+          }
+        ]
+      },
+      "seasonal": {
+        "spring": [
+          {
+            "kind": "metric",
+            "key": "perception",
+            "delta": 1
+          },
+          {
+            "kind": "metric",
+            "key": "dexterity",
+            "delta": 1
+          },
+          {
+            "kind": "metric",
+            "key": "persuasion",
+            "delta": -1
+          }
+        ],
+        "summer": [
+          {
+            "kind": "metric",
+            "key": "endurance",
+            "delta": 1
+          },
+          {
+            "kind": "metric",
+            "key": "perception",
+            "delta": 1
+          },
+          {
+            "kind": "metric",
+            "key": "organization",
+            "delta": -1
+          }
+        ],
+        "autumn": [
+          {
+            "kind": "metric",
+            "key": "dexterity",
+            "delta": 2
+          },
+          {
+            "kind": "metric",
+            "key": "empathy",
+            "delta": -1
+          }
+        ],
+        "winter": [
+          {
+            "kind": "metric",
+            "key": "perception",
+            "delta": 2
+          },
+          {
+            "kind": "metric",
+            "key": "composure",
+            "delta": -1
+          }
+        ]
+      },
+      "scenes": [
+        {
+          "id": "spring",
+          "text": "Вы проверяете тропы и учитесь читать следы. Лес сегодня подозрительно вежлив. Весенний ветер пахнет свежей зеленью.",
+          "media": [
+            "stage.hunt.spring"
+          ],
+          "conditions": [
+            {
+              "kind": "season",
+              "value": "spring"
+            }
+          ]
+        },
+        {
+          "id": "summer",
+          "text": "Вы проверяете тропы и учитесь читать следы. Лес сегодня подозрительно вежлив. В полдень все ищут тень.",
+          "media": [
+            "stage.hunt.summer"
+          ],
+          "conditions": [
+            {
+              "kind": "season",
+              "value": "summer"
+            }
+          ]
+        },
+        {
+          "id": "autumn",
+          "text": "Вы проверяете тропы и учитесь читать следы. Лес сегодня подозрительно вежлив. Осенние запасы сами себя не подготовят.",
+          "media": [
+            "stage.hunt.autumn"
+          ],
+          "conditions": [
+            {
+              "kind": "season",
+              "value": "autumn"
+            }
+          ]
+        },
+        {
+          "id": "winter",
+          "text": "Вы проверяете тропы и учитесь читать следы. Лес сегодня подозрительно вежлив. Тёплые перчатки сегодня на вес золота.",
+          "media": [
+            "stage.hunt.winter"
+          ],
+          "conditions": [
+            {
+              "kind": "season",
+              "value": "winter"
+            }
+          ]
+        },
+        {
+          "id": "default",
+          "text": "Вы проверяете тропы и учитесь читать следы. Лес сегодня подозрительно вежлив.",
+          "media": [
+            "stage.hunt"
+          ],
+          "conditions": []
+        }
+      ]
+    },
+    {
+      "id": "guard",
+      "label": "Городская стража",
+      "description": "Сила 6 и дерзость 5 либо рекомендация Марека.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "flag",
+          "key": "story.arrived",
+          "value": true
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "metric",
+                  "key": "strength",
+                  "op": "gte",
+                  "value": 6
+                },
+                {
+                  "kind": "metric",
+                  "key": "composure",
+                  "op": "gte",
+                  "value": 5
+                }
+              ]
+            },
+            {
+              "kind": "flag",
+              "key": "guard.recommendation",
+              "value": true
+            }
+          ]
+        }
+      ],
+      "effects": [
+        {
+          "kind": "metric",
+          "key": "composure",
+          "delta": 1
+        },
+        {
+          "kind": "metric",
+          "key": "strength",
+          "delta": 1
+        },
+        {
+          "kind": "metric",
+          "key": "empathy",
+          "delta": -1
+        }
+      ],
+      "mode": "normal",
+      "wage": {
+        "base": 19,
+        "weights": [
+          {
+            "stat": "strength",
+            "factor": 0.4
+          },
+          {
+            "stat": "composure",
+            "factor": 0.3
+          }
+        ]
+      },
+      "scenes": [
+        {
+          "id": "spring",
+          "text": "Вы обходите городские ворота. Самое опасное пока — спор о парковке телег. Весенний ветер пахнет свежей зеленью.",
+          "media": [
+            "stage.guard.spring"
+          ],
+          "conditions": [
+            {
+              "kind": "season",
+              "value": "spring"
+            }
+          ]
+        },
+        {
+          "id": "summer",
+          "text": "Вы обходите городские ворота. Самое опасное пока — спор о парковке телег. В полдень все ищут тень.",
+          "media": [
+            "stage.guard.summer"
+          ],
+          "conditions": [
+            {
+              "kind": "season",
+              "value": "summer"
+            }
+          ]
+        },
+        {
+          "id": "autumn",
+          "text": "Вы обходите городские ворота. Самое опасное пока — спор о парковке телег. Осенние запасы сами себя не подготовят.",
+          "media": [
+            "stage.guard.autumn"
+          ],
+          "conditions": [
+            {
+              "kind": "season",
+              "value": "autumn"
+            }
+          ]
+        },
+        {
+          "id": "winter",
+          "text": "Вы обходите городские ворота. Самое опасное пока — спор о парковке телег. Тёплые перчатки сегодня на вес золота.",
+          "media": [
+            "stage.guard.winter"
+          ],
+          "conditions": [
+            {
+              "kind": "season",
+              "value": "winter"
+            }
+          ]
+        },
+        {
+          "id": "default",
+          "text": "Вы обходите городские ворота. Самое опасное пока — спор о парковке телег.",
+          "media": [
+            "stage.guard"
+          ],
+          "conditions": []
+        }
+      ]
+    },
+    {
+      "id": "forest-search",
+      "label": "Проверить лесной склад",
+      "description": "Найти накладную Марека; нужно чутьё 3. Текстовая вылазка на лесной склад.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "flag",
+          "key": "story.arrived",
+          "value": true
+        },
+        {
+          "kind": "flag",
+          "key": "tavern.quest",
+          "value": true
+        },
+        {
+          "kind": "flag",
+          "key": "forest.receipt",
+          "value": false
+        },
+        {
+          "kind": "metric",
+          "key": "perception",
+          "op": "gte",
+          "value": 3
+        }
+      ],
+      "effects": [
+        {
+          "kind": "flag",
+          "key": "forest.receipt",
+          "value": true
+        }
+      ],
+      "mode": "normal",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "Найти накладную Марека; нужно чутьё 3. Текстовая вылазка на лесной склад.",
+          "media": [
+            "stage.hunt"
+          ],
+          "conditions": []
+        }
+      ]
+    },
+    {
+      "id": "tavern-talk",
+      "label": "Обсудить накладную с трактирщиком",
+      "description": "Вернуться с уликой и решить, кому достанется право на праздник.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "flag",
+          "key": "story.arrived",
+          "value": true
+        },
+        {
+          "kind": "flag",
+          "key": "forest.receipt",
+          "value": true
+        },
+        {
+          "kind": "flag",
+          "key": "tavern.resolved",
+          "value": false
+        }
+      ],
+      "effects": [],
+      "mode": "normal",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "Вернуться с уликой и решить, кому достанется право на праздник.",
+          "media": [
+            "stage.tavern"
+          ],
+          "conditions": []
+        }
+      ]
+    },
+    {
+      "id": "landlord",
+      "label": "Навестить хозяина комнаты",
+      "description": "Силан расскажет о жилье и предложит чай. Первое знакомство.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "flag",
+          "key": "story.arrived",
+          "value": true
+        },
+        {
+          "kind": "flag",
+          "key": "satyr.met",
+          "value": false
+        }
+      ],
+      "effects": [],
+      "mode": "normal",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "Силан расскажет о жилье и предложит чай. Первое знакомство.",
+          "media": [
+            "stage.room"
+          ],
+          "conditions": []
+        }
+      ]
+    },
+    {
+      "id": "combat-class",
+      "label": "Школа: движение и защита",
+      "description": "Сила +2, сноровка +2, дерзость +1.",
+      "cost": {
+        "money": 24,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "flag",
+          "key": "story.arrived",
+          "value": true
+        }
+      ],
+      "effects": [
+        {
+          "kind": "metric",
+          "key": "strength",
+          "delta": 2
+        },
+        {
+          "kind": "metric",
+          "key": "dexterity",
+          "delta": 2
+        },
+        {
+          "kind": "metric",
+          "key": "composure",
+          "delta": 1
+        }
+      ],
+      "mode": "normal",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "Сила +2, сноровка +2, дерзость +1.",
+          "media": [
+            "stage.school"
+          ],
+          "conditions": []
+        }
+      ]
+    },
+    {
+      "id": "etiquette-class",
+      "label": "Школа: переговоры",
+      "description": "Обаяние +2, чуткость +2, дерзость +1.",
+      "cost": {
+        "money": 24,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "flag",
+          "key": "story.arrived",
+          "value": true
+        }
+      ],
+      "effects": [
+        {
+          "kind": "metric",
+          "key": "persuasion",
+          "delta": 2
+        },
+        {
+          "kind": "metric",
+          "key": "empathy",
+          "delta": 2
+        },
+        {
+          "kind": "metric",
+          "key": "composure",
+          "delta": 1
+        }
+      ],
+      "mode": "normal",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "Обаяние +2, чуткость +2, дерзость +1.",
+          "media": [
+            "stage.school"
+          ],
+          "conditions": []
+        }
+      ]
+    },
+    {
+      "id": "magic-class",
+      "label": "Школа: безопасное колдовство",
+      "description": "Искра +3, смекалка +2.",
+      "cost": {
+        "money": 30,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "flag",
+          "key": "story.arrived",
+          "value": true
+        }
+      ],
+      "effects": [
+        {
+          "kind": "metric",
+          "key": "magic",
+          "delta": 3
+        },
+        {
+          "kind": "metric",
+          "key": "intelligence",
+          "delta": 2
+        }
+      ],
+      "mode": "normal",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "Искра +3, смекалка +2.",
+          "media": [
+            "stage.school"
+          ],
+          "conditions": []
+        }
+      ]
+    },
+    {
+      "id": "salon-lesson",
+      "label": "Урок раскованности",
+      "description": "Разговор о собственных желаниях и личных границах. Желание +2, обаяние +1.",
+      "cost": {
+        "money": 24,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "flag",
+          "key": "story.arrived",
+          "value": true
+        }
+      ],
+      "effects": [
+        {
+          "kind": "metric",
+          "key": "lust",
+          "delta": 2
+        },
+        {
+          "kind": "metric",
+          "key": "persuasion",
+          "delta": 1
+        }
+      ],
+      "mode": "normal",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "Преподаватель предлагает отделить чужие ожидания от ваших собственных желаний. Для начала — научиться спокойно говорить и «да», и «нет».",
+          "media": [
+            "stage.school"
+          ],
+          "conditions": []
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "id": "guild-life",
+      "title": "Своя в артели",
+      "description": "Пять практик, практичность 6 и выполненный заказ. Наследие: ночлег за половину цены и практичность +5 на старте.",
+      "conditions": [
+        {
+          "kind": "metric",
+          "key": "work",
+          "op": "gte",
+          "value": 5
+        },
+        {
+          "kind": "metric",
+          "key": "organization",
+          "op": "gte",
+          "value": 6
+        },
+        {
+          "kind": "flag",
+          "key": "alchemy.delivered",
+          "value": true
+        }
+      ],
+      "reward": "guild",
+      "epilogue": "Артель вручает вам ключ от комнаты. Орвин предлагает отпраздновать вдвоём и тут же уточняет, что котёл на этот раз приглашения не получил. Можно согласиться на первое свидание или оставить вечер дружеским. В следующей жизни вас встретят как свою."
+    },
+    {
+      "id": "scholar-life",
+      "title": "Дипломированная алхимичка",
+      "description": "Сдать экзамен. Наследие: смекалка +5 на старте и один бесплатный урок каждую неделю.",
+      "conditions": [
+        {
+          "kind": "flag",
+          "key": "school.exam",
+          "value": true
+        }
+      ],
+      "reward": "scholar",
+      "epilogue": "Диплом пахнет чернилами и слегка — карамелью. Взрослый выпускник соседней мастерской приглашает вас на праздничный ужин: «Без пробирок, обещаю». Свидание остаётся вашим выбором, а право на новое начало уже заслужено."
+    },
+    {
+      "id": "tavern-stay",
+      "title": "Хозяйка третьего тоста",
+      "conditions": [
+        {
+          "kind": "visits",
+          "action": "tavern",
+          "value": 18
+        }
+      ],
+      "reward": "host",
+      "description": "18 смен в таверне. Наследие: обаяние +5 в следующей жизни.",
+      "epilogue": "Ваша доля в таверне закреплена договором. Марек приглашает отметить это ужином вдвоём; дружеский вечер тоже его вполне устраивает. Домом иногда становится место, где знают, как вы любите чай."
+    },
+    {
+      "id": "tavern-guild",
+      "title": "Праздник без разрешения",
+      "conditions": [
+        {
+          "kind": "flag",
+          "key": "tavern.guild",
+          "value": true
+        }
+      ],
+      "reward": "mediator",
+      "description": "Защитить самостоятельность городского праздника. Наследие: чуткость +5.",
+      "epilogue": "Горожане выбирают вас распорядительницей праздника. Марек оставляет два места на крыше — полюбоваться огнями, поговорить или наконец выспаться."
+    },
+    {
+      "id": "tavern-court",
+      "title": "Приглашение под печатью",
+      "conditions": [
+        {
+          "kind": "flag",
+          "key": "tavern.prince",
+          "value": true
+        }
+      ],
+      "reward": "court",
+      "description": "Передать накладную принцу. Наследие: дерзость +5.",
+      "epilogue": "Принц вручает вам придворное приглашение с улыбкой, рассчитанной на памятник. Статус вырос; мелкий шрифт ещё предстоит изучить. На празднике вы сами выбираете компанию."
+    },
+    {
+      "id": "lumber-stay",
+      "title": "Бригадир поневоле",
+      "description": "24 смены у лесорубов. В следующей жизни дневной запас энергии +1.",
+      "conditions": [
+        {
+          "kind": "visits",
+          "action": "lumber",
+          "value": 24
+        }
+      ],
+      "reward": "vitality",
+      "epilogue": "Бронн вручает вам ключи от артели и свисток. «Главное — свистеть до падения дерева». Вы остаётесь руководить работой на своих условиях."
+    }
+  ]
+}
