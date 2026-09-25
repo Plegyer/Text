@@ -128,3 +128,23 @@
 - Заменять: historical stat catalog, 28-day seasons/448-day run, old starter jobs, concrete legacy rewards и общий metrics bag.
 - M3.3 автоматически не применять.
 - Создан `docs/PROTOTYPE_M3_2_REUSE_REVIEW.md` с таблицей сохранить/расширить/заменить/удалить и корректировками раннего SOL architecture v0.
+
+
+## Target architecture v1
+
+- После сверки с M3.2 сформирован target architecture baseline v1. `SUCCESSOR_SYSTEM_ARCHITECTURE_v0.md` оставлен как historical draft и больше не является implementation baseline.
+- Созданы target contracts:
+  - `TARGET_STATE_OWNERSHIP_v1.md`;
+  - `PROGRESSION_CONDITION_EFFECT_CONTRACT_v1.md`;
+  - `EVENT_RESOLVER_CONTRACT_v1.md`;
+  - `NIGHT_AND_ACTIVITY_CONTRACT_v1.md`;
+  - `SAVE_AND_MIGRATION_CONTRACT_v1.md`;
+  - `SUCCESSOR_SYSTEM_ARCHITECTURE_v1.md`.
+- State ownership: текущая Energy имеет одного authoritative owner в DayState; Run+Meta остаются единым атомарным SaveEnvelope; progression разделяется на typed Careers / Quests / Relationships / WorldFacts.
+- Condition/Effect v2 остаются декларативными и whitelist-only; произвольные JS callbacks/state paths запрещены. Cross-system progression идёт через public facts/reaction facts и разрешённые domain transitions.
+- Event Resolver расширяет M3.2 scheduler: typed triggers, priority classes, reaction epoch, persisted RNG/pending, re-check после choice, cascade protection и delivery policies live/latched/scheduled.
+- Night разделён на phases с forced interception до/после lodging; payment, voluntary night и CalendarAdvance имеют exactly-once semantics.
+- Large Activity получает отдельный versioned ActivityEnvelope; внутренняя endurance/HP/time не переиспользует daily Energy.
+- Save architecture различает schemaVersion и contentVersion; migrations обязаны сохранять resolved randomness/pending flow и exactly-once costs/rewards.
+- Создан `ARCHITECTURE_MIGRATION_SLICE_v1.md`: первый engineering gate должен доказать migration M3.2 -> target-shaped state, cross-system resolver, cascade, Night, resumable test Activity и ending/meta exactly-once до масштабирования контента.
+- Создан `SOL_ARCHITECTURE_HANDOFF.md` как компактная точка входа для независимого Astra-review через GitHub.
