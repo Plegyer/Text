@@ -81,3 +81,18 @@
 - все time-of-day event gates, если они влияют не только на lighting/clock.
 
 - time-of-day generic enemy pools: exhaustive stepCount scan found none; treat time-of-day as clock/lighting/deadline unless a scene-specific exception is later found.
+
+
+## Dungeon — низкоприоритетные хвосты после loot/map pass
+
+Системно закрыто:
+- Coax steal/loot policy для normal main combat IDs 0–52;
+- persistent chest model;
+- `nextDest + dungeonX/Y` transition handshake;
+- seasonal elemental pedestal pickups;
+- пример quest-gated смены fight -> scripted map event.
+
+Не требуется для архитектуры successor, но можно добить при необходимости exhaustive atlas:
+- где именно создаётся `mazeSucceed` token: receiver подтверждён, прямой setter в main ABC не найден;
+- точная идентификация monster ID 45 и имён IDs 47–49;
+- нужен ли отдельный Coax resolver/эквивалент для space-pool IDs 58–59.
