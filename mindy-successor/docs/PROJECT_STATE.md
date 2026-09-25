@@ -12,12 +12,12 @@
 - Крупная мини-игра/активность стоит 2 энергии.
 - Ночное обучение даёт прогресс ночью, но отнимает 1 энергию следующего дня.
 - Через сложные мета-достижения максимум ежедневной энергии может быть повышен ещё на 2.
-- Работы меняют билд: повышают две характеристики и понижают одну.
+- Работы меняют билд через **сезонные stat packages**: одна и та же профессия повышает/понижает разные характеристики в разные сезоны; универсального +2/+2/-1 больше нет.
 - Школа повышает характеристики, но служит денежным sink.
 - Ночёвка платная и в начале должна заметно давить на экономику, чтобы работа была необходима.
 - Похоть — положительный контентный параметр. Высокое значение не штрафует зарплату: оно заменяет/открывает дополнительные версии рабочих событий с участием героини.
 - 10 ordinary/public профессий — текущий удобный ориентир roster, а не жёсткий потолок. В начале доступны только 2–3.
-- Последняя скрытая/meta-профессия — работа **во дворце**, открываемая через профессиональные концовки «Упорный труд» предыдущих жизней. При текущем roster это 11-я main profession.
+- Последняя скрытая/meta-профессия — работа **во дворце**. Она открывается только после Hard Work на **всех 10 ordinary professions**; hidden Secret Debt career в prerequisite не входит.
 - Первые три профессии: лесоруб в артели гномов; служанка в баре сатиров; помощница на ферме у нежити.
 - Магазин оригинала на текущем этапе исключён.
 - JRPG оригинала не копируется. Позже её место может занять другая крупная подсистема: тесты, головоломки, испытания или сочетание нескольких механик.
@@ -25,14 +25,15 @@
 
 ## Что пока не решено
 
-- Полный набор характеристик новой героини.
-- Точный ordinary roster после трёх стартовых: provisional кандидаты = таверна, охотники, стража, гейша, наёмный убийца, торговец, проститутка; ordinary count можно расширять при необходимости.
-- Точный unlock threshold и содержание скрытой дворцовой meta-профессии.
 - Точная экономика зарплат/обучения/ночлега.
-- Продолжительность одного прохождения.
-- Список мета-наград новой игры.
-- Замена JRPG.
-- Конкретные мини-игры.
+- Exact seasonal stat numbers после simulations.
+- Конкретные School teachers/milestones/endings и цены.
+- Конкретный production scope большой Activity внутри принятого expedition umbrella.
+- Список конкретных meta rewards и размер pre-run loadout budget.
+- Конкретная большая тайна / knowledge fragments / late meta route.
+- Точное содержание дворцовой профессии после уже фиксированного unlock 10/10.
+- Exact Secret Debt balance/rewards.
+- Visual/media production budget и final UI style.
 
 ## Ближайшая работа
 
@@ -330,3 +331,18 @@
 - Создан `EXECUTABLE_TZ_SKELETON_v0.md`: структура будущего полного исполнительного ТЗ от product statement до Windows delivery, package contracts и appendices.
 - Создан `IMPLEMENTATION_PHASES_AND_PACKAGES_v0.md`: Architecture -> Shell -> Lumber Product Slice -> Starter Trio -> Economy/Poverty -> Roster -> Activity -> Palace/Meta -> Macro -> Polish.
 - README и ASTRA_HANDOFF обновлены ссылками на текущую точку входа.
+
+
+## Latest locked product decisions — 2026-09-25
+
+- Current locked baseline: `NEW_GAME_SPEC_v1.md`.
+- Target stat model: **12 progression stats + separate Lust content-axis**. Stats: Strength, Endurance, Dexterity, Reason, Magic, Creativity, Wits, Charm, Sociability, Manners, Grooming, Sexuality.
+- Character creation: all 12 progression stats start at 1; 10 points are distributed among them; Lust starts separately.
+- Grooming is a real high-volatility progression stat analogous to the useful function of original Cleanliness, not a second temporary global bar.
+- SWF reference confirms original Maid/Hotel salary uses Cleanliness and Maid work raises Cleanliness every season; Cleanliness also participates in other job unlock gates.
+- Work stat mutation is seasonal. `SEASONAL_JOB_STAT_MODEL_v1.md` replaces the previous fixed +2/+2/-1 idea.
+- First full successor season matrix exists in `SUCCESSOR_JOB_SEASON_MATRIX_v0.csv` as BALANCE_DRAFT.
+- Calendar is locked to **160 days = 4 years x 40 days = 4 seasons x 10 days**.
+- Palace unlock is locked to **Hard Work on all 10 ordinary professions**. Repeats and hidden careers do not count.
+- School expanded to 8 tracks in `SCHOOL_SYSTEM_DRAFT_v1.md`, covering all 12 stats without becoming a 12-button stat shop.
+- `STAT_COVERAGE_MATRIX_v2.md` confirms multi-system coverage for the expanded stat model.
