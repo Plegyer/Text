@@ -346,3 +346,19 @@
 - Palace unlock is locked to **Hard Work on all 10 ordinary professions**. Repeats and hidden careers do not count.
 - School expanded to 8 tracks in `SCHOOL_SYSTEM_DRAFT_v1.md`, covering all 12 stats without becoming a 12-button stat shop.
 - `STAT_COVERAGE_MATRIX_v2.md` confirms multi-system coverage for the expanded stat model.
+
+
+## Progression philosophy correction — 2026-09-25
+
+- Пользователь уточнил ключевую цель: **любой progression stat должен быть достижим обычной жизнью через работу и/или заработок с последующей школой**.
+- Fresh profile намеренно самый трудный; накопленные endings/meta rewards должны делать каждую следующую жизнь всё легче, а не сохранять одинаковое survival pressure.
+- SWF reference подтверждает эту модель: семь обычных курсов дают крупные multi-stat packages, а special school позволяет обменивать любой из 11 normal stats в любой другой по 2:1.
+- Создан `PROGRESSION_AND_DIFFICULTY_PHILOSOPHY_v1.md`: work -> money -> School -> target stat является core loop; School как build correction — feature, не flaw.
+- Создан `SCHOOL_SYSTEM_v2.md`: все 12 target progression stats имеют repeatable paid School source; teacher/milestone layer остаётся поверх надёжного stat acquisition.
+- Создан `PROGRESSION_ACCESSIBILITY_SIMULATION_v1.md`: все 12 stats уже имеют положительные ordinary-work sources; Magic/Creativity/Sexuality тоже не требуют hidden routes.
+- Создан `SCHOOL_BALANCE_MATRIX_v0.csv` и `SCHOOL_REACHABILITY_SIMULATION_v1.md`: School-only путь к stat~20 занимает примерно 5–7 lessons, к ~30 — 8–10, до учёта creation/job/meta gains.
+- Первый economy candidate был слишком мягким для fresh profile. `ECONOMY_BALANCE_CANDIDATE_v2.md` использует hard-start ratio: starter shift 1 WU, normal rent ~2 WU, start ~12 WU, School ~6–12 WU.
+- При candidate scale 1 WU≈50 visible currency это естественно даёт ориентиры около wage 50 / rent 100 / start 600 / School 300–600 и хорошо сочетается с Secret Debt 2000→20000.
+- Создан `META_REWARD_PHILOSOPHY_v1.md`: сильные meta rewards (+Energy, rent relief, starting money, carry-over и т.п.) снова считаются желательными типами награды; late profile должен заметно ломать ранние ограничения.
+- Создан `HARD_WORK_META_REWARDS_v0.md`: candidate simple automatic +5 thematic starting-stat reward на каждую из 10 ordinary Hard Work endings; exact mapping ещё balance candidate.
+- `BALANCE_SIMULATION_REPORT_v2.md` отменяет неправильные выводы v1: не требовать seasonal breadth для простой Hard Work ending и не пытаться избегать School repair loop.
