@@ -32,8 +32,8 @@
 Они не должны быть придуманы реализацией самостоятельно:
 
 1. Финальный список core stats.
-2. Reconciliation ordinary jobs: первоначальный пользовательский список из 10 (таверна, лесорубы, охотники, стража, гейша, служанка, наёмный убийца, торговец, проститутка, дворец) vs текущие три старта SOL (лесорубы-гномы, служанка в баре сатиров, ферма нежити). Только после KEEP/MERGE/REFRAME/REPLACE определять реально свободные слоты.
-3. Конкретная 11-я meta profession и required Hard Work progress.
+2. Ordinary roster reconciliation: текущий provisional набор = три старта + таверна, охотники, стража, гейша, наёмный убийца, торговец, проститутка. Проверить, нужны ли дополнительные ordinary jobs сверх 10 и остаётся ли Таверна самостоятельной рядом со служанкой в баре.
+3. Hidden Palace profession: identity зафиксирована как поздняя meta-job; OPEN её конкретный gameplay loop, career/endings и required Hard Work progress.
 4. Точная длина run / календарные числа successor.
 5. Economy: wages, school prices, lodging pressure.
 6. School catalog и special-school equivalent.
