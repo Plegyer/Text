@@ -109,3 +109,11 @@
 - Work разделён на data-driven repeatable JobDefinition и CareerStateMachine; Night использует отдельный resolver и NextDayModifiers; large activity имеет отдельный state и не переиспользует дневную Energy как внутреннюю endurance.
 - Calendar, optional day events, endings и meta rewards проектируются data-driven, чтобы избежать hard-coded scene checks и unreachable branches оригинала.
 - Следующий технический milestone для новой игры: минимальный vertical slice с одним полностью реализованным job, school, lodging/night, Event Resolver, ending commitment и одним meta modifier.
+
+
+## Stat-system design draft
+
+- Создан `docs/STAT_SYSTEM_DRAFT_v0.md` как НЕзафиксированное предложение.
+- Рабочая модель сокращает original 11 progression stats до 9 core axes: Сила, Выносливость, Ловкость, Разум, Магия, Смекалка, Обаяние, Манеры, Похоть.
+- Original Sociability+Class предлагается объединить в Манеры; Cleanliness не переносить автоматически как permanent stat, а при необходимости сделать volatile Ухоженностью; Morality держать route/faction state, а не покупаемой характеристикой.
+- Статы не фиксировать до черновой матрицы всех 10 ordinary jobs: сначала нужны остальные 7 профессий, затем coverage/tradeoff check.
