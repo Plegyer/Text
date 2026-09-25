@@ -38,12 +38,12 @@
 Остаются:
 
 1. **Seasonal job numbers:** `SUCCESSOR_JOB_SEASON_MATRIX_v0.csv` создан как balance draft; нужны simulations и финальная корректировка annual drift.
-2. **Economy:** exact currency scale, wages, lodging, School prices, starting money, street penalty, Secret Debt calibration.
-3. **School production:** exact teachers, milestone counts, certificates, education endings/meta rewards; target tracks уже описаны в `SCHOOL_SYSTEM_DRAFT_v1.md`.
+2. **Economy:** fresh-hard direction now fixed; v2 candidate = wage 1 WU, normal rent ~2 WU, start ~12 WU, School ~6–12 WU. OPEN exact final numbers, wage scaling, cheap/street penalties and Secret Debt calibration.
+3. **School production:** universal stat access is fixed in `SCHOOL_SYSTEM_v2.md`; OPEN exact gains/costs after `SCHOOL_BALANCE_MATRIX_v0.csv`, teachers, milestones, certificates, endings/meta rewards and fiction of the 2:1 correction service.
 4. **Relationships:** major NPC roster, shared NPCs между careers, какие линии имеют endings.
 5. **Large Activity production:** exact region count, encounter mechanics, camp scope, combat presence/absence beyond the accepted expedition umbrella.
 6. **Items:** inventory capacity, contextual loadout slots, craft scope, vendors and first production catalog.
-7. **Meta rewards:** exact catalog and loadout budget/slot count. Policy automatic knowledge + selectable strong modifiers is already fixed.
+7. **Meta rewards:** deliberate easing/power growth is fixed. OPEN exact catalog, which strong bonuses are automatic vs selectable, and loadout budget/slot count. `HARD_WORK_META_REWARDS_v0.md` is current candidate for simple work endings.
 8. **Macro-goal:** concrete mystery, knowledge-fragment catalog and final late route.
 9. **Palace:** exact role/title, court structure, discovery presentation, career details and concrete rewards. Unlock rule 10/10 ordinary Hard Work is fixed.
 10. **Secret Debt/Slave Career:** exact chance within current 10–20% direction, exact loan/debt numbers, Energy penalty, access to School/Activity while locked, income/debt flow and exact rewards.
