@@ -2,7 +2,7 @@
 
 Дата: 2026-09-25.
 
-Статус: **DESIGN ANALYSIS / PROVISIONAL RECOMMENDATION**, не финальный lock.
+Статус: **SUPERSEDED ANALYSIS**. Current target coverage: `STAT_COVERAGE_MATRIX_v2.md`.
 
 Основание:
 - `STAT_SYSTEM_DRAFT_v0.md`;
