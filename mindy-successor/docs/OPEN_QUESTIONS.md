@@ -44,7 +44,7 @@
 4. **Relationships:** major NPC roster, shared NPCs между careers, какие линии имеют endings.
 5. **Large Activity production:** exact region count, encounter mechanics, camp scope, combat presence/absence beyond the accepted expedition umbrella.
 6. **Items:** inventory capacity, contextual loadout slots, craft scope, vendors and first production catalog.
-7. **Meta rewards:** deliberate easing/power growth is fixed. OPEN exact catalog, which strong bonuses are automatic vs selectable, and loadout budget/slot count. `HARD_WORK_META_REWARDS_v0.md` is current candidate for simple work endings.
+7. **Meta rewards:** deliberate easing is fixed. Current candidates: `HARD_WORK_META_REWARDS_v1.md`, `META_LOADOUT_MODEL_v1.md`, `COMPLEX_ENDING_META_REWARD_CATALOG_v0.md`. OPEN final numeric values, exact mapping for all relationship/Palace endings, and final confirmation of 2 pre-Palace / 3 post-Palace strong slots.
 8. **Macro-goal:** concrete mystery, knowledge-fragment catalog and final late route.
 9. **Palace:** exact role/title, court structure, discovery presentation, career details and concrete rewards. Unlock rule 10/10 ordinary Hard Work is fixed.
 10. **Secret Debt/Slave Career:** exact chance within current 10–20% direction, exact loan/debt numbers, Energy penalty, access to School/Activity while locked, income/debt flow and exact rewards.
