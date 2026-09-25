@@ -105,20 +105,36 @@ Progression stats — 12:
 
 Подробности: `SEASONAL_JOB_STAT_MODEL_v1.md`.
 
-## 8. Ordinary roster
+## 8. Ordinary roster and unlocks — LOCKED STRUCTURE
 
 Текущий baseline ordinary roster — 10:
 
-1. Lumber / артель гномов
-2. Satyr Maid / служанка в баре сатиров
-3. Undead Farm / помощница на ферме нежити
+1. Lumber / артель гномов — **доступна с начала**
+2. Satyr Maid / служанка в баре сатиров — **доступна с начала**
+3. Undead Farm / помощница на ферме нежити — **доступна с начала**
 4. Tavern / трактир
 5. Hunter / охотница
 6. Guard / стражница
-7. Artist/Geisha / дом искусств
-8. Assassin / наёмная убийца
-9. Merchant / торговка
+7. Merchant / торговка
+8. Artist/Geisha / дом искусств
+9. Assassin / наёмная убийца
 10. Prostitute / добровольная профессиональная сексуальная работа
+
+На старте доступны **ровно 3 ordinary jobs**.
+
+Остальные 7 открываются по dual-gate:
+- раньше при достижении профильных stat requirements;
+- либо гарантированно позднее по calendar fallback.
+
+Рабочее деление:
+- Year 2 fallback: Tavern, Hunter, Guard, Merchant;
+- Year 3 fallback: Artist/Geisha, Assassin, Prostitute.
+
+Exact stat thresholds определяются balance simulation.
+
+School и meta rewards позволяют пробивать stat-gates раньше, поэтому новые жизни естественно открывают профессии быстрее.
+
+Подробности: `ORDINARY_JOB_UNLOCK_MODEL_v1.md`.
 
 Roster технически расширяем.
 
