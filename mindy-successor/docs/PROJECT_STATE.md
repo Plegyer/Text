@@ -432,3 +432,24 @@
   - No Rent -> ~day8;
   - +1 Energy + No Rent -> most mid jobs day6–9, late jobs day16–25.
 - Это считается желаемой NG+ кривой: challenge shifts away from rent/basic gates toward complex career routes, Activity, Palace and macro-meta content.
+
+
+## Action/time cost correction — relationships are reactive
+
+- Пользователь уточнил reference behavior: relationships/career dialogue обычно не являются отдельной дневной Energy-активностью; они появляются после stat/counter/interaction conditions.
+- SWF research подтверждает:
+  - career scenes запускаются reactive handlers после visit/stat/flag/counter gates;
+  - normal voluntary night partner scenes не имеют universal Stamina penalty;
+  - minor crises входят без Stamina cost;
+  - seasonal competitions могут завершать день без Stamina entry cost.
+- Создан `ACTION_TIME_COST_MODEL_v1.md`: отдельно моделируются daily Energy, Night slot и calendar/day consumption.
+- Default successor rule:
+  - Work = 1 Energy;
+  - School = 1 Energy + money;
+  - Large Activity = explicit ~2 Energy entry;
+  - reactive career/relationship/job-unlock dialogue = 0 Energy;
+  - normal night relationship = Night slot, not daytime Energy;
+  - Night study = Night slot + next-day Energy penalty.
+- `RELATIONSHIP_SYSTEM_DRAFT_v0.md` обновлён: stat/visit/interaction gated dialogue is 0-Energy by default.
+- `MIXED_LIFE_UNLOCK_SIMULATION_v1.md` помечен invalid/superseded: он ошибочно резервировал 1 Energy/day на relationships/other life.
+- `JOB_UNLOCK_SIMULATION_REPORT_v2.md` заменяет эту интерпретацию: текущие focused unlock minima остаются useful; future mixed simulations must specify explicit Activity entries rather than generic life tax.
