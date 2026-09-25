@@ -494,3 +494,18 @@
 - Создан master `EXECUTABLE_TZ_v1.md`: единая реализационная спецификация с fixed loop/numbers, jobs, School, housing, relationships, Activity, items, endings/meta, state architecture, Resolver, migrations, UI, tests and implementation order.
 - Создан `IMPLEMENTATION_PACKAGE_A1_v1.md`: ready-to-code first migration package against stable `prior-work/astra/prototype-m3.2/`, exact allowed files/tests and schema-3 -> target state policy.
 - Следующий implementation step после отдельного начала code work: package A1, затем A2 Condition/Effect v2.
+
+
+## GIF-first presentation constraint — locked
+
+- Пользователь уточнил production reality: сложных анимаций/animation pipeline у проекта практически нет и брать их неоткуда.
+- Визуальный baseline теперь: **одно постоянное центральное media-окно**, в котором по текущему событию заменяется нужная GIF.
+- Создан `GIF_CENTRAL_STAGE_CONTRACT_v1.md`.
+- GIF является primary dynamic format; static image/text являются fallback.
+- Work -> result -> reactive career -> relationship -> Night/ending используют одно и то же central stage, меняя только `presentationId`.
+- Gameplay не ждёт окончания GIF loop, GIF не применяет mechanics и не влияет на RNG/state.
+- GIF reuse между несколькими похожими repeatable событиями считается нормальным production practice.
+- Не требуется для first production scope: skeletal animation, sprite sheets, lip sync, runtime compositing или timeline editor.
+- Save хранит scene/variant/presentation identity, но не animation frame/time; reload просто перезапускает GIF той же сцены.
+- `MEDIA_PRESENTATION_CONTRACT_v0.md`, `TARGET_GAME_SHELL_v0.md` и `EXECUTABLE_TZ_v1.md` синхронизированы.
+- A1 state/save migration этим решением не меняется; constraint начинает напрямую влиять на Phase B product shell/media integration.
