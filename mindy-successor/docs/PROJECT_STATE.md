@@ -77,3 +77,8 @@
 - Coax loot resolver теперь разобран по normal main-combat monster IDs 0–52: rare tiers имеют реальные вероятности 1/11, 1/16, 1/21 и 1/41; common loot обычно поддерживает expedition consumables, rare loot часто даёт equipment; bosses/story enemies в основном дают fixed money или joke outcomes. Blob имеет две UI-string ошибки, а IDs 47–50 делят один $666 branch. `_coaxStoleRare` не имеет найденного persistent/meta consumer вне combat.
 - Special dungeon map architecture дополнительно подтверждена: scene transitions используют `nextDest` как route/reason token и destination-side `dungeonX/dungeonY` как spawn state; chests сохраняются через `chestsOpened[]`; сезонные elemental pedestals одновременно выдают sword+armour element components; quest flags могут заменить бой у того же map gate на scripted movement/return event. D3 receiver понимает `mazeFail` и `mazeSucceed`, но прямой main-ABC setter `mazeSucceed` пока не найден.
 - Детали зафиксированы в `original_coax_loot_verified.md` и `original_dungeon_special_map_mechanics_verified.md`.
+
+
+- [User playthrough] Уточнение по обычной границе run: конец последнего года штатно приводит к концовке и завершению игры. Это больше не считается отдельным открытым вопросом.
+- Combat ID cleanup: ID 43 = Aember; IDs 47–50 — четыре scaling-варианта Soo, выбираемые по `sooGirlsCollected`; ID 45 не имеет найденного normal `_monsterRandomPick` assignment и считается unused/unassigned slot. Space IDs 58–59 не имеют отдельной Coax-награды в normal resolver.
+- `OPEN_QUESTIONS.md` очищен от уже закрытых core/job/school/meta/dungeon вопросов; дальнейший original-analysis должен добавлять новый архитектурный принцип, а не превращаться в exhaustive atlas.
