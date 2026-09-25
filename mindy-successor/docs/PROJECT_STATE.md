@@ -362,3 +362,15 @@
 - Создан `META_REWARD_PHILOSOPHY_v1.md`: сильные meta rewards (+Energy, rent relief, starting money, carry-over и т.п.) снова считаются желательными типами награды; late profile должен заметно ломать ранние ограничения.
 - Создан `HARD_WORK_META_REWARDS_v0.md`: candidate simple automatic +5 thematic starting-stat reward на каждую из 10 ordinary Hard Work endings; exact mapping ещё balance candidate.
 - `BALANCE_SIMULATION_REPORT_v2.md` отменяет неправильные выводы v1: не требовать seasonal breadth для простой Hard Work ending и не пытаться избегать School repair loop.
+
+
+## Ordinary job availability — locked clarification
+
+- На старте доступны **ровно 3** ordinary professions: Lumber, Satyr Maid, Undead Farm.
+- Successor сохраняет ключевой original principle: поздние ordinary jobs имеют **dual-gate** — ранний unlock по профильным stats или гарантированный calendar fallback.
+- Target grouping: 3 стартовые; 4 mid jobs с Year 2 fallback (Tavern, Hunter, Guard, Merchant); 3 late jobs с Year 3 fallback (Artist/Geisha, Assassin, Prostitute).
+- Exact stat thresholds ещё balance work.
+- School может открыть job раньше через целенаправленную прокачку нужных stats.
+- Meta rewards автоматически ускоряют profession unlocks через более сильные starting stats/money/Energy/School access.
+- Palace не использует year fallback: только 10/10 ordinary Hard Work.
+- Детали: `ORDINARY_JOB_UNLOCK_MODEL_v1.md`.
