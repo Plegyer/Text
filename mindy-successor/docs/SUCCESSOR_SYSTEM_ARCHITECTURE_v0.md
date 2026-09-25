@@ -1,5 +1,7 @@
 # Successor — system architecture v0
 
+> **SUPERSEDED:** технический baseline перенесён в `SUCCESSOR_SYSTEM_ARCHITECTURE_v1.md`. Этот файл сохранён как исторический conceptual draft.
+
 Статус: архитектурный каркас, основанный на подтверждённых сильных/слабых сторонах Simply Mindy.
 
 Этот документ НЕ фиксирует:
