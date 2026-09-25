@@ -12,12 +12,13 @@
 
 1. Последнее прямое решение пользователя в текущем проекте.
 2. `USER_VISION_AND_ACCEPTANCE.md`.
-3. `NEW_GAME_SPEC_v0.md` — только те пункты, которые не были позже уточнены.
-4. Target architecture v1 contracts.
-5. Более новые product design drafts.
-6. Historical prototype/M3.2 implementation.
-7. WIP M3.3.
-8. Reverse-engineering findings — как reference evidence, а не автоматический successor rule.
+3. `USER_DECISIONS_LOCKED_v1.md`.
+4. `NEW_GAME_SPEC_v1.md`.
+5. Target architecture v1 contracts.
+6. Более новые product design drafts.
+7. Historical prototype/M3.2 implementation.
+8. WIP M3.3.
+9. Reverse-engineering findings — как reference evidence, а не автоматический successor rule.
 
 Если конфликт не разрешается по дате/статусу — записать его, не выбирать молча.
 
@@ -25,8 +26,8 @@
 
 1. `USER_VISION_AND_ACCEPTANCE.md`
 2. `PROJECT_STATE.md`
-3. `OPEN_QUESTIONS.md`
-4. `USER_DECISION_PACKET_v0.md`
+3. `USER_DECISIONS_LOCKED_v1.md`
+4. `OPEN_QUESTIONS.md`
 5. `LIFE_REQUIREMENTS_TRACEABILITY_v0.md`
 
 ## 3. Architecture baseline
@@ -53,7 +54,9 @@ Historical:
 ### Jobs
 - `JOB_ROSTER_RECONCILIATION_v1.md`
 - `JOB_SYSTEM_MATRIX_v0.md`
-- `JOB_STAT_TRADEOFF_PASS_v0.md`
+- `SEASONAL_JOB_STAT_MODEL_v1.md`
+- `SUCCESSOR_JOB_SEASON_MATRIX_v0.csv`
+- `JOB_STAT_TRADEOFF_PASS_v0.md` (historical/superseded)
 
 Career drafts:
 - Lumber
@@ -70,12 +73,15 @@ Career drafts:
 - Poverty/Secret Debt hidden career
 
 ### Stats
-- `STAT_SYSTEM_DRAFT_v0.md`
-- `STAT_COVERAGE_MATRIX_v1.md`
-- `STAT_MODEL_RECOMMENDATION_v2.md`
+- `TARGET_STAT_SYSTEM_v1.md`
+- `STAT_COVERAGE_MATRIX_v2.md`
+- `STAT_SYSTEM_DRAFT_v0.md` (historical)
+- `STAT_COVERAGE_MATRIX_v1.md` (historical)
+- `STAT_MODEL_RECOMMENDATION_v2.md` (historical)
 
 ### School
-- `SCHOOL_SYSTEM_DRAFT_v0.md`
+- `SCHOOL_SYSTEM_DRAFT_v1.md`
+- `SCHOOL_SYSTEM_DRAFT_v0.md` (historical)
 
 ### Relationships
 - `RELATIONSHIP_SYSTEM_DRAFT_v0.md`
@@ -127,11 +133,13 @@ Use `research/` when:
 
 Do not require every executor to reread all SWF research.
 
-## 8. Decision placeholders
+## 8. Locked decisions vs open balance
 
-Until user locks D1–D12:
-- do not silently hard-code recommendation values in production content;
-- architecture test fixtures may use synthetic temporary values clearly named as fixtures.
+High-impact D1–D12 are resolved in `USER_DECISIONS_LOCKED_v1.md`.
+
+Do not reopen them implicitly.
+
+Still-open numeric/content decisions are listed in `OPEN_QUESTIONS.md`. Test fixtures may use synthetic temporary values only where the target number/content is explicitly still open.
 
 ## 9. Status words
 
