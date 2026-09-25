@@ -240,3 +240,14 @@
 - Минимум три distinct outcomes: Hard Work, Forewoman/leadership, Forest multi-system route; relationship/global endings могут существовать параллельно.
 - Exact thresholds/stats/salary/NPC/text/meta rewards пока не фиксированы.
 - Документ служит проверкой LIFE-01/02/03/04/09/11/12/13/14/16 и эталоном требуемой глубины для остальных jobs.
+
+
+## Item / Palace / meta macro-goal design
+
+- Создан `ITEM_SYSTEM_DRAFT_v0.md`: предметы должны в первую очередь открывать capabilities/actions/routes, а не быть набором пассивных процентов. Определены tools, key/route items, consumables, contextual equipment/loadout, trade goods и relationship items.
+- Inventory остаётся run-state; meta может открывать стартовый item/source/recipe, но не превращает профиль в бесконечный persistent inventory.
+- Создан `PALACE_HIDDEN_CAREER_DRAFT_v0.md`: Дворец проектируется как полноценная late/meta career, а не просто дорогая работа. Unlock идёт через несколько уникальных Hard Work achievements; exact required count остаётся OPEN.
+- Palace должен реально использовать legacy прошлых профессий и иметь минимум три outcome families: Palace Hard Work, Court Power, Inner Truth/world route.
+- Создан `META_MACRO_GOAL_DRAFT_v0.md`: meta разделён на utility unlocks и persistent knowledge/world facts. Большая цель строится через комбинацию разных жизненных перспектив, а не через один mystery-percent и не требует автоматически пройти все jobs.
+- Palace — convergence point, но не единственный источник global mystery.
+- `LIFE_REQUIREMENTS_TRACEABILITY_v0.md` обновлён: LIFE-11, LIFE-14 и LIFE-15 теперь имеют сильные design drafts, но ещё требуют playable content proof.
