@@ -13,8 +13,8 @@
 
 | ID | Требование | Текущее покрытие | Статус | Что ещё нужно |
 |---|---|---|---|---|
-| LIFE-01 | Профессия = повторяемый труд + самостоятельная разветвлённая жизнь | Job architecture + three full starting career drafts | STRONG DRAFT | implementation/content proof + remaining careers |
-| LIFE-02 | Простая трудовая судьба + сложные ветки | Hard Work rule; 3+ outcome families per job | PARTIAL | thresholds/reward hierarchy + full example |
+| LIFE-01 | Профессия = повторяемый труд + самостоятельная разветвлённая жизнь | Job architecture + full drafts for all 10 ordinary careers | STRONG DESIGN | implementation/content proof |
+| LIFE-02 | Простая трудовая судьба + сложные ветки | Hard Work + 3+ outcome families across all 10 career drafts | STRONG DRAFT | common threshold/reward hierarchy pass |
 | LIFE-03 | Статы работают в нескольких системах | Stat Coverage Matrix; School; Activity; jobs | PARTIAL | final stat lock + concrete checks/deltas |
 | LIFE-04 | Сезоны меняют игру | Calendar architecture; job matrix; Activity role | PARTIAL | seasonal content rules + economy/calendar numbers |
 | LIFE-05 | Бедность = иной образ жизни | Secret Debt/Slave route; housing/night architecture | PARTIAL | ordinary non-secret poverty loop + economy model |
