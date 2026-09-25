@@ -251,3 +251,12 @@
 - Создан `META_MACRO_GOAL_DRAFT_v0.md`: meta разделён на utility unlocks и persistent knowledge/world facts. Большая цель строится через комбинацию разных жизненных перспектив, а не через один mystery-percent и не требует автоматически пройти все jobs.
 - Palace — convergence point, но не единственный источник global mystery.
 - `LIFE_REQUIREMENTS_TRACEABILITY_v0.md` обновлён: LIFE-11, LIFE-14 и LIFE-15 теперь имеют сильные design drafts, но ещё требуют playable content proof.
+
+
+## Concrete Lumber cross-system product slice
+
+- Создан `LUMBER_RELATIONSHIP_CHAIN_v0.md`: concrete major-NPC chain для бригадира с professional / close / rival routes. Relationship начинается через career, продолжается добровольной night opportunity, требует внешнего School/Tavern/Hunter/Item/Activity input и затем меняет Lumber career.
+- Создан `FOREST_ACTIVITY_SLICE_v0.md`: конкретный лесной product slice большой Activity. Entry = 2 daily Energy; внутри отдельные endurance/supplies/time, три route contexts, navigation/physical/magical challenge families, seasonal topology и city-preparation feedback.
+- Создан `INITIAL_ITEM_CATALOG_v0.md`: 10 конкретных capability-based предметов, включая Reinforced Axe, Rope Kit, Preservation Kit, Boundary Token, Sealed Pass, Court Attire и Debt Ledger. Предметы открывают actions/routes, а не существуют только как проценты.
+- Сквозная acceptance chain теперь описана: Lumber milestone -> Foreman relationship -> night meeting -> external fact/item -> Forest Activity -> result fact -> Resolver -> career/relationship branch -> multiple endings.
+- Это первый продуктовый пример, который одновременно проверяет LIFE-10/11/12 поверх уже существующего Lumber career draft.
