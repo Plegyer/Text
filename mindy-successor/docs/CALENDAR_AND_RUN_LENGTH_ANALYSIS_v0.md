@@ -2,7 +2,7 @@
 
 Дата: 2026-09-25.
 
-Статус: **DESIGN ANALYSIS / USER DECISION REQUIRED BEFORE LOCK**.
+Статус: **ANALYSIS WITH ACCEPTED TARGET**. User accepted Option A: 160 days = 4 years x 40 days, 4 seasons x 10 days.
 
 Основание:
 - base daily Energy = 3;
@@ -106,10 +106,7 @@ Each season = 28 days.
 
 ## 6. Recommendation
 
-Рабочая рекомендация:
-**160–224 days total**.
-
-Предпочтительный первый balance target:
+Зафиксированный target:
 **160 days (4x40)**.
 
 Причины:
@@ -198,8 +195,6 @@ Exact numbers/probability всё ещё OPEN.
 
 ## 13. Открыто
 
-- final 160 vs 224;
-- exact season days;
 - run-end grace;
 - year naming;
 - extra-time meta reward;
