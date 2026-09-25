@@ -4,7 +4,7 @@
 
 Статус: **ASSEMBLY SKELETON**, не финальный ТЗ.
 
-Цель: будущий полный документ должен быть собран по этой структуре после закрытия high-impact decisions из `USER_DECISION_PACKET_v0.md`.
+Цель: будущий полный документ собирается по этой структуре. High-impact decisions уже зафиксированы в `USER_DECISIONS_LOCKED_v1.md`; оставшиеся open numbers/content перечислены в `OPEN_QUESTIONS.md`.
 
 ## 0. Document contract
 
@@ -43,14 +43,14 @@ Include:
 - ending commitment;
 - Meta/New Run.
 
-Resolve D4 before final numbers.
+Calendar already locked: 160 days = 4x40, seasons x10.
 
 ## 3. Character model
 
-Resolve D1/D2/D12.
+Use `TARGET_STAT_SYSTEM_v1.md`.
 
 Specify:
-- stat IDs;
+- 12 progression stat IDs + separate Lust axis;
 - caps/floors;
 - starting values;
 - allocation;
@@ -96,7 +96,7 @@ Exact:
 
 ## 7. Calendar
 
-Resolve D4.
+Locked baseline: 160 days = 4 years x 40 days, 4 seasons x10.
 
 Specify:
 - total run;
@@ -124,9 +124,9 @@ After calendar:
 For each ordinary career:
 - availability;
 - repeatable work;
-- D3 tradeoff style/fixed package;
+- seasonal stat package from `SEASONAL_JOB_STAT_MODEL_v1.md`;
 - wage formula;
-- seasonal pools;
+- seasonal content pools;
 - career stages;
 - relationships;
 - School hooks;
@@ -157,10 +157,10 @@ Specify:
 
 ## 11. Palace
 
-Resolve D6.
+Unlock fixed: all 10 ordinary Hard Work outcomes.
 
 Specify:
-- unlock count;
+- 10/10 prerequisite representation;
 - discovery;
 - repeatable assignments;
 - legacy-sensitive options;
@@ -216,7 +216,7 @@ Specify:
 
 ## 16. Large Activity
 
-Resolve D7/D8.
+Direction locked to expedition umbrella; camp allowed for multi-day expeditions.
 
 Specify:
 - umbrella mechanics;
@@ -233,7 +233,7 @@ Specify:
 
 ## 17. Endings / Meta
 
-Resolve D5.
+Policy locked: knowledge/content automatic; strong rule modifiers selectable.
 
 Specify:
 - eligibility;
@@ -296,7 +296,7 @@ Include:
 
 ## 22. Production scope
 
-Resolve D9–D11.
+Staged internal milestones locked; full public 1.0 includes Secret Debt and Palace/meta pillars.
 
 Specify:
 - internal milestone sequence;
