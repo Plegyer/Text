@@ -76,6 +76,8 @@
 - fresh hub entry сбрасывает stepCount, Camp же продолжает expedition через новый глобальный day.
 
 Осталось:
-- точное место/механизм пользовательски наблюдаемого расхода 2 overworld energy на вход;
+- dungeon entry implementation resolved: click handler only enforces stamina >= 2 and does not subtract 2; outer resource is then committed/reused as expedition endurance, while Escape zeros it. Keep user-facing rule as a 2-energy entry commitment, but do not invent a missing subtraction.
 - полный random-enemy pool по dungeon/season, если понадобится детальный combat atlas;
 - все time-of-day event gates, если они влияют не только на lighting/clock.
+
+- time-of-day generic enemy pools: exhaustive stepCount scan found none; treat time-of-day as clock/lighting/deadline unless a scene-specific exception is later found.
