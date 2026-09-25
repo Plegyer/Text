@@ -31,12 +31,12 @@
 
 Они не должны быть придуманы реализацией самостоятельно:
 
-1. Финальный список core stats.
-2. Ordinary roster reconciliation: текущий provisional набор = три старта + таверна, охотники, стража, гейша, наёмный убийца, торговец, проститутка. Проверить, нужны ли дополнительные ordinary jobs сверх 10 и остаётся ли Таверна самостоятельной рядом со служанкой в баре.
+1. Финальный stat model: проверить рабочую гипотезу 9 progression stats + отдельная Похоть; решить, различаются ли Сексуальность и Похоть, и участвует ли Похоть в стартовом распределении.
+2. Ordinary roster: provisional 10 профессий теперь разведены механически; OPEN только возможное расширение roster сверх 10 и окончательные названия/fantasy framing.
 3. Hidden Palace profession: identity зафиксирована как поздняя meta-job; OPEN её конкретный gameplay loop, career/endings и required Hard Work progress.
 4. Точная длина run / календарные числа successor.
 5. Economy: wages, school prices, lodging pressure.
-6. School catalog и special-school equivalent.
+6. School: draft tracks/progression готовы; OPEN exact curriculum, цены, teachers, certificates, education endings/meta rewards и нужен ли отдельный special-school equivalent.
 7. Конкретная replacement large activity вместо original JRPG.
 8. Нужна ли отдельная volatile Ухоженность и другие condition meters.
 9. Relationship model: только stages/counters или нужны affinity/trust axes.
