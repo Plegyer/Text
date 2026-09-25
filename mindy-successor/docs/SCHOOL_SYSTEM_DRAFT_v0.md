@@ -2,7 +2,7 @@
 
 Дата: 2026-09-25.
 
-Статус: **PRODUCT DESIGN DRAFT**, не финальный curriculum/balance.
+Статус: **SUPERSEDED PRODUCT DRAFT**. Current target school design: `SCHOOL_SYSTEM_DRAFT_v1.md`.
 
 Основание:
 - LIFE-03, LIFE-06, LIFE-09, LIFE-12;
