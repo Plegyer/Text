@@ -51,6 +51,8 @@ Create character
 -> visible Meta difference
 ```
 
+Reactive career/relationship scenes in this flow cost 0 daily Energy unless an explicit action definition says otherwise. The Forest Activity entry is the explicit 2-Energy exception. Night relationship meetings consume the Night slot, not daytime Energy.
+
 ## 3. UI requirements
 
 Throughout:
