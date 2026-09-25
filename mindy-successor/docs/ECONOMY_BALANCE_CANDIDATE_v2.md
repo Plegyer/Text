@@ -147,14 +147,16 @@ These are not meant to be one single perk; they represent accumulated endings.
 Test lifestyle:
 - 20 School lessons;
 - 20 Activity entries;
-- 80 other Energy actions;
+- 80 other **explicitly Energy-costed** actions;
 - 160 nights.
+
+Reactive career/relationship dialogue is not part of those 80 actions and normally costs 0 Energy.
 
 ### Fresh
 Required work for rent + tuition:
 ~440 shifts.
 
-Energy required:
+Energy required for explicit-cost actions:
 440 + 20 + 40 + 80 = 580 > 480.
 
 **Not feasible.**
