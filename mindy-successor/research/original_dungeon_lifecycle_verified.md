@@ -62,16 +62,16 @@ Camp scene:
 - stepCount = 0
 - preserves location information so the player can return to the same dungeon area if still able to continue.
 
-Good sleep:
+Good sleep (2/3 actual probability):
 - Stamina += 1
 - HP += 50% of HP Max
 - MP += 50% of MP Max
 - clamp HP/MP to maxima
 - continue expedition
 
-Bad sleep:
+Bad sleep (1/3 actual probability):
 - Stamina -= 1
-- in non-Finale mode, pick one of 12 night-event actor variants
+- in non-Finale mode, pick one of 12 equiprobable night-event actor variants
 - if Stamina <= 0, expedition ends and the player is sent home
 - otherwise continue expedition
 
