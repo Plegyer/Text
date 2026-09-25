@@ -10,12 +10,13 @@
 
 Игрок должен видеть **сцену и жизнь героини**, а не административный dashboard.
 
-Главный экран строится вокруг центрального media stage:
-- изображение;
-- GIF;
-- короткое видео;
-- заменяемая анимация работы;
-- event illustration.
+Главный экран строится вокруг **одного постоянного центрального media stage**.
+
+Production baseline:
+- looping GIF;
+- static image fallback.
+
+При переходе между work/result/event/relationship/night меняется media внутри этого же окна. Отдельная сложная animation system не нужна.
 
 Текст и choices располагаются рядом/поверх него компактно.
 
@@ -227,10 +228,11 @@ Secret debt:
 - unknown/orphan targets валидируются.
 
 Target slots поддерживают:
-- image;
-- GIF;
-- video;
-- возможно sequence/animation descriptor позже.
+- **GIF — основной production format**;
+- image fallback;
+- optional video compatibility later.
+
+Не планировать sprite/skeletal/timeline animation pipeline для первого production scope.
 
 ## 16. Media fallback
 
@@ -292,6 +294,6 @@ Inspector/dev tools могут видеть их отдельно, production UI
 - сколько primary dock buttons;
 - relationships screen visibility;
 - Palace discovery UI;
-- exact media formats/size budgets;
+- exact GIF resolution/file-size budgets;
 - target resolution;
 - editor UX.
