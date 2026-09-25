@@ -43,8 +43,8 @@
 10. Meta rewards: automatic / selectable loadout / slots-budget.
 11. Successor Final Mode / late meta mode.
 12. Реальные seasonal recurring events/competitions — форма движком поддерживается, content ещё не выбран.
-13. Hidden Poverty Career: exact debt/entry rules, Energy penalty, удержание дохода и три конкретные meta rewards.
-14. Засчитывается ли `bound_life` hidden poverty ending в общий Hard Work progress для открытия 11-й профессии.
+13. Secret Debt/Slave Career: точный шанс внутри 10–20%, точные суммы около 2000/20000, Energy penalty, доступность школы/большой Activity после блокировки jobs и отношение Сексуальности к Похоти.
+14. Exact meta rewards трёх обязательных endings и засчитывается ли `bound_life` в общий Hard Work progress для открытия 11-й профессии.
 
 ## Следующий engineering gate
 
