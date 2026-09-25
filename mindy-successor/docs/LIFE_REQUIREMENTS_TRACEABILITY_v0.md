@@ -13,14 +13,14 @@
 
 | ID | Требование | Текущее покрытие | Статус | Что ещё нужно |
 |---|---|---|---|---|
-| LIFE-01 | Профессия = повторяемый труд + самостоятельная разветвлённая жизнь | Job architecture v1; roster; per-job loops/outcome families | PARTIAL | хотя бы одна полная career spec с stages/conditions/scenes |
+| LIFE-01 | Профессия = повторяемый труд + самостоятельная разветвлённая жизнь | Job architecture + three full starting career drafts | STRONG DRAFT | implementation/content proof + remaining careers |
 | LIFE-02 | Простая трудовая судьба + сложные ветки | Hard Work rule; 3+ outcome families per job | PARTIAL | thresholds/reward hierarchy + full example |
 | LIFE-03 | Статы работают в нескольких системах | Stat Coverage Matrix; School; Activity; jobs | PARTIAL | final stat lock + concrete checks/deltas |
 | LIFE-04 | Сезоны меняют игру | Calendar architecture; job matrix; Activity role | PARTIAL | seasonal content rules + economy/calendar numbers |
 | LIFE-05 | Бедность = иной образ жизни | Secret Debt/Slave route; housing/night architecture | PARTIAL | ordinary non-secret poverty loop + economy model |
 | LIFE-06 | Школа самостоятельная | School System Draft v0 | PARTIAL | curriculum/numbers/NPCs/endings |
 | LIFE-07 | Ночь = выбор и последствия | Night contract + Secret Slave forced nights | STRONG DRAFT | concrete ordinary night catalog/lodging economy |
-| LIFE-08 | Ночные встречи развивают линии | Relationship Draft + Night resolver | PARTIAL | major NPC specs and examples |
+| LIFE-08 | Ночные встречи развивают линии | Relationship Draft + Satyr Maid/Lumber concrete patterns | STRONG DRAFT | concrete NPC production specs + implementation proof |
 | LIFE-09 | Малые решения накапливаются | typed counters/facts, repeatable job/events, relationships | PARTIAL | micro-event content policy/quotas |
 | LIFE-10 | Дополнительные занятия meaningful | Large Activity Product Role v0 + `FOREST_ACTIVITY_SLICE_v0.md` | STRONG DRAFT | implement/playtest the slice; decide full Activity scope |
 | LIFE-11 | Предметы открывают возможности | `ITEM_SYSTEM_DRAFT_v0.md` + `INITIAL_ITEM_CATALOG_v0.md` + Forest/Lumber chain | STRONG DRAFT | implement/playtest capability chain |
