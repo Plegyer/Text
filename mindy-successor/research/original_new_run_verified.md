@@ -159,7 +159,7 @@ The click handler confirms:
 - enable -> year = 0
 - disable -> year = 1
 
-Since a normal year is 40 days, this effectively adds one full extra year / 40 days to the ordinary run.
+Since normal mode resets `day` to 1 whenever `day >= 41` while incrementing `year`, starting at `year=0` adds one full extra 40-day calendar year before Years 1–4. The terminal Year-5 route is therefore reached after up to 200 normal-calendar days instead of 160.
 
 ## Architectural model
 
