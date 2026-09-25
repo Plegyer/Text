@@ -9,7 +9,7 @@
 
 Главный файл состояния: docs/PROJECT_STATE.md
 Прямые находки из SWF: docs/ORIGINAL_CORE_FINDINGS.md
-Зафиксированный каркас новой игры: docs/NEW_GAME_SPEC_v0.md
+Текущий зафиксированный каркас новой игры: docs/NEW_GAME_SPEC_v1.md
 
 ## Замысел пользователя и ожидаемый результат
 
@@ -18,6 +18,6 @@
 
 ## Текущий порядок чтения
 
-Новый исполнитель должен начинать с [DOCUMENT_AUTHORITY_AND_INDEX_v0.md](docs/DOCUMENT_AUTHORITY_AND_INDEX_v0.md). В нём указан приоритет документов, текущий architecture baseline, product drafts, historical материалы и список decision placeholders.
+Новый исполнитель должен начинать с [DOCUMENT_AUTHORITY_AND_INDEX_v0.md](docs/DOCUMENT_AUTHORITY_AND_INDEX_v0.md). В нём указан приоритет документов, текущий architecture baseline, product drafts и historical материалы. Принятые решения дополнительно собраны в `docs/USER_DECISIONS_LOCKED_v1.md`.
 
 Для сборки будущего полного исполнительного ТЗ использовать [EXECUTABLE_TZ_SKELETON_v0.md](docs/EXECUTABLE_TZ_SKELETON_v0.md). Для порядка реализации — [IMPLEMENTATION_PHASES_AND_PACKAGES_v0.md](docs/IMPLEMENTATION_PHASES_AND_PACKAGES_v0.md).
