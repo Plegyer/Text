@@ -374,3 +374,21 @@
 - Meta rewards автоматически ускоряют profession unlocks через более сильные starting stats/money/Energy/School access.
 - Palace не использует year fallback: только 10/10 ordinary Hard Work.
 - Детали: `ORDINARY_JOB_UNLOCK_MODEL_v1.md`.
+
+
+## Ordinary job unlock threshold simulation
+
+- Создан `ORDINARY_JOB_UNLOCK_THRESHOLDS_v0.csv` и `JOB_UNLOCK_SIMULATION_REPORT_v1.md`.
+- Candidate mid gates:
+  - Tavern: Charm 45 + Sociability 35 -> fresh theoretical day 10;
+  - Guard: Strength 30 + Endurance 30 + Manners 20 -> day 13;
+  - Merchant: Wits 20 + Reason 20 + Sociability 15 -> day 21;
+  - Hunter: Dexterity 25 + Endurance 20 + Wits 15 -> day 22.
+- Candidate late gates:
+  - Prostitute: Sexuality 55 + Charm 40 + Sociability 35 -> fresh theoretical day 31;
+  - Assassin: Dexterity 30 + Wits 25 + Reason 20 -> day 32;
+  - Artist/Geisha: Creativity 35 + Manners 25 + Grooming 30 -> day 33.
+- Эти дни — экстремальные theoretical minima при полной специализации, normal rent и почти полном отказе от relationships/Activity.
+- Calendar fallback остаётся Year 2 для 4 mid jobs и Year 3 для 3 late jobs.
+- Mid-meta illustrative fixture с большими economy/energy rewards сдвигает mid jobs к day 4–6, late jobs к day 13–24; late-meta fixture — большинство ordinary jobs к первым дням.
+- Это подтверждает, что meta easing автоматически ускоряет профессии через stats/money/Energy/School, без специального "early job unlock" правила.
