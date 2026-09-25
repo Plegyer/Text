@@ -100,3 +100,12 @@
 - Поэтому внешняя activity может изменить stat/flag, а соответствующая career scene запускается только после возврата на main. Явного общего event arbitration/consumed flag нет; код полагается на flags и listener/engine ordering.
 - Для successor полезно сохранить central reaction point, но заменить listener-spaghetti на explicit eligible-event queue + priority + one-event-at-a-time resolution.
 - Подробности: `original_main_reactive_router_verified.md`.
+
+
+## Переход от reverse-engineering к successor architecture
+
+- Создан `docs/SUCCESSOR_SYSTEM_ARCHITECTURE_v0.md`: технический каркас новой игры без фиксации пока открытых content/balance решений.
+- Каркас явно разделяет MetaState / RunState / DayState / ActivityState; сохраняет reactive progression, но заменяет original main-listeners на explicit Event Resolver с очередью/priority.
+- Work разделён на data-driven repeatable JobDefinition и CareerStateMachine; Night использует отдельный resolver и NextDayModifiers; large activity имеет отдельный state и не переиспользует дневную Energy как внутреннюю endurance.
+- Calendar, optional day events, endings и meta rewards проектируются data-driven, чтобы избежать hard-coded scene checks и unreachable branches оригинала.
+- Следующий технический milestone для новой игры: минимальный vertical slice с одним полностью реализованным job, school, lodging/night, Event Resolver, ending commitment и одним meta modifier.
