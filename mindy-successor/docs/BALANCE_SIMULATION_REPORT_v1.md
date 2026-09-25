@@ -2,7 +2,7 @@
 
 Дата: 2026-09-25.
 
-Статус: **EXECUTED BALANCE ANALYSIS**.
+Статус: **SUPERSEDED INTERPRETATION**. Raw calculations remain historical; design conclusions are replaced by `BALANCE_SIMULATION_REPORT_v2.md`.
 
 Основание:
 - locked 160-day calendar;
