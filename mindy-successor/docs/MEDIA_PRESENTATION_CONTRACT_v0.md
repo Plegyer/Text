@@ -14,10 +14,12 @@ Gameplay content ссылается на стабильный `presentationId`.
 
 Presentation layer отдельно разрешает:
 - текст;
-- image;
-- GIF;
-- video;
+- **GIF как основной production dynamic format**;
+- static image fallback;
+- optional video only if later available;
 - fallback.
+
+Нормативный production layout: `GIF_CENTRAL_STAGE_CONTRACT_v1.md`.
 
 Замена media не меняет conditions/effects/state.
 
@@ -95,22 +97,28 @@ Media swap не имеет права:
 
 Missing optional art не ломает run.
 
-## 6. Work animation
+## 6. Work presentation
 
-Ordinary shift может показывать:
-- reusable animation;
-- season-specific background;
-- stage-specific media.
+Ordinary shift показывает media в **том же постоянном central stage**.
 
-После reactive event central stage заменяется event presentation без смены механического flow.
+Baseline:
+- reusable looping GIF;
+- optional season-specific GIF;
+- static fallback.
 
-## 7. Video/GIF
+После reactive event этот же central stage просто заменяет current presentation на event GIF/static fallback. Никакая отдельная animation system не требуется.
+
+## 7. GIF baseline
+
+GIF — primary dynamic production asset.
 
 Требования:
-- пользователь может отключить/снизить анимацию;
-- video имеет poster/fallback;
-- ключевая информация не существует только в видео;
-- alt/subtitle metadata.
+- loop while presentation active;
+- animation can be disabled;
+- when disabled use first/static fallback;
+- essential information exists in text;
+- asset swap never changes mechanics;
+- video support остаётся optional compatibility, не production requirement.
 
 ## 8. Custom overrides
 
