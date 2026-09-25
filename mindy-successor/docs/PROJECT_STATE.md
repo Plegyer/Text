@@ -54,7 +54,7 @@
 
 Эти пункты — референс архитектуры, а не обязательные правила successor.
 
-- Глобальный day идёт накопительно через весь обычный run: Year 2 начинается на day 41, Year 3 на 81, Year 4 на 121, Year 5 на 161; сезоны повторяются каждые 10 дней без сброса day.
+- Исправлено после повторной проверки main ABC: в normal mode `day` — день внутри года. При `day >= 41` код делает `year += 1` и `day = 1`; сезоны заново идут 1–10 / 11–20 / 21–30 / 31–40. После Year 4 rollover в Year 5 запускается terminal time-up / Sinner's Orb ending route. В Final Mode yearly rollover отключён, поэтому там `day` идёт cumulative до отдельного лимита 100.
 
 - Ночной слой — отдельный priority resolver. Подтверждены forced overrides: sexWhitestWhite полностью обходит normal sleep/rent menu и по мере ветки оставляет на следующий день 2 -> 1 -> 0 Stamina; noRent outdoor sleep всегда оставляет 2 Stamina, снимает по 1 Charisma/Cleanliness/Class и имеет сезонные/random sexual variants; Shirley haunt может отправить в sleepScared с 2 Stamina. Обычный paid sleep остаётся отдельным меню партнёров/обучения.
 
@@ -82,3 +82,8 @@
 - [User playthrough] Уточнение по обычной границе run: конец последнего года штатно приводит к концовке и завершению игры. Это больше не считается отдельным открытым вопросом.
 - Combat ID cleanup: ID 43 = Aember; IDs 47–50 — четыре scaling-варианта Soo, выбираемые по `sooGirlsCollected`; ID 45 не имеет найденного normal `_monsterRandomPick` assignment и считается unused/unassigned slot. Space IDs 58–59 не имеют отдельной Coax-награды в normal resolver.
 - `OPEN_QUESTIONS.md` очищен от уже закрытых core/job/school/meta/dungeon вопросов; дальнейший original-analysis должен добавлять новый архитектурный принцип, а не превращаться в exhaustive atlas.
+
+
+- Seasonal competition layer теперь разобран: festival intro на day 5; recurring contest dates каждого года = day 10/16/28/39; четыре contests используют разные challenge types и по завершении переводят прямо в night transition, не расходуя обычную Stamina.
+- Contest progression хранит одновременно `contestWonList[0..3]` (breadth/mastery) и cumulative `contestsWon/contestsLost`. Four distinct wins, five total wins и six total losses дают три отдельные Sinner's Orb/ending routes с разными meta rewards.
+- Подробности: `original_seasonal_competitions_verified.md`.
