@@ -110,3 +110,21 @@ Darkly:
 `base map + seasonal variant + time-of-day variant + quest flags`
 
 Это объясняет, почему одна физическая область может ощущаться существенно по-разному без отдельной сцены на каждую комбинацию.
+
+
+## Generic random encounters: важное уточнение
+
+Проверка SceneEvents_44::init показывает, что обычные random pools задаются по dungeon/region и в самих вызовах randomInt не переключаются по season:
+
+- Dungeon 1: IDs 0–6 / 0–5 / 0–3 в зависимости от subregion;
+- Dungeon 2: IDs 12–15;
+- Dungeon 3: IDs 31–34.
+
+Seasonal enemy change реализуется поверх этого через fixed actors, quest encounters и route geometry.
+
+Самый наглядный пример Dungeon 2 Ghostings:
+- scene metadata: actors 307–313 = rafts, 314–316 = fakeTile blockers;
+- в Ghostings fakeTile actors удаляются;
+- вне Ghostings удаляются rafts и меняются water/rain layers.
+
+То есть Ghostings открывает физическую конфигурацию маршрута к дополнительному контенту, а не заменяет базовый random(12,15) pool.
