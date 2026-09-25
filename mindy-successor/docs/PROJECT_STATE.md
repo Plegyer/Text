@@ -291,3 +291,13 @@
 - Merchant — экономика/предметы/supply network, не shop UI.
 - Все 10 сохраняют общий принцип repeatable work + reactive career progression + Hard Work + 2+ более сложных outcome families.
 - Следующий общий design pass: job stat tradeoffs, meta reward hierarchy и content production budget.
+
+
+## Roster-wide tradeoff / rewards / production pass
+
+- Создан `JOB_STAT_TRADEOFF_PASS_v0.md`. Он проверяет правило +2/+2/-1 на всём roster и показывает, что фиксированный permanent -1 естественен не для всех профессий. Самые проблемные: Prostitute, Undead Farm, Tavern, частично Satyr Maid.
+- Предложение SOL, НЕ lock: сохранить пользовательское правило +2/+2/-1, но дать каждой профессии 2–3 work styles с разными tradeoffs. Так отрицательная ось становится выбором специализации, а не моральной/стереотипной оценкой всей профессии.
+- Создан `META_REWARD_HIERARCHY_DRAFT_v0.md`: Hard Work rewards должны быть умеренными и тематическими; branch mastery сильнее и уже; cross-system endings дают rule/route/knowledge unlocks; Palace/meta rewards относятся к позднему уровню. +daily Energy не использовать как лёгкую стажевую награду.
+- Для Secret Debt rewards определены только families: paid_freedom = economic resilience/debt knowledge; bound_life = hidden-system familiarity; takeover = сильный network/status/rule-changing reward. Exact rewards OPEN.
+- Создан `CONTENT_PRODUCTION_BUDGET_DRAFT_v0.md`: ориентир обычной профессии = 8–16 repeatable variants, 6–10 major career milestones, 3–5 ending families, 1 major relationship chain и 1–3 external hooks. Это budget hypothesis, не quota lock.
+- При среднем объёме 10 ordinary careers дают порядка ~290 крупных/средних content units ещё до общих School/Activity/night/calendar systems; поэтому обязательны placeholders, reusable variant rules и bounded production packages.
