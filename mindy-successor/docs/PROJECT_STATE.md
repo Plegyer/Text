@@ -148,3 +148,17 @@
 - Save architecture различает schemaVersion и contentVersion; migrations обязаны сохранять resolved randomness/pending flow и exactly-once costs/rewards.
 - Создан `ARCHITECTURE_MIGRATION_SLICE_v1.md`: первый engineering gate должен доказать migration M3.2 -> target-shaped state, cross-system resolver, cascade, Night, resumable test Activity и ending/meta exactly-once до масштабирования контента.
 - Создан `SOL_ARCHITECTURE_HANDOFF.md` как компактная точка входа для независимого Astra-review через GitHub.
+
+
+## Hidden Poverty Career — user-directed design
+
+- Пользователь уточнил LIFE-05: бедность должна стать отдельной скрытой карьерой/зависимостью по типу рабства, а не только плохим ночлегом.
+- В bound-state ночь перехватывается обязательной секс-работой; она занимает normal night flow и даёт отрицательный NextDay Energy modifier. Точная величина штрафа пока OPEN.
+- Hidden Poverty Career не входит автоматически в 10 ordinary jobs и может пересекаться с любой обычной профессией.
+- Пользователь зафиксировал минимум три outcome/reward families:
+  1. `paid_freedom` — расплатиться деньгами и выкупить свободу;
+  2. `bound_life` — не выйти из зависимости и завершить жизнь в ней, аналог простой стажевой/Hard Work судьбы;
+  3. `takeover` — убить рабовладельца и занять его место, сложная multi-system ветка.
+- Точные meta rewards этих трёх исходов пока не фиксированы; takeover должен иметь более сильный масштаб награды, чем простая стажевая ветка.
+- Создан `docs/POVERTY_HIDDEN_CAREER_DRAFT_v0.md` с state model, NightFlow integration, cross-system hooks и acceptance examples.
+- OPEN: считается ли `bound_life` общим Hard Work progress для открытия 11-й профессии.
