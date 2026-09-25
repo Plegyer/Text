@@ -220,3 +220,14 @@
 - Рабочее предложение SOL для large Activity: expedition umbrella с exploration/navigation + varied stat challenges + отдельными puzzle/tactical/investigation encounters; это НЕ user lock.
 - Создан `LIFE_REQUIREMENTS_TRACEABILITY_v0.md`, связывающий LIFE-01…18 с текущими contracts/design docs.
 - Самые крупные remaining product gaps по traceability: ordinary poverty/economy, target UI shell, одна полностью расписанная career, item system, meta macro-goal и content production budget.
+
+
+## Economy / poverty / target shell
+
+- Создан `ECONOMY_AND_POVERTY_DRAFT_v0.md`: обычная бедность отделена от Secret Debt route. Минимальный housing ladder = normal room / cheap lodging / street; street всегда позволяет продолжить run, но даёт next-day penalty и отдельный event pool.
+- Anti-softlock rule: стартовые работы не требуют денег/обязательного предмета для базовой смены; игрок с 0 money должен иметь достижимый способ заработать.
+- Secret lender остаётся редким one-time street event и не является стандартным poverty exit.
+- Economy до числового lock должна пройти simulations poor/balanced/grinder/activity/education/debt-trap.
+- Создан `TARGET_GAME_SHELL_v0.md`: основной UI остаётся media-first central stage с persistent HUD day/season/year/Energy/money, compact navigation и сменой media/text внутри того же центрального окна.
+- Secret jobs не спойлерятся UI; pending scenes блокируют обычные действия; school/activity/night имеют отдельные режимы, но не превращают игру в dashboard.
+- Product shell acceptance отделён от технического Architecture Migration Slice.
