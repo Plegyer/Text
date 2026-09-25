@@ -322,3 +322,11 @@
 - Создан `FIRST_RELEASE_SCOPE_DRAFT_v0.md`: предложены staged internal milestones; production proof сначала на трёх стартовых careers, затем roster expansion и late/meta layers.
 - Создан `FULL_TZ_READINESS_REVIEW_v0.md`: фундаментальные системы в основном достаточно зрелые; до полного executable ТЗ не хватает главным образом user locks, числового balance и конкретного macro lore.
 - Создан `USER_DECISION_PACKET_v0.md` с 12 high-impact decisions и рекомендациями SOL. Эти рекомендации НЕ считаются принятыми без решения пользователя.
+
+
+## Execution-document consolidation
+
+- Создан `DOCUMENT_AUTHORITY_AND_INDEX_v0.md`: определён порядок авторитетности и обязательный порядок чтения, чтобы historical M3.2/WIP/research не переопределяли текущий design.
+- Создан `EXECUTABLE_TZ_SKELETON_v0.md`: структура будущего полного исполнительного ТЗ от product statement до Windows delivery, package contracts и appendices.
+- Создан `IMPLEMENTATION_PHASES_AND_PACKAGES_v0.md`: Architecture -> Shell -> Lumber Product Slice -> Starter Trio -> Economy/Poverty -> Roster -> Activity -> Palace/Meta -> Macro -> Polish.
+- README и ASTRA_HANDOFF обновлены ссылками на текущую точку входа.
