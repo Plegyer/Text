@@ -2,7 +2,7 @@
 
 Дата: 2026-09-25.
 
-Статус: **PRODUCT DESIGN DRAFT**.
+Статус: **STRONG PRODUCT DESIGN DRAFT**.
 
 Основание:
 - LIFE-07, LIFE-08, LIFE-12, LIFE-13, LIFE-14;
@@ -124,6 +124,34 @@ Night Resolver собирает доступные добровольные вс
 - может зависеть от сезона, жилья, career stage и relationship stage.
 
 Не использовать один и тот же универсальный счётчик для всех NPC.
+
+## 6a. Energy / trigger semantics
+
+Relationship progression по умолчанию **не является отдельной дневной Energy-активностью**.
+
+Типовой reference-like pattern:
+
+```text
+work / School / another system changes stat/counter/fact
+-> central Resolver sees relationship condition
+-> dialogue/milestone scene opens
+-> scene itself costs 0 daily Energy
+-> choices update RelationshipState
+```
+
+Повторная линия может продвигаться через число рабочих взаимодействий, предыдущих диалогов, night meeting count, stat gate, item/quest fact.
+
+Если встреча происходит ночью:
+- она занимает voluntary Night slot;
+- но сама по себе не получает universal next-day Energy penalty.
+
+Если interaction живёт внутри Large Activity:
+- Activity уже оплатила entry cost;
+- relationship beat внутри неё не платит Energy второй раз.
+
+Explicit date/trip/action может иметь Energy cost только если concrete content definition это отдельно задаёт.
+
+См. `ACTION_TIME_COST_MODEL_v1.md`.
 
 ## 7. Consent / content routing
 
