@@ -23,11 +23,11 @@
 | LIFE-08 | Ночные встречи развивают линии | Relationship Draft + Night resolver | PARTIAL | major NPC specs and examples |
 | LIFE-09 | Малые решения накапливаются | typed counters/facts, repeatable job/events, relationships | PARTIAL | micro-event content policy/quotas |
 | LIFE-10 | Дополнительные занятия meaningful | Large Activity Product Role v0 | PARTIAL | choose actual mechanics and playable product slice |
-| LIFE-11 | Предметы открывают возможности | Activity item rules; job hooks | PARTIAL | item system/catalog contract + concrete cross-system examples |
+| LIFE-11 | Предметы открывают возможности | `ITEM_SYSTEM_DRAFT_v0.md`; Activity rules; career hooks | STRONG DRAFT | playable cross-system item chain + initial catalog |
 | LIFE-12 | Отношения пересекаются с жизнью | Relationship System Draft v0 | PARTIAL | concrete multi-system relationship chain |
 | LIFE-13 | Ending eligibility != immediate run end | Ending architecture v1 | STRONG | product example with multiple simultaneously eligible endings |
-| LIFE-14 | NG+ меняет возможности | Meta architecture + reward philosophy | PARTIAL | meta catalog/loadout rule + examples |
-| LIFE-15 | Большая межжизненная цель | Palace + Activity/meta hooks | EARLY | define meta macro-goal |
+| LIFE-14 | NG+ меняет возможности | Meta architecture; `META_MACRO_GOAL_DRAFT_v0.md`; Palace legacy hooks | STRONG DRAFT | exact reward catalog/loadout rule + playable examples |
+| LIFE-15 | Большая межжизненная цель | `META_MACRO_GOAL_DRAFT_v0.md`; `PALACE_HIDDEN_CAREER_DRAFT_v0.md` | STRONG DRAFT | concrete mystery/fragment catalog + playable late route |
 | LIFE-16 | Насыщенность, но производимость | reusable variants/history/cooldowns/data-driven | PARTIAL | content budget/quotas and production plan |
 | LIFE-17 | Понятная игровая оболочка | M3.2 shell precedent + vision | WEAK/PARTIAL | explicit target UI flow + product acceptance slice |
 | LIFE-18 | Заменяемый контент/media | M3.2 presentation overrides + target architecture | STRONG FOUNDATION | target media slot contract/versioning |
@@ -65,9 +65,8 @@ Secret Debt route уже интересна, но LIFE-05 шире.
 - stats/journal/inventory;
 - ending commitment.
 
-### D. Meta macro-goal
-Palace — хороший late job, но ещё не является всей LIFE-15.
-Нужно решить, что несколько жизней в итоге позволяют сделать/понять/изменить.
+### D. Meta macro-goal — structural draft готов
+`META_MACRO_GOAL_DRAFT_v0.md` задаёт utility-meta + persistent knowledge, fragments и Palace convergence. Осталось определить конкретную тайну, fragment catalog и финальный late route.
 
 ### E. Content production budget
 Нужны квоты:
@@ -84,10 +83,10 @@ Palace — хороший late job, но ещё не является всей L
 1. Economy + ordinary poverty.
 2. Target UI/game shell.
 3. One full career spec (Lumber recommended).
-4. Item system.
-5. Concrete relationship chain attached to that career.
-6. Concrete Activity slice attached to same chain.
-7. Meta reward catalog / macro-goal.
+4. Concrete relationship chain attached to Lumber.
+5. Concrete Activity slice attached to the same chain.
+6. Initial item catalog + one playable capability chain.
+7. Palace/meta reward catalog and concrete knowledge fragments.
 8. Calendar/economy numerical pass.
 9. Content budget and full executable TЗ.
 
