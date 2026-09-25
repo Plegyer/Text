@@ -2,7 +2,7 @@
 
 Дата: 2026-09-25.
 
-Статус: **DESIGN FRAMEWORK / NOT FINAL CATALOG**.
+Статус: **PARTIALLY SUPERSEDED FRAMEWORK**. The earlier anti-power-creep restrictions are overridden by `META_REWARD_PHILOSOPHY_v1.md`; tier vocabulary may still be reused.
 
 Покрывает: LIFE-02, LIFE-13, LIFE-14, LIFE-15.
 
