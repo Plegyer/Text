@@ -2,7 +2,7 @@
 
 Дата: 2026-09-25.
 
-Статус: **ASSEMBLY SKELETON**, не финальный ТЗ.
+Статус: **SUPERSEDED ASSEMBLY SKELETON**. Current master implementation spec: `EXECUTABLE_TZ_v1.md`.
 
 Цель: будущий полный документ собирается по этой структуре. High-impact decisions уже зафиксированы в `USER_DECISIONS_LOCKED_v1.md`; оставшиеся open numbers/content перечислены в `OPEN_QUESTIONS.md`.
 
