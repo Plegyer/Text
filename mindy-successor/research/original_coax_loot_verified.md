@@ -69,15 +69,19 @@ Rare-roll использует inclusive `randomInt(0, N)` и считается
 | 40 | ChrBeast | — | $1 |
 | 41 | Punch Drunk variant | — | $30 |
 | 42 | Mr. Moe | — | text-only "infinity" joke; no normal reward found |
-| 43 | unresolved | — | text-only "didn't steal anything" |
+| 43 | Aember | — | text-only "didn't steal anything" |
 | 44 | HardBeast | — | $1 |
-| 45 | unresolved | — | no dedicated Coax branch found |
+| 45 | unused/unassigned normal combat slot | — | no dedicated Coax branch found |
 | 46 | unresolved | — | text-only "flat broke" outcome |
-| 47–50 | unresolved 47–49; ID 50 = Soo | — | shared range branch: $666 |
+| 47–50 | Soo scaling variants | — | shared range branch: $666 |
 | 51 | Emm | — | $2,100 |
 | 52 | mystery sewer creature | — | $1 |
 
-IDs 58–59 from the separate space/Dungeon-5 pool are not handled by this normal resolver.
+IDs 47–50 are four scaling variants of the same Soo encounter, selected by `sooGirlsCollected`: 1–5 -> 50, 6–10 -> 49, 11–15 -> 48, 16+ -> 47.
+
+ID 45 is not assigned to `_monsterRandomPick` by the normal combat init paths found in main ABC, so it is best treated as an unused/unassigned slot rather than an unidentified enemy.
+
+IDs 58–59 from the separate space/Dungeon-5 pool are not covered by this normal loot table. A successful Coax can still pass through the generic success animation/timer, but the reward resolver ends after ID 52: no item, money, or enemy-specific success text is produced before the label clears. This looks like incomplete late-enemy coverage, not a second hidden loot system.
 
 ## Verified UI/text bugs
 
