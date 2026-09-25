@@ -211,3 +211,12 @@
 - Рабочая гипотеза SOL, НЕ lock: 9 progression stats (включая Сексуальность) + отдельная Похоть как content axis. Сексуальность = навык/уверенность; Похоть = внутренний интерес/добровольные content variants.
 - Создан `SCHOOL_SYSTEM_DRAFT_v0.md`: школа проектируется как самостоятельная progression system с tracks, преподавателями, milestones/exams, certificates/public facts, night study и собственными education endings. Простая модель pay->+stat считается недостаточной.
 - Draft school tracks: грамота/счёт, магические основы, риторика/переговоры, этикет, практическая ловкость/ремесло, физподготовка, сценическое искусство/телесная подача.
+
+
+## Relationships, large Activity and product traceability
+
+- Создан `RELATIONSHIP_SYSTEM_DRAFT_v0.md`: relationships проектируются как typed per-NPC state/stages/counters, а не универсальная heart bar. Job -> night -> school/item/Activity -> job feedback loop считается ключевым acceptance pattern.
+- Создан `LARGE_ACTIVITY_PRODUCT_ROLE_v0.md`: большая Activity обязана быть meaningful second mode с собственной progression, tools/items, seasons, NPC/quests, save/resume и city feedback loops. Test adapter сам по себе не закрывает product requirement.
+- Рабочее предложение SOL для large Activity: expedition umbrella с exploration/navigation + varied stat challenges + отдельными puzzle/tactical/investigation encounters; это НЕ user lock.
+- Создан `LIFE_REQUIREMENTS_TRACEABILITY_v0.md`, связывающий LIFE-01…18 с текущими contracts/design docs.
+- Самые крупные remaining product gaps по traceability: ordinary poverty/economy, target UI shell, одна полностью расписанная career, item system, meta macro-goal и content production budget.
