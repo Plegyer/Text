@@ -22,9 +22,9 @@
 | LIFE-07 | Ночь = выбор и последствия | Night contract + Secret Slave forced nights | STRONG DRAFT | concrete ordinary night catalog/lodging economy |
 | LIFE-08 | Ночные встречи развивают линии | Relationship Draft + Night resolver | PARTIAL | major NPC specs and examples |
 | LIFE-09 | Малые решения накапливаются | typed counters/facts, repeatable job/events, relationships | PARTIAL | micro-event content policy/quotas |
-| LIFE-10 | Дополнительные занятия meaningful | Large Activity Product Role v0 | PARTIAL | choose actual mechanics and playable product slice |
-| LIFE-11 | Предметы открывают возможности | `ITEM_SYSTEM_DRAFT_v0.md`; Activity rules; career hooks | STRONG DRAFT | playable cross-system item chain + initial catalog |
-| LIFE-12 | Отношения пересекаются с жизнью | Relationship System Draft v0 | PARTIAL | concrete multi-system relationship chain |
+| LIFE-10 | Дополнительные занятия meaningful | Large Activity Product Role v0 + `FOREST_ACTIVITY_SLICE_v0.md` | STRONG DRAFT | implement/playtest the slice; decide full Activity scope |
+| LIFE-11 | Предметы открывают возможности | `ITEM_SYSTEM_DRAFT_v0.md` + `INITIAL_ITEM_CATALOG_v0.md` + Forest/Lumber chain | STRONG DRAFT | implement/playtest capability chain |
+| LIFE-12 | Отношения пересекаются с жизнью | Relationship System Draft v0 + `LUMBER_RELATIONSHIP_CHAIN_v0.md` | STRONG DRAFT | second contrasting relationship slice + implementation proof |
 | LIFE-13 | Ending eligibility != immediate run end | Ending architecture v1 | STRONG | product example with multiple simultaneously eligible endings |
 | LIFE-14 | NG+ меняет возможности | Meta architecture; `META_MACRO_GOAL_DRAFT_v0.md`; Palace legacy hooks | STRONG DRAFT | exact reward catalog/loadout rule + playable examples |
 | LIFE-15 | Большая межжизненная цель | `META_MACRO_GOAL_DRAFT_v0.md`; `PALACE_HIDDEN_CAREER_DRAFT_v0.md` | STRONG DRAFT | concrete mystery/fragment catalog + playable late route |
