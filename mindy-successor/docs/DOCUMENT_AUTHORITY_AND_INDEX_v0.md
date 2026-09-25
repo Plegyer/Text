@@ -51,6 +51,15 @@ Historical:
 
 ## 5. Core product systems
 
+### Progression philosophy
+- `PROGRESSION_AND_DIFFICULTY_PHILOSOPHY_v1.md`
+- `BALANCE_SIMULATION_REPORT_v2.md`
+- `PROGRESSION_ACCESSIBILITY_SIMULATION_v1.md`
+- `ECONOMY_BALANCE_CANDIDATE_v2.md`
+- `META_REWARD_PHILOSOPHY_v1.md`
+- `HARD_WORK_META_REWARDS_v0.md`
+
+
 ### Jobs
 - `JOB_ROSTER_RECONCILIATION_v1.md`
 - `JOB_SYSTEM_MATRIX_v0.md`
@@ -80,7 +89,10 @@ Career drafts:
 - `STAT_MODEL_RECOMMENDATION_v2.md` (historical)
 
 ### School
-- `SCHOOL_SYSTEM_DRAFT_v1.md`
+- `SCHOOL_SYSTEM_v2.md`
+- `SCHOOL_BALANCE_MATRIX_v0.csv`
+- `SCHOOL_REACHABILITY_SIMULATION_v1.md`
+- `SCHOOL_SYSTEM_DRAFT_v1.md` (historical)
 - `SCHOOL_SYSTEM_DRAFT_v0.md` (historical)
 
 ### Relationships
@@ -104,7 +116,9 @@ Career drafts:
 - `CALENDAR_AND_RUN_LENGTH_ANALYSIS_v0.md`
 
 ### Meta
-- `META_REWARD_HIERARCHY_DRAFT_v0.md`
+- `META_REWARD_PHILOSOPHY_v1.md`
+- `HARD_WORK_META_REWARDS_v0.md`
+- `META_REWARD_HIERARCHY_DRAFT_v0.md` (partially superseded)
 - `META_MACRO_GOAL_DRAFT_v0.md`
 - `PALACE_HIDDEN_CAREER_DRAFT_v0.md`
 
