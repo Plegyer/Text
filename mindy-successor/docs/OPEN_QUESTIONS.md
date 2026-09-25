@@ -35,7 +35,7 @@
 2. Ordinary roster: provisional 10 профессий теперь разведены механически; OPEN только возможное расширение roster сверх 10 и окончательные названия/fantasy framing.
 3. Hidden Palace profession: identity зафиксирована как поздняя meta-job; OPEN её конкретный gameplay loop, career/endings и required Hard Work progress.
 4. Точная длина run / календарные числа successor.
-5. Economy: wages, school prices, lodging pressure.
+5. Economy: qualitative model/anti-softlock/housing ladder drafted; OPEN starting money, wages, school prices, lodging prices, ordinary street penalty and numeric simulations.
 6. School: draft tracks/progression готовы; OPEN exact curriculum, цены, teachers, certificates, education endings/meta rewards и нужен ли отдельный special-school equivalent.
 7. Конкретная replacement large activity вместо original JRPG.
 8. Нужна ли отдельная volatile Ухоженность и другие condition meters.
@@ -43,6 +43,7 @@
 10. Meta rewards: automatic / selectable loadout / slots-budget.
 11. Successor Final Mode / late meta mode.
 12. Реальные seasonal recurring events/competitions — форма движком поддерживается, content ещё не выбран.
+12a. Target UI shell: structure drafted; OPEN visual style, exact navigation/layout, media budgets, Palace discovery UX and editor UX.
 13. Secret Debt/Slave Career: точный шанс внутри 10–20%, точные суммы около 2000/20000, Energy penalty, доступность школы/большой Activity после блокировки jobs и отношение Сексуальности к Похоти.
 14. Exact meta rewards трёх обязательных endings и засчитывается ли `bound_life` в общий Hard Work progress для открытия 11-й профессии.
 
