@@ -301,3 +301,15 @@
 - Для Secret Debt rewards определены только families: paid_freedom = economic resilience/debt knowledge; bound_life = hidden-system familiarity; takeover = сильный network/status/rule-changing reward. Exact rewards OPEN.
 - Создан `CONTENT_PRODUCTION_BUDGET_DRAFT_v0.md`: ориентир обычной профессии = 8–16 repeatable variants, 6–10 major career milestones, 3–5 ending families, 1 major relationship chain и 1–3 external hooks. Это budget hypothesis, не quota lock.
 - При среднем объёме 10 ordinary careers дают порядка ~290 крупных/средних content units ещё до общих School/Activity/night/calendar systems; поэтому обязательны placeholders, reusable variant rules и bounded production packages.
+
+
+## Calendar and economy balance framework
+
+- Создан `CALENDAR_AND_RUN_LENGTH_ANALYSIS_v0.md`: сравниваются 160/224/448-day models. Рабочая рекомендация SOL = 160 days (4x40, 10-day seasons), но это НЕ user lock.
+- 160 days дают theoretical 480 Energy и лучше поддерживают replay/content density; 448-day historical prototype model выглядит слишком длинным для текущего vision.
+- Extra-time/+year reward при compact run становится major rule modifier (~+25% времени для +40 days), поэтому не относится к Hard Work tier.
+- Создан `ECONOMY_NUMERIC_FRAMEWORK_v0.md`: экономика балансируется через Wage Unit (1 WU = средняя стартовая смена) до выбора абсолютной валюты.
+- Candidate baseline: normal lodging ~0.8–1.3 WU; cheap lodging ~0.3–0.6 WU + drawback; ordinary lesson ~1–2 WU; advanced lessons/milestones дороже.
+- Starting money рекомендуется как несколько normal-night equivalents, а не большой запас.
+- Anti-softlock закреплён: при 0 money игрок всегда может пережить ночь и получить доступ хотя бы к одному базовому заработку.
+- Secret lender 2000 -> 20000 after 10 days должен позже калиброваться относительно WU так, чтобы предложение было реально привлекательным, а требование — намеренно trap-scale.
