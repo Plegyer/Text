@@ -235,3 +235,40 @@ Hard Work:
 - original exact seasonal stat packages.
 
 Используем архитектурные принципы, подтверждённые reverse engineering.
+
+
+## 18. Кривая сложности / Meta easing — LOCKED PRINCIPLE
+
+Fresh profile — самая трудная обычная версия игры.
+
+Нормально, что в начале:
+- приходится много работать;
+- школа дорогая;
+- rent заметно давит;
+- приходится выбирать между учёбой, Activity, отношениями и накоплением денег.
+
+При этом любой progression stat должен оставаться достижим через обычную петлю:
+`работа -> деньги -> школа -> нужный stat`.
+
+School — намеренный build-correction инструмент:
+- все 12 progression stats имеют repeatable paid source;
+- дорогие multi-stat lessons могут быть заметно эффективнее по Energy;
+- отдельный special correction service может конвертировать surplus stat в нужный stat с потерей, candidate 2:1.
+
+Endings/Meta намеренно делают последующие жизни проще:
+- starting stats/money;
+- +Energy;
+- rent relief;
+- stat carry-over;
+- daily income;
+- School improvements;
+- starting items;
+- profession/content unlocks;
+- другие rule changes.
+
+Не балансировать NG+ обратно к сложности fresh profile.
+
+Подробности:
+- `PROGRESSION_AND_DIFFICULTY_PHILOSOPHY_v1.md`
+- `SCHOOL_SYSTEM_v2.md`
+- `META_REWARD_PHILOSOPHY_v1.md`.
