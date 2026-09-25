@@ -469,3 +469,28 @@
 - Это удачная системная развилка: cheap и street экономят по-разному и ни один не является очевидным "лучшим бесплатным вариантом".
 - `RELATIONSHIP_TRIGGER_MODEL_v1.md` закрепляет relationship progression через stat/visit/night/external-fact thresholds с 0-Energy reactive dialogues; deliberate date/trip может стоить Energy только как explicit exception.
 - `ECONOMY_BALANCE_CANDIDATE_v2.md` уточнён: "other Energy actions" означает только явно платные действия, не диалоги/отношения.
+
+
+## Numeric consolidation and executable TЗ v1
+
+- Создан `CORE_NUMERIC_BASELINE_v1.md`, который объединяет implementation baseline:
+  - 160-day calendar;
+  - fresh Energy 3;
+  - Work 1;
+  - School 1 + tuition;
+  - Activity 2;
+  - 12 stats 0..100 + separate Lust;
+  - currency scale 1 WU=50;
+  - start money 600;
+  - normal/cheap/street housing 100/50/0;
+  - School price/effect packages;
+  - Night study +2 selected study stat / next-day Energy -1;
+  - ordinary stat gates;
+  - Hard Work 50 shifts;
+  - Hard Work automatic rewards;
+  - 2/3 strong Legacy slots.
+- `FULL_160_DAY_RUN_SIMULATION_v1.md` проверяет three explicit life plans на fresh normal/cheap, mid-meta и late-meta profiles. Reactive relationship/career scenes не считаются Energy.
+- Fresh normal-room 50-shift labor + moderate School/Activity feasible but work-heavy; cheap lodging radically frees actions; strong meta profiles intentionally remove most survival grind.
+- Создан master `EXECUTABLE_TZ_v1.md`: единая реализационная спецификация с fixed loop/numbers, jobs, School, housing, relationships, Activity, items, endings/meta, state architecture, Resolver, migrations, UI, tests and implementation order.
+- Создан `IMPLEMENTATION_PACKAGE_A1_v1.md`: ready-to-code first migration package against stable `prior-work/astra/prototype-m3.2/`, exact allowed files/tests and schema-3 -> target state policy.
+- Следующий implementation step после отдельного начала code work: package A1, затем A2 Condition/Effect v2.
