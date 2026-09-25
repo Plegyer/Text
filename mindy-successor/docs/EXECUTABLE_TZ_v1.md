@@ -751,6 +751,20 @@ Normative:
 
 Main UI is media-first, not admin dashboard.
 
+**Locked production constraint:** the center of the screen contains one persistent media window. GIF is the primary dynamic content format. Work, result, reactive event, relationship, Night and ending scenes replace the media inside this same box via stable `presentationId`.
+
+No first-release requirement for:
+- skeletal animation;
+- sprite animation pipeline;
+- frame/timeline editor;
+- lip sync;
+- unique animation per event.
+
+Static image/text fallback must keep every scene playable.
+
+Normative:
+`GIF_CENTRAL_STAGE_CONTRACT_v1.md`.
+
 Persistent HUD:
 - year/season/day;
 - Energy;
@@ -779,6 +793,14 @@ Only 3 starter jobs available at start.
 
 Media uses stable presentation IDs.
 Mechanics do not depend on asset file.
+
+Production priority:
+1. GIF;
+2. static image fallback;
+3. neutral location fallback;
+4. text-only.
+
+GIF reuse between compatible scenes is expected and does not count as missing content.
 
 Missing optional art must fallback safely.
 
