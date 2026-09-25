@@ -65,3 +65,17 @@
 - найти точное место реализации пользовательски наблюдаемого списания 2 внешних Stamina при входе;
 - подтвердить точный Darkly gate северной cave-area Dungeon 1;
 - при необходимости составить полный enemy-pool по сезонам, а не только специальные встречи.
+
+
+## Dungeon — новые закрытые вопросы
+
+Подтверждено дополнительно:
+- первый dungeon intro открывается при Strength >= 12 и Durability >= 15 (гайд округлял/упрощал до 15/15);
+- Dungeon 2 unlock = doneDungeon02Intro, выставляется интеракцией с ключевым объектом в Scene 59;
+- Dungeon 3 unlock = doneDungeon03Intro, выставляется интеракцией с ключевым объектом в Scene 105;
+- fresh hub entry сбрасывает stepCount, Camp же продолжает expedition через новый глобальный day.
+
+Осталось:
+- точное место/механизм пользовательски наблюдаемого расхода 2 overworld energy на вход;
+- полный random-enemy pool по dungeon/season, если понадобится детальный combat atlas;
+- все time-of-day event gates, если они влияют не только на lighting/clock.
