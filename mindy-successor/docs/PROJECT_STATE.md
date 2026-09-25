@@ -269,3 +269,25 @@
 - Теперь три стартовые профессии покрывают разные ядра: physical/expedition, social/night, magical/production.
 - На этой базе создан `STAT_MODEL_RECOMMENDATION_v2.md`: рабочая рекомендация — 9 progression stats с Сексуальностью + отдельная Похоть как content axis.
 - Это НЕ lock: особенно OPEN стартовое распределение — все 10 параметров / только 9 stats / отдельный Lust choice. SOL предпочитает вариант 9 stats + separate Lust, но требуется решение пользователя из-за прежнего требования стартовых 10 очков.
+
+
+## Full ordinary career roster drafted
+
+- Все 10 ordinary/public professions теперь имеют full career design drafts:
+  - `CAREER_LUMBER_DRAFT_v0.md`
+  - `CAREER_SATYR_MAID_DRAFT_v0.md`
+  - `CAREER_UNDEAD_FARM_DRAFT_v0.md`
+  - `CAREER_TAVERN_DRAFT_v0.md`
+  - `CAREER_HUNTER_DRAFT_v0.md`
+  - `CAREER_GUARD_DRAFT_v0.md`
+  - `CAREER_GEISHA_ARTIST_DRAFT_v0.md`
+  - `CAREER_ASSASSIN_DRAFT_v0.md`
+  - `CAREER_MERCHANT_DRAFT_v0.md`
+  - `CAREER_PROSTITUTE_DRAFT_v0.md`
+- Tavern отделён от Satyr Maid: information/housing/supply hub против personal service/night relationship focus.
+- Hunter отделён от Assassin: seasonal resource/field profession против covert contract/preparation profession.
+- Geisha/Artist отделена от Prostitute: art/etiquette/status/patronage против voluntary sexual work/client-network/independence.
+- Guard использует city crisis layer как профессиональную систему без Morality stat.
+- Merchant — экономика/предметы/supply network, не shop UI.
+- Все 10 сохраняют общий принцип repeatable work + reactive career progression + Hard Work + 2+ более сложных outcome families.
+- Следующий общий design pass: job stat tradeoffs, meta reward hierarchy и content production budget.
