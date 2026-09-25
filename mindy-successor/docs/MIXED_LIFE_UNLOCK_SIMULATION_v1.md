@@ -2,7 +2,7 @@
 
 Дата: 2026-09-25.
 
-Статус: **EXECUTED BALANCE ANALYSIS**.
+Статус: **SUPERSEDED / INVALID COST ASSUMPTION**. Эта симуляция ошибочно резервировала 1 daily Energy на relationships/other life. Reactive relationship/career scenes обычно стоят 0 Energy. Использовать `ACTION_TIME_COST_MODEL_v1.md` и `JOB_UNLOCK_SIMULATION_REPORT_v2.md`.
 
 Основание:
 - `ORDINARY_JOB_UNLOCK_THRESHOLDS_v0.csv`;
