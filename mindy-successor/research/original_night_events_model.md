@@ -15,6 +15,8 @@
 
 То есть night layer имеет приоритеты. Наличие forced-night flag может полностью заблокировать стандартный выбор ночной активности.
 
+`sexWhitestWhite` проверяется ещё до обычного rent/payment resolver. Поэтому при таком forced night нажатие Sleep уходит в scene 101 раньше стандартной ветки оплаты жилья; в самой scene 101 обычного rent-списания нет.
+
 ## 2. Normal paid sleep — scene 15
 
 Scene 15 `sleepPaid` — обычный ночной hub.
@@ -25,6 +27,8 @@ Scene 15 `sleepPaid` — обычный ночной hub.
 - newDay = true.
 
 Затем интерфейс может предложить доступных ночных партнёров/активности по persistent flags.
+
+Я рекурсивно проверил все callback-методы SceneEvents_15: из обычных выбранных night options запись в `stamina` делает только ветка `book`. Обычные добровольные partner branches сами по себе не имеют общего штрафа к энергии следующего дня. Это важное отличие от forced/negative nights.
 
 Подтверждённые partner/activity flags:
 - sexFarmerJohn
@@ -131,6 +135,11 @@ Book option живёт в normal sleepPaid:
 Поэтому чтение добровольно превращает следующий день из 3 базовых действий в 2 (до meta/title modifiers).
 
 Механически оно использует тот же канал next-day action budget, что и отрицательные forced nights, но инициируется самим игроком.
+
+Это даёт чёткое разделение оригинала:
+- voluntary partner night: обычно без отдельного stamina penalty;
+- voluntary study: -1 next-day Stamina;
+- forced/negative night: может жёстко задать 2/1/0 Stamina или иным образом ухудшить следующий день.
 
 ## 7. Полный census day-transition scenes
 
