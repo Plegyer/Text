@@ -70,8 +70,9 @@ Historical:
 - `JOB_SYSTEM_MATRIX_v0.md`
 - `ORDINARY_JOB_UNLOCK_MODEL_v1.md`
 - `ORDINARY_JOB_UNLOCK_THRESHOLDS_v0.csv`
-- `JOB_UNLOCK_SIMULATION_REPORT_v1.md`
-- `MIXED_LIFE_UNLOCK_SIMULATION_v1.md`
+- `JOB_UNLOCK_SIMULATION_REPORT_v1.md` (historical raw threshold pass)
+- `JOB_UNLOCK_SIMULATION_REPORT_v2.md`
+- `MIXED_LIFE_UNLOCK_SIMULATION_v1.md` (invalid cost assumption)
 - `SEASONAL_JOB_STAT_MODEL_v1.md`
 - `SUCCESSOR_JOB_SEASON_MATRIX_v0.csv`
 - `JOB_STAT_TRADEOFF_PASS_v0.md` (historical/superseded)
@@ -103,6 +104,9 @@ Career drafts:
 - `SCHOOL_REACHABILITY_SIMULATION_v1.md`
 - `SCHOOL_SYSTEM_DRAFT_v1.md` (historical)
 - `SCHOOL_SYSTEM_DRAFT_v0.md` (historical)
+
+### Action / time costs
+- `ACTION_TIME_COST_MODEL_v1.md`
 
 ### Relationships
 - `RELATIONSHIP_SYSTEM_DRAFT_v0.md`
