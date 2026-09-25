@@ -313,3 +313,12 @@
 - Starting money рекомендуется как несколько normal-night equivalents, а не большой запас.
 - Anti-softlock закреплён: при 0 money игрок всегда может пережить ночь и получить доступ хотя бы к одному базовому заработку.
 - Secret lender 2000 -> 20000 after 10 days должен позже калиброваться относительно WU так, чтобы предложение было реально привлекательным, а требование — намеренно trap-scale.
+
+
+## Product gates / release scope / TЗ readiness
+
+- Создан `MEDIA_PRESENTATION_CONTRACT_v0.md`: stable presentation IDs, fallback chain, media/text overrides separated from mechanics, save-safe pending variants and editor boundaries.
+- Создан `PRODUCT_ACCEPTANCE_SLICE_v0.md`: отдельный product gate поверх synthetic Architecture Migration Slice. Сквозной flow использует Lumber + School + Foreman relationship + Forest Activity + items + Night + Ending + Meta.
+- Создан `FIRST_RELEASE_SCOPE_DRAFT_v0.md`: предложены staged internal milestones; production proof сначала на трёх стартовых careers, затем roster expansion и late/meta layers.
+- Создан `FULL_TZ_READINESS_REVIEW_v0.md`: фундаментальные системы в основном достаточно зрелые; до полного executable ТЗ не хватает главным образом user locks, числового balance и конкретного macro lore.
+- Создан `USER_DECISION_PACKET_v0.md` с 12 high-impact decisions и рекомендациями SOL. Эти рекомендации НЕ считаются принятыми без решения пользователя.
