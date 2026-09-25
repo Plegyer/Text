@@ -10,7 +10,7 @@
 - Дворец — поздняя скрытая/meta-профессия;
 - идёт сверх ordinary roster;
 - открывается через профессиональную meta-прогрессию / Hard Work endings;
-- exact required count пока OPEN.
+- unlock rule уточнён пользователем: требуется Hard Work на **всех 10 ordinary professions**.
 
 ## 1. Зачем нужен Дворец
 
@@ -28,15 +28,13 @@
 Meta condition:
 
 ```text
-HardWorkProgress >= PALACE_REQUIRED
-+ optional global prerequisite(s)
+completedOrdinaryHardWork contains ALL 10 ordinary job IDs
 ```
 
-`PALACE_REQUIRED` не фиксируется сейчас.
-
 Важно:
-- считаются уникальные профессиональные Hard Work endings, а не повтор одного и того же;
-- Secret Debt `bound_life` пока не включён автоматически;
+- считаются уникальные Hard Work endings всех 10 ordinary professions;
+- повтор одной профессии не даёт дополнительного progress;
+- Secret Debt `bound_life` и другие hidden careers не считаются;
 - Palace unlock хранится в MetaState;
 - после unlock профессия может иметь собственные run-level availability gates.
 
@@ -221,7 +219,6 @@ Palace career считается содержательной, если:
 
 ## 15. Открыто
 
-- PALACE_REQUIRED;
 - exact role/name;
 - ruler/court structure;
 - exact global mystery;
