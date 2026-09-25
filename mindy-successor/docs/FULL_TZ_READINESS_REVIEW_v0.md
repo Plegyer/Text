@@ -55,25 +55,26 @@ STRONG DRAFT:
 - utility vs knowledge;
 - Palace convergence.
 
-## 2. Areas requiring user/design lock before full executable TЗ
+## 2. Remaining gaps before full executable TЗ
 
-### A. Stat model
-Need decision:
-- Sexuality vs Lust separation;
-- starting allocation;
-- final 9/10 parameter behavior.
+### A. Stat model — CLOSED
+Target locked:
+- 12 progression stats;
+- separate Lust;
+- 10 allocation points among 12;
+- Grooming is a real progression stat.
 
-### B. Work tradeoff
-Need decision:
-- fixed -1 per job;
-- or selectable work styles preserving +2/+2/-1.
+### B. Work stat model — CLOSED structurally
+Target locked:
+- seasonal stat packages;
+- no universal fixed +2/+2/-1.
+Exact seasonal numbers remain balance draft.
 
-### C. Calendar
-Need lock:
-- 160 vs 224 or other.
+### C. Calendar — CLOSED
+160 days = 4x40, seasons x10.
 
 ### D. Economy numbers
-After calendar:
+Now that calendar is locked:
 - WU currency scale;
 - wages;
 - lodging;
@@ -96,16 +97,18 @@ Need:
 - which relationships have endings.
 
 ### G. Activity full scope
-Need:
-- final umbrella mechanics;
+Umbrella is locked to expedition/exploration.
+Still need:
 - region count;
-- camp;
-- combat yes/no;
-- specialized mini-mechanics.
+- exact specialized mechanics;
+- camp production scope;
+- combat yes/no beyond the accepted umbrella.
 
 ### H. Meta loadout
-Need:
-- automatic/selectable;
+Policy is locked:
+- knowledge/content automatic;
+- strong rule modifiers selectable.
+Still need:
 - slots/budget;
 - exact rewards.
 
@@ -128,10 +131,7 @@ Architecture Migration Slice can proceed without final:
 - story;
 - stat mapping.
 
-Product Acceptance Slice needs at least provisional:
-- stat model;
-- calendar;
-- economy.
+Product Acceptance Slice now has locked stat model and calendar; it still needs provisional economy numbers and production content values.
 
 ## 4. Full TЗ should contain
 
@@ -167,4 +167,4 @@ Product Acceptance Slice needs at least provisional:
 - снова разбирать оригинал без конкретного противоречия;
 - писать сотни production scenes.
 
-Следующий design checkpoint должен закрыть несколько высоковлияющих пользовательских решений, затем можно собирать TЗ v1.
+High-impact user decisions are now mostly closed. Next step is numeric/content consolidation: economy simulations, seasonal stat tuning, exact School/meta production parameters, then assembly of executable TЗ v1.
