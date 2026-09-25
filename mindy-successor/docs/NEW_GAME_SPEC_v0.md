@@ -1,4 +1,6 @@
-# New game spec v0 — зафиксированный каркас
+# New game spec v0 — historical baseline
+
+> **SUPERSEDED BY `NEW_GAME_SPEC_v1.md`** for current target design. Kept for history.
 
 ## Базовый цикл
 
