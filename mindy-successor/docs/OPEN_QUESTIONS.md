@@ -37,7 +37,8 @@
 
 Остаются:
 
-1. **Seasonal job numbers:** `SUCCESSOR_JOB_SEASON_MATRIX_v0.csv` создан как balance draft; нужны simulations и финальная корректировка annual drift.
+1. **Seasonal job numbers:** `SUCCESSOR_JOB_SEASON_MATRIX_v1.csv` simulation-tuned but still OPEN for final cap/floor and mixed-run tuning.
+1a. **Ordinary job gates:** `ORDINARY_JOB_UNLOCK_THRESHOLDS_v0.csv` passed theoretical fresh/meta timing simulation. OPEN final lock after exact meta rewards/School prices and mixed-life schedule pass.
 2. **Economy:** fresh-hard direction now fixed; v2 candidate = wage 1 WU, normal rent ~2 WU, start ~12 WU, School ~6–12 WU. OPEN exact final numbers, wage scaling, cheap/street penalties and Secret Debt calibration.
 3. **School production:** universal stat access is fixed in `SCHOOL_SYSTEM_v2.md`; OPEN exact gains/costs after `SCHOOL_BALANCE_MATRIX_v0.csv`, teachers, milestones, certificates, endings/meta rewards and fiction of the 2:1 correction service.
 4. **Relationships:** major NPC roster, shared NPCs между careers, какие линии имеют endings.
