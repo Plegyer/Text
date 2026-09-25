@@ -392,3 +392,24 @@
 - Calendar fallback остаётся Year 2 для 4 mid jobs и Year 3 для 3 late jobs.
 - Mid-meta illustrative fixture с большими economy/energy rewards сдвигает mid jobs к day 4–6, late jobs к day 13–24; late-meta fixture — большинство ordinary jobs к первым дням.
 - Это подтверждает, что meta easing автоматически ускоряет профессии через stats/money/Energy/School, без специального "early job unlock" правила.
+
+
+## Hard Work reward ladder v1
+
+- `HARD_WORK_META_REWARDS_v1.md` replaces the old single-stat draft.
+- Starter Hard Work candidate rewards:
+  - Lumber +3 Strength/+3 Endurance;
+  - Satyr Maid +3 Charm/+3 Grooming;
+  - Undead Farm +3 Reason/+3 Magic.
+- Mid rewards:
+  - Tavern +3 Sociability/+3 Manners;
+  - Hunter +3 Dexterity/+3 Wits;
+  - Guard +3 Endurance/+3 Manners;
+  - Merchant +600 starting money.
+- Late rewards:
+  - Artist/Geisha +3 Creativity/+3 Grooming;
+  - Assassin +3 Dexterity/+3 Wits;
+  - Prostitute +3 Sexuality/+3 Charm.
+- All Hard Work rewards are automatic, unique and cumulative; repeats do not stack.
+- Full 10/10 pre-allocation profile has every progression stat at least +3 above fresh baseline, several +6, and double the current candidate starting cash.
+- `META_EASING_SIMULATION_v1.md` confirms that this ladder speeds later stat gates; larger easing still comes from complex rule-changing endings.
