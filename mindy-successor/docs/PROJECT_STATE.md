@@ -57,3 +57,5 @@
 - Глобальный day идёт накопительно через весь обычный run: Year 2 начинается на day 41, Year 3 на 81, Year 4 на 121, Year 5 на 161; сезоны повторяются каждые 10 дней без сброса day.
 
 - Ночной слой — отдельный priority resolver. Подтверждены forced overrides: sexWhitestWhite полностью обходит normal sleep/rent menu и по мере ветки оставляет на следующий день 2 -> 1 -> 0 Stamina; noRent outdoor sleep всегда оставляет 2 Stamina, снимает по 1 Charisma/Cleanliness/Class и имеет сезонные/random sexual variants; Shirley haunt может отправить в sleepScared с 2 Stamina. Обычный paid sleep остаётся отдельным меню партнёров/обучения.
+
+- Dungeon lifecycle дополнительно подтверждён: hub сбрасывает stepCount; движение продвигает dungeon-time и отдельный encounter meter; обычные поражения обычно снимают 1 expedition Stamina, победы не имеют общего stamina-tax; Camp может продолжать одну экспедицию через несколько глобальных дней; Escape Dungeon явно обнуляет оставшуюся Stamina и возвращает домой; stepCount также влияет на постепенное затемнение некоторых карт.
