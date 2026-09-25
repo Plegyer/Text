@@ -2,7 +2,7 @@
 
 Дата: 2026-09-25.
 
-Статус: **BALANCE CANDIDATE**, not final lock.
+Статус: **SUPERSEDED BALANCE CANDIDATE**. Current mapping: `HARD_WORK_META_REWARDS_v1.md`.
 
 Цель: каждая ordinary Hard Work ending должна сразу делать следующую жизнь немного легче, а сбор всех 10 одновременно открывает Palace.
 
