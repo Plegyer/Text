@@ -87,3 +87,10 @@
 - Seasonal competition layer теперь разобран: festival intro на day 5; recurring contest dates каждого года = day 10/16/28/39; четыре contests используют разные challenge types и по завершении переводят прямо в night transition, не расходуя обычную Stamina.
 - Contest progression хранит одновременно `contestWonList[0..3]` (breadth/mastery) и cumulative `contestsWon/contestsLost`. Four distinct wins, five total wins и six total losses дают три отдельные Sinner's Orb/ending routes с разными meta rewards.
 - Подробности: `original_seasonal_competitions_verified.md`.
+
+
+- Minor-crisis layer разобран: каждый новый normal-mode day имеет 1/2 шанс предложить optional Scene 249; вход не стоит Stamina/day, игрок выбирает один из 3 stat approaches, а deterministic check идёт против `baseThreshold + yearly random difficultyMod`. Outcomes меняют stats/money/Stamina и возвращают в обычный дневной цикл.
+- Crisis difficulty scales 5–15 / 15–25 / 20–50 / 30–60 for Years 1/2/3/4+. Year 0 не имеет branch и поэтому оставляет difficultyMod=0 — непреднамеренное облегчение meta extra-year.
+- Quest-state может inject special crises 99/100 и напрямую менять Pimp Wars flags/counters.
+- Найден implementation gap: runtime pool выбирает только IDs 0–18 (plus 99/100), хотя UI/resolver полностью содержит IDs 19–23 и seasonal variants. Writers для 19–23 не найдено, поэтому эти branches считаются unreachable в этой версии.
+- Подробности: `original_minor_crises_verified.md`.
