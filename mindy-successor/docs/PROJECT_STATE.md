@@ -231,3 +231,12 @@
 - Создан `TARGET_GAME_SHELL_v0.md`: основной UI остаётся media-first central stage с persistent HUD day/season/year/Energy/money, compact navigation и сменой media/text внутри того же центрального окна.
 - Secret jobs не спойлерятся UI; pending scenes блокируют обычные действия; school/activity/night имеют отдельные режимы, но не превращают игру в dashboard.
 - Product shell acceptance отделён от технического Architecture Migration Slice.
+
+
+## First full career reference slice
+
+- Создан `CAREER_LUMBER_DRAFT_v0.md` как первый полный product-level career reference.
+- Lumber описан как repeatable shift + seasonal variants + typed career stages + major relationship + school/item/Hunter/Tavern/Merchant/Activity hooks.
+- Минимум три distinct outcomes: Hard Work, Forewoman/leadership, Forest multi-system route; relationship/global endings могут существовать параллельно.
+- Exact thresholds/stats/salary/NPC/text/meta rewards пока не фиксированы.
+- Документ служит проверкой LIFE-01/02/03/04/09/11/12/13/14/16 и эталоном требуемой глубины для остальных jobs.
