@@ -35,8 +35,8 @@
 1a. Work tradeoff rule: fixed -1 per profession или 2–3 work-style packages, каждый из которых сохраняет +2/+2/-1. Roster-wide pass рекомендует work styles, но это не user lock.
 2. Ordinary roster: provisional 10 профессий теперь разведены механически; OPEN только возможное расширение roster сверх 10 и окончательные названия/fantasy framing.
 3. Hidden Palace profession: identity зафиксирована как поздняя meta-job; OPEN её конкретный gameplay loop, career/endings и required Hard Work progress.
-4. Точная длина run / календарные числа successor.
-5. Economy: qualitative model/anti-softlock/housing ladder drafted; OPEN starting money, wages, school prices, lodging prices, ordinary street penalty and numeric simulations.
+4. Run length: анализ готов; рабочая рекомендация SOL = 160 days (4x40), допустимый medium вариант = 224 days. Требуется user lock перед numeric balance.
+5. Economy: qualitative model + Wage Unit framework drafted; OPEN WU currency scale, exact wages/rent/School prices, starting money, street penalty and scenario simulations after calendar lock.
 6. School: draft tracks/progression готовы; OPEN exact curriculum, цены, teachers, certificates, education endings/meta rewards и нужен ли отдельный special-school equivalent.
 7. Конкретная replacement large activity вместо original JRPG.
 8. Нужна ли отдельная volatile Ухоженность и другие condition meters.
