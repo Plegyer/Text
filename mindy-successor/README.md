@@ -21,3 +21,14 @@
 Новый исполнитель должен начинать с [DOCUMENT_AUTHORITY_AND_INDEX_v0.md](docs/DOCUMENT_AUTHORITY_AND_INDEX_v0.md). В нём указан приоритет документов, текущий architecture baseline, product drafts и historical материалы. Принятые решения дополнительно собраны в `docs/USER_DECISIONS_LOCKED_v1.md`.
 
 Для сборки будущего полного исполнительного ТЗ использовать [EXECUTABLE_TZ_SKELETON_v0.md](docs/EXECUTABLE_TZ_SKELETON_v0.md). Для порядка реализации — [IMPLEMENTATION_PHASES_AND_PACKAGES_v0.md](docs/IMPLEMENTATION_PHASES_AND_PACKAGES_v0.md).
+
+
+## Текущая master-spec
+
+Основная единая спецификация для реализации:
+[EXECUTABLE_TZ_v1.md](docs/EXECUTABLE_TZ_v1.md).
+
+Первый готовый code-migration package:
+[IMPLEMENTATION_PACKAGE_A1_v1.md](docs/IMPLEMENTATION_PACKAGE_A1_v1.md).
+
+До прохождения A1–A6 и Product Acceptance Slice не масштабировать production content.
