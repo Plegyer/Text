@@ -260,3 +260,12 @@
 - Создан `INITIAL_ITEM_CATALOG_v0.md`: 10 конкретных capability-based предметов, включая Reinforced Axe, Rope Kit, Preservation Kit, Boundary Token, Sealed Pass, Court Attire и Debt Ledger. Предметы открывают actions/routes, а не существуют только как проценты.
 - Сквозная acceptance chain теперь описана: Lumber milestone -> Foreman relationship -> night meeting -> external fact/item -> Forest Activity -> result fact -> Resolver -> career/relationship branch -> multiple endings.
 - Это первый продуктовый пример, который одновременно проверяет LIFE-10/11/12 поверх уже существующего Lumber career draft.
+
+
+## Three starting career reference drafts
+
+- Создан `CAREER_SATYR_MAID_DRAFT_v0.md` как второй full career reference: social/night focus, recurring guests, boundaries, tips/reputation, strong relationship and School integration. Outcome families: Hard Work, House Power, Personal Network и House Rules/Boundary Mastery.
+- Создан `CAREER_UNDEAD_FARM_DRAFT_v0.md` как третий full career reference: seasonal production, meaningful ingredients/items, Magic/Reason, School research, Merchant и Activity feedback. Outcome families: Hard Work, Research Farmer, Farm Successor, External Anomaly.
+- Теперь три стартовые профессии покрывают разные ядра: physical/expedition, social/night, magical/production.
+- На этой базе создан `STAT_MODEL_RECOMMENDATION_v2.md`: рабочая рекомендация — 9 progression stats с Сексуальностью + отдельная Похоть как content axis.
+- Это НЕ lock: особенно OPEN стартовое распределение — все 10 параметров / только 9 stats / отдельный Lust choice. SOL предпочитает вариант 9 stats + separate Lust, но требуется решение пользователя из-за прежнего требования стартовых 10 очков.
