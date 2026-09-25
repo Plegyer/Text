@@ -2,7 +2,7 @@
 
 Дата: 2026-09-25.
 
-Статус: **DESIGN ANALYSIS / NOT LOCKED**.
+Статус: **SUPERSEDED ANALYSIS**. Universal +2/+2/-1 and work-style proposal were replaced by seasonal job stat packages in `SEASONAL_JOB_STAT_MODEL_v1.md`.
 
 Основание:
 - `NEW_GAME_SPEC_v0.md`: repeatable ordinary work повышает две характеристики и понижает одну;
