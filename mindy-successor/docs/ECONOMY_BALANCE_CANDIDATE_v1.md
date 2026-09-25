@@ -2,7 +2,7 @@
 
 Дата: 2026-09-25.
 
-Статус: **SIMULATION-SUPPORTED BALANCE CANDIDATE**, not locked.
+Статус: **SUPERSEDED BALANCE CANDIDATE**. It made fresh survival too easy and is replaced by `ECONOMY_BALANCE_CANDIDATE_v2.md`.
 
 ## Baseline in Wage Units
 
