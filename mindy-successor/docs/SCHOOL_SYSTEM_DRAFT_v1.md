@@ -2,7 +2,7 @@
 
 Дата: 2026-09-25.
 
-Статус: **TARGET PRODUCT DRAFT**.
+Статус: **SUPERSEDED TARGET DRAFT**. Current school baseline: `SCHOOL_SYSTEM_v2.md`.
 
 Основание:
 - `TARGET_STAT_SYSTEM_v1.md`;
