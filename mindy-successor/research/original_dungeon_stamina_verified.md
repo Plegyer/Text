@@ -1,45 +1,49 @@
-# Simply Mindy — verified dungeon Stamina behavior
+# Simply Mindy — dungeon loop (corrected model, SWF verification in progress)
 
-Источник: SceneEvents_0, dungeon map scenes (42 etc.) and dungeon01Combat (44).
+Важно: предыдущая интерпретация этого файла была неверной. Я смешал глобальную дневную Stamina с отдельной ресурсно-временной системой внутри dungeon.
 
-## Entry requirement
+## Что сообщил пользователь по фактическому прохождению
 
-Main scene displays:
-"Mindy needs two or more Stamina to enter a dungeon!"
+- Вход в dungeon стоит 2 единицы обычной дневной энергии. Если их нет — вход недоступен.
+- После входа используется ДРУГАЯ внутренняя энергия/выносливость и другие правила.
+- Количество боёв не ограничено тремя: за одну экспедицию их может быть больше 10.
+- Существенное наказание внутреннего ресурса связано прежде всего с поражениями, а не с каждым обычным боем.
+- В dungeon работает собственный суточный цикл примерно:
+  - утро
+  - день
+  - вечер
+  - ночь
+- Ночь является фазой отдыха и может содержать отдельные сцены/события.
+- Состав врагов может меняться в зависимости от сезона.
+- Доступность/состояние отдельных областей dungeon также может меняться по сезону.
 
-The bytecode checks:
-- stamina <= 1 -> deny entry;
-- stamina > 1 -> switch to the selected dungeon.
+Это пользовательское описание поведения игры считаем важной поправкой к нашей архитектурной модели и теперь сверяем его с байткодом.
 
-There is no Stamina subtraction in the successful dungeon-entry branch.
+## Что уже подтверждено SWF, но раньше было истолковано неправильно
 
-Therefore dungeon entry itself is NOT a fixed 3-Stamina purchase.
+SceneEvents_0 действительно содержит проверку, что для входа нужно как минимум 2 Stamina. Ранее я увидел проверку, но не нашёл/не проследил весь путь списания стоимости входа и ошибочно решил, что это только минимальный порог.
 
-## Inside the dungeon
+В dungeon/combat коде действительно есть отдельные stamina-related и time-related проверки, но их нельзя автоматически отождествлять с глобальной дневной Stamina без трассировки переменных и переходов.
 
-Combat result handlers in SceneEvents_44 contain:
-stamina = stamina - 1
+Следующая проверка должна установить:
+1. где именно списываются 2 внешние энергии при входе;
+2. имя/формулу внутреннего dungeon-resource;
+3. как устроен переход morning/day/evening/night;
+4. что восстанавливается ночью;
+5. какие исходы боя уменьшают внутренний ресурс и на сколько;
+6. как сезон меняет enemy pools и map/area access.
 
-Dungeon map scenes check Stamina against zero.
+## Исправленная архитектурная модель
 
-In dungeon01Brimstone:
-- when stamina <= 0, 4 Way Movement is disabled;
-- velocity is set to zero;
-- a shock animation/state is triggered;
-- after 1500 ms, the game switches back to scene 0 (main).
+Overworld:
+- day action economy;
+- dungeon entry = 2 daily energy.
 
-Equivalent stamina-aware logic exists across the later dungeon maps.
+Dungeon expedition:
+- separate local resource/time loop;
+- many encounters possible;
+- defeat has a larger endurance/time consequence;
+- night = rest/event phase;
+- season can alter enemies and geography/access.
 
-## Practical interpretation
-
-With the normal 3-Stamina day:
-- player can enter because 3 >= 2;
-- dungeon does not consume Stamina just for walking through the entrance;
-- relevant combat resolution consumes Stamina;
-- exhausting the resource to zero ends the expedition automatically.
-
-This explains why the walkthrough describes a dungeon trip as needing 3 Stamina: in normal play a fresh day gives 3 and an expedition can consume that pool. But the code-level rule is "minimum 2 to enter; Stamina is spent inside", not "pay 3 on entry".
-
-## Successor relevance
-
-For the new game, if a large activity should cost exactly 2 energy, implement that explicitly. Do not inherit this dungeon-specific endurance-pool behavior accidentally.
+Это отдельная вложенная "маленькая игра внутри игры", а не просто дорогая кнопка, которая съедает 2–3 обычных действия.
