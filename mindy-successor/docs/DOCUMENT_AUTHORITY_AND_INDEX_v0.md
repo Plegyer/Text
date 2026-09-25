@@ -42,14 +42,19 @@
 Historical:
 - `SUCCESSOR_SYSTEM_ARCHITECTURE_v0.md` superseded.
 
-## 4. Implementation gates
+## 4. Master implementation spec
+
+- `EXECUTABLE_TZ_v1.md`
+- `IMPLEMENTATION_PACKAGE_A1_v1.md`
+
+## 5. Implementation gates
 
 - `ARCHITECTURE_MIGRATION_SLICE_v1.md`
 - `PRODUCT_ACCEPTANCE_SLICE_v0.md`
 - `FIRST_RELEASE_SCOPE_DRAFT_v0.md`
 - `FULL_TZ_READINESS_REVIEW_v0.md`
 
-## 5. Core product systems
+## 6. Core product systems
 
 ### Progression philosophy
 - `PROGRESSION_AND_DIFFICULTY_PHILOSOPHY_v1.md`
