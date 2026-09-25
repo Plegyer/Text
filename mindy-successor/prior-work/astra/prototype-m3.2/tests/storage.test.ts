@@ -7,10 +7,10 @@ test('atomic disk saves, fallback backup and serialized writes',async()=>{
   try{
     const store=createStore(dir,(text:string)=>parseSave(text,catalog));assert.equal(await store.read(),null);
     const first=started(),second=act(first,'tavern');await store.save(JSON.stringify(first));await store.save(JSON.stringify(second));
-    assert.equal(JSON.parse((await store.read()).text).run.slot,1);
-    await writeFile(join(dir,'save-v1.json'),'truncated');const recovered=await store.read();assert.equal(recovered.recovered,true);assert.equal(JSON.parse(recovered.text).run.slot,0);
-    await store.save(JSON.stringify(second));assert.equal(JSON.parse(await readFile(join(dir,'save-v1.json.bak'),'utf8')).run.slot,0);
-    await assert.rejects(()=>store.save('invalid'));assert.equal(JSON.parse((await store.read()).text).run.slot,1);
-    await Promise.all([store.save(JSON.stringify(first)),store.save(JSON.stringify(second))]);assert.equal(JSON.parse((await store.read()).text).run.slot,1);
+    assert.equal(JSON.parse((await store.read()).text).run.historyState.dayActionCount,1);
+    await writeFile(join(dir,'save-v1.json'),'truncated');const recovered=await store.read();assert.equal(recovered.recovered,true);assert.equal(JSON.parse(recovered.text).run.historyState.dayActionCount,0);
+    await store.save(JSON.stringify(second));assert.equal(JSON.parse(await readFile(join(dir,'save-v1.json.bak'),'utf8')).run.historyState.dayActionCount,0);
+    await assert.rejects(()=>store.save('invalid'));assert.equal(JSON.parse((await store.read()).text).run.historyState.dayActionCount,1);
+    await Promise.all([store.save(JSON.stringify(first)),store.save(JSON.stringify(second))]);assert.equal(JSON.parse((await store.read()).text).run.historyState.dayActionCount,1);
   }finally{await rm(dir,{recursive:true,force:true});}
 });
