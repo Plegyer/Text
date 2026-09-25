@@ -14,3 +14,10 @@
 ## Замысел пользователя и ожидаемый результат
 
 Перед проектированием игровых систем прочитать [USER_VISION_AND_ACCEPTANCE.md](docs/USER_VISION_AND_ACCEPTANCE.md). Это восстановленный контекст пользовательских требований: насыщенная взаимосвязанная жизнь, профессии и статы, образование, бедность, ночи, взрослые отношения, медиа-оболочка и критерии будущего полного исполнительного ТЗ. Технический migration slice не заменяет продуктовую приёмку. Документ различает требования, исторические параметры и открытые решения; не запускает реализацию автоматически.
+
+
+## Текущий порядок чтения
+
+Новый исполнитель должен начинать с [DOCUMENT_AUTHORITY_AND_INDEX_v0.md](docs/DOCUMENT_AUTHORITY_AND_INDEX_v0.md). В нём указан приоритет документов, текущий architecture baseline, product drafts, historical материалы и список decision placeholders.
+
+Для сборки будущего полного исполнительного ТЗ использовать [EXECUTABLE_TZ_SKELETON_v0.md](docs/EXECUTABLE_TZ_SKELETON_v0.md). Для порядка реализации — [IMPLEMENTATION_PHASES_AND_PACKAGES_v0.md](docs/IMPLEMENTATION_PHASES_AND_PACKAGES_v0.md).
