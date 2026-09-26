@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - lead/a1-a6-gate-phase-b
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
