@@ -1,0 +1,304 @@
+{
+  "formatVersion": 1,
+  "id": "school.production-reachability.fixture.v1",
+  "startPreconditions": {
+    "runStatus": "active",
+    "storyArrived": true,
+    "characterCreationComplete": true
+  },
+  "apiContract": [
+    {
+      "step": "open-school",
+      "status": "activation-dependent",
+      "existingApi": null,
+      "expectedProductionSeam": "School picker UI entry",
+      "note": "No shared UI command exists on this branch; do not invent one."
+    },
+    {
+      "step": "select-paid-course",
+      "status": "executable-now",
+      "existingApi": "executeSchoolLesson(input, courseId, catalog, runtime)",
+      "expectedProductionCommand": {
+        "type": "schoolLesson",
+        "courseId": "<SchoolCourseId>",
+        "status": "activation-dependent"
+      }
+    },
+    {
+      "step": "paid-lesson-school-progress",
+      "status": "activation-dependent",
+      "existingApi": null,
+      "requiredEffect": "increment selected track lessons_completed by 1 exactly once"
+    },
+    {
+      "step": "lesson-presentation",
+      "status": "executable-now",
+      "existingApi": "getSchoolCourse(courseId).presentationId"
+    },
+    {
+      "step": "save-reload-after-lesson",
+      "status": "partially-executable",
+      "existingApi": "parseSave(text, catalog, currentMeta?)",
+      "note": "Current target save can reload money/Energy/stats; typed School-owned progression persistence remains activation-dependent."
+    },
+    {
+      "step": "end-day",
+      "status": "executable-now",
+      "existingApi": "dispatch(save, {type:'endDay'}, catalog)"
+    },
+    {
+      "step": "choose-lodging",
+      "status": "executable-now",
+      "existingApi": "dispatch(save, {type:'chooseLodging', id}, catalog)"
+    },
+    {
+      "step": "night-study",
+      "status": "executable-now",
+      "existingApi": "dispatch(save, {type:'chooseNightChoice', id}, catalog)"
+    },
+    {
+      "step": "night-study-school-progress",
+      "status": "activation-dependent",
+      "existingApi": null,
+      "requiredEffect": "increment selected track night_study_sessions by 1 exactly once"
+    },
+    {
+      "step": "save-reload-after-night",
+      "status": "partially-executable",
+      "existingApi": "parseSave(text, catalog, currentMeta?)",
+      "note": "Current NightFlow reload is executable; typed School-owned progression persistence remains activation-dependent."
+    }
+  ],
+  "courses": [
+    {
+      "courseId": "school.course.literacy_and_numbers",
+      "trackId": "school.track.literacy_and_numbers",
+      "tuition": 300,
+      "daytimeEnergyCost": 1,
+      "statDeltas": [
+        {
+          "stat": "reason",
+          "delta": 4
+        },
+        {
+          "stat": "wits",
+          "delta": 2
+        }
+      ],
+      "presentationId": "school/literacy-and-numbers/lesson/default",
+      "representativeNightStudy": {
+        "choiceId": "school.night_study.literacy_and_numbers.reason",
+        "stat": "reason",
+        "statDelta": 2,
+        "nextDayEnergyDelta": -1
+      }
+    },
+    {
+      "courseId": "school.course.arcana",
+      "trackId": "school.track.arcana",
+      "tuition": 500,
+      "daytimeEnergyCost": 1,
+      "statDeltas": [
+        {
+          "stat": "magic",
+          "delta": 4
+        },
+        {
+          "stat": "reason",
+          "delta": 4
+        },
+        {
+          "stat": "creativity",
+          "delta": 2
+        }
+      ],
+      "presentationId": "school/arcana/lesson/default",
+      "representativeNightStudy": {
+        "choiceId": "school.night_study.arcana.magic",
+        "stat": "magic",
+        "statDelta": 2,
+        "nextDayEnergyDelta": -1
+      }
+    },
+    {
+      "courseId": "school.course.rhetoric_and_social",
+      "trackId": "school.track.rhetoric_and_social",
+      "tuition": 300,
+      "daytimeEnergyCost": 1,
+      "statDeltas": [
+        {
+          "stat": "charm",
+          "delta": 3
+        },
+        {
+          "stat": "sociability",
+          "delta": 3
+        },
+        {
+          "stat": "wits",
+          "delta": 2
+        }
+      ],
+      "presentationId": "school/rhetoric-and-social/lesson/default",
+      "representativeNightStudy": {
+        "choiceId": "school.night_study.rhetoric_and_social.charm",
+        "stat": "charm",
+        "statDelta": 2,
+        "nextDayEnergyDelta": -1
+      }
+    },
+    {
+      "courseId": "school.course.etiquette_and_presentation",
+      "trackId": "school.track.etiquette_and_presentation",
+      "tuition": 400,
+      "daytimeEnergyCost": 1,
+      "statDeltas": [
+        {
+          "stat": "manners",
+          "delta": 3
+        },
+        {
+          "stat": "grooming",
+          "delta": 3
+        },
+        {
+          "stat": "charm",
+          "delta": 2
+        }
+      ],
+      "presentationId": "school/etiquette-and-presentation/lesson/default",
+      "representativeNightStudy": {
+        "choiceId": "school.night_study.etiquette_and_presentation.manners",
+        "stat": "manners",
+        "statDelta": 2,
+        "nextDayEnergyDelta": -1
+      }
+    },
+    {
+      "courseId": "school.course.field_craft",
+      "trackId": "school.track.field_craft",
+      "tuition": 400,
+      "daytimeEnergyCost": 1,
+      "statDeltas": [
+        {
+          "stat": "dexterity",
+          "delta": 3
+        },
+        {
+          "stat": "wits",
+          "delta": 3
+        },
+        {
+          "stat": "creativity",
+          "delta": 2
+        }
+      ],
+      "presentationId": "school/field-craft/lesson/default",
+      "representativeNightStudy": {
+        "choiceId": "school.night_study.field_craft.dexterity",
+        "stat": "dexterity",
+        "statDelta": 2,
+        "nextDayEnergyDelta": -1
+      }
+    },
+    {
+      "courseId": "school.course.physical_training",
+      "trackId": "school.track.physical_training",
+      "tuition": 400,
+      "daytimeEnergyCost": 1,
+      "statDeltas": [
+        {
+          "stat": "strength",
+          "delta": 3
+        },
+        {
+          "stat": "endurance",
+          "delta": 3
+        },
+        {
+          "stat": "dexterity",
+          "delta": 2
+        }
+      ],
+      "presentationId": "school/physical-training/lesson/default",
+      "representativeNightStudy": {
+        "choiceId": "school.night_study.physical_training.strength",
+        "stat": "strength",
+        "statDelta": 2,
+        "nextDayEnergyDelta": -1
+      }
+    },
+    {
+      "courseId": "school.course.arts_and_performance",
+      "trackId": "school.track.arts_and_performance",
+      "tuition": 500,
+      "daytimeEnergyCost": 1,
+      "statDeltas": [
+        {
+          "stat": "creativity",
+          "delta": 3
+        },
+        {
+          "stat": "charm",
+          "delta": 3
+        },
+        {
+          "stat": "sociability",
+          "delta": 2
+        },
+        {
+          "stat": "dexterity",
+          "delta": 2
+        }
+      ],
+      "presentationId": "school/arts-and-performance/lesson/default",
+      "representativeNightStudy": {
+        "choiceId": "school.night_study.arts_and_performance.creativity",
+        "stat": "creativity",
+        "statDelta": 2,
+        "nextDayEnergyDelta": -1
+      }
+    },
+    {
+      "courseId": "school.course.body_confidence",
+      "trackId": "school.track.body_confidence",
+      "tuition": 400,
+      "daytimeEnergyCost": 1,
+      "statDeltas": [
+        {
+          "stat": "sexuality",
+          "delta": 3
+        },
+        {
+          "stat": "grooming",
+          "delta": 3
+        },
+        {
+          "stat": "endurance",
+          "delta": 2
+        }
+      ],
+      "presentationId": "school/body-confidence/lesson/default",
+      "representativeNightStudy": {
+        "choiceId": "school.night_study.body_confidence.sexuality",
+        "stat": "sexuality",
+        "statDelta": 2,
+        "nextDayEnergyDelta": -1
+      }
+    }
+  ],
+  "schoolOwnedProgressionExpectation": {
+    "perTrackCounters": {
+      "paidLesson": {
+        "counter": "lessons_completed",
+        "delta": 1
+      },
+      "nightStudy": {
+        "counter": "night_study_sessions",
+        "delta": 1
+      }
+    },
+    "persistence": "exactly-once-across-save-reload",
+    "status": "activation-dependent"
+  }
+}
