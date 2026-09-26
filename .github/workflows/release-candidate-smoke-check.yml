@@ -1,0 +1,25 @@
+name: Release Candidate Smoke Check
+
+on:
+  push:
+    branches:
+      - lead/release-candidate-smoke-v2
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.18.0
+          cache: npm
+          cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
+      - run: npm ci
+      - run: npm run check
