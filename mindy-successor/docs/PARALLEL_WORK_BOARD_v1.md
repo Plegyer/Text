@@ -3,7 +3,7 @@
 Status: LIVE COORDINATION BOARD.
 
 Current main baseline:
-`1a15f79ba74ba3ef82bc8997d2458fe5a571bedb`.
+`eb726954130c0db5886218d288451900ea1244f4`.
 
 ## Coordination rule — no worker idle
 
@@ -19,6 +19,10 @@ If a queued task becomes blocked, the worker moves to the next independent queue
 
 ## Critical path owned by Chat 1 / Lead
 
+Phase A integrated gate closed on PR #14 with full `npm run check` green (125/125 tests).
+Phase B is active. Lead reviews PR #15/#16/#17 asynchronously while workers continue on separate continuation branches.
+
+
 A1–A6 architecture implementation is complete and merged.
 Current Lead path:
 - integrated Architecture Migration gate;
@@ -32,38 +36,40 @@ Shared-core ownership is now assigned per task, not globally locked by default.
 ## Active queues
 
 ### Chat 2 — Presentation runtime
-Branch: `chat2/phase-b-central-stage`
-Task: `docs/tasks/TASK_CHAT2_PHASE_B_QUEUE_v1.md`
+Review PR: #15 (`chat2/phase-b-central-stage`) — frozen for Lead review.
+Continuation branch: `chat2/presentation-registry-next`
+Task: `docs/tasks/TASK_CHAT2_PRESENTATION_REGISTRY_NEXT_v1.md`
 Queue:
-1. central GIF stage runtime;
-2. presentationId editor replacement workflow.
-State: READY / CONTINUOUS.
+1. target semantic presentation registry fixture;
+2. legacy media -> semantic presentationId migration matrix.
+State: ACTIVE / CONTINUOUS.
 
 ### Chat 3 — Lumber product slice
-Branch: `chat3/lumber-live-slice`
-Task: `docs/tasks/TASK_CHAT3_LUMBER_QUEUE_v1.md`
+Review PR: #16 (`chat3/lumber-live-slice`) — frozen for Lead review.
+Continuation branch: `chat3/lumber-pa-next`
+Task: `docs/tasks/TASK_CHAT3_LUMBER_PA_NEXT_v1.md`
 Queue:
-1. schema-valid Lumber production fixture;
-2. cross-system Lumber acceptance fixture.
-State: READY / CONTINUOUS.
+1. Lumber/Foreman Night acceptance fixture;
+2. PA fixture manifest for Lumber IDs/hooks.
+State: ACTIVE / CONTINUOUS.
 
 ### Chat 4 — QA / architecture gate
-Branch: `chat4/post-a6-gate`
-Task: `docs/tasks/TASK_CHAT4_POST_A6_QUEUE_v1.md`
+Previous post-A6 QA work was integrated through Lead PR #14.
+Continuation branch: `chat4/phase-b-pa-audit`
+Task: `docs/tasks/TASK_CHAT4_PHASE_B_PA_AUDIT_v1.md`
 Queue:
-1. post-A6 Architecture Gate audit;
-2. executable acceptance-evidence gap tests;
-3. Product Acceptance harness skeleton.
-State: READY / CONTINUOUS.
+1. Phase B presentation acceptance audit against PR #15;
+2. cross-PR Product Acceptance wiring review for PR #16/#17.
+State: ACTIVE / CONTINUOUS.
 
 ### Chat 5 — School runtime slice
-Branch: `chat5/school-runtime-slice`
-Task: `docs/tasks/TASK_CHAT5_SCHOOL_QUEUE_v1.md`
+Review PR: #17 (`chat5/school-runtime-slice`) — frozen for Lead review.
+Continuation branch: `chat5/school-integration-next`
+Task: `docs/tasks/TASK_CHAT5_SCHOOL_INTEGRATION_NEXT_v1.md`
 Queue:
-1. executable School catalog module;
-2. School transaction fixture;
-3. integration-ready handoff.
-State: READY / CONTINUOUS.
+1. School engine-facing fixture adapter;
+2. isolated Night study fixture.
+State: ACTIVE / CONTINUOUS.
 
 ## Accepted previous worker work
 
