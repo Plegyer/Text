@@ -4,7 +4,7 @@ CHAT: 5
 ROLE: Optional School Data Worker
 BASE COMMIT: 42de07be793d0f5ef0b59ea2c8acf9f0c4c80125
 BRANCH: chat5/school-data-prep
-STATUS: READY
+STATUS: COMPLETE
 
 ## Goal
 
@@ -98,3 +98,27 @@ Commit to this branch and return:
 ## Start instruction
 
 If you are Chat 5, execute this bounded School packet only. Do not redesign School economics or progression philosophy.
+
+
+## Result
+
+Completed on branch `chat5/school-data-prep`.
+
+Prepared deliverables:
+- `docs/school-prep/SCHOOL_TRACK_DATA_MAP_v1.md`;
+- `docs/school-prep/SCHOOL_PROGRESSION_STRUCTURE_v1.md`;
+- `docs/school-prep/SCHOOL_PRESENTATION_SLOT_CATALOG_v1.md`;
+- `workstreams/chat5/school/school_draft_v1.json`;
+- `docs/school-prep/SCHOOL_INTEGRATION_NOTES_v1.md`.
+
+Verification:
+- eight baseline course prices/effects match the accepted School balance baseline;
+- all 12 progression stats have direct repeatable School coverage;
+- Lust is excluded from standard School stats;
+- Night study remains a Night-slot action with next-day Energy -1;
+- teacher identity/lore and other authorial fields remain placeholders;
+- no forbidden implementation/content/test files were changed.
+
+Unresolved authorial placeholders are listed in `SCHOOL_PROGRESSION_STRUCTURE_v1.md` and `SCHOOL_INTEGRATION_NOTES_v1.md`.
+
+Do not merge this branch to main directly; hand off to Chat 1 / Lead for integration.
