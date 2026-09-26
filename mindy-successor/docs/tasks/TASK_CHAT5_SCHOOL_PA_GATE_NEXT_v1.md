@@ -190,3 +190,101 @@ Deduplicate Chat 5 artifacts into:
 Do not request shared runtime changes for already-green typed School progress unless a concrete failing contract proves one is necessary.
 
 Continue items 13–18 sequentially without waiting for Lead review.
+
+
+## Queue item 19 — School PA closure dependency audit
+
+Create NEW files only:
+- `docs/school-prep/SCHOOL_PA_CLOSURE_DEPENDENCY_AUDIT_v1.md`
+- `prior-work/astra/prototype-m3.2/tests/school-pa-closure-dependency.test.ts`
+
+Using the current Product Acceptance gate result, classify every remaining School-related blocker as:
+- already shipped;
+- presentation/content-depth only;
+- OPEN authoring;
+- runtime-independent external blocker.
+
+At minimum cover PA07/PA08 and the School-facing part of Forewoman/Forest routes.
+Do not invent final public fact IDs, thresholds, certificates, teacher identities or projects.
+
+## Queue item 20 — School public-fact authoring preflight validator
+
+Create NEW files only:
+- `prior-work/astra/prototype-m3.2/content/school-public-fact-preflight.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/school-public-fact-preflight.test.ts`
+
+Define a preflight contract for future School-authored public facts:
+- School owns the private trigger/progression;
+- publication crosses through worldFacts/domain-public boundary;
+- emitted fact ID must be explicitly declared;
+- exactly-once across reload;
+- no direct Lumber private-state mutation;
+- no private School counter may be read directly by Lumber.
+
+Include invalid examples that must reject. Keep actual management/Arcana fact IDs OPEN.
+
+## Queue item 21 — School course/track ownership consistency suite
+
+Create NEW files only:
+- `prior-work/astra/prototype-m3.2/content/school-course-track-ownership.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/school-course-track-ownership.test.ts`
+
+For all eight courses verify:
+- exactly one stable courseId -> trackId mapping;
+- paid lesson increments only that track's `lessons_completed`;
+- Night study increments only that track's `night_study_sessions`;
+- no other track counter mutates;
+- gameplay IDs and semantic presentation IDs remain stable.
+
+No shared runtime edits.
+
+## Queue item 22 — School Night production parity after PR21
+
+Create NEW files only:
+- `prior-work/astra/prototype-m3.2/content/school-night-production-parity.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/school-night-production-parity.test.ts`
+
+Cross-check the accepted 24-choice School Night catalog against the shipped Night rules:
+- normal/cheap availability;
+- street restriction;
+- tuition 0;
+- current-day Energy 0;
+- +2 supported stat;
+- next-day Energy -1;
+- one Night slot;
+- typed `night_study_sessions`;
+- save/reload exactly-once expectation.
+
+Do not patch NightFlow or UI.
+
+## Queue item 23 — School PA no-false-green audit
+
+Create:
+- `docs/school-prep/SCHOOL_PA_NO_FALSE_GREEN_AUDIT_v1.md`
+- optional NEW test `prior-work/astra/prototype-m3.2/tests/school-pa-no-false-green.test.ts`
+
+Identify every School fixture/accelerator that could be mistaken for a full product pass:
+- synthetic public fact;
+- direct typed counter setup;
+- direct track state setup;
+- fixture-only certificate/milestone placeholder;
+- direct worldFact injection.
+
+Classify each as legitimate isolated evidence vs forbidden Product Acceptance pass evidence.
+
+## Queue item 24 — School release-candidate handoff v2
+
+Create:
+- `docs/school-prep/SCHOOL_RELEASE_CANDIDATE_HANDOFF_v2.md`
+- `prior-work/astra/prototype-m3.2/content/school-release-candidate-handoff.fixture.json`
+
+Consolidate all Chat 5 work after PR21 into:
+- READY_TO_INTEGRATE_NOW;
+- QA_EVIDENCE_ONLY;
+- OPEN_AUTHORING_PACKET;
+- PRESENTATION_CONTENT_DEPTH;
+- SUPERSEDED.
+
+Name exact files in each class and keep the final management/accounting and Arcana/Forest public-fact authoring explicitly OPEN.
+
+Continue items 19–24 sequentially without waiting for Lead review.
