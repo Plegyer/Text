@@ -1022,6 +1022,20 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
   const queuedById=new Map(s.run.flow.reaction.queued.map(q=>[q.instanceId,q]));
   if(s.run.dayState.optionalOfferIds.some(id=>queuedById.get(id)?.kind!=='optional'))throw new Error('Некорректная optional offer ссылка.');
   if(s.run.dayState.scheduledEventIds.some(id=>queuedById.get(id)?.kind!=='scheduled'))throw new Error('Некорректная scheduled event ссылка.');
+  if(s.run.flow.night){
+    const n=s.run.flow.night;
+    if(!n.calendarAdvanceCommitted&&n.startedDay!==s.run.day)throw new Error('NightFlow привязан к другому календарному дню.');
+    if(n.calendarAdvanceCommitted&&s.run.day!==Math.min(159,n.startedDay+1))throw new Error('NightFlow имеет некорректный calendar advance.');
+    if(n.selectedLodgingId&&!n.selectedLodgingId.startsWith('legacy.')&&!cat.definitions.lodgings.some(x=>x.id===n.selectedLodgingId))throw new Error('Неизвестный lodging NightFlow.');
+    if(n.selectedNightChoiceId&&!n.selectedNightChoiceId.startsWith('legacy.')&&!cat.definitions.nightChoices.some(x=>x.id===n.selectedNightChoiceId))throw new Error('Неизвестный night choice NightFlow.');
+    if(n.lodgingPaymentCommitted&&!n.selectedLodgingId)throw new Error('NightFlow оплатил неизвестный ночлег.');
+    if(['PostLodgingForcedCheck','VoluntaryNightChoice'].includes(n.phase)&&!n.suppressLodgingPayment&&!n.lodgingPaymentCommitted)throw new Error('NightFlow прошёл lodging без commit оплаты.');
+    if(n.currentIntercept&&!['NightEventResolution'].includes(n.phase))throw new Error('NightFlow intercept вне event resolution.');
+    if(s.run.pending&&n.currentIntercept){
+      const e=cat.events.find(x=>x.id===s.run.pending!.eventId);
+      if(e?.nightPolicy&&e.nightPolicy.intercept!==n.currentIntercept)throw new Error('Pending night event не соответствует intercept.');
+    }
+  }
   for(const [eventId,h] of Object.entries(s.run.history)){
     const e=cat.events.find(e=>e.id===eventId);
     if(!e||h.lastDay>s.run.day||Object.entries(h.variants).some(([variantId,day])=>day>s.run.day||!e.variants.some(v=>v.id===variantId)))throw new Error('Некорректная история сцен.');
