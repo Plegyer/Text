@@ -1,4 +1,4 @@
-import { metrics, stats, seasons, saveSchema, type Stat, type Save, type Meta, type Condition, type Effect, type Catalog, type StoryEvent, type Action, type MachineDefinition } from './schema.ts';
+import { metrics, stats, seasons, priorityClasses, saveSchema, type Stat, type Save, type Meta, type Condition, type Effect, type Catalog, type StoryEvent, type Action, type MachineDefinition, type ReactionFact, type ReactionTrigger, type PriorityClass } from './schema.ts';
 
 const statSet=new Set<string>(stats);
 const cappedLegacy=new Set(['health','stress','trust']);
@@ -215,7 +215,7 @@ export function freshSave(metaInput?:Partial<Meta>&{completed?:string[];lives?:n
       housingState:{current:'normal' as const,paidForCurrentNight:false},
       progression:{careers:{},quests:{},relationships:{},worldFacts:[]},
       endings:{eligible:[],committed:null,result:null},
-      flow:{pendingScene:null,night:null,activity:null,lastAction:null},
+      flow:{pendingScene:null,reaction:{epochCounter:0,currentEpochId:null,attemptedEventIds:[],cascadeDepth:0,queued:[]},night:null,activity:null,lastAction:null},
       rngState:{state:(meta.runsStarted*2654435761)>>>0},
       historyState:{eventHistory:{},actionCounts:{},dayActionCount:0,journal:['Белый суслик, открытый люк и совершенно незнакомое небо. Ваша новая жизнь начинается в Листограде.']},
       legacyCompat:{source:'m3.2' as const,metrics:defaultLegacyMetrics(),flags:{}}
@@ -498,7 +498,7 @@ function migrateV3(raw:any){
       housingState:{current:targetHousing(raw.run.housing??'room'),paidForCurrentNight:false},
       progression:{careers:{},quests:{},relationships:{},worldFacts:[]},
       endings:{eligible:[...(raw.run.availableEndings??[])],committed:raw.run.acceptedEnding??null,result:null},
-      flow:{pendingScene:raw.run.pending?{...raw.run.pending}:null,night:null,activity:null,lastAction:raw.run.lastAction??null},
+      flow:{pendingScene:raw.run.pending?{...raw.run.pending}:null,reaction:{epochCounter:0,currentEpochId:null,attemptedEventIds:[],cascadeDepth:0,queued:[]},night:null,activity:null,lastAction:raw.run.lastAction??null},
       rngState:{state:(raw.run.rng??2654435761)>>>0},
       historyState:{
         eventHistory:{...(raw.run.history??{})},
