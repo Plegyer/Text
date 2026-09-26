@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "id": "lumber.forest-capability-options.fixture",
+  "status": "AUTHORING_CONTRACT_NOT_RUNTIME_PATCH",
+  "options": [
+    {
+      "fixtureOptionKey": "old-boundary-route",
+      "productionOptionId": null,
+      "requiredCapability": "enter_old_boundary",
+      "authoritativeItemId": "old_boundary_token",
+      "routeContext": "old boundary path",
+      "challengeFamily": "route choice / navigation",
+      "routeBindingStatus": "LOCKED",
+      "consumePolicy": "OPEN",
+      "saveReloadIdentity": {
+        "availabilitySource": "authoritative capability state",
+        "optionKeyStable": true,
+        "duplicateUseForbidden": true
+      },
+      "actionSpaceEffect": {
+        "before": "old boundary path unavailable",
+        "after": "old boundary path becomes available",
+        "numericOnlyAllowed": false
+      }
+    },
+    {
+      "fixtureOptionKey": "rough-route-crossing",
+      "productionOptionId": null,
+      "requiredCapability": "cross_rough_route",
+      "authoritativeItemId": "rope_kit",
+      "routeContext": null,
+      "challengeFamily": "physical obstacle",
+      "routeBindingStatus": "OPEN",
+      "consumePolicy": "OPEN",
+      "saveReloadIdentity": {
+        "availabilitySource": "authoritative capability state",
+        "optionKeyStable": true,
+        "duplicateUseForbidden": true
+      },
+      "actionSpaceEffect": {
+        "before": "rough shortcut / safe bypass option unavailable",
+        "after": "rough shortcut / safe bypass option becomes available",
+        "numericOnlyAllowed": false
+      }
+    },
+    {
+      "fixtureOptionKey": "preserve-specimen",
+      "productionOptionId": null,
+      "requiredCapability": "preserve_specimen",
+      "authoritativeItemId": "field_preservation_kit",
+      "routeContext": null,
+      "challengeFamily": "interpretation / ritual anomaly",
+      "routeBindingStatus": "OPEN",
+      "consumePolicy": "OPEN",
+      "saveReloadIdentity": {
+        "availabilitySource": "authoritative capability state",
+        "optionKeyStable": true,
+        "duplicateUseForbidden": true
+      },
+      "actionSpaceEffect": {
+        "before": "rare sample cannot be preserved as a full item",
+        "after": "preserve / extract rare sample option becomes available",
+        "numericOnlyAllowed": false
+      }
+    },
+    {
+      "fixtureOptionKey": "cut-heavy-wood",
+      "productionOptionId": null,
+      "requiredCapability": "cut_heavy_wood",
+      "authoritativeItemId": "reinforced_axe",
+      "routeContext": "logging road",
+      "challengeFamily": "physical obstacle",
+      "routeBindingStatus": "AUTHORITATIVE_FIT",
+      "consumePolicy": "OPEN",
+      "saveReloadIdentity": {
+        "availabilitySource": "authoritative capability state",
+        "optionKeyStable": true,
+        "duplicateUseForbidden": true
+      },
+      "actionSpaceEffect": {
+        "before": "heavy-wood obstacle approach unavailable",
+        "after": "heavy-wood obstacle approach becomes available",
+        "numericOnlyAllowed": false
+      }
+    }
+  ],
+  "runtimeBoundary": {
+    "sharedRuntimePatchIncluded": false,
+    "currentActivityCommands": [
+      "advance",
+      "escape"
+    ],
+    "futureCapabilityAwareOptionSurfaceRequired": true,
+    "capabilityAvailabilityMustComeFromActualOwnedState": true
+  },
+  "hardWorkIsolation": {
+    "anyCapabilityPrerequisiteAllowed": false,
+    "onlyCondition": {
+      "kind": "careerCounter",
+      "career": "lumber",
+      "counter": "completed_shifts",
+      "op": "gte",
+      "value": 50
+    },
+    "rewardId": "hardWork:lumber"
+  }
+}
