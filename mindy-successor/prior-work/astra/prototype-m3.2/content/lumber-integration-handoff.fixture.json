@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "id": "lumber.integration-handoff.fixture",
+  "productionBaseline": {
+    "mergeCommit": "9b427d75dc22021cd3373aa7dd3521782e54152d",
+    "activationStatus": "SHIPPED"
+  },
+  "categories": {
+    "MUST_INTEGRATE": [
+      "mindy-successor/docs/lumber-prep/LUMBER_PA_BLOCKER_BURNDOWN_v1.md",
+      "mindy-successor/docs/lumber-prep/LUMBER_PRODUCT_ACCEPTANCE_ROW_MAP_v1.md",
+      "mindy-successor/docs/lumber-prep/LUMBER_RELEASE_READINESS_v1.md",
+      "mindy-successor/docs/lumber-prep/LUMBER_INTEGRATION_HANDOFF_v1.md",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/lumber-cross-system-reload-chronology.fixture.json",
+      "mindy-successor/prior-work/astra/prototype-m3.2/tests/lumber-cross-system-reload-chronology.test.ts",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/lumber-ending-identity.fixture.json",
+      "mindy-successor/prior-work/astra/prototype-m3.2/tests/lumber-ending-identity.test.ts",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/lumber-foreman-night-matrix.fixture.json",
+      "mindy-successor/prior-work/astra/prototype-m3.2/tests/lumber-foreman-night-matrix.test.ts",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/lumber-pa-shipped-row-evidence.fixture.json",
+      "mindy-successor/prior-work/astra/prototype-m3.2/tests/lumber-pa-shipped-row-evidence.test.ts",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/lumber-production-media-parity.fixture.json",
+      "mindy-successor/prior-work/astra/prototype-m3.2/tests/lumber-production-media-parity.test.ts",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/lumber-production-ui-contract.fixture.json",
+      "mindy-successor/prior-work/astra/prototype-m3.2/tests/lumber-production-ui-contract.test.ts",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/lumber-schema4-legacy-save.fixture.json",
+      "mindy-successor/prior-work/astra/prototype-m3.2/tests/lumber-schema4-legacy-save.test.ts",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/lumber-shipped-pack-parity.fixture.json",
+      "mindy-successor/prior-work/astra/prototype-m3.2/tests/lumber-shipped-pack-parity.test.ts",
+      "mindy-successor/prior-work/astra/prototype-m3.2/tests/lumber-pa-row-map.test.ts",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/lumber-integration-handoff.fixture.json"
+    ],
+    "QA_EVIDENCE_ONLY": [
+      "mindy-successor/docs/lumber-prep/LUMBER_CROSS_SYSTEM_HOOKS_v1.md",
+      "mindy-successor/docs/lumber-prep/LUMBER_FOREMAN_RELATIONSHIP_MAP_v1.md",
+      "mindy-successor/docs/lumber-prep/LUMBER_LEGACY_TARGET_COEXISTENCE_AUDIT_v1.md",
+      "mindy-successor/docs/lumber-prep/LUMBER_PRESENTATION_SLOT_CATALOG_v1.md",
+      "mindy-successor/docs/lumber-prep/LUMBER_REPEATABLE_SHIFT_SET_v1.md",
+      "mindy-successor/docs/lumber-prep/LUMBER_TYPED_PROGRESSION_MAP_v1.md",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/lumber-ending-independence.fixture.json",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/lumber-item-capabilities.fixture.json",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/lumber-target-definitions.fixture.json",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/packs/lumber-target/lumber-cross-system.pack.json",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/packs/lumber-target/lumber-night-acceptance.pack.json",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/packs/lumber-target/lumber-production.pack.json",
+      "mindy-successor/prior-work/astra/prototype-m3.2/tests/lumber-ending-independence.test.ts",
+      "mindy-successor/prior-work/astra/prototype-m3.2/tests/lumber-forest-acceptance-depth.test.ts",
+      "mindy-successor/prior-work/astra/prototype-m3.2/tests/lumber-forest-depth-gap.test.ts",
+      "mindy-successor/prior-work/astra/prototype-m3.2/tests/lumber-legacy-target-coexistence.test.ts",
+      "mindy-successor/prior-work/astra/prototype-m3.2/tests/lumber-night-acceptance.test.ts",
+      "mindy-successor/prior-work/astra/prototype-m3.2/tests/lumber-production-definition-merge-safety.test.ts",
+      "mindy-successor/prior-work/astra/prototype-m3.2/tests/lumber-target-cross-system.test.ts",
+      "mindy-successor/prior-work/astra/prototype-m3.2/tests/lumber-target-production.test.ts"
+    ],
+    "SUPERSEDED": [
+      "mindy-successor/docs/lumber-prep/LUMBER_ITEM_CAPABILITY_INTEGRATION_AUDIT_v1.md",
+      "mindy-successor/docs/lumber-prep/LUMBER_UNRESOLVED_DEPENDENCY_LEDGER_v1.md",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/lumber-pa-scenario.fixture.json",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/lumber-product-acceptance.fixture-manifest.json",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/lumber-production-activation.fixture.json",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/lumber-shipped-activation-expectations.fixture.json",
+      "mindy-successor/prior-work/astra/prototype-m3.2/tests/lumber-item-capability-integration-audit.test.ts",
+      "mindy-successor/prior-work/astra/prototype-m3.2/tests/lumber-pa-scenario-contract.test.ts",
+      "mindy-successor/prior-work/astra/prototype-m3.2/tests/lumber-production-activation-contract.test.ts",
+      "mindy-successor/prior-work/astra/prototype-m3.2/tests/lumber-shipped-activation-expectations.test.ts",
+      "mindy-successor/prior-work/astra/prototype-m3.2/tests/lumber-unresolved-dependency-ledger.test.ts"
+    ],
+    "OPEN_AUTHORING_PACKET": [
+      "mindy-successor/docs/lumber-prep/FOREST_DEPTH_GAP_TO_SPEC_v1.md",
+      "mindy-successor/docs/lumber-prep/OLD_BOUNDARY_TOKEN_AUTHORING_PACKET_v1.md",
+      "mindy-successor/docs/lumber-prep/SCHOOL_LUMBER_PUBLIC_FACT_AUTHORING_PACKET_v1.md",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/old-boundary-token-authoring.fixture.json",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/school-lumber-public-fact-authoring.fixture.json"
+    ]
+  },
+  "excludedBaselineArtifacts": [
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/packs/ds-lumber.json",
+    "mindy-successor/prior-work/astra/prototype-m3.2/tests/ds-lumber.test.ts"
+  ],
+  "rules": {
+    "everyChat3ArtifactExactlyOneCategory": true,
+    "alreadyOnMainProductionSourcesMustNotBeReintegratedBlindly": true,
+    "syntheticSchoolActionIsProduction": false,
+    "hardWorkStatus": "LOCKED_SHIPPED",
+    "hardWorkIsOpenBlocker": false
+  },
+  "hardWork": {
+    "endingId": "ending.lumber.hard-work",
+    "onlyCondition": {
+      "kind": "careerCounter",
+      "career": "lumber",
+      "counter": "completed_shifts",
+      "op": "gte",
+      "value": 50
+    },
+    "rewardId": "hardWork:lumber"
+  }
+}
