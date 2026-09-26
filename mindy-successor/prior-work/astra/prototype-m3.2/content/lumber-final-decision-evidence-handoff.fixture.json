@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 4,
+  "id": "lumber.final-decision-evidence-handoff.fixture",
+  "status": "POST_PR22_FINAL_DECISION_EVIDENCE",
+  "baselines": {
+    "productActivationMerge": "9b427d75dc22021cd3373aa7dd3521782e54152d",
+    "productAcceptanceEvidenceMerge": "e6c32903516d1ba40b9a3ffbf955d5f04783ac25",
+    "capabilityForestInfrastructureMerge": "011572ef1335deda5ac33120c3a7ea7f9849dbbf",
+    "rcQaFloorMerge": "e12665ce9063689400d8f39f893378f6f01911f3",
+    "pr24OneSaveStatus": "OPEN_AT_AUDIT_TIME"
+  },
+  "categories": {
+    "SHIPPED_GREEN": [
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/definitions.json",
+      "mindy-successor/prior-work/astra/prototype-m3.2/src/core/schema.ts",
+      "mindy-successor/prior-work/astra/prototype-m3.2/src/core/engine.ts",
+      "mindy-successor/prior-work/astra/prototype-m3.2/src/ui/app.ts",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/packs/lumber-target/lumber-production.pack.json",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/packs/lumber-target/lumber-cross-system.pack.json",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/packs/lumber-target/lumber-night-acceptance.pack.json",
+      "mindy-successor/prior-work/astra/prototype-m3.2/tests/item-capability-activity-closure.test.ts"
+    ],
+    "MUST_INTEGRATE_QA": [
+      "mindy-successor/docs/lumber-prep/LUMBER_PR22_CLOSURE_PARITY_AUDIT_v1.md",
+      "mindy-successor/prior-work/astra/prototype-m3.2/tests/lumber-pr22-closure-parity.test.ts",
+      "mindy-successor/docs/lumber-prep/LUMBER_PR24_ONE_SAVE_STATE_AUDIT_v1.md",
+      "mindy-successor/prior-work/astra/prototype-m3.2/tests/lumber-pr24-one-save-state-audit.test.ts",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/forest-hunter-trail-boundary.fixture.json",
+      "mindy-successor/prior-work/astra/prototype-m3.2/tests/forest-hunter-trail-boundary.test.ts",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/forest-challenge-skeleton.fixture.json",
+      "mindy-successor/prior-work/astra/prototype-m3.2/tests/forest-challenge-skeleton.test.ts",
+      "mindy-successor/prior-work/astra/prototype-m3.2/tests/lumber-rc-no-false-green.test.ts",
+      "mindy-successor/docs/lumber-prep/LUMBER_FINAL_DECISION_EVIDENCE_HANDOFF_v4.md",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/lumber-final-decision-evidence-handoff.fixture.json"
+    ],
+    "HUMAN_DECISION_REQUIRED": [
+      "mindy-successor/docs/lumber-prep/OLD_BOUNDARY_TOKEN_DECISION_READY_PACKET_v1.md",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/old-boundary-token-decision-ready.fixture.json",
+      "mindy-successor/docs/lumber-prep/SCHOOL_LUMBER_PUBLIC_FACT_AUTHORING_PACKET_v1.md",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/school-lumber-public-fact-authoring.fixture.json"
+    ],
+    "CONTENT_AUTHORING_REQUIRED": [
+      "mindy-successor/docs/lumber-prep/FOREST_PRODUCTION_AUTHORING_MATRIX_v1.md",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/forest-production-authoring-matrix.fixture.json",
+      "mindy-successor/docs/lumber-prep/FOREST_HUNTER_TRAIL_AUTHORING_PACKET_v1.md",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/forest-hunter-trail-authoring.fixture.json",
+      "mindy-successor/docs/lumber-prep/FOREST_CHALLENGE_FAMILY_AUTHORING_PACKET_v1.md",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/forest-challenge-family-authoring.fixture.json",
+      "mindy-successor/docs/lumber-prep/FOREST_SEASON_TOPOLOGY_AUTHORING_PACKET_v1.md",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/forest-season-topology-authoring.fixture.json"
+    ],
+    "PRESENTATION_FUTURE": [
+      "mindy-successor/docs/lumber-prep/LUMBER_PRESENTATION_SLOT_CATALOG_v1.md",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/lumber-production-media-parity.fixture.json",
+      "mindy-successor/prior-work/astra/prototype-m3.2/tests/lumber-production-media-parity.test.ts"
+    ],
+    "SUPERSEDED": [
+      "mindy-successor/docs/lumber-prep/OLD_BOUNDARY_TOKEN_DECISION_MATRIX_v1.md",
+      "mindy-successor/docs/lumber-prep/LUMBER_RC_CLOSURE_HANDOFF_v3.md",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/lumber-rc-closure-handoff.fixture.json",
+      "mindy-successor/docs/lumber-prep/OLD_BOUNDARY_TOKEN_AUTHORING_PACKET_v1.md",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/old-boundary-token-authoring.fixture.json",
+      "mindy-successor/docs/lumber-prep/LUMBER_PA_CLOSURE_DEPENDENCY_AUDIT_v1.md",
+      "mindy-successor/prior-work/astra/prototype-m3.2/tests/lumber-pa-closure-dependency.test.ts",
+      "mindy-successor/docs/lumber-prep/LUMBER_PA_CLOSURE_ROW_MAP_v1.md",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/lumber-forest-capability-options.fixture.json",
+      "mindy-successor/prior-work/astra/prototype-m3.2/tests/lumber-forest-capability-options.test.ts",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/lumber-item-use-exactly-once.fixture.json",
+      "mindy-successor/prior-work/astra/prototype-m3.2/tests/lumber-item-use-exactly-once.test.ts",
+      "mindy-successor/docs/lumber-prep/FOREST_DEPTH_GAP_TO_SPEC_v1.md",
+      "mindy-successor/prior-work/astra/prototype-m3.2/tests/lumber-forest-depth-gap.test.ts",
+      "mindy-successor/docs/lumber-prep/LUMBER_RELEASE_CANDIDATE_HANDOFF_v2.md",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/lumber-release-candidate-handoff.fixture.json"
+    ]
+  },
+  "smallestLeadIntegrationSubset": [
+    "mindy-successor/docs/lumber-prep/LUMBER_PR22_CLOSURE_PARITY_AUDIT_v1.md",
+    "mindy-successor/prior-work/astra/prototype-m3.2/tests/lumber-pr22-closure-parity.test.ts",
+    "mindy-successor/docs/lumber-prep/LUMBER_PR24_ONE_SAVE_STATE_AUDIT_v1.md",
+    "mindy-successor/prior-work/astra/prototype-m3.2/tests/lumber-pr24-one-save-state-audit.test.ts",
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/forest-hunter-trail-boundary.fixture.json",
+    "mindy-successor/prior-work/astra/prototype-m3.2/tests/forest-hunter-trail-boundary.test.ts",
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/forest-challenge-skeleton.fixture.json",
+    "mindy-successor/prior-work/astra/prototype-m3.2/tests/forest-challenge-skeleton.test.ts",
+    "mindy-successor/prior-work/astra/prototype-m3.2/tests/lumber-rc-no-false-green.test.ts"
+  ],
+  "remainingHumanDecisions": [
+    "Old Boundary Token acquisition source",
+    "Old Boundary Token timing/requirements",
+    "Old Boundary Token retain/consume/repeatability policy",
+    "Old Boundary Token presentation details",
+    "School management/accounting public-result provider and threshold"
+  ],
+  "remainingContentAuthoring": [
+    "hunter-trail gate and navigation integration",
+    "navigation challenge family content",
+    "physical obstacle challenge family content",
+    "interpretation/ritual anomaly challenge family content",
+    "season-driven Forest topology/options"
+  ],
+  "hardWork": {
+    "status": "SHIPPED_GREEN",
+    "independent": true,
+    "endingId": "ending.lumber.hard-work",
+    "onlyCondition": {
+      "kind": "careerCounter",
+      "career": "lumber",
+      "counter": "completed_shifts",
+      "op": "gte",
+      "value": 50
+    },
+    "rewardId": "hardWork:lumber"
+  },
+  "a5": {
+    "continuationBoundary": "activityResult",
+    "activity": "lumber.forest",
+    "outcome": "success",
+    "result": "lumber.forest.success"
+  },
+  "acceleratorPolicy": {
+    "completedShifts49": "LONG_THRESHOLD_ACCELERATOR_ONLY",
+    "ordinaryPlayEvidence": false,
+    "seededOldBoundaryTokenCountsAsPA09Pass": false
+  }
+}
