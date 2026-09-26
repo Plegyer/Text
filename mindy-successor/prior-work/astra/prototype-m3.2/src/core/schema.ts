@@ -171,6 +171,7 @@ const capabilityReads=z.object({
   careers:z.array(id).optional(),
   quests:z.array(id).optional(),
   relationships:z.array(id).optional(),
+  activities:z.array(id).optional(),
   worldFacts:z.array(id).optional(),
   meta:z.array(z.enum(['unlock','endingCompleted','hardWork'])).optional()
 }).strict();
@@ -202,6 +203,8 @@ export const reactionTriggerSchema=z.discriminatedUnion('kind',[
   z.object({kind:z.literal('dayStarted')}).strict(),
   z.object({kind:z.literal('nightPhase'),point:z.enum(['before_lodging','after_lodging','after_choice'])}).strict(),
   z.object({kind:z.literal('nightChoiceCompleted'),choice:id}).strict(),
+  z.object({kind:z.literal('activityStarted'),activity:id}).strict(),
+  z.object({kind:z.literal('activityCompleted'),activity:id,outcome:id.optional()}).strict(),
   z.object({kind:z.literal('careerCounterChanged'),career:id,counter:id.optional()}).strict(),
   z.object({kind:z.literal('careerTransition'),career:id}).strict(),
   z.object({kind:z.literal('careerFactAdded'),career:id,fact:id.optional()}).strict(),
@@ -227,6 +230,8 @@ export type ReactionFact =
   | {kind:'dayStarted';day:number}
   | {kind:'nightPhase';point:'before_lodging'|'after_lodging'|'after_choice'}
   | {kind:'nightChoiceCompleted';choice:string}
+  | {kind:'activityStarted';activity:string}
+  | {kind:'activityCompleted';activity:string;outcome:string}
   | {kind:'careerCounterChanged';career:string;counter:string;from:number;to:number}
   | {kind:'careerTransition';career:string;from:string;to:string}
   | {kind:'careerFactAdded';career:string;fact:string}
@@ -319,6 +324,29 @@ export const nightChoiceSchema=z.object({
 }).strict();
 export type NightChoiceDefinition=z.infer<typeof nightChoiceSchema>;
 
+export const activityResultSchema=z.object({
+  id,
+  label:z.string().min(1).max(120),
+  effects:z.array(effectSchema).max(48).default([])
+}).strict();
+export type ActivityResultDefinition=z.infer<typeof activityResultSchema>;
+
+export const activityDefinitionSchema=z.object({
+  id,
+  label:z.string().min(1).max(150),
+  definitionVersion:n.min(1),
+  adapter:id,
+  adapterVersion:n.min(1),
+  entryConditions:z.array(conditionSchema).max(32).default([]),
+  entryEnergyCost:n.max(10),
+  resumePolicy:z.enum(['resumable','checkpoint_only','no_save']),
+  timePolicy:z.enum(['same_day','advances_calendar_on_exit','can_advance_days_internally']),
+  failurePolicy:z.enum(['return_day','return_night','terminal']),
+  config:z.record(z.string(),z.unknown()),
+  results:z.array(activityResultSchema).min(1).max(32)
+}).strict();
+export type ActivityDefinition=z.infer<typeof activityDefinitionSchema>;
+
 export const endingSchema=z.object({id,title:z.string(),description:z.string(),conditions:z.array(conditionSchema),reward:id,epilogue:z.string()}).strict();
 export const definitionsSchema=z.object({
   version:z.literal('0.1.0'),
@@ -329,7 +357,8 @@ export const definitionsSchema=z.object({
   quests:z.array(machineDefinitionSchema).optional(),
   relationships:z.array(machineDefinitionSchema).optional(),
   lodgings:z.array(lodgingSchema).default([]),
-  nightChoices:z.array(nightChoiceSchema).default([])
+  nightChoices:z.array(nightChoiceSchema).default([]),
+  activities:z.array(activityDefinitionSchema).default([])
 }).strict();
 export type Definitions=z.infer<typeof definitionsSchema>;
 
@@ -403,11 +432,26 @@ export const nightFlowStateSchema=z.object({
   currentIntercept:z.enum(['before_lodging','after_lodging','after_choice']).nullable(),
   handledEventIds:z.array(id).max(32)
 }).strict();
+export const activityEnvelopeSchema=z.object({
+  activityId:id,
+  definitionVersion:n.min(1),
+  adapter:id,
+  adapterVersion:n.min(1),
+  status:z.literal('active'),
+  startedAtDay:n.max(159),
+  entryEnergyCommitted:z.boolean(),
+  internalState:z.record(z.string(),z.unknown()),
+  rngState:z.number().int().min(0).max(4294967295),
+  checkpoint:id,
+  pendingScene:id.nullable(),
+  accumulatedEffects:z.array(effectSchema).max(64),
+  emittedFacts:z.array(id).max(64)
+}).strict();
 export const flowStateSchema=z.object({
   pendingScene:pendingSceneSchema.nullable(),
   reaction:reactionStateSchema.default({epochCounter:0,currentEpochId:null,attemptedEventIds:[],cascadeDepth:0,queued:[]}),
   night:nightFlowStateSchema.nullable(),
-  activity:z.record(z.string(),z.unknown()).nullable(),
+  activity:activityEnvelopeSchema.nullable(),
   lastAction:lastActionSchema.nullable()
 }).strict();
 
