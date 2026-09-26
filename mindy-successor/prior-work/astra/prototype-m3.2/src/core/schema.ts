@@ -185,6 +185,58 @@ const capabilityWrites=z.object({
 }).strict();
 const capabilitiesSchema=z.object({reads:capabilityReads,writes:capabilityWrites}).strict();
 
+export const priorityClasses=['terminal','ending_committed','forced','scheduled_mandatory','critical_progression','normal_progression','optional_world','notification'] as const;
+export type PriorityClass=typeof priorityClasses[number];
+
+export const reactionTriggerSchema=z.discriminatedUnion('kind',[
+  z.object({kind:z.literal('creationCompleted')}).strict(),
+  z.object({kind:z.literal('actionCompleted'),action:id.optional()}).strict(),
+  z.object({kind:z.literal('choiceResolved'),event:id.optional()}).strict(),
+  z.object({kind:z.literal('statChanged'),stat:z.enum(stats)}).strict(),
+  z.object({kind:z.literal('resourceChanged'),resource:z.enum(targetResources)}).strict(),
+  z.object({kind:z.literal('energyChanged')}).strict(),
+  z.object({kind:z.literal('calendarAdvanced')}).strict(),
+  z.object({kind:z.literal('dayStarted')}).strict(),
+  z.object({kind:z.literal('careerCounterChanged'),career:id,counter:id.optional()}).strict(),
+  z.object({kind:z.literal('careerTransition'),career:id}).strict(),
+  z.object({kind:z.literal('careerFactAdded'),career:id,fact:id.optional()}).strict(),
+  z.object({kind:z.literal('questCounterChanged'),quest:id,counter:id.optional()}).strict(),
+  z.object({kind:z.literal('questTransition'),quest:id}).strict(),
+  z.object({kind:z.literal('questFactAdded'),quest:id,fact:id.optional()}).strict(),
+  z.object({kind:z.literal('relationshipCounterChanged'),relationship:id,counter:id.optional()}).strict(),
+  z.object({kind:z.literal('relationshipTransition'),relationship:id}).strict(),
+  z.object({kind:z.literal('relationshipFactAdded'),relationship:id,fact:id.optional()}).strict(),
+  z.object({kind:z.literal('worldFactAdded'),fact:id}).strict(),
+  z.object({kind:z.literal('endingEligible'),ending:id.optional()}).strict()
+]);
+export type ReactionTrigger=z.infer<typeof reactionTriggerSchema>;
+
+export type ReactionFact =
+  | {kind:'creationCompleted'}
+  | {kind:'actionCompleted';action:string}
+  | {kind:'choiceResolved';event:string;choice:string}
+  | {kind:'statChanged';stat:Stat;from:number;to:number}
+  | {kind:'resourceChanged';resource:ResourceId;from:number;to:number}
+  | {kind:'energyChanged';from:number;to:number}
+  | {kind:'calendarAdvanced';from:number;to:number}
+  | {kind:'dayStarted';day:number}
+  | {kind:'careerCounterChanged';career:string;counter:string;from:number;to:number}
+  | {kind:'careerTransition';career:string;from:string;to:string}
+  | {kind:'careerFactAdded';career:string;fact:string}
+  | {kind:'questCounterChanged';quest:string;counter:string;from:number;to:number}
+  | {kind:'questTransition';quest:string;from:string;to:string}
+  | {kind:'questFactAdded';quest:string;fact:string}
+  | {kind:'relationshipCounterChanged';relationship:string;counter:string;from:number;to:number}
+  | {kind:'relationshipTransition';relationship:string;from:string;to:string}
+  | {kind:'relationshipFactAdded';relationship:string;fact:string}
+  | {kind:'worldFactAdded';fact:string}
+  | {kind:'endingEligible';ending:string};
+
+const deliverySchema=z.object({
+  policy:z.enum(['live','latched','scheduled']).default('live'),
+  expiresAfterDays:z.number().int().min(1).max(160).optional()
+}).strict().default({policy:'live'});
+
 const media = z.object({
   id,
   kind:z.enum(['image','gif','video']),
@@ -194,7 +246,15 @@ const media = z.object({
 const variant = z.object({id,text:z.string().min(10).max(5000),conditions:z.array(conditionSchema),media:z.array(id).max(6)}).strict();
 const choice = z.object({id,label:z.string().min(1).max(160),text:z.string().max(3000),media:z.array(id).max(6).optional(),conditions:z.array(conditionSchema),effects:z.array(effectSchema).max(24)}).strict();
 export const eventSchema = z.object({
-  id,title:z.string().min(1).max(150),trigger:z.array(id).min(1),priority:n,
+  id,
+  title:z.string().min(1).max(150),
+  sourceDomain:id.optional(),
+  trigger:z.array(id).default([]),
+  reactionTriggers:z.array(reactionTriggerSchema).max(32).default([]),
+  priorityClass:z.enum(priorityClasses).default('normal_progression'),
+  priority:n,
+  blocking:z.boolean().default(true),
+  delivery:deliverySchema,
   chance:z.object({base:z.number().min(0).max(1),stat:metricEnum,perPoint:z.number().min(0).max(1),max:z.number().min(0).max(1)}).strict().optional(),
   cooldownDays:n,variantCooldownDays:n,maxShows:n.min(1),
   conditions:z.array(conditionSchema),variants:z.array(variant).min(1).max(10),
@@ -266,10 +326,34 @@ export const progressionStateSchema=z.object({
   worldFacts:z.array(id)
 }).strict();
 
-const pendingSceneSchema=z.object({eventId:id,variantId:id,presentationId:id.optional()}).strict();
+const pendingSceneSchema=z.object({
+  eventId:id,
+  variantId:id,
+  presentationId:id.optional(),
+  reactionEpochId:id.optional(),
+  allowedChoiceIds:z.array(id).max(16).optional()
+}).strict();
+const queuedEventInstanceSchema=z.object({
+  instanceId:id,
+  eventId:id,
+  variantId:id,
+  allowedChoiceIds:z.array(id).max(16),
+  kind:z.enum(['latched','scheduled','optional']),
+  createdDay:n.max(159),
+  expiresDay:n.max(159).optional(),
+  reactionEpochId:id
+}).strict();
+const reactionStateSchema=z.object({
+  epochCounter:n,
+  currentEpochId:id.nullable(),
+  attemptedEventIds:z.array(id).max(256),
+  cascadeDepth:n.max(16),
+  queued:z.array(queuedEventInstanceSchema).max(64)
+}).strict();
 const lastActionSchema=z.object({id,title:z.string(),text:z.string(),media:z.array(id),deltas:z.record(z.string(),z.number())}).strict();
 export const flowStateSchema=z.object({
   pendingScene:pendingSceneSchema.nullable(),
+  reaction:reactionStateSchema.default({epochCounter:0,currentEpochId:null,attemptedEventIds:[],cascadeDepth:0,queued:[]}),
   night:z.record(z.string(),z.unknown()).nullable(),
   activity:z.record(z.string(),z.unknown()).nullable(),
   lastAction:lastActionSchema.nullable()
