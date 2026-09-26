@@ -1,0 +1,136 @@
+{
+  "version": 1,
+  "kind": "presentation-post-pr21-smoke-matrix",
+  "status": "pr21-evidence-aligned-presentation-smoke",
+  "productAcceptanceStatus": "partial-not-closed",
+  "policy": {
+    "semanticIdentityStable": true,
+    "animationOffPresentationOnly": true,
+    "saveReloadNeverPersistsAnimationTime": true,
+    "acceleratedRowsAreFullPaPasses": false
+  },
+  "boundaries": [
+    {
+      "order": 1,
+      "boundaryId": "lumber-shift",
+      "presentationId": "job/lumber/result/default",
+      "fallbackMediaId": "stage.lumber",
+      "fallbackBehavior": "shipped-static",
+      "saveReloadExpectation": "same-last-action-semantic-id-no-repeat-effects",
+      "animationOffExpectation": "same-id-static",
+      "accelerated": false
+    },
+    {
+      "order": 2,
+      "boundaryId": "milestone",
+      "presentationId": "job/lumber/event/lumber-career-first-shift/default",
+      "fallbackMediaId": "job.lumber.event.accepted-hand",
+      "fallbackBehavior": "shipped-static",
+      "saveReloadExpectation": "same-pending-event-variant-presentation",
+      "animationOffExpectation": "same-id-static",
+      "accelerated": false
+    },
+    {
+      "order": 3,
+      "boundaryId": "foreman",
+      "presentationId": "relationship/lumber-foreman/lumber-foreman-notice/default",
+      "fallbackMediaId": "relationship.lumber.foreman.professional",
+      "fallbackBehavior": "shipped-static",
+      "saveReloadExpectation": "same-pending-relationship-presentation",
+      "animationOffExpectation": "same-id-static",
+      "accelerated": false
+    },
+    {
+      "order": 4,
+      "boundaryId": "school",
+      "presentationId": "school/arcana/lesson/default",
+      "fallbackMediaId": "stage.school",
+      "fallbackBehavior": "shipped-static",
+      "saveReloadExpectation": "same-school-result-semantic-id-no-second-charge",
+      "animationOffExpectation": "same-id-static",
+      "accelerated": false
+    },
+    {
+      "order": 5,
+      "boundaryId": "night",
+      "presentationId": "relationship/lumber-foreman/lumber-night-foreman-professional/default",
+      "fallbackMediaId": "relationship.lumber.foreman.night.professional",
+      "fallbackBehavior": "shipped-static",
+      "saveReloadExpectation": "same-night-presentation-no-second-lodging-payment",
+      "animationOffExpectation": "same-id-static",
+      "accelerated": false
+    },
+    {
+      "order": 6,
+      "boundaryId": "forest-accelerated-internal",
+      "presentationId": "activity/forest/route/default",
+      "fallbackMediaId": "stage.hunt",
+      "fallbackBehavior": "shipped-static",
+      "saveReloadExpectation": "same-activity-route-and-checkpoint",
+      "animationOffExpectation": "same-id-static",
+      "accelerated": true,
+      "evidenceLabel": "accelerated-mechanics-evidence-not-full-pa"
+    },
+    {
+      "order": 7,
+      "boundaryId": "forest-accelerated-result",
+      "presentationId": "activity/forest/return/success",
+      "fallbackMediaId": "stage.hunt",
+      "fallbackBehavior": "shipped-static",
+      "saveReloadExpectation": "same-activity-result-semantic-id",
+      "animationOffExpectation": "same-id-static",
+      "accelerated": true,
+      "evidenceLabel": "accelerated-mechanics-evidence-not-full-pa"
+    },
+    {
+      "order": 8,
+      "boundaryId": "ending-eligible",
+      "presentationId": "location/town/default",
+      "fallbackMediaId": "stage.town",
+      "fallbackBehavior": "shipped-static",
+      "saveReloadExpectation": "eligibility-preserved-without-auto-commit",
+      "animationOffExpectation": "same-id-static",
+      "accelerated": false
+    },
+    {
+      "order": 9,
+      "boundaryId": "normal-action-while-ending-eligible",
+      "presentationId": "job/lumber/result/default",
+      "fallbackMediaId": "stage.lumber",
+      "fallbackBehavior": "shipped-static",
+      "saveReloadExpectation": "normal-action-result-stable-eligibility-remains-separate",
+      "animationOffExpectation": "same-id-static",
+      "accelerated": false
+    },
+    {
+      "order": 10,
+      "boundaryId": "ending-commit",
+      "presentationId": "ending/lumber/hard-work",
+      "fallbackMediaId": "stage.town",
+      "fallbackBehavior": "shipped-static",
+      "saveReloadExpectation": "same-committed-ending-semantic-id",
+      "animationOffExpectation": "same-id-static",
+      "accelerated": false
+    },
+    {
+      "order": 11,
+      "boundaryId": "ending-completion",
+      "presentationId": "ending/lumber/hard-work",
+      "fallbackMediaId": "stage.town",
+      "fallbackBehavior": "shipped-static",
+      "saveReloadExpectation": "same-terminal-ending-semantic-id",
+      "animationOffExpectation": "same-id-static",
+      "accelerated": false
+    },
+    {
+      "order": 12,
+      "boundaryId": "new-run",
+      "presentationId": "location/town/default",
+      "fallbackMediaId": "stage.town",
+      "fallbackBehavior": "shipped-static",
+      "saveReloadExpectation": "fresh-run-location-semantic-id",
+      "animationOffExpectation": "same-id-static",
+      "accelerated": false
+    }
+  ]
+}
