@@ -1,0 +1,283 @@
+{
+  "version": 1,
+  "kind": "presentation-pa-row-ledger",
+  "mainBaseline": "7acbce7f8bdf911ce8ab3ed1a4b3e5e0902cd798",
+  "productAcceptanceStatus": "partial-not-closed",
+  "policy": {
+    "rowCount": 27,
+    "presentationEvidenceMayUpgradeOpenGameplay": false,
+    "animationFrameOrTimeDefinesIdentity": false
+  },
+  "rows": [
+    {
+      "paStep": "PA00",
+      "operation": "fresh run baseline",
+      "presentationId": "location/town/default",
+      "fallbackMediaId": "stage.town",
+      "reloadPersistence": "fresh-save reload preserves baseline presentation",
+      "animationOffBehavior": "same semantic ID; static town stage",
+      "gameplayRowStatus": "SHIPPED_EVIDENCE",
+      "note": "Fresh central stage."
+    },
+    {
+      "paStep": "PA01",
+      "operation": "finish creation",
+      "presentationId": "location/town/default",
+      "fallbackMediaId": "stage.town",
+      "reloadPersistence": "optional reload keeps DayHub context",
+      "animationOffBehavior": "same semantic ID; static town stage",
+      "gameplayRowStatus": "SHIPPED_EVIDENCE",
+      "note": "No distinct creation-complete semantic slot required."
+    },
+    {
+      "paStep": "PA02",
+      "operation": "enter Lumber career context",
+      "presentationId": "location/town/default",
+      "fallbackMediaId": "stage.town",
+      "reloadPersistence": "domain state survives reload before Work",
+      "animationOffBehavior": "same semantic ID; static town stage",
+      "gameplayRowStatus": "SHIPPED_EVIDENCE",
+      "note": "Shipped PA enters the target Lumber path through real target Work."
+    },
+    {
+      "paStep": "PA03",
+      "operation": "ordinary Lumber shift",
+      "presentationId": "job/lumber/result/default",
+      "fallbackMediaId": "stage.lumber",
+      "reloadPersistence": "after-shift reload preserves result identity and does not replay effects",
+      "animationOffBehavior": "same semantic ID; static Lumber stage",
+      "gameplayRowStatus": "SHIPPED_EVIDENCE",
+      "note": "Seasonal media may vary while result semantic ID stays stable."
+    },
+    {
+      "paStep": "PA04",
+      "operation": "seasonal/repeatable Lumber variant",
+      "presentationId": "job/lumber/result/default",
+      "fallbackMediaId": "stage.lumber",
+      "reloadPersistence": "result reload preserves selected work result",
+      "animationOffBehavior": "same semantic ID; static Lumber stage",
+      "gameplayRowStatus": "SHIPPED_EVIDENCE",
+      "note": "Seasonal media is presentation detail, not semantic result identity."
+    },
+    {
+      "paStep": "PA05",
+      "operation": "career milestone",
+      "presentationId": "job/lumber/event/lumber-career-first-shift/default",
+      "fallbackMediaId": "job.lumber.event.accepted-hand",
+      "reloadPersistence": "pending event/variant/presentation survives reload",
+      "animationOffBehavior": "same semantic ID; shipped static milestone image",
+      "gameplayRowStatus": "SHIPPED_EVIDENCE",
+      "note": "Reactive milestone shipped."
+    },
+    {
+      "paStep": "PA06",
+      "operation": "Foreman opening",
+      "presentationId": "relationship/lumber-foreman/lumber-foreman-notice/default",
+      "fallbackMediaId": "relationship.lumber.foreman.professional",
+      "reloadPersistence": "pending relationship event survives reload",
+      "animationOffBehavior": "same semantic ID; shipped static Foreman image",
+      "gameplayRowStatus": "SHIPPED_EVIDENCE",
+      "note": "Professional route shipped."
+    },
+    {
+      "paStep": "PA07",
+      "operation": "paid School lesson + required public result",
+      "presentationId": "school/arcana/lesson/default",
+      "fallbackMediaId": "stage.school",
+      "reloadPersistence": "lesson result reload does not recharge tuition/Energy",
+      "animationOffBehavior": "same semantic ID; static School stage",
+      "gameplayRowStatus": "OPEN_GAMEPLAY_AUTHORING",
+      "note": "Paid lesson is shipped, but the required management/accounting public result is not authored."
+    },
+    {
+      "paStep": "PA08",
+      "operation": "School result continuation",
+      "presentationId": "job/lumber/event/lumber-cross-school-management-return/default",
+      "fallbackMediaId": "stage.town",
+      "reloadPersistence": "pending continuation would preserve semantic event identity",
+      "animationOffBehavior": "same semantic ID; static/text-safe fallback",
+      "gameplayRowStatus": "OPEN_GAMEPLAY_AUTHORING",
+      "note": "Blocked by missing School management/accounting public result."
+    },
+    {
+      "paStep": "PA09",
+      "operation": "meaningful item/capability acquisition",
+      "presentationId": "job/lumber/event/lumber-cross-school-management-return/default",
+      "fallbackMediaId": "stage.town",
+      "reloadPersistence": "capability state must survive reload when authored",
+      "animationOffBehavior": "same semantic ID; presentation cannot create capability",
+      "gameplayRowStatus": "OPEN_GAMEPLAY_AUTHORING",
+      "note": "Presentation evidence cannot supply the missing acquisition/capability behavior."
+    },
+    {
+      "paStep": "PA10",
+      "operation": "begin NightFlow",
+      "presentationId": "location/town/default",
+      "fallbackMediaId": "stage.town",
+      "reloadPersistence": "night phase survives reload when checkpointed",
+      "animationOffBehavior": "same semantic ID; static town stage",
+      "gameplayRowStatus": "SHIPPED_EVIDENCE",
+      "note": "NightFlow interaction owner is gameplay state."
+    },
+    {
+      "paStep": "PA11",
+      "operation": "choose normal lodging",
+      "presentationId": "location/town/default",
+      "fallbackMediaId": "stage.town",
+      "reloadPersistence": "paid-lodging reload must not charge twice",
+      "animationOffBehavior": "same semantic ID; static town stage",
+      "gameplayRowStatus": "SHIPPED_EVIDENCE",
+      "note": "Normal lodging shipped."
+    },
+    {
+      "paStep": "PA12",
+      "operation": "optional Foreman Night",
+      "presentationId": "relationship/lumber-foreman/lumber-night-foreman-professional/default",
+      "fallbackMediaId": "relationship.lumber.foreman.night.professional",
+      "reloadPersistence": "pending Night event and payment state survive reload",
+      "animationOffBehavior": "same semantic ID; shipped static Night image",
+      "gameplayRowStatus": "SHIPPED_EVIDENCE",
+      "note": "Optional professional Night route shipped."
+    },
+    {
+      "paStep": "PA13",
+      "operation": "finish night / next day",
+      "presentationId": "location/town/default",
+      "fallbackMediaId": "stage.town",
+      "reloadPersistence": "next-day reload preserves finalized night state",
+      "animationOffBehavior": "same semantic ID; static town stage",
+      "gameplayRowStatus": "SHIPPED_EVIDENCE",
+      "note": "No animation state participates in calendar transition."
+    },
+    {
+      "paStep": "PA14",
+      "operation": "enter Forest Activity",
+      "presentationId": "activity/forest/route/default",
+      "fallbackMediaId": "stage.hunt",
+      "reloadPersistence": "entry checkpoint would preserve Activity route and one-time entry cost",
+      "animationOffBehavior": "same semantic ID; static Forest stage",
+      "gameplayRowStatus": "OPEN_GAMEPLAY_AUTHORING",
+      "note": "Production entry is blocked without the missing capability acquisition path."
+    },
+    {
+      "paStep": "PA15",
+      "operation": "reload inside Forest Activity",
+      "presentationId": "activity/forest/route/default",
+      "fallbackMediaId": "stage.hunt",
+      "reloadPersistence": "accelerated checkpoint preserves Activity envelope and route identity",
+      "animationOffBehavior": "same semantic ID; static Forest stage",
+      "gameplayRowStatus": "ACCELERATED_EVIDENCE_ONLY",
+      "note": "Accelerator injects the missing capability; this is not a full PA pass."
+    },
+    {
+      "paStep": "PA16",
+      "operation": "deeper Forest route/challenge traversal",
+      "presentationId": "activity/forest/route/default",
+      "fallbackMediaId": "stage.hunt",
+      "reloadPersistence": "internal checkpoint should preserve route presentation",
+      "animationOffBehavior": "same semantic ID; static Forest stage",
+      "gameplayRowStatus": "OPEN_GAMEPLAY_AUTHORING",
+      "note": "Required 3-route / 3-challenge-family / season depth is not authored."
+    },
+    {
+      "paStep": "PA17",
+      "operation": "item-driven Activity option",
+      "presentationId": "activity/forest/route/default",
+      "fallbackMediaId": "stage.hunt",
+      "reloadPersistence": "option availability must remain deterministic across reload",
+      "animationOffBehavior": "same semantic ID; presentation does not unlock actions",
+      "gameplayRowStatus": "OPEN_GAMEPLAY_AUTHORING",
+      "note": "Missing item-driven action-space behavior."
+    },
+    {
+      "paStep": "PA18",
+      "operation": "successful Forest result",
+      "presentationId": "activity/forest/return/success",
+      "fallbackMediaId": "stage.hunt",
+      "reloadPersistence": "accelerated success/result identity survives reload without replay",
+      "animationOffBehavior": "same semantic ID; static Forest stage",
+      "gameplayRowStatus": "ACCELERATED_EVIDENCE_ONLY",
+      "note": "Result boundary is proven only behind the injected capability."
+    },
+    {
+      "paStep": "PA19",
+      "operation": "Forest escape branch",
+      "presentationId": "activity/forest/return/escape",
+      "fallbackMediaId": "stage.hunt",
+      "reloadPersistence": "accelerated escape result remains distinct across reload",
+      "animationOffBehavior": "same semantic ID; static Forest stage",
+      "gameplayRowStatus": "ACCELERATED_EVIDENCE_ONLY",
+      "note": "Escape mechanics are exercised after capability injection."
+    },
+    {
+      "paStep": "PA20",
+      "operation": "post-Activity Lumber continuation",
+      "presentationId": "job/lumber/event/lumber-cross-activity-forest-return/default",
+      "fallbackMediaId": "job.lumber.event.forest-return",
+      "reloadPersistence": "pending continuation survives reload",
+      "animationOffBehavior": "same semantic ID; shipped static Forest continuation image",
+      "gameplayRowStatus": "ACCELERATED_EVIDENCE_ONLY",
+      "note": "Continuation is proven from accelerated Activity success, not a full natural PA path."
+    },
+    {
+      "paStep": "PA21",
+      "operation": "two endings eligible",
+      "presentationId": "location/town/default",
+      "fallbackMediaId": "stage.town",
+      "reloadPersistence": "eligible-not-committed state survives reload",
+      "animationOffBehavior": "same semantic ID; static town stage",
+      "gameplayRowStatus": "SHIPPED_EVIDENCE_WITH_ALLOWED_ACCELERATOR",
+      "note": "Ending-threshold accelerator is allowed for repetition-heavy setup; eligibility stays separate from commitment."
+    },
+    {
+      "paStep": "PA22",
+      "operation": "ordinary action while endings eligible",
+      "presentationId": "job/lumber/result/default",
+      "fallbackMediaId": "stage.lumber",
+      "reloadPersistence": "action result and ending eligibility survive reload",
+      "animationOffBehavior": "same semantic ID; static Lumber stage",
+      "gameplayRowStatus": "SHIPPED_EVIDENCE_WITH_ALLOWED_ACCELERATOR",
+      "note": "Normal play remains available while eligible."
+    },
+    {
+      "paStep": "PA23",
+      "operation": "commit ending",
+      "presentationId": "ending/lumber/hard-work",
+      "fallbackMediaId": "stage.town",
+      "reloadPersistence": "committed ending survives reload before completion",
+      "animationOffBehavior": "same semantic ID; static/text-safe ending fallback",
+      "gameplayRowStatus": "SHIPPED_EVIDENCE_WITH_ALLOWED_ACCELERATOR",
+      "note": "Explicit Hard Work commitment is proven."
+    },
+    {
+      "paStep": "PA24",
+      "operation": "complete ending",
+      "presentationId": "ending/lumber/hard-work",
+      "fallbackMediaId": "stage.town",
+      "reloadPersistence": "terminal RunResult reload is stable and idempotent",
+      "animationOffBehavior": "same semantic ID; static/text-safe ending fallback",
+      "gameplayRowStatus": "SHIPPED_EVIDENCE_WITH_ALLOWED_ACCELERATOR",
+      "note": "Completion is proven after allowed ending-state accelerator."
+    },
+    {
+      "paStep": "PA25",
+      "operation": "Meta reward observation",
+      "presentationId": "ending/lumber/hard-work",
+      "fallbackMediaId": "stage.town",
+      "reloadPersistence": "reward proof remains identical across repeated reload",
+      "animationOffBehavior": "same semantic ID; presentation cannot apply reward",
+      "gameplayRowStatus": "SHIPPED_EVIDENCE_WITH_ALLOWED_ACCELERATOR",
+      "note": "Exact hardWork:lumber reward proof is gameplay evidence, not presentation behavior."
+    },
+    {
+      "paStep": "PA26",
+      "operation": "new run",
+      "presentationId": "location/town/default",
+      "fallbackMediaId": "stage.town",
+      "reloadPersistence": "new-run save/reload preserves fresh presentation context",
+      "animationOffBehavior": "same semantic ID; static town stage",
+      "gameplayRowStatus": "SHIPPED_EVIDENCE_WITH_ALLOWED_ACCELERATOR",
+      "note": "New Run presentation returns to normal central stage."
+    }
+  ]
+}
