@@ -1,6 +1,7 @@
 import {z} from 'zod';
 import {loadCatalog} from './content.ts';
 import type {Catalog} from './schema.ts';
+import {SCHOOL_COURSES} from './school.ts';
 
 const source=z.string().max(3_000_000).refine(
   s=>/^assets\/[a-zA-Z0-9/_-]+\.(svg|png|jpg|jpeg|webp|gif|mp4|webm)$/.test(s)||/^data:image\/(png|jpeg|webp|gif);base64,[A-Za-z0-9+/]+={0,2}$/.test(s),
@@ -208,6 +209,34 @@ export function presentationSlots(cat:Catalog):PresentationSlot[]{
         label:`${event.title} · ${variant.id}`,
         baseMediaIds:variant.media,
         fallbackId:'location/town/default'
+      });
+    }
+  }
+
+  for(const course of SCHOOL_COURSES){
+    add({
+      id:course.presentationId,
+      label:`${course.label} · lesson`,
+      baseMediaIds:cat.media.some(m=>m.id==='stage.school')?['stage.school']:[],
+      fallbackId:'location/town/default'
+    });
+  }
+
+  for(const activity of cat.definitions.activities??[]){
+    const slug=pathParts(activity.id).at(-1)??'activity';
+    const routeId=`activity/${slug}/route/default`;
+    add({
+      id:routeId,
+      label:`${activity.label} · route`,
+      baseMediaIds:cat.media.some(m=>m.id==='stage.hunt')?['stage.hunt']:[],
+      fallbackId:'location/town/default'
+    });
+    for(const result of activity.results){
+      add({
+        id:`activity/${slug}/return/${result.outcome}`,
+        label:`${activity.label} · ${result.outcome}`,
+        baseMediaIds:cat.media.some(m=>m.id==='stage.hunt')?['stage.hunt']:[],
+        fallbackId:routeId
       });
     }
   }
