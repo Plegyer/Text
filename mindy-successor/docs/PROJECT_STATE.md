@@ -675,3 +675,29 @@ The multi-chat setup is pre-created and may be started at any time.
 - GitHub Actions merge-ref evidence: typecheck PASS, validate PASS, build PASS, **187/187 tests PASS**.
 - **Phase B production activation is GREEN.**
 - Active Lead gate: **Product Acceptance PA00–PA26 against shipped production catalog**, followed by release-candidate regression/post-merge smoke.
+
+
+## Product Acceptance evidence milestone — PR #21 — 2026-09-26
+
+- PR #21 merged a shipped-catalog Product Acceptance evidence layer.
+- Harness School mapping now uses the first-class `schoolLesson` command.
+- Shipped target Lumber -> milestone -> professional Foreman flow is executable with only one daytime-Energy Work cost.
+- All four seasonal Lumber Work variants are executed directly from the production catalog.
+- Paid School lesson mechanics, typed `lessons_completed`, presentation identity and reload exactly-once behavior are proven in the production catalog.
+- Normal lodging and optional Foreman Night are production-reachable and exactly-once across reload.
+- Forest Activity correctly refuses entry without the capability; an explicitly labeled capability accelerator proves the shipped 2-Energy entry, save/resume, success/escape and exact A5 `activityResult` continuation without falsely claiming the item acquisition row passed.
+- Two Lumber endings can be simultaneously eligible in a validated pre-threshold setup; normal play remains available while endings are merely eligible.
+- Hard Work commitment/completion applies exact `hardWork:lumber` once; New Run exposes the locked Strength/Endurance Meta difference.
+- Merge-ref GitHub Actions: typecheck PASS, validate PASS, build PASS, **194/194 tests PASS**.
+
+Product Acceptance status:
+- **runtime/integration GREEN**;
+- **full Product Acceptance Slice PARTIAL / NOT CLOSED**.
+
+Remaining genuine product-authoring/depth blockers:
+1. real `old_boundary_token -> enter_old_boundary` acquisition/capability/action-space integration;
+2. authoritative School -> Lumber management/accounting public result authoring;
+3. deeper Forest route/challenge/season content required by the PA slice;
+4. item-dependent Activity action-space behavior.
+
+These blockers must not be hidden by direct worldFact/counter injection. Hard Work is already closed and remains independent of School/Forest/items/relationship/season.
