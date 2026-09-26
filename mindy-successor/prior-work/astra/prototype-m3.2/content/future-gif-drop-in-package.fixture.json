@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "kind": "future-gif-drop-in-package",
+  "status": "future-asset-only",
+  "policy": {
+    "actualAssetsIncluded": false,
+    "gameplayChangesAllowed": false,
+    "sourcePathCouplingAllowed": false,
+    "staticFallbackRequired": true,
+    "textFallbackRequired": true,
+    "semanticPresentationIdStable": true
+  },
+  "entries": [
+    {
+      "presentationId": "job/lumber/shift/spring/default",
+      "expectedMediaKind": "gif",
+      "logicalFilenameSuggestion": "media/lumber/shift-spring.gif",
+      "staticFallbackMediaId": "job.lumber.shift.spring.default",
+      "textFallback": "Весенняя смена лесорубов.",
+      "preflightStatus": "ready-with-static-and-text-fallback"
+    },
+    {
+      "presentationId": "job/lumber/shift/summer/default",
+      "expectedMediaKind": "gif",
+      "logicalFilenameSuggestion": "media/lumber/shift-summer.gif",
+      "staticFallbackMediaId": "job.lumber.shift.summer.default",
+      "textFallback": "Летняя смена лесорубов.",
+      "preflightStatus": "ready-with-static-and-text-fallback"
+    },
+    {
+      "presentationId": "job/lumber/shift/autumn/default",
+      "expectedMediaKind": "gif",
+      "logicalFilenameSuggestion": "media/lumber/shift-autumn.gif",
+      "staticFallbackMediaId": "job.lumber.shift.autumn.default",
+      "textFallback": "Осенняя смена лесорубов.",
+      "preflightStatus": "ready-with-static-and-text-fallback"
+    },
+    {
+      "presentationId": "job/lumber/shift/winter/default",
+      "expectedMediaKind": "gif",
+      "logicalFilenameSuggestion": "media/lumber/shift-winter.gif",
+      "staticFallbackMediaId": "job.lumber.shift.winter.default",
+      "textFallback": "Зимняя смена лесорубов.",
+      "preflightStatus": "ready-with-static-and-text-fallback"
+    },
+    {
+      "presentationId": "job/lumber/event/lumber-career-first-shift/default",
+      "expectedMediaKind": "gif",
+      "logicalFilenameSuggestion": "media/lumber/accepted-hand.gif",
+      "staticFallbackMediaId": "job.lumber.event.accepted-hand",
+      "textFallback": "Первая смена признана карьерной вехой.",
+      "preflightStatus": "ready-with-static-and-text-fallback"
+    },
+    {
+      "presentationId": "relationship/lumber-foreman/lumber-foreman-notice/default",
+      "expectedMediaKind": "gif",
+      "logicalFilenameSuggestion": "media/lumber/foreman-professional.gif",
+      "staticFallbackMediaId": "relationship.lumber.foreman.professional",
+      "textFallback": "Бригадир отмечает профессиональную работу.",
+      "preflightStatus": "ready-with-static-and-text-fallback"
+    },
+    {
+      "presentationId": "relationship/lumber-foreman/lumber-night-foreman-professional/default",
+      "expectedMediaKind": "gif",
+      "logicalFilenameSuggestion": "media/lumber/foreman-night-professional.gif",
+      "staticFallbackMediaId": "relationship.lumber.foreman.night.professional",
+      "textFallback": "Вечерний профессиональный разговор с бригадиром.",
+      "preflightStatus": "ready-with-static-and-text-fallback"
+    }
+  ]
+}
