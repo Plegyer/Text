@@ -1,0 +1,59 @@
+{
+  "formatVersion": 1,
+  "id": "school.public-fact-authoring.fixture.v1",
+  "boundary": {
+    "owner": "school",
+    "durableTransport": "worldFacts",
+    "firstPublicationReaction": "worldFactAdded",
+    "publicationPolicy": "exactly-once",
+    "reloadPolicy": "preserve-commit-and-pending-reaction"
+  },
+  "authoringSlots": [
+    {
+      "slot": "management-accounting",
+      "trackScope": [
+        "school.track.literacy_and_numbers"
+      ],
+      "finalPublicFactId": null,
+      "lessonsCompletedThreshold": null,
+      "statThresholds": null,
+      "projectRequirement": null,
+      "examRequirement": null,
+      "certificateRequirement": null,
+      "authoredMilestoneId": null,
+      "status": "OPEN"
+    },
+    {
+      "slot": "arcana-forest",
+      "trackScope": [
+        "school.track.arcana"
+      ],
+      "finalPublicFactId": null,
+      "lessonsCompletedThreshold": null,
+      "statThresholds": null,
+      "projectRequirement": null,
+      "examRequirement": null,
+      "certificateRequirement": null,
+      "authoredMilestoneId": null,
+      "status": "OPEN"
+    }
+  ],
+  "exactlyOnce": {
+    "requiresStablePublicationTransactionId": true,
+    "duplicateAddWorldFact": false,
+    "duplicateWorldFactAdded": false,
+    "duplicateSchoolCounterMutation": false
+  },
+  "resolverBoundary": {
+    "authoritativeSchoolStateCompleteBeforePublication": true,
+    "publicFactPersistedBeforeReaction": true,
+    "downstreamManualJobVisitRequired": false
+  },
+  "forbidden": [
+    "direct-lumber-read-of-school-private-counter",
+    "direct-lumber-write-of-school-private-counter",
+    "school-directly-advances-lumber-stage",
+    "derive-and-reemit-public-fact-on-every-load",
+    "promote-draft-placeholder-to-final-id"
+  ]
+}
