@@ -2,7 +2,7 @@
 
 Дата: 2026-09-26.
 
-Статус: **IN IMPLEMENTATION**.
+Статус: **IMPLEMENTED / GREEN**.
 
 Base commit:
 `6d5183a5e77e70e1149d650243fdec3bf65d3040`.
@@ -175,3 +175,31 @@ A5 does not claim:
 - multi-day/camp implementation;
 - final mini-game genre;
 - A6 RunResult/meta semantics.
+
+
+## Implementation result — 2026-09-26
+
+Implemented on `lead/a5-activity-envelope`.
+
+Delivered:
+- typed `ActivityDefinition[]` and persisted `ActivityEnvelope`;
+- first supported adapter `counter.v1`;
+- entry Energy commit separated from internal Activity resources;
+- dedicated Activity RNG stream seeded once from global RNG;
+- synthetic internal progress/endurance/checkpoint state;
+- save/reload validation against activity ID/version/adapter/config;
+- success / escape / failure results;
+- atomic typed result effects;
+- `activityResult` reaction fact/trigger with pack capability validation;
+- external A3 Resolver scene after successful return;
+- city actions/Night/ending commitment blocked while Activity is active;
+- same-day Activity policy proven without direct calendar writes.
+
+Real GitHub Actions / Node 22:
+- typecheck pass;
+- validate pass;
+- build pass;
+- **97/97 tests pass**;
+- full `npm run check` pass.
+
+Next package: **A6 Ending / RunResult / Meta exactly-once**.
