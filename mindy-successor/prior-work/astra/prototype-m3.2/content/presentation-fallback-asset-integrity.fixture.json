@@ -1,0 +1,160 @@
+{
+  "version": 1,
+  "kind": "presentation-fallback-asset-integrity-manifest",
+  "status": "shipped-main-static-fallbacks",
+  "mainBaseline": "e6c32903516d1ba40b9a3ffbf955d5f04783ac25",
+  "policy": {
+    "currentAssetsOnly": true,
+    "futureGifTargetsExcluded": true,
+    "textOnlyFallbackRequiresFile": false
+  },
+  "assets": [
+    {
+      "mediaId": "stage.town",
+      "kind": "image",
+      "assetPath": "assets/stage-town.svg"
+    },
+    {
+      "mediaId": "stage.school",
+      "kind": "image",
+      "assetPath": "assets/stage-school.svg"
+    },
+    {
+      "mediaId": "stage.hunt",
+      "kind": "image",
+      "assetPath": "assets/stage-forest.svg"
+    },
+    {
+      "mediaId": "stage.lumber",
+      "kind": "image",
+      "assetPath": "assets/stage-lumber.svg"
+    },
+    {
+      "mediaId": "job.lumber.shift.spring.default",
+      "kind": "image",
+      "assetPath": "assets/stage-lumber.svg"
+    },
+    {
+      "mediaId": "job.lumber.shift.summer.default",
+      "kind": "image",
+      "assetPath": "assets/stage-lumber.svg"
+    },
+    {
+      "mediaId": "job.lumber.shift.autumn.default",
+      "kind": "image",
+      "assetPath": "assets/stage-lumber.svg"
+    },
+    {
+      "mediaId": "job.lumber.shift.winter.default",
+      "kind": "image",
+      "assetPath": "assets/stage-lumber.svg"
+    },
+    {
+      "mediaId": "job.lumber.event.accepted-hand",
+      "kind": "image",
+      "assetPath": "assets/stage-lumber.svg"
+    },
+    {
+      "mediaId": "relationship.lumber.foreman.professional",
+      "kind": "image",
+      "assetPath": "assets/stage-lumber.svg"
+    },
+    {
+      "mediaId": "relationship.lumber.foreman.night.professional",
+      "kind": "image",
+      "assetPath": "assets/stage-lumber.svg"
+    },
+    {
+      "mediaId": "job.lumber.event.forest-return",
+      "kind": "image",
+      "assetPath": "assets/stage-forest.svg"
+    }
+  ],
+  "slotBindings": [
+    {
+      "presentationId": "job/lumber/shift/spring/default",
+      "mediaId": "job.lumber.shift.spring.default"
+    },
+    {
+      "presentationId": "job/lumber/shift/summer/default",
+      "mediaId": "job.lumber.shift.summer.default"
+    },
+    {
+      "presentationId": "job/lumber/shift/autumn/default",
+      "mediaId": "job.lumber.shift.autumn.default"
+    },
+    {
+      "presentationId": "job/lumber/shift/winter/default",
+      "mediaId": "job.lumber.shift.winter.default"
+    },
+    {
+      "presentationId": "job/lumber/result/default",
+      "mediaId": "stage.lumber"
+    },
+    {
+      "presentationId": "job/lumber/event/lumber-career-first-shift/default",
+      "mediaId": "job.lumber.event.accepted-hand"
+    },
+    {
+      "presentationId": "relationship/lumber-foreman/lumber-foreman-notice/default",
+      "mediaId": "relationship.lumber.foreman.professional"
+    },
+    {
+      "presentationId": "relationship/lumber-foreman/lumber-night-foreman-professional/default",
+      "mediaId": "relationship.lumber.foreman.night.professional"
+    },
+    {
+      "presentationId": "activity/forest/route/default",
+      "mediaId": "stage.hunt"
+    },
+    {
+      "presentationId": "activity/forest/return/success",
+      "mediaId": "stage.hunt"
+    },
+    {
+      "presentationId": "school/literacy-and-numbers/lesson/default",
+      "mediaId": "stage.school"
+    },
+    {
+      "presentationId": "school/arcana/lesson/default",
+      "mediaId": "stage.school"
+    },
+    {
+      "presentationId": "school/rhetoric-and-social/lesson/default",
+      "mediaId": "stage.school"
+    },
+    {
+      "presentationId": "school/etiquette-and-presentation/lesson/default",
+      "mediaId": "stage.school"
+    },
+    {
+      "presentationId": "school/field-craft/lesson/default",
+      "mediaId": "stage.school"
+    },
+    {
+      "presentationId": "school/physical-training/lesson/default",
+      "mediaId": "stage.school"
+    },
+    {
+      "presentationId": "school/arts-and-performance/lesson/default",
+      "mediaId": "stage.school"
+    },
+    {
+      "presentationId": "school/body-confidence/lesson/default",
+      "mediaId": "stage.school"
+    },
+    {
+      "presentationId": "ending/lumber/hard-work",
+      "mediaId": "stage.town"
+    },
+    {
+      "presentationId": "ending/lumber/forewoman",
+      "mediaId": "stage.town"
+    },
+    {
+      "presentationId": "ending/lumber/forest",
+      "mediaId": "stage.town"
+    }
+  ],
+  "textOnlyFallbackSlots": []
+}
