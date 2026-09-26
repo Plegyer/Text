@@ -63,3 +63,19 @@ Prove across representative single-stat and multi-stat packages:
 - unsupported Night-study stat/course combinations reject atomically.
 
 Do not modify shared engine/schema or existing PR #17 files.
+
+
+## Lead integration correction — School presentation identity
+
+Gameplay course IDs remain unchanged (for example `school.course.field_craft`).
+
+Presentation IDs use the merged Chat 2 kebab-case namespace:
+- `school/literacy-and-numbers/lesson/default`;
+- `school/rhetoric-and-social/lesson/default`;
+- `school/etiquette-and-presentation/lesson/default`;
+- `school/field-craft/lesson/default`;
+- `school/physical-training/lesson/default`;
+- `school/arts-and-performance/lesson/default`;
+- `school/body-confidence/lesson/default`.
+
+Do not use underscores inside presentation namespace segments in new manifests/tests.
