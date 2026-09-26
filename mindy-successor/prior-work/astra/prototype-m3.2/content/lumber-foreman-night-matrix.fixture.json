@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "id": "lumber.foreman-night-matrix.fixture",
+  "nightChoiceId": "lumber.foreman.night",
+  "eventId": "lumber-night.foreman-professional",
+  "relationshipId": "lumber.foreman",
+  "visibilityMatrix": [
+    {
+      "stage": "unknown",
+      "routeChoice": null,
+      "expectedVisible": false
+    },
+    {
+      "stage": "professional",
+      "routeChoice": null,
+      "expectedVisible": false
+    },
+    {
+      "stage": "route-professional",
+      "routeChoice": "professional",
+      "expectedVisible": true
+    }
+  ],
+  "mechanics": {
+    "daytimeEnergyCost": 0,
+    "consumesNightSlot": true,
+    "lodgingMoneyCost": 100,
+    "lodgingPaymentExactlyOnce": true,
+    "relationshipCounter": "night_meetings",
+    "eventFact": "night-followup-complete",
+    "nextDayEnergyDelta": 0,
+    "romancePrerequisite": false
+  },
+  "reloadCheckpoints": [
+    "after lodging payment before Night choice",
+    "pending lumber-night.foreman-professional before continue",
+    "after Night completion/start next day"
+  ],
+  "presentationId": "relationship/lumber-foreman/lumber-night-foreman-professional/default",
+  "lockedHardWork": {
+    "conditions": [
+      {
+        "kind": "careerCounter",
+        "career": "lumber",
+        "counter": "completed_shifts",
+        "op": "gte",
+        "value": 50
+      }
+    ],
+    "rewardId": "hardWork:lumber"
+  }
+}
