@@ -3,7 +3,7 @@
 Status: LIVE COORDINATION BOARD.
 
 Current main baseline:
-`011572ef1335deda5ac33120c3a7ea7f9849dbbf`.
+`e12665ce9063689400d8f39f893378f6f01911f3`.
 
 ## Coordination rule — no worker idle
 
@@ -264,3 +264,23 @@ Remaining authoring/depth blockers:
 - Chat 5 — `chat5/school-pa-gate-next`: items 1–24 complete; **items 25–30 active**.
 
 All workers continue sequentially without waiting for Lead review.
+
+
+## Release-candidate QA floor merged — PR #23
+
+Main merge:
+`e12665ce9063689400d8f39f893378f6f01911f3`
+
+Evidence:
+- generic capability QA integrated;
+- Activity authored-option reload QA integrated;
+- no production runtime/content/UI changes;
+- merge-ref: typecheck PASS, validate PASS, build PASS, **208/208 tests PASS**.
+
+Current active queues:
+- Chat 2 — `chat2/presentation-replacement-next`: items 31–36 active.
+- Chat 3 — `chat3/lumber-production-proof-next`: items 25–30 active.
+- Chat 4 — `chat4/activation-ci-gate-next`: items 25–30 active.
+- Chat 5 — `chat5/school-pa-gate-next`: items 25–30 active; Git currently confirms item 25 committed and items 26–30 still outstanding.
+
+Do not treat worker verbal completion as authoritative until the expected commits/files are present in Git.
