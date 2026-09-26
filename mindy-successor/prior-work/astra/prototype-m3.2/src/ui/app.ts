@@ -69,7 +69,7 @@ function mediaHTML(presentationId:string){
  const resolved=resolvePresentation(catalog,patch,presentationId,{animationsEnabled});
  const m=resolved.candidates[mediaIndex];
  if(!m)return `<div class="media-window missing-art" data-presentation-id="${esc(presentationId)}"><span>Сцена доступна без медиа</span></div>`;
- return `<div class="media-window" data-presentation-id="${esc(presentationId)}" data-resolved-slot="${esc(m.slotId)}" data-candidate-index="${mediaIndex}">${m.kind==='video'?`<video src="${esc(m.src)}" aria-label="${esc(m.alt)}" autoplay loop muted playsinline controls></video>`:`<img src="${esc(m.src)}" alt="${esc(m.alt)}">`}</div>`;
+ return `<div class="media-window" data-presentation-id="${esc(presentationId)}" data-resolved-slot="${esc(m.slotId)}" data-media-id="${esc(m.mediaId??'')}" data-candidate-index="${mediaIndex}">${m.kind==='video'?`<video src="${esc(m.src)}" aria-label="${esc(m.alt)}" autoplay loop muted playsinline controls></video>`:`<img src="${esc(m.src)}" alt="${esc(m.alt)}">`}</div>`;
 }
 function central(){
  const r=state.run,p=r.pending;
