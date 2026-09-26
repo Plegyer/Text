@@ -141,6 +141,38 @@
           }
         ]
       }
+    },
+    {
+      "id": "school.lumber-management",
+      "label": "Lumber management lesson",
+      "description": "School-result fixture that publishes the Lumber management gate fact.",
+      "cost": {
+        "money": 300,
+        "energy": 1
+      },
+      "conditions": [],
+      "effects": [
+        {
+          "kind": "modifyStat",
+          "stat": "reason",
+          "delta": 4
+        },
+        {
+          "kind": "addWorldFact",
+          "fact": "lumber.school.management-ready"
+        }
+      ],
+      "mode": "normal",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "A School result publishes a management fact that Lumber can react to immediately.",
+          "conditions": [],
+          "media": [
+            "school.lumber.management.result"
+          ]
+        }
+      ]
     }
   ],
   "endings": [
@@ -166,6 +198,55 @@
         }
       ],
       "epilogue": "Fixture epilogue for Lumber Hard Work."
+    },
+    {
+      "id": "ending.lumber.forewoman",
+      "title": "Lumber Forewoman fixture",
+      "description": "Cross-system fixture ending using the professional Foreman route and School-result career facts.",
+      "conditions": [
+        {
+          "kind": "careerFact",
+          "career": "lumber",
+          "fact": "management-school-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "lumber",
+          "fact": "forewoman-problem-resolved",
+          "present": true
+        },
+        {
+          "kind": "relationshipStage",
+          "relationship": "lumber.foreman",
+          "stage": "route-professional"
+        }
+      ],
+      "reward": "lumber.forewoman.compat",
+      "metaRewards": [],
+      "epilogue": "Fixture epilogue for the Forewoman outcome family."
+    },
+    {
+      "id": "ending.lumber.forest",
+      "title": "Lumber Forest fixture",
+      "description": "Cross-system fixture ending after a qualifying Forest Activity result and Lumber continuation.",
+      "conditions": [
+        {
+          "kind": "careerFact",
+          "career": "lumber",
+          "fact": "forest-truth-known",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "lumber",
+          "fact": "forest-problem-resolved",
+          "present": true
+        }
+      ],
+      "reward": "lumber.forest.compat",
+      "metaRewards": [],
+      "epilogue": "Fixture epilogue for the Forest outcome family."
     }
   ],
   "careers": [
@@ -252,5 +333,61 @@
   "quests": [],
   "lodgings": [],
   "nightChoices": [],
-  "activities": []
+  "activities": [
+    {
+      "id": "lumber.forest",
+      "label": "Lumber Forest Activity fixture",
+      "version": 1,
+      "entryConditions": [
+        {
+          "kind": "worldFact",
+          "fact": "lumber.capability.enter-old-boundary",
+          "present": true
+        }
+      ],
+      "entryEnergyCost": 2,
+      "resumePolicy": "allowed",
+      "timePolicy": "same_day",
+      "failurePolicy": "exit_to_day",
+      "adapter": "counter.v1",
+      "adapterConfig": {
+        "initialEndurance": 5,
+        "advanceEnduranceCost": 1,
+        "successAtProgress": 2,
+        "failAtEndurance": 0
+      },
+      "results": [
+        {
+          "id": "lumber.forest.success",
+          "outcome": "success",
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "lumber.forest.truth-known"
+            }
+          ]
+        },
+        {
+          "id": "lumber.forest.escape",
+          "outcome": "escape",
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "lumber.forest.escaped"
+            }
+          ]
+        },
+        {
+          "id": "lumber.forest.failure",
+          "outcome": "failure",
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "lumber.forest.failed"
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
