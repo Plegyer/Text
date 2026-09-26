@@ -35,3 +35,49 @@ test('renderer: existing custom text preserves new shipped seasonal texts',async
   }
  }finally{dom.window.close();}
 });
+
+
+test('renderer: animation-off swaps GIF override to static fallback without changing run save',async()=>{
+ const presentation={version:1,texts:{},media:{},slots:{'location/town/default':{
+  primary:{kind:'gif',src:'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==',alt:'Animated town'},
+  static:{kind:'image',src:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAB',alt:'Static town'}
+ }}};
+ const {w,dom}=boot(undefined,presentation);try{
+  await wait(()=>!!w.document.querySelector('.media-window img'));
+  const before=w.localStorage.getItem('portal-life.v1');
+  assert.match(w.document.querySelector('.media-window img').getAttribute('src'),/^data:image\/gif/);
+  w.document.querySelector('[data-panel="menu"]').click();
+  const toggle=w.document.querySelector('#animation-toggle');assert.ok(toggle);toggle.click();
+  await wait(()=>/^data:image\/png/.test(w.document.querySelector('.media-window img')?.getAttribute('src')??''));
+  assert.equal(w.localStorage.getItem('portal-life.v1'),before);
+  assert.equal(w.localStorage.getItem('portal-life.presentation.animations'),'off');
+ }finally{dom.window.close();}
+});
+
+test('renderer: editor replaces GIF by presentationId and rejects invalid replacement without touching life save',async()=>{
+ const {w,dom,errors}=boot(JSON.stringify(started()));try{
+  await wait(()=>!!w.document.querySelector('[data-panel="menu"]'));
+  const lifeBefore=w.localStorage.getItem('portal-life.v1');
+  w.document.querySelector('[data-panel="menu"]').click();w.document.querySelector('[data-panel="editor"]').click();
+  const select=w.document.querySelector('[aria-label="presentationId"]');
+  select.value='job/lumber/shift/spring/default';select.dispatchEvent(new w.Event('change'));
+  assert.equal(select.value,'job/lumber/shift/spring/default');
+  const input=w.document.querySelector('[aria-label="Выбрать GIF для presentationId"]');
+  const file=new w.File([new Uint8Array([71,73,70,56,57,97])],'lumber.gif',{type:'image/gif'});
+  Object.defineProperty(input,'files',{configurable:true,value:[file]});input.dispatchEvent(new w.Event('change'));
+  await wait(()=>/GIF выбран/.test(w.document.querySelector('[role="status"]').textContent));
+  [...w.document.querySelectorAll('button')].find((b:any)=>b.textContent==='Сохранить media replacement').click();
+  await wait(()=>!!JSON.parse(w.localStorage.getItem('portal-life.presentation.v1')).slots?.['job/lumber/shift/spring/default']?.primary);
+  const valid=w.localStorage.getItem('portal-life.presentation.v1');
+  const parsed=JSON.parse(valid);
+  assert.equal(parsed.slots['job/lumber/shift/spring/default'].primary.kind,'gif');
+  assert.match(parsed.slots['job/lumber/shift/spring/default'].primary.src,/^data:image\/gif/);
+  assert.equal(w.localStorage.getItem('portal-life.v1'),lifeBefore);
+
+  const wrong=new w.File([new Uint8Array([1,2,3])],'wrong.png',{type:'image/png'});
+  Object.defineProperty(input,'files',{configurable:true,value:[wrong]});input.dispatchEvent(new w.Event('change'));
+  await wait(()=>/Неподдерживаемый формат/.test(w.document.querySelector('[role="status"]').textContent));
+  assert.equal(w.localStorage.getItem('portal-life.presentation.v1'),valid);
+  assert.deepEqual(errors,[]);
+ }finally{dom.window.close();}
+});
