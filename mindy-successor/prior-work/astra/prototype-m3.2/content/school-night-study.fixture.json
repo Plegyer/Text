@@ -3,7 +3,20 @@
   "flags": [
     "story.arrived"
   ],
-  "actions": [],
+  "actions": [
+    {
+      "id": "rest",
+      "label": "Fixture rest",
+      "description": "Synthetic persisted last-action owner for NightFlow reload validation.",
+      "cost": {
+        "money": 0,
+        "energy": 0
+      },
+      "conditions": [],
+      "effects": [],
+      "mode": "normal"
+    }
+  ],
   "endings": [],
   "careers": [],
   "quests": [],
