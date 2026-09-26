@@ -118,3 +118,95 @@ Create:
 Define the final exact gate after PR20 merge: full check, shipped smoke, PA regression subset, save compatibility, worker artifact integration, OPEN authoring ledger and post-merge smoke.
 
 Continue items 7–12 sequentially without waiting for Lead review.
+
+
+## Queue item 13 — PR21 Product Acceptance latest-head recheck
+
+Create:
+- `docs/qa-prep/PR21_PRODUCT_ACCEPTANCE_LATEST_HEAD_RECHECK_v1.md`
+
+Review current PR #21 `lead/product-acceptance-gate-v1` against current main.
+
+Check:
+- harness uses first-class `schoolLesson`;
+- shipped Lumber/Foreman/Night/Forest/ending evidence is real production catalog execution;
+- capability accelerator is explicitly labeled and is not counted as PA09/PA17 pass;
+- School public-fact blocker remains OPEN rather than fabricated;
+- Hard Work remains only 50 completed shifts with exact `hardWork:lumber`;
+- full CI result and exact test count.
+
+Classify every PA00–PA26 row as:
+- SHIPPED_PASS;
+- ACCELERATOR_EVIDENCE_ONLY;
+- OPEN_AUTHORING_BLOCKED;
+- NOT_YET_PROVEN.
+
+Do not patch production files.
+
+## Queue item 14 — Product Acceptance blocker minimal-closure plan
+
+Create:
+- `docs/qa-prep/PRODUCT_ACCEPTANCE_MINIMAL_CLOSURE_PLAN_v1.md`
+
+For every row still blocked after PR21, define the smallest product change required to close it without broadening scope.
+
+At minimum distinguish:
+- Old Boundary Token acquisition/capability/action-space behavior;
+- School management/accounting public fact;
+- deeper Forest route/challenge/season depth;
+- item-dependent Activity action.
+
+Do not invent unresolved thresholds/acquisition sources.
+
+## Queue item 15 — Product Acceptance shipped-flow smoke script
+
+Create:
+- `docs/qa-prep/PRODUCT_ACCEPTANCE_SHIPPED_FLOW_SMOKE_v1.md`
+- optional NEW test `prior-work/astra/prototype-m3.2/tests/qa-pa-shipped-flow-smoke.test.ts`
+
+Define an executable smoke using only shipped content:
+arrival -> Lumber shift -> milestone -> Foreman -> paid School lesson -> NightFlow normal lodging -> Foreman Night -> Forest entry failure without capability -> accelerated Forest mechanics proof -> Hard Work 49/50 -> commit/completion -> new run.
+
+Clearly label the one accelerator boundary.
+
+## Queue item 16 — Product Acceptance no-false-green audit
+
+Create:
+- `docs/qa-prep/PRODUCT_ACCEPTANCE_NO_FALSE_GREEN_AUDIT_v1.md`
+
+Search all current PA/worker fixtures and identify any place where:
+- direct worldFact injection;
+- direct counter mutation;
+- synthetic School action;
+- fixture-only item capability;
+- direct ending pre-state
+could be mistaken for full product pass.
+
+For each, classify whether it is a legitimate threshold accelerator or must remain non-passing evidence.
+
+## Queue item 17 — release-candidate delta after PR21
+
+Create:
+- `docs/qa-prep/RELEASE_CANDIDATE_DELTA_AFTER_PR21_v1.md`
+
+Compare the previous release-candidate QA gate to current state after PR20 + PR21 evidence.
+Separate:
+- closed runtime/integration gates;
+- remaining authoring gates;
+- remaining asset/polish gates;
+- required post-merge test evidence.
+
+## Queue item 18 — QA integration handoff manifest
+
+Create:
+- `docs/qa-prep/QA_INTEGRATION_HANDOFF_v1.md`
+
+Deduplicate Chat 4 artifacts into:
+- MUST_INTEGRATE;
+- KEEP_AS_EVIDENCE;
+- SUPERSEDED;
+- FUTURE_GATE_ONLY.
+
+Explicitly identify which documents are stale because they predate PR20 green 187/187 or PR21 green 193/193.
+
+Continue items 13–18 sequentially without waiting for Lead review.
