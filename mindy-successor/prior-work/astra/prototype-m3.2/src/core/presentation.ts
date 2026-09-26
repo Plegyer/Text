@@ -6,6 +6,14 @@ const source=z.string().max(3_000_000).refine(
   s=>/^assets\/[a-zA-Z0-9/_-]+\.(svg|png|jpg|jpeg|webp|gif|mp4|webm)$/.test(s)||/^data:image\/(png|jpeg|webp|gif);base64,[A-Za-z0-9+/]+={0,2}$/.test(s),
   'Только локальный assets/ путь или загруженное изображение PNG/JPEG/WebP/GIF.'
 );
+const gifSource=source.refine(
+  s=>/^assets\/[a-zA-Z0-9/_-]+\.gif$/.test(s)||/^data:image\/gif;base64,[A-Za-z0-9+/]+={0,2}$/.test(s),
+  'Primary presentation media должен быть GIF.'
+);
+const staticSource=source.refine(
+  s=>/^assets\/[a-zA-Z0-9/_-]+\.(svg|png|jpg|jpeg|webp)$/.test(s)||/^data:image\/(png|jpeg|webp);base64,[A-Za-z0-9+/]+={0,2}$/.test(s),
+  'Static fallback должен быть SVG/PNG/JPEG/WebP.'
+);
 const presentationIdSchema=z.string().min(1).max(240).regex(/^[a-z0-9][a-z0-9/._-]*$/,'Некорректный presentationId.');
 const legacyMediaOverrideSchema=z.object({
   kind:z.enum(['image','gif','video']),
@@ -14,12 +22,12 @@ const legacyMediaOverrideSchema=z.object({
 }).strict();
 const gifOverrideSchema=z.object({
   kind:z.literal('gif'),
-  src:source,
+  src:gifSource,
   alt:z.string().min(1).max(300)
 }).strict();
 const staticOverrideSchema=z.object({
   kind:z.literal('image'),
-  src:source,
+  src:staticSource,
   alt:z.string().min(1).max(300)
 }).strict();
 const slotOverrideSchema=z.object({
@@ -87,6 +95,17 @@ export function presentationIdForAction(cat:Catalog,actionId:string,mediaIds:str
   return actionPresentationId(actionId,scene?.id??'default');
 }
 
+export function presentationIdForActionResult(cat:Catalog,actionId:string,mediaIds:string[]=[]){
+  const action=cat.definitions.actions.find(a=>a.id===actionId);
+  const scenes=action?.scenes??[];
+  const scene=scenes.find(s=>sameIds(s.media,mediaIds))
+    ??scenes.find(s=>s.media.some(id=>mediaIds.includes(id)))
+    ??scenes.find(s=>s.id==='default')
+    ??scenes[0];
+  if(jobIds.has(actionId))return `job/${clean(actionId)}/result/${clean(scene?.id??'default')}`;
+  return actionPresentationId(actionId,scene?.id??'default');
+}
+
 export function presentationIdForEvent(cat:Catalog,eventId:string,variantId:string){
   const event=cat.events.find(e=>e.id===eventId);
   const sourceDomain=event?.sourceDomain;
@@ -146,6 +165,14 @@ export function presentationSlots(cat:Catalog):PresentationSlot[]{
         baseMediaIds:scene.media,
         fallbackId:'location/town/default'
       });
+      if(jobIds.has(action.id)){
+        add({
+          id:`job/${clean(action.id)}/result/${clean(scene.id)}`,
+          label:`${action.label} · результат · ${scene.id}`,
+          baseMediaIds:scene.media,
+          fallbackId:actionPresentationId(action.id,scene.id)
+        });
+      }
     }
   }
 
