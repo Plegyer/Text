@@ -1,6 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "lumber.foreman-night-matrix.fixture",
+  "productionBaseline": "9b427d75dc22021cd3373aa7dd3521782e54152d",
   "nightChoiceId": "lumber.foreman.night",
   "eventId": "lumber-night.foreman-professional",
   "relationshipId": "lumber.foreman",
@@ -24,6 +25,7 @@
   "mechanics": {
     "daytimeEnergyCost": 0,
     "consumesNightSlot": true,
+    "lodgingId": "lodging.normal",
     "lodgingMoneyCost": 100,
     "lodgingPaymentExactlyOnce": true,
     "relationshipCounter": "night_meetings",

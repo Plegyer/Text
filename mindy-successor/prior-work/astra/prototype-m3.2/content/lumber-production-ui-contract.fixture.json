@@ -1,6 +1,10 @@
 {
   "schemaVersion": 1,
   "id": "lumber.production-ui-contract.fixture",
+  "productionBaseline": {
+    "mergeCommit": "9b427d75dc22021cd3373aa7dd3521782e54152d",
+    "status": "SHIPPED_MAIN_PR20"
+  },
   "surfaces": [
     {
       "id": "lumber-work",
@@ -25,7 +29,8 @@
         "daytimeEnergy": 1,
         "money": 0
       },
-      "presentationFamily": "job/lumber/shift/<season>/default"
+      "presentationFamily": "job/lumber/shift/<season>/default",
+      "shippedOnMain": true
     },
     {
       "id": "forest-entry",
@@ -48,7 +53,8 @@
       "costDisplay": {
         "daytimeEnergy": 2
       },
-      "checkpointAfterCommand": "ActivityEnvelope checkpoint=entry"
+      "checkpointAfterCommand": "ActivityEnvelope checkpoint=entry",
+      "shippedUiControl": true
     },
     {
       "id": "forest-actions",
@@ -72,11 +78,13 @@
         "no pending scene",
         "no NightFlow"
       ],
-      "daytimeEnergyPerInternalAction": 0
+      "daytimeEnergyPerInternalAction": 0,
+      "shippedUiControls": true
     },
     {
       "id": "foreman-night",
       "targetId": "lumber.foreman.night",
+      "normalLodgingId": "lodging.normal",
       "surface": "NightFlow.VoluntaryNightChoice",
       "command": {
         "type": "chooseNightChoice",
@@ -93,7 +101,9 @@
       "daytimeEnergyCost": 0,
       "consumesNightSlot": true,
       "reactionEventId": "lumber-night.foreman-professional",
-      "presentationId": "relationship/lumber-foreman/lumber-night-foreman-professional/default"
+      "presentationId": "relationship/lumber-foreman/lumber-night-foreman-professional/default",
+      "shippedChoiceDefinition": true,
+      "shippedLodgingDefinition": true
     },
     {
       "id": "ending-availability",
@@ -104,24 +114,32 @@
       ],
       "surface": "Endings",
       "eligibleListBinding": "run.endings.eligible",
-      "commitCommandShape": {
-        "type": "commitEnding",
+      "shippedUiCompatibilityCommand": {
+        "type": "accept",
         "id": "<eligible ending id>"
       },
-      "completionCommand": {
-        "type": "completeEnding"
+      "centralEngineCommands": {
+        "commit": {
+          "type": "commitEnding",
+          "id": "<eligible ending id>"
+        },
+        "completion": {
+          "type": "completeEnding"
+        }
       },
       "rules": [
         "eligibility is visible before commitment",
         "eligible ending does not auto-end run",
-        "commitment is explicit",
+        "commitment/completion remain distinct engine contracts",
+        "current UI may use compatibility accept shortcut",
         "Meta reward applies only on completion"
       ],
       "semanticPresentationIds": [
         "ending/lumber/hard-work",
         "ending/lumber/forewoman",
         "ending/lumber/forest"
-      ]
+      ],
+      "shippedEligibilityUi": true
     }
   ],
   "productionExclusions": [
@@ -142,6 +160,7 @@
   },
   "integrationStatus": {
     "contract": "READY",
-    "sharedUiWiring": "LEAD_OWNED_NOT_MODIFIED_HERE"
+    "sharedUiWiring": "SHIPPED_MAIN_PR20",
+    "workerSharedFileEdits": false
   }
 }

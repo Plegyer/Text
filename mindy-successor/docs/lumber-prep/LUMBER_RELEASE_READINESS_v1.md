@@ -1,233 +1,299 @@
 # Lumber Release Readiness v1
 
-Status: Chat 3 release-readiness snapshot.
-Branch: `chat3/lumber-production-proof-next`.
-Scope: Lumber target contracts, fixtures, Product Acceptance mapping, and known production dependencies.
+Status: post-activation Lumber readiness snapshot.
+Production baseline: PR #20 merge `9b427d75dc22021cd3373aa7dd3521782e54152d`.
+Latest observed main also retains the same production activation contracts.
 
-This document does **not** claim that Lead-owned shared catalog/UI activation has already shipped. It separates:
+This document separates shipped production capability from remaining Product Acceptance authoring.
 
-- **EXECUTABLE** — works in current isolated target fixtures/tests;
-- **CONTRACT READY** — production identity/behavior is locked and integration-safe;
-- **PARTIAL** — executable boundary exists but product wiring/depth is incomplete;
-- **OPEN / BLOCKED** — a production owner or authorial value is genuinely unresolved.
+## Executive status
 
-## Area status
+PR #20 ships:
 
-| Area | Executable evidence | Contract / identity status | Production readiness | Remaining dependency |
-| --- | --- | --- | --- | --- |
-| Lumber Work | `lumber.shift` target definition executes, costs 1 daytime Energy, increments `completed_shifts`, applies seasonal packages | CONTRACT READY; legacy `lumber` coexistence proven; semantic shift IDs are `job/lumber/shift/<season>/default` | READY FOR LEAD ACTIVATION | shared catalog/UI activation is Lead-owned; do not overwrite legacy `lumber` |
-| Career milestone | `lumber.career-first-shift` reacts to `careerCounterChanged(lumber,completed_shifts)` and advances `lumber` via `accept-hand` | CONTRACT READY | READY FOR LEAD ACTIVATION | target pack activation only |
-| Foreman professional route | `lumber.foreman-notice` opens `lumber.foreman`; professional choice reaches `route-professional` with 0 extra daytime Energy | CONTRACT READY; no romance prerequisite | READY FOR LEAD ACTIVATION | target pack activation only |
-| Foreman Night | `lumber-night.foreman-professional` plus isolated `lumber.foreman.night` builder proves visibility, one Night slot, 0 daytime Energy, exactly-once lodging/payment and reload stability | EVENT CONTRACT READY; stable Night hook ID is `lumber.foreman.night` | PARTIAL | production Night-choice definition and normal-lodging integration are not owned by this fixture |
-| Forest Activity | `lumber.forest` enters for 2 daytime Energy, persists ActivityEnvelope checkpoints, supports success/escape/failure, and resumes deterministically | Activity core contract READY; A5 success continuation READY | PARTIAL / BLOCKED AT PRODUCTION ENTRY | real `old_boundary_token -> enter_old_boundary` acquisition/use path; deeper Forest route/challenge/season authoring |
-| Forest continuation | `lumber-cross.activity-forest-return` reacts immediately to success without another shift | exact A5 boundary is `activityResult(lumber.forest,success,lumber.forest.success)` | CONTRACT READY | depends on production Forest entry being reachable |
-| Hard Work ending | `ending.lumber.hard-work` eligibility, commit, completion, reload and repeated completion are executable | **LOCKED / READY** | READY FOR LEAD ACTIVATION; **NOT an OPEN authoring dependency** | no content prerequisite remains; only normal production integration |
-| Forewoman ending | `ending.lumber.forewoman` is independently executable in fixture state using professional route + Lumber career facts | ending identity/conditions READY | BLOCKED FOR PRODUCT FLOW | final School-owned management/accounting public fact ID/provider/threshold remains OPEN |
-| Forest ending | `ending.lumber.forest` becomes eligible after exact Forest continuation facts and is independently completable | ending identity/conditions READY | PARTIAL | production Forest entry/item path and full Forest authoring remain OPEN |
-| Legacy schema-4 saves | `actionCounts.lumber` parses with coexistence catalog; target `completed_shifts` remains separate | CONTRACT READY; no implicit migration | READY | no migration should be added without a separate accepted contract |
-| Media / presentation | semantic Lumber slots resolve; packaged `assets/stage-lumber.svg` and `assets/stage-forest.svg` exist | semantic IDs READY; dotted media IDs remain asset IDs | PARTIAL but non-fatal | target GIF paths under `assets/lumber/*.gif` are future/missing and must not be labeled shipped |
-| PA00–PA26 mapping | every row is mapped in `LUMBER_PRODUCT_ACCEPTANCE_ROW_MAP_v1.md` | mapping READY | PARTIAL overall | rows depending on School/item/deeper Forest/normal lodging remain OPEN/PARTIAL |
+- target Work action `lumber.shift` while legacy `lumber` remains save/runtime compatible;
+- Lumber career machine;
+- Foreman relationship;
+- Forest Activity;
+- Lumber endings;
+- all three approved Lumber event packs;
+- target Work UI;
+- explicit NightFlow lodgings and voluntary choices;
+- `lumber.foreman.night`;
+- Forest Activity entry/action UI;
+- typed School progression and `schoolLesson`.
 
-## Hard Work — release-ready locked contract
+The full Lumber Product Acceptance slice is still **PARTIAL**, because several genuine cross-system authoring dependencies remain OPEN.
 
-Hard Work is not waiting on School, Forest, Foreman, season, item acquisition, milestone authoring, or legacy migration.
+Hard Work is **SHIPPED AND LOCKED**. It is not one of those dependencies.
 
-Exact ending ID:
+## Area matrix
+
+| Area | Production status | Exact identity / behavior | Remaining dependency |
+| --- | --- | --- | --- |
+| Lumber Work | **SHIPPED** | `lumber.shift`; 1 daytime Energy; increments `completed_shifts`; seasonal stat packages | none in Lumber content |
+| Legacy coexistence | **SHIPPED / COMPATIBLE** | legacy `lumber` and target `lumber.shift` are distinct; schema-4 `actionCounts.lumber` remains parseable | no migration should be invented |
+| Career milestone | **SHIPPED** | `lumber.career-first-shift`; reacts to `careerCounterChanged(lumber,completed_shifts)` | none |
+| Foreman route | **SHIPPED** | `lumber.foreman-notice`; professional route reaches `route-professional`; no romance prerequisite | none |
+| Foreman Night | **SHIPPED** | choice `lumber.foreman.night`; event `lumber-night.foreman-professional`; 0 daytime Energy; one Night slot | none in Night/Lumber identity |
+| Normal lodging | **SHIPPED** | `lodging.normal`; cost 100; exactly-once payment contract | none |
+| Forest Activity core/UI | **SHIPPED** | `lumber.forest`; 2 Energy entry; save/resume; advance/escape UI | natural entry remains blocked by real item-capability source |
+| Forest continuation | **SHIPPED** | exact A5 `activityResult(lumber.forest,success,lumber.forest.success)`; event `lumber-cross.activity-forest-return` | reachable after production entry |
+| Hard Work | **SHIPPED / READY** | `ending.lumber.hard-work`; only `completed_shifts >= 50`; reward `hardWork:lumber` | **none** |
+| Forewoman ending | **SHIPPED IDENTITY / FLOW PARTIAL** | `ending.lumber.forewoman`; professional Foreman + two Lumber career facts | final School management/accounting public fact/provider/threshold |
+| Forest ending | **SHIPPED IDENTITY / FLOW PARTIAL** | `ending.lumber.forest`; Forest continuation facts | production item path + deeper Forest PA authoring |
+| School engine/progression | **SHIPPED** | `schoolLesson`; eight courses; typed `lessons_completed` and `night_study_sessions` | specific Lumber management/Arcana public facts and thresholds remain OPEN |
+| Presentation/media | **SEMANTIC CONTRACT SHIPPED / ART PARTIAL** | slash semantic IDs; static `stage-lumber.svg` and `stage-forest.svg` packaged | future target GIF paths are missing/non-fatal and must not be labeled shipped |
+
+## Hard Work — closed contract
+
+Hard Work is fully specified.
+
+Ending ID:
 
 `ending.lumber.hard-work`
 
-Exact and only eligibility condition:
+Only eligibility condition:
 
 `careerCounter(lumber, completed_shifts) >= 50`
 
-Exact A6 reward ID:
+A6 reward ID:
 
 `hardWork:lumber`
 
-There are no additional conditions.
+Forbidden extra prerequisites:
 
-Completion applies the reward exactly once through RunResult/Meta proof. Reload after commitment or completion cannot duplicate it.
+- milestone;
+- relationship;
+- season;
+- Forest;
+- School;
+- item;
+- legacy visit/action count.
 
-The current Lumber Hard Work Meta effect in a new life remains:
+Eligibility does not commit the ending or grant Meta.
+
+Commitment alone does not grant the reward.
+
+Completion applies `hardWork:lumber` exactly once, and save/reload cannot duplicate it.
+
+The visible new-life effect remains:
 
 - +3 starting Strength;
 - +3 starting Endurance.
 
-## Work / milestone / Foreman readiness
+## Work / milestone / Foreman
 
-The core Lumber professional path is internally coherent:
+The shipped professional chain is:
 
-1. execute `lumber.shift`;
-2. increment `completed_shifts`;
-3. Resolver opens `lumber.career-first-shift`;
-4. `continue` advances career to `accepted-hand`;
-5. Resolver opens `lumber.foreman-notice`;
-6. `professional` reaches `lumber.foreman:route-professional`.
+1. `lumber.shift`;
+2. `completed_shifts +1`;
+3. `lumber.career-first-shift`;
+4. choice `continue`;
+5. career transition `accept-hand`;
+6. `lumber.foreman-notice`;
+7. choice `professional`;
+8. relationship stage `route-professional`.
 
-Reactive milestone/relationship scenes cost 0 extra daytime Energy.
+Reactive scenes cost 0 additional daytime Energy.
 
-No romance state is required.
+No romance condition exists in the professional path.
 
-## Night readiness
+## Night
 
-Ready and proven:
+Shipped production identities:
 
-- stable hook ID `lumber.foreman.night`;
-- event `lumber-night.foreman-professional`;
+- lodging: `lodging.normal`;
+- lodging cost: 100;
+- Night choice: `lumber.foreman.night`;
+- event: `lumber-night.foreman-professional`;
+- relationship counter: `night_meetings`;
+- relationship fact: `night-followup-complete`;
+- semantic presentation: `relationship/lumber-foreman/lumber-night-foreman-professional/default`.
+
+Proven invariants:
+
 - professional-route-only visibility;
-- 0 daytime Energy;
+- zero daytime Energy;
 - one Night slot;
-- lodging paid once;
-- pending Night scene survives reload;
-- relationship progress is not duplicated;
-- semantic presentation ID `relationship/lumber-foreman/lumber-night-foreman-professional/default`.
+- lodging payment exactly once;
+- reload after lodging does not repay;
+- reload with pending Night event does not duplicate relationship progress;
+- no romance prerequisite.
 
-Still not claimed shipped by this worker:
+Night/lodging wiring is no longer an OPEN production dependency after PR #20.
 
-- final production Night-choice definition placement;
-- final normal-lodging definition ID/wiring.
+## Forest
 
-The isolated Night builder is acceptance evidence, not a substitute for shared production ownership.
+Shipped:
 
-## Forest readiness
-
-Ready and proven:
-
-- Activity ID `lumber.forest`;
-- entry Energy cost exactly 2;
-- no repeated daily-Energy cost inside Activity;
-- save/resume envelope;
+- Activity `lumber.forest`;
+- UI entry button;
+- Activity advance/escape controls;
+- entry cost 2 daytime Energy;
+- checkpoint/resume envelope;
 - result IDs:
   - `lumber.forest.success`;
   - `lumber.forest.escape`;
   - `lumber.forest.failure`;
-- exact A5 success continuation;
-- no extra shift required after success;
-- escape/failure do not grant success continuation facts.
+- exact `activityResult` success continuation;
+- immediate Lumber continuation without another shift.
 
-### OPEN Forest production dependencies
+Still OPEN:
 
-1. **Old Boundary Token capability source/use**
-   - locked item: `old_boundary_token`;
-   - locked capability: `enter_old_boundary`;
-   - current worldFact bridge is test-only;
-   - production acquisition/use/retain-or-consume semantics remain OPEN.
+### Old Boundary Token production acquisition/use
 
-2. **Deeper Forest authoring**
-   - full PA asks for richer route/challenge/season depth;
-   - exact deeper encounters/balance/lore remain OPEN;
-   - do not replace or alter the already locked three result IDs.
+Locked identities:
 
-These Forest dependencies must never become Hard Work prerequisites.
+- item `old_boundary_token`;
+- capability `enter_old_boundary`.
 
-## School cross-system readiness
+The current worldFact bridge demonstrates the gate, but a natural production acquisition/use source and retain/consume semantics are still not locked.
 
-Current Lumber fixture proves the reaction shape through:
+Do not invent:
 
-- fixture world fact `lumber.school.management-ready`;
-- event `lumber-cross.school-management-return`;
-- Lumber-owned continuation facts used by the Forewoman family.
+- vendor;
+- price;
+- acquisition event;
+- consume rule;
+- replacement capability ID.
 
-But production School ownership is still OPEN for:
+### Deeper Forest authoring
 
-- final management/accounting public fact ID;
-- exact School provider;
-- any lesson/milestone/certificate threshold;
-- final Arcana/Forest public fact ID and threshold if activated.
+The shipped counter-style Activity proves architecture and reload behavior.
 
-Do **not** promote synthetic action:
+The full Product Acceptance depth requirement still calls for richer route/challenge/season authoring. Exact encounters, deeper balance and lore remain OPEN.
+
+Do not replace the three locked result IDs.
+
+## School cross-system boundary
+
+PR #20 ships:
+
+- all eight School courses;
+- `schoolLesson`;
+- typed School-owned `lessons_completed`;
+- typed `night_study_sessions`;
+- paid-lesson and Night-study UI.
+
+Still OPEN for Lumber cross-system progression:
+
+1. final School management/accounting public fact ID;
+2. provider/course/milestone/certificate threshold for that fact;
+3. final Arcana/Forest School public fact ID/provider/threshold if activated.
+
+The event pack contains the fixture-shaped Lumber return hook, but synthetic action:
 
 `school.lumber-management`
 
-Do **not** infer a management/certificate threshold from legacy School content.
+is **not shipped** and must not become the production provider.
 
-## Ending family readiness
+No management/certificate threshold may be inferred from legacy School content.
+
+## Endings
 
 ### Hard Work
 
-**READY CONTRACT.**
+**SHIPPED / READY.**
 
 Only `completed_shifts >= 50`.
 Exact reward `hardWork:lumber`.
 
 ### Forewoman
 
-**IDENTITY READY / PRODUCT FLOW BLOCKED.**
+**SHIPPED IDENTITY / PRODUCT FLOW PARTIAL.**
 
-Conditions remain:
+Conditions:
 
-- Lumber career fact `management-school-ready`;
-- Lumber career fact `forewoman-problem-resolved`;
-- Foreman relationship stage `route-professional`.
+- `management-school-ready`;
+- `forewoman-problem-resolved`;
+- Foreman stage `route-professional`.
 
-It grants no Hard Work Meta reward.
+No Meta reward.
 
-Blocker: final School-owned production public fact/provider/threshold.
+Blocker: final School-owned public fact/provider/threshold.
 
 ### Forest
 
-**IDENTITY READY / PRODUCT FLOW PARTIAL.**
+**SHIPPED IDENTITY / PRODUCT FLOW PARTIAL.**
 
-Conditions remain:
+Conditions:
 
-- Lumber career fact `forest-truth-known`;
-- Lumber career fact `forest-problem-resolved`.
+- `forest-truth-known`;
+- `forest-problem-resolved`.
 
-It grants no Hard Work Meta reward.
+No Meta reward.
 
-Blockers: production Forest entry capability path and deeper PA authoring.
+Blockers: natural item capability route and deeper full-PA Forest authoring.
 
-## Media readiness
+## Media
 
-Pack media IDs are approved asset identities, for example:
+Pack-declared target GIF paths under `assets/lumber/*.gif` are not packaged on the audited tree.
 
-- `job.lumber.shift.spring.default`;
-- `job.lumber.event.accepted-hand`;
-- `relationship.lumber.foreman.professional`;
-- `job.lumber.event.forest-return`;
-- `relationship.lumber.foreman.night.professional`.
+Therefore they are future/missing media, not shipped files.
 
-Their declared GIF paths under `assets/lumber/*.gif` are currently not packaged on this branch.
+Packaged static assets include:
 
-Therefore:
+- `assets/stage-lumber.svg`;
+- `assets/stage-forest.svg`.
 
-- missing future GIFs are **non-fatal** to the contract;
-- missing GIF paths are **not shipped assets**;
-- packaged static assets `assets/stage-lumber.svg` and `assets/stage-forest.svg` exist as real fallback material;
-- semantic presentation IDs remain slash-based and separate from dotted media asset IDs.
+Missing future GIFs are non-fatal to the presentation contract. Semantic presentation IDs are slash-based and remain separate from dotted media asset IDs.
+
+## PA00–PA26
+
+`LUMBER_PRODUCT_ACCEPTANCE_ROW_MAP_v1.md` maps every PA00–PA26 row to current production IDs/APIs.
+
+Rows now directly backed by PR #20 include:
+
+- target Work;
+- School command/progression infrastructure;
+- target NightFlow lodging;
+- Foreman Night choice;
+- Forest UI entry/actions;
+- target endings.
+
+Rows still PARTIAL/OPEN are those requiring:
+
+- a real item acquisition/use path;
+- School-to-Lumber public fact authoring;
+- deeper Forest content depth.
 
 ## Release checklist
 
-### Contract-complete / no authoring blocker
+### Shipped / closed
 
-- [x] target `lumber.shift` identity and one-Energy cost;
-- [x] seasonal shift mechanics;
-- [x] legacy `lumber` coexistence / schema-4 save compatibility;
-- [x] `completed_shifts` target ownership;
-- [x] first-shift career milestone;
-- [x] professional Foreman route without romance;
-- [x] exact A5 `activityResult` Forest continuation;
-- [x] Hard Work eligibility = ONLY `completed_shifts >= 50`;
-- [x] exact A6 reward ID `hardWork:lumber`;
-- [x] Hard Work reward exactly-once reload behavior;
-- [x] separate Forewoman / Forest ending identities;
-- [x] PA00–PA26 Lumber row map;
+- [x] target `lumber.shift`;
+- [x] legacy `lumber` coexistence;
+- [x] schema-4 legacy save compatibility;
+- [x] target `completed_shifts`;
+- [x] first-shift milestone;
+- [x] professional Foreman route;
+- [x] normal lodging `lodging.normal`;
+- [x] Foreman Night choice `lumber.foreman.night`;
+- [x] Forest Activity UI entry/actions;
+- [x] exact A5 `activityResult` continuation;
+- [x] Hard Work = ONLY `completed_shifts >= 50`;
+- [x] exact reward `hardWork:lumber`;
+- [x] Hard Work exactly-once save/reload behavior;
+- [x] Forewoman / Forest ending identities;
+- [x] typed School progression and `schoolLesson`;
+- [x] PA00–PA26 Lumber row mapping;
 - [x] semantic presentation identity contracts.
 
-### Integration / authoring still required
+### Genuine remaining blockers for full PA
 
-- [ ] Lead-owned shared catalog/UI activation for target Lumber definitions/packs;
-- [ ] real `old_boundary_token` production acquisition/use capability path;
+- [ ] real `old_boundary_token -> enter_old_boundary` acquisition/use path;
 - [ ] final School management/accounting public fact/provider/threshold;
 - [ ] final Arcana/Forest School public fact/provider/threshold if used;
-- [ ] production normal-lodging and Foreman Night-choice data wiring;
-- [ ] deeper Forest route/challenge/season authoring required for full PA depth;
-- [ ] future Lumber GIF assets, if desired; absence is non-fatal when fallback presentation remains usable.
+- [ ] deeper Forest route/challenge/season authoring required by full PA depth.
 
-## Overall readiness statement
+### Non-blocking art gap
 
-The Lumber **mechanical contracts and Hard Work path are integration-ready**.
+- [ ] future Lumber GIF assets may be added later; missing paths are not labeled shipped and static fallback material exists.
 
-The full Product Acceptance slice is **not yet completely release-ready** because item-capability acquisition/use, School public-fact ownership, production Night/lodging data wiring, and deeper Forest authoring remain unresolved or outside Chat 3 ownership.
+## Overall readiness
 
-Those OPEN items are isolated from Hard Work. Hard Work remains ready with exactly one eligibility condition and exact reward ID `hardWork:lumber`.
+The Lumber **production activation and Hard Work path are shipped**.
+
+The full Lumber Product Acceptance slice remains **PARTIAL**, specifically because item-capability acquisition/use, School public-fact authoring and deeper Forest content depth remain unresolved.
+
+Those remaining dependencies are isolated from Hard Work. Hard Work remains closed, shipped, and governed by exactly one eligibility condition with exact reward ID `hardWork:lumber`.

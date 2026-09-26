@@ -14,7 +14,7 @@ const nightPack=JSON.parse(readFileSync('content/packs/lumber-target/lumber-nigh
 function definitions(){
   const d=structuredClone(baseDefinitions);
   d.lodgings=[{
-    id:'lumber.normal-room',
+    id:'lodging.normal',
     label:'Normal room',
     housing:'normal',
     moneyCost:matrix.mechanics.lodgingMoneyCost,
@@ -62,7 +62,7 @@ function nightChoice(cat:Catalog){
 }
 function reload(s:Save,cat:Catalog){return parseSave(JSON.stringify(s),cat);}
 
-test('Foreman Night visibility matrix is professional-route only',()=>{
+test('Foreman Night matrix is aligned to shipped PR20 lodging/Night identities',()=>{\n  assert.equal(matrix.productionBaseline,'9b427d75dc22021cd3373aa7dd3521782e54152d');\n  assert.equal(matrix.mechanics.lodgingId,'lodging.normal');\n\n});\n\ntest('Foreman Night visibility matrix is professional-route only',()=>{
   const cat=catalog();
   const choice=nightChoice(cat);
 
@@ -104,7 +104,7 @@ test('Foreman Night costs zero daytime Energy and consumes one Night slot',()=>{
   assert.equal(s.run.dayState.energyCurrent,energyBefore);
   assert.equal(s.run.flow.night?.phase,'LodgingResolution');
 
-  s=dispatch(s,{type:'chooseLodging',id:'lumber.normal-room'},cat);
+  s=dispatch(s,{type:'chooseLodging',id:'lodging.normal'},cat);
   assert.equal(s.run.dayState.energyCurrent,energyBefore);
   assert.equal(s.run.flow.night?.phase,'VoluntaryNightChoice');
 
@@ -126,14 +126,14 @@ test('lodging payment is committed exactly once across reload before Night choic
   const moneyBefore=s.run.resources.money;
 
   s=dispatch(s,{type:'endDay'},cat);
-  s=dispatch(s,{type:'chooseLodging',id:'lumber.normal-room'},cat);
+  s=dispatch(s,{type:'chooseLodging',id:'lodging.normal'},cat);
   assert.equal(s.run.resources.money,moneyBefore-100);
   assert.equal(s.run.flow.night?.lodgingPaymentCommitted,true);
 
   s=reload(s,cat);
   assert.equal(s.run.resources.money,moneyBefore-100);
   assert.equal(s.run.flow.night?.lodgingPaymentCommitted,true);
-  assert.throws(()=>dispatch(s,{type:'chooseLodging',id:'lumber.normal-room'},cat));
+  assert.throws(()=>dispatch(s,{type:'chooseLodging',id:'lodging.normal'},cat));
 
   s=dispatch(s,{type:'chooseNightChoice',id:matrix.nightChoiceId},cat);
   assert.equal(s.run.resources.money,moneyBefore-100);
@@ -146,7 +146,7 @@ test('pending Night scene reload cannot duplicate relationship progress or payme
   const energyBefore=s.run.dayState.energyCurrent;
 
   s=dispatch(s,{type:'endDay'},cat);
-  s=dispatch(s,{type:'chooseLodging',id:'lumber.normal-room'},cat);
+  s=dispatch(s,{type:'chooseLodging',id:'lodging.normal'},cat);
   s=dispatch(s,{type:'chooseNightChoice',id:matrix.nightChoiceId},cat);
 
   assert.equal(s.run.resources.money,moneyBefore-100);
