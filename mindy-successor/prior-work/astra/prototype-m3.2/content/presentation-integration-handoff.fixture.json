@@ -1,0 +1,176 @@
+{
+  "version": 1,
+  "kind": "presentation-integration-handoff",
+  "status": "lead-handoff-current-main",
+  "sourceBranch": "chat2/presentation-replacement-next",
+  "mainActivationBaseline": "9b427d75dc22021cd3373aa7dd3521782e54152d",
+  "policy": {
+    "oneCategoryPerArtifact": true,
+    "sharedRuntimeChangeRecommendation": null,
+    "currentDemonstratedRuntimeBlockers": [],
+    "semanticSlashPersistenceOnMain": "resolved-by-product-activation-pr20"
+  },
+  "counts": {
+    "MUST_INTEGRATE": 20,
+    "KEEP_AS_QA_EVIDENCE": 3,
+    "REDUNDANT_SUPERSEDED": 4,
+    "FUTURE_ASSET_ONLY": 4
+  },
+  "artifacts": [
+    {
+      "path": "docs/presentation-prep/PRESENTATION_ACCESSIBILITY_METADATA_v1.md",
+      "category": "MUST_INTEGRATE",
+      "reason": "Current non-mechanical accessibility metadata contract."
+    },
+    {
+      "path": "docs/presentation-prep/PRESENTATION_OVERRIDE_IMPORT_EXPORT_CONTRACT_v1.md",
+      "category": "MUST_INTEGRATE",
+      "reason": "Portable semantic override import/export contract."
+    },
+    {
+      "path": "docs/presentation-prep/PRESENTATION_REPLACEMENT_BUNDLE_MIGRATION_v1.md",
+      "category": "MUST_INTEGRATE",
+      "reason": "Version migration contract with explicit orphaning and no guessed ID remaps."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-asset-consistency.fixture.json",
+      "category": "MUST_INTEGRATE",
+      "reason": "Current/static asset and future-GIF consistency evidence."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-fallback-exhaustion.fixture.json",
+      "category": "MUST_INTEGRATE",
+      "reason": "Adversarial fallback exhaustion cases."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-pa-checkpoints.fixture.json",
+      "category": "MUST_INTEGRATE",
+      "reason": "PA00-PA26 visible presentation checkpoint matrix."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-production-smoke.fixture.json",
+      "category": "MUST_INTEGRATE",
+      "reason": "Compact production semantic/fallback smoke sequence."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-screen-fallback-policy.fixture.json",
+      "category": "MUST_INTEGRATE",
+      "reason": "Cross-screen fallback policy contract."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-accessibility-metadata.test.ts",
+      "category": "MUST_INTEGRATE",
+      "reason": "Executable accessibility metadata audit."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-asset-consistency.test.ts",
+      "category": "MUST_INTEGRATE",
+      "reason": "Executable shipped/static/future asset consistency checks."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-fallback-exhaustion.test.ts",
+      "category": "MUST_INTEGRATE",
+      "reason": "Rejects invalid fallback graphs and proves safe exhaustion behavior."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-media-path-preflight.test.ts",
+      "category": "MUST_INTEGRATE",
+      "reason": "Media path security preflight."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-override-import-export-contract.test.ts",
+      "category": "MUST_INTEGRATE",
+      "reason": "Atomic portable override round-trip contract test."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-pa-checkpoints.test.ts",
+      "category": "MUST_INTEGRATE",
+      "reason": "Deterministic semantic identity across visible PA checkpoints."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-production-smoke.test.ts",
+      "category": "MUST_INTEGRATE",
+      "reason": "Production presentation smoke verification."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-release-readiness.test.ts",
+      "category": "MUST_INTEGRATE",
+      "reason": "Release-like presentation artifact gate."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-replacement-bundle-migration.test.ts",
+      "category": "MUST_INTEGRATE",
+      "reason": "Migration preserves semantic IDs and explicitly orphans unknowns."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-replacement-ordering.test.ts",
+      "category": "MUST_INTEGRATE",
+      "reason": "Deterministic replacement ordering and duplicate rejection."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-screen-fallback-policy.test.ts",
+      "category": "MUST_INTEGRATE",
+      "reason": "Terminal fallback/static-safety policy test."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-semantic-id-drift.test.ts",
+      "category": "MUST_INTEGRATE",
+      "reason": "Cross-fixture semantic ID drift detector."
+    },
+    {
+      "path": "docs/presentation-prep/PRESENTATION_RELEASE_READINESS_v1.md",
+      "category": "KEEP_AS_QA_EVIDENCE",
+      "reason": "Human-readable shipped-main-aligned readiness summary."
+    },
+    {
+      "path": "docs/presentation-prep/PRESENTATION_SHIPPED_MAIN_DELTA_MAP_v1.md",
+      "category": "KEEP_AS_QA_EVIDENCE",
+      "reason": "Explains activation delta and PA relevance against shipped main."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-shipped-main-delta.fixture.json",
+      "category": "KEEP_AS_QA_EVIDENCE",
+      "reason": "Machine-readable shipped-main comparison and PA mapping."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-pa-scenario.fixture.json",
+      "category": "REDUNDANT_SUPERSEDED",
+      "reason": "Superseded for integration by the more granular PA checkpoint matrix plus production smoke."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-pa-scenario.test.ts",
+      "category": "REDUNDANT_SUPERSEDED",
+      "reason": "Earlier PA scenario layer; checkpoint/smoke suites carry the integration-facing coverage."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-shipped-closure-inventory.fixture.json",
+      "category": "REDUNDANT_SUPERSEDED",
+      "reason": "Superseded by shipped-main delta plus asset-consistency manifests."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-shipped-closure-inventory.test.ts",
+      "category": "REDUNDANT_SUPERSEDED",
+      "reason": "Earlier closure audit; newer current-main/asset checks are more precise."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-replacement-bundle.fixture.json",
+      "category": "FUTURE_ASSET_ONLY",
+      "reason": "Portable future-GIF replacement bundle; useful when replacement assets/import workflow is activated."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-replacement-bundle.test.ts",
+      "category": "FUTURE_ASSET_ONLY",
+      "reason": "Acceptance tests for future replacement bundle workflow."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-replacement-regression.fixture.json",
+      "category": "FUTURE_ASSET_ONLY",
+      "reason": "Representative drop-in future media replacement scenarios."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-replacement-regression.test.ts",
+      "category": "FUTURE_ASSET_ONLY",
+      "reason": "Drop-in replacement regression suite for future asset activation."
+    }
+  ]
+}
