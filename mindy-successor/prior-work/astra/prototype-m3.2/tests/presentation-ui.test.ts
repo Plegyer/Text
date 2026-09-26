@@ -43,7 +43,7 @@ function boot(){
     texts:{},
     media:{},
     slots:{
-      'job/lumber/shift/spring/default':{
+      'job/lumber/result/spring':{
         primary:{kind:'gif',src:gif,alt:'Лесоруб за работой'},
         static:{kind:'image',src:png,alt:'Лесоруб за работой без анимации'}
       }
@@ -56,15 +56,15 @@ function boot(){
 test('central stage renders GIF by presentationId and animation-off swaps to static fallback',async()=>{
   const {dom,w,errors}=boot();
   try{
-    await wait(()=>!!w.document.querySelector('[data-presentation-id="job/lumber/shift/spring/default"] img'));
-    const stage=w.document.querySelector('[data-presentation-id="job/lumber/shift/spring/default"]');
+    await wait(()=>!!w.document.querySelector('[data-presentation-id="job/lumber/result/spring"] img'));
+    const stage=w.document.querySelector('[data-presentation-id="job/lumber/result/spring"]');
     assert.equal(stage.querySelector('img').getAttribute('src'),gif);
     assert.equal(w.document.querySelectorAll('.media-window').length,1);
 
     w.document.querySelector('[data-panel="menu"]').click();
     w.document.querySelector('#animation-toggle').click();
-    await wait(()=>w.document.querySelector('[data-presentation-id="job/lumber/shift/spring/default"] img')?.getAttribute('src')===png);
-    assert.equal(w.document.querySelector('[data-presentation-id="job/lumber/shift/spring/default"] img').getAttribute('src'),png);
+    await wait(()=>w.document.querySelector('[data-presentation-id="job/lumber/result/spring"] img')?.getAttribute('src')===png);
+    assert.equal(w.document.querySelector('[data-presentation-id="job/lumber/result/spring"] img').getAttribute('src'),png);
     assert.deepEqual(errors,[]);
   }finally{dom.window.close();}
 });
