@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "kind": "presentation-merged-rc-override-smoke",
+  "status": "merged-pr24-representative",
+  "policy": {
+    "overrideChangesGameplay": false,
+    "semanticIdentityStableAcrossOverride": true,
+    "reloadIdentityGameplayDriven": true,
+    "missingOverrideFallsBackSafely": true
+  },
+  "cases": [
+    {
+      "caseId": "lumber-result",
+      "presentationId": "job/lumber/result/default",
+      "owner": "lastAction",
+      "gameplayIdentity": {
+        "actionId": "lumber.shift"
+      },
+      "shippedFallback": "assets/stage-lumber.svg",
+      "overrideStatic": "assets/stage-town.svg"
+    },
+    {
+      "caseId": "school-arcana-lesson",
+      "presentationId": "school/arcana/lesson/default",
+      "owner": "lastAction",
+      "gameplayIdentity": {
+        "courseId": "school.course.arcana"
+      },
+      "shippedFallback": "assets/stage-school.svg",
+      "overrideStatic": "assets/stage-town.svg"
+    },
+    {
+      "caseId": "school-blocking-scene",
+      "presentationId": "location/town/event/base-school/lesson",
+      "owner": "pendingScene",
+      "gameplayIdentity": {
+        "eventId": "base.school",
+        "variantId": "lesson"
+      },
+      "shippedFallback": "assets/workshop.svg",
+      "overrideStatic": "assets/stage-town.svg"
+    },
+    {
+      "caseId": "foreman-night",
+      "presentationId": "relationship/lumber-foreman/lumber-night-foreman-professional/default",
+      "owner": "pendingScene",
+      "gameplayIdentity": {
+        "eventId": "lumber-night.foreman-professional",
+        "variantId": "default"
+      },
+      "shippedFallback": "assets/stage-lumber.svg",
+      "overrideStatic": "assets/stage-town.svg"
+    },
+    {
+      "caseId": "forest-route",
+      "presentationId": "activity/forest/route/default",
+      "owner": "Activity",
+      "gameplayIdentity": {
+        "activityId": "lumber.forest",
+        "routeId": "logging-road"
+      },
+      "shippedFallback": "assets/stage-forest.svg",
+      "overrideStatic": "assets/stage-town.svg"
+    },
+    {
+      "caseId": "hard-work-ending",
+      "presentationId": "ending/lumber/hard-work",
+      "owner": "endingState",
+      "gameplayIdentity": {
+        "endingId": "ending.lumber.hard-work"
+      },
+      "shippedFallback": "assets/stage-town.svg",
+      "overrideStatic": "assets/stage-school.svg"
+    }
+  ]
+}
