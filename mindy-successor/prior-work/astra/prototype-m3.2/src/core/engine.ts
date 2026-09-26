@@ -786,6 +786,111 @@ function compatibilityLodging(s:Save,payment:'money'|'favor'|'outside'):LodgingD
 }
 const compatibilitySleepChoice:NightChoiceDefinition={id:'legacy.sleep',label:'Спать',conditions:[],effects:[],nextDayEffects:[],nextDayEnergyDelta:0};
 
+type ActivityEnvelope=NonNullable<Save['run']['flow']['activity']>;
+type CounterActivityConfig={
+  startEndurance:number;
+  objectiveSteps:number;
+  successOutcome:string;
+  escapeOutcome:string;
+  failureOutcome:string;
+};
+type CounterActivityState={endurance:number;progress:number;steps:number};
+
+function activityDefinition(cat:Catalog,id:string){
+  return cat.definitions.activities.find(a=>a.id===id);
+}
+function counterActivityConfig(def:ActivityDefinition):CounterActivityConfig{
+  if(def.adapter!=='counter.v1'||def.adapterVersion!==1)throw new Error(`Неподдерживаемый Activity adapter: ${def.adapter} v${def.adapterVersion}`);
+  const cfg=def.config as Record<string,unknown>;
+  const startEndurance=cfg.startEndurance,objectiveSteps=cfg.objectiveSteps;
+  const successOutcome=cfg.successOutcome,escapeOutcome=cfg.escapeOutcome,failureOutcome=cfg.failureOutcome;
+  if(typeof startEndurance!=='number'||!Number.isInteger(startEndurance)||startEndurance<1||
+     typeof objectiveSteps!=='number'||!Number.isInteger(objectiveSteps)||objectiveSteps<1||
+     typeof successOutcome!=='string'||typeof escapeOutcome!=='string'||typeof failureOutcome!=='string'){
+    throw new Error(`Некорректный counter.v1 config: ${def.id}`);
+  }
+  return {startEndurance,objectiveSteps,successOutcome,escapeOutcome,failureOutcome};
+}
+function validateCounterActivityState(envelope:ActivityEnvelope,def:ActivityDefinition){
+  const cfg=counterActivityConfig(def),raw=envelope.internalState as Record<string,unknown>;
+  const endurance=raw.endurance,progress=raw.progress,steps=raw.steps;
+  if(typeof endurance!=='number'||!Number.isInteger(endurance)||endurance<0||endurance>cfg.startEndurance||
+     typeof progress!=='number'||!Number.isInteger(progress)||progress<0||progress>=cfg.objectiveSteps||
+     typeof steps!=='number'||!Number.isInteger(steps)||steps<0||steps!==progress){
+    throw new Error(`Некорректное internalState Activity ${def.id}`);
+  }
+  const expected=steps===0?'entry':`step.${steps}`;
+  if(envelope.checkpoint!==expected)throw new Error(`Некорректный checkpoint Activity ${def.id}`);
+  if(envelope.pendingScene!==null)throw new Error(`counter.v1 не поддерживает pendingScene: ${def.id}`);
+  return {endurance,progress,steps} as CounterActivityState;
+}
+function validateActivityEnvelopeAgainstCatalog(envelope:ActivityEnvelope,cat:Catalog,currentDay:number){
+  const def=activityDefinition(cat,envelope.activityId);
+  if(!def)throw new Error(`Неизвестная Activity в сохранении: ${envelope.activityId}`);
+  if(envelope.definitionVersion!==def.definitionVersion)throw new Error(`Activity definitionVersion mismatch: ${envelope.activityId}`);
+  if(envelope.adapter!==def.adapter||envelope.adapterVersion!==def.adapterVersion)throw new Error(`Activity adapter version mismatch: ${envelope.activityId}`);
+  if(def.resumePolicy!=='resumable')throw new Error(`Activity не разрешает resume: ${envelope.activityId}`);
+  if(def.timePolicy==='same_day'&&envelope.startedAtDay!==currentDay)throw new Error(`same_day Activity привязана к другому дню: ${envelope.activityId}`);
+  if(!envelope.entryEnergyCommitted)throw new Error(`Activity entry Energy не committed: ${envelope.activityId}`);
+  if(def.adapter==='counter.v1')validateCounterActivityState(envelope,def);
+  else throw new Error(`Неизвестный Activity adapter: ${def.adapter}`);
+  return def;
+}
+function enterActivityMutable(s:Save,cat:Catalog,id:string){
+  if(s.run.pending)throw new Error('Сначала завершите текущую сцену.');
+  if(s.run.flow.night)throw new Error('Нельзя войти в Activity во время NightFlow.');
+  if(s.run.flow.activity)throw new Error('Activity уже активна.');
+  if(!s.run.flags['story.arrived'])throw new Error('Сначала завершите вступление.');
+  const def=activityDefinition(cat,id);if(!def)throw new Error('Неизвестная Activity.');
+  if(!eligible(def.entryConditions,s,cat))throw new Error('Условия входа в Activity не выполнены.');
+  if(s.run.dayState.energyCurrent<def.entryEnergyCost)throw new Error('Не хватает Energy для Activity.');
+  const cfg=counterActivityConfig(def);
+  const before=cloneSave(s);
+  s.run.dayState.energyCurrent-=def.entryEnergyCost;
+  s.run.flow.activity={
+    activityId:def.id,
+    definitionVersion:def.definitionVersion,
+    adapter:def.adapter,
+    adapterVersion:def.adapterVersion,
+    status:'active',
+    startedAtDay:s.run.day,
+    entryEnergyCommitted:true,
+    internalState:{endurance:cfg.startEndurance,progress:0,steps:0},
+    rngState:s.run.rngState.state,
+    checkpoint:'entry',
+    pendingScene:null,
+    accumulatedEffects:[],
+    emittedFacts:[]
+  };
+  runResolverBoundary(s,before,cat,[{kind:'activityStarted',activity:def.id}],true);
+}
+function completeActivityMutable(s:Save,cat:Catalog,outcome:string){
+  const envelope=s.run.flow.activity;if(!envelope)throw new Error('Activity не активна.');
+  const def=validateActivityEnvelopeAgainstCatalog(envelope,cat,s.run.day);
+  const result=def.results.find(r=>r.id===outcome);if(!result)throw new Error(`Неизвестный Activity result: ${outcome}`);
+  const before=cloneSave(s);
+  applyEffectsMutable(s,result.effects,cat,true);
+  s.run.flow.activity=null;
+  register(s,cat);
+  runResolverBoundary(s,before,cat,[{kind:'activityCompleted',activity:def.id,outcome:result.id}],true);
+}
+function activityActionMutable(s:Save,cat:Catalog,actionId:string){
+  if(s.run.pending)throw new Error('Сначала завершите текущую сцену.');
+  if(s.run.flow.night)throw new Error('Activity недоступна во время NightFlow.');
+  const envelope=s.run.flow.activity;if(!envelope)throw new Error('Activity не активна.');
+  const def=validateActivityEnvelopeAgainstCatalog(envelope,cat,s.run.day);
+  const cfg=counterActivityConfig(def);
+  const state=validateCounterActivityState(envelope,def);
+  if(actionId==='escape'){completeActivityMutable(s,cat,cfg.escapeOutcome);return;}
+  if(actionId!=='advance')throw new Error(`Неизвестное действие Activity: ${actionId}`);
+  if(state.endurance<1)throw new Error('Внутренняя Endurance Activity исчерпана.');
+  state.endurance--;state.progress++;state.steps++;
+  envelope.internalState={...state};
+  envelope.checkpoint=`step.${state.steps}`;
+  if(state.progress>=cfg.objectiveSteps){completeActivityMutable(s,cat,cfg.successOutcome);return;}
+  if(state.endurance===0){completeActivityMutable(s,cat,cfg.failureOutcome);return;}
+}
+
 export type Command=
   |{type:'action';id:string;recipe?:'gentle'|'bold'}
   |{type:'choice';id:string}
@@ -798,6 +903,8 @@ export type Command=
   |{type:'endDay'}
   |{type:'chooseLodging';id:string}
   |{type:'chooseNightChoice';id:string}
+  |{type:'enterActivity';id:string}
+  |{type:'activityAction';id:string}
   |{type:'sleep';payment:'money'|'favor'|'outside'};
 
 export function dispatch(input:Save,command:Command,cat:Catalog):Save {
