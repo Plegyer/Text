@@ -1,0 +1,56 @@
+{
+  "formatVersion": 1,
+  "id": "school.pa-shipped-row-evidence.fixture.v1",
+  "evidence": [
+    {
+      "paRow": "required-flow.school-lesson",
+      "requirement": "School lesson",
+      "status": "SHIPPED_SCHOOL_RUNTIME_SLICE",
+      "commandOrApi": "executeSchoolLesson(input, courseId, catalog, runtime)",
+      "evidence": [
+        "src/core/school.ts",
+        "content/school-production-catalog-parity.fixture.json"
+      ]
+    },
+    {
+      "paRow": "school.progress",
+      "requirement": "typed School progress",
+      "status": "SHIPPED_CHAT5_CONTRACT",
+      "commandOrApi": "paid lesson -> lessons_completed +1; Night study -> night_study_sessions +1",
+      "evidence": [
+        "content/school-typed-state-compat.fixture.json",
+        "content/school-typed-progress-exactly-once.fixture.json"
+      ],
+      "sharedActivationNote": "shared schema/dispatcher integration remains Lead-owned"
+    },
+    {
+      "paRow": "school.presentation-save-reload",
+      "requirement": "semantic presentation and deterministic reload",
+      "status": "SHIPPED_CONTRACT_WITH_RUNTIME_BACKED_RELOAD",
+      "commandOrApi": "parseSave(...) + NightFlow commands",
+      "evidence": [
+        "content/school-production-ui.fixture.json",
+        "content/school-night-presentation.fixture.json",
+        "content/school-full-reload-chronology.fixture.json"
+      ]
+    },
+    {
+      "paRow": "required-flow.school-result-affects-lumber",
+      "requirement": "authored School public result affects Lumber",
+      "status": "OPEN_AUTHORING",
+      "commandOrApi": "addWorldFact/worldFactAdded transport is available; final School fact IDs/thresholds are not authored",
+      "evidence": [
+        "../../../docs/school-prep/SCHOOL_LUMBER_PUBLIC_BOUNDARY_READINESS_v1.md"
+      ]
+    }
+  ],
+  "currentSharedFirstClassCommands": {
+    "paidLessonProductionCommandShipped": false,
+    "expectedPaidLessonCommand": "schoolLesson",
+    "nightFlowCommands": [
+      "endDay",
+      "chooseLodging",
+      "chooseNightChoice"
+    ]
+  }
+}
