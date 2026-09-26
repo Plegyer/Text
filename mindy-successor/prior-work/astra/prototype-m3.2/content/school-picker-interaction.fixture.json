@@ -1,0 +1,200 @@
+{
+  "formatVersion": 1,
+  "id": "school.picker-interaction.fixture.v1",
+  "disabledReasons": [
+    {
+      "code": "not-arrived",
+      "when": "story.arrived !== true"
+    },
+    {
+      "code": "insufficient-money",
+      "when": "money < tuition"
+    },
+    {
+      "code": "insufficient-energy",
+      "when": "currentDayEnergy < 1"
+    },
+    {
+      "code": "pending-scene",
+      "when": "pendingScene !== null"
+    },
+    {
+      "code": "active-night",
+      "when": "night !== null"
+    },
+    {
+      "code": "active-activity",
+      "when": "activity !== null"
+    }
+  ],
+  "courses": [
+    {
+      "courseId": "school.course.literacy_and_numbers",
+      "label": "Literacy & Numbers",
+      "tuition": 300,
+      "energyCost": 1,
+      "statPackage": [
+        {
+          "stat": "reason",
+          "delta": 4
+        },
+        {
+          "stat": "wits",
+          "delta": 2
+        }
+      ],
+      "presentationId": "school/literacy-and-numbers/lesson/default"
+    },
+    {
+      "courseId": "school.course.arcana",
+      "label": "Arcana",
+      "tuition": 500,
+      "energyCost": 1,
+      "statPackage": [
+        {
+          "stat": "magic",
+          "delta": 4
+        },
+        {
+          "stat": "reason",
+          "delta": 4
+        },
+        {
+          "stat": "creativity",
+          "delta": 2
+        }
+      ],
+      "presentationId": "school/arcana/lesson/default"
+    },
+    {
+      "courseId": "school.course.rhetoric_and_social",
+      "label": "Rhetoric & Social",
+      "tuition": 300,
+      "energyCost": 1,
+      "statPackage": [
+        {
+          "stat": "charm",
+          "delta": 3
+        },
+        {
+          "stat": "sociability",
+          "delta": 3
+        },
+        {
+          "stat": "wits",
+          "delta": 2
+        }
+      ],
+      "presentationId": "school/rhetoric-and-social/lesson/default"
+    },
+    {
+      "courseId": "school.course.etiquette_and_presentation",
+      "label": "Etiquette & Presentation",
+      "tuition": 400,
+      "energyCost": 1,
+      "statPackage": [
+        {
+          "stat": "manners",
+          "delta": 3
+        },
+        {
+          "stat": "grooming",
+          "delta": 3
+        },
+        {
+          "stat": "charm",
+          "delta": 2
+        }
+      ],
+      "presentationId": "school/etiquette-and-presentation/lesson/default"
+    },
+    {
+      "courseId": "school.course.field_craft",
+      "label": "Field Craft",
+      "tuition": 400,
+      "energyCost": 1,
+      "statPackage": [
+        {
+          "stat": "dexterity",
+          "delta": 3
+        },
+        {
+          "stat": "wits",
+          "delta": 3
+        },
+        {
+          "stat": "creativity",
+          "delta": 2
+        }
+      ],
+      "presentationId": "school/field-craft/lesson/default"
+    },
+    {
+      "courseId": "school.course.physical_training",
+      "label": "Physical Training",
+      "tuition": 400,
+      "energyCost": 1,
+      "statPackage": [
+        {
+          "stat": "strength",
+          "delta": 3
+        },
+        {
+          "stat": "endurance",
+          "delta": 3
+        },
+        {
+          "stat": "dexterity",
+          "delta": 2
+        }
+      ],
+      "presentationId": "school/physical-training/lesson/default"
+    },
+    {
+      "courseId": "school.course.arts_and_performance",
+      "label": "Arts & Performance",
+      "tuition": 500,
+      "energyCost": 1,
+      "statPackage": [
+        {
+          "stat": "creativity",
+          "delta": 3
+        },
+        {
+          "stat": "charm",
+          "delta": 3
+        },
+        {
+          "stat": "sociability",
+          "delta": 2
+        },
+        {
+          "stat": "dexterity",
+          "delta": 2
+        }
+      ],
+      "presentationId": "school/arts-and-performance/lesson/default"
+    },
+    {
+      "courseId": "school.course.body_confidence",
+      "label": "Body Confidence",
+      "tuition": 400,
+      "energyCost": 1,
+      "statPackage": [
+        {
+          "stat": "sexuality",
+          "delta": 3
+        },
+        {
+          "stat": "grooming",
+          "delta": 3
+        },
+        {
+          "stat": "endurance",
+          "delta": 2
+        }
+      ],
+      "presentationId": "school/body-confidence/lesson/default"
+    }
+  ]
+}
