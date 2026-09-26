@@ -11,6 +11,22 @@ const safeAlias:Record<string,Stat|undefined>={
   persuasion:'charm'
 };
 
+// Schema-3 migration is deliberately conservative: only legacy flags whose
+// meaning is unambiguous at the target boundary become typed public facts.
+// Domain-specific prototype flags stay in legacyCompat quarantine until an
+// explicit career/quest/relationship mapping exists.
+const legacyFlagWorldFactMigration=[
+  ['story.arrived','story.arrived'],
+  ['story.home','story.home'],
+  ['story.status','story.status'],
+  ['story.mystery','story.mystery']
+] as const;
+function migrateLegacyWorldFacts(flags:Record<string,boolean>|undefined){
+  const targets=legacyFlagWorldFactMigration.map(([,target])=>target);
+  if(new Set(targets).size!==targets.length)throw new Error('Legacy flag migration alias collision.');
+  return legacyFlagWorldFactMigration.filter(([legacy])=>flags?.[legacy]===true).map(([,target])=>target);
+}
+
 function defaultLegacyMetrics(){
   return {
     perception:1,empathy:1,composure:1,organization:1,
@@ -1155,7 +1171,7 @@ function migrateV3(raw:any){
       resources:{money:Math.max(0,oldMetrics.money??0),inventory:{...(raw.run.inventory??{})}},
       dayState:{energyCurrent:Math.max(0,oldMetrics.energy??3),nextDayModifiers:{energyDelta:0,statEffects:[],tags:[]},optionalOfferIds:[],scheduledEventIds:[]},
       housingState:{current:targetHousing(raw.run.housing??'room'),paidForCurrentNight:false},
-      progression:{careers:{},quests:{},relationships:{},worldFacts:[]},
+      progression:{careers:{},quests:{},relationships:{},worldFacts:migrateLegacyWorldFacts(raw.run.flags)},
       endings:{
         eligible:[...(raw.run.availableEndings??[])],
         committed:raw.run.acceptedEnding??null,

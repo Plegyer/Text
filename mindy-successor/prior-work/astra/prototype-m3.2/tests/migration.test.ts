@@ -61,6 +61,13 @@ test('schema3 migration maps only safe target stats and quarantines ambiguous pr
  assert.equal(s.run.legacyCompat?.originalLimitDays,448);
 });
 
+test('schema3 migration maps only explicit safe legacy flags to typed facts and quarantines the rest',()=>{
+ const s=parseSave(JSON.stringify(rawV3({flags:{'story.arrived':true,'story.mystery':true,'alchemy.intro':true}})),catalog);
+ assert.deepEqual(new Set(s.run.progression.worldFacts),new Set(['story.arrived','story.mystery']));
+ assert.equal(s.run.legacyCompat?.flags['alchemy.intro'],true);
+ assert.equal(s.run.progression.worldFacts.includes('alchemy.intro'),false);
+});
+
 test('schema3 pending variant and RNG survive roundtrip without reroll',()=>{
  const raw=rawV3({
   rng:0,

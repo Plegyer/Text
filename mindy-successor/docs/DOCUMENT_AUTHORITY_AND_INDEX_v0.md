@@ -50,6 +50,8 @@ Historical:
 ## 5. Implementation gates
 
 - `ARCHITECTURE_MIGRATION_SLICE_v1.md`
+- `qa-prep/ARCHITECTURE_MIGRATION_GATE_FINAL_v1.md` — final integrated A1–A6 gate evidence.
+- `qa-prep/PRODUCT_ACCEPTANCE_HARNESS_v1.md` — executable PA00–PA26 mapping skeleton.
 - `PRODUCT_ACCEPTANCE_SLICE_v0.md`
 - `FIRST_RELEASE_SCOPE_DRAFT_v0.md`
 - `FULL_TZ_READINESS_REVIEW_v0.md`

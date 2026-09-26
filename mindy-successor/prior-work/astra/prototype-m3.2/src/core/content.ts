@@ -93,6 +93,17 @@ function validateMachine(kind:MachineKind,m:MachineDefinition,maps:MachineMaps,c
     if(t.effects.some(isAdvance))throw new Error(`Nested transition запрещён: ${kind}.${m.id}.${t.id}`);
     checkEffects(t.effects);
   }
+  const reachable=new Set<string>([m.initialStage]);
+  let changed=true;
+  while(changed){
+    changed=false;
+    for(const t of m.transitions){
+      if(t.from.some(from=>reachable.has(from))&&!reachable.has(t.to)){
+        reachable.add(t.to);changed=true;
+      }
+    }
+  }
+  for(const stage of m.stages)if(!reachable.has(stage))throw new Error(`Недостижимый orphan stage ${kind}.${m.id}.${stage}`);
 }
 
 function has<T>(xs:T[]|undefined,value:T){return !!xs?.includes(value);}
