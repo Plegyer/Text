@@ -835,8 +835,18 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
   if(s.run.pending){
     const e=cat.events.find(e=>e.id===s.run.pending!.eventId);
     if(!e?.variants.some(v=>v.id===s.run.pending!.variantId))throw new Error('Неизвестная сцена сохранения.');
-    if(!e.choices.some(c=>eligible(c.conditions,s,cat)))throw new Error('Сцена не имеет доступного выбора.');
+    if(s.run.pending.allowedChoiceIds){
+      if(!s.run.pending.allowedChoiceIds.length||s.run.pending.allowedChoiceIds.some(id=>!e.choices.some(c=>c.id===id)))throw new Error('Некорректный snapshot выборов pending scene.');
+    }else if(!e.choices.some(c=>eligible(c.conditions,s,cat)))throw new Error('Сцена не имеет доступного выбора.');
   }
+  for(const q of s.run.flow.reaction.queued){
+    const e=cat.events.find(e=>e.id===q.eventId);
+    if(!e||!e.variants.some(v=>v.id===q.variantId)||!q.allowedChoiceIds.length||q.allowedChoiceIds.some(id=>!e.choices.some(c=>c.id===id)))throw new Error('Некорректная queued reaction instance.');
+    if(q.kind==='scheduled'&&q.expiresDay===undefined)throw new Error('Scheduled instance без срока.');
+  }
+  const queuedById=new Map(s.run.flow.reaction.queued.map(q=>[q.instanceId,q]));
+  if(s.run.dayState.optionalOfferIds.some(id=>queuedById.get(id)?.kind!=='optional'))throw new Error('Некорректная optional offer ссылка.');
+  if(s.run.dayState.scheduledEventIds.some(id=>queuedById.get(id)?.kind!=='scheduled'))throw new Error('Некорректная scheduled event ссылка.');
   for(const [eventId,h] of Object.entries(s.run.history)){
     const e=cat.events.find(e=>e.id===eventId);
     if(!e||h.lastDay>s.run.day||Object.entries(h.variants).some(([variantId,day])=>day>s.run.day||!e.variants.some(v=>v.id===variantId)))throw new Error('Некорректная история сцен.');
