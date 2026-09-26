@@ -363,3 +363,94 @@ Consolidate all Chat 2 work after PR21 into:
 Name exact files in each class and explain duplication/supersession so Lead can integrate a minimal non-redundant subset.
 
 Continue items 19–24 sequentially without waiting for Lead review.
+
+
+## Queue item 25 — presentation handoff deduplication proof
+
+Create NEW files only:
+- `prior-work/astra/prototype-m3.2/content/presentation-handoff-dedup.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/presentation-handoff-dedup.test.ts`
+
+Using `PRESENTATION_RELEASE_CANDIDATE_HANDOFF_v2.md`, prove that READY_TO_INTEGRATE_NOW has:
+- no duplicate semantic-ID contract coverage;
+- no stale pre-PR20/PR21 assumptions;
+- no runtime/UI ownership conflict;
+- no fixture that falsely upgrades OPEN gameplay authoring to PASS.
+
+## Queue item 26 — presentation current-main drift audit
+
+Create:
+- `docs/presentation-prep/PRESENTATION_CURRENT_MAIN_DRIFT_AUDIT_v1.md`
+- optional NEW test `prior-work/astra/prototype-m3.2/tests/presentation-current-main-drift.test.ts`
+
+Compare branch presentation contracts against latest main after PR20/PR21 + durable handoff.
+Classify each delta:
+- already shipped;
+- useful branch-only QA;
+- stale/superseded;
+- blocked by gameplay authoring.
+
+Do not request changes merely because a historical fixture differs.
+
+## Queue item 27 — Product Acceptance presentation row ledger
+
+Create:
+- `docs/presentation-prep/PRESENTATION_PA_ROW_LEDGER_v1.md`
+- `prior-work/astra/prototype-m3.2/content/presentation-pa-row-ledger.fixture.json`
+
+Map PA00–PA26 presentation requirements only:
+- visible slot/fallback;
+- semantic presentationId;
+- reload persistence;
+- animation-off behavior;
+- gameplay row status.
+
+Presentation evidence must never upgrade an OPEN gameplay row to PASS.
+
+## Queue item 28 — central media save/reload adversarial matrix
+
+Create NEW files only:
+- `prior-work/astra/prototype-m3.2/content/presentation-save-reload-adversarial.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/presentation-save-reload-adversarial.test.ts`
+
+Cover save/reload at:
+- ordinary result;
+- pending reactive scene;
+- School result;
+- Night lodging;
+- Night voluntary choice;
+- Activity checkpoint;
+- ending eligible;
+- ending committed;
+- ended/new-run boundary.
+
+Verify only semantic presentation identity persists; no GIF frame/time/playback state is saved.
+
+## Queue item 29 — future GIF drop-in package manifest
+
+Create:
+- `docs/presentation-prep/FUTURE_GIF_DROP_IN_PACKAGE_v1.md`
+- `prior-work/astra/prototype-m3.2/content/future-gif-drop-in-package.fixture.json`
+
+Produce the minimal future asset package format:
+- semantic presentationId;
+- expected media kind;
+- logical filename suggestion;
+- required static/text fallback;
+- preflight status.
+
+No actual GIFs, no gameplay changes, no source-path coupling.
+
+## Queue item 30 — presentation closure readiness v3
+
+Create:
+- `docs/presentation-prep/PRESENTATION_CLOSURE_READINESS_v3.md`
+
+Summarize:
+- what is production-shipped;
+- what Lead should integrate from Chat 2;
+- what is QA evidence only;
+- what remains future asset/polish work;
+- which remaining PA blockers are presentation-independent.
+
+Continue items 25–30 sequentially without waiting for Lead review.
