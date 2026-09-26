@@ -255,3 +255,106 @@ Deduplicate all Chat 3 branch artifacts into:
 Hard Work must be listed as already locked/shipped, never an OPEN blocker.
 
 Continue items 13–18 sequentially without waiting for Lead review.
+
+
+## Queue item 19 — Lumber PA closure dependency audit
+
+Create NEW files only:
+- `docs/lumber-prep/LUMBER_PA_CLOSURE_DEPENDENCY_AUDIT_v1.md`
+- `prior-work/astra/prototype-m3.2/tests/lumber-pa-closure-dependency.test.ts`
+
+Using the merged PR21 gate result and authoritative item/Forest docs, classify each remaining Lumber-facing blocker as:
+- already shipped;
+- runtime infrastructure missing;
+- authoring missing;
+- presentation/content-depth only.
+
+At minimum cover PA09, PA14–PA20, PA21–PA26.
+Do not invent acquisition sources, consume semantics, School thresholds or Forest lore.
+
+## Queue item 20 — capability-aware Forest option contract
+
+Create NEW files only:
+- `prior-work/astra/prototype-m3.2/content/lumber-forest-capability-options.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/lumber-forest-capability-options.test.ts`
+
+Define the exact authoring contract for Forest Activity options enabled by item capabilities:
+- `enter_old_boundary`;
+- `cross_rough_route`;
+- `preserve_specimen`;
+- `cut_heavy_wood`.
+
+For each option record:
+- required capability;
+- route/challenge family;
+- whether the item is retained or consumed = OPEN unless authoritative docs lock it;
+- expected save/reload identity;
+- expected effect on available action-space.
+
+Do not patch shared runtime/schema/UI.
+
+## Queue item 21 — Forest 3-route / 3-challenge production authoring matrix
+
+Create NEW files only:
+- `docs/lumber-prep/FOREST_PRODUCTION_AUTHORING_MATRIX_v1.md`
+- `prior-work/astra/prototype-m3.2/content/forest-production-authoring-matrix.fixture.json`
+
+Map authoritative Forest requirements into a concrete but non-lore-specific production matrix:
+Routes:
+- logging road;
+- hunter trail;
+- old boundary path.
+
+Challenge families:
+- navigation;
+- physical obstacle;
+- interpretation/ritual anomaly.
+
+Also map seasonal topology differences.
+
+Do not invent final NPC identity, loot, lore, camp, acquisition source or thresholds.
+
+## Queue item 22 — item-use exactly-once save contract
+
+Create NEW files only:
+- `prior-work/astra/prototype-m3.2/content/lumber-item-use-exactly-once.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/lumber-item-use-exactly-once.test.ts`
+
+Define/test the contract that any future Forest item option:
+- commits use/consume at one explicit boundary;
+- reload cannot double-consume;
+- retained items remain present deterministically;
+- consumed items cannot reappear from reload;
+- capability/action availability is recomputed from actual inventory state.
+
+Keep consume/retain policy per item OPEN where not authoritative.
+
+## Queue item 23 — Lumber closure candidate row map
+
+Create:
+- `docs/lumber-prep/LUMBER_PA_CLOSURE_ROW_MAP_v1.md`
+
+Re-map PA rows after PR21 and after the new generic capability-aware runtime direction:
+- rows closable by runtime infrastructure;
+- rows still needing authoring;
+- rows already shipped;
+- rows only needing richer content depth.
+
+Hard Work must remain fully closed and independent.
+
+## Queue item 24 — Lumber release-candidate handoff v2
+
+Create:
+- `docs/lumber-prep/LUMBER_RELEASE_CANDIDATE_HANDOFF_v2.md`
+- `prior-work/astra/prototype-m3.2/content/lumber-release-candidate-handoff.fixture.json`
+
+Consolidate all Chat 3 work after PR21 into:
+- READY_TO_INTEGRATE_NOW;
+- QA_EVIDENCE_ONLY;
+- OPEN_AUTHORING_PACKET;
+- FOREST_DEPTH_CONTENT;
+- SUPERSEDED.
+
+Name exact files in each class and identify the smallest Lead integration subset.
+
+Continue items 19–24 sequentially without waiting for Lead review.
