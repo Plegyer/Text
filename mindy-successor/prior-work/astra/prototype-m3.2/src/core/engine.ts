@@ -1,4 +1,4 @@
-import { metrics, stats, seasons, priorityClasses, saveSchema, type Stat, type Save, type Meta, type Condition, type Effect, type Catalog, type StoryEvent, type Action, type MachineDefinition, type ReactionFact, type ReactionTrigger, type PriorityClass, type LodgingDefinition, type NightChoiceDefinition } from './schema.ts';
+import { metrics, stats, seasons, priorityClasses, saveSchema, type Stat, type Save, type Meta, type Condition, type Effect, type Catalog, type StoryEvent, type Action, type MachineDefinition, type ReactionFact, type ReactionTrigger, type PriorityClass, type LodgingDefinition, type NightChoiceDefinition, type ActivityDefinition } from './schema.ts';
 
 const statSet=new Set<string>(stats);
 const cappedLegacy=new Set(['health','stress','trust']);
@@ -346,6 +346,8 @@ function factLabel(f:ReactionFact){
     case 'dayStarted':return `dayStarted:${f.day}`;
     case 'nightPhase':return `nightPhase:${f.point}`;
     case 'nightChoiceCompleted':return `nightChoiceCompleted:${f.choice}`;
+    case 'activityStarted':return `activityStarted:${f.activity}`;
+    case 'activityCompleted':return `activityCompleted:${f.activity}.${f.outcome}`;
     case 'careerCounterChanged':return `careerCounterChanged:${f.career}.${f.counter}:${f.from}->${f.to}`;
     case 'careerTransition':return `careerTransition:${f.career}:${f.from}->${f.to}`;
     case 'careerFactAdded':return `careerFactAdded:${f.career}.${f.fact}`;
@@ -378,6 +380,8 @@ function matchTrigger(t:ReactionTrigger,f:ReactionFact):boolean{
     case 'creationCompleted':case 'energyChanged':case 'calendarAdvanced':case 'dayStarted':return true;
     case 'nightPhase':return f.kind==='nightPhase'&&f.point===t.point;
     case 'nightChoiceCompleted':return f.kind==='nightChoiceCompleted'&&f.choice===t.choice;
+    case 'activityStarted':return f.kind==='activityStarted'&&f.activity===t.activity;
+    case 'activityCompleted':return f.kind==='activityCompleted'&&f.activity===t.activity&&(!t.outcome||f.outcome===t.outcome);
     case 'actionCompleted':return !t.action||(f.kind==='actionCompleted'&&f.action===t.action);
     case 'choiceResolved':return !t.event||(f.kind==='choiceResolved'&&f.event===t.event);
     case 'statChanged':return !t.stat||(f.kind==='statChanged'&&f.stat===t.stat);
