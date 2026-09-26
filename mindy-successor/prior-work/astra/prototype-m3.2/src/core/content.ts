@@ -103,6 +103,7 @@ function checkTypedRead(c:Condition,p:Pack){
   if(c.kind==='resource')needCapability(has(r?.resources,c.resource),`read resource ${c.resource}`);
   if(c.kind==='itemCount')needCapability(has(r?.inventory,c.id),`read item ${c.id}`);
   if(c.kind==='calendarYear'||c.kind==='calendarSeason'||c.kind==='calendarDayInYear'||c.kind==='calendarElapsedDays')needCapability(r?.calendar===true,'read calendar');
+  if(c.kind==='housingTier')needCapability(r?.housing===true,'read housing');
   if(c.kind==='careerStage'||c.kind==='careerShifts'||c.kind==='careerCounter'||c.kind==='careerFact'||c.kind==='careerChoice')needCapability(has(r?.careers,c.career),`read career ${c.career}`);
   if(c.kind==='questStage'||c.kind==='questCounter'||c.kind==='questFact'||c.kind==='questChoice')needCapability(has(r?.quests,c.quest),`read quest ${c.quest}`);
   if(c.kind==='relationshipStage'||c.kind==='relationshipCounter'||c.kind==='relationshipFact'||c.kind==='relationshipChoice')needCapability(has(r?.relationships,c.relationship),`read relationship ${c.relationship}`);
@@ -154,6 +155,7 @@ export function loadCatalog(definitions:unknown,packs:unknown[]):Catalog {
   const events=ps.flatMap(p=>p.events),media=ps.flatMap(p=>p.media);
   unique(d.flags,'флаги');unique(d.actions.map(a=>a.id),'действия');unique(d.endings.map(e=>e.id),'судьбы');
   unique((d.careers??[]).map(x=>x.id),'careers');unique((d.quests??[]).map(x=>x.id),'quests');unique((d.relationships??[]).map(x=>x.id),'relationships');
+  unique(d.lodgings.map(x=>x.id),'lodgings');unique(d.nightChoices.map(x=>x.id),'night choices');
   unique(ps.map(p=>p.id),'пакеты');unique(events.map(e=>e.id),'события');unique(media.map(m=>m.id),'медиа');
 
   const known=new Set(d.flags),actionIds=new Set(d.actions.map(a=>a.id)),endingIds=new Set(d.endings.map(e=>e.id)),mediaIds=new Set(media.map(m=>m.id)),maps=machineMaps(d);
@@ -195,6 +197,12 @@ export function loadCatalog(definitions:unknown,packs:unknown[]):Catalog {
     }
   }
   for(const e of d.endings)checkConditions(e.conditions);
+  for(const lodging of d.lodgings){
+    checkConditions(lodging.conditions);checkEffects(lodging.effects);
+  }
+  for(const nightChoice of d.nightChoices){
+    checkConditions(nightChoice.conditions);checkEffects(nightChoice.effects);
+  }
 
   for(const p of ps){
     for(const flag of [...p.reads,...p.writes])if(!known.has(flag))throw new Error(`Неизвестный флаг ${flag}`);
@@ -206,6 +214,14 @@ export function loadCatalog(definitions:unknown,packs:unknown[]):Catalog {
       if(e.delivery.policy==='scheduled'&&!e.delivery.expiresAfterDays)throw new Error(`Scheduled event без expiresAfterDays: ${e.id}`);
       if(e.delivery.policy!=='scheduled'&&e.delivery.expiresAfterDays)throw new Error(`expiresAfterDays допустим только scheduled: ${e.id}`);
       if(!e.blocking&&e.delivery.policy!=='live')throw new Error(`Optional event должен использовать live delivery: ${e.id}`);
+      if(e.nightPolicy){
+        if(!e.blocking)throw new Error(`Night event должен быть blocking: ${e.id}`);
+        if(e.nightPolicy.suppressLodgingPayment&&e.nightPolicy.intercept!=='before_lodging')throw new Error(`suppressLodgingPayment допустим только before_lodging: ${e.id}`);
+        if(e.nightPolicy.consumesNight&&!e.nightPolicy.suppressVoluntaryMenu)throw new Error(`consumesNight требует suppressVoluntaryMenu: ${e.id}`);
+        const hasPoint=e.reactionTriggers.some(t=>t.kind==='nightPhase'&&t.point===e.nightPolicy!.intercept);
+        const hasChoice=e.nightPolicy.intercept==='after_choice'&&e.reactionTriggers.some(t=>t.kind==='nightChoiceCompleted');
+        if(!hasPoint&&!hasChoice)throw new Error(`Night event trigger не соответствует intercept: ${e.id}`);
+      }
       checkConditions(e.conditions,p,new Set(p.reads));
       unique(e.variants.map(v=>v.id),e.id+' варианты');unique(e.choices.map(c=>c.id),e.id+' выборы');
       if(!e.variants.some(v=>v.conditions.length===0))throw new Error(`Нет запасной постановки ${e.id}`);
