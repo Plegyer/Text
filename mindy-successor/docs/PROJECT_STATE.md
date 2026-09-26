@@ -550,3 +550,19 @@
 - Cascade cap = 16; errors leave caller Save unchanged.
 - GitHub Actions full `npm run check` green: **72/72 tests**.
 - Next engineering package: **A4 Night Flow**.
+
+
+## A4 code milestone — resumable Night Flow
+
+- Implemented on `a4-night-flow`.
+- Night is now a persisted phase machine, not atomic `sleep = rent + day++`.
+- Lodging payment and CalendarAdvance are separate exactly-once commits.
+- Target supports normal/cheap/street lodging definitions plus voluntary night choices.
+- Forced events can intercept before lodging, after lodging or after the selected night choice.
+- Night study applies immediate stat progress and queues next-day Energy penalty.
+- Voluntary relationship night uses the night slot and does not consume daytime Energy by default.
+- Street-style penalties apply at StartDay exactly once.
+- Save/reload is validated after lodging payment and with pending forced night scenes.
+- Legacy M3.2 `sleep(payment)` routes through the same NightFlow compatibility path.
+- GitHub Actions full `npm run check` green: **84/84 tests**.
+- Next engineering package: **A5 Activity Envelope**.

@@ -27,6 +27,7 @@ export type Condition =
   | {kind:'calendarSeason';value:typeof seasons[number]}
   | {kind:'calendarDayInYear';op:CompareOp;value:number}
   | {kind:'calendarElapsedDays';op:CompareOp;value:number}
+  | {kind:'housingTier';value:typeof targetHousing[number]}
   | {kind:'careerStage';career:string;stage:string}
   | {kind:'careerShifts';career:string;op:CompareOp;value:number}
   | {kind:'careerCounter';career:string;counter:string;op:CompareOp;value:number}
@@ -71,6 +72,7 @@ export const conditionSchema: z.ZodType<Condition> = z.lazy(()=>z.union([
   z.object({kind:z.literal('calendarSeason'),value:z.enum(seasons)}).strict(),
   z.object({kind:z.literal('calendarDayInYear'),op:compareOp,value:n.max(40)}).strict(),
   z.object({kind:z.literal('calendarElapsedDays'),op:compareOp,value:n.max(159)}).strict(),
+  z.object({kind:z.literal('housingTier'),value:z.enum(targetHousing)}).strict(),
   z.object({kind:z.literal('careerStage'),career:id,stage:id}).strict(),
   z.object({kind:z.literal('careerShifts'),career:id,op:compareOp,value:n}).strict(),
   z.object({kind:z.literal('careerCounter'),career:id,counter:id,op:compareOp,value:n}).strict(),
@@ -165,6 +167,7 @@ const capabilityReads=z.object({
   resources:z.array(z.enum(targetResources)).optional(),
   inventory:z.array(z.enum(items)).optional(),
   calendar:z.boolean().optional(),
+  housing:z.boolean().optional(),
   careers:z.array(id).optional(),
   quests:z.array(id).optional(),
   relationships:z.array(id).optional(),
@@ -197,6 +200,8 @@ export const reactionTriggerSchema=z.discriminatedUnion('kind',[
   z.object({kind:z.literal('energyChanged')}).strict(),
   z.object({kind:z.literal('calendarAdvanced')}).strict(),
   z.object({kind:z.literal('dayStarted')}).strict(),
+  z.object({kind:z.literal('nightPhase'),point:z.enum(['before_lodging','after_lodging','after_choice'])}).strict(),
+  z.object({kind:z.literal('nightChoiceCompleted'),choice:id}).strict(),
   z.object({kind:z.literal('careerCounterChanged'),career:id,counter:id.optional()}).strict(),
   z.object({kind:z.literal('careerTransition'),career:id}).strict(),
   z.object({kind:z.literal('careerFactAdded'),career:id,fact:id.optional()}).strict(),
@@ -220,6 +225,8 @@ export type ReactionFact =
   | {kind:'energyChanged';from:number;to:number}
   | {kind:'calendarAdvanced';from:number;to:number}
   | {kind:'dayStarted';day:number}
+  | {kind:'nightPhase';point:'before_lodging'|'after_lodging'|'after_choice'}
+  | {kind:'nightChoiceCompleted';choice:string}
   | {kind:'careerCounterChanged';career:string;counter:string;from:number;to:number}
   | {kind:'careerTransition';career:string;from:string;to:string}
   | {kind:'careerFactAdded';career:string;fact:string}
@@ -236,6 +243,13 @@ const deliverySchema=z.object({
   policy:z.enum(['live','latched','scheduled']).default('live'),
   expiresAfterDays:z.number().int().min(1).max(160).optional()
 }).strict().default({policy:'live'});
+
+const nightPolicySchema=z.object({
+  intercept:z.enum(['before_lodging','after_lodging','after_choice']),
+  suppressLodgingPayment:z.boolean().default(false),
+  suppressVoluntaryMenu:z.boolean().default(false),
+  consumesNight:z.boolean().default(false)
+}).strict();
 
 const media = z.object({
   id,
@@ -255,6 +269,7 @@ export const eventSchema = z.object({
   priority:n,
   blocking:z.boolean().default(true),
   delivery:deliverySchema,
+  nightPolicy:nightPolicySchema.optional(),
   chance:z.object({base:z.number().min(0).max(1),stat:metricEnum,perPoint:z.number().min(0).max(1),max:z.number().min(0).max(1)}).strict().optional(),
   cooldownDays:n,variantCooldownDays:n,maxShows:n.min(1),
   conditions:z.array(conditionSchema),variants:z.array(variant).min(1).max(10),
@@ -282,6 +297,28 @@ export const actionSchema=z.object({
 }).strict();
 export type Action=z.infer<typeof actionSchema>;
 
+export const lodgingSchema=z.object({
+  id,
+  label:z.string().min(1).max(120),
+  housing:z.enum(targetHousing),
+  moneyCost:n.max(1_000_000),
+  conditions:z.array(conditionSchema).max(24).default([]),
+  effects:z.array(effectSchema).max(24).default([]),
+  nextDayEffects:z.array(statDelta).max(12).default([]),
+  nextDayEnergyDelta:z.number().int().min(-10).max(10).default(0)
+}).strict();
+export type LodgingDefinition=z.infer<typeof lodgingSchema>;
+
+export const nightChoiceSchema=z.object({
+  id,
+  label:z.string().min(1).max(120),
+  conditions:z.array(conditionSchema).max(24).default([]),
+  effects:z.array(effectSchema).max(24).default([]),
+  nextDayEffects:z.array(statDelta).max(12).default([]),
+  nextDayEnergyDelta:z.number().int().min(-10).max(10).default(0)
+}).strict();
+export type NightChoiceDefinition=z.infer<typeof nightChoiceSchema>;
+
 export const endingSchema=z.object({id,title:z.string(),description:z.string(),conditions:z.array(conditionSchema),reward:id,epilogue:z.string()}).strict();
 export const definitionsSchema=z.object({
   version:z.literal('0.1.0'),
@@ -290,7 +327,9 @@ export const definitionsSchema=z.object({
   endings:z.array(endingSchema),
   careers:z.array(machineDefinitionSchema).optional(),
   quests:z.array(machineDefinitionSchema).optional(),
-  relationships:z.array(machineDefinitionSchema).optional()
+  relationships:z.array(machineDefinitionSchema).optional(),
+  lodgings:z.array(lodgingSchema).default([]),
+  nightChoices:z.array(nightChoiceSchema).default([])
 }).strict();
 export type Definitions=z.infer<typeof definitionsSchema>;
 
@@ -351,10 +390,23 @@ const reactionStateSchema=z.object({
   queued:z.array(queuedEventInstanceSchema).max(64)
 }).strict();
 const lastActionSchema=z.object({id,title:z.string(),text:z.string(),media:z.array(id),deltas:z.record(z.string(),z.number())}).strict();
+export const nightFlowStateSchema=z.object({
+  phase:z.enum(['PreLodgingForcedCheck','LodgingResolution','PostLodgingForcedCheck','VoluntaryNightChoice','NightEventResolution','NextDayModifiersFinalized','CalendarAdvance','StartDay']),
+  startedDay:n.max(159),
+  selectedLodgingId:id.nullable(),
+  lodgingPaymentCommitted:z.boolean(),
+  selectedNightChoiceId:id.nullable(),
+  suppressLodgingPayment:z.boolean(),
+  suppressVoluntaryMenu:z.boolean(),
+  consumesNight:z.boolean(),
+  calendarAdvanceCommitted:z.boolean(),
+  currentIntercept:z.enum(['before_lodging','after_lodging','after_choice']).nullable(),
+  handledEventIds:z.array(id).max(32)
+}).strict();
 export const flowStateSchema=z.object({
   pendingScene:pendingSceneSchema.nullable(),
   reaction:reactionStateSchema.default({epochCounter:0,currentEpochId:null,attemptedEventIds:[],cascadeDepth:0,queued:[]}),
-  night:z.record(z.string(),z.unknown()).nullable(),
+  night:nightFlowStateSchema.nullable(),
   activity:z.record(z.string(),z.unknown()).nullable(),
   lastAction:lastActionSchema.nullable()
 }).strict();
