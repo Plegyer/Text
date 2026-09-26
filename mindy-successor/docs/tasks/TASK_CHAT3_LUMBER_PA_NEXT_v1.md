@@ -48,3 +48,35 @@ Forbidden:
 - Chat 4 QA files.
 
 Acceptance: all new fixtures are schema-valid and isolated; no locked decision is reopened.
+
+
+## Queue item 3 — Lumber save/reload checkpoint suite
+
+Create NEW test file only:
+- `prior-work/astra/prototype-m3.2/tests/lumber-pa-reload-checkpoints.test.ts`
+
+Use the existing Lumber target fixtures from this branch and prove save/reload stability at meaningful Product Acceptance boundaries:
+- after paid/ordinary shift result;
+- with pending career/Foreman scene;
+- after lodging payment / before Night choice where applicable;
+- inside Forest Activity;
+- after Activity success continuation;
+- after Hard Work commit;
+- after Hard Work completion.
+
+No duplicated money/Energy/progress/reward on reload.
+
+## Queue item 4 — Lumber negative-path acceptance suite
+
+Create NEW test file only:
+- `prior-work/astra/prototype-m3.2/tests/lumber-negative-paths.test.ts`
+
+Prove:
+- 49 completed shifts never unlock Hard Work;
+- exactly 50 does, even without milestone/relationship/season/Forest state;
+- Forest escape/failure do not grant success continuation facts;
+- repeated ending completion cannot duplicate `hardWork:lumber`;
+- professional Foreman path does not silently require romance state;
+- invalid item capability cannot enter Forest Activity.
+
+Do not edit existing PR #16 files or shared runtime.
