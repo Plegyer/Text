@@ -358,3 +358,104 @@ Consolidate all Chat 3 work after PR21 into:
 Name exact files in each class and identify the smallest Lead integration subset.
 
 Continue items 19–24 sequentially without waiting for Lead review.
+
+
+## Queue item 25 — PR22 Lumber closure parity audit
+
+Create NEW files only:
+- `docs/lumber-prep/LUMBER_PR22_CLOSURE_PARITY_AUDIT_v1.md`
+- `prior-work/astra/prototype-m3.2/tests/lumber-pr22-closure-parity.test.ts`
+
+Review merged PR #22 against accepted Lumber contracts:
+- Forest entry available without Old Boundary Token;
+- logging-road is normal route;
+- old-boundary route requires actual inventory-derived `enter_old_boundary`;
+- legacy active Activity saves preserve advance/escape;
+- no acquisition source or consume policy invented;
+- Hard Work unchanged.
+
+Identify remaining Lumber blockers after PR22.
+
+## Queue item 26 — Forest hunter-trail authoring packet
+
+Create:
+- `docs/lumber-prep/FOREST_HUNTER_TRAIL_AUTHORING_PACKET_v1.md`
+- `prior-work/astra/prototype-m3.2/content/forest-hunter-trail-authoring.fixture.json`
+
+Specify the smallest product-authoring seam for the locked hunter-trail route.
+
+Do not invent:
+- final clue item identity if still OPEN;
+- Hunter scene source;
+- exact lore reward;
+- thresholds.
+
+Define required route/challenge integration, save/reload, and capability/public-fact boundary only.
+
+## Queue item 27 — Forest challenge-family authoring packet
+
+Create:
+- `docs/lumber-prep/FOREST_CHALLENGE_FAMILY_AUTHORING_PACKET_v1.md`
+- `prior-work/astra/prototype-m3.2/content/forest-challenge-family-authoring.fixture.json`
+
+Specify implementation-ready contracts for:
+- navigation;
+- physical obstacle;
+- interpretation/ritual anomaly.
+
+For each define:
+- allowed stat/capability dependency categories;
+- result semantics;
+- save/checkpoint requirement;
+- success/escape/failure distinction;
+- what remains authoring OPEN.
+
+No final prose/lore invention.
+
+## Queue item 28 — Forest season topology authoring packet
+
+Create:
+- `docs/lumber-prep/FOREST_SEASON_TOPOLOGY_AUTHORING_PACKET_v1.md`
+- `prior-work/astra/prototype-m3.2/content/forest-season-topology-authoring.fixture.json`
+
+Translate authoritative seasonal requirements into a non-lore-specific topology contract:
+- at least one route/challenge availability difference by season;
+- stable route identity;
+- deterministic reload;
+- no random hidden rule change.
+
+Do not invent exact seasonal narrative events.
+
+## Queue item 29 — Old Boundary Token decision matrix
+
+Create:
+- `docs/lumber-prep/OLD_BOUNDARY_TOKEN_DECISION_MATRIX_v1.md`
+
+List the explicit product decisions still required:
+- acquisition source;
+- acquisition timing/requirements;
+- retained vs consumed;
+- repeatability;
+- visibility in inventory;
+- whether losing/removing token immediately removes route capability.
+
+For each decision list downstream PA rows and runtime/content seams affected.
+
+Do not select a preferred answer.
+
+## Queue item 30 — Lumber RC closure handoff v3
+
+Create:
+- `docs/lumber-prep/LUMBER_RC_CLOSURE_HANDOFF_v3.md`
+- `prior-work/astra/prototype-m3.2/content/lumber-rc-closure-handoff.fixture.json`
+
+Consolidate post-PR22 Lumber state into:
+- SHIPPED_GREEN;
+- READY_TO_INTEGRATE_QA;
+- AUTHORING_DECISION_REQUIRED;
+- FOREST_CONTENT_DEPTH;
+- SUPERSEDED.
+
+Hard Work must remain SHIPPED_GREEN and independent.
+
+Continue items 25–30 sequentially without waiting for Lead review.
