@@ -400,7 +400,8 @@ export const nightFlowStateSchema=z.object({
   suppressVoluntaryMenu:z.boolean(),
   consumesNight:z.boolean(),
   calendarAdvanceCommitted:z.boolean(),
-  currentIntercept:z.enum(['before_lodging','after_lodging','after_choice']).nullable()
+  currentIntercept:z.enum(['before_lodging','after_lodging','after_choice']).nullable(),
+  handledEventIds:z.array(id).max(32)
 }).strict();
 export const flowStateSchema=z.object({
   pendingScene:pendingSceneSchema.nullable(),
