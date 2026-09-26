@@ -1,0 +1,664 @@
+{
+  "formatVersion": 1,
+  "id": "school.activation-expectations.fixture.v1",
+  "paidLessons": [
+    {
+      "kind": "paidLesson",
+      "command": {
+        "type": "schoolLesson",
+        "courseId": "school.course.literacy_and_numbers"
+      },
+      "courseId": "school.course.literacy_and_numbers",
+      "trackId": "school.track.literacy_and_numbers",
+      "tuition": 300,
+      "currentDayEnergyDelta": -1,
+      "statDeltas": [
+        {
+          "stat": "reason",
+          "delta": 4
+        },
+        {
+          "stat": "wits",
+          "delta": 2
+        }
+      ],
+      "schoolOwnedCounterDelta": {
+        "counter": "lessons_completed",
+        "delta": 1
+      },
+      "reactionFactFamily": {
+        "existingRuntime": [
+          "actionCompleted",
+          "statChanged"
+        ],
+        "schoolOwned": "counter-delta"
+      },
+      "presentationId": "school/literacy-and-numbers/lesson/default",
+      "saveReloadExactlyOnce": {
+        "reapplyTuition": false,
+        "reapplyCurrentDayEnergy": false,
+        "reapplyStatDeltas": false,
+        "reapplySchoolCounterDelta": false
+      },
+      "mutatesLust": false
+    },
+    {
+      "kind": "paidLesson",
+      "command": {
+        "type": "schoolLesson",
+        "courseId": "school.course.arcana"
+      },
+      "courseId": "school.course.arcana",
+      "trackId": "school.track.arcana",
+      "tuition": 500,
+      "currentDayEnergyDelta": -1,
+      "statDeltas": [
+        {
+          "stat": "magic",
+          "delta": 4
+        },
+        {
+          "stat": "reason",
+          "delta": 4
+        },
+        {
+          "stat": "creativity",
+          "delta": 2
+        }
+      ],
+      "schoolOwnedCounterDelta": {
+        "counter": "lessons_completed",
+        "delta": 1
+      },
+      "reactionFactFamily": {
+        "existingRuntime": [
+          "actionCompleted",
+          "statChanged"
+        ],
+        "schoolOwned": "counter-delta"
+      },
+      "presentationId": "school/arcana/lesson/default",
+      "saveReloadExactlyOnce": {
+        "reapplyTuition": false,
+        "reapplyCurrentDayEnergy": false,
+        "reapplyStatDeltas": false,
+        "reapplySchoolCounterDelta": false
+      },
+      "mutatesLust": false
+    },
+    {
+      "kind": "paidLesson",
+      "command": {
+        "type": "schoolLesson",
+        "courseId": "school.course.rhetoric_and_social"
+      },
+      "courseId": "school.course.rhetoric_and_social",
+      "trackId": "school.track.rhetoric_and_social",
+      "tuition": 300,
+      "currentDayEnergyDelta": -1,
+      "statDeltas": [
+        {
+          "stat": "charm",
+          "delta": 3
+        },
+        {
+          "stat": "sociability",
+          "delta": 3
+        },
+        {
+          "stat": "wits",
+          "delta": 2
+        }
+      ],
+      "schoolOwnedCounterDelta": {
+        "counter": "lessons_completed",
+        "delta": 1
+      },
+      "reactionFactFamily": {
+        "existingRuntime": [
+          "actionCompleted",
+          "statChanged"
+        ],
+        "schoolOwned": "counter-delta"
+      },
+      "presentationId": "school/rhetoric-and-social/lesson/default",
+      "saveReloadExactlyOnce": {
+        "reapplyTuition": false,
+        "reapplyCurrentDayEnergy": false,
+        "reapplyStatDeltas": false,
+        "reapplySchoolCounterDelta": false
+      },
+      "mutatesLust": false
+    },
+    {
+      "kind": "paidLesson",
+      "command": {
+        "type": "schoolLesson",
+        "courseId": "school.course.etiquette_and_presentation"
+      },
+      "courseId": "school.course.etiquette_and_presentation",
+      "trackId": "school.track.etiquette_and_presentation",
+      "tuition": 400,
+      "currentDayEnergyDelta": -1,
+      "statDeltas": [
+        {
+          "stat": "manners",
+          "delta": 3
+        },
+        {
+          "stat": "grooming",
+          "delta": 3
+        },
+        {
+          "stat": "charm",
+          "delta": 2
+        }
+      ],
+      "schoolOwnedCounterDelta": {
+        "counter": "lessons_completed",
+        "delta": 1
+      },
+      "reactionFactFamily": {
+        "existingRuntime": [
+          "actionCompleted",
+          "statChanged"
+        ],
+        "schoolOwned": "counter-delta"
+      },
+      "presentationId": "school/etiquette-and-presentation/lesson/default",
+      "saveReloadExactlyOnce": {
+        "reapplyTuition": false,
+        "reapplyCurrentDayEnergy": false,
+        "reapplyStatDeltas": false,
+        "reapplySchoolCounterDelta": false
+      },
+      "mutatesLust": false
+    },
+    {
+      "kind": "paidLesson",
+      "command": {
+        "type": "schoolLesson",
+        "courseId": "school.course.field_craft"
+      },
+      "courseId": "school.course.field_craft",
+      "trackId": "school.track.field_craft",
+      "tuition": 400,
+      "currentDayEnergyDelta": -1,
+      "statDeltas": [
+        {
+          "stat": "dexterity",
+          "delta": 3
+        },
+        {
+          "stat": "wits",
+          "delta": 3
+        },
+        {
+          "stat": "creativity",
+          "delta": 2
+        }
+      ],
+      "schoolOwnedCounterDelta": {
+        "counter": "lessons_completed",
+        "delta": 1
+      },
+      "reactionFactFamily": {
+        "existingRuntime": [
+          "actionCompleted",
+          "statChanged"
+        ],
+        "schoolOwned": "counter-delta"
+      },
+      "presentationId": "school/field-craft/lesson/default",
+      "saveReloadExactlyOnce": {
+        "reapplyTuition": false,
+        "reapplyCurrentDayEnergy": false,
+        "reapplyStatDeltas": false,
+        "reapplySchoolCounterDelta": false
+      },
+      "mutatesLust": false
+    },
+    {
+      "kind": "paidLesson",
+      "command": {
+        "type": "schoolLesson",
+        "courseId": "school.course.physical_training"
+      },
+      "courseId": "school.course.physical_training",
+      "trackId": "school.track.physical_training",
+      "tuition": 400,
+      "currentDayEnergyDelta": -1,
+      "statDeltas": [
+        {
+          "stat": "strength",
+          "delta": 3
+        },
+        {
+          "stat": "endurance",
+          "delta": 3
+        },
+        {
+          "stat": "dexterity",
+          "delta": 2
+        }
+      ],
+      "schoolOwnedCounterDelta": {
+        "counter": "lessons_completed",
+        "delta": 1
+      },
+      "reactionFactFamily": {
+        "existingRuntime": [
+          "actionCompleted",
+          "statChanged"
+        ],
+        "schoolOwned": "counter-delta"
+      },
+      "presentationId": "school/physical-training/lesson/default",
+      "saveReloadExactlyOnce": {
+        "reapplyTuition": false,
+        "reapplyCurrentDayEnergy": false,
+        "reapplyStatDeltas": false,
+        "reapplySchoolCounterDelta": false
+      },
+      "mutatesLust": false
+    },
+    {
+      "kind": "paidLesson",
+      "command": {
+        "type": "schoolLesson",
+        "courseId": "school.course.arts_and_performance"
+      },
+      "courseId": "school.course.arts_and_performance",
+      "trackId": "school.track.arts_and_performance",
+      "tuition": 500,
+      "currentDayEnergyDelta": -1,
+      "statDeltas": [
+        {
+          "stat": "creativity",
+          "delta": 3
+        },
+        {
+          "stat": "charm",
+          "delta": 3
+        },
+        {
+          "stat": "sociability",
+          "delta": 2
+        },
+        {
+          "stat": "dexterity",
+          "delta": 2
+        }
+      ],
+      "schoolOwnedCounterDelta": {
+        "counter": "lessons_completed",
+        "delta": 1
+      },
+      "reactionFactFamily": {
+        "existingRuntime": [
+          "actionCompleted",
+          "statChanged"
+        ],
+        "schoolOwned": "counter-delta"
+      },
+      "presentationId": "school/arts-and-performance/lesson/default",
+      "saveReloadExactlyOnce": {
+        "reapplyTuition": false,
+        "reapplyCurrentDayEnergy": false,
+        "reapplyStatDeltas": false,
+        "reapplySchoolCounterDelta": false
+      },
+      "mutatesLust": false
+    },
+    {
+      "kind": "paidLesson",
+      "command": {
+        "type": "schoolLesson",
+        "courseId": "school.course.body_confidence"
+      },
+      "courseId": "school.course.body_confidence",
+      "trackId": "school.track.body_confidence",
+      "tuition": 400,
+      "currentDayEnergyDelta": -1,
+      "statDeltas": [
+        {
+          "stat": "sexuality",
+          "delta": 3
+        },
+        {
+          "stat": "grooming",
+          "delta": 3
+        },
+        {
+          "stat": "endurance",
+          "delta": 2
+        }
+      ],
+      "schoolOwnedCounterDelta": {
+        "counter": "lessons_completed",
+        "delta": 1
+      },
+      "reactionFactFamily": {
+        "existingRuntime": [
+          "actionCompleted",
+          "statChanged"
+        ],
+        "schoolOwned": "counter-delta"
+      },
+      "presentationId": "school/body-confidence/lesson/default",
+      "saveReloadExactlyOnce": {
+        "reapplyTuition": false,
+        "reapplyCurrentDayEnergy": false,
+        "reapplyStatDeltas": false,
+        "reapplySchoolCounterDelta": false
+      },
+      "mutatesLust": false
+    }
+  ],
+  "representativeNightStudyChoices": [
+    {
+      "kind": "nightStudy",
+      "command": {
+        "type": "chooseNightChoice",
+        "choiceId": "school.night_study.literacy_and_numbers.reason"
+      },
+      "courseId": "school.course.literacy_and_numbers",
+      "trackId": "school.track.literacy_and_numbers",
+      "tuition": 0,
+      "currentDayEnergyDelta": 0,
+      "statDeltas": [
+        {
+          "stat": "reason",
+          "delta": 2
+        }
+      ],
+      "schoolOwnedCounterDelta": {
+        "counter": "night_study_sessions",
+        "delta": 1
+      },
+      "reactionFactFamily": {
+        "existingRuntime": [
+          "nightChoiceCompleted",
+          "statChanged"
+        ],
+        "schoolOwned": "counter-delta"
+      },
+      "presentationId": "school/night-study/literacy-and-numbers/default",
+      "nextDayEnergyDelta": -1,
+      "saveReloadExactlyOnce": {
+        "reapplyTuition": false,
+        "reapplyCurrentDayEnergy": false,
+        "reapplyStatDeltas": false,
+        "reapplySchoolCounterDelta": false,
+        "reapplyNextDayEnergyDelta": false
+      },
+      "mutatesLust": false
+    },
+    {
+      "kind": "nightStudy",
+      "command": {
+        "type": "chooseNightChoice",
+        "choiceId": "school.night_study.arcana.magic"
+      },
+      "courseId": "school.course.arcana",
+      "trackId": "school.track.arcana",
+      "tuition": 0,
+      "currentDayEnergyDelta": 0,
+      "statDeltas": [
+        {
+          "stat": "magic",
+          "delta": 2
+        }
+      ],
+      "schoolOwnedCounterDelta": {
+        "counter": "night_study_sessions",
+        "delta": 1
+      },
+      "reactionFactFamily": {
+        "existingRuntime": [
+          "nightChoiceCompleted",
+          "statChanged"
+        ],
+        "schoolOwned": "counter-delta"
+      },
+      "presentationId": "school/night-study/arcana/default",
+      "nextDayEnergyDelta": -1,
+      "saveReloadExactlyOnce": {
+        "reapplyTuition": false,
+        "reapplyCurrentDayEnergy": false,
+        "reapplyStatDeltas": false,
+        "reapplySchoolCounterDelta": false,
+        "reapplyNextDayEnergyDelta": false
+      },
+      "mutatesLust": false
+    },
+    {
+      "kind": "nightStudy",
+      "command": {
+        "type": "chooseNightChoice",
+        "choiceId": "school.night_study.rhetoric_and_social.charm"
+      },
+      "courseId": "school.course.rhetoric_and_social",
+      "trackId": "school.track.rhetoric_and_social",
+      "tuition": 0,
+      "currentDayEnergyDelta": 0,
+      "statDeltas": [
+        {
+          "stat": "charm",
+          "delta": 2
+        }
+      ],
+      "schoolOwnedCounterDelta": {
+        "counter": "night_study_sessions",
+        "delta": 1
+      },
+      "reactionFactFamily": {
+        "existingRuntime": [
+          "nightChoiceCompleted",
+          "statChanged"
+        ],
+        "schoolOwned": "counter-delta"
+      },
+      "presentationId": "school/night-study/rhetoric-and-social/default",
+      "nextDayEnergyDelta": -1,
+      "saveReloadExactlyOnce": {
+        "reapplyTuition": false,
+        "reapplyCurrentDayEnergy": false,
+        "reapplyStatDeltas": false,
+        "reapplySchoolCounterDelta": false,
+        "reapplyNextDayEnergyDelta": false
+      },
+      "mutatesLust": false
+    },
+    {
+      "kind": "nightStudy",
+      "command": {
+        "type": "chooseNightChoice",
+        "choiceId": "school.night_study.etiquette_and_presentation.manners"
+      },
+      "courseId": "school.course.etiquette_and_presentation",
+      "trackId": "school.track.etiquette_and_presentation",
+      "tuition": 0,
+      "currentDayEnergyDelta": 0,
+      "statDeltas": [
+        {
+          "stat": "manners",
+          "delta": 2
+        }
+      ],
+      "schoolOwnedCounterDelta": {
+        "counter": "night_study_sessions",
+        "delta": 1
+      },
+      "reactionFactFamily": {
+        "existingRuntime": [
+          "nightChoiceCompleted",
+          "statChanged"
+        ],
+        "schoolOwned": "counter-delta"
+      },
+      "presentationId": "school/night-study/etiquette-and-presentation/default",
+      "nextDayEnergyDelta": -1,
+      "saveReloadExactlyOnce": {
+        "reapplyTuition": false,
+        "reapplyCurrentDayEnergy": false,
+        "reapplyStatDeltas": false,
+        "reapplySchoolCounterDelta": false,
+        "reapplyNextDayEnergyDelta": false
+      },
+      "mutatesLust": false
+    },
+    {
+      "kind": "nightStudy",
+      "command": {
+        "type": "chooseNightChoice",
+        "choiceId": "school.night_study.field_craft.dexterity"
+      },
+      "courseId": "school.course.field_craft",
+      "trackId": "school.track.field_craft",
+      "tuition": 0,
+      "currentDayEnergyDelta": 0,
+      "statDeltas": [
+        {
+          "stat": "dexterity",
+          "delta": 2
+        }
+      ],
+      "schoolOwnedCounterDelta": {
+        "counter": "night_study_sessions",
+        "delta": 1
+      },
+      "reactionFactFamily": {
+        "existingRuntime": [
+          "nightChoiceCompleted",
+          "statChanged"
+        ],
+        "schoolOwned": "counter-delta"
+      },
+      "presentationId": "school/night-study/field-craft/default",
+      "nextDayEnergyDelta": -1,
+      "saveReloadExactlyOnce": {
+        "reapplyTuition": false,
+        "reapplyCurrentDayEnergy": false,
+        "reapplyStatDeltas": false,
+        "reapplySchoolCounterDelta": false,
+        "reapplyNextDayEnergyDelta": false
+      },
+      "mutatesLust": false
+    },
+    {
+      "kind": "nightStudy",
+      "command": {
+        "type": "chooseNightChoice",
+        "choiceId": "school.night_study.physical_training.strength"
+      },
+      "courseId": "school.course.physical_training",
+      "trackId": "school.track.physical_training",
+      "tuition": 0,
+      "currentDayEnergyDelta": 0,
+      "statDeltas": [
+        {
+          "stat": "strength",
+          "delta": 2
+        }
+      ],
+      "schoolOwnedCounterDelta": {
+        "counter": "night_study_sessions",
+        "delta": 1
+      },
+      "reactionFactFamily": {
+        "existingRuntime": [
+          "nightChoiceCompleted",
+          "statChanged"
+        ],
+        "schoolOwned": "counter-delta"
+      },
+      "presentationId": "school/night-study/physical-training/default",
+      "nextDayEnergyDelta": -1,
+      "saveReloadExactlyOnce": {
+        "reapplyTuition": false,
+        "reapplyCurrentDayEnergy": false,
+        "reapplyStatDeltas": false,
+        "reapplySchoolCounterDelta": false,
+        "reapplyNextDayEnergyDelta": false
+      },
+      "mutatesLust": false
+    },
+    {
+      "kind": "nightStudy",
+      "command": {
+        "type": "chooseNightChoice",
+        "choiceId": "school.night_study.arts_and_performance.creativity"
+      },
+      "courseId": "school.course.arts_and_performance",
+      "trackId": "school.track.arts_and_performance",
+      "tuition": 0,
+      "currentDayEnergyDelta": 0,
+      "statDeltas": [
+        {
+          "stat": "creativity",
+          "delta": 2
+        }
+      ],
+      "schoolOwnedCounterDelta": {
+        "counter": "night_study_sessions",
+        "delta": 1
+      },
+      "reactionFactFamily": {
+        "existingRuntime": [
+          "nightChoiceCompleted",
+          "statChanged"
+        ],
+        "schoolOwned": "counter-delta"
+      },
+      "presentationId": "school/night-study/arts-and-performance/default",
+      "nextDayEnergyDelta": -1,
+      "saveReloadExactlyOnce": {
+        "reapplyTuition": false,
+        "reapplyCurrentDayEnergy": false,
+        "reapplyStatDeltas": false,
+        "reapplySchoolCounterDelta": false,
+        "reapplyNextDayEnergyDelta": false
+      },
+      "mutatesLust": false
+    },
+    {
+      "kind": "nightStudy",
+      "command": {
+        "type": "chooseNightChoice",
+        "choiceId": "school.night_study.body_confidence.sexuality"
+      },
+      "courseId": "school.course.body_confidence",
+      "trackId": "school.track.body_confidence",
+      "tuition": 0,
+      "currentDayEnergyDelta": 0,
+      "statDeltas": [
+        {
+          "stat": "sexuality",
+          "delta": 2
+        }
+      ],
+      "schoolOwnedCounterDelta": {
+        "counter": "night_study_sessions",
+        "delta": 1
+      },
+      "reactionFactFamily": {
+        "existingRuntime": [
+          "nightChoiceCompleted",
+          "statChanged"
+        ],
+        "schoolOwned": "counter-delta"
+      },
+      "presentationId": "school/night-study/body-confidence/default",
+      "nextDayEnergyDelta": -1,
+      "saveReloadExactlyOnce": {
+        "reapplyTuition": false,
+        "reapplyCurrentDayEnergy": false,
+        "reapplyStatDeltas": false,
+        "reapplySchoolCounterDelta": false,
+        "reapplyNextDayEnergyDelta": false
+      },
+      "mutatesLust": false
+    }
+  ]
+}
