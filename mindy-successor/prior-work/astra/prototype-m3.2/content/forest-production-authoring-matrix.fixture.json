@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "id": "forest.production-authoring-matrix.fixture",
+  "status": "AUTHORING_MATRIX_NO_FINAL_LORE_IDS",
+  "routes": [
+    {
+      "authoringKey": "logging-road",
+      "label": "logging road",
+      "primaryChallengeFamily": "physical obstacle",
+      "secondaryChallengeFamilies": [
+        "navigation"
+      ],
+      "capabilitySeams": [
+        {
+          "capability": "cut_heavy_wood",
+          "role": "alternate physical-obstacle approach",
+          "binding": "AUTHORITATIVE_FIT"
+        }
+      ],
+      "productionRouteId": null
+    },
+    {
+      "authoringKey": "hunter-trail",
+      "label": "hunter trail",
+      "primaryChallengeFamily": "navigation",
+      "secondaryChallengeFamilies": [
+        "physical obstacle"
+      ],
+      "capabilitySeams": [
+        {
+          "capability": "cross_rough_route",
+          "role": "shortcut / safe bypass",
+          "binding": "OPEN_EXACT_ROUTE"
+        }
+      ],
+      "productionRouteId": null
+    },
+    {
+      "authoringKey": "old-boundary-path",
+      "label": "old boundary path",
+      "primaryChallengeFamily": "interpretation / ritual anomaly",
+      "secondaryChallengeFamilies": [
+        "navigation"
+      ],
+      "capabilitySeams": [
+        {
+          "capability": "enter_old_boundary",
+          "role": "route gate",
+          "binding": "LOCKED"
+        },
+        {
+          "capability": "preserve_specimen",
+          "role": "sample/extraction action-space",
+          "binding": "OPEN_EXACT_ENCOUNTER"
+        }
+      ],
+      "productionRouteId": null
+    }
+  ],
+  "challengeFamilies": [
+    {
+      "id": "navigation",
+      "authoritativeApproaches": [
+        "wits",
+        "reason",
+        "hunter/knowledge fact",
+        "navigation capability"
+      ],
+      "productionChallengeIds": []
+    },
+    {
+      "id": "physical obstacle",
+      "authoritativeApproaches": [
+        "strength",
+        "endurance",
+        "dexterity",
+        "rope/tool capability"
+      ],
+      "productionChallengeIds": []
+    },
+    {
+      "id": "interpretation / ritual anomaly",
+      "authoritativeApproaches": [
+        "reason",
+        "magic",
+        "School Arcana public fact",
+        "specific sample/tool"
+      ],
+      "productionChallengeIds": []
+    }
+  ],
+  "seasons": [
+    {
+      "season": "spring",
+      "topologyEffects": [
+        "water/mud changes route access",
+        "some short paths closed",
+        "magical sprouts/traces may appear"
+      ],
+      "productionBindings": []
+    },
+    {
+      "season": "summer",
+      "topologyEffects": [
+        "distant routes more available",
+        "fire risk/event pool may appear"
+      ],
+      "productionBindings": []
+    },
+    {
+      "season": "autumn",
+      "topologyEffects": [
+        "animal migration enriches Hunter trail",
+        "industrial pressure high"
+      ],
+      "productionBindings": []
+    },
+    {
+      "season": "winter",
+      "topologyEffects": [
+        "some paths dangerous or higher endurance cost",
+        "frozen passage may open alternative route"
+      ],
+      "productionBindings": []
+    }
+  ],
+  "minimumCoverage": {
+    "routeContextCount": 3,
+    "challengeFamilyCount": 3,
+    "meaningfulItemCapabilityCountAtLeast": 3,
+    "seasonChangesTopologyOrOptions": true,
+    "saveResumeDeterministic": true,
+    "successEscapeDistinct": true
+  },
+  "lockedResults": [
+    "lumber.forest.success",
+    "lumber.forest.escape",
+    "lumber.forest.failure"
+  ],
+  "openFields": [
+    "final route IDs",
+    "final challenge IDs",
+    "NPC identity",
+    "lore",
+    "loot",
+    "camp",
+    "exact internal resource values",
+    "item acquisition source",
+    "item consume/retain rules",
+    "School/Arcana thresholds"
+  ],
+  "hardWorkIsolation": {
+    "condition": {
+      "kind": "careerCounter",
+      "career": "lumber",
+      "counter": "completed_shifts",
+      "op": "gte",
+      "value": 50
+    },
+    "rewardId": "hardWork:lumber",
+    "forestPrerequisiteAllowed": false
+  }
+}
