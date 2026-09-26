@@ -108,7 +108,7 @@ export function currentCommandAdapters(ids:Record<FixtureKey,string>):Record<Exc
     chooseLodging:{type:'chooseLodging',id:ids.normalLodging},
     chooseNightChoice:{type:'chooseNightChoice',id:ids.foremanNightChoice},
     enterActivity:{type:'enterActivity',id:ids.forestActivity},
-    activityAction:{type:'activityAction',id:ids.forestAdvanceAction},
+    activityAction:{type:'activityAction',id:'advance'},
     commitEnding:{type:'commitEnding',id:ids.hardWorkEnding},
     completeEnding:{type:'completeEnding'},
     newLife:{type:'newLife'}
