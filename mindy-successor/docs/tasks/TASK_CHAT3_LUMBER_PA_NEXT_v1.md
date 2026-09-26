@@ -90,3 +90,5 @@ For all new PA/checkpoint work:
 - Lumber career events must resolve through `sourceDomain: "lumber"`;
 - Foreman relationship events must resolve through `sourceDomain: "lumber.foreman"`;
 - media asset IDs such as `job.lumber.event.*` remain asset IDs only and must not be treated as presentation IDs.
+
+- Counter IDs in new fixtures must satisfy the shared lowercase ID contract; prefer snake_case such as `night_meetings`, never camelCase.
