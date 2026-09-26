@@ -8,13 +8,27 @@ test('renderer: create heroine, allocate ten points, begin without spending ener
  for(let i=0;i<10;i++){w.document.querySelector('[data-stat="strength"][data-delta="1"]').click();await wait(()=>w.document.querySelector('#points').textContent===String(9-i));}
  w.document.querySelector('#create').click();await wait(()=>!!w.document.querySelector('[data-action="arrival"]'));w.document.querySelector('[data-action="arrival"]').click();await wait(()=>!!w.document.querySelector('[data-choice="home"]'));w.document.querySelector('[data-choice="home"]').click();await wait(()=>!w.document.querySelector('[data-choice="home"]'));assert.equal(JSON.parse(w.localStorage.getItem('portal-life.v1')).run.dayState.energyCurrent,3);assert.deepEqual(errors,[]);
  }finally{dom.window.close();}});
-test('renderer: work opens central scene, choice resolves, repeat consumes energy, reload retains scene',async()=>{const s=started();s.run.rng=1;const {w,dom,errors}=boot(JSON.stringify(s));try{
- await wait(()=>!!w.document.querySelector('[data-panel="work"]'));w.document.querySelector('[data-panel="work"]').click();w.document.querySelector('[data-action="lumber"]').click();await wait(()=>!!w.document.querySelector('[data-choice="learn"]'));assert.equal(w.document.querySelectorAll('.media-window').length,1);
- w.document.querySelector('[data-choice="learn"]').click();await wait(()=>!!w.document.querySelector('[data-action="lumber"]'));assert.match(w.document.querySelector('[data-action="lumber"]').textContent,/Работать ещё/);w.document.querySelector('[data-action="lumber"]').click();await wait(()=>JSON.parse(w.localStorage.getItem('portal-life.v1')).run.historyState.actionCounts.lumber===2);assert.match(w.document.querySelector('.energy').textContent,/1\/3/);
- const saved=w.localStorage.getItem('portal-life.v1');const second=boot(saved);try{await wait(()=>!!second.w.document.querySelector('[data-action="lumber"]'));assert.equal(second.w.document.querySelector('.media-window').dataset.mediaId,'stage.lumber.spring');}finally{second.dom.window.close();}assert.deepEqual(errors,[]);
+test('renderer: target Lumber shift resolves milestone/Foreman chain, repeat consumes energy, reload retains target result',async()=>{const s=started();s.run.rng=1;const {w,dom,errors}=boot(JSON.stringify(s));try{
+ await wait(()=>!!w.document.querySelector('[data-panel="work"]'));w.document.querySelector('[data-panel="work"]').click();w.document.querySelector('[data-action="lumber.shift"]').click();
+ await wait(()=>!!w.document.querySelector('[data-choice="continue"]'));assert.equal(w.document.querySelectorAll('.media-window').length,1);
+ w.document.querySelector('[data-choice="continue"]').click();await wait(()=>!!w.document.querySelector('[data-choice="professional"]'));
+ w.document.querySelector('[data-choice="professional"]').click();await wait(()=>!!w.document.querySelector('[data-action="lumber.shift"]'));
+ assert.match(w.document.querySelector('[data-action="lumber.shift"]').textContent,/Работать ещё/);
+ w.document.querySelector('[data-action="lumber.shift"]').click();
+ await wait(()=>JSON.parse(w.localStorage.getItem('portal-life.v1')).run.historyState.actionCounts['lumber.shift']===2);
+ assert.match(w.document.querySelector('.energy').textContent,/1\/3/);
+ const saved=w.localStorage.getItem('portal-life.v1');const second=boot(saved);try{
+  await wait(()=>!!second.w.document.querySelector('[data-action="lumber.shift"]'));
+  const stored=JSON.parse(second.w.localStorage.getItem('portal-life.v1'));
+  assert.equal(stored.run.flow.lastAction.presentationId,'job/lumber/shift/spring/default');
+ }finally{second.dom.window.close();}assert.deepEqual(errors,[]);
  }finally{dom.window.close();}});
-test('renderer: zero energy remains same day, sleep advances date and refreshes HUD',async()=>{const s=started();s.run.metrics.energy=0;s.run.slot=3;const {w,dom}=boot(JSON.stringify(s));try{
- await wait(()=>!!w.document.querySelector('[data-panel="sleep"]'));w.document.querySelector('[data-panel="sleep"]').click();w.document.querySelector('[data-sleep="outside"]').click();await wait(()=>JSON.parse(w.localStorage.getItem('portal-life.v1')).run.calendar.elapsedDays===1);assert.match(w.document.querySelector('.date').textContent,/День 2/);assert.match(w.document.querySelector('.energy').textContent,/2\/3/);
+test('renderer: zero energy remains same day, NightFlow street lodging and voluntary sleep advance date exactly once',async()=>{const s=started();s.run.metrics.energy=0;s.run.slot=3;const {w,dom}=boot(JSON.stringify(s));try{
+ await wait(()=>!!w.document.querySelector('[data-panel="sleep"]'));w.document.querySelector('[data-panel="sleep"]').click();
+ w.document.querySelector('[data-end-day]').click();await wait(()=>!!w.document.querySelector('[data-lodging="lodging.street"]'));
+ w.document.querySelector('[data-lodging="lodging.street"]').click();await wait(()=>!!w.document.querySelector('[data-night-choice="night.sleep"]'));
+ w.document.querySelector('[data-night-choice="night.sleep"]').click();await wait(()=>JSON.parse(w.localStorage.getItem('portal-life.v1')).run.calendar.elapsedDays===1);
+ assert.match(w.document.querySelector('.date').textContent,/День 2/);assert.match(w.document.querySelector('.energy').textContent,/2\/3/);
  }finally{dom.window.close();}});
 test('renderer: corrupt save stays untouched and controls lock',async()=>{const {w,dom}=boot('broken');try{await wait(()=>!!w.document.querySelector('#create'));assert.equal(w.document.querySelector('[data-delta="1"]').disabled,true);assert.equal(w.localStorage.getItem('portal-life.v1'),'broken');assert.match(w.document.body.textContent,/Загрузка остановлена/);}finally{dom.window.close();}});
 test('renderer: editor edits action presentation separately from life save',async()=>{const {w,dom,errors}=boot(JSON.stringify(started()));try{
