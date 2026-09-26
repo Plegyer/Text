@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "id": "old-boundary-token-authoring.fixture",
+  "identity": {
+    "itemId": "old_boundary_token",
+    "capabilityId": "enter_old_boundary",
+    "displayConcept": "Old Boundary Token",
+    "currentTestAdapterFact": "lumber.capability.enter-old-boundary"
+  },
+  "acquisition": {
+    "required": true,
+    "sourceStatus": "OPEN",
+    "sourceId": null,
+    "commandOrEventId": null,
+    "price": null,
+    "atomic": true,
+    "reloadMustNotDuplicate": true
+  },
+  "inventoryVisibility": {
+    "required": true,
+    "itemIdentityVisible": true,
+    "capabilityMeaningVisible": true,
+    "invisibleFlagOnly": false
+  },
+  "forestAvailability": {
+    "activityId": "lumber.forest",
+    "exactRouteOrActionId": null,
+    "exactRouteOrActionStatus": "OPEN",
+    "beforeCapability": "old-boundary route/action unavailable",
+    "afterCapability": "old-boundary route/action available",
+    "effectKind": "action-space-availability",
+    "percentageOnlyEffectAllowed": false
+  },
+  "persistence": {
+    "checkpoints": [
+      "before acquisition",
+      "after acquisition",
+      "after acquisition reload",
+      "before capability use/route entry",
+      "after capability use/route entry",
+      "after use/entry reload"
+    ],
+    "duplicateAcquisitionAllowed": false,
+    "duplicateConsumptionAllowed": false,
+    "deterministicAvailabilityRequired": true
+  },
+  "consumption": {
+    "status": "OPEN",
+    "allowedFutureContracts": [
+      "retained",
+      "consumed-on-use",
+      "turned-in-later"
+    ],
+    "assumedByThisPacket": null
+  },
+  "acceptance": {
+    "injectedAdapterFactCountsAsPA09Pass": false,
+    "injectedAdapterFactCountsAsPA17Pass": false,
+    "numericPercentageOnlyCountsAsCapabilityUse": false
+  },
+  "hardWorkIsolation": {
+    "condition": {
+      "kind": "careerCounter",
+      "career": "lumber",
+      "counter": "completed_shifts",
+      "op": "gte",
+      "value": 50
+    },
+    "rewardId": "hardWork:lumber",
+    "itemPrerequisiteAllowed": false
+  }
+}
