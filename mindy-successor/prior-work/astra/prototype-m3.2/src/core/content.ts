@@ -205,6 +205,7 @@ export function loadCatalog(definitions:unknown,packs:unknown[]):Catalog {
       for(const trigger of e.reactionTriggers)checkReactionTrigger(trigger,p,maps,endingIds);
       if(e.delivery.policy==='scheduled'&&!e.delivery.expiresAfterDays)throw new Error(`Scheduled event без expiresAfterDays: ${e.id}`);
       if(e.delivery.policy!=='scheduled'&&e.delivery.expiresAfterDays)throw new Error(`expiresAfterDays допустим только scheduled: ${e.id}`);
+      if(!e.blocking&&e.delivery.policy!=='live')throw new Error(`Optional event должен использовать live delivery: ${e.id}`);
       checkConditions(e.conditions,p,new Set(p.reads));
       unique(e.variants.map(v=>v.id),e.id+' варианты');unique(e.choices.map(c=>c.id),e.id+' выборы');
       if(!e.variants.some(v=>v.conditions.length===0))throw new Error(`Нет запасной постановки ${e.id}`);
