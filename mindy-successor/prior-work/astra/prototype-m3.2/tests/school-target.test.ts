@@ -12,6 +12,7 @@ import {
   executeSchoolLesson,
   schoolDirectCoverage,
   schoolNightStudyChoice,
+  schoolNightStudyChoices,
   type SchoolCourseId
 } from '../src/core/school.ts';
 import {stats,type Catalog,type Save,type Stat} from '../src/core/schema.ts';
@@ -225,6 +226,7 @@ test('save/reload after a paid lesson preserves the committed transaction withou
 test('Night study is a separate zero-tuition Night-slot action with +2 supported stat and next-day Energy -1',()=>{
   const cat=catalog();
   const nightChoice=schoolNightStudyChoice('school.course.arcana','reason');
+  assert.ok(schoolNightStudyChoices().some(choice=>choice.id===nightChoice.id));
   assert.equal(nightChoice.effects.length,1);
   assert.deepEqual(nightChoice.effects,[{kind:'modifyStat',stat:'reason',delta:SCHOOL_NIGHT_STUDY_STAT_GAIN}]);
   assert.equal(nightChoice.nextDayEnergyDelta,SCHOOL_NIGHT_STUDY_NEXT_DAY_ENERGY_DELTA);
