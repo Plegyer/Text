@@ -1,0 +1,100 @@
+{
+  "format": "portal-life.presentation-replacement-bundle",
+  "formatVersion": 1,
+  "presentationSchemaVersion": 1,
+  "metadata": {
+    "bundleId": "fixture.presentation-replacement-bundle",
+    "name": "Portable semantic presentation replacements"
+  },
+  "preflightPolicy": {
+    "duplicatePresentationId": "reject",
+    "unknownPresentationId": "quarantine",
+    "activation": "atomic"
+  },
+  "replacements": {
+    "job/lumber/shift/spring/default": {
+      "currentFallback": {
+        "mediaId": "stage.lumber.spring",
+        "assetPath": "assets/stage-lumber.svg"
+      },
+      "futureGif": {
+        "logicalTargetName": "media/lumber/shift-spring.gif",
+        "declaredMediaId": "job.lumber.shift.spring.default"
+      },
+      "staticFallbackMandatory": true,
+      "textFallbackAvailable": true
+    },
+    "job/lumber/shift/summer/default": {
+      "currentFallback": {
+        "mediaId": "stage.lumber.summer",
+        "assetPath": "assets/stage-lumber.svg"
+      },
+      "futureGif": {
+        "logicalTargetName": "media/lumber/shift-summer.gif",
+        "declaredMediaId": "job.lumber.shift.summer.default"
+      },
+      "staticFallbackMandatory": true,
+      "textFallbackAvailable": true
+    },
+    "job/lumber/shift/autumn/default": {
+      "currentFallback": {
+        "mediaId": "stage.lumber.autumn",
+        "assetPath": "assets/stage-lumber.svg"
+      },
+      "futureGif": {
+        "logicalTargetName": "media/lumber/shift-autumn.gif",
+        "declaredMediaId": "job.lumber.shift.autumn.default"
+      },
+      "staticFallbackMandatory": true,
+      "textFallbackAvailable": true
+    },
+    "job/lumber/shift/winter/default": {
+      "currentFallback": {
+        "mediaId": "stage.lumber.winter",
+        "assetPath": "assets/stage-lumber.svg"
+      },
+      "futureGif": {
+        "logicalTargetName": "media/lumber/shift-winter.gif",
+        "declaredMediaId": "job.lumber.shift.winter.default"
+      },
+      "staticFallbackMandatory": true,
+      "textFallbackAvailable": true
+    },
+    "job/lumber/event/lumber-career-first-shift/default": {
+      "currentFallback": {
+        "mediaId": "stage.lumber",
+        "assetPath": "assets/stage-lumber.svg"
+      },
+      "futureGif": {
+        "logicalTargetName": "media/lumber/accepted-hand.gif",
+        "declaredMediaId": "job.lumber.event.accepted-hand"
+      },
+      "staticFallbackMandatory": true,
+      "textFallbackAvailable": true
+    },
+    "relationship/lumber-foreman/lumber-foreman-notice/default": {
+      "currentFallback": {
+        "mediaId": "stage.town",
+        "assetPath": "assets/stage-town.svg"
+      },
+      "futureGif": {
+        "logicalTargetName": "media/lumber/foreman-professional.gif",
+        "declaredMediaId": "relationship.lumber.foreman.professional"
+      },
+      "staticFallbackMandatory": true,
+      "textFallbackAvailable": true
+    },
+    "relationship/lumber-foreman/lumber-night-foreman-professional/default": {
+      "currentFallback": {
+        "mediaId": "stage.town",
+        "assetPath": "assets/stage-town.svg"
+      },
+      "futureGif": {
+        "logicalTargetName": "media/lumber/foreman-night-professional.gif",
+        "declaredMediaId": "relationship.lumber.foreman.night.professional"
+      },
+      "staticFallbackMandatory": true,
+      "textFallbackAvailable": true
+    }
+  }
+}
