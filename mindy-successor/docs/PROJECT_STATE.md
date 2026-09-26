@@ -520,3 +520,18 @@
 - Old active saves beyond day 159 are explicitly rejected rather than wrapped into the new calendar.
 - GitHub Actions real runner passed full `npm run check`: typecheck + validate + build + **48/48 tests**.
 - Next engineering package: **A2 Condition/Effect v2**.
+
+
+## A2 code milestone — typed Condition/Effect v2
+
+- Implemented on branch `a2-condition-effect-v2`.
+- Target content can use typed conditions for Character/Resources/Calendar/Career/Quest/Relationship/World/Meta reads.
+- Target effects can modify stats/resources/current Energy/items/housing, domain-local progression, world facts and next-day modifiers.
+- Career/Quest/Relationship progression now supports named declarative transitions; no arbitrary stage path writes.
+- Effect ordering is deterministic: direct resources -> domain facts/counters/choices -> named transitions -> next-day modifiers.
+- Typed package capabilities are validated at catalog load.
+- Unknown machine IDs/stages and persisted invalid machine references are rejected.
+- Normal content has no direct Meta mutation effect.
+- Legacy M3.2 generic metric/flag leaves remain temporary compatibility only.
+- GitHub Actions full `npm run check` green: **58/58 tests**.
+- Next engineering package: **A3 Event Resolver**.

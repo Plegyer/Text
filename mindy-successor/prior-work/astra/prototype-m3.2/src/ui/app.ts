@@ -11,8 +11,33 @@ let baseCatalog:Catalog,catalog:Catalog,state:Save,patch:Presentation=emptyPrese
 let panel='',screen='town',busy=false,locked=false,message='',error=false,mediaIndex=0;
 const professions=['tavern','lumber','hunt','guard'];
 function explain(c:Condition):string{
+ const cmp=(op:'gte'|'lte'|'eq',value:number)=>`${op==='gte'?'≥':op==='lte'?'≤':'='} ${value}`;
  switch(c.kind){
- case 'metric':return `${labels[c.key]??c.key} ${c.op==='gte'?'≥':c.op==='lte'?'≤':'='} ${c.value}`;
+ case 'stat':return `${labels[c.stat]??c.stat} ${cmp(c.op,c.value)}`;
+ case 'resource':return `${labels[c.resource]??c.resource} ${cmp(c.op,c.value)}`;
+ case 'itemCount':return `${labels[c.id]??c.id} ${cmp(c.op,c.count)}`;
+ case 'calendarYear':return `Год ${cmp(c.op,c.value)}`;
+ case 'calendarSeason':return labels[c.value]??c.value;
+ case 'calendarDayInYear':return `День года ${cmp(c.op,c.value)}`;
+ case 'calendarElapsedDays':return `Прошло дней ${cmp(c.op,c.value)}`;
+ case 'careerStage':return `Карьера ${c.career}: этап ${c.stage}`;
+ case 'careerShifts':return `Карьера ${c.career}: смен ${cmp(c.op,c.value)}`;
+ case 'careerCounter':return `Карьера ${c.career}: ${c.counter} ${cmp(c.op,c.value)}`;
+ case 'careerFact':return `Карьера ${c.career}: факт ${c.fact} ${c.present?'есть':'отсутствует'}`;
+ case 'careerChoice':return `Карьера ${c.career}: ${c.choice} = ${c.value}`;
+ case 'questStage':return `Задание ${c.quest}: этап ${c.stage}`;
+ case 'questCounter':return `Задание ${c.quest}: ${c.counter} ${cmp(c.op,c.value)}`;
+ case 'questFact':return `Задание ${c.quest}: факт ${c.fact} ${c.present?'есть':'отсутствует'}`;
+ case 'questChoice':return `Задание ${c.quest}: ${c.choice} = ${c.value}`;
+ case 'relationshipStage':return `Отношения ${c.relationship}: этап ${c.stage}`;
+ case 'relationshipCounter':return `Отношения ${c.relationship}: ${c.counter} ${cmp(c.op,c.value)}`;
+ case 'relationshipFact':return `Отношения ${c.relationship}: факт ${c.fact} ${c.present?'есть':'отсутствует'}`;
+ case 'relationshipChoice':return `Отношения ${c.relationship}: ${c.choice} = ${c.value}`;
+ case 'worldFact':return `Факт мира ${c.fact}: ${c.present?'есть':'нет'}`;
+ case 'metaUnlock':return `Наследие ${c.unlock}: ${c.present?'есть':'нет'}`;
+ case 'metaEndingCompleted':return `Судьба ${c.ending}: ${c.present?'пройдена':'не пройдена'}`;
+ case 'metaHardWork':return `Тяжкий труд ${c.career}: ${c.present?'завершён':'не завершён'}`;
+ case 'metric':return `${labels[c.key]??c.key} ${cmp(c.op,c.value)}`;
  case 'visits':return `${catalog.definitions.actions.find(a=>a.id===c.action)?.label??c.action}: ${c.value} смен`;
  case 'flag':return c.value?'Продвиньте связанную историю':'Этот этап уже пройден';
  case 'season':return labels[c.value];case 'housing':return labels[c.value];case 'unlock':return labels[c.value];
@@ -31,9 +56,9 @@ async function perform(cmd:Command){
  }catch(e){message=e instanceof Error?e.message:String(e);error=true;}
  busy=false;render();
 }
-function disabled(a:Action){return busy||locked||state.run.status!=='active'||!state.run.creation.complete||!!state.run.pending||!eligible(a.conditions,state)||state.run.metrics.money<actionCost(a,state)||state.run.metrics.energy<a.cost.energy;}
+function disabled(a:Action){return busy||locked||state.run.status!=='active'||!state.run.creation.complete||!!state.run.pending||!eligible(a.conditions,state,catalog)||state.run.metrics.money<actionCost(a,state)||state.run.metrics.energy<a.cost.energy;}
 function actionList(ids:string[]){return `<div class="activity-list">${ids.map(id=>catalog.definitions.actions.find(a=>a.id===id)).filter((a):a is Action=>!!a).map(a=>{
- const miss=a.conditions.filter(c=>!meets(c,state));
+ const miss=a.conditions.filter(c=>!meets(c,state,catalog));
  const statsEffects=[...a.effects,...(a.seasonal?.[calendar(state.run.day).season]??[])].filter(e=>e.kind==='metric'&&(stats as readonly string[]).includes(e.key));
  const forecast=a.wage?Math.round(a.wage.base+a.wage.weights.reduce((sum,w)=>sum+state.run.metrics[w.stat]*w.factor,0)):null;
  return `<article class="activity"><div><h3>${esc(a.label)}</h3><p>${esc(a.description)}</p><small>${a.cost.energy} энергии${actionCost(a,state)?` · ${actionCost(a,state)} монет`:''}${forecast!==null?` · доход ≈ ${forecast}`:''}</small><div class="effect-tags">${statsEffects.map(e=>e.kind==='metric'?`<span class="${e.delta>0?'gain':'loss'}">${esc(labels[e.key])} ${e.delta>0?'+':''}${e.delta}</span>`:'').join('')}</div>${miss.length?`<p class="requirement">${esc(miss.map(explain).join(' · '))}</p>`:''}</div>${a.mode==='brew'?`<div><button data-action="${a.id}" data-recipe="gentle" ${disabled(a)?'disabled':''}>Надёжно</button><button data-action="${a.id}" data-recipe="bold" ${disabled(a)?'disabled':''}>Быстро</button></div>`:`<button data-action="${a.id}" ${disabled(a)?'disabled':''}>${professions.includes(a.id)?'Работать':'Выбрать'}</button>`}</article>`;
@@ -63,7 +88,7 @@ function panelContent(){
  if(panel==='stats')return `<h2>Героиня</h2><div class="character-stats">${stats.map(k=>`<article><div><strong>${labels[k]}</strong><b>${state.run.metrics[k]}</b></div><progress value="${state.run.metrics[k]}" max="100"></progress><p>${hints[k]}</p></article>`).join('')}</div><h3>Профессии</h3><p>${professions.map(id=>`${esc(catalog.definitions.actions.find(a=>a.id===id)!.label)}: ${state.run.actionCounts[id]??0}`).join(' · ')}</p>`;
  if(panel==='journal')return `<h2>Дневник</h2>${[...state.run.journal].reverse().map(t=>`<p class="journal-entry">${esc(t)}</p>`).join('')}`;
  if(panel==='bag')return `<h2>Сумка и дела</h2>${Object.entries(state.run.inventory).map(([k,v])=>`<p>${labels[k]}: ${v}</p>`).join('')}<p>Долг: ${state.run.metrics.debt}</p>${actionList(['repay','rent-room'])}`;
- if(panel==='legacy')return `<h2>Судьбы</h2><p>Достижение судьбы не завершает жизнь. Принятие выдаёт её наследие.</p>${catalog.definitions.endings.map(e=>`<article class="ending"><h3>${esc(e.title)}</h3><p>${esc(e.description)}</p><small>${e.conditions.map(c=>`${meets(c,state)?'✓':'○'} ${esc(explain(c))}`).join(' · ')}</small><button data-ending="${e.id}" ${busy||locked||state.run.status==='ended'||!!state.run.pending||!state.run.availableEndings.includes(e.id)||!eligible(e.conditions,state)?'disabled':''}>Принять судьбу</button></article>`).join('')}<h3>Наследие</h3><p>${state.meta.unlocks.map(k=>labels[k]).join(' · ')||'Ещё впереди'}</p>${state.run.status!=='active'?'<button id="new-life">Следующая жизнь</button>':''}`;
+ if(panel==='legacy')return `<h2>Судьбы</h2><p>Достижение судьбы не завершает жизнь. Принятие выдаёт её наследие.</p>${catalog.definitions.endings.map(e=>`<article class="ending"><h3>${esc(e.title)}</h3><p>${esc(e.description)}</p><small>${e.conditions.map(c=>`${meets(c,state,catalog)?'✓':'○'} ${esc(explain(c))}`).join(' · ')}</small><button data-ending="${e.id}" ${busy||locked||state.run.status==='ended'||!!state.run.pending||!state.run.availableEndings.includes(e.id)||!eligible(e.conditions,state)?'disabled':''}>Принять судьбу</button></article>`).join('')}<h3>Наследие</h3><p>${state.meta.unlocks.map(k=>labels[k]).join(' · ')||'Ещё впереди'}</p>${state.run.status!=='active'?'<button id="new-life">Следующая жизнь</button>':''}`;
  if(panel==='editor')return '<div id="editor" class="editor"></div>';
  if(panel==='catalog')return `<h2>Инспектор событий</h2>${catalog.events.map(e=>`<details><summary>${esc(e.title)}</summary><pre>${esc(JSON.stringify(e,null,2))}</pre></details>`).join('')}`;
  return `<h2>Меню</h2><div class="menu-buttons"><button id="export">Экспорт сохранения</button><button id="import">Импорт сохранения</button><input type="file" id="file" accept=".json" hidden><button data-panel="editor">Тексты и изображения</button><button data-panel="catalog">Инспектор событий</button><button id="restart" ${busy||locked?'disabled':''}>Новая героиня с сохранением наследия</button></div><p class="muted">M3 · Игровая оболочка. Иллюстрации — заменяемые эскизы. Новая героиня начинает со статами 1 и десятью очками. У загруженной старой жизни характеристики сохранены.</p>`;

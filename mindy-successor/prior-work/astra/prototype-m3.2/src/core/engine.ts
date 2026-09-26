@@ -1,4 +1,4 @@
-import { metrics, stats, seasons, saveSchema, type Stat, type Save, type Meta, type Condition, type Effect, type Catalog, type StoryEvent, type Action } from './schema.ts';
+import { metrics, stats, seasons, saveSchema, type Stat, type Save, type Meta, type Condition, type Effect, type Catalog, type StoryEvent, type Action, type MachineDefinition } from './schema.ts';
 
 const statSet=new Set<string>(stats);
 const cappedLegacy=new Set(['health','stress','trust']);
@@ -121,21 +121,77 @@ export function calendar(day:number){
   };
 }
 
-export function meets(c:Condition,s:Save):boolean {
+type DomainKind='career'|'quest'|'relationship';
+type DomainState={stage:string;counters:Record<string,number>;choices:Record<string,string>;facts:string[];shifts?:number};
+
+function compare(value:number,op:'gte'|'lte'|'eq',expected:number){
+  return op==='gte'?value>=expected:op==='lte'?value<=expected:value===expected;
+}
+function machineList(cat:Catalog|undefined,kind:DomainKind):MachineDefinition[]{
+  if(!cat)return [];
+  return (kind==='career'?cat.definitions.careers:kind==='quest'?cat.definitions.quests:cat.definitions.relationships)??[];
+}
+function machineDefinition(cat:Catalog|undefined,kind:DomainKind,id:string){
+  return machineList(cat,kind).find(x=>x.id===id);
+}
+function domainMap(s:Save,kind:DomainKind):Record<string,DomainState>{
+  return (kind==='career'?s.run.progression.careers:kind==='quest'?s.run.progression.quests:s.run.progression.relationships) as Record<string,DomainState>;
+}
+function readDomainState(s:Save,kind:DomainKind,id:string,cat?:Catalog):DomainState|undefined{
+  const existing=domainMap(s,kind)[id];if(existing)return existing;
+  const def=machineDefinition(cat,kind,id);if(!def)return undefined;
+  return {stage:def.initialStage,counters:{},choices:{},facts:[],...(kind==='career'?{shifts:0}:{})};
+}
+function ensureDomainState(s:Save,kind:DomainKind,id:string,cat:Catalog):DomainState{
+  const map=domainMap(s,kind),existing=map[id];if(existing)return existing;
+  const def=machineDefinition(cat,kind,id);if(!def)throw new Error(`Неизвестная ${kind} state machine: ${id}`);
+  const created={stage:def.initialStage,counters:{},choices:{},facts:[],...(kind==='career'?{shifts:0}:{})};
+  map[id]=created;return created;
+}
+
+export function meets(c:Condition,s:Save,cat?:Catalog):boolean {
+  const cal=()=>calendar(s.run.day);
   switch(c.kind){
-    case 'metric': {const v=getMetric(s,c.key);return c.op==='gte'?v>=c.value:c.op==='lte'?v<=c.value:v===c.value;}
-    case 'visits':return (s.run.actionCounts[c.action]??0)>=c.value;
+    case 'stat': return compare(s.run.character.stats[c.stat],c.op,c.value);
+    case 'resource': return compare(s.run.resources[c.resource],c.op,c.value);
+    case 'itemCount': return compare(s.run.resources.inventory[c.id]??0,c.op,c.count);
+    case 'calendarYear': return compare(cal().year,c.op,c.value);
+    case 'calendarSeason': return cal().season===c.value;
+    case 'calendarDayInYear': return compare(cal().dayInYear,c.op,c.value);
+    case 'calendarElapsedDays': return compare(s.run.calendar.elapsedDays,c.op,c.value);
+    case 'careerStage': return readDomainState(s,'career',c.career,cat)?.stage===c.stage;
+    case 'careerShifts': return compare(readDomainState(s,'career',c.career,cat)?.shifts??0,c.op,c.value);
+    case 'careerCounter': return compare(readDomainState(s,'career',c.career,cat)?.counters[c.counter]??0,c.op,c.value);
+    case 'careerFact': return (readDomainState(s,'career',c.career,cat)?.facts.includes(c.fact)??false)===c.present;
+    case 'careerChoice': return readDomainState(s,'career',c.career,cat)?.choices[c.choice]===c.value;
+    case 'questStage': return readDomainState(s,'quest',c.quest,cat)?.stage===c.stage;
+    case 'questCounter': return compare(readDomainState(s,'quest',c.quest,cat)?.counters[c.counter]??0,c.op,c.value);
+    case 'questFact': return (readDomainState(s,'quest',c.quest,cat)?.facts.includes(c.fact)??false)===c.present;
+    case 'questChoice': return readDomainState(s,'quest',c.quest,cat)?.choices[c.choice]===c.value;
+    case 'relationshipStage': return readDomainState(s,'relationship',c.relationship,cat)?.stage===c.stage;
+    case 'relationshipCounter': return compare(readDomainState(s,'relationship',c.relationship,cat)?.counters[c.counter]??0,c.op,c.value);
+    case 'relationshipFact': return (readDomainState(s,'relationship',c.relationship,cat)?.facts.includes(c.fact)??false)===c.present;
+    case 'relationshipChoice': return readDomainState(s,'relationship',c.relationship,cat)?.choices[c.choice]===c.value;
+    case 'worldFact': return s.run.progression.worldFacts.includes(c.fact)===c.present;
+    case 'metaUnlock': return s.meta.unlocks.includes(c.unlock)===c.present;
+    case 'metaEndingCompleted': return s.meta.completedEndings.includes(c.ending)===c.present;
+    case 'metaHardWork': return s.meta.hardWorkProgress.includes(c.career)===c.present;
+
+    // Legacy M3.2 leaves.
+    case 'metric': return compare(getMetric(s,c.key),c.op,c.value);
+    case 'visits': return (s.run.actionCounts[c.action]??0)>=c.value;
     case 'flag': return (s.run.flags[c.key]??false)===c.value;
-    case 'season': return calendar(s.run.day).season===c.value;
+    case 'season': return cal().season===c.value;
     case 'housing': return s.run.housing===c.value;
     case 'unlock': return s.meta.unlocks.includes(c.value);
     case 'item': return (s.run.inventory[c.id]??0)>=c.count;
-    case 'all': return c.conditions.every(x=>meets(x,s));
-    case 'any': return c.conditions.some(x=>meets(x,s));
-    case 'not': return !meets(c.condition,s);
+
+    case 'all': return c.conditions.every(x=>meets(x,s,cat));
+    case 'any': return c.conditions.some(x=>meets(x,s,cat));
+    case 'not': return !meets(c.condition,s,cat);
   }
 }
-export const eligible=(conditions:Condition[],s:Save)=>conditions.every(c=>meets(c,s));
+export const eligible=(conditions:Condition[],s:Save,cat?:Catalog)=>conditions.every(c=>meets(c,s,cat));
 
 export function actionCost(a:Action,s:Save){
   if(a.id==='repay')return Math.min(a.cost.money,getMetric(s,'debt'));
@@ -177,33 +233,100 @@ function delta(before:Record<string,number>,after:Record<string,number>){
 }
 function log(s:Save,text:string){s.run.journal.push(text);s.run.journal=s.run.journal.slice(-160);}
 
-function apply(s:Save,effects:Effect[]){
-  for(const e of effects){
-    if(e.kind==='housing'){s.run.housing=e.value;continue;}
-    if(e.kind==='flag'){s.run.flags[e.key]=e.value;continue;}
-    if(e.kind==='item'){
-      const have=s.run.inventory[e.id]??0;
-      if(have+e.delta<0)throw new Error('Не хватает предметов.');
-      s.run.inventory[e.id]=have+e.delta;continue;
+function addUnique(target:string[],value:string){if(!target.includes(value))target.push(value);}
+function removeValue(target:string[],value:string){const i=target.indexOf(value);if(i>=0)target.splice(i,1);}
+function effectPhase(e:Effect){
+  if(['modifyStat','modifyResource','modifyEnergy','addItem','removeItem','setHousing','metric','item','housing','flag'].includes(e.kind))return 1;
+  if(['incrementCareerCounter','addCareerFact','setCareerChoice','incrementQuestCounter','addQuestFact','setQuestChoice','incrementRelationshipCounter','addRelationshipFact','setRelationshipChoice','addWorldFact','removeWorldFact'].includes(e.kind))return 2;
+  if(['advanceCareer','advanceQuest','advanceRelationship'].includes(e.kind))return 3;
+  return 4;
+}
+function transitionFor(cat:Catalog,kind:DomainKind,id:string,transitionId:string){
+  const def=machineDefinition(cat,kind,id);if(!def)throw new Error(`Неизвестная ${kind} state machine: ${id}`);
+  const t=def.transitions.find(x=>x.id===transitionId);if(!t)throw new Error(`Неизвестный transition ${kind}.${id}.${transitionId}`);
+  return {def,t};
+}
+function applyTransition(s:Save,kind:DomainKind,id:string,transitionId:string,cat:Catalog){
+  const {t}=transitionFor(cat,kind,id,transitionId);
+  const state=ensureDomainState(s,kind,id,cat);
+  if(!t.from.includes(state.stage))throw new Error(`Transition ${kind}.${id}.${transitionId} недоступен из stage ${state.stage}`);
+  if(!eligible(t.conditions,s,cat))throw new Error(`Условия transition ${kind}.${id}.${transitionId} не выполнены`);
+  state.stage=t.to;
+  // Loader forbids nested Advance* effects in transitions, so this cannot recurse.
+  applyEffectsMutable(s,t.effects,cat,false);
+}
+function applyOne(s:Save,e:Effect,cat:Catalog,allowTransitions:boolean){
+  switch(e.kind){
+    case 'modifyStat': setMetric(s,e.stat,getMetric(s,e.stat)+e.delta);return;
+    case 'modifyResource': {
+      const value=s.run.resources[e.resource]+e.delta;
+      if(value<0)throw new Error('Не хватает ресурса.');
+      s.run.resources[e.resource]=Math.min(1_000_000,value);return;
     }
-    const value=getMetric(s,e.key)+e.delta;
-    if(e.key==='money'&&value<0)throw new Error('Не хватает монет.');
-    setMetric(s,e.key,value);
+    case 'modifyEnergy': s.run.dayState.energyCurrent=Math.max(0,Math.min(energyMax(s),s.run.dayState.energyCurrent+e.delta));return;
+    case 'addItem': s.run.resources.inventory[e.id]=(s.run.resources.inventory[e.id]??0)+e.count;return;
+    case 'removeItem': {
+      const have=s.run.resources.inventory[e.id]??0;if(have<e.count)throw new Error('Не хватает предметов.');
+      s.run.resources.inventory[e.id]=have-e.count;return;
+    }
+    case 'setHousing': s.run.housingState.current=e.value;return;
+
+    case 'incrementCareerCounter': {const st=ensureDomainState(s,'career',e.career,cat);st.counters[e.counter]=Math.max(0,(st.counters[e.counter]??0)+e.amount);return;}
+    case 'addCareerFact': addUnique(ensureDomainState(s,'career',e.career,cat).facts,e.fact);return;
+    case 'setCareerChoice': ensureDomainState(s,'career',e.career,cat).choices[e.choice]=e.value;return;
+    case 'incrementQuestCounter': {const st=ensureDomainState(s,'quest',e.quest,cat);st.counters[e.counter]=Math.max(0,(st.counters[e.counter]??0)+e.amount);return;}
+    case 'addQuestFact': addUnique(ensureDomainState(s,'quest',e.quest,cat).facts,e.fact);return;
+    case 'setQuestChoice': ensureDomainState(s,'quest',e.quest,cat).choices[e.choice]=e.value;return;
+    case 'incrementRelationshipCounter': {const st=ensureDomainState(s,'relationship',e.relationship,cat);st.counters[e.counter]=Math.max(0,(st.counters[e.counter]??0)+e.amount);return;}
+    case 'addRelationshipFact': addUnique(ensureDomainState(s,'relationship',e.relationship,cat).facts,e.fact);return;
+    case 'setRelationshipChoice': ensureDomainState(s,'relationship',e.relationship,cat).choices[e.choice]=e.value;return;
+    case 'addWorldFact': addUnique(s.run.progression.worldFacts,e.fact);return;
+    case 'removeWorldFact': removeValue(s.run.progression.worldFacts,e.fact);return;
+
+    case 'advanceCareer': if(!allowTransitions)throw new Error('Nested career transition запрещён');applyTransition(s,'career',e.career,e.transition,cat);return;
+    case 'advanceQuest': if(!allowTransitions)throw new Error('Nested quest transition запрещён');applyTransition(s,'quest',e.quest,e.transition,cat);return;
+    case 'advanceRelationship': if(!allowTransitions)throw new Error('Nested relationship transition запрещён');applyTransition(s,'relationship',e.relationship,e.transition,cat);return;
+
+    case 'addNextDayModifier':
+      s.run.dayState.nextDayModifiers.energyDelta+=e.energyDelta;
+      for(const se of e.statEffects)s.run.dayState.nextDayModifiers.statEffects.push(se);
+      if(e.tag)addUnique(s.run.dayState.nextDayModifiers.tags,e.tag);
+      return;
+
+    // Legacy M3.2 effects.
+    case 'housing': s.run.housing=e.value;return;
+    case 'flag': s.run.flags[e.key]=e.value;return;
+    case 'item': {
+      const have=s.run.inventory[e.id]??0;if(have+e.delta<0)throw new Error('Не хватает предметов.');
+      s.run.inventory[e.id]=have+e.delta;return;
+    }
+    case 'metric': {
+      const value=getMetric(s,e.key)+e.delta;
+      if(e.key==='money'&&value<0)throw new Error('Не хватает монет.');
+      setMetric(s,e.key,value);return;
+    }
   }
 }
+function applyEffectsMutable(s:Save,effects:Effect[],cat:Catalog,allowTransitions=true){
+  const ordered=effects.map((effect,index)=>({effect,index,phase:effectPhase(effect)})).sort((a,b)=>a.phase-b.phase||a.index-b.index);
+  for(const {effect} of ordered)applyOne(s,effect,cat,allowTransitions);
+}
+export function applyEffects(input:Save,effects:Effect[],cat:Catalog):Save{
+  const s=cloneSave(input);applyEffectsMutable(s,effects,cat,true);return s;
+}
 
-export function availableVariants(e:StoryEvent,s:Save){
+export function availableVariants(e:StoryEvent,s:Save,cat?:Catalog){
   const h=s.run.history[e.id];
-  return e.variants.filter(v=>eligible(v.conditions,s)&&(h?.variants[v.id]===undefined||s.run.day-h.variants[v.id]>=e.variantCooldownDays));
+  return e.variants.filter(v=>eligible(v.conditions,s,cat)&&(h?.variants[v.id]===undefined||s.run.day-h.variants[v.id]>=e.variantCooldownDays));
 }
 
 function schedule(s:Save,cat:Catalog,trigger:string){
   const candidates=cat.events.filter(e=>{
     const h=s.run.history[e.id];
-    return e.trigger.includes(trigger)&&eligible(e.conditions,s)&&(!h||(h.count<e.maxShows&&s.run.day-h.lastDay>=e.cooldownDays))&&availableVariants(e,s).length>0&&e.choices.some(c=>eligible(c.conditions,s));
+    return e.trigger.includes(trigger)&&eligible(e.conditions,s,cat)&&(!h||(h.count<e.maxShows&&s.run.day-h.lastDay>=e.cooldownDays))&&availableVariants(e,s,cat).length>0&&e.choices.some(c=>eligible(c.conditions,s,cat));
   }).sort((a,b)=>b.priority-a.priority||(s.run.history[a.id]?.lastDay??-1)-(s.run.history[b.id]?.lastDay??-1)||a.id.localeCompare(b.id));
   const event=candidates.find(e=>!e.chance||random(s)<eventChance(e,s));if(!event)return;
-  const variants=availableVariants(event,s).sort((a,b)=>b.conditions.length-a.conditions.length||(s.run.history[event.id]?.variants[a.id]??-1)-(s.run.history[event.id]?.variants[b.id]??-1));
+  const variants=availableVariants(event,s,cat).sort((a,b)=>b.conditions.length-a.conditions.length||(s.run.history[event.id]?.variants[a.id]??-1)-(s.run.history[event.id]?.variants[b.id]??-1));
   const v=variants[0];
   const h=s.run.history[event.id]??{count:0,lastDay:0,variants:{}};
   h.count++;h.lastDay=s.run.day;h.variants[v.id]=s.run.day;s.run.history[event.id]=h;
@@ -211,7 +334,7 @@ function schedule(s:Save,cat:Catalog,trigger:string){
 }
 
 function register(s:Save,cat:Catalog){
-  for(const e of cat.definitions.endings)if(eligible(e.conditions,s)&&!s.run.availableEndings.includes(e.id)){
+  for(const e of cat.definitions.endings)if(eligible(e.conditions,s,cat)&&!s.run.availableEndings.includes(e.id)){
     s.run.availableEndings.push(e.id);log(s,`Новая судьба: «${e.title}». Можно продолжать жизнь или принять её.`);
   }
 }
@@ -263,7 +386,7 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
   if(command.type==='accept'){
     if(s.run.status==='ended'||s.run.pending)throw new Error('Завершите текущую сцену.');
     const ending=cat.definitions.endings.find(e=>e.id===command.id);
-    if(!ending||!s.run.availableEndings.includes(ending.id)||!eligible(ending.conditions,s))throw new Error('Эта судьба сейчас недоступна.');
+    if(!ending||!s.run.availableEndings.includes(ending.id)||!eligible(ending.conditions,s,cat))throw new Error('Эта судьба сейчас недоступна.');
     s.run.status='ended';s.run.acceptedEnding=ending.id;
     if(!s.meta.completed.includes(ending.id))s.meta.completed.push(ending.id);
     if(!s.meta.unlocks.includes(ending.reward))s.meta.unlocks.push(ending.reward);
@@ -287,8 +410,9 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
       text='Ночь под навесом. Сон был коротким: завтра на одно дело меньше.';
     }else throw new Error('Неизвестный способ ночлега.');
     s.run.day++;s.run.slot=0;
-    const nextDelta=s.run.dayState.nextDayModifiers.energyDelta;
-    s.run.metrics.energy=Math.max(1,energyMax(s)+nextDelta-(command.payment==='outside'?1:0));
+    const queued=s.run.dayState.nextDayModifiers;
+    for(const effect of queued.statEffects)setMetric(s,effect.stat,getMetric(s,effect.stat)+effect.delta);
+    s.run.metrics.energy=Math.max(1,energyMax(s)+queued.energyDelta-(command.payment==='outside'?1:0));
     s.run.dayState.nextDayModifiers={energyDelta:0,statEffects:[],tags:[]};
     s.run.lastAction={id:'rest',title:'Новое утро',text,media:[command.payment==='outside'?'stage.outside':'stage.room'],deltas:delta(before,s.run.metrics)};
     log(s,text);register(s,cat);return s;
@@ -296,8 +420,8 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
   if(command.type==='choice'){
     const e=cat.events.find(e=>e.id===s.run.pending?.eventId);
     const c=e?.choices.find(c=>c.id===command.id);
-    if(!c||!eligible(c.conditions,s))throw new Error('Выбор недоступен.');
-    const before={...s.run.metrics};apply(s,c.effects);log(s,c.text);
+    if(!c||!eligible(c.conditions,s,cat))throw new Error('Выбор недоступен.');
+    const before={...s.run.metrics};applyEffectsMutable(s,c.effects,cat,true);log(s,c.text);
     if(s.run.lastAction){
       s.run.lastAction.title=e!.title;s.run.lastAction.text=c.text;
       if(c.media)s.run.lastAction.media=c.media;
@@ -308,7 +432,7 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
   if(s.run.pending)throw new Error('Сначала выберите ответ в сцене.');
   if(command.id==='rest')throw new Error('Выберите способ ночлега.');
   const a=cat.definitions.actions.find(a=>a.id===command.id);
-  if(!a||!eligible(a.conditions,s))throw new Error('Условия действия не выполнены.');
+  if(!a||!eligible(a.conditions,s,cat))throw new Error('Условия действия не выполнены.');
   if(a.id!=='arrival'&&!s.run.flags['story.arrived'])throw new Error('Сначала завершите вступление.');
   const before={...s.run.metrics};
   const cost=actionCost(a,s);
@@ -316,22 +440,22 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
   if(s.run.metrics.money<cost||s.run.metrics.energy<a.cost.energy)throw new Error('Не хватает денег или энергии.');
   if(a.mode==='brew'&&!['gentle','bold'].includes(command.recipe??''))throw new Error('Выберите способ приготовления.');
   s.run.metrics.money-=cost;s.run.metrics.energy-=a.cost.energy;
-  apply(s,a.effects);
-  if(a.seasonal)apply(s,a.seasonal[calendar(s.run.day).season]);
+  applyEffectsMutable(s,a.effects,cat,true);
+  if(a.seasonal)applyEffectsMutable(s,a.seasonal[calendar(s.run.day).season],cat,true);
   if(a.wage){
     const wage=Math.round(a.wage.base+a.wage.weights.reduce((sum,w)=>sum+getMetric(s,w.stat)*w.factor,0));
-    apply(s,[{kind:'metric',key:'money',delta:wage}]);log(s,`Заработано: ${wage} монет.`);
+    applyEffectsMutable(s,[{kind:'metric',key:'money',delta:wage}],cat,true);log(s,`Заработано: ${wage} монет.`);
   }
   s.run.actionCounts[a.id]=Math.min(1_000_000,(s.run.actionCounts[a.id]??0)+1);
   if(freeLesson)s.run.flags[`system.scholar.${Math.floor(s.run.day/7)}`]=true;
   if(a.mode==='brew'){
     const success=command.recipe==='gentle'||getMetric(s,'alchemy')>=3||(s.run.inventory.scales??0)>0;
-    apply(s,[{kind:'item',id:'herb',delta:-1},{kind:'metric',key:'alchemy',delta:1}]);
-    if(success){apply(s,[{kind:'item',id:'tonic',delta:command.recipe==='bold'?2:1}]);log(s,'Микстура готова. Этикетка обещает бодрость, а не бессмертие — хороший знак.');}
+    applyEffectsMutable(s,[{kind:'item',id:'herb',delta:-1},{kind:'metric',key:'alchemy',delta:1}],cat,true);
+    if(success){applyEffectsMutable(s,[{kind:'item',id:'tonic',delta:command.recipe==='bold'?2:1}],cat,true);log(s,'Микстура готова. Этикетка обещает бодрость, а не бессмертие — хороший знак.');}
     else log(s,'Смесь превратилась в пену. Для быстрого способа нужны весы или мастерство 3. Опыт сохранён.');
   }
   if(a.mode!=='story')s.run.slot++;log(s,`${a.label}. Осталось энергии: ${s.run.metrics.energy}.`);
-  const variants=a.scenes?.filter(v=>eligible(v.conditions,s)).sort((a,b)=>b.conditions.length-a.conditions.length);
+  const variants=a.scenes?.filter(v=>eligible(v.conditions,s,cat)).sort((a,b)=>b.conditions.length-a.conditions.length);
   const v=variants?.[0];
   s.run.lastAction={id:a.id,title:a.label,text:v?.text??a.description,media:v?.media??['stage.town'],deltas:delta(before,s.run.metrics)};
   schedule(s,cat,a.id);settle(s,cat);return s;
@@ -404,6 +528,17 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
   if(s.run.lastAction?.media.some(id=>!cat.media.some(m=>m.id===id)))throw new Error('Неизвестное медиа последнего занятия.');
   const actions=new Set(cat.definitions.actions.map(a=>a.id));
   for(const id of Object.keys(s.run.actionCounts))if(!actions.has(id))throw new Error(`Неизвестный счётчик ${id}`);
+  for(const [kind,map,defs] of [
+    ['career',s.run.progression.careers,cat.definitions.careers??[]],
+    ['quest',s.run.progression.quests,cat.definitions.quests??[]],
+    ['relationship',s.run.progression.relationships,cat.definitions.relationships??[]]
+  ] as const){
+    for(const [machineId,state] of Object.entries(map)){
+      const def=defs.find(x=>x.id===machineId);
+      if(!def)throw new Error(`Неизвестная ${kind} state machine в сохранении: ${machineId}`);
+      if(!def.stages.includes(state.stage))throw new Error(`Неизвестный stage в сохранении: ${kind}.${machineId}.${state.stage}`);
+    }
+  }
   const knownFlags=new Set(cat.definitions.flags);
   for(const flag of Object.keys(s.run.flags))if(!knownFlags.has(flag)&&!/^system\.scholar\.\d+$/.test(flag))throw new Error(`Неизвестный флаг ${flag}`);
   const endingIds=new Set(cat.definitions.endings.map(e=>e.id));
@@ -412,7 +547,7 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
   if(s.run.pending){
     const e=cat.events.find(e=>e.id===s.run.pending!.eventId);
     if(!e?.variants.some(v=>v.id===s.run.pending!.variantId))throw new Error('Неизвестная сцена сохранения.');
-    if(!e.choices.some(c=>eligible(c.conditions,s)))throw new Error('Сцена не имеет доступного выбора.');
+    if(!e.choices.some(c=>eligible(c.conditions,s,cat)))throw new Error('Сцена не имеет доступного выбора.');
   }
   for(const [eventId,h] of Object.entries(s.run.history)){
     const e=cat.events.find(e=>e.id===eventId);
