@@ -791,6 +791,9 @@ export type Command=
   |{type:'allocate';stat:Stat;delta:1|-1}
   |{type:'finishCreation'}
   |{type:'openOffer';id:string}
+  |{type:'endDay'}
+  |{type:'chooseLodging';id:string}
+  |{type:'chooseNightChoice';id:string}
   |{type:'sleep';payment:'money'|'favor'|'outside'};
 
 export function dispatch(input:Save,command:Command,cat:Catalog):Save {
@@ -818,7 +821,7 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
   }
   if(!s.run.creation.complete)throw new Error('Сначала создайте героиню.');
   if(command.type==='accept'){
-    if(s.run.status==='ended'||s.run.pending)throw new Error('Завершите текущую сцену.');
+    if(s.run.status==='ended'||s.run.pending||s.run.flow.night)throw new Error('Завершите текущую сцену или ночь.');
     const ending=cat.definitions.endings.find(e=>e.id===command.id);
     if(!ending||!s.run.availableEndings.includes(ending.id)||!eligible(ending.conditions,s,cat))throw new Error('Эта судьба сейчас недоступна.');
     s.run.status='ended';s.run.acceptedEnding=ending.id;
@@ -829,7 +832,7 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
   }
   if(s.run.status!=='active')throw new Error('Эта жизнь завершена.');
   if(command.type==='openOffer'){
-    if(s.run.pending)throw new Error('Сначала завершите текущую сцену.');
+    if(s.run.pending||s.run.flow.night)throw new Error('Сначала завершите текущую сцену или ночь.');
     const q=s.run.flow.reaction.queued.find(x=>x.instanceId===command.id&&x.kind==='optional');
     if(!q||!s.run.dayState.optionalOfferIds.includes(command.id))throw new Error('Предложение недоступно.');
     const e=cat.events.find(x=>x.id===q.eventId);if(!e)throw new Error('Событие предложения отсутствует.');
@@ -839,51 +842,55 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
     logEventScene(s,e,q.variantId);
     return s;
   }
+  if(command.type==='endDay'){
+    beginNightMutable(s,cat);
+    return s;
+  }
+  if(command.type==='chooseLodging'){
+    const lodging=cat.definitions.lodgings.find(x=>x.id===command.id);
+    if(!lodging)throw new Error('Неизвестный вариант ночлега.');
+    chooseLodgingMutable(s,cat,lodging);
+    return s;
+  }
+  if(command.type==='chooseNightChoice'){
+    const nightChoice=cat.definitions.nightChoices.find(x=>x.id===command.id);
+    if(!nightChoice)throw new Error('Неизвестное ночное занятие.');
+    chooseNightChoiceMutable(s,cat,nightChoice);
+    return s;
+  }
   if(command.type==='sleep'){
-    if(s.run.pending)throw new Error('Завершите событие перед сном.');
-    if(!s.run.flags['story.arrived'])throw new Error('Сначала завершите вступление.');
-    if(s.run.day+1>=160){s.run.status='expired';log(s,'Четыре года истекли. Выберите открытую судьбу или начните следующую жизнь.');return s;}
-    const before={...s.run.metrics};let text='';
-    if(command.payment==='money'){
-      if(s.run.metrics.money<rent(s))throw new Error('Не хватает монет на ночлег.');
-      s.run.metrics.money-=rent(s);s.run.housing='room';text='Комната оплачена. Силан пожелал доброй ночи и пересчитал ключи.';
-    }else if(command.payment==='favor'){
-      const stat=favorStat(s);if(s.run.metrics[stat]<1)throw new Error('Не хватает сил для помощи хозяину.');
-      s.run.metrics[stat]--;s.run.housing='room';text='Вы помогли Силану по хозяйству вместо платы за комнату.';
-    }else if(command.payment==='outside'){
-      s.run.housing='shelter';s.run.character.stats.grooming=Math.max(0,s.run.character.stats.grooming-1);
-      text='Ночь под навесом. Сон был коротким: завтра на одно дело меньше.';
-    }else throw new Error('Неизвестный способ ночлега.');
-    s.run.day++;s.run.slot=0;
-    const queued=s.run.dayState.nextDayModifiers;
-    for(const effect of queued.statEffects)setMetric(s,effect.stat,getMetric(s,effect.stat)+effect.delta);
-    s.run.metrics.energy=Math.max(1,energyMax(s)+queued.energyDelta-(command.payment==='outside'?1:0));
-    s.run.dayState.nextDayModifiers={energyDelta:0,statEffects:[],tags:[]};
-    s.run.lastAction={id:'rest',title:'Новое утро',text,media:[command.payment==='outside'?'stage.outside':'stage.room'],deltas:delta(before,s.run.metrics)};
-    for(const q of [...s.run.flow.reaction.queued])if(q.kind==='optional')removeQueuedInstance(s,q.instanceId);
-    log(s,text);register(s,cat);
-    runResolverBoundary(s,input,cat,[],true);
+    if(s.run.flow.night)throw new Error('Ночь уже начата: завершите текущий NightFlow.');
+    beginNightMutable(s,cat);
+    if(s.run.status!=='active'||s.run.pending||!s.run.flow.night)return s;
+    chooseLodgingMutable(s,cat,compatibilityLodging(s,command.payment));
+    if(s.run.pending||!s.run.flow.night)return s;
+    if(s.run.flow.night.phase==='VoluntaryNightChoice')chooseNightChoiceMutable(s,cat,compatibilitySleepChoice);
     return s;
   }
   if(command.type==='choice'){
     const pending=s.run.pending;if(!pending)throw new Error('Нет активной сцены.');
     const e=cat.events.find(e=>e.id===pending.eventId);
-    const choice=e?.choices.find(c=>c.id===command.id);
+    const sceneChoice=e?.choices.find(c=>c.id===command.id);
     if(pending.allowedChoiceIds&&!pending.allowedChoiceIds.includes(command.id))throw new Error('Выбор не входит в сохранённый snapshot сцены.');
-    if(!choice||!eligible(choice.conditions,s,cat))throw new Error('Выбор недоступен.');
-    const beforeMetrics={...s.run.metrics};applyEffectsMutable(s,choice.effects,cat,true);log(s,choice.text);
+    if(!sceneChoice||!eligible(sceneChoice.conditions,s,cat))throw new Error('Выбор недоступен.');
+    const nightPoint=s.run.flow.night?.currentIntercept??null;
+    if(nightPoint&&s.run.flow.night)addUnique(s.run.flow.night.handledEventIds,pending.eventId);
+    const beforeMetrics={...s.run.metrics};applyEffectsMutable(s,sceneChoice.effects,cat,true);log(s,sceneChoice.text);
     if(s.run.lastAction){
-      s.run.lastAction.title=e!.title;s.run.lastAction.text=choice.text;
-      if(choice.media)s.run.lastAction.media=choice.media;
+      s.run.lastAction.title=e!.title;s.run.lastAction.text=sceneChoice.text;
+      if(sceneChoice.media)s.run.lastAction.media=sceneChoice.media;
       for(const [k,v] of Object.entries(delta(beforeMetrics,s.run.metrics)))s.run.lastAction.deltas[k]=(s.run.lastAction.deltas[k]??0)+v;
     }
     s.run.pending=null;register(s,cat);
     if(pending.reactionEpochId)s.run.flow.reaction.currentEpochId=pending.reactionEpochId;
     else startReactionEpochMutable(s);
     runResolverBoundary(s,input,cat,[{kind:'choiceResolved',event:pending.eventId,choice:command.id}],false);
+    if(nightPoint&&s.run.flow.night&&s.run.pending)applyPendingNightPolicy(s,cat,nightPoint);
+    if(s.run.flow.night&&!s.run.pending)resumeNightAfterSceneMutable(s,cat);
     return s;
   }
   if(s.run.pending)throw new Error('Сначала выберите ответ в сцене.');
+  if(s.run.flow.night)throw new Error('Сначала завершите ночь.');
   if(command.id==='rest')throw new Error('Выберите способ ночлега.');
   const a=cat.definitions.actions.find(a=>a.id===command.id);
   if(!a||!eligible(a.conditions,s,cat))throw new Error('Условия действия не выполнены.');
