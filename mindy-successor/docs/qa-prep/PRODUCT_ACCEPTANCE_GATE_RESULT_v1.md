@@ -31,7 +31,7 @@ The gate intentionally distinguishes:
 | PA01 | SHIPPED_PASS | Character creation completion is shipped and covered by the current engine/UI suite. |
 | PA02 | SHIPPED_PASS | First target `lumber.shift` enters the Lumber career context through the shipped Resolver path. |
 | PA03 | SHIPPED_PASS | Target Lumber shift costs one daytime Energy, increments typed `completed_shifts`, and survives reload. |
-| PA04 | NOT_YET_PROVEN | Seasonal Lumber data is shipped and covered in target contract tests, but PR #21 does not yet execute every seasonal variant directly from the shipped catalog as one PA row. |
+| PA04 | SHIPPED_PASS | Spring/summer/autumn/winter Lumber shift variants execute directly from the shipped catalog with deterministic media and one-Energy Work cost. |
 | PA05 | SHIPPED_PASS | First shift opens `lumber.career-first-shift` reactively; pending scene survives reload. |
 | PA06 | SHIPPED_PASS | `continue` -> `lumber.foreman-notice` -> `professional` reaches `route-professional` at zero extra daytime Energy. |
 | PA07 | OPEN_AUTHORING_BLOCKED | Paid School lesson, typed progress, cost/stat package, presentation and reload are shipped; the required School milestone/public result is not authored. |
@@ -49,7 +49,7 @@ The gate intentionally distinguishes:
 | PA19 | ACCELERATOR_EVIDENCE_ONLY | Shipped escape result is distinct and does not grant success truth; full ordered reachability still depends on PA09. |
 | PA20 | ACCELERATOR_EVIDENCE_ONLY | Post-Activity Lumber continuation is shipped and zero-extra-Energy, but full ordered reachability inherits the PA09/PA16/PA17 blockers. |
 | PA21 | ACCELERATOR_EVIDENCE_ONLY | Hard Work + Forest ending simultaneous eligibility is proven from a validated pre-threshold state; full complex-ending route is not yet fully player-authored. |
-| PA22 | NOT_YET_PROVEN | Engine contract allows play while endings are merely eligible, but PR #21 does not yet execute an additional ordinary shipped action from the two-ending eligible state. |
+| PA22 | ACCELERATOR_EVIDENCE_ONLY | From the validated two-ending eligible accelerator state, another shipped `lumber.shift` remains available; the run stays active and no Meta reward is applied before commitment. |
 | PA23 | ACCELERATOR_EVIDENCE_ONLY | Explicit Hard Work commitment is proven after the pre-threshold accelerator. |
 | PA24 | ACCELERATOR_EVIDENCE_ONLY | Central completion produces one RunResult after explicit commitment. |
 | PA25 | ACCELERATOR_EVIDENCE_ONLY | Reload/retry does not duplicate `hardWork:lumber`. |
@@ -112,6 +112,6 @@ The remaining blockers are now concentrated in product authoring/depth rather th
 2. School -> Lumber authored public result;
 3. richer Forest route/challenge/season design;
 4. item-driven Activity action-space behavior;
-5. direct shipped evidence for the few remaining non-blocked rows such as PA04/PA22.
+5. integration of the remaining accepted worker QA/contracts without relabeling authoring gaps as passes.
 
 No unresolved blocker changes the locked Hard Work rule.
