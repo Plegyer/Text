@@ -191,6 +191,7 @@ export function meets(c:Condition,s:Save,cat?:Catalog):boolean {
     case 'stat': return compare(s.run.character.stats[c.stat],c.op,c.value);
     case 'resource': return compare(s.run.resources[c.resource],c.op,c.value);
     case 'itemCount': return compare(s.run.resources.inventory[c.id]??0,c.op,c.count);
+    case 'itemCapability': return hasItemCapability(s,cat,c.capability)===c.present;
     case 'itemCapability': return hasItemCapability(s,c.capability,cat)===c.present;
     case 'calendarYear': return compare(cal().year,c.op,c.value);
     case 'calendarSeason': return cal().season===c.value;
@@ -819,7 +820,9 @@ function enterActivityMutable(s:Save,cat:Catalog,id:string){
       progress:0,
       endurance:definition.adapterConfig.initialEndurance,
       steps:0,
-      lastRoll:null
+      lastRoll:null,
+      routeId:null,
+      resolvedOptionIds:[]
     },
     rngState:s.run.rngState.state,
     checkpoint:'entry',
@@ -827,21 +830,48 @@ function enterActivityMutable(s:Save,cat:Catalog,id:string){
     emittedFacts:[]
   };
 }
-function activityActionMutable(s:Save,cat:Catalog,action:'advance'|'escape'){
+function activityActionMutable(s:Save,cat:Catalog,action:string){
   const envelope=s.run.flow.activity;if(!envelope)throw new Error('Нет активной Activity.');
   if(s.run.pending||s.run.flow.night)throw new Error('Некорректное внешнее состояние Activity.');
   const definition=activityDefinition(cat,envelope.activityId);
-  if(definition.version!==envelope.definitionVersion||definition.adapter!==envelope.adapter)throw new Error('Activity definition несовместима с envelope.');
+  if(definition.version!==envelope.definitionVersion||definition.adapter!==envelope.adapter)throw new Error('Activity definition несовместима с сохранённым envelope.');
   if(envelope.status!=='active')throw new Error('Activity сейчас не принимает действия.');
   if(action==='escape'){finalizeActivityMutable(s,cat,'escape');return;}
   const state=envelope.internalState;
-  state.steps++;
-  state.progress++;
-  state.endurance=Math.max(0,state.endurance-definition.adapterConfig.advanceEnduranceCost);
-  state.lastRoll=activityRandom(envelope);
-  envelope.checkpoint=`counter.step.${state.steps}`;
+  if(action!=='advance'){
+    const option=definition.options.find(candidate=>candidate.id===action);
+    if(!option)throw new Error(`Неизвестное Activity action: ${action}`);
+    if(state.resolvedOptionIds.includes(option.id))throw new Error('Activity option уже использована.');
+    if(!eligible(option.conditions,s,cat))throw new Error('Activity option недоступна.');
+    if(option.setRoute&&state.routeId&&state.routeId!==option.setRoute)throw new Error('Activity route уже выбрана.');
+    state.steps++;
+    if(option.setRoute)state.routeId=option.setRoute;
+    state.progress=Math.min(1_000_000,state.progress+option.progressDelta);
+    state.endurance=Math.max(0,state.endurance-option.enduranceCost);
+    state.lastRoll=activityRandom(envelope);
+    addUnique(state.resolvedOptionIds,option.id);
+    envelope.checkpoint=option.id;
+  }else{
+    state.steps++;
+    state.progress++;
+    state.endurance=Math.max(0,state.endurance-definition.adapterConfig.advanceEnduranceCost);
+    state.lastRoll=activityRandom(envelope);
+    envelope.checkpoint=`counter.step.${state.steps}`;
+  }
   if(state.progress>=definition.adapterConfig.successAtProgress){finalizeActivityMutable(s,cat,'success');return;}
   if(state.endurance<=definition.adapterConfig.failAtEndurance){finalizeActivityMutable(s,cat,'failure');return;}
+}
+
+export function availableActivityActions(s:Save,cat:Catalog):Array<{id:string;label:string}>{
+  const envelope=s.run.flow.activity;if(!envelope||envelope.status!=='active')return [];
+  const definition=activityDefinition(cat,envelope.activityId);
+  const state=envelope.internalState;
+  const custom=definition.options
+    .filter(option=>!state.resolvedOptionIds.includes(option.id))
+    .filter(option=>eligible(option.conditions,s,cat))
+    .filter(option=>!option.setRoute||!state.routeId||state.routeId===option.setRoute)
+    .map(option=>({id:option.id,label:option.label}));
+  return [...custom,{id:'advance',label:'Продолжить'},{id:'escape',label:'Отступить'}];
 }
 
 type NightPoint='before_lodging'|'after_lodging'|'after_choice';
@@ -1015,7 +1045,7 @@ export type Command=
   |{type:'finishCreation'}
   |{type:'openOffer';id:string}
   |{type:'enterActivity';id:string}
-  |{type:'activityAction';id:'advance'|'escape'}
+  |{type:'activityAction';id:string}
   |{type:'endDay'}
   |{type:'chooseLodging';id:string}
   |{type:'chooseNightChoice';id:string}
