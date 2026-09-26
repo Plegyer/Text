@@ -1,0 +1,123 @@
+{
+  "version": 1,
+  "kind": "presentation-fallback-exhaustion-adversarial",
+  "status": "isolated-preflight-and-resolution-cases",
+  "policy": {
+    "invalidGraphRejectedBeforePersistence": true,
+    "gameplayStateMutationAllowed": false,
+    "textFallbackIsSafeTerminal": true
+  },
+  "cases": [
+    {
+      "caseId": "missing-primary-valid-static",
+      "requestedId": "job/lumber/shift/spring/default",
+      "overrides": {
+        "job/lumber/shift/spring/default": {
+          "primaryAvailable": false,
+          "staticAvailable": true,
+          "staticAssetPath": "assets/stage-lumber.svg",
+          "textFallback": true,
+          "fallbackId": "location/town/default"
+        }
+      },
+      "expected": "static-safe"
+    },
+    {
+      "caseId": "missing-primary-static-text-only",
+      "requestedId": "school/arcana/lesson/default",
+      "overrides": {
+        "school/arcana/lesson/default": {
+          "primaryAvailable": false,
+          "staticAvailable": false,
+          "textFallback": true,
+          "fallbackId": null
+        }
+      },
+      "expected": "text-safe"
+    },
+    {
+      "caseId": "missing-optional-slot-entirely",
+      "requestedId": "ending/lumber/forest",
+      "overrides": {},
+      "expected": "base-or-text-safe"
+    },
+    {
+      "caseId": "fallback-target-missing",
+      "requestedId": "job/lumber/event/lumber-career-first-shift/default",
+      "overrides": {
+        "job/lumber/event/lumber-career-first-shift/default": {
+          "primaryAvailable": false,
+          "staticAvailable": false,
+          "textFallback": true,
+          "fallbackId": "job/lumber/missing/default"
+        }
+      },
+      "expected": "reject-preflight"
+    },
+    {
+      "caseId": "deep-fallback-chain",
+      "requestedId": "relationship/lumber-foreman/lumber-night-foreman-professional/default",
+      "overrides": {
+        "relationship/lumber-foreman/lumber-night-foreman-professional/default": {
+          "primaryAvailable": false,
+          "staticAvailable": false,
+          "textFallback": false,
+          "fallbackId": "relationship/lumber-foreman/lumber-foreman-notice/default"
+        },
+        "relationship/lumber-foreman/lumber-foreman-notice/default": {
+          "primaryAvailable": false,
+          "staticAvailable": false,
+          "textFallback": false,
+          "fallbackId": "job/lumber/result/default"
+        },
+        "job/lumber/result/default": {
+          "primaryAvailable": false,
+          "staticAvailable": false,
+          "textFallback": false,
+          "fallbackId": "job/lumber/shift/spring/default"
+        },
+        "job/lumber/shift/spring/default": {
+          "primaryAvailable": false,
+          "staticAvailable": true,
+          "staticAssetPath": "assets/stage-lumber.svg",
+          "textFallback": true,
+          "fallbackId": "location/town/default"
+        }
+      },
+      "expected": "static-safe"
+    },
+    {
+      "caseId": "fallback-cycle",
+      "requestedId": "activity/forest/return/success",
+      "overrides": {
+        "activity/forest/return/success": {
+          "primaryAvailable": false,
+          "staticAvailable": false,
+          "textFallback": false,
+          "fallbackId": "activity/forest/route/default"
+        },
+        "activity/forest/route/default": {
+          "primaryAvailable": false,
+          "staticAvailable": false,
+          "textFallback": false,
+          "fallbackId": "activity/forest/return/success"
+        }
+      },
+      "expected": "reject-preflight"
+    },
+    {
+      "caseId": "unknown-semantic-id",
+      "requestedId": "school/not-a-real-course/lesson/default",
+      "overrides": {
+        "school/not-a-real-course/lesson/default": {
+          "primaryAvailable": false,
+          "staticAvailable": true,
+          "staticAssetPath": "assets/stage-school.svg",
+          "textFallback": true,
+          "fallbackId": "location/town/default"
+        }
+      },
+      "expected": "reject-preflight"
+    }
+  ]
+}
