@@ -1,6 +1,8 @@
 {
   "version": "0.1.0",
-  "flags": [],
+  "flags": [
+    "story.arrived"
+  ],
   "actions": [],
   "endings": [],
   "careers": [],
