@@ -31,7 +31,7 @@ function nightDefinitions(){
         {kind:'relationshipStage',relationship:'lumber.foreman',stage:'route-professional'}
       ],
       effects:[
-        {kind:'incrementRelationshipCounter',relationship:'lumber.foreman',counter:'nightMeetings',amount:1}
+        {kind:'incrementRelationshipCounter',relationship:'lumber.foreman',counter:'night_meetings',amount:1}
       ],
       nextDayEffects:[],
       nextDayEnergyDelta:0
@@ -95,7 +95,7 @@ test('voluntary Foreman Night uses the Night slot, keeps the professional route,
   assert.equal(s.run.pending?.eventId,'lumber-night.foreman-professional');
   assert.equal(s.run.day,0);
   assert.equal(s.run.dayState.energyCurrent,energyBeforeChoice);
-  assert.equal(s.run.progression.relationships['lumber.foreman'].counters.nightMeetings,1);
+  assert.equal(s.run.progression.relationships['lumber.foreman'].counters.night_meetings,1);
   assert.equal(s.run.progression.relationships['lumber.foreman'].stage,'route-professional');
   assert.equal(s.run.progression.relationships['lumber.foreman'].choices.route,'professional');
 
@@ -140,17 +140,17 @@ test('reload of the pending Foreman Night scene cannot duplicate lodging payment
   s=dispatch(s,{type:'chooseLodging',id:'lumber.normal-room'},cat);
   s=dispatch(s,{type:'chooseNightChoice',id:'lumber.foreman.night'},cat);
   assert.equal(s.run.resources.money,moneyBefore-100);
-  assert.equal(s.run.progression.relationships['lumber.foreman'].counters.nightMeetings,1);
+  assert.equal(s.run.progression.relationships['lumber.foreman'].counters.night_meetings,1);
   assert.equal(s.run.pending?.eventId,'lumber-night.foreman-professional');
 
   const restored=parseSave(JSON.stringify(s),cat);
   assert.equal(restored.run.resources.money,moneyBefore-100);
-  assert.equal(restored.run.progression.relationships['lumber.foreman'].counters.nightMeetings,1);
+  assert.equal(restored.run.progression.relationships['lumber.foreman'].counters.night_meetings,1);
   assert.equal(restored.run.pending?.eventId,'lumber-night.foreman-professional');
 
   const finished=dispatch(restored,{type:'choice',id:'continue'},cat);
   assert.equal(finished.run.resources.money,moneyBefore-100);
-  assert.equal(finished.run.progression.relationships['lumber.foreman'].counters.nightMeetings,1);
+  assert.equal(finished.run.progression.relationships['lumber.foreman'].counters.night_meetings,1);
   assert.equal(finished.run.progression.relationships['lumber.foreman'].facts.filter(x=>x==='night-followup-complete').length,1);
   assert.equal(finished.run.progression.relationships['lumber.foreman'].stage,'route-professional');
   assert.equal(finished.run.day,1);
