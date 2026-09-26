@@ -3,6 +3,7 @@ import {applyPresentation,emptyPresentation,resolvePresentation,presentationIdFo
 import {loadCatalog} from '../core/content.ts';
 import {freshSave,dispatch,parseSave,eligible,calendar,actionCost,meets,energyMax,rent,favorStat,type Command} from '../core/engine.ts';
 import {stats,type Save,type Catalog,type Condition,type Action} from '../core/schema.ts';
+import {SCHOOL_COURSES,type SchoolCourse} from '../core/school.ts';
 import {labels,hints} from './labels.ts';
 declare global {interface Window {gameStorage?:{load:()=>Promise<{text:string;recovered:boolean}|null>;save:(text:string)=>Promise<void>}}}
 const app=document.querySelector<HTMLDivElement>('#app')!;
@@ -10,7 +11,7 @@ const esc=(s:unknown)=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;',
 let baseCatalog:Catalog,catalog:Catalog,state:Save,patch:Presentation=emptyPresentation();
 let panel='',screen='town',busy=false,locked=false,message='',error=false,mediaIndex=0;
 let animationsEnabled=localStorage.getItem('portal-life.presentation.animations')!=='off';
-const professions=['tavern','lumber','hunt','guard'];
+const professions=['tavern','lumber.shift','hunt','guard'];
 function explain(c:Condition):string{
  const cmp=(op:'gte'|'lte'|'eq',value:number)=>`${op==='gte'?'≥':op==='lte'?'≤':'='} ${value}`;
  switch(c.kind){
@@ -65,6 +66,26 @@ function actionList(ids:string[]){return `<div class="activity-list">${ids.map(i
  const forecast=a.wage?Math.round(a.wage.base+a.wage.weights.reduce((sum,w)=>sum+state.run.metrics[w.stat]*w.factor,0)):null;
  return `<article class="activity"><div><h3>${esc(a.label)}</h3><p>${esc(a.description)}</p><small>${a.cost.energy} энергии${actionCost(a,state)?` · ${actionCost(a,state)} монет`:''}${forecast!==null?` · доход ≈ ${forecast}`:''}</small><div class="effect-tags">${statsEffects.map(e=>e.kind==='metric'?`<span class="${e.delta>0?'gain':'loss'}">${esc(labels[e.key])} ${e.delta>0?'+':''}${e.delta}</span>`:'').join('')}</div>${miss.length?`<p class="requirement">${esc(miss.map(explain).join(' · '))}</p>`:''}</div>${a.mode==='brew'?`<div><button data-action="${a.id}" data-recipe="gentle" ${disabled(a)?'disabled':''}>Надёжно</button><button data-action="${a.id}" data-recipe="bold" ${disabled(a)?'disabled':''}>Быстро</button></div>`:`<button data-action="${a.id}" ${disabled(a)?'disabled':''}>${professions.includes(a.id)?'Работать':'Выбрать'}</button>`}</article>`;
  }).join('')}</div>`;}
+function schoolCourseDisabled(course:SchoolCourse){
+ return busy||locked||state.run.status!=='active'||!state.run.creation.complete||!state.run.flags['story.arrived']||
+  !!state.run.pending||!!state.run.flow.night||!!state.run.flow.activity||
+  state.run.resources.money<course.tuition||state.run.dayState.energyCurrent<course.energyCost;
+}
+function schoolList(){
+ return `<div class="activity-list">${SCHOOL_COURSES.map(course=>`<article class="activity"><div><h3>${esc(course.label)}</h3><p>${course.statEffects.map(effect=>`${esc(labels[effect.stat]??effect.stat)} +${effect.amount}`).join(' · ')}</p><small>${course.tuition} монет · ${course.energyCost} энергия</small></div><button data-school-course="${course.id}" ${schoolCourseDisabled(course)?'disabled':''}>Учиться</button></article>`).join('')}</div>`;
+}
+function activityEntryDisabled(id:string){
+ const activity=catalog.definitions.activities.find(item=>item.id===id);
+ return !activity||busy||locked||state.run.status!=='active'||!!state.run.pending||!!state.run.flow.night||!!state.run.flow.activity||
+  !eligible(activity.entryConditions,state,catalog)||state.run.dayState.energyCurrent<activity.entryEnergyCost;
+}
+function activityEntryList(ids:string[]){
+ return `<div class="activity-list">${ids.map(id=>catalog.definitions.activities.find(item=>item.id===id)).filter(Boolean).map(activity=>`<article class="activity"><div><h3>${esc(activity!.label)}</h3><p>Отдельная Activity · checkpoint save/reload</p><small>${activity!.entryEnergyCost} энергии на вход</small></div><button data-enter-activity="${activity!.id}" ${activityEntryDisabled(activity!.id)?'disabled':''}>Войти</button></article>`).join('')}</div>`;
+}
+function nightChoiceList(){
+ const choices=catalog.definitions.nightChoices.filter(choice=>eligible(choice.conditions,state,catalog));
+ return `<div class="activity-list">${choices.map(choice=>`<article class="activity"><div><h3>${esc(choice.label)}</h3><small>Ночной слот${choice.nextDayEnergyDelta?` · энергия завтра ${choice.nextDayEnergyDelta>0?'+':''}${choice.nextDayEnergyDelta}`:''}</small></div><button data-night-choice="${choice.id}" ${busy||locked?'disabled':''}>Выбрать</button></article>`).join('')}</div>`;
+}
 function mediaHTML(presentationId:string){
  const resolved=resolvePresentation(catalog,patch,presentationId,{animationsEnabled});
  const m=resolved.candidates[mediaIndex];
@@ -78,16 +99,32 @@ function central(){
  return `<section class="stage scene">${mediaHTML(p.presentationId??presentationIdForEvent(catalog,e.id,v.id))}<div class="stage-title"><span class="eyebrow">Встреча</span><h1>${esc(e.title)}</h1></div></section><section class="dialogue"><p>${esc(v.text)}</p><div class="choices">${e.choices.map(c=>`<button data-choice="${c.id}" ${busy||locked||!eligible(c.conditions,state)?'disabled':''}>${esc(c.label)}</button>`).join('')}</div></section>`;}
  if(r.status!=='active'){return `<section class="stage">${mediaHTML(r.acceptedEnding?presentationIdForEnding(r.acceptedEnding):'location/town/default')}<div class="stage-title"><h1>${r.status==='ended'?'Судьба принята':'Срок истёк'}</h1></div></section><section class="dialogue"><p>${esc(r.journal.at(-1)??'')}</p><button data-panel="legacy">Судьбы и следующая жизнь</button></section>`;}
  if(!r.flags['story.arrived'])return `<section class="stage">${mediaHTML('location/town/default')}<div class="stage-title"><span class="eyebrow">По ту сторону люка</span><h1>Следуйте за сусликом</h1></div></section><section class="dialogue"><p>Обычный день. Белый суслик. Люк, который кто-то забыл закрыть.</p><button data-action="arrival" class="primary" ${locked||busy?'disabled':''}>Пойти за ним</button></section>`;
+ if(r.flow.activity){
+  const activity=r.flow.activity;
+  const definition=catalog.definitions.activities.find(item=>item.id===activity.activityId);
+  const slug=activity.activityId.split('.').at(-1)??'activity';
+  return `<section class="stage scene">${mediaHTML(`activity/${slug}/route/default`)}<div class="stage-title"><span class="eyebrow">Activity</span><h1>${esc(definition?.label??activity.activityId)}</h1></div></section><section class="dialogue"><p>Прогресс: ${activity.internalState.progress} · Выносливость: ${activity.internalState.endurance} · checkpoint: ${esc(activity.checkpoint)}</p><div class="choices"><button data-activity-action="advance" class="primary" ${busy||locked?'disabled':''}>Продолжить</button><button data-activity-action="escape" ${busy||locked?'disabled':''}>Отступить</button></div></section>`;
+ }
+ if(r.flow.night){
+  const night=r.flow.night;
+  if(night.phase==='LodgingResolution'){
+   return `<section class="stage scene">${mediaHTML('night/lodging/default')}<div class="stage-title"><span class="eyebrow">Night</span><h1>Ночлег</h1></div></section><section class="dialogue"><p>Выберите место на эту ночь. Оплата фиксируется ровно один раз.</p><div class="sleep-options">${catalog.definitions.lodgings.map(lodging=>`<button data-lodging="${lodging.id}" ${busy||locked||!eligible(lodging.conditions,state,catalog)||state.run.resources.money<lodging.moneyCost?'disabled':''}><strong>${esc(lodging.label)}</strong><span>${lodging.moneyCost} монет${lodging.nextDayEnergyDelta?` · энергия завтра ${lodging.nextDayEnergyDelta>0?'+':''}${lodging.nextDayEnergyDelta}`:''}</span></button>`).join('')}</div></section>`;
+  }
+  if(night.phase==='VoluntaryNightChoice'){
+   return `<section class="stage scene">${mediaHTML('night/choice/default')}<div class="stage-title"><span class="eyebrow">Night</span><h1>Вечер</h1></div></section><section class="dialogue"><p>Один добровольный Night choice. Daytime Energy не расходуется.</p>${nightChoiceList()}</section>`;
+  }
+  return `<section class="stage scene">${mediaHTML('night/default')}<div class="stage-title"><span class="eyebrow">Night</span><h1>Ночная последовательность</h1></div></section><section class="dialogue"><p>${esc(night.phase)}</p></section>`;
+ }
  if(screen==='scene'&&r.lastAction){const last=r.lastAction,a=catalog.definitions.actions.find(a=>a.id===last.id)!;
- return `<section class="stage">${mediaHTML(presentationIdForActionResult(catalog,last.id,last.media))}<div class="stage-title"><span class="eyebrow">${professions.includes(a.id)?`Смена ${r.actionCounts[a.id]??0}`:'Результат'}</span><h1>${esc(last.title)}</h1></div><div class="result-deltas">${Object.entries(last.deltas).filter(([k])=>!['work','trust','health'].includes(k)).map(([k,v])=>`<span class="${v>0?'gain':'loss'}">${esc(labels[k]??k)} ${v>0?'+':''}${v}</span>`).join('')}</div></section><section class="dialogue"><p>${esc(last.text)}</p><div class="choices">${professions.includes(a.id)?`<button data-action="${a.id}" class="primary" ${disabled(a)?'disabled':''}>Работать ещё · 1 энергия</button>`:''}<button id="to-town">Вернуться в город</button>${r.metrics.energy===0?'<button data-panel="sleep" class="primary">Выбрать ночлег</button>':''}</div></section>`;
+ return `<section class="stage">${mediaHTML(last.presentationId??presentationIdForActionResult(catalog,last.id,last.media))}<div class="stage-title"><span class="eyebrow">${professions.includes(a.id)?`Смена ${r.actionCounts[a.id]??0}`:'Результат'}</span><h1>${esc(last.title)}</h1></div><div class="result-deltas">${Object.entries(last.deltas).filter(([k])=>!['work','trust','health'].includes(k)).map(([k,v])=>`<span class="${v>0?'gain':'loss'}">${esc(labels[k]??k)} ${v>0?'+':''}${v}</span>`).join('')}</div></section><section class="dialogue"><p>${esc(last.text)}</p><div class="choices">${professions.includes(a.id)?`<button data-action="${a.id}" class="primary" ${disabled(a)?'disabled':''}>Работать ещё · 1 энергия</button>`:''}<button id="to-town">Вернуться в город</button>${r.metrics.energy===0?'<button data-panel="sleep" class="primary">Выбрать ночлег</button>':''}</div></section>`;
  }
  return `<section class="stage town-stage">${mediaHTML('location/town/default')}<div class="stage-title"><span class="eyebrow">По ту сторону люка</span><h1>Листоград</h1><p>${r.metrics.energy?'Город полон чужих планов. Какими будут ваши?':'На сегодня сил больше нет. Пора выбрать ночлег.'}</p></div><div class="town-actions"><button data-panel="work"><b>Работа</b><span>Смены и знакомства</span></button><button data-panel="school"><b>Школа</b><span>Занятия и практика</span></button><button data-panel="explore"><b>Окрестности</b><span>Поручения и находки</span></button><button data-panel="sleep"><b>Ночлег</b><span>Комната или навес</span></button></div></section><section class="town-note"><span>${esc(labels[r.housing])}</span><span>Ночлег сегодня: ${rent(state)} монет</span></section>`;
 }
 function panelContent(){
  if(panel==='work')return `<h2>Куда устроимся?</h2>${actionList(professions)}`;
- if(panel==='school')return `<h2>Школа</h2>${actionList(['combat-class','etiquette-class','magic-class','salon-lesson','school'])}<details><summary>Учебная мастерская</summary>${actionList(['work','brew','scales','exam','deliver','sell'])}</details>`;
- if(panel==='explore')return `<h2>Окрестности и поручения</h2>${actionList(['forest-search','tavern-talk','forage','landlord','visit','oddjob'])}`;
- if(panel==='sleep')return `<h2>Где провести ночь?</h2><p>После сна наступит следующий день. Неиспользованная энергия не переносится.</p><div class="sleep-options"><button data-sleep="money" ${busy||locked||!!state.run.pending||state.run.metrics.money<rent(state)?'disabled':''}><strong>Комната Силана</strong><span>${rent(state)} монет · завтра ${energyMax(state)} энергии</span></button><button data-sleep="favor" ${busy||locked||!!state.run.pending||state.run.metrics[favorStat(state)]<1?'disabled':''}><strong>Помочь хозяину</strong><span>−1 ${labels[favorStat(state)]} · завтра ${energyMax(state)} энергии</span></button><button data-sleep="outside" ${busy||locked||!!state.run.pending?'disabled':''}><strong>Под навесом</strong><span>Бесплатно · завтра ${energyMax(state)-1} энергии · Ухоженность −1</span></button></div>`;
+ if(panel==='school')return `<h2>Школа</h2><p>Восемь оплачиваемых курсов. Урок списывает tuition + 1 Energy атомарно.</p>${schoolList()}`;
+ if(panel==='explore')return `<h2>Окрестности и поручения</h2>${activityEntryList(['lumber.forest'])}<details><summary>Обычные поручения</summary>${actionList(['forest-search','tavern-talk','forage','landlord','visit','oddjob'])}</details>`;
+ if(panel==='sleep')return `<h2>Ночь</h2><p>NightFlow отдельно фиксирует lodging, voluntary choice и следующий день.</p><button data-end-day class="primary" ${busy||locked||!!state.run.pending||!!state.run.flow.night||!!state.run.flow.activity?'disabled':''}>Начать NightFlow</button>`;
  if(panel==='stats')return `<h2>Героиня</h2><div class="character-stats">${stats.map(k=>`<article><div><strong>${labels[k]}</strong><b>${state.run.metrics[k]}</b></div><progress value="${state.run.metrics[k]}" max="100"></progress><p>${hints[k]}</p></article>`).join('')}</div><h3>Профессии</h3><p>${professions.map(id=>`${esc(catalog.definitions.actions.find(a=>a.id===id)!.label)}: ${state.run.actionCounts[id]??0}`).join(' · ')}</p>`;
  if(panel==='journal')return `<h2>Дневник</h2>${[...state.run.journal].reverse().map(t=>`<p class="journal-entry">${esc(t)}</p>`).join('')}`;
  if(panel==='bag')return `<h2>Сумка и дела</h2>${Object.entries(state.run.inventory).map(([k,v])=>`<p>${labels[k]}: ${v}</p>`).join('')}<p>Долг: ${state.run.metrics.debt}</p>${actionList(['repay','rent-room'])}`;
@@ -101,9 +138,14 @@ function render(){
  app.innerHTML=`<div class="game-shell"><header class="hud"><button class="wordmark" id="home">По ту сторону люка</button><div class="date"><strong>${labels[d.season]} · День ${d.date}</strong><span>Год ${d.year} из ${state.run.limitDays/40}</span></div><div class="energy" aria-label="Энергия"><strong>Энергия ${state.run.metrics.energy}/${energyMax(state)}</strong><span>${Array.from({length:energyMax(state)},(_,i)=>`<i class="${i<state.run.metrics.energy?'filled':''}"></i>`).join('')}</span></div><div class="coins"><strong>${state.run.metrics.money}</strong><span>монет</span></div><button data-panel="menu" aria-label="Меню">☰</button></header><main class="play-area">${central()}</main><footer class="dock">${[['work','Работа'],['school','Школа'],['explore','Окрестности'],['sleep','Ночлег'],['stats','Героиня'],['journal','Дневник'],['bag','Сумка'],['legacy','Судьбы']].map(([id,label])=>`<button data-panel="${id}" ${!state.run.creation.complete||!state.run.flags['story.arrived']||state.run.status!=='active'&&!['stats','journal','bag','legacy'].includes(id)?'disabled':''}>${label}</button>`).join('')}</footer>${panel?`<div class="overlay"><section class="panel" role="dialog" aria-modal="true" aria-label="${esc(panel)}"><button class="close" id="close" aria-label="Закрыть">×</button>${panelContent()}</section></div>`:''}${message?`<div class="toast ${error?'error':''}" role="status">${esc(message)}<button id="dismiss" aria-label="Закрыть уведомление">×</button></div>`:''}</div>`;
  app.querySelectorAll<HTMLButtonElement>('[data-panel]').forEach(b=>b.onclick=()=>{panel=b.dataset.panel!;render();app.querySelector<HTMLButtonElement>('#close')?.focus();});
  app.querySelectorAll<HTMLButtonElement>('[data-action]').forEach(b=>b.onclick=()=>void perform({type:'action',id:b.dataset.action!,recipe:b.dataset.recipe as 'gentle'|'bold'|undefined}));
+ app.querySelectorAll<HTMLButtonElement>('[data-school-course]').forEach(b=>b.onclick=()=>void perform({type:'schoolLesson',id:b.dataset.schoolCourse as Parameters<typeof perform>[0] extends {type:'schoolLesson';id:infer I}?I:never}));
+ app.querySelectorAll<HTMLButtonElement>('[data-end-day]').forEach(b=>b.onclick=()=>void perform({type:'endDay'}));
+ app.querySelectorAll<HTMLButtonElement>('[data-lodging]').forEach(b=>b.onclick=()=>void perform({type:'chooseLodging',id:b.dataset.lodging!}));
+ app.querySelectorAll<HTMLButtonElement>('[data-night-choice]').forEach(b=>b.onclick=()=>void perform({type:'chooseNightChoice',id:b.dataset.nightChoice!}));
+ app.querySelectorAll<HTMLButtonElement>('[data-enter-activity]').forEach(b=>b.onclick=()=>void perform({type:'enterActivity',id:b.dataset.enterActivity!}));
+ app.querySelectorAll<HTMLButtonElement>('[data-activity-action]').forEach(b=>b.onclick=()=>void perform({type:'activityAction',id:b.dataset.activityAction as 'advance'|'escape'}));
  app.querySelectorAll<HTMLButtonElement>('[data-choice]').forEach(b=>b.onclick=()=>void perform({type:'choice',id:b.dataset.choice!}));
  app.querySelectorAll<HTMLButtonElement>('[data-stat]').forEach(b=>b.onclick=()=>void perform({type:'allocate',stat:b.dataset.stat as typeof stats[number],delta:Number(b.dataset.delta) as 1|-1}));
- app.querySelectorAll<HTMLButtonElement>('[data-sleep]').forEach(b=>b.onclick=()=>void perform({type:'sleep',payment:b.dataset.sleep as 'money'|'favor'|'outside'}));
  app.querySelectorAll<HTMLButtonElement>('[data-ending]').forEach(b=>b.onclick=()=>{if(confirm('Принять судьбу и завершить эту жизнь?'))void perform({type:'accept',id:b.dataset.ending!});});
  const on=(id:string,fn:()=>void)=>{const b=app.querySelector<HTMLButtonElement>('#'+id);if(b)b.onclick=fn;};
  on('home',()=>{panel='';screen='town';mediaIndex=0;render();});on('to-town',()=>{screen='town';mediaIndex=0;render();});on('close',()=>{panel='';render();});on('dismiss',()=>{message='';render();});
