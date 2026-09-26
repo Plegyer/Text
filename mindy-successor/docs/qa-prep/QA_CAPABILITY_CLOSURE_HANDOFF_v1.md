@@ -21,9 +21,7 @@ Important sequence:
    - adds explicit regression:
      `pre-option schema4 active Activity save preserves immediate legacy advance/escape behavior`.
 
-At the instant this handoff is written, the latest `424407ec...` workflow is still running.
-
-Therefore the previous green 200/200 is evidence for the earlier capability implementation, but **final merge approval still requires a green run on the latest head/merge-ref**.
+The latest `424407ec...` workflow has now completed successfully: validation/build PASS and **200/200 tests PASS**. This is the authoritative capability-closure CI evidence for the reviewed head.
 
 ---
 
@@ -436,12 +434,12 @@ Its CI run:
 
 `Product Acceptance Closure Check #14`
 
-was **in progress** at the instant this manifest was prepared.
+completed successfully with **200/200 tests PASS**.
 
-Therefore final technical merge disposition remains:
+Therefore final technical closure disposition on this exact head is:
 
-**WAIT FOR LATEST-HEAD CI RESULT.**
+**GENERIC CAPABILITY / ACTIVITY-OPTION CLOSURE TECHNICALLY GREEN.**
 
-A prior 200/200 run is not sufficient for a newer head, even though it is strong evidence for the generic capability layer.
+The remaining waits are product authoring and integration of the Chat 4 generic QA contracts, not a known closure-runtime failure.
 
 No production runtime/UI/content file was modified by Chat 4.
