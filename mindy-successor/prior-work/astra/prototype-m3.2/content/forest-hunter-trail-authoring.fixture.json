@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "id": "forest.hunter-trail-authoring.fixture",
+  "status": "AUTHORING_PACKET",
+  "route": {
+    "authoringKey": "hunter-trail",
+    "productionOptionId": null,
+    "productionOptionIdStatus": "OPEN",
+    "stableRouteState": "hunter-trail",
+    "category": "route"
+  },
+  "gate": {
+    "kind": "any",
+    "acceptedBoundaryTypes": [
+      {
+        "kind": "hunterPublicFact",
+        "factId": null,
+        "status": "OPEN"
+      },
+      {
+        "kind": "navigationCapability",
+        "capabilityId": null,
+        "status": "OPEN"
+      }
+    ],
+    "hunterSceneSource": null,
+    "threshold": null
+  },
+  "challengeIntegration": {
+    "requiredFamily": "navigation",
+    "allowedDependencyCategories": [
+      "wits",
+      "reason",
+      "hunter/public knowledge fact",
+      "navigation capability"
+    ],
+    "exactCheck": null,
+    "actionSpaceMustChange": true,
+    "numericOnlyAllowed": false
+  },
+  "persistence": {
+    "checkpoints": [
+      "before gate ownership",
+      "after gate ownership",
+      "after hunter-trail route selection",
+      "before navigation challenge",
+      "after challenge resolution"
+    ],
+    "routeSelectionSurvivesReload": true,
+    "resolvedChallengeSurvivesReload": true,
+    "rerollOnReloadAllowed": false
+  },
+  "results": {
+    "terminalResultIds": [
+      "lumber.forest.success",
+      "lumber.forest.escape",
+      "lumber.forest.failure"
+    ],
+    "additionalTerminalOutcomeAllowed": false,
+    "exactRouteReward": "OPEN"
+  },
+  "season": {
+    "authoritativeAutumnDifference": "animal migration enriches Hunter trail",
+    "additionalSeasonBindings": "OPEN"
+  },
+  "openFields": [
+    "final clue item identity",
+    "Hunter public fact ID",
+    "navigation capability ID",
+    "Hunter scene source",
+    "thresholds",
+    "NPC identity",
+    "lore reward",
+    "loot",
+    "consume policy",
+    "final runtime option ID"
+  ],
+  "hardWorkIsolation": {
+    "hunterTrailPrerequisiteAllowed": false,
+    "onlyCondition": {
+      "kind": "careerCounter",
+      "career": "lumber",
+      "counter": "completed_shifts",
+      "op": "gte",
+      "value": 50
+    },
+    "rewardId": "hardWork:lumber"
+  }
+}
