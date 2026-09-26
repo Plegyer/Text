@@ -664,3 +664,100 @@ Produce a final gate checklist for the presentation layer:
 Mark each gate PASS / OPEN_ASSET / OPEN_AUTHORING / NEEDS_LIVE_EVIDENCE.
 
 Continue items 31–36 sequentially without waiting for Lead review.
+
+
+## Queue item 37 — PR24 one-Save smoke presentation audit
+
+Create NEW files only:
+- `docs/presentation-prep/PRESENTATION_PR24_ONE_SAVE_AUDIT_v1.md`
+- `prior-work/astra/prototype-m3.2/tests/presentation-pr24-one-save-audit.test.ts`
+
+Review the current Lead one-Save shipped E2E path:
+Lumber -> Foreman -> School -> Night -> Forest logging-road -> Lumber return -> Hard Work -> New Run.
+
+For every visible boundary record:
+- semantic presentationId;
+- current fallback behavior;
+- whether pending scene / action result / Activity / ending owns presentation state;
+- save/reload persistence;
+- animation-off expectation.
+
+Do not count the 49-shift threshold accelerator as presentation authoring.
+
+## Queue item 38 — route/challenge semantic naming collision audit
+
+Create NEW files only:
+- `prior-work/astra/prototype-m3.2/content/presentation-route-challenge-collision.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/presentation-route-challenge-collision.test.ts`
+
+Audit proposed Forest route/challenge semantic families for:
+- duplicate slugs;
+- route vs challenge name collision;
+- dotted vs slash drift;
+- season suffix ambiguity;
+- legacy Activity result IDs colliding with new route IDs.
+
+Define deterministic reject/normalize rules without changing runtime.
+
+## Queue item 39 — presentation asset backlog priority matrix
+
+Create:
+- `docs/presentation-prep/PRESENTATION_ASSET_BACKLOG_PRIORITY_v1.md`
+- `prior-work/astra/prototype-m3.2/content/presentation-asset-backlog-priority.fixture.json`
+
+Rank only by product dependency class, not aesthetics:
+- REQUIRED_FOR_RC_SAFE_FALLBACK;
+- NICE_TO_HAVE_GIF;
+- BLOCKED_BY_AUTHORING;
+- ALREADY_COVERED_STATIC;
+- TEXT_FALLBACK_ACCEPTABLE.
+
+Include Lumber/School/Night/Forest/endings.
+
+## Queue item 40 — release-candidate semantic coverage checksum
+
+Create NEW files only:
+- `prior-work/astra/prototype-m3.2/content/presentation-semantic-coverage-checksum.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/presentation-semantic-coverage-checksum.test.ts`
+
+Build a deterministic checksum-like manifest over all current production semantic presentation IDs relevant to the RC slice.
+
+Verify:
+- stable sort;
+- no duplicates;
+- no gameplay IDs silently renamed;
+- same manifest after fixture enumeration order changes;
+- future GIF filenames never affect semantic identity.
+
+## Queue item 41 — presentation override rollback contract
+
+Create NEW files only:
+- `docs/presentation-prep/PRESENTATION_OVERRIDE_ROLLBACK_CONTRACT_v1.md`
+- `prior-work/astra/prototype-m3.2/tests/presentation-override-rollback.test.ts`
+
+Define safe rollback behavior:
+- bad override can be removed;
+- original shipped fallback becomes active again;
+- no save/gameplay state mutation;
+- no orphan override remains active;
+- import/export remains deterministic.
+
+No editor/runtime implementation.
+
+## Queue item 42 — final presentation RC evidence pack
+
+Create:
+- `docs/presentation-prep/PRESENTATION_RC_EVIDENCE_PACK_v1.md`
+- `prior-work/astra/prototype-m3.2/content/presentation-rc-evidence-pack.fixture.json`
+
+Produce the minimal final evidence pack for Lead:
+- exact tests worth integrating;
+- exact docs worth indexing;
+- asset backlog;
+- authoring-blocked slots;
+- superseded artifacts;
+- post-release-only work.
+
+Keep it minimal and non-redundant.
+
+Continue items 37–42 sequentially without waiting for Lead review.
