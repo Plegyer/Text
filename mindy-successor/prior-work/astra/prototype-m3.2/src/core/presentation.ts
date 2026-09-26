@@ -122,12 +122,7 @@ export function presentationIdForActionResult(cat:Catalog,actionId:string,mediaI
     ??scenes.find(s=>s.id==='default')
     ??scenes[0];
   const jobId=jobIdForAction(actionId);
-  if(jobId){
-    const sceneId=scene?.id??'default';
-    const parts=pathParts(sceneId);
-    const resultId=(['spring','summer','autumn','winter'].includes(parts[0]??'')||parts.length===0)?'default':clean(parts.at(-1)??'default');
-    return `job/${jobId}/result/${resultId}`;
-  }
+  if(jobId)return `job/${jobId}/result/${semanticPath(scene?.id??'default')||'default'}`;
   return actionPresentationId(actionId,scene?.id??'default');
 }
 
@@ -192,9 +187,9 @@ export function presentationSlots(cat:Catalog):PresentationSlot[]{
         baseMediaIds:scene.media,
         fallbackId:'location/town/default'
       });
-      if(jobIds.has(action.id)){
+      if(jobIdForAction(action.id)){
         add({
-          id:`job/${clean(action.id)}/result/${clean(scene.id)}`,
+          id:presentationIdForActionResult(cat,action.id,scene.media),
           label:`${action.label} · результат · ${scene.id}`,
           baseMediaIds:scene.media,
           fallbackId:actionPresentationId(action.id,scene.id)
