@@ -1,0 +1,161 @@
+{
+  "formatVersion": 1,
+  "id": "school.typed-state-compat.fixture.v1",
+  "courseTrackMap": [
+    {
+      "courseId": "school.course.literacy_and_numbers",
+      "trackId": "school.track.literacy_and_numbers"
+    },
+    {
+      "courseId": "school.course.arcana",
+      "trackId": "school.track.arcana"
+    },
+    {
+      "courseId": "school.course.rhetoric_and_social",
+      "trackId": "school.track.rhetoric_and_social"
+    },
+    {
+      "courseId": "school.course.etiquette_and_presentation",
+      "trackId": "school.track.etiquette_and_presentation"
+    },
+    {
+      "courseId": "school.course.field_craft",
+      "trackId": "school.track.field_craft"
+    },
+    {
+      "courseId": "school.course.physical_training",
+      "trackId": "school.track.physical_training"
+    },
+    {
+      "courseId": "school.course.arts_and_performance",
+      "trackId": "school.track.arts_and_performance"
+    },
+    {
+      "courseId": "school.course.body_confidence",
+      "trackId": "school.track.body_confidence"
+    }
+  ],
+  "defaultSchoolProgression": {
+    "tracks": {
+      "school.track.literacy_and_numbers": {
+        "trackId": "school.track.literacy_and_numbers",
+        "counters": {
+          "lessons_completed": 0,
+          "night_study_sessions": 0,
+          "projects_completed": 0,
+          "exam_attempts": 0
+        },
+        "facts": [],
+        "milestones": [],
+        "certificates": [],
+        "choices": {}
+      },
+      "school.track.arcana": {
+        "trackId": "school.track.arcana",
+        "counters": {
+          "lessons_completed": 0,
+          "night_study_sessions": 0,
+          "projects_completed": 0,
+          "exam_attempts": 0
+        },
+        "facts": [],
+        "milestones": [],
+        "certificates": [],
+        "choices": {}
+      },
+      "school.track.rhetoric_and_social": {
+        "trackId": "school.track.rhetoric_and_social",
+        "counters": {
+          "lessons_completed": 0,
+          "night_study_sessions": 0,
+          "projects_completed": 0,
+          "exam_attempts": 0
+        },
+        "facts": [],
+        "milestones": [],
+        "certificates": [],
+        "choices": {}
+      },
+      "school.track.etiquette_and_presentation": {
+        "trackId": "school.track.etiquette_and_presentation",
+        "counters": {
+          "lessons_completed": 0,
+          "night_study_sessions": 0,
+          "projects_completed": 0,
+          "exam_attempts": 0
+        },
+        "facts": [],
+        "milestones": [],
+        "certificates": [],
+        "choices": {}
+      },
+      "school.track.field_craft": {
+        "trackId": "school.track.field_craft",
+        "counters": {
+          "lessons_completed": 0,
+          "night_study_sessions": 0,
+          "projects_completed": 0,
+          "exam_attempts": 0
+        },
+        "facts": [],
+        "milestones": [],
+        "certificates": [],
+        "choices": {}
+      },
+      "school.track.physical_training": {
+        "trackId": "school.track.physical_training",
+        "counters": {
+          "lessons_completed": 0,
+          "night_study_sessions": 0,
+          "projects_completed": 0,
+          "exam_attempts": 0
+        },
+        "facts": [],
+        "milestones": [],
+        "certificates": [],
+        "choices": {}
+      },
+      "school.track.arts_and_performance": {
+        "trackId": "school.track.arts_and_performance",
+        "counters": {
+          "lessons_completed": 0,
+          "night_study_sessions": 0,
+          "projects_completed": 0,
+          "exam_attempts": 0
+        },
+        "facts": [],
+        "milestones": [],
+        "certificates": [],
+        "choices": {}
+      },
+      "school.track.body_confidence": {
+        "trackId": "school.track.body_confidence",
+        "counters": {
+          "lessons_completed": 0,
+          "night_study_sessions": 0,
+          "projects_completed": 0,
+          "exam_attempts": 0
+        },
+        "facts": [],
+        "milestones": [],
+        "certificates": [],
+        "choices": {}
+      }
+    }
+  },
+  "compatibility": {
+    "missingSchoolProgression": "default-with-empty-school-state",
+    "preserveOtherProgressionDomains": [
+      "careers",
+      "quests",
+      "relationships",
+      "worldFacts"
+    ],
+    "authoringOpen": [
+      "milestone thresholds",
+      "certificate thresholds",
+      "certificate names",
+      "certificate effects"
+    ]
+  }
+}
