@@ -1,0 +1,125 @@
+{
+  "formatVersion": 1,
+  "id": "school.public-fact-preflight.fixture.v1",
+  "authoringSlots": [
+    {
+      "slot": "management-accounting",
+      "finalPublicFactId": null,
+      "privateTrigger": null,
+      "status": "OPEN"
+    },
+    {
+      "slot": "arcana-forest",
+      "finalPublicFactId": null,
+      "privateTrigger": null,
+      "status": "OPEN"
+    }
+  ],
+  "validExample": {
+    "id": "fixture-valid",
+    "owner": "school",
+    "privateTriggerOwner": "school",
+    "declaredPublicFactIds": [
+      "school.fixture.public.approved"
+    ],
+    "publishPublicFactId": "school.fixture.public.approved",
+    "boundary": "worldFacts",
+    "exactlyOnce": true,
+    "replayProofRequired": true,
+    "directLumberPrivateMutation": false,
+    "lumberReadsSchoolPrivateCounter": false,
+    "fixtureOnly": true
+  },
+  "invalidExamples": [
+    {
+      "id": "wrong-owner",
+      "owner": "lumber",
+      "privateTriggerOwner": "school",
+      "declaredPublicFactIds": [
+        "school.fixture.public.approved"
+      ],
+      "publishPublicFactId": "school.fixture.public.approved",
+      "boundary": "worldFacts",
+      "exactlyOnce": true,
+      "replayProofRequired": true,
+      "directLumberPrivateMutation": false,
+      "lumberReadsSchoolPrivateCounter": false,
+      "rejectReason": "School must own the private trigger/progression"
+    },
+    {
+      "id": "undeclared-public-fact",
+      "owner": "school",
+      "privateTriggerOwner": "school",
+      "declaredPublicFactIds": [
+        "school.fixture.public.approved"
+      ],
+      "publishPublicFactId": "school.fixture.public.undeclared",
+      "boundary": "worldFacts",
+      "exactlyOnce": true,
+      "replayProofRequired": true,
+      "directLumberPrivateMutation": false,
+      "lumberReadsSchoolPrivateCounter": false,
+      "rejectReason": "published public fact ID must be explicitly declared"
+    },
+    {
+      "id": "wrong-boundary",
+      "owner": "school",
+      "privateTriggerOwner": "school",
+      "declaredPublicFactIds": [
+        "school.fixture.public.approved"
+      ],
+      "publishPublicFactId": "school.fixture.public.approved",
+      "boundary": "direct-lumber-state",
+      "exactlyOnce": true,
+      "replayProofRequired": true,
+      "directLumberPrivateMutation": true,
+      "lumberReadsSchoolPrivateCounter": false,
+      "rejectReason": "publication must cross worldFacts/domain-public boundary"
+    },
+    {
+      "id": "not-exactly-once",
+      "owner": "school",
+      "privateTriggerOwner": "school",
+      "declaredPublicFactIds": [
+        "school.fixture.public.approved"
+      ],
+      "publishPublicFactId": "school.fixture.public.approved",
+      "boundary": "worldFacts",
+      "exactlyOnce": false,
+      "replayProofRequired": false,
+      "directLumberPrivateMutation": false,
+      "lumberReadsSchoolPrivateCounter": false,
+      "rejectReason": "publication must be exactly-once across reload"
+    },
+    {
+      "id": "lumber-reads-private-school-counter",
+      "owner": "school",
+      "privateTriggerOwner": "school",
+      "declaredPublicFactIds": [
+        "school.fixture.public.approved"
+      ],
+      "publishPublicFactId": "school.fixture.public.approved",
+      "boundary": "worldFacts",
+      "exactlyOnce": true,
+      "replayProofRequired": true,
+      "directLumberPrivateMutation": false,
+      "lumberReadsSchoolPrivateCounter": true,
+      "rejectReason": "Lumber may not read private School counters directly"
+    },
+    {
+      "id": "school-mutates-lumber-private-state",
+      "owner": "school",
+      "privateTriggerOwner": "school",
+      "declaredPublicFactIds": [
+        "school.fixture.public.approved"
+      ],
+      "publishPublicFactId": "school.fixture.public.approved",
+      "boundary": "worldFacts",
+      "exactlyOnce": true,
+      "replayProofRequired": true,
+      "directLumberPrivateMutation": true,
+      "lumberReadsSchoolPrivateCounter": false,
+      "rejectReason": "School may not directly mutate Lumber private state"
+    }
+  ]
+}
