@@ -270,3 +270,27 @@ test('resolver delivery validation rejects malformed optional/scheduled definiti
   const badScheduled=event('bad-scheduled',{delivery:{policy:'scheduled'}});
   assert.throws(()=>catalog([badScheduled]),/expiresAfterDays/);
 });
+
+
+test('older latched eligibility wins before newer equal-priority candidate',()=>{
+  const high=event('hold',{priorityClass:'forced',reactionTriggers:[{kind:'actionCompleted',action:'probe'}]});
+  const oldEvent=event('z-old',{
+    reactionTriggers:[{kind:'actionCompleted',action:'probe'}],
+    priorityClass:'normal_progression',priority:5,delivery:{policy:'latched'}
+  });
+  const newEvent=event('a-new',{
+    reactionTriggers:[{kind:'actionCompleted',action:'work'}],
+    priorityClass:'normal_progression',priority:5,delivery:{policy:'latched'}
+  });
+  const cat=catalog([newEvent,oldEvent,high]);
+  let s=dispatch(start(),{type:'action',id:'probe'},cat);
+  assert.equal(s.run.pending?.eventId,'resolver.hold');
+  assert.ok(s.run.flow.reaction.queued.some(q=>q.eventId==='resolver.z-old'&&q.createdDay===0));
+
+  s=parseSave(JSON.stringify(s),cat);
+  s.run.pending=null;
+  s.run.day=1;
+  const out=resolveReactions(s,[{kind:'actionCompleted',action:'work'}],cat);
+  assert.equal(out.state.run.pending?.eventId,'resolver.z-old');
+  assert.ok(out.state.run.flow.reaction.queued.some(q=>q.eventId==='resolver.a-new'));
+});
