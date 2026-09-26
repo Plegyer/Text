@@ -151,6 +151,10 @@ export const SCHOOL_COURSES:readonly SchoolCourse[]=[
 
 const COURSE_BY_ID=new Map<SchoolCourseId,SchoolCourse>(SCHOOL_COURSES.map(course=>[course.id,course]));
 
+export function isSchoolCourseId(value:string):value is SchoolCourseId {
+  return (SCHOOL_COURSE_IDS as readonly string[]).includes(value);
+}
+
 export function getSchoolCourse(id:SchoolCourseId):SchoolCourse {
   const course=COURSE_BY_ID.get(id);
   if(!course)throw new Error(`Unknown School course: ${id}`);
@@ -237,4 +241,11 @@ export function schoolNightStudyChoice(courseId:SchoolCourseId,stat:Stat):NightC
     nextDayEffects:[],
     nextDayEnergyDelta:SCHOOL_NIGHT_STUDY_NEXT_DAY_ENERGY_DELTA
   };
+}
+
+
+export function schoolNightStudyChoices():NightChoiceDefinition[] {
+  return SCHOOL_COURSES.flatMap(course=>
+    course.statEffects.map(effect=>schoolNightStudyChoice(course.id,effect.stat))
+  );
 }
