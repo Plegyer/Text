@@ -1,0 +1,339 @@
+{
+  "schemaVersion": 1,
+  "id": "lumber.pa-scenario.fixture",
+  "orderedSteps": [
+    {
+      "order": 1,
+      "id": "lumber-shift",
+      "title": "Lumber shift",
+      "commandApi": {
+        "kind": "dispatch",
+        "command": {
+          "type": "action",
+          "id": "lumber.shift"
+        }
+      },
+      "contentIds": {
+        "actionId": "lumber.shift",
+        "careerId": "lumber",
+        "counterId": "completed_shifts"
+      },
+      "energy": {
+        "daytime": 1,
+        "owner": "action:lumber.shift"
+      },
+      "saveReloadCheckpoint": "after action result and before/with pending reactive milestone",
+      "expectedReactionFact": {
+        "kind": "careerCounterChanged",
+        "career": "lumber",
+        "counter": "completed_shifts"
+      },
+      "presentation": {
+        "semanticIdsBySeason": {
+          "spring": "job/lumber/shift/spring/default",
+          "summer": "job/lumber/shift/summer/default",
+          "autumn": "job/lumber/shift/autumn/default",
+          "winter": "job/lumber/shift/winter/default"
+        }
+      },
+      "status": "READY"
+    },
+    {
+      "order": 2,
+      "id": "reactive-milestone",
+      "title": "Reactive Lumber milestone",
+      "commandApi": {
+        "kind": "dispatch",
+        "command": {
+          "type": "choice",
+          "id": "continue"
+        }
+      },
+      "contentIds": {
+        "eventId": "lumber.career-first-shift",
+        "careerId": "lumber",
+        "transitionId": "accept-hand"
+      },
+      "energy": {
+        "daytime": 0,
+        "owner": "reactive event"
+      },
+      "saveReloadCheckpoint": "pending event lumber.career-first-shift before choice",
+      "expectedReactionFact": {
+        "kind": "careerTransition",
+        "career": "lumber"
+      },
+      "presentation": {
+        "semanticId": "job/lumber/event/lumber-career-first-shift/default"
+      },
+      "status": "READY"
+    },
+    {
+      "order": 3,
+      "id": "foreman-professional-route",
+      "title": "Foreman professional route",
+      "commandApi": {
+        "kind": "dispatch",
+        "command": {
+          "type": "choice",
+          "id": "professional"
+        }
+      },
+      "contentIds": {
+        "eventId": "lumber.foreman-notice",
+        "relationshipId": "lumber.foreman",
+        "transitionIds": [
+          "notice-work",
+          "choose-professional"
+        ],
+        "resultingStage": "route-professional"
+      },
+      "energy": {
+        "daytime": 0,
+        "owner": "reactive relationship event"
+      },
+      "saveReloadCheckpoint": "pending event lumber.foreman-notice before professional choice",
+      "expectedReactionFact": {
+        "kind": "relationshipTransition",
+        "relationship": "lumber.foreman"
+      },
+      "presentation": {
+        "semanticId": "relationship/lumber-foreman/lumber-foreman-notice/default"
+      },
+      "status": "READY"
+    },
+    {
+      "order": 4,
+      "id": "school-boundary",
+      "title": "School-owned management boundary",
+      "commandApi": null,
+      "contentIds": {
+        "excludedSyntheticActionId": "school.lumber-management",
+        "excludedSyntheticEventId": "lumber-cross.school-management-return",
+        "productionProviderId": null,
+        "productionPublicFactId": null
+      },
+      "energy": {
+        "daytime": 1,
+        "owner": "production School paid-lesson transaction",
+        "status": "LOCKED_COST_BUT_PROVIDER_OPEN"
+      },
+      "saveReloadCheckpoint": "after production School transaction/public result and before Lumber reaction",
+      "expectedReactionFact": {
+        "kind": "worldFactAdded",
+        "fact": null,
+        "status": "OPEN"
+      },
+      "presentation": {
+        "semanticId": null,
+        "status": "OPEN"
+      },
+      "blockedDependencies": [
+        "final School-owned management/public fact ID",
+        "production School provider/action for that public result"
+      ],
+      "status": "BLOCKED"
+    },
+    {
+      "order": 5,
+      "id": "optional-foreman-night",
+      "title": "Optional Foreman Night",
+      "commandApi": {
+        "kind": "dispatch",
+        "sequence": [
+          {
+            "type": "endDay"
+          },
+          {
+            "type": "chooseLodging",
+            "id": "<runtime lodging id>"
+          },
+          {
+            "type": "chooseNightChoice",
+            "id": "lumber.foreman.night"
+          },
+          {
+            "type": "choice",
+            "id": "continue"
+          }
+        ]
+      },
+      "contentIds": {
+        "nightChoiceId": "lumber.foreman.night",
+        "eventId": "lumber-night.foreman-professional",
+        "relationshipId": "lumber.foreman"
+      },
+      "energy": {
+        "daytime": 0,
+        "owner": "Night slot; lodging payment is separate"
+      },
+      "saveReloadCheckpoint": "after lodging payment before Night choice, or pending Night event before continue",
+      "expectedReactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "lumber.foreman.night"
+      },
+      "presentation": {
+        "semanticId": "relationship/lumber-foreman/lumber-night-foreman-professional/default"
+      },
+      "status": "OPTIONAL_FIXTURE_READY",
+      "note": "The event pack is available; the voluntary Night choice/lodging definitions are supplied by the isolated Night acceptance builder until production Night data owns them."
+    },
+    {
+      "order": 6,
+      "id": "forest-activity-entry",
+      "title": "Forest Activity entry",
+      "commandApi": {
+        "kind": "dispatch",
+        "command": {
+          "type": "enterActivity",
+          "id": "lumber.forest"
+        }
+      },
+      "contentIds": {
+        "activityId": "lumber.forest",
+        "requiredCapability": "enter_old_boundary",
+        "currentFixtureAdapterFact": "lumber.capability.enter-old-boundary",
+        "productionCapabilitySourceId": null
+      },
+      "energy": {
+        "daytime": 2,
+        "owner": "Activity:lumber.forest entry"
+      },
+      "saveReloadCheckpoint": "immediately after Activity entry and at intermediate counter.step.* checkpoint",
+      "expectedReactionFact": null,
+      "presentation": {
+        "semanticId": null,
+        "status": "OPEN"
+      },
+      "blockedDependencies": [
+        "real shipped item-capability acquisition/source for enter_old_boundary",
+        "production Activity-entry presentation slot if/when authored"
+      ],
+      "status": "BLOCKED_AT_PRODUCTION_ENTRY"
+    },
+    {
+      "order": 7,
+      "id": "forest-activity-result-continuation",
+      "title": "Forest success activityResult continuation",
+      "commandApi": {
+        "kind": "dispatch",
+        "sequence": [
+          {
+            "type": "activityAction",
+            "id": "advance"
+          },
+          {
+            "type": "activityAction",
+            "id": "advance"
+          },
+          {
+            "type": "choice",
+            "id": "continue"
+          }
+        ]
+      },
+      "contentIds": {
+        "activityId": "lumber.forest",
+        "resultId": "lumber.forest.success",
+        "continuationEventId": "lumber-cross.activity-forest-return"
+      },
+      "energy": {
+        "daytime": 0,
+        "owner": "Activity internal steps and reactive Lumber continuation"
+      },
+      "saveReloadCheckpoint": "after success result with pending lumber-cross.activity-forest-return, before continue",
+      "expectedReactionFact": {
+        "kind": "activityResult",
+        "activity": "lumber.forest",
+        "outcome": "success",
+        "result": "lumber.forest.success"
+      },
+      "presentation": {
+        "semanticId": "job/lumber/event/lumber-cross-activity-forest-return/default"
+      },
+      "status": "READY_AFTER_ENTRY"
+    },
+    {
+      "order": 8,
+      "id": "ending-families",
+      "title": "Hard Work and separate complex ending families",
+      "commandApi": {
+        "kind": "dispatch",
+        "hardWork": [
+          {
+            "type": "commitEnding",
+            "id": "ending.lumber.hard-work"
+          },
+          {
+            "type": "completeEnding"
+          }
+        ],
+        "complexEnding": [
+          {
+            "type": "commitEnding",
+            "id": "<eligible complex Lumber ending>"
+          },
+          {
+            "type": "completeEnding"
+          }
+        ]
+      },
+      "contentIds": {
+        "hardWorkEndingId": "ending.lumber.hard-work",
+        "separateComplexEndingIds": [
+          "ending.lumber.forewoman",
+          "ending.lumber.forest"
+        ]
+      },
+      "energy": {
+        "daytime": 0,
+        "owner": "ending commit/completion"
+      },
+      "saveReloadCheckpoint": "after ending commit and after ending completion",
+      "expectedReactionFact": {
+        "eligibility": {
+          "kind": "endingEligible",
+          "ending": "<selected eligible ending>"
+        },
+        "commitment": {
+          "kind": "endingCommitted",
+          "ending": "<selected ending>"
+        }
+      },
+      "presentation": {
+        "hardWork": "ending/lumber/hard-work",
+        "complex": [
+          "ending/lumber/forewoman",
+          "ending/lumber/forest"
+        ]
+      },
+      "status": "READY_BY_INDEPENDENT_ELIGIBILITY"
+    }
+  ],
+  "lockedContracts": {
+    "hardWork": {
+      "endingId": "ending.lumber.hard-work",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "lumber",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 50
+        }
+      ],
+      "rewardId": "hardWork:lumber",
+      "noAdditionalPrerequisites": true
+    },
+    "activityContinuation": {
+      "boundaryKind": "activityResult",
+      "activityId": "lumber.forest",
+      "successResultId": "lumber.forest.success",
+      "continuationEventId": "lumber-cross.activity-forest-return"
+    },
+    "productionExclusions": [
+      "school.lumber-management",
+      "lumber-cross.school-management-return"
+    ]
+  }
+}
