@@ -1,0 +1,122 @@
+{
+  "version": 1,
+  "kind": "presentation-drop-in-replacement-regression-matrix",
+  "status": "isolated-regression-fixture",
+  "policy": {
+    "semanticIdentityStable": true,
+    "animationsOffMediaOnly": true,
+    "gameplayMutationAllowed": false,
+    "missingGifFallsBackNonFatally": true
+  },
+  "cases": [
+    {
+      "caseId": "lumber-shift-spring",
+      "identity": {
+        "kind": "action",
+        "actionId": "lumber.shift",
+        "sceneId": "spring.default"
+      },
+      "presentationId": "job/lumber/shift/spring/default",
+      "replacementGif": "media/regression/lumber-shift-spring.gif",
+      "staticFallback": {
+        "mediaId": "stage.lumber.spring",
+        "assetPath": "assets/stage-lumber.svg"
+      }
+    },
+    {
+      "caseId": "lumber-milestone",
+      "identity": {
+        "kind": "event",
+        "eventId": "lumber.career-first-shift",
+        "variantId": "default"
+      },
+      "presentationId": "job/lumber/event/lumber-career-first-shift/default",
+      "replacementGif": "media/regression/lumber-career-first-shift.gif",
+      "staticFallback": {
+        "mediaId": "stage.lumber",
+        "assetPath": "assets/stage-lumber.svg"
+      }
+    },
+    {
+      "caseId": "foreman-relationship",
+      "identity": {
+        "kind": "event",
+        "eventId": "lumber.foreman-notice",
+        "variantId": "default"
+      },
+      "presentationId": "relationship/lumber-foreman/lumber-foreman-notice/default",
+      "replacementGif": "media/regression/foreman-professional.gif",
+      "staticFallback": {
+        "mediaId": "stage.town",
+        "assetPath": "assets/stage-town.svg"
+      }
+    },
+    {
+      "caseId": "foreman-night",
+      "identity": {
+        "kind": "event",
+        "eventId": "lumber-night.foreman-professional",
+        "variantId": "default"
+      },
+      "presentationId": "relationship/lumber-foreman/lumber-night-foreman-professional/default",
+      "replacementGif": "media/regression/foreman-night.gif",
+      "staticFallback": {
+        "mediaId": "stage.town",
+        "assetPath": "assets/stage-town.svg"
+      }
+    },
+    {
+      "caseId": "forest-activity-return",
+      "identity": {
+        "kind": "activity",
+        "activityId": "lumber.forest",
+        "resultId": "lumber.forest.success"
+      },
+      "presentationId": "activity/forest/return/success",
+      "replacementGif": "media/regression/forest-return-success.gif",
+      "staticFallback": {
+        "mediaId": "stage.hunt",
+        "assetPath": "assets/stage-forest.svg"
+      }
+    },
+    {
+      "caseId": "school-arcana",
+      "identity": {
+        "kind": "course",
+        "courseId": "school.course.arcana"
+      },
+      "presentationId": "school/arcana/lesson/default",
+      "replacementGif": "media/regression/school-arcana.gif",
+      "staticFallback": {
+        "mediaId": "stage.town",
+        "assetPath": "assets/stage-town.svg"
+      }
+    },
+    {
+      "caseId": "school-physical-training",
+      "identity": {
+        "kind": "course",
+        "courseId": "school.course.physical_training"
+      },
+      "presentationId": "school/physical-training/lesson/default",
+      "replacementGif": "media/regression/school-physical-training.gif",
+      "staticFallback": {
+        "mediaId": "stage.town",
+        "assetPath": "assets/stage-town.svg"
+      }
+    },
+    {
+      "caseId": "hard-work-ending",
+      "identity": {
+        "kind": "ending",
+        "endingId": "ending.lumber.hard-work"
+      },
+      "presentationId": "ending/lumber/hard-work",
+      "replacementGif": "media/regression/lumber-hard-work.gif",
+      "staticFallback": {
+        "mediaId": "stage.town",
+        "assetPath": "assets/stage-town.svg"
+      }
+    }
+  ]
+}
