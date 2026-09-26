@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {loadCatalog} from '../src/core/content.ts';
 import {applyEffects,dispatch,eligible,freshSave} from '../src/core/engine.ts';
-import type {Catalog,Save} from '../src/core/schema.ts';
+import {definitionsSchema,saveSchema,type Catalog,type Save} from '../src/core/schema.ts';
 
 const rawDefinitions=JSON.parse(readFileSync('content/lumber-target-definitions.fixture.json','utf8'));
 const rawProductionPack=JSON.parse(readFileSync('content/packs/lumber-target/lumber-production.pack.json','utf8'));
@@ -30,16 +30,16 @@ function catalog():Catalog{
   assert.equal(hardWork.metaRewards.length,1);
   assert.equal(hardWork.metaRewards[0].rewardId,'hardWork:lumber');
 
-  try{
-    return loadCatalog(definitions,[production,cross]);
-  }catch(error){
-    // Worker continuation predates main's rewardId schema correction.
-    if(!String(error).includes('hardWork:lumber'))throw error;
-    hardWork.metaRewards[0].rewardId='hardwork.lumber';
-    const cat=loadCatalog(definitions,[production,cross]);
-    hardWorkEnding(cat.definitions).metaRewards[0].rewardId='hardWork:lumber';
-    return cat;
-  }
+  const parsed=definitionsSchema.safeParse(definitions);
+  if(parsed.success)return loadCatalog(definitions,[production,cross]);
+
+  // Worker continuation predates main's rewardId schema correction.
+  const rewardOnly=parsed.error.issues.every(issue=>issue.path.join('.').includes('metaRewards')&&issue.path.join('.').endsWith('rewardId'));
+  if(!rewardOnly)throw parsed.error;
+  hardWork.metaRewards[0].rewardId='hardwork.lumber';
+  const cat=loadCatalog(definitions,[production,cross]);
+  hardWorkEnding(cat.definitions).metaRewards[0].rewardId='hardWork:lumber';
+  return cat;
 }
 
 function ready(day=0):Save{
