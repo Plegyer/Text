@@ -1,0 +1,204 @@
+{
+  "version": 1,
+  "kind": "presentation-asset-consistency-manifest",
+  "status": "shipped-plus-future-audit",
+  "policy": {
+    "currentAssetMustExist": true,
+    "futureGifMustBeUnavailableUntilAdded": true,
+    "semanticIdsIndependentFromFilenames": true,
+    "mechanicsDataAllowed": false
+  },
+  "currentStaticBindings": [
+    {
+      "presentationId": "job/lumber/shift/spring/default",
+      "sourcePresentationId": "job/lumber/shift/spring/default",
+      "mediaId": "stage.lumber.spring",
+      "assetPath": "assets/stage-lumber.svg",
+      "availability": "current"
+    },
+    {
+      "presentationId": "job/lumber/shift/summer/default",
+      "sourcePresentationId": "job/lumber/shift/summer/default",
+      "mediaId": "stage.lumber.summer",
+      "assetPath": "assets/stage-lumber.svg",
+      "availability": "current"
+    },
+    {
+      "presentationId": "job/lumber/shift/autumn/default",
+      "sourcePresentationId": "job/lumber/shift/autumn/default",
+      "mediaId": "stage.lumber.autumn",
+      "assetPath": "assets/stage-lumber.svg",
+      "availability": "current"
+    },
+    {
+      "presentationId": "job/lumber/shift/winter/default",
+      "sourcePresentationId": "job/lumber/shift/winter/default",
+      "mediaId": "stage.lumber.winter",
+      "assetPath": "assets/stage-lumber.svg",
+      "availability": "current"
+    },
+    {
+      "presentationId": "job/lumber/result/default",
+      "sourcePresentationId": "job/lumber/result/default",
+      "mediaId": "stage.lumber",
+      "assetPath": "assets/stage-lumber.svg",
+      "availability": "current"
+    },
+    {
+      "presentationId": "job/lumber/event/lumber-career-first-shift/default",
+      "sourcePresentationId": "job/lumber/result/default",
+      "mediaId": "stage.lumber",
+      "assetPath": "assets/stage-lumber.svg",
+      "availability": "current"
+    },
+    {
+      "presentationId": "relationship/lumber-foreman/lumber-foreman-notice/default",
+      "sourcePresentationId": "location/town/default",
+      "mediaId": "stage.town",
+      "assetPath": "assets/stage-town.svg",
+      "availability": "current"
+    },
+    {
+      "presentationId": "relationship/lumber-foreman/lumber-night-foreman-professional/default",
+      "sourcePresentationId": "location/town/default",
+      "mediaId": "stage.town",
+      "assetPath": "assets/stage-town.svg",
+      "availability": "current"
+    },
+    {
+      "presentationId": "activity/forest/route/default",
+      "sourcePresentationId": "activity/forest/route/default",
+      "mediaId": "stage.hunt",
+      "assetPath": "assets/stage-forest.svg",
+      "availability": "current"
+    },
+    {
+      "presentationId": "activity/forest/return/success",
+      "sourcePresentationId": "activity/forest/route/default",
+      "mediaId": "stage.hunt",
+      "assetPath": "assets/stage-forest.svg",
+      "availability": "current"
+    },
+    {
+      "presentationId": "school/literacy-and-numbers/lesson/default",
+      "sourcePresentationId": "location/town/default",
+      "mediaId": "stage.town",
+      "assetPath": "assets/stage-town.svg",
+      "availability": "current"
+    },
+    {
+      "presentationId": "school/arcana/lesson/default",
+      "sourcePresentationId": "location/town/default",
+      "mediaId": "stage.town",
+      "assetPath": "assets/stage-town.svg",
+      "availability": "current"
+    },
+    {
+      "presentationId": "school/rhetoric-and-social/lesson/default",
+      "sourcePresentationId": "location/town/default",
+      "mediaId": "stage.town",
+      "assetPath": "assets/stage-town.svg",
+      "availability": "current"
+    },
+    {
+      "presentationId": "school/etiquette-and-presentation/lesson/default",
+      "sourcePresentationId": "location/town/default",
+      "mediaId": "stage.town",
+      "assetPath": "assets/stage-town.svg",
+      "availability": "current"
+    },
+    {
+      "presentationId": "school/field-craft/lesson/default",
+      "sourcePresentationId": "school/field-craft/lesson/default",
+      "mediaId": "stage.school",
+      "assetPath": "assets/stage-school.svg",
+      "availability": "current"
+    },
+    {
+      "presentationId": "school/physical-training/lesson/default",
+      "sourcePresentationId": "location/town/default",
+      "mediaId": "stage.town",
+      "assetPath": "assets/stage-town.svg",
+      "availability": "current"
+    },
+    {
+      "presentationId": "school/arts-and-performance/lesson/default",
+      "sourcePresentationId": "location/town/default",
+      "mediaId": "stage.town",
+      "assetPath": "assets/stage-town.svg",
+      "availability": "current"
+    },
+    {
+      "presentationId": "school/body-confidence/lesson/default",
+      "sourcePresentationId": "location/town/default",
+      "mediaId": "stage.town",
+      "assetPath": "assets/stage-town.svg",
+      "availability": "current"
+    },
+    {
+      "presentationId": "ending/lumber/hard-work",
+      "sourcePresentationId": "location/town/default",
+      "mediaId": "stage.town",
+      "assetPath": "assets/stage-town.svg",
+      "availability": "current"
+    },
+    {
+      "presentationId": "ending/lumber/forewoman",
+      "sourcePresentationId": "location/town/default",
+      "mediaId": "stage.town",
+      "assetPath": "assets/stage-town.svg",
+      "availability": "current"
+    },
+    {
+      "presentationId": "ending/lumber/forest",
+      "sourcePresentationId": "location/town/default",
+      "mediaId": "stage.town",
+      "assetPath": "assets/stage-town.svg",
+      "availability": "current"
+    }
+  ],
+  "futureGifTargets": [
+    {
+      "presentationId": "job/lumber/shift/spring/default",
+      "mediaId": "job.lumber.shift.spring.default",
+      "assetPath": "assets/lumber/shift-spring.gif",
+      "availability": "future-unavailable"
+    },
+    {
+      "presentationId": "job/lumber/shift/summer/default",
+      "mediaId": "job.lumber.shift.summer.default",
+      "assetPath": "assets/lumber/shift-summer.gif",
+      "availability": "future-unavailable"
+    },
+    {
+      "presentationId": "job/lumber/shift/autumn/default",
+      "mediaId": "job.lumber.shift.autumn.default",
+      "assetPath": "assets/lumber/shift-autumn.gif",
+      "availability": "future-unavailable"
+    },
+    {
+      "presentationId": "job/lumber/shift/winter/default",
+      "mediaId": "job.lumber.shift.winter.default",
+      "assetPath": "assets/lumber/shift-winter.gif",
+      "availability": "future-unavailable"
+    },
+    {
+      "presentationId": "job/lumber/event/lumber-career-first-shift/default",
+      "mediaId": "job.lumber.event.accepted-hand",
+      "assetPath": "assets/lumber/accepted-hand.gif",
+      "availability": "future-unavailable"
+    },
+    {
+      "presentationId": "relationship/lumber-foreman/lumber-foreman-notice/default",
+      "mediaId": "relationship.lumber.foreman.professional",
+      "assetPath": "assets/lumber/foreman-professional.gif",
+      "availability": "future-unavailable"
+    },
+    {
+      "presentationId": "relationship/lumber-foreman/lumber-night-foreman-professional/default",
+      "mediaId": "relationship.lumber.foreman.night.professional",
+      "assetPath": "assets/lumber/foreman-night-professional.gif",
+      "availability": "future-unavailable"
+    }
+  ]
+}
