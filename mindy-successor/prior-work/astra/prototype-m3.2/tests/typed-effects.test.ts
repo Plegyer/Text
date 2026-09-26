@@ -6,7 +6,7 @@ import {definitions,rawPacks,started} from './helpers.ts';
 
 function typedDefinitions(){
   const d=structuredClone(definitions);
-  d.careers=[{
+  d.careers=[...(d.careers??[]),{
     id:'lumber.target',label:'Target Lumber',initialStage:'new',stages:['new','trusted'],
     transitions:[{
       id:'qualify',from:['new'],to:'trusted',
@@ -14,11 +14,11 @@ function typedDefinitions(){
       effects:[{kind:'addCareerFact',career:'lumber.target',fact:'qualified'}]
     }]
   }];
-  d.quests=[{
+  d.quests=[...(d.quests??[]),{
     id:'forest.quest',label:'Forest Quest',initialStage:'open',stages:['open','done'],
     transitions:[{id:'finish',from:['open'],to:'done',conditions:[],effects:[]}]
   }];
-  d.relationships=[{
+  d.relationships=[...(d.relationships??[]),{
     id:'foreman.rel',label:'Foreman',initialStage:'known',stages:['known','trusted'],
     transitions:[{id:'trust',from:['known'],to:'trusted',conditions:[],effects:[]}]
   }];
