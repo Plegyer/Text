@@ -1,4 +1,4 @@
-import { metrics, stats, seasons, priorityClasses, saveSchema, type Stat, type Save, type Meta, type Condition, type Effect, type Catalog, type StoryEvent, type Action, type MachineDefinition, type ReactionFact, type ReactionTrigger, type PriorityClass, type LodgingDefinition, type NightChoiceDefinition, type ActivityDefinition, type ActivityOutcome, type ActivityEnvelope } from './schema.ts';
+import { metrics, stats, seasons, priorityClasses, saveSchema, type Stat, type Save, type Meta, type Condition, type Effect, type Catalog, type StoryEvent, type Action, type MachineDefinition, type ReactionFact, type ReactionTrigger, type PriorityClass, type LodgingDefinition, type NightChoiceDefinition, type ActivityDefinition, type ActivityOutcome, type ActivityEnvelope, ordinaryHardWorkCareers, type MetaReward, type OrdinaryHardWorkCareer } from './schema.ts';
 
 const statSet=new Set<string>(stats);
 const cappedLegacy=new Set(['health','stress','trust']);
@@ -18,6 +18,9 @@ function defaultLegacyMetrics(){
   } as Record<string,number>;
 }
 
+function ensurePalaceUnlock(meta:Meta){
+  if(ordinaryHardWorkCareers.every(c=>meta.hardWorkProgress.includes(c))&&!meta.unlocks.includes('palace'))meta.unlocks.push('palace');
+}
 function defaultMeta(input?:Partial<Meta>&{completed?:string[];lives?:number}):Meta {
   const completed=[...new Set(input?.completedEndings??input?.completed??[])];
   const runsStarted=Math.max(1,input?.runsStarted??input?.lives??1);
@@ -29,9 +32,11 @@ function defaultMeta(input?:Partial<Meta>&{completed?:string[];lives?:number}):M
     hardWorkProgress:[...new Set(input?.hardWorkProgress??[])],
     persistentChoices:structuredClone(input?.persistentChoices??{}),
     activeLegacyPerks:[...new Set(input?.activeLegacyPerks??[])],
+    appliedResultTransactions:[...new Set(input?.appliedResultTransactions??[])],
     runsStarted,
     runsCompleted:Math.max(0,input?.runsCompleted??Math.min(completed.length,runsStarted-1))
   } as Meta;
+  ensurePalaceUnlock(core);
   return attachMetaFacade(core);
 }
 
@@ -199,9 +204,25 @@ export function actionCost(a:Action,s:Save){
   return a.id==='school'&&s.meta.unlocks.includes('scholar')&&!s.run.flags[`system.scholar.${Math.floor(s.run.day/7)}`]?0:a.cost.money;
 }
 
+function applyHardWorkStartingBonuses(meta:Meta,statRecord:Record<Stat,number>){
+  const add=(stat:Stat,value:number)=>{statRecord[stat]=Math.min(100,statRecord[stat]+value);};
+  for(const career of meta.hardWorkProgress as OrdinaryHardWorkCareer[]){
+    if(career==='lumber'){add('strength',3);add('endurance',3);}
+    else if(career==='satyr-maid'){add('charm',3);add('grooming',3);}
+    else if(career==='undead-farm'){add('reason',3);add('magic',3);}
+    else if(career==='tavern'){add('sociability',3);add('manners',3);}
+    else if(career==='hunter'){add('dexterity',3);add('wits',3);}
+    else if(career==='guard'){add('endurance',3);add('manners',3);}
+    else if(career==='artist-geisha'){add('creativity',3);add('grooming',3);}
+    else if(career==='assassin'){add('dexterity',3);add('wits',3);}
+    else if(career==='prostitute'){add('sexuality',3);add('charm',3);}
+  }
+}
 export function freshSave(metaInput?:Partial<Meta>&{completed?:string[];lives?:number}):Save {
   const meta=defaultMeta(metaInput);
   const statRecord=Object.fromEntries(stats.map(k=>[k,1])) as Record<Stat,number>;
+  applyHardWorkStartingBonuses(meta,statRecord);
+  const startingMoney=600+(meta.hardWorkProgress.includes('merchant')?600:0);
   const save={
     schemaVersion:4 as const,
     contentVersion:'0.1.0',
@@ -211,7 +232,7 @@ export function freshSave(metaInput?:Partial<Meta>&{completed?:string[];lives?:n
       status:'active' as const,
       calendar:{elapsedDays:0},
       character:{stats:statRecord,lust:1,creation:{remaining:10,allocated:{},complete:false},conditions:{}},
-      resources:{money:600,inventory:{herb:2,tonic:0,scales:0}},
+      resources:{money:startingMoney,inventory:{herb:2,tonic:0,scales:0}},
       dayState:{energyCurrent:3,nextDayModifiers:{energyDelta:0,statEffects:[],tags:[]},optionalOfferIds:[],scheduledEventIds:[]},
       housingState:{current:'normal' as const,paidForCurrentNight:false},
       progression:{careers:{},quests:{},relationships:{},worldFacts:[]},
@@ -358,6 +379,7 @@ function factLabel(f:ReactionFact){
     case 'relationshipFactAdded':return `relationshipFactAdded:${f.relationship}.${f.fact}`;
     case 'worldFactAdded':return `worldFactAdded:${f.fact}`;
     case 'endingEligible':return `endingEligible:${f.ending}`;
+    case 'endingCommitted':return `endingCommitted:${f.ending}`;
     case 'creationCompleted':return 'creationCompleted';
   }
 }
@@ -395,6 +417,7 @@ function matchTrigger(t:ReactionTrigger,f:ReactionFact):boolean{
     case 'relationshipFactAdded':return f.kind==='relationshipFactAdded'&&f.relationship===t.relationship&&(!t.fact||f.fact===t.fact);
     case 'worldFactAdded':return f.kind==='worldFactAdded'&&(!t.fact||f.fact===t.fact);
     case 'endingEligible':return f.kind==='endingEligible'&&(!t.ending||f.ending===t.ending);
+    case 'endingCommitted':return f.kind==='endingCommitted'&&f.ending===t.ending;
   }
 }
 function eventTriggered(e:StoryEvent,facts:ReactionFact[]){
@@ -624,6 +647,82 @@ function runResolverBoundary(s:Save,before:Save,cat:Catalog,extras:ReactionFact[
   const facts=collectReactionFacts(before,s,cat,extras);
   const trace:ResolverTrace={epochId:s.run.flow.reaction.currentEpochId!,facts:facts.map(factLabel),steps:[],selected:null,offers:[]};
   resolveReactionsMutable(s,facts,cat,trace);
+}
+
+function stableIdHash(value:string){
+  let h=2166136261;
+  for(let i=0;i<value.length;i++){h^=value.charCodeAt(i);h=Math.imul(h,16777619);}
+  return (h>>>0).toString(16).padStart(8,'0');
+}
+function resultIdentityFor(runId:string,runsStarted:number,endingId:string){
+  const basis=`${runId}|${endingId}`;
+  return {
+    transactionId:`tx.${runsStarted}.${stableIdHash(basis)}`,
+    resultId:`rr.${runsStarted}.${stableIdHash('result|'+basis)}`
+  };
+}
+function runResultIdentity(s:Save,endingId:string){
+  return resultIdentityFor(s.run.id,s.meta.runsStarted,endingId);
+}
+function endingRewards(ending:Catalog['definitions']['endings'][number]):MetaReward[]{
+  if(ending.metaRewards.length)return ending.metaRewards;
+  return [{kind:'unlock',rewardId:`legacy.reward.${stableIdHash(ending.id+'|'+ending.reward)}`,unlock:ending.reward}];
+}
+function applyMetaRewardMutable(meta:Meta,reward:MetaReward){
+  if(reward.kind==='unlock')addUnique(meta.unlocks,reward.unlock);
+  else if(reward.kind==='hardWork')addUnique(meta.hardWorkProgress,reward.career);
+  ensurePalaceUnlock(meta);
+}
+function commitEndingMutable(s:Save,endingId:string,cat:Catalog){
+  if(s.run.status==='ended'){
+    if(s.run.endings.committed===endingId)return;
+    throw new Error('Эта жизнь уже завершена другой судьбой.');
+  }
+  if(s.run.status==='ending_committed'){
+    if(s.run.endings.committed===endingId)return;
+    throw new Error('Уже выбрана другая судьба.');
+  }
+  if(s.run.status!=='active'&&s.run.status!=='expired')throw new Error('Сейчас нельзя выбрать судьбу.');
+  if(s.run.pending||s.run.flow.night||s.run.flow.activity)throw new Error('Завершите текущую сцену, ночь или Activity.');
+  const ending=cat.definitions.endings.find(e=>e.id===endingId);
+  if(!ending||!s.run.endings.eligible.includes(endingId))throw new Error('Эта судьба сейчас недоступна.');
+  const before=cloneSave(s);
+  s.run.endings.committed=endingId;
+  s.run.status='ending_committed';
+  log(s,`Вы выбрали судьбу «${ending.title}».`);
+  runResolverBoundary(s,before,cat,[{kind:'endingCommitted',ending:endingId}],true);
+}
+function completeEndingMutable(s:Save,cat:Catalog){
+  if(s.run.status==='ended'&&s.run.endings.result)return;
+  if(s.run.status!=='ending_committed'||!s.run.endings.committed)throw new Error('Сначала выберите судьбу.');
+  if(s.run.pending||s.run.flow.night||s.run.flow.activity)throw new Error('Сначала завершите финальную сцену.');
+  const ending=cat.definitions.endings.find(e=>e.id===s.run.endings.committed);
+  if(!ending)throw new Error('Выбранная судьба отсутствует в catalog.');
+  const {transactionId,resultId}=runResultIdentity(s,ending.id);
+  if(s.run.endings.result){
+    if(s.run.endings.result.transactionId!==transactionId)throw new Error('RunResult transaction mismatch.');
+    s.run.status='ended';return;
+  }
+  const alreadyApplied=s.meta.appliedResultTransactions.includes(transactionId);
+  const firstCompletion=!s.meta.completedEndings.includes(ending.id);
+  const rewards=firstCompletion?endingRewards(ending):[];
+  if(!alreadyApplied){
+    for(const reward of rewards)applyMetaRewardMutable(s.meta,reward);
+    s.meta.runsCompleted=Math.min(1_000_000,s.meta.runsCompleted+1);
+  }
+  addUnique(s.meta.completedEndings,ending.id);
+  addUnique(s.meta.appliedResultTransactions,transactionId);
+  ensurePalaceUnlock(s.meta);
+  s.run.endings.result={
+    resultId,
+    endingId:ending.id,
+    transactionId,
+    completedAtDay:s.run.day,
+    firstCompletion:firstCompletion&&!alreadyApplied,
+    appliedMetaRewardIds:alreadyApplied?[]:rewards.map(r=>r.rewardId)
+  };
+  s.run.status='ended';
+  log(s,ending.epilogue);
 }
 
 function activityDefinition(cat:Catalog,id:string):ActivityDefinition{
@@ -861,6 +960,8 @@ const compatibilitySleepChoice:NightChoiceDefinition={id:'legacy.sleep',label:'�
 export type Command=
   |{type:'action';id:string;recipe?:'gentle'|'bold'}
   |{type:'choice';id:string}
+  |{type:'commitEnding';id:string}
+  |{type:'completeEnding'}
   |{type:'accept';id:string}
   |{type:'newLife'}
   |{type:'restart'}
@@ -881,6 +982,7 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
   }
   if(command.type==='newLife'){
     if(s.run.status==='active')throw new Error('Сначала примите судьбу или дождитесь окончания срока.');
+    if(s.run.status==='ending_committed')throw new Error('Сначала завершите выбранную судьбу.');
     const meta=defaultMeta(s.meta);meta.runsStarted++;return freshSave(meta);
   }
   if(command.type==='allocate'){
@@ -898,17 +1000,21 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
     return s;
   }
   if(!s.run.creation.complete)throw new Error('Сначала создайте героиню.');
-  if(command.type==='accept'){
-    if(s.run.status==='ended'||s.run.pending||s.run.flow.night||s.run.flow.activity)throw new Error('Завершите текущую сцену, ночь или Activity.');
-    const ending=cat.definitions.endings.find(e=>e.id===command.id);
-    if(!ending||!s.run.availableEndings.includes(ending.id)||!eligible(ending.conditions,s,cat))throw new Error('Эта судьба сейчас недоступна.');
-    s.run.status='ended';s.run.acceptedEnding=ending.id;
-    if(!s.meta.completed.includes(ending.id))s.meta.completed.push(ending.id);
-    if(!s.meta.unlocks.includes(ending.reward))s.meta.unlocks.push(ending.reward);
-    s.meta.runsCompleted=Math.min(1_000_000,s.meta.runsCompleted+1);
-    log(s,ending.epilogue);return s;
+  if(command.type==='commitEnding'){
+    commitEndingMutable(s,command.id,cat);
+    return s;
   }
-  if(s.run.status!=='active')throw new Error('Эта жизнь завершена.');
+  if(command.type==='completeEnding'){
+    completeEndingMutable(s,cat);
+    return s;
+  }
+  if(command.type==='accept'){
+    if(s.run.status==='ended')throw new Error('Эта жизнь уже завершена.');
+    commitEndingMutable(s,command.id,cat);
+    if(!s.run.pending)completeEndingMutable(s,cat);
+    return s;
+  }
+  if(s.run.status!=='active'&&!(s.run.status==='ending_committed'&&command.type==='choice'))throw new Error('Эта жизнь завершена.');
   if(command.type==='enterActivity'){
     enterActivityMutable(s,cat,command.id);
     return s;
@@ -1026,7 +1132,7 @@ function migrateV3(raw:any){
   const legacyMetrics={...oldMetrics};
   delete legacyMetrics.money;delete legacyMetrics.energy;
   const oldMeta=raw.meta??{unlocks:[],completed:[],lives:1};
-  return {
+  const migrated:any={
     schemaVersion:4,
     contentVersion:raw.contentVersion??'0.1.0',
     meta:{
@@ -1037,6 +1143,7 @@ function migrateV3(raw:any){
       hardWorkProgress:[],
       persistentChoices:{},
       activeLegacyPerks:[],
+      appliedResultTransactions:[],
       runsStarted:Math.max(1,oldMeta.lives??1),
       runsCompleted:Math.max(0,Math.min((oldMeta.completed??[]).length,(oldMeta.lives??1)-1))
     },
@@ -1049,7 +1156,14 @@ function migrateV3(raw:any){
       dayState:{energyCurrent:Math.max(0,oldMetrics.energy??3),nextDayModifiers:{energyDelta:0,statEffects:[],tags:[]},optionalOfferIds:[],scheduledEventIds:[]},
       housingState:{current:targetHousing(raw.run.housing??'room'),paidForCurrentNight:false},
       progression:{careers:{},quests:{},relationships:{},worldFacts:[]},
-      endings:{eligible:[...(raw.run.availableEndings??[])],committed:raw.run.acceptedEnding??null,result:null},
+      endings:{
+        eligible:[...(raw.run.availableEndings??[])],
+        committed:raw.run.acceptedEnding??null,
+        result:raw.run.status==='ended'&&raw.run.acceptedEnding?(()=>{
+          const ids=resultIdentityFor(raw.run.id,Math.max(1,oldMeta.lives??1),raw.run.acceptedEnding);
+          return {resultId:ids.resultId,endingId:raw.run.acceptedEnding,transactionId:ids.transactionId,completedAtDay:raw.run.day,firstCompletion:false,appliedMetaRewardIds:[]};
+        })():null
+      },
       flow:{pendingScene:raw.run.pending?{...raw.run.pending}:null,reaction:{epochCounter:0,currentEpochId:null,attemptedEventIds:[],cascadeDepth:0,queued:[]},night:null,activity:null,lastAction:raw.run.lastAction??null},
       rngState:{state:(raw.run.rng??2654435761)>>>0},
       historyState:{
@@ -1061,8 +1175,12 @@ function migrateV3(raw:any){
       legacyCompat:{source:'m3.2',metrics:legacyMetrics,flags:{...(raw.run.flags??{})},originalLimitDays:raw.run.limitDays}
     }
   };
+  if(migrated.run.endings.result){
+    const tx=migrated.run.endings.result.transactionId;
+    if(!migrated.meta.appliedResultTransactions.includes(tx))migrated.meta.appliedResultTransactions.push(tx);
+  }
+  return migrated;
 }
-
 export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
   let raw=JSON.parse(text);
   if(raw.schemaVersion===1){raw.schemaVersion=2;raw.run.actionCounts={work:raw.run.metrics.work};}
@@ -1072,6 +1190,16 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
     raw.run.flags['story.arrived']=true;
   }
   if(raw.schemaVersion===3)raw=migrateV3(raw);
+  if(raw.schemaVersion===4){
+    raw.meta=raw.meta??{};
+    raw.meta.appliedResultTransactions=raw.meta.appliedResultTransactions??[];
+    const committed=raw.run?.endings?.committed;
+    if(raw.run?.status==='ended'&&committed&&!raw.run.endings.result){
+      const ids=resultIdentityFor(raw.run.id,Math.max(1,raw.meta.runsStarted??raw.meta.lives??1),committed);
+      raw.run.endings.result={resultId:ids.resultId,endingId:committed,transactionId:ids.transactionId,completedAtDay:raw.run.calendar?.elapsedDays??raw.run.day??0,firstCompletion:false,appliedMetaRewardIds:[]};
+      if(!raw.meta.appliedResultTransactions.includes(ids.transactionId))raw.meta.appliedResultTransactions.push(ids.transactionId);
+    }
+  }
   const parsed=saveSchema.parse(raw) as unknown as Save;
   const s=attachLegacyFacade(parsed);
   if(s.run.metrics.energy>energyMax(s))throw new Error('Некорректный запас энергии.');
@@ -1094,8 +1222,25 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
   const knownFlags=new Set(cat.definitions.flags);
   for(const flag of Object.keys(s.run.flags))if(!knownFlags.has(flag)&&!/^system\.scholar\.\d+$/.test(flag))throw new Error(`Неизвестный флаг ${flag}`);
   const endingIds=new Set(cat.definitions.endings.map(e=>e.id));
-  if([...s.run.availableEndings,...s.meta.completed,...(s.run.acceptedEnding?[s.run.acceptedEnding]:[])].some(id=>!endingIds.has(id)))throw new Error('Неизвестная судьба.');
-  if(s.run.status==='ended'&&!s.run.acceptedEnding)throw new Error('Нет принятой судьбы.');
+  const referencedEndings=[
+    ...s.run.availableEndings,
+    ...s.meta.completed,
+    ...(s.run.acceptedEnding?[s.run.acceptedEnding]:[]),
+    ...(s.run.endings.result?[s.run.endings.result.endingId]:[])
+  ];
+  if(referencedEndings.some(id=>!endingIds.has(id)))throw new Error('Неизвестная судьба.');
+  if(new Set(s.meta.appliedResultTransactions).size!==s.meta.appliedResultTransactions.length)throw new Error('Дублированный Meta transaction proof.');
+  if(s.run.status==='active'&&(s.run.endings.committed||s.run.endings.result))throw new Error('Active run не может иметь committed/result ending.');
+  if(s.run.status==='ending_committed'&&(!s.run.endings.committed||s.run.endings.result))throw new Error('Некорректный ending_committed state.');
+  if(s.run.status==='ended'&&(!s.run.endings.committed||!s.run.endings.result))throw new Error('Ended run обязан иметь committed ending и RunResult.');
+  if(s.run.status==='expired'&&(s.run.endings.committed||s.run.endings.result))throw new Error('Expired run не может содержать committed/result ending.');
+  if(s.run.endings.result){
+    const result=s.run.endings.result;
+    if(result.endingId!==s.run.endings.committed)throw new Error('RunResult ending не совпадает с committed ending.');
+    if(!s.meta.appliedResultTransactions.includes(result.transactionId))throw new Error('RunResult не имеет Meta transaction proof.');
+    if(!s.meta.completedEndings.includes(result.endingId))throw new Error('RunResult ending отсутствует в completed Meta.');
+    if(new Set(result.appliedMetaRewardIds).size!==result.appliedMetaRewardIds.length)throw new Error('RunResult содержит повтор reward ID.');
+  }
   if(s.run.pending){
     const e=cat.events.find(e=>e.id===s.run.pending!.eventId);
     if(!e?.variants.some(v=>v.id===s.run.pending!.variantId))throw new Error('Неизвестная сцена сохранения.');
@@ -1149,11 +1294,13 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
     s.meta.completedEndings=[...new Set([...current.completedEndings,...s.meta.completedEndings])];
     s.meta.unlocks=[...new Set([...current.unlocks,...s.meta.unlocks])];
     s.meta.hardWorkProgress=[...new Set([...current.hardWorkProgress,...s.meta.hardWorkProgress])];
+    s.meta.appliedResultTransactions=[...new Set([...current.appliedResultTransactions,...s.meta.appliedResultTransactions])];
     s.meta.runsStarted=Math.max(current.runsStarted,s.meta.runsStarted);
     s.meta.runsCompleted=Math.max(current.runsCompleted,s.meta.runsCompleted);
     s.meta.ruleModifiers={...s.meta.ruleModifiers,...current.ruleModifiers};
     s.meta.persistentChoices={...s.meta.persistentChoices,...current.persistentChoices};
     s.meta.activeLegacyPerks=[...new Set([...s.meta.activeLegacyPerks,...current.activeLegacyPerks])];
+    ensurePalaceUnlock(s.meta);
     attachMetaFacade(s.meta);
   }
   return s;

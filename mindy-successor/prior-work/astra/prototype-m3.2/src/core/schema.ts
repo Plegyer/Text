@@ -214,7 +214,8 @@ export const reactionTriggerSchema=z.discriminatedUnion('kind',[
   z.object({kind:z.literal('relationshipTransition'),relationship:id}).strict(),
   z.object({kind:z.literal('relationshipFactAdded'),relationship:id,fact:id.optional()}).strict(),
   z.object({kind:z.literal('worldFactAdded'),fact:id}).strict(),
-  z.object({kind:z.literal('endingEligible'),ending:id.optional()}).strict()
+  z.object({kind:z.literal('endingEligible'),ending:id.optional()}).strict(),
+  z.object({kind:z.literal('endingCommitted'),ending:id}).strict()
 ]);
 export type ReactionTrigger=z.infer<typeof reactionTriggerSchema>;
 
@@ -240,7 +241,8 @@ export type ReactionFact =
   | {kind:'relationshipTransition';relationship:string;from:string;to:string}
   | {kind:'relationshipFactAdded';relationship:string;fact:string}
   | {kind:'worldFactAdded';fact:string}
-  | {kind:'endingEligible';ending:string};
+  | {kind:'endingEligible';ending:string}
+  | {kind:'endingCommitted';ending:string};
 
 const deliverySchema=z.object({
   policy:z.enum(['live','latched','scheduled']).default('live'),
@@ -375,7 +377,24 @@ export const activityEnvelopeSchema=z.object({
 }).strict();
 export type ActivityEnvelope=z.infer<typeof activityEnvelopeSchema>;
 
-export const endingSchema=z.object({id,title:z.string(),description:z.string(),conditions:z.array(conditionSchema),reward:id,epilogue:z.string()}).strict();
+export const ordinaryHardWorkCareers=['lumber','satyr-maid','undead-farm','tavern','hunter','guard','merchant','artist-geisha','assassin','prostitute'] as const;
+export type OrdinaryHardWorkCareer=typeof ordinaryHardWorkCareers[number];
+
+export const metaRewardSchema=z.discriminatedUnion('kind',[
+  z.object({kind:z.literal('unlock'),rewardId:id,unlock:id}).strict(),
+  z.object({kind:z.literal('hardWork'),rewardId:id,career:z.enum(ordinaryHardWorkCareers)}).strict()
+]);
+export type MetaReward=z.infer<typeof metaRewardSchema>;
+
+export const endingSchema=z.object({
+  id,
+  title:z.string(),
+  description:z.string(),
+  conditions:z.array(conditionSchema),
+  reward:id,
+  metaRewards:z.array(metaRewardSchema).max(16).default([]),
+  epilogue:z.string()
+}).strict();
 export const definitionsSchema=z.object({
   version:z.literal('0.1.0'),
   flags:z.array(id),
@@ -468,7 +487,14 @@ export const flowStateSchema=z.object({
   lastAction:lastActionSchema.nullable()
 }).strict();
 
-const runResultSchema=z.object({endingId:id,transactionId:id,completedAtDay:n.max(159)}).strict();
+const runResultSchema=z.object({
+  resultId:id,
+  endingId:id,
+  transactionId:id,
+  completedAtDay:n.max(159),
+  firstCompletion:z.boolean(),
+  appliedMetaRewardIds:z.array(id).max(32)
+}).strict();
 export const endingStateSchema=z.object({eligible:z.array(id),committed:id.nullable(),result:runResultSchema.nullable()}).strict();
 export const rngStateSchema=z.object({state:z.number().int().min(0).max(4294967295)}).strict();
 export const historyStateSchema=z.object({
@@ -509,6 +535,7 @@ export const metaSchema=z.object({
   hardWorkProgress:z.array(id),
   persistentChoices:z.record(z.string(),z.unknown()),
   activeLegacyPerks:z.array(id).max(16),
+  appliedResultTransactions:z.array(id).max(10_000).default([]),
   runsStarted:n.min(1),
   runsCompleted:n
 }).strict();

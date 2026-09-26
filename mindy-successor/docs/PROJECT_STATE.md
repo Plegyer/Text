@@ -608,3 +608,20 @@ The multi-chat setup is pre-created and may be started at any time.
 - Production Forest content remains deferred; A5 proves the architecture boundary only.
 - GitHub Actions full `npm run check` green: **97/97 tests**.
 - Next critical-path package: **A6 Ending / RunResult / Meta exactly-once**.
+
+
+## A6 code milestone — RunResult / Meta exactly-once
+
+- Implemented on `lead/a6-runresult-meta`.
+- Ending eligibility, commitment and completion are now separate state transitions.
+- Commitment does not award Meta. Completion creates one deterministic RunResult transaction.
+- Meta keeps `appliedResultTransactions`; reload/retry cannot duplicate a completed transaction.
+- Repeating the same ending in a later run does not reapply its unique reward.
+- Legacy `accept` remains compatibility-only and uses the same target pipeline.
+- Target Meta rewards now support unlocks and ordinary Hard Work progression.
+- 10/10 unique ordinary Hard Work automatically unlocks Palace.
+- Fresh runs derive the locked Hard Work stat bonuses and Merchant +600 starting money.
+- Legacy ended schema-v4 saves are normalized to compatibility RunResult proof without another reward.
+- GitHub Actions full `npm run check` green: **111/111 tests**.
+- **Architecture implementation A1–A6 is complete.**
+- Next critical path: integrated `ARCHITECTURE_MIGRATION_SLICE_v1.md` gate, then Phase B shell/GIF central stage.
