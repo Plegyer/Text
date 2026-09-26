@@ -19,7 +19,7 @@ function ending(id:string,metaRewards:any[]=[],reward='legacy.placeholder'){
 function definitions(){
   const hardWork=ordinaryHardWorkCareers.map(c=>ending(
     `hardwork.${c}`,
-    [{kind:'hardWork',rewardId:`reward.${c}`,career:c}]
+    [{kind:'hardWork',rewardId:`hardWork:${c}`,career:c}]
   ));
   return {
     version:'0.1.0',
@@ -167,6 +167,9 @@ test('same ending in later run completes but does not reapply unique Hard Work r
   s=dispatch(s,{type:'commitEnding',id:'hardwork.lumber'},cat);
   s=dispatch(s,{type:'completeEnding'},cat);
   assert.deepEqual(s.meta.hardWorkProgress,['lumber']);
+  assert.deepEqual(s.run.endings.result?.appliedMetaRewardIds,['hardWork:lumber']);
+  s=parseSave(JSON.stringify(s),cat);
+  assert.deepEqual(s.run.endings.result?.appliedMetaRewardIds,['hardWork:lumber']);
 
   s=dispatch(s,{type:'newLife'},cat);
   assert.equal(s.run.character.stats.strength,4);
