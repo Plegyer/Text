@@ -2,7 +2,7 @@
 
 Дата: 2026-09-26.
 
-Статус: **IN IMPLEMENTATION**.
+Статус: **IMPLEMENTED / GREEN**.
 
 Base commit:
 `138fc181319d4292dc9ffd5b30b645fd459f198c` (A2 merged green).
@@ -156,3 +156,35 @@ Out of scope:
 - Activity envelope (A5);
 - RunResult/meta exactly-once (A6);
 - mass migration of production JSON.
+
+
+## Implementation result — 2026-09-26
+
+Implemented on `a3-event-resolver`.
+
+Delivered:
+- typed reaction facts at state-changing boundaries;
+- legacy action triggers routed through the same resolver;
+- fixed priority classes + numeric/oldest/least-recent/stable-ID ordering;
+- persisted reaction epoch and probabilistic attempt memory;
+- persisted blocking pending snapshot with resolved variant and allowed choices;
+- optional non-blocking offers;
+- latched and scheduled resolved instances;
+- deterministic scheduled expiry;
+- automatic resolver rerun after scene choice;
+- cascade depth protection at 16;
+- ending-commit suppression hook for normal progression;
+- save validation for pending/queued resolver instances;
+- deterministic debug trace.
+
+Cross-system proof passes:
+School stat gain -> career event -> choice changes Career and adds QuestFact -> second blocking event appears immediately with no extra work/School/Energy command.
+
+Validation on GitHub Actions / Node 22:
+- typecheck pass;
+- catalog validation pass;
+- build pass;
+- **72/72 tests pass**;
+- full `npm run check` pass.
+
+Next package: **A4 Night Flow**.
