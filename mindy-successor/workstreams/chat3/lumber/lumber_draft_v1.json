@@ -1155,7 +1155,7 @@
       "metaRewardOnCompletedRun": [
         {
           "kind": "hardWork",
-          "rewardId": "reward.hardwork.lumber",
+          "rewardId": "hardWork:lumber",
           "career": "lumber"
         }
       ],
