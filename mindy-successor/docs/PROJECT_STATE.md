@@ -640,3 +640,19 @@ The multi-chat setup is pre-created and may be started at any time.
 - **Phase B: ACTIVE.** Первый runtime integration target — игровой shell с одним постоянным central GIF/media window и stable semantic `presentationId`.
 - Phase B presentation candidate: Chat 2 PR #15. Параллельные product candidates: Lumber PR #16 и School PR #17.
 - Следующий большой product gate после интеграции shell/Lumber/School — Product Acceptance.
+
+
+## Phase B integration — central presentation and School — 2026-09-26
+
+- PR #15 merged the Phase B central presentation runtime.
+- The shell now has one persistent central media stage driven by stable semantic `presentationId`.
+- GIF is primary dynamic media; static/text fallback is non-fatal; animation-off changes presentation only.
+- The editor workflow is presentationId-first and file-picker based rather than manual source-path editing.
+- Target-shaped semantic IDs are normalized for Lumber, School and endings.
+- PR #15 merge-ref passed full `npm run check`: **142/142 tests**.
+- PR #18 aligned A6 reward validation with the locked semantic Meta identifier format `hardWork:<career>`; ordinary gameplay IDs remain under the stricter lowercase content-ID rule.
+- PR #17 merged the locked eight-course School runtime slice and transaction tests.
+- Paid School lessons cost tuition + 1 Energy exactly once; save/reload cannot recharge them; Night study remains a separate Night-slot rule.
+- PR #17 merge-ref passed full `npm run check`: **149/149 tests**.
+- Lumber PR #16 is the remaining first product-slice integration checkpoint; it is being rerun against the current main after the reward-ID contract fix.
+- Workers continue independently on presentation registry/migration, Lumber PA/Night/checkpoint coverage, Phase B/PA QA audit and School integration/PA fixtures.
