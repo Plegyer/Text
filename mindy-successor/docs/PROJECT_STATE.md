@@ -656,3 +656,22 @@ The multi-chat setup is pre-created and may be started at any time.
 - PR #17 merge-ref passed full `npm run check`: **149/149 tests**.
 - Lumber PR #16 is the remaining first product-slice integration checkpoint; it is being rerun against the current main after the reward-ID contract fix.
 - Workers continue independently on presentation registry/migration, Lumber PA/Night/checkpoint coverage, Phase B/PA QA audit and School integration/PA fixtures.
+
+
+## Production activation milestone — PR #20 — 2026-09-26
+
+- PR #20 merged production activation for the current successor vertical slice.
+- Main now ships target Lumber action/career/Foreman/Forest/endings rather than leaving them fixture-only.
+- Three approved Lumber target event families are promoted explicitly to top-level production packs; nested fixture directories are not recursively shipped.
+- School now has first-class `schoolLesson` dispatch, typed School-owned track progress, all eight paid course controls and save-compatible semantic presentation identity.
+- Paid lessons increment `lessons_completed`; Night study increments separate `night_study_sessions`.
+- School transaction ordering is canonical: full atomic batch -> ending registration -> reaction facts -> Resolver.
+- NightFlow is player-reachable through explicit endDay / lodging / voluntary choice controls.
+- Forest Activity is player-visible through the Activity envelope UI path.
+- Pending scenes and action results persist slash-taxonomy semantic `presentationId` values.
+- Legacy `lumber` action history remains save-compatible while target UI uses `lumber.shift`; no implicit conversion to target completed shifts is introduced.
+- Hard Work remains exactly one condition: Lumber `completed_shifts >= 50`; exact Meta reward ID remains `hardWork:lumber`.
+- Synthetic `school.lumber-management` is not production content. Final School management/accounting and Arcana/forest public-fact authoring remains OPEN and must not be guessed.
+- GitHub Actions merge-ref evidence: typecheck PASS, validate PASS, build PASS, **187/187 tests PASS**.
+- **Phase B production activation is GREEN.**
+- Active Lead gate: **Product Acceptance PA00–PA26 against shipped production catalog**, followed by release-candidate regression/post-merge smoke.
