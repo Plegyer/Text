@@ -115,3 +115,34 @@ The previous continuation queues (items 1–4) are complete. New worker-owned br
 - Chat 5 — `chat5/school-progression-next`: full School production UI/data manifest; exhaustive School reload matrix.
 
 Lead-owned branch `lead/product-activation-school-lumber` owns shared runtime/schema/build/UI activation work. Worker task packets explicitly forbid touching those shared Lead-owned paths until ownership is released.
+
+
+## Continuous worker queues — 2026-09-26 20:37 +03:00
+
+The previous product-continuation queues are complete and frozen for Lead review:
+- `chat2/presentation-product-next`;
+- `chat3/lumber-product-next`;
+- `chat4/product-activation-qa-next`;
+- `chat5/school-progression-next`.
+
+New worker-owned continuation branches preserve the no-idle rule:
+
+- Chat 2 — `chat2/presentation-boundary-next`
+  1. semantic presentationId save-boundary audit;
+  2. shipped media/fallback gap matrix.
+
+- Chat 3 — `chat3/lumber-integration-prep-next`
+  1. real item-capability integration audit;
+  2. Lumber ending independence matrix.
+  Locked: Hard Work = ONLY `completed_shifts >= 50`; rewardId exactly `hardWork:lumber`.
+
+- Chat 4 — `chat4/activation-gate-next`
+  1. presentation save-schema compatibility audit;
+  2. production activation merge gate checklist.
+  QA-only; no production runtime/content edits.
+
+- Chat 5 — `chat5/school-activation-prep-next`
+  1. School progression ownership contract audit;
+  2. complete Night-study choice catalog contract.
+
+Lead shared-runtime activation work remains on `lead/product-activation-school-lumber-v2`. Worker task packets explicitly forbid editing Lead-owned shared runtime/schema/build/UI files.
