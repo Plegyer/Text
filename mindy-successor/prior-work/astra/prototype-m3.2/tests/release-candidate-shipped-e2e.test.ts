@@ -53,10 +53,20 @@ test('release-candidate shipped E2E keeps one Save coherent across Lumber, Schoo
   assert.equal(s.run.flow.pendingScene?.eventId,'base.school');
 
   // Resolve the shipped first-School blocking scene before NightFlow.
+  const schoolMoneyCommitted=s.run.resources.money;
+  const schoolEnergyCommitted=s.run.dayState.energyCurrent;
+  const schoolLessonsCommitted=
+    s.run.progression.school.tracks['school.track.arcana']?.counters.lessons_completed;
   s=reload(s);
   s=dispatch(s,{type:'choice',id:'listen'},catalog);
   assert.equal(s.run.flow.pendingScene,null);
   assert.equal(s.run.flags['school.enrolled'],true);
+  assert.equal(s.run.resources.money,schoolMoneyCommitted);
+  assert.equal(s.run.dayState.energyCurrent,schoolEnergyCommitted);
+  assert.equal(
+    s.run.progression.school.tracks['school.track.arcana']?.counters.lessons_completed,
+    schoolLessonsCommitted
+  );
 
   // Explicit NightFlow -> paid normal lodging -> optional professional Foreman Night.
   s=reload(s);
@@ -113,6 +123,8 @@ test('release-candidate shipped E2E keeps one Save coherent across Lumber, Schoo
   // This is not product-authoring evidence; it only avoids replaying dozens of ordinary days.
   s.run.progression.careers.lumber!.counters.completed_shifts=49;
   s=reload(s);
+  assert.equal(s.run.progression.careers.lumber?.counters.completed_shifts,49);
+  assert.equal(s.run.endings.eligible.includes('ending.lumber.hard-work'),false);
 
   s=dispatch(s,{type:'action',id:'lumber.shift'},catalog);
   assert.equal(s.run.progression.careers.lumber?.counters.completed_shifts,50);
@@ -144,4 +156,9 @@ test('release-candidate shipped E2E keeps one Save coherent across Lumber, Schoo
   assert.equal(s.run.character.stats.endurance,4);
   assert.deepEqual(s.meta.hardWorkProgress,['lumber']);
   assert.equal(s.run.progression.worldFacts.includes('lumber.school.management-ready'),false);
+
+  const newRunReloaded=reload(s);
+  assert.equal(newRunReloaded.run.character.stats.strength,4);
+  assert.equal(newRunReloaded.run.character.stats.endurance,4);
+  assert.deepEqual(newRunReloaded.meta.hardWorkProgress,['lumber']);
 });
