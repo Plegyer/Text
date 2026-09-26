@@ -63,3 +63,35 @@ Key evidence:
 - No runtime/core/UI/production-content file was modified by Chat 4.
 
 The task remains marked CONTINUOUS only so a later explicitly assigned Chat 4 queue item can extend it. No further current Chat 4 queue item is present in this packet.
+
+
+## Queue item 3 — Product Acceptance executable readiness matrix
+
+Create:
+- `docs/qa-prep/PRODUCT_ACCEPTANCE_EXECUTABLE_READINESS_v1.md`
+
+Review current main plus Lead PR #19 candidate. For every PA00–PA26 row:
+- name exact command/API;
+- name exact fixture/content IDs available after PR #19;
+- mark READY / BLOCKED_BY_CONTENT / BLOCKED_BY_WIRING;
+- identify required save/reload checkpoint;
+- identify presentationId where relevant;
+- do not invent missing content or thresholds.
+
+The matrix must distinguish “fixture exists” from “actual harness runner already wires it”.
+
+## Queue item 4 — executable cross-slice QA subset
+
+Create NEW test file only:
+- `prior-work/astra/prototype-m3.2/tests/qa-product-cross-slice-subset.test.ts`
+
+Use only already-available merged/PR #19 fixture IDs. Cover a compact real subset spanning:
+- Lumber Work;
+- free reactive career/Foreman progression;
+- School paid lesson;
+- Night choice/lodging exactly-once;
+- Forest Activity entry/result;
+- Hard Work ending commit/completion;
+- semantic presentation IDs remain presentation-only.
+
+Do not patch engine/core/UI/content. If a required hook is genuinely unavailable, leave that step documented as blocked instead of fabricating state transitions.
