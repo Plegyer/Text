@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "id": "lumber.production-media-parity.fixture",
+  "packagedStaticFallbacks": {
+    "lumber": {
+      "path": "assets/stage-lumber.svg",
+      "packaged": true
+    },
+    "forest": {
+      "path": "assets/stage-forest.svg",
+      "packaged": true
+    }
+  },
+  "media": [
+    {
+      "mediaId": "job.lumber.shift.spring.default",
+      "packId": "lumber",
+      "declaredKind": "gif",
+      "declaredSrc": "assets/lumber/shift-spring.gif",
+      "sourcePackaged": false,
+      "status": "FUTURE_GIF_MISSING_NON_FATAL",
+      "semanticPresentationId": "job/lumber/shift/spring/default",
+      "runtimeFallbackId": "location/town/default",
+      "packagedStaticFallback": "assets/stage-lumber.svg"
+    },
+    {
+      "mediaId": "job.lumber.shift.summer.default",
+      "packId": "lumber",
+      "declaredKind": "gif",
+      "declaredSrc": "assets/lumber/shift-summer.gif",
+      "sourcePackaged": false,
+      "status": "FUTURE_GIF_MISSING_NON_FATAL",
+      "semanticPresentationId": "job/lumber/shift/summer/default",
+      "runtimeFallbackId": "location/town/default",
+      "packagedStaticFallback": "assets/stage-lumber.svg"
+    },
+    {
+      "mediaId": "job.lumber.shift.autumn.default",
+      "packId": "lumber",
+      "declaredKind": "gif",
+      "declaredSrc": "assets/lumber/shift-autumn.gif",
+      "sourcePackaged": false,
+      "status": "FUTURE_GIF_MISSING_NON_FATAL",
+      "semanticPresentationId": "job/lumber/shift/autumn/default",
+      "runtimeFallbackId": "location/town/default",
+      "packagedStaticFallback": "assets/stage-lumber.svg"
+    },
+    {
+      "mediaId": "job.lumber.shift.winter.default",
+      "packId": "lumber",
+      "declaredKind": "gif",
+      "declaredSrc": "assets/lumber/shift-winter.gif",
+      "sourcePackaged": false,
+      "status": "FUTURE_GIF_MISSING_NON_FATAL",
+      "semanticPresentationId": "job/lumber/shift/winter/default",
+      "runtimeFallbackId": "location/town/default",
+      "packagedStaticFallback": "assets/stage-lumber.svg"
+    },
+    {
+      "mediaId": "job.lumber.event.accepted-hand",
+      "packId": "lumber",
+      "declaredKind": "gif",
+      "declaredSrc": "assets/lumber/accepted-hand.gif",
+      "sourcePackaged": false,
+      "status": "FUTURE_GIF_MISSING_NON_FATAL",
+      "semanticPresentationId": "job/lumber/event/lumber-career-first-shift/default",
+      "runtimeFallbackId": "location/town/default",
+      "packagedStaticFallback": "assets/stage-lumber.svg"
+    },
+    {
+      "mediaId": "relationship.lumber.foreman.professional",
+      "packId": "lumber",
+      "declaredKind": "gif",
+      "declaredSrc": "assets/lumber/foreman-professional.gif",
+      "sourcePackaged": false,
+      "status": "FUTURE_GIF_MISSING_NON_FATAL",
+      "semanticPresentationId": "relationship/lumber-foreman/lumber-foreman-notice/default",
+      "runtimeFallbackId": "location/town/default",
+      "packagedStaticFallback": "assets/stage-lumber.svg"
+    },
+    {
+      "mediaId": "job.lumber.event.forest-return",
+      "packId": "lumber-cross",
+      "declaredKind": "gif",
+      "declaredSrc": "assets/lumber/forest-return.gif",
+      "sourcePackaged": false,
+      "status": "FUTURE_GIF_MISSING_NON_FATAL",
+      "semanticPresentationId": "job/lumber/event/lumber-cross-activity-forest-return/default",
+      "runtimeFallbackId": "location/town/default",
+      "packagedStaticFallback": "assets/stage-forest.svg"
+    },
+    {
+      "mediaId": "relationship.lumber.foreman.night.professional",
+      "packId": "lumber-night",
+      "declaredKind": "gif",
+      "declaredSrc": "assets/lumber/foreman-night-professional.gif",
+      "sourcePackaged": false,
+      "status": "FUTURE_GIF_MISSING_NON_FATAL",
+      "semanticPresentationId": "relationship/lumber-foreman/lumber-night-foreman-professional/default",
+      "runtimeFallbackId": "location/town/default",
+      "packagedStaticFallback": "assets/stage-lumber.svg"
+    }
+  ],
+  "rules": {
+    "missingFutureGifIsFatal": false,
+    "missingPathMayBeLabeledShipped": false,
+    "semanticIdsAreNotAssetIds": true
+  }
+}
