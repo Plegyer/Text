@@ -172,12 +172,26 @@ function ensureDomainState(s:Save,kind:DomainKind,id:string,cat:Catalog):DomainS
   map[id]=created;return created;
 }
 
+export function itemCapabilities(s:Save,cat?:Catalog):string[]{
+  if(!cat)return [];
+  const owned=new Set<string>();
+  for(const item of cat.definitions.items){
+    if((s.run.resources.inventory[item.id]??0)<=0)continue;
+    for(const capability of item.capabilities)owned.add(capability);
+  }
+  return [...owned].sort();
+}
+export function hasItemCapability(s:Save,capability:string,cat?:Catalog):boolean{
+  return itemCapabilities(s,cat).includes(capability);
+}
+
 export function meets(c:Condition,s:Save,cat?:Catalog):boolean {
   const cal=()=>calendar(s.run.day);
   switch(c.kind){
     case 'stat': return compare(s.run.character.stats[c.stat],c.op,c.value);
     case 'resource': return compare(s.run.resources[c.resource],c.op,c.value);
     case 'itemCount': return compare(s.run.resources.inventory[c.id]??0,c.op,c.count);
+    case 'itemCapability': return hasItemCapability(s,c.capability,cat)===c.present;
     case 'calendarYear': return compare(cal().year,c.op,c.value);
     case 'calendarSeason': return cal().season===c.value;
     case 'calendarDayInYear': return compare(cal().dayInYear,c.op,c.value);
