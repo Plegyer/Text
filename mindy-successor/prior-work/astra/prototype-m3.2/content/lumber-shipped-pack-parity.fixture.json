@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 1,
+  "id": "lumber.shipped-pack-parity.fixture",
+  "families": [
+    {
+      "id": "career-foreman-progression",
+      "packId": "lumber",
+      "eventIds": [
+        "lumber.career-first-shift",
+        "lumber.foreman-notice"
+      ],
+      "capabilityDomains": {
+        "reads": {
+          "careers": [
+            "lumber"
+          ],
+          "relationships": [
+            "lumber.foreman"
+          ]
+        },
+        "writes": {
+          "careers": [
+            "lumber"
+          ],
+          "relationships": [
+            "lumber.foreman"
+          ]
+        }
+      },
+      "requiredMediaIds": [
+        "job.lumber.event.accepted-hand",
+        "relationship.lumber.foreman.professional"
+      ],
+      "semanticPresentationIds": {
+        "lumber.career-first-shift": "job/lumber/event/lumber-career-first-shift/default",
+        "lumber.foreman-notice": "relationship/lumber-foreman/lumber-foreman-notice/default"
+      },
+      "requiredTargetDefinitions": {
+        "actions": [
+          "lumber.shift"
+        ],
+        "careers": [
+          "lumber"
+        ],
+        "relationships": [
+          "lumber.foreman"
+        ],
+        "activities": [],
+        "endings": []
+      }
+    },
+    {
+      "id": "school-forest-cross-system-return",
+      "packId": "lumber-cross",
+      "eventIds": [
+        "lumber-cross.school-management-return",
+        "lumber-cross.activity-forest-return"
+      ],
+      "capabilityDomains": {
+        "reads": {
+          "careers": [
+            "lumber"
+          ],
+          "relationships": [
+            "lumber.foreman"
+          ],
+          "activities": [
+            "lumber.forest"
+          ],
+          "worldFacts": [
+            "lumber.school.management-ready",
+            "lumber.forest.truth-known"
+          ]
+        },
+        "writes": {
+          "careers": [
+            "lumber"
+          ]
+        }
+      },
+      "requiredMediaIds": [
+        "job.lumber.event.forest-return"
+      ],
+      "semanticPresentationIds": {
+        "lumber-cross.school-management-return": "job/lumber/event/lumber-cross-school-management-return/default",
+        "lumber-cross.activity-forest-return": "job/lumber/event/lumber-cross-activity-forest-return/default"
+      },
+      "requiredTargetDefinitions": {
+        "actions": [],
+        "careers": [
+          "lumber"
+        ],
+        "relationships": [
+          "lumber.foreman"
+        ],
+        "activities": [
+          "lumber.forest"
+        ],
+        "endings": [
+          "ending.lumber.forewoman",
+          "ending.lumber.forest"
+        ]
+      },
+      "externalBoundaries": {
+        "schoolPublicFact": {
+          "currentFixtureFact": "lumber.school.management-ready",
+          "productionProvider": "OPEN",
+          "syntheticProviderActionExcluded": "school.lumber-management"
+        },
+        "forestReturn": {
+          "boundaryKind": "activityResult",
+          "activityId": "lumber.forest",
+          "outcome": "success",
+          "resultId": "lumber.forest.success"
+        }
+      }
+    },
+    {
+      "id": "foreman-night-continuation",
+      "packId": "lumber-night",
+      "eventIds": [
+        "lumber-night.foreman-professional"
+      ],
+      "capabilityDomains": {
+        "reads": {
+          "relationships": [
+            "lumber.foreman"
+          ]
+        },
+        "writes": {
+          "relationships": [
+            "lumber.foreman"
+          ]
+        }
+      },
+      "requiredMediaIds": [
+        "relationship.lumber.foreman.night.professional"
+      ],
+      "semanticPresentationIds": {
+        "lumber-night.foreman-professional": "relationship/lumber-foreman/lumber-night-foreman-professional/default"
+      },
+      "requiredTargetDefinitions": {
+        "actions": [],
+        "careers": [],
+        "relationships": [
+          "lumber.foreman"
+        ],
+        "activities": [],
+        "endings": []
+      },
+      "externalBoundaries": {
+        "nightChoiceId": "lumber.foreman.night",
+        "note": "Event parity requires the stable Night hook; the isolated Night acceptance builder supplies the choice until production Night data owns it."
+      }
+    }
+  ],
+  "productionExclusions": [
+    "school.lumber-management"
+  ],
+  "lockedContracts": {
+    "hardWork": {
+      "endingId": "ending.lumber.hard-work",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "lumber",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 50
+        }
+      ],
+      "metaReward": {
+        "kind": "hardWork",
+        "rewardId": "hardWork:lumber",
+        "career": "lumber"
+      }
+    },
+    "activityContinuation": {
+      "boundaryKind": "activityResult",
+      "activityId": "lumber.forest",
+      "outcome": "success",
+      "resultId": "lumber.forest.success",
+      "eventId": "lumber-cross.activity-forest-return"
+    }
+  }
+}
