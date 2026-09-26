@@ -1,0 +1,201 @@
+{
+  "version": 1,
+  "kind": "presentation-asset-backlog-priority",
+  "rankingBasis": "product-dependency-only",
+  "classOrder": [
+    "REQUIRED_FOR_RC_SAFE_FALLBACK",
+    "ALREADY_COVERED_STATIC",
+    "BLOCKED_BY_AUTHORING",
+    "TEXT_FALLBACK_ACCEPTABLE",
+    "NICE_TO_HAVE_GIF"
+  ],
+  "summary": {
+    "requiredForRcSafeFallbackMissing": 0,
+    "rcBlockingPresentationAssets": 0,
+    "optionalGifTargets": 7
+  },
+  "rows": [
+    {
+      "itemId": "current-town-stage",
+      "surface": "location/night/endings fallback",
+      "dependencyClass": "ALREADY_COVERED_STATIC",
+      "presentationIds": [
+        "location/town/default",
+        "ending/lumber/hard-work",
+        "ending/lumber/forewoman",
+        "ending/lumber/forest"
+      ],
+      "currentCoverage": "assets/stage-town.svg",
+      "note": "Current RC has a shipped static terminal fallback."
+    },
+    {
+      "itemId": "current-lumber-stage",
+      "surface": "Lumber/Foreman",
+      "dependencyClass": "ALREADY_COVERED_STATIC",
+      "presentationIds": [
+        "job/lumber/result/default",
+        "job/lumber/event/lumber-career-first-shift/default",
+        "relationship/lumber-foreman/lumber-foreman-notice/default",
+        "relationship/lumber-foreman/lumber-night-foreman-professional/default"
+      ],
+      "currentCoverage": "assets/stage-lumber.svg",
+      "note": "Current RC is static-safe."
+    },
+    {
+      "itemId": "current-school-stage",
+      "surface": "School paid lessons",
+      "dependencyClass": "ALREADY_COVERED_STATIC",
+      "presentationIds": [
+        "school/*/lesson/default"
+      ],
+      "currentCoverage": "assets/stage-school.svg",
+      "note": "All eight paid courses use the shipped School static stage."
+    },
+    {
+      "itemId": "current-forest-stage",
+      "surface": "Forest route/results",
+      "dependencyClass": "ALREADY_COVERED_STATIC",
+      "presentationIds": [
+        "activity/forest/route/default",
+        "activity/forest/return/success",
+        "activity/forest/return/escape",
+        "activity/forest/return/failure"
+      ],
+      "currentCoverage": "assets/stage-forest.svg",
+      "note": "PR22 option-aware Activity remains safe on generic Forest static presentation."
+    },
+    {
+      "itemId": "gif-lumber-spring",
+      "surface": "optional animated replacement",
+      "dependencyClass": "NICE_TO_HAVE_GIF",
+      "presentationIds": [
+        "job/lumber/shift/spring/default"
+      ],
+      "currentCoverage": "shipped static fallback",
+      "logicalTarget": "media/lumber/shift-spring.gif",
+      "note": "Optional polish; never required for RC correctness."
+    },
+    {
+      "itemId": "gif-lumber-summer",
+      "surface": "optional animated replacement",
+      "dependencyClass": "NICE_TO_HAVE_GIF",
+      "presentationIds": [
+        "job/lumber/shift/summer/default"
+      ],
+      "currentCoverage": "shipped static fallback",
+      "logicalTarget": "media/lumber/shift-summer.gif",
+      "note": "Optional polish; never required for RC correctness."
+    },
+    {
+      "itemId": "gif-lumber-autumn",
+      "surface": "optional animated replacement",
+      "dependencyClass": "NICE_TO_HAVE_GIF",
+      "presentationIds": [
+        "job/lumber/shift/autumn/default"
+      ],
+      "currentCoverage": "shipped static fallback",
+      "logicalTarget": "media/lumber/shift-autumn.gif",
+      "note": "Optional polish; never required for RC correctness."
+    },
+    {
+      "itemId": "gif-lumber-winter",
+      "surface": "optional animated replacement",
+      "dependencyClass": "NICE_TO_HAVE_GIF",
+      "presentationIds": [
+        "job/lumber/shift/winter/default"
+      ],
+      "currentCoverage": "shipped static fallback",
+      "logicalTarget": "media/lumber/shift-winter.gif",
+      "note": "Optional polish; never required for RC correctness."
+    },
+    {
+      "itemId": "gif-accepted-hand",
+      "surface": "optional animated replacement",
+      "dependencyClass": "NICE_TO_HAVE_GIF",
+      "presentationIds": [
+        "job/lumber/event/lumber-career-first-shift/default"
+      ],
+      "currentCoverage": "shipped static fallback",
+      "logicalTarget": "media/lumber/accepted-hand.gif",
+      "note": "Optional polish; never required for RC correctness."
+    },
+    {
+      "itemId": "gif-foreman-professional",
+      "surface": "optional animated replacement",
+      "dependencyClass": "NICE_TO_HAVE_GIF",
+      "presentationIds": [
+        "relationship/lumber-foreman/lumber-foreman-notice/default"
+      ],
+      "currentCoverage": "shipped static fallback",
+      "logicalTarget": "media/lumber/foreman-professional.gif",
+      "note": "Optional polish; never required for RC correctness."
+    },
+    {
+      "itemId": "gif-foreman-night",
+      "surface": "optional animated replacement",
+      "dependencyClass": "NICE_TO_HAVE_GIF",
+      "presentationIds": [
+        "relationship/lumber-foreman/lumber-night-foreman-professional/default"
+      ],
+      "currentCoverage": "shipped static fallback",
+      "logicalTarget": "media/lumber/foreman-night-professional.gif",
+      "note": "Optional polish; never required for RC correctness."
+    },
+    {
+      "itemId": "forest-route-specific-media",
+      "surface": "Forest route-specific presentation",
+      "dependencyClass": "BLOCKED_BY_AUTHORING",
+      "presentationIds": [
+        "activity/forest/route/logging-road/*",
+        "activity/forest/route/hunter-trail/*",
+        "activity/forest/route/old-boundary/*"
+      ],
+      "currentCoverage": "activity/forest/route/default -> assets/stage-forest.svg",
+      "note": "Final exact slot variants/lore/assets should follow content authoring; generic route remains safe."
+    },
+    {
+      "itemId": "forest-challenge-specific-media",
+      "surface": "Forest challenge-specific presentation",
+      "dependencyClass": "BLOCKED_BY_AUTHORING",
+      "presentationIds": [
+        "activity/forest/challenge/navigation/*",
+        "activity/forest/challenge/physical-obstacle/*",
+        "activity/forest/challenge/interpretation-ritual-anomaly/*"
+      ],
+      "currentCoverage": "activity/forest/route/default -> assets/stage-forest.svg",
+      "note": "Challenge authoring is incomplete; do not fabricate asset requirements."
+    },
+    {
+      "itemId": "school-management-result-media",
+      "surface": "School management/accounting public result",
+      "dependencyClass": "BLOCKED_BY_AUTHORING",
+      "presentationIds": [
+        "unassigned-until-authoring"
+      ],
+      "currentCoverage": "School/town static fallback available",
+      "note": "No final gameplay/public-result identity exists to bind a unique asset."
+    },
+    {
+      "itemId": "dedicated-ending-art",
+      "surface": "Lumber endings",
+      "dependencyClass": "TEXT_FALLBACK_ACCEPTABLE",
+      "presentationIds": [
+        "ending/lumber/hard-work",
+        "ending/lumber/forewoman",
+        "ending/lumber/forest"
+      ],
+      "currentCoverage": "town static semantic fallback plus ending text",
+      "note": "Dedicated ending art is optional for RC; text meaning plus safe static fallback is sufficient."
+    },
+    {
+      "itemId": "dedicated-school-night-study-art",
+      "surface": "School Night study",
+      "dependencyClass": "TEXT_FALLBACK_ACCEPTABLE",
+      "presentationIds": [
+        "location/town/default"
+      ],
+      "currentCoverage": "shared central town context",
+      "note": "No dedicated Night-study semantic slot is required by the shipped product."
+    }
+  ]
+}
