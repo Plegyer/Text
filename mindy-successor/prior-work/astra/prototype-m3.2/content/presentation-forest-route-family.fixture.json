@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "kind": "presentation-forest-route-family-contract",
+  "status": "semantic-family-preauthoring",
+  "policy": {
+    "fallbackId": "activity/forest/route/default",
+    "finalEventIdsInvented": false,
+    "finalLoreInvented": false,
+    "finalAssetsInvented": false,
+    "gameplayConditionsInvented": false
+  },
+  "families": [
+    {
+      "dimension": "route",
+      "key": "logging-road",
+      "semanticFamily": "activity/forest/route/logging-road/*",
+      "authoredGameplayState": "shipped",
+      "fallbackId": "activity/forest/route/default"
+    },
+    {
+      "dimension": "route",
+      "key": "hunter-trail",
+      "semanticFamily": "activity/forest/route/hunter-trail/*",
+      "authoredGameplayState": "open-authoring",
+      "fallbackId": "activity/forest/route/default"
+    },
+    {
+      "dimension": "route",
+      "key": "old-boundary",
+      "semanticFamily": "activity/forest/route/old-boundary/*",
+      "authoredGameplayState": "shipped-option-capability-gated",
+      "fallbackId": "activity/forest/route/default"
+    },
+    {
+      "dimension": "challenge",
+      "key": "navigation",
+      "semanticFamily": "activity/forest/challenge/navigation/*",
+      "authoredGameplayState": "open-authoring",
+      "fallbackId": "activity/forest/route/default"
+    },
+    {
+      "dimension": "challenge",
+      "key": "physical-obstacle",
+      "semanticFamily": "activity/forest/challenge/physical-obstacle/*",
+      "authoredGameplayState": "open-authoring",
+      "fallbackId": "activity/forest/route/default"
+    },
+    {
+      "dimension": "challenge",
+      "key": "interpretation-ritual-anomaly",
+      "semanticFamily": "activity/forest/challenge/interpretation-ritual-anomaly/*",
+      "authoredGameplayState": "open-authoring",
+      "fallbackId": "activity/forest/route/default"
+    },
+    {
+      "dimension": "result",
+      "key": "success",
+      "semanticFamily": "activity/forest/return/success",
+      "authoredGameplayState": "shipped",
+      "fallbackId": "activity/forest/route/default"
+    },
+    {
+      "dimension": "result",
+      "key": "escape",
+      "semanticFamily": "activity/forest/return/escape",
+      "authoredGameplayState": "shipped",
+      "fallbackId": "activity/forest/route/default"
+    },
+    {
+      "dimension": "result",
+      "key": "failure",
+      "semanticFamily": "activity/forest/return/failure",
+      "authoredGameplayState": "shipped",
+      "fallbackId": "activity/forest/route/default"
+    }
+  ]
+}
