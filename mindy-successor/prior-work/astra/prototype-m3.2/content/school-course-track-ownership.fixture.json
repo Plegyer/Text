@@ -1,0 +1,150 @@
+{
+  "formatVersion": 1,
+  "id": "school.course-track-ownership.fixture.v1",
+  "courses": [
+    {
+      "courseId": "school.course.literacy_and_numbers",
+      "trackId": "school.track.literacy_and_numbers",
+      "presentationId": "school/literacy-and-numbers/lesson/default",
+      "supportedNightStats": [
+        "reason",
+        "wits"
+      ],
+      "paidLessonDelta": {
+        "counter": "lessons_completed",
+        "delta": 1
+      },
+      "nightStudyDelta": {
+        "counter": "night_study_sessions",
+        "delta": 1
+      }
+    },
+    {
+      "courseId": "school.course.arcana",
+      "trackId": "school.track.arcana",
+      "presentationId": "school/arcana/lesson/default",
+      "supportedNightStats": [
+        "magic",
+        "reason",
+        "creativity"
+      ],
+      "paidLessonDelta": {
+        "counter": "lessons_completed",
+        "delta": 1
+      },
+      "nightStudyDelta": {
+        "counter": "night_study_sessions",
+        "delta": 1
+      }
+    },
+    {
+      "courseId": "school.course.rhetoric_and_social",
+      "trackId": "school.track.rhetoric_and_social",
+      "presentationId": "school/rhetoric-and-social/lesson/default",
+      "supportedNightStats": [
+        "charm",
+        "sociability",
+        "wits"
+      ],
+      "paidLessonDelta": {
+        "counter": "lessons_completed",
+        "delta": 1
+      },
+      "nightStudyDelta": {
+        "counter": "night_study_sessions",
+        "delta": 1
+      }
+    },
+    {
+      "courseId": "school.course.etiquette_and_presentation",
+      "trackId": "school.track.etiquette_and_presentation",
+      "presentationId": "school/etiquette-and-presentation/lesson/default",
+      "supportedNightStats": [
+        "manners",
+        "grooming",
+        "charm"
+      ],
+      "paidLessonDelta": {
+        "counter": "lessons_completed",
+        "delta": 1
+      },
+      "nightStudyDelta": {
+        "counter": "night_study_sessions",
+        "delta": 1
+      }
+    },
+    {
+      "courseId": "school.course.field_craft",
+      "trackId": "school.track.field_craft",
+      "presentationId": "school/field-craft/lesson/default",
+      "supportedNightStats": [
+        "dexterity",
+        "wits",
+        "creativity"
+      ],
+      "paidLessonDelta": {
+        "counter": "lessons_completed",
+        "delta": 1
+      },
+      "nightStudyDelta": {
+        "counter": "night_study_sessions",
+        "delta": 1
+      }
+    },
+    {
+      "courseId": "school.course.physical_training",
+      "trackId": "school.track.physical_training",
+      "presentationId": "school/physical-training/lesson/default",
+      "supportedNightStats": [
+        "strength",
+        "endurance",
+        "dexterity"
+      ],
+      "paidLessonDelta": {
+        "counter": "lessons_completed",
+        "delta": 1
+      },
+      "nightStudyDelta": {
+        "counter": "night_study_sessions",
+        "delta": 1
+      }
+    },
+    {
+      "courseId": "school.course.arts_and_performance",
+      "trackId": "school.track.arts_and_performance",
+      "presentationId": "school/arts-and-performance/lesson/default",
+      "supportedNightStats": [
+        "creativity",
+        "charm",
+        "sociability",
+        "dexterity"
+      ],
+      "paidLessonDelta": {
+        "counter": "lessons_completed",
+        "delta": 1
+      },
+      "nightStudyDelta": {
+        "counter": "night_study_sessions",
+        "delta": 1
+      }
+    },
+    {
+      "courseId": "school.course.body_confidence",
+      "trackId": "school.track.body_confidence",
+      "presentationId": "school/body-confidence/lesson/default",
+      "supportedNightStats": [
+        "sexuality",
+        "grooming",
+        "endurance"
+      ],
+      "paidLessonDelta": {
+        "counter": "lessons_completed",
+        "delta": 1
+      },
+      "nightStudyDelta": {
+        "counter": "night_study_sessions",
+        "delta": 1
+      }
+    }
+  ]
+}
