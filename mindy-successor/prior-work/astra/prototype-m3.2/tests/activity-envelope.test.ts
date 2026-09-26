@@ -210,7 +210,7 @@ test('ActivityStarted trigger can pause with a normal pending scene and resume s
   s=dispatch(s,{type:'enterActivity',id:'forest.test'},cat);
   assert.equal(s.run.pending?.eventId,'activity.started');
   assert.equal(s.run.flow.activity?.internalState.progress,0);
-  assert.throws(()=>dispatch(s,{type:'activityAction',id:'advance'},cat),/Завершите текущую сцену/);
+  assert.throws(()=>dispatch(s,{type:'activityAction',id:'advance'},cat),/завершите текущую сцену/i);
 
   s=dispatch(s,{type:'choice',id:'continue'},cat);
   assert.equal(s.run.pending,null);
