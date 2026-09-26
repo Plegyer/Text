@@ -1,5 +1,6 @@
 import { metrics, stats, seasons, priorityClasses, saveSchema, type Stat, type Save, type Meta, type Condition, type Effect, type Catalog, type StoryEvent, type Action, type MachineDefinition, type ReactionFact, type ReactionTrigger, type PriorityClass, type LodgingDefinition, type NightChoiceDefinition, type ActivityDefinition, type ActivityOutcome, type ActivityEnvelope, ordinaryHardWorkCareers, type MetaReward, type OrdinaryHardWorkCareer } from './schema.ts';
 import {SCHOOL_COURSES,executeSchoolLesson,type SchoolCourseId} from './school.ts';
+import {presentationIdForActionResult,presentationIdForEvent} from './presentation.ts';
 
 const statSet=new Set<string>(stats);
 const cappedLegacy=new Set(['health','stress','trust']);
@@ -545,6 +546,7 @@ function selectBlocking(s:Save,c:ResolverCandidate,trace:ResolverTrace){
   s.run.pending={
     eventId:c.event.id,
     variantId:c.variantId,
+    presentationId:presentationIdForEvent(cat,c.event.id,c.variantId),
     reactionEpochId:ensureReactionEpoch(s),
     allowedChoiceIds:[...c.allowedChoiceIds]
   };
@@ -1065,7 +1067,7 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
     const e=cat.events.find(x=>x.id===q.eventId);if(!e)throw new Error('Событие предложения отсутствует.');
     s.run.flow.reaction.currentEpochId=q.reactionEpochId;
     removeQueuedInstance(s,q.instanceId);
-    s.run.pending={eventId:q.eventId,variantId:q.variantId,reactionEpochId:q.reactionEpochId,allowedChoiceIds:[...q.allowedChoiceIds]};
+    s.run.pending={eventId:q.eventId,variantId:q.variantId,presentationId:presentationIdForEvent(cat,q.eventId,q.variantId),reactionEpochId:q.reactionEpochId,allowedChoiceIds:[...q.allowedChoiceIds]};
     logEventScene(s,e,q.variantId);
     return s;
   }
@@ -1148,7 +1150,7 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
   if(a.mode!=='story')s.run.slot++;log(s,`${a.label}. Осталось энергии: ${s.run.metrics.energy}.`);
   const variants=a.scenes?.filter(v=>eligible(v.conditions,s,cat)).sort((a,b)=>b.conditions.length-a.conditions.length);
   const v=variants?.[0];
-  s.run.lastAction={id:a.id,title:a.label,text:v?.text??a.description,media:v?.media??['stage.town'],deltas:delta(before,s.run.metrics)};
+  s.run.lastAction={id:a.id,title:a.label,text:v?.text??a.description,media:v?.media??['stage.town'],presentationId:presentationIdForActionResult(cat,a.id,v?.media??['stage.town']),deltas:delta(before,s.run.metrics)};
   register(s,cat);
   runResolverBoundary(s,input,cat,[{kind:'actionCompleted',action:a.id}],true);
   return s;
