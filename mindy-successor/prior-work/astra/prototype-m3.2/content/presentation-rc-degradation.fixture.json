@@ -1,0 +1,102 @@
+{
+  "version": 1,
+  "kind": "presentation-rc-degradation-suite",
+  "policy": {
+    "gameplayContinuesOnPresentationFailure": true,
+    "invalidConfigRejectedBeforePersistence": true,
+    "semanticIdentityStable": true
+  },
+  "cases": [
+    {
+      "caseId": "primary-gif-missing",
+      "presentationId": "job/lumber/shift/spring/default",
+      "primary": {
+        "kind": "gif",
+        "available": false,
+        "logicalRef": "media/lumber/shift-spring.gif"
+      },
+      "staticFallback": {
+        "kind": "image",
+        "available": true,
+        "assetPath": "assets/stage-lumber.svg"
+      },
+      "textFallback": "Spring Lumber shift.",
+      "animationsEnabled": true,
+      "expectedPresentation": "static",
+      "expectedConfigOutcome": "accepted",
+      "expectedGameplayOutcome": "unchanged"
+    },
+    {
+      "caseId": "static-fallback-missing",
+      "presentationId": "job/lumber/event/lumber-career-first-shift/default",
+      "primary": {
+        "kind": "gif",
+        "available": true,
+        "logicalRef": "media/lumber/accepted-hand.gif"
+      },
+      "staticFallback": {
+        "kind": "image",
+        "available": false,
+        "assetPath": "assets/missing-accepted-hand.webp"
+      },
+      "textFallback": "First Lumber shift career milestone.",
+      "animationsEnabled": true,
+      "expectedPresentation": "primary-gif",
+      "expectedConfigOutcome": "accepted-with-text-safety",
+      "expectedGameplayOutcome": "unchanged"
+    },
+    {
+      "caseId": "primary-and-static-missing-text-present",
+      "presentationId": "school/arcana/lesson/default",
+      "primary": null,
+      "staticFallback": {
+        "kind": "image",
+        "available": false,
+        "assetPath": "assets/missing-school.webp"
+      },
+      "textFallback": "Arcana School lesson.",
+      "animationsEnabled": true,
+      "expectedPresentation": "text",
+      "expectedConfigOutcome": "accepted-text-only",
+      "expectedGameplayOutcome": "unchanged"
+    },
+    {
+      "caseId": "animations-disabled",
+      "presentationId": "relationship/lumber-foreman/lumber-night-foreman-professional/default",
+      "primary": {
+        "kind": "gif",
+        "available": true,
+        "logicalRef": "media/lumber/foreman-night-professional.gif"
+      },
+      "staticFallback": {
+        "kind": "image",
+        "available": true,
+        "assetPath": "assets/stage-lumber.svg"
+      },
+      "textFallback": "Professional Foreman Night follow-up.",
+      "animationsEnabled": false,
+      "expectedPresentation": "static",
+      "expectedConfigOutcome": "accepted",
+      "expectedGameplayOutcome": "unchanged"
+    },
+    {
+      "caseId": "stale-replacement-entry",
+      "presentationId": "school/removed-course/lesson/default",
+      "primary": {
+        "kind": "gif",
+        "available": true,
+        "logicalRef": "media/school/removed-course.gif"
+      },
+      "staticFallback": {
+        "kind": "image",
+        "available": true,
+        "assetPath": "assets/stage-school.svg"
+      },
+      "textFallback": "Removed course.",
+      "animationsEnabled": true,
+      "expectedPresentation": "none",
+      "expectedConfigOutcome": "reject-before-persistence",
+      "expectedGameplayOutcome": "unchanged"
+    }
+  ]
+}
