@@ -1,0 +1,123 @@
+{
+  "version": 1,
+  "kind": "presentation-activity-option-save-matrix",
+  "status": "pr22-option-model-compatible",
+  "policy": {
+    "currentRoutePresentationId": "activity/forest/route/default",
+    "semanticFamilyHintIsNotPersistedPresentationId": true,
+    "animationStateAllowedInSave": false,
+    "gameplayOptionStateAuthoritative": true
+  },
+  "cases": [
+    {
+      "caseId": "legacy-option-model-v0-active",
+      "saveState": {
+        "activityId": "lumber.forest",
+        "optionModelVersion": 0,
+        "routeId": null,
+        "resolvedOptionIds": [],
+        "checkpoint": "entry"
+      },
+      "currentPresentationId": "activity/forest/route/default",
+      "futureSemanticFamily": null,
+      "expectedAfterReload": "legacy-actions-and-generic-route-presentation-preserved"
+    },
+    {
+      "caseId": "option-model-v1-before-route",
+      "saveState": {
+        "activityId": "lumber.forest",
+        "optionModelVersion": 1,
+        "routeId": null,
+        "resolvedOptionIds": [],
+        "checkpoint": "entry"
+      },
+      "currentPresentationId": "activity/forest/route/default",
+      "futureSemanticFamily": null,
+      "expectedAfterReload": "route-selection-state-and-generic-presentation-preserved"
+    },
+    {
+      "caseId": "after-logging-road-route",
+      "saveState": {
+        "activityId": "lumber.forest",
+        "optionModelVersion": 1,
+        "routeId": "logging-road",
+        "resolvedOptionIds": [
+          "forest.route.logging-road"
+        ],
+        "checkpoint": "entry"
+      },
+      "currentPresentationId": "activity/forest/route/default",
+      "futureSemanticFamily": "activity/forest/route/logging-road/*",
+      "expectedAfterReload": "logging-road-identity-deterministic"
+    },
+    {
+      "caseId": "after-old-boundary-route",
+      "saveState": {
+        "activityId": "lumber.forest",
+        "optionModelVersion": 1,
+        "routeId": "old-boundary",
+        "resolvedOptionIds": [
+          "forest.route.old-boundary"
+        ],
+        "checkpoint": "entry"
+      },
+      "currentPresentationId": "activity/forest/route/default",
+      "futureSemanticFamily": "activity/forest/route/old-boundary/*",
+      "expectedAfterReload": "old-boundary-identity-deterministic"
+    },
+    {
+      "caseId": "after-option-use",
+      "saveState": {
+        "activityId": "lumber.forest",
+        "optionModelVersion": 1,
+        "routeId": "logging-road",
+        "resolvedOptionIds": [
+          "forest.route.logging-road"
+        ],
+        "checkpoint": "counter.step.1"
+      },
+      "currentPresentationId": "activity/forest/route/default",
+      "futureSemanticFamily": "activity/forest/route/logging-road/*",
+      "expectedAfterReload": "resolved-option-and-checkpoint-preserved"
+    },
+    {
+      "caseId": "after-reload",
+      "saveState": {
+        "activityId": "lumber.forest",
+        "optionModelVersion": 1,
+        "routeId": "old-boundary",
+        "resolvedOptionIds": [
+          "forest.route.old-boundary"
+        ],
+        "checkpoint": "counter.step.1"
+      },
+      "currentPresentationId": "activity/forest/route/default",
+      "futureSemanticFamily": "activity/forest/route/old-boundary/*",
+      "expectedAfterReload": "same-route-family-and-current-presentation"
+    },
+    {
+      "caseId": "success-result",
+      "saveState": null,
+      "activityResult": {
+        "activityId": "lumber.forest",
+        "outcome": "success",
+        "resultId": "lumber.forest.success"
+      },
+      "currentPresentationId": "activity/forest/return/success",
+      "futureSemanticFamily": null,
+      "expectedAfterReload": "success-result-semantic-id-stable"
+    },
+    {
+      "caseId": "escape-result",
+      "saveState": null,
+      "activityResult": {
+        "activityId": "lumber.forest",
+        "outcome": "escape",
+        "resultId": "lumber.forest.escape"
+      },
+      "currentPresentationId": "activity/forest/return/escape",
+      "futureSemanticFamily": null,
+      "expectedAfterReload": "escape-result-semantic-id-stable"
+    }
+  ]
+}
