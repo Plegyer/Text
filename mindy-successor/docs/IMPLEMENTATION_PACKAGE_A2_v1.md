@@ -2,7 +2,7 @@
 
 Дата: 2026-09-26.
 
-Статус: **IN IMPLEMENTATION**.
+Статус: **IMPLEMENTED / GREEN**.
 
 Base commit:
 `7aae08b41f4f23243cd727167aedb53a7c4a28c0` (A1 merged green).
@@ -161,3 +161,32 @@ A2 does not claim:
 - Night flow;
 - Activity envelope;
 - RunResult/meta awarding.
+
+
+## Implementation result — 2026-09-26
+
+Implemented on `a2-condition-effect-v2`.
+
+Delivered:
+- typed target Condition leaves for stats/resources/items/calendar/career/quest/relationship/world/meta;
+- typed target Effect leaves for resources/stats/current Energy/items/housing/domain progression/world facts/next-day modifiers;
+- named career/quest/relationship state-machine transitions;
+- deterministic effect-phase ordering;
+- transition validation from current stage + transition conditions;
+- typed package capability manifests;
+- static rejection of unknown machine IDs/stages, nested transitions and contradictory target thresholds;
+- persisted machine ID/stage validation during schema-v4 save load;
+- next-day stat/Energy modifiers apply exactly once at sleep;
+- legacy M3.2 metric/flag/visits leaves remain compatibility-only.
+
+No arbitrary save-path condition/effect was introduced.
+No ordinary content effect can mutate MetaState.
+
+Validation on GitHub Actions Node 22:
+- typecheck pass;
+- catalog validation pass;
+- build pass;
+- **58/58 tests pass**;
+- full `npm run check` pass.
+
+Next package: **A3 Event Resolver**.
