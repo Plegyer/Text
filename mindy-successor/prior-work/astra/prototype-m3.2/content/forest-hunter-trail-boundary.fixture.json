@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "id": "forest.hunter-trail-boundary.fixture",
+  "routeIdentity": {
+    "label": "hunter trail",
+    "authoringKey": "hunter-trail",
+    "locked": true,
+    "productionOptionId": null,
+    "productionOptionIdStatus": "OPEN"
+  },
+  "accessBoundary": {
+    "authoritativeRule": "requires Hunter clue or navigation capability",
+    "hunterClueFactId": null,
+    "navigationCapabilityId": null,
+    "hunterClueStatus": "OPEN",
+    "navigationCapabilityStatus": "OPEN",
+    "fakeProductionItemIdAllowed": false
+  },
+  "runtimeHostContract": {
+    "genericCapabilityGatedRouteSupportedAfterPR22": true,
+    "oldBoundaryRouteIdentity": "forest.route.old-boundary",
+    "oldBoundaryCapability": "enter_old_boundary",
+    "oldBoundarySemanticsMustRemainUnchanged": true,
+    "hunterRouteMustUseIndependentCondition": true,
+    "syntheticTestCapabilityIfNeeded": "test-only-hunter-navigation-capability",
+    "syntheticTestCapabilityIsProduction": false
+  },
+  "negativeRules": [
+    "do not reuse enter_old_boundary as Hunter trail gate",
+    "do not invent hunter_clue_item or similar production item ID",
+    "do not infer Hunter clue from legacy visit count",
+    "do not mutate old-boundary option conditions to make Hunter trail work",
+    "do not add Hunter trail as Hard Work prerequisite"
+  ],
+  "hardWorkIsolation": {
+    "hunterTrailPrerequisiteAllowed": false,
+    "onlyCondition": {
+      "kind": "careerCounter",
+      "career": "lumber",
+      "counter": "completed_shifts",
+      "op": "gte",
+      "value": 50
+    },
+    "rewardId": "hardWork:lumber"
+  }
+}
