@@ -1240,9 +1240,9 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
   const s=attachLegacyFacade(parsed);
   if(s.run.metrics.energy>energyMax(s))throw new Error('Некорректный запас энергии.');
   if(!s.run.creation.complete&&s.run.creation.remaining+Object.values(s.run.creation.allocated).reduce((a,b)=>a+b,0)!==10)throw new Error('Некорректные стартовые очки.');
-  if(s.run.lastAction&&!cat.definitions.actions.some(a=>a.id===s.run.lastAction!.id))throw new Error('Неизвестное последнее занятие.');
+  if(s.run.lastAction&&s.run.lastAction.id!==SCHOOL_ACTION_ID&&!cat.definitions.actions.some(a=>a.id===s.run.lastAction!.id))throw new Error('Неизвестное последнее занятие.');
   if(s.run.lastAction?.media.some(id=>!cat.media.some(m=>m.id===id)))throw new Error('Неизвестное медиа последнего занятия.');
-  const actions=new Set(cat.definitions.actions.map(a=>a.id));
+  const actions=new Set([...cat.definitions.actions.map(a=>a.id),SCHOOL_ACTION_ID]);
   for(const id of Object.keys(s.run.actionCounts))if(!actions.has(id))throw new Error(`Неизвестный счётчик ${id}`);
   for(const [kind,map,defs] of [
     ['career',s.run.progression.careers,cat.definitions.careers??[]],
