@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "kind": "presentation-screen-fallback-policy-matrix",
+  "status": "presentation-only-policy",
+  "policy": {
+    "missingMediaChangesGameplay": false,
+    "terminalFallbackMustBe": "static-or-text-safe",
+    "cyclesAllowed": false
+  },
+  "rows": [
+    {"screenType":"location","presentationId":"location/town/default","fallbackChain":[],"terminal":{"kind":"static","mediaId":"stage.town","assetPath":"assets/stage-town.svg"},"missingMediaOutcome":"text-safe-same-identity"},
+    {"screenType":"job-shift","presentationId":"job/lumber/shift/spring/default","fallbackChain":["location/town/default"],"terminal":{"kind":"static","mediaId":"stage.lumber.spring","assetPath":"assets/stage-lumber.svg"},"missingMediaOutcome":"fallback-same-identity"},
+    {"screenType":"job-result","presentationId":"job/lumber/result/default","fallbackChain":["job/lumber/shift/spring/default","location/town/default"],"terminal":{"kind":"static","mediaId":"stage.lumber","assetPath":"assets/stage-lumber.svg"},"missingMediaOutcome":"fallback-same-identity"},
+    {"screenType":"job-event","presentationId":"job/lumber/event/lumber-career-first-shift/default","fallbackChain":["job/lumber/result/default","job/lumber/shift/spring/default","location/town/default"],"terminal":{"kind":"static","mediaId":"stage.lumber","assetPath":"assets/stage-lumber.svg"},"missingMediaOutcome":"fallback-same-identity"},
+    {"screenType":"school","presentationId":"school/arcana/lesson/default","fallbackChain":["location/town/default"],"terminal":{"kind":"static","mediaId":"stage.town","assetPath":"assets/stage-town.svg"},"missingMediaOutcome":"fallback-same-identity"},
+    {"screenType":"relationship","presentationId":"relationship/lumber-foreman/lumber-foreman-notice/default","fallbackChain":["location/town/default"],"terminal":{"kind":"static","mediaId":"stage.town","assetPath":"assets/stage-town.svg"},"missingMediaOutcome":"fallback-same-identity"},
+    {"screenType":"night","presentationId":"relationship/lumber-foreman/lumber-night-foreman-professional/default","fallbackChain":["relationship/lumber-foreman/lumber-foreman-notice/default","location/town/default"],"terminal":{"kind":"static","mediaId":"stage.town","assetPath":"assets/stage-town.svg"},"missingMediaOutcome":"fallback-same-identity"},
+    {"screenType":"activity","presentationId":"activity/forest/return/success","fallbackChain":["activity/forest/route/default","location/town/default"],"terminal":{"kind":"static","mediaId":"stage.hunt","assetPath":"assets/stage-forest.svg"},"missingMediaOutcome":"fallback-same-identity"},
+    {"screenType":"ending","presentationId":"ending/lumber/hard-work","fallbackChain":["location/town/default"],"terminal":{"kind":"static","mediaId":"stage.town","assetPath":"assets/stage-town.svg"},"missingMediaOutcome":"fallback-same-identity"}
+  ]
+}
