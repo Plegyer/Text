@@ -243,7 +243,9 @@ test('Night study is a separate zero-tuition Night-slot action with +2 supported
   s=dispatch(s,{type:'endDay'},cat);
   s=dispatch(s,{type:'chooseLodging',id:'school.fixture.room'},cat);
   const moneyAfterLodging=s.run.resources.money;
-  const progressionBefore=JSON.stringify(s.run.progression);
+  const careersBefore=JSON.stringify(s.run.progression.careers);
+  const questsBefore=JSON.stringify(s.run.progression.quests);
+  const relationshipsBefore=JSON.stringify(s.run.progression.relationships);
 
   s=dispatch(s,{type:'chooseNightChoice',id:nightChoice.id},cat);
 
@@ -251,5 +253,15 @@ test('Night study is a separate zero-tuition Night-slot action with +2 supported
   assert.equal(s.run.character.stats.reason,12);
   assert.equal(s.run.resources.money,moneyAfterLodging);
   assert.equal(s.run.dayState.energyCurrent,2);
-  assert.equal(JSON.stringify(s.run.progression),progressionBefore);
+  assert.equal(
+    s.run.progression.school.tracks['school.track.arcana']?.counters.night_study_sessions,
+    1
+  );
+  assert.equal(
+    s.run.progression.school.tracks['school.track.arcana']?.counters.lessons_completed??0,
+    0
+  );
+  assert.equal(JSON.stringify(s.run.progression.careers),careersBefore);
+  assert.equal(JSON.stringify(s.run.progression.quests),questsBefore);
+  assert.equal(JSON.stringify(s.run.progression.relationships),relationshipsBefore);
 });
