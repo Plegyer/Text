@@ -41,6 +41,54 @@
       "textFallback": "Весенняя смена лесорубов."
     },
     {
+      "presentationId": "job/lumber/shift/summer/default",
+      "family": "job",
+      "primary": {
+        "kind": "gif",
+        "assetRef": "fixture:lumber-shift-gif",
+        "status": "assigned"
+      },
+      "staticFallback": {
+        "kind": "image",
+        "assetRef": "fixture:lumber-shift-static",
+        "status": "assigned"
+      },
+      "fallbackId": "location/town/default",
+      "textFallback": "Summer Lumber shift."
+    },
+    {
+      "presentationId": "job/lumber/shift/autumn/default",
+      "family": "job",
+      "primary": {
+        "kind": "gif",
+        "assetRef": "fixture:lumber-shift-gif",
+        "status": "assigned"
+      },
+      "staticFallback": {
+        "kind": "image",
+        "assetRef": "fixture:lumber-shift-static",
+        "status": "assigned"
+      },
+      "fallbackId": "location/town/default",
+      "textFallback": "Autumn Lumber shift."
+    },
+    {
+      "presentationId": "job/lumber/shift/winter/default",
+      "family": "job",
+      "primary": {
+        "kind": "gif",
+        "assetRef": "fixture:lumber-shift-gif",
+        "status": "assigned"
+      },
+      "staticFallback": {
+        "kind": "image",
+        "assetRef": "fixture:lumber-shift-static",
+        "status": "assigned"
+      },
+      "fallbackId": "location/town/default",
+      "textFallback": "Winter Lumber shift."
+    },
+    {
       "presentationId": "job/lumber/result/default",
       "family": "job",
       "primary": {
