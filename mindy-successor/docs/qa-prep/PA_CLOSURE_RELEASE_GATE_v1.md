@@ -3,38 +3,34 @@
 Date: 2026-09-26  
 Worker: Chat 4 / QA Acceptance  
 Closure branch: `lead/product-acceptance-closure-v1`  
-Latest reviewed head: `a4fc9b257cd68d7c98b468e888b2be11f05a2a8f`  
+Latest reviewed head: `424407ecfed0bf0b8998c4f4348a17172c2412fc`  
 Main baseline: `7acbce7f8bdf911ce8ab3ed1a4b3e5e0902cd798`
 
 ## Current gate disposition
 
-**BLOCKED**
+**TECHNICALLY GREEN ON LATEST REVIEWED HEAD**
 
-The branch had a previous green checkpoint:
+The closure branch went through two important compatibility fixes after an intermediate red head:
 
-- head `a08f1d4b25acfc04efdf4ae47234bd51d9518d0e`
-- `npm run check`
-- **200/200 tests PASS**
+- item capability registry wiring was corrected;
+- persisted Activity envelopes gained explicit `optionModelVersion` compatibility.
 
-The latest head adds an Activity option-model compatibility marker and is currently red.
+Latest successful workflow:
 
-Latest workflow:
+- head: `424407ecfed0bf0b8998c4f4348a17172c2412fc`
+- workflow: `Product Acceptance Closure Check`
+- run: `36265062327`
+- validation: `7 packs, 26 events, 26 actions, 9 endings`
+- build: PASS
+- tests: **200**
+- pass: **200**
+- fail: **0**
 
-- `Product Acceptance Closure Check`
-- run `36264947540`
-- conclusion: **failure**
-- failure stage: **typecheck**
+The latest runtime now initializes `optionModelVersion` for new Activity envelopes and has a direct regression proving a pre-option schema-4 Activity save retains immediate legacy `advance/escape` behavior.
 
-Exact error:
+This satisfies the previously identified latest-head typecheck and behavioral-compatibility blockers.
 
-```text
-src/core/engine.ts(811,3): TS2741:
-Property 'optionModelVersion' is missing ...
-but required in ActivityEnvelope
-```
-
-Therefore the earlier 200/200 result cannot be reused as merge evidence for the latest head.
-
+The branch may therefore pass the technical closure gate on this reviewed head, subject to the remaining integration requirements below and honest OPEN-authoring status for PA09/PA16/PA17-natural.
 ---
 
 # Gate 1 — exact latest-head full check
@@ -58,7 +54,7 @@ Required:
 
 Evidence must name the exact closure head or merge-ref SHA.
 
-The current latest head fails this gate.
+The latest reviewed head passes this gate with 200/200 tests.
 
 ---
 
@@ -90,11 +86,9 @@ An Activity without authored options may use the compatible value expected by th
 
 The constructor and type must agree.
 
-## Current blocker
+## Current status
 
-The latest typecheck shows the constructor does not supply the required property.
-
-Merge is blocked until this is resolved and green.
+Resolved on the latest reviewed head: new Activity envelopes now write the required option-model marker, and latest-head typecheck is green.
 
 ---
 
@@ -453,14 +447,21 @@ The PA closure branch may be called technically merge-ready only when:
 
 Latest reviewed head:
 
-`a4fc9b257cd68d7c98b468e888b2be11f05a2a8f`
+`424407ecfed0bf0b8998c4f4348a17172c2412fc`
 
-fails Gate 1 at typecheck because new Activity envelope construction omits required:
+passes the latest closure workflow:
 
-`optionModelVersion`.
+- typecheck PASS;
+- validate PASS;
+- build PASS;
+- **200/200 tests PASS**;
+- pre-option schema-4 legacy `advance/escape` regression present;
+- new option-aware route persistence regression present.
 
 Therefore:
 
-**NOT MERGE-READY at this exact head.**
+**TECHNICALLY MERGE-READY for the generic capability/Activity-option closure on this exact reviewed head.**
+
+This does **not** close the product-authoring items PA09 acquisition, PA16 full Forest depth, or natural PA17 item acquisition path.
 
 No production runtime/UI/content file was modified by Chat 4.
