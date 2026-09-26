@@ -79,3 +79,5 @@ Presentation IDs use the merged Chat 2 kebab-case namespace:
 - `school/body-confidence/lesson/default`.
 
 Do not use underscores inside presentation namespace segments in new manifests/tests.
+
+- Night tests must establish the normal precondition `story.arrived = true` before calling `endDay`; do not weaken NightFlow to accommodate an incomplete fixture.
