@@ -1,0 +1,133 @@
+{
+  "formatVersion": 1,
+  "id": "school.old-save-defaults.fixture.v1",
+  "schemaVersion": 4,
+  "defaultSource": "content/school-typed-state-compat.fixture.json",
+  "unrelatedProgression": {
+    "careers": {
+      "lumber": {
+        "stage": "fixture-stage",
+        "shifts": 7,
+        "counters": {
+          "completed_shifts": 7
+        },
+        "choices": {
+          "route": "fixture"
+        },
+        "facts": [
+          "fixture.career.fact"
+        ]
+      }
+    },
+    "quests": {
+      "fixture.quest": {
+        "stage": "active",
+        "counters": {
+          "steps": 2
+        },
+        "choices": {},
+        "facts": [
+          "fixture.quest.fact"
+        ]
+      }
+    },
+    "relationships": {
+      "lumber.foreman": {
+        "stage": "route-professional",
+        "counters": {
+          "meetings": 1
+        },
+        "choices": {},
+        "facts": [
+          "fixture.relationship.fact"
+        ]
+      }
+    },
+    "worldFacts": [
+      "fixture.existing.public"
+    ]
+  },
+  "cases": [
+    {
+      "id": "no-school",
+      "school": null,
+      "flow": "plain"
+    },
+    {
+      "id": "empty-school-tracks",
+      "school": {
+        "tracks": {}
+      },
+      "flow": "plain"
+    },
+    {
+      "id": "pending-non-school-scene",
+      "school": null,
+      "flow": "pending-non-school-scene"
+    },
+    {
+      "id": "pending-school-presentation",
+      "school": null,
+      "flow": "pending-school-presentation"
+    },
+    {
+      "id": "nightflow-active",
+      "school": null,
+      "flow": "nightflow-active"
+    }
+  ],
+  "flowSnapshots": {
+    "plain": {
+      "pendingScene": null,
+      "night": null,
+      "activity": null
+    },
+    "pending-non-school-scene": {
+      "pendingScene": {
+        "eventId": "fixture.non-school.pending",
+        "variantId": "default",
+        "presentationId": "fixture.non-school.presentation",
+        "allowedChoiceIds": [
+          "continue"
+        ]
+      },
+      "night": null,
+      "activity": null
+    },
+    "pending-school-presentation": {
+      "pendingScene": {
+        "eventId": "school.fixture.pending",
+        "variantId": "default",
+        "presentationId": "school/arcana/lesson/default",
+        "allowedChoiceIds": [
+          "continue"
+        ]
+      },
+      "night": null,
+      "activity": null
+    },
+    "nightflow-active": {
+      "pendingScene": null,
+      "night": {
+        "phase": "VoluntaryNightChoice",
+        "selectedLodgingId": "fixture.room",
+        "lodgingPaid": true,
+        "selectedChoiceId": null,
+        "handledEventIds": []
+      },
+      "activity": null
+    }
+  },
+  "expected": {
+    "preserveDomains": [
+      "careers",
+      "quests",
+      "relationships",
+      "worldFacts"
+    ],
+    "phantomLessons": false,
+    "phantomCertificates": false,
+    "phantomMilestones": false,
+    "phantomSchoolPublicFacts": false
+  }
+}
