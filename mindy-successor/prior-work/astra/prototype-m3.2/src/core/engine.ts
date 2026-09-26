@@ -708,10 +708,11 @@ function completeEndingMutable(s:Save,cat:Catalog){
   const rewards=firstCompletion?endingRewards(ending):[];
   if(!alreadyApplied){
     for(const reward of rewards)applyMetaRewardMutable(s.meta,reward);
-    addUnique(s.meta.completedEndings,ending.id);
-    addUnique(s.meta.appliedResultTransactions,transactionId);
     s.meta.runsCompleted=Math.min(1_000_000,s.meta.runsCompleted+1);
   }
+  addUnique(s.meta.completedEndings,ending.id);
+  addUnique(s.meta.appliedResultTransactions,transactionId);
+  ensurePalaceUnlock(s.meta);
   s.run.endings.result={
     resultId,
     endingId:ending.id,
