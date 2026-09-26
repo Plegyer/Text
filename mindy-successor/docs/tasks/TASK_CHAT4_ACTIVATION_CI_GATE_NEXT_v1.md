@@ -210,3 +210,88 @@ Deduplicate Chat 4 artifacts into:
 Explicitly identify which documents are stale because they predate PR20 green 187/187 or PR21 green 193/193.
 
 Continue items 13–18 sequentially without waiting for Lead review.
+
+
+## Queue item 19 — PA closure branch live diff audit
+
+Create:
+- `docs/qa-prep/PA_CLOSURE_BRANCH_LIVE_DIFF_AUDIT_v1.md`
+
+Review current `lead/product-acceptance-closure-v1` against main.
+
+Focus on any generic item-capability / Activity-option runtime work:
+- backward compatibility of schema4 saves;
+- no forced item acquisition source;
+- no invented consume semantics;
+- current Forest content unchanged unless explicitly authored;
+- authored options remain deterministic across reload;
+- legacy `advance/escape` preserved.
+
+Classify BLOCKER / NON-BLOCKER / AUTHORING-OPEN.
+
+## Queue item 20 — generic item capability QA contract
+
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/qa-generic-item-capability-contract.test.ts`
+
+Using current accepted contracts/fixtures, assert:
+- capability derives from actual inventory item definitions;
+- unknown capability rejects validation;
+- multiple items may provide one capability;
+- no capability exists merely because a worldFact is manually present;
+- removing/consuming the item changes capability availability deterministically.
+
+Do not patch shared runtime.
+
+## Queue item 21 — Activity authored-option reload matrix
+
+Create NEW files only:
+- `prior-work/astra/prototype-m3.2/content/qa-activity-option-reload.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/qa-activity-option-reload.test.ts`
+
+Cover:
+- option visible before use;
+- capability-gated option hidden without capability;
+- option used once;
+- reload after option;
+- route selection preserved;
+- duplicate option use rejected;
+- legacy advance/escape remain available.
+
+## Queue item 22 — PA false-green audit after capability runtime
+
+Create:
+- `docs/qa-prep/PA_FALSE_GREEN_AFTER_CAPABILITY_RUNTIME_v1.md`
+
+Reassess PA09/PA14–PA20 after generic capability-aware runtime lands.
+
+Important:
+- runtime capability support does NOT mean Old Boundary Token acquisition is authored;
+- authored Activity options do NOT mean 3-route/3-challenge Forest content exists;
+- direct inventory seeding is still accelerator evidence unless the product acquisition path is real.
+
+## Queue item 23 — release-candidate merge gate for PA closure
+
+Create:
+- `docs/qa-prep/PA_CLOSURE_RELEASE_GATE_v1.md`
+
+Define exact merge requirements for the closure branch:
+- full typecheck/validate/build/tests;
+- schema4 backward compatibility;
+- generic item capability tests;
+- Activity option save/reload;
+- no regression to Hard Work, School, Night, presentation;
+- honest OPEN authoring ledger.
+
+## Queue item 24 — QA handoff after capability closure
+
+Create:
+- `docs/qa-prep/QA_CAPABILITY_CLOSURE_HANDOFF_v1.md`
+
+Deduplicate items 19–23 plus prior Chat4 evidence into:
+- MUST_INTEGRATE;
+- KEEP_AS_EVIDENCE;
+- SUPERSEDED;
+- WAIT_FOR_AUTHORING.
+
+Continue items 19–24 sequentially without waiting for Lead review.
