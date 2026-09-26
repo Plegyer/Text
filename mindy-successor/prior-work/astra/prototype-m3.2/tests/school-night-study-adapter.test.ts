@@ -46,7 +46,10 @@ test('School Night-study fixture locks zero-tuition study mechanics to a support
   assert.equal(nightChoice.id,'school.night_study.arcana.reason');
   assert.deepEqual(
     nightChoice.effects,
-    [{kind:'modifyStat',stat:'reason',delta:SCHOOL_NIGHT_STUDY_STAT_GAIN}]
+    [
+      {kind:'modifyStat',stat:'reason',delta:SCHOOL_NIGHT_STUDY_STAT_GAIN},
+      {kind:'incrementSchoolCounter',track:'school.track.arcana',counter:'night_study_sessions',amount:1}
+    ]
   );
   assert.equal(SCHOOL_NIGHT_STUDY_STAT_GAIN,2);
   assert.equal(nightChoice.nextDayEnergyDelta,SCHOOL_NIGHT_STUDY_NEXT_DAY_ENERGY_DELTA);
@@ -72,6 +75,8 @@ test('Night-study immediate effect spends no daytime Energy or money while grant
   assert.equal(immediate.run.resources.money,moneyBefore);
   assert.equal(immediate.run.dayState.energyCurrent,energyBefore);
   assert.equal(immediate.run.character.stats.reason,reasonBefore+2);
+  assert.equal(immediate.run.progression.school.tracks['school.track.arcana']?.counters.night_study_sessions,1);
+  assert.equal(immediate.run.progression.school.tracks['school.track.arcana']?.counters.lessons_completed??0,0);
   assert.equal(input.run.character.stats.reason,reasonBefore);
 });
 
@@ -97,6 +102,8 @@ test('Night study consumes the Night slot and applies +2 / next-day Energy -1 ex
   assert.equal(state.run.calendar.elapsedDays,1);
   assert.equal(state.run.flow.night,null);
   assert.equal(state.run.character.stats.reason,reasonBeforeStudy+2);
+  assert.equal(state.run.progression.school.tracks['school.track.arcana']?.counters.night_study_sessions,1);
+  assert.equal(state.run.progression.school.tracks['school.track.arcana']?.counters.lessons_completed??0,0);
   assert.equal(state.run.resources.money,moneyBefore);
   assert.equal(state.run.dayState.energyCurrent,2);
   assert.deepEqual(state.run.dayState.nextDayModifiers,{energyDelta:0,statEffects:[],tags:[]});
@@ -108,6 +115,8 @@ test('Night study consumes the Night slot and applies +2 / next-day Energy -1 ex
   assert.equal(reload2.run.calendar.elapsedDays,1);
   assert.equal(reload1.run.character.stats.reason,reasonBeforeStudy+2);
   assert.equal(reload2.run.character.stats.reason,reasonBeforeStudy+2);
+  assert.equal(reload1.run.progression.school.tracks['school.track.arcana']?.counters.night_study_sessions,1);
+  assert.equal(reload2.run.progression.school.tracks['school.track.arcana']?.counters.night_study_sessions,1);
   assert.equal(reload1.run.resources.money,moneyBefore);
   assert.equal(reload2.run.resources.money,moneyBefore);
   assert.equal(reload1.run.dayState.energyCurrent,2);
