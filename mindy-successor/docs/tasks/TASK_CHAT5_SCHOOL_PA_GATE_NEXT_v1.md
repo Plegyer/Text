@@ -288,3 +288,110 @@ Consolidate all Chat 5 work after PR21 into:
 Name exact files in each class and keep the final management/accounting and Arcana/Forest public-fact authoring explicitly OPEN.
 
 Continue items 19–24 sequentially without waiting for Lead review.
+
+
+## Queue item 25 — School release-candidate coverage ledger
+
+Create NEW files only:
+- `docs/school-prep/SCHOOL_RC_COVERAGE_LEDGER_v1.md`
+- `prior-work/astra/prototype-m3.2/content/school-rc-coverage.fixture.json`
+
+Create one deduplicated release-candidate ledger for:
+- all 8 paid courses;
+- all 24 Night-study course/stat choices;
+- typed `lessons_completed`;
+- typed `night_study_sessions`;
+- semantic presentation IDs;
+- save/reload boundaries;
+- Lumber-facing public-boundary hooks.
+
+Classify each row:
+- SHIPPED;
+- QA_ONLY;
+- OPEN_AUTHORING;
+- CONTENT_DEPTH_ONLY.
+
+Do not invent management/Arcana thresholds.
+
+## Queue item 26 — School old-save/default-state compatibility deep matrix
+
+Create NEW files only:
+- `prior-work/astra/prototype-m3.2/content/school-old-save-defaults.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/school-old-save-defaults.test.ts`
+
+Cover schema4 saves from before typed School progress existed:
+- no `progression.school`;
+- empty School tracks;
+- unrelated career/quest/relationship progress;
+- pending non-School scene;
+- pending School presentationId if present;
+- NightFlow active.
+
+Expected:
+- safe default School state;
+- unrelated progression preserved exactly;
+- no phantom lessons/certificates/public facts.
+
+## Queue item 27 — School public-boundary exactly-once publication contract
+
+Create NEW files only:
+- `prior-work/astra/prototype-m3.2/content/school-public-boundary-exactly-once.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/school-public-boundary-exactly-once.test.ts`
+
+Define future publication semantics without selecting final milestone thresholds:
+- private School state reaches an authored milestone;
+- one explicit public fact is emitted;
+- reload before/after publication cannot duplicate it;
+- Lumber sees only the public fact;
+- removing/replaying private counters cannot silently re-emit after commit.
+
+Actual final management and Arcana public fact identities may remain OPEN unless already authoritative.
+
+## Queue item 28 — School Night/paid-course interaction exclusion matrix
+
+Create NEW files only:
+- `prior-work/astra/prototype-m3.2/content/school-day-night-interaction.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/school-day-night-interaction.test.ts`
+
+Verify:
+- paid lesson cannot execute inside active NightFlow;
+- paid lesson cannot execute inside active Activity;
+- Night study cannot be selected before Night voluntary-choice phase;
+- Night study never increments paid-lesson counter;
+- paid lesson never increments Night-study counter;
+- save/reload preserves these exclusions.
+
+No shared runtime changes.
+
+## Queue item 29 — School presentation/content-depth release gap
+
+Create:
+- `docs/school-prep/SCHOOL_RC_PRESENTATION_CONTENT_GAP_v1.md`
+- optional NEW test `prior-work/astra/prototype-m3.2/tests/school-rc-presentation-content-gap.test.ts`
+
+Separate:
+- mechanics-ready course surface;
+- semantic presentation-ready surface;
+- missing teacher identities;
+- missing milestone/certificate/project authoring;
+- future GIF/static asset depth.
+
+Do not turn presentation polish into a mechanics blocker.
+
+## Queue item 30 — School final integration handoff v3
+
+Create:
+- `docs/school-prep/SCHOOL_FINAL_INTEGRATION_HANDOFF_v3.md`
+- `prior-work/astra/prototype-m3.2/content/school-final-integration-handoff.fixture.json`
+
+Consolidate Chat 5 items 1–29 into:
+- MUST_INTEGRATE;
+- QA_ONLY;
+- OPEN_AUTHORING;
+- CONTENT_DEPTH;
+- PRESENTATION_FUTURE;
+- SUPERSEDED.
+
+Name exact files and recommend a minimal non-redundant Lead integration subset.
+
+Continue items 25–30 sequentially without waiting for Lead review.
