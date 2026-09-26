@@ -143,3 +143,13 @@ Validation:
 - School/Item/Night/Forest/ending resolver hooks are mapped;
 - no live catalog/core/UI files changed;
 - OPEN balance/content values remain explicit unresolved parameters rather than invented locks.
+
+
+## Lead acceptance correction — 2026-09-26
+
+Lead review corrected three integration mismatches before merge:
+- Lumber Hard Work eligibility is **exactly 50 completed Lumber shifts**; no milestone/fact prerequisite.
+- A5 runtime terminology is `activityResult` / ActivityResult, not the earlier draft label ActivityCompleted.
+- A6 owns the concrete +3 Strength/+3 Endurance derivation; the Lumber ending declares one unique `hardWork:lumber` Meta reward rather than duplicating starting-stat effects in content.
+
+These are authority-alignment corrections, not new design.
