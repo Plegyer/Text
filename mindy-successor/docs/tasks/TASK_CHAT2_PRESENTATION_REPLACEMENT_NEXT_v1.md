@@ -172,3 +172,88 @@ Create:
 Summarize exact gates for a release-like presentation layer: semantic coverage, save/reload, fallback, animation-off, replacement import/export, current assets, future GIF gaps, and zero gameplay coupling.
 
 Continue items 7–12 sequentially without waiting for Lead review.
+
+
+## Queue item 13 — shipped main presentation delta map
+
+Create NEW files only:
+- `docs/presentation-prep/PRESENTATION_SHIPPED_MAIN_DELTA_MAP_v1.md`
+- `prior-work/astra/prototype-m3.2/content/presentation-shipped-main-delta.fixture.json`
+
+Compare the accepted presentation contracts on this branch with the production activation milestone now expected on main. Map every Lumber/School/Night/Activity/ending semantic slot to:
+- expected shipped source domain;
+- expected static fallback;
+- future GIF target;
+- whether the slot is required for PA00–PA26.
+
+Do not edit runtime/UI/catalog files.
+
+## Queue item 14 — presentation PA checkpoint matrix
+
+Create NEW files only:
+- `prior-work/astra/prototype-m3.2/content/presentation-pa-checkpoints.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/presentation-pa-checkpoints.test.ts`
+
+Cover all PA save/reload checkpoints that have visible presentation state:
+fresh, after shift, pending milestone, Foreman opening, School result, paid lodging/Night, Activity entry/internal/result, ending eligible/committed/completed/new-run.
+Verify semantic identity is deterministic and never depends on animation frame/time.
+
+## Queue item 15 — fallback exhaustion adversarial suite
+
+Create NEW files only:
+- `prior-work/astra/prototype-m3.2/content/presentation-fallback-exhaustion.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/presentation-fallback-exhaustion.test.ts`
+
+Test pathological presentation configurations:
+- missing primary + valid static fallback;
+- missing primary/static + text fallback;
+- missing optional slot entirely;
+- fallback target missing;
+- deep fallback chain;
+- cycle;
+- unknown semantic ID.
+
+Expected gameplay outcome must remain unchanged or the presentation config must be rejected before persistence.
+
+## Queue item 16 — replacement-pack deterministic ordering contract
+
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/presentation-replacement-ordering.test.ts`
+
+Prove deterministic behavior when multiple override entries are imported:
+- canonical sort/order independent;
+- duplicate IDs reject;
+- later file enumeration order cannot silently change winner;
+- export order is stable.
+
+No runtime implementation.
+
+## Queue item 17 — presentation accessibility metadata contract
+
+Create NEW files only:
+- `docs/presentation-prep/PRESENTATION_ACCESSIBILITY_METADATA_v1.md`
+- `prior-work/astra/prototype-m3.2/tests/presentation-accessibility-metadata.test.ts`
+
+Define required non-mechanical metadata for shipped media slots:
+- human-readable alt text;
+- text fallback;
+- semantic slot label;
+- no information required exclusively from animation timing.
+
+Audit representative Lumber, School, Night, Activity and ending slots.
+
+## Queue item 18 — presentation integration handoff manifest
+
+Create:
+- `docs/presentation-prep/PRESENTATION_INTEGRATION_HANDOFF_v1.md`
+- `prior-work/astra/prototype-m3.2/content/presentation-integration-handoff.fixture.json`
+
+Produce a deduplicated handoff of branch artifacts for Lead:
+- MUST_INTEGRATE tests/contracts;
+- KEEP_AS_QA_EVIDENCE docs;
+- REDUNDANT/SUPERSEDED files;
+- FUTURE_ASSET_ONLY work.
+
+Do not recommend shared runtime changes unless a currently demonstrated blocker requires one.
+
+Continue items 13–18 sequentially without waiting for Lead review.
