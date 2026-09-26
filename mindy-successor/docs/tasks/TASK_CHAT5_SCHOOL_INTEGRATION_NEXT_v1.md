@@ -39,3 +39,27 @@ Forbidden:
 - Chat 2 presentation runtime files.
 
 Acceptance: isolated fixtures/tests only; no reopening of School catalog decisions.
+
+
+## Queue item 3 — School Product Acceptance manifest
+
+Create NEW files only:
+- `prior-work/astra/prototype-m3.2/content/school-product-acceptance.fixture-manifest.json`
+- `prior-work/astra/prototype-m3.2/tests/school-pa-manifest.test.ts`
+
+Map the locked eight courses, their tuition/Energy semantics, supported stats, Night-study hooks and stable semantic presentation IDs. Do not invent teachers/milestones/endings.
+
+## Queue item 4 — School adversarial transaction suite
+
+Create NEW test file only:
+- `prior-work/astra/prototype-m3.2/tests/school-transaction-adversarial.test.ts`
+
+Prove across representative single-stat and multi-stat packages:
+- insufficient money is atomic;
+- insufficient current-day Energy is atomic;
+- reload after lesson does not recharge;
+- Resolver sees the full stat package, not a partial write;
+- Night study is zero tuition, +2 supported stat, next-day Energy -1 exactly once;
+- unsupported Night-study stat/course combinations reject atomically.
+
+Do not modify shared engine/schema or existing PR #17 files.
