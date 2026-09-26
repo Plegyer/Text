@@ -295,3 +295,90 @@ Deduplicate items 19–23 plus prior Chat4 evidence into:
 - WAIT_FOR_AUTHORING.
 
 Continue items 19–24 sequentially without waiting for Lead review.
+
+
+## Queue item 25 — PR22 merged-main recheck
+
+Create:
+- `docs/qa-prep/PR22_MERGED_MAIN_RECHECK_v1.md`
+
+Review current main after PR #22 merge.
+
+Confirm:
+- typecheck/validate/build/200 tests evidence;
+- generic item capability derives from actual inventory definitions;
+- old active Activity save behavioral compatibility;
+- Forest entry/logging-road direct path;
+- capability-gated old-boundary route;
+- no invented acquisition/consume semantics;
+- Hard Work unchanged.
+
+## Queue item 26 — post-PR22 PA row reclassification audit
+
+Create:
+- `docs/qa-prep/PA_POST_PR22_ROW_RECLASSIFICATION_v1.md`
+
+Reclassify PA00–PA26 using merged main only.
+Pay special attention to:
+- PA09 still authoring-blocked;
+- PA14/15/18/19/20 direct shipped evidence;
+- PA17 runtime mechanism shipped but ordered product path still depends on acquisition authoring;
+- PA16 Forest depth still open.
+
+Do not count seeded inventory as full product reachability.
+
+## Queue item 27 — release-candidate worker integration conflict audit
+
+Create:
+- `docs/qa-prep/RC_WORKER_INTEGRATION_CONFLICT_AUDIT_v1.md`
+
+Compare current main against latest Chat2/3/5 branches and identify:
+- tests safe to cherry-pick;
+- docs/evidence only;
+- stale assumptions superseded by PR22;
+- files that would conflict with shared runtime ownership;
+- redundant duplicates.
+
+Recommend a minimal integration set, not a bulk merge.
+
+## Queue item 28 — authoring decision blocker matrix
+
+Create:
+- `docs/qa-prep/AUTHORING_DECISION_BLOCKER_MATRIX_v1.md`
+
+List only decisions that still require human/product authoring rather than code:
+- Old Boundary Token source;
+- retain/consume;
+- hunter-trail clue/capability identity if unresolved;
+- School management/accounting threshold/provider;
+- School Arcana/Forest threshold/provider;
+- Forest content depth.
+
+For each list affected PA rows and whether runtime infrastructure is already ready.
+
+## Queue item 29 — release candidate end-to-end smoke v2
+
+Create:
+- `docs/qa-prep/RELEASE_CANDIDATE_E2E_SMOKE_v2.md`
+- optional NEW test `prior-work/astra/prototype-m3.2/tests/qa-release-candidate-e2e-v2.test.ts`
+
+Define the longest executable shipped path on current main without pretending authoring gaps are solved:
+arrival -> Lumber -> Foreman -> School -> Night -> Forest logging-road -> result -> 49/50 Hard Work -> eligible play -> ending -> reload -> New Run.
+
+Explicitly branch off separate seeded-item evidence for old-boundary route.
+
+## Queue item 30 — final QA integration handoff v2
+
+Create:
+- `docs/qa-prep/FINAL_QA_INTEGRATION_HANDOFF_v2.md`
+
+Consolidate Chat 4 items 1–29 into:
+- MUST_INTEGRATE_NOW;
+- KEEP_AS_EVIDENCE;
+- AUTHORING_BLOCKED;
+- SUPERSEDED;
+- POST_RELEASE_POLISH.
+
+Name exact files and the minimal release-candidate QA subset.
+
+Continue items 25–30 sequentially without waiting for Lead review.
