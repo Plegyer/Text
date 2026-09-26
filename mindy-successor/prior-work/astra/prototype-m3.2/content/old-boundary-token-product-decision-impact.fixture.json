@@ -1,0 +1,233 @@
+{
+  "schemaVersion": 1,
+  "id": "old-boundary-token.product-decision-impact.fixture",
+  "status": "HUMAN_DECISION_REQUIRED",
+  "decisions": [
+    {
+      "id": "acquisition-source",
+      "runtimeImpact": [
+        "existing item/effect runtime only"
+      ],
+      "contentImpact": [
+        "source event/action/relationship",
+        "addItem old_boundary_token"
+      ],
+      "saveMigrationImpact": [
+        "persist source completion",
+        "exactly-once grant",
+        "no worldFact-adapter migration"
+      ],
+      "uiInventoryImpact": [
+        "source visibility",
+        "inventory item visible"
+      ],
+      "paRows": [
+        "PA09",
+        "PA14",
+        "PA17"
+      ],
+      "tests": [
+        "natural acquisition",
+        "reload before/after acquisition",
+        "duplicate grant negative"
+      ],
+      "selected": null
+    },
+    {
+      "id": "timing-requirements",
+      "runtimeImpact": [
+        "existing public/relationship/calendar condition system"
+      ],
+      "contentImpact": [
+        "accepted eligibility conditions"
+      ],
+      "saveMigrationImpact": [
+        "deterministic eligibility from persisted state"
+      ],
+      "uiInventoryImpact": [
+        "source gate visibility"
+      ],
+      "paRows": [
+        "PA09",
+        "PA14",
+        "PA17",
+        "PA16-conditional"
+      ],
+      "tests": [
+        "eligibility boundary",
+        "reload on both sides"
+      ],
+      "selected": null
+    },
+    {
+      "id": "retain-consume-turn-in",
+      "runtimeImpact": [
+        "existing ownership",
+        "optional explicit removeItem",
+        "separate later turn-in transaction"
+      ],
+      "contentImpact": [
+        "accepted use/removal boundary"
+      ],
+      "saveMigrationImpact": [
+        "no reappear after consume",
+        "no double consume",
+        "retained stays present"
+      ],
+      "uiInventoryImpact": [
+        "recompute route availability",
+        "explain authored removal"
+      ],
+      "paRows": [
+        "PA14",
+        "PA15",
+        "PA17"
+      ],
+      "tests": [
+        "exactly-once removal",
+        "reload/retry",
+        "retained control"
+      ],
+      "selected": null
+    },
+    {
+      "id": "repeatability",
+      "runtimeImpact": [
+        "inventory/event-history/public-state representation"
+      ],
+      "contentImpact": [
+        "source repeatability",
+        "repeat expedition policy",
+        "optional reacquisition"
+      ],
+      "saveMigrationImpact": [
+        "persist source/use/access across later expeditions"
+      ],
+      "uiInventoryImpact": [
+        "route availability matches authoritative access"
+      ],
+      "paRows": [
+        "PA14",
+        "PA15",
+        "PA17"
+      ],
+      "tests": [
+        "second expedition",
+        "repeat acquisition if applicable"
+      ],
+      "selected": null
+    },
+    {
+      "id": "inventory-visibility",
+      "runtimeImpact": [
+        "typed inventory already shipped"
+      ],
+      "contentImpact": [
+        "label/help/capability explanation"
+      ],
+      "saveMigrationImpact": [
+        "no state migration for text-only change"
+      ],
+      "uiInventoryImpact": [
+        "visible item",
+        "discoverable capability",
+        "route requirement parity"
+      ],
+      "paRows": [
+        "PA09",
+        "PA17"
+      ],
+      "tests": [
+        "inventory projection",
+        "route availability vs inventory"
+      ],
+      "selected": null
+    },
+    {
+      "id": "capability-removal",
+      "runtimeImpact": [
+        "capability already derived from current inventory",
+        "optional removeItem"
+      ],
+      "contentImpact": [
+        "removal transaction only if selected"
+      ],
+      "saveMigrationImpact": [
+        "absence survives reload",
+        "explicit permanent-access transition if selected"
+      ],
+      "uiInventoryImpact": [
+        "route option recomputes after removal"
+      ],
+      "paRows": [
+        "PA14",
+        "PA15",
+        "PA17"
+      ],
+      "tests": [
+        "remove and recompute",
+        "reload after removal"
+      ],
+      "selected": null
+    },
+    {
+      "id": "route-lock-presentation",
+      "runtimeImpact": [
+        "no eligibility-rule change"
+      ],
+      "contentImpact": [
+        "hidden vs disabled-with-hint policy"
+      ],
+      "saveMigrationImpact": [
+        "none beyond deterministic projection"
+      ],
+      "uiInventoryImpact": [
+        "Activity route-list presentation"
+      ],
+      "paRows": [
+        "PA14",
+        "PA17"
+      ],
+      "tests": [
+        "UI/action parity"
+      ],
+      "selected": null
+    },
+    {
+      "id": "other-capability-interaction",
+      "runtimeImpact": [
+        "generic condition composition already shipped"
+      ],
+      "contentImpact": [
+        "explicit accepted AND/OR combinations"
+      ],
+      "saveMigrationImpact": [
+        "persist all condition inputs"
+      ],
+      "uiInventoryImpact": [
+        "composed requirement explanation"
+      ],
+      "paRows": [
+        "PA16",
+        "PA17",
+        "PA18-conditional"
+      ],
+      "tests": [
+        "composition positive/negative",
+        "reload mixed capability state"
+      ],
+      "selected": null
+    }
+  ],
+  "hardWorkIsolation": {
+    "tokenDecisionMayChangeHardWork": false,
+    "onlyCondition": {
+      "kind": "careerCounter",
+      "career": "lumber",
+      "counter": "completed_shifts",
+      "op": "gte",
+      "value": 50
+    },
+    "rewardId": "hardWork:lumber"
+  }
+}
