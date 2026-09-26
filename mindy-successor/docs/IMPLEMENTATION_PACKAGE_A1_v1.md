@@ -2,7 +2,7 @@
 
 Дата: 2026-09-25.
 
-Статус: **READY FOR IMPLEMENTATION**.
+Статус: **IMPLEMENTED / GREEN**.
 
 Base:
 `mindy-successor/prior-work/astra/prototype-m3.2/`
@@ -469,3 +469,21 @@ Update prototype `docs/STATUS.md` with:
 - tests;
 - known A2 next step;
 - no claim that Resolver/Night/Activity are complete.
+
+
+## 22. Implementation result — 2026-09-26
+
+Implemented on branch `a1-state-migration`.
+
+Final validation before merge:
+- GitHub Actions Ubuntu/Node 22;
+- `npm ci`;
+- `npm run check`;
+- typecheck/validate/build all pass;
+- 48 tests pass, 0 fail.
+
+Implementation note:
+the M3.2 UI/demo content still uses a temporary non-enumerable compatibility façade for old `run.metrics/run.day/... ` access. The façade routes to target owners and is absent from serialized schema-v4 JSON. It exists only to permit incremental A2/B migration without restoring duplicate authoritative state.
+
+Next package:
+`A2 — Condition/Effect v2`.
