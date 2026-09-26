@@ -173,3 +173,85 @@ Create:
 Summarize executable/shipped/blocked status for Work, milestone, Foreman, Night, Forest, Hard Work and complex endings. Explicitly separate OPEN item-capability / School-public-fact authoring from already-ready Hard Work.
 
 Continue items 7–12 sequentially without waiting for Lead review.
+
+
+## Queue item 13 — Lumber PA shipped-row evidence matrix
+
+Create NEW files only:
+- `prior-work/astra/prototype-m3.2/content/lumber-pa-shipped-row-evidence.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/lumber-pa-shipped-row-evidence.test.ts`
+
+Map PA02–PA06, PA12, PA14–PA26 to exact target Lumber IDs and classify each as:
+- shipped-executable;
+- accelerator-valid for long threshold only;
+- blocked by genuine OPEN authoring.
+
+Do not mark PA09/PA17 passed merely by injecting a capability fact.
+
+## Queue item 14 — Old Boundary Token capability authoring packet
+
+Create:
+- `docs/lumber-prep/OLD_BOUNDARY_TOKEN_AUTHORING_PACKET_v1.md`
+- `prior-work/astra/prototype-m3.2/content/old-boundary-token-authoring.fixture.json`
+
+Without implementing production content, specify the smallest acceptable product authoring seam for:
+- obtaining the item/capability;
+- inventory visibility;
+- changing available Forest Activity action/route;
+- save/reload;
+- no percentage-only effect.
+
+Keep exact acquisition source OPEN if not already locked.
+
+## Queue item 15 — Forest depth gap-to-spec matrix
+
+Create:
+- `docs/lumber-prep/FOREST_DEPTH_GAP_TO_SPEC_v1.md`
+- `prior-work/astra/prototype-m3.2/tests/lumber-forest-depth-gap.test.ts`
+
+Compare current `counter.v1` Forest Activity contract against Product Acceptance requirements:
+- 3 route contexts;
+- 3 challenge families;
+- item capability;
+- season difference;
+- save/resume;
+- success/escape distinction.
+
+Test only what is already true; explicitly fail/classify missing depth rather than fabricating it.
+
+## Queue item 16 — School→Lumber public-fact authoring packet
+
+Create:
+- `docs/lumber-prep/SCHOOL_LUMBER_PUBLIC_FACT_AUTHORING_PACKET_v1.md`
+- `prior-work/astra/prototype-m3.2/content/school-lumber-public-fact-authoring.fixture.json`
+
+Specify the smallest accepted public boundary needed by the existing Lumber listener:
+`lumber.school.management-ready`.
+
+Do not invent the School threshold/course/milestone that emits it. Separate:
+- existing Lumber listener behavior;
+- missing School authoring;
+- save/reload/public ownership contract.
+
+## Queue item 17 — Lumber PA blocker burn-down ledger
+
+Create:
+- `docs/lumber-prep/LUMBER_PA_BLOCKER_BURNDOWN_v1.md`
+
+Start from the current unresolved dependency ledger and reduce it to only blockers that remain after production activation. Name the exact PA rows each blocker affects and the smallest product decision/implementation that would close it.
+
+## Queue item 18 — Lumber integration handoff manifest
+
+Create:
+- `docs/lumber-prep/LUMBER_INTEGRATION_HANDOFF_v1.md`
+- `prior-work/astra/prototype-m3.2/content/lumber-integration-handoff.fixture.json`
+
+Deduplicate all Chat 3 branch artifacts into:
+- MUST_INTEGRATE;
+- QA_EVIDENCE_ONLY;
+- SUPERSEDED;
+- OPEN_AUTHORING_PACKET.
+
+Hard Work must be listed as already locked/shipped, never an OPEN blocker.
+
+Continue items 13–18 sequentially without waiting for Lead review.
