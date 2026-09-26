@@ -20,7 +20,7 @@ test('renderer: target Lumber shift resolves milestone/Foreman chain, repeat con
  const saved=w.localStorage.getItem('portal-life.v1');const second=boot(saved);try{
   await wait(()=>!!second.w.document.querySelector('[data-action="lumber.shift"]'));
   const stored=JSON.parse(second.w.localStorage.getItem('portal-life.v1'));
-  assert.equal(stored.run.flow.lastAction.presentationId,'job/lumber/shift/spring/default');
+  assert.equal(stored.run.flow.lastAction.presentationId,'job/lumber/result/default');
  }finally{second.dom.window.close();}assert.deepEqual(errors,[]);
  }finally{dom.window.close();}});
 test('renderer: zero energy remains same day, NightFlow street lodging and voluntary sleep advance date exactly once',async()=>{const s=started();s.run.metrics.energy=0;s.run.slot=3;const {w,dom}=boot(JSON.stringify(s));try{
