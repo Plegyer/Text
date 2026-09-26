@@ -1,0 +1,34 @@
+{
+  "formatVersion": 1,
+  "id": "school.low-money-safety.fixture.v1",
+  "representativeCourseId": "school.course.literacy_and_numbers",
+  "atomicFailureCases": [
+    {
+      "id": "insufficient-money",
+      "money": 299,
+      "energy": 1,
+      "expectedError": "money",
+      "inputMutation": false
+    },
+    {
+      "id": "insufficient-energy",
+      "money": 300,
+      "energy": 0,
+      "expectedError": "Energy",
+      "inputMutation": false
+    }
+  ],
+  "normalNonSchoolAction": {
+    "actionId": "school.safety.work",
+    "moneyCost": 0,
+    "energyCost": 0,
+    "moneyDelta": 1,
+    "remainsAvailableAfterSchoolFailure": true
+  },
+  "claimScope": {
+    "schoolAtomicFailureSafe": true,
+    "normalNonSchoolActionCanRemainAvailable": true,
+    "economyWideNoSoftlockProven": false,
+    "note": "This fixture proves local School failure safety only; it does not prove every product economy state has an escape."
+  }
+}
