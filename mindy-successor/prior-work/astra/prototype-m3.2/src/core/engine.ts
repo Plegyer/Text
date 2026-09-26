@@ -607,7 +607,12 @@ export function rent(s:Save){
 export function favorStat(s:Save):Stat{return ({spring:'strength',summer:'magic',autumn:'charm',winter:'endurance'} as const)[calendar(s.run.day).season];}
 export function eventChance(e:StoryEvent,s:Save){return e.chance?Math.min(e.chance.max,e.chance.base+getMetric(s,e.chance.stat)*e.chance.perPoint):1;}
 function random(s:Save){s.run.rng=(Math.imul(s.run.rng,1664525)+1013904223)>>>0;return s.run.rng/4294967296;}
-function settle(s:Save,cat:Catalog){register(s,cat);}
+function runResolverBoundary(s:Save,before:Save,cat:Catalog,extras:ReactionFact[]=[],newEpoch=true){
+  if(newEpoch)startReactionEpochMutable(s);else ensureReactionEpoch(s);
+  const facts=collectReactionFacts(before,s,cat,extras);
+  const trace:ResolverTrace={epochId:s.run.flow.reaction.currentEpochId!,facts:facts.map(factLabel),steps:[],selected:null,offers:[]};
+  resolveReactionsMutable(s,facts,cat,trace);
+}
 
 export type Command=
   |{type:'action';id:string;recipe?:'gentle'|'bold'}
@@ -617,6 +622,7 @@ export type Command=
   |{type:'restart'}
   |{type:'allocate';stat:Stat;delta:1|-1}
   |{type:'finishCreation'}
+  |{type:'openOffer';id:string}
   |{type:'sleep';payment:'money'|'favor'|'outside'};
 
 export function dispatch(input:Save,command:Command,cat:Catalog):Save {
@@ -637,7 +643,10 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
   }
   if(command.type==='finishCreation'){
     if(s.run.creation.complete||s.run.creation.remaining!==0)throw new Error('Распределите все 10 очков.');
-    s.run.creation.complete=true;return s;
+    s.run.creation.complete=true;
+    register(s,cat);
+    runResolverBoundary(s,input,cat,[{kind:'creationCompleted'}],true);
+    return s;
   }
   if(!s.run.creation.complete)throw new Error('Сначала создайте героиню.');
   if(command.type==='accept'){
@@ -651,6 +660,17 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
     log(s,ending.epilogue);return s;
   }
   if(s.run.status!=='active')throw new Error('Эта жизнь завершена.');
+  if(command.type==='openOffer'){
+    if(s.run.pending)throw new Error('Сначала завершите текущую сцену.');
+    const q=s.run.flow.reaction.queued.find(x=>x.instanceId===command.id&&x.kind==='optional');
+    if(!q||!s.run.dayState.optionalOfferIds.includes(command.id))throw new Error('Предложение недоступно.');
+    const e=cat.events.find(x=>x.id===q.eventId);if(!e)throw new Error('Событие предложения отсутствует.');
+    s.run.flow.reaction.currentEpochId=q.reactionEpochId;
+    removeQueuedInstance(s,q.instanceId);
+    s.run.pending={eventId:q.eventId,variantId:q.variantId,reactionEpochId:q.reactionEpochId,allowedChoiceIds:[...q.allowedChoiceIds]};
+    logEventScene(s,e,q.variantId);
+    return s;
+  }
   if(command.type==='sleep'){
     if(s.run.pending)throw new Error('Завершите событие перед сном.');
     if(!s.run.flags['story.arrived'])throw new Error('Сначала завершите вступление.');
@@ -672,19 +692,28 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
     s.run.metrics.energy=Math.max(1,energyMax(s)+queued.energyDelta-(command.payment==='outside'?1:0));
     s.run.dayState.nextDayModifiers={energyDelta:0,statEffects:[],tags:[]};
     s.run.lastAction={id:'rest',title:'Новое утро',text,media:[command.payment==='outside'?'stage.outside':'stage.room'],deltas:delta(before,s.run.metrics)};
-    log(s,text);register(s,cat);return s;
+    for(const q of [...s.run.flow.reaction.queued])if(q.kind==='optional')removeQueuedInstance(s,q.instanceId);
+    log(s,text);register(s,cat);
+    runResolverBoundary(s,input,cat,[],true);
+    return s;
   }
   if(command.type==='choice'){
-    const e=cat.events.find(e=>e.id===s.run.pending?.eventId);
-    const c=e?.choices.find(c=>c.id===command.id);
-    if(!c||!eligible(c.conditions,s,cat))throw new Error('Выбор недоступен.');
-    const before={...s.run.metrics};applyEffectsMutable(s,c.effects,cat,true);log(s,c.text);
+    const pending=s.run.pending;if(!pending)throw new Error('Нет активной сцены.');
+    const e=cat.events.find(e=>e.id===pending.eventId);
+    const choice=e?.choices.find(c=>c.id===command.id);
+    if(pending.allowedChoiceIds&&!pending.allowedChoiceIds.includes(command.id))throw new Error('Выбор не входит в сохранённый snapshot сцены.');
+    if(!choice||!eligible(choice.conditions,s,cat))throw new Error('Выбор недоступен.');
+    const beforeMetrics={...s.run.metrics};applyEffectsMutable(s,choice.effects,cat,true);log(s,choice.text);
     if(s.run.lastAction){
-      s.run.lastAction.title=e!.title;s.run.lastAction.text=c.text;
-      if(c.media)s.run.lastAction.media=c.media;
-      for(const [k,v] of Object.entries(delta(before,s.run.metrics)))s.run.lastAction.deltas[k]=(s.run.lastAction.deltas[k]??0)+v;
+      s.run.lastAction.title=e!.title;s.run.lastAction.text=choice.text;
+      if(choice.media)s.run.lastAction.media=choice.media;
+      for(const [k,v] of Object.entries(delta(beforeMetrics,s.run.metrics)))s.run.lastAction.deltas[k]=(s.run.lastAction.deltas[k]??0)+v;
     }
-    s.run.pending=null;settle(s,cat);return s;
+    s.run.pending=null;register(s,cat);
+    if(pending.reactionEpochId)s.run.flow.reaction.currentEpochId=pending.reactionEpochId;
+    else startReactionEpochMutable(s);
+    runResolverBoundary(s,input,cat,[{kind:'choiceResolved',event:pending.eventId,choice:command.id}],false);
+    return s;
   }
   if(s.run.pending)throw new Error('Сначала выберите ответ в сцене.');
   if(command.id==='rest')throw new Error('Выберите способ ночлега.');
@@ -715,7 +744,9 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
   const variants=a.scenes?.filter(v=>eligible(v.conditions,s,cat)).sort((a,b)=>b.conditions.length-a.conditions.length);
   const v=variants?.[0];
   s.run.lastAction={id:a.id,title:a.label,text:v?.text??a.description,media:v?.media??['stage.town'],deltas:delta(before,s.run.metrics)};
-  schedule(s,cat,a.id);settle(s,cat);return s;
+  register(s,cat);
+  runResolverBoundary(s,input,cat,[{kind:'actionCompleted',action:a.id}],true);
+  return s;
 }
 
 function migrateV3(raw:any){
