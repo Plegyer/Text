@@ -1144,6 +1144,8 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
   const queuedById=new Map(s.run.flow.reaction.queued.map(q=>[q.instanceId,q]));
   if(s.run.dayState.optionalOfferIds.some(id=>queuedById.get(id)?.kind!=='optional'))throw new Error('Некорректная optional offer ссылка.');
   if(s.run.dayState.scheduledEventIds.some(id=>queuedById.get(id)?.kind!=='scheduled'))throw new Error('Некорректная scheduled event ссылка.');
+  if(s.run.flow.night&&s.run.flow.activity)throw new Error('NightFlow и Activity не могут быть активны одновременно.');
+  if(s.run.flow.activity)validateActivityEnvelopeAgainstCatalog(s.run.flow.activity,cat,s.run.day);
   if(s.run.flow.night){
     const n=s.run.flow.night;
     if(!n.calendarAdvanceCommitted&&n.startedDay!==s.run.day)throw new Error('NightFlow привязан к другому календарному дню.');
