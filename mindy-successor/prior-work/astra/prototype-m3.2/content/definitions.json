@@ -1898,7 +1898,21 @@
     {
       "id": "school.night_study.literacy_and_numbers.reason",
       "label": "Night study: school.course.literacy_and_numbers / reason",
-      "conditions": [],
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
       "effects": [
         {
           "kind": "modifyStat",
@@ -1918,7 +1932,21 @@
     {
       "id": "school.night_study.literacy_and_numbers.wits",
       "label": "Night study: school.course.literacy_and_numbers / wits",
-      "conditions": [],
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
       "effects": [
         {
           "kind": "modifyStat",
@@ -1938,7 +1966,21 @@
     {
       "id": "school.night_study.arcana.magic",
       "label": "Night study: school.course.arcana / magic",
-      "conditions": [],
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
       "effects": [
         {
           "kind": "modifyStat",
@@ -1958,7 +2000,21 @@
     {
       "id": "school.night_study.arcana.reason",
       "label": "Night study: school.course.arcana / reason",
-      "conditions": [],
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
       "effects": [
         {
           "kind": "modifyStat",
@@ -1978,7 +2034,21 @@
     {
       "id": "school.night_study.arcana.creativity",
       "label": "Night study: school.course.arcana / creativity",
-      "conditions": [],
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
       "effects": [
         {
           "kind": "modifyStat",
@@ -1998,7 +2068,21 @@
     {
       "id": "school.night_study.rhetoric_and_social.charm",
       "label": "Night study: school.course.rhetoric_and_social / charm",
-      "conditions": [],
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
       "effects": [
         {
           "kind": "modifyStat",
@@ -2018,7 +2102,21 @@
     {
       "id": "school.night_study.rhetoric_and_social.sociability",
       "label": "Night study: school.course.rhetoric_and_social / sociability",
-      "conditions": [],
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
       "effects": [
         {
           "kind": "modifyStat",
@@ -2038,7 +2136,21 @@
     {
       "id": "school.night_study.rhetoric_and_social.wits",
       "label": "Night study: school.course.rhetoric_and_social / wits",
-      "conditions": [],
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
       "effects": [
         {
           "kind": "modifyStat",
@@ -2058,7 +2170,21 @@
     {
       "id": "school.night_study.etiquette_and_presentation.manners",
       "label": "Night study: school.course.etiquette_and_presentation / manners",
-      "conditions": [],
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
       "effects": [
         {
           "kind": "modifyStat",
@@ -2078,7 +2204,21 @@
     {
       "id": "school.night_study.etiquette_and_presentation.grooming",
       "label": "Night study: school.course.etiquette_and_presentation / grooming",
-      "conditions": [],
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
       "effects": [
         {
           "kind": "modifyStat",
@@ -2098,7 +2238,21 @@
     {
       "id": "school.night_study.etiquette_and_presentation.charm",
       "label": "Night study: school.course.etiquette_and_presentation / charm",
-      "conditions": [],
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
       "effects": [
         {
           "kind": "modifyStat",
@@ -2118,7 +2272,21 @@
     {
       "id": "school.night_study.field_craft.dexterity",
       "label": "Night study: school.course.field_craft / dexterity",
-      "conditions": [],
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
       "effects": [
         {
           "kind": "modifyStat",
@@ -2138,7 +2306,21 @@
     {
       "id": "school.night_study.field_craft.wits",
       "label": "Night study: school.course.field_craft / wits",
-      "conditions": [],
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
       "effects": [
         {
           "kind": "modifyStat",
@@ -2158,7 +2340,21 @@
     {
       "id": "school.night_study.field_craft.creativity",
       "label": "Night study: school.course.field_craft / creativity",
-      "conditions": [],
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
       "effects": [
         {
           "kind": "modifyStat",
@@ -2178,7 +2374,21 @@
     {
       "id": "school.night_study.physical_training.strength",
       "label": "Night study: school.course.physical_training / strength",
-      "conditions": [],
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
       "effects": [
         {
           "kind": "modifyStat",
@@ -2198,7 +2408,21 @@
     {
       "id": "school.night_study.physical_training.endurance",
       "label": "Night study: school.course.physical_training / endurance",
-      "conditions": [],
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
       "effects": [
         {
           "kind": "modifyStat",
@@ -2218,7 +2442,21 @@
     {
       "id": "school.night_study.physical_training.dexterity",
       "label": "Night study: school.course.physical_training / dexterity",
-      "conditions": [],
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
       "effects": [
         {
           "kind": "modifyStat",
@@ -2238,7 +2476,21 @@
     {
       "id": "school.night_study.arts_and_performance.creativity",
       "label": "Night study: school.course.arts_and_performance / creativity",
-      "conditions": [],
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
       "effects": [
         {
           "kind": "modifyStat",
@@ -2258,7 +2510,21 @@
     {
       "id": "school.night_study.arts_and_performance.charm",
       "label": "Night study: school.course.arts_and_performance / charm",
-      "conditions": [],
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
       "effects": [
         {
           "kind": "modifyStat",
@@ -2278,7 +2544,21 @@
     {
       "id": "school.night_study.arts_and_performance.sociability",
       "label": "Night study: school.course.arts_and_performance / sociability",
-      "conditions": [],
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
       "effects": [
         {
           "kind": "modifyStat",
@@ -2298,7 +2578,21 @@
     {
       "id": "school.night_study.arts_and_performance.dexterity",
       "label": "Night study: school.course.arts_and_performance / dexterity",
-      "conditions": [],
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
       "effects": [
         {
           "kind": "modifyStat",
@@ -2318,7 +2612,21 @@
     {
       "id": "school.night_study.body_confidence.sexuality",
       "label": "Night study: school.course.body_confidence / sexuality",
-      "conditions": [],
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
       "effects": [
         {
           "kind": "modifyStat",
@@ -2338,7 +2646,21 @@
     {
       "id": "school.night_study.body_confidence.grooming",
       "label": "Night study: school.course.body_confidence / grooming",
-      "conditions": [],
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
       "effects": [
         {
           "kind": "modifyStat",
@@ -2358,7 +2680,21 @@
     {
       "id": "school.night_study.body_confidence.endurance",
       "label": "Night study: school.course.body_confidence / endurance",
-      "conditions": [],
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
       "effects": [
         {
           "kind": "modifyStat",
