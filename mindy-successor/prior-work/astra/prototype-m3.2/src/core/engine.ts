@@ -1111,6 +1111,21 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
   const queuedById=new Map(s.run.flow.reaction.queued.map(q=>[q.instanceId,q]));
   if(s.run.dayState.optionalOfferIds.some(id=>queuedById.get(id)?.kind!=='optional'))throw new Error('Некорректная optional offer ссылка.');
   if(s.run.dayState.scheduledEventIds.some(id=>queuedById.get(id)?.kind!=='scheduled'))throw new Error('Некорректная scheduled event ссылка.');
+  if(s.run.flow.activity){
+    const a=s.run.flow.activity;
+    if(s.run.flow.night||s.run.pending)throw new Error('ActivityEnvelope не может сосуществовать с NightFlow или global pending scene.');
+    const definition=cat.definitions.activities.find(x=>x.id===a.activityId);
+    if(!definition)throw new Error(`Неизвестная Activity в сохранении: ${a.activityId}`);
+    if(definition.version!==a.definitionVersion)throw new Error(`Несовместимая версия Activity: ${a.activityId}`);
+    if(definition.adapter!==a.adapter)throw new Error(`Несовместимый Activity adapter: ${a.activityId}`);
+    if(a.status!=='active')throw new Error('Нестабильное resolving Activity состояние не может быть загружено.');
+    if(a.startedDay>s.run.day)throw new Error('Activity начата в будущем календаря.');
+    if(definition.timePolicy==='same_day'&&a.startedDay!==s.run.day)throw new Error('same_day Activity не может пережить CalendarAdvance.');
+    if(a.internalState.endurance>definition.adapterConfig.initialEndurance)throw new Error('Некорректный internal Endurance Activity.');
+    if(a.internalState.progress>=definition.adapterConfig.successAtProgress)throw new Error('Activity должна была завершиться success до сохранения.');
+    if(a.internalState.endurance<=definition.adapterConfig.failAtEndurance)throw new Error('Activity должна была завершиться failure до сохранения.');
+    if(a.accumulatedRewards.length||a.emittedFacts.length)throw new Error('Активная synthetic Activity не должна содержать уже committed result.');
+  }
   if(s.run.flow.night){
     const n=s.run.flow.night;
     if(!n.calendarAdvanceCommitted&&n.startedDay!==s.run.day)throw new Error('NightFlow привязан к другому календарному дню.');
