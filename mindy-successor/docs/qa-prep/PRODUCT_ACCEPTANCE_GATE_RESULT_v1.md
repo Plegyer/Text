@@ -150,4 +150,10 @@ CI evidence on PR #22 merge-ref candidate:
 - build PASS;
 - **200/200 tests PASS**.
 
+Backward compatibility:
+- pre-option schema4 Activity envelopes default `optionModelVersion` to 0;
+- those already-active saves retain immediate legacy `advance/escape` behavior after reload;
+- new Activity entries with authored options use `optionModelVersion=1` and require route selection;
+- new route/one-shot option state persists through reload without changing old active-run interaction semantics.
+
 This closes the generic runtime/action-space portion of PA17 and moves PA14/15/18/19/20 to direct shipped evidence. It does not close PA09 acquisition or PA16 Forest depth.
