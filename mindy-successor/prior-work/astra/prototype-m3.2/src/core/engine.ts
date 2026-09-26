@@ -1048,8 +1048,7 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
   }
   if(s.run.status!=='active'&&!(s.run.status==='ending_committed'&&command.type==='choice'))throw new Error('Эта жизнь завершена.');
   if(command.type==='schoolLesson'){
-    const result=executeSchoolLesson(s,command.id,cat,{applyEffects,resolveReactions});
-    register(result.state,cat);
+    const result=executeSchoolLesson(s,command.id,cat,{applyEffects,register,resolveReactions});
     return result.state;
   }
   if(command.type==='enterActivity'){
