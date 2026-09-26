@@ -566,3 +566,18 @@
 - Legacy M3.2 `sleep(payment)` routes through the same NightFlow compatibility path.
 - GitHub Actions full `npm run check` green: **84/84 tests**.
 - Next engineering package: **A5 Activity Envelope**.
+
+
+## Parallel-chat coordination — 2026-09-26
+
+- Default recommended setup: 4 active chats total.
+- Chat 1 is Lead/Integrator and owns the critical path plus shared-core integration.
+- Chat 2 prepares presentation/GIF work in isolated files.
+- Chat 3 prepares Lumber product data in isolated files.
+- Chat 4 prepares QA/acceptance material.
+- Chat 5 is optional only for a fully independent bounded package.
+- One active owner per file path; each worker uses its own branch.
+- Workers do not merge directly into main.
+- Lead assigns base commit, branch, allowed/forbidden files, dependencies, deliverables, tests and acceptance.
+- During A5/A6, shared core remains Lead-owned.
+- Replacement Lead must read `PARALLEL_WORK_PROTOCOL_v1.md` and inspect active Git branches/PRs before reassigning work.
