@@ -43,9 +43,9 @@ Never reconstruct project state from old chat text when Git disagrees.
 
 ## 3. Current main milestone baseline
 
-The latest known coordination/state snapshot before creation of this handoff file is:
+The latest known coordination/state snapshot is:
 
-`1902ba885fa21a59b0a4ffc9d44dffb4d9a66482`
+`011572ef1335deda5ac33120c3a7ea7f9849dbbf`
 
 That commit records Product Acceptance evidence state after PR #21.
 
@@ -385,3 +385,80 @@ If branch heads or task items moved:
 - trust Git;
 - update this file after the next major merged milestone;
 - keep `PROJECT_STATE.md` and `PARALLEL_WORK_BOARD_v1.md` synchronized with the actual repository.
+
+
+## 12. Superseding update — PR #22
+
+This section supersedes stale PR21-era blocker descriptions above wherever they conflict.
+
+Current main milestone:
+`011572ef1335deda5ac33120c3a7ea7f9849dbbf`
+
+PR #22 merged:
+- typed production item definitions and generic inventory-derived item capabilities;
+- capability-aware Activity option/action-space;
+- route persistence and one-shot option persistence;
+- legacy active Activity behavioral compatibility through option-model versioning;
+- general 2-Energy Forest entry;
+- normal logging-road route;
+- capability-gated old-boundary route;
+- UI route option controls;
+- updated Product Acceptance evidence.
+
+Merge-ref:
+- typecheck PASS;
+- validate PASS;
+- build PASS;
+- **200/200 tests PASS**.
+
+### PA blocker status after PR22
+
+No longer runtime blockers:
+- generic item definition/capability registry;
+- capability evaluation from inventory;
+- item-driven Activity action-space mechanism;
+- general Forest entry;
+- route selection and reload persistence.
+
+Still genuinely OPEN:
+1. reachable `old_boundary_token` acquisition source;
+2. final retain/consume semantics for the token;
+3. School management/accounting public result provider + threshold;
+4. School Arcana/Forest public result provider + threshold where required;
+5. hunter-trail final clue/capability identity if not otherwise locked;
+6. full Forest 3-route / 3-challenge / seasonal topology content depth.
+
+Do not count seeded inventory as a full PA09 pass.
+
+### Current worker queues
+
+Chat 2:
+- branch `chat2/presentation-replacement-next`
+- items 1–30 completed;
+- items 31–36 active.
+
+Chat 3:
+- branch `chat3/lumber-production-proof-next`
+- items 1–24 completed;
+- items 25–30 active.
+
+Chat 4:
+- branch `chat4/activation-ci-gate-next`
+- items 1–24 completed;
+- items 25–30 active.
+
+Chat 5:
+- branch `chat5/school-pa-gate-next`
+- items 1–24 completed;
+- items 25–30 active.
+
+### Next Lead phase
+
+PR #22 is merged. Do not resume work on the closed `lead/product-acceptance-closure-v1` branch.
+
+Create a new branch from current main for release-candidate integration and:
+1. integrate only minimal non-redundant worker tests/docs;
+2. run the longest fully shipped E2E path;
+3. preserve OPEN authoring decisions instead of guessing;
+4. prepare the exact human/product decisions needed to close the remaining PA rows;
+5. run full merge-ref check again before merge.
