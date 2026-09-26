@@ -4,8 +4,9 @@ import assert from 'node:assert/strict';
 import {catalog,started} from './helpers.ts';
 import {dispatch,parseSave} from '../src/core/engine.ts';
 import {SCHOOL_COURSES} from '../src/core/school.ts';
+import type {Save} from '../src/core/schema.ts';
 
-function reload<T>(state:T){
+function reload(state:Save){
   return parseSave(JSON.stringify(state),catalog);
 }
 
