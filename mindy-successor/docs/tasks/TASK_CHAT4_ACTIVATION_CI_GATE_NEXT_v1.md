@@ -487,3 +487,105 @@ Produce the final minimal handoff:
 Name exact files and current assumptions. Flag anything stale after PR22/PR23/PR24.
 
 Continue items 31–36 sequentially without waiting for Lead review.
+
+
+## Queue item 37 — PR25 final-gate live review
+
+Create:
+- `docs/qa-prep/PR25_FINAL_GATE_LIVE_REVIEW_v1.md`
+
+Review current PR #25 against merged PR24 main.
+
+Check:
+- minimal RC gate uses real `base.school -> listen`;
+- School blocking-scene compatibility does not double-charge;
+- schema4 pre-option Activity compatibility remains green;
+- item capability stays inventory-derived;
+- exact Hard Work contract/reward;
+- no production runtime/content/UI changes.
+
+## Queue item 38 — final one-Save state-drift sentinel v2
+
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/qa-one-save-state-drift-sentinel-v2.test.ts`
+
+Rebuild the state-drift sentinel using merged PR24 semantics exactly.
+
+It must resolve:
+`base.school` with choice `listen`.
+
+Track:
+- money;
+- Energy;
+- Lumber counters;
+- Foreman route;
+- School typed counters;
+- Night day advance;
+- Forest route/result;
+- ending transaction;
+- Meta;
+- New Run reload.
+
+## Queue item 39 — final schema4 compatibility RC matrix
+
+Create:
+- `docs/qa-prep/FINAL_SCHEMA4_RC_MATRIX_v1.md`
+- optional NEW test.
+
+Cover:
+- pre-School typed state;
+- pre-presentationId save;
+- pre-Activity-option active save;
+- NightFlow checkpoints;
+- pending School scene;
+- committed ending;
+- ended RunResult.
+
+Mark executable evidence vs documented expectation.
+
+## Queue item 40 — final authoring-only blocker ledger
+
+Create:
+- `docs/qa-prep/FINAL_AUTHORING_ONLY_BLOCKERS_v1.md`
+
+List only blockers that genuinely require product/human decisions after PR24/25.
+
+Do not include runtime issues that are already green.
+
+Expected classes:
+- Old Boundary Token source/retain-consume;
+- hunter-trail identity;
+- School public-result providers/thresholds;
+- Forest full content depth;
+- presentation asset polish where non-blocking.
+
+## Queue item 41 — release candidate readiness matrix
+
+Create:
+- `docs/qa-prep/RELEASE_CANDIDATE_READINESS_MATRIX_v1.md`
+
+Score no percentages. Classify:
+- RUNTIME_GREEN;
+- QA_GREEN;
+- AUTHORING_OPEN;
+- CONTENT_DEPTH_OPEN;
+- ASSET_POLISH_OPEN.
+
+Cover architecture, save, School, Lumber, Night, Forest, endings, presentation.
+
+## Queue item 42 — final QA evidence pack v3
+
+Create:
+- `docs/qa-prep/FINAL_QA_EVIDENCE_PACK_v3.md`
+
+Produce the minimal final QA handoff:
+- MUST_INTEGRATE;
+- KEEP_AS_EVIDENCE;
+- HUMAN_DECISION_REQUIRED;
+- CONTENT_DEPTH;
+- POST_RELEASE_POLISH;
+- SUPERSEDED.
+
+Explicitly supersede the old pre-fix PR24 review where applicable.
+
+Continue items 37–42 sequentially without waiting for Lead review.
