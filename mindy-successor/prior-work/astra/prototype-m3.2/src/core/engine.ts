@@ -528,6 +528,17 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
   if(s.run.lastAction?.media.some(id=>!cat.media.some(m=>m.id===id)))throw new Error('Неизвестное медиа последнего занятия.');
   const actions=new Set(cat.definitions.actions.map(a=>a.id));
   for(const id of Object.keys(s.run.actionCounts))if(!actions.has(id))throw new Error(`Неизвестный счётчик ${id}`);
+  for(const [kind,map,defs] of [
+    ['career',s.run.progression.careers,cat.definitions.careers??[]],
+    ['quest',s.run.progression.quests,cat.definitions.quests??[]],
+    ['relationship',s.run.progression.relationships,cat.definitions.relationships??[]]
+  ] as const){
+    for(const [machineId,state] of Object.entries(map)){
+      const def=defs.find(x=>x.id===machineId);
+      if(!def)throw new Error(`Неизвестная ${kind} state machine в сохранении: ${machineId}`);
+      if(!def.stages.includes(state.stage))throw new Error(`Неизвестный stage в сохранении: ${kind}.${machineId}.${state.stage}`);
+    }
+  }
   const knownFlags=new Set(cat.definitions.flags);
   for(const flag of Object.keys(s.run.flags))if(!knownFlags.has(flag)&&!/^system\.scholar\.\d+$/.test(flag))throw new Error(`Неизвестный флаг ${flag}`);
   const endingIds=new Set(cat.definitions.endings.map(e=>e.id));
