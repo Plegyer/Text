@@ -654,12 +654,15 @@ function stableIdHash(value:string){
   for(let i=0;i<value.length;i++){h^=value.charCodeAt(i);h=Math.imul(h,16777619);}
   return (h>>>0).toString(16).padStart(8,'0');
 }
-function runResultIdentity(s:Save,endingId:string){
-  const basis=`${s.run.id}|${endingId}`;
+function resultIdentityFor(runId:string,runsStarted:number,endingId:string){
+  const basis=`${runId}|${endingId}`;
   return {
-    transactionId:`tx.${s.meta.runsStarted}.${stableIdHash(basis)}`,
-    resultId:`rr.${s.meta.runsStarted}.${stableIdHash('result|'+basis)}`
+    transactionId:`tx.${runsStarted}.${stableIdHash(basis)}`,
+    resultId:`rr.${runsStarted}.${stableIdHash('result|'+basis)}`
   };
+}
+function runResultIdentity(s:Save,endingId:string){
+  return resultIdentityFor(s.run.id,s.meta.runsStarted,endingId);
 }
 function endingRewards(ending:Catalog['definitions']['endings'][number]):MetaReward[]{
   if(ending.metaRewards.length)return ending.metaRewards;
@@ -1128,7 +1131,7 @@ function migrateV3(raw:any){
   const legacyMetrics={...oldMetrics};
   delete legacyMetrics.money;delete legacyMetrics.energy;
   const oldMeta=raw.meta??{unlocks:[],completed:[],lives:1};
-  return {
+  const migrated:any={
     schemaVersion:4,
     contentVersion:raw.contentVersion??'0.1.0',
     meta:{
@@ -1139,6 +1142,7 @@ function migrateV3(raw:any){
       hardWorkProgress:[],
       persistentChoices:{},
       activeLegacyPerks:[],
+      appliedResultTransactions:[],
       runsStarted:Math.max(1,oldMeta.lives??1),
       runsCompleted:Math.max(0,Math.min((oldMeta.completed??[]).length,(oldMeta.lives??1)-1))
     },
@@ -1151,7 +1155,14 @@ function migrateV3(raw:any){
       dayState:{energyCurrent:Math.max(0,oldMetrics.energy??3),nextDayModifiers:{energyDelta:0,statEffects:[],tags:[]},optionalOfferIds:[],scheduledEventIds:[]},
       housingState:{current:targetHousing(raw.run.housing??'room'),paidForCurrentNight:false},
       progression:{careers:{},quests:{},relationships:{},worldFacts:[]},
-      endings:{eligible:[...(raw.run.availableEndings??[])],committed:raw.run.acceptedEnding??null,result:null},
+      endings:{
+        eligible:[...(raw.run.availableEndings??[])],
+        committed:raw.run.acceptedEnding??null,
+        result:raw.run.status==='ended'&&raw.run.acceptedEnding?(()=>{
+          const ids=resultIdentityFor(raw.run.id,Math.max(1,oldMeta.lives??1),raw.run.acceptedEnding);
+          return {resultId:ids.resultId,endingId:raw.run.acceptedEnding,transactionId:ids.transactionId,completedAtDay:raw.run.day,firstCompletion:false,appliedMetaRewardIds:[]};
+        })():null
+      },
       flow:{pendingScene:raw.run.pending?{...raw.run.pending}:null,reaction:{epochCounter:0,currentEpochId:null,attemptedEventIds:[],cascadeDepth:0,queued:[]},night:null,activity:null,lastAction:raw.run.lastAction??null},
       rngState:{state:(raw.run.rng??2654435761)>>>0},
       historyState:{
@@ -1163,8 +1174,12 @@ function migrateV3(raw:any){
       legacyCompat:{source:'m3.2',metrics:legacyMetrics,flags:{...(raw.run.flags??{})},originalLimitDays:raw.run.limitDays}
     }
   };
+  if(migrated.run.endings.result){
+    const tx=migrated.run.endings.result.transactionId;
+    if(!migrated.meta.appliedResultTransactions.includes(tx))migrated.meta.appliedResultTransactions.push(tx);
+  }
+  return migrated;
 }
-
 export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
   let raw=JSON.parse(text);
   if(raw.schemaVersion===1){raw.schemaVersion=2;raw.run.actionCounts={work:raw.run.metrics.work};}
@@ -1174,6 +1189,16 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
     raw.run.flags['story.arrived']=true;
   }
   if(raw.schemaVersion===3)raw=migrateV3(raw);
+  if(raw.schemaVersion===4){
+    raw.meta=raw.meta??{};
+    raw.meta.appliedResultTransactions=raw.meta.appliedResultTransactions??[];
+    const committed=raw.run?.endings?.committed;
+    if(raw.run?.status==='ended'&&committed&&!raw.run.endings.result){
+      const ids=resultIdentityFor(raw.run.id,Math.max(1,raw.meta.runsStarted??raw.meta.lives??1),committed);
+      raw.run.endings.result={resultId:ids.resultId,endingId:committed,transactionId:ids.transactionId,completedAtDay:raw.run.calendar?.elapsedDays??raw.run.day??0,firstCompletion:false,appliedMetaRewardIds:[]};
+      if(!raw.meta.appliedResultTransactions.includes(ids.transactionId))raw.meta.appliedResultTransactions.push(ids.transactionId);
+    }
+  }
   const parsed=saveSchema.parse(raw) as unknown as Save;
   const s=attachLegacyFacade(parsed);
   if(s.run.metrics.energy>energyMax(s))throw new Error('Некорректный запас энергии.');
