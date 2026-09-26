@@ -175,7 +175,7 @@ function ensureDomainState(s:Save,kind:DomainKind,id:string,cat:Catalog):DomainS
 export function itemCapabilities(s:Save,cat?:Catalog):string[]{
   if(!cat)return [];
   const owned=new Set<string>();
-  for(const item of cat.definitions.items){
+  for(const item of cat.definitions.itemDefinitions){
     if((s.run.resources.inventory[item.id]??0)<=0)continue;
     for(const capability of item.capabilities)owned.add(capability);
   }
@@ -191,7 +191,6 @@ export function meets(c:Condition,s:Save,cat?:Catalog):boolean {
     case 'stat': return compare(s.run.character.stats[c.stat],c.op,c.value);
     case 'resource': return compare(s.run.resources[c.resource],c.op,c.value);
     case 'itemCount': return compare(s.run.resources.inventory[c.id]??0,c.op,c.count);
-    case 'itemCapability': return hasItemCapability(s,cat,c.capability)===c.present;
     case 'itemCapability': return hasItemCapability(s,c.capability,cat)===c.present;
     case 'calendarYear': return compare(cal().year,c.op,c.value);
     case 'calendarSeason': return cal().season===c.value;
