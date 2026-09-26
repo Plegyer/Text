@@ -505,6 +505,7 @@ function resolveReactionsMutable(s:Save,facts:ReactionFact[],cat:Catalog,trace:R
   const live:ResolverCandidate[]=[];
 
   for(const e of sortedEvents){
+    if(s.run.flow.night?.handledEventIds.includes(e.id)){trace.steps.push(`reject:${e.id}:night-handled`);continue;}
     if(committedSuppresses(s,e)){trace.steps.push(`reject:${e.id}:ending-committed`);continue;}
     if(queuedForEvent(s,e.id)){trace.steps.push(`defer:${e.id}:already-queued`);continue;}
     if(!eventTriggered(e,facts)){trace.steps.push(`reject:${e.id}:trigger`);continue;}
