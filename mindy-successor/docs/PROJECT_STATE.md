@@ -1,6 +1,6 @@
 # PROJECT STATE
 
-Дата фиксации: 2026-09-25.
+Дата фиксации: 2026-09-26.
 
 ## Что уже решено
 
@@ -625,3 +625,18 @@ The multi-chat setup is pre-created and may be started at any time.
 - GitHub Actions full `npm run check` green: **111/111 tests**.
 - **Architecture implementation A1–A6 is complete.**
 - Next critical path: integrated `ARCHITECTURE_MIGRATION_SLICE_v1.md` gate, then Phase B shell/GIF central stage.
+
+
+## Integrated Architecture Migration gate — 2026-09-26
+
+- A1–A6 прошли integrated gate на Lead PR #14.
+- Post-A6 audit обнаружил два реальных gap: schema-3 known global flags не попадали в typed facts, а loader не отбрасывал structurally unreachable machine stages.
+- Исправление migration намеренно консервативное: только однозначные global `story.*` flags переносятся в `progression.worldFacts`; domain-specific legacy flags остаются в `legacyCompat` до отдельного явного mapping.
+- State-machine loader теперь проверяет reachability от `initialStage` и отвергает orphan stages.
+- В gate включены adversarial QA tests для Resolver priority/tie-break, strict Effect schema, Activity result references, exactly-once reload boundaries и Product Acceptance harness.
+- Реальный GitHub Actions / Node 22.18.0: `npm run check` pass, **125/125 tests**.
+- Lumber review дополнительно исправил exact A6 reward identifier на `hardWork:lumber`; eligibility остаётся ровно 50 completed Lumber shifts без milestone/relationship/season/Forest prerequisite.
+- **Phase A Architecture Migration: CLOSED / GREEN.**
+- **Phase B: ACTIVE.** Первый runtime integration target — игровой shell с одним постоянным central GIF/media window и stable semantic `presentationId`.
+- Phase B presentation candidate: Chat 2 PR #15. Параллельные product candidates: Lumber PR #16 и School PR #17.
+- Следующий большой product gate после интеграции shell/Lumber/School — Product Acceptance.
