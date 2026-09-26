@@ -410,8 +410,9 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
       text='Ночь под навесом. Сон был коротким: завтра на одно дело меньше.';
     }else throw new Error('Неизвестный способ ночлега.');
     s.run.day++;s.run.slot=0;
-    const nextDelta=s.run.dayState.nextDayModifiers.energyDelta;
-    s.run.metrics.energy=Math.max(1,energyMax(s)+nextDelta-(command.payment==='outside'?1:0));
+    const queued=s.run.dayState.nextDayModifiers;
+    for(const effect of queued.statEffects)setMetric(s,effect.stat,getMetric(s,effect.stat)+effect.delta);
+    s.run.metrics.energy=Math.max(1,energyMax(s)+queued.energyDelta-(command.payment==='outside'?1:0));
     s.run.dayState.nextDayModifiers={energyDelta:0,statEffects:[],tags:[]};
     s.run.lastAction={id:'rest',title:'Новое утро',text,media:[command.payment==='outside'?'stage.outside':'stage.room'],deltas:delta(before,s.run.metrics)};
     log(s,text);register(s,cat);return s;
