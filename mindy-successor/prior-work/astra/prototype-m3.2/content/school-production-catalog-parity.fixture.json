@@ -1,0 +1,56 @@
+{
+  "formatVersion": 1,
+  "id": "school.production-catalog-parity.fixture.v1",
+  "acceptedSources": {
+    "courses": "content/school-production-ui.fixture.json",
+    "nightChoices": "content/school-night-choice-catalog.fixture.json",
+    "runtimeConstants": "src/core/school.ts"
+  },
+  "expectedCourseCount": 8,
+  "expectedNightChoiceCount": 24,
+  "courseIds": [
+    "school.course.literacy_and_numbers",
+    "school.course.arcana",
+    "school.course.rhetoric_and_social",
+    "school.course.etiquette_and_presentation",
+    "school.course.field_craft",
+    "school.course.physical_training",
+    "school.course.arts_and_performance",
+    "school.course.body_confidence"
+  ],
+  "nightChoiceIds": [
+    "school.night_study.literacy_and_numbers.reason",
+    "school.night_study.literacy_and_numbers.wits",
+    "school.night_study.arcana.magic",
+    "school.night_study.arcana.reason",
+    "school.night_study.arcana.creativity",
+    "school.night_study.rhetoric_and_social.charm",
+    "school.night_study.rhetoric_and_social.sociability",
+    "school.night_study.rhetoric_and_social.wits",
+    "school.night_study.etiquette_and_presentation.manners",
+    "school.night_study.etiquette_and_presentation.grooming",
+    "school.night_study.etiquette_and_presentation.charm",
+    "school.night_study.field_craft.dexterity",
+    "school.night_study.field_craft.wits",
+    "school.night_study.field_craft.creativity",
+    "school.night_study.physical_training.strength",
+    "school.night_study.physical_training.endurance",
+    "school.night_study.physical_training.dexterity",
+    "school.night_study.arts_and_performance.creativity",
+    "school.night_study.arts_and_performance.charm",
+    "school.night_study.arts_and_performance.sociability",
+    "school.night_study.arts_and_performance.dexterity",
+    "school.night_study.body_confidence.sexuality",
+    "school.night_study.body_confidence.grooming",
+    "school.night_study.body_confidence.endurance"
+  ],
+  "invariants": {
+    "paidLessonEnergyCost": 1,
+    "nightTuition": 0,
+    "nightDaytimeEnergyCost": 0,
+    "nightStatGain": 2,
+    "nightNextDayEnergyDelta": -1,
+    "ordinarySchoolMutatesLust": false,
+    "productionPackEventRequired": false
+  }
+}
