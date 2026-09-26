@@ -1,0 +1,189 @@
+{
+  "version": 2,
+  "kind": "presentation-release-candidate-handoff",
+  "status": "post-pr21-minimal-integration-map",
+  "sourceBranch": "chat2/presentation-replacement-next",
+  "mainBaseline": "e6c32903516d1ba40b9a3ffbf955d5f04783ac25",
+  "productAcceptanceStatus": "partial-not-closed",
+  "policy": {
+    "minimalNonRedundantIntegration": true,
+    "sharedRuntimeChangeRecommended": false,
+    "blockedByGameplayAuthoringPresentationFiles": 0,
+    "futureGifWorkIsNonBlocking": true
+  },
+  "categories": {
+    "READY_TO_INTEGRATE_NOW": [
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-asset-consistency.fixture.json",
+        "reason": "Current/future asset consistency source."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-asset-consistency.test.ts",
+        "reason": "Current static/future GIF integrity checks."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-pa-checkpoints.fixture.json",
+        "reason": "Visible PA save/reload checkpoints."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-pa-checkpoints.test.ts",
+        "reason": "Deterministic PA presentation identity."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-fallback-exhaustion.fixture.json",
+        "reason": "Adversarial fallback exhaustion cases."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-fallback-exhaustion.test.ts",
+        "reason": "Fallback graph rejection/safe exhaustion."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-semantic-id-drift.test.ts",
+        "reason": "Semantic ID drift guard."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-media-path-preflight.test.ts",
+        "reason": "Portable media-path security guard."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-replacement-ordering.test.ts",
+        "reason": "Deterministic replacement ordering."
+      },
+      {
+        "path": "mindy-successor/docs/presentation-prep/PRESENTATION_ACCESSIBILITY_METADATA_v1.md",
+        "reason": "Accessibility metadata contract."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-accessibility-metadata.test.ts",
+        "reason": "Accessibility metadata audit."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-central-stage-interaction.fixture.json",
+        "reason": "Single central-stage interaction contract."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-central-stage-interaction.test.ts",
+        "reason": "Flow-state-owned blocking test."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-fallback-asset-integrity.fixture.json",
+        "reason": "PR21-aligned shipped fallback asset manifest."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-fallback-asset-integrity.test.ts",
+        "reason": "Shipped fallback asset integrity test."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-replacement-conflict.fixture.json",
+        "reason": "Replacement-vs-catalog conflict cases."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-replacement-conflict.test.ts",
+        "reason": "Deterministic replacement conflict preflight."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-post-pr21-smoke.fixture.json",
+        "reason": "PR21-aligned presentation smoke."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-post-pr21-smoke.test.ts",
+        "reason": "PR21 visible-boundary smoke test."
+      }
+    ],
+    "QA_EVIDENCE_ONLY": [
+      {
+        "path": "mindy-successor/docs/presentation-prep/PRESENTATION_RELEASE_READINESS_v1.md",
+        "reason": "Release-like presentation gate summary."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-release-readiness.test.ts",
+        "reason": "Overlapping readiness evidence."
+      },
+      {
+        "path": "mindy-successor/docs/presentation-prep/PRESENTATION_SHIPPED_MAIN_DELTA_MAP_v1.md",
+        "reason": "Shipped-main delta explanation."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-shipped-main-delta.fixture.json",
+        "reason": "Machine-readable shipped-main comparison."
+      },
+      {
+        "path": "mindy-successor/docs/presentation-prep/PRESENTATION_PA_CLOSURE_DEPENDENCY_AUDIT_v1.md",
+        "reason": "PR21 PA blocker classification."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-pa-closure-dependency.test.ts",
+        "reason": "Executable PA dependency evidence."
+      }
+    ],
+    "FUTURE_GIF_ASSET_WORK": [
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-replacement-bundle.fixture.json",
+        "reason": "Portable future-GIF replacement bundle."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-replacement-bundle.test.ts",
+        "reason": "Future replacement-bundle tests."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-replacement-regression.fixture.json",
+        "reason": "Drop-in replacement scenarios."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-replacement-regression.test.ts",
+        "reason": "Future replacement regression suite."
+      },
+      {
+        "path": "mindy-successor/docs/presentation-prep/PRESENTATION_OVERRIDE_IMPORT_EXPORT_CONTRACT_v1.md",
+        "reason": "Future override import/export contract."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-override-import-export-contract.test.ts",
+        "reason": "Future import/export tests."
+      },
+      {
+        "path": "mindy-successor/docs/presentation-prep/PRESENTATION_REPLACEMENT_BUNDLE_MIGRATION_v1.md",
+        "reason": "Future bundle migration policy."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-replacement-bundle-migration.test.ts",
+        "reason": "Future bundle migration tests."
+      }
+    ],
+    "BLOCKED_BY_GAMEPLAY_AUTHORING": [],
+    "SUPERSEDED": [
+      {
+        "path": "mindy-successor/docs/presentation-prep/PRESENTATION_INTEGRATION_HANDOFF_v1.md",
+        "reason": "Superseded by v2."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-integration-handoff.fixture.json",
+        "reason": "Superseded by v2."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-production-smoke.fixture.json",
+        "reason": "Superseded by post-PR21 smoke."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-production-smoke.test.ts",
+        "reason": "Superseded by post-PR21 smoke."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-pa-scenario.fixture.json",
+        "reason": "Superseded by PA checkpoints/post-PR21 smoke."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-pa-scenario.test.ts",
+        "reason": "Superseded by PA checkpoints/post-PR21 smoke."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-shipped-closure-inventory.fixture.json",
+        "reason": "Superseded by shipped-main delta/fallback integrity."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-shipped-closure-inventory.test.ts",
+        "reason": "Superseded by current-main asset evidence."
+      }
+    ]
+  }
+}
