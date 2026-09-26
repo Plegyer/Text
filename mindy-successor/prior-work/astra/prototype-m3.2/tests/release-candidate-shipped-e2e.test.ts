@@ -50,6 +50,13 @@ test('release-candidate shipped E2E keeps one Save coherent across Lumber, Schoo
   );
   assert.equal(s.run.flow.lastAction?.presentationId,'school/arcana/lesson/default');
   assert.equal(s.run.progression.worldFacts.includes('lumber.school.management-ready'),false);
+  assert.equal(s.run.flow.pendingScene?.eventId,'base.school');
+
+  // Resolve the shipped first-School blocking scene before NightFlow.
+  s=reload(s);
+  s=dispatch(s,{type:'choice',id:'listen'},catalog);
+  assert.equal(s.run.flow.pendingScene,null);
+  assert.equal(s.run.flags['school.enrolled'],true);
 
   // Explicit NightFlow -> paid normal lodging -> optional professional Foreman Night.
   s=reload(s);
