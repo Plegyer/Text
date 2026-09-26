@@ -95,7 +95,7 @@ export function mountEditor(root:HTMLElement,base:Catalog,current:Presentation,s
         holder.append(node);preview.append(holder);
       };
       show(0);
-      status.textContent=resolved.diagnostics.join(' ');
+      if(resolved.diagnostics.length)status.textContent=resolved.diagnostics.join(' ');
     }catch(e){
       status.textContent=e instanceof Error?e.message:String(e);
     }
