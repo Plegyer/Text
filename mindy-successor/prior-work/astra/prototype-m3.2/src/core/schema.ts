@@ -24,7 +24,6 @@ export type Condition =
   | {kind:'resource';resource:ResourceId;op:CompareOp;value:number}
   | {kind:'itemCount';id:string;op:CompareOp;count:number}
   | {kind:'itemCapability';capability:string;present:boolean}
-  | {kind:'itemCapability';capability:string;present:boolean}
   | {kind:'calendarYear';op:CompareOp;value:number}
   | {kind:'calendarSeason';value:typeof seasons[number]}
   | {kind:'calendarDayInYear';op:CompareOp;value:number}
@@ -72,7 +71,6 @@ export const conditionSchema: z.ZodType<Condition> = z.lazy(()=>z.union([
   z.object({kind:z.literal('stat'),stat:z.enum(stats),op:compareOp,value:n}).strict(),
   z.object({kind:z.literal('resource'),resource:z.enum(targetResources),op:compareOp,value:n}).strict(),
   z.object({kind:z.literal('itemCount'),id:id,op:compareOp,count:n}).strict(),
-  z.object({kind:z.literal('itemCapability'),capability:id,present:z.boolean()}).strict(),
   z.object({kind:z.literal('itemCapability'),capability:id,present:z.boolean()}).strict(),
   z.object({kind:z.literal('calendarYear'),op:compareOp,value:n.max(4)}).strict(),
   z.object({kind:z.literal('calendarSeason'),value:z.enum(seasons)}).strict(),
@@ -398,6 +396,7 @@ export const activityEnvelopeSchema=z.object({
   status:z.enum(['active','resolving']),
   startedDay:n.max(159),
   entryEnergyCommitted:z.literal(true),
+  optionModelVersion:z.number().int().min(0).max(1).default(0),
   internalState:counterActivityStateSchema,
   rngState:z.number().int().min(0).max(4294967295),
   checkpoint:id,
