@@ -28,3 +28,12 @@ test('central media renderer falls through failures without GIF timing hooks',as
   assert.match(app,/node\.onerror=\(\)=>\{mediaIndex\+\+;render\(\);\}/);
   assert.doesNotMatch(renderer,/onended|duration|setTimeout/);
 });
+
+test('invalid editor replacement is validated before persistent save',async()=>{
+  const source=await readFile('src/ui/editor.ts','utf8');
+  const start=source.indexOf('const commit=');
+  const end=source.indexOf('};',start);
+  const commit=source.slice(start,end);
+  assert.ok(commit.indexOf('applyPresentation(base,next)')>=0);
+  assert.ok(commit.indexOf('save(next)')>commit.indexOf('applyPresentation(base,next)'));
+});
