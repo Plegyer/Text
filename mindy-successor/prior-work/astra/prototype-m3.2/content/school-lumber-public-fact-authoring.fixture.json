@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "id": "school-lumber-public-fact-authoring.fixture",
+  "boundary": {
+    "publicFactId": "lumber.school.management-ready",
+    "storage": "run.progression.worldFacts",
+    "writerDomain": "school",
+    "readerPackId": "lumber-cross",
+    "listenerEventId": "lumber-cross.school-management-return",
+    "reactionTrigger": {
+      "kind": "worldFactAdded",
+      "fact": "lumber.school.management-ready"
+    },
+    "listenerConditions": [
+      {
+        "kind": "worldFact",
+        "fact": "lumber.school.management-ready",
+        "present": true
+      },
+      {
+        "kind": "relationshipStage",
+        "relationship": "lumber.foreman",
+        "stage": "route-professional"
+      }
+    ],
+    "listenerChoiceId": "apply",
+    "lumberEffects": [
+      {
+        "kind": "addCareerFact",
+        "career": "lumber",
+        "fact": "management-school-ready"
+      },
+      {
+        "kind": "addCareerFact",
+        "career": "lumber",
+        "fact": "forewoman-problem-resolved"
+      }
+    ]
+  },
+  "schoolAuthoring": {
+    "providerStatus": "OPEN",
+    "courseId": null,
+    "trackId": null,
+    "lessonsCompletedThreshold": null,
+    "statThreshold": null,
+    "milestoneId": null,
+    "projectId": null,
+    "examId": null,
+    "certificateId": null,
+    "syntheticProviderActionAllowed": false,
+    "syntheticProviderActionId": "school.lumber-management",
+    "legacyMetricsLessonsAllowedAsAuthority": false
+  },
+  "persistence": {
+    "publishExactlyOnce": true,
+    "worldFactSurvivesReload": true,
+    "pendingListenerSurvivesReload": true,
+    "schoolProgressMustNotDuplicate": true,
+    "schoolCostMustNotReplay": true,
+    "lumberCareerFactsApplyOnlyOnListenerChoice": true,
+    "lumberCareerFactsExactlyOnce": true
+  },
+  "ownership": {
+    "schoolMayWrite": [
+      "lumber.school.management-ready"
+    ],
+    "schoolMayNotWrite": [
+      "lumber career stage",
+      "lumber career counters",
+      "lumber relationship stage"
+    ],
+    "lumberMayRead": [
+      "lumber.school.management-ready"
+    ],
+    "lumberMayWrite": [
+      "career:lumber:management-school-ready",
+      "career:lumber:forewoman-problem-resolved"
+    ],
+    "lumberMayNotWrite": [
+      "School lessons_completed",
+      "School milestones",
+      "School certificates"
+    ]
+  },
+  "hardWorkIsolation": {
+    "publicFactPrerequisiteAllowed": false,
+    "onlyCondition": {
+      "kind": "careerCounter",
+      "career": "lumber",
+      "counter": "completed_shifts",
+      "op": "gte",
+      "value": 50
+    },
+    "rewardId": "hardWork:lumber"
+  }
+}
