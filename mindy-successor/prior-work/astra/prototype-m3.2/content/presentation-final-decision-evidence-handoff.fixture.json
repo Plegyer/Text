@@ -1,0 +1,226 @@
+{
+  "version": 4,
+  "kind": "presentation-final-decision-evidence-handoff",
+  "status": "post-pr24-canonical",
+  "mainBaseline": "4931d2a1cdd1526a90ce50fbf0391e135f39b0af",
+  "pr24Merge": "9aa0eaf964735e82b9b964bbdcaf5362c292868a",
+  "decision": {
+    "shippedPresentationRuntime": "GREEN",
+    "rcRequiredMissingAssets": 0,
+    "optionalGifTargets": 7,
+    "sharedPresentationRuntimeChangeRecommended": false
+  },
+  "SHIPPED_GREEN": [
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/release-candidate-shipped-e2e.test.ts",
+      "source": "main",
+      "reason": "Merged one-Save RC evidence including real base.school -> listen boundary and 49-not-eligible -> real 50th shift."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/src/core/presentation.ts",
+      "source": "main",
+      "reason": "Shipped semantic slot/fallback/animation-off presentation runtime."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/packs/base.json",
+      "source": "main",
+      "reason": "Ships base.school lesson variant with base.workshop media and listen choice."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/assets/workshop.svg",
+      "source": "main",
+      "reason": "Static media for final merged School blocking scene."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/packs/stage.json",
+      "source": "main",
+      "reason": "Shipped town/Lumber/School/Forest stage media used by RC fallback paths."
+    }
+  ],
+  "MUST_INTEGRATE_QA": [
+    {
+      "path": "mindy-successor/docs/presentation-prep/PRESENTATION_PR24_MERGED_RECONCILIATION_v1.md",
+      "reason": "Canonical correction of the pre-fix School-boundary assumption."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-pr24-merged-reconciliation.test.ts",
+      "reason": "Checks exact base.school/lesson semantic boundary against shipped content."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-one-save-ownership-v2.fixture.json",
+      "reason": "Exact post-PR24 presentation state ownership sequence."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-one-save-ownership-v2.test.ts",
+      "reason": "Guards lastAction/pendingScene/NightFlow/Activity/ending/RunResult/New Run ownership."
+    },
+    {
+      "path": "mindy-successor/docs/presentation-prep/PRESENTATION_RC_LIVE_PATH_FALLBACK_AUDIT_v1.md",
+      "reason": "Exact merged one-Save fallback classification."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-rc-live-path-fallback-audit.test.ts",
+      "reason": "Verifies current static assets for every merged live-path boundary."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-final-no-timing-coupling.test.ts",
+      "reason": "Final sentinel against frame/time/playback or animation-owned mechanics coupling."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-merged-rc-override-smoke.fixture.json",
+      "reason": "Representative post-PR24 override cases including School blocking scene."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-merged-rc-override-smoke.test.ts",
+      "reason": "Override/fallback/reload identity with zero gameplay mutation."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-semantic-coverage-checksum.fixture.json",
+      "reason": "Canonical 27-ID post-PR24 RC semantic coverage set."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-semantic-coverage-checksum.test.ts",
+      "reason": "Deterministic checksum, duplicate and silent-rename guard."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-activity-option-save.fixture.json",
+      "reason": "PR22 legacy/v1 Activity option-state compatibility dependency."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-activity-option-save.test.ts",
+      "reason": "Protects deterministic Activity presentation identity through option-aware reload."
+    },
+    {
+      "path": "mindy-successor/docs/presentation-prep/PRESENTATION_OVERRIDE_ROLLBACK_CONTRACT_v1.md",
+      "reason": "Safe override rollback contract."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-override-rollback.test.ts",
+      "reason": "Restores shipped fallback with no gameplay/save mutation."
+    },
+    {
+      "path": "mindy-successor/docs/presentation-prep/PRESENTATION_RELEASE_GATE_v1.md",
+      "reason": "Post-PR24 PASS/OPEN_ASSET/OPEN_AUTHORING/NEEDS_LIVE_EVIDENCE gate summary."
+    }
+  ],
+  "FUTURE_ASSET_ONLY": [
+    {
+      "path": "mindy-successor/docs/presentation-prep/FUTURE_GIF_DROP_IN_PACKAGE_v1.md",
+      "reason": "Optional seven-GIF package; current RC does not depend on it."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/future-gif-drop-in-package.fixture.json",
+      "reason": "Portable metadata for optional future GIFs."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-replacement-bundle.fixture.json",
+      "reason": "Future external replacement productization."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-replacement-bundle.test.ts",
+      "reason": "Future bundle validation."
+    },
+    {
+      "path": "mindy-successor/docs/presentation-prep/PRESENTATION_OVERRIDE_IMPORT_EXPORT_CONTRACT_v1.md",
+      "reason": "External import/export remains optional productization."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-override-import-export-contract.test.ts",
+      "reason": "Future import/export contract QA."
+    },
+    {
+      "path": "mindy-successor/docs/presentation-prep/PRESENTATION_REPLACEMENT_BUNDLE_MIGRATION_v1.md",
+      "reason": "Future replacement-bundle version migration."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-replacement-bundle-migration.test.ts",
+      "reason": "Future migration/orphan QA."
+    }
+  ],
+  "AUTHORING_BLOCKED": [
+    {
+      "semanticFamily": "activity/forest/route/logging-road/*",
+      "currentFallback": "activity/forest/route/default",
+      "reason": "Exact route-specific visual variants/lore are not authored; generic shipped route presentation is safe."
+    },
+    {
+      "semanticFamily": "activity/forest/route/hunter-trail/*",
+      "currentFallback": "activity/forest/route/default",
+      "reason": "Hunter-trail gameplay/content authoring remains open."
+    },
+    {
+      "semanticFamily": "activity/forest/route/old-boundary/*",
+      "currentFallback": "activity/forest/route/default",
+      "reason": "Exact visual authoring plus token acquisition/retain-consume policy remain open."
+    },
+    {
+      "semanticFamily": "activity/forest/challenge/navigation/*",
+      "currentFallback": "activity/forest/route/default",
+      "reason": "Challenge authoring remains open."
+    },
+    {
+      "semanticFamily": "activity/forest/challenge/physical-obstacle/*",
+      "currentFallback": "activity/forest/route/default",
+      "reason": "Challenge authoring remains open."
+    },
+    {
+      "semanticFamily": "activity/forest/challenge/interpretation-ritual-anomaly/*",
+      "currentFallback": "activity/forest/route/default",
+      "reason": "Challenge authoring remains open."
+    },
+    {
+      "semanticFamily": "school-management-accounting-result",
+      "currentFallback": "School/town safe presentation context",
+      "reason": "Final public-result gameplay identity is not authored; no presentationId should be invented."
+    }
+  ],
+  "SUPERSEDED": [
+    {
+      "historicalRevision": {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-pr24-one-save-audit.test.ts",
+        "commit": "6a88cf816e52d52a8d67cb42fd39f74bcc9aa209"
+      },
+      "reason": "Pre-fix PR24 audit omitted the real base.school -> listen blocking scene. Do not integrate this historical revision."
+    },
+    {
+      "path": "mindy-successor/docs/presentation-prep/PRESENTATION_PR24_ONE_SAVE_AUDIT_v1.md",
+      "reason": "Current reconciled content is valid but superseded as canonical handoff evidence by PRESENTATION_PR24_MERGED_RECONCILIATION_v1.md."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-pr24-one-save-audit.test.ts",
+      "reason": "Current reconciled audit is redundant with merged reconciliation + ownership v2."
+    },
+    {
+      "path": "mindy-successor/docs/presentation-prep/PRESENTATION_RC_EVIDENCE_PACK_v1.md",
+      "reason": "Superseded by this v4 decision/evidence handoff."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-rc-evidence-pack.fixture.json",
+      "reason": "Superseded by this v4 decision/evidence handoff."
+    },
+    {
+      "path": "mindy-successor/docs/presentation-prep/PRESENTATION_FINAL_INTEGRATION_HANDOFF_v3.md",
+      "reason": "Pre-PR24 handoff."
+    },
+    {
+      "path": "mindy-successor/docs/presentation-prep/PRESENTATION_RELEASE_CANDIDATE_HANDOFF_v2.md",
+      "reason": "Pre-PR24 handoff."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-production-smoke.fixture.json",
+      "reason": "Superseded by merged PR24 live-path evidence."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-production-smoke.test.ts",
+      "reason": "Superseded by merged PR24 live-path evidence."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-pa-scenario.fixture.json",
+      "reason": "Superseded by final ownership/live-path evidence."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-pa-scenario.test.ts",
+      "reason": "Superseded by final ownership/live-path evidence."
+    }
+  ]
+}
