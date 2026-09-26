@@ -506,3 +506,98 @@ Consolidate all post-PR23 School work into:
 Name exact files and identify the smallest Lead integration subset.
 
 Continue items 31–36 sequentially without waiting for Lead review.
+
+
+## Queue item 37 — PR25 School final-gate review
+
+Create NEW files only:
+- `docs/school-prep/SCHOOL_PR25_FINAL_GATE_REVIEW_v1.md`
+- `prior-work/astra/prototype-m3.2/tests/school-pr25-final-gate-review.test.ts`
+
+Review current PR #25 from the School perspective.
+
+Confirm:
+- first-class `schoolLesson` remains atomic;
+- real blocking School scene is preserved;
+- resolving the scene does not recharge tuition/Energy or duplicate typed progress;
+- NightFlow remains blocked until the scene is resolved;
+- no management/accounting public fact is fabricated;
+- no Arcana/Forest threshold/provider is invented;
+- no production School runtime/UI change occurs in PR #25.
+
+## Queue item 38 — School long-Save state preservation matrix
+
+Create NEW files only:
+- `prior-work/astra/prototype-m3.2/content/school-long-save-state-preservation.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/school-long-save-state-preservation.test.ts`
+
+Using the merged one-Save path model, verify School preserves unrelated domains:
+- Lumber career stage/counters;
+- Foreman relationship route;
+- money;
+- Energy;
+- Night state;
+- Forest facts;
+- ending eligibility;
+- Meta.
+
+School transaction must mutate only its owned resources/stats/typed progress plus legitimate Resolver output.
+
+## Queue item 39 — School public-result decision impact matrix
+
+Create:
+- `docs/school-prep/SCHOOL_PUBLIC_RESULT_DECISION_IMPACT_v1.md`
+- `prior-work/astra/prototype-m3.2/content/school-public-result-decision-impact.fixture.json`
+
+For each unresolved School public-result decision, map:
+- authoring source;
+- threshold/milestone type;
+- exact downstream Lumber listener;
+- save/reload semantics;
+- Resolver publication boundary;
+- PA rows affected;
+- tests/content files affected.
+
+Do not select final provider or threshold.
+
+## Queue item 40 — School teacher/content-depth completeness negative suite
+
+Create NEW files only:
+- `prior-work/astra/prototype-m3.2/content/school-content-depth-negative.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/school-content-depth-negative.test.ts`
+
+Truthfully detect that current School mechanics may be RC-ready while teacher/certificate/project/content depth remains incomplete.
+
+Fail any artifact that falsely labels missing teacher identities or milestone/certificate authoring as already shipped.
+
+Do not invent them.
+
+## Queue item 41 — School final RC acceptance matrix
+
+Create:
+- `docs/school-prep/SCHOOL_FINAL_RC_ACCEPTANCE_MATRIX_v1.md`
+- optional NEW test.
+
+Classify School-related acceptance areas as:
+- SHIPPED_GREEN;
+- QA_GREEN;
+- HUMAN_DECISION_REQUIRED;
+- CONTENT_DEPTH_OPEN;
+- PRESENTATION_ASSET_OPEN.
+
+Use merged PR24/PR25 behavior as current source of truth.
+
+## Queue item 42 — School final evidence pack v5
+
+Create:
+- `docs/school-prep/SCHOOL_FINAL_EVIDENCE_PACK_v5.md`
+- `prior-work/astra/prototype-m3.2/content/school-final-evidence-pack.fixture.json`
+
+Produce the smallest non-redundant Lead handoff:
+- exact tests worth integrating;
+- exact docs worth indexing;
+- human decisions required;
+- content-depth backlog;
+- superseded artifacts.
+
+Continue items 37–42 sequentially without waiting for Lead review.
