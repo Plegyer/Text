@@ -127,3 +127,32 @@ Real GitHub Actions:
 - full `npm run check` pass.
 
 Next architecture package: A4 Night Flow.
+
+
+## A4 resumable Night Flow — 2026-09-26
+
+A4 completed on `a4-night-flow`.
+
+Night is now an explicit persisted lifecycle instead of a single pay+day++ command.
+
+Implemented phases:
+`PreLodgingForcedCheck -> LodgingResolution -> PostLodgingForcedCheck -> VoluntaryNightChoice -> NightEventResolution -> NextDayModifiersFinalized -> CalendarAdvance -> StartDay`.
+
+Target Night commands are resumable. Lodging payment is committed separately from calendar advance, so reload after payment cannot charge twice.
+
+Target definitions now support normal/cheap/street-style lodging and voluntary night choices. Forced events can intercept before lodging, after lodging or after the voluntary choice and can suppress rent/menu according to policy.
+
+Night study uses immediate progress plus a next-day Energy modifier; relationship nights consume the night slot without charging daytime Energy by default.
+
+Street-style effects can queue Grooming and Energy penalties for StartDay exactly once.
+
+The legacy M3.2 `sleep(payment)` command remains as a compatibility wrapper over the same NightFlow, not a second authoritative sleep implementation.
+
+Real GitHub Actions:
+- typecheck pass;
+- validate pass;
+- build pass;
+- tests **84/84**;
+- full `npm run check` pass.
+
+Next architecture package: A5 Activity Envelope.
