@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "id": "lumber.ending-identity.fixture",
+  "endings": [
+    {
+      "id": "ending.lumber.hard-work",
+      "family": "hard-work",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "lumber",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 50
+        }
+      ],
+      "semanticPresentationId": "ending/lumber/hard-work",
+      "metaRewards": [
+        {
+          "kind": "hardWork",
+          "rewardId": "hardWork:lumber",
+          "career": "lumber"
+        }
+      ]
+    },
+    {
+      "id": "ending.lumber.forewoman",
+      "family": "forewoman",
+      "conditions": [
+        {
+          "kind": "careerFact",
+          "career": "lumber",
+          "fact": "management-school-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "lumber",
+          "fact": "forewoman-problem-resolved",
+          "present": true
+        },
+        {
+          "kind": "relationshipStage",
+          "relationship": "lumber.foreman",
+          "stage": "route-professional"
+        }
+      ],
+      "semanticPresentationId": "ending/lumber/forewoman",
+      "metaRewards": []
+    },
+    {
+      "id": "ending.lumber.forest",
+      "family": "forest",
+      "conditions": [
+        {
+          "kind": "careerFact",
+          "career": "lumber",
+          "fact": "forest-truth-known",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "lumber",
+          "fact": "forest-problem-resolved",
+          "present": true
+        }
+      ],
+      "semanticPresentationId": "ending/lumber/forest",
+      "metaRewards": []
+    }
+  ],
+  "invariants": {
+    "hardWorkRewardOwner": "ending.lumber.hard-work",
+    "hardWorkRewardId": "hardWork:lumber",
+    "hardWorkConditionCount": 1,
+    "eligibilityIndependent": true
+  }
+}
