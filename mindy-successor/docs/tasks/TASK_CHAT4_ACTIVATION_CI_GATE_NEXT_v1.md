@@ -382,3 +382,108 @@ Consolidate Chat 4 items 1–29 into:
 Name exact files and the minimal release-candidate QA subset.
 
 Continue items 25–30 sequentially without waiting for Lead review.
+
+
+## Queue item 31 — PR24 one-Save E2E review
+
+Create:
+- `docs/qa-prep/PR24_ONE_SAVE_E2E_REVIEW_v1.md`
+
+Review current PR #24 shipped one-Save smoke.
+
+Check:
+- same Save across Lumber, Foreman, School, Night, Forest and ending;
+- only explicit accelerator is completed_shifts=49;
+- no School public fact injection;
+- no Old Boundary Token injection;
+- no Forest success fact injection;
+- exact Hard Work condition/reward preserved;
+- reload checkpoints are meaningful.
+
+Classify BLOCKER / GREEN / COVERAGE_GAP.
+
+## Queue item 32 — one-Save state drift sentinel
+
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/qa-one-save-state-drift-sentinel.test.ts`
+
+Build independent sentinels around the PR24 path:
+- money delta;
+- daytime Energy delta;
+- Night day advance;
+- School typed progress;
+- Foreman typed progress;
+- Forest typed/public result;
+- ending eligibility;
+- Meta reward exactly once.
+
+The sentinel must fail if unrelated subsystems are reset or duplicated.
+
+## Queue item 33 — RC save/reload corruption injection matrix
+
+Create:
+- `docs/qa-prep/RC_SAVE_RELOAD_CORRUPTION_MATRIX_v1.md`
+- optional NEW test.
+
+Define adversarial checkpoints for:
+- pending Lumber milestone;
+- pending Foreman scene;
+- paid School result;
+- Night after lodging;
+- Night pending event;
+- Activity before route;
+- Activity after route;
+- Activity after advance;
+- ending committed;
+- ended RunResult.
+
+State expected parser/runtime behavior for malformed/stale variants.
+
+## Queue item 34 — RC authoring blocker evidence pack
+
+Create:
+- `docs/qa-prep/RC_AUTHORING_BLOCKER_EVIDENCE_PACK_v1.md`
+
+For each remaining human/product decision, attach exact evidence that runtime is already ready or partially ready:
+- Old Boundary Token source;
+- retain/consume;
+- hunter-trail capability/clue identity;
+- School management/accounting provider/threshold;
+- School Arcana/Forest provider/threshold;
+- Forest 3-route/3-challenge/season content depth.
+
+Do not propose a preferred product answer.
+
+## Queue item 35 — minimal release-candidate acceptance gate v2
+
+Create:
+- `docs/qa-prep/MINIMAL_RC_ACCEPTANCE_GATE_v2.md`
+- `prior-work/astra/prototype-m3.2/tests/qa-minimal-rc-acceptance-gate-v2.test.ts`
+
+Define the smallest executable RC acceptance set that can be honestly green before unresolved authoring is decided.
+
+Must include:
+- main build/validation;
+- one-Save E2E;
+- schema4 compatibility;
+- item capability;
+- Activity route reload;
+- School typed progress;
+- Night exactly-once;
+- Hard Work exact threshold/reward.
+
+## Queue item 36 — final QA RC evidence pack
+
+Create:
+- `docs/qa-prep/FINAL_QA_RC_EVIDENCE_PACK_v1.md`
+
+Produce the final minimal handoff:
+- MUST_INTEGRATE_TESTS;
+- KEEP_AS_EVIDENCE;
+- AUTHORING_BLOCKED;
+- SUPERSEDED;
+- POST_RELEASE_POLISH.
+
+Name exact files and current assumptions. Flag anything stale after PR22/PR23/PR24.
+
+Continue items 31–36 sequentially without waiting for Lead review.
