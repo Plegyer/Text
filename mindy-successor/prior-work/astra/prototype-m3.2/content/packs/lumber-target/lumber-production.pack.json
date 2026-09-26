@@ -118,7 +118,8 @@
             }
           ]
         }
-      ]
+      ],
+      "sourceDomain": "lumber"
     },
     {
       "id": "lumber.foreman-notice",
@@ -180,7 +181,8 @@
             }
           ]
         }
-      ]
+      ],
+      "sourceDomain": "lumber.foreman"
     }
   ]
 }
