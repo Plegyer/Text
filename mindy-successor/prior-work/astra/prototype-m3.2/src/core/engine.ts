@@ -159,6 +159,7 @@ export function meets(c:Condition,s:Save,cat?:Catalog):boolean {
     case 'calendarSeason': return cal().season===c.value;
     case 'calendarDayInYear': return compare(cal().dayInYear,c.op,c.value);
     case 'calendarElapsedDays': return compare(s.run.calendar.elapsedDays,c.op,c.value);
+    case 'housingTier': return s.run.housingState.current===c.value;
     case 'careerStage': return readDomainState(s,'career',c.career,cat)?.stage===c.stage;
     case 'careerShifts': return compare(readDomainState(s,'career',c.career,cat)?.shifts??0,c.op,c.value);
     case 'careerCounter': return compare(readDomainState(s,'career',c.career,cat)?.counters[c.counter]??0,c.op,c.value);
@@ -343,6 +344,8 @@ function factLabel(f:ReactionFact){
     case 'energyChanged':return `energyChanged:${f.from}->${f.to}`;
     case 'calendarAdvanced':return `calendarAdvanced:${f.from}->${f.to}`;
     case 'dayStarted':return `dayStarted:${f.day}`;
+    case 'nightPhase':return `nightPhase:${f.point}`;
+    case 'nightChoiceCompleted':return `nightChoiceCompleted:${f.choice}`;
     case 'careerCounterChanged':return `careerCounterChanged:${f.career}.${f.counter}:${f.from}->${f.to}`;
     case 'careerTransition':return `careerTransition:${f.career}:${f.from}->${f.to}`;
     case 'careerFactAdded':return `careerFactAdded:${f.career}.${f.fact}`;
@@ -373,6 +376,8 @@ function matchTrigger(t:ReactionTrigger,f:ReactionFact):boolean{
   if(t.kind!==f.kind)return false;
   switch(t.kind){
     case 'creationCompleted':case 'energyChanged':case 'calendarAdvanced':case 'dayStarted':return true;
+    case 'nightPhase':return f.kind==='nightPhase'&&f.point===t.point;
+    case 'nightChoiceCompleted':return f.kind==='nightChoiceCompleted'&&f.choice===t.choice;
     case 'actionCompleted':return !t.action||(f.kind==='actionCompleted'&&f.action===t.action);
     case 'choiceResolved':return !t.event||(f.kind==='choiceResolved'&&f.event===t.event);
     case 'statChanged':return !t.stat||(f.kind==='statChanged'&&f.stat===t.stat);
