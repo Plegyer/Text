@@ -462,10 +462,10 @@ function queueResolved(s:Save,e:StoryEvent,snapshot:{variantId:string;allowedCho
   return q;
 }
 function attemptChance(s:Save,e:StoryEvent,trace:ResolverTrace){
+  if(!e.chance){trace.steps.push(`chance:${e.id}:deterministic`);return true;}
   const r=s.run.flow.reaction;
   if(r.attemptedEventIds.includes(e.id)){trace.steps.push(`reject:${e.id}:already-attempted`);return false;}
   r.attemptedEventIds.push(e.id);
-  if(!e.chance){trace.steps.push(`chance:${e.id}:deterministic`);return true;}
   const roll=random(s),chance=eventChance(e,s),pass=roll<chance;
   trace.steps.push(`chance:${e.id}:${roll.toFixed(8)}<${chance.toFixed(8)}:${pass?'pass':'fail'}`);
   return pass;
