@@ -745,3 +745,23 @@ The handoff records merged milestones, CI evidence, locked invariants, current w
   2. authoritative School -> Lumber management/accounting public result;
   3. hunter-trail + full 3-route / 3-challenge / season Forest content depth.
 - Merge-ref GitHub Actions: typecheck PASS, validate PASS, build PASS, **200/200 tests PASS**.
+
+
+## Release-candidate QA floor — PR #23 — 2026-09-26
+
+- PR #23 merged the minimal non-redundant Chat 4 QA contracts for the PR #22 capability/Activity-option runtime.
+- Main merge: `e12665ce9063689400d8f39f893378f6f01911f3`.
+- Added executable coverage for:
+  - inventory-derived item capabilities;
+  - worldFact not being equivalent to item capability ownership;
+  - multiple items providing one capability;
+  - unknown capability rejection at catalog load;
+  - authored Activity option visibility;
+  - capability-gated option visibility;
+  - route and one-shot option identity across reload;
+  - duplicate option rejection;
+  - ordinary advance/escape continuity after authored route selection;
+  - capability disappearance after provider item removal.
+- No production runtime/content/UI files changed in PR #23.
+- Merge-ref GitHub Actions: typecheck PASS, validate PASS, build PASS, **208/208 tests PASS**.
+- Release-candidate regression floor is therefore **208 tests green** before the next worker integration set.
