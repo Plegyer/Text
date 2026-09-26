@@ -2,7 +2,7 @@
 
 Дата: 2026-09-26.
 
-Статус: **IN IMPLEMENTATION**.
+Статус: **IMPLEMENTED / GREEN**.
 
 Base commit:
 `1602583bf9b80515280df165c269bec4353bc19a`.
@@ -155,3 +155,34 @@ Real runner:
 
 After A6 green:
 run Architecture Migration Slice gate before Phase B shell.
+
+
+## Implementation result — 2026-09-26
+
+Implemented on `lead/a6-runresult-meta`.
+
+Delivered:
+- ending eligibility remains separate from commitment;
+- target commands `commitEnding` and `completeEnding`;
+- compatibility `accept` routes through the same pipeline;
+- deterministic RunResult/result transaction identities;
+- Meta transaction ledger and load invariants;
+- exactly-once runsCompleted transaction accounting;
+- unique ending rewards do not reapply on later repeated ending runs;
+- target Meta rewards support unlock and ordinary Hard Work progress;
+- all 10 unique ordinary Hard Work careers unlock Palace;
+- locked Hard Work starting bonuses are derived on the next fresh run;
+- Merchant Hard Work adds exactly 600 starting money;
+- ending_committed resolver class may show final scenes while normal progression is suppressed;
+- legacy schema-v4 ended saves receive compatibility RunResult proof without reward duplication;
+- protected Meta import unions transaction proofs.
+
+Real GitHub Actions / Node 22:
+- typecheck pass;
+- validate pass;
+- build pass;
+- **111/111 tests pass**;
+- full `npm run check` pass.
+
+A1–A6 architecture migration implementation is now green.
+Next step: run the Architecture Migration Slice gate against the integrated main branch, then begin Phase B.
