@@ -67,9 +67,9 @@ function assertChoiceOnlyChanges(s:Save,choiceId:string,metric:'strength'|'empat
   const beforeInventory=structuredClone(s.run.inventory),beforeEndings=[...s.run.availableEndings];
   const after=choose(s,choiceId);
   if(metric)assert.equal(after.run.metrics[metric]-beforeMetric,delta);
-  const expectedMetrics=structuredClone(s.run.metrics);
+  const expectedMetrics={...s.run.metrics};
   if(metric)expectedMetrics[metric]+=delta;
-  assert.deepEqual(after.run.metrics,expectedMetrics);
+  assert.deepEqual({...after.run.metrics},expectedMetrics);
   assert.equal(after.run.metrics.money,beforeMoney);
   assert.equal(after.run.metrics.energy,beforeEnergy);
   assert.deepEqual(after.run.inventory,beforeInventory);
@@ -91,16 +91,16 @@ test('chain appears only after real lumber shifts 3/7/12',()=>{
 
 test('both choices on every stage set the stage flag and apply only the specified one-time reward',()=>{
   const first=firstPending();
-  assertChoiceOnlyChanges(structuredClone(first),'practice','strength',1,'ds.lumber.first');
-  assertChoiceOnlyChanges(structuredClone(first),'observe','strength',0,'ds.lumber.first');
+  assertChoiceOnlyChanges(parseSave(JSON.stringify(first),catalog),'practice','strength',1,'ds.lumber.first');
+  assertChoiceOnlyChanges(parseSave(JSON.stringify(first),catalog),'observe','strength',0,'ds.lumber.first');
 
   const second=secondPending();
-  assertChoiceOnlyChanges(structuredClone(second),'listen','empathy',1,'ds.lumber.second');
-  assertChoiceOnlyChanges(structuredClone(second),'inspect','empathy',0,'ds.lumber.second');
+  assertChoiceOnlyChanges(parseSave(JSON.stringify(second),catalog),'listen','empathy',1,'ds.lumber.second');
+  assertChoiceOnlyChanges(parseSave(JSON.stringify(second),catalog),'inspect','empathy',0,'ds.lumber.second');
 
   const done=donePending();
-  assertChoiceOnlyChanges(structuredClone(done),'demonstrate','strength',1,'ds.lumber.done');
-  assertChoiceOnlyChanges(structuredClone(done),'explain','strength',0,'ds.lumber.done');
+  assertChoiceOnlyChanges(parseSave(JSON.stringify(done),catalog),'demonstrate','strength',1,'ds.lumber.done');
+  assertChoiceOnlyChanges(parseSave(JSON.stringify(done),catalog),'explain','strength',0,'ds.lumber.done');
 });
 
 test('different earlier answers lead to the same next stage',()=>{
@@ -132,8 +132,8 @@ test('save/load preserves an open lumber scene',()=>{
   assert.equal(after.run.pending,null);
 });
 
-test('seasonal variants select summer at day 28, winter at 84, and default in spring/autumn',()=>{
-  for(const [day,variant] of [[0,'default'],[28,'summer'],[56,'default'],[84,'winter']] as const){
+test('seasonal variants follow the 10-day successor seasons',()=>{
+  for(const [day,variant] of [[0,'default'],[10,'summer'],[20,'default'],[30,'winter']] as const){
     let s=firstPending(day);expectPending(s,'ds-lumber.first',variant);s=choose(s,'observe');
     for(let i=4;i<=7;i++)s=lumber(s);expectPending(s,'ds-lumber.second',variant);s=choose(s,'inspect');
     for(let i=8;i<=12;i++)s=lumber(s);expectPending(s,'ds-lumber.done',variant);

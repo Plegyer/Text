@@ -42,3 +42,30 @@ B принят с редактурой: исходник/принятый вар
 ## M3.2 — SOL-001 принят и подключён
 Три события лесорубов на 3/7/12 сменах, по три постановки и два выбора. Принятые A/B собраны без изменений текста. Механика, core, UI и схема сохранений не менялись. Каталог: 4 пакета, 21 событие, 25 действий, 6 судеб. Полный npm run check: 43/43 теста; границы пакета проверены. Добавлена проверка продолжения работы до 24 смен без повторных сцен/наград, концовка за стаж остаётся доступна.
 Новая сборка совместима с M3.1. В старой жизни с большим стажем цепочка начинается с первого непройденного этапа при следующей подходящей смене, не перескакивает сразу к финалу. Итог пилота SOL: рабочий пакет принят без исправления производственного JSON; интегратор расширил тесты. Следующую задачу выбирать из небольших независимых пакетов, не перепоручать общую архитектуру.
+
+
+## A1 target-state migration — 2026-09-26
+
+A1 реализован на ветке `a1-state-migration`.
+
+Изменено ядро сохранения:
+- schemaVersion 4;
+- target domain ownership: Calendar / Character / Resources / Day / Housing / Progression / Endings / Flow / RNG / History;
+- 12 target progression stats + separate Lust;
+- 10 creation points только по progression stats;
+- target 160-day calendar (4×40, seasons по 10 дней);
+- fresh money 600, Energy 3;
+- ambiguous M3.2 prototype metrics quarantined in `legacyCompat` rather than silently reinterpreted;
+- safe legacy aliases include `intelligence -> reason` and `persuasion -> charm`;
+- schema3 saves beyond the target 160-day active range are rejected rather than wrapped.
+
+Чтобы M3.2 demo-content/UI можно было мигрировать последовательно, добавлен non-enumerable compatibility façade для старых обращений `run.metrics/run.day/run.flags/run.inventory/run.pending/...`. Эти alias-поля не сериализуются: JSON-save содержит только target owners.
+
+Проверено реальным GitHub Actions runner:
+- `npm run typecheck` — pass;
+- `npm run validate` — pass;
+- `npm run build` — pass;
+- `npm test` — 48/48 pass;
+- полный `npm run check` — pass.
+
+Следующий пакет: A2 Condition/Effect v2. Не масштабировать production content до A2–A6 и Product Acceptance Slice.
