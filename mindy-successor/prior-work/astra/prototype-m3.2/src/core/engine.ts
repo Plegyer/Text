@@ -1,4 +1,4 @@
-import { metrics, stats, seasons, priorityClasses, saveSchema, type Stat, type Save, type Meta, type Condition, type Effect, type Catalog, type StoryEvent, type Action, type MachineDefinition, type ReactionFact, type ReactionTrigger, type PriorityClass } from './schema.ts';
+import { metrics, stats, seasons, priorityClasses, saveSchema, type Stat, type Save, type Meta, type Condition, type Effect, type Catalog, type StoryEvent, type Action, type MachineDefinition, type ReactionFact, type ReactionTrigger, type PriorityClass, type LodgingDefinition, type NightChoiceDefinition } from './schema.ts';
 
 const statSet=new Set<string>(stats);
 const cappedLegacy=new Set(['health','stress','trust']);
@@ -623,6 +623,164 @@ function runResolverBoundary(s:Save,before:Save,cat:Catalog,extras:ReactionFact[
   const trace:ResolverTrace={epochId:s.run.flow.reaction.currentEpochId!,facts:facts.map(factLabel),steps:[],selected:null,offers:[]};
   resolveReactionsMutable(s,facts,cat,trace);
 }
+
+type NightPoint='before_lodging'|'after_lodging'|'after_choice';
+type NightState=NonNullable<Save['run']['flow']['night']>;
+
+function nightState(s:Save):NightState{
+  const n=s.run.flow.night;if(!n)throw new Error('Ночная последовательность не начата.');return n;
+}
+function queueNextDay(s:Save,energyDelta:number,statEffects:{stat:Stat;delta:number}[],tag?:string){
+  const q=s.run.dayState.nextDayModifiers;
+  q.energyDelta+=energyDelta;
+  if(q.statEffects.length+statEffects.length>24)throw new Error('Слишком много отложенных эффектов следующего дня.');
+  q.statEffects.push(...statEffects);
+  if(tag)addUnique(q.tags,tag);
+}
+function applyPendingNightPolicy(s:Save,cat:Catalog,point:NightPoint){
+  const pending=s.run.pending;if(!pending)return;
+  const event=cat.events.find(e=>e.id===pending.eventId);
+  const policy=event?.nightPolicy;
+  if(!policy||policy.intercept!==point)return;
+  const n=nightState(s);
+  n.suppressLodgingPayment ||= policy.suppressLodgingPayment;
+  n.suppressVoluntaryMenu ||= policy.suppressVoluntaryMenu;
+  n.consumesNight ||= policy.consumesNight;
+}
+function finishNightMutable(s:Save,cat:Catalog){
+  const n=nightState(s);
+  if(s.run.pending)throw new Error('Нельзя завершить ночь с активной сценой.');
+  const before=cloneSave(s);
+  n.phase='NextDayModifiersFinalized';
+  n.phase='CalendarAdvance';
+  if(!n.calendarAdvanceCommitted){
+    if(s.run.day+1>=160){
+      n.calendarAdvanceCommitted=true;
+      s.run.status='expired';
+      log(s,'Четыре года истекли. Выберите открытую судьбу или начните следующую жизнь.');
+      s.run.flow.night=null;
+      return;
+    }
+    s.run.day++;
+    s.run.slot=0;
+    n.calendarAdvanceCommitted=true;
+  }
+  n.phase='StartDay';
+  const queued=s.run.dayState.nextDayModifiers;
+  for(const effect of queued.statEffects)setMetric(s,effect.stat,getMetric(s,effect.stat)+effect.delta);
+  s.run.metrics.energy=Math.max(1,energyMax(s)+queued.energyDelta);
+  s.run.dayState.nextDayModifiers={energyDelta:0,statEffects:[],tags:[]};
+  s.run.housingState.paidForCurrentNight=false;
+  for(const q of [...s.run.flow.reaction.queued])if(q.kind==='optional')removeQueuedInstance(s,q.instanceId);
+  s.run.lastAction={
+    id:'rest',
+    title:'Новое утро',
+    text:'Ночь завершена. Начался новый день.',
+    media:[s.run.housingState.current==='street'?'stage.outside':'stage.room'],
+    deltas:delta(before.run.metrics,s.run.metrics)
+  };
+  register(s,cat);
+  s.run.flow.night=null;
+  runResolverBoundary(s,before,cat,[],true);
+}
+function resumeNightFromPointMutable(s:Save,cat:Catalog,point:NightPoint){
+  const n=nightState(s);
+  n.currentIntercept=null;
+  if(point==='before_lodging'){
+    if(n.suppressLodgingPayment){
+      if(n.suppressVoluntaryMenu||n.consumesNight){finishNightMutable(s,cat);return;}
+      n.phase='VoluntaryNightChoice';return;
+    }
+    n.phase='LodgingResolution';return;
+  }
+  if(point==='after_lodging'){
+    if(n.suppressVoluntaryMenu||n.consumesNight){finishNightMutable(s,cat);return;}
+    n.phase='VoluntaryNightChoice';return;
+  }
+  finishNightMutable(s,cat);
+}
+function runNightPointMutable(s:Save,cat:Catalog,point:NightPoint,before:Save=cloneSave(s),extras:ReactionFact[]=[]){
+  const n=nightState(s);
+  n.currentIntercept=point;
+  runResolverBoundary(s,before,cat,[{kind:'nightPhase',point},...extras],true);
+  if(s.run.pending){
+    n.phase='NightEventResolution';
+    applyPendingNightPolicy(s,cat,point);
+    return;
+  }
+  resumeNightFromPointMutable(s,cat,point);
+}
+function beginNightMutable(s:Save,cat:Catalog){
+  if(s.run.flow.night)throw new Error('Ночь уже начата.');
+  if(s.run.pending)throw new Error('Сначала завершите текущую сцену.');
+  if(s.run.flow.activity)throw new Error('Нельзя начать ночь внутри Activity.');
+  if(!s.run.flags['story.arrived'])throw new Error('Сначала завершите вступление.');
+  if(s.run.day+1>=160){
+    s.run.status='expired';
+    log(s,'Четыре года истекли. Выберите открытую судьбу или начните следующую жизнь.');
+    return;
+  }
+  s.run.flow.night={
+    phase:'PreLodgingForcedCheck',
+    startedDay:s.run.day,
+    selectedLodgingId:null,
+    lodgingPaymentCommitted:false,
+    selectedNightChoiceId:null,
+    suppressLodgingPayment:false,
+    suppressVoluntaryMenu:false,
+    consumesNight:false,
+    calendarAdvanceCommitted:false,
+    currentIntercept:null,
+    handledEventIds:[]
+  };
+  runNightPointMutable(s,cat,'before_lodging');
+}
+function chooseLodgingMutable(s:Save,cat:Catalog,lodging:LodgingDefinition){
+  const n=nightState(s);
+  if(s.run.pending)throw new Error('Сначала завершите ночную сцену.');
+  if(n.phase!=='LodgingResolution')throw new Error('Сейчас нельзя выбирать жильё.');
+  if(n.lodgingPaymentCommitted)throw new Error('Ночлег уже оплачен.');
+  if(!eligible(lodging.conditions,s,cat))throw new Error('Этот ночлег недоступен.');
+  if(s.run.resources.money<lodging.moneyCost)throw new Error('Не хватает монет на ночлег.');
+  const before=cloneSave(s);
+  s.run.resources.money-=lodging.moneyCost;
+  s.run.housingState.current=lodging.housing;
+  s.run.housingState.paidForCurrentNight=lodging.moneyCost>0;
+  n.selectedLodgingId=lodging.id;
+  n.lodgingPaymentCommitted=true;
+  applyEffectsMutable(s,lodging.effects,cat,true);
+  queueNextDay(s,lodging.nextDayEnergyDelta,lodging.nextDayEffects,`lodging.${lodging.id}`);
+  n.phase='PostLodgingForcedCheck';
+  runNightPointMutable(s,cat,'after_lodging',before);
+}
+function chooseNightChoiceMutable(s:Save,cat:Catalog,choice:NightChoiceDefinition){
+  const n=nightState(s);
+  if(s.run.pending)throw new Error('Сначала завершите ночную сцену.');
+  if(n.phase!=='VoluntaryNightChoice')throw new Error('Сейчас нельзя выбирать ночное занятие.');
+  if(n.selectedNightChoiceId)throw new Error('Ночное занятие уже выбрано.');
+  if(!eligible(choice.conditions,s,cat))throw new Error('Это ночное занятие недоступно.');
+  const before=cloneSave(s);
+  applyEffectsMutable(s,choice.effects,cat,true);
+  queueNextDay(s,choice.nextDayEnergyDelta,choice.nextDayEffects,`night.choice.${choice.id}`);
+  n.selectedNightChoiceId=choice.id;
+  n.phase='NightEventResolution';
+  runNightPointMutable(s,cat,'after_choice',before,[{kind:'nightChoiceCompleted',choice:choice.id}]);
+}
+function resumeNightAfterSceneMutable(s:Save,cat:Catalog){
+  const n=s.run.flow.night;if(!n||s.run.pending||!n.currentIntercept)return;
+  const point=n.currentIntercept;
+  runNightPointMutable(s,cat,point,cloneSave(s),[]);
+}
+function compatibilityLodging(s:Save,payment:'money'|'favor'|'outside'):LodgingDefinition{
+  if(payment==='money')return {id:'legacy.money',label:'Комната',housing:'normal',moneyCost:rent(s),conditions:[],effects:[],nextDayEffects:[],nextDayEnergyDelta:0};
+  if(payment==='favor'){
+    const stat=favorStat(s);
+    if(s.run.character.stats[stat]<1)throw new Error('Не хватает сил для помощи хозяину.');
+    return {id:'legacy.favor',label:'Помощь хозяину',housing:'normal',moneyCost:0,conditions:[],effects:[{kind:'modifyStat',stat,delta:-1}],nextDayEffects:[],nextDayEnergyDelta:0};
+  }
+  return {id:'legacy.outside',label:'Улица',housing:'street',moneyCost:0,conditions:[],effects:[],nextDayEffects:[{stat:'grooming',delta:-1}],nextDayEnergyDelta:-1};
+}
+const compatibilitySleepChoice:NightChoiceDefinition={id:'legacy.sleep',label:'Спать',conditions:[],effects:[],nextDayEffects:[],nextDayEnergyDelta:0};
 
 export type Command=
   |{type:'action';id:string;recipe?:'gentle'|'bold'}
