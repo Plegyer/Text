@@ -191,7 +191,7 @@
       "metaRewards": [
         {
           "kind": "hardWork",
-          "rewardId": "hardwork.lumber",
+          "rewardId": "hardWork:lumber",
           "career": "lumber"
         }
       ],
