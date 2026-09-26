@@ -162,17 +162,7 @@
           "fact": "lumber.school.management-ready"
         }
       ],
-      "mode": "normal",
-      "scenes": [
-        {
-          "id": "default",
-          "text": "A School result publishes a management fact that Lumber can react to immediately.",
-          "conditions": [],
-          "media": [
-            "school.lumber.management.result"
-          ]
-        }
-      ]
+      "mode": "normal"
     }
   ],
   "endings": [
