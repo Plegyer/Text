@@ -1,0 +1,62 @@
+{
+  "formatVersion": 1,
+  "id": "school.full-reload-chronology.fixture.v1",
+  "selectedCourse": {
+    "courseId": "school.course.arcana",
+    "trackId": "school.track.arcana",
+    "tuition": 500,
+    "daytimeEnergyCost": 1,
+    "statDeltas": [
+      {
+        "stat": "magic",
+        "delta": 4
+      },
+      {
+        "stat": "reason",
+        "delta": 4
+      },
+      {
+        "stat": "creativity",
+        "delta": 2
+      }
+    ],
+    "presentationId": "school/arcana/lesson/default"
+  },
+  "nightStudy": {
+    "choiceId": "school.night_study.arcana.reason",
+    "stat": "reason",
+    "statDelta": 2,
+    "tuition": 0,
+    "daytimeEnergyCost": 0,
+    "nextDayEnergyDelta": -1
+  },
+  "typedProgress": {
+    "afterPaidLesson": {
+      "lessons_completed": 1,
+      "night_study_sessions": 0
+    },
+    "afterNightStudy": {
+      "lessons_completed": 1,
+      "night_study_sessions": 1
+    },
+    "persistence": "fixture-level-until-shared-school-schema-activation"
+  },
+  "chronology": [
+    "paid-lesson",
+    "reload-after-paid-lesson",
+    "end-day",
+    "choose-lodging",
+    "reload-after-lodging",
+    "night-study",
+    "reload-after-night-study-before-day-advance",
+    "day-advance",
+    "reload-after-day-advance"
+  ],
+  "invariants": {
+    "noLustMutation": true,
+    "tuitionAppliedExactlyOnce": true,
+    "paidLessonEnergyAppliedExactlyOnce": true,
+    "nightStudyNextDayEnergyAppliedExactlyOnce": true,
+    "presentationIdentityStable": true
+  }
+}
