@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 1,
+  "id": "forest.challenge-skeleton.fixture",
+  "status": "IMPLEMENTATION_READY_NON_LORE_SKELETON",
+  "shared": {
+    "terminalResultShape": {
+      "success": "lumber.forest.success",
+      "escape": "lumber.forest.escape",
+      "failure": "lumber.forest.failure"
+    },
+    "exactA5Boundary": "activityResult",
+    "checkpointAfterAcceptedOption": true,
+    "resolvedChallengePersists": true,
+    "rerollOnReloadAllowed": false,
+    "daytimeEnergyPerChallenge": 0
+  },
+  "families": [
+    {
+      "familyId": "forest.challenge.navigation",
+      "familyLabel": "navigation",
+      "allowedConditionCategories": [
+        "stat:wits",
+        "stat:reason",
+        "publicFact:hunter-or-route-knowledge",
+        "itemCapability:navigation-class",
+        "calendarSeason"
+      ],
+      "allowedEffectCategories": [
+        "set-or-confirm-route",
+        "open-or-close-route-option",
+        "activity-progress-delta",
+        "activity-resource-delta",
+        "add-accepted-public-discovery"
+      ],
+      "checkpointState": [
+        "familyId",
+        "challengeInstanceId",
+        "selectedOptionId",
+        "routeId",
+        "resolved=true",
+        "rngState",
+        "resultingAvailableOptions"
+      ],
+      "capabilityHookAllowed": true,
+      "seasonAvailabilityHookAllowed": true,
+      "exactThreshold": null,
+      "finalText": null,
+      "finalLoot": null,
+      "finalNpc": null
+    },
+    {
+      "familyId": "forest.challenge.physical-obstacle",
+      "familyLabel": "physical obstacle",
+      "allowedConditionCategories": [
+        "stat:strength",
+        "stat:endurance",
+        "stat:dexterity",
+        "itemCapability:cross_rough_route",
+        "itemCapability:cut_heavy_wood",
+        "calendarSeason"
+      ],
+      "allowedEffectCategories": [
+        "activity-endurance-delta",
+        "activity-progress-delta",
+        "route-option-change",
+        "record-resolved-obstacle",
+        "item-use-transaction-if-authored"
+      ],
+      "checkpointState": [
+        "familyId",
+        "challengeInstanceId",
+        "selectedOptionId",
+        "resolved=true",
+        "inventoryAfterUseIfApplicable",
+        "activityEndurance",
+        "activityProgress",
+        "resultingAvailableOptions"
+      ],
+      "capabilityHookAllowed": true,
+      "seasonAvailabilityHookAllowed": true,
+      "exactThreshold": null,
+      "finalText": null,
+      "finalLoot": null,
+      "finalNpc": null
+    },
+    {
+      "familyId": "forest.challenge.interpretation-ritual-anomaly",
+      "familyLabel": "interpretation / ritual anomaly",
+      "allowedConditionCategories": [
+        "stat:reason",
+        "stat:magic",
+        "publicFact:school-arcana",
+        "itemCapability:preserve_specimen",
+        "calendarSeason"
+      ],
+      "allowedEffectCategories": [
+        "record-interpretation",
+        "open-route-continuation",
+        "sample-extraction-option-change",
+        "add-accepted-public-discovery",
+        "add-accepted-item-sample",
+        "activity-progress-or-resource-delta"
+      ],
+      "checkpointState": [
+        "familyId",
+        "challengeInstanceId",
+        "selectedOptionId",
+        "resolved=true",
+        "publicFactOrCapabilityInputs",
+        "sampleStateIfAuthored",
+        "resultingAvailableOptions"
+      ],
+      "capabilityHookAllowed": true,
+      "seasonAvailabilityHookAllowed": true,
+      "exactThreshold": null,
+      "finalText": null,
+      "finalLoot": null,
+      "finalNpc": null
+    }
+  ],
+  "openFields": [
+    "final challenge instance IDs",
+    "stat thresholds",
+    "exact formulas",
+    "prose",
+    "NPC identities",
+    "loot",
+    "Hunter clue fact ID",
+    "School Arcana fact ID",
+    "item retain/consume policies"
+  ],
+  "hardWorkIsolation": {
+    "challengePrerequisiteAllowed": false,
+    "onlyCondition": {
+      "kind": "careerCounter",
+      "career": "lumber",
+      "counter": "completed_shifts",
+      "op": "gte",
+      "value": 50
+    },
+    "rewardId": "hardWork:lumber"
+  }
+}
