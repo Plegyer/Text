@@ -534,7 +534,7 @@ function attemptChance(s:Save,e:StoryEvent,trace:ResolverTrace){
   trace.steps.push(`chance:${e.id}:${roll.toFixed(8)}<${chance.toFixed(8)}:${pass?'pass':'fail'}`);
   return pass;
 }
-function selectBlocking(s:Save,c:ResolverCandidate,trace:ResolverTrace){
+function selectBlocking(s:Save,c:ResolverCandidate,trace:ResolverTrace,cat:Catalog){
   const r=s.run.flow.reaction;
   if(r.cascadeDepth>=RESOLVER_CASCADE_LIMIT){
     throw new Error(`Event Resolver cascade limit ${RESOLVER_CASCADE_LIMIT} exceeded in ${r.currentEpochId}; candidate=${c.event.id}; trace=${trace.steps.join('|')}`);
@@ -599,7 +599,7 @@ function resolveReactionsMutable(s:Save,facts:ReactionFact[],cat:Catalog,trace:R
   trace.steps.push(`candidates:${candidates.map(x=>x.event.id).join(',')||'-'}`);
   for(const candidate of candidates){
     if(candidate.needsChance&&!attemptChance(s,candidate.event,trace))continue;
-    selectBlocking(s,candidate,trace);return;
+    selectBlocking(s,candidate,trace,cat);return;
   }
 }
 
