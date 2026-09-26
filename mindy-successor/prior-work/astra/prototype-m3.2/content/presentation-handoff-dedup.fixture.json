@@ -1,0 +1,104 @@
+{
+  "version": 1,
+  "kind": "presentation-handoff-dedup-proof",
+  "sourceHandoff": "content/presentation-release-candidate-handoff.fixture.json",
+  "baseline": "post-pr21",
+  "productAcceptanceStatus": "partial-not-closed",
+  "policy": {
+    "semanticIdAuthorityCount": 1,
+    "runtimeUiOwnershipConflictAllowed": false,
+    "openGameplayMayBeUpgradedByPresentation": false
+  },
+  "contracts": [
+    {
+      "contractKey": "asset-integrity",
+      "semanticIdentityRole": "consumer",
+      "paths": [
+        "content/presentation-asset-consistency.fixture.json",
+        "tests/presentation-asset-consistency.test.ts"
+      ]
+    },
+    {
+      "contractKey": "pa-checkpoints",
+      "semanticIdentityRole": "consumer",
+      "paths": [
+        "content/presentation-pa-checkpoints.fixture.json",
+        "tests/presentation-pa-checkpoints.test.ts"
+      ]
+    },
+    {
+      "contractKey": "fallback-exhaustion",
+      "semanticIdentityRole": "consumer",
+      "paths": [
+        "content/presentation-fallback-exhaustion.fixture.json",
+        "tests/presentation-fallback-exhaustion.test.ts"
+      ]
+    },
+    {
+      "contractKey": "semantic-id-consistency",
+      "semanticIdentityRole": "authority",
+      "paths": [
+        "tests/presentation-semantic-id-drift.test.ts"
+      ]
+    },
+    {
+      "contractKey": "media-path-security",
+      "semanticIdentityRole": "consumer",
+      "paths": [
+        "tests/presentation-media-path-preflight.test.ts"
+      ]
+    },
+    {
+      "contractKey": "replacement-ordering",
+      "semanticIdentityRole": "consumer",
+      "paths": [
+        "tests/presentation-replacement-ordering.test.ts"
+      ]
+    },
+    {
+      "contractKey": "accessibility-metadata",
+      "semanticIdentityRole": "consumer",
+      "paths": [
+        "tests/presentation-accessibility-metadata.test.ts"
+      ]
+    },
+    {
+      "contractKey": "central-stage-interaction",
+      "semanticIdentityRole": "consumer",
+      "paths": [
+        "content/presentation-central-stage-interaction.fixture.json",
+        "tests/presentation-central-stage-interaction.test.ts"
+      ]
+    },
+    {
+      "contractKey": "shipped-fallback-assets",
+      "semanticIdentityRole": "consumer",
+      "paths": [
+        "content/presentation-fallback-asset-integrity.fixture.json",
+        "tests/presentation-fallback-asset-integrity.test.ts"
+      ]
+    },
+    {
+      "contractKey": "replacement-catalog-conflicts",
+      "semanticIdentityRole": "consumer",
+      "paths": [
+        "content/presentation-replacement-conflict.fixture.json",
+        "tests/presentation-replacement-conflict.test.ts"
+      ]
+    },
+    {
+      "contractKey": "post-pr21-smoke",
+      "semanticIdentityRole": "consumer",
+      "paths": [
+        "content/presentation-post-pr21-smoke.fixture.json",
+        "tests/presentation-post-pr21-smoke.test.ts"
+      ]
+    }
+  ],
+  "openGameplayRows": [
+    "old-boundary-token-acquisition-use",
+    "school-management-accounting-public-result",
+    "forest-route-challenge-season-depth",
+    "item-driven-activity-action-space"
+  ]
+}
