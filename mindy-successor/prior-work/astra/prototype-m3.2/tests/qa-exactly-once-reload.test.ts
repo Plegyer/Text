@@ -75,7 +75,7 @@ test('paid Work cost wage energy and counter are not replayed by save/reload',()
   assert.equal(s.run.resources.money,beforeMoney-7+20);
   assert.equal(s.run.dayState.energyCurrent,2);
   assert.equal(s.run.historyState.actionCounts['paid.work'],1);
-  assert.equal(JSON.stringify(s),once);
+  assert.deepEqual(JSON.parse(JSON.stringify(s)),JSON.parse(once));
 
   s=dispatch(s,{type:'action',id:'paid.work'},cat);
   assert.equal(s.run.resources.money,beforeMoney-14+40);
