@@ -184,3 +184,8 @@ Still-open numeric/content decisions are listed in `OPEN_QUESTIONS.md`. Test fix
 - **STRONG DRAFT**: expected direction, still editable.
 - **RECOMMENDATION**: model proposal, requires acceptance.
 - **HISTORICAL**: evidence/old implementation only.
+
+
+## Coordination
+
+- `PARALLEL_WORK_PROTOCOL_v1.md` — multi-chat roles, ownership, branch and recovery rules.
