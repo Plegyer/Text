@@ -861,10 +861,12 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
   if(command.type==='sleep'){
     if(s.run.flow.night)throw new Error('Ночь уже начата: завершите текущий NightFlow.');
     beginNightMutable(s,cat);
-    if(s.run.status!=='active'||s.run.pending||!s.run.flow.night)return s;
+    let activeNight=s.run.flow.night as NightState|null;
+    if(s.run.status!=='active'||s.run.pending||!activeNight)return s;
     chooseLodgingMutable(s,cat,compatibilityLodging(s,command.payment));
-    if(s.run.pending||!s.run.flow.night)return s;
-    if(s.run.flow.night.phase==='VoluntaryNightChoice')chooseNightChoiceMutable(s,cat,compatibilitySleepChoice);
+    activeNight=s.run.flow.night as NightState|null;
+    if(s.run.pending||!activeNight)return s;
+    if(activeNight.phase==='VoluntaryNightChoice')chooseNightChoiceMutable(s,cat,compatibilitySleepChoice);
     return s;
   }
   if(command.type==='choice'){
