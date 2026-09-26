@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {loadCatalog} from '../src/core/content.ts';
 import {freshSave,parseSave,type Command} from '../src/core/engine.ts';
 import type {Catalog,Save} from '../src/core/schema.ts';
+import type {SchoolCourseId} from '../src/core/school.ts';
 
 type FixtureKey =
   | 'lumberWorkAction'
@@ -22,6 +23,7 @@ type FixtureKey =
 type ApiName =
   | 'finishCreation'
   | 'action'
+  | 'schoolLesson'
   | 'choice'
   | 'implicitResolver'
   | 'endDay'
@@ -63,7 +65,7 @@ export const productAcceptanceSteps:HarnessStep[]=[
   {id:'PA04',label:'seasonal/repeatable Lumber variant',apis:['action','saveReload'],requires:['lumberWorkAction'],assertions:['state','energy','presentation'],checkpoint:'repeatable-variant'},
   {id:'PA05',label:'career milestone appears reactively',apis:['action','implicitResolver','saveReload'],requires:['lumberWorkAction','lumberMilestoneEvent'],assertions:['state','energy','resolver','presentation'],checkpoint:'pending-milestone'},
   {id:'PA06',label:'resolve milestone and Foreman opening',apis:['choice','implicitResolver','saveReload'],requires:['lumberMilestoneEvent','foremanRelationshipEvent'],assertions:['state','resolver','presentation'],checkpoint:'foreman-open'},
-  {id:'PA07',label:'School lesson produces progress/public fact',apis:['action','saveReload'],requires:['schoolAction'],assertions:['state','energy','money','resolver','presentation'],checkpoint:'school-result'},
+  {id:'PA07',label:'School lesson produces progress/public fact',apis:['schoolLesson','saveReload'],requires:['schoolAction'],assertions:['state','energy','money','resolver','presentation'],checkpoint:'school-result'},
   {id:'PA08',label:'School result triggers Lumber/relationship continuation',apis:['implicitResolver','saveReload'],requires:['lumberMilestoneEvent','foremanRelationshipEvent'],assertions:['state','resolver'],checkpoint:'pending-school-continuation'},
   {id:'PA09',label:'obtain meaningful item capability',apis:['choice','saveReload'],requires:['foremanRelationshipEvent'],assertions:['state','inventory','resolver'],checkpoint:'item-capability'},
   {id:'PA10',label:'begin NightFlow',apis:['endDay'],requires:[],assertions:['state','calendar','resolver']},
@@ -103,6 +105,7 @@ export function currentCommandAdapters(ids:Record<FixtureKey,string>):Record<Exc
   return {
     finishCreation:{type:'finishCreation'},
     action:{type:'action',id:ids.lumberWorkAction},
+    schoolLesson:{type:'schoolLesson',id:ids.schoolAction as SchoolCourseId},
     choice:{type:'choice',id:'fixture-choice'},
     endDay:{type:'endDay'},
     chooseLodging:{type:'chooseLodging',id:ids.normalLodging},
@@ -141,7 +144,7 @@ test('harness command adapters are typed against the current engine Command API'
   ].map(k=>[k,`fixture.${k}`])) as Record<FixtureKey,string>;
   const commands=currentCommandAdapters(ids);
   assert.deepEqual(Object.keys(commands).sort(),[
-    'action','activityAction','choice','chooseLodging','chooseNightChoice','commitEnding','completeEnding','endDay','enterActivity','finishCreation','newLife'
+    'action','activityAction','choice','chooseLodging','chooseNightChoice','commitEnding','completeEnding','endDay','enterActivity','finishCreation','newLife','schoolLesson'
   ]);
   assert.equal(commands.enterActivity.type,'enterActivity');
   assert.equal(commands.completeEnding.type,'completeEnding');
