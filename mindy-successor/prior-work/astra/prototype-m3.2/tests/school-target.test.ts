@@ -234,6 +234,7 @@ test('Night study is a separate zero-tuition Night-slot action with +2 supported
   assert.throws(()=>schoolNightStudyChoice('school.course.physical_training','reason'),/not supported/);
 
   let s=schoolReady();
+  s.run.flags['story.arrived']=true;
   s.run.character.stats.reason=10;
   s=dispatch(s,{type:'endDay'},cat);
   s=dispatch(s,{type:'chooseLodging',id:'school.fixture.room'},cat);
