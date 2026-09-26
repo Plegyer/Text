@@ -1,0 +1,23 @@
+{
+  "version": "0.1.0",
+  "flags": [],
+  "actions": [],
+  "endings": [],
+  "careers": [],
+  "quests": [],
+  "relationships": [],
+  "lodgings": [
+    {
+      "id": "school-night-fixture.room",
+      "label": "School Night fixture room",
+      "housing": "normal",
+      "moneyCost": 0,
+      "conditions": [],
+      "effects": [],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": 0
+    }
+  ],
+  "nightChoices": [],
+  "activities": []
+}
