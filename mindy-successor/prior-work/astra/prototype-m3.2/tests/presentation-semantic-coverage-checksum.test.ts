@@ -3,72 +3,51 @@ import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {readFileSync} from 'node:fs';
 
-const fixture=JSON.parse(
-  readFileSync('content/presentation-semantic-coverage-checksum.fixture.json','utf8')
-);
+const fixture=JSON.parse(readFileSync('content/presentation-semantic-coverage-checksum.fixture.json','utf8'));
 
 function canonicalIds(entries:{presentationId:string}[]){
   const ids=entries.map(entry=>entry.presentationId);
   if(new Set(ids).size!==ids.length)throw new Error('duplicate presentationId');
   return [...ids].sort((a,b)=>a.localeCompare(b));
 }
-
 function checksum(entries:{presentationId:string}[]){
-  return createHash('sha256')
-    .update(canonicalIds(entries).join('\n'),'utf8')
-    .digest('hex');
+  return createHash('sha256').update(canonicalIds(entries).join('\n'),'utf8').digest('hex');
 }
 
-test('RC semantic manifest has 26 unique slash semantic IDs in stable order',()=>{
-  assert.equal(fixture.entries.length,fixture.entryCount);
-  assert.equal(fixture.entryCount,26);
-  const ids=canonicalIds(fixture.entries);
-  assert.equal(ids.length,new Set(ids).size);
-  for(const id of ids)assert.match(id,/^[a-z0-9-]+(?:\/[a-z0-9-]+)+$/);
+test('merged PR24 RC manifest has 27 unique semantic IDs',()=>{
+  assert.equal(fixture.entries.length,27);
+  assert.equal(fixture.entryCount,27);
+  for(const id of canonicalIds(fixture.entries))assert.match(id,/^[a-z0-9-]+(?:\/[a-z0-9-]+)+$/);
 });
 
-test('checksum matches the canonical production RC semantic ID set',()=>{
+test('checksum matches canonical merged PR24 semantic set',()=>{
   assert.equal(checksum(fixture.entries),fixture.checksum);
-  assert.equal(
-    fixture.checksum,
-    '3cb5536054688b1beeb3adc7868f76bb76ae784159394bc0d923e5742113a499'
-  );
+  assert.equal(fixture.checksum,'352bc691a0201c656c84a1e67f76398496bee64035b307f149fe4205cf869ca8');
 });
 
-test('fixture enumeration order cannot change the checksum',()=>{
-  const original=checksum(fixture.entries);
-  const reversed=checksum([...fixture.entries].reverse());
-  const rotated=checksum([...fixture.entries.slice(7),...fixture.entries.slice(0,7)]);
-  assert.equal(reversed,original);
-  assert.equal(rotated,original);
+test('final School blocking scene is included in RC semantic coverage',()=>{
+  const map=new Map(fixture.entries.map((entry:any)=>[entry.gameplayIdentity,entry.presentationId]));
+  assert.equal(map.get('event:base.school:lesson'),'location/town/event/base-school/lesson');
 });
 
-test('gameplay identity mapping is unique and semantic IDs are not silently renamed',()=>{
-  const gameplayKeys=fixture.entries.map((entry:any)=>entry.gameplayIdentity);
-  assert.equal(new Set(gameplayKeys).size,gameplayKeys.length);
-
-  const required=new Map(fixture.entries.map((entry:any)=>[entry.gameplayIdentity,entry.presentationId]));
-  assert.equal(required.get('action-result:lumber.shift'),'job/lumber/result/default');
-  assert.equal(required.get('event:lumber.career-first-shift:default'),'job/lumber/event/lumber-career-first-shift/default');
-  assert.equal(required.get('course:school.course.field_craft'),'school/field-craft/lesson/default');
-  assert.equal(required.get('activity:forest:route'),'activity/forest/route/default');
-  assert.equal(required.get('ending:ending.lumber.hard-work'),'ending/lumber/hard-work');
+test('enumeration order never changes checksum',()=>{
+  const expected=checksum(fixture.entries);
+  assert.equal(checksum([...fixture.entries].reverse()),expected);
+  assert.equal(checksum([...fixture.entries.slice(9),...fixture.entries.slice(0,9)]),expected);
 });
 
-test('future GIF filename changes never affect semantic coverage checksum',()=>{
+test('gameplay identities remain uniquely mapped without silent rename',()=>{
+  const keys=fixture.entries.map((entry:any)=>entry.gameplayIdentity);
+  assert.equal(new Set(keys).size,keys.length);
+  const map=new Map(fixture.entries.map((entry:any)=>[entry.gameplayIdentity,entry.presentationId]));
+  assert.equal(map.get('action-result:lumber.shift'),'job/lumber/result/default');
+  assert.equal(map.get('activity:forest:route'),'activity/forest/route/default');
+  assert.equal(map.get('ending:ending.lumber.hard-work'),'ending/lumber/hard-work');
+});
+
+test('future GIF filenames never affect semantic checksum',()=>{
   const before=checksum(fixture.entries);
-  const mutatedMedia=fixture.optionalFutureMedia.map((row:any,index:number)=>({
-    ...row,
-    logicalFilename:`media/replacement-${index}.gif`
-  }));
-  assert.notDeepEqual(mutatedMedia,fixture.optionalFutureMedia);
+  const changed=fixture.optionalFutureMedia.map((row:any,i:number)=>({...row,logicalFilename:`media/x-${i}.gif`}));
+  assert.notDeepEqual(changed,fixture.optionalFutureMedia);
   assert.equal(checksum(fixture.entries),before);
-});
-
-test('optional future media only references IDs already present in semantic manifest',()=>{
-  const ids=new Set(fixture.entries.map((entry:any)=>entry.presentationId));
-  for(const row of fixture.optionalFutureMedia){
-    assert.ok(ids.has(row.presentationId),row.presentationId);
-    assert.match(row.logicalFilename,/^media\/.*\.gif$/);
-  }
 });

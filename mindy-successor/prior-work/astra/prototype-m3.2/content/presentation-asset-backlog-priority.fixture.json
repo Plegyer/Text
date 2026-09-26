@@ -52,6 +52,16 @@
       "note": "All eight paid courses use the shipped School static stage."
     },
     {
+      "itemId": "current-school-first-scene",
+      "surface": "School first blocking scene",
+      "dependencyClass": "ALREADY_COVERED_STATIC",
+      "presentationIds": [
+        "location/town/event/base-school/lesson"
+      ],
+      "currentCoverage": "assets/workshop.svg",
+      "note": "Merged PR24 one-Save path resolves base.school/lesson through shipped workshop media."
+    },
+    {
       "itemId": "current-forest-stage",
       "surface": "Forest route/results",
       "dependencyClass": "ALREADY_COVERED_STATIC",
@@ -185,7 +195,7 @@
         "ending/lumber/forest"
       ],
       "currentCoverage": "town static semantic fallback plus ending text",
-      "note": "Dedicated ending art is optional for RC; text meaning plus safe static fallback is sufficient."
+      "note": "Dedicated ending art is optional for RC."
     },
     {
       "itemId": "dedicated-school-night-study-art",
@@ -195,7 +205,7 @@
         "location/town/default"
       ],
       "currentCoverage": "shared central town context",
-      "note": "No dedicated Night-study semantic slot is required by the shipped product."
+      "note": "No dedicated Night-study semantic slot is required by shipped product."
     }
   ]
 }

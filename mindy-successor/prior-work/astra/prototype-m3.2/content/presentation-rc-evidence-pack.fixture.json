@@ -1,8 +1,8 @@
 {
   "version": 1,
   "kind": "presentation-rc-evidence-pack",
-  "status": "minimal-final-lead-pack",
-  "mainAtBuild": "6d5eeee7df82409113327b942d47be5b36ab6866",
+  "status": "minimal-final-lead-pack-post-pr24",
+  "mainAtBuild": "4931d2a1cdd1526a90ce50fbf0391e135f39b0af",
   "policy": {
     "minimalNonRedundant": true,
     "presentationMayCloseGameplayAuthoring": false,
@@ -23,19 +23,19 @@
     },
     {
       "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-production-fallback-release.test.ts",
-      "reason": "Current static fallback release coverage for Lumber/School/Night/Forest/endings."
+      "reason": "Merged-PR24 static fallback coverage including base.school workshop."
     },
     {
       "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-pr24-one-save-audit.test.ts",
-      "reason": "One-Save RC path presentation ownership/reload/animation-off evidence."
+      "reason": "Post-merge one-Save presentation audit including base.school -> listen."
     },
     {
       "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-semantic-coverage-checksum.test.ts",
-      "reason": "Deterministic 26-ID RC semantic coverage checksum and rename guard."
+      "reason": "Deterministic 27-ID merged-PR24 RC semantic set and rename guard."
     },
     {
       "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-route-challenge-collision.test.ts",
-      "reason": "Prevents future Forest family naming collisions before registration."
+      "reason": "Future Forest semantic-family collision guard."
     },
     {
       "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-override-rollback.test.ts",
@@ -45,19 +45,19 @@
   "docsWorthIndexing": [
     {
       "path": "mindy-successor/docs/presentation-prep/PRESENTATION_RELEASE_GATE_v1.md",
-      "reason": "Canonical presentation release gate and PASS/OPEN status vocabulary."
+      "reason": "Canonical post-PR24 presentation release gate."
     },
     {
       "path": "mindy-successor/docs/presentation-prep/PRESENTATION_PR24_ONE_SAVE_AUDIT_v1.md",
-      "reason": "RC one-Save presentation boundary audit aligned to Lead smoke."
+      "reason": "Post-merge one-Save presentation boundary audit."
     },
     {
       "path": "mindy-successor/docs/presentation-prep/PRESENTATION_ASSET_BACKLOG_PRIORITY_v1.md",
-      "reason": "Dependency-only asset backlog; separates optional GIFs from blockers."
+      "reason": "Dependency-only asset backlog with final School workshop coverage."
     },
     {
       "path": "mindy-successor/docs/presentation-prep/PRESENTATION_OVERRIDE_ROLLBACK_CONTRACT_v1.md",
-      "reason": "Safe rollback contract if presentation override workflow is exposed."
+      "reason": "Safe rollback contract if override workflow is exposed."
     }
   ],
   "assetBacklog": {
@@ -75,7 +75,7 @@
   "authoringBlockedSlots": [
     {
       "semanticFamily": "activity/forest/route/logging-road/*",
-      "blocker": "final route-specific presentation variant/asset not authored; generic route fallback already safe"
+      "blocker": "exact route-specific presentation variant/asset not authored; generic fallback is safe"
     },
     {
       "semanticFamily": "activity/forest/route/hunter-trail/*",
@@ -83,7 +83,7 @@
     },
     {
       "semanticFamily": "activity/forest/route/old-boundary/*",
-      "blocker": "final route-specific presentation authoring and token acquisition/retain-consume product policy remain open"
+      "blocker": "exact visual authoring and token acquisition/retain-consume product policy remain open"
     },
     {
       "semanticFamily": "activity/forest/challenge/navigation/*",
@@ -99,7 +99,7 @@
     },
     {
       "semanticFamily": "school-management-accounting-result",
-      "blocker": "final School public-result gameplay identity is not authored; no presentationId invented"
+      "blocker": "final public-result gameplay identity not authored; no presentationId invented"
     }
   ],
   "supersededArtifacts": [

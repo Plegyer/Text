@@ -1,10 +1,10 @@
 {
   "version": 1,
   "kind": "presentation-semantic-coverage-checksum",
-  "scope": "current-production-rc-slice",
+  "scope": "merged-pr24-current-production-rc-slice",
   "algorithm": "sha256(sorted presentationId joined by newline)",
-  "entryCount": 26,
-  "checksum": "3cb5536054688b1beeb3adc7868f76bb76ae784159394bc0d923e5742113a499",
+  "entryCount": 27,
+  "checksum": "352bc691a0201c656c84a1e67f76398496bee64035b307f149fe4205cf869ca8",
   "entries": [
     {
       "gameplayIdentity": "activity:forest:return:escape",
@@ -69,6 +69,10 @@
     {
       "gameplayIdentity": "location:town",
       "presentationId": "location/town/default"
+    },
+    {
+      "gameplayIdentity": "event:base.school:lesson",
+      "presentationId": "location/town/event/base-school/lesson"
     },
     {
       "gameplayIdentity": "event:lumber.foreman-notice:default",
