@@ -509,3 +509,14 @@
 - Save хранит scene/variant/presentation identity, но не animation frame/time; reload просто перезапускает GIF той же сцены.
 - `MEDIA_PRESENTATION_CONTRACT_v0.md`, `TARGET_GAME_SHELL_v0.md` и `EXECUTABLE_TZ_v1.md` синхронизированы.
 - A1 state/save migration этим решением не меняется; constraint начинает напрямую влиять на Phase B product shell/media integration.
+
+
+## A1 code milestone — target state/save migration
+
+- A1 implemented on `a1-state-migration`.
+- Stable M3.2 core now has schemaVersion 4 target ownership while retaining a non-serialized compatibility façade for legacy demo/UI access.
+- Fresh target state uses 12 progression stats, separate Lust, 600 money, 3 Energy and 160-day calendar.
+- Schema3 migration maps only safe target fields; ambiguous prototype stats remain quarantined in `legacyCompat`.
+- Old active saves beyond day 159 are explicitly rejected rather than wrapped into the new calendar.
+- GitHub Actions real runner passed full `npm run check`: typecheck + validate + build + **48/48 tests**.
+- Next engineering package: **A2 Condition/Effect v2**.
