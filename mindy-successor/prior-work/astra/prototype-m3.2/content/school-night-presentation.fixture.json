@@ -1,0 +1,198 @@
+{
+  "formatVersion": 1,
+  "id": "school.night-presentation.fixture.v1",
+  "entries": [
+    {
+      "choiceId": "school.night_study.literacy_and_numbers.reason",
+      "label": "Night study: Literacy & Numbers — reason",
+      "courseId": "school.course.literacy_and_numbers",
+      "trackId": "school.track.literacy_and_numbers",
+      "stat": "reason",
+      "presentationId": "school/night-study/literacy-and-numbers/default"
+    },
+    {
+      "choiceId": "school.night_study.literacy_and_numbers.wits",
+      "label": "Night study: Literacy & Numbers — wits",
+      "courseId": "school.course.literacy_and_numbers",
+      "trackId": "school.track.literacy_and_numbers",
+      "stat": "wits",
+      "presentationId": "school/night-study/literacy-and-numbers/default"
+    },
+    {
+      "choiceId": "school.night_study.arcana.magic",
+      "label": "Night study: Arcana — magic",
+      "courseId": "school.course.arcana",
+      "trackId": "school.track.arcana",
+      "stat": "magic",
+      "presentationId": "school/night-study/arcana/default"
+    },
+    {
+      "choiceId": "school.night_study.arcana.reason",
+      "label": "Night study: Arcana — reason",
+      "courseId": "school.course.arcana",
+      "trackId": "school.track.arcana",
+      "stat": "reason",
+      "presentationId": "school/night-study/arcana/default"
+    },
+    {
+      "choiceId": "school.night_study.arcana.creativity",
+      "label": "Night study: Arcana — creativity",
+      "courseId": "school.course.arcana",
+      "trackId": "school.track.arcana",
+      "stat": "creativity",
+      "presentationId": "school/night-study/arcana/default"
+    },
+    {
+      "choiceId": "school.night_study.rhetoric_and_social.charm",
+      "label": "Night study: Rhetoric & Social — charm",
+      "courseId": "school.course.rhetoric_and_social",
+      "trackId": "school.track.rhetoric_and_social",
+      "stat": "charm",
+      "presentationId": "school/night-study/rhetoric-and-social/default"
+    },
+    {
+      "choiceId": "school.night_study.rhetoric_and_social.sociability",
+      "label": "Night study: Rhetoric & Social — sociability",
+      "courseId": "school.course.rhetoric_and_social",
+      "trackId": "school.track.rhetoric_and_social",
+      "stat": "sociability",
+      "presentationId": "school/night-study/rhetoric-and-social/default"
+    },
+    {
+      "choiceId": "school.night_study.rhetoric_and_social.wits",
+      "label": "Night study: Rhetoric & Social — wits",
+      "courseId": "school.course.rhetoric_and_social",
+      "trackId": "school.track.rhetoric_and_social",
+      "stat": "wits",
+      "presentationId": "school/night-study/rhetoric-and-social/default"
+    },
+    {
+      "choiceId": "school.night_study.etiquette_and_presentation.manners",
+      "label": "Night study: Etiquette & Presentation — manners",
+      "courseId": "school.course.etiquette_and_presentation",
+      "trackId": "school.track.etiquette_and_presentation",
+      "stat": "manners",
+      "presentationId": "school/night-study/etiquette-and-presentation/default"
+    },
+    {
+      "choiceId": "school.night_study.etiquette_and_presentation.grooming",
+      "label": "Night study: Etiquette & Presentation — grooming",
+      "courseId": "school.course.etiquette_and_presentation",
+      "trackId": "school.track.etiquette_and_presentation",
+      "stat": "grooming",
+      "presentationId": "school/night-study/etiquette-and-presentation/default"
+    },
+    {
+      "choiceId": "school.night_study.etiquette_and_presentation.charm",
+      "label": "Night study: Etiquette & Presentation — charm",
+      "courseId": "school.course.etiquette_and_presentation",
+      "trackId": "school.track.etiquette_and_presentation",
+      "stat": "charm",
+      "presentationId": "school/night-study/etiquette-and-presentation/default"
+    },
+    {
+      "choiceId": "school.night_study.field_craft.dexterity",
+      "label": "Night study: Field Craft — dexterity",
+      "courseId": "school.course.field_craft",
+      "trackId": "school.track.field_craft",
+      "stat": "dexterity",
+      "presentationId": "school/night-study/field-craft/default"
+    },
+    {
+      "choiceId": "school.night_study.field_craft.wits",
+      "label": "Night study: Field Craft — wits",
+      "courseId": "school.course.field_craft",
+      "trackId": "school.track.field_craft",
+      "stat": "wits",
+      "presentationId": "school/night-study/field-craft/default"
+    },
+    {
+      "choiceId": "school.night_study.field_craft.creativity",
+      "label": "Night study: Field Craft — creativity",
+      "courseId": "school.course.field_craft",
+      "trackId": "school.track.field_craft",
+      "stat": "creativity",
+      "presentationId": "school/night-study/field-craft/default"
+    },
+    {
+      "choiceId": "school.night_study.physical_training.strength",
+      "label": "Night study: Physical Training — strength",
+      "courseId": "school.course.physical_training",
+      "trackId": "school.track.physical_training",
+      "stat": "strength",
+      "presentationId": "school/night-study/physical-training/default"
+    },
+    {
+      "choiceId": "school.night_study.physical_training.endurance",
+      "label": "Night study: Physical Training — endurance",
+      "courseId": "school.course.physical_training",
+      "trackId": "school.track.physical_training",
+      "stat": "endurance",
+      "presentationId": "school/night-study/physical-training/default"
+    },
+    {
+      "choiceId": "school.night_study.physical_training.dexterity",
+      "label": "Night study: Physical Training — dexterity",
+      "courseId": "school.course.physical_training",
+      "trackId": "school.track.physical_training",
+      "stat": "dexterity",
+      "presentationId": "school/night-study/physical-training/default"
+    },
+    {
+      "choiceId": "school.night_study.arts_and_performance.creativity",
+      "label": "Night study: Arts & Performance — creativity",
+      "courseId": "school.course.arts_and_performance",
+      "trackId": "school.track.arts_and_performance",
+      "stat": "creativity",
+      "presentationId": "school/night-study/arts-and-performance/default"
+    },
+    {
+      "choiceId": "school.night_study.arts_and_performance.charm",
+      "label": "Night study: Arts & Performance — charm",
+      "courseId": "school.course.arts_and_performance",
+      "trackId": "school.track.arts_and_performance",
+      "stat": "charm",
+      "presentationId": "school/night-study/arts-and-performance/default"
+    },
+    {
+      "choiceId": "school.night_study.arts_and_performance.sociability",
+      "label": "Night study: Arts & Performance — sociability",
+      "courseId": "school.course.arts_and_performance",
+      "trackId": "school.track.arts_and_performance",
+      "stat": "sociability",
+      "presentationId": "school/night-study/arts-and-performance/default"
+    },
+    {
+      "choiceId": "school.night_study.arts_and_performance.dexterity",
+      "label": "Night study: Arts & Performance — dexterity",
+      "courseId": "school.course.arts_and_performance",
+      "trackId": "school.track.arts_and_performance",
+      "stat": "dexterity",
+      "presentationId": "school/night-study/arts-and-performance/default"
+    },
+    {
+      "choiceId": "school.night_study.body_confidence.sexuality",
+      "label": "Night study: Body Confidence — sexuality",
+      "courseId": "school.course.body_confidence",
+      "trackId": "school.track.body_confidence",
+      "stat": "sexuality",
+      "presentationId": "school/night-study/body-confidence/default"
+    },
+    {
+      "choiceId": "school.night_study.body_confidence.grooming",
+      "label": "Night study: Body Confidence — grooming",
+      "courseId": "school.course.body_confidence",
+      "trackId": "school.track.body_confidence",
+      "stat": "grooming",
+      "presentationId": "school/night-study/body-confidence/default"
+    },
+    {
+      "choiceId": "school.night_study.body_confidence.endurance",
+      "label": "Night study: Body Confidence — endurance",
+      "courseId": "school.course.body_confidence",
+      "trackId": "school.track.body_confidence",
+      "stat": "endurance",
+      "presentationId": "school/night-study/body-confidence/default"
+    }
+  ]
+}
