@@ -1,0 +1,125 @@
+{
+  "version": 1,
+  "kind": "presentation-shipped-slot-closure-manifest",
+  "status": "activation-closure-contract",
+  "sources": {
+    "currentCatalog": "content/definitions.json + content/packs/*.json",
+    "lumberTarget": "content/lumber-target-definitions.fixture.json + content/packs/lumber-target/*.json",
+    "schoolTarget": "src/core/school.ts",
+    "fallbackRegistry": "content/presentation-target-registry.fixture.json"
+  },
+  "policy": {
+    "requiredAfterActivation": true,
+    "semanticIdsUseSlashTaxonomy": true,
+    "schoolSegmentsUseKebabCase": true,
+    "mechanicsDataAllowed": false
+  },
+  "slots": [
+    {
+      "presentationId": "job/lumber/shift/spring/default",
+      "family": "lumber-shift",
+      "closure": "already-generated-current"
+    },
+    {
+      "presentationId": "job/lumber/shift/summer/default",
+      "family": "lumber-shift",
+      "closure": "already-generated-current"
+    },
+    {
+      "presentationId": "job/lumber/shift/autumn/default",
+      "family": "lumber-shift",
+      "closure": "already-generated-current"
+    },
+    {
+      "presentationId": "job/lumber/shift/winter/default",
+      "family": "lumber-shift",
+      "closure": "already-generated-current"
+    },
+    {
+      "presentationId": "job/lumber/result/default",
+      "family": "lumber-result",
+      "closure": "already-generated-current"
+    },
+    {
+      "presentationId": "job/lumber/event/lumber-career-first-shift/default",
+      "family": "lumber-milestone",
+      "closure": "generated-after-production-activation"
+    },
+    {
+      "presentationId": "relationship/lumber-foreman/lumber-foreman-notice/default",
+      "family": "foreman-relationship",
+      "closure": "generated-after-production-activation"
+    },
+    {
+      "presentationId": "relationship/lumber-foreman/lumber-night-foreman-professional/default",
+      "family": "foreman-night",
+      "closure": "generated-after-production-activation"
+    },
+    {
+      "presentationId": "activity/forest/route/default",
+      "family": "forest-activity",
+      "closure": "already-generated-current"
+    },
+    {
+      "presentationId": "activity/forest/return/success",
+      "family": "forest-activity",
+      "closure": "intentionally-fallback-backed",
+      "fallbackId": "activity/forest/route/default"
+    },
+    {
+      "presentationId": "school/literacy-and-numbers/lesson/default",
+      "family": "school-lesson",
+      "closure": "generated-after-production-activation"
+    },
+    {
+      "presentationId": "school/arcana/lesson/default",
+      "family": "school-lesson",
+      "closure": "generated-after-production-activation"
+    },
+    {
+      "presentationId": "school/rhetoric-and-social/lesson/default",
+      "family": "school-lesson",
+      "closure": "generated-after-production-activation"
+    },
+    {
+      "presentationId": "school/etiquette-and-presentation/lesson/default",
+      "family": "school-lesson",
+      "closure": "generated-after-production-activation"
+    },
+    {
+      "presentationId": "school/field-craft/lesson/default",
+      "family": "school-lesson",
+      "closure": "generated-after-production-activation"
+    },
+    {
+      "presentationId": "school/physical-training/lesson/default",
+      "family": "school-lesson",
+      "closure": "generated-after-production-activation"
+    },
+    {
+      "presentationId": "school/arts-and-performance/lesson/default",
+      "family": "school-lesson",
+      "closure": "generated-after-production-activation"
+    },
+    {
+      "presentationId": "school/body-confidence/lesson/default",
+      "family": "school-lesson",
+      "closure": "generated-after-production-activation"
+    },
+    {
+      "presentationId": "ending/lumber/hard-work",
+      "family": "lumber-ending",
+      "closure": "generated-after-production-activation"
+    },
+    {
+      "presentationId": "ending/lumber/forewoman",
+      "family": "lumber-ending",
+      "closure": "generated-after-production-activation"
+    },
+    {
+      "presentationId": "ending/lumber/forest",
+      "family": "lumber-ending",
+      "closure": "generated-after-production-activation"
+    }
+  ]
+}
