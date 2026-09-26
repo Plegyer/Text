@@ -1,0 +1,254 @@
+{
+  "version": 1,
+  "kind": "presentation-production-patch-plan",
+  "status": "lead-activation-plan",
+  "sources": {
+    "slotClosure": "content/presentation-shipped-slot-closure.fixture.json",
+    "mediaGap": "content/presentation-shipped-media-gap.fixture.json",
+    "targetRegistry": "content/presentation-target-registry.fixture.json",
+    "currentStagePack": "content/packs/stage.json",
+    "lumberTargetPacks": "content/packs/lumber-target/*.json",
+    "schoolRuntime": "src/core/school.ts"
+  },
+  "policy": {
+    "mechanicsDataAllowed": false,
+    "gameplayIdsRemainUnchanged": true,
+    "missingAssetMayNotBeMarkedAvailable": true,
+    "schoolPresentationSegments": "kebab-case",
+    "semanticIdNamespace": "slash-taxonomy"
+  },
+  "supportFallbacks": {
+    "location/town/default": {
+      "mediaId": "stage.town",
+      "assetPath": "assets/stage-town.svg",
+      "available": true,
+      "textFallback": "Город остаётся доступен без медиа."
+    }
+  },
+  "slots": [
+    {
+      "presentationId": "job/lumber/shift/spring/default",
+      "classification": "future-GIF",
+      "preferredExistingStatic": {
+        "mediaId": "stage.lumber.spring",
+        "assetPath": "assets/stage-lumber.svg",
+        "available": true
+      },
+      "primaryGif": {
+        "mediaId": "job.lumber.shift.spring.default",
+        "assetPath": "assets/lumber/shift-spring.gif",
+        "status": "future-unavailable"
+      },
+      "fallbackId": "location/town/default",
+      "textFallback": "Весенняя смена лесорубов."
+    },
+    {
+      "presentationId": "job/lumber/shift/summer/default",
+      "classification": "future-GIF",
+      "preferredExistingStatic": {
+        "mediaId": "stage.lumber.summer",
+        "assetPath": "assets/stage-lumber.svg",
+        "available": true
+      },
+      "primaryGif": {
+        "mediaId": "job.lumber.shift.summer.default",
+        "assetPath": "assets/lumber/shift-summer.gif",
+        "status": "future-unavailable"
+      },
+      "fallbackId": "location/town/default",
+      "textFallback": "Летняя смена лесорубов."
+    },
+    {
+      "presentationId": "job/lumber/shift/autumn/default",
+      "classification": "future-GIF",
+      "preferredExistingStatic": {
+        "mediaId": "stage.lumber.autumn",
+        "assetPath": "assets/stage-lumber.svg",
+        "available": true
+      },
+      "primaryGif": {
+        "mediaId": "job.lumber.shift.autumn.default",
+        "assetPath": "assets/lumber/shift-autumn.gif",
+        "status": "future-unavailable"
+      },
+      "fallbackId": "location/town/default",
+      "textFallback": "Осенняя смена лесорубов."
+    },
+    {
+      "presentationId": "job/lumber/shift/winter/default",
+      "classification": "future-GIF",
+      "preferredExistingStatic": {
+        "mediaId": "stage.lumber.winter",
+        "assetPath": "assets/stage-lumber.svg",
+        "available": true
+      },
+      "primaryGif": {
+        "mediaId": "job.lumber.shift.winter.default",
+        "assetPath": "assets/lumber/shift-winter.gif",
+        "status": "future-unavailable"
+      },
+      "fallbackId": "location/town/default",
+      "textFallback": "Зимняя смена лесорубов."
+    },
+    {
+      "presentationId": "job/lumber/result/default",
+      "classification": "direct-existing",
+      "preferredExistingStatic": {
+        "mediaId": "stage.lumber",
+        "assetPath": "assets/stage-lumber.svg",
+        "available": true
+      },
+      "primaryGif": null,
+      "fallbackId": "job/lumber/shift/spring/default",
+      "textFallback": "Результат смены лесорубов."
+    },
+    {
+      "presentationId": "job/lumber/event/lumber-career-first-shift/default",
+      "classification": "future-GIF",
+      "preferredExistingStatic": null,
+      "primaryGif": {
+        "mediaId": "job.lumber.event.accepted-hand",
+        "assetPath": "assets/lumber/accepted-hand.gif",
+        "status": "future-unavailable"
+      },
+      "fallbackId": "job/lumber/result/default",
+      "textFallback": "Первая смена признана карьерной вехой."
+    },
+    {
+      "presentationId": "relationship/lumber-foreman/lumber-foreman-notice/default",
+      "classification": "future-GIF",
+      "preferredExistingStatic": null,
+      "primaryGif": {
+        "mediaId": "relationship.lumber.foreman.professional",
+        "assetPath": "assets/lumber/foreman-professional.gif",
+        "status": "future-unavailable"
+      },
+      "fallbackId": "location/town/default",
+      "textFallback": "Бригадир отмечает профессиональную работу."
+    },
+    {
+      "presentationId": "relationship/lumber-foreman/lumber-night-foreman-professional/default",
+      "classification": "future-GIF",
+      "preferredExistingStatic": null,
+      "primaryGif": {
+        "mediaId": "relationship.lumber.foreman.night.professional",
+        "assetPath": "assets/lumber/foreman-night-professional.gif",
+        "status": "future-unavailable"
+      },
+      "fallbackId": "relationship/lumber-foreman/lumber-foreman-notice/default",
+      "textFallback": "Вечерний профессиональный разговор с бригадиром."
+    },
+    {
+      "presentationId": "activity/forest/route/default",
+      "classification": "direct-existing",
+      "preferredExistingStatic": {
+        "mediaId": "stage.hunt",
+        "assetPath": "assets/stage-forest.svg",
+        "available": true
+      },
+      "primaryGif": null,
+      "fallbackId": "location/town/default",
+      "textFallback": "Маршрут через лес."
+    },
+    {
+      "presentationId": "activity/forest/return/success",
+      "classification": "static-fallback",
+      "preferredExistingStatic": null,
+      "primaryGif": null,
+      "fallbackId": "activity/forest/route/default",
+      "textFallback": "Успешное возвращение из леса."
+    },
+    {
+      "presentationId": "school/literacy-and-numbers/lesson/default",
+      "classification": "static-fallback",
+      "preferredExistingStatic": null,
+      "primaryGif": null,
+      "fallbackId": "location/town/default",
+      "textFallback": "Урок грамотности и счёта."
+    },
+    {
+      "presentationId": "school/arcana/lesson/default",
+      "classification": "static-fallback",
+      "preferredExistingStatic": null,
+      "primaryGif": null,
+      "fallbackId": "location/town/default",
+      "textFallback": "Урок арканы."
+    },
+    {
+      "presentationId": "school/rhetoric-and-social/lesson/default",
+      "classification": "static-fallback",
+      "preferredExistingStatic": null,
+      "primaryGif": null,
+      "fallbackId": "location/town/default",
+      "textFallback": "Урок риторики и общения."
+    },
+    {
+      "presentationId": "school/etiquette-and-presentation/lesson/default",
+      "classification": "static-fallback",
+      "preferredExistingStatic": null,
+      "primaryGif": null,
+      "fallbackId": "location/town/default",
+      "textFallback": "Урок этикета и самопрезентации."
+    },
+    {
+      "presentationId": "school/field-craft/lesson/default",
+      "classification": "direct-existing",
+      "preferredExistingStatic": {
+        "mediaId": "stage.school",
+        "assetPath": "assets/stage-school.svg",
+        "available": true
+      },
+      "primaryGif": null,
+      "fallbackId": "location/town/default",
+      "textFallback": "Урок полевой практики."
+    },
+    {
+      "presentationId": "school/physical-training/lesson/default",
+      "classification": "static-fallback",
+      "preferredExistingStatic": null,
+      "primaryGif": null,
+      "fallbackId": "location/town/default",
+      "textFallback": "Урок физической подготовки."
+    },
+    {
+      "presentationId": "school/arts-and-performance/lesson/default",
+      "classification": "static-fallback",
+      "preferredExistingStatic": null,
+      "primaryGif": null,
+      "fallbackId": "location/town/default",
+      "textFallback": "Урок искусств и выступления."
+    },
+    {
+      "presentationId": "school/body-confidence/lesson/default",
+      "classification": "static-fallback",
+      "preferredExistingStatic": null,
+      "primaryGif": null,
+      "fallbackId": "location/town/default",
+      "textFallback": "Урок уверенности в теле."
+    },
+    {
+      "presentationId": "ending/lumber/hard-work",
+      "classification": "static-fallback",
+      "preferredExistingStatic": null,
+      "primaryGif": null,
+      "fallbackId": "location/town/default",
+      "textFallback": "Финал «Тяжёлый труд»."
+    },
+    {
+      "presentationId": "ending/lumber/forewoman",
+      "classification": "static-fallback",
+      "preferredExistingStatic": null,
+      "primaryGif": null,
+      "fallbackId": "location/town/default",
+      "textFallback": "Финал профессионального пути бригадира."
+    },
+    {
+      "presentationId": "ending/lumber/forest",
+      "classification": "static-fallback",
+      "preferredExistingStatic": null,
+      "primaryGif": null,
+      "fallbackId": "location/town/default",
+      "textFallback": "Лесной финал пути лесорубов."
+    }
+  ]
+}
