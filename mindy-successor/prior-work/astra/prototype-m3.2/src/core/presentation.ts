@@ -217,12 +217,16 @@ function mediaCandidates(cat:Catalog,slot:PresentationSlot,override:Presentation
   const result:ResolvedPresentationMedia[]=[];
   const push=(candidate:ResolvedPresentationMedia)=>result.push(candidate);
 
-  if(animationsEnabled&&override?.primary)push({...override.primary,slotId:slot.id,source:'override-primary'});
   const base=slot.baseMediaIds.map(id=>cat.media.find(m=>m.id===id)).filter((m):m is Catalog['media'][number]=>!!m);
+  if(animationsEnabled&&override?.primary){
+    push({...override.primary,slotId:slot.id,source:'override-primary'});
+    if(override.static)push({...override.static,slotId:slot.id,source:'override-static'});
+  }
   if(animationsEnabled){
     for(const m of base.filter(m=>m.kind==='gif'))push({kind:m.kind,src:m.src,alt:m.alt,slotId:slot.id,source:'catalog',mediaId:m.id});
   }
-  if(override?.static)push({...override.static,slotId:slot.id,source:'override-static'});
+  if(!override?.primary&&override?.static)push({...override.static,slotId:slot.id,source:'override-static'});
+  if(!animationsEnabled&&override?.static)push({...override.static,slotId:slot.id,source:'override-static'});
   for(const m of base.filter(m=>m.kind==='image'))push({kind:m.kind,src:m.src,alt:m.alt,slotId:slot.id,source:'catalog',mediaId:m.id});
   if(animationsEnabled){
     for(const m of base.filter(m=>m.kind==='video'))push({kind:m.kind,src:m.src,alt:m.alt,slotId:slot.id,source:'catalog',mediaId:m.id});
