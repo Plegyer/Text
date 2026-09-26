@@ -1014,7 +1014,7 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
     if(!s.run.pending)completeEndingMutable(s,cat);
     return s;
   }
-  if(s.run.status!=='active')throw new Error('Эта жизнь завершена.');
+  if(s.run.status!=='active'&&!(s.run.status==='ending_committed'&&command.type==='choice'))throw new Error('Эта жизнь завершена.');
   if(command.type==='enterActivity'){
     enterActivityMutable(s,cat,command.id);
     return s;
