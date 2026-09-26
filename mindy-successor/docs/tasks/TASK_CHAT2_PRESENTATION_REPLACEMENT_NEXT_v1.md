@@ -453,10 +453,10 @@ Summarize:
 - what remains future asset/polish work;
 - which remaining PA blockers are presentation-independent.
 
-Continue items 25–30 sequentially without waiting for Lead review.
+Continue items 31–36 sequentially without waiting for Lead review.
 
 
-## Queue item 25 — presentation release-candidate coverage ledger
+## Queue item 31 — presentation release-candidate coverage ledger
 
 Create NEW files only:
 - `docs/presentation-prep/PRESENTATION_RC_COVERAGE_LEDGER_v1.md`
@@ -481,7 +481,7 @@ For each row record:
 
 Do not edit shared runtime/UI/catalog.
 
-## Queue item 26 — presentation save/import compatibility matrix
+## Queue item 32 — presentation save/import compatibility matrix
 
 Create NEW files only:
 - `prior-work/astra/prototype-m3.2/content/presentation-save-import-compat.fixture.json`
@@ -498,7 +498,7 @@ Cover:
 
 Prove presentation metadata remains optional/backward-compatible and never changes gameplay identity.
 
-## Queue item 27 — release-candidate fallback degradation suite
+## Queue item 33 — release-candidate fallback degradation suite
 
 Create NEW files only:
 - `prior-work/astra/prototype-m3.2/content/presentation-rc-degradation.fixture.json`
@@ -513,7 +513,7 @@ Exercise representative RC slots under:
 
 Expected result: gameplay continues, or invalid presentation config is rejected before persistence.
 
-## Queue item 28 — presentation asset replacement operator guide
+## Queue item 34 — presentation asset replacement operator guide
 
 Create:
 - `docs/presentation-prep/PRESENTATION_ASSET_REPLACEMENT_OPERATOR_GUIDE_v1.md`
@@ -530,7 +530,7 @@ Write the exact safe operator workflow for replacing future GIF/static assets by
 
 No source-path editing workflow.
 
-## Queue item 29 — Activity-option presentation readiness contract
+## Queue item 35 — Activity-option presentation readiness contract
 
 Create NEW files only:
 - `prior-work/astra/prototype-m3.2/content/presentation-activity-option-readiness.fixture.json`
@@ -546,7 +546,7 @@ Prepare the presentation contract for future capability-aware Forest options:
 
 Do not invent final event IDs/lore. Define semantic families and fallback policy only.
 
-## Queue item 30 — presentation final integration handoff v3
+## Queue item 36 — presentation final integration handoff v3
 
 Create:
 - `docs/presentation-prep/PRESENTATION_FINAL_INTEGRATION_HANDOFF_v3.md`
