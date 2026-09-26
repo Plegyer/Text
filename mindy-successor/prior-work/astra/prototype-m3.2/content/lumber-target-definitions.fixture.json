@@ -1,0 +1,256 @@
+{
+  "version": "0.1.0",
+  "flags": [
+    "story.arrived"
+  ],
+  "actions": [
+    {
+      "id": "lumber.shift",
+      "label": "Lumber shift",
+      "description": "Executable Lumber production fixture shift.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [],
+      "effects": [
+        {
+          "kind": "incrementCareerCounter",
+          "career": "lumber",
+          "counter": "completed_shifts",
+          "amount": 1
+        }
+      ],
+      "mode": "normal",
+      "scenes": [
+        {
+          "id": "spring.default",
+          "text": "Spring Lumber shift production fixture.",
+          "conditions": [],
+          "media": [
+            "job.lumber.shift.spring.default"
+          ]
+        },
+        {
+          "id": "summer.default",
+          "text": "Summer Lumber shift production fixture.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "summer"
+            }
+          ],
+          "media": [
+            "job.lumber.shift.summer.default"
+          ]
+        },
+        {
+          "id": "autumn.default",
+          "text": "Autumn Lumber shift production fixture.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "autumn"
+            }
+          ],
+          "media": [
+            "job.lumber.shift.autumn.default"
+          ]
+        },
+        {
+          "id": "winter.default",
+          "text": "Winter Lumber shift production fixture.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "winter"
+            }
+          ],
+          "media": [
+            "job.lumber.shift.winter.default"
+          ]
+        }
+      ],
+      "seasonal": {
+        "spring": [
+          {
+            "kind": "modifyStat",
+            "stat": "strength",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "endurance",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "grooming",
+            "delta": -1
+          }
+        ],
+        "summer": [
+          {
+            "kind": "modifyStat",
+            "stat": "strength",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "endurance",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "grooming",
+            "delta": -1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "manners",
+            "delta": -1
+          }
+        ],
+        "autumn": [
+          {
+            "kind": "modifyStat",
+            "stat": "strength",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "dexterity",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "endurance",
+            "delta": -1
+          }
+        ],
+        "winter": [
+          {
+            "kind": "modifyStat",
+            "stat": "endurance",
+            "delta": 2
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "sociability",
+            "delta": -1
+          }
+        ]
+      }
+    }
+  ],
+  "endings": [
+    {
+      "id": "ending.lumber.hard-work",
+      "title": "Lumber Hard Work",
+      "description": "Persistence ending fixture: exactly fifty completed Lumber shifts.",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "lumber",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 50
+        }
+      ],
+      "reward": "lumber.hardwork.compat",
+      "metaRewards": [
+        {
+          "kind": "hardWork",
+          "rewardId": "hardwork.lumber",
+          "career": "lumber"
+        }
+      ],
+      "epilogue": "Fixture epilogue for Lumber Hard Work."
+    }
+  ],
+  "careers": [
+    {
+      "id": "lumber",
+      "label": "Lumber",
+      "initialStage": "newcomer",
+      "stages": [
+        "newcomer",
+        "accepted-hand"
+      ],
+      "transitions": [
+        {
+          "id": "accept-hand",
+          "from": [
+            "newcomer"
+          ],
+          "to": "accepted-hand",
+          "conditions": [
+            {
+              "kind": "careerCounter",
+              "career": "lumber",
+              "counter": "completed_shifts",
+              "op": "gte",
+              "value": 1
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "lumber",
+              "fact": "foreman-noticed-player"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "id": "lumber.foreman",
+      "label": "Lumber Foreman",
+      "initialStage": "unknown",
+      "stages": [
+        "unknown",
+        "professional",
+        "route-professional"
+      ],
+      "transitions": [
+        {
+          "id": "notice-work",
+          "from": [
+            "unknown"
+          ],
+          "to": "professional",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "lumber",
+              "stage": "accepted-hand"
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "choose-professional",
+          "from": [
+            "professional"
+          ],
+          "to": "route-professional",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "setRelationshipChoice",
+              "relationship": "lumber.foreman",
+              "choice": "route",
+              "value": "professional"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "quests": [],
+  "lodgings": [],
+  "nightChoices": [],
+  "activities": []
+}
