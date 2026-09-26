@@ -1,0 +1,553 @@
+{
+  "formatVersion": 1,
+  "id": "school.night-production-parity.fixture.v1",
+  "sourceCatalogId": "school.night-choice-catalog.fixture.v1",
+  "housingPolicy": {
+    "normal": "available",
+    "cheap": "available",
+    "street": "restricted",
+    "enforcement": "production-availability-contract"
+  },
+  "semantics": {
+    "tuition": 0,
+    "currentDayEnergyCost": 0,
+    "selectedSupportedStatGain": 2,
+    "nextDayEnergyDelta": -1,
+    "consumesNightSlot": true,
+    "typedCounter": {
+      "counter": "night_study_sessions",
+      "delta": 1
+    },
+    "reloadPolicy": "exactly-once"
+  },
+  "choices": [
+    {
+      "choiceId": "school.night_study.literacy_and_numbers.reason",
+      "courseId": "school.course.literacy_and_numbers",
+      "trackId": "school.track.literacy_and_numbers",
+      "stat": "reason",
+      "statGain": 2,
+      "tuition": 0,
+      "currentDayEnergyCost": 0,
+      "nextDayEnergyDelta": -1,
+      "allowedHousing": [
+        "normal",
+        "cheap"
+      ],
+      "deniedHousing": [
+        "street"
+      ],
+      "typedCounterDelta": {
+        "counter": "night_study_sessions",
+        "delta": 1
+      },
+      "reloadExactlyOnce": true
+    },
+    {
+      "choiceId": "school.night_study.literacy_and_numbers.wits",
+      "courseId": "school.course.literacy_and_numbers",
+      "trackId": "school.track.literacy_and_numbers",
+      "stat": "wits",
+      "statGain": 2,
+      "tuition": 0,
+      "currentDayEnergyCost": 0,
+      "nextDayEnergyDelta": -1,
+      "allowedHousing": [
+        "normal",
+        "cheap"
+      ],
+      "deniedHousing": [
+        "street"
+      ],
+      "typedCounterDelta": {
+        "counter": "night_study_sessions",
+        "delta": 1
+      },
+      "reloadExactlyOnce": true
+    },
+    {
+      "choiceId": "school.night_study.arcana.magic",
+      "courseId": "school.course.arcana",
+      "trackId": "school.track.arcana",
+      "stat": "magic",
+      "statGain": 2,
+      "tuition": 0,
+      "currentDayEnergyCost": 0,
+      "nextDayEnergyDelta": -1,
+      "allowedHousing": [
+        "normal",
+        "cheap"
+      ],
+      "deniedHousing": [
+        "street"
+      ],
+      "typedCounterDelta": {
+        "counter": "night_study_sessions",
+        "delta": 1
+      },
+      "reloadExactlyOnce": true
+    },
+    {
+      "choiceId": "school.night_study.arcana.reason",
+      "courseId": "school.course.arcana",
+      "trackId": "school.track.arcana",
+      "stat": "reason",
+      "statGain": 2,
+      "tuition": 0,
+      "currentDayEnergyCost": 0,
+      "nextDayEnergyDelta": -1,
+      "allowedHousing": [
+        "normal",
+        "cheap"
+      ],
+      "deniedHousing": [
+        "street"
+      ],
+      "typedCounterDelta": {
+        "counter": "night_study_sessions",
+        "delta": 1
+      },
+      "reloadExactlyOnce": true
+    },
+    {
+      "choiceId": "school.night_study.arcana.creativity",
+      "courseId": "school.course.arcana",
+      "trackId": "school.track.arcana",
+      "stat": "creativity",
+      "statGain": 2,
+      "tuition": 0,
+      "currentDayEnergyCost": 0,
+      "nextDayEnergyDelta": -1,
+      "allowedHousing": [
+        "normal",
+        "cheap"
+      ],
+      "deniedHousing": [
+        "street"
+      ],
+      "typedCounterDelta": {
+        "counter": "night_study_sessions",
+        "delta": 1
+      },
+      "reloadExactlyOnce": true
+    },
+    {
+      "choiceId": "school.night_study.rhetoric_and_social.charm",
+      "courseId": "school.course.rhetoric_and_social",
+      "trackId": "school.track.rhetoric_and_social",
+      "stat": "charm",
+      "statGain": 2,
+      "tuition": 0,
+      "currentDayEnergyCost": 0,
+      "nextDayEnergyDelta": -1,
+      "allowedHousing": [
+        "normal",
+        "cheap"
+      ],
+      "deniedHousing": [
+        "street"
+      ],
+      "typedCounterDelta": {
+        "counter": "night_study_sessions",
+        "delta": 1
+      },
+      "reloadExactlyOnce": true
+    },
+    {
+      "choiceId": "school.night_study.rhetoric_and_social.sociability",
+      "courseId": "school.course.rhetoric_and_social",
+      "trackId": "school.track.rhetoric_and_social",
+      "stat": "sociability",
+      "statGain": 2,
+      "tuition": 0,
+      "currentDayEnergyCost": 0,
+      "nextDayEnergyDelta": -1,
+      "allowedHousing": [
+        "normal",
+        "cheap"
+      ],
+      "deniedHousing": [
+        "street"
+      ],
+      "typedCounterDelta": {
+        "counter": "night_study_sessions",
+        "delta": 1
+      },
+      "reloadExactlyOnce": true
+    },
+    {
+      "choiceId": "school.night_study.rhetoric_and_social.wits",
+      "courseId": "school.course.rhetoric_and_social",
+      "trackId": "school.track.rhetoric_and_social",
+      "stat": "wits",
+      "statGain": 2,
+      "tuition": 0,
+      "currentDayEnergyCost": 0,
+      "nextDayEnergyDelta": -1,
+      "allowedHousing": [
+        "normal",
+        "cheap"
+      ],
+      "deniedHousing": [
+        "street"
+      ],
+      "typedCounterDelta": {
+        "counter": "night_study_sessions",
+        "delta": 1
+      },
+      "reloadExactlyOnce": true
+    },
+    {
+      "choiceId": "school.night_study.etiquette_and_presentation.manners",
+      "courseId": "school.course.etiquette_and_presentation",
+      "trackId": "school.track.etiquette_and_presentation",
+      "stat": "manners",
+      "statGain": 2,
+      "tuition": 0,
+      "currentDayEnergyCost": 0,
+      "nextDayEnergyDelta": -1,
+      "allowedHousing": [
+        "normal",
+        "cheap"
+      ],
+      "deniedHousing": [
+        "street"
+      ],
+      "typedCounterDelta": {
+        "counter": "night_study_sessions",
+        "delta": 1
+      },
+      "reloadExactlyOnce": true
+    },
+    {
+      "choiceId": "school.night_study.etiquette_and_presentation.grooming",
+      "courseId": "school.course.etiquette_and_presentation",
+      "trackId": "school.track.etiquette_and_presentation",
+      "stat": "grooming",
+      "statGain": 2,
+      "tuition": 0,
+      "currentDayEnergyCost": 0,
+      "nextDayEnergyDelta": -1,
+      "allowedHousing": [
+        "normal",
+        "cheap"
+      ],
+      "deniedHousing": [
+        "street"
+      ],
+      "typedCounterDelta": {
+        "counter": "night_study_sessions",
+        "delta": 1
+      },
+      "reloadExactlyOnce": true
+    },
+    {
+      "choiceId": "school.night_study.etiquette_and_presentation.charm",
+      "courseId": "school.course.etiquette_and_presentation",
+      "trackId": "school.track.etiquette_and_presentation",
+      "stat": "charm",
+      "statGain": 2,
+      "tuition": 0,
+      "currentDayEnergyCost": 0,
+      "nextDayEnergyDelta": -1,
+      "allowedHousing": [
+        "normal",
+        "cheap"
+      ],
+      "deniedHousing": [
+        "street"
+      ],
+      "typedCounterDelta": {
+        "counter": "night_study_sessions",
+        "delta": 1
+      },
+      "reloadExactlyOnce": true
+    },
+    {
+      "choiceId": "school.night_study.field_craft.dexterity",
+      "courseId": "school.course.field_craft",
+      "trackId": "school.track.field_craft",
+      "stat": "dexterity",
+      "statGain": 2,
+      "tuition": 0,
+      "currentDayEnergyCost": 0,
+      "nextDayEnergyDelta": -1,
+      "allowedHousing": [
+        "normal",
+        "cheap"
+      ],
+      "deniedHousing": [
+        "street"
+      ],
+      "typedCounterDelta": {
+        "counter": "night_study_sessions",
+        "delta": 1
+      },
+      "reloadExactlyOnce": true
+    },
+    {
+      "choiceId": "school.night_study.field_craft.wits",
+      "courseId": "school.course.field_craft",
+      "trackId": "school.track.field_craft",
+      "stat": "wits",
+      "statGain": 2,
+      "tuition": 0,
+      "currentDayEnergyCost": 0,
+      "nextDayEnergyDelta": -1,
+      "allowedHousing": [
+        "normal",
+        "cheap"
+      ],
+      "deniedHousing": [
+        "street"
+      ],
+      "typedCounterDelta": {
+        "counter": "night_study_sessions",
+        "delta": 1
+      },
+      "reloadExactlyOnce": true
+    },
+    {
+      "choiceId": "school.night_study.field_craft.creativity",
+      "courseId": "school.course.field_craft",
+      "trackId": "school.track.field_craft",
+      "stat": "creativity",
+      "statGain": 2,
+      "tuition": 0,
+      "currentDayEnergyCost": 0,
+      "nextDayEnergyDelta": -1,
+      "allowedHousing": [
+        "normal",
+        "cheap"
+      ],
+      "deniedHousing": [
+        "street"
+      ],
+      "typedCounterDelta": {
+        "counter": "night_study_sessions",
+        "delta": 1
+      },
+      "reloadExactlyOnce": true
+    },
+    {
+      "choiceId": "school.night_study.physical_training.strength",
+      "courseId": "school.course.physical_training",
+      "trackId": "school.track.physical_training",
+      "stat": "strength",
+      "statGain": 2,
+      "tuition": 0,
+      "currentDayEnergyCost": 0,
+      "nextDayEnergyDelta": -1,
+      "allowedHousing": [
+        "normal",
+        "cheap"
+      ],
+      "deniedHousing": [
+        "street"
+      ],
+      "typedCounterDelta": {
+        "counter": "night_study_sessions",
+        "delta": 1
+      },
+      "reloadExactlyOnce": true
+    },
+    {
+      "choiceId": "school.night_study.physical_training.endurance",
+      "courseId": "school.course.physical_training",
+      "trackId": "school.track.physical_training",
+      "stat": "endurance",
+      "statGain": 2,
+      "tuition": 0,
+      "currentDayEnergyCost": 0,
+      "nextDayEnergyDelta": -1,
+      "allowedHousing": [
+        "normal",
+        "cheap"
+      ],
+      "deniedHousing": [
+        "street"
+      ],
+      "typedCounterDelta": {
+        "counter": "night_study_sessions",
+        "delta": 1
+      },
+      "reloadExactlyOnce": true
+    },
+    {
+      "choiceId": "school.night_study.physical_training.dexterity",
+      "courseId": "school.course.physical_training",
+      "trackId": "school.track.physical_training",
+      "stat": "dexterity",
+      "statGain": 2,
+      "tuition": 0,
+      "currentDayEnergyCost": 0,
+      "nextDayEnergyDelta": -1,
+      "allowedHousing": [
+        "normal",
+        "cheap"
+      ],
+      "deniedHousing": [
+        "street"
+      ],
+      "typedCounterDelta": {
+        "counter": "night_study_sessions",
+        "delta": 1
+      },
+      "reloadExactlyOnce": true
+    },
+    {
+      "choiceId": "school.night_study.arts_and_performance.creativity",
+      "courseId": "school.course.arts_and_performance",
+      "trackId": "school.track.arts_and_performance",
+      "stat": "creativity",
+      "statGain": 2,
+      "tuition": 0,
+      "currentDayEnergyCost": 0,
+      "nextDayEnergyDelta": -1,
+      "allowedHousing": [
+        "normal",
+        "cheap"
+      ],
+      "deniedHousing": [
+        "street"
+      ],
+      "typedCounterDelta": {
+        "counter": "night_study_sessions",
+        "delta": 1
+      },
+      "reloadExactlyOnce": true
+    },
+    {
+      "choiceId": "school.night_study.arts_and_performance.charm",
+      "courseId": "school.course.arts_and_performance",
+      "trackId": "school.track.arts_and_performance",
+      "stat": "charm",
+      "statGain": 2,
+      "tuition": 0,
+      "currentDayEnergyCost": 0,
+      "nextDayEnergyDelta": -1,
+      "allowedHousing": [
+        "normal",
+        "cheap"
+      ],
+      "deniedHousing": [
+        "street"
+      ],
+      "typedCounterDelta": {
+        "counter": "night_study_sessions",
+        "delta": 1
+      },
+      "reloadExactlyOnce": true
+    },
+    {
+      "choiceId": "school.night_study.arts_and_performance.sociability",
+      "courseId": "school.course.arts_and_performance",
+      "trackId": "school.track.arts_and_performance",
+      "stat": "sociability",
+      "statGain": 2,
+      "tuition": 0,
+      "currentDayEnergyCost": 0,
+      "nextDayEnergyDelta": -1,
+      "allowedHousing": [
+        "normal",
+        "cheap"
+      ],
+      "deniedHousing": [
+        "street"
+      ],
+      "typedCounterDelta": {
+        "counter": "night_study_sessions",
+        "delta": 1
+      },
+      "reloadExactlyOnce": true
+    },
+    {
+      "choiceId": "school.night_study.arts_and_performance.dexterity",
+      "courseId": "school.course.arts_and_performance",
+      "trackId": "school.track.arts_and_performance",
+      "stat": "dexterity",
+      "statGain": 2,
+      "tuition": 0,
+      "currentDayEnergyCost": 0,
+      "nextDayEnergyDelta": -1,
+      "allowedHousing": [
+        "normal",
+        "cheap"
+      ],
+      "deniedHousing": [
+        "street"
+      ],
+      "typedCounterDelta": {
+        "counter": "night_study_sessions",
+        "delta": 1
+      },
+      "reloadExactlyOnce": true
+    },
+    {
+      "choiceId": "school.night_study.body_confidence.sexuality",
+      "courseId": "school.course.body_confidence",
+      "trackId": "school.track.body_confidence",
+      "stat": "sexuality",
+      "statGain": 2,
+      "tuition": 0,
+      "currentDayEnergyCost": 0,
+      "nextDayEnergyDelta": -1,
+      "allowedHousing": [
+        "normal",
+        "cheap"
+      ],
+      "deniedHousing": [
+        "street"
+      ],
+      "typedCounterDelta": {
+        "counter": "night_study_sessions",
+        "delta": 1
+      },
+      "reloadExactlyOnce": true
+    },
+    {
+      "choiceId": "school.night_study.body_confidence.grooming",
+      "courseId": "school.course.body_confidence",
+      "trackId": "school.track.body_confidence",
+      "stat": "grooming",
+      "statGain": 2,
+      "tuition": 0,
+      "currentDayEnergyCost": 0,
+      "nextDayEnergyDelta": -1,
+      "allowedHousing": [
+        "normal",
+        "cheap"
+      ],
+      "deniedHousing": [
+        "street"
+      ],
+      "typedCounterDelta": {
+        "counter": "night_study_sessions",
+        "delta": 1
+      },
+      "reloadExactlyOnce": true
+    },
+    {
+      "choiceId": "school.night_study.body_confidence.endurance",
+      "courseId": "school.course.body_confidence",
+      "trackId": "school.track.body_confidence",
+      "stat": "endurance",
+      "statGain": 2,
+      "tuition": 0,
+      "currentDayEnergyCost": 0,
+      "nextDayEnergyDelta": -1,
+      "allowedHousing": [
+        "normal",
+        "cheap"
+      ],
+      "deniedHousing": [
+        "street"
+      ],
+      "typedCounterDelta": {
+        "counter": "night_study_sessions",
+        "delta": 1
+      },
+      "reloadExactlyOnce": true
+    }
+  ]
+}
