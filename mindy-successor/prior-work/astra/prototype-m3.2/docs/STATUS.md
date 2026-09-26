@@ -185,3 +185,32 @@ Real GitHub Actions:
 - full `npm run check` pass.
 
 Next architecture package: A6 Ending / RunResult / Meta exactly-once.
+
+
+## A6 RunResult / Meta exactly-once — 2026-09-26
+
+A6 completed on `lead/a6-runresult-meta`.
+
+Ending flow is now explicitly:
+`eligible -> committed -> RunResult/completed`.
+
+Eligibility does not end a run. Commitment suppresses normal progression but may resolve `ending_committed`/terminal scenes. Central completion creates a deterministic RunResult and applies Meta through a transaction ledger.
+
+Exactly-once behavior:
+- repeat click/reload does not duplicate reward;
+- repeat same ending in a later run may finish that run but does not reapply the unique ending reward;
+- runsCompleted increments once per completed RunResult transaction;
+- protected Meta import unions transaction proof.
+
+Target Meta supports ordinary Hard Work progress. All ten unique ordinary careers unlock Palace. Fresh runs derive the locked Hard Work starting-stat bonuses; Merchant adds exactly +600 starting money. Repeats do not stack.
+
+Legacy M3.2 `accept` remains a compatibility shortcut over the same commit/completion pipeline. Pre-A6 ended schema-v4 saves receive a compatibility RunResult/proof without a second reward.
+
+Real GitHub Actions:
+- typecheck pass;
+- validate pass;
+- build pass;
+- tests **111/111**;
+- full `npm run check` pass.
+
+Architecture packages A1–A6 are now implemented. Next: integrated Architecture Migration Slice gate, then Phase B.
