@@ -715,3 +715,33 @@ Recovery order:
 4. inspect actual Git main/branches/PRs/workflows before editing.
 
 The handoff records merged milestones, CI evidence, locked invariants, current worker branches/task files, remaining Product Acceptance blockers, and the no-idle coordination procedure. Git overrides the snapshot whenever the repository has moved.
+
+
+## Product Acceptance closure milestone — PR #22 — 2026-09-26
+
+- PR #22 merged generic item-capability and capability-aware Forest route infrastructure.
+- Main merge: `011572ef1335deda5ac33120c3a7ea7f9849dbbf`.
+- Production item definitions now declare the locked Forest item/capability identities:
+  - `reinforced_axe -> cut_heavy_wood`;
+  - `rope_kit -> cross_rough_route`;
+  - `field_preservation_kit -> preserve_specimen`;
+  - `old_boundary_token -> enter_old_boundary`.
+- Item capability is derived from actual positive inventory counts; a worldFact alone cannot manufacture an item capability.
+- Forest Activity itself is generally enterable for 2 Energy.
+- New option-aware Forest runs require a route before ordinary advance.
+- Logging road is a normal production route.
+- Old Boundary route is exposed only when actual inventory supplies `enter_old_boundary`.
+- Activity route/one-shot option identity survives save/reload.
+- Old active schema-4 Activity saves created before route-options remain behaviorally compatible through `optionModelVersion=0`: legacy `advance/escape` stays available after reload.
+- No acquisition source for `old_boundary_token` was invented.
+- No retain/consume policy was invented.
+- Product Acceptance row status improved:
+  - PA14 direct shipped evidence;
+  - PA15 direct shipped evidence;
+  - PA17 capability-aware action-space runtime exists, but ordered product reachability still depends on acquisition authoring;
+  - PA18/PA19/PA20 direct shipped evidence via ordinary Forest logging-road path.
+- Remaining major authoring/depth blockers:
+  1. reachable acquisition authoring and final retain/consume policy for Old Boundary Token;
+  2. authoritative School -> Lumber management/accounting public result;
+  3. hunter-trail + full 3-route / 3-challenge / season Forest content depth.
+- Merge-ref GitHub Actions: typecheck PASS, validate PASS, build PASS, **200/200 tests PASS**.
