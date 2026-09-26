@@ -1,0 +1,133 @@
+{
+  "version": 1,
+  "kind": "presentation-save-reload-adversarial-matrix",
+  "policy": {
+    "semanticPresentationIdentityMayPersist": true,
+    "mediaSourceMayPersist": false,
+    "animationFrameMayPersist": false,
+    "playbackTimeMayPersist": false,
+    "gameplayIdentityRemainsAuthoritative": true
+  },
+  "cases": [
+    {
+      "caseId": "ordinary-result",
+      "before": {
+        "owner": "lastAction",
+        "gameplayIdentity": {
+          "actionId": "lumber.shift"
+        },
+        "presentationId": "job/lumber/result/default"
+      },
+      "expectedAfterReload": "same-semantic-id-no-effect-replay"
+    },
+    {
+      "caseId": "pending-reactive-scene",
+      "before": {
+        "owner": "pendingScene",
+        "gameplayIdentity": {
+          "eventId": "lumber.career-first-shift",
+          "variantId": "default"
+        },
+        "presentationId": "job/lumber/event/lumber-career-first-shift/default"
+      },
+      "expectedAfterReload": "same-event-variant-and-semantic-id"
+    },
+    {
+      "caseId": "school-result",
+      "before": {
+        "owner": "lastAction",
+        "gameplayIdentity": {
+          "courseId": "school.course.arcana"
+        },
+        "presentationId": "school/arcana/lesson/default"
+      },
+      "expectedAfterReload": "same-course-semantic-id-no-second-charge"
+    },
+    {
+      "caseId": "night-lodging",
+      "before": {
+        "owner": "nightFlow",
+        "gameplayIdentity": {
+          "phase": "VoluntaryChoice",
+          "lodgingId": "lodging.normal",
+          "lodgingPaymentCommitted": true
+        },
+        "presentationId": "location/town/default"
+      },
+      "expectedAfterReload": "same-night-phase-and-semantic-context-no-second-payment"
+    },
+    {
+      "caseId": "night-voluntary-choice",
+      "before": {
+        "owner": "pendingScene",
+        "gameplayIdentity": {
+          "nightChoiceId": "lumber.foreman.night",
+          "eventId": "lumber-night.foreman-professional",
+          "variantId": "default"
+        },
+        "presentationId": "relationship/lumber-foreman/lumber-night-foreman-professional/default"
+      },
+      "expectedAfterReload": "same-night-choice-event-and-semantic-id"
+    },
+    {
+      "caseId": "activity-checkpoint",
+      "before": {
+        "owner": "activity",
+        "gameplayIdentity": {
+          "activityId": "lumber.forest",
+          "checkpoint": "route-1",
+          "definitionVersion": 1
+        },
+        "presentationId": "activity/forest/route/default"
+      },
+      "expectedAfterReload": "same-activity-checkpoint-and-semantic-id-no-entry-recharge"
+    },
+    {
+      "caseId": "ending-eligible",
+      "before": {
+        "owner": "dayHub",
+        "gameplayIdentity": {
+          "eligibleEndingIds": [
+            "ending.lumber.hard-work",
+            "ending.lumber.forest"
+          ],
+          "committedEndingId": null
+        },
+        "presentationId": "location/town/default"
+      },
+      "expectedAfterReload": "eligibility-preserved-without-implicit-commit"
+    },
+    {
+      "caseId": "ending-committed",
+      "before": {
+        "owner": "endingState",
+        "gameplayIdentity": {
+          "committedEndingId": "ending.lumber.hard-work",
+          "runStatus": "ending_committed"
+        },
+        "presentationId": "ending/lumber/hard-work"
+      },
+      "expectedAfterReload": "same-committed-ending-and-semantic-id"
+    },
+    {
+      "caseId": "ended-new-run-boundary",
+      "before": {
+        "owner": "runResult",
+        "gameplayIdentity": {
+          "endingId": "ending.lumber.hard-work",
+          "runStatus": "ended"
+        },
+        "presentationId": "ending/lumber/hard-work"
+      },
+      "afterNewRun": {
+        "owner": "dayHub",
+        "gameplayIdentity": {
+          "runStatus": "active",
+          "elapsedDays": 0
+        },
+        "presentationId": "location/town/default"
+      },
+      "expectedAfterReload": "ended-id-stable-then-new-run-uses-fresh-location-id"
+    }
+  ]
+}
