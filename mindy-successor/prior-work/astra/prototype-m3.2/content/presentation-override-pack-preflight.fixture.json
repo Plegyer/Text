@@ -1,0 +1,47 @@
+{
+  "format": "portal-life.presentation-override-pack",
+  "formatVersion": 1,
+  "presentationSchemaVersion": 1,
+  "metadata": {
+    "packId": "fixture.presentation-preflight",
+    "name": "Presentation override preflight fixture"
+  },
+  "activationPolicy": {
+    "mode": "atomic",
+    "unknownPresentationId": "quarantine",
+    "invalidEntry": "reject-pack"
+  },
+  "entries": {
+    "job/lumber/shift/spring/default": {
+      "primary": {
+        "kind": "gif",
+        "ref": "media/lumber-shift.gif",
+        "alt": "Весенняя смена лесорубов"
+      },
+      "static": {
+        "kind": "image",
+        "ref": "media/lumber-shift.webp",
+        "alt": "Весенняя смена лесорубов без анимации"
+      }
+    },
+    "school/field-craft/lesson/default": {
+      "primary": {
+        "kind": "gif",
+        "ref": "media/field-craft.gif",
+        "alt": "Урок полевой практики"
+      }
+    },
+    "ending/lumber/hard-work": {
+      "primary": {
+        "kind": "gif",
+        "ref": "media/hard-work.gif",
+        "alt": "Финал тяжёлого труда"
+      },
+      "static": {
+        "kind": "image",
+        "ref": "media/hard-work.png",
+        "alt": "Финал тяжёлого труда без анимации"
+      }
+    }
+  }
+}
