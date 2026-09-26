@@ -3,7 +3,7 @@
 Status: LIVE COORDINATION BOARD.
 
 Current main baseline:
-`d902b943cb7c9608c7f7e5fd4fcc84d6dc75e9ec`.
+`9b427d75dc22021cd3373aa7dd3521782e54152d`.
 
 ## Coordination rule — no worker idle
 
@@ -20,14 +20,14 @@ If a queued task becomes blocked, the worker moves to the next independent queue
 ## Critical path owned by Chat 1 / Lead
 
 Phase A integrated gate closed on PR #14 with full `npm run check` green (125/125 tests).
-Phase B is active. Central presentation PR #15 and School PR #17 are merged. Lumber PR #16 remains under asynchronous review. Workers continue on separate continuation branches.
+Phase B production activation is merged. Central presentation PR #15, Lumber PR #16, School PR #17, reward-contract PR #18, continuation PR #19 and production-activation PR #20 are all in main. Product Acceptance is now the active Lead gate.
 
 A1–A6 architecture implementation and integrated migration gate are complete.
 Current Lead path:
-- finish Lumber Product Slice integration;
-- integrate continuation fixtures without stalling workers;
-- wire PA00–PA26 against merged product IDs;
-- run Product Acceptance gate.
+- integrate only current compatible worker QA/contract checkpoints;
+- execute PA00–PA26 against shipped production catalog;
+- close genuine runtime defects without inventing OPEN authoring;
+- run release-candidate regression and post-merge smoke.
 
 Shared-core ownership is now assigned per task, not globally locked by default.
 
@@ -45,7 +45,7 @@ Queue:
 State: ACTIVE / CONTINUOUS.
 
 ### Chat 3 — Lumber product slice
-Review PR: #16 (`chat3/lumber-live-slice`) — frozen for Lead review.
+PR #16 (`chat3/lumber-live-slice`) — MERGED.
 Continuation branch: `chat3/lumber-pa-next`
 Task: `docs/tasks/TASK_CHAT3_LUMBER_PA_NEXT_v1.md`
 Queue:
@@ -165,3 +165,40 @@ Current active long queues:
 - Chat 3: `chat3/lumber-production-proof-next` — 6-item Lumber production/coexistence/reload/dependency queue.
 - Chat 4: `chat4/activation-ci-gate-next` — 6-item QA blocker/CI/dist/save/PA/smoke queue.
 - Chat 5: `chat5/school-pa-gate-next` — 6-item School PA/progress/UI/save/public-boundary/reload queue.
+
+
+## Product Activation merged — PR #20
+
+Main merge: `9b427d75dc22021cd3373aa7dd3521782e54152d`.
+
+Production activation now ships:
+- target `lumber.shift`, Lumber career/Foreman/Forest/endings and three approved top-level Lumber event packs;
+- typed School-owned progression with `lessons_completed` and `night_study_sessions`;
+- first-class `schoolLesson` command and all eight paid courses in UI;
+- explicit target NightFlow lodging + voluntary choices;
+- Forest Activity UI entry/action surface;
+- semantic slash `presentationId` persistence through save/reload;
+- School + Activity semantic presentation slots;
+- target Work UI uses `lumber.shift` while legacy `lumber` remains runtime/save-compatible.
+
+Locked invariants retained:
+- Hard Work eligibility = ONLY `completed_shifts >= 50`;
+- rewardId = exactly `hardWork:lumber`;
+- synthetic `school.lumber-management` is not shipped;
+- OPEN management/Arcana public-fact thresholds are not invented.
+
+Merge-ref evidence:
+- typecheck PASS;
+- validate PASS;
+- build PASS;
+- **187/187 tests PASS**.
+
+## Current continuous worker queues — 12-deep
+
+Workers remain on the same active branches and continue without waiting for Lead review:
+- Chat 2: `chat2/presentation-replacement-next`, Queue items 7–12 active after completing 1–6.
+- Chat 3: `chat3/lumber-production-proof-next`, Queue items 7–12 active after completing 1–6.
+- Chat 4: `chat4/activation-ci-gate-next`, Queue items 7–12 active after progressing through the first activation-gate items.
+- Chat 5: `chat5/school-pa-gate-next`, Queue items 7–12 active after completing 1–6.
+
+Long-queue rule supersedes the old two-item guidance: keep at least 6 independent items available ahead of worker progress whenever practical.
