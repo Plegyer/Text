@@ -91,3 +91,39 @@ Real GitHub Actions validation:
 - `npm run check` pass.
 
 Next architecture package: A3 Event Resolver.
+
+
+## A3 deterministic Event Resolver — 2026-09-26
+
+A3 completed on `a3-event-resolver`.
+
+The old action-only event scheduler has been replaced by one reaction resolver. Existing M3.2 action triggers remain compatible through ActionCompleted facts; target events can subscribe to typed stat/domain/world/calendar facts.
+
+Resolver state is persisted:
+- reaction epoch;
+- probabilistic attempt IDs;
+- blocking cascade depth;
+- latched/scheduled/optional resolved instances.
+
+Blocking PendingScene snapshots variant + allowed choice IDs + reactionEpochId. Reload does not reroll chance/variant.
+
+Implemented delivery:
+- live blocking;
+- optional non-blocking offers;
+- latched;
+- scheduled with deterministic expiry.
+
+Priority class ordering is fixed before numeric priority. Equal candidates use oldest eligibility, least-recently-shown, then stable event ID.
+
+After a scene choice, typed effects/transitions are applied and the resolver reruns immediately. Synthetic acceptance proves School -> Career -> Quest cascade without an extra daily action.
+
+Cascade limit is 16 and failure is atomic to the caller.
+
+Real GitHub Actions:
+- typecheck pass;
+- validate pass;
+- build pass;
+- tests **72/72**;
+- full `npm run check` pass.
+
+Next architecture package: A4 Night Flow.
