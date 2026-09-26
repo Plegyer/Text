@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "kind": "presentation-replacement-pr22-compatibility",
+  "status": "route-family-extension-safe",
+  "policy": {
+    "existingOverrideIdsStable": true,
+    "newSlotsCannotRemapOldIds": true,
+    "unknownFutureSlots": "quarantine",
+    "exportOrdering": "lexicographic-presentationId",
+    "gameplayMutationAllowed": false
+  },
+  "existingOverrideIds": [
+    "job/lumber/shift/spring/default",
+    "job/lumber/shift/summer/default",
+    "job/lumber/shift/autumn/default",
+    "job/lumber/shift/winter/default",
+    "job/lumber/event/lumber-career-first-shift/default",
+    "relationship/lumber-foreman/lumber-foreman-notice/default",
+    "relationship/lumber-foreman/lumber-night-foreman-professional/default"
+  ],
+  "routeFamilies": [
+    "activity/forest/route/logging-road/*",
+    "activity/forest/route/hunter-trail/*",
+    "activity/forest/route/old-boundary/*",
+    "activity/forest/challenge/navigation/*",
+    "activity/forest/challenge/physical-obstacle/*",
+    "activity/forest/challenge/interpretation-ritual-anomaly/*"
+  ],
+  "syntheticRegistrationCases": [
+    {
+      "caseId": "registered-logging-road-test-slot",
+      "presentationId": "activity/forest/route/logging-road/test-registered",
+      "registryState": "synthetically-registered-for-contract-test",
+      "expected": "accept"
+    },
+    {
+      "caseId": "unknown-future-route-slot",
+      "presentationId": "activity/forest/route/future-unknown/default",
+      "registryState": "unknown",
+      "expected": "quarantine"
+    }
+  ]
+}
