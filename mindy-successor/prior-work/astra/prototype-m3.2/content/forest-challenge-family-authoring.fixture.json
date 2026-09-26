@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "id": "forest.challenge-family-authoring.fixture",
+  "status": "AUTHORING_CONTRACT",
+  "shared": {
+    "terminalResults": [
+      "lumber.forest.success",
+      "lumber.forest.escape",
+      "lumber.forest.failure"
+    ],
+    "checkpointAfterResolutionRequired": true,
+    "reloadRerollAllowed": false,
+    "daytimeEnergyPerChallenge": 0,
+    "duplicateItemUseAllowed": false
+  },
+  "families": [
+    {
+      "id": "navigation",
+      "allowedDependencies": [
+        {
+          "kind": "statCategory",
+          "values": [
+            "wits",
+            "reason"
+          ]
+        },
+        {
+          "kind": "publicFactCategory",
+          "values": [
+            "hunter/public knowledge fact"
+          ]
+        },
+        {
+          "kind": "capabilityCategory",
+          "values": [
+            "map/navigation capability"
+          ]
+        }
+      ],
+      "requiredActionSpaceEffect": true,
+      "allowedResultSemantics": [
+        "set/confirm route",
+        "open/close subsequent route option",
+        "adjust Activity progress",
+        "adjust Activity-owned resources",
+        "record accepted route discovery"
+      ],
+      "checkpointState": [
+        "chosen option",
+        "route state",
+        "resolved challenge identity",
+        "rng state",
+        "resulting option availability"
+      ],
+      "openFields": [
+        "challenge IDs",
+        "thresholds",
+        "exact formula",
+        "prose"
+      ]
+    },
+    {
+      "id": "physical obstacle",
+      "allowedDependencies": [
+        {
+          "kind": "statCategory",
+          "values": [
+            "strength",
+            "endurance",
+            "dexterity"
+          ]
+        },
+        {
+          "kind": "capabilityCategory",
+          "values": [
+            "cross_rough_route",
+            "cut_heavy_wood",
+            "rope/tool capability"
+          ]
+        }
+      ],
+      "requiredActionSpaceEffect": true,
+      "allowedResultSemantics": [
+        "spend/avoid Activity endurance",
+        "change route availability",
+        "advance Activity progress",
+        "record obstacle resolution",
+        "branch to detour"
+      ],
+      "checkpointState": [
+        "selected approach",
+        "item-use transaction identity if applicable",
+        "inventory state",
+        "route/action availability",
+        "endurance/progress",
+        "resolved obstacle identity"
+      ],
+      "openFields": [
+        "obstacle IDs",
+        "route binding",
+        "thresholds",
+        "consume policy",
+        "prose"
+      ]
+    },
+    {
+      "id": "interpretation / ritual anomaly",
+      "allowedDependencies": [
+        {
+          "kind": "statCategory",
+          "values": [
+            "reason",
+            "magic"
+          ]
+        },
+        {
+          "kind": "publicFactCategory",
+          "values": [
+            "School Arcana public fact"
+          ]
+        },
+        {
+          "kind": "capabilityCategory",
+          "values": [
+            "specific sample/tool",
+            "preserve_specimen"
+          ]
+        }
+      ],
+      "requiredActionSpaceEffect": true,
+      "allowedResultSemantics": [
+        "record anomaly interpretation",
+        "unlock route continuation",
+        "enable/disable extraction option",
+        "add accepted public discovery fact",
+        "add accepted item/sample",
+        "change Activity progress/resource state"
+      ],
+      "checkpointState": [
+        "anomaly challenge identity",
+        "selected interpretation",
+        "public fact/capability state",
+        "item-use transaction identity if applicable",
+        "sample state if authored",
+        "route/action availability"
+      ],
+      "openFields": [
+        "challenge IDs",
+        "Arcana fact ID",
+        "School threshold",
+        "anomaly lore",
+        "sample identity",
+        "consume policy"
+      ]
+    }
+  ],
+  "hardWorkIsolation": {
+    "challengePrerequisiteAllowed": false,
+    "onlyCondition": {
+      "kind": "careerCounter",
+      "career": "lumber",
+      "counter": "completed_shifts",
+      "op": "gte",
+      "value": 50
+    },
+    "rewardId": "hardWork:lumber"
+  }
+}
