@@ -3,7 +3,7 @@
 Status: LIVE COORDINATION BOARD.
 
 Current main baseline:
-`9b427d75dc22021cd3373aa7dd3521782e54152d`.
+`e6c32903516d1ba40b9a3ffbf955d5f04783ac25`.
 
 ## Coordination rule — no worker idle
 
@@ -202,3 +202,36 @@ Workers remain on the same active branches and continue without waiting for Lead
 - Chat 5: `chat5/school-pa-gate-next`, Queue items 7–12 active after completing 1–6.
 
 Long-queue rule supersedes the old two-item guidance: keep at least 6 independent items available ahead of worker progress whenever practical.
+
+
+## Product Acceptance evidence merged — PR #21
+
+Main merge: `e6c32903516d1ba40b9a3ffbf955d5f04783ac25`.
+
+Evidence:
+- Product Acceptance harness uses the first-class `schoolLesson` command.
+- Shipped-catalog execution covers target Lumber -> career milestone -> professional Foreman, paid School lesson, normal lodging, optional Foreman Night, Forest Activity mechanics with an explicitly labeled capability accelerator, seasonal Lumber variants, endings eligibility/continued play, Hard Work commitment/completion and New Run Meta.
+- Merge-ref `npm run check`: typecheck PASS, validate PASS, build PASS, **194/194 tests PASS**.
+
+Gate conclusion:
+- production runtime/integration: GREEN;
+- full Product Acceptance Slice: PARTIAL / NOT CLOSED.
+
+Genuine remaining authoring/depth blockers:
+1. production `old_boundary_token -> enter_old_boundary` acquisition/capability/action-space path;
+2. final School management/accounting public result authoring for Lumber continuation;
+3. deeper Forest 3-route / 3-challenge-family / season product depth;
+4. item-driven Activity action-space behavior.
+
+Hard Work remains fully locked and is not a blocker:
+- ONLY `completed_shifts >= 50`;
+- exact rewardId `hardWork:lumber`.
+
+## Current worker queue depth — through item 18
+
+- Chat 2: `chat2/presentation-replacement-next`, items 13–18 queued after completion of 1–12.
+- Chat 3: `chat3/lumber-production-proof-next`, items 13–18 queued after completion of 1–12.
+- Chat 4: `chat4/activation-ci-gate-next`, items 13–18 queued after completion of 1–12.
+- Chat 5: `chat5/school-pa-gate-next`, items 13–18 queued after completion of 1–12.
+
+Workers continue sequentially without waiting for Lead review.
