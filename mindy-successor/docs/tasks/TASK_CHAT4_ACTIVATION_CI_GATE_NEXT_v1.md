@@ -72,3 +72,49 @@ startup -> arrival -> Lumber shift -> School paid lesson -> NightFlow -> School 
 Include expected semantic presentation IDs and exactly-once checks.
 
 Continue sequentially through items 1–6 without waiting for Lead review.
+
+
+## Queue item 7 — PR20 latest-head diff recheck
+
+Create:
+- `docs/qa-prep/PR20_LATEST_HEAD_RECHECK_v1.md`
+
+Re-review PR #20 after the latest School Resolver/UI fixes. Mark every previous blocker and NOT-YET-IMPLEMENTED item as RESOLVED / STILL_BLOCKING with exact current commit/file evidence.
+
+## Queue item 8 — shipped dist executable smoke contract
+
+Create NEW test:
+- `prior-work/astra/prototype-m3.2/tests/qa-shipped-dist-smoke-contract.test.ts`
+
+After build, inspect `dist/content.json` expectations: target Lumber definitions, approved production packs, no synthetic School action, valid media, exact Hard Work rule/reward, Night/Activity definitions.
+
+## Queue item 9 — worker checkpoint integration audit
+
+Create:
+- `docs/qa-prep/WORKER_CHECKPOINT_INTEGRATION_AUDIT_v1.md`
+
+Compare current main/PR20 against completed Chat 2/3/5 checkpoint artifacts. Identify which worker tests/docs are still branch-only and which should be integrated after PR20. Avoid duplicative test integration.
+
+## Queue item 10 — PA00–PA26 final blocker list
+
+Create:
+- `docs/qa-prep/PRODUCT_ACCEPTANCE_FINAL_BLOCKERS_v1.md`
+
+For every PA row mark PASS_CANDIDATE / BLOCKED_BY_OPEN_AUTHORING / BLOCKED_BY_RUNTIME / NEEDS_LIVE_EVIDENCE. No row may pass solely because a fixture exists.
+
+## Queue item 11 — production activation fault-injection plan
+
+Create:
+- `docs/qa-prep/PRODUCT_ACTIVATION_FAULT_INJECTION_v1.md`
+- optional NEW QA test.
+
+Cover failures during School payment, Night lodging, save between Night phases, Activity checkpoint, ending commit/completion and missing presentation media. Ensure atomic recovery expectations.
+
+## Queue item 12 — release-candidate QA gate
+
+Create:
+- `docs/qa-prep/RELEASE_CANDIDATE_QA_GATE_v1.md`
+
+Define the final exact gate after PR20 merge: full check, shipped smoke, PA regression subset, save compatibility, worker artifact integration, OPEN authoring ledger and post-merge smoke.
+
+Continue items 7–12 sequentially without waiting for Lead review.
