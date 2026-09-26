@@ -43,3 +43,28 @@ Forbidden:
 until Lead releases those paths.
 
 Acceptance: new files compile/test against the current continuation branch and do not change gameplay state semantics.
+
+
+## Queue item 3 — presentation registry adversarial coverage
+
+Create NEW test files only:
+- `prior-work/astra/prototype-m3.2/tests/presentation-registry-adversarial.test.ts`
+
+Cover:
+- duplicate semantic IDs;
+- fallback-to-missing target;
+- fallback cycle;
+- animation-off with no static media reaches safe inherited/text fallback;
+- registry entries contain no mechanics/effects/RNG/Energy fields;
+- changing asset source does not change semantic ID.
+
+Do not modify runtime/editor files.
+
+## Queue item 4 — portable override-pack contract
+
+Create NEW files only:
+- `docs/presentation-prep/PRESENTATION_OVERRIDE_PACK_CONTRACT_v1.md`
+- optional `prior-work/astra/prototype-m3.2/content/presentation-override-pack.fixture.json`
+- optional focused schema/fixture test in a new test file.
+
+Define/verify a portable user override pack keyed by `presentationId`: metadata + GIF/static references, no gameplay save data, unknown IDs quarantined/rejected, atomic activation, versioned separately from life saves. Do not choose a final desktop filesystem location.
