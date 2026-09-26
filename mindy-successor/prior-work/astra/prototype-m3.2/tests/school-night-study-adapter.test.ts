@@ -16,7 +16,19 @@ const nightChoice=schoolNightStudyChoice('school.course.arcana','reason');
 function catalog():Catalog{
   const definitions=structuredClone(rawFixture);
   definitions.nightChoices=[structuredClone(nightChoice)];
-  return loadCatalog(definitions,[]);
+  return loadCatalog(definitions,[{
+    schemaVersion:1,
+    id:'school-night-fixture-media',
+    reads:[],
+    writes:[],
+    media:[{
+      id:'stage.room',
+      kind:'image',
+      src:'assets/room.svg',
+      alt:'Synthetic room media required by persisted NightFlow lastAction.'
+    }],
+    events:[]
+  }]);
 }
 
 function ready():Save{
