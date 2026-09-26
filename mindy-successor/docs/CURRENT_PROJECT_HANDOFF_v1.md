@@ -462,3 +462,55 @@ Create a new branch from current main for release-candidate integration and:
 3. preserve OPEN authoring decisions instead of guessing;
 4. prepare the exact human/product decisions needed to close the remaining PA rows;
 5. run full merge-ref check again before merge.
+
+
+## 13. Superseding update — PR #23
+
+Current RC regression milestone:
+`e12665ce9063689400d8f39f893378f6f01911f3`
+
+PR #23 merged only QA/fixture coverage for the already-merged PR #22 capability/Activity-option runtime.
+
+Merge-ref:
+- typecheck PASS;
+- validate PASS;
+- build PASS;
+- **208/208 tests PASS**.
+
+Integrated RC QA now locks:
+- inventory-derived capability semantics;
+- worldFact is not item ownership;
+- multi-provider capability deduplication;
+- unknown capability validation;
+- capability-aware authored Activity options;
+- route/used-option reload identity;
+- duplicate-option rejection;
+- advance/escape continuity after route selection;
+- capability removal when provider inventory is gone.
+
+No runtime/content/UI production change was made in PR #23.
+
+### Current worker queue snapshot
+
+Chat 2:
+- `chat2/presentation-replacement-next`
+- items 31–36 active.
+
+Chat 3:
+- `chat3/lumber-production-proof-next`
+- items 25–30 active.
+
+Chat 4:
+- `chat4/activation-ci-gate-next`
+- items 25–30 active.
+
+Chat 5:
+- `chat5/school-pa-gate-next`
+- items 25–30 active.
+- At this snapshot Git confirms item 25 only; do not mark 26–30 complete until their commits/files appear.
+
+### Lead next step
+
+Start the next release-candidate integration/smoke branch from current main.
+Integrate only post-PR22 worker artifacts whose assumptions match the merged capability model.
+Do not integrate pre-PR22 tests that claim item-capability runtime is absent.
