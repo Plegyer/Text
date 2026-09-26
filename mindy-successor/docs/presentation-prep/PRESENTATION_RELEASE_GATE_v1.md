@@ -1,8 +1,8 @@
 # Presentation Release Gate v1
 
-Current main: `0450d46eb29c2551c4ecf55f994e0f271e82e3c7`.
+Current main: `6d5eeee7df82409113327b942d47be5b36ab6866`.
 
-PR22 Activity-option gameplay is shipped. This checklist evaluates the presentation layer without turning remaining gameplay/content authoring gaps into presentation failures.
+PR22 Activity-option gameplay is shipped. PR23 adds QA evidence only and does not change production runtime/content/UI, so the presentation gate statuses below are unchanged. This checklist evaluates the presentation layer without turning remaining gameplay/content authoring gaps into presentation failures.
 
 Status vocabulary:
 
