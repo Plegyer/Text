@@ -72,17 +72,36 @@ export interface ResolvedPresentation {
 
 export const emptyPresentation=():Presentation=>({version:1,texts:{},media:{}});
 
-const jobIds=new Set(['tavern','lumber','hunt','guard']);
-const clean=(value:string)=>value.toLowerCase().replace(/[^a-z0-9._-]+/g,'-').replace(/^-+|-+$/g,'')||'default';
+const jobIds=new Set(['tavern','lumber','hunt','hunter','guard','satyr-maid','undead-farm','artist-geisha','assassin','merchant','prostitute']);
+const clean=(value:string)=>value.toLowerCase().replace(/[^a-z0-9_-]+/g,'-').replace(/^-+|-+$/g,'')||'default';
+const pathParts=(value:string)=>value.toLowerCase().split(/[./]+/).map(clean).filter(Boolean);
+const semanticPath=(value:string)=>pathParts(value).join('/');
+const scenePath=(sceneId:string)=>{
+  const path=semanticPath(sceneId)||'default';
+  return path==='default'||path.endsWith('/default')?path:`${path}/default`;
+};
+const actionRoot=(actionId:string)=>pathParts(actionId)[0]??'default';
 const sameIds=(a:string[],b:string[])=>a.length===b.length&&a.every((id,i)=>id===b[i]);
 
+function jobIdForAction(actionId:string){
+  const root=actionRoot(actionId);
+  return jobIds.has(root)?root:null;
+}
+function schoolTrackForAction(actionId:string){
+  const parts=pathParts(actionId);
+  if(parts[0]==='school')return parts.slice(1).join('-')||'general';
+  const legacy=parts[0]??'';
+  return legacy.endsWith('-class')?legacy.slice(0,-6):null;
+}
 function actionPresentationId(actionId:string,sceneId:string){
-  const action=clean(actionId),scene=clean(sceneId);
-  if(jobIds.has(action))return `job/${action}/shift/${scene}/default`;
-  if(action==='forest-search')return `activity/forest/route/${scene}`;
-  if(action==='school'||action.endsWith('-class'))return `school/${action}/lesson/${scene}`;
-  if(action==='rest'||action==='rent-room')return `night/${action}/${scene}`;
-  return `location/town/${action}/${scene}`;
+  const jobId=jobIdForAction(actionId);
+  if(jobId)return `job/${jobId}/shift/${scenePath(sceneId)}`;
+  const root=actionRoot(actionId);
+  if(root==='forest-search')return `activity/forest/route/${scenePath(sceneId)}`;
+  const track=schoolTrackForAction(actionId);
+  if(track)return `school/${track}/lesson/${scenePath(sceneId)}`;
+  if(root==='rest'||root==='rent-room')return `night/${root}/${scenePath(sceneId)}`;
+  return `location/town/${semanticPath(actionId)}/${scenePath(sceneId)}`;
 }
 
 export function presentationIdForAction(cat:Catalog,actionId:string,mediaIds:string[]=[]){
@@ -102,7 +121,13 @@ export function presentationIdForActionResult(cat:Catalog,actionId:string,mediaI
     ??scenes.find(s=>s.media.some(id=>mediaIds.includes(id)))
     ??scenes.find(s=>s.id==='default')
     ??scenes[0];
-  if(jobIds.has(actionId))return `job/${clean(actionId)}/result/${clean(scene?.id??'default')}`;
+  const jobId=jobIdForAction(actionId);
+  if(jobId){
+    const sceneId=scene?.id??'default';
+    const parts=pathParts(sceneId);
+    const resultId=(['spring','summer','autumn','winter'].includes(parts[0]??'')||parts.length===0)?'default':clean(parts.at(-1)??'default');
+    return `job/${jobId}/result/${resultId}`;
+  }
   return actionPresentationId(actionId,scene?.id??'default');
 }
 
@@ -123,7 +148,9 @@ export function presentationIdForEvent(cat:Catalog,eventId:string,variantId:stri
 }
 
 export function presentationIdForEnding(endingId:string){
-  return `ending/${clean(endingId)}`;
+  const parts=pathParts(endingId);
+  if(parts[0]==='ending')parts.shift();
+  return `ending/${parts.join('/')||'default'}`;
 }
 
 export function textFields(cat:Catalog){
