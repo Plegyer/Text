@@ -316,8 +316,10 @@ test('blocked Product Acceptance hooks are not silently fabricated by the cross-
     itemCapabilityFixture.status,
     'TEST_ADAPTER_UNTIL_SHARED_ITEM_CAPABILITY_SCHEMA'
   );
-  assert.deepEqual(
-    ['advance','escape'],
-    ['advance','escape']
-  );
+  const engineSource=readFileSync('src/core/engine.ts','utf8');
+  const commandStart=engineSource.indexOf('export type Command=');
+  const commandEnd=engineSource.indexOf('export function dispatch',commandStart);
+  const commandBlock=engineSource.slice(commandStart,commandEnd);
+  assert.match(commandBlock,/activityAction';id:'advance'\|'escape'/);
+  assert.doesNotMatch(commandBlock,/itemCapability|useItem|use-item/);
 });
