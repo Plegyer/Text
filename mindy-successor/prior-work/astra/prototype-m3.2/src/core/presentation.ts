@@ -122,7 +122,10 @@ export function presentationIdForActionResult(cat:Catalog,actionId:string,mediaI
     ??scenes.find(s=>s.id==='default')
     ??scenes[0];
   const jobId=jobIdForAction(actionId);
-  if(jobId)return `job/${jobId}/result/${semanticPath(scene?.id??'default')||'default'}`;
+  if(jobId){
+    const targetShaped=pathParts(actionId)[1]==='shift';
+    return `job/${jobId}/result/${targetShaped?'default':(semanticPath(scene?.id??'default')||'default')}`;
+  }
   return actionPresentationId(actionId,scene?.id??'default');
 }
 
