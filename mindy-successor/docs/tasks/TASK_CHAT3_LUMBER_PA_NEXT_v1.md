@@ -80,3 +80,13 @@ Prove:
 - invalid item capability cannot enter Forest Activity.
 
 Do not edit existing PR #16 files or shared runtime.
+
+
+## Lead integration correction — presentation identity
+
+For all new PA/checkpoint work:
+- semantic presentation IDs use the merged slash taxonomy, never dotted media IDs;
+- examples: `job/lumber/shift/spring/default`, `job/lumber/event/lumber-career-first-shift/default`, `ending/lumber/hard-work`;
+- Lumber career events must resolve through `sourceDomain: "lumber"`;
+- Foreman relationship events must resolve through `sourceDomain: "lumber.foreman"`;
+- media asset IDs such as `job.lumber.event.*` remain asset IDs only and must not be treated as presentation IDs.
