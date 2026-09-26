@@ -1019,7 +1019,7 @@
     "emits": [
       {
         "kind": "EmitReactionFact",
-        "factType": "ActivityCompleted",
+        "factType": "ActivityResult",
         "payload": {
           "activityId": "forest",
           "resultTag": "RESOLVED_RESULT_TAG"
@@ -1098,7 +1098,7 @@
       "id": "lumber.event.forest_return",
       "sourceDomain": "career:lumber",
       "triggers": [
-        "ActivityCompleted(forest)",
+        "ActivityResult(forest)",
         "WorldFactAdded(forest_truth_known)"
       ],
       "priorityClass": "critical_progression",
@@ -1118,7 +1118,7 @@
       "id": "lumber.relationship.forest_return",
       "sourceDomain": "relationship:lumber_foreman",
       "triggers": [
-        "ActivityCompleted(forest)",
+        "ActivityResult(forest)",
         "WorldFactAdded(forest_truth_known)"
       ],
       "priorityClass": "normal_progression",
@@ -1145,12 +1145,6 @@
           "jobId": "lumber",
           "op": ">=",
           "value": 50
-        },
-        {
-          "kind": "career.fact",
-          "jobId": "lumber",
-          "factId": "career_milestone_a_resolved",
-          "present": true
         }
       ],
       "requiresSeasonBreadth": false,
@@ -1160,14 +1154,9 @@
       "presentationId": "ending/lumber/hard-work",
       "metaRewardOnCompletedRun": [
         {
-          "kind": "startingStatBonus",
-          "statId": "strength",
-          "delta": 3
-        },
-        {
-          "kind": "startingStatBonus",
-          "statId": "endurance",
-          "delta": 3
+          "kind": "hardWork",
+          "rewardId": "reward.hardwork.lumber",
+          "career": "lumber"
         }
       ],
       "rewardExactlyOnce": true
