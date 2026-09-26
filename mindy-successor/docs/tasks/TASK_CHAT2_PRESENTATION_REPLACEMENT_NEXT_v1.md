@@ -761,3 +761,95 @@ Produce the minimal final evidence pack for Lead:
 Keep it minimal and non-redundant.
 
 Continue items 37–42 sequentially without waiting for Lead review.
+
+
+## Queue item 43 — merged PR24 presentation reconciliation
+
+Create NEW files only:
+- `docs/presentation-prep/PRESENTATION_PR24_MERGED_RECONCILIATION_v1.md`
+- `prior-work/astra/prototype-m3.2/tests/presentation-pr24-merged-reconciliation.test.ts`
+
+Reconcile all PR24 presentation assumptions against merged main, not the old pre-fix head.
+
+Must include the real School blocking boundary:
+`school/arcana/lesson/default -> pending base.school/listen -> NightFlow`.
+
+Correct any earlier PR24 audit assumption that skipped the blocking School scene.
+
+Do not edit shared presentation runtime/UI/catalog.
+
+## Queue item 44 — one-Save presentation state ownership matrix v2
+
+Create NEW files only:
+- `prior-work/astra/prototype-m3.2/content/presentation-one-save-ownership-v2.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/presentation-one-save-ownership-v2.test.ts`
+
+Cover the merged one-Save path with exact ownership:
+- lastAction;
+- pendingScene;
+- NightFlow;
+- Activity;
+- ending state;
+- RunResult;
+- New Run location.
+
+Include the `base.school` pending scene explicitly.
+
+## Queue item 45 — RC semantic fallback live-path audit
+
+Create:
+- `docs/presentation-prep/PRESENTATION_RC_LIVE_PATH_FALLBACK_AUDIT_v1.md`
+- optional NEW test.
+
+Audit only the exact merged one-Save path and classify every visible boundary as:
+- direct shipped media;
+- static fallback;
+- text-safe fallback;
+- future GIF target.
+
+Do not widen to unused catalog slots.
+
+## Queue item 46 — presentation final no-timing-coupling sentinel
+
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/presentation-final-no-timing-coupling.test.ts`
+
+Fail if any current RC presentation/save/override artifact:
+- stores frame index;
+- stores elapsed media time;
+- stores playback timestamp;
+- requires animation completion for mechanics;
+- changes command availability based on animation state.
+
+## Queue item 47 — merged RC presentation override smoke
+
+Create NEW files only:
+- `prior-work/astra/prototype-m3.2/content/presentation-merged-rc-override-smoke.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/presentation-merged-rc-override-smoke.test.ts`
+
+Use representative merged-main semantic IDs:
+- Lumber result;
+- School Arcana lesson;
+- School blocking scene;
+- Foreman Night;
+- Forest route;
+- Hard Work ending.
+
+Verify override/fallback/reload identity without gameplay mutation.
+
+## Queue item 48 — final presentation decision/evidence handoff v4
+
+Create:
+- `docs/presentation-prep/PRESENTATION_FINAL_DECISION_EVIDENCE_HANDOFF_v4.md`
+- `prior-work/astra/prototype-m3.2/content/presentation-final-decision-evidence-handoff.fixture.json`
+
+Consolidate post-PR24 state into:
+- SHIPPED_GREEN;
+- MUST_INTEGRATE_QA;
+- FUTURE_ASSET_ONLY;
+- AUTHORING_BLOCKED;
+- SUPERSEDED.
+
+Explicitly mark the old pre-fix PR24 presentation audit as superseded where it omitted `base.school`.
+
+Continue items 43–48 sequentially without waiting for Lead review.
