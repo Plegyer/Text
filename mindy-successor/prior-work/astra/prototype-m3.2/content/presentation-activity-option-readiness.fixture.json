@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "kind": "presentation-activity-option-readiness",
+  "status": "semantic-family-only-preauthoring",
+  "policy": {
+    "finalIdsInvented": false,
+    "finalLoreInvented": false,
+    "gameplayConditionsInvented": false,
+    "fallbackId": "activity/forest/route/default",
+    "blockerClass": "gameplay-authoring"
+  },
+  "options": [
+    {
+      "optionKey": "logging-road",
+      "semanticFamily": "activity/forest/option/logging-road",
+      "label": "Logging road option",
+      "fallbackId": "activity/forest/route/default",
+      "finalPresentationId": null,
+      "finalEventId": null,
+      "lore": null
+    },
+    {
+      "optionKey": "hunter-trail",
+      "semanticFamily": "activity/forest/option/hunter-trail",
+      "label": "Hunter trail option",
+      "fallbackId": "activity/forest/route/default",
+      "finalPresentationId": null,
+      "finalEventId": null,
+      "lore": null
+    },
+    {
+      "optionKey": "old-boundary",
+      "semanticFamily": "activity/forest/option/old-boundary",
+      "label": "Old boundary option",
+      "fallbackId": "activity/forest/route/default",
+      "finalPresentationId": null,
+      "finalEventId": null,
+      "lore": null
+    },
+    {
+      "optionKey": "navigation",
+      "semanticFamily": "activity/forest/option/navigation",
+      "label": "Navigation option",
+      "fallbackId": "activity/forest/route/default",
+      "finalPresentationId": null,
+      "finalEventId": null,
+      "lore": null
+    },
+    {
+      "optionKey": "physical-obstacle",
+      "semanticFamily": "activity/forest/option/physical-obstacle",
+      "label": "Physical obstacle option",
+      "fallbackId": "activity/forest/route/default",
+      "finalPresentationId": null,
+      "finalEventId": null,
+      "lore": null
+    },
+    {
+      "optionKey": "interpretation-ritual-anomaly",
+      "semanticFamily": "activity/forest/option/interpretation-ritual-anomaly",
+      "label": "Interpretation / ritual anomaly option",
+      "fallbackId": "activity/forest/route/default",
+      "finalPresentationId": null,
+      "finalEventId": null,
+      "lore": null
+    }
+  ]
+}
