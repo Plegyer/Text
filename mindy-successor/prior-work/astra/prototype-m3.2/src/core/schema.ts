@@ -58,6 +58,7 @@ export type Condition =
   | {kind:'not';condition:Condition};
 
 const id = z.string().regex(/^[a-z][a-z0-9_.-]{1,79}$/);
+const rewardId = z.union([id,z.string().regex(/^hardWork:[a-z][a-z0-9_.-]{1,79}$/)]);
 const textId = z.string().min(1).max(120);
 const n = z.number().int().min(0).max(1_000_000);
 const signed = z.number().int().min(-1_000_000).max(1_000_000);
@@ -381,8 +382,8 @@ export const ordinaryHardWorkCareers=['lumber','satyr-maid','undead-farm','taver
 export type OrdinaryHardWorkCareer=typeof ordinaryHardWorkCareers[number];
 
 export const metaRewardSchema=z.discriminatedUnion('kind',[
-  z.object({kind:z.literal('unlock'),rewardId:id,unlock:id}).strict(),
-  z.object({kind:z.literal('hardWork'),rewardId:id,career:z.enum(ordinaryHardWorkCareers)}).strict()
+  z.object({kind:z.literal('unlock'),rewardId:rewardId,unlock:id}).strict(),
+  z.object({kind:z.literal('hardWork'),rewardId:rewardId,career:z.enum(ordinaryHardWorkCareers)}).strict()
 ]);
 export type MetaReward=z.infer<typeof metaRewardSchema>;
 
@@ -493,7 +494,7 @@ const runResultSchema=z.object({
   transactionId:id,
   completedAtDay:n.max(159),
   firstCompletion:z.boolean(),
-  appliedMetaRewardIds:z.array(id).max(32)
+  appliedMetaRewardIds:z.array(rewardId).max(32)
 }).strict();
 export const endingStateSchema=z.object({eligible:z.array(id),committed:id.nullable(),result:runResultSchema.nullable()}).strict();
 export const rngStateSchema=z.object({state:z.number().int().min(0).max(4294967295)}).strict();
