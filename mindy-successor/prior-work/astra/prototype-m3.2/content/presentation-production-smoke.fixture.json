@@ -1,0 +1,115 @@
+{
+  "version": 1,
+  "kind": "presentation-production-smoke-sequence",
+  "status": "shipped-product-smoke",
+  "policy": {
+    "semanticIdentityStable": true,
+    "missingMediaNonFatal": true,
+    "animationOffUsesStaticOrText": true,
+    "gameplayMutationAllowed": false
+  },
+  "steps": [
+    {
+      "order": 1,
+      "stepId": "town",
+      "presentationId": "location/town/default",
+      "identity": {
+        "kind": "location",
+        "locationId": "town"
+      },
+      "expectedStatic": {
+        "mediaId": "stage.town",
+        "assetPath": "assets/stage-town.svg"
+      },
+      "fallbackBehavior": "direct-static"
+    },
+    {
+      "order": 2,
+      "stepId": "lumber-shift",
+      "presentationId": "job/lumber/shift/spring/default",
+      "identity": {
+        "kind": "action",
+        "actionId": "lumber.shift",
+        "sceneId": "spring.default"
+      },
+      "expectedStatic": {
+        "mediaId": "stage.lumber.spring",
+        "assetPath": "assets/stage-lumber.svg"
+      },
+      "fallbackBehavior": "direct-static"
+    },
+    {
+      "order": 3,
+      "stepId": "career-event",
+      "presentationId": "job/lumber/event/lumber-career-first-shift/default",
+      "identity": {
+        "kind": "event",
+        "eventId": "lumber.career-first-shift",
+        "variantId": "default"
+      },
+      "expectedStatic": {
+        "mediaId": "stage.lumber",
+        "assetPath": "assets/stage-lumber.svg"
+      },
+      "fallbackBehavior": "semantic-fallback"
+    },
+    {
+      "order": 4,
+      "stepId": "school-lesson",
+      "presentationId": "school/arcana/lesson/default",
+      "identity": {
+        "kind": "course",
+        "courseId": "school.course.arcana"
+      },
+      "expectedStatic": {
+        "mediaId": "stage.town",
+        "assetPath": "assets/stage-town.svg"
+      },
+      "fallbackBehavior": "semantic-fallback"
+    },
+    {
+      "order": 5,
+      "stepId": "night",
+      "presentationId": "relationship/lumber-foreman/lumber-night-foreman-professional/default",
+      "identity": {
+        "kind": "event",
+        "eventId": "lumber-night.foreman-professional",
+        "variantId": "default"
+      },
+      "expectedStatic": {
+        "mediaId": "stage.town",
+        "assetPath": "assets/stage-town.svg"
+      },
+      "fallbackBehavior": "semantic-fallback"
+    },
+    {
+      "order": 6,
+      "stepId": "forest-activity",
+      "presentationId": "activity/forest/route/default",
+      "identity": {
+        "kind": "activity",
+        "activityId": "lumber.forest",
+        "phase": "route"
+      },
+      "expectedStatic": {
+        "mediaId": "stage.hunt",
+        "assetPath": "assets/stage-forest.svg"
+      },
+      "fallbackBehavior": "direct-static"
+    },
+    {
+      "order": 7,
+      "stepId": "ending",
+      "presentationId": "ending/lumber/hard-work",
+      "identity": {
+        "kind": "ending",
+        "endingId": "ending.lumber.hard-work"
+      },
+      "expectedStatic": {
+        "mediaId": "stage.town",
+        "assetPath": "assets/stage-town.svg"
+      },
+      "fallbackBehavior": "semantic-fallback"
+    }
+  ]
+}
