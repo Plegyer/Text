@@ -54,7 +54,7 @@ test('ordinary Lumber shift costs 1 Energy, increments its typed completed-shift
     assert.equal(source.run.progression.careers.lumber,undefined,c.season);
     for(const stat of stats){
       const delta=out.run.character.stats[stat]-before[stat];
-      assert.equal(delta,(c.effects as Record<string,number>)[stat]??0,`${c.season} ${stat}`);
+      assert.equal(delta,(c.effects as any)[stat]??0,`${c.season} ${stat}`);
     }
     assert.deepEqual(out.run.lastAction?.media,[c.media],c.season);
   }
