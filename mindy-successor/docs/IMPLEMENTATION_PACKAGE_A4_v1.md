@@ -2,7 +2,7 @@
 
 Дата: 2026-09-26.
 
-Статус: **IN IMPLEMENTATION**.
+Статус: **IMPLEMENTED / GREEN**.
 
 Base commit:
 `2e0b52e96725ba3b843f78585b60019bea28bdd9` (A3 merged green).
@@ -144,3 +144,43 @@ Out of scope:
 - RunResult/Meta exactly-once (A6);
 - production night NPC roster;
 - Secret Debt production content.
+
+
+## Implementation result — 2026-09-26
+
+Implemented on `a4-night-flow`.
+
+Delivered:
+- explicit persisted NightFlow phases;
+- target commands `endDay`, `chooseLodging`, `chooseNightChoice`;
+- legacy `sleep(payment)` routed through the same NightFlow for M3.2 UI compatibility;
+- data-driven lodging and voluntary night-choice definitions;
+- typed `housingTier` condition;
+- typed `nightPhase` and `nightChoiceCompleted` reaction facts/triggers;
+- forced night event policy with before/after lodging and after-choice intercepts;
+- suppression of lodging payment / voluntary menu;
+- exactly-once calendar advance;
+- next-day Energy/stat modifier finalization at StartDay;
+- save/reload after lodging payment without double charge;
+- persisted per-night handled-event IDs to prevent repeat interception loops;
+- NightFlow save validation and invalid-reference rejection.
+
+Synthetic acceptance proves:
+- forced before-lodging event can replace rent and voluntary menu;
+- paid normal/cheap lodging commits once;
+- street gives Grooming -1 and next-day Energy -1 exactly once;
+- night study gives immediate +2 stat and next-day Energy -1;
+- voluntary relationship night costs no current-day Energy;
+- post-lodging and post-choice scenes resume the same NightFlow;
+- probabilistic forced pending survives reload without reroll;
+- daytime actions are blocked while NightFlow is active;
+- legacy sleep compatibility remains green.
+
+Validation on GitHub Actions / Node 22:
+- typecheck pass;
+- catalog validation pass;
+- build pass;
+- **84/84 tests pass**;
+- full `npm run check` pass.
+
+Next package: **A5 Activity Envelope**.
