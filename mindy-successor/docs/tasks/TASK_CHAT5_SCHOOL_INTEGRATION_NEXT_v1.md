@@ -83,3 +83,5 @@ Do not use underscores inside presentation namespace segments in new manifests/t
 - Night tests must establish the normal precondition `story.arrived = true` before calling `endDay`; do not weaken NightFlow to accommodate an incomplete fixture.
 
 - Fixture catalogs that persist `story.arrived` across save/reload must also declare `story.arrived` in their `flags` list; do not make parseSave accept undeclared legacy flags.
+
+- NightFlow completion persists `lastAction.id = rest` and room/outside media; any isolated catalog used for post-Night save/reload tests must declare the referenced `rest` action and persisted media IDs such as `stage.room` rather than weakening parseSave validation.
