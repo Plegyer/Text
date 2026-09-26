@@ -197,3 +197,16 @@ Still-open numeric/content decisions are listed in `OPEN_QUESTIONS.md`. Test fix
 
 - `PARALLEL_WORK_PROTOCOL_v1.md` — role/branch/ownership rules.
 - `PARALLEL_WORK_BOARD_v1.md` — current worker branches, task packets and critical-path ownership.
+
+
+## Durable recovery / current handoff
+
+- `CURRENT_PROJECT_HANDOFF_v1.md`
+  - durable Lead recovery snapshot for context-loss/restart scenarios;
+  - records merged milestones, current Lead branch, active worker branches/task files, locked invariants, genuine OPEN blockers, CI evidence and recovery procedure;
+  - Git remains authoritative if this snapshot is stale.
+
+Recovery order after context loss:
+1. inspect current `main` and open PRs/branches;
+2. read `PROJECT_STATE.md`, `PARALLEL_WORK_BOARD_v1.md` and `CURRENT_PROJECT_HANDOFF_v1.md`;
+3. inspect the active task file inside each worker's actual branch before assigning/reassigning work.
