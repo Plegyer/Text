@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "id": "forest.route-completeness-negative.fixture",
+  "productionBaseline": {
+    "pr24Merge": "9aa0eaf964735e82b9b964bbdcaf5362c292868a",
+    "expectedFullPA16": false
+  },
+  "requiredRoutes": [
+    {
+      "id": "logging-road",
+      "statusOnMergedMain": "PRESENT"
+    },
+    {
+      "id": "hunter-trail",
+      "statusOnMergedMain": "MISSING"
+    },
+    {
+      "id": "old-boundary",
+      "statusOnMergedMain": "PRESENT"
+    }
+  ],
+  "requiredChallengeFamilies": [
+    {
+      "id": "navigation",
+      "statusOnMergedMain": "MISSING"
+    },
+    {
+      "id": "physical-obstacle",
+      "statusOnMergedMain": "MISSING"
+    },
+    {
+      "id": "interpretation-ritual-anomaly",
+      "statusOnMergedMain": "MISSING"
+    }
+  ],
+  "seasonalTopology": {
+    "required": true,
+    "statusOnMergedMain": "MISSING",
+    "requirement": "at least one route/challenge availability or Activity-resource difference by season"
+  },
+  "verdict": {
+    "fullPA16": false,
+    "reason": "hunter trail, three challenge families, and seasonal topology are not fully authored"
+  },
+  "lockedExistingContracts": {
+    "activityId": "lumber.forest",
+    "loggingRouteOptionId": "forest.route.logging-road",
+    "oldBoundaryRouteOptionId": "forest.route.old-boundary",
+    "oldBoundaryCapability": "enter_old_boundary",
+    "results": [
+      "lumber.forest.success",
+      "lumber.forest.escape",
+      "lumber.forest.failure"
+    ],
+    "a5": "activityResult"
+  },
+  "hardWorkIsolation": {
+    "forestCompletenessPrerequisiteAllowed": false,
+    "onlyCondition": {
+      "kind": "careerCounter",
+      "career": "lumber",
+      "counter": "completed_shifts",
+      "op": "gte",
+      "value": 50
+    },
+    "rewardId": "hardWork:lumber"
+  }
+}
