@@ -562,3 +562,105 @@ Consolidate Chat 2 items 1–29 into:
 Name exact files and recommend the minimal non-redundant integration subset.
 
 Continue items 25–30 sequentially without waiting for Lead review.
+
+
+## Queue item 31 — PR22 presentation delta audit
+
+Create NEW files only:
+- `docs/presentation-prep/PRESENTATION_PR22_DELTA_AUDIT_v1.md`
+- `prior-work/astra/prototype-m3.2/tests/presentation-pr22-delta-audit.test.ts`
+
+Review merged PR #22 presentation impact:
+- Forest entry no longer depends on token capability;
+- logging-road is a normal route;
+- old-boundary route is capability-gated;
+- legacy active Activity saves retain old advance/escape behavior;
+- new option-aware Activity saves may expose authored route controls.
+
+Classify which semantic slots already exist, which need new route/option presentation families, and which remain content-authoring OPEN.
+
+Do not edit shared presentation runtime/UI/catalog.
+
+## Queue item 32 — Forest route/challenge presentation family contract
+
+Create NEW files only:
+- `prior-work/astra/prototype-m3.2/content/presentation-forest-route-family.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/presentation-forest-route-family.test.ts`
+
+Define semantic presentation families for the locked Forest product dimensions:
+- logging road;
+- hunter trail;
+- old boundary;
+- navigation challenge;
+- physical obstacle;
+- interpretation/ritual anomaly;
+- success / escape / failure.
+
+Do not invent final event IDs/lore/assets. Define stable semantic families and fallback policy only.
+
+## Queue item 33 — PR22 option-state save presentation matrix
+
+Create NEW files only:
+- `prior-work/astra/prototype-m3.2/content/presentation-activity-option-save.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/presentation-activity-option-save.test.ts`
+
+Cover:
+- legacy optionModelVersion 0 active Activity;
+- new optionModelVersion 1 before route;
+- after logging-road route;
+- after old-boundary route;
+- after option use;
+- after reload;
+- success/escape result.
+
+Verify presentation identity is deterministic and no animation state enters save.
+
+## Queue item 34 — production media fallback release audit
+
+Create:
+- `docs/presentation-prep/PRESENTATION_PRODUCTION_FALLBACK_RELEASE_AUDIT_v1.md`
+- optional NEW test `prior-work/astra/prototype-m3.2/tests/presentation-production-fallback-release.test.ts`
+
+Audit currently shipped media fallback coverage after PR22 for:
+Lumber, School, Night, Forest route surface, endings.
+Separate:
+- current static-backed;
+- text-only safe;
+- future GIF only;
+- missing and blocking.
+
+Presentation gaps must not be mislabeled as gameplay blockers.
+
+## Queue item 35 — replacement bundle RC compatibility after new Activity routes
+
+Create NEW files only:
+- `prior-work/astra/prototype-m3.2/content/presentation-replacement-pr22-compat.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/presentation-replacement-pr22-compat.test.ts`
+
+Verify replacement bundles remain deterministic as new Forest route/challenge semantic slots are added:
+- existing overrides remain valid;
+- new slots do not remap old IDs;
+- unknown future slots reject/quarantine;
+- export ordering remains stable;
+- no gameplay state mutation.
+
+## Queue item 36 — presentation release gate v1
+
+Create:
+- `docs/presentation-prep/PRESENTATION_RELEASE_GATE_v1.md`
+
+Produce a final gate checklist for the presentation layer:
+- central stage;
+- semantic IDs;
+- fallback safety;
+- save/reload identity;
+- Activity option-state compatibility;
+- animation-off;
+- replacement import/export;
+- accessibility metadata;
+- current asset coverage;
+- future GIF backlog.
+
+Mark each gate PASS / OPEN_ASSET / OPEN_AUTHORING / NEEDS_LIVE_EVIDENCE.
+
+Continue items 31–36 sequentially without waiting for Lead review.
