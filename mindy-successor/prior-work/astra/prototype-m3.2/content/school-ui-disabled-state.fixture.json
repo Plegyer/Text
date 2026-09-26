@@ -1,0 +1,118 @@
+{
+  "formatVersion": 1,
+  "id": "school.ui-disabled-state.fixture.v1",
+  "courses": [
+    {
+      "courseId": "school.course.literacy_and_numbers",
+      "tuition": 300
+    },
+    {
+      "courseId": "school.course.arcana",
+      "tuition": 500
+    },
+    {
+      "courseId": "school.course.rhetoric_and_social",
+      "tuition": 300
+    },
+    {
+      "courseId": "school.course.etiquette_and_presentation",
+      "tuition": 400
+    },
+    {
+      "courseId": "school.course.field_craft",
+      "tuition": 400
+    },
+    {
+      "courseId": "school.course.physical_training",
+      "tuition": 400
+    },
+    {
+      "courseId": "school.course.arts_and_performance",
+      "tuition": 500
+    },
+    {
+      "courseId": "school.course.body_confidence",
+      "tuition": 400
+    }
+  ],
+  "stateCases": [
+    {
+      "id": "insufficient-money",
+      "arrived": true,
+      "moneyMode": "below-tuition",
+      "energy": 1,
+      "pendingScene": false,
+      "activeNight": false,
+      "activeActivity": false,
+      "enabled": false,
+      "reason": "insufficient-money"
+    },
+    {
+      "id": "insufficient-energy",
+      "arrived": true,
+      "moneyMode": "enough",
+      "energy": 0,
+      "pendingScene": false,
+      "activeNight": false,
+      "activeActivity": false,
+      "enabled": false,
+      "reason": "insufficient-energy"
+    },
+    {
+      "id": "not-arrived",
+      "arrived": false,
+      "moneyMode": "enough",
+      "energy": 1,
+      "pendingScene": false,
+      "activeNight": false,
+      "activeActivity": false,
+      "enabled": false,
+      "reason": "not-arrived"
+    },
+    {
+      "id": "pending-scene",
+      "arrived": true,
+      "moneyMode": "enough",
+      "energy": 1,
+      "pendingScene": true,
+      "activeNight": false,
+      "activeActivity": false,
+      "enabled": false,
+      "reason": "pending-scene"
+    },
+    {
+      "id": "active-night",
+      "arrived": true,
+      "moneyMode": "enough",
+      "energy": 1,
+      "pendingScene": false,
+      "activeNight": true,
+      "activeActivity": false,
+      "enabled": false,
+      "reason": "active-night"
+    },
+    {
+      "id": "active-activity",
+      "arrived": true,
+      "moneyMode": "enough",
+      "energy": 1,
+      "pendingScene": false,
+      "activeNight": false,
+      "activeActivity": true,
+      "enabled": false,
+      "reason": "active-activity"
+    },
+    {
+      "id": "enabled",
+      "arrived": true,
+      "moneyMode": "enough",
+      "energy": 1,
+      "pendingScene": false,
+      "activeNight": false,
+      "activeActivity": false,
+      "enabled": true,
+      "reason": null
+    }
+  ],
+  "noAdditionalPrerequisites": true
+}
