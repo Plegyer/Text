@@ -1,0 +1,497 @@
+{
+  "version": 1,
+  "kind": "presentation-rc-coverage-ledger",
+  "mainBaseline": "7acbce7f8bdf911ce8ab3ed1a4b3e5e0902cd798",
+  "policy": {
+    "uniqueSemanticSlots": true,
+    "schoolNightStudyUsesSharedLocationContext": true,
+    "presentationDoesNotUpgradeGameplayBlockers": true
+  },
+  "rows": [
+    {
+      "surface": "location",
+      "presentationId": "location/town/default",
+      "currentShippedFallback": {
+        "mediaIds": [
+          "stage.town"
+        ],
+        "assetPath": "assets/stage-town.svg"
+      },
+      "futureGifStatus": "none-planned",
+      "textFallback": "Город и общий центральный контекст.",
+      "paRelevance": [
+        "PA00",
+        "PA01",
+        "PA02",
+        "PA10",
+        "PA11",
+        "PA13",
+        "PA21",
+        "PA26"
+      ],
+      "blockerClass": "none",
+      "notes": [
+        "School Night study currently shares this central context; no dedicated semantic slot is shipped."
+      ]
+    },
+    {
+      "surface": "lumber-shift-spring",
+      "presentationId": "job/lumber/shift/spring/default",
+      "currentShippedFallback": {
+        "mediaIds": [
+          "job.lumber.shift.spring.default"
+        ],
+        "assetPath": "assets/stage-lumber.svg"
+      },
+      "futureGifStatus": "planned-optional",
+      "textFallback": "Lumber spring shift.",
+      "paRelevance": [
+        "PA03",
+        "PA04"
+      ],
+      "blockerClass": "none",
+      "notes": []
+    },
+    {
+      "surface": "lumber-shift-summer",
+      "presentationId": "job/lumber/shift/summer/default",
+      "currentShippedFallback": {
+        "mediaIds": [
+          "job.lumber.shift.summer.default"
+        ],
+        "assetPath": "assets/stage-lumber.svg"
+      },
+      "futureGifStatus": "planned-optional",
+      "textFallback": "Lumber summer shift.",
+      "paRelevance": [
+        "PA03",
+        "PA04"
+      ],
+      "blockerClass": "none",
+      "notes": []
+    },
+    {
+      "surface": "lumber-shift-autumn",
+      "presentationId": "job/lumber/shift/autumn/default",
+      "currentShippedFallback": {
+        "mediaIds": [
+          "job.lumber.shift.autumn.default"
+        ],
+        "assetPath": "assets/stage-lumber.svg"
+      },
+      "futureGifStatus": "planned-optional",
+      "textFallback": "Lumber autumn shift.",
+      "paRelevance": [
+        "PA03",
+        "PA04"
+      ],
+      "blockerClass": "none",
+      "notes": []
+    },
+    {
+      "surface": "lumber-shift-winter",
+      "presentationId": "job/lumber/shift/winter/default",
+      "currentShippedFallback": {
+        "mediaIds": [
+          "job.lumber.shift.winter.default"
+        ],
+        "assetPath": "assets/stage-lumber.svg"
+      },
+      "futureGifStatus": "planned-optional",
+      "textFallback": "Lumber winter shift.",
+      "paRelevance": [
+        "PA03",
+        "PA04"
+      ],
+      "blockerClass": "none",
+      "notes": []
+    },
+    {
+      "surface": "lumber-result",
+      "presentationId": "job/lumber/result/default",
+      "currentShippedFallback": {
+        "mediaIds": [
+          "job.lumber.shift.spring.default",
+          "job.lumber.shift.summer.default",
+          "job.lumber.shift.autumn.default",
+          "job.lumber.shift.winter.default"
+        ],
+        "assetPath": "assets/stage-lumber.svg"
+      },
+      "futureGifStatus": "none-planned",
+      "textFallback": "Lumber shift result.",
+      "paRelevance": [
+        "PA03",
+        "PA04",
+        "PA22"
+      ],
+      "blockerClass": "none",
+      "notes": []
+    },
+    {
+      "surface": "lumber-career-event",
+      "presentationId": "job/lumber/event/lumber-career-first-shift/default",
+      "currentShippedFallback": {
+        "mediaIds": [
+          "job.lumber.event.accepted-hand"
+        ],
+        "assetPath": "assets/stage-lumber.svg"
+      },
+      "futureGifStatus": "planned-optional",
+      "textFallback": "First Lumber shift career milestone.",
+      "paRelevance": [
+        "PA05"
+      ],
+      "blockerClass": "none",
+      "notes": []
+    },
+    {
+      "surface": "lumber-school-continuation-event",
+      "presentationId": "job/lumber/event/lumber-cross-school-management-return/default",
+      "currentShippedFallback": {
+        "mediaIds": [
+          "stage.town"
+        ],
+        "assetPath": "assets/stage-town.svg"
+      },
+      "futureGifStatus": "none-planned",
+      "textFallback": "School result reaches Lumber.",
+      "paRelevance": [
+        "PA08",
+        "PA09"
+      ],
+      "blockerClass": "gameplay-authoring",
+      "notes": [
+        "Event exists, but the required School management/accounting public result is not naturally authored."
+      ]
+    },
+    {
+      "surface": "lumber-forest-continuation-event",
+      "presentationId": "job/lumber/event/lumber-cross-activity-forest-return/default",
+      "currentShippedFallback": {
+        "mediaIds": [
+          "job.lumber.event.forest-return"
+        ],
+        "assetPath": "assets/stage-forest.svg"
+      },
+      "futureGifStatus": "none-planned",
+      "textFallback": "Forest result reaches Lumber.",
+      "paRelevance": [
+        "PA20"
+      ],
+      "blockerClass": "gameplay-authoring",
+      "notes": [
+        "Natural path remains blocked by Activity capability/depth authoring."
+      ]
+    },
+    {
+      "surface": "foreman-relationship",
+      "presentationId": "relationship/lumber-foreman/lumber-foreman-notice/default",
+      "currentShippedFallback": {
+        "mediaIds": [
+          "relationship.lumber.foreman.professional"
+        ],
+        "assetPath": "assets/stage-lumber.svg"
+      },
+      "futureGifStatus": "planned-optional",
+      "textFallback": "Professional Foreman relationship opening.",
+      "paRelevance": [
+        "PA06"
+      ],
+      "blockerClass": "none",
+      "notes": []
+    },
+    {
+      "surface": "foreman-night",
+      "presentationId": "relationship/lumber-foreman/lumber-night-foreman-professional/default",
+      "currentShippedFallback": {
+        "mediaIds": [
+          "relationship.lumber.foreman.night.professional"
+        ],
+        "assetPath": "assets/stage-lumber.svg"
+      },
+      "futureGifStatus": "planned-optional",
+      "textFallback": "Professional Foreman Night follow-up.",
+      "paRelevance": [
+        "PA12"
+      ],
+      "blockerClass": "none",
+      "notes": []
+    },
+    {
+      "surface": "school-paid-lesson:school.course.literacy_and_numbers",
+      "presentationId": "school/literacy-and-numbers/lesson/default",
+      "currentShippedFallback": {
+        "mediaIds": [
+          "stage.school"
+        ],
+        "assetPath": "assets/stage-school.svg"
+      },
+      "futureGifStatus": "none-planned",
+      "textFallback": "School paid lesson: literacy-and-numbers.",
+      "paRelevance": [
+        "PA07"
+      ],
+      "blockerClass": "none",
+      "notes": []
+    },
+    {
+      "surface": "school-paid-lesson:school.course.arcana",
+      "presentationId": "school/arcana/lesson/default",
+      "currentShippedFallback": {
+        "mediaIds": [
+          "stage.school"
+        ],
+        "assetPath": "assets/stage-school.svg"
+      },
+      "futureGifStatus": "none-planned",
+      "textFallback": "School paid lesson: arcana.",
+      "paRelevance": [
+        "PA07"
+      ],
+      "blockerClass": "none",
+      "notes": []
+    },
+    {
+      "surface": "school-paid-lesson:school.course.rhetoric_and_social",
+      "presentationId": "school/rhetoric-and-social/lesson/default",
+      "currentShippedFallback": {
+        "mediaIds": [
+          "stage.school"
+        ],
+        "assetPath": "assets/stage-school.svg"
+      },
+      "futureGifStatus": "none-planned",
+      "textFallback": "School paid lesson: rhetoric-and-social.",
+      "paRelevance": [
+        "PA07"
+      ],
+      "blockerClass": "none",
+      "notes": []
+    },
+    {
+      "surface": "school-paid-lesson:school.course.etiquette_and_presentation",
+      "presentationId": "school/etiquette-and-presentation/lesson/default",
+      "currentShippedFallback": {
+        "mediaIds": [
+          "stage.school"
+        ],
+        "assetPath": "assets/stage-school.svg"
+      },
+      "futureGifStatus": "none-planned",
+      "textFallback": "School paid lesson: etiquette-and-presentation.",
+      "paRelevance": [
+        "PA07"
+      ],
+      "blockerClass": "none",
+      "notes": []
+    },
+    {
+      "surface": "school-paid-lesson:school.course.field_craft",
+      "presentationId": "school/field-craft/lesson/default",
+      "currentShippedFallback": {
+        "mediaIds": [
+          "stage.school"
+        ],
+        "assetPath": "assets/stage-school.svg"
+      },
+      "futureGifStatus": "none-planned",
+      "textFallback": "School paid lesson: field-craft.",
+      "paRelevance": [
+        "PA07"
+      ],
+      "blockerClass": "none",
+      "notes": []
+    },
+    {
+      "surface": "school-paid-lesson:school.course.physical_training",
+      "presentationId": "school/physical-training/lesson/default",
+      "currentShippedFallback": {
+        "mediaIds": [
+          "stage.school"
+        ],
+        "assetPath": "assets/stage-school.svg"
+      },
+      "futureGifStatus": "none-planned",
+      "textFallback": "School paid lesson: physical-training.",
+      "paRelevance": [
+        "PA07"
+      ],
+      "blockerClass": "none",
+      "notes": []
+    },
+    {
+      "surface": "school-paid-lesson:school.course.arts_and_performance",
+      "presentationId": "school/arts-and-performance/lesson/default",
+      "currentShippedFallback": {
+        "mediaIds": [
+          "stage.school"
+        ],
+        "assetPath": "assets/stage-school.svg"
+      },
+      "futureGifStatus": "none-planned",
+      "textFallback": "School paid lesson: arts-and-performance.",
+      "paRelevance": [
+        "PA07"
+      ],
+      "blockerClass": "none",
+      "notes": []
+    },
+    {
+      "surface": "school-paid-lesson:school.course.body_confidence",
+      "presentationId": "school/body-confidence/lesson/default",
+      "currentShippedFallback": {
+        "mediaIds": [
+          "stage.school"
+        ],
+        "assetPath": "assets/stage-school.svg"
+      },
+      "futureGifStatus": "none-planned",
+      "textFallback": "School paid lesson: body-confidence.",
+      "paRelevance": [
+        "PA07"
+      ],
+      "blockerClass": "none",
+      "notes": []
+    },
+    {
+      "surface": "forest-route",
+      "presentationId": "activity/forest/route/default",
+      "currentShippedFallback": {
+        "mediaIds": [
+          "stage.hunt"
+        ],
+        "assetPath": "assets/stage-forest.svg"
+      },
+      "futureGifStatus": "none-planned",
+      "textFallback": "Forest Activity route.",
+      "paRelevance": [
+        "PA14",
+        "PA15",
+        "PA16",
+        "PA17"
+      ],
+      "blockerClass": "gameplay-authoring",
+      "notes": [
+        "Presentation is ready; natural capability/deeper route authoring remains open."
+      ]
+    },
+    {
+      "surface": "forest-result-success",
+      "presentationId": "activity/forest/return/success",
+      "currentShippedFallback": {
+        "mediaIds": [
+          "stage.hunt"
+        ],
+        "assetPath": "assets/stage-forest.svg"
+      },
+      "futureGifStatus": "none-planned",
+      "textFallback": "Forest Activity success result.",
+      "paRelevance": [
+        "PA18"
+      ],
+      "blockerClass": "gameplay-authoring",
+      "notes": [
+        "Presentation slot is shipped; natural full-depth Activity path remains open."
+      ]
+    },
+    {
+      "surface": "forest-result-escape",
+      "presentationId": "activity/forest/return/escape",
+      "currentShippedFallback": {
+        "mediaIds": [
+          "stage.hunt"
+        ],
+        "assetPath": "assets/stage-forest.svg"
+      },
+      "futureGifStatus": "none-planned",
+      "textFallback": "Forest Activity escape result.",
+      "paRelevance": [
+        "PA19"
+      ],
+      "blockerClass": "gameplay-authoring",
+      "notes": [
+        "Presentation slot is shipped; natural full-depth Activity path remains open."
+      ]
+    },
+    {
+      "surface": "forest-result-failure",
+      "presentationId": "activity/forest/return/failure",
+      "currentShippedFallback": {
+        "mediaIds": [
+          "stage.hunt"
+        ],
+        "assetPath": "assets/stage-forest.svg"
+      },
+      "futureGifStatus": "none-planned",
+      "textFallback": "Forest Activity failure result.",
+      "paRelevance": [],
+      "blockerClass": "gameplay-authoring",
+      "notes": [
+        "Presentation slot is shipped; natural full-depth Activity path remains open."
+      ]
+    },
+    {
+      "surface": "ending-lumber-hard-work",
+      "presentationId": "ending/lumber/hard-work",
+      "currentShippedFallback": {
+        "mediaIds": [
+          "stage.town"
+        ],
+        "assetPath": "assets/stage-town.svg"
+      },
+      "futureGifStatus": "none-planned",
+      "textFallback": "Lumber ending: hard-work.",
+      "paRelevance": [
+        "PA21",
+        "PA23",
+        "PA24",
+        "PA25"
+      ],
+      "blockerClass": "none",
+      "notes": []
+    },
+    {
+      "surface": "ending-lumber-forewoman",
+      "presentationId": "ending/lumber/forewoman",
+      "currentShippedFallback": {
+        "mediaIds": [
+          "stage.town"
+        ],
+        "assetPath": "assets/stage-town.svg"
+      },
+      "futureGifStatus": "none-planned",
+      "textFallback": "Lumber ending: forewoman.",
+      "paRelevance": [
+        "PA21",
+        "PA23",
+        "PA24"
+      ],
+      "blockerClass": "gameplay-authoring",
+      "notes": [
+        "Ending presentation exists; natural eligibility depends on still-open gameplay authoring."
+      ]
+    },
+    {
+      "surface": "ending-lumber-forest",
+      "presentationId": "ending/lumber/forest",
+      "currentShippedFallback": {
+        "mediaIds": [
+          "stage.town"
+        ],
+        "assetPath": "assets/stage-town.svg"
+      },
+      "futureGifStatus": "none-planned",
+      "textFallback": "Lumber ending: forest.",
+      "paRelevance": [
+        "PA21",
+        "PA23",
+        "PA24"
+      ],
+      "blockerClass": "gameplay-authoring",
+      "notes": [
+        "Ending presentation exists; natural eligibility depends on still-open gameplay authoring."
+      ]
+    }
+  ]
+}
