@@ -14,7 +14,7 @@ Branch:
 
 Implement the target Activity boundary without choosing the final expedition/JRPG replacement.
 
-A5 uses one synthetic adapter `counter_v1` only to prove:
+A5 uses one synthetic adapter `counter.v1` only to prove:
 - daily Energy is charged once on entry;
 - internal Activity resources are separate;
 - Activity state survives save/reload;
@@ -35,7 +35,7 @@ Definitions may declare:
 - adapter config;
 - named result definitions.
 
-A5 supports `counter_v1` adapter version 1 with `same_day` time policy and resumable saves.
+A5 supports `counter.v1` adapter version 1 with `same_day` time policy and resumable saves.
 
 Its config:
 - startEndurance;
@@ -69,7 +69,7 @@ The schema stores a generic envelope; `parseSave` validates the adapter-specific
 - `enterActivity(id)`;
 - `activityAction(id)`.
 
-For `counter_v1`:
+For `counter.v1`:
 - `advance` spends one internal Endurance and increases progress;
 - reaching objective completes with success result;
 - exhaustion before objective completes with failure result;
