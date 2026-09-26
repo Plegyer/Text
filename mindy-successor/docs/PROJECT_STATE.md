@@ -535,3 +535,18 @@
 - Legacy M3.2 generic metric/flag leaves remain temporary compatibility only.
 - GitHub Actions full `npm run check` green: **58/58 tests**.
 - Next engineering package: **A3 Event Resolver**.
+
+
+## A3 code milestone — deterministic Event Resolver
+
+- Implemented on `a3-event-resolver`.
+- Legacy action triggers and target typed reaction triggers now use the same resolver.
+- Reaction facts cover action/choice/stat/resource/Energy/calendar/career/quest/relationship/world/ending eligibility boundaries.
+- Resolver priority classes, deterministic tie-breaking, persisted chance attempts and pending snapshots are implemented.
+- Optional offers do not block ordinary actions.
+- Latched events survive later condition loss; scheduled instances expire deterministically.
+- Choice resolution immediately reruns resolver, enabling free reactive career/relationship/quest dialogue chains.
+- Synthetic proof: School stat increase -> career event -> career transition + QuestFact -> immediate second event, no extra Energy action.
+- Cascade cap = 16; errors leave caller Save unchanged.
+- GitHub Actions full `npm run check` green: **72/72 tests**.
+- Next engineering package: **A4 Night Flow**.
