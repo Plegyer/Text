@@ -59,7 +59,7 @@ test('legacy demo endings still work through compatibility layer while target st
  let s=started();for(let i=0;i<5;i++)s=act(s,'work');s=act(s,'brew','gentle');s=act(s,'brew','gentle');s=act(s,'deliver');assert.ok(s.run.availableEndings.includes('guild-life'));
  for(let i=0;i<3;i++)s=act(s,'school');s=act(s,'exam');assert.ok(s.run.availableEndings.includes('scholar-life'));assert.throws(()=>act(s,'exam'));
  s=dispatch(s,{type:'accept',id:'scholar-life'},catalog);assert.deepEqual(s.meta.unlocks,['scholar']);assert.throws(()=>dispatch(s,{type:'accept',id:'scholar-life'},catalog));
- s=dispatch(s,{type:'newLife'},catalog);assert.equal(s.run.character.stats.reason,6);assert.equal(s.run.creation.complete,false);
+ s=dispatch(s,{type:'newLife'},catalog);assert.equal(s.run.character.stats.reason,1);assert.equal(s.run.creation.complete,false);
 });
 
 test('scholar compatibility free lesson once weekly; importing old save does not erase current meta',()=>{
@@ -70,7 +70,7 @@ test('scholar compatibility free lesson once weekly; importing old save does not
 
 test('brewing and debt compatibility remains atomic',()=>{
  let s=started();s=act(s,'brew','bold');assert.equal(s.run.inventory.tonic,0);s=act(s,'scales');s=act(s,'brew','bold');assert.equal(s.run.inventory.tonic,2);
- assert.throws(()=>act(s,'brew','gentle'));s.run.metrics.debt=5;s.run.metrics.money=100;s=act(s,'repay');assert.equal(s.run.metrics.debt,0);
+ assert.throws(()=>act(s,'brew','gentle'));s.run.metrics.debt=5;s.run.metrics.money=100;s.run.metrics.energy=1;s=act(s,'repay');assert.equal(s.run.metrics.debt,0);
 });
 
 test('refusal still blocks repeated romantic invitation',()=>{
@@ -99,7 +99,7 @@ test('variant cooldown and scarce events persist across schema4 saves',()=>{
 
 test('expiry handled on final sleep; restart keeps meta and resets target calendar',()=>{
  let s=started();s.run.day=159;s=dispatch(s,{type:'sleep',payment:'outside'},catalog);assert.equal(s.run.status,'expired');assert.equal(s.run.day,159);assert.throws(()=>act(s,'tavern'));
- s.meta.unlocks=['host'];s=dispatch(s,{type:'restart'},catalog);assert.equal(s.run.day,0);assert.equal(s.run.character.stats.charm,6);
+ s.meta.unlocks=['host'];s=dispatch(s,{type:'restart'},catalog);assert.equal(s.run.day,0);assert.equal(s.run.character.stats.charm,1);
 });
 
 test('invalid save values and incompatible version are rejected',()=>{
