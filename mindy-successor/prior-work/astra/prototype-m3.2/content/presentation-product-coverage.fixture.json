@@ -1,0 +1,133 @@
+{
+  "version": 1,
+  "kind": "presentation-product-coverage",
+  "status": "product-coverage-audit",
+  "registrySource": "content/presentation-target-registry.fixture.json",
+  "policy": {
+    "missingRegistryEntry": "report-missing-presentation-only-non-fatal",
+    "gameplayIds": "preserve-exactly",
+    "mechanicsDataAllowed": false
+  },
+  "entries": [
+    {
+      "area": "lumber-shift",
+      "gameplayId": "lumber.shift",
+      "presentationId": "job/lumber/shift/spring/default",
+      "registryCoverage": "present"
+    },
+    {
+      "area": "lumber-shift",
+      "gameplayId": "lumber.shift",
+      "presentationId": "job/lumber/shift/summer/default",
+      "registryCoverage": "present"
+    },
+    {
+      "area": "lumber-shift",
+      "gameplayId": "lumber.shift",
+      "presentationId": "job/lumber/shift/autumn/default",
+      "registryCoverage": "present"
+    },
+    {
+      "area": "lumber-shift",
+      "gameplayId": "lumber.shift",
+      "presentationId": "job/lumber/shift/winter/default",
+      "registryCoverage": "present"
+    },
+    {
+      "area": "lumber-result",
+      "gameplayId": "lumber.shift",
+      "presentationId": "job/lumber/result/default",
+      "registryCoverage": "present"
+    },
+    {
+      "area": "lumber-milestone",
+      "gameplayId": "lumber.career-first-shift",
+      "presentationId": "job/lumber/event/lumber-career-first-shift/default",
+      "registryCoverage": "missing"
+    },
+    {
+      "area": "foreman-relationship",
+      "gameplayId": "lumber.foreman-notice",
+      "presentationId": "relationship/lumber-foreman/lumber-foreman-notice/default",
+      "registryCoverage": "missing"
+    },
+    {
+      "area": "foreman-night",
+      "gameplayId": "lumber-night.foreman-professional",
+      "presentationId": "relationship/lumber-foreman/lumber-night-foreman-professional/default",
+      "registryCoverage": "missing"
+    },
+    {
+      "area": "forest-activity-route",
+      "gameplayId": "lumber.forest",
+      "presentationId": "activity/forest/route/default",
+      "registryCoverage": "present"
+    },
+    {
+      "area": "forest-activity-result",
+      "gameplayId": "lumber.forest.success",
+      "presentationId": "activity/forest/return/success",
+      "registryCoverage": "present"
+    },
+    {
+      "area": "school-lesson",
+      "gameplayId": "school.course.literacy_and_numbers",
+      "presentationId": "school/literacy-and-numbers/lesson/default",
+      "registryCoverage": "missing"
+    },
+    {
+      "area": "school-lesson",
+      "gameplayId": "school.course.arcana",
+      "presentationId": "school/arcana/lesson/default",
+      "registryCoverage": "missing"
+    },
+    {
+      "area": "school-lesson",
+      "gameplayId": "school.course.rhetoric_and_social",
+      "presentationId": "school/rhetoric-and-social/lesson/default",
+      "registryCoverage": "missing"
+    },
+    {
+      "area": "school-lesson",
+      "gameplayId": "school.course.etiquette_and_presentation",
+      "presentationId": "school/etiquette-and-presentation/lesson/default",
+      "registryCoverage": "missing"
+    },
+    {
+      "area": "school-lesson",
+      "gameplayId": "school.course.field_craft",
+      "presentationId": "school/field-craft/lesson/default",
+      "registryCoverage": "present"
+    },
+    {
+      "area": "school-lesson",
+      "gameplayId": "school.course.physical_training",
+      "presentationId": "school/physical-training/lesson/default",
+      "registryCoverage": "missing"
+    },
+    {
+      "area": "school-lesson",
+      "gameplayId": "school.course.arts_and_performance",
+      "presentationId": "school/arts-and-performance/lesson/default",
+      "registryCoverage": "missing"
+    },
+    {
+      "area": "school-lesson",
+      "gameplayId": "school.course.body_confidence",
+      "presentationId": "school/body-confidence/lesson/default",
+      "registryCoverage": "missing"
+    },
+    {
+      "area": "lumber-ending",
+      "gameplayId": "ending.lumber.hard-work",
+      "presentationId": "ending/lumber/hard-work",
+      "registryCoverage": "present"
+    },
+    {
+      "area": "lumber-ending",
+      "gameplayId": "ending.lumber.forewoman",
+      "presentationId": "ending/lumber/forewoman",
+      "registryCoverage": "missing"
+    }
+  ]
+}
