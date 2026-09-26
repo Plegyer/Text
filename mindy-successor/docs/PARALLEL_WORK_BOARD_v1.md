@@ -3,7 +3,7 @@
 Status: LIVE COORDINATION BOARD.
 
 Current main baseline:
-`e6c32903516d1ba40b9a3ffbf955d5f04783ac25`.
+`011572ef1335deda5ac33120c3a7ea7f9849dbbf`.
 
 ## Coordination rule — no worker idle
 
@@ -235,3 +235,32 @@ Hard Work remains fully locked and is not a blocker:
 - Chat 5: `chat5/school-pa-gate-next`, items 13–18 queued after completion of 1–12.
 
 Workers continue sequentially without waiting for Lead review.
+
+
+## Product Acceptance closure merged — PR #22
+
+Main merge:
+`011572ef1335deda5ac33120c3a7ea7f9849dbbf`
+
+Evidence:
+- generic inventory-backed item capability runtime shipped;
+- capability-aware Activity options/routes shipped;
+- legacy active Activity behavioral compatibility preserved;
+- Forest logging-road direct path shipped;
+- Old Boundary route gated by real `old_boundary_token -> enter_old_boundary`;
+- no acquisition or consume policy fabricated;
+- merge-ref: typecheck PASS, validate PASS, build PASS, **200/200 tests PASS**.
+
+Remaining authoring/depth blockers:
+1. Old Boundary Token acquisition source + retain/consume policy;
+2. School management/accounting public result;
+3. hunter-trail and full 3-route / 3-challenge / season Forest depth.
+
+## Current worker queues after PR #22
+
+- Chat 2 — `chat2/presentation-replacement-next`: items 1–30 complete; **items 31–36 active**.
+- Chat 3 — `chat3/lumber-production-proof-next`: items 1–24 complete; **items 25–30 active**.
+- Chat 4 — `chat4/activation-ci-gate-next`: items 1–24 complete; **items 25–30 active**.
+- Chat 5 — `chat5/school-pa-gate-next`: items 1–24 complete; **items 25–30 active**.
+
+All workers continue sequentially without waiting for Lead review.
