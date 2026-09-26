@@ -123,3 +123,53 @@ For each dependency state what is already executable and what must not be invent
 Hard Work is NOT an open dependency and must remain ONLY `completed_shifts >= 50`.
 
 Continue sequentially through items 3–6 without waiting for Lead review.
+
+
+## Queue item 7 — Lumber production UI contract fixture
+
+Create NEW files:
+- `prior-work/astra/prototype-m3.2/content/lumber-production-ui-contract.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/lumber-production-ui-contract.test.ts`
+
+Define exact UI-facing expectations for target `lumber.shift`, Forest Activity entry/actions, Foreman Night visibility and ending availability. No shared UI edits.
+
+## Queue item 8 — Lumber ending identity matrix
+
+Create NEW files:
+- `prior-work/astra/prototype-m3.2/content/lumber-ending-identity.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/lumber-ending-identity.test.ts`
+
+Cross-check Hard Work / Forewoman / Forest ending IDs, conditions, semantic presentation IDs and Meta rewards. Hard Work must remain the only ending here granting exact `hardWork:lumber`.
+
+## Queue item 9 — Foreman professional Night exhaustive matrix
+
+Create NEW files:
+- `prior-work/astra/prototype-m3.2/content/lumber-foreman-night-matrix.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/lumber-foreman-night-matrix.test.ts`
+
+Prove visibility only on the professional route, zero daytime Energy, one Night slot, lodging payment exactly once, reload stability, and no romance prerequisite.
+
+## Queue item 10 — Lumber static-media production parity
+
+Create NEW files:
+- `prior-work/astra/prototype-m3.2/content/lumber-production-media-parity.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/lumber-production-media-parity.test.ts`
+
+Compare approved target pack media IDs with shipped static fallback assets and semantic slots. Missing future GIFs are non-fatal; no missing path may be labeled shipped.
+
+## Queue item 11 — Lumber final PA row mapping
+
+Create:
+- `docs/lumber-prep/LUMBER_PRODUCT_ACCEPTANCE_ROW_MAP_v1.md`
+- optional NEW test `prior-work/astra/prototype-m3.2/tests/lumber-pa-row-map.test.ts`
+
+Map every relevant PA00–PA26 row to exact Lumber IDs, commands, reaction facts, reload checkpoints and remaining OPEN dependencies.
+
+## Queue item 12 — Lumber release-readiness checklist
+
+Create:
+- `docs/lumber-prep/LUMBER_RELEASE_READINESS_v1.md`
+
+Summarize executable/shipped/blocked status for Work, milestone, Foreman, Night, Forest, Hard Work and complex endings. Explicitly separate OPEN item-capability / School-public-fact authoring from already-ready Hard Work.
+
+Continue items 7–12 sequentially without waiting for Lead review.
