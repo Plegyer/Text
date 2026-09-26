@@ -1,0 +1,215 @@
+{
+  "schemaVersion": 1,
+  "id": "old-boundary-token.decision-ready.fixture",
+  "status": "HUMAN_DECISION_REQUIRED",
+  "shippedFacts": {
+    "itemId": "old_boundary_token",
+    "capabilityId": "enter_old_boundary",
+    "capabilityDerivedFromInventory": true,
+    "forestEntryRequiresToken": false,
+    "oldBoundaryRouteRequiresCapability": true
+  },
+  "decisions": [
+    {
+      "id": "acquisition-source",
+      "acceptableAnswerTypes": [
+        "tavern-old-owner",
+        "relationship-source",
+        "hunter-source",
+        "hidden-city-event"
+      ],
+      "downstreamSeams": [
+        "content source",
+        "addItem old_boundary_token",
+        "inventory presentation",
+        "event history",
+        "save/reload"
+      ],
+      "paRows": [
+        "PA09",
+        "PA14",
+        "PA17"
+      ],
+      "migrationSave": [
+        "exactly-once acquisition",
+        "multi-source duplicate policy explicit"
+      ],
+      "selected": null
+    },
+    {
+      "id": "timing-requirements",
+      "acceptableAnswerTypes": [
+        "none",
+        "public-fact",
+        "relationship-stage",
+        "calendar",
+        "clue",
+        "accepted-composition"
+      ],
+      "downstreamSeams": [
+        "conditions",
+        "resolver timing",
+        "UI visibility",
+        "public/calendar/relationship reads"
+      ],
+      "paRows": [
+        "PA09",
+        "PA14",
+        "PA17",
+        "PA16-conditional"
+      ],
+      "migrationSave": [
+        "deterministic eligibility from persisted state"
+      ],
+      "selected": null
+    },
+    {
+      "id": "retain-consume",
+      "acceptableAnswerTypes": [
+        "retained",
+        "consume-on-route-use",
+        "turn-in-later"
+      ],
+      "downstreamSeams": [
+        "item-use transaction",
+        "optional removeItem",
+        "capability recompute",
+        "route availability"
+      ],
+      "paRows": [
+        "PA14",
+        "PA15",
+        "PA17"
+      ],
+      "migrationSave": [
+        "no double consume",
+        "consumed item cannot reappear"
+      ],
+      "selected": null
+    },
+    {
+      "id": "repeatability",
+      "acceptableAnswerTypes": [
+        "reusable-while-owned",
+        "one-shot-source-reusable-item",
+        "consumed-reacquirable",
+        "consumed-then-explicit-permanent-access"
+      ],
+      "downstreamSeams": [
+        "event history",
+        "inventory",
+        "optional permanent access",
+        "later expedition availability"
+      ],
+      "paRows": [
+        "PA14",
+        "PA15",
+        "PA17"
+      ],
+      "migrationSave": [
+        "persist source/use/access state"
+      ],
+      "selected": null
+    },
+    {
+      "id": "inventory-visibility",
+      "acceptableAnswerTypes": [
+        "item-label-plus-capability-hint",
+        "item-detail-help",
+        "route-requirement-hint"
+      ],
+      "downstreamSeams": [
+        "inventory UI",
+        "item label/help",
+        "route presentation"
+      ],
+      "paRows": [
+        "PA09",
+        "PA17"
+      ],
+      "migrationSave": [
+        "display-only changes require no state migration",
+        "ownership must derive from inventory"
+      ],
+      "selected": null
+    },
+    {
+      "id": "capability-removal",
+      "acceptableAnswerTypes": [
+        "never-remove",
+        "remove-on-use",
+        "remove-later",
+        "explicit-permanent-access-after-removal"
+      ],
+      "downstreamSeams": [
+        "optional removeItem",
+        "exactly-once removal",
+        "availableActivityActions",
+        "optional permanent access"
+      ],
+      "paRows": [
+        "PA14",
+        "PA15",
+        "PA17"
+      ],
+      "migrationSave": [
+        "removed token must stay removed",
+        "permanent-access transition explicit if chosen"
+      ],
+      "selected": null
+    },
+    {
+      "id": "route-lock-presentation",
+      "acceptableAnswerTypes": [
+        "hidden-until-owned",
+        "disabled-with-requirement-hint"
+      ],
+      "downstreamSeams": [
+        "Activity UI",
+        "locked option projection"
+      ],
+      "paRows": [
+        "PA14",
+        "PA17"
+      ],
+      "migrationSave": [
+        "UI-only deterministic projection"
+      ],
+      "selected": null
+    },
+    {
+      "id": "other-capability-interaction",
+      "acceptableAnswerTypes": [
+        "none",
+        "explicit-and-or-composition",
+        "route-specific-secondary-option"
+      ],
+      "downstreamSeams": [
+        "Activity option conditions",
+        "challenge authoring",
+        "public facts",
+        "capability combinations"
+      ],
+      "paRows": [
+        "PA16",
+        "PA17",
+        "PA18-conditional"
+      ],
+      "migrationSave": [
+        "condition inputs persisted authoritatively"
+      ],
+      "selected": null
+    }
+  ],
+  "hardWorkIsolation": {
+    "tokenDecisionMayChangeHardWork": false,
+    "onlyCondition": {
+      "kind": "careerCounter",
+      "career": "lumber",
+      "counter": "completed_shifts",
+      "op": "gte",
+      "value": 50
+    },
+    "rewardId": "hardWork:lumber"
+  }
+}
