@@ -22,7 +22,8 @@ export type Condition =
   // Target v2 leaves.
   | {kind:'stat';stat:Stat;op:CompareOp;value:number}
   | {kind:'resource';resource:ResourceId;op:CompareOp;value:number}
-  | {kind:'itemCount';id:typeof items[number];op:CompareOp;count:number}
+  | {kind:'itemCount';id:string;op:CompareOp;count:number}
+  | {kind:'itemCapability';capability:string;present:boolean}
   | {kind:'itemCapability';capability:string;present:boolean}
   | {kind:'calendarYear';op:CompareOp;value:number}
   | {kind:'calendarSeason';value:typeof seasons[number]}
@@ -70,7 +71,8 @@ const metricEnum = z.enum(metrics as [string,...string[]]);
 export const conditionSchema: z.ZodType<Condition> = z.lazy(()=>z.union([
   z.object({kind:z.literal('stat'),stat:z.enum(stats),op:compareOp,value:n}).strict(),
   z.object({kind:z.literal('resource'),resource:z.enum(targetResources),op:compareOp,value:n}).strict(),
-  z.object({kind:z.literal('itemCount'),id:z.enum(items),op:compareOp,count:n}).strict(),
+  z.object({kind:z.literal('itemCount'),id:id,op:compareOp,count:n}).strict(),
+  z.object({kind:z.literal('itemCapability'),capability:id,present:z.boolean()}).strict(),
   z.object({kind:z.literal('itemCapability'),capability:id,present:z.boolean()}).strict(),
   z.object({kind:z.literal('calendarYear'),op:compareOp,value:n.max(4)}).strict(),
   z.object({kind:z.literal('calendarSeason'),value:z.enum(seasons)}).strict(),
@@ -114,8 +116,8 @@ export const effectSchema = z.discriminatedUnion('kind',[
   z.object({kind:z.literal('modifyStat'),stat:z.enum(stats),delta:z.number().int().min(-100).max(100)}).strict(),
   z.object({kind:z.literal('modifyResource'),resource:z.enum(targetResources),delta:signed}).strict(),
   z.object({kind:z.literal('modifyEnergy'),delta:z.number().int().min(-100).max(100)}).strict(),
-  z.object({kind:z.literal('addItem'),id:z.enum(items),count:z.number().int().min(1).max(100)}).strict(),
-  z.object({kind:z.literal('removeItem'),id:z.enum(items),count:z.number().int().min(1).max(100)}).strict(),
+  z.object({kind:z.literal('addItem'),id:id,count:z.number().int().min(1).max(100)}).strict(),
+  z.object({kind:z.literal('removeItem'),id:id,count:z.number().int().min(1).max(100)}).strict(),
   z.object({kind:z.literal('setHousing'),value:z.enum(targetHousing)}).strict(),
 
   z.object({kind:z.literal('incrementSchoolCounter'),track:id,counter:id,amount:z.number().int().min(-1000).max(1000)}).strict(),
@@ -171,7 +173,7 @@ export type MachineDefinition=z.infer<typeof machineDefinitionSchema>;
 const capabilityReads=z.object({
   stats:z.array(z.enum(stats)).optional(),
   resources:z.array(z.enum(targetResources)).optional(),
-  inventory:z.array(z.enum(items)).optional(),
+  inventory:z.array(id).optional(),
   itemCapabilities:z.array(id).optional(),
   calendar:z.boolean().optional(),
   housing:z.boolean().optional(),
@@ -185,7 +187,7 @@ const capabilityReads=z.object({
 const capabilityWrites=z.object({
   stats:z.array(z.enum(stats)).optional(),
   resources:z.array(z.enum(targetResources)).optional(),
-  inventory:z.array(z.enum(items)).optional(),
+  inventory:z.array(id).optional(),
   energy:z.boolean().optional(),
   housing:z.boolean().optional(),
   careers:z.array(id).optional(),
