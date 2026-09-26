@@ -838,6 +838,8 @@ function activityActionMutable(s:Save,cat:Catalog,action:string){
   if(envelope.status!=='active')throw new Error('Activity сейчас не принимает действия.');
   if(action==='escape'){finalizeActivityMutable(s,cat,'escape');return;}
   const state=envelope.internalState;
+  const requiresRouteSelection=definition.options.some(option=>option.category==='route');
+  if(action==='advance'&&requiresRouteSelection&&!state.routeId)throw new Error('Сначала выберите маршрут Activity.');
   if(action!=='advance'){
     const option=definition.options.find(candidate=>candidate.id===action);
     if(!option)throw new Error(`Неизвестное Activity action: ${action}`);
@@ -871,7 +873,9 @@ export function availableActivityActions(s:Save,cat:Catalog):Array<{id:string;la
     .filter(option=>eligible(option.conditions,s,cat))
     .filter(option=>!option.setRoute||!state.routeId||state.routeId===option.setRoute)
     .map(option=>({id:option.id,label:option.label}));
-  return [...custom,{id:'advance',label:'Продолжить'},{id:'escape',label:'Отступить'}];
+  const requiresRouteSelection=definition.options.some(option=>option.category==='route');
+  const ordinary=requiresRouteSelection&&!state.routeId?[]:[{id:'advance',label:'Продолжить'}];
+  return [...custom,...ordinary,{id:'escape',label:'Отступить'}];
 }
 
 type NightPoint='before_lodging'|'after_lodging'|'after_choice';
