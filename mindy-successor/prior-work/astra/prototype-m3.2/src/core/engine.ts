@@ -413,8 +413,12 @@ function eventSort(a:StoryEvent,b:StoryEvent,s:Save){
   return a.id.localeCompare(b.id);
 }
 function candidateSort(a:ResolverCandidate,b:ResolverCandidate,s:Save){
-  const e=eventSort(a.event,b.event,s);if(e)return e;
+  const classDelta=(resolverClassRank.get(a.event.priorityClass)??999)-(resolverClassRank.get(b.event.priorityClass)??999);
+  if(classDelta)return classDelta;
+  if(a.event.priority!==b.event.priority)return b.event.priority-a.event.priority;
   if(a.eligibleSince!==b.eligibleSince)return a.eligibleSince-b.eligibleSince;
+  const ah=s.run.history[a.event.id]?.lastDay??-1,bh=s.run.history[b.event.id]?.lastDay??-1;
+  if(ah!==bh)return ah-bh;
   return a.event.id.localeCompare(b.event.id);
 }
 function committedSuppresses(s:Save,e:StoryEvent){
