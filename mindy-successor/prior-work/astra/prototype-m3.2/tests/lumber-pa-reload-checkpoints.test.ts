@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {loadCatalog} from '../src/core/content.ts';
 import {applyEffects,attachLegacyFacade,dispatch,freshSave,parseSave} from '../src/core/engine.ts';
-import type {Catalog,Save} from '../src/core/schema.ts';
+import {definitionsSchema,saveSchema,type Catalog,type Save} from '../src/core/schema.ts';
 
 const rawDefinitions=JSON.parse(readFileSync('content/lumber-target-definitions.fixture.json','utf8'));
 const rawProductionPack=JSON.parse(readFileSync('content/packs/lumber-target/lumber-production.pack.json','utf8'));
@@ -60,18 +60,18 @@ function catalog():Catalog{
   assert.equal(hardWork.metaRewards.length,1);
   assert.equal(hardWork.metaRewards[0].rewardId,'hardWork:lumber');
 
-  try{
-    return loadCatalog(definitions,packs);
-  }catch(error){
-    // The continuation branch predates the Lead schema correction that permits
-    // exact hardWork:<career> reward IDs. Main already accepts hardWork:lumber.
-    if(!String(error).includes('hardWork:lumber'))throw error;
-    const compatibilityDefinitions=structuredClone(definitions);
-    hardWorkEnding(compatibilityDefinitions).metaRewards[0].rewardId='hardwork.lumber';
-    const cat=loadCatalog(compatibilityDefinitions,packs);
-    hardWorkEnding(cat.definitions).metaRewards[0].rewardId='hardWork:lumber';
-    return cat;
-  }
+  const parsed=definitionsSchema.safeParse(definitions);
+  if(parsed.success)return loadCatalog(definitions,packs);
+
+  // The continuation branch predates the Lead schema correction that permits
+  // exact hardWork:<career> reward IDs. Main already accepts hardWork:lumber.
+  const rewardOnly=parsed.error.issues.every(issue=>issue.path.join('.').includes('metaRewards')&&issue.path.join('.').endsWith('rewardId'));
+  if(!rewardOnly)throw parsed.error;
+  const compatibilityDefinitions=structuredClone(definitions);
+  hardWorkEnding(compatibilityDefinitions).metaRewards[0].rewardId='hardwork.lumber';
+  const cat=loadCatalog(compatibilityDefinitions,packs);
+  hardWorkEnding(cat.definitions).metaRewards[0].rewardId='hardWork:lumber';
+  return cat;
 }
 
 function ready(day=0):Save{
@@ -112,9 +112,12 @@ function reload(input:Save,cat:Catalog):Save{
     // Old continuation schema also rejects hardWork:lumber in RunResult.
     // Preserve the exact serialized state for worker-branch execution; once
     // cherry-picked/rebased onto current main, parseSave takes the normal path.
+    const raw=JSON.parse(serialized);
+    const parsed=saveSchema.safeParse(raw);
     const rewards=input.run.endings.result?.appliedMetaRewardIds??[];
-    if(!rewards.includes('hardWork:lumber')||!String(error).includes('hardWork:lumber'))throw error;
-    return attachLegacyFacade(JSON.parse(serialized) as Save);
+    const rewardOnly=!parsed.success&&parsed.error.issues.every(issue=>issue.path.join('.').includes('run.endings.result.appliedMetaRewardIds'));
+    if(!rewards.includes('hardWork:lumber')||!rewardOnly)throw error;
+    return attachLegacyFacade(raw as Save);
   }
 }
 
