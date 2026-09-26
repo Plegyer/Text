@@ -81,3 +81,5 @@ Presentation IDs use the merged Chat 2 kebab-case namespace:
 Do not use underscores inside presentation namespace segments in new manifests/tests.
 
 - Night tests must establish the normal precondition `story.arrived = true` before calling `endDay`; do not weaken NightFlow to accommodate an incomplete fixture.
+
+- Fixture catalogs that persist `story.arrived` across save/reload must also declare `story.arrived` in their `flags` list; do not make parseSave accept undeclared legacy flags.
