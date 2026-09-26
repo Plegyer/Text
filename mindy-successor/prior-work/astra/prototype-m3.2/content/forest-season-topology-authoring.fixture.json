@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "id": "forest.season-topology-authoring.fixture",
+  "status": "AUTHORING_CONTRACT",
+  "stableRoutes": [
+    "logging-road",
+    "hunter-trail",
+    "old-boundary-path"
+  ],
+  "sharedRules": {
+    "atLeastOneAvailabilityOrCostDifferencePerSeason": true,
+    "routeIdentityStableAcrossSeasons": true,
+    "deterministicReload": true,
+    "hiddenRandomTopologyChangeAllowed": false,
+    "optionEligibilityInputs": [
+      "calendar season",
+      "owned facts/capabilities",
+      "persisted Activity state"
+    ]
+  },
+  "seasons": [
+    {
+      "season": "spring",
+      "authoritativeEffects": [
+        "water/mud affects route access",
+        "some short paths closed",
+        "magical sprouts/traces may appear"
+      ],
+      "requiredBinding": "at least one spring route/shortcut/challenge availability difference",
+      "exactOptionIds": []
+    },
+    {
+      "season": "summer",
+      "authoritativeEffects": [
+        "distant routes available",
+        "fire risk/event pool may appear"
+      ],
+      "requiredBinding": "at least one summer route/challenge availability difference",
+      "exactOptionIds": []
+    },
+    {
+      "season": "autumn",
+      "authoritativeEffects": [
+        "animal migration",
+        "Hunter trail richer",
+        "industrial pressure high"
+      ],
+      "requiredBinding": "at least one hunter-trail autumn-specific option/content difference",
+      "exactOptionIds": []
+    },
+    {
+      "season": "winter",
+      "authoritativeEffects": [
+        "some paths dangerous or higher endurance cost",
+        "frozen passage may open alternative path"
+      ],
+      "requiredBinding": "at least one winter availability or Activity-resource-cost difference",
+      "exactOptionIds": []
+    }
+  ],
+  "persistence": {
+    "calendarSeasonSurvivesReload": true,
+    "selectedRouteSurvivesReload": true,
+    "resolvedOptionIdsSurviveReload": true,
+    "rerollTopologyOnReloadAllowed": false
+  },
+  "openFields": [
+    "seasonal event IDs",
+    "prose",
+    "NPC",
+    "loot",
+    "exact endurance values",
+    "route option IDs",
+    "challenge IDs",
+    "random-event probabilities",
+    "School/Hunter thresholds",
+    "item acquisition source"
+  ],
+  "lockedResults": [
+    "lumber.forest.success",
+    "lumber.forest.escape",
+    "lumber.forest.failure"
+  ],
+  "hardWorkIsolation": {
+    "seasonPrerequisiteAllowed": false,
+    "onlyCondition": {
+      "kind": "careerCounter",
+      "career": "lumber",
+      "counter": "completed_shifts",
+      "op": "gte",
+      "value": 50
+    },
+    "rewardId": "hardWork:lumber"
+  }
+}
