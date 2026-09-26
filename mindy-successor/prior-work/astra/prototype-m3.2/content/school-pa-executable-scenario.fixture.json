@@ -1,0 +1,68 @@
+{
+  "formatVersion": 1,
+  "id": "school.pa-executable-scenario.fixture.v1",
+  "arrivedRun": {
+    "required": true,
+    "flag": "story.arrived"
+  },
+  "courseOptions": [
+    "school.course.literacy_and_numbers",
+    "school.course.arcana",
+    "school.course.rhetoric_and_social",
+    "school.course.etiquette_and_presentation",
+    "school.course.field_craft",
+    "school.course.physical_training",
+    "school.course.arts_and_performance",
+    "school.course.body_confidence"
+  ],
+  "selectedScenario": {
+    "courseId": "school.course.arcana",
+    "trackId": "school.track.arcana",
+    "tuition": 500,
+    "daytimeEnergyCost": 1,
+    "statDeltas": [
+      {
+        "stat": "magic",
+        "delta": 4
+      },
+      {
+        "stat": "reason",
+        "delta": 4
+      },
+      {
+        "stat": "creativity",
+        "delta": 2
+      }
+    ],
+    "presentationId": "school/arcana/lesson/default",
+    "paidLessonCounter": {
+      "counter": "lessons_completed",
+      "delta": 1
+    },
+    "nightStudy": {
+      "choiceId": "school.night_study.arcana.reason",
+      "stat": "reason",
+      "statDelta": 2,
+      "tuition": 0,
+      "daytimeEnergyCost": 0,
+      "counter": {
+        "counter": "night_study_sessions",
+        "delta": 1
+      },
+      "nextDayEnergyDelta": -1
+    }
+  },
+  "chronology": [
+    "arrived-active-run",
+    "paid-school-lesson",
+    "typed-lessons-completed-increment",
+    "semantic-presentation",
+    "save-reload-after-lesson",
+    "end-day",
+    "choose-lodging",
+    "school-night-study",
+    "typed-night-study-sessions-increment",
+    "next-day-energy-minus-one",
+    "save-reload-after-night"
+  ]
+}
