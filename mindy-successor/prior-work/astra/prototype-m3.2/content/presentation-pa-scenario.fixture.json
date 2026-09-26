@@ -1,0 +1,160 @@
+{
+  "version": 1,
+  "kind": "presentation-product-acceptance-scenario-matrix",
+  "status": "isolated-pa-fixture",
+  "policy": {
+    "semanticIdentityStableAcrossReload": true,
+    "animationOffPresentationOnly": true,
+    "fallbackNonFatal": true,
+    "gameplayMutationAllowed": false
+  },
+  "scenarios": [
+    {
+      "scenarioId": "lumber-shift-result-milestone",
+      "steps": [
+        {
+          "stepId": "shift",
+          "presentationId": "job/lumber/shift/spring/default",
+          "identity": {
+            "kind": "action",
+            "actionId": "lumber.shift",
+            "sceneId": "spring.default"
+          },
+          "fallbackBehavior": "direct-static",
+          "saveReloadExpectation": "domain-identity-recomputes-same-presentation",
+          "animationOffExpectation": "same-presentation-non-animated-static"
+        },
+        {
+          "stepId": "result",
+          "presentationId": "job/lumber/result/default",
+          "identity": {
+            "kind": "action-result",
+            "actionId": "lumber.shift",
+            "sceneId": "spring.default"
+          },
+          "fallbackBehavior": "direct-static",
+          "saveReloadExpectation": "domain-identity-recomputes-same-presentation",
+          "animationOffExpectation": "same-presentation-non-animated-static"
+        },
+        {
+          "stepId": "milestone",
+          "presentationId": "job/lumber/event/lumber-career-first-shift/default",
+          "identity": {
+            "kind": "event",
+            "eventId": "lumber.career-first-shift",
+            "variantId": "default"
+          },
+          "fallbackBehavior": "semantic-fallback",
+          "saveReloadExpectation": "pending-event-preserves-domain-and-presentation-identity",
+          "animationOffExpectation": "same-presentation-non-animated-static"
+        }
+      ]
+    },
+    {
+      "scenarioId": "foreman-relationship-night",
+      "steps": [
+        {
+          "stepId": "relationship",
+          "presentationId": "relationship/lumber-foreman/lumber-foreman-notice/default",
+          "identity": {
+            "kind": "event",
+            "eventId": "lumber.foreman-notice",
+            "variantId": "default"
+          },
+          "fallbackBehavior": "semantic-fallback",
+          "saveReloadExpectation": "pending-event-preserves-domain-and-presentation-identity",
+          "animationOffExpectation": "same-presentation-non-animated-static"
+        },
+        {
+          "stepId": "night",
+          "presentationId": "relationship/lumber-foreman/lumber-night-foreman-professional/default",
+          "identity": {
+            "kind": "event",
+            "eventId": "lumber-night.foreman-professional",
+            "variantId": "default"
+          },
+          "fallbackBehavior": "semantic-fallback",
+          "saveReloadExpectation": "pending-event-preserves-domain-and-presentation-identity",
+          "animationOffExpectation": "same-presentation-non-animated-static"
+        }
+      ]
+    },
+    {
+      "scenarioId": "forest-activity-result",
+      "steps": [
+        {
+          "stepId": "route",
+          "presentationId": "activity/forest/route/default",
+          "identity": {
+            "kind": "activity",
+            "activityId": "lumber.forest",
+            "phase": "route"
+          },
+          "fallbackBehavior": "direct-static",
+          "saveReloadExpectation": "activity-identity-recomputes-same-presentation",
+          "animationOffExpectation": "same-presentation-non-animated-static"
+        },
+        {
+          "stepId": "success-result",
+          "presentationId": "activity/forest/return/success",
+          "identity": {
+            "kind": "activity-result",
+            "activityId": "lumber.forest",
+            "resultId": "lumber.forest.success"
+          },
+          "fallbackBehavior": "semantic-fallback",
+          "saveReloadExpectation": "activity-result-identity-recomputes-same-presentation",
+          "animationOffExpectation": "same-presentation-non-animated-static"
+        }
+      ]
+    },
+    {
+      "scenarioId": "school-paid-lesson",
+      "steps": [
+        {
+          "stepId": "arcana-lesson",
+          "presentationId": "school/arcana/lesson/default",
+          "identity": {
+            "kind": "course",
+            "courseId": "school.course.arcana"
+          },
+          "fallbackBehavior": "semantic-fallback",
+          "saveReloadExpectation": "course-identity-recomputes-same-presentation",
+          "animationOffExpectation": "same-presentation-non-animated-static"
+        }
+      ]
+    },
+    {
+      "scenarioId": "hard-work-ending",
+      "steps": [
+        {
+          "stepId": "hard-work",
+          "presentationId": "ending/lumber/hard-work",
+          "identity": {
+            "kind": "ending",
+            "endingId": "ending.lumber.hard-work"
+          },
+          "fallbackBehavior": "semantic-fallback",
+          "saveReloadExpectation": "ending-identity-recomputes-same-presentation",
+          "animationOffExpectation": "same-presentation-non-animated-static"
+        }
+      ]
+    },
+    {
+      "scenarioId": "complex-lumber-ending",
+      "steps": [
+        {
+          "stepId": "forewoman",
+          "presentationId": "ending/lumber/forewoman",
+          "identity": {
+            "kind": "ending",
+            "endingId": "ending.lumber.forewoman"
+          },
+          "fallbackBehavior": "semantic-fallback",
+          "saveReloadExpectation": "ending-identity-recomputes-same-presentation",
+          "animationOffExpectation": "same-presentation-non-animated-static"
+        }
+      ]
+    }
+  ]
+}
