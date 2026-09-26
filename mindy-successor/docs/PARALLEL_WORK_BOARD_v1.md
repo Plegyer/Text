@@ -103,3 +103,15 @@ Lead:
 7. updates this board when branch ownership changes.
 
 Git state remains authoritative if this board is stale.
+
+
+## Continuous worker queues — 2026-09-26 18:44 +03:00
+
+The previous continuation queues (items 1–4) are complete. New worker-owned branches are based on current main and contain two queued tasks each so Lead review/integration can proceed asynchronously.
+
+- Chat 2 — `chat2/presentation-product-next`: shipped product presentation coverage; override-pack preflight/adversarial suite.
+- Chat 3 — `chat3/lumber-product-next`: Lumber production activation manifest; Forest Activity acceptance-depth suite. Hard Work remains ONLY `completed_shifts >= 50`, rewardId exactly `hardWork:lumber`.
+- Chat 4 — `chat4/product-activation-qa-next`: shipped catalog activation audit; PA00–PA26 row-runner readiness artifact.
+- Chat 5 — `chat5/school-progression-next`: full School production UI/data manifest; exhaustive School reload matrix.
+
+Lead-owned branch `lead/product-activation-school-lumber` owns shared runtime/schema/build/UI activation work. Worker task packets explicitly forbid touching those shared Lead-owned paths until ownership is released.
