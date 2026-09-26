@@ -20,6 +20,7 @@ function explain(c:Condition):string{
  case 'calendarSeason':return labels[c.value]??c.value;
  case 'calendarDayInYear':return `День года ${cmp(c.op,c.value)}`;
  case 'calendarElapsedDays':return `Прошло дней ${cmp(c.op,c.value)}`;
+ case 'housingTier':return `Жильё: ${labels[c.value]??c.value}`;
  case 'careerStage':return `Карьера ${c.career}: этап ${c.stage}`;
  case 'careerShifts':return `Карьера ${c.career}: смен ${cmp(c.op,c.value)}`;
  case 'careerCounter':return `Карьера ${c.career}: ${c.counter} ${cmp(c.op,c.value)}`;
@@ -56,7 +57,7 @@ async function perform(cmd:Command){
  }catch(e){message=e instanceof Error?e.message:String(e);error=true;}
  busy=false;render();
 }
-function disabled(a:Action){return busy||locked||state.run.status!=='active'||!state.run.creation.complete||!!state.run.pending||!eligible(a.conditions,state,catalog)||state.run.metrics.money<actionCost(a,state)||state.run.metrics.energy<a.cost.energy;}
+function disabled(a:Action){return busy||locked||state.run.status!=='active'||!state.run.creation.complete||!!state.run.pending||!!state.run.flow.night||!eligible(a.conditions,state,catalog)||state.run.metrics.money<actionCost(a,state)||state.run.metrics.energy<a.cost.energy;}
 function actionList(ids:string[]){return `<div class="activity-list">${ids.map(id=>catalog.definitions.actions.find(a=>a.id===id)).filter((a):a is Action=>!!a).map(a=>{
  const miss=a.conditions.filter(c=>!meets(c,state,catalog));
  const statsEffects=[...a.effects,...(a.seasonal?.[calendar(state.run.day).season]??[])].filter(e=>e.kind==='metric'&&(stats as readonly string[]).includes(e.key));
