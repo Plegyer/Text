@@ -1,0 +1,85 @@
+{
+  "version": 1,
+  "kind": "presentation-save-import-compatibility-matrix",
+  "policy": {
+    "presentationMetadataOptional": true,
+    "slashSemanticIdsSupported": true,
+    "gameplayIdentityAuthoritative": true,
+    "replacementImportChangesGameplay": false
+  },
+  "cases": [
+    {
+      "caseId": "old-save-without-presentation-id",
+      "saveFragment": {
+        "pendingScene": {
+          "eventId": "lumber.career-first-shift",
+          "variantId": "default"
+        }
+      },
+      "expected": "accepted-backward-compatible"
+    },
+    {
+      "caseId": "new-save-with-slash-presentation-id",
+      "saveFragment": {
+        "pendingScene": {
+          "eventId": "lumber.career-first-shift",
+          "variantId": "default",
+          "presentationId": "job/lumber/event/lumber-career-first-shift/default"
+        }
+      },
+      "expected": "accepted-semantic-id-preserved"
+    },
+    {
+      "caseId": "pending-scene-reload",
+      "saveFragment": {
+        "pendingScene": {
+          "eventId": "lumber.foreman-notice",
+          "variantId": "default",
+          "presentationId": "relationship/lumber-foreman/lumber-foreman-notice/default"
+        }
+      },
+      "expected": "event-variant-and-presentation-stable"
+    },
+    {
+      "caseId": "action-result-reload",
+      "saveFragment": {
+        "lastAction": {
+          "actionId": "lumber.shift",
+          "presentationId": "job/lumber/result/default"
+        }
+      },
+      "expected": "action-identity-and-presentation-stable"
+    },
+    {
+      "caseId": "activity-reload",
+      "saveFragment": {
+        "activity": {
+          "activityId": "lumber.forest",
+          "definitionVersion": 1,
+          "checkpoint": "route-1",
+          "presentationId": "activity/forest/route/default"
+        }
+      },
+      "expected": "activity-identity-and-presentation-stable"
+    },
+    {
+      "caseId": "ending-reload",
+      "saveFragment": {
+        "ending": {
+          "committedEndingId": "ending.lumber.hard-work",
+          "presentationId": "ending/lumber/hard-work"
+        }
+      },
+      "expected": "ending-identity-and-presentation-stable"
+    },
+    {
+      "caseId": "replacement-bundle-import-export",
+      "replacementKeys": [
+        "job/lumber/shift/spring/default",
+        "job/lumber/event/lumber-career-first-shift/default",
+        "relationship/lumber-foreman/lumber-night-foreman-professional/default"
+      ],
+      "expected": "semantic-keys-stable-gameplay-unchanged"
+    }
+  ]
+}
