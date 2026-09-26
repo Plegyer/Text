@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 3,
+  "id": "lumber.rc-closure-handoff.fixture",
+  "productionBaseline": {
+    "productActivationMerge": "9b427d75dc22021cd3373aa7dd3521782e54152d",
+    "productAcceptanceEvidenceMerge": "e6c32903516d1ba40b9a3ffbf955d5f04783ac25",
+    "capabilityForestInfrastructureMerge": "011572ef1335deda5ac33120c3a7ea7f9849dbbf"
+  },
+  "categories": {
+    "SHIPPED_GREEN": [
+      {
+        "id": "lumber.work",
+        "contract": "lumber.shift + career milestone + professional Foreman path"
+      },
+      {
+        "id": "lumber.night",
+        "contract": "lodging.normal + lumber.foreman.night + reload-safe Night continuation"
+      },
+      {
+        "id": "lumber.forest.entry",
+        "contract": "lumber.forest enters for 2 Energy without Old Boundary Token"
+      },
+      {
+        "id": "lumber.forest.logging-road",
+        "contract": "forest.route.logging-road is unconditional normal route"
+      },
+      {
+        "id": "lumber.item-capability.runtime",
+        "contract": "typed item definitions + inventory-derived itemCapability conditions"
+      },
+      {
+        "id": "lumber.forest.old-boundary",
+        "contract": "forest.route.old-boundary requires actual enter_old_boundary capability from inventory"
+      },
+      {
+        "id": "lumber.activity.legacy-save",
+        "contract": "optionModelVersion 0 preserves advance/escape for legacy active Activity saves"
+      },
+      {
+        "id": "lumber.forest.results",
+        "contract": "success/escape/failure + exact activityResult continuation"
+      },
+      {
+        "id": "lumber.endings",
+        "contract": "Hard Work, Forewoman and Forest ending identities shipped"
+      },
+      {
+        "id": "lumber.hard-work",
+        "contract": "ONLY completed_shifts >= 50; exact hardWork:lumber",
+        "independent": true
+      }
+    ],
+    "READY_TO_INTEGRATE_QA": [
+      "mindy-successor/docs/lumber-prep/LUMBER_PR22_CLOSURE_PARITY_AUDIT_v1.md",
+      "mindy-successor/prior-work/astra/prototype-m3.2/tests/lumber-pr22-closure-parity.test.ts",
+      "mindy-successor/docs/lumber-prep/LUMBER_RC_CLOSURE_HANDOFF_v3.md",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/lumber-rc-closure-handoff.fixture.json"
+    ],
+    "AUTHORING_DECISION_REQUIRED": [
+      "mindy-successor/docs/lumber-prep/OLD_BOUNDARY_TOKEN_DECISION_MATRIX_v1.md",
+      "mindy-successor/docs/lumber-prep/SCHOOL_LUMBER_PUBLIC_FACT_AUTHORING_PACKET_v1.md",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/school-lumber-public-fact-authoring.fixture.json"
+    ],
+    "FOREST_CONTENT_DEPTH": [
+      "mindy-successor/docs/lumber-prep/FOREST_PRODUCTION_AUTHORING_MATRIX_v1.md",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/forest-production-authoring-matrix.fixture.json",
+      "mindy-successor/docs/lumber-prep/FOREST_HUNTER_TRAIL_AUTHORING_PACKET_v1.md",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/forest-hunter-trail-authoring.fixture.json",
+      "mindy-successor/docs/lumber-prep/FOREST_CHALLENGE_FAMILY_AUTHORING_PACKET_v1.md",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/forest-challenge-family-authoring.fixture.json",
+      "mindy-successor/docs/lumber-prep/FOREST_SEASON_TOPOLOGY_AUTHORING_PACKET_v1.md",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/forest-season-topology-authoring.fixture.json"
+    ],
+    "SUPERSEDED": [
+      {
+        "path": "mindy-successor/docs/lumber-prep/LUMBER_PA_CLOSURE_DEPENDENCY_AUDIT_v1.md",
+        "reason": "PR22 closed the generic capability/item/Activity-option runtime gaps it classified as missing"
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/lumber-pa-closure-dependency.test.ts",
+        "reason": "pre-PR22 runtime-gap assertion"
+      },
+      {
+        "path": "mindy-successor/docs/lumber-prep/LUMBER_PA_CLOSURE_ROW_MAP_v1.md",
+        "reason": "pre-PR22 closure classes"
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/lumber-forest-capability-options.fixture.json",
+        "reason": "pre-PR22 runtimeBoundary says capability-aware option surface is not shipped"
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/lumber-forest-capability-options.test.ts",
+        "reason": "pre-PR22 Activity command-surface assertion"
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/lumber-item-use-exactly-once.fixture.json",
+        "reason": "pre-PR22 runtimeBoundary fields no longer describe shipped item/option infrastructure"
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/lumber-item-use-exactly-once.test.ts",
+        "reason": "keep only as historical exactly-once design evidence until a consume policy is authored"
+      },
+      {
+        "path": "mindy-successor/docs/lumber-prep/OLD_BOUNDARY_TOKEN_AUTHORING_PACKET_v1.md",
+        "reason": "runtime-seam section predates PR22; decision matrix v1 is current"
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/old-boundary-token-authoring.fixture.json",
+        "reason": "pre-PR22 runtime seam assumptions"
+      },
+      {
+        "path": "mindy-successor/docs/lumber-prep/FOREST_DEPTH_GAP_TO_SPEC_v1.md",
+        "reason": "pre-PR22 item-capability/runtime gap classification"
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/lumber-forest-depth-gap.test.ts",
+        "reason": "pre-PR22 runtime gap evidence"
+      },
+      {
+        "path": "mindy-successor/docs/lumber-prep/LUMBER_RELEASE_CANDIDATE_HANDOFF_v2.md",
+        "reason": "replaced by v3 after PR22"
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/lumber-release-candidate-handoff.fixture.json",
+        "reason": "replaced by v3 after PR22"
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/lumber-item-capabilities.fixture.json",
+        "reason": "test worldFact adapter superseded by shipped typed inventory-derived capability runtime"
+      }
+    ]
+  },
+  "remainingBlockers": [
+    {
+      "id": "old-boundary-token-product-decisions",
+      "class": "AUTHORING_DECISION_REQUIRED",
+      "decisions": [
+        "acquisition source",
+        "timing/requirements",
+        "retain vs consume",
+        "repeatability",
+        "presentation"
+      ]
+    },
+    {
+      "id": "school-management-public-result",
+      "class": "AUTHORING_DECISION_REQUIRED",
+      "decisions": [
+        "School provider/course/track",
+        "threshold/milestone/project/certificate"
+      ]
+    },
+    {
+      "id": "forest-content-depth",
+      "class": "FOREST_CONTENT_DEPTH",
+      "decisions": [
+        "hunter-trail gate authoring",
+        "three challenge families",
+        "season topology/options"
+      ]
+    }
+  ],
+  "smallestLeadIntegrationSubset": [
+    "mindy-successor/docs/lumber-prep/LUMBER_PR22_CLOSURE_PARITY_AUDIT_v1.md",
+    "mindy-successor/prior-work/astra/prototype-m3.2/tests/lumber-pr22-closure-parity.test.ts"
+  ],
+  "hardWork": {
+    "status": "SHIPPED_GREEN",
+    "independent": true,
+    "endingId": "ending.lumber.hard-work",
+    "onlyCondition": {
+      "kind": "careerCounter",
+      "career": "lumber",
+      "counter": "completed_shifts",
+      "op": "gte",
+      "value": 50
+    },
+    "rewardId": "hardWork:lumber"
+  }
+}
