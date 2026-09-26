@@ -62,7 +62,7 @@ export interface ResolvedPresentation {
   diagnostics:string[];
 }
 
-export const emptyPresentation=():Presentation=>({version:1,texts:{},media:{},slots:{}});
+export const emptyPresentation=():Presentation=>({version:1,texts:{},media:{}});
 
 const jobIds=new Set(['tavern','lumber','hunt','guard']);
 const clean=(value:string)=>value.toLowerCase().replace(/[^a-z0-9._-]+/g,'-').replace(/^-+|-+$/g,'')||'default';
