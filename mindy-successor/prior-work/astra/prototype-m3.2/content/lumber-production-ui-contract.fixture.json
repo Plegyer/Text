@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 1,
+  "id": "lumber.production-ui-contract.fixture",
+  "surfaces": [
+    {
+      "id": "lumber-work",
+      "targetId": "lumber.shift",
+      "surface": "DayHub.Work",
+      "command": {
+        "type": "action",
+        "id": "lumber.shift"
+      },
+      "visibleWhen": [
+        "run.status=active",
+        "creation.complete=true",
+        "story.arrived=true"
+      ],
+      "enabledWhen": [
+        "no pending scene",
+        "no NightFlow",
+        "no Activity",
+        "Energy>=1"
+      ],
+      "costDisplay": {
+        "daytimeEnergy": 1,
+        "money": 0
+      },
+      "presentationFamily": "job/lumber/shift/<season>/default"
+    },
+    {
+      "id": "forest-entry",
+      "targetId": "lumber.forest",
+      "surface": "DayHub.Activity",
+      "command": {
+        "type": "enterActivity",
+        "id": "lumber.forest"
+      },
+      "visibleWhen": [
+        "story.arrived=true",
+        "capability enter_old_boundary available"
+      ],
+      "enabledWhen": [
+        "no pending scene",
+        "no NightFlow",
+        "no Activity",
+        "Energy>=2"
+      ],
+      "costDisplay": {
+        "daytimeEnergy": 2
+      },
+      "checkpointAfterCommand": "ActivityEnvelope checkpoint=entry"
+    },
+    {
+      "id": "forest-actions",
+      "targetId": "lumber.forest",
+      "surface": "Activity",
+      "commands": [
+        {
+          "type": "activityAction",
+          "id": "advance"
+        },
+        {
+          "type": "activityAction",
+          "id": "escape"
+        }
+      ],
+      "visibleWhen": [
+        "ActivityEnvelope.activityId=lumber.forest",
+        "ActivityEnvelope.status=active"
+      ],
+      "enabledWhen": [
+        "no pending scene",
+        "no NightFlow"
+      ],
+      "daytimeEnergyPerInternalAction": 0
+    },
+    {
+      "id": "foreman-night",
+      "targetId": "lumber.foreman.night",
+      "surface": "NightFlow.VoluntaryNightChoice",
+      "command": {
+        "type": "chooseNightChoice",
+        "id": "lumber.foreman.night"
+      },
+      "visibleWhen": [
+        "relationship lumber.foreman stage=route-professional",
+        "NightFlow.phase=VoluntaryNightChoice"
+      ],
+      "enabledWhen": [
+        "lodging resolution complete",
+        "no pending scene"
+      ],
+      "daytimeEnergyCost": 0,
+      "consumesNightSlot": true,
+      "reactionEventId": "lumber-night.foreman-professional",
+      "presentationId": "relationship/lumber-foreman/lumber-night-foreman-professional/default"
+    },
+    {
+      "id": "ending-availability",
+      "targetIds": [
+        "ending.lumber.hard-work",
+        "ending.lumber.forewoman",
+        "ending.lumber.forest"
+      ],
+      "surface": "Endings",
+      "eligibleListBinding": "run.endings.eligible",
+      "commitCommandShape": {
+        "type": "commitEnding",
+        "id": "<eligible ending id>"
+      },
+      "completionCommand": {
+        "type": "completeEnding"
+      },
+      "rules": [
+        "eligibility is visible before commitment",
+        "eligible ending does not auto-end run",
+        "commitment is explicit",
+        "Meta reward applies only on completion"
+      ],
+      "semanticPresentationIds": [
+        "ending/lumber/hard-work",
+        "ending/lumber/forewoman",
+        "ending/lumber/forest"
+      ]
+    }
+  ],
+  "productionExclusions": [
+    "school.lumber-management"
+  ],
+  "lockedContracts": {
+    "hardWorkConditions": [
+      {
+        "kind": "careerCounter",
+        "career": "lumber",
+        "counter": "completed_shifts",
+        "op": "gte",
+        "value": 50
+      }
+    ],
+    "hardWorkRewardId": "hardWork:lumber",
+    "activityContinuationBoundary": "activityResult"
+  },
+  "integrationStatus": {
+    "contract": "READY",
+    "sharedUiWiring": "LEAD_OWNED_NOT_MODIFIED_HERE"
+  }
+}
