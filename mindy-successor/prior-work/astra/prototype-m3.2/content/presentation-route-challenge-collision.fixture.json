@@ -1,0 +1,112 @@
+{
+  "version": 1,
+  "kind": "presentation-route-challenge-collision-audit",
+  "status": "naming-preflight-only",
+  "canonicalRules": {
+    "namespaceRoot": "activity/forest",
+    "allowedDimensions": [
+      "route",
+      "challenge"
+    ],
+    "slugPattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+    "dottedSemanticId": "reject",
+    "underscoreInSemanticSlug": "normalize-to-kebab-before-registration",
+    "duplicateCanonicalSlugSameDimension": "reject",
+    "duplicateCanonicalSlugAcrossDimensions": "reject",
+    "seasonEncoding": "/season/{spring|summer|autumn|winter}/*",
+    "seasonSuffixOnBaseSlug": "reject-ambiguous",
+    "reservedResultNamespace": "activity/forest/return/{success|escape|failure}",
+    "resultSlugReuseForRouteOrChallenge": "reject"
+  },
+  "cases": [
+    {
+      "caseId": "duplicate-route-slug",
+      "candidates": [
+        {
+          "dimension": "route",
+          "slug": "logging-road"
+        },
+        {
+          "dimension": "route",
+          "slug": "logging-road"
+        }
+      ],
+      "expected": "reject"
+    },
+    {
+      "caseId": "route-challenge-same-slug",
+      "candidates": [
+        {
+          "dimension": "route",
+          "slug": "old-boundary"
+        },
+        {
+          "dimension": "challenge",
+          "slug": "old-boundary"
+        }
+      ],
+      "expected": "reject"
+    },
+    {
+      "caseId": "dotted-vs-slash-drift",
+      "semanticIds": [
+        "activity/forest/route/logging-road/default",
+        "activity.forest.route.logging-road.default"
+      ],
+      "expected": "reject"
+    },
+    {
+      "caseId": "underscore-normalization",
+      "rawSlug": "hunter_trail",
+      "normalizedSlug": "hunter-trail",
+      "expected": "normalize"
+    },
+    {
+      "caseId": "season-suffix-ambiguity",
+      "candidates": [
+        "activity/forest/route/logging-road-spring/default",
+        "activity/forest/route/logging-road/season/spring/default"
+      ],
+      "expected": "reject-first-use-second"
+    },
+    {
+      "caseId": "legacy-result-collision",
+      "candidate": {
+        "dimension": "route",
+        "slug": "success"
+      },
+      "reservedId": "activity/forest/return/success",
+      "expected": "reject"
+    },
+    {
+      "caseId": "valid-distinct-families",
+      "candidates": [
+        {
+          "dimension": "route",
+          "slug": "logging-road"
+        },
+        {
+          "dimension": "route",
+          "slug": "hunter-trail"
+        },
+        {
+          "dimension": "route",
+          "slug": "old-boundary"
+        },
+        {
+          "dimension": "challenge",
+          "slug": "navigation"
+        },
+        {
+          "dimension": "challenge",
+          "slug": "physical-obstacle"
+        },
+        {
+          "dimension": "challenge",
+          "slug": "interpretation-ritual-anomaly"
+        }
+      ],
+      "expected": "accept"
+    }
+  ]
+}
