@@ -74,13 +74,18 @@ test('PA07 evidence: paid School lesson is shipped, typed, exactly once, and exp
   let s=started();
   const moneyBefore=s.run.resources.money;
   const energyBefore=s.run.dayState.energyCurrent;
+  const statsBefore={
+    magic:s.run.character.stats.magic,
+    reason:s.run.character.stats.reason,
+    creativity:s.run.character.stats.creativity
+  };
 
   s=dispatch(s,{type:'schoolLesson',id:'school.course.arcana'},catalog);
   assert.equal(s.run.resources.money,moneyBefore-500);
   assert.equal(s.run.dayState.energyCurrent,energyBefore-1);
-  assert.equal(s.run.character.stats.magic,5);
-  assert.equal(s.run.character.stats.reason,5);
-  assert.equal(s.run.character.stats.creativity,3);
+  assert.equal(s.run.character.stats.magic,statsBefore.magic+4);
+  assert.equal(s.run.character.stats.reason,statsBefore.reason+4);
+  assert.equal(s.run.character.stats.creativity,statsBefore.creativity+2);
   assert.equal(
     s.run.progression.school.tracks['school.track.arcana']?.counters.lessons_completed,
     1
