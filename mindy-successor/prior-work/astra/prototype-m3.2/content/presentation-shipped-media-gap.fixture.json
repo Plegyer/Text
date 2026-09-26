@@ -1,0 +1,486 @@
+{
+  "version": 1,
+  "kind": "presentation-shipped-media-gap-matrix",
+  "status": "current-branch-audit",
+  "sources": {
+    "productCoverage": "content/presentation-product-coverage.fixture.json",
+    "targetRegistry": "content/presentation-target-registry.fixture.json",
+    "legacyMigration": "content/presentation-legacy-migration.fixture.json",
+    "currentCatalogStagePack": "content/packs/stage.json"
+  },
+  "policy": {
+    "classificationBasis": "usable current catalog asset via deterministic semantic mapping; otherwise explicit registry fallback; otherwise unbound",
+    "missingMedia": "presentation-only-fallback-or-text-non-fatal",
+    "semanticSlotAndMediaIdAreDistinct": true,
+    "mechanicsDataAllowed": false
+  },
+  "entries": [
+    {
+      "presentationId": "job/lumber/shift/spring/default",
+      "registryCoverage": "present",
+      "classification": "direct-media-backed",
+      "currentCatalogMedia": [
+        {
+          "mediaId": "stage.lumber",
+          "kind": "image",
+          "assetPath": "assets/stage-lumber.svg",
+          "assetExists": true
+        },
+        {
+          "mediaId": "stage.lumber.spring",
+          "kind": "image",
+          "assetPath": "assets/stage-lumber.svg",
+          "assetExists": true
+        }
+      ],
+      "fallbackChain": [
+        "location/town/default"
+      ],
+      "resolvedFallbackPresentationId": "location/town/default",
+      "fallbackCatalogMedia": [
+        {
+          "mediaId": "stage.town",
+          "kind": "image",
+          "assetPath": "assets/stage-town.svg",
+          "assetExists": true
+        }
+      ],
+      "declaredTargetMedia": [
+        {
+          "mediaId": "job.lumber.shift.spring.default",
+          "kind": "gif",
+          "assetPath": "assets/lumber/shift-spring.gif",
+          "assetExists": false
+        }
+      ]
+    },
+    {
+      "presentationId": "job/lumber/shift/summer/default",
+      "registryCoverage": "present",
+      "classification": "direct-media-backed",
+      "currentCatalogMedia": [
+        {
+          "mediaId": "stage.lumber",
+          "kind": "image",
+          "assetPath": "assets/stage-lumber.svg",
+          "assetExists": true
+        },
+        {
+          "mediaId": "stage.lumber.summer",
+          "kind": "image",
+          "assetPath": "assets/stage-lumber.svg",
+          "assetExists": true
+        }
+      ],
+      "fallbackChain": [
+        "location/town/default"
+      ],
+      "resolvedFallbackPresentationId": "location/town/default",
+      "fallbackCatalogMedia": [
+        {
+          "mediaId": "stage.town",
+          "kind": "image",
+          "assetPath": "assets/stage-town.svg",
+          "assetExists": true
+        }
+      ],
+      "declaredTargetMedia": [
+        {
+          "mediaId": "job.lumber.shift.summer.default",
+          "kind": "gif",
+          "assetPath": "assets/lumber/shift-summer.gif",
+          "assetExists": false
+        }
+      ]
+    },
+    {
+      "presentationId": "job/lumber/shift/autumn/default",
+      "registryCoverage": "present",
+      "classification": "direct-media-backed",
+      "currentCatalogMedia": [
+        {
+          "mediaId": "stage.lumber",
+          "kind": "image",
+          "assetPath": "assets/stage-lumber.svg",
+          "assetExists": true
+        },
+        {
+          "mediaId": "stage.lumber.autumn",
+          "kind": "image",
+          "assetPath": "assets/stage-lumber.svg",
+          "assetExists": true
+        }
+      ],
+      "fallbackChain": [
+        "location/town/default"
+      ],
+      "resolvedFallbackPresentationId": "location/town/default",
+      "fallbackCatalogMedia": [
+        {
+          "mediaId": "stage.town",
+          "kind": "image",
+          "assetPath": "assets/stage-town.svg",
+          "assetExists": true
+        }
+      ],
+      "declaredTargetMedia": [
+        {
+          "mediaId": "job.lumber.shift.autumn.default",
+          "kind": "gif",
+          "assetPath": "assets/lumber/shift-autumn.gif",
+          "assetExists": false
+        }
+      ]
+    },
+    {
+      "presentationId": "job/lumber/shift/winter/default",
+      "registryCoverage": "present",
+      "classification": "direct-media-backed",
+      "currentCatalogMedia": [
+        {
+          "mediaId": "stage.lumber",
+          "kind": "image",
+          "assetPath": "assets/stage-lumber.svg",
+          "assetExists": true
+        },
+        {
+          "mediaId": "stage.lumber.winter",
+          "kind": "image",
+          "assetPath": "assets/stage-lumber.svg",
+          "assetExists": true
+        }
+      ],
+      "fallbackChain": [
+        "location/town/default"
+      ],
+      "resolvedFallbackPresentationId": "location/town/default",
+      "fallbackCatalogMedia": [
+        {
+          "mediaId": "stage.town",
+          "kind": "image",
+          "assetPath": "assets/stage-town.svg",
+          "assetExists": true
+        }
+      ],
+      "declaredTargetMedia": [
+        {
+          "mediaId": "job.lumber.shift.winter.default",
+          "kind": "gif",
+          "assetPath": "assets/lumber/shift-winter.gif",
+          "assetExists": false
+        }
+      ]
+    },
+    {
+      "presentationId": "job/lumber/result/default",
+      "registryCoverage": "present",
+      "classification": "direct-media-backed",
+      "currentCatalogMedia": [
+        {
+          "mediaId": "stage.lumber",
+          "kind": "image",
+          "assetPath": "assets/stage-lumber.svg",
+          "assetExists": true
+        },
+        {
+          "mediaId": "stage.lumber.spring",
+          "kind": "image",
+          "assetPath": "assets/stage-lumber.svg",
+          "assetExists": true
+        },
+        {
+          "mediaId": "stage.lumber.summer",
+          "kind": "image",
+          "assetPath": "assets/stage-lumber.svg",
+          "assetExists": true
+        },
+        {
+          "mediaId": "stage.lumber.autumn",
+          "kind": "image",
+          "assetPath": "assets/stage-lumber.svg",
+          "assetExists": true
+        },
+        {
+          "mediaId": "stage.lumber.winter",
+          "kind": "image",
+          "assetPath": "assets/stage-lumber.svg",
+          "assetExists": true
+        }
+      ],
+      "fallbackChain": [
+        "job/lumber/shift/spring/default",
+        "location/town/default"
+      ],
+      "resolvedFallbackPresentationId": "job/lumber/shift/spring/default",
+      "fallbackCatalogMedia": [
+        {
+          "mediaId": "stage.lumber",
+          "kind": "image",
+          "assetPath": "assets/stage-lumber.svg",
+          "assetExists": true
+        },
+        {
+          "mediaId": "stage.lumber.spring",
+          "kind": "image",
+          "assetPath": "assets/stage-lumber.svg",
+          "assetExists": true
+        }
+      ],
+      "declaredTargetMedia": [
+        {
+          "mediaId": "job.lumber.shift.spring.default",
+          "kind": "gif",
+          "assetPath": "assets/lumber/shift-spring.gif",
+          "assetExists": false
+        },
+        {
+          "mediaId": "job.lumber.shift.summer.default",
+          "kind": "gif",
+          "assetPath": "assets/lumber/shift-summer.gif",
+          "assetExists": false
+        },
+        {
+          "mediaId": "job.lumber.shift.autumn.default",
+          "kind": "gif",
+          "assetPath": "assets/lumber/shift-autumn.gif",
+          "assetExists": false
+        },
+        {
+          "mediaId": "job.lumber.shift.winter.default",
+          "kind": "gif",
+          "assetPath": "assets/lumber/shift-winter.gif",
+          "assetExists": false
+        }
+      ]
+    },
+    {
+      "presentationId": "job/lumber/event/lumber-career-first-shift/default",
+      "registryCoverage": "missing",
+      "classification": "currently-unbound",
+      "currentCatalogMedia": [],
+      "fallbackChain": [],
+      "resolvedFallbackPresentationId": null,
+      "fallbackCatalogMedia": [],
+      "declaredTargetMedia": [
+        {
+          "mediaId": "job.lumber.event.accepted-hand",
+          "kind": "gif",
+          "assetPath": "assets/lumber/accepted-hand.gif",
+          "assetExists": false
+        }
+      ]
+    },
+    {
+      "presentationId": "relationship/lumber-foreman/lumber-foreman-notice/default",
+      "registryCoverage": "missing",
+      "classification": "currently-unbound",
+      "currentCatalogMedia": [],
+      "fallbackChain": [],
+      "resolvedFallbackPresentationId": null,
+      "fallbackCatalogMedia": [],
+      "declaredTargetMedia": [
+        {
+          "mediaId": "relationship.lumber.foreman.professional",
+          "kind": "gif",
+          "assetPath": "assets/lumber/foreman-professional.gif",
+          "assetExists": false
+        }
+      ]
+    },
+    {
+      "presentationId": "relationship/lumber-foreman/lumber-night-foreman-professional/default",
+      "registryCoverage": "missing",
+      "classification": "currently-unbound",
+      "currentCatalogMedia": [],
+      "fallbackChain": [],
+      "resolvedFallbackPresentationId": null,
+      "fallbackCatalogMedia": [],
+      "declaredTargetMedia": [
+        {
+          "mediaId": "relationship.lumber.foreman.night.professional",
+          "kind": "gif",
+          "assetPath": "assets/lumber/foreman-night-professional.gif",
+          "assetExists": false
+        }
+      ]
+    },
+    {
+      "presentationId": "activity/forest/route/default",
+      "registryCoverage": "present",
+      "classification": "direct-media-backed",
+      "currentCatalogMedia": [
+        {
+          "mediaId": "stage.hunt",
+          "kind": "image",
+          "assetPath": "assets/stage-forest.svg",
+          "assetExists": true
+        }
+      ],
+      "fallbackChain": [
+        "location/town/default"
+      ],
+      "resolvedFallbackPresentationId": "location/town/default",
+      "fallbackCatalogMedia": [
+        {
+          "mediaId": "stage.town",
+          "kind": "image",
+          "assetPath": "assets/stage-town.svg",
+          "assetExists": true
+        }
+      ],
+      "declaredTargetMedia": []
+    },
+    {
+      "presentationId": "activity/forest/return/success",
+      "registryCoverage": "present",
+      "classification": "direct-media-backed",
+      "currentCatalogMedia": [
+        {
+          "mediaId": "stage.hunt",
+          "kind": "image",
+          "assetPath": "assets/stage-forest.svg",
+          "assetExists": true
+        }
+      ],
+      "fallbackChain": [
+        "activity/forest/route/default",
+        "location/town/default"
+      ],
+      "resolvedFallbackPresentationId": "activity/forest/route/default",
+      "fallbackCatalogMedia": [
+        {
+          "mediaId": "stage.hunt",
+          "kind": "image",
+          "assetPath": "assets/stage-forest.svg",
+          "assetExists": true
+        }
+      ],
+      "declaredTargetMedia": []
+    },
+    {
+      "presentationId": "school/literacy-and-numbers/lesson/default",
+      "registryCoverage": "missing",
+      "classification": "currently-unbound",
+      "currentCatalogMedia": [],
+      "fallbackChain": [],
+      "resolvedFallbackPresentationId": null,
+      "fallbackCatalogMedia": [],
+      "declaredTargetMedia": []
+    },
+    {
+      "presentationId": "school/arcana/lesson/default",
+      "registryCoverage": "missing",
+      "classification": "currently-unbound",
+      "currentCatalogMedia": [],
+      "fallbackChain": [],
+      "resolvedFallbackPresentationId": null,
+      "fallbackCatalogMedia": [],
+      "declaredTargetMedia": []
+    },
+    {
+      "presentationId": "school/rhetoric-and-social/lesson/default",
+      "registryCoverage": "missing",
+      "classification": "currently-unbound",
+      "currentCatalogMedia": [],
+      "fallbackChain": [],
+      "resolvedFallbackPresentationId": null,
+      "fallbackCatalogMedia": [],
+      "declaredTargetMedia": []
+    },
+    {
+      "presentationId": "school/etiquette-and-presentation/lesson/default",
+      "registryCoverage": "missing",
+      "classification": "currently-unbound",
+      "currentCatalogMedia": [],
+      "fallbackChain": [],
+      "resolvedFallbackPresentationId": null,
+      "fallbackCatalogMedia": [],
+      "declaredTargetMedia": []
+    },
+    {
+      "presentationId": "school/field-craft/lesson/default",
+      "registryCoverage": "present",
+      "classification": "direct-media-backed",
+      "currentCatalogMedia": [
+        {
+          "mediaId": "stage.school",
+          "kind": "image",
+          "assetPath": "assets/stage-school.svg",
+          "assetExists": true
+        }
+      ],
+      "fallbackChain": [
+        "location/town/default"
+      ],
+      "resolvedFallbackPresentationId": "location/town/default",
+      "fallbackCatalogMedia": [
+        {
+          "mediaId": "stage.town",
+          "kind": "image",
+          "assetPath": "assets/stage-town.svg",
+          "assetExists": true
+        }
+      ],
+      "declaredTargetMedia": []
+    },
+    {
+      "presentationId": "school/physical-training/lesson/default",
+      "registryCoverage": "missing",
+      "classification": "currently-unbound",
+      "currentCatalogMedia": [],
+      "fallbackChain": [],
+      "resolvedFallbackPresentationId": null,
+      "fallbackCatalogMedia": [],
+      "declaredTargetMedia": []
+    },
+    {
+      "presentationId": "school/arts-and-performance/lesson/default",
+      "registryCoverage": "missing",
+      "classification": "currently-unbound",
+      "currentCatalogMedia": [],
+      "fallbackChain": [],
+      "resolvedFallbackPresentationId": null,
+      "fallbackCatalogMedia": [],
+      "declaredTargetMedia": []
+    },
+    {
+      "presentationId": "school/body-confidence/lesson/default",
+      "registryCoverage": "missing",
+      "classification": "currently-unbound",
+      "currentCatalogMedia": [],
+      "fallbackChain": [],
+      "resolvedFallbackPresentationId": null,
+      "fallbackCatalogMedia": [],
+      "declaredTargetMedia": []
+    },
+    {
+      "presentationId": "ending/lumber/hard-work",
+      "registryCoverage": "present",
+      "classification": "fallback-backed",
+      "currentCatalogMedia": [],
+      "fallbackChain": [
+        "location/town/default"
+      ],
+      "resolvedFallbackPresentationId": "location/town/default",
+      "fallbackCatalogMedia": [
+        {
+          "mediaId": "stage.town",
+          "kind": "image",
+          "assetPath": "assets/stage-town.svg",
+          "assetExists": true
+        }
+      ],
+      "declaredTargetMedia": []
+    },
+    {
+      "presentationId": "ending/lumber/forewoman",
+      "registryCoverage": "missing",
+      "classification": "currently-unbound",
+      "currentCatalogMedia": [],
+      "fallbackChain": [],
+      "resolvedFallbackPresentationId": null,
+      "fallbackCatalogMedia": [],
+      "declaredTargetMedia": []
+    }
+  ]
+}
