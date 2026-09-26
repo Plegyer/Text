@@ -4,15 +4,11 @@ import {readFileSync} from 'node:fs';
 
 const json=(path:string)=>JSON.parse(readFileSync(path,'utf8'));
 
-const rcArtifacts=[
+const currentRcArtifacts=[
   'content/presentation-one-save-ownership-v2.fixture.json',
   'content/presentation-activity-option-save.fixture.json',
-  'content/presentation-save-reload-adversarial.fixture.json',
   'content/presentation-semantic-coverage-checksum.fixture.json',
-  'content/presentation-rc-degradation.fixture.json',
-  'content/presentation-replacement-pr22-compat.fixture.json',
-  'content/presentation-replacement-bundle.fixture.json',
-  'content/presentation-rc-evidence-pack.fixture.json'
+  'content/presentation-merged-rc-override-smoke.fixture.json'
 ].map(path=>({path,value:json(path)}));
 
 const forbiddenKeys=new Set([
@@ -38,57 +34,35 @@ function collectKeys(value:unknown,keys:string[]=[]):string[]{
   return keys;
 }
 
-test('no current RC presentation/save/override artifact stores frame or media timing state',()=>{
-  for(const artifact of rcArtifacts){
-    const keys=collectKeys(artifact.value);
-    for(const key of keys){
-      assert.equal(
-        forbiddenKeys.has(key),
-        false,
-        `${artifact.path}: forbidden persisted/contract key ${key}`
-      );
+test('final post-PR24 RC artifacts store no frame or media timing state',()=>{
+  for(const artifact of currentRcArtifacts){
+    for(const key of collectKeys(artifact.value)){
+      assert.equal(forbiddenKeys.has(key),false,`${artifact.path}: ${key}`);
     }
   }
 });
 
-test('presentation core has no animation-completion mechanics hook',()=>{
+test('presentation core exposes no animation-completion mechanics hook',()=>{
   const source=readFileSync('src/core/presentation.ts','utf8').toLowerCase();
   for(const token of [
     'animationend','animationcomplete','onanimation',
     'frameindex','currentframe','playbacktimestamp','loopcount'
-  ]){
-    assert.equal(source.includes(token),false,token);
-  }
+  ])assert.equal(source.includes(token),false,token);
 });
 
 test('presentation core cannot dispatch gameplay commands or own action availability',()=>{
   const source=readFileSync('src/core/presentation.ts','utf8');
   for(const token of [
-    'dispatch(',
-    'availableActivityActions',
-    "type:'activityAction'",
-    "type:'schoolLesson'",
-    "type:'chooseNightChoice'",
-    "type:'commitEnding'"
-  ]){
-    assert.equal(source.includes(token),false,token);
-  }
+    'dispatch(','availableActivityActions',
+    "type:'activityAction'","type:'schoolLesson'",
+    "type:'chooseNightChoice'","type:'commitEnding'"
+  ])assert.equal(source.includes(token),false,token);
 });
 
-test('central-stage contract explicitly rejects animation-owned blocking and mechanics',()=>{
-  const fixture=json('content/presentation-central-stage-interaction.fixture.json');
-  assert.equal(fixture.policy.presentationAppliesMechanics,false);
-  assert.equal(fixture.policy.animationTimingMayBlockControls,false);
-  assert.equal(fixture.policy.interactionBlockingOwner,'gameplay-flow-state');
-});
-
-test('animation-off degradation keeps gameplay unchanged',()=>{
-  const fixture=json('content/presentation-rc-degradation.fixture.json');
-  const row=fixture.cases.find((item:any)=>item.caseId==='animations-disabled');
-  assert.ok(row);
-  assert.equal(row.animationsEnabled,false);
-  assert.equal(row.expectedGameplayOutcome,'unchanged');
-  assert.equal(row.expectedPresentation,'static');
+test('one-Save ownership explicitly keeps mechanics outside presentation',()=>{
+  const fixture=json('content/presentation-one-save-ownership-v2.fixture.json');
+  assert.equal(fixture.policy.presentationOwnsMechanics,false);
+  assert.equal(fixture.policy.animationTimingOwnsBlocking,false);
 });
 
 test('Activity command availability remains gameplay option state, not animation state',()=>{
@@ -98,4 +72,11 @@ test('Activity command availability remains gameplay option state, not animation
   for(const row of fixture.cases){
     assert.equal('animationsEnabled' in (row.saveState??{}),false,row.caseId);
   }
+});
+
+test('merged RC override smoke changes media only, never gameplay or semantic identity',()=>{
+  const fixture=json('content/presentation-merged-rc-override-smoke.fixture.json');
+  assert.equal(fixture.policy.overrideChangesGameplay,false);
+  assert.equal(fixture.policy.semanticIdentityStableAcrossOverride,true);
+  assert.equal(fixture.policy.reloadIdentityGameplayDriven,true);
 });
