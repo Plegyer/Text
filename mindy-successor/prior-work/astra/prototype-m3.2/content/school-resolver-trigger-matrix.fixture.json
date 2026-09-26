@@ -1,0 +1,164 @@
+{
+  "formatVersion": 1,
+  "id": "school.resolver-trigger-matrix.fixture.v1",
+  "courses": [
+    {
+      "courseId": "school.course.literacy_and_numbers",
+      "factKinds": [
+        "actionCompleted",
+        "statChanged",
+        "statChanged",
+        "resourceChanged",
+        "energyChanged"
+      ],
+      "statChanged": [
+        "reason",
+        "wits"
+      ]
+    },
+    {
+      "courseId": "school.course.arcana",
+      "factKinds": [
+        "actionCompleted",
+        "statChanged",
+        "statChanged",
+        "statChanged",
+        "resourceChanged",
+        "energyChanged"
+      ],
+      "statChanged": [
+        "magic",
+        "reason",
+        "creativity"
+      ]
+    },
+    {
+      "courseId": "school.course.rhetoric_and_social",
+      "factKinds": [
+        "actionCompleted",
+        "statChanged",
+        "statChanged",
+        "statChanged",
+        "resourceChanged",
+        "energyChanged"
+      ],
+      "statChanged": [
+        "charm",
+        "sociability",
+        "wits"
+      ]
+    },
+    {
+      "courseId": "school.course.etiquette_and_presentation",
+      "factKinds": [
+        "actionCompleted",
+        "statChanged",
+        "statChanged",
+        "statChanged",
+        "resourceChanged",
+        "energyChanged"
+      ],
+      "statChanged": [
+        "manners",
+        "grooming",
+        "charm"
+      ]
+    },
+    {
+      "courseId": "school.course.field_craft",
+      "factKinds": [
+        "actionCompleted",
+        "statChanged",
+        "statChanged",
+        "statChanged",
+        "resourceChanged",
+        "energyChanged"
+      ],
+      "statChanged": [
+        "dexterity",
+        "wits",
+        "creativity"
+      ]
+    },
+    {
+      "courseId": "school.course.physical_training",
+      "factKinds": [
+        "actionCompleted",
+        "statChanged",
+        "statChanged",
+        "statChanged",
+        "resourceChanged",
+        "energyChanged"
+      ],
+      "statChanged": [
+        "strength",
+        "endurance",
+        "dexterity"
+      ]
+    },
+    {
+      "courseId": "school.course.arts_and_performance",
+      "factKinds": [
+        "actionCompleted",
+        "statChanged",
+        "statChanged",
+        "statChanged",
+        "statChanged",
+        "resourceChanged",
+        "energyChanged"
+      ],
+      "statChanged": [
+        "creativity",
+        "charm",
+        "sociability",
+        "dexterity"
+      ]
+    },
+    {
+      "courseId": "school.course.body_confidence",
+      "factKinds": [
+        "actionCompleted",
+        "statChanged",
+        "statChanged",
+        "statChanged",
+        "resourceChanged",
+        "energyChanged"
+      ],
+      "statChanged": [
+        "sexuality",
+        "grooming",
+        "endurance"
+      ]
+    }
+  ],
+  "endingCase": {
+    "courseId": "school.course.arcana",
+    "endingId": "ending.school.fixture.arcana-ready",
+    "triggerFact": {
+      "kind": "endingEligible",
+      "ending": "ending.school.fixture.arcana-ready"
+    },
+    "fullPackageConditions": [
+      {
+        "kind": "stat",
+        "stat": "magic",
+        "op": "gte",
+        "value": 5
+      },
+      {
+        "kind": "stat",
+        "stat": "reason",
+        "op": "gte",
+        "value": 5
+      },
+      {
+        "kind": "stat",
+        "stat": "creativity",
+        "op": "gte",
+        "value": 3
+      }
+    ],
+    "registration": "activation-adapter-same-boundary"
+  },
+  "invariant": "resolver sees full paid package; no per-stat partial resolver boundary"
+}
