@@ -226,7 +226,7 @@ export function loadCatalog(definitions:unknown,packs:unknown[]):Catalog {
       checkConditions(e.conditions,p,new Set(p.reads));
       unique(e.variants.map(v=>v.id),e.id+' варианты');unique(e.choices.map(c=>c.id),e.id+' выборы');
       if(!e.variants.some(v=>v.conditions.length===0))throw new Error(`Нет запасной постановки ${e.id}`);
-      if(!e.choices.some(c=>c.conditions.length===0&&c.effects.every(freeEffect)))throw new Error(`Нет бесплатного выхода ${e.id}`);
+      if(!['forced','terminal','ending_committed'].includes(e.priorityClass)&&!e.choices.some(c=>c.conditions.length===0&&c.effects.every(freeEffect)))throw new Error(`Нет бесплатного выхода ${e.id}`);
       for(const v of e.variants){
         checkConditions([...e.conditions,...v.conditions],p,new Set(p.reads));
         if(v.media.some(id=>!mediaIds.has(id)))throw new Error(`Неизвестное медиа ${e.id}`);
