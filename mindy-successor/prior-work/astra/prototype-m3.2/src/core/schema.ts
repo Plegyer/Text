@@ -192,8 +192,8 @@ export const reactionTriggerSchema=z.discriminatedUnion('kind',[
   z.object({kind:z.literal('creationCompleted')}).strict(),
   z.object({kind:z.literal('actionCompleted'),action:id.optional()}).strict(),
   z.object({kind:z.literal('choiceResolved'),event:id.optional()}).strict(),
-  z.object({kind:z.literal('statChanged'),stat:z.enum(stats).optional()}).strict(),
-  z.object({kind:z.literal('resourceChanged'),resource:z.enum(targetResources).optional()}).strict(),
+  z.object({kind:z.literal('statChanged'),stat:z.enum(stats)}).strict(),
+  z.object({kind:z.literal('resourceChanged'),resource:z.enum(targetResources)}).strict(),
   z.object({kind:z.literal('energyChanged')}).strict(),
   z.object({kind:z.literal('calendarAdvanced')}).strict(),
   z.object({kind:z.literal('dayStarted')}).strict(),
@@ -206,7 +206,7 @@ export const reactionTriggerSchema=z.discriminatedUnion('kind',[
   z.object({kind:z.literal('relationshipCounterChanged'),relationship:id,counter:id.optional()}).strict(),
   z.object({kind:z.literal('relationshipTransition'),relationship:id}).strict(),
   z.object({kind:z.literal('relationshipFactAdded'),relationship:id,fact:id.optional()}).strict(),
-  z.object({kind:z.literal('worldFactAdded'),fact:id.optional()}).strict(),
+  z.object({kind:z.literal('worldFactAdded'),fact:id}).strict(),
   z.object({kind:z.literal('endingEligible'),ending:id.optional()}).strict()
 ]);
 export type ReactionTrigger=z.infer<typeof reactionTriggerSchema>;
@@ -334,7 +334,7 @@ const pendingSceneSchema=z.object({
   allowedChoiceIds:z.array(id).max(16).optional()
 }).strict();
 const queuedEventInstanceSchema=z.object({
-  instanceId:z.string().min(1).max(180),
+  instanceId:id,
   eventId:id,
   variantId:id,
   allowedChoiceIds:z.array(id).max(16),
