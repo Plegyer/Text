@@ -1436,6 +1436,144 @@
           "conditions": []
         }
       ]
+    },
+    {
+      "id": "lumber.shift",
+      "label": "Lumber shift",
+      "description": "Executable Lumber production fixture shift.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [],
+      "effects": [
+        {
+          "kind": "incrementCareerCounter",
+          "career": "lumber",
+          "counter": "completed_shifts",
+          "amount": 1
+        }
+      ],
+      "mode": "normal",
+      "scenes": [
+        {
+          "id": "spring.default",
+          "text": "Spring Lumber shift production fixture.",
+          "conditions": [],
+          "media": [
+            "job.lumber.shift.spring.default"
+          ]
+        },
+        {
+          "id": "summer.default",
+          "text": "Summer Lumber shift production fixture.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "summer"
+            }
+          ],
+          "media": [
+            "job.lumber.shift.summer.default"
+          ]
+        },
+        {
+          "id": "autumn.default",
+          "text": "Autumn Lumber shift production fixture.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "autumn"
+            }
+          ],
+          "media": [
+            "job.lumber.shift.autumn.default"
+          ]
+        },
+        {
+          "id": "winter.default",
+          "text": "Winter Lumber shift production fixture.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "winter"
+            }
+          ],
+          "media": [
+            "job.lumber.shift.winter.default"
+          ]
+        }
+      ],
+      "seasonal": {
+        "spring": [
+          {
+            "kind": "modifyStat",
+            "stat": "strength",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "endurance",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "grooming",
+            "delta": -1
+          }
+        ],
+        "summer": [
+          {
+            "kind": "modifyStat",
+            "stat": "strength",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "endurance",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "grooming",
+            "delta": -1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "manners",
+            "delta": -1
+          }
+        ],
+        "autumn": [
+          {
+            "kind": "modifyStat",
+            "stat": "strength",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "dexterity",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "endurance",
+            "delta": -1
+          }
+        ],
+        "winter": [
+          {
+            "kind": "modifyStat",
+            "stat": "endurance",
+            "delta": 2
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "sociability",
+            "delta": -1
+          }
+        ]
+      }
     }
   ],
   "endings": [
@@ -1534,6 +1672,1101 @@
       ],
       "reward": "vitality",
       "epilogue": "Бронн вручает вам ключи от артели и свисток. «Главное — свистеть до падения дерева». Вы остаётесь руководить работой на своих условиях."
+    },
+    {
+      "id": "ending.lumber.hard-work",
+      "title": "Lumber Hard Work",
+      "description": "Persistence ending fixture: exactly fifty completed Lumber shifts.",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "lumber",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 50
+        }
+      ],
+      "reward": "lumber.hardwork.compat",
+      "metaRewards": [
+        {
+          "kind": "hardWork",
+          "rewardId": "hardWork:lumber",
+          "career": "lumber"
+        }
+      ],
+      "epilogue": "Fixture epilogue for Lumber Hard Work."
+    },
+    {
+      "id": "ending.lumber.forewoman",
+      "title": "Lumber Forewoman fixture",
+      "description": "Cross-system fixture ending using the professional Foreman route and School-result career facts.",
+      "conditions": [
+        {
+          "kind": "careerFact",
+          "career": "lumber",
+          "fact": "management-school-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "lumber",
+          "fact": "forewoman-problem-resolved",
+          "present": true
+        },
+        {
+          "kind": "relationshipStage",
+          "relationship": "lumber.foreman",
+          "stage": "route-professional"
+        }
+      ],
+      "reward": "lumber.forewoman.compat",
+      "metaRewards": [],
+      "epilogue": "Fixture epilogue for the Forewoman outcome family."
+    },
+    {
+      "id": "ending.lumber.forest",
+      "title": "Lumber Forest fixture",
+      "description": "Cross-system fixture ending after a qualifying Forest Activity result and Lumber continuation.",
+      "conditions": [
+        {
+          "kind": "careerFact",
+          "career": "lumber",
+          "fact": "forest-truth-known",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "lumber",
+          "fact": "forest-problem-resolved",
+          "present": true
+        }
+      ],
+      "reward": "lumber.forest.compat",
+      "metaRewards": [],
+      "epilogue": "Fixture epilogue for the Forest outcome family."
+    }
+  ],
+  "careers": [
+    {
+      "id": "lumber",
+      "label": "Lumber",
+      "initialStage": "newcomer",
+      "stages": [
+        "newcomer",
+        "accepted-hand"
+      ],
+      "transitions": [
+        {
+          "id": "accept-hand",
+          "from": [
+            "newcomer"
+          ],
+          "to": "accepted-hand",
+          "conditions": [
+            {
+              "kind": "careerCounter",
+              "career": "lumber",
+              "counter": "completed_shifts",
+              "op": "gte",
+              "value": 1
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "lumber",
+              "fact": "foreman-noticed-player"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "quests": [],
+  "relationships": [
+    {
+      "id": "lumber.foreman",
+      "label": "Lumber Foreman",
+      "initialStage": "unknown",
+      "stages": [
+        "unknown",
+        "professional",
+        "route-professional"
+      ],
+      "transitions": [
+        {
+          "id": "notice-work",
+          "from": [
+            "unknown"
+          ],
+          "to": "professional",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "lumber",
+              "stage": "accepted-hand"
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "choose-professional",
+          "from": [
+            "professional"
+          ],
+          "to": "route-professional",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "setRelationshipChoice",
+              "relationship": "lumber.foreman",
+              "choice": "route",
+              "value": "professional"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "lodgings": [
+    {
+      "id": "lodging.normal",
+      "label": "Normal room",
+      "housing": "normal",
+      "moneyCost": 100,
+      "conditions": [],
+      "effects": [],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": 0
+    },
+    {
+      "id": "lodging.cheap",
+      "label": "Cheap lodging",
+      "housing": "cheap",
+      "moneyCost": 50,
+      "conditions": [],
+      "effects": [],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": 0
+    },
+    {
+      "id": "lodging.street",
+      "label": "Street / no lodging",
+      "housing": "street",
+      "moneyCost": 0,
+      "conditions": [],
+      "effects": [],
+      "nextDayEffects": [
+        {
+          "stat": "grooming",
+          "delta": -1
+        }
+      ],
+      "nextDayEnergyDelta": -1
+    }
+  ],
+  "nightChoices": [
+    {
+      "id": "night.sleep",
+      "label": "Sleep",
+      "conditions": [],
+      "effects": [],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": 0
+    },
+    {
+      "id": "lumber.foreman.night",
+      "label": "Talk with the Foreman",
+      "conditions": [
+        {
+          "kind": "relationshipStage",
+          "relationship": "lumber.foreman",
+          "stage": "route-professional"
+        }
+      ],
+      "effects": [
+        {
+          "kind": "incrementRelationshipCounter",
+          "relationship": "lumber.foreman",
+          "counter": "night_meetings",
+          "amount": 1
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": 0
+    },
+    {
+      "id": "school.night_study.literacy_and_numbers.reason",
+      "label": "Night study: school.course.literacy_and_numbers / reason",
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
+      "effects": [
+        {
+          "kind": "modifyStat",
+          "stat": "reason",
+          "delta": 2
+        },
+        {
+          "kind": "incrementSchoolCounter",
+          "track": "school.track.literacy_and_numbers",
+          "counter": "night_study_sessions",
+          "amount": 1
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": -1
+    },
+    {
+      "id": "school.night_study.literacy_and_numbers.wits",
+      "label": "Night study: school.course.literacy_and_numbers / wits",
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
+      "effects": [
+        {
+          "kind": "modifyStat",
+          "stat": "wits",
+          "delta": 2
+        },
+        {
+          "kind": "incrementSchoolCounter",
+          "track": "school.track.literacy_and_numbers",
+          "counter": "night_study_sessions",
+          "amount": 1
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": -1
+    },
+    {
+      "id": "school.night_study.arcana.magic",
+      "label": "Night study: school.course.arcana / magic",
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
+      "effects": [
+        {
+          "kind": "modifyStat",
+          "stat": "magic",
+          "delta": 2
+        },
+        {
+          "kind": "incrementSchoolCounter",
+          "track": "school.track.arcana",
+          "counter": "night_study_sessions",
+          "amount": 1
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": -1
+    },
+    {
+      "id": "school.night_study.arcana.reason",
+      "label": "Night study: school.course.arcana / reason",
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
+      "effects": [
+        {
+          "kind": "modifyStat",
+          "stat": "reason",
+          "delta": 2
+        },
+        {
+          "kind": "incrementSchoolCounter",
+          "track": "school.track.arcana",
+          "counter": "night_study_sessions",
+          "amount": 1
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": -1
+    },
+    {
+      "id": "school.night_study.arcana.creativity",
+      "label": "Night study: school.course.arcana / creativity",
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
+      "effects": [
+        {
+          "kind": "modifyStat",
+          "stat": "creativity",
+          "delta": 2
+        },
+        {
+          "kind": "incrementSchoolCounter",
+          "track": "school.track.arcana",
+          "counter": "night_study_sessions",
+          "amount": 1
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": -1
+    },
+    {
+      "id": "school.night_study.rhetoric_and_social.charm",
+      "label": "Night study: school.course.rhetoric_and_social / charm",
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
+      "effects": [
+        {
+          "kind": "modifyStat",
+          "stat": "charm",
+          "delta": 2
+        },
+        {
+          "kind": "incrementSchoolCounter",
+          "track": "school.track.rhetoric_and_social",
+          "counter": "night_study_sessions",
+          "amount": 1
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": -1
+    },
+    {
+      "id": "school.night_study.rhetoric_and_social.sociability",
+      "label": "Night study: school.course.rhetoric_and_social / sociability",
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
+      "effects": [
+        {
+          "kind": "modifyStat",
+          "stat": "sociability",
+          "delta": 2
+        },
+        {
+          "kind": "incrementSchoolCounter",
+          "track": "school.track.rhetoric_and_social",
+          "counter": "night_study_sessions",
+          "amount": 1
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": -1
+    },
+    {
+      "id": "school.night_study.rhetoric_and_social.wits",
+      "label": "Night study: school.course.rhetoric_and_social / wits",
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
+      "effects": [
+        {
+          "kind": "modifyStat",
+          "stat": "wits",
+          "delta": 2
+        },
+        {
+          "kind": "incrementSchoolCounter",
+          "track": "school.track.rhetoric_and_social",
+          "counter": "night_study_sessions",
+          "amount": 1
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": -1
+    },
+    {
+      "id": "school.night_study.etiquette_and_presentation.manners",
+      "label": "Night study: school.course.etiquette_and_presentation / manners",
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
+      "effects": [
+        {
+          "kind": "modifyStat",
+          "stat": "manners",
+          "delta": 2
+        },
+        {
+          "kind": "incrementSchoolCounter",
+          "track": "school.track.etiquette_and_presentation",
+          "counter": "night_study_sessions",
+          "amount": 1
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": -1
+    },
+    {
+      "id": "school.night_study.etiquette_and_presentation.grooming",
+      "label": "Night study: school.course.etiquette_and_presentation / grooming",
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
+      "effects": [
+        {
+          "kind": "modifyStat",
+          "stat": "grooming",
+          "delta": 2
+        },
+        {
+          "kind": "incrementSchoolCounter",
+          "track": "school.track.etiquette_and_presentation",
+          "counter": "night_study_sessions",
+          "amount": 1
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": -1
+    },
+    {
+      "id": "school.night_study.etiquette_and_presentation.charm",
+      "label": "Night study: school.course.etiquette_and_presentation / charm",
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
+      "effects": [
+        {
+          "kind": "modifyStat",
+          "stat": "charm",
+          "delta": 2
+        },
+        {
+          "kind": "incrementSchoolCounter",
+          "track": "school.track.etiquette_and_presentation",
+          "counter": "night_study_sessions",
+          "amount": 1
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": -1
+    },
+    {
+      "id": "school.night_study.field_craft.dexterity",
+      "label": "Night study: school.course.field_craft / dexterity",
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
+      "effects": [
+        {
+          "kind": "modifyStat",
+          "stat": "dexterity",
+          "delta": 2
+        },
+        {
+          "kind": "incrementSchoolCounter",
+          "track": "school.track.field_craft",
+          "counter": "night_study_sessions",
+          "amount": 1
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": -1
+    },
+    {
+      "id": "school.night_study.field_craft.wits",
+      "label": "Night study: school.course.field_craft / wits",
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
+      "effects": [
+        {
+          "kind": "modifyStat",
+          "stat": "wits",
+          "delta": 2
+        },
+        {
+          "kind": "incrementSchoolCounter",
+          "track": "school.track.field_craft",
+          "counter": "night_study_sessions",
+          "amount": 1
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": -1
+    },
+    {
+      "id": "school.night_study.field_craft.creativity",
+      "label": "Night study: school.course.field_craft / creativity",
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
+      "effects": [
+        {
+          "kind": "modifyStat",
+          "stat": "creativity",
+          "delta": 2
+        },
+        {
+          "kind": "incrementSchoolCounter",
+          "track": "school.track.field_craft",
+          "counter": "night_study_sessions",
+          "amount": 1
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": -1
+    },
+    {
+      "id": "school.night_study.physical_training.strength",
+      "label": "Night study: school.course.physical_training / strength",
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
+      "effects": [
+        {
+          "kind": "modifyStat",
+          "stat": "strength",
+          "delta": 2
+        },
+        {
+          "kind": "incrementSchoolCounter",
+          "track": "school.track.physical_training",
+          "counter": "night_study_sessions",
+          "amount": 1
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": -1
+    },
+    {
+      "id": "school.night_study.physical_training.endurance",
+      "label": "Night study: school.course.physical_training / endurance",
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
+      "effects": [
+        {
+          "kind": "modifyStat",
+          "stat": "endurance",
+          "delta": 2
+        },
+        {
+          "kind": "incrementSchoolCounter",
+          "track": "school.track.physical_training",
+          "counter": "night_study_sessions",
+          "amount": 1
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": -1
+    },
+    {
+      "id": "school.night_study.physical_training.dexterity",
+      "label": "Night study: school.course.physical_training / dexterity",
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
+      "effects": [
+        {
+          "kind": "modifyStat",
+          "stat": "dexterity",
+          "delta": 2
+        },
+        {
+          "kind": "incrementSchoolCounter",
+          "track": "school.track.physical_training",
+          "counter": "night_study_sessions",
+          "amount": 1
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": -1
+    },
+    {
+      "id": "school.night_study.arts_and_performance.creativity",
+      "label": "Night study: school.course.arts_and_performance / creativity",
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
+      "effects": [
+        {
+          "kind": "modifyStat",
+          "stat": "creativity",
+          "delta": 2
+        },
+        {
+          "kind": "incrementSchoolCounter",
+          "track": "school.track.arts_and_performance",
+          "counter": "night_study_sessions",
+          "amount": 1
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": -1
+    },
+    {
+      "id": "school.night_study.arts_and_performance.charm",
+      "label": "Night study: school.course.arts_and_performance / charm",
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
+      "effects": [
+        {
+          "kind": "modifyStat",
+          "stat": "charm",
+          "delta": 2
+        },
+        {
+          "kind": "incrementSchoolCounter",
+          "track": "school.track.arts_and_performance",
+          "counter": "night_study_sessions",
+          "amount": 1
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": -1
+    },
+    {
+      "id": "school.night_study.arts_and_performance.sociability",
+      "label": "Night study: school.course.arts_and_performance / sociability",
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
+      "effects": [
+        {
+          "kind": "modifyStat",
+          "stat": "sociability",
+          "delta": 2
+        },
+        {
+          "kind": "incrementSchoolCounter",
+          "track": "school.track.arts_and_performance",
+          "counter": "night_study_sessions",
+          "amount": 1
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": -1
+    },
+    {
+      "id": "school.night_study.arts_and_performance.dexterity",
+      "label": "Night study: school.course.arts_and_performance / dexterity",
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
+      "effects": [
+        {
+          "kind": "modifyStat",
+          "stat": "dexterity",
+          "delta": 2
+        },
+        {
+          "kind": "incrementSchoolCounter",
+          "track": "school.track.arts_and_performance",
+          "counter": "night_study_sessions",
+          "amount": 1
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": -1
+    },
+    {
+      "id": "school.night_study.body_confidence.sexuality",
+      "label": "Night study: school.course.body_confidence / sexuality",
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
+      "effects": [
+        {
+          "kind": "modifyStat",
+          "stat": "sexuality",
+          "delta": 2
+        },
+        {
+          "kind": "incrementSchoolCounter",
+          "track": "school.track.body_confidence",
+          "counter": "night_study_sessions",
+          "amount": 1
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": -1
+    },
+    {
+      "id": "school.night_study.body_confidence.grooming",
+      "label": "Night study: school.course.body_confidence / grooming",
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
+      "effects": [
+        {
+          "kind": "modifyStat",
+          "stat": "grooming",
+          "delta": 2
+        },
+        {
+          "kind": "incrementSchoolCounter",
+          "track": "school.track.body_confidence",
+          "counter": "night_study_sessions",
+          "amount": 1
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": -1
+    },
+    {
+      "id": "school.night_study.body_confidence.endurance",
+      "label": "Night study: school.course.body_confidence / endurance",
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            },
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ]
+        }
+      ],
+      "effects": [
+        {
+          "kind": "modifyStat",
+          "stat": "endurance",
+          "delta": 2
+        },
+        {
+          "kind": "incrementSchoolCounter",
+          "track": "school.track.body_confidence",
+          "counter": "night_study_sessions",
+          "amount": 1
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": -1
+    }
+  ],
+  "activities": [
+    {
+      "id": "lumber.forest",
+      "label": "Lumber Forest Activity fixture",
+      "version": 1,
+      "entryConditions": [
+        {
+          "kind": "worldFact",
+          "fact": "lumber.capability.enter-old-boundary",
+          "present": true
+        }
+      ],
+      "entryEnergyCost": 2,
+      "resumePolicy": "allowed",
+      "timePolicy": "same_day",
+      "failurePolicy": "exit_to_day",
+      "adapter": "counter.v1",
+      "adapterConfig": {
+        "initialEndurance": 5,
+        "advanceEnduranceCost": 1,
+        "successAtProgress": 2,
+        "failAtEndurance": 0
+      },
+      "results": [
+        {
+          "id": "lumber.forest.success",
+          "outcome": "success",
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "lumber.forest.truth-known"
+            }
+          ]
+        },
+        {
+          "id": "lumber.forest.escape",
+          "outcome": "escape",
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "lumber.forest.escaped"
+            }
+          ]
+        },
+        {
+          "id": "lumber.forest.failure",
+          "outcome": "failure",
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "lumber.forest.failed"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

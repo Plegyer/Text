@@ -1,4 +1,6 @@
 import { metrics, stats, seasons, priorityClasses, saveSchema, type Stat, type Save, type Meta, type Condition, type Effect, type Catalog, type StoryEvent, type Action, type MachineDefinition, type ReactionFact, type ReactionTrigger, type PriorityClass, type LodgingDefinition, type NightChoiceDefinition, type ActivityDefinition, type ActivityOutcome, type ActivityEnvelope, ordinaryHardWorkCareers, type MetaReward, type OrdinaryHardWorkCareer } from './schema.ts';
+import {SCHOOL_ACTION_ID,SCHOOL_COURSES,executeSchoolLesson,type SchoolCourseId} from './school.ts';
+import {presentationIdForActionResult,presentationIdForEvent} from './presentation.ts';
 
 const statSet=new Set<string>(stats);
 const cappedLegacy=new Set(['health','stress','trust']);
@@ -251,7 +253,7 @@ export function freshSave(metaInput?:Partial<Meta>&{completed?:string[];lives?:n
       resources:{money:startingMoney,inventory:{herb:2,tonic:0,scales:0}},
       dayState:{energyCurrent:3,nextDayModifiers:{energyDelta:0,statEffects:[],tags:[]},optionalOfferIds:[],scheduledEventIds:[]},
       housingState:{current:'normal' as const,paidForCurrentNight:false},
-      progression:{careers:{},quests:{},relationships:{},worldFacts:[]},
+      progression:{careers:{},quests:{},relationships:{},school:{tracks:{}},worldFacts:[]},
       endings:{eligible:[],committed:null,result:null},
       flow:{pendingScene:null,reaction:{epochCounter:0,currentEpochId:null,attemptedEventIds:[],cascadeDepth:0,queued:[]},night:null,activity:null,lastAction:null},
       rngState:{state:(meta.runsStarted*2654435761)>>>0},
@@ -275,7 +277,7 @@ function addUnique(target:string[],value:string){if(!target.includes(value))targ
 function removeValue(target:string[],value:string){const i=target.indexOf(value);if(i>=0)target.splice(i,1);}
 function effectPhase(e:Effect){
   if(['modifyStat','modifyResource','modifyEnergy','addItem','removeItem','setHousing','metric','item','housing','flag'].includes(e.kind))return 1;
-  if(['incrementCareerCounter','addCareerFact','setCareerChoice','incrementQuestCounter','addQuestFact','setQuestChoice','incrementRelationshipCounter','addRelationshipFact','setRelationshipChoice','addWorldFact','removeWorldFact'].includes(e.kind))return 2;
+  if(['incrementSchoolCounter','incrementCareerCounter','addCareerFact','setCareerChoice','incrementQuestCounter','addQuestFact','setQuestChoice','incrementRelationshipCounter','addRelationshipFact','setRelationshipChoice','addWorldFact','removeWorldFact'].includes(e.kind))return 2;
   if(['advanceCareer','advanceQuest','advanceRelationship'].includes(e.kind))return 3;
   return 4;
 }
@@ -308,6 +310,18 @@ function applyOne(s:Save,e:Effect,cat:Catalog,allowTransitions:boolean){
       s.run.resources.inventory[e.id]=have-e.count;return;
     }
     case 'setHousing': s.run.housingState.current=e.value;return;
+
+    case 'incrementSchoolCounter': {
+      const track=s.run.progression.school.tracks[e.track]??={
+        trackId:e.track,
+        counters:{},
+        facts:[],
+        milestones:[],
+        certificates:[],
+        choices:{}
+      };
+      track.counters[e.counter]=Math.max(0,(track.counters[e.counter]??0)+e.amount);return;
+    }
 
     case 'incrementCareerCounter': {const st=ensureDomainState(s,'career',e.career,cat);st.counters[e.counter]=Math.max(0,(st.counters[e.counter]??0)+e.amount);return;}
     case 'addCareerFact': addUnique(ensureDomainState(s,'career',e.career,cat).facts,e.fact);return;
@@ -520,7 +534,7 @@ function attemptChance(s:Save,e:StoryEvent,trace:ResolverTrace){
   trace.steps.push(`chance:${e.id}:${roll.toFixed(8)}<${chance.toFixed(8)}:${pass?'pass':'fail'}`);
   return pass;
 }
-function selectBlocking(s:Save,c:ResolverCandidate,trace:ResolverTrace){
+function selectBlocking(s:Save,c:ResolverCandidate,trace:ResolverTrace,cat:Catalog){
   const r=s.run.flow.reaction;
   if(r.cascadeDepth>=RESOLVER_CASCADE_LIMIT){
     throw new Error(`Event Resolver cascade limit ${RESOLVER_CASCADE_LIMIT} exceeded in ${r.currentEpochId}; candidate=${c.event.id}; trace=${trace.steps.join('|')}`);
@@ -532,6 +546,7 @@ function selectBlocking(s:Save,c:ResolverCandidate,trace:ResolverTrace){
   s.run.pending={
     eventId:c.event.id,
     variantId:c.variantId,
+    presentationId:presentationIdForEvent(cat,c.event.id,c.variantId),
     reactionEpochId:ensureReactionEpoch(s),
     allowedChoiceIds:[...c.allowedChoiceIds]
   };
@@ -584,7 +599,7 @@ function resolveReactionsMutable(s:Save,facts:ReactionFact[],cat:Catalog,trace:R
   trace.steps.push(`candidates:${candidates.map(x=>x.event.id).join(',')||'-'}`);
   for(const candidate of candidates){
     if(candidate.needsChance&&!attemptChance(s,candidate.event,trace))continue;
-    selectBlocking(s,candidate,trace);return;
+    selectBlocking(s,candidate,trace,cat);return;
   }
 }
 
@@ -975,6 +990,7 @@ const compatibilitySleepChoice:NightChoiceDefinition={id:'legacy.sleep',label:'�
 
 export type Command=
   |{type:'action';id:string;recipe?:'gentle'|'bold'}
+  |{type:'schoolLesson';id:SchoolCourseId}
   |{type:'choice';id:string}
   |{type:'commitEnding';id:string}
   |{type:'completeEnding'}
@@ -1031,6 +1047,10 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
     return s;
   }
   if(s.run.status!=='active'&&!(s.run.status==='ending_committed'&&command.type==='choice'))throw new Error('Эта жизнь завершена.');
+  if(command.type==='schoolLesson'){
+    const result=executeSchoolLesson(s,command.id,cat,{applyEffects,register,resolveReactions});
+    return result.state;
+  }
   if(command.type==='enterActivity'){
     enterActivityMutable(s,cat,command.id);
     return s;
@@ -1046,7 +1066,7 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
     const e=cat.events.find(x=>x.id===q.eventId);if(!e)throw new Error('Событие предложения отсутствует.');
     s.run.flow.reaction.currentEpochId=q.reactionEpochId;
     removeQueuedInstance(s,q.instanceId);
-    s.run.pending={eventId:q.eventId,variantId:q.variantId,reactionEpochId:q.reactionEpochId,allowedChoiceIds:[...q.allowedChoiceIds]};
+    s.run.pending={eventId:q.eventId,variantId:q.variantId,presentationId:presentationIdForEvent(cat,q.eventId,q.variantId),reactionEpochId:q.reactionEpochId,allowedChoiceIds:[...q.allowedChoiceIds]};
     logEventScene(s,e,q.variantId);
     return s;
   }
@@ -1129,7 +1149,7 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
   if(a.mode!=='story')s.run.slot++;log(s,`${a.label}. Осталось энергии: ${s.run.metrics.energy}.`);
   const variants=a.scenes?.filter(v=>eligible(v.conditions,s,cat)).sort((a,b)=>b.conditions.length-a.conditions.length);
   const v=variants?.[0];
-  s.run.lastAction={id:a.id,title:a.label,text:v?.text??a.description,media:v?.media??['stage.town'],deltas:delta(before,s.run.metrics)};
+  s.run.lastAction={id:a.id,title:a.label,text:v?.text??a.description,media:v?.media??['stage.town'],presentationId:presentationIdForActionResult(cat,a.id,v?.media??['stage.town']),deltas:delta(before,s.run.metrics)};
   register(s,cat);
   runResolverBoundary(s,input,cat,[{kind:'actionCompleted',action:a.id}],true);
   return s;
@@ -1171,7 +1191,7 @@ function migrateV3(raw:any){
       resources:{money:Math.max(0,oldMetrics.money??0),inventory:{...(raw.run.inventory??{})}},
       dayState:{energyCurrent:Math.max(0,oldMetrics.energy??3),nextDayModifiers:{energyDelta:0,statEffects:[],tags:[]},optionalOfferIds:[],scheduledEventIds:[]},
       housingState:{current:targetHousing(raw.run.housing??'room'),paidForCurrentNight:false},
-      progression:{careers:{},quests:{},relationships:{},worldFacts:migrateLegacyWorldFacts(raw.run.flags)},
+      progression:{careers:{},quests:{},relationships:{},school:{tracks:{}},worldFacts:migrateLegacyWorldFacts(raw.run.flags)},
       endings:{
         eligible:[...(raw.run.availableEndings??[])],
         committed:raw.run.acceptedEnding??null,
@@ -1220,9 +1240,9 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
   const s=attachLegacyFacade(parsed);
   if(s.run.metrics.energy>energyMax(s))throw new Error('Некорректный запас энергии.');
   if(!s.run.creation.complete&&s.run.creation.remaining+Object.values(s.run.creation.allocated).reduce((a,b)=>a+b,0)!==10)throw new Error('Некорректные стартовые очки.');
-  if(s.run.lastAction&&!cat.definitions.actions.some(a=>a.id===s.run.lastAction!.id))throw new Error('Неизвестное последнее занятие.');
+  if(s.run.lastAction&&s.run.lastAction.id!==SCHOOL_ACTION_ID&&!cat.definitions.actions.some(a=>a.id===s.run.lastAction!.id))throw new Error('Неизвестное последнее занятие.');
   if(s.run.lastAction?.media.some(id=>!cat.media.some(m=>m.id===id)))throw new Error('Неизвестное медиа последнего занятия.');
-  const actions=new Set(cat.definitions.actions.map(a=>a.id));
+  const actions=new Set([...cat.definitions.actions.map(a=>a.id),SCHOOL_ACTION_ID]);
   for(const id of Object.keys(s.run.actionCounts))if(!actions.has(id))throw new Error(`Неизвестный счётчик ${id}`);
   for(const [kind,map,defs] of [
     ['career',s.run.progression.careers,cat.definitions.careers??[]],
@@ -1234,6 +1254,11 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
       if(!def)throw new Error(`Неизвестная ${kind} state machine в сохранении: ${machineId}`);
       if(!def.stages.includes(state.stage))throw new Error(`Неизвестный stage в сохранении: ${kind}.${machineId}.${state.stage}`);
     }
+  }
+  const knownSchoolTracks=new Set(SCHOOL_COURSES.map(course=>course.trackId));
+  for(const [trackId,track] of Object.entries(s.run.progression.school.tracks)){
+    if(track.trackId!==trackId)throw new Error(`School track key mismatch: ${trackId}`);
+    if(!knownSchoolTracks.has(trackId))throw new Error(`Неизвестный School track в сохранении: ${trackId}`);
   }
   const knownFlags=new Set(cat.definitions.flags);
   for(const flag of Object.keys(s.run.flags))if(!knownFlags.has(flag)&&!/^system\.scholar\.\d+$/.test(flag))throw new Error(`Неизвестный флаг ${flag}`);

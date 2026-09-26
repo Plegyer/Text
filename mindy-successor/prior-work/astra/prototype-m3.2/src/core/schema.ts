@@ -58,6 +58,7 @@ export type Condition =
   | {kind:'not';condition:Condition};
 
 const id = z.string().regex(/^[a-z][a-z0-9_.-]{1,79}$/);
+const semanticPresentationId = z.string().min(1).max(240).regex(/^[a-z0-9][a-z0-9/._-]*$/);
 const rewardId = z.union([id,z.string().regex(/^hardWork:[a-z][a-z0-9_.-]{1,79}$/)]);
 const textId = z.string().min(1).max(120);
 const n = z.number().int().min(0).max(1_000_000);
@@ -114,6 +115,8 @@ export const effectSchema = z.discriminatedUnion('kind',[
   z.object({kind:z.literal('addItem'),id:z.enum(items),count:z.number().int().min(1).max(100)}).strict(),
   z.object({kind:z.literal('removeItem'),id:z.enum(items),count:z.number().int().min(1).max(100)}).strict(),
   z.object({kind:z.literal('setHousing'),value:z.enum(targetHousing)}).strict(),
+
+  z.object({kind:z.literal('incrementSchoolCounter'),track:id,counter:id,amount:z.number().int().min(-1000).max(1000)}).strict(),
 
   z.object({kind:z.literal('incrementCareerCounter'),career:id,counter:id,amount:z.number().int().min(-1000).max(1000)}).strict(),
   z.object({kind:z.literal('addCareerFact'),career:id,fact:id}).strict(),
@@ -435,17 +438,27 @@ export const housingStateSchema=z.object({current:z.enum(targetHousing),paidForC
 const careerState=z.object({stage:id,shifts:n,counters:z.record(z.string(),n),choices:z.record(z.string(),z.string()),facts:z.array(id)}).strict();
 const questState=z.object({stage:id,counters:z.record(z.string(),n),choices:z.record(z.string(),z.string()),facts:z.array(id)}).strict();
 const relationshipState=z.object({stage:id,counters:z.record(z.string(),n),choices:z.record(z.string(),z.string()),facts:z.array(id)}).strict();
+const schoolTrackState=z.object({
+  trackId:id,
+  counters:z.record(z.string(),n),
+  facts:z.array(id),
+  milestones:z.array(id),
+  certificates:z.array(id),
+  choices:z.record(z.string(),z.string())
+}).strict();
+export const schoolProgressionStateSchema=z.object({tracks:z.record(z.string(),schoolTrackState)}).strict();
 export const progressionStateSchema=z.object({
   careers:z.record(z.string(),careerState),
   quests:z.record(z.string(),questState),
   relationships:z.record(z.string(),relationshipState),
+  school:schoolProgressionStateSchema.default({tracks:{}}),
   worldFacts:z.array(id)
 }).strict();
 
 const pendingSceneSchema=z.object({
   eventId:id,
   variantId:id,
-  presentationId:id.optional(),
+  presentationId:semanticPresentationId.optional(),
   reactionEpochId:id.optional(),
   allowedChoiceIds:z.array(id).max(16).optional()
 }).strict();
@@ -466,7 +479,7 @@ const reactionStateSchema=z.object({
   cascadeDepth:n.max(16),
   queued:z.array(queuedEventInstanceSchema).max(64)
 }).strict();
-const lastActionSchema=z.object({id,title:z.string(),text:z.string(),media:z.array(id),deltas:z.record(z.string(),z.number())}).strict();
+const lastActionSchema=z.object({id,title:z.string(),text:z.string(),media:z.array(id),presentationId:semanticPresentationId.optional(),deltas:z.record(z.string(),z.number())}).strict();
 export const nightFlowStateSchema=z.object({
   phase:z.enum(['PreLodgingForcedCheck','LodgingResolution','PostLodgingForcedCheck','VoluntaryNightChoice','NightEventResolution','NextDayModifiersFinalized','CalendarAdvance','StartDay']),
   startedDay:n.max(159),

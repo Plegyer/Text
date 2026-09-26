@@ -1,6 +1,8 @@
 {
   "version": "0.1.0",
-  "flags": [],
+  "flags": [
+    "story.arrived"
+  ],
   "actions": [],
   "endings": [],
   "careers": [
@@ -8,7 +10,9 @@
       "id": "school.fixture.career",
       "label": "School fixture career",
       "initialStage": "new",
-      "stages": ["new"],
+      "stages": [
+        "new"
+      ],
       "transitions": []
     }
   ],
