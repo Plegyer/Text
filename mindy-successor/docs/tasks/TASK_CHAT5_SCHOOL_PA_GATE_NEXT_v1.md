@@ -72,3 +72,52 @@ paid lesson -> reload -> end day -> lodging -> reload -> Night study -> reload -
 Verify money, current-day Energy, next-day Energy modifier, stat package, `lessons_completed`, `night_study_sessions`, presentation identity and no Lust mutation.
 
 Continue sequentially through items 1–6 without waiting for Lead review.
+
+
+## Queue item 7 — School production catalog parity
+
+Create NEW files:
+- `prior-work/astra/prototype-m3.2/content/school-production-catalog-parity.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/school-production-catalog-parity.test.ts`
+
+Cross-check all eight course definitions and 24 Night-study choices against current accepted School constants/contracts. No invented School production pack event is required.
+
+## Queue item 8 — School Night choice label/presentation matrix
+
+Create NEW files:
+- `prior-work/astra/prototype-m3.2/content/school-night-presentation.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/school-night-presentation.test.ts`
+
+Verify all 24 Night choices map deterministically to course/track/stat and a stable Night presentation family without changing course gameplay IDs.
+
+## Queue item 9 — School Resolver trigger matrix
+
+Create NEW files:
+- `prior-work/astra/prototype-m3.2/content/school-resolver-trigger-matrix.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/school-resolver-trigger-matrix.test.ts`
+
+Document/test reaction facts emitted by a paid lesson: actionCompleted, all statChanged facts, resourceChanged, energyChanged, and same-boundary endingEligible when applicable. No partial package boundary.
+
+## Queue item 10 — School save compatibility adversarial suite
+
+Create NEW test:
+- `prior-work/astra/prototype-m3.2/tests/school-save-compat-adversarial.test.ts`
+
+Cover missing default School state, malformed trackId/key mismatch, unknown track, duplicate/replayed counters, pending semantic School presentationId and NightFlow reload checkpoints.
+
+## Queue item 11 — School PA row mapping
+
+Create:
+- `docs/school-prep/SCHOOL_PRODUCT_ACCEPTANCE_ROW_MAP_v1.md`
+- optional NEW test.
+
+Map relevant PA rows to exact School commands/course IDs/Night choices/reload points and identify only genuine OPEN public-fact authoring.
+
+## Queue item 12 — School release-readiness checklist
+
+Create:
+- `docs/school-prep/SCHOOL_RELEASE_READINESS_v1.md`
+
+Summarize paid lessons, typed progress, Resolver visibility, Night study, UI reachability expectations, save compatibility, cross-system public boundary and remaining OPEN authoring.
+
+Continue items 7–12 sequentially without waiting for Lead review.
