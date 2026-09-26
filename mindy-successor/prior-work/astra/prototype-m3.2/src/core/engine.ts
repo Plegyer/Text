@@ -1,4 +1,4 @@
-import { metrics, stats, seasons, priorityClasses, saveSchema, type Stat, type Save, type Meta, type Condition, type Effect, type Catalog, type StoryEvent, type Action, type MachineDefinition, type ReactionFact, type ReactionTrigger, type PriorityClass, type LodgingDefinition, type NightChoiceDefinition, type ActivityDefinition, type ActivityOutcome, type ActivityEnvelope } from './schema.ts';
+import { metrics, stats, seasons, priorityClasses, saveSchema, type Stat, type Save, type Meta, type Condition, type Effect, type Catalog, type StoryEvent, type Action, type MachineDefinition, type ReactionFact, type ReactionTrigger, type PriorityClass, type LodgingDefinition, type NightChoiceDefinition, type ActivityDefinition, type ActivityOutcome, type ActivityEnvelope, ordinaryHardWorkCareers, type MetaReward, type OrdinaryHardWorkCareer } from './schema.ts';
 
 const statSet=new Set<string>(stats);
 const cappedLegacy=new Set(['health','stress','trust']);
@@ -18,6 +18,9 @@ function defaultLegacyMetrics(){
   } as Record<string,number>;
 }
 
+function ensurePalaceUnlock(meta:Meta){
+  if(ordinaryHardWorkCareers.every(c=>meta.hardWorkProgress.includes(c))&&!meta.unlocks.includes('palace'))meta.unlocks.push('palace');
+}
 function defaultMeta(input?:Partial<Meta>&{completed?:string[];lives?:number}):Meta {
   const completed=[...new Set(input?.completedEndings??input?.completed??[])];
   const runsStarted=Math.max(1,input?.runsStarted??input?.lives??1);
@@ -29,9 +32,11 @@ function defaultMeta(input?:Partial<Meta>&{completed?:string[];lives?:number}):M
     hardWorkProgress:[...new Set(input?.hardWorkProgress??[])],
     persistentChoices:structuredClone(input?.persistentChoices??{}),
     activeLegacyPerks:[...new Set(input?.activeLegacyPerks??[])],
+    appliedResultTransactions:[...new Set(input?.appliedResultTransactions??[])],
     runsStarted,
     runsCompleted:Math.max(0,input?.runsCompleted??Math.min(completed.length,runsStarted-1))
   } as Meta;
+  ensurePalaceUnlock(core);
   return attachMetaFacade(core);
 }
 
@@ -199,9 +204,25 @@ export function actionCost(a:Action,s:Save){
   return a.id==='school'&&s.meta.unlocks.includes('scholar')&&!s.run.flags[`system.scholar.${Math.floor(s.run.day/7)}`]?0:a.cost.money;
 }
 
+function applyHardWorkStartingBonuses(meta:Meta,statRecord:Record<Stat,number>){
+  const add=(stat:Stat,value:number)=>{statRecord[stat]=Math.min(100,statRecord[stat]+value);};
+  for(const career of meta.hardWorkProgress as OrdinaryHardWorkCareer[]){
+    if(career==='lumber'){add('strength',3);add('endurance',3);}
+    else if(career==='satyr-maid'){add('charm',3);add('grooming',3);}
+    else if(career==='undead-farm'){add('reason',3);add('magic',3);}
+    else if(career==='tavern'){add('sociability',3);add('manners',3);}
+    else if(career==='hunter'){add('dexterity',3);add('wits',3);}
+    else if(career==='guard'){add('endurance',3);add('manners',3);}
+    else if(career==='artist-geisha'){add('creativity',3);add('grooming',3);}
+    else if(career==='assassin'){add('dexterity',3);add('wits',3);}
+    else if(career==='prostitute'){add('sexuality',3);add('charm',3);}
+  }
+}
 export function freshSave(metaInput?:Partial<Meta>&{completed?:string[];lives?:number}):Save {
   const meta=defaultMeta(metaInput);
   const statRecord=Object.fromEntries(stats.map(k=>[k,1])) as Record<Stat,number>;
+  applyHardWorkStartingBonuses(meta,statRecord);
+  const startingMoney=600+(meta.hardWorkProgress.includes('merchant')?600:0);
   const save={
     schemaVersion:4 as const,
     contentVersion:'0.1.0',
@@ -211,7 +232,7 @@ export function freshSave(metaInput?:Partial<Meta>&{completed?:string[];lives?:n
       status:'active' as const,
       calendar:{elapsedDays:0},
       character:{stats:statRecord,lust:1,creation:{remaining:10,allocated:{},complete:false},conditions:{}},
-      resources:{money:600,inventory:{herb:2,tonic:0,scales:0}},
+      resources:{money:startingMoney,inventory:{herb:2,tonic:0,scales:0}},
       dayState:{energyCurrent:3,nextDayModifiers:{energyDelta:0,statEffects:[],tags:[]},optionalOfferIds:[],scheduledEventIds:[]},
       housingState:{current:'normal' as const,paidForCurrentNight:false},
       progression:{careers:{},quests:{},relationships:{},worldFacts:[]},
@@ -358,6 +379,7 @@ function factLabel(f:ReactionFact){
     case 'relationshipFactAdded':return `relationshipFactAdded:${f.relationship}.${f.fact}`;
     case 'worldFactAdded':return `worldFactAdded:${f.fact}`;
     case 'endingEligible':return `endingEligible:${f.ending}`;
+    case 'endingCommitted':return `endingCommitted:${f.ending}`;
     case 'creationCompleted':return 'creationCompleted';
   }
 }
@@ -395,6 +417,7 @@ function matchTrigger(t:ReactionTrigger,f:ReactionFact):boolean{
     case 'relationshipFactAdded':return f.kind==='relationshipFactAdded'&&f.relationship===t.relationship&&(!t.fact||f.fact===t.fact);
     case 'worldFactAdded':return f.kind==='worldFactAdded'&&(!t.fact||f.fact===t.fact);
     case 'endingEligible':return f.kind==='endingEligible'&&(!t.ending||f.ending===t.ending);
+    case 'endingCommitted':return f.kind==='endingCommitted'&&f.ending===t.ending;
   }
 }
 function eventTriggered(e:StoryEvent,facts:ReactionFact[]){
