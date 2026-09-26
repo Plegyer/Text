@@ -701,3 +701,17 @@ Remaining genuine product-authoring/depth blockers:
 4. item-dependent Activity action-space behavior.
 
 These blockers must not be hidden by direct worldFact/counter injection. Hard Work is already closed and remains independent of School/Forest/items/relationship/season.
+
+
+## Durable recovery pointer
+
+If Lead/chat context is lost, resume from:
+`docs/CURRENT_PROJECT_HANDOFF_v1.md`
+
+Recovery order:
+1. read `PROJECT_STATE.md`;
+2. read `DOCUMENT_AUTHORITY_AND_INDEX_v0.md`;
+3. read `CURRENT_PROJECT_HANDOFF_v1.md`;
+4. inspect actual Git main/branches/PRs/workflows before editing.
+
+The handoff records merged milestones, CI evidence, locked invariants, current worker branches/task files, remaining Product Acceptance blockers, and the no-idle coordination procedure. Git overrides the snapshot whenever the repository has moved.
