@@ -8,7 +8,8 @@ declare global {interface Window {gameStorage?:{load:()=>Promise<{text:string;re
 const app=document.querySelector<HTMLDivElement>('#app')!;
 const esc=(s:unknown)=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]!));
 let baseCatalog:Catalog,catalog:Catalog,state:Save,patch:Presentation=emptyPresentation();
-let panel='',screen='town',busy=false,locked=false,message='',error=false,mediaIndex=0;\nlet animationsEnabled=localStorage.getItem('portal-life.presentation.animations')!=='off';
+let panel='',screen='town',busy=false,locked=false,message='',error=false,mediaIndex=0;
+let animationsEnabled=localStorage.getItem('portal-life.presentation.animations')!=='off';
 const professions=['tavern','lumber','hunt','guard'];
 function explain(c:Condition):string{
  const cmp=(op:'gte'|'lte'|'eq',value:number)=>`${op==='gte'?'≥':op==='lte'?'≤':'='} ${value}`;
@@ -105,7 +106,8 @@ function render(){
  app.querySelectorAll<HTMLButtonElement>('[data-sleep]').forEach(b=>b.onclick=()=>void perform({type:'sleep',payment:b.dataset.sleep as 'money'|'favor'|'outside'}));
  app.querySelectorAll<HTMLButtonElement>('[data-ending]').forEach(b=>b.onclick=()=>{if(confirm('Принять судьбу и завершить эту жизнь?'))void perform({type:'accept',id:b.dataset.ending!});});
  const on=(id:string,fn:()=>void)=>{const b=app.querySelector<HTMLButtonElement>('#'+id);if(b)b.onclick=fn;};
- on('home',()=>{panel='';screen='town';mediaIndex=0;render();});on('to-town',()=>{screen='town';mediaIndex=0;render();});on('close',()=>{panel='';render();});on('dismiss',()=>{message='';render();});\n on('animation-toggle',()=>{animationsEnabled=!animationsEnabled;localStorage.setItem('portal-life.presentation.animations',animationsEnabled?'on':'off');mediaIndex=0;render();});
+ on('home',()=>{panel='';screen='town';mediaIndex=0;render();});on('to-town',()=>{screen='town';mediaIndex=0;render();});on('close',()=>{panel='';render();});on('dismiss',()=>{message='';render();});
+ on('animation-toggle',()=>{animationsEnabled=!animationsEnabled;localStorage.setItem('portal-life.presentation.animations',animationsEnabled?'on':'off');mediaIndex=0;render();});
  on('create',()=>void perform({type:'finishCreation'}));on('new-life',()=>void perform({type:'newLife'}));
  on('restart',()=>{if(confirm('Завершить текущую жизнь без новой награды? Наследие сохранится. Сначала можно экспортировать эту жизнь.'))void perform({type:'restart'});});
  on('export',()=>{const url=URL.createObjectURL(new Blob([JSON.stringify(state,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download=`portal-life-${state.run.id}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);});
