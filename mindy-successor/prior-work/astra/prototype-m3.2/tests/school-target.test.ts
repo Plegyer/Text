@@ -22,7 +22,7 @@ const runtime={applyEffects,resolveReactions};
 function fixtureDefinitions(){
   return {
     version:'0.1.0',
-    flags:[],
+    flags:['story.arrived'],
     actions:[],
     endings:[],
     careers:[{
@@ -102,6 +102,7 @@ function schoolReady():Save{
   s.run.character.creation.remaining=0;
   s.run.character.creation.allocated={};
   s.run.character.creation.complete=true;
+  s.run.flags['story.arrived']=true;
   return s;
 }
 
@@ -227,8 +228,11 @@ test('Night study is a separate zero-tuition Night-slot action with +2 supported
   const cat=catalog();
   const nightChoice=schoolNightStudyChoice('school.course.arcana','reason');
   assert.ok(schoolNightStudyChoices().some(choice=>choice.id===nightChoice.id));
-  assert.equal(nightChoice.effects.length,1);
-  assert.deepEqual(nightChoice.effects,[{kind:'modifyStat',stat:'reason',delta:SCHOOL_NIGHT_STUDY_STAT_GAIN}]);
+  assert.equal(nightChoice.effects.length,2);
+  assert.deepEqual(nightChoice.effects,[
+    {kind:'modifyStat',stat:'reason',delta:SCHOOL_NIGHT_STUDY_STAT_GAIN},
+    {kind:'incrementSchoolCounter',track:'school.track.arcana',counter:'night_study_sessions',amount:1}
+  ]);
   assert.equal(nightChoice.nextDayEnergyDelta,SCHOOL_NIGHT_STUDY_NEXT_DAY_ENERGY_DELTA);
   assert.deepEqual(nightChoice.nextDayEffects,[]);
   assert.throws(()=>schoolNightStudyChoice('school.course.physical_training','reason'),/not supported/);
