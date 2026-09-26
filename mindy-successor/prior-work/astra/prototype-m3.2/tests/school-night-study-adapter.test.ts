@@ -66,6 +66,7 @@ test('Night-study immediate effect spends no daytime Energy or money while grant
 test('Night study consumes the Night slot and applies +2 / next-day Energy -1 exactly once across save/reload',()=>{
   const cat=catalog();
   let state=ready();
+  state.run.flags['story.arrived']=true;
   const moneyBefore=state.run.resources.money;
 
   state=dispatch(state,{type:'endDay'},cat);
