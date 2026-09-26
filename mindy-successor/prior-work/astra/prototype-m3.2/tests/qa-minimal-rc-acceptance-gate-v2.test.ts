@@ -124,8 +124,9 @@ test('minimal RC one-Save path proves School, Night, natural Forest and Hard Wor
   );
 
   if(s.run.flow.pendingScene){
-    assert.equal(s.run.flow.pendingScene.eventId,'base.school');
-    assert.ok(s.run.flow.pendingScene.allowedChoiceIds.includes('listen'));
+    const pending=s.run.flow.pendingScene;
+    assert.equal(pending.eventId,'base.school');
+    assert.ok(pending.allowedChoiceIds.includes('listen'));
 
     const money=s.run.resources.money;
     const energy=s.run.dayState.energyCurrent;
