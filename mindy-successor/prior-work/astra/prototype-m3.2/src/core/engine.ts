@@ -866,7 +866,8 @@ function enterActivityMutable(s:Save,cat:Catalog,id:string){
 }
 function completeActivityMutable(s:Save,cat:Catalog,outcome:string){
   const envelope=s.run.flow.activity;if(!envelope)throw new Error('Activity не активна.');
-  const def=validateActivityEnvelopeAgainstCatalog(envelope,cat,s.run.day);
+  const def=activityDefinition(cat,envelope.activityId);if(!def)throw new Error(`Неизвестная Activity: ${envelope.activityId}`);
+  if(envelope.definitionVersion!==def.definitionVersion||envelope.adapter!==def.adapter||envelope.adapterVersion!==def.adapterVersion)throw new Error(`Activity definition/adapter mismatch: ${envelope.activityId}`);
   const result=def.results.find(r=>r.id===outcome);if(!result)throw new Error(`Неизвестный Activity result: ${outcome}`);
   const before=cloneSave(s);
   applyEffectsMutable(s,result.effects,cat,true);
