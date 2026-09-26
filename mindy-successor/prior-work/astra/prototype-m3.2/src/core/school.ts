@@ -46,7 +46,7 @@ export const SCHOOL_COURSES:readonly SchoolCourse[]=[
       {stat:'reason',amount:4},
       {stat:'wits',amount:2}
     ],
-    presentationId:'school/literacy_and_numbers/lesson/default'
+    presentationId:'school/literacy-and-numbers/lesson/default'
   },
   {
     id:'school.course.arcana',
@@ -74,7 +74,7 @@ export const SCHOOL_COURSES:readonly SchoolCourse[]=[
       {stat:'sociability',amount:3},
       {stat:'wits',amount:2}
     ],
-    presentationId:'school/rhetoric_and_social/lesson/default'
+    presentationId:'school/rhetoric-and-social/lesson/default'
   },
   {
     id:'school.course.etiquette_and_presentation',
@@ -88,7 +88,7 @@ export const SCHOOL_COURSES:readonly SchoolCourse[]=[
       {stat:'grooming',amount:3},
       {stat:'charm',amount:2}
     ],
-    presentationId:'school/etiquette_and_presentation/lesson/default'
+    presentationId:'school/etiquette-and-presentation/lesson/default'
   },
   {
     id:'school.course.field_craft',
@@ -102,7 +102,7 @@ export const SCHOOL_COURSES:readonly SchoolCourse[]=[
       {stat:'wits',amount:3},
       {stat:'creativity',amount:2}
     ],
-    presentationId:'school/field_craft/lesson/default'
+    presentationId:'school/field-craft/lesson/default'
   },
   {
     id:'school.course.physical_training',
@@ -116,7 +116,7 @@ export const SCHOOL_COURSES:readonly SchoolCourse[]=[
       {stat:'endurance',amount:3},
       {stat:'dexterity',amount:2}
     ],
-    presentationId:'school/physical_training/lesson/default'
+    presentationId:'school/physical-training/lesson/default'
   },
   {
     id:'school.course.arts_and_performance',
@@ -131,7 +131,7 @@ export const SCHOOL_COURSES:readonly SchoolCourse[]=[
       {stat:'sociability',amount:2},
       {stat:'dexterity',amount:2}
     ],
-    presentationId:'school/arts_and_performance/lesson/default'
+    presentationId:'school/arts-and-performance/lesson/default'
   },
   {
     id:'school.course.body_confidence',
@@ -145,7 +145,7 @@ export const SCHOOL_COURSES:readonly SchoolCourse[]=[
       {stat:'grooming',amount:3},
       {stat:'endurance',amount:2}
     ],
-    presentationId:'school/body_confidence/lesson/default'
+    presentationId:'school/body-confidence/lesson/default'
   }
 ];
 

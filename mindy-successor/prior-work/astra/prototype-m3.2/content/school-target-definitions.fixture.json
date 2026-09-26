@@ -1,0 +1,20 @@
+{
+  "version": "0.1.0",
+  "flags": [],
+  "actions": [],
+  "endings": [],
+  "careers": [
+    {
+      "id": "school.fixture.career",
+      "label": "School fixture career",
+      "initialStage": "new",
+      "stages": ["new"],
+      "transitions": []
+    }
+  ],
+  "quests": [],
+  "relationships": [],
+  "lodgings": [],
+  "nightChoices": [],
+  "activities": []
+}
