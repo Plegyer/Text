@@ -11,8 +11,33 @@ let baseCatalog:Catalog,catalog:Catalog,state:Save,patch:Presentation=emptyPrese
 let panel='',screen='town',busy=false,locked=false,message='',error=false,mediaIndex=0;
 const professions=['tavern','lumber','hunt','guard'];
 function explain(c:Condition):string{
+ const cmp=(op:'gte'|'lte'|'eq',value:number)=>`${op==='gte'?'≥':op==='lte'?'≤':'='} ${value}`;
  switch(c.kind){
- case 'metric':return `${labels[c.key]??c.key} ${c.op==='gte'?'≥':c.op==='lte'?'≤':'='} ${c.value}`;
+ case 'stat':return `${labels[c.stat]??c.stat} ${cmp(c.op,c.value)}`;
+ case 'resource':return `${labels[c.resource]??c.resource} ${cmp(c.op,c.value)}`;
+ case 'itemCount':return `${labels[c.id]??c.id} ${cmp(c.op,c.count)}`;
+ case 'calendarYear':return `Год ${cmp(c.op,c.value)}`;
+ case 'calendarSeason':return labels[c.value]??c.value;
+ case 'calendarDayInYear':return `День года ${cmp(c.op,c.value)}`;
+ case 'calendarElapsedDays':return `Прошло дней ${cmp(c.op,c.value)}`;
+ case 'careerStage':return `Карьера ${c.career}: этап ${c.stage}`;
+ case 'careerShifts':return `Карьера ${c.career}: смен ${cmp(c.op,c.value)}`;
+ case 'careerCounter':return `Карьера ${c.career}: ${c.counter} ${cmp(c.op,c.value)}`;
+ case 'careerFact':return `Карьера ${c.career}: факт ${c.fact} ${c.present?'есть':'отсутствует'}`;
+ case 'careerChoice':return `Карьера ${c.career}: ${c.choice} = ${c.value}`;
+ case 'questStage':return `Задание ${c.quest}: этап ${c.stage}`;
+ case 'questCounter':return `Задание ${c.quest}: ${c.counter} ${cmp(c.op,c.value)}`;
+ case 'questFact':return `Задание ${c.quest}: факт ${c.fact} ${c.present?'есть':'отсутствует'}`;
+ case 'questChoice':return `Задание ${c.quest}: ${c.choice} = ${c.value}`;
+ case 'relationshipStage':return `Отношения ${c.relationship}: этап ${c.stage}`;
+ case 'relationshipCounter':return `Отношения ${c.relationship}: ${c.counter} ${cmp(c.op,c.value)}`;
+ case 'relationshipFact':return `Отношения ${c.relationship}: факт ${c.fact} ${c.present?'есть':'отсутствует'}`;
+ case 'relationshipChoice':return `Отношения ${c.relationship}: ${c.choice} = ${c.value}`;
+ case 'worldFact':return `Факт мира ${c.fact}: ${c.present?'есть':'нет'}`;
+ case 'metaUnlock':return `Наследие ${c.unlock}: ${c.present?'есть':'нет'}`;
+ case 'metaEndingCompleted':return `Судьба ${c.ending}: ${c.present?'пройдена':'не пройдена'}`;
+ case 'metaHardWork':return `Тяжкий труд ${c.career}: ${c.present?'завершён':'не завершён'}`;
+ case 'metric':return `${labels[c.key]??c.key} ${cmp(c.op,c.value)}`;
  case 'visits':return `${catalog.definitions.actions.find(a=>a.id===c.action)?.label??c.action}: ${c.value} смен`;
  case 'flag':return c.value?'Продвиньте связанную историю':'Этот этап уже пройден';
  case 'season':return labels[c.value];case 'housing':return labels[c.value];case 'unlock':return labels[c.value];
