@@ -320,17 +320,274 @@ export function availableVariants(e:StoryEvent,s:Save,cat?:Catalog){
   return e.variants.filter(v=>eligible(v.conditions,s,cat)&&(h?.variants[v.id]===undefined||s.run.day-h.variants[v.id]>=e.variantCooldownDays));
 }
 
-function schedule(s:Save,cat:Catalog,trigger:string){
-  const candidates=cat.events.filter(e=>{
-    const h=s.run.history[e.id];
-    return e.trigger.includes(trigger)&&eligible(e.conditions,s,cat)&&(!h||(h.count<e.maxShows&&s.run.day-h.lastDay>=e.cooldownDays))&&availableVariants(e,s,cat).length>0&&e.choices.some(c=>eligible(c.conditions,s,cat));
-  }).sort((a,b)=>b.priority-a.priority||(s.run.history[a.id]?.lastDay??-1)-(s.run.history[b.id]?.lastDay??-1)||a.id.localeCompare(b.id));
-  const event=candidates.find(e=>!e.chance||random(s)<eventChance(e,s));if(!event)return;
-  const variants=availableVariants(event,s,cat).sort((a,b)=>b.conditions.length-a.conditions.length||(s.run.history[event.id]?.variants[a.id]??-1)-(s.run.history[event.id]?.variants[b.id]??-1));
-  const v=variants[0];
-  const h=s.run.history[event.id]??{count:0,lastDay:0,variants:{}};
-  h.count++;h.lastDay=s.run.day;h.variants[v.id]=s.run.day;s.run.history[event.id]=h;
-  s.run.pending={eventId:event.id,variantId:v.id};log(s,`${event.title}: ${v.text}`);
+const resolverClassRank=new Map<PriorityClass,number>(priorityClasses.map((x,i)=>[x,i]));
+const RESOLVER_CASCADE_LIMIT=16;
+
+type ResolverTrace={epochId:string;facts:string[];steps:string[];selected:string|null;offers:string[]};
+type QueuedInstance=Save['run']['flow']['reaction']['queued'][number];
+type ResolverCandidate={
+  event:StoryEvent;
+  variantId:string;
+  allowedChoiceIds:string[];
+  eligibleSince:number;
+  queuedInstanceId?:string;
+  needsChance:boolean;
+};
+
+function factLabel(f:ReactionFact){
+  switch(f.kind){
+    case 'actionCompleted':return `actionCompleted:${f.action}`;
+    case 'choiceResolved':return `choiceResolved:${f.event}.${f.choice}`;
+    case 'statChanged':return `statChanged:${f.stat}:${f.from}->${f.to}`;
+    case 'resourceChanged':return `resourceChanged:${f.resource}:${f.from}->${f.to}`;
+    case 'energyChanged':return `energyChanged:${f.from}->${f.to}`;
+    case 'calendarAdvanced':return `calendarAdvanced:${f.from}->${f.to}`;
+    case 'dayStarted':return `dayStarted:${f.day}`;
+    case 'careerCounterChanged':return `careerCounterChanged:${f.career}.${f.counter}:${f.from}->${f.to}`;
+    case 'careerTransition':return `careerTransition:${f.career}:${f.from}->${f.to}`;
+    case 'careerFactAdded':return `careerFactAdded:${f.career}.${f.fact}`;
+    case 'questCounterChanged':return `questCounterChanged:${f.quest}.${f.counter}:${f.from}->${f.to}`;
+    case 'questTransition':return `questTransition:${f.quest}:${f.from}->${f.to}`;
+    case 'questFactAdded':return `questFactAdded:${f.quest}.${f.fact}`;
+    case 'relationshipCounterChanged':return `relationshipCounterChanged:${f.relationship}.${f.counter}:${f.from}->${f.to}`;
+    case 'relationshipTransition':return `relationshipTransition:${f.relationship}:${f.from}->${f.to}`;
+    case 'relationshipFactAdded':return `relationshipFactAdded:${f.relationship}.${f.fact}`;
+    case 'worldFactAdded':return `worldFactAdded:${f.fact}`;
+    case 'endingEligible':return `endingEligible:${f.ending}`;
+    case 'creationCompleted':return 'creationCompleted';
+  }
+}
+
+function startReactionEpochMutable(s:Save){
+  const r=s.run.flow.reaction;
+  r.epochCounter=Math.min(1_000_000,r.epochCounter+1);
+  r.currentEpochId=`epoch.${s.meta.runsStarted}.${r.epochCounter}`;
+  r.attemptedEventIds=[];
+  r.cascadeDepth=0;
+  return r.currentEpochId;
+}
+function ensureReactionEpoch(s:Save){
+  return s.run.flow.reaction.currentEpochId??startReactionEpochMutable(s);
+}
+function matchTrigger(t:ReactionTrigger,f:ReactionFact):boolean{
+  if(t.kind!==f.kind)return false;
+  switch(t.kind){
+    case 'creationCompleted':case 'energyChanged':case 'calendarAdvanced':case 'dayStarted':return true;
+    case 'actionCompleted':return !t.action||(f.kind==='actionCompleted'&&f.action===t.action);
+    case 'choiceResolved':return !t.event||(f.kind==='choiceResolved'&&f.event===t.event);
+    case 'statChanged':return !t.stat||(f.kind==='statChanged'&&f.stat===t.stat);
+    case 'resourceChanged':return !t.resource||(f.kind==='resourceChanged'&&f.resource===t.resource);
+    case 'careerCounterChanged':return f.kind==='careerCounterChanged'&&f.career===t.career&&(!t.counter||f.counter===t.counter);
+    case 'careerTransition':return f.kind==='careerTransition'&&f.career===t.career;
+    case 'careerFactAdded':return f.kind==='careerFactAdded'&&f.career===t.career&&(!t.fact||f.fact===t.fact);
+    case 'questCounterChanged':return f.kind==='questCounterChanged'&&f.quest===t.quest&&(!t.counter||f.counter===t.counter);
+    case 'questTransition':return f.kind==='questTransition'&&f.quest===t.quest;
+    case 'questFactAdded':return f.kind==='questFactAdded'&&f.quest===t.quest&&(!t.fact||f.fact===t.fact);
+    case 'relationshipCounterChanged':return f.kind==='relationshipCounterChanged'&&f.relationship===t.relationship&&(!t.counter||f.counter===t.counter);
+    case 'relationshipTransition':return f.kind==='relationshipTransition'&&f.relationship===t.relationship;
+    case 'relationshipFactAdded':return f.kind==='relationshipFactAdded'&&f.relationship===t.relationship&&(!t.fact||f.fact===t.fact);
+    case 'worldFactAdded':return f.kind==='worldFactAdded'&&(!t.fact||f.fact===t.fact);
+    case 'endingEligible':return f.kind==='endingEligible'&&(!t.ending||f.ending===t.ending);
+  }
+}
+function eventTriggered(e:StoryEvent,facts:ReactionFact[]){
+  if(e.trigger.some(action=>facts.some(f=>f.kind==='actionCompleted'&&f.action===action)))return true;
+  return e.reactionTriggers.some(t=>facts.some(f=>matchTrigger(t,f)));
+}
+function historyAllows(e:StoryEvent,s:Save){
+  const h=s.run.history[e.id];
+  return !h||(h.count<e.maxShows&&s.run.day-h.lastDay>=e.cooldownDays);
+}
+function candidateSnapshot(e:StoryEvent,s:Save,cat:Catalog){
+  const variants=availableVariants(e,s,cat).sort((a,b)=>b.conditions.length-a.conditions.length||(s.run.history[e.id]?.variants[a.id]??-1)-(s.run.history[e.id]?.variants[b.id]??-1)||a.id.localeCompare(b.id));
+  const variant=variants[0];if(!variant)return null;
+  const choices=e.choices.filter(c=>eligible(c.conditions,s,cat));if(!choices.length)return null;
+  return {variantId:variant.id,allowedChoiceIds:choices.map(c=>c.id)};
+}
+function eventSort(a:StoryEvent,b:StoryEvent,s:Save){
+  const classDelta=(resolverClassRank.get(a.priorityClass)??999)-(resolverClassRank.get(b.priorityClass)??999);
+  if(classDelta)return classDelta;
+  if(a.priority!==b.priority)return b.priority-a.priority;
+  const ah=s.run.history[a.id]?.lastDay??-1,bh=s.run.history[b.id]?.lastDay??-1;
+  if(ah!==bh)return ah-bh;
+  return a.id.localeCompare(b.id);
+}
+function candidateSort(a:ResolverCandidate,b:ResolverCandidate,s:Save){
+  const e=eventSort(a.event,b.event,s);if(e)return e;
+  if(a.eligibleSince!==b.eligibleSince)return a.eligibleSince-b.eligibleSince;
+  return a.event.id.localeCompare(b.event.id);
+}
+function committedSuppresses(s:Save,e:StoryEvent){
+  if(!s.run.endings.committed&&s.run.status!=='ending_committed')return false;
+  return e.priorityClass!=='terminal'&&e.priorityClass!=='ending_committed';
+}
+function queuedForEvent(s:Save,eventId:string){return s.run.flow.reaction.queued.some(q=>q.eventId===eventId);}
+function nextInstanceId(s:Save,kind:QueuedInstance['kind']){
+  const r=s.run.flow.reaction;
+  const prefix=kind==='optional'?'offer':kind==='scheduled'?'scheduled':'latched';
+  return `${prefix}.${r.epochCounter}.${r.attemptedEventIds.length}.${r.queued.length}`;
+}
+function recordEventHistory(s:Save,e:StoryEvent,variantId:string){
+  const h=s.run.history[e.id]??{count:0,lastDay:0,variants:{}};
+  h.count++;h.lastDay=s.run.day;h.variants[variantId]=s.run.day;s.run.history[e.id]=h;
+}
+function eventVariant(e:StoryEvent,variantId:string){return e.variants.find(v=>v.id===variantId)!;}
+function logEventScene(s:Save,e:StoryEvent,variantId:string){log(s,`${e.title}: ${eventVariant(e,variantId).text}`);}
+function removeQueuedInstance(s:Save,instanceId:string){
+  const q=s.run.flow.reaction.queued.find(x=>x.instanceId===instanceId);
+  s.run.flow.reaction.queued=s.run.flow.reaction.queued.filter(x=>x.instanceId!==instanceId);
+  s.run.dayState.optionalOfferIds=s.run.dayState.optionalOfferIds.filter(x=>x!==instanceId);
+  s.run.dayState.scheduledEventIds=s.run.dayState.scheduledEventIds.filter(x=>x!==instanceId);
+  return q;
+}
+function pruneExpired(s:Save,trace:ResolverTrace){
+  const expired=s.run.flow.reaction.queued.filter(q=>q.kind==='scheduled'&&q.expiresDay!==undefined&&s.run.day>=q.expiresDay);
+  for(const q of expired){trace.steps.push(`expired:${q.eventId}:${q.instanceId}`);removeQueuedInstance(s,q.instanceId);}
+}
+function queueResolved(s:Save,e:StoryEvent,snapshot:{variantId:string;allowedChoiceIds:string[]},kind:QueuedInstance['kind']){
+  const epochId=ensureReactionEpoch(s);
+  const q:QueuedInstance={
+    instanceId:nextInstanceId(s,kind),
+    eventId:e.id,
+    variantId:snapshot.variantId,
+    allowedChoiceIds:[...snapshot.allowedChoiceIds],
+    kind,
+    createdDay:s.run.day,
+    reactionEpochId:epochId,
+    ...(kind==='scheduled'?{expiresDay:Math.min(159,s.run.day+(e.delivery.expiresAfterDays??1))}:{})
+  };
+  s.run.flow.reaction.queued.push(q);
+  if(kind==='optional')addUnique(s.run.dayState.optionalOfferIds,q.instanceId);
+  if(kind==='scheduled')addUnique(s.run.dayState.scheduledEventIds,q.instanceId);
+  return q;
+}
+function attemptChance(s:Save,e:StoryEvent,trace:ResolverTrace){
+  const r=s.run.flow.reaction;
+  if(r.attemptedEventIds.includes(e.id)){trace.steps.push(`reject:${e.id}:already-attempted`);return false;}
+  r.attemptedEventIds.push(e.id);
+  if(!e.chance){trace.steps.push(`chance:${e.id}:deterministic`);return true;}
+  const roll=random(s),chance=eventChance(e,s),pass=roll<chance;
+  trace.steps.push(`chance:${e.id}:${roll.toFixed(8)}<${chance.toFixed(8)}:${pass?'pass':'fail'}`);
+  return pass;
+}
+function selectBlocking(s:Save,c:ResolverCandidate,trace:ResolverTrace){
+  const r=s.run.flow.reaction;
+  if(r.cascadeDepth>=RESOLVER_CASCADE_LIMIT){
+    throw new Error(`Event Resolver cascade limit ${RESOLVER_CASCADE_LIMIT} exceeded in ${r.currentEpochId}; candidate=${c.event.id}; trace=${trace.steps.join('|')}`);
+  }
+  r.cascadeDepth++;
+  if(c.queuedInstanceId)removeQueuedInstance(s,c.queuedInstanceId);
+  recordEventHistory(s,c.event,c.variantId);
+  logEventScene(s,c.event,c.variantId);
+  s.run.pending={
+    eventId:c.event.id,
+    variantId:c.variantId,
+    reactionEpochId:ensureReactionEpoch(s),
+    allowedChoiceIds:[...c.allowedChoiceIds]
+  };
+  trace.selected=c.event.id;
+  trace.steps.push(`selected:${c.event.id}:${c.variantId}:depth=${r.cascadeDepth}`);
+}
+
+function resolveReactionsMutable(s:Save,facts:ReactionFact[],cat:Catalog,trace:ResolverTrace){
+  if(s.run.pending){trace.steps.push(`blocked:existing-pending:${s.run.pending.eventId}`);return;}
+  pruneExpired(s,trace);
+  const sortedEvents=[...cat.events].sort((a,b)=>eventSort(a,b,s));
+  const live:ResolverCandidate[]=[];
+
+  for(const e of sortedEvents){
+    if(committedSuppresses(s,e)){trace.steps.push(`reject:${e.id}:ending-committed`);continue;}
+    if(queuedForEvent(s,e.id)){trace.steps.push(`defer:${e.id}:already-queued`);continue;}
+    if(!eventTriggered(e,facts)){trace.steps.push(`reject:${e.id}:trigger`);continue;}
+    if(!historyAllows(e,s)){trace.steps.push(`reject:${e.id}:repeat-cooldown`);continue;}
+    if(!eligible(e.conditions,s,cat)){trace.steps.push(`reject:${e.id}:conditions`);continue;}
+    const snapshot=candidateSnapshot(e,s,cat);
+    if(!snapshot){trace.steps.push(`reject:${e.id}:variant-choice`);continue;}
+
+    if(!e.blocking){
+      if(!attemptChance(s,e,trace))continue;
+      const q=queueResolved(s,e,snapshot,'optional');
+      recordEventHistory(s,e,snapshot.variantId);
+      trace.offers.push(q.instanceId);trace.steps.push(`offer:${e.id}:${q.instanceId}`);
+      continue;
+    }
+    if(e.delivery.policy==='latched'||e.delivery.policy==='scheduled'){
+      if(!attemptChance(s,e,trace))continue;
+      const q=queueResolved(s,e,snapshot,e.delivery.policy);
+      trace.steps.push(`queued:${e.id}:${q.kind}:${q.instanceId}`);
+      continue;
+    }
+    live.push({event:e,...snapshot,eligibleSince:s.run.day,needsChance:true});
+  }
+
+  const queuedCandidates:ResolverCandidate[]=[];
+  for(const q of s.run.flow.reaction.queued){
+    if(q.kind==='optional')continue;
+    const e=cat.events.find(x=>x.id===q.eventId);
+    if(!e){trace.steps.push(`reject:${q.eventId}:queued-missing-definition`);continue;}
+    if(committedSuppresses(s,e)){trace.steps.push(`reject:${e.id}:queued-ending-committed`);continue;}
+    queuedCandidates.push({event:e,variantId:q.variantId,allowedChoiceIds:[...q.allowedChoiceIds],eligibleSince:q.createdDay,queuedInstanceId:q.instanceId,needsChance:false});
+  }
+
+  const candidates=[...live,...queuedCandidates].sort((a,b)=>candidateSort(a,b,s));
+  trace.steps.push(`candidates:${candidates.map(x=>x.event.id).join(',')||'-'}`);
+  for(const candidate of candidates){
+    if(candidate.needsChance&&!attemptChance(s,candidate.event,trace))continue;
+    selectBlocking(s,candidate,trace);return;
+  }
+}
+
+export function resolveReactions(input:Save,facts:ReactionFact[],cat:Catalog,{newEpoch=true}:{newEpoch?:boolean}={}){
+  const s=cloneSave(input);
+  if(newEpoch)startReactionEpochMutable(s);else ensureReactionEpoch(s);
+  const trace:ResolverTrace={epochId:s.run.flow.reaction.currentEpochId!,facts:facts.map(factLabel),steps:[],selected:null,offers:[]};
+  resolveReactionsMutable(s,facts,cat,trace);
+  return {state:s,trace};
+}
+
+function collectDomainFacts(before:Save,after:Save,cat:Catalog,kind:DomainKind,facts:ReactionFact[]){
+  const beforeMap=domainMap(before,kind),afterMap=domainMap(after,kind);
+  const ids=new Set([...Object.keys(beforeMap),...Object.keys(afterMap)]);
+  for(const id of ids){
+    const a=readDomainState(before,kind,id,cat),b=readDomainState(after,kind,id,cat);if(!a||!b)continue;
+    if(a.stage!==b.stage){
+      if(kind==='career')facts.push({kind:'careerTransition',career:id,from:a.stage,to:b.stage});
+      if(kind==='quest')facts.push({kind:'questTransition',quest:id,from:a.stage,to:b.stage});
+      if(kind==='relationship')facts.push({kind:'relationshipTransition',relationship:id,from:a.stage,to:b.stage});
+    }
+    if(kind==='career'&&(a.shifts??0)!==(b.shifts??0))facts.push({kind:'careerCounterChanged',career:id,counter:'shifts',from:a.shifts??0,to:b.shifts??0});
+    const counters=new Set([...Object.keys(a.counters),...Object.keys(b.counters)]);
+    for(const counter of counters){
+      const av=a.counters[counter]??0,bv=b.counters[counter]??0;if(av===bv)continue;
+      if(kind==='career')facts.push({kind:'careerCounterChanged',career:id,counter,from:av,to:bv});
+      if(kind==='quest')facts.push({kind:'questCounterChanged',quest:id,counter,from:av,to:bv});
+      if(kind==='relationship')facts.push({kind:'relationshipCounterChanged',relationship:id,counter,from:av,to:bv});
+    }
+    for(const fact of b.facts.filter(x=>!a.facts.includes(x))){
+      if(kind==='career')facts.push({kind:'careerFactAdded',career:id,fact});
+      if(kind==='quest')facts.push({kind:'questFactAdded',quest:id,fact});
+      if(kind==='relationship')facts.push({kind:'relationshipFactAdded',relationship:id,fact});
+    }
+  }
+}
+function collectReactionFacts(before:Save,after:Save,cat:Catalog,extras:ReactionFact[]=[]){
+  const facts:ReactionFact[]=[...extras];
+  for(const stat of stats){
+    const a=before.run.character.stats[stat],b=after.run.character.stats[stat];
+    if(a!==b)facts.push({kind:'statChanged',stat,from:a,to:b});
+  }
+  if(before.run.resources.money!==after.run.resources.money)facts.push({kind:'resourceChanged',resource:'money',from:before.run.resources.money,to:after.run.resources.money});
+  if(before.run.dayState.energyCurrent!==after.run.dayState.energyCurrent)facts.push({kind:'energyChanged',from:before.run.dayState.energyCurrent,to:after.run.dayState.energyCurrent});
+  if(before.run.calendar.elapsedDays!==after.run.calendar.elapsedDays){
+    facts.push({kind:'calendarAdvanced',from:before.run.calendar.elapsedDays,to:after.run.calendar.elapsedDays});
+    facts.push({kind:'dayStarted',day:after.run.calendar.elapsedDays});
+  }
+  collectDomainFacts(before,after,cat,'career',facts);
+  collectDomainFacts(before,after,cat,'quest',facts);
+  collectDomainFacts(before,after,cat,'relationship',facts);
+  for(const fact of after.run.progression.worldFacts.filter(x=>!before.run.progression.worldFacts.includes(x)))facts.push({kind:'worldFactAdded',fact});
+  for(const ending of after.run.endings.eligible.filter(x=>!before.run.endings.eligible.includes(x)))facts.push({kind:'endingEligible',ending});
+  return facts;
 }
 
 function register(s:Save,cat:Catalog){
