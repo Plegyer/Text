@@ -186,10 +186,8 @@ Requires the Forest multi-system chain to return a qualifying result and resolve
 Ending ID proposal: `ending.lumber.hard_work`.
 
 Locked baseline from EXECUTABLE_TZ_v1.md:
-- `career.shifts(lumber) >= 50`.
-
-Additional source requirement:
-- the first career milestone must have occurred so the player is actually integrated into the career slice.
+- `career.shifts(lumber) >= 50`;
+- **this is the complete Hard Work eligibility gate**.
 
 Not required:
 - all seasons;
@@ -265,7 +263,7 @@ Required trigger families:
 - relevant `StatChanged(...)` after School;
 - `WorldFactAdded(...)` for accepted School/Hunter/Tavern/Forest facts;
 - `NightResolved(...)` for relationship milestones;
-- `ActivityCompleted(forest, ...)` for returned Activity results;
+- `ActivityResult(forest, ...)` for returned Activity results;
 - `EndingEligible(...)` when an ending condition becomes true.
 
 Critical and normal progression scenes are 0-Energy reactions. The original Work/School/Activity command owns its own explicit cost; the reactive scene does not charge again.
