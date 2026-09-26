@@ -1,0 +1,123 @@
+{
+  "formatVersion": 1,
+  "id": "school.product-acceptance.fixture.v1",
+  "lockedCourseCount": 8,
+  "lessonSemantics": {
+    "currentDayEnergyCost": 1,
+    "atomicPrecheck": ["money", "currentDayEnergy"],
+    "ordinarySchoolChangesLust": false
+  },
+  "nightStudySemantics": {
+    "consumesNightSlot": true,
+    "tuition": 0,
+    "currentDayEnergyCost": 0,
+    "selectedSupportedStatGain": 2,
+    "nextDayEnergyDelta": -1
+  },
+  "courses": [
+    {
+      "courseId": "school.course.literacy_and_numbers",
+      "trackId": "school.track.literacy_and_numbers",
+      "tuition": 300,
+      "currentDayEnergyCost": 1,
+      "statEffects": [
+        {"stat": "reason", "amount": 4},
+        {"stat": "wits", "amount": 2}
+      ],
+      "nightStudySupportedStats": ["reason", "wits"],
+      "presentationId": "school/literacy-and-numbers/lesson/default"
+    },
+    {
+      "courseId": "school.course.arcana",
+      "trackId": "school.track.arcana",
+      "tuition": 500,
+      "currentDayEnergyCost": 1,
+      "statEffects": [
+        {"stat": "magic", "amount": 4},
+        {"stat": "reason", "amount": 4},
+        {"stat": "creativity", "amount": 2}
+      ],
+      "nightStudySupportedStats": ["magic", "reason", "creativity"],
+      "presentationId": "school/arcana/lesson/default"
+    },
+    {
+      "courseId": "school.course.rhetoric_and_social",
+      "trackId": "school.track.rhetoric_and_social",
+      "tuition": 300,
+      "currentDayEnergyCost": 1,
+      "statEffects": [
+        {"stat": "charm", "amount": 3},
+        {"stat": "sociability", "amount": 3},
+        {"stat": "wits", "amount": 2}
+      ],
+      "nightStudySupportedStats": ["charm", "sociability", "wits"],
+      "presentationId": "school/rhetoric-and-social/lesson/default"
+    },
+    {
+      "courseId": "school.course.etiquette_and_presentation",
+      "trackId": "school.track.etiquette_and_presentation",
+      "tuition": 400,
+      "currentDayEnergyCost": 1,
+      "statEffects": [
+        {"stat": "manners", "amount": 3},
+        {"stat": "grooming", "amount": 3},
+        {"stat": "charm", "amount": 2}
+      ],
+      "nightStudySupportedStats": ["manners", "grooming", "charm"],
+      "presentationId": "school/etiquette-and-presentation/lesson/default"
+    },
+    {
+      "courseId": "school.course.field_craft",
+      "trackId": "school.track.field_craft",
+      "tuition": 400,
+      "currentDayEnergyCost": 1,
+      "statEffects": [
+        {"stat": "dexterity", "amount": 3},
+        {"stat": "wits", "amount": 3},
+        {"stat": "creativity", "amount": 2}
+      ],
+      "nightStudySupportedStats": ["dexterity", "wits", "creativity"],
+      "presentationId": "school/field-craft/lesson/default"
+    },
+    {
+      "courseId": "school.course.physical_training",
+      "trackId": "school.track.physical_training",
+      "tuition": 400,
+      "currentDayEnergyCost": 1,
+      "statEffects": [
+        {"stat": "strength", "amount": 3},
+        {"stat": "endurance", "amount": 3},
+        {"stat": "dexterity", "amount": 2}
+      ],
+      "nightStudySupportedStats": ["strength", "endurance", "dexterity"],
+      "presentationId": "school/physical-training/lesson/default"
+    },
+    {
+      "courseId": "school.course.arts_and_performance",
+      "trackId": "school.track.arts_and_performance",
+      "tuition": 500,
+      "currentDayEnergyCost": 1,
+      "statEffects": [
+        {"stat": "creativity", "amount": 3},
+        {"stat": "charm", "amount": 3},
+        {"stat": "sociability", "amount": 2},
+        {"stat": "dexterity", "amount": 2}
+      ],
+      "nightStudySupportedStats": ["creativity", "charm", "sociability", "dexterity"],
+      "presentationId": "school/arts-and-performance/lesson/default"
+    },
+    {
+      "courseId": "school.course.body_confidence",
+      "trackId": "school.track.body_confidence",
+      "tuition": 400,
+      "currentDayEnergyCost": 1,
+      "statEffects": [
+        {"stat": "sexuality", "amount": 3},
+        {"stat": "grooming", "amount": 3},
+        {"stat": "endurance", "amount": 2}
+      ],
+      "nightStudySupportedStats": ["sexuality", "grooming", "endurance"],
+      "presentationId": "school/body-confidence/lesson/default"
+    }
+  ]
+}
