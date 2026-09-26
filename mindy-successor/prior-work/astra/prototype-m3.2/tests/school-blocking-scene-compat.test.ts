@@ -35,7 +35,7 @@ function definitions(){
 function pack(){
   return {
     schemaVersion:1,
-    id:'school-blocking-scene-compat',
+    id:'school.fixture',
     reads:[],
     writes:[],
     capabilities:{reads:{},writes:{}},
