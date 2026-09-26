@@ -1,0 +1,48 @@
+{
+  "format": "portal-life.presentation-override-pack",
+  "formatVersion": 1,
+  "presentationSchemaVersion": 1,
+  "metadata": {
+    "packId": "fixture.user-presentation-overrides",
+    "name": "Fixture presentation replacements",
+    "description": "Portable presentation-only example for contract tests."
+  },
+  "activationPolicy": {
+    "mode": "atomic",
+    "unknownPresentationId": "quarantine",
+    "invalidEntry": "reject-pack"
+  },
+  "entries": {
+    "job/lumber/shift/spring/default": {
+      "primary": {
+        "kind": "gif",
+        "ref": "media/lumber-shift.gif",
+        "alt": "Лесорубы на весенней смене"
+      },
+      "static": {
+        "kind": "image",
+        "ref": "media/lumber-shift.webp",
+        "alt": "Лесорубы на весенней смене без анимации"
+      }
+    },
+    "relationship/foreman/trust/default": {
+      "primary": {
+        "kind": "gif",
+        "ref": "media/foreman-trust.gif",
+        "alt": "Разговор с бригадиром"
+      }
+    },
+    "ending/lumber/hard-work": {
+      "primary": {
+        "kind": "gif",
+        "ref": "media/lumber-hard-work.gif",
+        "alt": "Финал тяжёлого труда"
+      },
+      "static": {
+        "kind": "image",
+        "ref": "media/lumber-hard-work.png",
+        "alt": "Финал тяжёлого труда без анимации"
+      }
+    }
+  }
+}
