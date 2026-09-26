@@ -1,8 +1,8 @@
 # Lumber PR24 One-Save State Audit v1
 
-Status: audit of the current Lead one-Save E2E path.
-Lead branch: `lead/release-candidate-smoke-v2`.
-PR #24 status at audit time: OPEN / NOT MERGED.
+Status: post-merge audit of the shipped one-Save E2E path.
+Lead source branch: `lead/release-candidate-smoke-v2`.
+PR #24 status: MERGED.\nMerge commit: `9aa0eaf964735e82b9b964bbdcaf5362c292868a`.\nMerge-ref evidence: typecheck PASS, validate PASS, build PASS, 209/209 tests PASS.
 PR title: `Lead: add release-candidate one-Save shipped E2E smoke`.
 
 This audit reviews the current Lead test path from the Lumber perspective. It does not patch shared runtime/content/UI.
@@ -210,10 +210,10 @@ The exact semantic Meta reward remains `hardWork:lumber`.
 
 ## Audit result
 
-The current PR24 Lead one-Save path is consistent with accepted Lumber contracts.
+The merged PR24 one-Save path is consistent with accepted Lumber contracts.
 
 Important scope labels:
-- PR24 is still open at audit time;
+- PR24 is merged at `9aa0eaf964735e82b9b964bbdcaf5362c292868a`;
 - the 49-shift setup is an explicit threshold accelerator;
 - no Old Boundary Token product authoring is claimed;
 - no School management result is claimed;

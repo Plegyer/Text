@@ -6,9 +6,9 @@ Production baselines:
 - Product Activation PR #20: `9b427d75dc22021cd3373aa7dd3521782e54152d`;
 - Product Acceptance evidence PR #21: `e6c32903516d1ba40b9a3ffbf955d5f04783ac25`;
 - capability/Forest infrastructure PR #22: `011572ef1335deda5ac33120c3a7ea7f9849dbbf`;
-- RC QA floor PR #23: `e12665ce9063689400d8f39f893378f6f01911f3`.
+- RC QA floor PR #23: `e12665ce9063689400d8f39f893378f6f01911f3`;\n- one-Save RC smoke PR #24: `9aa0eaf964735e82b9b964bbdcaf5362c292868a`.
 
-PR #24 one-Save smoke is **OPEN / NOT MERGED** at this audit checkpoint.
+PR #24 one-Save smoke is **MERGED / SHIPPED_GREEN**.
 
 Machine-readable manifest:
 `prior-work/astra/prototype-m3.2/content/lumber-final-decision-evidence-handoff.fixture.json`
@@ -24,9 +24,9 @@ Exact shipped production source files:
 - `prior-work/astra/prototype-m3.2/content/packs/lumber-target/lumber-production.pack.json`
 - `prior-work/astra/prototype-m3.2/content/packs/lumber-target/lumber-cross-system.pack.json`
 - `prior-work/astra/prototype-m3.2/content/packs/lumber-target/lumber-night-acceptance.pack.json`
-- `prior-work/astra/prototype-m3.2/tests/item-capability-activity-closure.test.ts`
+- `prior-work/astra/prototype-m3.2/tests/item-capability-activity-closure.test.ts`\n- `docs/qa-prep/RELEASE_CANDIDATE_SHIPPED_E2E_v1.md`\n- `prior-work/astra/prototype-m3.2/tests/release-candidate-shipped-e2e.test.ts`
 
-These already provide:
+These already provide:\n- merged one-Save Lumber -> Foreman -> School -> Night -> Forest -> ending -> New Run evidence;
 - `lumber.shift`;
 - career/Foreman/Night flow;
 - Forest entry without token;

@@ -7,7 +7,8 @@
     "productAcceptanceEvidenceMerge": "e6c32903516d1ba40b9a3ffbf955d5f04783ac25",
     "capabilityForestInfrastructureMerge": "011572ef1335deda5ac33120c3a7ea7f9849dbbf",
     "rcQaFloorMerge": "e12665ce9063689400d8f39f893378f6f01911f3",
-    "pr24OneSaveStatus": "OPEN_AT_AUDIT_TIME"
+    "pr24OneSaveStatus": "MERGED_SHIPPED_GREEN",
+    "pr24OneSaveMerge": "9aa0eaf964735e82b9b964bbdcaf5362c292868a"
   },
   "categories": {
     "SHIPPED_GREEN": [
@@ -18,7 +19,9 @@
       "mindy-successor/prior-work/astra/prototype-m3.2/content/packs/lumber-target/lumber-production.pack.json",
       "mindy-successor/prior-work/astra/prototype-m3.2/content/packs/lumber-target/lumber-cross-system.pack.json",
       "mindy-successor/prior-work/astra/prototype-m3.2/content/packs/lumber-target/lumber-night-acceptance.pack.json",
-      "mindy-successor/prior-work/astra/prototype-m3.2/tests/item-capability-activity-closure.test.ts"
+      "mindy-successor/prior-work/astra/prototype-m3.2/tests/item-capability-activity-closure.test.ts",
+      "mindy-successor/docs/qa-prep/RELEASE_CANDIDATE_SHIPPED_E2E_v1.md",
+      "mindy-successor/prior-work/astra/prototype-m3.2/tests/release-candidate-shipped-e2e.test.ts"
     ],
     "MUST_INTEGRATE_QA": [
       "mindy-successor/docs/lumber-prep/LUMBER_PR22_CLOSURE_PARITY_AUDIT_v1.md",

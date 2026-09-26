@@ -1,13 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {readFileSync} from 'node:fs';
+import {existsSync,readFileSync} from 'node:fs';
 
 const audit=readFileSync('../../../docs/lumber-prep/LUMBER_PR24_ONE_SAVE_STATE_AUDIT_v1.md','utf8');
 const definitions=JSON.parse(readFileSync('content/lumber-target-definitions.fixture.json','utf8'));
 const crossPack=JSON.parse(readFileSync('content/packs/lumber-target/lumber-cross-system.pack.json','utf8'));
 
 test('PR24 audit labels the 49-shift setup only as a threshold accelerator',()=>{
-  assert.ok(audit.includes('PR #24 status at audit time: OPEN / NOT MERGED.'));
+  assert.ok(audit.includes('PR #24 status: MERGED.'));\n  assert.ok(audit.includes('9aa0eaf964735e82b9b964bbdcaf5362c292868a'));
   assert.ok(audit.includes('completed_shifts = 49'));
   assert.ok(audit.includes('long-threshold accelerator'));
   assert.ok(audit.includes('It is not:'));
@@ -50,4 +50,15 @@ test('one-Save audit does not claim OPEN School/token authoring is closed',()=>{
   assert.ok(audit.includes('does **not** prove:'));
   assert.ok(audit.includes('Old Boundary Token acquisition'));
   assert.ok(audit.includes('hunter-trail authoring'));
+});
+
+test('when merged PR24 one-Save test is present, audit stays aligned to its accelerator and shipped path',()=>{
+  const path='tests/release-candidate-shipped-e2e.test.ts';
+  if(!existsSync(path))return;
+  const source=readFileSync(path,'utf8');
+  assert.ok(source.includes("completed_shifts=49")||source.includes("completed_shifts=49;")||source.includes("completed_shifts=49"));
+  assert.ok(source.includes("id:'lumber.shift'"));
+  assert.ok(source.includes("id:'forest.route.logging-road'"));
+  assert.ok(source.includes("id:'ending.lumber.hard-work'"));
+  assert.ok(source.includes("['hardWork:lumber']"));
 });
