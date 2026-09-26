@@ -265,9 +265,9 @@ It does **not** close the product gate requirements that were intentionally left
 
 Counts by row status:
 
-- **PASS_CANDIDATE:** 16
+- **PASS_CANDIDATE:** 15
 - **NEEDS_LIVE_EVIDENCE:** 4
-- **BLOCKED_BY_OPEN_AUTHORING:** 4
+- **BLOCKED_BY_OPEN_AUTHORING:** 5
 - **BLOCKED_BY_RUNTIME:** 3
 
 The product slice is therefore **not yet fully passable end-to-end**, despite the successful PR20 activation merge.
