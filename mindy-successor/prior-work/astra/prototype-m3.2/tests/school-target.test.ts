@@ -60,7 +60,7 @@ function fixturePack(){
     },
     media:[],
     events:[{
-      id:'school.fixture.career-ready',
+      id:'school-target-fixture.career-ready',
       title:'School fixture career reaction',
       reactionTriggers:[{kind:'actionCompleted',action:SCHOOL_ACTION_ID}],
       priorityClass:'normal_progression',
@@ -185,7 +185,7 @@ test('paid multi-stat lesson charges exactly once and Resolver observes the comp
     result.reactionFacts.filter(fact=>fact.kind==='statChanged').map(fact=>fact.stat).sort(),
     ['creativity','magic','reason']
   );
-  assert.equal(out.run.flow.pendingScene?.eventId,'school.fixture.career-ready');
+  assert.equal(out.run.flow.pendingScene?.eventId,'school-target-fixture.career-ready');
 });
 
 test('School result can trigger a free reactive career event without another Work action',()=>{
