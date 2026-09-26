@@ -114,7 +114,7 @@ function render(){
  const file=app.querySelector<HTMLInputElement>('#file');on('import',()=>file?.click());
  if(file)file.onchange=async()=>{const f=file.files?.[0];if(!f||busy)return;if(f.size>2_000_000){message='Файл слишком большой';error=true;render();return;}if(!confirm('Загрузить жизнь? Постоянные открытия сохранятся.'))return;busy=true;try{const next=parseSave(await f.text(),catalog,state.meta);await write(next);state=next;screen='town';panel='';locked=false;message='Сохранение загружено';error=false;}catch(e){message=String(e);error=true;}busy=false;render();};
  app.querySelectorAll<HTMLImageElement|HTMLVideoElement>('.media-window img,.media-window video').forEach(node=>node.onerror=()=>{mediaIndex++;render();});
- const editor=app.querySelector<HTMLElement>('#editor');if(editor)mountEditor(editor,baseCatalog,patch,next=>{const updated=applyPresentation(baseCatalog,next);localStorage.setItem('portal-life.presentation.v1',JSON.stringify(next));patch=next;catalog=updated;message='Замены сохранены';error=false;render();});
+ const editor=app.querySelector<HTMLElement>('#editor');if(editor)mountEditor(editor,baseCatalog,patch,next=>{const updated=applyPresentation(baseCatalog,next);localStorage.setItem('portal-life.presentation.v1',JSON.stringify(next));patch=next;catalog=updated;message='Замены сохранены';error=false;});
 }
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&panel){panel='';render();}});
 async function main(){
