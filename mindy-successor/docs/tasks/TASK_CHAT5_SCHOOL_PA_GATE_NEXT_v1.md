@@ -395,3 +395,114 @@ Consolidate Chat 5 items 1–29 into:
 Name exact files and recommend a minimal non-redundant Lead integration subset.
 
 Continue items 25–30 sequentially without waiting for Lead review.
+
+
+## Queue item 31 — PR24 one-Save School state audit
+
+Create NEW files only:
+- `docs/school-prep/SCHOOL_PR24_ONE_SAVE_STATE_AUDIT_v1.md`
+- `prior-work/astra/prototype-m3.2/tests/school-pr24-one-save-state-audit.test.ts`
+
+Review the current Lead one-Save shipped E2E path from the School perspective:
+Lumber -> Foreman -> paid Arcana lesson -> shipped School blocking scene -> Night -> Forest -> ending -> New Run.
+
+Verify:
+- Arcana tuition 500 exactly once;
+- paid lesson costs 1 current-day Energy exactly once;
+- full stat package is applied atomically;
+- `lessons_completed` increments once;
+- semantic `school/arcana/lesson/default` persists correctly;
+- first School blocking scene is resolved before NightFlow;
+- no School management/accounting public fact is fabricated;
+- unrelated Lumber/Forest/Meta state survives the School transaction.
+
+Do not edit shared runtime/UI.
+
+## Queue item 32 — School blocking-scene compatibility contract
+
+Create NEW files only:
+- `prior-work/astra/prototype-m3.2/content/school-blocking-scene-compat.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/school-blocking-scene-compat.test.ts`
+
+Cover interaction between first-class `schoolLesson` and legacy-compatible blocking School events.
+
+Verify:
+- a paid lesson may legitimately open a blocking scene;
+- NightFlow cannot begin until it is resolved;
+- save/reload preserves the pending School scene;
+- resolving the scene does not re-charge tuition/Energy;
+- typed School progress is not duplicated;
+- presentation identity remains stable.
+
+## Queue item 33 — School RC state-drift sentinel
+
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/school-rc-state-drift-sentinel.test.ts`
+
+Build sentinels around a paid lesson inside a longer shared Save:
+- money delta;
+- daytime Energy delta;
+- all affected stats;
+- `lessons_completed`;
+- `night_study_sessions`;
+- pending scene state;
+- unrelated career/relationship/quest progress;
+- no phantom public facts.
+
+Fail on duplication/reset of unrelated subsystems.
+
+## Queue item 34 — School authoring decision-ready packet
+
+Create:
+- `docs/school-prep/SCHOOL_AUTHORING_DECISION_READY_PACKET_v1.md`
+- `prior-work/astra/prototype-m3.2/content/school-authoring-decision-ready.fixture.json`
+
+Turn remaining School authoring gaps into explicit human/product decisions.
+
+At minimum cover:
+- management/accounting public-result provider;
+- management/accounting threshold/milestone type;
+- Arcana/Forest public-result provider;
+- Arcana/Forest threshold/milestone type;
+- teacher identities/content depth;
+- certificate/project authoring if still OPEN.
+
+For each list:
+- acceptable answer types;
+- downstream files/systems affected;
+- PA rows affected;
+- runtime already ready vs runtime change needed.
+
+Do NOT choose a preferred answer.
+
+## Queue item 35 — School RC no-false-green sentinel v2
+
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/school-rc-no-false-green-v2.test.ts`
+
+Fail if any RC School artifact:
+- treats direct worldFact injection as authored School result;
+- treats direct typed counter setup as ordinary player progression;
+- invents a management/certificate threshold;
+- invents Arcana/Forest threshold/provider;
+- lets paid lessons increment `night_study_sessions`;
+- lets Night study increment `lessons_completed`;
+- changes Hard Work eligibility through School.
+
+## Queue item 36 — School final decision/evidence handoff v4
+
+Create:
+- `docs/school-prep/SCHOOL_FINAL_DECISION_EVIDENCE_HANDOFF_v4.md`
+- `prior-work/astra/prototype-m3.2/content/school-final-decision-evidence-handoff.fixture.json`
+
+Consolidate all post-PR23 School work into:
+- SHIPPED_GREEN;
+- MUST_INTEGRATE_QA;
+- HUMAN_DECISION_REQUIRED;
+- CONTENT_DEPTH;
+- PRESENTATION_FUTURE;
+- SUPERSEDED.
+
+Name exact files and identify the smallest Lead integration subset.
+
+Continue items 31–36 sequentially without waiting for Lead review.
