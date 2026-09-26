@@ -148,6 +148,7 @@ function checkReactionTrigger(t:ReactionTrigger,p:Pack,maps:MachineMaps,endingId
   }
   if(t.kind==='worldFactAdded'&&t.fact)needCapability(has(reads?.worldFacts,t.fact),`reaction worldFact ${t.fact}`);
   if(t.kind==='endingEligible'&&t.ending&&!endingIds.has(t.ending))throw new Error(`Неизвестная судьба reaction trigger ${t.ending}`);
+  if(t.kind==='endingCommitted'&&!endingIds.has(t.ending))throw new Error(`Неизвестная committed судьба reaction trigger ${t.ending}`);
   if(t.kind==='nightChoiceCompleted'&&!nightChoiceIds.has(t.choice))throw new Error(`Неизвестный night choice reaction trigger ${t.choice}`);
   if(t.kind==='activityResult'){
     const activity=activityById.get(t.activity);
@@ -207,7 +208,12 @@ export function loadCatalog(definitions:unknown,packs:unknown[]):Catalog {
       for(const v of a.scenes){checkConditions(v.conditions);if(v.media.some(id=>!mediaIds.has(id)))throw new Error('Неизвестное медиа занятия');}
     }
   }
-  for(const e of d.endings)checkConditions(e.conditions);
+  for(const e of d.endings){
+    checkConditions(e.conditions);
+    unique(e.metaRewards.map(r=>r.rewardId),`ending.${e.id}.metaRewards`);
+    const hardWork=e.metaRewards.filter(r=>r.kind==='hardWork').map(r=>r.career);
+    unique(hardWork,`ending.${e.id}.hardWork`);
+  }
   for(const lodging of d.lodgings){
     checkConditions(lodging.conditions);checkEffects(lodging.effects);
   }
