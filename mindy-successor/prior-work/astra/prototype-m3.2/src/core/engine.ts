@@ -1221,8 +1221,25 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
   const knownFlags=new Set(cat.definitions.flags);
   for(const flag of Object.keys(s.run.flags))if(!knownFlags.has(flag)&&!/^system\.scholar\.\d+$/.test(flag))throw new Error(`Неизвестный флаг ${flag}`);
   const endingIds=new Set(cat.definitions.endings.map(e=>e.id));
-  if([...s.run.availableEndings,...s.meta.completed,...(s.run.acceptedEnding?[s.run.acceptedEnding]:[])].some(id=>!endingIds.has(id)))throw new Error('Неизвестная судьба.');
-  if(s.run.status==='ended'&&!s.run.acceptedEnding)throw new Error('Нет принятой судьбы.');
+  const referencedEndings=[
+    ...s.run.availableEndings,
+    ...s.meta.completed,
+    ...(s.run.acceptedEnding?[s.run.acceptedEnding]:[]),
+    ...(s.run.endings.result?[s.run.endings.result.endingId]:[])
+  ];
+  if(referencedEndings.some(id=>!endingIds.has(id)))throw new Error('Неизвестная судьба.');
+  if(new Set(s.meta.appliedResultTransactions).size!==s.meta.appliedResultTransactions.length)throw new Error('Дублированный Meta transaction proof.');
+  if(s.run.status==='active'&&(s.run.endings.committed||s.run.endings.result))throw new Error('Active run не может иметь committed/result ending.');
+  if(s.run.status==='ending_committed'&&(!s.run.endings.committed||s.run.endings.result))throw new Error('Некорректный ending_committed state.');
+  if(s.run.status==='ended'&&(!s.run.endings.committed||!s.run.endings.result))throw new Error('Ended run обязан иметь committed ending и RunResult.');
+  if(s.run.status==='expired'&&(s.run.endings.committed||s.run.endings.result))throw new Error('Expired run не может содержать committed/result ending.');
+  if(s.run.endings.result){
+    const result=s.run.endings.result;
+    if(result.endingId!==s.run.endings.committed)throw new Error('RunResult ending не совпадает с committed ending.');
+    if(!s.meta.appliedResultTransactions.includes(result.transactionId))throw new Error('RunResult не имеет Meta transaction proof.');
+    if(!s.meta.completedEndings.includes(result.endingId))throw new Error('RunResult ending отсутствует в completed Meta.');
+    if(new Set(result.appliedMetaRewardIds).size!==result.appliedMetaRewardIds.length)throw new Error('RunResult содержит повтор reward ID.');
+  }
   if(s.run.pending){
     const e=cat.events.find(e=>e.id===s.run.pending!.eventId);
     if(!e?.variants.some(v=>v.id===s.run.pending!.variantId))throw new Error('Неизвестная сцена сохранения.');
@@ -1276,11 +1293,13 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
     s.meta.completedEndings=[...new Set([...current.completedEndings,...s.meta.completedEndings])];
     s.meta.unlocks=[...new Set([...current.unlocks,...s.meta.unlocks])];
     s.meta.hardWorkProgress=[...new Set([...current.hardWorkProgress,...s.meta.hardWorkProgress])];
+    s.meta.appliedResultTransactions=[...new Set([...current.appliedResultTransactions,...s.meta.appliedResultTransactions])];
     s.meta.runsStarted=Math.max(current.runsStarted,s.meta.runsStarted);
     s.meta.runsCompleted=Math.max(current.runsCompleted,s.meta.runsCompleted);
     s.meta.ruleModifiers={...s.meta.ruleModifiers,...current.ruleModifiers};
     s.meta.persistentChoices={...s.meta.persistentChoices,...current.persistentChoices};
     s.meta.activeLegacyPerks=[...new Set([...s.meta.activeLegacyPerks,...current.activeLegacyPerks])];
+    ensurePalaceUnlock(s.meta);
     attachMetaFacade(s.meta);
   }
   return s;
