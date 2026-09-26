@@ -3,7 +3,7 @@
 Status: LIVE COORDINATION BOARD.
 
 Current main baseline:
-`e12665ce9063689400d8f39f893378f6f01911f3`.
+`9aa0eaf964735e82b9b964bbdcaf5362c292868a`.
 
 ## Coordination rule — no worker idle
 
@@ -284,3 +284,24 @@ Current active queues:
 - Chat 5 — `chat5/school-pa-gate-next`: items 25–30 active; Git currently confirms item 25 committed and items 26–30 still outstanding.
 
 Do not treat worker verbal completion as authoritative until the expected commits/files are present in Git.
+
+
+## One-Save RC smoke merged — PR #24
+
+Main merge:
+`9aa0eaf964735e82b9b964bbdcaf5362c292868a`
+
+Evidence:
+- one persisted Save crosses Lumber -> Foreman -> School -> real School blocking scene -> Night -> Forest -> ending -> New Run;
+- only long-threshold accelerator is `completed_shifts=49`;
+- 49-not-eligible / real 50th-shift boundary asserted;
+- School scene resolution does not duplicate tuition/Energy/typed progress;
+- exact `hardWork:lumber` remains exactly once;
+- merge-ref: typecheck PASS, validate PASS, build PASS, **209/209 tests PASS**.
+
+Important review note:
+- early Chat 4 `PR24_ONE_SAVE_E2E_REVIEW_v1.md` reviewed the old red head before the School-scene fix;
+- early Chat 2 `presentation-pr24-one-save-audit.test.ts` also predates the final `base.school -> listen` boundary and should be treated as stale until post-merge reconciliation;
+- do not integrate either as final RC evidence without rechecking against merged PR #24.
+
+Workers continue their active long queues in their existing branches.
