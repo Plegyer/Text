@@ -123,14 +123,9 @@ test('catalog validation rejects Activity option that references undeclared item
 
 test('item capability derives from actual inventory and may be supplied by any declared item definition',()=>{
   const definitions=structuredClone(catalog.definitions);
-  definitions.itemDefinitions=[
-    ...definitions.itemDefinitions,
-    {
-      id:'reinforced_axe',
-      label:'Alternate boundary proof tool',
-      capabilities:['enter_old_boundary']
-    }
-  ];
+  const axe=definitions.itemDefinitions.find(item=>item.id==='reinforced_axe');
+  assert.ok(axe);
+  axe.capabilities=[...new Set([...axe.capabilities,'enter_old_boundary'])];
   const forest=definitions.activities.find(activity=>activity.id==='lumber.forest');
   assert.ok(forest);
   const custom=loadCatalog(definitions,structuredClone(catalog.packs));
