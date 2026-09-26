@@ -765,3 +765,40 @@ The handoff records merged milestones, CI evidence, locked invariants, current w
 - No production runtime/content/UI files changed in PR #23.
 - Merge-ref GitHub Actions: typecheck PASS, validate PASS, build PASS, **208/208 tests PASS**.
 - Release-candidate regression floor is therefore **208 tests green** before the next worker integration set.
+
+
+## Release-candidate one-Save smoke — PR #24 — 2026-09-26
+
+- PR #24 merged as `9aa0eaf964735e82b9b964bbdcaf5362c292868a`.
+- Main now contains one long persisted-Save regression across:
+  - target Lumber shift;
+  - reactive career milestone;
+  - professional Foreman route;
+  - paid Arcana School lesson;
+  - real first-School blocking scene `base.school -> listen`;
+  - explicit NightFlow;
+  - normal lodging;
+  - optional professional Foreman Night;
+  - Forest logging-road route;
+  - Forest success and Lumber `activityResult` continuation;
+  - 49/50 Hard Work threshold boundary;
+  - ending commitment/completion;
+  - exactly-once `hardWork:lumber`;
+  - New Run Meta persistence and reload.
+- The only direct state accelerator is setting `completed_shifts=49` immediately before the real 50th shift.
+- The smoke explicitly proves Hard Work is NOT eligible at 49.
+- The smoke does not inject:
+  - School management/accounting public fact;
+  - Old Boundary Token;
+  - item capability worldFact;
+  - Forest success fact;
+  - ending eligibility;
+  - Meta reward.
+- The paid School transaction is proven exactly once even when its real blocking scene is resolved afterward.
+- Merge-ref GitHub Actions: typecheck PASS, validate PASS, build PASS, **209/209 tests PASS**.
+
+Remaining authoring decisions are still OPEN and must not be inferred from this smoke:
+- Old Boundary Token acquisition/retain-consume policy;
+- School public-result providers/thresholds;
+- hunter-trail final capability/clue identity;
+- full Forest route/challenge/season content depth.
