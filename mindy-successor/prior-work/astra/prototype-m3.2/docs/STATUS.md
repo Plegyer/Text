@@ -69,3 +69,25 @@ A1 реализован на ветке `a1-state-migration`.
 - полный `npm run check` — pass.
 
 Следующий пакет: A2 Condition/Effect v2. Не масштабировать production content до A2–A6 и Product Acceptance Slice.
+
+
+## A2 typed Condition/Effect v2 — 2026-09-26
+
+A2 completed on `a2-condition-effect-v2`.
+
+Core now supports target typed conditions/effects over schema-v4 owners without arbitrary save paths. Career/Quest/Relationship definitions can declare named stages and transitions. Effect batches use deterministic phases so counters/facts can satisfy a later named transition in the same transaction. Invalid transition ID, wrong source stage or failed transition condition aborts without mutating the caller's Save.
+
+New content packs may declare typed read/write capabilities. Undeclared target-domain access is rejected by the loader. Legacy M3.2 `metric/flag/visits` content remains loadable during migration but is not the target authoring model.
+
+Next-day modifiers now apply their Energy/stat effects once at the day boundary and then clear.
+
+Schema-v4 loading additionally validates persisted career/quest/relationship IDs and stages against the active catalog.
+
+Real GitHub Actions validation:
+- `npm run typecheck` pass;
+- `npm run validate` pass;
+- `npm run build` pass;
+- `npm test` **58/58**;
+- `npm run check` pass.
+
+Next architecture package: A3 Event Resolver.
