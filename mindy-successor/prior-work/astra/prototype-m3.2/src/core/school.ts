@@ -170,13 +170,15 @@ export function schoolLessonEffects(id:SchoolCourseId):Effect[] {
   return [
     {kind:'modifyResource',resource:'money',delta:-course.tuition},
     {kind:'modifyEnergy',delta:-course.energyCost},
-    ...course.statEffects.map(effect=>({kind:'modifyStat' as const,stat:effect.stat,delta:effect.amount}))
+    ...course.statEffects.map(effect=>({kind:'modifyStat' as const,stat:effect.stat,delta:effect.amount})),
+    {kind:'incrementSchoolCounter' as const,track:course.trackId,counter:'lessons_completed',amount:1}
   ];
 }
 
 export function assertSchoolLessonAvailable(input:Save,course:SchoolCourse){
   if(input.run.status!=='active')throw new Error('School lesson requires an active run.');
   if(!input.run.character.creation.complete)throw new Error('Finish character creation before School.');
+  if(!input.run.flags['story.arrived'])throw new Error('Finish the arrival before School.');
   if(input.run.flow.pendingScene||input.run.flow.night||input.run.flow.activity)throw new Error('Finish the current scene, Night flow, or Activity before School.');
   if(input.run.resources.money<course.tuition)throw new Error('Not enough money for School tuition.');
   if(input.run.dayState.energyCurrent<course.energyCost)throw new Error('Not enough current-day Energy for School.');
@@ -217,6 +219,26 @@ export function executeSchoolLesson(
   const course=getSchoolCourse(courseId);
   assertSchoolLessonAvailable(input,course);
   const paid=runtime.applyEffects(input,schoolLessonEffects(courseId),cat);
+  paid.run.historyState.actionCounts[SCHOOL_ACTION_ID]=Math.min(1_000_000,(paid.run.historyState.actionCounts[SCHOOL_ACTION_ID]??0)+1);
+  paid.run.historyState.dayActionCount=Math.min(1000,paid.run.historyState.dayActionCount+1);
+  const deltas:Record<string,number>={};
+  for(const effect of course.statEffects){
+    const before=input.run.character.stats[effect.stat];
+    const after=paid.run.character.stats[effect.stat];
+    if(before!==after)deltas[effect.stat]=after-before;
+  }
+  deltas.money=paid.run.resources.money-input.run.resources.money;
+  deltas.energy=paid.run.dayState.energyCurrent-input.run.dayState.energyCurrent;
+  paid.run.flow.lastAction={
+    id:SCHOOL_ACTION_ID,
+    title:course.label,
+    text:`School lesson completed: ${course.label}.`,
+    media:cat.media.some(media=>media.id==='stage.school')?['stage.school']:[],
+    presentationId:course.presentationId,
+    deltas
+  };
+  paid.run.historyState.journal.push(`School: ${course.label}. Tuition ${course.tuition}; Energy -${course.energyCost}.`);
+  paid.run.historyState.journal=paid.run.historyState.journal.slice(-160);
   const reactionFacts=schoolReactionFacts(input,paid,course);
   const resolved=runtime.resolveReactions(paid,reactionFacts,cat,{newEpoch:true});
   return {
@@ -237,7 +259,10 @@ export function schoolNightStudyChoice(courseId:SchoolCourseId,stat:Stat):NightC
     id:`school.night_study.${slug}.${stat}`,
     label:`Night study: ${course.label} — ${stat}`,
     conditions:[],
-    effects:[{kind:'modifyStat',stat,delta:SCHOOL_NIGHT_STUDY_STAT_GAIN}],
+    effects:[
+      {kind:'modifyStat',stat,delta:SCHOOL_NIGHT_STUDY_STAT_GAIN},
+      {kind:'incrementSchoolCounter',track:course.trackId,counter:'night_study_sessions',amount:1}
+    ],
     nextDayEffects:[],
     nextDayEnergyDelta:SCHOOL_NIGHT_STUDY_NEXT_DAY_ENERGY_DELTA
   };
