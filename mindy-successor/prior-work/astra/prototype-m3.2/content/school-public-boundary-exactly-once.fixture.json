@@ -1,0 +1,33 @@
+{
+  "formatVersion": 1,
+  "id": "school.public-boundary-exactly-once.fixture.v1",
+  "authoringSlots": [
+    {
+      "slot": "management-accounting",
+      "finalPublicFactId": null,
+      "privateThreshold": null,
+      "status": "OPEN"
+    },
+    {
+      "slot": "arcana-forest",
+      "finalPublicFactId": null,
+      "privateThreshold": null,
+      "status": "OPEN"
+    }
+  ],
+  "fixturePublication": {
+    "publicationId": "school.fixture.publication.arcana",
+    "trackId": "school.track.arcana",
+    "publicFactId": "school.fixture.public.arcana-ready",
+    "privateMilestoneId": "school.fixture.milestone.arcana-ready",
+    "fixtureOnly": true
+  },
+  "semantics": {
+    "owner": "school",
+    "publicBoundary": "worldFacts",
+    "firstPublicationReaction": "worldFactAdded",
+    "exactlyOnce": true,
+    "lumberReadsOnlyPublicFact": true,
+    "privateCountersAreNotLumberInputs": true
+  }
+}
