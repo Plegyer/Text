@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "id": "lumber.production-activation.fixture",
+  "sourceBranch": "chat3/lumber-product-next",
+  "sourceBaseline": "current-main-after-pr-19",
+  "productionCandidates": {
+    "actions": [
+      "lumber.shift"
+    ],
+    "careers": [
+      "lumber"
+    ],
+    "relationships": [
+      "lumber.foreman"
+    ],
+    "activities": [
+      "lumber.forest"
+    ],
+    "endings": [
+      "ending.lumber.hard-work",
+      "ending.lumber.forewoman",
+      "ending.lumber.forest"
+    ],
+    "events": {
+      "milestone": "lumber.career-first-shift",
+      "foreman": "lumber.foreman-notice",
+      "activityReturn": "lumber-cross.activity-forest-return",
+      "night": "lumber-night.foreman-professional"
+    },
+    "semanticPresentationIds": {
+      "work": [
+        "job/lumber/shift/spring/default",
+        "job/lumber/shift/summer/default",
+        "job/lumber/shift/autumn/default",
+        "job/lumber/shift/winter/default"
+      ],
+      "workResult": "job/lumber/result/default",
+      "milestone": "job/lumber/event/lumber-career-first-shift/default",
+      "foreman": "relationship/lumber-foreman/lumber-foreman-notice/default",
+      "activityReturn": "job/lumber/event/lumber-cross-activity-forest-return/default",
+      "night": "relationship/lumber-foreman/lumber-night-foreman-professional/default",
+      "endings": [
+        "ending/lumber/hard-work",
+        "ending/lumber/forewoman",
+        "ending/lumber/forest"
+      ]
+    }
+  },
+  "exclusions": [
+    {
+      "kind": "action",
+      "id": "school.lumber-management",
+      "reason": "Synthetic cross-system test action; production School owns its final public result."
+    },
+    {
+      "kind": "event",
+      "id": "lumber-cross.school-management-return",
+      "reason": "Not an activation candidate until the final School-owned management/public fact ID is integrated."
+    }
+  ],
+  "unresolvedDependencies": [
+    {
+      "id": "school.management_public_fact",
+      "status": "OPEN",
+      "currentFixtureReference": "lumber.school.management-ready",
+      "productionValue": null,
+      "note": "School owns the final management/public result fact ID."
+    },
+    {
+      "id": "lumber.forest.item_capability_source",
+      "status": "OPEN",
+      "currentFixtureReference": {
+        "itemId": "old_boundary_token",
+        "capabilityId": "enter_old_boundary",
+        "runtimeWorldFactAdapter": "lumber.capability.enter-old-boundary"
+      },
+      "productionValue": null,
+      "note": "The test adapter proves the gate; the real shipped item capability source/action remains unresolved."
+    },
+    {
+      "id": "lumber.forest.deeper_authoring",
+      "status": "OPEN",
+      "lockedExistingResultIds": [
+        "lumber.forest.success",
+        "lumber.forest.escape",
+        "lumber.forest.failure"
+      ],
+      "productionValue": null,
+      "note": "Do not invent deeper Forest encounters, balance, or lore beyond the already locked Activity results."
+    }
+  ],
+  "lockedContracts": {
+    "hardWork": {
+      "endingId": "ending.lumber.hard-work",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "lumber",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 50
+        }
+      ],
+      "rewardId": "hardWork:lumber",
+      "noAdditionalPrerequisites": true
+    },
+    "activityReturn": {
+      "boundaryKind": "activityResult",
+      "activityId": "lumber.forest",
+      "successResultId": "lumber.forest.success"
+    }
+  }
+}
