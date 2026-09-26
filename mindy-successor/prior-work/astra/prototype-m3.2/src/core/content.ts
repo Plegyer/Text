@@ -133,7 +133,7 @@ function freeEffect(e:Effect){
   if(e.kind==='addNextDayModifier')return e.energyDelta>=0&&e.statEffects.every(x=>x.delta>=0);
   return true;
 }
-function checkReactionTrigger(t:ReactionTrigger,p:Pack,maps:MachineMaps,endingIds:Set<string>){
+function checkReactionTrigger(t:ReactionTrigger,p:Pack,maps:MachineMaps,endingIds:Set<string>,nightChoiceIds:Set<string>){
   const reads=p.capabilities?.reads;
   if(t.kind==='statChanged'&&t.stat)needCapability(has(reads?.stats,t.stat),`reaction stat ${t.stat}`);
   if(t.kind==='resourceChanged'&&t.resource)needCapability(has(reads?.resources,t.resource),`reaction resource ${t.resource}`);
@@ -148,6 +148,7 @@ function checkReactionTrigger(t:ReactionTrigger,p:Pack,maps:MachineMaps,endingId
   }
   if(t.kind==='worldFactAdded'&&t.fact)needCapability(has(reads?.worldFacts,t.fact),`reaction worldFact ${t.fact}`);
   if(t.kind==='endingEligible'&&t.ending&&!endingIds.has(t.ending))throw new Error(`Неизвестная судьба reaction trigger ${t.ending}`);
+  if(t.kind==='nightChoiceCompleted'&&!nightChoiceIds.has(t.choice))throw new Error(`Неизвестный night choice reaction trigger ${t.choice}`);
 }
 
 export function loadCatalog(definitions:unknown,packs:unknown[]):Catalog {
@@ -158,7 +159,7 @@ export function loadCatalog(definitions:unknown,packs:unknown[]):Catalog {
   unique(d.lodgings.map(x=>x.id),'lodgings');unique(d.nightChoices.map(x=>x.id),'night choices');
   unique(ps.map(p=>p.id),'пакеты');unique(events.map(e=>e.id),'события');unique(media.map(m=>m.id),'медиа');
 
-  const known=new Set(d.flags),actionIds=new Set(d.actions.map(a=>a.id)),endingIds=new Set(d.endings.map(e=>e.id)),mediaIds=new Set(media.map(m=>m.id)),maps=machineMaps(d);
+  const known=new Set(d.flags),actionIds=new Set(d.actions.map(a=>a.id)),endingIds=new Set(d.endings.map(e=>e.id)),nightChoiceIds=new Set(d.nightChoices.map(x=>x.id)),mediaIds=new Set(media.map(m=>m.id)),maps=machineMaps(d);
   const checkConditionsGlobal=(cs:Condition[])=>{
     contradictions(cs);
     cs.forEach(c=>visit(c,x=>{
@@ -210,7 +211,7 @@ export function loadCatalog(definitions:unknown,packs:unknown[]):Catalog {
       if(!e.id.startsWith(p.id+'.'))throw new Error(`Событие вне namespace пакета: ${e.id}`);
       if(!e.trigger.length&&!e.reactionTriggers.length)throw new Error(`Событие без trigger: ${e.id}`);
       if(e.trigger.some(t=>!actionIds.has(t)))throw new Error(`Неизвестный триггер ${e.id}`);
-      for(const trigger of e.reactionTriggers)checkReactionTrigger(trigger,p,maps,endingIds);
+      for(const trigger of e.reactionTriggers)checkReactionTrigger(trigger,p,maps,endingIds,nightChoiceIds);
       if(e.delivery.policy==='scheduled'&&!e.delivery.expiresAfterDays)throw new Error(`Scheduled event без expiresAfterDays: ${e.id}`);
       if(e.delivery.policy!=='scheduled'&&e.delivery.expiresAfterDays)throw new Error(`expiresAfterDays допустим только scheduled: ${e.id}`);
       if(!e.blocking&&e.delivery.policy!=='live')throw new Error(`Optional event должен использовать live delivery: ${e.id}`);
