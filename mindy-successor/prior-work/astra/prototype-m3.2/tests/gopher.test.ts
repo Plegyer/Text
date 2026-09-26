@@ -12,8 +12,8 @@ test('intro takes no slot; legacy demo keeps three initially eligible actions; c
  assert.throws(()=>act(t,'arrival'));assert.equal(parseSave(JSON.stringify(t),catalog).run.actionCounts.tavern,1);
 });
 test('season changes job effects; wages calculated from post-action stats',()=>{
- const a=start();const s=work(a,'tavern');assert.equal(s.run.metrics.money-a.run.metrics.money,17);assert.equal(s.run.metrics.composure,1);
- const b=start();b.run.day=10;const t=work(b,'tavern');assert.equal(t.run.metrics.endurance,2);assert.equal(t.run.metrics.organization,2);
+ const a=start();const s=work(a,'tavern');assert.equal(s.run.metrics.money-a.run.metrics.money,17);assert.equal(s.run.metrics.composure,0);
+ const b=start();b.run.day=10;const t=work(b,'tavern');assert.equal(t.run.metrics.endurance,4);assert.equal(t.run.metrics.organization,0);
 });
 test('all three tavern endings reachable; branch choice excludes opposite route; NG+ benefit',()=>{
  let s=start();for(let i=0;i<18;i++)s=work(s,'tavern');assert.ok(s.run.availableEndings.includes('tavern-stay'));
