@@ -649,6 +649,78 @@ function runResolverBoundary(s:Save,before:Save,cat:Catalog,extras:ReactionFact[
   resolveReactionsMutable(s,facts,cat,trace);
 }
 
+function stableIdHash(value:string){
+  let h=2166136261;
+  for(let i=0;i<value.length;i++){h^=value.charCodeAt(i);h=Math.imul(h,16777619);}
+  return (h>>>0).toString(16).padStart(8,'0');
+}
+function runResultIdentity(s:Save,endingId:string){
+  const basis=`${s.run.id}|${endingId}`;
+  return {
+    transactionId:`tx.${s.meta.runsStarted}.${stableIdHash(basis)}`,
+    resultId:`rr.${s.meta.runsStarted}.${stableIdHash('result|'+basis)}`
+  };
+}
+function endingRewards(ending:Catalog['definitions']['endings'][number]):MetaReward[]{
+  if(ending.metaRewards.length)return ending.metaRewards;
+  return [{kind:'unlock',rewardId:`legacy.reward.${stableIdHash(ending.id+'|'+ending.reward)}`,unlock:ending.reward}];
+}
+function applyMetaRewardMutable(meta:Meta,reward:MetaReward){
+  if(reward.kind==='unlock')addUnique(meta.unlocks,reward.unlock);
+  else if(reward.kind==='hardWork')addUnique(meta.hardWorkProgress,reward.career);
+  ensurePalaceUnlock(meta);
+}
+function commitEndingMutable(s:Save,endingId:string,cat:Catalog){
+  if(s.run.status==='ended'){
+    if(s.run.endings.committed===endingId)return;
+    throw new Error('Эта жизнь уже завершена другой судьбой.');
+  }
+  if(s.run.status==='ending_committed'){
+    if(s.run.endings.committed===endingId)return;
+    throw new Error('Уже выбрана другая судьба.');
+  }
+  if(s.run.status!=='active'&&s.run.status!=='expired')throw new Error('Сейчас нельзя выбрать судьбу.');
+  if(s.run.pending||s.run.flow.night||s.run.flow.activity)throw new Error('Завершите текущую сцену, ночь или Activity.');
+  const ending=cat.definitions.endings.find(e=>e.id===endingId);
+  if(!ending||!s.run.endings.eligible.includes(endingId))throw new Error('Эта судьба сейчас недоступна.');
+  const before=cloneSave(s);
+  s.run.endings.committed=endingId;
+  s.run.status='ending_committed';
+  log(s,`Вы выбрали судьбу «${ending.title}».`);
+  runResolverBoundary(s,before,cat,[{kind:'endingCommitted',ending:endingId}],true);
+}
+function completeEndingMutable(s:Save,cat:Catalog){
+  if(s.run.status==='ended'&&s.run.endings.result)return;
+  if(s.run.status!=='ending_committed'||!s.run.endings.committed)throw new Error('Сначала выберите судьбу.');
+  if(s.run.pending||s.run.flow.night||s.run.flow.activity)throw new Error('Сначала завершите финальную сцену.');
+  const ending=cat.definitions.endings.find(e=>e.id===s.run.endings.committed);
+  if(!ending)throw new Error('Выбранная судьба отсутствует в catalog.');
+  const {transactionId,resultId}=runResultIdentity(s,ending.id);
+  if(s.run.endings.result){
+    if(s.run.endings.result.transactionId!==transactionId)throw new Error('RunResult transaction mismatch.');
+    s.run.status='ended';return;
+  }
+  const alreadyApplied=s.meta.appliedResultTransactions.includes(transactionId);
+  const firstCompletion=!s.meta.completedEndings.includes(ending.id);
+  const rewards=firstCompletion?endingRewards(ending):[];
+  if(!alreadyApplied){
+    for(const reward of rewards)applyMetaRewardMutable(s.meta,reward);
+    addUnique(s.meta.completedEndings,ending.id);
+    addUnique(s.meta.appliedResultTransactions,transactionId);
+    s.meta.runsCompleted=Math.min(1_000_000,s.meta.runsCompleted+1);
+  }
+  s.run.endings.result={
+    resultId,
+    endingId:ending.id,
+    transactionId,
+    completedAtDay:s.run.day,
+    firstCompletion:firstCompletion&&!alreadyApplied,
+    appliedMetaRewardIds:alreadyApplied?[]:rewards.map(r=>r.rewardId)
+  };
+  s.run.status='ended';
+  log(s,ending.epilogue);
+}
+
 function activityDefinition(cat:Catalog,id:string):ActivityDefinition{
   const definition=cat.definitions.activities.find(x=>x.id===id);
   if(!definition)throw new Error(`Неизвестная Activity: ${id}`);
@@ -884,6 +956,8 @@ const compatibilitySleepChoice:NightChoiceDefinition={id:'legacy.sleep',label:'�
 export type Command=
   |{type:'action';id:string;recipe?:'gentle'|'bold'}
   |{type:'choice';id:string}
+  |{type:'commitEnding';id:string}
+  |{type:'completeEnding'}
   |{type:'accept';id:string}
   |{type:'newLife'}
   |{type:'restart'}
@@ -904,6 +978,7 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
   }
   if(command.type==='newLife'){
     if(s.run.status==='active')throw new Error('Сначала примите судьбу или дождитесь окончания срока.');
+    if(s.run.status==='ending_committed')throw new Error('Сначала завершите выбранную судьбу.');
     const meta=defaultMeta(s.meta);meta.runsStarted++;return freshSave(meta);
   }
   if(command.type==='allocate'){
@@ -921,15 +996,19 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
     return s;
   }
   if(!s.run.creation.complete)throw new Error('Сначала создайте героиню.');
+  if(command.type==='commitEnding'){
+    commitEndingMutable(s,command.id,cat);
+    return s;
+  }
+  if(command.type==='completeEnding'){
+    completeEndingMutable(s,cat);
+    return s;
+  }
   if(command.type==='accept'){
-    if(s.run.status==='ended'||s.run.pending||s.run.flow.night||s.run.flow.activity)throw new Error('Завершите текущую сцену, ночь или Activity.');
-    const ending=cat.definitions.endings.find(e=>e.id===command.id);
-    if(!ending||!s.run.availableEndings.includes(ending.id)||!eligible(ending.conditions,s,cat))throw new Error('Эта судьба сейчас недоступна.');
-    s.run.status='ended';s.run.acceptedEnding=ending.id;
-    if(!s.meta.completed.includes(ending.id))s.meta.completed.push(ending.id);
-    if(!s.meta.unlocks.includes(ending.reward))s.meta.unlocks.push(ending.reward);
-    s.meta.runsCompleted=Math.min(1_000_000,s.meta.runsCompleted+1);
-    log(s,ending.epilogue);return s;
+    if(s.run.status==='ended')throw new Error('Эта жизнь уже завершена.');
+    commitEndingMutable(s,command.id,cat);
+    if(!s.run.pending)completeEndingMutable(s,cat);
+    return s;
   }
   if(s.run.status!=='active')throw new Error('Эта жизнь завершена.');
   if(command.type==='enterActivity'){
