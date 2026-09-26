@@ -1,0 +1,167 @@
+{
+  "version": 1,
+  "kind": "presentation-pa-checkpoint-matrix",
+  "status": "pa00-pa26-visible-presentation-checkpoints",
+  "policy": {
+    "semanticIdentityDeterministic": true,
+    "animationFramePersisted": false,
+    "playbackTimePersisted": false,
+    "mediaSourceDefinesIdentity": false
+  },
+  "checkpoints": [
+    {
+      "checkpointId": "fresh",
+      "paStep": "PA00",
+      "presentationId": "location/town/default",
+      "identitySource": {
+        "kind": "location",
+        "locationId": "town"
+      },
+      "saveReloadExpectation": "same-semantic-id",
+      "visibleState": "central-stage"
+    },
+    {
+      "checkpointId": "after-shift",
+      "paStep": "PA03",
+      "presentationId": "job/lumber/result/default",
+      "identitySource": {
+        "kind": "action-result",
+        "actionId": "lumber.shift"
+      },
+      "saveReloadExpectation": "same-semantic-id-no-repeat-effects",
+      "visibleState": "last-action-result"
+    },
+    {
+      "checkpointId": "pending-milestone",
+      "paStep": "PA05",
+      "presentationId": "job/lumber/event/lumber-career-first-shift/default",
+      "identitySource": {
+        "kind": "event",
+        "eventId": "lumber.career-first-shift",
+        "variantId": "default"
+      },
+      "saveReloadExpectation": "same-event-variant-presentation",
+      "visibleState": "pending-scene"
+    },
+    {
+      "checkpointId": "foreman-opening",
+      "paStep": "PA06",
+      "presentationId": "relationship/lumber-foreman/lumber-foreman-notice/default",
+      "identitySource": {
+        "kind": "event",
+        "eventId": "lumber.foreman-notice",
+        "variantId": "default"
+      },
+      "saveReloadExpectation": "same-event-variant-presentation",
+      "visibleState": "pending-scene"
+    },
+    {
+      "checkpointId": "school-result",
+      "paStep": "PA07",
+      "presentationId": "school/arcana/lesson/default",
+      "identitySource": {
+        "kind": "course",
+        "courseId": "school.course.arcana"
+      },
+      "saveReloadExpectation": "same-course-semantic-id",
+      "visibleState": "last-action-result"
+    },
+    {
+      "checkpointId": "paid-lodging-night",
+      "paStep": "PA12",
+      "presentationId": "relationship/lumber-foreman/lumber-night-foreman-professional/default",
+      "identitySource": {
+        "kind": "event",
+        "eventId": "lumber-night.foreman-professional",
+        "variantId": "default"
+      },
+      "saveReloadExpectation": "same-night-event-presentation-no-second-payment",
+      "visibleState": "pending-night-scene"
+    },
+    {
+      "checkpointId": "activity-entry",
+      "paStep": "PA14",
+      "presentationId": "activity/forest/route/default",
+      "identitySource": {
+        "kind": "activity",
+        "activityId": "lumber.forest",
+        "phase": "entry"
+      },
+      "saveReloadExpectation": "same-activity-route-no-second-entry-cost",
+      "visibleState": "activity"
+    },
+    {
+      "checkpointId": "activity-internal",
+      "paStep": "PA16",
+      "presentationId": "activity/forest/route/default",
+      "identitySource": {
+        "kind": "activity",
+        "activityId": "lumber.forest",
+        "phase": "internal"
+      },
+      "saveReloadExpectation": "same-activity-route-and-internal-checkpoint",
+      "visibleState": "activity"
+    },
+    {
+      "checkpointId": "activity-result",
+      "paStep": "PA18",
+      "presentationId": "activity/forest/return/success",
+      "identitySource": {
+        "kind": "activity-result",
+        "activityId": "lumber.forest",
+        "resultId": "lumber.forest.success"
+      },
+      "saveReloadExpectation": "same-result-semantic-id-no-repeat-result-effects",
+      "visibleState": "activity-result"
+    },
+    {
+      "checkpointId": "ending-eligible",
+      "paStep": "PA21",
+      "presentationId": "location/town/default",
+      "identitySource": {
+        "kind": "ending-eligibility",
+        "endingIds": [
+          "ending.lumber.hard-work",
+          "ending.lumber.forewoman"
+        ]
+      },
+      "saveReloadExpectation": "eligibility-preserved-no-ending-auto-commit",
+      "visibleState": "day-hub"
+    },
+    {
+      "checkpointId": "ending-committed",
+      "paStep": "PA23",
+      "presentationId": "ending/lumber/hard-work",
+      "identitySource": {
+        "kind": "ending",
+        "endingId": "ending.lumber.hard-work",
+        "phase": "committed"
+      },
+      "saveReloadExpectation": "same-committed-ending-semantic-id",
+      "visibleState": "ending"
+    },
+    {
+      "checkpointId": "ending-completed",
+      "paStep": "PA24",
+      "presentationId": "ending/lumber/hard-work",
+      "identitySource": {
+        "kind": "ending",
+        "endingId": "ending.lumber.hard-work",
+        "phase": "completed"
+      },
+      "saveReloadExpectation": "same-terminal-ending-semantic-id",
+      "visibleState": "run-result"
+    },
+    {
+      "checkpointId": "new-run",
+      "paStep": "PA26",
+      "presentationId": "location/town/default",
+      "identitySource": {
+        "kind": "new-run",
+        "runPhase": "fresh"
+      },
+      "saveReloadExpectation": "fresh-run-location-semantic-id",
+      "visibleState": "central-stage"
+    }
+  ]
+}
