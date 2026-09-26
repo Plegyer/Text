@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "id": "lumber.shipped-activation-expectations.fixture",
+  "coexistence": {
+    "legacyActionId": "lumber",
+    "targetActionId": "lumber.shift",
+    "overwriteAllowed": false
+  },
+  "targetDefinitions": {
+    "actions": [
+      "lumber.shift"
+    ],
+    "careers": [
+      "lumber"
+    ],
+    "relationships": [
+      "lumber.foreman"
+    ],
+    "activities": [
+      "lumber.forest"
+    ],
+    "endings": [
+      "ending.lumber.hard-work",
+      "ending.lumber.forewoman",
+      "ending.lumber.forest"
+    ]
+  },
+  "eventPacks": [
+    {
+      "family": "career-foreman-progression",
+      "packId": "lumber",
+      "eventIds": [
+        "lumber.career-first-shift",
+        "lumber.foreman-notice"
+      ]
+    },
+    {
+      "family": "school-forest-cross-system-return",
+      "packId": "lumber-cross",
+      "eventIds": [
+        "lumber-cross.school-management-return",
+        "lumber-cross.activity-forest-return"
+      ]
+    },
+    {
+      "family": "foreman-night-continuation",
+      "packId": "lumber-night",
+      "eventIds": [
+        "lumber-night.foreman-professional"
+      ]
+    }
+  ],
+  "productionExclusions": [
+    "school.lumber-management"
+  ],
+  "lockedContracts": {
+    "hardWork": {
+      "endingId": "ending.lumber.hard-work",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "lumber",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 50
+        }
+      ],
+      "rewardId": "hardWork:lumber"
+    },
+    "forestContinuation": {
+      "boundaryKind": "activityResult",
+      "activityId": "lumber.forest",
+      "outcome": "success",
+      "resultId": "lumber.forest.success",
+      "eventId": "lumber-cross.activity-forest-return"
+    }
+  }
+}
