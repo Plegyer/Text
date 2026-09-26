@@ -569,3 +569,98 @@ Consolidate all post-PR22 Lumber work into:
 Name exact files and identify the smallest Lead integration subset.
 
 Continue items 31–36 sequentially without waiting for Lead review.
+
+
+## Queue item 37 — post-PR24 merged Lumber reconciliation
+
+Create NEW files only:
+- `docs/lumber-prep/LUMBER_POST_PR24_RECONCILIATION_v1.md`
+- `prior-work/astra/prototype-m3.2/tests/lumber-post-pr24-reconciliation.test.ts`
+
+Reconcile Lumber assumptions against merged main after PR24.
+
+Must confirm:
+- one-Save path includes real `base.school -> listen`;
+- Forest logging-road remains natural shipped path;
+- 49 setup is threshold accelerator only;
+- 50th shift is real;
+- Hard Work condition/reward remain exact;
+- no School/token authoring is falsely closed.
+
+## Queue item 38 — Old Boundary Token product-decision impact matrix
+
+Create:
+- `docs/lumber-prep/OLD_BOUNDARY_TOKEN_PRODUCT_DECISION_IMPACT_v1.md`
+- `prior-work/astra/prototype-m3.2/content/old-boundary-token-product-decision-impact.fixture.json`
+
+For each unresolved token decision, map:
+- runtime code impact;
+- content authoring impact;
+- save/migration impact;
+- UI/inventory impact;
+- PA rows affected;
+- test changes required.
+
+Do not select a preferred answer.
+
+## Queue item 39 — Forest route completeness negative suite
+
+Create NEW files only:
+- `prior-work/astra/prototype-m3.2/content/forest-route-completeness-negative.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/forest-route-completeness-negative.test.ts`
+
+Fail/flag current production as not full PA16 if any of these are absent:
+- logging road;
+- hunter trail;
+- old boundary;
+- navigation;
+- physical obstacle;
+- interpretation/ritual anomaly;
+- at least one seasonal topology difference.
+
+This is a truthful gap sentinel, not a request to invent content.
+
+## Queue item 40 — Forest future-authoring compatibility contract
+
+Create NEW files only:
+- `prior-work/astra/prototype-m3.2/content/forest-future-authoring-compat.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/forest-future-authoring-compat.test.ts`
+
+Prove future route/challenge authoring can be added without breaking:
+- legacy optionModelVersion 0 saves;
+- logging-road route;
+- old-boundary capability route;
+- Activity result contract;
+- exact Lumber continuation;
+- Hard Work independence.
+
+No shared runtime edits.
+
+## Queue item 41 — Lumber final RC acceptance matrix
+
+Create:
+- `docs/lumber-prep/LUMBER_FINAL_RC_ACCEPTANCE_MATRIX_v1.md`
+- optional NEW test.
+
+Classify every Lumber-relevant PA row as:
+- SHIPPED_GREEN;
+- RUNTIME_GREEN_AUTHORING_OPEN;
+- CONTENT_DEPTH_OPEN;
+- HUMAN_DECISION_REQUIRED.
+
+Use merged main after PR24 as source of truth.
+
+## Queue item 42 — Lumber final evidence pack v5
+
+Create:
+- `docs/lumber-prep/LUMBER_FINAL_EVIDENCE_PACK_v5.md`
+- `prior-work/astra/prototype-m3.2/content/lumber-final-evidence-pack.fixture.json`
+
+Produce the smallest non-redundant Lead handoff after PR24:
+- exact tests worth integrating;
+- exact docs worth indexing;
+- human decisions required;
+- content-depth backlog;
+- superseded artifacts.
+
+Continue items 37–42 sequentially without waiting for Lead review.
