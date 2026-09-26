@@ -1,6 +1,6 @@
 import test from 'node:test';import assert from 'node:assert/strict';
 import {loadCatalog} from '../src/core/content.ts';
-import {applyEffects,dispatch,freshSave,meets} from '../src/core/engine.ts';
+import {applyEffects,dispatch,freshSave,meets,parseSave} from '../src/core/engine.ts';
 import {effectSchema,type Catalog,type Condition,type Effect} from '../src/core/schema.ts';
 import {definitions,rawPacks,started} from './helpers.ts';
 
@@ -181,4 +181,20 @@ test('next-day modifier applies once at sleep and then clears',()=>{
   assert.equal(slept.run.dayState.energyCurrent,2);
   assert.equal(slept.run.character.stats.grooming,Math.max(0,g-1));
   assert.deepEqual(slept.run.dayState.nextDayModifiers,{energyDelta:0,statEffects:[],tags:[]});
+});
+
+
+test('schema4 save validates persisted machine IDs and stages against catalog',()=>{
+  const cat=catalog(),base=started();
+  const withCareer=applyEffects(base,[{kind:'addCareerFact',career:'lumber.target',fact:'seen'}],cat);
+  assert.doesNotThrow(()=>parseSave(JSON.stringify(withCareer),cat));
+
+  const badId=JSON.parse(JSON.stringify(withCareer));
+  badId.run.progression.careers['ghost.job']=badId.run.progression.careers['lumber.target'];
+  delete badId.run.progression.careers['lumber.target'];
+  assert.throws(()=>parseSave(JSON.stringify(badId),cat),/state machine/);
+
+  const badStage=JSON.parse(JSON.stringify(withCareer));
+  badStage.run.progression.careers['lumber.target'].stage='ghost-stage';
+  assert.throws(()=>parseSave(JSON.stringify(badStage),cat),/stage/);
 });
