@@ -514,3 +514,50 @@ Chat 5:
 Start the next release-candidate integration/smoke branch from current main.
 Integrate only post-PR22 worker artifacts whose assumptions match the merged capability model.
 Do not integrate pre-PR22 tests that claim item-capability runtime is absent.
+
+
+## 14. Superseding update — PR #24
+
+PR #24 merged to main:
+`9aa0eaf964735e82b9b964bbdcaf5362c292868a`
+
+Release-candidate regression floor:
+- typecheck PASS;
+- validate PASS;
+- build PASS;
+- **209/209 tests PASS**.
+
+The merged one-Save shipped path is:
+
+`Lumber shift -> career milestone -> professional Foreman -> Arcana School lesson -> base.school/listen -> NightFlow -> normal lodging -> Foreman Night -> Forest logging-road -> Forest success -> Lumber continuation -> completed_shifts 49 accelerator -> real 50th shift -> Hard Work eligible -> commit -> complete -> reload/retry -> New Run -> reload`
+
+Only direct state accelerator:
+`completed_shifts=49`.
+
+Important:
+- Hard Work is explicitly absent at 49.
+- No School public fact is injected.
+- No Old Boundary Token/capability is injected.
+- No Forest success fact is injected.
+- No ending eligibility or reward is injected.
+- Resolving `base.school` does not repeat tuition, Energy or typed lesson progress.
+
+### Stale worker evidence warning
+
+Chat 4 `PR24_ONE_SAVE_E2E_REVIEW_v1.md` reviewed the old failing PR24 head and therefore reports a School-pending blocker that is now fixed.
+
+Chat 2 `presentation-pr24-one-save-audit.test.ts` was also authored before the final School blocking-scene transition was added.
+
+Do not integrate those early PR24 artifacts as final evidence without a post-merge reconciliation.
+
+### Remaining product decisions
+
+Still OPEN:
+- Old Boundary Token acquisition source;
+- token retain/consume semantics;
+- hunter-trail final clue/capability identity if unresolved;
+- School management/accounting public result provider/threshold;
+- School Arcana/Forest public result provider/threshold;
+- full Forest 3-route / 3-challenge / season content depth.
+
+Git remains authoritative.
