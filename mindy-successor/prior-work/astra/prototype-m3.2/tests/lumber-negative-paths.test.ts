@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {loadCatalog} from '../src/core/content.ts';
 import {applyEffects,dispatch,eligible,freshSave} from '../src/core/engine.ts';
-import {definitionsSchema,saveSchema,type Catalog,type Save} from '../src/core/schema.ts';
+import {definitionsSchema,type Catalog,type Save} from '../src/core/schema.ts';
 
 const rawDefinitions=JSON.parse(readFileSync('content/lumber-target-definitions.fixture.json','utf8'));
 const rawProductionPack=JSON.parse(readFileSync('content/packs/lumber-target/lumber-production.pack.json','utf8'));
