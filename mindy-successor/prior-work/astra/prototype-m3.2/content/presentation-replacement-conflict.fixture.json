@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "kind": "presentation-replacement-conflict-matrix",
+  "status": "deterministic-preflight-cases",
+  "policy": {
+    "duplicatePresentationId": "reject",
+    "unknownPresentationId": "quarantine",
+    "staleRemovedSlot": "quarantine",
+    "kindSourceMismatch": "reject",
+    "existingSlotOverride": "accept-staged"
+  },
+  "cases": [
+    {
+      "caseId": "existing-static-plus-future-gif",
+      "entries": [
+        {
+          "presentationId": "job/lumber/shift/spring/default",
+          "primary": {
+            "kind": "gif",
+            "ref": "media/lumber/shift-spring.gif",
+            "alt": "Spring Lumber shift"
+          }
+        }
+      ],
+      "expected": "accept-staged"
+    },
+    {
+      "caseId": "duplicate-semantic-id",
+      "entries": [
+        {
+          "presentationId": "job/lumber/shift/spring/default",
+          "primary": {
+            "kind": "gif",
+            "ref": "media/lumber/shift-spring-a.gif",
+            "alt": "Spring A"
+          }
+        },
+        {
+          "presentationId": "job/lumber/shift/spring/default",
+          "primary": {
+            "kind": "gif",
+            "ref": "media/lumber/shift-spring-b.gif",
+            "alt": "Spring B"
+          }
+        }
+      ],
+      "expected": "reject"
+    },
+    {
+      "caseId": "unknown-semantic-id",
+      "entries": [
+        {
+          "presentationId": "job/lumber/unknown/default",
+          "static": {
+            "kind": "image",
+            "ref": "assets/stage-lumber.svg",
+            "alt": "Unknown Lumber slot"
+          }
+        }
+      ],
+      "expected": "quarantine"
+    },
+    {
+      "caseId": "asset-kind-source-mismatch",
+      "entries": [
+        {
+          "presentationId": "job/lumber/shift/spring/default",
+          "primary": {
+            "kind": "gif",
+            "ref": "media/lumber/not-a-gif.webp",
+            "alt": "Mismatched asset"
+          }
+        }
+      ],
+      "expected": "reject"
+    },
+    {
+      "caseId": "existing-ending-slot",
+      "entries": [
+        {
+          "presentationId": "ending/lumber/hard-work",
+          "static": {
+            "kind": "image",
+            "ref": "assets/stage-town.svg",
+            "alt": "Lumber Hard Work ending"
+          }
+        }
+      ],
+      "expected": "accept-staged"
+    },
+    {
+      "caseId": "existing-school-slot",
+      "entries": [
+        {
+          "presentationId": "school/arcana/lesson/default",
+          "static": {
+            "kind": "image",
+            "ref": "assets/stage-school.svg",
+            "alt": "Arcana School lesson"
+          }
+        }
+      ],
+      "expected": "accept-staged"
+    },
+    {
+      "caseId": "stale-removed-slot",
+      "entries": [
+        {
+          "presentationId": "school/removed-course/lesson/default",
+          "static": {
+            "kind": "image",
+            "ref": "assets/stage-school.svg",
+            "alt": "Removed School course"
+          }
+        }
+      ],
+      "expected": "quarantine"
+    }
+  ]
+}
