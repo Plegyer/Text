@@ -1,0 +1,85 @@
+{
+  "version": 1,
+  "kind": "presentation-central-stage-interaction-contract",
+  "status": "single-logical-stage-regression",
+  "policy": {
+    "logicalCentralStageCount": 1,
+    "presentationAppliesMechanics": false,
+    "interactionBlockingOwner": "gameplay-flow-state",
+    "animationTimingMayBlockControls": false
+  },
+  "cases": [
+    {
+      "caseId": "ordinary-action-result",
+      "presentationId": "job/lumber/result/default",
+      "visibleOwner": "lastAction",
+      "stageRole": "result",
+      "interactionState": "day-controls-available",
+      "blockingOwner": null
+    },
+    {
+      "caseId": "blocking-pending-scene",
+      "presentationId": "job/lumber/event/lumber-career-first-shift/default",
+      "visibleOwner": "pendingScene",
+      "stageRole": "blocking-scene",
+      "interactionState": "scene-choices-only",
+      "blockingOwner": "pendingScene"
+    },
+    {
+      "caseId": "school-lesson-result",
+      "presentationId": "school/arcana/lesson/default",
+      "visibleOwner": "lastAction",
+      "stageRole": "result",
+      "interactionState": "day-controls-available-unless-resolver-opens-pending",
+      "blockingOwner": null
+    },
+    {
+      "caseId": "night-lodging",
+      "presentationId": "location/town/default",
+      "visibleOwner": "nightFlow",
+      "stageRole": "night-context",
+      "interactionState": "night-controls",
+      "blockingOwner": "nightFlow"
+    },
+    {
+      "caseId": "night-choice-scene",
+      "presentationId": "relationship/lumber-foreman/lumber-night-foreman-professional/default",
+      "visibleOwner": "pendingScene",
+      "stageRole": "blocking-scene",
+      "interactionState": "scene-choices-only",
+      "blockingOwner": "pendingScene"
+    },
+    {
+      "caseId": "active-activity",
+      "presentationId": "activity/forest/route/default",
+      "visibleOwner": "activity",
+      "stageRole": "activity-context",
+      "interactionState": "activity-controls",
+      "blockingOwner": "activity"
+    },
+    {
+      "caseId": "ending-eligible",
+      "presentationId": "location/town/default",
+      "visibleOwner": "dayHub",
+      "stageRole": "day-context",
+      "interactionState": "normal-controls-plus-ending-choice",
+      "blockingOwner": null
+    },
+    {
+      "caseId": "ending-committed",
+      "presentationId": "ending/lumber/hard-work",
+      "visibleOwner": "endingState",
+      "stageRole": "ending",
+      "interactionState": "ending-completion-controls",
+      "blockingOwner": "endingCommitted"
+    },
+    {
+      "caseId": "ending-completed",
+      "presentationId": "ending/lumber/hard-work",
+      "visibleOwner": "runResult",
+      "stageRole": "terminal-ending",
+      "interactionState": "terminal-controls",
+      "blockingOwner": "runEnded"
+    }
+  ]
+}
