@@ -1,0 +1,96 @@
+{
+  "version": 2,
+  "kind": "presentation-one-save-ownership",
+  "status": "merged-pr24",
+  "policy": {
+    "oneLogicalCentralStage": true,
+    "presentationOwnsMechanics": false,
+    "animationTimingOwnsBlocking": false
+  },
+  "steps": [
+    {
+      "step": "lumber-result",
+      "owner": "lastAction",
+      "presentationId": "job/lumber/result/default",
+      "reload": "owner-and-semantic-id-stable"
+    },
+    {
+      "step": "career-milestone",
+      "owner": "pendingScene",
+      "presentationId": "job/lumber/event/lumber-career-first-shift/default",
+      "reload": "event-variant-presentation-stable"
+    },
+    {
+      "step": "foreman-opening",
+      "owner": "pendingScene",
+      "presentationId": "relationship/lumber-foreman/lumber-foreman-notice/default",
+      "reload": "event-variant-presentation-stable"
+    },
+    {
+      "step": "school-result",
+      "owner": "lastAction",
+      "presentationId": "school/arcana/lesson/default",
+      "reload": "course-result-stable-no-second-transaction"
+    },
+    {
+      "step": "school-blocking-scene",
+      "owner": "pendingScene",
+      "presentationId": "location/town/event/base-school/lesson",
+      "reload": "base-school-lesson-stable-no-second-school-transaction"
+    },
+    {
+      "step": "night-lodging",
+      "owner": "NightFlow",
+      "presentationId": "location/town/default",
+      "reload": "night-phase-payment-state-stable"
+    },
+    {
+      "step": "foreman-night",
+      "owner": "pendingScene",
+      "presentationId": "relationship/lumber-foreman/lumber-night-foreman-professional/default",
+      "reload": "night-event-presentation-stable"
+    },
+    {
+      "step": "forest-entry",
+      "owner": "Activity",
+      "presentationId": "activity/forest/route/default",
+      "reload": "activity-envelope-and-semantic-id-stable"
+    },
+    {
+      "step": "forest-logging-road",
+      "owner": "Activity",
+      "presentationId": "activity/forest/route/default",
+      "reload": "routeId-and-checkpoint-stable"
+    },
+    {
+      "step": "lumber-return",
+      "owner": "pendingScene",
+      "presentationId": "job/lumber/event/lumber-cross-activity-forest-return/default",
+      "reload": "continuation-event-presentation-stable"
+    },
+    {
+      "step": "hard-work-final-shift",
+      "owner": "lastAction",
+      "presentationId": "job/lumber/result/default",
+      "reload": "50th-shift-result-and-eligibility-stable"
+    },
+    {
+      "step": "ending-committed",
+      "owner": "endingState",
+      "presentationId": "ending/lumber/hard-work",
+      "reload": "committed-ending-stable"
+    },
+    {
+      "step": "ending-completed",
+      "owner": "RunResult",
+      "presentationId": "ending/lumber/hard-work",
+      "reload": "terminal-result-idempotent"
+    },
+    {
+      "step": "new-run",
+      "owner": "NewRunLocation",
+      "presentationId": "location/town/default",
+      "reload": "fresh-location-and-meta-visible-state-stable"
+    }
+  ]
+}
