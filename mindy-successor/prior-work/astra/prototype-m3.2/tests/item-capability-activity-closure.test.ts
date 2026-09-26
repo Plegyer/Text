@@ -84,21 +84,27 @@ test('logging-road route is usable without any item and preserves ordinary count
   assert.equal(s.run.flow.pendingScene?.eventId,'lumber-cross.activity-forest-return');
 });
 
-test('schema4 Activity saves from before route fields load with safe defaults',()=>{
+test('pre-option schema4 active Activity save preserves immediate legacy advance/escape behavior',()=>{
   let s=started();
   s=dispatch(s,{type:'enterActivity',id:'lumber.forest'},catalog);
 
   const raw=JSON.parse(JSON.stringify(s));
+  delete raw.run.flow.activity.optionModelVersion;
   delete raw.run.flow.activity.internalState.routeId;
   delete raw.run.flow.activity.internalState.resolvedOptionIds;
 
-  const reloaded=parseSave(JSON.stringify(raw),catalog);
+  let reloaded=parseSave(JSON.stringify(raw),catalog);
+  assert.equal(reloaded.run.flow.activity?.optionModelVersion,0);
   assert.equal(reloaded.run.flow.activity?.internalState.routeId,null);
   assert.deepEqual(reloaded.run.flow.activity?.internalState.resolvedOptionIds,[]);
-  assert.ok(
-    availableActivityActions(reloaded,catalog)
-      .some(action=>action.id==='forest.route.logging-road')
+  assert.deepEqual(
+    availableActivityActions(reloaded,catalog).map(action=>action.id),
+    ['advance','escape']
   );
+
+  reloaded=dispatch(reloaded,{type:'activityAction',id:'advance'},catalog);
+  assert.equal(reloaded.run.flow.activity?.internalState.progress,1);
+  assert.equal(reloaded.run.flow.activity?.internalState.routeId,null);
 });
 
 test('catalog validation rejects Activity option that references undeclared item capability',()=>{
