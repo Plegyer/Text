@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 4,
+  "id": "lumber.schema4-legacy-save.fixture",
+  "base": "freshSave",
+  "legacyState": {
+    "actionCounts": {
+      "lumber": 50,
+      "tavern": 3
+    },
+    "unrelated": {
+      "money": 777
+    }
+  },
+  "targetState": {
+    "actionId": "lumber.shift",
+    "careerId": "lumber",
+    "counterId": "completed_shifts",
+    "implicitConversionAllowed": false,
+    "exampleSeparateCompletedShifts": 7
+  },
+  "expectations": {
+    "legacyLumberActionCount": 50,
+    "unrelatedTavernActionCount": 3,
+    "unrelatedMoney": 777,
+    "targetActionCount": 0,
+    "completedShiftsWhenAbsent": null,
+    "hardWorkEligibleFromLegacyCountAlone": false
+  },
+  "lockedHardWork": {
+    "endingId": "ending.lumber.hard-work",
+    "conditions": [
+      {
+        "kind": "careerCounter",
+        "career": "lumber",
+        "counter": "completed_shifts",
+        "op": "gte",
+        "value": 50
+      }
+    ],
+    "rewardId": "hardWork:lumber"
+  }
+}
