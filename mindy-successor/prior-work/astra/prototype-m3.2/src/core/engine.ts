@@ -1,4 +1,4 @@
-import { metrics, stats, seasons, priorityClasses, saveSchema, type Stat, type Save, type Meta, type Condition, type Effect, type Catalog, type StoryEvent, type Action, type MachineDefinition, type ReactionFact, type ReactionTrigger, type PriorityClass, type LodgingDefinition, type NightChoiceDefinition } from './schema.ts';
+import { metrics, stats, seasons, priorityClasses, saveSchema, type Stat, type Save, type Meta, type Condition, type Effect, type Catalog, type StoryEvent, type Action, type MachineDefinition, type ReactionFact, type ReactionTrigger, type PriorityClass, type LodgingDefinition, type NightChoiceDefinition, type ActivityDefinition, type ActivityOutcome, type ActivityEnvelope } from './schema.ts';
 
 const statSet=new Set<string>(stats);
 const cappedLegacy=new Set(['health','stress','trust']);
@@ -346,6 +346,7 @@ function factLabel(f:ReactionFact){
     case 'dayStarted':return `dayStarted:${f.day}`;
     case 'nightPhase':return `nightPhase:${f.point}`;
     case 'nightChoiceCompleted':return `nightChoiceCompleted:${f.choice}`;
+    case 'activityResult':return `activityResult:${f.activity}:${f.outcome}:${f.result}`;
     case 'careerCounterChanged':return `careerCounterChanged:${f.career}.${f.counter}:${f.from}->${f.to}`;
     case 'careerTransition':return `careerTransition:${f.career}:${f.from}->${f.to}`;
     case 'careerFactAdded':return `careerFactAdded:${f.career}.${f.fact}`;
@@ -378,6 +379,7 @@ function matchTrigger(t:ReactionTrigger,f:ReactionFact):boolean{
     case 'creationCompleted':case 'energyChanged':case 'calendarAdvanced':case 'dayStarted':return true;
     case 'nightPhase':return f.kind==='nightPhase'&&f.point===t.point;
     case 'nightChoiceCompleted':return f.kind==='nightChoiceCompleted'&&f.choice===t.choice;
+    case 'activityResult':return f.kind==='activityResult'&&f.activity===t.activity&&(!t.outcome||f.outcome===t.outcome)&&(!t.result||f.result===t.result);
     case 'actionCompleted':return !t.action||(f.kind==='actionCompleted'&&f.action===t.action);
     case 'choiceResolved':return !t.event||(f.kind==='choiceResolved'&&f.event===t.event);
     case 'statChanged':return !t.stat||(f.kind==='statChanged'&&f.stat===t.stat);
@@ -624,6 +626,80 @@ function runResolverBoundary(s:Save,before:Save,cat:Catalog,extras:ReactionFact[
   resolveReactionsMutable(s,facts,cat,trace);
 }
 
+function activityDefinition(cat:Catalog,id:string):ActivityDefinition{
+  const definition=cat.definitions.activities.find(x=>x.id===id);
+  if(!definition)throw new Error(`Неизвестная Activity: ${id}`);
+  return definition;
+}
+function activityRandom(envelope:ActivityEnvelope){
+  envelope.rngState=(Math.imul(envelope.rngState,1664525)+1013904223)>>>0;
+  return envelope.rngState/4294967296;
+}
+function activityResult(definition:ActivityDefinition,outcome:ActivityOutcome){
+  const result=definition.results.find(x=>x.outcome===outcome);
+  if(!result)throw new Error(`Activity ${definition.id} не имеет result ${outcome}`);
+  return result;
+}
+function finalizeActivityMutable(s:Save,cat:Catalog,outcome:ActivityOutcome){
+  const envelope=s.run.flow.activity;if(!envelope)throw new Error('Нет активной Activity.');
+  const definition=activityDefinition(cat,envelope.activityId);
+  if(definition.version!==envelope.definitionVersion||definition.adapter!==envelope.adapter)throw new Error('Activity definition несовместима с сохранённым envelope.');
+  const result=activityResult(definition,outcome);
+  const before=cloneSave(s);
+  envelope.status='resolving';
+  envelope.accumulatedRewards.push(...structuredClone(result.effects));
+  addUnique(envelope.emittedFacts,result.id);
+  applyEffectsMutable(s,result.effects,cat,true);
+  s.run.flow.activity=null;
+  register(s,cat);
+  runResolverBoundary(s,before,cat,[{kind:'activityResult',activity:definition.id,outcome,result:result.id}],true);
+}
+function enterActivityMutable(s:Save,cat:Catalog,id:string){
+  if(s.run.pending)throw new Error('Сначала завершите текущую сцену.');
+  if(s.run.flow.night)throw new Error('Нельзя войти в Activity во время NightFlow.');
+  if(s.run.flow.activity)throw new Error('Activity уже активна.');
+  if(!s.run.flags['story.arrived'])throw new Error('Сначала завершите вступление.');
+  const definition=activityDefinition(cat,id);
+  if(!eligible(definition.entryConditions,s,cat))throw new Error('Условия входа в Activity не выполнены.');
+  if(s.run.dayState.energyCurrent<definition.entryEnergyCost)throw new Error('Не хватает Energy для входа в Activity.');
+  s.run.dayState.energyCurrent-=definition.entryEnergyCost;
+  random(s);
+  s.run.flow.activity={
+    activityId:definition.id,
+    definitionVersion:definition.version,
+    adapter:definition.adapter,
+    status:'active',
+    startedDay:s.run.day,
+    entryEnergyCommitted:true,
+    internalState:{
+      progress:0,
+      endurance:definition.adapterConfig.initialEndurance,
+      steps:0,
+      lastRoll:null
+    },
+    rngState:s.run.rngState.state,
+    checkpoint:'entry',
+    accumulatedRewards:[],
+    emittedFacts:[]
+  };
+}
+function activityActionMutable(s:Save,cat:Catalog,action:'advance'|'escape'){
+  const envelope=s.run.flow.activity;if(!envelope)throw new Error('Нет активной Activity.');
+  if(s.run.pending||s.run.flow.night)throw new Error('Некорректное внешнее состояние Activity.');
+  const definition=activityDefinition(cat,envelope.activityId);
+  if(definition.version!==envelope.definitionVersion||definition.adapter!==envelope.adapter)throw new Error('Activity definition несовместима с envelope.');
+  if(envelope.status!=='active')throw new Error('Activity сейчас не принимает действия.');
+  if(action==='escape'){finalizeActivityMutable(s,cat,'escape');return;}
+  const state=envelope.internalState;
+  state.steps++;
+  state.progress++;
+  state.endurance=Math.max(0,state.endurance-definition.adapterConfig.advanceEnduranceCost);
+  state.lastRoll=activityRandom(envelope);
+  envelope.checkpoint=`counter.step.${state.steps}`;
+  if(state.progress>=definition.adapterConfig.successAtProgress){finalizeActivityMutable(s,cat,'success');return;}
+  if(state.endurance<=definition.adapterConfig.failAtEndurance){finalizeActivityMutable(s,cat,'failure');return;}
+}
+
 type NightPoint='before_lodging'|'after_lodging'|'after_choice';
 type NightState=NonNullable<Save['run']['flow']['night']>;
 
@@ -791,6 +867,8 @@ export type Command=
   |{type:'allocate';stat:Stat;delta:1|-1}
   |{type:'finishCreation'}
   |{type:'openOffer';id:string}
+  |{type:'enterActivity';id:string}
+  |{type:'activityAction';id:'advance'|'escape'}
   |{type:'endDay'}
   |{type:'chooseLodging';id:string}
   |{type:'chooseNightChoice';id:string}
@@ -821,7 +899,7 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
   }
   if(!s.run.creation.complete)throw new Error('Сначала создайте героиню.');
   if(command.type==='accept'){
-    if(s.run.status==='ended'||s.run.pending||s.run.flow.night)throw new Error('Завершите текущую сцену или ночь.');
+    if(s.run.status==='ended'||s.run.pending||s.run.flow.night||s.run.flow.activity)throw new Error('Завершите текущую сцену, ночь или Activity.');
     const ending=cat.definitions.endings.find(e=>e.id===command.id);
     if(!ending||!s.run.availableEndings.includes(ending.id)||!eligible(ending.conditions,s,cat))throw new Error('Эта судьба сейчас недоступна.');
     s.run.status='ended';s.run.acceptedEnding=ending.id;
@@ -831,8 +909,16 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
     log(s,ending.epilogue);return s;
   }
   if(s.run.status!=='active')throw new Error('Эта жизнь завершена.');
+  if(command.type==='enterActivity'){
+    enterActivityMutable(s,cat,command.id);
+    return s;
+  }
+  if(command.type==='activityAction'){
+    activityActionMutable(s,cat,command.id);
+    return s;
+  }
   if(command.type==='openOffer'){
-    if(s.run.pending||s.run.flow.night)throw new Error('Сначала завершите текущую сцену или ночь.');
+    if(s.run.pending||s.run.flow.night||s.run.flow.activity)throw new Error('Сначала завершите текущую сцену, ночь или Activity.');
     const q=s.run.flow.reaction.queued.find(x=>x.instanceId===command.id&&x.kind==='optional');
     if(!q||!s.run.dayState.optionalOfferIds.includes(command.id))throw new Error('Предложение недоступно.');
     const e=cat.events.find(x=>x.id===q.eventId);if(!e)throw new Error('Событие предложения отсутствует.');
@@ -893,6 +979,7 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
   }
   if(s.run.pending)throw new Error('Сначала выберите ответ в сцене.');
   if(s.run.flow.night)throw new Error('Сначала завершите ночь.');
+  if(s.run.flow.activity)throw new Error('Сначала завершите Activity.');
   if(command.id==='rest')throw new Error('Выберите способ ночлега.');
   const a=cat.definitions.actions.find(a=>a.id===command.id);
   if(!a||!eligible(a.conditions,s,cat))throw new Error('Условия действия не выполнены.');
