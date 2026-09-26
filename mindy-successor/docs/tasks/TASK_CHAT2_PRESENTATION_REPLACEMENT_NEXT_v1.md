@@ -257,3 +257,109 @@ Produce a deduplicated handoff of branch artifacts for Lead:
 Do not recommend shared runtime changes unless a currently demonstrated blocker requires one.
 
 Continue items 13–18 sequentially without waiting for Lead review.
+
+
+## Queue item 19 — PA closure presentation dependency audit
+
+Create NEW files only:
+- `docs/presentation-prep/PRESENTATION_PA_CLOSURE_DEPENDENCY_AUDIT_v1.md`
+- `prior-work/astra/prototype-m3.2/tests/presentation-pa-closure-dependency.test.ts`
+
+Using current Product Acceptance gate status, classify every remaining OPEN PA blocker as:
+- presentation-independent;
+- presentation-ready once gameplay authoring lands;
+- missing presentation authoring.
+
+At minimum cover:
+- Old Boundary Token acquisition/use;
+- School management/accounting public result;
+- deeper Forest routes/challenges/season depth;
+- item-driven Activity action-space behavior.
+
+Do not create gameplay thresholds, acquisition sources or runtime behavior.
+
+## Queue item 20 — central-stage interaction regression contract
+
+Create NEW files only:
+- `prior-work/astra/prototype-m3.2/content/presentation-central-stage-interaction.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/presentation-central-stage-interaction.test.ts`
+
+Define/verify the presentation contract for:
+- ordinary action result;
+- blocking pending scene;
+- School lesson result;
+- Night lodging/choice;
+- active Activity;
+- ending eligible/committed/completed.
+
+Invariant:
+- exactly one logical central media stage;
+- gameplay controls may change around it;
+- presentation changes never apply mechanics;
+- pending/Activity/Night state owns interaction blocking, not GIF timing.
+
+No UI/runtime edits.
+
+## Queue item 21 — shipped fallback asset integrity manifest
+
+Create NEW files only:
+- `prior-work/astra/prototype-m3.2/content/presentation-fallback-asset-integrity.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/presentation-fallback-asset-integrity.test.ts`
+
+Produce a deterministic manifest of all currently shipped static fallback assets used by target Lumber, School, Night, Activity and endings.
+
+Verify:
+- each referenced current asset exists;
+- no duplicate logical media ID points to conflicting current paths;
+- future GIF targets are excluded from “currently shipped” counts;
+- text-only fallback slots remain valid without a file.
+
+## Queue item 22 — replacement bundle vs shipped-catalog conflict matrix
+
+Create NEW files only:
+- `prior-work/astra/prototype-m3.2/content/presentation-replacement-conflict.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/presentation-replacement-conflict.test.ts`
+
+Cover:
+- override of existing static fallback with future GIF;
+- duplicate override for same semantic ID;
+- unknown semantic ID;
+- asset-kind/source mismatch;
+- override targeting an ending/School slot that exists in shipped catalog;
+- stale bundle entry for a removed slot.
+
+Define deterministic preflight outcome for each. No editor/runtime implementation.
+
+## Queue item 23 — post-PR21 presentation smoke matrix
+
+Create NEW files only:
+- `prior-work/astra/prototype-m3.2/content/presentation-post-pr21-smoke.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/presentation-post-pr21-smoke.test.ts`
+
+Mirror the shipped Product Acceptance evidence path:
+Lumber shift -> milestone -> Foreman -> School -> Night -> accelerated Forest mechanics -> ending eligibility -> normal action while eligible -> commit -> completion -> new run.
+
+For every visible boundary record:
+- expected semantic presentationId;
+- current fallback media behavior;
+- save/reload persistence expectation;
+- animation-off expectation.
+
+Do not claim accelerated gameplay rows are full PA passes.
+
+## Queue item 24 — presentation release-candidate handoff v2
+
+Create:
+- `docs/presentation-prep/PRESENTATION_RELEASE_CANDIDATE_HANDOFF_v2.md`
+- `prior-work/astra/prototype-m3.2/content/presentation-release-candidate-handoff.fixture.json`
+
+Consolidate all Chat 2 work after PR21 into:
+- READY_TO_INTEGRATE_NOW;
+- QA_EVIDENCE_ONLY;
+- FUTURE_GIF_ASSET_WORK;
+- BLOCKED_BY_GAMEPLAY_AUTHORING;
+- SUPERSEDED.
+
+Name exact files in each class and explain duplication/supersession so Lead can integrate a minimal non-redundant subset.
+
+Continue items 19–24 sequentially without waiting for Lead review.
