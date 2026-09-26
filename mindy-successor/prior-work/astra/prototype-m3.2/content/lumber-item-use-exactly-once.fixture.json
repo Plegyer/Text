@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "id": "lumber.item-use-exactly-once.fixture",
+  "status": "FUTURE_RUNTIME_CONTRACT_NO_SHARED_PATCH",
+  "commitBoundary": {
+    "name": "accepted capability-aware Activity option transaction",
+    "occursAfter": [
+      "option eligibility checked from authoritative owned item/capability state",
+      "option command accepted"
+    ],
+    "occursBefore": [
+      "downstream Activity result/reaction is considered durable",
+      "UI exposes post-use availability"
+    ],
+    "atomicWrites": [
+      "persist option-use transaction identity",
+      "apply consume/retain inventory mutation if policy requires it",
+      "advance Activity state/checkpoint",
+      "recompute capability/action availability from resulting authoritative inventory state"
+    ]
+  },
+  "options": [
+    {
+      "capability": "enter_old_boundary",
+      "itemId": "old_boundary_token",
+      "consumePolicy": "OPEN"
+    },
+    {
+      "capability": "cross_rough_route",
+      "itemId": "rope_kit",
+      "consumePolicy": "OPEN"
+    },
+    {
+      "capability": "preserve_specimen",
+      "itemId": "field_preservation_kit",
+      "consumePolicy": "OPEN"
+    },
+    {
+      "capability": "cut_heavy_wood",
+      "itemId": "reinforced_axe",
+      "consumePolicy": "OPEN"
+    }
+  ],
+  "invariants": {
+    "committedUseIdStableAcrossReload": true,
+    "retryCommittedUseIsIdempotent": true,
+    "doubleConsumeAllowed": false,
+    "retainedItemMustRemainPresent": true,
+    "consumedItemMustRemainAbsent": true,
+    "reloadMayNotRestoreConsumedItem": true,
+    "availabilityDerivedFromActualInventory": true,
+    "hiddenCachedCapabilityMayNotOverrideInventory": true
+  },
+  "saveReloadCheckpoints": [
+    "before option use",
+    "after accepted option transaction",
+    "after reload",
+    "after retry of same committed use identity"
+  ],
+  "runtimeBoundary": {
+    "sharedRuntimePatchIncluded": false,
+    "currentTypedItemEffectsSupportTheseItems": false,
+    "currentActivityOptionCommandSupport": false
+  },
+  "hardWorkIsolation": {
+    "itemUsePrerequisiteAllowed": false,
+    "onlyCondition": {
+      "kind": "careerCounter",
+      "career": "lumber",
+      "counter": "completed_shifts",
+      "op": "gte",
+      "value": 50
+    },
+    "rewardId": "hardWork:lumber"
+  }
+}
