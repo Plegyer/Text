@@ -815,6 +815,7 @@ function enterActivityMutable(s:Save,cat:Catalog,id:string){
     status:'active',
     startedDay:s.run.day,
     entryEnergyCommitted:true,
+    optionModelVersion:definition.options.length?1:0,
     internalState:{
       progress:0,
       endurance:definition.adapterConfig.initialEndurance,
@@ -836,8 +837,9 @@ function activityActionMutable(s:Save,cat:Catalog,action:string){
   if(definition.version!==envelope.definitionVersion||definition.adapter!==envelope.adapter)throw new Error('Activity definition несовместима с сохранённым envelope.');
   if(envelope.status!=='active')throw new Error('Activity сейчас не принимает действия.');
   if(action==='escape'){finalizeActivityMutable(s,cat,'escape');return;}
+  if(envelope.optionModelVersion===0&&action!=='advance')throw new Error(`Неизвестное Activity action: ${action}`);
   const state=envelope.internalState;
-  const requiresRouteSelection=definition.options.some(option=>option.category==='route');
+  const requiresRouteSelection=envelope.optionModelVersion>=1&&definition.options.some(option=>option.category==='route');
   if(action==='advance'&&requiresRouteSelection&&!state.routeId)throw new Error('Сначала выберите маршрут Activity.');
   if(action!=='advance'){
     const option=definition.options.find(candidate=>candidate.id===action);
@@ -867,6 +869,7 @@ export function availableActivityActions(s:Save,cat:Catalog):Array<{id:string;la
   const envelope=s.run.flow.activity;if(!envelope||envelope.status!=='active')return [];
   const definition=activityDefinition(cat,envelope.activityId);
   const state=envelope.internalState;
+  if(envelope.optionModelVersion===0)return [{id:'advance',label:'Продолжить'},{id:'escape',label:'Отступить'}];
   const custom=definition.options
     .filter(option=>!state.resolvedOptionIds.includes(option.id))
     .filter(option=>eligible(option.conditions,s,cat))
