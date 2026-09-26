@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "id": "lumber.ending-independence.fixture",
+  "sourceDefinitions": "content/lumber-target-definitions.fixture.json",
+  "families": {
+    "hardWork": {
+      "endingId": "ending.lumber.hard-work",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "lumber",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 50
+        }
+      ],
+      "metaRewardIds": [
+        "hardWork:lumber"
+      ],
+      "forbiddenPrerequisiteKinds": [
+        "careerStage",
+        "careerFact",
+        "relationshipStage",
+        "relationshipFact",
+        "worldFact",
+        "calendarSeason"
+      ]
+    },
+    "forewoman": {
+      "endingId": "ending.lumber.forewoman",
+      "conditions": [
+        {
+          "kind": "careerFact",
+          "career": "lumber",
+          "fact": "management-school-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "lumber",
+          "fact": "forewoman-problem-resolved",
+          "present": true
+        },
+        {
+          "kind": "relationshipStage",
+          "relationship": "lumber.foreman",
+          "stage": "route-professional"
+        }
+      ],
+      "metaRewardIds": []
+    },
+    "forest": {
+      "endingId": "ending.lumber.forest",
+      "conditions": [
+        {
+          "kind": "careerFact",
+          "career": "lumber",
+          "fact": "forest-truth-known",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "lumber",
+          "fact": "forest-problem-resolved",
+          "present": true
+        }
+      ],
+      "metaRewardIds": []
+    }
+  },
+  "matrix": [
+    {
+      "scenario": "hard_work_49_only",
+      "completedShifts": 49,
+      "forewomanFacts": false,
+      "professionalForeman": false,
+      "forestFacts": false,
+      "expectedEligible": []
+    },
+    {
+      "scenario": "hard_work_50_only",
+      "completedShifts": 50,
+      "forewomanFacts": false,
+      "professionalForeman": false,
+      "forestFacts": false,
+      "expectedEligible": [
+        "ending.lumber.hard-work"
+      ]
+    },
+    {
+      "scenario": "forewoman_only",
+      "completedShifts": 1,
+      "forewomanFacts": true,
+      "professionalForeman": true,
+      "forestFacts": false,
+      "expectedEligible": [
+        "ending.lumber.forewoman"
+      ]
+    },
+    {
+      "scenario": "forest_only",
+      "completedShifts": 0,
+      "forewomanFacts": false,
+      "professionalForeman": false,
+      "forestFacts": true,
+      "expectedEligible": [
+        "ending.lumber.forest"
+      ]
+    }
+  ],
+  "lockedContracts": {
+    "hardWorkThreshold": 50,
+    "hardWorkCounter": "completed_shifts",
+    "hardWorkRewardId": "hardWork:lumber",
+    "activityReturnBoundary": "activityResult"
+  }
+}
