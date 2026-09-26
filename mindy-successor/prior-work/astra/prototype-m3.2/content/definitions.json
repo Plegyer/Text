@@ -2717,13 +2717,7 @@
       "id": "lumber.forest",
       "label": "Lumber Forest Activity fixture",
       "version": 1,
-      "entryConditions": [
-        {
-          "kind": "worldFact",
-          "fact": "lumber.capability.enter-old-boundary",
-          "present": true
-        }
-      ],
+      "entryConditions": [],
       "entryEnergyCost": 2,
       "resumePolicy": "allowed",
       "timePolicy": "same_day",
@@ -2766,6 +2760,62 @@
             }
           ]
         }
+      ],
+      "options": [
+        {
+          "id": "forest.route.logging-road",
+          "label": "Logging road",
+          "category": "route",
+          "conditions": [],
+          "progressDelta": 0,
+          "enduranceCost": 0,
+          "setRoute": "logging-road"
+        },
+        {
+          "id": "forest.route.old-boundary",
+          "label": "Old boundary path",
+          "category": "route",
+          "conditions": [
+            {
+              "kind": "itemCapability",
+              "capability": "enter_old_boundary",
+              "present": true
+            }
+          ],
+          "progressDelta": 0,
+          "enduranceCost": 0,
+          "setRoute": "old-boundary"
+        }
+      ]
+    }
+  ],
+  "itemDefinitions": [
+    {
+      "id": "reinforced_axe",
+      "label": "Reinforced Axe",
+      "capabilities": [
+        "cut_heavy_wood"
+      ]
+    },
+    {
+      "id": "rope_kit",
+      "label": "Rope Kit",
+      "capabilities": [
+        "cross_rough_route"
+      ]
+    },
+    {
+      "id": "field_preservation_kit",
+      "label": "Field Preservation Kit",
+      "capabilities": [
+        "preserve_specimen"
+      ]
+    },
+    {
+      "id": "old_boundary_token",
+      "label": "Old Boundary Token",
+      "capabilities": [
+        "enter_old_boundary"
       ]
     }
   ]

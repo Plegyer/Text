@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 
 import {catalog,started} from './helpers.ts';
-import {dispatch,parseSave} from '../src/core/engine.ts';
+import {availableActivityActions,dispatch,parseSave} from '../src/core/engine.ts';
 import {SCHOOL_COURSES} from '../src/core/school.ts';
 import type {Save} from '../src/core/schema.ts';
 
@@ -150,22 +150,25 @@ test('PA10-PA13: normal lodging and optional Foreman Night are shipped and exact
   assert.equal(s.run.resources.money,moneyBefore-100);
 });
 
-test('PA14-PA20 evidence: Forest entry is honestly blocked without item capability; accelerator proves Activity/reload/result boundary',()=>{
-  const blocked=started();
-  assert.throws(
-    ()=>dispatch(blocked,{type:'enterActivity',id:'lumber.forest'},catalog),
-    /Условия входа/
-  );
-
+test('PA14-PA20: Forest entry/logging-road/reload/success/escape are shipped; Old Boundary item action-space remains acquisition-accelerated',()=>{
   let s=started();
-  s.run.progression.worldFacts.push('lumber.capability.enter-old-boundary');
   const energyBefore=s.run.dayState.energyCurrent;
+
   s=dispatch(s,{type:'enterActivity',id:'lumber.forest'},catalog);
   assert.equal(s.run.dayState.energyCurrent,energyBefore-2);
   assert.equal(s.run.flow.activity?.checkpoint,'entry');
 
+  let actions=availableActivityActions(s,catalog).map(action=>action.id);
+  assert.ok(actions.includes('forest.route.logging-road'));
+  assert.equal(actions.includes('forest.route.old-boundary'),false);
+  assert.equal(actions.includes('advance'),false);
+
   s=reload(s);
   assert.equal(s.run.dayState.energyCurrent,energyBefore-2);
+  s=dispatch(s,{type:'activityAction',id:'forest.route.logging-road'},catalog);
+  assert.equal(s.run.flow.activity?.internalState.routeId,'logging-road');
+
+  s=reload(s);
   s=dispatch(s,{type:'activityAction',id:'advance'},catalog);
   assert.equal(s.run.flow.activity?.internalState.progress,1);
   assert.equal(s.run.dayState.energyCurrent,energyBefore-2);
@@ -184,12 +187,18 @@ test('PA14-PA20 evidence: Forest entry is honestly blocked without item capabili
   assert.ok(s.run.progression.careers.lumber?.facts.includes('forest-problem-resolved'));
 
   let escape=started();
-  escape.run.progression.worldFacts.push('lumber.capability.enter-old-boundary');
   escape=dispatch(escape,{type:'enterActivity',id:'lumber.forest'},catalog);
   escape=dispatch(escape,{type:'activityAction',id:'escape'},catalog);
   assert.equal(escape.run.flow.activity,null);
   assert.ok(escape.run.progression.worldFacts.includes('lumber.forest.escaped'));
   assert.equal(escape.run.progression.worldFacts.includes('lumber.forest.truth-known'),false);
+
+  let capabilityEvidence=started();
+  capabilityEvidence.run.resources.inventory.old_boundary_token=1;
+  capabilityEvidence=dispatch(capabilityEvidence,{type:'enterActivity',id:'lumber.forest'},catalog);
+  actions=availableActivityActions(capabilityEvidence,catalog).map(action=>action.id);
+  assert.ok(actions.includes('forest.route.old-boundary'));
+  assert.equal(capabilityEvidence.run.resources.inventory.old_boundary_token,1);
 });
 
 test('PA21-PA26 accelerator: two Lumber endings may be eligible; ordinary play remains available; Hard Work commits/completes once and changes New Run',()=>{

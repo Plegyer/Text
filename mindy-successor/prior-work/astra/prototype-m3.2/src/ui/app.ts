@@ -1,7 +1,7 @@
 import {mountEditor} from './editor.ts';
 import {applyPresentation,emptyPresentation,resolvePresentation,presentationIdForActionResult,presentationIdForEvent,presentationIdForEnding,type Presentation} from '../core/presentation.ts';
 import {loadCatalog} from '../core/content.ts';
-import {freshSave,dispatch,parseSave,eligible,calendar,actionCost,meets,energyMax,rent,favorStat,type Command} from '../core/engine.ts';
+import {freshSave,dispatch,parseSave,eligible,calendar,actionCost,meets,energyMax,rent,favorStat,availableActivityActions,type Command} from '../core/engine.ts';
 import {stats,type Save,type Catalog,type Condition,type Action} from '../core/schema.ts';
 import {SCHOOL_COURSES,type SchoolCourse} from '../core/school.ts';
 import {labels,hints} from './labels.ts';
@@ -18,6 +18,7 @@ function explain(c:Condition):string{
  case 'stat':return `${labels[c.stat]??c.stat} ${cmp(c.op,c.value)}`;
  case 'resource':return `${labels[c.resource]??c.resource} ${cmp(c.op,c.value)}`;
  case 'itemCount':return `${labels[c.id]??c.id} ${cmp(c.op,c.count)}`;
+ case 'itemCapability':return `Возможность предмета ${c.capability}: ${c.present?'есть':'нет'}`;
  case 'calendarYear':return `Год ${cmp(c.op,c.value)}`;
  case 'calendarSeason':return labels[c.value]??c.value;
  case 'calendarDayInYear':return `День года ${cmp(c.op,c.value)}`;
@@ -103,7 +104,8 @@ function central(){
   const activity=r.flow.activity;
   const definition=catalog.definitions.activities.find(item=>item.id===activity.activityId);
   const slug=activity.activityId.split('.').at(-1)??'activity';
-  return `<section class="stage scene">${mediaHTML(`activity/${slug}/route/default`)}<div class="stage-title"><span class="eyebrow">Activity</span><h1>${esc(definition?.label??activity.activityId)}</h1></div></section><section class="dialogue"><p>Прогресс: ${activity.internalState.progress} · Выносливость: ${activity.internalState.endurance} · checkpoint: ${esc(activity.checkpoint)}</p><div class="choices"><button data-activity-action="advance" class="primary" ${busy||locked?'disabled':''}>Продолжить</button><button data-activity-action="escape" ${busy||locked?'disabled':''}>Отступить</button></div></section>`;
+  const actions=availableActivityActions(state,catalog);
+  return `<section class="stage scene">${mediaHTML(`activity/${slug}/route/default`)}<div class="stage-title"><span class="eyebrow">Activity</span><h1>${esc(definition?.label??activity.activityId)}</h1></div></section><section class="dialogue"><p>Прогресс: ${activity.internalState.progress} · Выносливость: ${activity.internalState.endurance} · checkpoint: ${esc(activity.checkpoint)}${activity.internalState.routeId?` · route: ${esc(activity.internalState.routeId)}`:''}</p><div class="choices">${actions.map((action,index)=>`<button data-activity-action="${esc(action.id)}" class="${index===0?'primary':''}" ${busy||locked?'disabled':''}>${esc(action.label)}</button>`).join('')}</div></section>`;
  }
  if(r.flow.night){
   const night=r.flow.night;
@@ -143,7 +145,7 @@ function render(){
  app.querySelectorAll<HTMLButtonElement>('[data-lodging]').forEach(b=>b.onclick=()=>void perform({type:'chooseLodging',id:b.dataset.lodging!}));
  app.querySelectorAll<HTMLButtonElement>('[data-night-choice]').forEach(b=>b.onclick=()=>void perform({type:'chooseNightChoice',id:b.dataset.nightChoice!}));
  app.querySelectorAll<HTMLButtonElement>('[data-enter-activity]').forEach(b=>b.onclick=()=>void perform({type:'enterActivity',id:b.dataset.enterActivity!}));
- app.querySelectorAll<HTMLButtonElement>('[data-activity-action]').forEach(b=>b.onclick=()=>void perform({type:'activityAction',id:b.dataset.activityAction as 'advance'|'escape'}));
+ app.querySelectorAll<HTMLButtonElement>('[data-activity-action]').forEach(b=>b.onclick=()=>void perform({type:'activityAction',id:b.dataset.activityAction!}));
  app.querySelectorAll<HTMLButtonElement>('[data-choice]').forEach(b=>b.onclick=()=>void perform({type:'choice',id:b.dataset.choice!}));
  app.querySelectorAll<HTMLButtonElement>('[data-stat]').forEach(b=>b.onclick=()=>void perform({type:'allocate',stat:b.dataset.stat as typeof stats[number],delta:Number(b.dataset.delta) as 1|-1}));
  app.querySelectorAll<HTMLButtonElement>('[data-ending]').forEach(b=>b.onclick=()=>{if(confirm('Принять судьбу и завершить эту жизнь?'))void perform({type:'accept',id:b.dataset.ending!});});

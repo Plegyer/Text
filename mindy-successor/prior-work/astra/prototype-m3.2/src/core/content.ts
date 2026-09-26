@@ -113,6 +113,7 @@ function checkTypedRead(c:Condition,p:Pack){
   if(c.kind==='stat')needCapability(has(r?.stats,c.stat),`read stat ${c.stat}`);
   if(c.kind==='resource')needCapability(has(r?.resources,c.resource),`read resource ${c.resource}`);
   if(c.kind==='itemCount')needCapability(has(r?.inventory,c.id),`read item ${c.id}`);
+  if(c.kind==='itemCapability')needCapability(has(r?.itemCapabilities,c.capability),`read item capability ${c.capability}`);
   if(c.kind==='calendarYear'||c.kind==='calendarSeason'||c.kind==='calendarDayInYear'||c.kind==='calendarElapsedDays')needCapability(r?.calendar===true,'read calendar');
   if(c.kind==='housingTier')needCapability(r?.housing===true,'read housing');
   if(c.kind==='careerStage'||c.kind==='careerShifts'||c.kind==='careerCounter'||c.kind==='careerFact'||c.kind==='careerChoice')needCapability(has(r?.careers,c.career),`read career ${c.career}`);
@@ -178,14 +179,16 @@ export function loadCatalog(definitions:unknown,packs:unknown[]):Catalog {
   const events=ps.flatMap(p=>p.events),media=ps.flatMap(p=>p.media);
   unique(d.flags,'флаги');unique(d.actions.map(a=>a.id),'действия');unique(d.endings.map(e=>e.id),'судьбы');
   unique((d.careers??[]).map(x=>x.id),'careers');unique((d.quests??[]).map(x=>x.id),'quests');unique((d.relationships??[]).map(x=>x.id),'relationships');
+  unique(d.itemDefinitions.map(x=>x.id),'item definitions');for(const item of d.itemDefinitions)unique(item.capabilities,`item.${item.id}.capabilities`);
   unique(d.lodgings.map(x=>x.id),'lodgings');unique(d.nightChoices.map(x=>x.id),'night choices');unique(d.activities.map(x=>x.id),'activities');
   unique(ps.map(p=>p.id),'пакеты');unique(events.map(e=>e.id),'события');unique(media.map(m=>m.id),'медиа');
 
-  const known=new Set(d.flags),actionIds=new Set(d.actions.map(a=>a.id)),endingIds=new Set(d.endings.map(e=>e.id)),nightChoiceIds=new Set(d.nightChoices.map(x=>x.id)),activityById=new Map(d.activities.map(x=>[x.id,x])),mediaIds=new Set(media.map(m=>m.id)),maps=machineMaps(d);
+  const known=new Set(d.flags),actionIds=new Set(d.actions.map(a=>a.id)),endingIds=new Set(d.endings.map(e=>e.id)),nightChoiceIds=new Set(d.nightChoices.map(x=>x.id)),activityById=new Map(d.activities.map(x=>[x.id,x])),mediaIds=new Set(media.map(m=>m.id)),itemCapabilities=new Set(d.itemDefinitions.flatMap(item=>item.capabilities)),maps=machineMaps(d);
   const checkConditionsGlobal=(cs:Condition[])=>{
     contradictions(cs);
     cs.forEach(c=>visit(c,x=>{
       if(x.kind==='visits'&&!actionIds.has(x.action))throw new Error(`Неизвестное действие счётчика ${x.action}`);
+      if(x.kind==='itemCapability'&&!itemCapabilities.has(x.capability))throw new Error(`Неизвестная item capability ${x.capability}`);
       checkMachineReference(x,maps);
     }));
   };
@@ -233,6 +236,8 @@ export function loadCatalog(definitions:unknown,packs:unknown[]):Catalog {
   }
   for(const activity of d.activities){
     checkConditions(activity.entryConditions);
+    unique(activity.options.map(option=>option.id),`activity.${activity.id}.options`);
+    for(const option of activity.options)checkConditions(option.conditions);
     unique(activity.results.map(r=>r.id),`activity.${activity.id}.results`);
     const outcomes=new Set(activity.results.map(r=>r.outcome));
     if(outcomes.size!==3||!['success','escape','failure'].every(x=>outcomes.has(x as any)))throw new Error(`Activity ${activity.id} должна иметь success/escape/failure result`);

@@ -10,7 +10,7 @@ export const seasons = ['spring','summer','autumn','winter'] as const;
 export const housing = ['room','hostel','shelter'] as const;
 export const targetHousing = ['normal','cheap','street'] as const;
 export const unlocks = ['guild','scholar','calendar','host','mediator','court','vitality'] as const;
-export const items = ['herb','tonic','scales'] as const;
+export const items = ['herb','tonic','scales','reinforced_axe','rope_kit','field_preservation_kit','old_boundary_token'] as const;
 
 export type Stat = typeof stats[number];
 export type ResourceId = typeof targetResources[number];
@@ -22,7 +22,8 @@ export type Condition =
   // Target v2 leaves.
   | {kind:'stat';stat:Stat;op:CompareOp;value:number}
   | {kind:'resource';resource:ResourceId;op:CompareOp;value:number}
-  | {kind:'itemCount';id:typeof items[number];op:CompareOp;count:number}
+  | {kind:'itemCount';id:string;op:CompareOp;count:number}
+  | {kind:'itemCapability';capability:string;present:boolean}
   | {kind:'calendarYear';op:CompareOp;value:number}
   | {kind:'calendarSeason';value:typeof seasons[number]}
   | {kind:'calendarDayInYear';op:CompareOp;value:number}
@@ -69,7 +70,8 @@ const metricEnum = z.enum(metrics as [string,...string[]]);
 export const conditionSchema: z.ZodType<Condition> = z.lazy(()=>z.union([
   z.object({kind:z.literal('stat'),stat:z.enum(stats),op:compareOp,value:n}).strict(),
   z.object({kind:z.literal('resource'),resource:z.enum(targetResources),op:compareOp,value:n}).strict(),
-  z.object({kind:z.literal('itemCount'),id:z.enum(items),op:compareOp,count:n}).strict(),
+  z.object({kind:z.literal('itemCount'),id:id,op:compareOp,count:n}).strict(),
+  z.object({kind:z.literal('itemCapability'),capability:id,present:z.boolean()}).strict(),
   z.object({kind:z.literal('calendarYear'),op:compareOp,value:n.max(4)}).strict(),
   z.object({kind:z.literal('calendarSeason'),value:z.enum(seasons)}).strict(),
   z.object({kind:z.literal('calendarDayInYear'),op:compareOp,value:n.max(40)}).strict(),
@@ -112,8 +114,8 @@ export const effectSchema = z.discriminatedUnion('kind',[
   z.object({kind:z.literal('modifyStat'),stat:z.enum(stats),delta:z.number().int().min(-100).max(100)}).strict(),
   z.object({kind:z.literal('modifyResource'),resource:z.enum(targetResources),delta:signed}).strict(),
   z.object({kind:z.literal('modifyEnergy'),delta:z.number().int().min(-100).max(100)}).strict(),
-  z.object({kind:z.literal('addItem'),id:z.enum(items),count:z.number().int().min(1).max(100)}).strict(),
-  z.object({kind:z.literal('removeItem'),id:z.enum(items),count:z.number().int().min(1).max(100)}).strict(),
+  z.object({kind:z.literal('addItem'),id:id,count:z.number().int().min(1).max(100)}).strict(),
+  z.object({kind:z.literal('removeItem'),id:id,count:z.number().int().min(1).max(100)}).strict(),
   z.object({kind:z.literal('setHousing'),value:z.enum(targetHousing)}).strict(),
 
   z.object({kind:z.literal('incrementSchoolCounter'),track:id,counter:id,amount:z.number().int().min(-1000).max(1000)}).strict(),
@@ -169,7 +171,8 @@ export type MachineDefinition=z.infer<typeof machineDefinitionSchema>;
 const capabilityReads=z.object({
   stats:z.array(z.enum(stats)).optional(),
   resources:z.array(z.enum(targetResources)).optional(),
-  inventory:z.array(z.enum(items)).optional(),
+  inventory:z.array(id).optional(),
+  itemCapabilities:z.array(id).optional(),
   calendar:z.boolean().optional(),
   housing:z.boolean().optional(),
   careers:z.array(id).optional(),
@@ -182,7 +185,7 @@ const capabilityReads=z.object({
 const capabilityWrites=z.object({
   stats:z.array(z.enum(stats)).optional(),
   resources:z.array(z.enum(targetResources)).optional(),
-  inventory:z.array(z.enum(items)).optional(),
+  inventory:z.array(id).optional(),
   energy:z.boolean().optional(),
   housing:z.boolean().optional(),
   careers:z.array(id).optional(),
@@ -297,6 +300,13 @@ export const packSchema=z.object({
 }).strict();
 export type Pack=z.infer<typeof packSchema>;
 
+export const itemDefinitionSchema=z.object({
+  id:z.enum(items),
+  label:z.string().min(1).max(150),
+  capabilities:z.array(id).max(16).default([])
+}).strict();
+export type ItemDefinition=z.infer<typeof itemDefinitionSchema>;
+
 const wageSchema=z.object({base:n,weights:z.array(z.object({stat:metricEnum,factor:z.number().min(0).max(10)}).strict()).max(5)}).strict();
 export const actionSchema=z.object({
   id,label:z.string(),description:z.string(),cost:z.object({money:n,energy:n}).strict(),
@@ -338,6 +348,16 @@ const counterActivityConfigSchema=z.object({
   failAtEndurance:z.number().int().min(0).max(1000)
 }).strict();
 
+const activityOptionSchema=z.object({
+  id,
+  label:z.string().min(1).max(150),
+  category:id,
+  conditions:z.array(conditionSchema).max(24).default([]),
+  progressDelta:z.number().int().min(0).max(1000).default(0),
+  enduranceCost:z.number().int().min(0).max(1000).default(0),
+  setRoute:id.optional()
+}).strict();
+
 const activityResultDefinitionSchema=z.object({
   id,
   outcome:z.enum(activityOutcomes),
@@ -355,6 +375,7 @@ export const activityDefinitionSchema=z.object({
   failurePolicy:z.enum(['exit_to_day','exit_to_night','terminal']),
   adapter:z.literal('counter.v1'),
   adapterConfig:counterActivityConfigSchema,
+  options:z.array(activityOptionSchema).max(64).default([]),
   results:z.array(activityResultDefinitionSchema).min(3).max(3)
 }).strict();
 export type ActivityDefinition=z.infer<typeof activityDefinitionSchema>;
@@ -363,7 +384,9 @@ const counterActivityStateSchema=z.object({
   progress:z.number().int().min(0).max(1_000_000),
   endurance:z.number().int().min(0).max(1_000_000),
   steps:z.number().int().min(0).max(1_000_000),
-  lastRoll:z.number().min(0).max(1).nullable()
+  lastRoll:z.number().min(0).max(1).nullable(),
+  routeId:id.nullable().default(null),
+  resolvedOptionIds:z.array(id).max(128).default([])
 }).strict();
 
 export const activityEnvelopeSchema=z.object({
@@ -373,6 +396,7 @@ export const activityEnvelopeSchema=z.object({
   status:z.enum(['active','resolving']),
   startedDay:n.max(159),
   entryEnergyCommitted:z.literal(true),
+  optionModelVersion:z.number().int().min(0).max(1).default(0),
   internalState:counterActivityStateSchema,
   rngState:z.number().int().min(0).max(4294967295),
   checkpoint:id,
@@ -407,6 +431,7 @@ export const definitionsSchema=z.object({
   careers:z.array(machineDefinitionSchema).optional(),
   quests:z.array(machineDefinitionSchema).optional(),
   relationships:z.array(machineDefinitionSchema).optional(),
+  itemDefinitions:z.array(itemDefinitionSchema).default([]),
   lodgings:z.array(lodgingSchema).default([]),
   nightChoices:z.array(nightChoiceSchema).default([]),
   activities:z.array(activityDefinitionSchema).default([])
