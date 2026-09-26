@@ -41,13 +41,13 @@ The gate intentionally distinguishes:
 | PA11 | SHIPPED_PASS | `lodging.normal` costs 100 exactly once and survives reload. |
 | PA12 | SHIPPED_PASS | Professional Foreman Night choice is shipped, uses the Night slot, costs zero daytime Energy, and pending event survives reload. |
 | PA13 | SHIPPED_PASS | Resolving the Night scene advances the calendar once with no duplicate lodging charge. |
-| PA14 | ACCELERATOR_EVIDENCE_ONLY | Production Forest Activity entry is correctly blocked without capability; direct capability-fact accelerator proves the 2-Energy entry boundary without claiming PA09 passed. |
-| PA15 | ACCELERATOR_EVIDENCE_ONLY | Save/reload inside the shipped Activity envelope is proven after the explicit capability accelerator. |
+| PA14 | SHIPPED_PASS | Forest Activity itself is production-enterable for 2 Energy. A route must be selected before advance; logging road is available without the Old Boundary Token. |
+| PA15 | SHIPPED_PASS | Save/reload inside the shipped Activity envelope is proven on the ordinary logging-road path, including persisted route/checkpoint state. |
 | PA16 | OPEN_AUTHORING_BLOCKED | Current `counter.v1` Activity proves resumable internal progress, but the required 3 route contexts / 3 challenge families / season depth are not authored. |
-| PA17 | OPEN_AUTHORING_BLOCKED | No production item-dependent Activity command/action-space change exists yet. |
-| PA18 | ACCELERATOR_EVIDENCE_ONLY | Shipped Forest success emits exact A5 `activityResult` and immediately opens the Lumber continuation after accelerated entry. |
-| PA19 | ACCELERATOR_EVIDENCE_ONLY | Shipped escape result is distinct and does not grant success truth; full ordered reachability still depends on PA09. |
-| PA20 | ACCELERATOR_EVIDENCE_ONLY | Post-Activity Lumber continuation is shipped and zero-extra-Energy, but full ordered reachability inherits the PA09/PA16/PA17 blockers. |
+| PA17 | ACCELERATOR_EVIDENCE_ONLY | Production action-space is now capability-aware: a seeded real `old_boundary_token` exposes `forest.route.old-boundary`; acquisition/consume authoring remains OPEN, so this is not yet an ordered product pass. |
+| PA18 | SHIPPED_PASS | Ordinary logging-road success emits exact A5 `activityResult` and immediately opens the Lumber continuation without item/capability acceleration. |
+| PA19 | SHIPPED_PASS | Escape is production-reachable directly after Forest entry, is distinct from success, and does not grant success truth. |
+| PA20 | SHIPPED_PASS | Post-Activity Lumber continuation is shipped from the ordinary logging-road success path and adds zero extra daytime Energy. |
 | PA21 | ACCELERATOR_EVIDENCE_ONLY | Hard Work + Forest ending simultaneous eligibility is proven from a validated pre-threshold state; full complex-ending route is not yet fully player-authored. |
 | PA22 | ACCELERATOR_EVIDENCE_ONLY | From the validated two-ending eligible accelerator state, another shipped `lumber.shift` remains available; the run stays active and no Meta reward is applied before commitment. |
 | PA23 | ACCELERATOR_EVIDENCE_ONLY | Explicit Hard Work commitment is proven after the pre-threshold accelerator. |
@@ -92,11 +92,18 @@ Locked identities:
 - item: `old_boundary_token`;
 - capability: `enter_old_boundary`.
 
+Now shipped:
+- typed production item definitions for the locked Forest items;
+- generic inventory-derived item capability evaluation;
+- capability-aware Activity action-space;
+- logging-road route selection;
+- capability-gated old-boundary route selection;
+- route/one-shot-option save compatibility and reload stability.
+
 Still OPEN:
-- production item-definition/capability integration;
-- acquisition source;
+- acquisition source for `old_boundary_token`;
 - retain/consume semantics;
-- item-dependent Activity action-space behavior;
+- hunter-trail clue/capability identity;
 - full three-route / three-challenge / season authoring.
 
 A direct worldFact accelerator is acceptance evidence for the Activity runtime only and is never counted as a PA09 or PA17 pass.
@@ -108,10 +115,39 @@ A direct worldFact accelerator is acceptance evidence for the Activity runtime o
 **Full Product Acceptance Slice: PARTIAL / NOT CLOSED.**
 
 The remaining blockers are now concentrated in product authoring/depth rather than architecture:
-1. meaningful item/capability production path;
+1. reachable acquisition authoring for `old_boundary_token` and its final retain/consume policy;
 2. School -> Lumber authored public result;
-3. richer Forest route/challenge/season design;
-4. item-driven Activity action-space behavior;
-5. integration of the remaining accepted worker QA/contracts without relabeling authoring gaps as passes.
+3. richer Forest hunter-trail / 3-route / 3-challenge / seasonal topology design;
+4. integration of the remaining accepted worker QA/contracts without relabeling authoring gaps as passes.
+
+Generic item capability infrastructure and item-driven Activity action-space are no longer runtime blockers.
 
 No unresolved blocker changes the locked Hard Work rule.
+
+
+## Closure update — PR #22 candidate
+
+The PA closure branch adds a backward-compatible generic item/capability layer and capability-aware Activity option model.
+
+Authoritative identities now represented in production definitions:
+- `reinforced_axe -> cut_heavy_wood`;
+- `rope_kit -> cross_rough_route`;
+- `field_preservation_kit -> preserve_specimen`;
+- `old_boundary_token -> enter_old_boundary`.
+
+Forest behavior:
+- entering `lumber.forest` costs 2 Energy and no longer incorrectly requires the Old Boundary Token;
+- logging road is a normal production route;
+- Old Boundary Token exposes the hidden old-boundary route through actual inventory-derived capability;
+- route must be selected before ordinary Activity advance;
+- route/used-option state survives schema4 reload;
+- old Activity saves missing new route fields load with safe defaults;
+- no item is consumed because consume/retain policy remains product-authoring OPEN.
+
+CI evidence on PR #22 merge-ref candidate:
+- typecheck PASS;
+- validate PASS;
+- build PASS;
+- **200/200 tests PASS**.
+
+This closes the generic runtime/action-space portion of PA17 and moves PA14/15/18/19/20 to direct shipped evidence. It does not close PA09 acquisition or PA16 Forest depth.
