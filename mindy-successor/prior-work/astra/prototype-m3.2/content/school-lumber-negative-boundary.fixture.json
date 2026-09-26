@@ -1,0 +1,46 @@
+{
+  "formatVersion": 1,
+  "id": "school.lumber-negative-boundary.fixture.v1",
+  "managementAccounting": {
+    "finalPublicFactId": null,
+    "threshold": null,
+    "certificateThreshold": null,
+    "status": "OPEN"
+  },
+  "arcanaForest": {
+    "finalPublicFactId": null,
+    "threshold": null,
+    "certificateThreshold": null,
+    "status": "OPEN"
+  },
+  "schoolOwnership": {
+    "privateCounters": [
+      "lessons_completed",
+      "night_study_sessions"
+    ],
+    "lumberDirectReads": [],
+    "lumberDirectWrites": []
+  },
+  "durableCrossSystemBoundary": {
+    "allowed": [
+      "worldFacts",
+      "future-domain-public-equivalent"
+    ],
+    "forbidden": [
+      "direct-school-counter-read",
+      "direct-school-counter-write",
+      "direct-school-stage-mutation"
+    ]
+  },
+  "hardWork": {
+    "endingId": "ending.lumber.hard-work",
+    "condition": {
+      "kind": "careerCounter",
+      "career": "lumber",
+      "counter": "completed_shifts",
+      "op": "gte",
+      "value": 50
+    },
+    "schoolPrerequisites": []
+  }
+}
