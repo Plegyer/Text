@@ -932,7 +932,7 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
   }
   if(!s.run.creation.complete)throw new Error('Сначала создайте героиню.');
   if(command.type==='accept'){
-    if(s.run.status==='ended'||s.run.pending||s.run.flow.night)throw new Error('Завершите текущую сцену или ночь.');
+    if(s.run.status==='ended'||s.run.pending||s.run.flow.night||s.run.flow.activity)throw new Error('Завершите текущую сцену, ночь или Activity.');
     const ending=cat.definitions.endings.find(e=>e.id===command.id);
     if(!ending||!s.run.availableEndings.includes(ending.id)||!eligible(ending.conditions,s,cat))throw new Error('Эта судьба сейчас недоступна.');
     s.run.status='ended';s.run.acceptedEnding=ending.id;
@@ -943,7 +943,7 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
   }
   if(s.run.status!=='active')throw new Error('Эта жизнь завершена.');
   if(command.type==='openOffer'){
-    if(s.run.pending||s.run.flow.night)throw new Error('Сначала завершите текущую сцену или ночь.');
+    if(s.run.pending||s.run.flow.night||s.run.flow.activity)throw new Error('Сначала завершите текущую сцену, ночь или Activity.');
     const q=s.run.flow.reaction.queued.find(x=>x.instanceId===command.id&&x.kind==='optional');
     if(!q||!s.run.dayState.optionalOfferIds.includes(command.id))throw new Error('Предложение недоступно.');
     const e=cat.events.find(x=>x.id===q.eventId);if(!e)throw new Error('Событие предложения отсутствует.');
@@ -967,6 +967,14 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
     const nightChoice=cat.definitions.nightChoices.find(x=>x.id===command.id);
     if(!nightChoice)throw new Error('Неизвестное ночное занятие.');
     chooseNightChoiceMutable(s,cat,nightChoice);
+    return s;
+  }
+  if(command.type==='enterActivity'){
+    enterActivityMutable(s,cat,command.id);
+    return s;
+  }
+  if(command.type==='activityAction'){
+    activityActionMutable(s,cat,command.id);
     return s;
   }
   if(command.type==='sleep'){
@@ -1004,6 +1012,7 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
   }
   if(s.run.pending)throw new Error('Сначала выберите ответ в сцене.');
   if(s.run.flow.night)throw new Error('Сначала завершите ночь.');
+  if(s.run.flow.activity)throw new Error('Сначала завершите Activity.');
   if(command.id==='rest')throw new Error('Выберите способ ночлега.');
   const a=cat.definitions.actions.find(a=>a.id===command.id);
   if(!a||!eligible(a.conditions,s,cat))throw new Error('Условия действия не выполнены.');
