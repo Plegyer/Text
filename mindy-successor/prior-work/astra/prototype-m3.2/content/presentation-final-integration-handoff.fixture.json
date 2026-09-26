@@ -1,0 +1,258 @@
+{
+  "version": 3,
+  "kind": "presentation-final-integration-handoff",
+  "status": "minimal-nonredundant-items-1-29",
+  "scope": {
+    "items": "1-29",
+    "artifactCount": 55
+  },
+  "mainBaseline": "7acbce7f8bdf911ce8ab3ed1a4b3e5e0902cd798",
+  "productAcceptanceStatus": "partial-not-closed",
+  "policy": {
+    "everyScopedArtifactClassifiedExactlyOnce": true,
+    "sharedRuntimeChangeRecommended": false,
+    "presentationMayUpgradeGameplayAuthoring": false
+  },
+  "categories": {
+    "MUST_INTEGRATE": [
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-semantic-id-drift.test.ts",
+        "reason": "Current-main-compatible non-redundant contract/test with direct regression value."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-pa-checkpoints.fixture.json",
+        "reason": "Current-main-compatible non-redundant contract/test with direct regression value."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-pa-checkpoints.test.ts",
+        "reason": "Current-main-compatible non-redundant contract/test with direct regression value."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-fallback-exhaustion.fixture.json",
+        "reason": "Current-main-compatible non-redundant contract/test with direct regression value."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-fallback-exhaustion.test.ts",
+        "reason": "Current-main-compatible non-redundant contract/test with direct regression value."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-media-path-preflight.test.ts",
+        "reason": "Current-main-compatible non-redundant contract/test with direct regression value."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-replacement-ordering.test.ts",
+        "reason": "Current-main-compatible non-redundant contract/test with direct regression value."
+      },
+      {
+        "path": "mindy-successor/docs/presentation-prep/PRESENTATION_ACCESSIBILITY_METADATA_v1.md",
+        "reason": "Current-main-compatible non-redundant contract/test with direct regression value."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-accessibility-metadata.test.ts",
+        "reason": "Current-main-compatible non-redundant contract/test with direct regression value."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-central-stage-interaction.fixture.json",
+        "reason": "Current-main-compatible non-redundant contract/test with direct regression value."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-central-stage-interaction.test.ts",
+        "reason": "Current-main-compatible non-redundant contract/test with direct regression value."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-fallback-asset-integrity.fixture.json",
+        "reason": "Current-main-compatible non-redundant contract/test with direct regression value."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-fallback-asset-integrity.test.ts",
+        "reason": "Current-main-compatible non-redundant contract/test with direct regression value."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-replacement-conflict.fixture.json",
+        "reason": "Current-main-compatible non-redundant contract/test with direct regression value."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-replacement-conflict.test.ts",
+        "reason": "Current-main-compatible non-redundant contract/test with direct regression value."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-post-pr21-smoke.fixture.json",
+        "reason": "Current-main-compatible non-redundant contract/test with direct regression value."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-post-pr21-smoke.test.ts",
+        "reason": "Current-main-compatible non-redundant contract/test with direct regression value."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-save-reload-adversarial.fixture.json",
+        "reason": "Current-main-compatible non-redundant contract/test with direct regression value."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-save-reload-adversarial.test.ts",
+        "reason": "Current-main-compatible non-redundant contract/test with direct regression value."
+      }
+    ],
+    "QA_ONLY": [
+      {
+        "path": "mindy-successor/docs/presentation-prep/PRESENTATION_SHIPPED_MAIN_DELTA_MAP_v1.md",
+        "reason": "Useful audit/ledger evidence that should not become an additional product dependency."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-shipped-main-delta.fixture.json",
+        "reason": "Useful audit/ledger evidence that should not become an additional product dependency."
+      },
+      {
+        "path": "mindy-successor/docs/presentation-prep/PRESENTATION_PA_CLOSURE_DEPENDENCY_AUDIT_v1.md",
+        "reason": "Useful audit/ledger evidence that should not become an additional product dependency."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-pa-closure-dependency.test.ts",
+        "reason": "Useful audit/ledger evidence that should not become an additional product dependency."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-handoff-dedup.fixture.json",
+        "reason": "Useful audit/ledger evidence that should not become an additional product dependency."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-handoff-dedup.test.ts",
+        "reason": "Useful audit/ledger evidence that should not become an additional product dependency."
+      },
+      {
+        "path": "mindy-successor/docs/presentation-prep/PRESENTATION_CURRENT_MAIN_DRIFT_AUDIT_v1.md",
+        "reason": "Useful audit/ledger evidence that should not become an additional product dependency."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-current-main-drift.test.ts",
+        "reason": "Useful audit/ledger evidence that should not become an additional product dependency."
+      },
+      {
+        "path": "mindy-successor/docs/presentation-prep/PRESENTATION_PA_ROW_LEDGER_v1.md",
+        "reason": "Useful audit/ledger evidence that should not become an additional product dependency."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-pa-row-ledger.fixture.json",
+        "reason": "Useful audit/ledger evidence that should not become an additional product dependency."
+      }
+    ],
+    "FUTURE_ASSET_WORK": [
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-replacement-bundle.fixture.json",
+        "reason": "Optional replacement/GIF productization work; current static-backed release does not depend on it."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-replacement-bundle.test.ts",
+        "reason": "Optional replacement/GIF productization work; current static-backed release does not depend on it."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-replacement-regression.fixture.json",
+        "reason": "Optional replacement/GIF productization work; current static-backed release does not depend on it."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-replacement-regression.test.ts",
+        "reason": "Optional replacement/GIF productization work; current static-backed release does not depend on it."
+      },
+      {
+        "path": "mindy-successor/docs/presentation-prep/PRESENTATION_OVERRIDE_IMPORT_EXPORT_CONTRACT_v1.md",
+        "reason": "Optional replacement/GIF productization work; current static-backed release does not depend on it."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-override-import-export-contract.test.ts",
+        "reason": "Optional replacement/GIF productization work; current static-backed release does not depend on it."
+      },
+      {
+        "path": "mindy-successor/docs/presentation-prep/PRESENTATION_REPLACEMENT_BUNDLE_MIGRATION_v1.md",
+        "reason": "Optional replacement/GIF productization work; current static-backed release does not depend on it."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-replacement-bundle-migration.test.ts",
+        "reason": "Optional replacement/GIF productization work; current static-backed release does not depend on it."
+      },
+      {
+        "path": "mindy-successor/docs/presentation-prep/FUTURE_GIF_DROP_IN_PACKAGE_v1.md",
+        "reason": "Optional replacement/GIF productization work; current static-backed release does not depend on it."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/future-gif-drop-in-package.fixture.json",
+        "reason": "Optional replacement/GIF productization work; current static-backed release does not depend on it."
+      }
+    ],
+    "BLOCKED_BY_AUTHORING": [],
+    "SUPERSEDED": [
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-shipped-closure-inventory.fixture.json",
+        "reason": "Historical/overlapping artifact replaced by more current PR21-aware evidence."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-shipped-closure-inventory.test.ts",
+        "reason": "Historical/overlapping artifact replaced by more current PR21-aware evidence."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-asset-consistency.fixture.json",
+        "reason": "Historical/overlapping artifact replaced by more current PR21-aware evidence."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-asset-consistency.test.ts",
+        "reason": "Historical/overlapping artifact replaced by more current PR21-aware evidence."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-pa-scenario.fixture.json",
+        "reason": "Historical/overlapping artifact replaced by more current PR21-aware evidence."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-pa-scenario.test.ts",
+        "reason": "Historical/overlapping artifact replaced by more current PR21-aware evidence."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-production-smoke.fixture.json",
+        "reason": "Historical/overlapping artifact replaced by more current PR21-aware evidence."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-production-smoke.test.ts",
+        "reason": "Historical/overlapping artifact replaced by more current PR21-aware evidence."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-screen-fallback-policy.fixture.json",
+        "reason": "Historical/overlapping artifact replaced by more current PR21-aware evidence."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-screen-fallback-policy.test.ts",
+        "reason": "Historical/overlapping artifact replaced by more current PR21-aware evidence."
+      },
+      {
+        "path": "mindy-successor/docs/presentation-prep/PRESENTATION_RELEASE_READINESS_v1.md",
+        "reason": "Historical/overlapping artifact replaced by more current PR21-aware evidence."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-release-readiness.test.ts",
+        "reason": "Historical/overlapping artifact replaced by more current PR21-aware evidence."
+      },
+      {
+        "path": "mindy-successor/docs/presentation-prep/PRESENTATION_INTEGRATION_HANDOFF_v1.md",
+        "reason": "Historical/overlapping artifact replaced by more current PR21-aware evidence."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-integration-handoff.fixture.json",
+        "reason": "Historical/overlapping artifact replaced by more current PR21-aware evidence."
+      },
+      {
+        "path": "mindy-successor/docs/presentation-prep/PRESENTATION_RELEASE_CANDIDATE_HANDOFF_v2.md",
+        "reason": "Historical/overlapping artifact replaced by more current PR21-aware evidence."
+      },
+      {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-release-candidate-handoff.fixture.json",
+        "reason": "Historical/overlapping artifact replaced by more current PR21-aware evidence."
+      }
+    ]
+  },
+  "postScopeArtifacts": {
+    "note": "Items 30-35 were created after the requested 1-29 classification scope and are intentionally not counted in the 55-file partition.",
+    "items": [
+      "30",
+      "31",
+      "32",
+      "33",
+      "34",
+      "35"
+    ]
+  }
+}
