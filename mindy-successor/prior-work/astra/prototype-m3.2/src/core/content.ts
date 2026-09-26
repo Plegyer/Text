@@ -1,4 +1,4 @@
-import {definitionsSchema,packSchema, type Catalog,type Condition, type Effect, type Definitions, type Pack, type MachineDefinition} from './schema.ts';
+import {definitionsSchema,packSchema, type Catalog,type Condition, type Effect, type Definitions, type Pack, type MachineDefinition, type ReactionTrigger} from './schema.ts';
 
 function unique(ids:string[],label:string){if(new Set(ids).size!==ids.length)throw new Error(`Повтор ID: ${label}`);}
 function visit(c:Condition,fn:(c:Condition)=>void,depth=0){
@@ -132,6 +132,22 @@ function freeEffect(e:Effect){
   if(e.kind==='addNextDayModifier')return e.energyDelta>=0&&e.statEffects.every(x=>x.delta>=0);
   return true;
 }
+function checkReactionTrigger(t:ReactionTrigger,p:Pack,maps:MachineMaps,endingIds:Set<string>){
+  const reads=p.capabilities?.reads;
+  if(t.kind==='statChanged'&&t.stat)needCapability(has(reads?.stats,t.stat),`reaction stat ${t.stat}`);
+  if(t.kind==='resourceChanged'&&t.resource)needCapability(has(reads?.resources,t.resource),`reaction resource ${t.resource}`);
+  if(t.kind==='careerCounterChanged'||t.kind==='careerTransition'||t.kind==='careerFactAdded'){
+    machineFor(maps,'career',t.career);needCapability(has(reads?.careers,t.career),`reaction career ${t.career}`);
+  }
+  if(t.kind==='questCounterChanged'||t.kind==='questTransition'||t.kind==='questFactAdded'){
+    machineFor(maps,'quest',t.quest);needCapability(has(reads?.quests,t.quest),`reaction quest ${t.quest}`);
+  }
+  if(t.kind==='relationshipCounterChanged'||t.kind==='relationshipTransition'||t.kind==='relationshipFactAdded'){
+    machineFor(maps,'relationship',t.relationship);needCapability(has(reads?.relationships,t.relationship),`reaction relationship ${t.relationship}`);
+  }
+  if(t.kind==='worldFactAdded'&&t.fact)needCapability(has(reads?.worldFacts,t.fact),`reaction worldFact ${t.fact}`);
+  if(t.kind==='endingEligible'&&t.ending&&!endingIds.has(t.ending))throw new Error(`Неизвестная судьба reaction trigger ${t.ending}`);
+}
 
 export function loadCatalog(definitions:unknown,packs:unknown[]):Catalog {
   const d=definitionsSchema.parse(definitions),ps=packs.map(p=>packSchema.parse(p));
@@ -140,7 +156,7 @@ export function loadCatalog(definitions:unknown,packs:unknown[]):Catalog {
   unique((d.careers??[]).map(x=>x.id),'careers');unique((d.quests??[]).map(x=>x.id),'quests');unique((d.relationships??[]).map(x=>x.id),'relationships');
   unique(ps.map(p=>p.id),'пакеты');unique(events.map(e=>e.id),'события');unique(media.map(m=>m.id),'медиа');
 
-  const known=new Set(d.flags),actionIds=new Set(d.actions.map(a=>a.id)),mediaIds=new Set(media.map(m=>m.id)),maps=machineMaps(d);
+  const known=new Set(d.flags),actionIds=new Set(d.actions.map(a=>a.id)),endingIds=new Set(d.endings.map(e=>e.id)),mediaIds=new Set(media.map(m=>m.id)),maps=machineMaps(d);
   const checkConditionsGlobal=(cs:Condition[])=>{
     contradictions(cs);
     cs.forEach(c=>visit(c,x=>{
@@ -184,7 +200,11 @@ export function loadCatalog(definitions:unknown,packs:unknown[]):Catalog {
     for(const flag of [...p.reads,...p.writes])if(!known.has(flag))throw new Error(`Неизвестный флаг ${flag}`);
     for(const e of p.events){
       if(!e.id.startsWith(p.id+'.'))throw new Error(`Событие вне namespace пакета: ${e.id}`);
+      if(!e.trigger.length&&!e.reactionTriggers.length)throw new Error(`Событие без trigger: ${e.id}`);
       if(e.trigger.some(t=>!actionIds.has(t)))throw new Error(`Неизвестный триггер ${e.id}`);
+      for(const trigger of e.reactionTriggers)checkReactionTrigger(trigger,p,maps,endingIds);
+      if(e.delivery.policy==='scheduled'&&!e.delivery.expiresAfterDays)throw new Error(`Scheduled event без expiresAfterDays: ${e.id}`);
+      if(e.delivery.policy!=='scheduled'&&e.delivery.expiresAfterDays)throw new Error(`expiresAfterDays допустим только scheduled: ${e.id}`);
       checkConditions(e.conditions,p,new Set(p.reads));
       unique(e.variants.map(v=>v.id),e.id+' варианты');unique(e.choices.map(c=>c.id),e.id+' выборы');
       if(!e.variants.some(v=>v.conditions.length===0))throw new Error(`Нет запасной постановки ${e.id}`);
