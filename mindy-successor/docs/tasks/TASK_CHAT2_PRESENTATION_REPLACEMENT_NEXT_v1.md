@@ -454,3 +454,111 @@ Summarize:
 - which remaining PA blockers are presentation-independent.
 
 Continue items 25–30 sequentially without waiting for Lead review.
+
+
+## Queue item 25 — presentation release-candidate coverage ledger
+
+Create NEW files only:
+- `docs/presentation-prep/PRESENTATION_RC_COVERAGE_LEDGER_v1.md`
+- `prior-work/astra/prototype-m3.2/content/presentation-rc-coverage.fixture.json`
+
+Build a single deduplicated ledger for every production-facing semantic slot relevant after PR21:
+- location;
+- Lumber shift/result/event;
+- Foreman relationship/Night;
+- School paid lesson;
+- School Night study;
+- Forest Activity route/result;
+- endings.
+
+For each row record:
+- semantic presentationId;
+- current shipped fallback;
+- future GIF status;
+- text fallback;
+- PA relevance;
+- current blocker class, if any.
+
+Do not edit shared runtime/UI/catalog.
+
+## Queue item 26 — presentation save/import compatibility matrix
+
+Create NEW files only:
+- `prior-work/astra/prototype-m3.2/content/presentation-save-import-compat.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/presentation-save-import-compat.test.ts`
+
+Cover:
+- old save without presentationId;
+- new save with slash semantic presentationId;
+- pending scene reload;
+- action result reload;
+- Activity reload;
+- ending reload;
+- presentation replacement bundle import/export.
+
+Prove presentation metadata remains optional/backward-compatible and never changes gameplay identity.
+
+## Queue item 27 — release-candidate fallback degradation suite
+
+Create NEW files only:
+- `prior-work/astra/prototype-m3.2/content/presentation-rc-degradation.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/presentation-rc-degradation.test.ts`
+
+Exercise representative RC slots under:
+- primary GIF missing;
+- static fallback missing;
+- both missing but text fallback present;
+- animations disabled;
+- stale replacement entry.
+
+Expected result: gameplay continues, or invalid presentation config is rejected before persistence.
+
+## Queue item 28 — presentation asset replacement operator guide
+
+Create:
+- `docs/presentation-prep/PRESENTATION_ASSET_REPLACEMENT_OPERATOR_GUIDE_v1.md`
+
+Write the exact safe operator workflow for replacing future GIF/static assets by semantic presentationId:
+- locate slot;
+- choose/import file;
+- preflight;
+- preview;
+- persist override;
+- verify animations-off;
+- verify save/reload does not change gameplay identity;
+- rollback.
+
+No source-path editing workflow.
+
+## Queue item 29 — Activity-option presentation readiness contract
+
+Create NEW files only:
+- `prior-work/astra/prototype-m3.2/content/presentation-activity-option-readiness.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/presentation-activity-option-readiness.test.ts`
+
+Prepare the presentation contract for future capability-aware Forest options:
+- logging road;
+- hunter trail;
+- old boundary;
+- navigation;
+- physical obstacle;
+- interpretation/ritual anomaly.
+
+Do not invent final event IDs/lore. Define semantic families and fallback policy only.
+
+## Queue item 30 — presentation final integration handoff v3
+
+Create:
+- `docs/presentation-prep/PRESENTATION_FINAL_INTEGRATION_HANDOFF_v3.md`
+- `prior-work/astra/prototype-m3.2/content/presentation-final-integration-handoff.fixture.json`
+
+Consolidate Chat 2 items 1–29 into:
+- MUST_INTEGRATE;
+- QA_ONLY;
+- FUTURE_ASSET_WORK;
+- BLOCKED_BY_AUTHORING;
+- SUPERSEDED.
+
+Name exact files and recommend the minimal non-redundant integration subset.
+
+Continue items 25–30 sequentially without waiting for Lead review.
