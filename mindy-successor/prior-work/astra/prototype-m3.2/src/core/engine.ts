@@ -166,12 +166,8 @@ export function freshSave(metaInput?:Partial<Meta>&{completed?:string[];lives?:n
     }
   } as unknown as Save;
   const s=attachLegacyFacade(save);
-  // Temporary M3.2 compatibility only. These do not define target meta rewards.
-  if(meta.unlocks.includes('guild'))setMetric(s,'organization',getMetric(s,'organization')+5);
-  if(meta.unlocks.includes('scholar'))setMetric(s,'reason',getMetric(s,'reason')+5);
-  if(meta.unlocks.includes('host'))setMetric(s,'charm',getMetric(s,'charm')+5);
-  if(meta.unlocks.includes('mediator'))setMetric(s,'empathy',getMetric(s,'empathy')+5);
-  if(meta.unlocks.includes('court'))setMetric(s,'composure',getMetric(s,'composure')+5);
+  // Old M3.2 unlock IDs are retained for demo compatibility, but obsolete
+  // starting-stat rewards are intentionally not projected into target stats.
   s.run.dayState.energyCurrent=energyMax(s);
   return s;
 }
