@@ -581,3 +581,15 @@
 - Lead assigns base commit, branch, allowed/forbidden files, dependencies, deliverables, tests and acceptance.
 - During A5/A6, shared core remains Lead-owned.
 - Replacement Lead must read `PARALLEL_WORK_PROTOCOL_v1.md` and inspect active Git branches/PRs before reassigning work.
+
+
+## Parallel workers ready — 2026-09-26
+
+The multi-chat setup is pre-created and may be started at any time.
+
+- Chat 2: branch `chat2/presentation-prep`, task `docs/tasks/TASK_CHAT2_PRESENTATION_PREP_v1.md`, presentation/GIF preparation.
+- Chat 3: branch `chat3/lumber-data-prep`, task `docs/tasks/TASK_CHAT3_LUMBER_DATA_PREP_v1.md`, Lumber product/data preparation.
+- Chat 4: branch `chat4/acceptance-audit`, task `docs/tasks/TASK_CHAT4_ACCEPTANCE_AUDIT_v1.md`, QA/acceptance audit preparation.
+- Chat 5: branch `chat5/school-data-prep`, task `docs/tasks/TASK_CHAT5_SCHOOL_DATA_PREP_v1.md`, School production-data preparation.
+- Shared-core lock remains with Chat 1 through A5/A6.
+- Live coordination source: `PARALLEL_WORK_BOARD_v1.md`.
