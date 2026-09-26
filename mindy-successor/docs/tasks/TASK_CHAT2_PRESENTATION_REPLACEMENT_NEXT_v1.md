@@ -116,3 +116,59 @@ Cover representative full flows:
 For each step record semantic presentationId, fallback behavior, save/reload expectation and animation-off expectation.
 
 Do not patch shared presentation runtime/UI. Continue sequentially through items 2–6 without waiting for Lead review.
+
+
+## Queue item 7 — presentation production smoke fixture
+
+Create NEW files only:
+- `prior-work/astra/prototype-m3.2/content/presentation-production-smoke.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/presentation-production-smoke.test.ts`
+
+Define a short shipped-product smoke sequence covering town -> Lumber shift -> career event -> School lesson -> Night -> Forest Activity -> ending. Verify exact semantic IDs and safe fallback behavior at each step.
+
+## Queue item 8 — semantic ID drift detector
+
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/presentation-semantic-id-drift.test.ts`
+
+Cross-check all presentation fixtures/contracts accumulated on this branch and fail if the same gameplay entity maps to conflicting semantic presentation IDs. Explicitly catch dotted-vs-slash drift and School underscore-vs-kebab drift.
+
+## Queue item 9 — screen fallback policy matrix
+
+Create NEW files:
+- `prior-work/astra/prototype-m3.2/content/presentation-screen-fallback-policy.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/presentation-screen-fallback-policy.test.ts`
+
+Classify fallback policy for location, job shift/result/event, School, relationship, Night, Activity and ending slots. Prove missing media never changes gameplay state and every terminal fallback ends in static/text-safe behavior.
+
+## Queue item 10 — replacement bundle version migration contract
+
+Create NEW files:
+- `docs/presentation-prep/PRESENTATION_REPLACEMENT_BUNDLE_MIGRATION_v1.md`
+- `prior-work/astra/prototype-m3.2/tests/presentation-replacement-bundle-migration.test.ts`
+
+Define version-to-version migration rules for presentation replacement bundles only. No life-save migration and no gameplay ID renames. Unknown old semantic IDs must be explicitly orphaned/rejected, not guessed.
+
+## Queue item 11 — media-path preflight security contract
+
+Create NEW test:
+- `prior-work/astra/prototype-m3.2/tests/presentation-media-path-preflight.test.ts`
+
+Verify replacement/override fixtures reject:
+- absolute paths;
+- parent-directory traversal;
+- data URLs for video;
+- unsupported extensions;
+- gameplay JSON as a media target.
+
+Keep valid local `assets/` references portable.
+
+## Queue item 12 — presentation release-readiness checklist
+
+Create:
+- `docs/presentation-prep/PRESENTATION_RELEASE_READINESS_v1.md`
+- optional NEW test `prior-work/astra/prototype-m3.2/tests/presentation-release-readiness.test.ts`
+
+Summarize exact gates for a release-like presentation layer: semantic coverage, save/reload, fallback, animation-off, replacement import/export, current assets, future GIF gaps, and zero gameplay coupling.
+
+Continue items 7–12 sequentially without waiting for Lead review.
