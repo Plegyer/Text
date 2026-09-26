@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "id": "lumber.cross-system-reload-chronology.fixture",
+  "scenarios": [
+    {
+      "id": "professional-night-forest-complex",
+      "checkpoints": [
+        {
+          "id": "shift-result",
+          "boundary": "after lumber.shift result with pending first-shift milestone",
+          "preserves": [
+            "daytimeEnergy",
+            "money",
+            "completed_shifts",
+            "pendingEvent"
+          ]
+        },
+        {
+          "id": "career-milestone",
+          "boundary": "pending lumber.career-first-shift before continue",
+          "preserves": [
+            "daytimeEnergy",
+            "completed_shifts",
+            "pendingEvent"
+          ]
+        },
+        {
+          "id": "foreman-route",
+          "boundary": "after professional choice",
+          "preserves": [
+            "relationshipStage",
+            "relationshipChoice",
+            "daytimeEnergy"
+          ]
+        },
+        {
+          "id": "night-lodging",
+          "boundary": "after paid lodging before voluntary Night choice",
+          "preserves": [
+            "money",
+            "lodgingPaymentCommitted",
+            "daytimeEnergy"
+          ]
+        },
+        {
+          "id": "night-meeting",
+          "boundary": "pending lumber-night.foreman-professional",
+          "preserves": [
+            "money",
+            "night_meetings",
+            "pendingEvent",
+            "daytimeEnergy"
+          ]
+        },
+        {
+          "id": "forest-entry",
+          "boundary": "after lumber.forest entry",
+          "preserves": [
+            "daytimeEnergy",
+            "activityEnvelope"
+          ]
+        },
+        {
+          "id": "forest-checkpoint",
+          "boundary": "counter.step.1",
+          "preserves": [
+            "daytimeEnergy",
+            "activityEnvelope",
+            "rngState"
+          ]
+        },
+        {
+          "id": "forest-result",
+          "boundary": "pending lumber-cross.activity-forest-return after success",
+          "preserves": [
+            "daytimeEnergy",
+            "forestTruthWorldFact",
+            "pendingEvent"
+          ]
+        },
+        {
+          "id": "complex-ending-completion",
+          "boundary": "ending.lumber.forest completed",
+          "preserves": [
+            "transactionId",
+            "noHardWorkReward",
+            "completedEnding"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hard-work",
+      "checkpoints": [
+        {
+          "id": "hard-work-50",
+          "boundary": "after target shift reaches completed_shifts 50",
+          "preserves": [
+            "daytimeEnergy",
+            "completed_shifts",
+            "eligibility"
+          ]
+        },
+        {
+          "id": "hard-work-commit",
+          "boundary": "after ending.lumber.hard-work commit",
+          "preserves": [
+            "commitment",
+            "noMetaRewardBeforeCompletion"
+          ]
+        },
+        {
+          "id": "hard-work-completion",
+          "boundary": "after ending.lumber.hard-work completion",
+          "preserves": [
+            "transactionId",
+            "hardWork:lumber",
+            "hardWorkProgressOnce"
+          ]
+        }
+      ]
+    }
+  ],
+  "exactOnce": {
+    "lodgingMoneyCost": 100,
+    "nightMeetingCounter": "night_meetings",
+    "hardWorkRewardId": "hardWork:lumber"
+  },
+  "lockedContracts": {
+    "hardWorkConditions": [
+      {
+        "kind": "careerCounter",
+        "career": "lumber",
+        "counter": "completed_shifts",
+        "op": "gte",
+        "value": 50
+      }
+    ],
+    "activityContinuation": "activityResult"
+  }
+}
