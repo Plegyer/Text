@@ -2,7 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile,readdir} from 'node:fs/promises';
 import {loadCatalog} from '../src/core/content.ts';
-import {applyPresentation,emptyPresentation,presentationSlots,resolvePresentation} from '../src/core/presentation.ts';
+import {applyPresentation,emptyPresentation,presentationIdForAction,presentationIdForActionResult,presentationIdForEnding,presentationSlots,resolvePresentation} from '../src/core/presentation.ts';
+import type {Catalog} from '../src/core/schema.ts';
 
 async function realCatalog(){
   const definitions=JSON.parse(await readFile('content/definitions.json','utf8'));
@@ -19,6 +20,19 @@ test('presentation resolver exposes stable semantic slots',async()=>{
   const ids=presentationSlots(catalog).map(slot=>slot.id);
   assert.ok(ids.includes('location/town/default'));
   assert.ok(ids.some(id=>id.startsWith('job/lumber/shift/')));
+});
+
+test('target-shaped action and ending IDs normalize to the locked semantic taxonomy',()=>{
+  const targetLike={
+    definitions:{actions:[
+      {id:'lumber.shift',scenes:[{id:'spring.default',media:['fixture.lumber.spring']}]},
+      {id:'school.field-craft',scenes:[{id:'default',media:[]}]}
+    ]}
+  } as unknown as Catalog;
+  assert.equal(presentationIdForAction(targetLike,'lumber.shift',['fixture.lumber.spring']),'job/lumber/shift/spring/default');
+  assert.equal(presentationIdForActionResult(targetLike,'lumber.shift',['fixture.lumber.spring']),'job/lumber/result/default');
+  assert.equal(presentationIdForAction(targetLike,'school.field-craft',[]),'school/field-craft/lesson/default');
+  assert.equal(presentationIdForEnding('ending.lumber.hard-work'),'ending/lumber/hard-work');
 });
 
 test('GIF is primary while animation-off resolves static fallback',async()=>{
