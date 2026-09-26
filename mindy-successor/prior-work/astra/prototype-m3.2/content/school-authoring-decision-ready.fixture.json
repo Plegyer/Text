@@ -1,0 +1,151 @@
+{
+  "formatVersion": 1,
+  "id": "school.authoring-decision-ready.fixture.v1",
+  "decisions": [
+    {
+      "id": "management-public-result-provider",
+      "question": "Which authored School result publishes the management/accounting public boundary used by Lumber/Forewoman?",
+      "acceptableAnswerTypes": [
+        "School milestone ID",
+        "School certificate ID",
+        "School project/exam completion ID",
+        "other explicitly authored School-owned result ID"
+      ],
+      "downstream": [
+        "School authoring data",
+        "School public-fact publication definition",
+        "Lumber/Forewoman public-fact consumer content",
+        "Product Acceptance PA07/PA08 evidence"
+      ],
+      "paRows": [
+        "PA07",
+        "PA08"
+      ],
+      "runtimeStatus": "READY",
+      "runtimeChangeNeeded": false
+    },
+    {
+      "id": "management-threshold-milestone-type",
+      "question": "What private School eligibility makes the management/accounting result authoritative?",
+      "acceptableAnswerTypes": [
+        "lessons_completed threshold",
+        "stat threshold set",
+        "project completion",
+        "exam completion",
+        "certificate completion",
+        "explicit conjunction of authored School-owned requirements"
+      ],
+      "downstream": [
+        "School milestone/certificate/project authoring",
+        "School exactly-once publication proof",
+        "PA07 expected progression path"
+      ],
+      "paRows": [
+        "PA07",
+        "PA08"
+      ],
+      "runtimeStatus": "READY_FOR_AUTHORED_CONDITIONS",
+      "runtimeChangeNeeded": false
+    },
+    {
+      "id": "arcana-forest-public-result-provider",
+      "question": "Which authored School result publishes the Arcana/Forest public boundary?",
+      "acceptableAnswerTypes": [
+        "Arcana track milestone ID",
+        "Arcana certificate ID",
+        "Arcana project/exam completion ID",
+        "other explicitly authored School-owned knowledge result ID"
+      ],
+      "downstream": [
+        "School Arcana authoring data",
+        "School public-fact publication definition",
+        "Forest/Lumber public-fact consumer content",
+        "Product Acceptance PA08/Forest route evidence"
+      ],
+      "paRows": [
+        "PA08",
+        "PA14",
+        "PA18"
+      ],
+      "runtimeStatus": "READY",
+      "runtimeChangeNeeded": false
+    },
+    {
+      "id": "arcana-forest-threshold-milestone-type",
+      "question": "What private School eligibility makes the Arcana/Forest result authoritative?",
+      "acceptableAnswerTypes": [
+        "lessons_completed threshold",
+        "Magic/Reason/stat threshold set",
+        "project completion",
+        "exam completion",
+        "certificate completion",
+        "explicit conjunction of authored School-owned requirements"
+      ],
+      "downstream": [
+        "School Arcana milestone/certificate/project authoring",
+        "Forest interpretation authoring",
+        "School exactly-once publication proof"
+      ],
+      "paRows": [
+        "PA08",
+        "PA14",
+        "PA18"
+      ],
+      "runtimeStatus": "READY_FOR_AUTHORED_CONDITIONS",
+      "runtimeChangeNeeded": false
+    },
+    {
+      "id": "teacher-identities-content-depth",
+      "question": "Which canonical teacher/presenter identities and lesson presentation content ship for the School slice?",
+      "acceptableAnswerTypes": [
+        "one teacher per course",
+        "one teacher shared by multiple courses",
+        "presenter role without relationship state",
+        "course-specific narrator/presenter",
+        "approved mixed model"
+      ],
+      "downstream": [
+        "School presentation content",
+        "semantic presentation slots",
+        "static/GIF/media assets",
+        "PA07 presentation evidence"
+      ],
+      "paRows": [
+        "PA07"
+      ],
+      "runtimeStatus": "SEMANTIC_PRESENTATION_READY",
+      "runtimeChangeNeeded": false
+    },
+    {
+      "id": "certificate-project-authoring",
+      "question": "Are certificates/projects/exams part of the minimum authored School public-result path, and if so which definitions ship?",
+      "acceptableAnswerTypes": [
+        "no certificate/project required for minimum PA path",
+        "certificate-based result",
+        "project-based result",
+        "exam-based result",
+        "combined authored progression"
+      ],
+      "downstream": [
+        "School progression content",
+        "School milestone/certificate/project definitions",
+        "presentation content",
+        "public-fact provider definition if selected"
+      ],
+      "paRows": [
+        "PA07",
+        "PA08"
+      ],
+      "runtimeStatus": "RESERVED_STATE_READY",
+      "runtimeChangeNeeded": false
+    }
+  ],
+  "constraints": {
+    "noPreferredAnswer": true,
+    "finalManagementPublicFactId": null,
+    "finalArcanaForestPublicFactId": null,
+    "managementThreshold": null,
+    "arcanaForestThreshold": null,
+    "teacherIdentities": null
+  }
+}
