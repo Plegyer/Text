@@ -121,3 +121,72 @@ Create:
 Summarize paid lessons, typed progress, Resolver visibility, Night study, UI reachability expectations, save compatibility, cross-system public boundary and remaining OPEN authoring.
 
 Continue items 7–12 sequentially without waiting for Lead review.
+
+
+## Queue item 13 — School PA shipped-row evidence matrix
+
+Create NEW files only:
+- `prior-work/astra/prototype-m3.2/content/school-pa-shipped-row-evidence.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/school-pa-shipped-row-evidence.test.ts`
+
+Map School-related PA rows to exact first-class `schoolLesson` / NightFlow behavior.
+Separate:
+- paid lesson transaction already shipped;
+- typed progress already shipped;
+- presentation/save/reload already shipped;
+- missing public fact authoring required for Lumber continuation.
+
+## Queue item 14 — School public-fact authoring packet
+
+Create:
+- `docs/school-prep/SCHOOL_PUBLIC_FACT_AUTHORING_PACKET_v1.md`
+- `prior-work/astra/prototype-m3.2/content/school-public-fact-authoring.fixture.json`
+
+Specify an authoring contract for future School milestones that may emit public cross-system facts. The packet must NOT choose final thresholds for:
+- management/accounting;
+- Arcana/forest knowledge.
+
+Define ownership, exactly-once emission, reload stability and Resolver boundary only.
+
+## Queue item 15 — School teacher/presentation depth gap matrix
+
+Create:
+- `docs/school-prep/SCHOOL_PRESENTATION_DEPTH_GAP_v1.md`
+- `prior-work/astra/prototype-m3.2/tests/school-presentation-depth-gap.test.ts`
+
+Compare current eight-course product surface against PA requirement that School has track/teacher/presentation/progress. Identify which parts are shipped and which are still content-depth gaps. Do not fabricate teacher identities or milestones.
+
+## Queue item 16 — School low-money/no-softlock contract
+
+Create NEW files:
+- `prior-work/astra/prototype-m3.2/content/school-low-money-safety.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/school-low-money-safety.test.ts`
+
+Verify School itself fails atomically under insufficient money/Energy and does not corrupt the run. Document how normal non-School actions remain available; do not claim economy-wide no-softlock unless the current product evidence proves it.
+
+## Queue item 17 — School PA blocker burn-down ledger
+
+Create:
+- `docs/school-prep/SCHOOL_PA_BLOCKER_BURNDOWN_v1.md`
+
+Reduce all School OPEN issues to the smallest remaining set after production activation. Map each to exact PA rows and distinguish:
+- runtime blocker;
+- content authoring blocker;
+- presentation/content-depth gap;
+- already closed.
+
+## Queue item 18 — School integration handoff manifest
+
+Create:
+- `docs/school-prep/SCHOOL_INTEGRATION_HANDOFF_v1.md`
+- `prior-work/astra/prototype-m3.2/content/school-integration-handoff.fixture.json`
+
+Deduplicate Chat 5 artifacts into:
+- MUST_INTEGRATE;
+- QA_EVIDENCE_ONLY;
+- SUPERSEDED;
+- OPEN_AUTHORING_PACKET.
+
+Do not request shared runtime changes for already-green typed School progress unless a concrete failing contract proves one is necessary.
+
+Continue items 13–18 sequentially without waiting for Lead review.
