@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "id": "forest.future-authoring-compat.fixture",
+  "status": "ADDITIVE_AUTHORING_COMPATIBILITY_CONTRACT",
+  "protectedContracts": {
+    "legacyActivitySave": {
+      "optionModelVersion": 0,
+      "availableActions": [
+        "advance",
+        "escape"
+      ],
+      "mustRemainValid": true
+    },
+    "loggingRoad": {
+      "optionId": "forest.route.logging-road",
+      "routeId": "logging-road",
+      "conditions": [],
+      "mustRemainAvailable": true
+    },
+    "oldBoundary": {
+      "optionId": "forest.route.old-boundary",
+      "routeId": "old-boundary",
+      "capability": "enter_old_boundary",
+      "mustRemainCapabilityGated": true
+    },
+    "results": [
+      "lumber.forest.success",
+      "lumber.forest.escape",
+      "lumber.forest.failure"
+    ],
+    "a5": {
+      "kind": "activityResult",
+      "activity": "lumber.forest",
+      "outcome": "success",
+      "result": "lumber.forest.success"
+    }
+  },
+  "additiveRules": {
+    "futureRoutesMayBeAdded": true,
+    "futureChallengesMayBeAdded": true,
+    "existingOptionIdsMayBeReusedForDifferentMeaning": false,
+    "existingResultIdsMayBeReplaced": false,
+    "legacyEnvelopeUpgradeInPlaceRequired": false,
+    "newOptionModelSavesMayPersistRouteAndResolvedOptions": true,
+    "capabilityAndSeasonConditionsMayCompose": true
+  },
+  "futureAuthoringSlots": [
+    {
+      "kind": "route",
+      "exampleContractId": "future.route.example",
+      "productionId": null,
+      "allowedConditions": [
+        "publicFact",
+        "itemCapability",
+        "calendarSeason",
+        "relationshipFact",
+        "careerFact"
+      ],
+      "maySetRoute": true
+    },
+    {
+      "kind": "challenge",
+      "exampleContractId": "future.challenge.example",
+      "productionId": null,
+      "allowedConditions": [
+        "stat",
+        "publicFact",
+        "itemCapability",
+        "calendarSeason"
+      ],
+      "maySetRoute": false
+    }
+  ],
+  "hardWorkIsolation": {
+    "futureForestAuthoringMayChangeHardWork": false,
+    "onlyCondition": {
+      "kind": "careerCounter",
+      "career": "lumber",
+      "counter": "completed_shifts",
+      "op": "gte",
+      "value": 50
+    },
+    "rewardId": "hardWork:lumber"
+  }
+}
