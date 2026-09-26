@@ -70,6 +70,26 @@ test('PA02-PA06: target Lumber shift -> reactive milestone -> professional Forem
   assert.equal(s.run.progression.relationships['lumber.foreman']?.choices.route,'professional');
 });
 
+test('PA04: shipped Lumber seasonal variants are deterministic repeatable Work presentations',()=>{
+  const cases=[
+    {day:0,media:'job.lumber.shift.spring.default'},
+    {day:10,media:'job.lumber.shift.summer.default'},
+    {day:20,media:'job.lumber.shift.autumn.default'},
+    {day:30,media:'job.lumber.shift.winter.default'}
+  ] as const;
+
+  for(const c of cases){
+    const before=started();
+    before.run.calendar.elapsedDays=c.day;
+    const energyBefore=before.run.dayState.energyCurrent;
+    const out=dispatch(before,{type:'action',id:'lumber.shift'},catalog);
+    assert.equal(out.run.dayState.energyCurrent,energyBefore-1);
+    assert.deepEqual(out.run.flow.lastAction?.media,[c.media]);
+    assert.equal(out.run.flow.lastAction?.presentationId,'job/lumber/result/default');
+    assert.equal(out.run.progression.careers.lumber?.counters.completed_shifts,1);
+  }
+});
+
 test('PA07 evidence: paid School lesson is shipped, typed, exactly once, and exposes the remaining public-fact blocker',()=>{
   let s=started();
   const moneyBefore=s.run.resources.money;
@@ -172,7 +192,7 @@ test('PA14-PA20 evidence: Forest entry is honestly blocked without item capabili
   assert.equal(escape.run.progression.worldFacts.includes('lumber.forest.truth-known'),false);
 });
 
-test('PA21-PA26 accelerator: two Lumber endings may be eligible; Hard Work commits/completes once and changes New Run',()=>{
+test('PA21-PA26 accelerator: two Lumber endings may be eligible; ordinary play remains available; Hard Work commits/completes once and changes New Run',()=>{
   let s=started();
   s.run.progression.careers.lumber={
     stage:'accepted-hand',
@@ -191,6 +211,15 @@ test('PA21-PA26 accelerator: two Lumber endings may be eligible; Hard Work commi
 
   s=reload(s);
   assert.equal(s.run.status,'active');
+  const energyBeforeExtraShift=s.run.dayState.energyCurrent;
+  s=dispatch(s,{type:'action',id:'lumber.shift'},catalog);
+  assert.equal(s.run.status,'active');
+  assert.equal(s.run.dayState.energyCurrent,energyBeforeExtraShift-1);
+  assert.ok(s.run.endings.eligible.includes('ending.lumber.hard-work'));
+  assert.ok(s.run.endings.eligible.includes('ending.lumber.forest'));
+  assert.equal(s.meta.hardWorkProgress.includes('lumber'),false);
+
+  s=reload(s);
   s=dispatch(s,{type:'commitEnding',id:'ending.lumber.hard-work'},catalog);
   assert.equal(s.run.status,'ending_committed');
   assert.equal(s.meta.hardWorkProgress.includes('lumber'),false);
