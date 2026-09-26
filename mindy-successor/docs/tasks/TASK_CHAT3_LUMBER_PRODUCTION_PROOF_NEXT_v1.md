@@ -459,3 +459,113 @@ Consolidate post-PR22 Lumber state into:
 Hard Work must remain SHIPPED_GREEN and independent.
 
 Continue items 25–30 sequentially without waiting for Lead review.
+
+
+## Queue item 31 — PR24 one-Save Lumber state audit
+
+Create NEW files only:
+- `docs/lumber-prep/LUMBER_PR24_ONE_SAVE_STATE_AUDIT_v1.md`
+- `prior-work/astra/prototype-m3.2/tests/lumber-pr24-one-save-state-audit.test.ts`
+
+Review the current Lead one-Save E2E path from the Lumber perspective:
+Lumber shift -> milestone -> Foreman -> School -> Night -> Forest logging-road -> Lumber return -> 49/50 Hard Work -> ending -> New Run.
+
+Verify:
+- one daytime Energy for each actual Lumber shift;
+- no extra Energy for reactive Lumber/Foreman continuations;
+- professional Foreman route remains non-romance;
+- Forest return uses exact `activityResult`;
+- Hard Work remains ONLY `completed_shifts >= 50`;
+- exact rewardId remains `hardWork:lumber`;
+- the 49-shift setup is labeled threshold accelerator, not product authoring.
+
+Do not patch shared runtime.
+
+## Queue item 32 — Old Boundary Token acquisition decision-ready packet
+
+Create:
+- `docs/lumber-prep/OLD_BOUNDARY_TOKEN_DECISION_READY_PACKET_v1.md`
+- `prior-work/astra/prototype-m3.2/content/old-boundary-token-decision-ready.fixture.json`
+
+Turn the current decision matrix into a product-decision packet.
+
+For each unresolved decision:
+- acquisition source;
+- timing/requirements;
+- retained vs consumed;
+- repeatability;
+- inventory visibility;
+- capability removal behavior;
+
+list:
+- acceptable answer types;
+- downstream code/content seams;
+- PA rows affected;
+- migration/save implications.
+
+Do NOT select a preferred answer.
+
+## Queue item 33 — hunter-trail unresolved identity boundary test
+
+Create NEW files only:
+- `prior-work/astra/prototype-m3.2/content/forest-hunter-trail-boundary.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/forest-hunter-trail-boundary.test.ts`
+
+Prove what is locked vs OPEN for hunter trail:
+- route identity is locked;
+- clue/capability identity remains OPEN unless authoritative docs already fix it;
+- runtime can host another capability-gated route without changing old-boundary semantics;
+- no fake item ID may be promoted to production.
+
+This is a boundary/negative test, not production authoring.
+
+## Queue item 34 — Forest challenge-family executable skeleton contract
+
+Create NEW files only:
+- `prior-work/astra/prototype-m3.2/content/forest-challenge-skeleton.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/forest-challenge-skeleton.test.ts`
+
+Define an implementation-ready non-lore skeleton for:
+- navigation;
+- physical obstacle;
+- interpretation/ritual anomaly.
+
+For each family include:
+- stable challenge-family id;
+- allowed condition/effect categories;
+- save/checkpoint requirement;
+- success/escape/failure result shape;
+- capability hook allowance;
+- season-availability hook allowance.
+
+Do not invent final text, loot, NPCs or thresholds.
+
+## Queue item 35 — Lumber RC no-false-green sentinel
+
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/lumber-rc-no-false-green.test.ts`
+
+Fail if any RC artifact:
+- counts seeded `old_boundary_token` inventory as PA09 full pass;
+- counts seeded completed_shifts=49 as ordinary play evidence;
+- adds any School/Forest/item/relationship/season condition to Hard Work;
+- changes exact `hardWork:lumber`;
+- replaces exact Forest `activityResult` continuation with a generic worldFact-only trigger.
+
+## Queue item 36 — Lumber final decision/evidence handoff v4
+
+Create:
+- `docs/lumber-prep/LUMBER_FINAL_DECISION_EVIDENCE_HANDOFF_v4.md`
+- `prior-work/astra/prototype-m3.2/content/lumber-final-decision-evidence-handoff.fixture.json`
+
+Consolidate all post-PR22 Lumber work into:
+- SHIPPED_GREEN;
+- MUST_INTEGRATE_QA;
+- HUMAN_DECISION_REQUIRED;
+- CONTENT_AUTHORING_REQUIRED;
+- PRESENTATION_FUTURE;
+- SUPERSEDED.
+
+Name exact files and identify the smallest Lead integration subset.
+
+Continue items 31–36 sequentially without waiting for Lead review.
