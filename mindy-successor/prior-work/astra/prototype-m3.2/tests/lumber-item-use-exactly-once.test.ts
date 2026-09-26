@@ -5,7 +5,7 @@ import {freshSave,parseSave} from '../src/core/engine.ts';
 import {loadCatalog} from '../src/core/content.ts';
 
 const contract=JSON.parse(readFileSync('content/lumber-item-use-exactly-once.fixture.json','utf8'));
-const definitions=JSON.parse(readFileSync('content/lumber-target-definitions.fixture.json','utf8'));
+const definitions=JSON.parse(readFileSync('content/lumber-target-definitions.fixture.json','utf8'));\nconst productionPack=JSON.parse(readFileSync('content/packs/lumber-target/lumber-production.pack.json','utf8'));
 
 type Model={inventory:Record<string,number>;committedUseIds:string[];availableCapabilities:string[]};
 type Policy='retain'|'consume';
@@ -74,7 +74,7 @@ test('capability availability is recomputed from actual inventory rather than a 
 });
 
 test('current save schema can preserve future item keys even though typed content effects/options are not implemented yet',()=>{
-  const cat=loadCatalog(structuredClone(definitions),[]);
+  const cat=loadCatalog(structuredClone(definitions),[structuredClone(productionPack)]);
   const save=freshSave();
   save.run.resources.inventory.old_boundary_token=1;
   const restored=parseSave(JSON.stringify(save),cat);
