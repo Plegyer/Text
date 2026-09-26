@@ -170,7 +170,7 @@ export function schoolLessonEffects(id:SchoolCourseId):Effect[] {
   ];
 }
 
-function assertSchoolLessonAvailable(input:Save,course:SchoolCourse){
+export function assertSchoolLessonAvailable(input:Save,course:SchoolCourse){
   if(input.run.status!=='active')throw new Error('School lesson requires an active run.');
   if(!input.run.character.creation.complete)throw new Error('Finish character creation before School.');
   if(input.run.flow.pendingScene||input.run.flow.night||input.run.flow.activity)throw new Error('Finish the current scene, Night flow, or Activity before School.');
