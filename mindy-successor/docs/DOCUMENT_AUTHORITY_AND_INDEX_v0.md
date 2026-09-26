@@ -189,3 +189,9 @@ Still-open numeric/content decisions are listed in `OPEN_QUESTIONS.md`. Test fix
 ## Coordination
 
 - `PARALLEL_WORK_PROTOCOL_v1.md` — multi-chat roles, ownership, branch and recovery rules.
+
+
+## Live coordination state
+
+- `PARALLEL_WORK_PROTOCOL_v1.md` — role/branch/ownership rules.
+- `PARALLEL_WORK_BOARD_v1.md` — current worker branches, task packets and critical-path ownership.
