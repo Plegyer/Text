@@ -593,3 +593,18 @@ The multi-chat setup is pre-created and may be started at any time.
 - Chat 5: branch `chat5/school-data-prep`, task `docs/tasks/TASK_CHAT5_SCHOOL_DATA_PREP_v1.md`, School production-data preparation.
 - Shared-core lock remains with Chat 1 through A5/A6.
 - Live coordination source: `PARALLEL_WORK_BOARD_v1.md`.
+
+
+## A5 code milestone — ActivityEnvelope
+
+- Implemented on `lead/a5-activity-envelope`.
+- Definitions now support typed Activity definitions; Run Flow owns one persisted ActivityEnvelope.
+- Activity entry cost is committed once from DayState Energy.
+- Internal endurance/progress and Activity RNG are independent from daily Energy/global RNG.
+- Save/reload inside Activity preserves checkpoint/internal RNG without recharging entry cost.
+- Synthetic adapter supports distinct success/escape/failure results.
+- Result effects apply atomically, envelope clears, then `activityResult` enters the normal A3 Resolver.
+- Active Activity blocks ordinary city actions, NightFlow and ending acceptance.
+- Production Forest content remains deferred; A5 proves the architecture boundary only.
+- GitHub Actions full `npm run check` green: **97/97 tests**.
+- Next critical-path package: **A6 Ending / RunResult / Meta exactly-once**.

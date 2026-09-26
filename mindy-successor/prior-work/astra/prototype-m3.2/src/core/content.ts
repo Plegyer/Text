@@ -133,7 +133,7 @@ function freeEffect(e:Effect){
   if(e.kind==='addNextDayModifier')return e.energyDelta>=0&&e.statEffects.every(x=>x.delta>=0);
   return true;
 }
-function checkReactionTrigger(t:ReactionTrigger,p:Pack,maps:MachineMaps,endingIds:Set<string>,nightChoiceIds:Set<string>){
+function checkReactionTrigger(t:ReactionTrigger,p:Pack,maps:MachineMaps,endingIds:Set<string>,nightChoiceIds:Set<string>,activityById:Map<string,Definitions['activities'][number]>){
   const reads=p.capabilities?.reads;
   if(t.kind==='statChanged'&&t.stat)needCapability(has(reads?.stats,t.stat),`reaction stat ${t.stat}`);
   if(t.kind==='resourceChanged'&&t.resource)needCapability(has(reads?.resources,t.resource),`reaction resource ${t.resource}`);
@@ -149,6 +149,16 @@ function checkReactionTrigger(t:ReactionTrigger,p:Pack,maps:MachineMaps,endingId
   if(t.kind==='worldFactAdded'&&t.fact)needCapability(has(reads?.worldFacts,t.fact),`reaction worldFact ${t.fact}`);
   if(t.kind==='endingEligible'&&t.ending&&!endingIds.has(t.ending))throw new Error(`Неизвестная судьба reaction trigger ${t.ending}`);
   if(t.kind==='nightChoiceCompleted'&&!nightChoiceIds.has(t.choice))throw new Error(`Неизвестный night choice reaction trigger ${t.choice}`);
+  if(t.kind==='activityResult'){
+    const activity=activityById.get(t.activity);
+    if(!activity)throw new Error(`Неизвестная Activity reaction trigger ${t.activity}`);
+    needCapability(has(reads?.activities,t.activity),`reaction activity ${t.activity}`);
+    if(t.result&&!activity.results.some(r=>r.id===t.result))throw new Error(`Неизвестный Activity result ${t.activity}.${t.result}`);
+    if(t.result&&t.outcome){
+      const result=activity.results.find(r=>r.id===t.result)!;
+      if(result.outcome!==t.outcome)throw new Error(`Activity result/outcome mismatch ${t.activity}.${t.result}`);
+    }
+  }
 }
 
 export function loadCatalog(definitions:unknown,packs:unknown[]):Catalog {
@@ -156,10 +166,10 @@ export function loadCatalog(definitions:unknown,packs:unknown[]):Catalog {
   const events=ps.flatMap(p=>p.events),media=ps.flatMap(p=>p.media);
   unique(d.flags,'флаги');unique(d.actions.map(a=>a.id),'действия');unique(d.endings.map(e=>e.id),'судьбы');
   unique((d.careers??[]).map(x=>x.id),'careers');unique((d.quests??[]).map(x=>x.id),'quests');unique((d.relationships??[]).map(x=>x.id),'relationships');
-  unique(d.lodgings.map(x=>x.id),'lodgings');unique(d.nightChoices.map(x=>x.id),'night choices');
+  unique(d.lodgings.map(x=>x.id),'lodgings');unique(d.nightChoices.map(x=>x.id),'night choices');unique(d.activities.map(x=>x.id),'activities');
   unique(ps.map(p=>p.id),'пакеты');unique(events.map(e=>e.id),'события');unique(media.map(m=>m.id),'медиа');
 
-  const known=new Set(d.flags),actionIds=new Set(d.actions.map(a=>a.id)),endingIds=new Set(d.endings.map(e=>e.id)),nightChoiceIds=new Set(d.nightChoices.map(x=>x.id)),mediaIds=new Set(media.map(m=>m.id)),maps=machineMaps(d);
+  const known=new Set(d.flags),actionIds=new Set(d.actions.map(a=>a.id)),endingIds=new Set(d.endings.map(e=>e.id)),nightChoiceIds=new Set(d.nightChoices.map(x=>x.id)),activityById=new Map(d.activities.map(x=>[x.id,x])),mediaIds=new Set(media.map(m=>m.id)),maps=machineMaps(d);
   const checkConditionsGlobal=(cs:Condition[])=>{
     contradictions(cs);
     cs.forEach(c=>visit(c,x=>{
@@ -204,6 +214,19 @@ export function loadCatalog(definitions:unknown,packs:unknown[]):Catalog {
   for(const nightChoice of d.nightChoices){
     checkConditions(nightChoice.conditions);checkEffects(nightChoice.effects);
   }
+  for(const activity of d.activities){
+    checkConditions(activity.entryConditions);
+    unique(activity.results.map(r=>r.id),`activity.${activity.id}.results`);
+    const outcomes=new Set(activity.results.map(r=>r.outcome));
+    if(outcomes.size!==3||!['success','escape','failure'].every(x=>outcomes.has(x as any)))throw new Error(`Activity ${activity.id} должна иметь success/escape/failure result`);
+    for(const result of activity.results)checkEffects(result.effects);
+    if(activity.adapter==='counter.v1'){
+      if(activity.resumePolicy!=='allowed')throw new Error(`counter.v1 поддерживает только resumePolicy=allowed: ${activity.id}`);
+      if(activity.timePolicy!=='same_day')throw new Error(`counter.v1 поддерживает только timePolicy=same_day: ${activity.id}`);
+      if(activity.failurePolicy!=='exit_to_day')throw new Error(`counter.v1 поддерживает только failurePolicy=exit_to_day: ${activity.id}`);
+      if(activity.adapterConfig.failAtEndurance>=activity.adapterConfig.initialEndurance)throw new Error(`Activity ${activity.id}: failAtEndurance должен быть ниже initialEndurance`);
+    }
+  }
 
   for(const p of ps){
     for(const flag of [...p.reads,...p.writes])if(!known.has(flag))throw new Error(`Неизвестный флаг ${flag}`);
@@ -211,7 +234,7 @@ export function loadCatalog(definitions:unknown,packs:unknown[]):Catalog {
       if(!e.id.startsWith(p.id+'.'))throw new Error(`Событие вне namespace пакета: ${e.id}`);
       if(!e.trigger.length&&!e.reactionTriggers.length)throw new Error(`Событие без trigger: ${e.id}`);
       if(e.trigger.some(t=>!actionIds.has(t)))throw new Error(`Неизвестный триггер ${e.id}`);
-      for(const trigger of e.reactionTriggers)checkReactionTrigger(trigger,p,maps,endingIds,nightChoiceIds);
+      for(const trigger of e.reactionTriggers)checkReactionTrigger(trigger,p,maps,endingIds,nightChoiceIds,activityById);
       if(e.delivery.policy==='scheduled'&&!e.delivery.expiresAfterDays)throw new Error(`Scheduled event без expiresAfterDays: ${e.id}`);
       if(e.delivery.policy!=='scheduled'&&e.delivery.expiresAfterDays)throw new Error(`expiresAfterDays допустим только scheduled: ${e.id}`);
       if(!e.blocking&&e.delivery.policy!=='live')throw new Error(`Optional event должен использовать live delivery: ${e.id}`);

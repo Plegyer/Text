@@ -171,6 +171,7 @@ const capabilityReads=z.object({
   careers:z.array(id).optional(),
   quests:z.array(id).optional(),
   relationships:z.array(id).optional(),
+  activities:z.array(id).optional(),
   worldFacts:z.array(id).optional(),
   meta:z.array(z.enum(['unlock','endingCompleted','hardWork'])).optional()
 }).strict();
@@ -202,6 +203,7 @@ export const reactionTriggerSchema=z.discriminatedUnion('kind',[
   z.object({kind:z.literal('dayStarted')}).strict(),
   z.object({kind:z.literal('nightPhase'),point:z.enum(['before_lodging','after_lodging','after_choice'])}).strict(),
   z.object({kind:z.literal('nightChoiceCompleted'),choice:id}).strict(),
+  z.object({kind:z.literal('activityResult'),activity:id,outcome:z.enum(['success','escape','failure']).optional(),result:id.optional()}).strict(),
   z.object({kind:z.literal('careerCounterChanged'),career:id,counter:id.optional()}).strict(),
   z.object({kind:z.literal('careerTransition'),career:id}).strict(),
   z.object({kind:z.literal('careerFactAdded'),career:id,fact:id.optional()}).strict(),
@@ -227,6 +229,7 @@ export type ReactionFact =
   | {kind:'dayStarted';day:number}
   | {kind:'nightPhase';point:'before_lodging'|'after_lodging'|'after_choice'}
   | {kind:'nightChoiceCompleted';choice:string}
+  | {kind:'activityResult';activity:string;outcome:'success'|'escape'|'failure';result:string}
   | {kind:'careerCounterChanged';career:string;counter:string;from:number;to:number}
   | {kind:'careerTransition';career:string;from:string;to:string}
   | {kind:'careerFactAdded';career:string;fact:string}
@@ -319,6 +322,59 @@ export const nightChoiceSchema=z.object({
 }).strict();
 export type NightChoiceDefinition=z.infer<typeof nightChoiceSchema>;
 
+export const activityOutcomes=['success','escape','failure'] as const;
+export type ActivityOutcome=typeof activityOutcomes[number];
+
+const counterActivityConfigSchema=z.object({
+  initialEndurance:z.number().int().min(1).max(1000),
+  advanceEnduranceCost:z.number().int().min(1).max(1000),
+  successAtProgress:z.number().int().min(1).max(1000),
+  failAtEndurance:z.number().int().min(0).max(1000)
+}).strict();
+
+const activityResultDefinitionSchema=z.object({
+  id,
+  outcome:z.enum(activityOutcomes),
+  effects:z.array(effectSchema).max(24).default([])
+}).strict();
+
+export const activityDefinitionSchema=z.object({
+  id,
+  label:z.string().min(1).max(150),
+  version:z.number().int().min(1).max(1000),
+  entryConditions:z.array(conditionSchema).max(32).default([]),
+  entryEnergyCost:z.number().int().min(0).max(10),
+  resumePolicy:z.enum(['allowed','checkpoint_only','forbidden']),
+  timePolicy:z.enum(['same_day','advances_calendar_on_exit','can_advance_days_internally']),
+  failurePolicy:z.enum(['exit_to_day','exit_to_night','terminal']),
+  adapter:z.literal('counter.v1'),
+  adapterConfig:counterActivityConfigSchema,
+  results:z.array(activityResultDefinitionSchema).min(3).max(3)
+}).strict();
+export type ActivityDefinition=z.infer<typeof activityDefinitionSchema>;
+
+const counterActivityStateSchema=z.object({
+  progress:z.number().int().min(0).max(1_000_000),
+  endurance:z.number().int().min(0).max(1_000_000),
+  steps:z.number().int().min(0).max(1_000_000),
+  lastRoll:z.number().min(0).max(1).nullable()
+}).strict();
+
+export const activityEnvelopeSchema=z.object({
+  activityId:id,
+  definitionVersion:z.number().int().min(1).max(1000),
+  adapter:z.literal('counter.v1'),
+  status:z.enum(['active','resolving']),
+  startedDay:n.max(159),
+  entryEnergyCommitted:z.literal(true),
+  internalState:counterActivityStateSchema,
+  rngState:z.number().int().min(0).max(4294967295),
+  checkpoint:id,
+  accumulatedRewards:z.array(effectSchema).max(64),
+  emittedFacts:z.array(id).max(64)
+}).strict();
+export type ActivityEnvelope=z.infer<typeof activityEnvelopeSchema>;
+
 export const endingSchema=z.object({id,title:z.string(),description:z.string(),conditions:z.array(conditionSchema),reward:id,epilogue:z.string()}).strict();
 export const definitionsSchema=z.object({
   version:z.literal('0.1.0'),
@@ -329,7 +385,8 @@ export const definitionsSchema=z.object({
   quests:z.array(machineDefinitionSchema).optional(),
   relationships:z.array(machineDefinitionSchema).optional(),
   lodgings:z.array(lodgingSchema).default([]),
-  nightChoices:z.array(nightChoiceSchema).default([])
+  nightChoices:z.array(nightChoiceSchema).default([]),
+  activities:z.array(activityDefinitionSchema).default([])
 }).strict();
 export type Definitions=z.infer<typeof definitionsSchema>;
 
@@ -407,7 +464,7 @@ export const flowStateSchema=z.object({
   pendingScene:pendingSceneSchema.nullable(),
   reaction:reactionStateSchema.default({epochCounter:0,currentEpochId:null,attemptedEventIds:[],cascadeDepth:0,queued:[]}),
   night:nightFlowStateSchema.nullable(),
-  activity:z.record(z.string(),z.unknown()).nullable(),
+  activity:activityEnvelopeSchema.nullable(),
   lastAction:lastActionSchema.nullable()
 }).strict();
 

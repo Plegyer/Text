@@ -156,3 +156,32 @@ Real GitHub Actions:
 - full `npm run check` pass.
 
 Next architecture package: A5 Activity Envelope.
+
+
+## A5 ActivityEnvelope — 2026-09-26
+
+A5 completed on `lead/a5-activity-envelope`.
+
+Large Activity now has a typed persisted envelope rather than sharing DayState Energy/internal counters.
+
+The first architecture adapter is synthetic `counter.v1`:
+- entry Energy charged exactly once;
+- internal endurance/progress/checkpoint;
+- independent persisted Activity RNG;
+- save/reload inside Activity;
+- success / escape / failure;
+- typed result effects;
+- ActivityResult fed back into the ordinary A3 Resolver after exit.
+
+Active Activity blocks ordinary city actions, NightFlow and ending acceptance. The synthetic adapter is same-day only and does not write the calendar.
+
+Catalog/load validation rejects unknown activity result triggers, unsupported synthetic policies, definition version mismatches and impossible persisted terminal states.
+
+Real GitHub Actions:
+- typecheck pass;
+- validate pass;
+- build pass;
+- tests **97/97**;
+- full `npm run check` pass.
+
+Next architecture package: A6 Ending / RunResult / Meta exactly-once.
