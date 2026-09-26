@@ -197,11 +197,15 @@ function schoolReactionFacts(before:Save,after:Save,course:SchoolCourse):Reactio
   const energyFrom=before.run.dayState.energyCurrent;
   const energyTo=after.run.dayState.energyCurrent;
   if(energyFrom!==energyTo)facts.push({kind:'energyChanged',from:energyFrom,to:energyTo});
+  for(const ending of after.run.endings.eligible){
+    if(!before.run.endings.eligible.includes(ending))facts.push({kind:'endingEligible',ending});
+  }
   return facts;
 }
 
 export interface SchoolRuntimeAdapter {
   applyEffects(input:Save,effects:Effect[],cat:Catalog):Save;
+  register?(input:Save,cat:Catalog):void;
   resolveReactions(
     input:Save,
     facts:ReactionFact[],
@@ -239,6 +243,7 @@ export function executeSchoolLesson(
   };
   paid.run.historyState.journal.push(`School: ${course.label}. Tuition ${course.tuition}; Energy -${course.energyCost}.`);
   paid.run.historyState.journal=paid.run.historyState.journal.slice(-160);
+  runtime.register?.(paid,cat);
   const reactionFacts=schoolReactionFacts(input,paid,course);
   const resolved=runtime.resolveReactions(paid,reactionFacts,cat,{newEpoch:true});
   return {
