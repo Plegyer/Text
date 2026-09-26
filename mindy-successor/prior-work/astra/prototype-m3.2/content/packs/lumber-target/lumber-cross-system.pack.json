@@ -92,7 +92,8 @@
             }
           ]
         }
-      ]
+      ],
+      "sourceDomain": "lumber"
     },
     {
       "id": "lumber-cross.activity-forest-return",
@@ -151,7 +152,8 @@
             }
           ]
         }
-      ]
+      ],
+      "sourceDomain": "lumber"
     }
   ]
 }
