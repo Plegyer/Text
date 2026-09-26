@@ -172,7 +172,7 @@ export function freshSave(metaInput?:Partial<Meta>&{completed?:string[];lives?:n
   if(meta.unlocks.includes('host'))setMetric(s,'charm',getMetric(s,'charm')+5);
   if(meta.unlocks.includes('mediator'))setMetric(s,'empathy',getMetric(s,'empathy')+5);
   if(meta.unlocks.includes('court'))setMetric(s,'composure',getMetric(s,'composure')+5);
-  s.dayState.energyCurrent=energyMax(s);
+  s.run.dayState.energyCurrent=energyMax(s);
   return s;
 }
 
