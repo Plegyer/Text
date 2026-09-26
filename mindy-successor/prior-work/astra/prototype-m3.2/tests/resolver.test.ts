@@ -47,6 +47,7 @@ function pack(events:any[]){
     capabilities:{
       reads:{
         stats:['strength'],
+        resources:['money'],
         careers:['test.job'],
         quests:['test.quest'],
         worldFacts:['gate.open','ping','pong','cascade.done']
@@ -125,8 +126,8 @@ test('same save and RNG produce identical probabilistic pending; reload does not
   const randomEvent=event('random',{
     chance:{base:.5,stat:'strength',perPoint:0,max:.5},
     variants:[
-      {id:'a',text:'Random variant A synthetic fallback.',conditions:[],media:[]},
-      {id:'b',text:'Random variant B synthetic fallback.',conditions:[],media:[]}
+      {id:'va',text:'Random variant A synthetic fallback.',conditions:[],media:[]},
+      {id:'vb',text:'Random variant B synthetic fallback.',conditions:[],media:[]}
     ]
   });
   const cat=catalog([randomEvent]);
