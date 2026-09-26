@@ -146,3 +146,22 @@ New worker-owned continuation branches preserve the no-idle rule:
   2. complete Night-study choice catalog contract.
 
 Lead shared-runtime activation work remains on `lead/product-activation-school-lumber-v2`. Worker task packets explicitly forbid editing Lead-owned shared runtime/schema/build/UI files.
+
+
+## Continuous queue policy — 2026-09-26
+
+Worker queues must stay **at least 5–6 independent tasks deep** while Lead review/integration is active.
+
+Rules:
+- finishing one item -> commit -> immediately continue to the next item;
+- no waiting for Lead review between queue items;
+- new continuation branch only when ownership boundaries or integration phase changes;
+- Lead review happens asynchronously on completed checkpoints;
+- one file = one active owner remains mandatory;
+- a worker is considered idle only when its active task file has no uncompleted queue items.
+
+Current active long queues:
+- Chat 2: `chat2/presentation-replacement-next` — 6-item presentation replacement/closure/PA queue.
+- Chat 3: `chat3/lumber-production-proof-next` — 6-item Lumber production/coexistence/reload/dependency queue.
+- Chat 4: `chat4/activation-ci-gate-next` — 6-item QA blocker/CI/dist/save/PA/smoke queue.
+- Chat 5: `chat5/school-pa-gate-next` — 6-item School PA/progress/UI/save/public-boundary/reload queue.
