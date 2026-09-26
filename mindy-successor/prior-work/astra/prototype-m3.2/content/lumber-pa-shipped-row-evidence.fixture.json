@@ -1,0 +1,318 @@
+{
+  "schemaVersion": 1,
+  "id": "lumber.pa-shipped-row-evidence.fixture",
+  "productionBaseline": "9b427d75dc22021cd3373aa7dd3521782e54152d",
+  "classifications": [
+    "shipped-executable",
+    "accelerator-valid for long threshold only",
+    "blocked by genuine OPEN authoring"
+  ],
+  "rows": [
+    {
+      "row": "PA02",
+      "classification": "shipped-executable",
+      "ids": [
+        "lumber.shift",
+        "lumber"
+      ],
+      "commands": [
+        {
+          "type": "action",
+          "id": "lumber.shift"
+        }
+      ],
+      "note": "Target Work UI ships lumber.shift; career state is established through target Work."
+    },
+    {
+      "row": "PA03",
+      "classification": "shipped-executable",
+      "ids": [
+        "lumber.shift",
+        "completed_shifts"
+      ],
+      "commands": [
+        {
+          "type": "action",
+          "id": "lumber.shift"
+        }
+      ],
+      "reactionFacts": [
+        "careerCounterChanged:lumber:completed_shifts"
+      ]
+    },
+    {
+      "row": "PA04",
+      "classification": "shipped-executable",
+      "ids": [
+        "lumber.shift"
+      ],
+      "commands": [
+        {
+          "type": "action",
+          "id": "lumber.shift"
+        }
+      ],
+      "presentations": [
+        "job/lumber/shift/<season>/default"
+      ]
+    },
+    {
+      "row": "PA05",
+      "classification": "shipped-executable",
+      "ids": [
+        "lumber.career-first-shift"
+      ],
+      "commands": [
+        {
+          "type": "action",
+          "id": "lumber.shift"
+        }
+      ],
+      "reactionFacts": [
+        "careerCounterChanged:lumber:completed_shifts"
+      ]
+    },
+    {
+      "row": "PA06",
+      "classification": "shipped-executable",
+      "ids": [
+        "lumber.career-first-shift",
+        "lumber.foreman-notice",
+        "lumber.foreman"
+      ],
+      "commands": [
+        {
+          "type": "choice",
+          "id": "continue"
+        },
+        {
+          "type": "choice",
+          "id": "professional"
+        }
+      ],
+      "reactionFacts": [
+        "careerTransition:lumber"
+      ]
+    },
+    {
+      "row": "PA12",
+      "classification": "shipped-executable",
+      "ids": [
+        "lodging.normal",
+        "lumber.foreman.night",
+        "lumber-night.foreman-professional"
+      ],
+      "commands": [
+        {
+          "type": "chooseLodging",
+          "id": "lodging.normal"
+        },
+        {
+          "type": "chooseNightChoice",
+          "id": "lumber.foreman.night"
+        },
+        {
+          "type": "choice",
+          "id": "continue"
+        }
+      ],
+      "reactionFacts": [
+        "nightChoiceCompleted:lumber.foreman.night"
+      ]
+    },
+    {
+      "row": "PA14",
+      "classification": "blocked by genuine OPEN authoring",
+      "ids": [
+        "lumber.forest",
+        "old_boundary_token",
+        "enter_old_boundary"
+      ],
+      "commands": [
+        {
+          "type": "enterActivity",
+          "id": "lumber.forest"
+        }
+      ],
+      "blocker": "Natural production acquisition/use path for enter_old_boundary is OPEN; injected worldFact is not a product-flow pass."
+    },
+    {
+      "row": "PA15",
+      "classification": "shipped-executable",
+      "ids": [
+        "lumber.forest"
+      ],
+      "commands": [
+        "parseSave(JSON.stringify(state), catalog)"
+      ],
+      "note": "Save/resume contract itself is shipped once an ActivityEnvelope exists; this does not prove PA14 reachability."
+    },
+    {
+      "row": "PA16",
+      "classification": "blocked by genuine OPEN authoring",
+      "ids": [
+        "lumber.forest",
+        "counter.v1"
+      ],
+      "commands": [
+        {
+          "type": "activityAction",
+          "id": "advance"
+        }
+      ],
+      "blocker": "Full PA requires 3 route contexts, 3 challenge families and season difference; deeper Forest authoring remains OPEN."
+    },
+    {
+      "row": "PA17",
+      "classification": "blocked by genuine OPEN authoring",
+      "ids": [
+        "old_boundary_token",
+        "enter_old_boundary"
+      ],
+      "commands": [],
+      "blocker": "No accepted production item acquisition/use action-space seam yet. Injecting lumber.capability.enter-old-boundary is test setup only and cannot pass PA17."
+    },
+    {
+      "row": "PA18",
+      "classification": "shipped-executable",
+      "ids": [
+        "lumber.forest.success",
+        "lumber-cross.activity-forest-return"
+      ],
+      "commands": [
+        {
+          "type": "activityAction",
+          "id": "advance"
+        }
+      ],
+      "reactionFacts": [
+        "activityResult:lumber.forest:success:lumber.forest.success"
+      ]
+    },
+    {
+      "row": "PA19",
+      "classification": "shipped-executable",
+      "ids": [
+        "lumber.forest.escape"
+      ],
+      "commands": [
+        {
+          "type": "activityAction",
+          "id": "escape"
+        }
+      ],
+      "reactionFacts": [
+        "activityResult:lumber.forest:escape:lumber.forest.escape"
+      ]
+    },
+    {
+      "row": "PA20",
+      "classification": "shipped-executable",
+      "ids": [
+        "lumber-cross.activity-forest-return"
+      ],
+      "commands": [
+        {
+          "type": "choice",
+          "id": "continue"
+        }
+      ],
+      "resultFacts": [
+        "forest-truth-known",
+        "forest-problem-resolved"
+      ]
+    },
+    {
+      "row": "PA21",
+      "classification": "accelerator-valid for long threshold only",
+      "ids": [
+        "ending.lumber.hard-work",
+        "ending.lumber.forest"
+      ],
+      "commands": [],
+      "acceleratorRule": "May seed already-earned typed state immediately before the repetition-heavy 50-shift threshold, but must execute the real final command/reaction under test."
+    },
+    {
+      "row": "PA22",
+      "classification": "shipped-executable",
+      "ids": [
+        "lumber.shift"
+      ],
+      "commands": [
+        {
+          "type": "action",
+          "id": "lumber.shift"
+        }
+      ],
+      "note": "Normal play remains available while endings are eligible and uncommitted."
+    },
+    {
+      "row": "PA23",
+      "classification": "shipped-executable",
+      "ids": [
+        "ending.lumber.hard-work"
+      ],
+      "commands": [
+        {
+          "type": "commitEnding",
+          "id": "ending.lumber.hard-work"
+        }
+      ],
+      "reactionFacts": [
+        "endingCommitted:ending.lumber.hard-work"
+      ]
+    },
+    {
+      "row": "PA24",
+      "classification": "shipped-executable",
+      "ids": [
+        "ending.lumber.hard-work"
+      ],
+      "commands": [
+        {
+          "type": "completeEnding"
+        }
+      ],
+      "result": "one stable RunResult"
+    },
+    {
+      "row": "PA25",
+      "classification": "shipped-executable",
+      "ids": [
+        "hardWork:lumber"
+      ],
+      "commands": [
+        "save/reload"
+      ],
+      "result": "Meta reward applied exactly once"
+    },
+    {
+      "row": "PA26",
+      "classification": "shipped-executable",
+      "ids": [
+        "hardWork:lumber",
+        "lumber"
+      ],
+      "commands": [
+        {
+          "type": "newLife"
+        }
+      ],
+      "result": "+3 starting Strength and +3 starting Endurance persist"
+    }
+  ],
+  "invariants": {
+    "hardWorkConditions": [
+      {
+        "kind": "careerCounter",
+        "career": "lumber",
+        "counter": "completed_shifts",
+        "op": "gte",
+        "value": 50
+      }
+    ],
+    "hardWorkRewardId": "hardWork:lumber",
+    "activityContinuationBoundary": "activityResult",
+    "capabilityFactInjectionPassesPA17": false
+  }
+}
