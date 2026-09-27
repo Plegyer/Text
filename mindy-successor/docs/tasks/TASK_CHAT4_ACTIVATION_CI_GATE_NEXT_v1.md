@@ -1220,3 +1220,20 @@ For each list:
 Do not rank aesthetics or reopen locked mechanics.
 
 Continue items 68–76 sequentially without waiting for Lead review.
+
+
+## Queue item 77 — test-only PR validation fallback plan
+
+Create NEW file only:
+- `docs/qa-prep/TEST_ONLY_PR_VALIDATION_FALLBACK_PLAN_v1.md`
+
+For a test-only PR such as #29, define acceptable validation routes when GitHub Actions is unavailable:
+- exact-head local/full check;
+- exact-head targeted test + full existing suite;
+- independent environment run;
+- why code review alone is or is not sufficient;
+- evidence that must be recorded in Git.
+
+Do not claim any route has been executed. Keep production runtime/data PRs under stricter evidence rules.
+
+Continue items 69–77 sequentially without waiting for Lead review.
