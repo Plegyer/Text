@@ -3379,3 +3379,101 @@ Consolidate items 232–242:
 - next work only after Lead review.
 
 Continue items 232–243 sequentially without waiting for Lead review.
+
+
+## Queue item 244 — animation source backlog after GIF-export blocker v1
+Create NEW file only:
+- `docs/presentation-prep/ANIMATION_SOURCE_BACKLOG_AFTER_EXPORT_BLOCKER_V1.md`
+
+Prioritize 8–12 current semantic presentation identities for project-owned frame-source authoring while GIF export remains blocked.
+Current shipped identities only; no Product-open surfaces.
+
+## Queue item 245 — Lumber spring second frame sequence v1
+Create NEW original SVG frame sources only under:
+- `prior-work/astra/prototype-m3.2/assets/presentation-frames/`
+
+Create a second distinct 4-frame loop source for:
+- `job/lumber/shift/spring/default`.
+
+No GIF claim.
+
+## Queue item 246 — Lumber spring third frame sequence v1
+Create NEW original SVG frame sources only under the same directory.
+
+Create a third distinct 4-frame loop source for:
+- `job/lumber/shift/spring/default`.
+
+Together with existing sequence A this should make three compatible source sequences ready for future export.
+
+## Queue item 247 — Guard summer frame sequence v1
+Create NEW original SVG frame sources only for:
+- `job/guard/shift/summer/default`.
+
+Use current project-owned seasonal static art as source style.
+
+## Queue item 248 — Tavern autumn frame sequence v1
+Create NEW original SVG frame sources only for:
+- `job/tavern/shift/autumn/default`.
+
+## Queue item 249 — School literacy lesson frame sequence v1
+Create NEW original SVG frame sources only for:
+- `school/literacy-and-numbers/lesson/default`.
+
+Do not alter School mechanics or teacher routing.
+
+## Queue item 250 — poverty helpful-summer frame sequence v1
+Create NEW original SVG frame sources only for:
+- `location/town/event/poverty-street-production-helpful-summer/default`.
+
+Ordinary poverty only; Secret Debt excluded.
+
+## Queue item 251 — Forest success-return frame sequence v1
+Create NEW original SVG frame sources only for:
+- `activity/forest/return/success`.
+
+Do not imply new route/challenge mechanics.
+
+## Queue item 252 — Foreman Night frame sequence v1
+Create NEW original SVG frame sources only for:
+- `relationship/lumber-foreman/lumber-night-foreman-professional/default`.
+
+No new relationship stage or Night mechanics.
+
+## Queue item 253 — expanded frame-source validation regression v2
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/project-owned-animation-frames-v2.test.ts`
+
+Validate all frame sequences from items 245–252 plus prior sequence A:
+- exact current semantic IDs;
+- frame order/count;
+- consistent dimensions/viewBox per sequence;
+- no external URLs/scripts;
+- no gameplay/reward/RNG/Save metadata;
+- project-owned only.
+
+## Queue item 254 — animation export-ready source manifest v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/project-owned-animation-source-manifest-v1.json`
+
+List every validated frame sequence with:
+- semantic presentationId;
+- sequence key;
+- ordered frame paths;
+- target loop duration;
+- future candidate key;
+- static fallback reference.
+
+No GIF paths unless actual GIFs exist.
+
+## Queue item 255 — animation-source handoff v2
+Create NEW file only:
+- `docs/presentation-prep/PROJECT_OWNED_ANIMATION_SOURCE_HANDOFF_V2.md`
+
+Consolidate items 244–254:
+- exact source sequences ready;
+- which semantic identity already has 3 compatible source sequences;
+- exact remaining blocker to real GIF export;
+- selective-copy files;
+- no production animation claim.
+
+Continue items 244–255 sequentially without waiting for Lead review.
