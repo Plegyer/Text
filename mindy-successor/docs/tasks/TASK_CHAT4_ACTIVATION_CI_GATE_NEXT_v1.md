@@ -687,3 +687,111 @@ Consolidate Chat 4 after PR26 into:
 Name exact files and keep Product decisions neutral.
 
 Continue items 43–48 sequentially without waiting for Lead review.
+
+
+## Queue item 49 — full product-scope preservation audit
+
+Create NEW file only:
+- `docs/qa-prep/FULL_PRODUCT_SCOPE_PRESERVATION_AUDIT_v1.md`
+
+Audit authoritative docs and verify the live project still explicitly preserves:
+- 10 ordinary careers;
+- Palace 10/10 Hard Work unlock;
+- ordinary poverty/housing;
+- Secret Debt/Slave hidden career;
+- School;
+- typed relationships;
+- Night;
+- items/capabilities;
+- expedition Activity;
+- endings/Meta;
+- GIF-first central presentation.
+
+Flag any coordination/handoff doc that accidentally narrows the project to Lumber-only.
+
+## Queue item 50 — starter-trio readiness matrix
+
+Create NEW file only:
+- `docs/qa-prep/STARTER_TRIO_READINESS_MATRIX_v1.md`
+
+Compare Lumber, Satyr Maid and Undead Farm across:
+- repeatable shift;
+- seasonal variants;
+- career state machine;
+- relationship;
+- School/item/Activity hooks;
+- Night;
+- endings;
+- presentation;
+- save/reload;
+- content depth.
+
+Classify evidence without inventing missing implementation.
+
+## Queue item 51 — remaining-seven careers readiness matrix
+
+Create NEW file only:
+- `docs/qa-prep/REMAINING_SEVEN_CAREERS_READINESS_MATRIX_v1.md`
+
+Audit Tavern, Hunter, Guard, Merchant, Artist/Geisha, Assassin and Prostitute from design authority to production readiness.
+
+For each identify:
+- locked structure;
+- existing draft depth;
+- missing implementation package;
+- missing authoring;
+- cross-system dependencies;
+- presentation readiness.
+
+No scoring percentages.
+
+## Queue item 52 — poverty/Secret Debt QA contract map
+
+Create NEW file only:
+- `docs/qa-prep/POVERTY_SECRET_DEBT_QA_CONTRACT_MAP_v1.md`
+
+Define future QA coverage needed for:
+- zero-money anti-softlock;
+- street sleep continuation;
+- one-time lender encounter;
+- accept/refuse persistence;
+- delayed activation;
+- ordinary-job blocking;
+- forced Night obligation;
+- three outcome families;
+- Palace prerequisite exclusion.
+
+Keep OPEN balance values parameterized.
+
+## Queue item 53 — GIF-first full-game QA guardrails
+
+Create NEW file only:
+- `docs/qa-prep/GIF_FIRST_FULL_GAME_QA_GUARDRAILS_v1.md`
+
+Extend current presentation invariants to full-game production:
+- GIF remains presentation only;
+- mechanics never wait for GIF;
+- fallback is non-fatal;
+- animation-off is presentation-only;
+- semantic identity survives replacement;
+- no frame/time in saves;
+- reused GIFs cannot merge gameplay identities.
+
+Cover careers, poverty, School, Night, Activity and endings.
+
+## Queue item 54 — next-phase Lead QA handoff v5
+
+Create NEW file only:
+- `docs/qa-prep/NEXT_PHASE_LEAD_QA_HANDOFF_v5.md`
+
+Summarize items 49–53 plus current 221/221 technical floor into:
+- TECHNICAL_GREEN;
+- FULL_SCOPE_PRESERVED;
+- PRODUCTION_PACKAGES_NEEDED;
+- HUMAN_DECISIONS;
+- CONTENT_DEPTH;
+- FUTURE_QA.
+
+Do not reopen green runtime contracts.
+
+Continue items 49–54 sequentially without waiting for Lead review.
