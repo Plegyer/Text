@@ -478,3 +478,38 @@ Lead topped each current branch from six to nine tasks:
   Added: School teacher/lesson variant template, career-hook validation checklist, School implementation-package boundary.
 
 Lead review/integration continues asynchronously. One file = one active owner remains mandatory.
+
+
+## Production-authority integration merged — PR #28
+
+Merged PR #28:
+`fb866bc95c3b4998693c48b66a21b8a3f8d900f8`
+
+PR #28 is docs-only and integrates current verified post-RC subsystem authorities from worker branches into main:
+- Presentation content-depth handoff v6;
+- Presentation human asset decision packet;
+- Lumber final Product handoff v7;
+- Forest authoring-ready completeness v2;
+- QA closeout pack v4;
+- School Product-authoring handoff v6;
+- School management-result decision schema;
+- School Arcana/Forest decision schema;
+- authority-index links.
+
+No production runtime/content/UI changed. Technical RC remains the PR #27 floor: **221/221 PASS**.
+
+### Worker progress after nine-deep policy
+
+Git verification confirms the first item in each newly assigned production queue is complete:
+- Chat 2 item 61 — 2/2 expected artifacts present.
+- Chat 3 item 55 — 2/2 expected artifacts present.
+- Chat 4 item 49 — 1/1 expected artifact present.
+- Chat 5 item 49 — 2/2 expected artifacts present.
+
+Lead immediately topped every queue back to nine outstanding tasks:
+- Chat 2: **62–70**, top-up commit `ad33aa2ca5eaf844eb8abe1a0a9de5eedda56536`.
+- Chat 3: **56–64**, top-up commit `b35ded8d812ed0a744344d0bbe2e964f1d7a6ed6`.
+- Chat 4: **50–58**, top-up commit `1c1fcaf99600f8a60dfd6fdad39822643b9e855f`.
+- Chat 5: **50–58**, top-up commit `1cca3df8e376af8cd6319ab5c38e27ea3147feb9`.
+
+Queue depth target remains nine. Lead review/integration continues asynchronously.
