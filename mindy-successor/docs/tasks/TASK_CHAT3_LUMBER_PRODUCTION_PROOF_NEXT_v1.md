@@ -1309,3 +1309,23 @@ For each decision give:
 Do not recommend or select answers.
 
 Continue items 70–78 sequentially without waiting for Lead review.
+
+
+## Queue item 79 — poverty post-decision implementation map
+
+Create NEW file only:
+- `docs/poverty-prep/POVERTY_POST_DECISION_IMPLEMENTATION_MAP_v1.md`
+
+Assume the human decision packet is later answered. Map the immediate implementation sequence for:
+1. ordinary poverty content activation;
+2. lender event;
+3. delayed debt persistence;
+4. bound-career availability gating;
+5. forced Night;
+6. three outcomes;
+7. presentation/GIF follow-up;
+8. acceptance/regression.
+
+For each step name expected production file domains, runtime seam, tests, and dependencies. Do not pre-fill unanswered decisions.
+
+Continue items 71–79 sequentially without waiting for Lead review.
