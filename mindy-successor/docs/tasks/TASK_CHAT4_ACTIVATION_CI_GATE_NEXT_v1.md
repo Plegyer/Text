@@ -913,3 +913,21 @@ Define the evidence block every future Lead integration PR should record:
 Do not claim evidence that was not actually run.
 
 Continue items 52–60 sequentially without waiting for Lead review.
+
+
+## Queue item 61 — poverty production false-green sentinel plan
+
+Create NEW file only:
+- `docs/qa-prep/POVERTY_PRODUCTION_FALSE_GREEN_SENTINEL_PLAN_v1.md`
+
+Define future QA sentinels that prevent:
+- existing lodging primitives being misreported as full authored poverty content;
+- fixture-only lender state being counted as reachable Secret Debt;
+- guessed lender chance/debt values becoming Product truth;
+- a blocked ordinary job losing its saved progression;
+- Secret Debt accidentally counting toward Palace 10/10;
+- media presence being mistaken for gameplay implementation.
+
+No production code changes.
+
+Continue items 53–61 sequentially without waiting for Lead review.
