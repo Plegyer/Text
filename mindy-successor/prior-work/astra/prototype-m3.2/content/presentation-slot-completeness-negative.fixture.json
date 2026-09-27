@@ -1,0 +1,173 @@
+{
+  "version": 1,
+  "kind": "presentation-slot-completeness-negative",
+  "currentProductionStatus": {
+    "requiredIdentityGaps": 0,
+    "rcBlockingPresentationGaps": 0
+  },
+  "classifications": [
+    "BLOCKING_IDENTITY_GAP",
+    "SAFE_STATIC_FALLBACK",
+    "SAFE_TEXT_FALLBACK",
+    "FUTURE_ASSET_ONLY"
+  ],
+  "required": [
+    {
+      "surface": "Lumber",
+      "presentationId": "job/lumber/result/default",
+      "current": "PRESENT",
+      "fallbackAsset": "assets/stage-lumber.svg"
+    },
+    {
+      "surface": "Foreman",
+      "presentationId": "relationship/lumber-foreman/lumber-foreman-notice/default",
+      "current": "PRESENT",
+      "fallbackAsset": "assets/stage-lumber.svg"
+    },
+    {
+      "surface": "School paid lesson",
+      "presentationId": "school/arcana/lesson/default",
+      "current": "PRESENT",
+      "fallbackAsset": "assets/stage-school.svg"
+    },
+    {
+      "surface": "School blocking scene",
+      "presentationId": "location/town/event/base-school/lesson",
+      "current": "PRESENT",
+      "fallbackAsset": "assets/workshop.svg"
+    },
+    {
+      "surface": "Night",
+      "presentationId": "location/town/default",
+      "current": "PRESENT",
+      "fallbackAsset": "assets/stage-town.svg"
+    },
+    {
+      "surface": "Forest route",
+      "presentationId": "activity/forest/route/default",
+      "current": "PRESENT",
+      "fallbackAsset": "assets/stage-forest.svg"
+    },
+    {
+      "surface": "Forest result",
+      "presentationId": "activity/forest/return/success",
+      "current": "PRESENT",
+      "fallbackAsset": "assets/stage-forest.svg"
+    },
+    {
+      "surface": "Ending",
+      "presentationId": "ending/lumber/hard-work",
+      "current": "PRESENT",
+      "fallbackAsset": "assets/stage-town.svg"
+    },
+    {
+      "surface": "New Run",
+      "presentationId": "location/town/default",
+      "current": "PRESENT",
+      "fallbackAsset": "assets/stage-town.svg"
+    }
+  ],
+  "cases": [
+    {
+      "caseId": "missing-lumber-result-id",
+      "surface": "Lumber",
+      "mutation": {
+        "removePresentationId": "job/lumber/result/default"
+      },
+      "fallbackAvailable": true,
+      "textAvailable": true,
+      "expected": "BLOCKING_IDENTITY_GAP"
+    },
+    {
+      "caseId": "missing-foreman-direct-media",
+      "surface": "Foreman",
+      "mutation": {
+        "removeDirectMedia": true
+      },
+      "fallbackAvailable": true,
+      "textAvailable": true,
+      "expected": "SAFE_STATIC_FALLBACK"
+    },
+    {
+      "caseId": "missing-school-paid-static",
+      "surface": "School paid lesson",
+      "mutation": {
+        "removeDirectMedia": true
+      },
+      "fallbackAvailable": true,
+      "textAvailable": true,
+      "expected": "SAFE_STATIC_FALLBACK"
+    },
+    {
+      "caseId": "missing-school-blocking-scene-id",
+      "surface": "School blocking scene",
+      "mutation": {
+        "removePresentationId": "location/town/event/base-school/lesson"
+      },
+      "fallbackAvailable": true,
+      "textAvailable": true,
+      "expected": "BLOCKING_IDENTITY_GAP"
+    },
+    {
+      "caseId": "night-static-unavailable-text-present",
+      "surface": "Night",
+      "mutation": {
+        "removeDirectMedia": true,
+        "removeFallbackMedia": true
+      },
+      "fallbackAvailable": false,
+      "textAvailable": true,
+      "expected": "SAFE_TEXT_FALLBACK"
+    },
+    {
+      "caseId": "missing-forest-route-id",
+      "surface": "Forest route",
+      "mutation": {
+        "removePresentationId": "activity/forest/route/default"
+      },
+      "fallbackAvailable": true,
+      "textAvailable": true,
+      "expected": "BLOCKING_IDENTITY_GAP"
+    },
+    {
+      "caseId": "missing-forest-success-static",
+      "surface": "Forest result",
+      "mutation": {
+        "removeDirectMedia": true
+      },
+      "fallbackAvailable": true,
+      "textAvailable": true,
+      "expected": "SAFE_STATIC_FALLBACK"
+    },
+    {
+      "caseId": "missing-ending-dedicated-media",
+      "surface": "Ending",
+      "mutation": {
+        "removeDirectMedia": true
+      },
+      "fallbackAvailable": true,
+      "textAvailable": true,
+      "expected": "SAFE_STATIC_FALLBACK"
+    },
+    {
+      "caseId": "missing-new-run-location-id",
+      "surface": "New Run",
+      "mutation": {
+        "removePresentationId": "location/town/default"
+      },
+      "fallbackAvailable": false,
+      "textAvailable": true,
+      "expected": "BLOCKING_IDENTITY_GAP"
+    },
+    {
+      "caseId": "missing-optional-lumber-gif",
+      "surface": "Lumber",
+      "mutation": {
+        "removeFutureAsset": "media/lumber/shift-spring.gif"
+      },
+      "fallbackAvailable": true,
+      "textAvailable": true,
+      "expected": "FUTURE_ASSET_ONLY"
+    }
+  ]
+}
