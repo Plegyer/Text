@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "id": "forest.route-locale-invariance.v1",
+  "status": "EXPECTED_STATE_PRESENTATION_ONLY",
+  "baseMain": "4270bbc0d4d1117e1474a5ab9d9380dc350b0d1c",
+  "routes": [
+    {
+      "routeId": "forest.route.logging-road",
+      "routeState": "logging-road",
+      "authoritativeConditions": [],
+      "expectedPresentationId": "activity/forest/route/logging-road",
+      "expectedLocalePresentation": {
+        "ru": {
+          "textKey": "forestRouteScene.forest.route.logging-road.wheel-ruts.text",
+          "text": "Лесовозная дорога шире соседних троп. Свежие колеи режут грязь, а обрубленные ветви сложены по краям. Здесь трудно потерять путь: люди уже расчистили лес под дорогу.",
+          "altKey": "presentation.activity.forest.route.logging-road.alt",
+          "alt": "Лесовозная дорога с колеями и следами недавних работ."
+        },
+        "en": {
+          "textKey": "forestRouteScene.forest.route.logging-road.wheel-ruts.text",
+          "text": "The logging road is wider than the nearby trails. Fresh ruts cut through the mud, and trimmed branches lie along the edges. It is hard to lose the route here; people have already cleared a road through the forest.",
+          "altKey": "presentation.activity.forest.route.logging-road.alt",
+          "alt": "Logging road with wheel ruts and signs of recent work."
+        }
+      },
+      "expectedUnchangedState": {
+        "saveFields": [
+          "run.flow.activity.activityId",
+          "run.flow.activity.internalState.routeId",
+          "run.flow.activity.internalState.progress",
+          "run.flow.activity.internalState.endurance",
+          "run.flow.activity.internalState.resolvedOptionIds",
+          "run.flow.activity.checkpoint",
+          "run.rng",
+          "run.flow.activity.rngState"
+        ],
+        "activityId": "lumber.forest",
+        "routeIdValue": "logging-road",
+        "selectedOptionId": "forest.route.logging-road",
+        "presentationWritesGameplaySave": false,
+        "presentationAdvancesGlobalRng": false,
+        "presentationAdvancesActivityRng": false
+      },
+      "resultIdentity": {
+        "success": "lumber.forest.success",
+        "escape": "lumber.forest.escape",
+        "failure": "lumber.forest.failure"
+      }
+    },
+    {
+      "routeId": "forest.route.old-boundary",
+      "routeState": "old-boundary",
+      "authoritativeConditions": [
+        {
+          "kind": "itemCapability",
+          "capability": "enter_old_boundary",
+          "present": true
+        }
+      ],
+      "expectedPresentationId": "activity/forest/route/old-boundary",
+      "expectedLocalePresentation": {
+        "ru": {
+          "textKey": "forestRouteScene.forest.route.old-boundary.stones.text",
+          "text": "Первый межевой камень почти целиком ушёл во мох. Стоит заметить один — и следующий уже легче отличить от обычного валуна. Камни складываются в линию, не совпадающую с новой лесовозной дорогой.",
+          "altKey": "presentation.activity.forest.route.old-boundary.alt",
+          "alt": "Старая межевая линия с замшелыми камнями и выветренными метками."
+        },
+        "en": {
+          "textKey": "forestRouteScene.forest.route.old-boundary.stones.text",
+          "text": "The first boundary stone is almost lost beneath the moss. Once you notice one, the next is easier to distinguish from ordinary rock. The stones form a line that does not follow the newer logging road.",
+          "altKey": "presentation.activity.forest.route.old-boundary.alt",
+          "alt": "Old boundary line with moss-covered stones and weathered marks."
+        }
+      },
+      "expectedUnchangedState": {
+        "saveFields": [
+          "run.flow.activity.activityId",
+          "run.flow.activity.internalState.routeId",
+          "run.flow.activity.internalState.progress",
+          "run.flow.activity.internalState.endurance",
+          "run.flow.activity.internalState.resolvedOptionIds",
+          "run.flow.activity.checkpoint",
+          "run.rng",
+          "run.flow.activity.rngState"
+        ],
+        "activityId": "lumber.forest",
+        "routeIdValue": "old-boundary",
+        "selectedOptionId": "forest.route.old-boundary",
+        "presentationWritesGameplaySave": false,
+        "presentationAdvancesGlobalRng": false,
+        "presentationAdvancesActivityRng": false
+      },
+      "resultIdentity": {
+        "success": "lumber.forest.success",
+        "escape": "lumber.forest.escape",
+        "failure": "lumber.forest.failure"
+      }
+    }
+  ],
+  "localeInvariantRules": [
+    "RU and EN use the same route gameplay ID.",
+    "RU and EN use the same route state.",
+    "RU and EN use the same semantic presentationId.",
+    "Only localized presentation strings differ.",
+    "Locale switching does not change Save or gameplay RNG.",
+    "Result identity is unchanged by locale."
+  ],
+  "invariants": {
+    "routeCount": 2,
+    "exactCurrentRouteIdsOnly": true,
+    "localeNeutralPresentationIds": true,
+    "changesGameplay": false,
+    "changesRng": false,
+    "changesSaveState": false,
+    "changesResults": false,
+    "changesOldBoundaryTokenSemantics": false,
+    "createsHunterRoute": false
+  }
+}
