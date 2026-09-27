@@ -1073,3 +1073,19 @@ Map School authoring dependencies with:
 For each distinguish current explicit dependency, optional hook, Product decision required, content authoring required, and no-dependency intended. Do not invent prerequisites.
 
 Continue items 61–69 sequentially without waiting for Lead review.
+
+
+## Queue item 70 — School ending/meta interaction inventory
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_ENDING_META_INTERACTION_INVENTORY_v1.md`
+
+Inventory where School is intended to contribute to:
+- career endings;
+- relationship endings;
+- education-specific endings if still in scope;
+- Palace/meta routes.
+
+For each classify current authority, authored content needed, public-result boundary, and whether Meta reward details remain open. Explicitly preserve Lumber Hard Work independence from School.
+
+Continue items 62–70 sequentially without waiting for Lead review.
