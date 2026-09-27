@@ -478,3 +478,31 @@ test('renderer: Foreman relationship and voluntary Night scene localize RU EN wi
   assert.deepEqual(errors,[]);
  }finally{dom.window.close();}
 });
+
+
+test('renderer: project-owned static fallback keeps asset identity across RU EN locale switch',async()=>{
+ const s=started();
+ const {w,dom,errors}=boot(JSON.stringify(s));try{
+  await wait(()=>!!w.document.querySelector('[data-panel="work"]'));
+  w.document.querySelector('[data-panel="work"]').click();
+  w.document.querySelector('[data-action="guard.shift"]').click();
+  await wait(()=>!!w.document.querySelector('.media-window img')&&/career-guard-result\.svg$/.test(w.document.querySelector('.media-window img').getAttribute('src')??''));
+
+  const imgRu=w.document.querySelector('.media-window img');
+  const src=imgRu.getAttribute('src');
+  assert.match(src,/assets\/presentation\/career-guard-result\.svg$/);
+  assert.match(imgRu.getAttribute('alt'),/Стражница на городском посту/);
+  const before=w.localStorage.getItem('portal-life.v1');
+
+  w.document.querySelector('[data-panel="menu"]').click();
+  w.document.querySelector('#language-toggle').click();
+  await wait(()=>w.document.documentElement.lang==='en');
+  assert.equal(w.localStorage.getItem('portal-life.v1'),before);
+  w.document.querySelector('#close').click();
+
+  const imgEn=w.document.querySelector('.media-window img');
+  assert.equal(imgEn.getAttribute('src'),src);
+  assert.match(imgEn.getAttribute('alt'),/A guard at a city watch post/);
+  assert.deepEqual(errors,[]);
+ }finally{dom.window.close();}
+});
