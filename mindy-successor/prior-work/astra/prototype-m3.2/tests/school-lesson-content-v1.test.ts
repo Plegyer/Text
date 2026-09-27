@@ -1,10 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {loadCatalog} from '../src/core/content.ts';
 import {SCHOOL_COURSES} from '../src/core/school.ts';
 import {packSchema} from '../src/core/schema.ts';
-import {definitions} from './helpers.ts';
+import {catalog} from './helpers.ts';
 
 const production=JSON.parse(
   readFileSync('content/packs/school-lesson-content-v1.json','utf8')
@@ -85,8 +84,7 @@ test('authored lesson content contains no ordinary Lust gain',()=>{
 });
 
 test('reachable generic after-School presentation fallback resolves in production catalog',()=>{
-  const cat=loadCatalog(definitions,[production]);
-  const mediaIds=new Set(cat.media.map(media=>media.id));
+  const mediaIds=new Set(catalog.media.map(media=>media.id));
   for(const event of production.events){
     for(const variant of event.variants){
       for(const mediaId of variant.media)assert.equal(mediaIds.has(mediaId),true,event.id+':'+mediaId);
