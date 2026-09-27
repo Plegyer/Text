@@ -235,3 +235,86 @@ Consolidate items 1–11 into:
 Do not manage or assign work to other chats.
 
 Continue items 1–12 sequentially without waiting for Lead review.
+
+
+## Queue item 13 — Foreman root-localization reconciliation v2
+Create NEW file only:
+- `docs/relationship-prep/FOREMAN_ROOT_LOCALIZATION_RECONCILIATION_v2.md`
+
+Compare item-3 Foreman RU+EN keys against current main localization and classify ADDITIVE / IDENTICAL / CONFLICT / SHARED_UI_REQUIRED.
+Do not edit root localization.
+
+## Queue item 14 — Foreman Night-choice localization acceptance fixture v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/foreman-night-choice-localization-acceptance-v1.fixture.json`
+
+Describe exact expected RU/EN label behavior for `lumber.foreman.night`, locale-neutral choice ID, unchanged NightFlow state and unchanged Save.
+Fixture only; shared UI remains Lead-owned.
+
+## Queue item 15 — Foreman professional Night repetition bank v2
+Create NEW file only:
+- `docs/relationship-prep/FOREMAN_PROFESSIONAL_NIGHT_REPETITION_BANK_v2.md`
+
+Author 8–12 RU+EN professional/effect-free conversation variants under the existing Foreman route.
+No new thresholds/stages/rewards.
+
+## Queue item 16 — Foreman seasonal Night presentation bank v1
+Create NEW file only:
+- `docs/relationship-prep/FOREMAN_SEASONAL_NIGHT_PRESENTATION_BANK_v1.md`
+
+RU+EN spring/summer/autumn/winter presentation variants for the existing professional Night identity.
+Presentation only; season must not change mechanics.
+
+## Queue item 17 — relationship housing presentation decision packet v1
+Create NEW file only:
+- `docs/relationship-prep/RELATIONSHIP_HOUSING_PRESENTATION_DECISION_PACKET_v1.md`
+
+Compare normal / cheap / street presentation variants for Foreman Night without selecting a new Product rule.
+Separate SAFE_PRESENTATION_ONLY from PRODUCT_DECISION_REQUIRED.
+
+## Queue item 18 — ordinary relationship event authoring template v1
+Create NEW file only:
+- `docs/relationship-prep/ORDINARY_RELATIONSHIP_EVENT_AUTHORING_TEMPLATE_v1.md`
+
+Define reusable bilingual authoring fields, typed hook requirements, refusal/professional path, presentationId, media fallback, and Product-open markers.
+
+## Queue item 19 — ordinary relationship Night authoring template v1
+Create NEW file only:
+- `docs/relationship-prep/ORDINARY_RELATIONSHIP_NIGHT_AUTHORING_TEMPLATE_v1.md`
+
+Template for voluntary Night content: Night slot ownership, housing context, explicit next-day modifier field, RU+EN copy, semantic media identity, save-safe trigger assumptions.
+
+## Queue item 20 — relationship public-hook request template v1
+Create NEW file only:
+- `docs/relationship-prep/RELATIONSHIP_PUBLIC_HOOK_REQUEST_TEMPLATE_v1.md`
+
+Define how relationship content requests a School/world/item/Activity public fact/result without reading private subsystem state or inventing identities.
+
+## Queue item 21 — relationship approved-capability scene bank v1
+Create NEW file only:
+- `docs/relationship-prep/RELATIONSHIP_APPROVED_CAPABILITY_SCENE_BANK_v1.md`
+
+Author RU+EN effect-free acknowledgements using only already-approved current capabilities/facts.
+No new capability IDs.
+
+## Queue item 22 — relationship Activity-return scene bank v1
+Create NEW file only:
+- `docs/relationship-prep/RELATIONSHIP_ACTIVITY_RETURN_SCENE_BANK_v1.md`
+
+Author RU+EN 0-Energy reaction patterns that require exact authoritative `activityResult` identities.
+Forest success may be used only with the existing exact result; do not invent new Activity results.
+
+## Queue item 23 — Foreman production presentation replacement packet v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/relationship-foreman-presentation-replacement-v1.fixture.json`
+
+Prepare an exact presentation-only replacement packet for currently shipped Foreman milestone/Night event text, media alt/caption keys, and safe variant prose.
+No duplicate event or gameplay mechanics.
+
+## Queue item 24 — Relationships/Night selective integration handoff v2
+Create NEW file only:
+- `docs/relationship-prep/RELATIONSHIPS_NIGHT_INTEGRATION_HANDOFF_v2.md`
+
+Consolidate items 13–23 into SAFE_TO_INTEGRATE_NOW / PRESENTATION_ONLY / CONTENT_DRAFT / PRODUCT_BLOCKED / SHARED_UI_REQUIRED, with exact Lead selective-copy list.
+
+Continue 13–24 sequentially without waiting for Lead review.
