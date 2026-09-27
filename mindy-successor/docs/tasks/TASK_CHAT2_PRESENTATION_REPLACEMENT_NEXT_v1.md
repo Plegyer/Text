@@ -1530,3 +1530,27 @@ Prepare media-production shot-list entries for:
 Mark CONTENT_AUTHORING_FIRST or PRODUCT_DECISION_REQUIRED where final semantic identity is not ready. Keep GIF production independent from mechanics.
 
 Continue items 77–85 sequentially without waiting for Lead review.
+
+
+## Queue item 86 — media-ready semantic manifest draft
+
+Create NEW file only:
+- `docs/presentation-prep/MEDIA_READY_SEMANTIC_MANIFEST_DRAFT_v1.md`
+
+Build a concise manifest format that can later be populated directly from approved authored content for GIF/static production.
+
+Required columns/fields:
+- subsystem;
+- gameplay/content ID;
+- semantic `presentationId`;
+- media readiness status;
+- reuse group;
+- dedicated vs reusable asset;
+- static fallback;
+- text fallback;
+- source authority;
+- blocking Product/content dependency.
+
+Include representative rows only where identity is already authoritative (for example shipped Lumber/School surfaces). Mark all non-authoritative rows OPEN rather than inventing IDs.
+
+Continue items 78–86 sequentially without waiting for Lead review.
