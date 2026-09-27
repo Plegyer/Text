@@ -790,3 +790,55 @@ Consolidate items 49–53 with current School technical baseline:
 - next production-ready work after decisions.
 
 Continue items 49–54 sequentially without waiting for Lead review.
+
+
+## Queue item 55 — School teacher/lesson variant authoring template
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_TEACHER_LESSON_VARIANT_TEMPLATE_v1.md`
+
+Define a reusable authored-content unit for teacher-led School variants:
+- track/course;
+- teacher identity placeholder;
+- lesson/milestone context;
+- text/media variants;
+- relationship hook allowance;
+- public-result publication if approved;
+- semantic presentationId;
+- GIF/static/text fallback;
+- acceptance checks.
+
+Do not invent canonical teachers or thresholds.
+
+## Queue item 56 — School career-hook validation checklist
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_CAREER_HOOK_VALIDATION_CHECKLIST_v1.md`
+
+For future School-to-career authored hooks, require:
+- public result owned by School;
+- downstream career reads only the public boundary;
+- no private School counter leakage;
+- save/reload idempotency;
+- no double tuition/Energy/progress;
+- no accidental Hard Work prerequisite;
+- presentation identity stability.
+
+Make it reusable across all careers.
+
+## Queue item 57 — School implementation package boundary v1
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_IMPLEMENTATION_PACKAGE_BOUNDARY_v1.md`
+
+Define the smallest future implementation/content packages for:
+- teacher identity/content;
+- management/accounting public result;
+- Arcana/Forest public result if retained;
+- milestone/certificate/project/exam content;
+- cross-career integration;
+- presentation assets.
+
+Separate human decisions from content authoring and runtime changes.
+
+Continue items 49–57 sequentially without waiting for Lead review.
