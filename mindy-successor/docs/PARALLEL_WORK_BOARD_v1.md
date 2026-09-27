@@ -513,3 +513,39 @@ Lead immediately topped every queue back to nine outstanding tasks:
 - Chat 5: **50–58**, top-up commit `1cca3df8e376af8cd6319ab5c38e27ea3147feb9`.
 
 Queue depth target remains nine. Lead review/integration continues asynchronously.
+
+
+## Full-game production wave 1 merged — PR #30
+
+Merged PR #30:
+`dbe78efdb9cd5ed384b66f7536bb5145702779c7`
+
+Docs-only integration of the first completed post-RC full-game production-authoring wave:
+- Presentation full-roster GIF coverage + production continuity;
+- ordinary poverty implementation readiness + poverty/Secret Debt production handoff;
+- full-product scope preservation + next-phase QA handoff;
+- eight-track School teacher authoring matrix + School production continuity.
+
+No production runtime/content/UI changed. Technical RC remains PR #27 / **221/221 PASS**.
+
+Lead PR #29 remains OPEN:
+- test-only poverty anti-softlock production contract;
+- mergeable;
+- no automated workflow run available through the connected GitHub integration;
+- awaiting independent Chat 4 review task before merge.
+
+### Current nine-deep queues after further verified progress
+
+Verified complete after wave-1:
+- Chat 2 item 67;
+- Chat 3 item 61;
+- Chat 4 item 55;
+- Chat 5 item 55.
+
+Lead replenished queues back to nine:
+- Chat 2: **68–76** on `chat2/presentation-replacement-next`.
+- Chat 3: **62–70** on `chat3/lumber-production-proof-next`.
+- Chat 4: **56–64** on `chat4/activation-ci-gate-next`.
+- Chat 5: **56–64** on `chat5/school-pa-gate-next`.
+
+One file = one active owner. Full-game scope remains mandatory; Lumber is a reference slice, not the whole product.
