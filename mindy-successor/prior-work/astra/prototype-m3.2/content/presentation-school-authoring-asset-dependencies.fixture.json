@@ -1,0 +1,146 @@
+{
+  "version": 1,
+  "kind": "presentation-school-authoring-asset-dependencies",
+  "policy": {
+    "noTeacherIdentityInvented": true,
+    "noThresholdInvented": true,
+    "noProviderInvented": true,
+    "noCertificateProjectExamInvented": true,
+    "paidLessonSemanticIdsAlreadyShipped": true,
+    "blockingSceneSemanticIdAlreadyShipped": true
+  },
+  "rows": [
+    {
+      "decision": "teacher-identities",
+      "affectedPresentationIds": [
+        "school/literacy-and-numbers/lesson/default",
+        "school/arcana/lesson/default",
+        "school/rhetoric-and-social/lesson/default",
+        "school/etiquette-and-presentation/lesson/default",
+        "school/field-craft/lesson/default",
+        "school/physical-training/lesson/default",
+        "school/arts-and-performance/lesson/default",
+        "school/body-confidence/lesson/default"
+      ],
+      "contentStatus": "OPEN_HUMAN_AUTHORING",
+      "presentationStatus": "SEMANTIC_IDS_SHIPPED",
+      "currentFallback": "assets/stage-school.svg",
+      "assetDependency": "Teacher-specific art/content only after canonical teacher/presenter identities are chosen.",
+      "mustNotInvent": [
+        "teacher names",
+        "teacher relationships",
+        "shared-vs-per-course teacher model"
+      ]
+    },
+    {
+      "decision": "management-accounting-public-result-provider",
+      "affectedPresentationIds": [
+        "unassigned-until-provider-authored"
+      ],
+      "contentStatus": "OPEN_HUMAN_AUTHORING",
+      "presentationStatus": "CONTENT_FIRST_THEN_PRESENTATION_ID",
+      "currentFallback": "School/town static context available",
+      "assetDependency": "Final result scene/media waits for authored School-owned provider.",
+      "mustNotInvent": [
+        "provider",
+        "public fact id",
+        "milestone type",
+        "certificate/project/exam identity"
+      ]
+    },
+    {
+      "decision": "management-accounting-threshold-or-milestone",
+      "affectedPresentationIds": [
+        "unassigned-until-provider-authored"
+      ],
+      "contentStatus": "OPEN_HUMAN_AUTHORING",
+      "presentationStatus": "CONTENT_FIRST_THEN_PRESENTATION_ID",
+      "currentFallback": "School/town static context available",
+      "assetDependency": "Threshold-dependent result media cannot be final until authored condition/milestone exists.",
+      "mustNotInvent": [
+        "numeric threshold",
+        "stat threshold",
+        "exam threshold",
+        "certificate threshold"
+      ]
+    },
+    {
+      "decision": "arcana-forest-public-result-provider",
+      "affectedPresentationIds": [
+        "school/arcana/lesson/default",
+        "unassigned-public-result-until-provider-authored"
+      ],
+      "contentStatus": "OPEN_HUMAN_AUTHORING",
+      "presentationStatus": "LESSON_ID_SHIPPED_RESULT_ID_PENDING",
+      "currentFallback": "assets/stage-school.svg and Forest/town safe fallback",
+      "assetDependency": "Unique public-result visual waits for authored Arcana provider identity.",
+      "mustNotInvent": [
+        "provider",
+        "public fact id",
+        "forest clue identity",
+        "certificate/project/exam identity"
+      ]
+    },
+    {
+      "decision": "arcana-forest-threshold-or-milestone",
+      "affectedPresentationIds": [
+        "unassigned-public-result-until-provider-authored"
+      ],
+      "contentStatus": "OPEN_HUMAN_AUTHORING",
+      "presentationStatus": "CONTENT_FIRST_THEN_PRESENTATION_ID",
+      "currentFallback": "School/Forest/town static context available",
+      "assetDependency": "Milestone-specific visual work waits for authored eligibility.",
+      "mustNotInvent": [
+        "numeric threshold",
+        "stat combination",
+        "project threshold",
+        "exam threshold"
+      ]
+    },
+    {
+      "decision": "certificate-project-exam-content",
+      "affectedPresentationIds": [
+        "unassigned-until-definition-authored"
+      ],
+      "contentStatus": "OPTIONAL_SCOPE_DECISION",
+      "presentationStatus": "CONTENT_FIRST_THEN_PRESENTATION_ID",
+      "currentFallback": "Existing paid lesson and School blocking-scene presentation remain safe",
+      "assetDependency": "Only selected authored certificate/project/exam definitions should receive semantic IDs/assets.",
+      "mustNotInvent": [
+        "certificate names",
+        "project names",
+        "exam names",
+        "completion requirements"
+      ]
+    },
+    {
+      "decision": "paid-lesson-visual-depth",
+      "affectedPresentationIds": [
+        "school/literacy-and-numbers/lesson/default",
+        "school/arcana/lesson/default",
+        "school/rhetoric-and-social/lesson/default",
+        "school/etiquette-and-presentation/lesson/default",
+        "school/field-craft/lesson/default",
+        "school/physical-training/lesson/default",
+        "school/arts-and-performance/lesson/default",
+        "school/body-confidence/lesson/default"
+      ],
+      "contentStatus": "RUNTIME_AND_IDENTITY_SHIPPED",
+      "presentationStatus": "READY_OPTIONAL_POLISH",
+      "currentFallback": "assets/stage-school.svg",
+      "assetDependency": "Course-specific teacher/classroom art is optional polish unless Product explicitly requires it.",
+      "mustNotInvent": []
+    },
+    {
+      "decision": "blocking-school-scene-visual-depth",
+      "affectedPresentationIds": [
+        "location/town/event/base-school/lesson"
+      ],
+      "contentStatus": "SHIPPED",
+      "presentationStatus": "READY_OPTIONAL_POLISH",
+      "currentFallback": "assets/workshop.svg",
+      "assetDependency": "More specific School blocking-scene art is optional; current semantic identity/media are shipped.",
+      "mustNotInvent": []
+    }
+  ]
+}
