@@ -1,9 +1,9 @@
 {
   "formatVersion": 2,
   "kind": "seasonal-static-incremental-production",
-  "status": "INCREMENTAL_POST_PR47_NOT_ROOT_LOADED",
-  "currentMainBaseline": "7f27caca4e3e711799e9c1f235c4a27adbf31026",
-  "sourceManifest": "content/presentation-drafts/project-owned-seasonal-static-media-v1.json",
+  "status": "RECONCILED_ALREADY_SHIPPED_BY_PR48",
+  "postPr47Origin": true,
+  "currentMainBaseline": "4270bbc0d4d1117e1474a5ab9d9380dc350b0d1c",
   "assets": [
     {
       "key": "career-lumber-shift-spring",
@@ -19,7 +19,8 @@
         ]
       },
       "provenance": "project-authored original SVG; no external media dependency",
-      "collisionPolicy": "ADD_ONLY_ABSENT_STATIC"
+      "currentMainState": "ALREADY_SHIPPED_CURRENT_MAIN",
+      "integrationAction": "NONE"
     },
     {
       "key": "career-lumber-shift-summer",
@@ -35,7 +36,8 @@
         ]
       },
       "provenance": "project-authored original SVG; no external media dependency",
-      "collisionPolicy": "ADD_ONLY_ABSENT_STATIC"
+      "currentMainState": "ALREADY_SHIPPED_CURRENT_MAIN",
+      "integrationAction": "NONE"
     },
     {
       "key": "career-lumber-shift-autumn",
@@ -51,7 +53,8 @@
         ]
       },
       "provenance": "project-authored original SVG; no external media dependency",
-      "collisionPolicy": "ADD_ONLY_ABSENT_STATIC"
+      "currentMainState": "ALREADY_SHIPPED_CURRENT_MAIN",
+      "integrationAction": "NONE"
     },
     {
       "key": "career-lumber-shift-winter",
@@ -67,7 +70,8 @@
         ]
       },
       "provenance": "project-authored original SVG; no external media dependency",
-      "collisionPolicy": "ADD_ONLY_ABSENT_STATIC"
+      "currentMainState": "ALREADY_SHIPPED_CURRENT_MAIN",
+      "integrationAction": "NONE"
     },
     {
       "key": "career-satyr-maid-shift-spring",
@@ -83,7 +87,8 @@
         ]
       },
       "provenance": "project-authored original SVG; no external media dependency",
-      "collisionPolicy": "ADD_ONLY_ABSENT_STATIC"
+      "currentMainState": "ALREADY_SHIPPED_CURRENT_MAIN",
+      "integrationAction": "NONE"
     },
     {
       "key": "career-satyr-maid-shift-summer",
@@ -99,7 +104,8 @@
         ]
       },
       "provenance": "project-authored original SVG; no external media dependency",
-      "collisionPolicy": "ADD_ONLY_ABSENT_STATIC"
+      "currentMainState": "ALREADY_SHIPPED_CURRENT_MAIN",
+      "integrationAction": "NONE"
     },
     {
       "key": "career-satyr-maid-shift-autumn",
@@ -115,7 +121,8 @@
         ]
       },
       "provenance": "project-authored original SVG; no external media dependency",
-      "collisionPolicy": "ADD_ONLY_ABSENT_STATIC"
+      "currentMainState": "ALREADY_SHIPPED_CURRENT_MAIN",
+      "integrationAction": "NONE"
     },
     {
       "key": "career-satyr-maid-shift-winter",
@@ -131,7 +138,8 @@
         ]
       },
       "provenance": "project-authored original SVG; no external media dependency",
-      "collisionPolicy": "ADD_ONLY_ABSENT_STATIC"
+      "currentMainState": "ALREADY_SHIPPED_CURRENT_MAIN",
+      "integrationAction": "NONE"
     },
     {
       "key": "career-undead-farm-shift-spring",
@@ -147,7 +155,8 @@
         ]
       },
       "provenance": "project-authored original SVG; no external media dependency",
-      "collisionPolicy": "ADD_ONLY_ABSENT_STATIC"
+      "currentMainState": "ALREADY_SHIPPED_CURRENT_MAIN",
+      "integrationAction": "NONE"
     },
     {
       "key": "career-undead-farm-shift-summer",
@@ -163,7 +172,8 @@
         ]
       },
       "provenance": "project-authored original SVG; no external media dependency",
-      "collisionPolicy": "ADD_ONLY_ABSENT_STATIC"
+      "currentMainState": "ALREADY_SHIPPED_CURRENT_MAIN",
+      "integrationAction": "NONE"
     },
     {
       "key": "career-undead-farm-shift-autumn",
@@ -179,7 +189,8 @@
         ]
       },
       "provenance": "project-authored original SVG; no external media dependency",
-      "collisionPolicy": "ADD_ONLY_ABSENT_STATIC"
+      "currentMainState": "ALREADY_SHIPPED_CURRENT_MAIN",
+      "integrationAction": "NONE"
     },
     {
       "key": "career-undead-farm-shift-winter",
@@ -195,7 +206,8 @@
         ]
       },
       "provenance": "project-authored original SVG; no external media dependency",
-      "collisionPolicy": "ADD_ONLY_ABSENT_STATIC"
+      "currentMainState": "ALREADY_SHIPPED_CURRENT_MAIN",
+      "integrationAction": "NONE"
     },
     {
       "key": "career-tavern-shift-spring",
@@ -211,7 +223,8 @@
         ]
       },
       "provenance": "project-authored original SVG; no external media dependency",
-      "collisionPolicy": "ADD_ONLY_ABSENT_STATIC"
+      "currentMainState": "ALREADY_SHIPPED_CURRENT_MAIN",
+      "integrationAction": "NONE"
     },
     {
       "key": "career-tavern-shift-summer",
@@ -227,7 +240,8 @@
         ]
       },
       "provenance": "project-authored original SVG; no external media dependency",
-      "collisionPolicy": "ADD_ONLY_ABSENT_STATIC"
+      "currentMainState": "ALREADY_SHIPPED_CURRENT_MAIN",
+      "integrationAction": "NONE"
     },
     {
       "key": "career-tavern-shift-autumn",
@@ -243,7 +257,8 @@
         ]
       },
       "provenance": "project-authored original SVG; no external media dependency",
-      "collisionPolicy": "ADD_ONLY_ABSENT_STATIC"
+      "currentMainState": "ALREADY_SHIPPED_CURRENT_MAIN",
+      "integrationAction": "NONE"
     },
     {
       "key": "career-tavern-shift-winter",
@@ -259,7 +274,8 @@
         ]
       },
       "provenance": "project-authored original SVG; no external media dependency",
-      "collisionPolicy": "ADD_ONLY_ABSENT_STATIC"
+      "currentMainState": "ALREADY_SHIPPED_CURRENT_MAIN",
+      "integrationAction": "NONE"
     },
     {
       "key": "career-hunter-shift-spring",
@@ -275,7 +291,8 @@
         ]
       },
       "provenance": "project-authored original SVG; no external media dependency",
-      "collisionPolicy": "ADD_ONLY_ABSENT_STATIC"
+      "currentMainState": "ALREADY_SHIPPED_CURRENT_MAIN",
+      "integrationAction": "NONE"
     },
     {
       "key": "career-hunter-shift-summer",
@@ -291,7 +308,8 @@
         ]
       },
       "provenance": "project-authored original SVG; no external media dependency",
-      "collisionPolicy": "ADD_ONLY_ABSENT_STATIC"
+      "currentMainState": "ALREADY_SHIPPED_CURRENT_MAIN",
+      "integrationAction": "NONE"
     },
     {
       "key": "career-hunter-shift-autumn",
@@ -307,7 +325,8 @@
         ]
       },
       "provenance": "project-authored original SVG; no external media dependency",
-      "collisionPolicy": "ADD_ONLY_ABSENT_STATIC"
+      "currentMainState": "ALREADY_SHIPPED_CURRENT_MAIN",
+      "integrationAction": "NONE"
     },
     {
       "key": "career-hunter-shift-winter",
@@ -323,7 +342,8 @@
         ]
       },
       "provenance": "project-authored original SVG; no external media dependency",
-      "collisionPolicy": "ADD_ONLY_ABSENT_STATIC"
+      "currentMainState": "ALREADY_SHIPPED_CURRENT_MAIN",
+      "integrationAction": "NONE"
     },
     {
       "key": "career-guard-shift-spring",
@@ -339,7 +359,8 @@
         ]
       },
       "provenance": "project-authored original SVG; no external media dependency",
-      "collisionPolicy": "ADD_ONLY_ABSENT_STATIC"
+      "currentMainState": "ALREADY_SHIPPED_CURRENT_MAIN",
+      "integrationAction": "NONE"
     },
     {
       "key": "career-guard-shift-summer",
@@ -355,7 +376,8 @@
         ]
       },
       "provenance": "project-authored original SVG; no external media dependency",
-      "collisionPolicy": "ADD_ONLY_ABSENT_STATIC"
+      "currentMainState": "ALREADY_SHIPPED_CURRENT_MAIN",
+      "integrationAction": "NONE"
     },
     {
       "key": "career-guard-shift-autumn",
@@ -371,7 +393,8 @@
         ]
       },
       "provenance": "project-authored original SVG; no external media dependency",
-      "collisionPolicy": "ADD_ONLY_ABSENT_STATIC"
+      "currentMainState": "ALREADY_SHIPPED_CURRENT_MAIN",
+      "integrationAction": "NONE"
     },
     {
       "key": "career-guard-shift-winter",
@@ -387,7 +410,8 @@
         ]
       },
       "provenance": "project-authored original SVG; no external media dependency",
-      "collisionPolicy": "ADD_ONLY_ABSENT_STATIC"
+      "currentMainState": "ALREADY_SHIPPED_CURRENT_MAIN",
+      "integrationAction": "NONE"
     },
     {
       "key": "career-merchant-shift-spring",
@@ -403,7 +427,8 @@
         ]
       },
       "provenance": "project-authored original SVG; no external media dependency",
-      "collisionPolicy": "ADD_ONLY_ABSENT_STATIC"
+      "currentMainState": "ALREADY_SHIPPED_CURRENT_MAIN",
+      "integrationAction": "NONE"
     },
     {
       "key": "career-merchant-shift-summer",
@@ -419,7 +444,8 @@
         ]
       },
       "provenance": "project-authored original SVG; no external media dependency",
-      "collisionPolicy": "ADD_ONLY_ABSENT_STATIC"
+      "currentMainState": "ALREADY_SHIPPED_CURRENT_MAIN",
+      "integrationAction": "NONE"
     },
     {
       "key": "career-merchant-shift-autumn",
@@ -435,7 +461,8 @@
         ]
       },
       "provenance": "project-authored original SVG; no external media dependency",
-      "collisionPolicy": "ADD_ONLY_ABSENT_STATIC"
+      "currentMainState": "ALREADY_SHIPPED_CURRENT_MAIN",
+      "integrationAction": "NONE"
     },
     {
       "key": "career-merchant-shift-winter",
@@ -451,7 +478,8 @@
         ]
       },
       "provenance": "project-authored original SVG; no external media dependency",
-      "collisionPolicy": "ADD_ONLY_ABSENT_STATIC"
+      "currentMainState": "ALREADY_SHIPPED_CURRENT_MAIN",
+      "integrationAction": "NONE"
     },
     {
       "key": "career-artist-geisha-shift-spring",
@@ -467,7 +495,8 @@
         ]
       },
       "provenance": "project-authored original SVG; no external media dependency",
-      "collisionPolicy": "ADD_ONLY_ABSENT_STATIC"
+      "currentMainState": "ALREADY_SHIPPED_CURRENT_MAIN",
+      "integrationAction": "NONE"
     },
     {
       "key": "career-artist-geisha-shift-summer",
@@ -483,7 +512,8 @@
         ]
       },
       "provenance": "project-authored original SVG; no external media dependency",
-      "collisionPolicy": "ADD_ONLY_ABSENT_STATIC"
+      "currentMainState": "ALREADY_SHIPPED_CURRENT_MAIN",
+      "integrationAction": "NONE"
     },
     {
       "key": "career-artist-geisha-shift-autumn",
@@ -499,7 +529,8 @@
         ]
       },
       "provenance": "project-authored original SVG; no external media dependency",
-      "collisionPolicy": "ADD_ONLY_ABSENT_STATIC"
+      "currentMainState": "ALREADY_SHIPPED_CURRENT_MAIN",
+      "integrationAction": "NONE"
     },
     {
       "key": "career-artist-geisha-shift-winter",
@@ -515,7 +546,8 @@
         ]
       },
       "provenance": "project-authored original SVG; no external media dependency",
-      "collisionPolicy": "ADD_ONLY_ABSENT_STATIC"
+      "currentMainState": "ALREADY_SHIPPED_CURRENT_MAIN",
+      "integrationAction": "NONE"
     },
     {
       "key": "career-assassin-shift-spring",
@@ -531,7 +563,8 @@
         ]
       },
       "provenance": "project-authored original SVG; no external media dependency",
-      "collisionPolicy": "ADD_ONLY_ABSENT_STATIC"
+      "currentMainState": "ALREADY_SHIPPED_CURRENT_MAIN",
+      "integrationAction": "NONE"
     },
     {
       "key": "career-assassin-shift-summer",
@@ -547,7 +580,8 @@
         ]
       },
       "provenance": "project-authored original SVG; no external media dependency",
-      "collisionPolicy": "ADD_ONLY_ABSENT_STATIC"
+      "currentMainState": "ALREADY_SHIPPED_CURRENT_MAIN",
+      "integrationAction": "NONE"
     },
     {
       "key": "career-assassin-shift-autumn",
@@ -563,7 +597,8 @@
         ]
       },
       "provenance": "project-authored original SVG; no external media dependency",
-      "collisionPolicy": "ADD_ONLY_ABSENT_STATIC"
+      "currentMainState": "ALREADY_SHIPPED_CURRENT_MAIN",
+      "integrationAction": "NONE"
     },
     {
       "key": "career-assassin-shift-winter",
@@ -579,7 +614,8 @@
         ]
       },
       "provenance": "project-authored original SVG; no external media dependency",
-      "collisionPolicy": "ADD_ONLY_ABSENT_STATIC"
+      "currentMainState": "ALREADY_SHIPPED_CURRENT_MAIN",
+      "integrationAction": "NONE"
     },
     {
       "key": "career-prostitute-shift-spring",
@@ -595,7 +631,8 @@
         ]
       },
       "provenance": "project-authored original SVG; no external media dependency",
-      "collisionPolicy": "ADD_ONLY_ABSENT_STATIC"
+      "currentMainState": "ALREADY_SHIPPED_CURRENT_MAIN",
+      "integrationAction": "NONE"
     },
     {
       "key": "career-prostitute-shift-summer",
@@ -611,7 +648,8 @@
         ]
       },
       "provenance": "project-authored original SVG; no external media dependency",
-      "collisionPolicy": "ADD_ONLY_ABSENT_STATIC"
+      "currentMainState": "ALREADY_SHIPPED_CURRENT_MAIN",
+      "integrationAction": "NONE"
     },
     {
       "key": "career-prostitute-shift-autumn",
@@ -627,7 +665,8 @@
         ]
       },
       "provenance": "project-authored original SVG; no external media dependency",
-      "collisionPolicy": "ADD_ONLY_ABSENT_STATIC"
+      "currentMainState": "ALREADY_SHIPPED_CURRENT_MAIN",
+      "integrationAction": "NONE"
     },
     {
       "key": "career-prostitute-shift-winter",
@@ -643,18 +682,19 @@
         ]
       },
       "provenance": "project-authored original SVG; no external media dependency",
-      "collisionPolicy": "ADD_ONLY_ABSENT_STATIC"
+      "currentMainState": "ALREADY_SHIPPED_CURRENT_MAIN",
+      "integrationAction": "NONE"
     }
   ],
   "summary": {
     "mappingCount": 40,
-    "currentMainStaticCollisions": 0
+    "alreadyShippedCurrentMain": 40,
+    "incrementalMappingsRemaining": 0
   },
   "invariants": {
-    "onlySeasonalCareerShiftIds": true,
-    "duplicatesShippedResultDefaultMappings": false,
+    "noRootOverwrite": true,
+    "identicalCurrentMappingsOnly": true,
     "presentationOnly": true,
-    "gameplayFields": false,
-    "localeNeutralAssetIdentity": true
+    "gameplayFields": false
   }
 }
