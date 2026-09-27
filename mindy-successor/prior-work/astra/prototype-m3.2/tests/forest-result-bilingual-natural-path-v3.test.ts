@@ -5,6 +5,7 @@ import {dispatch,parseSave} from '../src/core/engine.ts';
 import {catalog,started,definitions} from './helpers.ts';
 
 const localization=JSON.parse(readFileSync('content/localization.json','utf8')).strings;
+const forestPack=JSON.parse(readFileSync('content/packs/forest-result-content-bilingual-v2.json','utf8'));
 const cases=[
   ['success','forest-result-content-v1.success','lumber.forest.success'],
   ['escape','forest-result-content-v1.escape','lumber.forest.escape'],
@@ -34,7 +35,9 @@ function gameplay(s:any){
 }
 
 test('Forest success escape failure naturally trigger matching bilingual reactions',()=>{
-  for(const [outcome,eventId] of cases){
+  for(const [outcome,eventId,result] of cases){
+    const event=forestPack.events.find((e:any)=>e.id===eventId);
+    assert.deepEqual(event.reactionTriggers,[{kind:'activityResult',activity:'lumber.forest',outcome,result}]);
     let s=reach(outcome);
     assert.equal(s.run.pending?.eventId,eventId);
     assert.equal(s.run.pending?.variantId,'default');
