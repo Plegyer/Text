@@ -2795,3 +2795,79 @@ Consolidate items 160–170:
 - recommended next work only if it creates or validates real assets.
 
 Continue items 160–171 sequentially without waiting for Lead review.
+
+
+## Queue item 172 — production GIF source policy and allowlist v1
+Create NEW file only:
+- `docs/presentation-prep/PRODUCTION_GIF_SOURCE_POLICY_AND_ALLOWLIST_v1.md`
+
+Define sources Chat 2 may autonomously use for shipped GIFs: project-owned, CC0/public-domain, or otherwise explicitly redistribution-compatible assets with verifiable provenance. Record forbidden/uncertain cases. No generic Giphy/Tenor scraping.
+
+## Queue item 173 — first real GIF source discovery batch v1
+Create NEW file only:
+- `docs/presentation-prep/FIRST_REAL_GIF_SOURCE_DISCOVERY_BATCH_v1.md`
+
+Search allowed sources for the highest-priority semantic identities from item 164. For every candidate record direct source, license/provenance evidence, semantic fit, and whether redistribution in repo is permitted. Prefer candidates capable of forming one honest 3–5 asset pool.
+
+## Queue item 174 — first real GIF repository import batch v1
+Import NEW real GIF files only under:
+- `prior-work/astra/prototype-m3.2/assets/gif/`
+
+Import only candidates from item 173 whose provenance/license is clear and whose content fits an existing semantic identity. Do not import placeholders or uncertain-rights assets. If fewer than 3 valid compatible assets exist, commit a blocking evidence document instead of fake files:
+- `docs/presentation-prep/FIRST_REAL_GIF_IMPORT_BLOCKER_v1.md`
+
+## Queue item 175 — imported GIF technical inventory v1
+Create NEW file only:
+- `docs/presentation-prep/IMPORTED_GIF_TECHNICAL_INVENTORY_v1.md`
+
+For every imported GIF record repo path, byte size, GIF signature, dimensions/frame metadata where available, provenance, semantic identity, and reuse constraints.
+
+## Queue item 176 — imported GIF preflight test v2
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/imported-real-gif-preflight-v2.test.ts`
+
+Run the media preflight against actual imported production candidates. Test-only fixtures do not count as success.
+
+## Queue item 177 — first real production pool patch v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/first-real-production-pool-v1.json`
+
+Only if item 174 produced at least 3 compatible real repo GIFs for one current semantic presentationId, build one PR42-compatible 3–5 candidate pool. Otherwise self-declare BLOCKED_BY_REAL_ASSETS and contain no fake candidates.
+
+## Queue item 178 — first real production pool localization delta v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/first-real-production-pool-localization-v1.fixture.json`
+
+Provide RU+EN alt/caption keys only for actual item-177 candidates. Locale must not change candidate selection.
+
+## Queue item 179 — first real pool build-distribution smoke v1
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/first-real-gif-build-distribution-v1.test.ts`
+
+If a real pool exists, prove its files are copied into `dist/assets`, runtime paths resolve, and static fallback remains valid. If blocked, assert no production pool claims exist.
+
+## Queue item 180 — second semantic pool sourcing batch v1
+Create NEW file only:
+- `docs/presentation-prep/SECOND_REAL_GIF_SOURCE_DISCOVERY_BATCH_v1.md`
+
+Repeat legal-source discovery for the next highest-value current semantic identity, using the same provenance bar. Prefer poverty/School/Forest only when semantic fit is strong.
+
+## Queue item 181 — GIF repository budget and optimization gate v1
+Create NEW file only:
+- `docs/presentation-prep/GIF_REPOSITORY_BUDGET_AND_OPTIMIZATION_GATE_v1.md`
+
+Define practical file-size/dimensions/frame-rate guidance and non-destructive optimization acceptance for imported GIFs. Do not modify gameplay/runtime.
+
+## Queue item 182 — real media license/provenance audit v1
+Create NEW file only:
+- `docs/presentation-prep/REAL_MEDIA_LICENSE_PROVENANCE_AUDIT_v1.md`
+
+Audit every imported real asset against item 172 and classify SHIP_OK / NEEDS_ATTRIBUTION / DO_NOT_SHIP / UNKNOWN. Unknown or unclear rights must block production adoption.
+
+## Queue item 183 — real GIF integration handoff v7
+Create NEW file only:
+- `docs/presentation-prep/REAL_GIF_INTEGRATION_HANDOFF_v7.md`
+
+Consolidate items 172–182: actual imported assets, provenance, technical validation, any real 3–5 pool ready for Lead, blockers, and exact selective integration files.
+
+Continue items 172–183 sequentially without waiting for Lead review.
