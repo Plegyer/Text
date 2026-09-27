@@ -2187,3 +2187,131 @@ Map current PR37 semantic presentation identities to:
 - real-vs-placeholder asset status.
 
 Continue items 131–139 sequentially without waiting for Lead review.
+
+
+## Queue item 140 — ordinary poverty localization main delta v1
+
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/poverty-localization-main-delta-v1.fixture.json`
+
+Produce the exact `content/localization.json` delta for current shipped ordinary-poverty production from PR37.
+
+Requirements:
+- deterministic locale-neutral keys;
+- RU + EN for every included player-facing street/cheap/recovery/pressure identity;
+- media alt keys where current media IDs exist;
+- no Secret Debt content;
+- no gameplay fields.
+
+## Queue item 141 — ordinary poverty localization delta contract test
+
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/poverty-localization-main-delta-v1.test.ts`
+
+Validate item 140:
+- every mapped production identity exists in current poverty packs;
+- RU and EN are both present;
+- keys are unique and locale-neutral;
+- no conditions/effects/rewards are duplicated by locale;
+- Secret Debt IDs are absent;
+- fallback debt is explicit rather than silently counted as translated.
+
+## Queue item 142 — ordinary poverty localized UI copy bank v1
+
+Create NEW file only:
+- `docs/poverty-prep/ORDINARY_POVERTY_UI_COPY_RU_EN_v1.md`
+
+Provide polished RU+EN copy for current ordinary-poverty player-facing surfaces:
+- street lodging context;
+- cheap lodging context;
+- helpful/recovery reactions;
+- neutral reactions;
+- pressure/bad-luck reactions;
+- return/continue choice wording.
+
+Do not change money/Energy/housing mechanics.
+
+## Queue item 143 — poverty event localization key map v1
+
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/poverty-event-localization-key-map-v1.fixture.json`
+
+Map exact current production poverty event IDs / variant IDs / choice IDs / media IDs to localization keys used by the Lead runtime:
+- `event.<eventId>.title`
+- `event.<eventId>.variant.<variantId>.text`
+- `event.<eventId>.choice.<choiceId>.label`
+- `event.<eventId>.choice.<choiceId>.text`
+- `media.<mediaId>.alt`
+
+No new gameplay IDs.
+
+## Queue item 144 — ordinary poverty multi-GIF staging patch v1
+
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/ordinary-poverty-multigif-staging-v1.json`
+
+Prepare PR42-compatible 3–5 candidate pools for representative shipped poverty semantic IDs.
+
+Requirements:
+- locale-neutral candidate keys;
+- shared static fallback;
+- RU/EN alt localization-key references;
+- real asset vs placeholder explicitly marked;
+- placeholders remain staging-only and must not be presented as shipped art;
+- media choice never changes poverty outcome.
+
+## Queue item 145 — poverty localization natural-path regression plan v1
+
+Create NEW file only:
+- `docs/poverty-prep/POVERTY_LOCALIZATION_NATURAL_PATH_REGRESSION_v1.md`
+
+Define exact executable natural-path smoke for:
+day action -> EndDay -> street/cheap lodging -> poverty event -> RU text -> switch EN -> same pending gameplay event -> resolve -> same effects -> reload.
+
+Specify state assertions before and after locale switch.
+
+## Queue item 146 — Forest result natural-path bilingual regression v3
+
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/forest-result-bilingual-natural-path-v3.test.ts`
+
+Using current engine primitives and the Forest result production pack, validate:
+- naturally emitted exact `activityResult` success/escape/failure can trigger the matching reaction;
+- pending event identity is locale-neutral;
+- localization bundle has RU+EN for triggered scene;
+- resolving the localized scene applies no extra gameplay effect;
+- save/reload remains stable;
+- Lumber Hard Work still depends only on completed_shifts >= 50.
+
+Do not edit shared runtime.
+
+## Queue item 147 — ordinary poverty localization integration handoff v5
+
+Create NEW file only:
+- `docs/poverty-prep/ORDINARY_POVERTY_LOCALIZATION_INTEGRATION_HANDOFF_v5.md`
+
+Consolidate items 136–145:
+- exact localization delta;
+- exact event-key map;
+- tests;
+- natural-path smoke;
+- multi-GIF staging patch;
+- selective files Lead can copy to a fresh current-main branch;
+- any remaining untranslated shipped poverty surfaces.
+
+## Queue item 148 — Forest + poverty current-main integration ledger v1
+
+Create NEW file only:
+- `docs/lumber-prep/FOREST_POVERTY_CURRENT_MAIN_INTEGRATION_LEDGER_v1.md`
+
+Record, based on current main / PR43 status:
+- Forest result bilingual production: SHIPPED / PR_OPEN / BLOCKED;
+- Forest remaining authored routes/challenges: production-ready vs staged;
+- ordinary poverty gameplay production: shipped;
+- ordinary poverty RU+EN delta: ready vs missing;
+- multi-GIF: runtime shipped, real assets vs placeholders;
+- Secret Debt: authored-only / Product-blocked mechanics.
+
+Give Lead an exact next selective-integration order.
+
+Continue items 140–148 sequentially without waiting for Lead review.
