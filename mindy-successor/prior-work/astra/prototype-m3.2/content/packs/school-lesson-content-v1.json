@@ -61,7 +61,7 @@
   ],
   "events": [
     {
-      "id": "school.lesson-content.literacy-and-numbers",
+      "id": "school-lesson-content-v1.literacy-and-numbers",
       "title": "Literacy & Numbers authored lesson variants",
       "sourceDomain": "school.track.literacy_and_numbers",
       "trigger": [],
@@ -113,7 +113,7 @@
       ]
     },
     {
-      "id": "school.lesson-content.arcana",
+      "id": "school-lesson-content-v1.arcana",
       "title": "Arcana authored lesson variants",
       "sourceDomain": "school.track.arcana",
       "trigger": [],
@@ -165,7 +165,7 @@
       ]
     },
     {
-      "id": "school.lesson-content.rhetoric-and-social",
+      "id": "school-lesson-content-v1.rhetoric-and-social",
       "title": "Rhetoric & Social authored lesson variants",
       "sourceDomain": "school.track.rhetoric_and_social",
       "trigger": [],
@@ -217,7 +217,7 @@
       ]
     },
     {
-      "id": "school.lesson-content.etiquette-and-presentation",
+      "id": "school-lesson-content-v1.etiquette-and-presentation",
       "title": "Etiquette & Presentation authored lesson variants",
       "sourceDomain": "school.track.etiquette_and_presentation",
       "trigger": [],
@@ -269,7 +269,7 @@
       ]
     },
     {
-      "id": "school.lesson-content.field-craft",
+      "id": "school-lesson-content-v1.field-craft",
       "title": "Field Craft authored lesson variants",
       "sourceDomain": "school.track.field_craft",
       "trigger": [],
@@ -321,7 +321,7 @@
       ]
     },
     {
-      "id": "school.lesson-content.physical-training",
+      "id": "school-lesson-content-v1.physical-training",
       "title": "Physical Training authored lesson variants",
       "sourceDomain": "school.track.physical_training",
       "trigger": [],
@@ -373,7 +373,7 @@
       ]
     },
     {
-      "id": "school.lesson-content.arts-and-performance",
+      "id": "school-lesson-content-v1.arts-and-performance",
       "title": "Arts & Performance authored lesson variants",
       "sourceDomain": "school.track.arts_and_performance",
       "trigger": [],
@@ -425,7 +425,7 @@
       ]
     },
     {
-      "id": "school.lesson-content.body-confidence",
+      "id": "school-lesson-content-v1.body-confidence",
       "title": "Body Confidence authored lesson variants",
       "sourceDomain": "school.track.body_confidence",
       "trigger": [],
@@ -477,7 +477,7 @@
       ]
     },
     {
-      "id": "school.lesson-content.after-school",
+      "id": "school-lesson-content-v1.after-school",
       "title": "School lesson reflection",
       "sourceDomain": "school",
       "trigger": [],
