@@ -1,0 +1,15 @@
+{
+  "formatVersion": 1,
+  "kind": "first-real-production-pool-localization-delta",
+  "status": "BLOCKED_BY_REAL_ASSETS",
+  "poolSource": "content/presentation-drafts/first-real-production-pool-v1.json",
+  "strings": {},
+  "candidateBindings": [],
+  "invariants": {
+    "localeChangesCandidateSelection": false,
+    "candidateKeysLocaleNeutral": true,
+    "mediaPathsLocaleNeutral": true,
+    "fakeLocalizationEntriesAdded": false
+  },
+  "reason": "Item 177 contains no real GIF candidates, so there are no truthful RU/EN alt or caption keys to add for this batch."
+}
