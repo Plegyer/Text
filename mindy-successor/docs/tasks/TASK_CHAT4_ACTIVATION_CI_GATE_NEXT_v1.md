@@ -890,3 +890,26 @@ Verify:
 Conclude GREEN_FOR_MERGE or BLOCKED with exact reason. Do not change PR29 files.
 
 Continue items 51–59 sequentially without waiting for Lead review.
+
+
+## Queue item 60 — full-game package CI evidence template
+
+Create NEW file only:
+- `docs/qa-prep/FULL_GAME_PACKAGE_CI_EVIDENCE_TEMPLATE_v1.md`
+
+Define the evidence block every future Lead integration PR should record:
+- base/head SHAs;
+- changed paths;
+- ownership check;
+- typecheck;
+- validate;
+- build;
+- targeted tests;
+- full test count;
+- locked-invariant checks;
+- Product decisions intentionally left OPEN;
+- post-merge smoke if runtime/content changed.
+
+Do not claim evidence that was not actually run.
+
+Continue items 52–60 sequentially without waiting for Lead review.
