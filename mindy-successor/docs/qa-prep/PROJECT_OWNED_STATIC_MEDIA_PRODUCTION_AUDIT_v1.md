@@ -10,9 +10,9 @@ Worker branch head at review:
 `9bd5b52b76babdb3df9ded81ed8f80e1ed1e5afe`.
 
 Current production main for semantic compatibility:
-`c0763f9f9fa9887593fe8567165bbedce2b6cd3a`.
+`1af3104c1e4c180019b965adac8e87e67de89347`.
 
-The Chat 2 manifest records an older semantic baseline `ab53da4...`, but PR45 changed localization/tests only; the reviewed production presentation IDs were not changed by PR45.
+The Chat 2 manifest records an older semantic baseline `ab53da4...`; PR45 and PR46 changed localization/presentation lookup and tests but did not replace the 39 reviewed production semantic presentation IDs.
 
 ## Actual repository assets
 
