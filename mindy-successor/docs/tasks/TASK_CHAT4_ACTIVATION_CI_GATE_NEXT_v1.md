@@ -2508,3 +2508,78 @@ Create NEW file only:
 Summarize readiness after items 163–173 for poverty post-merge, Foreman PR46, project-owned static media, Forest route presentation, relationship depth, Secret Debt and Product-open content.
 
 Continue items 163–174 sequentially without waiting for Lead review.
+
+
+## Queue item 175 — static-media Lead branch pre-PR audit v1
+Create NEW file only:
+- `docs/qa-prep/PROJECT_OWNED_STATIC_MEDIA_LEAD_BRANCH_AUDIT_V1.md`
+
+Review `lead/project-owned-static-media-v1` against current main. Require selective copy only, real local project-owned assets, current semantic IDs, no gameplay fields, RU+EN accessibility, no external media dependency.
+
+## Queue item 176 — presentation altKey schema compatibility QA v1
+Create NEW file only:
+- `docs/qa-prep/PRESENTATION_ALTKEY_SCHEMA_COMPATIBILITY_QA_V1.md`
+
+Review optional media `altKey` support for backward compatibility with existing presentation overrides/pools/editor. Locale must change alt text only, never selected media identity/RNG/Save.
+
+## Queue item 177 — project-owned static slot-mapping QA v1
+Create NEW file only:
+- `docs/qa-prep/PROJECT_OWNED_STATIC_SLOT_MAPPING_QA_V1.md`
+
+Verify activated Chat2 mappings against exact current `presentationSlots(catalog)`; reject unknown IDs, Product-open identities, or route/lore overreach.
+
+## Queue item 178 — project-owned static build/runtime acceptance v1
+Create NEW file only:
+- `docs/qa-prep/PROJECT_OWNED_STATIC_BUILD_RUNTIME_ACCEPTANCE_V1.md`
+
+Require source assets, build copy, runtime resolution, animations-off static fallback, future GIF coexistence, and locale switch preserving src/candidate identity.
+
+## Queue item 179 — project-owned static accessibility runtime QA v1
+Create NEW file only:
+- `docs/qa-prep/PROJECT_OWNED_STATIC_ACCESSIBILITY_RUNTIME_QA_V1.md`
+
+Verify RU+EN alt keys are actually consumed by renderer, not merely present in localization, while the same physical asset remains selected.
+
+## Queue item 180 — Chat2 seasonal static selective-source QA v1
+Create NEW file only:
+- `docs/qa-prep/CHAT2_SEASONAL_STATIC_MEDIA_SELECTIVE_SOURCE_QA_V1.md`
+
+Review Chat2 items 196–207 actual Git: 40 current seasonal career identities, actual project-owned SVGs, current semantic IDs, build distribution, RU+EN alt coverage, no gameplay fields.
+
+## Queue item 181 — Chat2 non-career static wave QA v1
+Create NEW file only:
+- `docs/qa-prep/CHAT2_NON_CAREER_STATIC_WAVE_QA_V1.md`
+
+Review items 208–219 as they appear: reachable School, ordinary poverty, current Forest routes/results and current Foreman only. Secret Debt/Product-open identities must remain excluded.
+
+## Queue item 182 — non-Lumber result localization source QA v1
+Create NEW file only:
+- `docs/qa-prep/NON_LUMBER_RESULT_LOCALIZATION_SOURCE_QA_V1.md`
+
+Review Chat5 items 37–48 actual Git. Validate exact nine current non-Lumber careers, RU+EN completeness, additive collision policy and separation from Lumber/Forest/Secret Debt.
+
+## Queue item 183 — non-Lumber result UI consumer acceptance v1
+Create NEW file only:
+- `docs/qa-prep/NON_LUMBER_RESULT_UI_CONSUMER_ACCEPTANCE_V1.md`
+
+Define Lead acceptance for localized result title/body consumption with unchanged lastAction, deltas, actionCounts, career state, RNG, Save and presentationId.
+
+## Queue item 184 — Forest route presentation Lead-seam QA v1
+Create NEW file only:
+- `docs/qa-prep/FOREST_ROUTE_PRESENTATION_LEAD_SEAM_QA_V1.md`
+
+Review future Lead route-state -> presentationId binding using only logging-road and old-boundary. No Hunter route, token reinterpretation, challenge mechanics or RNG/Save mutation.
+
+## Queue item 185 — current-main localization/media debt recompute v3
+Create NEW file only:
+- `docs/qa-prep/CURRENT_MAIN_LOCALIZATION_MEDIA_DEBT_RECOMPUTE_V3.md`
+
+Recompute exact shipped RU+EN event/media coverage after PR46 and current static-media integration status. Separate reachable debt from catalog-only/Product-open debt.
+
+## Queue item 186 — next production integration gate v14
+Create NEW file only:
+- `docs/qa-prep/NEXT_PRODUCTION_INTEGRATION_GATE_V14.md`
+
+Summarize readiness after items 175–185 for static media, non-Lumber result localization, Forest route presentation, Chat2 non-career assets, and current Product-open boundaries.
+
+Continue items 175–186 sequentially without waiting for Lead review.
