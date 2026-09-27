@@ -5,49 +5,49 @@
   "writes": [],
   "media": [
     {
-      "id": "school/teacher/literacy-and-numbers/classroom",
+      "id": "school.teacher.literacy-and-numbers.classroom",
       "kind": "image",
       "src": "assets/stage-school.svg",
       "alt": "Mara Fen in a School classroom presentation."
     },
     {
-      "id": "school/teacher/arcana/classroom",
+      "id": "school.teacher.arcana.classroom",
       "kind": "image",
       "src": "assets/stage-school.svg",
       "alt": "Ilyra Venn in a School classroom presentation."
     },
     {
-      "id": "school/teacher/rhetoric-and-social/classroom",
+      "id": "school.teacher.rhetoric-and-social.classroom",
       "kind": "image",
       "src": "assets/stage-school.svg",
       "alt": "Cassian Reed in a School classroom presentation."
     },
     {
-      "id": "school/teacher/etiquette-and-presentation/classroom",
+      "id": "school.teacher.etiquette-and-presentation.classroom",
       "kind": "image",
       "src": "assets/stage-school.svg",
       "alt": "Eliane Marrow in a School classroom presentation."
     },
     {
-      "id": "school/teacher/field-craft/classroom",
+      "id": "school.teacher.field-craft.classroom",
       "kind": "image",
       "src": "assets/stage-school.svg",
       "alt": "Rowan Pike in a School classroom presentation."
     },
     {
-      "id": "school/teacher/physical-training/classroom",
+      "id": "school.teacher.physical-training.classroom",
       "kind": "image",
       "src": "assets/stage-school.svg",
       "alt": "Tovan Kest in a School classroom presentation."
     },
     {
-      "id": "school/teacher/arts-and-performance/classroom",
+      "id": "school.teacher.arts-and-performance.classroom",
       "kind": "image",
       "src": "assets/stage-school.svg",
       "alt": "Nessa Lark in a School classroom presentation."
     },
     {
-      "id": "school/teacher/body-confidence/classroom",
+      "id": "school.teacher.body-confidence.classroom",
       "kind": "image",
       "src": "assets/stage-school.svg",
       "alt": "Sera Vey in a School classroom presentation."
@@ -76,7 +76,7 @@
           "text": "Mara Fen presents Literacy & Numbers for school.course.literacy_and_numbers. This authored presentation carries no School transaction effects or prerequisites.",
           "conditions": [],
           "media": [
-            "school/teacher/literacy-and-numbers/classroom"
+            "school.teacher.literacy-and-numbers.classroom"
           ]
         }
       ],
@@ -112,7 +112,7 @@
           "text": "Ilyra Venn presents Arcana for school.course.arcana. This authored presentation carries no School transaction effects or prerequisites.",
           "conditions": [],
           "media": [
-            "school/teacher/arcana/classroom"
+            "school.teacher.arcana.classroom"
           ]
         }
       ],
@@ -148,7 +148,7 @@
           "text": "Cassian Reed presents Rhetoric & Social for school.course.rhetoric_and_social. This authored presentation carries no School transaction effects or prerequisites.",
           "conditions": [],
           "media": [
-            "school/teacher/rhetoric-and-social/classroom"
+            "school.teacher.rhetoric-and-social.classroom"
           ]
         }
       ],
@@ -184,7 +184,7 @@
           "text": "Eliane Marrow presents Etiquette & Presentation for school.course.etiquette_and_presentation. This authored presentation carries no School transaction effects or prerequisites.",
           "conditions": [],
           "media": [
-            "school/teacher/etiquette-and-presentation/classroom"
+            "school.teacher.etiquette-and-presentation.classroom"
           ]
         }
       ],
@@ -220,7 +220,7 @@
           "text": "Rowan Pike presents Field Craft for school.course.field_craft. This authored presentation carries no School transaction effects or prerequisites.",
           "conditions": [],
           "media": [
-            "school/teacher/field-craft/classroom"
+            "school.teacher.field-craft.classroom"
           ]
         }
       ],
@@ -256,7 +256,7 @@
           "text": "Tovan Kest presents Physical Training for school.course.physical_training. This authored presentation carries no School transaction effects or prerequisites.",
           "conditions": [],
           "media": [
-            "school/teacher/physical-training/classroom"
+            "school.teacher.physical-training.classroom"
           ]
         }
       ],
@@ -292,7 +292,7 @@
           "text": "Nessa Lark presents Arts & Performance for school.course.arts_and_performance. This authored presentation carries no School transaction effects or prerequisites.",
           "conditions": [],
           "media": [
-            "school/teacher/arts-and-performance/classroom"
+            "school.teacher.arts-and-performance.classroom"
           ]
         }
       ],
@@ -328,7 +328,7 @@
           "text": "Sera Vey presents Body Confidence for school.course.body_confidence. This authored presentation carries no School transaction effects or prerequisites.",
           "conditions": [],
           "media": [
-            "school/teacher/body-confidence/classroom"
+            "school.teacher.body-confidence.classroom"
           ]
         }
       ],
