@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "id": "forest.route-media-localization.normalized.v1",
+  "status": "PRESENTATION_ONLY_NORMALIZED_LOCALIZATION_SOURCE",
+  "baseMain": "4270bbc0d4d1117e1474a5ab9d9380dc350b0d1c",
+  "keyPolicy": {
+    "allowedPattern": "^[a-z0-9._-]+$",
+    "slashCharactersAllowed": false,
+    "lowercase": true
+  },
+  "routes": [
+    {
+      "routeId": "forest.route.logging-road",
+      "presentationId": "activity/forest/route/logging-road",
+      "altKey": "presentation.activity.forest.route.logging-road.alt",
+      "captionKey": "presentation.activity.forest.route.logging-road.caption"
+    },
+    {
+      "routeId": "forest.route.old-boundary",
+      "presentationId": "activity/forest/route/old-boundary",
+      "altKey": "presentation.activity.forest.route.old-boundary.alt",
+      "captionKey": "presentation.activity.forest.route.old-boundary.caption"
+    }
+  ],
+  "normalizedFrom": {
+    "presentation.activity/forest/route/logging-road.alt": "presentation.activity.forest.route.logging-road.alt",
+    "presentation.activity/forest/route/logging-road.caption": "presentation.activity.forest.route.logging-road.caption",
+    "presentation.activity/forest/route/old-boundary.alt": "presentation.activity.forest.route.old-boundary.alt",
+    "presentation.activity/forest/route/old-boundary.caption": "presentation.activity.forest.route.old-boundary.caption"
+  },
+  "strings": {
+    "presentation.activity.forest.route.logging-road.alt": {
+      "ru": "Лесовозная дорога с колеями и следами недавних работ.",
+      "en": "Logging road with wheel ruts and signs of recent work."
+    },
+    "presentation.activity.forest.route.logging-road.caption": {
+      "ru": "Здесь путь читается по следам работы: колеям, ветвям и меткам на деревьях.",
+      "en": "Here the route is readable through signs of work: wheel ruts, cut branches, and marks on trees."
+    },
+    "presentation.activity.forest.route.old-boundary.alt": {
+      "ru": "Старая межевая линия с замшелыми камнями и выветренными метками.",
+      "en": "Old boundary line with moss-covered stones and weathered marks."
+    },
+    "presentation.activity.forest.route.old-boundary.caption": {
+      "ru": "Камни и старые знаки складываются в линию, не совпадающую с новой лесовозной дорогой.",
+      "en": "Stones and old markers form a line that does not follow the newer logging road."
+    }
+  },
+  "invariants": {
+    "presentationOnly": true,
+    "exactCurrentRouteIdsOnly": true,
+    "presentationIdsPreserved": true,
+    "sameRuEnMeaningPreserved": true,
+    "createsGameplayFields": false,
+    "changesConditions": false,
+    "changesEffects": false,
+    "changesRewards": false,
+    "changesRng": false,
+    "changesSaveState": false,
+    "changesOldBoundaryTokenSemantics": false,
+    "createsHunterRoute": false
+  }
+}
