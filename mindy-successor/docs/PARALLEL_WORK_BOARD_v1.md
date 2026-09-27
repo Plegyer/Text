@@ -3,7 +3,7 @@
 Status: LIVE COORDINATION BOARD.
 
 Current main baseline:
-`9aa0eaf964735e82b9b964bbdcaf5362c292868a`.
+`961208ea995ca034e8dfe896337a38828db52415`.
 
 ## Coordination rule — no worker idle
 
@@ -305,3 +305,29 @@ Important review note:
 - do not integrate either as final RC evidence without rechecking against merged PR #24.
 
 Workers continue their active long queues in their existing branches.
+
+
+## Final RC acceptance gate merged — PR #25
+
+Main merge:
+`961208ea995ca034e8dfe896337a38828db52415`
+
+Evidence:
+- no production runtime/content/UI changes;
+- exact Hard Work contract locked;
+- item capability + schema4 Activity compatibility locked;
+- real School blocking-scene ordering/save/reload locked;
+- one-Save RC acceptance path covered;
+- merge-ref: typecheck PASS, validate PASS, build PASS, **218/218 tests PASS**.
+
+Technical RC gate is GREEN.
+
+Remaining OPEN work is authoring/content/product-decision work, not a reason to weaken the green runtime contracts.
+
+Current long queues:
+- Chat 2 — `chat2/presentation-replacement-next`: items 49–54 active.
+- Chat 3 — `chat3/lumber-production-proof-next`: items 37–42 active.
+- Chat 4 — `chat4/activation-ci-gate-next`: items 37–42 active.
+- Chat 5 — `chat5/school-pa-gate-next`: items 37–42 active.
+
+Important: Chat 4/5 verbal completion reports are not authoritative until their expected post-PR25 files appear in Git.
