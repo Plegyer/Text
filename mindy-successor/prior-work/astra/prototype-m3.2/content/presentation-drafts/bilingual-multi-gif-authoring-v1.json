@@ -1,0 +1,444 @@
+{
+  "formatVersion": 1,
+  "kind": "bilingual-multi-gif-authoring",
+  "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+  "locales": {
+    "source": "ru",
+    "shipped": [
+      "ru",
+      "en"
+    ],
+    "fallbackOrder": {
+      "ru": [
+        "ru",
+        "en"
+      ],
+      "en": [
+        "en",
+        "ru"
+      ]
+    }
+  },
+  "identityPolicy": {
+    "semanticIdsLocaleNeutral": true,
+    "mediaPathsLocaleNeutral": true,
+    "candidateKeysLocaleNeutral": true,
+    "gameplayFieldsAllowed": false,
+    "localeAffectsMediaSelection": false
+  },
+  "pools": [
+    {
+      "presentationId": "job/lumber/shift/spring/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "poolVersion": "bilingual-v1",
+      "candidates": [
+        {
+          "key": "lumber-spring-a",
+          "kind": "gif",
+          "src": "authoring://non-shipped/bilingual/job/lumber/shift/spring/default/1.gif",
+          "alt": {
+            "ru": "Работа с древесиной на влажной весенней делянке.",
+            "en": "Timber work on a damp spring worksite."
+          },
+          "shipped": false
+        },
+        {
+          "key": "lumber-spring-b",
+          "kind": "gif",
+          "src": "authoring://non-shipped/bilingual/job/lumber/shift/spring/default/2.gif",
+          "alt": {
+            "ru": "Срубленные брёвна переносят по размокшей весенней земле.",
+            "en": "Cut logs are carried across wet spring ground."
+          },
+          "shipped": false
+        },
+        {
+          "key": "lumber-spring-c",
+          "kind": "gif",
+          "src": "authoring://non-shipped/bilingual/job/lumber/shift/spring/default/3.gif",
+          "alt": {
+            "ru": "Инструменты проверяют рядом со штабелем брёвен весной.",
+            "en": "Tools are checked beside stacked logs during a spring shift."
+          },
+          "shipped": false
+        }
+      ],
+      "textKeys": {
+        "caption": {
+          "ru": "presentation.job.lumber.shift.spring.default.caption.ru",
+          "en": "presentation.job.lumber.shift.spring.default.caption.en"
+        },
+        "fallback": {
+          "ru": "presentation.job.lumber.shift.spring.default.fallback.ru",
+          "en": "presentation.job.lumber.shift.spring.default.fallback.en"
+        }
+      },
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-lumber.svg",
+        "alt": {
+          "ru": "Весенняя работа лесорубов.",
+          "en": "Spring lumber work."
+        }
+      },
+      "textFallback": {
+        "ru": "Весенняя смена лесорубов продолжается.",
+        "en": "The spring lumber shift continues."
+      }
+    },
+    {
+      "presentationId": "job/satyr-maid/shift/spring/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "poolVersion": "bilingual-v1",
+      "candidates": [
+        {
+          "key": "satyr-spring-a",
+          "kind": "gif",
+          "src": "authoring://non-shipped/bilingual/job/satyr-maid/shift/spring/default/1.gif",
+          "alt": {
+            "ru": "В весеннюю смену разносят заказы между столами.",
+            "en": "Orders are carried between tables during a spring shift."
+          },
+          "shipped": false
+        },
+        {
+          "key": "satyr-spring-b",
+          "kind": "gif",
+          "src": "authoring://non-shipped/bilingual/job/satyr-maid/shift/spring/default/2.gif",
+          "alt": {
+            "ru": "После гостей приводят в порядок стол в весеннем зале.",
+            "en": "A table is reset after guests in the spring room."
+          },
+          "shipped": false
+        },
+        {
+          "key": "satyr-spring-c",
+          "kind": "gif",
+          "src": "authoring://non-shipped/bilingual/job/satyr-maid/shift/spring/default/3.gif",
+          "alt": {
+            "ru": "Зону обслуживания готовят к новым посетителям весной.",
+            "en": "The service area is prepared for new spring visitors."
+          },
+          "shipped": false
+        }
+      ],
+      "textKeys": {
+        "caption": {
+          "ru": "presentation.job.satyr-maid.shift.spring.default.caption.ru",
+          "en": "presentation.job.satyr-maid.shift.spring.default.caption.en"
+        },
+        "fallback": {
+          "ru": "presentation.job.satyr-maid.shift.spring.default.fallback.ru",
+          "en": "presentation.job.satyr-maid.shift.spring.default.fallback.en"
+        }
+      },
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-tavern.svg",
+        "alt": {
+          "ru": "Весенняя смена в баре сатиров.",
+          "en": "Spring shift at the satyr bar."
+        }
+      },
+      "textFallback": {
+        "ru": "Весенняя смена в баре продолжается.",
+        "en": "The spring bar shift continues."
+      }
+    },
+    {
+      "presentationId": "school/arcana/lesson/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "poolVersion": "bilingual-v1",
+      "candidates": [
+        {
+          "key": "arcana-observe",
+          "kind": "gif",
+          "src": "authoring://non-shipped/bilingual/school/arcana/lesson/default/1.gif",
+          "alt": {
+            "ru": "На уроке арканы внимательно изучают заметки и схему.",
+            "en": "Arcana notes and a diagram are studied carefully during the lesson."
+          },
+          "shipped": false
+        },
+        {
+          "key": "arcana-pattern",
+          "kind": "gif",
+          "src": "authoring://non-shipped/bilingual/school/arcana/lesson/default/2.gif",
+          "alt": {
+            "ru": "В классе разбирают контролируемый узор арканы.",
+            "en": "A controlled Arcana pattern is reviewed in the classroom."
+          },
+          "shipped": false
+        },
+        {
+          "key": "arcana-method",
+          "kind": "gif",
+          "src": "authoring://non-shipped/bilingual/school/arcana/lesson/default/3.gif",
+          "alt": {
+            "ru": "Записи сравнивают с результатом учебного наблюдения.",
+            "en": "Written notes are compared with the result of a classroom observation."
+          },
+          "shipped": false
+        }
+      ],
+      "textKeys": {
+        "caption": {
+          "ru": "presentation.school.arcana.lesson.default.caption.ru",
+          "en": "presentation.school.arcana.lesson.default.caption.en"
+        },
+        "fallback": {
+          "ru": "presentation.school.arcana.lesson.default.fallback.ru",
+          "en": "presentation.school.arcana.lesson.default.fallback.en"
+        }
+      },
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-school.svg",
+        "alt": {
+          "ru": "Урок арканы в Школе.",
+          "en": "Arcana lesson at the School."
+        }
+      },
+      "textFallback": {
+        "ru": "Урок арканы остаётся понятным без анимации.",
+        "en": "The Arcana lesson remains understandable without animation."
+      }
+    },
+    {
+      "presentationId": "location/town/event/school-life-content-v1-after-night-study/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "poolVersion": "bilingual-v1",
+      "candidates": [
+        {
+          "key": "night-study-a",
+          "kind": "gif",
+          "src": "authoring://non-shipped/bilingual/school/life/after-night-study/default/1.gif",
+          "alt": {
+            "ru": "После ночной учёбы перечитывают тихие записи.",
+            "en": "Quiet notes are reviewed after Night study."
+          },
+          "shipped": false
+        },
+        {
+          "key": "night-study-b",
+          "kind": "gif",
+          "src": "authoring://non-shipped/bilingual/school/life/after-night-study/default/2.gif",
+          "alt": {
+            "ru": "В конце ночной учёбы проверяют учебную схему.",
+            "en": "A study diagram is checked at the end of Night study."
+          },
+          "shipped": false
+        },
+        {
+          "key": "night-study-c",
+          "kind": "gif",
+          "src": "authoring://non-shipped/bilingual/school/life/after-night-study/default/3.gif",
+          "alt": {
+            "ru": "Материалы складывают после завершения ночной учёбы.",
+            "en": "Study materials are organized after Night study ends."
+          },
+          "shipped": false
+        }
+      ],
+      "textKeys": {
+        "caption": {
+          "ru": "presentation.school.life.after-night-study.default.caption.ru",
+          "en": "presentation.school.life.after-night-study.default.caption.en"
+        },
+        "fallback": {
+          "ru": "presentation.school.life.after-night-study.default.fallback.ru",
+          "en": "presentation.school.life.after-night-study.default.fallback.en"
+        }
+      },
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-school.svg",
+        "alt": {
+          "ru": "Спокойное завершение ночной учёбы.",
+          "en": "A quiet end to Night study."
+        }
+      },
+      "textFallback": {
+        "ru": "Ночная учёба завершается без дополнительного игрового эффекта.",
+        "en": "Night study ends without any additional gameplay effect."
+      }
+    },
+    {
+      "presentationId": "location/town/event/poverty-street-production-helpful-summer/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "poolVersion": "bilingual-v1",
+      "candidates": [
+        {
+          "key": "street-help-a",
+          "kind": "gif",
+          "src": "authoring://non-shipped/bilingual/poverty/street/helpful-summer/default/1.gif",
+          "alt": {
+            "ru": "У закрывающегося рыночного прилавка остался ящик.",
+            "en": "A crate remains beside a market stall that is closing for the night."
+          },
+          "shipped": false
+        },
+        {
+          "key": "street-help-b",
+          "kind": "gif",
+          "src": "authoring://non-shipped/bilingual/poverty/street/helpful-summer/default/2.gif",
+          "alt": {
+            "ru": "На краю летнего рынка заканчивают уборку после торговли.",
+            "en": "Cleanup is finishing at the edge of the summer market."
+          },
+          "shipped": false
+        },
+        {
+          "key": "street-help-c",
+          "kind": "gif",
+          "src": "authoring://non-shipped/bilingual/poverty/street/helpful-summer/default/3.gif",
+          "alt": {
+            "ru": "Под навесом рядом с улицей ждёт обычный грузовой ящик.",
+            "en": "An ordinary cargo crate waits under cover beside the street."
+          },
+          "shipped": false
+        }
+      ],
+      "textKeys": {
+        "caption": {
+          "ru": "presentation.poverty.street.helpful-summer.default.caption.ru",
+          "en": "presentation.poverty.street.helpful-summer.default.caption.en"
+        },
+        "fallback": {
+          "ru": "presentation.poverty.street.helpful-summer.default.fallback.ru",
+          "en": "presentation.poverty.street.helpful-summer.default.fallback.en"
+        }
+      },
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-outside.svg",
+        "alt": {
+          "ru": "Летняя улица у закрывающегося рынка.",
+          "en": "A summer street beside a closing market."
+        }
+      },
+      "textFallback": {
+        "ru": "Небольшая уличная сцена остаётся доступной без анимации.",
+        "en": "The small street scene remains available without animation."
+      }
+    },
+    {
+      "presentationId": "location/town/event/poverty-cheap-production-shared-quiet-autumn/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "poolVersion": "bilingual-v1",
+      "candidates": [
+        {
+          "key": "cheap-room-a",
+          "kind": "gif",
+          "src": "authoring://non-shipped/bilingual/poverty/cheap/shared-quiet-autumn/default/1.gif",
+          "alt": {
+            "ru": "Тесная общая комната постепенно затихает вечером.",
+            "en": "A cramped shared room gradually settles into quiet for the evening."
+          },
+          "shipped": false
+        },
+        {
+          "key": "cheap-room-b",
+          "kind": "gif",
+          "src": "authoring://non-shipped/bilingual/poverty/cheap/shared-quiet-autumn/default/2.gif",
+          "alt": {
+            "ru": "В комнате с тонкими стенами готовятся ко сну.",
+            "en": "People prepare to sleep in a room with thin walls."
+          },
+          "shipped": false
+        },
+        {
+          "key": "cheap-room-c",
+          "kind": "gif",
+          "src": "authoring://non-shipped/bilingual/poverty/cheap/shared-quiet-autumn/default/3.gif",
+          "alt": {
+            "ru": "Личные вещи аккуратно устраивают в общей дешёвой комнате.",
+            "en": "Personal belongings are arranged carefully in the shared cheap room."
+          },
+          "shipped": false
+        }
+      ],
+      "textKeys": {
+        "caption": {
+          "ru": "presentation.poverty.cheap.shared-quiet-autumn.default.caption.ru",
+          "en": "presentation.poverty.cheap.shared-quiet-autumn.default.caption.en"
+        },
+        "fallback": {
+          "ru": "presentation.poverty.cheap.shared-quiet-autumn.default.fallback.ru",
+          "en": "presentation.poverty.cheap.shared-quiet-autumn.default.fallback.en"
+        }
+      },
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-room.svg",
+        "alt": {
+          "ru": "Дешёвая общая комната осенью.",
+          "en": "A cheap shared room in autumn."
+        }
+      },
+      "textFallback": {
+        "ru": "Общая комната остаётся понятной без анимации.",
+        "en": "The shared room remains understandable without animation."
+      }
+    },
+    {
+      "presentationId": "location/town/event/poverty-pressure-production-cold-rain/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "poolVersion": "bilingual-v1",
+      "candidates": [
+        {
+          "key": "cold-rain-a",
+          "kind": "gif",
+          "src": "authoring://non-shipped/bilingual/poverty/pressure/cold-rain/default/1.gif",
+          "alt": {
+            "ru": "Холодный дождь добирается до края уличного укрытия.",
+            "en": "Cold rain reaches the edge of a street shelter."
+          },
+          "shipped": false
+        },
+        {
+          "key": "cold-rain-b",
+          "kind": "gif",
+          "src": "authoring://non-shipped/bilingual/poverty/pressure/cold-rain/default/2.gif",
+          "alt": {
+            "ru": "За мокрым бордюром виден более глубокий дверной проём.",
+            "en": "A deeper doorway is visible beyond the wet curb."
+          },
+          "shipped": false
+        },
+        {
+          "key": "cold-rain-c",
+          "kind": "gif",
+          "src": "authoring://non-shipped/bilingual/poverty/pressure/cold-rain/default/3.gif",
+          "alt": {
+            "ru": "Вода течёт по мостовой рядом с открытым местом для ночлега.",
+            "en": "Rainwater runs along the pavement beside an exposed resting place."
+          },
+          "shipped": false
+        }
+      ],
+      "textKeys": {
+        "caption": {
+          "ru": "presentation.poverty.pressure.cold-rain.default.caption.ru",
+          "en": "presentation.poverty.pressure.cold-rain.default.caption.en"
+        },
+        "fallback": {
+          "ru": "presentation.poverty.pressure.cold-rain.default.fallback.ru",
+          "en": "presentation.poverty.pressure.cold-rain.default.fallback.en"
+        }
+      },
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-outside.svg",
+        "alt": {
+          "ru": "Холодный дождь у уличного укрытия.",
+          "en": "Cold rain beside a street shelter."
+        }
+      },
+      "textFallback": {
+        "ru": "Сцена холодного дождя остаётся понятной без анимации.",
+        "en": "The cold-rain scene remains understandable without animation."
+      }
+    }
+  ]
+}
