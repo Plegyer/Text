@@ -2498,3 +2498,120 @@ Summarize items 142–149 against PR42 status:
 - no-runtime-change path after PR42.
 
 Continue items 142–150 sequentially without waiting for Lead review.
+
+
+## Queue item 151 — existing GIF asset inventory v1
+
+Create NEW file only:
+- `docs/presentation-prep/EXISTING_GIF_ASSET_INVENTORY_v1.md`
+
+Audit current repo assets and list every real GIF already present.
+
+For each:
+- repo path;
+- current semantic presentation use;
+- dimensions/duration if available from metadata already in repo;
+- whether it is safe to reuse;
+- which shipped career/School/poverty/Forest semantic identities it can serve without changing gameplay meaning.
+
+Do not count placeholders or external URLs as real assets.
+
+## Queue item 152 — real-asset-only multi-GIF patch v1
+
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/real-asset-only-multigif-v1.json`
+
+Using item 151, build the largest honest PR42-compatible presentation patch possible using only real GIF files already in the repo.
+
+Requirements:
+- each pool 3..5 real GIFs;
+- locale-neutral candidate keys;
+- static fallback;
+- no placeholder paths;
+- RU/EN alt localization keys;
+- if a semantic identity lacks 3 real candidates, omit the pool rather than fake completeness.
+
+## Queue item 153 — real-asset multi-GIF contract test
+
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/real-asset-multigif-v1.test.ts`
+
+Validate item 152:
+- every referenced GIF path exists in repo;
+- every pool size 3..5;
+- no placeholder marker;
+- candidate keys unique;
+- semantic IDs resolve to current production presentation slots;
+- no gameplay fields.
+
+## Queue item 154 — career presentation semantic coverage audit v3
+
+Create NEW file only:
+- `docs/presentation-prep/CAREER_PRESENTATION_SEMANTIC_COVERAGE_v3.md`
+
+Audit all 10 ordinary careers on current main after PR42:
+- base shift semantic ID;
+- seasonal semantic IDs;
+- result semantic IDs;
+- existing real asset count per identity;
+- real multi-GIF readiness YES/NO;
+- exact missing asset count to reach 3.
+
+## Queue item 155 — School presentation semantic coverage audit v3
+
+Create NEW file only:
+- `docs/presentation-prep/SCHOOL_PRESENTATION_SEMANTIC_COVERAGE_v3.md`
+
+Audit reachable School generic + exact Night-study semantic identities against real assets and current PR42 pool capability.
+
+Teacher/course-specific staged identities remain explicitly STAGED.
+
+## Queue item 156 — poverty presentation semantic coverage audit v3
+
+Create NEW file only:
+- `docs/presentation-prep/POVERTY_PRESENTATION_SEMANTIC_COVERAGE_v3.md`
+
+Audit current ordinary-poverty production identities from PR37 against real assets and exact missing count to reach 3..5 GIF pools.
+
+Secret Debt excluded.
+
+## Queue item 157 — Forest presentation semantic coverage audit v3
+
+Create NEW file only:
+- `docs/presentation-prep/FOREST_PRESENTATION_SEMANTIC_COVERAGE_v3.md`
+
+Audit current-main Forest result/reaction/activity semantic IDs after PR43:
+- real GIF assets available;
+- reusable assets;
+- exact pool deficit;
+- RU/EN alt keys;
+- no Product-blocked route semantics invented.
+
+## Queue item 158 — first real-GIF production batch manifest v1
+
+Create NEW file only:
+- `docs/presentation-prep/FIRST_REAL_GIF_PRODUCTION_BATCH_MANIFEST_v1.md`
+
+Choose the smallest high-value set of missing GIFs that, once produced, would complete the most useful first real 3..5-candidate pools.
+
+Prioritize:
+1. repeatable ordinary career shifts;
+2. ordinary poverty repeat events;
+3. reachable School repeat events;
+4. Forest result/repeatable Activity surfaces.
+
+For each requested GIF give locale-neutral filename, semantic ID, loop brief, and reuse compatibility.
+
+## Queue item 159 — real-asset adoption handoff v5
+
+Create NEW file only:
+- `docs/presentation-prep/REAL_ASSET_ADOPTION_HANDOFF_v5.md`
+
+Consolidate items 151–158:
+- what can ship now using real assets;
+- what still needs GIF production;
+- exact patch/test files;
+- no-placeholder production rule;
+- recommended selective integration order.
+
+Continue items 151–159 sequentially without waiting for Lead review.
