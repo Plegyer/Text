@@ -857,6 +857,50 @@
     "media.stage.room.alt": {
       "ru": "Сцена дешёвой общей комнаты для ночлега.",
       "en": "Cheap shared-room lodging scene."
+    },
+    "event.lumber.foreman-notice.title": {
+      "ru": "Бригадир замечает работу",
+      "en": "The Foreman notices the work"
+    },
+    "event.lumber.foreman-notice.variant.default.text": {
+      "ru": "После первой признанной смены бригадир обращается к тебе уже не как к случайной подёнщице. Разговор остаётся рабочим: он отмечает, что на тебя можно рассчитывать, и предлагает дальше держаться профессионально.",
+      "en": "After your first recognized shift, the Foreman no longer treats you like a passing day laborer. The conversation stays work-focused: he notes that you can be relied on and suggests keeping things professional."
+    },
+    "event.lumber.foreman-notice.choice.professional.label": {
+      "ru": "Оставить всё по-деловому",
+      "en": "Keep it professional"
+    },
+    "event.lumber.foreman-notice.choice.professional.text": {
+      "ru": "Принять рабочее доверие без обещаний о более близких отношениях.",
+      "en": "Accept the professional trust without promising a closer relationship."
+    },
+    "nightChoice.lumber.foreman.night.label": {
+      "ru": "Поговорить с бригадиром",
+      "en": "Talk with the Foreman"
+    },
+    "event.lumber-night.foreman-professional.title": {
+      "ru": "Разговор после смены",
+      "en": "After-shift conversation"
+    },
+    "event.lumber-night.foreman-professional.variant.default.text": {
+      "ru": "После работы вы задерживаетесь ненадолго и спокойно обсуждаете дела артели. Это добровольное продолжение рабочего знакомства занимает вечер, но не превращает его в ещё одну дневную смену.",
+      "en": "After work, you stay a little longer and calmly talk through crew business. This voluntary continuation of the working acquaintance takes the evening, but it does not turn into another daytime shift."
+    },
+    "event.lumber-night.foreman-professional.choice.continue.label": {
+      "ru": "Продолжить по-деловому",
+      "en": "Continue professionally"
+    },
+    "event.lumber-night.foreman-professional.choice.continue.text": {
+      "ru": "Сохранить разговор в рамках профессионального доверия.",
+      "en": "Keep the conversation within the bounds of professional trust."
+    },
+    "media.relationship.lumber.foreman.professional.alt": {
+      "ru": "Бригадир обсуждает с героиней её работу в артели.",
+      "en": "The Foreman discusses the heroine's work with the lumber crew."
+    },
+    "media.relationship.lumber.foreman.night.professional.alt": {
+      "ru": "Спокойный вечерний разговор героини с бригадиром после смены.",
+      "en": "A calm evening conversation between the heroine and the Foreman after work."
     }
   }
 }
