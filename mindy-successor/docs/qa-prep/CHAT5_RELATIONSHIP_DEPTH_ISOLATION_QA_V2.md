@@ -7,9 +7,9 @@ Reviewed Chat 5 items:
 on branch `chat5/relationships-night-content-next`.
 
 Current production baseline for this QA:
-`c0763f9f9fa9887593fe8567165bbedce2b6cd3a`.
+`1af3104c1e4c180019b965adac8e87e67de89347`.
 
-PR46 may supersede some shared-UI/localization staging statements after merge; this audit classifies the worker artifacts themselves and does not treat an open PR as shipped main.
+PR46 is now merged. This audit classifies the worker artifacts themselves while marking their older shared-UI/localization status fields as superseded where PR46 shipped the missing generic Night-choice label path.
 
 ## Current exact production boundary
 
@@ -45,16 +45,16 @@ Classification:
 
 It classifies the 11 Foreman localization keys as additive against its then-main baseline.
 
-PR45 did not add Foreman localization, so those keys remain absent on current main `c0763f9...`.
+The item-13 comparison was correct at its baseline, but PR46 has since integrated those 11 Foreman localization keys into current main.
 
-The document's statement that generic ordinary Night-choice UI is still missing is now an integration dependency being addressed by open PR46, not a reason to modify worker content.
+Its statement that generic ordinary Night-choice UI is missing is now superseded: PR46 shipped the generic stable-ID Night-choice lookup.
 
 ## Item 14 — Night-choice localization acceptance fixture
 
 `foreman-night-choice-localization-acceptance-v1.fixture.json`
 
 Classification:
-`SAFE_ACCEPTANCE_FIXTURE / SHARED_UI_DEPENDENCY`.
+`SAFE_ACCEPTANCE_FIXTURE / SHARED_UI_DEPENDENCY_SATISFIED_BY_PR46`.
 
 Good invariants:
 - same choice ID across locales;
@@ -66,7 +66,7 @@ Good invariants:
 
 It adds no gameplay effect.
 
-Its `currentMainStatus=SHARED_UI_REQUIRED` describes the pre-PR46 main and must be re-evaluated after PR46 status changes.
+Its `currentMainStatus=SHARED_UI_REQUIRED` is now historical worker metadata; PR46 satisfied that shared-UI dependency on current main.
 
 ## Items 15–16 — Foreman repetition / seasonal banks
 
