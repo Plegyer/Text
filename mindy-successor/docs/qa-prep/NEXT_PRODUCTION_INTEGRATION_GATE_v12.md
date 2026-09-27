@@ -2,15 +2,15 @@
 
 Status: COMPLETE / CURRENT_GATE_RECORDED
 
-Audit timestamp context: after PR44 merge and during first PR45 ordinary-poverty selective integration attempt.
+Audit point: after PR44 School localization merge and PR45 ordinary-poverty localization merge.
 
 Current main:
-- SHA: `ab53da4059e348734703c2de490e43e94c02b057`
-- source: PR44 merge
-- main push workflow #62 / id `36322824233`
+- SHA: `c0763f9f9fa9887593fe8567165bbedce2b6cd3a`
+- source: PR45 merge
+- main push workflow #67 / id `36323485949`
 - conclusion: SUCCESS
 - validator: 17 packs, 46 events, 35 actions, 9 endings
-- tests: 301 / 301 pass / 0 fail.
+- tests: 304 / 304 pass / 0 fail.
 
 This gate summarizes Chat 4 queue items 151–161. It does not approve whole worker branches.
 
@@ -23,128 +23,111 @@ Accepted PR head:
 `07912a4870f82472a01f6ff8d0d81f1f67081593`.
 
 Exact-head workflow #61:
-- success;
+- SUCCESS;
 - 301/301 tests.
 
 Merged as:
 `ab53da4059e348734703c2de490e43e94c02b057`.
 
 Post-merge main workflow #62:
-- success;
-- 301/301 tests;
-- unchanged validator content counts.
+- SUCCESS;
+- 301/301 tests.
 
-School now ships RU+EN for the reviewed panel/course/Night/current reachable event surfaces.
+School now ships reviewed RU+EN for:
+- panel/help;
+- all eight course labels/descriptions;
+- tuition/lesson controls;
+- School Night-study labels/context/control;
+- current reachable School events/media.
 
-The failure sequence was correctly closed:
-- first head assumed action-result render before current pending School event;
-- second head read runtime-only `run.flags` from raw persisted JSON;
-- final head follows `base.school` naturally and checks `legacyCompat.flags`.
-
-No School mechanics, RNG or Save schema were changed to make localization tests pass.
+The PR44 failure sequence was closed without changing gameplay:
+- first failed head assumed action-result render before current pending `base.school`;
+- second failed head read runtime-only `run.flags` from raw persisted JSON;
+- final head followed the real pending scene and asserted `legacyCompat.flags`.
 
 Still staging/Product-open:
 - exact-course teacher events/routing;
 - management/accounting public-result provider/threshold;
 - Arcana/Forest public result.
 
-## 2. Ordinary poverty localization
+## 2. Ordinary poverty PR45
 
-Worker-source classification:
-`GREEN_AS_SELECTIVE_SOURCE`.
+Classification:
+`GREEN_POST_MERGE_MAIN`.
 
-Reviewed source:
-- 84 RU+EN keys;
-- exact current identities across six root poverty packs;
+Reviewed source originated from the Chat 3 selective package:
+- exact 84 RU+EN ordinary-poverty localization surfaces;
+- six current root poverty packs only;
 - no Secret Debt contamination;
-- item-149 natural street + cheap-lodging execution;
-- item-150 collision/current-ID guard.
+- natural-path and collision/current-ID regression evidence.
 
-### Live PR45 state
-
-PR #45:
+PR45:
 `Lead: integrate ordinary poverty RU/EN localization`
 
 Base:
-`ab53da4059e348734703c2de490e43e94c02b057`
+`ab53da4059e348734703c2de490e43e94c02b057`.
 
-Current reviewed exact head:
-`afd485bf73956f745283f87479808703ae9085dd`
+Accepted exact PR head:
+`3d9dbcf6b63723a405026aaeb3e97c30e43c94e3`.
 
-Workflow #65 / id `36323243584`:
-`FAILURE`
+Exact-head workflow #66 / id `36323358331`:
+- SUCCESS;
+- validator: 17 packs, 46 events, 35 actions, 9 endings;
+- tests: 304/304.
 
-Test summary:
-- tests: 304
-- pass: 303
-- fail: 1.
+Relevant passing production tests:
+- `ordinary poverty production surfaces are fully RU EN localized in the root bundle`;
+- `all six ordinary-poverty production packs have locale-invariant natural paths`;
+- `renderer: ordinary poverty pending scene localizes RU EN without changing gameplay save`.
 
-Progress from prior head:
-- the all-six-pack natural-path production test now passes;
-- the stale RU/EN title/body expectations in the renderer smoke were corrected;
-- the remaining failure is only the renderer poverty pending-scene smoke.
+Final fix history:
+- first integration head used an ineligible day for a v2 summer natural-path expectation and stale renderer copy;
+- next head corrected those but seeded invalid pending `allowedChoiceIds` containing `decline`;
+- final head replaced it with exact production `keep-resting` and retained strict pending-scene validation.
 
-Remaining exact failure:
-`renderer: ordinary poverty pending scene localizes RU EN without changing gameplay save`
-times out before the initial localized RU scene appears.
+No gameplay condition/effect was changed to satisfy the tests.
 
-The seeded pending snapshot contains:
-`allowedChoiceIds: ['take-errand','decline']`
+Merged as:
+`c0763f9f9fa9887593fe8567165bbedce2b6cd3a`.
 
-but the exact current production event
-`poverty-street-production.helpful-summer`
-owns:
-- `take-errand`
-- `keep-resting`
+Post-merge main workflow #67 / id `36323485949`:
+- SUCCESS;
+- validator: 17 packs, 46 events, 35 actions, 9 endings;
+- tests: 304/304;
+- all three poverty production/localization tests above pass again on merge main.
 
-and has no `decline` choice.
-
-The production `parseSave` boundary explicitly rejects a pending snapshot when any `allowedChoiceIds` member is not an actual choice of the event, with:
-`Некорректный snapshot выборов pending scene.`
-
-Therefore the smoke boots from an invalid saved pending snapshot and never reaches the expected event render.
-
-Fix direction:
-replace the stale `decline` snapshot ID with exact current `keep-resting`, or preferably produce the pending scene through the natural Resolver path. Do not add a fake `decline` production choice and do not weaken save validation.
-
-The integrated 84-key completeness test and all-six natural-path test are green on this head.
-
-PR45 verdict at this gate:
-`BLOCKED_BY_EXACT_HEAD_CI`.
-
-A later head must correct the invalid pending choice snapshot and pass the item-155 selective gate before merge:
-- exact 84 current keys;
-- natural paths;
-- renderer locale invariance;
-- one-time effects/reload;
-- Secret Debt exclusion;
-- exact-head full CI;
-- post-merge main CI.
+Ordinary poverty is therefore shipped RU+EN on current main.
 
 ## 3. Real GIF production assets
 
 Classification:
 `BLOCKED_BY_REAL_ASSETS`.
 
-Chat 2 now has:
+Chat 2 now provides:
 - source/license policy;
 - first discovery batch;
 - explicit no-import blocker;
 - zero-asset technical inventory;
-- imported-GIF preflight that verifies no false production import;
-- item-177 pool patch declaring zero candidates/pools;
-- item-178 empty localization delta declaring no fake keys.
+- imported-GIF preflight proving no false production import;
+- item-177 production-pool file declaring zero candidates/pools;
+- item-178 empty localization delta declaring no fake candidate keys.
 
 No production GIF was imported.
 
-No 3–5 compatible rights-clear pool exists.
+No 3–5 compatible rights-clear pool exists for a current semantic presentationId.
 
 QA provenance rule remains:
 - generic GIF hosting/search is not a license;
-- rights conflict/uncertainty = DO_NOT_SHIP;
-- every future candidate must be a real repo blob with provenance and technical preflight.
+- rights conflict/uncertainty = `DO_NOT_SHIP`;
+- every future candidate must be a real repository blob with provenance and technical preflight.
 
-Do not activate a pool until one current semantic presentationId has 3–5 real compatible repository GIFs, RU+EN alt/caption, static fallback and deterministic locale-neutral selection.
+Do not activate a pool until one current semantic presentationId has:
+- 3–5 real compatible repository GIFs;
+- rights-clear provenance;
+- GIF technical validation;
+- RU+EN alt/caption;
+- static fallback;
+- deterministic locale-neutral selection.
 
 ## 4. Relationships / ordinary Night
 
@@ -157,27 +140,27 @@ Current shipped typed identity:
 Current voluntary Night identity:
 `lumber.foreman.night`.
 
-Verified ordinary relationship Night semantics:
-- voluntary slot;
+Verified ordinary relationship Night semantics remain:
+- voluntary Night slot;
 - 0 daytime Energy;
-- nextDayEnergyDelta 0;
+- `nextDayEnergyDelta=0`;
 - typed `night_meetings` counter;
-- current professional follow-up event;
+- current professional after-choice follow-up event;
 - no forced-debt semantics.
 
 Chat 5 localization fixture:
 - 11 complete RU+EN keys;
 - exact current Foreman identities;
 - no gameplay mutation fields;
-- Hard Work invariant protected.
+- Lumber Hard Work invariant protected.
 
 Selective readiness:
-- 10 event/media keys can use existing generic localization paths;
+- 10 event/media keys can use the existing generic localization paths;
 - `nightChoice.lumber.foreman.night.label` remains staged until generic Night-choice label UI wiring exists.
 
-The relationship-target pack must remain staging/reference because it duplicates the existing `lumber.foreman-notice` production identity and is not additive root-load content.
+The nested relationship-target pack must remain staging/reference because it duplicates the existing `lumber.foreman-notice` production identity and is not additive root-load content.
 
-No new career relationship roster is canonical; non-Lumber roles remain `CONTENT_DRAFT / PRODUCT_NOT_LOCKED`.
+No broader career relationship roster is canonical; non-Lumber roles remain `CONTENT_DRAFT / PRODUCT_NOT_LOCKED`.
 
 ## 5. Forest
 
@@ -213,7 +196,7 @@ Secret Debt mechanics/rewards/forced Night remain excluded from:
 - Relationships/ordinary Night;
 - real-GIF sourcing.
 
-Ordinary poverty PR45 must continue to reject lender/forced-debt IDs.
+PR45 production tests explicitly reject Secret Debt markers from ordinary-poverty localization.
 
 Other Product-open areas that remain unpromoted:
 - School management/accounting public result;
@@ -227,22 +210,22 @@ Existing consumer IDs, token/capability seams, ordinary Hunter shift, or Palace 
 
 ## 7. Localization product state
 
-Current main after PR44:
+Current main:
 `PARTIAL_BILINGUAL`.
 
-Authoritative bundle:
-- 130 keys;
-- all 130 have non-empty EN;
+Authoritative localization bundle:
+- 214 keys;
+- all 214 have non-empty EN;
 - no current RU-only bundle entry.
 
-Shipped strong slices:
+Shipped strong bilingual slices:
 - town/Work and ordinary career action copy;
 - Forest Activity/result copy;
-- School PR44 copy.
+- School PR44 copy;
+- ordinary-poverty PR45 copy across all six shipped poverty packs.
 
-Still not shipped at this gate:
-- ordinary poverty RU+EN (PR45 red);
-- Foreman relationship RU+EN;
+Still not fully localized:
+- Foreman relationship/Night;
 - several legacy/root event families;
 - remaining hardcoded UI shell.
 
@@ -255,23 +238,18 @@ Russian fallback does not count as translation completion.
 School PR44:
 `GREEN_POST_MERGE_MAIN`.
 
+Ordinary poverty PR45:
+`GREEN_POST_MERGE_MAIN`.
+
 Forest PR43 baseline:
 `GREEN_CURRENT_MAIN`.
-
-### Active but blocked
-
-Ordinary poverty PR45:
-`BLOCKED_BY_EXACT_HEAD_CI`
-on exact head `afd485b...`.
-
-The localization payload is sound enough to continue the selective PR; the current blockers are stale/incorrect test expectations, not a reason to alter gameplay.
 
 ### Ready for a separate future selective PR
 
 Foreman event/media localization:
 `PARTIAL_GREEN_FOR_SELECTIVE_INTEGRATION`.
 
-Keep the generic voluntary Night-label wiring explicit.
+Keep generic voluntary Night-label wiring explicit.
 
 ### Waiting for external production input
 
@@ -287,13 +265,13 @@ Real multi-GIF pool:
 - Hunter/Old Boundary unresolved semantics;
 - Palace authored content.
 
-## 9. CI floor
+## 9. Current CI floor
 
 Current green main floor:
-- main SHA `ab53da4059e348734703c2de490e43e94c02b057`;
-- workflow #62 success;
+- main SHA `c0763f9f9fa9887593fe8567165bbedce2b6cd3a`;
+- workflow #67 success;
 - 17 packs / 46 events / 35 actions / 9 endings;
-- 301/301 tests.
+- 304/304 tests.
 
 Every next production PR must bind approval to its own exact head.
 
@@ -304,8 +282,7 @@ After merge, a successful push run on the resulting main SHA remains mandatory.
 ## Final gate verdict
 
 - School PR44: `GREEN_POST_MERGE_MAIN`.
-- Poverty source: `GREEN_SELECTIVE_SOURCE`.
-- Poverty PR45 current head: `BLOCKED_BY_EXACT_HEAD_CI`.
+- Ordinary poverty PR45: `GREEN_POST_MERGE_MAIN`.
 - Real GIF production: `BLOCKED_BY_REAL_ASSETS`.
 - Relationships/Night source: `PARTIAL_GREEN_SELECTIVE`.
 - Forest current shipped baseline: `GREEN`; deeper depth `STAGING_ONLY`.
