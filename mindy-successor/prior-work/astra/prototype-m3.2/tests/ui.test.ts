@@ -339,7 +339,7 @@ test('renderer: School RU EN localization preserves course command and pending s
    return !!raw&&JSON.parse(raw).run.flow.pendingScene===null;
   });
   const resolved=JSON.parse(w.localStorage.getItem('portal-life.v1'));
-  assert.equal(resolved.run.flags['school.enrolled'],true);
+  assert.equal(resolved.run.legacyCompat?.flags?.['school.enrolled'],true);
   assert.match(w.document.querySelector('.stage-title h1')?.textContent??'',/Грамотность и счёт/);
   assert.match(w.document.querySelector('.dialogue p')?.textContent??'',/Урок завершён: Грамотность и счёт/);
   assert.deepEqual(errors,[]);
