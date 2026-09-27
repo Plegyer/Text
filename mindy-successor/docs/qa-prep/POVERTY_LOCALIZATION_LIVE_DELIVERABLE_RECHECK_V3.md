@@ -5,52 +5,59 @@ Queue item: Chat 4 item 141
 Current main: `23a8798f77c42e84a7540d71fdffd69d9db9fbfd`
 PR43 merge: `326c7d495720147f17b40056369987f515363899`
 Chat3 branch: `chat3/lumber-production-proof-next`
-Chat3 head observed: `dab63c120fa0b4727e21f93d8e1d1f90ad2ef00b`
-Head message: `chat3: complete item 145`
+Latest Chat3 head observed: `f6e439a0d35b8f4791e65023d1b3e2042fa14a27`
+Head message: `chat3: add Forest poverty current-main integration ledger v1`
 
-This document supersedes any older QA assumption that Chat3 items 140+ were all missing. Git now shows real progress through item 145. Completion is judged from file contents, not task prose or filenames.
+This file is the live reconciliation for Chat3 items 140–148. An earlier same-session snapshot at Chat3 head `dab63c120fa0b4727e21f93d8e1d1f90ad2ef00b` showed item 146 as a one-line stub and items 147–148 missing. That evidence is now stale and is intentionally superseded here after rechecking Git.
 
-## Live deliverable state
+## Current deliverable state
 
-| Item | Exact deliverable | Git state | QA interpretation |
+| Item | Exact deliverable | Current Git state | QA interpretation |
 |---|---|---|---|
-| 140 | `prior-work/astra/prototype-m3.2/content/poverty-localization-main-delta-v1.fixture.json` | **PRESENT**; blob `384ed61…` | Substantive localization delta; self-labels `READY_FOR_SELECTIVE_MERGE`. Needs current-main validation before acceptance. |
-| 141 | `prior-work/astra/prototype-m3.2/tests/poverty-localization-main-delta-v1.test.ts` | **PRESENT**; blob `7f600e4…` | Substantive contract test. Checks 84 unique keys, RU+EN, production event prefixes, media alt, no gameplay/Secret Debt terms. |
-| 142 | `docs/poverty-prep/ORDINARY_POVERTY_UI_COPY_RU_EN_v1.md` | **PRESENT**; blob `2caf3ff…` | Substantive bilingual copy bank; presentation-only by intent. |
-| 143 | `prior-work/astra/prototype-m3.2/content/poverty-event-localization-key-map-v1.fixture.json` | **PRESENT**; blob `044289b…` | Substantive current-PR37 key map using PR43 runtime key convention `event.<eventId>.*` / `media.<mediaId>.alt`. Needs exact main-ID check. |
-| 144 | `prior-work/astra/prototype-m3.2/content/presentation-drafts/ordinary-poverty-multigif-staging-v1.json` | **PRESENT**; blob `28b5e35…` | Correctly self-labels `STAGING_ONLY`; candidate paths are under `assets/staging/`. Not shipped art. |
-| 145 | `docs/poverty-prep/POVERTY_LOCALIZATION_NATURAL_PATH_REGRESSION_v1.md` | **PRESENT**; blob `dd8c4e6…` | Current head completed this plan. It defines street/cheap/effectful natural-path invariance checks, but it is a plan, not executed proof. |
-| 146 | `prior-work/astra/prototype-m3.2/tests/forest-result-bilingual-natural-path-v3.test.ts` | **FILE EXISTS BUT DELIVERABLE MISSING**; blob `260aec5…` | File content is only `// item 146`. This is a placeholder/stub, not the required executable regression. |
-| 147 | `docs/poverty-prep/ORDINARY_POVERTY_LOCALIZATION_INTEGRATION_HANDOFF_v5.md` | **MISSING** | Not present on current Chat3 branch. |
-| 148 | `docs/lumber-prep/FOREST_POVERTY_CURRENT_MAIN_INTEGRATION_LEDGER_v1.md` | **MISSING** | Not present on current Chat3 branch. |
+| 140 | `prior-work/astra/prototype-m3.2/content/poverty-localization-main-delta-v1.fixture.json` | **PRESENT**, blob `384ed610bd8b893f7dbb10e59cfb8d6407f06302` | Substantive 84-key RU+EN selective localization delta. |
+| 141 | `prior-work/astra/prototype-m3.2/tests/poverty-localization-main-delta-v1.test.ts` | **PRESENT**, blob `7f600e4f5135d34be48ec347af9d773c0bfa5d45` | Substantive contract test for key uniqueness, RU+EN, current production identities, fallback media and Secret Debt exclusion. |
+| 142 | `docs/poverty-prep/ORDINARY_POVERTY_UI_COPY_RU_EN_v1.md` | **PRESENT**, blob `2caf3ff623e97663f9d2fb854f78c10278325866` | Bilingual copy bank; presentation only. |
+| 143 | `prior-work/astra/prototype-m3.2/content/poverty-event-localization-key-map-v1.fixture.json` | **PRESENT**, blob `044289b3bd001ce56fcc68df1da23bbe35bf401c` | Exact map for all 14 current PR37 production event IDs using PR43 runtime key convention. |
+| 144 | `prior-work/astra/prototype-m3.2/content/presentation-drafts/ordinary-poverty-multigif-staging-v1.json` | **PRESENT**, blob `28b5e35b784bfa6be5a106916f72066899433acf` | Correctly `STAGING_ONLY`; GIF paths are placeholders under `assets/staging/`. |
+| 145 | `docs/poverty-prep/POVERTY_LOCALIZATION_NATURAL_PATH_REGRESSION_v1.md` | **PRESENT**, blob `dd8c4e60f91f4d7e428c2f880873a94a2570e62a` | Natural-path RU↔EN smoke specification for street, cheap and effectful poverty paths. |
+| 146 | `prior-work/astra/prototype-m3.2/tests/forest-result-bilingual-natural-path-v3.test.ts` | **PRESENT AND SUBSTANTIVE**, blob `05c55cd86adbc9f65209e311f5d8be87e84e0237` | Real executable Forest success/escape/failure natural-path regression plus exact Lumber Hard Work lock. |
+| 147 | `docs/poverty-prep/ORDINARY_POVERTY_LOCALIZATION_INTEGRATION_HANDOFF_v5.md` | **PRESENT**, blob `f71eb510d90399d046b5100aa6adea02a1eec02c` | Selective integration handoff; explicitly forbids whole-branch merge and keeps placeholder GIFs staging-only. |
+| 148 | `docs/lumber-prep/FOREST_POVERTY_CURRENT_MAIN_INTEGRATION_LEDGER_v1.md` | **PRESENT**, blob `926a7745c72c519fec1800681c94dbfecc0f998f` | Current-main ledger distinguishes shipped Forest, ready poverty localization, staged challenges/media and Product-blocked Hunter/Old Boundary Token/Secret Debt. |
 
-## Updated readiness
+## What changed since the stale snapshot
 
-The previous “items 140+ missing” conclusion is stale and must not be reused. The real current state is:
+Item 146 is no longer a stub. The current test naturally enters `lumber.forest`, reaches success/escape/failure through engine commands, verifies the exact `activityResult` reaction mapping, confirms RU+EN localization keys, checks pending identity survives serialization, resolves the no-effect return choice, and reasserts:
 
-- localization delta/key map/test/copy bank are now available for QA;
-- multi-GIF remains explicitly staging-only and uses placeholder paths;
-- natural-path behavior is specified in prose but not yet backed by the requested executable item-146 test;
-- integration handoff and current-main ledger are not yet delivered.
+- Lumber Hard Work condition is exactly `careerCounter(lumber, completed_shifts, gte, 50)`;
+- Meta reward is exactly `hardWork:lumber`.
 
-Therefore ordinary-poverty localization is **READY_FOR_DETAILED_SELECTIVE_QA**, not yet fully worker-wave complete.
+Items 147 and 148 are now real files and no longer missing.
 
-## No false completion
+Accordingly the previous same-session classification `BLOCKED_BY_MISSING_DELIVERABLES` is **STALE EVIDENCE** and must not be propagated.
 
-A path existing in Git is not enough. Item 146 does not count as completed because a one-line comment does not implement any of the required assertions for natural `activityResult`, locale-neutral pending identity, RU+EN lookup, no extra gameplay effect, save/reload stability, or Hard Work invariance.
+## Current readiness
 
-Items 147–148 remain missing and must be treated as missing deliverables if a later gate depends on them.
+Chat3 items 140–148 are now **DELIVERED_IN_GIT**.
+
+The ordinary-poverty localization delta and key map are ready for selective current-main integration review. Forest item 146 provides additional executable regression evidence, but it does not replace the item-145 poverty locale-switch smoke: the poverty RU↔EN natural path still needs to be executed on the fresh integration head because item 145 is a plan rather than its own automated test.
+
+The multi-GIF file remains staging only because its GIF candidate paths are placeholders and the repository contains zero real GIF blobs.
 
 ## Locked boundaries
 
-Nothing in the newly arrived files changes:
+Nothing in this wave changes:
 
-- Secret Debt remains separate from ordinary-poverty localization and Product-blocked in mechanics/rewards;
-- locale must not change gameplay IDs, conditions, effects, rewards, RNG, Save identity or media candidate selection;
-- placeholder GIFs under staging paths do not count as shipped assets;
-- Lumber Hard Work remains only `completed_shifts >= 50`, reward `hardWork:lumber`;
+- Secret Debt remains separate and mechanics/Product blocked;
+- locale changes presentation only;
+- gameplay/event IDs, conditions/effects/rewards, RNG and Save are locale-neutral;
+- placeholder GIFs are not shipped;
+- Lumber Hard Work remains `completed_shifts >= 50`, reward `hardWork:lumber`;
 - Forest continuation remains exact `activityResult`.
 
-## Next QA state
+## Current disposition
 
-Proceed with item 142 against the substantive items 140–145. Because item 146 is only a stub and items 147–148 are missing, any integration verdict requiring the complete Chat3 wave must be marked **BLOCKED_BY_MISSING_DELIVERABLES** rather than inferred.
+**READY_FOR_SELECTIVE_INTEGRATION_REVIEW** for ordinary-poverty localization content/tests on a fresh branch from current main.
+
+**NEEDS_FRESH_INTEGRATION_HEAD_CI_AND_POVERTY_NATURAL_PATH_SMOKE** before production merge.
+
+Never merge the long-lived Chat3 branch wholesale.
