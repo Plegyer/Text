@@ -1,0 +1,107 @@
+{
+  "version": 1,
+  "fixtureId": "relationship-foreman-presentation-replacement-v1",
+  "relationshipId": "lumber.foreman",
+  "targets": [
+    {
+      "eventId": "lumber.foreman-notice",
+      "variantId": "default",
+      "choiceId": "professional",
+      "presentationId": "relationship/lumber-foreman/lumber-foreman-notice/default",
+      "mediaId": "relationship.lumber.foreman.professional",
+      "keys": {
+        "title": "event.lumber.foreman-notice.title",
+        "body": "event.lumber.foreman-notice.variant.default.text",
+        "choiceLabel": "event.lumber.foreman-notice.choice.professional.label",
+        "choiceText": "event.lumber.foreman-notice.choice.professional.text",
+        "mediaAlt": "media.relationship.lumber.foreman.professional.alt",
+        "mediaCaption": "media.relationship.lumber.foreman.professional.caption"
+      }
+    },
+    {
+      "eventId": "lumber-night.foreman-professional",
+      "variantId": "default",
+      "choiceId": "continue",
+      "presentationId": "relationship/lumber-foreman/lumber-night-foreman-professional/default",
+      "mediaId": "relationship.lumber.foreman.night.professional",
+      "keys": {
+        "title": "event.lumber-night.foreman-professional.title",
+        "body": "event.lumber-night.foreman-professional.variant.default.text",
+        "choiceLabel": "event.lumber-night.foreman-professional.choice.continue.label",
+        "choiceText": "event.lumber-night.foreman-professional.choice.continue.text",
+        "mediaAlt": "media.relationship.lumber.foreman.night.professional.alt",
+        "mediaCaption": "media.relationship.lumber.foreman.night.professional.caption"
+      }
+    }
+  ],
+  "strings": {
+    "event.lumber.foreman-notice.title": {
+      "ru": "Бригадир замечает работу",
+      "en": "The Foreman notices the work"
+    },
+    "event.lumber.foreman-notice.variant.default.text": {
+      "ru": "После первой признанной смены бригадир обращается к тебе как к работнице, на которую можно рассчитывать. Разговор остаётся профессиональным.",
+      "en": "After the first recognized shift, the Foreman addresses you as a worker who can be relied on. The conversation stays professional."
+    },
+    "event.lumber.foreman-notice.choice.professional.label": {
+      "ru": "Оставить всё по-деловому",
+      "en": "Keep it professional"
+    },
+    "event.lumber.foreman-notice.choice.professional.text": {
+      "ru": "Принять рабочее доверие без обещаний о более близких отношениях.",
+      "en": "Accept the professional trust without promising a closer relationship."
+    },
+    "media.relationship.lumber.foreman.professional.alt": {
+      "ru": "Бригадир обсуждает с героиней её работу в артели.",
+      "en": "The Foreman discusses the heroine's work with the lumber crew."
+    },
+    "media.relationship.lumber.foreman.professional.caption": {
+      "ru": "Профессиональный разговор после признанной работы.",
+      "en": "A professional conversation after recognized work."
+    },
+    "event.lumber-night.foreman-professional.title": {
+      "ru": "Разговор после смены",
+      "en": "After-shift conversation"
+    },
+    "event.lumber-night.foreman-professional.variant.default.text": {
+      "ru": "После работы вы ненадолго задерживаетесь и спокойно обсуждаете дела артели. Вечер остаётся добровольным продолжением рабочего знакомства.",
+      "en": "After work, you stay a little longer and calmly discuss crew business. The evening remains a voluntary continuation of the working acquaintance."
+    },
+    "event.lumber-night.foreman-professional.choice.continue.label": {
+      "ru": "Продолжить по-деловому",
+      "en": "Continue professionally"
+    },
+    "event.lumber-night.foreman-professional.choice.continue.text": {
+      "ru": "Сохранить разговор в рамках профессионального доверия.",
+      "en": "Keep the conversation within the bounds of professional trust."
+    },
+    "media.relationship.lumber.foreman.night.professional.alt": {
+      "ru": "Спокойный вечерний разговор героини с бригадиром после смены.",
+      "en": "A calm evening conversation between the heroine and the Foreman after work."
+    },
+    "media.relationship.lumber.foreman.night.professional.caption": {
+      "ru": "Добровольный профессиональный разговор после смены.",
+      "en": "A voluntary professional conversation after the shift."
+    }
+  },
+  "safeCopyCandidates": [
+    {
+      "copyId": "foreman.night.repeat.tools-away",
+      "ru": "Инструменты уже убраны. Можно спокойно разобрать, что сегодня сработало и что завтра стоит сделать проще.",
+      "en": "The tools are away. We can calmly review what worked today and what should be simpler tomorrow."
+    },
+    {
+      "copyId": "foreman.night.season.autumn",
+      "ru": "Ветер гонит листья между штабелями. После проверки ворот вы обсуждаете смену.",
+      "en": "Wind drives leaves between the stacks. After the gate check, you discuss the shift."
+    }
+  ],
+  "invariants": {
+    "presentationOnly": true,
+    "duplicateEvents": false,
+    "duplicateChoices": false,
+    "gameplayEffectsIncluded": false,
+    "localeChangesGameplay": false,
+    "mediaChangesGameplay": false
+  }
+}
