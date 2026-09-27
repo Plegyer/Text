@@ -323,6 +323,326 @@
         "alt": "Спокойный вечерний разговор с бригадиром у тёплого огня.",
         "altKey": "presentation.static.foreman.night-professional.alt"
       }
+    },
+    "job/lumber/shift/spring/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-lumber-shift-spring.svg",
+        "alt": "Рабочая сцена лесоруба весной; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.lumber.shift.spring.alt"
+      }
+    },
+    "job/lumber/shift/summer/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-lumber-shift-summer.svg",
+        "alt": "Рабочая сцена лесоруба летом; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.lumber.shift.summer.alt"
+      }
+    },
+    "job/lumber/shift/autumn/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-lumber-shift-autumn.svg",
+        "alt": "Рабочая сцена лесоруба осенью; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.lumber.shift.autumn.alt"
+      }
+    },
+    "job/lumber/shift/winter/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-lumber-shift-winter.svg",
+        "alt": "Рабочая сцена лесоруба зимой; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.lumber.shift.winter.alt"
+      }
+    },
+    "job/satyr-maid/shift/spring/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-shift-spring.svg",
+        "alt": "Служанка работает в таверне весной; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.satyr-maid.shift.spring.alt"
+      }
+    },
+    "job/satyr-maid/shift/summer/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-shift-summer.svg",
+        "alt": "Служанка работает в таверне летом; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.satyr-maid.shift.summer.alt"
+      }
+    },
+    "job/satyr-maid/shift/autumn/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-shift-autumn.svg",
+        "alt": "Служанка работает в таверне осенью; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.satyr-maid.shift.autumn.alt"
+      }
+    },
+    "job/satyr-maid/shift/winter/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-shift-winter.svg",
+        "alt": "Служанка работает в таверне зимой; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.satyr-maid.shift.winter.alt"
+      }
+    },
+    "job/undead-farm/shift/spring/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-shift-spring.svg",
+        "alt": "Работница выполняет обычную задачу на ферме нежити весной; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.undead-farm.shift.spring.alt"
+      }
+    },
+    "job/undead-farm/shift/summer/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-shift-summer.svg",
+        "alt": "Работница выполняет обычную задачу на ферме нежити летом; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.undead-farm.shift.summer.alt"
+      }
+    },
+    "job/undead-farm/shift/autumn/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-shift-autumn.svg",
+        "alt": "Работница выполняет обычную задачу на ферме нежити осенью; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.undead-farm.shift.autumn.alt"
+      }
+    },
+    "job/undead-farm/shift/winter/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-shift-winter.svg",
+        "alt": "Работница выполняет обычную задачу на ферме нежити зимой; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.undead-farm.shift.winter.alt"
+      }
+    },
+    "job/tavern/shift/spring/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-shift-spring.svg",
+        "alt": "Рабочая сцена в таверне весной; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.tavern.shift.spring.alt"
+      }
+    },
+    "job/tavern/shift/summer/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-shift-summer.svg",
+        "alt": "Рабочая сцена в таверне летом; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.tavern.shift.summer.alt"
+      }
+    },
+    "job/tavern/shift/autumn/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-shift-autumn.svg",
+        "alt": "Рабочая сцена в таверне осенью; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.tavern.shift.autumn.alt"
+      }
+    },
+    "job/tavern/shift/winter/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-shift-winter.svg",
+        "alt": "Рабочая сцена в таверне зимой; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.tavern.shift.winter.alt"
+      }
+    },
+    "job/hunter/shift/spring/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-shift-spring.svg",
+        "alt": "Охотница готовится к обычной работе у лесной тропы весной; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.hunter.shift.spring.alt"
+      }
+    },
+    "job/hunter/shift/summer/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-shift-summer.svg",
+        "alt": "Охотница готовится к обычной работе у лесной тропы летом; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.hunter.shift.summer.alt"
+      }
+    },
+    "job/hunter/shift/autumn/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-shift-autumn.svg",
+        "alt": "Охотница готовится к обычной работе у лесной тропы осенью; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.hunter.shift.autumn.alt"
+      }
+    },
+    "job/hunter/shift/winter/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-shift-winter.svg",
+        "alt": "Охотница готовится к обычной работе у лесной тропы зимой; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.hunter.shift.winter.alt"
+      }
+    },
+    "job/guard/shift/spring/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-shift-spring.svg",
+        "alt": "Стражница несёт обычную службу на городском посту весной; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.guard.shift.spring.alt"
+      }
+    },
+    "job/guard/shift/summer/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-shift-summer.svg",
+        "alt": "Стражница несёт обычную службу на городском посту летом; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.guard.shift.summer.alt"
+      }
+    },
+    "job/guard/shift/autumn/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-shift-autumn.svg",
+        "alt": "Стражница несёт обычную службу на городском посту осенью; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.guard.shift.autumn.alt"
+      }
+    },
+    "job/guard/shift/winter/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-shift-winter.svg",
+        "alt": "Стражница несёт обычную службу на городском посту зимой; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.guard.shift.winter.alt"
+      }
+    },
+    "job/merchant/shift/spring/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-merchant-shift-spring.svg",
+        "alt": "Торговка работает у прилавка с товарами весной; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.merchant.shift.spring.alt"
+      }
+    },
+    "job/merchant/shift/summer/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-merchant-shift-summer.svg",
+        "alt": "Торговка работает у прилавка с товарами летом; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.merchant.shift.summer.alt"
+      }
+    },
+    "job/merchant/shift/autumn/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-merchant-shift-autumn.svg",
+        "alt": "Торговка работает у прилавка с товарами осенью; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.merchant.shift.autumn.alt"
+      }
+    },
+    "job/merchant/shift/winter/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-merchant-shift-winter.svg",
+        "alt": "Торговка работает у прилавка с товарами зимой; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.merchant.shift.winter.alt"
+      }
+    },
+    "job/artist-geisha/shift/spring/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-artist-geisha-shift-spring.svg",
+        "alt": "Исполнительница занимается спокойной репетиционной работой весной; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.artist-geisha.shift.spring.alt"
+      }
+    },
+    "job/artist-geisha/shift/summer/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-artist-geisha-shift-summer.svg",
+        "alt": "Исполнительница занимается спокойной репетиционной работой летом; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.artist-geisha.shift.summer.alt"
+      }
+    },
+    "job/artist-geisha/shift/autumn/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-artist-geisha-shift-autumn.svg",
+        "alt": "Исполнительница занимается спокойной репетиционной работой осенью; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.artist-geisha.shift.autumn.alt"
+      }
+    },
+    "job/artist-geisha/shift/winter/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-artist-geisha-shift-winter.svg",
+        "alt": "Исполнительница занимается спокойной репетиционной работой зимой; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.artist-geisha.shift.winter.alt"
+      }
+    },
+    "job/assassin/shift/spring/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-shift-spring.svg",
+        "alt": "Ассасин занимается спокойной подготовкой снаряжения без изображения цели весной; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.assassin.shift.spring.alt"
+      }
+    },
+    "job/assassin/shift/summer/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-shift-summer.svg",
+        "alt": "Ассасин занимается спокойной подготовкой снаряжения без изображения цели летом; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.assassin.shift.summer.alt"
+      }
+    },
+    "job/assassin/shift/autumn/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-shift-autumn.svg",
+        "alt": "Ассасин занимается спокойной подготовкой снаряжения без изображения цели осенью; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.assassin.shift.autumn.alt"
+      }
+    },
+    "job/assassin/shift/winter/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-shift-winter.svg",
+        "alt": "Ассасин занимается спокойной подготовкой снаряжения без изображения цели зимой; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.assassin.shift.winter.alt"
+      }
+    },
+    "job/prostitute/shift/spring/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-prostitute-shift-spring.svg",
+        "alt": "Работница неэксплицитно готовит комнату и рабочее пространство весной; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.prostitute.shift.spring.alt"
+      }
+    },
+    "job/prostitute/shift/summer/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-prostitute-shift-summer.svg",
+        "alt": "Работница неэксплицитно готовит комнату и рабочее пространство летом; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.prostitute.shift.summer.alt"
+      }
+    },
+    "job/prostitute/shift/autumn/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-prostitute-shift-autumn.svg",
+        "alt": "Работница неэксплицитно готовит комнату и рабочее пространство осенью; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.prostitute.shift.autumn.alt"
+      }
+    },
+    "job/prostitute/shift/winter/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-prostitute-shift-winter.svg",
+        "alt": "Работница неэксплицитно готовит комнату и рабочее пространство зимой; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.prostitute.shift.winter.alt"
+      }
     }
   }
 }
