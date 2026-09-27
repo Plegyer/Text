@@ -1,0 +1,94 @@
+{
+  "version": 1,
+  "defaultLocale": "ru",
+  "strings": {
+    "event.gopher.arrival.title": {
+      "ru": "Белый суслик и открытый люк",
+      "en": "The white gopher and the open hatch"
+    },
+    "event.gopher.arrival.variant.default.text": {
+      "ru": "В обычном городе вы замечаете белого суслика с золотой пуговицей в зубах. Он оглядывается так возмущённо, словно опаздываете именно вы. Погоня заканчивается открытым люком — и падением в телегу с сеном под незнакомым небом. Вокруг эльфы, орки и сатиры. Женщин среди них нет: по словам возницы, их не видели уже много поколений. Молодой на вид эльф представляется принцем Элианом и слишком быстро предлагает защиту. Старик-сатир Силан предлагает комнату. «Комната есть. Плата — монетами или помощью по хозяйству». Вам 25 лет, и это определённо не лучший способ сменить адрес.",
+      "en": "In an ordinary city, you spot a white gopher with a gold button in its teeth. It looks back in such outrage that you would think you were the one running late. The chase ends at an open hatch—and with you falling into a hay cart beneath an unfamiliar sky. Elves, orcs, and satyrs surround you. There are no women among them; according to the driver, none have been seen for many generations. A young-looking elf introduces himself as Prince Elian and offers protection a little too quickly. An elderly satyr named Silan offers you a room. “There’s a room. Payment is in coins or help around the house.” You are twenty-five, and this is definitely not the best way to change your address."
+    },
+    "event.gopher.arrival.choice.home.label": {
+      "ru": "Сначала найти дорогу домой",
+      "en": "First, find a way home"
+    },
+    "event.gopher.arrival.choice.home.text": {
+      "ru": "Вы решаете искать путь назад, но другие цели остаются открыты.",
+      "en": "You decide to look for a way back, while leaving other goals open."
+    },
+    "event.gopher.arrival.choice.status.label": {
+      "ru": "Для начала устроиться получше",
+      "en": "First, get established"
+    },
+    "event.gopher.arrival.choice.status.text": {
+      "ru": "Внимание можно превратить в связи, доход и самостоятельность.",
+      "en": "Attention can be turned into connections, income, and independence."
+    },
+    "event.gopher.arrival.choice.mystery.label": {
+      "ru": "Узнать, что случилось с этим миром",
+      "en": "Find out what happened to this world"
+    },
+    "event.gopher.arrival.choice.mystery.text": {
+      "ru": "Вы запоминаете странную паузу принца при вопросе о женщинах.",
+      "en": "You remember the prince’s strange pause when asked about women."
+    },
+    "event.gopher.tavern-intro.title": {
+      "ru": "Кружки прежде легенд",
+      "en": "Mugs before legends"
+    },
+    "event.gopher.tavern-intro.variant.default.text": {
+      "ru": "Трактирщик Марек, широкоплечий орк тридцати четырёх лет, выдаёт вам фартук. «Гости уже спорят, кто спасёт вас от дракона. Пока пусть спасут мебель от локтей». Вы договариваетесь: комплименты принимаются, хватать персонал нельзя. Первая смена начинается с трёх заказов и одной дуэли за право вымыть пол.",
+      "en": "Marek, a broad-shouldered thirty-four-year-old orc innkeeper, hands you an apron. “The guests are already arguing over who gets to save you from a dragon. For now, they can save the furniture from their elbows.” You set the rules: compliments are fine; grabbing the staff is not. Your first shift begins with three orders and one duel over the right to mop the floor."
+    },
+    "event.gopher.tavern-intro.choice.agree.label": {
+      "ru": "Договориться о правилах",
+      "en": "Agree on the rules"
+    },
+    "event.gopher.tavern-intro.choice.agree.text": {
+      "ru": "Марек поддержал ваши условия. Здесь можно работать спокойно.",
+      "en": "Marek backs your terms. You can work here in peace."
+    },
+    "event.gopher.tavern-quest.title": {
+      "ru": "Пропавшая накладная",
+      "en": "The missing delivery note"
+    },
+    "event.gopher.tavern-quest.variant.default.text": {
+      "ru": "После пятой смены Марек доверяет вам неприятность: дворец требует право распоряжаться городским праздником. Обещанную независимость подтверждает накладная, затерявшаяся на лесном складе. «Если принц ещё раз назовёт это добровольным подарком, я добровольно подарю ему счёт». Найти документ поможет чутьё не ниже 3. Её развивают охотники или сбор трав.",
+      "en": "After your fifth shift, Marek trusts you with a problem: the palace claims the right to control the town festival. A delivery note lost at the forest storehouse proves the promised independence. “If the prince calls this a voluntary gift one more time, I’ll voluntarily give him the bill.” Finding the document requires Instinct 3 or higher. Hunter work or herb gathering can improve it."
+    },
+    "event.gopher.tavern-quest.choice.help.label": {
+      "ru": "Поискать документ",
+      "en": "Look for the document"
+    },
+    "event.gopher.tavern-quest.choice.help.text": {
+      "ru": "Поручение открыто: проверить лесной склад.",
+      "en": "The errand is open: check the forest storehouse."
+    },
+    "event.gopher.tavern-quest.choice.later.label": {
+      "ru": "Вернуться к разговору позже",
+      "en": "Come back to this later"
+    },
+    "event.gopher.tavern-quest.choice.later.text": {
+      "ru": "Марек оставляет папку на полке. Решение можно отложить.",
+      "en": "Marek leaves the folder on the shelf. The decision can wait."
+    },
+    "event.gopher.receipt.title": {
+      "ru": "Бумага против короны",
+      "en": "Paper against the crown"
+    },
+    "event.gopher.receipt.variant.default.text": {
+      "ru": "На складе лесорубов вы находите накладную внутри пособия «Как отличить бревно от начальника». Печать подтверждает: праздник принадлежит горожанам. На обороте — распоряжение дворца изъять все копии. Пока это улика о местной политике, а не ответ на тайну мира.",
+      "en": "At the lumber storehouse, you find the delivery note inside a guide called “How to Tell a Log from Your Supervisor.” The seal confirms that the festival belongs to the townspeople. On the back is a palace order to confiscate every copy. For now, this is evidence about local politics, not an answer to the mystery of the world."
+    },
+    "event.gopher.receipt.choice.take.label": {
+      "ru": "Вернуться с находкой",
+      "en": "Return with the find"
+    },
+    "event.gopher.receipt.choice.take.text": {
+      "ru": "Теперь можно обсудить накладную с Мареком.",
+      "en": "You can now discuss the delivery note with Marek."
+    }
+  }
+}
