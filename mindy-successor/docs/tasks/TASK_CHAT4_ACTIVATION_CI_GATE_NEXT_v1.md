@@ -2946,3 +2946,119 @@ Summarize items 199–209:
 - Product-open isolation.
 
 Continue items 199–210 sequentially without waiting for Lead review.
+
+
+## Queue item 211 — PR50 exact-head Forest route/default static audit v1
+Create NEW file only:
+- `docs/qa-prep/PR50_FOREST_ROUTE_DEFAULT_EXACT_HEAD_AUDIT_V1.md`
+
+Review PR50 exact head:
+- one generic project-owned route/default SVG;
+- exact existing `activity/forest/route/default`;
+- RU+EN alt/caption;
+- no route-specific semantics;
+- no gameplay/runtime/schema changes;
+- exact-head CI evidence.
+
+## Queue item 212 — PR50 post-merge main audit v1
+Create NEW file only:
+- `docs/qa-prep/PR50_FOREST_ROUTE_DEFAULT_POST_MERGE_AUDIT_V1.md`
+
+Only after Git proves merge, record exact merge SHA, current main and post-merge push CI.
+Until then mark NOT_YET_MERGED.
+
+## Queue item 213 — Forest route/default natural-path UI QA v1
+Create NEW file only:
+- `docs/qa-prep/FOREST_ROUTE_DEFAULT_NATURAL_PATH_UI_QA_V1.md`
+
+Verify natural Explore -> enter `lumber.forest` path shows the generic static fallback and RU↔EN switch preserves the exact Activity envelope, route state, RNG and Save.
+
+## Queue item 214 — poverty 33-key final integration QA v2
+Create NEW file only:
+- `docs/qa-prep/POVERTY_33_KEY_FINAL_INTEGRATION_QA_V2.md`
+
+Review the current post-PR49/50 33-key Chat3 patch before Lead merge:
+existing keys only, complete RU+EN, no media keys, no Secret Debt, no gameplay fields, natural-path identity preserved.
+
+## Queue item 215 — legacy root 109-key production patch QA v2
+Create NEW file only:
+- `docs/qa-prep/LEGACY_ROOT_109_KEY_PRODUCTION_PATCH_QA_V2.md`
+
+Review Chat5 item 82 against exact current main:
+- 17 current event IDs;
+- 16 current media IDs;
+- 26 choice-outcome keys;
+- complete RU+EN;
+- additive/identical/reviewed text-only;
+- no other-owner overlap;
+- no gameplay fields.
+
+## Queue item 216 — legacy pending-scene localization acceptance v1
+Create NEW file only:
+- `docs/qa-prep/LEGACY_PENDING_SCENE_LOCALIZATION_ACCEPTANCE_V1.md`
+
+Define/verify RU↔EN acceptance for representative legacy root pending scenes:
+same event/variant/choice IDs, same effects/RNG/Save, localized title/body/choice label/media alt only.
+
+## Queue item 217 — journal/outcome locale-neutral Save migration QA v2
+Create NEW file only:
+- `docs/qa-prep/JOURNAL_OUTCOME_LOCALE_NEUTRAL_SAVE_MIGRATION_QA_V2.md`
+
+Refine acceptance for a future shared consumer:
+- never persist selected locale prose as gameplay identity;
+- old text-only saves remain readable;
+- no fuzzy prose-to-ID migration;
+- stable event/choice identity when available;
+- locale switch presentation-only.
+
+## Queue item 218 — global UI-shell localization source QA v1
+Create NEW file only:
+- `docs/qa-prep/GLOBAL_UI_SHELL_LOCALIZATION_SOURCE_QA_V1.md`
+
+Review Chat5 next-wave UI-shell source as it appears.
+Require text-only stable keys for Explore/Sleep/Stats/Journal/Bag/Legacy/Arrival/shared buttons and no mechanics/state changes.
+
+## Queue item 219 — hardcoded player-facing text debt recompute v1
+Create NEW file only:
+- `docs/qa-prep/HARDCODED_PLAYER_FACING_TEXT_DEBT_RECOMPUTE_V1.md`
+
+Audit exact current `src/ui/app.ts` after PR50 status.
+Count/classify remaining player-facing hardcoded RU strings:
+- SHARED_UI_SHELL;
+- NIGHT_LODGING;
+- ACTIVITY;
+- ENDING_LEGACY;
+- DEBUG_INTERNAL;
+- NON_PLAYER_FACING.
+
+## Queue item 220 — post-PR50 static coverage closure QA v1
+Create NEW file only:
+- `docs/qa-prep/POST_PR50_STATIC_COVERAGE_CLOSURE_QA_V1.md`
+
+If PR50 merges, recompute established 80-ID project-owned static target:
+- exact root mappings;
+- exact physical project-owned sources;
+- remaining gaps.
+Do not count Product-open route-specific slots.
+
+## Queue item 221 — current-main CI regression floor v7
+Create NEW file only:
+- `docs/qa-prep/CURRENT_MAIN_CI_REGRESSION_FLOOR_V7.md`
+
+Record exact current main SHA, latest successful push run, validator counts and test count after PR50 status is known.
+
+## Queue item 222 — next production integration gate v17
+Create NEW file only:
+- `docs/qa-prep/NEXT_PRODUCTION_INTEGRATION_GATE_V17.md`
+
+Summarize items 211–221:
+- PR50;
+- poverty 33-key text patch;
+- legacy 109-key patch;
+- journal/outcome consumer;
+- global UI shell localization;
+- remaining hardcoded text;
+- static coverage closure;
+- Product-open isolation.
+
+Continue items 211–222 sequentially without waiting for Lead review.
