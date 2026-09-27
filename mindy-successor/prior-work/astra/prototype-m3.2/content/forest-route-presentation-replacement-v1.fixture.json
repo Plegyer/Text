@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "id": "forest.route-presentation-replacement.v1",
+  "status": "PRESENTATION_ONLY_REPLACEMENT_SOURCE",
+  "baseMain": "c0763f9f9fa9887593fe8567165bbedce2b6cd3a",
+  "routes": [
+    {
+      "routeId": "forest.route.logging-road",
+      "routeState": "logging-road",
+      "semanticPresentationId": "activity/forest/route/logging-road",
+      "currentLabelKey": "activityOption.forest.route.logging-road.label",
+      "authoredTextKeys": [
+        "forestRouteScene.forest.route.logging-road.wheel-ruts.text",
+        "forestRouteScene.forest.route.logging-road.timber-stack.text",
+        "forestRouteScene.forest.route.logging-road.work-marks.text",
+        "forestRouteScene.forest.route.logging-road.narrowing.text",
+        "forestRouteScene.forest.route.logging-road.reaction.text"
+      ],
+      "safeProseCandidates": [
+        "forestRouteScene.forest.route.logging-road.wheel-ruts.text",
+        "forestRouteScene.forest.route.logging-road.timber-stack.text",
+        "forestRouteScene.forest.route.logging-road.work-marks.text",
+        "forestRouteScene.forest.route.logging-road.narrowing.text"
+      ],
+      "reactionTextKey": "forestRouteScene.forest.route.logging-road.reaction.text",
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-forest.svg",
+        "altKey": "media.forest-result-content-v1.success.alt",
+        "note": "Existing shipped Forest artwork reused as a neutral static fallback; no new asset is claimed."
+      }
+    },
+    {
+      "routeId": "forest.route.old-boundary",
+      "routeState": "old-boundary",
+      "semanticPresentationId": "activity/forest/route/old-boundary",
+      "currentLabelKey": "activityOption.forest.route.old-boundary.label",
+      "authoredTextKeys": [
+        "forestRouteScene.forest.route.old-boundary.stones.text",
+        "forestRouteScene.forest.route.old-boundary.old-marks.text",
+        "forestRouteScene.forest.route.old-boundary.clearing.text",
+        "forestRouteScene.forest.route.old-boundary.beyond-markers.text",
+        "forestRouteScene.forest.route.old-boundary.reaction.text"
+      ],
+      "safeProseCandidates": [
+        "forestRouteScene.forest.route.old-boundary.stones.text",
+        "forestRouteScene.forest.route.old-boundary.old-marks.text",
+        "forestRouteScene.forest.route.old-boundary.clearing.text",
+        "forestRouteScene.forest.route.old-boundary.beyond-markers.text"
+      ],
+      "reactionTextKey": "forestRouteScene.forest.route.old-boundary.reaction.text",
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-forest.svg",
+        "altKey": "media.forest-result-content-v1.success.alt",
+        "note": "Existing shipped Forest artwork reused as a neutral static fallback; no new asset is claimed."
+      }
+    }
+  ],
+  "integrationBoundary": {
+    "currentActivityPresentationId": "activity/forest/route/default",
+    "replacementIntent": "After authoritative route selection, shared presentation/UI may map existing routeState to the matching semanticPresentationId.",
+    "sharedConsumerOwner": "Lead/Chat1",
+    "changesGameplaySelection": false,
+    "changesActivityState": false,
+    "changesResultIdentity": false,
+    "changesRng": false,
+    "changesSaveState": false
+  },
+  "invariants": {
+    "exactCurrentRouteIdsOnly": true,
+    "localeNeutralPresentationIds": true,
+    "presentationOnly": true,
+    "createsGameplayFields": false,
+    "createsHunterRoute": false,
+    "changesOldBoundaryTokenSemantics": false,
+    "changesLumberHardWork": false
+  }
+}
