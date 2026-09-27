@@ -2832,3 +2832,93 @@ Create NEW file only:
 Consolidate items 197–207 into SAFE_TEXT_PATCH / SHARED_UI_REQUIRED / SAFE_PRESENTATION_SOURCE / PRODUCT_OPEN and exact selective-copy files.
 
 Continue items 197–208 sequentially without waiting for Lead review.
+
+
+## Queue item 209 — post-PR47 poverty copyedit rebase audit v1
+Create NEW file only:
+- `docs/poverty-prep/POST_PR47_POVERTY_COPYEDIT_REBASE_AUDIT_V1.md`
+
+Recheck the 33 SAFE_NOW poverty text replacements from item 198 against exact current main after PR47.
+Classify CLEAN_APPLY / CONFLICT / SUPERSEDED.
+
+## Queue item 210 — post-PR47 poverty final text delta v3
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/poverty-copyedit-post-pr47-v3.fixture.json`
+
+Produce only CLEAN_APPLY exact-key RU+EN text replacements from item 209.
+Existing keys only; no alt/media keys unless the same text key is explicitly reviewed.
+
+## Queue item 211 — poverty copyedit natural-path expectation fixture v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/poverty-copyedit-natural-path-expectations-v1.fixture.json`
+
+For each changed event key in item 210, map the exact current event/variant/choice path that exposes it naturally.
+No new gameplay.
+
+## Queue item 212 — shared Night/lodging post-PR47 key collision audit v1
+Create NEW file only:
+- `docs/poverty-prep/SHARED_NIGHT_LODGING_POST_PR47_KEY_COLLISION_AUDIT_V1.md`
+
+Re-audit the finalized 20 shared UI keys against exact root localization after PR47/46/45.
+Classify ADDITIVE / IDENTICAL / CONFLICT / REUSE_EXISTING.
+
+## Queue item 213 — shared Night/lodging UI consumer map v3
+Create NEW file only:
+- `docs/poverty-prep/SHARED_NIGHT_LODGING_UI_CONSUMER_MAP_V3.md`
+
+Map each finalized key to exact current `src/ui/app.ts` hardcoded consumer seam and fallback text.
+No UI edits.
+
+## Queue item 214 — Forest route post-PR47 presentation baseline v1
+Create NEW file only:
+- `docs/lumber-prep/FOREST_ROUTE_POST_PR47_PRESENTATION_BASELINE_V1.md`
+
+Audit exact current main after PR47:
+- shared `activity/forest/route/default`;
+- result/reaction static coverage;
+- route gameplay IDs;
+- route-specific presentation gap.
+No Product decisions.
+
+## Queue item 215 — Forest route localized text final fixture v3
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/forest-route-localization-final-v3.fixture.json`
+
+Consolidate logging-road/old-boundary polished RU+EN route text plus alt/caption keys using only current route gameplay identities and proposed locale-neutral semantic IDs.
+
+## Queue item 216 — Forest route scene variation bank v4
+Create NEW file only:
+- `docs/lumber-prep/FOREST_ROUTE_SCENE_VARIATION_BANK_V4.md`
+
+Provide additional effect-free RU+EN presentation variants for logging-road and old-boundary:
+- 4–6 variants each;
+- no route outcome changes;
+- no token/Hunter/challenge/season mechanics.
+
+## Queue item 217 — Forest route choice-label polish v1
+Create NEW file only:
+- `docs/lumber-prep/FOREST_ROUTE_CHOICE_LABEL_POLISH_V1.md`
+
+Review current player-facing route option labels/help copy and propose concise RU+EN presentation wording by exact current route ID.
+No availability/condition changes.
+
+## Queue item 218 — Forest route presentation natural-path expectation fixture v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/forest-route-presentation-natural-path-v1.fixture.json`
+
+Describe exact expected route ID, proposed presentationId, localized route text/media alt, and exact unchanged result continuation for logging-road/old-boundary natural paths.
+
+## Queue item 219 — poverty/Forest localization ownership collision audit v1
+Create NEW file only:
+- `docs/lumber-prep/POVERTY_FOREST_LOCALIZATION_OWNERSHIP_COLLISION_AUDIT_V1.md`
+
+Check Chat3 proposed keys against shipped School/Foreman/static-media/localization namespaces after PR47.
+No duplicate ownership with Chat2/Chat5.
+
+## Queue item 220 — post-PR47 Forest/poverty handoff v6
+Create NEW file only:
+- `docs/lumber-prep/POST_PR47_FOREST_POVERTY_HANDOFF_V6.md`
+
+Consolidate items 209–219 into SAFE_TEXT_PATCH / SHARED_UI_REQUIRED / ROUTE_PRESENTATION_SOURCE / PRODUCT_OPEN with exact selective-copy files for Lead.
+
+Continue items 209–220 sequentially without waiting for Lead review.
