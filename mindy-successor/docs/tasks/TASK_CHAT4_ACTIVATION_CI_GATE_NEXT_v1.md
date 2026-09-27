@@ -1279,3 +1279,23 @@ Assuming PR32 eventually passes CI and merges, define the retained regression fl
 Do not claim PR32 merged or green unless Git proves it.
 
 Continue items 71–79 sequentially without waiting for Lead review.
+
+
+## Queue item 80 — CI-enabled merge gate audit v1
+
+Create NEW file only:
+- `docs/qa-prep/CI_ENABLED_MERGE_GATE_AUDIT_v1.md`
+
+Audit the newly merged `.github/workflows/mindy-successor-check.yml` against project needs.
+
+Verify:
+- Node version matches package engines;
+- `npm ci` uses the correct lockfile;
+- `npm run check` covers typecheck, validate, build, tests;
+- PR and main push triggers are scoped correctly;
+- exact-head evidence can be associated with PRs;
+- no product/runtime semantics changed.
+
+Also record how PR29/PR32 integration policy changes now that CI is available.
+
+Continue items 72–80 sequentially without waiting for Lead review.
