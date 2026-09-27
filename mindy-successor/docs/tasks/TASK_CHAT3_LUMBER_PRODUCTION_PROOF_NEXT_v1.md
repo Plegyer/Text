@@ -1738,3 +1738,115 @@ Provide Lead with the smallest current-main selective integration bundle from it
 - remaining content gaps.
 
 Continue items 96–104 sequentially without waiting for Lead review.
+
+
+## Queue item 105 — Secret Debt lender offer text bank v1
+
+Create NEW file only:
+- `docs/poverty-prep/SECRET_DEBT_LENDER_OFFER_TEXT_BANK_v1.md`
+
+Author a bounded bank of lender-offer scene variants consistent with the already-directed structure:
+- one-time street encounter;
+- tempting loan;
+- accept/refuse agency;
+- no immediate disclosure of exact future trap beyond what Product direction permits.
+
+Keep lender identity generic or explicitly CONTENT_DRAFT. Do not choose encounter probability, principal or later debt amount.
+
+## Queue item 106 — Secret Debt delayed-activation text bank
+
+Create NEW file only:
+- `docs/poverty-prep/SECRET_DEBT_DELAYED_ACTIVATION_TEXT_BANK_v1.md`
+
+Author scene variants for the period between accepted loan and debt activation:
+- temporary relief;
+- ambiguous reminders/signs;
+- activation notice;
+- no guessed delay length or exact debt amount.
+
+## Queue item 107 — hidden-career work content bank v1
+
+Create NEW file only:
+- `docs/poverty-prep/SECRET_DEBT_HIDDEN_CAREER_WORK_BANK_v1.md`
+
+Author repeatable hidden-career work scene families:
+- ordinary/repeatable day work;
+- escalating pressure;
+- compliance/resistance flavor;
+- relationship/world reactions where identity-neutral.
+
+Do not set final wages, stat gains, thresholds or outcome requirements.
+
+## Queue item 108 — forced-Night authored scene bank v1
+
+Create NEW file only:
+- `docs/poverty-prep/SECRET_DEBT_FORCED_NIGHT_SCENE_BANK_v1.md`
+
+Author forced-Night scene families that can later plug into the already-directed bound-state Night behavior.
+
+Preserve:
+- forced Night is separate from day work;
+- exact Energy/next-day penalty remains OPEN;
+- no event text silently changes mechanics.
+
+## Queue item 109 — paid_freedom outcome content draft
+
+Create NEW file only:
+- `docs/poverty-prep/SECRET_DEBT_PAID_FREEDOM_CONTENT_v1.md`
+
+Author the narrative/content shell for `paid_freedom`:
+- approach;
+- resolution;
+- immediate aftermath;
+- world/relationship reaction hooks;
+- ending/presentation identity placeholder.
+
+Do not choose exact eligibility threshold or Meta reward.
+
+## Queue item 110 — bound_life outcome content draft
+
+Create NEW file only:
+- `docs/poverty-prep/SECRET_DEBT_BOUND_LIFE_CONTENT_v1.md`
+
+Author the narrative/content shell for `bound_life` with the same guardrails:
+- no exact threshold;
+- no guessed Meta reward;
+- preserve outcome identity.
+
+## Queue item 111 — takeover outcome content draft
+
+Create NEW file only:
+- `docs/poverty-prep/SECRET_DEBT_TAKEOVER_CONTENT_v1.md`
+
+Author the narrative/content shell for `takeover`:
+- progression context;
+- resolution;
+- aftermath;
+- relationship/world hooks;
+- presentation identity placeholder.
+
+Do not choose exact requirements/reward.
+
+## Queue item 112 — Secret Debt production-oriented content fixture
+
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/secret-debt-authored-content-v1.fixture.json`
+
+Encode items 105–111 as machine-readable authored-content data with all unresolved mechanics expressed as null/OPEN markers, not guessed constants.
+
+Do not include this fixture in production catalog.
+
+## Queue item 113 — Secret Debt authored-content handoff v1
+
+Create NEW file only:
+- `docs/poverty-prep/SECRET_DEBT_AUTHORED_CONTENT_HANDOFF_v1.md`
+
+Summarize:
+- authored content now ready;
+- exact Product decisions still blocking mechanics;
+- which content can be converted to production immediately after those answers;
+- multi-GIF opportunities;
+- exact files for Lead;
+- no runtime/schema changes in this wave.
+
+Continue items 105–113 sequentially without waiting for Lead review.
