@@ -1,8 +1,8 @@
 # Presentation Final Closeout Pack v5
 
-Current main: `4c86946167bf424665a499875c597afeb340ab8f`.
+Current main: `6cd990f45d368291b4a288f9f48c569f6e0b207f`.
 
-This is the smallest final Chat 2 closeout after the green PR25 technical RC gate.
+This is the smallest final Chat 2 closeout after the green PR25 technical RC gate. The later main change `6cd990f45d368291b4a288f9f48c569f6e0b207f` adds schema4/state-drift QA only and does not change production presentation runtime/content/UI.
 
 ## SHIPPED_GREEN
 

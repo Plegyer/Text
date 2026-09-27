@@ -2,7 +2,7 @@
   "version": 5,
   "kind": "presentation-final-closeout-pack",
   "status": "post-pr25-minimal",
-  "mainBaseline": "4c86946167bf424665a499875c597afeb340ab8f",
+  "mainBaseline": "6cd990f45d368291b4a288f9f48c569f6e0b207f",
   "SHIPPED_GREEN": [
     {
       "path": "mindy-successor/prior-work/astra/prototype-m3.2/src/core/presentation.ts",
@@ -161,5 +161,10 @@
       "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-replacement-bundle-migration.test.ts",
       "reason": "Future migration QA."
     }
-  ]
+  ],
+  "postPR25QaOnly": {
+    "commit": "6cd990f45d368291b4a288f9f48c569f6e0b207f",
+    "productionPresentationChanged": false,
+    "note": "Schema4 omission/state-drift regression tests only; closeout classifications unchanged."
+  }
 }
