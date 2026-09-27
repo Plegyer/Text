@@ -1145,3 +1145,22 @@ Map authored recovery sources for a poor run:
 For each identify structural authority, content needed, runtime seam, balance dependency, and anti-softlock role. Do not make any one source mandatory and do not invent final values.
 
 Continue items 62–70 sequentially without waiting for Lead review.
+
+
+## Queue item 71 — Secret Debt presentation-content dependency map
+
+Create NEW file only:
+- `docs/poverty-prep/SECRET_DEBT_PRESENTATION_CONTENT_DEPENDENCIES_v1.md`
+
+Map which Secret Debt/Slave presentation surfaces can be prepared from fixed structure versus which require authored content first:
+- lender offer;
+- delayed activation;
+- repeatable hidden work;
+- forced Night;
+- relationship/story events;
+- three outcome families;
+- Meta result presentation.
+
+Do not choose art, prose, exact rewards, or balance numbers.
+
+Continue items 63–71 sequentially without waiting for Lead review.
