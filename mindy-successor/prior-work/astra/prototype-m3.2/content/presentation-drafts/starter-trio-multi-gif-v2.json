@@ -1,0 +1,595 @@
+{
+  "formatVersion": 2,
+  "kind": "starter-trio-multi-gif-authoring-draft",
+  "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+  "sourceMain": "279c71fcf87c9c06c5b96699c8516616a8350062",
+  "policy": {
+    "candidatesPerSeasonalSlot": 4,
+    "candidatesPerResultSlot": 3,
+    "candidateKeysStable": true,
+    "mediaSelectionChangesGameplay": false,
+    "mediaPathsShipped": false,
+    "staticFallbackPreserved": true
+  },
+  "pools": [
+    {
+      "presentationId": "job/lumber/shift/spring/default",
+      "source": "current-main-shipped-semantic-slot",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "lumber-spring-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/lumber/spring/1.gif",
+          "alt": "lumber spring shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "lumber-spring-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/lumber/spring/2.gif",
+          "alt": "lumber spring shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "lumber-spring-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/lumber/spring/3.gif",
+          "alt": "lumber spring shift visual variation 3.",
+          "shipped": false
+        },
+        {
+          "key": "lumber-spring-4",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/lumber/spring/4.gif",
+          "alt": "lumber spring shift visual variation 4.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-lumber.svg",
+        "alt": "lumber spring static shift fallback."
+      }
+    },
+    {
+      "presentationId": "job/lumber/shift/summer/default",
+      "source": "current-main-shipped-semantic-slot",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "lumber-summer-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/lumber/summer/1.gif",
+          "alt": "lumber summer shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "lumber-summer-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/lumber/summer/2.gif",
+          "alt": "lumber summer shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "lumber-summer-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/lumber/summer/3.gif",
+          "alt": "lumber summer shift visual variation 3.",
+          "shipped": false
+        },
+        {
+          "key": "lumber-summer-4",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/lumber/summer/4.gif",
+          "alt": "lumber summer shift visual variation 4.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-lumber.svg",
+        "alt": "lumber summer static shift fallback."
+      }
+    },
+    {
+      "presentationId": "job/lumber/shift/autumn/default",
+      "source": "current-main-shipped-semantic-slot",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "lumber-autumn-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/lumber/autumn/1.gif",
+          "alt": "lumber autumn shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "lumber-autumn-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/lumber/autumn/2.gif",
+          "alt": "lumber autumn shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "lumber-autumn-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/lumber/autumn/3.gif",
+          "alt": "lumber autumn shift visual variation 3.",
+          "shipped": false
+        },
+        {
+          "key": "lumber-autumn-4",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/lumber/autumn/4.gif",
+          "alt": "lumber autumn shift visual variation 4.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-lumber.svg",
+        "alt": "lumber autumn static shift fallback."
+      }
+    },
+    {
+      "presentationId": "job/lumber/shift/winter/default",
+      "source": "current-main-shipped-semantic-slot",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "lumber-winter-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/lumber/winter/1.gif",
+          "alt": "lumber winter shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "lumber-winter-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/lumber/winter/2.gif",
+          "alt": "lumber winter shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "lumber-winter-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/lumber/winter/3.gif",
+          "alt": "lumber winter shift visual variation 3.",
+          "shipped": false
+        },
+        {
+          "key": "lumber-winter-4",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/lumber/winter/4.gif",
+          "alt": "lumber winter shift visual variation 4.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-lumber.svg",
+        "alt": "lumber winter static shift fallback."
+      }
+    },
+    {
+      "presentationId": "job/lumber/result/default",
+      "source": "current-main-shipped-semantic-slot",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "lumber-result-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/lumber/result/1.gif",
+          "alt": "lumber completed-shift result visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "lumber-result-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/lumber/result/2.gif",
+          "alt": "lumber completed-shift result visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "lumber-result-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/lumber/result/3.gif",
+          "alt": "lumber completed-shift result visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-lumber.svg",
+        "alt": "lumber result static fallback."
+      }
+    },
+    {
+      "presentationId": "job/satyr-maid/shift/spring/default",
+      "source": "current-main-shipped-semantic-slot",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "satyr-maid-spring-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/satyr-maid/spring/1.gif",
+          "alt": "satyr-maid spring shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "satyr-maid-spring-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/satyr-maid/spring/2.gif",
+          "alt": "satyr-maid spring shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "satyr-maid-spring-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/satyr-maid/spring/3.gif",
+          "alt": "satyr-maid spring shift visual variation 3.",
+          "shipped": false
+        },
+        {
+          "key": "satyr-maid-spring-4",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/satyr-maid/spring/4.gif",
+          "alt": "satyr-maid spring shift visual variation 4.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-tavern.svg",
+        "alt": "satyr-maid spring static shift fallback."
+      }
+    },
+    {
+      "presentationId": "job/satyr-maid/shift/summer/default",
+      "source": "current-main-shipped-semantic-slot",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "satyr-maid-summer-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/satyr-maid/summer/1.gif",
+          "alt": "satyr-maid summer shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "satyr-maid-summer-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/satyr-maid/summer/2.gif",
+          "alt": "satyr-maid summer shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "satyr-maid-summer-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/satyr-maid/summer/3.gif",
+          "alt": "satyr-maid summer shift visual variation 3.",
+          "shipped": false
+        },
+        {
+          "key": "satyr-maid-summer-4",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/satyr-maid/summer/4.gif",
+          "alt": "satyr-maid summer shift visual variation 4.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-tavern.svg",
+        "alt": "satyr-maid summer static shift fallback."
+      }
+    },
+    {
+      "presentationId": "job/satyr-maid/shift/autumn/default",
+      "source": "current-main-shipped-semantic-slot",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "satyr-maid-autumn-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/satyr-maid/autumn/1.gif",
+          "alt": "satyr-maid autumn shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "satyr-maid-autumn-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/satyr-maid/autumn/2.gif",
+          "alt": "satyr-maid autumn shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "satyr-maid-autumn-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/satyr-maid/autumn/3.gif",
+          "alt": "satyr-maid autumn shift visual variation 3.",
+          "shipped": false
+        },
+        {
+          "key": "satyr-maid-autumn-4",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/satyr-maid/autumn/4.gif",
+          "alt": "satyr-maid autumn shift visual variation 4.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-tavern.svg",
+        "alt": "satyr-maid autumn static shift fallback."
+      }
+    },
+    {
+      "presentationId": "job/satyr-maid/shift/winter/default",
+      "source": "current-main-shipped-semantic-slot",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "satyr-maid-winter-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/satyr-maid/winter/1.gif",
+          "alt": "satyr-maid winter shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "satyr-maid-winter-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/satyr-maid/winter/2.gif",
+          "alt": "satyr-maid winter shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "satyr-maid-winter-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/satyr-maid/winter/3.gif",
+          "alt": "satyr-maid winter shift visual variation 3.",
+          "shipped": false
+        },
+        {
+          "key": "satyr-maid-winter-4",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/satyr-maid/winter/4.gif",
+          "alt": "satyr-maid winter shift visual variation 4.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-tavern.svg",
+        "alt": "satyr-maid winter static shift fallback."
+      }
+    },
+    {
+      "presentationId": "job/satyr-maid/result/default",
+      "source": "current-main-shipped-semantic-slot",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "satyr-maid-result-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/satyr-maid/result/1.gif",
+          "alt": "satyr-maid completed-shift result visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "satyr-maid-result-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/satyr-maid/result/2.gif",
+          "alt": "satyr-maid completed-shift result visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "satyr-maid-result-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/satyr-maid/result/3.gif",
+          "alt": "satyr-maid completed-shift result visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-tavern.svg",
+        "alt": "satyr-maid result static fallback."
+      }
+    },
+    {
+      "presentationId": "job/undead-farm/shift/spring/default",
+      "source": "current-main-shipped-semantic-slot",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "undead-farm-spring-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/undead-farm/spring/1.gif",
+          "alt": "undead-farm spring shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "undead-farm-spring-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/undead-farm/spring/2.gif",
+          "alt": "undead-farm spring shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "undead-farm-spring-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/undead-farm/spring/3.gif",
+          "alt": "undead-farm spring shift visual variation 3.",
+          "shipped": false
+        },
+        {
+          "key": "undead-farm-spring-4",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/undead-farm/spring/4.gif",
+          "alt": "undead-farm spring shift visual variation 4.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-forest.svg",
+        "alt": "undead-farm spring static shift fallback."
+      }
+    },
+    {
+      "presentationId": "job/undead-farm/shift/summer/default",
+      "source": "current-main-shipped-semantic-slot",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "undead-farm-summer-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/undead-farm/summer/1.gif",
+          "alt": "undead-farm summer shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "undead-farm-summer-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/undead-farm/summer/2.gif",
+          "alt": "undead-farm summer shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "undead-farm-summer-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/undead-farm/summer/3.gif",
+          "alt": "undead-farm summer shift visual variation 3.",
+          "shipped": false
+        },
+        {
+          "key": "undead-farm-summer-4",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/undead-farm/summer/4.gif",
+          "alt": "undead-farm summer shift visual variation 4.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-forest.svg",
+        "alt": "undead-farm summer static shift fallback."
+      }
+    },
+    {
+      "presentationId": "job/undead-farm/shift/autumn/default",
+      "source": "current-main-shipped-semantic-slot",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "undead-farm-autumn-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/undead-farm/autumn/1.gif",
+          "alt": "undead-farm autumn shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "undead-farm-autumn-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/undead-farm/autumn/2.gif",
+          "alt": "undead-farm autumn shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "undead-farm-autumn-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/undead-farm/autumn/3.gif",
+          "alt": "undead-farm autumn shift visual variation 3.",
+          "shipped": false
+        },
+        {
+          "key": "undead-farm-autumn-4",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/undead-farm/autumn/4.gif",
+          "alt": "undead-farm autumn shift visual variation 4.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-forest.svg",
+        "alt": "undead-farm autumn static shift fallback."
+      }
+    },
+    {
+      "presentationId": "job/undead-farm/shift/winter/default",
+      "source": "current-main-shipped-semantic-slot",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "undead-farm-winter-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/undead-farm/winter/1.gif",
+          "alt": "undead-farm winter shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "undead-farm-winter-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/undead-farm/winter/2.gif",
+          "alt": "undead-farm winter shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "undead-farm-winter-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/undead-farm/winter/3.gif",
+          "alt": "undead-farm winter shift visual variation 3.",
+          "shipped": false
+        },
+        {
+          "key": "undead-farm-winter-4",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/undead-farm/winter/4.gif",
+          "alt": "undead-farm winter shift visual variation 4.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-forest.svg",
+        "alt": "undead-farm winter static shift fallback."
+      }
+    },
+    {
+      "presentationId": "job/undead-farm/result/default",
+      "source": "current-main-shipped-semantic-slot",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "undead-farm-result-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/undead-farm/result/1.gif",
+          "alt": "undead-farm completed-shift result visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "undead-farm-result-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/undead-farm/result/2.gif",
+          "alt": "undead-farm completed-shift result visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "undead-farm-result-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/starter-trio/undead-farm/result/3.gif",
+          "alt": "undead-farm completed-shift result visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-forest.svg",
+        "alt": "undead-farm result static fallback."
+      }
+    }
+  ]
+}
