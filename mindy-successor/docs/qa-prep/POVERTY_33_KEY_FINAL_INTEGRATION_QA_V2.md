@@ -11,7 +11,7 @@ The reviewed patch was subsequently integrated by PR #51.
 Accepted exact PR51 head:
 `b90099f6bda958053c1325ec250ea07e7f6fb7c7`.
 
-Merged as current main:
+Merged as PR51 main:
 `1a2f6e428da41e356f8d48df4a72923a5cc1928c`.
 
 Source:
@@ -154,5 +154,7 @@ PR51 production regressions PASS:
 - all-six-pack ordinary-poverty locale-invariant natural-path regression;
 - ordinary-poverty pending-scene RU↔EN Save-invariance renderer regression.
 
-Current classification is therefore:
+Current production classification remains:
 `GREEN_POST_MERGE_MAIN`.
+
+PR52 later advanced main without changing the PR51 ordinary-poverty patch.
