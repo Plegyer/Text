@@ -1,0 +1,249 @@
+{
+  "formatVersion": 1,
+  "kind": "presentation-multi-gif-runtime-black-box",
+  "status": "AUTHORING_FIXTURE_ONLY",
+  "runtimeWiring": false,
+  "invariant": "One semantic presentationId owns several media candidates; candidates add no gameplay semantics.",
+  "surfaces": [
+    {
+      "presentationId": "job/lumber/shift/spring/default",
+      "mode": "CURRENT_RUNTIME_BLACK_BOX",
+      "gameplaySemanticsAdded": false,
+      "candidates": [
+        {
+          "key": "candidate-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/runtime-black-box/job/lumber/shift/spring/default/1.gif",
+          "alt": "Presentation-only visual candidate 1 for job/lumber/shift/spring/default.",
+          "shipped": false
+        },
+        {
+          "key": "candidate-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/runtime-black-box/job/lumber/shift/spring/default/2.gif",
+          "alt": "Presentation-only visual candidate 2 for job/lumber/shift/spring/default.",
+          "shipped": false
+        },
+        {
+          "key": "candidate-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/runtime-black-box/job/lumber/shift/spring/default/3.gif",
+          "alt": "Presentation-only visual candidate 3 for job/lumber/shift/spring/default.",
+          "shipped": false
+        },
+        {
+          "key": "candidate-4",
+          "kind": "gif",
+          "src": "authoring://non-shipped/runtime-black-box/job/lumber/shift/spring/default/4.gif",
+          "alt": "Presentation-only visual candidate 4 for job/lumber/shift/spring/default.",
+          "shipped": false
+        },
+        {
+          "key": "candidate-5",
+          "kind": "gif",
+          "src": "authoring://non-shipped/runtime-black-box/job/lumber/shift/spring/default/5.gif",
+          "alt": "Presentation-only visual candidate 5 for job/lumber/shift/spring/default.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-lumber.svg",
+        "alt": "Static fallback for job/lumber/shift/spring/default."
+      },
+      "family": "lumber"
+    },
+    {
+      "presentationId": "job/satyr-maid/shift/spring/default",
+      "mode": "CURRENT_RUNTIME_BLACK_BOX",
+      "gameplaySemanticsAdded": false,
+      "candidates": [
+        {
+          "key": "candidate-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/runtime-black-box/job/satyr-maid/shift/spring/default/1.gif",
+          "alt": "Presentation-only visual candidate 1 for job/satyr-maid/shift/spring/default.",
+          "shipped": false
+        },
+        {
+          "key": "candidate-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/runtime-black-box/job/satyr-maid/shift/spring/default/2.gif",
+          "alt": "Presentation-only visual candidate 2 for job/satyr-maid/shift/spring/default.",
+          "shipped": false
+        },
+        {
+          "key": "candidate-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/runtime-black-box/job/satyr-maid/shift/spring/default/3.gif",
+          "alt": "Presentation-only visual candidate 3 for job/satyr-maid/shift/spring/default.",
+          "shipped": false
+        },
+        {
+          "key": "candidate-4",
+          "kind": "gif",
+          "src": "authoring://non-shipped/runtime-black-box/job/satyr-maid/shift/spring/default/4.gif",
+          "alt": "Presentation-only visual candidate 4 for job/satyr-maid/shift/spring/default.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-tavern.svg",
+        "alt": "Static fallback for job/satyr-maid/shift/spring/default."
+      },
+      "family": "satyr-maid"
+    },
+    {
+      "presentationId": "job/undead-farm/shift/spring/default",
+      "mode": "CURRENT_RUNTIME_BLACK_BOX",
+      "gameplaySemanticsAdded": false,
+      "candidates": [
+        {
+          "key": "candidate-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/runtime-black-box/job/undead-farm/shift/spring/default/1.gif",
+          "alt": "Presentation-only visual candidate 1 for job/undead-farm/shift/spring/default.",
+          "shipped": false
+        },
+        {
+          "key": "candidate-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/runtime-black-box/job/undead-farm/shift/spring/default/2.gif",
+          "alt": "Presentation-only visual candidate 2 for job/undead-farm/shift/spring/default.",
+          "shipped": false
+        },
+        {
+          "key": "candidate-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/runtime-black-box/job/undead-farm/shift/spring/default/3.gif",
+          "alt": "Presentation-only visual candidate 3 for job/undead-farm/shift/spring/default.",
+          "shipped": false
+        },
+        {
+          "key": "candidate-4",
+          "kind": "gif",
+          "src": "authoring://non-shipped/runtime-black-box/job/undead-farm/shift/spring/default/4.gif",
+          "alt": "Presentation-only visual candidate 4 for job/undead-farm/shift/spring/default.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-forest.svg",
+        "alt": "Static fallback for job/undead-farm/shift/spring/default."
+      },
+      "family": "undead-farm"
+    },
+    {
+      "presentationId": "job/guard/shift/spring/default",
+      "mode": "CURRENT_RUNTIME_BLACK_BOX",
+      "gameplaySemanticsAdded": false,
+      "candidates": [
+        {
+          "key": "candidate-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/runtime-black-box/job/guard/shift/spring/default/1.gif",
+          "alt": "Presentation-only visual candidate 1 for job/guard/shift/spring/default.",
+          "shipped": false
+        },
+        {
+          "key": "candidate-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/runtime-black-box/job/guard/shift/spring/default/2.gif",
+          "alt": "Presentation-only visual candidate 2 for job/guard/shift/spring/default.",
+          "shipped": false
+        },
+        {
+          "key": "candidate-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/runtime-black-box/job/guard/shift/spring/default/3.gif",
+          "alt": "Presentation-only visual candidate 3 for job/guard/shift/spring/default.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-town.svg",
+        "alt": "Static fallback for job/guard/shift/spring/default."
+      },
+      "family": "remaining-seven-career"
+    },
+    {
+      "presentationId": "school/arcana/lesson/default",
+      "mode": "CURRENT_RUNTIME_BLACK_BOX",
+      "gameplaySemanticsAdded": false,
+      "candidates": [
+        {
+          "key": "candidate-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/runtime-black-box/school/arcana/lesson/default/1.gif",
+          "alt": "Presentation-only visual candidate 1 for school/arcana/lesson/default.",
+          "shipped": false
+        },
+        {
+          "key": "candidate-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/runtime-black-box/school/arcana/lesson/default/2.gif",
+          "alt": "Presentation-only visual candidate 2 for school/arcana/lesson/default.",
+          "shipped": false
+        },
+        {
+          "key": "candidate-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/runtime-black-box/school/arcana/lesson/default/3.gif",
+          "alt": "Presentation-only visual candidate 3 for school/arcana/lesson/default.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-school.svg",
+        "alt": "Static fallback for school/arcana/lesson/default."
+      },
+      "family": "school"
+    },
+    {
+      "presentationId": "night/rest/default",
+      "mode": "CURRENT_RUNTIME_BLACK_BOX",
+      "gameplaySemanticsAdded": false,
+      "candidates": [
+        {
+          "key": "candidate-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/runtime-black-box/night/rest/default/1.gif",
+          "alt": "Presentation-only visual candidate 1 for night/rest/default.",
+          "shipped": false
+        },
+        {
+          "key": "candidate-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/runtime-black-box/night/rest/default/2.gif",
+          "alt": "Presentation-only visual candidate 2 for night/rest/default.",
+          "shipped": false
+        },
+        {
+          "key": "candidate-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/runtime-black-box/night/rest/default/3.gif",
+          "alt": "Presentation-only visual candidate 3 for night/rest/default.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-school.svg",
+        "alt": "Static fallback for night/rest/default."
+      },
+      "family": "ordinary-poverty-current-production-surface"
+    }
+  ],
+  "constraints": {
+    "mediaSelectionChangesGameplay": false,
+    "mediaFilenameIsGameplayIdentity": false,
+    "gameplayRngConsumptionRequired": false,
+    "saveFrameTimeAllowed": false,
+    "animationsOffUsesStaticFallback": true,
+    "missingCandidateFatal": false
+  }
+}
