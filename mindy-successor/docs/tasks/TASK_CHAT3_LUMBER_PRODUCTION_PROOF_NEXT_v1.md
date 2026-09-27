@@ -1380,3 +1380,23 @@ For each row classify:
 Preserve Palace exclusion and all Lumber locked invariants.
 
 Continue items 73–81 sequentially without waiting for Lead review.
+
+
+## Queue item 82 — ordinary poverty first production slice plan
+
+Create NEW file only:
+- `docs/poverty-prep/ORDINARY_POVERTY_FIRST_PRODUCTION_SLICE_PLAN_v1.md`
+
+Define the smallest real content slice that upgrades already-shipped lodging infrastructure into visible ordinary poverty gameplay without requiring Secret Debt decisions.
+
+Include:
+- street event content family;
+- one or more recovery/help hooks using already-authorized system shapes;
+- seasonal/context variation strategy;
+- presentation fallback;
+- save/reload acceptance;
+- zero-money anti-softlock preservation.
+
+Do not choose final money values, probabilities, canonical NPC identities, or new runtime architecture.
+
+Continue items 74–82 sequentially without waiting for Lead review.
