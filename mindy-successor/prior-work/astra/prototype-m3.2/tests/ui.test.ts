@@ -147,3 +147,44 @@ test('renderer: all ten target careers are available at start and Lumber shift p
   assert.deepEqual(errors,[]);
  }finally{dom.window.close();}
 });
+
+
+test('renderer: locale switch changes presentation only and preserves Work gameplay state',async()=>{
+ const initial=started();
+ const {w,dom,errors}=boot(JSON.stringify(initial));try{
+  await wait(()=>!!w.document.querySelector('[data-panel="work"]'));
+  const before=w.localStorage.getItem('portal-life.v1');
+
+  w.document.querySelector('[data-panel="work"]').click();
+  assert.match(w.document.querySelector('[data-action="lumber.shift"]').closest('article').textContent,/Смена лесоруба/);
+  assert.equal(w.document.documentElement.lang,'ru');
+  const idsRu=[...w.document.querySelectorAll('[data-action]')].map((node:any)=>node.getAttribute('data-action'));
+
+  w.document.querySelector('#close').click();
+  w.document.querySelector('[data-panel="menu"]').click();
+  w.document.querySelector('#language-toggle').click();
+  await wait(()=>w.document.documentElement.lang==='en');
+  assert.equal(w.localStorage.getItem('portal-life.locale'),'en');
+  assert.equal(w.localStorage.getItem('portal-life.v1'),before);
+
+  w.document.querySelector('#close').click();
+  w.document.querySelector('[data-panel="work"]').click();
+  assert.match(w.document.querySelector('[data-action="lumber.shift"]').closest('article').textContent,/Lumber shift/);
+  assert.match(w.document.querySelector('[data-action="merchant.shift"]').closest('article').textContent,/Merchant shift/);
+  const idsEn=[...w.document.querySelectorAll('[data-action]')].map((node:any)=>node.getAttribute('data-action'));
+  assert.deepEqual(idsEn,idsRu);
+  for(const id of idsEn){
+    const button=w.document.querySelector('[data-action="'+id+'"]');
+    assert.equal(button.disabled,false,id+' remains available after locale switch');
+  }
+  assert.equal(w.localStorage.getItem('portal-life.v1'),before);
+
+  w.document.querySelector('#close').click();
+  w.document.querySelector('[data-panel="menu"]').click();
+  w.document.querySelector('#language-toggle').click();
+  await wait(()=>w.document.documentElement.lang==='ru');
+  assert.equal(w.localStorage.getItem('portal-life.locale'),'ru');
+  assert.equal(w.localStorage.getItem('portal-life.v1'),before);
+  assert.deepEqual(errors,[]);
+ }finally{dom.window.close();}
+});

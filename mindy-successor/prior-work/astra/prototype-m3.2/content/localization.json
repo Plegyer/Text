@@ -1,0 +1,230 @@
+{
+  "version": 1,
+  "defaultLocale": "ru",
+  "strings": {
+    "ui.language.label": {
+      "ru": "Язык",
+      "en": "Language"
+    },
+    "ui.language.ru": {
+      "ru": "Русский",
+      "en": "Russian"
+    },
+    "ui.language.en": {
+      "ru": "Английский",
+      "en": "English"
+    },
+    "ui.menu.title": {
+      "ru": "Меню",
+      "en": "Menu"
+    },
+    "ui.menu.languageButton": {
+      "ru": "Язык: {language}",
+      "en": "Language: {language}"
+    },
+    "ui.town.title": {
+      "ru": "Листоград",
+      "en": "Leafgrad"
+    },
+    "ui.town.eyebrow": {
+      "ru": "По ту сторону люка",
+      "en": "Beyond the hatch"
+    },
+    "ui.town.energyPrompt": {
+      "ru": "Город полон чужих планов. Какими будут ваши?",
+      "en": "The city is full of other people's plans. What will yours be?"
+    },
+    "ui.town.noEnergyPrompt": {
+      "ru": "На сегодня сил больше нет. Пора выбрать ночлег.",
+      "en": "You are out of energy for today. Time to choose lodging."
+    },
+    "ui.panel.work": {
+      "ru": "Работа",
+      "en": "Work"
+    },
+    "ui.panel.school": {
+      "ru": "Школа",
+      "en": "School"
+    },
+    "ui.panel.explore": {
+      "ru": "Окрестности",
+      "en": "Outskirts"
+    },
+    "ui.panel.sleep": {
+      "ru": "Ночлег",
+      "en": "Lodging"
+    },
+    "ui.panel.stats": {
+      "ru": "Героиня",
+      "en": "Heroine"
+    },
+    "ui.panel.journal": {
+      "ru": "Дневник",
+      "en": "Journal"
+    },
+    "ui.panel.bag": {
+      "ru": "Сумка",
+      "en": "Bag"
+    },
+    "ui.panel.legacy": {
+      "ru": "Судьбы",
+      "en": "Fates"
+    },
+    "ui.town.work.subtitle": {
+      "ru": "Смены и знакомства",
+      "en": "Shifts and acquaintances"
+    },
+    "ui.town.school.subtitle": {
+      "ru": "Занятия и практика",
+      "en": "Lessons and practice"
+    },
+    "ui.town.explore.subtitle": {
+      "ru": "Поручения и находки",
+      "en": "Errands and discoveries"
+    },
+    "ui.town.sleep.subtitle": {
+      "ru": "Комната или навес",
+      "en": "Room or shelter"
+    },
+    "ui.work.title": {
+      "ru": "Куда устроимся?",
+      "en": "Where shall we work?"
+    },
+    "ui.work.energy": {
+      "ru": "энергии",
+      "en": "energy"
+    },
+    "ui.work.coins": {
+      "ru": "монет",
+      "en": "coins"
+    },
+    "ui.work.income": {
+      "ru": "доход ≈",
+      "en": "income ≈"
+    },
+    "ui.work.button": {
+      "ru": "Работать",
+      "en": "Work"
+    },
+    "ui.work.again": {
+      "ru": "Работать ещё · 1 энергия",
+      "en": "Work again · 1 energy"
+    },
+    "ui.result.shift": {
+      "ru": "Смена",
+      "en": "Shift"
+    },
+    "ui.result.default": {
+      "ru": "Результат",
+      "en": "Result"
+    },
+    "ui.result.returnTown": {
+      "ru": "Вернуться в город",
+      "en": "Return to town"
+    },
+    "ui.hud.day": {
+      "ru": "День",
+      "en": "Day"
+    },
+    "ui.hud.year": {
+      "ru": "Год",
+      "en": "Year"
+    },
+    "ui.hud.of": {
+      "ru": "из",
+      "en": "of"
+    },
+    "ui.hud.energy": {
+      "ru": "Энергия",
+      "en": "Energy"
+    },
+    "ui.hud.coins": {
+      "ru": "монет",
+      "en": "coins"
+    },
+    "ui.hud.menu": {
+      "ru": "Меню",
+      "en": "Menu"
+    },
+    "action.lumber.shift.label": {
+      "ru": "Смена лесоруба",
+      "en": "Lumber shift"
+    },
+    "action.lumber.shift.description": {
+      "ru": "Работа в артели гномов: обычная смена, развивающая карьеру лесоруба.",
+      "en": "Work an ordinary shift with the dwarven lumber crew and progress the Lumber career."
+    },
+    "action.satyr-maid.shift.label": {
+      "ru": "Смена служанки у сатиров",
+      "en": "Satyr Maid shift"
+    },
+    "action.satyr-maid.shift.description": {
+      "ru": "Отработать обычную смену служанки в баре сатиров.",
+      "en": "Work an ordinary maid shift at the satyr bar."
+    },
+    "action.undead-farm.shift.label": {
+      "ru": "Смена на ферме нежити",
+      "en": "Undead Farm shift"
+    },
+    "action.undead-farm.shift.description": {
+      "ru": "Отработать обычную смену помощницы на ферме нежити.",
+      "en": "Work an ordinary helper shift on the undead farm."
+    },
+    "action.tavern.shift.label": {
+      "ru": "Смена в таверне",
+      "en": "Tavern shift"
+    },
+    "action.tavern.shift.description": {
+      "ru": "Отработать обычную смену в таверне.",
+      "en": "Work an ordinary tavern shift."
+    },
+    "action.hunter.shift.label": {
+      "ru": "Охотничья работа",
+      "en": "Hunter shift"
+    },
+    "action.hunter.shift.description": {
+      "ru": "Выполнить обычную местную охотничью работу вне большой экспедиции.",
+      "en": "Complete an ordinary local hunting job outside the large expedition layer."
+    },
+    "action.guard.shift.label": {
+      "ru": "Патруль стражи",
+      "en": "Guard patrol"
+    },
+    "action.guard.shift.description": {
+      "ru": "Отработать обычный патруль или городскую смену стражи.",
+      "en": "Work an ordinary guard patrol or city-duty shift."
+    },
+    "action.merchant.shift.label": {
+      "ru": "Смена торговца",
+      "en": "Merchant shift"
+    },
+    "action.merchant.shift.description": {
+      "ru": "Поработать на рынке: оценка, доставка или переговоры.",
+      "en": "Work an ordinary market, appraisal, delivery, or negotiation shift."
+    },
+    "action.artist-geisha.shift.label": {
+      "ru": "Смена в Доме искусств",
+      "en": "Artist House shift"
+    },
+    "action.artist-geisha.shift.description": {
+      "ru": "Репетиция, выступление или работа с гостями в Доме искусств.",
+      "en": "Work an ordinary rehearsal, performance, or guest-facing Artist House shift."
+    },
+    "action.assassin.shift.label": {
+      "ru": "Тайная работа",
+      "en": "Assassin shift"
+    },
+    "action.assassin.shift.description": {
+      "ru": "Выполнить обычную скрытую работу: наблюдение, доставка, подготовка маршрута или зачистка следов.",
+      "en": "Complete ordinary covert work such as surveillance, delivery, route preparation, or cleanup."
+    },
+    "action.prostitute.shift.label": {
+      "ru": "Профессиональная смена",
+      "en": "Professional shift"
+    },
+    "action.prostitute.shift.description": {
+      "ru": "Добровольная профессиональная смена с сохранением выбора и границ героини.",
+      "en": "Work a voluntary professional shift with player agency and boundaries."
+    }
+  }
+}
