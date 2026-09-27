@@ -967,3 +967,36 @@ Work has moved from RC-preparation into actual full-game production:
 - Chat 2 is preparing media/GIF-ready manifests and draft bundles;
 - Chat 4 is providing independent production/CI review;
 - Lead continues target career implementation and integration on fresh current-main branches.
+
+
+## 23. Live production update — completed wave and 3–5 GIF pools
+
+This is a live recovery update, not a final transfer.
+
+All previous worker queues were verified complete in Git:
+- Chat 2: 89–97;
+- Chat 3: 87–95;
+- Chat 4: 78–86;
+- Chat 5: 73 and 82–89.
+
+Current nine-deep queues:
+- Chat 2: **98–106**;
+- Chat 3: **96–104**;
+- Chat 4: **87–95**;
+- Chat 5: **90–98**.
+
+Important presentation clarification from Product:
+**one gameplay event may own 3–5 GIF/media variants** so repeated actions/events do not become visually monotonous.
+
+Interpretation:
+- one gameplay identity;
+- one semantic `presentationId`;
+- multiple visual candidates/pool beneath it;
+- candidate selection is presentation-only;
+- no change to mechanics, effects, choices, timing, save state or eligibility;
+- fallback remains mandatory;
+- gameplay event variants and media variants are separate concepts.
+
+Chat 2 is now preparing the exact contract/fixtures/tests for this. Lead owns any required shared presentation runtime/schema extension.
+
+PR #35 is the current Lead implementation for the seven remaining ordinary-career base layers. The first CI run correctly rejected orphan stages; Lead removed undeclared future stages from the base layer and a corrected exact-head run is in progress.
