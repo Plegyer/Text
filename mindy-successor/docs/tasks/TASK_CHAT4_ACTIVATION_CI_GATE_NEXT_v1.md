@@ -1036,3 +1036,23 @@ Assuming PR29 is later validated and merged, define the minimal retained regress
 Do not claim PR29 merged or green unless Git proves it.
 
 Continue items 59–67 sequentially without waiting for Lead review.
+
+
+## Queue item 68 — unexecuted-PR merge-risk policy
+
+Create NEW file only:
+- `docs/qa-prep/UNEXECUTED_PR_MERGE_RISK_POLICY_v1.md`
+
+Define Lead handling when a PR is code-review green but no executable CI/full-check result is available through the connected environment.
+
+Distinguish:
+- docs-only PR;
+- test-only PR;
+- production data PR;
+- runtime/schema/UI PR.
+
+For each define what evidence is sufficient to merge versus when the PR must remain open. Never fabricate PASS counts.
+
+Use PR29 as a concrete current example without changing it.
+
+Continue items 60–68 sequentially without waiting for Lead review.
