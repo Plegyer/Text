@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "id": "ordinary-poverty-readiness.fixture",
+  "status": "IMPLEMENTATION_READY_NON_NUMERIC",
+  "structure": {
+    "housing": [
+      {
+        "id": "normal-room",
+        "status": "DIRECTED",
+        "moneyRelationship": "paid",
+        "nightMenu": "full-ordinary",
+        "povertyPenalty": false,
+        "exactPrice": null
+      },
+      {
+        "id": "cheap-lodging",
+        "status": "DIRECTED",
+        "moneyRelationship": "cheaper-than-normal",
+        "nightMenu": "restricted-relative-to-normal",
+        "povertyPenalty": "authored-small-penalty-or-event-allowed",
+        "exactPrice": null
+      },
+      {
+        "id": "street",
+        "status": "DIRECTED",
+        "moneyRelationship": "zero-money-fallback",
+        "nightMenu": "restricted",
+        "ordinaryStreetPool": true,
+        "secretDebtHook": "separate-one-time-eligibility-check",
+        "exactNextDayPenalty": null
+      }
+    ],
+    "antiSoftlock": [
+      "zero-money active run retains reachable income",
+      "starting basic job requires no obligatory paid tool",
+      "street sleep reaches next day",
+      "Secret Debt is not required for recovery",
+      "poverty penalties cannot force inevitable permanent downward spiral"
+    ],
+    "recoveryHooks": [
+      "starting-job work",
+      "cheap lodging",
+      "reduce School spending",
+      "earned item/resource",
+      "relationship help/favor",
+      "small paid event",
+      "allowed sale/barter if separately accepted"
+    ],
+    "ordinaryStreetPool": {
+      "requiredFamilies": [
+        "helpful",
+        "neutral",
+        "bad"
+      ],
+      "seasonalHook": true,
+      "relationshipHook": true,
+      "itemResourceHook": true,
+      "secretDebtIsSeparate": true
+    }
+  },
+  "runtimeReadiness": {
+    "lodgingResolution": true,
+    "atomicPayment": true,
+    "nextDayModifiers": true,
+    "forcedNightHooks": true,
+    "saveReloadNightPhases": true,
+    "calendarAdvanceExactlyOnce": true
+  },
+  "open": {
+    "prices": true,
+    "wages": true,
+    "penalties": true,
+    "eventWeights": true,
+    "eventIds": true,
+    "fiction": true,
+    "relationshipProvider": true,
+    "resourceValues": true,
+    "saleBarterPolicy": true
+  }
+}
