@@ -1137,3 +1137,21 @@ For each distinguish:
 Goal: minimize the number of questions Lead eventually asks the user.
 
 Continue items 64–72 sequentially without waiting for Lead review.
+
+
+## Queue item 73 — human-decision packet conflict audit
+
+Create NEW file only:
+- `docs/qa-prep/HUMAN_DECISION_PACKET_CONFLICT_AUDIT_v1.md`
+
+Compare current School, Lumber/Forest, poverty/Secret Debt and presentation decision packets against:
+- direct locked product decisions;
+- `NEW_GAME_SPEC_v1.md`;
+- `PROJECT_STATE.md`;
+- current runtime constraints.
+
+Flag duplicate questions, already-answered questions, contradictory ranges, and decisions that are actually implementation details rather than Product choices.
+
+Do not resolve conflicts by guessing; state the authoritative side where clear.
+
+Continue items 65–73 sequentially without waiting for Lead review.
