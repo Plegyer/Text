@@ -898,3 +898,16 @@ Current technical RC regression floor:
 **221 tests green**.
 
 Remaining OPEN work remains Product/content authoring decisions, not a reason to reopen green runtime contracts.
+
+
+## Bilingual localization lock — 2026-09-27
+
+- Игра сразу производится на **русском + английском**.
+- Русский — source authoring language; английский — полноценная вторая локаль.
+- Gameplay/content IDs, mechanics, conditions, effects, rewards, RNG, timing и Save identity общие для обеих локалей.
+- Язык относится только к presentation/text layer.
+- Один gameplay event не дублируется отдельной английской версией.
+- GIF/media assets общие; alt/caption/text локализуются RU+EN.
+- Переключение языка не должно reroll gameplay/event/media selection.
+- Existing monolingual content мигрируется по подсистемам; новый player-facing контент после этого решения должен сразу иметь RU+EN.
+- Полный контракт: `BILINGUAL_LOCALIZATION_CONTRACT_v1.md`.
