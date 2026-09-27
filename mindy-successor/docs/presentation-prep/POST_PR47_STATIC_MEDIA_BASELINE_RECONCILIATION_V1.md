@@ -1,150 +1,91 @@
 # Post-PR47 Static Media Baseline Reconciliation v1
 
-Exact baseline: current `main` `7f27caca4e3e711799e9c1f235c4a27adbf31026`.
+Exact current-main baseline: `4270bbc0d4d1117e1474a5ab9d9380dc350b0d1c`.
+
+Current main advanced during this queue through **PR48**:
+`Lead: activate seasonal project-owned career media`.
 
 Authority used:
-- `prior-work/astra/prototype-m3.2/content/presentation.json`;
-- `prior-work/astra/prototype-m3.2/content/localization.json`;
-- actual current-main `assets/presentation/` tree.
+- current root `content/presentation.json`;
+- current root `content/localization.json`;
+- current-main `assets/presentation/` tree.
 
-No pre-PR47 worker assumption is treated as shipped unless it is present in those current-main files.
+## Current shipped state
 
-## What PR47 actually shipped
+Current main now contains **61 project-owned SVG files** under `assets/presentation/`:
+- 21 files previously shipped by PR47;
+- 40 ordinary-career seasonal SVGs shipped by PR48.
 
-Current main contains **21 project-owned SVG files** under `assets/presentation/`:
+Current root `presentation.json` includes:
+- 10 ordinary-career result/default static mappings;
+- 40 ordinary-career seasonal shift static mappings;
+- 11 reachable School static mappings;
+- 10 ordinary-poverty static mappings;
+- 6 Forest return/reaction static mappings;
+- 2 Foreman relationship/Night static mappings.
 
-### Ordinary career result assets — 10
-- `career-lumber-result.svg`
-- `career-satyr-maid-result.svg`
-- `career-undead-farm-result.svg`
-- `career-tavern-result.svg`
-- `career-hunter-result.svg`
-- `career-guard-result.svg`
-- `career-merchant-result.svg`
-- `career-artist-geisha-result.svg`
-- `career-assassin-result.svg`
-- `career-prostitute-result.svg`
+Current root `localization.json` includes:
+- the 42 PR47 `presentation.static.*` keys;
+- all 80 seasonal career alt/caption keys from PR48.
 
-Root `presentation.json` maps all ten exact:
-`job/<career>/result/default`
-slots to those files.
+## Current production coverage baseline
 
-### Reachable School assets — 2
-- `school-day-study.svg`
-- `school-night-study.svg`
+Target current production static scope:
+- ordinary career results: 10;
+- ordinary career seasonal shifts: 40;
+- reachable School: 11;
+- ordinary poverty: 10;
+- Forest route/default + returns/reactions: 7;
+- Foreman: 2.
 
-Root mappings:
-- all 8 current `school/<course>/lesson/default` IDs -> `school-day-study.svg`;
-- generic after-School -> `school-day-study.svg`;
-- generic after-paid-lesson -> `school-day-study.svg`;
-- generic after-Night-study -> `school-night-study.svg`.
+Total: **80 semantic presentation IDs**.
 
-### Ordinary poverty assets — 4
-- `poverty-street.svg`
-- `poverty-cheap-lodging.svg`
-- `poverty-recovery-help.svg`
-- `poverty-pressure.svg`
+Current-main project-owned static coverage:
+- career results: 10 / 10;
+- career seasonal shifts: 40 / 40;
+- reachable School: 11 / 11;
+- ordinary poverty: 10 / 10;
+- Forest return/reaction: 6 / 6;
+- Forest route/default: 0 / 1 project-owned root override;
+- Foreman: 2 / 2.
 
-Root mappings cover all 10 ordinary-poverty production event presentation IDs by family reuse.
+Current-main total:
+- **79 UNIQUE_PROJECT_OWNED**;
+- **1 GENERIC_EXISTING** — `activity/forest/route/default`;
+- **0 MISSING**.
 
-Secret Debt is not part of this static-media set.
+## Consequence for items 221–223
 
-### Forest result assets — 3
-- `forest-result-success.svg`
-- `forest-result-escape.svg`
-- `forest-result-failure.svg`
+The 40 seasonal mappings were absent immediately after PR47, but they are now already shipped by PR48.
 
-Each is root-mapped to:
-- matching `activity/forest/return/<outcome>`;
-- matching PR43 `job/lumber/event/forest-result-content-v1-<outcome>/default`.
+Therefore:
+- item 221 remains a 40-row post-PR47 reconciliation manifest, but every row is classified `ALREADY_SHIPPED_CURRENT_MAIN`;
+- item 221 is **not** an integration patch against current main;
+- item 222 contains **0 new localization keys**, because all 80 seasonal keys are already present in current root localization;
+- item 223 must verify identity with current root and reject any overwrite attempt.
 
-Current root `presentation.json` does **not** contain a static override for:
-`activity/forest/route/default`.
+## Worker-only refinement still relevant
 
-### Foreman assets — 2
-- `foreman-professional.svg`
-- `foreman-night-professional.svg`
-
-Root mappings:
-- `relationship/lumber-foreman/lumber-foreman-notice/default`;
-- `relationship/lumber-foreman/lumber-night-foreman-professional/default`.
-
-## Root localization actually shipped
-
-Current root `localization.json` contains RU+EN keys for the shipped PR47 static set:
-- 20 career result keys: alt + caption for 10 careers;
-- 4 School generic keys: day/night alt + caption;
-- 8 poverty family keys: alt + caption for 4 family assets;
-- 6 Forest outcome keys: alt + caption for success/escape/failure;
-- 4 Foreman keys: alt + caption for professional/Night.
-
-Total shipped `presentation.static.*` localization keys in this PR47 set:
-**42**.
-
-## Worker-only after PR47
-
-The following later Chat 2 work is **not** in current root presentation/localization and must be treated as incremental only.
-
-### Seasonal ordinary-career assets
-- 40 `career-<career>-shift-<season>.svg` files;
-- 40 exact seasonal semantic mappings;
-- 80 RU+EN alt/caption keys.
-
-None of those 40 seasonal static overrides is present in current root `presentation.json`.
-
-### Refined non-career assets
-Worker-only:
+The later non-career refinements from items 209–216 are still worker-only on this current main:
 - 8 course-distinct School lesson SVGs;
 - refined generic Night-study SVG;
 - 10 event-distinct ordinary-poverty SVGs;
 - 6 split Forest return/reaction SVGs;
 - 2 refined Foreman SVGs;
-- 2 route-option Forest SVGs.
+- 2 route-specific Forest option SVGs.
 
-The first 27 mappings above can refine current production slots.
-The two route-option-specific assets remain Product-open because current main still exposes only one shared route presentation slot:
+Safe current-production refinement set:
+**27 exact current semantic IDs**.
+
+Route-option-specific assets remain Product-open because current main still exposes only:
 `activity/forest/route/default`.
 
-### Shared Forest route/default
-Before item 227, no project-owned shared-route SVG exists on current main or in root `presentation.json`.
+## Remaining actual static gap
 
-## Collision implications
+The only targeted current production semantic identity that still lacks a dedicated project-owned root static override is:
 
-### Already shipped: do not re-add as "new"
-Items 221–226 must not duplicate the PR47 result/default static mappings or their already-shipped localization keys.
+`activity/forest/route/default`.
 
-### Safe incremental seasonal work
-All 40 seasonal career slots are absent from root static overrides, so they are additive fills against current main.
+Item 227 addresses that gap with one neutral shared-route fallback.
 
-### Safe refinement work
-Current School course/Night, poverty, Forest result/reaction and Foreman slots already have static mappings from PR47.
-
-A later v2/v3 production subset may intentionally replace those static `src`/altKey bindings **for the same existing semantic IDs**. That is a presentation-only refinement, not a new semantic identity.
-
-### Route-specific exclusion
-Do not add invented:
-- `activity/forest/route/logging-road`;
-- `activity/forest/route/old-boundary`.
-
-Current main does not expose those presentation IDs.
-
-## Baseline counts
-
-Current production static scope considered by the post-PR47 queue:
-- 10 ordinary career result IDs: project-owned root static **10**;
-- 40 ordinary career seasonal shift IDs: dedicated project-owned root static **0**;
-- reachable School IDs: project-owned root static **11**;
-- ordinary poverty IDs: project-owned root static **10**;
-- Forest return/reaction IDs: project-owned root static **6**;
-- Forest route/default: project-owned root static **0**;
-- Foreman IDs: project-owned root static **2**.
-
-Current-main project-owned semantic coverage in this scope:
-**39 / 80**.
-
-Remaining current-main static identities using generic/runtime fallback rather than dedicated project-owned root override:
-**41 / 80**:
-- 40 career seasonal shifts;
-- 1 shared Forest route/default.
-
-This is the exact starting baseline for items 221–231.
+This reconciliation supersedes the earlier in-queue snapshot taken before PR48 merged.
