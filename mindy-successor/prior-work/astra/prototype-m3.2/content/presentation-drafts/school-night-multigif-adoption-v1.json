@@ -1,0 +1,473 @@
+{
+  "version": 1,
+  "id": "school-night-multigif-adoption-v1",
+  "status": "PRESENTATION_DRAFT_NOT_RUNTIME_PATCH",
+  "pr42RuntimePoolContract": {
+    "version": 1,
+    "ordering": [
+      "ordered",
+      "unordered"
+    ],
+    "selectionPolicy": [
+      "unweighted",
+      "weighted"
+    ],
+    "candidateCount": {
+      "min": 3,
+      "max": 5
+    },
+    "candidateRuntimeFields": [
+      "key",
+      "kind",
+      "src",
+      "alt",
+      "weight?"
+    ]
+  },
+  "assetPathsAreProposed": true,
+  "gameplayIdentityDuplicatedByLocale": false,
+  "sharedPools": {
+    "quiet": {
+      "pool": {
+        "version": 1,
+        "ordering": "ordered",
+        "selectionPolicy": "unweighted",
+        "candidates": [
+          {
+            "key": "quiet-notes",
+            "kind": "gif",
+            "src": "assets/school/night/quiet-notes.gif",
+            "alt": "Тихая ночная учёба с записями при лампе."
+          },
+          {
+            "key": "quiet-reading",
+            "kind": "gif",
+            "src": "assets/school/night/quiet-reading.gif",
+            "alt": "Тихое ночное чтение и проверка заметок."
+          },
+          {
+            "key": "quiet-review",
+            "kind": "gif",
+            "src": "assets/school/night/quiet-review.gif",
+            "alt": "Спокойный ночной разбор учебных материалов."
+          }
+        ]
+      },
+      "altLocalization": {
+        "quiet-notes": {
+          "key": "school.media.pool.night.quiet-notes.alt",
+          "ru": "Тихая ночная учёба с записями при лампе.",
+          "en": "Quiet Night study with notes by lamplight."
+        },
+        "quiet-reading": {
+          "key": "school.media.pool.night.quiet-reading.alt",
+          "ru": "Тихое ночное чтение и проверка заметок.",
+          "en": "Quiet nighttime reading and review of notes."
+        },
+        "quiet-review": {
+          "key": "school.media.pool.night.quiet-review.alt",
+          "ru": "Спокойный ночной разбор учебных материалов.",
+          "en": "A calm nighttime review of study materials."
+        }
+      }
+    },
+    "practical": {
+      "pool": {
+        "version": 1,
+        "ordering": "ordered",
+        "selectionPolicy": "unweighted",
+        "candidates": [
+          {
+            "key": "practice-form",
+            "kind": "gif",
+            "src": "assets/school/night/practice-form.gif",
+            "alt": "Спокойная ночная отработка практического движения."
+          },
+          {
+            "key": "practice-tools",
+            "kind": "gif",
+            "src": "assets/school/night/practice-tools.gif",
+            "alt": "Ночная работа с простым учебным инструментом."
+          },
+          {
+            "key": "practice-balance",
+            "kind": "gif",
+            "src": "assets/school/night/practice-balance.gif",
+            "alt": "Контролируемая ночная практика техники и баланса."
+          }
+        ]
+      },
+      "altLocalization": {
+        "practice-form": {
+          "key": "school.media.pool.night.practice-form.alt",
+          "ru": "Спокойная ночная отработка практического движения.",
+          "en": "Calm nighttime practice of a practical movement."
+        },
+        "practice-tools": {
+          "key": "school.media.pool.night.practice-tools.alt",
+          "ru": "Ночная работа с простым учебным инструментом.",
+          "en": "Nighttime practice with a simple training tool."
+        },
+        "practice-balance": {
+          "key": "school.media.pool.night.practice-balance.alt",
+          "ru": "Контролируемая ночная практика техники и баланса.",
+          "en": "Controlled nighttime practice of technique and balance."
+        }
+      }
+    },
+    "arcana": {
+      "pool": {
+        "version": 1,
+        "ordering": "ordered",
+        "selectionPolicy": "unweighted",
+        "candidates": [
+          {
+            "key": "sigil-observe",
+            "kind": "gif",
+            "src": "assets/school/night/arcana-sigil.gif",
+            "alt": "Наблюдение за безопасным арканным знаком при холодном свете."
+          },
+          {
+            "key": "diagram-review",
+            "kind": "gif",
+            "src": "assets/school/night/arcana-diagram.gif",
+            "alt": "Ночной разбор арканной схемы и записей."
+          },
+          {
+            "key": "instrument-check",
+            "kind": "gif",
+            "src": "assets/school/night/arcana-instrument.gif",
+            "alt": "Спокойная проверка арканного стеклянного прибора."
+          }
+        ]
+      },
+      "altLocalization": {
+        "sigil-observe": {
+          "key": "school.media.pool.night.arcana-sigil.alt",
+          "ru": "Наблюдение за безопасным арканным знаком при холодном свете.",
+          "en": "Observing a safe arcane sigil under cool light."
+        },
+        "diagram-review": {
+          "key": "school.media.pool.night.arcana-diagram.alt",
+          "ru": "Ночной разбор арканной схемы и записей.",
+          "en": "Nighttime review of an arcane diagram and notes."
+        },
+        "instrument-check": {
+          "key": "school.media.pool.night.arcana-instrument.alt",
+          "ru": "Спокойная проверка арканного стеклянного прибора.",
+          "en": "A calm check of an arcane glass instrument."
+        }
+      }
+    },
+    "performance": {
+      "pool": {
+        "version": 1,
+        "ordering": "ordered",
+        "selectionPolicy": "unweighted",
+        "candidates": [
+          {
+            "key": "rehearsal-gesture",
+            "kind": "gif",
+            "src": "assets/school/night/performance-gesture.gif",
+            "alt": "Короткая ночная репетиция сценического жеста."
+          },
+          {
+            "key": "rehearsal-rhythm",
+            "kind": "gif",
+            "src": "assets/school/night/performance-rhythm.gif",
+            "alt": "Ночная отработка ритма и короткой сценической фразы."
+          },
+          {
+            "key": "rehearsal-sketch",
+            "kind": "gif",
+            "src": "assets/school/night/performance-sketch.gif",
+            "alt": "Тихая ночная работа над эскизом или сценической идеей."
+          }
+        ]
+      },
+      "altLocalization": {
+        "rehearsal-gesture": {
+          "key": "school.media.pool.night.rehearsal-gesture.alt",
+          "ru": "Короткая ночная репетиция сценического жеста.",
+          "en": "A short nighttime rehearsal of a performance gesture."
+        },
+        "rehearsal-rhythm": {
+          "key": "school.media.pool.night.rehearsal-rhythm.alt",
+          "ru": "Ночная отработка ритма и короткой сценической фразы.",
+          "en": "Nighttime practice of rhythm and a short performance phrase."
+        },
+        "rehearsal-sketch": {
+          "key": "school.media.pool.night.rehearsal-sketch.alt",
+          "ru": "Тихая ночная работа над эскизом или сценической идеей.",
+          "en": "Quiet nighttime work on a sketch or performance idea."
+        }
+      }
+    }
+  },
+  "routes": [
+    {
+      "choiceId": "school.night_study.literacy_and_numbers.reason",
+      "eventId": "school.night.exact.v3.literacy_and_numbers.reason",
+      "poolRef": "quiet",
+      "trackAltLocalizationKey": "school.media.night.literacy_and_numbers.alt",
+      "presentationIds": {
+        "focused": "location/town/event/school-night-exact-v3-literacy_and_numbers-reason/focused",
+        "difficult": "location/town/event/school-night-exact-v3-literacy_and_numbers-reason/difficult",
+        "insight": "location/town/event/school-night-exact-v3-literacy_and_numbers-reason/insight"
+      }
+    },
+    {
+      "choiceId": "school.night_study.literacy_and_numbers.wits",
+      "eventId": "school.night.exact.v3.literacy_and_numbers.wits",
+      "poolRef": "quiet",
+      "trackAltLocalizationKey": "school.media.night.literacy_and_numbers.alt",
+      "presentationIds": {
+        "focused": "location/town/event/school-night-exact-v3-literacy_and_numbers-wits/focused",
+        "difficult": "location/town/event/school-night-exact-v3-literacy_and_numbers-wits/difficult",
+        "insight": "location/town/event/school-night-exact-v3-literacy_and_numbers-wits/insight"
+      }
+    },
+    {
+      "choiceId": "school.night_study.arcana.magic",
+      "eventId": "school.night.exact.v3.arcana.magic",
+      "poolRef": "arcana",
+      "trackAltLocalizationKey": "school.media.night.arcana.alt",
+      "presentationIds": {
+        "focused": "location/town/event/school-night-exact-v3-arcana-magic/focused",
+        "difficult": "location/town/event/school-night-exact-v3-arcana-magic/difficult",
+        "insight": "location/town/event/school-night-exact-v3-arcana-magic/insight"
+      }
+    },
+    {
+      "choiceId": "school.night_study.arcana.reason",
+      "eventId": "school.night.exact.v3.arcana.reason",
+      "poolRef": "arcana",
+      "trackAltLocalizationKey": "school.media.night.arcana.alt",
+      "presentationIds": {
+        "focused": "location/town/event/school-night-exact-v3-arcana-reason/focused",
+        "difficult": "location/town/event/school-night-exact-v3-arcana-reason/difficult",
+        "insight": "location/town/event/school-night-exact-v3-arcana-reason/insight"
+      }
+    },
+    {
+      "choiceId": "school.night_study.arcana.creativity",
+      "eventId": "school.night.exact.v3.arcana.creativity",
+      "poolRef": "arcana",
+      "trackAltLocalizationKey": "school.media.night.arcana.alt",
+      "presentationIds": {
+        "focused": "location/town/event/school-night-exact-v3-arcana-creativity/focused",
+        "difficult": "location/town/event/school-night-exact-v3-arcana-creativity/difficult",
+        "insight": "location/town/event/school-night-exact-v3-arcana-creativity/insight"
+      }
+    },
+    {
+      "choiceId": "school.night_study.rhetoric_and_social.charm",
+      "eventId": "school.night.exact.v3.rhetoric_and_social.charm",
+      "poolRef": "quiet",
+      "trackAltLocalizationKey": "school.media.night.rhetoric_and_social.alt",
+      "presentationIds": {
+        "focused": "location/town/event/school-night-exact-v3-rhetoric_and_social-charm/focused",
+        "difficult": "location/town/event/school-night-exact-v3-rhetoric_and_social-charm/difficult",
+        "insight": "location/town/event/school-night-exact-v3-rhetoric_and_social-charm/insight"
+      }
+    },
+    {
+      "choiceId": "school.night_study.rhetoric_and_social.sociability",
+      "eventId": "school.night.exact.v3.rhetoric_and_social.sociability",
+      "poolRef": "quiet",
+      "trackAltLocalizationKey": "school.media.night.rhetoric_and_social.alt",
+      "presentationIds": {
+        "focused": "location/town/event/school-night-exact-v3-rhetoric_and_social-sociability/focused",
+        "difficult": "location/town/event/school-night-exact-v3-rhetoric_and_social-sociability/difficult",
+        "insight": "location/town/event/school-night-exact-v3-rhetoric_and_social-sociability/insight"
+      }
+    },
+    {
+      "choiceId": "school.night_study.rhetoric_and_social.wits",
+      "eventId": "school.night.exact.v3.rhetoric_and_social.wits",
+      "poolRef": "quiet",
+      "trackAltLocalizationKey": "school.media.night.rhetoric_and_social.alt",
+      "presentationIds": {
+        "focused": "location/town/event/school-night-exact-v3-rhetoric_and_social-wits/focused",
+        "difficult": "location/town/event/school-night-exact-v3-rhetoric_and_social-wits/difficult",
+        "insight": "location/town/event/school-night-exact-v3-rhetoric_and_social-wits/insight"
+      }
+    },
+    {
+      "choiceId": "school.night_study.etiquette_and_presentation.manners",
+      "eventId": "school.night.exact.v3.etiquette_and_presentation.manners",
+      "poolRef": "quiet",
+      "trackAltLocalizationKey": "school.media.night.etiquette_and_presentation.alt",
+      "presentationIds": {
+        "focused": "location/town/event/school-night-exact-v3-etiquette_and_presentation-manners/focused",
+        "difficult": "location/town/event/school-night-exact-v3-etiquette_and_presentation-manners/difficult",
+        "insight": "location/town/event/school-night-exact-v3-etiquette_and_presentation-manners/insight"
+      }
+    },
+    {
+      "choiceId": "school.night_study.etiquette_and_presentation.grooming",
+      "eventId": "school.night.exact.v3.etiquette_and_presentation.grooming",
+      "poolRef": "quiet",
+      "trackAltLocalizationKey": "school.media.night.etiquette_and_presentation.alt",
+      "presentationIds": {
+        "focused": "location/town/event/school-night-exact-v3-etiquette_and_presentation-grooming/focused",
+        "difficult": "location/town/event/school-night-exact-v3-etiquette_and_presentation-grooming/difficult",
+        "insight": "location/town/event/school-night-exact-v3-etiquette_and_presentation-grooming/insight"
+      }
+    },
+    {
+      "choiceId": "school.night_study.etiquette_and_presentation.charm",
+      "eventId": "school.night.exact.v3.etiquette_and_presentation.charm",
+      "poolRef": "quiet",
+      "trackAltLocalizationKey": "school.media.night.etiquette_and_presentation.alt",
+      "presentationIds": {
+        "focused": "location/town/event/school-night-exact-v3-etiquette_and_presentation-charm/focused",
+        "difficult": "location/town/event/school-night-exact-v3-etiquette_and_presentation-charm/difficult",
+        "insight": "location/town/event/school-night-exact-v3-etiquette_and_presentation-charm/insight"
+      }
+    },
+    {
+      "choiceId": "school.night_study.field_craft.dexterity",
+      "eventId": "school.night.exact.v3.field_craft.dexterity",
+      "poolRef": "practical",
+      "trackAltLocalizationKey": "school.media.night.field_craft.alt",
+      "presentationIds": {
+        "focused": "location/town/event/school-night-exact-v3-field_craft-dexterity/focused",
+        "difficult": "location/town/event/school-night-exact-v3-field_craft-dexterity/difficult",
+        "insight": "location/town/event/school-night-exact-v3-field_craft-dexterity/insight"
+      }
+    },
+    {
+      "choiceId": "school.night_study.field_craft.wits",
+      "eventId": "school.night.exact.v3.field_craft.wits",
+      "poolRef": "practical",
+      "trackAltLocalizationKey": "school.media.night.field_craft.alt",
+      "presentationIds": {
+        "focused": "location/town/event/school-night-exact-v3-field_craft-wits/focused",
+        "difficult": "location/town/event/school-night-exact-v3-field_craft-wits/difficult",
+        "insight": "location/town/event/school-night-exact-v3-field_craft-wits/insight"
+      }
+    },
+    {
+      "choiceId": "school.night_study.field_craft.creativity",
+      "eventId": "school.night.exact.v3.field_craft.creativity",
+      "poolRef": "practical",
+      "trackAltLocalizationKey": "school.media.night.field_craft.alt",
+      "presentationIds": {
+        "focused": "location/town/event/school-night-exact-v3-field_craft-creativity/focused",
+        "difficult": "location/town/event/school-night-exact-v3-field_craft-creativity/difficult",
+        "insight": "location/town/event/school-night-exact-v3-field_craft-creativity/insight"
+      }
+    },
+    {
+      "choiceId": "school.night_study.physical_training.strength",
+      "eventId": "school.night.exact.v3.physical_training.strength",
+      "poolRef": "practical",
+      "trackAltLocalizationKey": "school.media.night.physical_training.alt",
+      "presentationIds": {
+        "focused": "location/town/event/school-night-exact-v3-physical_training-strength/focused",
+        "difficult": "location/town/event/school-night-exact-v3-physical_training-strength/difficult",
+        "insight": "location/town/event/school-night-exact-v3-physical_training-strength/insight"
+      }
+    },
+    {
+      "choiceId": "school.night_study.physical_training.endurance",
+      "eventId": "school.night.exact.v3.physical_training.endurance",
+      "poolRef": "practical",
+      "trackAltLocalizationKey": "school.media.night.physical_training.alt",
+      "presentationIds": {
+        "focused": "location/town/event/school-night-exact-v3-physical_training-endurance/focused",
+        "difficult": "location/town/event/school-night-exact-v3-physical_training-endurance/difficult",
+        "insight": "location/town/event/school-night-exact-v3-physical_training-endurance/insight"
+      }
+    },
+    {
+      "choiceId": "school.night_study.physical_training.dexterity",
+      "eventId": "school.night.exact.v3.physical_training.dexterity",
+      "poolRef": "practical",
+      "trackAltLocalizationKey": "school.media.night.physical_training.alt",
+      "presentationIds": {
+        "focused": "location/town/event/school-night-exact-v3-physical_training-dexterity/focused",
+        "difficult": "location/town/event/school-night-exact-v3-physical_training-dexterity/difficult",
+        "insight": "location/town/event/school-night-exact-v3-physical_training-dexterity/insight"
+      }
+    },
+    {
+      "choiceId": "school.night_study.arts_and_performance.creativity",
+      "eventId": "school.night.exact.v3.arts_and_performance.creativity",
+      "poolRef": "performance",
+      "trackAltLocalizationKey": "school.media.night.arts_and_performance.alt",
+      "presentationIds": {
+        "focused": "location/town/event/school-night-exact-v3-arts_and_performance-creativity/focused",
+        "difficult": "location/town/event/school-night-exact-v3-arts_and_performance-creativity/difficult",
+        "insight": "location/town/event/school-night-exact-v3-arts_and_performance-creativity/insight"
+      }
+    },
+    {
+      "choiceId": "school.night_study.arts_and_performance.charm",
+      "eventId": "school.night.exact.v3.arts_and_performance.charm",
+      "poolRef": "performance",
+      "trackAltLocalizationKey": "school.media.night.arts_and_performance.alt",
+      "presentationIds": {
+        "focused": "location/town/event/school-night-exact-v3-arts_and_performance-charm/focused",
+        "difficult": "location/town/event/school-night-exact-v3-arts_and_performance-charm/difficult",
+        "insight": "location/town/event/school-night-exact-v3-arts_and_performance-charm/insight"
+      }
+    },
+    {
+      "choiceId": "school.night_study.arts_and_performance.sociability",
+      "eventId": "school.night.exact.v3.arts_and_performance.sociability",
+      "poolRef": "performance",
+      "trackAltLocalizationKey": "school.media.night.arts_and_performance.alt",
+      "presentationIds": {
+        "focused": "location/town/event/school-night-exact-v3-arts_and_performance-sociability/focused",
+        "difficult": "location/town/event/school-night-exact-v3-arts_and_performance-sociability/difficult",
+        "insight": "location/town/event/school-night-exact-v3-arts_and_performance-sociability/insight"
+      }
+    },
+    {
+      "choiceId": "school.night_study.arts_and_performance.dexterity",
+      "eventId": "school.night.exact.v3.arts_and_performance.dexterity",
+      "poolRef": "performance",
+      "trackAltLocalizationKey": "school.media.night.arts_and_performance.alt",
+      "presentationIds": {
+        "focused": "location/town/event/school-night-exact-v3-arts_and_performance-dexterity/focused",
+        "difficult": "location/town/event/school-night-exact-v3-arts_and_performance-dexterity/difficult",
+        "insight": "location/town/event/school-night-exact-v3-arts_and_performance-dexterity/insight"
+      }
+    },
+    {
+      "choiceId": "school.night_study.body_confidence.sexuality",
+      "eventId": "school.night.exact.v3.body_confidence.sexuality",
+      "poolRef": "practical",
+      "trackAltLocalizationKey": "school.media.night.body_confidence.alt",
+      "presentationIds": {
+        "focused": "location/town/event/school-night-exact-v3-body_confidence-sexuality/focused",
+        "difficult": "location/town/event/school-night-exact-v3-body_confidence-sexuality/difficult",
+        "insight": "location/town/event/school-night-exact-v3-body_confidence-sexuality/insight"
+      }
+    },
+    {
+      "choiceId": "school.night_study.body_confidence.grooming",
+      "eventId": "school.night.exact.v3.body_confidence.grooming",
+      "poolRef": "practical",
+      "trackAltLocalizationKey": "school.media.night.body_confidence.alt",
+      "presentationIds": {
+        "focused": "location/town/event/school-night-exact-v3-body_confidence-grooming/focused",
+        "difficult": "location/town/event/school-night-exact-v3-body_confidence-grooming/difficult",
+        "insight": "location/town/event/school-night-exact-v3-body_confidence-grooming/insight"
+      }
+    },
+    {
+      "choiceId": "school.night_study.body_confidence.endurance",
+      "eventId": "school.night.exact.v3.body_confidence.endurance",
+      "poolRef": "practical",
+      "trackAltLocalizationKey": "school.media.night.body_confidence.alt",
+      "presentationIds": {
+        "focused": "location/town/event/school-night-exact-v3-body_confidence-endurance/focused",
+        "difficult": "location/town/event/school-night-exact-v3-body_confidence-endurance/difficult",
+        "insight": "location/town/event/school-night-exact-v3-body_confidence-endurance/insight"
+      }
+    }
+  ]
+}
