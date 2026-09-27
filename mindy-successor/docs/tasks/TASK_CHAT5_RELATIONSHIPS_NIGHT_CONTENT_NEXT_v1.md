@@ -824,3 +824,116 @@ Create NEW file only:
 Consolidate items 61–71 into SAFE_TO_COPY_NOW / SHARED_UI_REQUIRED / EXCLUDED_OTHER_OWNER / PRODUCT_OPEN, with exact selective-copy files and remaining root-event localization debt after this wave.
 
 Continue items 61–72 sequentially without waiting for Lead review.
+
+
+## Queue item 73 — post-PR49 legacy root localization rebase audit v2
+Create NEW file only:
+- `docs/relationship-prep/POST_PR49_LEGACY_ROOT_LOCALIZATION_REBASE_AUDIT_V2.md`
+
+Recheck item 67 against exact current main after PR47/48/49.
+Classify every prepared key as ADDITIVE / IDENTICAL / CONFLICT / SUPERSEDED.
+No root localization edits.
+
+## Queue item 74 — legacy choice-outcome visibility debt inventory v1
+Create NEW file only:
+- `docs/relationship-prep/LEGACY_CHOICE_OUTCOME_VISIBILITY_DEBT_INVENTORY_V1.md`
+
+Audit all item-67 current events whose choice body/outcome text can surface after choice resolution or in journal/lastAction.
+Record exact event/choice IDs, current embedded source text, where it is persisted/rendered, and whether visible EN remains blocked by shared presentation/runtime.
+
+## Queue item 75 — locale-neutral choice-outcome key map v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/legacy-choice-outcome-key-map-v1.fixture.json`
+
+Map exact current event/choice identities to stable localization keys:
+- `event.<eventId>.choice.<choiceId>.text`
+No locale-selected text in gameplay identity and no runtime edits.
+
+## Queue item 76 — legacy choice-outcome RU copy normalization v1
+Create NEW file only:
+- `docs/relationship-prep/LEGACY_CHOICE_OUTCOME_RU_COPY_NORMALIZATION_V1.md`
+
+Polish the RU source choice-outcome text covered by item 75 for concise post-choice/journal presentation.
+Exact current events/choices only; no effects/flags changes.
+
+## Queue item 77 — legacy choice-outcome EN parity review v1
+Create NEW file only:
+- `docs/relationship-prep/LEGACY_CHOICE_OUTCOME_EN_PARITY_REVIEW_V1.md`
+
+Review/normalize full EN translations against the RU source from item 76.
+Text only.
+
+## Queue item 78 — legacy choice-outcome final localization fixture v2
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/legacy-choice-outcome-localization-v2.fixture.json`
+
+Produce the finalized RU+EN choice-outcome strings keyed by item 75.
+No event duplication, no gameplay fields, no locale-specific IDs.
+
+## Queue item 79 — legacy outcome natural-path expectation matrix v1
+Create NEW file only:
+- `docs/relationship-prep/LEGACY_OUTCOME_NATURAL_PATH_EXPECTATION_MATRIX_V1.md`
+
+For every item-78 choice outcome document:
+- shortest current natural path;
+- exact event/variant/choice identity;
+- expected stable post-choice identity;
+- expected RU presentation;
+- expected EN presentation;
+- exact unchanged effects/flags/RNG/Save invariants.
+
+## Queue item 80 — legacy journal/outcome presentation contract v1
+Create NEW file only:
+- `docs/relationship-prep/LEGACY_JOURNAL_OUTCOME_PRESENTATION_CONTRACT_V1.md`
+
+Define the content-side contract for a future Lead consumer:
+- derive visible text from stable event/choice identity;
+- never write locale-selected prose into Save;
+- locale switch changes text only;
+- existing gameplay journal semantics remain unchanged.
+No runtime/UI code changes.
+
+## Queue item 81 — legacy root media-alt post-PR49 refinement v2
+Create NEW file only:
+- `docs/relationship-prep/LEGACY_ROOT_MEDIA_ALT_POST_PR49_REFINEMENT_V2.md`
+
+Re-audit item-66 media-alt strings against the current project-owned static media now shipped after PR47/48/49.
+Propose text-only RU+EN alt refinements where the old generic alt no longer matches the actual current asset.
+Do not rename media IDs or paths.
+
+## Queue item 82 — legacy root production localization patch v2
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/legacy-root-localization-production-patch-v2.fixture.json`
+
+Consolidate the post-PR49 safe root localization set:
+- event title/body/choice label;
+- finalized choice-outcome strings;
+- current-media alt refinements.
+Existing exact current IDs only, no gameplay fields.
+
+## Queue item 83 — legacy root post-PR49 regression source v2
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/legacy-root-localization-post-pr49-v2.test.ts`
+
+Validate item 82 against exact current main:
+- every event/media identity exists;
+- RU+EN complete;
+- additive/identical or explicitly reviewed text replacement only;
+- no School/poverty/Foreman/Forest-result/Secret Debt ownership overlap;
+- no gameplay fields;
+- locale-neutral IDs.
+
+## Queue item 84 — legacy root bilingual handoff v2
+Create NEW file only:
+- `docs/relationship-prep/LEGACY_ROOT_BILINGUAL_HANDOFF_V2.md`
+
+Consolidate items 73–83 into:
+- SAFE_ROOT_LOCALIZATION;
+- CHOICE_OUTCOME_SOURCE_READY;
+- SHARED_PRESENTATION_CONSUMER_REQUIRED;
+- EXCLUDED_OTHER_OWNER;
+- PRODUCT_OPEN.
+
+Include exact selective-copy files and the remaining visible localization debt after this wave.
+
+Continue items 73–84 sequentially without waiting for Lead review.
