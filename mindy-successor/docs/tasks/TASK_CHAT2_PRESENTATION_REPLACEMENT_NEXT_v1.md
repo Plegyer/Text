@@ -1066,3 +1066,107 @@ Produce the smallest current-main handoff with:
 Name exact current authoritative presentation files and explicitly reference PR27/current-main compatibility status.
 
 Continue items 55–60 sequentially without waiting for Lead review.
+
+
+## Queue item 61 — full-roster GIF presentation coverage map
+
+Create NEW files only:
+- `docs/presentation-prep/FULL_ROSTER_GIF_COVERAGE_MAP_v1.md`
+- `prior-work/astra/prototype-m3.2/content/full-roster-gif-coverage-map.fixture.json`
+
+Using authoritative career/product docs, map presentation needs for all 10 ordinary careers plus Palace and Secret Debt/Slave.
+
+For each system/career classify:
+- semantic identity already defined;
+- semantic identity needs content authoring first;
+- reusable GIF/still candidate;
+- static/text fallback sufficient during implementation;
+- dedicated GIF desirable after content lock.
+
+Do not invent gameplay rules, character identities or art direction.
+
+## Queue item 62 — poverty and Secret Debt presentation flow map
+
+Create NEW files only:
+- `docs/presentation-prep/POVERTY_SECRET_DEBT_PRESENTATION_FLOW_v1.md`
+- `prior-work/astra/prototype-m3.2/content/poverty-secret-debt-presentation-flow.fixture.json`
+
+Map the presentation surfaces for:
+- normal room;
+- cheap lodging;
+- street sleep;
+- ordinary poverty events;
+- one-time secret lender offer;
+- delayed debt activation;
+- hidden Slave career day work;
+- forced Night obligation;
+- paid_freedom / bound_life / takeover outcomes.
+
+Keep mechanics sourced from current product docs. Do not choose final GIFs or prose.
+
+## Queue item 63 — GIF reuse and variant production taxonomy
+
+Create NEW file only:
+- `docs/presentation-prep/GIF_REUSE_VARIANT_TAXONOMY_v1.md`
+
+Define a production taxonomy that supports the intended one-person-style asset workflow:
+- reusable loops;
+- seasonal variants;
+- career-stage variants;
+- relationship variants;
+- Night variants;
+- result/ending variants;
+- static/text fallback.
+
+The taxonomy must minimize asset count without collapsing distinct gameplay identities.
+
+## Queue item 64 — full-game presentationId authoring template
+
+Create NEW file only:
+- `docs/presentation-prep/FULL_GAME_PRESENTATION_ID_AUTHORING_TEMPLATE_v1.md`
+
+Provide a fill-in template for future authored scenes across careers, School, poverty, Night, Activity, Palace and endings.
+
+Require:
+- gameplay source ID;
+- semantic `presentationId`;
+- GIF target;
+- static fallback;
+- text fallback;
+- reuse group;
+- animation-off behavior;
+- save identity owner.
+
+Do not populate OPEN content identities.
+
+## Queue item 65 — GIF production priority dependency matrix
+
+Create NEW files only:
+- `docs/presentation-prep/GIF_PRODUCTION_DEPENDENCY_MATRIX_v1.md`
+- `prior-work/astra/prototype-m3.2/content/gif-production-dependency-matrix.fixture.json`
+
+Order asset work only by dependency/readiness:
+- READY_NOW;
+- WAIT_FOR_CONTENT_AUTHORING;
+- WAIT_FOR_PRODUCT_DECISION;
+- REUSE_EXISTING;
+- OPTIONAL_POLISH.
+
+Cover starter trio, remaining seven ordinary careers, School, poverty/Secret Debt, Forest, Palace, endings and Meta surfaces.
+
+Do not rank aesthetics or choose art direction.
+
+## Queue item 66 — presentation production continuity pack v7
+
+Create NEW file only:
+- `docs/presentation-prep/PRESENTATION_PRODUCTION_CONTINUITY_PACK_v7.md`
+
+Produce a concise current-state handoff for the Lead containing:
+- GIF-first product contract;
+- what can be produced immediately;
+- what waits on authoring;
+- what waits on human decisions;
+- exact files created in items 61–65;
+- no-runtime-change guardrails.
+
+Continue items 61–66 sequentially without waiting for Lead review.
