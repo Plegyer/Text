@@ -619,3 +619,57 @@ Start a clean branch from current main to consolidate only:
 - release-candidate closeout documentation.
 
 Do not reopen already-green runtime architecture.
+
+
+## 16. Superseding update — PR #26 / PR #27
+
+### PR #26
+
+Docs-only closeout merged:
+`4c86946167bf424665a499875c597afeb340ab8f`
+
+Current decision/status authorities:
+- `qa-prep/RC_CLOSEOUT_STATUS_v1.md`
+- `qa-prep/RC_HUMAN_DECISIONS_REQUIRED_v1.md`
+- `lumber-prep/OLD_BOUNDARY_TOKEN_PRODUCT_DECISION_IMPACT_v1.md`
+- `lumber-prep/LUMBER_FINAL_RC_ACCEPTANCE_MATRIX_v1.md`
+- `school-prep/SCHOOL_AUTHORING_DECISION_READY_PACKET_v1.md`
+- `presentation-prep/PRESENTATION_RC_EVIDENCE_PACK_v1.md`
+
+### PR #27
+
+Merged technical QA hardening:
+`6cd990f45d368291b4a288f9f48c569f6e0b207f`
+
+Latest full merge-ref:
+- typecheck PASS;
+- validate PASS;
+- build PASS;
+- **221/221 tests PASS**.
+
+New direct compatibility locks:
+- missing schema4 `progression.school` parses as `{tracks:{}}` with unrelated state preserved;
+- missing pending/action `presentationId` remains mechanically valid;
+- final one-Save drift sentinel v2 tracks Lumber, Foreman, School, Night, Forest, ending, Meta and New Run reload in one state history.
+
+No production runtime/content/UI changed in PR #27.
+
+### Current worker progress at this snapshot
+
+- Chat 2: items 49–51 committed; 52–54 active on `chat2/presentation-replacement-next`.
+- Chat 3: items 49–54 queued after completing 43–48 on `chat3/lumber-production-proof-next`.
+- Chat 4: items 43–48 queued after completing 37–42 on `chat4/activation-ci-gate-next`.
+- Chat 5: items 37–41 committed; 42 active on `chat5/school-pa-gate-next`.
+
+### Current phase
+
+Technical RC:
+**GREEN — 221/221**
+
+Remaining work:
+- explicit Product/human decisions;
+- Forest content depth;
+- optional presentation/art polish;
+- additive QA only where it hardens already-green contracts.
+
+Do not reopen Hard Work, School baseline, generic item capability or presentation timing contracts without a demonstrated defect.
