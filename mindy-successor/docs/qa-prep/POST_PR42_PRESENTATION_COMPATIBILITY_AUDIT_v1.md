@@ -3,7 +3,9 @@
 Date: 2026-09-27
 Worker: Chat 4 / QA Acceptance
 Reviewed PR42 head: 41ebf0377c5b50b2ef298009562d5ba9fde56f18
+Merge SHA: 55adc69dcda4c41c71548cd146756896fa5976d0
 Exact-head CI: 295/295 PASS
+Post-merge main CI: run 36318839497 — 295/295 PASS
 
 ## Scope
 
@@ -295,5 +297,11 @@ OPEN FEATURE DEPTH.
 
 Exact-head CI:
 295/295 PASS.
+
+Post-merge main CI:
+295/295 PASS.
+
+Merge status:
+MERGED / COMPATIBILITY GREEN.
 
 No Chat 4 production runtime/UI/content file was modified.
