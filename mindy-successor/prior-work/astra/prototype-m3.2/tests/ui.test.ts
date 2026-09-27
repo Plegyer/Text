@@ -384,10 +384,12 @@ test('renderer: ordinary poverty pending scene localizes RU EN without changing 
   eventId:'poverty-street-production.helpful-summer',
   variantId:'default',
   reactionEpochId:'poverty-ui-smoke',
-  allowedChoiceIds:['take-errand','decline']
+  allowedChoiceIds:['take-errand','keep-resting']
  };
  const {w,dom,errors}=boot(JSON.stringify(s));try{
-  await wait(()=>/Небольшое платное поручение/.test(w.document.querySelector('.stage-title h1')?.textContent??''));
+  await wait(()=>!!w.document.querySelector('.stage-title h1')||errors.length>0);
+  assert.deepEqual(errors,[]);
+  assert.match(w.document.querySelector('.stage-title h1').textContent,/Небольшое платное поручение/);
   const before=w.localStorage.getItem('portal-life.v1');
   const beforeSave=JSON.parse(before);
   assert.match(w.document.querySelector('.dialogue p').textContent,/прилавку/);
