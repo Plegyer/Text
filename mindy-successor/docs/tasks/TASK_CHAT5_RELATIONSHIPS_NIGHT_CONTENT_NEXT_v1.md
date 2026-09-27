@@ -715,3 +715,112 @@ Create NEW file only:
 Consolidate 61–71 into SAFE_TO_COPY_NOW / SHARED_UI_OR_MEDIA_REQUIRED / PRODUCT_OPEN with exact selective-copy files and current-main baseline.
 
 Continue items 61–72 sequentially without waiting for Lead review.
+
+
+## Queue item 61 — current-main legacy root-event localization debt audit v1
+Create NEW file only:
+- `docs/relationship-prep/LEGACY_ROOT_EVENT_LOCALIZATION_DEBT_AUDIT_V1.md`
+
+Audit exact current-main root-loaded player-facing event localization debt outside:
+- Forest route/result work owned by Chat3;
+- School already shipped/localized;
+- ordinary poverty;
+- Foreman;
+- Secret Debt/Product-open content.
+
+Classify exact remaining event IDs and fields as RU_FALLBACK_ONLY / PARTIAL_RU_EN / NON_PLAYER_FACING / PRODUCT_OPEN.
+
+## Queue item 62 — base arrival/home legacy event RU+EN bank v1
+Create NEW file only:
+- `docs/relationship-prep/BASE_ARRIVAL_HOME_EVENT_BANK_RU_EN_V1.md`
+
+Author/polish RU-source + full EN title/body/choice text for current reachable `base.*` arrival/home/town-introduction events only.
+Do not change flags, effects, conditions or arrival mechanics.
+
+## Queue item 63 — base ordinary-town legacy event RU+EN bank v1
+Create NEW file only:
+- `docs/relationship-prep/BASE_ORDINARY_TOWN_EVENT_BANK_RU_EN_V1.md`
+
+Cover remaining current reachable non-School `base.*` ordinary-town events from item 61.
+Text/presentation only.
+
+## Queue item 64 — gopher event RU+EN bank v1
+Create NEW file only:
+- `docs/relationship-prep/GOPHER_EVENT_BANK_RU_EN_V1.md`
+
+Author/polish all current root-loaded `gopher.*` event title/body/choice text in RU+EN.
+No new gopher route/mechanics/rewards.
+
+## Queue item 65 — stage goblin event RU+EN bank v1
+Create NEW file only:
+- `docs/relationship-prep/STAGE_GOBLIN_EVENT_BANK_RU_EN_V1.md`
+
+Author/polish current `stage.goblin` player-facing event text in RU+EN only.
+No stage/progression/reward changes.
+
+## Queue item 66 — legacy root media-alt RU+EN inventory v1
+Create NEW file only:
+- `docs/relationship-prep/LEGACY_ROOT_MEDIA_ALT_LOCALIZATION_INVENTORY_V1.md`
+
+For events covered by items 62–65, inventory their current media identities and propose stable RU+EN alt keys/text.
+Do not create or rename media assets.
+
+## Queue item 67 — legacy root-event localization fixture v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/legacy-root-event-localization-v1.fixture.json`
+
+Convert approved items 62–66 into exact stable localization entries:
+- event titles;
+- variant text;
+- choice labels/text;
+- media alt.
+
+Use exact current event/media IDs only.
+No gameplay fields.
+
+## Queue item 68 — legacy root-event localization collision guard v1
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/legacy-root-event-localization-v1.test.ts`
+
+Validate item 67 against exact current main:
+- every event/media identity exists;
+- RU+EN complete;
+- additive or exact-identical only;
+- no gameplay fields;
+- no School/poverty/Foreman/Forest/Secret Debt ownership overlap;
+- locale-neutral IDs.
+
+## Queue item 69 — legacy root-event natural-path matrix v1
+Create NEW file only:
+- `docs/relationship-prep/LEGACY_ROOT_EVENT_NATURAL_PATH_MATRIX_V1.md`
+
+For each event covered by item 67, document the shortest existing production path, blocking/optional status, exact choices, and invariants Lead UI tests should assert across RU↔EN.
+
+No new test helpers.
+
+## Queue item 70 — legacy root-event copy duplication audit v1
+Create NEW file only:
+- `docs/relationship-prep/LEGACY_ROOT_EVENT_COPY_DUPLICATION_AUDIT_V1.md`
+
+Detect repeated/generic RU/EN phrasing across items 62–65 and propose text-only differentiation without changing semantics.
+
+## Queue item 71 — legacy root-event production integration checklist v1
+Create NEW file only:
+- `docs/relationship-prep/LEGACY_ROOT_EVENT_PRODUCTION_INTEGRATION_CHECKLIST_V1.md`
+
+Define Lead acceptance:
+- root localization merge;
+- current event IDs only;
+- same pending/choice IDs;
+- same effects/flags/RNG/Save;
+- RU↔EN renderer invariance;
+- exact-head CI;
+- no worker branch wholesale merge.
+
+## Queue item 72 — legacy root bilingual handoff v1
+Create NEW file only:
+- `docs/relationship-prep/LEGACY_ROOT_BILINGUAL_HANDOFF_V1.md`
+
+Consolidate items 61–71 into SAFE_TO_COPY_NOW / SHARED_UI_REQUIRED / EXCLUDED_OTHER_OWNER / PRODUCT_OPEN, with exact selective-copy files and remaining root-event localization debt after this wave.
+
+Continue items 61–72 sequentially without waiting for Lead review.
