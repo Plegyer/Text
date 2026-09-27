@@ -1,0 +1,609 @@
+{
+  "schemaVersion": 1,
+  "id": "school-lesson-content-v2",
+  "reads": [],
+  "writes": [],
+  "media": [
+    {
+      "id": "school/literacy-and-numbers/lesson/v2",
+      "kind": "image",
+      "src": "assets/stage-school.svg",
+      "alt": "Literacy & Numbers authored lesson presentation v2."
+    },
+    {
+      "id": "school/arcana/lesson/v2",
+      "kind": "image",
+      "src": "assets/stage-school.svg",
+      "alt": "Arcana authored lesson presentation v2."
+    },
+    {
+      "id": "school/rhetoric-and-social/lesson/v2",
+      "kind": "image",
+      "src": "assets/stage-school.svg",
+      "alt": "Rhetoric & Social authored lesson presentation v2."
+    },
+    {
+      "id": "school/etiquette-and-presentation/lesson/v2",
+      "kind": "image",
+      "src": "assets/stage-school.svg",
+      "alt": "Etiquette & Presentation authored lesson presentation v2."
+    },
+    {
+      "id": "school/field-craft/lesson/v2",
+      "kind": "image",
+      "src": "assets/stage-school.svg",
+      "alt": "Field Craft authored lesson presentation v2."
+    },
+    {
+      "id": "school/physical-training/lesson/v2",
+      "kind": "image",
+      "src": "assets/stage-school.svg",
+      "alt": "Physical Training authored lesson presentation v2."
+    },
+    {
+      "id": "school/arts-and-performance/lesson/v2",
+      "kind": "image",
+      "src": "assets/stage-school.svg",
+      "alt": "Arts & Performance authored lesson presentation v2."
+    },
+    {
+      "id": "school/body-confidence/lesson/v2",
+      "kind": "image",
+      "src": "assets/stage-school.svg",
+      "alt": "Body Confidence authored lesson presentation v2."
+    },
+    {
+      "id": "school/peer/classroom/v1",
+      "kind": "image",
+      "src": "assets/stage-school.svg",
+      "alt": "A milestone-neutral School peer classroom scene."
+    }
+  ],
+  "events": [
+    {
+      "id": "school.lesson-v2.literacy-and-numbers",
+      "title": "Literacy & Numbers lesson library v2",
+      "sourceDomain": "school.track.literacy_and_numbers",
+      "trigger": [],
+      "reactionTriggers": [],
+      "priorityClass": "notification",
+      "priority": 1,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "v1",
+          "text": "Mara asks you to repair a set of instructions that are correct but nearly impossible to follow. Accuracy, she reminds you, still has to survive contact with a reader.",
+          "conditions": [],
+          "media": [
+            "school/literacy-and-numbers/lesson/v2"
+          ]
+        },
+        {
+          "id": "v2",
+          "text": "Before exact calculation, Mara asks for a rough estimate and then compares it with the final answer. The gap reveals whether the arithmetic is plausible before it is precise.",
+          "conditions": [],
+          "media": [
+            "school/literacy-and-numbers/lesson/v2"
+          ]
+        },
+        {
+          "id": "v3",
+          "text": "A tidy conclusion rests on one hidden assumption. Mara asks you to identify the assumption before checking any arithmetic.",
+          "conditions": [],
+          "media": [
+            "school/literacy-and-numbers/lesson/v2"
+          ]
+        },
+        {
+          "id": "v4",
+          "text": "Mara gives you a correct solution and asks you to teach it back in fewer words. Each revision removes a step that was decorative rather than necessary.",
+          "conditions": [],
+          "media": [
+            "school/literacy-and-numbers/lesson/v2"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Continue after the School presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.lesson-v2.arcana",
+      "title": "Arcana lesson library v2",
+      "sourceDomain": "school.track.arcana",
+      "trigger": [],
+      "reactionTriggers": [],
+      "priorityClass": "notification",
+      "priority": 1,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "v1",
+          "text": "Ilyra has you label every unknown part of an arcane diagram before discussing the parts you think you understand.",
+          "conditions": [],
+          "media": [
+            "school/arcana/lesson/v2"
+          ]
+        },
+        {
+          "id": "v2",
+          "text": "A weak magical response appears once and vanishes. Ilyra refuses to interpret it until the conditions can be repeated.",
+          "conditions": [],
+          "media": [
+            "school/arcana/lesson/v2"
+          ]
+        },
+        {
+          "id": "v3",
+          "text": "Two events happen close together in a practice setup. Ilyra asks you to prove one caused the other rather than merely arriving first.",
+          "conditions": [],
+          "media": [
+            "school/arcana/lesson/v2"
+          ]
+        },
+        {
+          "id": "v4",
+          "text": "A harmless trial produces nothing. Ilyra makes you record the failed attempt with the same care as a successful one.",
+          "conditions": [],
+          "media": [
+            "school/arcana/lesson/v2"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Continue after the School presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.lesson-v2.rhetoric-and-social",
+      "title": "Rhetoric & Social lesson library v2",
+      "sourceDomain": "school.track.rhetoric_and_social",
+      "trigger": [],
+      "reactionTriggers": [],
+      "priorityClass": "notification",
+      "priority": 1,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "v1",
+          "text": "Cassian gives you an angry complaint and forbids you from defending yourself until you can ask a question that changes the conversation.",
+          "conditions": [],
+          "media": [
+            "school/rhetoric-and-social/lesson/v2"
+          ]
+        },
+        {
+          "id": "v2",
+          "text": "A polished line earns a laugh but loses the point. Cassian makes you cut it and rebuild the argument around what the listener actually needs.",
+          "conditions": [],
+          "media": [
+            "school/rhetoric-and-social/lesson/v2"
+          ]
+        },
+        {
+          "id": "v3",
+          "text": "Cassian pauses a mock conversation at the moment nobody speaks and asks what everyone may be waiting for someone else to say.",
+          "conditions": [],
+          "media": [
+            "school/rhetoric-and-social/lesson/v2"
+          ]
+        },
+        {
+          "id": "v4",
+          "text": "Halfway through a persuasive exercise, Cassian changes the goal from winning agreement to preserving trust, forcing the wording to change with it.",
+          "conditions": [],
+          "media": [
+            "school/rhetoric-and-social/lesson/v2"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Continue after the School presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.lesson-v2.etiquette-and-presentation",
+      "title": "Etiquette & Presentation lesson library v2",
+      "sourceDomain": "school.track.etiquette_and_presentation",
+      "trigger": [],
+      "reactionTriggers": [],
+      "priorityClass": "notification",
+      "priority": 1,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "v1",
+          "text": "Eliane has you make a small deliberate mistake in a formal exchange and practice recovering without making the error the center of attention.",
+          "conditions": [],
+          "media": [
+            "school/etiquette-and-presentation/lesson/v2"
+          ]
+        },
+        {
+          "id": "v2",
+          "text": "Instead of adjusting your clothes or posture, Eliane asks you to prepare the room for someone else's comfort.",
+          "conditions": [],
+          "media": [
+            "school/etiquette-and-presentation/lesson/v2"
+          ]
+        },
+        {
+          "id": "v3",
+          "text": "Eliane points out three tiny imperfections and asks which one actually matters. The lesson is as much about restraint as correction.",
+          "conditions": [],
+          "media": [
+            "school/etiquette-and-presentation/lesson/v2"
+          ]
+        },
+        {
+          "id": "v4",
+          "text": "A greeting becomes worse each time you overthink it. Eliane has you repeat it until the rule supports the interaction instead of replacing it.",
+          "conditions": [],
+          "media": [
+            "school/etiquette-and-presentation/lesson/v2"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Continue after the School presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.lesson-v2.field-craft",
+      "title": "Field Craft lesson library v2",
+      "sourceDomain": "school.track.field_craft",
+      "trigger": [],
+      "reactionTriggers": [],
+      "priorityClass": "notification",
+      "priority": 1,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "v1",
+          "text": "Rowan asks you to cross the practice area while deliberately leaving signs behind, then retrace the route and study how visible your passage was.",
+          "conditions": [],
+          "media": [
+            "school/field-craft/lesson/v2"
+          ]
+        },
+        {
+          "id": "v2",
+          "text": "A simple route changes when Rowan adds imagined rain and fading light. The original plan was not wrong; it was incomplete.",
+          "conditions": [],
+          "media": [
+            "school/field-craft/lesson/v2"
+          ]
+        },
+        {
+          "id": "v3",
+          "text": "Rowan hides nothing at all. The exercise is to inspect the obvious places with the same discipline you would use for a clever clue.",
+          "conditions": [],
+          "media": [
+            "school/field-craft/lesson/v2"
+          ]
+        },
+        {
+          "id": "v4",
+          "text": "A small tool set has to serve several possible tasks. Rowan makes you choose what to carry before telling you which problem comes first.",
+          "conditions": [],
+          "media": [
+            "school/field-craft/lesson/v2"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Continue after the School presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.lesson-v2.physical-training",
+      "title": "Physical Training lesson library v2",
+      "sourceDomain": "school.track.physical_training",
+      "trigger": [],
+      "reactionTriggers": [],
+      "priorityClass": "notification",
+      "priority": 1,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "v1",
+          "text": "Tovan ends a set one repetition before failure and calls the saved quality part of the training rather than unused effort.",
+          "conditions": [],
+          "media": [
+            "school/physical-training/lesson/v2"
+          ]
+        },
+        {
+          "id": "v2",
+          "text": "A simple drill becomes harder when your breathing loses rhythm, so Tovan slows the pace until breath and movement work together.",
+          "conditions": [],
+          "media": [
+            "school/physical-training/lesson/v2"
+          ]
+        },
+        {
+          "id": "v3",
+          "text": "Tovan shifts the load slightly off-center and asks you to stay controlled, emphasizing balance before force.",
+          "conditions": [],
+          "media": [
+            "school/physical-training/lesson/v2"
+          ]
+        },
+        {
+          "id": "v4",
+          "text": "The session ends with a recovery check. Tovan treats how quickly you settle as another useful measure of training.",
+          "conditions": [],
+          "media": [
+            "school/physical-training/lesson/v2"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Continue after the School presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.lesson-v2.arts-and-performance",
+      "title": "Arts & Performance lesson library v2",
+      "sourceDomain": "school.track.arts_and_performance",
+      "trigger": [],
+      "reactionTriggers": [],
+      "priorityClass": "notification",
+      "priority": 1,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "v1",
+          "text": "Nessa asks you to exaggerate a choice past good taste, then reduce it without losing the intention that made it readable.",
+          "conditions": [],
+          "media": [
+            "school/arts-and-performance/lesson/v2"
+          ]
+        },
+        {
+          "id": "v2",
+          "text": "A missed cue becomes the center of the exercise. Nessa makes you incorporate it rather than restart.",
+          "conditions": [],
+          "media": [
+            "school/arts-and-performance/lesson/v2"
+          ]
+        },
+        {
+          "id": "v3",
+          "text": "The same piece is performed for three different imagined audiences, changing emphasis without abandoning the core intention.",
+          "conditions": [],
+          "media": [
+            "school/arts-and-performance/lesson/v2"
+          ]
+        },
+        {
+          "id": "v4",
+          "text": "Nessa removes a prop or gesture you relied on and asks you to discover what the scene was actually doing without it.",
+          "conditions": [],
+          "media": [
+            "school/arts-and-performance/lesson/v2"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Continue after the School presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.lesson-v2.body-confidence",
+      "title": "Body Confidence lesson library v2",
+      "sourceDomain": "school.track.body_confidence",
+      "trigger": [],
+      "reactionTriggers": [],
+      "priorityClass": "notification",
+      "priority": 1,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "v1",
+          "text": "Sera asks you to stand where others can see you without performing for them, practicing presence without shrinking or exaggerating.",
+          "conditions": [],
+          "media": [
+            "school/body-confidence/lesson/v2"
+          ]
+        },
+        {
+          "id": "v2",
+          "text": "Several grooming steps are available, but Sera asks you to keep only the ones that serve your own purpose.",
+          "conditions": [],
+          "media": [
+            "school/body-confidence/lesson/v2"
+          ]
+        },
+        {
+          "id": "v3",
+          "text": "A social scenario asks for more familiarity than you want to give. Sera has you state the boundary clearly without apology or hostility.",
+          "conditions": [],
+          "media": [
+            "school/body-confidence/lesson/v2"
+          ]
+        },
+        {
+          "id": "v4",
+          "text": "You cross the room without checking your reflection, then describe what you noticed in your body instead of how you looked.",
+          "conditions": [],
+          "media": [
+            "school/body-confidence/lesson/v2"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Continue after the School presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.lesson-v2.after-school-peer",
+      "title": "School peer moment",
+      "sourceDomain": "school",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "actionCompleted",
+          "action": "school"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 0,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "trade-notes",
+          "text": "Two students compare notes and discover that each caught a different part of the lesson. Together, the result is clearer than either set alone.",
+          "conditions": [],
+          "media": [
+            "school/peer/classroom/v1"
+          ]
+        },
+        {
+          "id": "useful-question",
+          "text": "Instead of giving an answer, a student asks the question that makes everyone else understand what the real problem is.",
+          "conditions": [],
+          "media": [
+            "school/peer/classroom/v1"
+          ]
+        },
+        {
+          "id": "recover",
+          "text": "A minor classroom mistake attracts attention, then another student helps the room move on before embarrassment becomes the whole event.",
+          "conditions": [],
+          "media": [
+            "school/peer/classroom/v1"
+          ]
+        },
+        {
+          "id": "shared-win",
+          "text": "A group exercise succeeds because several small contributions align. No single student can honestly claim the whole result.",
+          "conditions": [],
+          "media": [
+            "school/peer/classroom/v1"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Return to the day after the classroom moment.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    }
+  ]
+}
