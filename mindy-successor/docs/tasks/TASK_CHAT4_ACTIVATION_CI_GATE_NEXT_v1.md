@@ -951,3 +951,21 @@ Define acceptance checks for future data-driven content packs:
 Make it usable for career, School, poverty and Activity packs.
 
 Continue items 54–62 sequentially without waiting for Lead review.
+
+
+## Queue item 63 — production-wave integration review template
+
+Create NEW file only:
+- `docs/qa-prep/PRODUCTION_WAVE_INTEGRATION_REVIEW_TEMPLATE_v1.md`
+
+Define a reusable Lead review for integrating completed multi-worker production-prep waves:
+- worker expected-files verification;
+- cross-worker contradiction check;
+- full-scope preservation;
+- locked-invariant check;
+- minimal authority subset selection;
+- superseded-doc identification;
+- whether code/runtime changes are actually justified;
+- CI/test requirements if any non-doc files are integrated.
+
+Continue items 55–63 sequentially without waiting for Lead review.
