@@ -268,7 +268,7 @@ test('renderer: Forest result scene localizes RU EN without changing pending gam
 });
 
 
-test('renderer: School RU EN localization preserves course commands and pending gameplay identity',async()=>{
+test('renderer: School RU EN localization preserves course commands and gameplay state',async()=>{
  const initial=started();
  initial.run.resources.money=2_000;
  initial.run.dayState.energyCurrent=3;
@@ -305,27 +305,24 @@ test('renderer: School RU EN localization preserves course commands and pending 
   assert.deepEqual(idsEn,idsRu);
 
   literacyEn.querySelector('button').click();
-  await wait(()=>/School lesson reflection/.test(w.document.querySelector('.stage-title h1')?.textContent??''));
+  await wait(()=>/Literacy & Numbers/.test(w.document.querySelector('.stage-title h1')?.textContent??''));
   const afterLessonRaw=w.localStorage.getItem('portal-life.v1');
   const afterLesson=JSON.parse(afterLessonRaw);
   assert.equal(afterLesson.run.resources.money,1_700);
   assert.equal(afterLesson.run.dayState.energyCurrent,2);
   assert.equal(afterLesson.run.character.stats.reason,reasonBefore+4);
   assert.equal(afterLesson.run.character.stats.wits,witsBefore+2);
-  assert.equal(afterLesson.run.flow.pendingScene.eventId,'school-lesson-content-v1.after-school');
-  assert.equal(afterLesson.run.flow.pendingScene.variantId,'default');
-  assert.match(w.document.querySelector('.dialogue p').textContent,/paid School lesson is complete/);
-  assert.match(w.document.querySelector('[data-choice="continue"]').textContent,/Continue/);
-  assert.match(w.document.querySelector('.media-window img').getAttribute('alt'),/School lesson context/);
+  assert.equal(afterLesson.run.flow.lastAction.id,'school');
+  assert.equal(afterLesson.run.flow.lastAction.presentationId,'school/literacy-and-numbers/lesson/default');
+  assert.equal(afterLesson.run.flow.pendingScene,null);
+  assert.match(w.document.querySelector('.dialogue p').textContent,/School lesson completed: Literacy & Numbers/);
 
   w.document.querySelector('[data-panel="menu"]').click();
   w.document.querySelector('#language-toggle').click();
   await wait(()=>w.document.documentElement.lang==='ru');
   assert.equal(w.localStorage.getItem('portal-life.v1'),afterLessonRaw);
-  assert.match(w.document.querySelector('.stage-title h1').textContent,/Размышление после урока/);
-  assert.match(w.document.querySelector('.dialogue p').textContent,/Оплаченный урок завершён/);
-  assert.match(w.document.querySelector('[data-choice="continue"]').textContent,/Продолжить/);
-  assert.match(w.document.querySelector('.media-window img').getAttribute('alt'),/Учебная сцена/);
+  assert.match(w.document.querySelector('.stage-title h1').textContent,/Грамотность и счёт/);
+  assert.match(w.document.querySelector('.dialogue p').textContent,/Урок завершён: Грамотность и счёт/);
   assert.deepEqual(errors,[]);
  }finally{dom.window.close();}
 });
