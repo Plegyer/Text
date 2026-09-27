@@ -225,6 +225,78 @@
     "action.prostitute.shift.description": {
       "ru": "Добровольная профессиональная смена с сохранением выбора и границ героини.",
       "en": "Work a voluntary professional shift with player agency and boundaries."
+    },
+    "activity.lumber.forest.label": {
+      "ru": "Лесная экспедиция лесоруба",
+      "en": "Lumber Forest Activity"
+    },
+    "activityOption.forest.route.logging-road.label": {
+      "ru": "Лесовозная дорога",
+      "en": "Logging road"
+    },
+    "activityOption.forest.route.old-boundary.label": {
+      "ru": "Старая межевая тропа",
+      "en": "Old boundary path"
+    },
+    "event.forest-result-content-v1.success.title": {
+      "ru": "Лес уступает дорогу",
+      "en": "The Forest gives way"
+    },
+    "event.forest-result-content-v1.success.variant.default.text": {
+      "ru": "Маршрут наконец складывается в результат, который можно с уверенностью унести обратно. Что бы ещё ни скрывал лес, эта экспедиция дошла до успешного конца.",
+      "en": "The route finally resolves into something you can carry back with certainty. Whatever else the Forest keeps, this expedition has reached its successful end."
+    },
+    "event.forest-result-content-v1.success.choice.return.label": {
+      "ru": "Вернуться из леса",
+      "en": "Return from the Forest"
+    },
+    "event.forest-result-content-v1.success.choice.return.text": {
+      "ru": "Ты оставляешь результат экспедиции неизменным и возвращаешься к обычному городскому ходу дня.",
+      "en": "You leave the Activity result intact and return to the city-side flow."
+    },
+    "media.forest-result-content-v1.success.alt": {
+      "ru": "Лес после успешного завершения экспедиции.",
+      "en": "Forest after a successful expedition."
+    },
+    "event.forest-result-content-v1.escape.title": {
+      "ru": "Отступить, пока путь ещё открыт",
+      "en": "Back out while the route is still open"
+    },
+    "event.forest-result-content-v1.escape.variant.default.text": {
+      "ru": "Ты поворачиваешь назад до того, как экспедиция превращается в поражение. Маршрут остаётся незавершённым, но уйти по собственной воле — не то же самое, что провалить попытку.",
+      "en": "You turn back before the expedition becomes a loss. The route remains unfinished, but leaving under your own control is not the same thing as failing it."
+    },
+    "event.forest-result-content-v1.escape.choice.return.label": {
+      "ru": "Вернуться в безопасности",
+      "en": "Return safely"
+    },
+    "event.forest-result-content-v1.escape.choice.return.text": {
+      "ru": "Ты сохраняешь результат «отступление» отдельным и возвращаешься, не превращая его в успех.",
+      "en": "You keep the escape result distinct and return without converting it into success."
+    },
+    "media.forest-result-content-v1.escape.alt": {
+      "ru": "Безопасное отступление из леса.",
+      "en": "Safe retreat from the Forest."
+    },
+    "event.forest-result-content-v1.failure.title": {
+      "ru": "Лес обрывает попытку",
+      "en": "The Forest ends the attempt"
+    },
+    "event.forest-result-content-v1.failure.variant.default.text": {
+      "ru": "Экспедиция заканчивается без результата, ради которого ты пришла. Поражение остаётся отдельным лесным исходом и не переписывается ни в отступление, ни в успех.",
+      "en": "The expedition ends without the result you came for. The failure is recorded as its own Forest outcome rather than being rewritten as an escape or a success."
+    },
+    "event.forest-result-content-v1.failure.choice.return.label": {
+      "ru": "Вернуться и восстановиться",
+      "en": "Return and recover"
+    },
+    "event.forest-result-content-v1.failure.choice.return.text": {
+      "ru": "Ты принимаешь зафиксированное поражение и возвращаешься к обычному ходу игры.",
+      "en": "You accept the failed Activity result as recorded and return to ordinary flow."
+    },
+    "media.forest-result-content-v1.failure.alt": {
+      "ru": "Возвращение после неудачной лесной экспедиции.",
+      "en": "Return after a failed Forest expedition."
     }
   }
 }
