@@ -413,3 +413,68 @@ test('renderer: ordinary poverty pending scene localizes RU EN without changing 
   assert.deepEqual(errors,[]);
  }finally{dom.window.close();}
 });
+
+
+test('renderer: Foreman relationship and voluntary Night scene localize RU EN without gameplay drift',async()=>{
+ const s=started();
+ s.run.resources.money=2_000;
+ s.run.rng=1;
+ const {w,dom,errors}=boot(JSON.stringify(s));try{
+  // Reach the authoritative Foreman professional route through the current production Lumber chain.
+  await wait(()=>!!w.document.querySelector('[data-panel="work"]'));
+  w.document.querySelector('[data-panel="work"]').click();
+  w.document.querySelector('[data-action="lumber.shift"]').click();
+  await wait(()=>!!w.document.querySelector('[data-choice="continue"]'));
+  w.document.querySelector('[data-choice="continue"]').click();
+  await wait(()=>!!w.document.querySelector('[data-choice="professional"]'));
+  assert.match(w.document.querySelector('.stage-title h1').textContent,/Бригадир замечает работу/);
+  w.document.querySelector('[data-choice="professional"]').click();
+  await wait(()=>!!w.document.querySelector('[data-action="lumber.shift"]'));
+
+  const routed=JSON.parse(w.localStorage.getItem('portal-life.v1'));
+  assert.equal(routed.run.progression.careers.lumber.counters.completed_shifts,1);
+  assert.equal(routed.run.progression.relationships['lumber.foreman'].stage,'route-professional');
+  assert.equal(routed.run.progression.relationships['lumber.foreman'].choices.route,'professional');
+
+  // Enter ordinary voluntary NightFlow; the Foreman choice owns the Night slot and no next-day Energy penalty.
+  w.document.querySelector('[data-panel="sleep"]').click();
+  w.document.querySelector('[data-end-day]').click();
+  await wait(()=>!!w.document.querySelector('[data-lodging="lodging.normal"]'));
+  w.document.querySelector('[data-lodging="lodging.normal"]').click();
+  await wait(()=>!!w.document.querySelector('[data-night-choice="lumber.foreman.night"]'));
+  const ruChoice=w.document.querySelector('[data-night-choice="lumber.foreman.night"]');
+  const ruArticle=ruChoice.closest('article');
+  assert.match(ruArticle.textContent,/Поговорить с бригадиром/);
+  const beforeLocale=w.localStorage.getItem('portal-life.v1');
+
+  w.document.querySelector('[data-panel="menu"]').click();
+  w.document.querySelector('#language-toggle').click();
+  await wait(()=>w.document.documentElement.lang==='en');
+  assert.equal(w.localStorage.getItem('portal-life.v1'),beforeLocale);
+  w.document.querySelector('#close').click();
+  const enChoice=w.document.querySelector('[data-night-choice="lumber.foreman.night"]');
+  const enArticle=enChoice.closest('article');
+  assert.match(enArticle.textContent,/Talk with the Foreman/);
+
+  enChoice.click();
+  await wait(()=>/After-shift conversation/.test(w.document.querySelector('.stage-title h1')?.textContent??''));
+  const pendingEn=w.localStorage.getItem('portal-life.v1');
+  const parsedEn=JSON.parse(pendingEn);
+  assert.equal(parsedEn.run.flow.pendingScene.eventId,'lumber-night.foreman-professional');
+  assert.equal(parsedEn.run.flow.pendingScene.variantId,'default');
+  assert.equal(parsedEn.run.progression.relationships['lumber.foreman'].counters.night_meetings,1);
+  assert.equal(parsedEn.run.dayState.nextDayModifiers.energyDelta,0);
+  assert.match(w.document.querySelector('.dialogue p').textContent,/voluntary continuation/);
+  assert.match(w.document.querySelector('[data-choice="continue"]').textContent,/Continue professionally/);
+  assert.match(w.document.querySelector('.media-window img').getAttribute('alt'),/calm evening conversation/);
+
+  w.document.querySelector('[data-panel="menu"]').click();
+  w.document.querySelector('#language-toggle').click();
+  await wait(()=>w.document.documentElement.lang==='ru');
+  assert.equal(w.localStorage.getItem('portal-life.v1'),pendingEn);
+  assert.match(w.document.querySelector('.stage-title h1').textContent,/Разговор после смены/);
+  assert.match(w.document.querySelector('.dialogue p').textContent,/добровольное продолжение/);
+  assert.match(w.document.querySelector('[data-choice="continue"]').textContent,/Продолжить по-деловому/);
+  assert.deepEqual(errors,[]);
+ }finally{dom.window.close();}
+});
