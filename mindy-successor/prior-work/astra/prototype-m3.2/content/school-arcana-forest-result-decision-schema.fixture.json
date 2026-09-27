@@ -1,0 +1,71 @@
+{
+  "formatVersion": 1,
+  "id": "school.arcana-forest-result-decision-schema.fixture.v1",
+  "decisionId": "arcana-forest-public-result",
+  "neutralSchema": {
+    "providerMilestoneCategory": {
+      "required": true,
+      "allowed": [
+        "arcana-lesson-threshold",
+        "arcana-milestone",
+        "arcana-certificate",
+        "arcana-project",
+        "arcana-exam",
+        "arcana-event",
+        "other-school-owned-knowledge-result"
+      ],
+      "selected": null
+    },
+    "thresholdValueCategory": {
+      "requiredWhenApplicable": true,
+      "allowed": [
+        "lessons_completed integer threshold",
+        "Magic threshold",
+        "Reason threshold",
+        "multiple typed stat thresholds",
+        "named School completion result",
+        "compound School-owned condition"
+      ],
+      "selected": null
+    },
+    "durablePublicationBoundary": {
+      "required": true,
+      "allowed": [
+        "worldFacts/worldFactAdded",
+        "future explicitly typed domain-public equivalent"
+      ],
+      "selected": null
+    },
+    "finalPublicResultId": {
+      "selected": null,
+      "constraints": [
+        "stable target ID grammar",
+        "explicit production declaration",
+        "not fixture-only",
+        "School-owned publication provenance",
+        "stable across save/reload"
+      ]
+    }
+  },
+  "currentConsumers": {
+    "directArcanaForestListenerId": null,
+    "requiredDirectConsumerShape": "explicit lumber.forest option/condition or another named Forest interpretation listener",
+    "forestActivityId": "lumber.forest",
+    "currentPostActivityResultId": "lumber.forest.success",
+    "currentPostActivityLumberListenerId": "lumber-cross.activity-forest-return",
+    "currentPostActivityWorldFact": "lumber.forest.truth-known"
+  },
+  "exactlyOnce": {
+    "publicationRequired": true,
+    "reloadBeforePublication": "may publish once later",
+    "reloadAfterPublication": "must not duplicate fact or reaction",
+    "forestOptionAfterReload": "must preserve the same authored availability"
+  },
+  "constraints": {
+    "providerSelected": false,
+    "thresholdSelected": false,
+    "teacherSelected": false,
+    "certificateSelected": false,
+    "routeUnlockSelected": false
+  }
+}
