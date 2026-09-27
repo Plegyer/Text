@@ -16,6 +16,8 @@ test('release-candidate shipped E2E keeps one Save coherent across Lumber, Schoo
 
   // Lumber -> first reactive career milestone -> professional Foreman.
   s=dispatch(s,{type:'action',id:'lumber.shift'},catalog);
+  const lumberMoney=startMoney+16;
+  assert.equal(s.run.resources.money,lumberMoney);
   assert.equal(s.run.dayState.energyCurrent,2);
   assert.equal(s.run.progression.careers.lumber?.counters.completed_shifts,1);
   assert.equal(s.run.flow.lastAction?.presentationId,'job/lumber/result/default');
@@ -39,7 +41,7 @@ test('release-candidate shipped E2E keeps one Save coherent across Lumber, Schoo
     creativity:s.run.character.stats.creativity
   };
   s=dispatch(s,{type:'schoolLesson',id:'school.course.arcana'},catalog);
-  assert.equal(s.run.resources.money,startMoney-500);
+  assert.equal(s.run.resources.money,lumberMoney-500);
   assert.equal(s.run.dayState.energyCurrent,1);
   assert.equal(s.run.character.stats.magic,schoolStatsBefore.magic+4);
   assert.equal(s.run.character.stats.reason,schoolStatsBefore.reason+4);
@@ -74,7 +76,7 @@ test('release-candidate shipped E2E keeps one Save coherent across Lumber, Schoo
   assert.equal(s.run.flow.night?.phase,'LodgingResolution');
 
   s=dispatch(s,{type:'chooseLodging',id:'lodging.normal'},catalog);
-  assert.equal(s.run.resources.money,startMoney-600);
+  assert.equal(s.run.resources.money,lumberMoney-600);
   assert.equal(s.run.flow.night?.lodgingPaymentCommitted,true);
 
   s=reload(s);
@@ -88,7 +90,7 @@ test('release-candidate shipped E2E keeps one Save coherent across Lumber, Schoo
   assert.equal(s.run.flow.night,null);
   assert.equal(s.run.calendar.elapsedDays,startDay+1);
   assert.equal(s.run.dayState.energyCurrent,3);
-  assert.equal(s.run.resources.money,startMoney-600);
+  assert.equal(s.run.resources.money,lumberMoney-600);
 
   // Shipped Forest logging-road path, no item/capability accelerator.
   s=dispatch(s,{type:'enterActivity',id:'lumber.forest'},catalog);
