@@ -55,7 +55,7 @@
   ],
   "events": [
     {
-      "id": "school-teacher.literacy-and-numbers.presentation",
+      "id": "school-teachers-v1.literacy-and-numbers.presentation",
       "title": "Literacy & Numbers — Mara Fen",
       "sourceDomain": "school.teacher.mara-fen",
       "trigger": [],
@@ -91,7 +91,7 @@
       ]
     },
     {
-      "id": "school-teacher.arcana.presentation",
+      "id": "school-teachers-v1.arcana.presentation",
       "title": "Arcana — Ilyra Venn",
       "sourceDomain": "school.teacher.ilyra-venn",
       "trigger": [],
@@ -127,7 +127,7 @@
       ]
     },
     {
-      "id": "school-teacher.rhetoric-and-social.presentation",
+      "id": "school-teachers-v1.rhetoric-and-social.presentation",
       "title": "Rhetoric & Social — Cassian Reed",
       "sourceDomain": "school.teacher.cassian-reed",
       "trigger": [],
@@ -163,7 +163,7 @@
       ]
     },
     {
-      "id": "school-teacher.etiquette-and-presentation.presentation",
+      "id": "school-teachers-v1.etiquette-and-presentation.presentation",
       "title": "Etiquette & Presentation — Eliane Marrow",
       "sourceDomain": "school.teacher.eliane-marrow",
       "trigger": [],
@@ -199,7 +199,7 @@
       ]
     },
     {
-      "id": "school-teacher.field-craft.presentation",
+      "id": "school-teachers-v1.field-craft.presentation",
       "title": "Field Craft — Rowan Pike",
       "sourceDomain": "school.teacher.rowan-pike",
       "trigger": [],
@@ -235,7 +235,7 @@
       ]
     },
     {
-      "id": "school-teacher.physical-training.presentation",
+      "id": "school-teachers-v1.physical-training.presentation",
       "title": "Physical Training — Tovan Kest",
       "sourceDomain": "school.teacher.tovan-kest",
       "trigger": [],
@@ -271,7 +271,7 @@
       ]
     },
     {
-      "id": "school-teacher.arts-and-performance.presentation",
+      "id": "school-teachers-v1.arts-and-performance.presentation",
       "title": "Arts & Performance — Nessa Lark",
       "sourceDomain": "school.teacher.nessa-lark",
       "trigger": [],
@@ -307,7 +307,7 @@
       ]
     },
     {
-      "id": "school-teacher.body-confidence.presentation",
+      "id": "school-teachers-v1.body-confidence.presentation",
       "title": "Body Confidence — Sera Vey",
       "sourceDomain": "school.teacher.sera-vey",
       "trigger": [],
