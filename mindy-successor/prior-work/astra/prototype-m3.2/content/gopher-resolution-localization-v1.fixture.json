@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "defaultLocale": "ru",
+  "strings": {
+    "event.gopher.tavern-resolution.title": {
+      "ru": "Кому принадлежит праздник",
+      "en": "Who owns the festival"
+    },
+    "event.gopher.tavern-resolution.variant.default.text": {
+      "ru": "Марек предлагает огласить документ на площади. Посланник принца предлагает вам личное приглашение во дворец за оригинал. Оба уверены, что действуют исключительно ради вашего блага. Суслик за окном крадёт печенье с куда более честным выражением морды.",
+      "en": "Marek suggests reading the document aloud in the square. The prince’s messenger offers you a personal invitation to the palace in exchange for the original. Both insist they are acting entirely for your benefit. Outside the window, the gopher steals a biscuit with a far more honest expression."
+    },
+    "event.gopher.tavern-resolution.choice.guild.label": {
+      "ru": "Оставить документ горожанам",
+      "en": "Leave the document with the townspeople"
+    },
+    "event.gopher.tavern-resolution.choice.guild.text": {
+      "ru": "Город сохраняет праздник. Открыта судьба «Праздник без разрешения».",
+      "en": "The town keeps the festival. The fate “Festival Without Permission” is unlocked."
+    },
+    "event.gopher.tavern-resolution.choice.prince.label": {
+      "ru": "Принять предложение дворца",
+      "en": "Accept the palace offer"
+    },
+    "event.gopher.tavern-resolution.choice.prince.text": {
+      "ru": "Принц благодарит вас. Открыта судьба «Приглашение под печатью».",
+      "en": "The prince thanks you. The fate “Invitation Under Seal” is unlocked."
+    },
+    "event.gopher.tavern-resolution.choice.wait.label": {
+      "ru": "Пока сохранить документ у себя",
+      "en": "Keep the document for now"
+    },
+    "event.gopher.tavern-resolution.choice.wait.text": {
+      "ru": "Документ остаётся у вас. К решению можно вернуться.",
+      "en": "The document stays with you. You can return to the decision later."
+    },
+    "event.gopher.tavern-routine.title": {
+      "ru": "Обычная смена, необычные гости",
+      "en": "An ordinary shift, unusual guests"
+    },
+    "event.gopher.tavern-routine.variant.spring.text": {
+      "ru": "Гости заказывают настой первоцвета. Марек просит уточнять, нужен напиток или свидание с цветочным духом.",
+      "en": "Guests order primrose infusion. Marek asks you to clarify whether they want a drink or a date with a flower spirit."
+    },
+    "event.gopher.tavern-routine.variant.summer.text": {
+      "ru": "Жара превращает спор о холодном квасе в городской совет. Вы добиваетесь перемирия одним дополнительным кувшином.",
+      "en": "The heat turns an argument over cold kvass into a town council. You secure a truce with one extra pitcher."
+    },
+    "event.gopher.tavern-routine.variant.autumn.text": {
+      "ru": "Посетители благодарят вас корзинами грибов. Марек сначала проверяет, не баллотируется ли какой-нибудь гриб в мэры.",
+      "en": "Patrons thank you with baskets of mushrooms. Marek first checks whether any of the mushrooms are running for mayor."
+    },
+    "event.gopher.tavern-routine.variant.winter.text": {
+      "ru": "У камина тесно. Один эльф предлагает вам свой плащ, второй — родовой замок. Вы пока выбираете горячий чай.",
+      "en": "It is crowded by the fireplace. One elf offers you his cloak, another his ancestral castle. For now, you choose hot tea."
+    },
+    "event.gopher.tavern-routine.variant.default.text": {
+      "ru": "Вы проводите смену без происшествий. Марек записывает это как подозрительное происшествие.",
+      "en": "You get through the shift without incident. Marek records that as a suspicious incident."
+    },
+    "event.gopher.tavern-routine.choice.finish.label": {
+      "ru": "Закончить смену",
+      "en": "Finish the shift"
+    },
+    "event.gopher.tavern-routine.choice.finish.text": {
+      "ru": "Смена записана в ваш стаж.",
+      "en": "The shift is added to your work record."
+    }
+  }
+}
