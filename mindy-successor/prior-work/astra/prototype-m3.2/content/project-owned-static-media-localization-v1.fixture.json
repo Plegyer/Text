@@ -1,0 +1,188 @@
+{
+  "formatVersion": 1,
+  "kind": "project-owned-static-media-localization",
+  "status": "FIXTURE_ONLY_NOT_ROOT_LOADED",
+  "sourceManifest": "content/presentation-drafts/project-owned-static-media-v1.json",
+  "sourceLocale": "ru",
+  "supportedLocales": [
+    "ru",
+    "en"
+  ],
+  "strings": {
+    "presentation.static.career.lumber.result.alt": {
+      "ru": "Рабочая сцена лесоруба с древесиной и инструментом после смены.",
+      "en": "A lumber work scene with timber and tools after a shift."
+    },
+    "presentation.static.career.lumber.result.caption": {
+      "ru": "Смена в лесном деле завершена.",
+      "en": "The lumber shift is complete."
+    },
+    "presentation.static.career.satyr-maid.result.alt": {
+      "ru": "Служанка в таверне завершает обслуживание стола с подносом.",
+      "en": "A tavern maid finishes resetting a table with a serving tray."
+    },
+    "presentation.static.career.satyr-maid.result.caption": {
+      "ru": "Работа служанки в таверне завершена.",
+      "en": "The tavern maid shift is complete."
+    },
+    "presentation.static.career.undead-farm.result.alt": {
+      "ru": "Фермерская рабочая сцена с полями, припасами и помощницей после задачи.",
+      "en": "A farm work scene with fields, supplies, and the worker after a task."
+    },
+    "presentation.static.career.undead-farm.result.caption": {
+      "ru": "Фермерская смена завершена.",
+      "en": "The farm shift is complete."
+    },
+    "presentation.static.career.tavern.result.alt": {
+      "ru": "Рабочая зона таверны с прилавком, посудой и завершённым обслуживанием.",
+      "en": "A tavern work area with counter, tableware, and completed service."
+    },
+    "presentation.static.career.tavern.result.caption": {
+      "ru": "Смена в таверне завершена.",
+      "en": "The tavern shift is complete."
+    },
+    "presentation.static.career.hunter.result.alt": {
+      "ru": "Охотница возвращается к нейтральной стойке у лесной тропы со снаряжением.",
+      "en": "A hunter returns to a neutral stance by a forest trail with her gear."
+    },
+    "presentation.static.career.hunter.result.caption": {
+      "ru": "Обычная охотничья смена завершена.",
+      "en": "The ordinary hunting shift is complete."
+    },
+    "presentation.static.career.guard.result.alt": {
+      "ru": "Стражница на городском посту со щитом и оружием после патруля.",
+      "en": "A guard at a city watch post with shield and weapon after patrol."
+    },
+    "presentation.static.career.guard.result.caption": {
+      "ru": "Смена городской стражи завершена.",
+      "en": "The city guard shift is complete."
+    },
+    "presentation.static.career.merchant.result.alt": {
+      "ru": "Торговая стойка с товарами и записями после обычной рабочей смены.",
+      "en": "A merchant stall with goods and records after an ordinary work shift."
+    },
+    "presentation.static.career.merchant.result.caption": {
+      "ru": "Торговая смена завершена.",
+      "en": "The merchant shift is complete."
+    },
+    "presentation.static.career.artist-geisha.result.alt": {
+      "ru": "Исполнительница завершает спокойную репетицию на подготовленной сцене.",
+      "en": "A performer finishes a calm rehearsal on a prepared stage."
+    },
+    "presentation.static.career.artist-geisha.result.caption": {
+      "ru": "Репетиционная смена завершена.",
+      "en": "The performance-work shift is complete."
+    },
+    "presentation.static.career.assassin.result.alt": {
+      "ru": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+      "en": "A quiet training scene with prepared gear and no depicted target."
+    },
+    "presentation.static.career.assassin.result.caption": {
+      "ru": "Подготовительная рабочая смена завершена.",
+      "en": "The preparation-focused work shift is complete."
+    },
+    "presentation.static.career.prostitute.result.alt": {
+      "ru": "Неэксплицитная рабочая сцена в подготовленной комнате после завершённой смены.",
+      "en": "A non-explicit work scene in a prepared room after the shift."
+    },
+    "presentation.static.career.prostitute.result.caption": {
+      "ru": "Рабочая смена завершена.",
+      "en": "The work shift is complete."
+    },
+    "presentation.static.school.day.alt": {
+      "ru": "Учебная сцена в школе с рабочим столом, материалами и дневным светом.",
+      "en": "A daytime school study scene with a desk and learning materials."
+    },
+    "presentation.static.school.day.caption": {
+      "ru": "Учебное занятие завершено.",
+      "en": "The school study session is complete."
+    },
+    "presentation.static.school.night-study.alt": {
+      "ru": "Тихая ночная учёба за столом при тёплом свете лампы.",
+      "en": "Quiet night study at a desk under warm lamplight."
+    },
+    "presentation.static.school.night-study.caption": {
+      "ru": "Ночная учебная сессия завершена.",
+      "en": "The night-study session is complete."
+    },
+    "presentation.static.poverty.street.alt": {
+      "ru": "Героиня на небогатой городской улице среди простой уличной обстановки.",
+      "en": "The heroine on a modest city street among simple street surroundings."
+    },
+    "presentation.static.poverty.street.caption": {
+      "ru": "Уличная сцена продолжается без изменения исхода.",
+      "en": "The street scene continues without changing its outcome."
+    },
+    "presentation.static.poverty.cheap-lodging.alt": {
+      "ru": "Простая дешёвая комната с кроватью и минимальной обстановкой.",
+      "en": "A simple low-cost room with a bed and minimal furnishings."
+    },
+    "presentation.static.poverty.cheap-lodging.caption": {
+      "ru": "Дешёвый ночлег остаётся отдельной бытовой сценой.",
+      "en": "Cheap lodging remains its own everyday scene."
+    },
+    "presentation.static.poverty.recovery-help.alt": {
+      "ru": "Спокойная уличная сцена небольшой помощи и восстановления без показа награды.",
+      "en": "A calm street scene of small-scale help and recovery without showing a reward."
+    },
+    "presentation.static.poverty.recovery-help.caption": {
+      "ru": "Небольшая помощь не меняет смысл события.",
+      "en": "Small help does not change the event identity."
+    },
+    "presentation.static.poverty.pressure.alt": {
+      "ru": "Героиня переживает тяжёлые уличные условия под дождём и городской нагрузкой.",
+      "en": "The heroine endures difficult street conditions under rain and city pressure."
+    },
+    "presentation.static.poverty.pressure.caption": {
+      "ru": "Давление среды остаётся частью уже выбранного события.",
+      "en": "Environmental pressure remains part of the already selected event."
+    },
+    "presentation.static.forest.result.success.alt": {
+      "ru": "Спокойное успешное возвращение из лесной экспедиции к кромке леса.",
+      "en": "A calm successful return from the forest expedition to the forest edge."
+    },
+    "presentation.static.forest.result.success.caption": {
+      "ru": "Лесная экспедиция завершилась успехом.",
+      "en": "The forest expedition ended in success."
+    },
+    "presentation.static.forest.result.escape.alt": {
+      "ru": "Контролируемое безопасное отступление с лесного маршрута.",
+      "en": "A controlled safe retreat from the forest route."
+    },
+    "presentation.static.forest.result.escape.caption": {
+      "ru": "Экспедиция завершилась отступлением.",
+      "en": "The expedition ended in an escape."
+    },
+    "presentation.static.forest.result.failure.alt": {
+      "ru": "Усталое, но безопасное возвращение после неудачной лесной экспедиции.",
+      "en": "A tired but safe return after a failed forest expedition."
+    },
+    "presentation.static.forest.result.failure.caption": {
+      "ru": "Экспедиция завершилась неудачей.",
+      "en": "The expedition ended in failure."
+    },
+    "presentation.static.foreman.professional.alt": {
+      "ru": "Профессиональный разговор работницы с бригадиром на лесной площадке.",
+      "en": "A professional conversation between the worker and the foreman at the lumber site."
+    },
+    "presentation.static.foreman.professional.caption": {
+      "ru": "Бригадир отмечает профессиональный рабочий контакт.",
+      "en": "The foreman acknowledges a professional working relationship."
+    },
+    "presentation.static.foreman.night-professional.alt": {
+      "ru": "Спокойный вечерний разговор с бригадиром у тёплого огня.",
+      "en": "A calm evening conversation with the foreman by warm firelight."
+    },
+    "presentation.static.foreman.night-professional.caption": {
+      "ru": "Профессиональный разговор продолжается вечером.",
+      "en": "The professional conversation continues in the evening."
+    }
+  },
+  "invariants": {
+    "mediaIdentityLocaleNeutral": true,
+    "semanticIdentityLocaleNeutral": true,
+    "localeChangesAssetSelection": false,
+    "missingAssetKeysAdded": false,
+    "gameplayFieldsPresent": false
+  }
+}
