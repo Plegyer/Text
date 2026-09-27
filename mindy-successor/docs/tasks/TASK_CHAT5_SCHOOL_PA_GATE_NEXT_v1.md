@@ -944,3 +944,20 @@ For each track specify:
 Do not set final prose quotas as Product locks; label batch sizes as production planning values.
 
 Continue items 54–62 sequentially without waiting for Lead review.
+
+
+## Queue item 63 — School Product-decision intake template
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_PRODUCT_DECISION_INTAKE_TEMPLATE_v1.md`
+
+Create a fill-in template for human decisions on:
+- management/accounting provider and milestone;
+- Arcana/Forest provider and milestone;
+- teacher identities;
+- certificate/project/exam participation;
+- content/presentation priorities.
+
+For each field record downstream content/runtime/test impact while preserving locked course and Night-study mechanics.
+
+Continue items 55–63 sequentially without waiting for Lead review.
