@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "id": "poverty.shared-ui-localization.v2",
+  "status": "PRESENTATION_ONLY_LEAD_UI_WIRING_REQUIRED",
+  "baseMain": "c0763f9f9fa9887593fe8567165bbedce2b6cd3a",
+  "target": "content/localization.json",
+  "strings": {
+    "ui.night.eyebrow": {
+      "ru": "Ночь",
+      "en": "Night"
+    },
+    "ui.night.lodging.prompt": {
+      "ru": "Выберите место на эту ночь. Оплата фиксируется ровно один раз.",
+      "en": "Choose a place for tonight. Payment is committed exactly once."
+    },
+    "ui.night.nextDayEnergy": {
+      "ru": "энергия завтра {delta}",
+      "en": "Energy tomorrow {delta}"
+    },
+    "ui.night.choice.title": {
+      "ru": "Вечер",
+      "en": "Evening"
+    },
+    "ui.night.choice.prompt": {
+      "ru": "Выберите одно добровольное ночное занятие. Дневная энергия при выборе не расходуется.",
+      "en": "Choose one voluntary night activity. Choosing it does not spend daytime Energy."
+    },
+    "ui.night.choice.slot": {
+      "ru": "Ночной слот",
+      "en": "Night slot"
+    },
+    "ui.night.choice.select": {
+      "ru": "Выбрать",
+      "en": "Choose"
+    },
+    "ui.night.sequence.title": {
+      "ru": "Ночная последовательность",
+      "en": "Night sequence"
+    },
+    "ui.night.panel.title": {
+      "ru": "Ночь",
+      "en": "Night"
+    },
+    "ui.night.panel.description": {
+      "ru": "NightFlow отдельно фиксирует ночлег, добровольное занятие и переход к следующему дню.",
+      "en": "NightFlow records lodging, the voluntary night activity, and the transition to the next day separately."
+    },
+    "ui.night.panel.start": {
+      "ru": "Начать ночь",
+      "en": "Start the night"
+    },
+    "ui.result.chooseLodging": {
+      "ru": "Выбрать ночлег",
+      "en": "Choose lodging"
+    },
+    "ui.town.lodgingToday": {
+      "ru": "Ночлег сегодня: {cost} {coins}",
+      "en": "Lodging today: {cost} {coins}"
+    },
+    "lodging.lodging.normal.label": {
+      "ru": "Обычная комната",
+      "en": "Normal room"
+    },
+    "lodging.lodging.cheap.label": {
+      "ru": "Дешёвый ночлег",
+      "en": "Cheap lodging"
+    },
+    "lodging.lodging.street.label": {
+      "ru": "Улица / без ночлега",
+      "en": "Street / no lodging"
+    },
+    "housing.room.label": {
+      "ru": "Обычная комната",
+      "en": "Normal room"
+    },
+    "housing.hostel.label": {
+      "ru": "Дешёвый ночлег",
+      "en": "Cheap lodging"
+    },
+    "housing.shelter.label": {
+      "ru": "Улица",
+      "en": "Street"
+    },
+    "nightChoice.night.sleep.label": {
+      "ru": "Спать",
+      "en": "Sleep"
+    }
+  },
+  "reuseExisting": [
+    "ui.panel.sleep",
+    "ui.town.sleep.subtitle",
+    "ui.town.noEnergyPrompt",
+    "ui.work.coins"
+  ],
+  "excluded": [
+    "night.phase runtime enum values",
+    "school.night_study.*",
+    "lumber.foreman.night",
+    "lodging moneyCost",
+    "lodging nextDayEnergyDelta",
+    "lodging conditions",
+    "housing runtime values",
+    "NightFlow state/commands",
+    "Secret Debt"
+  ],
+  "invariants": {
+    "presentationOnly": true,
+    "changesNightFlow": false,
+    "changesLodgingCost": false,
+    "changesEnergyMechanics": false,
+    "changesHousingMechanics": false,
+    "changesSaveState": false
+  }
+}
