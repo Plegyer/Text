@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "id": "school.generic.reachable.v2",
+  "reads": [],
+  "writes": [],
+  "media": [
+    {
+      "id": "school.generic.reachable.v2.classroom",
+      "kind": "image",
+      "src": "assets/stage-school.svg",
+      "alt": "Generic post-lesson School classroom presentation."
+    }
+  ],
+  "events": [
+    {
+      "id": "school.generic.reachable.v2.after.school",
+      "title": "After the School lesson",
+      "sourceDomain": "school",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "actionCompleted",
+          "action": "school"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 0,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "notes",
+          "text": "The lesson ends with a few minutes to put notes, tools, and thoughts back in order. Nothing new is added; the value is deciding what deserves to be remembered.",
+          "conditions": [],
+          "media": [
+            "school.generic.reachable.v2.classroom"
+          ]
+        },
+        {
+          "id": "one.point",
+          "text": "Before leaving, you reduce the session to one useful point you could explain without the rest of the classroom around you.",
+          "conditions": [],
+          "media": [
+            "school.generic.reachable.v2.classroom"
+          ]
+        },
+        {
+          "id": "question",
+          "text": "Most of the lesson settles. One question does not. You write it down rather than forcing an answer just because the class is over.",
+          "conditions": [],
+          "media": [
+            "school.generic.reachable.v2.classroom"
+          ]
+        },
+        {
+          "id": "compare.notes",
+          "text": "A nearby student compares one line of notes with yours. You each caught something the other missed, and neither version needs to become the official one.",
+          "conditions": [],
+          "media": [
+            "school.generic.reachable.v2.classroom"
+          ]
+        },
+        {
+          "id": "small.correction",
+          "text": "Someone quietly points out a minor misunderstanding before you leave. The correction is useful precisely because it does not become a public performance.",
+          "conditions": [],
+          "media": [
+            "school.generic.reachable.v2.classroom"
+          ]
+        },
+        {
+          "id": "shared.confusion",
+          "text": "Two students discover they were confused by the same part of the lesson for different reasons. The comparison makes the problem easier to name.",
+          "conditions": [],
+          "media": [
+            "school.generic.reachable.v2.classroom"
+          ]
+        },
+        {
+          "id": "enough.today",
+          "text": "You could keep pushing, but the lesson has already given you enough to process. Stopping now feels more useful than blurring the last clear idea.",
+          "conditions": [],
+          "media": [
+            "school.generic.reachable.v2.classroom"
+          ]
+        },
+        {
+          "id": "hallway",
+          "text": "The hallway outside is noisier than the classroom. Students split toward work, errands, lodging, and other obligations, carrying the lesson back into ordinary life.",
+          "conditions": [],
+          "media": [
+            "school.generic.reachable.v2.classroom"
+          ]
+        },
+        {
+          "id": "board",
+          "text": "Someone erases the last marks from the board. The room is ready for the next class before you are entirely done thinking about this one.",
+          "conditions": [],
+          "media": [
+            "school.generic.reachable.v2.classroom"
+          ]
+        },
+        {
+          "id": "reminder",
+          "text": "You leave yourself one short reminder for later: not a new goal, just the part of today's lesson most likely to disappear if you do not write it down.",
+          "conditions": [],
+          "media": [
+            "school.generic.reachable.v2.classroom"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Return to the day after the School presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    }
+  ]
+}
