@@ -1,143 +1,169 @@
 # PR44 School localization fixed-head acceptance v1
 
-Status: COMPLETE / BLOCKED_ON_EXACT_HEAD_CI
+Status: COMPLETE / GREEN_EXACT_HEAD
 
 PR:
 - #44 `Lead: integrate School RU/EN production localization`
-- reviewed exact head: `b7ddb5c64adbaaa5f70ceadbe530652e3c32e6a5`
+- accepted exact head: `07912a4870f82472a01f6ff8d0d81f1f67081593`
 - base: `23a8798f77c42e84a7540d71fdffd69d9db9fbfd`
-- state at review: OPEN / mergeable / not merged.
+- state at acceptance review: OPEN / mergeable / not yet merged.
 
-This is the first post-item-151 head that attempts to fix the School UI regression.
+## Fix progression
 
-## Exact-head CI
+The original failing head `657398c...` assumed the localized paid-lesson action result rendered immediately, while current production can present `base.school` first.
+
+The next attempted fix head `b7ddb5c...` correctly followed the real pending `base.school` path but failed exact-head run #60 because its test parsed raw persisted JSON and read the runtime-only compatibility facade `run.flags`.
+
+The accepted head `07912a4...` fixes that final test-only assertion to the actual persisted path:
+`run.legacyCompat.flags['school.enrolled']`.
+
+The latest commit changes only `tests/ui.test.ts`; it does not alter production mechanics.
+
+## Exact-head CI evidence
 
 Workflow:
 - `mindy-successor check`
-- run #60
-- run id `36322468342`
-- status: completed
-- conclusion: FAILURE
+- run #61
+- run id `36322746998`
+- job id `108629601836`
+- conclusion: SUCCESS
 
-Node test summary:
+Full check evidence:
+- validation: `Content OK: 17 packs, 46 events, 35 actions, 9 endings.`
+- build: PASS
 - tests: 301
-- pass: 300
-- fail: 1
+- pass: 301
+- fail: 0
 
-Failing subtest:
-`renderer: School RU EN localization preserves course command and pending scene identity`
+Relevant renderer tests:
+- #299 Forest result RU/EN pending-state localization: PASS
+- #300 School RU/EN localization preserves course command and pending scene identity: PASS
+- #301 School Night-study labels localize without changing NightFlow save: PASS
 
-Failure:
-`Cannot read properties of undefined (reading 'school.enrolled')`
+This evidence is bound to exact PR head `07912a4870f82472a01f6ff8d0d81f1f67081593`.
 
-Location:
-`tests/ui.test.ts:342`
+## School panel and eight-course surface
 
-Therefore this exact head is not accepted.
+GREEN.
 
-## What the fix corrected
+The PR localizes:
+- School panel title/help;
+- paid-lesson button;
+- tuition/current-Energy text;
+- all eight current course labels;
+- all eight course descriptions;
+- stat labels used in the School course rows.
 
-The earlier failed head incorrectly waited for the localized lesson action-result scene immediately after clicking the paid lesson.
+The UI regression compares the stable `data-school-course` ID list across RU and EN. Locale changes text only; course command identities are unchanged.
 
-The new test correctly recognizes the real current production ordering:
-- the paid `schoolLesson` transaction commits;
-- current legacy event `base.school` is then pending;
-- renderer shows the pending event before the action-result scene.
+Representative Literacy & Numbers checks pass in both languages.
 
-The revised test now waits for:
-- `pendingScene.eventId === 'base.school'`;
-- variant `lesson`.
+## Paid-lesson gameplay invariance
 
-It also verifies before resolving that event:
-- money: 2000 -> 1700;
-- current-day Energy: 3 -> 2;
+GREEN.
+
+The exact-head UI test starts with:
+- money 2000;
+- current-day Energy 3.
+
+After the real Literacy & Numbers `schoolLesson`, it verifies:
+- money 1700;
+- current-day Energy 2;
 - Reason +4;
 - Wits +2;
-- last action ID remains `school`;
-- presentationId remains `school/literacy-and-numbers/lesson/default`;
-- localized EN event title/body/choice/media are visible.
+- lastAction id `school`;
+- lastAction presentationId `school/literacy-and-numbers/lesson/default`.
 
-Then RU switch is performed while that real pending scene exists, and the serialized life Save is asserted byte-identical across the locale change.
+No alternate locale-specific School command is introduced.
 
-This resolves the original render-order misunderstanding without weakening production School reactions.
+## Current reachable School event localization
 
-## Current failing assertion
+GREEN.
 
-After resolving `base.school` choice `listen`, the test parses the raw JSON stored in:
-`portal-life.v1`
+The test follows current production behavior rather than bypassing it.
 
-and then asserts:
-`resolved.run.flags['school.enrolled'] === true`.
+After the paid lesson, pending identity is:
+- event: `base.school`;
+- variant: `lesson`.
 
-That is not a valid persisted-JSON path on the current Save schema.
+In EN it verifies localized:
+- title `The Steady Boil Class`;
+- body;
+- choice `listen`;
+- workshop media alt.
 
-The engine exposes `run.flags` as a compatibility facade attached at runtime. The facade is not an ordinary persisted enumerable field. The actual serialized compatibility data lives under:
-`run.legacyCompat.flags`.
+While that scene is pending, switching EN -> RU keeps the serialized life Save byte-identical, then renders the RU title/body/choice.
 
-Therefore parsing raw localStorage JSON directly produces no enumerable `run.flags`, causing the TypeError seen in run #60.
+Resolving the real `listen` choice clears the pending scene and persists:
+`legacyCompat.flags['school.enrolled'] = true`.
 
-The production event itself still writes legacy flag:
-`school.enrolled=true`
-through the existing `flag` effect.
+The localized paid-lesson result surface then remains available without duplicating the gameplay transaction.
 
-QA-correct test shapes include either:
-- assert raw persisted `resolved.run.legacyCompat.flags['school.enrolled'] === true`; or
-- pass the serialized save through the normal `parseSave` path and then assert the runtime compatibility facade `parsed.run.flags['school.enrolled']`.
+## Night-study localization
 
-This is a test-state-shape assertion defect, not evidence of a School gameplay failure.
+GREEN.
 
-## RU/EN School panel acceptance on this head
+The separate exact-head Night UI test reaches the real NightFlow choice:
+`school.night_study.literacy_and_numbers.reason`
 
-The reviewed PR still provides:
-- RU/EN School panel title/help;
-- all eight current course labels/descriptions;
-- localized tuition/Energy string;
-- localized paid-lesson button;
-- localized stat labels used by courses;
-- localized School Night-study labels/context/buttons;
-- localized current reachable School event/media keys.
+and verifies:
+- RU localized course/stat label and context;
+- EN localized course/stat label and context;
+- localized Night-study button;
+- language switch leaves the NightFlow Save unchanged.
 
-The UI regression preceding the failure demonstrates both RU and EN course panel content for Literacy & Numbers and confirms the exact course ID list remains unchanged across locale.
+The PR does not change:
+- tuition;
+- current-day Energy;
+- selected stat gain;
+- next-day Energy penalty;
+- School typed progress.
 
-The separate test:
-`renderer: School Night-study labels localize without changing NightFlow save`
-passes on this exact head.
+## Save / RNG / presentation boundary
 
-## Gameplay / Save invariance review
+GREEN for reviewed scope.
 
-No new production mechanics change was introduced by the latest fix commit; its changed file is the UI test.
+Locale remains presentation preference outside gameplay Save.
 
-The PR production diff remains localization/presentation-oriented. It does not modify:
-- `schoolLesson` dispatch semantics;
-- tuition numbers;
-- course Energy cost;
-- course stat packages;
-- typed School counters;
-- RNG;
-- Save schema;
-- NightFlow mechanics;
-- School reaction conditions/effects.
+The accepted renderer tests explicitly preserve the serialized life Save during locale switches on:
+- pending School event;
+- active School Night-study choice screen.
 
-The updated failing test itself successfully observes the expected paid-lesson money/Energy/stat transaction before hitting the bad persisted-field assertion.
-
-Locale switch while `base.school` is pending is explicitly checked to leave the serialized Save unchanged.
+No gameplay RNG, Save schema, event ID, variant ID, course ID or Night choice ID is localized or duplicated.
 
 ## Staging exclusion
 
-The reviewed PR does not promote worker-only exact-course teacher routing/events.
+GREEN.
 
-No new per-course teacher gameplay transaction is introduced.
+The PR does not promote:
+- worker-only exact-course teacher events;
+- teacher routing staging;
+- unresolved management/accounting public result;
+- unresolved Arcana/Forest public result.
+
+Current reachable production School identities are localized selectively.
+
+## Mechanics diff check
+
+GREEN.
+
+The production PR changes are localization/presentation UI integration and localization data. The fix sequence after the initial failure modifies tests only.
+
+No reviewed change alters:
+- School dispatcher/engine transaction;
+- course tuition;
+- Energy costs;
+- stat packages;
+- typed School counters;
+- NightFlow mechanics;
+- Resolver gameplay conditions/effects;
+- Save schema;
+- RNG.
 
 ## Verdict
 
-`BLOCKED_ON_EXACT_HEAD_CI`.
+`GREEN_EXACT_HEAD`.
 
-The attempted fix is directionally correct and resolves the original pending-scene ordering assumption, but exact-head run #60 is still red due to an invalid persisted `run.flags` assertion.
+PR44 head `07912a4870f82472a01f6ff8d0d81f1f67081593` satisfies the requested fixed-head acceptance with successful exact-head full CI at 301/301.
 
-A later PR head must:
-1. fix that test assertion against the actual persisted Save boundary;
-2. retain the pending `base.school` natural path;
-3. pass all School RU/EN invariance assertions;
-4. complete exact-head full CI successfully.
-
-Do not merge or declare PR44 green from this head.
+Merge acceptance is still separate: item 153 must verify the actual merge SHA and successful post-merge main workflow before marking the post-merge gate green.
