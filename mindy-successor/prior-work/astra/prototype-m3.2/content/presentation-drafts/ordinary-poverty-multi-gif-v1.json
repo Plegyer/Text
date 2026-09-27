@@ -1,0 +1,431 @@
+{
+  "formatVersion": 1,
+  "kind": "ordinary-poverty-multi-gif-manifest",
+  "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+  "sourceAuthority": {
+    "branch": "chat3/lumber-production-proof-next",
+    "packs": [
+      "poverty-street-production-v2",
+      "poverty-cheap-production-v2"
+    ]
+  },
+  "policy": {
+    "poolPerEventVariant": true,
+    "secretDebtIncluded": false,
+    "helpfulNeutralPressureEncodedByGameplayVariantNotMedia": true,
+    "candidateCountPerSlot": 3,
+    "animationsOffKeepsFallback": true
+  },
+  "pools": [
+    {
+      "eventId": "poverty-street-production-v2.helpful-summer-shade",
+      "variantId": "market-closing",
+      "presentationId": "location/town/event/poverty-street-production-v2-helpful-summer-shade/market-closing",
+      "family": "helpful",
+      "fallback": "assets/stage-outside.svg",
+      "status": "AUTHORING_ONLY_AWAITING_SELECTIVE_INTEGRATION",
+      "candidates": [
+        {
+          "key": "market-closing-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ordinary-poverty/poverty-street-production-v2.helpful-summer-shade/market-closing/1.gif",
+          "alt": "helpful poverty presentation variation 1 for market-closing.",
+          "shipped": false
+        },
+        {
+          "key": "market-closing-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ordinary-poverty/poverty-street-production-v2.helpful-summer-shade/market-closing/2.gif",
+          "alt": "helpful poverty presentation variation 2 for market-closing.",
+          "shipped": false
+        },
+        {
+          "key": "market-closing-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ordinary-poverty/poverty-street-production-v2.helpful-summer-shade/market-closing/3.gif",
+          "alt": "helpful poverty presentation variation 3 for market-closing.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-outside.svg",
+        "alt": "Static helpful fallback for market-closing."
+      },
+      "invariant": {
+        "mediaCandidateMayChangeGameplayVariant": false,
+        "mediaCandidateMayChangeChoices": false,
+        "mediaCandidateMayChangeEffects": false
+      }
+    },
+    {
+      "eventId": "poverty-street-production-v2.helpful-summer-shade",
+      "variantId": "late-shade",
+      "presentationId": "location/town/event/poverty-street-production-v2-helpful-summer-shade/late-shade",
+      "family": "helpful",
+      "fallback": "assets/stage-outside.svg",
+      "status": "AUTHORING_ONLY_AWAITING_SELECTIVE_INTEGRATION",
+      "candidates": [
+        {
+          "key": "late-shade-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ordinary-poverty/poverty-street-production-v2.helpful-summer-shade/late-shade/1.gif",
+          "alt": "helpful poverty presentation variation 1 for late-shade.",
+          "shipped": false
+        },
+        {
+          "key": "late-shade-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ordinary-poverty/poverty-street-production-v2.helpful-summer-shade/late-shade/2.gif",
+          "alt": "helpful poverty presentation variation 2 for late-shade.",
+          "shipped": false
+        },
+        {
+          "key": "late-shade-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ordinary-poverty/poverty-street-production-v2.helpful-summer-shade/late-shade/3.gif",
+          "alt": "helpful poverty presentation variation 3 for late-shade.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-outside.svg",
+        "alt": "Static helpful fallback for late-shade."
+      },
+      "invariant": {
+        "mediaCandidateMayChangeGameplayVariant": false,
+        "mediaCandidateMayChangeChoices": false,
+        "mediaCandidateMayChangeEffects": false
+      }
+    },
+    {
+      "eventId": "poverty-street-production-v2.neutral-autumn-crossing",
+      "variantId": "drizzle",
+      "presentationId": "location/town/event/poverty-street-production-v2-neutral-autumn-crossing/drizzle",
+      "family": "neutral",
+      "fallback": "assets/stage-outside.svg",
+      "status": "AUTHORING_ONLY_AWAITING_SELECTIVE_INTEGRATION",
+      "candidates": [
+        {
+          "key": "drizzle-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ordinary-poverty/poverty-street-production-v2.neutral-autumn-crossing/drizzle/1.gif",
+          "alt": "neutral poverty presentation variation 1 for drizzle.",
+          "shipped": false
+        },
+        {
+          "key": "drizzle-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ordinary-poverty/poverty-street-production-v2.neutral-autumn-crossing/drizzle/2.gif",
+          "alt": "neutral poverty presentation variation 2 for drizzle.",
+          "shipped": false
+        },
+        {
+          "key": "drizzle-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ordinary-poverty/poverty-street-production-v2.neutral-autumn-crossing/drizzle/3.gif",
+          "alt": "neutral poverty presentation variation 3 for drizzle.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-outside.svg",
+        "alt": "Static neutral fallback for drizzle."
+      },
+      "invariant": {
+        "mediaCandidateMayChangeGameplayVariant": false,
+        "mediaCandidateMayChangeChoices": false,
+        "mediaCandidateMayChangeEffects": false
+      }
+    },
+    {
+      "eventId": "poverty-street-production-v2.neutral-autumn-crossing",
+      "variantId": "dry-arcade",
+      "presentationId": "location/town/event/poverty-street-production-v2-neutral-autumn-crossing/dry-arcade",
+      "family": "neutral",
+      "fallback": "assets/stage-outside.svg",
+      "status": "AUTHORING_ONLY_AWAITING_SELECTIVE_INTEGRATION",
+      "candidates": [
+        {
+          "key": "dry-arcade-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ordinary-poverty/poverty-street-production-v2.neutral-autumn-crossing/dry-arcade/1.gif",
+          "alt": "neutral poverty presentation variation 1 for dry-arcade.",
+          "shipped": false
+        },
+        {
+          "key": "dry-arcade-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ordinary-poverty/poverty-street-production-v2.neutral-autumn-crossing/dry-arcade/2.gif",
+          "alt": "neutral poverty presentation variation 2 for dry-arcade.",
+          "shipped": false
+        },
+        {
+          "key": "dry-arcade-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ordinary-poverty/poverty-street-production-v2.neutral-autumn-crossing/dry-arcade/3.gif",
+          "alt": "neutral poverty presentation variation 3 for dry-arcade.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-outside.svg",
+        "alt": "Static neutral fallback for dry-arcade."
+      },
+      "invariant": {
+        "mediaCandidateMayChangeGameplayVariant": false,
+        "mediaCandidateMayChangeChoices": false,
+        "mediaCandidateMayChangeEffects": false
+      }
+    },
+    {
+      "eventId": "poverty-street-production-v2.pressure-winter-wind",
+      "variantId": "crosswind",
+      "presentationId": "location/town/event/poverty-street-production-v2-pressure-winter-wind/crosswind",
+      "family": "pressure",
+      "fallback": "assets/stage-outside.svg",
+      "status": "AUTHORING_ONLY_AWAITING_SELECTIVE_INTEGRATION",
+      "candidates": [
+        {
+          "key": "crosswind-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ordinary-poverty/poverty-street-production-v2.pressure-winter-wind/crosswind/1.gif",
+          "alt": "pressure poverty presentation variation 1 for crosswind.",
+          "shipped": false
+        },
+        {
+          "key": "crosswind-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ordinary-poverty/poverty-street-production-v2.pressure-winter-wind/crosswind/2.gif",
+          "alt": "pressure poverty presentation variation 2 for crosswind.",
+          "shipped": false
+        },
+        {
+          "key": "crosswind-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ordinary-poverty/poverty-street-production-v2.pressure-winter-wind/crosswind/3.gif",
+          "alt": "pressure poverty presentation variation 3 for crosswind.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-outside.svg",
+        "alt": "Static pressure fallback for crosswind."
+      },
+      "invariant": {
+        "mediaCandidateMayChangeGameplayVariant": false,
+        "mediaCandidateMayChangeChoices": false,
+        "mediaCandidateMayChangeEffects": false
+      }
+    },
+    {
+      "eventId": "poverty-street-production-v2.pressure-winter-wind",
+      "variantId": "long-gusts",
+      "presentationId": "location/town/event/poverty-street-production-v2-pressure-winter-wind/long-gusts",
+      "family": "pressure",
+      "fallback": "assets/stage-outside.svg",
+      "status": "AUTHORING_ONLY_AWAITING_SELECTIVE_INTEGRATION",
+      "candidates": [
+        {
+          "key": "long-gusts-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ordinary-poverty/poverty-street-production-v2.pressure-winter-wind/long-gusts/1.gif",
+          "alt": "pressure poverty presentation variation 1 for long-gusts.",
+          "shipped": false
+        },
+        {
+          "key": "long-gusts-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ordinary-poverty/poverty-street-production-v2.pressure-winter-wind/long-gusts/2.gif",
+          "alt": "pressure poverty presentation variation 2 for long-gusts.",
+          "shipped": false
+        },
+        {
+          "key": "long-gusts-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ordinary-poverty/poverty-street-production-v2.pressure-winter-wind/long-gusts/3.gif",
+          "alt": "pressure poverty presentation variation 3 for long-gusts.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-outside.svg",
+        "alt": "Static pressure fallback for long-gusts."
+      },
+      "invariant": {
+        "mediaCandidateMayChangeGameplayVariant": false,
+        "mediaCandidateMayChangeChoices": false,
+        "mediaCandidateMayChangeEffects": false
+      }
+    },
+    {
+      "eventId": "poverty-cheap-production-v2.shared-room-seasons",
+      "variantId": "spring-window",
+      "presentationId": "location/town/event/poverty-cheap-production-v2-shared-room-seasons/spring-window",
+      "family": "cheap-lodging",
+      "fallback": "assets/stage-room.svg",
+      "status": "AUTHORING_ONLY_AWAITING_SELECTIVE_INTEGRATION",
+      "candidates": [
+        {
+          "key": "spring-window-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ordinary-poverty/poverty-cheap-production-v2.shared-room-seasons/spring-window/1.gif",
+          "alt": "cheap-lodging poverty presentation variation 1 for spring-window.",
+          "shipped": false
+        },
+        {
+          "key": "spring-window-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ordinary-poverty/poverty-cheap-production-v2.shared-room-seasons/spring-window/2.gif",
+          "alt": "cheap-lodging poverty presentation variation 2 for spring-window.",
+          "shipped": false
+        },
+        {
+          "key": "spring-window-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ordinary-poverty/poverty-cheap-production-v2.shared-room-seasons/spring-window/3.gif",
+          "alt": "cheap-lodging poverty presentation variation 3 for spring-window.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-room.svg",
+        "alt": "Static cheap-lodging fallback for spring-window."
+      },
+      "invariant": {
+        "mediaCandidateMayChangeGameplayVariant": false,
+        "mediaCandidateMayChangeChoices": false,
+        "mediaCandidateMayChangeEffects": false
+      }
+    },
+    {
+      "eventId": "poverty-cheap-production-v2.shared-room-seasons",
+      "variantId": "summer-heat",
+      "presentationId": "location/town/event/poverty-cheap-production-v2-shared-room-seasons/summer-heat",
+      "family": "cheap-lodging",
+      "fallback": "assets/stage-room.svg",
+      "status": "AUTHORING_ONLY_AWAITING_SELECTIVE_INTEGRATION",
+      "candidates": [
+        {
+          "key": "summer-heat-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ordinary-poverty/poverty-cheap-production-v2.shared-room-seasons/summer-heat/1.gif",
+          "alt": "cheap-lodging poverty presentation variation 1 for summer-heat.",
+          "shipped": false
+        },
+        {
+          "key": "summer-heat-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ordinary-poverty/poverty-cheap-production-v2.shared-room-seasons/summer-heat/2.gif",
+          "alt": "cheap-lodging poverty presentation variation 2 for summer-heat.",
+          "shipped": false
+        },
+        {
+          "key": "summer-heat-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ordinary-poverty/poverty-cheap-production-v2.shared-room-seasons/summer-heat/3.gif",
+          "alt": "cheap-lodging poverty presentation variation 3 for summer-heat.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-room.svg",
+        "alt": "Static cheap-lodging fallback for summer-heat."
+      },
+      "invariant": {
+        "mediaCandidateMayChangeGameplayVariant": false,
+        "mediaCandidateMayChangeChoices": false,
+        "mediaCandidateMayChangeEffects": false
+      }
+    },
+    {
+      "eventId": "poverty-cheap-production-v2.shared-room-seasons",
+      "variantId": "winter-stove",
+      "presentationId": "location/town/event/poverty-cheap-production-v2-shared-room-seasons/winter-stove",
+      "family": "cheap-lodging",
+      "fallback": "assets/stage-room.svg",
+      "status": "AUTHORING_ONLY_AWAITING_SELECTIVE_INTEGRATION",
+      "candidates": [
+        {
+          "key": "winter-stove-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ordinary-poverty/poverty-cheap-production-v2.shared-room-seasons/winter-stove/1.gif",
+          "alt": "cheap-lodging poverty presentation variation 1 for winter-stove.",
+          "shipped": false
+        },
+        {
+          "key": "winter-stove-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ordinary-poverty/poverty-cheap-production-v2.shared-room-seasons/winter-stove/2.gif",
+          "alt": "cheap-lodging poverty presentation variation 2 for winter-stove.",
+          "shipped": false
+        },
+        {
+          "key": "winter-stove-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ordinary-poverty/poverty-cheap-production-v2.shared-room-seasons/winter-stove/3.gif",
+          "alt": "cheap-lodging poverty presentation variation 3 for winter-stove.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-room.svg",
+        "alt": "Static cheap-lodging fallback for winter-stove."
+      },
+      "invariant": {
+        "mediaCandidateMayChangeGameplayVariant": false,
+        "mediaCandidateMayChangeChoices": false,
+        "mediaCandidateMayChangeEffects": false
+      }
+    },
+    {
+      "eventId": "poverty-cheap-production-v2.shared-room-seasons",
+      "variantId": "shared-room",
+      "presentationId": "location/town/event/poverty-cheap-production-v2-shared-room-seasons/shared-room",
+      "family": "cheap-lodging",
+      "fallback": "assets/stage-room.svg",
+      "status": "AUTHORING_ONLY_AWAITING_SELECTIVE_INTEGRATION",
+      "candidates": [
+        {
+          "key": "shared-room-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ordinary-poverty/poverty-cheap-production-v2.shared-room-seasons/shared-room/1.gif",
+          "alt": "cheap-lodging poverty presentation variation 1 for shared-room.",
+          "shipped": false
+        },
+        {
+          "key": "shared-room-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ordinary-poverty/poverty-cheap-production-v2.shared-room-seasons/shared-room/2.gif",
+          "alt": "cheap-lodging poverty presentation variation 2 for shared-room.",
+          "shipped": false
+        },
+        {
+          "key": "shared-room-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ordinary-poverty/poverty-cheap-production-v2.shared-room-seasons/shared-room/3.gif",
+          "alt": "cheap-lodging poverty presentation variation 3 for shared-room.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-room.svg",
+        "alt": "Static cheap-lodging fallback for shared-room."
+      },
+      "invariant": {
+        "mediaCandidateMayChangeGameplayVariant": false,
+        "mediaCandidateMayChangeChoices": false,
+        "mediaCandidateMayChangeEffects": false
+      }
+    }
+  ]
+}
