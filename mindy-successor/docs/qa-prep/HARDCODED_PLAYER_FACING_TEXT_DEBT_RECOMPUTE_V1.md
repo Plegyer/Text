@@ -3,7 +3,7 @@
 Status: COMPLETE / CURRENT_APP_DEBT_RECORDED
 
 Current main:
-`1a2f6e428da41e356f8d48df4a72923a5cc1928c`.
+`5dffefd15703d431a604b4cc9f831c4e55460aed`.
 
 Audited file:
 `src/ui/app.ts`.
@@ -237,10 +237,10 @@ hardcoded RU-bearing source occurrences by the reproducible line-based counting 
 The debt is presentation/UI-only, but several shared consumers remain required.
 
 
-## PR51 compatibility note
+## PR51/PR52 compatibility note
 
-PR51 changes ordinary-poverty localization values only.
-It does not change the app/engine/presentation seams audited by this document.
+PR51 changes ordinary-poverty localization values and PR52 adds legacy root localization values.
+Neither changes the app/engine/presentation seams audited by this document.
 
 Current app blob remains:
 `312399d01b211f13c29017c1e17b61f2027d21b3`.
