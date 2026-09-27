@@ -1195,3 +1195,28 @@ Require:
 Apply the gate to ordinary poverty, Secret Debt, School public results, Forest depth and GIF production. Do not mark a stream READY unless current evidence supports it.
 
 Continue items 67–75 sequentially without waiting for Lead review.
+
+
+## Queue item 76 — next implementation candidate ranking by readiness
+
+Create NEW file only:
+- `docs/qa-prep/NEXT_IMPLEMENTATION_CANDIDATES_BY_READINESS_v1.md`
+
+Compare current candidate streams by factual readiness only, without scoring or recommending a Product choice:
+- ordinary poverty content;
+- Secret Debt;
+- School authored content/public results;
+- Forest depth;
+- starter-trio career expansion;
+- presentation/GIF production.
+
+For each list:
+- decisions still missing;
+- runtime seams ready/missing;
+- content authority ready/missing;
+- tests ready/missing;
+- whether bounded implementation can begin now.
+
+Do not rank aesthetics or reopen locked mechanics.
+
+Continue items 68–76 sequentially without waiting for Lead review.
