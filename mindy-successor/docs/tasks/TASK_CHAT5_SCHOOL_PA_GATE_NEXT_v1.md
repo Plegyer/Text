@@ -1777,3 +1777,142 @@ Effective immediately by direct Product decision:
 - if an item was already committed before this rule, do not rewrite it blindly; record it for localization migration/review.
 
 Do not create a second copy of the gameplay event for English.
+
+
+## Queue item 118 — School bilingual source inventory v1
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_BILINGUAL_SOURCE_INVENTORY_v1.md`
+
+Inventory all currently authored School player-facing text that must exist in both RU and EN:
+- teacher identities;
+- repeatable lessons;
+- generic post-lesson content;
+- exact Night-study content;
+- peer/classroom scenes;
+- relationship scenes;
+- staged exact-course libraries;
+- presentation alt text.
+
+Classify each source as REACHABLE_NOW / STAGED / PRODUCT_BLOCKED. Do not change mechanics.
+
+## Queue item 119 — teacher identity RU+EN pack v1
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_TEACHER_IDENTITIES_RU_EN_v1.md`
+
+For all eight drafted teachers provide:
+- stable locale-neutral content ID;
+- Russian player-facing name/role/short bio;
+- English equivalent;
+- shared gameplay role;
+- shared visual identity;
+- translation notes only where meaning is culturally sensitive.
+
+Do not alter course mechanics or routing.
+
+## Queue item 120 — repeatable lesson RU+EN bank v1
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md`
+
+Convert the current repeatable lesson banks into paired RU+EN authored text for all eight tracks.
+
+Requirements:
+- same semantic lesson identity in both locales;
+- same implied context;
+- no locale-specific mechanic claims;
+- no changed tuition/Energy/stat/Lust wording;
+- no invented milestone requirements.
+
+## Queue item 121 — generic post-lesson RU+EN production draft
+
+Create NEW production-oriented file only:
+- `prior-work/astra/prototype-m3.2/content/packs/school-target/school-generic-reachable-bilingual-v1.json`
+
+Create a staging production pack for currently safe generic post-paid-lesson content with RU+EN text payloads in whatever localization-ready structure current authoring can represent without shared schema changes.
+
+If current schema cannot encode bilingual player text directly:
+- keep the gameplay/event pack locale-neutral;
+- attach explicit RU/EN authoring payload in a sidecar field/fixture structure that remains out of production loading;
+- document the limitation in item 126.
+
+Do not edit shared runtime/schema.
+
+## Queue item 122 — exact Night-study RU+EN production draft
+
+Create NEW production-oriented file only:
+- `prior-work/astra/prototype-m3.2/content/packs/school-target/school-night-exact-bilingual-v1.json`
+
+Prepare RU+EN content for exact existing Night-study identities.
+
+Preserve exact Night-study mechanics:
+- +2 stat;
+- zero tuition;
+- zero current-day Energy cost;
+- next-day Energy -1;
+- separate `night_study_sessions`.
+
+No shared runtime edits.
+
+## Queue item 123 — School bilingual completeness contract test
+
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/school-bilingual-content-contract.test.ts`
+
+Validate the bilingual School authoring outputs:
+- every authored player-facing School identity has RU and EN;
+- gameplay/event/content IDs are locale-neutral;
+- no duplicated RU/EN gameplay event;
+- no locale-specific effects/conditions/rewards;
+- Night-study and paid-course mechanics remain identical.
+
+If runtime localization is not implemented yet, keep assertions at authoring/fixture level and say so clearly.
+
+## Queue item 124 — School bilingual multi-GIF mapping v1
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_BILINGUAL_MULTI_GIF_MAPPING_v1.md`
+
+For reachable and staged School presentation identities map:
+- shared 3–5 GIF candidate pool;
+- RU alt text;
+- EN alt text;
+- RU caption/context;
+- EN caption/context;
+- shared static fallback.
+
+Do not duplicate GIF assets per language.
+
+## Queue item 125 — exact-course routing + localization compatibility review
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_EXACT_COURSE_ROUTING_LOCALIZATION_COMPATIBILITY_v1.md`
+
+Review the proposed exact-course routing seam against RU+EN requirements.
+
+Require:
+- exact paid-course identity remains locale-neutral;
+- generic `actionCompleted:school` stays backward-compatible;
+- localized text is selected after gameplay routing;
+- no locale-specific progress/public-result behavior;
+- no Save migration required solely for language.
+
+Do not implement shared runtime.
+
+## Queue item 126 — School bilingual integration handoff v12
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_BILINGUAL_INTEGRATION_HANDOFF_v12.md`
+
+Consolidate items 118–125:
+- exact RU+EN authored files;
+- current runtime/schema localization limitation;
+- safe production-ready generic/Night content;
+- staged teacher/course content;
+- multi-GIF mapping;
+- exact Lead localization seam needed;
+- selective integration order;
+- Product decisions still OPEN.
+
+Continue items 118–126 sequentially without waiting for Lead review.
