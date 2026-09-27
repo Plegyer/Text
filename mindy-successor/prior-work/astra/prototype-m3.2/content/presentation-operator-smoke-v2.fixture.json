@@ -1,0 +1,55 @@
+{
+  "version": 2,
+  "kind": "presentation-operator-smoke",
+  "representative": {
+    "presentationId": "job/lumber/shift/spring/default",
+    "mediaKind": "gif",
+    "logicalImportName": "shift-spring.gif",
+    "staticFallbackPresentationId": "job/lumber/shift/spring/default",
+    "expectedStaticAsset": "assets/stage-lumber.svg"
+  },
+  "policy": {
+    "sourcePathEditingAllowed": false,
+    "gameplayMutationAllowed": false,
+    "semanticIdentityChangesOnReplacement": false,
+    "animationStatePersists": false
+  },
+  "steps": [
+    {
+      "order": 1,
+      "action": "import",
+      "input": "operator-selected GIF file",
+      "expected": "staged against exact semantic presentationId only"
+    },
+    {
+      "order": 2,
+      "action": "validate",
+      "expected": "known semantic ID, GIF kind, portable managed reference, non-empty alt, safe fallback"
+    },
+    {
+      "order": 3,
+      "action": "preview",
+      "expected": "preview same semantic slot without gameplay commit"
+    },
+    {
+      "order": 4,
+      "action": "persist",
+      "expected": "atomic presentation override metadata only"
+    },
+    {
+      "order": 5,
+      "action": "reload",
+      "expected": "same semantic presentationId and unchanged gameplay identity"
+    },
+    {
+      "order": 6,
+      "action": "animations-off",
+      "expected": "static shipped fallback active with same semantic ID"
+    },
+    {
+      "order": 7,
+      "action": "rollback",
+      "expected": "override removed and shipped fallback restored"
+    }
+  ]
+}
