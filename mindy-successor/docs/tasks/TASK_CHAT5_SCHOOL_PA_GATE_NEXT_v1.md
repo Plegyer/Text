@@ -1208,3 +1208,24 @@ Define a content-facing, non-runtime draft shape for authored School units:
 Keep current runtime schema untouched. Mark fields that depend on unresolved Product decisions as optional/OPEN rather than inventing values.
 
 Continue items 68–76 sequentially without waiting for Lead review.
+
+
+## Queue item 77 — School authored-pack inclusion plan
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_AUTHORED_PACK_INCLUSION_PLAN_v1.md`
+
+Define how future authored School packs should be explicitly included in production without recursively shipping fixtures.
+
+Cover:
+- base lesson-variant pack;
+- teacher-specific pack;
+- milestone/public-result pack;
+- cross-career reaction pack;
+- presentation references;
+- validation before inclusion;
+- rollback/removal.
+
+Do not change production content in this task.
+
+Continue items 69–77 sequentially without waiting for Lead review.
