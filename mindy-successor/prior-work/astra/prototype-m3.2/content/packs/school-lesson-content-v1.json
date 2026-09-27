@@ -5,55 +5,55 @@
   "writes": [],
   "media": [
     {
-      "id": "school/literacy-and-numbers/lesson/authored",
+      "id": "school.literacy-and-numbers.lesson.authored",
       "kind": "image",
       "src": "assets/stage-school.svg",
       "alt": "Authored Literacy & Numbers lesson presentation."
     },
     {
-      "id": "school/arcana/lesson/authored",
+      "id": "school.arcana.lesson.authored",
       "kind": "image",
       "src": "assets/stage-school.svg",
       "alt": "Authored Arcana lesson presentation."
     },
     {
-      "id": "school/rhetoric-and-social/lesson/authored",
+      "id": "school.rhetoric-and-social.lesson.authored",
       "kind": "image",
       "src": "assets/stage-school.svg",
       "alt": "Authored Rhetoric & Social lesson presentation."
     },
     {
-      "id": "school/etiquette-and-presentation/lesson/authored",
+      "id": "school.etiquette-and-presentation.lesson.authored",
       "kind": "image",
       "src": "assets/stage-school.svg",
       "alt": "Authored Etiquette & Presentation lesson presentation."
     },
     {
-      "id": "school/field-craft/lesson/authored",
+      "id": "school.field-craft.lesson.authored",
       "kind": "image",
       "src": "assets/stage-school.svg",
       "alt": "Authored Field Craft lesson presentation."
     },
     {
-      "id": "school/physical-training/lesson/authored",
+      "id": "school.physical-training.lesson.authored",
       "kind": "image",
       "src": "assets/stage-school.svg",
       "alt": "Authored Physical Training lesson presentation."
     },
     {
-      "id": "school/arts-and-performance/lesson/authored",
+      "id": "school.arts-and-performance.lesson.authored",
       "kind": "image",
       "src": "assets/stage-school.svg",
       "alt": "Authored Arts & Performance lesson presentation."
     },
     {
-      "id": "school/body-confidence/lesson/authored",
+      "id": "school.body-confidence.lesson.authored",
       "kind": "image",
       "src": "assets/stage-school.svg",
       "alt": "Authored Body Confidence lesson presentation."
     },
     {
-      "id": "school/lesson/context/default",
+      "id": "school.lesson.context.default",
       "kind": "image",
       "src": "assets/stage-school.svg",
       "alt": "School lesson context."
@@ -82,7 +82,7 @@
           "text": "Mara slides a short ledger across the desk with one total deliberately omitted. She asks you to find the line that makes the rest impossible, then points out that useful numbers begin by noticing where a story stops making sense.",
           "conditions": [],
           "media": [
-            "school/literacy-and-numbers/lesson/authored"
+            "school.literacy-and-numbers.lesson.authored"
           ]
         },
         {
@@ -90,7 +90,7 @@
           "text": "Mara pins up a cramped notice and asks you to rewrite it so a tired worker understands it on the first reading. She trims one decorative phrase and reminds you that clarity is not the enemy of intelligence.",
           "conditions": [],
           "media": [
-            "school/literacy-and-numbers/lesson/authored"
+            "school.literacy-and-numbers.lesson.authored"
           ]
         },
         {
@@ -98,7 +98,7 @@
           "text": "Mara sets three imaginary purchases against an awkward budget. The arithmetic is simple; the harder lesson is deciding what matters first. Useful numbers, she says, always belong to a decision.",
           "conditions": [],
           "media": [
-            "school/literacy-and-numbers/lesson/authored"
+            "school.literacy-and-numbers.lesson.authored"
           ]
         }
       ],
@@ -134,7 +134,7 @@
           "text": "Ilyra places a faintly glowing sigil under glass and asks what you observed before allowing any theory. Light, heat, rhythm, and decay come first; certainty comes last.",
           "conditions": [],
           "media": [
-            "school/arcana/lesson/authored"
+            "school.arcana.lesson.authored"
           ]
         },
         {
@@ -142,7 +142,7 @@
           "text": "Ilyra presents a practice pattern with one intentional flaw and asks you to predict its failure. The harmless surprise becomes the lesson: an error that teaches you something is more valuable than a success you never understood.",
           "conditions": [],
           "media": [
-            "school/arcana/lesson/authored"
+            "school.arcana.lesson.authored"
           ]
         },
         {
@@ -150,7 +150,7 @@
           "text": "Ilyra gives you two plausible explanations for the same magical effect and makes you design a test that can distinguish them. Opinion becomes method only when the test can prove you wrong.",
           "conditions": [],
           "media": [
-            "school/arcana/lesson/authored"
+            "school.arcana.lesson.authored"
           ]
         }
       ],
@@ -186,7 +186,7 @@
           "text": "Cassian asks you to make the same argument to a friend, a suspicious stranger, and a bored official. The point stays the same while the doorway changes.",
           "conditions": [],
           "media": [
-            "school/rhetoric-and-social/lesson/authored"
+            "school.rhetoric-and-social.lesson.authored"
           ]
         },
         {
@@ -194,7 +194,7 @@
           "text": "Cassian tells a short story and asks you to interrupt only when you hear the assumption he expects the listener to supply. The useful part of the argument turns out to be in the gap.",
           "conditions": [],
           "media": [
-            "school/rhetoric-and-social/lesson/authored"
+            "school.rhetoric-and-social.lesson.authored"
           ]
         },
         {
@@ -202,7 +202,7 @@
           "text": "Cassian gives you an embarrassing opening line and makes you recover without pretending it never happened. Charm, he says, is often the art of making the stumble look like part of the route.",
           "conditions": [],
           "media": [
-            "school/rhetoric-and-social/lesson/authored"
+            "school.rhetoric-and-social.lesson.authored"
           ]
         }
       ],
@@ -238,7 +238,7 @@
           "text": "Eliane has you enter the same room repeatedly, changing only pace, gaze, and the moment you speak. People notice comfort before they decide whether they like you.",
           "conditions": [],
           "media": [
-            "school/etiquette-and-presentation/lesson/authored"
+            "school.etiquette-and-presentation.lesson.authored"
           ]
         },
         {
@@ -246,7 +246,7 @@
           "text": "A formal place setting becomes easier once Eliane removes half the pieces and asks what problem each rule solves. Etiquette becomes less about objects and more about helping other people feel at ease.",
           "conditions": [],
           "media": [
-            "school/etiquette-and-presentation/lesson/authored"
+            "school.etiquette-and-presentation.lesson.authored"
           ]
         },
         {
@@ -254,7 +254,7 @@
           "text": "Eliane adjusts one detail of your presentation and asks what you meant to communicate. When the impression and intention differ, she changes one thing instead of redesigning everything.",
           "conditions": [],
           "media": [
-            "school/etiquette-and-presentation/lesson/authored"
+            "school.etiquette-and-presentation.lesson.authored"
           ]
         }
       ],
@@ -290,7 +290,7 @@
           "text": "Rowan walks you across a practice yard, turns you around, and asks what changed. A gate, a rope, and a fresh footprint become a lesson in noticing before deciding what is unimportant.",
           "conditions": [],
           "media": [
-            "school/field-craft/lesson/authored"
+            "school.field-craft.lesson.authored"
           ]
         },
         {
@@ -298,7 +298,7 @@
           "text": "A simple field task is laid out with one expected tool missing. Rowan refuses to replace it, and you learn the difference between useful equipment and dependence on it.",
           "conditions": [],
           "media": [
-            "school/field-craft/lesson/authored"
+            "school.field-craft.lesson.authored"
           ]
         },
         {
@@ -306,7 +306,7 @@
           "text": "Three routes cross the practice ground: shortest, safest, and easiest to retreat from. Rowan accepts your answer only when you explain that the correct route depends on the goal.",
           "conditions": [],
           "media": [
-            "school/field-craft/lesson/authored"
+            "school.field-craft.lesson.authored"
           ]
         }
       ],
@@ -342,7 +342,7 @@
           "text": "Tovan stops a difficult drill halfway and makes you restart with cleaner form. Strength you cannot repeat, he says, is a performance rather than training.",
           "conditions": [],
           "media": [
-            "school/physical-training/lesson/authored"
+            "school.physical-training.lesson.authored"
           ]
         },
         {
@@ -350,7 +350,7 @@
           "text": "Tovan sets a steady pace and refuses to let you sprint the easy part. The last repetitions are manageable because you did not spend tomorrow's effort in the first minute.",
           "conditions": [],
           "media": [
-            "school/physical-training/lesson/authored"
+            "school.physical-training.lesson.authored"
           ]
         },
         {
@@ -358,7 +358,7 @@
           "text": "Tovan gives you a weighted pole and asks for coordination before force. Better alignment makes the movement feel lighter, and he reminds you that power is expensive while organization is cheap.",
           "conditions": [],
           "media": [
-            "school/physical-training/lesson/authored"
+            "school.physical-training.lesson.authored"
           ]
         }
       ],
@@ -394,7 +394,7 @@
           "text": "Nessa stops a rehearsal because your gesture is halfway between two ideas. She asks you to commit to one intention, exaggerate it until the room understands, and only then make it subtle again.",
           "conditions": [],
           "media": [
-            "school/arts-and-performance/lesson/authored"
+            "school.arts-and-performance.lesson.authored"
           ]
         },
         {
@@ -402,7 +402,7 @@
           "text": "A familiar phrase is repeated at three tempos until each version feels like a different scene. Timing, Nessa says, teaches the audience what to expect from the same words or movement.",
           "conditions": [],
           "media": [
-            "school/arts-and-performance/lesson/authored"
+            "school.arts-and-performance.lesson.authored"
           ]
         },
         {
@@ -410,7 +410,7 @@
           "text": "Nessa gives you an older performance pattern and asks you to change one element without losing its structure. The second attempt stops being imitation and starts to sound like yours.",
           "conditions": [],
           "media": [
-            "school/arts-and-performance/lesson/authored"
+            "school.arts-and-performance.lesson.authored"
           ]
         }
       ],
@@ -446,7 +446,7 @@
           "text": "Sera asks you to stand naturally and notice where you hold unnecessary tension. A small adjustment feels steadier, and she reminds you that confidence is not freezing into an impressive shape.",
           "conditions": [],
           "media": [
-            "school/body-confidence/lesson/authored"
+            "school.body-confidence.lesson.authored"
           ]
         },
         {
@@ -454,7 +454,7 @@
           "text": "A grooming exercise becomes a lesson in sequence and attention rather than decoration. Sera asks which steps actually help you feel prepared and which exist only to satisfy an imagined audience.",
           "conditions": [],
           "media": [
-            "school/body-confidence/lesson/authored"
+            "school.body-confidence.lesson.authored"
           ]
         },
         {
@@ -462,7 +462,7 @@
           "text": "Sera offers several presentation choices and asks which one feels intentional rather than merely expected. Confidence, she says, is easier when the choice is actually yours.",
           "conditions": [],
           "media": [
-            "school/body-confidence/lesson/authored"
+            "school.body-confidence.lesson.authored"
           ]
         }
       ],
@@ -503,7 +503,7 @@
           "text": "The paid School lesson is complete. A short reflection settles the material without changing the lesson transaction or adding another cost.",
           "conditions": [],
           "media": [
-            "school/lesson/context/default"
+            "school.lesson.context.default"
           ]
         }
       ],
