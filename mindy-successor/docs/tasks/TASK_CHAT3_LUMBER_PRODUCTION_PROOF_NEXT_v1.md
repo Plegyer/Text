@@ -1245,3 +1245,21 @@ For each option map:
 Do not choose the delay length or final debt values. Do not select an implementation option as Product truth; identify the minimal technically compatible options for Lead.
 
 Continue items 67–75 sequentially without waiting for Lead review.
+
+
+## Queue item 76 — Secret Debt forced-Night authoring boundary
+
+Create NEW file only:
+- `docs/poverty-prep/SECRET_DEBT_FORCED_NIGHT_AUTHORING_BOUNDARY_v1.md`
+
+Separate the fixed forced-Night product requirement from unresolved authoring/balance:
+- interception point candidates compatible with NightFlow;
+- voluntary-menu suppression requirement once bound;
+- next-day penalty remains balance-owned;
+- relationship/story variants remain content-owned;
+- day work and Night obligation remain separate actions/state;
+- save/reload and exactly-once requirements.
+
+Do not choose final intercept mechanics if multiple current-compatible options remain.
+
+Continue items 68–76 sequentially without waiting for Lead review.
