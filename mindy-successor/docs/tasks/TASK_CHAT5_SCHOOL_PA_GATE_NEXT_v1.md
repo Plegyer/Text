@@ -925,3 +925,22 @@ Provide a reusable completeness matrix for each School track:
 Keep all not-yet-authored content OPEN rather than filling it.
 
 Continue items 53–61 sequentially without waiting for Lead review.
+
+
+## Queue item 62 — School repeatable-lesson content batch plan
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_REPEATABLE_LESSON_CONTENT_BATCH_PLAN_v1.md`
+
+Plan parallel authoring of repeatable lesson variants across all eight tracks while preserving fixed course mechanics.
+
+For each track specify:
+- number/type of reusable text/media variant slots to author as a bounded batch;
+- teacher dependency;
+- semantic presentation reuse;
+- validation against unchanged tuition/Energy/stat package;
+- relationship/career reaction hooks kept outside the base transaction unless explicitly authored.
+
+Do not set final prose quotas as Product locks; label batch sizes as production planning values.
+
+Continue items 54–62 sequentially without waiting for Lead review.
