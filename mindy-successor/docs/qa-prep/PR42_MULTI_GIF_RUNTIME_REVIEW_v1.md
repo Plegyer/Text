@@ -8,10 +8,17 @@ Base: 974d6e077ffc511e304a64aef32f2aab81167f41
 
 ## Final disposition
 
-GREEN on the reviewed exact head.
+GREEN / MERGED.
 
-PR status at review time:
-OPEN / NOT MERGED.
+Merge SHA:
+55adc69dcda4c41c71548cd146756896fa5976d0
+
+Post-merge main CI:
+- run 36318839497
+- 295 tests
+- 295 pass
+- 0 fail
+- validation: 16 packs, 43 events, 35 actions, 9 endings.
 
 Exact-head CI:
 - run 36318743007
@@ -261,7 +268,7 @@ Still separate:
 - real 3–5 GIF asset production;
 - RU+EN alt/caption migration for final pools;
 - adoption manifests per career/School/poverty/Forest;
-- post-merge main CI after Lead merges PR42.
+- real 3–5 GIF asset production and adoption remain separate from the merged runtime.
 
 ## Final matrix
 
@@ -277,9 +284,10 @@ Still separate:
 - Animation Off static fallback: PASS
 - old overrides compatible: PASS
 - exact-head CI: 295/295 PASS
-- merged: NO at review time
+- merged: YES
+- post-merge CI: 295/295 PASS
 
 Final:
-GREEN.
+GREEN / MERGED.
 
 No Chat 4 production runtime/UI/content file was modified.
