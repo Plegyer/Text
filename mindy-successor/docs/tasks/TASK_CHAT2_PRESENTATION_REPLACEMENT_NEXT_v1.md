@@ -1475,3 +1475,24 @@ Define the smallest brief needed to produce one GIF/static asset for an already-
 The template must allow fast external GIF production without exposing mechanics to the asset producer.
 
 Continue items 74–82 sequentially without waiting for Lead review.
+
+
+## Queue item 83 — full-game media production batch template
+
+Create NEW file only:
+- `docs/presentation-prep/FULL_GAME_MEDIA_PRODUCTION_BATCH_TEMPLATE_v1.md`
+
+Define a reusable batch packet for producing multiple GIF/static assets at once:
+- batch scope;
+- semantic IDs;
+- shared location/action motif;
+- reusable loops;
+- dedicated exceptions;
+- static/text fallback status;
+- source-content approval;
+- animations-off acceptance;
+- import/rollback validation.
+
+Keep media production separate from gameplay authoring.
+
+Continue items 75–83 sequentially without waiting for Lead review.
