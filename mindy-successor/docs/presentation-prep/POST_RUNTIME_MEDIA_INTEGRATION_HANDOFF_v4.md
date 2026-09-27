@@ -1,441 +1,431 @@
 # Post-Runtime Media Integration Handoff v4
 
-Scope:
-Queue items 142–149 after the Lead localization and multi-GIF runtime milestones.
+Current production baseline:
+- PR #41 — RU/EN localization runtime — merged;
+- PR #42 — deterministic 3–5 GIF presentation pools — merged;
+- PR42 merge: `55adc69dcda4c41c71548cd146756896fa5976d0`;
+- PR42 head: `41ebf0377c5b50b2ef298009562d5ba9fde56f18`;
+- exact-head workflow: **SUCCESS**;
+- current main observed during this queue: `f5c5edf71354c8e08acc202b9c2a1aa0d87c75a3`.
 
-Current production evidence:
-- PR #41 localization runtime merged;
-- PR #42 deterministic multi-GIF runtime merged;
-- PR42 merge commit: `55adc69dcda4c41c71548cd146756896fa5976d0`;
-- PR42 final head: `41ebf0377c5b50b2ef298009562d5ba9fde56f18`;
-- PR42 final exact-head `mindy-successor check`: **SUCCESS**;
-- current main observed after merge: `f5c5edf71354c8e08acc202b9c2a1aa0d87c75a3`.
-
-## 1. What PR42 now provides
-
-Current-main presentation runtime supports:
-
-- optional `pool` per semantic slot;
-- pool version;
-- ordered/unordered metadata;
-- unweighted/weighted selection;
-- exactly 3–5 GIF candidates;
+PR42 already supplies:
+- pool size 3..5;
 - unique stable candidate keys;
-- optional positive finite presentation weights;
-- `primary + pool` ambiguity rejection;
-- deterministic selection using:
-  - presentationId;
-  - occurrenceKey;
-  - pool version;
-- selected candidate placed first;
-- remaining candidates retained as fallback order;
-- static animation-off fallback;
-- existing semantic fallback;
-- no gameplay RNG required;
-- no Save migration.
+- ordered/unordered pool mode;
+- unweighted/weighted presentation-only selection;
+- deterministic `presentationId + occurrenceKey + poolVersion` selection;
+- no gameplay RNG;
+- no Save migration;
+- animations-off static fallback;
+- old primary/static compatibility.
 
-This closes the core runtime gap identified by Chat 2.
+No further shared runtime change is required for the staging/adoption artifacts in items 144–149.
 
-## 2. Current asset reality
+---
 
-Prototype asset tree currently contains:
-- static SVG fallbacks;
-- **0 real .gif files**.
+# 1. Current real-asset state
 
-Therefore all GIF paths authored in items 144–147 are staging placeholders under:
+Current-main prototype tree contains:
 
-`assets/staging/non-shipped/...`
+**0 real `.gif` files.**
 
-They are not shipped assets.
+Therefore:
+- no new multi-GIF pool in items 144–147 is production-media-ready;
+- every staged GIF path is a placeholder;
+- placeholders must never be counted as shipped assets;
+- existing static SVG fallbacks remain the only real media coverage for these new pools.
 
-### Ledger totals
+This is an art/animation production gap, not a runtime/gameplay gap.
 
-From:
-`RU_EN_MULTI_GIF_ASSET_READINESS_LEDGER_v1.md`
+---
 
-- ledger pool rows: 59;
-- real GIF candidates: 0;
-- placeholder references: 179;
-- RU alt authoring: complete for staging candidates;
-- EN alt authoring: complete for staging candidates;
-- static fallback: complete.
-
-Because item 144 duplicates representative pools also covered by 145–147:
-
-Unique subsystem adoption scope is:
-- 40 career seasonal pools;
-- 10 poverty pools;
-- 3 reachable School pools;
-- **53 unique semantic pools**.
-
-Unique adoption candidate references:
-- 120 career;
-- 30 poverty;
-- 11 School;
-- **161 candidate references**.
-
-## 3. What can be selectively integrated immediately
-
-### Safe immediately — docs / authoring metadata
-
-These may be copied now for Lead review/use:
-- coverage matrix;
-- staging manifests;
-- RU+EN alt metadata;
-- localization references;
-- readiness ledger;
-- contract test.
-
-They do not mutate gameplay.
-
-### Safe immediately — static/localization text
-
-Existing shipped static fallbacks remain active.
-
-RU+EN localization strings/alt metadata may be integrated into the PR41 localization/catalog layer without activating placeholder GIFs.
-
-### Safe immediately — contract test
-
-`tests/multi-gif-production-patch-contract.test.ts`
-
-may be selectively integrated and run against the target branch.
-
-This worker handoff does not claim it was executed here.
-
-### Not safe for active production yet
-
-Do **not** activate any item-144–147 dynamic pool while its candidate paths still reference:
-`assets/staging/non-shipped/`.
-
-A valid path shape is not proof that a GIF file exists.
-
-## 4. Representative first production patch — item 144
+# 2. Item 142 — bilingual production coverage
 
 File:
 
-`content/presentation-drafts/multi-gif-production-patch-v1.json`
+`docs/presentation-prep/BILINGUAL_PRESENTATION_PRODUCTION_COVERAGE_v2.md`
 
-Contains six PR42-compatible runtime patch pools:
+Key status after PR41:
+- town/HUD shell: `SHIPPED_RU_EN`;
+- 10 ordinary career Work labels/descriptions: `SHIPPED_RU_EN`;
+- deeper School/Forest/Night UI: mixed `RU_FALLBACK`;
+- career seasonal/result presentation text: `STAGED_RU_EN`;
+- ordinary poverty presentation localization: `STAGED_RU_EN`;
+- multi-GIF alt/captions: `STAGED_RU_EN`;
+- full Forest Activity/endings: still not fully migrated.
+
+PR41 localization bundle at the audited point:
+- 56 active keys;
+- 0 missing EN values.
+
+---
+
+# 3. Item 144 — representative PR42 staging patch
+
+File:
+
+`prior-work/astra/prototype-m3.2/content/presentation-drafts/multi-gif-production-patch-v1.json`
+
+Representative pools:
 - Lumber spring;
 - Satyr Maid spring;
 - Undead Farm spring;
 - Tavern spring;
 - poverty cold-rain event;
-- generic reachable School after-lesson event.
+- generic post-School event.
 
-Each has:
-- 3 candidates;
-- PR42-compatible `runtimePatch`;
-- static fallback;
-- RU+EN caption payload;
-- RU+EN candidate alt payload;
-- explicit PLACEHOLDER asset status.
+The nested `presentationPatch` uses the exact PR42 runtime pool shape.
 
-### Integration readiness
+Each pool contains:
+- 3 stable GIF candidate keys;
+- runtime-compatible `assets/...gif` path shape;
+- real static SVG fallback;
+- RU+EN localization references/payloads outside gameplay/runtime identity.
 
-**SCHEMA_READY**
-but
-**ASSET_BLOCKED**.
+All 18 GIF paths are explicitly under:
 
-These six are the recommended first activation batch once 18 approved real GIFs, or an approved smaller reused file set mapped to the 18 candidate entries, exist.
+`assets/staging/non-shipped/`
 
-## 5. Ten-career adoption — item 145
+Status:
+**STRUCTURALLY READY / ASSET BLOCKED**.
+
+Do not apply this patch as production until every placeholder path is replaced by a real managed GIF.
+
+---
+
+# 4. Item 145 — all 10 career adoption manifest
 
 File:
 
-`content/presentation-drafts/ten-career-pool-adoption-v2.json`
+`prior-work/astra/prototype-m3.2/content/presentation-drafts/ten-career-pool-adoption-v2.json`
 
 Coverage:
 - 10 ordinary careers;
-- 4 seasonal base shift slots each;
-- 40 pools;
-- 3 candidates each;
-- 120 placeholder candidate references.
+- 40 seasonal shift pools;
+- 10 stable result/default pools;
+- total: **50 pools**.
 
-Every pool has:
-- semantic presentationId;
+Every entry contains:
+- shipped semantic presentationId;
+- PR42-compatible runtime slot;
 - pool version;
-- stable candidate keys;
-- current static fallback;
-- RU+EN alt;
-- shared localization key;
-- coverage status PLACEHOLDER.
+- 3 stable candidate keys;
+- shipped static fallback;
+- RU+EN alt localization key requirements;
+- coverage status.
 
-### Production activation
+Current status:
+- `REAL_ASSET_READY`: 0;
+- `PLACEHOLDER`: 50;
+- `NEEDS_ART`: 0.
 
-Needs real GIFs first.
+No Hard Work, relationship or event IDs were invented.
 
-No Hard Work, relationship, milestone or ending surface is invented.
+### Immediate selective integration
 
-## 6. Ordinary poverty adoption — item 146
+Can be integrated immediately:
+- localization key/data definitions;
+- static fallback metadata;
+- semantic coverage metadata;
+- tests/docs.
+
+Cannot be activated as production GIF overrides yet:
+- all 50 pool overrides, because all 150 GIF candidate paths are placeholders.
+
+---
+
+# 5. Item 146 — ordinary poverty adoption manifest
 
 File:
 
-`content/presentation-drafts/poverty-pool-adoption-v2.json`
+`prior-work/astra/prototype-m3.2/content/presentation-drafts/poverty-pool-adoption-v2.json`
 
 Coverage:
-- 10 PR37 event+variant semantic identities;
-- 3 candidates each;
-- 30 placeholder references.
+- 3 street;
+- 1 cheap lodging;
+- 3 recovery/help;
+- 3 pressure/bad-luck;
+- total: **10 PR37 production pools**.
 
-Gameplay outcome policy is explicitly:
+Each pool:
+- is keyed by already-authored event+variant semantic identity;
+- uses PR42-compatible 3-candidate shape;
+- preserves static fallback;
+- declares RU+EN alt localization keys;
+- is marked `PLACEHOLDER`.
 
-`FIXED_OUTSIDE_PRESENTATION`.
-
-Media selection cannot alter:
-- helpful/neutral/pressure identity;
-- choices;
-- effects;
-- money/item reward;
-- next-day modifiers.
-
-### Production activation
-
-Needs real GIFs first.
-
-Static fallbacks already ship.
+Hard invariant:
+media selection cannot change:
+- helpful/neutral/pressure gameplay meaning;
+- choice;
+- effect;
+- reward;
+- next-day modifier.
 
 Secret Debt remains excluded.
 
-## 7. Reachable School adoption — item 147
+### Immediate selective integration
+
+Ready now:
+- localization strings/keys;
+- static fallback mapping;
+- presentation metadata.
+
+Blocked on real GIF files:
+- all 10 dynamic pools.
+
+---
+
+# 6. Item 147 — reachable School adoption manifest
 
 File:
 
-`content/presentation-drafts/school-reachable-pool-adoption-v2.json`
+`prior-work/astra/prototype-m3.2/content/presentation-drafts/school-reachable-pool-adoption-v2.json`
 
-Active pool candidates are prepared only for:
-- generic post-School hook;
-- generic School-life post-paid hook;
-- exact Night-study hook.
+Reachable pools:
+1. generic after-School;
+2. generic after-paid-lesson;
+3. exact Night-study post-event.
 
-Candidate counts:
-- 3;
-- 3;
-- 5.
+All 3 use:
+- PR42-compatible 3-candidate pool shape;
+- `assets/stage-school.svg` static fallback;
+- RU+EN alt localization references;
+- placeholder GIF paths.
 
-Total:
-11 placeholder references.
+Teacher libraries:
+- 8 teacher media identities remain explicitly `STAGED`.
 
-Teacher/course-specific libraries remain:
-`STAGED`
+Course-specific routing:
+- remains `STAGED` until an exact paid-course bridge exists.
 
-and do not own active runtime slots.
+### Immediate selective integration
 
-### Production activation
+Ready now:
+- localized reachable-event text;
+- localization keys;
+- static fallback metadata.
 
-Reachable generic/Night pools need real GIFs first.
+Blocked on real GIF files:
+- all 3 dynamic School pools.
 
-Teacher/course-specific pools additionally need safe routing before activation.
+Do not activate staged teacher/course pools through generic School routing.
 
-## 8. RU+EN localization coverage
+---
 
-### Shipped runtime seam
+# 7. Item 148 — asset readiness ledger
 
-PR41 provides RU/EN text resolver with RU fallback.
+File:
 
-### Staging authoring
+`docs/presentation-prep/RU_EN_MULTI_GIF_ASSET_READINESS_LEDGER_v1.md`
 
-Items 144–147 provide RU+EN alt authoring for every candidate.
+Ledger rows:
+- Item 144: 6;
+- Item 145: 50;
+- Item 146: 10;
+- Item 147: 3;
+- total manifest rows: **69**.
 
-Item 144 also provides bilingual caption payloads for the representative patch.
+Candidate accounting:
+- real GIF candidates: **0**;
+- placeholder candidate references: **207**;
+- production-ready dynamic pools: **0**.
 
-### Current PR42 media-alt shape
+Duplicate semantic IDs in the ledger are intentional where Item 144 overlaps subsystem manifests.
 
-PR42 candidate schema still carries:
+All static fallbacks are real shipped assets.
 
-`alt: string`
+---
 
-not:
+# 8. Item 149 — staging contract test
 
-`alt: {ru,en}`.
+File:
 
-Current UI renders `m.alt` directly.
+`prior-work/astra/prototype-m3.2/tests/multi-gif-production-patch-contract.test.ts`
 
-Therefore bilingual alt must be materialized before rendering.
+The Chat 2 branch is long-lived and does not itself contain PR42 runtime.
 
-## 9. No-core-runtime-change localization path
+Therefore this test is self-contained and mirrors exact PR42 constraints rather than pretending the stale branch runtime already owns `pool`.
 
-No further `presentation.ts` change is required.
+It validates:
+- pool size 3..5;
+- version bounds;
+- ordering/selection policy;
+- unique candidate keys;
+- GIF source shape;
+- static fallback shape;
+- locale-neutral IDs/keys/paths;
+- RU+EN localization coverage declarations;
+- placeholder marking;
+- no gameplay conditions/effects/rewards;
+- poverty outcome independence;
+- staged School teacher/course routing;
+- no invented career Hard Work/relationship surfaces.
 
-Recommended adapter:
+On selective integration to fresh main, Lead may additionally add direct:
+`presentationSchema.parse(...)`
+assertions against PR42.
 
-```text
-locale-neutral authoring manifest
--> PR41 resolveLocalizedText(...)
--> build in-memory PR42 Presentation patch for current locale
--> candidate alt:string is the resolved RU/EN value
--> resolvePresentation(...)
--> same candidate key/src selected
-```
+---
 
-On locale switch:
-- rebuild only presentation text/alt strings;
-- keep presentationId;
-- keep pool version;
-- keep candidate keys;
-- keep media paths;
-- keep occurrenceKey;
-- selection therefore remains identical.
+# 9. Which pools can be integrated immediately?
 
-This may be implemented in:
-- UI presentation-patch materialization;
-- presentation bundle loading adapter;
-- another Lead-owned data seam.
+## As active dynamic GIF pools
 
-It does **not** require changing the PR42 selector/schema.
+**None.**
 
-## 10. Caption path
+Reason:
+current main contains zero real GIF files and every candidate path in items 144–147 is a staging placeholder.
 
-PR42 pool schema does not need a caption field.
+## As non-media production data
 
-Captions can remain PR41 localization keys resolved by UI using:
+The following can be selectively integrated now without any runtime change:
+- RU+EN localization strings;
+- localization keys;
+- presentation captions;
+- static fallback alt;
+- semantic mapping metadata;
+- PR42 contract tests;
+- accessibility metadata.
 
-`loc/presentation/<presentationId>/caption`.
+## After real GIF files arrive
 
-Keep caption localization separate from media selection.
+A pool becomes eligible for production activation when:
+1. at least 3 candidate GIFs physically exist;
+2. paths replace `assets/staging/non-shipped/`;
+3. RU+EN alt is available;
+4. semantic target exists;
+5. PR42 schema validation passes;
+6. exact-head CI is green.
 
-## 11. Real-asset activation gate
+---
 
-Before an active pool is enabled:
+# 10. Recommended first real media batch
 
-1. candidate GIF file exists;
-2. path is a managed production `assets/...gif` path;
-3. candidate key stays stable;
-4. RU alt approved;
-5. EN alt approved;
-6. static fallback remains valid;
-7. pool size remains 3–5;
-8. PR42 schema parses;
-9. occurrence selection remains deterministic;
-10. animations-off selects static fallback;
-11. gameplay Save/RNG unchanged.
+When art delivers real GIFs, use this order:
 
-## 12. Placeholder replacement workflow
+### Batch A — starter trio spring
+- `job/lumber/shift/spring/default`
+- `job/satyr-maid/shift/spring/default`
+- `job/undead-farm/shift/spring/default`
 
-For one pool:
+Why:
+- shipped semantic identities;
+- stable static fallbacks;
+- high repeatability;
+- already-prepared RU+EN text/alt;
+- no new gameplay decision required.
 
-```text
-assets/staging/non-shipped/.../1.gif
--> assets/presentation/.../approved-a.gif
+### Batch B — Tavern spring
+- `job/tavern/shift/spring/default`
 
-assets/staging/non-shipped/.../2.gif
--> assets/presentation/.../approved-b.gif
+Useful as a remaining-seven adoption proof.
 
-assets/staging/non-shipped/.../3.gif
--> assets/presentation/.../approved-c.gif
-```
+### Batch C — ordinary poverty
+Start with:
+- `location/town/event/poverty-pressure-production-cold-rain/default`
 
-Do not change:
-- presentationId;
-- candidate key unless visible semantic meaning changes;
-- pool version unless replacement intentionally changes deterministic selection contract;
-- gameplay IDs.
+Then expand to the other nine PR37 event surfaces.
 
-## 13. Reuse can reduce unique art count
+### Batch D — School generic
+Start with:
+- `location/town/event/school-lesson-content-v1-after-school/default`
 
-The 161 unique adoption candidate references do not require 161 unique GIF files.
+Then:
+- after-paid-lesson;
+- after-night-study.
 
-A real GIF may be reused if:
-- visible meaning fits every mapped semantic slot;
-- RU/EN alt is context-correct per mapping;
-- candidate keys remain stable per pool;
-- rollback remains understandable.
+Teacher-specific content remains staged.
 
-Do not count reuse until Product/art approves it.
+---
 
-## 14. Exact item 142–149 files
+# 11. No-runtime-change path after PR42
 
-### Item 142
+After real GIF delivery, Lead does not need another presentation runtime feature.
+
+Production integration can be:
+
+1. add real GIF files under managed `assets/`;
+2. add/update PR41 localization entries for caption/alt;
+3. copy reviewed PR42 slot overrides;
+4. keep static fallbacks;
+5. validate semantic targets;
+6. run presentation pool tests;
+7. run locale-switch tests;
+8. run full `npm run check`;
+9. require exact-head CI;
+10. merge.
+
+No:
+- new gameplay schema;
+- Save migration;
+- gameplay RNG;
+- event duplication;
+- locale-specific media identity
+
+is required.
+
+---
+
+# 12. Localization integration
+
+PR41 already resolves RU/EN.
+
+Remaining presentation-specific seam is mostly data wiring:
+- candidate/static alt currently enters PR42 as `alt:string`;
+- authoring uses locale-neutral localization keys;
+- production integration should resolve the active locale's alt before/at render boundary.
+
+Locale must not be included in:
+- occurrenceKey;
+- pool version;
+- candidate key;
+- media path.
+
+Same occurrence:
+RU -> EN must keep the same selected candidate.
+
+---
+
+# 13. Exact selective-integration files from this wave
+
+## Docs
 - `docs/presentation-prep/BILINGUAL_PRESENTATION_PRODUCTION_COVERAGE_v2.md`
-
-### Item 143 context
 - `docs/presentation-prep/LOCALIZATION_PRESENTATION_HANDOFF_v2.md`
+- `docs/presentation-prep/RU_EN_MULTI_GIF_ASSET_READINESS_LEDGER_v1.md`
+- `docs/presentation-prep/POST_RUNTIME_MEDIA_INTEGRATION_HANDOFF_v4.md`
 
-### Item 144
+## Staging manifests
 - `prior-work/astra/prototype-m3.2/content/presentation-drafts/multi-gif-production-patch-v1.json`
-
-### Item 145
 - `prior-work/astra/prototype-m3.2/content/presentation-drafts/ten-career-pool-adoption-v2.json`
-
-### Item 146
 - `prior-work/astra/prototype-m3.2/content/presentation-drafts/poverty-pool-adoption-v2.json`
-
-### Item 147
 - `prior-work/astra/prototype-m3.2/content/presentation-drafts/school-reachable-pool-adoption-v2.json`
 
-### Item 148
-- `docs/presentation-prep/RU_EN_MULTI_GIF_ASSET_READINESS_LEDGER_v1.md`
-
-### Item 149
+## Test
 - `prior-work/astra/prototype-m3.2/tests/multi-gif-production-patch-contract.test.ts`
+
+---
+
+# 14. Integration safety
 
 Worker branch is long-lived.
 
-Selectively copy reviewed artifacts to fresh current-main integration work.
+Do not merge wholesale.
 
-## 15. Recommended next production batches
+Selectively copy reviewed artifacts onto a fresh branch from current main.
 
-### Batch A — first six semantic pools
+Before activating any pool:
+- replace all placeholder GIF paths;
+- confirm physical files exist;
+- ensure localization keys are integrated;
+- run exact-head CI.
 
-Produce/approve real GIFs for item 144:
-- four career spring shifts;
-- one poverty pressure event;
-- one School generic event.
+## Final status
 
-Then:
-- replace placeholder paths;
-- integrate patch;
-- run PR42/runtime + localization regression.
+Runtime blockers:
+**NONE** for deterministic multi-GIF or RU/EN localization.
 
-### Batch B — all career base shifts
+Current blocker for these pool manifests:
+**real GIF asset production**.
 
-Use:
-- item 145 manifest;
-- `TEN_CAREER_MEDIA_ALT_RU_EN_v1.md`;
-- ordinary-work producer briefs.
-
-Prioritize reuse to avoid commissioning 120 unique files unnecessarily.
-
-### Batch C — poverty
-
-Use:
-- item 146 manifest;
-- PR37 content;
-- bilingual poverty producer briefs.
-
-### Batch D — School
-
-Use:
-- item 147 reachable pools first.
-
-Teacher/course-specific media remains staged.
-
-## 16. CI / test expectation
-
-PR42 final head is green.
-
-Any selective non-doc integration should still run exact-head:
-`npm run check`
-
-on the actual integration commit.
-
-Do not transfer PR42's green status to new media/content commits automatically.
-
-## Final disposition
-
-### Runtime
-**READY / MERGED**
-
-### RU+EN authoring
-**READY for staged pools**
-
-### Static fallbacks
-**READY / SHIPPED**
-
-### Real GIF assets
-**NOT READY — 0 current GIF files**
-
-### Active dynamic pool integration
-**BLOCKED ON REAL ASSETS**
-
-After real GIFs exist, PR42 means the media adoption path is primarily data/assets/localization work, not another core presentation-runtime change.
+Static/text fallback keeps the game playable and presentation-safe while those assets are absent.
