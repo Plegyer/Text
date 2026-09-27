@@ -19,7 +19,7 @@
   ],
   "events": [
     {
-      "id": "school-life.arrival-library",
+      "id": "school-life-content-v1.arrival-library",
       "title": "School arrival scene library",
       "sourceDomain": "school",
       "trigger": [],
@@ -111,7 +111,7 @@
       ]
     },
     {
-      "id": "school-life.feedback-library",
+      "id": "school-life-content-v1.feedback-library",
       "title": "School teacher feedback library",
       "sourceDomain": "school",
       "trigger": [],
@@ -203,7 +203,7 @@
       ]
     },
     {
-      "id": "school-life.peer-context-library",
+      "id": "school-life-content-v1.peer-context-library",
       "title": "School peer and context scene library",
       "sourceDomain": "school",
       "trigger": [],
@@ -295,7 +295,7 @@
       ]
     },
     {
-      "id": "school-life.post-lesson-library",
+      "id": "school-life-content-v1.post-lesson-library",
       "title": "School post-lesson reaction library",
       "sourceDomain": "school",
       "trigger": [],
@@ -387,7 +387,7 @@
       ]
     },
     {
-      "id": "school-life.night-study-library",
+      "id": "school-life-content-v1.night-study-library",
       "title": "School Night-study flavor library",
       "sourceDomain": "school",
       "trigger": [],
@@ -479,7 +479,7 @@
       ]
     },
     {
-      "id": "school-life.after-paid-lesson",
+      "id": "school-life-content-v1.after-paid-lesson",
       "title": "After the School lesson",
       "sourceDomain": "school",
       "trigger": [],
@@ -520,7 +520,7 @@
       ]
     },
     {
-      "id": "school-life.after-night-study",
+      "id": "school-life-content-v1.after-night-study",
       "title": "After Night study",
       "sourceDomain": "school",
       "trigger": [],
