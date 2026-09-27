@@ -1418,3 +1418,20 @@ Define checks before accepting media work against authored content:
 No asset creation or gameplay changes.
 
 Continue items 71–79 sequentially without waiting for Lead review.
+
+
+## Queue item 80 — presentation human-decision packet v2
+
+Create NEW file only:
+- `docs/presentation-prep/PRESENTATION_HUMAN_DECISION_PACKET_v2.md`
+
+Consolidate only visual/presentation choices that truly need human input before media production:
+- art/GIF priority by system;
+- whether specific authored routes/events get dedicated GIFs or reuse;
+- teacher/presenter visual identities after content identity exists;
+- ending polish priority;
+- any optional animation scope.
+
+Do not ask about mechanics already fixed by semantic presentation contracts. For each decision state what can proceed without it.
+
+Continue items 72–80 sequentially without waiting for Lead review.
