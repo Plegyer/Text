@@ -1,0 +1,34 @@
+{
+  "formatVersion": 1,
+  "id": "school.long-save-state-preservation.fixture.v1",
+  "courseId": "school.course.arcana",
+  "trackId": "school.track.arcana",
+  "expectedOwnedMutation": {
+    "moneyDelta": -500,
+    "energyDelta": -1,
+    "stats": {
+      "magic": 4,
+      "reason": 4,
+      "creativity": 2
+    },
+    "typedProgress": {
+      "lessons_completed": 1,
+      "night_study_sessions": 0
+    }
+  },
+  "unrelatedState": {
+    "lumberStage": "accepted-hand",
+    "completedShifts": 50,
+    "foremanStage": "route-professional",
+    "forestWorldFact": "lumber.forest.truth-known",
+    "forestCareerFact": "forest-truth-known",
+    "endingEligibility": [
+      "ending.lumber.hard-work",
+      "ending.lumber.forest"
+    ],
+    "metaHardWorkProgress": [
+      "lumber"
+    ]
+  },
+  "activeNightPolicy": "reject-atomically-and-preserve-night-state"
+}
