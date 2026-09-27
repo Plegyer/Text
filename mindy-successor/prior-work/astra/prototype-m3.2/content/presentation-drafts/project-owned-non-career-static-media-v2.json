@@ -1,0 +1,576 @@
+{
+  "formatVersion": 2,
+  "kind": "project-owned-non-career-static-media",
+  "status": "STAGING_ONLY_NOT_ROOT_LOADED",
+  "semanticBaseline": "main@c0763f9f9fa9887593fe8567165bbedce2b6cd3a",
+  "sourceRoot": "assets/presentation/",
+  "assets": [
+    {
+      "key": "school-course-literacy-and-numbers",
+      "kind": "image",
+      "src": "assets/presentation/school-course-literacy-and-numbers.svg",
+      "classification": "UNIQUE_PROJECT_OWNED",
+      "presentationIds": [
+        "school/literacy-and-numbers/lesson/default"
+      ],
+      "fallbackPurpose": "course-distinct reachable School lesson fallback",
+      "localization": {
+        "altKey": "presentation.static.school-course-literacy-and-numbers.alt",
+        "captionKey": "presentation.static.school-course-literacy-and-numbers.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "school-course-arcana",
+      "kind": "image",
+      "src": "assets/presentation/school-course-arcana.svg",
+      "classification": "UNIQUE_PROJECT_OWNED",
+      "presentationIds": [
+        "school/arcana/lesson/default"
+      ],
+      "fallbackPurpose": "course-distinct reachable School lesson fallback",
+      "localization": {
+        "altKey": "presentation.static.school-course-arcana.alt",
+        "captionKey": "presentation.static.school-course-arcana.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "school-course-rhetoric-and-social",
+      "kind": "image",
+      "src": "assets/presentation/school-course-rhetoric-and-social.svg",
+      "classification": "UNIQUE_PROJECT_OWNED",
+      "presentationIds": [
+        "school/rhetoric-and-social/lesson/default"
+      ],
+      "fallbackPurpose": "course-distinct reachable School lesson fallback",
+      "localization": {
+        "altKey": "presentation.static.school-course-rhetoric-and-social.alt",
+        "captionKey": "presentation.static.school-course-rhetoric-and-social.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "school-course-etiquette-and-presentation",
+      "kind": "image",
+      "src": "assets/presentation/school-course-etiquette-and-presentation.svg",
+      "classification": "UNIQUE_PROJECT_OWNED",
+      "presentationIds": [
+        "school/etiquette-and-presentation/lesson/default"
+      ],
+      "fallbackPurpose": "course-distinct reachable School lesson fallback",
+      "localization": {
+        "altKey": "presentation.static.school-course-etiquette-and-presentation.alt",
+        "captionKey": "presentation.static.school-course-etiquette-and-presentation.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "school-course-field-craft",
+      "kind": "image",
+      "src": "assets/presentation/school-course-field-craft.svg",
+      "classification": "UNIQUE_PROJECT_OWNED",
+      "presentationIds": [
+        "school/field-craft/lesson/default"
+      ],
+      "fallbackPurpose": "course-distinct reachable School lesson fallback",
+      "localization": {
+        "altKey": "presentation.static.school-course-field-craft.alt",
+        "captionKey": "presentation.static.school-course-field-craft.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "school-course-physical-training",
+      "kind": "image",
+      "src": "assets/presentation/school-course-physical-training.svg",
+      "classification": "UNIQUE_PROJECT_OWNED",
+      "presentationIds": [
+        "school/physical-training/lesson/default"
+      ],
+      "fallbackPurpose": "course-distinct reachable School lesson fallback",
+      "localization": {
+        "altKey": "presentation.static.school-course-physical-training.alt",
+        "captionKey": "presentation.static.school-course-physical-training.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "school-course-arts-and-performance",
+      "kind": "image",
+      "src": "assets/presentation/school-course-arts-and-performance.svg",
+      "classification": "UNIQUE_PROJECT_OWNED",
+      "presentationIds": [
+        "school/arts-and-performance/lesson/default"
+      ],
+      "fallbackPurpose": "course-distinct reachable School lesson fallback",
+      "localization": {
+        "altKey": "presentation.static.school-course-arts-and-performance.alt",
+        "captionKey": "presentation.static.school-course-arts-and-performance.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "school-course-body-confidence",
+      "kind": "image",
+      "src": "assets/presentation/school-course-body-confidence.svg",
+      "classification": "UNIQUE_PROJECT_OWNED",
+      "presentationIds": [
+        "school/body-confidence/lesson/default"
+      ],
+      "fallbackPurpose": "course-distinct reachable School lesson fallback",
+      "localization": {
+        "altKey": "presentation.static.school-course-body-confidence.alt",
+        "captionKey": "presentation.static.school-course-body-confidence.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "school-night-study-generic-v2",
+      "kind": "image",
+      "src": "assets/presentation/school-night-study-generic-v2.svg",
+      "classification": "UNIQUE_PROJECT_OWNED",
+      "presentationIds": [
+        "location/town/event/school-life-content-v1-after-night-study/default"
+      ],
+      "fallbackPurpose": "reachable generic School Night-study fallback",
+      "localization": {
+        "altKey": "presentation.static.school-night-study-generic-v2.alt",
+        "captionKey": "presentation.static.school-night-study-generic-v2.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "poverty-street-helpful-summer",
+      "kind": "image",
+      "src": "assets/presentation/poverty-street-helpful-summer.svg",
+      "classification": "UNIQUE_PROJECT_OWNED",
+      "presentationIds": [
+        "location/town/event/poverty-street-production-helpful-summer/default"
+      ],
+      "fallbackPurpose": "event-distinct ordinary-poverty street fallback",
+      "localization": {
+        "altKey": "presentation.static.poverty-street-helpful-summer.alt",
+        "captionKey": "presentation.static.poverty-street-helpful-summer.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "poverty-street-neutral-autumn",
+      "kind": "image",
+      "src": "assets/presentation/poverty-street-neutral-autumn.svg",
+      "classification": "UNIQUE_PROJECT_OWNED",
+      "presentationIds": [
+        "location/town/event/poverty-street-production-neutral-autumn/default"
+      ],
+      "fallbackPurpose": "event-distinct ordinary-poverty street fallback",
+      "localization": {
+        "altKey": "presentation.static.poverty-street-neutral-autumn.alt",
+        "captionKey": "presentation.static.poverty-street-neutral-autumn.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "poverty-street-pressure-winter",
+      "kind": "image",
+      "src": "assets/presentation/poverty-street-pressure-winter.svg",
+      "classification": "UNIQUE_PROJECT_OWNED",
+      "presentationIds": [
+        "location/town/event/poverty-street-production-pressure-winter/default"
+      ],
+      "fallbackPurpose": "event-distinct ordinary-poverty street fallback",
+      "localization": {
+        "altKey": "presentation.static.poverty-street-pressure-winter.alt",
+        "captionKey": "presentation.static.poverty-street-pressure-winter.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "poverty-cheap-shared-quiet-autumn",
+      "kind": "image",
+      "src": "assets/presentation/poverty-cheap-shared-quiet-autumn.svg",
+      "classification": "UNIQUE_PROJECT_OWNED",
+      "presentationIds": [
+        "location/town/event/poverty-cheap-production-shared-quiet-autumn/default"
+      ],
+      "fallbackPurpose": "ordinary-poverty cheap-lodging fallback",
+      "localization": {
+        "altKey": "presentation.static.poverty-cheap-shared-quiet-autumn.alt",
+        "captionKey": "presentation.static.poverty-cheap-shared-quiet-autumn.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "poverty-recovery-small-coin-help",
+      "kind": "image",
+      "src": "assets/presentation/poverty-recovery-small-coin-help.svg",
+      "classification": "UNIQUE_PROJECT_OWNED",
+      "presentationIds": [
+        "location/town/event/poverty-recovery-production-small-coin-help/default"
+      ],
+      "fallbackPurpose": "event-distinct ordinary-poverty recovery fallback",
+      "localization": {
+        "altKey": "presentation.static.poverty-recovery-small-coin-help.alt",
+        "captionKey": "presentation.static.poverty-recovery-small-coin-help.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "poverty-recovery-short-cleanup",
+      "kind": "image",
+      "src": "assets/presentation/poverty-recovery-short-cleanup.svg",
+      "classification": "UNIQUE_PROJECT_OWNED",
+      "presentationIds": [
+        "location/town/event/poverty-recovery-production-short-cleanup/default"
+      ],
+      "fallbackPurpose": "event-distinct ordinary-poverty recovery fallback",
+      "localization": {
+        "altKey": "presentation.static.poverty-recovery-short-cleanup.alt",
+        "captionKey": "presentation.static.poverty-recovery-short-cleanup.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "poverty-recovery-herb-bundle",
+      "kind": "image",
+      "src": "assets/presentation/poverty-recovery-herb-bundle.svg",
+      "classification": "UNIQUE_PROJECT_OWNED",
+      "presentationIds": [
+        "location/town/event/poverty-recovery-production-herb-bundle/default"
+      ],
+      "fallbackPurpose": "event-distinct ordinary-poverty recovery fallback",
+      "localization": {
+        "altKey": "presentation.static.poverty-recovery-herb-bundle.alt",
+        "captionKey": "presentation.static.poverty-recovery-herb-bundle.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "poverty-pressure-cold-rain",
+      "kind": "image",
+      "src": "assets/presentation/poverty-pressure-cold-rain.svg",
+      "classification": "UNIQUE_PROJECT_OWNED",
+      "presentationIds": [
+        "location/town/event/poverty-pressure-production-cold-rain/default"
+      ],
+      "fallbackPurpose": "event-distinct ordinary-poverty pressure fallback",
+      "localization": {
+        "altKey": "presentation.static.poverty-pressure-cold-rain.alt",
+        "captionKey": "presentation.static.poverty-pressure-cold-rain.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "poverty-pressure-noisy-loading",
+      "kind": "image",
+      "src": "assets/presentation/poverty-pressure-noisy-loading.svg",
+      "classification": "UNIQUE_PROJECT_OWNED",
+      "presentationIds": [
+        "location/town/event/poverty-pressure-production-noisy-loading/default"
+      ],
+      "fallbackPurpose": "event-distinct ordinary-poverty pressure fallback",
+      "localization": {
+        "altKey": "presentation.static.poverty-pressure-noisy-loading.alt",
+        "captionKey": "presentation.static.poverty-pressure-noisy-loading.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "poverty-pressure-muddy-splash",
+      "kind": "image",
+      "src": "assets/presentation/poverty-pressure-muddy-splash.svg",
+      "classification": "UNIQUE_PROJECT_OWNED",
+      "presentationIds": [
+        "location/town/event/poverty-pressure-production-muddy-splash/default"
+      ],
+      "fallbackPurpose": "event-distinct ordinary-poverty pressure fallback",
+      "localization": {
+        "altKey": "presentation.static.poverty-pressure-muddy-splash.alt",
+        "captionKey": "presentation.static.poverty-pressure-muddy-splash.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "forest-route-logging-road",
+      "kind": "image",
+      "src": "assets/presentation/forest-route-logging-road.svg",
+      "classification": "PRODUCT_OPEN",
+      "presentationIds": [],
+      "fallbackPurpose": "route-specific art prepared for logging-road gameplay route",
+      "localization": {
+        "altKey": "presentation.static.forest-route-logging-road.alt",
+        "captionKey": "presentation.static.forest-route-logging-road.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency",
+      "sourceGameplayIdentity": "forest.route.logging-road",
+      "sharedCurrentPresentationId": "activity/forest/route/default",
+      "productOpenReason": "current main exposes one shared route/default presentation slot and no route-specific presentationId"
+    },
+    {
+      "key": "forest-route-old-boundary",
+      "kind": "image",
+      "src": "assets/presentation/forest-route-old-boundary.svg",
+      "classification": "PRODUCT_OPEN",
+      "presentationIds": [],
+      "fallbackPurpose": "route-specific art prepared for old-boundary gameplay route",
+      "localization": {
+        "altKey": "presentation.static.forest-route-old-boundary.alt",
+        "captionKey": "presentation.static.forest-route-old-boundary.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency",
+      "sourceGameplayIdentity": "forest.route.old-boundary",
+      "sharedCurrentPresentationId": "activity/forest/route/default",
+      "productOpenReason": "current main exposes one shared route/default presentation slot and no route-specific presentationId"
+    },
+    {
+      "key": "forest-return-success-v2",
+      "kind": "image",
+      "src": "assets/presentation/forest-return-success-v2.svg",
+      "classification": "UNIQUE_PROJECT_OWNED",
+      "presentationIds": [
+        "activity/forest/return/success"
+      ],
+      "fallbackPurpose": "Activity-return-specific Forest outcome fallback",
+      "localization": {
+        "altKey": "presentation.static.forest-return-success-v2.alt",
+        "captionKey": "presentation.static.forest-return-success-v2.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "forest-reaction-success-v2",
+      "kind": "image",
+      "src": "assets/presentation/forest-reaction-success-v2.svg",
+      "classification": "UNIQUE_PROJECT_OWNED",
+      "presentationIds": [
+        "job/lumber/event/forest-result-content-v1-success/default"
+      ],
+      "fallbackPurpose": "PR43 reaction-specific Forest outcome fallback",
+      "localization": {
+        "altKey": "presentation.static.forest-reaction-success-v2.alt",
+        "captionKey": "presentation.static.forest-reaction-success-v2.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "forest-return-escape-v2",
+      "kind": "image",
+      "src": "assets/presentation/forest-return-escape-v2.svg",
+      "classification": "UNIQUE_PROJECT_OWNED",
+      "presentationIds": [
+        "activity/forest/return/escape"
+      ],
+      "fallbackPurpose": "Activity-return-specific Forest outcome fallback",
+      "localization": {
+        "altKey": "presentation.static.forest-return-escape-v2.alt",
+        "captionKey": "presentation.static.forest-return-escape-v2.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "forest-reaction-escape-v2",
+      "kind": "image",
+      "src": "assets/presentation/forest-reaction-escape-v2.svg",
+      "classification": "UNIQUE_PROJECT_OWNED",
+      "presentationIds": [
+        "job/lumber/event/forest-result-content-v1-escape/default"
+      ],
+      "fallbackPurpose": "PR43 reaction-specific Forest outcome fallback",
+      "localization": {
+        "altKey": "presentation.static.forest-reaction-escape-v2.alt",
+        "captionKey": "presentation.static.forest-reaction-escape-v2.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "forest-return-failure-v2",
+      "kind": "image",
+      "src": "assets/presentation/forest-return-failure-v2.svg",
+      "classification": "UNIQUE_PROJECT_OWNED",
+      "presentationIds": [
+        "activity/forest/return/failure"
+      ],
+      "fallbackPurpose": "Activity-return-specific Forest outcome fallback",
+      "localization": {
+        "altKey": "presentation.static.forest-return-failure-v2.alt",
+        "captionKey": "presentation.static.forest-return-failure-v2.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "forest-reaction-failure-v2",
+      "kind": "image",
+      "src": "assets/presentation/forest-reaction-failure-v2.svg",
+      "classification": "UNIQUE_PROJECT_OWNED",
+      "presentationIds": [
+        "job/lumber/event/forest-result-content-v1-failure/default"
+      ],
+      "fallbackPurpose": "PR43 reaction-specific Forest outcome fallback",
+      "localization": {
+        "altKey": "presentation.static.forest-reaction-failure-v2.alt",
+        "captionKey": "presentation.static.forest-reaction-failure-v2.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "foreman-professional-milestone-v2",
+      "kind": "image",
+      "src": "assets/presentation/foreman-professional-milestone-v2.svg",
+      "classification": "UNIQUE_PROJECT_OWNED",
+      "presentationIds": [
+        "relationship/lumber-foreman/lumber-foreman-notice/default"
+      ],
+      "fallbackPurpose": "Foreman professional milestone fallback",
+      "localization": {
+        "altKey": "presentation.static.foreman-professional-milestone-v2.alt",
+        "captionKey": "presentation.static.foreman-professional-milestone-v2.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "foreman-night-voluntary-v2",
+      "kind": "image",
+      "src": "assets/presentation/foreman-night-voluntary-v2.svg",
+      "classification": "UNIQUE_PROJECT_OWNED",
+      "presentationIds": [
+        "relationship/lumber-foreman/lumber-night-foreman-professional/default"
+      ],
+      "fallbackPurpose": "Foreman voluntary Night follow-up fallback",
+      "localization": {
+        "altKey": "presentation.static.foreman-night-voluntary-v2.alt",
+        "captionKey": "presentation.static.foreman-night-voluntary-v2.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    }
+  ],
+  "summary": {
+    "physicalAssets": 29,
+    "mappedProductionSemanticIds": 27,
+    "productOpenAssets": 2
+  },
+  "invariants": {
+    "presentationOnly": true,
+    "gameplayFields": false,
+    "localeNeutralAssetIdentity": true,
+    "rootLoaded": false,
+    "secretDebtExcluded": true,
+    "teacherSpecificSchoolStagedExcluded": true,
+    "inventedRoutePresentationIds": false
+  }
+}
