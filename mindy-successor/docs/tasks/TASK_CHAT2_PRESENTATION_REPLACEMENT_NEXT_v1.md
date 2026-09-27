@@ -1400,3 +1400,21 @@ Define a deterministic checklist/checksum-style summary for a completed presenta
 The purpose is to detect accidental drift between content authoring and later media implementation.
 
 Continue items 70–78 sequentially without waiting for Lead review.
+
+
+## Queue item 79 — presentation authoring stale-content rejection checklist
+
+Create NEW file only:
+- `docs/presentation-prep/PRESENTATION_STALE_CONTENT_REJECTION_CHECKLIST_v1.md`
+
+Define checks before accepting media work against authored content:
+- source gameplay/content ID still exists;
+- semantic presentationId is still canonical;
+- choices/effects did not materially change after media brief;
+- superseded content is not receiving new assets;
+- fallback remains valid;
+- replacement bundle targets current identity.
+
+No asset creation or gameplay changes.
+
+Continue items 71–79 sequentially without waiting for Lead review.
