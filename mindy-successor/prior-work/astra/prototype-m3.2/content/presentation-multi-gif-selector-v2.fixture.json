@@ -1,0 +1,193 @@
+{
+  "formatVersion": 2,
+  "kind": "presentation-multi-gif-selector-reference",
+  "status": "AUTHORING_REFERENCE_NOT_RUNTIME_WIRED",
+  "algorithm": {
+    "hash": "FNV-1a 32-bit over ASCII/UTF-8-compatible seed bytes",
+    "seed": "presentationId|occurrenceKey|poolVersion",
+    "unweighted": "selectedIndex = hash % candidateCount",
+    "weighted": "point = (hash / 2^32) * totalPositiveWeight; choose first cumulative weight greater than point",
+    "candidateKeyRole": "presentation-only stable member identity",
+    "gameplayRngRequired": false,
+    "saveMutationRequired": false
+  },
+  "constraints": {
+    "candidatesMin": 3,
+    "candidatesMax": 5,
+    "weightsOptional": true,
+    "weightMustBePositiveFinite": true,
+    "candidateKeysUniqueWithinPool": true,
+    "frameTimePersistence": false
+  },
+  "scenarios": [
+    {
+      "id": "same-occurrence-initial",
+      "presentationId": "job/lumber/shift/spring/default",
+      "occurrenceKey": "life-7|lumber.shift|12|job/lumber/shift/spring/default",
+      "poolVersion": "starter-lumber-spring-v1",
+      "selectionPolicy": "unweighted-fnv1a32-modulo",
+      "candidates": [
+        {
+          "key": "lumber-spring-a",
+          "weight": 1
+        },
+        {
+          "key": "lumber-spring-b",
+          "weight": 1
+        },
+        {
+          "key": "lumber-spring-c",
+          "weight": 1
+        },
+        {
+          "key": "lumber-spring-d",
+          "weight": 1
+        }
+      ],
+      "expected": {
+        "seed": "job/lumber/shift/spring/default|life-7|lumber.shift|12|job/lumber/shift/spring/default|starter-lumber-spring-v1",
+        "hash": 2642129024,
+        "index": 0,
+        "key": "lumber-spring-a"
+      }
+    },
+    {
+      "id": "same-occurrence-reload",
+      "presentationId": "job/lumber/shift/spring/default",
+      "occurrenceKey": "life-7|lumber.shift|12|job/lumber/shift/spring/default",
+      "poolVersion": "starter-lumber-spring-v1",
+      "selectionPolicy": "unweighted-fnv1a32-modulo",
+      "candidates": [
+        {
+          "key": "lumber-spring-a",
+          "weight": 1
+        },
+        {
+          "key": "lumber-spring-b",
+          "weight": 1
+        },
+        {
+          "key": "lumber-spring-c",
+          "weight": 1
+        },
+        {
+          "key": "lumber-spring-d",
+          "weight": 1
+        }
+      ],
+      "expected": {
+        "seed": "job/lumber/shift/spring/default|life-7|lumber.shift|12|job/lumber/shift/spring/default|starter-lumber-spring-v1",
+        "hash": 2642129024,
+        "index": 0,
+        "key": "lumber-spring-a"
+      }
+    },
+    {
+      "id": "next-occurrence",
+      "presentationId": "job/lumber/shift/spring/default",
+      "occurrenceKey": "life-7|lumber.shift|13|job/lumber/shift/spring/default",
+      "poolVersion": "starter-lumber-spring-v1",
+      "selectionPolicy": "unweighted-fnv1a32-modulo",
+      "candidates": [
+        {
+          "key": "lumber-spring-a",
+          "weight": 1
+        },
+        {
+          "key": "lumber-spring-b",
+          "weight": 1
+        },
+        {
+          "key": "lumber-spring-c",
+          "weight": 1
+        },
+        {
+          "key": "lumber-spring-d",
+          "weight": 1
+        }
+      ],
+      "expected": {
+        "seed": "job/lumber/shift/spring/default|life-7|lumber.shift|13|job/lumber/shift/spring/default|starter-lumber-spring-v1",
+        "hash": 150855673,
+        "index": 1,
+        "key": "lumber-spring-b"
+      }
+    },
+    {
+      "id": "same-occurrence-new-pool-version",
+      "presentationId": "job/lumber/shift/spring/default",
+      "occurrenceKey": "life-7|lumber.shift|12|job/lumber/shift/spring/default",
+      "poolVersion": "starter-lumber-spring-v2",
+      "selectionPolicy": "unweighted-fnv1a32-modulo",
+      "candidates": [
+        {
+          "key": "lumber-spring-a",
+          "weight": 1
+        },
+        {
+          "key": "lumber-spring-b",
+          "weight": 1
+        },
+        {
+          "key": "lumber-spring-c",
+          "weight": 1
+        },
+        {
+          "key": "lumber-spring-d",
+          "weight": 1
+        }
+      ],
+      "expected": {
+        "seed": "job/lumber/shift/spring/default|life-7|lumber.shift|12|job/lumber/shift/spring/default|starter-lumber-spring-v2",
+        "hash": 2692461881,
+        "index": 1,
+        "key": "lumber-spring-b"
+      }
+    },
+    {
+      "id": "weighted-school-lesson",
+      "presentationId": "school/arcana/lesson/default",
+      "occurrenceKey": "life-7|school.track.arcana|5|school/arcana/lesson/default",
+      "poolVersion": "school-arcana-v1",
+      "selectionPolicy": "weighted-fnv1a32-threshold",
+      "candidates": [
+        {
+          "key": "arcana-observe",
+          "weight": 1
+        },
+        {
+          "key": "arcana-pattern",
+          "weight": 2
+        },
+        {
+          "key": "arcana-method",
+          "weight": 1
+        }
+      ],
+      "expected": {
+        "seed": "school/arcana/lesson/default|life-7|school.track.arcana|5|school/arcana/lesson/default|school-arcana-v1",
+        "hash": 3199390160,
+        "unit": 0.7449160702526569,
+        "point": 2.9796642810106277,
+        "index": 1,
+        "key": "arcana-pattern",
+        "totalWeight": 4
+      }
+    }
+  ],
+  "reloadProof": {
+    "initialScenario": "same-occurrence-initial",
+    "reloadScenario": "same-occurrence-reload",
+    "expectedSameCandidate": true,
+    "expectedSameHash": true,
+    "gameplayRngRead": false,
+    "gameplayRngWrite": false,
+    "saveWrite": false
+  },
+  "variationProof": {
+    "note": "Different occurrence keys are allowed to select a different candidate; equality is not required.",
+    "occurrenceA": "lumber-spring-a",
+    "occurrenceB": "lumber-spring-b",
+    "hashesDiffer": true
+  }
+}
