@@ -1205,3 +1205,23 @@ Define reusable simulation scenarios for future numeric balancing:
 Specify inputs/outputs/metrics to measure, but do not select final prices, probabilities, debt, penalties or rewards.
 
 Continue items 65–73 sequentially without waiting for Lead review.
+
+
+## Queue item 74 — Secret Debt runtime-seam implementation plan
+
+Create NEW file only:
+- `docs/poverty-prep/SECRET_DEBT_RUNTIME_SEAM_IMPLEMENTATION_PLAN_v1.md`
+
+Map the current production primitives that can host Secret Debt without broad architecture rewrite:
+- NightFlow intercepts;
+- housingTier=street;
+- reaction/event delivery;
+- career state machine;
+- world/public facts;
+- next-day modifiers;
+- ending/RunResult/Meta infrastructure;
+- action availability gating seam still required for ordinary-job blocking.
+
+For every seam classify READY / NEEDS_BOUNDED_RUNTIME_EXTENSION / PRODUCT_DECISION_BLOCKED. Do not choose chance, debt, rewards, thresholds or School/Activity blocking policy.
+
+Continue items 66–74 sequentially without waiting for Lead review.
