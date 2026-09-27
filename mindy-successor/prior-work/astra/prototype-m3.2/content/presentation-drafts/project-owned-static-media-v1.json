@@ -1,0 +1,411 @@
+{
+  "formatVersion": 1,
+  "kind": "project-owned-static-media",
+  "status": "STAGING_ONLY_NOT_ROOT_LOADED",
+  "semanticBaseline": "main@ab53da4059e348734703c2de490e43e94c02b057",
+  "sourceRoot": "assets/presentation/",
+  "assets": [
+    {
+      "key": "career-lumber-result",
+      "kind": "image",
+      "src": "assets/presentation/career-lumber-result.svg",
+      "semanticIds": [
+        "job/lumber/result/default"
+      ],
+      "fallbackPurpose": "career result fallback",
+      "localization": {
+        "altKey": "presentation.static.career.lumber.result.alt",
+        "captionKey": "presentation.static.career.lumber.result.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-satyr-maid-result",
+      "kind": "image",
+      "src": "assets/presentation/career-satyr-maid-result.svg",
+      "semanticIds": [
+        "job/satyr-maid/result/default"
+      ],
+      "fallbackPurpose": "career result fallback",
+      "localization": {
+        "altKey": "presentation.static.career.satyr-maid.result.alt",
+        "captionKey": "presentation.static.career.satyr-maid.result.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-undead-farm-result",
+      "kind": "image",
+      "src": "assets/presentation/career-undead-farm-result.svg",
+      "semanticIds": [
+        "job/undead-farm/result/default"
+      ],
+      "fallbackPurpose": "career result fallback",
+      "localization": {
+        "altKey": "presentation.static.career.undead-farm.result.alt",
+        "captionKey": "presentation.static.career.undead-farm.result.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-tavern-result",
+      "kind": "image",
+      "src": "assets/presentation/career-tavern-result.svg",
+      "semanticIds": [
+        "job/tavern/result/default"
+      ],
+      "fallbackPurpose": "career result fallback",
+      "localization": {
+        "altKey": "presentation.static.career.tavern.result.alt",
+        "captionKey": "presentation.static.career.tavern.result.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-hunter-result",
+      "kind": "image",
+      "src": "assets/presentation/career-hunter-result.svg",
+      "semanticIds": [
+        "job/hunter/result/default"
+      ],
+      "fallbackPurpose": "career result fallback",
+      "localization": {
+        "altKey": "presentation.static.career.hunter.result.alt",
+        "captionKey": "presentation.static.career.hunter.result.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-guard-result",
+      "kind": "image",
+      "src": "assets/presentation/career-guard-result.svg",
+      "semanticIds": [
+        "job/guard/result/default"
+      ],
+      "fallbackPurpose": "career result fallback",
+      "localization": {
+        "altKey": "presentation.static.career.guard.result.alt",
+        "captionKey": "presentation.static.career.guard.result.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-merchant-result",
+      "kind": "image",
+      "src": "assets/presentation/career-merchant-result.svg",
+      "semanticIds": [
+        "job/merchant/result/default"
+      ],
+      "fallbackPurpose": "career result fallback",
+      "localization": {
+        "altKey": "presentation.static.career.merchant.result.alt",
+        "captionKey": "presentation.static.career.merchant.result.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-artist-geisha-result",
+      "kind": "image",
+      "src": "assets/presentation/career-artist-geisha-result.svg",
+      "semanticIds": [
+        "job/artist-geisha/result/default"
+      ],
+      "fallbackPurpose": "career result fallback",
+      "localization": {
+        "altKey": "presentation.static.career.artist-geisha.result.alt",
+        "captionKey": "presentation.static.career.artist-geisha.result.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-assassin-result",
+      "kind": "image",
+      "src": "assets/presentation/career-assassin-result.svg",
+      "semanticIds": [
+        "job/assassin/result/default"
+      ],
+      "fallbackPurpose": "career result fallback",
+      "localization": {
+        "altKey": "presentation.static.career.assassin.result.alt",
+        "captionKey": "presentation.static.career.assassin.result.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-prostitute-result",
+      "kind": "image",
+      "src": "assets/presentation/career-prostitute-result.svg",
+      "semanticIds": [
+        "job/prostitute/result/default"
+      ],
+      "fallbackPurpose": "career result fallback",
+      "localization": {
+        "altKey": "presentation.static.career.prostitute.result.alt",
+        "captionKey": "presentation.static.career.prostitute.result.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "school-day-study",
+      "kind": "image",
+      "src": "assets/presentation/school-day-study.svg",
+      "semanticIds": [
+        "school/literacy-and-numbers/lesson/default",
+        "school/arcana/lesson/default",
+        "school/rhetoric-and-social/lesson/default",
+        "school/etiquette-and-presentation/lesson/default",
+        "school/field-craft/lesson/default",
+        "school/physical-training/lesson/default",
+        "school/arts-and-performance/lesson/default",
+        "school/body-confidence/lesson/default",
+        "location/town/event/school-lesson-content-v1-after-school/default",
+        "location/town/event/school-life-content-v1-after-paid-lesson/default"
+      ],
+      "fallbackPurpose": "reachable daytime School fallback",
+      "localization": {
+        "altKey": "presentation.static.school.day.alt",
+        "captionKey": "presentation.static.school.day.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "school-night-study",
+      "kind": "image",
+      "src": "assets/presentation/school-night-study.svg",
+      "semanticIds": [
+        "location/town/event/school-life-content-v1-after-night-study/default"
+      ],
+      "fallbackPurpose": "reachable generic School Night-study fallback",
+      "localization": {
+        "altKey": "presentation.static.school.night-study.alt",
+        "captionKey": "presentation.static.school.night-study.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "poverty-street",
+      "kind": "image",
+      "src": "assets/presentation/poverty-street.svg",
+      "semanticIds": [
+        "location/town/event/poverty-street-production-helpful-summer/default",
+        "location/town/event/poverty-street-production-neutral-autumn/default",
+        "location/town/event/poverty-street-production-pressure-winter/default"
+      ],
+      "fallbackPurpose": "ordinary-poverty street family fallback",
+      "localization": {
+        "altKey": "presentation.static.poverty.street.alt",
+        "captionKey": "presentation.static.poverty.street.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "poverty-cheap-lodging",
+      "kind": "image",
+      "src": "assets/presentation/poverty-cheap-lodging.svg",
+      "semanticIds": [
+        "location/town/event/poverty-cheap-production-shared-quiet-autumn/default"
+      ],
+      "fallbackPurpose": "ordinary-poverty cheap-lodging fallback",
+      "localization": {
+        "altKey": "presentation.static.poverty.cheap-lodging.alt",
+        "captionKey": "presentation.static.poverty.cheap-lodging.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "poverty-recovery-help",
+      "kind": "image",
+      "src": "assets/presentation/poverty-recovery-help.svg",
+      "semanticIds": [
+        "location/town/event/poverty-recovery-production-small-coin-help/default",
+        "location/town/event/poverty-recovery-production-short-cleanup/default",
+        "location/town/event/poverty-recovery-production-herb-bundle/default"
+      ],
+      "fallbackPurpose": "ordinary-poverty recovery/help family fallback",
+      "localization": {
+        "altKey": "presentation.static.poverty.recovery-help.alt",
+        "captionKey": "presentation.static.poverty.recovery-help.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "poverty-pressure",
+      "kind": "image",
+      "src": "assets/presentation/poverty-pressure.svg",
+      "semanticIds": [
+        "location/town/event/poverty-pressure-production-cold-rain/default",
+        "location/town/event/poverty-pressure-production-noisy-loading/default",
+        "location/town/event/poverty-pressure-production-muddy-splash/default"
+      ],
+      "fallbackPurpose": "ordinary-poverty pressure family fallback",
+      "localization": {
+        "altKey": "presentation.static.poverty.pressure.alt",
+        "captionKey": "presentation.static.poverty.pressure.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "forest-result-success",
+      "kind": "image",
+      "src": "assets/presentation/forest-result-success.svg",
+      "semanticIds": [
+        "activity/forest/return/success",
+        "job/lumber/event/forest-result-content-v1-success/default"
+      ],
+      "fallbackPurpose": "Forest success result fallback",
+      "localization": {
+        "altKey": "presentation.static.forest.result.success.alt",
+        "captionKey": "presentation.static.forest.result.success.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "forest-result-escape",
+      "kind": "image",
+      "src": "assets/presentation/forest-result-escape.svg",
+      "semanticIds": [
+        "activity/forest/return/escape",
+        "job/lumber/event/forest-result-content-v1-escape/default"
+      ],
+      "fallbackPurpose": "Forest escape result fallback",
+      "localization": {
+        "altKey": "presentation.static.forest.result.escape.alt",
+        "captionKey": "presentation.static.forest.result.escape.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "forest-result-failure",
+      "kind": "image",
+      "src": "assets/presentation/forest-result-failure.svg",
+      "semanticIds": [
+        "activity/forest/return/failure",
+        "job/lumber/event/forest-result-content-v1-failure/default"
+      ],
+      "fallbackPurpose": "Forest failure result fallback",
+      "localization": {
+        "altKey": "presentation.static.forest.result.failure.alt",
+        "captionKey": "presentation.static.forest.result.failure.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "foreman-professional",
+      "kind": "image",
+      "src": "assets/presentation/foreman-professional.svg",
+      "semanticIds": [
+        "relationship/lumber-foreman/lumber-foreman-notice/default"
+      ],
+      "fallbackPurpose": "Foreman professional milestone fallback",
+      "localization": {
+        "altKey": "presentation.static.foreman.professional.alt",
+        "captionKey": "presentation.static.foreman.professional.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "foreman-night-professional",
+      "kind": "image",
+      "src": "assets/presentation/foreman-night-professional.svg",
+      "semanticIds": [
+        "relationship/lumber-foreman/lumber-night-foreman-professional/default"
+      ],
+      "fallbackPurpose": "Foreman professional Night follow-up fallback",
+      "localization": {
+        "altKey": "presentation.static.foreman.night-professional.alt",
+        "captionKey": "presentation.static.foreman.night-professional.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    }
+  ],
+  "exclusions": {
+    "secretDebt": true,
+    "stagedSchoolTeacherIdentities": true,
+    "hunterOrOldBoundaryInventedSemantics": false,
+    "gameplayChanges": false
+  }
+}
