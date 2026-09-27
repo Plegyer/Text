@@ -114,7 +114,8 @@ test('all six ordinary-poverty production packs have locale-invariant natural pa
   assert.equal(s.run.flow.night?.phase,'VoluntaryNightChoice',packId);
   for(const effect of choice.effects){
    if(effect.kind==='modifyResource'){
-    assert.equal(s.run.resources[effect.resource],beforeChoice.run.resources[effect.resource]+effect.delta,packId);
+    assert.equal(effect.resource,'money',packId+' representative resource');
+    assert.equal(s.run.resources.money,beforeChoice.run.resources.money+effect.delta,packId);
    }else if(effect.kind==='addItem'){
     assert.equal(s.run.resources.inventory[effect.id]??0,(beforeChoice.run.resources.inventory[effect.id]??0)+effect.count,packId);
    }else if(effect.kind==='addNextDayModifier'){
