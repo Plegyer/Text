@@ -3477,3 +3477,108 @@ Consolidate items 244–254:
 - no production animation claim.
 
 Continue items 244–255 sequentially without waiting for Lead review.
+
+
+## Queue item 256 — GIF exporter dependency options matrix v2
+Create NEW file only:
+- `docs/presentation-prep/GIF_EXPORTER_DEPENDENCY_OPTIONS_MATRIX_V2.md`
+
+Compare 2–4 small, reproducible dev-only approaches for repository-local SVG-frame -> GIF export.
+For each record:
+- package/tool name;
+- whether pure Node or native binary;
+- reproducibility implications;
+- CI portability;
+- maintenance/license notes;
+- whether it can consume only local project-owned SVG frames;
+- whether pinning is straightforward.
+
+Do not install anything yet.
+
+## Queue item 257 — recommended GIF exporter integration plan v2
+Create NEW file only:
+- `docs/presentation-prep/RECOMMENDED_GIF_EXPORTER_INTEGRATION_PLAN_V2.md`
+
+Recommend the smallest viable dev-only exporter/toolchain from item 256.
+Include exact package.json/script changes that WOULD be needed, but do not modify package.json.
+
+## Queue item 258 — Lumber spring export specification v1
+Create NEW file only:
+- `docs/presentation-prep/LUMBER_SPRING_GIF_EXPORT_SPEC_V1.md`
+
+For source sequences A/B/C define exact target:
+- dimensions;
+- frame timing;
+- loop count;
+- output naming;
+- candidate keys;
+- max preferred file size;
+- static fallback;
+- exact semantic presentationId.
+
+## Queue item 259 — Guard summer second source sequence v1
+Create NEW original SVG frame sources only under:
+- `prior-work/astra/prototype-m3.2/assets/presentation-frames/`
+
+Create a second distinct 4-frame source sequence for:
+- `job/guard/shift/summer/default`.
+
+## Queue item 260 — Guard summer third source sequence v1
+Create NEW original SVG frame sources only for the same semantic identity.
+
+After items 247/259/260, Guard summer should have three compatible source sequences ready for future GIF export.
+
+## Queue item 261 — Tavern autumn second source sequence v1
+Create NEW original SVG frame sources only for:
+- `job/tavern/shift/autumn/default`.
+
+## Queue item 262 — Tavern autumn third source sequence v1
+Create NEW original SVG frame sources only for the same semantic identity.
+
+## Queue item 263 — School literacy second source sequence v1
+Create NEW original SVG frame sources only for:
+- `school/literacy-and-numbers/lesson/default`.
+
+No teacher/exact-course gameplay implications.
+
+## Queue item 264 — School literacy third source sequence v1
+Create NEW original SVG frame sources only for the same semantic identity.
+
+## Queue item 265 — multi-identity animation source validation v3
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/project-owned-animation-frames-v3.test.ts`
+
+Validate all source sequences through item 264:
+- exact semantic IDs;
+- 4 ordered frames each;
+- per-sequence dimensions/viewBox consistency;
+- no external URLs/scripts;
+- no gameplay/RNG/Save metadata;
+- identify which semantic IDs now have >=3 compatible source sequences.
+
+## Queue item 266 — export-ready candidate source manifest v2
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/project-owned-animation-source-manifest-v2.json`
+
+Extend the manifest with all validated source sequences and explicit:
+- export-ready=true/false;
+- candidate key;
+- source sequence;
+- semantic presentationId;
+- target timing;
+- static fallback.
+
+No GIF path unless a real GIF exists.
+
+## Queue item 267 — animation exporter decision handoff v3
+Create NEW file only:
+- `docs/presentation-prep/PROJECT_OWNED_ANIMATION_EXPORTER_HANDOFF_V3.md`
+
+Consolidate items 256–266:
+- recommended exporter/toolchain;
+- exact non-installed package/script proposal;
+- semantic IDs now having 3 compatible source sequences;
+- exact files ready for Lead review;
+- no production animation claim until actual GIF bytes exist.
+
+Continue items 256–267 sequentially without waiting for Lead review.
