@@ -1,0 +1,110 @@
+{
+  "version": 2,
+  "defaultLocale": "ru",
+  "strings": {
+    "event.base.arrival.choice.introduce.text": {
+      "ru": "Вы договорились начать с простого. Орвин убрал инструкцию для големов.",
+      "en": "You agree to start with something simple. Orwin puts away the instructions meant for golems."
+    },
+    "event.base.order.choice.accept.text": {
+      "ru": "Заказ записан. Сварите две микстуры и сдайте их отдельным действием.",
+      "en": "The order is recorded. Brew two potions and turn them in with the separate delivery action."
+    },
+    "event.base.bran.choice.friendly.text": {
+      "ru": "Теперь Бран узнаёт вас на площади. Чайная открыта для разговоров.",
+      "en": "Bran now recognizes you in the square. The tea shop is open for conversation."
+    },
+    "event.base.invite.choice.yes.text": {
+      "ru": "Бран складывает план. Кажется, теперь он действительно может расслабиться.",
+      "en": "Bran folds the map away. It looks as though he can finally relax."
+    },
+    "event.base.invite.choice.no.text": {
+      "ru": "Бран принимает ваш ответ и переключается на рассказ о посылке, которая сама сбежала.",
+      "en": "Bran accepts your answer and switches to a story about a parcel that ran away on its own."
+    },
+    "event.base.workday.choice.steady.text": {
+      "ru": "Лавка закрылась вовремя. Это тоже достижение.",
+      "en": "The shop closes on time. That counts as an achievement too."
+    },
+    "event.base.winter.choice.help.text": {
+      "ru": "Метла согласилась работать на другой стороне улицы. Сосед обещал замолвить за вас слово.",
+      "en": "The broom agrees to work on the other side of the street. The neighbor promises to put in a good word for you."
+    },
+    "event.base.winter.choice.pass.text": {
+      "ru": "Вы оставили переговоры специалистам.",
+      "en": "You leave the negotiations to the specialists."
+    },
+    "event.base.shelter.choice.tell.text": {
+      "ru": "Вам уступили место поближе к печке. Здесь тоже можно начинать заново.",
+      "en": "Someone gives you a place closer to the stove. You can make a new start here too."
+    },
+    "event.gopher.arrival.choice.home.text": {
+      "ru": "Вы решаете искать путь назад. Остальные цели остаются открыты.",
+      "en": "You decide to look for a way back. The other goals remain open."
+    },
+    "event.gopher.arrival.choice.status.text": {
+      "ru": "Внимание можно превратить в связи, доход и самостоятельность.",
+      "en": "Attention can be turned into connections, income, and independence."
+    },
+    "event.gopher.arrival.choice.mystery.text": {
+      "ru": "Вы запоминаете странную паузу принца на вопросе о женщинах.",
+      "en": "You remember the prince’s strange pause when asked about women."
+    },
+    "event.gopher.tavern-intro.choice.agree.text": {
+      "ru": "Марек поддержал ваши условия. Здесь можно работать спокойно.",
+      "en": "Marek backs your terms. You can work here in peace."
+    },
+    "event.gopher.tavern-quest.choice.help.text": {
+      "ru": "Поручение открыто: проверить лесной склад.",
+      "en": "The errand is open: check the forest storehouse."
+    },
+    "event.gopher.tavern-quest.choice.later.text": {
+      "ru": "Марек оставляет папку на полке. К разговору можно вернуться позже.",
+      "en": "Marek leaves the folder on the shelf. You can return to the conversation later."
+    },
+    "event.gopher.receipt.choice.take.text": {
+      "ru": "Накладная у вас. Теперь её можно обсудить с Мареком.",
+      "en": "You have the delivery note. You can now discuss it with Marek."
+    },
+    "event.gopher.tavern-resolution.choice.guild.text": {
+      "ru": "Горожане сохраняют праздник. Открыта судьба «Праздник без разрешения».",
+      "en": "The townspeople keep the festival. The fate “Festival Without Permission” is unlocked."
+    },
+    "event.gopher.tavern-resolution.choice.prince.text": {
+      "ru": "Принц благодарит вас. Открыта судьба «Приглашение под печатью».",
+      "en": "The prince thanks you. The fate “Invitation Under Seal” is unlocked."
+    },
+    "event.gopher.tavern-resolution.choice.wait.text": {
+      "ru": "Документ остаётся у вас. К решению можно вернуться позже.",
+      "en": "The document stays with you. You can return to the decision later."
+    },
+    "event.gopher.tavern-routine.choice.finish.text": {
+      "ru": "Смена завершена и записана в ваш стаж.",
+      "en": "The shift is complete and added to your work record."
+    },
+    "event.gopher.woods-intro.choice.learn.text": {
+      "ru": "Теперь вы знакомы с Бронном.",
+      "en": "You now know Bron."
+    },
+    "event.gopher.hunt-intro.choice.learn.text": {
+      "ru": "Вы познакомились с Реном. Сегодня вы проверяете тропы без самостоятельного боя.",
+      "en": "You meet Ren. Today you check the trails without fighting on your own."
+    },
+    "event.gopher.landlord.choice.tea.text": {
+      "ru": "Силан обещает предупреждать о платежах. Плату за комнату можно внести перед сном.",
+      "en": "Silan promises to warn you about payments. The room fee can be paid before sleep."
+    },
+    "event.stage.goblin.choice.spar.text": {
+      "ru": "Вы проводите дружеский поединок деревянными палками. Тик признаёт поражение своей самоуверенности.",
+      "en": "You have a friendly bout with wooden sticks. Tik concedes that his overconfidence has been defeated."
+    },
+    "event.stage.goblin.choice.flirt.text": {
+      "ru": "Вы соглашаетесь на прогулку после работы. Вечером вы вместе идёте к ручью, и разговор оказывается приятнее спора об инструментах.",
+      "en": "You agree to a walk after work. That evening you walk to the stream together, and the conversation turns out to be nicer than the argument about tools."
+    },
+    "event.stage.goblin.choice.work.text": {
+      "ru": "Вы возвращаетесь к верстаку. Тик решает доказать полезность делом.",
+      "en": "You return to the workbench. Tik decides to prove his usefulness by getting the job done."
+    }
+  }
+}
