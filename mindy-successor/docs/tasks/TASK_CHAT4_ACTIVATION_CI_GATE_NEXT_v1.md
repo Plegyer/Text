@@ -2801,3 +2801,148 @@ Summarize items 187–197:
 - Product-open isolation.
 
 Continue items 187–198 sequentially without waiting for Lead review.
+
+
+## Queue item 199 — PR49 post-merge main audit v1
+Create NEW file only:
+- `docs/qa-prep/PR49_NON_CAREER_STATIC_POST_MERGE_AUDIT_V1.md`
+
+Verify from actual Git:
+- PR49 merged;
+- exact merge SHA;
+- current main SHA;
+- 27 refined current-production mappings;
+- 54 RU+EN accessibility keys;
+- Product-open route-specific assets remain absent;
+- latest post-merge main workflow evidence.
+
+## Queue item 200 — PR49 static refinement identity QA v1
+Create NEW file only:
+- `docs/qa-prep/PR49_STATIC_REFINEMENT_IDENTITY_QA_V1.md`
+
+Verify the refined School/poverty/Forest-return/Foreman assets preserve:
+- same semantic presentationId;
+- same gameplay/event identity;
+- same selected static source across RU↔EN;
+- same Save/RNG/effects/counters;
+- only accessibility/presentation text changes.
+
+## Queue item 201 — Forest route/default generic static acceptance v1
+Create NEW file only:
+- `docs/qa-prep/FOREST_ROUTE_DEFAULT_GENERIC_STATIC_ACCEPTANCE_V1.md`
+
+Review Chat2 item 227/228:
+- exact existing `activity/forest/route/default`;
+- asset visually neutral between logging-road / old-boundary;
+- no Hunter/token/challenge semantic leak;
+- RU+EN alt/caption;
+- presentation-only;
+- safe to ship independently of route-specific seam.
+
+## Queue item 202 — Chat2 animation capability QA v1
+Create NEW file only:
+- `docs/qa-prep/CHAT2_PROJECT_OWNED_ANIMATION_CAPABILITY_QA_V1.md`
+
+Review Chat2 items 232–243 as they appear.
+Require:
+- no external downloaded GIFs;
+- project-owned source frames;
+- reproducible export path;
+- no fake GIF files;
+- no new dependency without explicit approval;
+- 3–5 actual compatible candidates before any production pool claim.
+
+## Queue item 203 — project-owned GIF deterministic-selection QA v1
+Create NEW file only:
+- `docs/qa-prep/PROJECT_OWNED_GIF_DETERMINISTIC_SELECTION_QA_V1.md`
+
+If Chat2 produces an actual pool, define/check:
+- current semantic presentationId only;
+- stable locale-neutral candidate keys;
+- locale switch does not change candidate;
+- gameplay RNG and Save untouched;
+- static fallback preserved;
+- animations-off path remains deterministic.
+
+If no real pool exists, classify BLOCKED_BY_EXPORT rather than green.
+
+## Queue item 204 — Chat3 post-PR48 poverty text QA v1
+Create NEW file only:
+- `docs/qa-prep/CHAT3_POST_PR48_POVERTY_TEXT_QA_V1.md`
+
+Review Chat3 items 221–223:
+- exact current-main existing keys only;
+- RU+EN parity;
+- no static-media key edits;
+- no Secret Debt;
+- natural-path expectations match current production IDs.
+
+## Queue item 205 — Chat3 Forest route normalized-altKey QA v1
+Create NEW file only:
+- `docs/qa-prep/CHAT3_FOREST_ROUTE_NORMALIZED_ALTKEY_QA_V1.md`
+
+Review items 224–229:
+- normalized alt/caption keys satisfy shipped PR47 schema;
+- presentation IDs retain slash form;
+- no root localization collisions;
+- route/result/activityResult/Hard Work invariants unchanged;
+- route-specific assets remain source-only until Lead seam.
+
+## Queue item 206 — Chat5 post-PR49 legacy outcome QA v1
+Create NEW file only:
+- `docs/qa-prep/CHAT5_POST_PR49_LEGACY_OUTCOME_QA_V1.md`
+
+Review Chat5 items 73–84 as they appear:
+- exact current legacy root event/choice/media IDs;
+- RU+EN complete;
+- outcome strings derived from stable identity;
+- no locale-selected prose written into gameplay Save;
+- ownership exclusions preserved.
+
+## Queue item 207 — localized journal/outcome consumer acceptance contract v1
+Create NEW file only:
+- `docs/qa-prep/LOCALIZED_JOURNAL_OUTCOME_CONSUMER_ACCEPTANCE_V1.md`
+
+Define acceptance for any future Lead shared consumer that localizes post-choice/journal outcome text:
+- Save remains locale-neutral;
+- stable event/choice identity drives presentation;
+- locale switch changes only rendered text;
+- historical gameplay semantics/effects remain identical;
+- old saves remain readable.
+
+## Queue item 208 — post-PR49 shipped bilingual/static coverage recompute v1
+Create NEW file only:
+- `docs/qa-prep/POST_PR49_SHIPPED_COVERAGE_RECOMPUTE_V1.md`
+
+Recompute exact current-main:
+- player-facing RU+EN shipped coverage;
+- project-owned static coverage;
+- generic static gaps;
+- visible RU fallback debt;
+- shared-consumer debt;
+- Product-open surfaces.
+
+Use actual current root files, not previous gate counts.
+
+## Queue item 209 — current-main CI regression floor v6
+Create NEW file only:
+- `docs/qa-prep/CURRENT_MAIN_CI_REGRESSION_FLOOR_V6.md`
+
+Record exact current main SHA, latest successful push workflow, validator counts and test count after PR49 merge.
+If no post-merge run exists yet, state that explicitly and do not substitute PR exact-head evidence.
+
+## Queue item 210 — next production integration gate v16
+Create NEW file only:
+- `docs/qa-prep/NEXT_PRODUCTION_INTEGRATION_GATE_V16.md`
+
+Summarize items 199–209:
+- PR49 post-merge;
+- generic Forest route/default static;
+- Chat2 animation pipeline;
+- Chat3 poverty/Forest route readiness;
+- Chat5 legacy outcome localization;
+- journal/outcome shared consumer;
+- remaining static/media/localization gaps;
+- Product-open isolation.
+
+Continue items 199–210 sequentially without waiting for Lead review.
