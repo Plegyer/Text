@@ -249,7 +249,7 @@ test('renderer: Forest result scene localizes RU EN without changing pending gam
   const before=w.localStorage.getItem('portal-life.v1');
   assert.match(w.document.querySelector('.dialogue p').textContent,/Маршрут наконец/);
   assert.match(w.document.querySelector('[data-choice="return"]').textContent,/Вернуться из леса/);
-  assert.match(w.document.querySelector('.media-window img').getAttribute('alt'),/Лес после успешного/);
+  assert.match(w.document.querySelector('.media-window img').getAttribute('alt'),/Спокойное успешное возвращение/);
 
   w.document.querySelector('[data-panel="menu"]').click();
   w.document.querySelector('#language-toggle').click();
@@ -258,7 +258,7 @@ test('renderer: Forest result scene localizes RU EN without changing pending gam
   assert.match(w.document.querySelector('.stage-title h1').textContent,/The Forest gives way/);
   assert.match(w.document.querySelector('.dialogue p').textContent,/route finally resolves/);
   assert.match(w.document.querySelector('[data-choice="return"]').textContent,/Return from the Forest/);
-  assert.match(w.document.querySelector('.media-window img').getAttribute('alt'),/Forest after a successful expedition/);
+  assert.match(w.document.querySelector('.media-window img').getAttribute('alt'),/A calm successful return from the forest expedition/);
 
   const stored=JSON.parse(w.localStorage.getItem('portal-life.v1'));
   assert.equal(stored.run.flow.pendingScene.eventId,'forest-result-content-v1.success');
@@ -394,7 +394,7 @@ test('renderer: ordinary poverty pending scene localizes RU EN without changing 
   const beforeSave=JSON.parse(before);
   assert.match(w.document.querySelector('.dialogue p').textContent,/прилавку/);
   assert.match(w.document.querySelector('[data-choice="take-errand"]').textContent,/Взяться/);
-  assert.match(w.document.querySelector('.media-window img').getAttribute('alt'),/Уличная сцена/);
+  assert.match(w.document.querySelector('.media-window img').getAttribute('alt'),/Героиня на небогатой городской улице/);
 
   w.document.querySelector('[data-panel="menu"]').click();
   w.document.querySelector('#language-toggle').click();
@@ -403,7 +403,7 @@ test('renderer: ordinary poverty pending scene localizes RU EN without changing 
   assert.match(w.document.querySelector('.stage-title h1').textContent,/A small paid errand/);
   assert.match(w.document.querySelector('.dialogue p').textContent,/nearby stall/);
   assert.match(w.document.querySelector('[data-choice="take-errand"]').textContent,/Take/);
-  assert.match(w.document.querySelector('.media-window img').getAttribute('alt'),/Street scene/);
+  assert.match(w.document.querySelector('.media-window img').getAttribute('alt'),/The heroine on a modest city street/);
 
   const after=JSON.parse(w.localStorage.getItem('portal-life.v1'));
   assert.equal(after.run.flow.pendingScene.eventId,beforeSave.run.flow.pendingScene.eventId);
