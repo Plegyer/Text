@@ -5,19 +5,19 @@ Queue item: Chat 4 item 142
 Current main: `23a8798f77c42e84a7540d71fdffd69d9db9fbfd`
 Current ordinary-poverty production source: PR37
 Chat3 branch reviewed: `chat3/lumber-production-proof-next`
-Chat3 head observed: `dab63c120fa0b4727e21f93d8e1d1f90ad2ef00b`
+Latest Chat3 head observed: `f6e439a0d35b8f4791e65023d1b3e2042fa14a27`
 
-## Scope and current result
+This review was refreshed after Chat3 completed items 146–148. The earlier same-session `BLOCKED_BY_MISSING_DELIVERABLES` verdict is stale and superseded.
 
-This gate reviews the arrived Chat3 ordinary-poverty localization delta, contract test, copy bank, current-production key map, natural-path plan and multi-GIF staging file against current main after PR43.
+## Overall verdict
 
-Overall complete-wave verdict: **BLOCKED_BY_MISSING_DELIVERABLES**.
+**GREEN_CONTENT_DELTA_FOR_SELECTIVE_INTEGRATION**.
 
-Within that blocked wave, the ordinary-poverty localization payload itself is a **GREEN_CONTENT_DELTA_CANDIDATE_FOR_SELECTIVE_INTEGRATION** after Lead rebases/copies it onto a fresh current-main branch and runs exact-head CI.
+Before production merge the Lead integration branch still requires **FRESH_EXACT_HEAD_CI + EXECUTED POVERTY RU↔EN NATURAL-PATH SMOKE**. This is now an integration-validation requirement, not a missing-worker-deliverable blocker.
 
 ## Current PR37 production identity mapping
 
-The six current-main ordinary-poverty production packs reviewed are:
+The six current-main ordinary-poverty production packs are:
 
 - `poverty-street-production.json`
 - `poverty-street-production-v2.json`
@@ -26,7 +26,7 @@ The six current-main ordinary-poverty production packs reviewed are:
 - `poverty-recovery-production.json`
 - `poverty-pressure-production.json`
 
-They contain these 14 production event identities:
+They contain these 14 current production event IDs:
 
 - `poverty-street-production.helpful-summer`
 - `poverty-street-production.neutral-autumn`
@@ -43,7 +43,9 @@ They contain these 14 production event identities:
 - `poverty-pressure-production.noisy-loading`
 - `poverty-pressure-production.muddy-splash`
 
-Chat3 item 143 maps exactly these 14 IDs. No mapped event is missing from current main. This is materially different from the stale School reachability map reviewed in item 139.
+Chat3 item 143 maps exactly these 14 IDs. No mapped event is missing from current main.
+
+Acceptance: **PASS**.
 
 ## RU+EN localization delta
 
@@ -54,51 +56,67 @@ Observed:
 
 - status `READY_FOR_SELECTIVE_MERGE`;
 - 84 localization strings;
-- every included entry has non-empty RU and EN;
-- no locale-specific `.ru` / `.en` suffix is used as gameplay identity;
-- every event-key prefix resolves to one of the 14 current-main production events;
-- no Secret Debt/lender identity was found;
-- no conditions, effects, rewards or RNG fields were found in the localization payload.
+- 82 event presentation keys plus 2 current media-alt keys;
+- every entry has non-empty RU and EN;
+- no locale-specific gameplay identity;
+- every event-key prefix maps to one of the 14 actual current-main production events;
+- explicit fallback debt is empty;
+- no Secret Debt/lender identity;
+- no gameplay conditions/effects/rewards/RNG payload.
 
-The delta therefore satisfies the presentation-only localization boundary for its included ordinary-poverty production surfaces.
+Acceptance: **PASS / SAFE SELECTIVE CONTENT DELTA**.
 
-## Localization key map
+Lead must merge only the reviewed `delta.strings` into fresh current-main `content/localization.json` after collision review.
 
-File:
-`prior-work/astra/prototype-m3.2/content/poverty-event-localization-key-map-v1.fixture.json`
+## Key convention
 
-Observed:
+Item 143 uses the current PR43 runtime convention:
 
-- status `CURRENT_PR37_PRODUCTION_MAP`;
-- 14 mapped events, exactly matching current main;
-- key convention matches the generic PR43 renderer convention:
-  - `event.<eventId>.title`
-  - `event.<eventId>.variant.<variantId>.text`
-  - `event.<eventId>.choice.<choiceId>.label`
-  - `event.<eventId>.choice.<choiceId>.text`
-  - `media.<mediaId>.alt`
+- `event.<eventId>.title`;
+- `event.<eventId>.variant.<variantId>.text`;
+- `event.<eventId>.choice.<choiceId>.label`;
+- `event.<eventId>.choice.<choiceId>.text`;
+- `media.<mediaId>.alt`.
 
-Acceptance: **GREEN_FOR_SELECTIVE_COPY**, subject to exact-head validation after integration.
-
-## No Secret Debt bleed
-
-The ordinary-poverty localization delta and its contract do not include Secret Debt/lender content. This is required. Authored Secret Debt material remains a separate staged/Product-blocked family and must not be pulled into the ordinary-poverty production localization PR.
+This matches current generic event/media localization consumption.
 
 Acceptance: **PASS**.
 
-## Locale-neutral gameplay and natural-path invariance
+## No Secret Debt bleed
 
-The arrived artifacts are consistent with the required rule that locale changes presentation only. Item 145 defines natural-path checks for street, cheap-lodging and effectful recovery paths and explicitly snapshots pending identity, RNG/history/resources/metrics/progression/NightFlow/Save around a locale switch.
+Ordinary-poverty localization remains bounded to PR37 production. Secret Debt is absent from the delta and map.
 
-However item 145 is a plan, not executable evidence.
+Acceptance: **PASS**.
 
-The requested executable Forest bilingual natural-path regression at item 146 currently contains only:
+Secret Debt authored bilingual material elsewhere remains separate and Product-blocked in mechanics/rewards.
 
-`// item 146`
+## Locale-neutral gameplay IDs
 
-That file does not prove any invariant and must not be counted as a test.
+The reviewed localization keys are derived from the same event/variant/choice/media identities used by current production. No RU/EN-specific gameplay IDs are introduced.
 
-Therefore natural-path invariance for this worker wave is **NOT_YET_EXECUTABLY_PROVEN**.
+Acceptance: **PASS**.
+
+Locale must remain outside life Save and must not alter event materialization, conditions/effects, NightFlow, RNG or candidate selection.
+
+## Natural-path invariance
+
+Chat3 item 145 now provides a concrete poverty natural-path smoke specification:
+
+- street path through EndDay → lodging → current poverty reaction;
+- cheap-lodging path;
+- effectful recovery path;
+- RU presentation;
+- switch EN without dispatch;
+- same pending identity/RNG/history/resources/metrics/progression/NightFlow/Save;
+- resolve once;
+- reload;
+- no reroll or duplicate effect.
+
+This is the correct acceptance shape, but it remains a prose smoke plan. It is not a separate executable poverty locale-switch test on the worker branch.
+
+Chat3 item 146 is now substantive executable evidence for Forest. It naturally reaches Forest success/escape/failure, proves exact `activityResult` reaction identity, RU+EN key presence, pending reload stability, no additional gameplay effect from return, and the exact Lumber Hard Work condition/reward. It strengthens the shared regression floor but does not substitute for executing the poverty smoke after integration.
+
+Acceptance: **PLAN CORRECT; EXECUTE ON FRESH INTEGRATION HEAD**.
 
 ## Multi-GIF staging
 
@@ -108,40 +126,40 @@ File:
 Observed:
 
 - status `STAGING_ONLY`;
-- 12 referenced media sources;
-- 9 candidate GIF sources are under `assets/staging/`;
-- the remaining sources are existing static SVG fallbacks such as `assets/stage-outside.svg` and `assets/stage-room.svg`.
+- 9 GIF candidate sources under `assets/staging/`;
+- real existing static fallbacks `assets/stage-outside.svg` / `assets/stage-room.svg`;
+- no real repository GIF candidate exists.
 
 Acceptance: **STAGING_ONLY**.
 
-The placeholder GIF candidates are not real shipped repo assets and must not be counted toward production 3–5 candidate pools. The static fallbacks remain useful fallback evidence only.
+Do not include this patch in production until 3–5 real repo GIFs exist for an approved semantic identity and candidate-specific bilingual alt handling is accepted.
 
-## Missing deliverables blocking complete-wave green
+## Completed supporting deliverables
 
-Chat3 item 146 exists only as a stub and is not a completed test.
+The formerly missing Chat3 items are now present:
 
-These requested files are absent from the current Chat3 branch:
+- item 146 executable Forest natural-path regression, blob `05c55cd86adbc9f65209e311f5d8be87e84e0237`;
+- item 147 ordinary-poverty localization integration handoff, blob `f71eb510d90399d046b5100aa6adea02a1eec02c`;
+- item 148 Forest+poverty current-main integration ledger, blob `926a7745c72c519fec1800681c94dbfecc0f998f`.
 
-- item 147: `docs/poverty-prep/ORDINARY_POVERTY_LOCALIZATION_INTEGRATION_HANDOFF_v5.md`
-- item 148: `docs/lumber-prep/FOREST_POVERTY_CURRENT_MAIN_INTEGRATION_LEDGER_v1.md`
+Therefore **no Chat3 140–148 deliverable is currently missing**.
 
-A full Chat3 140–148 integration verdict therefore remains **BLOCKED_BY_MISSING_DELIVERABLES**.
+## Selective integration path
 
-## Selective integration rule
+Never merge `chat3/lumber-production-proof-next` wholesale.
 
-Never merge the stale Chat3 branch as a unit.
+On a fresh branch from current main:
 
-A Lead branch created fresh from current main may selectively copy:
+1. merge only item-140 `delta.strings` into `content/localization.json`;
+2. selectively copy/adapt item-141 contract test;
+3. use item-143 key map as exact identity evidence;
+4. optionally retain item-142 copy bank and item-147/148 docs as review evidence;
+5. execute item-145 poverty natural-path smoke against the real integrated UI/runtime;
+6. run full `npm run check` and exact-head Actions;
+7. require post-merge main CI.
 
-1. the item-140 ordinary-poverty localization string delta;
-2. the item-141 contract test, rebased to exact current main;
-3. the item-143 exact production key map as QA/integration evidence;
-4. optionally the item-142 copy bank as authoring evidence.
-
-Do not copy item 144 as production media. Do not count item 145 as executed regression. Do not infer completion of items 146–148.
-
-Before merge require current-main exact-head validation, actual UI/event rendering in RU and EN, pending-event/save/RNG invariance, and post-merge main CI.
+Do not promote item-144 placeholder multi-GIF staging.
 
 ## Locked invariants
 
-This QA accepts no gameplay change. Locale must not alter poverty conditions, effects, rewards, event IDs, variant/choice IDs, RNG, Save state or media candidate identity. Secret Debt remains out of this production localization slice. Placeholder multi-GIF paths remain non-shipped.
+No localization integration may change ordinary-poverty gameplay, Secret Debt state, Forest exact `activityResult`, Lumber Hard Work `completed_shifts >= 50` / `hardWork:lumber`, Save schema, gameplay RNG or locale-neutral media selection.
