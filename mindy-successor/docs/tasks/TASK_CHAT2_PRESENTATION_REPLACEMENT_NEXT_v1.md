@@ -1263,3 +1263,20 @@ Define presentation acceptance for normal room, cheap lodging, street sleep, ord
 Do not invent final poverty events or assets.
 
 Continue items 63–71 sequentially without waiting for Lead review.
+
+
+## Queue item 72 — career-draft to presentation-intake crosswalk
+
+Create NEW file only:
+- `docs/presentation-prep/CAREER_DRAFT_PRESENTATION_INTAKE_CROSSWALK_v1.md`
+
+For all 10 ordinary career drafts plus Palace and Secret Debt, identify which authored content units must exist before Presentation can assign/finalize:
+- repeatable shift IDs;
+- milestone/event IDs;
+- relationship/Night IDs;
+- ending IDs;
+- optional Activity/item hooks.
+
+Do not invent missing content IDs. The purpose is to make the handoff from career authoring to GIF production deterministic.
+
+Continue items 64–72 sequentially without waiting for Lead review.
