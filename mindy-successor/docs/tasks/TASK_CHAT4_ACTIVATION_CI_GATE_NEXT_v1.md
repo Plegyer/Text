@@ -1813,3 +1813,18 @@ Summarize current integration risk after:
 Separate GREEN_TO_INTEGRATE / NEEDS_CI / PRODUCT_BLOCKED / CONTENT_ONLY / RUNTIME_GAP.
 
 Continue items 105–113 sequentially without waiting for Lead review.
+
+
+## Cross-cutting Product rule — RU + EN from now on
+
+Effective immediately by direct Product decision:
+- the game ships in **Russian and English**;
+- Russian is the source authoring language; English is a full second locale;
+- one gameplay/content identity, one semantic ID, one set of mechanics and one save-state serve both languages;
+- language affects presentation/text only;
+- no locale-specific conditions, rewards, timing, RNG, eligibility or save identity;
+- QA: new production/content reviews must check RU + EN coverage for newly authored player-facing text and reject locale-specific gameplay divergence.
+- if an already-assigned item has player-facing text and is not yet committed, author both locales now;
+- if an item was already committed before this rule, do not rewrite it blindly; record it for localization migration/review.
+
+Do not create a second copy of the gameplay event for English.
