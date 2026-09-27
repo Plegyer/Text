@@ -94,6 +94,8 @@ test('minimal RC one-Save path proves School, Night, natural Forest and Hard Wor
   const startDay=s.run.calendar.elapsedDays;
 
   s=runtime.dispatch(s,{type:'action',id:'lumber.shift'},catalog);
+  const lumberMoney=startMoney+16;
+  assert.equal(s.run.resources.money,lumberMoney);
   assert.equal(s.run.dayState.energyCurrent,2);
   assert.equal(s.run.progression.careers.lumber?.counters.completed_shifts,1);
 
@@ -108,7 +110,7 @@ test('minimal RC one-Save path proves School, Night, natural Forest and Hard Wor
   );
 
   s=runtime.dispatch(s,{type:'schoolLesson',id:'school.course.arcana'},catalog);
-  assert.equal(s.run.resources.money,startMoney-500);
+  assert.equal(s.run.resources.money,lumberMoney-500);
   assert.equal(s.run.dayState.energyCurrent,1);
   assert.equal(
     s.run.progression.school.tracks['school.track.arcana']?.counters.lessons_completed,
@@ -147,10 +149,10 @@ test('minimal RC one-Save path proves School, Night, natural Forest and Hard Wor
   s=reload(s);
   s=runtime.dispatch(s,{type:'endDay'},catalog);
   s=runtime.dispatch(s,{type:'chooseLodging',id:'lodging.normal'},catalog);
-  assert.equal(s.run.resources.money,startMoney-600);
+  assert.equal(s.run.resources.money,lumberMoney-600);
 
   s=reload(s);
-  assert.equal(s.run.resources.money,startMoney-600);
+  assert.equal(s.run.resources.money,lumberMoney-600);
 
   s=runtime.dispatch(s,{type:'chooseNightChoice',id:'lumber.foreman.night'},catalog);
   assert.equal(
@@ -163,7 +165,7 @@ test('minimal RC one-Save path proves School, Night, natural Forest and Hard Wor
 
   assert.equal(s.run.calendar.elapsedDays,startDay+1);
   assert.equal(s.run.flow.night,null);
-  assert.equal(s.run.resources.money,startMoney-600);
+  assert.equal(s.run.resources.money,lumberMoney-600);
 
   const forestEnergy=s.run.dayState.energyCurrent;
   s=runtime.dispatch(s,{type:'enterActivity',id:'lumber.forest'},catalog);
