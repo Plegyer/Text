@@ -1,0 +1,288 @@
+{
+  "schemaVersion": 1,
+  "id": "poverty-street-production-v2",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "calendar": true,
+      "housing": true
+    },
+    "writes": {
+      "resources": [
+        "money"
+      ],
+      "nextDay": true
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "poverty-street-production-v2.helpful-summer-shade",
+      "title": "Shade before the shutters close",
+      "sourceDomain": "poverty",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightPhase",
+          "point": "after_lodging"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 35,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "nightPolicy": {
+        "intercept": "after_lodging",
+        "suppressLodgingPayment": false,
+        "suppressVoluntaryMenu": false,
+        "consumesNight": false
+      },
+      "cooldownDays": 3,
+      "variantCooldownDays": 0,
+      "maxShows": 30,
+      "conditions": [
+        {
+          "kind": "housingTier",
+          "value": "street"
+        },
+        {
+          "kind": "calendarSeason",
+          "value": "summer"
+        },
+        {
+          "kind": "calendarDayInYear",
+          "op": "gte",
+          "value": 13
+        },
+        {
+          "kind": "calendarDayInYear",
+          "op": "lte",
+          "value": 14
+        }
+      ],
+      "variants": [
+        {
+          "id": "market-closing",
+          "text": "As the market shutters come down, someone needs a canvas rolled and tied before the evening heat turns to rain. It is a short, anonymous job.",
+          "conditions": [
+            {
+              "kind": "calendarDayInYear",
+              "op": "eq",
+              "value": 13
+            }
+          ],
+          "media": [
+            "stage.outside"
+          ]
+        },
+        {
+          "id": "late-shade",
+          "text": "A strip of shade survives beside a closed stall. A last small task is still available, but keeping the quiet place for the night is equally possible.",
+          "conditions": [],
+          "media": [
+            "stage.outside"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "take-small-task",
+          "label": "Take the small task",
+          "text": "You finish the brief job and receive a small payment. Its amount is initial tuning, not a locked economy value.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "modifyResource",
+              "resource": "money",
+              "delta": 6
+            }
+          ]
+        },
+        {
+          "id": "keep-place",
+          "label": "Keep your place",
+          "text": "You keep the resting spot and let the small job pass without cost.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "poverty-street-production-v2.neutral-autumn-crossing",
+      "title": "Footsteps under the arcade",
+      "sourceDomain": "poverty",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightPhase",
+          "point": "after_lodging"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 35,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "nightPolicy": {
+        "intercept": "after_lodging",
+        "suppressLodgingPayment": false,
+        "suppressVoluntaryMenu": false,
+        "consumesNight": false
+      },
+      "cooldownDays": 3,
+      "variantCooldownDays": 0,
+      "maxShows": 30,
+      "conditions": [
+        {
+          "kind": "housingTier",
+          "value": "street"
+        },
+        {
+          "kind": "calendarSeason",
+          "value": "autumn"
+        },
+        {
+          "kind": "calendarDayInYear",
+          "op": "gte",
+          "value": 23
+        },
+        {
+          "kind": "calendarDayInYear",
+          "op": "lte",
+          "value": 24
+        }
+      ],
+      "variants": [
+        {
+          "id": "drizzle",
+          "text": "A light autumn drizzle sends late pedestrians beneath the arcade. They pass without comment, leaving only wet footprints and a little borrowed shelter.",
+          "conditions": [
+            {
+              "kind": "calendarDayInYear",
+              "op": "eq",
+              "value": 23
+            }
+          ],
+          "media": [
+            "stage.outside"
+          ]
+        },
+        {
+          "id": "dry-arcade",
+          "text": "The arcade stays dry tonight. Shops are closed, footsteps fade, and the street offers a rare hour that asks nothing from you.",
+          "conditions": [],
+          "media": [
+            "stage.outside"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "wait-out-night",
+          "label": "Wait quietly",
+          "text": "You let the street settle around you. Nothing is gained, but nothing extra is taken either.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "poverty-street-production-v2.pressure-winter-wind",
+      "title": "Wind through the lane",
+      "sourceDomain": "poverty",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightPhase",
+          "point": "after_lodging"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 35,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "nightPolicy": {
+        "intercept": "after_lodging",
+        "suppressLodgingPayment": false,
+        "suppressVoluntaryMenu": false,
+        "consumesNight": false
+      },
+      "cooldownDays": 3,
+      "variantCooldownDays": 0,
+      "maxShows": 30,
+      "conditions": [
+        {
+          "kind": "housingTier",
+          "value": "street"
+        },
+        {
+          "kind": "calendarSeason",
+          "value": "winter"
+        },
+        {
+          "kind": "calendarDayInYear",
+          "op": "gte",
+          "value": 33
+        },
+        {
+          "kind": "calendarDayInYear",
+          "op": "lte",
+          "value": 34
+        }
+      ],
+      "variants": [
+        {
+          "id": "crosswind",
+          "text": "A hard crosswind cuts through the lane and makes every exposed corner feel colder. A recessed doorway nearby offers the safer choice.",
+          "conditions": [
+            {
+              "kind": "calendarDayInYear",
+              "op": "eq",
+              "value": 33
+            }
+          ],
+          "media": [
+            "stage.outside"
+          ]
+        },
+        {
+          "id": "long-gusts",
+          "text": "Long gusts rattle shutters along the lane. You can stay tucked away or keep moving and pay for it in tomorrow's energy.",
+          "conditions": [],
+          "media": [
+            "stage.outside"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "use-recess",
+          "label": "Use the recessed doorway",
+          "text": "You choose the free sheltered option and avoid adding more pressure to the ordinary street-night penalty.",
+          "conditions": [],
+          "effects": []
+        },
+        {
+          "id": "keep-walking",
+          "label": "Keep walking",
+          "text": "You stay in motion until the wind eases. The extra next-day Energy pressure is initial tuning rather than a Product lock.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addNextDayModifier",
+              "energyDelta": -1,
+              "statEffects": [],
+              "tag": "poverty.street.v2.initial-wind-pressure"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
