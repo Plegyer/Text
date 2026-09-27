@@ -2757,3 +2757,78 @@ Create NEW file only:
 Consolidate items 185–195 into SAFE_TEXT_PATCH / SHARED_UI_REQUIRED / SAFE_PRESENTATION_SOURCE / STAGING_ONLY / PRODUCT_OPEN and provide exact selective-copy files for Lead.
 
 Continue items 185–196 sequentially without waiting for Lead review.
+
+
+## Queue item 197 — poverty copyedit production-readiness ledger v2
+Create NEW file only:
+- `docs/poverty-prep/POVERTY_COPYEDIT_PRODUCTION_READINESS_LEDGER_V2.md`
+
+Review item 185 against exact current main after PR45/46 and classify each of the 36 text-only replacements as SAFE_NOW / NEEDS_CONTEXT_REVIEW / KEEP_CURRENT. No key or mechanics changes.
+
+## Queue item 198 — poverty copyedit final delta v2
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/poverty-copyedit-final-delta-v2.fixture.json`
+
+Produce the final exact-key RU+EN replacement subset from item 197. Existing keys only; no additions, deletions, ID changes or gameplay fields.
+
+## Queue item 199 — poverty copyedit final regression v2
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/poverty-copyedit-final-delta-v2.test.ts`
+
+Validate item 198 against current main localization and all six ordinary-poverty production packs. Secret Debt excluded.
+
+## Queue item 200 — shared Night/lodging RU source copy review v1
+Create NEW file only:
+- `docs/poverty-prep/SHARED_NIGHT_LODGING_RU_COPY_REVIEW_V1.md`
+
+Review the 20 proposed shared Night/lodging RU strings for natural player-facing wording and consistency with current NightFlow terminology. Text only.
+
+## Queue item 201 — shared Night/lodging EN parity review v1
+Create NEW file only:
+- `docs/poverty-prep/SHARED_NIGHT_LODGING_EN_PARITY_REVIEW_V1.md`
+
+Review the same 20 EN strings against RU source and current terminology. Text only.
+
+## Queue item 202 — shared Night/lodging finalized localization fixture v3
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/poverty-shared-ui-localization-v3.fixture.json`
+
+Produce the finalized 20-key RU+EN presentation-only fixture from items 200–201. No NightFlow/lodging/housing mechanics.
+
+## Queue item 203 — Forest logging-road scene bank polish v3
+Create NEW file only:
+- `docs/lumber-prep/FOREST_LOGGING_ROAD_SCENE_BANK_POLISH_V3.md`
+
+Polish current logging-road RU+EN presentation prose for concise UI-ready use. Existing route identity only.
+
+## Queue item 204 — Forest old-boundary scene bank polish v3
+Create NEW file only:
+- `docs/lumber-prep/FOREST_OLD_BOUNDARY_SCENE_BANK_POLISH_V3.md`
+
+Polish current old-boundary RU+EN presentation prose. Do not define token acquisition/use or Hunter semantics.
+
+## Queue item 205 — Forest route semantic media brief v1
+Create NEW file only:
+- `docs/lumber-prep/FOREST_ROUTE_SEMANTIC_MEDIA_BRIEF_V1.md`
+
+For logging-road and old-boundary, define presentation-only visual briefs, static fallback expectations and future GIF opportunities using existing semantic IDs only.
+
+## Queue item 206 — Forest route alt/caption localization fixture v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/forest-route-media-localization-v1.fixture.json`
+
+Provide RU+EN alt/caption strings for the two existing route semantic presentation IDs. No route/mechanics changes.
+
+## Queue item 207 — Forest route presentation acceptance checklist v2
+Create NEW file only:
+- `docs/lumber-prep/FOREST_ROUTE_PRESENTATION_ACCEPTANCE_CHECKLIST_V2.md`
+
+Define exact Lead acceptance after route-state -> presentationId wiring: identity invariance, RNG/Save unchanged, exact activityResult continuation, Hard Work unchanged, locale presentation-only.
+
+## Queue item 208 — Forest/poverty integration handoff v5
+Create NEW file only:
+- `docs/lumber-prep/FOREST_POVERTY_INTEGRATION_HANDOFF_V5.md`
+
+Consolidate items 197–207 into SAFE_TEXT_PATCH / SHARED_UI_REQUIRED / SAFE_PRESENTATION_SOURCE / PRODUCT_OPEN and exact selective-copy files.
+
+Continue items 197–208 sequentially without waiting for Lead review.
