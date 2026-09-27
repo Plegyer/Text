@@ -1616,3 +1616,23 @@ For each:
 Do not invent character appearance or art direction.
 
 Continue items 81–89 sequentially without waiting for Lead review.
+
+
+## Queue item 90 — PR32 starter-career presentation coverage audit
+
+Create NEW file only:
+- `docs/presentation-prep/PR32_STARTER_CAREER_PRESENTATION_COVERAGE_v1.md`
+
+Audit PR #32 presentation consequences for Satyr Maid and Undead Farm.
+
+Verify:
+- target action IDs map to `job/satyr-maid/*` and `job/undead-farm/*`;
+- seasonal shift slots exist;
+- result/default slots remain stable across seasons;
+- reused `stage.tavern.*` / `stage.hunt.*` media do not merge semantic identity;
+- GIF replacement can occur later without gameplay changes;
+- no new media asset is required for functional merge.
+
+Use actual PR head/current Git evidence. Do not invent art direction.
+
+Continue items 82–90 sequentially without waiting for Lead review.
