@@ -30,7 +30,8 @@ test('final one-Save drift sentinel v2 preserves PR24 state across School, Night
 
   // Lumber: one real shift, then both real reactive scenes.
   s=dispatch(s,{type:'action',id:'lumber.shift'},catalog);
-  assert.equal(s.run.resources.money,startMoney);
+  const lumberMoney=startMoney+16;
+  assert.equal(s.run.resources.money,lumberMoney);
   assert.equal(s.run.dayState.energyCurrent,startEnergy-1);
   assert.equal(s.run.progression.careers.lumber?.counters.completed_shifts,1);
   assert.equal(s.run.flow.pendingScene?.eventId,'lumber.career-first-shift');
@@ -49,7 +50,7 @@ test('final one-Save drift sentinel v2 preserves PR24 state across School, Night
     s.run.progression.relationships['lumber.foreman']?.stage,
     'route-professional'
   );
-  assert.equal(s.run.resources.money,startMoney);
+  assert.equal(s.run.resources.money,lumberMoney);
   assert.equal(s.run.dayState.energyCurrent,startEnergy-1);
   assert.equal(s.run.progression.careers.lumber?.counters.completed_shifts,1);
 
@@ -62,7 +63,7 @@ test('final one-Save drift sentinel v2 preserves PR24 state across School, Night
 
   s=dispatch(s,{type:'schoolLesson',id:'school.course.arcana'},catalog);
 
-  assert.equal(s.run.resources.money,startMoney-500);
+  assert.equal(s.run.resources.money,lumberMoney-500);
   assert.equal(s.run.dayState.energyCurrent,startEnergy-2);
   assert.equal(s.run.character.stats.magic,schoolStatsBefore.magic+4);
   assert.equal(s.run.character.stats.reason,schoolStatsBefore.reason+4);
@@ -114,11 +115,11 @@ test('final one-Save drift sentinel v2 preserves PR24 state across School, Night
   assert.equal(s.run.flow.night?.phase,'LodgingResolution');
 
   s=dispatch(s,{type:'chooseLodging',id:'lodging.normal'},catalog);
-  assert.equal(s.run.resources.money,startMoney-600);
+  assert.equal(s.run.resources.money,lumberMoney-600);
   assert.equal(s.run.flow.night?.lodgingPaymentCommitted,true);
 
   s=reload(s);
-  assert.equal(s.run.resources.money,startMoney-600);
+  assert.equal(s.run.resources.money,lumberMoney-600);
   assert.equal(s.run.flow.night?.lodgingPaymentCommitted,true);
 
   s=dispatch(s,{type:'chooseNightChoice',id:'lumber.foreman.night'},catalog);
@@ -134,14 +135,14 @@ test('final one-Save drift sentinel v2 preserves PR24 state across School, Night
     s.run.progression.relationships['lumber.foreman']?.counters.night_meetings,
     1
   );
-  assert.equal(s.run.resources.money,startMoney-600);
+  assert.equal(s.run.resources.money,lumberMoney-600);
 
   s=dispatch(s,{type:'choice',id:'continue'},catalog);
 
   assert.equal(s.run.flow.night,null);
   assert.equal(s.run.calendar.elapsedDays,startDay+1);
   assert.equal(s.run.dayState.energyCurrent,3);
-  assert.equal(s.run.resources.money,startMoney-600);
+  assert.equal(s.run.resources.money,lumberMoney-600);
   assert.equal(arcanaLessons(s),1);
   assert.equal(arcanaNightStudies(s),0);
   assert.equal(s.run.progression.careers.lumber?.counters.completed_shifts,1);
@@ -209,7 +210,7 @@ test('final one-Save drift sentinel v2 preserves PR24 state across School, Night
 
   assert.ok(s.run.progression.careers.lumber?.facts.includes('forest-truth-known'));
   assert.ok(s.run.progression.careers.lumber?.facts.includes('forest-problem-resolved'));
-  assert.equal(s.run.resources.money,startMoney-600);
+  assert.equal(s.run.resources.money,lumberMoney-600);
   assert.equal(s.run.dayState.energyCurrent,1);
   assert.equal(arcanaLessons(s),1);
   assert.equal(arcanaNightStudies(s),0);
@@ -229,15 +230,18 @@ test('final one-Save drift sentinel v2 preserves PR24 state across School, Night
   );
   assert.deepEqual(s.meta.hardWorkProgress,[]);
 
+  const hardWorkShiftMoneyBefore=s.run.resources.money;
   s=dispatch(s,{type:'action',id:'lumber.shift'},catalog);
+  const hardWorkShiftMoneyAfter=s.run.resources.money;
 
+  assert.ok(hardWorkShiftMoneyAfter>hardWorkShiftMoneyBefore);
   assert.equal(s.run.progression.careers.lumber?.counters.completed_shifts,50);
   assert.equal(s.run.dayState.energyCurrent,0);
   assert.ok(s.run.endings.eligible.includes('ending.lumber.hard-work'));
   assert.ok(s.run.endings.eligible.includes('ending.lumber.forest'));
   assert.equal(s.run.status,'active');
   assert.deepEqual(s.meta.hardWorkProgress,[]);
-  assert.equal(s.run.resources.money,startMoney-600);
+  assert.equal(s.run.resources.money,hardWorkShiftMoneyAfter);
   assert.equal(arcanaLessons(s),1);
   assert.equal(
     s.run.progression.relationships['lumber.foreman']?.stage,

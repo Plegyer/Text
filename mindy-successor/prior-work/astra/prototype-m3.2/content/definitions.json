@@ -1573,6 +1573,19 @@
             "delta": -1
           }
         ]
+      },
+      "wage": {
+        "base": 13,
+        "weights": [
+          {
+            "stat": "strength",
+            "factor": 0.5
+          },
+          {
+            "stat": "endurance",
+            "factor": 0.25
+          }
+        ]
       }
     },
     {
