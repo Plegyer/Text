@@ -931,3 +931,23 @@ Define future QA sentinels that prevent:
 No production code changes.
 
 Continue items 53–61 sequentially without waiting for Lead review.
+
+
+## Queue item 62 — full-game content pack acceptance checklist
+
+Create NEW file only:
+- `docs/qa-prep/FULL_GAME_CONTENT_PACK_ACCEPTANCE_CHECKLIST_v1.md`
+
+Define acceptance checks for future data-driven content packs:
+- namespace and ID uniqueness;
+- declared read/write capability boundaries;
+- authoritative conditions/effects only;
+- fallback presentation coverage;
+- save/reload stability;
+- no accidental cross-domain private-state reads;
+- no locked-rule drift;
+- no unresolved Product choice encoded as a constant.
+
+Make it usable for career, School, poverty and Activity packs.
+
+Continue items 54–62 sequentially without waiting for Lead review.
