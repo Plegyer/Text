@@ -1032,3 +1032,20 @@ For each value identify source authority, current placeholder/range if any, syst
 Do not choose final numbers.
 
 Continue items 56–64 sequentially without waiting for Lead review.
+
+
+## Queue item 65 — Secret Debt ordinary-job blocking contract map
+
+Create NEW file only:
+- `docs/poverty-prep/SECRET_DEBT_JOB_BLOCKING_CONTRACT_MAP_v1.md`
+
+Map the Product-directed rule that, once the hidden debt career becomes bound:
+- the 10 ordinary careers are unavailable;
+- their existing progression is preserved;
+- Secret Debt/Slave becomes the available profession;
+- Palace prerequisite accounting remains based only on ordinary Hard Work Meta;
+- resolving the debt route restores ordinary-career availability according to the accepted outcome.
+
+Separate already-fixed behavior from unresolved School/Activity availability decisions. Do not invent runtime implementation or thresholds.
+
+Continue items 57–65 sequentially without waiting for Lead review.
