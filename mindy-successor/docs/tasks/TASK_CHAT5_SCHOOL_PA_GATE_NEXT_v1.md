@@ -880,3 +880,27 @@ Define how approved School content can be produced in parallel batches after Pro
 For each batch list required inputs, owned files, validation evidence and dependencies. Preserve one-file-one-owner and do not choose OPEN content.
 
 Continue items 51–59 sequentially without waiting for Lead review.
+
+
+## Queue item 60 — School public-result consumer crosswalk
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_PUBLIC_RESULT_CONSUMER_CROSSWALK_v1.md`
+
+Map every currently documented or intended School public-result consumer across:
+- Lumber;
+- other ordinary careers;
+- Forest/Activity;
+- relationships;
+- Palace/Meta where applicable.
+
+For each distinguish:
+- current shipped consumer;
+- draft consumer;
+- Product decision required;
+- content authoring required;
+- no dependency intended.
+
+Never allow downstream systems to read School-private counters directly and do not invent new Hard Work prerequisites.
+
+Continue items 52–60 sequentially without waiting for Lead review.
