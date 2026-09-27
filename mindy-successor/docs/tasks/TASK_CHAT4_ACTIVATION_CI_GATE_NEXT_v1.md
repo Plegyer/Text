@@ -1259,3 +1259,23 @@ Verify:
 Use actual CI evidence if available at review time. Conclude GREEN / BLOCKED with exact reason.
 
 Continue items 70–78 sequentially without waiting for Lead review.
+
+
+## Queue item 79 — starter-trio post-merge regression floor draft
+
+Create NEW file only:
+- `docs/qa-prep/STARTER_TRIO_POST_MERGE_REGRESSION_FLOOR_v1.md`
+
+Assuming PR32 eventually passes CI and merges, define the retained regression floor for all three starter careers:
+- action availability after arrival;
+- 1 Energy shift cost;
+- typed completed-shifts progress;
+- early career-state transition where shipped;
+- seasonal semantic presentation;
+- save/reload;
+- no guessed Hard Work for Satyr/Farm;
+- Lumber Hard Work exact invariant unchanged.
+
+Do not claim PR32 merged or green unless Git proves it.
+
+Continue items 71–79 sequentially without waiting for Lead review.
