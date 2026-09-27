@@ -3,7 +3,7 @@
 Status: COMPLETE / ACCEPTANCE_CONTRACT_READY
 
 Current main:
-`1a2f6e428da41e356f8d48df4a72923a5cc1928c`.
+`5dffefd15703d431a604b4cc9f831c4e55460aed`.
 
 Source localization:
 Chat 5 109-key legacy root patch.
@@ -181,10 +181,10 @@ The existing pending-scene renderer architecture is suitable for the 109-key sou
 Production acceptance requires exact-head executable locale-invariance tests after the strings are actually root-loaded.
 
 
-## PR51 compatibility note
+## PR51/PR52 compatibility note
 
-PR51 changes ordinary-poverty localization values only.
-It does not change the app/engine/presentation seams audited by this document.
+PR51 changes ordinary-poverty localization values and PR52 adds legacy root localization values.
+Neither changes the app/engine/presentation seams audited by this document.
 
 Current app blob remains:
 `312399d01b211f13c29017c1e17b61f2027d21b3`.
