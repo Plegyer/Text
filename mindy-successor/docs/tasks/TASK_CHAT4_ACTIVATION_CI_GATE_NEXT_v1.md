@@ -1173,3 +1173,25 @@ Record current open Lead PRs from Git and classify each by:
 At authoring time include PR #29 accurately. Do not mark merged/green without Git evidence.
 
 Continue items 66–74 sequentially without waiting for Lead review.
+
+
+## Queue item 75 — production implementation readiness gate v1
+
+Create NEW file only:
+- `docs/qa-prep/PRODUCTION_IMPLEMENTATION_READINESS_GATE_v1.md`
+
+Define a gate for deciding when a preparation/documentation stream has enough evidence to justify actual production code/content work.
+
+Require:
+- authoritative behavior identified;
+- Product decisions either supplied or parameterized;
+- runtime seam known;
+- save/reload ownership known;
+- presentation fallback known;
+- natural-path acceptance defined;
+- locked-invariant collision checked;
+- one-file ownership clear.
+
+Apply the gate to ordinary poverty, Secret Debt, School public results, Forest depth and GIF production. Do not mark a stream READY unless current evidence supports it.
+
+Continue items 67–75 sequentially without waiting for Lead review.
