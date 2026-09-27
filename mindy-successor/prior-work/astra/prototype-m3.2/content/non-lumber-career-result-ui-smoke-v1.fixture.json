@@ -1,0 +1,1273 @@
+{
+  "version": 1,
+  "fixtureId": "non-lumber-career-result-ui-smoke-v1",
+  "careers": [
+    {
+      "actionId": "satyr-maid.shift",
+      "resultPresentationId": "job/satyr-maid/result/default",
+      "titleKey": "action.satyr-maid.shift.label",
+      "expectedTitle": {
+        "ru": "Смена служанки у сатиров",
+        "en": "Satyr Maid shift"
+      },
+      "scenes": [
+        {
+          "sceneId": "spring.default",
+          "bodyKey": "action.satyr-maid.shift.result.spring.default.text",
+          "expectedBody": {
+            "ru": "Весенняя смена в баре сатиров начинается с новых путников и первых по-настоящему занятых столов сезона. Приходится быстро запоминать лица, заказы и ритм зала.",
+            "en": "The spring shift at the satyr bar brings new travelers and the first truly busy tables of the season. You have to learn faces, orders, and the room’s rhythm quickly."
+          },
+          "mediaIds": [
+            "stage.tavern.spring"
+          ]
+        },
+        {
+          "sceneId": "summer.default",
+          "bodyKey": "action.satyr-maid.shift.result.summer.default.text",
+          "expectedBody": {
+            "ru": "Летом зал остаётся шумным допоздна. Поток гостей почти не ослабевает, и хорошая смена зависит от темпа, памяти и умения не теряться в разговорах.",
+            "en": "In summer the room stays loud late into the evening. The flow of guests barely slows, and a good shift depends on pace, memory, and staying composed in conversation."
+          },
+          "mediaIds": [
+            "stage.tavern.summer"
+          ]
+        },
+        {
+          "sceneId": "autumn.default",
+          "bodyKey": "action.satyr-maid.shift.result.autumn.default.text",
+          "expectedBody": {
+            "ru": "Осенняя смена проходит на фоне праздничного движения. Обычная подача превращается в управление очередями, просьбами и постоянно меняющимися столами.",
+            "en": "The autumn shift runs through festival traffic. Ordinary service turns into managing queues, requests, and tables that keep changing."
+          },
+          "mediaIds": [
+            "stage.tavern.autumn"
+          ]
+        },
+        {
+          "sceneId": "winter.default",
+          "bodyKey": "action.satyr-maid.shift.result.winter.default.text",
+          "expectedBody": {
+            "ru": "Зимой незнакомцев меньше, зато постоянные гости задерживаются дольше. Работа становится спокойнее по темпу, но требует больше внимания к привычкам и разговорам.",
+            "en": "Winter brings fewer strangers, but regulars stay longer. The pace is calmer, while the work asks for more attention to habits and conversation."
+          },
+          "mediaIds": [
+            "stage.tavern.winter"
+          ]
+        }
+      ],
+      "unchangedMechanics": {
+        "cost": {
+          "money": 0,
+          "energy": 1
+        },
+        "effects": [
+          {
+            "kind": "incrementCareerCounter",
+            "career": "satyr-maid",
+            "counter": "completed_shifts",
+            "amount": 1
+          },
+          {
+            "kind": "advanceCareer",
+            "career": "satyr-maid",
+            "transition": "first-shift"
+          }
+        ],
+        "mode": "normal",
+        "wage": {
+          "base": 15,
+          "weights": [
+            {
+              "stat": "charm",
+              "factor": 0.35
+            },
+            {
+              "stat": "sexuality",
+              "factor": 0.25
+            }
+          ]
+        },
+        "seasonal": {
+          "spring": [
+            {
+              "kind": "modifyStat",
+              "stat": "charm",
+              "delta": 1
+            },
+            {
+              "kind": "modifyStat",
+              "stat": "sociability",
+              "delta": 1
+            }
+          ],
+          "summer": [
+            {
+              "kind": "modifyStat",
+              "stat": "sexuality",
+              "delta": 1
+            },
+            {
+              "kind": "modifyStat",
+              "stat": "endurance",
+              "delta": 1
+            }
+          ],
+          "autumn": [
+            {
+              "kind": "modifyStat",
+              "stat": "charm",
+              "delta": 1
+            },
+            {
+              "kind": "modifyStat",
+              "stat": "manners",
+              "delta": 1
+            }
+          ],
+          "winter": [
+            {
+              "kind": "modifyStat",
+              "stat": "sociability",
+              "delta": 1
+            },
+            {
+              "kind": "modifyStat",
+              "stat": "charm",
+              "delta": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "actionId": "undead-farm.shift",
+      "resultPresentationId": "job/undead-farm/result/default",
+      "titleKey": "action.undead-farm.shift.label",
+      "expectedTitle": {
+        "ru": "Смена на ферме нежити",
+        "en": "Undead Farm shift"
+      },
+      "scenes": [
+        {
+          "sceneId": "spring.default",
+          "bodyKey": "action.undead-farm.shift.result.spring.default.text",
+          "expectedBody": {
+            "ru": "Весенняя смена проходит на мокрой земле среди свежих всходов и нестабильной магии. Приходится постоянно проверять грядки, инструменты и тех, кто работает рядом.",
+            "en": "The spring shift runs across wet ground among fresh growth and unstable magic. You constantly check the beds, the tools, and the workers beside you."
+          },
+          "mediaIds": [
+            "stage.hunt.spring"
+          ]
+        },
+        {
+          "sceneId": "summer.default",
+          "bodyKey": "action.undead-farm.shift.result.summer.default.text",
+          "expectedBody": {
+            "ru": "Летом всё растёт слишком быстро, поэтому обслуживание не заканчивается ни на минуту. Живые культуры и нежить требуют разного внимания, но общий порядок должен держаться.",
+            "en": "In summer everything grows too quickly, so maintenance never really stops. Living crops and undead workers need different attention, while the whole routine still has to hold together."
+          },
+          "mediaIds": [
+            "stage.hunt.summer"
+          ]
+        },
+        {
+          "sceneId": "autumn.default",
+          "bodyKey": "action.undead-farm.shift.result.autumn.default.text",
+          "expectedBody": {
+            "ru": "Осенняя смена занята сбором, сортировкой и подготовкой запасов. Каждый час приходится решать, что убрать первым и что ещё может подождать.",
+            "en": "The autumn shift is filled with harvesting, sorting, and preparing stores. Every hour means deciding what must be handled first and what can still wait."
+          },
+          "mediaIds": [
+            "stage.hunt.autumn"
+          ]
+        },
+        {
+          "sceneId": "winter.default",
+          "bodyKey": "action.undead-farm.shift.result.winter.default.text",
+          "expectedBody": {
+            "ru": "Зимой работа уходит в помещения: ремонт, хранение и осторожное обращение со странными сохранёнными материалами требуют терпения больше, чем скорости.",
+            "en": "In winter the work moves indoors: repairs, storage, and careful handling of strange preserved materials demand patience more than speed."
+          },
+          "mediaIds": [
+            "stage.hunt.winter"
+          ]
+        }
+      ],
+      "unchangedMechanics": {
+        "cost": {
+          "money": 0,
+          "energy": 1
+        },
+        "effects": [
+          {
+            "kind": "incrementCareerCounter",
+            "career": "undead-farm",
+            "counter": "completed_shifts",
+            "amount": 1
+          },
+          {
+            "kind": "advanceCareer",
+            "career": "undead-farm",
+            "transition": "first-shift"
+          }
+        ],
+        "mode": "normal",
+        "wage": {
+          "base": 15,
+          "weights": [
+            {
+              "stat": "endurance",
+              "factor": 0.3
+            },
+            {
+              "stat": "magic",
+              "factor": 0.3
+            },
+            {
+              "stat": "reason",
+              "factor": 0.2
+            }
+          ]
+        },
+        "seasonal": {
+          "spring": [
+            {
+              "kind": "modifyStat",
+              "stat": "endurance",
+              "delta": 1
+            },
+            {
+              "kind": "modifyStat",
+              "stat": "magic",
+              "delta": 1
+            }
+          ],
+          "summer": [
+            {
+              "kind": "modifyStat",
+              "stat": "endurance",
+              "delta": 1
+            },
+            {
+              "kind": "modifyStat",
+              "stat": "strength",
+              "delta": 1
+            }
+          ],
+          "autumn": [
+            {
+              "kind": "modifyStat",
+              "stat": "endurance",
+              "delta": 1
+            },
+            {
+              "kind": "modifyStat",
+              "stat": "reason",
+              "delta": 1
+            }
+          ],
+          "winter": [
+            {
+              "kind": "modifyStat",
+              "stat": "magic",
+              "delta": 1
+            },
+            {
+              "kind": "modifyStat",
+              "stat": "reason",
+              "delta": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "actionId": "tavern.shift",
+      "resultPresentationId": "job/tavern/result/default",
+      "titleKey": "action.tavern.shift.label",
+      "expectedTitle": {
+        "ru": "Смена в таверне",
+        "en": "Tavern shift"
+      },
+      "scenes": [
+        {
+          "sceneId": "spring.default",
+          "bodyKey": "action.tavern.shift.result.spring.default.text",
+          "expectedBody": {
+            "ru": "Весной в таверне становится больше новых лиц. Смена проходит между обычными заказами, короткими разговорами и попытками быстро понять, кому что нужно.",
+            "en": "Spring brings more unfamiliar faces into the tavern. The shift moves between ordinary orders, short conversations, and quickly working out what each guest needs."
+          },
+          "mediaIds": [
+            "stage.tavern.spring"
+          ]
+        },
+        {
+          "sceneId": "summer.default",
+          "bodyKey": "action.tavern.shift.result.summer.default.text",
+          "expectedBody": {
+            "ru": "Летом столы освобождаются ненадолго и тут же занимают новые гости. Хорошая смена зависит от темпа, ясной памяти и умения не путать просьбы.",
+            "en": "In summer tables stay empty only briefly before new guests take them. A good shift depends on pace, a clear memory, and keeping requests from getting mixed up."
+          },
+          "mediaIds": [
+            "stage.tavern.summer"
+          ]
+        },
+        {
+          "sceneId": "autumn.default",
+          "bodyKey": "action.tavern.shift.result.autumn.default.text",
+          "expectedBody": {
+            "ru": "Осенью поток гостей становится неровным: то зал почти пуст, то все приходят сразу. Приходится постоянно менять порядок задач, не теряя обычного уровня обслуживания.",
+            "en": "Autumn traffic comes in waves: the room is nearly empty one moment and crowded the next. You keep rearranging priorities without letting ordinary service slip."
+          },
+          "mediaIds": [
+            "stage.tavern.autumn"
+          ]
+        },
+        {
+          "sceneId": "winter.default",
+          "bodyKey": "action.tavern.shift.result.winter.default.text",
+          "expectedBody": {
+            "ru": "Зимой люди задерживаются дольше у тёплых столов. Смена проходит спокойнее, но требует больше внимания к постоянным гостям и мелким деталям.",
+            "en": "In winter people linger longer around warm tables. The shift is calmer, but it asks for more attention to regulars and small details."
+          },
+          "mediaIds": [
+            "stage.tavern.winter"
+          ]
+        }
+      ],
+      "unchangedMechanics": {
+        "cost": {
+          "money": 0,
+          "energy": 1
+        },
+        "effects": [
+          {
+            "kind": "incrementCareerCounter",
+            "career": "tavern",
+            "counter": "completed_shifts",
+            "amount": 1
+          }
+        ],
+        "mode": "normal",
+        "wage": {
+          "base": 15,
+          "weights": [
+            {
+              "stat": "charm",
+              "factor": 0.3
+            },
+            {
+              "stat": "wits",
+              "factor": 0.3
+            },
+            {
+              "stat": "manners",
+              "factor": 0.2
+            }
+          ]
+        },
+        "seasonal": {
+          "spring": [
+            {
+              "kind": "modifyStat",
+              "stat": "charm",
+              "delta": 1
+            },
+            {
+              "kind": "modifyStat",
+              "stat": "wits",
+              "delta": 1
+            }
+          ],
+          "summer": [
+            {
+              "kind": "modifyStat",
+              "stat": "charm",
+              "delta": 1
+            },
+            {
+              "kind": "modifyStat",
+              "stat": "manners",
+              "delta": 1
+            }
+          ],
+          "autumn": [
+            {
+              "kind": "modifyStat",
+              "stat": "wits",
+              "delta": 1
+            },
+            {
+              "kind": "modifyStat",
+              "stat": "reason",
+              "delta": 1
+            }
+          ],
+          "winter": [
+            {
+              "kind": "modifyStat",
+              "stat": "manners",
+              "delta": 1
+            },
+            {
+              "kind": "modifyStat",
+              "stat": "wits",
+              "delta": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "actionId": "hunter.shift",
+      "resultPresentationId": "job/hunter/result/default",
+      "titleKey": "action.hunter.shift.label",
+      "expectedTitle": {
+        "ru": "Охотничья работа",
+        "en": "Hunter shift"
+      },
+      "scenes": [
+        {
+          "sceneId": "spring.default",
+          "bodyKey": "action.hunter.shift.result.spring.default.text",
+          "expectedBody": {
+            "ru": "Весенняя работа проходит по знакомым окрестным маршрутам. Земля ещё сырая, следы читаются хорошо, а главная задача — не превращать обычную смену в большую экспедицию.",
+            "en": "The spring job follows familiar local routes. The ground is still damp, tracks are easy to read, and the main task is to keep ordinary work from turning into a major expedition."
+          },
+          "mediaIds": [
+            "stage.hunt.spring"
+          ]
+        },
+        {
+          "sceneId": "summer.default",
+          "bodyKey": "action.hunter.shift.result.summer.default.text",
+          "expectedBody": {
+            "ru": "Летом приходится выбирать более короткие маршруты и внимательнее следить за темпом. Обычная работа ценит точность и выносливость больше, чем дальность похода.",
+            "en": "In summer you choose shorter routes and watch the pace more carefully. Ordinary work rewards accuracy and endurance more than the distance covered."
+          },
+          "mediaIds": [
+            "stage.hunt.summer"
+          ]
+        },
+        {
+          "sceneId": "autumn.default",
+          "bodyKey": "action.hunter.shift.result.autumn.default.text",
+          "expectedBody": {
+            "ru": "Осенью местная работа становится плотнее: следов больше, погода меняется быстрее, а возвращаться нужно с ясным результатом, а не с новой загадкой.",
+            "en": "Autumn makes local work denser: there are more tracks, the weather changes faster, and the goal is to return with a clear result rather than a new mystery."
+          },
+          "mediaIds": [
+            "stage.hunt.autumn"
+          ]
+        },
+        {
+          "sceneId": "winter.default",
+          "bodyKey": "action.hunter.shift.result.winter.default.text",
+          "expectedBody": {
+            "ru": "Зимой обычная охотничья смена требует осторожного маршрута и раннего возвращения. Работа остаётся местной и практической, без выхода в отдельный экспедиционный слой.",
+            "en": "In winter an ordinary hunting shift calls for a careful route and an early return. The work stays local and practical, without entering a separate expedition layer."
+          },
+          "mediaIds": [
+            "stage.hunt.winter"
+          ]
+        }
+      ],
+      "unchangedMechanics": {
+        "cost": {
+          "money": 0,
+          "energy": 1
+        },
+        "effects": [
+          {
+            "kind": "incrementCareerCounter",
+            "career": "hunter",
+            "counter": "completed_shifts",
+            "amount": 1
+          }
+        ],
+        "mode": "normal",
+        "wage": {
+          "base": 15,
+          "weights": [
+            {
+              "stat": "dexterity",
+              "factor": 0.35
+            },
+            {
+              "stat": "endurance",
+              "factor": 0.3
+            },
+            {
+              "stat": "wits",
+              "factor": 0.2
+            }
+          ]
+        },
+        "seasonal": {
+          "spring": [
+            {
+              "kind": "modifyStat",
+              "stat": "dexterity",
+              "delta": 1
+            },
+            {
+              "kind": "modifyStat",
+              "stat": "wits",
+              "delta": 1
+            }
+          ],
+          "summer": [
+            {
+              "kind": "modifyStat",
+              "stat": "endurance",
+              "delta": 1
+            },
+            {
+              "kind": "modifyStat",
+              "stat": "dexterity",
+              "delta": 1
+            }
+          ],
+          "autumn": [
+            {
+              "kind": "modifyStat",
+              "stat": "dexterity",
+              "delta": 1
+            },
+            {
+              "kind": "modifyStat",
+              "stat": "endurance",
+              "delta": 1
+            }
+          ],
+          "winter": [
+            {
+              "kind": "modifyStat",
+              "stat": "wits",
+              "delta": 1
+            },
+            {
+              "kind": "modifyStat",
+              "stat": "endurance",
+              "delta": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "actionId": "guard.shift",
+      "resultPresentationId": "job/guard/result/default",
+      "titleKey": "action.guard.shift.label",
+      "expectedTitle": {
+        "ru": "Патруль стражи",
+        "en": "Guard patrol"
+      },
+      "scenes": [
+        {
+          "sceneId": "spring.default",
+          "bodyKey": "action.guard.shift.result.spring.default.text",
+          "expectedBody": {
+            "ru": "Весенний патруль проходит по ожившим улицам, где после зимы снова становится тесно. Работа состоит из обычных проверок, коротких разговоров и внимательности к мелким нарушениям порядка.",
+            "en": "The spring patrol moves through streets growing busy again after winter. The work is ordinary checks, short conversations, and attention to small disruptions."
+          },
+          "mediaIds": [
+            "stage.guard.spring"
+          ]
+        },
+        {
+          "sceneId": "summer.default",
+          "bodyKey": "action.guard.shift.result.summer.default.text",
+          "expectedBody": {
+            "ru": "Летом людей на улицах больше и маршруты плотнее. Смена требует ровного темпа, терпения и умения не превращать каждую мелочь в большой конфликт.",
+            "en": "Summer puts more people on the streets and makes the routes busier. The shift calls for steady pacing, patience, and not turning every small problem into a larger conflict."
+          },
+          "mediaIds": [
+            "stage.guard.summer"
+          ]
+        },
+        {
+          "sceneId": "autumn.default",
+          "bodyKey": "action.guard.shift.result.autumn.default.text",
+          "expectedBody": {
+            "ru": "Осенью к обычным патрулям добавляется больше организационной суеты. Приходится внимательнее следить за проходами, очередями и тем, чтобы правила оставались понятными для всех.",
+            "en": "Autumn adds more organizational pressure to ordinary patrols. You pay closer attention to routes, queues, and keeping the rules clear for everyone."
+          },
+          "mediaIds": [
+            "stage.guard.autumn"
+          ]
+        },
+        {
+          "sceneId": "winter.default",
+          "bodyKey": "action.guard.shift.result.winter.default.text",
+          "expectedBody": {
+            "ru": "Зимой смена становится медленнее и осторожнее. Скользкие улицы и ранняя темнота требуют больше внимания к маршруту и меньше спешки.",
+            "en": "Winter makes the shift slower and more cautious. Slippery streets and early darkness require more attention to the route and less haste."
+          },
+          "mediaIds": [
+            "stage.guard.winter"
+          ]
+        }
+      ],
+      "unchangedMechanics": {
+        "cost": {
+          "money": 0,
+          "energy": 1
+        },
+        "effects": [
+          {
+            "kind": "incrementCareerCounter",
+            "career": "guard",
+            "counter": "completed_shifts",
+            "amount": 1
+          }
+        ],
+        "mode": "normal",
+        "wage": {
+          "base": 15,
+          "weights": [
+            {
+              "stat": "endurance",
+              "factor": 0.3
+            },
+            {
+              "stat": "manners",
+              "factor": 0.25
+            },
+            {
+              "stat": "strength",
+              "factor": 0.2
+            },
+            {
+              "stat": "reason",
+              "factor": 0.15
+            }
+          ]
+        },
+        "seasonal": {
+          "spring": [
+            {
+              "kind": "modifyStat",
+              "stat": "endurance",
+              "delta": 1
+            },
+            {
+              "kind": "modifyStat",
+              "stat": "manners",
+              "delta": 1
+            }
+          ],
+          "summer": [
+            {
+              "kind": "modifyStat",
+              "stat": "endurance",
+              "delta": 1
+            },
+            {
+              "kind": "modifyStat",
+              "stat": "strength",
+              "delta": 1
+            }
+          ],
+          "autumn": [
+            {
+              "kind": "modifyStat",
+              "stat": "manners",
+              "delta": 1
+            },
+            {
+              "kind": "modifyStat",
+              "stat": "reason",
+              "delta": 1
+            }
+          ],
+          "winter": [
+            {
+              "kind": "modifyStat",
+              "stat": "endurance",
+              "delta": 1
+            },
+            {
+              "kind": "modifyStat",
+              "stat": "dexterity",
+              "delta": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "actionId": "merchant.shift",
+      "resultPresentationId": "job/merchant/result/default",
+      "titleKey": "action.merchant.shift.label",
+      "expectedTitle": {
+        "ru": "Смена торговца",
+        "en": "Merchant shift"
+      },
+      "scenes": [
+        {
+          "sceneId": "spring.default",
+          "bodyKey": "action.merchant.shift.result.spring.default.text",
+          "expectedBody": {
+            "ru": "Весной рынок быстро наполняется новыми товарами и новыми покупателями. Смена проходит между оценкой, короткими переговорами и проверкой того, что действительно стоит выставлять сегодня.",
+            "en": "Spring quickly fills the market with new goods and new buyers. The shift moves between appraisal, short negotiations, and checking what is actually worth offering today."
+          },
+          "mediaIds": [
+            "stage.town"
+          ]
+        },
+        {
+          "sceneId": "summer.default",
+          "bodyKey": "action.merchant.shift.result.summer.default.text",
+          "expectedBody": {
+            "ru": "Летом торговые ряды шумнее и быстрее. Приходится держать в голове цены, сроки и обещания, не позволяя спешке превращать обычную сделку в ошибку.",
+            "en": "Summer makes the market louder and faster. You keep prices, timing, and promises in mind without letting haste turn an ordinary deal into a mistake."
+          },
+          "mediaIds": [
+            "stage.town"
+          ]
+        },
+        {
+          "sceneId": "autumn.default",
+          "bodyKey": "action.merchant.shift.result.autumn.default.text",
+          "expectedBody": {
+            "ru": "Осенью больше внимания уходит на запасы и расчёт. Смена требует понимать, что стоит продать сейчас, что придержать и где не переплатить за чужую срочность.",
+            "en": "Autumn puts more attention on stock and calculation. The shift is about knowing what to sell now, what to hold, and where not to overpay for someone else’s urgency."
+          },
+          "mediaIds": [
+            "stage.town"
+          ]
+        },
+        {
+          "sceneId": "winter.default",
+          "bodyKey": "action.merchant.shift.result.winter.default.text",
+          "expectedBody": {
+            "ru": "Зимой выбор становится уже, а договорённости важнее. Хорошая смена зависит от точного учёта и умения заранее замечать нехватку.",
+            "en": "Winter narrows the selection and makes agreements more important. A good shift depends on accurate records and noticing shortages before they become problems."
+          },
+          "mediaIds": [
+            "stage.town"
+          ]
+        }
+      ],
+      "unchangedMechanics": {
+        "cost": {
+          "money": 0,
+          "energy": 1
+        },
+        "effects": [
+          {
+            "kind": "incrementCareerCounter",
+            "career": "merchant",
+            "counter": "completed_shifts",
+            "amount": 1
+          }
+        ],
+        "mode": "normal",
+        "wage": {
+          "base": 15,
+          "weights": [
+            {
+              "stat": "wits",
+              "factor": 0.35
+            },
+            {
+              "stat": "charm",
+              "factor": 0.25
+            },
+            {
+              "stat": "manners",
+              "factor": 0.2
+            },
+            {
+              "stat": "reason",
+              "factor": 0.15
+            }
+          ]
+        },
+        "seasonal": {
+          "spring": [
+            {
+              "kind": "modifyStat",
+              "stat": "wits",
+              "delta": 1
+            },
+            {
+              "kind": "modifyStat",
+              "stat": "charm",
+              "delta": 1
+            }
+          ],
+          "summer": [
+            {
+              "kind": "modifyStat",
+              "stat": "charm",
+              "delta": 1
+            },
+            {
+              "kind": "modifyStat",
+              "stat": "manners",
+              "delta": 1
+            }
+          ],
+          "autumn": [
+            {
+              "kind": "modifyStat",
+              "stat": "wits",
+              "delta": 1
+            },
+            {
+              "kind": "modifyStat",
+              "stat": "reason",
+              "delta": 1
+            }
+          ],
+          "winter": [
+            {
+              "kind": "modifyStat",
+              "stat": "reason",
+              "delta": 1
+            },
+            {
+              "kind": "modifyStat",
+              "stat": "wits",
+              "delta": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "actionId": "artist-geisha.shift",
+      "resultPresentationId": "job/artist-geisha/result/default",
+      "titleKey": "action.artist-geisha.shift.label",
+      "expectedTitle": {
+        "ru": "Смена в Доме искусств",
+        "en": "Artist House shift"
+      },
+      "scenes": [
+        {
+          "sceneId": "spring.default",
+          "bodyKey": "action.artist-geisha.shift.result.spring.default.text",
+          "expectedBody": {
+            "ru": "Весенняя смена в Доме искусств проходит между репетицией, подготовкой пространства и вниманием к первым гостям сезона. Хороший результат зависит от собранности не меньше, чем от выразительности.",
+            "en": "The spring shift at the Artist House moves between rehearsal, preparing the space, and attending to the first guests of the season. A good result depends on composure as much as expression."
+          },
+          "mediaIds": [
+            "stage.tavern.spring"
+          ]
+        },
+        {
+          "sceneId": "summer.default",
+          "bodyKey": "action.artist-geisha.shift.result.summer.default.text",
+          "expectedBody": {
+            "ru": "Летом программа плотнее, а гости задерживаются дольше. Приходится быстро переключаться между выступлением, подготовкой и спокойным общением.",
+            "en": "Summer brings a denser program and guests who stay longer. You switch quickly between performance, preparation, and calm conversation."
+          },
+          "mediaIds": [
+            "stage.tavern.summer"
+          ]
+        },
+        {
+          "sceneId": "autumn.default",
+          "bodyKey": "action.artist-geisha.shift.result.autumn.default.text",
+          "expectedBody": {
+            "ru": "Осенью работа становится более требовательной к деталям. Репетиции, порядок программы и ожидания гостей нужно удерживать одновременно, не теряя общего ритма.",
+            "en": "Autumn makes the work more demanding of detail. Rehearsal, program order, and guest expectations all have to be held together without losing the overall rhythm."
+          },
+          "mediaIds": [
+            "stage.tavern.autumn"
+          ]
+        },
+        {
+          "sceneId": "winter.default",
+          "bodyKey": "action.artist-geisha.shift.result.winter.default.text",
+          "expectedBody": {
+            "ru": "Зимой смена проходит в более камерном темпе. Меньше движения означает больше внимания к точности, манерам и качеству каждого отдельного выступления.",
+            "en": "Winter gives the shift a more intimate pace. Less movement means more attention to precision, manners, and the quality of each individual performance."
+          },
+          "mediaIds": [
+            "stage.tavern.winter"
+          ]
+        }
+      ],
+      "unchangedMechanics": {
+        "cost": {
+          "money": 0,
+          "energy": 1
+        },
+        "effects": [
+          {
+            "kind": "incrementCareerCounter",
+            "career": "artist-geisha",
+            "counter": "completed_shifts",
+            "amount": 1
+          }
+        ],
+        "mode": "normal",
+        "wage": {
+          "base": 15,
+          "weights": [
+            {
+              "stat": "manners",
+              "factor": 0.3
+            },
+            {
+              "stat": "charm",
+              "factor": 0.3
+            },
+            {
+              "stat": "sexuality",
+              "factor": 0.15
+            },
+            {
+              "stat": "dexterity",
+              "factor": 0.15
+            }
+          ]
+        },
+        "seasonal": {
+          "spring": [
+            {
+              "kind": "modifyStat",
+              "stat": "manners",
+              "delta": 1
+            },
+            {
+              "kind": "modifyStat",
+              "stat": "charm",
+              "delta": 1
+            }
+          ],
+          "summer": [
+            {
+              "kind": "modifyStat",
+              "stat": "charm",
+              "delta": 1
+            },
+            {
+              "kind": "modifyStat",
+              "stat": "dexterity",
+              "delta": 1
+            }
+          ],
+          "autumn": [
+            {
+              "kind": "modifyStat",
+              "stat": "manners",
+              "delta": 1
+            },
+            {
+              "kind": "modifyStat",
+              "stat": "sexuality",
+              "delta": 1
+            }
+          ],
+          "winter": [
+            {
+              "kind": "modifyStat",
+              "stat": "charm",
+              "delta": 1
+            },
+            {
+              "kind": "modifyStat",
+              "stat": "reason",
+              "delta": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "actionId": "assassin.shift",
+      "resultPresentationId": "job/assassin/result/default",
+      "titleKey": "action.assassin.shift.label",
+      "expectedTitle": {
+        "ru": "Тайная работа",
+        "en": "Assassin shift"
+      },
+      "scenes": [
+        {
+          "sceneId": "spring.default",
+          "bodyKey": "action.assassin.shift.result.spring.default.text",
+          "expectedBody": {
+            "ru": "Весенняя смена проходит в наблюдении и проверке маршрутов. Людей на улицах становится больше, поэтому особенно важны терпение и незаметность.",
+            "en": "The spring shift is spent on observation and route checks. More people are back on the streets, so patience and discretion matter more."
+          },
+          "mediaIds": [
+            "stage.town"
+          ]
+        },
+        {
+          "sceneId": "summer.default",
+          "bodyKey": "action.assassin.shift.result.summer.default.text",
+          "expectedBody": {
+            "ru": "Летом город остаётся оживлённым дольше. Приходится точнее выбирать время для доставки, наблюдения и подготовки маршрута.",
+            "en": "In summer the city stays busy later. Timing matters more for delivery, observation, and route preparation."
+          },
+          "mediaIds": [
+            "stage.town"
+          ]
+        },
+        {
+          "sceneId": "autumn.default",
+          "bodyKey": "action.assassin.shift.result.autumn.default.text",
+          "expectedBody": {
+            "ru": "Осенью работа требует больше проверки деталей: расписания меняются, проходы становятся менее предсказуемыми, а ошибки заметнее.",
+            "en": "Autumn demands more checking of details: schedules shift, routes become less predictable, and mistakes are easier to notice."
+          },
+          "mediaIds": [
+            "stage.town"
+          ]
+        },
+        {
+          "sceneId": "winter.default",
+          "bodyKey": "action.assassin.shift.result.winter.default.text",
+          "expectedBody": {
+            "ru": "Зимой обычная скрытая работа становится медленнее и осторожнее. Ранний сумрак меняет маршруты и требует лучшей подготовки.",
+            "en": "In winter ordinary covert work becomes slower and more careful. Early darkness changes routes and requires better preparation."
+          },
+          "mediaIds": [
+            "stage.town"
+          ]
+        }
+      ],
+      "unchangedMechanics": {
+        "cost": {
+          "money": 0,
+          "energy": 1
+        },
+        "effects": [
+          {
+            "kind": "incrementCareerCounter",
+            "career": "assassin",
+            "counter": "completed_shifts",
+            "amount": 1
+          }
+        ],
+        "mode": "normal",
+        "wage": {
+          "base": 15,
+          "weights": [
+            {
+              "stat": "dexterity",
+              "factor": 0.35
+            },
+            {
+              "stat": "wits",
+              "factor": 0.3
+            },
+            {
+              "stat": "reason",
+              "factor": 0.2
+            },
+            {
+              "stat": "manners",
+              "factor": 0.1
+            }
+          ]
+        },
+        "seasonal": {
+          "spring": [
+            {
+              "kind": "modifyStat",
+              "stat": "dexterity",
+              "delta": 1
+            },
+            {
+              "kind": "modifyStat",
+              "stat": "wits",
+              "delta": 1
+            }
+          ],
+          "summer": [
+            {
+              "kind": "modifyStat",
+              "stat": "dexterity",
+              "delta": 1
+            },
+            {
+              "kind": "modifyStat",
+              "stat": "manners",
+              "delta": 1
+            }
+          ],
+          "autumn": [
+            {
+              "kind": "modifyStat",
+              "stat": "wits",
+              "delta": 1
+            },
+            {
+              "kind": "modifyStat",
+              "stat": "reason",
+              "delta": 1
+            }
+          ],
+          "winter": [
+            {
+              "kind": "modifyStat",
+              "stat": "dexterity",
+              "delta": 1
+            },
+            {
+              "kind": "modifyStat",
+              "stat": "reason",
+              "delta": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "actionId": "prostitute.shift",
+      "resultPresentationId": "job/prostitute/result/default",
+      "titleKey": "action.prostitute.shift.label",
+      "expectedTitle": {
+        "ru": "Профессиональная смена",
+        "en": "Professional shift"
+      },
+      "scenes": [
+        {
+          "sceneId": "spring.default",
+          "bodyKey": "action.prostitute.shift.result.spring.default.text",
+          "expectedBody": {
+            "ru": "Весенняя смена проходит спокойно: больше новых клиентов, больше разговоров о правилах и границах, больше внимания к тому, чтобы ожидания были понятны заранее.",
+            "en": "The spring shift stays calm: more new clients, more conversations about rules and boundaries, and more attention to making expectations clear in advance."
+          },
+          "mediaIds": [
+            "stage.room"
+          ]
+        },
+        {
+          "sceneId": "summer.default",
+          "bodyKey": "action.prostitute.shift.result.summer.default.text",
+          "expectedBody": {
+            "ru": "Летом поток становится плотнее, поэтому особенно важны расписание, паузы и ясные договорённости. Смена остаётся добровольной и проходит в заранее обозначенных рамках.",
+            "en": "Summer brings a busier flow, making scheduling, breaks, and clear agreements especially important. The shift remains voluntary and stays within stated boundaries."
+          },
+          "mediaIds": [
+            "stage.room"
+          ]
+        },
+        {
+          "sceneId": "autumn.default",
+          "bodyKey": "action.prostitute.shift.result.autumn.default.text",
+          "expectedBody": {
+            "ru": "Осенью работа становится ровнее и привычнее. Больше времени уходит на организацию, повторные встречи и поддержание профессионального порядка.",
+            "en": "Autumn makes the work steadier and more familiar. More time goes into organization, repeat appointments, and maintaining professional routines."
+          },
+          "mediaIds": [
+            "stage.room"
+          ]
+        },
+        {
+          "sceneId": "winter.default",
+          "bodyKey": "action.prostitute.shift.result.winter.default.text",
+          "expectedBody": {
+            "ru": "Зимой смена проходит тише. Меньше спешки позволяет уделить больше внимания комфорту, границам и аккуратному завершению каждой встречи.",
+            "en": "Winter makes the shift quieter. Less rush leaves more room to focus on comfort, boundaries, and closing each appointment carefully."
+          },
+          "mediaIds": [
+            "stage.room"
+          ]
+        }
+      ],
+      "unchangedMechanics": {
+        "cost": {
+          "money": 0,
+          "energy": 1
+        },
+        "effects": [
+          {
+            "kind": "incrementCareerCounter",
+            "career": "prostitute",
+            "counter": "completed_shifts",
+            "amount": 1
+          }
+        ],
+        "mode": "normal",
+        "wage": {
+          "base": 15,
+          "weights": [
+            {
+              "stat": "sexuality",
+              "factor": 0.35
+            },
+            {
+              "stat": "charm",
+              "factor": 0.3
+            },
+            {
+              "stat": "manners",
+              "factor": 0.2
+            },
+            {
+              "stat": "endurance",
+              "factor": 0.15
+            }
+          ]
+        },
+        "seasonal": {
+          "spring": [
+            {
+              "kind": "modifyStat",
+              "stat": "sexuality",
+              "delta": 1
+            },
+            {
+              "kind": "modifyStat",
+              "stat": "charm",
+              "delta": 1
+            }
+          ],
+          "summer": [
+            {
+              "kind": "modifyStat",
+              "stat": "charm",
+              "delta": 1
+            },
+            {
+              "kind": "modifyStat",
+              "stat": "endurance",
+              "delta": 1
+            }
+          ],
+          "autumn": [
+            {
+              "kind": "modifyStat",
+              "stat": "manners",
+              "delta": 1
+            },
+            {
+              "kind": "modifyStat",
+              "stat": "sexuality",
+              "delta": 1
+            }
+          ],
+          "winter": [
+            {
+              "kind": "modifyStat",
+              "stat": "charm",
+              "delta": 1
+            },
+            {
+              "kind": "modifyStat",
+              "stat": "manners",
+              "delta": 1
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "invariants": {
+    "sameActionId": true,
+    "samePresentationId": true,
+    "sameMechanics": true,
+    "sameActionCounts": true,
+    "sameSaveIdentity": true,
+    "localeChangesPresentationOnly": true
+  }
+}
