@@ -1,0 +1,176 @@
+{
+  "version": 1,
+  "kind": "full-roster-gif-coverage-map",
+  "authoritativeRoster": {
+    "ordinaryCareerCount": 10,
+    "ordinaryCareerKeys": [
+      "lumber",
+      "hunter",
+      "tavern",
+      "guard",
+      "merchant",
+      "assassin",
+      "prostitute",
+      "geisha-artist",
+      "satyr-maid",
+      "undead-farm"
+    ],
+    "hiddenCareers": [
+      "palace",
+      "secret-debt-slave"
+    ]
+  },
+  "policy": {
+    "noGameplayRulesInvented": true,
+    "noCharacterIdentitiesInvented": true,
+    "noArtDirectionSelected": true,
+    "mediaReuseMayCrossIds": true,
+    "semanticIdsMustNotCollapseForReuse": true
+  },
+  "rows": [
+    {
+      "key": "lumber",
+      "label": "Lumber",
+      "kind": "ordinary",
+      "identityStatus": "SHIPPED_IDENTITY_DEFINED",
+      "semanticPattern": "job/lumber/...",
+      "reuseCandidate": "reuse-work-loop",
+      "staticTextFallbackSufficient": true,
+      "dedicatedGifDesirable": true,
+      "dedicatedGifTiming": "after-content-lock",
+      "note": "Production semantic Lumber surface already exists; later GIFs can attach to shipped IDs."
+    },
+    {
+      "key": "hunter",
+      "label": "Hunter",
+      "kind": "ordinary",
+      "identityStatus": "CONTENT_AUTHORING_FIRST",
+      "semanticPattern": null,
+      "reuseCandidate": "reuse-outdoor-route-loop",
+      "staticTextFallbackSufficient": true,
+      "dedicatedGifDesirable": true,
+      "dedicatedGifTiming": "after-content-lock",
+      "note": "Final semantic IDs must follow authored scene/job content; media reuse must not collapse gameplay identities."
+    },
+    {
+      "key": "tavern",
+      "label": "Tavern",
+      "kind": "ordinary",
+      "identityStatus": "CONTENT_AUTHORING_FIRST",
+      "semanticPattern": null,
+      "reuseCandidate": "reuse-indoor-service-loop",
+      "staticTextFallbackSufficient": true,
+      "dedicatedGifDesirable": true,
+      "dedicatedGifTiming": "after-content-lock",
+      "note": "Final semantic IDs must follow authored scene/job content; media reuse must not collapse gameplay identities."
+    },
+    {
+      "key": "guard",
+      "label": "Guard",
+      "kind": "ordinary",
+      "identityStatus": "CONTENT_AUTHORING_FIRST",
+      "semanticPattern": null,
+      "reuseCandidate": "reuse-patrol-duty-loop",
+      "staticTextFallbackSufficient": true,
+      "dedicatedGifDesirable": true,
+      "dedicatedGifTiming": "after-content-lock",
+      "note": "Final semantic IDs must follow authored scene/job content; media reuse must not collapse gameplay identities."
+    },
+    {
+      "key": "merchant",
+      "label": "Merchant",
+      "kind": "ordinary",
+      "identityStatus": "CONTENT_AUTHORING_FIRST",
+      "semanticPattern": null,
+      "reuseCandidate": "reuse-counter-logistics-loop",
+      "staticTextFallbackSufficient": true,
+      "dedicatedGifDesirable": true,
+      "dedicatedGifTiming": "after-content-lock",
+      "note": "Final semantic IDs must follow authored scene/job content; media reuse must not collapse gameplay identities."
+    },
+    {
+      "key": "assassin",
+      "label": "Assassin",
+      "kind": "ordinary",
+      "identityStatus": "CONTENT_AUTHORING_FIRST",
+      "semanticPattern": null,
+      "reuseCandidate": "reuse-stealth-prep-loop",
+      "staticTextFallbackSufficient": true,
+      "dedicatedGifDesirable": true,
+      "dedicatedGifTiming": "after-content-lock",
+      "note": "Final semantic IDs must follow authored scene/job content; media reuse must not collapse gameplay identities."
+    },
+    {
+      "key": "prostitute",
+      "label": "Prostitute",
+      "kind": "ordinary",
+      "identityStatus": "CONTENT_AUTHORING_FIRST",
+      "semanticPattern": null,
+      "reuseCandidate": "reuse-client-service-loop",
+      "staticTextFallbackSufficient": true,
+      "dedicatedGifDesirable": true,
+      "dedicatedGifTiming": "after-content-lock",
+      "note": "Final semantic IDs must follow authored scene/job content; media reuse must not collapse gameplay identities."
+    },
+    {
+      "key": "geisha-artist",
+      "label": "Geisha / Artist",
+      "kind": "ordinary",
+      "identityStatus": "CONTENT_AUTHORING_FIRST",
+      "semanticPattern": null,
+      "reuseCandidate": "reuse-performance-loop",
+      "staticTextFallbackSufficient": true,
+      "dedicatedGifDesirable": true,
+      "dedicatedGifTiming": "after-content-lock",
+      "note": "Final semantic IDs must follow authored scene/job content; media reuse must not collapse gameplay identities."
+    },
+    {
+      "key": "satyr-maid",
+      "label": "Satyr Maid",
+      "kind": "ordinary",
+      "identityStatus": "CONTENT_AUTHORING_FIRST",
+      "semanticPattern": null,
+      "reuseCandidate": "reuse-service-household-loop",
+      "staticTextFallbackSufficient": true,
+      "dedicatedGifDesirable": true,
+      "dedicatedGifTiming": "after-content-lock",
+      "note": "Final semantic IDs must follow authored scene/job content; media reuse must not collapse gameplay identities."
+    },
+    {
+      "key": "undead-farm",
+      "label": "Undead Farm",
+      "kind": "ordinary",
+      "identityStatus": "CONTENT_AUTHORING_FIRST",
+      "semanticPattern": null,
+      "reuseCandidate": "reuse-farm-production-loop",
+      "staticTextFallbackSufficient": true,
+      "dedicatedGifDesirable": true,
+      "dedicatedGifTiming": "after-content-lock",
+      "note": "Final semantic IDs must follow authored scene/job content; media reuse must not collapse gameplay identities."
+    },
+    {
+      "key": "palace",
+      "label": "Palace",
+      "kind": "hidden-meta",
+      "identityStatus": "CONTENT_AUTHORING_FIRST",
+      "semanticPattern": null,
+      "reuseCandidate": "reuse-court-service-loop",
+      "staticTextFallbackSufficient": true,
+      "dedicatedGifDesirable": true,
+      "dedicatedGifTiming": "after-content-and-product-lock",
+      "note": "Final semantic IDs must follow authored scene/job content; media reuse must not collapse gameplay identities."
+    },
+    {
+      "key": "secret-debt-slave",
+      "label": "Secret Debt / Slave",
+      "kind": "hidden",
+      "identityStatus": "CONTENT_AUTHORING_FIRST",
+      "semanticPattern": null,
+      "reuseCandidate": "reuse-coercive-obligation-loop",
+      "staticTextFallbackSufficient": true,
+      "dedicatedGifDesirable": true,
+      "dedicatedGifTiming": "after-content-and-product-lock",
+      "note": "Final semantic IDs must follow authored scene/job content; media reuse must not collapse gameplay identities."
+    }
+  ]
+}
