@@ -1849,3 +1849,71 @@ Define the QA baseline for the new direct Product decision RU+EN:
 Apply to career, School, poverty, Forest, Secret Debt and presentation content.
 
 Continue items 106–114 sequentially without waiting for Lead review.
+
+
+## Queue item 115 — localization runtime review gate v1
+
+Create NEW file only:
+- `docs/qa-prep/LOCALIZATION_RUNTIME_REVIEW_GATE_v1.md`
+
+Define review checks for Lead localization runtime:
+- supported locales exactly RU+EN initially;
+- Russian fallback;
+- locale-neutral gameplay/save IDs;
+- switching locale cannot mutate Run/Meta state;
+- missing translation is non-fatal but QA-visible;
+- no gameplay RNG consumption;
+- no duplicate localized events;
+- static UI and authored content can use one resolver.
+
+## Queue item 116 — localization key collision audit
+
+Create NEW file only:
+- `docs/qa-prep/LOCALIZATION_KEY_COLLISION_AUDIT_v1.md`
+
+Define and apply key-collision checks for deterministic keys derived from action/event/choice/presentation IDs.
+
+Cover careers, School, poverty, Forest and UI shell.
+
+## Queue item 117 — bilingual migration no-false-green audit
+
+Create NEW file only:
+- `docs/qa-prep/BILINGUAL_MIGRATION_NO_FALSE_GREEN_AUDIT_v1.md`
+
+Define how CI must distinguish:
+- translated;
+- fallback-only migration debt;
+- staged bilingual content not yet production-routed;
+- missing player-facing localization;
+- locale-neutral non-player-facing data.
+
+Do not let Russian fallback falsely count as complete English coverage.
+
+## Queue item 118 — locale switch save invariance smoke plan
+
+Create NEW file only:
+- `docs/qa-prep/LOCALE_SWITCH_SAVE_INVARIANCE_SMOKE_v1.md`
+
+Specify an executable UI smoke:
+- start run;
+- perform work;
+- capture Save;
+- switch RU -> EN -> RU;
+- Save gameplay state remains byte-equivalent or semantically equivalent excluding presentation preference;
+- pending event/presentation/media identity unchanged.
+
+## Queue item 119 — localization integration risk gate v1
+
+Create NEW file only:
+- `docs/qa-prep/LOCALIZATION_INTEGRATION_RISK_GATE_v1.md`
+
+Summarize current RU+EN integration readiness after Lead runtime patch status:
+- UI shell;
+- ten careers;
+- School;
+- poverty;
+- Forest;
+- Secret Debt;
+- multi-GIF alt/caption coverage.
+
+Continue items 111–119 sequentially without waiting for Lead review.
