@@ -95,65 +95,65 @@
     "school/literacy-and-numbers/lesson/default": {
       "static": {
         "kind": "image",
-        "src": "assets/presentation/school-day-study.svg",
-        "alt": "Учебная сцена в школе с рабочим столом, материалами и дневным светом.",
-        "altKey": "presentation.static.school.day.alt"
+        "src": "assets/presentation/school-course-literacy-and-numbers.svg",
+        "alt": "Учебная сцена курса «Грамота и числа» с характерными материалами и без изображения преподавателя.",
+        "altKey": "presentation.static.school-course-literacy-and-numbers.alt"
       }
     },
     "school/arcana/lesson/default": {
       "static": {
         "kind": "image",
-        "src": "assets/presentation/school-day-study.svg",
-        "alt": "Учебная сцена в школе с рабочим столом, материалами и дневным светом.",
-        "altKey": "presentation.static.school.day.alt"
+        "src": "assets/presentation/school-course-arcana.svg",
+        "alt": "Учебная сцена курса «Аркана» с характерными материалами и без изображения преподавателя.",
+        "altKey": "presentation.static.school-course-arcana.alt"
       }
     },
     "school/rhetoric-and-social/lesson/default": {
       "static": {
         "kind": "image",
-        "src": "assets/presentation/school-day-study.svg",
-        "alt": "Учебная сцена в школе с рабочим столом, материалами и дневным светом.",
-        "altKey": "presentation.static.school.day.alt"
+        "src": "assets/presentation/school-course-rhetoric-and-social.svg",
+        "alt": "Учебная сцена курса «Риторика и общение» с характерными материалами и без изображения преподавателя.",
+        "altKey": "presentation.static.school-course-rhetoric-and-social.alt"
       }
     },
     "school/etiquette-and-presentation/lesson/default": {
       "static": {
         "kind": "image",
-        "src": "assets/presentation/school-day-study.svg",
-        "alt": "Учебная сцена в школе с рабочим столом, материалами и дневным светом.",
-        "altKey": "presentation.static.school.day.alt"
+        "src": "assets/presentation/school-course-etiquette-and-presentation.svg",
+        "alt": "Учебная сцена курса «Этикет и подача» с характерными материалами и без изображения преподавателя.",
+        "altKey": "presentation.static.school-course-etiquette-and-presentation.alt"
       }
     },
     "school/field-craft/lesson/default": {
       "static": {
         "kind": "image",
-        "src": "assets/presentation/school-day-study.svg",
-        "alt": "Учебная сцена в школе с рабочим столом, материалами и дневным светом.",
-        "altKey": "presentation.static.school.day.alt"
+        "src": "assets/presentation/school-course-field-craft.svg",
+        "alt": "Учебная сцена курса «Полевая практика» с характерными материалами и без изображения преподавателя.",
+        "altKey": "presentation.static.school-course-field-craft.alt"
       }
     },
     "school/physical-training/lesson/default": {
       "static": {
         "kind": "image",
-        "src": "assets/presentation/school-day-study.svg",
-        "alt": "Учебная сцена в школе с рабочим столом, материалами и дневным светом.",
-        "altKey": "presentation.static.school.day.alt"
+        "src": "assets/presentation/school-course-physical-training.svg",
+        "alt": "Учебная сцена курса «Физическая подготовка» с характерными материалами и без изображения преподавателя.",
+        "altKey": "presentation.static.school-course-physical-training.alt"
       }
     },
     "school/arts-and-performance/lesson/default": {
       "static": {
         "kind": "image",
-        "src": "assets/presentation/school-day-study.svg",
-        "alt": "Учебная сцена в школе с рабочим столом, материалами и дневным светом.",
-        "altKey": "presentation.static.school.day.alt"
+        "src": "assets/presentation/school-course-arts-and-performance.svg",
+        "alt": "Учебная сцена курса «Искусство и выступление» с характерными материалами и без изображения преподавателя.",
+        "altKey": "presentation.static.school-course-arts-and-performance.alt"
       }
     },
     "school/body-confidence/lesson/default": {
       "static": {
         "kind": "image",
-        "src": "assets/presentation/school-day-study.svg",
-        "alt": "Учебная сцена в школе с рабочим столом, материалами и дневным светом.",
-        "altKey": "presentation.static.school.day.alt"
+        "src": "assets/presentation/school-course-body-confidence.svg",
+        "alt": "Учебная сцена курса «Уверенность в теле» с характерными материалами и без изображения преподавателя.",
+        "altKey": "presentation.static.school-course-body-confidence.alt"
       }
     },
     "location/town/event/school-lesson-content-v1-after-school/default": {
@@ -175,153 +175,153 @@
     "location/town/event/school-life-content-v1-after-night-study/default": {
       "static": {
         "kind": "image",
-        "src": "assets/presentation/school-night-study.svg",
-        "alt": "Тихая ночная учёба за столом при тёплом свете лампы.",
-        "altKey": "presentation.static.school.night-study.alt"
+        "src": "assets/presentation/school-night-study-generic-v2.svg",
+        "alt": "Тихая общая ночная учёба за столом при лампе без привязки к конкретному курсу.",
+        "altKey": "presentation.static.school-night-study-generic-v2.alt"
       }
     },
     "location/town/event/poverty-street-production-helpful-summer/default": {
       "static": {
         "kind": "image",
-        "src": "assets/presentation/poverty-street.svg",
-        "alt": "Героиня на небогатой городской улице среди простой уличной обстановки.",
-        "altKey": "presentation.static.poverty.street.alt"
+        "src": "assets/presentation/poverty-street-helpful-summer.svg",
+        "alt": "Летняя уличная сцена небольшой помощи в бедном городском районе без показа награды.",
+        "altKey": "presentation.static.poverty-street-helpful-summer.alt"
       }
     },
     "location/town/event/poverty-street-production-neutral-autumn/default": {
       "static": {
         "kind": "image",
-        "src": "assets/presentation/poverty-street.svg",
-        "alt": "Героиня на небогатой городской улице среди простой уличной обстановки.",
-        "altKey": "presentation.static.poverty.street.alt"
+        "src": "assets/presentation/poverty-street-neutral-autumn.svg",
+        "alt": "Спокойная осенняя сцена на небогатой городской улице.",
+        "altKey": "presentation.static.poverty-street-neutral-autumn.alt"
       }
     },
     "location/town/event/poverty-street-production-pressure-winter/default": {
       "static": {
         "kind": "image",
-        "src": "assets/presentation/poverty-street.svg",
-        "alt": "Героиня на небогатой городской улице среди простой уличной обстановки.",
-        "altKey": "presentation.static.poverty.street.alt"
+        "src": "assets/presentation/poverty-street-pressure-winter.svg",
+        "alt": "Зимняя уличная сцена давления среды со снегом и холодом без показа точного штрафа.",
+        "altKey": "presentation.static.poverty-street-pressure-winter.alt"
       }
     },
     "location/town/event/poverty-cheap-production-shared-quiet-autumn/default": {
       "static": {
         "kind": "image",
-        "src": "assets/presentation/poverty-cheap-lodging.svg",
-        "alt": "Простая дешёвая комната с кроватью и минимальной обстановкой.",
-        "altKey": "presentation.static.poverty.cheap-lodging.alt"
+        "src": "assets/presentation/poverty-cheap-shared-quiet-autumn.svg",
+        "alt": "Тихая дешёвая комната осенью с простой кроватью и минимальной обстановкой.",
+        "altKey": "presentation.static.poverty-cheap-shared-quiet-autumn.alt"
       }
     },
     "location/town/event/poverty-recovery-production-small-coin-help/default": {
       "static": {
         "kind": "image",
-        "src": "assets/presentation/poverty-recovery-help.svg",
-        "alt": "Спокойная уличная сцена небольшой помощи и восстановления без показа награды.",
-        "altKey": "presentation.static.poverty.recovery-help.alt"
+        "src": "assets/presentation/poverty-recovery-small-coin-help.svg",
+        "alt": "Сцена небольшой денежной помощи без указания суммы или изменения исхода.",
+        "altKey": "presentation.static.poverty-recovery-small-coin-help.alt"
       }
     },
     "location/town/event/poverty-recovery-production-short-cleanup/default": {
       "static": {
         "kind": "image",
-        "src": "assets/presentation/poverty-recovery-help.svg",
-        "alt": "Спокойная уличная сцена небольшой помощи и восстановления без показа награды.",
-        "altKey": "presentation.static.poverty.recovery-help.alt"
+        "src": "assets/presentation/poverty-recovery-short-cleanup.svg",
+        "alt": "Короткая бытовая уборка как небольшая восстановительная работа.",
+        "altKey": "presentation.static.poverty-recovery-short-cleanup.alt"
       }
     },
     "location/town/event/poverty-recovery-production-herb-bundle/default": {
       "static": {
         "kind": "image",
-        "src": "assets/presentation/poverty-recovery-help.svg",
-        "alt": "Спокойная уличная сцена небольшой помощи и восстановления без показа награды.",
-        "altKey": "presentation.static.poverty.recovery-help.alt"
+        "src": "assets/presentation/poverty-recovery-herb-bundle.svg",
+        "alt": "Небольшая помощь с пучком трав без отображения скрытых эффектов.",
+        "altKey": "presentation.static.poverty-recovery-herb-bundle.alt"
       }
     },
     "location/town/event/poverty-pressure-production-cold-rain/default": {
       "static": {
         "kind": "image",
-        "src": "assets/presentation/poverty-pressure.svg",
-        "alt": "Героиня переживает тяжёлые уличные условия под дождём и городской нагрузкой.",
-        "altKey": "presentation.static.poverty.pressure.alt"
+        "src": "assets/presentation/poverty-pressure-cold-rain.svg",
+        "alt": "Холодный дождь на городской улице создаёт давление среды без показа точного штрафа.",
+        "altKey": "presentation.static.poverty-pressure-cold-rain.alt"
       }
     },
     "location/town/event/poverty-pressure-production-noisy-loading/default": {
       "static": {
         "kind": "image",
-        "src": "assets/presentation/poverty-pressure.svg",
-        "alt": "Героиня переживает тяжёлые уличные условия под дождём и городской нагрузкой.",
-        "altKey": "presentation.static.poverty.pressure.alt"
+        "src": "assets/presentation/poverty-pressure-noisy-loading.svg",
+        "alt": "Шумная погрузка на улице создаёт тяжёлые условия без изменения уже выбранного события.",
+        "altKey": "presentation.static.poverty-pressure-noisy-loading.alt"
       }
     },
     "location/town/event/poverty-pressure-production-muddy-splash/default": {
       "static": {
         "kind": "image",
-        "src": "assets/presentation/poverty-pressure.svg",
-        "alt": "Героиня переживает тяжёлые уличные условия под дождём и городской нагрузкой.",
-        "altKey": "presentation.static.poverty.pressure.alt"
+        "src": "assets/presentation/poverty-pressure-muddy-splash.svg",
+        "alt": "Грязные лужи и брызги осложняют уличную сцену без показа механического штрафа.",
+        "altKey": "presentation.static.poverty-pressure-muddy-splash.alt"
       }
     },
     "activity/forest/return/success": {
       "static": {
         "kind": "image",
-        "src": "assets/presentation/forest-result-success.svg",
-        "alt": "Спокойное успешное возвращение из лесной экспедиции к кромке леса.",
-        "altKey": "presentation.static.forest.result.success.alt"
+        "src": "assets/presentation/forest-return-success-v2.svg",
+        "alt": "Сцена успешного возвращения непосредственно у лесной тропы.",
+        "altKey": "presentation.static.forest-return-success-v2.alt"
       }
     },
     "job/lumber/event/forest-result-content-v1-success/default": {
       "static": {
         "kind": "image",
-        "src": "assets/presentation/forest-result-success.svg",
-        "alt": "Спокойное успешное возвращение из лесной экспедиции к кромке леса.",
-        "altKey": "presentation.static.forest.result.success.alt"
+        "src": "assets/presentation/forest-reaction-success-v2.svg",
+        "alt": "Отдельная рабочая реакция после успешного возвращения из леса.",
+        "altKey": "presentation.static.forest-reaction-success-v2.alt"
       }
     },
     "activity/forest/return/escape": {
       "static": {
         "kind": "image",
-        "src": "assets/presentation/forest-result-escape.svg",
-        "alt": "Контролируемое безопасное отступление с лесного маршрута.",
-        "altKey": "presentation.static.forest.result.escape.alt"
+        "src": "assets/presentation/forest-return-escape-v2.svg",
+        "alt": "Сцена безопасного отступления непосредственно у лесной тропы.",
+        "altKey": "presentation.static.forest-return-escape-v2.alt"
       }
     },
     "job/lumber/event/forest-result-content-v1-escape/default": {
       "static": {
         "kind": "image",
-        "src": "assets/presentation/forest-result-escape.svg",
-        "alt": "Контролируемое безопасное отступление с лесного маршрута.",
-        "altKey": "presentation.static.forest.result.escape.alt"
+        "src": "assets/presentation/forest-reaction-escape-v2.svg",
+        "alt": "Отдельная рабочая реакция после безопасного отступления из леса.",
+        "altKey": "presentation.static.forest-reaction-escape-v2.alt"
       }
     },
     "activity/forest/return/failure": {
       "static": {
         "kind": "image",
-        "src": "assets/presentation/forest-result-failure.svg",
-        "alt": "Усталое, но безопасное возвращение после неудачной лесной экспедиции.",
-        "altKey": "presentation.static.forest.result.failure.alt"
+        "src": "assets/presentation/forest-return-failure-v2.svg",
+        "alt": "Сцена неудачного возвращения непосредственно у лесной тропы.",
+        "altKey": "presentation.static.forest-return-failure-v2.alt"
       }
     },
     "job/lumber/event/forest-result-content-v1-failure/default": {
       "static": {
         "kind": "image",
-        "src": "assets/presentation/forest-result-failure.svg",
-        "alt": "Усталое, но безопасное возвращение после неудачной лесной экспедиции.",
-        "altKey": "presentation.static.forest.result.failure.alt"
+        "src": "assets/presentation/forest-reaction-failure-v2.svg",
+        "alt": "Отдельная рабочая реакция после неудачного возвращения из леса.",
+        "altKey": "presentation.static.forest-reaction-failure-v2.alt"
       }
     },
     "relationship/lumber-foreman/lumber-foreman-notice/default": {
       "static": {
         "kind": "image",
-        "src": "assets/presentation/foreman-professional.svg",
-        "alt": "Профессиональный разговор работницы с бригадиром на лесной площадке.",
-        "altKey": "presentation.static.foreman.professional.alt"
+        "src": "assets/presentation/foreman-professional-milestone-v2.svg",
+        "alt": "Профессиональный разговор с бригадиром на лесной площадке после заметного рабочего рубежа.",
+        "altKey": "presentation.static.foreman-professional-milestone-v2.alt"
       }
     },
     "relationship/lumber-foreman/lumber-night-foreman-professional/default": {
       "static": {
         "kind": "image",
-        "src": "assets/presentation/foreman-night-professional.svg",
-        "alt": "Спокойный вечерний разговор с бригадиром у тёплого огня.",
-        "altKey": "presentation.static.foreman.night-professional.alt"
+        "src": "assets/presentation/foreman-night-voluntary-v2.svg",
+        "alt": "Добровольный спокойный вечерний разговор с бригадиром у огня.",
+        "altKey": "presentation.static.foreman-night-voluntary-v2.alt"
       }
     },
     "job/lumber/shift/spring/default": {
