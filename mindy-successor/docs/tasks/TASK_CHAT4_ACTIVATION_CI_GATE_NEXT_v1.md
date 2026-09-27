@@ -869,3 +869,24 @@ Define a reusable Git-verification checklist for Lead when a worker reports comp
 This is a coordination QA tool, not a new runtime gate.
 
 Continue items 50–58 sequentially without waiting for Lead review.
+
+
+## Queue item 59 — PR29 poverty production contract review
+
+Create NEW file only:
+- `docs/qa-prep/PR29_POVERTY_PRODUCTION_CONTRACT_REVIEW_v1.md`
+
+Review Lead PR #29 against current main and authoritative poverty design.
+
+Verify:
+- PR is test-only;
+- no exact OPEN lodging price or street penalty is newly locked by the test;
+- zero-money street sleep remains a valid anti-softlock path;
+- School Night study remains unavailable on street;
+- a starting Lumber shift remains reachable afterward;
+- Hard Work condition/reward and Forest `activityResult` are untouched;
+- the test syntax/assumptions match current `night-flow.test.ts`, `helpers.ts`, `definitions.json` and engine behavior.
+
+Conclude GREEN_FOR_MERGE or BLOCKED with exact reason. Do not change PR29 files.
+
+Continue items 51–59 sequentially without waiting for Lead review.
