@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 
-const fixture=JSON.parse(readFileSync('content/legacy-root-localization-production-patch-v2.fixture.json','utf8'));
+const fixture=JSON.parse(readFileSync('content/legacy-root-localization-production-v1.fixture.json','utf8'));
 const root=JSON.parse(readFileSync('content/localization.json','utf8')).strings;
 const base=JSON.parse(readFileSync('content/packs/base.json','utf8'));
 const gopher=JSON.parse(readFileSync('content/packs/gopher.json','utf8'));
