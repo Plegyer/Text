@@ -1991,3 +1991,110 @@ Effective immediately by direct Product decision:
 - if an item was already committed before this rule, do not rewrite it blindly; record it for localization migration/review.
 
 Do not create a second copy of the gameplay event for English.
+
+
+## Queue item 123 — Forest RU+EN authored source inventory
+
+Create NEW file only:
+- `docs/lumber-prep/FOREST_BILINGUAL_SOURCE_INVENTORY_v1.md`
+
+Inventory all current player-facing Forest authored content requiring RU+EN:
+- route scenes;
+- challenge families;
+- seasonal context;
+- result reactions;
+- Activity continuation text;
+- multi-GIF alt/captions.
+
+Classify REACHABLE_NOW / STAGED / PRODUCT_BLOCKED. Preserve exact `activityResult` continuation semantics.
+
+## Queue item 124 — Forest route/challenge RU+EN bank v1
+
+Create NEW file only:
+- `docs/lumber-prep/FOREST_ROUTE_CHALLENGE_RU_EN_v1.md`
+
+Convert currently safe Forest route/challenge authored scenes into paired RU+EN content.
+
+Do not resolve Old Boundary Token or hunter-trail Product decisions that remain OPEN.
+
+## Queue item 125 — Forest result reaction bilingual production draft
+
+Create NEW production-oriented file only:
+- `prior-work/astra/prototype-m3.2/content/packs/forest-result-content-bilingual-v1.json`
+
+Prepare RU+EN result-reaction content for exact existing Forest `activityResult` success/escape/failure identities.
+
+No shared runtime/schema edits. If bilingual payload cannot fit strict production schema yet, keep locale-neutral gameplay/event data plus explicit RU/EN authoring sidecar structure and document the limitation.
+
+## Queue item 126 — Forest bilingual contract test
+
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/forest-bilingual-content-contract.test.ts`
+
+Validate:
+- RU + EN coverage for authored Forest player text;
+- locale-neutral route/result IDs;
+- no duplicated gameplay events by locale;
+- exact `activityResult` trigger identity unchanged;
+- no Lumber Hard Work condition/reward drift.
+
+## Queue item 127 — Secret Debt RU+EN lender/work/Night bank v1
+
+Create NEW file only:
+- `docs/poverty-prep/SECRET_DEBT_CORE_CONTENT_RU_EN_v1.md`
+
+Convert currently authored lender offer, delayed activation, hidden work and forced-Night content into paired RU+EN text.
+
+Keep all unresolved probability/debt/delay/penalty mechanics OPEN.
+
+## Queue item 128 — Secret Debt outcomes RU+EN bank v1
+
+Create NEW file only:
+- `docs/poverty-prep/SECRET_DEBT_OUTCOMES_RU_EN_v1.md`
+
+Provide paired RU+EN authored content for:
+- paid_freedom;
+- bound_life;
+- takeover.
+
+Keep exact eligibility thresholds and Meta rewards OPEN.
+
+## Queue item 129 — Secret Debt bilingual authoring fixture
+
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/secret-debt-authored-content-ru-en-v1.fixture.json`
+
+Encode the bilingual authored content with:
+- locale-neutral semantic/content IDs;
+- RU text;
+- EN text;
+- OPEN/null markers for unresolved mechanics;
+- shared presentation identities.
+
+Do not include in production catalog.
+
+## Queue item 130 — Forest/Secret Debt bilingual multi-GIF map
+
+Create NEW file only:
+- `docs/lumber-prep/FOREST_SECRET_DEBT_BILINGUAL_MULTI_GIF_MAP_v1.md`
+
+Map shared 3–5 GIF pools with RU/EN alt/captions for:
+- Forest routes/challenges/results;
+- Secret Debt lender/work/Night/outcomes.
+
+GIF/media candidate identity must remain locale-neutral.
+
+## Queue item 131 — Forest/Secret Debt bilingual handoff v1
+
+Create NEW file only:
+- `docs/lumber-prep/FOREST_SECRET_DEBT_BILINGUAL_HANDOFF_v1.md`
+
+Summarize:
+- bilingual authored files ready;
+- production-safe Forest content;
+- Secret Debt content ready but mechanics Product-blocked;
+- multi-GIF mappings;
+- exact Lead localization seam required;
+- selective integration order.
+
+Continue items 123–131 sequentially without waiting for Lead review.
