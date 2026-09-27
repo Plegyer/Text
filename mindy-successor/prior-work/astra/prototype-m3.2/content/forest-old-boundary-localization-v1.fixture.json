@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "id": "forest.old-boundary.localization.v1",
+  "status": "PRESENTATION_ONLY_LOCALIZATION_DELTA",
+  "sourceLocale": "ru",
+  "locales": [
+    "ru",
+    "en"
+  ],
+  "routeRef": "forest.route.old-boundary",
+  "authoritativeGateRef": "itemCapability(enter_old_boundary) present=true",
+  "strings": {
+    "forestRouteScene.forest.route.old-boundary.stones.text": {
+      "ru": "Первый межевой камень почти целиком утонул во мху. Но стоит заметить один — и следующий уже легче отличить от обычных валунов. Камни складываются в линию, которой совершенно безразлично, куда позже проложили лесовозную дорогу.",
+      "en": "The first boundary stone is almost completely hidden under moss. Once one is noticed, the next becomes easier to distinguish from ordinary rock. The stones form a line that ignores the newer logging road entirely."
+    },
+    "forestRouteScene.forest.route.old-boundary.old-marks.text": {
+      "ru": "На нескольких стволах видны неглубокие зарубки, слишком выветренные для нынешних рабочих. Они повторяются с намеренной регулярностью. Эти следы больше похожи не на метки рубки, а на старое указание о том, где не следовало переходить границу.",
+      "en": "Several trunks bear shallow marks too weathered to belong to the current crews. They repeat with deliberate regularity. The cuts look less like logging marks than an old instruction about where not to cross."
+    },
+    "forestRouteScene.forest.route.old-boundary.clearing.text": {
+      "ru": "Деревья отступают от узкой полосы каменистой земли. Физической преграды нет. Ощущение границы создаёт повторение: камень, знак, просвет, следующий камень. Доступ к маршруту определяет существующий capability gate; этот текст не расходует и не преобразует жетон.",
+      "en": "The trees pull back from a narrow strip of stony ground. Nothing physically blocks the way. The sense of a boundary comes from repetition: stone, mark, gap, another stone. Route access is determined by the existing capability gate; this text does not consume or transform the token."
+    },
+    "forestRouteScene.forest.route.old-boundary.beyond-markers.text": {
+      "ru": "За самыми заметными межевыми знаками лес выглядит менее обжитым. Старые следы человеческого присутствия всё ещё встречаются, но современные дороги больше не объясняют, откуда они взялись и куда вели.",
+      "en": "Past the clearest boundary markers, the forest looks less worked. Old traces of human presence remain, but modern roads no longer explain where they came from or where they led."
+    },
+    "forestRouteScene.forest.route.old-boundary.reaction.text": {
+      "ru": "Эти знаки настолько старые, что идти по ним — скорее читать дорогу, чем просто следовать ей.",
+      "en": "The markers are old enough that following them feels less like taking a road and more like reading one."
+    }
+  },
+  "explicitNonAssumptions": [
+    "No token acquisition source is selected.",
+    "No token price is selected.",
+    "No consume/retain/turn-in behavior is selected.",
+    "Localization does not alter the existing route gate."
+  ],
+  "invariants": {
+    "localizationOnly": true,
+    "createsRouteId": false,
+    "createsConditions": false,
+    "createsEffects": false,
+    "createsRewards": false,
+    "changesTokenSemantics": false,
+    "localeNeutralIdentity": true
+  }
+}
