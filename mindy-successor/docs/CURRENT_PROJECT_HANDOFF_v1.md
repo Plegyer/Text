@@ -673,3 +673,118 @@ Remaining work:
 - additive QA only where it hardens already-green contracts.
 
 Do not reopen Hard Work, School baseline, generic item capability or presentation timing contracts without a demonstrated defect.
+
+
+## 17. Live continuity update — full-game production-authoring phase
+
+This is a live recovery update, not a final handoff. Git remains authoritative.
+
+### Current main / technical floor
+
+Current coordination main after the latest board sync:
+- board sync commit: `b218f5f341ffb174067ed9559e6a5ad4b873add2`;
+- technical RC floor remains PR #27 / `6cd990f45d368291b4a288f9f48c569f6e0b207f`;
+- full technical check at that floor: **221/221 PASS**;
+- later main changes are coordination/docs only.
+
+### What game is being built
+
+This project is the full successor game, not a Lumber-only demo.
+
+The target product includes:
+- 10 ordinary/public careers;
+- Palace as a hidden/meta career unlocked only by Hard Work on all 10 ordinary careers;
+- ordinary poverty/housing with normal room / cheap lodging / street recovery;
+- a separate Secret Debt/Slave hidden career triggered from street poverty, with delayed debt trap, ordinary-job blocking, forced Night component and three required outcome families: `paid_freedom`, `bound_life`, `takeover`;
+- School as a progression system, not a stat shop;
+- typed NPC relationships;
+- NightFlow;
+- items/capabilities;
+- expedition-style large Activity, with Forest as the first authored slice;
+- endings and Meta progression;
+- 160-day runs, 12 progression stats plus separate Lust axis;
+- GIF-first central presentation.
+
+Lumber is the first fully exercised reference career used to validate architecture and cross-system behavior. Do not narrow overall project scope to Lumber.
+
+### Visual production model
+
+The presentation baseline is intentionally lightweight and media-replaceable:
+- animated GIF is the primary production format;
+- one persistent central media window;
+- stable semantic `presentationId`;
+- GIF/static/text fallback chain;
+- gameplay never depends on GIF frames, timing or completion;
+- animation-off affects presentation only;
+- save does not store animation frame/time;
+- GIFs may be reused across content variants where gameplay identity remains distinct.
+
+This matters for production estimates: the project does not assume a conventional bespoke animation pipeline for every scene.
+
+### Locked invariants that must survive all future work
+
+Lumber Hard Work:
+- ending: `ending.lumber.hard-work`;
+- ONLY eligibility condition: `completed_shifts >= 50`;
+- exact reward: `hardWork:lumber`;
+- no School, Forest, item, relationship, season, Night or milestone prerequisite.
+
+Forest -> Lumber continuation:
+- exact A5 boundary: `activityResult`.
+
+Palace:
+- unlock requires Hard Work on all 10 ordinary careers;
+- Secret Debt/Slave does not count toward the 10/10 prerequisite.
+
+School:
+- exactly eight paid courses;
+- locked tuition/stat packages;
+- one current-day Energy per paid lesson;
+- no ordinary Lust gain;
+- paid lesson increments only `lessons_completed`;
+- Night study increments only `night_study_sessions`;
+- Night study uses Night slot, costs zero tuition/current-day Energy, grants +2 to supported selected stat, and applies next-day Energy -1;
+- management/accounting and Arcana/Forest public-result authoring remain Product-owned until explicitly decided.
+
+### Current worker branches and active queues
+
+All four previous queues were rechecked in Git and are complete. Each worker immediately received six more tasks in the same branch.
+
+Chat 2 — presentation/GIF production:
+- branch: `chat2/presentation-replacement-next`;
+- active items: **61–66**;
+- task file: `docs/tasks/TASK_CHAT2_PRESENTATION_REPLACEMENT_NEXT_v1.md`;
+- queue commit: `bfa4e5b8b0e27b4147e6380e1e094fe9d2cdcf0c`;
+- current focus: full-roster GIF coverage, poverty/Secret Debt presentation flow, GIF reuse taxonomy, full-game presentationId template, asset dependency matrix.
+
+Chat 3 — Forest + poverty/Secret Debt:
+- branch: `chat3/lumber-production-proof-next`;
+- active items: **55–60**;
+- task file: `docs/tasks/TASK_CHAT3_LUMBER_PRODUCTION_PROOF_NEXT_v1.md`;
+- queue commit: `a67aca7e32f7d9193cb4671c851445d9b5dc8655`;
+- current focus: ordinary poverty readiness, Secret Debt state machine, cross-system dependencies, outcome acceptance, Forest/poverty coexistence.
+
+Chat 4 — QA/full product-scope preservation:
+- branch: `chat4/activation-ci-gate-next`;
+- active items: **49–54**;
+- task file: `docs/tasks/TASK_CHAT4_ACTIVATION_CI_GATE_NEXT_v1.md`;
+- queue commit: `d139b3b88563f88e08dcd936d684a87a5f132c30`;
+- current focus: full-scope audit, starter trio readiness, remaining-seven readiness, poverty QA and GIF-first full-game guardrails.
+
+Chat 5 — School production authoring:
+- branch: `chat5/school-pa-gate-next`;
+- active items: **49–54**;
+- task file: `docs/tasks/TASK_CHAT5_SCHOOL_PA_GATE_NEXT_v1.md`;
+- queue commit: `d6b407608d2a347ab9fee99a52fe6ac1a30891ba`;
+- current focus: eight-track teacher authoring structure, milestone choices, public-result publication contract, reusable content unit, School-to-career integration inventory.
+
+### Lead operating rule
+
+Do not wait for all workers before reviewing/integrating useful completed work. When a worker finishes:
+1. verify expected artifacts in Git;
+2. review ownership and locked invariants;
+3. immediately append the next six independent tasks in the same branch when ownership remains compatible;
+4. integrate useful compatible work asynchronously;
+5. update live board and this recovery snapshot after meaningful phase changes.
+
+Do not create a final transfer document merely because context may eventually expire. Keep these durable Git documents current so a replacement Lead can recover at any time.
