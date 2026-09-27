@@ -2358,3 +2358,78 @@ Separate:
 - PRODUCT_BLOCKED.
 
 Continue items 139–150 sequentially without waiting for Lead review.
+
+
+## Queue item 151 — PR44 School localization exact-head failure audit v1
+Create NEW file only:
+- `docs/qa-prep/PR44_SCHOOL_LOCALIZATION_FAILURE_AUDIT_v1.md`
+
+Review PR #44 exact-head CI failure from actual Actions evidence. Identify the precise failing assertion/render boundary and verify the Lead fix does not change School mechanics.
+
+## Queue item 152 — PR44 School localization fixed-head acceptance v1
+Create NEW file only:
+- `docs/qa-prep/PR44_SCHOOL_LOCALIZATION_FIXED_HEAD_ACCEPTANCE_v1.md`
+
+After Lead pushes a fix, review exact PR head: RU/EN School panel, eight courses, Night-study labels, current reachable School event/media localization, gameplay/save invariance, and exact-head CI.
+
+## Queue item 153 — PR44 post-merge main audit v1
+Create NEW file only:
+- `docs/qa-prep/PR44_SCHOOL_LOCALIZATION_POST_MERGE_AUDIT_v1.md`
+
+Only after merge, verify current main SHA and post-merge CI. Mark NOT_YET_MERGED until Git proves otherwise.
+
+## Queue item 154 — poverty executable natural-path test QA v4
+Create NEW file only:
+- `docs/qa-prep/POVERTY_EXECUTABLE_NATURAL_PATH_TEST_QA_V4.md`
+
+Review Chat3 item 149 against current main identities and item-140 localization delta. Require real natural path, RU/EN invariance, one-time effects, reload stability, Secret Debt exclusion.
+
+## Queue item 155 — poverty selective PR acceptance template v2
+Create NEW file only:
+- `docs/qa-prep/POVERTY_SELECTIVE_PR_ACCEPTANCE_TEMPLATE_v2.md`
+
+Prepare the exact gate for the next Lead ordinary-poverty localization PR: collision-free 84-key merge, current IDs only, executable smoke, exact-head CI, post-merge CI.
+
+## Queue item 156 — Chat2 real GIF sourcing/provenance QA v2
+Create NEW file only:
+- `docs/qa-prep/REAL_GIF_SOURCING_PROVENANCE_QA_V2.md`
+
+Review Chat2 items 172+ as they appear. Require explicit redistributable provenance; uncertain rights = DO_NOT_SHIP. Generic GIF-host availability is not a license.
+
+## Queue item 157 — first imported real GIF pool QA v1
+Create NEW file only:
+- `docs/qa-prep/FIRST_IMPORTED_REAL_GIF_POOL_QA_V1.md`
+
+If Chat2 imports assets, verify actual repo GIF signature/files, 3–5 compatible candidates, current semantic presentationId, RU+EN alt, static fallback and locale-neutral selection. If none exist, record BLOCKED_BY_REAL_ASSETS.
+
+## Queue item 158 — relationship/Night current-main boundary QA v1
+Create NEW file only:
+- `docs/qa-prep/RELATIONSHIP_NIGHT_CURRENT_MAIN_BOUNDARY_QA_V1.md`
+
+Review new Chat5 stream against current main. Ensure it stays content/localization-only, typed relationship identity, voluntary Night semantics, no Secret Debt bleed, no Hard Work drift, and no invented canonical roster.
+
+## Queue item 159 — Foreman relationship localization readiness QA v1
+Create NEW file only:
+- `docs/qa-prep/FOREMAN_RELATIONSHIP_LOCALIZATION_READINESS_QA_V1.md`
+
+Review Chat5 Foreman RU+EN payload/tests when present against exact current-main `lumber.foreman` identities and Night choice.
+
+## Queue item 160 — localization full-product shipped-surface audit v1
+Create NEW file only:
+- `docs/qa-prep/LOCALIZATION_FULL_PRODUCT_SHIPPED_SURFACE_AUDIT_v1.md`
+
+Recompute current-main shipped player-facing localization coverage after PR44 status and before poverty integration. Distinguish SHIPPED_RU_EN / RU_FALLBACK_ONLY / MISSING / STAGED.
+
+## Queue item 161 — current Product-open isolation audit v3
+Create NEW file only:
+- `docs/qa-prep/CURRENT_PRODUCT_OPEN_ISOLATION_AUDIT_V3.md`
+
+Recheck School exact-course, Hunter trail, Old Boundary unresolved semantics, Secret Debt mechanics/rewards and Palace unresolved content remain unpromoted through current integration work.
+
+## Queue item 162 — next production integration gate v12
+Create NEW file only:
+- `docs/qa-prep/NEXT_PRODUCTION_INTEGRATION_GATE_v12.md`
+
+Summarize readiness after items 151–161 for School PR44, ordinary poverty localization, real GIF assets, Relationships/Night, Forest staged depth and Secret Debt boundaries.
+
+Continue items 151–162 sequentially without waiting for Lead review.
