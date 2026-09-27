@@ -1574,6 +1574,282 @@
           }
         ]
       }
+    },
+    {
+      "id": "satyr-maid.shift",
+      "label": "Satyr Maid shift",
+      "description": "Serve a shift at the satyr bar. This is the first target production layer; final wage/stat tuning remains balance-owned.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [],
+      "effects": [
+        {
+          "kind": "incrementCareerCounter",
+          "career": "satyr-maid",
+          "counter": "completed_shifts",
+          "amount": 1
+        },
+        {
+          "kind": "advanceCareer",
+          "career": "satyr-maid",
+          "transition": "first-shift"
+        }
+      ],
+      "mode": "normal",
+      "wage": {
+        "base": 15,
+        "weights": [
+          {
+            "stat": "charm",
+            "factor": 0.35
+          },
+          {
+            "stat": "sexuality",
+            "factor": 0.25
+          }
+        ]
+      },
+      "scenes": [
+        {
+          "id": "spring.default",
+          "text": "Spring shift at the satyr bar: new travellers and the first busy tables of the season.",
+          "conditions": [],
+          "media": [
+            "stage.tavern.spring"
+          ]
+        },
+        {
+          "id": "summer.default",
+          "text": "Summer shift at the satyr bar: the room stays loud late into the evening and service never really slows down.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "summer"
+            }
+          ],
+          "media": [
+            "stage.tavern.summer"
+          ]
+        },
+        {
+          "id": "autumn.default",
+          "text": "Autumn shift at the satyr bar: festival traffic and demanding guests turn routine service into crowd management.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "autumn"
+            }
+          ],
+          "media": [
+            "stage.tavern.autumn"
+          ]
+        },
+        {
+          "id": "winter.default",
+          "text": "Winter shift at the satyr bar: fewer strangers, more regulars, and longer conversations around warm tables.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "winter"
+            }
+          ],
+          "media": [
+            "stage.tavern.winter"
+          ]
+        }
+      ],
+      "seasonal": {
+        "spring": [
+          {
+            "kind": "modifyStat",
+            "stat": "charm",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "sociability",
+            "delta": 1
+          }
+        ],
+        "summer": [
+          {
+            "kind": "modifyStat",
+            "stat": "sexuality",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "endurance",
+            "delta": 1
+          }
+        ],
+        "autumn": [
+          {
+            "kind": "modifyStat",
+            "stat": "charm",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "manners",
+            "delta": 1
+          }
+        ],
+        "winter": [
+          {
+            "kind": "modifyStat",
+            "stat": "sociability",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "charm",
+            "delta": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "undead-farm.shift",
+      "label": "Undead Farm shift",
+      "description": "Work a shift on the undead farm. This is the first target production layer; final wage/stat tuning remains balance-owned.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [],
+      "effects": [
+        {
+          "kind": "incrementCareerCounter",
+          "career": "undead-farm",
+          "counter": "completed_shifts",
+          "amount": 1
+        },
+        {
+          "kind": "advanceCareer",
+          "career": "undead-farm",
+          "transition": "first-shift"
+        }
+      ],
+      "mode": "normal",
+      "wage": {
+        "base": 15,
+        "weights": [
+          {
+            "stat": "endurance",
+            "factor": 0.3
+          },
+          {
+            "stat": "magic",
+            "factor": 0.3
+          },
+          {
+            "stat": "reason",
+            "factor": 0.2
+          }
+        ]
+      },
+      "scenes": [
+        {
+          "id": "spring.default",
+          "text": "Spring farm shift: wet ground, fresh growth, and the first unstable magical shoots need constant attention.",
+          "conditions": [],
+          "media": [
+            "stage.hunt.spring"
+          ]
+        },
+        {
+          "id": "summer.default",
+          "text": "Summer farm shift: fast growth and heavy maintenance keep both living crops and undead workers busy.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "summer"
+            }
+          ],
+          "media": [
+            "stage.hunt.summer"
+          ]
+        },
+        {
+          "id": "autumn.default",
+          "text": "Autumn farm shift: harvest, sorting, and processing compete for every hour before storage closes.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "autumn"
+            }
+          ],
+          "media": [
+            "stage.hunt.autumn"
+          ]
+        },
+        {
+          "id": "winter.default",
+          "text": "Winter farm shift: storage, repair, and careful work with the strangest preserved materials move indoors.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "winter"
+            }
+          ],
+          "media": [
+            "stage.hunt.winter"
+          ]
+        }
+      ],
+      "seasonal": {
+        "spring": [
+          {
+            "kind": "modifyStat",
+            "stat": "endurance",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "magic",
+            "delta": 1
+          }
+        ],
+        "summer": [
+          {
+            "kind": "modifyStat",
+            "stat": "endurance",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "strength",
+            "delta": 1
+          }
+        ],
+        "autumn": [
+          {
+            "kind": "modifyStat",
+            "stat": "endurance",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "reason",
+            "delta": 1
+          }
+        ],
+        "winter": [
+          {
+            "kind": "modifyStat",
+            "stat": "magic",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "reason",
+            "delta": 1
+          }
+        ]
+      }
     }
   ],
   "endings": [
@@ -1776,6 +2052,74 @@
               "kind": "addCareerFact",
               "career": "lumber",
               "fact": "foreman-noticed-player"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "satyr-maid",
+      "label": "Satyr Maid",
+      "initialStage": "new-maid",
+      "stages": [
+        "new-maid",
+        "known-face"
+      ],
+      "transitions": [
+        {
+          "id": "first-shift",
+          "from": [
+            "new-maid"
+          ],
+          "to": "known-face",
+          "conditions": [
+            {
+              "kind": "careerCounter",
+              "career": "satyr-maid",
+              "counter": "completed_shifts",
+              "op": "gte",
+              "value": 1
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "satyr-maid",
+              "fact": "first-shift-complete"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "undead-farm",
+      "label": "Undead Farm",
+      "initialStage": "new-hand",
+      "stages": [
+        "new-hand",
+        "reliable-helper"
+      ],
+      "transitions": [
+        {
+          "id": "first-shift",
+          "from": [
+            "new-hand"
+          ],
+          "to": "reliable-helper",
+          "conditions": [
+            {
+              "kind": "careerCounter",
+              "career": "undead-farm",
+              "counter": "completed_shifts",
+              "op": "gte",
+              "value": 1
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "undead-farm",
+              "fact": "first-shift-complete"
             }
           ]
         }
