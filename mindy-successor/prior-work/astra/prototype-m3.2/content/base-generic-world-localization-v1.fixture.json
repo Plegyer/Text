@@ -1,0 +1,142 @@
+{
+  "version": 1,
+  "defaultLocale": "ru",
+  "strings": {
+    "event.base.arrival.title": {
+      "ru": "Помощница, а не чайник",
+      "en": "An assistant, not a kettle"
+    },
+    "event.base.arrival.variant.welcome.text": {
+      "ru": "Орвин сверяет накладную. «Значит, вы умеете думать самостоятельно? За эту функцию гильдия обычно доплачивает». Он освобождает вам место у окна.",
+      "en": "Orwin checks the delivery note. “So you can think for yourself? The guild usually charges extra for that feature.” He clears a place for you by the window."
+    },
+    "event.base.arrival.choice.introduce.label": {
+      "ru": "Представиться",
+      "en": "Introduce yourself"
+    },
+    "event.base.arrival.choice.introduce.text": {
+      "ru": "Вы договорились начать с простого. Орвин убрал инструкцию для големов.",
+      "en": "You agree to start with something simple. Orwin puts away the instructions meant for golems."
+    },
+    "event.base.bran.title": {
+      "ru": "Доставка с уточнением",
+      "en": "A delivery with a clarification"
+    },
+    "event.base.bran.variant.delivery.text": {
+      "ru": "Курьер Бран, 27 лет, приносит посылку и спрашивает, где расписаться. Вы показываете на бланк. «Да, конечно. Я просто проверял, не изменились ли правила».",
+      "en": "Bran, a twenty-seven-year-old courier, brings a parcel and asks where to sign. You point to the form. “Right, of course. I was just checking whether the rules had changed.”"
+    },
+    "event.base.bran.choice.friendly.label": {
+      "ru": "Поблагодарить",
+      "en": "Thank him"
+    },
+    "event.base.bran.choice.friendly.text": {
+      "ru": "Теперь Бран узнаёт вас на площади. Чайная открыта для разговоров.",
+      "en": "Bran now recognizes you in the square. The tea shop is open for conversation."
+    },
+    "event.base.invite.title": {
+      "ru": "Совершенно случайный чай",
+      "en": "Entirely accidental tea"
+    },
+    "event.base.invite.variant.tea.text": {
+      "ru": "Бран разворачивает план площади с тремя отмеченными чайными. «Я совершенно случайно подумал, что вам здесь понравится».",
+      "en": "Bran unfolds a map of the square with three tea shops marked on it. “I happened, entirely by accident, to think you might like it here.”"
+    },
+    "event.base.invite.choice.yes.label": {
+      "ru": "Предложить свидание",
+      "en": "Suggest a date"
+    },
+    "event.base.invite.choice.yes.text": {
+      "ru": "Бран складывает план. Кажется, теперь он действительно может расслабиться.",
+      "en": "Bran folds the map away. It looks as though he can finally relax."
+    },
+    "event.base.invite.choice.no.label": {
+      "ru": "Остаться друзьями",
+      "en": "Stay friends"
+    },
+    "event.base.invite.choice.no.text": {
+      "ru": "Бран принимает ваш ответ и переключается на рассказ о посылке, которая сама сбежала.",
+      "en": "Bran accepts your answer and switches to a story about a parcel that ran away on its own."
+    },
+    "event.base.shelter.title": {
+      "ru": "Место у печки",
+      "en": "A place by the stove"
+    },
+    "event.base.shelter.variant.bunks.text": {
+      "ru": "В приюте спорят, чья очередь рассказывать истории. Вы предлагаете историю о мире, где чайники обычно молчат.",
+      "en": "At the shelter, people are arguing over whose turn it is to tell a story. You offer one about a world where kettles usually stay quiet."
+    },
+    "event.base.shelter.choice.tell.label": {
+      "ru": "Рассказать историю",
+      "en": "Tell a story"
+    },
+    "event.base.shelter.choice.tell.text": {
+      "ru": "Вам уступили место поближе к печке. Здесь тоже можно начинать заново.",
+      "en": "Someone gives you a place closer to the stove. You can make a new start here too."
+    },
+    "event.base.order.title": {
+      "ru": "Две микстуры и одна надежда",
+      "en": "Two potions and one hope"
+    },
+    "event.base.order.variant.order.text": {
+      "ru": "Артели нужны две бодрящие микстуры. Орвин обещает 50 монет: «Главное, чтобы бодрили работников, а не мебель».",
+      "en": "The crew needs two invigorating potions. Orwin promises 50 coins: “The important thing is that they energize the workers, not the furniture.”"
+    },
+    "event.base.order.choice.accept.label": {
+      "ru": "Взяться за заказ",
+      "en": "Take the order"
+    },
+    "event.base.order.choice.accept.text": {
+      "ru": "Заказ записан. Сварите две микстуры и сдайте их отдельным действием.",
+      "en": "The order is recorded. Brew two potions and turn them in with the separate delivery action."
+    },
+    "event.base.workday.title": {
+      "ru": "Лавка живёт своей жизнью",
+      "en": "The shop has a life of its own"
+    },
+    "event.base.workday.variant.labels.text": {
+      "ru": "Покупатель просит зелье уверенности. Орвин уверенно предлагает ему чай. Вы находите правильную полку.",
+      "en": "A customer asks for a confidence potion. Orwin confidently offers tea instead. You find the correct shelf."
+    },
+    "event.base.workday.variant.cat.text": {
+      "ru": "Кот занял журнал заказов. Впервые за неделю все записи остаются на своих местах.",
+      "en": "A cat has occupied the order ledger. For the first time all week, every entry stays exactly where it belongs."
+    },
+    "event.base.workday.variant.dust.text": {
+      "ru": "Вы протираете весы. Орвин уверяет, что вчерашняя пыль была редким ингредиентом, но чек показать не может.",
+      "en": "You wipe down the scales. Orwin insists yesterday’s dust was a rare ingredient, but he cannot produce a receipt."
+    },
+    "event.base.workday.choice.steady.label": {
+      "ru": "Спокойно закончить смену",
+      "en": "Finish the shift calmly"
+    },
+    "event.base.workday.choice.steady.text": {
+      "ru": "Лавка закрылась вовремя. Это тоже достижение.",
+      "en": "The shop closes on time. That counts as an achievement too."
+    },
+    "event.base.winter.title": {
+      "ru": "Сугроб с амбициями",
+      "en": "An ambitious snowdrift"
+    },
+    "event.base.winter.variant.snow.text": {
+      "ru": "Сосед чистит дорожку, а зачарованная метла складывает снег обратно. Вы предлагаете сначала уточнить её должностные обязанности.",
+      "en": "A neighbor clears the path while an enchanted broom piles the snow right back. You suggest clarifying its job description first."
+    },
+    "event.base.winter.choice.help.label": {
+      "ru": "Помочь договориться",
+      "en": "Help them come to terms"
+    },
+    "event.base.winter.choice.help.text": {
+      "ru": "Метла согласилась на другую сторону улицы. Сосед обещал рассказать о вас хорошее.",
+      "en": "The broom agrees to work on the other side of the street. The neighbor promises to put in a good word for you."
+    },
+    "event.base.winter.choice.pass.label": {
+      "ru": "Пожелать удачи",
+      "en": "Wish them luck"
+    },
+    "event.base.winter.choice.pass.text": {
+      "ru": "Вы оставили переговоры специалистам.",
+      "en": "You leave the negotiations to the specialists."
+    }
+  }
+}
