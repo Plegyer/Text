@@ -1554,3 +1554,25 @@ Required columns/fields:
 Include representative rows only where identity is already authoritative (for example shipped Lumber/School surfaces). Mark all non-authoritative rows OPEN rather than inventing IDs.
 
 Continue items 78–86 sequentially without waiting for Lead review.
+
+
+## Queue item 87 — presentation decision-to-media execution map
+
+Create NEW file only:
+- `docs/presentation-prep/PRESENTATION_DECISION_TO_MEDIA_EXECUTION_MAP_v1.md`
+
+Map how an approved human/Product visual decision becomes a production media update:
+- decision reference;
+- authored content identity;
+- semantic `presentationId`;
+- media brief;
+- GIF/static production;
+- import mapping;
+- fallback verification;
+- animation-off verification;
+- rollback;
+- acceptance evidence.
+
+Separate mandatory steps from optional polish and do not introduce gameplay dependencies.
+
+Continue items 79–87 sequentially without waiting for Lead review.
