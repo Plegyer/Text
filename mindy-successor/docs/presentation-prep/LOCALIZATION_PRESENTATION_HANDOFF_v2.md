@@ -1,421 +1,349 @@
 # Localization Presentation Handoff v2
 
-Scope:
-consolidated Lead integration guidance for Queue items 134–142.
-
-Current production milestone:
+Current production baseline:
 - PR #41 merged as `974d6e077ffc511e304a64aef32f2aab81167f41`;
-- PR41 head `6890aaa85dbe5a545219e8200560d307dce8f35d`;
-- exact-head `mindy-successor check`: **SUCCESS**.
+- PR41 exact-head CI: **291/291 PASS**;
+- PR #42 merged as `55adc69dcda4c41c71548cd146756896fa5976d0`;
+- PR42 exact-head CI: **295/295 PASS**;
+- current main at this handoff is downstream of both milestones.
 
-PR41 establishes the first real RU/EN localization runtime and UI slice.
+## 1. What PR41 now provides
 
-## 1. What PR41 already ships
+Production localization runtime exists.
 
-### Localization runtime
+Current API:
+- locales: `ru | en`;
+- default locale: `ru`;
+- `resolveLocalizedText(bundle,key,locale,fallback)`;
+- EN may temporarily fall back to RU;
+- `missingEnglishKeys()` exposes migration debt;
+- locale preference lives in presentation/UI state, not gameplay Save.
 
-Current-main:
-`src/core/localization.ts`
-
-provides:
-- `Locale = 'ru' | 'en'`;
-- RU default locale;
-- RU required / EN optional schema;
-- EN -> RU fallback;
-- legacy fallback parameter;
-- `missingEnglishKeys()`;
-- locale normalization independent from gameplay.
-
-### Active bilingual UI
-
-PR41 actively localizes:
-- language menu;
-- town shell;
-- HUD shell;
+Current shipped RU+EN slice:
+- language controls;
+- town/HUD shell;
 - main panel labels/subtitles;
 - Work panel shell;
-- result-shell labels;
-- all 10 ordinary career shift labels;
-- all 10 ordinary career shift descriptions.
+- labels/descriptions for all 10 ordinary career shift actions.
 
-Current localization bundle:
-- 56 keys;
-- 0 missing EN values at the audit point.
+Current PR41 localization bundle has 56 keys and, at the audited checkpoint, no missing EN values.
 
-## 2. Stable localization-key convention
+## 2. What PR42 now provides
 
-Ready document:
+Production multi-GIF runtime also exists.
+
+Exact slot pool shape:
+
+```ts
+{
+  pool:{
+    version:number,              // 1..1000
+    ordering:'ordered'|'unordered',
+    selectionPolicy:'unweighted'|'weighted',
+    candidates:[
+      {
+        key:string,
+        kind:'gif',
+        src:string,
+        alt:string,
+        weight?:number
+      }
+    ] // 3..5
+  },
+  static?:{
+    kind:'image',
+    src:string,
+    alt:string
+  },
+  fallbackId?:presentationId
+}
+```
+
+Rules already enforced:
+- 3–5 pool candidates;
+- unique candidate keys;
+- GIF-only pool sources;
+- positive finite optional weight;
+- `primary + pool` rejected;
+- old primary/static overrides remain compatible.
+
+Resolver support:
+- `occurrenceKey`;
+- deterministic FNV-style presentation hash;
+- selected pool member is ordered first;
+- `selected` points at first resolved candidate;
+- no gameplay RNG;
+- no Save migration;
+- animations-off skips the GIF pool and uses static fallback;
+- locale switching can keep the same occurrence/candidate identity because locale is not part of selector seed.
+
+## 3. Items 134–142 ready for selective integration
+
+### Item 134 — localization-key convention
 
 `docs/presentation-prep/LOCALIZATION_KEY_CONVENTION_FOR_PRESENTATION_v1.md`
 
-Recommended locale-neutral patterns:
+Stable locale-neutral key patterns for:
+- action label/description;
+- event title/variant/choice;
+- presentation caption/fallback;
+- candidate alt;
+- static alt;
+- teacher display names/roles.
 
-```text
-loc/action/<actionId>/label
-loc/action/<actionId>/description
-loc/event/<eventId>/title
-loc/event/<eventId>/variant/<variantId>/text
-loc/event/<eventId>/choice/<choiceId>/label
-loc/event/<eventId>/choice/<choiceId>/text
-loc/presentation/<presentationId>/caption
-loc/presentation/<presentationId>/fallback/text
-loc/presentation/<presentationId>/candidate/<candidateKey>/alt
-loc/presentation/<presentationId>/static/alt
-```
+Recommended convention is compatible with PR41's flat string catalog.
 
-Locale does not appear in the key.
+### Item 135 — bilingual fallback audit
 
-Keys are lookup addresses only and never gameplay identity.
+`docs/presentation-prep/BILINGUAL_PRESENTATION_FALLBACK_AUDIT_v1.md`
 
-## 3. First migration batch ready
+Finding:
+current presentation is mechanically safe, but deeper School/poverty/Forest/Night/endings text and presentation alt/captions remain localization debt.
 
-Machine-readable authoring package:
+### Item 136 — first migration batch
 
 `prior-work/astra/prototype-m3.2/content/presentation-drafts/bilingual-presentation-migration-batch-v1.json`
 
 Contains:
-- 10 Work-panel action label entries;
-- 4 Lumber seasonal shift presentation surfaces;
-- Lumber result/default;
-- 3 reachable School generic/Night surfaces;
-- 4 representative ordinary-poverty surfaces.
+- 10 Work-panel career label entries;
+- Lumber four seasons + result shell;
+- reachable School generic/Night surfaces;
+- representative ordinary-poverty surfaces;
+- RU+EN captions/static alt/text fallback.
 
-All entries use:
-- shared stable IDs;
-- RU source;
-- EN localization;
-- shared static media;
-- RU/EN alt;
-- RU/EN text fallback.
+This is authoring data, not a runtime patch.
 
-Status:
-`AUTHORING_ONLY_NOT_RUNTIME_WIRED`.
+### Item 137 — localization + multi-GIF authoring contract
 
-Recommended Lead use:
-copy reviewed strings into the PR41 localization catalog or a presentation-localization catalog using stable keys.
+`prior-work/astra/prototype-m3.2/tests/presentation-localization-multigif-contract.test.ts`
 
-## 4. Ten-career localization bundle
+Covers:
+- same semantic ID across locale switch;
+- same candidate key/media path;
+- RU/EN changes text metadata only;
+- missing EN -> deterministic RU fallback;
+- gameplay/action identity unchanged;
+- localization fixtures contain no gameplay mechanics.
 
-Machine-readable package:
+### Item 138 — ten-career localization bundle
 
 `prior-work/astra/prototype-m3.2/content/presentation-drafts/ten-career-localization-v1.json`
 
-Covers all 10 ordinary careers:
-- one actionId each;
-- RU/EN label;
-- RU/EN description;
-- RU/EN result-shell text;
-- 4 shared seasonal semantic presentation IDs per career;
-- stable result/default ID;
-- locale-neutral pool reference;
-- shared static fallback;
-- RU/EN candidate alt.
+Machine-readable RU+EN authoring for:
+- all 10 action labels/descriptions;
+- result shell text;
+- 40 seasonal semantic IDs;
+- shared media-pool refs;
+- bilingual candidate alt examples.
 
-No gameplay action is duplicated by locale.
-
-## 5. Full ten-career media alt pack
-
-Document:
+### Item 139 — complete current base-shift alt pack
 
 `docs/presentation-prep/TEN_CAREER_MEDIA_ALT_RU_EN_v1.md`
 
 Coverage:
 - 10 careers;
-- 4 seasonal shift surfaces per career;
-- 3 media candidate entries per surface;
+- 4 seasons;
+- 3 candidate entries per seasonal slot;
 - **120 RU+EN alt pairs**.
 
-Every candidate:
-- preserves semantic ID;
-- preserves candidate key;
-- describes visible presentation only;
-- avoids hidden mechanics and outcome claims.
-
-This pack is ready to feed the future presentation/media localization layer.
-
-## 6. Fallback contract
-
-Fixture:
+### Item 140 — localization fallback fixture
 
 `prior-work/astra/prototype-m3.2/content/presentation-drafts/localization-fallback-v1.fixture.json`
 
-Includes four authoring cases:
-1. fully translated RU+EN;
-2. RU-only migration debt;
-3. missing localization value with bilingual legacy fallback;
-4. localized multi-GIF caption + alt with one shared candidate.
+Includes:
+- fully translated entry;
+- RU-only migration debt;
+- missing-key legacy fallback;
+- localized multi-GIF alt/caption example.
 
-Required production behavior:
+### Item 141 — locale-switch contract v2
 
-### RU request
+`prior-work/astra/prototype-m3.2/tests/presentation-locale-switch-contract-v2.test.ts`
 
-```text
-RU
--> EN if RU missing
--> legacy fallback
-```
-
-### EN request
-
-```text
-EN
--> RU if EN missing
--> legacy fallback
-```
-
-PR41 already implements the critical EN -> RU behavior.
-
-Final ship acceptance still requires complete RU+EN for intended shipped keys.
-
-## 7. Regression contracts ready
-
-### Localization + multi-GIF matrix
-
-`tests/presentation-localization-multigif-contract.test.ts`
-
-Authoring-contract coverage:
-- locale switch keeps semantic presentationId;
-- locale switch keeps candidate key/media path;
-- RU/EN alt/caption vary only as text;
-- missing EN deterministically falls back to RU;
-- action IDs remain shared;
-- no gameplay conditions/effects appear.
-
-### Locale-switch contract v2
-
-`tests/presentation-locale-switch-contract-v2.test.ts`
-
-Coverage:
-- shared semantic IDs RU ↔ EN;
-- same multi-GIF candidate RU ↔ EN;
+Validates authoring behavior:
+- shared semantic IDs;
+- shared candidate/media identity;
 - deterministic RU fallback;
-- missing EN remains QA-visible;
-- no gameplay mechanics in localization bundles.
+- visible missing-EN QA debt;
+- no gameplay fields.
 
-These worker tests were authored here; do not claim they executed unless Lead runs them after selective integration.
-
-## 8. Current production coverage after PR41
-
-Audit:
+### Item 142 — production coverage after PR41
 
 `docs/presentation-prep/BILINGUAL_PRESENTATION_PRODUCTION_COVERAGE_v2.md`
 
-### SHIPPED_RU_EN
+Status buckets:
+- `SHIPPED_RU_EN`;
+- `RU_FALLBACK`;
+- `STAGED_RU_EN`;
+- `NOT_MIGRATED`.
 
-- town shell;
-- HUD shell;
-- main panel tiles/subtitles;
-- Work panel UI;
-- 10 ordinary career action labels/descriptions.
+## 4. Exact next localization integrations
 
-### RU_FALLBACK
+### A. School safe/reachable localization
 
-Deeper current UI still contains hardcoded/legacy RU:
-- School inner panel;
-- Forest/Explore inner panel;
-- Night inner panel;
-- condition/explanation strings;
-- additional stats/journal/bag/legacy content.
-
-### STAGED_RU_EN
-
-Worker authoring exists for:
-- career seasonal/result presentation;
-- School reachable presentation hooks;
-- ordinary poverty production presentation;
-- School Night-study presentation;
-- multi-GIF alt/captions.
-
-### NOT_MIGRATED
-
-- full Forest Activity presentation;
-- general NightFlow presentation;
-- actual ending titles/descriptions/epilogues;
-- explicit multi-GIF runtime pool/selector.
-
-## 9. School next integration package
-
-Ready content identities:
-- 8 paid lesson result semantic IDs;
-- generic post-School hook;
+First non-Work content migration target:
+- eight paid lesson result surfaces;
+- generic after-School hook;
 - generic School-life after-paid hook;
-- exact Night-study hook.
+- exact School Night-study hook.
 
-Recommended localization migration:
-1. add RU/EN keys for event title/variant/choice;
-2. add RU/EN presentation caption;
-3. add RU/EN static/media alt;
-4. keep current School gameplay IDs unchanged.
+Use PR41 localization catalog.
 
-Teacher/course-specific libraries remain staged where exact paid-course routing is unavailable.
+Do not route teacher/course-specific staged content unless exact course identity is safe.
 
-Do not localize them into incorrect generic routing.
+### B. Ordinary-poverty localization
 
-## 10. Ordinary-poverty next integration package
+PR37 already supplies production gameplay/content identities.
 
-PR37 provides real production identities.
-
-Next localization package should cover all current:
-- street;
-- cheap lodging;
-- recovery/help;
-- pressure/bad-luck
-
-events.
-
-Migrate:
-- title;
-- variant text;
-- choice labels;
-- choice explanatory text;
+Add localization keys for:
+- event title;
+- variant scene text;
+- choice labels/text;
 - presentation captions;
-- static/media alt.
+- fallback alt/text.
 
-Do not alter:
-- event/variant/choice IDs;
-- effects;
-- cooldowns;
-- next-day modifiers;
-- item/money outcomes.
+Do not fork events by locale.
 
-Secret Debt remains separate.
+### C. Forest bilingual result content
 
-## 11. Career seasonal/result next integration package
+Current town Explore shell is bilingual, but deeper Activity/Forest content is not fully migrated.
 
-PR41 localized action labels/descriptions.
+Localize actual authored route/result surfaces only.
 
-Next career slice should add:
-- seasonal presentation captions/text;
-- stable result/default text;
-- static alt;
-- 3–5 candidate alt.
+Do not invent unfinished Forest depth.
 
-Recommended first smoke:
-`job/lumber/shift/spring/default`.
+### D. Night and endings
 
-Then expand:
-1. all Lumber seasons/result;
-2. Satyr Maid + Undead Farm;
-3. remaining seven careers.
+Town-level shell is localized.
 
-## 12. Multi-GIF runtime interaction
+Remaining:
+- NightFlow internal copy;
+- ending titles/descriptions/epilogues;
+- condition explanation text where player-facing.
 
-Localization runtime now exists.
+## 5. Exact PR41 key integration guidance
 
-Explicit multi-GIF pool runtime still does not.
+Use one key for both locales.
 
-Required composition:
+Recommended examples:
 
 ```text
-gameplay occurrence
--> shared presentationId
--> deterministic candidate key
--> one shared media asset
--> PR41 locale resolver for caption/alt
+action.lumber.shift.label
+action.lumber.shift.description
+
+presentation.job/lumber/shift/spring/default.caption
+presentation.job/lumber/shift/spring/default.static.alt
+presentation.job/lumber/shift/spring/default.candidate.lumber-spring-a.alt
+
+event.poverty-pressure-production.cold-rain.title
+event.poverty-pressure-production.cold-rain.variant.default.text
+event.poverty-pressure-production.cold-rain.choice.take-doorway.label
 ```
 
-Locale must not be included in the candidate-selection seed.
+Lead may normalize punctuation/slash style to match current PR41 catalog conventions.
 
-### Remaining Lead-owned multi-GIF work
+Invariant is more important than exact separator:
+one locale-neutral key -> RU/EN values.
 
-- optional `pool` slot schema;
-- 3–5 candidates;
-- stable candidate keys;
-- deterministic occurrence selector;
-- animation-off fallback;
-- missing-candidate fallback.
+## 6. Exact PR42 integration guidance
 
-No Save migration is preferred.
+For production presentation overrides:
+- copy only real/approved pool candidates;
+- 3–5 candidates per pool;
+- use existing semantic presentationId;
+- keep static fallback;
+- supply stable candidate keys;
+- pass persisted occurrenceKey from existing scene/action/event identity.
 
-## 13. No-save-migration rule
+Do not add:
+- gameplay conditions;
+- event effects;
+- rewards;
+- locale into candidate seed;
+- Save fields.
 
-PR41 locale is UI/presentation state.
+## 7. Localization and PR42 alt limitation
 
-Presentation localization should not create:
-- RU event copy;
-- EN event copy;
-- locale-specific presentationId;
-- locale-specific candidate key;
-- locale-specific Save progression.
+PR42 candidate schema currently stores:
+`alt:string`.
 
-Multi-GIF candidate stability should also remain derivable from shared occurrence identity.
+PR41 localization runtime stores:
+`key -> {ru,en?}`.
 
-## 14. Exact selective-integration list — items 134–142
+Therefore the remaining small presentation-localization seam is:
+- map a candidate/static alt localization key to resolved localized `alt:string` before rendering;
+- or materialize the localized alt into the runtime presentation patch for the active locale.
 
-### Item 134
-- `docs/presentation-prep/LOCALIZATION_KEY_CONVENTION_FOR_PRESENTATION_v1.md`
+Preferred architecture:
+keep stable candidate/media identity locale-neutral and resolve only text/alt at render/import boundary.
 
-### Item 135
-- `docs/presentation-prep/BILINGUAL_PRESENTATION_FALLBACK_AUDIT_v1.md`
+Changing locale must not rebuild occurrence identity or choose another candidate.
 
-### Item 136
-- `prior-work/astra/prototype-m3.2/content/presentation-drafts/bilingual-presentation-migration-batch-v1.json`
+## 8. No Save migration
 
-### Item 137
-- `prior-work/astra/prototype-m3.2/tests/presentation-localization-multigif-contract.test.ts`
+PR41 and PR42 both validate the preferred architecture:
+- locale is presentation-only;
+- pool selection is presentation-only;
+- occurrence key derives from existing persisted gameplay identity;
+- no locale-specific gameplay copy;
+- no selected GIF frame/time in Save.
 
-### Item 138
-- `prior-work/astra/prototype-m3.2/content/presentation-drafts/ten-career-localization-v1.json`
+No Save migration is justified for localization or multi-GIF adoption.
 
-### Item 139
-- `docs/presentation-prep/TEN_CAREER_MEDIA_ALT_RU_EN_v1.md`
+## 9. Next production media batches after runtime readiness
 
-### Item 140
-- `prior-work/astra/prototype-m3.2/content/presentation-drafts/localization-fallback-v1.fixture.json`
+PR42 means the runtime is no longer the blocker.
 
-### Item 141
-- `prior-work/astra/prototype-m3.2/tests/presentation-locale-switch-contract-v2.test.ts`
+Next media batches should be ordered by **real asset readiness**:
 
-### Item 142
-- `docs/presentation-prep/BILINGUAL_PRESENTATION_PRODUCTION_COVERAGE_v2.md`
+1. starter trio spring shifts with real GIFs, if available;
+2. other ordinary career base-shift pools where 3 real GIFs exist;
+3. PR37 ordinary-poverty pools with real GIF assets;
+4. reachable School generic/Night pools with real GIF assets;
+5. later career/School/Forest/ending content only after authored identities and art exist.
 
-Worker branch remains long-lived.
+Placeholder paths are planning artifacts, not production media.
+
+## 10. QA required for each integrated pool
+
+For every production pool:
+1. `presentationSchema.parse` passes;
+2. semantic target exists;
+3. candidate count 3..5;
+4. candidate keys unique;
+5. candidate sources resolve to real GIFs;
+6. animations-on selects deterministic candidate;
+7. same occurrence reload selects same candidate;
+8. RU->EN keeps same selected candidate;
+9. animations-off reaches static fallback;
+10. one missing GIF does not change gameplay;
+11. localization key exists for RU;
+12. EN exists or is explicitly QA-visible as RU fallback debt;
+13. no gameplay RNG/Save mutation.
+
+## 11. Integration boundary
+
+Worker branch is long-lived.
 
 Do not merge wholesale.
 
-Selectively copy reviewed artifacts onto a fresh Lead branch from current main.
+Selectively copy reviewed content/docs/tests onto a fresh Lead branch based on current main.
 
-## 15. Recommended Lead integration order
+For machine-readable production integration:
+- replace any `authoring://` or staging placeholder path with an actual managed `assets/...gif`;
+- validate against current PR42 `presentationSchema`;
+- require exact-head CI.
 
-1. Keep PR41 localization runtime unchanged as baseline.
-2. Adopt localization-key convention.
-3. Integrate the first migration batch strings.
-4. Run localization unit/UI tests.
-5. Add career seasonal/result localization.
-6. Add School reachable-hook localization.
-7. Add PR37 poverty localization.
-8. Add ending/Forest/Night packages only when their content inventories are ready.
-9. Implement multi-GIF pool runtime separately.
-10. Attach localized alt/caption through the same PR41 resolver.
-11. Run locale-switch + gameplay-invariance regressions.
+## Final handoff
 
-## 16. Next production media batches
+Infrastructure is now present:
+- PR41 solves RU/EN resolution;
+- PR42 solves deterministic 3–5 GIF pools.
 
-### Ready now after string integration
-- ten-career base-shift static alt;
-- Lumber seasonal/result bilingual presentation;
-- reachable School generic/Night static alt;
-- representative PR37 poverty static alt.
+The remaining work is primarily:
+- migrate real player-facing strings into PR41 localization;
+- connect localized alt/caption to presentation rendering;
+- integrate only pools backed by real GIF assets;
+- continue content authoring for still-missing Forest/Night/ending surfaces.
 
-### Ready after multi-GIF runtime
-- 120 career candidate RU+EN alt mappings;
-- School 3–5 candidate pools;
-- PR37 poverty 3–5 candidate pools.
-
-### Staged
-- teacher-specific routed pools;
-- non-Lumber endings/Hard Work identities not yet authored;
-- Secret Debt;
-- unresolved Forest-specific content depth.
-
-## Final disposition
-
-PR41 solved the fundamental localization seam.
-
-The next work is incremental content migration plus presentation-media integration.
-
-The stable architecture is now:
-
-**shared gameplay identity + shared presentation identity + shared media identity + RU/EN localized text.**
-
-No gameplay fork and no Save migration are required.
+No gameplay redesign and no Save migration are needed.
