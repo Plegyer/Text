@@ -1053,3 +1053,23 @@ Define a scalable file/package layout for future authored School content:
 The layout must preserve explicit inclusion, avoid one giant pack, and keep fixture-only authoring out of production. Do not modify current production files.
 
 Continue items 60–68 sequentially without waiting for Lead review.
+
+
+## Queue item 69 — School cross-system authoring dependency matrix
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_CROSS_SYSTEM_AUTHORING_DEPENDENCIES_v1.md`
+
+Map School authoring dependencies with:
+- all 10 ordinary careers;
+- ordinary poverty/housing;
+- Secret Debt/Slave where relevant;
+- relationships;
+- Night;
+- items;
+- Forest/Activity;
+- Palace/Meta.
+
+For each distinguish current explicit dependency, optional hook, Product decision required, content authoring required, and no-dependency intended. Do not invent prerequisites.
+
+Continue items 61–69 sequentially without waiting for Lead review.
