@@ -1590,6 +1590,11 @@
           "career": "satyr-maid",
           "counter": "completed_shifts",
           "amount": 1
+        },
+        {
+          "kind": "advanceCareer",
+          "career": "satyr-maid",
+          "transition": "first-shift"
         }
       ],
       "mode": "normal",
@@ -1721,6 +1726,11 @@
           "career": "undead-farm",
           "counter": "completed_shifts",
           "amount": 1
+        },
+        {
+          "kind": "advanceCareer",
+          "career": "undead-farm",
+          "transition": "first-shift"
         }
       ],
       "mode": "normal",
