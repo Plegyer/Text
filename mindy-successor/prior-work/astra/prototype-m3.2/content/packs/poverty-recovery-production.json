@@ -1,0 +1,245 @@
+{
+  "schemaVersion": 1,
+  "id": "poverty-recovery-production",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "calendar": true,
+      "housing": true
+    },
+    "writes": {
+      "resources": [
+        "money"
+      ],
+      "inventory": [
+        "herb"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "poverty-recovery-production.small-coin-help",
+      "title": "Coins left with the bread",
+      "sourceDomain": "poverty",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightPhase",
+          "point": "after_lodging"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 34,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "nightPolicy": {
+        "intercept": "after_lodging",
+        "suppressLodgingPayment": false,
+        "suppressVoluntaryMenu": false,
+        "consumesNight": false
+      },
+      "cooldownDays": 4,
+      "variantCooldownDays": 0,
+      "maxShows": 20,
+      "conditions": [
+        {
+          "kind": "housingTier",
+          "value": "street"
+        },
+        {
+          "kind": "calendarSeason",
+          "value": "spring"
+        },
+        {
+          "kind": "calendarDayInYear",
+          "op": "eq",
+          "value": 2
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "A paper parcel of yesterday's bread has been left on a public ledge with a few loose coins beside it and no name attached.",
+          "conditions": [],
+          "media": [
+            "stage.outside"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "take-coins",
+          "label": "Take the loose coins",
+          "text": "You take only the loose coins. The small amount is initial tuning and is not required for ordinary recovery.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "modifyResource",
+              "resource": "money",
+              "delta": 4
+            }
+          ]
+        },
+        {
+          "id": "leave-them",
+          "label": "Leave them",
+          "text": "You leave the coins for whoever needs them next and keep your place for the night.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "poverty-recovery-production.short-cleanup",
+      "title": "One last sweep",
+      "sourceDomain": "poverty",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightPhase",
+          "point": "after_lodging"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 34,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "nightPolicy": {
+        "intercept": "after_lodging",
+        "suppressLodgingPayment": false,
+        "suppressVoluntaryMenu": false,
+        "consumesNight": false
+      },
+      "cooldownDays": 4,
+      "variantCooldownDays": 0,
+      "maxShows": 20,
+      "conditions": [
+        {
+          "kind": "housingTier",
+          "value": "street"
+        },
+        {
+          "kind": "calendarSeason",
+          "value": "spring"
+        },
+        {
+          "kind": "calendarDayInYear",
+          "op": "eq",
+          "value": 4
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "A closing stall has one small cleanup left: stack two stools, sweep a narrow strip, and carry a bucket to the drain.",
+          "conditions": [],
+          "media": [
+            "stage.outside"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "do-cleanup",
+          "label": "Do the short cleanup",
+          "text": "The work takes only a few minutes and pays a small tunable amount without becoming a required job route.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "modifyResource",
+              "resource": "money",
+              "delta": 5
+            }
+          ]
+        },
+        {
+          "id": "keep-resting",
+          "label": "Keep resting",
+          "text": "You decline the extra work and preserve your resting spot without penalty.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "poverty-recovery-production.herb-bundle",
+      "title": "A forgotten herb bundle",
+      "sourceDomain": "poverty",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightPhase",
+          "point": "after_lodging"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 34,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "nightPolicy": {
+        "intercept": "after_lodging",
+        "suppressLodgingPayment": false,
+        "suppressVoluntaryMenu": false,
+        "consumesNight": false
+      },
+      "cooldownDays": 4,
+      "variantCooldownDays": 0,
+      "maxShows": 20,
+      "conditions": [
+        {
+          "kind": "housingTier",
+          "value": "street"
+        },
+        {
+          "kind": "calendarSeason",
+          "value": "spring"
+        },
+        {
+          "kind": "calendarDayInYear",
+          "op": "eq",
+          "value": 6
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "A small tied bundle of ordinary herbs has been forgotten beside an empty market crate. Nothing marks it as anyone's special property.",
+          "conditions": [],
+          "media": [
+            "stage.outside"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "take-herb",
+          "label": "Take the herb bundle",
+          "text": "You keep the ordinary herb bundle. Its count is initial tuning and uses the existing inventory item only.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addItem",
+              "id": "herb",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "id": "leave-herb",
+          "label": "Leave it",
+          "text": "You leave the bundle where it is and continue the night without relying on item assistance.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    }
+  ]
+}
