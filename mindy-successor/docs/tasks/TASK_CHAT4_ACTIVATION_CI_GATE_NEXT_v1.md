@@ -1978,3 +1978,114 @@ Create NEW file only:
 Summarize safe next localization integrations for School, poverty, Forest and presentation after PR41.
 
 Continue items 116–124 sequentially without waiting for Lead review.
+
+
+## Queue item 125 — PR42 multi-GIF runtime review
+
+Create NEW file only:
+- `docs/qa-prep/PR42_MULTI_GIF_RUNTIME_REVIEW_v1.md`
+
+Review PR #42:
+- pool bounds 3..5;
+- unique stable candidate keys;
+- primary+pool ambiguity rejected;
+- deterministic occurrence-key selection;
+- no gameplay RNG;
+- no Save migration;
+- reload stability;
+- RU↔EN switch keeps candidate;
+- animation-off static fallback;
+- old primary/static overrides remain compatible;
+- exact-head CI evidence.
+
+Conclude GREEN / BLOCKED.
+
+## Queue item 126 — post-PR42 presentation compatibility audit
+
+Create NEW file only:
+- `docs/qa-prep/POST_PR42_PRESENTATION_COMPATIBILITY_AUDIT_v1.md`
+
+After PR42 status is known, audit:
+- old presentation.json parses;
+- editor still works;
+- custom primary replacement replaces pool safely;
+- catalog GIF/image/video fallback unchanged;
+- missing presentationId safe fallback remains.
+
+## Queue item 127 — School localization integration QA gate v2
+
+Create NEW file only:
+- `docs/qa-prep/SCHOOL_LOCALIZATION_INTEGRATION_QA_V2.md`
+
+Review Chat5 128–136 deliverables for selective current-main integration:
+- 8 course UI RU+EN;
+- generic School content;
+- exact Night content;
+- staged teacher/course content;
+- no mechanics drift;
+- staged routing clearly separated.
+
+## Queue item 128 — Forest bilingual production QA gate v2
+
+Create NEW file only:
+- `docs/qa-prep/FOREST_BILINGUAL_PRODUCTION_QA_V2.md`
+
+Review Chat3 Forest 131–135 deliverables:
+- exact activityResult triggers;
+- strict pack ownership;
+- RU+EN coverage;
+- no Hard Work drift;
+- Product-blocked route semantics remain open.
+
+## Queue item 129 — ordinary poverty localization QA gate v1
+
+Create NEW file only:
+- `docs/qa-prep/ORDINARY_POVERTY_LOCALIZATION_QA_V1.md`
+
+Review Chat3 136–139:
+- production identity mapping;
+- RU+EN coverage;
+- no Secret Debt bleed;
+- no gameplay duplication;
+- multi-GIF/media selection presentation-only.
+
+## Queue item 130 — ten-career multi-GIF adoption QA gate v1
+
+Create NEW file only:
+- `docs/qa-prep/TEN_CAREER_MULTI_GIF_ADOPTION_QA_V1.md`
+
+Review Chat2 adoption manifests:
+- only shipped semantic IDs;
+- pool 3..5;
+- real-vs-placeholder asset status honest;
+- RU+EN alt coverage;
+- no gameplay field in media manifest.
+
+## Queue item 131 — localization and presentation combined smoke matrix v1
+
+Create NEW file only:
+- `docs/qa-prep/LOCALIZATION_PRESENTATION_COMBINED_SMOKE_MATRIX_v1.md`
+
+Define executable smoke:
+- RU career work;
+- switch EN;
+- same gameplay/save;
+- same selected GIF for same occurrence;
+- new work occurrence may select different GIF;
+- animations off -> static;
+- reload -> same selected GIF;
+- wage/counters unchanged.
+
+## Queue item 132 — next production integration gate v9
+
+Create NEW file only:
+- `docs/qa-prep/NEXT_PRODUCTION_INTEGRATION_GATE_v9.md`
+
+Summarize readiness after PR41/42 for:
+- career localization/media;
+- School localization;
+- poverty localization;
+- Forest bilingual content;
+- Secret Debt authored-only content.
+
+Continue items 124–132 sequentially without waiting for Lead review.
