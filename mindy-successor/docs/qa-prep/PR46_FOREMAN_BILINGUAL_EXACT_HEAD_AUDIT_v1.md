@@ -1,125 +1,117 @@
 # PR46 Foreman bilingual exact-head audit v1
 
-Status: COMPLETE / BLOCKED_ON_EXACT_HEAD_CI
+Status: COMPLETE / GREEN_EXACT_HEAD / GREEN_POST_MERGE_MAIN
 
 PR:
 - #46 `Lead: integrate Foreman relationship RU/EN localization`
 - base: `c0763f9f9fa9887593fe8567165bbedce2b6cd3a`
-- reviewed exact head: `f06a991e5d252931cd74ab2ea3ce1b699d8a6a54`
-- state at review: OPEN / mergeable / not merged.
+- accepted exact head: `1ee9d26ce0dd12cb4b77b9e5b18ee1a117ce6433`
+- merge SHA: `1af3104c1e4c180019b965adac8e87e67de89347`
+- merged: YES.
 
-## Reviewed production scope
+## Scope
 
-The PR diff is limited to:
-- 11 additive Foreman RU+EN localization entries in `content/localization.json`;
-- generic stable-ID Night-choice localization lookup in `src/ui/app.ts`;
-- new Foreman bilingual production regression;
-- new renderer RU↔EN Foreman Night smoke.
+Production changes are limited to:
+- 11 additive Foreman RU+EN localization entries;
+- generic stable-ID ordinary Night-choice label localization;
+- tests.
 
-No production relationship definition, Night definition, Lumber pack, Forest pack, ending, Save schema or gameplay RNG file is changed by the reviewed diff.
+No relationship definition, Night mechanics, Lumber content pack, Forest result, Hard Work condition, Save schema or gameplay RNG is changed.
 
 ## Localization payload
 
-The PR adds the reviewed current identities only:
+Added exact current identities only:
 - `event.lumber.foreman-notice.*`
 - `nightChoice.lumber.foreman.night.label`
 - `event.lumber-night.foreman-professional.*`
-- `media.relationship.lumber.foreman.professional.alt`
-- `media.relationship.lumber.foreman.night.professional.alt`
+- two current Foreman media alt keys.
 
-All entries have non-empty RU+EN and locale-neutral keys.
+All have complete RU+EN and locale-neutral keys.
 
-No broader relationship roster, deeper Foreman stage, romance route, School result, Hunter/Old Boundary semantics, Secret Debt identity or Palace content is added.
+No wider roster, deeper stage, romance route, housing rule, School result, Hunter/Old Boundary meaning, Secret Debt or Palace content is promoted.
 
-## Generic Night-choice presentation wiring
+## Generic Night-choice wiring
 
-The reviewed UI change preserves School-specific dynamic formatting first:
+The UI keeps School Night-study dynamic formatting first.
 
-- IDs beginning with `school.night_study.` continue to resolve the current course/stat structure and format `ui.school.nightStudyChoice`.
-- only non-School choices fall through to:
-  `tr('nightChoice.' + id + '.label', fallback)`.
+Non-School Night choices fall through to:
+`nightChoice.<existing-choice-id>.label`
 
-Malformed/unknown School Night-study IDs fall back through the stable-ID localization lookup and then the embedded fallback.
+with the embedded gameplay label as fallback.
 
-This is presentation-only lookup by the existing gameplay choice ID; it does not create a localized Night choice ID or put locale into gameplay state.
+Thus localization changes presentation only:
+- choice ID unchanged;
+- conditions/effects unchanged;
+- no locale field added to Save;
+- no locale-specific NightChoice duplication.
 
-## Exact-head CI evidence
+## Initial failed head
+
+Head `f06a991...`, workflow #68, failed 2 tests because of test defects:
+1. Hard Work test searched for reward ID `hardWork:lumber` as if it were the ending ID.
+2. Foreman renderer smoke mutated a relationship state object before it existed.
+
+Production mechanics were not changed to solve these failures.
+
+## Final test corrections
+
+The final PR sequence corrected the tests to:
+- find ending `ending.lumber.hard-work`;
+- assert reward `hardWork:lumber` separately;
+- reach `route-professional` naturally through current Lumber shift -> career milestone -> Foreman professional choice;
+- check the Night-choice label on its rendered article rather than only the button text.
+
+## Exact-head CI
+
+Accepted head:
+`1ee9d26ce0dd12cb4b77b9e5b18ee1a117ce6433`.
 
 Workflow:
-- `mindy-successor check`
-- run #68
-- run id `36323692624`
-- conclusion: FAILURE
-
-Test summary:
+- run #70
+- id `36343095488`
+- conclusion: SUCCESS
+- validator: 17 packs, 46 events, 35 actions, 9 endings
 - tests: 307
-- pass: 305
-- fail: 2
+- pass: 307
+- fail: 0
 
-### Failure 1 — Hard Work assertion uses the reward ID as the ending ID
+Relevant tests PASS:
+- Foreman RU+EN localization completeness;
+- Foreman relationship/Night/Hard Work mechanics lock;
+- School Night-study localization/save regression;
+- ordinary poverty localization regression;
+- Foreman relationship and voluntary Night RU↔EN gameplay-invariance smoke.
 
-Failing test:
-`Foreman localization does not alter locked relationship Night or Hard Work mechanics`
+## Mechanic invariants
 
-The test searches:
-`definitions.endings.find(x => x.id === 'hardWork:lumber')`
-
-Current authoritative definitions use:
-- ending ID: `ending.lumber.hard-work`
-- Meta reward ID: `hardWork:lumber`
-
-Therefore `hardWork` is undefined and `assert.ok(hardWork)` fails.
-
-Correct QA shape:
-- find ending by `ending.lumber.hard-work`;
-- assert its only condition is `careerCounter(lumber.completed_shifts, gte, 50)`;
-- separately assert `metaRewards=[{kind:'hardWork',rewardId:'hardWork:lumber',career:'lumber'}]`.
-
-Do not rename the production ending merely to satisfy the test.
-
-### Failure 2 — renderer smoke mutates a relationship state object that does not exist yet
-
-Failing test:
-`renderer: Foreman relationship and voluntary Night scene localize RU EN without gameplay drift`
-
-The setup performs:
-`s.run.progression.relationships['lumber.foreman'].stage='route-professional'`
-
-on a fresh save where that relationship state entry has not yet been materialized, causing:
-`Cannot set properties of undefined (setting 'stage')`.
-
-Correct QA shape:
-- either create the exact persisted typed relationship state object explicitly with current schema fields; or
-- better, reach `route-professional` through the current Lumber/relationship progression path before entering Night.
-
-Do not weaken relationship state validation or change production initialization to make the test pass.
-
-## Mechanic drift check
-
-The reviewed production diff does not alter:
-- relationship stages `unknown -> professional -> route-professional`;
-- relationship transitions `notice-work` / `choose-professional`;
-- `lumber.foreman.night` gameplay identity;
-- `night_meetings += 1`;
-- `nextDayEnergyDelta = 0`;
-- ordinary voluntary Night semantics;
-- Lumber Hard Work `completed_shifts >= 50`;
+Verified:
+- relationship: `lumber.foreman`;
+- stages: `unknown -> professional -> route-professional`;
+- Night choice: `lumber.foreman.night`;
+- effect: `night_meetings += 1`;
+- `nextDayEnergyDelta=0`;
+- `nextDayEffects=[]`;
+- Night event: `lumber-night.foreman-professional`;
+- Lumber Hard Work only `completed_shifts >= 50`;
 - Meta reward `hardWork:lumber`;
-- Forest exact result identities or Lumber continuation;
-- Save schema;
-- gameplay RNG.
+- Forest exact result identities unchanged.
 
-The current failures are regression-test setup/identity mistakes, not evidence that the localization production changes altered mechanics.
+## Post-merge main
+
+Merged as:
+`1af3104c1e4c180019b965adac8e87e67de89347`.
+
+Main push workflow:
+- run #71
+- id `36343191446`
+- conclusion: SUCCESS
+- validator: 17 packs, 46 events, 35 actions, 9 endings
+- tests: 307
+- pass: 307
+- fail: 0
 
 ## Verdict
 
-`BLOCKED_ON_EXACT_HEAD_CI`.
+`GREEN_EXACT_HEAD` and `GREEN_POST_MERGE_MAIN`.
 
-The localization/UI production diff is within the intended additive presentation scope, but exact head `f06a991...` is red.
-
-A later exact PR46 head must:
-1. assert the real Hard Work ending ID and reward separately;
-2. use valid current relationship state/progression setup;
-3. preserve School dynamic Night-study formatting;
-4. prove Foreman RU↔EN choice/pending-scene invariance;
-5. pass full exact-head CI before merge.
+PR46 is accepted as a localization/presentation-only production merge.
