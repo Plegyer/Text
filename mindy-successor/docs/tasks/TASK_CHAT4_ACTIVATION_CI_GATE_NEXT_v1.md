@@ -1019,3 +1019,20 @@ Audit current main after PR #28/#30 and verify that the minimum recovery authori
 Report missing/stale references and identify which should be integrated or superseded. Do not modify authority docs.
 
 Continue items 58–66 sequentially without waiting for Lead review.
+
+
+## Queue item 67 — post-merge poverty regression floor plan
+
+Create NEW file only:
+- `docs/qa-prep/POST_MERGE_POVERTY_REGRESSION_FLOOR_PLAN_v1.md`
+
+Assuming PR29 is later validated and merged, define the minimal retained regression floor for ordinary poverty:
+- lodging ladder structure;
+- zero-money street continuation;
+- School Night-study street exclusion;
+- starting-job recovery;
+- save/reload around street lodging.
+
+Do not claim PR29 merged or green unless Git proves it.
+
+Continue items 59–67 sequentially without waiting for Lead review.
