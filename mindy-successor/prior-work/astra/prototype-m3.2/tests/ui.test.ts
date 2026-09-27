@@ -512,26 +512,20 @@ test('renderer: project-owned static fallback keeps asset identity across RU EN 
 
 test('renderer: neutral Forest route static fallback preserves save across RU EN',async()=>{
  const s=started();
- s.run.flow.activity={
-  activityId:'lumber.forest',
-  definitionVersion:1,
-  adapter:'counter.v1',
-  status:'active',
-  startedDay:s.run.calendar.elapsedDays,
-  entryEnergyCommitted:true,
-  optionModelVersion:0,
-  internalState:{progress:0,endurance:5,steps:0,lastRoll:null,routeId:null,resolvedOptionIds:[]},
-  rngState:123456789,
-  checkpoint:'entered',
-  accumulatedRewards:[],
-  emittedFacts:[]
- };
  const {w,dom,errors}=boot(JSON.stringify(s));try{
+  await wait(()=>!!w.document.querySelector('[data-panel="explore"]'));
+  w.document.querySelector('[data-panel="explore"]').click();
+  await wait(()=>!!w.document.querySelector('[data-enter-activity="lumber.forest"]'));
+  w.document.querySelector('[data-enter-activity="lumber.forest"]').click();
   await wait(()=>!!w.document.querySelector('[data-activity-action="forest.route.logging-road"]'));
+
   const imgRu=w.document.querySelector('.media-window img');
   assert.match(imgRu.getAttribute('src'),/assets\/presentation\/forest-route-default-v1\.svg$/);
   assert.match(imgRu.getAttribute('alt'),/нейтральной лесной тропе/);
   const before=w.localStorage.getItem('portal-life.v1');
+  const activityBefore=JSON.parse(before).run.flow.activity;
+  assert.equal(activityBefore.activityId,'lumber.forest');
+  assert.equal(activityBefore.internalState.routeId,null);
 
   w.document.querySelector('[data-panel="menu"]').click();
   w.document.querySelector('#language-toggle').click();
@@ -543,9 +537,7 @@ test('renderer: neutral Forest route static fallback preserves save across RU EN
   assert.equal(imgEn.getAttribute('src'),imgRu.getAttribute('src'));
   assert.match(imgEn.getAttribute('alt'),/neutral forest trail/);
   const after=JSON.parse(w.localStorage.getItem('portal-life.v1'));
-  assert.equal(after.run.flow.activity.activityId,'lumber.forest');
-  assert.equal(after.run.flow.activity.internalState.routeId,null);
-  assert.equal(after.run.flow.activity.rngState,123456789);
+  assert.deepEqual(after.run.flow.activity,activityBefore);
   assert.deepEqual(errors,[]);
  }finally{dom.window.close();}
 });
