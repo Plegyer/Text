@@ -2871,3 +2871,95 @@ Create NEW file only:
 Consolidate items 172–182: actual imported assets, provenance, technical validation, any real 3–5 pool ready for Lead, blockers, and exact selective integration files.
 
 Continue items 172–183 sequentially without waiting for Lead review.
+
+
+## Queue item 184 — project-owned static media production plan v1
+Create NEW file only:
+- `docs/presentation-prep/PROJECT_OWNED_STATIC_MEDIA_PRODUCTION_PLAN_v1.md`
+
+Pivot from web GIF sourcing to original project-owned static production assets.
+Prioritize semantic coverage gaps where current fallback is generic/reused.
+No runtime/schema/UI edits.
+
+## Queue item 185 — ordinary careers static fallback batch A v1
+Create NEW original SVG assets only under:
+- `prior-work/astra/prototype-m3.2/assets/presentation/`
+
+Produce distinct project-owned static fallback art for the first five ordinary career semantic result identities, using current production presentation IDs as the mapping source.
+Do not alter gameplay.
+
+## Queue item 186 — ordinary careers static fallback batch B v1
+Create NEW original SVG assets only under:
+- `prior-work/astra/prototype-m3.2/assets/presentation/`
+
+Produce distinct static fallback art for the remaining five ordinary careers.
+Keep visual language consistent with item 185.
+
+## Queue item 187 — School reachable static fallback batch v1
+Create NEW original SVG assets only under:
+- `prior-work/astra/prototype-m3.2/assets/presentation/`
+
+Cover current reachable School lesson / Night-study presentation identities only.
+Do not create teacher/exact-course Product-open identities as production.
+
+## Queue item 188 — ordinary poverty static fallback batch v1
+Create NEW original SVG assets only under:
+- `prior-work/astra/prototype-m3.2/assets/presentation/`
+
+Cover representative current ordinary-poverty production identities.
+Secret Debt excluded.
+
+## Queue item 189 — Forest result static fallback batch v1
+Create NEW original SVG assets only under:
+- `prior-work/astra/prototype-m3.2/assets/presentation/`
+
+Create distinct static fallback assets for current Forest success / escape / failure result semantics.
+Do not invent Hunter/challenge mechanics.
+
+## Queue item 190 — Foreman relationship static fallback batch v1
+Create NEW original SVG assets only under:
+- `prior-work/astra/prototype-m3.2/assets/presentation/`
+
+Cover current shipped Foreman professional milestone and Night follow-up identities only.
+No new relationship stages/routes.
+
+## Queue item 191 — project-owned static media manifest v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/project-owned-static-media-v1.json`
+
+Map items 185–190 to current semantic presentation IDs, repo-relative paths, fallback purpose, and RU/EN alt localization keys.
+Presentation-only; do not root-load automatically.
+
+## Queue item 192 — project-owned media accessibility delta v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/project-owned-static-media-localization-v1.fixture.json`
+
+Provide RU+EN alt/caption keys for actual assets created in 185–190.
+No fake keys for missing assets.
+
+## Queue item 193 — static media build/distribution test v1
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/project-owned-static-media-build-v1.test.ts`
+
+Validate:
+- every manifest asset exists;
+- SVG is non-empty and parseable as text;
+- build copies it under dist/assets;
+- current semantic presentation IDs exist;
+- no gameplay fields are present;
+- no external URLs.
+
+## Queue item 194 — static fallback coverage acceptance ledger v1
+Create NEW file only:
+- `docs/presentation-prep/PROJECT_OWNED_STATIC_FALLBACK_COVERAGE_v1.md`
+
+Record coverage across 10 careers, reachable School, ordinary poverty, Forest results, Foreman relationship/Night.
+Classify UNIQUE_PROJECT_OWNED / GENERIC_EXISTING / MISSING / PRODUCT_OPEN.
+
+## Queue item 195 — static media selective integration handoff v1
+Create NEW file only:
+- `docs/presentation-prep/PROJECT_OWNED_STATIC_MEDIA_INTEGRATION_HANDOFF_v1.md`
+
+Consolidate items 184–194 with exact selective-copy file list, semantic mapping, test evidence, remaining gaps, and what should wait for final GIF production.
+
+Continue 184–195 sequentially without waiting for Lead review.
