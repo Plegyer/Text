@@ -3,17 +3,17 @@
 Status: COMPLETE / CURRENT_MAIN_CI_GREEN
 
 Current main:
-`1a2f6e428da41e356f8d48df4a72923a5cc1928c`
-(PR51 ordinary-poverty copyedit merge, on top of PR50).
+`5dffefd15703d431a604b4cc9f831c4e55460aed`
+(PR52 legacy root RU+EN localization merge).
 
 ## Latest successful main push
 
 Workflow:
 - `mindy-successor check`
-- run #85
-- id `36346898672`
+- run #88
+- id `36347268518`
 - event: push
-- head SHA: `1a2f6e428da41e356f8d48df4a72923a5cc1928c`
+- head SHA: `5dffefd15703d431a604b4cc9f831c4e55460aed`
 - conclusion: SUCCESS
 
 Validator:
@@ -23,49 +23,63 @@ Validator:
 - endings: 9.
 
 Tests:
-- 323 total;
-- 323 pass;
+- 329 total;
+- 329 pass;
 - 0 fail.
 
-## PR51 exact-head corroboration
+## PR52 exact-head binding
 
-Accepted PR51 head:
-`b90099f6bda958053c1325ec250ea07e7f6fb7c7`.
+Accepted PR52 head:
+`eefcdff5f4eb4c0eb4c9f60a91a708b5da49d962`.
 
-Workflow:
-- run #84;
-- id `36346807780`;
+Run #87:
+- id `36347164191`;
 - SUCCESS;
 - validator 17 / 46 / 35 / 9;
-- 323 / 323 tests.
+- 329 / 329 tests.
 
-PR51-specific tests PASS:
-- exact 33 existing RU+EN poverty copyedit keys;
-- ordinary production identity set exact;
-- text-only / Secret Debt excluded.
+The earlier PR52 head:
+`a47c766725f4b1034aa27c3cb74ce3819dfa4c47`
+failed run #86 because the production regression referenced a missing fixture file.
 
-Existing poverty natural-path and RU↔EN pending-scene invariance tests remain green.
+That failed head is not accepted.
+
+## PR51 floor retained
+
+PR51 poverty copyedit remains shipped beneath current main.
+
+PR51 merge:
+`1a2f6e428da41e356f8d48df4a72923a5cc1928c`.
+
+Its post-merge run #85:
+- 323 / 323;
+- validator 17 / 46 / 35 / 9.
+
+Current 329-test suite retains:
+- exact 33-key poverty text-only regressions;
+- six-pack poverty natural-path invariance;
+- poverty RU↔EN pending-scene Save invariance.
 
 ## PR50 floor retained
 
-PR50 generic Forest route/default static remains shipped under this main.
+PR50 generic Forest route/default static remains shipped.
 
-Its post-merge evidence:
-- merge SHA `f93878b954385a1c61d8a06a0673354207d11d70`;
-- run #82;
+Its post-merge run #82:
 - 320 / 320;
-- same validator 17 / 46 / 35 / 9.
+- validator 17 / 46 / 35 / 9.
 
-PR51 does not edit presentation mappings or `app.ts`.
+Current main still contains:
+- exact `activity/forest/route/default`;
+- project-owned neutral fallback;
+- route/default RU+EN accessibility;
+- natural-path Save-invariance regression.
 
 ## Current localization/media floor
 
 Root localization:
-- 403 total keys;
+- 511 total keys;
 - missing RU: 0;
 - missing EN: 0.
-
-The count remains 403 because PR51 replaces 33 existing values rather than adding keys.
 
 Active project-owned static semantic mappings:
 `80`.
@@ -82,6 +96,32 @@ Current app blob:
 Current presentation blob:
 `0bed8e1a4a88358b7e1e8ef22d787f5bcee323f4`.
 
+## Current event-localization floor
+
+After PR52:
+- fully root-localized events: 40 / 46;
+- partially localized events: 0;
+- zero-root-localization events: 6.
+
+Remaining zero-coverage event IDs:
+- `ds-lumber.first`;
+- `ds-lumber.second`;
+- `ds-lumber.done`;
+- `lumber-cross.school-management-return`;
+- `lumber-cross.activity-forest-return`;
+- `lumber.career-first-shift`.
+
+Current choice coverage:
+- total choices: 68;
+- RU+EN choice-label keys: 59;
+- RU+EN choice-body keys: 59.
+
+Current root media-alt coverage:
+- localized media IDs: 26 / 64;
+- remaining root media-alt debt: 38 / 64.
+
+These counts describe root localization presence, not reachability.
+
 ## Minimum next integration floor
 
 For the next localization/presentation-only integration, unexpected drift from:
@@ -92,55 +132,42 @@ For the next localization/presentation-only integration, unexpected drift from:
 is blocking unless separately reviewed.
 
 Existing test count must not drop below:
-`323`
+`329`
 without an explicit reviewed reason.
 
-Root project-owned static mapping count must not drop below:
-`80`
-for a text-only integration.
-
-## Open PR52 note
-
-PR52 legacy root RU+EN integration is not part of current main.
-
-Its current exact head `a47c766...` failed run #86 because a regression references a missing reviewed fixture file.
-
-Do not use PR52's 325-test attempted suite as the current-main floor.
-
-Current authoritative floor remains run #85 on `1a2f6e4...`.
+For text-only work:
+- project-owned static mappings must remain at least 80;
+- static target must remain 80 / 80.
 
 ## Locked invariants
 
 Continue to protect:
-- Lumber Hard Work eligibility only `completed_shifts >= 50`;
+- Lumber Hard Work only `completed_shifts >= 50`;
 - Meta reward `hardWork:lumber`;
-- Forest exact success/escape/failure result IDs;
-- exact activityResult reaction identities;
-- Old Boundary current `enter_old_boundary` gate;
-- route/default presentation has no route-specific semantic effect;
+- Forest exact result IDs and exact activityResult reactions;
+- Old Boundary `enter_old_boundary` gate;
+- generic route/default no route-specific semantic effect;
 - School locale Save invariance;
-- ordinary-poverty natural paths and PR51 text-only scope;
+- PR51 poverty natural paths/text-only scope;
+- PR52 legacy localization-only scope;
 - Foreman voluntary Night mechanics;
 - generic Night-choice stable-ID localization;
 - deterministic presentation selection outside gameplay RNG;
-- project-owned static media identity across RU↔EN.
+- static identity across RU↔EN.
 
 ## Future PR evidence
 
 Require:
 - exact PR head SHA;
-- exact successful full-check run;
+- successful full-check run;
 - validator counts;
 - total/pass/fail tests;
-- domain-specific regressions.
-
-Then require successful push CI on the resulting merge SHA.
-
-Do not substitute earlier evidence.
+- domain-specific regressions;
+- successful post-merge main push.
 
 ## Verdict
 
 `CURRENT_MAIN_CI_GREEN`.
 
 Current floor:
-`main 1a2f6e4... / run #85 / 323 of 323 passing / 17 packs, 46 events, 35 actions, 9 endings`.
+`main 5dffefd... / run #88 / 329 of 329 passing / 17 packs, 46 events, 35 actions, 9 endings`.
