@@ -916,3 +916,54 @@ PR #30 remains the latest merged production-authority PR:
 `dbe78efdb9cd5ed384b66f7536bb5145702779c7`.
 
 Continue normal Lead operation: verify Git, top queues back to nine, integrate minimal useful subsets, and keep human/Product decisions separate from technical inference.
+
+
+## 22. Live milestone — CI-enabled production and starter trio
+
+This is a live recovery snapshot, not a final transfer.
+
+### Automated full-check CI
+
+GitHub Actions is now part of main:
+- workflow: `.github/workflows/mindy-successor-check.yml`;
+- PR #31 merge: `ed92f1f2067d1208446a961af4ba801a25e5b940`;
+- exact-head pull-request validation is now available for production integrations.
+
+### New production milestones
+
+PR #33:
+- merge: `e36cc1aaa44991d3340276b4f82efa5c9d9cf15a`;
+- test-only poverty anti-softlock production contract;
+- exact-head CI: **223/223 PASS**;
+- old PR #29 was closed as superseded.
+
+PR #34:
+- merge: `712ab6c7368ab21906f3fcb0184b35d4f3e1411c`;
+- first target production layer for Satyr Maid and Undead Farm;
+- exact-head CI: **227/227 PASS**;
+- current main push CI after merge: SUCCESS.
+
+After PR #34 all three starter careers have target repeatable shift coverage:
+- Lumber;
+- Satyr Maid;
+- Undead Farm.
+
+Satyr Maid / Undead Farm Hard Work thresholds, endings and exact Meta rewards are still NOT authored/locked and must not be guessed.
+
+### Current worker queues
+
+- Chat 2: items **89–97**.
+- Chat 3: items **87–95**.
+- Chat 4: items **78–86**.
+- Chat 5: items **73 + 82–89**.
+
+Each worker currently has nine outstanding items. Long-lived worker branches are behind current main; selectively integrate completed files onto fresh Lead branches rather than merging entire worker history.
+
+### Current execution direction
+
+Work has moved from RC-preparation into actual full-game production:
+- Chat 3 is building real ordinary-poverty content packs/tests;
+- Chat 5 is authoring concrete School teachers/text/presentation briefs;
+- Chat 2 is preparing media/GIF-ready manifests and draft bundles;
+- Chat 4 is providing independent production/CI review;
+- Lead continues target career implementation and integration on fresh current-main branches.
