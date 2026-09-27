@@ -1,0 +1,268 @@
+{
+  "version": 1,
+  "kind": "full-game-gif-batching-plan",
+  "policy": {
+    "batchesOrganizeMediaProductionOnly": true,
+    "semanticIdsRemainDistinct": true,
+    "reuseDoesNotMergeGameplayIdentity": true,
+    "fallbackRequiredForEveryBatch": true
+  },
+  "batches": [
+    {
+      "batch": "starter-trio",
+      "members": [
+        "lumber",
+        "satyr-maid",
+        "undead-farm"
+      ],
+      "reusableIntent": [
+        "manual-work-loop",
+        "service-household-loop",
+        "farm-production-loop",
+        "shared-day-work-result"
+      ],
+      "requiredSemanticIdentities": {
+        "existing": [
+          "job/lumber/shift/spring/default",
+          "job/lumber/shift/summer/default",
+          "job/lumber/shift/autumn/default",
+          "job/lumber/shift/winter/default",
+          "job/lumber/result/default"
+        ],
+        "pending": [
+          "Satyr Maid authored shift/result/milestone IDs",
+          "Undead Farm authored shift/result/milestone IDs"
+        ]
+      },
+      "dependencies": [
+        "Satyr Maid production content authoring",
+        "Undead Farm production content authoring"
+      ],
+      "fallback": "Lumber shipped static; Satyr Maid/Farm static-text placeholders sufficient during authoring",
+      "rule": "Media may share work-loop motion, but each career/action/result keeps a distinct semantic ID."
+    },
+    {
+      "batch": "remaining-seven-ordinary-careers",
+      "members": [
+        "hunter",
+        "tavern",
+        "guard",
+        "merchant",
+        "assassin",
+        "prostitute",
+        "geisha-artist"
+      ],
+      "reusableIntent": [
+        "outdoor-route-loop",
+        "indoor-service-loop",
+        "patrol-loop",
+        "counter-logistics-loop",
+        "stealth-prep-loop",
+        "client-service-loop",
+        "performance-loop"
+      ],
+      "requiredSemanticIdentities": {
+        "existing": [],
+        "pending": [
+          "authored shift/result/event/relationship/Night/ending IDs per career"
+        ]
+      },
+      "dependencies": [
+        "production content authoring for each career"
+      ],
+      "fallback": "static/text placeholders sufficient until exact content IDs exist",
+      "rule": "Batch production may reuse setting/motion classes across careers without sharing semantic identity."
+    },
+    {
+      "batch": "school",
+      "members": [
+        "eight-paid-courses",
+        "blocking-school-scene",
+        "future-public-results"
+      ],
+      "reusableIntent": [
+        "classroom-study-loop",
+        "workshop-classroom-setting",
+        "teacher-presenter-variant"
+      ],
+      "requiredSemanticIdentities": {
+        "existing": [
+          "school/literacy-and-numbers/lesson/default",
+          "school/arcana/lesson/default",
+          "school/rhetoric-and-social/lesson/default",
+          "school/etiquette-and-presentation/lesson/default",
+          "school/field-craft/lesson/default",
+          "school/physical-training/lesson/default",
+          "school/arts-and-performance/lesson/default",
+          "school/body-confidence/lesson/default",
+          "location/town/event/base-school/lesson"
+        ],
+        "pending": [
+          "authored management/accounting public-result ID",
+          "authored Arcana/Forest public-result ID"
+        ]
+      },
+      "dependencies": [
+        "teacher/presenter Product decision for teacher-specific variants",
+        "public-result provider/milestone authoring"
+      ],
+      "fallback": "assets/stage-school.svg and assets/workshop.svg",
+      "rule": "One classroom loop may serve multiple course IDs; paid lesson and blocking event remain distinct identities."
+    },
+    {
+      "batch": "ordinary-poverty",
+      "members": [
+        "normal-room",
+        "cheap-lodging",
+        "street-sleep",
+        "ordinary-street-events"
+      ],
+      "reusableIntent": [
+        "lodging-interior-loop",
+        "cheap-lodging-interior-loop",
+        "street-night-exterior-loop"
+      ],
+      "requiredSemanticIdentities": {
+        "existing": [
+          "location/town/default"
+        ],
+        "pending": [
+          "authored housing/lodging semantic IDs",
+          "authored street event IDs"
+        ]
+      },
+      "dependencies": [
+        "ordinary poverty/housing content authoring"
+      ],
+      "fallback": "location/town/default and text-safe fallback",
+      "rule": "Shared lodging/street media must not collapse housing or event identities."
+    },
+    {
+      "batch": "secret-debt-slave",
+      "members": [
+        "lender-offer",
+        "delayed-activation",
+        "hidden-day-work",
+        "forced-night",
+        "paid-freedom",
+        "bound-life",
+        "takeover"
+      ],
+      "reusableIntent": [
+        "street-night-exterior-loop",
+        "hidden-work-loop",
+        "forced-night-setting",
+        "ending-result-loop"
+      ],
+      "requiredSemanticIdentities": {
+        "existing": [],
+        "pending": [
+          "authored Secret Debt offer/activation/work/Night/outcome IDs"
+        ]
+      },
+      "dependencies": [
+        "Secret Debt product decisions",
+        "hidden-career content authoring"
+      ],
+      "fallback": "location/town/default plus text-safe fallback during implementation",
+      "rule": "Offer, activation, daytime work, forced Night and endings remain distinct semantic identities even if media is reused."
+    },
+    {
+      "batch": "forest-activity",
+      "members": [
+        "generic-route",
+        "logging-road",
+        "hunter-trail",
+        "old-boundary",
+        "challenge-families",
+        "result-surfaces"
+      ],
+      "reusableIntent": [
+        "forest-route-loop",
+        "forest-challenge-loop",
+        "forest-result-loop",
+        "seasonal-environment-variant"
+      ],
+      "requiredSemanticIdentities": {
+        "existing": [
+          "activity/forest/route/default",
+          "activity/forest/return/success",
+          "activity/forest/return/escape",
+          "activity/forest/return/failure"
+        ],
+        "pending": [
+          "route-specific IDs after content lock",
+          "challenge-specific IDs after content lock",
+          "season-specific IDs after topology authoring"
+        ]
+      },
+      "dependencies": [
+        "hunter-trail authoring",
+        "challenge-family authoring",
+        "seasonal topology authoring",
+        "Old Boundary final context decisions"
+      ],
+      "fallback": "assets/stage-forest.svg",
+      "rule": "Generic Forest media remains reusable while route/challenge identities stay distinct."
+    },
+    {
+      "batch": "palace",
+      "members": [
+        "palace-work",
+        "assignments",
+        "court-events",
+        "palace-outcomes"
+      ],
+      "reusableIntent": [
+        "court-service-loop",
+        "document-logistics-loop",
+        "ceremony-loop",
+        "audience-negotiation-loop"
+      ],
+      "requiredSemanticIdentities": {
+        "existing": [],
+        "pending": [
+          "authored Palace work/assignment/event/ending IDs"
+        ]
+      },
+      "dependencies": [
+        "Palace role/assignment/content Product decisions"
+      ],
+      "fallback": "static/text placeholders sufficient during implementation",
+      "rule": "Do not bind a unique Palace GIF before the corresponding assignment/event identity is authored."
+    },
+    {
+      "batch": "endings-meta",
+      "members": [
+        "lumber-endings",
+        "future-career-endings",
+        "new-run",
+        "future-meta-reveals"
+      ],
+      "reusableIntent": [
+        "ending-result-loop",
+        "epilogue-still",
+        "new-run-transition",
+        "meta-reveal-setting"
+      ],
+      "requiredSemanticIdentities": {
+        "existing": [
+          "ending/lumber/hard-work",
+          "ending/lumber/forewoman",
+          "ending/lumber/forest",
+          "location/town/default"
+        ],
+        "pending": [
+          "future career ending IDs",
+          "Palace/Meta reveal IDs if authored"
+        ]
+      },
+      "dependencies": [
+        "future career ending authoring",
+        "Palace/Meta content decisions"
+      ],
+      "fallback": "assets/stage-town.svg plus text-safe ending/result fallback",
+      "rule": "A shared epilogue/transition asset may serve multiple IDs without merging ending or Meta identity."
+    }
+  ]
+}
