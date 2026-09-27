@@ -49,7 +49,8 @@ test('Foreman localization does not alter locked relationship Night or Hard Work
  assert.equal(nightEvent.nightPolicy.consumesNight,true);
  assert.equal(nightEvent.reactionTriggers[0].choice,'lumber.foreman.night');
 
- const hardWork=definitions.endings.find((x:any)=>x.id==='hardWork:lumber');
+ const hardWork=definitions.endings.find((x:any)=>x.id==='ending.lumber.hard-work');
  assert.ok(hardWork);
  assert.deepEqual(hardWork.conditions,[{kind:'careerCounter',career:'lumber',counter:'completed_shifts',op:'gte',value:50}]);
+ assert.deepEqual(hardWork.metaRewards,[{kind:'hardWork',rewardId:'hardWork:lumber',career:'lumber'}]);
 });
