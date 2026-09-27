@@ -2174,3 +2174,187 @@ Summarize current readiness after PR43 for:
 - Secret Debt authored-only state.
 
 Continue items 130–138 sequentially without waiting for Lead review.
+
+
+## Queue depth Product rule — 12
+
+Current coordination target:
+- keep **12 independent QA tasks** queued/outstanding for Chat 4 whenever practical;
+- Chat 4 owns QA / CI / Product acceptance only;
+- Chat 4 does **not** dispatch or manage Chat 2/3/5;
+- verify worker claims from Git artifacts, never prose reports;
+- long-lived worker branches are stale: review/copy selectively, never recommend whole-branch merge.
+
+## Queue item 139 — School localization production patch QA v4
+
+Create NEW file only:
+- `docs/qa-prep/SCHOOL_LOCALIZATION_PRODUCTION_PATCH_QA_V4.md`
+
+Review Chat5 items 146–150 against current main after PR43:
+- production localization patch;
+- patch contract test;
+- UI locale smoke fixture;
+- reachable-event localization key map;
+- exact-course routing staging fixture.
+
+Require:
+- RU+EN completeness for safe reachable surfaces;
+- no staged teacher/course promotion;
+- no gameplay fields;
+- no Save/RNG/mechanics divergence;
+- selective-copy-only recommendation.
+
+## Queue item 140 — Chat5 completed-wave reconciliation v1
+
+Create NEW file only:
+- `docs/qa-prep/CHAT5_COMPLETED_WAVE_RECONCILIATION_v1.md`
+
+Reconcile Chat5 items 137–150 as actually present in Git.
+Classify exact files:
+- SAFE_TO_INTEGRATE_NOW;
+- STAGING_ONLY;
+- QA_EVIDENCE_ONLY;
+- PRODUCT_BLOCKED;
+- SUPERSEDED.
+
+Do not infer completion from worker prose.
+
+## Queue item 141 — poverty localization live-deliverable recheck v3
+
+Create NEW file only:
+- `docs/qa-prep/POVERTY_LOCALIZATION_LIVE_DELIVERABLE_RECHECK_V3.md`
+
+Recheck Chat3 items 140–148 from Git because prior QA v2 is now stale as files arrive.
+Record exact present/missing artifacts and update integration readiness without changing gameplay.
+
+## Queue item 142 — poverty localization selective-integration QA v3
+
+Create NEW file only:
+- `docs/qa-prep/POVERTY_LOCALIZATION_SELECTIVE_INTEGRATION_QA_V3.md`
+
+Once the current Chat3 delta/key-map/tests are present, review:
+- current PR37 production identity mapping;
+- RU+EN completeness;
+- no Secret Debt bleed;
+- locale-neutral gameplay IDs;
+- natural-path invariance;
+- presentation-only multi-GIF staging.
+
+If required files remain missing, mark BLOCKED_BY_MISSING_DELIVERABLES rather than guessing.
+
+## Queue item 143 — real GIF repository asset QA audit v1
+
+Create NEW file only:
+- `docs/qa-prep/REAL_GIF_REPOSITORY_ASSET_QA_AUDIT_v1.md`
+
+Review Chat2 real-asset inventory and real-asset-only multi-GIF patch.
+Require:
+- every production candidate is a real repo GIF;
+- 3–5 candidates per pool;
+- no placeholder/external/test-only path;
+- current semantic presentation IDs only;
+- RU+EN alt coverage;
+- static fallback;
+- gameplay untouched.
+
+## Queue item 144 — real GIF build/distribution path QA v1
+
+Create NEW file only:
+- `docs/qa-prep/REAL_GIF_BUILD_DISTRIBUTION_QA_V1.md`
+
+Define acceptance proving real GIF assets referenced by a future production pool are actually shipped by the build/runtime path, not merely present somewhere in Git.
+
+Cover:
+- source path;
+- build copy/bundle behavior;
+- runtime URL resolution;
+- static fallback;
+- missing-file failure behavior.
+
+No runtime edits.
+
+## Queue item 145 — localized pending-scene invariance gate v1
+
+Create NEW file only:
+- `docs/qa-prep/LOCALIZED_PENDING_SCENE_INVARIANCE_GATE_v1.md`
+
+Define executable acceptance for RU↔EN switching while a localized authored event/activity result is pending:
+- event/variant/choice IDs unchanged;
+- selected GIF key unchanged;
+- Save gameplay state unchanged;
+- only title/body/choice/alt/caption presentation changes;
+- fallback remains non-fatal.
+
+Cover Forest and one School/poverty surface when available.
+
+## Queue item 146 — School selective PR review template v1
+
+Create NEW file only:
+- `docs/qa-prep/SCHOOL_LOCALIZATION_SELECTIVE_PR_REVIEW_TEMPLATE_v1.md`
+
+Prepare the exact review checklist for the next Lead School localization PR:
+- fresh branch from current main;
+- only reviewed safe files;
+- no staged exact-course teacher content;
+- UI actually consumes localized strings;
+- regression coverage;
+- exact-head CI;
+- post-merge main CI.
+
+## Queue item 147 — localization migration debt sentinel v1
+
+Create NEW file only:
+- `docs/qa-prep/LOCALIZATION_MIGRATION_DEBT_SENTINEL_v1.md`
+
+Define a no-false-green classification across current production:
+- SHIPPED_RU_EN;
+- RU_FALLBACK_ONLY;
+- STAGED_RU_EN;
+- MISSING_TRANSLATION;
+- NON_PLAYER_FACING.
+
+Russian fallback must never count as complete English coverage.
+
+## Queue item 148 — Product-blocked content isolation audit v2
+
+Create NEW file only:
+- `docs/qa-prep/PRODUCT_BLOCKED_CONTENT_ISOLATION_AUDIT_V2.md`
+
+Verify current integration work does not accidentally promote unresolved mechanics/content:
+- Secret Debt mechanics/rewards;
+- School management/accounting public result;
+- School Arcana/Forest public result;
+- Hunter/Old Boundary unresolved route semantics;
+- Palace unresolved content.
+
+Localization/presentation authoring may exist, but Product-blocked gameplay must remain unshipped.
+
+## Queue item 149 — current-main CI and regression floor audit v2
+
+Create NEW file only:
+- `docs/qa-prep/CURRENT_MAIN_CI_REGRESSION_FLOOR_V2.md`
+
+Record current main SHA, latest successful workflow, test count, pack/event/action/ending validation counts where evidenced, and the minimum CI evidence required before the next content integration merge.
+
+Do not copy stale historical counts forward without Git/workflow evidence.
+
+## Queue item 150 — next production integration gate v11
+
+Create NEW file only:
+- `docs/qa-prep/NEXT_PRODUCTION_INTEGRATION_GATE_v11.md`
+
+Summarize current readiness after items 139–149 for:
+- School localization selective integration;
+- ordinary poverty localization;
+- Forest remaining bilingual/content depth;
+- real-GIF production pools;
+- Secret Debt authored-only/Product-blocked state.
+
+Separate:
+- GREEN_TO_INTEGRATE;
+- NEEDS_FRESH_MAIN_CI;
+- WAITING_FOR_WORKER_DELIVERABLE;
+- STAGING_ONLY;
+- PRODUCT_BLOCKED.
+
+Continue items 139–150 sequentially without waiting for Lead review.
