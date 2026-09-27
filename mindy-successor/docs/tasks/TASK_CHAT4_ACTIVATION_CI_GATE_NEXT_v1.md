@@ -1601,3 +1601,62 @@ Audit current main after PR37 and PR38 status:
 Classify each as SHIPPED_BASE / SHIPPED_CONTENT / CONTENT_OPEN / PRODUCT_BLOCKED / RUNTIME_EXTENSION_REQUIRED.
 
 Continue items 91–99 sequentially without waiting for Lead review.
+
+
+## Queue item 100 — School staged-vs-reachable content QA
+
+Create NEW file only:
+- `docs/qa-prep/SCHOOL_STAGED_REACHABLE_CONTENT_QA_v1.md`
+
+Review PR38's integration model:
+- full teacher/course libraries preserved in staging;
+- root production includes only safely triggerable events;
+- no fake course routing;
+- Night-study exact triggers remain valid;
+- staged content cannot be misreported as naturally reachable.
+
+## Queue item 101 — multi-GIF Lead patch preflight v1
+
+Create NEW file only:
+- `docs/qa-prep/MULTI_GIF_LEAD_PATCH_PREFLIGHT_v1.md`
+
+Using Chat2 handoff v2 and current main, list exact preflight requirements before shared presentation runtime change:
+- schema compatibility;
+- deterministic occurrence key;
+- no gameplay RNG;
+- no Save migration if avoidable;
+- UI fallback behavior;
+- existing override compatibility;
+- tests required.
+
+## Queue item 102 — post-PR37/38 production namespace audit
+
+Create NEW file only:
+- `docs/qa-prep/POST_PR37_PR38_NAMESPACE_AUDIT_v1.md`
+
+Audit production pack/media/event namespaces after poverty and School integrations.
+
+Check:
+- pack ownership;
+- duplicate IDs;
+- semantic presentation namespace separation;
+- School staged libraries excluded from root loader;
+- ordinary poverty separated from Secret Debt.
+
+## Queue item 103 — current-main full production smoke matrix v1
+
+Create NEW file only:
+- `docs/qa-prep/CURRENT_MAIN_PRODUCTION_SMOKE_MATRIX_v1.md`
+
+Define representative natural-path smoke coverage for:
+- all 10 career shifts;
+- ordinary poverty;
+- School paid lesson + safe authored follow-up;
+- Night study;
+- Forest Activity;
+- Lumber continuation;
+- ending/meta transaction.
+
+Use actual current-main evidence and identify any path still lacking executable smoke.
+
+Continue items 95–103 sequentially without waiting for Lead review.
