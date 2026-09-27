@@ -15,7 +15,7 @@ const expected=[
 ] as const;
 
 test('Forest bilingual production pack preserves exact activityResult boundaries and has no mechanical choice effects',()=>{
-  assert.equal(pack.id,'forest-result-content-bilingual-v2');
+  assert.equal(pack.id,'forest-result-content-v1');
   assert.deepEqual(pack.capabilities?.reads.activities,['lumber.forest']);
   assert.equal(pack.events.length,3);
 
