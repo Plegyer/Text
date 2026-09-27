@@ -68,50 +68,51 @@ PR #45:
 Base:
 `ab53da4059e348734703c2de490e43e94c02b057`
 
-Reviewed exact head:
-`765995c098ed4f0c688c18cb8d660c1504d8b967`
+Current reviewed exact head:
+`afd485bf73956f745283f87479808703ae9085dd`
 
-Workflow #64 / id `36323122474`:
+Workflow #65 / id `36323243584`:
 `FAILURE`
 
 Test summary:
 - tests: 304
-- pass: 302
-- fail: 2.
+- pass: 303
+- fail: 1.
 
-The 84-key root-bundle completeness test itself passes.
+Progress from prior head:
+- the all-six-pack natural-path production test now passes;
+- the stale RU/EN title/body expectations in the renderer smoke were corrected;
+- the remaining failure is only the renderer poverty pending-scene smoke.
 
-Blocking failures are test-fixture/path expectations:
+Remaining exact failure:
+`renderer: ordinary poverty pending scene localizes RU EN without changing gameplay save`
+times out before the initial localized RU scene appears.
 
-1. `all six ordinary-poverty production packs have locale-invariant natural paths`
+The seeded pending snapshot contains:
+`allowedChoiceIds: ['take-errand','decline']`
 
-The v2 summer case uses elapsed day 12 while the v2 event requires day-in-year >=13. Current Resolver therefore correctly selects the eligible v1 summer event first. The test expected the v2 event on a day when its own condition is false.
-
-Fix direction:
-use a naturally eligible current day for the intended v2 identity and keep Resolver-driven selection; do not alter production event conditions to satisfy the test.
-
-2. `renderer: ordinary poverty pending scene localizes RU EN without changing gameplay save`
-
-The smoke seeds exact event:
+but the exact current production event
 `poverty-street-production.helpful-summer`
+owns:
+- `take-errand`
+- `keep-resting`
 
-but waits for stale/unrelated title text:
-- RU expected in test: `Мелкая помощь у рынка`;
-- EN expected in test: `Small help near the market`.
+and has no `decline` choice.
 
-The actual integrated current key is:
-- RU: `Небольшое платное поручение`;
-- EN: `A small paid errand`.
+The production `parseSave` boundary explicitly rejects a pending snapshot when any `allowedChoiceIds` member is not an actual choice of the event, with:
+`Некорректный snapshot выборов pending scene.`
 
-The pending fixture should also use the event's exact current choice IDs; the production event owns `take-errand` and `keep-resting`.
+Therefore the smoke boots from an invalid saved pending snapshot and never reaches the expected event render.
 
 Fix direction:
-align UI smoke expectations and fixture IDs to the exact merged 84-key/current-pack identity. Do not change localization/gameplay merely to match stale smoke text.
+replace the stale `decline` snapshot ID with exact current `keep-resting`, or preferably produce the pending scene through the natural Resolver path. Do not add a fake `decline` production choice and do not weaken save validation.
+
+The integrated 84-key completeness test and all-six natural-path test are green on this head.
 
 PR45 verdict at this gate:
 `BLOCKED_BY_EXACT_HEAD_CI`.
 
-A later head must pass the item-155 selective gate before merge:
+A later head must correct the invalid pending choice snapshot and pass the item-155 selective gate before merge:
 - exact 84 current keys;
 - natural paths;
 - renderer locale invariance;
@@ -261,7 +262,7 @@ Forest PR43 baseline:
 
 Ordinary poverty PR45:
 `BLOCKED_BY_EXACT_HEAD_CI`
-on exact head `765995c...`.
+on exact head `afd485b...`.
 
 The localization payload is sound enough to continue the selective PR; the current blockers are stale/incorrect test expectations, not a reason to alter gameplay.
 
