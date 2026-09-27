@@ -3,7 +3,7 @@
 Status: COMPLETE / SHARED_CONSUMER_ACCEPTANCE_CONTRACT
 
 Current main:
-`f93878b954385a1c61d8a06a0673354207d11d70`.
+`1a2f6e428da41e356f8d48df4a72923a5cc1928c`.
 
 ## Current persistence behavior
 
@@ -196,3 +196,15 @@ Accept only:
 
 Reject:
 `localized prose -> inferred/stored gameplay identity`.
+
+
+## PR51 compatibility note
+
+PR51 changes ordinary-poverty localization values only.
+It does not change the app/engine/presentation seams audited by this document.
+
+Current app blob remains:
+`312399d01b211f13c29017c1e17b61f2027d21b3`.
+
+Current presentation blob remains:
+`0bed8e1a4a88358b7e1e8ef22d787f5bcee323f4`.
