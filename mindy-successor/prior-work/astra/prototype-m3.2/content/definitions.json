@@ -3095,14 +3095,7 @@
       "label": "Tavern",
       "initialStage": "new-hand",
       "stages": [
-        "new-hand",
-        "trusted-worker",
-        "house-node",
-        "veteran",
-        "innkeeper",
-        "information-broker",
-        "sanctuary",
-        "outcome-ready"
+        "new-hand"
       ],
       "transitions": []
     },
@@ -3111,14 +3104,7 @@
       "label": "Hunter",
       "initialStage": "novice",
       "stages": [
-        "novice",
-        "tracker",
-        "recognized-hunter",
-        "veteran",
-        "master-hunter",
-        "warden",
-        "legend",
-        "outcome-ready"
+        "novice"
       ],
       "transitions": []
     },
@@ -3127,15 +3113,7 @@
       "label": "Guard",
       "initialStage": "recruit",
       "stages": [
-        "recruit",
-        "trusted-guard",
-        "senior",
-        "veteran",
-        "officer",
-        "reform",
-        "network",
-        "major-case",
-        "outcome-ready"
+        "recruit"
       ],
       "transitions": []
     },
@@ -3144,14 +3122,7 @@
       "label": "Merchant",
       "initialStage": "stall-hand",
       "stages": [
-        "stall-hand",
-        "independent-trader",
-        "networked-merchant",
-        "veteran",
-        "merchant-house",
-        "speculator-smuggler",
-        "patron-of-routes",
-        "outcome-ready"
+        "stall-hand"
       ],
       "transitions": []
     },
@@ -3160,14 +3131,7 @@
       "label": "Artist House",
       "initialStage": "novice",
       "stages": [
-        "novice",
-        "performer",
-        "recognized-artist",
-        "veteran",
-        "master-artist",
-        "patron-network",
-        "court-invitation",
-        "outcome-ready"
+        "novice"
       ],
       "transitions": []
     },
@@ -3176,15 +3140,7 @@
       "label": "Assassin",
       "initialStage": "runner",
       "stages": [
-        "runner",
-        "operative",
-        "trusted-blade",
-        "veteran",
-        "ghost",
-        "turncoat",
-        "handler-takeover",
-        "refusal-chain",
-        "outcome-ready"
+        "runner"
       ],
       "transitions": []
     },
@@ -3193,14 +3149,7 @@
       "label": "Professional",
       "initialStage": "new-independent-worker",
       "stages": [
-        "new-independent-worker",
-        "known-professional",
-        "established",
-        "veteran",
-        "independent-house",
-        "elite-clientele",
-        "network-advocacy",
-        "outcome-ready"
+        "new-independent-worker"
       ],
       "transitions": []
     }
