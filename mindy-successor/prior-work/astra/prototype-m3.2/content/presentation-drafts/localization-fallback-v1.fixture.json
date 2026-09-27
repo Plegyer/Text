@@ -1,0 +1,120 @@
+{
+  "formatVersion": 1,
+  "kind": "presentation-localization-fallback-fixture",
+  "status": "AUTHORING_CONTRACT_ONLY",
+  "locales": {
+    "source": "ru",
+    "shipped": [
+      "ru",
+      "en"
+    ],
+    "fallbackOrder": {
+      "ru": [
+        "ru",
+        "en",
+        "legacy"
+      ],
+      "en": [
+        "en",
+        "ru",
+        "legacy"
+      ]
+    }
+  },
+  "cases": [
+    {
+      "id": "fully-translated",
+      "semanticId": "job/lumber/shift/spring/default",
+      "localizationKey": "loc/presentation/job/lumber/shift/spring/default/caption",
+      "values": {
+        "ru": "Весенняя смена лесорубов.",
+        "en": "Spring lumber shift."
+      },
+      "expected": {
+        "ru": {
+          "source": "ru",
+          "text": "Весенняя смена лесорубов.",
+          "qaDebt": []
+        },
+        "en": {
+          "source": "en",
+          "text": "Spring lumber shift.",
+          "qaDebt": []
+        }
+      }
+    },
+    {
+      "id": "ru-only-migration-debt",
+      "semanticId": "job/lumber/shift/summer/default",
+      "localizationKey": "loc/presentation/job/lumber/shift/summer/default/caption",
+      "values": {
+        "ru": "Летняя смена лесорубов."
+      },
+      "expected": {
+        "ru": {
+          "source": "ru",
+          "text": "Летняя смена лесорубов.",
+          "qaDebt": []
+        },
+        "en": {
+          "source": "ru-fallback",
+          "text": "Летняя смена лесорубов.",
+          "qaDebt": [
+            "MISSING_EN"
+          ]
+        }
+      }
+    },
+    {
+      "id": "missing-key-legacy-fallback",
+      "semanticId": "night/rest/default",
+      "localizationKey": "loc/presentation/night/rest/default/caption",
+      "values": {},
+      "legacyFallback": {
+        "ru": "Выберите ночлег.",
+        "en": "Choose lodging."
+      },
+      "expected": {
+        "ru": {
+          "source": "legacy-ru",
+          "text": "Выберите ночлег.",
+          "qaDebt": [
+            "MISSING_LOCALIZATION_KEY_VALUE"
+          ]
+        },
+        "en": {
+          "source": "legacy-en",
+          "text": "Choose lodging.",
+          "qaDebt": [
+            "MISSING_LOCALIZATION_KEY_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "id": "localized-multigif-alt-caption",
+      "semanticId": "location/town/event/poverty-pressure-production-cold-rain/default",
+      "localizationKey": "loc/presentation/location/town/event/poverty-pressure-production-cold-rain/default/caption",
+      "caption": {
+        "ru": "Холодный дождь у уличного укрытия.",
+        "en": "Cold rain beside a street shelter."
+      },
+      "candidate": {
+        "key": "cold-rain-a",
+        "mediaPath": "authoring://non-shipped/bilingual/poverty/pressure/cold-rain/a.gif",
+        "altKey": "loc/presentation/location/town/event/poverty-pressure-production-cold-rain/default/candidate/cold-rain-a/alt",
+        "alt": {
+          "ru": "Холодный дождь добирается до края уличного укрытия.",
+          "en": "Cold rain reaches the edge of a street shelter."
+        }
+      },
+      "expected": {
+        "sameSemanticIdAcrossLocales": true,
+        "sameCandidateKeyAcrossLocales": true,
+        "sameMediaPathAcrossLocales": true,
+        "qaDebt": []
+      }
+    }
+  ],
+  "gameplayFieldsAllowed": false
+}
