@@ -1239,12 +1239,12 @@ Do not claim any route has been executed. Keep production runtime/data PRs under
 Continue items 69–77 sequentially without waiting for Lead review.
 
 
-## Queue item 78 — PR32 starter-trio production review
+## Queue item 78 — PR34 starter-trio production review
 
 Create NEW file only:
-- `docs/qa-prep/PR32_STARTER_TRIO_PRODUCTION_REVIEW_v1.md`
+- `docs/qa-prep/PR34_STARTER_TRIO_PRODUCTION_REVIEW_v1.md`
 
-Review Lead PR #32 against authoritative Satyr Maid / Undead Farm drafts and current runtime.
+Review Lead PR #34 (current-main replacement for closed PR #32) against authoritative Satyr Maid / Undead Farm drafts and current runtime.
 
 Verify:
 - only target starter shifts/career states + tests are added;
@@ -1266,7 +1266,7 @@ Continue items 70–78 sequentially without waiting for Lead review.
 Create NEW file only:
 - `docs/qa-prep/STARTER_TRIO_POST_MERGE_REGRESSION_FLOOR_v1.md`
 
-Assuming PR32 eventually passes CI and merges, define the retained regression floor for all three starter careers:
+Assuming PR34 eventually passes CI and merges, define the retained regression floor for all three starter careers:
 - action availability after arrival;
 - 1 Energy shift cost;
 - typed completed-shifts progress;
@@ -1276,7 +1276,7 @@ Assuming PR32 eventually passes CI and merges, define the retained regression fl
 - no guessed Hard Work for Satyr/Farm;
 - Lumber Hard Work exact invariant unchanged.
 
-Do not claim PR32 merged or green unless Git proves it.
+Do not claim PR34 merged or green unless Git proves it.
 
 Continue items 71–79 sequentially without waiting for Lead review.
 
@@ -1296,7 +1296,7 @@ Verify:
 - exact-head evidence can be associated with PRs;
 - no product/runtime semantics changed.
 
-Also record how PR29/PR32 integration policy changes now that CI is available.
+Also record how PR29/PR33 and PR32/PR34 replacement integration policy changes now that CI is available.
 
 Continue items 72–80 sequentially without waiting for Lead review.
 
@@ -1332,12 +1332,12 @@ Define the concrete review gate for Chat3 items 87–95:
 - one-file ownership;
 - exact CI required on Lead integration branch.
 
-## Queue item 83 — starter-trio production scope audit after PR32
+## Queue item 83 — starter-trio production scope audit after PR34
 
 Create NEW file only:
 - `docs/qa-prep/STARTER_TRIO_PRODUCTION_SCOPE_AUDIT_v1.md`
 
-Once PR32 status is known, compare all three starter careers:
+Once PR34 status is known, compare all three starter careers:
 - actual shipped target actions;
 - typed career states;
 - seasonal presentation;
@@ -1380,7 +1380,7 @@ Create NEW file only:
 - `docs/qa-prep/NEXT_PRODUCTION_INTEGRATION_GATE_v6.md`
 
 Summarize what Lead may integrate next based on current evidence:
-- PR32 starter trio;
+- PR34 starter trio;
 - ordinary poverty content wave;
 - School authored-content wave;
 - GIF/media drafts;
