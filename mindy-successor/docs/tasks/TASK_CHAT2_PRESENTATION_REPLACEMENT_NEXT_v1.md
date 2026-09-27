@@ -1435,3 +1435,21 @@ Consolidate only visual/presentation choices that truly need human input before 
 Do not ask about mechanics already fixed by semantic presentation contracts. For each decision state what can proceed without it.
 
 Continue items 72–80 sequentially without waiting for Lead review.
+
+
+## Queue item 81 — full-game presentation implementation package boundary
+
+Create NEW file only:
+- `docs/presentation-prep/FULL_GAME_PRESENTATION_IMPLEMENTATION_PACKAGE_BOUNDARY_v1.md`
+
+Define bounded future implementation packages for:
+- semantic ID/content mapping;
+- shipped fallback registration;
+- batch GIF/static import;
+- user override/replacement;
+- rollback;
+- presentation QA.
+
+Separate content authoring dependencies from runtime/media implementation and preserve zero gameplay timing coupling.
+
+Continue items 73–81 sequentially without waiting for Lead review.
