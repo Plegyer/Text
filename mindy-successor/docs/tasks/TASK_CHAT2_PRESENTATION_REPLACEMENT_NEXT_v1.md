@@ -1380,3 +1380,23 @@ Define a reusable completeness check for authored presentation surfaces:
 The template must cover careers, School, poverty, Activity, Palace and endings without requiring final assets.
 
 Continue items 69–77 sequentially without waiting for Lead review.
+
+
+## Queue item 78 — presentation implementation handoff checksum
+
+Create NEW file only:
+- `docs/presentation-prep/PRESENTATION_IMPLEMENTATION_HANDOFF_CHECKSUM_v1.md`
+
+Define a deterministic checklist/checksum-style summary for a completed presentation authoring handoff:
+- content IDs;
+- semantic presentation IDs;
+- media mappings;
+- fallback classes;
+- unresolved assets;
+- reuse groups;
+- replacement package version;
+- no gameplay-state fields.
+
+The purpose is to detect accidental drift between content authoring and later media implementation.
+
+Continue items 70–78 sequentially without waiting for Lead review.
