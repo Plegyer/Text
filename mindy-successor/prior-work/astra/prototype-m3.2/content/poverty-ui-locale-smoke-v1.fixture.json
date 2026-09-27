@@ -1,0 +1,237 @@
+{
+  "schemaVersion": 1,
+  "id": "poverty.ui-locale-smoke.v1",
+  "status": "POST_MERGE_EXPECTATION_FIXTURE",
+  "locales": [
+    "ru",
+    "en"
+  ],
+  "sourceLocale": "ru",
+  "cases": [
+    {
+      "id": "street-helpful",
+      "gameplayRef": {
+        "eventId": "poverty-street-production.helpful-summer",
+        "variantId": "default",
+        "choiceIds": [
+          "take-errand",
+          "keep-resting"
+        ],
+        "mediaId": "stage.outside"
+      },
+      "expected": {
+        "title": {
+          "ru": "Небольшое платное поручение",
+          "en": "A small paid errand"
+        },
+        "body": {
+          "ru": "Перед тем как улица стихает на ночь, соседнему прилавку нужно убрать под навес последний ящик. Работа короткая и безымянная.",
+          "en": "Before the street settles for the night, a nearby stall needs one last crate carried under cover. The work is brief and anonymous."
+        },
+        "choices": {
+          "take-errand": {
+            "label": {
+              "ru": "Взяться за короткое поручение",
+              "en": "Take the short errand"
+            },
+            "text": {
+              "ru": "Ты переносишь ящик и получаешь небольшую плату. Сумма относится к начальной настройке, а не к зафиксированному значению экономики.",
+              "en": "You move the crate and receive a small payment. The amount is initial tuning rather than a locked economy value."
+            }
+          },
+          "keep-resting": {
+            "label": {
+              "ru": "Остаться на своём месте",
+              "en": "Keep your place"
+            },
+            "text": {
+              "ru": "Ты сохраняешь более безопасное место для сна и пропускаешь поручение.",
+              "en": "You keep the safer sleeping spot and let the errand pass."
+            }
+          }
+        },
+        "mediaAlt": {
+          "ru": "Уличная сцена обычной ночёвки под открытым небом.",
+          "en": "Street scene for an ordinary night spent outdoors."
+        }
+      }
+    },
+    {
+      "id": "street-pressure",
+      "gameplayRef": {
+        "eventId": "poverty-street-production.pressure-winter",
+        "variantId": "default",
+        "choiceIds": [
+          "take-shelter",
+          "keep-moving"
+        ],
+        "mediaId": "stage.outside"
+      },
+      "expected": {
+        "title": {
+          "ru": "Холодная мостовая",
+          "en": "Cold pavement"
+        },
+        "body": {
+          "ru": "Камни сохраняют дневной холод. Можно остаться под навесом или продолжить двигаться и встретить утро более уставшей.",
+          "en": "The stones keep the day's cold. You can stay tucked beneath an overhang or keep moving and arrive at morning more exhausted."
+        },
+        "choices": {
+          "take-shelter": {
+            "label": {
+              "ru": "Остаться под навесом",
+              "en": "Stay under the overhang"
+            },
+            "text": {
+              "ru": "Ты выбираешь бесплатный и более безопасный вариант и не добавляешь ещё один штраф к обычному давлению уличной ночёвки.",
+              "en": "You choose the free, safer resolution and avoid adding another penalty to the ordinary street-night pressure."
+            }
+          },
+          "keep-moving": {
+            "label": {
+              "ru": "Продолжать идти",
+              "en": "Keep moving"
+            },
+            "text": {
+              "ru": "Ты меняешь отдых на движение. Дополнительная потеря энергии на следующий день относится к начальной настройке, а не к зафиксированному балансу.",
+              "en": "You trade rest for motion. The added next-day Energy pressure is initial tuning, not a locked balance value."
+            }
+          }
+        },
+        "mediaAlt": {
+          "ru": "Уличная сцена обычной ночёвки под открытым небом.",
+          "en": "Street scene for an ordinary night spent outdoors."
+        }
+      }
+    },
+    {
+      "id": "cheap-lodging",
+      "gameplayRef": {
+        "eventId": "poverty-cheap-production.shared-quiet-autumn",
+        "variantId": "default",
+        "choiceIds": [
+          "settle-quietly"
+        ],
+        "mediaId": "stage.room"
+      },
+      "expected": {
+        "title": {
+          "ru": "Тонкие стены, ранняя тишина",
+          "en": "Thin walls, early quiet"
+        },
+        "body": {
+          "ru": "В дешёвом ночлеге рано становится тихо. Через тонкие стены слышны каждый кашель и каждый шаг, поэтому общая комната договаривается о тишине раньше, чем кто-нибудь успевает поссориться.",
+          "en": "The cheap lodging settles early. Thin walls carry every cough and footstep, so the shared room agrees on quiet before anyone starts an argument."
+        },
+        "choices": {
+          "settle-quietly": {
+            "label": {
+              "ru": "Соблюдать общую тишину",
+              "en": "Keep the shared quiet"
+            },
+            "text": {
+              "ru": "Ты освобождаешь место, держишь вещи рядом и позволяешь комнате успокоиться, не добавляя новых расходов или штрафов.",
+              "en": "You make space, keep your belongings close, and let the room settle without adding another cost or penalty."
+            }
+          }
+        },
+        "mediaAlt": {
+          "ru": "Сцена дешёвой общей комнаты для ночлега.",
+          "en": "Cheap shared-room lodging scene."
+        }
+      }
+    },
+    {
+      "id": "recovery-help",
+      "gameplayRef": {
+        "eventId": "poverty-recovery-production.small-coin-help",
+        "variantId": "default",
+        "choiceIds": [
+          "take-coins",
+          "leave-them"
+        ],
+        "mediaId": "stage.outside"
+      },
+      "expected": {
+        "title": {
+          "ru": "Монеты рядом с хлебом",
+          "en": "Coins left with the bread"
+        },
+        "body": {
+          "ru": "На общей полке оставили бумажный свёрток со вчерашним хлебом и несколько мелких монет рядом. Никакого имени или подписи.",
+          "en": "A paper parcel of yesterday's bread has been left on a public ledge with a few loose coins beside it and no name attached."
+        },
+        "choices": {
+          "take-coins": {
+            "label": {
+              "ru": "Взять мелкие монеты",
+              "en": "Take the loose coins"
+            },
+            "text": {
+              "ru": "Ты берёшь только свободно лежащие монеты. Небольшая сумма относится к начальной настройке и не является обязательной частью обычного восстановления.",
+              "en": "You take only the loose coins. The small amount is initial tuning and is not required for ordinary recovery."
+            }
+          },
+          "leave-them": {
+            "label": {
+              "ru": "Оставить монеты",
+              "en": "Leave them"
+            },
+            "text": {
+              "ru": "Ты оставляешь монеты тому, кому они понадобятся следующим, и сохраняешь своё место на ночь.",
+              "en": "You leave the coins for whoever needs them next and keep your place for the night."
+            }
+          }
+        },
+        "mediaAlt": {
+          "ru": "Уличная сцена обычной ночёвки под открытым небом.",
+          "en": "Street scene for an ordinary night spent outdoors."
+        }
+      }
+    },
+    {
+      "id": "neutral-poverty",
+      "gameplayRef": {
+        "eventId": "poverty-street-production.neutral-autumn",
+        "variantId": "default",
+        "choiceIds": [
+          "settle-in"
+        ],
+        "mediaId": "stage.outside"
+      },
+      "expected": {
+        "title": {
+          "ru": "Тихий угол после закрытия",
+          "en": "A quiet corner after closing"
+        },
+        "body": {
+          "ru": "После закрытия магазина под навесом остаётся сухая полоса мостовой. Никто не предлагает помощь и никто тебя не прогоняет; на эту ночь этого достаточно.",
+          "en": "A shop awning leaves a dry strip of pavement after closing. Nobody offers help and nobody drives you away; for tonight, that is enough."
+        },
+        "choices": {
+          "settle-in": {
+            "label": {
+              "ru": "Устроиться тихо",
+              "en": "Settle in quietly"
+            },
+            "text": {
+              "ru": "Ты остаёшься в сухом углу, ничего не приобретая и не теряя сверх обычной стоимости уличной ночёвки.",
+              "en": "You keep the dry corner without gaining or losing anything beyond the ordinary street-night cost."
+            }
+          }
+        },
+        "mediaAlt": {
+          "ru": "Уличная сцена обычной ночёвки под открытым небом.",
+          "en": "Street scene for an ordinary night spent outdoors."
+        }
+      }
+    }
+  ],
+  "invariants": {
+    "gameplayReferencesOnly": true,
+    "duplicatedMechanics": false,
+    "localeNeutralGameplayIds": true,
+    "localeAffectsPresentationOnly": true,
+    "secretDebtIncluded": false
+  }
+}
