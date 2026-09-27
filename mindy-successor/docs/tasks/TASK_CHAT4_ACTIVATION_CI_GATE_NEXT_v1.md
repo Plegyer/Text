@@ -1299,3 +1299,93 @@ Verify:
 Also record how PR29/PR32 integration policy changes now that CI is available.
 
 Continue items 72–80 sequentially without waiting for Lead review.
+
+
+## Queue item 81 — PR33 post-merge poverty verification
+
+Create NEW file only:
+- `docs/qa-prep/PR33_POST_MERGE_POVERTY_VERIFICATION_v1.md`
+
+Verify Git after PR #33:
+- merged SHA;
+- exact-head CI result/count;
+- old PR #29 superseded/closed;
+- test-only scope;
+- Lumber/Forest locked invariants unchanged;
+- main push CI state if available.
+
+Use Git evidence only.
+
+## Queue item 82 — ordinary poverty production-pack review gate
+
+Create NEW file only:
+- `docs/qa-prep/ORDINARY_POVERTY_PRODUCTION_PACK_REVIEW_GATE_v1.md`
+
+Define the concrete review gate for Chat3 items 87–95:
+- natural street reachability;
+- helpful/neutral/bad content separation;
+- no Secret Debt bleed;
+- initial tuning not promoted to Product lock;
+- save/reload/idempotency;
+- anti-softlock;
+- presentation fallback;
+- one-file ownership;
+- exact CI required on Lead integration branch.
+
+## Queue item 83 — starter-trio production scope audit after PR32
+
+Create NEW file only:
+- `docs/qa-prep/STARTER_TRIO_PRODUCTION_SCOPE_AUDIT_v1.md`
+
+Once PR32 status is known, compare all three starter careers:
+- actual shipped target actions;
+- typed career states;
+- seasonal presentation;
+- save/reload;
+- content depth still missing;
+- Hard Work state.
+
+Do not invent Satyr/Farm Hard Work thresholds.
+
+## Queue item 84 — production pack namespace collision sentinel
+
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/production-pack-namespace-collision-sentinel.test.ts`
+
+Add a generic catalog-level sentinel covering:
+- duplicate production pack IDs;
+- duplicate event IDs;
+- collision between ordinary poverty and Secret Debt namespaces;
+- collision with School/Lumber production namespaces.
+
+Use existing catalog/schema behavior; do not add runtime logic.
+
+## Queue item 85 — CI exact-head evidence smoke
+
+Create NEW file only:
+- `docs/qa-prep/CI_EXACT_HEAD_EVIDENCE_SMOKE_v1.md`
+
+Document actual observed CI evidence for PR31/PR32/PR33:
+- run IDs;
+- head SHAs;
+- pass/fail counts where available;
+- first PR32 failure and corrected rerun;
+- rules for using the evidence.
+
+Do not claim future PR status.
+
+## Queue item 86 — next production integration gate v6
+
+Create NEW file only:
+- `docs/qa-prep/NEXT_PRODUCTION_INTEGRATION_GATE_v6.md`
+
+Summarize what Lead may integrate next based on current evidence:
+- PR32 starter trio;
+- ordinary poverty content wave;
+- School authored-content wave;
+- GIF/media drafts;
+- Secret Debt technical prep.
+
+Separate CI-green, review-ready, Product-blocked and authoring-ready work.
+
+Continue items 78–86 sequentially without waiting for Lead review.
