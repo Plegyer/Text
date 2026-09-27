@@ -1224,3 +1224,24 @@ Define a repeatable operator checklist for importing or replacing a batch of GIF
 The checklist must work for later full-game content production without source-path editing.
 
 Continue items 61–69 sequentially without waiting for Lead review.
+
+
+## Queue item 70 — presentation production intake manifest template
+
+Create NEW file only:
+- `docs/presentation-prep/PRESENTATION_PRODUCTION_INTAKE_MANIFEST_TEMPLATE_v1.md`
+
+Define the minimal intake manifest required when new authored gameplay content is ready for GIF/static presentation work:
+- source gameplay/content ID;
+- semantic `presentationId`;
+- owning subsystem;
+- required vs optional visual;
+- reusable media group;
+- fallback requirement;
+- animations-off requirement;
+- save identity owner;
+- Product/content approval reference.
+
+The template must support batch handoff from career/School/poverty/Activity authors without requiring source-code path editing.
+
+Continue items 62–70 sequentially without waiting for Lead review.
