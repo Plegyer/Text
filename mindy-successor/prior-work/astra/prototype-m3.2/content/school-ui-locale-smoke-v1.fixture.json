@@ -1,0 +1,355 @@
+{
+  "formatVersion": 1,
+  "id": "school-ui-locale-smoke-v1",
+  "status": "UI_EXPECTATION_FIXTURE",
+  "sourceLocale": "ru",
+  "supportedLocales": [
+    "ru",
+    "en"
+  ],
+  "expected": {
+    "panelTitle": {
+      "key": "ui.school.title",
+      "ru": "Школа",
+      "en": "School"
+    },
+    "panelHelp": {
+      "key": "ui.school.help",
+      "ru": "Восемь оплачиваемых курсов. Успешный урок списывает стоимость курса и 1 единицу текущей Energy одним действием.",
+      "en": "Eight paid courses are available. A successful lesson charges the course tuition and 1 current-day Energy in one transaction."
+    },
+    "tuitionEnergyTemplate": {
+      "key": "ui.school.tuitionEnergy",
+      "ru": "Стоимость: {tuition} монет · Энергия сегодня: {energy}",
+      "en": "Tuition: {tuition} coins · Energy today: {energy}"
+    },
+    "lessonAction": {
+      "key": "ui.school.lessonButton",
+      "ru": "Учиться",
+      "en": "Study"
+    },
+    "nightStudyAction": {
+      "key": "ui.school.nightStudyButton",
+      "ru": "Учиться ночью",
+      "en": "Study at night"
+    },
+    "nightStudyContext": {
+      "key": "ui.school.nightStudyContext",
+      "ru": "Ночная учёба не требует оплаты или текущей Energy. Выбранная поддерживаемая характеристика получает +2, а Energy следующего дня уменьшается на 1.",
+      "en": "Night study costs no tuition or current-day Energy. The selected supported stat gains +2, and next-day Energy is reduced by 1."
+    }
+  },
+  "courses": [
+    {
+      "courseId": "school.course.literacy_and_numbers",
+      "labelKey": "school.course.literacy_and_numbers.label",
+      "label": {
+        "ru": "Грамотность и счёт",
+        "en": "Literacy & Numbers"
+      },
+      "mechanicsReference": {
+        "tuition": 300,
+        "energyCost": 1,
+        "supportedStats": [
+          {
+            "statId": "reason",
+            "amount": 4,
+            "display": {
+              "ru": "Разум",
+              "en": "Reason"
+            }
+          },
+          {
+            "statId": "wits",
+            "amount": 2,
+            "display": {
+              "ru": "Смекалка",
+              "en": "Wits"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "courseId": "school.course.arcana",
+      "labelKey": "school.course.arcana.label",
+      "label": {
+        "ru": "Аркана",
+        "en": "Arcana"
+      },
+      "mechanicsReference": {
+        "tuition": 500,
+        "energyCost": 1,
+        "supportedStats": [
+          {
+            "statId": "magic",
+            "amount": 4,
+            "display": {
+              "ru": "Магия",
+              "en": "Magic"
+            }
+          },
+          {
+            "statId": "reason",
+            "amount": 4,
+            "display": {
+              "ru": "Разум",
+              "en": "Reason"
+            }
+          },
+          {
+            "statId": "creativity",
+            "amount": 2,
+            "display": {
+              "ru": "Творчество",
+              "en": "Creativity"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "courseId": "school.course.rhetoric_and_social",
+      "labelKey": "school.course.rhetoric_and_social.label",
+      "label": {
+        "ru": "Риторика и общение",
+        "en": "Rhetoric & Social"
+      },
+      "mechanicsReference": {
+        "tuition": 300,
+        "energyCost": 1,
+        "supportedStats": [
+          {
+            "statId": "charm",
+            "amount": 3,
+            "display": {
+              "ru": "Обаяние",
+              "en": "Charm"
+            }
+          },
+          {
+            "statId": "sociability",
+            "amount": 3,
+            "display": {
+              "ru": "Общительность",
+              "en": "Sociability"
+            }
+          },
+          {
+            "statId": "wits",
+            "amount": 2,
+            "display": {
+              "ru": "Смекалка",
+              "en": "Wits"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "courseId": "school.course.etiquette_and_presentation",
+      "labelKey": "school.course.etiquette_and_presentation.label",
+      "label": {
+        "ru": "Этикет и самопрезентация",
+        "en": "Etiquette & Presentation"
+      },
+      "mechanicsReference": {
+        "tuition": 400,
+        "energyCost": 1,
+        "supportedStats": [
+          {
+            "statId": "manners",
+            "amount": 3,
+            "display": {
+              "ru": "Манеры",
+              "en": "Manners"
+            }
+          },
+          {
+            "statId": "grooming",
+            "amount": 3,
+            "display": {
+              "ru": "Ухоженность",
+              "en": "Grooming"
+            }
+          },
+          {
+            "statId": "charm",
+            "amount": 2,
+            "display": {
+              "ru": "Обаяние",
+              "en": "Charm"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "courseId": "school.course.field_craft",
+      "labelKey": "school.course.field_craft.label",
+      "label": {
+        "ru": "Полевая практика",
+        "en": "Field Craft"
+      },
+      "mechanicsReference": {
+        "tuition": 400,
+        "energyCost": 1,
+        "supportedStats": [
+          {
+            "statId": "dexterity",
+            "amount": 3,
+            "display": {
+              "ru": "Ловкость",
+              "en": "Dexterity"
+            }
+          },
+          {
+            "statId": "wits",
+            "amount": 3,
+            "display": {
+              "ru": "Смекалка",
+              "en": "Wits"
+            }
+          },
+          {
+            "statId": "creativity",
+            "amount": 2,
+            "display": {
+              "ru": "Творчество",
+              "en": "Creativity"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "courseId": "school.course.physical_training",
+      "labelKey": "school.course.physical_training.label",
+      "label": {
+        "ru": "Физическая подготовка",
+        "en": "Physical Training"
+      },
+      "mechanicsReference": {
+        "tuition": 400,
+        "energyCost": 1,
+        "supportedStats": [
+          {
+            "statId": "strength",
+            "amount": 3,
+            "display": {
+              "ru": "Сила",
+              "en": "Strength"
+            }
+          },
+          {
+            "statId": "endurance",
+            "amount": 3,
+            "display": {
+              "ru": "Выносливость",
+              "en": "Endurance"
+            }
+          },
+          {
+            "statId": "dexterity",
+            "amount": 2,
+            "display": {
+              "ru": "Ловкость",
+              "en": "Dexterity"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "courseId": "school.course.arts_and_performance",
+      "labelKey": "school.course.arts_and_performance.label",
+      "label": {
+        "ru": "Искусство и выступление",
+        "en": "Arts & Performance"
+      },
+      "mechanicsReference": {
+        "tuition": 500,
+        "energyCost": 1,
+        "supportedStats": [
+          {
+            "statId": "creativity",
+            "amount": 3,
+            "display": {
+              "ru": "Творчество",
+              "en": "Creativity"
+            }
+          },
+          {
+            "statId": "charm",
+            "amount": 3,
+            "display": {
+              "ru": "Обаяние",
+              "en": "Charm"
+            }
+          },
+          {
+            "statId": "sociability",
+            "amount": 2,
+            "display": {
+              "ru": "Общительность",
+              "en": "Sociability"
+            }
+          },
+          {
+            "statId": "dexterity",
+            "amount": 2,
+            "display": {
+              "ru": "Ловкость",
+              "en": "Dexterity"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "courseId": "school.course.body_confidence",
+      "labelKey": "school.course.body_confidence.label",
+      "label": {
+        "ru": "Уверенность в теле",
+        "en": "Body Confidence"
+      },
+      "mechanicsReference": {
+        "tuition": 400,
+        "energyCost": 1,
+        "supportedStats": [
+          {
+            "statId": "sexuality",
+            "amount": 3,
+            "display": {
+              "ru": "Сексуальность",
+              "en": "Sexuality"
+            }
+          },
+          {
+            "statId": "grooming",
+            "amount": 3,
+            "display": {
+              "ru": "Ухоженность",
+              "en": "Grooming"
+            }
+          },
+          {
+            "statId": "endurance",
+            "amount": 2,
+            "display": {
+              "ru": "Выносливость",
+              "en": "Endurance"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "invariants": {
+    "gameplayIdsLocaleNeutral": true,
+    "numbersSharedAcrossLocales": true,
+    "paidMechanicsChanged": false,
+    "nightMechanicsChanged": false,
+    "localeAffectsPresentationOnly": true
+  }
+}
