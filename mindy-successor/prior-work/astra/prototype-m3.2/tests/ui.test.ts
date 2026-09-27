@@ -416,15 +416,27 @@ test('renderer: ordinary poverty pending scene localizes RU EN without changing 
 
 
 test('renderer: Foreman relationship and voluntary Night scene localize RU EN without gameplay drift',async()=>{
- let s=started();
- // Natural current-production progression through first Lumber shift and its two blocking relationship milestones.
- // Seed only the already-authoritative current relationship stage; the test changes no runtime definitions.
- s.run.progression.careers['lumber'].stage='accepted-hand';
- s.run.progression.careers['lumber'].counters.completed_shifts=1;
- s.run.progression.relationships['lumber.foreman'].stage='route-professional';
- s.run.progression.relationships['lumber.foreman'].choices.route='professional';
+ const s=started();
+ s.run.resources.money=2_000;
+ s.run.rng=1;
  const {w,dom,errors}=boot(JSON.stringify(s));try{
-  await wait(()=>!!w.document.querySelector('[data-panel="sleep"]'));
+  // Reach the authoritative Foreman professional route through the current production Lumber chain.
+  await wait(()=>!!w.document.querySelector('[data-panel="work"]'));
+  w.document.querySelector('[data-panel="work"]').click();
+  w.document.querySelector('[data-action="lumber.shift"]').click();
+  await wait(()=>!!w.document.querySelector('[data-choice="continue"]'));
+  w.document.querySelector('[data-choice="continue"]').click();
+  await wait(()=>!!w.document.querySelector('[data-choice="professional"]'));
+  assert.match(w.document.querySelector('.stage-title h1').textContent,/Бригадир замечает работу/);
+  w.document.querySelector('[data-choice="professional"]').click();
+  await wait(()=>!!w.document.querySelector('[data-action="lumber.shift"]'));
+
+  const routed=JSON.parse(w.localStorage.getItem('portal-life.v1'));
+  assert.equal(routed.run.progression.careers.lumber.counters.completed_shifts,1);
+  assert.equal(routed.run.progression.relationships['lumber.foreman'].stage,'route-professional');
+  assert.equal(routed.run.progression.relationships['lumber.foreman'].choices.route,'professional');
+
+  // Enter ordinary voluntary NightFlow; the Foreman choice owns the Night slot and no next-day Energy penalty.
   w.document.querySelector('[data-panel="sleep"]').click();
   w.document.querySelector('[data-end-day]').click();
   await wait(()=>!!w.document.querySelector('[data-lodging="lodging.normal"]'));
