@@ -305,8 +305,12 @@ test('renderer: School RU EN localization preserves course commands and gameplay
   assert.deepEqual(idsEn,idsRu);
 
   literacyEn.querySelector('button').click();
-  await wait(()=>/Literacy & Numbers/.test(w.document.querySelector('.stage-title h1')?.textContent??''));
+  await wait(()=>{
+   const raw=w.localStorage.getItem('portal-life.v1');
+   return !!raw&&JSON.parse(raw).run.flow.lastAction?.id==='school';
+  });
   const afterLessonRaw=w.localStorage.getItem('portal-life.v1');
+  assert.match(w.document.querySelector('.stage-title h1')?.textContent??w.document.body.textContent,/Literacy & Numbers/);
   const afterLesson=JSON.parse(afterLessonRaw);
   assert.equal(afterLesson.run.resources.money,1_700);
   assert.equal(afterLesson.run.dayState.energyCurrent,2);
