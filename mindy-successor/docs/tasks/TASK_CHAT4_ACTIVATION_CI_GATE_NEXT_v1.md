@@ -1722,3 +1722,94 @@ Explicitly separate:
 - production inclusion not yet present.
 
 Continue items 99–107 sequentially without waiting for Lead review.
+
+
+## Queue item 108 — PR39 Work UI post-merge audit
+
+Create NEW file only:
+- `docs/qa-prep/PR39_WORK_UI_POST_MERGE_AUDIT_v1.md`
+
+Verify after PR #39:
+- exact-head CI;
+- main merge SHA;
+- Work panel exposes exactly the 10 target ordinary career shift IDs;
+- legacy `tavern`, `hunt`, `guard` are not used as Work buttons;
+- no career mechanics changed.
+
+Use Git evidence only.
+
+## Queue item 109 — Lumber target wage fix QA gate
+
+Create NEW file only:
+- `docs/qa-prep/LUMBER_TARGET_WAGE_FIX_QA_GATE_v1.md`
+
+Review the upcoming Lead wage fix for `lumber.shift`.
+
+Require:
+- wage is not newly invented if an existing authoritative/compatibility source is reused;
+- Work UI click causes money increase;
+- target `completed_shifts` increments once;
+- 1 Energy cost remains;
+- Lumber Hard Work exact invariant unchanged;
+- no legacy action-count migration;
+- exact-head CI.
+
+## Queue item 110 — starting-career UI availability smoke matrix
+
+Create NEW file only:
+- `docs/qa-prep/STARTING_CAREER_UI_AVAILABILITY_SMOKE_MATRIX_v1.md`
+
+Define and, where current tests allow, verify UI smoke for all 10 target ordinary careers immediately after normal arrival/start:
+- button present;
+- enabled;
+- action dispatch succeeds;
+- Energy decrements by 1;
+- typed counter increments;
+- wage is awarded where production action defines wage.
+
+Flag any career lacking wage or UI reachability.
+
+## Queue item 111 — all-ten-career wage parity audit
+
+Create NEW file only:
+- `docs/qa-prep/TEN_CAREER_WAGE_PARITY_AUDIT_v1.md`
+
+Audit current target shift actions for:
+- presence/absence of `wage`;
+- base/weight source provenance;
+- obvious legacy-target mismatch;
+- whether any target work action can consume Energy without earning money.
+
+Do not rebalance values. Report gaps only.
+
+## Queue item 112 — worker-queue execution-state audit
+
+Create NEW file only:
+- `docs/qa-prep/WORKER_QUEUE_EXECUTION_STATE_AUDIT_v1.md`
+
+Audit Chat2/3/5 current task files and deliverables:
+- assigned queue range;
+- first outstanding item;
+- count outstanding;
+- whether task-file commits are present;
+- whether any deliverable appeared after assignment.
+
+This is coordination evidence, not a new task assignment.
+
+## Queue item 113 — next integration risk gate v8
+
+Create NEW file only:
+- `docs/qa-prep/NEXT_INTEGRATION_RISK_GATE_v8.md`
+
+Summarize current integration risk after:
+- PR37 poverty;
+- PR38 School;
+- PR39 Work UI;
+- Lumber wage fix status;
+- multi-GIF runtime pending;
+- Forest content;
+- Secret Debt authored-only state.
+
+Separate GREEN_TO_INTEGRATE / NEEDS_CI / PRODUCT_BLOCKED / CONTENT_ONLY / RUNTIME_GAP.
+
+Continue items 105–113 sequentially without waiting for Lead review.
