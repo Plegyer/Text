@@ -3039,3 +3039,100 @@ Consolidate items 221–231 into:
 Include exact selective-copy files and exact remaining blockers.
 
 Continue items 221–232 sequentially without waiting for Lead review.
+
+
+## Queue item 233 — post-PR49 poverty text rebase audit v3
+Create NEW file only:
+- `docs/poverty-prep/POST_PR49_POVERTY_TEXT_REBASE_AUDIT_V3.md`
+
+Recheck the 33-key poverty text patch against exact current main after PR49.
+Classify CLEAN_APPLY / SUPERSEDED / CONFLICT.
+
+## Queue item 234 — post-PR49 poverty text delta v5
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/poverty-copyedit-post-pr49-v5.fixture.json`
+
+Produce only CLEAN_APPLY exact-key RU+EN text replacements.
+No new keys/media/gameplay fields.
+
+## Queue item 235 — post-PR49 poverty natural-path expectation v3
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/poverty-copyedit-natural-path-v3.fixture.json`
+
+Map each changed key to exact current production path and expected RU/EN text.
+
+## Queue item 236 — shared Night/lodging post-PR49 key audit v5
+Create NEW file only:
+- `docs/poverty-prep/SHARED_NIGHT_LODGING_POST_PR49_KEY_AUDIT_V5.md`
+
+Recheck the finalized 20 shared UI keys against exact current root localization after PR49.
+Classify ADDITIVE / IDENTICAL / CONFLICT / REUSE_EXISTING.
+
+## Queue item 237 — shared Night/lodging final fixture v4
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/poverty-shared-ui-localization-v4.fixture.json`
+
+Contain only the final safe 20-key RU+EN presentation patch after item 236.
+
+## Queue item 238 — shared Night/lodging exact consumer fixture v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/shared-night-lodging-consumer-map-v1.fixture.json`
+
+Map each item-237 key to exact current UI fallback string / consumer seam.
+No UI edits.
+
+## Queue item 239 — Forest route post-PR49 baseline v2
+Create NEW file only:
+- `docs/lumber-prep/FOREST_ROUTE_POST_PR49_BASELINE_V2.md`
+
+Audit exact main after PR49:
+- current route gameplay IDs;
+- shared `activity/forest/route/default`;
+- current route-default static state;
+- route-specific presentation seam gap;
+- result/reaction identities.
+
+## Queue item 240 — Forest route final presentation fixture v5
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/forest-route-presentation-final-v5.fixture.json`
+
+Rebase current route text/choice/help/normalized alt/caption expectations onto exact post-PR49 main.
+Presentation-only.
+
+## Queue item 241 — Forest route current-main collision regression v2
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/forest-route-current-main-collision-v2.test.ts`
+
+Validate item 240 against exact current main:
+- existing route IDs only;
+- no localization collisions;
+- altKey schema valid;
+- no gameplay fields;
+- no Hunter/token/challenge semantics.
+
+## Queue item 242 — Forest route seam executable acceptance fixture v2
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/forest-route-seam-acceptance-v2.fixture.json`
+
+For logging-road and old-boundary record exact expected:
+- route state;
+- derived presentationId;
+- unchanged Save/RNG;
+- unchanged result identity;
+- exact activityResult continuation;
+- Hard Work invariant.
+
+## Queue item 243 — poverty/Forest shared ownership delta audit v2
+Create NEW file only:
+- `docs/lumber-prep/POVERTY_FOREST_SHARED_OWNERSHIP_DELTA_AUDIT_V2.md`
+
+Compare Chat3 proposed keys/IDs against exact shipped School/Foreman/static/legacy-root namespaces after PR49.
+Flag only real collisions.
+
+## Queue item 244 — post-PR49 Forest/poverty handoff v8
+Create NEW file only:
+- `docs/lumber-prep/POST_PR49_FOREST_POVERTY_HANDOFF_V8.md`
+
+Consolidate items 233–243 into SAFE_TEXT_PATCH / SHARED_UI_REQUIRED / ROUTE_PRESENTATION_READY / PRODUCT_OPEN with exact selective-copy files.
+
+Continue items 233–244 sequentially without waiting for Lead review.
