@@ -397,3 +397,50 @@ Locked invariants remain unchanged:
 - Forest continuation boundary = exact `activityResult`;
 - technical RC remains GREEN;
 - unresolved work remains Product/human authoring decisions, Forest/School content depth, and optional presentation/art polish.
+
+
+## Superseding worker verification and next production queues — 2026-09-27
+
+This section supersedes the earlier temporary verification note that Chat 3/4 completion was not yet visible. A later Git recheck confirmed all four workers completed their then-current queues.
+
+Verified completed checkpoints:
+- Chat 2: items 55–60 complete on `chat2/presentation-replacement-next` (9/9 expected artifacts present).
+- Chat 3: items 49–54 complete on `chat3/lumber-production-proof-next` (10/10 expected artifacts present).
+- Chat 4: items 43–48 complete on `chat4/activation-ci-gate-next` (6/6 expected artifacts present).
+- Chat 5: items 43–48 complete on `chat5/school-pa-gate-next` (9/9 expected artifacts present).
+
+Lead immediately extended every current branch by six independent tasks:
+
+- Chat 2 — items **61–66**, queue-extension commit `bfa4e5b8b0e27b4147e6380e1e094fe9d2cdcf0c`.
+  Focus: full-roster GIF coverage, poverty/Secret Debt presentation flow, GIF reuse taxonomy, full-game presentationId authoring template, production dependency matrix, presentation continuity pack.
+
+- Chat 3 — items **55–60**, queue-extension commit `a67aca7e32f7d9193cb4671c851445d9b5dc8655`.
+  Focus: ordinary poverty readiness, Secret Debt/Slave state-machine authoring, cross-system dependencies, three-outcome acceptance skeleton, Forest/poverty coexistence, poverty production handoff.
+
+- Chat 4 — items **49–54**, queue-extension commit `d139b3b88563f88e08dcd936d684a87a5f132c30`.
+  Focus: full product-scope preservation, starter trio readiness, remaining-seven careers readiness, poverty/Secret Debt QA, GIF-first full-game QA guardrails, next-phase QA handoff.
+
+- Chat 5 — items **49–54**, queue-extension commit `d6b407608d2a347ab9fee99a52fe6ac1a30891ba`.
+  Focus: eight-track teacher authoring matrix, milestone-type packet, generic School public-result publication contract, reusable School content-production unit, School-to-career integration inventory, School continuity pack.
+
+Current coordination intent is no longer to generate repetitive RC closeout paperwork. Technical RC remains GREEN at the PR #27 floor (221/221). Worker effort is moving into full-game production-authoring readiness while preserving all green contracts.
+
+Full product scope that must remain visible in coordination:
+- 10 ordinary careers;
+- Palace hidden/meta career with 10/10 ordinary Hard Work prerequisite;
+- ordinary poverty/housing ladder;
+- separate Secret Debt/Slave hidden career, excluded from Palace prerequisite;
+- School;
+- typed relationships;
+- Night;
+- item/capability system;
+- expedition/Forest Activity;
+- endings and Meta;
+- GIF-first central presentation using stable semantic `presentationId` with static/text fallback.
+
+Locked Lumber invariants remain unchanged:
+- Hard Work eligibility ONLY `completed_shifts >= 50`;
+- exact reward `hardWork:lumber`;
+- Forest continuation through exact `activityResult`.
+
+One file = one active owner remains mandatory. Lead continues integration/review asynchronously while workers execute their queues.
