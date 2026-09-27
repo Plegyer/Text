@@ -1,0 +1,53 @@
+{
+  "version": 2,
+  "kind": "presentation-fallback-failure-injection",
+  "policy": {
+    "gameplayMutationAllowed": false,
+    "invalidConfigPersistenceAllowed": false,
+    "unavailableCandidateMayBeSkipped": true
+  },
+  "cases": [
+    {
+      "caseId": "missing-gif",
+      "presentationId": "job/lumber/shift/spring/default",
+      "injection": "primary-file-unavailable",
+      "primary": "assets/missing-shift-spring.gif",
+      "staticFallback": "assets/stage-lumber.svg",
+      "expected": "STATIC_FALLBACK"
+    },
+    {
+      "caseId": "missing-static",
+      "presentationId": "location/town/event/base-school/lesson",
+      "injection": "static-file-unavailable",
+      "staticFallback": "assets/missing-workshop.svg",
+      "textFallback": "School blocking scene remains understandable in text.",
+      "expected": "TEXT_SAFE_FALLBACK"
+    },
+    {
+      "caseId": "invalid-override",
+      "presentationId": "school/arcana/lesson/default",
+      "injection": "kind-source-mismatch",
+      "expected": "REJECT_BEFORE_PERSISTENCE"
+    },
+    {
+      "caseId": "stale-override",
+      "presentationId": "school/removed-course/lesson/default",
+      "injection": "unknown-semantic-id",
+      "expected": "REJECT_BEFORE_PERSISTENCE"
+    },
+    {
+      "caseId": "fallback-cycle",
+      "presentationId": "job/lumber/result/default",
+      "injection": "cycle-between-known-slots",
+      "expected": "REJECT_BEFORE_PERSISTENCE"
+    },
+    {
+      "caseId": "animations-disabled",
+      "presentationId": "relationship/lumber-foreman/lumber-night-foreman-professional/default",
+      "injection": "animations-disabled",
+      "primary": "assets/future-foreman-night.gif",
+      "staticFallback": "assets/stage-lumber.svg",
+      "expected": "STATIC_FALLBACK"
+    }
+  ]
+}
