@@ -117,3 +117,33 @@ test('renderer: Work panel exposes exactly the ten target ordinary career shifts
   for(const legacy of ['tavern','hunt','guard'])assert.equal(ids.includes(legacy),false,legacy);
  }finally{dom.window.close();}
 });
+
+
+test('renderer: all ten target careers are available at start and Lumber shift pays through UI',async()=>{
+ const initial=started();
+ const beforeMoney=initial.run.resources.money;
+ const {w,dom,errors}=boot(JSON.stringify(initial));try{
+  await wait(()=>!!w.document.querySelector('[data-panel="work"]'));
+  w.document.querySelector('[data-panel="work"]').click();
+  const ids=[
+   'lumber.shift','satyr-maid.shift','undead-farm.shift','tavern.shift','hunter.shift',
+   'guard.shift','merchant.shift','artist-geisha.shift','assassin.shift','prostitute.shift'
+  ];
+  for(const id of ids){
+   const button=w.document.querySelector('[data-action="'+id+'"]');
+   assert.ok(button,id);
+   assert.equal(button.disabled,false,id+' should be available at start');
+  }
+
+  w.document.querySelector('[data-action="lumber.shift"]').click();
+  await wait(()=>{
+   const raw=w.localStorage.getItem('portal-life.v1');
+   return !!raw&&JSON.parse(raw).run.resources.money>beforeMoney;
+  });
+  const saved=JSON.parse(w.localStorage.getItem('portal-life.v1'));
+  assert.equal(saved.run.resources.money,beforeMoney+16);
+  assert.equal(saved.run.historyState.actionCounts['lumber.shift'],1);
+  assert.match(saved.run.historyState.journal.join('\n'),/Заработано: 16 монет/);
+  assert.deepEqual(errors,[]);
+ }finally{dom.window.close();}
+});
