@@ -1,0 +1,383 @@
+{
+  "formatVersion": 1,
+  "kind": "school-authored-multi-gif-manifest",
+  "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+  "policy": {
+    "genericPaidLessonSemanticIdsShipped": true,
+    "teacherSpecificContentIntegrated": false,
+    "candidateSelectionChangesSchoolMechanics": false,
+    "nightStudyIdentitySeparate": true,
+    "blockingSchoolEventIdentitySeparate": true
+  },
+  "genericPools": [
+    {
+      "presentationId": "school/literacy-and-numbers/lesson/default",
+      "status": "GENERIC_SURFACE_READY",
+      "candidates": [
+        {
+          "key": "school-literacy-and-numbers-generic-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/school/generic/literacy-and-numbers/1.gif",
+          "alt": "Generic literacy-and-numbers lesson visual variation 1.",
+          "shipped": false,
+          "teacherSpecific": false
+        },
+        {
+          "key": "school-literacy-and-numbers-generic-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/school/generic/literacy-and-numbers/2.gif",
+          "alt": "Generic literacy-and-numbers lesson visual variation 2.",
+          "shipped": false,
+          "teacherSpecific": false
+        },
+        {
+          "key": "school-literacy-and-numbers-generic-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/school/generic/literacy-and-numbers/3.gif",
+          "alt": "Generic literacy-and-numbers lesson visual variation 3.",
+          "shipped": false,
+          "teacherSpecific": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-school.svg",
+        "alt": "Static School fallback for literacy-and-numbers."
+      }
+    },
+    {
+      "presentationId": "school/arcana/lesson/default",
+      "status": "GENERIC_SURFACE_READY",
+      "candidates": [
+        {
+          "key": "school-arcana-generic-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/school/generic/arcana/1.gif",
+          "alt": "Generic arcana lesson visual variation 1.",
+          "shipped": false,
+          "teacherSpecific": false
+        },
+        {
+          "key": "school-arcana-generic-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/school/generic/arcana/2.gif",
+          "alt": "Generic arcana lesson visual variation 2.",
+          "shipped": false,
+          "teacherSpecific": false
+        },
+        {
+          "key": "school-arcana-generic-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/school/generic/arcana/3.gif",
+          "alt": "Generic arcana lesson visual variation 3.",
+          "shipped": false,
+          "teacherSpecific": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-school.svg",
+        "alt": "Static School fallback for arcana."
+      }
+    },
+    {
+      "presentationId": "school/rhetoric-and-social/lesson/default",
+      "status": "GENERIC_SURFACE_READY",
+      "candidates": [
+        {
+          "key": "school-rhetoric-and-social-generic-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/school/generic/rhetoric-and-social/1.gif",
+          "alt": "Generic rhetoric-and-social lesson visual variation 1.",
+          "shipped": false,
+          "teacherSpecific": false
+        },
+        {
+          "key": "school-rhetoric-and-social-generic-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/school/generic/rhetoric-and-social/2.gif",
+          "alt": "Generic rhetoric-and-social lesson visual variation 2.",
+          "shipped": false,
+          "teacherSpecific": false
+        },
+        {
+          "key": "school-rhetoric-and-social-generic-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/school/generic/rhetoric-and-social/3.gif",
+          "alt": "Generic rhetoric-and-social lesson visual variation 3.",
+          "shipped": false,
+          "teacherSpecific": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-school.svg",
+        "alt": "Static School fallback for rhetoric-and-social."
+      }
+    },
+    {
+      "presentationId": "school/etiquette-and-presentation/lesson/default",
+      "status": "GENERIC_SURFACE_READY",
+      "candidates": [
+        {
+          "key": "school-etiquette-and-presentation-generic-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/school/generic/etiquette-and-presentation/1.gif",
+          "alt": "Generic etiquette-and-presentation lesson visual variation 1.",
+          "shipped": false,
+          "teacherSpecific": false
+        },
+        {
+          "key": "school-etiquette-and-presentation-generic-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/school/generic/etiquette-and-presentation/2.gif",
+          "alt": "Generic etiquette-and-presentation lesson visual variation 2.",
+          "shipped": false,
+          "teacherSpecific": false
+        },
+        {
+          "key": "school-etiquette-and-presentation-generic-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/school/generic/etiquette-and-presentation/3.gif",
+          "alt": "Generic etiquette-and-presentation lesson visual variation 3.",
+          "shipped": false,
+          "teacherSpecific": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-school.svg",
+        "alt": "Static School fallback for etiquette-and-presentation."
+      }
+    },
+    {
+      "presentationId": "school/field-craft/lesson/default",
+      "status": "GENERIC_SURFACE_READY",
+      "candidates": [
+        {
+          "key": "school-field-craft-generic-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/school/generic/field-craft/1.gif",
+          "alt": "Generic field-craft lesson visual variation 1.",
+          "shipped": false,
+          "teacherSpecific": false
+        },
+        {
+          "key": "school-field-craft-generic-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/school/generic/field-craft/2.gif",
+          "alt": "Generic field-craft lesson visual variation 2.",
+          "shipped": false,
+          "teacherSpecific": false
+        },
+        {
+          "key": "school-field-craft-generic-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/school/generic/field-craft/3.gif",
+          "alt": "Generic field-craft lesson visual variation 3.",
+          "shipped": false,
+          "teacherSpecific": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-school.svg",
+        "alt": "Static School fallback for field-craft."
+      }
+    },
+    {
+      "presentationId": "school/physical-training/lesson/default",
+      "status": "GENERIC_SURFACE_READY",
+      "candidates": [
+        {
+          "key": "school-physical-training-generic-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/school/generic/physical-training/1.gif",
+          "alt": "Generic physical-training lesson visual variation 1.",
+          "shipped": false,
+          "teacherSpecific": false
+        },
+        {
+          "key": "school-physical-training-generic-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/school/generic/physical-training/2.gif",
+          "alt": "Generic physical-training lesson visual variation 2.",
+          "shipped": false,
+          "teacherSpecific": false
+        },
+        {
+          "key": "school-physical-training-generic-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/school/generic/physical-training/3.gif",
+          "alt": "Generic physical-training lesson visual variation 3.",
+          "shipped": false,
+          "teacherSpecific": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-school.svg",
+        "alt": "Static School fallback for physical-training."
+      }
+    },
+    {
+      "presentationId": "school/arts-and-performance/lesson/default",
+      "status": "GENERIC_SURFACE_READY",
+      "candidates": [
+        {
+          "key": "school-arts-and-performance-generic-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/school/generic/arts-and-performance/1.gif",
+          "alt": "Generic arts-and-performance lesson visual variation 1.",
+          "shipped": false,
+          "teacherSpecific": false
+        },
+        {
+          "key": "school-arts-and-performance-generic-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/school/generic/arts-and-performance/2.gif",
+          "alt": "Generic arts-and-performance lesson visual variation 2.",
+          "shipped": false,
+          "teacherSpecific": false
+        },
+        {
+          "key": "school-arts-and-performance-generic-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/school/generic/arts-and-performance/3.gif",
+          "alt": "Generic arts-and-performance lesson visual variation 3.",
+          "shipped": false,
+          "teacherSpecific": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-school.svg",
+        "alt": "Static School fallback for arts-and-performance."
+      }
+    },
+    {
+      "presentationId": "school/body-confidence/lesson/default",
+      "status": "GENERIC_SURFACE_READY",
+      "candidates": [
+        {
+          "key": "school-body-confidence-generic-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/school/generic/body-confidence/1.gif",
+          "alt": "Generic body-confidence lesson visual variation 1.",
+          "shipped": false,
+          "teacherSpecific": false
+        },
+        {
+          "key": "school-body-confidence-generic-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/school/generic/body-confidence/2.gif",
+          "alt": "Generic body-confidence lesson visual variation 2.",
+          "shipped": false,
+          "teacherSpecific": false
+        },
+        {
+          "key": "school-body-confidence-generic-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/school/generic/body-confidence/3.gif",
+          "alt": "Generic body-confidence lesson visual variation 3.",
+          "shipped": false,
+          "teacherSpecific": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-school.svg",
+        "alt": "Static School fallback for body-confidence."
+      }
+    }
+  ],
+  "teacherSpecific": [
+    {
+      "track": "literacy-and-numbers",
+      "teacherContentId": "school.teacher.mara-fen",
+      "displayName": "Mara Fen",
+      "presentationId": "UNASSIGNED_UNTIL_SELECTIVE_INTEGRATION",
+      "status": "CONTENT_DRAFT",
+      "sourceAuthority": "Chat5 authored teacher/lesson production handoff",
+      "mayJoinGenericLessonPoolAfterApproval": true,
+      "mechanicsChangeAllowed": false
+    },
+    {
+      "track": "arcana",
+      "teacherContentId": "school.teacher.ilyra-venn",
+      "displayName": "Ilyra Venn",
+      "presentationId": "UNASSIGNED_UNTIL_SELECTIVE_INTEGRATION",
+      "status": "CONTENT_DRAFT",
+      "sourceAuthority": "Chat5 authored teacher/lesson production handoff",
+      "mayJoinGenericLessonPoolAfterApproval": true,
+      "mechanicsChangeAllowed": false
+    },
+    {
+      "track": "rhetoric-and-social",
+      "teacherContentId": "school.teacher.cassian-reed",
+      "displayName": "Cassian Reed",
+      "presentationId": "UNASSIGNED_UNTIL_SELECTIVE_INTEGRATION",
+      "status": "CONTENT_DRAFT",
+      "sourceAuthority": "Chat5 authored teacher/lesson production handoff",
+      "mayJoinGenericLessonPoolAfterApproval": true,
+      "mechanicsChangeAllowed": false
+    },
+    {
+      "track": "etiquette-and-presentation",
+      "teacherContentId": "school.teacher.eliane-marrow",
+      "displayName": "Eliane Marrow",
+      "presentationId": "UNASSIGNED_UNTIL_SELECTIVE_INTEGRATION",
+      "status": "CONTENT_DRAFT",
+      "sourceAuthority": "Chat5 authored teacher/lesson production handoff",
+      "mayJoinGenericLessonPoolAfterApproval": true,
+      "mechanicsChangeAllowed": false
+    },
+    {
+      "track": "field-craft",
+      "teacherContentId": "school.teacher.rowan-pike",
+      "displayName": "Rowan Pike",
+      "presentationId": "UNASSIGNED_UNTIL_SELECTIVE_INTEGRATION",
+      "status": "CONTENT_DRAFT",
+      "sourceAuthority": "Chat5 authored teacher/lesson production handoff",
+      "mayJoinGenericLessonPoolAfterApproval": true,
+      "mechanicsChangeAllowed": false
+    },
+    {
+      "track": "physical-training",
+      "teacherContentId": "school.teacher.tovan-kest",
+      "displayName": "Tovan Kest",
+      "presentationId": "UNASSIGNED_UNTIL_SELECTIVE_INTEGRATION",
+      "status": "CONTENT_DRAFT",
+      "sourceAuthority": "Chat5 authored teacher/lesson production handoff",
+      "mayJoinGenericLessonPoolAfterApproval": true,
+      "mechanicsChangeAllowed": false
+    },
+    {
+      "track": "arts-and-performance",
+      "teacherContentId": "school.teacher.nessa-lark",
+      "displayName": "Nessa Lark",
+      "presentationId": "UNASSIGNED_UNTIL_SELECTIVE_INTEGRATION",
+      "status": "CONTENT_DRAFT",
+      "sourceAuthority": "Chat5 authored teacher/lesson production handoff",
+      "mayJoinGenericLessonPoolAfterApproval": true,
+      "mechanicsChangeAllowed": false
+    },
+    {
+      "track": "body-confidence",
+      "teacherContentId": "school.teacher.sera-vey",
+      "displayName": "Sera Vey",
+      "presentationId": "UNASSIGNED_UNTIL_SELECTIVE_INTEGRATION",
+      "status": "CONTENT_DRAFT",
+      "sourceAuthority": "Chat5 authored teacher/lesson production handoff",
+      "mayJoinGenericLessonPoolAfterApproval": true,
+      "mechanicsChangeAllowed": false
+    }
+  ],
+  "excludedUntilAuthored": [
+    "teacher relationship scenes",
+    "management/accounting public-result presentation",
+    "Arcana/Forest public-result presentation",
+    "dedicated Night-study semantic presentation",
+    "certificate/project/exam presentation unless retained and authored"
+  ]
+}
