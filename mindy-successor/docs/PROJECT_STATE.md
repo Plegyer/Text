@@ -854,3 +854,47 @@ Current subsystem decision/evidence sources:
 - `docs/presentation-prep/PRESENTATION_RC_EVIDENCE_PACK_v1.md`
 
 These documents do not reopen already-green runtime contracts. They define the handoff from technical RC closure to explicit Product/content decisions.
+
+
+## RC closeout + schema4 hardening — PR #26 / PR #27 — 2026-09-27
+
+### PR #26 — docs-only RC closeout
+
+Merged:
+`4c86946167bf424665a499875c597afeb340ab8f`
+
+Published authoritative closeout/decision navigation:
+- `docs/qa-prep/RC_CLOSEOUT_STATUS_v1.md`
+- `docs/qa-prep/RC_HUMAN_DECISIONS_REQUIRED_v1.md`
+- `docs/lumber-prep/OLD_BOUNDARY_TOKEN_PRODUCT_DECISION_IMPACT_v1.md`
+- `docs/lumber-prep/LUMBER_FINAL_RC_ACCEPTANCE_MATRIX_v1.md`
+- `docs/school-prep/SCHOOL_AUTHORING_DECISION_READY_PACKET_v1.md`
+- `docs/presentation-prep/PRESENTATION_RC_EVIDENCE_PACK_v1.md`
+
+PR #26 changed documentation only.
+
+### PR #27 — final schema4 hardening
+
+Merged:
+`6cd990f45d368291b4a288f9f48c569f6e0b207f`
+
+Added QA coverage only:
+- final one-Save state-drift sentinel v2;
+- direct parser compatibility when schema4 save omits `progression.school`;
+- direct parser compatibility when pending/action semantic `presentationId` is absent.
+
+Behavior locked:
+- missing `progression.school` defaults to `{tracks:{}}` without mutating unrelated progression/resources;
+- semantic presentation metadata remains optional while mechanical pending/action identity stays authoritative;
+- merged one-Save School/Night/Forest/ending/New Run state does not drift.
+
+Merge-ref:
+- typecheck PASS;
+- validate PASS;
+- build PASS;
+- **221/221 tests PASS**.
+
+Current technical RC regression floor:
+**221 tests green**.
+
+Remaining OPEN work remains Product/content authoring decisions, not a reason to reopen green runtime contracts.
