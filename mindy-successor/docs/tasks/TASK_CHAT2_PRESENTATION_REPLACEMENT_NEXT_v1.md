@@ -3238,3 +3238,144 @@ Create NEW file only:
 Consolidate items 220–230 with exact incremental assets/data/tests safe for Lead after PR47 and exact Product-open exclusions.
 
 Continue items 220–231 sequentially without waiting for Lead review.
+
+
+## Queue item 232 — project-owned GIF production capability audit v1
+Create NEW file only:
+- `docs/presentation-prep/PROJECT_OWNED_GIF_PRODUCTION_CAPABILITY_AUDIT_V1.md`
+
+Audit the repository/toolchain for an honest local path from project-owned SVG/frame sources to GIF:
+- existing Node/Python/image tools;
+- whether binary GIF export is reproducible in CI/dev;
+- whether extra dependency would be required;
+- license/security/size implications.
+
+Do not add a dependency yet.
+
+## Queue item 233 — GIF export pipeline decision packet v1
+Create NEW file only:
+- `docs/presentation-prep/GIF_EXPORT_PIPELINE_DECISION_PACKET_V1.md`
+
+Based on item 232, document the smallest viable project-owned export path.
+Classify:
+- CAN_EXPORT_WITH_EXISTING_TOOLING;
+- NEEDS_SMALL_DEV_DEPENDENCY;
+- BLOCKED_IN_CURRENT_REPO.
+
+Do not choose a dependency if Product/Lead approval would be required.
+
+## Queue item 234 — first animation semantic priority list v2
+Create NEW file only:
+- `docs/presentation-prep/FIRST_ANIMATION_SEMANTIC_PRIORITY_LIST_V2.md`
+
+Rank by production value without changing gameplay:
+- ordinary-career shift/result;
+- School;
+- poverty;
+- Forest return/reaction;
+- Foreman.
+Pick the first 4–6 semantic identities suitable for lightweight loop animation from existing project-owned static art.
+
+## Queue item 235 — first animation motion briefs v1
+Create NEW file only:
+- `docs/presentation-prep/FIRST_ANIMATION_MOTION_BRIEFS_V1.md`
+
+For each priority identity from item 234 define:
+- 2–4 second loop;
+- 3–8 frame concept;
+- what changes between frames;
+- what must stay semantically stable;
+- no gameplay-state implication;
+- reduced-motion/static fallback behavior.
+
+## Queue item 236 — first animation frame-source batch v1
+Create NEW original SVG frame sources only under:
+- `prior-work/astra/prototype-m3.2/assets/presentation-frames/`
+
+Create frame sequences for the first 2 priority semantic identities using only project-owned source art.
+No external media.
+
+## Queue item 237 — frame-source validation regression v1
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/project-owned-animation-frames-v1.test.ts`
+
+Validate:
+- all frame files exist;
+- SVG parse sanity;
+- consistent dimensions/viewBox per sequence;
+- no external URLs;
+- exact semantic identity metadata;
+- no gameplay fields.
+
+## Queue item 238 — first project-owned GIF export batch v1
+If item 233 is CAN_EXPORT_WITH_EXISTING_TOOLING, create actual GIFs under:
+- `prior-work/astra/prototype-m3.2/assets/gif/`
+
+Export at least 3 compatible loop candidates for ONE current semantic presentation identity.
+
+If blocked, create instead:
+- `docs/presentation-prep/FIRST_PROJECT_OWNED_GIF_EXPORT_BLOCKER_V1.md`
+
+Do not fake GIF files and do not use external downloaded media.
+
+## Queue item 239 — first project-owned GIF technical QA v1
+Create NEW file only:
+- `docs/presentation-prep/FIRST_PROJECT_OWNED_GIF_TECHNICAL_QA_V1.md`
+
+For actual item-238 GIFs record:
+- repo path;
+- byte size;
+- dimensions;
+- frame count/duration where available;
+- loop behavior;
+- source frame sequence;
+- semantic identity.
+If blocked, record the exact blocker only.
+
+## Queue item 240 — first project-owned 3–5 candidate pool v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/first-project-owned-gif-pool-v1.json`
+
+Only if at least 3 actual compatible GIFs exist for one current semantic ID:
+- build one PR42-compatible 3–5 candidate pool;
+- preserve current static fallback;
+- locale-neutral candidate keys;
+- no gameplay RNG.
+
+Otherwise self-declare BLOCKED_BY_GIF_EXPORT and contain no fake candidates.
+
+## Queue item 241 — first project-owned GIF localization delta v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/first-project-owned-gif-localization-v1.fixture.json`
+
+Provide RU+EN alt/caption keys only for actual item-240 candidates.
+Locale switch must not change selected candidate.
+
+## Queue item 242 — project-owned GIF build/runtime regression v1
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/project-owned-gif-build-runtime-v1.test.ts`
+
+If actual GIFs/pool exist, validate:
+- GIF signature;
+- build distribution;
+- 3–5 pool size;
+- current semantic ID;
+- deterministic selection independent of locale;
+- static fallback;
+- no Save/gameplay RNG mutation.
+
+If blocked, validate that no production pool claim is emitted.
+
+## Queue item 243 — project-owned animation integration handoff v1
+Create NEW file only:
+- `docs/presentation-prep/PROJECT_OWNED_ANIMATION_INTEGRATION_HANDOFF_V1.md`
+
+Consolidate items 232–242:
+- whether GIF export is actually viable;
+- exact frame/GIF assets created;
+- exact pool ready for Lead, if any;
+- blockers;
+- exact selective-copy files;
+- next work only after Lead review.
+
+Continue items 232–243 sequentially without waiting for Lead review.
