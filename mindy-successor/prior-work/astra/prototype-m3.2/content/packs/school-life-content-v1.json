@@ -1,0 +1,196 @@
+{
+  "schemaVersion": 1,
+  "id": "school-life-content-v1",
+  "reads": [],
+  "writes": [],
+  "media": [
+    {
+      "id": "school.life.classroom.default",
+      "kind": "image",
+      "src": "assets/stage-school.svg",
+      "alt": "A School classroom used as a fallback for authored School-life scenes."
+    },
+    {
+      "id": "school.life.night-study.default",
+      "kind": "image",
+      "src": "assets/stage-school.svg",
+      "alt": "A quiet School study scene used as a fallback for Night-study presentation."
+    }
+  ],
+  "events": [
+    {
+      "id": "school-life-content-v1.after-paid-lesson",
+      "title": "After the School lesson",
+      "sourceDomain": "school",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "actionCompleted",
+          "action": "school"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 0,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The paid lesson is complete. The classroom settles into a short, effect-free reflection before the rest of the day continues.",
+          "conditions": [],
+          "media": [
+            "school.life.classroom.default"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Return to the day.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school-life-content-v1.after-night-study",
+      "title": "After Night study",
+      "sourceDomain": "school",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.literacy_and_numbers.reason"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.literacy_and_numbers.wits"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.arcana.magic"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.arcana.reason"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.arcana.creativity"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.rhetoric_and_social.charm"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.rhetoric_and_social.sociability"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.rhetoric_and_social.wits"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.etiquette_and_presentation.manners"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.etiquette_and_presentation.grooming"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.etiquette_and_presentation.charm"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.field_craft.dexterity"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.field_craft.wits"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.field_craft.creativity"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.physical_training.strength"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.physical_training.endurance"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.physical_training.dexterity"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.arts_and_performance.creativity"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.arts_and_performance.charm"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.arts_and_performance.sociability"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.arts_and_performance.dexterity"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.body_confidence.sexuality"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.body_confidence.grooming"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.body_confidence.endurance"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 0,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Night study winds down quietly. The presentation adds no extra tuition, current-day Energy cost, stat gain, or School progress beyond the completed Night-study action.",
+          "conditions": [],
+          "media": [
+            "school.life.night-study.default"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Let the Night flow continue.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    }
+  ]
+}

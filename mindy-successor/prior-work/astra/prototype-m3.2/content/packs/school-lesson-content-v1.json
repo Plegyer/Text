@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "id": "school-lesson-content-v1",
+  "reads": [],
+  "writes": [],
+  "media": [
+    {
+      "id": "school.lesson.context.default",
+      "kind": "image",
+      "src": "assets/stage-school.svg",
+      "alt": "School lesson context."
+    }
+  ],
+  "events": [
+    {
+      "id": "school-lesson-content-v1.after-school",
+      "title": "School lesson reflection",
+      "sourceDomain": "school",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "actionCompleted",
+          "action": "school"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 1,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The paid School lesson is complete. A short reflection settles the material without changing the lesson transaction or adding another cost.",
+          "conditions": [],
+          "media": [
+            "school.lesson.context.default"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Return to the day after the lesson.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    }
+  ]
+}
