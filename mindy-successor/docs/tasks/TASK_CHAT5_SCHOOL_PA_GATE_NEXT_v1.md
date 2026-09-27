@@ -696,3 +696,97 @@ Produce the smallest current-main School handoff with:
 Name exact current authoritative School files and keep all unresolved provider/threshold/content choices neutral.
 
 Continue items 43–48 sequentially without waiting for Lead review.
+
+
+## Queue item 49 — eight-track teacher authoring matrix
+
+Create NEW files only:
+- `docs/school-prep/SCHOOL_EIGHT_TRACK_TEACHER_AUTHORING_MATRIX_v1.md`
+- `prior-work/astra/prototype-m3.2/content/school-eight-track-teacher-authoring.fixture.json`
+
+For all eight School tracks, provide structured OPEN fields for:
+- teacher/presenter identity;
+- role in world;
+- lesson tone;
+- relationship hooks;
+- milestone role;
+- presentation needs.
+
+Do not invent canonical identities. Preserve existing course mechanics and stat packages.
+
+## Queue item 50 — School milestone type comparison packet
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_MILESTONE_TYPE_COMPARISON_PACKET_v1.md`
+
+Compare acceptable authored milestone forms already allowed by project direction:
+- lesson-count milestone;
+- exam;
+- project;
+- certificate;
+- mixed authored gate.
+
+For management/accounting and Arcana/Forest, map consequences for content, public-result publication, save/reload and downstream consumers without selecting a winner.
+
+## Queue item 51 — School public-result publication contract draft
+
+Create NEW files only:
+- `docs/school-prep/SCHOOL_PUBLIC_RESULT_PUBLICATION_CONTRACT_DRAFT_v1.md`
+- `prior-work/astra/prototype-m3.2/content/school-public-result-publication-contract.fixture.json`
+
+Define a generic content-authoring contract for School-owned public results:
+- stable result ID;
+- private trigger stays School-owned;
+- publication exactly once;
+- reload idempotency;
+- downstream systems consume only public result;
+- no direct read of School-private counters.
+
+Keep actual management/Arcana IDs and thresholds OPEN unless authoritative.
+
+## Queue item 52 — School content production unit template
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_CONTENT_PRODUCTION_UNIT_TEMPLATE_v1.md`
+
+Create the reusable authoring unit for a School content scene:
+- track/course;
+- teacher/presenter;
+- trigger/milestone;
+- text variants;
+- semantic presentationId;
+- GIF/static/text fallback;
+- public result if any;
+- tests/acceptance.
+
+Designed for rapid parallel content production after human decisions.
+
+## Queue item 53 — School-to-career integration inventory
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_TO_CAREER_INTEGRATION_INVENTORY_v1.md`
+
+Using authoritative career drafts, inventory intended School hooks across all ordinary careers plus Palace/Secret Debt where applicable.
+
+Classify:
+- explicit existing hook;
+- draft hook;
+- authoring needed;
+- no School dependency intended.
+
+Do not create new prerequisites or let School affect Lumber Hard Work.
+
+## Queue item 54 — School production continuity pack v7
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_PRODUCTION_CONTINUITY_PACK_v7.md`
+
+Consolidate items 49–53 with current School technical baseline:
+- eight paid tracks;
+- Night study separation;
+- public/private boundary;
+- OPEN human decisions;
+- reusable production templates;
+- next production-ready work after decisions.
+
+Continue items 49–54 sequentially without waiting for Lead review.
