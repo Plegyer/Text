@@ -643,6 +643,14 @@
         "alt": "Работница неэксплицитно готовит комнату и рабочее пространство зимой; сезон показан окружением и не меняет игровой исход.",
         "altKey": "presentation.static.career.prostitute.shift.winter.alt"
       }
+    },
+    "activity/forest/route/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/forest-route-default-v1.svg",
+        "alt": "Героиня идёт по нейтральной лесной тропе без указания конкретного маршрута или исхода.",
+        "altKey": "presentation.static.forest.route.default.alt"
+      }
     }
   }
 }
