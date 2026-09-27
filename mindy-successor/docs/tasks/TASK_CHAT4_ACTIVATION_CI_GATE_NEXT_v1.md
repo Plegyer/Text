@@ -2683,3 +2683,121 @@ Summarize items 175–185:
 - Product-open isolation.
 
 Continue items 175–186 sequentially without waiting for Lead review.
+
+
+## Queue item 187 — PR48 seasonal static exact-head audit v1
+Create NEW file only:
+- `docs/qa-prep/PR48_SEASONAL_STATIC_EXACT_HEAD_AUDIT_V1.md`
+
+Review PR #48 exact head against current main:
+- 40 project-owned seasonal SVGs;
+- 40 exact current semantic IDs;
+- 80 RU+EN alt/caption keys;
+- no runtime/gameplay changes;
+- same asset identity across locales;
+- exact-head CI evidence.
+
+## Queue item 188 — PR48 post-merge main audit v1
+Create NEW file only:
+- `docs/qa-prep/PR48_SEASONAL_STATIC_POST_MERGE_AUDIT_V1.md`
+
+Only after Git proves merge, verify exact merge SHA, current main and post-merge CI.
+Until then mark NOT_YET_MERGED.
+
+## Queue item 189 — seasonal static RU EN identity QA v2
+Create NEW file only:
+- `docs/qa-prep/SEASONAL_STATIC_RU_EN_IDENTITY_QA_V2.md`
+
+Verify representative and full-set seasonal media:
+- same presentationId;
+- same physical SVG;
+- same selected media identity;
+- locale changes only alt/caption;
+- no Save/RNG/action-result drift.
+
+## Queue item 190 — Chat2 non-career safe subset acceptance v2
+Create NEW file only:
+- `docs/qa-prep/CHAT2_NON_CAREER_SAFE_SUBSET_ACCEPTANCE_V2.md`
+
+Review Chat2 post-PR47 items 220–231 as they appear.
+Require current-production-only School/poverty/Forest-result/Foreman mappings.
+Reject Product-open route-specific assets from production activation.
+
+## Queue item 191 — poverty 33-key copyedit production QA v1
+Create NEW file only:
+- `docs/qa-prep/POVERTY_33_KEY_COPYEDIT_PRODUCTION_QA_V1.md`
+
+Review Chat3 post-PR47 final poverty text delta against exact current main.
+Require existing keys only, RU+EN parity, no shared-media over-specialization, no mechanics/Secret Debt changes.
+
+## Queue item 192 — shared Night/lodging consumer QA contract v1
+Create NEW file only:
+- `docs/qa-prep/SHARED_NIGHT_LODGING_CONSUMER_QA_CONTRACT_V1.md`
+
+Define acceptance for future Lead UI wiring of the 20-key shared Night/lodging fixture:
+- text-only;
+- stable lodging/Night IDs;
+- same costs/Energy/housing/commands/Save;
+- locale switch invariance;
+- no visible internal NightFlow terminology.
+
+## Queue item 193 — non-Lumber seasonal text consumer QA contract v1
+Create NEW file only:
+- `docs/qa-prep/NON_LUMBER_SEASONAL_TEXT_CONSUMER_QA_CONTRACT_V1.md`
+
+Define acceptance for consuming Chat5 36 seasonal RU+EN scene entries:
+- exact nine non-Lumber careers × four seasons;
+- same action/result/media identity;
+- same deltas/actionCounts/RNG/Save;
+- Lumber untouched;
+- Hunter ordinary-work only.
+
+## Queue item 194 — Forest route altKey normalization QA v1
+Create NEW file only:
+- `docs/qa-prep/FOREST_ROUTE_ALTKEY_NORMALIZATION_QA_V1.md`
+
+Review Chat3 route-media localization keys against shipped PR47 altKey schema.
+Require normalized key names without slash characters while preserving locale-neutral presentation IDs and exact RU+EN meaning.
+
+## Queue item 195 — Forest route presentation seam invariance gate v2
+Create NEW file only:
+- `docs/qa-prep/FOREST_ROUTE_PRESENTATION_SEAM_INVARIANCE_GATE_V2.md`
+
+Define executable acceptance for future route-state -> presentationId binding:
+- logging-road / old-boundary exact route IDs;
+- no route availability change;
+- no RNG advance;
+- no Save change;
+- no result identity change;
+- exact activityResult continuation;
+- Hard Work 50-shift rule untouched.
+
+## Queue item 196 — Chat5 legacy root bilingual wave QA v1
+Create NEW file only:
+- `docs/qa-prep/CHAT5_LEGACY_ROOT_BILINGUAL_WAVE_QA_V1.md`
+
+Review Chat5 items 61–72 as they appear.
+Require exact current root event/media IDs, RU+EN completeness, additive/identical localization only, and no overlap with School/poverty/Foreman/Forest/Secret Debt ownership.
+
+## Queue item 197 — current-main CI regression floor v5
+Create NEW file only:
+- `docs/qa-prep/CURRENT_MAIN_CI_REGRESSION_FLOOR_V5.md`
+
+Record exact current main SHA, latest successful push workflow, pack/event/action/ending validation counts and test count after PR48 status is known.
+Never carry stale counts forward without evidence.
+
+## Queue item 198 — next production integration gate v15
+Create NEW file only:
+- `docs/qa-prep/NEXT_PRODUCTION_INTEGRATION_GATE_V15.md`
+
+Summarize items 187–197:
+- PR48 seasonal media;
+- Chat2 non-career safe subset;
+- poverty copyedit;
+- shared Night/lodging;
+- non-Lumber seasonal text;
+- Forest route presentation;
+- Chat5 legacy root localization;
+- Product-open isolation.
+
+Continue items 187–198 sequentially without waiting for Lead review.
