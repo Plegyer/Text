@@ -1007,3 +1007,15 @@ Define Lead checks before integrating long-lived worker branches:
 The checklist should support the current diverged long-running worker model.
 
 Continue items 57–65 sequentially without waiting for Lead review.
+
+
+## Queue item 66 — production-authority main-presence audit
+
+Create NEW file only:
+- `docs/qa-prep/PRODUCTION_AUTHORITY_MAIN_PRESENCE_AUDIT_v1.md`
+
+Audit current main after PR #28/#30 and verify that the minimum recovery authorities referenced by `CURRENT_PROJECT_HANDOFF_v1.md` actually exist on main rather than only worker branches.
+
+Report missing/stale references and identify which should be integrated or superseded. Do not modify authority docs.
+
+Continue items 58–66 sequentially without waiting for Lead review.
