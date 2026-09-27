@@ -443,7 +443,8 @@ test('renderer: Foreman relationship and voluntary Night scene localize RU EN wi
   w.document.querySelector('[data-lodging="lodging.normal"]').click();
   await wait(()=>!!w.document.querySelector('[data-night-choice="lumber.foreman.night"]'));
   const ruChoice=w.document.querySelector('[data-night-choice="lumber.foreman.night"]');
-  assert.match(ruChoice.textContent,/Поговорить с бригадиром/);
+  const ruArticle=ruChoice.closest('article');
+  assert.match(ruArticle.textContent,/Поговорить с бригадиром/);
   const beforeLocale=w.localStorage.getItem('portal-life.v1');
 
   w.document.querySelector('[data-panel="menu"]').click();
@@ -452,7 +453,8 @@ test('renderer: Foreman relationship and voluntary Night scene localize RU EN wi
   assert.equal(w.localStorage.getItem('portal-life.v1'),beforeLocale);
   w.document.querySelector('#close').click();
   const enChoice=w.document.querySelector('[data-night-choice="lumber.foreman.night"]');
-  assert.match(enChoice.textContent,/Talk with the Foreman/);
+  const enArticle=enChoice.closest('article');
+  assert.match(enArticle.textContent,/Talk with the Foreman/);
 
   enChoice.click();
   await wait(()=>/After-shift conversation/.test(w.document.querySelector('.stage-title h1')?.textContent??''));
