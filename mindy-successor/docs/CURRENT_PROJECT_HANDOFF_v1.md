@@ -561,3 +561,61 @@ Still OPEN:
 - full Forest 3-route / 3-challenge / season content depth.
 
 Git remains authoritative.
+
+
+## 15. Superseding update — PR #25
+
+PR #25 merged:
+`961208ea995ca034e8dfe896337a38828db52415`
+
+Final technical RC gate evidence:
+- typecheck PASS;
+- validate PASS;
+- build PASS;
+- **218/218 tests PASS**.
+
+PR #25 changed only QA/fixture files.
+
+It locks:
+- exact `ending.lumber.hard-work` condition;
+- exact `hardWork:lumber`;
+- inventory-derived item capabilities;
+- pre-option schema4 Activity behavior;
+- one-Save RC behavior;
+- real School blocking-scene before NightFlow;
+- blocking-scene save/reload and no duplicate School charge/progress;
+- ending exactly-once transaction;
+- New Run Meta reload.
+
+### Current status after PR25
+
+Technical release-candidate gate:
+**GREEN**
+
+Still OPEN by product decision/content authoring:
+1. Old Boundary Token acquisition source;
+2. token retained/consumed policy;
+3. hunter-trail final clue/capability identity if unresolved;
+4. School management/accounting public-result provider/threshold;
+5. School Arcana/Forest public-result provider/threshold;
+6. full Forest route/challenge/season content depth;
+7. non-blocking future GIF/art polish.
+
+Do not convert any of these into runtime assumptions without explicit authoring decisions.
+
+### Active worker queues
+
+- Chat 2: items 49–54 on `chat2/presentation-replacement-next`.
+- Chat 3: items 37–42 on `chat3/lumber-production-proof-next`.
+- Chat 4: items 37–42 on `chat4/activation-ci-gate-next`.
+- Chat 5: items 37–42 on `chat5/school-pa-gate-next`.
+
+### Next Lead phase
+
+Start a clean branch from current main to consolidate only:
+- post-PR25 worker evidence that matches merged main;
+- human/product decisions still required;
+- final content-depth backlog;
+- release-candidate closeout documentation.
+
+Do not reopen already-green runtime architecture.
