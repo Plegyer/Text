@@ -1,0 +1,138 @@
+{
+  "version": 1,
+  "kind": "presentation-forest-content-depth-asset-matrix",
+  "policy": {
+    "gameplayIdentitySeparateFromMedia": true,
+    "missingSpecificArtBlocksCurrentRc": false,
+    "finalIdsMustFollowContentAuthoring": true
+  },
+  "classifications": [
+    "SHIPPED_IDENTITY_READY",
+    "AUTHORING_DECISION_REQUIRED",
+    "CONTENT_FIRST_THEN_ASSET",
+    "OPTIONAL_POLISH"
+  ],
+  "rows": [
+    {
+      "area": "route",
+      "key": "logging-road",
+      "gameplayIdentity": "logging-road",
+      "semanticPresentation": "activity/forest/route/default",
+      "futureSemanticFamily": "activity/forest/route/logging-road/*",
+      "classification": "SHIPPED_IDENTITY_READY",
+      "currentFallback": "assets/stage-forest.svg",
+      "assetNeed": "Optional route-specific visual specialization.",
+      "contentDependency": "Gameplay route identity is shipped; exact presentation variant/lore is optional authoring."
+    },
+    {
+      "area": "route",
+      "key": "hunter-trail",
+      "gameplayIdentity": null,
+      "semanticPresentation": "activity/forest/route/default",
+      "futureSemanticFamily": "activity/forest/route/hunter-trail/*",
+      "classification": "CONTENT_FIRST_THEN_ASSET",
+      "currentFallback": "assets/stage-forest.svg",
+      "assetNeed": "Do not commission final route-specific media yet.",
+      "contentDependency": "Hunter-trail gameplay/content identity is not final."
+    },
+    {
+      "area": "route",
+      "key": "old-boundary",
+      "gameplayIdentity": "old-boundary",
+      "semanticPresentation": "activity/forest/route/default",
+      "futureSemanticFamily": "activity/forest/route/old-boundary/*",
+      "classification": "AUTHORING_DECISION_REQUIRED",
+      "currentFallback": "assets/stage-forest.svg",
+      "assetNeed": "Route-specific visual treatment may be authored after Product settles acquisition/retain-consume context.",
+      "contentDependency": "Route identity is shipped, but token acquisition and retain/consume policy remain open."
+    },
+    {
+      "area": "challenge-family",
+      "key": "navigation",
+      "gameplayIdentity": null,
+      "semanticPresentation": "activity/forest/route/default",
+      "futureSemanticFamily": "activity/forest/challenge/navigation/*",
+      "classification": "CONTENT_FIRST_THEN_ASSET",
+      "currentFallback": "assets/stage-forest.svg",
+      "assetNeed": "Final challenge-specific media waits for authored challenge content.",
+      "contentDependency": "Challenge family content is not final."
+    },
+    {
+      "area": "challenge-family",
+      "key": "physical-obstacle",
+      "gameplayIdentity": null,
+      "semanticPresentation": "activity/forest/route/default",
+      "futureSemanticFamily": "activity/forest/challenge/physical-obstacle/*",
+      "classification": "CONTENT_FIRST_THEN_ASSET",
+      "currentFallback": "assets/stage-forest.svg",
+      "assetNeed": "Final challenge-specific media waits for authored challenge content.",
+      "contentDependency": "Challenge family content is not final."
+    },
+    {
+      "area": "challenge-family",
+      "key": "interpretation-ritual-anomaly",
+      "gameplayIdentity": null,
+      "semanticPresentation": "activity/forest/route/default",
+      "futureSemanticFamily": "activity/forest/challenge/interpretation-ritual-anomaly/*",
+      "classification": "CONTENT_FIRST_THEN_ASSET",
+      "currentFallback": "assets/stage-forest.svg",
+      "assetNeed": "Final challenge-specific media waits for authored challenge content.",
+      "contentDependency": "Challenge family content is not final."
+    },
+    {
+      "area": "seasonal-topology",
+      "key": "season-variants",
+      "gameplayIdentity": null,
+      "semanticPresentation": "activity/forest/route/default",
+      "futureSemanticFamily": "activity/forest/route/{route}/season/{spring|summer|autumn|winter}/*",
+      "classification": "CONTENT_FIRST_THEN_ASSET",
+      "currentFallback": "assets/stage-forest.svg",
+      "assetNeed": "Season-specific media only after seasonal topology/content meaning exists.",
+      "contentDependency": "Seasonal Forest topology/content is still open."
+    },
+    {
+      "area": "result",
+      "key": "success",
+      "gameplayIdentity": "lumber.forest.success",
+      "semanticPresentation": "activity/forest/return/success",
+      "futureSemanticFamily": null,
+      "classification": "SHIPPED_IDENTITY_READY",
+      "currentFallback": "assets/stage-forest.svg",
+      "assetNeed": "Dedicated success art is optional polish.",
+      "contentDependency": "Result identity is shipped."
+    },
+    {
+      "area": "result",
+      "key": "escape",
+      "gameplayIdentity": "lumber.forest.escape",
+      "semanticPresentation": "activity/forest/return/escape",
+      "futureSemanticFamily": null,
+      "classification": "SHIPPED_IDENTITY_READY",
+      "currentFallback": "assets/stage-forest.svg",
+      "assetNeed": "Dedicated escape art is optional polish.",
+      "contentDependency": "Result identity is shipped."
+    },
+    {
+      "area": "result",
+      "key": "failure",
+      "gameplayIdentity": "lumber.forest.failure",
+      "semanticPresentation": "activity/forest/return/failure",
+      "futureSemanticFamily": null,
+      "classification": "SHIPPED_IDENTITY_READY",
+      "currentFallback": "assets/stage-forest.svg",
+      "assetNeed": "Dedicated failure art is optional polish.",
+      "contentDependency": "Result identity is shipped."
+    },
+    {
+      "area": "polish",
+      "key": "generic-forest-animation",
+      "gameplayIdentity": null,
+      "semanticPresentation": "activity/forest/route/default",
+      "futureSemanticFamily": null,
+      "classification": "OPTIONAL_POLISH",
+      "currentFallback": "assets/stage-forest.svg",
+      "assetNeed": "Optional generic animation or richer static art.",
+      "contentDependency": "No gameplay/content dependency; not required for RC."
+    }
+  ]
+}
