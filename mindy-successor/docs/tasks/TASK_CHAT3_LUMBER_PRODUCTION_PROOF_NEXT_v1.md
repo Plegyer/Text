@@ -1421,3 +1421,27 @@ For each proposed extension record:
 Do not implement and do not invent Product values.
 
 Continue items 75–83 sequentially without waiting for Lead review.
+
+
+## Queue item 84 — Secret Debt state ownership recommendation memo
+
+Create NEW file only:
+- `docs/poverty-prep/SECRET_DEBT_STATE_OWNERSHIP_RECOMMENDATION_v1.md`
+
+Compare the technically compatible state-ownership options identified by the runtime-seam work:
+- existing career machine + typed facts/choices/counters;
+- dedicated Secret Debt domain state;
+- hybrid public-result projection.
+
+Evaluate only technical consequences:
+- persistence/migration;
+- delayed activation;
+- job availability gating;
+- forced Night;
+- outcomes;
+- external consumers;
+- test complexity.
+
+State the smallest technically sufficient option and why, while leaving Product values/policies OPEN. Do not alter runtime.
+
+Continue items 76–84 sequentially without waiting for Lead review.
