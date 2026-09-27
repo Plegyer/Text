@@ -1605,6 +1605,14 @@
     "presentation.static.foreman-night-voluntary-v2.caption": {
       "ru": "Добровольный вечерний разговор с бригадиром.",
       "en": "Voluntary evening conversation with the foreman."
+    },
+    "presentation.static.forest.route.default.alt": {
+      "ru": "Героиня идёт по нейтральной лесной тропе без указания конкретного маршрута или исхода.",
+      "en": "The heroine follows a neutral forest trail without indicating a specific route or outcome."
+    },
+    "presentation.static.forest.route.default.caption": {
+      "ru": "Путь через лес продолжается.",
+      "en": "The route through the forest continues."
     }
   }
 }
