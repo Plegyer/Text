@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 2,
+  "id": "hunter-trail.decision-matrix-v2.fixture",
+  "status": "HUMAN_DECISION_REQUIRED",
+  "locked": {
+    "routeLabel": "Hunter trail",
+    "routeKey": "hunter-trail",
+    "activityId": "lumber.forest",
+    "challengeFamily": "navigation",
+    "oldBoundaryCapabilityMustRemainIndependent": "enter_old_boundary",
+    "exactA5": "activityResult"
+  },
+  "unresolved": [
+    {
+      "id": "clue-capability-identity",
+      "value": null,
+      "permissibleShape": [
+        "hunter-public-fact",
+        "navigation-capability",
+        "explicit-or-boundary"
+      ],
+      "runtimeSeams": [
+        "publicFact/itemCapability condition",
+        "availableActivityActions",
+        "route persistence"
+      ],
+      "contentSeams": [
+        "fact/capability ID",
+        "route option condition",
+        "requirement explanation"
+      ],
+      "testSeams": [
+        "before/after ownership",
+        "reload",
+        "old-boundary unaffected"
+      ]
+    },
+    {
+      "id": "acquisition-source",
+      "value": null,
+      "permissibleShape": [
+        "explicit authored event/action/relationship/item source"
+      ],
+      "runtimeSeams": [
+        "existing source/effect transaction mechanisms"
+      ],
+      "contentSeams": [
+        "source ID",
+        "grant/publication",
+        "conditions",
+        "repeatability"
+      ],
+      "testSeams": [
+        "pre/post acquisition",
+        "exactly-once if one-shot",
+        "reload",
+        "no fake item ID"
+      ]
+    },
+    {
+      "id": "narrative-provider",
+      "value": null,
+      "permissibleShape": [
+        "accepted authored provider/scene"
+      ],
+      "runtimeSeams": [
+        "existing Resolver/presentation"
+      ],
+      "contentSeams": [
+        "provider identity",
+        "scene/event ID",
+        "public ownership boundary",
+        "presentation"
+      ],
+      "testSeams": [
+        "pending scene reload",
+        "no private-counter read",
+        "no unrelated state mutation"
+      ]
+    },
+    {
+      "id": "route-reward-lore",
+      "value": null,
+      "permissibleShape": [
+        "accepted public discovery",
+        "accepted item/reward",
+        "route-specific lore/presentation"
+      ],
+      "runtimeSeams": [
+        "existing Activity effects/results"
+      ],
+      "contentSeams": [
+        "discovery/reward ID",
+        "lore",
+        "resource/wildlife content"
+      ],
+      "testSeams": [
+        "exactly-once reward",
+        "reload",
+        "no new terminal outcome",
+        "escape excludes success reward"
+      ]
+    },
+    {
+      "id": "threshold-check-details",
+      "value": null,
+      "permissibleShape": [
+        "accepted stat/public-fact/capability check within locked categories"
+      ],
+      "runtimeSeams": [
+        "existing selected check/condition mechanism"
+      ],
+      "contentSeams": [
+        "threshold",
+        "formula",
+        "challenge option IDs",
+        "consequences"
+      ],
+      "testSeams": [
+        "threshold boundary",
+        "deterministic reload",
+        "no reroll"
+      ]
+    }
+  ],
+  "compatibility": {
+    "legacyOptionModel0MustSurvive": true,
+    "loggingRoadMustRemainUnconditional": true,
+    "oldBoundarySemanticsMustRemainUnchanged": true,
+    "terminalResults": [
+      "lumber.forest.success",
+      "lumber.forest.escape",
+      "lumber.forest.failure"
+    ]
+  },
+  "hardWorkIsolation": {
+    "hunterTrailMayAffectHardWork": false,
+    "onlyCondition": {
+      "kind": "careerCounter",
+      "career": "lumber",
+      "counter": "completed_shifts",
+      "op": "gte",
+      "value": 50
+    },
+    "rewardId": "hardWork:lumber"
+  }
+}
