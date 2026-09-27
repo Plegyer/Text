@@ -996,3 +996,24 @@ Map presentation dependencies for each allowed milestone form:
 For each identify what must be decided/authored before semantic presentation IDs and GIF/static assets can be finalized. Do not select a milestone form.
 
 Continue items 57–65 sequentially without waiting for Lead review.
+
+
+## Queue item 66 — School production test-case inventory
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_PRODUCTION_TEST_CASE_INVENTORY_v1.md`
+
+Inventory executable/future tests for:
+- all eight paid courses;
+- Night study;
+- teacher-authored variants;
+- milestones;
+- management/accounting public result;
+- Arcana/Forest public result;
+- career consumers;
+- save/reload exactly once;
+- presentation fallback.
+
+Classify each case as executable now, Product-decision blocked, content blocked, or future runtime work. Do not invent thresholds/providers.
+
+Continue items 58–66 sequentially without waiting for Lead review.
