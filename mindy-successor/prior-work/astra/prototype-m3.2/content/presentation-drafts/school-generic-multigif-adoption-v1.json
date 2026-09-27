@@ -1,0 +1,684 @@
+{
+  "version": 1,
+  "id": "school-generic-multigif-adoption-v1",
+  "status": "PRESENTATION_DRAFT_NOT_RUNTIME_PATCH",
+  "assetPathsAreProposed": true,
+  "currentPr42PoolShape": {
+    "slotFields": [
+      "pool",
+      "static",
+      "fallbackId"
+    ],
+    "poolFields": [
+      "version",
+      "ordering",
+      "selectionPolicy",
+      "candidates"
+    ],
+    "candidateFields": [
+      "key",
+      "kind",
+      "src",
+      "alt",
+      "weight?"
+    ],
+    "candidateCount": {
+      "min": 3,
+      "max": 5
+    }
+  },
+  "teacherSpecificSurfacesIncluded": false,
+  "teacherSpecificSurfacesStatus": "STAGED_ROUTING_BLOCKED",
+  "localeInvariant": {
+    "gameplayPresentationIdsShared": true,
+    "mediaAssetIdentityShared": true,
+    "localeSpecificGameplayIdentity": false
+  },
+  "altLocalization": {
+    "lesson-notes": {
+      "key": "school.media.pool.generic.lesson-notes.alt",
+      "ru": "Ученица разбирает записи и учебные материалы в школьной аудитории.",
+      "en": "A student reviews notes and study materials in a School classroom."
+    },
+    "lesson-practice": {
+      "key": "school.media.pool.generic.lesson-practice.alt",
+      "ru": "Спокойная учебная практика в обычной школьной аудитории без указания конкретного курса.",
+      "en": "Calm study practice in a generic School classroom without implying a specific course."
+    },
+    "lesson-wrap": {
+      "key": "school.media.pool.generic.lesson-wrap.alt",
+      "ru": "Урок заканчивается: записи и материалы собирают перед возвращением к остатку дня.",
+      "en": "A lesson wraps up as notes and materials are gathered before returning to the rest of the day."
+    },
+    "static": {
+      "key": "school.media.generic.classroom.alt",
+      "ru": "Обычная школьная аудитория после завершённого урока.",
+      "en": "A generic School classroom after a completed lesson."
+    }
+  },
+  "presentationPatch": {
+    "version": 1,
+    "texts": {},
+    "media": {},
+    "slots": {
+      "school/literacy-and-numbers/lesson/default": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "lesson-notes",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-notes.gif",
+              "alt": "Ученица разбирает записи и учебные материалы в школьной аудитории."
+            },
+            {
+              "key": "lesson-practice",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-practice.gif",
+              "alt": "Спокойная учебная практика в обычной школьной аудитории без указания конкретного курса."
+            },
+            {
+              "key": "lesson-wrap",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-wrap.gif",
+              "alt": "Урок заканчивается: записи и материалы собирают перед возвращением к остатку дня."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-school.svg",
+          "alt": "Обычная школьная аудитория после завершённого урока."
+        },
+        "fallbackId": "location/town/default"
+      },
+      "school/arcana/lesson/default": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "lesson-notes",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-notes.gif",
+              "alt": "Ученица разбирает записи и учебные материалы в школьной аудитории."
+            },
+            {
+              "key": "lesson-practice",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-practice.gif",
+              "alt": "Спокойная учебная практика в обычной школьной аудитории без указания конкретного курса."
+            },
+            {
+              "key": "lesson-wrap",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-wrap.gif",
+              "alt": "Урок заканчивается: записи и материалы собирают перед возвращением к остатку дня."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-school.svg",
+          "alt": "Обычная школьная аудитория после завершённого урока."
+        },
+        "fallbackId": "location/town/default"
+      },
+      "school/rhetoric-and-social/lesson/default": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "lesson-notes",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-notes.gif",
+              "alt": "Ученица разбирает записи и учебные материалы в школьной аудитории."
+            },
+            {
+              "key": "lesson-practice",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-practice.gif",
+              "alt": "Спокойная учебная практика в обычной школьной аудитории без указания конкретного курса."
+            },
+            {
+              "key": "lesson-wrap",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-wrap.gif",
+              "alt": "Урок заканчивается: записи и материалы собирают перед возвращением к остатку дня."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-school.svg",
+          "alt": "Обычная школьная аудитория после завершённого урока."
+        },
+        "fallbackId": "location/town/default"
+      },
+      "school/etiquette-and-presentation/lesson/default": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "lesson-notes",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-notes.gif",
+              "alt": "Ученица разбирает записи и учебные материалы в школьной аудитории."
+            },
+            {
+              "key": "lesson-practice",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-practice.gif",
+              "alt": "Спокойная учебная практика в обычной школьной аудитории без указания конкретного курса."
+            },
+            {
+              "key": "lesson-wrap",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-wrap.gif",
+              "alt": "Урок заканчивается: записи и материалы собирают перед возвращением к остатку дня."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-school.svg",
+          "alt": "Обычная школьная аудитория после завершённого урока."
+        },
+        "fallbackId": "location/town/default"
+      },
+      "school/field-craft/lesson/default": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "lesson-notes",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-notes.gif",
+              "alt": "Ученица разбирает записи и учебные материалы в школьной аудитории."
+            },
+            {
+              "key": "lesson-practice",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-practice.gif",
+              "alt": "Спокойная учебная практика в обычной школьной аудитории без указания конкретного курса."
+            },
+            {
+              "key": "lesson-wrap",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-wrap.gif",
+              "alt": "Урок заканчивается: записи и материалы собирают перед возвращением к остатку дня."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-school.svg",
+          "alt": "Обычная школьная аудитория после завершённого урока."
+        },
+        "fallbackId": "location/town/default"
+      },
+      "school/physical-training/lesson/default": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "lesson-notes",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-notes.gif",
+              "alt": "Ученица разбирает записи и учебные материалы в школьной аудитории."
+            },
+            {
+              "key": "lesson-practice",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-practice.gif",
+              "alt": "Спокойная учебная практика в обычной школьной аудитории без указания конкретного курса."
+            },
+            {
+              "key": "lesson-wrap",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-wrap.gif",
+              "alt": "Урок заканчивается: записи и материалы собирают перед возвращением к остатку дня."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-school.svg",
+          "alt": "Обычная школьная аудитория после завершённого урока."
+        },
+        "fallbackId": "location/town/default"
+      },
+      "school/arts-and-performance/lesson/default": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "lesson-notes",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-notes.gif",
+              "alt": "Ученица разбирает записи и учебные материалы в школьной аудитории."
+            },
+            {
+              "key": "lesson-practice",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-practice.gif",
+              "alt": "Спокойная учебная практика в обычной школьной аудитории без указания конкретного курса."
+            },
+            {
+              "key": "lesson-wrap",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-wrap.gif",
+              "alt": "Урок заканчивается: записи и материалы собирают перед возвращением к остатку дня."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-school.svg",
+          "alt": "Обычная школьная аудитория после завершённого урока."
+        },
+        "fallbackId": "location/town/default"
+      },
+      "school/body-confidence/lesson/default": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "lesson-notes",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-notes.gif",
+              "alt": "Ученица разбирает записи и учебные материалы в школьной аудитории."
+            },
+            {
+              "key": "lesson-practice",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-practice.gif",
+              "alt": "Спокойная учебная практика в обычной школьной аудитории без указания конкретного курса."
+            },
+            {
+              "key": "lesson-wrap",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-wrap.gif",
+              "alt": "Урок заканчивается: записи и материалы собирают перед возвращением к остатку дня."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-school.svg",
+          "alt": "Обычная школьная аудитория после завершённого урока."
+        },
+        "fallbackId": "location/town/default"
+      },
+      "location/town/event/school-generic-reachable-v2-after-school/notes": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "lesson-notes",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-notes.gif",
+              "alt": "Ученица разбирает записи и учебные материалы в школьной аудитории."
+            },
+            {
+              "key": "lesson-practice",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-practice.gif",
+              "alt": "Спокойная учебная практика в обычной школьной аудитории без указания конкретного курса."
+            },
+            {
+              "key": "lesson-wrap",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-wrap.gif",
+              "alt": "Урок заканчивается: записи и материалы собирают перед возвращением к остатку дня."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-school.svg",
+          "alt": "Обычная школьная аудитория после завершённого урока."
+        },
+        "fallbackId": "location/town/default"
+      },
+      "location/town/event/school-generic-reachable-v2-after-school/one-point": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "lesson-notes",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-notes.gif",
+              "alt": "Ученица разбирает записи и учебные материалы в школьной аудитории."
+            },
+            {
+              "key": "lesson-practice",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-practice.gif",
+              "alt": "Спокойная учебная практика в обычной школьной аудитории без указания конкретного курса."
+            },
+            {
+              "key": "lesson-wrap",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-wrap.gif",
+              "alt": "Урок заканчивается: записи и материалы собирают перед возвращением к остатку дня."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-school.svg",
+          "alt": "Обычная школьная аудитория после завершённого урока."
+        },
+        "fallbackId": "location/town/default"
+      },
+      "location/town/event/school-generic-reachable-v2-after-school/question": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "lesson-notes",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-notes.gif",
+              "alt": "Ученица разбирает записи и учебные материалы в школьной аудитории."
+            },
+            {
+              "key": "lesson-practice",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-practice.gif",
+              "alt": "Спокойная учебная практика в обычной школьной аудитории без указания конкретного курса."
+            },
+            {
+              "key": "lesson-wrap",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-wrap.gif",
+              "alt": "Урок заканчивается: записи и материалы собирают перед возвращением к остатку дня."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-school.svg",
+          "alt": "Обычная школьная аудитория после завершённого урока."
+        },
+        "fallbackId": "location/town/default"
+      },
+      "location/town/event/school-generic-reachable-v2-after-school/compare-notes": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "lesson-notes",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-notes.gif",
+              "alt": "Ученица разбирает записи и учебные материалы в школьной аудитории."
+            },
+            {
+              "key": "lesson-practice",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-practice.gif",
+              "alt": "Спокойная учебная практика в обычной школьной аудитории без указания конкретного курса."
+            },
+            {
+              "key": "lesson-wrap",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-wrap.gif",
+              "alt": "Урок заканчивается: записи и материалы собирают перед возвращением к остатку дня."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-school.svg",
+          "alt": "Обычная школьная аудитория после завершённого урока."
+        },
+        "fallbackId": "location/town/default"
+      },
+      "location/town/event/school-generic-reachable-v2-after-school/small-correction": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "lesson-notes",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-notes.gif",
+              "alt": "Ученица разбирает записи и учебные материалы в школьной аудитории."
+            },
+            {
+              "key": "lesson-practice",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-practice.gif",
+              "alt": "Спокойная учебная практика в обычной школьной аудитории без указания конкретного курса."
+            },
+            {
+              "key": "lesson-wrap",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-wrap.gif",
+              "alt": "Урок заканчивается: записи и материалы собирают перед возвращением к остатку дня."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-school.svg",
+          "alt": "Обычная школьная аудитория после завершённого урока."
+        },
+        "fallbackId": "location/town/default"
+      },
+      "location/town/event/school-generic-reachable-v2-after-school/shared-confusion": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "lesson-notes",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-notes.gif",
+              "alt": "Ученица разбирает записи и учебные материалы в школьной аудитории."
+            },
+            {
+              "key": "lesson-practice",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-practice.gif",
+              "alt": "Спокойная учебная практика в обычной школьной аудитории без указания конкретного курса."
+            },
+            {
+              "key": "lesson-wrap",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-wrap.gif",
+              "alt": "Урок заканчивается: записи и материалы собирают перед возвращением к остатку дня."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-school.svg",
+          "alt": "Обычная школьная аудитория после завершённого урока."
+        },
+        "fallbackId": "location/town/default"
+      },
+      "location/town/event/school-generic-reachable-v2-after-school/enough-today": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "lesson-notes",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-notes.gif",
+              "alt": "Ученица разбирает записи и учебные материалы в школьной аудитории."
+            },
+            {
+              "key": "lesson-practice",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-practice.gif",
+              "alt": "Спокойная учебная практика в обычной школьной аудитории без указания конкретного курса."
+            },
+            {
+              "key": "lesson-wrap",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-wrap.gif",
+              "alt": "Урок заканчивается: записи и материалы собирают перед возвращением к остатку дня."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-school.svg",
+          "alt": "Обычная школьная аудитория после завершённого урока."
+        },
+        "fallbackId": "location/town/default"
+      },
+      "location/town/event/school-generic-reachable-v2-after-school/hallway": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "lesson-notes",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-notes.gif",
+              "alt": "Ученица разбирает записи и учебные материалы в школьной аудитории."
+            },
+            {
+              "key": "lesson-practice",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-practice.gif",
+              "alt": "Спокойная учебная практика в обычной школьной аудитории без указания конкретного курса."
+            },
+            {
+              "key": "lesson-wrap",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-wrap.gif",
+              "alt": "Урок заканчивается: записи и материалы собирают перед возвращением к остатку дня."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-school.svg",
+          "alt": "Обычная школьная аудитория после завершённого урока."
+        },
+        "fallbackId": "location/town/default"
+      },
+      "location/town/event/school-generic-reachable-v2-after-school/board": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "lesson-notes",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-notes.gif",
+              "alt": "Ученица разбирает записи и учебные материалы в школьной аудитории."
+            },
+            {
+              "key": "lesson-practice",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-practice.gif",
+              "alt": "Спокойная учебная практика в обычной школьной аудитории без указания конкретного курса."
+            },
+            {
+              "key": "lesson-wrap",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-wrap.gif",
+              "alt": "Урок заканчивается: записи и материалы собирают перед возвращением к остатку дня."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-school.svg",
+          "alt": "Обычная школьная аудитория после завершённого урока."
+        },
+        "fallbackId": "location/town/default"
+      },
+      "location/town/event/school-generic-reachable-v2-after-school/reminder": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "lesson-notes",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-notes.gif",
+              "alt": "Ученица разбирает записи и учебные материалы в школьной аудитории."
+            },
+            {
+              "key": "lesson-practice",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-practice.gif",
+              "alt": "Спокойная учебная практика в обычной школьной аудитории без указания конкретного курса."
+            },
+            {
+              "key": "lesson-wrap",
+              "kind": "gif",
+              "src": "assets/school/generic/lesson-wrap.gif",
+              "alt": "Урок заканчивается: записи и материалы собирают перед возвращением к остатку дня."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-school.svg",
+          "alt": "Обычная школьная аудитория после завершённого урока."
+        },
+        "fallbackId": "location/town/default"
+      }
+    }
+  },
+  "coverage": {
+    "paidLessonPresentationIds": [
+      "school/literacy-and-numbers/lesson/default",
+      "school/arcana/lesson/default",
+      "school/rhetoric-and-social/lesson/default",
+      "school/etiquette-and-presentation/lesson/default",
+      "school/field-craft/lesson/default",
+      "school/physical-training/lesson/default",
+      "school/arts-and-performance/lesson/default",
+      "school/body-confidence/lesson/default"
+    ],
+    "genericPostLessonPresentationIds": [
+      "location/town/event/school-generic-reachable-v2-after-school/notes",
+      "location/town/event/school-generic-reachable-v2-after-school/one-point",
+      "location/town/event/school-generic-reachable-v2-after-school/question",
+      "location/town/event/school-generic-reachable-v2-after-school/compare-notes",
+      "location/town/event/school-generic-reachable-v2-after-school/small-correction",
+      "location/town/event/school-generic-reachable-v2-after-school/shared-confusion",
+      "location/town/event/school-generic-reachable-v2-after-school/enough-today",
+      "location/town/event/school-generic-reachable-v2-after-school/hallway",
+      "location/town/event/school-generic-reachable-v2-after-school/board",
+      "location/town/event/school-generic-reachable-v2-after-school/reminder"
+    ]
+  }
+}
