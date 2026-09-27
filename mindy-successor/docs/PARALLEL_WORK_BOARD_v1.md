@@ -355,3 +355,45 @@ Current worker progress:
 - Chat 5 — `chat5/school-pa-gate-next`: items 37–41 committed; 42 active.
 
 Git remains authoritative over worker verbal reports.
+
+
+## Lead verification after worker completion reports — 2026-09-27
+
+Git verification was performed against current coordination main head
+`c0327f2ec40815dcf2ac3c16089a990a0edb7fb3`
+(the technical RC merge floor remains PR #27 / `6cd990f45d368291b4a288f9f48c569f6e0b207f`, 221/221 PASS).
+
+Open PRs at verification time: **0**.
+
+Worker completion reports were checked by the exact files required by each active task packet:
+
+- Chat 2 — VERIFIED COMPLETE for items 49–54 on `chat2/presentation-replacement-next`.
+  All 11 expected item-49–54 artifacts are present.
+  Lead immediately appended items **55–60** in the same task file/branch.
+  Queue-extension commit: `730fbf01a2dda437959a11b9e6b80207f0e22dc9`.
+
+- Chat 3 — NOT VERIFIED COMPLETE for items 49–54 on `chat3/lumber-production-proof-next`.
+  None of the 10 expected item-49–54 artifacts are present in the branch at verification time.
+  Current queue remains **49–54**; do not advance it from prose report alone.
+
+- Chat 4 — NOT VERIFIED COMPLETE for items 43–48 on `chat4/activation-ci-gate-next`.
+  None of the 6 expected item-43–48 artifacts are present in the branch at verification time.
+  Current queue remains **43–48**; do not advance it from prose report alone.
+
+- Chat 5 — VERIFIED COMPLETE for items 37–42 on `chat5/school-pa-gate-next`.
+  All 11 expected item-37–42 artifacts are present.
+  Lead immediately appended items **43–48** in the same task file/branch.
+  Queue-extension commit: `febba14f2b5d7be853c2ecfeb8ae3633d9bc514b`.
+
+Current no-idle state:
+- Chat 2: items 55–60 active/queued;
+- Chat 3: items 49–54 still active/required;
+- Chat 4: items 43–48 still active/required;
+- Chat 5: items 43–48 active/queued.
+
+Locked invariants remain unchanged:
+- Lumber Hard Work eligibility = ONLY `completed_shifts >= 50`;
+- exact reward = `hardWork:lumber`;
+- Forest continuation boundary = exact `activityResult`;
+- technical RC remains GREEN;
+- unresolved work remains Product/human authoring decisions, Forest/School content depth, and optional presentation/art polish.
