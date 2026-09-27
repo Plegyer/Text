@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "id": "lumber",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "careers": [
+        "lumber"
+      ],
+      "relationships": [
+        "lumber.foreman"
+      ]
+    },
+    "writes": {
+      "relationships": [
+        "lumber.foreman"
+      ]
+    }
+  },
+  "media": [
+    {
+      "id": "relationship.lumber.foreman.professional",
+      "kind": "image",
+      "src": "assets/stage-lumber.svg",
+      "alt": "Бригадир обсуждает с героиней её работу в артели."
+    }
+  ],
+  "events": [
+    {
+      "id": "lumber.foreman-notice",
+      "title": "Бригадир замечает работу",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerTransition",
+          "career": "lumber"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 90,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "lumber",
+          "stage": "accepted-hand"
+        },
+        {
+          "kind": "relationshipStage",
+          "relationship": "lumber.foreman",
+          "stage": "unknown"
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "После первой признанной смены бригадир обращается к тебе уже не как к случайной подёнщице. Разговор остаётся рабочим: он отмечает, что на тебя можно рассчитывать, и предлагает дальше держаться профессионально.",
+          "conditions": [],
+          "media": [
+            "relationship.lumber.foreman.professional"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "professional",
+          "label": "Оставить всё по-деловому",
+          "text": "Принять рабочее доверие без обещаний о более близких отношениях.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "advanceRelationship",
+              "relationship": "lumber.foreman",
+              "transition": "notice-work"
+            },
+            {
+              "kind": "advanceRelationship",
+              "relationship": "lumber.foreman",
+              "transition": "choose-professional"
+            }
+          ]
+        }
+      ],
+      "sourceDomain": "lumber.foreman"
+    }
+  ]
+}
