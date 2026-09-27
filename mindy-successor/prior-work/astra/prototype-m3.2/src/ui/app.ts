@@ -27,13 +27,15 @@ const schoolCourseDescription=(course:SchoolCourse)=>tr(`${course.id}.descriptio
 const schoolStatLabel=(stat:string)=>tr(`stat.${stat}.label`,labels[stat]??stat);
 function localizedNightChoiceLabel(id:string,fallback:string){
  const prefix='school.night_study.';
- if(!id.startsWith(prefix))return fallback;
- const rest=id.slice(prefix.length),split=rest.lastIndexOf('.');
- if(split<1)return fallback;
- const course=SCHOOL_COURSES.find(item=>item.id===`school.course.${rest.slice(0,split)}`);
- if(!course)return fallback;
- const stat=rest.slice(split+1);
- return fmt(tr('ui.school.nightStudyChoice','Ночная учёба: {course} — {stat}'),{course:schoolCourseLabel(course),stat:schoolStatLabel(stat)});
+ if(id.startsWith(prefix)){
+  const rest=id.slice(prefix.length),split=rest.lastIndexOf('.');
+  if(split<1)return tr(`nightChoice.${id}.label`,fallback);
+  const course=SCHOOL_COURSES.find(item=>item.id===`school.course.${rest.slice(0,split)}`);
+  if(!course)return tr(`nightChoice.${id}.label`,fallback);
+  const stat=rest.slice(split+1);
+  return fmt(tr('ui.school.nightStudyChoice','Ночная учёба: {course} — {stat}'),{course:schoolCourseLabel(course),stat:schoolStatLabel(stat)});
+ }
+ return tr(`nightChoice.${id}.label`,fallback);
 }
 const professions=['lumber.shift','satyr-maid.shift','undead-farm.shift','tavern.shift','hunter.shift','guard.shift','merchant.shift','artist-geisha.shift','assassin.shift','prostitute.shift'];
 function explain(c:Condition):string{
