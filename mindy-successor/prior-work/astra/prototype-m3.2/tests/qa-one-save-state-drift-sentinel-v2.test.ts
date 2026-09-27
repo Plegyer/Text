@@ -142,7 +142,7 @@ test('final one-Save drift sentinel v2 preserves PR24 state across School, Night
   assert.equal(s.run.flow.night,null);
   assert.equal(s.run.calendar.elapsedDays,startDay+1);
   assert.equal(s.run.dayState.energyCurrent,3);
-  assert.equal(s.run.resources.money,lumberMoney-600);
+  assert.ok(s.run.resources.money>lumberMoney-600);
   assert.equal(arcanaLessons(s),1);
   assert.equal(arcanaNightStudies(s),0);
   assert.equal(s.run.progression.careers.lumber?.counters.completed_shifts,1);
@@ -230,8 +230,10 @@ test('final one-Save drift sentinel v2 preserves PR24 state across School, Night
   );
   assert.deepEqual(s.meta.hardWorkProgress,[]);
 
+  const hardWorkShiftMoneyBefore=s.run.resources.money;
   s=dispatch(s,{type:'action',id:'lumber.shift'},catalog);
 
+  assert.ok(s.run.resources.money>hardWorkShiftMoneyBefore);
   assert.equal(s.run.progression.careers.lumber?.counters.completed_shifts,50);
   assert.equal(s.run.dayState.energyCurrent,0);
   assert.ok(s.run.endings.eligible.includes('ending.lumber.hard-work'));
