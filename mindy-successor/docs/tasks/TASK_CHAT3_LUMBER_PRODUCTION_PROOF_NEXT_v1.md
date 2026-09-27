@@ -1049,3 +1049,23 @@ Map the Product-directed rule that, once the hidden debt career becomes bound:
 Separate already-fixed behavior from unresolved School/Activity availability decisions. Do not invent runtime implementation or thresholds.
 
 Continue items 57–65 sequentially without waiting for Lead review.
+
+
+## Queue item 66 — poverty Night sequencing contract map
+
+Create NEW file only:
+- `docs/poverty-prep/POVERTY_NIGHT_SEQUENCING_CONTRACT_MAP_v1.md`
+
+Map the intended sequencing between:
+- before-lodging forced checks;
+- lodging selection/payment;
+- street/cheap/normal housing state;
+- after-lodging poverty events;
+- voluntary Night menu;
+- future Secret Debt forced Night obligations;
+- next-day modifiers;
+- calendar advance.
+
+Use current NightFlow phases and identify which Secret Debt sequencing points remain Product-owned. Do not change runtime or choose open penalties/chances.
+
+Continue items 58–66 sequentially without waiting for Lead review.
