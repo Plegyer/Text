@@ -837,3 +837,20 @@ Remaining non-runtime work is concentrated in:
 Hard Work remains locked:
 - ONLY `completed_shifts >= 50`;
 - exact rewardId `hardWork:lumber`.
+
+
+## RC closeout navigation — 2026-09-27
+
+Current post-PR25 status:
+- `docs/qa-prep/RC_CLOSEOUT_STATUS_v1.md`
+
+Remaining neutral human/Product decision ledger:
+- `docs/qa-prep/RC_HUMAN_DECISIONS_REQUIRED_v1.md`
+
+Current subsystem decision/evidence sources:
+- `docs/lumber-prep/OLD_BOUNDARY_TOKEN_PRODUCT_DECISION_IMPACT_v1.md`
+- `docs/lumber-prep/LUMBER_FINAL_RC_ACCEPTANCE_MATRIX_v1.md`
+- `docs/school-prep/SCHOOL_AUTHORING_DECISION_READY_PACKET_v1.md`
+- `docs/presentation-prep/PRESENTATION_RC_EVIDENCE_PACK_v1.md`
+
+These documents do not reopen already-green runtime contracts. They define the handoff from technical RC closure to explicit Product/content decisions.
