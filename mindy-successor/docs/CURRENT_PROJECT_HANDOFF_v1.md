@@ -1073,3 +1073,27 @@ Lead should now selectively integrate:
 - real multi-GIF pools when real assets are available.
 
 Placeholder GIF paths/manifests are staging evidence only and must not be counted as shipped visual content.
+
+
+## 26. Forest bilingual production — PR43
+
+Merged as `326c7d495720147f17b40056369987f515363899`.
+
+Exact-head CI:
+- **299/299 PASS**
+- 17 packs
+- 46 events
+- 35 actions
+- 9 endings
+
+Shipped:
+- strict Forest result reaction pack for exact `activityResult` success / escape / failure;
+- RU+EN localization for Forest result scenes and route labels;
+- generic UI localization consumption for event title/body/choice, Activity labels/options, and media alt;
+- renderer smoke proves RU->EN changes presentation text only while pending gameplay event identity remains unchanged;
+- Lumber Hard Work remains exactly `completed_shifts >= 50` with reward `hardWork:lumber`.
+
+Not shipped / still open:
+- Product-blocked Hunter trail semantics;
+- Old Boundary Token semantics;
+- placeholder-only multi-GIF art does not count as shipped assets.
