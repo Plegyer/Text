@@ -2653,3 +2653,107 @@ Consolidate items 173–183 into:
 - exact text keys/content banks useful after Lead poverty integration.
 
 Continue items 173–184 sequentially without waiting for Lead review.
+
+
+## Queue item 185 — merged-main poverty copyedit delta v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/poverty-copyedit-main-delta-v1.fixture.json`
+
+Convert items 173–174 into one exact-key RU+EN text-only delta against current merged-main ordinary-poverty localization. Keep the same 84-key namespace; include only keys whose wording changes. No IDs/mechanics.
+
+## Queue item 186 — poverty copyedit delta regression v1
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/poverty-copyedit-main-delta-v1.test.ts`
+
+Validate item 185 against current main:
+- every key already exists;
+- RU+EN both present;
+- values differ only in text;
+- no key rename/addition;
+- no gameplay fields;
+- six ordinary-poverty pack identities unchanged;
+- Secret Debt excluded.
+
+## Queue item 187 — poverty shared Night/lodging localization map v2
+Create NEW file only:
+- `docs/poverty-prep/POVERTY_SHARED_NIGHT_LODGING_LOCALIZATION_MAP_V2.md`
+
+Re-audit current main after PR45 for poverty-adjacent player-facing lodging/Night UI text outside event payloads. Provide exact current source location, proposed stable localization key, RU source, EN text and Lead-owned UI consumer seam.
+
+## Queue item 188 — poverty shared UI localization fixture v2
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/poverty-shared-ui-localization-v2.fixture.json`
+
+Provide only safe presentation/text keys from item 187. No NightFlow, lodging cost, Energy or housing mechanics.
+
+## Queue item 189 — Forest route current-main presentation inventory v2
+Create NEW file only:
+- `docs/lumber-prep/FOREST_ROUTE_CURRENT_MAIN_PRESENTATION_INVENTORY_V2.md`
+
+Audit exact current main route identities:
+- `forest.route.logging-road`;
+- `forest.route.old-boundary`;
+- current Activity envelope/result presentation identities;
+- current route labels/text/media fallback;
+- exact gaps that are presentation/localization-only.
+
+No Hunter semantics or token interpretation.
+
+## Queue item 190 — logging-road merged-main localization delta v2
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/forest-logging-road-localization-v2.fixture.json`
+
+Refresh item 164 against exact current main and produce additive/current-key RU+EN presentation text only for the shipped logging-road identity.
+
+## Queue item 191 — old-boundary merged-main localization delta v2
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/forest-old-boundary-localization-v2.fixture.json`
+
+Refresh item 165 against exact current main. Keep existing route identity only; do not define token acquisition, consumption, Hunter or deeper lore mechanics.
+
+## Queue item 192 — Forest route presentation replacement fixture v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/forest-route-presentation-replacement-v1.fixture.json`
+
+Map current shipped logging-road / old-boundary identities to semantic presentationId, RU+EN localization keys, static fallback and safe authored prose candidates. Presentation-only; no conditions/effects/rewards.
+
+## Queue item 193 — Forest route presentation contract regression v1
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/forest-route-presentation-contract-v1.test.ts`
+
+Validate items 190–192:
+- exact current route IDs only;
+- no gameplay fields;
+- RU+EN completeness;
+- semantic presentation IDs locale-neutral;
+- no Hunter production ID;
+- no Old Boundary token semantics;
+- Lumber Hard Work and exact Forest result IDs untouched.
+
+## Queue item 194 — Forest route natural-path identity smoke v1
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/forest-route-natural-path-identity-v1.test.ts`
+
+Use current production Activity flow to prove route selection preserves exact route/activity/result identities and that presentation/localization lookup does not alter RNG, Save, route outcome or exact `activityResult` continuation.
+
+Do not add a new route or challenge.
+
+## Queue item 195 — Forest route Product-open isolation ledger v1
+Create NEW file only:
+- `docs/lumber-prep/FOREST_ROUTE_PRODUCT_OPEN_ISOLATION_LEDGER_V1.md`
+
+Explicitly separate what can ship now as presentation/localization from still-open:
+- Hunter route;
+- Old Boundary token acquisition/use;
+- challenge thresholds/rewards;
+- School Arcana provider;
+- seasonal mechanical topology;
+- deeper lore outcomes.
+
+## Queue item 196 — Forest/poverty next integration handoff v4
+Create NEW file only:
+- `docs/lumber-prep/FOREST_POVERTY_NEXT_INTEGRATION_HANDOFF_V4.md`
+
+Consolidate items 185–195 into SAFE_TEXT_PATCH / SHARED_UI_REQUIRED / SAFE_PRESENTATION_SOURCE / STAGING_ONLY / PRODUCT_OPEN and provide exact selective-copy files for Lead.
+
+Continue items 185–196 sequentially without waiting for Lead review.
