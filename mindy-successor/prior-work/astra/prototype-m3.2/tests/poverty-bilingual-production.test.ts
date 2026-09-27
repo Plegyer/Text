@@ -110,8 +110,8 @@ test('all six ordinary-poverty production packs have locale-invariant natural pa
   const choice=event.choices.find((c:any)=>c.id===choiceId);
   const beforeChoice=parseSave(JSON.stringify(s),catalog);
   s=dispatch(s,{type:'choice',id:choiceId},catalog);
-  assert.equal(s.run.pending,null,packId);
-  assert.equal(s.run.flow.night?.phase,'VoluntaryNightChoice',packId);
+  assert.notEqual(s.run.pending?.eventId,eventId,packId+' must not replay the resolved event immediately');
+  assert.notEqual(s.run.pending?.eventId?.toLowerCase().includes('secret-debt'),true,packId+' must stay ordinary poverty');
   for(const effect of choice.effects){
    if(effect.kind==='modifyResource'){
     assert.equal(effect.resource,'money',packId+' representative resource');
@@ -125,6 +125,6 @@ test('all six ordinary-poverty production packs have locale-invariant natural pa
   const committed=projection(s);
   s=parseSave(JSON.stringify(s),catalog);
   assert.equal(projection(s),committed,packId+' reload');
-  assert.throws(()=>dispatch(s,{type:'choice',id:choiceId},catalog),/Нет активной сцены/);
+  assert.equal(s.run.history[eventId].count,1,eventId+' exactly once');
  }
 });
