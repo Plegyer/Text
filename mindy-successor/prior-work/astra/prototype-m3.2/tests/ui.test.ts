@@ -234,3 +234,35 @@ test('renderer: multi-GIF selection survives reload and locale switch without to
   assert.deepEqual(errors,[]);
  }finally{dom.window.close();}
 });
+
+
+test('renderer: Forest result scene localizes RU EN without changing pending gameplay state',async()=>{
+ const s=started();
+ s.run.flow.pendingScene={
+  eventId:'forest-result-content-v1.success',
+  variantId:'default',
+  reactionEpochId:'forest-ui-smoke',
+  allowedChoiceIds:['return']
+ };
+ const {w,dom,errors}=boot(JSON.stringify(s));try{
+  await wait(()=>/Лес уступает дорогу/.test(w.document.querySelector('.stage-title h1')?.textContent??''));
+  const before=w.localStorage.getItem('portal-life.v1');
+  assert.match(w.document.querySelector('.dialogue p').textContent,/Маршрут наконец/);
+  assert.match(w.document.querySelector('[data-choice="return"]').textContent,/Вернуться из леса/);
+  assert.match(w.document.querySelector('.media-window img').getAttribute('alt'),/Лес после успешного/);
+
+  w.document.querySelector('[data-panel="menu"]').click();
+  w.document.querySelector('#language-toggle').click();
+  await wait(()=>w.document.documentElement.lang==='en');
+  assert.equal(w.localStorage.getItem('portal-life.v1'),before);
+  assert.match(w.document.querySelector('.stage-title h1').textContent,/The Forest gives way/);
+  assert.match(w.document.querySelector('.dialogue p').textContent,/route finally resolves/);
+  assert.match(w.document.querySelector('[data-choice="return"]').textContent,/Return from the Forest/);
+  assert.match(w.document.querySelector('.media-window img').getAttribute('alt'),/Forest after a successful expedition/);
+
+  const stored=JSON.parse(w.localStorage.getItem('portal-life.v1'));
+  assert.equal(stored.run.flow.pendingScene.eventId,'forest-result-content-v1.success');
+  assert.equal(stored.run.flow.pendingScene.variantId,'default');
+  assert.deepEqual(errors,[]);
+ }finally{dom.window.close();}
+});
