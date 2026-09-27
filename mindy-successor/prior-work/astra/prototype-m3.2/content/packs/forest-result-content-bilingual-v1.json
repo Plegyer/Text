@@ -1,0 +1,307 @@
+{
+  "schemaVersion": 1,
+  "id": "forest-result-content-bilingual-v1",
+  "authoringStatus": "BILINGUAL_DRAFT_NOT_CATALOG_INCLUDED",
+  "replacesAuthoringSourcePackId": "forest-result-content-v1",
+  "localizationModel": {
+    "sourceLocale": "ru",
+    "supportedLocales": [
+      "ru",
+      "en"
+    ],
+    "gameplayEventIdentityLocaleNeutral": true,
+    "mediaIdentityLocaleNeutral": true,
+    "mechanicsIdenticalAcrossLocales": true,
+    "schemaLimitation": "Current production event/media fields are single-string fields. RU source strings remain in the schema-shaped payload; paired RU/EN presentation strings live in localizationSidecar until the Lead-owned localization seam is available. Do not include this draft in the production catalog unchanged."
+  },
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "activities": [
+        "lumber.forest"
+      ]
+    },
+    "writes": {}
+  },
+  "media": [
+    {
+      "id": "forest-result-content-v1.success",
+      "kind": "image",
+      "src": "assets/stage-forest.svg",
+      "alt": "Лес после успешного завершения экспедиции."
+    },
+    {
+      "id": "forest-result-content-v1.escape",
+      "kind": "image",
+      "src": "assets/stage-forest.svg",
+      "alt": "Безопасное отступление из леса."
+    },
+    {
+      "id": "forest-result-content-v1.failure",
+      "kind": "image",
+      "src": "assets/stage-forest.svg",
+      "alt": "Возвращение после неудачной лесной экспедиции."
+    }
+  ],
+  "events": [
+    {
+      "id": "forest-result-content-v1.success",
+      "title": "Лес уступает дорогу",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "activityResult",
+          "activity": "lumber.forest",
+          "outcome": "success",
+          "result": "lumber.forest.success"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 45,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 100,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Маршрут наконец складывается в результат, который можно с уверенностью унести обратно. Что бы ещё ни скрывал лес, эта экспедиция дошла до успешного конца.",
+          "conditions": [],
+          "media": [
+            "forest-result-content-v1.success"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "return",
+          "label": "Вернуться из леса",
+          "text": "Ты оставляешь результат экспедиции неизменным и возвращаешься к обычному городскому ходу дня.",
+          "conditions": [],
+          "effects": []
+        }
+      ],
+      "sourceDomain": "lumber"
+    },
+    {
+      "id": "forest-result-content-v1.escape",
+      "title": "Отступить, пока путь ещё открыт",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "activityResult",
+          "activity": "lumber.forest",
+          "outcome": "escape",
+          "result": "lumber.forest.escape"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 45,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 100,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Ты поворачиваешь назад до того, как экспедиция превращается в поражение. Маршрут остаётся незавершённым, но уйти по собственной воле — не то же самое, что провалить попытку.",
+          "conditions": [],
+          "media": [
+            "forest-result-content-v1.escape"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "return",
+          "label": "Вернуться в безопасности",
+          "text": "Ты сохраняешь результат «отступление» отдельным и возвращаешься, не превращая его в успех.",
+          "conditions": [],
+          "effects": []
+        }
+      ],
+      "sourceDomain": "lumber"
+    },
+    {
+      "id": "forest-result-content-v1.failure",
+      "title": "Лес обрывает попытку",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "activityResult",
+          "activity": "lumber.forest",
+          "outcome": "failure",
+          "result": "lumber.forest.failure"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 45,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 100,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Экспедиция заканчивается без результата, ради которого ты пришла. Поражение остаётся отдельным лесным исходом и не переписывается ни в отступление, ни в успех.",
+          "conditions": [],
+          "media": [
+            "forest-result-content-v1.failure"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "return",
+          "label": "Вернуться и восстановиться",
+          "text": "Ты принимаешь зафиксированное поражение и возвращаешься к обычному ходу игры.",
+          "conditions": [],
+          "effects": []
+        }
+      ],
+      "sourceDomain": "lumber"
+    }
+  ],
+  "localizationSidecar": {
+    "format": "ru-source-en-pair-v1",
+    "events": {
+      "forest-result-content-v1.success": {
+        "title": {
+          "ru": "Лес уступает дорогу",
+          "en": "The Forest gives way"
+        },
+        "variants": {
+          "default": {
+            "text": {
+              "ru": "Маршрут наконец складывается в результат, который можно с уверенностью унести обратно. Что бы ещё ни скрывал лес, эта экспедиция дошла до успешного конца.",
+              "en": "The route finally resolves into something you can carry back with certainty. Whatever else the Forest keeps, this expedition has reached its successful end."
+            }
+          }
+        },
+        "choices": {
+          "return": {
+            "label": {
+              "ru": "Вернуться из леса",
+              "en": "Return from the Forest"
+            },
+            "text": {
+              "ru": "Ты оставляешь результат экспедиции неизменным и возвращаешься к обычному городскому ходу дня.",
+              "en": "You leave the Activity result intact and return to the city-side flow."
+            }
+          }
+        }
+      },
+      "forest-result-content-v1.escape": {
+        "title": {
+          "ru": "Отступить, пока путь ещё открыт",
+          "en": "Back out while the route is still open"
+        },
+        "variants": {
+          "default": {
+            "text": {
+              "ru": "Ты поворачиваешь назад до того, как экспедиция превращается в поражение. Маршрут остаётся незавершённым, но уйти по собственной воле — не то же самое, что провалить попытку.",
+              "en": "You turn back before the expedition becomes a loss. The route remains unfinished, but leaving under your own control is not the same thing as failing it."
+            }
+          }
+        },
+        "choices": {
+          "return": {
+            "label": {
+              "ru": "Вернуться в безопасности",
+              "en": "Return safely"
+            },
+            "text": {
+              "ru": "Ты сохраняешь результат «отступление» отдельным и возвращаешься, не превращая его в успех.",
+              "en": "You keep the escape result distinct and return without converting it into success."
+            }
+          }
+        }
+      },
+      "forest-result-content-v1.failure": {
+        "title": {
+          "ru": "Лес обрывает попытку",
+          "en": "The Forest ends the attempt"
+        },
+        "variants": {
+          "default": {
+            "text": {
+              "ru": "Экспедиция заканчивается без результата, ради которого ты пришла. Поражение остаётся отдельным лесным исходом и не переписывается ни в отступление, ни в успех.",
+              "en": "The expedition ends without the result you came for. The failure is recorded as its own Forest outcome rather than being rewritten as an escape or a success."
+            }
+          }
+        },
+        "choices": {
+          "return": {
+            "label": {
+              "ru": "Вернуться и восстановиться",
+              "en": "Return and recover"
+            },
+            "text": {
+              "ru": "Ты принимаешь зафиксированное поражение и возвращаешься к обычному ходу игры.",
+              "en": "You accept the failed Activity result as recorded and return to ordinary flow."
+            }
+          }
+        }
+      }
+    },
+    "media": {
+      "forest-result-content-v1.success": {
+        "alt": {
+          "ru": "Лес после успешного завершения экспедиции.",
+          "en": "Forest after a successful expedition."
+        }
+      },
+      "forest-result-content-v1.escape": {
+        "alt": {
+          "ru": "Безопасное отступление из леса.",
+          "en": "Safe retreat from the Forest."
+        }
+      },
+      "forest-result-content-v1.failure": {
+        "alt": {
+          "ru": "Возвращение после неудачной лесной экспедиции.",
+          "en": "Return after a failed Forest expedition."
+        }
+      }
+    }
+  },
+  "lockedContracts": {
+    "activityResultBoundaries": [
+      {
+        "eventId": "forest-result-content-v1.success",
+        "activity": "lumber.forest",
+        "outcome": "success",
+        "result": "lumber.forest.success"
+      },
+      {
+        "eventId": "forest-result-content-v1.escape",
+        "activity": "lumber.forest",
+        "outcome": "escape",
+        "result": "lumber.forest.escape"
+      },
+      {
+        "eventId": "forest-result-content-v1.failure",
+        "activity": "lumber.forest",
+        "outcome": "failure",
+        "result": "lumber.forest.failure"
+      }
+    ],
+    "lumberHardWork": {
+      "eligibility": "completed_shifts >= 50 only",
+      "rewardId": "hardWork:lumber"
+    }
+  }
+}
