@@ -1,0 +1,112 @@
+{
+  "version": 1,
+  "texts": {},
+  "media": {},
+  "slots": {
+    "job/lumber/shift/spring/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/stage-lumber.svg",
+        "alt": "Lumber shift presentation fallback: spring."
+      }
+    },
+    "job/lumber/shift/summer/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/stage-lumber.svg",
+        "alt": "Lumber shift presentation fallback: summer."
+      }
+    },
+    "job/lumber/shift/autumn/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/stage-lumber.svg",
+        "alt": "Lumber shift presentation fallback: autumn."
+      }
+    },
+    "job/lumber/shift/winter/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/stage-lumber.svg",
+        "alt": "Lumber shift presentation fallback: winter."
+      }
+    },
+    "job/lumber/result/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/stage-lumber.svg",
+        "alt": "Lumber completed-shift presentation fallback."
+      }
+    },
+    "job/satyr-maid/shift/spring/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/stage-tavern.svg",
+        "alt": "Satyr Maid shift presentation fallback: spring."
+      }
+    },
+    "job/satyr-maid/shift/summer/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/stage-tavern.svg",
+        "alt": "Satyr Maid shift presentation fallback: summer."
+      }
+    },
+    "job/satyr-maid/shift/autumn/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/stage-tavern.svg",
+        "alt": "Satyr Maid shift presentation fallback: autumn."
+      }
+    },
+    "job/satyr-maid/shift/winter/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/stage-tavern.svg",
+        "alt": "Satyr Maid shift presentation fallback: winter."
+      }
+    },
+    "job/satyr-maid/result/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/stage-tavern.svg",
+        "alt": "Satyr Maid completed-shift presentation fallback."
+      }
+    },
+    "job/undead-farm/shift/spring/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/stage-forest.svg",
+        "alt": "Undead Farm shift presentation fallback: spring."
+      }
+    },
+    "job/undead-farm/shift/summer/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/stage-forest.svg",
+        "alt": "Undead Farm shift presentation fallback: summer."
+      }
+    },
+    "job/undead-farm/shift/autumn/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/stage-forest.svg",
+        "alt": "Undead Farm shift presentation fallback: autumn."
+      }
+    },
+    "job/undead-farm/shift/winter/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/stage-forest.svg",
+        "alt": "Undead Farm shift presentation fallback: winter."
+      }
+    },
+    "job/undead-farm/result/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/stage-forest.svg",
+        "alt": "Undead Farm completed-shift presentation fallback."
+      }
+    }
+  }
+}
