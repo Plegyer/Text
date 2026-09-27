@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "texts": {
+    "event/poverty-street-production.helpful-summer/title": "A small paid errand",
+    "event/poverty-street-production.helpful-summer/variant/default": "Before the street settles for the night, a nearby stall needs one last crate carried under cover. The work is brief and anonymous.",
+    "event/poverty-street-production.neutral-autumn/title": "A quiet corner after closing",
+    "event/poverty-street-production.neutral-autumn/variant/default": "A shop awning leaves a dry strip of pavement after closing. Nobody offers help and nobody drives you away; for tonight, that is enough.",
+    "event/poverty-street-production.pressure-winter/title": "Cold pavement",
+    "event/poverty-street-production.pressure-winter/variant/default": "The stones keep the day's cold. You can stay tucked beneath an overhang or keep moving and arrive at morning more exhausted.",
+    "event/poverty-cheap-production.shared-quiet-autumn/title": "Thin walls, early quiet",
+    "event/poverty-cheap-production.shared-quiet-autumn/variant/default": "The cheap lodging settles early. Thin walls carry every cough and footstep, so the shared room agrees on quiet before anyone starts an argument."
+  },
+  "media": {},
+  "slots": {
+    "location/town/event/poverty-street-production-helpful-summer/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/stage-outside.svg",
+        "alt": "Street poverty scene fallback."
+      },
+      "fallbackId": "location/town/default"
+    },
+    "location/town/event/poverty-street-production-neutral-autumn/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/stage-outside.svg",
+        "alt": "Street poverty scene fallback."
+      },
+      "fallbackId": "location/town/default"
+    },
+    "location/town/event/poverty-street-production-pressure-winter/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/stage-outside.svg",
+        "alt": "Street poverty scene fallback."
+      },
+      "fallbackId": "location/town/default"
+    },
+    "location/town/event/poverty-cheap-production-shared-quiet-autumn/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/stage-room.svg",
+        "alt": "Cheap lodging scene fallback."
+      },
+      "fallbackId": "location/town/default"
+    }
+  }
+}
