@@ -2433,3 +2433,78 @@ Create NEW file only:
 Summarize readiness after items 151–161 for School PR44, ordinary poverty localization, real GIF assets, Relationships/Night, Forest staged depth and Secret Debt boundaries.
 
 Continue items 151–162 sequentially without waiting for Lead review.
+
+
+## Queue item 163 — PR45 poverty post-merge main audit v1
+Create NEW file only:
+- `docs/qa-prep/PR45_POVERTY_POST_MERGE_MAIN_AUDIT_v1.md`
+
+Verify PR45 merged state, exact merge SHA, current main, 84-key RU+EN poverty coverage, Secret Debt exclusion, and any available post-merge main workflow. Distinguish exact-head success from post-merge push evidence.
+
+## Queue item 164 — PR46 Foreman bilingual exact-head audit v1
+Create NEW file only:
+- `docs/qa-prep/PR46_FOREMAN_BILINGUAL_EXACT_HEAD_AUDIT_v1.md`
+
+Review PR46 exact head against current main. Require only additive localization + generic Night-choice presentation wiring; no relationship/Night/Hard Work/Forest mechanic drift.
+
+## Queue item 165 — generic Night-choice localization regression gate v1
+Create NEW file only:
+- `docs/qa-prep/GENERIC_NIGHT_CHOICE_LOCALIZATION_REGRESSION_GATE_v1.md`
+
+Verify generic stable-ID Night-choice localization does not break School Night-study dynamic formatting and does not put locale into gameplay Save.
+
+## Queue item 166 — Foreman pending-scene locale invariance QA v1
+Create NEW file only:
+- `docs/qa-prep/FOREMAN_PENDING_SCENE_LOCALE_INVARIANCE_QA_v1.md`
+
+Verify voluntary Foreman Night choice and its blocking event preserve pending event/variant, relationship counters, next-day Energy delta, RNG and Save across RU↔EN switch.
+
+## Queue item 167 — Chat2 static-media production audit v1
+Create NEW file only:
+- `docs/qa-prep/PROJECT_OWNED_STATIC_MEDIA_PRODUCTION_AUDIT_v1.md`
+
+Review Chat2 items 184–195 as they appear. Require actual project-owned repo assets, no external URLs, semantic IDs from current production, build distribution, RU+EN alt keys, and no gameplay fields.
+
+## Queue item 168 — project-owned static media accessibility QA v1
+Create NEW file only:
+- `docs/qa-prep/PROJECT_OWNED_STATIC_MEDIA_ACCESSIBILITY_QA_v1.md`
+
+Audit actual static assets/manifests for distinct meaningful RU+EN alt text, fallback coverage, no empty decorative claims, and no locale-specific asset identity duplication.
+
+## Queue item 169 — Forest route-presentation binding acceptance contract v1
+Create NEW file only:
+- `docs/qa-prep/FOREST_ROUTE_PRESENTATION_BINDING_ACCEPTANCE_v1.md`
+
+Define acceptance for a future Lead binding of existing logging-road / old-boundary route state to presentation IDs: no new route IDs, no Old Boundary token reinterpretation, no Hunter semantics, locale/presentation only.
+
+## Queue item 170 — Chat5 relationship depth isolation QA v2
+Create NEW file only:
+- `docs/qa-prep/CHAT5_RELATIONSHIP_DEPTH_ISOLATION_QA_V2.md`
+
+Review Chat5 items 13–24 actual Git. Separate safe current Foreman presentation content from broader CONTENT_DRAFT/Product-open roster/housing/cross-system proposals.
+
+## Queue item 171 — shipped bilingual coverage recompute v2
+Create NEW file only:
+- `docs/qa-prep/SHIPPED_BILINGUAL_COVERAGE_RECOMPUTE_V2.md`
+
+Recompute current-main player-facing RU+EN coverage after PR45 and PR46 status. Classify exact shipped surface families and remaining fallback debt.
+
+## Queue item 172 — current-main CI regression floor v3
+Create NEW file only:
+- `docs/qa-prep/CURRENT_MAIN_CI_REGRESSION_FLOOR_V3.md`
+
+Record exact current main SHA, validator counts, test count, latest successful relevant workflow evidence, and explicitly note when no post-merge push run exists.
+
+## Queue item 173 — Product-open isolation audit v4
+Create NEW file only:
+- `docs/qa-prep/PRODUCT_OPEN_ISOLATION_AUDIT_V4.md`
+
+Recheck School exact-course/teacher, Forest Hunter/Old Boundary deeper semantics, Secret Debt mechanics/rewards, Palace authored content, and broader relationship roster remain unpromoted.
+
+## Queue item 174 — next production integration gate v13
+Create NEW file only:
+- `docs/qa-prep/NEXT_PRODUCTION_INTEGRATION_GATE_v13.md`
+
+Summarize readiness after items 163–173 for poverty post-merge, Foreman PR46, project-owned static media, Forest route presentation, relationship depth, Secret Debt and Product-open content.
+
+Continue items 163–174 sequentially without waiting for Lead review.
