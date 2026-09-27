@@ -1186,3 +1186,22 @@ Inventory future executable test cases for:
 Mark which cases are executable now, decision-blocked, content-blocked, or future runtime work. Do not fabricate test inputs for OPEN decisions.
 
 Continue items 64–72 sequentially without waiting for Lead review.
+
+
+## Queue item 73 — poverty balance simulation scenario template
+
+Create NEW file only:
+- `docs/poverty-prep/POVERTY_BALANCE_SIMULATION_SCENARIO_TEMPLATE_v1.md`
+
+Define reusable simulation scenarios for future numeric balancing:
+- zero-money recovery;
+- poor but stable;
+- work + cheap lodging;
+- work + School pressure;
+- repeated street sleep;
+- Secret Debt accepted;
+- Secret Debt refused.
+
+Specify inputs/outputs/metrics to measure, but do not select final prices, probabilities, debt, penalties or rewards.
+
+Continue items 65–73 sequentially without waiting for Lead review.
