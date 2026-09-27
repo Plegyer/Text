@@ -1,0 +1,90 @@
+{
+  "formatVersion": 1,
+  "id": "school-generic-localization-v2",
+  "status": "SAFE_TO_INTEGRATE_AFTER_LOCALIZATION_RUNTIME",
+  "gameplayPackRef": "school.generic.reachable.v2",
+  "eventId": "school.generic.reachable.v2.after.school",
+  "trigger": {
+    "kind": "actionCompleted",
+    "action": "school"
+  },
+  "localizationKeys": {
+    "title": "school.generic.after_school.title",
+    "variants": {
+      "notes": "school.generic.after_school.variant.notes",
+      "one.point": "school.generic.after_school.variant.one.point",
+      "question": "school.generic.after_school.variant.question",
+      "compare.notes": "school.generic.after_school.variant.compare.notes",
+      "small.correction": "school.generic.after_school.variant.small.correction",
+      "shared.confusion": "school.generic.after_school.variant.shared.confusion",
+      "enough.today": "school.generic.after_school.variant.enough.today",
+      "hallway": "school.generic.after_school.variant.hallway",
+      "board": "school.generic.after_school.variant.board",
+      "reminder": "school.generic.after_school.variant.reminder"
+    },
+    "choice": {
+      "label": "school.generic.after_school.choice.continue.label",
+      "text": "school.generic.after_school.choice.continue.text"
+    },
+    "media": {
+      "alt": "school.media.generic.classroom.alt",
+      "caption": "school.media.generic.classroom.caption"
+    }
+  },
+  "locales": {
+    "ru": {
+      "title": "После урока",
+      "variants": {
+        "notes": "Урок заканчивается несколькими минутами, чтобы привести в порядок записи, материалы и мысли. Ничего нового не происходит; важно решить, что действительно стоит запомнить.",
+        "one.point": "Перед уходом ты сводишь занятие к одной полезной мысли, которую смог бы объяснить и без класса вокруг.",
+        "question": "Большая часть урока укладывается в голове. Один вопрос — нет. Ты записываешь его вместо того, чтобы выжимать ответ только потому, что занятие закончилось.",
+        "compare.notes": "Ученик рядом сравнивает одну строку своих записей с твоей. Каждый заметил то, что пропустил другой, и ни одна версия не обязана становиться единственно правильной.",
+        "small.correction": "Перед уходом кто-то негромко указывает на небольшое недоразумение. Исправление полезно именно потому, что не превращается в публичное выступление.",
+        "shared.confusion": "Двое учеников обнаруживают, что запутались в одной и той же части урока по разным причинам. Сравнение помогает точнее назвать проблему.",
+        "enough.today": "Можно было бы продолжать, но урок уже дал достаточно материала для осмысления. Остановиться сейчас полезнее, чем размыть последнюю ясную мысль.",
+        "hallway": "В коридоре шумнее, чем в классе. Ученики расходятся к работе, делам, жилью и другим обязанностям, унося урок обратно в обычную жизнь.",
+        "board": "Кто-то стирает последние записи с доски. Комната уже готова к следующему занятию, хотя ты ещё не закончил думать об этом.",
+        "reminder": "Ты оставляешь себе короткое напоминание на потом: не новую цель, а ту часть сегодняшнего урока, которая легче всего исчезнет из памяти без записи."
+      },
+      "choice": {
+        "label": "Продолжить",
+        "text": "Вернуться к остатку дня после школьной сцены."
+      },
+      "media": {
+        "alt": "Обычная школьная аудитория после завершённого урока.",
+        "caption": "Урок уже завершён; сцена показывает только спокойное послесловие без новых игровых эффектов."
+      }
+    },
+    "en": {
+      "title": "After the School lesson",
+      "variants": {
+        "notes": "The lesson ends with a few minutes to put notes, tools, and thoughts back in order. Nothing new is added; the value is deciding what deserves to be remembered.",
+        "one.point": "Before leaving, you reduce the session to one useful point you could explain without the rest of the classroom around you.",
+        "question": "Most of the lesson settles. One question does not. You write it down rather than forcing an answer just because the class is over.",
+        "compare.notes": "A nearby student compares one line of notes with yours. You each caught something the other missed, and neither version needs to become the official one.",
+        "small.correction": "Someone quietly points out a minor misunderstanding before you leave. The correction is useful precisely because it does not become a public performance.",
+        "shared.confusion": "Two students discover they were confused by the same part of the lesson for different reasons. The comparison makes the problem easier to name.",
+        "enough.today": "You could keep pushing, but the lesson has already given you enough to process. Stopping now feels more useful than blurring the last clear idea.",
+        "hallway": "The hallway outside is noisier than the classroom. Students split toward work, errands, lodging, and other obligations, carrying the lesson back into ordinary life.",
+        "board": "Someone erases the last marks from the board. The room is ready for the next class before you are entirely done thinking about this one.",
+        "reminder": "You leave yourself one short reminder for later: not a new goal, just the part of today's lesson most likely to disappear if you do not write it down."
+      },
+      "choice": {
+        "label": "Continue",
+        "text": "Return to the day after the School presentation."
+      },
+      "media": {
+        "alt": "A generic School classroom after a completed lesson.",
+        "caption": "The lesson is already complete; the scene is only a quiet aftermath with no new gameplay effects."
+      }
+    }
+  },
+  "invariants": {
+    "gameplayEventSharedAcrossLocales": true,
+    "localeSpecificConditions": false,
+    "localeSpecificEffects": false,
+    "localeSpecificRewards": false,
+    "localeSpecificRng": false,
+    "localeSpecificSaveIdentity": false
+  }
+}
