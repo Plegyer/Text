@@ -1017,3 +1017,22 @@ Inventory executable/future tests for:
 Classify each case as executable now, Product-decision blocked, content blocked, or future runtime work. Do not invent thresholds/providers.
 
 Continue items 58–66 sequentially without waiting for Lead review.
+
+
+## Queue item 67 — School balance simulation scenario template
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_BALANCE_SIMULATION_SCENARIO_TEMPLATE_v1.md`
+
+Define future simulation scenarios for:
+- fresh-run School access;
+- work + School economy;
+- repeated single-track investment;
+- mixed-track build correction;
+- Night study usage;
+- poverty pressure;
+- Meta-assisted later life.
+
+Specify measurable outputs while preserving locked course mechanics and leaving OPEN thresholds/providers undecided.
+
+Continue items 59–67 sequentially without waiting for Lead review.
