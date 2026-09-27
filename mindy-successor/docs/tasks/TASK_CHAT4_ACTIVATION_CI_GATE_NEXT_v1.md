@@ -969,3 +969,22 @@ Define a reusable Lead review for integrating completed multi-worker production-
 - CI/test requirements if any non-doc files are integrated.
 
 Continue items 55–63 sequentially without waiting for Lead review.
+
+
+## Queue item 64 — full-game release-scope traceability refresh plan
+
+Create NEW file only:
+- `docs/qa-prep/FULL_GAME_RELEASE_SCOPE_TRACEABILITY_REFRESH_PLAN_v1.md`
+
+Define how to refresh existing LIFE/product traceability as production packages land:
+- source requirement;
+- current implementation evidence;
+- authored-content evidence;
+- presentation evidence;
+- save/reload evidence;
+- remaining Product decision;
+- release inclusion status.
+
+Cover all major systems without converting drafts into locks.
+
+Continue items 56–64 sequentially without waiting for Lead review.
