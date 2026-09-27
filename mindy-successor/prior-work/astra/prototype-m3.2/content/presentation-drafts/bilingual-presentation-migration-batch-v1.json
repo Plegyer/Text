@@ -1,0 +1,363 @@
+{
+  "formatVersion": 1,
+  "kind": "bilingual-presentation-migration-batch",
+  "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+  "locales": {
+    "source": "ru",
+    "shipped": [
+      "ru",
+      "en"
+    ]
+  },
+  "identityPolicy": {
+    "localizationKeysLocaleNeutral": true,
+    "semanticIdsLocaleNeutral": true,
+    "mediaPathsLocaleNeutral": true,
+    "gameplayMutationAllowed": false,
+    "saveMigrationRequired": false
+  },
+  "workPanelActions": [
+    {
+      "actionId": "lumber.shift",
+      "labelKey": "loc/action/lumber.shift/label",
+      "label": {
+        "ru": "Смена лесорубов",
+        "en": "Lumber shift"
+      }
+    },
+    {
+      "actionId": "satyr-maid.shift",
+      "labelKey": "loc/action/satyr-maid.shift/label",
+      "label": {
+        "ru": "Смена в баре сатиров",
+        "en": "Satyr Maid shift"
+      }
+    },
+    {
+      "actionId": "undead-farm.shift",
+      "labelKey": "loc/action/undead-farm.shift/label",
+      "label": {
+        "ru": "Смена на ферме нежити",
+        "en": "Undead Farm shift"
+      }
+    },
+    {
+      "actionId": "tavern.shift",
+      "labelKey": "loc/action/tavern.shift/label",
+      "label": {
+        "ru": "Смена в таверне",
+        "en": "Tavern shift"
+      }
+    },
+    {
+      "actionId": "hunter.shift",
+      "labelKey": "loc/action/hunter.shift/label",
+      "label": {
+        "ru": "Охотничья смена",
+        "en": "Hunter shift"
+      }
+    },
+    {
+      "actionId": "guard.shift",
+      "labelKey": "loc/action/guard.shift/label",
+      "label": {
+        "ru": "Патруль стражи",
+        "en": "Guard patrol"
+      }
+    },
+    {
+      "actionId": "merchant.shift",
+      "labelKey": "loc/action/merchant.shift/label",
+      "label": {
+        "ru": "Торговая смена",
+        "en": "Merchant shift"
+      }
+    },
+    {
+      "actionId": "artist-geisha.shift",
+      "labelKey": "loc/action/artist-geisha.shift/label",
+      "label": {
+        "ru": "Смена в Доме искусств",
+        "en": "Artist House shift"
+      }
+    },
+    {
+      "actionId": "assassin.shift",
+      "labelKey": "loc/action/assassin.shift/label",
+      "label": {
+        "ru": "Смена ассасина",
+        "en": "Assassin shift"
+      }
+    },
+    {
+      "actionId": "prostitute.shift",
+      "labelKey": "loc/action/prostitute.shift/label",
+      "label": {
+        "ru": "Профессиональная смена",
+        "en": "Professional shift"
+      }
+    }
+  ],
+  "presentationSurfaces": [
+    {
+      "presentationId": "job/lumber/shift/spring/default",
+      "captionKey": "loc/presentation/job/lumber/shift/spring/default/caption",
+      "caption": {
+        "ru": "Весенняя смена лесорубов.",
+        "en": "Spring lumber shift."
+      },
+      "staticFallback": {
+        "src": "assets/stage-lumber.svg",
+        "altKey": "loc/presentation/job/lumber/shift/spring/default/static/alt",
+        "alt": {
+          "ru": "Весенняя работа с древесиной на лесной делянке.",
+          "en": "Spring timber work on a forest worksite."
+        }
+      },
+      "textFallbackKey": "loc/presentation/job/lumber/shift/spring/default/fallback/text",
+      "textFallback": {
+        "ru": "Весенняя смена продолжается без анимации.",
+        "en": "The spring shift continues without animation."
+      }
+    },
+    {
+      "presentationId": "job/lumber/shift/summer/default",
+      "captionKey": "loc/presentation/job/lumber/shift/summer/default/caption",
+      "caption": {
+        "ru": "Летняя смена лесорубов.",
+        "en": "Summer lumber shift."
+      },
+      "staticFallback": {
+        "src": "assets/stage-lumber.svg",
+        "altKey": "loc/presentation/job/lumber/shift/summer/default/static/alt",
+        "alt": {
+          "ru": "Летняя работа с древесиной на лесной делянке.",
+          "en": "Summer timber work on a forest worksite."
+        }
+      },
+      "textFallbackKey": "loc/presentation/job/lumber/shift/summer/default/fallback/text",
+      "textFallback": {
+        "ru": "Летняя смена продолжается без анимации.",
+        "en": "The summer shift continues without animation."
+      }
+    },
+    {
+      "presentationId": "job/lumber/shift/autumn/default",
+      "captionKey": "loc/presentation/job/lumber/shift/autumn/default/caption",
+      "caption": {
+        "ru": "Осенняя смена лесорубов.",
+        "en": "Autumn lumber shift."
+      },
+      "staticFallback": {
+        "src": "assets/stage-lumber.svg",
+        "altKey": "loc/presentation/job/lumber/shift/autumn/default/static/alt",
+        "alt": {
+          "ru": "Осенняя работа с древесиной и подготовкой запасов.",
+          "en": "Autumn timber work and stock preparation."
+        }
+      },
+      "textFallbackKey": "loc/presentation/job/lumber/shift/autumn/default/fallback/text",
+      "textFallback": {
+        "ru": "Осенняя смена продолжается без анимации.",
+        "en": "The autumn shift continues without animation."
+      }
+    },
+    {
+      "presentationId": "job/lumber/shift/winter/default",
+      "captionKey": "loc/presentation/job/lumber/shift/winter/default/caption",
+      "caption": {
+        "ru": "Зимняя смена лесорубов.",
+        "en": "Winter lumber shift."
+      },
+      "staticFallback": {
+        "src": "assets/stage-lumber.svg",
+        "altKey": "loc/presentation/job/lumber/shift/winter/default/static/alt",
+        "alt": {
+          "ru": "Зимняя работа с древесиной в холодных условиях.",
+          "en": "Winter timber work in cold conditions."
+        }
+      },
+      "textFallbackKey": "loc/presentation/job/lumber/shift/winter/default/fallback/text",
+      "textFallback": {
+        "ru": "Зимняя смена продолжается без анимации.",
+        "en": "The winter shift continues without animation."
+      }
+    },
+    {
+      "presentationId": "job/lumber/result/default",
+      "captionKey": "loc/presentation/job/lumber/result/default/caption",
+      "caption": {
+        "ru": "Результат смены лесорубов.",
+        "en": "Lumber shift result."
+      },
+      "staticFallback": {
+        "src": "assets/stage-lumber.svg",
+        "altKey": "loc/presentation/job/lumber/result/default/static/alt",
+        "alt": {
+          "ru": "Завершённая рабочая смена лесорубов.",
+          "en": "A completed lumber work shift."
+        }
+      },
+      "textFallbackKey": "loc/presentation/job/lumber/result/default/fallback/text",
+      "textFallback": {
+        "ru": "Результат смены остаётся доступным без анимации.",
+        "en": "The shift result remains available without animation."
+      }
+    },
+    {
+      "presentationId": "location/town/event/school-lesson-content-v1-after-school/default",
+      "captionKey": "loc/presentation/location/town/event/school-lesson-content-v1-after-school/default/caption",
+      "caption": {
+        "ru": "После урока.",
+        "en": "After the lesson."
+      },
+      "staticFallback": {
+        "src": "assets/stage-school.svg",
+        "altKey": "loc/presentation/location/town/event/school-lesson-content-v1-after-school/default/static/alt",
+        "alt": {
+          "ru": "После завершённого урока в классе собирают учебные материалы.",
+          "en": "Study materials are gathered in the classroom after the completed lesson."
+        }
+      },
+      "textFallbackKey": "loc/presentation/location/town/event/school-lesson-content-v1-after-school/default/fallback/text",
+      "textFallback": {
+        "ru": "После урока остаётся короткая нейтральная рефлексия.",
+        "en": "A brief neutral reflection remains after the lesson."
+      }
+    },
+    {
+      "presentationId": "location/town/event/school-life-content-v1-after-paid-lesson/default",
+      "captionKey": "loc/presentation/location/town/event/school-life-content-v1-after-paid-lesson/default/caption",
+      "caption": {
+        "ru": "После платного занятия.",
+        "en": "After the paid lesson."
+      },
+      "staticFallback": {
+        "src": "assets/stage-school.svg",
+        "altKey": "loc/presentation/location/town/event/school-life-content-v1-after-paid-lesson/default/static/alt",
+        "alt": {
+          "ru": "Класс постепенно успокаивается после завершённого занятия.",
+          "en": "The classroom gradually settles after the completed lesson."
+        }
+      },
+      "textFallbackKey": "loc/presentation/location/town/event/school-life-content-v1-after-paid-lesson/default/fallback/text",
+      "textFallback": {
+        "ru": "Школьный день продолжается после короткой паузы.",
+        "en": "The School day continues after a brief pause."
+      }
+    },
+    {
+      "presentationId": "location/town/event/school-life-content-v1-after-night-study/default",
+      "captionKey": "loc/presentation/location/town/event/school-life-content-v1-after-night-study/default/caption",
+      "caption": {
+        "ru": "После ночной учёбы.",
+        "en": "After Night study."
+      },
+      "staticFallback": {
+        "src": "assets/stage-school.svg",
+        "altKey": "loc/presentation/location/town/event/school-life-content-v1-after-night-study/default/static/alt",
+        "alt": {
+          "ru": "После ночной учёбы перечитывают записи и складывают материалы.",
+          "en": "Notes are reviewed and materials are organized after Night study."
+        }
+      },
+      "textFallbackKey": "loc/presentation/location/town/event/school-life-content-v1-after-night-study/default/fallback/text",
+      "textFallback": {
+        "ru": "Ночная учёба завершается без дополнительного игрового эффекта.",
+        "en": "Night study ends without any additional gameplay effect."
+      }
+    },
+    {
+      "presentationId": "location/town/event/poverty-street-production-helpful-summer/default",
+      "captionKey": "loc/presentation/location/town/event/poverty-street-production-helpful-summer/default/caption",
+      "caption": {
+        "ru": "Небольшое поручение у закрывающегося рынка.",
+        "en": "A small errand by the closing market."
+      },
+      "staticFallback": {
+        "src": "assets/stage-outside.svg",
+        "altKey": "loc/presentation/location/town/event/poverty-street-production-helpful-summer/default/static/alt",
+        "alt": {
+          "ru": "У закрывающегося летнего прилавка остался обычный грузовой ящик.",
+          "en": "An ordinary cargo crate remains beside a closing summer market stall."
+        }
+      },
+      "textFallbackKey": "loc/presentation/location/town/event/poverty-street-production-helpful-summer/default/fallback/text",
+      "textFallback": {
+        "ru": "Уличная сцена остаётся понятной без анимации.",
+        "en": "The street scene remains understandable without animation."
+      }
+    },
+    {
+      "presentationId": "location/town/event/poverty-cheap-production-shared-quiet-autumn/default",
+      "captionKey": "loc/presentation/location/town/event/poverty-cheap-production-shared-quiet-autumn/default/caption",
+      "caption": {
+        "ru": "Тихий вечер в дешёвой общей комнате.",
+        "en": "A quiet evening in cheap shared lodging."
+      },
+      "staticFallback": {
+        "src": "assets/stage-room.svg",
+        "altKey": "loc/presentation/location/town/event/poverty-cheap-production-shared-quiet-autumn/default/static/alt",
+        "alt": {
+          "ru": "Тесная общая комната постепенно затихает осенним вечером.",
+          "en": "A cramped shared room gradually settles into quiet on an autumn evening."
+        }
+      },
+      "textFallbackKey": "loc/presentation/location/town/event/poverty-cheap-production-shared-quiet-autumn/default/fallback/text",
+      "textFallback": {
+        "ru": "Общая комната остаётся понятной без анимации.",
+        "en": "The shared room remains understandable without animation."
+      }
+    },
+    {
+      "presentationId": "location/town/event/poverty-recovery-production-short-cleanup/default",
+      "captionKey": "loc/presentation/location/town/event/poverty-recovery-production-short-cleanup/default/caption",
+      "caption": {
+        "ru": "Небольшая уборка у закрывающегося прилавка.",
+        "en": "A small cleanup at a closing stall."
+      },
+      "staticFallback": {
+        "src": "assets/stage-outside.svg",
+        "altKey": "loc/presentation/location/town/event/poverty-recovery-production-short-cleanup/default/static/alt",
+        "alt": {
+          "ru": "У прилавка складывают табуреты и заканчивают короткую уборку.",
+          "en": "Stools are stacked and a short cleanup is finishing beside the stall."
+        }
+      },
+      "textFallbackKey": "loc/presentation/location/town/event/poverty-recovery-production-short-cleanup/default/fallback/text",
+      "textFallback": {
+        "ru": "Сцена уборки остаётся доступной без анимации.",
+        "en": "The cleanup scene remains available without animation."
+      }
+    },
+    {
+      "presentationId": "location/town/event/poverty-pressure-production-cold-rain/default",
+      "captionKey": "loc/presentation/location/town/event/poverty-pressure-production-cold-rain/default/caption",
+      "caption": {
+        "ru": "Холодный дождь у уличного укрытия.",
+        "en": "Cold rain beside a street shelter."
+      },
+      "staticFallback": {
+        "src": "assets/stage-outside.svg",
+        "altKey": "loc/presentation/location/town/event/poverty-pressure-production-cold-rain/default/static/alt",
+        "alt": {
+          "ru": "Холодный дождь добирается до края уличного укрытия.",
+          "en": "Cold rain reaches the edge of a street shelter."
+        }
+      },
+      "textFallbackKey": "loc/presentation/location/town/event/poverty-pressure-production-cold-rain/default/fallback/text",
+      "textFallback": {
+        "ru": "Сцена холодного дождя остаётся понятной без анимации.",
+        "en": "The cold-rain scene remains understandable without animation."
+      }
+    }
+  ],
+  "exclusions": [
+    "no shared runtime edits",
+    "no locale-specific gameplay events",
+    "no locale-specific semantic presentation IDs",
+    "no locale-specific media duplication",
+    "no Secret Debt production identity",
+    "no unshipped non-Lumber Hard Work identity"
+  ]
+}
