@@ -601,3 +601,98 @@ Produce the smallest non-redundant Lead handoff:
 - superseded artifacts.
 
 Continue items 37–42 sequentially without waiting for Lead review.
+
+
+## Queue item 43 — PR26/PR27 School authority reconciliation
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_PR27_MAIN_RECONCILIATION_v1.md`
+
+Reconcile School evidence against current main after PR #26, PR #27 and the direct post-merge docs commits.
+
+Confirm:
+- technical RC floor is 221/221;
+- missing schema4 `progression.school` compatibility defaults to `{tracks:{}}` without changing School ownership rules;
+- paid lessons, blocking School scene and Night study contracts remain locked;
+- management/accounting and Arcana/Forest public-result authoring remain OPEN.
+
+Do not edit production runtime/UI/content.
+
+## Queue item 44 — management/accounting decision option schema
+
+Create NEW files only:
+- `docs/school-prep/SCHOOL_MANAGEMENT_RESULT_DECISION_SCHEMA_v1.md`
+- `prior-work/astra/prototype-m3.2/content/school-management-result-decision-schema.fixture.json`
+
+Define neutral acceptable answer shapes for the management/accounting public result:
+- provider type;
+- milestone type;
+- threshold/value type;
+- durable public result identifier constraints;
+- publication timing;
+- exactly-once/reload expectations.
+
+Map downstream Lumber listener/test impact without selecting any provider, threshold, certificate or project.
+
+## Queue item 45 — Arcana/Forest decision option schema
+
+Create NEW files only:
+- `docs/school-prep/SCHOOL_ARCANA_FOREST_RESULT_DECISION_SCHEMA_v1.md`
+- `prior-work/astra/prototype-m3.2/content/school-arcana-forest-result-decision-schema.fixture.json`
+
+Define neutral acceptable answer shapes for the Arcana/Forest public result:
+- provider/milestone category;
+- threshold/value category;
+- durable publication boundary;
+- Forest/Lumber consumer expectations;
+- save/reload and exactly-once requirements.
+
+Do not invent a final provider, threshold, teacher, certificate, or route unlock.
+
+## Queue item 46 — School teacher and milestone content-depth template
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_CONTENT_DEPTH_AUTHORING_TEMPLATE_v1.md`
+
+Prepare a fill-in authoring template for human/Product completion of:
+- teacher identity and role per track;
+- milestone/certificate/project content;
+- presentation hooks;
+- public-result publication points where applicable;
+- validation/acceptance notes.
+
+The template must clearly distinguish LOCKED mechanics from OPEN authored content and must not fill the OPEN fields itself.
+
+## Queue item 47 — post-decision School verification matrix
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_POST_DECISION_VERIFICATION_MATRIX_v1.md`
+
+For each still-open School human decision, list the exact validation work required after a choice is made:
+- production content file(s) expected to change;
+- resolver/public-result tests;
+- save/reload tests;
+- no-double-charge/no-duplicate-progress checks;
+- Lumber/Forest integration checks;
+- presentation semantic-ID checks.
+
+Do not pre-author the decision.
+
+## Queue item 48 — School product-authoring handoff v6
+
+Create NEW files only:
+- `docs/school-prep/SCHOOL_PRODUCT_AUTHORING_HANDOFF_v6.md`
+- `prior-work/astra/prototype-m3.2/content/school-product-authoring-handoff-v6.fixture.json`
+
+Produce the smallest current-main School handoff with:
+- LOCKED_AND_SHIPPED;
+- TECHNICAL_QA_GREEN;
+- HUMAN_DECISION_REQUIRED;
+- CONTENT_AUTHORING_REQUIRED;
+- OPTIONAL_PRESENTATION_POLISH;
+- READY_AFTER_DECISION;
+- SUPERSEDED.
+
+Name exact current authoritative School files and keep all unresolved provider/threshold/content choices neutral.
+
+Continue items 43–48 sequentially without waiting for Lead review.
