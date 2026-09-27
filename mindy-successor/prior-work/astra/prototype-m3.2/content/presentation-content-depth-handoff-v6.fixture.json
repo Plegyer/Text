@@ -1,0 +1,138 @@
+{
+  "version": 6,
+  "kind": "presentation-content-depth-handoff",
+  "status": "current-main-post-pr27",
+  "currentMain": "3eb9aed34dc00724832b68f615bedc69ec2dc28b",
+  "technicalRcFloor": {
+    "commit": "6cd990f45d368291b4a288f9f48c569f6e0b207f",
+    "tests": "221/221 PASS",
+    "productionPresentationChangedByPR27": false
+  },
+  "TECHNICAL_PRESENTATION_GREEN": [
+    {
+      "path": "mindy-successor/docs/presentation-prep/PRESENTATION_PR27_MAIN_RECONCILIATION_v1.md",
+      "reason": "Current authority for PR27/current-main compatibility and 221/221 technical RC floor."
+    },
+    {
+      "path": "mindy-successor/docs/presentation-prep/PRESENTATION_PR25_GATE_RECONCILIATION_v1.md",
+      "reason": "Locks School result -> blocking scene -> NightFlow ordering and no new QA-only production presentation identity."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-final-no-timing-coupling.test.ts",
+      "reason": "Final guard against frame/time/playback or animation-owned mechanics coupling."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-semantic-coverage-checksum.fixture.json",
+      "reason": "Canonical 27-ID merged-RC semantic presentation set."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-semantic-coverage-checksum.test.ts",
+      "reason": "Stable semantic coverage checksum and duplicate/rename guard."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-slot-completeness-negative.fixture.json",
+      "reason": "Current negative completeness classifications for required RC surfaces."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-slot-completeness-negative.test.ts",
+      "reason": "Separates blocking semantic identity gaps from safe fallback or future-asset absence."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-fallback-failure-injection-v2.fixture.json",
+      "reason": "Representative failure cases on merged RC IDs."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-fallback-failure-injection-v2.test.ts",
+      "reason": "Proves safe degradation or rejection before persistence."
+    }
+  ],
+  "HUMAN_ASSET_DECISION": [
+    {
+      "path": "mindy-successor/docs/presentation-prep/PRESENTATION_HUMAN_ASSET_DECISION_PACKET_v1.md",
+      "reason": "Neutral list of choices humans/Product must make before final art/GIF production."
+    },
+    {
+      "path": "mindy-successor/docs/presentation-prep/PRESENTATION_AUTHORING_DECISION_MATRIX_v1.md",
+      "reason": "Earlier neutral summary of unresolved content/visual decisions; useful as compact index."
+    }
+  ],
+  "CONTENT_FIRST_THEN_ASSET": [
+    {
+      "path": "mindy-successor/docs/presentation-prep/PRESENTATION_FOREST_CONTENT_DEPTH_ASSET_MATRIX_v1.md",
+      "reason": "Forest route/challenge/season presentation dependencies without invented content."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-forest-content-depth-asset-matrix.fixture.json",
+      "reason": "Machine-readable Forest dependency classification."
+    },
+    {
+      "path": "mindy-successor/docs/presentation-prep/PRESENTATION_SCHOOL_AUTHORING_ASSET_DEPENDENCIES_v1.md",
+      "reason": "School provider/threshold/teacher/certificate dependencies without invented identities."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-school-authoring-asset-dependencies.fixture.json",
+      "reason": "Machine-readable School content-to-asset dependency map."
+    }
+  ],
+  "OPTIONAL_POLISH": [
+    {
+      "path": "mindy-successor/docs/presentation-prep/FUTURE_GIF_DROP_IN_PACKAGE_v1.md",
+      "reason": "Seven optional Lumber/Foreman GIF targets; no current RC dependency."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/future-gif-drop-in-package.fixture.json",
+      "reason": "Optional future GIF metadata."
+    },
+    {
+      "path": "mindy-successor/docs/presentation-prep/PRESENTATION_ASSET_BACKLOG_PRIORITY_v1.md",
+      "reason": "Dependency-only backlog; confirms zero missing RC-safe presentation assets."
+    }
+  ],
+  "READY_AFTER_PRODUCT_DECISION": [
+    {
+      "path": "mindy-successor/docs/presentation-prep/PRESENTATION_POST_DECISION_ASSET_INTEGRATION_CHECKLIST_v1.md",
+      "reason": "Deterministic integration sequence after approved content/asset mapping exists."
+    },
+    {
+      "path": "mindy-successor/docs/presentation-prep/PRESENTATION_OPERATOR_SMOKE_V2.md",
+      "reason": "Short operator replacement lifecycle without source-path editing."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-operator-smoke-v2.fixture.json",
+      "reason": "Machine-readable representative operator smoke."
+    },
+    {
+      "path": "mindy-successor/docs/presentation-prep/PRESENTATION_OVERRIDE_ROLLBACK_CONTRACT_v1.md",
+      "reason": "Safe rollback behavior once replacement workflow is used."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-override-rollback.test.ts",
+      "reason": "Restores shipped fallback with zero gameplay mutation."
+    }
+  ],
+  "SUPERSEDED": [
+    {
+      "path": "mindy-successor/docs/presentation-prep/PRESENTATION_FINAL_CLOSEOUT_PACK_v5.md",
+      "reason": "Superseded by this v6 content-depth handoff."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-final-closeout-pack.fixture.json",
+      "reason": "Superseded by this v6 machine-readable handoff."
+    },
+    {
+      "path": "mindy-successor/docs/presentation-prep/PRESENTATION_FINAL_DECISION_EVIDENCE_HANDOFF_v4.md",
+      "reason": "Pre-PR27 final-decision handoff."
+    },
+    {
+      "path": "mindy-successor/docs/presentation-prep/PRESENTATION_RC_EVIDENCE_PACK_v1.md",
+      "reason": "Pre-content-depth handoff."
+    },
+    {
+      "historicalRevision": {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-pr24-one-save-audit.test.ts",
+        "commit": "6a88cf816e52d52a8d67cb42fd39f74bcc9aa209"
+      },
+      "reason": "Stale pre-fix PR24 revision omitted the real base.school -> listen boundary."
+    }
+  ]
+}
