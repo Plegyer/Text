@@ -957,3 +957,56 @@ Consolidate items 55–59 into:
 Include exact source authorities and explicitly state that Secret Debt is additional to the 10 ordinary jobs and is excluded from the Palace 10/10 prerequisite.
 
 Continue items 55–60 sequentially without waiting for Lead review.
+
+
+## Queue item 61 — ordinary street-event authoring template
+
+Create NEW file only:
+- `docs/poverty-prep/ORDINARY_STREET_EVENT_AUTHORING_TEMPLATE_v1.md`
+
+Define a reusable content unit for ordinary poverty/street events:
+- eligibility context;
+- season hook;
+- helpful/neutral/bad outcome family;
+- money/resource/condition effects;
+- relationship/item hooks;
+- semantic presentationId;
+- GIF/static/text fallback;
+- anti-softlock guard.
+
+Do not author canonical events or final numbers.
+
+## Queue item 62 — Secret Debt career content-depth matrix
+
+Create NEW files only:
+- `docs/poverty-prep/SECRET_DEBT_CAREER_CONTENT_DEPTH_MATRIX_v1.md`
+- `prior-work/astra/prototype-m3.2/content/secret-debt-career-content-depth.fixture.json`
+
+Map the content needed for the hidden Slave career to reach the same structural depth expected of a full career:
+- repeatable shifts;
+- stage transitions;
+- forced Night variants;
+- relationship/story events;
+- external hooks;
+- seasonal/context variants;
+- paid_freedom / bound_life / takeover;
+- presentation surfaces.
+
+Separate fixed structure from OPEN thresholds, rewards, prose and balance.
+
+## Queue item 63 — poverty implementation package boundary v1
+
+Create NEW file only:
+- `docs/poverty-prep/POVERTY_IMPLEMENTATION_PACKAGE_BOUNDARY_v1.md`
+
+Define the smallest future implementation package boundaries for:
+1. ordinary housing/street poverty;
+2. lender encounter + delayed debt;
+3. hidden career availability blocking;
+4. forced Night behavior;
+5. three outcome families;
+6. later content-depth expansion.
+
+For each package list dependencies, allowed ownership domains, acceptance evidence and what remains Product-owned.
+
+Continue items 55–63 sequentially without waiting for Lead review.
