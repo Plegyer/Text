@@ -1525,3 +1525,111 @@ Provide Lead with:
 - selective integration steps.
 
 Continue items 90–98 sequentially without waiting for Lead review.
+
+
+## Queue item 99 — School teacher lesson bank v2
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_TEACHER_LESSON_TEXT_BANK_v2.md`
+
+Expand each of the eight teacher/track banks with additional repeatable lesson variants to reduce text repetition.
+
+Preserve locked mechanics and current teacher content identities.
+
+## Queue item 100 — School Night-study text bank v2
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_NIGHT_STUDY_TEXT_BANK_v2.md`
+
+Author multiple Night-study flavor variants for all supported tracks/stats:
+- quiet study;
+- difficult session;
+- successful insight;
+- fatigue context;
+- housing-sensitive flavor where already supported.
+
+Do not change +2 stat / zero tuition / zero current-day Energy / next-day Energy -1.
+
+## Queue item 101 — School peer/classroom event bank v1
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_PEER_CLASSROOM_EVENT_BANK_v1.md`
+
+Author milestone-neutral peer/classroom events usable across courses:
+- social friction;
+- collaboration;
+- embarrassment/success;
+- teacher intervention;
+- no new prerequisites or public results.
+
+## Queue item 102 — teacher relationship authored scenes v1
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_TEACHER_RELATIONSHIP_SCENES_v1.md`
+
+For the eight drafted teachers, author optional relationship-scene seeds beyond the prior matrix:
+- repeated contact;
+- trust/friction moments;
+- social/Night invitation shapes;
+- career/world reaction.
+
+These scenes must never gate paid lessons.
+
+## Queue item 103 — School lesson production pack v2 draft
+
+Create NEW production-oriented file only:
+- `prior-work/astra/prototype-m3.2/content/packs/school-target/school-lesson-content-v2.json`
+
+Convert safe additional v2 lesson/peer content into valid existing primitives.
+
+No transaction effects. No public-result semantics.
+
+## Queue item 104 — School v2 content validation
+
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/school-lesson-content-v2.test.ts`
+
+Validate:
+- all eight tracks represented;
+- no tuition/Energy/stat/Lust mutation;
+- no teacher prerequisite;
+- semantic presentation uniqueness;
+- reload-safe presentation-only content.
+
+## Queue item 105 — School Night presentation pack v2
+
+Create NEW production-oriented file only:
+- `prior-work/astra/prototype-m3.2/content/packs/school-target/school-night-content-v2.json`
+
+Convert safe Night-study authored variants into presentation/event content using exact existing Night-choice identities where current primitives permit.
+
+Do not alter Night mechanics.
+
+## Queue item 106 — School multi-GIF content density map
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_MULTI_GIF_CONTENT_DENSITY_MAP_v1.md`
+
+For each teacher/track/Night-study family map:
+- text-variant count;
+- target 3–5 GIF pool reuse;
+- dedicated vs reusable loops;
+- current static fallback;
+- missing authored identity.
+
+This supports Chat2 but does not select final art.
+
+## Queue item 107 — School content-depth handoff v10
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_CONTENT_DEPTH_HANDOFF_v10.md`
+
+Summarize items 99–106:
+- additional authored depth;
+- production-oriented packs/tests;
+- multi-GIF readiness;
+- public-result decisions still OPEN;
+- exact selective integration files;
+- remaining content gaps.
+
+Continue items 99–107 sequentially without waiting for Lead review.
