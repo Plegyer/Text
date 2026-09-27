@@ -1,17 +1,27 @@
 {
   "formatVersion": 2,
   "kind": "school-reachable-pool-adoption",
-  "status": "STAGING_ONLY_NOT_SHIPPED",
-  "leadSchemaRef": {
-    "pr": 42,
-    "head": "595e02e21eb7a2ec942b9c6c7899d816d1170c10"
+  "status": "STAGING_ONLY",
+  "runtimeSchemaAuthority": "PR42",
+  "contentAuthority": "PR38",
+  "currentMainGifInventory": {
+    "realGifFiles": 0
   },
-  "reachableEntries": [
+  "summary": {
+    "reachablePools": 3,
+    "realAssetReady": 0,
+    "placeholder": 3,
+    "stagedTeacherLibraries": 8
+  },
+  "entries": [
     {
+      "eventId": "school-lesson-content-v1.after-school",
+      "variantId": "default",
       "presentationId": "location/town/event/school-lesson-content-v1-after-school/default",
       "reachability": "REACHABLE_NOW",
-      "routingEvidence": "actionCompleted:school",
+      "routing": "generic actionCompleted: school",
       "poolVersion": 1,
+      "coverageStatus": "PLACEHOLDER",
       "runtimeSlot": {
         "pool": {
           "version": 1,
@@ -19,85 +29,70 @@
           "selectionPolicy": "unweighted",
           "candidates": [
             {
-              "key": "after-school-a",
+              "key": "after-school-1",
               "kind": "gif",
-              "src": "assets/staging/non-shipped/school/after-school/1.gif",
-              "alt": "После урока в классе собирают записи и материалы."
+              "src": "assets/staging/non-shipped/school/after-school/candidate-1.gif",
+              "alt": "RU source placeholder alt for School after-school candidate 1."
             },
             {
-              "key": "after-school-b",
+              "key": "after-school-2",
               "kind": "gif",
-              "src": "assets/staging/non-shipped/school/after-school/2.gif",
-              "alt": "Учебные записи спокойно перечитывают перед уходом."
+              "src": "assets/staging/non-shipped/school/after-school/candidate-2.gif",
+              "alt": "RU source placeholder alt for School after-school candidate 2."
             },
             {
-              "key": "after-school-c",
+              "key": "after-school-3",
               "kind": "gif",
-              "src": "assets/staging/non-shipped/school/after-school/3.gif",
-              "alt": "Класс постепенно пустеет после завершённого занятия."
+              "src": "assets/staging/non-shipped/school/after-school/candidate-3.gif",
+              "alt": "RU source placeholder alt for School after-school candidate 3."
             }
           ]
         },
         "static": {
           "kind": "image",
           "src": "assets/stage-school.svg",
-          "alt": "Школьная сцена — статический fallback."
+          "alt": "RU source static fallback for School after-school."
         }
       },
-      "candidates": [
-        {
-          "key": "after-school-a",
-          "kind": "gif",
-          "src": "assets/staging/non-shipped/school/after-school/1.gif",
-          "runtimeAltFallback": "После урока в классе собирают записи и материалы.",
-          "altLocalizationKeys": {
-            "ru": "loc/presentation/location/town/event/school-lesson-content-v1-after-school/default/candidate/after-school-a/alt",
-            "en": "loc/presentation/location/town/event/school-lesson-content-v1-after-school/default/candidate/after-school-a/alt"
+      "localization": {
+        "captionKey": "presentation.location/town/event/school-lesson-content-v1-after-school/default.caption",
+        "staticAltKey": "presentation.location/town/event/school-lesson-content-v1-after-school/default.static.alt",
+        "candidates": [
+          {
+            "candidateKey": "after-school-1",
+            "altLocalizationKey": "presentation.location/town/event/school-lesson-content-v1-after-school/default.candidate.after-school-1.alt",
+            "requiredLocales": [
+              "ru",
+              "en"
+            ]
           },
-          "alt": {
-            "ru": "После урока в классе собирают записи и материалы.",
-            "en": "Notes and materials are gathered in the classroom after the lesson."
+          {
+            "candidateKey": "after-school-2",
+            "altLocalizationKey": "presentation.location/town/event/school-lesson-content-v1-after-school/default.candidate.after-school-2.alt",
+            "requiredLocales": [
+              "ru",
+              "en"
+            ]
           },
-          "coverageStatus": "PLACEHOLDER"
-        },
-        {
-          "key": "after-school-b",
-          "kind": "gif",
-          "src": "assets/staging/non-shipped/school/after-school/2.gif",
-          "runtimeAltFallback": "Учебные записи спокойно перечитывают перед уходом.",
-          "altLocalizationKeys": {
-            "ru": "loc/presentation/location/town/event/school-lesson-content-v1-after-school/default/candidate/after-school-b/alt",
-            "en": "loc/presentation/location/town/event/school-lesson-content-v1-after-school/default/candidate/after-school-b/alt"
-          },
-          "alt": {
-            "ru": "Учебные записи спокойно перечитывают перед уходом.",
-            "en": "Study notes are reviewed quietly before leaving."
-          },
-          "coverageStatus": "PLACEHOLDER"
-        },
-        {
-          "key": "after-school-c",
-          "kind": "gif",
-          "src": "assets/staging/non-shipped/school/after-school/3.gif",
-          "runtimeAltFallback": "Класс постепенно пустеет после завершённого занятия.",
-          "altLocalizationKeys": {
-            "ru": "loc/presentation/location/town/event/school-lesson-content-v1-after-school/default/candidate/after-school-c/alt",
-            "en": "loc/presentation/location/town/event/school-lesson-content-v1-after-school/default/candidate/after-school-c/alt"
-          },
-          "alt": {
-            "ru": "Класс постепенно пустеет после завершённого занятия.",
-            "en": "The classroom gradually empties after the completed lesson."
-          },
-          "coverageStatus": "PLACEHOLDER"
-        }
-      ],
-      "staticFallback": "assets/stage-school.svg"
+          {
+            "candidateKey": "after-school-3",
+            "altLocalizationKey": "presentation.location/town/event/school-lesson-content-v1-after-school/default.candidate.after-school-3.alt",
+            "requiredLocales": [
+              "ru",
+              "en"
+            ]
+          }
+        ]
+      }
     },
     {
+      "eventId": "school-life-content-v1.after-paid-lesson",
+      "variantId": "default",
       "presentationId": "location/town/event/school-life-content-v1-after-paid-lesson/default",
       "reachability": "REACHABLE_NOW",
-      "routingEvidence": "actionCompleted:school",
+      "routing": "generic actionCompleted: school",
       "poolVersion": 1,
+      "coverageStatus": "PLACEHOLDER",
       "runtimeSlot": {
         "pool": {
           "version": 1,
@@ -105,85 +100,70 @@
           "selectionPolicy": "unweighted",
           "candidates": [
             {
-              "key": "school-life-a",
+              "key": "after-paid-lesson-1",
               "kind": "gif",
-              "src": "assets/staging/non-shipped/school/after-paid-lesson/1.gif",
-              "alt": "После занятия в классе приводят в порядок учебное место."
+              "src": "assets/staging/non-shipped/school/after-paid-lesson/candidate-1.gif",
+              "alt": "RU source placeholder alt for School after-paid-lesson candidate 1."
             },
             {
-              "key": "school-life-b",
+              "key": "after-paid-lesson-2",
               "kind": "gif",
-              "src": "assets/staging/non-shipped/school/after-paid-lesson/2.gif",
-              "alt": "Учебные материалы складывают перед продолжением дня."
+              "src": "assets/staging/non-shipped/school/after-paid-lesson/candidate-2.gif",
+              "alt": "RU source placeholder alt for School after-paid-lesson candidate 2."
             },
             {
-              "key": "school-life-c",
+              "key": "after-paid-lesson-3",
               "kind": "gif",
-              "src": "assets/staging/non-shipped/school/after-paid-lesson/3.gif",
-              "alt": "В классе остаётся короткий спокойный момент после урока."
+              "src": "assets/staging/non-shipped/school/after-paid-lesson/candidate-3.gif",
+              "alt": "RU source placeholder alt for School after-paid-lesson candidate 3."
             }
           ]
         },
         "static": {
           "kind": "image",
           "src": "assets/stage-school.svg",
-          "alt": "Школьная сцена — статический fallback."
+          "alt": "RU source static fallback for School after-paid-lesson."
         }
       },
-      "candidates": [
-        {
-          "key": "school-life-a",
-          "kind": "gif",
-          "src": "assets/staging/non-shipped/school/after-paid-lesson/1.gif",
-          "runtimeAltFallback": "После занятия в классе приводят в порядок учебное место.",
-          "altLocalizationKeys": {
-            "ru": "loc/presentation/location/town/event/school-life-content-v1-after-paid-lesson/default/candidate/school-life-a/alt",
-            "en": "loc/presentation/location/town/event/school-life-content-v1-after-paid-lesson/default/candidate/school-life-a/alt"
+      "localization": {
+        "captionKey": "presentation.location/town/event/school-life-content-v1-after-paid-lesson/default.caption",
+        "staticAltKey": "presentation.location/town/event/school-life-content-v1-after-paid-lesson/default.static.alt",
+        "candidates": [
+          {
+            "candidateKey": "after-paid-lesson-1",
+            "altLocalizationKey": "presentation.location/town/event/school-life-content-v1-after-paid-lesson/default.candidate.after-paid-lesson-1.alt",
+            "requiredLocales": [
+              "ru",
+              "en"
+            ]
           },
-          "alt": {
-            "ru": "После занятия в классе приводят в порядок учебное место.",
-            "en": "The study area is tidied after class."
+          {
+            "candidateKey": "after-paid-lesson-2",
+            "altLocalizationKey": "presentation.location/town/event/school-life-content-v1-after-paid-lesson/default.candidate.after-paid-lesson-2.alt",
+            "requiredLocales": [
+              "ru",
+              "en"
+            ]
           },
-          "coverageStatus": "PLACEHOLDER"
-        },
-        {
-          "key": "school-life-b",
-          "kind": "gif",
-          "src": "assets/staging/non-shipped/school/after-paid-lesson/2.gif",
-          "runtimeAltFallback": "Учебные материалы складывают перед продолжением дня.",
-          "altLocalizationKeys": {
-            "ru": "loc/presentation/location/town/event/school-life-content-v1-after-paid-lesson/default/candidate/school-life-b/alt",
-            "en": "loc/presentation/location/town/event/school-life-content-v1-after-paid-lesson/default/candidate/school-life-b/alt"
-          },
-          "alt": {
-            "ru": "Учебные материалы складывают перед продолжением дня.",
-            "en": "Study materials are packed away before the day continues."
-          },
-          "coverageStatus": "PLACEHOLDER"
-        },
-        {
-          "key": "school-life-c",
-          "kind": "gif",
-          "src": "assets/staging/non-shipped/school/after-paid-lesson/3.gif",
-          "runtimeAltFallback": "В классе остаётся короткий спокойный момент после урока.",
-          "altLocalizationKeys": {
-            "ru": "loc/presentation/location/town/event/school-life-content-v1-after-paid-lesson/default/candidate/school-life-c/alt",
-            "en": "loc/presentation/location/town/event/school-life-content-v1-after-paid-lesson/default/candidate/school-life-c/alt"
-          },
-          "alt": {
-            "ru": "В классе остаётся короткий спокойный момент после урока.",
-            "en": "A brief quiet moment remains in the classroom after the lesson."
-          },
-          "coverageStatus": "PLACEHOLDER"
-        }
-      ],
-      "staticFallback": "assets/stage-school.svg"
+          {
+            "candidateKey": "after-paid-lesson-3",
+            "altLocalizationKey": "presentation.location/town/event/school-life-content-v1-after-paid-lesson/default.candidate.after-paid-lesson-3.alt",
+            "requiredLocales": [
+              "ru",
+              "en"
+            ]
+          }
+        ]
+      }
     },
     {
+      "eventId": "school-life-content-v1.after-night-study",
+      "variantId": "default",
       "presentationId": "location/town/event/school-life-content-v1-after-night-study/default",
       "reachability": "REACHABLE_NOW",
-      "routingEvidence": "24 exact school.night_study.* choice completions",
+      "routing": "24 exact school.night_study.* completion choice IDs",
       "poolVersion": 1,
+      "coverageStatus": "PLACEHOLDER",
       "runtimeSlot": {
         "pool": {
           "version": 1,
@@ -191,226 +171,122 @@
           "selectionPolicy": "unweighted",
           "candidates": [
             {
-              "key": "night-study-a",
+              "key": "after-night-study-1",
               "kind": "gif",
-              "src": "assets/staging/non-shipped/school/after-night-study/1.gif",
-              "alt": "После ночной учёбы перечитывают тихие записи."
+              "src": "assets/staging/non-shipped/school/after-night-study/candidate-1.gif",
+              "alt": "RU source placeholder alt for School after-night-study candidate 1."
             },
             {
-              "key": "night-study-b",
+              "key": "after-night-study-2",
               "kind": "gif",
-              "src": "assets/staging/non-shipped/school/after-night-study/2.gif",
-              "alt": "В конце ночной учёбы проверяют учебную схему."
+              "src": "assets/staging/non-shipped/school/after-night-study/candidate-2.gif",
+              "alt": "RU source placeholder alt for School after-night-study candidate 2."
             },
             {
-              "key": "night-study-c",
+              "key": "after-night-study-3",
               "kind": "gif",
-              "src": "assets/staging/non-shipped/school/after-night-study/3.gif",
-              "alt": "Материалы складывают после завершения ночной учёбы."
-            },
-            {
-              "key": "night-study-d",
-              "kind": "gif",
-              "src": "assets/staging/non-shipped/school/after-night-study/4.gif",
-              "alt": "Перед окончанием ночной учёбы дописывают короткую заметку."
-            },
-            {
-              "key": "night-study-e",
-              "kind": "gif",
-              "src": "assets/staging/non-shipped/school/after-night-study/5.gif",
-              "alt": "Рабочее место спокойно готовят к завершению ночной учёбы."
+              "src": "assets/staging/non-shipped/school/after-night-study/candidate-3.gif",
+              "alt": "RU source placeholder alt for School after-night-study candidate 3."
             }
           ]
         },
         "static": {
           "kind": "image",
           "src": "assets/stage-school.svg",
-          "alt": "Школьная сцена — статический fallback."
+          "alt": "RU source static fallback for School after-night-study."
         }
       },
-      "candidates": [
-        {
-          "key": "night-study-a",
-          "kind": "gif",
-          "src": "assets/staging/non-shipped/school/after-night-study/1.gif",
-          "runtimeAltFallback": "После ночной учёбы перечитывают тихие записи.",
-          "altLocalizationKeys": {
-            "ru": "loc/presentation/location/town/event/school-life-content-v1-after-night-study/default/candidate/night-study-a/alt",
-            "en": "loc/presentation/location/town/event/school-life-content-v1-after-night-study/default/candidate/night-study-a/alt"
+      "localization": {
+        "captionKey": "presentation.location/town/event/school-life-content-v1-after-night-study/default.caption",
+        "staticAltKey": "presentation.location/town/event/school-life-content-v1-after-night-study/default.static.alt",
+        "candidates": [
+          {
+            "candidateKey": "after-night-study-1",
+            "altLocalizationKey": "presentation.location/town/event/school-life-content-v1-after-night-study/default.candidate.after-night-study-1.alt",
+            "requiredLocales": [
+              "ru",
+              "en"
+            ]
           },
-          "alt": {
-            "ru": "После ночной учёбы перечитывают тихие записи.",
-            "en": "Quiet notes are reviewed after Night study."
+          {
+            "candidateKey": "after-night-study-2",
+            "altLocalizationKey": "presentation.location/town/event/school-life-content-v1-after-night-study/default.candidate.after-night-study-2.alt",
+            "requiredLocales": [
+              "ru",
+              "en"
+            ]
           },
-          "coverageStatus": "PLACEHOLDER"
-        },
-        {
-          "key": "night-study-b",
-          "kind": "gif",
-          "src": "assets/staging/non-shipped/school/after-night-study/2.gif",
-          "runtimeAltFallback": "В конце ночной учёбы проверяют учебную схему.",
-          "altLocalizationKeys": {
-            "ru": "loc/presentation/location/town/event/school-life-content-v1-after-night-study/default/candidate/night-study-b/alt",
-            "en": "loc/presentation/location/town/event/school-life-content-v1-after-night-study/default/candidate/night-study-b/alt"
-          },
-          "alt": {
-            "ru": "В конце ночной учёбы проверяют учебную схему.",
-            "en": "A study diagram is checked at the end of Night study."
-          },
-          "coverageStatus": "PLACEHOLDER"
-        },
-        {
-          "key": "night-study-c",
-          "kind": "gif",
-          "src": "assets/staging/non-shipped/school/after-night-study/3.gif",
-          "runtimeAltFallback": "Материалы складывают после завершения ночной учёбы.",
-          "altLocalizationKeys": {
-            "ru": "loc/presentation/location/town/event/school-life-content-v1-after-night-study/default/candidate/night-study-c/alt",
-            "en": "loc/presentation/location/town/event/school-life-content-v1-after-night-study/default/candidate/night-study-c/alt"
-          },
-          "alt": {
-            "ru": "Материалы складывают после завершения ночной учёбы.",
-            "en": "Study materials are organized after Night study ends."
-          },
-          "coverageStatus": "PLACEHOLDER"
-        },
-        {
-          "key": "night-study-d",
-          "kind": "gif",
-          "src": "assets/staging/non-shipped/school/after-night-study/4.gif",
-          "runtimeAltFallback": "Перед окончанием ночной учёбы дописывают короткую заметку.",
-          "altLocalizationKeys": {
-            "ru": "loc/presentation/location/town/event/school-life-content-v1-after-night-study/default/candidate/night-study-d/alt",
-            "en": "loc/presentation/location/town/event/school-life-content-v1-after-night-study/default/candidate/night-study-d/alt"
-          },
-          "alt": {
-            "ru": "Перед окончанием ночной учёбы дописывают короткую заметку.",
-            "en": "A short note is finished before Night study ends."
-          },
-          "coverageStatus": "PLACEHOLDER"
-        },
-        {
-          "key": "night-study-e",
-          "kind": "gif",
-          "src": "assets/staging/non-shipped/school/after-night-study/5.gif",
-          "runtimeAltFallback": "Рабочее место спокойно готовят к завершению ночной учёбы.",
-          "altLocalizationKeys": {
-            "ru": "loc/presentation/location/town/event/school-life-content-v1-after-night-study/default/candidate/night-study-e/alt",
-            "en": "loc/presentation/location/town/event/school-life-content-v1-after-night-study/default/candidate/night-study-e/alt"
-          },
-          "alt": {
-            "ru": "Рабочее место спокойно готовят к завершению ночной учёбы.",
-            "en": "The study area is quietly prepared for the end of Night study."
-          },
-          "coverageStatus": "PLACEHOLDER"
-        }
-      ],
-      "staticFallback": "assets/stage-school.svg"
+          {
+            "candidateKey": "after-night-study-3",
+            "altLocalizationKey": "presentation.location/town/event/school-life-content-v1-after-night-study/default.candidate.after-night-study-3.alt",
+            "requiredLocales": [
+              "ru",
+              "en"
+            ]
+          }
+        ]
+      }
     }
   ],
-  "stagedEntries": [
+  "stagedTeacherLibraries": [
     {
-      "kind": "teacher-library",
-      "identity": "school/teacher/literacy-and-numbers/classroom",
+      "mediaIdentity": "school/teacher/literacy-and-numbers/classroom",
       "status": "STAGED",
-      "reason": "Teacher media is authored, but generic School reaction routing does not identify the exact paid course."
+      "reason": "Authored teacher media library exists, but generic paid-school reaction routing does not safely identify exact course/teacher.",
+      "runtimePoolIncluded": false
     },
     {
-      "kind": "course-authored-library",
-      "identity": "school/literacy-and-numbers/lesson/authored",
+      "mediaIdentity": "school/teacher/arcana/classroom",
       "status": "STAGED",
-      "reason": "Course-specific authored presentation remains unrouted until an exact-course presentation bridge is accepted."
+      "reason": "Authored teacher media library exists, but generic paid-school reaction routing does not safely identify exact course/teacher.",
+      "runtimePoolIncluded": false
     },
     {
-      "kind": "teacher-library",
-      "identity": "school/teacher/arcana/classroom",
+      "mediaIdentity": "school/teacher/rhetoric-and-social/classroom",
       "status": "STAGED",
-      "reason": "Teacher media is authored, but generic School reaction routing does not identify the exact paid course."
+      "reason": "Authored teacher media library exists, but generic paid-school reaction routing does not safely identify exact course/teacher.",
+      "runtimePoolIncluded": false
     },
     {
-      "kind": "course-authored-library",
-      "identity": "school/arcana/lesson/authored",
+      "mediaIdentity": "school/teacher/etiquette-and-presentation/classroom",
       "status": "STAGED",
-      "reason": "Course-specific authored presentation remains unrouted until an exact-course presentation bridge is accepted."
+      "reason": "Authored teacher media library exists, but generic paid-school reaction routing does not safely identify exact course/teacher.",
+      "runtimePoolIncluded": false
     },
     {
-      "kind": "teacher-library",
-      "identity": "school/teacher/rhetoric-and-social/classroom",
+      "mediaIdentity": "school/teacher/field-craft/classroom",
       "status": "STAGED",
-      "reason": "Teacher media is authored, but generic School reaction routing does not identify the exact paid course."
+      "reason": "Authored teacher media library exists, but generic paid-school reaction routing does not safely identify exact course/teacher.",
+      "runtimePoolIncluded": false
     },
     {
-      "kind": "course-authored-library",
-      "identity": "school/rhetoric-and-social/lesson/authored",
+      "mediaIdentity": "school/teacher/physical-training/classroom",
       "status": "STAGED",
-      "reason": "Course-specific authored presentation remains unrouted until an exact-course presentation bridge is accepted."
+      "reason": "Authored teacher media library exists, but generic paid-school reaction routing does not safely identify exact course/teacher.",
+      "runtimePoolIncluded": false
     },
     {
-      "kind": "teacher-library",
-      "identity": "school/teacher/etiquette-and-presentation/classroom",
+      "mediaIdentity": "school/teacher/arts-and-performance/classroom",
       "status": "STAGED",
-      "reason": "Teacher media is authored, but generic School reaction routing does not identify the exact paid course."
+      "reason": "Authored teacher media library exists, but generic paid-school reaction routing does not safely identify exact course/teacher.",
+      "runtimePoolIncluded": false
     },
     {
-      "kind": "course-authored-library",
-      "identity": "school/etiquette-and-presentation/lesson/authored",
+      "mediaIdentity": "school/teacher/body-confidence/classroom",
       "status": "STAGED",
-      "reason": "Course-specific authored presentation remains unrouted until an exact-course presentation bridge is accepted."
-    },
-    {
-      "kind": "teacher-library",
-      "identity": "school/teacher/field-craft/classroom",
-      "status": "STAGED",
-      "reason": "Teacher media is authored, but generic School reaction routing does not identify the exact paid course."
-    },
-    {
-      "kind": "course-authored-library",
-      "identity": "school/field-craft/lesson/authored",
-      "status": "STAGED",
-      "reason": "Course-specific authored presentation remains unrouted until an exact-course presentation bridge is accepted."
-    },
-    {
-      "kind": "teacher-library",
-      "identity": "school/teacher/physical-training/classroom",
-      "status": "STAGED",
-      "reason": "Teacher media is authored, but generic School reaction routing does not identify the exact paid course."
-    },
-    {
-      "kind": "course-authored-library",
-      "identity": "school/physical-training/lesson/authored",
-      "status": "STAGED",
-      "reason": "Course-specific authored presentation remains unrouted until an exact-course presentation bridge is accepted."
-    },
-    {
-      "kind": "teacher-library",
-      "identity": "school/teacher/arts-and-performance/classroom",
-      "status": "STAGED",
-      "reason": "Teacher media is authored, but generic School reaction routing does not identify the exact paid course."
-    },
-    {
-      "kind": "course-authored-library",
-      "identity": "school/arts-and-performance/lesson/authored",
-      "status": "STAGED",
-      "reason": "Course-specific authored presentation remains unrouted until an exact-course presentation bridge is accepted."
-    },
-    {
-      "kind": "teacher-library",
-      "identity": "school/teacher/body-confidence/classroom",
-      "status": "STAGED",
-      "reason": "Teacher media is authored, but generic School reaction routing does not identify the exact paid course."
-    },
-    {
-      "kind": "course-authored-library",
-      "identity": "school/body-confidence/lesson/authored",
-      "status": "STAGED",
-      "reason": "Course-specific authored presentation remains unrouted until an exact-course presentation bridge is accepted."
+      "reason": "Authored teacher media library exists, but generic paid-school reaction routing does not safely identify exact course/teacher.",
+      "runtimePoolIncluded": false
     }
   ],
-  "policy": {
-    "genericPostLessonOnlyWhenActuallyRouted": true,
-    "nightStudyUsesExactExistingRouting": true,
-    "stagedTeacherCourseLibrariesNotActivated": true,
+  "stagedCourseSpecificPolicy": {
+    "status": "STAGED",
+    "reason": "Course-specific authored libraries must not be routed from generic actionCompleted: school without an exact course bridge."
+  },
+  "invariants": {
     "schoolMechanicsChanged": false,
-    "placeholderPathsCountAsRealAssets": false
+    "exactNightChoiceStateChanged": false,
+    "teacherRoutingInvented": false,
+    "courseRoutingInvented": false,
+    "localeNeutralIds": true
   }
 }
