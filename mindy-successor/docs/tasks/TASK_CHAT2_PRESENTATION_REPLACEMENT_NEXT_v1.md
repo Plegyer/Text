@@ -1245,3 +1245,21 @@ Define the minimal intake manifest required when new authored gameplay content i
 The template must support batch handoff from career/School/poverty/Activity authors without requiring source-code path editing.
 
 Continue items 62–70 sequentially without waiting for Lead review.
+
+
+## Queue item 71 — poverty presentation fallback acceptance matrix
+
+Create NEW file only:
+- `docs/presentation-prep/POVERTY_PRESENTATION_FALLBACK_ACCEPTANCE_v1.md`
+
+Define presentation acceptance for normal room, cheap lodging, street sleep, ordinary street events and future Secret Debt scenes:
+- semantic identity remains gameplay-owned;
+- GIF may be absent;
+- static/text fallback must remain usable;
+- animations-off must not change lodging/event availability;
+- save/reload must not depend on media timing;
+- reused poverty GIFs must not collapse distinct event identities.
+
+Do not invent final poverty events or assets.
+
+Continue items 63–71 sequentially without waiting for Lead review.
