@@ -1754,3 +1754,136 @@ Consolidate items 89–96 into a concise Lead-facing handoff:
 - exact files ready for selective integration.
 
 Continue items 89–97 sequentially without waiting for Lead review.
+
+
+## Queue item 98 — multi-GIF event presentation contract v1
+
+Create NEW file only:
+- `docs/presentation-prep/MULTI_GIF_EVENT_PRESENTATION_CONTRACT_v1.md`
+
+Define the production presentation contract for one gameplay/semantic event owning a **pool of 3–5 visual variants**.
+
+Required invariants:
+- one gameplay/content identity;
+- one semantic `presentationId`;
+- multiple media candidates under that identity;
+- choosing a GIF never changes effects, choices, timing, save state or eligibility;
+- selection may vary between occurrences;
+- reload of an already materialized/pending scene must not silently reroll if the current architecture persists the chosen presentation instance;
+- animation-off keeps static/text fallback;
+- missing one GIF falls through to remaining candidates/fallback without breaking gameplay.
+
+Distinguish media-pool selection from gameplay event variant selection.
+
+## Queue item 99 — multi-GIF pool fixture v1
+
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-multi-gif-pools-v1.fixture.json`
+
+Create representative authoring fixtures for:
+- Lumber repeatable shift with 3–5 GIF candidates;
+- Satyr Maid shift with 3–5 candidates;
+- Undead Farm shift with 3–5 candidates;
+- one School lesson surface;
+- one poverty/street surface.
+
+Use semantic IDs already present in production/main where possible. GIF paths may be placeholder authoring paths only and must be clearly marked non-shipped.
+
+## Queue item 100 — multi-GIF selection acceptance tests draft
+
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/presentation-multi-gif-pool-contract.test.ts`
+
+Write executable tests against current presentation primitives where possible and explicit fixture-level contract tests for functionality not yet implemented.
+
+Cover:
+- same semantic ID can own 3–5 candidate media;
+- gameplay effects are invariant across media candidates;
+- animation-off fallback;
+- invalid/missing media candidate does not invalidate gameplay;
+- save schema does not store GIF frame/time;
+- media filename is never gameplay identity.
+
+Clearly mark any failing/future assertions as fixture-contract evidence rather than pretending current runtime supports them.
+
+## Queue item 101 — starter-trio 3–5 GIF slot plan
+
+Create NEW file only:
+- `docs/presentation-prep/STARTER_TRIO_MULTI_GIF_SLOT_PLAN_v1.md`
+
+For Lumber, Satyr Maid and Undead Farm, map each repeatable/seasonal surface to:
+- target candidate count (normally 3–5);
+- reusable cross-season candidates;
+- dedicated seasonal candidates;
+- current fallback;
+- content context;
+- whether visual variation can be produced immediately.
+
+Do not choose final art style or character appearance.
+
+## Queue item 102 — remaining-seven multi-GIF slot plan
+
+Create NEW file only:
+- `docs/presentation-prep/REMAINING_SEVEN_MULTI_GIF_SLOT_PLAN_v1.md`
+
+Assuming PR35 remains/lands green, map repeatable shift surfaces for Tavern, Hunter, Guard, Merchant, Artist/Geisha, Assassin and Prostitute to 3–5-GIF candidate pools.
+
+Keep candidate counts as production planning, not gameplay rules. Do not invent Hard Work/endings/NPC scenes.
+
+## Queue item 103 — School multi-GIF lesson pool plan
+
+Create NEW file only:
+- `docs/presentation-prep/SCHOOL_MULTI_GIF_LESSON_POOL_PLAN_v1.md`
+
+Using Chat5 authored teacher/lesson material, map School lesson surfaces to reusable 3–5-GIF pools:
+- teacher-specific vs shared classroom loops;
+- track-specific variants;
+- Night-study distinction;
+- fallback coverage;
+- identities that remain Product-blocked.
+
+Do not change locked School mechanics.
+
+## Queue item 104 — poverty multi-GIF event pool plan
+
+Create NEW file only:
+- `docs/presentation-prep/POVERTY_MULTI_GIF_EVENT_POOL_PLAN_v1.md`
+
+Using Chat3 ordinary-poverty production content, map street and cheap-lodging event surfaces to 3–5-GIF visual pools.
+
+Preserve:
+- one gameplay event identity;
+- no Secret Debt bleed;
+- visual reroll cannot change event outcome;
+- fallback works without GIF.
+
+## Queue item 105 — media-pool import manifest v1
+
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/media-pool-import-manifest-v1.json`
+
+Create a batch import manifest shape supporting:
+- semantic presentation ID;
+- ordered/unordered candidate media pool;
+- static fallback;
+- text fallback;
+- optional weights only if clearly presentation-only;
+- per-candidate alt text;
+- replacement/rollback metadata.
+
+Do not wire it into production runtime.
+
+## Queue item 106 — multi-GIF production handoff v1
+
+Create NEW file only:
+- `docs/presentation-prep/MULTI_GIF_PRODUCTION_HANDOFF_v1.md`
+
+Consolidate items 98–105 into Lead implementation guidance:
+- exact runtime/schema gap, if any;
+- what already works;
+- minimum extension needed for 3–5 GIF candidates/event;
+- migration/save impact;
+- tests required;
+- starter-trio / seven-career / School / poverty adoption order.
+
+Continue items 98–106 sequentially without waiting for Lead review.
