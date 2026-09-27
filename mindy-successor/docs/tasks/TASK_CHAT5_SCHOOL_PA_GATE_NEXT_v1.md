@@ -1229,3 +1229,70 @@ Cover:
 Do not change production content in this task.
 
 Continue items 69–77 sequentially without waiting for Lead review.
+
+
+## Queue item 78 — eight-track authored-content batch worksheet
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_EIGHT_TRACK_CONTENT_BATCH_WORKSHEET_v1.md`
+
+Create a fill-in production worksheet for all eight School tracks covering:
+- teacher/presenter identity placeholder;
+- repeatable lesson variant slots;
+- milestone slot;
+- public-result slot if approved;
+- relationship/career hooks;
+- semantic presentation IDs;
+- GIF/static/text needs;
+- acceptance evidence.
+
+Do not fill unresolved identities or thresholds.
+
+## Queue item 79 — management/accounting post-decision production packet
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_MANAGEMENT_POST_DECISION_PRODUCTION_PACKET_v1.md`
+
+Prepare the exact implementation/content checklist to execute once Product supplies the management/accounting provider + milestone decision:
+- production content fields to fill;
+- public result ID/publication boundary;
+- Lumber and other consumer updates;
+- save/reload tests;
+- presentation mapping;
+- rollback.
+
+Leave all unanswered Product fields blank/OPEN.
+
+## Queue item 80 — Arcana/Forest post-decision production packet
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_ARCANA_FOREST_POST_DECISION_PRODUCTION_PACKET_v1.md`
+
+Prepare the exact implementation/content checklist to execute once Product decides the Arcana/Forest provider + milestone and whether this public result remains in scope:
+- production content fields;
+- public publication boundary;
+- Forest/Activity consumers;
+- save/reload tests;
+- presentation mapping;
+- rollback.
+
+Do not select or retain the route by assumption.
+
+## Queue item 81 — School teacher identity batch intake
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_TEACHER_IDENTITY_BATCH_INTAKE_v1.md`
+
+Create one concise human-authoring intake table for all eight teacher/presenter identities:
+- canonical content ID placeholder;
+- player-facing name;
+- in-world role;
+- track(s);
+- relationship-role yes/no;
+- visual brief dependency;
+- reuse across tracks allowed yes/no;
+- downstream authored scenes affected.
+
+Do not propose canonical names or identities.
+
+Continue items 73–81 sequentially without waiting for Lead review.
