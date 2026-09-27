@@ -1,0 +1,143 @@
+{
+  "version": 1,
+  "fixtureId": "legacy-choice-outcome-key-map-v1",
+  "mappings": [
+    {
+      "eventId": "base.arrival",
+      "choiceId": "introduce",
+      "localizationKey": "event.base.arrival.choice.introduce.text"
+    },
+    {
+      "eventId": "base.order",
+      "choiceId": "accept",
+      "localizationKey": "event.base.order.choice.accept.text"
+    },
+    {
+      "eventId": "base.bran",
+      "choiceId": "friendly",
+      "localizationKey": "event.base.bran.choice.friendly.text"
+    },
+    {
+      "eventId": "base.invite",
+      "choiceId": "yes",
+      "localizationKey": "event.base.invite.choice.yes.text"
+    },
+    {
+      "eventId": "base.invite",
+      "choiceId": "no",
+      "localizationKey": "event.base.invite.choice.no.text"
+    },
+    {
+      "eventId": "base.workday",
+      "choiceId": "steady",
+      "localizationKey": "event.base.workday.choice.steady.text"
+    },
+    {
+      "eventId": "base.winter",
+      "choiceId": "help",
+      "localizationKey": "event.base.winter.choice.help.text"
+    },
+    {
+      "eventId": "base.winter",
+      "choiceId": "pass",
+      "localizationKey": "event.base.winter.choice.pass.text"
+    },
+    {
+      "eventId": "base.shelter",
+      "choiceId": "tell",
+      "localizationKey": "event.base.shelter.choice.tell.text"
+    },
+    {
+      "eventId": "gopher.arrival",
+      "choiceId": "home",
+      "localizationKey": "event.gopher.arrival.choice.home.text"
+    },
+    {
+      "eventId": "gopher.arrival",
+      "choiceId": "status",
+      "localizationKey": "event.gopher.arrival.choice.status.text"
+    },
+    {
+      "eventId": "gopher.arrival",
+      "choiceId": "mystery",
+      "localizationKey": "event.gopher.arrival.choice.mystery.text"
+    },
+    {
+      "eventId": "gopher.tavern-intro",
+      "choiceId": "agree",
+      "localizationKey": "event.gopher.tavern-intro.choice.agree.text"
+    },
+    {
+      "eventId": "gopher.tavern-quest",
+      "choiceId": "help",
+      "localizationKey": "event.gopher.tavern-quest.choice.help.text"
+    },
+    {
+      "eventId": "gopher.tavern-quest",
+      "choiceId": "later",
+      "localizationKey": "event.gopher.tavern-quest.choice.later.text"
+    },
+    {
+      "eventId": "gopher.receipt",
+      "choiceId": "take",
+      "localizationKey": "event.gopher.receipt.choice.take.text"
+    },
+    {
+      "eventId": "gopher.tavern-resolution",
+      "choiceId": "guild",
+      "localizationKey": "event.gopher.tavern-resolution.choice.guild.text"
+    },
+    {
+      "eventId": "gopher.tavern-resolution",
+      "choiceId": "prince",
+      "localizationKey": "event.gopher.tavern-resolution.choice.prince.text"
+    },
+    {
+      "eventId": "gopher.tavern-resolution",
+      "choiceId": "wait",
+      "localizationKey": "event.gopher.tavern-resolution.choice.wait.text"
+    },
+    {
+      "eventId": "gopher.tavern-routine",
+      "choiceId": "finish",
+      "localizationKey": "event.gopher.tavern-routine.choice.finish.text"
+    },
+    {
+      "eventId": "gopher.woods-intro",
+      "choiceId": "learn",
+      "localizationKey": "event.gopher.woods-intro.choice.learn.text"
+    },
+    {
+      "eventId": "gopher.hunt-intro",
+      "choiceId": "learn",
+      "localizationKey": "event.gopher.hunt-intro.choice.learn.text"
+    },
+    {
+      "eventId": "gopher.landlord",
+      "choiceId": "tea",
+      "localizationKey": "event.gopher.landlord.choice.tea.text"
+    },
+    {
+      "eventId": "stage.goblin",
+      "choiceId": "spar",
+      "localizationKey": "event.stage.goblin.choice.spar.text"
+    },
+    {
+      "eventId": "stage.goblin",
+      "choiceId": "flirt",
+      "localizationKey": "event.stage.goblin.choice.flirt.text"
+    },
+    {
+      "eventId": "stage.goblin",
+      "choiceId": "work",
+      "localizationKey": "event.stage.goblin.choice.work.text"
+    }
+  ],
+  "invariants": {
+    "mappingCount": 26,
+    "localeNeutralIdentityOnly": true,
+    "localizedTextIncluded": false,
+    "gameplayFieldsIncluded": false,
+    "runtimeEdits": false
+  }
+}
