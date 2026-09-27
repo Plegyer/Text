@@ -1,0 +1,182 @@
+{
+  "formatVersion": 2,
+  "id": "school-exact-course-routing-v2",
+  "status": "STAGING_EVIDENCE_ONLY",
+  "proposalRef": "docs/school-prep/SCHOOL_EXACT_COURSE_ROUTING_SEAM_PROPOSAL_v1.md",
+  "proposedReactionKind": "schoolLessonCompleted",
+  "genericBackwardCompatibility": {
+    "kind": "actionCompleted",
+    "action": "school",
+    "mustRemain": true
+  },
+  "courses": [
+    {
+      "courseId": "school.course.literacy_and_numbers",
+      "trackId": "school.track.literacy_and_numbers",
+      "teacherId": "school.teacher.mara-fen",
+      "stagedTeacherEventId": "school-teacher.literacy-and-numbers.presentation",
+      "stagedLessonEventIds": [
+        "school.lesson-content.literacy-and-numbers",
+        "school.lesson-v2.literacy-and-numbers"
+      ],
+      "expectedReaction": {
+        "kind": "schoolLessonCompleted",
+        "course": "school.course.literacy_and_numbers"
+      },
+      "reactionIdentityLocaleNeutral": true,
+      "transactionDuplicationAllowed": false,
+      "productionTriggerAttached": false,
+      "teacherEventPromotionStatus": "STAGED",
+      "lessonEventPromotionStatus": "STAGED"
+    },
+    {
+      "courseId": "school.course.arcana",
+      "trackId": "school.track.arcana",
+      "teacherId": "school.teacher.ilyra-venn",
+      "stagedTeacherEventId": "school-teacher.arcana.presentation",
+      "stagedLessonEventIds": [
+        "school.lesson-content.arcana",
+        "school.lesson-v2.arcana"
+      ],
+      "expectedReaction": {
+        "kind": "schoolLessonCompleted",
+        "course": "school.course.arcana"
+      },
+      "reactionIdentityLocaleNeutral": true,
+      "transactionDuplicationAllowed": false,
+      "productionTriggerAttached": false,
+      "teacherEventPromotionStatus": "STAGED",
+      "lessonEventPromotionStatus": "STAGED"
+    },
+    {
+      "courseId": "school.course.rhetoric_and_social",
+      "trackId": "school.track.rhetoric_and_social",
+      "teacherId": "school.teacher.cassian-reed",
+      "stagedTeacherEventId": "school-teacher.rhetoric-and-social.presentation",
+      "stagedLessonEventIds": [
+        "school.lesson-content.rhetoric-and-social",
+        "school.lesson-v2.rhetoric-and-social"
+      ],
+      "expectedReaction": {
+        "kind": "schoolLessonCompleted",
+        "course": "school.course.rhetoric_and_social"
+      },
+      "reactionIdentityLocaleNeutral": true,
+      "transactionDuplicationAllowed": false,
+      "productionTriggerAttached": false,
+      "teacherEventPromotionStatus": "STAGED",
+      "lessonEventPromotionStatus": "STAGED"
+    },
+    {
+      "courseId": "school.course.etiquette_and_presentation",
+      "trackId": "school.track.etiquette_and_presentation",
+      "teacherId": "school.teacher.eliane-marrow",
+      "stagedTeacherEventId": "school-teacher.etiquette-and-presentation.presentation",
+      "stagedLessonEventIds": [
+        "school.lesson-content.etiquette-and-presentation",
+        "school.lesson-v2.etiquette-and-presentation"
+      ],
+      "expectedReaction": {
+        "kind": "schoolLessonCompleted",
+        "course": "school.course.etiquette_and_presentation"
+      },
+      "reactionIdentityLocaleNeutral": true,
+      "transactionDuplicationAllowed": false,
+      "productionTriggerAttached": false,
+      "teacherEventPromotionStatus": "STAGED",
+      "lessonEventPromotionStatus": "STAGED"
+    },
+    {
+      "courseId": "school.course.field_craft",
+      "trackId": "school.track.field_craft",
+      "teacherId": "school.teacher.rowan-pike",
+      "stagedTeacherEventId": "school-teacher.field-craft.presentation",
+      "stagedLessonEventIds": [
+        "school.lesson-content.field-craft",
+        "school.lesson-v2.field-craft"
+      ],
+      "expectedReaction": {
+        "kind": "schoolLessonCompleted",
+        "course": "school.course.field_craft"
+      },
+      "reactionIdentityLocaleNeutral": true,
+      "transactionDuplicationAllowed": false,
+      "productionTriggerAttached": false,
+      "teacherEventPromotionStatus": "STAGED",
+      "lessonEventPromotionStatus": "STAGED"
+    },
+    {
+      "courseId": "school.course.physical_training",
+      "trackId": "school.track.physical_training",
+      "teacherId": "school.teacher.tovan-kest",
+      "stagedTeacherEventId": "school-teacher.physical-training.presentation",
+      "stagedLessonEventIds": [
+        "school.lesson-content.physical-training",
+        "school.lesson-v2.physical-training"
+      ],
+      "expectedReaction": {
+        "kind": "schoolLessonCompleted",
+        "course": "school.course.physical_training"
+      },
+      "reactionIdentityLocaleNeutral": true,
+      "transactionDuplicationAllowed": false,
+      "productionTriggerAttached": false,
+      "teacherEventPromotionStatus": "STAGED",
+      "lessonEventPromotionStatus": "STAGED"
+    },
+    {
+      "courseId": "school.course.arts_and_performance",
+      "trackId": "school.track.arts_and_performance",
+      "teacherId": "school.teacher.nessa-lark",
+      "stagedTeacherEventId": "school-teacher.arts-and-performance.presentation",
+      "stagedLessonEventIds": [
+        "school.lesson-content.arts-and-performance",
+        "school.lesson-v2.arts-and-performance"
+      ],
+      "expectedReaction": {
+        "kind": "schoolLessonCompleted",
+        "course": "school.course.arts_and_performance"
+      },
+      "reactionIdentityLocaleNeutral": true,
+      "transactionDuplicationAllowed": false,
+      "productionTriggerAttached": false,
+      "teacherEventPromotionStatus": "STAGED",
+      "lessonEventPromotionStatus": "STAGED"
+    },
+    {
+      "courseId": "school.course.body_confidence",
+      "trackId": "school.track.body_confidence",
+      "teacherId": "school.teacher.sera-vey",
+      "stagedTeacherEventId": "school-teacher.body-confidence.presentation",
+      "stagedLessonEventIds": [
+        "school.lesson-content.body-confidence",
+        "school.lesson-v2.body-confidence"
+      ],
+      "expectedReaction": {
+        "kind": "schoolLessonCompleted",
+        "course": "school.course.body_confidence"
+      },
+      "reactionIdentityLocaleNeutral": true,
+      "transactionDuplicationAllowed": false,
+      "productionTriggerAttached": false,
+      "teacherEventPromotionStatus": "STAGED",
+      "lessonEventPromotionStatus": "STAGED"
+    }
+  ],
+  "invariants": {
+    "exactlyOneExactCourseReactionPerSuccessfulPaidLesson": true,
+    "exactReactionOnRejectedLesson": false,
+    "paidTransactionReplayedByReaction": false,
+    "paidProgressReplayedByReaction": false,
+    "localeSpecificReactionIds": false,
+    "saveMigrationRequiredForReactionIdentity": false,
+    "sharedRuntimeEditedByThisFixture": false
+  },
+  "exclusions": {
+    "teacherEventsPromotedToProduction": false,
+    "lessonEventsPromotedToProduction": false,
+    "managementPublicResultSelected": false,
+    "arcanaForestPublicResultSelected": false,
+    "certificateProjectExamSemanticsSelected": false
+  }
+}
