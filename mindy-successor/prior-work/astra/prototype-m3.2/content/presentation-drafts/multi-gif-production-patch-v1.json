@@ -1,0 +1,548 @@
+{
+  "formatVersion": 1,
+  "kind": "multi-gif-production-staging-patch",
+  "status": "STAGING_ONLY_NOT_SHIPPED",
+  "leadSchema": {
+    "pr": 42,
+    "head": "595e02e21eb7a2ec942b9c6c7899d816d1170c10",
+    "compatibility": "runtimePatch matches PR42 presentation pool shape"
+  },
+  "runtimePatch": {
+    "version": 1,
+    "texts": {},
+    "media": {},
+    "slots": {
+      "job/lumber/shift/spring/default": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "lumber-spring-a",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/lumber/spring/1.gif",
+              "alt": "Работа с древесиной на влажной весенней делянке."
+            },
+            {
+              "key": "lumber-spring-b",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/lumber/spring/2.gif",
+              "alt": "Срубленные брёвна переносят по размокшей весенней земле."
+            },
+            {
+              "key": "lumber-spring-c",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/lumber/spring/3.gif",
+              "alt": "Инструменты проверяют рядом со штабелем брёвен весной."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-lumber.svg",
+          "alt": "Весенняя работа лесорубов."
+        }
+      },
+      "job/satyr-maid/shift/spring/default": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "satyr-spring-a",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/satyr-maid/spring/1.gif",
+              "alt": "Заказы разносят между столами в весеннюю смену."
+            },
+            {
+              "key": "satyr-spring-b",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/satyr-maid/spring/2.gif",
+              "alt": "После гостей приводят в порядок стол в весеннем зале."
+            },
+            {
+              "key": "satyr-spring-c",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/satyr-maid/spring/3.gif",
+              "alt": "Зону обслуживания готовят к новым весенним посетителям."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-tavern.svg",
+          "alt": "Весенняя работа в баре сатиров."
+        }
+      },
+      "job/undead-farm/shift/spring/default": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "farm-spring-a",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/undead-farm/spring/1.gif",
+              "alt": "Весенний рабочий участок фермы проверяют и обслуживают."
+            },
+            {
+              "key": "farm-spring-b",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/undead-farm/spring/2.gif",
+              "alt": "Весенние собранные материалы сортируют для обработки."
+            },
+            {
+              "key": "farm-spring-c",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/undead-farm/spring/3.gif",
+              "alt": "Инструменты и рабочее место приводят в порядок весной."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-forest.svg",
+          "alt": "Весенняя работа на ферме нежити."
+        }
+      },
+      "job/tavern/shift/spring/default": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "tavern-spring-a",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/tavern/spring/1.gif",
+              "alt": "Столы обслуживают и разносят заказы в весеннюю смену."
+            },
+            {
+              "key": "tavern-spring-b",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/tavern/spring/2.gif",
+              "alt": "Зал убирают и готовят к гостям весной."
+            },
+            {
+              "key": "tavern-spring-c",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/tavern/spring/3.gif",
+              "alt": "Припасы переносят между складом и залом весной."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-tavern.svg",
+          "alt": "Весенняя работа в таверне."
+        }
+      },
+      "location/town/event/poverty-pressure-production-cold-rain/default": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "cold-rain-a",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/poverty/cold-rain/1.gif",
+              "alt": "Холодный дождь добирается до края уличного укрытия."
+            },
+            {
+              "key": "cold-rain-b",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/poverty/cold-rain/2.gif",
+              "alt": "За мокрым бордюром виден более глубокий дверной проём."
+            },
+            {
+              "key": "cold-rain-c",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/poverty/cold-rain/3.gif",
+              "alt": "Вода течёт по мостовой рядом с открытым местом для ночлега."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-outside.svg",
+          "alt": "Уличное укрытие под холодным дождём."
+        }
+      },
+      "location/town/event/school-lesson-content-v1-after-school/default": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "school-after-a",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/school/after-school/1.gif",
+              "alt": "После урока в классе собирают записи и материалы."
+            },
+            {
+              "key": "school-after-b",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/school/after-school/2.gif",
+              "alt": "Учебные записи спокойно перечитывают перед уходом."
+            },
+            {
+              "key": "school-after-c",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/school/after-school/3.gif",
+              "alt": "Класс постепенно пустеет после завершённого занятия."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-school.svg",
+          "alt": "Класс после завершённого урока."
+        }
+      }
+    }
+  },
+  "localizationPayloads": {
+    "job/lumber/shift/spring/default": {
+      "captionKey": "loc/presentation/job/lumber/shift/spring/default/caption",
+      "caption": {
+        "ru": "Весенняя смена лесорубов.",
+        "en": "Spring lumber shift."
+      },
+      "staticAltKey": "loc/presentation/job/lumber/shift/spring/default/static/alt",
+      "staticAlt": {
+        "ru": "Весенняя работа лесорубов.",
+        "en": "Spring lumber work."
+      },
+      "candidateAlt": [
+        {
+          "candidateKey": "lumber-spring-a",
+          "key": "loc/presentation/job/lumber/shift/spring/default/candidate/lumber-spring-a/alt",
+          "value": {
+            "ru": "Работа с древесиной на влажной весенней делянке.",
+            "en": "Timber work on a damp spring worksite."
+          }
+        },
+        {
+          "candidateKey": "lumber-spring-b",
+          "key": "loc/presentation/job/lumber/shift/spring/default/candidate/lumber-spring-b/alt",
+          "value": {
+            "ru": "Срубленные брёвна переносят по размокшей весенней земле.",
+            "en": "Cut logs are carried across wet spring ground."
+          }
+        },
+        {
+          "candidateKey": "lumber-spring-c",
+          "key": "loc/presentation/job/lumber/shift/spring/default/candidate/lumber-spring-c/alt",
+          "value": {
+            "ru": "Инструменты проверяют рядом со штабелем брёвен весной.",
+            "en": "Tools are checked beside stacked logs during a spring shift."
+          }
+        }
+      ]
+    },
+    "job/satyr-maid/shift/spring/default": {
+      "captionKey": "loc/presentation/job/satyr-maid/shift/spring/default/caption",
+      "caption": {
+        "ru": "Весенняя смена в баре сатиров.",
+        "en": "Spring shift at the satyr bar."
+      },
+      "staticAltKey": "loc/presentation/job/satyr-maid/shift/spring/default/static/alt",
+      "staticAlt": {
+        "ru": "Весенняя работа в баре сатиров.",
+        "en": "Spring work at the satyr bar."
+      },
+      "candidateAlt": [
+        {
+          "candidateKey": "satyr-spring-a",
+          "key": "loc/presentation/job/satyr-maid/shift/spring/default/candidate/satyr-spring-a/alt",
+          "value": {
+            "ru": "Заказы разносят между столами в весеннюю смену.",
+            "en": "Orders are carried between tables during a spring shift."
+          }
+        },
+        {
+          "candidateKey": "satyr-spring-b",
+          "key": "loc/presentation/job/satyr-maid/shift/spring/default/candidate/satyr-spring-b/alt",
+          "value": {
+            "ru": "После гостей приводят в порядок стол в весеннем зале.",
+            "en": "A table is reset after guests in the spring room."
+          }
+        },
+        {
+          "candidateKey": "satyr-spring-c",
+          "key": "loc/presentation/job/satyr-maid/shift/spring/default/candidate/satyr-spring-c/alt",
+          "value": {
+            "ru": "Зону обслуживания готовят к новым весенним посетителям.",
+            "en": "The service area is prepared for new spring visitors."
+          }
+        }
+      ]
+    },
+    "job/undead-farm/shift/spring/default": {
+      "captionKey": "loc/presentation/job/undead-farm/shift/spring/default/caption",
+      "caption": {
+        "ru": "Весенняя смена на ферме нежити.",
+        "en": "Spring shift on the undead farm."
+      },
+      "staticAltKey": "loc/presentation/job/undead-farm/shift/spring/default/static/alt",
+      "staticAlt": {
+        "ru": "Весенняя работа на ферме нежити.",
+        "en": "Spring work on the undead farm."
+      },
+      "candidateAlt": [
+        {
+          "candidateKey": "farm-spring-a",
+          "key": "loc/presentation/job/undead-farm/shift/spring/default/candidate/farm-spring-a/alt",
+          "value": {
+            "ru": "Весенний рабочий участок фермы проверяют и обслуживают.",
+            "en": "A spring farm work area is checked and tended."
+          }
+        },
+        {
+          "candidateKey": "farm-spring-b",
+          "key": "loc/presentation/job/undead-farm/shift/spring/default/candidate/farm-spring-b/alt",
+          "value": {
+            "ru": "Весенние собранные материалы сортируют для обработки.",
+            "en": "Spring gathered materials are sorted for processing."
+          }
+        },
+        {
+          "candidateKey": "farm-spring-c",
+          "key": "loc/presentation/job/undead-farm/shift/spring/default/candidate/farm-spring-c/alt",
+          "value": {
+            "ru": "Инструменты и рабочее место приводят в порядок весной.",
+            "en": "Tools and the work area are maintained during spring."
+          }
+        }
+      ]
+    },
+    "job/tavern/shift/spring/default": {
+      "captionKey": "loc/presentation/job/tavern/shift/spring/default/caption",
+      "caption": {
+        "ru": "Весенняя смена в таверне.",
+        "en": "Spring tavern shift."
+      },
+      "staticAltKey": "loc/presentation/job/tavern/shift/spring/default/static/alt",
+      "staticAlt": {
+        "ru": "Весенняя работа в таверне.",
+        "en": "Spring tavern work."
+      },
+      "candidateAlt": [
+        {
+          "candidateKey": "tavern-spring-a",
+          "key": "loc/presentation/job/tavern/shift/spring/default/candidate/tavern-spring-a/alt",
+          "value": {
+            "ru": "Столы обслуживают и разносят заказы в весеннюю смену.",
+            "en": "Tables are served and orders carried during a spring shift."
+          }
+        },
+        {
+          "candidateKey": "tavern-spring-b",
+          "key": "loc/presentation/job/tavern/shift/spring/default/candidate/tavern-spring-b/alt",
+          "value": {
+            "ru": "Зал убирают и готовят к гостям весной.",
+            "en": "The tavern room is cleaned and prepared for guests in spring."
+          }
+        },
+        {
+          "candidateKey": "tavern-spring-c",
+          "key": "loc/presentation/job/tavern/shift/spring/default/candidate/tavern-spring-c/alt",
+          "value": {
+            "ru": "Припасы переносят между складом и залом весной.",
+            "en": "Supplies are moved between storage and the tavern room in spring."
+          }
+        }
+      ]
+    },
+    "location/town/event/poverty-pressure-production-cold-rain/default": {
+      "captionKey": "loc/presentation/location/town/event/poverty-pressure-production-cold-rain/default/caption",
+      "caption": {
+        "ru": "Холодный дождь у уличного укрытия.",
+        "en": "Cold rain beside a street shelter."
+      },
+      "staticAltKey": "loc/presentation/location/town/event/poverty-pressure-production-cold-rain/default/static/alt",
+      "staticAlt": {
+        "ru": "Уличное укрытие под холодным дождём.",
+        "en": "A street shelter in cold rain."
+      },
+      "candidateAlt": [
+        {
+          "candidateKey": "cold-rain-a",
+          "key": "loc/presentation/location/town/event/poverty-pressure-production-cold-rain/default/candidate/cold-rain-a/alt",
+          "value": {
+            "ru": "Холодный дождь добирается до края уличного укрытия.",
+            "en": "Cold rain reaches the edge of a street shelter."
+          }
+        },
+        {
+          "candidateKey": "cold-rain-b",
+          "key": "loc/presentation/location/town/event/poverty-pressure-production-cold-rain/default/candidate/cold-rain-b/alt",
+          "value": {
+            "ru": "За мокрым бордюром виден более глубокий дверной проём.",
+            "en": "A deeper doorway is visible beyond the wet curb."
+          }
+        },
+        {
+          "candidateKey": "cold-rain-c",
+          "key": "loc/presentation/location/town/event/poverty-pressure-production-cold-rain/default/candidate/cold-rain-c/alt",
+          "value": {
+            "ru": "Вода течёт по мостовой рядом с открытым местом для ночлега.",
+            "en": "Rainwater runs along the pavement beside an exposed resting place."
+          }
+        }
+      ]
+    },
+    "location/town/event/school-lesson-content-v1-after-school/default": {
+      "captionKey": "loc/presentation/location/town/event/school-lesson-content-v1-after-school/default/caption",
+      "caption": {
+        "ru": "После урока.",
+        "en": "After the lesson."
+      },
+      "staticAltKey": "loc/presentation/location/town/event/school-lesson-content-v1-after-school/default/static/alt",
+      "staticAlt": {
+        "ru": "Класс после завершённого урока.",
+        "en": "A classroom after a completed lesson."
+      },
+      "candidateAlt": [
+        {
+          "candidateKey": "school-after-a",
+          "key": "loc/presentation/location/town/event/school-lesson-content-v1-after-school/default/candidate/school-after-a/alt",
+          "value": {
+            "ru": "После урока в классе собирают записи и материалы.",
+            "en": "Notes and materials are gathered in the classroom after the lesson."
+          }
+        },
+        {
+          "candidateKey": "school-after-b",
+          "key": "loc/presentation/location/town/event/school-lesson-content-v1-after-school/default/candidate/school-after-b/alt",
+          "value": {
+            "ru": "Учебные записи спокойно перечитывают перед уходом.",
+            "en": "Study notes are reviewed quietly before leaving."
+          }
+        },
+        {
+          "candidateKey": "school-after-c",
+          "key": "loc/presentation/location/town/event/school-lesson-content-v1-after-school/default/candidate/school-after-c/alt",
+          "value": {
+            "ru": "Класс постепенно пустеет после завершённого занятия.",
+            "en": "The classroom gradually empties after the completed lesson."
+          }
+        }
+      ]
+    }
+  },
+  "assetStatus": {
+    "job/lumber/shift/spring/default": [
+      {
+        "candidateKey": "lumber-spring-a",
+        "src": "assets/staging/non-shipped/lumber/spring/1.gif",
+        "status": "PLACEHOLDER"
+      },
+      {
+        "candidateKey": "lumber-spring-b",
+        "src": "assets/staging/non-shipped/lumber/spring/2.gif",
+        "status": "PLACEHOLDER"
+      },
+      {
+        "candidateKey": "lumber-spring-c",
+        "src": "assets/staging/non-shipped/lumber/spring/3.gif",
+        "status": "PLACEHOLDER"
+      }
+    ],
+    "job/satyr-maid/shift/spring/default": [
+      {
+        "candidateKey": "satyr-spring-a",
+        "src": "assets/staging/non-shipped/satyr-maid/spring/1.gif",
+        "status": "PLACEHOLDER"
+      },
+      {
+        "candidateKey": "satyr-spring-b",
+        "src": "assets/staging/non-shipped/satyr-maid/spring/2.gif",
+        "status": "PLACEHOLDER"
+      },
+      {
+        "candidateKey": "satyr-spring-c",
+        "src": "assets/staging/non-shipped/satyr-maid/spring/3.gif",
+        "status": "PLACEHOLDER"
+      }
+    ],
+    "job/undead-farm/shift/spring/default": [
+      {
+        "candidateKey": "farm-spring-a",
+        "src": "assets/staging/non-shipped/undead-farm/spring/1.gif",
+        "status": "PLACEHOLDER"
+      },
+      {
+        "candidateKey": "farm-spring-b",
+        "src": "assets/staging/non-shipped/undead-farm/spring/2.gif",
+        "status": "PLACEHOLDER"
+      },
+      {
+        "candidateKey": "farm-spring-c",
+        "src": "assets/staging/non-shipped/undead-farm/spring/3.gif",
+        "status": "PLACEHOLDER"
+      }
+    ],
+    "job/tavern/shift/spring/default": [
+      {
+        "candidateKey": "tavern-spring-a",
+        "src": "assets/staging/non-shipped/tavern/spring/1.gif",
+        "status": "PLACEHOLDER"
+      },
+      {
+        "candidateKey": "tavern-spring-b",
+        "src": "assets/staging/non-shipped/tavern/spring/2.gif",
+        "status": "PLACEHOLDER"
+      },
+      {
+        "candidateKey": "tavern-spring-c",
+        "src": "assets/staging/non-shipped/tavern/spring/3.gif",
+        "status": "PLACEHOLDER"
+      }
+    ],
+    "location/town/event/poverty-pressure-production-cold-rain/default": [
+      {
+        "candidateKey": "cold-rain-a",
+        "src": "assets/staging/non-shipped/poverty/cold-rain/1.gif",
+        "status": "PLACEHOLDER"
+      },
+      {
+        "candidateKey": "cold-rain-b",
+        "src": "assets/staging/non-shipped/poverty/cold-rain/2.gif",
+        "status": "PLACEHOLDER"
+      },
+      {
+        "candidateKey": "cold-rain-c",
+        "src": "assets/staging/non-shipped/poverty/cold-rain/3.gif",
+        "status": "PLACEHOLDER"
+      }
+    ],
+    "location/town/event/school-lesson-content-v1-after-school/default": [
+      {
+        "candidateKey": "school-after-a",
+        "src": "assets/staging/non-shipped/school/after-school/1.gif",
+        "status": "PLACEHOLDER"
+      },
+      {
+        "candidateKey": "school-after-b",
+        "src": "assets/staging/non-shipped/school/after-school/2.gif",
+        "status": "PLACEHOLDER"
+      },
+      {
+        "candidateKey": "school-after-c",
+        "src": "assets/staging/non-shipped/school/after-school/3.gif",
+        "status": "PLACEHOLDER"
+      }
+    ]
+  },
+  "policy": {
+    "gameplayFieldsAllowed": false,
+    "placeholderPathsCountAsShipped": false,
+    "localeAffectsCandidateSelection": false
+  }
+}
