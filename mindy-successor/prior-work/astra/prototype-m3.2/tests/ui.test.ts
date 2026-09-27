@@ -205,7 +205,9 @@ test('renderer: multi-GIF selection survives reload and locale switch without to
  }}};
  const saved=JSON.stringify(started());
  const {w,dom,errors}=boot(saved,presentation);try{
-  await wait(()=>!!w.document.querySelector('.media-window[data-candidate-key]'));
+  await wait(()=>!!w.document.querySelector('#home'));
+  w.document.querySelector('#home').click();
+  await wait(()=>w.document.querySelector('.media-window')?.getAttribute('data-presentation-id')==='location/town/default');
   const before=w.localStorage.getItem('portal-life.v1');
   const first=w.document.querySelector('.media-window').getAttribute('data-candidate-key');
   assert.ok(first);
@@ -223,7 +225,9 @@ test('renderer: multi-GIF selection survives reload and locale switch without to
   assert.equal(w.localStorage.getItem('portal-life.v1'),before);
 
   const second=boot(before,presentation);try{
-   await wait(()=>!!second.w.document.querySelector('.media-window[data-candidate-key]'));
+   await wait(()=>!!second.w.document.querySelector('#home'));
+   second.w.document.querySelector('#home').click();
+   await wait(()=>second.w.document.querySelector('.media-window')?.getAttribute('data-presentation-id')==='location/town/default');
    assert.equal(second.w.document.querySelector('.media-window').getAttribute('data-candidate-key'),first);
    assert.equal(second.w.localStorage.getItem('portal-life.v1'),before);
   }finally{second.dom.window.close();}
