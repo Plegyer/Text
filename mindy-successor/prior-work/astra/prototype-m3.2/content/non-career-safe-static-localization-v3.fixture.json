@@ -1,0 +1,240 @@
+{
+  "formatVersion": 3,
+  "kind": "non-career-safe-static-localization",
+  "status": "INCREMENTAL_POST_PR47_NOT_ROOT_LOADED",
+  "currentMainBaseline": "7f27caca4e3e711799e9c1f235c4a27adbf31026",
+  "sourceManifest": "content/presentation-drafts/non-career-safe-production-subset-v3.json",
+  "sourceLocale": "ru",
+  "supportedLocales": [
+    "ru",
+    "en"
+  ],
+  "strings": {
+    "presentation.static.school-course-literacy-and-numbers.alt": {
+      "ru": "Учебная сцена курса «Грамота и числа» с характерными материалами и без изображения преподавателя.",
+      "en": "A Literacy & Numbers lesson scene with course-specific materials and no depicted teacher."
+    },
+    "presentation.static.school-course-literacy-and-numbers.caption": {
+      "ru": "Грамота и числа: учебное занятие.",
+      "en": "Literacy & Numbers: lesson session."
+    },
+    "presentation.static.school-course-arcana.alt": {
+      "ru": "Учебная сцена курса «Аркана» с характерными материалами и без изображения преподавателя.",
+      "en": "A Arcana lesson scene with course-specific materials and no depicted teacher."
+    },
+    "presentation.static.school-course-arcana.caption": {
+      "ru": "Аркана: учебное занятие.",
+      "en": "Arcana: lesson session."
+    },
+    "presentation.static.school-course-rhetoric-and-social.alt": {
+      "ru": "Учебная сцена курса «Риторика и общение» с характерными материалами и без изображения преподавателя.",
+      "en": "A Rhetoric & Social lesson scene with course-specific materials and no depicted teacher."
+    },
+    "presentation.static.school-course-rhetoric-and-social.caption": {
+      "ru": "Риторика и общение: учебное занятие.",
+      "en": "Rhetoric & Social: lesson session."
+    },
+    "presentation.static.school-course-etiquette-and-presentation.alt": {
+      "ru": "Учебная сцена курса «Этикет и подача» с характерными материалами и без изображения преподавателя.",
+      "en": "A Etiquette & Presentation lesson scene with course-specific materials and no depicted teacher."
+    },
+    "presentation.static.school-course-etiquette-and-presentation.caption": {
+      "ru": "Этикет и подача: учебное занятие.",
+      "en": "Etiquette & Presentation: lesson session."
+    },
+    "presentation.static.school-course-field-craft.alt": {
+      "ru": "Учебная сцена курса «Полевая практика» с характерными материалами и без изображения преподавателя.",
+      "en": "A Field Craft lesson scene with course-specific materials and no depicted teacher."
+    },
+    "presentation.static.school-course-field-craft.caption": {
+      "ru": "Полевая практика: учебное занятие.",
+      "en": "Field Craft: lesson session."
+    },
+    "presentation.static.school-course-physical-training.alt": {
+      "ru": "Учебная сцена курса «Физическая подготовка» с характерными материалами и без изображения преподавателя.",
+      "en": "A Physical Training lesson scene with course-specific materials and no depicted teacher."
+    },
+    "presentation.static.school-course-physical-training.caption": {
+      "ru": "Физическая подготовка: учебное занятие.",
+      "en": "Physical Training: lesson session."
+    },
+    "presentation.static.school-course-arts-and-performance.alt": {
+      "ru": "Учебная сцена курса «Искусство и выступление» с характерными материалами и без изображения преподавателя.",
+      "en": "A Arts & Performance lesson scene with course-specific materials and no depicted teacher."
+    },
+    "presentation.static.school-course-arts-and-performance.caption": {
+      "ru": "Искусство и выступление: учебное занятие.",
+      "en": "Arts & Performance: lesson session."
+    },
+    "presentation.static.school-course-body-confidence.alt": {
+      "ru": "Учебная сцена курса «Уверенность в теле» с характерными материалами и без изображения преподавателя.",
+      "en": "A Body Confidence lesson scene with course-specific materials and no depicted teacher."
+    },
+    "presentation.static.school-course-body-confidence.caption": {
+      "ru": "Уверенность в теле: учебное занятие.",
+      "en": "Body Confidence: lesson session."
+    },
+    "presentation.static.school-night-study-generic-v2.alt": {
+      "ru": "Тихая общая ночная учёба за столом при лампе без привязки к конкретному курсу.",
+      "en": "Quiet generic night study at a desk by lamplight without tying the scene to a specific course."
+    },
+    "presentation.static.school-night-study-generic-v2.caption": {
+      "ru": "Ночная учебная сессия.",
+      "en": "Night-study session."
+    },
+    "presentation.static.poverty-street-helpful-summer.alt": {
+      "ru": "Летняя уличная сцена небольшой помощи в бедном городском районе без показа награды.",
+      "en": "A summer street scene of small help in a poor city district without showing a reward."
+    },
+    "presentation.static.poverty-street-helpful-summer.caption": {
+      "ru": "Летняя уличная помощь.",
+      "en": "Summer street help."
+    },
+    "presentation.static.poverty-street-neutral-autumn.alt": {
+      "ru": "Спокойная осенняя сцена на небогатой городской улице.",
+      "en": "A neutral autumn scene on a modest city street."
+    },
+    "presentation.static.poverty-street-neutral-autumn.caption": {
+      "ru": "Осенняя уличная сцена.",
+      "en": "Autumn street scene."
+    },
+    "presentation.static.poverty-street-pressure-winter.alt": {
+      "ru": "Зимняя уличная сцена давления среды со снегом и холодом без показа точного штрафа.",
+      "en": "A winter street-pressure scene with snow and cold without showing an exact penalty."
+    },
+    "presentation.static.poverty-street-pressure-winter.caption": {
+      "ru": "Зимнее уличное давление.",
+      "en": "Winter street pressure."
+    },
+    "presentation.static.poverty-cheap-shared-quiet-autumn.alt": {
+      "ru": "Тихая дешёвая комната осенью с простой кроватью и минимальной обстановкой.",
+      "en": "A quiet low-cost room in autumn with a simple bed and minimal furnishings."
+    },
+    "presentation.static.poverty-cheap-shared-quiet-autumn.caption": {
+      "ru": "Дешёвый осенний ночлег.",
+      "en": "Cheap autumn lodging."
+    },
+    "presentation.static.poverty-recovery-small-coin-help.alt": {
+      "ru": "Сцена небольшой денежной помощи без указания суммы или изменения исхода.",
+      "en": "A small-coin help scene without showing an amount or changing the event outcome."
+    },
+    "presentation.static.poverty-recovery-small-coin-help.caption": {
+      "ru": "Небольшая денежная помощь.",
+      "en": "Small-coin help."
+    },
+    "presentation.static.poverty-recovery-short-cleanup.alt": {
+      "ru": "Короткая бытовая уборка как небольшая восстановительная работа.",
+      "en": "A short cleanup task as a small recovery activity."
+    },
+    "presentation.static.poverty-recovery-short-cleanup.caption": {
+      "ru": "Короткая уборка.",
+      "en": "Short cleanup."
+    },
+    "presentation.static.poverty-recovery-herb-bundle.alt": {
+      "ru": "Небольшая помощь с пучком трав без отображения скрытых эффектов.",
+      "en": "Small-scale help involving a bundle of herbs without showing hidden effects."
+    },
+    "presentation.static.poverty-recovery-herb-bundle.caption": {
+      "ru": "Помощь с травами.",
+      "en": "Herb-bundle help."
+    },
+    "presentation.static.poverty-pressure-cold-rain.alt": {
+      "ru": "Холодный дождь на городской улице создаёт давление среды без показа точного штрафа.",
+      "en": "Cold rain on a city street creates environmental pressure without showing an exact penalty."
+    },
+    "presentation.static.poverty-pressure-cold-rain.caption": {
+      "ru": "Холодный дождь.",
+      "en": "Cold rain."
+    },
+    "presentation.static.poverty-pressure-noisy-loading.alt": {
+      "ru": "Шумная погрузка на улице создаёт тяжёлые условия без изменения уже выбранного события.",
+      "en": "Noisy street loading creates difficult conditions without changing the already selected event."
+    },
+    "presentation.static.poverty-pressure-noisy-loading.caption": {
+      "ru": "Шумная погрузка.",
+      "en": "Noisy loading."
+    },
+    "presentation.static.poverty-pressure-muddy-splash.alt": {
+      "ru": "Грязные лужи и брызги осложняют уличную сцену без показа механического штрафа.",
+      "en": "Mud, puddles, and splashes complicate the street scene without showing a mechanical penalty."
+    },
+    "presentation.static.poverty-pressure-muddy-splash.caption": {
+      "ru": "Грязные брызги.",
+      "en": "Muddy splash."
+    },
+    "presentation.static.forest-return-success-v2.alt": {
+      "ru": "Сцена успешного возвращения непосредственно у лесной тропы.",
+      "en": "A successful return scene directly at the forest trail."
+    },
+    "presentation.static.forest-return-success-v2.caption": {
+      "ru": "Лесная экспедиция: успешного возвращения.",
+      "en": "Forest expedition: successful return."
+    },
+    "presentation.static.forest-reaction-success-v2.alt": {
+      "ru": "Отдельная рабочая реакция после успешного возвращения из леса.",
+      "en": "A separate worksite reaction after a successful return from the forest."
+    },
+    "presentation.static.forest-reaction-success-v2.caption": {
+      "ru": "Реакция после успешного возвращения.",
+      "en": "Reaction after successful return."
+    },
+    "presentation.static.forest-return-escape-v2.alt": {
+      "ru": "Сцена безопасного отступления непосредственно у лесной тропы.",
+      "en": "A safe retreat scene directly at the forest trail."
+    },
+    "presentation.static.forest-return-escape-v2.caption": {
+      "ru": "Лесная экспедиция: безопасного отступления.",
+      "en": "Forest expedition: safe retreat."
+    },
+    "presentation.static.forest-reaction-escape-v2.alt": {
+      "ru": "Отдельная рабочая реакция после безопасного отступления из леса.",
+      "en": "A separate worksite reaction after a safe retreat from the forest."
+    },
+    "presentation.static.forest-reaction-escape-v2.caption": {
+      "ru": "Реакция после безопасного отступления.",
+      "en": "Reaction after safe retreat."
+    },
+    "presentation.static.forest-return-failure-v2.alt": {
+      "ru": "Сцена неудачного возвращения непосредственно у лесной тропы.",
+      "en": "A failed return scene directly at the forest trail."
+    },
+    "presentation.static.forest-return-failure-v2.caption": {
+      "ru": "Лесная экспедиция: неудачного возвращения.",
+      "en": "Forest expedition: failed return."
+    },
+    "presentation.static.forest-reaction-failure-v2.alt": {
+      "ru": "Отдельная рабочая реакция после неудачного возвращения из леса.",
+      "en": "A separate worksite reaction after a failed return from the forest."
+    },
+    "presentation.static.forest-reaction-failure-v2.caption": {
+      "ru": "Реакция после неудачного возвращения.",
+      "en": "Reaction after failed return."
+    },
+    "presentation.static.foreman-professional-milestone-v2.alt": {
+      "ru": "Профессиональный разговор с бригадиром на лесной площадке после заметного рабочего рубежа.",
+      "en": "A professional conversation with the foreman at the lumber site after a notable work milestone."
+    },
+    "presentation.static.foreman-professional-milestone-v2.caption": {
+      "ru": "Профессиональный рубеж с бригадиром.",
+      "en": "Professional milestone with the foreman."
+    },
+    "presentation.static.foreman-night-voluntary-v2.alt": {
+      "ru": "Добровольный спокойный вечерний разговор с бригадиром у огня.",
+      "en": "A calm voluntary evening conversation with the foreman by the fire."
+    },
+    "presentation.static.foreman-night-voluntary-v2.caption": {
+      "ru": "Добровольный вечерний разговор с бригадиром.",
+      "en": "Voluntary evening conversation with the foreman."
+    }
+  },
+  "summary": {
+    "requiredKeys": 54,
+    "newKeys": 54,
+    "preexistingKeys": 0
+  },
+  "invariants": {
+    "additiveOrIdenticalOnly": true,
+    "localeNeutralAssetIdentity": true,
+    "gameplayFieldsPresent": false
+  }
+}
