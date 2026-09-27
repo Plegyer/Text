@@ -3,8 +3,8 @@
 Status: COMPLETE / GREEN_SELECTIVE_LOCALIZATION_SOURCE
 
 Current main reviewed:
-`f93878b954385a1c61d8a06a0673354207d11d70`
-(after PR50).
+`1a2f6e428da41e356f8d48df4a72923a5cc1928c`
+(after PR51 poverty copyedit).
 
 Source:
 `legacy-root-localization-production-patch-v2.fixture.json`.
@@ -61,7 +61,7 @@ Every payload value contains only:
 
 ## Current-root collision policy
 
-Against exact PR50 main:
+Against exact current main after PR51:
 - root collisions: 1;
 - non-identical collisions: 0.
 
@@ -142,3 +142,37 @@ Lead selective integration must:
 `GREEN_SELECTIVE_LOCALIZATION_SOURCE`.
 
 The 109-key legacy root patch is clean against current main and contains only current-ID bilingual presentation text.
+
+
+## Live PR52 integration attempt
+
+PR #52:
+`Lead: integrate legacy root RU EN localization`.
+
+Current exact head during this refresh:
+`a47c766725f4b1034aa27c3cb74ce3819dfa4c47`.
+
+State:
+`OPEN / NOT_MERGED`.
+
+Exact-head workflow:
+- run #86;
+- id `36347027713`;
+- conclusion: FAILURE;
+- validator still reaches 17 packs / 46 events / 35 actions / 9 endings;
+- tests: 325;
+- pass: 324;
+- fail: 1.
+
+Blocking failure:
+`tests/legacy-root-localization-production-v1.test.ts`
+cannot open:
+`content/legacy-root-localization-production-patch-v2.fixture.json`
+(`ENOENT`).
+
+This is an integration-copy/test-fixture completeness failure on the exact PR52 head, not evidence of a localization-key collision or gameplay regression.
+
+QA status for PR52 exact head:
+`BLOCKED_EXACT_HEAD_CI`.
+
+Do not merge that exact head. A fixed head must include the required reviewed fixture (or adjust the regression only if the production test intentionally becomes self-contained), then rerun full exact-head CI.
