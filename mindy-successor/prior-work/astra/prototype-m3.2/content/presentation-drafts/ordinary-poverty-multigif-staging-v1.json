@@ -1,1 +1,160 @@
-{}
+{
+  "schemaVersion": 1,
+  "id": "ordinary-poverty.multigif-staging.v1",
+  "status": "STAGING_ONLY",
+  "presentationPatch": {
+    "version": 1,
+    "texts": {},
+    "media": {},
+    "slots": {
+      "location/town/event/poverty-street-production-helpful-summer/default": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "summer-crate",
+              "kind": "gif",
+              "src": "assets/staging/poverty-summer-crate.gif",
+              "alt": "Последний ящик у закрывающегося прилавка."
+            },
+            {
+              "key": "summer-awning",
+              "kind": "gif",
+              "src": "assets/staging/poverty-summer-awning.gif",
+              "alt": "Короткое вечернее поручение под навесом."
+            },
+            {
+              "key": "summer-close",
+              "kind": "gif",
+              "src": "assets/staging/poverty-summer-close.gif",
+              "alt": "Рынок закрывается после короткой работы."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-outside.svg",
+          "alt": "Уличная сцена обычной ночёвки."
+        }
+      },
+      "location/town/event/poverty-cheap-production-v2-shared-room-seasons/shared-room": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "room-bedrolls",
+              "kind": "gif",
+              "src": "assets/staging/poverty-room-bedrolls.gif",
+              "alt": "Подстилки в тесной общей комнате."
+            },
+            {
+              "key": "room-window",
+              "kind": "gif",
+              "src": "assets/staging/poverty-room-window.gif",
+              "alt": "Окно и спальные места общей комнаты."
+            },
+            {
+              "key": "room-settle",
+              "kind": "gif",
+              "src": "assets/staging/poverty-room-settle.gif",
+              "alt": "Общая комната затихает на ночь."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-room.svg",
+          "alt": "Сцена дешёвой общей комнаты."
+        }
+      },
+      "location/town/event/poverty-pressure-production-cold-rain/default": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "rain-curb",
+              "kind": "gif",
+              "src": "assets/staging/poverty-rain-curb.gif",
+              "alt": "Холодный весенний дождь у укрытия."
+            },
+            {
+              "key": "rain-doorway",
+              "kind": "gif",
+              "src": "assets/staging/poverty-rain-doorway.gif",
+              "alt": "Глубокий дверной проём рядом с дождём."
+            },
+            {
+              "key": "rain-shelter",
+              "kind": "gif",
+              "src": "assets/staging/poverty-rain-shelter.gif",
+              "alt": "Укрытие на пустой весенней улице."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-outside.svg",
+          "alt": "Уличная сцена обычной ночёвки."
+        }
+      }
+    }
+  },
+  "candidateAltLocalization": {
+    "summer-crate": {
+      "key": "media.pool.summer-crate.alt",
+      "ru": "Последний ящик у закрывающегося прилавка.",
+      "en": "Last crate beside a closing market stall."
+    },
+    "summer-awning": {
+      "key": "media.pool.summer-awning.alt",
+      "ru": "Короткое вечернее поручение под навесом.",
+      "en": "Brief evening task beneath an awning."
+    },
+    "summer-close": {
+      "key": "media.pool.summer-close.alt",
+      "ru": "Рынок закрывается после короткой работы.",
+      "en": "Market closing after a brief job."
+    },
+    "room-bedrolls": {
+      "key": "media.pool.room-bedrolls.alt",
+      "ru": "Подстилки в тесной общей комнате.",
+      "en": "Bedrolls in a crowded shared room."
+    },
+    "room-window": {
+      "key": "media.pool.room-window.alt",
+      "ru": "Окно и спальные места общей комнаты.",
+      "en": "Window and sleeping spaces in a shared room."
+    },
+    "room-settle": {
+      "key": "media.pool.room-settle.alt",
+      "ru": "Общая комната затихает на ночь.",
+      "en": "Shared room settling for the night."
+    },
+    "rain-curb": {
+      "key": "media.pool.rain-curb.alt",
+      "ru": "Холодный весенний дождь у укрытия.",
+      "en": "Cold spring rain at a street shelter."
+    },
+    "rain-doorway": {
+      "key": "media.pool.rain-doorway.alt",
+      "ru": "Глубокий дверной проём рядом с дождём.",
+      "en": "Deep doorway beside the rain."
+    },
+    "rain-shelter": {
+      "key": "media.pool.rain-shelter.alt",
+      "ru": "Укрытие на пустой весенней улице.",
+      "en": "Shelter on an empty spring street."
+    }
+  },
+  "assetStatus": {
+    "staticFallbacks": "REAL_SHIPPED_GENERIC",
+    "gifCandidates": "PLACEHOLDER_STAGING_ONLY_NOT_SHIPPED"
+  },
+  "invariant": "Media choice changes presentation only, never poverty outcome or mechanics."
+}
