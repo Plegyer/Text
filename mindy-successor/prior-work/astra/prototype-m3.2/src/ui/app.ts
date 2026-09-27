@@ -11,7 +11,7 @@ const esc=(s:unknown)=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;',
 let baseCatalog:Catalog,catalog:Catalog,state:Save,patch:Presentation=emptyPresentation();
 let panel='',screen='town',busy=false,locked=false,message='',error=false,mediaIndex=0;
 let animationsEnabled=localStorage.getItem('portal-life.presentation.animations')!=='off';
-const professions=['tavern','lumber.shift','hunt','guard'];
+const professions=['lumber.shift','satyr-maid.shift','undead-farm.shift','tavern.shift','hunter.shift','guard.shift','merchant.shift','artist-geisha.shift','assassin.shift','prostitute.shift'];
 function explain(c:Condition):string{
  const cmp=(op:'gte'|'lte'|'eq',value:number)=>`${op==='gte'?'≥':op==='lte'?'≤':'='} ${value}`;
  switch(c.kind){
