@@ -1887,3 +1887,117 @@ Consolidate items 98–105 into Lead implementation guidance:
 - starter-trio / seven-career / School / poverty adoption order.
 
 Continue items 98–106 sequentially without waiting for Lead review.
+
+
+## Queue item 107 — multi-GIF current-runtime black-box fixture
+
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-multi-gif-runtime-v1.fixture.json`
+
+Encode representative 3–5-candidate pools for current shipped semantic IDs across:
+- Lumber;
+- Satyr Maid;
+- Undead Farm;
+- one remaining ordinary career;
+- one School surface;
+- one ordinary-poverty surface.
+
+The fixture is presentation-only and must not add gameplay semantics.
+
+## Queue item 108 — multi-GIF schema acceptance test matrix
+
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/presentation-multi-gif-schema-matrix.test.ts`
+
+Write contract tests for the future bounded schema extension:
+- accepts exactly 3 and 5 candidates;
+- rejects 0/1/2 and >5 in explicit pool mode;
+- each candidate requires GIF source + alt;
+- optional positive finite presentation weight;
+- old primary/static/fallback override remains valid;
+- ambiguous primary+pool is rejected unless Lead later defines precedence.
+
+Keep future-only assertions clearly isolated from current executable assertions if schema is not yet extended.
+
+## Queue item 109 — stable occurrence-key inventory
+
+Create NEW file only:
+- `docs/presentation-prep/MULTI_GIF_OCCURRENCE_KEY_INVENTORY_v1.md`
+
+For each shipped presentation family identify the existing persisted value that can stabilize GIF choice across reload:
+- action/result;
+- reactive event;
+- School paid lesson;
+- Night study;
+- Activity;
+- ending/RunResult;
+- ordinary poverty events.
+
+Classify DERIVABLE_NOW / NEEDS_SMALL_PLUMBING / NEEDS_OPTIONAL_PRESENTATION_KEY.
+
+Do not add save fields.
+
+## Queue item 110 — starter-trio concrete media-pool draft v2
+
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/starter-trio-multi-gif-v2.json`
+
+Create concrete 3–5-candidate authoring pools for current main starter-trio semantic IDs.
+
+Use placeholder asset paths only under a clearly non-shipped authoring namespace. Include per-candidate alt text and stable candidate keys.
+
+## Queue item 111 — ten-career multi-GIF production manifest
+
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/ten-career-multi-gif-v1.json`
+
+Now that PR36 is merged, enumerate all 10 ordinary career base shift/result semantic IDs and prepare 3–5-candidate production-manifest entries.
+
+Do not invent Hard Work/relationship/event presentation IDs that are not shipped.
+
+## Queue item 112 — School authored-content multi-GIF manifest
+
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/school-authored-multi-gif-v1.json`
+
+Using Chat5 authored teacher/lesson production handoff, prepare 3–5-candidate pools for approved generic School surfaces and clearly label teacher-specific surfaces CONTENT_DRAFT until selectively integrated.
+
+No School mechanics changes.
+
+## Queue item 113 — ordinary poverty multi-GIF manifest
+
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/ordinary-poverty-multi-gif-v1.json`
+
+Using Chat3 production identities, prepare 3–5-candidate media pools per event+variant semantic identity.
+
+Never allow media candidate choice to encode helpful/neutral/pressure outcome.
+
+## Queue item 114 — multi-GIF replacement/rollback regression plan
+
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/presentation-multi-gif-replacement-contract.test.ts`
+
+Add executable current behavior checks plus future contract cases for:
+- replacing a whole pool;
+- removing one broken candidate;
+- fallback if all dynamic candidates fail;
+- rollback to prior pool;
+- unchanged semantic/gameplay identity;
+- save remains frame/time-free.
+
+## Queue item 115 — multi-GIF runtime integration handoff v2
+
+Create NEW file only:
+- `docs/presentation-prep/MULTI_GIF_RUNTIME_INTEGRATION_HANDOFF_v2.md`
+
+Produce the smallest Lead implementation packet:
+- exact schema fields proposed;
+- resolver/selector functions touched;
+- occurrence-key plumbing;
+- compatibility behavior;
+- exact new tests;
+- exact authoring manifests ready after implementation;
+- no-save-migration preferred path.
+
+Continue items 107–115 sequentially without waiting for Lead review.
