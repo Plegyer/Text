@@ -217,3 +217,19 @@ Recovery order after context loss:
 1. inspect current `main` and open PRs/branches;
 2. read `PROJECT_STATE.md`, `PARALLEL_WORK_BOARD_v1.md` and `CURRENT_PROJECT_HANDOFF_v1.md`;
 3. inspect the active task file inside each worker's actual branch before assigning/reassigning work.
+
+
+## Post-RC full-game production-authoring authorities
+
+Current post-RC subsystem recovery/production authorities:
+
+- `presentation-prep/PRESENTATION_CONTENT_DEPTH_HANDOFF_v6.md` — current presentation/GIF production boundary after PR27; technical presentation remains green, content-specific visuals follow authored Product identities.
+- `presentation-prep/PRESENTATION_HUMAN_ASSET_DECISION_PACKET_v1.md` — neutral human asset/content choices; does not select art direction.
+- `lumber-prep/LUMBER_FINAL_PRODUCT_HANDOFF_v7.md` — current Lumber/Forest Product boundary; preserves exact Hard Work and `activityResult`, separates remaining human decisions from content authoring.
+- `lumber-prep/FOREST_AUTHORING_READY_COMPLETENESS_v2.md` — current Forest route/challenge/season authoring readiness.
+- `qa-prep/QA_CLOSEOUT_PACK_v4.md` — current post-PR27 technical QA closeout and additive QA candidates.
+- `school-prep/SCHOOL_PRODUCT_AUTHORING_HANDOFF_v6.md` — current School Product-authoring boundary.
+- `school-prep/SCHOOL_MANAGEMENT_RESULT_DECISION_SCHEMA_v1.md` — neutral acceptable decision shape for School management/accounting public result.
+- `school-prep/SCHOOL_ARCANA_FOREST_RESULT_DECISION_SCHEMA_v1.md` — neutral acceptable decision shape for School Arcana/Forest public result.
+
+These documents do not replace the locked product baseline. They define the current production-authoring boundary after the green technical RC. When they conflict with direct user decisions or locked product documents, the authority order at the top of this file still applies.
