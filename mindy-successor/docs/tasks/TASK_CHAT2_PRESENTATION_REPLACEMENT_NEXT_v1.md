@@ -1453,3 +1453,25 @@ Define bounded future implementation packages for:
 Separate content authoring dependencies from runtime/media implementation and preserve zero gameplay timing coupling.
 
 Continue items 73–81 sequentially without waiting for Lead review.
+
+
+## Queue item 82 — semantic media brief template
+
+Create NEW file only:
+- `docs/presentation-prep/SEMANTIC_MEDIA_BRIEF_TEMPLATE_v1.md`
+
+Define the smallest brief needed to produce one GIF/static asset for an already-authored semantic `presentationId`:
+- semantic ID;
+- gameplay/content context;
+- visual subject/action;
+- reusable loop vs dedicated asset;
+- season/context variants;
+- static fallback;
+- text fallback;
+- accessibility alt;
+- prohibited gameplay/timing coupling;
+- approval/source-content reference.
+
+The template must allow fast external GIF production without exposing mechanics to the asset producer.
+
+Continue items 74–82 sequentially without waiting for Lead review.
