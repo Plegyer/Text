@@ -988,3 +988,22 @@ Define how to refresh existing LIFE/product traceability as production packages 
 Cover all major systems without converting drafts into locks.
 
 Continue items 56–64 sequentially without waiting for Lead review.
+
+
+## Queue item 65 — worker-branch stale-base risk checklist
+
+Create NEW file only:
+- `docs/qa-prep/WORKER_BRANCH_STALE_BASE_RISK_CHECKLIST_v1.md`
+
+Define Lead checks before integrating long-lived worker branches:
+- current main vs merge base;
+- changed-path ownership;
+- assumptions superseded by newer main;
+- stale negative tests;
+- duplicate docs/evidence;
+- locked invariants unchanged;
+- selective-copy vs full-branch merge decision.
+
+The checklist should support the current diverged long-running worker model.
+
+Continue items 57–65 sequentially without waiting for Lead review.
