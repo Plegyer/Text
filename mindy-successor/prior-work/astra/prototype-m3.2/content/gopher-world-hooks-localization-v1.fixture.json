@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "defaultLocale": "ru",
+  "strings": {
+    "event.gopher.woods-intro.title": {
+      "ru": "Дерево возражает",
+      "en": "The tree objects"
+    },
+    "event.gopher.woods-intro.variant.default.text": {
+      "ru": "Бригадир Бронн, гном шестидесяти лет, вручает вам рабочие перчатки. «Если дерево заговорит, сначала слушаем. В прошлый раз срубили казначея». Ваше появление вызывает столько внимания, что Бронн назначает перерыв на любопытство и обещает вычесть его из собственной зарплаты.",
+      "en": "Bron, a sixty-year-old dwarf foreman, hands you work gloves. “If a tree starts talking, we listen first. Last time, they cut down the treasurer.” Your arrival attracts so much attention that Bron calls a curiosity break and promises to deduct it from his own pay."
+    },
+    "event.gopher.woods-intro.choice.learn.label": {
+      "ru": "Изучить правила артели",
+      "en": "Learn the crew rules"
+    },
+    "event.gopher.woods-intro.choice.learn.text": {
+      "ru": "Теперь вы знакомы с Бронном.",
+      "en": "You now know Bron."
+    },
+    "event.gopher.hunt-intro.title": {
+      "ru": "Лицензия на здравый смысл",
+      "en": "A license for common sense"
+    },
+    "event.gopher.hunt-intro.variant.default.text": {
+      "ru": "Следопыт Рен, эльф, проверяет ваши сапоги. «Редкость — не профессия. Следы читать всё равно придётся». Он показывает безопасную тропу и учит отличать волчий след от отпечатка сапога особенно драматичного оборотня.",
+      "en": "Ren, an elven tracker, checks your boots. “Being unusual is not a profession. You still have to learn to read tracks.” He shows you a safe trail and teaches you to tell a wolf print from the boot mark of an especially dramatic werewolf."
+    },
+    "event.gopher.hunt-intro.choice.learn.label": {
+      "ru": "Пройти инструктаж",
+      "en": "Take the briefing"
+    },
+    "event.gopher.hunt-intro.choice.learn.text": {
+      "ru": "Вы познакомились с Реном. Сегодня вы проверяете тропы без самостоятельного боя.",
+      "en": "You meet Ren. Today you check the trails without fighting on your own."
+    },
+    "event.gopher.landlord.title": {
+      "ru": "Комната с видом на чужие планы",
+      "en": "A room with a view of other people’s plans"
+    },
+    "event.gopher.landlord.variant.default.text": {
+      "ru": "Силан, сатир ста двенадцати лет, приносит чай и два экземпляра договора. «Этот для тебя. Этот для меня. Третий украл суслик, так что нотариус уже в курсе». Он объясняет, где учатся, кто нанимает работников и почему дворцовые подарки стоит читать с оборота.",
+      "en": "Silan, a one-hundred-and-twelve-year-old satyr, brings tea and two copies of the agreement. “This one is yours. This one is mine. The gopher stole the third, so the notary already knows.” He explains where people study, who is hiring, and why palace gifts are worth reading on the reverse side."
+    },
+    "event.gopher.landlord.choice.tea.label": {
+      "ru": "Поблагодарить за помощь",
+      "en": "Thank him for the help"
+    },
+    "event.gopher.landlord.choice.tea.text": {
+      "ru": "Силан обещает предупреждать о платежах. Плату за комнату можно внести перед сном.",
+      "en": "Silan promises to warn you about payments. The room fee can be paid before sleep."
+    }
+  }
+}
