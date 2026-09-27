@@ -52,6 +52,8 @@ Historical:
 - `ARCHITECTURE_MIGRATION_SLICE_v1.md`
 - `qa-prep/ARCHITECTURE_MIGRATION_GATE_FINAL_v1.md` — final integrated A1–A6 gate evidence.
 - `qa-prep/PRODUCT_ACCEPTANCE_HARNESS_v1.md` — executable PA00–PA26 mapping skeleton.
+- `qa-prep/RC_CLOSEOUT_STATUS_v1.md` — current post-PR25 technical RC status; distinguishes GREEN runtime/QA from still-open authoring/content depth.
+- `qa-prep/RC_HUMAN_DECISIONS_REQUIRED_v1.md` — neutral decision ledger for remaining human/Product choices; no preferred answers selected.
 - `PRODUCT_ACCEPTANCE_SLICE_v0.md`
 - `FIRST_RELEASE_SCOPE_DRAFT_v0.md`
 - `FULL_TZ_READINESS_REVIEW_v0.md`
@@ -84,6 +86,8 @@ Historical:
 - `SUCCESSOR_JOB_SEASON_MATRIX_v0.csv`
 - `JOB_STAT_TRADEOFF_PASS_v0.md` (historical/superseded)
 
+- `lumber-prep/LUMBER_FINAL_RC_ACCEPTANCE_MATRIX_v1.md` — current Lumber-facing PA classification after PR24/25.
+
 Career drafts:
 - Lumber
 - Satyr Maid
@@ -107,6 +111,7 @@ Career drafts:
 
 ### School
 - `SCHOOL_SYSTEM_v2.md`
+- `school-prep/SCHOOL_AUTHORING_DECISION_READY_PACKET_v1.md` — current neutral School decision packet after PR25.
 - `SCHOOL_BALANCE_MATRIX_v0.csv`
 - `SCHOOL_REACHABILITY_SIMULATION_v1.md`
 - `SCHOOL_SYSTEM_DRAFT_v1.md` (historical)
@@ -126,6 +131,7 @@ Career drafts:
 
 ### Items
 - `ITEM_SYSTEM_DRAFT_v0.md`
+- `lumber-prep/OLD_BOUNDARY_TOKEN_PRODUCT_DECISION_IMPACT_v1.md` — current neutral token decision impact matrix.
 - `INITIAL_ITEM_CATALOG_v0.md`
 
 ### Economy / poverty
@@ -147,6 +153,7 @@ Career drafts:
 
 ### UI/media
 - `GIF_CENTRAL_STAGE_CONTRACT_v1.md`
+- `presentation-prep/PRESENTATION_RC_EVIDENCE_PACK_v1.md` — current RC presentation evidence/asset status; zero blocking presentation assets.
 - `TARGET_GAME_SHELL_v0.md`
 - `MEDIA_PRESENTATION_CONTRACT_v0.md`
 
