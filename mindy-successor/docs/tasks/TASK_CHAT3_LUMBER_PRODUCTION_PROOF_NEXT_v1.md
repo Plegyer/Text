@@ -1350,3 +1350,33 @@ Define acceptance for the first real poverty implementation package after Produc
 Do not claim the package exists yet.
 
 Continue items 72–80 sequentially without waiting for Lead review.
+
+
+## Queue item 81 — poverty bounded implementation handoff v2
+
+Create NEW file only:
+- `docs/poverty-prep/POVERTY_BOUNDED_IMPLEMENTATION_HANDOFF_v2.md`
+
+Summarize what Lead can implement now versus after Product decisions.
+
+At minimum separate:
+- already-shipped normal/cheap/street lodging;
+- ordinary street-event production content;
+- Secret Debt lender event;
+- delayed activation persistence;
+- bound-career availability gating;
+- forced Night;
+- three outcomes;
+- Meta rewards;
+- presentation follow-up.
+
+For each row classify:
+- READY_NOW;
+- CONTENT_AUTHORING_REQUIRED;
+- PRODUCT_DECISION_REQUIRED;
+- BOUNDED_RUNTIME_EXTENSION_REQUIRED;
+- OPTIONAL_POLISH.
+
+Preserve Palace exclusion and all Lumber locked invariants.
+
+Continue items 73–81 sequentially without waiting for Lead review.
