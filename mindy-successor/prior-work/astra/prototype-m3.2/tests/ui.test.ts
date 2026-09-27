@@ -266,3 +266,113 @@ test('renderer: Forest result scene localizes RU EN without changing pending gam
   assert.deepEqual(errors,[]);
  }finally{dom.window.close();}
 });
+
+
+test('renderer: School RU EN localization preserves course command and pending scene identity',async()=>{
+ const initial=started();
+ initial.run.resources.money=2_000;
+ initial.run.dayState.energyCurrent=3;
+ const reasonBefore=initial.run.character.stats.reason;
+ const witsBefore=initial.run.character.stats.wits;
+ const {w,dom,errors}=boot(JSON.stringify(initial));try{
+  await wait(()=>!!w.document.querySelector('[data-panel="school"]'));
+  const beforeLocale=w.localStorage.getItem('portal-life.v1');
+  w.document.querySelector('[data-panel="school"]').click();
+  assert.match(w.document.querySelector('.panel h2').textContent,/Школа/);
+  const literacyRu=w.document.querySelector('[data-school-course="school.course.literacy_and_numbers"]').closest('article');
+  assert.match(literacyRu.textContent,/Грамотность и счёт/);
+  assert.match(literacyRu.textContent,/Практическая грамотность/);
+  assert.match(literacyRu.textContent,/Разум \+4/);
+  assert.match(literacyRu.textContent,/Стоимость: 300 монет/);
+  assert.match(literacyRu.querySelector('button').textContent,/Учиться/);
+  const idsRu=[...w.document.querySelectorAll('[data-school-course]')].map((node:any)=>node.getAttribute('data-school-course'));
+
+  w.document.querySelector('#close').click();
+  w.document.querySelector('[data-panel="menu"]').click();
+  w.document.querySelector('#language-toggle').click();
+  await wait(()=>w.document.documentElement.lang==='en');
+  assert.equal(w.localStorage.getItem('portal-life.v1'),beforeLocale);
+  w.document.querySelector('#close').click();
+  w.document.querySelector('[data-panel="school"]').click();
+  const literacyEn=w.document.querySelector('[data-school-course="school.course.literacy_and_numbers"]').closest('article');
+  assert.match(w.document.querySelector('.panel h2').textContent,/School/);
+  assert.match(literacyEn.textContent,/Literacy & Numbers/);
+  assert.match(literacyEn.textContent,/Practical literacy/);
+  assert.match(literacyEn.textContent,/Reason \+4/);
+  assert.match(literacyEn.textContent,/Tuition: 300 coins/);
+  assert.match(literacyEn.querySelector('button').textContent,/Study/);
+  const idsEn=[...w.document.querySelectorAll('[data-school-course]')].map((node:any)=>node.getAttribute('data-school-course'));
+  assert.deepEqual(idsEn,idsRu);
+
+  literacyEn.querySelector('button').click();
+  await wait(()=>{
+   const raw=w.localStorage.getItem('portal-life.v1');
+   return !!raw&&JSON.parse(raw).run.flow.pendingScene?.eventId==='base.school';
+  });
+  const pendingEnRaw=w.localStorage.getItem('portal-life.v1');
+  const pendingEn=JSON.parse(pendingEnRaw);
+  assert.equal(pendingEn.run.resources.money,1_700);
+  assert.equal(pendingEn.run.dayState.energyCurrent,2);
+  assert.equal(pendingEn.run.character.stats.reason,reasonBefore+4);
+  assert.equal(pendingEn.run.character.stats.wits,witsBefore+2);
+  assert.equal(pendingEn.run.flow.lastAction.id,'school');
+  assert.equal(pendingEn.run.flow.lastAction.presentationId,'school/literacy-and-numbers/lesson/default');
+  assert.equal(pendingEn.run.flow.pendingScene.eventId,'base.school');
+  assert.equal(pendingEn.run.flow.pendingScene.variantId,'lesson');
+  assert.match(w.document.querySelector('.stage-title h1').textContent,/The Steady Boil Class/);
+  assert.match(w.document.querySelector('.dialogue p').textContent,/If a potion argues with you/);
+  assert.match(w.document.querySelector('[data-choice="listen"]').textContent,/Write down the rule/);
+  assert.match(w.document.querySelector('.media-window img').getAttribute('alt'),/alchemy workshop/);
+
+  w.document.querySelector('[data-panel="menu"]').click();
+  w.document.querySelector('#language-toggle').click();
+  await wait(()=>w.document.documentElement.lang==='ru');
+  assert.equal(w.localStorage.getItem('portal-life.v1'),pendingEnRaw);
+  assert.match(w.document.querySelector('.stage-title h1').textContent,/Класс устойчивого кипения/);
+  assert.match(w.document.querySelector('.dialogue p').textContent,/Если зелье спорит с вами/);
+  assert.match(w.document.querySelector('[data-choice="listen"]').textContent,/Записать правило/);
+
+  w.document.querySelector('#close').click();
+  w.document.querySelector('[data-choice="listen"]').click();
+  await wait(()=>{
+   const raw=w.localStorage.getItem('portal-life.v1');
+   return !!raw&&JSON.parse(raw).run.flow.pendingScene===null;
+  });
+  const resolved=JSON.parse(w.localStorage.getItem('portal-life.v1'));
+  assert.equal(resolved.run.legacyCompat?.flags?.['school.enrolled'],true);
+  assert.match(w.document.querySelector('.stage-title h1')?.textContent??'',/Грамотность и счёт/);
+  assert.match(w.document.querySelector('.dialogue p')?.textContent??'',/Урок завершён: Грамотность и счёт/);
+  assert.deepEqual(errors,[]);
+ }finally{dom.window.close();}
+});
+
+test('renderer: School Night-study labels localize without changing NightFlow save',async()=>{
+ const initial=started();
+ initial.run.resources.money=2_000;
+ initial.run.dayState.energyCurrent=3;
+ const {w,dom,errors}=boot(JSON.stringify(initial));try{
+  await wait(()=>!!w.document.querySelector('[data-panel="sleep"]'));
+  w.document.querySelector('[data-panel="sleep"]').click();
+  w.document.querySelector('[data-end-day]').click();
+  await wait(()=>!!w.document.querySelector('[data-lodging="lodging.normal"]'));
+  w.document.querySelector('[data-lodging="lodging.normal"]').click();
+  await wait(()=>!!w.document.querySelector('[data-night-choice="school.night_study.literacy_and_numbers.reason"]'));
+  const ru=w.document.querySelector('[data-night-choice="school.night_study.literacy_and_numbers.reason"]').closest('article');
+  assert.match(ru.textContent,/Ночная учёба: Грамотность и счёт — Разум/);
+  assert.match(ru.textContent,/выбранная характеристика \+2/);
+  assert.match(ru.querySelector('button').textContent,/Учиться ночью/);
+  const before=w.localStorage.getItem('portal-life.v1');
+
+  w.document.querySelector('[data-panel="menu"]').click();
+  w.document.querySelector('#language-toggle').click();
+  await wait(()=>w.document.documentElement.lang==='en');
+  assert.equal(w.localStorage.getItem('portal-life.v1'),before);
+  w.document.querySelector('#close').click();
+  const en=w.document.querySelector('[data-night-choice="school.night_study.literacy_and_numbers.reason"]').closest('article');
+  assert.match(en.textContent,/Night study: Literacy & Numbers — Reason/);
+  assert.match(en.textContent,/selected stat gains \+2/);
+  assert.match(en.querySelector('button').textContent,/Study at night/);
+  assert.equal(w.localStorage.getItem('portal-life.v1'),before);
+  assert.deepEqual(errors,[]);
+ }finally{dom.window.close();}
+});

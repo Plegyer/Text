@@ -297,6 +297,230 @@
     "media.forest-result-content-v1.failure.alt": {
       "ru": "Возвращение после неудачной лесной экспедиции.",
       "en": "Return after a failed Forest expedition."
+    },
+    "ui.school.title": {
+      "ru": "Школа",
+      "en": "School"
+    },
+    "ui.school.help": {
+      "ru": "Восемь оплачиваемых курсов. Оплата и 1 единица текущей Energy списываются атомарно только при успешном уроке.",
+      "en": "Eight paid courses. Tuition and 1 current-day Energy are charged atomically only when a lesson succeeds."
+    },
+    "ui.school.lessonButton": {
+      "ru": "Учиться",
+      "en": "Study"
+    },
+    "ui.school.tuitionEnergy": {
+      "ru": "Стоимость: {tuition} монет · Энергия сегодня: {energy}",
+      "en": "Tuition: {tuition} coins · Energy today: {energy}"
+    },
+    "ui.school.nightStudyButton": {
+      "ru": "Учиться ночью",
+      "en": "Study at night"
+    },
+    "ui.school.nightStudyContext": {
+      "ru": "Ночная учёба не требует оплаты или текущей Energy: выбранная характеристика +2, Energy следующего дня −1.",
+      "en": "Night study costs no tuition or current-day Energy: the selected stat gains +2 and next-day Energy is −1."
+    },
+    "school.course.literacy_and_numbers.label": {
+      "ru": "Грамотность и счёт",
+      "en": "Literacy & Numbers"
+    },
+    "school.course.literacy_and_numbers.description": {
+      "ru": "Практическая грамотность, счёт, работа с записями и ясное объяснение.",
+      "en": "Practical literacy, numeracy, record work, and clear explanation."
+    },
+    "school.course.arcana.label": {
+      "ru": "Аркана",
+      "en": "Arcana"
+    },
+    "school.course.arcana.description": {
+      "ru": "Наблюдение, магическая теория, безопасный эксперимент и проверка гипотез.",
+      "en": "Observation, magical theory, careful experimentation, and testing hypotheses."
+    },
+    "school.course.rhetoric_and_social.label": {
+      "ru": "Риторика и общение",
+      "en": "Rhetoric & Social"
+    },
+    "school.course.rhetoric_and_social.description": {
+      "ru": "Речь, слушание, чтение социальной ситуации и адаптация подачи.",
+      "en": "Speaking, listening, reading social situations, and adapting delivery."
+    },
+    "school.course.etiquette_and_presentation.label": {
+      "ru": "Этикет и самопрезентация",
+      "en": "Etiquette & Presentation"
+    },
+    "school.course.etiquette_and_presentation.description": {
+      "ru": "Социальные правила, подготовка, уход, осанка и осознанная самопрезентация.",
+      "en": "Social conventions, preparation, grooming, posture, and deliberate presentation."
+    },
+    "school.course.field_craft.label": {
+      "ru": "Полевая практика",
+      "en": "Field Craft"
+    },
+    "school.course.field_craft.description": {
+      "ru": "Наблюдение, маршруты, практические инструменты и надёжная импровизация.",
+      "en": "Observation, route choice, practical tools, and reliable improvisation."
+    },
+    "school.course.physical_training.label": {
+      "ru": "Физическая подготовка",
+      "en": "Physical Training"
+    },
+    "school.course.physical_training.description": {
+      "ru": "Сила, выносливость, координация, техника и восстановление.",
+      "en": "Strength, endurance, coordination, technique, and recovery."
+    },
+    "school.course.arts_and_performance.label": {
+      "ru": "Искусство и выступление",
+      "en": "Arts & Performance"
+    },
+    "school.course.arts_and_performance.description": {
+      "ru": "Творческий выбор, ритм, выразительность, репетиция и сценическое взаимодействие.",
+      "en": "Creative choices, rhythm, expression, rehearsal, and performance interaction."
+    },
+    "school.course.body_confidence.label": {
+      "ru": "Уверенность в теле",
+      "en": "Body Confidence"
+    },
+    "school.course.body_confidence.description": {
+      "ru": "Движение, уход за собой, границы и осознанная самопрезентация.",
+      "en": "Movement, grooming, boundaries, and deliberate self-presentation."
+    },
+    "ui.school.nightStudyChoice": {
+      "ru": "Ночная учёба: {course} — {stat}",
+      "en": "Night study: {course} — {stat}"
+    },
+    "ui.school.lessonResult": {
+      "ru": "Урок завершён: {course}.",
+      "en": "School lesson completed: {course}."
+    },
+    "stat.reason.label": {
+      "ru": "Разум",
+      "en": "Reason"
+    },
+    "stat.wits.label": {
+      "ru": "Смекалка",
+      "en": "Wits"
+    },
+    "stat.magic.label": {
+      "ru": "Магия",
+      "en": "Magic"
+    },
+    "stat.creativity.label": {
+      "ru": "Творчество",
+      "en": "Creativity"
+    },
+    "stat.charm.label": {
+      "ru": "Обаяние",
+      "en": "Charm"
+    },
+    "stat.sociability.label": {
+      "ru": "Общительность",
+      "en": "Sociability"
+    },
+    "stat.manners.label": {
+      "ru": "Манеры",
+      "en": "Manners"
+    },
+    "stat.grooming.label": {
+      "ru": "Ухоженность",
+      "en": "Grooming"
+    },
+    "stat.dexterity.label": {
+      "ru": "Ловкость",
+      "en": "Dexterity"
+    },
+    "stat.strength.label": {
+      "ru": "Сила",
+      "en": "Strength"
+    },
+    "stat.endurance.label": {
+      "ru": "Выносливость",
+      "en": "Endurance"
+    },
+    "stat.sexuality.label": {
+      "ru": "Сексуальность",
+      "en": "Sexuality"
+    },
+    "event.school-lesson-content-v1.after-school.title": {
+      "ru": "Размышление после урока",
+      "en": "School lesson reflection"
+    },
+    "event.school-lesson-content-v1.after-school.variant.default.text": {
+      "ru": "Оплаченный урок завершён. Короткое осмысление помогает уложить материал без изменения транзакции урока и без дополнительной платы.",
+      "en": "The paid School lesson is complete. A short reflection settles the material without changing the lesson transaction or adding another cost."
+    },
+    "event.school-lesson-content-v1.after-school.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue"
+    },
+    "event.school-lesson-content-v1.after-school.choice.continue.text": {
+      "ru": "Вернуться к дневным делам после урока.",
+      "en": "Return to the day after the lesson."
+    },
+    "media.school.lesson.context.default.alt": {
+      "ru": "Учебная сцена после школьного урока.",
+      "en": "School lesson context."
+    },
+    "event.school-life-content-v1.after-paid-lesson.title": {
+      "ru": "После школьного урока",
+      "en": "After the School lesson"
+    },
+    "event.school-life-content-v1.after-paid-lesson.variant.default.text": {
+      "ru": "Оплаченный урок завершён. В классе наступает короткая пауза для осмысления без дополнительных эффектов, прежде чем день продолжится.",
+      "en": "The paid lesson is complete. The classroom settles into a short, effect-free reflection before the rest of the day continues."
+    },
+    "event.school-life-content-v1.after-paid-lesson.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue"
+    },
+    "event.school-life-content-v1.after-paid-lesson.choice.continue.text": {
+      "ru": "Вернуться к дневным делам.",
+      "en": "Return to the day."
+    },
+    "media.school.life.classroom.default.alt": {
+      "ru": "Школьный класс как резервная сцена для событий школьной жизни.",
+      "en": "A School classroom used as a fallback for authored School-life scenes."
+    },
+    "event.school-life-content-v1.after-night-study.title": {
+      "ru": "После ночной учёбы",
+      "en": "After Night study"
+    },
+    "event.school-life-content-v1.after-night-study.variant.default.text": {
+      "ru": "Ночная учёба спокойно завершается. Эта сцена не добавляет оплату, расход текущей Energy, прирост характеристики или прогресс школы сверх уже завершённого ночного действия.",
+      "en": "Night study winds down quietly. The presentation adds no extra tuition, current-day Energy cost, stat gain, or School progress beyond the completed Night-study action."
+    },
+    "event.school-life-content-v1.after-night-study.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue"
+    },
+    "event.school-life-content-v1.after-night-study.choice.continue.text": {
+      "ru": "Продолжить ночь.",
+      "en": "Let the Night flow continue."
+    },
+    "media.school.life.night-study.default.alt": {
+      "ru": "Тихая учебная сцена как резервное изображение ночной учёбы.",
+      "en": "A quiet School study scene used as a fallback for Night-study presentation."
+    },
+    "event.base.school.title": {
+      "ru": "Класс устойчивого кипения",
+      "en": "The Steady Boil Class"
+    },
+    "event.base.school.variant.lesson.text": {
+      "ru": "Преподаватель начинает с главного: «Если зелье спорит с вами, не спорьте в ответ». Ваш сосед по парте немедленно прячет говорящую колбу.",
+      "en": "The teacher starts with the essential rule: “If a potion argues with you, do not argue back.” Your desk neighbor immediately hides a talking flask."
+    },
+    "event.base.school.choice.listen.label": {
+      "ru": "Записать правило",
+      "en": "Write down the rule"
+    },
+    "event.base.school.choice.listen.text": {
+      "ru": "Вы записали правило и имя преподавателя. Колба потребовала записать и её.",
+      "en": "You write down the rule and the teacher's name. The flask demands to be written down too."
+    },
+    "media.base.workshop.alt": {
+      "ru": "Условная иллюстрация алхимической лавки.",
+      "en": "A stylized illustration of the alchemy workshop."
     }
   }
 }
