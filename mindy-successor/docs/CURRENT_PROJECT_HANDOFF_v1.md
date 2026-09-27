@@ -1022,3 +1022,54 @@ Current main after PR #40:
 - post-merge main CI SUCCESS;
 - Work UI exposes all 10 target ordinary careers;
 - `lumber.shift` reuses existing Lumber wage formula and UI regression proves money is awarded through the rendered Work flow.
+
+
+## 25. Live runtime milestone — RU/EN + multi-GIF
+
+This is a live recovery snapshot, not final transfer.
+
+### PR #41 — bilingual runtime
+
+Merged as `974d6e077ffc511e304a64aef32f2aab81167f41`.
+
+Exact-head CI: **291/291 PASS**.
+
+Shipped:
+- RU + EN runtime;
+- Russian fallback;
+- locale stored outside life Save;
+- first localized town/HUD/Work slice;
+- all 10 target ordinary career labels/descriptions RU+EN;
+- locale switching proven not to change Work action IDs, availability or life Save.
+
+### PR #42 — multi-GIF runtime
+
+Merged as `55adc69dcda4c41c71548cd146756896fa5976d0`.
+
+Exact-head CI: **295/295 PASS**.
+
+Shipped:
+- presentation slot pool of 3–5 GIF candidates;
+- stable candidate keys;
+- deterministic presentation-only selection using existing persisted occurrence identity;
+- no gameplay RNG consumption;
+- no Save migration/frame/time fields;
+- reload-stable candidate selection;
+- RU↔EN switch keeps same candidate;
+- animations-off static fallback;
+- old primary/static override compatibility.
+
+The Product model is now executable:
+**one gameplay event / one semantic presentation identity / multiple visual candidates**.
+
+### Immediate production direction
+
+Do not spend the next phase on more shared architecture unless a concrete integration blocker proves it necessary.
+
+Lead should now selectively integrate:
+- safe School RU/EN content;
+- Forest bilingual/result content;
+- ordinary-poverty localization;
+- real multi-GIF pools when real assets are available.
+
+Placeholder GIF paths/manifests are staging evidence only and must not be counted as shipped visual content.
