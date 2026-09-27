@@ -64,7 +64,7 @@ test('teacher semantic presentation surfaces are unique',()=>{
   assert.equal(new Set(mediaIds).size,mediaIds.length);
   assert.equal(new Set(eventIds).size,eventIds.length);
   assert.equal(
-    mediaIds.every((id:string)=>id.startsWith('school/teacher/')),
+    mediaIds.every((id:string)=>id.startsWith('school.teacher.')),
     true
   );
 });
