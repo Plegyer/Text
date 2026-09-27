@@ -233,3 +233,19 @@ Current post-RC subsystem recovery/production authorities:
 - `school-prep/SCHOOL_ARCANA_FOREST_RESULT_DECISION_SCHEMA_v1.md` — neutral acceptable decision shape for School Arcana/Forest public result.
 
 These documents do not replace the locked product baseline. They define the current production-authoring boundary after the green technical RC. When they conflict with direct user decisions or locked product documents, the authority order at the top of this file still applies.
+
+
+## Full-game production wave 1 authorities
+
+The first post-RC full-game production-authoring wave is represented on main by these current subsystem authorities:
+
+- `presentation-prep/FULL_ROSTER_GIF_COVERAGE_MAP_v1.md` — presentation coverage across all 10 ordinary careers plus Palace and Secret Debt/Slave.
+- `presentation-prep/PRESENTATION_PRODUCTION_CONTINUITY_PACK_v7.md` — current GIF-first production continuity boundary.
+- `poverty-prep/ORDINARY_POVERTY_IMPLEMENTATION_READINESS_v1.md` — ordinary poverty/housing implementation-ready structure without locking open balance values.
+- `poverty-prep/POVERTY_SECRET_DEBT_PRODUCTION_HANDOFF_v1.md` — current ordinary-poverty + Secret Debt/Slave production boundary.
+- `qa-prep/FULL_PRODUCT_SCOPE_PRESERVATION_AUDIT_v1.md` — verifies the project remains the full successor game rather than a Lumber-only slice.
+- `qa-prep/NEXT_PHASE_LEAD_QA_HANDOFF_v5.md` — current QA handoff for full-game production packages.
+- `school-prep/SCHOOL_EIGHT_TRACK_TEACHER_AUTHORING_MATRIX_v1.md` — OPEN teacher/presenter authoring structure for all eight School tracks.
+- `school-prep/SCHOOL_PRODUCTION_CONTINUITY_PACK_v7.md` — current School production-authoring continuity boundary.
+
+These files supplement, but do not supersede, `NEW_GAME_SPEC_v1.md`, direct user decisions, or locked technical contracts.
