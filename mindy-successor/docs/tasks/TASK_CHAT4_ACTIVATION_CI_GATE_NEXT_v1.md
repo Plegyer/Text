@@ -1075,3 +1075,21 @@ Define required merge evidence by change class:
 For each specify minimum review, targeted test, full-check and post-merge evidence. Preserve the rule that no PASS count is claimed without execution.
 
 Continue items 61–69 sequentially without waiting for Lead review.
+
+
+## Queue item 70 — full-game regression-floor growth policy
+
+Create NEW file only:
+- `docs/qa-prep/FULL_GAME_REGRESSION_FLOOR_GROWTH_POLICY_v1.md`
+
+Define how the retained regression floor should grow as new careers/systems ship:
+- keep architecture/save core;
+- add one natural-path smoke per major system;
+- add exact locked-invariant sentinels;
+- avoid redundant fixture-only duplication;
+- distinguish content-depth tests from runtime contracts;
+- retire/supersede stale tests without deleting provenance.
+
+No new tests in this task.
+
+Continue items 62–70 sequentially without waiting for Lead review.
