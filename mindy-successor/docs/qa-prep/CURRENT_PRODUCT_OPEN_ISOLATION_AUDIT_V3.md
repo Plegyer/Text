@@ -3,8 +3,8 @@
 Status: COMPLETE / PASS_ISOLATION
 
 Authority reviewed:
-- current main baseline: `23a8798f77c42e84a7540d71fdffd69d9db9fbfd`;
-- PR44 accepted exact head: `07912a4870f82472a01f6ff8d0d81f1f67081593`;
+- current main: `ab53da4059e348734703c2de490e43e94c02b057` (PR44 merge);
+- PR44 accepted exact head: `07912a4870f82472a01f6ff8d0d81f1f67081593`, merged as `ab53da4059e348734703c2de490e43e94c02b057`;
 - Chat 3 ordinary-poverty localization stream;
 - Chat 2 real-GIF sourcing stream;
 - Chat 5 Relationships/Night stream.
@@ -28,7 +28,7 @@ That consumer seam does not establish the missing upstream School provider/thres
 
 ### PR44
 
-PR44 is localization/presentation integration only.
+PR44 is now merged localization/presentation integration only; post-merge main CI is green.
 
 The accepted exact head:
 - localizes current reachable School UI/event/media surfaces;
