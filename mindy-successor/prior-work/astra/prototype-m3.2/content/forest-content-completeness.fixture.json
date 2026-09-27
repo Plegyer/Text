@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "id": "forest.content-completeness.fixture",
+  "status": "TRUTHFUL_VALIDATOR_TARGET",
+  "target": {
+    "routes": [
+      "logging-road",
+      "hunter-trail",
+      "old-boundary"
+    ],
+    "challengeFamilies": [
+      "forest.challenge.navigation",
+      "forest.challenge.physical-obstacle",
+      "forest.challenge.interpretation-ritual-anomaly"
+    ],
+    "seasonTopology": {
+      "required": true,
+      "rule": "at least one route/challenge availability or Activity-resource behavior differs by calendar season"
+    },
+    "saveReload": {
+      "required": true,
+      "contracts": [
+        "Activity envelope persists",
+        "selected route persists",
+        "resolved option/challenge identity persists",
+        "reload does not reroll resolved content",
+        "legacy optionModelVersion 0 remains compatible"
+      ]
+    },
+    "terminalResults": [
+      "lumber.forest.success",
+      "lumber.forest.escape",
+      "lumber.forest.failure"
+    ],
+    "capabilityHooks": {
+      "required": true,
+      "rule": "at least one route/challenge option uses authoritative itemCapability/public capability gating"
+    }
+  },
+  "mergedMainAssessment": {
+    "fullComplete": false,
+    "routes": {
+      "logging-road": true,
+      "hunter-trail": false,
+      "old-boundary": true
+    },
+    "challengeFamilies": {
+      "forest.challenge.navigation": false,
+      "forest.challenge.physical-obstacle": false,
+      "forest.challenge.interpretation-ritual-anomaly": false
+    },
+    "seasonTopology": false,
+    "saveReload": true,
+    "distinctTerminalResults": true,
+    "capabilityHooks": true,
+    "missing": [
+      "hunter-trail",
+      "navigation challenge content",
+      "physical obstacle challenge content",
+      "interpretation/ritual anomaly challenge content",
+      "season-dependent topology/options"
+    ]
+  },
+  "invariants": {
+    "currentFailureIsExpected": true,
+    "missingDimensionMayNotBeAutoPassed": true,
+    "noLoreOrThresholdInvented": true,
+    "hardWorkIndependent": true,
+    "hardWorkCondition": {
+      "kind": "careerCounter",
+      "career": "lumber",
+      "counter": "completed_shifts",
+      "op": "gte",
+      "value": 50
+    },
+    "hardWorkRewardId": "hardWork:lumber",
+    "exactA5": "activityResult"
+  }
+}
