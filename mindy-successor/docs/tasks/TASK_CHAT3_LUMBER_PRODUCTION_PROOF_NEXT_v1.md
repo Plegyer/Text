@@ -1850,3 +1850,80 @@ Summarize:
 - no runtime/schema changes in this wave.
 
 Continue items 105–113 sequentially without waiting for Lead review.
+
+
+## Queue item 114 — Forest route authored scene bank v1
+
+Create NEW file only:
+- `docs/lumber-prep/FOREST_ROUTE_AUTHORED_SCENE_BANK_v1.md`
+
+Author concrete non-mechanical scene content for already-directed Forest route families:
+- logging road;
+- hunter trail only where identity is already authoritative;
+- old boundary area without deciding unresolved token semantics;
+- generic deep-forest navigation.
+
+Keep route mechanics/thresholds unchanged or OPEN.
+
+## Queue item 115 — Forest challenge family content bank v1
+
+Create NEW file only:
+- `docs/lumber-prep/FOREST_CHALLENGE_FAMILY_CONTENT_BANK_v1.md`
+
+Author reusable content for:
+- navigation challenges;
+- physical obstacles;
+- interpretation/ritual anomalies.
+
+For each provide several text variants and presentation hooks without inventing success formulas or rewards.
+
+## Queue item 116 — Forest seasonal context bank v1
+
+Create NEW file only:
+- `docs/lumber-prep/FOREST_SEASONAL_CONTEXT_BANK_v1.md`
+
+Author spring/summer/autumn/winter context variants for existing Forest route/challenge families.
+
+Do not alter route topology mechanics unless already authoritative.
+
+## Queue item 117 — Forest result reaction production pack
+
+Create NEW production-oriented file only:
+- `prior-work/astra/prototype-m3.2/content/packs/forest-result-content-v1.json`
+
+Using current pack/event primitives, add safe authored reactions to exact Forest `activityResult` success/escape/failure boundaries.
+
+Requirements:
+- exact `activityResult` trigger;
+- content/presentation effects only unless an already-authoritative public effect exists;
+- never alter Lumber Hard Work;
+- strict pack namespace;
+- fallback media from existing assets.
+
+## Queue item 118 — Forest result content regression
+
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/forest-result-content-v1.test.ts`
+
+Validate item 117:
+- exact activityResult triggers;
+- success/escape/failure identities remain distinct;
+- save/reload stability;
+- no duplicate effect;
+- no Hard Work dependency/reward change;
+- presentation fallback resolves.
+
+## Queue item 119 — Forest authored-content integration handoff v3
+
+Create NEW file only:
+- `docs/lumber-prep/FOREST_AUTHORED_CONTENT_INTEGRATION_HANDOFF_v3.md`
+
+Summarize items 114–118 plus Secret Debt items 111–113 once complete:
+- Forest content ready for production;
+- exact pack/test files;
+- unresolved Old Boundary Token/hunter-trail Product choices;
+- Secret Debt authored content ready but mechanics decisions still OPEN;
+- multi-GIF opportunities;
+- selective integration order.
+
+Continue items 111–119 sequentially without waiting for Lead review.
