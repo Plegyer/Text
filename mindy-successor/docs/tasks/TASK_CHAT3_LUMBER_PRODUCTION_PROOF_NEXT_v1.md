@@ -2137,3 +2137,53 @@ Create NEW file only:
 Summarize production-safe Forest bilingual content, exact files/tests, Product-blocked route identities, and selective integration order.
 
 Continue items 127–135 sequentially without waiting for Lead review.
+
+
+## Queue item 136 — ordinary poverty localization source inventory v2
+
+Create NEW file only:
+- `docs/poverty-prep/ORDINARY_POVERTY_LOCALIZATION_SOURCE_INVENTORY_v2.md`
+
+Inventory current production ordinary-poverty player-facing text from PR37 and map deterministic locale-neutral localization keys.
+
+Cover:
+- street;
+- cheap lodging;
+- recovery/help;
+- pressure/bad-luck.
+
+Classify RU_READY / EN_READY / FALLBACK_DEBT.
+
+## Queue item 137 — ordinary poverty RU+EN migration bundle v1
+
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/poverty-localization-migration-v1.fixture.json`
+
+Provide RU+EN localized text for current ordinary-poverty production identities using the Lead localization bundle shape.
+
+No Secret Debt content.
+
+## Queue item 138 — ordinary poverty localization contract test v1
+
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/poverty-localization-migration-v1.test.ts`
+
+Validate:
+- RU+EN coverage;
+- locale-neutral event IDs;
+- no duplicated localized gameplay events;
+- no conditions/effects/rewards differ by locale;
+- fallback debt explicit.
+
+## Queue item 139 — ordinary poverty bilingual multi-GIF adoption map v1
+
+Create NEW file only:
+- `docs/poverty-prep/ORDINARY_POVERTY_BILINGUAL_MULTI_GIF_ADOPTION_v1.md`
+
+Map current PR37 semantic presentation identities to:
+- 3–5 shared media candidates;
+- RU/EN alt localization keys;
+- static fallback;
+- real-vs-placeholder asset status.
+
+Continue items 131–139 sequentially without waiting for Lead review.
