@@ -1,0 +1,215 @@
+{
+  "schemaVersion": 1,
+  "id": "old-boundary-token.decision-vectors.fixture",
+  "status": "OPTION_NEUTRAL_TEST_VECTORS",
+  "locked": {
+    "itemId": "old_boundary_token",
+    "capabilityId": "enter_old_boundary",
+    "capabilityDerivedFromInventory": true,
+    "forestEntryRequiresToken": false,
+    "oldBoundaryRouteRequiresCapability": true
+  },
+  "dimensions": [
+    {
+      "id": "acquisition-source-type",
+      "selected": null,
+      "vectors": [
+        {
+          "id": "tavern-old-owner-family",
+          "sourceFamily": "tavern-old-owner",
+          "concreteProviderId": null,
+          "expectedInvariants": [
+            "grant uses authoritative old_boundary_token item",
+            "grant transaction follows authored exactly-once policy",
+            "inventory survives reload",
+            "enter_old_boundary is false before actual item ownership and true after ownership"
+          ],
+          "downstreamTests": [
+            "source eligibility positive/negative",
+            "reload before/after grant",
+            "duplicate grant policy"
+          ]
+        },
+        {
+          "id": "relationship-family",
+          "sourceFamily": "relationship",
+          "concreteProviderId": null,
+          "expectedInvariants": [
+            "grant uses authoritative old_boundary_token item",
+            "relationship-private state is not inferred by Forest",
+            "inventory survives reload",
+            "capability comes from item ownership"
+          ],
+          "downstreamTests": [
+            "relationship/public boundary",
+            "reload before/after grant",
+            "duplicate grant policy"
+          ]
+        },
+        {
+          "id": "hunter-family",
+          "sourceFamily": "hunter",
+          "concreteProviderId": null,
+          "expectedInvariants": [
+            "grant uses authoritative old_boundary_token item",
+            "Hunter source publishes/awards through an explicit content transaction",
+            "inventory survives reload",
+            "capability comes from item ownership"
+          ],
+          "downstreamTests": [
+            "Hunter source boundary",
+            "reload before/after grant",
+            "no fake Hunter item identity"
+          ]
+        },
+        {
+          "id": "hidden-city-event-family",
+          "sourceFamily": "hidden-city-event",
+          "concreteProviderId": null,
+          "expectedInvariants": [
+            "grant uses authoritative old_boundary_token item",
+            "event completion is persisted according to authored repeatability",
+            "inventory survives reload",
+            "capability comes from item ownership"
+          ],
+          "downstreamTests": [
+            "event eligibility",
+            "reload before/after grant",
+            "event replay policy"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "retain-vs-consume",
+      "selected": null,
+      "vectors": [
+        {
+          "id": "retained",
+          "policy": "retained",
+          "expectedInvariants": [
+            "accepted route use does not decrement token count",
+            "enter_old_boundary remains available while token remains owned",
+            "reload preserves token count and route capability"
+          ],
+          "downstreamTests": [
+            "use route then reload",
+            "second expedition remains eligible while token owned"
+          ]
+        },
+        {
+          "id": "consume-on-use",
+          "policy": "consume-on-use",
+          "expectedInvariants": [
+            "one accepted use decrements token exactly once",
+            "reload cannot restore consumed token",
+            "retry cannot consume a second copy",
+            "enter_old_boundary disappears when inventory count reaches zero unless separate permanent access is explicitly authored"
+          ],
+          "downstreamTests": [
+            "exactly-once removal",
+            "reload/retry after consume",
+            "route availability recomputation"
+          ]
+        },
+        {
+          "id": "turn-in-later",
+          "policy": "turn-in-later",
+          "expectedInvariants": [
+            "route use and later removal are distinct transactions",
+            "token remains owned until explicit turn-in commit",
+            "reload cannot merge or duplicate the two transactions"
+          ],
+          "downstreamTests": [
+            "route-use checkpoint",
+            "turn-in checkpoint",
+            "reload between transactions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "repeatable-vs-one-shot-acquisition",
+      "selected": null,
+      "vectors": [
+        {
+          "id": "one-shot",
+          "sourcePolicy": "one-shot",
+          "expectedInvariants": [
+            "source completion persists",
+            "reload cannot grant a second token from the same one-shot transaction",
+            "future access behavior depends only on selected retain/consume/permanent-access policy"
+          ],
+          "downstreamTests": [
+            "repeat source attempt rejected/absent",
+            "reload after grant",
+            "later Forest expedition"
+          ]
+        },
+        {
+          "id": "repeatable",
+          "sourcePolicy": "repeatable",
+          "expectedInvariants": [
+            "each successful acquisition is an explicit separate transaction",
+            "item count changes exactly once per successful transaction",
+            "reload does not replay the most recent acquisition"
+          ],
+          "downstreamTests": [
+            "two separate acquisitions",
+            "reload between acquisitions",
+            "inventory count parity"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "inventory-visibility",
+      "selected": null,
+      "vectors": [
+        {
+          "id": "visible-inventory",
+          "representation": "visible-item-with-capability-explanation",
+          "fullPA09Compatible": true,
+          "expectedInvariants": [
+            "old_boundary_token is visible in inventory",
+            "enter_old_boundary meaning is discoverable",
+            "route availability matches actual inventory-derived capability"
+          ],
+          "downstreamTests": [
+            "inventory projection",
+            "capability explanation",
+            "route availability parity"
+          ]
+        },
+        {
+          "id": "hidden-capability-only-negative",
+          "representation": "hidden-capability-only",
+          "fullPA09Compatible": false,
+          "expectedInvariants": [
+            "must not be counted as full PA09",
+            "must not replace authoritative old_boundary_token ownership",
+            "worldFact-only capability injection remains insufficient"
+          ],
+          "downstreamTests": [
+            "PA09 false-green negative",
+            "worldFact-only does not grant item capability"
+          ]
+        }
+      ]
+    }
+  ],
+  "globalInvariants": {
+    "noVendorOrConcreteEventInvented": true,
+    "noPreferredOptionSelected": true,
+    "seededInventoryCountsAsNaturalPA09": false,
+    "hardWorkMayDependOnToken": false,
+    "hardWorkCondition": {
+      "kind": "careerCounter",
+      "career": "lumber",
+      "counter": "completed_shifts",
+      "op": "gte",
+      "value": 50
+    },
+    "hardWorkRewardId": "hardWork:lumber"
+  }
+}
