@@ -2119,3 +2119,18 @@ Consolidate items 116–123 with current main/Lead implementation status:
 - selective integration list.
 
 Continue items 116–124 sequentially without waiting for Lead review.
+
+
+## Cross-cutting Product rule — RU + EN from now on
+
+Effective immediately by direct Product decision:
+- the game ships in **Russian and English**;
+- Russian is the source authoring language; English is a full second locale;
+- one gameplay/content identity, one semantic ID, one set of mechanics and one save-state serve both languages;
+- language affects presentation/text only;
+- no locale-specific conditions, rewards, timing, RNG, eligibility or save identity;
+- Presentation/media authoring: all new player-facing alt text, captions, producer-facing text examples and fallback text must provide RU + EN. Semantic IDs/media identity remain language-neutral.
+- if an already-assigned item has player-facing text and is not yet committed, author both locales now;
+- if an item was already committed before this rule, do not rewrite it blindly; record it for localization migration/review.
+
+Do not create a second copy of the gameplay event for English.
