@@ -3,116 +3,99 @@
 Date: 2026-09-27
 Worker: Chat 4 / QA Acceptance
 PR: #38 — Lead: integrate authored School production content
-Reviewed head: d3bc471d2f5b92f57da14ba7a15f5932b6113edc
-Base: 9c994934152c2195ed17e6a18fdd1a301e27852c
+Final reviewed head: d3bc471d2f5b92f57da14ba7a15f5932b6113edc
+Merge commit: f3f062152752474f3021736772ada26c66635e10
 
 ## Final disposition
 
-GREEN on the reviewed exact head.
+GREEN / MERGED.
 
-PR38 is still OPEN / NOT MERGED at review time.
-
-Latest exact-head CI:
+Exact-head CI:
 - run 36312964559
-- conclusion: success
-- tests: 286
-- pass: 286
-- fail: 0
-- validation: Content OK: 16 packs, 43 events, 35 actions, 9 endings
+- 286 tests
+- 286 pass
+- 0 fail
+- validation: 16 packs, 43 events, 35 actions, 9 endings
+
+Post-merge main CI:
+- run 36313062104
+- 286 tests
+- 286 pass
+- 0 fail
+- validation: 16 packs, 43 events, 35 actions, 9 endings
 
 ## Rerun history
 
-The PR was not green on its first integration attempts.
+PR38 required several corrections before merge.
 
-Observed sequence:
-
-1. Head 953b8691e73773eb90c16cd0c0c4cc2bbeae2484
+Observed progression:
+1. head 953b8691e73773eb90c16cd0c0c4cc2bbeae2484
    - run 36312468112
-   - validation failure:
-     school-lesson-content-v1.literacy-and-numbers had no trigger.
+   - content validation failed because a lesson event had no trigger.
 
-2. Head aca9435c6741fb9129e179fbf0a434c4c8f0be31
+2. head aca9435c6741fb9129e179fbf0a434c4c8f0be31
    - run 36312667955
-   - validation passed: 16 packs, 43 events, 35 actions, 9 endings
-   - tests: 280
-   - pass: 276
-   - fail: 4
+   - validation passed;
+   - 276/280 tests passed.
 
-3. Head 223f676995496f88e09ba79af09d7d4b2fdc03fd
+3. head 223f676995496f88e09ba79af09d7d4b2fdc03fd
    - run 36312707356
-   - validation passed
-   - tests: 280
-   - pass: 278
-   - fail: 2
-   - remaining issues:
-     missing school-typed-progress-exactly-once fixture;
-     teacher save test built an incomplete isolated catalog.
+   - 278/280 tests passed;
+   - missing typed-progress fixture and incomplete isolated teacher catalog remained.
 
-4. Head 468403426ca0dbbe2c3216f0c63392af9e5ab858
+4. head 468403426ca0dbbe2c3216f0c63392af9e5ab858
    - run 36312875637
-   - validation passed
-   - tests: 286
-   - pass: 285
-   - fail: 1
-   - remaining issue:
-     generic lesson fallback test built an incomplete isolated catalog.
+   - 285/286 tests passed;
+   - isolated lesson fallback test still built an incomplete catalog.
 
-5. Head d3bc471d2f5b92f57da14ba7a15f5932b6113edc
+5. head d3bc471d2f5b92f57da14ba7a15f5932b6113edc
    - run 36312964559
    - 286/286 PASS.
 
-Only the latest head is current merge evidence.
+Only the final head and post-merge run are current green evidence.
 
-## Three authored packs are intentionally included
+## Three authored production packs
 
-PR38 adds root production copies:
+Current main now contains:
 - content/packs/school-teachers-v1.json
 - content/packs/school-lesson-content-v1.json
 - content/packs/school-life-content-v1.json
 
-It also retains full authored staging libraries under:
-- content/packs/school-target/school-teachers-v1.json
-- content/packs/school-target/school-lesson-content-v1.json
-- content/packs/school-target/school-life-content-v1.json
+The post-PR37 catalog had 13 packs.
+PR38 validates 16 packs.
 
-The PR commit history explicitly includes each root pack in the production catalog.
+The +3 exactly matches these production School packs.
 
-Current PR validation reports 16 packs versus the 13-pack post-PR37 baseline, exactly matching three new root production packs.
+The richer authored libraries remain under content/packs/school-target for staging/reference.
 
 PASS.
 
-The inclusion fixture still contains older PROPOSED_NOT_INCLUDED wording. Root placement, commit history, and exact-head validation are the current inclusion evidence; the fixture wording is stale documentation and should not override Git/runtime evidence.
-
-## Reachable production vs staged authored library
-
-The PR correctly separates:
-- naturally reachable production hooks;
-- richer course-specific authored libraries that current routing cannot safely target yet.
+## Production/staging separation
 
 Production teacher pack:
-- 8 teacher media identities;
-- 0 inert teacher events.
+- eight teacher media identities;
+- no inert teacher events.
 
 Production lesson pack:
-- one generic post-School presentation event.
+- one naturally reachable generic post-School presentation hook.
 
 Production life pack:
 - post-paid-lesson presentation hook;
-- exact Night-study completion presentation hook.
+- exact existing Night-study completion presentation hook.
 
-The richer staging libraries preserve:
-- all eight teacher presentation identities;
+Staging libraries preserve:
+- all eight teacher identities;
 - all eight course-specific lesson families;
-- three lesson text variants per track;
-- milestone-neutral School-life libraries.
+- several authored lesson variants;
+- milestone-neutral School-life content.
 
-This avoids shipping untriggered course-specific events as if they were naturally reachable.
+This avoids pretending course-specific scenes are naturally reachable before exact course routing exists.
 
 PASS.
 
 ## Eight teacher/course identities
 
-The teacher authored set represents all eight locked School tracks:
+All eight current School tracks remain represented:
 - Literacy & Numbers;
 - Arcana;
 - Rhetoric & Social;
@@ -122,153 +105,118 @@ The teacher authored set represents all eight locked School tracks:
 - Arts & Performance;
 - Body Confidence.
 
-Production teacher media contains eight unique teacher presentation identities.
+Production teacher media contains eight unique semantic teacher identities.
 
-The staging lesson library contains all eight course-specific authored lesson families.
-
-The latest tests verify those identities against the current School course catalog.
+Staging course libraries retain the corresponding eight authored course families.
 
 PASS.
 
-## Strict pack media namespace fix
+## Strict media namespace fixes
 
-Three earlier fix commits changed media IDs/references from slash-style pack media IDs to strict dot-style media IDs.
+The media-namespace commits changed only presentation media IDs/references:
+- slash-style pack media IDs became strict dot-style media IDs.
 
-The diffs change only:
-- media ID strings;
-- variant media references using those IDs.
-
-They do not change:
-- tuition;
-- Energy;
-- stats;
-- counters;
-- conditions;
-- effects;
-- public results;
-- save fields.
+No tuition, Energy, stat, progress, condition, effect, public-result, or save-field change was introduced by those media namespace fixes.
 
 Classification:
 PRESENTATION_ONLY_FIX.
 
 PASS.
 
-## Locked paid School mechanics
+## Locked School mechanics
 
-PR38 does not modify src/core/school.ts or the paid-course transaction implementation.
+PR38 does not change the School transaction implementation.
 
-The integrated lesson test asserts the existing eight course contracts, including:
-- current tuition;
-- current Energy cost = 1;
-- current stat packages.
+Tests retain the existing eight course contracts:
+- tuition values unchanged;
+- paid Energy cost unchanged;
+- stat packages unchanged.
 
-No production authored choice in the three packs writes transaction mechanics.
-
-PASS.
-
-## Paid vs Night progress ownership
-
-The integrated typed-progress fixture and tests assert:
-
-Paid lesson:
+Paid lesson ownership:
 - lessons_completed +1
 - night_study_sessions +0
 
-Night study:
+Night study ownership:
 - lessons_completed +0
 - night_study_sessions +1
-
-This is the correct locked ownership.
 
 PASS.
 
 ## No ordinary Lust gain
 
-The authored School lesson library contains no ordinary Lust mutation.
-
-The production authored packs are presentation/content only.
+The authored lesson content introduces no ordinary Lust mutation.
 
 PASS.
 
 ## No teacher prerequisite
 
-Teacher identity is not added as a paid-lesson condition.
+Teacher identity/content does not gate paid lesson availability.
 
-The production teacher pack is media-only and has no event mechanics.
-
-Course-specific teacher scenes remain staged until safe course routing exists.
+Course-specific teacher events remain staged rather than being inserted as fake prerequisites.
 
 PASS.
 
 ## No unapproved public result
 
-PR38 does not publish:
+PR38 does not publish or lock:
 - management/accounting readiness;
+- management public-result threshold;
 - Arcana/Forest readiness;
-- career facts for those unresolved paths;
-- new certificate/exam/project result semantics.
-
-The authored content remains milestone/public-result neutral.
+- Arcana/Forest public-result threshold;
+- new career facts for those unresolved paths.
 
 PASS.
 
-## Generic School presentation hooks remain effect-free
+## Presentation hooks remain effect-free
 
-Root production lesson/life events use existing reaction hooks:
-- generic actionCompleted: school;
-- exact existing school Night-choice completion IDs.
+The three authored pack families are presentation/content additions.
 
-All authored choices in the reviewed production/staging packs have empty effects.
+Reviewed choices have empty effects.
 
-They do not:
+Generic reachable hooks do not:
 - charge tuition;
 - spend Energy;
 - modify stats;
-- increment School counters;
+- increment School progress;
 - grant career/relationship facts.
 
 PASS.
 
-## Save/schema behavior
+## Save/reload
 
-The teacher production pack adds presentation media only.
+School-life tests verify:
+- materialized optional content keeps its selected variant across reload;
+- presentation resolution does not duplicate mechanics;
+- Night-study flavor does not own Night-study mechanics.
 
-The final tests use the full current production catalog when checking save parsing, avoiding false failures from incomplete isolated definitions.
-
-School-life reload tests verify:
-- materialized optional content keeps its variant;
-- content resolution does not duplicate mechanics;
-- Night-study presentation does not own Night-study mechanics.
+Teacher-media save parsing uses the full production catalog and leaves authoritative run state unchanged.
 
 PASS.
 
-## Current PR status
+## Non-blocking documentation note
 
-Exact-head review:
-GREEN — 286/286 PASS.
+The older inclusion fixture still contains PROPOSED_NOT_INCLUDED wording.
 
-Merge status at review time:
-OPEN / NOT MERGED.
+That metadata is stale after PR38 merge.
 
-Post-merge main evidence:
-not yet applicable.
+Current Git placement, root catalog validation, exact-head CI and main push CI prove the three root School packs are now included.
+
+The stale fixture wording should not be treated as current inclusion authority.
 
 ## Final matrix
 
-- three root authored packs intentionally included: PASS
+- three authored root packs shipped: PASS
+- eight teacher/course identities retained: PASS
 - strict media namespace fix presentation-only: PASS
-- all eight teacher/course identities retained: PASS
 - tuition unchanged: PASS
 - Energy unchanged: PASS
 - stat packages unchanged: PASS
 - ordinary Lust gain added: NO
 - teacher prerequisite added: NO
 - unapproved public result added: NO
-- generic School presentation effects: NONE
-- save/schema mutation from teacher media: NO
+- generic presentation effects: NONE
 - exact-head CI: 286/286 PASS
-- merged: NO
-
-PR38 is GREEN on head d3bc471d2f5b92f57da14ba7a15f5932b6113edc and is ready for normal Lead merge handling.
+- post-merge main CI: 286/286 PASS
+- merged: YES
 
 No production runtime/UI/content file was modified by Chat 4.
