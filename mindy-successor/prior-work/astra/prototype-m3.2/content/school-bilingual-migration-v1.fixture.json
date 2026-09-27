@@ -1,0 +1,2348 @@
+{
+  "formatVersion": 1,
+  "id": "school-bilingual-migration-v1",
+  "status": "AUTHORING_MIGRATION_BUNDLE_NOT_RUNTIME_PACK",
+  "sourceLocale": "ru",
+  "supportedLocales": [
+    "ru",
+    "en"
+  ],
+  "keyInventoryRef": "docs/school-prep/SCHOOL_LOCALIZATION_KEY_INVENTORY_v1.md",
+  "runtimeLocalizationImplemented": false,
+  "gameplayIdentitySharedAcrossLocales": true,
+  "coverageSummary": {
+    "total": 257,
+    "translated": 145,
+    "source-fallback": 0,
+    "staged-only": 112
+  },
+  "statusLegend": {
+    "translated": "RU and EN are both authored and the content is eligible for localization integration at its current reachability level.",
+    "source-fallback": "A key exists but one locale still depends on source-language fallback; none are intentionally introduced by this bundle.",
+    "staged-only": "RU and EN are authored, but the underlying teacher/course content is staged and not yet production-reachable."
+  },
+  "mechanicsInvariant": {
+    "localeSpecificConditions": false,
+    "localeSpecificEffects": false,
+    "localeSpecificRewards": false,
+    "localeSpecificRng": false,
+    "localeSpecificSaveIdentity": false,
+    "paidCourseMechanicsShared": true,
+    "nightStudyMechanicsShared": true
+  },
+  "entries": {
+    "school.course.literacy_and_numbers.label": {
+      "status": "translated",
+      "locales": {
+        "ru": "Грамотность и счёт",
+        "en": "Literacy & Numbers"
+      },
+      "source": "item128/course-authoring",
+      "gameplayIdentity": "school.course.literacy_and_numbers"
+    },
+    "school.course.literacy_and_numbers.description": {
+      "status": "translated",
+      "locales": {
+        "ru": "Практическая грамотность, счёт, работа с записями и ясное объяснение.",
+        "en": "Practical literacy, numeracy, record work, and clear explanation."
+      },
+      "source": "item128/course-authoring",
+      "gameplayIdentity": "school.course.literacy_and_numbers"
+    },
+    "school.course.arcana.label": {
+      "status": "translated",
+      "locales": {
+        "ru": "Аркана",
+        "en": "Arcana"
+      },
+      "source": "item128/course-authoring",
+      "gameplayIdentity": "school.course.arcana"
+    },
+    "school.course.arcana.description": {
+      "status": "translated",
+      "locales": {
+        "ru": "Наблюдение, магическая теория, безопасный эксперимент и проверка гипотез.",
+        "en": "Observation, magical theory, careful experimentation, and testing hypotheses."
+      },
+      "source": "item128/course-authoring",
+      "gameplayIdentity": "school.course.arcana"
+    },
+    "school.course.rhetoric_and_social.label": {
+      "status": "translated",
+      "locales": {
+        "ru": "Риторика и общение",
+        "en": "Rhetoric & Social"
+      },
+      "source": "item128/course-authoring",
+      "gameplayIdentity": "school.course.rhetoric_and_social"
+    },
+    "school.course.rhetoric_and_social.description": {
+      "status": "translated",
+      "locales": {
+        "ru": "Речь, слушание, чтение социальной ситуации и адаптация подачи.",
+        "en": "Speaking, listening, reading social situations, and adapting delivery."
+      },
+      "source": "item128/course-authoring",
+      "gameplayIdentity": "school.course.rhetoric_and_social"
+    },
+    "school.course.etiquette_and_presentation.label": {
+      "status": "translated",
+      "locales": {
+        "ru": "Этикет и самопрезентация",
+        "en": "Etiquette & Presentation"
+      },
+      "source": "item128/course-authoring",
+      "gameplayIdentity": "school.course.etiquette_and_presentation"
+    },
+    "school.course.etiquette_and_presentation.description": {
+      "status": "translated",
+      "locales": {
+        "ru": "Социальные правила, подготовка, уход, осанка и осознанная самопрезентация.",
+        "en": "Social conventions, preparation, grooming, posture, and deliberate presentation."
+      },
+      "source": "item128/course-authoring",
+      "gameplayIdentity": "school.course.etiquette_and_presentation"
+    },
+    "school.course.field_craft.label": {
+      "status": "translated",
+      "locales": {
+        "ru": "Полевая практика",
+        "en": "Field Craft"
+      },
+      "source": "item128/course-authoring",
+      "gameplayIdentity": "school.course.field_craft"
+    },
+    "school.course.field_craft.description": {
+      "status": "translated",
+      "locales": {
+        "ru": "Наблюдение, маршруты, практические инструменты и надёжная импровизация.",
+        "en": "Observation, route choice, practical tools, and reliable improvisation."
+      },
+      "source": "item128/course-authoring",
+      "gameplayIdentity": "school.course.field_craft"
+    },
+    "school.course.physical_training.label": {
+      "status": "translated",
+      "locales": {
+        "ru": "Физическая подготовка",
+        "en": "Physical Training"
+      },
+      "source": "item128/course-authoring",
+      "gameplayIdentity": "school.course.physical_training"
+    },
+    "school.course.physical_training.description": {
+      "status": "translated",
+      "locales": {
+        "ru": "Сила, выносливость, координация, техника и восстановление.",
+        "en": "Strength, endurance, coordination, technique, and recovery."
+      },
+      "source": "item128/course-authoring",
+      "gameplayIdentity": "school.course.physical_training"
+    },
+    "school.course.arts_and_performance.label": {
+      "status": "translated",
+      "locales": {
+        "ru": "Искусство и выступление",
+        "en": "Arts & Performance"
+      },
+      "source": "item128/course-authoring",
+      "gameplayIdentity": "school.course.arts_and_performance"
+    },
+    "school.course.arts_and_performance.description": {
+      "status": "translated",
+      "locales": {
+        "ru": "Творческий выбор, ритм, выразительность, репетиция и сценическое взаимодействие.",
+        "en": "Creative choices, rhythm, expression, rehearsal, and performance interaction."
+      },
+      "source": "item128/course-authoring",
+      "gameplayIdentity": "school.course.arts_and_performance"
+    },
+    "school.course.body_confidence.label": {
+      "status": "translated",
+      "locales": {
+        "ru": "Уверенность в теле",
+        "en": "Body Confidence"
+      },
+      "source": "item128/course-authoring",
+      "gameplayIdentity": "school.course.body_confidence"
+    },
+    "school.course.body_confidence.description": {
+      "status": "translated",
+      "locales": {
+        "ru": "Движение, уход за собой, границы и осознанная самопрезентация.",
+        "en": "Movement, grooming, boundaries, and deliberate self-presentation."
+      },
+      "source": "item128/course-authoring",
+      "gameplayIdentity": "school.course.body_confidence"
+    },
+    "school.teacher.mara-fen.name": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Мара Фен",
+        "en": "Mara Fen"
+      },
+      "source": "SCHOOL_TEACHER_IDENTITIES_RU_EN_v1.md",
+      "gameplayIdentity": "school.teacher.mara-fen"
+    },
+    "school.teacher.mara-fen.role": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "городская писчая и преподавательница практической грамотности и счёта",
+        "en": "civic scribe and practical literacy/numeracy instructor"
+      },
+      "source": "SCHOOL_TEACHER_IDENTITIES_RU_EN_v1.md",
+      "gameplayIdentity": "school.teacher.mara-fen"
+    },
+    "school.teacher.mara-fen.bio": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Мара учит читать документы, считать деньги и объяснять сложное простыми словами. Она терпелива, точна и любит, когда ученик понимает, зачем нужен ответ, а не только как его получить.",
+        "en": "Mara teaches how to read documents, handle practical arithmetic, and explain difficult ideas clearly. She is patient and exact, and cares more about understanding why an answer matters than merely producing it."
+      },
+      "source": "SCHOOL_TEACHER_IDENTITIES_RU_EN_v1.md",
+      "gameplayIdentity": "school.teacher.mara-fen"
+    },
+    "school.media.teacher.mara-fen.alt": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Мара Фен у ведомости и грифельной доски, с испачканными чернилами рукавами и письменными принадлежностями.",
+        "en": "Mara Fen beside a ledger and slate board, with ink-stained sleeves and writing tools."
+      },
+      "source": "SCHOOL_BILINGUAL_MULTI_GIF_MAPPING_v1.md",
+      "gameplayIdentity": "school.teacher.mara-fen"
+    },
+    "school.media.teacher.mara-fen.caption": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Практическое объяснение записи, счёта или ясной формулировки.",
+        "en": "A practical explanation of records, arithmetic, or clear wording."
+      },
+      "source": "SCHOOL_BILINGUAL_MULTI_GIF_MAPPING_v1.md",
+      "gameplayIdentity": "school.teacher.mara-fen"
+    },
+    "school.teacher.ilyra-venn.name": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Илира Венн",
+        "en": "Ilyra Venn"
+      },
+      "source": "SCHOOL_TEACHER_IDENTITIES_RU_EN_v1.md",
+      "gameplayIdentity": "school.teacher.ilyra-venn"
+    },
+    "school.teacher.ilyra-venn.role": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "академическая арканистка и преподавательница безопасного магического эксперимента",
+        "en": "academy arcanist and instructor in careful magical experimentation"
+      },
+      "source": "SCHOOL_TEACHER_IDENTITIES_RU_EN_v1.md",
+      "gameplayIdentity": "school.teacher.ilyra-venn"
+    },
+    "school.teacher.ilyra-venn.bio": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Илира требует сначала наблюдать, потом делать выводы. Для неё признанное незнание полезнее уверенной догадки, а хороший эксперимент обязан уметь опровергнуть красивую теорию.",
+        "en": "Ilyra insists on observation before conclusions. To her, admitted uncertainty is more useful than a confident guess, and a good experiment must be able to disprove an elegant theory."
+      },
+      "source": "SCHOOL_TEACHER_IDENTITIES_RU_EN_v1.md",
+      "gameplayIdentity": "school.teacher.ilyra-venn"
+    },
+    "school.media.teacher.ilyra-venn.alt": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Илира Венн среди меловых знаков и подписанных стеклянных приборов.",
+        "en": "Ilyra Venn among chalk sigils and labeled glass instruments."
+      },
+      "source": "SCHOOL_BILINGUAL_MULTI_GIF_MAPPING_v1.md",
+      "gameplayIdentity": "school.teacher.ilyra-venn"
+    },
+    "school.media.teacher.ilyra-venn.caption": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Наблюдение и проверка гипотезы перед выводом.",
+        "en": "Observation and testing before a conclusion."
+      },
+      "source": "SCHOOL_BILINGUAL_MULTI_GIF_MAPPING_v1.md",
+      "gameplayIdentity": "school.teacher.ilyra-venn"
+    },
+    "school.teacher.cassian-reed.name": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Кассиан Рид",
+        "en": "Cassian Reed"
+      },
+      "source": "SCHOOL_TEACHER_IDENTITIES_RU_EN_v1.md",
+      "gameplayIdentity": "school.teacher.cassian-reed"
+    },
+    "school.teacher.cassian-reed.role": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "оратор, посредник и преподаватель риторики",
+        "en": "public speaker, mediator, and rhetoric tutor"
+      },
+      "source": "SCHOOL_TEACHER_IDENTITIES_RU_EN_v1.md",
+      "gameplayIdentity": "school.teacher.cassian-reed"
+    },
+    "school.teacher.cassian-reed.bio": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Кассиан учит не только говорить убедительно, но и слушать, замечать реакцию комнаты и менять подачу без потери смысла. Он энергичен, любит импровизацию и превращает неловкие ошибки в упражнения.",
+        "en": "Cassian teaches not only persuasion but listening, reading a room, and changing delivery without losing the point. He is energetic, improvisational, and likes turning awkward mistakes into exercises."
+      },
+      "source": "SCHOOL_TEACHER_IDENTITIES_RU_EN_v1.md",
+      "gameplayIdentity": "school.teacher.cassian-reed"
+    },
+    "school.media.teacher.cassian-reed.alt": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Кассиан Рид на открытой площадке для дебатов, жестикулирующий во время упражнения.",
+        "en": "Cassian Reed on an open debate floor, gesturing during an exercise."
+      },
+      "source": "SCHOOL_BILINGUAL_MULTI_GIF_MAPPING_v1.md",
+      "gameplayIdentity": "school.teacher.cassian-reed"
+    },
+    "school.media.teacher.cassian-reed.caption": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Речь меняется под аудиторию, но смысл остаётся тем же.",
+        "en": "Delivery changes for the audience while the point remains the same."
+      },
+      "source": "SCHOOL_BILINGUAL_MULTI_GIF_MAPPING_v1.md",
+      "gameplayIdentity": "school.teacher.cassian-reed"
+    },
+    "school.teacher.eliane-marrow.name": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Элиан Марроу",
+        "en": "Eliane Marrow"
+      },
+      "source": "SCHOOL_TEACHER_IDENTITIES_RU_EN_v1.md",
+      "gameplayIdentity": "school.teacher.eliane-marrow"
+    },
+    "school.teacher.eliane-marrow.role": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "придворная наставница по этикету и самопрезентации",
+        "en": "court-trained etiquette and presentation tutor"
+      },
+      "source": "SCHOOL_TEACHER_IDENTITIES_RU_EN_v1.md",
+      "gameplayIdentity": "school.teacher.eliane-marrow"
+    },
+    "school.teacher.eliane-marrow.bio": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Элиан замечает детали, но исправляет их без унижения ученика. Она объясняет правила через их назначение: сделать общение понятнее, спокойнее и уважительнее, а не просто формальнее.",
+        "en": "Eliane notices details but corrects them without humiliating the student. She explains rules through their purpose: making interaction clearer, calmer, and more considerate rather than merely more formal."
+      },
+      "source": "SCHOOL_TEACHER_IDENTITIES_RU_EN_v1.md",
+      "gameplayIdentity": "school.teacher.eliane-marrow"
+    },
+    "school.media.teacher.eliane-marrow.alt": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Элиан Марроу в учебной комнате с зеркалами и формальной сервировкой.",
+        "en": "Eliane Marrow in a practice room with mirrors and a formal setting."
+      },
+      "source": "SCHOOL_BILINGUAL_MULTI_GIF_MAPPING_v1.md",
+      "gameplayIdentity": "school.teacher.eliane-marrow"
+    },
+    "school.media.teacher.eliane-marrow.caption": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Небольшая осознанная коррекция вместо полной переделки образа.",
+        "en": "A small deliberate correction instead of redesigning the whole presentation."
+      },
+      "source": "SCHOOL_BILINGUAL_MULTI_GIF_MAPPING_v1.md",
+      "gameplayIdentity": "school.teacher.eliane-marrow"
+    },
+    "school.teacher.rowan-pike.name": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Роуэн Пайк",
+        "en": "Rowan Pike"
+      },
+      "source": "SCHOOL_TEACHER_IDENTITIES_RU_EN_v1.md",
+      "gameplayIdentity": "school.teacher.rowan-pike"
+    },
+    "school.teacher.rowan-pike.role": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "разведчик, проводник и преподаватель полевой практики",
+        "en": "scout, guide, and practical field instructor"
+      },
+      "source": "SCHOOL_TEACHER_IDENTITIES_RU_EN_v1.md",
+      "gameplayIdentity": "school.teacher.rowan-pike"
+    },
+    "school.teacher.rowan-pike.bio": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Роуэн учит замечать следы, выбирать маршрут и импровизировать с тем, что есть под рукой. Он говорит коротко и ценит надёжность сильнее эффектных решений.",
+        "en": "Rowan teaches how to notice signs, choose routes, and improvise with what is available. He speaks concisely and values reliability more than flashy solutions."
+      },
+      "source": "SCHOOL_TEACHER_IDENTITIES_RU_EN_v1.md",
+      "gameplayIdentity": "school.teacher.rowan-pike"
+    },
+    "school.media.teacher.rowan-pike.alt": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Роуэн Пайк с картой, верёвкой и простыми полевыми инструментами во дворе для практики.",
+        "en": "Rowan Pike with a map, rope, and simple field tools in an outdoor practice yard."
+      },
+      "source": "SCHOOL_BILINGUAL_MULTI_GIF_MAPPING_v1.md",
+      "gameplayIdentity": "school.teacher.rowan-pike"
+    },
+    "school.media.teacher.rowan-pike.caption": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Практическая задача решается через наблюдение, маршрут и надёжную импровизацию.",
+        "en": "A practical problem is approached through observation, route choice, and reliable improvisation."
+      },
+      "source": "SCHOOL_BILINGUAL_MULTI_GIF_MAPPING_v1.md",
+      "gameplayIdentity": "school.teacher.rowan-pike"
+    },
+    "school.teacher.tovan-kest.name": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Тован Кест",
+        "en": "Tovan Kest"
+      },
+      "source": "SCHOOL_TEACHER_IDENTITIES_RU_EN_v1.md",
+      "gameplayIdentity": "school.teacher.tovan-kest"
+    },
+    "school.teacher.tovan-kest.role": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "тренер по физической подготовке и бывший караванный страж",
+        "en": "conditioning coach and former caravan guard"
+      },
+      "source": "SCHOOL_TEACHER_IDENTITIES_RU_EN_v1.md",
+      "gameplayIdentity": "school.teacher.tovan-kest"
+    },
+    "school.teacher.tovan-kest.bio": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Тован ставит технику, темп и восстановление выше показной силы. Он прямолинеен, но поддерживает ученика и считает стабильность важнее единичного рекорда.",
+        "en": "Tovan values technique, pacing, and recovery over showy strength. He is direct but encouraging, and considers consistency more important than a single impressive performance."
+      },
+      "source": "SCHOOL_TEACHER_IDENTITIES_RU_EN_v1.md",
+      "gameplayIdentity": "school.teacher.tovan-kest"
+    },
+    "school.media.teacher.tovan-kest.alt": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Тован Кест показывает контролируемое движение в светлом тренировочном дворе.",
+        "en": "Tovan Kest demonstrates controlled movement in a bright training yard."
+      },
+      "source": "SCHOOL_BILINGUAL_MULTI_GIF_MAPPING_v1.md",
+      "gameplayIdentity": "school.teacher.tovan-kest"
+    },
+    "school.media.teacher.tovan-kest.caption": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Техника, темп и восстановление важнее показного усилия.",
+        "en": "Technique, pacing, and recovery matter more than showy effort."
+      },
+      "source": "SCHOOL_BILINGUAL_MULTI_GIF_MAPPING_v1.md",
+      "gameplayIdentity": "school.teacher.tovan-kest"
+    },
+    "school.teacher.nessa-lark.name": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Несса Ларк",
+        "en": "Nessa Lark"
+      },
+      "source": "SCHOOL_TEACHER_IDENTITIES_RU_EN_v1.md",
+      "gameplayIdentity": "school.teacher.nessa-lark"
+    },
+    "school.teacher.nessa-lark.role": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "исполнительница, постановщица и преподавательница сценических искусств",
+        "en": "performer, choreographer, and multidisciplinary arts tutor"
+      },
+      "source": "SCHOOL_TEACHER_IDENTITIES_RU_EN_v1.md",
+      "gameplayIdentity": "school.teacher.nessa-lark"
+    },
+    "school.teacher.nessa-lark.bio": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Несса требует, чтобы каждый жест, ритм или образ что-то выражал. Она любит эксперимент, но не позволяет прятать неуверенность за красивой неопределённостью.",
+        "en": "Nessa expects every gesture, rhythm, or image to communicate something. She welcomes experimentation but does not let uncertainty hide behind attractive vagueness."
+      },
+      "source": "SCHOOL_TEACHER_IDENTITIES_RU_EN_v1.md",
+      "gameplayIdentity": "school.teacher.nessa-lark"
+    },
+    "school.media.teacher.nessa-lark.alt": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Несса Ларк в репетиционном зале среди масок, лент и инструментов.",
+        "en": "Nessa Lark in a rehearsal hall among masks, ribbons, and instruments."
+      },
+      "source": "SCHOOL_BILINGUAL_MULTI_GIF_MAPPING_v1.md",
+      "gameplayIdentity": "school.teacher.nessa-lark"
+    },
+    "school.media.teacher.nessa-lark.caption": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Сценический выбор сначала делается ясным, а затем уточняется.",
+        "en": "A performance choice is made clear first, then refined."
+      },
+      "source": "SCHOOL_BILINGUAL_MULTI_GIF_MAPPING_v1.md",
+      "gameplayIdentity": "school.teacher.nessa-lark"
+    },
+    "school.teacher.sera-vey.name": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Сера Вей",
+        "en": "Sera Vey"
+      },
+      "source": "SCHOOL_TEACHER_IDENTITIES_RU_EN_v1.md",
+      "gameplayIdentity": "school.teacher.sera-vey"
+    },
+    "school.teacher.sera-vey.role": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "преподавательница движения, ухода за собой и уверенной самопрезентации",
+        "en": "movement, grooming, and self-presentation instructor"
+      },
+      "source": "SCHOOL_TEACHER_IDENTITIES_RU_EN_v1.md",
+      "gameplayIdentity": "school.teacher.sera-vey"
+    },
+    "school.teacher.sera-vey.bio": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Сера учит осознанно относиться к телу, уходу, границам и тому, как человек хочет выглядеть перед другими. Она спокойна, практична и не подменяет уверенность стремлением понравиться всем.",
+        "en": "Sera teaches deliberate awareness of movement, grooming, boundaries, and how a person chooses to present themselves. She is calm and practical, and does not confuse confidence with trying to please everyone."
+      },
+      "source": "SCHOOL_TEACHER_IDENTITIES_RU_EN_v1.md",
+      "gameplayIdentity": "school.teacher.sera-vey"
+    },
+    "school.media.teacher.sera-vey.alt": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Сера Вей в спокойной студии движения и ухода за собой с мягким боковым светом.",
+        "en": "Sera Vey in a calm movement and grooming studio with soft side light."
+      },
+      "source": "SCHOOL_BILINGUAL_MULTI_GIF_MAPPING_v1.md",
+      "gameplayIdentity": "school.teacher.sera-vey"
+    },
+    "school.media.teacher.sera-vey.caption": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Осознанная самопрезентация строится вокруг выбора, комфорта и границ.",
+        "en": "Deliberate self-presentation is built around choice, comfort, and boundaries."
+      },
+      "source": "SCHOOL_BILINGUAL_MULTI_GIF_MAPPING_v1.md",
+      "gameplayIdentity": "school.teacher.sera-vey"
+    },
+    "school.lesson.literacy_and_numbers.repeatable.v1-a.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Мара кладёт перед тобой короткую ведомость с пропущенной суммой. «Не ищи ответ. Найди строку, из-за которой остальное перестаёт сходиться». Когда ты замечаешь противоречие, она напоминает: числа полезны прежде всего тогда, когда помогают понять, где история перестала быть логичной.",
+        "en": "Mara slides a short ledger across the desk with one total missing. “Don’t hunt for the answer. Find the line that makes the rest stop making sense.” When you spot the contradiction, she reminds you that numbers are useful first because they reveal where a story stops being logical."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.literacy_and_numbers"
+    },
+    "school.lesson.literacy_and_numbers.repeatable.v1-b.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Мара просит переписать перегруженное объявление так, чтобы уставший человек понял его с первого раза. Она вычёркивает одну красивую, но лишнюю фразу: «Ясность не делает мысль глупее».",
+        "en": "Mara asks you to rewrite a cluttered notice so a tired person understands it on the first read. She crosses out one attractive but unnecessary phrase. “Clarity does not make a thought less intelligent.”"
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.literacy_and_numbers"
+    },
+    "school.lesson.literacy_and_numbers.repeatable.v1-c.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Три покупки не помещаются в неудобный бюджет. Считать легко; труднее решить, что действительно важно. Мара замечает, что полезные числа всегда относятся к какому-то выбору.",
+        "en": "Three purchases do not fit an awkward budget. The arithmetic is easy; deciding what actually matters is harder. Mara points out that useful numbers always belong to a choice."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.literacy_and_numbers"
+    },
+    "school.lesson.literacy_and_numbers.repeatable.v2-d.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Мара даёт тебе инструкции, которые формально верны, но почти непригодны на практике. Задача — переписать их для человека, который видит процесс впервые.",
+        "en": "Mara gives you instructions that are technically correct but nearly unusable in practice. Your task is to rewrite them for someone seeing the process for the first time."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.literacy_and_numbers"
+    },
+    "school.lesson.literacy_and_numbers.repeatable.v2-e.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Прежде чем считать точно, Мара просит прикинуть ответ приблизительно. Сравнение оценки с итогом показывает, насколько результат вообще правдоподобен.",
+        "en": "Before exact calculation, Mara asks for an estimate. Comparing it with the final answer reveals whether the result is plausible at all."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.literacy_and_numbers"
+    },
+    "school.lesson.literacy_and_numbers.repeatable.v2-f.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Аккуратная колонка чисел приводит к подозрительно удобному выводу. Мара просит найти допущение, без которого этот вывод развалится.",
+        "en": "A neat column of figures produces a suspiciously convenient conclusion. Mara asks you to find the assumption without which the conclusion collapses."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.literacy_and_numbers"
+    },
+    "school.lesson.literacy_and_numbers.repeatable.v2-g.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Мара даёт правильное решение и просит объяснить его короче. С каждой версией исчезает шаг, который украшал объяснение, но не помогал понять ход мысли.",
+        "en": "Mara gives you a correct solution and asks you to explain it more briefly. Each revision removes a step that decorated the explanation without helping the reasoning.\n\n## Arcana"
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.literacy_and_numbers"
+    },
+    "school.lesson.arcana.repeatable.v1-a.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Илира кладёт под стекло слабо светящийся знак и просит сначала перечислить наблюдаемое: свет, тепло, ритм, затухание. Только потом она разрешает говорить о причинах.",
+        "en": "Ilyra places a faintly glowing sigil under glass and asks you to list what can actually be observed—light, heat, rhythm, decay—before discussing causes."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.arcana"
+    },
+    "school.lesson.arcana.repeatable.v1-b.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "В учебной схеме заранее спрятана безопасная ошибка. Илира просит предсказать, как именно она проявится. Неожиданность становится полезнее безупречного успеха, который никто не понял.",
+        "en": "A safe error has been built into a practice pattern. Ilyra asks you to predict how it will fail. The surprise proves more useful than a flawless success nobody understood."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.arcana"
+    },
+    "school.lesson.arcana.repeatable.v1-c.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Два объяснения одного магического эффекта звучат одинаково правдоподобно. Илира требует придумать проверку, способную разделить их.",
+        "en": "Two explanations for the same magical effect sound equally plausible. Ilyra requires a test capable of distinguishing them."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.arcana"
+    },
+    "school.lesson.arcana.repeatable.v2-d.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Илира просит отметить на схеме всё, чего ты не понимаешь. «Неназванная неопределённость прячется внутри уверенности. Названную можно проверить».",
+        "en": "Ilyra asks you to mark everything in the diagram you do not understand. “Unnamed uncertainty hides inside confidence. Named uncertainty can be tested.”"
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.arcana"
+    },
+    "school.lesson.arcana.repeatable.v2-e.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Слабая магическая реакция появляется один раз и исчезает. Илира отказывается обсуждать её смысл, пока условия нельзя повторить.",
+        "en": "A weak magical response appears once and vanishes. Ilyra refuses to discuss its meaning until the conditions can be reproduced."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.arcana"
+    },
+    "school.lesson.arcana.repeatable.v2-f.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Два события происходят почти одновременно. Илира просит доказать, что одно вызвало другое, а не просто случилось раньше.",
+        "en": "Two events occur close together. Ilyra asks you to prove that one caused the other rather than merely happening first."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.arcana"
+    },
+    "school.lesson.arcana.repeatable.v2-g.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Безопасный опыт не даёт результата. Илира заставляет записать неудачу так же тщательно, как удачный эксперимент: будущее исследование тоже заслуживает честных данных.",
+        "en": "A harmless trial produces no result. Ilyra makes you record the failure as carefully as a success: future investigation deserves honest data too.\n\n## Rhetoric & Social"
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.arcana"
+    },
+    "school.lesson.rhetoric_and_social.repeatable.v1-a.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Кассиан просит трижды высказать одну мысль: другу, подозрительному незнакомцу и скучающему чиновнику. Смысл остаётся, но вход в разговор каждый раз другой.",
+        "en": "Cassian asks you to make the same point to a friend, a suspicious stranger, and a bored official. The meaning stays the same, but the doorway into the conversation changes each time."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.rhetoric_and_social"
+    },
+    "school.lesson.rhetoric_and_social.repeatable.v1-b.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Кассиан рассказывает историю и просит вмешаться только тогда, когда услышишь скрытое допущение. Самая важная часть аргумента оказывается в паузе.",
+        "en": "Cassian tells a story and asks you to interrupt only when you hear the hidden assumption. The most important part of the argument turns out to be in the pause."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.rhetoric_and_social"
+    },
+    "school.lesson.rhetoric_and_social.repeatable.v1-c.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Кассиан даёт тебе заведомо неловкую первую фразу и требует выправить разговор, не притворяясь, будто ошибки не было.",
+        "en": "Cassian gives you a deliberately awkward opening line and makes you recover without pretending the mistake never happened."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.rhetoric_and_social"
+    },
+    "school.lesson.rhetoric_and_social.repeatable.v2-d.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Тебе дают сердитую жалобу, но Кассиан запрещает сразу защищаться. Упражнение заканчивается только тогда, когда ты задаёшь вопрос, меняющий форму разговора.",
+        "en": "Cassian gives you an angry complaint but forbids immediate self-defense. The exercise ends only when you ask a question that changes the shape of the conversation."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.rhetoric_and_social"
+    },
+    "school.lesson.rhetoric_and_social.repeatable.v2-e.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Остроумная фраза вызывает смех, но уводит от сути. Кассиан велит убрать её: если запомнили блеск, а не мысль, цена аплодисментов была слишком высокой.",
+        "en": "A clever line earns a laugh but loses the point. Cassian makes you cut it: if people remember the flourish instead of the idea, the applause cost too much."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.rhetoric_and_social"
+    },
+    "school.lesson.rhetoric_and_social.repeatable.v2-f.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Кассиан останавливает разговор в момент общей паузы и спрашивает, чего каждый участник ждёт от остальных.",
+        "en": "Cassian freezes a conversation at the moment everyone falls silent and asks what each person is waiting for someone else to say."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.rhetoric_and_social"
+    },
+    "school.lesson.rhetoric_and_social.repeatable.v2-g.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Посреди упражнения Кассиан меняет цель: теперь важнее сохранить доверие, чем добиться согласия. Формулировка меняется вместе с задачей.",
+        "en": "Halfway through the exercise, Cassian changes the goal: preserving trust now matters more than winning agreement. Your wording changes with the objective.\n\n## Etiquette & Presentation"
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.rhetoric_and_social"
+    },
+    "school.lesson.etiquette_and_presentation.repeatable.v1-a.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Элиан заставляет тебя несколько раз войти в одну и ту же комнату, меняя только темп, взгляд и момент первого слова. Люди успевают заметить твою уверенность раньше, чем решить, нравишься ли ты им.",
+        "en": "Eliane has you enter the same room several times, changing only pace, gaze, and the moment of the first word. People notice your ease before they decide whether they like you."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.etiquette_and_presentation"
+    },
+    "school.lesson.etiquette_and_presentation.repeatable.v1-b.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Сложная сервировка становится понятнее, когда Элиан убирает половину предметов и спрашивает, какую проблему решает каждое правило.",
+        "en": "A complicated table setting becomes easier when Eliane removes half the pieces and asks what problem each rule is meant to solve."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.etiquette_and_presentation"
+    },
+    "school.lesson.etiquette_and_presentation.repeatable.v1-c.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Элиан меняет одну деталь твоего образа и спрашивает, что именно ты хотел сообщить. Если впечатление не совпадает с намерением, она исправляет одну вещь, а не всё сразу.",
+        "en": "Eliane changes one detail of your presentation and asks what you meant to communicate. If the impression misses the intention, she changes one thing instead of everything."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.etiquette_and_presentation"
+    },
+    "school.lesson.etiquette_and_presentation.repeatable.v2-d.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Элиан просит намеренно допустить маленькую формальную ошибку и спокойно из неё выйти, не превращая промах в центр внимания.",
+        "en": "Eliane has you make a small deliberate formal mistake and recover calmly without turning it into the center of attention."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.etiquette_and_presentation"
+    },
+    "school.lesson.etiquette_and_presentation.repeatable.v2-e.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Вместо одежды или осанки Элиан просит подготовить комнату так, чтобы другому человеку было удобно. Самопрезентация начинается ещё до того, как на тебя посмотрят.",
+        "en": "Instead of adjusting clothing or posture, Eliane asks you to prepare the room for someone else’s comfort. Presentation begins before anyone looks at you."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.etiquette_and_presentation"
+    },
+    "school.lesson.etiquette_and_presentation.repeatable.v2-f.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Элиан указывает на три мелких несовершенства и спрашивает, какое из них действительно важно. Урок оказывается про сдержанность не меньше, чем про исправление.",
+        "en": "Eliane points out three small imperfections and asks which one actually matters. The lesson is as much about restraint as correction."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.etiquette_and_presentation"
+    },
+    "school.lesson.etiquette_and_presentation.repeatable.v2-g.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Приветствие становится всё хуже по мере того, как ты его переосмысливаешь. Элиан заставляет повторять, пока правило снова не начинает помогать общению.",
+        "en": "A greeting gets worse the more you overthink it. Eliane has you repeat it until the rule starts supporting the interaction again.\n\n## Field Craft"
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.etiquette_and_presentation"
+    },
+    "school.lesson.field_craft.repeatable.v1-a.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Роуэн проводит тебя через учебный двор, разворачивает обратно и спрашивает, что изменилось: ворота, верёвка, свежий след. Задача — перестать заранее решать, что неважно.",
+        "en": "Rowan walks you across the practice yard, turns you around, and asks what changed: a gate, a rope, a fresh footprint. The task is to stop deciding what is unimportant before noticing it."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.field_craft"
+    },
+    "school.lesson.field_craft.repeatable.v1-b.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Для простой задачи не хватает привычного инструмента. Роуэн не даёт замену и заставляет искать рабочий способ из того, что есть.",
+        "en": "A simple task is missing the expected tool. Rowan refuses to replace it and makes you find a workable method with what is available."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.field_craft"
+    },
+    "school.lesson.field_craft.repeatable.v1-c.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Три маршрута отличаются длиной, безопасностью и удобством отхода. Роуэн принимает ответ только тогда, когда ты связываешь выбор с целью.",
+        "en": "Three routes differ in length, safety, and ease of retreat. Rowan accepts the answer only when you connect the choice to the objective."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.field_craft"
+    },
+    "school.lesson.field_craft.repeatable.v2-d.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Роуэн просит пройти участок так, чтобы намеренно оставить следы, а затем вернуться и посмотреть, насколько очевидным был твой путь.",
+        "en": "Rowan asks you to cross the practice area while deliberately leaving traces, then return and see how obvious your path was."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.field_craft"
+    },
+    "school.lesson.field_craft.repeatable.v2-e.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "В простой маршрут Роуэн добавляет дождь и уходящий свет. План был не неправильным — просто неполным.",
+        "en": "Rowan adds rain and fading light to a simple route. The plan was not wrong; it was incomplete."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.field_craft"
+    },
+    "school.lesson.field_craft.repeatable.v2-f.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Роуэн ничего не прячет. Упражнение — проверить очевидные места с той же дисциплиной, что и хитрую улику.",
+        "en": "Rowan hides nothing. The exercise is to inspect obvious places with the same discipline you would use for a clever clue."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.field_craft"
+    },
+    "school.lesson.field_craft.repeatable.v2-g.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Небольшой набор инструментов должен решить несколько разных задач. Роуэн заставляет выбрать, что взять с собой, прежде чем сообщить, какая задача будет первой.",
+        "en": "A small set of tools must serve several different tasks. Rowan makes you choose what to carry before telling you which task comes first.\n\n## Physical Training"
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.field_craft"
+    },
+    "school.lesson.physical_training.repeatable.v1-a.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Тован останавливает тяжёлое упражнение и предлагает либо закончить плохо, либо начать заново с чистой техникой. Сила, которую нельзя повторить завтра, для него лишь представление.",
+        "en": "Tovan stops a hard drill and offers a choice: finish badly or restart with clean form. Strength you cannot repeat tomorrow is only a performance to him."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.physical_training"
+    },
+    "school.lesson.physical_training.repeatable.v1-b.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Тован задаёт ровный темп и не позволяет спринтовать лёгкую часть. Последние повторения остаются управляемыми, потому что силы не были потрачены в первую минуту.",
+        "en": "Tovan sets a steady pace and will not let you sprint the easy part. The final repetitions remain manageable because you did not spend all your effort in the first minute."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.physical_training"
+    },
+    "school.lesson.physical_training.repeatable.v1-c.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Тован даёт утяжелённый шест и просит чистую последовательность движений вместо максимального усилия. Выравнивание оказывается дешевле силы.",
+        "en": "Tovan gives you a weighted pole and asks for clean movement instead of maximum effort. Alignment turns out to be cheaper than force."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.physical_training"
+    },
+    "school.lesson.physical_training.repeatable.v2-d.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Тован заканчивает подход за одно повторение до отказа. Он считает оставшееся качество частью тренировки, а не неиспользованной силой.",
+        "en": "Tovan ends a set one repetition before failure. He treats the preserved quality as part of the training, not unused effort."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.physical_training"
+    },
+    "school.lesson.physical_training.repeatable.v2-e.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Простое упражнение разваливается, когда сбивается дыхание. Тован снижает темп, пока дыхание и движение снова не начинают работать вместе.",
+        "en": "A simple drill falls apart when your breathing loses rhythm. Tovan slows the pace until breathing and movement work together again."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.physical_training"
+    },
+    "school.lesson.physical_training.repeatable.v2-f.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Тован слегка смещает вес в сторону и просит сохранить контроль. Урок — сначала баланс, потом сила.",
+        "en": "Tovan shifts the weight slightly off-center and asks you to stay controlled. The lesson is balance before force."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.physical_training"
+    },
+    "school.lesson.physical_training.repeatable.v2-g.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "В конце занятия Тован проверяет, как быстро успокаивается дыхание. Для него восстановление — ещё один показатель тренированности.",
+        "en": "At the end of the session, Tovan checks how quickly your breathing settles. Recovery is another measure of training to him.\n\n## Arts & Performance"
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.physical_training"
+    },
+    "school.lesson.arts_and_performance.repeatable.v1-a.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Несса останавливает репетицию, потому что жест застрял между двумя идеями. Сначала она заставляет выбрать одно намерение и сделать его очевидным, а уже потом возвращает тонкость.",
+        "en": "Nessa stops rehearsal because a gesture is trapped between two ideas. She makes you choose one intention and make it obvious before bringing subtlety back."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.arts_and_performance"
+    },
+    "school.lesson.arts_and_performance.repeatable.v1-b.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Одна и та же фраза звучит в трёх темпах и каждый раз становится другой сценой. Несса напоминает, что ритм тоже объясняет зрителю смысл.",
+        "en": "The same phrase is performed at three tempos and becomes a different scene each time. Nessa reminds you that rhythm also tells the audience what something means."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.arts_and_performance"
+    },
+    "school.lesson.arts_and_performance.repeatable.v1-c.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Несса даёт старый сценический рисунок и просит изменить один элемент, не разрушив структуру. Первая попытка — копия, вторая уже начинает звучать по-твоему.",
+        "en": "Nessa gives you an older performance pattern and asks you to change one element without breaking the structure. The first attempt is imitation; the second starts to sound like yours."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.arts_and_performance"
+    },
+    "school.lesson.arts_and_performance.repeatable.v2-d.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Несса просит преувеличить выбор до почти безвкусного, а затем уменьшить его, не потеряв ясность намерения.",
+        "en": "Nessa asks you to exaggerate a choice almost past good taste, then reduce it without losing the clarity of the intention."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.arts_and_performance"
+    },
+    "school.lesson.arts_and_performance.repeatable.v2-e.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Пропущенная реплика становится материалом упражнения. Несса не разрешает начинать сначала — ошибку нужно встроить в продолжающуюся сцену.",
+        "en": "A missed cue becomes the material of the exercise. Nessa does not allow a restart; the mistake has to be incorporated into the continuing scene."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.arts_and_performance"
+    },
+    "school.lesson.arts_and_performance.repeatable.v2-f.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Одна и та же работа адресуется ребёнку, сопернику и человеку в горе. Несса спрашивает, что должно измениться, а что обязано остаться честным.",
+        "en": "The same work is addressed to a child, a rival, and someone grieving. Nessa asks what should change and what must remain honest."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.arts_and_performance"
+    },
+    "school.lesson.arts_and_performance.repeatable.v2-g.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Несса убирает реквизит, жест или фразу, на которые ты слишком полагался. Освободившееся место показывает, что на самом деле делала сцена.",
+        "en": "Nessa removes a prop, gesture, or phrase you relied on too heavily. The gap reveals what the scene was actually doing.\n\n## Body Confidence"
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.arts_and_performance"
+    },
+    "school.lesson.body_confidence.repeatable.v1-a.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Сера просит встать естественно и найти лишнее напряжение. Небольшая коррекция меняет ощущение устойчивости: уверенность не обязана превращать тело в неподвижную позу.",
+        "en": "Sera asks you to stand naturally and find unnecessary tension. A small correction changes how steady you feel: confidence does not have to turn the body into a frozen pose."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.body_confidence"
+    },
+    "school.lesson.body_confidence.repeatable.v1-b.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Уход за собой превращается в упражнение по последовательности и вниманию. Сера спрашивает, какие шаги действительно помогают подготовиться, а какие обслуживают воображаемую публику.",
+        "en": "Grooming becomes an exercise in sequence and attention. Sera asks which steps genuinely help you prepare and which exist for an imagined audience."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.body_confidence"
+    },
+    "school.lesson.body_confidence.repeatable.v1-c.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Сера предлагает несколько вариантов самопрезентации и просит выбрать тот, который кажется осознанным, а не просто ожидаемым другими.",
+        "en": "Sera offers several presentation choices and asks you to choose the one that feels deliberate rather than merely expected by others."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.body_confidence"
+    },
+    "school.lesson.body_confidence.repeatable.v2-d.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Сера просит остаться на виду у других, не играя для них роль. Упражнение — присутствовать, не уменьшая себя и не преувеличивая.",
+        "en": "Sera asks you to remain visible to others without performing for them. The exercise is to be present without shrinking or exaggerating."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.body_confidence"
+    },
+    "school.lesson.body_confidence.repeatable.v2-e.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Перед тобой несколько шагов ухода, но Сера просит оставить только те, которые действительно служат твоей цели. Ритуал должен принадлежать тебе.",
+        "en": "Several grooming steps are available, but Sera asks you to keep only those that actually serve your purpose. The routine should belong to you."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.body_confidence"
+    },
+    "school.lesson.body_confidence.repeatable.v2-f.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "В социальной ситуации от тебя ждут большей близости, чем тебе хочется. Сера просит обозначить границу ясно, без извинений и лишней враждебности.",
+        "en": "A social situation asks for more familiarity than you want. Sera asks you to state the boundary clearly, without apology or unnecessary hostility."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.body_confidence"
+    },
+    "school.lesson.body_confidence.repeatable.v2-g.text": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Ты проходишь комнату, не проверяя отражение, а потом описываешь, что заметил в собственном теле вместо того, как выглядел.",
+        "en": "You cross the room without checking your reflection, then describe what you noticed in your body instead of how you looked."
+      },
+      "source": "SCHOOL_REPEATABLE_LESSONS_RU_EN_v1.md",
+      "gameplayIdentity": "school.course.body_confidence"
+    },
+    "school.media.lesson.literacy_and_numbers.alt": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Авторская сцена урока курса «Грамотность и счёт».",
+        "en": "Authored Literacy & Numbers lesson presentation."
+      },
+      "source": "SCHOOL_BILINGUAL_MULTI_GIF_MAPPING_v1.md",
+      "gameplayIdentity": "school.course.literacy_and_numbers"
+    },
+    "school.media.lesson.literacy_and_numbers.caption": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Сцена сопровождает урок «Грамотность и счёт» и не добавляет отдельного игрового эффекта.",
+        "en": "The scene accompanies the Literacy & Numbers lesson and adds no separate gameplay effect."
+      },
+      "source": "SCHOOL_BILINGUAL_MULTI_GIF_MAPPING_v1.md",
+      "gameplayIdentity": "school.course.literacy_and_numbers"
+    },
+    "school.media.lesson.arcana.alt": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Авторская сцена урока курса «Аркана».",
+        "en": "Authored Arcana lesson presentation."
+      },
+      "source": "SCHOOL_BILINGUAL_MULTI_GIF_MAPPING_v1.md",
+      "gameplayIdentity": "school.course.arcana"
+    },
+    "school.media.lesson.arcana.caption": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Сцена сопровождает урок «Аркана» и не добавляет отдельного игрового эффекта.",
+        "en": "The scene accompanies the Arcana lesson and adds no separate gameplay effect."
+      },
+      "source": "SCHOOL_BILINGUAL_MULTI_GIF_MAPPING_v1.md",
+      "gameplayIdentity": "school.course.arcana"
+    },
+    "school.media.lesson.rhetoric_and_social.alt": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Авторская сцена урока курса «Риторика и общение».",
+        "en": "Authored Rhetoric & Social lesson presentation."
+      },
+      "source": "SCHOOL_BILINGUAL_MULTI_GIF_MAPPING_v1.md",
+      "gameplayIdentity": "school.course.rhetoric_and_social"
+    },
+    "school.media.lesson.rhetoric_and_social.caption": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Сцена сопровождает урок «Риторика и общение» и не добавляет отдельного игрового эффекта.",
+        "en": "The scene accompanies the Rhetoric & Social lesson and adds no separate gameplay effect."
+      },
+      "source": "SCHOOL_BILINGUAL_MULTI_GIF_MAPPING_v1.md",
+      "gameplayIdentity": "school.course.rhetoric_and_social"
+    },
+    "school.media.lesson.etiquette_and_presentation.alt": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Авторская сцена урока курса «Этикет и самопрезентация».",
+        "en": "Authored Etiquette & Presentation lesson presentation."
+      },
+      "source": "SCHOOL_BILINGUAL_MULTI_GIF_MAPPING_v1.md",
+      "gameplayIdentity": "school.course.etiquette_and_presentation"
+    },
+    "school.media.lesson.etiquette_and_presentation.caption": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Сцена сопровождает урок «Этикет и самопрезентация» и не добавляет отдельного игрового эффекта.",
+        "en": "The scene accompanies the Etiquette & Presentation lesson and adds no separate gameplay effect."
+      },
+      "source": "SCHOOL_BILINGUAL_MULTI_GIF_MAPPING_v1.md",
+      "gameplayIdentity": "school.course.etiquette_and_presentation"
+    },
+    "school.media.lesson.field_craft.alt": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Авторская сцена урока курса «Полевая практика».",
+        "en": "Authored Field Craft lesson presentation."
+      },
+      "source": "SCHOOL_BILINGUAL_MULTI_GIF_MAPPING_v1.md",
+      "gameplayIdentity": "school.course.field_craft"
+    },
+    "school.media.lesson.field_craft.caption": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Сцена сопровождает урок «Полевая практика» и не добавляет отдельного игрового эффекта.",
+        "en": "The scene accompanies the Field Craft lesson and adds no separate gameplay effect."
+      },
+      "source": "SCHOOL_BILINGUAL_MULTI_GIF_MAPPING_v1.md",
+      "gameplayIdentity": "school.course.field_craft"
+    },
+    "school.media.lesson.physical_training.alt": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Авторская сцена урока курса «Физическая подготовка».",
+        "en": "Authored Physical Training lesson presentation."
+      },
+      "source": "SCHOOL_BILINGUAL_MULTI_GIF_MAPPING_v1.md",
+      "gameplayIdentity": "school.course.physical_training"
+    },
+    "school.media.lesson.physical_training.caption": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Сцена сопровождает урок «Физическая подготовка» и не добавляет отдельного игрового эффекта.",
+        "en": "The scene accompanies the Physical Training lesson and adds no separate gameplay effect."
+      },
+      "source": "SCHOOL_BILINGUAL_MULTI_GIF_MAPPING_v1.md",
+      "gameplayIdentity": "school.course.physical_training"
+    },
+    "school.media.lesson.arts_and_performance.alt": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Авторская сцена урока курса «Искусство и выступление».",
+        "en": "Authored Arts & Performance lesson presentation."
+      },
+      "source": "SCHOOL_BILINGUAL_MULTI_GIF_MAPPING_v1.md",
+      "gameplayIdentity": "school.course.arts_and_performance"
+    },
+    "school.media.lesson.arts_and_performance.caption": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Сцена сопровождает урок «Искусство и выступление» и не добавляет отдельного игрового эффекта.",
+        "en": "The scene accompanies the Arts & Performance lesson and adds no separate gameplay effect."
+      },
+      "source": "SCHOOL_BILINGUAL_MULTI_GIF_MAPPING_v1.md",
+      "gameplayIdentity": "school.course.arts_and_performance"
+    },
+    "school.media.lesson.body_confidence.alt": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Авторская сцена урока курса «Уверенность в теле».",
+        "en": "Authored Body Confidence lesson presentation."
+      },
+      "source": "SCHOOL_BILINGUAL_MULTI_GIF_MAPPING_v1.md",
+      "gameplayIdentity": "school.course.body_confidence"
+    },
+    "school.media.lesson.body_confidence.caption": {
+      "status": "staged-only",
+      "locales": {
+        "ru": "Сцена сопровождает урок «Уверенность в теле» и не добавляет отдельного игрового эффекта.",
+        "en": "The scene accompanies the Body Confidence lesson and adds no separate gameplay effect."
+      },
+      "source": "SCHOOL_BILINGUAL_MULTI_GIF_MAPPING_v1.md",
+      "gameplayIdentity": "school.course.body_confidence"
+    },
+    "school.generic.after_school.title": {
+      "status": "translated",
+      "locales": {
+        "ru": "После урока",
+        "en": "After the School lesson"
+      },
+      "source": "school-generic-reachable-bilingual-v1.json",
+      "gameplayIdentity": "school.generic.reachable.v2.after.school"
+    },
+    "school.generic.after_school.variant.notes": {
+      "status": "translated",
+      "locales": {
+        "ru": "Урок заканчивается несколькими минутами, чтобы привести в порядок записи, материалы и мысли. Ничего нового не происходит; важно решить, что действительно стоит запомнить.",
+        "en": "The lesson ends with a few minutes to put notes, tools, and thoughts back in order. Nothing new is added; the value is deciding what deserves to be remembered."
+      },
+      "source": "school-generic-reachable-bilingual-v1.json",
+      "gameplayIdentity": "school.generic.reachable.v2.after.school:notes"
+    },
+    "school.generic.after_school.variant.one.point": {
+      "status": "translated",
+      "locales": {
+        "ru": "Перед уходом ты сводишь занятие к одной полезной мысли, которую смог бы объяснить и без класса вокруг.",
+        "en": "Before leaving, you reduce the session to one useful point you could explain without the rest of the classroom around you."
+      },
+      "source": "school-generic-reachable-bilingual-v1.json",
+      "gameplayIdentity": "school.generic.reachable.v2.after.school:one.point"
+    },
+    "school.generic.after_school.variant.question": {
+      "status": "translated",
+      "locales": {
+        "ru": "Большая часть урока укладывается в голове. Один вопрос — нет. Ты записываешь его вместо того, чтобы выжимать ответ только потому, что занятие закончилось.",
+        "en": "Most of the lesson settles. One question does not. You write it down rather than forcing an answer just because the class is over."
+      },
+      "source": "school-generic-reachable-bilingual-v1.json",
+      "gameplayIdentity": "school.generic.reachable.v2.after.school:question"
+    },
+    "school.generic.after_school.variant.compare.notes": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ученик рядом сравнивает одну строку своих записей с твоей. Каждый заметил то, что пропустил другой, и ни одна версия не обязана становиться единственно правильной.",
+        "en": "A nearby student compares one line of notes with yours. You each caught something the other missed, and neither version needs to become the official one."
+      },
+      "source": "school-generic-reachable-bilingual-v1.json",
+      "gameplayIdentity": "school.generic.reachable.v2.after.school:compare.notes"
+    },
+    "school.generic.after_school.variant.small.correction": {
+      "status": "translated",
+      "locales": {
+        "ru": "Перед уходом кто-то негромко указывает на небольшое недоразумение. Исправление полезно именно потому, что не превращается в публичное выступление.",
+        "en": "Someone quietly points out a minor misunderstanding before you leave. The correction is useful precisely because it does not become a public performance."
+      },
+      "source": "school-generic-reachable-bilingual-v1.json",
+      "gameplayIdentity": "school.generic.reachable.v2.after.school:small.correction"
+    },
+    "school.generic.after_school.variant.shared.confusion": {
+      "status": "translated",
+      "locales": {
+        "ru": "Двое учеников обнаруживают, что запутались в одной и той же части урока по разным причинам. Сравнение помогает точнее назвать проблему.",
+        "en": "Two students discover they were confused by the same part of the lesson for different reasons. The comparison makes the problem easier to name."
+      },
+      "source": "school-generic-reachable-bilingual-v1.json",
+      "gameplayIdentity": "school.generic.reachable.v2.after.school:shared.confusion"
+    },
+    "school.generic.after_school.variant.enough.today": {
+      "status": "translated",
+      "locales": {
+        "ru": "Можно было бы продолжать, но урок уже дал достаточно материала для осмысления. Остановиться сейчас полезнее, чем размыть последнюю ясную мысль.",
+        "en": "You could keep pushing, but the lesson has already given you enough to process. Stopping now feels more useful than blurring the last clear idea."
+      },
+      "source": "school-generic-reachable-bilingual-v1.json",
+      "gameplayIdentity": "school.generic.reachable.v2.after.school:enough.today"
+    },
+    "school.generic.after_school.variant.hallway": {
+      "status": "translated",
+      "locales": {
+        "ru": "В коридоре шумнее, чем в классе. Ученики расходятся к работе, делам, жилью и другим обязанностям, унося урок обратно в обычную жизнь.",
+        "en": "The hallway outside is noisier than the classroom. Students split toward work, errands, lodging, and other obligations, carrying the lesson back into ordinary life."
+      },
+      "source": "school-generic-reachable-bilingual-v1.json",
+      "gameplayIdentity": "school.generic.reachable.v2.after.school:hallway"
+    },
+    "school.generic.after_school.variant.board": {
+      "status": "translated",
+      "locales": {
+        "ru": "Кто-то стирает последние записи с доски. Комната уже готова к следующему занятию, хотя ты ещё не закончил думать об этом.",
+        "en": "Someone erases the last marks from the board. The room is ready for the next class before you are entirely done thinking about this one."
+      },
+      "source": "school-generic-reachable-bilingual-v1.json",
+      "gameplayIdentity": "school.generic.reachable.v2.after.school:board"
+    },
+    "school.generic.after_school.variant.reminder": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ты оставляешь себе короткое напоминание на потом: не новую цель, а ту часть сегодняшнего урока, которая легче всего исчезнет из памяти без записи.",
+        "en": "You leave yourself one short reminder for later: not a new goal, just the part of today's lesson most likely to disappear if you do not write it down."
+      },
+      "source": "school-generic-reachable-bilingual-v1.json",
+      "gameplayIdentity": "school.generic.reachable.v2.after.school:reminder"
+    },
+    "school.generic.after_school.choice.continue.label": {
+      "status": "translated",
+      "locales": {
+        "ru": "Продолжить",
+        "en": "Continue"
+      },
+      "source": "school-generic-reachable-bilingual-v1.json",
+      "gameplayIdentity": "continue"
+    },
+    "school.generic.after_school.choice.continue.text": {
+      "status": "translated",
+      "locales": {
+        "ru": "Вернуться к остатку дня после школьной сцены.",
+        "en": "Return to the day after the School presentation."
+      },
+      "source": "school-generic-reachable-bilingual-v1.json",
+      "gameplayIdentity": "continue"
+    },
+    "school.media.generic.classroom.alt": {
+      "status": "translated",
+      "locales": {
+        "ru": "Обычная школьная аудитория после завершённого урока.",
+        "en": "A generic School classroom after a completed lesson."
+      },
+      "source": "school-generic-reachable-bilingual-v1.json",
+      "gameplayIdentity": "school.generic.reachable.v2.classroom"
+    },
+    "school.media.generic.classroom.caption": {
+      "status": "translated",
+      "locales": {
+        "ru": "Урок уже завершён; сцена показывает только спокойное послесловие без новых игровых эффектов.",
+        "en": "The lesson is already complete; the scene is only a quiet aftermath with no new gameplay effects."
+      },
+      "source": "SCHOOL_BILINGUAL_MULTI_GIF_MAPPING_v1.md",
+      "gameplayIdentity": "school.generic.reachable.v2.classroom"
+    },
+    "school.night.literacy_and_numbers.reason.title": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ночная учёба — Literacy & Numbers — Reason",
+        "en": "Night study — Literacy & Numbers — Reason"
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.literacy_and_numbers.reason"
+    },
+    "school.night.literacy_and_numbers.reason.variant.focused": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ты разбираешь сложный пример строка за строкой, пока логику не становится проще объяснить, чем запомнить.",
+        "en": "You work through a difficult example line by line until the logic becomes easier to explain than to memorize."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.literacy_and_numbers.reason:focused"
+    },
+    "school.night.literacy_and_numbers.reason.variant.difficult": {
+      "status": "translated",
+      "locales": {
+        "ru": "Скрытое допущение ломает аккуратный результат, и ты возвращаешься к исходной предпосылке, а не к вычислениям.",
+        "en": "One hidden assumption breaks an otherwise neat result, so you restart from the premise instead of the arithmetic."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.literacy_and_numbers.reason:difficult"
+    },
+    "school.night.literacy_and_numbers.reason.variant.insight": {
+      "status": "translated",
+      "locales": {
+        "ru": "Более простое объяснение наконец показывает, почему прежний способ казался сложнее, чем был на самом деле.",
+        "en": "A simpler explanation finally exposes why the earlier method felt harder than it needed to be."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.literacy_and_numbers.reason:insight"
+    },
+    "school.night.literacy_and_numbers.wits.title": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ночная учёба — Literacy & Numbers — Wits",
+        "en": "Night study — Literacy & Numbers — Wits"
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.literacy_and_numbers.wits"
+    },
+    "school.night.literacy_and_numbers.wits.variant.focused": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ты сравниваешь несколько коротких примеров и ищешь деталь, которая меняет подход к задаче.",
+        "en": "You compare several short examples and look for the detail that changes which rule applies."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.literacy_and_numbers.wits:focused"
+    },
+    "school.night.literacy_and_numbers.wits.variant.difficult": {
+      "status": "translated",
+      "locales": {
+        "ru": "Две почти одинаковые задачи дают разные ответы, заставляя заметить мелкую подсказку, которую ты сначала проигнорировал.",
+        "en": "Two nearly identical problems produce different answers, forcing you to notice the small clue you first ignored."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.literacy_and_numbers.wits:difficult"
+    },
+    "school.night.literacy_and_numbers.wits.variant.insight": {
+      "status": "translated",
+      "locales": {
+        "ru": "Схема становится яснее, когда ты перестаёшь считать все детали одинаково важными.",
+        "en": "The pattern becomes easier once you stop treating every detail as equally important."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.literacy_and_numbers.wits:insight"
+    },
+    "school.night.arcana.magic.title": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ночная учёба — Arcana — Magic",
+        "en": "Night study — Arcana — Magic"
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.arcana.magic"
+    },
+    "school.night.arcana.magic.variant.focused": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ты изучаешь безопасный магический рисунок, отмечая ритм, устойчивость и момент, когда эффект начинает слабеть.",
+        "en": "You review a controlled magical pattern and pay attention to rhythm, stability, and the point where the effect weakens."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.arcana.magic:focused"
+    },
+    "school.night.arcana.magic.variant.difficult": {
+      "status": "translated",
+      "locales": {
+        "ru": "Последовательность не стабилизируется, пока ты не возвращаешься к последнему надёжному шагу.",
+        "en": "The sequence refuses to settle until you reconstruct it from the last stable step."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.arcana.magic:difficult"
+    },
+    "school.night.arcana.magic.variant.insight": {
+      "status": "translated",
+      "locales": {
+        "ru": "Небольшая поправка делает рисунок устойчивее, не превращая занятие в более зрелищный опыт.",
+        "en": "One small correction makes the pattern feel less fragile without making it more dramatic."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.arcana.magic:insight"
+    },
+    "school.night.arcana.reason.title": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ночная учёба — Arcana — Reason",
+        "en": "Night study — Arcana — Reason"
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.arcana.reason"
+    },
+    "school.night.arcana.reason.variant.focused": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ты сравниваешь два объяснения одного арканного наблюдения и записываешь, какое свидетельство могло бы различить их.",
+        "en": "You compare two explanations for the same arcane observation and write down what evidence would distinguish them."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.arcana.reason:focused"
+    },
+    "school.night.arcana.reason.variant.difficult": {
+      "status": "translated",
+      "locales": {
+        "ru": "Обе версии кажутся правдоподобными, пока одно предсказание не ломается при проверке.",
+        "en": "Both explanations seem plausible until one prediction fails under closer inspection."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.arcana.reason:difficult"
+    },
+    "school.night.arcana.reason.variant.insight": {
+      "status": "translated",
+      "locales": {
+        "ru": "Полезным оказывается не ответ, а тест, который раньше показал бы ошибочность одной из версий.",
+        "en": "The useful insight is the test that would have exposed the wrong answer sooner."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.arcana.reason:insight"
+    },
+    "school.night.arcana.creativity.title": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ночная учёба — Arcana — Creativity",
+        "en": "Night study — Arcana — Creativity"
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.arcana.creativity"
+    },
+    "school.night.arcana.creativity.variant.focused": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ты несколько раз перестраиваешь знакомую арканную схему, сохраняя её основную структуру.",
+        "en": "You redraw a familiar arcane arrangement several ways while keeping its structure intact."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.arcana.creativity:focused"
+    },
+    "school.night.arcana.creativity.variant.difficult": {
+      "status": "translated",
+      "locales": {
+        "ru": "Первые варианты меняют только внешний вид, поэтому ты начинаешь спрашивать, что может изменить функцию.",
+        "en": "The first alternatives are only decoration, so you ask what could change function rather than appearance."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.arcana.creativity:difficult"
+    },
+    "school.night.arcana.creativity.variant.insight": {
+      "status": "translated",
+      "locales": {
+        "ru": "Новая компоновка наконец ощущается как самостоятельная идея, а не украшенная копия.",
+        "en": "A new arrangement finally feels like an actual idea instead of variation for its own sake."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.arcana.creativity:insight"
+    },
+    "school.night.rhetoric_and_social.charm.title": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ночная учёба — Rhetoric & Social — Charm",
+        "en": "Night study — Rhetoric & Social — Charm"
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.rhetoric_and_social.charm"
+    },
+    "school.night.rhetoric_and_social.charm.variant.focused": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ты репетируешь сложное начало разговора, пока оно не звучит естественно и не оставляет собеседнику пространство для ответа.",
+        "en": "You rehearse a difficult opening until it sounds natural enough to invite a response instead of demanding one."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.rhetoric_and_social.charm:focused"
+    },
+    "school.night.rhetoric_and_social.charm.variant.difficult": {
+      "status": "translated",
+      "locales": {
+        "ru": "Каждая слишком polished версия кажется расчётливой, поэтому ты упрощаешь фразу до той, которую можешь сказать честно.",
+        "en": "Every polished version feels too calculated, so you strip the line back to something easier to say honestly."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.rhetoric_and_social.charm:difficult"
+    },
+    "school.night.rhetoric_and_social.charm.variant.insight": {
+      "status": "translated",
+      "locales": {
+        "ru": "Лучший вариант работает именно потому, что не заполняет собой каждую паузу.",
+        "en": "The best version works because it leaves room for the other person."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.rhetoric_and_social.charm:insight"
+    },
+    "school.night.rhetoric_and_social.sociability.title": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ночная учёба — Rhetoric & Social — Sociability",
+        "en": "Night study — Rhetoric & Social — Sociability"
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.rhetoric_and_social.sociability"
+    },
+    "school.night.rhetoric_and_social.sociability.variant.focused": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ты вспоминаешь недавний разговор и следишь за тем, как менялось внимание между участниками, а не только за словами.",
+        "en": "You replay a recent conversation and focus on where attention shifted rather than on the words alone."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.rhetoric_and_social.sociability:focused"
+    },
+    "school.night.rhetoric_and_social.sociability.variant.difficult": {
+      "status": "translated",
+      "locales": {
+        "ru": "Разговор становится сложнее, когда выясняется, что двое отвечали на разные скрытые потребности.",
+        "en": "The exchange becomes harder to interpret when you realize two people were responding to different concerns."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.rhetoric_and_social.sociability:difficult"
+    },
+    "school.night.rhetoric_and_social.sociability.variant.insight": {
+      "status": "translated",
+      "locales": {
+        "ru": "Как только ты называешь, чего каждый ждал от беседы, её социальная структура становится понятнее.",
+        "en": "Once you name what each person seemed to need, the social shape becomes clearer."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.rhetoric_and_social.sociability:insight"
+    },
+    "school.night.rhetoric_and_social.wits.title": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ночная учёба — Rhetoric & Social — Wits",
+        "en": "Night study — Rhetoric & Social — Wits"
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.rhetoric_and_social.wits"
+    },
+    "school.night.rhetoric_and_social.wits.variant.focused": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ты тренируешь несколько способов ответить на один и тот же вызов, не теряя сути.",
+        "en": "You practice answering the same challenge in several different ways without losing the point."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.rhetoric_and_social.wits:focused"
+    },
+    "school.night.rhetoric_and_social.wits.variant.difficult": {
+      "status": "translated",
+      "locales": {
+        "ru": "Самый остроумный ответ решает не ту проблему, и приходится начать заново с меньшим блеском и лучшим моментом.",
+        "en": "The cleverest answer solves the wrong problem, so you restart with less flourish and better timing."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.rhetoric_and_social.wits:difficult"
+    },
+    "school.night.rhetoric_and_social.wits.variant.insight": {
+      "status": "translated",
+      "locales": {
+        "ru": "Короткая формулировка оказывается сильнее, потому что быстрее достигает нужной точки.",
+        "en": "A shorter response works better because it reaches the useful point before the room moves on."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.rhetoric_and_social.wits:insight"
+    },
+    "school.night.etiquette_and_presentation.manners.title": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ночная учёба — Etiquette & Presentation — Manners",
+        "en": "Night study — Etiquette & Presentation — Manners"
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.etiquette_and_presentation.manners"
+    },
+    "school.night.etiquette_and_presentation.manners.variant.focused": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ты разбираешь формальную последовательность через вопрос о том, какой комфорт или ясность защищает каждое правило.",
+        "en": "You review a formal sequence by asking what comfort or clarity each rule is meant to protect."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.etiquette_and_presentation.manners:focused"
+    },
+    "school.night.etiquette_and_presentation.manners.variant.difficult": {
+      "status": "translated",
+      "locales": {
+        "ru": "Правила сливаются друг с другом, пока ты не связываешь каждый шаг с его назначением.",
+        "en": "The rules blur until you reconnect each step to its purpose instead of memorizing order."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.etiquette_and_presentation.manners:difficult"
+    },
+    "school.night.etiquette_and_presentation.manners.variant.insight": {
+      "status": "translated",
+      "locales": {
+        "ru": "Последовательность становится легче, когда ты можешь объяснить, зачем она существует.",
+        "en": "The sequence becomes easier once you can explain why it exists."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.etiquette_and_presentation.manners:insight"
+    },
+    "school.night.etiquette_and_presentation.grooming.title": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ночная учёба — Etiquette & Presentation — Grooming",
+        "en": "Night study — Etiquette & Presentation — Grooming"
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.etiquette_and_presentation.grooming"
+    },
+    "school.night.etiquette_and_presentation.grooming.variant.focused": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ты упрощаешь подготовительный ритуал и убираешь шаги, которые создают суету, но не помогают чувствовать себя готовее.",
+        "en": "You refine a simple preparation routine and remove steps that add fuss without making you more ready."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.etiquette_and_presentation.grooming:focused"
+    },
+    "school.night.etiquette_and_presentation.grooming.variant.difficult": {
+      "status": "translated",
+      "locales": {
+        "ru": "Рутина начинает походить на выступление для воображаемой публики, и ты заново собираешь её вокруг собственных задач.",
+        "en": "The routine starts to feel like performance for an imaginary audience, so you rebuild it around what actually serves you."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.etiquette_and_presentation.grooming:difficult"
+    },
+    "school.night.etiquette_and_presentation.grooming.variant.insight": {
+      "status": "translated",
+      "locales": {
+        "ru": "Меньший и более осознанный набор действий оказывается полезнее длинного.",
+        "en": "A smaller, more deliberate routine leaves you feeling more prepared."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.etiquette_and_presentation.grooming:insight"
+    },
+    "school.night.etiquette_and_presentation.charm.title": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ночная учёба — Etiquette & Presentation — Charm",
+        "en": "Night study — Etiquette & Presentation — Charm"
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.etiquette_and_presentation.charm"
+    },
+    "school.night.etiquette_and_presentation.charm.variant.focused": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ты учишься делать формальное приветствие тёплым, не переходя в чрезмерную фамильярность.",
+        "en": "You practice making a formal greeting feel warm without becoming overly familiar."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.etiquette_and_presentation.charm:focused"
+    },
+    "school.night.etiquette_and_presentation.charm.variant.difficult": {
+      "status": "translated",
+      "locales": {
+        "ru": "Первые попытки оказываются либо слишком жёсткими, либо слишком свободными.",
+        "en": "The first versions are either stiff or too casual, and the middle ground takes more attention than expected."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.etiquette_and_presentation.charm:difficult"
+    },
+    "school.night.etiquette_and_presentation.charm.variant.insight": {
+      "status": "translated",
+      "locales": {
+        "ru": "Приветствие улучшается, когда ты думаешь прежде всего о комфорте другого человека, а не о polished впечатлении.",
+        "en": "The greeting improves when you focus on making the other person comfortable rather than sounding polished."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.etiquette_and_presentation.charm:insight"
+    },
+    "school.night.field_craft.dexterity.title": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ночная учёба — Field Craft — Dexterity",
+        "en": "Night study — Field Craft — Dexterity"
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.field_craft.dexterity"
+    },
+    "school.night.field_craft.dexterity.variant.focused": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ты медленно повторяешь небольшой практический приём и замечаешь, где руки тратят лишнее усилие.",
+        "en": "You repeat a small practical motion slowly enough to notice where your hands waste effort."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.field_craft.dexterity:focused"
+    },
+    "school.night.field_craft.dexterity.variant.difficult": {
+      "status": "translated",
+      "locales": {
+        "ru": "Когда ты ускоряешься, движение снова распадается, поэтому приходится вернуться к чистой последовательности.",
+        "en": "The movement keeps slipping when you rush it, so you reduce speed until the sequence stays clean."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.field_craft.dexterity:difficult"
+    },
+    "school.night.field_craft.dexterity.variant.insight": {
+      "status": "translated",
+      "locales": {
+        "ru": "Последний повтор ощущается легче благодаря организации движения, а не изменению задачи.",
+        "en": "The final repetition feels easier because the motion is organized."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.field_craft.dexterity:insight"
+    },
+    "school.night.field_craft.wits.title": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ночная учёба — Field Craft — Wits",
+        "en": "Night study — Field Craft — Wits"
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.field_craft.wits"
+    },
+    "school.night.field_craft.wits.variant.focused": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ты рассматриваешь схему маршрута и перечисляешь причины, по которым очевидный путь может оказаться плохим.",
+        "en": "You study a route sketch and list what would make the obvious path a bad choice."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.field_craft.wits:focused"
+    },
+    "school.night.field_craft.wits.variant.difficult": {
+      "status": "translated",
+      "locales": {
+        "ru": "Первый план ломается из-за простой детали среды, которую ты не учёл.",
+        "en": "The first plan ignores one simple environmental detail and has to be rebuilt."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.field_craft.wits:difficult"
+    },
+    "school.night.field_craft.wits.variant.insight": {
+      "status": "translated",
+      "locales": {
+        "ru": "Лучший путь появляется только после отказа от мысли, что кратчайший обязательно самый безопасный или быстрый.",
+        "en": "The best route emerges once you stop assuming shortest means safest or fastest."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.field_craft.wits:insight"
+    },
+    "school.night.field_craft.creativity.title": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ночная учёба — Field Craft — Creativity",
+        "en": "Night study — Field Craft — Creativity"
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.field_craft.creativity"
+    },
+    "school.night.field_craft.creativity.variant.focused": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ты ограничиваешь себя небольшим набором инструментов и придумываешь несколько способов решить одну практическую задачу.",
+        "en": "You limit yourself to a small set of tools and invent several ways to solve the same practical problem."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.field_craft.creativity:focused"
+    },
+    "school.night.field_craft.creativity.variant.difficult": {
+      "status": "translated",
+      "locales": {
+        "ru": "Большинство идей неудобны, но одна работает, потому что использует привычный инструмент неожиданным способом.",
+        "en": "Most ideas are awkward, but one works because it uses a tool for a function you had not considered."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.field_craft.creativity:difficult"
+    },
+    "school.night.field_craft.creativity.variant.insight": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ограничение помогает быстрее заметить действительно удачную импровизацию.",
+        "en": "The constraint makes the good improvisation easier to recognize."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.field_craft.creativity:insight"
+    },
+    "school.night.physical_training.strength.title": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ночная учёба — Physical Training — Strength",
+        "en": "Night study — Physical Training — Strength"
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.physical_training.strength"
+    },
+    "school.night.physical_training.strength.variant.focused": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ты повторяешь силовое движение с умеренной нагрузкой, следя за опорой и чистым усилием вместо максимума.",
+        "en": "You review controlled strength work at low intensity, paying attention to bracing and clean force rather than maximum effort."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.physical_training.strength:focused"
+    },
+    "school.night.physical_training.strength.variant.difficult": {
+      "status": "translated",
+      "locales": {
+        "ru": "Усталость портит организацию движения, и ты снижаешь нагрузку вместо того, чтобы закреплять плохую технику.",
+        "en": "Fatigue makes the movement less organized, so you reduce the load instead of pushing through sloppy repetitions."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.physical_training.strength:difficult"
+    },
+    "school.night.physical_training.strength.variant.insight": {
+      "status": "translated",
+      "locales": {
+        "ru": "Небольшая техническая поправка делает то же усилие устойчивее.",
+        "en": "A small technical correction makes the same effort feel more stable."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.physical_training.strength:insight"
+    },
+    "school.night.physical_training.endurance.title": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ночная учёба — Physical Training — Endurance",
+        "en": "Night study — Physical Training — Endurance"
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.physical_training.endurance"
+    },
+    "school.night.physical_training.endurance.variant.focused": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ты тренируешь ровный темп и контролируемое дыхание, не превращая ночь во вторую полноценную тренировку.",
+        "en": "You practice steady pacing and controlled breathing without turning the session into another full workout."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.physical_training.endurance:focused"
+    },
+    "school.night.physical_training.endurance.variant.difficult": {
+      "status": "translated",
+      "locales": {
+        "ru": "Слишком лёгкий старт позже оказывается слишком тяжёлым, показывая, где силы были потрачены раньше времени.",
+        "en": "The pace feels too easy at first and too hard later, revealing where you spent effort too quickly."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.physical_training.endurance:difficult"
+    },
+    "school.night.physical_training.endurance.variant.insight": {
+      "status": "translated",
+      "locales": {
+        "ru": "Итоговый ритм менее эффектный, зато намного устойчивее.",
+        "en": "The final rhythm is less dramatic but far more sustainable."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.physical_training.endurance:insight"
+    },
+    "school.night.physical_training.dexterity.title": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ночная учёба — Physical Training — Dexterity",
+        "en": "Night study — Physical Training — Dexterity"
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.physical_training.dexterity"
+    },
+    "school.night.physical_training.dexterity.variant.focused": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ты медленно повторяешь координационную связку, сохраняя каждый шаг выровненным.",
+        "en": "You repeat a coordination drill slowly enough to keep every step aligned."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.physical_training.dexterity:focused"
+    },
+    "school.night.physical_training.dexterity.variant.difficult": {
+      "status": "translated",
+      "locales": {
+        "ru": "Скорость скрывает мелкие ошибки, поэтому приходится строить движение заново из самой чистой позиции.",
+        "en": "Speed keeps hiding small errors, so you rebuild the sequence from the cleanest position."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.physical_training.dexterity:difficult"
+    },
+    "school.night.physical_training.dexterity.variant.insight": {
+      "status": "translated",
+      "locales": {
+        "ru": "Когда порядок становится привычным, вся связка начинает ощущаться легче.",
+        "en": "Once the order becomes automatic, the movement starts to feel lighter."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.physical_training.dexterity:insight"
+    },
+    "school.night.arts_and_performance.creativity.title": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ночная учёба — Arts & Performance — Creativity",
+        "en": "Night study — Arts & Performance — Creativity"
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.arts_and_performance.creativity"
+    },
+    "school.night.arts_and_performance.creativity.variant.focused": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ты берёшь знакомую форму и меняешь только один элемент за раз.",
+        "en": "You take one familiar phrase or shape and transform only a single element at a time."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.arts_and_performance.creativity:focused"
+    },
+    "school.night.arts_and_performance.creativity.variant.difficult": {
+      "status": "translated",
+      "locales": {
+        "ru": "Первые эксперименты выглядят случайными, пока ты не решаешь, что именно должен сообщать каждый выбор.",
+        "en": "The first experiments feel random until you decide what each change is meant to communicate."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.arts_and_performance.creativity:difficult"
+    },
+    "school.night.arts_and_performance.creativity.variant.insight": {
+      "status": "translated",
+      "locales": {
+        "ru": "Один вариант наконец ощущается как намеренное решение, а не случайность.",
+        "en": "One variation finally feels like a choice rather than an accident."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.arts_and_performance.creativity:insight"
+    },
+    "school.night.arts_and_performance.charm.title": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ночная учёба — Arts & Performance — Charm",
+        "en": "Night study — Arts & Performance — Charm"
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.arts_and_performance.charm"
+    },
+    "school.night.arts_and_performance.charm.variant.focused": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ты репетируешь, как одно и то же сценическое решение меняется, если цель — пригласить зрителя к контакту, а не впечатлить.",
+        "en": "You rehearse how the same performance choice changes when it is meant to invite rather than impress."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.arts_and_performance.charm:focused"
+    },
+    "school.night.arts_and_performance.charm.variant.difficult": {
+      "status": "translated",
+      "locales": {
+        "ru": "Слишком polished версия кажется далёкой, и один эффектный момент приходится заменить более прямым.",
+        "en": "The polished version feels distant, so you replace one showy moment with something more direct."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.arts_and_performance.charm:difficult"
+    },
+    "school.night.arts_and_performance.charm.variant.insight": {
+      "status": "translated",
+      "locales": {
+        "ru": "Результат становится менее декоративным и более вовлекающим.",
+        "en": "The result is less decorative and more engaging."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.arts_and_performance.charm:insight"
+    },
+    "school.night.arts_and_performance.sociability.title": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ночная учёба — Arts & Performance — Sociability",
+        "en": "Night study — Arts & Performance — Sociability"
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.arts_and_performance.sociability"
+    },
+    "school.night.arts_and_performance.sociability.variant.focused": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ты представляешь одну сцену с разными партнёрами и замечаешь, как меняется темп, когда другому человеку нужно пространство для ответа.",
+        "en": "You imagine the same scene with different partners and notice how timing changes when another person needs room to respond."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.arts_and_performance.sociability:focused"
+    },
+    "school.night.arts_and_performance.sociability.variant.difficult": {
+      "status": "translated",
+      "locales": {
+        "ru": "Упражнение проваливается каждый раз, когда партнёр превращается для тебя в декорацию.",
+        "en": "The exercise falls flat whenever you treat the partner as scenery."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.arts_and_performance.sociability:difficult"
+    },
+    "school.night.arts_and_performance.sociability.variant.insight": {
+      "status": "translated",
+      "locales": {
+        "ru": "Сцена оживает, когда слушание становится частью выступления.",
+        "en": "The scene becomes livelier once listening is part of the performance."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.arts_and_performance.sociability:insight"
+    },
+    "school.night.arts_and_performance.dexterity.title": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ночная учёба — Arts & Performance — Dexterity",
+        "en": "Night study — Arts & Performance — Dexterity"
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.arts_and_performance.dexterity"
+    },
+    "school.night.arts_and_performance.dexterity.variant.focused": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ты повторяешь короткую последовательность, пока переходы не перестают требовать постоянной коррекции.",
+        "en": "You repeat a small sequence until the transitions stop requiring conscious correction."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.arts_and_performance.dexterity:focused"
+    },
+    "school.night.arts_and_performance.dexterity.variant.difficult": {
+      "status": "translated",
+      "locales": {
+        "ru": "Одно неловкое движение ломает ритм, поэтому ты выделяешь его отдельно и заново строишь соединение.",
+        "en": "One awkward movement keeps interrupting the rhythm, so you isolate it and rebuild the connection."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.arts_and_performance.dexterity:difficult"
+    },
+    "school.night.arts_and_performance.dexterity.variant.insight": {
+      "status": "translated",
+      "locales": {
+        "ru": "Вся последовательность выравнивается, когда переход перестаёт быть случайным.",
+        "en": "The whole sequence smooths out once the transition is no longer an afterthought."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.arts_and_performance.dexterity:insight"
+    },
+    "school.night.body_confidence.sexuality.title": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ночная учёба — Body Confidence — Sexuality",
+        "en": "Night study — Body Confidence — Sexuality"
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.body_confidence.sexuality"
+    },
+    "school.night.body_confidence.sexuality.variant.focused": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ты размышляешь, какой способ самопрезентации действительно выбран тобой, а какой создан ради чужого одобрения.",
+        "en": "You reflect on what kind of presentation feels chosen rather than performed for approval."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.body_confidence.sexuality:focused"
+    },
+    "school.night.body_confidence.sexuality.variant.difficult": {
+      "status": "translated",
+      "locales": {
+        "ru": "Упражнение становится неудобным, когда выясняется, насколько первый выбор зависел от ожидаемой оценки.",
+        "en": "The exercise becomes uncomfortable when you notice how much of the first choice was based on anticipated judgment."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.body_confidence.sexuality:difficult"
+    },
+    "school.night.body_confidence.sexuality.variant.insight": {
+      "status": "translated",
+      "locales": {
+        "ru": "Более осознанный выбор ощущается устойчивее, потому что принадлежит тебе.",
+        "en": "A more deliberate choice feels steadier because it belongs to you."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.body_confidence.sexuality:insight"
+    },
+    "school.night.body_confidence.grooming.title": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ночная учёба — Body Confidence — Grooming",
+        "en": "Night study — Body Confidence — Grooming"
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.body_confidence.grooming"
+    },
+    "school.night.body_confidence.grooming.variant.focused": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ты упрощаешь уход за собой, пока у каждого шага не остаётся понятной цели.",
+        "en": "You simplify a grooming routine until each step has a clear purpose."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.body_confidence.grooming:focused"
+    },
+    "school.night.body_confidence.grooming.variant.difficult": {
+      "status": "translated",
+      "locales": {
+        "ru": "Длинная рутина выглядит впечатляюще, но оставляет тебя менее подготовленным, и ты убираешь лишнее.",
+        "en": "The longer routine feels impressive but leaves you less prepared, so you remove what does not serve the day ahead."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.body_confidence.grooming:difficult"
+    },
+    "school.night.body_confidence.grooming.variant.insight": {
+      "status": "translated",
+      "locales": {
+        "ru": "Итоговый вариант проще поддерживать и легче считать своим.",
+        "en": "The final routine is easier to maintain and easier to own."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.body_confidence.grooming:insight"
+    },
+    "school.night.body_confidence.endurance.title": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ночная учёба — Body Confidence — Endurance",
+        "en": "Night study — Body Confidence — Endurance"
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.body_confidence.endurance"
+    },
+    "school.night.body_confidence.endurance.variant.focused": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ты тренируешь устойчивую осанку и контролируемое движение, не гонясь за интенсивностью.",
+        "en": "You practice steady posture and controlled movement without chasing intensity."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.body_confidence.endurance:focused"
+    },
+    "school.night.body_confidence.endurance.variant.difficult": {
+      "status": "translated",
+      "locales": {
+        "ru": "Усталость заставляет напрягаться сильнее, чем нужно, поэтому ты замедляешься и отделяешь усилие от лишнего напряжения.",
+        "en": "Fatigue makes you tense unnecessarily, so you slow down and distinguish effort from strain."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.body_confidence.endurance:difficult"
+    },
+    "school.night.body_confidence.endurance.variant.insight": {
+      "status": "translated",
+      "locales": {
+        "ru": "Сессия становится полезнее, когда выбран темп, который можно удерживать без потери контроля.",
+        "en": "The session improves when you choose a pace you can maintain without losing composure."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.body_confidence.endurance:insight"
+    },
+    "school.night.choice.continue.label": {
+      "status": "translated",
+      "locales": {
+        "ru": "Продолжить",
+        "en": "Continue"
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "continue"
+    },
+    "school.night.choice.continue.text": {
+      "status": "translated",
+      "locales": {
+        "ru": "Продолжить ночь после учебной сцены.",
+        "en": "Continue the Night flow after the study presentation."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "continue"
+    },
+    "school.media.night.literacy_and_numbers.alt": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ночная учебная сцена курса Literacy & Numbers.",
+        "en": "Literacy & Numbers Night-study presentation."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.media.literacy_and_numbers"
+    },
+    "school.media.night.literacy_and_numbers.caption": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ночное занятие уже выбрано игровым действием; изображение сопровождает учёбу и не добавляет второй эффект.",
+        "en": "The Night-study action has already been chosen; the image accompanies the study and adds no second effect."
+      },
+      "source": "SCHOOL_BILINGUAL_MULTI_GIF_MAPPING_v1.md",
+      "gameplayIdentity": "school.night.exact.v3.media.literacy_and_numbers"
+    },
+    "school.media.night.arcana.alt": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ночная учебная сцена курса Arcana.",
+        "en": "Arcana Night-study presentation."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.media.arcana"
+    },
+    "school.media.night.arcana.caption": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ночное занятие уже выбрано игровым действием; изображение сопровождает учёбу и не добавляет второй эффект.",
+        "en": "The Night-study action has already been chosen; the image accompanies the study and adds no second effect."
+      },
+      "source": "SCHOOL_BILINGUAL_MULTI_GIF_MAPPING_v1.md",
+      "gameplayIdentity": "school.night.exact.v3.media.arcana"
+    },
+    "school.media.night.rhetoric_and_social.alt": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ночная учебная сцена курса Rhetoric & Social.",
+        "en": "Rhetoric & Social Night-study presentation."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.media.rhetoric_and_social"
+    },
+    "school.media.night.rhetoric_and_social.caption": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ночное занятие уже выбрано игровым действием; изображение сопровождает учёбу и не добавляет второй эффект.",
+        "en": "The Night-study action has already been chosen; the image accompanies the study and adds no second effect."
+      },
+      "source": "SCHOOL_BILINGUAL_MULTI_GIF_MAPPING_v1.md",
+      "gameplayIdentity": "school.night.exact.v3.media.rhetoric_and_social"
+    },
+    "school.media.night.etiquette_and_presentation.alt": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ночная учебная сцена курса Etiquette & Presentation.",
+        "en": "Etiquette & Presentation Night-study presentation."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.media.etiquette_and_presentation"
+    },
+    "school.media.night.etiquette_and_presentation.caption": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ночное занятие уже выбрано игровым действием; изображение сопровождает учёбу и не добавляет второй эффект.",
+        "en": "The Night-study action has already been chosen; the image accompanies the study and adds no second effect."
+      },
+      "source": "SCHOOL_BILINGUAL_MULTI_GIF_MAPPING_v1.md",
+      "gameplayIdentity": "school.night.exact.v3.media.etiquette_and_presentation"
+    },
+    "school.media.night.field_craft.alt": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ночная учебная сцена курса Field Craft.",
+        "en": "Field Craft Night-study presentation."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.media.field_craft"
+    },
+    "school.media.night.field_craft.caption": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ночное занятие уже выбрано игровым действием; изображение сопровождает учёбу и не добавляет второй эффект.",
+        "en": "The Night-study action has already been chosen; the image accompanies the study and adds no second effect."
+      },
+      "source": "SCHOOL_BILINGUAL_MULTI_GIF_MAPPING_v1.md",
+      "gameplayIdentity": "school.night.exact.v3.media.field_craft"
+    },
+    "school.media.night.physical_training.alt": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ночная учебная сцена курса Physical Training.",
+        "en": "Physical Training Night-study presentation."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.media.physical_training"
+    },
+    "school.media.night.physical_training.caption": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ночное занятие уже выбрано игровым действием; изображение сопровождает учёбу и не добавляет второй эффект.",
+        "en": "The Night-study action has already been chosen; the image accompanies the study and adds no second effect."
+      },
+      "source": "SCHOOL_BILINGUAL_MULTI_GIF_MAPPING_v1.md",
+      "gameplayIdentity": "school.night.exact.v3.media.physical_training"
+    },
+    "school.media.night.arts_and_performance.alt": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ночная учебная сцена курса Arts & Performance.",
+        "en": "Arts & Performance Night-study presentation."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.media.arts_and_performance"
+    },
+    "school.media.night.arts_and_performance.caption": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ночное занятие уже выбрано игровым действием; изображение сопровождает учёбу и не добавляет второй эффект.",
+        "en": "The Night-study action has already been chosen; the image accompanies the study and adds no second effect."
+      },
+      "source": "SCHOOL_BILINGUAL_MULTI_GIF_MAPPING_v1.md",
+      "gameplayIdentity": "school.night.exact.v3.media.arts_and_performance"
+    },
+    "school.media.night.body_confidence.alt": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ночная учебная сцена курса Body Confidence.",
+        "en": "Body Confidence Night-study presentation."
+      },
+      "source": "school-night-exact-bilingual-v1.json",
+      "gameplayIdentity": "school.night.exact.v3.media.body_confidence"
+    },
+    "school.media.night.body_confidence.caption": {
+      "status": "translated",
+      "locales": {
+        "ru": "Ночное занятие уже выбрано игровым действием; изображение сопровождает учёбу и не добавляет второй эффект.",
+        "en": "The Night-study action has already been chosen; the image accompanies the study and adds no second effect."
+      },
+      "source": "SCHOOL_BILINGUAL_MULTI_GIF_MAPPING_v1.md",
+      "gameplayIdentity": "school.night.exact.v3.media.body_confidence"
+    }
+  }
+}
