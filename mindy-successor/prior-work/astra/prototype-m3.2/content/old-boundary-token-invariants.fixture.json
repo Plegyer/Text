@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "id": "old-boundary-token.invariants.fixture",
+  "status": "POLICY_INDEPENDENT_INVARIANTS",
+  "canonical": {
+    "itemId": "old_boundary_token",
+    "capabilityId": "enter_old_boundary",
+    "routeOptionId": "forest.route.old-boundary"
+  },
+  "invariants": [
+    {
+      "id": "canonical-identities-stable",
+      "rule": "future Product decisions must not rename canonical item/capability identities",
+      "required": true
+    },
+    {
+      "id": "acquisition-exactly-once-per-accepted-transaction",
+      "rule": "each accepted acquisition transaction changes authoritative inventory exactly once",
+      "required": true
+    },
+    {
+      "id": "capability-derived-from-authoritative-state",
+      "rule": "enter_old_boundary availability derives from authoritative owned item/capability state, not a hidden QA worldFact",
+      "required": true
+    },
+    {
+      "id": "reload-cannot-duplicate-grant",
+      "rule": "reload/retry cannot replay an already committed token grant",
+      "required": true
+    },
+    {
+      "id": "reload-cannot-duplicate-removal",
+      "rule": "if Product selects a removal policy, reload/retry cannot remove an additional copy or restore a removed copy",
+      "required": true
+    },
+    {
+      "id": "old-boundary-gating-deterministic",
+      "rule": "old-boundary route availability is deterministic from authoritative persisted state",
+      "required": true
+    },
+    {
+      "id": "hard-work-independent",
+      "rule": "no token source/use/removal/repeatability choice may change Hard Work eligibility or reward",
+      "required": true
+    }
+  ],
+  "policyNeutral": {
+    "acquisitionSource": null,
+    "acquisitionTiming": null,
+    "consumePolicy": null,
+    "repeatabilityPolicy": null,
+    "routeLockPresentation": null,
+    "permanentAccessAfterRemoval": null
+  },
+  "saveReload": {
+    "beforeAcquisition": "same authoritative ownership and route availability after reload",
+    "afterAcquisition": "one committed grant remains one committed grant",
+    "beforeRemovalIfSelected": "ownership/capability remains unchanged",
+    "afterRemovalIfSelected": "removed inventory remains removed and route capability recomputes",
+    "retryCommittedTransaction": "idempotent"
+  },
+  "hardWork": {
+    "onlyCondition": {
+      "kind": "careerCounter",
+      "career": "lumber",
+      "counter": "completed_shifts",
+      "op": "gte",
+      "value": 50
+    },
+    "rewardId": "hardWork:lumber",
+    "tokenPrerequisiteAllowed": false
+  },
+  "a5": {
+    "continuationBoundary": "activityResult",
+    "activity": "lumber.forest",
+    "outcome": "success",
+    "result": "lumber.forest.success"
+  }
+}
