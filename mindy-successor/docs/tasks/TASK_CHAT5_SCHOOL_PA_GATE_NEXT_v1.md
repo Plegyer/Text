@@ -1633,3 +1633,111 @@ Summarize items 99–106:
 - remaining content gaps.
 
 Continue items 99–107 sequentially without waiting for Lead review.
+
+
+## Queue item 108 — School staged library routing inventory
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_STAGED_LIBRARY_ROUTING_INVENTORY_v1.md`
+
+Inventory every teacher/course-specific staged event from v1/v2 authored packs and state what exact trigger identity would be required to make it naturally reachable without ambiguity.
+
+Do not invent a new trigger or edit shared runtime.
+
+## Queue item 109 — generic post-lesson content bank v2
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_GENERIC_POST_LESSON_CONTENT_BANK_v2.md`
+
+Expand generic safe post-paid-lesson content that can run under current `actionCompleted:school` routing without knowing the exact course.
+
+No course-specific teacher identity may be asserted.
+
+## Queue item 110 — Night-study exact-route content bank v3
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_NIGHT_STUDY_EXACT_ROUTE_CONTENT_V3.md`
+
+Author richer variants keyed to exact existing Night-study choice IDs where track/stat identity is known.
+
+Do not alter Night-study mechanics.
+
+## Queue item 111 — School generic reachable production pack v2
+
+Create NEW production-oriented file only:
+- `prior-work/astra/prototype-m3.2/content/packs/school-target/school-generic-reachable-v2.json`
+
+Convert safe generic post-lesson content into strict valid pack form:
+- valid dot content IDs;
+- strict pack-owned event namespace;
+- actual generic School reaction trigger;
+- effect-free presentation choices.
+
+Keep under staging directory for Lead selective inclusion.
+
+## Queue item 112 — School exact Night content pack v3
+
+Create NEW production-oriented file only:
+- `prior-work/astra/prototype-m3.2/content/packs/school-target/school-night-exact-v3.json`
+
+Convert exact Night-study authored variants into strict valid pack form with existing exact Night choice triggers.
+
+No mechanics effects.
+
+## Queue item 113 — School routing pack tests
+
+Create NEW tests only:
+- `prior-work/astra/prototype-m3.2/tests/school-generic-reachable-v2.test.ts`
+- `prior-work/astra/prototype-m3.2/tests/school-night-exact-v3.test.ts`
+
+Validate:
+- strict schema/namespace;
+- natural generic post-school routing;
+- exact Night choice routing;
+- no transaction/stat/Lust mutations;
+- save/reload stable.
+
+Tests may load staging packs explicitly.
+
+## Queue item 114 — School teacher/course routing seam proposal
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_EXACT_COURSE_ROUTING_SEAM_PROPOSAL_v1.md`
+
+Identify the smallest shared runtime/public-trigger extension needed to expose exact paid course identity to authored events.
+
+Requirements:
+- preserve current paid transaction;
+- no duplicate lesson progress;
+- exact course ID only as public reaction fact/trigger;
+- backward-compatible generic `actionCompleted:school`;
+- no new Save migration if avoidable.
+
+Do not implement shared runtime.
+
+## Queue item 115 — School multi-GIF reachable/staged split v2
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_MULTI_GIF_REACHABLE_STAGED_SPLIT_v2.md`
+
+Map 3–5 GIF pools separately for:
+- currently reachable generic/Night events;
+- teacher/course staged libraries;
+- future exact-course routed events.
+
+Do not mislabel staged content as shipped reachability.
+
+## Queue item 116 — School routing/content handoff v11
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_ROUTING_CONTENT_HANDOFF_v11.md`
+
+Consolidate items 108–115:
+- exact safe packs/tests;
+- exact routing limitation;
+- minimal Lead runtime seam;
+- staged teacher content ready after seam;
+- multi-GIF opportunities;
+- selective integration list.
+
+Continue items 108–116 sequentially without waiting for Lead review.
