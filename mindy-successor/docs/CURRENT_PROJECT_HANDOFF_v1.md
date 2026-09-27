@@ -859,3 +859,36 @@ Latest queue top-up commits:
 - Chat 5: `1cca3df8e376af8cd6319ab5c38e27ea3147feb9`.
 
 Do not wait for a worker to empty all nine items. Whenever a completed item is verified and fewer than nine useful independent tasks remain, top the queue back up to nine while respecting one-file-one-active-owner.
+
+
+## 20. Live milestone — PR30 production wave 1
+
+This is a live recovery update, not a final transfer.
+
+Merged PR #30:
+`dbe78efdb9cd5ed384b66f7536bb5145702779c7`
+
+It integrates the first completed full-game production-authoring wave into main as docs/authority only:
+- full-roster GIF coverage and presentation continuity;
+- ordinary poverty implementation readiness;
+- poverty/Secret Debt production handoff;
+- full-product scope preservation;
+- next-phase QA handoff;
+- eight-track School teacher authoring matrix;
+- School production continuity.
+
+Technical RC remains unchanged at PR #27 / **221/221 PASS**.
+
+Lead PR #29 is still open and intentionally unmerged until independent QA review:
+- branch: `lead/poverty-production-contract-v1`;
+- one added test: `tests/poverty-production-contract.test.ts`;
+- purpose: lock the already-shipped zero-money street anti-softlock path without locking OPEN balance numbers;
+- GitHub connector exposes no automated workflow run for the PR head, so do not claim a new full-suite pass until separate validation exists.
+
+Current active worker ranges after further verified completion and queue replenishment:
+- Chat 2: **68–76**;
+- Chat 3: **62–70**;
+- Chat 4: **56–64**;
+- Chat 5: **56–64**.
+
+Queue target remains nine outstanding independent tasks whenever practical.
