@@ -1093,3 +1093,22 @@ Define how the retained regression floor should grow as new careers/systems ship
 No new tests in this task.
 
 Continue items 62–70 sequentially without waiting for Lead review.
+
+
+## Queue item 71 — production content natural-path evidence rule
+
+Create NEW file only:
+- `docs/qa-prep/PRODUCTION_CONTENT_NATURAL_PATH_EVIDENCE_RULE_v1.md`
+
+Define what counts as natural-path acceptance versus accelerator evidence for future careers/systems.
+
+Require:
+- natural acquisition/unlock when claiming authored reachability;
+- injected counters/items/facts clearly labeled as accelerators;
+- no fixture-only setup counted as complete Product path;
+- long thresholds may use accelerators only for boundary testing;
+- at least one representative no-injection path for each shipped subsystem.
+
+Apply generically to careers, School, poverty and Activity.
+
+Continue items 63–71 sequentially without waiting for Lead review.
