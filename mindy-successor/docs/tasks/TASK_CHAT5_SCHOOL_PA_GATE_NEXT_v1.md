@@ -2018,3 +2018,106 @@ Create NEW file only:
 Consolidate items 127–135 for Lead selective integration after localization runtime lands.
 
 Continue items 128–136 sequentially without waiting for Lead review.
+
+
+## Queue item 137 — School localization delta for main v1
+
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/school-localization-main-delta-v1.fixture.json`
+
+Produce the exact localization.json delta for safe current-main School surfaces:
+- 8 paid course labels/descriptions;
+- generic reachable post-lesson text;
+- exact Night-study text;
+- School panel/help wording.
+
+Use deterministic locale-neutral keys and RU+EN values.
+
+Exclude teacher/course-specific staged text that is not yet routed.
+
+## Queue item 138 — School localization delta contract test
+
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/school-localization-main-delta-v1.test.ts`
+
+Validate item 137:
+- all 8 course UI identities covered;
+- RU and EN both present;
+- keys unique/locale-neutral;
+- no gameplay fields;
+- no staged teacher content accidentally promoted.
+
+## Queue item 139 — School localization UI copy bank v2
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_UI_COPY_RU_EN_v2.md`
+
+Provide polished RU+EN player-facing copy for:
+- School panel title/help;
+- tuition/Energy wording;
+- lesson button;
+- Night-study button/context;
+- generic post-lesson shell.
+
+Do not change numeric mechanics.
+
+## Queue item 140 — School exact Night multi-GIF adoption fixture
+
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/school-night-multigif-adoption-v1.json`
+
+Map exact reachable Night-study semantic IDs to current PR42 pool shape with RU+EN alt localization keys.
+
+No duplicate gameplay identities.
+
+## Queue item 141 — School generic lesson multi-GIF adoption fixture
+
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/school-generic-multigif-adoption-v1.json`
+
+Map generic reachable paid-lesson/post-lesson surfaces to current pool shape.
+
+Teacher-specific surfaces remain staged.
+
+## Queue item 142 — staged exact-course localization promotion checklist
+
+Create NEW file only:
+- `docs/school-prep/STAGED_EXACT_COURSE_LOCALIZATION_PROMOTION_CHECKLIST_v1.md`
+
+Define what must be true before staged teacher/course localized content can enter root production:
+- exact course routing seam shipped;
+- no duplicate generic+specific transaction;
+- RU+EN complete;
+- presentation IDs stable;
+- tests green.
+
+## Queue item 143 — School localization natural-path smoke plan
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_LOCALIZATION_NATURAL_PATH_SMOKE_v1.md`
+
+Define UI smoke for:
+- RU School panel;
+- take a paid lesson;
+- generic authored follow-up;
+- switch EN;
+- Save/progress unchanged;
+- Night study exact identity;
+- localized text changes only.
+
+## Queue item 144 — School localization coverage ledger v2
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_LOCALIZATION_COVERAGE_LEDGER_v2.md`
+
+Classify every current School player-facing family:
+SHIPPED_RU_EN / SAFE_DELTA_READY / STAGED_ROUTING_BLOCKED / PRODUCT_BLOCKED.
+
+## Queue item 145 — School localization integration handoff v14
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_LOCALIZATION_INTEGRATION_HANDOFF_v14.md`
+
+Consolidate 137–144 into exact files/tests Lead can selectively integrate on current main after PR42.
+
+Continue items 137–145 sequentially without waiting for Lead review.
