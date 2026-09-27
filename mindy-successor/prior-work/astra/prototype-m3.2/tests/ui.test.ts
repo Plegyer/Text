@@ -188,3 +188,45 @@ test('renderer: locale switch changes presentation only and preserves Work gamep
   assert.deepEqual(errors,[]);
  }finally{dom.window.close();}
 });
+
+
+test('renderer: multi-GIF selection survives reload and locale switch without touching life save',async()=>{
+ const gifA='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';
+ const gifB='data:image/gif;base64,R0lGODlhAQABAIAAAAD/AAAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==';
+ const gifC='data:image/gif;base64,R0lGODlhAQABAIAAAAD/AP///ywAAAAAAQABAAACAUwAOw==';
+ const png='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAB';
+ const presentation={version:1,texts:{},media:{},slots:{'location/town/default':{
+  pool:{version:1,ordering:'ordered',selectionPolicy:'unweighted',candidates:[
+   {key:'town-a',kind:'gif',src:gifA,alt:'Town A'},
+   {key:'town-b',kind:'gif',src:gifB,alt:'Town B'},
+   {key:'town-c',kind:'gif',src:gifC,alt:'Town C'}
+  ]},
+  static:{kind:'image',src:png,alt:'Static town'}
+ }}};
+ const saved=JSON.stringify(started());
+ const {w,dom,errors}=boot(saved,presentation);try{
+  await wait(()=>!!w.document.querySelector('.media-window[data-candidate-key]'));
+  const before=w.localStorage.getItem('portal-life.v1');
+  const first=w.document.querySelector('.media-window').getAttribute('data-candidate-key');
+  assert.ok(first);
+
+  w.document.querySelector('[data-panel="menu"]').click();
+  w.document.querySelector('#language-toggle').click();
+  await wait(()=>w.document.documentElement.lang==='en');
+  assert.equal(w.document.querySelector('.media-window').getAttribute('data-candidate-key'),first);
+  assert.equal(w.localStorage.getItem('portal-life.v1'),before);
+
+  w.document.querySelector('#close').click();
+  w.document.querySelector('[data-panel="menu"]').click();
+  w.document.querySelector('#animation-toggle').click();
+  await wait(()=>w.document.querySelector('.media-window')?.getAttribute('data-candidate-key')==='');
+  assert.equal(w.localStorage.getItem('portal-life.v1'),before);
+
+  const second=boot(before,presentation);try{
+   await wait(()=>!!second.w.document.querySelector('.media-window[data-candidate-key]'));
+   assert.equal(second.w.document.querySelector('.media-window').getAttribute('data-candidate-key'),first);
+   assert.equal(second.w.localStorage.getItem('portal-life.v1'),before);
+  }finally{second.dom.window.close();}
+  assert.deepEqual(errors,[]);
+ }finally{dom.window.close();}
+});
