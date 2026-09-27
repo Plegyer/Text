@@ -268,7 +268,7 @@ test('renderer: Forest result scene localizes RU EN without changing pending gam
 });
 
 
-test('renderer: School RU EN localization preserves course commands and gameplay state',async()=>{
+test('renderer: School RU EN localization preserves course command and pending scene identity',async()=>{
  const initial=started();
  initial.run.resources.money=2_000;
  initial.run.dayState.energyCurrent=3;
@@ -307,26 +307,41 @@ test('renderer: School RU EN localization preserves course commands and gameplay
   literacyEn.querySelector('button').click();
   await wait(()=>{
    const raw=w.localStorage.getItem('portal-life.v1');
-   return !!raw&&JSON.parse(raw).run.flow.lastAction?.id==='school';
+   return !!raw&&JSON.parse(raw).run.flow.pendingScene?.eventId==='base.school';
   });
-  const afterLessonRaw=w.localStorage.getItem('portal-life.v1');
-  assert.match(w.document.querySelector('.stage-title h1')?.textContent??w.document.body.textContent,/Literacy & Numbers/);
-  const afterLesson=JSON.parse(afterLessonRaw);
-  assert.equal(afterLesson.run.resources.money,1_700);
-  assert.equal(afterLesson.run.dayState.energyCurrent,2);
-  assert.equal(afterLesson.run.character.stats.reason,reasonBefore+4);
-  assert.equal(afterLesson.run.character.stats.wits,witsBefore+2);
-  assert.equal(afterLesson.run.flow.lastAction.id,'school');
-  assert.equal(afterLesson.run.flow.lastAction.presentationId,'school/literacy-and-numbers/lesson/default');
-  assert.equal(afterLesson.run.flow.pendingScene,null);
-  assert.match(w.document.querySelector('.dialogue p').textContent,/School lesson completed: Literacy & Numbers/);
+  const pendingEnRaw=w.localStorage.getItem('portal-life.v1');
+  const pendingEn=JSON.parse(pendingEnRaw);
+  assert.equal(pendingEn.run.resources.money,1_700);
+  assert.equal(pendingEn.run.dayState.energyCurrent,2);
+  assert.equal(pendingEn.run.character.stats.reason,reasonBefore+4);
+  assert.equal(pendingEn.run.character.stats.wits,witsBefore+2);
+  assert.equal(pendingEn.run.flow.lastAction.id,'school');
+  assert.equal(pendingEn.run.flow.lastAction.presentationId,'school/literacy-and-numbers/lesson/default');
+  assert.equal(pendingEn.run.flow.pendingScene.eventId,'base.school');
+  assert.equal(pendingEn.run.flow.pendingScene.variantId,'lesson');
+  assert.match(w.document.querySelector('.stage-title h1').textContent,/The Steady Boil Class/);
+  assert.match(w.document.querySelector('.dialogue p').textContent,/If a potion argues with you/);
+  assert.match(w.document.querySelector('[data-choice="listen"]').textContent,/Write down the rule/);
+  assert.match(w.document.querySelector('.media-window img').getAttribute('alt'),/alchemy workshop/);
 
   w.document.querySelector('[data-panel="menu"]').click();
   w.document.querySelector('#language-toggle').click();
   await wait(()=>w.document.documentElement.lang==='ru');
-  assert.equal(w.localStorage.getItem('portal-life.v1'),afterLessonRaw);
-  assert.match(w.document.querySelector('.stage-title h1').textContent,/Грамотность и счёт/);
-  assert.match(w.document.querySelector('.dialogue p').textContent,/Урок завершён: Грамотность и счёт/);
+  assert.equal(w.localStorage.getItem('portal-life.v1'),pendingEnRaw);
+  assert.match(w.document.querySelector('.stage-title h1').textContent,/Класс устойчивого кипения/);
+  assert.match(w.document.querySelector('.dialogue p').textContent,/Если зелье спорит с вами/);
+  assert.match(w.document.querySelector('[data-choice="listen"]').textContent,/Записать правило/);
+
+  w.document.querySelector('#close').click();
+  w.document.querySelector('[data-choice="listen"]').click();
+  await wait(()=>{
+   const raw=w.localStorage.getItem('portal-life.v1');
+   return !!raw&&JSON.parse(raw).run.flow.pendingScene===null;
+  });
+  const resolved=JSON.parse(w.localStorage.getItem('portal-life.v1'));
+  assert.equal(resolved.run.flags['school.enrolled'],true);
+  assert.match(w.document.querySelector('.stage-title h1')?.textContent??'',/Грамотность и счёт/);
+  assert.match(w.document.querySelector('.dialogue p')?.textContent??'',/Урок завершён: Грамотность и счёт/);
   assert.deepEqual(errors,[]);
  }finally{dom.window.close();}
 });
