@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 1,
+  "id": "forest.anomaly-challenge-staging.v1",
+  "status": "CONTENT_DRAFT_PRODUCT_OPEN",
+  "family": "interpretation-ritual-anomaly",
+  "sourceLocale": "ru",
+  "locales": [
+    "ru",
+    "en"
+  ],
+  "semanticPresentationNamespace": "activity/forest/challenge/anomaly",
+  "runtimeCapablePrimitives": {
+    "possibleConditionKinds": [
+      "stat(reason)",
+      "stat(magic)",
+      "worldFact(accepted School Arcana public result only)",
+      "itemCapability(existing accepted specimen/tool capability only)",
+      "calendarSeason(only if Product explicitly selects a seasonal mechanic)",
+      "all/any"
+    ],
+    "existingCapabilitiesAsPossibilities": [
+      {
+        "capability": "preserve_specimen",
+        "providerItem": "field_preservation_kit",
+        "selectionStatus": "POSSIBLE_NOT_SELECTED"
+      }
+    ],
+    "possibleEffectFamilies": [
+      "addWorldFact",
+      "addItem",
+      "modifyStat",
+      "modifyEnergy"
+    ],
+    "note": "Condition/effect families describe current runtime affordances only. No School provider, threshold, sample item, lore truth, reward or persistence rule is selected."
+  },
+  "productOpen": {
+    "gameplayChallengeId": null,
+    "routeBinding": null,
+    "selectedCondition": null,
+    "threshold": null,
+    "schoolArcanaPublicResultId": null,
+    "schoolArcanaProvider": null,
+    "schoolArcanaThreshold": null,
+    "selectedCapability": null,
+    "capabilityProvider": null,
+    "sampleItemId": null,
+    "loreTruth": null,
+    "progressDelta": null,
+    "enduranceCost": null,
+    "reward": null,
+    "persistentConsequence": null,
+    "seasonalMechanic": null
+  },
+  "authoredCandidates": [
+    {
+      "authoringKey": "forest/challenge/anomaly/knot-marks",
+      "semanticPresentationId": "activity/forest/challenge/anomaly/knot-marks",
+      "text": {
+        "ru": "Тонкие ветви связаны в повторяющиеся узлы. Для случайного повреждения рисунок слишком аккуратен. Это могут быть метки, предупреждения, остатки ритуала или практические указатели. Сначала важно понять, что перед героиней, и только потом действовать.",
+        "en": "Thin branches have been tied into repeating knots. The pattern is too deliberate to be random damage. They may be markers, warnings, ritual remnants, or practical trail signs. The important thing is to interpret them before acting."
+      }
+    },
+    {
+      "authoringKey": "forest/challenge/anomaly/stone-ring",
+      "semanticPresentationId": "activity/forest/challenge/anomaly/stone-ring",
+      "text": {
+        "ru": "Кольцо камней лежит там, где корни давно должны были его раздвинуть. Ничего не движется и не угрожает героине напрямую. Странность — в том, что порядок сохранился вопреки времени.",
+        "en": "A ring of stones sits where roots should have disturbed it years ago. Nothing moves, and nothing threatens the heroine directly. The anomaly is that the arrangement has endured despite time."
+      }
+    },
+    {
+      "authoringKey": "forest/challenge/anomaly/altered-sap",
+      "semanticPresentationId": "activity/forest/challenge/anomaly/altered-sap",
+      "text": {
+        "ru": "Из повреждённого дерева выступает смола с необычным блеском. Будущие подходы могут включать наблюдение, сравнение, сохранение образца при наличии авторизованной способности или решение ничего не трогать. Этот черновик не выдаёт предмет и не назначает награду.",
+        "en": "A damaged tree leaks sap with an unusual sheen. Future approaches may include observing it, comparing it, preserving a sample with an authoritative capability, or leaving it untouched. This draft grants no item and assigns no reward."
+      }
+    },
+    {
+      "authoringKey": "forest/challenge/anomaly/source-less-sound",
+      "semanticPresentationId": "activity/forest/challenge/anomaly/source-less-sound",
+      "text": {
+        "ru": "Между деревьями повторяется низкий звук. Ритм слишком ровный, чтобы его легко списать на случайность. Это может оказаться природным циклом, механизмом, ритуальным сигналом или особенностью эха — но текст не выбирает истинный ответ.",
+        "en": "A low sound repeats through the trees. Its rhythm is regular enough that it is hard to dismiss as random. It could be a natural cycle, machinery, a ritual signal, or a terrain echo—but the text does not choose which answer is true."
+      }
+    },
+    {
+      "authoringKey": "forest/challenge/anomaly/old-symbols",
+      "semanticPresentationId": "activity/forest/challenge/anomaly/old-symbols",
+      "text": {
+        "ru": "Мох скрывает вырезанные знаки на камне или коре. Даже без понимания смысла видно, что они расположены не случайно. Позже интерпретация может зависеть от Reason, Magic или авторизованного результата School Arcana; точная история и порог остаются открытыми.",
+        "en": "Moss hides carved symbols on stone or bark. Even without understanding their meaning, it is clear that they are arranged deliberately. Interpretation may later depend on Reason, Magic, or an authoritative School Arcana result; the exact lore and threshold remain open."
+      }
+    }
+  ],
+  "approachLabels": [
+    {
+      "key": "study-pattern",
+      "label": {
+        "ru": "Изучить рисунок",
+        "en": "Study the pattern"
+      }
+    },
+    {
+      "key": "compare-marks",
+      "label": {
+        "ru": "Сравнить знаки",
+        "en": "Compare the marks"
+      }
+    },
+    {
+      "key": "preserve-sample",
+      "label": {
+        "ru": "Сохранить образец",
+        "en": "Preserve a sample"
+      }
+    },
+    {
+      "key": "use-arcana",
+      "label": {
+        "ru": "Применить знания Арканы",
+        "en": "Use Arcana knowledge"
+      }
+    },
+    {
+      "key": "leave-undisturbed",
+      "label": {
+        "ru": "Оставить всё как есть",
+        "en": "Leave it undisturbed"
+      }
+    }
+  ],
+  "invariants": {
+    "createsGameplayId": false,
+    "choosesThreshold": false,
+    "choosesReward": false,
+    "choosesRouteBinding": false,
+    "choosesSchoolArcanaFact": false,
+    "choosesSchoolArcanaProvider": false,
+    "choosesSchoolArcanaThreshold": false,
+    "choosesSampleItem": false,
+    "presentationIdsLocaleNeutral": true
+  }
+}
