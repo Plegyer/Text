@@ -1916,3 +1916,35 @@ Consolidate items 118–125:
 - Product decisions still OPEN.
 
 Continue items 118–126 sequentially without waiting for Lead review.
+
+
+## Queue item 127 — School localization-key inventory v1
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_LOCALIZATION_KEY_INVENTORY_v1.md`
+
+Assign deterministic locale-neutral localization keys to:
+- eight course labels/descriptions;
+- teacher identities;
+- generic post-lesson events;
+- exact Night-study events;
+- staged exact-course lesson events;
+- choices and presentation captions.
+
+Do not change gameplay IDs.
+
+## Queue item 128 — School bilingual migration bundle v1
+
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/school-bilingual-migration-v1.fixture.json`
+
+Create a machine-readable RU+EN migration bundle keyed by item-127 keys, reusing current authored RU+EN content.
+
+Include coverage status per key:
+- translated;
+- source-fallback;
+- staged-only.
+
+No shared runtime edits.
+
+Continue items 120–128 sequentially without waiting for Lead review.
