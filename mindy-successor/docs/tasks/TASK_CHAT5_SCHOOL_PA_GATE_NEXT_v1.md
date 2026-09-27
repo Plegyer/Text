@@ -1413,3 +1413,115 @@ Provide Lead with:
 - selective integration file list.
 
 Complete item 73 first if still missing, then continue items 82–89 without waiting for Lead review.
+
+
+## Queue item 90 — School teacher production pack v1
+
+Create NEW production file only:
+- `prior-work/astra/prototype-m3.2/content/packs/school-target/school-teachers-v1.json`
+
+Convert the reviewed drafted teacher identities from items 82–88 into a production-oriented authored content pack using existing School/event primitives only.
+
+Requirements:
+- all eight course tracks represented;
+- no tuition/Energy/stat-package changes;
+- no teacher prerequisite for paid lessons;
+- no management/Arcana public-result mechanics;
+- content/presentation only.
+
+If current pack schema cannot represent teacher metadata directly, encode only valid authored event/media content and document the limitation in the next item; do not change shared schema.
+
+## Queue item 91 — School teacher pack validation test
+
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/school-teachers-v1.test.ts`
+
+Validate item 90:
+- pack schema;
+- all eight course IDs represented;
+- no mechanics writes outside allowed School/content domains;
+- no course transaction mutation;
+- semantic presentation identities unique;
+- save schema unaffected.
+
+## Queue item 92 — School repeatable lesson authored pack v1
+
+Create NEW production file only:
+- `prior-work/astra/prototype-m3.2/content/packs/school-target/school-lesson-content-v1.json`
+
+Convert the repeatable lesson text bank into naturally reachable authored lesson/context events where current primitives allow.
+
+Do not duplicate or replace the paid-lesson transaction itself. No changed tuition/Energy/stat effects.
+
+## Queue item 93 — School lesson content validation
+
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/school-lesson-content-v1.test.ts`
+
+Verify:
+- all eight tracks have authored content;
+- course mechanics remain unchanged;
+- paid lesson increments only `lessons_completed`;
+- no ordinary Lust gain;
+- Night study remains separate;
+- authored presentation fallback resolves.
+
+## Queue item 94 — School milestone-neutral content pack
+
+Create NEW production file only:
+- `prior-work/astra/prototype-m3.2/content/packs/school-target/school-life-content-v1.json`
+
+Convert milestone-neutral arrival/feedback/peer/post-lesson/Night-study flavor scenes into valid production authored content.
+
+Do not assert unresolved certificates/exams/projects/public results.
+
+## Queue item 95 — School life content reload regression
+
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/school-life-content-reload.test.ts`
+
+Verify item-94 authored events:
+- no reroll after materialization;
+- effects/content commit once;
+- reload safe;
+- no double tuition/Energy/progress;
+- Night study ownership unchanged.
+
+## Queue item 96 — School teacher presentation identity inventory
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_TEACHER_PRESENTATION_IDENTITY_INVENTORY_v1.md`
+
+Enumerate semantic presentation surfaces created or implied by the production-authored teacher/lesson packs:
+- teacher/classroom;
+- track lesson;
+- Night study;
+- reusable 3–5-GIF pool candidates;
+- current fallback.
+
+This feeds Chat2 multi-GIF work.
+
+## Queue item 97 — School production inclusion manifest
+
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/school-authored-production-inclusion-v1.fixture.json`
+
+Prepare exact proposed inclusion order for items 90/92/94 plus existing School production pack.
+
+Do not modify current catalog inclusion yet.
+
+## Queue item 98 — School authored production handoff v9
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_AUTHORED_PRODUCTION_HANDOFF_v9.md`
+
+Provide Lead with:
+- exact production packs;
+- exact tests;
+- inclusion manifest;
+- teacher identities/text now authored;
+- public-result decisions still OPEN;
+- multi-GIF presentation opportunities;
+- selective integration steps.
+
+Continue items 90–98 sequentially without waiting for Lead review.
