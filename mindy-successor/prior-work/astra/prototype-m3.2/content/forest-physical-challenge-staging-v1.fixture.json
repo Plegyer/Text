@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "id": "forest.physical-challenge-staging.v1",
+  "status": "CONTENT_DRAFT_PRODUCT_OPEN",
+  "family": "physical-obstacle",
+  "sourceLocale": "ru",
+  "locales": [
+    "ru",
+    "en"
+  ],
+  "semanticPresentationNamespace": "activity/forest/challenge/physical",
+  "runtimeCapablePrimitives": {
+    "possibleConditionKinds": [
+      "stat(strength)",
+      "stat(endurance)",
+      "stat(dexterity)",
+      "itemCapability(existing capability only)",
+      "calendarSeason(only if Product explicitly selects a seasonal mechanic)",
+      "all/any"
+    ],
+    "existingCapabilitiesAsPossibilities": [
+      {
+        "capability": "cross_rough_route",
+        "providerItem": "rope_kit",
+        "selectionStatus": "POSSIBLE_NOT_SELECTED"
+      },
+      {
+        "capability": "cut_heavy_wood",
+        "providerItem": "reinforced_axe",
+        "selectionStatus": "POSSIBLE_NOT_SELECTED"
+      }
+    ],
+    "activityOptionFields": [
+      "conditions",
+      "progressDelta",
+      "enduranceCost",
+      "setRoute"
+    ],
+    "note": "Capability references describe current runtime affordances only and do not create a Product rule."
+  },
+  "productOpen": {
+    "gameplayChallengeId": null,
+    "routeBinding": null,
+    "selectedCondition": null,
+    "threshold": null,
+    "selectedCapability": null,
+    "itemConsumptionRule": null,
+    "progressDelta": null,
+    "enduranceCost": null,
+    "reward": null,
+    "injuryOrStatEffect": null,
+    "seasonalMechanic": null
+  },
+  "authoredCandidates": [
+    {
+      "authoringKey": "forest/challenge/physical/fallen-trunk",
+      "semanticPresentationId": "activity/forest/challenge/physical/fallen-trunk",
+      "text": {
+        "ru": "Большой ствол лёг поперёк пути под неудобным углом. Будущие подходы могут включать перелезание, обход, расчистку при наличии авторизованной способности или поиск более безопасного места перехода. Сам текст не выбирает проверку.",
+        "en": "A large trunk lies across the route at an awkward angle. Future approaches may include climbing over it, going around, clearing it with an authoritative capability, or finding a safer crossing point. The text itself chooses no check."
+      }
+    },
+    {
+      "authoringKey": "forest/challenge/physical/washed-bank",
+      "semanticPresentationId": "activity/forest/challenge/physical/washed-bank",
+      "text": {
+        "ru": "Часть тропы обвалилась в неглубокий овраг. Противоположный край достижим, но просто пройти вперёд уже нельзя. Позже могут быть разрешены спуск и подъём, верёвка, обход или отступление — только если это подтвердит механика.",
+        "en": "Part of the path has collapsed into a shallow ravine. The opposite edge is reachable, but walking straight ahead is no longer possible. Descending and climbing, using a rope, detouring, or retreating may be allowed later only if mechanics authorize them."
+      }
+    },
+    {
+      "authoringKey": "forest/challenge/physical/deadfall",
+      "semanticPresentationId": "activity/forest/challenge/physical/deadfall",
+      "text": {
+        "ru": "Сломанные ветви и поваленные стволы образовали плотный завал. Здесь помогают рычаг, осторожная постановка ног, авторизованная способность к расчистке и терпение. Величина эффекта не задаётся.",
+        "en": "Broken branches and fallen trunks have formed a dense barrier. Leverage, careful footing, an authoritative clearing capability, and patience may all matter here. No effect magnitude is set."
+      }
+    },
+    {
+      "authoringKey": "forest/challenge/physical/slick-stones",
+      "semanticPresentationId": "activity/forest/challenge/physical/slick-stones",
+      "text": {
+        "ru": "Ручей неглубокий, но камни под ногами ненадёжны. Проблема не в глубине воды, а в опоре. Будущая механика может учитывать ловкость, верёвку или знание обходного пути, но ни одно условие здесь не фиксируется.",
+        "en": "The stream is shallow, but the stones underfoot are unreliable. The problem is not the depth of the water; it is footing. Future mechanics may use Dexterity, a rope, or knowledge of an alternate route, but no condition is fixed here."
+      }
+    },
+    {
+      "authoringKey": "forest/challenge/physical/root-slope",
+      "semanticPresentationId": "activity/forest/challenge/physical/root-slope",
+      "text": {
+        "ru": "Крутой склон весь прошит обнажившимися корнями. Одни выдержат вес, другие — нет. Возможные будущие подходы: идти прямо вверх, закрепить путь или выбрать длинный обход.",
+        "en": "A steep slope is threaded with exposed roots. Some will hold weight and some will not. Possible future approaches include climbing directly, securing a route, or taking a longer detour."
+      }
+    }
+  ],
+  "approachLabels": [
+    {
+      "key": "climb-carefully",
+      "label": {
+        "ru": "Осторожно перелезть",
+        "en": "Climb carefully"
+      }
+    },
+    {
+      "key": "clear-way",
+      "label": {
+        "ru": "Расчистить путь",
+        "en": "Clear a way"
+      }
+    },
+    {
+      "key": "use-rope",
+      "label": {
+        "ru": "Использовать верёвку",
+        "en": "Use the rope"
+      }
+    },
+    {
+      "key": "long-detour",
+      "label": {
+        "ru": "Пойти длинным обходом",
+        "en": "Take the longer detour"
+      }
+    },
+    {
+      "key": "test-footholds",
+      "label": {
+        "ru": "Проверять каждую опору",
+        "en": "Test each foothold"
+      }
+    }
+  ],
+  "invariants": {
+    "createsGameplayId": false,
+    "choosesThreshold": false,
+    "choosesReward": false,
+    "choosesRouteBinding": false,
+    "choosesCapability": false,
+    "choosesItemConsumption": false,
+    "presentationIdsLocaleNeutral": true
+  }
+}
