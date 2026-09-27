@@ -1,0 +1,574 @@
+{
+  "version": 1,
+  "defaultLocale": "ru",
+  "strings": {
+    "ui.school.title": {
+      "ru": "Школа",
+      "en": "School"
+    },
+    "ui.school.help": {
+      "ru": "Восемь оплачиваемых курсов. Оплата и 1 единица текущей Energy списываются атомарно только при успешном уроке.",
+      "en": "Eight paid courses. Tuition and 1 current-day Energy are charged atomically only when a lesson succeeds."
+    },
+    "ui.school.lessonButton": {
+      "ru": "Учиться",
+      "en": "Study"
+    },
+    "ui.school.tuitionEnergy": {
+      "ru": "Стоимость: {tuition} монет · Энергия сегодня: {energy}",
+      "en": "Tuition: {tuition} coins · Energy today: {energy}"
+    },
+    "ui.school.nightStudyButton": {
+      "ru": "Учиться ночью",
+      "en": "Study at night"
+    },
+    "ui.school.nightStudyContext": {
+      "ru": "Ночная учёба не требует оплаты или текущей Energy: выбранная характеристика +2, Energy следующего дня −1.",
+      "en": "Night study costs no tuition or current-day Energy: the selected stat gains +2 and next-day Energy is −1."
+    },
+    "school.course.literacy_and_numbers.label": {
+      "ru": "Грамотность и счёт",
+      "en": "Literacy & Numbers"
+    },
+    "school.course.literacy_and_numbers.description": {
+      "ru": "Практическая грамотность, счёт, работа с записями и ясное объяснение.",
+      "en": "Practical literacy, numeracy, record work, and clear explanation."
+    },
+    "school.course.arcana.label": {
+      "ru": "Аркана",
+      "en": "Arcana"
+    },
+    "school.course.arcana.description": {
+      "ru": "Наблюдение, магическая теория, безопасный эксперимент и проверка гипотез.",
+      "en": "Observation, magical theory, careful experimentation, and testing hypotheses."
+    },
+    "school.course.rhetoric_and_social.label": {
+      "ru": "Риторика и общение",
+      "en": "Rhetoric & Social"
+    },
+    "school.course.rhetoric_and_social.description": {
+      "ru": "Речь, слушание, чтение социальной ситуации и адаптация подачи.",
+      "en": "Speaking, listening, reading social situations, and adapting delivery."
+    },
+    "school.course.etiquette_and_presentation.label": {
+      "ru": "Этикет и самопрезентация",
+      "en": "Etiquette & Presentation"
+    },
+    "school.course.etiquette_and_presentation.description": {
+      "ru": "Социальные правила, подготовка, уход, осанка и осознанная самопрезентация.",
+      "en": "Social conventions, preparation, grooming, posture, and deliberate presentation."
+    },
+    "school.course.field_craft.label": {
+      "ru": "Полевая практика",
+      "en": "Field Craft"
+    },
+    "school.course.field_craft.description": {
+      "ru": "Наблюдение, маршруты, практические инструменты и надёжная импровизация.",
+      "en": "Observation, route choice, practical tools, and reliable improvisation."
+    },
+    "school.course.physical_training.label": {
+      "ru": "Физическая подготовка",
+      "en": "Physical Training"
+    },
+    "school.course.physical_training.description": {
+      "ru": "Сила, выносливость, координация, техника и восстановление.",
+      "en": "Strength, endurance, coordination, technique, and recovery."
+    },
+    "school.course.arts_and_performance.label": {
+      "ru": "Искусство и выступление",
+      "en": "Arts & Performance"
+    },
+    "school.course.arts_and_performance.description": {
+      "ru": "Творческий выбор, ритм, выразительность, репетиция и сценическое взаимодействие.",
+      "en": "Creative choices, rhythm, expression, rehearsal, and performance interaction."
+    },
+    "school.course.body_confidence.label": {
+      "ru": "Уверенность в теле",
+      "en": "Body Confidence"
+    },
+    "school.course.body_confidence.description": {
+      "ru": "Движение, уход за собой, границы и осознанная самопрезентация.",
+      "en": "Movement, grooming, boundaries, and deliberate self-presentation."
+    },
+    "school.generic.after_school.title": {
+      "ru": "После урока",
+      "en": "After the School lesson"
+    },
+    "school.generic.after_school.variant.notes": {
+      "ru": "Урок заканчивается несколькими минутами, чтобы привести в порядок записи, материалы и мысли. Ничего нового не происходит; важно решить, что действительно стоит запомнить.",
+      "en": "The lesson ends with a few minutes to put notes, tools, and thoughts back in order. Nothing new is added; the value is deciding what deserves to be remembered."
+    },
+    "school.generic.after_school.variant.one.point": {
+      "ru": "Перед уходом ты сводишь занятие к одной полезной мысли, которую смог бы объяснить и без класса вокруг.",
+      "en": "Before leaving, you reduce the session to one useful point you could explain without the rest of the classroom around you."
+    },
+    "school.generic.after_school.variant.question": {
+      "ru": "Большая часть урока укладывается в голове. Один вопрос — нет. Ты записываешь его вместо того, чтобы выжимать ответ только потому, что занятие закончилось.",
+      "en": "Most of the lesson settles. One question does not. You write it down rather than forcing an answer just because the class is over."
+    },
+    "school.generic.after_school.variant.compare.notes": {
+      "ru": "Ученик рядом сравнивает одну строку своих записей с твоей. Каждый заметил то, что пропустил другой, и ни одна версия не обязана становиться единственно правильной.",
+      "en": "A nearby student compares one line of notes with yours. You each caught something the other missed, and neither version needs to become the official one."
+    },
+    "school.generic.after_school.variant.small.correction": {
+      "ru": "Перед уходом кто-то негромко указывает на небольшое недоразумение. Исправление полезно именно потому, что не превращается в публичное выступление.",
+      "en": "Someone quietly points out a minor misunderstanding before you leave. The correction is useful precisely because it does not become a public performance."
+    },
+    "school.generic.after_school.variant.shared.confusion": {
+      "ru": "Двое учеников обнаруживают, что запутались в одной и той же части урока по разным причинам. Сравнение помогает точнее назвать проблему.",
+      "en": "Two students discover they were confused by the same part of the lesson for different reasons. The comparison makes the problem easier to name."
+    },
+    "school.generic.after_school.variant.enough.today": {
+      "ru": "Можно было бы продолжать, но урок уже дал достаточно материала для осмысления. Остановиться сейчас полезнее, чем размыть последнюю ясную мысль.",
+      "en": "You could keep pushing, but the lesson has already given you enough to process. Stopping now feels more useful than blurring the last clear idea."
+    },
+    "school.generic.after_school.variant.hallway": {
+      "ru": "В коридоре шумнее, чем в классе. Ученики расходятся к работе, делам, жилью и другим обязанностям, унося урок обратно в обычную жизнь.",
+      "en": "The hallway outside is noisier than the classroom. Students split toward work, errands, lodging, and other obligations, carrying the lesson back into ordinary life."
+    },
+    "school.generic.after_school.variant.board": {
+      "ru": "Кто-то стирает последние записи с доски. Комната уже готова к следующему занятию, хотя ты ещё не закончил думать об этом.",
+      "en": "Someone erases the last marks from the board. The room is ready for the next class before you are entirely done thinking about this one."
+    },
+    "school.generic.after_school.variant.reminder": {
+      "ru": "Ты оставляешь себе короткое напоминание на потом: не новую цель, а ту часть сегодняшнего урока, которая легче всего исчезнет из памяти без записи.",
+      "en": "You leave yourself one short reminder for later: not a new goal, just the part of today's lesson most likely to disappear if you do not write it down."
+    },
+    "school.generic.after_school.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue"
+    },
+    "school.generic.after_school.choice.continue.text": {
+      "ru": "Вернуться к остатку дня после школьной сцены.",
+      "en": "Return to the day after the School presentation."
+    },
+    "school.media.generic.classroom.alt": {
+      "ru": "Обычная школьная аудитория после завершённого урока.",
+      "en": "A generic School classroom after a completed lesson."
+    },
+    "school.night.literacy_and_numbers.reason.title": {
+      "ru": "Ночная учёба — Literacy & Numbers — Reason",
+      "en": "Night study — Literacy & Numbers — Reason"
+    },
+    "school.night.literacy_and_numbers.reason.variant.focused": {
+      "ru": "Ты разбираешь сложный пример строка за строкой, пока логику не становится проще объяснить, чем запомнить.",
+      "en": "You work through a difficult example line by line until the logic becomes easier to explain than to memorize."
+    },
+    "school.night.literacy_and_numbers.reason.variant.difficult": {
+      "ru": "Скрытое допущение ломает аккуратный результат, и ты возвращаешься к исходной предпосылке, а не к вычислениям.",
+      "en": "One hidden assumption breaks an otherwise neat result, so you restart from the premise instead of the arithmetic."
+    },
+    "school.night.literacy_and_numbers.reason.variant.insight": {
+      "ru": "Более простое объяснение наконец показывает, почему прежний способ казался сложнее, чем был на самом деле.",
+      "en": "A simpler explanation finally exposes why the earlier method felt harder than it needed to be."
+    },
+    "school.night.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue"
+    },
+    "school.night.choice.continue.text": {
+      "ru": "Продолжить ночь после учебной сцены.",
+      "en": "Continue the Night flow after the study presentation."
+    },
+    "school.media.night.literacy_and_numbers.alt": {
+      "ru": "Ночная учебная сцена курса Literacy & Numbers.",
+      "en": "Literacy & Numbers Night-study presentation."
+    },
+    "school.night.literacy_and_numbers.wits.title": {
+      "ru": "Ночная учёба — Literacy & Numbers — Wits",
+      "en": "Night study — Literacy & Numbers — Wits"
+    },
+    "school.night.literacy_and_numbers.wits.variant.focused": {
+      "ru": "Ты сравниваешь несколько коротких примеров и ищешь деталь, которая меняет подход к задаче.",
+      "en": "You compare several short examples and look for the detail that changes which rule applies."
+    },
+    "school.night.literacy_and_numbers.wits.variant.difficult": {
+      "ru": "Две почти одинаковые задачи дают разные ответы, заставляя заметить мелкую подсказку, которую ты сначала проигнорировал.",
+      "en": "Two nearly identical problems produce different answers, forcing you to notice the small clue you first ignored."
+    },
+    "school.night.literacy_and_numbers.wits.variant.insight": {
+      "ru": "Схема становится яснее, когда ты перестаёшь считать все детали одинаково важными.",
+      "en": "The pattern becomes easier once you stop treating every detail as equally important."
+    },
+    "school.night.arcana.magic.title": {
+      "ru": "Ночная учёба — Arcana — Magic",
+      "en": "Night study — Arcana — Magic"
+    },
+    "school.night.arcana.magic.variant.focused": {
+      "ru": "Ты изучаешь безопасный магический рисунок, отмечая ритм, устойчивость и момент, когда эффект начинает слабеть.",
+      "en": "You review a controlled magical pattern and pay attention to rhythm, stability, and the point where the effect weakens."
+    },
+    "school.night.arcana.magic.variant.difficult": {
+      "ru": "Последовательность не стабилизируется, пока ты не возвращаешься к последнему надёжному шагу.",
+      "en": "The sequence refuses to settle until you reconstruct it from the last stable step."
+    },
+    "school.night.arcana.magic.variant.insight": {
+      "ru": "Небольшая поправка делает рисунок устойчивее, не превращая занятие в более зрелищный опыт.",
+      "en": "One small correction makes the pattern feel less fragile without making it more dramatic."
+    },
+    "school.media.night.arcana.alt": {
+      "ru": "Ночная учебная сцена курса Arcana.",
+      "en": "Arcana Night-study presentation."
+    },
+    "school.night.arcana.reason.title": {
+      "ru": "Ночная учёба — Arcana — Reason",
+      "en": "Night study — Arcana — Reason"
+    },
+    "school.night.arcana.reason.variant.focused": {
+      "ru": "Ты сравниваешь два объяснения одного арканного наблюдения и записываешь, какое свидетельство могло бы различить их.",
+      "en": "You compare two explanations for the same arcane observation and write down what evidence would distinguish them."
+    },
+    "school.night.arcana.reason.variant.difficult": {
+      "ru": "Обе версии кажутся правдоподобными, пока одно предсказание не ломается при проверке.",
+      "en": "Both explanations seem plausible until one prediction fails under closer inspection."
+    },
+    "school.night.arcana.reason.variant.insight": {
+      "ru": "Полезным оказывается не ответ, а тест, который раньше показал бы ошибочность одной из версий.",
+      "en": "The useful insight is the test that would have exposed the wrong answer sooner."
+    },
+    "school.night.arcana.creativity.title": {
+      "ru": "Ночная учёба — Arcana — Creativity",
+      "en": "Night study — Arcana — Creativity"
+    },
+    "school.night.arcana.creativity.variant.focused": {
+      "ru": "Ты несколько раз перестраиваешь знакомую арканную схему, сохраняя её основную структуру.",
+      "en": "You redraw a familiar arcane arrangement several ways while keeping its structure intact."
+    },
+    "school.night.arcana.creativity.variant.difficult": {
+      "ru": "Первые варианты меняют только внешний вид, поэтому ты начинаешь спрашивать, что может изменить функцию.",
+      "en": "The first alternatives are only decoration, so you ask what could change function rather than appearance."
+    },
+    "school.night.arcana.creativity.variant.insight": {
+      "ru": "Новая компоновка наконец ощущается как самостоятельная идея, а не украшенная копия.",
+      "en": "A new arrangement finally feels like an actual idea instead of variation for its own sake."
+    },
+    "school.night.rhetoric_and_social.charm.title": {
+      "ru": "Ночная учёба — Rhetoric & Social — Charm",
+      "en": "Night study — Rhetoric & Social — Charm"
+    },
+    "school.night.rhetoric_and_social.charm.variant.focused": {
+      "ru": "Ты репетируешь сложное начало разговора, пока оно не звучит естественно и не оставляет собеседнику пространство для ответа.",
+      "en": "You rehearse a difficult opening until it sounds natural enough to invite a response instead of demanding one."
+    },
+    "school.night.rhetoric_and_social.charm.variant.difficult": {
+      "ru": "Каждая слишком polished версия кажется расчётливой, поэтому ты упрощаешь фразу до той, которую можешь сказать честно.",
+      "en": "Every polished version feels too calculated, so you strip the line back to something easier to say honestly."
+    },
+    "school.night.rhetoric_and_social.charm.variant.insight": {
+      "ru": "Лучший вариант работает именно потому, что не заполняет собой каждую паузу.",
+      "en": "The best version works because it leaves room for the other person."
+    },
+    "school.media.night.rhetoric_and_social.alt": {
+      "ru": "Ночная учебная сцена курса Rhetoric & Social.",
+      "en": "Rhetoric & Social Night-study presentation."
+    },
+    "school.night.rhetoric_and_social.sociability.title": {
+      "ru": "Ночная учёба — Rhetoric & Social — Sociability",
+      "en": "Night study — Rhetoric & Social — Sociability"
+    },
+    "school.night.rhetoric_and_social.sociability.variant.focused": {
+      "ru": "Ты вспоминаешь недавний разговор и следишь за тем, как менялось внимание между участниками, а не только за словами.",
+      "en": "You replay a recent conversation and focus on where attention shifted rather than on the words alone."
+    },
+    "school.night.rhetoric_and_social.sociability.variant.difficult": {
+      "ru": "Разговор становится сложнее, когда выясняется, что двое отвечали на разные скрытые потребности.",
+      "en": "The exchange becomes harder to interpret when you realize two people were responding to different concerns."
+    },
+    "school.night.rhetoric_and_social.sociability.variant.insight": {
+      "ru": "Как только ты называешь, чего каждый ждал от беседы, её социальная структура становится понятнее.",
+      "en": "Once you name what each person seemed to need, the social shape becomes clearer."
+    },
+    "school.night.rhetoric_and_social.wits.title": {
+      "ru": "Ночная учёба — Rhetoric & Social — Wits",
+      "en": "Night study — Rhetoric & Social — Wits"
+    },
+    "school.night.rhetoric_and_social.wits.variant.focused": {
+      "ru": "Ты тренируешь несколько способов ответить на один и тот же вызов, не теряя сути.",
+      "en": "You practice answering the same challenge in several different ways without losing the point."
+    },
+    "school.night.rhetoric_and_social.wits.variant.difficult": {
+      "ru": "Самый остроумный ответ решает не ту проблему, и приходится начать заново с меньшим блеском и лучшим моментом.",
+      "en": "The cleverest answer solves the wrong problem, so you restart with less flourish and better timing."
+    },
+    "school.night.rhetoric_and_social.wits.variant.insight": {
+      "ru": "Короткая формулировка оказывается сильнее, потому что быстрее достигает нужной точки.",
+      "en": "A shorter response works better because it reaches the useful point before the room moves on."
+    },
+    "school.night.etiquette_and_presentation.manners.title": {
+      "ru": "Ночная учёба — Etiquette & Presentation — Manners",
+      "en": "Night study — Etiquette & Presentation — Manners"
+    },
+    "school.night.etiquette_and_presentation.manners.variant.focused": {
+      "ru": "Ты разбираешь формальную последовательность через вопрос о том, какой комфорт или ясность защищает каждое правило.",
+      "en": "You review a formal sequence by asking what comfort or clarity each rule is meant to protect."
+    },
+    "school.night.etiquette_and_presentation.manners.variant.difficult": {
+      "ru": "Правила сливаются друг с другом, пока ты не связываешь каждый шаг с его назначением.",
+      "en": "The rules blur until you reconnect each step to its purpose instead of memorizing order."
+    },
+    "school.night.etiquette_and_presentation.manners.variant.insight": {
+      "ru": "Последовательность становится легче, когда ты можешь объяснить, зачем она существует.",
+      "en": "The sequence becomes easier once you can explain why it exists."
+    },
+    "school.media.night.etiquette_and_presentation.alt": {
+      "ru": "Ночная учебная сцена курса Etiquette & Presentation.",
+      "en": "Etiquette & Presentation Night-study presentation."
+    },
+    "school.night.etiquette_and_presentation.grooming.title": {
+      "ru": "Ночная учёба — Etiquette & Presentation — Grooming",
+      "en": "Night study — Etiquette & Presentation — Grooming"
+    },
+    "school.night.etiquette_and_presentation.grooming.variant.focused": {
+      "ru": "Ты упрощаешь подготовительный ритуал и убираешь шаги, которые создают суету, но не помогают чувствовать себя готовее.",
+      "en": "You refine a simple preparation routine and remove steps that add fuss without making you more ready."
+    },
+    "school.night.etiquette_and_presentation.grooming.variant.difficult": {
+      "ru": "Рутина начинает походить на выступление для воображаемой публики, и ты заново собираешь её вокруг собственных задач.",
+      "en": "The routine starts to feel like performance for an imaginary audience, so you rebuild it around what actually serves you."
+    },
+    "school.night.etiquette_and_presentation.grooming.variant.insight": {
+      "ru": "Меньший и более осознанный набор действий оказывается полезнее длинного.",
+      "en": "A smaller, more deliberate routine leaves you feeling more prepared."
+    },
+    "school.night.etiquette_and_presentation.charm.title": {
+      "ru": "Ночная учёба — Etiquette & Presentation — Charm",
+      "en": "Night study — Etiquette & Presentation — Charm"
+    },
+    "school.night.etiquette_and_presentation.charm.variant.focused": {
+      "ru": "Ты учишься делать формальное приветствие тёплым, не переходя в чрезмерную фамильярность.",
+      "en": "You practice making a formal greeting feel warm without becoming overly familiar."
+    },
+    "school.night.etiquette_and_presentation.charm.variant.difficult": {
+      "ru": "Первые попытки оказываются либо слишком жёсткими, либо слишком свободными.",
+      "en": "The first versions are either stiff or too casual, and the middle ground takes more attention than expected."
+    },
+    "school.night.etiquette_and_presentation.charm.variant.insight": {
+      "ru": "Приветствие улучшается, когда ты думаешь прежде всего о комфорте другого человека, а не о polished впечатлении.",
+      "en": "The greeting improves when you focus on making the other person comfortable rather than sounding polished."
+    },
+    "school.night.field_craft.dexterity.title": {
+      "ru": "Ночная учёба — Field Craft — Dexterity",
+      "en": "Night study — Field Craft — Dexterity"
+    },
+    "school.night.field_craft.dexterity.variant.focused": {
+      "ru": "Ты медленно повторяешь небольшой практический приём и замечаешь, где руки тратят лишнее усилие.",
+      "en": "You repeat a small practical motion slowly enough to notice where your hands waste effort."
+    },
+    "school.night.field_craft.dexterity.variant.difficult": {
+      "ru": "Когда ты ускоряешься, движение снова распадается, поэтому приходится вернуться к чистой последовательности.",
+      "en": "The movement keeps slipping when you rush it, so you reduce speed until the sequence stays clean."
+    },
+    "school.night.field_craft.dexterity.variant.insight": {
+      "ru": "Последний повтор ощущается легче благодаря организации движения, а не изменению задачи.",
+      "en": "The final repetition feels easier because the motion is organized."
+    },
+    "school.media.night.field_craft.alt": {
+      "ru": "Ночная учебная сцена курса Field Craft.",
+      "en": "Field Craft Night-study presentation."
+    },
+    "school.night.field_craft.wits.title": {
+      "ru": "Ночная учёба — Field Craft — Wits",
+      "en": "Night study — Field Craft — Wits"
+    },
+    "school.night.field_craft.wits.variant.focused": {
+      "ru": "Ты рассматриваешь схему маршрута и перечисляешь причины, по которым очевидный путь может оказаться плохим.",
+      "en": "You study a route sketch and list what would make the obvious path a bad choice."
+    },
+    "school.night.field_craft.wits.variant.difficult": {
+      "ru": "Первый план ломается из-за простой детали среды, которую ты не учёл.",
+      "en": "The first plan ignores one simple environmental detail and has to be rebuilt."
+    },
+    "school.night.field_craft.wits.variant.insight": {
+      "ru": "Лучший путь появляется только после отказа от мысли, что кратчайший обязательно самый безопасный или быстрый.",
+      "en": "The best route emerges once you stop assuming shortest means safest or fastest."
+    },
+    "school.night.field_craft.creativity.title": {
+      "ru": "Ночная учёба — Field Craft — Creativity",
+      "en": "Night study — Field Craft — Creativity"
+    },
+    "school.night.field_craft.creativity.variant.focused": {
+      "ru": "Ты ограничиваешь себя небольшим набором инструментов и придумываешь несколько способов решить одну практическую задачу.",
+      "en": "You limit yourself to a small set of tools and invent several ways to solve the same practical problem."
+    },
+    "school.night.field_craft.creativity.variant.difficult": {
+      "ru": "Большинство идей неудобны, но одна работает, потому что использует привычный инструмент неожиданным способом.",
+      "en": "Most ideas are awkward, but one works because it uses a tool for a function you had not considered."
+    },
+    "school.night.field_craft.creativity.variant.insight": {
+      "ru": "Ограничение помогает быстрее заметить действительно удачную импровизацию.",
+      "en": "The constraint makes the good improvisation easier to recognize."
+    },
+    "school.night.physical_training.strength.title": {
+      "ru": "Ночная учёба — Physical Training — Strength",
+      "en": "Night study — Physical Training — Strength"
+    },
+    "school.night.physical_training.strength.variant.focused": {
+      "ru": "Ты повторяешь силовое движение с умеренной нагрузкой, следя за опорой и чистым усилием вместо максимума.",
+      "en": "You review controlled strength work at low intensity, paying attention to bracing and clean force rather than maximum effort."
+    },
+    "school.night.physical_training.strength.variant.difficult": {
+      "ru": "Усталость портит организацию движения, и ты снижаешь нагрузку вместо того, чтобы закреплять плохую технику.",
+      "en": "Fatigue makes the movement less organized, so you reduce the load instead of pushing through sloppy repetitions."
+    },
+    "school.night.physical_training.strength.variant.insight": {
+      "ru": "Небольшая техническая поправка делает то же усилие устойчивее.",
+      "en": "A small technical correction makes the same effort feel more stable."
+    },
+    "school.media.night.physical_training.alt": {
+      "ru": "Ночная учебная сцена курса Physical Training.",
+      "en": "Physical Training Night-study presentation."
+    },
+    "school.night.physical_training.endurance.title": {
+      "ru": "Ночная учёба — Physical Training — Endurance",
+      "en": "Night study — Physical Training — Endurance"
+    },
+    "school.night.physical_training.endurance.variant.focused": {
+      "ru": "Ты тренируешь ровный темп и контролируемое дыхание, не превращая ночь во вторую полноценную тренировку.",
+      "en": "You practice steady pacing and controlled breathing without turning the session into another full workout."
+    },
+    "school.night.physical_training.endurance.variant.difficult": {
+      "ru": "Слишком лёгкий старт позже оказывается слишком тяжёлым, показывая, где силы были потрачены раньше времени.",
+      "en": "The pace feels too easy at first and too hard later, revealing where you spent effort too quickly."
+    },
+    "school.night.physical_training.endurance.variant.insight": {
+      "ru": "Итоговый ритм менее эффектный, зато намного устойчивее.",
+      "en": "The final rhythm is less dramatic but far more sustainable."
+    },
+    "school.night.physical_training.dexterity.title": {
+      "ru": "Ночная учёба — Physical Training — Dexterity",
+      "en": "Night study — Physical Training — Dexterity"
+    },
+    "school.night.physical_training.dexterity.variant.focused": {
+      "ru": "Ты медленно повторяешь координационную связку, сохраняя каждый шаг выровненным.",
+      "en": "You repeat a coordination drill slowly enough to keep every step aligned."
+    },
+    "school.night.physical_training.dexterity.variant.difficult": {
+      "ru": "Скорость скрывает мелкие ошибки, поэтому приходится строить движение заново из самой чистой позиции.",
+      "en": "Speed keeps hiding small errors, so you rebuild the sequence from the cleanest position."
+    },
+    "school.night.physical_training.dexterity.variant.insight": {
+      "ru": "Когда порядок становится привычным, вся связка начинает ощущаться легче.",
+      "en": "Once the order becomes automatic, the movement starts to feel lighter."
+    },
+    "school.night.arts_and_performance.creativity.title": {
+      "ru": "Ночная учёба — Arts & Performance — Creativity",
+      "en": "Night study — Arts & Performance — Creativity"
+    },
+    "school.night.arts_and_performance.creativity.variant.focused": {
+      "ru": "Ты берёшь знакомую форму и меняешь только один элемент за раз.",
+      "en": "You take one familiar phrase or shape and transform only a single element at a time."
+    },
+    "school.night.arts_and_performance.creativity.variant.difficult": {
+      "ru": "Первые эксперименты выглядят случайными, пока ты не решаешь, что именно должен сообщать каждый выбор.",
+      "en": "The first experiments feel random until you decide what each change is meant to communicate."
+    },
+    "school.night.arts_and_performance.creativity.variant.insight": {
+      "ru": "Один вариант наконец ощущается как намеренное решение, а не случайность.",
+      "en": "One variation finally feels like a choice rather than an accident."
+    },
+    "school.media.night.arts_and_performance.alt": {
+      "ru": "Ночная учебная сцена курса Arts & Performance.",
+      "en": "Arts & Performance Night-study presentation."
+    },
+    "school.night.arts_and_performance.charm.title": {
+      "ru": "Ночная учёба — Arts & Performance — Charm",
+      "en": "Night study — Arts & Performance — Charm"
+    },
+    "school.night.arts_and_performance.charm.variant.focused": {
+      "ru": "Ты репетируешь, как одно и то же сценическое решение меняется, если цель — пригласить зрителя к контакту, а не впечатлить.",
+      "en": "You rehearse how the same performance choice changes when it is meant to invite rather than impress."
+    },
+    "school.night.arts_and_performance.charm.variant.difficult": {
+      "ru": "Слишком polished версия кажется далёкой, и один эффектный момент приходится заменить более прямым.",
+      "en": "The polished version feels distant, so you replace one showy moment with something more direct."
+    },
+    "school.night.arts_and_performance.charm.variant.insight": {
+      "ru": "Результат становится менее декоративным и более вовлекающим.",
+      "en": "The result is less decorative and more engaging."
+    },
+    "school.night.arts_and_performance.sociability.title": {
+      "ru": "Ночная учёба — Arts & Performance — Sociability",
+      "en": "Night study — Arts & Performance — Sociability"
+    },
+    "school.night.arts_and_performance.sociability.variant.focused": {
+      "ru": "Ты представляешь одну сцену с разными партнёрами и замечаешь, как меняется темп, когда другому человеку нужно пространство для ответа.",
+      "en": "You imagine the same scene with different partners and notice how timing changes when another person needs room to respond."
+    },
+    "school.night.arts_and_performance.sociability.variant.difficult": {
+      "ru": "Упражнение проваливается каждый раз, когда партнёр превращается для тебя в декорацию.",
+      "en": "The exercise falls flat whenever you treat the partner as scenery."
+    },
+    "school.night.arts_and_performance.sociability.variant.insight": {
+      "ru": "Сцена оживает, когда слушание становится частью выступления.",
+      "en": "The scene becomes livelier once listening is part of the performance."
+    },
+    "school.night.arts_and_performance.dexterity.title": {
+      "ru": "Ночная учёба — Arts & Performance — Dexterity",
+      "en": "Night study — Arts & Performance — Dexterity"
+    },
+    "school.night.arts_and_performance.dexterity.variant.focused": {
+      "ru": "Ты повторяешь короткую последовательность, пока переходы не перестают требовать постоянной коррекции.",
+      "en": "You repeat a small sequence until the transitions stop requiring conscious correction."
+    },
+    "school.night.arts_and_performance.dexterity.variant.difficult": {
+      "ru": "Одно неловкое движение ломает ритм, поэтому ты выделяешь его отдельно и заново строишь соединение.",
+      "en": "One awkward movement keeps interrupting the rhythm, so you isolate it and rebuild the connection."
+    },
+    "school.night.arts_and_performance.dexterity.variant.insight": {
+      "ru": "Вся последовательность выравнивается, когда переход перестаёт быть случайным.",
+      "en": "The whole sequence smooths out once the transition is no longer an afterthought."
+    },
+    "school.night.body_confidence.sexuality.title": {
+      "ru": "Ночная учёба — Body Confidence — Sexuality",
+      "en": "Night study — Body Confidence — Sexuality"
+    },
+    "school.night.body_confidence.sexuality.variant.focused": {
+      "ru": "Ты размышляешь, какой способ самопрезентации действительно выбран тобой, а какой создан ради чужого одобрения.",
+      "en": "You reflect on what kind of presentation feels chosen rather than performed for approval."
+    },
+    "school.night.body_confidence.sexuality.variant.difficult": {
+      "ru": "Упражнение становится неудобным, когда выясняется, насколько первый выбор зависел от ожидаемой оценки.",
+      "en": "The exercise becomes uncomfortable when you notice how much of the first choice was based on anticipated judgment."
+    },
+    "school.night.body_confidence.sexuality.variant.insight": {
+      "ru": "Более осознанный выбор ощущается устойчивее, потому что принадлежит тебе.",
+      "en": "A more deliberate choice feels steadier because it belongs to you."
+    },
+    "school.media.night.body_confidence.alt": {
+      "ru": "Ночная учебная сцена курса Body Confidence.",
+      "en": "Body Confidence Night-study presentation."
+    },
+    "school.night.body_confidence.grooming.title": {
+      "ru": "Ночная учёба — Body Confidence — Grooming",
+      "en": "Night study — Body Confidence — Grooming"
+    },
+    "school.night.body_confidence.grooming.variant.focused": {
+      "ru": "Ты упрощаешь уход за собой, пока у каждого шага не остаётся понятной цели.",
+      "en": "You simplify a grooming routine until each step has a clear purpose."
+    },
+    "school.night.body_confidence.grooming.variant.difficult": {
+      "ru": "Длинная рутина выглядит впечатляюще, но оставляет тебя менее подготовленным, и ты убираешь лишнее.",
+      "en": "The longer routine feels impressive but leaves you less prepared, so you remove what does not serve the day ahead."
+    },
+    "school.night.body_confidence.grooming.variant.insight": {
+      "ru": "Итоговый вариант проще поддерживать и легче считать своим.",
+      "en": "The final routine is easier to maintain and easier to own."
+    },
+    "school.night.body_confidence.endurance.title": {
+      "ru": "Ночная учёба — Body Confidence — Endurance",
+      "en": "Night study — Body Confidence — Endurance"
+    },
+    "school.night.body_confidence.endurance.variant.focused": {
+      "ru": "Ты тренируешь устойчивую осанку и контролируемое движение, не гонясь за интенсивностью.",
+      "en": "You practice steady posture and controlled movement without chasing intensity."
+    },
+    "school.night.body_confidence.endurance.variant.difficult": {
+      "ru": "Усталость заставляет напрягаться сильнее, чем нужно, поэтому ты замедляешься и отделяешь усилие от лишнего напряжения.",
+      "en": "Fatigue makes you tense unnecessarily, so you slow down and distinguish effort from strain."
+    },
+    "school.night.body_confidence.endurance.variant.insight": {
+      "ru": "Сессия становится полезнее, когда выбран темп, который можно удерживать без потери контроля.",
+      "en": "The session improves when you choose a pace you can maintain without losing composure."
+    }
+  }
+}
