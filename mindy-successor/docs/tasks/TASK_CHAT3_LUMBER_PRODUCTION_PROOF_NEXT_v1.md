@@ -761,3 +761,95 @@ Consolidate post-PR25 Lumber work into:
 Keep Hard Work under SHIPPED_GREEN.
 
 Continue items 43–48 sequentially without waiting for Lead review.
+
+
+## Queue item 49 — PR26 Lumber closeout authority audit
+
+Create NEW files only:
+- `docs/lumber-prep/LUMBER_PR26_CLOSEOUT_AUTHORITY_AUDIT_v1.md`
+- `prior-work/astra/prototype-m3.2/tests/lumber-pr26-closeout-authority.test.ts`
+
+Review merged PR #26 decision/status docs from the Lumber perspective.
+
+Confirm:
+- Hard Work is still fully closed;
+- token decisions are still neutral/open;
+- PA16 content-depth gap remains explicit;
+- no QA fixture is promoted to Product truth;
+- current authoritative Lumber matrix is `LUMBER_FINAL_RC_ACCEPTANCE_MATRIX_v1.md`.
+
+## Queue item 50 — token decision invariants matrix
+
+Create NEW files only:
+- `prior-work/astra/prototype-m3.2/content/old-boundary-token-invariants.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/old-boundary-token-invariants.test.ts`
+
+Define invariants that must hold regardless of future Product choice:
+- canonical item/capability IDs stay stable;
+- acquisition must commit exactly once;
+- capability derives from authoritative state;
+- reload cannot duplicate grant/removal;
+- no token decision changes Hard Work;
+- old-boundary route gating remains deterministic.
+
+Do not choose source or consume policy.
+
+## Queue item 51 — Forest authoring-ready completeness matrix v2
+
+Create:
+- `docs/lumber-prep/FOREST_AUTHORING_READY_COMPLETENESS_v2.md`
+- `prior-work/astra/prototype-m3.2/content/forest-authoring-ready-completeness-v2.fixture.json`
+
+Separate:
+- runtime-ready route/challenge primitives;
+- authored-current routes;
+- missing third route;
+- missing three challenge families;
+- missing seasonal topology;
+- presentation dependencies.
+
+No final lore/prose invention.
+
+## Queue item 52 — Lumber human-decision test plan
+
+Create:
+- `docs/lumber-prep/LUMBER_HUMAN_DECISION_TEST_PLAN_v1.md`
+
+For each future human decision:
+- token source;
+- token retain/consume;
+- hunter-trail unlock;
+
+list the exact tests that must be added/updated after the decision is made.
+
+Do not pre-author the decision.
+
+## Queue item 53 — Lumber post-decision migration impact audit
+
+Create:
+- `docs/lumber-prep/LUMBER_POST_DECISION_MIGRATION_IMPACT_v1.md`
+
+For each unresolved decision, classify whether adopting a choice would require:
+- no save migration;
+- content-only change;
+- new durable state;
+- schema/runtime change.
+
+Be conservative: do not claim schema change unless the chosen policy truly needs new persistent state.
+
+## Queue item 54 — Lumber final Product handoff v7
+
+Create:
+- `docs/lumber-prep/LUMBER_FINAL_PRODUCT_HANDOFF_v7.md`
+- `prior-work/astra/prototype-m3.2/content/lumber-final-product-handoff.fixture.json`
+
+Produce the smallest Product-facing handoff:
+- LOCKED_AND_SHIPPED;
+- HUMAN_DECISION_REQUIRED;
+- CONTENT_AUTHORING_REQUIRED;
+- OPTIONAL_PRESENTATION_POLISH;
+- SUPERSEDED.
+
+No implementation recommendation beyond dependency mapping.
+
+Continue items 49–54 sequentially without waiting for Lead review.
