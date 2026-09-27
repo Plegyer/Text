@@ -1360,3 +1360,23 @@ Express presentation production dependencies across:
 Represent dependencies clearly enough that Lead can schedule media work without blocking gameplay implementation. Do not invent content decisions.
 
 Continue items 68–76 sequentially without waiting for Lead review.
+
+
+## Queue item 77 — full-game fallback coverage completeness template
+
+Create NEW file only:
+- `docs/presentation-prep/FULL_GAME_FALLBACK_COVERAGE_COMPLETENESS_TEMPLATE_v1.md`
+
+Define a reusable completeness check for authored presentation surfaces:
+- semantic ID exists;
+- GIF optional;
+- static fallback presence;
+- text fallback presence;
+- animations-off path;
+- accessibility alt text;
+- replacement readiness;
+- rollback readiness.
+
+The template must cover careers, School, poverty, Activity, Palace and endings without requiring final assets.
+
+Continue items 69–77 sequentially without waiting for Lead review.
