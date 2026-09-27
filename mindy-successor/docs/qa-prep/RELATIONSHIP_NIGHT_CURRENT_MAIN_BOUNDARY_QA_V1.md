@@ -3,9 +3,11 @@
 Status: COMPLETE / SAFE_SELECTIVE_CONTENT_SOURCE_WITH_UI_LOCALIZATION_GAP
 
 Reviewed:
-- current-main baseline `23a8798f77c42e84a7540d71fdffd69d9db9fbfd`;
+- current-main baseline `c0763f9f9fa9887593fe8567165bbedce2b6cd3a` after PR44 + PR45 localization merges;
 - Chat 5 branch `chat5/relationships-night-content-next`;
 - items 1–12 as present in Git.
+
+PR44/PR45 changed localization/presentation coverage only; the reviewed Foreman relationship/Night mechanics below remain unchanged on this main.
 
 ## Current-main typed identity
 
