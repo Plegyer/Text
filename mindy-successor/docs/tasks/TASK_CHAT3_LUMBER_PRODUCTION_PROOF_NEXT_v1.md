@@ -853,3 +853,107 @@ Produce the smallest Product-facing handoff:
 No implementation recommendation beyond dependency mapping.
 
 Continue items 49–54 sequentially without waiting for Lead review.
+
+
+## Queue item 55 — ordinary poverty implementation-readiness map
+
+Create NEW files only:
+- `docs/poverty-prep/ORDINARY_POVERTY_IMPLEMENTATION_READINESS_v1.md`
+- `prior-work/astra/prototype-m3.2/content/ordinary-poverty-readiness.fixture.json`
+
+Translate `ECONOMY_AND_POVERTY_DRAFT_v0.md` into an implementation-ready, non-numeric map for:
+- normal room;
+- cheap lodging;
+- street sleep;
+- anti-softlock recovery;
+- ordinary street event pool;
+- relationship/resource recovery hooks.
+
+Separate LOCKED/DIRECTED structure from OPEN balance numbers and fiction.
+
+## Queue item 56 — Secret Debt state-machine authoring packet
+
+Create NEW files only:
+- `docs/poverty-prep/SECRET_DEBT_STATE_MACHINE_AUTHORING_PACKET_v1.md`
+- `prior-work/astra/prototype-m3.2/content/secret-debt-state-machine-authoring.fixture.json`
+
+Map the existing Product-directed Secret Debt/Slave career into explicit states/transitions:
+- unseen -> offered -> refused/accepted;
+- delayed activation;
+- bound career;
+- forced Night obligation;
+- resolved;
+- paid_freedom / bound_life / takeover.
+
+Preserve one-off encounter semantics and ordinary-job blocking. Do not lock OPEN balance values.
+
+## Queue item 57 — Secret Debt cross-system dependency matrix
+
+Create NEW file only:
+- `docs/poverty-prep/SECRET_DEBT_CROSS_SYSTEM_DEPENDENCIES_v1.md`
+
+Map required integration with:
+- housing/street;
+- job availability;
+- School;
+- Activity;
+- NightFlow;
+- relationships;
+- items/economy;
+- endings;
+- Meta;
+- Palace prerequisite exclusion.
+
+Mark every point as already-defined / requires Product decision / content authoring / runtime seam.
+
+## Queue item 58 — Secret Debt outcome acceptance skeleton
+
+Create NEW files only:
+- `docs/poverty-prep/SECRET_DEBT_OUTCOME_ACCEPTANCE_SKELETON_v1.md`
+- `prior-work/astra/prototype-m3.2/content/secret-debt-outcome-acceptance.fixture.json`
+
+Define acceptance shapes for:
+- paid_freedom;
+- bound_life;
+- takeover.
+
+For each record:
+- eligibility data categories;
+- ending transaction expectations;
+- Meta reward remains OPEN unless already authoritative;
+- save/reload exactly-once expectation;
+- what must happen to blocked ordinary jobs after resolution.
+
+Do not invent exact rewards or thresholds.
+
+## Queue item 59 — Forest-to-poverty coexistence audit
+
+Create NEW file only:
+- `docs/poverty-prep/FOREST_POVERTY_COEXISTENCE_AUDIT_v1.md`
+
+Check that intended poverty/Secret Debt rules can coexist with current Activity/Lumber contracts:
+- 2-Energy Activity entry;
+- street/cheap lodging recovery;
+- active Activity save/resume;
+- forced Secret Debt Night behavior;
+- exact Lumber `activityResult`;
+- Hard Work independence.
+
+Identify sequencing questions without changing locked Lumber behavior.
+
+## Queue item 60 — poverty/Secret Debt production handoff v1
+
+Create NEW file only:
+- `docs/poverty-prep/POVERTY_SECRET_DEBT_PRODUCTION_HANDOFF_v1.md`
+
+Consolidate items 55–59 into:
+- PRODUCT_STRUCTURE_FIXED;
+- BALANCE_OPEN;
+- HUMAN_DECISION_REQUIRED;
+- CONTENT_AUTHORING_REQUIRED;
+- RUNTIME_SEAMS;
+- ACCEPTANCE_READY.
+
+Include exact source authorities and explicitly state that Secret Debt is additional to the 10 ordinary jobs and is excluded from the Palace 10/10 prerequisite.
+
+Continue items 55–60 sequentially without waiting for Lead review.
