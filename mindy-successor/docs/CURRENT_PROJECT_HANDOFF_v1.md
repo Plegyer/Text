@@ -813,3 +813,49 @@ Current active ranges:
 At the recheck immediately before topping up to nine, none of the newly assigned six-item production queues had yet produced their expected output files. Their previously reported prior queues had already been verified complete. Therefore the current ranges above are active work, not stale completed work.
 
 When any worker reports completion, verify exact expected files/commits in Git and then immediately provide the next nine independent tasks (or top the outstanding queue back to nine) while preserving one-file-one-active-owner.
+
+
+## 19. Live milestone — PR28 authority integration and replenished queues
+
+This remains a live recovery snapshot, not a final transfer.
+
+### PR #28
+
+Merged:
+`fb866bc95c3b4998693c48b66a21b8a3f8d900f8`
+
+Purpose:
+- integrate the current verified Presentation/Lumber/Forest/QA/School post-RC authority documents from worker branches into main;
+- make current recovery references self-contained on main;
+- keep Product decisions neutral and preserve full-game scope.
+
+Changed only documentation/authority files. No production runtime/content/UI changed.
+
+Technical RC remains:
+- PR #27;
+- `6cd990f45d368291b4a288f9f48c569f6e0b207f`;
+- **221/221 PASS**.
+
+### Nine-deep queue progress
+
+The first item in each full-game production queue was verified complete in Git:
+- Chat 2 item 61;
+- Chat 3 item 55;
+- Chat 4 item 49;
+- Chat 5 item 49.
+
+Lead immediately replenished to nine outstanding tasks.
+
+Current active ranges:
+- Chat 2 — `chat2/presentation-replacement-next`: **62–70**.
+- Chat 3 — `chat3/lumber-production-proof-next`: **56–64**.
+- Chat 4 — `chat4/activation-ci-gate-next`: **50–58**.
+- Chat 5 — `chat5/school-pa-gate-next`: **50–58**.
+
+Latest queue top-up commits:
+- Chat 2: `ad33aa2ca5eaf844eb8abe1a0a9de5eedda56536`;
+- Chat 3: `b35ded8d812ed0a744344d0bbe2e964f1d7a6ed6`;
+- Chat 4: `1c1fcaf99600f8a60dfd6fdad39822643b9e855f`;
+- Chat 5: `1cca3df8e376af8cd6319ab5c38e27ea3147feb9`.
+
+Do not wait for a worker to empty all nine items. Whenever a completed item is verified and fewer than nine useful independent tasks remain, top the queue back up to nine while respecting one-file-one-active-owner.
