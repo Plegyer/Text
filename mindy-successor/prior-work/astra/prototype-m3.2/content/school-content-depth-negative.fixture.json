@@ -1,0 +1,40 @@
+{
+  "formatVersion": 1,
+  "id": "school.content-depth-negative.fixture.v1",
+  "mechanicsStatus": "RC_READY",
+  "contentDepth": {
+    "teacherIdentities": {
+      "status": "OPEN",
+      "canonicalIds": null
+    },
+    "teacherLessonContent": {
+      "status": "OPEN",
+      "approvedContent": null
+    },
+    "milestoneAuthoring": {
+      "status": "OPEN",
+      "finalThresholds": null
+    },
+    "certificateAuthoring": {
+      "status": "OPEN",
+      "finalDefinitions": null
+    },
+    "projectAuthoring": {
+      "status": "OPEN",
+      "finalDefinitions": null
+    }
+  },
+  "guardedAuthorities": [
+    "../../../docs/school-prep/SCHOOL_FINAL_DECISION_EVIDENCE_HANDOFF_v4.md",
+    "../../../docs/school-prep/SCHOOL_RC_COVERAGE_LEDGER_v1.md",
+    "../../../docs/school-prep/SCHOOL_RC_PRESENTATION_CONTENT_GAP_v1.md",
+    "../../../docs/school-prep/SCHOOL_AUTHORING_DECISION_READY_PACKET_v1.md"
+  ],
+  "forbiddenClaims": [
+    "canonical teacher identities are shipped",
+    "teacher identities are SHIPPED_GREEN",
+    "milestone/certificate/project authoring is shipped",
+    "final certificate definitions are shipped",
+    "final project definitions are shipped"
+  ]
+}
