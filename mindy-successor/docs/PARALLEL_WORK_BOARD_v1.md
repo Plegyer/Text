@@ -618,3 +618,49 @@ Locked Lumber invariants remain:
 - Hard Work eligibility ONLY `completed_shifts >= 50`;
 - exact reward `hardWork:lumber`;
 - exact Forest continuation `activityResult`.
+
+
+## Completed worker wave and multi-GIF production queues — 2026-09-27
+
+Git verification confirms the previous worker wave is fully complete:
+
+- Chat 2: items **89–97** complete.
+- Chat 3: items **87–95** complete.
+- Chat 4: items **78–86** complete.
+- Chat 5: item **73** and items **82–89** complete.
+
+Lead immediately issued the next nine-task queues:
+
+- Chat 2 / `chat2/presentation-replacement-next`: **98–106**.
+  Queue commit: `d7d517b73a3bcad26a5122b40356bfeb5dd41474`.
+  Focus: one semantic event owning **3–5 GIF/media candidates**, multi-GIF fixtures/tests, starter-trio/seven-career/School/poverty media-pool plans, import manifest and implementation handoff.
+
+- Chat 3 / `chat3/lumber-production-proof-next`: **96–104**.
+  Queue commit: `c531ee142be3f431400a5a8b3798567cc8886301`.
+  Focus: deeper real ordinary-poverty production packs/tests, recovery/help and bad-luck content, long-run distribution, inclusion manifest and integration handoff.
+
+- Chat 4 / `chat4/activation-ci-gate-next`: **87–95**.
+  Queue commit: `6084be3da1af46b889c2fd41b49fe43df18f79a7`.
+  Focus: PR35 review, ten-career base-layer audit, poverty/School production review, multi-GIF QA, content-density acceptance and CI floor.
+
+- Chat 5 / `chat5/school-pa-gate-next`: **90–98**.
+  Queue commit: `b80c89608eb070c57a87473cdb4561c6ef5cb1c7`.
+  Focus: convert drafted School teachers/lesson/life content into actual production-oriented packs/tests and integration manifest.
+
+### Multi-GIF product clarification
+
+Presentation production must support the intended content model:
+- one gameplay/content event remains one semantic gameplay identity;
+- that event may have a pool of **3–5 GIF/media variants** to reduce repetition;
+- media candidate selection must never change mechanics, conditions, choices, effects, save semantics or timing;
+- multiple GIFs are presentation variation, not separate gameplay events;
+- static/text fallback remains valid.
+
+Lead owns any shared runtime/schema implementation needed for media pools after Chat2's contract/fixture review. Workers must not edit shared runtime for this feature.
+
+### Lead PR #35
+
+PR #35 is the bounded base-layer implementation for the seven remaining ordinary careers.
+Its first exact-head CI failed because unreachable draft stages were declared without transitions.
+Lead corrected the package so the base layer declares only reachable initial stages; full draft stages will be added only together with real transitions/content.
+A fresh exact-head CI run is in progress. Do not merge PR35 until green.
