@@ -1086,3 +1086,24 @@ For `paid_freedom`, `bound_life`, and `takeover`, separate:
 Do not select exact Meta rewards or make Secret Debt count toward ordinary Hard Work.
 
 Continue items 59–67 sequentially without waiting for Lead review.
+
+
+## Queue item 68 — ordinary poverty content-batch plan
+
+Create NEW file only:
+- `docs/poverty-prep/ORDINARY_POVERTY_CONTENT_BATCH_PLAN_v1.md`
+
+Break ordinary poverty authoring into independent production batches:
+- normal-room content;
+- cheap-lodging content;
+- street repeatable events;
+- seasonal street variants;
+- recovery/help hooks;
+- relationship/resource hooks;
+- presentation/GIF follow-up.
+
+For each batch list prerequisites, owned output files, validation needs and which balance values may remain parameterized.
+
+Do not author canonical prose or final numbers.
+
+Continue items 60–68 sequentially without waiting for Lead review.
