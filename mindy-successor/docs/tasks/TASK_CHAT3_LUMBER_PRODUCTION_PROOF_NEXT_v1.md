@@ -1225,3 +1225,23 @@ Map the current production primitives that can host Secret Debt without broad ar
 For every seam classify READY / NEEDS_BOUNDED_RUNTIME_EXTENSION / PRODUCT_DECISION_BLOCKED. Do not choose chance, debt, rewards, thresholds or School/Activity blocking policy.
 
 Continue items 66–74 sequentially without waiting for Lead review.
+
+
+## Queue item 75 — Secret Debt delayed-activation persistence options
+
+Create NEW file only:
+- `docs/poverty-prep/SECRET_DEBT_DELAYED_ACTIVATION_PERSISTENCE_OPTIONS_v1.md`
+
+Compare bounded implementation shapes for persisting the accepted-loan -> delayed activation interval using current target architecture.
+
+For each option map:
+- durable state owner;
+- save/reload behavior;
+- calendar interaction;
+- exactly-once activation;
+- migration impact;
+- whether schema/runtime extension is actually needed.
+
+Do not choose the delay length or final debt values. Do not select an implementation option as Product truth; identify the minimal technically compatible options for Lead.
+
+Continue items 67–75 sequentially without waiting for Lead review.
