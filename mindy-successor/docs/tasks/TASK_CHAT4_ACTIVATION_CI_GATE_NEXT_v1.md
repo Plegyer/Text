@@ -1155,3 +1155,21 @@ Flag duplicate questions, already-answered questions, contradictory ranges, and 
 Do not resolve conflicts by guessing; state the authoritative side where clear.
 
 Continue items 65–73 sequentially without waiting for Lead review.
+
+
+## Queue item 74 — current open-PR integration status ledger
+
+Create NEW file only:
+- `docs/qa-prep/CURRENT_OPEN_PR_INTEGRATION_STATUS_v1.md`
+
+Record current open Lead PRs from Git and classify each by:
+- change class;
+- review status;
+- executable CI evidence present/missing;
+- merge blocker;
+- locked-invariant risk;
+- next required action.
+
+At authoring time include PR #29 accurately. Do not mark merged/green without Git evidence.
+
+Continue items 66–74 sequentially without waiting for Lead review.
