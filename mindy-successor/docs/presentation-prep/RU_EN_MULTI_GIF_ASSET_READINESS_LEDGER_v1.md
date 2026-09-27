@@ -1,202 +1,142 @@
-# RU + EN Multi-GIF Asset Readiness Ledger v1
+# RU+EN Multi-GIF Asset Readiness Ledger v1
 
-Scope:
-every actual pool defined in Queue items 144–147.
+Audit basis:
+- PR42 multi-GIF runtime is merged;
+- current main contains **0 real .gif files** under the prototype tree at audit time;
+- shipped static SVG fallbacks exist;
+- items 144–147 provide runtime-compatible staging shapes and bilingual localization references.
 
-Important:
-- current main contains **no real .gif files** in the prototype assets tree at this audit point;
-- every `assets/staging/non-shipped/...` path is a placeholder;
-- placeholders do **not** count as shipped media.
+Critical rule:
+**placeholder paths are not shipped assets and are never counted as real GIF coverage.**
 
-## Summary
+## Status summary
 
-- pool rows: **59**
-- real GIF candidates: **0**
-- placeholder candidate references: **179**
-- RU alt coverage for staging candidates: **complete**
-- EN alt coverage for staging candidates: **complete**
-- static fallback coverage: **complete**
-- real animation/art work still required: **179 candidate files before one-to-one realization**, reducible if approved reuse groups intentionally share files.
+| Source item | Pool entries | Real GIF candidates | Placeholder candidates | Production-ready GIF pools |
+| --- | ---: | ---: | ---: | ---: |
+| 144 representative production patch | 6 | 0 | 18 | 0 |
+| 145 ten-career adoption | 50 | 0 | 150 | 0 |
+| 146 ordinary-poverty adoption | 10 | 0 | 30 | 0 |
+| 147 reachable School adoption | 3 | 0 | 9 | 0 |
+| **Total manifest rows** | **69** | **0** | **207** | **0** |
 
-Duplicate semantic IDs can appear in more than one staging manifest because item 144 is a representative patch while items 145–147 are subsystem adoption manifests.
+Rows intentionally include duplicate semantic IDs when the same surface appears in both the representative Item 144 patch and its subsystem-wide adoption manifest.
 
-## Ledger
+## Full readiness ledger
 
-| Source item | Semantic presentationId | Real GIFs | Placeholders | Static fallback | RU alt | EN alt | Missing art / animation work |
+| Item | Semantic presentationId | Real GIF count | Placeholder count | Static fallback | RU alt | EN alt | Missing art / animation work |
 | --- | --- | ---: | ---: | --- | --- | --- | --- |
-| 144 | `job/lumber/shift/spring/default` | 0 | 3 | `assets/stage-lumber.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 144 | `job/satyr-maid/shift/spring/default` | 0 | 3 | `assets/stage-tavern.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 144 | `job/undead-farm/shift/spring/default` | 0 | 3 | `assets/stage-forest.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 144 | `job/tavern/shift/spring/default` | 0 | 3 | `assets/stage-tavern.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 144 | `location/town/event/poverty-pressure-production-cold-rain/default` | 0 | 3 | `assets/stage-outside.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 144 | `location/town/event/school-lesson-content-v1-after-school/default` | 0 | 3 | `assets/stage-school.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 145 | `job/lumber/shift/spring/default` | 0 | 3 | `assets/stage-lumber.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 145 | `job/lumber/shift/summer/default` | 0 | 3 | `assets/stage-lumber.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 145 | `job/lumber/shift/autumn/default` | 0 | 3 | `assets/stage-lumber.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 145 | `job/lumber/shift/winter/default` | 0 | 3 | `assets/stage-lumber.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 145 | `job/satyr-maid/shift/spring/default` | 0 | 3 | `assets/stage-tavern.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 145 | `job/satyr-maid/shift/summer/default` | 0 | 3 | `assets/stage-tavern.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 145 | `job/satyr-maid/shift/autumn/default` | 0 | 3 | `assets/stage-tavern.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 145 | `job/satyr-maid/shift/winter/default` | 0 | 3 | `assets/stage-tavern.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 145 | `job/undead-farm/shift/spring/default` | 0 | 3 | `assets/stage-forest.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 145 | `job/undead-farm/shift/summer/default` | 0 | 3 | `assets/stage-forest.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 145 | `job/undead-farm/shift/autumn/default` | 0 | 3 | `assets/stage-forest.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 145 | `job/undead-farm/shift/winter/default` | 0 | 3 | `assets/stage-forest.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 145 | `job/tavern/shift/spring/default` | 0 | 3 | `assets/stage-tavern.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 145 | `job/tavern/shift/summer/default` | 0 | 3 | `assets/stage-tavern.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 145 | `job/tavern/shift/autumn/default` | 0 | 3 | `assets/stage-tavern.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 145 | `job/tavern/shift/winter/default` | 0 | 3 | `assets/stage-tavern.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 145 | `job/hunter/shift/spring/default` | 0 | 3 | `assets/stage-forest.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 145 | `job/hunter/shift/summer/default` | 0 | 3 | `assets/stage-forest.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 145 | `job/hunter/shift/autumn/default` | 0 | 3 | `assets/stage-forest.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 145 | `job/hunter/shift/winter/default` | 0 | 3 | `assets/stage-forest.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 145 | `job/guard/shift/spring/default` | 0 | 3 | `assets/stage-town.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 145 | `job/guard/shift/summer/default` | 0 | 3 | `assets/stage-town.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 145 | `job/guard/shift/autumn/default` | 0 | 3 | `assets/stage-town.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 145 | `job/guard/shift/winter/default` | 0 | 3 | `assets/stage-town.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 145 | `job/merchant/shift/spring/default` | 0 | 3 | `assets/stage-town.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 145 | `job/merchant/shift/summer/default` | 0 | 3 | `assets/stage-town.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 145 | `job/merchant/shift/autumn/default` | 0 | 3 | `assets/stage-town.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 145 | `job/merchant/shift/winter/default` | 0 | 3 | `assets/stage-town.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 145 | `job/artist-geisha/shift/spring/default` | 0 | 3 | `assets/stage-tavern.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 145 | `job/artist-geisha/shift/summer/default` | 0 | 3 | `assets/stage-tavern.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 145 | `job/artist-geisha/shift/autumn/default` | 0 | 3 | `assets/stage-tavern.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 145 | `job/artist-geisha/shift/winter/default` | 0 | 3 | `assets/stage-tavern.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 145 | `job/assassin/shift/spring/default` | 0 | 3 | `assets/stage-town.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 145 | `job/assassin/shift/summer/default` | 0 | 3 | `assets/stage-town.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 145 | `job/assassin/shift/autumn/default` | 0 | 3 | `assets/stage-town.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 145 | `job/assassin/shift/winter/default` | 0 | 3 | `assets/stage-town.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 145 | `job/prostitute/shift/spring/default` | 0 | 3 | `assets/stage-room.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 145 | `job/prostitute/shift/summer/default` | 0 | 3 | `assets/stage-room.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 145 | `job/prostitute/shift/autumn/default` | 0 | 3 | `assets/stage-room.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 145 | `job/prostitute/shift/winter/default` | 0 | 3 | `assets/stage-room.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 146 | `location/town/event/poverty-street-production-helpful-summer/default` | 0 | 3 | `assets/stage-outside.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 146 | `location/town/event/poverty-street-production-neutral-autumn/default` | 0 | 3 | `assets/stage-outside.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 146 | `location/town/event/poverty-street-production-pressure-winter/default` | 0 | 3 | `assets/stage-outside.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 146 | `location/town/event/poverty-cheap-production-shared-quiet-autumn/default` | 0 | 3 | `assets/stage-room.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 146 | `location/town/event/poverty-recovery-production-small-coin-help/default` | 0 | 3 | `assets/stage-outside.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 146 | `location/town/event/poverty-recovery-production-short-cleanup/default` | 0 | 3 | `assets/stage-outside.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 146 | `location/town/event/poverty-recovery-production-herb-bundle/default` | 0 | 3 | `assets/stage-outside.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 146 | `location/town/event/poverty-pressure-production-cold-rain/default` | 0 | 3 | `assets/stage-outside.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 146 | `location/town/event/poverty-pressure-production-noisy-loading/default` | 0 | 3 | `assets/stage-outside.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 146 | `location/town/event/poverty-pressure-production-muddy-splash/default` | 0 | 3 | `assets/stage-outside.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 147 | `location/town/event/school-lesson-content-v1-after-school/default` | 0 | 3 | `assets/stage-school.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 147 | `location/town/event/school-life-content-v1-after-paid-lesson/default` | 0 | 3 | `assets/stage-school.svg` | 3/3 READY | 3/3 READY | Replace 3 staging placeholder GIF paths with approved real GIF assets. |
-| 147 | `location/town/event/school-life-content-v1-after-night-study/default` | 0 | 5 | `assets/stage-school.svg` | 5/5 READY | 5/5 READY | Replace 5 staging placeholder GIF paths with approved real GIF assets. |
+| 144 | `job/lumber/shift/spring/default` | 0 | 3 | `assets/stage-lumber.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 144 | `job/satyr-maid/shift/spring/default` | 0 | 3 | `assets/stage-tavern.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 144 | `job/undead-farm/shift/spring/default` | 0 | 3 | `assets/stage-forest.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 144 | `job/tavern/shift/spring/default` | 0 | 3 | `assets/stage-tavern.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 144 | `location/town/event/poverty-pressure-production-cold-rain/default` | 0 | 3 | `assets/stage-outside.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 144 | `location/town/event/school-lesson-content-v1-after-school/default` | 0 | 3 | `assets/stage-school.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/lumber/shift/spring/default` | 0 | 3 | `assets/stage-lumber.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/lumber/shift/summer/default` | 0 | 3 | `assets/stage-lumber.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/lumber/shift/autumn/default` | 0 | 3 | `assets/stage-lumber.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/lumber/shift/winter/default` | 0 | 3 | `assets/stage-lumber.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/lumber/result/default` | 0 | 3 | `assets/stage-lumber.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/satyr-maid/shift/spring/default` | 0 | 3 | `assets/stage-tavern.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/satyr-maid/shift/summer/default` | 0 | 3 | `assets/stage-tavern.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/satyr-maid/shift/autumn/default` | 0 | 3 | `assets/stage-tavern.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/satyr-maid/shift/winter/default` | 0 | 3 | `assets/stage-tavern.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/satyr-maid/result/default` | 0 | 3 | `assets/stage-tavern.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/undead-farm/shift/spring/default` | 0 | 3 | `assets/stage-forest.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/undead-farm/shift/summer/default` | 0 | 3 | `assets/stage-forest.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/undead-farm/shift/autumn/default` | 0 | 3 | `assets/stage-forest.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/undead-farm/shift/winter/default` | 0 | 3 | `assets/stage-forest.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/undead-farm/result/default` | 0 | 3 | `assets/stage-forest.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/tavern/shift/spring/default` | 0 | 3 | `assets/stage-tavern.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/tavern/shift/summer/default` | 0 | 3 | `assets/stage-tavern.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/tavern/shift/autumn/default` | 0 | 3 | `assets/stage-tavern.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/tavern/shift/winter/default` | 0 | 3 | `assets/stage-tavern.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/tavern/result/default` | 0 | 3 | `assets/stage-tavern.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/hunter/shift/spring/default` | 0 | 3 | `assets/stage-forest.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/hunter/shift/summer/default` | 0 | 3 | `assets/stage-forest.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/hunter/shift/autumn/default` | 0 | 3 | `assets/stage-forest.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/hunter/shift/winter/default` | 0 | 3 | `assets/stage-forest.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/hunter/result/default` | 0 | 3 | `assets/stage-forest.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/guard/shift/spring/default` | 0 | 3 | `assets/stage-town.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/guard/shift/summer/default` | 0 | 3 | `assets/stage-town.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/guard/shift/autumn/default` | 0 | 3 | `assets/stage-town.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/guard/shift/winter/default` | 0 | 3 | `assets/stage-town.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/guard/result/default` | 0 | 3 | `assets/stage-town.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/merchant/shift/spring/default` | 0 | 3 | `assets/stage-town.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/merchant/shift/summer/default` | 0 | 3 | `assets/stage-town.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/merchant/shift/autumn/default` | 0 | 3 | `assets/stage-town.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/merchant/shift/winter/default` | 0 | 3 | `assets/stage-town.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/merchant/result/default` | 0 | 3 | `assets/stage-town.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/artist-geisha/shift/spring/default` | 0 | 3 | `assets/stage-tavern.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/artist-geisha/shift/summer/default` | 0 | 3 | `assets/stage-tavern.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/artist-geisha/shift/autumn/default` | 0 | 3 | `assets/stage-tavern.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/artist-geisha/shift/winter/default` | 0 | 3 | `assets/stage-tavern.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/artist-geisha/result/default` | 0 | 3 | `assets/stage-tavern.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/assassin/shift/spring/default` | 0 | 3 | `assets/stage-town.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/assassin/shift/summer/default` | 0 | 3 | `assets/stage-town.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/assassin/shift/autumn/default` | 0 | 3 | `assets/stage-town.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/assassin/shift/winter/default` | 0 | 3 | `assets/stage-town.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/assassin/result/default` | 0 | 3 | `assets/stage-town.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/prostitute/shift/spring/default` | 0 | 3 | `assets/stage-room.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/prostitute/shift/summer/default` | 0 | 3 | `assets/stage-room.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/prostitute/shift/autumn/default` | 0 | 3 | `assets/stage-room.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/prostitute/shift/winter/default` | 0 | 3 | `assets/stage-room.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 145 | `job/prostitute/result/default` | 0 | 3 | `assets/stage-room.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 146 | `location/town/event/poverty-street-production-helpful-summer/default` | 0 | 3 | `assets/stage-outside.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 146 | `location/town/event/poverty-street-production-neutral-autumn/default` | 0 | 3 | `assets/stage-outside.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 146 | `location/town/event/poverty-street-production-pressure-winter/default` | 0 | 3 | `assets/stage-outside.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 146 | `location/town/event/poverty-cheap-production-shared-quiet-autumn/default` | 0 | 3 | `assets/stage-room.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 146 | `location/town/event/poverty-recovery-production-small-coin-help/default` | 0 | 3 | `assets/stage-outside.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 146 | `location/town/event/poverty-recovery-production-short-cleanup/default` | 0 | 3 | `assets/stage-outside.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 146 | `location/town/event/poverty-recovery-production-herb-bundle/default` | 0 | 3 | `assets/stage-outside.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 146 | `location/town/event/poverty-pressure-production-cold-rain/default` | 0 | 3 | `assets/stage-outside.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 146 | `location/town/event/poverty-pressure-production-noisy-loading/default` | 0 | 3 | `assets/stage-outside.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 146 | `location/town/event/poverty-pressure-production-muddy-splash/default` | 0 | 3 | `assets/stage-outside.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 147 | `location/town/event/school-lesson-content-v1-after-school/default` | 0 | 3 | `assets/stage-school.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 147 | `location/town/event/school-life-content-v1-after-paid-lesson/default` | 0 | 3 | `assets/stage-school.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
+| 147 | `location/town/event/school-life-content-v1-after-night-study/default` | 0 | 3 | `assets/stage-school.svg` | YES — authoring/ref key present | YES — authoring/ref key present | Create/approve 3 real GIFs and replace staging paths. |
 
-## Item 144 readiness
 
-Representative production patch:
-- 6 pools;
-- 18 placeholder candidates;
-- 0 real GIFs.
+## Real asset readiness rule
 
-RU+EN caption/alt payloads are ready.
+A pool may move from `PLACEHOLDER` to `REAL_ASSET_READY` only when:
+1. at least 3 referenced GIF files physically exist in managed `assets/`;
+2. every referenced candidate passes PR42 source/schema validation;
+3. candidate keys remain unique;
+4. RU and EN alt payloads are present;
+5. static fallback still exists;
+6. the pool is exercised with animations on/off;
+7. same occurrence reload keeps the same selected candidate.
 
-Selective integration of the **mapping** can occur after PR42, but candidate GIF paths must not be promoted as real production assets until actual files exist.
+## Static fallback status
 
-## Item 145 readiness
+All ledger rows reference existing static assets:
+- `stage-lumber.svg`;
+- `stage-tavern.svg`;
+- `stage-forest.svg`;
+- `stage-town.svg`;
+- `stage-room.svg`;
+- `stage-outside.svg`;
+- `stage-school.svg`.
 
-Ten-career adoption:
-- 40 seasonal shift pools;
-- 120 placeholder candidates;
-- 0 real GIFs.
+Therefore the absence of GIF art is not a gameplay blocker.
 
-Every entry has:
-- static fallback;
-- RU alt;
-- EN alt;
-- locale-neutral candidate key.
+It is presentation-production debt.
 
-Current status:
-**PLACEHOLDER / NEEDS_ART**.
+## Localization readiness
 
-No Hard Work or relationship media is included.
+The staging manifests provide:
+- locale-neutral presentation IDs;
+- locale-neutral candidate keys;
+- RU/EN alt localization references or payloads.
 
-## Item 146 readiness
+PR41 provides the localization runtime.
 
-Ordinary poverty:
-- 10 event+variant pools;
-- 30 placeholder candidates;
-- 0 real GIFs.
+Remaining integration work is to connect these alt/caption references into production localization data and rendering.
 
-Gameplay helpful/neutral/pressure outcomes remain outside media selection.
+## Current production conclusion
 
-Static fallback is complete:
-- outside for street/recovery/pressure;
-- room for cheap lodging.
-
-Current status:
-**PLACEHOLDER / NEEDS_ART**.
-
-## Item 147 readiness
-
-Reachable School:
-- 3 reachable pools;
-- 11 placeholder candidates;
-- 0 real GIFs.
-
-Breakdown:
-- generic after-School: 3;
-- School-life after-paid: 3;
-- exact after-Night-study: 5.
-
-Teacher/course-specific libraries are **STAGED** and have no active pools in this ledger.
-
-## RU/EN accessibility readiness
-
-Every staging candidate in items 144–147 has:
-- RU alt authoring;
-- EN alt authoring;
-- locale-neutral candidate key;
-- locale-neutral media path.
-
-This means localization text is not blocking real asset production.
-
-## Static fallback safety
-
-All pools keep a shipped static fallback.
-
-Fallback families:
-- Lumber -> `assets/stage-lumber.svg`;
-- Tavern/Satyr Maid -> `assets/stage-tavern.svg`;
-- Undead Farm/Hunter -> `assets/stage-forest.svg`;
-- Guard/Merchant/Assassin -> `assets/stage-town.svg`;
-- Prostitute -> `assets/stage-room.svg`;
-- poverty street/recovery/pressure -> `assets/stage-outside.svg`;
-- cheap lodging -> `assets/stage-room.svg`;
-- School -> `assets/stage-school.svg`.
-
-Missing GIFs therefore do not block gameplay.
-
-## Asset-production priority rule
-
-A pool becomes `REAL_ASSET_READY` only when:
-1. the referenced GIF file exists in a managed production asset path;
-2. the file matches the semantic visual brief;
-3. RU/EN alt remains correct;
-4. PR42 pool validation accepts the path;
-5. static fallback stays valid.
-
-A placeholder path alone never satisfies this gate.
-
-## Reuse note
-
-The 179 placeholder references are not necessarily 179 unique commissioned animations.
-
-Approved reuse may map one real GIF to multiple semantic candidate entries when:
-- visible meaning remains correct;
-- per-semantic RU/EN alt remains correct;
-- rollback scope is understood.
-
-Reuse must not collapse semantic identity.
-
-## Final status
-
-**Schema/readiness:** ready for PR42-shaped integration.
-
-**Localization:** RU+EN staging coverage ready.
-
-**Assets:** real GIF production still open.
-
-**Gameplay dependency:** none.
+- PR42 runtime capability: **SHIPPED**.
+- RU/EN localization runtime: **SHIPPED**.
+- Static fallback coverage: **SHIPPED**.
+- Real multi-GIF art coverage for items 144–147: **0 pools**.
+- All 207 candidate references in these staging artifacts are placeholders and **must not ship** as media assets.
