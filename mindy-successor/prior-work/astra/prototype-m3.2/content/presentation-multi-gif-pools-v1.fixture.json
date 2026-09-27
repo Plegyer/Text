@@ -1,0 +1,206 @@
+{
+  "version": 1,
+  "kind": "presentation-multi-gif-pools-authoring",
+  "shipped": false,
+  "note": "Authoring-only pool fixture. authoring://non-shipped paths are placeholders and must never be treated as production media references.",
+  "policy": {
+    "candidateCountMin": 3,
+    "candidateCountMax": 5,
+    "mediaSelectionChangesGameplay": false,
+    "mediaFilenameIsGameplayIdentity": false,
+    "animationsOffUsesFallback": true
+  },
+  "pools": [
+    {
+      "surface": "Lumber repeatable spring shift",
+      "presentationId": "job/lumber/shift/spring/default",
+      "sourceAuthority": "production Lumber semantic slot",
+      "selection": "presentation-only",
+      "candidates": [
+        {
+          "key": "v1",
+          "src": "authoring://non-shipped/job/lumber/shift/spring/default/v1.gif",
+          "kind": "gif",
+          "alt": "Spring Lumber work variation one.",
+          "shipped": false
+        },
+        {
+          "key": "v2",
+          "src": "authoring://non-shipped/job/lumber/shift/spring/default/v2.gif",
+          "kind": "gif",
+          "alt": "Spring Lumber work variation two.",
+          "shipped": false
+        },
+        {
+          "key": "v3",
+          "src": "authoring://non-shipped/job/lumber/shift/spring/default/v3.gif",
+          "kind": "gif",
+          "alt": "Spring Lumber work variation three.",
+          "shipped": false
+        },
+        {
+          "key": "v4",
+          "src": "authoring://non-shipped/job/lumber/shift/spring/default/v4.gif",
+          "kind": "gif",
+          "alt": "Spring Lumber work variation four.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": "assets/stage-lumber.svg",
+      "textFallback": "Authored Lumber spring-shift text remains authoritative."
+    },
+    {
+      "surface": "Satyr Maid repeatable spring shift",
+      "presentationId": "job/satyr-maid/shift/spring/default",
+      "sourceAuthority": "PR34 production semantic slot",
+      "selection": "presentation-only",
+      "candidates": [
+        {
+          "key": "v1",
+          "src": "authoring://non-shipped/job/satyr-maid/shift/spring/default/v1.gif",
+          "kind": "gif",
+          "alt": "Spring Satyr Maid service variation one.",
+          "shipped": false
+        },
+        {
+          "key": "v2",
+          "src": "authoring://non-shipped/job/satyr-maid/shift/spring/default/v2.gif",
+          "kind": "gif",
+          "alt": "Spring Satyr Maid service variation two.",
+          "shipped": false
+        },
+        {
+          "key": "v3",
+          "src": "authoring://non-shipped/job/satyr-maid/shift/spring/default/v3.gif",
+          "kind": "gif",
+          "alt": "Spring Satyr Maid service variation three.",
+          "shipped": false
+        },
+        {
+          "key": "v4",
+          "src": "authoring://non-shipped/job/satyr-maid/shift/spring/default/v4.gif",
+          "kind": "gif",
+          "alt": "Spring Satyr Maid service variation four.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": "assets/stage-tavern.svg",
+      "textFallback": "Authored Satyr Maid spring-shift text remains authoritative."
+    },
+    {
+      "surface": "Undead Farm repeatable spring shift",
+      "presentationId": "job/undead-farm/shift/spring/default",
+      "sourceAuthority": "PR34 production semantic slot",
+      "selection": "presentation-only",
+      "candidates": [
+        {
+          "key": "v1",
+          "src": "authoring://non-shipped/job/undead-farm/shift/spring/default/v1.gif",
+          "kind": "gif",
+          "alt": "Spring Undead Farm work variation one.",
+          "shipped": false
+        },
+        {
+          "key": "v2",
+          "src": "authoring://non-shipped/job/undead-farm/shift/spring/default/v2.gif",
+          "kind": "gif",
+          "alt": "Spring Undead Farm work variation two.",
+          "shipped": false
+        },
+        {
+          "key": "v3",
+          "src": "authoring://non-shipped/job/undead-farm/shift/spring/default/v3.gif",
+          "kind": "gif",
+          "alt": "Spring Undead Farm work variation three.",
+          "shipped": false
+        },
+        {
+          "key": "v4",
+          "src": "authoring://non-shipped/job/undead-farm/shift/spring/default/v4.gif",
+          "kind": "gif",
+          "alt": "Spring Undead Farm work variation four.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": "assets/stage-forest.svg",
+      "textFallback": "Authored Undead Farm spring-shift text remains authoritative."
+    },
+    {
+      "surface": "School Arcana lesson",
+      "presentationId": "school/arcana/lesson/default",
+      "sourceAuthority": "production School course semantic slot",
+      "selection": "presentation-only",
+      "candidates": [
+        {
+          "key": "v1",
+          "src": "authoring://non-shipped/school/arcana/lesson/default/v1.gif",
+          "kind": "gif",
+          "alt": "Arcana lesson visual variation one.",
+          "shipped": false
+        },
+        {
+          "key": "v2",
+          "src": "authoring://non-shipped/school/arcana/lesson/default/v2.gif",
+          "kind": "gif",
+          "alt": "Arcana lesson visual variation two.",
+          "shipped": false
+        },
+        {
+          "key": "v3",
+          "src": "authoring://non-shipped/school/arcana/lesson/default/v3.gif",
+          "kind": "gif",
+          "alt": "Arcana lesson visual variation three.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": "assets/stage-school.svg",
+      "textFallback": "Authored Arcana lesson text remains authoritative."
+    },
+    {
+      "surface": "Poverty/housing rest surface",
+      "presentationId": "night/rest/default",
+      "sourceAuthority": "current production rest action semantic slot; dedicated street-event identity not yet authored",
+      "selection": "presentation-only",
+      "candidates": [
+        {
+          "key": "v1",
+          "src": "authoring://non-shipped/night/rest/default/v1.gif",
+          "kind": "gif",
+          "alt": "Night lodging/rest visual variation one.",
+          "shipped": false
+        },
+        {
+          "key": "v2",
+          "src": "authoring://non-shipped/night/rest/default/v2.gif",
+          "kind": "gif",
+          "alt": "Night lodging/rest visual variation two.",
+          "shipped": false
+        },
+        {
+          "key": "v3",
+          "src": "authoring://non-shipped/night/rest/default/v3.gif",
+          "kind": "gif",
+          "alt": "Night lodging/rest visual variation three.",
+          "shipped": false
+        },
+        {
+          "key": "v4",
+          "src": "authoring://non-shipped/night/rest/default/v4.gif",
+          "kind": "gif",
+          "alt": "Night lodging/rest visual variation four.",
+          "shipped": false
+        },
+        {
+          "key": "v5",
+          "src": "authoring://non-shipped/night/rest/default/v5.gif",
+          "kind": "gif",
+          "alt": "Night lodging/rest visual variation five.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": "assets/stage-school.svg",
+      "textFallback": "Current authored rest/lodging text remains authoritative.",
+      "limitation": "This represents the current production poverty-related rest surface, not a future ordinary street-event semantic identity."
+    }
+  ]
+}
