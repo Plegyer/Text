@@ -2963,3 +2963,78 @@ Create NEW file only:
 Consolidate items 184–194 with exact selective-copy file list, semantic mapping, test evidence, remaining gaps, and what should wait for final GIF production.
 
 Continue 184–195 sequentially without waiting for Lead review.
+
+
+## Queue item 196 — ordinary-career seasonal fallback gap audit v1
+Create NEW file only:
+- `docs/presentation-prep/ORDINARY_CAREER_SEASONAL_FALLBACK_GAP_AUDIT_v1.md`
+
+Audit the 40 current ordinary-career seasonal shift presentation identities. Record which still reuse generic fallback and the exact existing semantic IDs. No runtime/schema/UI edits.
+
+## Queue item 197 — Lumber + Satyr Maid seasonal static batch v1
+Create NEW original SVG assets only under:
+- `prior-work/astra/prototype-m3.2/assets/presentation/`
+
+Create distinct project-owned spring/summer/autumn/winter shift fallbacks for current Lumber and Satyr Maid semantic shift identities only.
+
+## Queue item 198 — Undead Farm + Tavern seasonal static batch v1
+Create NEW original SVG assets only under:
+- `prior-work/astra/prototype-m3.2/assets/presentation/`
+
+Create distinct spring/summer/autumn/winter shift fallbacks for current Undead Farm and Tavern semantic identities.
+
+## Queue item 199 — Hunter + Guard seasonal static batch v1
+Create NEW original SVG assets only under:
+- `prior-work/astra/prototype-m3.2/assets/presentation/`
+
+Create distinct spring/summer/autumn/winter shift fallbacks for current ordinary Hunter shift and Guard identities. Do not invent Forest Hunter route semantics.
+
+## Queue item 200 — Merchant + Artist/Geisha seasonal static batch v1
+Create NEW original SVG assets only under:
+- `prior-work/astra/prototype-m3.2/assets/presentation/`
+
+Create distinct spring/summer/autumn/winter shift fallbacks for current Merchant and Artist/Geisha semantic identities.
+
+## Queue item 201 — Assassin + Prostitute seasonal static batch v1
+Create NEW original SVG assets only under:
+- `prior-work/astra/prototype-m3.2/assets/presentation/`
+
+Create distinct spring/summer/autumn/winter shift fallbacks for current Assassin and Prostitute semantic identities. Keep content non-explicit.
+
+## Queue item 202 — seasonal static media manifest extension v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/project-owned-seasonal-static-media-v1.json`
+
+Map all actual item-197–201 assets to exact current semantic presentation IDs. Presentation-only; no gameplay fields and no root-load claim.
+
+## Queue item 203 — seasonal media RU+EN accessibility delta v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/project-owned-seasonal-static-localization-v1.fixture.json`
+
+Provide RU+EN alt/caption keys for every actual seasonal asset. No locale-specific asset identity duplication.
+
+## Queue item 204 — seasonal static build/distribution regression v1
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/project-owned-seasonal-static-build-v1.test.ts`
+
+Validate file existence, SVG sanity, semantic-ID validity, build copy into dist/assets, RU+EN alt coverage, no external URLs and no gameplay fields.
+
+## Queue item 205 — seasonal visual consistency audit v1
+Create NEW file only:
+- `docs/presentation-prep/ORDINARY_CAREER_SEASONAL_VISUAL_CONSISTENCY_AUDIT_v1.md`
+
+Audit the 40 seasonal assets for coherent style, readable silhouettes, seasonal differentiation and career recognizability. Flag duplicates that are visually indistinguishable.
+
+## Queue item 206 — ordinary-career static coverage closure v2
+Create NEW file only:
+- `docs/presentation-prep/ORDINARY_CAREER_STATIC_COVERAGE_CLOSURE_v2.md`
+
+Recompute all 10 ordinary careers: result + four seasonal shift identities. Classify UNIQUE_PROJECT_OWNED / GENERIC_EXISTING / MISSING and require 0 MISSING in this scope.
+
+## Queue item 207 — seasonal static selective-integration handoff v2
+Create NEW file only:
+- `docs/presentation-prep/SEASONAL_STATIC_MEDIA_INTEGRATION_HANDOFF_v2.md`
+
+Consolidate items 196–206 with exact asset/data/test selective-copy list, semantic mapping, build evidence, accessibility coverage and remaining final-GIF-only work.
+
+Continue items 196–207 sequentially without waiting for Lead review.
