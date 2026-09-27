@@ -1762,3 +1762,18 @@ Define acceptance for promoting staged teacher/course-specific authored events i
 Do not implement the shared runtime seam.
 
 Continue items 109–117 sequentially without waiting for Lead review.
+
+
+## Cross-cutting Product rule — RU + EN from now on
+
+Effective immediately by direct Product decision:
+- the game ships in **Russian and English**;
+- Russian is the source authoring language; English is a full second locale;
+- one gameplay/content identity, one semantic ID, one set of mechanics and one save-state serve both languages;
+- language affects presentation/text only;
+- no locale-specific conditions, rewards, timing, RNG, eligibility or save identity;
+- School authoring: every new player-facing teacher/lesson/Night/relationship text must be authored in RU + EN; course mechanics and semantic identities are shared.
+- if an already-assigned item has player-facing text and is not yet committed, author both locales now;
+- if an item was already committed before this rule, do not rewrite it blindly; record it for localization migration/review.
+
+Do not create a second copy of the gameplay event for English.
