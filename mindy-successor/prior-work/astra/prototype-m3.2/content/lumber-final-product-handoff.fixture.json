@@ -1,0 +1,244 @@
+{
+  "schemaVersion": 7,
+  "id": "lumber.final-product-handoff.fixture",
+  "status": "POST_PR26_PRODUCT_FACING_HANDOFF",
+  "authority": {
+    "lumberAcceptanceMatrix": "mindy-successor/docs/lumber-prep/LUMBER_FINAL_RC_ACCEPTANCE_MATRIX_v1.md",
+    "rcStatus": "mindy-successor/docs/qa-prep/RC_CLOSEOUT_STATUS_v1.md",
+    "humanDecisionLedger": "mindy-successor/docs/qa-prep/RC_HUMAN_DECISIONS_REQUIRED_v1.md",
+    "productTruthRule": "QA fixtures/tests are evidence, not Product decision authority"
+  },
+  "categories": {
+    "LOCKED_AND_SHIPPED": [
+      {
+        "id": "hard-work",
+        "state": "LOCKED_AND_SHIPPED",
+        "contract": {
+          "endingId": "ending.lumber.hard-work",
+          "onlyCondition": {
+            "kind": "careerCounter",
+            "career": "lumber",
+            "counter": "completed_shifts",
+            "op": "gte",
+            "value": 50
+          },
+          "rewardId": "hardWork:lumber"
+        }
+      },
+      {
+        "id": "forest-continuation",
+        "state": "LOCKED_AND_SHIPPED",
+        "contract": {
+          "kind": "activityResult",
+          "activity": "lumber.forest",
+          "outcome": "success",
+          "result": "lumber.forest.success"
+        }
+      },
+      {
+        "id": "forest-current-routes",
+        "state": "LOCKED_AND_SHIPPED",
+        "contract": {
+          "normalRoute": "logging-road",
+          "gatedRoute": "old-boundary",
+          "gatedCapability": "enter_old_boundary"
+        }
+      },
+      {
+        "id": "item-capability-runtime",
+        "state": "LOCKED_AND_SHIPPED",
+        "contract": {
+          "itemId": "old_boundary_token",
+          "capabilityId": "enter_old_boundary",
+          "derivedFrom": "authoritative inventory"
+        }
+      },
+      {
+        "id": "save-compatibility",
+        "state": "LOCKED_AND_SHIPPED",
+        "contract": {
+          "legacyActivityOptionModel0": [
+            "advance",
+            "escape"
+          ],
+          "oneSaveRcGreen": true
+        }
+      },
+      {
+        "id": "school-baseline",
+        "state": "LOCKED_AND_SHIPPED",
+        "contract": {
+          "paidLessonRuntime": true,
+          "typedLessonsCompleted": true,
+          "blockingSceneBoundary": "base.school -> listen",
+          "syntheticLumberManagementProviderShipped": false
+        }
+      }
+    ],
+    "HUMAN_DECISION_REQUIRED": [
+      {
+        "id": "old-boundary-token-product-policy",
+        "decisions": [
+          "acquisition source",
+          "timing/requirements",
+          "retained vs consumed/turn-in",
+          "repeatability/permanent-access behavior",
+          "inventory/locked-route presentation"
+        ],
+        "dependencyDocs": [
+          "mindy-successor/docs/lumber-prep/OLD_BOUNDARY_TOKEN_PRODUCT_DECISION_IMPACT_v1.md",
+          "mindy-successor/docs/lumber-prep/LUMBER_POST_DECISION_MIGRATION_IMPACT_v1.md",
+          "mindy-successor/docs/lumber-prep/LUMBER_HUMAN_DECISION_TEST_PLAN_v1.md"
+        ],
+        "paRows": [
+          "PA09",
+          "PA14",
+          "PA15",
+          "PA17"
+        ]
+      },
+      {
+        "id": "school-management-public-result",
+        "decisions": [
+          "provider/course/track",
+          "threshold or accepted milestone/project/exam/certificate",
+          "publication rule for lumber.school.management-ready"
+        ],
+        "dependencyDocs": [
+          "mindy-successor/docs/qa-prep/RC_HUMAN_DECISIONS_REQUIRED_v1.md"
+        ],
+        "paRows": [
+          "PA07",
+          "PA08"
+        ]
+      },
+      {
+        "id": "hunter-trail-identity-and-content-boundary",
+        "decisions": [
+          "clue/public-fact and/or navigation-capability identity",
+          "source/provider",
+          "route reward/lore identity",
+          "check/threshold details"
+        ],
+        "dependencyDocs": [
+          "mindy-successor/docs/lumber-prep/HUNTER_TRAIL_DECISION_MATRIX_v2.md",
+          "mindy-successor/docs/lumber-prep/LUMBER_POST_DECISION_MIGRATION_IMPACT_v1.md",
+          "mindy-successor/docs/lumber-prep/LUMBER_HUMAN_DECISION_TEST_PLAN_v1.md"
+        ],
+        "paRows": [
+          "PA16",
+          "PA17",
+          "PA18-conditional"
+        ]
+      },
+      {
+        "id": "school-arcana-forest-public-boundary",
+        "decisions": [
+          "whether this path remains in target scope",
+          "provider/public result/threshold if retained"
+        ],
+        "dependencyDocs": [
+          "mindy-successor/docs/qa-prep/RC_HUMAN_DECISIONS_REQUIRED_v1.md"
+        ],
+        "paRows": [
+          "PA16",
+          "PA17-conditional"
+        ]
+      }
+    ],
+    "CONTENT_AUTHORING_REQUIRED": [
+      {
+        "id": "hunter-trail",
+        "dependency": "accepted Hunter-trail human decision boundary",
+        "source": "mindy-successor/docs/lumber-prep/FOREST_AUTHORING_READY_COMPLETENESS_v2.md"
+      },
+      {
+        "id": "navigation-challenge",
+        "dependency": "accepted content instance within locked family",
+        "source": "mindy-successor/docs/lumber-prep/FOREST_AUTHORING_READY_COMPLETENESS_v2.md"
+      },
+      {
+        "id": "physical-obstacle-challenge",
+        "dependency": "accepted content instance within locked family",
+        "source": "mindy-successor/docs/lumber-prep/FOREST_AUTHORING_READY_COMPLETENESS_v2.md"
+      },
+      {
+        "id": "interpretation-ritual-anomaly-challenge",
+        "dependency": "accepted content instance within locked family",
+        "source": "mindy-successor/docs/lumber-prep/FOREST_AUTHORING_READY_COMPLETENESS_v2.md"
+      },
+      {
+        "id": "seasonal-topology",
+        "dependency": "at least one deterministic season-dependent route/challenge/resource difference",
+        "source": "mindy-successor/docs/lumber-prep/FOREST_AUTHORING_READY_COMPLETENESS_v2.md"
+      },
+      {
+        "id": "school-management-public-result-authoring",
+        "dependency": "accepted provider/threshold human decision",
+        "source": "mindy-successor/docs/qa-prep/RC_HUMAN_DECISIONS_REQUIRED_v1.md"
+      }
+    ],
+    "OPTIONAL_PRESENTATION_POLISH": [
+      {
+        "id": "forest-route-challenge-specialization",
+        "dependency": "final gameplay/content identity",
+        "blocking": false
+      },
+      {
+        "id": "optional-lumber-foreman-gifs",
+        "dependency": "art priority only",
+        "blocking": false
+      },
+      {
+        "id": "school-management-visual-specialization",
+        "dependency": "accepted School result authoring",
+        "blocking": false
+      }
+    ],
+    "SUPERSEDED": [
+      "mindy-successor/docs/lumber-prep/LUMBER_FINAL_CLOSEOUT_PACK_v6.md",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/lumber-final-closeout-pack.fixture.json",
+      "mindy-successor/docs/lumber-prep/LUMBER_FINAL_EVIDENCE_PACK_v5.md",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/lumber-final-evidence-pack.fixture.json",
+      "mindy-successor/docs/lumber-prep/LUMBER_FINAL_DECISION_EVIDENCE_HANDOFF_v4.md",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/lumber-final-decision-evidence-handoff.fixture.json",
+      "mindy-successor/docs/lumber-prep/LUMBER_RC_CLOSURE_HANDOFF_v3.md",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/lumber-rc-closure-handoff.fixture.json",
+      "mindy-successor/docs/lumber-prep/LUMBER_RELEASE_CANDIDATE_HANDOFF_v2.md",
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/lumber-release-candidate-handoff.fixture.json",
+      "mindy-successor/docs/lumber-prep/OLD_BOUNDARY_TOKEN_DECISION_MATRIX_v1.md",
+      "mindy-successor/docs/lumber-prep/FOREST_PRODUCTION_AUTHORING_MATRIX_v1.md"
+    ]
+  },
+  "currentProductFacingDocs": [
+    "mindy-successor/docs/lumber-prep/LUMBER_FINAL_RC_ACCEPTANCE_MATRIX_v1.md",
+    "mindy-successor/docs/lumber-prep/LUMBER_PR26_CLOSEOUT_AUTHORITY_AUDIT_v1.md",
+    "mindy-successor/docs/lumber-prep/OLD_BOUNDARY_TOKEN_PRODUCT_DECISION_IMPACT_v1.md",
+    "mindy-successor/docs/lumber-prep/HUNTER_TRAIL_DECISION_MATRIX_v2.md",
+    "mindy-successor/docs/lumber-prep/FOREST_AUTHORING_READY_COMPLETENESS_v2.md",
+    "mindy-successor/docs/lumber-prep/LUMBER_HUMAN_DECISION_TEST_PLAN_v1.md",
+    "mindy-successor/docs/lumber-prep/LUMBER_POST_DECISION_MIGRATION_IMPACT_v1.md",
+    "mindy-successor/docs/lumber-prep/LUMBER_FINAL_PRODUCT_HANDOFF_v7.md"
+  ],
+  "invariants": {
+    "noImplementationRecommendationBeyondDependencyMapping": true,
+    "qaFixtureIsProductTruth": false,
+    "hardWork": {
+      "onlyCondition": {
+        "kind": "careerCounter",
+        "career": "lumber",
+        "counter": "completed_shifts",
+        "op": "gte",
+        "value": 50
+      },
+      "rewardId": "hardWork:lumber"
+    },
+    "exactA5": {
+      "kind": "activityResult",
+      "activity": "lumber.forest",
+      "outcome": "success",
+      "result": "lumber.forest.success"
+    },
+    "fullPA16": false
+  }
+}
