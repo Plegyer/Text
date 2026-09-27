@@ -21,15 +21,18 @@ const legacyMediaOverrideSchema=z.object({
   src:source,
   alt:z.string().min(1).max(300)
 }).strict();
+const localizedAltKey=z.string().min(1).max(240).regex(/^[a-z0-9][a-z0-9._-]*$/,'Некорректный localization alt key.');
 const gifOverrideSchema=z.object({
   kind:z.literal('gif'),
   src:gifSource,
-  alt:z.string().min(1).max(300)
+  alt:z.string().min(1).max(300),
+  altKey:localizedAltKey.optional()
 }).strict();
 const staticOverrideSchema=z.object({
   kind:z.literal('image'),
   src:staticSource,
-  alt:z.string().min(1).max(300)
+  alt:z.string().min(1).max(300),
+  altKey:localizedAltKey.optional()
 }).strict();
 const poolCandidateKeySchema=z.string().min(1).max(120).regex(/^[a-z0-9][a-z0-9._-]*$/,'Некорректный media candidate key.');
 const poolCandidateSchema=z.object({
@@ -37,6 +40,7 @@ const poolCandidateSchema=z.object({
   kind:z.literal('gif'),
   src:gifSource,
   alt:z.string().min(1).max(300),
+  altKey:localizedAltKey.optional(),
   weight:z.number().finite().positive().optional()
 }).strict();
 const mediaPoolSchema=z.object({
@@ -83,6 +87,7 @@ export interface ResolvedPresentationMedia {
   kind:PresentationMediaKind;
   src:string;
   alt:string;
+  altKey?:string;
   slotId:string;
   source:'override-primary'|'override-pool'|'override-static'|'catalog';
   mediaId?:string;
@@ -382,6 +387,7 @@ function mediaCandidates(
         kind:'gif',
         src:candidate.src,
         alt:candidate.alt,
+        altKey:candidate.altKey,
         slotId:slot.id,
         source:'override-pool',
         candidateKey:candidate.key,
