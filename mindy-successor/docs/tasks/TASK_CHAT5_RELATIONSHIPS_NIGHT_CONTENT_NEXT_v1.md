@@ -937,3 +937,108 @@ Consolidate items 73–83 into:
 Include exact selective-copy files and the remaining visible localization debt after this wave.
 
 Continue items 73–84 sequentially without waiting for Lead review.
+
+
+## Queue item 85 — global UI-shell hardcoded text audit v1
+Create NEW file only:
+- `docs/relationship-prep/GLOBAL_UI_SHELL_HARDCODED_TEXT_AUDIT_V1.md`
+
+Audit current main `src/ui/app.ts` for player-facing hardcoded text not already owned by School/poverty/Foreman/Forest result.
+Classify exact consumer seams and exclude debug/internal text.
+
+## Queue item 86 — Explore panel RU+EN source v1
+Create NEW file only:
+- `docs/relationship-prep/EXPLORE_PANEL_UI_COPY_RU_EN_V1.md`
+
+Author RU-source + full EN for:
+- Explore panel title;
+- Activity explanation;
+- enter button/fallback help;
+- ordinary errands disclosure.
+Do not change Activity mechanics.
+
+## Queue item 87 — Sleep/Night panel RU+EN source v1
+Create NEW file only:
+- `docs/relationship-prep/SLEEP_NIGHT_PANEL_UI_COPY_RU_EN_V1.md`
+
+Author RU+EN for the generic Sleep/Night panel shell not already covered by Chat3 lodging/Night keys.
+No NightFlow mechanics.
+
+## Queue item 88 — Stats panel RU+EN source v1
+Create NEW file only:
+- `docs/relationship-prep/STATS_PANEL_UI_COPY_RU_EN_V1.md`
+
+Author RU+EN section headings and explanatory copy for character stats/professions.
+Do not rename stat/career gameplay IDs.
+
+## Queue item 89 — Journal panel RU+EN source v1
+Create NEW file only:
+- `docs/relationship-prep/JOURNAL_PANEL_UI_COPY_RU_EN_V1.md`
+
+Author RU+EN shell text only.
+Do not solve localized outcome rendering here; item 80 contract remains authoritative.
+
+## Queue item 90 — Bag/debt panel RU+EN source v1
+Create NEW file only:
+- `docs/relationship-prep/BAG_DEBT_PANEL_UI_COPY_RU_EN_V1.md`
+
+Author RU+EN shell labels/headings for inventory/debt display.
+Do not alter debt mechanics or Secret Debt.
+
+## Queue item 91 — Legacy/endings panel RU+EN source v1
+Create NEW file only:
+- `docs/relationship-prep/LEGACY_ENDINGS_PANEL_UI_COPY_RU_EN_V1.md`
+
+Author RU+EN shared shell text for endings/legacy panel:
+- panel heading;
+- explanatory text;
+- accept button;
+- legacy heading;
+- empty legacy fallback;
+- next-life button.
+Do not author/modify ending gameplay.
+
+## Queue item 92 — Arrival screen RU+EN source v1
+Create NEW file only:
+- `docs/relationship-prep/ARRIVAL_SCREEN_UI_COPY_RU_EN_V1.md`
+
+Author RU+EN source for the pre-arrival shell:
+- eyebrow/title/body/button.
+Do not alter arrival action/event mechanics.
+
+## Queue item 93 — shared generic button labels RU+EN source v1
+Create NEW file only:
+- `docs/relationship-prep/SHARED_GENERIC_BUTTON_LABELS_RU_EN_V1.md`
+
+Inventory and author stable RU+EN labels for generic buttons still hardcoded:
+select/enter/close/dismiss/home/town/accept/new-life and similar shared controls.
+Exclude already-localized School-specific controls.
+
+## Queue item 94 — global UI-shell localization fixture v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/global-ui-shell-localization-v1.fixture.json`
+
+Convert items 86–93 into stable RU+EN keys.
+Presentation/text only; no gameplay IDs or mechanics fields.
+
+## Queue item 95 — global UI-shell consumer map v1
+Create NEW file only:
+- `docs/relationship-prep/GLOBAL_UI_SHELL_CONSUMER_MAP_V1.md`
+
+Map every item-94 key to exact current `src/ui/app.ts` fallback string/consumer seam.
+No code edits.
+
+## Queue item 96 — global UI-shell localization handoff v1
+Create NEW file only:
+- `docs/relationship-prep/GLOBAL_UI_SHELL_LOCALIZATION_HANDOFF_V1.md`
+
+Consolidate items 85–95 into:
+- SAFE_TEXT_SOURCE;
+- CHAT3_NIGHT_LODGING_OVERLAP_EXCLUDED;
+- JOURNAL_OUTCOME_CONSUMER_REQUIRED;
+- SHARED_UI_WIRING_REQUIRED;
+- NON_PLAYER_FACING_EXCLUDED.
+
+Include exact selective-copy files and remaining hardcoded player-facing debt.
+
+Continue items 85–96 sequentially without waiting for Lead review.
