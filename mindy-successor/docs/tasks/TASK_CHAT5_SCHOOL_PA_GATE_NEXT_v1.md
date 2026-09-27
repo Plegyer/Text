@@ -1089,3 +1089,19 @@ Inventory where School is intended to contribute to:
 For each classify current authority, authored content needed, public-result boundary, and whether Meta reward details remain open. Explicitly preserve Lumber Hard Work independence from School.
 
 Continue items 62–70 sequentially without waiting for Lead review.
+
+
+## Queue item 71 — School Palace/meta dependency boundary
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_PALACE_META_DEPENDENCY_BOUNDARY_v1.md`
+
+Map what School may contribute to Palace/meta progression while preserving:
+- Palace unlock = Hard Work on all 10 ordinary careers only;
+- School cannot become an additional Palace unlock prerequisite without a new direct decision;
+- School public results may still influence Palace content after unlock;
+- education endings/meta rewards remain separate from ordinary Hard Work counting.
+
+Keep exact Palace/School content and rewards OPEN.
+
+Continue items 63–71 sequentially without waiting for Lead review.
