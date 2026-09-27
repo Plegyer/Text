@@ -2315,3 +2315,181 @@ Record, based on current main / PR43 status:
 Give Lead an exact next selective-integration order.
 
 Continue items 140–148 sequentially without waiting for Lead review.
+
+
+## Queue depth Product rule — 12
+
+Current coordination target:
+- keep **12 independent useful tasks** queued/outstanding whenever practical;
+- do not invent filler work merely to reach 12;
+- Chat 3 owns Forest + ordinary poverty + Secret Debt authored content/evidence only;
+- shared runtime/schema/UI remains Lead-owned;
+- Secret Debt gameplay/reward decisions remain Product-blocked unless explicitly locked;
+- worker branch remains selective-copy only.
+
+## Queue item 149 — ordinary poverty localization executable natural-path test v2
+
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/poverty-localization-natural-path-v2.test.ts`
+
+Turn item 145 into executable coverage against current shipped poverty packs:
+- naturally reach one street event and one cheap-lodging event;
+- resolve RU and EN text from the localization delta;
+- locale switch must not change pending event/variant, RNG, NightFlow or gameplay Save;
+- resolve the same choice and prove effects are applied exactly once;
+- Secret Debt IDs must not appear.
+
+Do not edit shared runtime/UI.
+
+## Queue item 150 — poverty localization merge-collision guard v1
+
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/poverty-localization-merge-collision-v1.test.ts`
+
+Validate the item-140 delta against current-main `content/localization.json`:
+- additive keys only or exact-identical duplicates;
+- no conflicting RU/EN replacement;
+- no locale suffix in gameplay identity;
+- every event/media ID referenced by the delta exists in current production packs;
+- no Secret Debt contamination.
+
+## Queue item 151 — ordinary poverty full shipped localization coverage ledger v3
+
+Create NEW file only:
+- `docs/poverty-prep/ORDINARY_POVERTY_LOCALIZATION_COVERAGE_LEDGER_v3.md`
+
+Enumerate every player-facing title/body/choice/media-alt surface in the six current ordinary-poverty production packs and classify:
+- COVERED_RU_EN;
+- RU_FALLBACK_ONLY;
+- MISSING;
+- NON_PLAYER_FACING.
+
+Use actual Git identities only.
+
+## Queue item 152 — poverty localization post-merge UI smoke fixture v1
+
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/poverty-ui-locale-smoke-v1.fixture.json`
+
+Provide deterministic expected RU/EN text for representative:
+- street helpful;
+- street pressure;
+- cheap lodging;
+- recovery/help;
+- neutral poverty event.
+
+Include gameplay IDs only as references, never duplicated mechanics.
+
+## Queue item 153 — ordinary poverty locale invariance contract test v1
+
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/poverty-locale-invariance-v1.test.ts`
+
+For representative effect-free and effectful poverty events prove:
+- locale has no condition/effect/reward/RNG difference;
+- pending IDs unchanged;
+- save/reload after localized choice does not duplicate money/Energy/housing effects;
+- locale remains outside gameplay Save.
+
+## Queue item 154 — Forest current-main bilingual coverage test v4
+
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/forest-current-main-bilingual-coverage-v4.test.ts`
+
+Against current main semantics validate:
+- activity label;
+- current shipped route labels only;
+- success/escape/failure result events;
+- choice labels/text;
+- media alt;
+- RU+EN completeness;
+- exact `activityResult` result IDs unchanged;
+- Hard Work remains only completed_shifts >= 50.
+
+No Hunter/Old Boundary unresolved semantics may be invented.
+
+## Queue item 155 — Forest route presentation content staging v2
+
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/forest-route-content-staging-v2.json`
+
+Use only existing shipped route identities:
+- logging road;
+- old boundary.
+
+Provide semantic presentation text/media-slot staging from the already-authored route scene bank.
+Requirements:
+- no new route IDs;
+- no new conditions/effects/rewards;
+- no item-consume/acquisition assumption;
+- RU/EN text-key references;
+- placeholders explicitly STAGING_ONLY;
+- media choice presentation-only.
+
+## Queue item 156 — Forest route staging contract test v2
+
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/forest-route-content-staging-v2.test.ts`
+
+Validate item 155:
+- only current shipped route identities;
+- no Hunter production ID;
+- no gameplay fields;
+- semantic presentation IDs stable;
+- placeholder media never marked production;
+- locale-neutral identities.
+
+## Queue item 157 — Hunter trail Product-open staging packet v3
+
+Create NEW file only:
+- `docs/lumber-prep/FOREST_HUNTER_TRAIL_PRODUCT_OPEN_STAGING_v3.md`
+
+Consolidate existing Hunter-trail authored material into a strict Product-open packet:
+- route concept;
+- scene bank;
+- possible condition families;
+- possible presentation identities;
+- exact unresolved decisions still required.
+
+Do NOT select canonical production option ID, clue fact, capability ID, provider, threshold or reward.
+
+## Queue item 158 — Forest challenge-family staging matrix v2
+
+Create NEW file only:
+- `docs/lumber-prep/FOREST_CHALLENGE_FAMILY_STAGING_MATRIX_v2.md`
+
+For navigation, physical obstacle, interpretation/ritual anomaly:
+- map existing runtime-capable condition/effect primitives;
+- attach already-authored RU+EN prose candidates;
+- list safe presentation IDs;
+- mark all still-open threshold/reward/lore choices.
+
+No new runtime/schema.
+
+## Queue item 159 — Forest seasonal topology Product-open matrix v2
+
+Create NEW file only:
+- `docs/lumber-prep/FOREST_SEASONAL_TOPOLOGY_PRODUCT_OPEN_MATRIX_v2.md`
+
+Prepare four-season authored options without locking mechanics:
+- which current route scene families can vary in spring/summer/autumn/winter;
+- which deterministic topology decisions are still Product-open;
+- what can ship as presentation-only today;
+- what requires a real Activity option-condition decision.
+
+Do not fake a mechanical season difference with prose.
+
+## Queue item 160 — Forest + poverty next selective-integration handoff v2
+
+Create NEW file only:
+- `docs/lumber-prep/FOREST_POVERTY_NEXT_SELECTIVE_INTEGRATION_HANDOFF_v2.md`
+
+Consolidate items 149–159:
+- exact files safe for Lead to copy now;
+- tests useful for current main;
+- Forest presentation staging;
+- Product-open Hunter/challenge/season items;
+- Secret Debt isolation;
+- recommended next useful 12-task wave only if real independent work remains.
+
+Continue items 149–160 sequentially without waiting for Lead review.
