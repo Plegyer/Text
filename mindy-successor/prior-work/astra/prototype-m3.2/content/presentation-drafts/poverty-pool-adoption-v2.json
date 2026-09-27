@@ -1,20 +1,26 @@
 {
   "formatVersion": 2,
   "kind": "ordinary-poverty-pool-adoption",
-  "status": "STAGING_ONLY_NOT_SHIPPED",
-  "leadSchemaRef": {
-    "pr": 42,
-    "head": "595e02e21eb7a2ec942b9c6c7899d816d1170c10"
+  "status": "STAGING_ONLY",
+  "runtimeSchemaAuthority": "PR42",
+  "contentAuthority": "PR37",
+  "currentMainGifInventory": {
+    "realGifFiles": 0
+  },
+  "summary": {
+    "productionEventVariantPools": 10,
+    "realAssetReady": 0,
+    "placeholder": 10
   },
   "entries": [
     {
-      "sourceIdentity": {
-        "eventId": "poverty-street-production.helpful-summer",
-        "variantId": "default"
-      },
+      "eventId": "poverty-street-production.helpful-summer",
+      "variantId": "default",
       "presentationId": "location/town/event/poverty-street-production-helpful-summer/default",
       "poolVersion": 1,
-      "gameplayOutcomePolicy": "FIXED_OUTSIDE_PRESENTATION",
+      "coverageStatus": "PLACEHOLDER",
+      "gameplayOutcomeOwnedBy": "event+variant+choice/effects",
+      "mediaSelectionMayChangeOutcome": false,
       "runtimeSlot": {
         "pool": {
           "version": 1,
@@ -22,88 +28,70 @@
           "selectionPolicy": "unweighted",
           "candidates": [
             {
-              "key": "helpful-summer-a",
+              "key": "street-helpful-1",
               "kind": "gif",
-              "src": "assets/staging/non-shipped/poverty/1/1.gif",
-              "alt": "У закрывающегося летнего прилавка остался обычный грузовой ящик."
+              "src": "assets/staging/non-shipped/poverty/street-helpful/candidate-1.gif",
+              "alt": "RU source placeholder alt for street-helpful candidate 1."
             },
             {
-              "key": "helpful-summer-b",
+              "key": "street-helpful-2",
               "kind": "gif",
-              "src": "assets/staging/non-shipped/poverty/1/2.gif",
-              "alt": "На краю летнего рынка заканчивают уборку после торговли."
+              "src": "assets/staging/non-shipped/poverty/street-helpful/candidate-2.gif",
+              "alt": "RU source placeholder alt for street-helpful candidate 2."
             },
             {
-              "key": "helpful-summer-c",
+              "key": "street-helpful-3",
               "kind": "gif",
-              "src": "assets/staging/non-shipped/poverty/1/3.gif",
-              "alt": "Под навесом у улицы стоит ящик перед закрытием рынка."
+              "src": "assets/staging/non-shipped/poverty/street-helpful/candidate-3.gif",
+              "alt": "RU source placeholder alt for street-helpful candidate 3."
             }
           ]
         },
         "static": {
           "kind": "image",
           "src": "assets/stage-outside.svg",
-          "alt": "poverty-street-production.helpful-summer static fallback"
+          "alt": "RU source static fallback for street-helpful."
         }
       },
-      "candidates": [
-        {
-          "key": "helpful-summer-a",
-          "kind": "gif",
-          "src": "assets/staging/non-shipped/poverty/1/1.gif",
-          "runtimeAltFallback": "У закрывающегося летнего прилавка остался обычный грузовой ящик.",
-          "altLocalizationKeys": {
-            "ru": "loc/presentation/location/town/event/poverty-street-production-helpful-summer/default/candidate/helpful-summer-a/alt",
-            "en": "loc/presentation/location/town/event/poverty-street-production-helpful-summer/default/candidate/helpful-summer-a/alt"
+      "localization": {
+        "captionKey": "presentation.location/town/event/poverty-street-production-helpful-summer/default.caption",
+        "staticAltKey": "presentation.location/town/event/poverty-street-production-helpful-summer/default.static.alt",
+        "candidates": [
+          {
+            "candidateKey": "street-helpful-1",
+            "altLocalizationKey": "presentation.location/town/event/poverty-street-production-helpful-summer/default.candidate.street-helpful-1.alt",
+            "requiredLocales": [
+              "ru",
+              "en"
+            ]
           },
-          "alt": {
-            "ru": "У закрывающегося летнего прилавка остался обычный грузовой ящик.",
-            "en": "An ordinary cargo crate remains beside a closing summer market stall."
+          {
+            "candidateKey": "street-helpful-2",
+            "altLocalizationKey": "presentation.location/town/event/poverty-street-production-helpful-summer/default.candidate.street-helpful-2.alt",
+            "requiredLocales": [
+              "ru",
+              "en"
+            ]
           },
-          "coverageStatus": "PLACEHOLDER"
-        },
-        {
-          "key": "helpful-summer-b",
-          "kind": "gif",
-          "src": "assets/staging/non-shipped/poverty/1/2.gif",
-          "runtimeAltFallback": "На краю летнего рынка заканчивают уборку после торговли.",
-          "altLocalizationKeys": {
-            "ru": "loc/presentation/location/town/event/poverty-street-production-helpful-summer/default/candidate/helpful-summer-b/alt",
-            "en": "loc/presentation/location/town/event/poverty-street-production-helpful-summer/default/candidate/helpful-summer-b/alt"
-          },
-          "alt": {
-            "ru": "На краю летнего рынка заканчивают уборку после торговли.",
-            "en": "Cleanup is finishing at the edge of the summer market."
-          },
-          "coverageStatus": "PLACEHOLDER"
-        },
-        {
-          "key": "helpful-summer-c",
-          "kind": "gif",
-          "src": "assets/staging/non-shipped/poverty/1/3.gif",
-          "runtimeAltFallback": "Под навесом у улицы стоит ящик перед закрытием рынка.",
-          "altLocalizationKeys": {
-            "ru": "loc/presentation/location/town/event/poverty-street-production-helpful-summer/default/candidate/helpful-summer-c/alt",
-            "en": "loc/presentation/location/town/event/poverty-street-production-helpful-summer/default/candidate/helpful-summer-c/alt"
-          },
-          "alt": {
-            "ru": "Под навесом у улицы стоит ящик перед закрытием рынка.",
-            "en": "A crate stands under cover beside the street as the market closes."
-          },
-          "coverageStatus": "PLACEHOLDER"
-        }
-      ],
-      "staticFallback": "assets/stage-outside.svg"
+          {
+            "candidateKey": "street-helpful-3",
+            "altLocalizationKey": "presentation.location/town/event/poverty-street-production-helpful-summer/default.candidate.street-helpful-3.alt",
+            "requiredLocales": [
+              "ru",
+              "en"
+            ]
+          }
+        ]
+      }
     },
     {
-      "sourceIdentity": {
-        "eventId": "poverty-street-production.neutral-autumn",
-        "variantId": "default"
-      },
+      "eventId": "poverty-street-production.neutral-autumn",
+      "variantId": "default",
       "presentationId": "location/town/event/poverty-street-production-neutral-autumn/default",
       "poolVersion": 1,
-      "gameplayOutcomePolicy": "FIXED_OUTSIDE_PRESENTATION",
+      "coverageStatus": "PLACEHOLDER",
+      "gameplayOutcomeOwnedBy": "event+variant+choice/effects",
+      "mediaSelectionMayChangeOutcome": false,
       "runtimeSlot": {
         "pool": {
           "version": 1,
@@ -111,88 +99,70 @@
           "selectionPolicy": "unweighted",
           "candidates": [
             {
-              "key": "neutral-autumn-a",
+              "key": "street-neutral-1",
               "kind": "gif",
-              "src": "assets/staging/non-shipped/poverty/2/1.gif",
-              "alt": "Под магазинным навесом остаётся сухая полоса осенней мостовой."
+              "src": "assets/staging/non-shipped/poverty/street-neutral/candidate-1.gif",
+              "alt": "RU source placeholder alt for street-neutral candidate 1."
             },
             {
-              "key": "neutral-autumn-b",
+              "key": "street-neutral-2",
               "kind": "gif",
-              "src": "assets/staging/non-shipped/poverty/2/2.gif",
-              "alt": "Закрытый магазин оставляет тихий укрытый угол на улице."
+              "src": "assets/staging/non-shipped/poverty/street-neutral/candidate-2.gif",
+              "alt": "RU source placeholder alt for street-neutral candidate 2."
             },
             {
-              "key": "neutral-autumn-c",
+              "key": "street-neutral-3",
               "kind": "gif",
-              "src": "assets/staging/non-shipped/poverty/2/3.gif",
-              "alt": "Осенняя улица затихает рядом с сухим местом под навесом."
+              "src": "assets/staging/non-shipped/poverty/street-neutral/candidate-3.gif",
+              "alt": "RU source placeholder alt for street-neutral candidate 3."
             }
           ]
         },
         "static": {
           "kind": "image",
           "src": "assets/stage-outside.svg",
-          "alt": "poverty-street-production.neutral-autumn static fallback"
+          "alt": "RU source static fallback for street-neutral."
         }
       },
-      "candidates": [
-        {
-          "key": "neutral-autumn-a",
-          "kind": "gif",
-          "src": "assets/staging/non-shipped/poverty/2/1.gif",
-          "runtimeAltFallback": "Под магазинным навесом остаётся сухая полоса осенней мостовой.",
-          "altLocalizationKeys": {
-            "ru": "loc/presentation/location/town/event/poverty-street-production-neutral-autumn/default/candidate/neutral-autumn-a/alt",
-            "en": "loc/presentation/location/town/event/poverty-street-production-neutral-autumn/default/candidate/neutral-autumn-a/alt"
+      "localization": {
+        "captionKey": "presentation.location/town/event/poverty-street-production-neutral-autumn/default.caption",
+        "staticAltKey": "presentation.location/town/event/poverty-street-production-neutral-autumn/default.static.alt",
+        "candidates": [
+          {
+            "candidateKey": "street-neutral-1",
+            "altLocalizationKey": "presentation.location/town/event/poverty-street-production-neutral-autumn/default.candidate.street-neutral-1.alt",
+            "requiredLocales": [
+              "ru",
+              "en"
+            ]
           },
-          "alt": {
-            "ru": "Под магазинным навесом остаётся сухая полоса осенней мостовой.",
-            "en": "A dry strip of autumn pavement remains under a shop awning."
+          {
+            "candidateKey": "street-neutral-2",
+            "altLocalizationKey": "presentation.location/town/event/poverty-street-production-neutral-autumn/default.candidate.street-neutral-2.alt",
+            "requiredLocales": [
+              "ru",
+              "en"
+            ]
           },
-          "coverageStatus": "PLACEHOLDER"
-        },
-        {
-          "key": "neutral-autumn-b",
-          "kind": "gif",
-          "src": "assets/staging/non-shipped/poverty/2/2.gif",
-          "runtimeAltFallback": "Закрытый магазин оставляет тихий укрытый угол на улице.",
-          "altLocalizationKeys": {
-            "ru": "loc/presentation/location/town/event/poverty-street-production-neutral-autumn/default/candidate/neutral-autumn-b/alt",
-            "en": "loc/presentation/location/town/event/poverty-street-production-neutral-autumn/default/candidate/neutral-autumn-b/alt"
-          },
-          "alt": {
-            "ru": "Закрытый магазин оставляет тихий укрытый угол на улице.",
-            "en": "A closed shop leaves a quiet sheltered corner on the street."
-          },
-          "coverageStatus": "PLACEHOLDER"
-        },
-        {
-          "key": "neutral-autumn-c",
-          "kind": "gif",
-          "src": "assets/staging/non-shipped/poverty/2/3.gif",
-          "runtimeAltFallback": "Осенняя улица затихает рядом с сухим местом под навесом.",
-          "altLocalizationKeys": {
-            "ru": "loc/presentation/location/town/event/poverty-street-production-neutral-autumn/default/candidate/neutral-autumn-c/alt",
-            "en": "loc/presentation/location/town/event/poverty-street-production-neutral-autumn/default/candidate/neutral-autumn-c/alt"
-          },
-          "alt": {
-            "ru": "Осенняя улица затихает рядом с сухим местом под навесом.",
-            "en": "The autumn street grows quiet beside a dry place under an awning."
-          },
-          "coverageStatus": "PLACEHOLDER"
-        }
-      ],
-      "staticFallback": "assets/stage-outside.svg"
+          {
+            "candidateKey": "street-neutral-3",
+            "altLocalizationKey": "presentation.location/town/event/poverty-street-production-neutral-autumn/default.candidate.street-neutral-3.alt",
+            "requiredLocales": [
+              "ru",
+              "en"
+            ]
+          }
+        ]
+      }
     },
     {
-      "sourceIdentity": {
-        "eventId": "poverty-street-production.pressure-winter",
-        "variantId": "default"
-      },
+      "eventId": "poverty-street-production.pressure-winter",
+      "variantId": "default",
       "presentationId": "location/town/event/poverty-street-production-pressure-winter/default",
       "poolVersion": 1,
-      "gameplayOutcomePolicy": "FIXED_OUTSIDE_PRESENTATION",
+      "coverageStatus": "PLACEHOLDER",
+      "gameplayOutcomeOwnedBy": "event+variant+choice/effects",
+      "mediaSelectionMayChangeOutcome": false,
       "runtimeSlot": {
         "pool": {
           "version": 1,
@@ -200,88 +170,70 @@
           "selectionPolicy": "unweighted",
           "candidates": [
             {
-              "key": "pressure-winter-a",
+              "key": "street-pressure-1",
               "kind": "gif",
-              "src": "assets/staging/non-shipped/poverty/3/1.gif",
-              "alt": "Холодная зимняя мостовая видна под уличным навесом."
+              "src": "assets/staging/non-shipped/poverty/street-pressure/candidate-1.gif",
+              "alt": "RU source placeholder alt for street-pressure candidate 1."
             },
             {
-              "key": "pressure-winter-b",
+              "key": "street-pressure-2",
               "kind": "gif",
-              "src": "assets/staging/non-shipped/poverty/3/2.gif",
-              "alt": "Укрытый угол остаётся рядом с продуваемой зимней улицей."
+              "src": "assets/staging/non-shipped/poverty/street-pressure/candidate-2.gif",
+              "alt": "RU source placeholder alt for street-pressure candidate 2."
             },
             {
-              "key": "pressure-winter-c",
+              "key": "street-pressure-3",
               "kind": "gif",
-              "src": "assets/staging/non-shipped/poverty/3/3.gif",
-              "alt": "Зимняя улица выглядит холодной и открытой перед ночлегом."
+              "src": "assets/staging/non-shipped/poverty/street-pressure/candidate-3.gif",
+              "alt": "RU source placeholder alt for street-pressure candidate 3."
             }
           ]
         },
         "static": {
           "kind": "image",
           "src": "assets/stage-outside.svg",
-          "alt": "poverty-street-production.pressure-winter static fallback"
+          "alt": "RU source static fallback for street-pressure."
         }
       },
-      "candidates": [
-        {
-          "key": "pressure-winter-a",
-          "kind": "gif",
-          "src": "assets/staging/non-shipped/poverty/3/1.gif",
-          "runtimeAltFallback": "Холодная зимняя мостовая видна под уличным навесом.",
-          "altLocalizationKeys": {
-            "ru": "loc/presentation/location/town/event/poverty-street-production-pressure-winter/default/candidate/pressure-winter-a/alt",
-            "en": "loc/presentation/location/town/event/poverty-street-production-pressure-winter/default/candidate/pressure-winter-a/alt"
+      "localization": {
+        "captionKey": "presentation.location/town/event/poverty-street-production-pressure-winter/default.caption",
+        "staticAltKey": "presentation.location/town/event/poverty-street-production-pressure-winter/default.static.alt",
+        "candidates": [
+          {
+            "candidateKey": "street-pressure-1",
+            "altLocalizationKey": "presentation.location/town/event/poverty-street-production-pressure-winter/default.candidate.street-pressure-1.alt",
+            "requiredLocales": [
+              "ru",
+              "en"
+            ]
           },
-          "alt": {
-            "ru": "Холодная зимняя мостовая видна под уличным навесом.",
-            "en": "Cold winter pavement is visible beneath a street overhang."
+          {
+            "candidateKey": "street-pressure-2",
+            "altLocalizationKey": "presentation.location/town/event/poverty-street-production-pressure-winter/default.candidate.street-pressure-2.alt",
+            "requiredLocales": [
+              "ru",
+              "en"
+            ]
           },
-          "coverageStatus": "PLACEHOLDER"
-        },
-        {
-          "key": "pressure-winter-b",
-          "kind": "gif",
-          "src": "assets/staging/non-shipped/poverty/3/2.gif",
-          "runtimeAltFallback": "Укрытый угол остаётся рядом с продуваемой зимней улицей.",
-          "altLocalizationKeys": {
-            "ru": "loc/presentation/location/town/event/poverty-street-production-pressure-winter/default/candidate/pressure-winter-b/alt",
-            "en": "loc/presentation/location/town/event/poverty-street-production-pressure-winter/default/candidate/pressure-winter-b/alt"
-          },
-          "alt": {
-            "ru": "Укрытый угол остаётся рядом с продуваемой зимней улицей.",
-            "en": "A sheltered corner remains beside a wind-exposed winter street."
-          },
-          "coverageStatus": "PLACEHOLDER"
-        },
-        {
-          "key": "pressure-winter-c",
-          "kind": "gif",
-          "src": "assets/staging/non-shipped/poverty/3/3.gif",
-          "runtimeAltFallback": "Зимняя улица выглядит холодной и открытой перед ночлегом.",
-          "altLocalizationKeys": {
-            "ru": "loc/presentation/location/town/event/poverty-street-production-pressure-winter/default/candidate/pressure-winter-c/alt",
-            "en": "loc/presentation/location/town/event/poverty-street-production-pressure-winter/default/candidate/pressure-winter-c/alt"
-          },
-          "alt": {
-            "ru": "Зимняя улица выглядит холодной и открытой перед ночлегом.",
-            "en": "The winter street looks cold and exposed before the night's rest."
-          },
-          "coverageStatus": "PLACEHOLDER"
-        }
-      ],
-      "staticFallback": "assets/stage-outside.svg"
+          {
+            "candidateKey": "street-pressure-3",
+            "altLocalizationKey": "presentation.location/town/event/poverty-street-production-pressure-winter/default.candidate.street-pressure-3.alt",
+            "requiredLocales": [
+              "ru",
+              "en"
+            ]
+          }
+        ]
+      }
     },
     {
-      "sourceIdentity": {
-        "eventId": "poverty-cheap-production.shared-quiet-autumn",
-        "variantId": "default"
-      },
+      "eventId": "poverty-cheap-production.shared-quiet-autumn",
+      "variantId": "default",
       "presentationId": "location/town/event/poverty-cheap-production-shared-quiet-autumn/default",
       "poolVersion": 1,
-      "gameplayOutcomePolicy": "FIXED_OUTSIDE_PRESENTATION",
+      "coverageStatus": "PLACEHOLDER",
+      "gameplayOutcomeOwnedBy": "event+variant+choice/effects",
+      "mediaSelectionMayChangeOutcome": false,
       "runtimeSlot": {
         "pool": {
           "version": 1,
@@ -289,88 +241,70 @@
           "selectionPolicy": "unweighted",
           "candidates": [
             {
-              "key": "cheap-autumn-a",
+              "key": "cheap-lodging-1",
               "kind": "gif",
-              "src": "assets/staging/non-shipped/poverty/4/1.gif",
-              "alt": "Тесная общая комната постепенно затихает осенним вечером."
+              "src": "assets/staging/non-shipped/poverty/cheap-lodging/candidate-1.gif",
+              "alt": "RU source placeholder alt for cheap-lodging candidate 1."
             },
             {
-              "key": "cheap-autumn-b",
+              "key": "cheap-lodging-2",
               "kind": "gif",
-              "src": "assets/staging/non-shipped/poverty/4/2.gif",
-              "alt": "В комнате с тонкими стенами готовятся ко сну."
+              "src": "assets/staging/non-shipped/poverty/cheap-lodging/candidate-2.gif",
+              "alt": "RU source placeholder alt for cheap-lodging candidate 2."
             },
             {
-              "key": "cheap-autumn-c",
+              "key": "cheap-lodging-3",
               "kind": "gif",
-              "src": "assets/staging/non-shipped/poverty/4/3.gif",
-              "alt": "Личные вещи аккуратно устраивают в дешёвой общей комнате."
+              "src": "assets/staging/non-shipped/poverty/cheap-lodging/candidate-3.gif",
+              "alt": "RU source placeholder alt for cheap-lodging candidate 3."
             }
           ]
         },
         "static": {
           "kind": "image",
           "src": "assets/stage-room.svg",
-          "alt": "poverty-cheap-production.shared-quiet-autumn static fallback"
+          "alt": "RU source static fallback for cheap-lodging."
         }
       },
-      "candidates": [
-        {
-          "key": "cheap-autumn-a",
-          "kind": "gif",
-          "src": "assets/staging/non-shipped/poverty/4/1.gif",
-          "runtimeAltFallback": "Тесная общая комната постепенно затихает осенним вечером.",
-          "altLocalizationKeys": {
-            "ru": "loc/presentation/location/town/event/poverty-cheap-production-shared-quiet-autumn/default/candidate/cheap-autumn-a/alt",
-            "en": "loc/presentation/location/town/event/poverty-cheap-production-shared-quiet-autumn/default/candidate/cheap-autumn-a/alt"
+      "localization": {
+        "captionKey": "presentation.location/town/event/poverty-cheap-production-shared-quiet-autumn/default.caption",
+        "staticAltKey": "presentation.location/town/event/poverty-cheap-production-shared-quiet-autumn/default.static.alt",
+        "candidates": [
+          {
+            "candidateKey": "cheap-lodging-1",
+            "altLocalizationKey": "presentation.location/town/event/poverty-cheap-production-shared-quiet-autumn/default.candidate.cheap-lodging-1.alt",
+            "requiredLocales": [
+              "ru",
+              "en"
+            ]
           },
-          "alt": {
-            "ru": "Тесная общая комната постепенно затихает осенним вечером.",
-            "en": "A cramped shared room gradually settles into quiet on an autumn evening."
+          {
+            "candidateKey": "cheap-lodging-2",
+            "altLocalizationKey": "presentation.location/town/event/poverty-cheap-production-shared-quiet-autumn/default.candidate.cheap-lodging-2.alt",
+            "requiredLocales": [
+              "ru",
+              "en"
+            ]
           },
-          "coverageStatus": "PLACEHOLDER"
-        },
-        {
-          "key": "cheap-autumn-b",
-          "kind": "gif",
-          "src": "assets/staging/non-shipped/poverty/4/2.gif",
-          "runtimeAltFallback": "В комнате с тонкими стенами готовятся ко сну.",
-          "altLocalizationKeys": {
-            "ru": "loc/presentation/location/town/event/poverty-cheap-production-shared-quiet-autumn/default/candidate/cheap-autumn-b/alt",
-            "en": "loc/presentation/location/town/event/poverty-cheap-production-shared-quiet-autumn/default/candidate/cheap-autumn-b/alt"
-          },
-          "alt": {
-            "ru": "В комнате с тонкими стенами готовятся ко сну.",
-            "en": "People prepare to sleep in a room with thin walls."
-          },
-          "coverageStatus": "PLACEHOLDER"
-        },
-        {
-          "key": "cheap-autumn-c",
-          "kind": "gif",
-          "src": "assets/staging/non-shipped/poverty/4/3.gif",
-          "runtimeAltFallback": "Личные вещи аккуратно устраивают в дешёвой общей комнате.",
-          "altLocalizationKeys": {
-            "ru": "loc/presentation/location/town/event/poverty-cheap-production-shared-quiet-autumn/default/candidate/cheap-autumn-c/alt",
-            "en": "loc/presentation/location/town/event/poverty-cheap-production-shared-quiet-autumn/default/candidate/cheap-autumn-c/alt"
-          },
-          "alt": {
-            "ru": "Личные вещи аккуратно устраивают в дешёвой общей комнате.",
-            "en": "Personal belongings are arranged carefully in the cheap shared room."
-          },
-          "coverageStatus": "PLACEHOLDER"
-        }
-      ],
-      "staticFallback": "assets/stage-room.svg"
+          {
+            "candidateKey": "cheap-lodging-3",
+            "altLocalizationKey": "presentation.location/town/event/poverty-cheap-production-shared-quiet-autumn/default.candidate.cheap-lodging-3.alt",
+            "requiredLocales": [
+              "ru",
+              "en"
+            ]
+          }
+        ]
+      }
     },
     {
-      "sourceIdentity": {
-        "eventId": "poverty-recovery-production.small-coin-help",
-        "variantId": "default"
-      },
+      "eventId": "poverty-recovery-production.small-coin-help",
+      "variantId": "default",
       "presentationId": "location/town/event/poverty-recovery-production-small-coin-help/default",
       "poolVersion": 1,
-      "gameplayOutcomePolicy": "FIXED_OUTSIDE_PRESENTATION",
+      "coverageStatus": "PLACEHOLDER",
+      "gameplayOutcomeOwnedBy": "event+variant+choice/effects",
+      "mediaSelectionMayChangeOutcome": false,
       "runtimeSlot": {
         "pool": {
           "version": 1,
@@ -378,88 +312,70 @@
           "selectionPolicy": "unweighted",
           "candidates": [
             {
-              "key": "coin-help-a",
+              "key": "recovery-help-1",
               "kind": "gif",
-              "src": "assets/staging/non-shipped/poverty/5/1.gif",
-              "alt": "На общественном выступе лежит свёрток хлеба и несколько монет."
+              "src": "assets/staging/non-shipped/poverty/recovery-help/candidate-1.gif",
+              "alt": "RU source placeholder alt for recovery-help candidate 1."
             },
             {
-              "key": "coin-help-b",
+              "key": "recovery-help-2",
               "kind": "gif",
-              "src": "assets/staging/non-shipped/poverty/5/2.gif",
-              "alt": "Несколько монет лежат рядом с оставленным хлебом у улицы."
+              "src": "assets/staging/non-shipped/poverty/recovery-help/candidate-2.gif",
+              "alt": "RU source placeholder alt for recovery-help candidate 2."
             },
             {
-              "key": "coin-help-c",
+              "key": "recovery-help-3",
               "kind": "gif",
-              "src": "assets/staging/non-shipped/poverty/5/3.gif",
-              "alt": "Тихий уличный угол хранит небольшой свёрток еды и монеты."
+              "src": "assets/staging/non-shipped/poverty/recovery-help/candidate-3.gif",
+              "alt": "RU source placeholder alt for recovery-help candidate 3."
             }
           ]
         },
         "static": {
           "kind": "image",
           "src": "assets/stage-outside.svg",
-          "alt": "poverty-recovery-production.small-coin-help static fallback"
+          "alt": "RU source static fallback for recovery-help."
         }
       },
-      "candidates": [
-        {
-          "key": "coin-help-a",
-          "kind": "gif",
-          "src": "assets/staging/non-shipped/poverty/5/1.gif",
-          "runtimeAltFallback": "На общественном выступе лежит свёрток хлеба и несколько монет.",
-          "altLocalizationKeys": {
-            "ru": "loc/presentation/location/town/event/poverty-recovery-production-small-coin-help/default/candidate/coin-help-a/alt",
-            "en": "loc/presentation/location/town/event/poverty-recovery-production-small-coin-help/default/candidate/coin-help-a/alt"
+      "localization": {
+        "captionKey": "presentation.location/town/event/poverty-recovery-production-small-coin-help/default.caption",
+        "staticAltKey": "presentation.location/town/event/poverty-recovery-production-small-coin-help/default.static.alt",
+        "candidates": [
+          {
+            "candidateKey": "recovery-help-1",
+            "altLocalizationKey": "presentation.location/town/event/poverty-recovery-production-small-coin-help/default.candidate.recovery-help-1.alt",
+            "requiredLocales": [
+              "ru",
+              "en"
+            ]
           },
-          "alt": {
-            "ru": "На общественном выступе лежит свёрток хлеба и несколько монет.",
-            "en": "A parcel of bread and a few coins rest on a public ledge."
+          {
+            "candidateKey": "recovery-help-2",
+            "altLocalizationKey": "presentation.location/town/event/poverty-recovery-production-small-coin-help/default.candidate.recovery-help-2.alt",
+            "requiredLocales": [
+              "ru",
+              "en"
+            ]
           },
-          "coverageStatus": "PLACEHOLDER"
-        },
-        {
-          "key": "coin-help-b",
-          "kind": "gif",
-          "src": "assets/staging/non-shipped/poverty/5/2.gif",
-          "runtimeAltFallback": "Несколько монет лежат рядом с оставленным хлебом у улицы.",
-          "altLocalizationKeys": {
-            "ru": "loc/presentation/location/town/event/poverty-recovery-production-small-coin-help/default/candidate/coin-help-b/alt",
-            "en": "loc/presentation/location/town/event/poverty-recovery-production-small-coin-help/default/candidate/coin-help-b/alt"
-          },
-          "alt": {
-            "ru": "Несколько монет лежат рядом с оставленным хлебом у улицы.",
-            "en": "A few coins lie beside bread left near the street."
-          },
-          "coverageStatus": "PLACEHOLDER"
-        },
-        {
-          "key": "coin-help-c",
-          "kind": "gif",
-          "src": "assets/staging/non-shipped/poverty/5/3.gif",
-          "runtimeAltFallback": "Тихий уличный угол хранит небольшой свёрток еды и монеты.",
-          "altLocalizationKeys": {
-            "ru": "loc/presentation/location/town/event/poverty-recovery-production-small-coin-help/default/candidate/coin-help-c/alt",
-            "en": "loc/presentation/location/town/event/poverty-recovery-production-small-coin-help/default/candidate/coin-help-c/alt"
-          },
-          "alt": {
-            "ru": "Тихий уличный угол хранит небольшой свёрток еды и монеты.",
-            "en": "A quiet street corner holds a small food parcel and coins."
-          },
-          "coverageStatus": "PLACEHOLDER"
-        }
-      ],
-      "staticFallback": "assets/stage-outside.svg"
+          {
+            "candidateKey": "recovery-help-3",
+            "altLocalizationKey": "presentation.location/town/event/poverty-recovery-production-small-coin-help/default.candidate.recovery-help-3.alt",
+            "requiredLocales": [
+              "ru",
+              "en"
+            ]
+          }
+        ]
+      }
     },
     {
-      "sourceIdentity": {
-        "eventId": "poverty-recovery-production.short-cleanup",
-        "variantId": "default"
-      },
+      "eventId": "poverty-recovery-production.short-cleanup",
+      "variantId": "default",
       "presentationId": "location/town/event/poverty-recovery-production-short-cleanup/default",
       "poolVersion": 1,
-      "gameplayOutcomePolicy": "FIXED_OUTSIDE_PRESENTATION",
+      "coverageStatus": "PLACEHOLDER",
+      "gameplayOutcomeOwnedBy": "event+variant+choice/effects",
+      "mediaSelectionMayChangeOutcome": false,
       "runtimeSlot": {
         "pool": {
           "version": 1,
@@ -467,88 +383,70 @@
           "selectionPolicy": "unweighted",
           "candidates": [
             {
-              "key": "cleanup-a",
+              "key": "recovery-cleanup-1",
               "kind": "gif",
-              "src": "assets/staging/non-shipped/poverty/6/1.gif",
-              "alt": "У закрывающегося прилавка складывают два табурета."
+              "src": "assets/staging/non-shipped/poverty/recovery-cleanup/candidate-1.gif",
+              "alt": "RU source placeholder alt for recovery-cleanup candidate 1."
             },
             {
-              "key": "cleanup-b",
+              "key": "recovery-cleanup-2",
               "kind": "gif",
-              "src": "assets/staging/non-shipped/poverty/6/2.gif",
-              "alt": "Узкую полосу у прилавка подметают перед закрытием."
+              "src": "assets/staging/non-shipped/poverty/recovery-cleanup/candidate-2.gif",
+              "alt": "RU source placeholder alt for recovery-cleanup candidate 2."
             },
             {
-              "key": "cleanup-c",
+              "key": "recovery-cleanup-3",
               "kind": "gif",
-              "src": "assets/staging/non-shipped/poverty/6/3.gif",
-              "alt": "Ведро несут от прилавка к сливу после уборки."
+              "src": "assets/staging/non-shipped/poverty/recovery-cleanup/candidate-3.gif",
+              "alt": "RU source placeholder alt for recovery-cleanup candidate 3."
             }
           ]
         },
         "static": {
           "kind": "image",
           "src": "assets/stage-outside.svg",
-          "alt": "poverty-recovery-production.short-cleanup static fallback"
+          "alt": "RU source static fallback for recovery-cleanup."
         }
       },
-      "candidates": [
-        {
-          "key": "cleanup-a",
-          "kind": "gif",
-          "src": "assets/staging/non-shipped/poverty/6/1.gif",
-          "runtimeAltFallback": "У закрывающегося прилавка складывают два табурета.",
-          "altLocalizationKeys": {
-            "ru": "loc/presentation/location/town/event/poverty-recovery-production-short-cleanup/default/candidate/cleanup-a/alt",
-            "en": "loc/presentation/location/town/event/poverty-recovery-production-short-cleanup/default/candidate/cleanup-a/alt"
+      "localization": {
+        "captionKey": "presentation.location/town/event/poverty-recovery-production-short-cleanup/default.caption",
+        "staticAltKey": "presentation.location/town/event/poverty-recovery-production-short-cleanup/default.static.alt",
+        "candidates": [
+          {
+            "candidateKey": "recovery-cleanup-1",
+            "altLocalizationKey": "presentation.location/town/event/poverty-recovery-production-short-cleanup/default.candidate.recovery-cleanup-1.alt",
+            "requiredLocales": [
+              "ru",
+              "en"
+            ]
           },
-          "alt": {
-            "ru": "У закрывающегося прилавка складывают два табурета.",
-            "en": "Two stools are stacked beside a closing stall."
+          {
+            "candidateKey": "recovery-cleanup-2",
+            "altLocalizationKey": "presentation.location/town/event/poverty-recovery-production-short-cleanup/default.candidate.recovery-cleanup-2.alt",
+            "requiredLocales": [
+              "ru",
+              "en"
+            ]
           },
-          "coverageStatus": "PLACEHOLDER"
-        },
-        {
-          "key": "cleanup-b",
-          "kind": "gif",
-          "src": "assets/staging/non-shipped/poverty/6/2.gif",
-          "runtimeAltFallback": "Узкую полосу у прилавка подметают перед закрытием.",
-          "altLocalizationKeys": {
-            "ru": "loc/presentation/location/town/event/poverty-recovery-production-short-cleanup/default/candidate/cleanup-b/alt",
-            "en": "loc/presentation/location/town/event/poverty-recovery-production-short-cleanup/default/candidate/cleanup-b/alt"
-          },
-          "alt": {
-            "ru": "Узкую полосу у прилавка подметают перед закрытием.",
-            "en": "A narrow strip beside the stall is swept before closing."
-          },
-          "coverageStatus": "PLACEHOLDER"
-        },
-        {
-          "key": "cleanup-c",
-          "kind": "gif",
-          "src": "assets/staging/non-shipped/poverty/6/3.gif",
-          "runtimeAltFallback": "Ведро несут от прилавка к сливу после уборки.",
-          "altLocalizationKeys": {
-            "ru": "loc/presentation/location/town/event/poverty-recovery-production-short-cleanup/default/candidate/cleanup-c/alt",
-            "en": "loc/presentation/location/town/event/poverty-recovery-production-short-cleanup/default/candidate/cleanup-c/alt"
-          },
-          "alt": {
-            "ru": "Ведро несут от прилавка к сливу после уборки.",
-            "en": "A bucket is carried from the stall toward a drain after cleanup."
-          },
-          "coverageStatus": "PLACEHOLDER"
-        }
-      ],
-      "staticFallback": "assets/stage-outside.svg"
+          {
+            "candidateKey": "recovery-cleanup-3",
+            "altLocalizationKey": "presentation.location/town/event/poverty-recovery-production-short-cleanup/default.candidate.recovery-cleanup-3.alt",
+            "requiredLocales": [
+              "ru",
+              "en"
+            ]
+          }
+        ]
+      }
     },
     {
-      "sourceIdentity": {
-        "eventId": "poverty-recovery-production.herb-bundle",
-        "variantId": "default"
-      },
+      "eventId": "poverty-recovery-production.herb-bundle",
+      "variantId": "default",
       "presentationId": "location/town/event/poverty-recovery-production-herb-bundle/default",
       "poolVersion": 1,
-      "gameplayOutcomePolicy": "FIXED_OUTSIDE_PRESENTATION",
+      "coverageStatus": "PLACEHOLDER",
+      "gameplayOutcomeOwnedBy": "event+variant+choice/effects",
+      "mediaSelectionMayChangeOutcome": false,
       "runtimeSlot": {
         "pool": {
           "version": 1,
@@ -556,88 +454,70 @@
           "selectionPolicy": "unweighted",
           "candidates": [
             {
-              "key": "herb-bundle-a",
+              "key": "recovery-herb-1",
               "kind": "gif",
-              "src": "assets/staging/non-shipped/poverty/7/1.gif",
-              "alt": "Связанный пучок обычных трав лежит рядом с пустым ящиком."
+              "src": "assets/staging/non-shipped/poverty/recovery-herb/candidate-1.gif",
+              "alt": "RU source placeholder alt for recovery-herb candidate 1."
             },
             {
-              "key": "herb-bundle-b",
+              "key": "recovery-herb-2",
               "kind": "gif",
-              "src": "assets/staging/non-shipped/poverty/7/2.gif",
-              "alt": "Забытые травы лежат у края тихого рынка."
+              "src": "assets/staging/non-shipped/poverty/recovery-herb/candidate-2.gif",
+              "alt": "RU source placeholder alt for recovery-herb candidate 2."
             },
             {
-              "key": "herb-bundle-c",
+              "key": "recovery-herb-3",
               "kind": "gif",
-              "src": "assets/staging/non-shipped/poverty/7/3.gif",
-              "alt": "Небольшой пучок трав заметен рядом с закрытым торговым местом."
+              "src": "assets/staging/non-shipped/poverty/recovery-herb/candidate-3.gif",
+              "alt": "RU source placeholder alt for recovery-herb candidate 3."
             }
           ]
         },
         "static": {
           "kind": "image",
           "src": "assets/stage-outside.svg",
-          "alt": "poverty-recovery-production.herb-bundle static fallback"
+          "alt": "RU source static fallback for recovery-herb."
         }
       },
-      "candidates": [
-        {
-          "key": "herb-bundle-a",
-          "kind": "gif",
-          "src": "assets/staging/non-shipped/poverty/7/1.gif",
-          "runtimeAltFallback": "Связанный пучок обычных трав лежит рядом с пустым ящиком.",
-          "altLocalizationKeys": {
-            "ru": "loc/presentation/location/town/event/poverty-recovery-production-herb-bundle/default/candidate/herb-bundle-a/alt",
-            "en": "loc/presentation/location/town/event/poverty-recovery-production-herb-bundle/default/candidate/herb-bundle-a/alt"
+      "localization": {
+        "captionKey": "presentation.location/town/event/poverty-recovery-production-herb-bundle/default.caption",
+        "staticAltKey": "presentation.location/town/event/poverty-recovery-production-herb-bundle/default.static.alt",
+        "candidates": [
+          {
+            "candidateKey": "recovery-herb-1",
+            "altLocalizationKey": "presentation.location/town/event/poverty-recovery-production-herb-bundle/default.candidate.recovery-herb-1.alt",
+            "requiredLocales": [
+              "ru",
+              "en"
+            ]
           },
-          "alt": {
-            "ru": "Связанный пучок обычных трав лежит рядом с пустым ящиком.",
-            "en": "A tied bundle of ordinary herbs lies beside an empty crate."
+          {
+            "candidateKey": "recovery-herb-2",
+            "altLocalizationKey": "presentation.location/town/event/poverty-recovery-production-herb-bundle/default.candidate.recovery-herb-2.alt",
+            "requiredLocales": [
+              "ru",
+              "en"
+            ]
           },
-          "coverageStatus": "PLACEHOLDER"
-        },
-        {
-          "key": "herb-bundle-b",
-          "kind": "gif",
-          "src": "assets/staging/non-shipped/poverty/7/2.gif",
-          "runtimeAltFallback": "Забытые травы лежат у края тихого рынка.",
-          "altLocalizationKeys": {
-            "ru": "loc/presentation/location/town/event/poverty-recovery-production-herb-bundle/default/candidate/herb-bundle-b/alt",
-            "en": "loc/presentation/location/town/event/poverty-recovery-production-herb-bundle/default/candidate/herb-bundle-b/alt"
-          },
-          "alt": {
-            "ru": "Забытые травы лежат у края тихого рынка.",
-            "en": "Forgotten herbs lie at the edge of a quiet market."
-          },
-          "coverageStatus": "PLACEHOLDER"
-        },
-        {
-          "key": "herb-bundle-c",
-          "kind": "gif",
-          "src": "assets/staging/non-shipped/poverty/7/3.gif",
-          "runtimeAltFallback": "Небольшой пучок трав заметен рядом с закрытым торговым местом.",
-          "altLocalizationKeys": {
-            "ru": "loc/presentation/location/town/event/poverty-recovery-production-herb-bundle/default/candidate/herb-bundle-c/alt",
-            "en": "loc/presentation/location/town/event/poverty-recovery-production-herb-bundle/default/candidate/herb-bundle-c/alt"
-          },
-          "alt": {
-            "ru": "Небольшой пучок трав заметен рядом с закрытым торговым местом.",
-            "en": "A small herb bundle is visible beside a closed market stall."
-          },
-          "coverageStatus": "PLACEHOLDER"
-        }
-      ],
-      "staticFallback": "assets/stage-outside.svg"
+          {
+            "candidateKey": "recovery-herb-3",
+            "altLocalizationKey": "presentation.location/town/event/poverty-recovery-production-herb-bundle/default.candidate.recovery-herb-3.alt",
+            "requiredLocales": [
+              "ru",
+              "en"
+            ]
+          }
+        ]
+      }
     },
     {
-      "sourceIdentity": {
-        "eventId": "poverty-pressure-production.cold-rain",
-        "variantId": "default"
-      },
+      "eventId": "poverty-pressure-production.cold-rain",
+      "variantId": "default",
       "presentationId": "location/town/event/poverty-pressure-production-cold-rain/default",
       "poolVersion": 1,
-      "gameplayOutcomePolicy": "FIXED_OUTSIDE_PRESENTATION",
+      "coverageStatus": "PLACEHOLDER",
+      "gameplayOutcomeOwnedBy": "event+variant+choice/effects",
+      "mediaSelectionMayChangeOutcome": false,
       "runtimeSlot": {
         "pool": {
           "version": 1,
@@ -645,88 +525,70 @@
           "selectionPolicy": "unweighted",
           "candidates": [
             {
-              "key": "cold-rain-a",
+              "key": "pressure-rain-1",
               "kind": "gif",
-              "src": "assets/staging/non-shipped/poverty/8/1.gif",
-              "alt": "Холодный дождь добирается до края уличного укрытия."
+              "src": "assets/staging/non-shipped/poverty/pressure-rain/candidate-1.gif",
+              "alt": "RU source placeholder alt for pressure-rain candidate 1."
             },
             {
-              "key": "cold-rain-b",
+              "key": "pressure-rain-2",
               "kind": "gif",
-              "src": "assets/staging/non-shipped/poverty/8/2.gif",
-              "alt": "За мокрым бордюром виден более глубокий дверной проём."
+              "src": "assets/staging/non-shipped/poverty/pressure-rain/candidate-2.gif",
+              "alt": "RU source placeholder alt for pressure-rain candidate 2."
             },
             {
-              "key": "cold-rain-c",
+              "key": "pressure-rain-3",
               "kind": "gif",
-              "src": "assets/staging/non-shipped/poverty/8/3.gif",
-              "alt": "Вода течёт по мостовой рядом с открытым местом для ночлега."
+              "src": "assets/staging/non-shipped/poverty/pressure-rain/candidate-3.gif",
+              "alt": "RU source placeholder alt for pressure-rain candidate 3."
             }
           ]
         },
         "static": {
           "kind": "image",
           "src": "assets/stage-outside.svg",
-          "alt": "poverty-pressure-production.cold-rain static fallback"
+          "alt": "RU source static fallback for pressure-rain."
         }
       },
-      "candidates": [
-        {
-          "key": "cold-rain-a",
-          "kind": "gif",
-          "src": "assets/staging/non-shipped/poverty/8/1.gif",
-          "runtimeAltFallback": "Холодный дождь добирается до края уличного укрытия.",
-          "altLocalizationKeys": {
-            "ru": "loc/presentation/location/town/event/poverty-pressure-production-cold-rain/default/candidate/cold-rain-a/alt",
-            "en": "loc/presentation/location/town/event/poverty-pressure-production-cold-rain/default/candidate/cold-rain-a/alt"
+      "localization": {
+        "captionKey": "presentation.location/town/event/poverty-pressure-production-cold-rain/default.caption",
+        "staticAltKey": "presentation.location/town/event/poverty-pressure-production-cold-rain/default.static.alt",
+        "candidates": [
+          {
+            "candidateKey": "pressure-rain-1",
+            "altLocalizationKey": "presentation.location/town/event/poverty-pressure-production-cold-rain/default.candidate.pressure-rain-1.alt",
+            "requiredLocales": [
+              "ru",
+              "en"
+            ]
           },
-          "alt": {
-            "ru": "Холодный дождь добирается до края уличного укрытия.",
-            "en": "Cold rain reaches the edge of a street shelter."
+          {
+            "candidateKey": "pressure-rain-2",
+            "altLocalizationKey": "presentation.location/town/event/poverty-pressure-production-cold-rain/default.candidate.pressure-rain-2.alt",
+            "requiredLocales": [
+              "ru",
+              "en"
+            ]
           },
-          "coverageStatus": "PLACEHOLDER"
-        },
-        {
-          "key": "cold-rain-b",
-          "kind": "gif",
-          "src": "assets/staging/non-shipped/poverty/8/2.gif",
-          "runtimeAltFallback": "За мокрым бордюром виден более глубокий дверной проём.",
-          "altLocalizationKeys": {
-            "ru": "loc/presentation/location/town/event/poverty-pressure-production-cold-rain/default/candidate/cold-rain-b/alt",
-            "en": "loc/presentation/location/town/event/poverty-pressure-production-cold-rain/default/candidate/cold-rain-b/alt"
-          },
-          "alt": {
-            "ru": "За мокрым бордюром виден более глубокий дверной проём.",
-            "en": "A deeper doorway is visible beyond the wet curb."
-          },
-          "coverageStatus": "PLACEHOLDER"
-        },
-        {
-          "key": "cold-rain-c",
-          "kind": "gif",
-          "src": "assets/staging/non-shipped/poverty/8/3.gif",
-          "runtimeAltFallback": "Вода течёт по мостовой рядом с открытым местом для ночлега.",
-          "altLocalizationKeys": {
-            "ru": "loc/presentation/location/town/event/poverty-pressure-production-cold-rain/default/candidate/cold-rain-c/alt",
-            "en": "loc/presentation/location/town/event/poverty-pressure-production-cold-rain/default/candidate/cold-rain-c/alt"
-          },
-          "alt": {
-            "ru": "Вода течёт по мостовой рядом с открытым местом для ночлега.",
-            "en": "Rainwater runs along the pavement beside an exposed resting place."
-          },
-          "coverageStatus": "PLACEHOLDER"
-        }
-      ],
-      "staticFallback": "assets/stage-outside.svg"
+          {
+            "candidateKey": "pressure-rain-3",
+            "altLocalizationKey": "presentation.location/town/event/poverty-pressure-production-cold-rain/default.candidate.pressure-rain-3.alt",
+            "requiredLocales": [
+              "ru",
+              "en"
+            ]
+          }
+        ]
+      }
     },
     {
-      "sourceIdentity": {
-        "eventId": "poverty-pressure-production.noisy-loading",
-        "variantId": "default"
-      },
+      "eventId": "poverty-pressure-production.noisy-loading",
+      "variantId": "default",
       "presentationId": "location/town/event/poverty-pressure-production-noisy-loading/default",
       "poolVersion": 1,
-      "gameplayOutcomePolicy": "FIXED_OUTSIDE_PRESENTATION",
+      "coverageStatus": "PLACEHOLDER",
+      "gameplayOutcomeOwnedBy": "event+variant+choice/effects",
+      "mediaSelectionMayChangeOutcome": false,
       "runtimeSlot": {
         "pool": {
           "version": 1,
@@ -734,88 +596,70 @@
           "selectionPolicy": "unweighted",
           "candidates": [
             {
-              "key": "noisy-loading-a",
+              "key": "pressure-loading-1",
               "kind": "gif",
-              "src": "assets/staging/non-shipped/poverty/9/1.gif",
-              "alt": "До рассвета к улице подъезжают рабочие повозки."
+              "src": "assets/staging/non-shipped/poverty/pressure-loading/candidate-1.gif",
+              "alt": "RU source placeholder alt for pressure-loading candidate 1."
             },
             {
-              "key": "noisy-loading-b",
+              "key": "pressure-loading-2",
               "kind": "gif",
-              "src": "assets/staging/non-shipped/poverty/9/2.gif",
-              "alt": "Ящики и колёса заполняют место ранней погрузки."
+              "src": "assets/staging/non-shipped/poverty/pressure-loading/candidate-2.gif",
+              "alt": "RU source placeholder alt for pressure-loading candidate 2."
             },
             {
-              "key": "noisy-loading-c",
+              "key": "pressure-loading-3",
               "kind": "gif",
-              "src": "assets/staging/non-shipped/poverty/9/3.gif",
-              "alt": "Тихий угол становится шумным из-за начавшейся погрузки."
+              "src": "assets/staging/non-shipped/poverty/pressure-loading/candidate-3.gif",
+              "alt": "RU source placeholder alt for pressure-loading candidate 3."
             }
           ]
         },
         "static": {
           "kind": "image",
           "src": "assets/stage-outside.svg",
-          "alt": "poverty-pressure-production.noisy-loading static fallback"
+          "alt": "RU source static fallback for pressure-loading."
         }
       },
-      "candidates": [
-        {
-          "key": "noisy-loading-a",
-          "kind": "gif",
-          "src": "assets/staging/non-shipped/poverty/9/1.gif",
-          "runtimeAltFallback": "До рассвета к улице подъезжают рабочие повозки.",
-          "altLocalizationKeys": {
-            "ru": "loc/presentation/location/town/event/poverty-pressure-production-noisy-loading/default/candidate/noisy-loading-a/alt",
-            "en": "loc/presentation/location/town/event/poverty-pressure-production-noisy-loading/default/candidate/noisy-loading-a/alt"
+      "localization": {
+        "captionKey": "presentation.location/town/event/poverty-pressure-production-noisy-loading/default.caption",
+        "staticAltKey": "presentation.location/town/event/poverty-pressure-production-noisy-loading/default.static.alt",
+        "candidates": [
+          {
+            "candidateKey": "pressure-loading-1",
+            "altLocalizationKey": "presentation.location/town/event/poverty-pressure-production-noisy-loading/default.candidate.pressure-loading-1.alt",
+            "requiredLocales": [
+              "ru",
+              "en"
+            ]
           },
-          "alt": {
-            "ru": "До рассвета к улице подъезжают рабочие повозки.",
-            "en": "Work carts arrive on the street before dawn."
+          {
+            "candidateKey": "pressure-loading-2",
+            "altLocalizationKey": "presentation.location/town/event/poverty-pressure-production-noisy-loading/default.candidate.pressure-loading-2.alt",
+            "requiredLocales": [
+              "ru",
+              "en"
+            ]
           },
-          "coverageStatus": "PLACEHOLDER"
-        },
-        {
-          "key": "noisy-loading-b",
-          "kind": "gif",
-          "src": "assets/staging/non-shipped/poverty/9/2.gif",
-          "runtimeAltFallback": "Ящики и колёса заполняют место ранней погрузки.",
-          "altLocalizationKeys": {
-            "ru": "loc/presentation/location/town/event/poverty-pressure-production-noisy-loading/default/candidate/noisy-loading-b/alt",
-            "en": "loc/presentation/location/town/event/poverty-pressure-production-noisy-loading/default/candidate/noisy-loading-b/alt"
-          },
-          "alt": {
-            "ru": "Ящики и колёса заполняют место ранней погрузки.",
-            "en": "Crates and wheels fill an early-morning loading area."
-          },
-          "coverageStatus": "PLACEHOLDER"
-        },
-        {
-          "key": "noisy-loading-c",
-          "kind": "gif",
-          "src": "assets/staging/non-shipped/poverty/9/3.gif",
-          "runtimeAltFallback": "Тихий угол становится шумным из-за начавшейся погрузки.",
-          "altLocalizationKeys": {
-            "ru": "loc/presentation/location/town/event/poverty-pressure-production-noisy-loading/default/candidate/noisy-loading-c/alt",
-            "en": "loc/presentation/location/town/event/poverty-pressure-production-noisy-loading/default/candidate/noisy-loading-c/alt"
-          },
-          "alt": {
-            "ru": "Тихий угол становится шумным из-за начавшейся погрузки.",
-            "en": "A quiet corner becomes noisy as loading begins."
-          },
-          "coverageStatus": "PLACEHOLDER"
-        }
-      ],
-      "staticFallback": "assets/stage-outside.svg"
+          {
+            "candidateKey": "pressure-loading-3",
+            "altLocalizationKey": "presentation.location/town/event/poverty-pressure-production-noisy-loading/default.candidate.pressure-loading-3.alt",
+            "requiredLocales": [
+              "ru",
+              "en"
+            ]
+          }
+        ]
+      }
     },
     {
-      "sourceIdentity": {
-        "eventId": "poverty-pressure-production.muddy-splash",
-        "variantId": "default"
-      },
+      "eventId": "poverty-pressure-production.muddy-splash",
+      "variantId": "default",
       "presentationId": "location/town/event/poverty-pressure-production-muddy-splash/default",
       "poolVersion": 1,
-      "gameplayOutcomePolicy": "FIXED_OUTSIDE_PRESENTATION",
+      "coverageStatus": "PLACEHOLDER",
+      "gameplayOutcomeOwnedBy": "event+variant+choice/effects",
+      "mediaSelectionMayChangeOutcome": false,
       "runtimeSlot": {
         "pool": {
           "version": 1,
@@ -823,85 +667,70 @@
           "selectionPolicy": "unweighted",
           "candidates": [
             {
-              "key": "muddy-splash-a",
+              "key": "pressure-mud-1",
               "kind": "gif",
-              "src": "assets/staging/non-shipped/poverty/10/1.gif",
-              "alt": "Повозка пересекает лужу у края улицы."
+              "src": "assets/staging/non-shipped/poverty/pressure-mud/candidate-1.gif",
+              "alt": "RU source placeholder alt for pressure-mud candidate 1."
             },
             {
-              "key": "muddy-splash-b",
+              "key": "pressure-mud-2",
               "kind": "gif",
-              "src": "assets/staging/non-shipped/poverty/10/2.gif",
-              "alt": "Грязные брызги поднимаются рядом с проезжающей повозкой."
+              "src": "assets/staging/non-shipped/poverty/pressure-mud/candidate-2.gif",
+              "alt": "RU source placeholder alt for pressure-mud candidate 2."
             },
             {
-              "key": "muddy-splash-c",
+              "key": "pressure-mud-3",
               "kind": "gif",
-              "src": "assets/staging/non-shipped/poverty/10/3.gif",
-              "alt": "На краю одежды заметны свежие грязные брызги."
+              "src": "assets/staging/non-shipped/poverty/pressure-mud/candidate-3.gif",
+              "alt": "RU source placeholder alt for pressure-mud candidate 3."
             }
           ]
         },
         "static": {
           "kind": "image",
           "src": "assets/stage-outside.svg",
-          "alt": "poverty-pressure-production.muddy-splash static fallback"
+          "alt": "RU source static fallback for pressure-mud."
         }
       },
-      "candidates": [
-        {
-          "key": "muddy-splash-a",
-          "kind": "gif",
-          "src": "assets/staging/non-shipped/poverty/10/1.gif",
-          "runtimeAltFallback": "Повозка пересекает лужу у края улицы.",
-          "altLocalizationKeys": {
-            "ru": "loc/presentation/location/town/event/poverty-pressure-production-muddy-splash/default/candidate/muddy-splash-a/alt",
-            "en": "loc/presentation/location/town/event/poverty-pressure-production-muddy-splash/default/candidate/muddy-splash-a/alt"
+      "localization": {
+        "captionKey": "presentation.location/town/event/poverty-pressure-production-muddy-splash/default.caption",
+        "staticAltKey": "presentation.location/town/event/poverty-pressure-production-muddy-splash/default.static.alt",
+        "candidates": [
+          {
+            "candidateKey": "pressure-mud-1",
+            "altLocalizationKey": "presentation.location/town/event/poverty-pressure-production-muddy-splash/default.candidate.pressure-mud-1.alt",
+            "requiredLocales": [
+              "ru",
+              "en"
+            ]
           },
-          "alt": {
-            "ru": "Повозка пересекает лужу у края улицы.",
-            "en": "A cart crosses a puddle at the edge of the street."
+          {
+            "candidateKey": "pressure-mud-2",
+            "altLocalizationKey": "presentation.location/town/event/poverty-pressure-production-muddy-splash/default.candidate.pressure-mud-2.alt",
+            "requiredLocales": [
+              "ru",
+              "en"
+            ]
           },
-          "coverageStatus": "PLACEHOLDER"
-        },
-        {
-          "key": "muddy-splash-b",
-          "kind": "gif",
-          "src": "assets/staging/non-shipped/poverty/10/2.gif",
-          "runtimeAltFallback": "Грязные брызги поднимаются рядом с проезжающей повозкой.",
-          "altLocalizationKeys": {
-            "ru": "loc/presentation/location/town/event/poverty-pressure-production-muddy-splash/default/candidate/muddy-splash-b/alt",
-            "en": "loc/presentation/location/town/event/poverty-pressure-production-muddy-splash/default/candidate/muddy-splash-b/alt"
-          },
-          "alt": {
-            "ru": "Грязные брызги поднимаются рядом с проезжающей повозкой.",
-            "en": "Muddy spray rises beside a passing cart."
-          },
-          "coverageStatus": "PLACEHOLDER"
-        },
-        {
-          "key": "muddy-splash-c",
-          "kind": "gif",
-          "src": "assets/staging/non-shipped/poverty/10/3.gif",
-          "runtimeAltFallback": "На краю одежды заметны свежие грязные брызги.",
-          "altLocalizationKeys": {
-            "ru": "loc/presentation/location/town/event/poverty-pressure-production-muddy-splash/default/candidate/muddy-splash-c/alt",
-            "en": "loc/presentation/location/town/event/poverty-pressure-production-muddy-splash/default/candidate/muddy-splash-c/alt"
-          },
-          "alt": {
-            "ru": "На краю одежды заметны свежие грязные брызги.",
-            "en": "Fresh muddy splashes are visible at the edge of the clothing."
-          },
-          "coverageStatus": "PLACEHOLDER"
-        }
-      ],
-      "staticFallback": "assets/stage-outside.svg"
+          {
+            "candidateKey": "pressure-mud-3",
+            "altLocalizationKey": "presentation.location/town/event/poverty-pressure-production-muddy-splash/default.candidate.pressure-mud-3.alt",
+            "requiredLocales": [
+              "ru",
+              "en"
+            ]
+          }
+        ]
+      }
     }
   ],
-  "policy": {
-    "mediaCandidateSelectsGameplayOutcome": false,
-    "helpfulNeutralPressureRemainGameplayOwned": true,
+  "invariants": {
+    "candidateCountPerPool": 3,
+    "mediaSelectionChangesGameplayOutcome": false,
+    "mediaSelectionChangesChoice": false,
+    "mediaSelectionChangesEffects": false,
     "secretDebtIncluded": false,
-    "placeholderPathsCountAsRealAssets": false
+    "localeNeutralSemanticIds": true,
+    "localeNeutralCandidateKeys": true
   }
 }
