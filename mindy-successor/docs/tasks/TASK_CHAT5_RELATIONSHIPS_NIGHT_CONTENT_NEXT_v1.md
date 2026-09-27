@@ -318,3 +318,78 @@ Create NEW file only:
 Consolidate items 13–23 into SAFE_TO_INTEGRATE_NOW / PRESENTATION_ONLY / CONTENT_DRAFT / PRODUCT_BLOCKED / SHARED_UI_REQUIRED, with exact Lead selective-copy list.
 
 Continue 13–24 sequentially without waiting for Lead review.
+
+
+## Queue item 25 — non-Lumber ordinary-career result content audit v1
+Create NEW file only:
+- `docs/relationship-prep/NON_LUMBER_CAREER_RESULT_CONTENT_AUDIT_v1.md`
+
+Audit current main for the nine non-Lumber ordinary careers: current action/result semantic presentation IDs, shipped RU+EN result copy coverage, generic text reuse and safe presentation-only depth opportunities.
+
+## Queue item 26 — Satyr Maid result copy bank RU+EN v1
+Create NEW file only:
+- `docs/relationship-prep/SATYR_MAID_RESULT_COPY_BANK_RU_EN_v1.md`
+
+Author bilingual presentation-only result variants for the existing Satyr Maid shift identity. No new mechanics/relationships.
+
+## Queue item 27 — Undead Farm result copy bank RU+EN v1
+Create NEW file only:
+- `docs/relationship-prep/UNDEAD_FARM_RESULT_COPY_BANK_RU_EN_v1.md`
+
+Same boundary for current Undead Farm shift/result identity.
+
+## Queue item 28 — Tavern result copy bank RU+EN v1
+Create NEW file only:
+- `docs/relationship-prep/TAVERN_RESULT_COPY_BANK_RU_EN_v1.md`
+
+Same boundary for current Tavern shift/result identity.
+
+## Queue item 29 — Hunter ordinary-shift result copy bank RU+EN v1
+Create NEW file only:
+- `docs/relationship-prep/HUNTER_ORDINARY_SHIFT_RESULT_COPY_BANK_RU_EN_v1.md`
+
+Cover only ordinary Hunter career shift/result presentation. Do not invent Forest Hunter route, clue, token or Old Boundary semantics.
+
+## Queue item 30 — Guard result copy bank RU+EN v1
+Create NEW file only:
+- `docs/relationship-prep/GUARD_RESULT_COPY_BANK_RU_EN_v1.md`
+
+Presentation-only bilingual result variants for current Guard identity.
+
+## Queue item 31 — Merchant result copy bank RU+EN v1
+Create NEW file only:
+- `docs/relationship-prep/MERCHANT_RESULT_COPY_BANK_RU_EN_v1.md`
+
+Presentation-only bilingual result variants for current Merchant identity.
+
+## Queue item 32 — Artist/Geisha result copy bank RU+EN v1
+Create NEW file only:
+- `docs/relationship-prep/ARTIST_GEISHA_RESULT_COPY_BANK_RU_EN_v1.md`
+
+Presentation-only bilingual result variants for current Artist/Geisha identity.
+
+## Queue item 33 — Assassin result copy bank RU+EN v1
+Create NEW file only:
+- `docs/relationship-prep/ASSASSIN_RESULT_COPY_BANK_RU_EN_v1.md`
+
+Presentation-only bilingual result variants for current Assassin identity. Do not add violent mechanics/rewards.
+
+## Queue item 34 — Prostitute result copy bank RU+EN v1
+Create NEW file only:
+- `docs/relationship-prep/PROSTITUTE_RESULT_COPY_BANK_RU_EN_v1.md`
+
+Presentation-only bilingual result variants for current career identity. Keep copy non-explicit and do not alter mechanics.
+
+## Queue item 35 — non-Lumber career result localization/presentation staging fixture v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/non-lumber-career-result-presentation-v1.fixture.json`
+
+Map items 26–34 to exact existing current-main action/result presentation identities and proposed stable RU+EN keys. No duplicate events, conditions, effects, rewards, RNG or Save changes.
+
+## Queue item 36 — non-Lumber career content-depth handoff v1
+Create NEW file only:
+- `docs/relationship-prep/NON_LUMBER_CAREER_CONTENT_DEPTH_HANDOFF_v1.md`
+
+Consolidate items 25–35 into SAFE_PRESENTATION_COPY / STAGING_ONLY / PRODUCT_OPEN / SHARED_UI_REQUIRED with exact Lead selective-copy list.
+
+Continue items 25–36 sequentially without waiting for Lead review.
