@@ -1,0 +1,403 @@
+{
+  "schemaVersion": 1,
+  "id": "poverty.event-localization-key-map.v1",
+  "status": "CURRENT_PR37_PRODUCTION_MAP",
+  "keyConvention": {
+    "eventTitle": "event.<eventId>.title",
+    "variantText": "event.<eventId>.variant.<variantId>.text",
+    "choiceLabel": "event.<eventId>.choice.<choiceId>.label",
+    "choiceText": "event.<eventId>.choice.<choiceId>.text",
+    "mediaAlt": "media.<mediaId>.alt"
+  },
+  "events": [
+    {
+      "id": "poverty-street-production.helpful-summer",
+      "titleKey": "event.poverty-street-production.helpful-summer.title",
+      "variants": [
+        {
+          "id": "default",
+          "textKey": "event.poverty-street-production.helpful-summer.variant.default.text",
+          "mediaIds": [
+            "stage.outside"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "take-errand",
+          "labelKey": "event.poverty-street-production.helpful-summer.choice.take-errand.label",
+          "textKey": "event.poverty-street-production.helpful-summer.choice.take-errand.text"
+        },
+        {
+          "id": "keep-resting",
+          "labelKey": "event.poverty-street-production.helpful-summer.choice.keep-resting.label",
+          "textKey": "event.poverty-street-production.helpful-summer.choice.keep-resting.text"
+        }
+      ]
+    },
+    {
+      "id": "poverty-street-production.neutral-autumn",
+      "titleKey": "event.poverty-street-production.neutral-autumn.title",
+      "variants": [
+        {
+          "id": "default",
+          "textKey": "event.poverty-street-production.neutral-autumn.variant.default.text",
+          "mediaIds": [
+            "stage.outside"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "settle-in",
+          "labelKey": "event.poverty-street-production.neutral-autumn.choice.settle-in.label",
+          "textKey": "event.poverty-street-production.neutral-autumn.choice.settle-in.text"
+        }
+      ]
+    },
+    {
+      "id": "poverty-street-production.pressure-winter",
+      "titleKey": "event.poverty-street-production.pressure-winter.title",
+      "variants": [
+        {
+          "id": "default",
+          "textKey": "event.poverty-street-production.pressure-winter.variant.default.text",
+          "mediaIds": [
+            "stage.outside"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "take-shelter",
+          "labelKey": "event.poverty-street-production.pressure-winter.choice.take-shelter.label",
+          "textKey": "event.poverty-street-production.pressure-winter.choice.take-shelter.text"
+        },
+        {
+          "id": "keep-moving",
+          "labelKey": "event.poverty-street-production.pressure-winter.choice.keep-moving.label",
+          "textKey": "event.poverty-street-production.pressure-winter.choice.keep-moving.text"
+        }
+      ]
+    },
+    {
+      "id": "poverty-street-production-v2.helpful-summer-shade",
+      "titleKey": "event.poverty-street-production-v2.helpful-summer-shade.title",
+      "variants": [
+        {
+          "id": "market-closing",
+          "textKey": "event.poverty-street-production-v2.helpful-summer-shade.variant.market-closing.text",
+          "mediaIds": [
+            "stage.outside"
+          ]
+        },
+        {
+          "id": "late-shade",
+          "textKey": "event.poverty-street-production-v2.helpful-summer-shade.variant.late-shade.text",
+          "mediaIds": [
+            "stage.outside"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "take-small-task",
+          "labelKey": "event.poverty-street-production-v2.helpful-summer-shade.choice.take-small-task.label",
+          "textKey": "event.poverty-street-production-v2.helpful-summer-shade.choice.take-small-task.text"
+        },
+        {
+          "id": "keep-place",
+          "labelKey": "event.poverty-street-production-v2.helpful-summer-shade.choice.keep-place.label",
+          "textKey": "event.poverty-street-production-v2.helpful-summer-shade.choice.keep-place.text"
+        }
+      ]
+    },
+    {
+      "id": "poverty-street-production-v2.neutral-autumn-crossing",
+      "titleKey": "event.poverty-street-production-v2.neutral-autumn-crossing.title",
+      "variants": [
+        {
+          "id": "drizzle",
+          "textKey": "event.poverty-street-production-v2.neutral-autumn-crossing.variant.drizzle.text",
+          "mediaIds": [
+            "stage.outside"
+          ]
+        },
+        {
+          "id": "dry-arcade",
+          "textKey": "event.poverty-street-production-v2.neutral-autumn-crossing.variant.dry-arcade.text",
+          "mediaIds": [
+            "stage.outside"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "wait-out-night",
+          "labelKey": "event.poverty-street-production-v2.neutral-autumn-crossing.choice.wait-out-night.label",
+          "textKey": "event.poverty-street-production-v2.neutral-autumn-crossing.choice.wait-out-night.text"
+        }
+      ]
+    },
+    {
+      "id": "poverty-street-production-v2.pressure-winter-wind",
+      "titleKey": "event.poverty-street-production-v2.pressure-winter-wind.title",
+      "variants": [
+        {
+          "id": "crosswind",
+          "textKey": "event.poverty-street-production-v2.pressure-winter-wind.variant.crosswind.text",
+          "mediaIds": [
+            "stage.outside"
+          ]
+        },
+        {
+          "id": "long-gusts",
+          "textKey": "event.poverty-street-production-v2.pressure-winter-wind.variant.long-gusts.text",
+          "mediaIds": [
+            "stage.outside"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "use-recess",
+          "labelKey": "event.poverty-street-production-v2.pressure-winter-wind.choice.use-recess.label",
+          "textKey": "event.poverty-street-production-v2.pressure-winter-wind.choice.use-recess.text"
+        },
+        {
+          "id": "keep-walking",
+          "labelKey": "event.poverty-street-production-v2.pressure-winter-wind.choice.keep-walking.label",
+          "textKey": "event.poverty-street-production-v2.pressure-winter-wind.choice.keep-walking.text"
+        }
+      ]
+    },
+    {
+      "id": "poverty-cheap-production.shared-quiet-autumn",
+      "titleKey": "event.poverty-cheap-production.shared-quiet-autumn.title",
+      "variants": [
+        {
+          "id": "default",
+          "textKey": "event.poverty-cheap-production.shared-quiet-autumn.variant.default.text",
+          "mediaIds": [
+            "stage.room"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "settle-quietly",
+          "labelKey": "event.poverty-cheap-production.shared-quiet-autumn.choice.settle-quietly.label",
+          "textKey": "event.poverty-cheap-production.shared-quiet-autumn.choice.settle-quietly.text"
+        }
+      ]
+    },
+    {
+      "id": "poverty-cheap-production-v2.shared-room-seasons",
+      "titleKey": "event.poverty-cheap-production-v2.shared-room-seasons.title",
+      "variants": [
+        {
+          "id": "spring-window",
+          "textKey": "event.poverty-cheap-production-v2.shared-room-seasons.variant.spring-window.text",
+          "mediaIds": [
+            "stage.room"
+          ]
+        },
+        {
+          "id": "summer-heat",
+          "textKey": "event.poverty-cheap-production-v2.shared-room-seasons.variant.summer-heat.text",
+          "mediaIds": [
+            "stage.room"
+          ]
+        },
+        {
+          "id": "winter-stove",
+          "textKey": "event.poverty-cheap-production-v2.shared-room-seasons.variant.winter-stove.text",
+          "mediaIds": [
+            "stage.room"
+          ]
+        },
+        {
+          "id": "shared-room",
+          "textKey": "event.poverty-cheap-production-v2.shared-room-seasons.variant.shared-room.text",
+          "mediaIds": [
+            "stage.room"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "settle-in",
+          "labelKey": "event.poverty-cheap-production-v2.shared-room-seasons.choice.settle-in.label",
+          "textKey": "event.poverty-cheap-production-v2.shared-room-seasons.choice.settle-in.text"
+        }
+      ]
+    },
+    {
+      "id": "poverty-recovery-production.small-coin-help",
+      "titleKey": "event.poverty-recovery-production.small-coin-help.title",
+      "variants": [
+        {
+          "id": "default",
+          "textKey": "event.poverty-recovery-production.small-coin-help.variant.default.text",
+          "mediaIds": [
+            "stage.outside"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "take-coins",
+          "labelKey": "event.poverty-recovery-production.small-coin-help.choice.take-coins.label",
+          "textKey": "event.poverty-recovery-production.small-coin-help.choice.take-coins.text"
+        },
+        {
+          "id": "leave-them",
+          "labelKey": "event.poverty-recovery-production.small-coin-help.choice.leave-them.label",
+          "textKey": "event.poverty-recovery-production.small-coin-help.choice.leave-them.text"
+        }
+      ]
+    },
+    {
+      "id": "poverty-recovery-production.short-cleanup",
+      "titleKey": "event.poverty-recovery-production.short-cleanup.title",
+      "variants": [
+        {
+          "id": "default",
+          "textKey": "event.poverty-recovery-production.short-cleanup.variant.default.text",
+          "mediaIds": [
+            "stage.outside"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "do-cleanup",
+          "labelKey": "event.poverty-recovery-production.short-cleanup.choice.do-cleanup.label",
+          "textKey": "event.poverty-recovery-production.short-cleanup.choice.do-cleanup.text"
+        },
+        {
+          "id": "keep-resting",
+          "labelKey": "event.poverty-recovery-production.short-cleanup.choice.keep-resting.label",
+          "textKey": "event.poverty-recovery-production.short-cleanup.choice.keep-resting.text"
+        }
+      ]
+    },
+    {
+      "id": "poverty-recovery-production.herb-bundle",
+      "titleKey": "event.poverty-recovery-production.herb-bundle.title",
+      "variants": [
+        {
+          "id": "default",
+          "textKey": "event.poverty-recovery-production.herb-bundle.variant.default.text",
+          "mediaIds": [
+            "stage.outside"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "take-herb",
+          "labelKey": "event.poverty-recovery-production.herb-bundle.choice.take-herb.label",
+          "textKey": "event.poverty-recovery-production.herb-bundle.choice.take-herb.text"
+        },
+        {
+          "id": "leave-herb",
+          "labelKey": "event.poverty-recovery-production.herb-bundle.choice.leave-herb.label",
+          "textKey": "event.poverty-recovery-production.herb-bundle.choice.leave-herb.text"
+        }
+      ]
+    },
+    {
+      "id": "poverty-pressure-production.cold-rain",
+      "titleKey": "event.poverty-pressure-production.cold-rain.title",
+      "variants": [
+        {
+          "id": "default",
+          "textKey": "event.poverty-pressure-production.cold-rain.variant.default.text",
+          "mediaIds": [
+            "stage.outside"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "take-doorway",
+          "labelKey": "event.poverty-pressure-production.cold-rain.choice.take-doorway.label",
+          "textKey": "event.poverty-pressure-production.cold-rain.choice.take-doorway.text"
+        },
+        {
+          "id": "wait-it-out",
+          "labelKey": "event.poverty-pressure-production.cold-rain.choice.wait-it-out.label",
+          "textKey": "event.poverty-pressure-production.cold-rain.choice.wait-it-out.text"
+        }
+      ]
+    },
+    {
+      "id": "poverty-pressure-production.noisy-loading",
+      "titleKey": "event.poverty-pressure-production.noisy-loading.title",
+      "variants": [
+        {
+          "id": "default",
+          "textKey": "event.poverty-pressure-production.noisy-loading.variant.default.text",
+          "mediaIds": [
+            "stage.outside"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "move-corner",
+          "labelKey": "event.poverty-pressure-production.noisy-loading.choice.move-corner.label",
+          "textKey": "event.poverty-pressure-production.noisy-loading.choice.move-corner.text"
+        },
+        {
+          "id": "stay-put",
+          "labelKey": "event.poverty-pressure-production.noisy-loading.choice.stay-put.label",
+          "textKey": "event.poverty-pressure-production.noisy-loading.choice.stay-put.text"
+        }
+      ]
+    },
+    {
+      "id": "poverty-pressure-production.muddy-splash",
+      "titleKey": "event.poverty-pressure-production.muddy-splash.title",
+      "variants": [
+        {
+          "id": "default",
+          "textKey": "event.poverty-pressure-production.muddy-splash.variant.default.text",
+          "mediaIds": [
+            "stage.outside"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "wipe-down",
+          "labelKey": "event.poverty-pressure-production.muddy-splash.choice.wipe-down.label",
+          "textKey": "event.poverty-pressure-production.muddy-splash.choice.wipe-down.text"
+        },
+        {
+          "id": "leave-for-morning",
+          "labelKey": "event.poverty-pressure-production.muddy-splash.choice.leave-for-morning.label",
+          "textKey": "event.poverty-pressure-production.muddy-splash.choice.leave-for-morning.text"
+        }
+      ]
+    }
+  ],
+  "media": [
+    {
+      "id": "stage.outside",
+      "altKey": "media.stage.outside.alt"
+    },
+    {
+      "id": "stage.room",
+      "altKey": "media.stage.room.alt"
+    }
+  ],
+  "invariants": {
+    "gameplayIdsLocaleNeutral": true,
+    "createsGameplayIds": false,
+    "createsMediaIds": false,
+    "localizationOnly": true,
+    "secretDebtIncluded": false
+  }
+}
