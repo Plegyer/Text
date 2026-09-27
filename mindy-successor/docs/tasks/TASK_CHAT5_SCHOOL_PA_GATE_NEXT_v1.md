@@ -1741,3 +1741,24 @@ Consolidate items 108–115:
 - selective integration list.
 
 Continue items 108–116 sequentially without waiting for Lead review.
+
+
+## Queue item 117 — School exact-course routed content acceptance plan
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_EXACT_COURSE_ROUTED_CONTENT_ACCEPTANCE_v1.md`
+
+Assume Lead later adds a backward-compatible exact paid-course routing/public trigger.
+
+Define acceptance for promoting staged teacher/course-specific authored events into production:
+- exact course ID reaches only the matching teacher/course content;
+- generic `actionCompleted:school` still works;
+- no duplicate teacher + generic event unless explicitly intended;
+- paid transaction remains exactly once;
+- no extra tuition/Energy/stat/Lust;
+- save/reload stable;
+- presentation/multi-GIF pool uses the exact routed semantic identity.
+
+Do not implement the shared runtime seam.
+
+Continue items 109–117 sequentially without waiting for Lead review.
