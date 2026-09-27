@@ -1149,3 +1149,23 @@ Assume the human School decision packet is later answered. Map the immediate imp
 Name expected production file domains and tests without pre-filling unanswered decisions.
 
 Continue items 65–73 sequentially without waiting for Lead review.
+
+
+## Queue item 74 — School minimum authored release slice
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_MINIMUM_AUTHORED_RELEASE_SLICE_v1.md`
+
+Define the smallest content-complete School slice that demonstrates School as a life system beyond a stat shop while preserving all eight mechanical courses.
+
+Include:
+- minimum teacher/presenter coverage;
+- repeatable lesson variants;
+- at least one authored milestone/public-result path once decided;
+- Night-study presentation;
+- one cross-system career/Activity consequence;
+- save/reload and presentation acceptance.
+
+Keep exact identities/thresholds OPEN until Product decides them.
+
+Continue items 66–74 sequentially without waiting for Lead review.
