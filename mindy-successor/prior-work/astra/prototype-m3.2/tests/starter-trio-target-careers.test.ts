@@ -45,9 +45,10 @@ test('starter trio exposes target Satyr Maid and Undead Farm repeatable 1-Energy
     assert.ok(action);
     assert.equal(action.cost.energy,1);
     assert.equal(action.cost.money,0);
-    assert.deepEqual(action.effects,[{
-      kind:'incrementCareerCounter',career:c.career,counter:'completed_shifts',amount:1
-    }]);
+    assert.deepEqual(action.effects,[
+      {kind:'incrementCareerCounter',career:c.career,counter:'completed_shifts',amount:1},
+      {kind:'advanceCareer',career:c.career,transition:'first-shift'}
+    ]);
     assert.ok(catalog.definitions.careers?.some(career=>career.id===c.career));
   }
 });
