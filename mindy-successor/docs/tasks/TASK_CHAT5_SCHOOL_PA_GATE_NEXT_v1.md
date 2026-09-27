@@ -862,3 +862,21 @@ For each open value identify affected tracks, simulations/acceptance needed, and
 Do not choose final numbers or reopen locked Night-study mechanics.
 
 Continue items 50–58 sequentially without waiting for Lead review.
+
+
+## Queue item 59 — School authoring batch-plan template
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_AUTHORING_BATCH_PLAN_TEMPLATE_v1.md`
+
+Define how approved School content can be produced in parallel batches after Product decisions:
+- teacher identity batch;
+- repeatable lesson variant batch;
+- milestone/project/exam batch;
+- public-result publication batch;
+- career integration batch;
+- presentation/GIF batch.
+
+For each batch list required inputs, owned files, validation evidence and dependencies. Preserve one-file-one-owner and do not choose OPEN content.
+
+Continue items 51–59 sequentially without waiting for Lead review.
