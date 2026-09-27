@@ -9,7 +9,9 @@ Reviewed Chat 5 files:
   - blob: `2c585a572e56ef885208a44b4a9b982fad983b76`
 
 Reviewed against current-main baseline:
-`23a8798f77c42e84a7540d71fdffd69d9db9fbfd`.
+`c0763f9f9fa9887593fe8567165bbedce2b6cd3a`.
+
+PR44 and PR45 altered localization/presentation coverage but did not change the Foreman relationship/Night identities or mechanics reviewed here.
 
 ## Exact current-main identities
 
