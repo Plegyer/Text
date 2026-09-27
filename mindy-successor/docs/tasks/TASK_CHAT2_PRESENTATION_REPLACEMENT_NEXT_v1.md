@@ -1339,3 +1339,24 @@ Define a compact ledger format for each future media production batch:
 No media implementation in this task.
 
 Continue items 67–75 sequentially without waiting for Lead review.
+
+
+## Queue item 76 — full-game presentation production dependency graph
+
+Create NEW file only:
+- `docs/presentation-prep/FULL_GAME_PRESENTATION_DEPENDENCY_GRAPH_v1.md`
+
+Express presentation production dependencies across:
+- career content authoring;
+- School authoring;
+- poverty/Secret Debt authoring;
+- Activity route/challenge authoring;
+- Palace/meta authoring;
+- semantic presentation IDs;
+- GIF/static production;
+- fallback validation;
+- replacement/rollback.
+
+Represent dependencies clearly enough that Lead can schedule media work without blocking gameplay implementation. Do not invent content decisions.
+
+Continue items 68–76 sequentially without waiting for Lead review.
