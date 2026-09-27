@@ -1299,3 +1299,22 @@ Define checks required before one GIF/static asset is reused across multiple sem
 Apply as a generic production checklist, not a media catalog.
 
 Continue items 65–73 sequentially without waiting for Lead review.
+
+
+## Queue item 74 — presentation-ready content acceptance template
+
+Create NEW file only:
+- `docs/presentation-prep/PRESENTATION_READY_CONTENT_ACCEPTANCE_TEMPLATE_v1.md`
+
+Define when an authored gameplay content unit is ready to enter GIF/static production:
+- gameplay ID approved;
+- choices/effects stable enough for presentation;
+- semantic presentationId assigned;
+- text fallback exists;
+- owner and replacement scope known;
+- save identity owner known;
+- unresolved Product decisions explicitly absent or listed.
+
+This should prevent art production from running ahead of unstable content identity.
+
+Continue items 66–74 sequentially without waiting for Lead review.
