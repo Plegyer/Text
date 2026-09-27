@@ -1616,3 +1616,125 @@ Produce the minimal selective-integration list for Lead:
 - known remaining gaps.
 
 Continue items 87–95 sequentially without waiting for Lead review.
+
+
+## Queue item 96 — ordinary street event pack v2
+
+Create NEW production files only:
+- `prior-work/astra/prototype-m3.2/content/packs/poverty-street-production-v2.json`
+- `prior-work/astra/prototype-m3.2/tests/poverty-street-production-v2.test.ts`
+
+Expand ordinary street content beyond v1 with additional naturally reachable event families and text variants.
+
+Requirements:
+- helpful / neutral / bad pressure all represented;
+- seasonal/context diversity;
+- no Secret Debt;
+- no canonical named rescuer required;
+- initial tuning remains non-locked;
+- natural-path tests from NightFlow street lodging.
+
+Do not modify shared engine/schema.
+
+## Queue item 97 — cheap lodging content v2
+
+Create NEW production files only:
+- `prior-work/astra/prototype-m3.2/content/packs/poverty-cheap-production-v2.json`
+- `prior-work/astra/prototype-m3.2/tests/poverty-cheap-production-v2.test.ts`
+
+Expand cheap-lodging authored content with multiple variants so cheap lodging is visibly distinct from both normal lodging and street sleep.
+
+Preserve existing lodging price/base penalty values.
+
+## Queue item 98 — poverty recovery-help content pack
+
+Create NEW production files only:
+- `prior-work/astra/prototype-m3.2/content/packs/poverty-recovery-production.json`
+- `prior-work/astra/prototype-m3.2/tests/poverty-recovery-production.test.ts`
+
+Add naturally reachable small recovery/help events using existing primitives:
+- resource help;
+- low-stakes opportunity;
+- item/resource assistance where current items allow it;
+- no unique mandatory NPC;
+- no hard prerequisite for recovery.
+
+Keep all effects tunable and anti-softlock-safe.
+
+## Queue item 99 — poverty bad-luck pressure pack
+
+Create NEW production files only:
+- `prior-work/astra/prototype-m3.2/content/packs/poverty-pressure-production.json`
+- `prior-work/astra/prototype-m3.2/tests/poverty-pressure-production.test.ts`
+
+Add non-terminal negative ordinary-poverty event families that create pressure without softlocking the run.
+
+Must verify worst natural outcome still allows next-day continuation and at least one starter job.
+
+## Queue item 100 — poverty long-run distribution test
+
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/poverty-long-run-distribution.test.ts`
+
+Using deterministic seeds/fixtures supported by current engine, exercise repeated street/cheap lodging over a representative multi-day span.
+
+Verify:
+- no permanent NightFlow lock;
+- no duplicate one-shot commitment;
+- event cooldown/history works;
+- no ordinary event accidentally behaves like Secret Debt;
+- run remains recoverable.
+
+Do not assert final probability balance.
+
+## Queue item 101 — poverty presentation identity inventory
+
+Create NEW file only:
+- `docs/poverty-prep/POVERTY_PRESENTATION_IDENTITY_INVENTORY_v1.md`
+
+Enumerate actual semantic/event identities introduced by items 87–99 and classify:
+- repeatable;
+- seasonal/context variant;
+- visual-pool candidate;
+- static/text fallback;
+- reusable media opportunity.
+
+This supports Chat2 multi-GIF work.
+
+## Queue item 102 — ordinary poverty pack inclusion manifest
+
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/poverty-production-inclusion-v1.fixture.json`
+
+Create the exact proposed explicit inclusion order for reviewed ordinary-poverty production packs.
+
+Do not include Secret Debt packs or modify current catalog inclusion.
+
+## Queue item 103 — ordinary poverty integration regression bundle
+
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/poverty-production-integration-bundle.test.ts`
+
+Load all proposed ordinary-poverty production packs together and verify:
+- namespace uniqueness;
+- capability/ownership validity;
+- NightFlow coexistence;
+- anti-softlock;
+- reload;
+- no Secret Debt namespace/content.
+
+## Queue item 104 — ordinary poverty production handoff v4
+
+Create NEW file only:
+- `docs/poverty-prep/ORDINARY_POVERTY_PRODUCTION_HANDOFF_v4.md`
+
+Provide Lead with the smallest current-main selective integration bundle from items 87–103:
+- exact pack files;
+- exact tests;
+- inclusion manifest;
+- non-locked tuning;
+- presentation identities;
+- CI expectations;
+- remaining content gaps.
+
+Continue items 96–104 sequentially without waiting for Lead review.
