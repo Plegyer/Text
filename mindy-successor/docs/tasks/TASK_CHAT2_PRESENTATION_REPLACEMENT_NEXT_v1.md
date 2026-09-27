@@ -2134,3 +2134,139 @@ Effective immediately by direct Product decision:
 - if an item was already committed before this rule, do not rewrite it blindly; record it for localization migration/review.
 
 Do not create a second copy of the gameplay event for English.
+
+
+## Queue item 125 — bilingual presentation text contract v1
+
+Create NEW file only:
+- `docs/presentation-prep/BILINGUAL_PRESENTATION_TEXT_CONTRACT_v1.md`
+
+Define RU+EN rules for all presentation-layer player-facing text:
+- one gameplay/content identity;
+- one semantic `presentationId`;
+- locale-specific text/alt only;
+- Russian source authoring + full English locale;
+- no locale-specific mechanics, eligibility, RNG, timing, save identity or media identity;
+- fallback behavior when one locale entry is temporarily missing;
+- language switch must not reroll gameplay or GIF selection.
+
+## Queue item 126 — ten-career bilingual presentation inventory
+
+Create NEW file only:
+- `docs/presentation-prep/TEN_CAREER_BILINGUAL_PRESENTATION_INVENTORY_v1.md`
+
+For all 10 ordinary careers on current main, enumerate player-facing presentation surfaces that require RU+EN:
+- base shift labels/descriptions;
+- seasonal scene text;
+- result text;
+- multi-GIF alt text;
+- future milestone/Hard Work placeholders only where identity already exists.
+
+Do not invent missing Hard Work/endings.
+
+## Queue item 127 — School bilingual presentation inventory
+
+Create NEW file only:
+- `docs/presentation-prep/SCHOOL_BILINGUAL_PRESENTATION_INVENTORY_v1.md`
+
+Map RU+EN needs for:
+- reachable generic post-lesson content;
+- exact Night-study presentation;
+- staged teacher/course libraries;
+- teacher names/roles;
+- classroom media alt text;
+- multi-GIF pools.
+
+Clearly distinguish REACHABLE_NOW vs STAGED.
+
+## Queue item 128 — poverty bilingual presentation inventory
+
+Create NEW file only:
+- `docs/presentation-prep/POVERTY_BILINGUAL_PRESENTATION_INVENTORY_v1.md`
+
+Map RU+EN needs for current ordinary-poverty production:
+- street;
+- cheap lodging;
+- recovery/help;
+- pressure/bad-luck;
+- static/text fallback;
+- 3–5 GIF pool alt text.
+
+Secret Debt remains separate/staged unless its authored content is explicitly referenced.
+
+## Queue item 129 — bilingual multi-GIF authoring manifest v1
+
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/bilingual-multi-gif-authoring-v1.json`
+
+Create a presentation-only authoring manifest shape where each semantic ID may contain:
+- 3–5 media candidates;
+- candidate stable key;
+- locale-neutral media path;
+- `alt.ru`;
+- `alt.en`;
+- optional caption/text keys for RU/EN;
+- static/text fallback;
+- no gameplay fields.
+
+Use representative shipped career/School/poverty semantic IDs only.
+
+## Queue item 130 — bilingual presentation completeness contract test
+
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/presentation-bilingual-completeness-contract.test.ts`
+
+Validate the item-129 authoring fixture:
+- every player-facing candidate has RU and EN alt text;
+- semantic/media IDs are locale-neutral;
+- no duplicated RU/EN gameplay events;
+- no locale-specific conditions/effects/rewards;
+- 3–5 candidate pool rule remains presentation-only.
+
+If current runtime has no localization schema yet, keep this as authoring-contract validation without pretending runtime support exists.
+
+## Queue item 131 — bilingual GIF producer batch: ten careers
+
+Create NEW file only:
+- `docs/presentation-prep/BILINGUAL_GIF_PRODUCER_BATCH_TEN_CAREERS_v1.md`
+
+For the already-authored 10 career base-shift media pools, add:
+- RU scene/context text;
+- EN scene/context text;
+- RU alt;
+- EN alt;
+- locale-neutral visual brief;
+- 3–5 candidate loop plan.
+
+Do not duplicate the actual GIF asset per language.
+
+## Queue item 132 — bilingual GIF producer batch: School + poverty
+
+Create NEW file only:
+- `docs/presentation-prep/BILINGUAL_GIF_PRODUCER_BATCH_SCHOOL_POVERTY_v1.md`
+
+Prepare bilingual producer cards for:
+- reachable School lesson/Night contexts;
+- ordinary street/cheap/recovery/pressure poverty contexts.
+
+Each card must show:
+- shared semantic/media identity;
+- RU/EN context text;
+- RU/EN alt;
+- shared 3–5 GIF candidate pool.
+
+## Queue item 133 — bilingual presentation integration handoff v1
+
+Create NEW file only:
+- `docs/presentation-prep/BILINGUAL_PRESENTATION_INTEGRATION_HANDOFF_v1.md`
+
+Summarize items 125–132 for Lead:
+- exact content needing localization infrastructure;
+- authoring fixture/tests ready now;
+- multi-GIF interaction;
+- locale-neutral IDs;
+- no-save-migration expectation;
+- what can ship immediately after Lead localization seam;
+- what remains staged/Product-blocked.
+
+Continue items 125–133 sequentially without waiting for Lead review.
