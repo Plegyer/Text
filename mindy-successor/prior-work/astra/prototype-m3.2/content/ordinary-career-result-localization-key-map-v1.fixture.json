@@ -1,0 +1,497 @@
+{
+  "version": 1,
+  "fixtureId": "ordinary-career-result-localization-key-map-v1",
+  "careers": [
+    {
+      "careerId": "lumber",
+      "referenceOnly": true,
+      "actionId": "lumber.shift",
+      "resultPresentationId": "job/lumber/result/default",
+      "titleLocalizationKey": "action.lumber.shift.label",
+      "scenes": [
+        {
+          "sceneId": "spring.default",
+          "bodyLocalizationKey": "action.lumber.shift.result.spring.default.text",
+          "mediaIds": [
+            "job.lumber.shift.spring.default"
+          ],
+          "mediaAltKeys": [
+            "media.job.lumber.shift.spring.default.alt"
+          ]
+        },
+        {
+          "sceneId": "summer.default",
+          "bodyLocalizationKey": "action.lumber.shift.result.summer.default.text",
+          "mediaIds": [
+            "job.lumber.shift.summer.default"
+          ],
+          "mediaAltKeys": [
+            "media.job.lumber.shift.summer.default.alt"
+          ]
+        },
+        {
+          "sceneId": "autumn.default",
+          "bodyLocalizationKey": "action.lumber.shift.result.autumn.default.text",
+          "mediaIds": [
+            "job.lumber.shift.autumn.default"
+          ],
+          "mediaAltKeys": [
+            "media.job.lumber.shift.autumn.default.alt"
+          ]
+        },
+        {
+          "sceneId": "winter.default",
+          "bodyLocalizationKey": "action.lumber.shift.result.winter.default.text",
+          "mediaIds": [
+            "job.lumber.shift.winter.default"
+          ],
+          "mediaAltKeys": [
+            "media.job.lumber.shift.winter.default.alt"
+          ]
+        }
+      ]
+    },
+    {
+      "careerId": "satyr-maid",
+      "referenceOnly": false,
+      "actionId": "satyr-maid.shift",
+      "resultPresentationId": "job/satyr-maid/result/default",
+      "titleLocalizationKey": "action.satyr-maid.shift.label",
+      "scenes": [
+        {
+          "sceneId": "spring.default",
+          "bodyLocalizationKey": "action.satyr-maid.shift.result.spring.default.text",
+          "mediaIds": [
+            "stage.tavern.spring"
+          ],
+          "mediaAltKeys": [
+            "media.stage.tavern.spring.alt"
+          ]
+        },
+        {
+          "sceneId": "summer.default",
+          "bodyLocalizationKey": "action.satyr-maid.shift.result.summer.default.text",
+          "mediaIds": [
+            "stage.tavern.summer"
+          ],
+          "mediaAltKeys": [
+            "media.stage.tavern.summer.alt"
+          ]
+        },
+        {
+          "sceneId": "autumn.default",
+          "bodyLocalizationKey": "action.satyr-maid.shift.result.autumn.default.text",
+          "mediaIds": [
+            "stage.tavern.autumn"
+          ],
+          "mediaAltKeys": [
+            "media.stage.tavern.autumn.alt"
+          ]
+        },
+        {
+          "sceneId": "winter.default",
+          "bodyLocalizationKey": "action.satyr-maid.shift.result.winter.default.text",
+          "mediaIds": [
+            "stage.tavern.winter"
+          ],
+          "mediaAltKeys": [
+            "media.stage.tavern.winter.alt"
+          ]
+        }
+      ]
+    },
+    {
+      "careerId": "undead-farm",
+      "referenceOnly": false,
+      "actionId": "undead-farm.shift",
+      "resultPresentationId": "job/undead-farm/result/default",
+      "titleLocalizationKey": "action.undead-farm.shift.label",
+      "scenes": [
+        {
+          "sceneId": "spring.default",
+          "bodyLocalizationKey": "action.undead-farm.shift.result.spring.default.text",
+          "mediaIds": [
+            "stage.hunt.spring"
+          ],
+          "mediaAltKeys": [
+            "media.stage.hunt.spring.alt"
+          ]
+        },
+        {
+          "sceneId": "summer.default",
+          "bodyLocalizationKey": "action.undead-farm.shift.result.summer.default.text",
+          "mediaIds": [
+            "stage.hunt.summer"
+          ],
+          "mediaAltKeys": [
+            "media.stage.hunt.summer.alt"
+          ]
+        },
+        {
+          "sceneId": "autumn.default",
+          "bodyLocalizationKey": "action.undead-farm.shift.result.autumn.default.text",
+          "mediaIds": [
+            "stage.hunt.autumn"
+          ],
+          "mediaAltKeys": [
+            "media.stage.hunt.autumn.alt"
+          ]
+        },
+        {
+          "sceneId": "winter.default",
+          "bodyLocalizationKey": "action.undead-farm.shift.result.winter.default.text",
+          "mediaIds": [
+            "stage.hunt.winter"
+          ],
+          "mediaAltKeys": [
+            "media.stage.hunt.winter.alt"
+          ]
+        }
+      ]
+    },
+    {
+      "careerId": "tavern",
+      "referenceOnly": false,
+      "actionId": "tavern.shift",
+      "resultPresentationId": "job/tavern/result/default",
+      "titleLocalizationKey": "action.tavern.shift.label",
+      "scenes": [
+        {
+          "sceneId": "spring.default",
+          "bodyLocalizationKey": "action.tavern.shift.result.spring.default.text",
+          "mediaIds": [
+            "stage.tavern.spring"
+          ],
+          "mediaAltKeys": [
+            "media.stage.tavern.spring.alt"
+          ]
+        },
+        {
+          "sceneId": "summer.default",
+          "bodyLocalizationKey": "action.tavern.shift.result.summer.default.text",
+          "mediaIds": [
+            "stage.tavern.summer"
+          ],
+          "mediaAltKeys": [
+            "media.stage.tavern.summer.alt"
+          ]
+        },
+        {
+          "sceneId": "autumn.default",
+          "bodyLocalizationKey": "action.tavern.shift.result.autumn.default.text",
+          "mediaIds": [
+            "stage.tavern.autumn"
+          ],
+          "mediaAltKeys": [
+            "media.stage.tavern.autumn.alt"
+          ]
+        },
+        {
+          "sceneId": "winter.default",
+          "bodyLocalizationKey": "action.tavern.shift.result.winter.default.text",
+          "mediaIds": [
+            "stage.tavern.winter"
+          ],
+          "mediaAltKeys": [
+            "media.stage.tavern.winter.alt"
+          ]
+        }
+      ]
+    },
+    {
+      "careerId": "hunter",
+      "referenceOnly": false,
+      "actionId": "hunter.shift",
+      "resultPresentationId": "job/hunter/result/default",
+      "titleLocalizationKey": "action.hunter.shift.label",
+      "scenes": [
+        {
+          "sceneId": "spring.default",
+          "bodyLocalizationKey": "action.hunter.shift.result.spring.default.text",
+          "mediaIds": [
+            "stage.hunt.spring"
+          ],
+          "mediaAltKeys": [
+            "media.stage.hunt.spring.alt"
+          ]
+        },
+        {
+          "sceneId": "summer.default",
+          "bodyLocalizationKey": "action.hunter.shift.result.summer.default.text",
+          "mediaIds": [
+            "stage.hunt.summer"
+          ],
+          "mediaAltKeys": [
+            "media.stage.hunt.summer.alt"
+          ]
+        },
+        {
+          "sceneId": "autumn.default",
+          "bodyLocalizationKey": "action.hunter.shift.result.autumn.default.text",
+          "mediaIds": [
+            "stage.hunt.autumn"
+          ],
+          "mediaAltKeys": [
+            "media.stage.hunt.autumn.alt"
+          ]
+        },
+        {
+          "sceneId": "winter.default",
+          "bodyLocalizationKey": "action.hunter.shift.result.winter.default.text",
+          "mediaIds": [
+            "stage.hunt.winter"
+          ],
+          "mediaAltKeys": [
+            "media.stage.hunt.winter.alt"
+          ]
+        }
+      ]
+    },
+    {
+      "careerId": "guard",
+      "referenceOnly": false,
+      "actionId": "guard.shift",
+      "resultPresentationId": "job/guard/result/default",
+      "titleLocalizationKey": "action.guard.shift.label",
+      "scenes": [
+        {
+          "sceneId": "spring.default",
+          "bodyLocalizationKey": "action.guard.shift.result.spring.default.text",
+          "mediaIds": [
+            "stage.guard.spring"
+          ],
+          "mediaAltKeys": [
+            "media.stage.guard.spring.alt"
+          ]
+        },
+        {
+          "sceneId": "summer.default",
+          "bodyLocalizationKey": "action.guard.shift.result.summer.default.text",
+          "mediaIds": [
+            "stage.guard.summer"
+          ],
+          "mediaAltKeys": [
+            "media.stage.guard.summer.alt"
+          ]
+        },
+        {
+          "sceneId": "autumn.default",
+          "bodyLocalizationKey": "action.guard.shift.result.autumn.default.text",
+          "mediaIds": [
+            "stage.guard.autumn"
+          ],
+          "mediaAltKeys": [
+            "media.stage.guard.autumn.alt"
+          ]
+        },
+        {
+          "sceneId": "winter.default",
+          "bodyLocalizationKey": "action.guard.shift.result.winter.default.text",
+          "mediaIds": [
+            "stage.guard.winter"
+          ],
+          "mediaAltKeys": [
+            "media.stage.guard.winter.alt"
+          ]
+        }
+      ]
+    },
+    {
+      "careerId": "merchant",
+      "referenceOnly": false,
+      "actionId": "merchant.shift",
+      "resultPresentationId": "job/merchant/result/default",
+      "titleLocalizationKey": "action.merchant.shift.label",
+      "scenes": [
+        {
+          "sceneId": "spring.default",
+          "bodyLocalizationKey": "action.merchant.shift.result.spring.default.text",
+          "mediaIds": [
+            "stage.town"
+          ],
+          "mediaAltKeys": [
+            "media.stage.town.alt"
+          ]
+        },
+        {
+          "sceneId": "summer.default",
+          "bodyLocalizationKey": "action.merchant.shift.result.summer.default.text",
+          "mediaIds": [
+            "stage.town"
+          ],
+          "mediaAltKeys": [
+            "media.stage.town.alt"
+          ]
+        },
+        {
+          "sceneId": "autumn.default",
+          "bodyLocalizationKey": "action.merchant.shift.result.autumn.default.text",
+          "mediaIds": [
+            "stage.town"
+          ],
+          "mediaAltKeys": [
+            "media.stage.town.alt"
+          ]
+        },
+        {
+          "sceneId": "winter.default",
+          "bodyLocalizationKey": "action.merchant.shift.result.winter.default.text",
+          "mediaIds": [
+            "stage.town"
+          ],
+          "mediaAltKeys": [
+            "media.stage.town.alt"
+          ]
+        }
+      ]
+    },
+    {
+      "careerId": "artist-geisha",
+      "referenceOnly": false,
+      "actionId": "artist-geisha.shift",
+      "resultPresentationId": "job/artist-geisha/result/default",
+      "titleLocalizationKey": "action.artist-geisha.shift.label",
+      "scenes": [
+        {
+          "sceneId": "spring.default",
+          "bodyLocalizationKey": "action.artist-geisha.shift.result.spring.default.text",
+          "mediaIds": [
+            "stage.tavern.spring"
+          ],
+          "mediaAltKeys": [
+            "media.stage.tavern.spring.alt"
+          ]
+        },
+        {
+          "sceneId": "summer.default",
+          "bodyLocalizationKey": "action.artist-geisha.shift.result.summer.default.text",
+          "mediaIds": [
+            "stage.tavern.summer"
+          ],
+          "mediaAltKeys": [
+            "media.stage.tavern.summer.alt"
+          ]
+        },
+        {
+          "sceneId": "autumn.default",
+          "bodyLocalizationKey": "action.artist-geisha.shift.result.autumn.default.text",
+          "mediaIds": [
+            "stage.tavern.autumn"
+          ],
+          "mediaAltKeys": [
+            "media.stage.tavern.autumn.alt"
+          ]
+        },
+        {
+          "sceneId": "winter.default",
+          "bodyLocalizationKey": "action.artist-geisha.shift.result.winter.default.text",
+          "mediaIds": [
+            "stage.tavern.winter"
+          ],
+          "mediaAltKeys": [
+            "media.stage.tavern.winter.alt"
+          ]
+        }
+      ]
+    },
+    {
+      "careerId": "assassin",
+      "referenceOnly": false,
+      "actionId": "assassin.shift",
+      "resultPresentationId": "job/assassin/result/default",
+      "titleLocalizationKey": "action.assassin.shift.label",
+      "scenes": [
+        {
+          "sceneId": "spring.default",
+          "bodyLocalizationKey": "action.assassin.shift.result.spring.default.text",
+          "mediaIds": [
+            "stage.town"
+          ],
+          "mediaAltKeys": [
+            "media.stage.town.alt"
+          ]
+        },
+        {
+          "sceneId": "summer.default",
+          "bodyLocalizationKey": "action.assassin.shift.result.summer.default.text",
+          "mediaIds": [
+            "stage.town"
+          ],
+          "mediaAltKeys": [
+            "media.stage.town.alt"
+          ]
+        },
+        {
+          "sceneId": "autumn.default",
+          "bodyLocalizationKey": "action.assassin.shift.result.autumn.default.text",
+          "mediaIds": [
+            "stage.town"
+          ],
+          "mediaAltKeys": [
+            "media.stage.town.alt"
+          ]
+        },
+        {
+          "sceneId": "winter.default",
+          "bodyLocalizationKey": "action.assassin.shift.result.winter.default.text",
+          "mediaIds": [
+            "stage.town"
+          ],
+          "mediaAltKeys": [
+            "media.stage.town.alt"
+          ]
+        }
+      ]
+    },
+    {
+      "careerId": "prostitute",
+      "referenceOnly": false,
+      "actionId": "prostitute.shift",
+      "resultPresentationId": "job/prostitute/result/default",
+      "titleLocalizationKey": "action.prostitute.shift.label",
+      "scenes": [
+        {
+          "sceneId": "spring.default",
+          "bodyLocalizationKey": "action.prostitute.shift.result.spring.default.text",
+          "mediaIds": [
+            "stage.room"
+          ],
+          "mediaAltKeys": [
+            "media.stage.room.alt"
+          ]
+        },
+        {
+          "sceneId": "summer.default",
+          "bodyLocalizationKey": "action.prostitute.shift.result.summer.default.text",
+          "mediaIds": [
+            "stage.room"
+          ],
+          "mediaAltKeys": [
+            "media.stage.room.alt"
+          ]
+        },
+        {
+          "sceneId": "autumn.default",
+          "bodyLocalizationKey": "action.prostitute.shift.result.autumn.default.text",
+          "mediaIds": [
+            "stage.room"
+          ],
+          "mediaAltKeys": [
+            "media.stage.room.alt"
+          ]
+        },
+        {
+          "sceneId": "winter.default",
+          "bodyLocalizationKey": "action.prostitute.shift.result.winter.default.text",
+          "mediaIds": [
+            "stage.room"
+          ],
+          "mediaAltKeys": [
+            "media.stage.room.alt"
+          ]
+        }
+      ]
+    }
+  ],
+  "note": "Lumber is reference-only in this map and is not modified by Chat 5."
+}
