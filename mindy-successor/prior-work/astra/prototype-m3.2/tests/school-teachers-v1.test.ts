@@ -1,10 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {loadCatalog} from '../src/core/content.ts';
 import {freshSave,parseSave} from '../src/core/engine.ts';
 import {packSchema} from '../src/core/schema.ts';
-import {definitions} from './helpers.ts';
+import {catalog} from './helpers.ts';
 
 const production=JSON.parse(
   readFileSync('content/packs/school-teachers-v1.json','utf8')
@@ -62,9 +61,8 @@ test('production teacher media identities are unique and presentation-only',()=>
 });
 
 test('loading production teacher media pack leaves save schema/state unchanged',()=>{
-  const cat=loadCatalog(definitions,[production]);
   const before=freshSave();
-  const restored=parseSave(JSON.stringify(before),cat);
+  const restored=parseSave(JSON.stringify(before),catalog);
 
   assert.equal(restored.schemaVersion,before.schemaVersion);
   assert.deepEqual(restored.run.character.stats,before.run.character.stats);
