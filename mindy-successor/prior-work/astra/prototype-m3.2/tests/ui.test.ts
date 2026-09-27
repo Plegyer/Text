@@ -376,3 +376,38 @@ test('renderer: School Night-study labels localize without changing NightFlow sa
   assert.deepEqual(errors,[]);
  }finally{dom.window.close();}
 });
+
+
+test('renderer: ordinary poverty pending scene localizes RU EN without changing gameplay save',async()=>{
+ const s=started();
+ s.run.flow.pendingScene={
+  eventId:'poverty-street-production.helpful-summer',
+  variantId:'default',
+  reactionEpochId:'poverty-ui-smoke',
+  allowedChoiceIds:['take-errand','decline']
+ };
+ const {w,dom,errors}=boot(JSON.stringify(s));try{
+  await wait(()=>/Мелкая помощь у рынка/.test(w.document.querySelector('.stage-title h1')?.textContent??''));
+  const before=w.localStorage.getItem('portal-life.v1');
+  const beforeSave=JSON.parse(before);
+  assert.match(w.document.querySelector('.dialogue p').textContent,/рынок/);
+  assert.match(w.document.querySelector('[data-choice="take-errand"]').textContent,/Взяться/);
+  assert.match(w.document.querySelector('.media-window img').getAttribute('alt'),/Уличная сцена/);
+
+  w.document.querySelector('[data-panel="menu"]').click();
+  w.document.querySelector('#language-toggle').click();
+  await wait(()=>w.document.documentElement.lang==='en');
+  assert.equal(w.localStorage.getItem('portal-life.v1'),before);
+  assert.match(w.document.querySelector('.stage-title h1').textContent,/Small help near the market/);
+  assert.match(w.document.querySelector('.dialogue p').textContent,/market/);
+  assert.match(w.document.querySelector('[data-choice="take-errand"]').textContent,/Take/);
+  assert.match(w.document.querySelector('.media-window img').getAttribute('alt'),/Street scene/);
+
+  const after=JSON.parse(w.localStorage.getItem('portal-life.v1'));
+  assert.equal(after.run.flow.pendingScene.eventId,beforeSave.run.flow.pendingScene.eventId);
+  assert.equal(after.run.flow.pendingScene.variantId,beforeSave.run.flow.pendingScene.variantId);
+  assert.equal(after.run.rngState.state,beforeSave.run.rngState.state);
+  assert.deepEqual(after.run.flow.night,beforeSave.run.flow.night);
+  assert.deepEqual(errors,[]);
+ }finally{dom.window.close();}
+});
