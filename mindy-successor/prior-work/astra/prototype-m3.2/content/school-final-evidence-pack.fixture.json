@@ -1,0 +1,105 @@
+{
+  "formatVersion": 5,
+  "id": "school.final-evidence-pack.fixture.v5",
+  "sourceOfTruth": {
+    "mergedPr24": "one-Save shipped E2E",
+    "mergedPr25": "final RC acceptance gate",
+    "schoolTaskThroughItem": 42
+  },
+  "policy": {
+    "syntheticStateMayNotCreateProductAcceptanceGreen": true,
+    "fixtureFactIsNotAuthoredResult": true,
+    "concreteFailingEvidenceRequiredToReopenShippedMechanics": true
+  },
+  "testsWorthIntegrating": [
+    "mindy-successor/prior-work/astra/prototype-m3.2/tests/school-production-catalog-parity.test.ts",
+    "mindy-successor/prior-work/astra/prototype-m3.2/tests/school-full-reload-matrix.test.ts",
+    "mindy-successor/prior-work/astra/prototype-m3.2/tests/school-course-track-ownership.test.ts",
+    "mindy-successor/prior-work/astra/prototype-m3.2/tests/school-night-production-parity.test.ts",
+    "mindy-successor/prior-work/astra/prototype-m3.2/tests/school-blocking-scene-compat.test.ts",
+    "mindy-successor/prior-work/astra/prototype-m3.2/tests/school-old-save-defaults.test.ts",
+    "mindy-successor/prior-work/astra/prototype-m3.2/tests/school-public-boundary-exactly-once.test.ts",
+    "mindy-successor/prior-work/astra/prototype-m3.2/tests/school-long-save-state-preservation.test.ts",
+    "mindy-successor/prior-work/astra/prototype-m3.2/tests/school-ui-disabled-state.test.ts",
+    "mindy-successor/prior-work/astra/prototype-m3.2/tests/school-rc-no-false-green-v2.test.ts",
+    "mindy-successor/prior-work/astra/prototype-m3.2/tests/school-content-depth-negative.test.ts"
+  ],
+  "docsWorthIndexing": [
+    "mindy-successor/docs/school-prep/SCHOOL_TRACK_DATA_MAP_v1.md",
+    "mindy-successor/docs/school-prep/SCHOOL_PROGRESSION_STRUCTURE_v1.md",
+    "mindy-successor/docs/school-prep/SCHOOL_PRESENTATION_SLOT_CATALOG_v1.md",
+    "mindy-successor/docs/school-prep/SCHOOL_PR25_FINAL_GATE_REVIEW_v1.md",
+    "mindy-successor/docs/school-prep/SCHOOL_AUTHORING_DECISION_READY_PACKET_v1.md",
+    "mindy-successor/docs/school-prep/SCHOOL_PUBLIC_RESULT_DECISION_IMPACT_v1.md",
+    "mindy-successor/docs/school-prep/SCHOOL_RC_PRESENTATION_CONTENT_GAP_v1.md",
+    "mindy-successor/docs/school-prep/SCHOOL_FINAL_RC_ACCEPTANCE_MATRIX_v1.md",
+    "mindy-successor/docs/school-prep/SCHOOL_FINAL_EVIDENCE_PACK_v5.md"
+  ],
+  "humanDecisionsRequired": [
+    {
+      "id": "management-provider",
+      "decision": "Choose the School-owned management/accounting public-result provider."
+    },
+    {
+      "id": "management-threshold",
+      "decision": "Choose the management/accounting private threshold or milestone type."
+    },
+    {
+      "id": "arcana-forest-provider",
+      "decision": "Choose the School-owned Arcana/Forest public-result provider."
+    },
+    {
+      "id": "arcana-forest-threshold",
+      "decision": "Choose the Arcana/Forest private threshold or milestone type."
+    },
+    {
+      "id": "arcana-forest-direct-listener",
+      "decision": "If a durable Arcana School fact is used, choose the exact direct Forest listener/option."
+    },
+    {
+      "id": "teacher-identities",
+      "decision": "Choose canonical teacher/presenter identities and assignments."
+    },
+    {
+      "id": "certificate-project-exam",
+      "decision": "Choose whether certificates, projects, or exams participate in the minimum authored School path."
+    }
+  ],
+  "contentDepthBacklog": [
+    "teacher/presenter identities",
+    "teacher/course assignments",
+    "teacher voice and lesson prose",
+    "authored milestone/certificate/project/exam scenes",
+    "public-result presentation copy",
+    "course/Night result copy depth"
+  ],
+  "presentationFuture": [
+    "teacher portraits",
+    "course stills",
+    "lesson/result stills",
+    "Night-study stills",
+    "GIF loops",
+    "milestone/certificate cards"
+  ],
+  "superseded": [
+    "mindy-successor/docs/school-prep/SCHOOL_INTEGRATION_HANDOFF_v1.md",
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/school-integration-handoff.fixture.json",
+    "mindy-successor/docs/school-prep/SCHOOL_RELEASE_CANDIDATE_HANDOFF_v2.md",
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/school-release-candidate-handoff.fixture.json",
+    "mindy-successor/docs/school-prep/SCHOOL_FINAL_INTEGRATION_HANDOFF_v3.md",
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/school-final-integration-handoff.fixture.json",
+    "mindy-successor/docs/school-prep/SCHOOL_FINAL_DECISION_EVIDENCE_HANDOFF_v4.md",
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/school-final-decision-evidence-handoff.fixture.json",
+    "mindy-successor/docs/school-prep/SCHOOL_RELEASE_READINESS_v1.md",
+    "mindy-successor/docs/school-prep/SCHOOL_PA_BLOCKER_BURNDOWN_v1.md",
+    "mindy-successor/docs/school-prep/SCHOOL_PA_CLOSURE_DEPENDENCY_AUDIT_v1.md",
+    "mindy-successor/docs/school-prep/SCHOOL_PR24_ONE_SAVE_STATE_AUDIT_v1.md"
+  ],
+  "openAuthoring": {
+    "managementProvider": null,
+    "managementThreshold": null,
+    "arcanaForestProvider": null,
+    "arcanaForestThreshold": null,
+    "teacherIdentities": null
+  }
+}
