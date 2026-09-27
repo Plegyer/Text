@@ -394,7 +394,7 @@ test('renderer: ordinary poverty pending scene localizes RU EN without changing 
   assert.match(w.document.querySelector('.stage-title h1').textContent,/Небольшое платное поручение/);
   const before=w.localStorage.getItem('portal-life.v1');
   const beforeSave=JSON.parse(before);
-  assert.match(w.document.querySelector('.dialogue p').textContent,/прилавку/);
+  assert.match(w.document.querySelector('.dialogue p').textContent,/соседнего прилавка/);
   assert.match(w.document.querySelector('[data-choice="take-errand"]').textContent,/Взяться/);
   assert.match(w.document.querySelector('.media-window img').getAttribute('alt'),/Летняя уличная сцена небольшой помощи/);
 
