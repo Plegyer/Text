@@ -1465,3 +1465,22 @@ Separate:
 Goal: prevent over-blocking implementation on nonessential decisions.
 
 Continue items 77–85 sequentially without waiting for Lead review.
+
+
+## Queue item 86 — ordinary poverty production content seed plan
+
+Create NEW file only:
+- `docs/poverty-prep/ORDINARY_POVERTY_CONTENT_SEED_PLAN_v1.md`
+
+Prepare a bounded first authored content batch that can ship before Secret Debt decisions:
+- nameless/noncanonical street micro-event families;
+- recovery/help event shapes;
+- seasonal context variants;
+- no unique NPC identity required;
+- balance effects expressed as tunable parameters;
+- semantic presentation hooks;
+- save/reload/anti-softlock acceptance.
+
+Separate what can be authored immediately from anything requiring Product choice.
+
+Continue items 78–86 sequentially without waiting for Lead review.
