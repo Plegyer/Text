@@ -1107,3 +1107,22 @@ For each batch list prerequisites, owned output files, validation needs and whic
 Do not author canonical prose or final numbers.
 
 Continue items 60–68 sequentially without waiting for Lead review.
+
+
+## Queue item 69 — Secret Debt authoring intake template
+
+Create NEW file only:
+- `docs/poverty-prep/SECRET_DEBT_AUTHORING_INTAKE_TEMPLATE_v1.md`
+
+Create a fill-in template for Product/content decisions required before implementation of:
+- lender offer content;
+- activation/debt balance parameters;
+- hidden-career work content;
+- forced Night content;
+- each of the three outcomes;
+- Meta rewards;
+- presentation/GIF mapping.
+
+Mark structural fields already fixed and leave unresolved values explicitly OPEN.
+
+Continue items 61–69 sequentially without waiting for Lead review.
