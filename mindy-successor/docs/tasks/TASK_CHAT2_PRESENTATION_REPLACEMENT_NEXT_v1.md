@@ -1596,3 +1596,23 @@ Define acceptance for a batch replacement/import package:
 No runtime/media implementation in this task.
 
 Continue items 80–88 sequentially without waiting for Lead review.
+
+
+## Queue item 89 — starter-trio media replacement readiness map
+
+Create NEW file only:
+- `docs/presentation-prep/STARTER_TRIO_MEDIA_REPLACEMENT_READINESS_v1.md`
+
+Audit Lumber, Satyr Maid and Undead Farm presentation readiness against current production state.
+
+For each:
+- shipped semantic IDs;
+- current base media/fallback;
+- content identities still missing;
+- GIFs that can be produced now without waiting for Product;
+- GIFs that must wait for authored NPC/route/milestone content;
+- batch replacement path after approval.
+
+Do not invent character appearance or art direction.
+
+Continue items 81–89 sequentially without waiting for Lead review.
