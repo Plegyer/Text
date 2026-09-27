@@ -1,0 +1,87 @@
+{
+  "formatVersion": 1,
+  "id": "school.management-result-decision-schema.fixture.v1",
+  "decisionId": "management-accounting-public-result",
+  "neutralSchema": {
+    "providerType": {
+      "required": true,
+      "allowed": [
+        "lesson-threshold",
+        "milestone",
+        "certificate",
+        "project",
+        "exam",
+        "event",
+        "other-school-owned-result"
+      ],
+      "selected": null
+    },
+    "milestoneType": {
+      "required": true,
+      "allowed": [
+        "counter-threshold",
+        "stat-threshold",
+        "named-milestone",
+        "completion-result",
+        "compound-school-condition",
+        "not-applicable-to-selected-provider"
+      ],
+      "selected": null
+    },
+    "thresholdValue": {
+      "requiredWhenApplicable": true,
+      "allowedShapes": [
+        "lessons_completed integer threshold",
+        "one-or-more progression stat thresholds",
+        "named School completion ID",
+        "explicit conjunction of School-owned conditions"
+      ],
+      "selected": null
+    },
+    "durablePublicResultId": {
+      "selected": null,
+      "constraints": [
+        "matches target stable ID grammar",
+        "explicitly declared in production content",
+        "not fixture-only",
+        "stable across save/reload",
+        "one canonical publication identity for the authored result"
+      ]
+    },
+    "publicationTiming": {
+      "selected": null,
+      "allowed": [
+        "same authoritative School transaction after private result commits",
+        "same resolver epoch immediately after School-owned milestone commits",
+        "explicit later School-owned result transaction"
+      ]
+    },
+    "exactlyOnce": {
+      "required": true,
+      "reloadBeforePublication": "may publish once later if eligibility still holds",
+      "reloadAfterPublication": "must not emit or apply a duplicate publication"
+    }
+  },
+  "downstream": {
+    "currentLumberListenerId": "lumber-cross.school-management-return",
+    "currentListenerTriggerKind": "worldFactAdded",
+    "currentConsumerTransportKey": "lumber.school.management-ready",
+    "listenerOwnsSchoolProgress": false,
+    "listenerMayReadPrivateSchoolCounters": false,
+    "expectedCareerFacts": [
+      "management-school-ready",
+      "forewoman-problem-resolved"
+    ],
+    "testsAffected": [
+      "school-public-boundary-exactly-once.test.ts",
+      "school-rc-no-false-green-v2.test.ts",
+      "product-acceptance shipped PA07/PA08 path"
+    ]
+  },
+  "constraints": {
+    "providerSelected": false,
+    "thresholdSelected": false,
+    "certificateSelected": false,
+    "projectSelected": false
+  }
+}
