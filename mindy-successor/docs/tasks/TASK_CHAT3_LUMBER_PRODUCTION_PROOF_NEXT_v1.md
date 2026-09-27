@@ -1126,3 +1126,22 @@ Create a fill-in template for Product/content decisions required before implemen
 Mark structural fields already fixed and leave unresolved values explicitly OPEN.
 
 Continue items 61–69 sequentially without waiting for Lead review.
+
+
+## Queue item 70 — poverty recovery-source authoring matrix
+
+Create NEW file only:
+- `docs/poverty-prep/POVERTY_RECOVERY_SOURCE_AUTHORING_MATRIX_v1.md`
+
+Map authored recovery sources for a poor run:
+- starting-job work;
+- cheap lodging;
+- ordinary street event;
+- relationship help;
+- item/resource assistance;
+- small paid event;
+- optional sale/barter if later accepted.
+
+For each identify structural authority, content needed, runtime seam, balance dependency, and anti-softlock role. Do not make any one source mandatory and do not invent final values.
+
+Continue items 62–70 sequentially without waiting for Lead review.
