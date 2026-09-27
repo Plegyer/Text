@@ -1,0 +1,39 @@
+{
+  "formatVersion": 1,
+  "kind": "forest-route-default-static",
+  "status": "INCREMENTAL_POST_PR47_NOT_ROOT_LOADED",
+  "currentMainBaseline": "7f27caca4e3e711799e9c1f235c4a27adbf31026",
+  "asset": {
+    "key": "forest-route-default-v1",
+    "kind": "image",
+    "src": "assets/presentation/forest-route-default-v1.svg",
+    "presentationId": "activity/forest/route/default",
+    "fallbackPurpose": "shared neutral Forest route-in-progress static fallback",
+    "localization": {
+      "altKey": "presentation.static.forest.route.default.alt",
+      "captionKey": "presentation.static.forest.route.default.caption",
+      "requiredLocales": [
+        "ru",
+        "en"
+      ]
+    },
+    "provenance": "project-authored original SVG; no external media dependency"
+  },
+  "localizationDelta": {
+    "presentation.static.forest.route.default.alt": {
+      "ru": "Героиня идёт по нейтральной лесной тропе без указания конкретного маршрута или исхода.",
+      "en": "The heroine follows a neutral forest trail without indicating a specific route or outcome."
+    },
+    "presentation.static.forest.route.default.caption": {
+      "ru": "Путь через лес продолжается.",
+      "en": "The route through the forest continues."
+    }
+  },
+  "invariants": {
+    "mapsOnlyExistingRouteDefault": true,
+    "routeOptionIdentityNotEncoded": true,
+    "hunterTokenChallengeSemantics": false,
+    "gameplayFields": false,
+    "localeNeutralAssetIdentity": true
+  }
+}
