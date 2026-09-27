@@ -1329,3 +1329,24 @@ Assume the human decision packet is later answered. Map the immediate implementa
 For each step name expected production file domains, runtime seam, tests, and dependencies. Do not pre-fill unanswered decisions.
 
 Continue items 71–79 sequentially without waiting for Lead review.
+
+
+## Queue item 80 — poverty production package acceptance plan
+
+Create NEW file only:
+- `docs/poverty-prep/POVERTY_PRODUCTION_PACKAGE_ACCEPTANCE_PLAN_v1.md`
+
+Define acceptance for the first real poverty implementation package after Product decisions:
+- production definitions/packs changed explicitly;
+- zero-money anti-softlock retained;
+- ordinary street content reachable naturally;
+- lender path remains optional/one-off;
+- save/reload exactly once;
+- ordinary career progress preserved during bound state;
+- Palace prerequisite exclusion;
+- presentation fallback;
+- targeted + full regression requirements.
+
+Do not claim the package exists yet.
+
+Continue items 72–80 sequentially without waiting for Lead review.
