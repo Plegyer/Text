@@ -94,8 +94,27 @@ function nightChoiceList(){
  const choices=catalog.definitions.nightChoices.filter(choice=>eligible(choice.conditions,state,catalog));
  return `<div class="activity-list">${choices.map(choice=>`<article class="activity"><div><h3>${esc(choice.label)}</h3><small>Ночной слот${choice.nextDayEnergyDelta?` · энергия завтра ${choice.nextDayEnergyDelta>0?'+':''}${choice.nextDayEnergyDelta}`:''}</small></div><button data-night-choice="${choice.id}" ${busy||locked?'disabled':''}>Выбрать</button></article>`).join('')}</div>`;
 }
+function presentationOccurrenceKey(presentationId:string){
+ const r=state.run;
+ const p=r.pending;
+ if(p)return `${r.id}|event|${p.eventId}|${p.variantId}|${p.reactionEpochId??r.flow.reaction.currentEpochId??'none'}`;
+ if(r.status!=='active')return `${r.id}|ending|${r.endings.result?.transactionId??r.endings.committed??r.acceptedEnding??'none'}|${presentationId}`;
+ if(r.flow.activity){
+  const a=r.flow.activity;
+  return `${r.id}|activity|${a.activityId}|${a.startedDay}|${a.checkpoint}|${a.internalState.steps}|${a.internalState.routeId??'none'}`;
+ }
+ if(r.flow.night){
+  const n=r.flow.night;
+  return `${r.id}|night|${n.startedDay}|${n.phase}|${n.selectedNightChoiceId??'none'}|${n.selectedLodgingId??'none'}`;
+ }
+ if(screen==='scene'&&r.lastAction){
+  return `${r.id}|action|${r.lastAction.id}|${r.actionCounts[r.lastAction.id]??0}|${presentationId}`;
+ }
+ return `${r.id}|town|${r.calendar.elapsedDays}|${presentationId}`;
+}
 function mediaHTML(presentationId:string){
- const resolved=resolvePresentation(catalog,patch,presentationId,{animationsEnabled});
+ const occurrenceKey=presentationOccurrenceKey(presentationId);
+ const resolved=resolvePresentation(catalog,patch,presentationId,{animationsEnabled,occurrenceKey});
  const m=resolved.candidates[mediaIndex];
  if(!m)return `<div class="media-window missing-art" data-presentation-id="${esc(presentationId)}"><span>Сцена доступна без медиа</span></div>`;
  return `<div class="media-window" data-presentation-id="${esc(presentationId)}" data-resolved-slot="${esc(m.slotId)}" data-media-id="${esc(m.mediaId??'')}" data-candidate-index="${mediaIndex}">${m.kind==='video'?`<video src="${esc(m.src)}" aria-label="${esc(m.alt)}" autoplay loop muted playsinline controls></video>`:`<img src="${esc(m.src)}" alt="${esc(m.alt)}">`}</div>`;
