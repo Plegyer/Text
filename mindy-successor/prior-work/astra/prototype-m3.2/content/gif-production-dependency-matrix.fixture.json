@@ -1,0 +1,203 @@
+{
+  "version": 1,
+  "kind": "gif-production-dependency-matrix",
+  "rankingBasis": "dependency-readiness-only",
+  "classes": [
+    "READY_NOW",
+    "WAIT_FOR_CONTENT_AUTHORING",
+    "WAIT_FOR_PRODUCT_DECISION",
+    "REUSE_EXISTING",
+    "OPTIONAL_POLISH"
+  ],
+  "policy": {
+    "noAestheticRanking": true,
+    "noArtDirectionSelected": true,
+    "semanticIdentitySeparateFromMedia": true
+  },
+  "rows": [
+    {
+      "scope": "starter-trio",
+      "key": "lumber",
+      "class": "READY_NOW",
+      "semanticCoverage": "shipped",
+      "fallback": "assets/stage-lumber.svg",
+      "dependency": "Existing Lumber semantic IDs and shipped static fallbacks are ready for optional GIF production."
+    },
+    {
+      "scope": "starter-trio",
+      "key": "satyr-maid",
+      "class": "WAIT_FOR_CONTENT_AUTHORING",
+      "semanticCoverage": "draft-only",
+      "fallback": "static/text implementation fallback sufficient",
+      "dependency": "Career draft exists; final production scene IDs/content must be authored before dedicated GIF binding."
+    },
+    {
+      "scope": "starter-trio",
+      "key": "undead-farm",
+      "class": "WAIT_FOR_CONTENT_AUTHORING",
+      "semanticCoverage": "draft-only",
+      "fallback": "static/text implementation fallback sufficient",
+      "dependency": "Career draft exists; final production scene IDs/content must be authored before dedicated GIF binding."
+    },
+    {
+      "scope": "remaining-seven-ordinary-careers",
+      "key": "hunter",
+      "class": "WAIT_FOR_CONTENT_AUTHORING",
+      "semanticCoverage": "draft-only",
+      "fallback": "static/text implementation fallback sufficient",
+      "dependency": "Final repeatable/milestone/relationship/Night content must be authored first."
+    },
+    {
+      "scope": "remaining-seven-ordinary-careers",
+      "key": "tavern",
+      "class": "WAIT_FOR_CONTENT_AUTHORING",
+      "semanticCoverage": "draft-only",
+      "fallback": "static/text implementation fallback sufficient",
+      "dependency": "Final repeatable/milestone/relationship/Night content must be authored first."
+    },
+    {
+      "scope": "remaining-seven-ordinary-careers",
+      "key": "guard",
+      "class": "WAIT_FOR_CONTENT_AUTHORING",
+      "semanticCoverage": "draft-only",
+      "fallback": "static/text implementation fallback sufficient",
+      "dependency": "Final repeatable/milestone/relationship/Night content must be authored first."
+    },
+    {
+      "scope": "remaining-seven-ordinary-careers",
+      "key": "merchant",
+      "class": "WAIT_FOR_CONTENT_AUTHORING",
+      "semanticCoverage": "draft-only",
+      "fallback": "static/text implementation fallback sufficient",
+      "dependency": "Final repeatable/milestone/relationship/Night content must be authored first."
+    },
+    {
+      "scope": "remaining-seven-ordinary-careers",
+      "key": "assassin",
+      "class": "WAIT_FOR_CONTENT_AUTHORING",
+      "semanticCoverage": "draft-only",
+      "fallback": "static/text implementation fallback sufficient",
+      "dependency": "Final repeatable/milestone/relationship/Night content must be authored first."
+    },
+    {
+      "scope": "remaining-seven-ordinary-careers",
+      "key": "prostitute",
+      "class": "WAIT_FOR_CONTENT_AUTHORING",
+      "semanticCoverage": "draft-only",
+      "fallback": "static/text implementation fallback sufficient",
+      "dependency": "Final repeatable/milestone/relationship/Night content must be authored first."
+    },
+    {
+      "scope": "remaining-seven-ordinary-careers",
+      "key": "geisha-artist",
+      "class": "WAIT_FOR_CONTENT_AUTHORING",
+      "semanticCoverage": "draft-only",
+      "fallback": "static/text implementation fallback sufficient",
+      "dependency": "Final repeatable/milestone/relationship/Night content must be authored first."
+    },
+    {
+      "scope": "school",
+      "key": "paid-lessons",
+      "class": "REUSE_EXISTING",
+      "semanticCoverage": "eight paid lesson IDs shipped",
+      "fallback": "assets/stage-school.svg",
+      "dependency": "Existing School stage can cover all eight lessons; teacher/course-specific media is optional."
+    },
+    {
+      "scope": "school",
+      "key": "teacher-specific-visuals",
+      "class": "WAIT_FOR_PRODUCT_DECISION",
+      "semanticCoverage": "lesson IDs shipped; teacher identities open",
+      "fallback": "assets/stage-school.svg",
+      "dependency": "Human/Product must decide teacher/presenter model before teacher-specific media is commissioned."
+    },
+    {
+      "scope": "school",
+      "key": "public-result-scenes",
+      "class": "WAIT_FOR_CONTENT_AUTHORING",
+      "semanticCoverage": "result IDs not final",
+      "fallback": "School/town fallback sufficient",
+      "dependency": "Management/accounting and Arcana/Forest providers/thresholds must be authored first."
+    },
+    {
+      "scope": "poverty-secret-debt",
+      "key": "ordinary-poverty",
+      "class": "WAIT_FOR_CONTENT_AUTHORING",
+      "semanticCoverage": "not production-authored",
+      "fallback": "location/town/default",
+      "dependency": "Housing/street event identities must be authored before dedicated media binding."
+    },
+    {
+      "scope": "poverty-secret-debt",
+      "key": "secret-debt-slave",
+      "class": "WAIT_FOR_PRODUCT_DECISION",
+      "semanticCoverage": "design draft only",
+      "fallback": "location/town/default",
+      "dependency": "Final product decisions and authored hidden-career scenes must exist before dedicated production GIFs."
+    },
+    {
+      "scope": "forest",
+      "key": "generic-route-and-results",
+      "class": "REUSE_EXISTING",
+      "semanticCoverage": "route/default and success/escape/failure shipped",
+      "fallback": "assets/stage-forest.svg",
+      "dependency": "Current generic Forest stage safely covers route/results."
+    },
+    {
+      "scope": "forest",
+      "key": "logging-road-specific",
+      "class": "OPTIONAL_POLISH",
+      "semanticCoverage": "route gameplay identity shipped; exact presentation family not required",
+      "fallback": "assets/stage-forest.svg",
+      "dependency": "Dedicated logging-road visual is optional after content lock."
+    },
+    {
+      "scope": "forest",
+      "key": "hunter-trail-and-challenges",
+      "class": "WAIT_FOR_CONTENT_AUTHORING",
+      "semanticCoverage": "future families only",
+      "fallback": "assets/stage-forest.svg",
+      "dependency": "Final route/challenge/season content must exist first."
+    },
+    {
+      "scope": "palace",
+      "key": "palace-career",
+      "class": "WAIT_FOR_PRODUCT_DECISION",
+      "semanticCoverage": "hidden/meta career design draft",
+      "fallback": "static/text implementation fallback sufficient",
+      "dependency": "Exact Palace role/assignments/content remain open; final IDs/media wait on authored decisions."
+    },
+    {
+      "scope": "endings",
+      "key": "lumber-endings",
+      "class": "OPTIONAL_POLISH",
+      "semanticCoverage": "shipped Lumber ending IDs",
+      "fallback": "assets/stage-town.svg plus text",
+      "dependency": "Dedicated ending GIFs are optional."
+    },
+    {
+      "scope": "endings",
+      "key": "future-career-endings",
+      "class": "WAIT_FOR_CONTENT_AUTHORING",
+      "semanticCoverage": "not production-authored",
+      "fallback": "static/text implementation fallback sufficient",
+      "dependency": "Final career ending definitions must be authored first."
+    },
+    {
+      "scope": "meta",
+      "key": "new-run-meta-transition",
+      "class": "REUSE_EXISTING",
+      "semanticCoverage": "current New Run uses town context",
+      "fallback": "assets/stage-town.svg",
+      "dependency": "No new dedicated Meta GIF is required for current behavior."
+    },
+    {
+      "scope": "meta",
+      "key": "future-palace-meta-reveals",
+      "class": "WAIT_FOR_PRODUCT_DECISION",
+      "semanticCoverage": "not final",
+      "fallback": "static/text implementation fallback sufficient",
+      "dependency": "Distinct Meta reveal media waits on authored Palace/macro-goal content."
+    }
+  ]
+}
