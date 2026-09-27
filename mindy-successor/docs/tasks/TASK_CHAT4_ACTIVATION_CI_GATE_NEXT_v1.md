@@ -795,3 +795,57 @@ Summarize items 49–53 plus current 221/221 technical floor into:
 Do not reopen green runtime contracts.
 
 Continue items 49–54 sequentially without waiting for Lead review.
+
+
+## Queue item 55 — full-game production package gate checklist
+
+Create NEW file only:
+- `docs/qa-prep/FULL_GAME_PRODUCTION_PACKAGE_GATE_v1.md`
+
+Define the QA gate every future career/system production package must satisfy:
+- authoritative source identified;
+- no locked-rule drift;
+- one-file ownership respected;
+- save/reload behavior explicit;
+- cross-system public boundaries explicit;
+- semantic presentation IDs/fallbacks valid;
+- no fixture-only authoring promoted to production;
+- targeted tests + full check requirement.
+
+Make it reusable for all careers and systems.
+
+## Queue item 56 — product-scope omission sentinel matrix
+
+Create NEW file only:
+- `docs/qa-prep/PRODUCT_SCOPE_OMISSION_SENTINEL_MATRIX_v1.md`
+
+Create a durable matrix of product surfaces that must remain represented as production expands:
+- all 10 ordinary careers;
+- Palace;
+- ordinary poverty;
+- Secret Debt/Slave;
+- School;
+- relationships;
+- Night;
+- items;
+- Activity;
+- endings/Meta;
+- GIF-first presentation.
+
+For each surface record its authority and the evidence needed to detect accidental omission/narrowing.
+
+## Queue item 57 — content-authoring acceptance framework
+
+Create NEW file only:
+- `docs/qa-prep/CONTENT_AUTHORING_ACCEPTANCE_FRAMEWORK_v1.md`
+
+Define how QA should distinguish:
+- runtime-ready but content-open;
+- human-decision-blocked;
+- authored but not integrated;
+- integrated and tested;
+- optional presentation polish.
+
+Apply the framework to career, School, poverty and Activity content without assigning scores or inventing decisions.
+
+Continue items 49–57 sequentially without waiting for Lead review.
