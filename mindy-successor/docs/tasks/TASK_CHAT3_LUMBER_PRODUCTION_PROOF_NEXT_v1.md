@@ -2922,3 +2922,120 @@ Create NEW file only:
 Consolidate items 209–219 into SAFE_TEXT_PATCH / SHARED_UI_REQUIRED / ROUTE_PRESENTATION_SOURCE / PRODUCT_OPEN with exact selective-copy files for Lead.
 
 Continue items 209–220 sequentially without waiting for Lead review.
+
+
+## Queue item 221 — post-PR48 poverty text rebase audit v2
+Create NEW file only:
+- `docs/poverty-prep/POST_PR48_POVERTY_TEXT_REBASE_AUDIT_V2.md`
+
+Recheck the current 33-key poverty text patch against exact main after PR48.
+Classify CLEAN_APPLY / SUPERSEDED / CONFLICT.
+Text keys only; static-media keys excluded.
+
+## Queue item 222 — post-PR48 poverty text delta v4
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/poverty-copyedit-post-pr48-v4.fixture.json`
+
+Produce only CLEAN_APPLY exact-key RU+EN replacements from item 221.
+No additions, renames, media keys, Secret Debt or gameplay fields.
+
+## Queue item 223 — poverty text natural-path smoke matrix v2
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/poverty-copyedit-natural-path-v2.fixture.json`
+
+Map each item-222 changed key to the exact current production event/variant/choice path and expected RU/EN text.
+No runtime helper changes.
+
+## Queue item 224 — Forest route altKey normalization fixture v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/forest-route-media-localization-normalized-v1.fixture.json`
+
+Normalize the final route media alt/caption keys to the shipped PR47 schema:
+- lowercase;
+- dots/underscores/hyphens only;
+- no slash characters.
+
+Preserve the same RU+EN meaning and route semantic IDs.
+
+## Queue item 225 — Forest route normalized localization collision guard v1
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/forest-route-media-localization-normalized-v1.test.ts`
+
+Validate item 224:
+- schema-compatible keys;
+- no collision with current root localization;
+- complete RU+EN;
+- no gameplay fields;
+- no Product-open Hunter/token semantics.
+
+## Queue item 226 — Forest route presentation text final fixture v4
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/forest-route-presentation-final-v4.fixture.json`
+
+Consolidate current logging-road / old-boundary RU+EN route presentation text, choice/help wording, normalized alt/caption keys and exact proposed semantic presentation IDs.
+Presentation-only.
+
+## Queue item 227 — Forest route static-source compatibility audit v1
+Create NEW file only:
+- `docs/lumber-prep/FOREST_ROUTE_STATIC_SOURCE_COMPATIBILITY_AUDIT_V1.md`
+
+Review Chat2 route-specific SVG candidates against exact current route semantics.
+Classify:
+- VISUALLY_SAFE_IF_SEAM_SHIPS;
+- TOO_SPECIFIC;
+- PRODUCT_SEMANTICS_LEAK;
+- NEEDS_GENERIC_FALLBACK.
+
+Do not activate assets.
+
+## Queue item 228 — Forest route locale invariance expected-state fixture v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/forest-route-locale-invariance-v1.fixture.json`
+
+For both current routes record:
+- route ID;
+- expected presentationId;
+- expected RU text/alt;
+- expected EN text/alt;
+- exact unchanged Save/RNG/result identity fields.
+
+## Queue item 229 — Forest route result-continuation invariant matrix v2
+Create NEW file only:
+- `docs/lumber-prep/FOREST_ROUTE_RESULT_CONTINUATION_INVARIANT_MATRIX_V2.md`
+
+Document exact route -> Activity -> result continuation invariants for success / escape / failure and exact `activityResult` identities.
+No new challenge/reward semantics.
+
+## Queue item 230 — shared Night/lodging post-PR48 consumer readiness v4
+Create NEW file only:
+- `docs/poverty-prep/SHARED_NIGHT_LODGING_POST_PR48_CONSUMER_READINESS_V4.md`
+
+Refresh exact current UI consumer seams after PR48 and confirm the 20 finalized keys remain additive/collision-free.
+No UI edits.
+
+## Queue item 231 — Forest/poverty selective integration acceptance packet v1
+Create NEW file only:
+- `docs/lumber-prep/FOREST_POVERTY_SELECTIVE_INTEGRATION_ACCEPTANCE_V1.md`
+
+Prepare exact Lead acceptance for:
+- 33-key poverty text patch;
+- 20-key shared Night/lodging UI text;
+- route presentationId seam;
+- normalized route altKey localization.
+
+Separate what may ship independently from what requires the route seam.
+
+## Queue item 232 — post-PR48 Forest/poverty handoff v7
+Create NEW file only:
+- `docs/lumber-prep/POST_PR48_FOREST_POVERTY_HANDOFF_V7.md`
+
+Consolidate items 221–231 into:
+- SAFE_TEXT_PATCH;
+- SHARED_UI_REQUIRED;
+- ROUTE_PRESENTATION_READY;
+- ROUTE_ASSET_SOURCE_ONLY;
+- PRODUCT_OPEN.
+
+Include exact selective-copy files and exact remaining blockers.
+
+Continue items 221–232 sequentially without waiting for Lead review.
