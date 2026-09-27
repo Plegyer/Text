@@ -541,3 +541,43 @@ test('renderer: neutral Forest route static fallback preserves save across RU EN
   assert.deepEqual(errors,[]);
  }finally{dom.window.close();}
 });
+
+
+test('renderer: legacy gopher pending scene localizes RU EN without gameplay drift',async()=>{
+ const s=started();
+ s.run.flow.pendingScene={
+  eventId:'gopher.tavern-intro',
+  variantId:'default',
+  reactionEpochId:'legacy-gopher-ui-smoke',
+  allowedChoiceIds:['agree']
+ };
+ const {w,dom,errors}=boot(JSON.stringify(s));try{
+  await wait(()=>!!w.document.querySelector('[data-choice="agree"]')||errors.length>0);
+  assert.deepEqual(errors,[]);
+  assert.match(w.document.querySelector('.stage-title h1')?.textContent??'',/Кружки прежде легенд/);
+  assert.match(w.document.querySelector('.dialogue p')?.textContent??'',/Трактирщик Марек/);
+  assert.match(w.document.querySelector('[data-choice="agree"]')?.textContent??'',/Договориться о правилах/);
+  assert.match(w.document.querySelector('.media-window img')?.getAttribute('alt')??'',/таверн/i);
+
+  const before=w.localStorage.getItem('portal-life.v1');
+  const beforeSave=JSON.parse(before);
+  w.document.querySelector('[data-panel="menu"]').click();
+  w.document.querySelector('#language-toggle').click();
+  await wait(()=>w.document.documentElement.lang==='en');
+  assert.equal(w.localStorage.getItem('portal-life.v1'),before);
+  w.document.querySelector('#close').click();
+
+  assert.match(w.document.querySelector('.stage-title h1')?.textContent??'',/Mugs before legends/);
+  assert.match(w.document.querySelector('.dialogue p')?.textContent??'',/Marek/);
+  assert.match(w.document.querySelector('[data-choice="agree"]')?.textContent??'',/Agree on the rules/);
+  assert.match(w.document.querySelector('.media-window img')?.getAttribute('alt')??'',/tavern/i);
+
+  const after=JSON.parse(w.localStorage.getItem('portal-life.v1'));
+  assert.equal(after.run.flow.pendingScene.eventId,beforeSave.run.flow.pendingScene.eventId);
+  assert.equal(after.run.flow.pendingScene.variantId,beforeSave.run.flow.pendingScene.variantId);
+  assert.deepEqual(after.run.flow.pendingScene.allowedChoiceIds,beforeSave.run.flow.pendingScene.allowedChoiceIds);
+  assert.equal(after.run.rngState.state,beforeSave.run.rngState.state);
+  assert.deepEqual(after.run.flow.night,beforeSave.run.flow.night);
+  assert.deepEqual(errors,[]);
+ }finally{dom.window.close();}
+});
