@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "id": "forest.logging-road.localization.v2",
+  "status": "MERGED_MAIN_REFRESH_PRESENTATION_ONLY",
+  "baseMain": "c0763f9f9fa9887593fe8567165bbedce2b6cd3a",
+  "routeRef": "forest.route.logging-road",
+  "sourceLocale": "ru",
+  "locales": [
+    "ru",
+    "en"
+  ],
+  "currentMainExisting": {
+    "activityOption.forest.route.logging-road.label": {
+      "ru": "Лесовозная дорога",
+      "en": "Logging road"
+    }
+  },
+  "additiveStrings": {
+    "forestRouteScene.forest.route.logging-road.wheel-ruts.text": {
+      "ru": "Лесовозная дорога шире троп вокруг, но свежие колеи превратили её середину в две тёмные полосы грязи. По краям лежат обрубленные ветви, которые рабочие оттащили с пути. Здесь легко не потеряться: люди уже заставили лес уступить дороге место.",
+      "en": "The logging road is wider than the paths around it, but fresh wheel ruts have turned its center into two dark channels of mud. Cut branches lie along the edges where crews dragged them aside. It is easy to keep the route here because people have already forced the forest to make room for the road."
+    },
+    "forestRouteScene.forest.route.logging-road.timber-stack.text": {
+      "ru": "Дорога выводит на просеку со штабелями брёвен. Ровные стволы сложены отдельно, повреждённые — в стороне, кора и щепа втоптаны в землю. Здесь нет ничего таинственного, но место всё равно кажется важным: лес превращён в работу, которую можно пересчитать руками.",
+      "en": "The road opens into a clearing stacked with timber. Straight trunks are kept together, damaged pieces lie to one side, and bark and chips are ground into the soil. Nothing here needs to be mysterious to feel important: the forest has been turned into work that can be counted by hand."
+    },
+    "forestRouteScene.forest.route.logging-road.work-marks.text": {
+      "ru": "На нескольких деревьях у дороги остались старые меловые пометки и зарубки. Одни указывают на уже законченные работы. Другие отмечают деревья, к которым никто так и не вернулся.",
+      "en": "Old chalk marks and axe cuts remain on several trees beside the road. Some point toward work already completed. Others mark trees nobody returned for."
+    },
+    "forestRouteScene.forest.route.logging-road.narrowing.text": {
+      "ru": "Построенная дорога постепенно сдаётся лесу. Колеи превращаются в следы от ног, штабеля исчезают, а привычный порядок рабочих участков растворяется. Понять, где здесь когда-то ходили люди, ещё можно — но только потому, что лес не успел окончательно стереть следы.",
+      "en": "The engineered road gradually gives way to the forest. Wheel tracks narrow into footpaths, timber stacks disappear, and the order of the worksite dissolves. It is still possible to tell where people once passed, but only because the forest has not fully erased the evidence yet."
+    },
+    "forestRouteScene.forest.route.logging-road.reaction.text": {
+      "ru": "По крайней мере, эту дорогу строили так, чтобы по ней можно было пройти.",
+      "en": "At least this route was built to be followed."
+    }
+  },
+  "invariants": {
+    "localizationOnly": true,
+    "exactShippedRouteIdentity": true,
+    "createsRouteId": false,
+    "createsConditions": false,
+    "createsEffects": false,
+    "createsRewards": false,
+    "localeNeutralIdentity": true
+  }
+}
