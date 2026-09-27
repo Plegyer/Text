@@ -1391,12 +1391,12 @@ Separate CI-green, review-ready, Product-blocked and authoring-ready work.
 Continue items 78–86 sequentially without waiting for Lead review.
 
 
-## Queue item 87 — PR35 remaining-seven production review
+## Queue item 87 — PR36 remaining-seven production review
 
 Create NEW file only:
-- `docs/qa-prep/PR35_REMAINING_SEVEN_PRODUCTION_REVIEW_v1.md`
+- `docs/qa-prep/PR36_REMAINING_SEVEN_PRODUCTION_REVIEW_v1.md`
 
-Review PR #35 against all seven authoritative career drafts and current main.
+Review PR #36 (current-main replacement for closed PR #35) against all seven authoritative career drafts and current main.
 
 Verify:
 - only base target shifts/career initial states + tests;
@@ -1415,7 +1415,7 @@ Conclude GREEN / BLOCKED.
 Create NEW file only:
 - `docs/qa-prep/TEN_CAREER_BASE_LAYER_COMPLETENESS_AUDIT_v1.md`
 
-After PR35 status is known, audit all 10 ordinary careers for:
+After PR36 status is known, audit all 10 ordinary careers for:
 - production action presence;
 - 1-Energy repeatable work;
 - typed progress;
@@ -1499,12 +1499,12 @@ Specialize integration checks for workers ~75+ commits behind main:
 - compare semantic IDs/namespaces against current main;
 - preserve provenance.
 
-## Queue item 94 — production CI floor after PR35
+## Queue item 94 — production CI floor after PR36
 
 Create NEW file only:
-- `docs/qa-prep/PRODUCTION_CI_FLOOR_AFTER_PR35_v1.md`
+- `docs/qa-prep/PRODUCTION_CI_FLOOR_AFTER_PR36_v1.md`
 
-Record actual CI baseline after PR35 resolves:
+Record actual CI baseline after PR36 resolves:
 - exact head;
 - test count;
 - main merge SHA if merged;
