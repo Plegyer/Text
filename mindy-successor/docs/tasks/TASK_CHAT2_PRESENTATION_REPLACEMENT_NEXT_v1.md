@@ -2615,3 +2615,183 @@ Consolidate items 151–158:
 - recommended selective integration order.
 
 Continue items 151–159 sequentially without waiting for Lead review.
+
+
+## Queue depth Product rule — 12
+
+Current coordination target:
+- keep **12 independent presentation/media tasks** queued/outstanding whenever practical;
+- Chat 2 owns presentation/GIF/media preparation only;
+- shared runtime/schema/UI remains Lead-owned;
+- placeholders and external URLs are never production assets;
+- production multi-GIF pools require 3–5 real repository GIF files.
+
+## Queue item 160 — media asset build-path audit v1
+
+Create NEW file only:
+- `docs/presentation-prep/MEDIA_ASSET_BUILD_PATH_AUDIT_v1.md`
+
+Audit the exact current source/build/runtime path for static and GIF media:
+- source asset directories;
+- build copy/bundle behavior;
+- runtime URL convention;
+- current presentation slot resolution;
+- what directory a future real GIF must enter to ship correctly.
+
+Do not add fake media.
+
+## Queue item 161 — real media intake manifest schema v1
+
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/real-media-intake-manifest-schema-v1.json`
+
+Define a machine-readable intake shape for real media files:
+- semantic presentationId;
+- candidate key;
+- repo-relative src;
+- media kind;
+- RU alt localization key;
+- EN alt localization key;
+- provenance/source note;
+- reuse approval;
+- static fallback reference.
+
+This is an intake schema/example only, not a shipped pool.
+
+## Queue item 162 — media file preflight utility v1
+
+Create NEW tooling file only:
+- `prior-work/astra/prototype-m3.2/tools/media-asset-preflight.mjs`
+
+Implement a non-runtime utility that can validate a future intake manifest against repository files:
+- referenced path exists;
+- .gif candidates have GIF signature;
+- no http/external URL;
+- no placeholder/TODO marker;
+- candidate keys unique within a semantic pool;
+- pool size 3..5 when marked production-ready.
+
+Do not edit core runtime/schema/UI.
+
+## Queue item 163 — media preflight utility tests v1
+
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/media-asset-preflight.test.ts`
+
+Cover:
+- missing file rejected;
+- external URL rejected;
+- fake .gif extension rejected by signature;
+- duplicate candidate key rejected;
+- 2-candidate production pool rejected;
+- 3-candidate real-file fixture accepted when valid test fixtures are used.
+
+Test fixtures must remain explicitly test-only.
+
+## Queue item 164 — first ordinary-career GIF producer brief v2
+
+Create NEW file only:
+- `docs/presentation-prep/FIRST_ORDINARY_CAREER_GIF_PRODUCER_BRIEF_v2.md`
+
+Turn item 158 into concrete production briefs for the smallest high-value career batch.
+For each requested real GIF specify:
+- locale-neutral target filename;
+- exact current semantic presentationId;
+- loop action/composition;
+- what must remain visually invariant for RU/EN;
+- reuse compatibility;
+- static fallback;
+- acceptance notes.
+
+No placeholder path may be described as already shipped.
+
+## Queue item 165 — poverty real-GIF producer brief v1
+
+Create NEW file only:
+- `docs/presentation-prep/POVERTY_REAL_GIF_PRODUCER_BRIEF_v1.md`
+
+Prepare producer-ready briefs for repeatable ordinary-poverty shipped identities only.
+Exclude Secret Debt.
+Prioritize a smallest batch that can complete at least one 3–5-candidate pool once assets are actually supplied.
+
+## Queue item 166 — School reachable real-GIF producer brief v1
+
+Create NEW file only:
+- `docs/presentation-prep/SCHOOL_REACHABLE_REAL_GIF_PRODUCER_BRIEF_v1.md`
+
+Prepare briefs only for currently reachable generic School/Night-study semantic identities.
+Teacher/course-specific staged identities remain STAGED.
+
+## Queue item 167 — Forest real-GIF producer brief v1
+
+Create NEW file only:
+- `docs/presentation-prep/FOREST_REAL_GIF_PRODUCER_BRIEF_v1.md`
+
+Prepare real-GIF briefs for current-main Forest result/reaction identities after PR43.
+Do not invent Hunter/Old Boundary route semantics.
+
+## Queue item 168 — static fallback production inventory v2
+
+Create NEW file only:
+- `docs/presentation-prep/STATIC_FALLBACK_PRODUCTION_INVENTORY_v2.md`
+
+Audit all current production semantic presentation identities in:
+- 10 ordinary careers;
+- School reachable surfaces;
+- ordinary poverty;
+- Forest;
+- Foreman relationship/Night where shipped.
+
+Record whether a real static fallback exists and its repo path.
+Do not classify test-only assets as production.
+
+## Queue item 169 — media provenance and replacement ledger v1
+
+Create NEW file only:
+- `docs/presentation-prep/MEDIA_PROVENANCE_REPLACEMENT_LEDGER_v1.md`
+
+Define the per-asset production ledger fields needed when real GIFs arrive:
+- source/provenance;
+- license/permission note;
+- checksum;
+- semantic owners;
+- reuse owners;
+- replacement version;
+- rollback target;
+- RU/EN alt-key coverage.
+
+Do not claim provenance that is not known.
+
+## Queue item 170 — real-asset adoption blocking gate v1
+
+Create NEW file only:
+- `docs/presentation-prep/REAL_ASSET_ADOPTION_BLOCKING_GATE_v1.md`
+
+Define the exact gate before Lead may integrate a production multi-GIF pool:
+- 3–5 real GIF files in repo;
+- build/runtime path verified;
+- preflight utility green;
+- semantic ID exists on current main;
+- RU+EN alt keys exist;
+- static fallback exists;
+- locale switch preserves candidate;
+- no gameplay fields;
+- exact-head CI required.
+
+Zero real GIF assets => no production pool integration.
+
+## Queue item 171 — media production readiness handoff v6
+
+Create NEW file only:
+- `docs/presentation-prep/MEDIA_PRODUCTION_READINESS_HANDOFF_v6.md`
+
+Consolidate items 160–170:
+- tooling ready for real asset intake;
+- exact producer briefs;
+- static fallback state;
+- current blockers;
+- exact files Lead may integrate now;
+- what must wait until real GIF files are supplied;
+- recommended next work only if it creates or validates real assets.
+
+Continue items 160–171 sequentially without waiting for Lead review.
