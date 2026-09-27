@@ -589,3 +589,101 @@ Produce the minimal final QA handoff:
 Explicitly supersede the old pre-fix PR24 review where applicable.
 
 Continue items 37–42 sequentially without waiting for Lead review.
+
+
+## Queue item 43 — PR26 closeout consistency audit
+
+Create:
+- `docs/qa-prep/PR26_CLOSEOUT_CONSISTENCY_AUDIT_v1.md`
+
+Review merged PR #26 docs against current main.
+
+Confirm:
+- technical RC remains GREEN;
+- full authored PA remains PARTIAL;
+- human-decision ledger does not select product answers;
+- no runtime/content/UI changes were introduced;
+- Hard Work remains exact;
+- presentation blocking asset count remains zero;
+- OPEN School/token/Forest authoring is preserved.
+
+## Queue item 44 — final merged-main one-Save sentinel v3
+
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/qa-one-save-state-drift-sentinel-v3.test.ts`
+
+Rebuild the sentinel directly against merged main after PR26.
+
+Must include:
+- real `base.school -> listen`;
+- exact School money/Energy/progress deltas;
+- Night exactly-once;
+- logging-road Forest route;
+- exact activityResult continuation;
+- 49-not-eligible -> real 50th shift;
+- exact hardWork:lumber;
+- New Run reload.
+
+No unresolved authoring injection.
+
+## Queue item 45 — human-decision ledger false-closure audit
+
+Create:
+- `docs/qa-prep/HUMAN_DECISION_FALSE_CLOSURE_AUDIT_v1.md`
+
+Compare:
+- RC_HUMAN_DECISIONS_REQUIRED_v1.md
+- subsystem decision packets
+- PA row classifications
+
+Flag any place where:
+- seeded state;
+- fixture placeholder;
+- synthetic provider;
+- QA-selected threshold;
+- optional art polish
+
+is incorrectly represented as an accepted Product decision.
+
+## Queue item 46 — release-candidate docs authority audit
+
+Create:
+- `docs/qa-prep/RC_DOC_AUTHORITY_AUDIT_v1.md`
+
+Verify current index/authority points to:
+- RC_CLOSEOUT_STATUS_v1.md;
+- RC_HUMAN_DECISIONS_REQUIRED_v1.md;
+- current Lumber RC matrix;
+- current School decision packet;
+- current presentation RC evidence.
+
+Identify stale docs that must be marked superseded rather than deleted.
+
+## Queue item 47 — final technical regression floor ledger
+
+Create:
+- `docs/qa-prep/FINAL_TECHNICAL_REGRESSION_FLOOR_v1.md`
+
+Record exact merged milestones and test floors:
+187 -> 194 -> 200 -> 208 -> 209 -> 218.
+
+Explain what each milestone added and which current tests are the minimum retained regression set.
+
+No percentages/rankings.
+
+## Queue item 48 — QA closeout pack v4
+
+Create:
+- `docs/qa-prep/QA_CLOSEOUT_PACK_v4.md`
+
+Consolidate Chat 4 after PR26 into:
+- TECHNICAL_GREEN;
+- MUST_INTEGRATE_TESTS;
+- KEEP_AS_EVIDENCE;
+- HUMAN_DECISION_REQUIRED;
+- CONTENT_DEPTH_OPEN;
+- SUPERSEDED.
+
+Name exact files and keep Product decisions neutral.
+
+Continue items 43–48 sequentially without waiting for Lead review.
