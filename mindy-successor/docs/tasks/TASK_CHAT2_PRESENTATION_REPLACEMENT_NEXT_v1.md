@@ -1576,3 +1576,23 @@ Map how an approved human/Product visual decision becomes a production media upd
 Separate mandatory steps from optional polish and do not introduce gameplay dependencies.
 
 Continue items 79–87 sequentially without waiting for Lead review.
+
+
+## Queue item 88 — media replacement package acceptance plan
+
+Create NEW file only:
+- `docs/presentation-prep/MEDIA_REPLACEMENT_PACKAGE_ACCEPTANCE_PLAN_v1.md`
+
+Define acceptance for a batch replacement/import package:
+- semantic IDs unchanged;
+- media mapping resolves;
+- missing asset falls back;
+- animations-off path remains valid;
+- save/reload is unaffected;
+- no gameplay timing/state derives from media;
+- rollback restores prior mappings;
+- partial batch failure does not corrupt unrelated mappings.
+
+No runtime/media implementation in this task.
+
+Continue items 80–88 sequentially without waiting for Lead review.
