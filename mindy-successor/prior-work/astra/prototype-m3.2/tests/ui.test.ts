@@ -249,7 +249,7 @@ test('renderer: Forest result scene localizes RU EN without changing pending gam
   const before=w.localStorage.getItem('portal-life.v1');
   assert.match(w.document.querySelector('.dialogue p').textContent,/Маршрут наконец/);
   assert.match(w.document.querySelector('[data-choice="return"]').textContent,/Вернуться из леса/);
-  assert.match(w.document.querySelector('.media-window img').getAttribute('alt'),/Спокойное успешное возвращение/);
+  assert.match(w.document.querySelector('.media-window img').getAttribute('alt'),/Отдельная рабочая реакция/);
 
   w.document.querySelector('[data-panel="menu"]').click();
   w.document.querySelector('#language-toggle').click();
@@ -258,7 +258,7 @@ test('renderer: Forest result scene localizes RU EN without changing pending gam
   assert.match(w.document.querySelector('.stage-title h1').textContent,/The Forest gives way/);
   assert.match(w.document.querySelector('.dialogue p').textContent,/route finally resolves/);
   assert.match(w.document.querySelector('[data-choice="return"]').textContent,/Return from the Forest/);
-  assert.match(w.document.querySelector('.media-window img').getAttribute('alt'),/A calm successful return from the forest expedition/);
+  assert.match(w.document.querySelector('.media-window img').getAttribute('alt'),/A separate worksite reaction after a successful return from the forest/);
 
   const stored=JSON.parse(w.localStorage.getItem('portal-life.v1'));
   assert.equal(stored.run.flow.pendingScene.eventId,'forest-result-content-v1.success');
@@ -342,6 +342,8 @@ test('renderer: School RU EN localization preserves course command and pending s
   assert.equal(resolved.run.legacyCompat?.flags?.['school.enrolled'],true);
   assert.match(w.document.querySelector('.stage-title h1')?.textContent??'',/Грамотность и счёт/);
   assert.match(w.document.querySelector('.dialogue p')?.textContent??'',/Урок завершён: Грамотность и счёт/);
+  assert.match(w.document.querySelector('.media-window img')?.getAttribute('src')??'',/assets\/presentation\/school-course-literacy-and-numbers\.svg$/);
+  assert.match(w.document.querySelector('.media-window img')?.getAttribute('alt')??'',/Грамота и числа/);
   assert.deepEqual(errors,[]);
  }finally{dom.window.close();}
 });
@@ -394,7 +396,7 @@ test('renderer: ordinary poverty pending scene localizes RU EN without changing 
   const beforeSave=JSON.parse(before);
   assert.match(w.document.querySelector('.dialogue p').textContent,/прилавку/);
   assert.match(w.document.querySelector('[data-choice="take-errand"]').textContent,/Взяться/);
-  assert.match(w.document.querySelector('.media-window img').getAttribute('alt'),/Героиня на небогатой городской улице/);
+  assert.match(w.document.querySelector('.media-window img').getAttribute('alt'),/Летняя уличная сцена небольшой помощи/);
 
   w.document.querySelector('[data-panel="menu"]').click();
   w.document.querySelector('#language-toggle').click();
@@ -403,7 +405,7 @@ test('renderer: ordinary poverty pending scene localizes RU EN without changing 
   assert.match(w.document.querySelector('.stage-title h1').textContent,/A small paid errand/);
   assert.match(w.document.querySelector('.dialogue p').textContent,/nearby stall/);
   assert.match(w.document.querySelector('[data-choice="take-errand"]').textContent,/Take/);
-  assert.match(w.document.querySelector('.media-window img').getAttribute('alt'),/The heroine on a modest city street/);
+  assert.match(w.document.querySelector('.media-window img').getAttribute('alt'),/A summer street scene of small help/);
 
   const after=JSON.parse(w.localStorage.getItem('portal-life.v1'));
   assert.equal(after.run.flow.pendingScene.eventId,beforeSave.run.flow.pendingScene.eventId);
@@ -466,7 +468,7 @@ test('renderer: Foreman relationship and voluntary Night scene localize RU EN wi
   assert.equal(parsedEn.run.dayState.nextDayModifiers.energyDelta,0);
   assert.match(w.document.querySelector('.dialogue p').textContent,/voluntary continuation/);
   assert.match(w.document.querySelector('[data-choice="continue"]').textContent,/Continue professionally/);
-  assert.match(w.document.querySelector('.media-window img').getAttribute('alt'),/calm evening conversation/);
+  assert.match(w.document.querySelector('.media-window img').getAttribute('alt'),/calm voluntary evening conversation/);
 
   w.document.querySelector('[data-panel="menu"]').click();
   w.document.querySelector('#language-toggle').click();
