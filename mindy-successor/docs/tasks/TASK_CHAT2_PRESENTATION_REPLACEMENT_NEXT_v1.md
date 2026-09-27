@@ -2398,3 +2398,103 @@ Create NEW file only:
 Consolidate 134–142 into exact Lead integration guidance and next production media batches.
 
 Continue items 135–143 sequentially without waiting for Lead review.
+
+
+## Queue item 144 — multi-GIF production patch fixture v1
+
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/multi-gif-production-patch-v1.json`
+
+Prepare a staging patch compatible with the Lead multi-GIF runtime schema for representative shipped semantic IDs:
+- Lumber spring shift;
+- Satyr Maid spring shift;
+- Undead Farm spring shift;
+- one Tavern shift;
+- one ordinary-poverty event;
+- one reachable School generic surface.
+
+Each pool:
+- 3–5 locale-neutral GIF candidate keys;
+- RU+EN alt/caption payload references;
+- shared static fallback;
+- no gameplay fields.
+
+Use placeholder asset paths only under an explicit non-shipped staging namespace if real GIF files do not yet exist.
+
+## Queue item 145 — ten-career pool adoption manifest v2
+
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/ten-career-pool-adoption-v2.json`
+
+Map all 10 ordinary careers to current multi-GIF runtime pool shape:
+- semantic presentation ID;
+- pool version;
+- 3–5 candidate stable keys;
+- static fallback;
+- RU+EN alt localization keys;
+- coverage status REAL_ASSET_READY / PLACEHOLDER / NEEDS_ART.
+
+No invented Hard Work or relationship surfaces.
+
+## Queue item 146 — poverty pool adoption manifest v2
+
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/poverty-pool-adoption-v2.json`
+
+Convert PR37 ordinary-poverty presentation identities into the current multi-GIF pool runtime shape.
+
+Keep helpful/neutral/pressure gameplay outcomes fixed independently of media selection.
+
+## Queue item 147 — School reachable pool adoption manifest v2
+
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/school-reachable-pool-adoption-v2.json`
+
+Prepare multi-GIF pools only for School identities that are actually reachable on current main:
+- generic post-lesson;
+- exact Night-study identities where routed.
+
+Teacher/course-specific staged identities must remain clearly STAGED.
+
+## Queue item 148 — RU+EN multi-GIF asset readiness ledger v1
+
+Create NEW file only:
+- `docs/presentation-prep/RU_EN_MULTI_GIF_ASSET_READINESS_LEDGER_v1.md`
+
+For every pool in items 144–147 record:
+- real GIF candidate count;
+- placeholder count;
+- static fallback;
+- RU alt;
+- EN alt;
+- missing art/animation work.
+
+Do not count placeholder paths as shipped assets.
+
+## Queue item 149 — multi-GIF production patch contract test v1
+
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/multi-gif-production-patch-contract.test.ts`
+
+Validate staging manifests:
+- pool size 3..5;
+- candidate keys unique;
+- IDs locale-neutral;
+- RU+EN alt present;
+- static fallback defined;
+- no gameplay conditions/effects/rewards;
+- staged placeholders explicitly marked.
+
+## Queue item 150 — post-runtime media integration handoff v4
+
+Create NEW file only:
+- `docs/presentation-prep/POST_RUNTIME_MEDIA_INTEGRATION_HANDOFF_v4.md`
+
+Summarize items 142–149 against PR42 status:
+- which pools can be selectively integrated immediately;
+- which need real GIF files first;
+- localization coverage;
+- exact files/tests;
+- no-runtime-change path after PR42.
+
+Continue items 142–150 sequentially without waiting for Lead review.
