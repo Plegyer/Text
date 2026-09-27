@@ -1,0 +1,3342 @@
+{
+  "formatVersion": 2,
+  "kind": "ten-career-pool-adoption",
+  "status": "STAGING_ONLY_NOT_SHIPPED",
+  "leadSchemaRef": {
+    "pr": 42,
+    "head": "595e02e21eb7a2ec942b9c6c7899d816d1170c10"
+  },
+  "coverageStatusValues": [
+    "REAL_ASSET_READY",
+    "PLACEHOLDER",
+    "NEEDS_ART"
+  ],
+  "entries": [
+    {
+      "careerId": "lumber",
+      "presentationId": "job/lumber/shift/spring/default",
+      "poolVersion": 1,
+      "coverageStatus": "PLACEHOLDER",
+      "runtimeSlot": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "lumber-spring-1",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/lumber/spring/1.gif",
+              "alt": "На весенней рабочей площадке переносят древесину."
+            },
+            {
+              "key": "lumber-spring-2",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/lumber/spring/2.gif",
+              "alt": "Инструменты готовят к весенней смене лесорубов."
+            },
+            {
+              "key": "lumber-spring-3",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/lumber/spring/3.gif",
+              "alt": "Рабочую площадку приводят в порядок во время весенней смены."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-lumber.svg",
+          "alt": "lumber spring static fallback"
+        }
+      },
+      "candidates": [
+        {
+          "key": "lumber-spring-1",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/lumber/spring/1.gif",
+          "runtimeAltFallback": "На весенней рабочей площадке переносят древесину.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/lumber/shift/spring/default/candidate/lumber-spring-1/alt",
+            "en": "loc/presentation/job/lumber/shift/spring/default/candidate/lumber-spring-1/alt"
+          },
+          "alt": {
+            "ru": "На весенней рабочей площадке переносят древесину.",
+            "en": "Timber is carried across the spring worksite."
+          }
+        },
+        {
+          "key": "lumber-spring-2",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/lumber/spring/2.gif",
+          "runtimeAltFallback": "Инструменты готовят к весенней смене лесорубов.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/lumber/shift/spring/default/candidate/lumber-spring-2/alt",
+            "en": "loc/presentation/job/lumber/shift/spring/default/candidate/lumber-spring-2/alt"
+          },
+          "alt": {
+            "ru": "Инструменты готовят к весенней смене лесорубов.",
+            "en": "Tools are prepared for the spring lumber shift."
+          }
+        },
+        {
+          "key": "lumber-spring-3",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/lumber/spring/3.gif",
+          "runtimeAltFallback": "Рабочую площадку приводят в порядок во время весенней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/lumber/shift/spring/default/candidate/lumber-spring-3/alt",
+            "en": "loc/presentation/job/lumber/shift/spring/default/candidate/lumber-spring-3/alt"
+          },
+          "alt": {
+            "ru": "Рабочую площадку приводят в порядок во время весенней смены.",
+            "en": "The worksite is tidied during the spring shift."
+          }
+        }
+      ],
+      "staticFallback": "assets/stage-lumber.svg"
+    },
+    {
+      "careerId": "lumber",
+      "presentationId": "job/lumber/shift/summer/default",
+      "poolVersion": 1,
+      "coverageStatus": "PLACEHOLDER",
+      "runtimeSlot": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "lumber-summer-1",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/lumber/summer/1.gif",
+              "alt": "На летней рабочей площадке переносят древесину."
+            },
+            {
+              "key": "lumber-summer-2",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/lumber/summer/2.gif",
+              "alt": "Инструменты готовят к летней смене лесорубов."
+            },
+            {
+              "key": "lumber-summer-3",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/lumber/summer/3.gif",
+              "alt": "Рабочую площадку приводят в порядок во время летней смены."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-lumber.svg",
+          "alt": "lumber summer static fallback"
+        }
+      },
+      "candidates": [
+        {
+          "key": "lumber-summer-1",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/lumber/summer/1.gif",
+          "runtimeAltFallback": "На летней рабочей площадке переносят древесину.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/lumber/shift/summer/default/candidate/lumber-summer-1/alt",
+            "en": "loc/presentation/job/lumber/shift/summer/default/candidate/lumber-summer-1/alt"
+          },
+          "alt": {
+            "ru": "На летней рабочей площадке переносят древесину.",
+            "en": "Timber is carried across the summer worksite."
+          }
+        },
+        {
+          "key": "lumber-summer-2",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/lumber/summer/2.gif",
+          "runtimeAltFallback": "Инструменты готовят к летней смене лесорубов.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/lumber/shift/summer/default/candidate/lumber-summer-2/alt",
+            "en": "loc/presentation/job/lumber/shift/summer/default/candidate/lumber-summer-2/alt"
+          },
+          "alt": {
+            "ru": "Инструменты готовят к летней смене лесорубов.",
+            "en": "Tools are prepared for the summer lumber shift."
+          }
+        },
+        {
+          "key": "lumber-summer-3",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/lumber/summer/3.gif",
+          "runtimeAltFallback": "Рабочую площадку приводят в порядок во время летней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/lumber/shift/summer/default/candidate/lumber-summer-3/alt",
+            "en": "loc/presentation/job/lumber/shift/summer/default/candidate/lumber-summer-3/alt"
+          },
+          "alt": {
+            "ru": "Рабочую площадку приводят в порядок во время летней смены.",
+            "en": "The worksite is tidied during the summer shift."
+          }
+        }
+      ],
+      "staticFallback": "assets/stage-lumber.svg"
+    },
+    {
+      "careerId": "lumber",
+      "presentationId": "job/lumber/shift/autumn/default",
+      "poolVersion": 1,
+      "coverageStatus": "PLACEHOLDER",
+      "runtimeSlot": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "lumber-autumn-1",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/lumber/autumn/1.gif",
+              "alt": "На осенней рабочей площадке переносят древесину."
+            },
+            {
+              "key": "lumber-autumn-2",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/lumber/autumn/2.gif",
+              "alt": "Инструменты готовят к осенней смене лесорубов."
+            },
+            {
+              "key": "lumber-autumn-3",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/lumber/autumn/3.gif",
+              "alt": "Рабочую площадку приводят в порядок во время осенней смены."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-lumber.svg",
+          "alt": "lumber autumn static fallback"
+        }
+      },
+      "candidates": [
+        {
+          "key": "lumber-autumn-1",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/lumber/autumn/1.gif",
+          "runtimeAltFallback": "На осенней рабочей площадке переносят древесину.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/lumber/shift/autumn/default/candidate/lumber-autumn-1/alt",
+            "en": "loc/presentation/job/lumber/shift/autumn/default/candidate/lumber-autumn-1/alt"
+          },
+          "alt": {
+            "ru": "На осенней рабочей площадке переносят древесину.",
+            "en": "Timber is carried across the autumn worksite."
+          }
+        },
+        {
+          "key": "lumber-autumn-2",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/lumber/autumn/2.gif",
+          "runtimeAltFallback": "Инструменты готовят к осенней смене лесорубов.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/lumber/shift/autumn/default/candidate/lumber-autumn-2/alt",
+            "en": "loc/presentation/job/lumber/shift/autumn/default/candidate/lumber-autumn-2/alt"
+          },
+          "alt": {
+            "ru": "Инструменты готовят к осенней смене лесорубов.",
+            "en": "Tools are prepared for the autumn lumber shift."
+          }
+        },
+        {
+          "key": "lumber-autumn-3",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/lumber/autumn/3.gif",
+          "runtimeAltFallback": "Рабочую площадку приводят в порядок во время осенней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/lumber/shift/autumn/default/candidate/lumber-autumn-3/alt",
+            "en": "loc/presentation/job/lumber/shift/autumn/default/candidate/lumber-autumn-3/alt"
+          },
+          "alt": {
+            "ru": "Рабочую площадку приводят в порядок во время осенней смены.",
+            "en": "The worksite is tidied during the autumn shift."
+          }
+        }
+      ],
+      "staticFallback": "assets/stage-lumber.svg"
+    },
+    {
+      "careerId": "lumber",
+      "presentationId": "job/lumber/shift/winter/default",
+      "poolVersion": 1,
+      "coverageStatus": "PLACEHOLDER",
+      "runtimeSlot": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "lumber-winter-1",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/lumber/winter/1.gif",
+              "alt": "На зимней рабочей площадке переносят древесину."
+            },
+            {
+              "key": "lumber-winter-2",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/lumber/winter/2.gif",
+              "alt": "Инструменты готовят к зимней смене лесорубов."
+            },
+            {
+              "key": "lumber-winter-3",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/lumber/winter/3.gif",
+              "alt": "Рабочую площадку приводят в порядок во время зимней смены."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-lumber.svg",
+          "alt": "lumber winter static fallback"
+        }
+      },
+      "candidates": [
+        {
+          "key": "lumber-winter-1",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/lumber/winter/1.gif",
+          "runtimeAltFallback": "На зимней рабочей площадке переносят древесину.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/lumber/shift/winter/default/candidate/lumber-winter-1/alt",
+            "en": "loc/presentation/job/lumber/shift/winter/default/candidate/lumber-winter-1/alt"
+          },
+          "alt": {
+            "ru": "На зимней рабочей площадке переносят древесину.",
+            "en": "Timber is carried across the winter worksite."
+          }
+        },
+        {
+          "key": "lumber-winter-2",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/lumber/winter/2.gif",
+          "runtimeAltFallback": "Инструменты готовят к зимней смене лесорубов.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/lumber/shift/winter/default/candidate/lumber-winter-2/alt",
+            "en": "loc/presentation/job/lumber/shift/winter/default/candidate/lumber-winter-2/alt"
+          },
+          "alt": {
+            "ru": "Инструменты готовят к зимней смене лесорубов.",
+            "en": "Tools are prepared for the winter lumber shift."
+          }
+        },
+        {
+          "key": "lumber-winter-3",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/lumber/winter/3.gif",
+          "runtimeAltFallback": "Рабочую площадку приводят в порядок во время зимней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/lumber/shift/winter/default/candidate/lumber-winter-3/alt",
+            "en": "loc/presentation/job/lumber/shift/winter/default/candidate/lumber-winter-3/alt"
+          },
+          "alt": {
+            "ru": "Рабочую площадку приводят в порядок во время зимней смены.",
+            "en": "The worksite is tidied during the winter shift."
+          }
+        }
+      ],
+      "staticFallback": "assets/stage-lumber.svg"
+    },
+    {
+      "careerId": "satyr-maid",
+      "presentationId": "job/satyr-maid/shift/spring/default",
+      "poolVersion": 1,
+      "coverageStatus": "PLACEHOLDER",
+      "runtimeSlot": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "satyr-maid-spring-1",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/satyr-maid/spring/1.gif",
+              "alt": "Заказы разносят между столами во время весенней смены."
+            },
+            {
+              "key": "satyr-maid-spring-2",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/satyr-maid/spring/2.gif",
+              "alt": "Стол приводят в порядок после гостей во время весенней смены."
+            },
+            {
+              "key": "satyr-maid-spring-3",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/satyr-maid/spring/3.gif",
+              "alt": "Зону обслуживания готовят к посетителям во время весенней смены."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-tavern.svg",
+          "alt": "satyr-maid spring static fallback"
+        }
+      },
+      "candidates": [
+        {
+          "key": "satyr-maid-spring-1",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/satyr-maid/spring/1.gif",
+          "runtimeAltFallback": "Заказы разносят между столами во время весенней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/satyr-maid/shift/spring/default/candidate/satyr-maid-spring-1/alt",
+            "en": "loc/presentation/job/satyr-maid/shift/spring/default/candidate/satyr-maid-spring-1/alt"
+          },
+          "alt": {
+            "ru": "Заказы разносят между столами во время весенней смены.",
+            "en": "Orders are carried between tables during the spring shift."
+          }
+        },
+        {
+          "key": "satyr-maid-spring-2",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/satyr-maid/spring/2.gif",
+          "runtimeAltFallback": "Стол приводят в порядок после гостей во время весенней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/satyr-maid/shift/spring/default/candidate/satyr-maid-spring-2/alt",
+            "en": "loc/presentation/job/satyr-maid/shift/spring/default/candidate/satyr-maid-spring-2/alt"
+          },
+          "alt": {
+            "ru": "Стол приводят в порядок после гостей во время весенней смены.",
+            "en": "A table is reset after guests during the spring shift."
+          }
+        },
+        {
+          "key": "satyr-maid-spring-3",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/satyr-maid/spring/3.gif",
+          "runtimeAltFallback": "Зону обслуживания готовят к посетителям во время весенней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/satyr-maid/shift/spring/default/candidate/satyr-maid-spring-3/alt",
+            "en": "loc/presentation/job/satyr-maid/shift/spring/default/candidate/satyr-maid-spring-3/alt"
+          },
+          "alt": {
+            "ru": "Зону обслуживания готовят к посетителям во время весенней смены.",
+            "en": "The service area is prepared for visitors during the spring shift."
+          }
+        }
+      ],
+      "staticFallback": "assets/stage-tavern.svg"
+    },
+    {
+      "careerId": "satyr-maid",
+      "presentationId": "job/satyr-maid/shift/summer/default",
+      "poolVersion": 1,
+      "coverageStatus": "PLACEHOLDER",
+      "runtimeSlot": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "satyr-maid-summer-1",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/satyr-maid/summer/1.gif",
+              "alt": "Заказы разносят между столами во время летней смены."
+            },
+            {
+              "key": "satyr-maid-summer-2",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/satyr-maid/summer/2.gif",
+              "alt": "Стол приводят в порядок после гостей во время летней смены."
+            },
+            {
+              "key": "satyr-maid-summer-3",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/satyr-maid/summer/3.gif",
+              "alt": "Зону обслуживания готовят к посетителям во время летней смены."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-tavern.svg",
+          "alt": "satyr-maid summer static fallback"
+        }
+      },
+      "candidates": [
+        {
+          "key": "satyr-maid-summer-1",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/satyr-maid/summer/1.gif",
+          "runtimeAltFallback": "Заказы разносят между столами во время летней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/satyr-maid/shift/summer/default/candidate/satyr-maid-summer-1/alt",
+            "en": "loc/presentation/job/satyr-maid/shift/summer/default/candidate/satyr-maid-summer-1/alt"
+          },
+          "alt": {
+            "ru": "Заказы разносят между столами во время летней смены.",
+            "en": "Orders are carried between tables during the summer shift."
+          }
+        },
+        {
+          "key": "satyr-maid-summer-2",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/satyr-maid/summer/2.gif",
+          "runtimeAltFallback": "Стол приводят в порядок после гостей во время летней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/satyr-maid/shift/summer/default/candidate/satyr-maid-summer-2/alt",
+            "en": "loc/presentation/job/satyr-maid/shift/summer/default/candidate/satyr-maid-summer-2/alt"
+          },
+          "alt": {
+            "ru": "Стол приводят в порядок после гостей во время летней смены.",
+            "en": "A table is reset after guests during the summer shift."
+          }
+        },
+        {
+          "key": "satyr-maid-summer-3",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/satyr-maid/summer/3.gif",
+          "runtimeAltFallback": "Зону обслуживания готовят к посетителям во время летней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/satyr-maid/shift/summer/default/candidate/satyr-maid-summer-3/alt",
+            "en": "loc/presentation/job/satyr-maid/shift/summer/default/candidate/satyr-maid-summer-3/alt"
+          },
+          "alt": {
+            "ru": "Зону обслуживания готовят к посетителям во время летней смены.",
+            "en": "The service area is prepared for visitors during the summer shift."
+          }
+        }
+      ],
+      "staticFallback": "assets/stage-tavern.svg"
+    },
+    {
+      "careerId": "satyr-maid",
+      "presentationId": "job/satyr-maid/shift/autumn/default",
+      "poolVersion": 1,
+      "coverageStatus": "PLACEHOLDER",
+      "runtimeSlot": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "satyr-maid-autumn-1",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/satyr-maid/autumn/1.gif",
+              "alt": "Заказы разносят между столами во время осенней смены."
+            },
+            {
+              "key": "satyr-maid-autumn-2",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/satyr-maid/autumn/2.gif",
+              "alt": "Стол приводят в порядок после гостей во время осенней смены."
+            },
+            {
+              "key": "satyr-maid-autumn-3",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/satyr-maid/autumn/3.gif",
+              "alt": "Зону обслуживания готовят к посетителям во время осенней смены."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-tavern.svg",
+          "alt": "satyr-maid autumn static fallback"
+        }
+      },
+      "candidates": [
+        {
+          "key": "satyr-maid-autumn-1",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/satyr-maid/autumn/1.gif",
+          "runtimeAltFallback": "Заказы разносят между столами во время осенней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/satyr-maid/shift/autumn/default/candidate/satyr-maid-autumn-1/alt",
+            "en": "loc/presentation/job/satyr-maid/shift/autumn/default/candidate/satyr-maid-autumn-1/alt"
+          },
+          "alt": {
+            "ru": "Заказы разносят между столами во время осенней смены.",
+            "en": "Orders are carried between tables during the autumn shift."
+          }
+        },
+        {
+          "key": "satyr-maid-autumn-2",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/satyr-maid/autumn/2.gif",
+          "runtimeAltFallback": "Стол приводят в порядок после гостей во время осенней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/satyr-maid/shift/autumn/default/candidate/satyr-maid-autumn-2/alt",
+            "en": "loc/presentation/job/satyr-maid/shift/autumn/default/candidate/satyr-maid-autumn-2/alt"
+          },
+          "alt": {
+            "ru": "Стол приводят в порядок после гостей во время осенней смены.",
+            "en": "A table is reset after guests during the autumn shift."
+          }
+        },
+        {
+          "key": "satyr-maid-autumn-3",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/satyr-maid/autumn/3.gif",
+          "runtimeAltFallback": "Зону обслуживания готовят к посетителям во время осенней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/satyr-maid/shift/autumn/default/candidate/satyr-maid-autumn-3/alt",
+            "en": "loc/presentation/job/satyr-maid/shift/autumn/default/candidate/satyr-maid-autumn-3/alt"
+          },
+          "alt": {
+            "ru": "Зону обслуживания готовят к посетителям во время осенней смены.",
+            "en": "The service area is prepared for visitors during the autumn shift."
+          }
+        }
+      ],
+      "staticFallback": "assets/stage-tavern.svg"
+    },
+    {
+      "careerId": "satyr-maid",
+      "presentationId": "job/satyr-maid/shift/winter/default",
+      "poolVersion": 1,
+      "coverageStatus": "PLACEHOLDER",
+      "runtimeSlot": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "satyr-maid-winter-1",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/satyr-maid/winter/1.gif",
+              "alt": "Заказы разносят между столами во время зимней смены."
+            },
+            {
+              "key": "satyr-maid-winter-2",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/satyr-maid/winter/2.gif",
+              "alt": "Стол приводят в порядок после гостей во время зимней смены."
+            },
+            {
+              "key": "satyr-maid-winter-3",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/satyr-maid/winter/3.gif",
+              "alt": "Зону обслуживания готовят к посетителям во время зимней смены."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-tavern.svg",
+          "alt": "satyr-maid winter static fallback"
+        }
+      },
+      "candidates": [
+        {
+          "key": "satyr-maid-winter-1",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/satyr-maid/winter/1.gif",
+          "runtimeAltFallback": "Заказы разносят между столами во время зимней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/satyr-maid/shift/winter/default/candidate/satyr-maid-winter-1/alt",
+            "en": "loc/presentation/job/satyr-maid/shift/winter/default/candidate/satyr-maid-winter-1/alt"
+          },
+          "alt": {
+            "ru": "Заказы разносят между столами во время зимней смены.",
+            "en": "Orders are carried between tables during the winter shift."
+          }
+        },
+        {
+          "key": "satyr-maid-winter-2",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/satyr-maid/winter/2.gif",
+          "runtimeAltFallback": "Стол приводят в порядок после гостей во время зимней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/satyr-maid/shift/winter/default/candidate/satyr-maid-winter-2/alt",
+            "en": "loc/presentation/job/satyr-maid/shift/winter/default/candidate/satyr-maid-winter-2/alt"
+          },
+          "alt": {
+            "ru": "Стол приводят в порядок после гостей во время зимней смены.",
+            "en": "A table is reset after guests during the winter shift."
+          }
+        },
+        {
+          "key": "satyr-maid-winter-3",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/satyr-maid/winter/3.gif",
+          "runtimeAltFallback": "Зону обслуживания готовят к посетителям во время зимней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/satyr-maid/shift/winter/default/candidate/satyr-maid-winter-3/alt",
+            "en": "loc/presentation/job/satyr-maid/shift/winter/default/candidate/satyr-maid-winter-3/alt"
+          },
+          "alt": {
+            "ru": "Зону обслуживания готовят к посетителям во время зимней смены.",
+            "en": "The service area is prepared for visitors during the winter shift."
+          }
+        }
+      ],
+      "staticFallback": "assets/stage-tavern.svg"
+    },
+    {
+      "careerId": "undead-farm",
+      "presentationId": "job/undead-farm/shift/spring/default",
+      "poolVersion": 1,
+      "coverageStatus": "PLACEHOLDER",
+      "runtimeSlot": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "undead-farm-spring-1",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/undead-farm/spring/1.gif",
+              "alt": "Рабочий участок фермы обслуживают во время весенней смены."
+            },
+            {
+              "key": "undead-farm-spring-2",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/undead-farm/spring/2.gif",
+              "alt": "Собранные материалы сортируют во время весенней смены."
+            },
+            {
+              "key": "undead-farm-spring-3",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/undead-farm/spring/3.gif",
+              "alt": "Инструменты и рабочее место проверяют во время весенней смены."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-forest.svg",
+          "alt": "undead-farm spring static fallback"
+        }
+      },
+      "candidates": [
+        {
+          "key": "undead-farm-spring-1",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/undead-farm/spring/1.gif",
+          "runtimeAltFallback": "Рабочий участок фермы обслуживают во время весенней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/undead-farm/shift/spring/default/candidate/undead-farm-spring-1/alt",
+            "en": "loc/presentation/job/undead-farm/shift/spring/default/candidate/undead-farm-spring-1/alt"
+          },
+          "alt": {
+            "ru": "Рабочий участок фермы обслуживают во время весенней смены.",
+            "en": "A farm work area is tended during the spring shift."
+          }
+        },
+        {
+          "key": "undead-farm-spring-2",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/undead-farm/spring/2.gif",
+          "runtimeAltFallback": "Собранные материалы сортируют во время весенней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/undead-farm/shift/spring/default/candidate/undead-farm-spring-2/alt",
+            "en": "loc/presentation/job/undead-farm/shift/spring/default/candidate/undead-farm-spring-2/alt"
+          },
+          "alt": {
+            "ru": "Собранные материалы сортируют во время весенней смены.",
+            "en": "Gathered materials are sorted during the spring shift."
+          }
+        },
+        {
+          "key": "undead-farm-spring-3",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/undead-farm/spring/3.gif",
+          "runtimeAltFallback": "Инструменты и рабочее место проверяют во время весенней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/undead-farm/shift/spring/default/candidate/undead-farm-spring-3/alt",
+            "en": "loc/presentation/job/undead-farm/shift/spring/default/candidate/undead-farm-spring-3/alt"
+          },
+          "alt": {
+            "ru": "Инструменты и рабочее место проверяют во время весенней смены.",
+            "en": "Tools and the work area are checked during the spring shift."
+          }
+        }
+      ],
+      "staticFallback": "assets/stage-forest.svg"
+    },
+    {
+      "careerId": "undead-farm",
+      "presentationId": "job/undead-farm/shift/summer/default",
+      "poolVersion": 1,
+      "coverageStatus": "PLACEHOLDER",
+      "runtimeSlot": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "undead-farm-summer-1",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/undead-farm/summer/1.gif",
+              "alt": "Рабочий участок фермы обслуживают во время летней смены."
+            },
+            {
+              "key": "undead-farm-summer-2",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/undead-farm/summer/2.gif",
+              "alt": "Собранные материалы сортируют во время летней смены."
+            },
+            {
+              "key": "undead-farm-summer-3",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/undead-farm/summer/3.gif",
+              "alt": "Инструменты и рабочее место проверяют во время летней смены."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-forest.svg",
+          "alt": "undead-farm summer static fallback"
+        }
+      },
+      "candidates": [
+        {
+          "key": "undead-farm-summer-1",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/undead-farm/summer/1.gif",
+          "runtimeAltFallback": "Рабочий участок фермы обслуживают во время летней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/undead-farm/shift/summer/default/candidate/undead-farm-summer-1/alt",
+            "en": "loc/presentation/job/undead-farm/shift/summer/default/candidate/undead-farm-summer-1/alt"
+          },
+          "alt": {
+            "ru": "Рабочий участок фермы обслуживают во время летней смены.",
+            "en": "A farm work area is tended during the summer shift."
+          }
+        },
+        {
+          "key": "undead-farm-summer-2",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/undead-farm/summer/2.gif",
+          "runtimeAltFallback": "Собранные материалы сортируют во время летней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/undead-farm/shift/summer/default/candidate/undead-farm-summer-2/alt",
+            "en": "loc/presentation/job/undead-farm/shift/summer/default/candidate/undead-farm-summer-2/alt"
+          },
+          "alt": {
+            "ru": "Собранные материалы сортируют во время летней смены.",
+            "en": "Gathered materials are sorted during the summer shift."
+          }
+        },
+        {
+          "key": "undead-farm-summer-3",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/undead-farm/summer/3.gif",
+          "runtimeAltFallback": "Инструменты и рабочее место проверяют во время летней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/undead-farm/shift/summer/default/candidate/undead-farm-summer-3/alt",
+            "en": "loc/presentation/job/undead-farm/shift/summer/default/candidate/undead-farm-summer-3/alt"
+          },
+          "alt": {
+            "ru": "Инструменты и рабочее место проверяют во время летней смены.",
+            "en": "Tools and the work area are checked during the summer shift."
+          }
+        }
+      ],
+      "staticFallback": "assets/stage-forest.svg"
+    },
+    {
+      "careerId": "undead-farm",
+      "presentationId": "job/undead-farm/shift/autumn/default",
+      "poolVersion": 1,
+      "coverageStatus": "PLACEHOLDER",
+      "runtimeSlot": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "undead-farm-autumn-1",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/undead-farm/autumn/1.gif",
+              "alt": "Рабочий участок фермы обслуживают во время осенней смены."
+            },
+            {
+              "key": "undead-farm-autumn-2",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/undead-farm/autumn/2.gif",
+              "alt": "Собранные материалы сортируют во время осенней смены."
+            },
+            {
+              "key": "undead-farm-autumn-3",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/undead-farm/autumn/3.gif",
+              "alt": "Инструменты и рабочее место проверяют во время осенней смены."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-forest.svg",
+          "alt": "undead-farm autumn static fallback"
+        }
+      },
+      "candidates": [
+        {
+          "key": "undead-farm-autumn-1",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/undead-farm/autumn/1.gif",
+          "runtimeAltFallback": "Рабочий участок фермы обслуживают во время осенней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/undead-farm/shift/autumn/default/candidate/undead-farm-autumn-1/alt",
+            "en": "loc/presentation/job/undead-farm/shift/autumn/default/candidate/undead-farm-autumn-1/alt"
+          },
+          "alt": {
+            "ru": "Рабочий участок фермы обслуживают во время осенней смены.",
+            "en": "A farm work area is tended during the autumn shift."
+          }
+        },
+        {
+          "key": "undead-farm-autumn-2",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/undead-farm/autumn/2.gif",
+          "runtimeAltFallback": "Собранные материалы сортируют во время осенней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/undead-farm/shift/autumn/default/candidate/undead-farm-autumn-2/alt",
+            "en": "loc/presentation/job/undead-farm/shift/autumn/default/candidate/undead-farm-autumn-2/alt"
+          },
+          "alt": {
+            "ru": "Собранные материалы сортируют во время осенней смены.",
+            "en": "Gathered materials are sorted during the autumn shift."
+          }
+        },
+        {
+          "key": "undead-farm-autumn-3",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/undead-farm/autumn/3.gif",
+          "runtimeAltFallback": "Инструменты и рабочее место проверяют во время осенней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/undead-farm/shift/autumn/default/candidate/undead-farm-autumn-3/alt",
+            "en": "loc/presentation/job/undead-farm/shift/autumn/default/candidate/undead-farm-autumn-3/alt"
+          },
+          "alt": {
+            "ru": "Инструменты и рабочее место проверяют во время осенней смены.",
+            "en": "Tools and the work area are checked during the autumn shift."
+          }
+        }
+      ],
+      "staticFallback": "assets/stage-forest.svg"
+    },
+    {
+      "careerId": "undead-farm",
+      "presentationId": "job/undead-farm/shift/winter/default",
+      "poolVersion": 1,
+      "coverageStatus": "PLACEHOLDER",
+      "runtimeSlot": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "undead-farm-winter-1",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/undead-farm/winter/1.gif",
+              "alt": "Рабочий участок фермы обслуживают во время зимней смены."
+            },
+            {
+              "key": "undead-farm-winter-2",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/undead-farm/winter/2.gif",
+              "alt": "Собранные материалы сортируют во время зимней смены."
+            },
+            {
+              "key": "undead-farm-winter-3",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/undead-farm/winter/3.gif",
+              "alt": "Инструменты и рабочее место проверяют во время зимней смены."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-forest.svg",
+          "alt": "undead-farm winter static fallback"
+        }
+      },
+      "candidates": [
+        {
+          "key": "undead-farm-winter-1",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/undead-farm/winter/1.gif",
+          "runtimeAltFallback": "Рабочий участок фермы обслуживают во время зимней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/undead-farm/shift/winter/default/candidate/undead-farm-winter-1/alt",
+            "en": "loc/presentation/job/undead-farm/shift/winter/default/candidate/undead-farm-winter-1/alt"
+          },
+          "alt": {
+            "ru": "Рабочий участок фермы обслуживают во время зимней смены.",
+            "en": "A farm work area is tended during the winter shift."
+          }
+        },
+        {
+          "key": "undead-farm-winter-2",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/undead-farm/winter/2.gif",
+          "runtimeAltFallback": "Собранные материалы сортируют во время зимней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/undead-farm/shift/winter/default/candidate/undead-farm-winter-2/alt",
+            "en": "loc/presentation/job/undead-farm/shift/winter/default/candidate/undead-farm-winter-2/alt"
+          },
+          "alt": {
+            "ru": "Собранные материалы сортируют во время зимней смены.",
+            "en": "Gathered materials are sorted during the winter shift."
+          }
+        },
+        {
+          "key": "undead-farm-winter-3",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/undead-farm/winter/3.gif",
+          "runtimeAltFallback": "Инструменты и рабочее место проверяют во время зимней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/undead-farm/shift/winter/default/candidate/undead-farm-winter-3/alt",
+            "en": "loc/presentation/job/undead-farm/shift/winter/default/candidate/undead-farm-winter-3/alt"
+          },
+          "alt": {
+            "ru": "Инструменты и рабочее место проверяют во время зимней смены.",
+            "en": "Tools and the work area are checked during the winter shift."
+          }
+        }
+      ],
+      "staticFallback": "assets/stage-forest.svg"
+    },
+    {
+      "careerId": "tavern",
+      "presentationId": "job/tavern/shift/spring/default",
+      "poolVersion": 1,
+      "coverageStatus": "PLACEHOLDER",
+      "runtimeSlot": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "tavern-spring-1",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/tavern/spring/1.gif",
+              "alt": "Столы обслуживают во время весенней смены в таверне."
+            },
+            {
+              "key": "tavern-spring-2",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/tavern/spring/2.gif",
+              "alt": "Зал убирают и готовят к гостям во время весенней смены."
+            },
+            {
+              "key": "tavern-spring-3",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/tavern/spring/3.gif",
+              "alt": "Припасы переносят во время весенней смены в таверне."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-tavern.svg",
+          "alt": "tavern spring static fallback"
+        }
+      },
+      "candidates": [
+        {
+          "key": "tavern-spring-1",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/tavern/spring/1.gif",
+          "runtimeAltFallback": "Столы обслуживают во время весенней смены в таверне.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/tavern/shift/spring/default/candidate/tavern-spring-1/alt",
+            "en": "loc/presentation/job/tavern/shift/spring/default/candidate/tavern-spring-1/alt"
+          },
+          "alt": {
+            "ru": "Столы обслуживают во время весенней смены в таверне.",
+            "en": "Tables are served during the spring tavern shift."
+          }
+        },
+        {
+          "key": "tavern-spring-2",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/tavern/spring/2.gif",
+          "runtimeAltFallback": "Зал убирают и готовят к гостям во время весенней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/tavern/shift/spring/default/candidate/tavern-spring-2/alt",
+            "en": "loc/presentation/job/tavern/shift/spring/default/candidate/tavern-spring-2/alt"
+          },
+          "alt": {
+            "ru": "Зал убирают и готовят к гостям во время весенней смены.",
+            "en": "The room is cleaned and prepared for guests during the spring shift."
+          }
+        },
+        {
+          "key": "tavern-spring-3",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/tavern/spring/3.gif",
+          "runtimeAltFallback": "Припасы переносят во время весенней смены в таверне.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/tavern/shift/spring/default/candidate/tavern-spring-3/alt",
+            "en": "loc/presentation/job/tavern/shift/spring/default/candidate/tavern-spring-3/alt"
+          },
+          "alt": {
+            "ru": "Припасы переносят во время весенней смены в таверне.",
+            "en": "Supplies are moved during the spring tavern shift."
+          }
+        }
+      ],
+      "staticFallback": "assets/stage-tavern.svg"
+    },
+    {
+      "careerId": "tavern",
+      "presentationId": "job/tavern/shift/summer/default",
+      "poolVersion": 1,
+      "coverageStatus": "PLACEHOLDER",
+      "runtimeSlot": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "tavern-summer-1",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/tavern/summer/1.gif",
+              "alt": "Столы обслуживают во время летней смены в таверне."
+            },
+            {
+              "key": "tavern-summer-2",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/tavern/summer/2.gif",
+              "alt": "Зал убирают и готовят к гостям во время летней смены."
+            },
+            {
+              "key": "tavern-summer-3",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/tavern/summer/3.gif",
+              "alt": "Припасы переносят во время летней смены в таверне."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-tavern.svg",
+          "alt": "tavern summer static fallback"
+        }
+      },
+      "candidates": [
+        {
+          "key": "tavern-summer-1",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/tavern/summer/1.gif",
+          "runtimeAltFallback": "Столы обслуживают во время летней смены в таверне.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/tavern/shift/summer/default/candidate/tavern-summer-1/alt",
+            "en": "loc/presentation/job/tavern/shift/summer/default/candidate/tavern-summer-1/alt"
+          },
+          "alt": {
+            "ru": "Столы обслуживают во время летней смены в таверне.",
+            "en": "Tables are served during the summer tavern shift."
+          }
+        },
+        {
+          "key": "tavern-summer-2",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/tavern/summer/2.gif",
+          "runtimeAltFallback": "Зал убирают и готовят к гостям во время летней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/tavern/shift/summer/default/candidate/tavern-summer-2/alt",
+            "en": "loc/presentation/job/tavern/shift/summer/default/candidate/tavern-summer-2/alt"
+          },
+          "alt": {
+            "ru": "Зал убирают и готовят к гостям во время летней смены.",
+            "en": "The room is cleaned and prepared for guests during the summer shift."
+          }
+        },
+        {
+          "key": "tavern-summer-3",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/tavern/summer/3.gif",
+          "runtimeAltFallback": "Припасы переносят во время летней смены в таверне.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/tavern/shift/summer/default/candidate/tavern-summer-3/alt",
+            "en": "loc/presentation/job/tavern/shift/summer/default/candidate/tavern-summer-3/alt"
+          },
+          "alt": {
+            "ru": "Припасы переносят во время летней смены в таверне.",
+            "en": "Supplies are moved during the summer tavern shift."
+          }
+        }
+      ],
+      "staticFallback": "assets/stage-tavern.svg"
+    },
+    {
+      "careerId": "tavern",
+      "presentationId": "job/tavern/shift/autumn/default",
+      "poolVersion": 1,
+      "coverageStatus": "PLACEHOLDER",
+      "runtimeSlot": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "tavern-autumn-1",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/tavern/autumn/1.gif",
+              "alt": "Столы обслуживают во время осенней смены в таверне."
+            },
+            {
+              "key": "tavern-autumn-2",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/tavern/autumn/2.gif",
+              "alt": "Зал убирают и готовят к гостям во время осенней смены."
+            },
+            {
+              "key": "tavern-autumn-3",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/tavern/autumn/3.gif",
+              "alt": "Припасы переносят во время осенней смены в таверне."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-tavern.svg",
+          "alt": "tavern autumn static fallback"
+        }
+      },
+      "candidates": [
+        {
+          "key": "tavern-autumn-1",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/tavern/autumn/1.gif",
+          "runtimeAltFallback": "Столы обслуживают во время осенней смены в таверне.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/tavern/shift/autumn/default/candidate/tavern-autumn-1/alt",
+            "en": "loc/presentation/job/tavern/shift/autumn/default/candidate/tavern-autumn-1/alt"
+          },
+          "alt": {
+            "ru": "Столы обслуживают во время осенней смены в таверне.",
+            "en": "Tables are served during the autumn tavern shift."
+          }
+        },
+        {
+          "key": "tavern-autumn-2",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/tavern/autumn/2.gif",
+          "runtimeAltFallback": "Зал убирают и готовят к гостям во время осенней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/tavern/shift/autumn/default/candidate/tavern-autumn-2/alt",
+            "en": "loc/presentation/job/tavern/shift/autumn/default/candidate/tavern-autumn-2/alt"
+          },
+          "alt": {
+            "ru": "Зал убирают и готовят к гостям во время осенней смены.",
+            "en": "The room is cleaned and prepared for guests during the autumn shift."
+          }
+        },
+        {
+          "key": "tavern-autumn-3",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/tavern/autumn/3.gif",
+          "runtimeAltFallback": "Припасы переносят во время осенней смены в таверне.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/tavern/shift/autumn/default/candidate/tavern-autumn-3/alt",
+            "en": "loc/presentation/job/tavern/shift/autumn/default/candidate/tavern-autumn-3/alt"
+          },
+          "alt": {
+            "ru": "Припасы переносят во время осенней смены в таверне.",
+            "en": "Supplies are moved during the autumn tavern shift."
+          }
+        }
+      ],
+      "staticFallback": "assets/stage-tavern.svg"
+    },
+    {
+      "careerId": "tavern",
+      "presentationId": "job/tavern/shift/winter/default",
+      "poolVersion": 1,
+      "coverageStatus": "PLACEHOLDER",
+      "runtimeSlot": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "tavern-winter-1",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/tavern/winter/1.gif",
+              "alt": "Столы обслуживают во время зимней смены в таверне."
+            },
+            {
+              "key": "tavern-winter-2",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/tavern/winter/2.gif",
+              "alt": "Зал убирают и готовят к гостям во время зимней смены."
+            },
+            {
+              "key": "tavern-winter-3",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/tavern/winter/3.gif",
+              "alt": "Припасы переносят во время зимней смены в таверне."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-tavern.svg",
+          "alt": "tavern winter static fallback"
+        }
+      },
+      "candidates": [
+        {
+          "key": "tavern-winter-1",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/tavern/winter/1.gif",
+          "runtimeAltFallback": "Столы обслуживают во время зимней смены в таверне.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/tavern/shift/winter/default/candidate/tavern-winter-1/alt",
+            "en": "loc/presentation/job/tavern/shift/winter/default/candidate/tavern-winter-1/alt"
+          },
+          "alt": {
+            "ru": "Столы обслуживают во время зимней смены в таверне.",
+            "en": "Tables are served during the winter tavern shift."
+          }
+        },
+        {
+          "key": "tavern-winter-2",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/tavern/winter/2.gif",
+          "runtimeAltFallback": "Зал убирают и готовят к гостям во время зимней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/tavern/shift/winter/default/candidate/tavern-winter-2/alt",
+            "en": "loc/presentation/job/tavern/shift/winter/default/candidate/tavern-winter-2/alt"
+          },
+          "alt": {
+            "ru": "Зал убирают и готовят к гостям во время зимней смены.",
+            "en": "The room is cleaned and prepared for guests during the winter shift."
+          }
+        },
+        {
+          "key": "tavern-winter-3",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/tavern/winter/3.gif",
+          "runtimeAltFallback": "Припасы переносят во время зимней смены в таверне.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/tavern/shift/winter/default/candidate/tavern-winter-3/alt",
+            "en": "loc/presentation/job/tavern/shift/winter/default/candidate/tavern-winter-3/alt"
+          },
+          "alt": {
+            "ru": "Припасы переносят во время зимней смены в таверне.",
+            "en": "Supplies are moved during the winter tavern shift."
+          }
+        }
+      ],
+      "staticFallback": "assets/stage-tavern.svg"
+    },
+    {
+      "careerId": "hunter",
+      "presentationId": "job/hunter/shift/spring/default",
+      "poolVersion": 1,
+      "coverageStatus": "PLACEHOLDER",
+      "runtimeSlot": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "hunter-spring-1",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/hunter/spring/1.gif",
+              "alt": "Следы проверяют на обычном маршруте во время весенней охотничьей смены."
+            },
+            {
+              "key": "hunter-spring-2",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/hunter/spring/2.gif",
+              "alt": "Полевое снаряжение проверяют во время весенней смены."
+            },
+            {
+              "key": "hunter-spring-3",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/hunter/spring/3.gif",
+              "alt": "Обычные материалы несут по местному маршруту во время весенней смены."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-forest.svg",
+          "alt": "hunter spring static fallback"
+        }
+      },
+      "candidates": [
+        {
+          "key": "hunter-spring-1",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/hunter/spring/1.gif",
+          "runtimeAltFallback": "Следы проверяют на обычном маршруте во время весенней охотничьей смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/hunter/shift/spring/default/candidate/hunter-spring-1/alt",
+            "en": "loc/presentation/job/hunter/shift/spring/default/candidate/hunter-spring-1/alt"
+          },
+          "alt": {
+            "ru": "Следы проверяют на обычном маршруте во время весенней охотничьей смены.",
+            "en": "Tracks are checked along an ordinary route during the spring hunter shift."
+          }
+        },
+        {
+          "key": "hunter-spring-2",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/hunter/spring/2.gif",
+          "runtimeAltFallback": "Полевое снаряжение проверяют во время весенней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/hunter/shift/spring/default/candidate/hunter-spring-2/alt",
+            "en": "loc/presentation/job/hunter/shift/spring/default/candidate/hunter-spring-2/alt"
+          },
+          "alt": {
+            "ru": "Полевое снаряжение проверяют во время весенней смены.",
+            "en": "Field gear is checked during the spring shift."
+          }
+        },
+        {
+          "key": "hunter-spring-3",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/hunter/spring/3.gif",
+          "runtimeAltFallback": "Обычные материалы несут по местному маршруту во время весенней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/hunter/shift/spring/default/candidate/hunter-spring-3/alt",
+            "en": "loc/presentation/job/hunter/shift/spring/default/candidate/hunter-spring-3/alt"
+          },
+          "alt": {
+            "ru": "Обычные материалы несут по местному маршруту во время весенней смены.",
+            "en": "Ordinary materials are carried along a local route during the spring shift."
+          }
+        }
+      ],
+      "staticFallback": "assets/stage-forest.svg"
+    },
+    {
+      "careerId": "hunter",
+      "presentationId": "job/hunter/shift/summer/default",
+      "poolVersion": 1,
+      "coverageStatus": "PLACEHOLDER",
+      "runtimeSlot": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "hunter-summer-1",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/hunter/summer/1.gif",
+              "alt": "Следы проверяют на обычном маршруте во время летней охотничьей смены."
+            },
+            {
+              "key": "hunter-summer-2",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/hunter/summer/2.gif",
+              "alt": "Полевое снаряжение проверяют во время летней смены."
+            },
+            {
+              "key": "hunter-summer-3",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/hunter/summer/3.gif",
+              "alt": "Обычные материалы несут по местному маршруту во время летней смены."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-forest.svg",
+          "alt": "hunter summer static fallback"
+        }
+      },
+      "candidates": [
+        {
+          "key": "hunter-summer-1",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/hunter/summer/1.gif",
+          "runtimeAltFallback": "Следы проверяют на обычном маршруте во время летней охотничьей смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/hunter/shift/summer/default/candidate/hunter-summer-1/alt",
+            "en": "loc/presentation/job/hunter/shift/summer/default/candidate/hunter-summer-1/alt"
+          },
+          "alt": {
+            "ru": "Следы проверяют на обычном маршруте во время летней охотничьей смены.",
+            "en": "Tracks are checked along an ordinary route during the summer hunter shift."
+          }
+        },
+        {
+          "key": "hunter-summer-2",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/hunter/summer/2.gif",
+          "runtimeAltFallback": "Полевое снаряжение проверяют во время летней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/hunter/shift/summer/default/candidate/hunter-summer-2/alt",
+            "en": "loc/presentation/job/hunter/shift/summer/default/candidate/hunter-summer-2/alt"
+          },
+          "alt": {
+            "ru": "Полевое снаряжение проверяют во время летней смены.",
+            "en": "Field gear is checked during the summer shift."
+          }
+        },
+        {
+          "key": "hunter-summer-3",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/hunter/summer/3.gif",
+          "runtimeAltFallback": "Обычные материалы несут по местному маршруту во время летней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/hunter/shift/summer/default/candidate/hunter-summer-3/alt",
+            "en": "loc/presentation/job/hunter/shift/summer/default/candidate/hunter-summer-3/alt"
+          },
+          "alt": {
+            "ru": "Обычные материалы несут по местному маршруту во время летней смены.",
+            "en": "Ordinary materials are carried along a local route during the summer shift."
+          }
+        }
+      ],
+      "staticFallback": "assets/stage-forest.svg"
+    },
+    {
+      "careerId": "hunter",
+      "presentationId": "job/hunter/shift/autumn/default",
+      "poolVersion": 1,
+      "coverageStatus": "PLACEHOLDER",
+      "runtimeSlot": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "hunter-autumn-1",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/hunter/autumn/1.gif",
+              "alt": "Следы проверяют на обычном маршруте во время осенней охотничьей смены."
+            },
+            {
+              "key": "hunter-autumn-2",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/hunter/autumn/2.gif",
+              "alt": "Полевое снаряжение проверяют во время осенней смены."
+            },
+            {
+              "key": "hunter-autumn-3",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/hunter/autumn/3.gif",
+              "alt": "Обычные материалы несут по местному маршруту во время осенней смены."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-forest.svg",
+          "alt": "hunter autumn static fallback"
+        }
+      },
+      "candidates": [
+        {
+          "key": "hunter-autumn-1",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/hunter/autumn/1.gif",
+          "runtimeAltFallback": "Следы проверяют на обычном маршруте во время осенней охотничьей смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/hunter/shift/autumn/default/candidate/hunter-autumn-1/alt",
+            "en": "loc/presentation/job/hunter/shift/autumn/default/candidate/hunter-autumn-1/alt"
+          },
+          "alt": {
+            "ru": "Следы проверяют на обычном маршруте во время осенней охотничьей смены.",
+            "en": "Tracks are checked along an ordinary route during the autumn hunter shift."
+          }
+        },
+        {
+          "key": "hunter-autumn-2",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/hunter/autumn/2.gif",
+          "runtimeAltFallback": "Полевое снаряжение проверяют во время осенней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/hunter/shift/autumn/default/candidate/hunter-autumn-2/alt",
+            "en": "loc/presentation/job/hunter/shift/autumn/default/candidate/hunter-autumn-2/alt"
+          },
+          "alt": {
+            "ru": "Полевое снаряжение проверяют во время осенней смены.",
+            "en": "Field gear is checked during the autumn shift."
+          }
+        },
+        {
+          "key": "hunter-autumn-3",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/hunter/autumn/3.gif",
+          "runtimeAltFallback": "Обычные материалы несут по местному маршруту во время осенней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/hunter/shift/autumn/default/candidate/hunter-autumn-3/alt",
+            "en": "loc/presentation/job/hunter/shift/autumn/default/candidate/hunter-autumn-3/alt"
+          },
+          "alt": {
+            "ru": "Обычные материалы несут по местному маршруту во время осенней смены.",
+            "en": "Ordinary materials are carried along a local route during the autumn shift."
+          }
+        }
+      ],
+      "staticFallback": "assets/stage-forest.svg"
+    },
+    {
+      "careerId": "hunter",
+      "presentationId": "job/hunter/shift/winter/default",
+      "poolVersion": 1,
+      "coverageStatus": "PLACEHOLDER",
+      "runtimeSlot": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "hunter-winter-1",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/hunter/winter/1.gif",
+              "alt": "Следы проверяют на обычном маршруте во время зимней охотничьей смены."
+            },
+            {
+              "key": "hunter-winter-2",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/hunter/winter/2.gif",
+              "alt": "Полевое снаряжение проверяют во время зимней смены."
+            },
+            {
+              "key": "hunter-winter-3",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/hunter/winter/3.gif",
+              "alt": "Обычные материалы несут по местному маршруту во время зимней смены."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-forest.svg",
+          "alt": "hunter winter static fallback"
+        }
+      },
+      "candidates": [
+        {
+          "key": "hunter-winter-1",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/hunter/winter/1.gif",
+          "runtimeAltFallback": "Следы проверяют на обычном маршруте во время зимней охотничьей смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/hunter/shift/winter/default/candidate/hunter-winter-1/alt",
+            "en": "loc/presentation/job/hunter/shift/winter/default/candidate/hunter-winter-1/alt"
+          },
+          "alt": {
+            "ru": "Следы проверяют на обычном маршруте во время зимней охотничьей смены.",
+            "en": "Tracks are checked along an ordinary route during the winter hunter shift."
+          }
+        },
+        {
+          "key": "hunter-winter-2",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/hunter/winter/2.gif",
+          "runtimeAltFallback": "Полевое снаряжение проверяют во время зимней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/hunter/shift/winter/default/candidate/hunter-winter-2/alt",
+            "en": "loc/presentation/job/hunter/shift/winter/default/candidate/hunter-winter-2/alt"
+          },
+          "alt": {
+            "ru": "Полевое снаряжение проверяют во время зимней смены.",
+            "en": "Field gear is checked during the winter shift."
+          }
+        },
+        {
+          "key": "hunter-winter-3",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/hunter/winter/3.gif",
+          "runtimeAltFallback": "Обычные материалы несут по местному маршруту во время зимней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/hunter/shift/winter/default/candidate/hunter-winter-3/alt",
+            "en": "loc/presentation/job/hunter/shift/winter/default/candidate/hunter-winter-3/alt"
+          },
+          "alt": {
+            "ru": "Обычные материалы несут по местному маршруту во время зимней смены.",
+            "en": "Ordinary materials are carried along a local route during the winter shift."
+          }
+        }
+      ],
+      "staticFallback": "assets/stage-forest.svg"
+    },
+    {
+      "careerId": "guard",
+      "presentationId": "job/guard/shift/spring/default",
+      "poolVersion": 1,
+      "coverageStatus": "PLACEHOLDER",
+      "runtimeSlot": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "guard-spring-1",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/guard/spring/1.gif",
+              "alt": "Стража проходит городской патруль во время весенней смены."
+            },
+            {
+              "key": "guard-spring-2",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/guard/spring/2.gif",
+              "alt": "На городском посту несут дежурство во время весенней смены."
+            },
+            {
+              "key": "guard-spring-3",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/guard/spring/3.gif",
+              "alt": "Обычный проход проверяют во время весенней смены без конфликта."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-town.svg",
+          "alt": "guard spring static fallback"
+        }
+      },
+      "candidates": [
+        {
+          "key": "guard-spring-1",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/guard/spring/1.gif",
+          "runtimeAltFallback": "Стража проходит городской патруль во время весенней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/guard/shift/spring/default/candidate/guard-spring-1/alt",
+            "en": "loc/presentation/job/guard/shift/spring/default/candidate/guard-spring-1/alt"
+          },
+          "alt": {
+            "ru": "Стража проходит городской патруль во время весенней смены.",
+            "en": "A guard walks a city patrol during the spring shift."
+          }
+        },
+        {
+          "key": "guard-spring-2",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/guard/spring/2.gif",
+          "runtimeAltFallback": "На городском посту несут дежурство во время весенней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/guard/shift/spring/default/candidate/guard-spring-2/alt",
+            "en": "loc/presentation/job/guard/shift/spring/default/candidate/guard-spring-2/alt"
+          },
+          "alt": {
+            "ru": "На городском посту несут дежурство во время весенней смены.",
+            "en": "Watch duty continues at a city post during the spring shift."
+          }
+        },
+        {
+          "key": "guard-spring-3",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/guard/spring/3.gif",
+          "runtimeAltFallback": "Обычный проход проверяют во время весенней смены без конфликта.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/guard/shift/spring/default/candidate/guard-spring-3/alt",
+            "en": "loc/presentation/job/guard/shift/spring/default/candidate/guard-spring-3/alt"
+          },
+          "alt": {
+            "ru": "Обычный проход проверяют во время весенней смены без конфликта.",
+            "en": "An ordinary passage is checked during the spring shift without conflict."
+          }
+        }
+      ],
+      "staticFallback": "assets/stage-town.svg"
+    },
+    {
+      "careerId": "guard",
+      "presentationId": "job/guard/shift/summer/default",
+      "poolVersion": 1,
+      "coverageStatus": "PLACEHOLDER",
+      "runtimeSlot": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "guard-summer-1",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/guard/summer/1.gif",
+              "alt": "Стража проходит городской патруль во время летней смены."
+            },
+            {
+              "key": "guard-summer-2",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/guard/summer/2.gif",
+              "alt": "На городском посту несут дежурство во время летней смены."
+            },
+            {
+              "key": "guard-summer-3",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/guard/summer/3.gif",
+              "alt": "Обычный проход проверяют во время летней смены без конфликта."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-town.svg",
+          "alt": "guard summer static fallback"
+        }
+      },
+      "candidates": [
+        {
+          "key": "guard-summer-1",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/guard/summer/1.gif",
+          "runtimeAltFallback": "Стража проходит городской патруль во время летней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/guard/shift/summer/default/candidate/guard-summer-1/alt",
+            "en": "loc/presentation/job/guard/shift/summer/default/candidate/guard-summer-1/alt"
+          },
+          "alt": {
+            "ru": "Стража проходит городской патруль во время летней смены.",
+            "en": "A guard walks a city patrol during the summer shift."
+          }
+        },
+        {
+          "key": "guard-summer-2",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/guard/summer/2.gif",
+          "runtimeAltFallback": "На городском посту несут дежурство во время летней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/guard/shift/summer/default/candidate/guard-summer-2/alt",
+            "en": "loc/presentation/job/guard/shift/summer/default/candidate/guard-summer-2/alt"
+          },
+          "alt": {
+            "ru": "На городском посту несут дежурство во время летней смены.",
+            "en": "Watch duty continues at a city post during the summer shift."
+          }
+        },
+        {
+          "key": "guard-summer-3",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/guard/summer/3.gif",
+          "runtimeAltFallback": "Обычный проход проверяют во время летней смены без конфликта.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/guard/shift/summer/default/candidate/guard-summer-3/alt",
+            "en": "loc/presentation/job/guard/shift/summer/default/candidate/guard-summer-3/alt"
+          },
+          "alt": {
+            "ru": "Обычный проход проверяют во время летней смены без конфликта.",
+            "en": "An ordinary passage is checked during the summer shift without conflict."
+          }
+        }
+      ],
+      "staticFallback": "assets/stage-town.svg"
+    },
+    {
+      "careerId": "guard",
+      "presentationId": "job/guard/shift/autumn/default",
+      "poolVersion": 1,
+      "coverageStatus": "PLACEHOLDER",
+      "runtimeSlot": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "guard-autumn-1",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/guard/autumn/1.gif",
+              "alt": "Стража проходит городской патруль во время осенней смены."
+            },
+            {
+              "key": "guard-autumn-2",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/guard/autumn/2.gif",
+              "alt": "На городском посту несут дежурство во время осенней смены."
+            },
+            {
+              "key": "guard-autumn-3",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/guard/autumn/3.gif",
+              "alt": "Обычный проход проверяют во время осенней смены без конфликта."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-town.svg",
+          "alt": "guard autumn static fallback"
+        }
+      },
+      "candidates": [
+        {
+          "key": "guard-autumn-1",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/guard/autumn/1.gif",
+          "runtimeAltFallback": "Стража проходит городской патруль во время осенней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/guard/shift/autumn/default/candidate/guard-autumn-1/alt",
+            "en": "loc/presentation/job/guard/shift/autumn/default/candidate/guard-autumn-1/alt"
+          },
+          "alt": {
+            "ru": "Стража проходит городской патруль во время осенней смены.",
+            "en": "A guard walks a city patrol during the autumn shift."
+          }
+        },
+        {
+          "key": "guard-autumn-2",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/guard/autumn/2.gif",
+          "runtimeAltFallback": "На городском посту несут дежурство во время осенней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/guard/shift/autumn/default/candidate/guard-autumn-2/alt",
+            "en": "loc/presentation/job/guard/shift/autumn/default/candidate/guard-autumn-2/alt"
+          },
+          "alt": {
+            "ru": "На городском посту несут дежурство во время осенней смены.",
+            "en": "Watch duty continues at a city post during the autumn shift."
+          }
+        },
+        {
+          "key": "guard-autumn-3",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/guard/autumn/3.gif",
+          "runtimeAltFallback": "Обычный проход проверяют во время осенней смены без конфликта.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/guard/shift/autumn/default/candidate/guard-autumn-3/alt",
+            "en": "loc/presentation/job/guard/shift/autumn/default/candidate/guard-autumn-3/alt"
+          },
+          "alt": {
+            "ru": "Обычный проход проверяют во время осенней смены без конфликта.",
+            "en": "An ordinary passage is checked during the autumn shift without conflict."
+          }
+        }
+      ],
+      "staticFallback": "assets/stage-town.svg"
+    },
+    {
+      "careerId": "guard",
+      "presentationId": "job/guard/shift/winter/default",
+      "poolVersion": 1,
+      "coverageStatus": "PLACEHOLDER",
+      "runtimeSlot": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "guard-winter-1",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/guard/winter/1.gif",
+              "alt": "Стража проходит городской патруль во время зимней смены."
+            },
+            {
+              "key": "guard-winter-2",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/guard/winter/2.gif",
+              "alt": "На городском посту несут дежурство во время зимней смены."
+            },
+            {
+              "key": "guard-winter-3",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/guard/winter/3.gif",
+              "alt": "Обычный проход проверяют во время зимней смены без конфликта."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-town.svg",
+          "alt": "guard winter static fallback"
+        }
+      },
+      "candidates": [
+        {
+          "key": "guard-winter-1",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/guard/winter/1.gif",
+          "runtimeAltFallback": "Стража проходит городской патруль во время зимней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/guard/shift/winter/default/candidate/guard-winter-1/alt",
+            "en": "loc/presentation/job/guard/shift/winter/default/candidate/guard-winter-1/alt"
+          },
+          "alt": {
+            "ru": "Стража проходит городской патруль во время зимней смены.",
+            "en": "A guard walks a city patrol during the winter shift."
+          }
+        },
+        {
+          "key": "guard-winter-2",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/guard/winter/2.gif",
+          "runtimeAltFallback": "На городском посту несут дежурство во время зимней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/guard/shift/winter/default/candidate/guard-winter-2/alt",
+            "en": "loc/presentation/job/guard/shift/winter/default/candidate/guard-winter-2/alt"
+          },
+          "alt": {
+            "ru": "На городском посту несут дежурство во время зимней смены.",
+            "en": "Watch duty continues at a city post during the winter shift."
+          }
+        },
+        {
+          "key": "guard-winter-3",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/guard/winter/3.gif",
+          "runtimeAltFallback": "Обычный проход проверяют во время зимней смены без конфликта.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/guard/shift/winter/default/candidate/guard-winter-3/alt",
+            "en": "loc/presentation/job/guard/shift/winter/default/candidate/guard-winter-3/alt"
+          },
+          "alt": {
+            "ru": "Обычный проход проверяют во время зимней смены без конфликта.",
+            "en": "An ordinary passage is checked during the winter shift without conflict."
+          }
+        }
+      ],
+      "staticFallback": "assets/stage-town.svg"
+    },
+    {
+      "careerId": "merchant",
+      "presentationId": "job/merchant/shift/spring/default",
+      "poolVersion": 1,
+      "coverageStatus": "PLACEHOLDER",
+      "runtimeSlot": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "merchant-spring-1",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/merchant/spring/1.gif",
+              "alt": "Обычные товары проверяют во время весенней торговой смены."
+            },
+            {
+              "key": "merchant-spring-2",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/merchant/spring/2.gif",
+              "alt": "Товар готовят к торговле во время весенней смены."
+            },
+            {
+              "key": "merchant-spring-3",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/merchant/spring/3.gif",
+              "alt": "Обычную посылку готовят к передаче во время весенней смены."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-town.svg",
+          "alt": "merchant spring static fallback"
+        }
+      },
+      "candidates": [
+        {
+          "key": "merchant-spring-1",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/merchant/spring/1.gif",
+          "runtimeAltFallback": "Обычные товары проверяют во время весенней торговой смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/merchant/shift/spring/default/candidate/merchant-spring-1/alt",
+            "en": "loc/presentation/job/merchant/shift/spring/default/candidate/merchant-spring-1/alt"
+          },
+          "alt": {
+            "ru": "Обычные товары проверяют во время весенней торговой смены.",
+            "en": "Ordinary goods are checked during the spring merchant shift."
+          }
+        },
+        {
+          "key": "merchant-spring-2",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/merchant/spring/2.gif",
+          "runtimeAltFallback": "Товар готовят к торговле во время весенней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/merchant/shift/spring/default/candidate/merchant-spring-2/alt",
+            "en": "loc/presentation/job/merchant/shift/spring/default/candidate/merchant-spring-2/alt"
+          },
+          "alt": {
+            "ru": "Товар готовят к торговле во время весенней смены.",
+            "en": "Goods are prepared for trade during the spring shift."
+          }
+        },
+        {
+          "key": "merchant-spring-3",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/merchant/spring/3.gif",
+          "runtimeAltFallback": "Обычную посылку готовят к передаче во время весенней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/merchant/shift/spring/default/candidate/merchant-spring-3/alt",
+            "en": "loc/presentation/job/merchant/shift/spring/default/candidate/merchant-spring-3/alt"
+          },
+          "alt": {
+            "ru": "Обычную посылку готовят к передаче во время весенней смены.",
+            "en": "An ordinary parcel is prepared for handoff during the spring shift."
+          }
+        }
+      ],
+      "staticFallback": "assets/stage-town.svg"
+    },
+    {
+      "careerId": "merchant",
+      "presentationId": "job/merchant/shift/summer/default",
+      "poolVersion": 1,
+      "coverageStatus": "PLACEHOLDER",
+      "runtimeSlot": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "merchant-summer-1",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/merchant/summer/1.gif",
+              "alt": "Обычные товары проверяют во время летней торговой смены."
+            },
+            {
+              "key": "merchant-summer-2",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/merchant/summer/2.gif",
+              "alt": "Товар готовят к торговле во время летней смены."
+            },
+            {
+              "key": "merchant-summer-3",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/merchant/summer/3.gif",
+              "alt": "Обычную посылку готовят к передаче во время летней смены."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-town.svg",
+          "alt": "merchant summer static fallback"
+        }
+      },
+      "candidates": [
+        {
+          "key": "merchant-summer-1",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/merchant/summer/1.gif",
+          "runtimeAltFallback": "Обычные товары проверяют во время летней торговой смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/merchant/shift/summer/default/candidate/merchant-summer-1/alt",
+            "en": "loc/presentation/job/merchant/shift/summer/default/candidate/merchant-summer-1/alt"
+          },
+          "alt": {
+            "ru": "Обычные товары проверяют во время летней торговой смены.",
+            "en": "Ordinary goods are checked during the summer merchant shift."
+          }
+        },
+        {
+          "key": "merchant-summer-2",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/merchant/summer/2.gif",
+          "runtimeAltFallback": "Товар готовят к торговле во время летней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/merchant/shift/summer/default/candidate/merchant-summer-2/alt",
+            "en": "loc/presentation/job/merchant/shift/summer/default/candidate/merchant-summer-2/alt"
+          },
+          "alt": {
+            "ru": "Товар готовят к торговле во время летней смены.",
+            "en": "Goods are prepared for trade during the summer shift."
+          }
+        },
+        {
+          "key": "merchant-summer-3",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/merchant/summer/3.gif",
+          "runtimeAltFallback": "Обычную посылку готовят к передаче во время летней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/merchant/shift/summer/default/candidate/merchant-summer-3/alt",
+            "en": "loc/presentation/job/merchant/shift/summer/default/candidate/merchant-summer-3/alt"
+          },
+          "alt": {
+            "ru": "Обычную посылку готовят к передаче во время летней смены.",
+            "en": "An ordinary parcel is prepared for handoff during the summer shift."
+          }
+        }
+      ],
+      "staticFallback": "assets/stage-town.svg"
+    },
+    {
+      "careerId": "merchant",
+      "presentationId": "job/merchant/shift/autumn/default",
+      "poolVersion": 1,
+      "coverageStatus": "PLACEHOLDER",
+      "runtimeSlot": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "merchant-autumn-1",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/merchant/autumn/1.gif",
+              "alt": "Обычные товары проверяют во время осенней торговой смены."
+            },
+            {
+              "key": "merchant-autumn-2",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/merchant/autumn/2.gif",
+              "alt": "Товар готовят к торговле во время осенней смены."
+            },
+            {
+              "key": "merchant-autumn-3",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/merchant/autumn/3.gif",
+              "alt": "Обычную посылку готовят к передаче во время осенней смены."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-town.svg",
+          "alt": "merchant autumn static fallback"
+        }
+      },
+      "candidates": [
+        {
+          "key": "merchant-autumn-1",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/merchant/autumn/1.gif",
+          "runtimeAltFallback": "Обычные товары проверяют во время осенней торговой смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/merchant/shift/autumn/default/candidate/merchant-autumn-1/alt",
+            "en": "loc/presentation/job/merchant/shift/autumn/default/candidate/merchant-autumn-1/alt"
+          },
+          "alt": {
+            "ru": "Обычные товары проверяют во время осенней торговой смены.",
+            "en": "Ordinary goods are checked during the autumn merchant shift."
+          }
+        },
+        {
+          "key": "merchant-autumn-2",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/merchant/autumn/2.gif",
+          "runtimeAltFallback": "Товар готовят к торговле во время осенней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/merchant/shift/autumn/default/candidate/merchant-autumn-2/alt",
+            "en": "loc/presentation/job/merchant/shift/autumn/default/candidate/merchant-autumn-2/alt"
+          },
+          "alt": {
+            "ru": "Товар готовят к торговле во время осенней смены.",
+            "en": "Goods are prepared for trade during the autumn shift."
+          }
+        },
+        {
+          "key": "merchant-autumn-3",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/merchant/autumn/3.gif",
+          "runtimeAltFallback": "Обычную посылку готовят к передаче во время осенней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/merchant/shift/autumn/default/candidate/merchant-autumn-3/alt",
+            "en": "loc/presentation/job/merchant/shift/autumn/default/candidate/merchant-autumn-3/alt"
+          },
+          "alt": {
+            "ru": "Обычную посылку готовят к передаче во время осенней смены.",
+            "en": "An ordinary parcel is prepared for handoff during the autumn shift."
+          }
+        }
+      ],
+      "staticFallback": "assets/stage-town.svg"
+    },
+    {
+      "careerId": "merchant",
+      "presentationId": "job/merchant/shift/winter/default",
+      "poolVersion": 1,
+      "coverageStatus": "PLACEHOLDER",
+      "runtimeSlot": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "merchant-winter-1",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/merchant/winter/1.gif",
+              "alt": "Обычные товары проверяют во время зимней торговой смены."
+            },
+            {
+              "key": "merchant-winter-2",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/merchant/winter/2.gif",
+              "alt": "Товар готовят к торговле во время зимней смены."
+            },
+            {
+              "key": "merchant-winter-3",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/merchant/winter/3.gif",
+              "alt": "Обычную посылку готовят к передаче во время зимней смены."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-town.svg",
+          "alt": "merchant winter static fallback"
+        }
+      },
+      "candidates": [
+        {
+          "key": "merchant-winter-1",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/merchant/winter/1.gif",
+          "runtimeAltFallback": "Обычные товары проверяют во время зимней торговой смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/merchant/shift/winter/default/candidate/merchant-winter-1/alt",
+            "en": "loc/presentation/job/merchant/shift/winter/default/candidate/merchant-winter-1/alt"
+          },
+          "alt": {
+            "ru": "Обычные товары проверяют во время зимней торговой смены.",
+            "en": "Ordinary goods are checked during the winter merchant shift."
+          }
+        },
+        {
+          "key": "merchant-winter-2",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/merchant/winter/2.gif",
+          "runtimeAltFallback": "Товар готовят к торговле во время зимней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/merchant/shift/winter/default/candidate/merchant-winter-2/alt",
+            "en": "loc/presentation/job/merchant/shift/winter/default/candidate/merchant-winter-2/alt"
+          },
+          "alt": {
+            "ru": "Товар готовят к торговле во время зимней смены.",
+            "en": "Goods are prepared for trade during the winter shift."
+          }
+        },
+        {
+          "key": "merchant-winter-3",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/merchant/winter/3.gif",
+          "runtimeAltFallback": "Обычную посылку готовят к передаче во время зимней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/merchant/shift/winter/default/candidate/merchant-winter-3/alt",
+            "en": "loc/presentation/job/merchant/shift/winter/default/candidate/merchant-winter-3/alt"
+          },
+          "alt": {
+            "ru": "Обычную посылку готовят к передаче во время зимней смены.",
+            "en": "An ordinary parcel is prepared for handoff during the winter shift."
+          }
+        }
+      ],
+      "staticFallback": "assets/stage-town.svg"
+    },
+    {
+      "careerId": "artist-geisha",
+      "presentationId": "job/artist-geisha/shift/spring/default",
+      "poolVersion": 1,
+      "coverageStatus": "PLACEHOLDER",
+      "runtimeSlot": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "artist-geisha-spring-1",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/artist-geisha/spring/1.gif",
+              "alt": "Спокойная репетиция проходит во время весенней смены."
+            },
+            {
+              "key": "artist-geisha-spring-2",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/artist-geisha/spring/2.gif",
+              "alt": "Пространство готовят к выступлению во время весенней смены."
+            },
+            {
+              "key": "artist-geisha-spring-3",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/artist-geisha/spring/3.gif",
+              "alt": "Гостей встречают в нейтральной рабочей обстановке во время весенней смены."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-tavern.svg",
+          "alt": "artist-geisha spring static fallback"
+        }
+      },
+      "candidates": [
+        {
+          "key": "artist-geisha-spring-1",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/artist-geisha/spring/1.gif",
+          "runtimeAltFallback": "Спокойная репетиция проходит во время весенней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/artist-geisha/shift/spring/default/candidate/artist-geisha-spring-1/alt",
+            "en": "loc/presentation/job/artist-geisha/shift/spring/default/candidate/artist-geisha-spring-1/alt"
+          },
+          "alt": {
+            "ru": "Спокойная репетиция проходит во время весенней смены.",
+            "en": "A quiet rehearsal takes place during the spring shift."
+          }
+        },
+        {
+          "key": "artist-geisha-spring-2",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/artist-geisha/spring/2.gif",
+          "runtimeAltFallback": "Пространство готовят к выступлению во время весенней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/artist-geisha/shift/spring/default/candidate/artist-geisha-spring-2/alt",
+            "en": "loc/presentation/job/artist-geisha/shift/spring/default/candidate/artist-geisha-spring-2/alt"
+          },
+          "alt": {
+            "ru": "Пространство готовят к выступлению во время весенней смены.",
+            "en": "The space is prepared for a performance during the spring shift."
+          }
+        },
+        {
+          "key": "artist-geisha-spring-3",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/artist-geisha/spring/3.gif",
+          "runtimeAltFallback": "Гостей встречают в нейтральной рабочей обстановке во время весенней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/artist-geisha/shift/spring/default/candidate/artist-geisha-spring-3/alt",
+            "en": "loc/presentation/job/artist-geisha/shift/spring/default/candidate/artist-geisha-spring-3/alt"
+          },
+          "alt": {
+            "ru": "Гостей встречают в нейтральной рабочей обстановке во время весенней смены.",
+            "en": "Guests are received in a neutral work setting during the spring shift."
+          }
+        }
+      ],
+      "staticFallback": "assets/stage-tavern.svg"
+    },
+    {
+      "careerId": "artist-geisha",
+      "presentationId": "job/artist-geisha/shift/summer/default",
+      "poolVersion": 1,
+      "coverageStatus": "PLACEHOLDER",
+      "runtimeSlot": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "artist-geisha-summer-1",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/artist-geisha/summer/1.gif",
+              "alt": "Спокойная репетиция проходит во время летней смены."
+            },
+            {
+              "key": "artist-geisha-summer-2",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/artist-geisha/summer/2.gif",
+              "alt": "Пространство готовят к выступлению во время летней смены."
+            },
+            {
+              "key": "artist-geisha-summer-3",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/artist-geisha/summer/3.gif",
+              "alt": "Гостей встречают в нейтральной рабочей обстановке во время летней смены."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-tavern.svg",
+          "alt": "artist-geisha summer static fallback"
+        }
+      },
+      "candidates": [
+        {
+          "key": "artist-geisha-summer-1",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/artist-geisha/summer/1.gif",
+          "runtimeAltFallback": "Спокойная репетиция проходит во время летней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/artist-geisha/shift/summer/default/candidate/artist-geisha-summer-1/alt",
+            "en": "loc/presentation/job/artist-geisha/shift/summer/default/candidate/artist-geisha-summer-1/alt"
+          },
+          "alt": {
+            "ru": "Спокойная репетиция проходит во время летней смены.",
+            "en": "A quiet rehearsal takes place during the summer shift."
+          }
+        },
+        {
+          "key": "artist-geisha-summer-2",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/artist-geisha/summer/2.gif",
+          "runtimeAltFallback": "Пространство готовят к выступлению во время летней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/artist-geisha/shift/summer/default/candidate/artist-geisha-summer-2/alt",
+            "en": "loc/presentation/job/artist-geisha/shift/summer/default/candidate/artist-geisha-summer-2/alt"
+          },
+          "alt": {
+            "ru": "Пространство готовят к выступлению во время летней смены.",
+            "en": "The space is prepared for a performance during the summer shift."
+          }
+        },
+        {
+          "key": "artist-geisha-summer-3",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/artist-geisha/summer/3.gif",
+          "runtimeAltFallback": "Гостей встречают в нейтральной рабочей обстановке во время летней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/artist-geisha/shift/summer/default/candidate/artist-geisha-summer-3/alt",
+            "en": "loc/presentation/job/artist-geisha/shift/summer/default/candidate/artist-geisha-summer-3/alt"
+          },
+          "alt": {
+            "ru": "Гостей встречают в нейтральной рабочей обстановке во время летней смены.",
+            "en": "Guests are received in a neutral work setting during the summer shift."
+          }
+        }
+      ],
+      "staticFallback": "assets/stage-tavern.svg"
+    },
+    {
+      "careerId": "artist-geisha",
+      "presentationId": "job/artist-geisha/shift/autumn/default",
+      "poolVersion": 1,
+      "coverageStatus": "PLACEHOLDER",
+      "runtimeSlot": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "artist-geisha-autumn-1",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/artist-geisha/autumn/1.gif",
+              "alt": "Спокойная репетиция проходит во время осенней смены."
+            },
+            {
+              "key": "artist-geisha-autumn-2",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/artist-geisha/autumn/2.gif",
+              "alt": "Пространство готовят к выступлению во время осенней смены."
+            },
+            {
+              "key": "artist-geisha-autumn-3",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/artist-geisha/autumn/3.gif",
+              "alt": "Гостей встречают в нейтральной рабочей обстановке во время осенней смены."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-tavern.svg",
+          "alt": "artist-geisha autumn static fallback"
+        }
+      },
+      "candidates": [
+        {
+          "key": "artist-geisha-autumn-1",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/artist-geisha/autumn/1.gif",
+          "runtimeAltFallback": "Спокойная репетиция проходит во время осенней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/artist-geisha/shift/autumn/default/candidate/artist-geisha-autumn-1/alt",
+            "en": "loc/presentation/job/artist-geisha/shift/autumn/default/candidate/artist-geisha-autumn-1/alt"
+          },
+          "alt": {
+            "ru": "Спокойная репетиция проходит во время осенней смены.",
+            "en": "A quiet rehearsal takes place during the autumn shift."
+          }
+        },
+        {
+          "key": "artist-geisha-autumn-2",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/artist-geisha/autumn/2.gif",
+          "runtimeAltFallback": "Пространство готовят к выступлению во время осенней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/artist-geisha/shift/autumn/default/candidate/artist-geisha-autumn-2/alt",
+            "en": "loc/presentation/job/artist-geisha/shift/autumn/default/candidate/artist-geisha-autumn-2/alt"
+          },
+          "alt": {
+            "ru": "Пространство готовят к выступлению во время осенней смены.",
+            "en": "The space is prepared for a performance during the autumn shift."
+          }
+        },
+        {
+          "key": "artist-geisha-autumn-3",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/artist-geisha/autumn/3.gif",
+          "runtimeAltFallback": "Гостей встречают в нейтральной рабочей обстановке во время осенней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/artist-geisha/shift/autumn/default/candidate/artist-geisha-autumn-3/alt",
+            "en": "loc/presentation/job/artist-geisha/shift/autumn/default/candidate/artist-geisha-autumn-3/alt"
+          },
+          "alt": {
+            "ru": "Гостей встречают в нейтральной рабочей обстановке во время осенней смены.",
+            "en": "Guests are received in a neutral work setting during the autumn shift."
+          }
+        }
+      ],
+      "staticFallback": "assets/stage-tavern.svg"
+    },
+    {
+      "careerId": "artist-geisha",
+      "presentationId": "job/artist-geisha/shift/winter/default",
+      "poolVersion": 1,
+      "coverageStatus": "PLACEHOLDER",
+      "runtimeSlot": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "artist-geisha-winter-1",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/artist-geisha/winter/1.gif",
+              "alt": "Спокойная репетиция проходит во время зимней смены."
+            },
+            {
+              "key": "artist-geisha-winter-2",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/artist-geisha/winter/2.gif",
+              "alt": "Пространство готовят к выступлению во время зимней смены."
+            },
+            {
+              "key": "artist-geisha-winter-3",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/artist-geisha/winter/3.gif",
+              "alt": "Гостей встречают в нейтральной рабочей обстановке во время зимней смены."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-tavern.svg",
+          "alt": "artist-geisha winter static fallback"
+        }
+      },
+      "candidates": [
+        {
+          "key": "artist-geisha-winter-1",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/artist-geisha/winter/1.gif",
+          "runtimeAltFallback": "Спокойная репетиция проходит во время зимней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/artist-geisha/shift/winter/default/candidate/artist-geisha-winter-1/alt",
+            "en": "loc/presentation/job/artist-geisha/shift/winter/default/candidate/artist-geisha-winter-1/alt"
+          },
+          "alt": {
+            "ru": "Спокойная репетиция проходит во время зимней смены.",
+            "en": "A quiet rehearsal takes place during the winter shift."
+          }
+        },
+        {
+          "key": "artist-geisha-winter-2",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/artist-geisha/winter/2.gif",
+          "runtimeAltFallback": "Пространство готовят к выступлению во время зимней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/artist-geisha/shift/winter/default/candidate/artist-geisha-winter-2/alt",
+            "en": "loc/presentation/job/artist-geisha/shift/winter/default/candidate/artist-geisha-winter-2/alt"
+          },
+          "alt": {
+            "ru": "Пространство готовят к выступлению во время зимней смены.",
+            "en": "The space is prepared for a performance during the winter shift."
+          }
+        },
+        {
+          "key": "artist-geisha-winter-3",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/artist-geisha/winter/3.gif",
+          "runtimeAltFallback": "Гостей встречают в нейтральной рабочей обстановке во время зимней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/artist-geisha/shift/winter/default/candidate/artist-geisha-winter-3/alt",
+            "en": "loc/presentation/job/artist-geisha/shift/winter/default/candidate/artist-geisha-winter-3/alt"
+          },
+          "alt": {
+            "ru": "Гостей встречают в нейтральной рабочей обстановке во время зимней смены.",
+            "en": "Guests are received in a neutral work setting during the winter shift."
+          }
+        }
+      ],
+      "staticFallback": "assets/stage-tavern.svg"
+    },
+    {
+      "careerId": "assassin",
+      "presentationId": "job/assassin/shift/spring/default",
+      "poolVersion": 1,
+      "coverageStatus": "PLACEHOLDER",
+      "runtimeSlot": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "assassin-spring-1",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/assassin/spring/1.gif",
+              "alt": "Городской маршрут наблюдают во время весенней скрытой смены."
+            },
+            {
+              "key": "assassin-spring-2",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/assassin/spring/2.gif",
+              "alt": "Обычные инструменты готовят во время весенней скрытой смены."
+            },
+            {
+              "key": "assassin-spring-3",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/assassin/spring/3.gif",
+              "alt": "По городскому маршруту перемещаются во время весенней скрытой смены."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-town.svg",
+          "alt": "assassin spring static fallback"
+        }
+      },
+      "candidates": [
+        {
+          "key": "assassin-spring-1",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/assassin/spring/1.gif",
+          "runtimeAltFallback": "Городской маршрут наблюдают во время весенней скрытой смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/assassin/shift/spring/default/candidate/assassin-spring-1/alt",
+            "en": "loc/presentation/job/assassin/shift/spring/default/candidate/assassin-spring-1/alt"
+          },
+          "alt": {
+            "ru": "Городской маршрут наблюдают во время весенней скрытой смены.",
+            "en": "A city route is observed during the spring covert shift."
+          }
+        },
+        {
+          "key": "assassin-spring-2",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/assassin/spring/2.gif",
+          "runtimeAltFallback": "Обычные инструменты готовят во время весенней скрытой смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/assassin/shift/spring/default/candidate/assassin-spring-2/alt",
+            "en": "loc/presentation/job/assassin/shift/spring/default/candidate/assassin-spring-2/alt"
+          },
+          "alt": {
+            "ru": "Обычные инструменты готовят во время весенней скрытой смены.",
+            "en": "Ordinary tools are prepared during the spring covert shift."
+          }
+        },
+        {
+          "key": "assassin-spring-3",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/assassin/spring/3.gif",
+          "runtimeAltFallback": "По городскому маршруту перемещаются во время весенней скрытой смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/assassin/shift/spring/default/candidate/assassin-spring-3/alt",
+            "en": "loc/presentation/job/assassin/shift/spring/default/candidate/assassin-spring-3/alt"
+          },
+          "alt": {
+            "ru": "По городскому маршруту перемещаются во время весенней скрытой смены.",
+            "en": "A city route is traversed during the spring covert shift."
+          }
+        }
+      ],
+      "staticFallback": "assets/stage-town.svg"
+    },
+    {
+      "careerId": "assassin",
+      "presentationId": "job/assassin/shift/summer/default",
+      "poolVersion": 1,
+      "coverageStatus": "PLACEHOLDER",
+      "runtimeSlot": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "assassin-summer-1",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/assassin/summer/1.gif",
+              "alt": "Городской маршрут наблюдают во время летней скрытой смены."
+            },
+            {
+              "key": "assassin-summer-2",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/assassin/summer/2.gif",
+              "alt": "Обычные инструменты готовят во время летней скрытой смены."
+            },
+            {
+              "key": "assassin-summer-3",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/assassin/summer/3.gif",
+              "alt": "По городскому маршруту перемещаются во время летней скрытой смены."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-town.svg",
+          "alt": "assassin summer static fallback"
+        }
+      },
+      "candidates": [
+        {
+          "key": "assassin-summer-1",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/assassin/summer/1.gif",
+          "runtimeAltFallback": "Городской маршрут наблюдают во время летней скрытой смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/assassin/shift/summer/default/candidate/assassin-summer-1/alt",
+            "en": "loc/presentation/job/assassin/shift/summer/default/candidate/assassin-summer-1/alt"
+          },
+          "alt": {
+            "ru": "Городской маршрут наблюдают во время летней скрытой смены.",
+            "en": "A city route is observed during the summer covert shift."
+          }
+        },
+        {
+          "key": "assassin-summer-2",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/assassin/summer/2.gif",
+          "runtimeAltFallback": "Обычные инструменты готовят во время летней скрытой смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/assassin/shift/summer/default/candidate/assassin-summer-2/alt",
+            "en": "loc/presentation/job/assassin/shift/summer/default/candidate/assassin-summer-2/alt"
+          },
+          "alt": {
+            "ru": "Обычные инструменты готовят во время летней скрытой смены.",
+            "en": "Ordinary tools are prepared during the summer covert shift."
+          }
+        },
+        {
+          "key": "assassin-summer-3",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/assassin/summer/3.gif",
+          "runtimeAltFallback": "По городскому маршруту перемещаются во время летней скрытой смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/assassin/shift/summer/default/candidate/assassin-summer-3/alt",
+            "en": "loc/presentation/job/assassin/shift/summer/default/candidate/assassin-summer-3/alt"
+          },
+          "alt": {
+            "ru": "По городскому маршруту перемещаются во время летней скрытой смены.",
+            "en": "A city route is traversed during the summer covert shift."
+          }
+        }
+      ],
+      "staticFallback": "assets/stage-town.svg"
+    },
+    {
+      "careerId": "assassin",
+      "presentationId": "job/assassin/shift/autumn/default",
+      "poolVersion": 1,
+      "coverageStatus": "PLACEHOLDER",
+      "runtimeSlot": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "assassin-autumn-1",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/assassin/autumn/1.gif",
+              "alt": "Городской маршрут наблюдают во время осенней скрытой смены."
+            },
+            {
+              "key": "assassin-autumn-2",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/assassin/autumn/2.gif",
+              "alt": "Обычные инструменты готовят во время осенней скрытой смены."
+            },
+            {
+              "key": "assassin-autumn-3",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/assassin/autumn/3.gif",
+              "alt": "По городскому маршруту перемещаются во время осенней скрытой смены."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-town.svg",
+          "alt": "assassin autumn static fallback"
+        }
+      },
+      "candidates": [
+        {
+          "key": "assassin-autumn-1",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/assassin/autumn/1.gif",
+          "runtimeAltFallback": "Городской маршрут наблюдают во время осенней скрытой смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/assassin/shift/autumn/default/candidate/assassin-autumn-1/alt",
+            "en": "loc/presentation/job/assassin/shift/autumn/default/candidate/assassin-autumn-1/alt"
+          },
+          "alt": {
+            "ru": "Городской маршрут наблюдают во время осенней скрытой смены.",
+            "en": "A city route is observed during the autumn covert shift."
+          }
+        },
+        {
+          "key": "assassin-autumn-2",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/assassin/autumn/2.gif",
+          "runtimeAltFallback": "Обычные инструменты готовят во время осенней скрытой смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/assassin/shift/autumn/default/candidate/assassin-autumn-2/alt",
+            "en": "loc/presentation/job/assassin/shift/autumn/default/candidate/assassin-autumn-2/alt"
+          },
+          "alt": {
+            "ru": "Обычные инструменты готовят во время осенней скрытой смены.",
+            "en": "Ordinary tools are prepared during the autumn covert shift."
+          }
+        },
+        {
+          "key": "assassin-autumn-3",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/assassin/autumn/3.gif",
+          "runtimeAltFallback": "По городскому маршруту перемещаются во время осенней скрытой смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/assassin/shift/autumn/default/candidate/assassin-autumn-3/alt",
+            "en": "loc/presentation/job/assassin/shift/autumn/default/candidate/assassin-autumn-3/alt"
+          },
+          "alt": {
+            "ru": "По городскому маршруту перемещаются во время осенней скрытой смены.",
+            "en": "A city route is traversed during the autumn covert shift."
+          }
+        }
+      ],
+      "staticFallback": "assets/stage-town.svg"
+    },
+    {
+      "careerId": "assassin",
+      "presentationId": "job/assassin/shift/winter/default",
+      "poolVersion": 1,
+      "coverageStatus": "PLACEHOLDER",
+      "runtimeSlot": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "assassin-winter-1",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/assassin/winter/1.gif",
+              "alt": "Городской маршрут наблюдают во время зимней скрытой смены."
+            },
+            {
+              "key": "assassin-winter-2",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/assassin/winter/2.gif",
+              "alt": "Обычные инструменты готовят во время зимней скрытой смены."
+            },
+            {
+              "key": "assassin-winter-3",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/assassin/winter/3.gif",
+              "alt": "По городскому маршруту перемещаются во время зимней скрытой смены."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-town.svg",
+          "alt": "assassin winter static fallback"
+        }
+      },
+      "candidates": [
+        {
+          "key": "assassin-winter-1",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/assassin/winter/1.gif",
+          "runtimeAltFallback": "Городской маршрут наблюдают во время зимней скрытой смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/assassin/shift/winter/default/candidate/assassin-winter-1/alt",
+            "en": "loc/presentation/job/assassin/shift/winter/default/candidate/assassin-winter-1/alt"
+          },
+          "alt": {
+            "ru": "Городской маршрут наблюдают во время зимней скрытой смены.",
+            "en": "A city route is observed during the winter covert shift."
+          }
+        },
+        {
+          "key": "assassin-winter-2",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/assassin/winter/2.gif",
+          "runtimeAltFallback": "Обычные инструменты готовят во время зимней скрытой смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/assassin/shift/winter/default/candidate/assassin-winter-2/alt",
+            "en": "loc/presentation/job/assassin/shift/winter/default/candidate/assassin-winter-2/alt"
+          },
+          "alt": {
+            "ru": "Обычные инструменты готовят во время зимней скрытой смены.",
+            "en": "Ordinary tools are prepared during the winter covert shift."
+          }
+        },
+        {
+          "key": "assassin-winter-3",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/assassin/winter/3.gif",
+          "runtimeAltFallback": "По городскому маршруту перемещаются во время зимней скрытой смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/assassin/shift/winter/default/candidate/assassin-winter-3/alt",
+            "en": "loc/presentation/job/assassin/shift/winter/default/candidate/assassin-winter-3/alt"
+          },
+          "alt": {
+            "ru": "По городскому маршруту перемещаются во время зимней скрытой смены.",
+            "en": "A city route is traversed during the winter covert shift."
+          }
+        }
+      ],
+      "staticFallback": "assets/stage-town.svg"
+    },
+    {
+      "careerId": "prostitute",
+      "presentationId": "job/prostitute/shift/spring/default",
+      "poolVersion": 1,
+      "coverageStatus": "PLACEHOLDER",
+      "runtimeSlot": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "prostitute-spring-1",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/prostitute/spring/1.gif",
+              "alt": "Приватную рабочую комнату готовят перед весенней профессиональной сменой."
+            },
+            {
+              "key": "prostitute-spring-2",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/prostitute/spring/2.gif",
+              "alt": "Предметы в комнате приводят в порядок во время весенней профессиональной смены."
+            },
+            {
+              "key": "prostitute-spring-3",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/prostitute/spring/3.gif",
+              "alt": "К профессиональной встрече готовятся в нейтральной обстановке во время весенней смены."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-room.svg",
+          "alt": "prostitute spring static fallback"
+        }
+      },
+      "candidates": [
+        {
+          "key": "prostitute-spring-1",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/prostitute/spring/1.gif",
+          "runtimeAltFallback": "Приватную рабочую комнату готовят перед весенней профессиональной сменой.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/prostitute/shift/spring/default/candidate/prostitute-spring-1/alt",
+            "en": "loc/presentation/job/prostitute/shift/spring/default/candidate/prostitute-spring-1/alt"
+          },
+          "alt": {
+            "ru": "Приватную рабочую комнату готовят перед весенней профессиональной сменой.",
+            "en": "A private professional room is prepared before the spring professional shift."
+          }
+        },
+        {
+          "key": "prostitute-spring-2",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/prostitute/spring/2.gif",
+          "runtimeAltFallback": "Предметы в комнате приводят в порядок во время весенней профессиональной смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/prostitute/shift/spring/default/candidate/prostitute-spring-2/alt",
+            "en": "loc/presentation/job/prostitute/shift/spring/default/candidate/prostitute-spring-2/alt"
+          },
+          "alt": {
+            "ru": "Предметы в комнате приводят в порядок во время весенней профессиональной смены.",
+            "en": "Items in the room are reset during the spring professional shift."
+          }
+        },
+        {
+          "key": "prostitute-spring-3",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/prostitute/spring/3.gif",
+          "runtimeAltFallback": "К профессиональной встрече готовятся в нейтральной обстановке во время весенней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/prostitute/shift/spring/default/candidate/prostitute-spring-3/alt",
+            "en": "loc/presentation/job/prostitute/shift/spring/default/candidate/prostitute-spring-3/alt"
+          },
+          "alt": {
+            "ru": "К профессиональной встрече готовятся в нейтральной обстановке во время весенней смены.",
+            "en": "Preparation for a professional meeting takes place in a neutral setting during the spring shift."
+          }
+        }
+      ],
+      "staticFallback": "assets/stage-room.svg"
+    },
+    {
+      "careerId": "prostitute",
+      "presentationId": "job/prostitute/shift/summer/default",
+      "poolVersion": 1,
+      "coverageStatus": "PLACEHOLDER",
+      "runtimeSlot": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "prostitute-summer-1",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/prostitute/summer/1.gif",
+              "alt": "Приватную рабочую комнату готовят перед летней профессиональной сменой."
+            },
+            {
+              "key": "prostitute-summer-2",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/prostitute/summer/2.gif",
+              "alt": "Предметы в комнате приводят в порядок во время летней профессиональной смены."
+            },
+            {
+              "key": "prostitute-summer-3",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/prostitute/summer/3.gif",
+              "alt": "К профессиональной встрече готовятся в нейтральной обстановке во время летней смены."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-room.svg",
+          "alt": "prostitute summer static fallback"
+        }
+      },
+      "candidates": [
+        {
+          "key": "prostitute-summer-1",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/prostitute/summer/1.gif",
+          "runtimeAltFallback": "Приватную рабочую комнату готовят перед летней профессиональной сменой.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/prostitute/shift/summer/default/candidate/prostitute-summer-1/alt",
+            "en": "loc/presentation/job/prostitute/shift/summer/default/candidate/prostitute-summer-1/alt"
+          },
+          "alt": {
+            "ru": "Приватную рабочую комнату готовят перед летней профессиональной сменой.",
+            "en": "A private professional room is prepared before the summer professional shift."
+          }
+        },
+        {
+          "key": "prostitute-summer-2",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/prostitute/summer/2.gif",
+          "runtimeAltFallback": "Предметы в комнате приводят в порядок во время летней профессиональной смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/prostitute/shift/summer/default/candidate/prostitute-summer-2/alt",
+            "en": "loc/presentation/job/prostitute/shift/summer/default/candidate/prostitute-summer-2/alt"
+          },
+          "alt": {
+            "ru": "Предметы в комнате приводят в порядок во время летней профессиональной смены.",
+            "en": "Items in the room are reset during the summer professional shift."
+          }
+        },
+        {
+          "key": "prostitute-summer-3",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/prostitute/summer/3.gif",
+          "runtimeAltFallback": "К профессиональной встрече готовятся в нейтральной обстановке во время летней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/prostitute/shift/summer/default/candidate/prostitute-summer-3/alt",
+            "en": "loc/presentation/job/prostitute/shift/summer/default/candidate/prostitute-summer-3/alt"
+          },
+          "alt": {
+            "ru": "К профессиональной встрече готовятся в нейтральной обстановке во время летней смены.",
+            "en": "Preparation for a professional meeting takes place in a neutral setting during the summer shift."
+          }
+        }
+      ],
+      "staticFallback": "assets/stage-room.svg"
+    },
+    {
+      "careerId": "prostitute",
+      "presentationId": "job/prostitute/shift/autumn/default",
+      "poolVersion": 1,
+      "coverageStatus": "PLACEHOLDER",
+      "runtimeSlot": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "prostitute-autumn-1",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/prostitute/autumn/1.gif",
+              "alt": "Приватную рабочую комнату готовят перед осенней профессиональной сменой."
+            },
+            {
+              "key": "prostitute-autumn-2",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/prostitute/autumn/2.gif",
+              "alt": "Предметы в комнате приводят в порядок во время осенней профессиональной смены."
+            },
+            {
+              "key": "prostitute-autumn-3",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/prostitute/autumn/3.gif",
+              "alt": "К профессиональной встрече готовятся в нейтральной обстановке во время осенней смены."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-room.svg",
+          "alt": "prostitute autumn static fallback"
+        }
+      },
+      "candidates": [
+        {
+          "key": "prostitute-autumn-1",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/prostitute/autumn/1.gif",
+          "runtimeAltFallback": "Приватную рабочую комнату готовят перед осенней профессиональной сменой.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/prostitute/shift/autumn/default/candidate/prostitute-autumn-1/alt",
+            "en": "loc/presentation/job/prostitute/shift/autumn/default/candidate/prostitute-autumn-1/alt"
+          },
+          "alt": {
+            "ru": "Приватную рабочую комнату готовят перед осенней профессиональной сменой.",
+            "en": "A private professional room is prepared before the autumn professional shift."
+          }
+        },
+        {
+          "key": "prostitute-autumn-2",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/prostitute/autumn/2.gif",
+          "runtimeAltFallback": "Предметы в комнате приводят в порядок во время осенней профессиональной смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/prostitute/shift/autumn/default/candidate/prostitute-autumn-2/alt",
+            "en": "loc/presentation/job/prostitute/shift/autumn/default/candidate/prostitute-autumn-2/alt"
+          },
+          "alt": {
+            "ru": "Предметы в комнате приводят в порядок во время осенней профессиональной смены.",
+            "en": "Items in the room are reset during the autumn professional shift."
+          }
+        },
+        {
+          "key": "prostitute-autumn-3",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/prostitute/autumn/3.gif",
+          "runtimeAltFallback": "К профессиональной встрече готовятся в нейтральной обстановке во время осенней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/prostitute/shift/autumn/default/candidate/prostitute-autumn-3/alt",
+            "en": "loc/presentation/job/prostitute/shift/autumn/default/candidate/prostitute-autumn-3/alt"
+          },
+          "alt": {
+            "ru": "К профессиональной встрече готовятся в нейтральной обстановке во время осенней смены.",
+            "en": "Preparation for a professional meeting takes place in a neutral setting during the autumn shift."
+          }
+        }
+      ],
+      "staticFallback": "assets/stage-room.svg"
+    },
+    {
+      "careerId": "prostitute",
+      "presentationId": "job/prostitute/shift/winter/default",
+      "poolVersion": 1,
+      "coverageStatus": "PLACEHOLDER",
+      "runtimeSlot": {
+        "pool": {
+          "version": 1,
+          "ordering": "ordered",
+          "selectionPolicy": "unweighted",
+          "candidates": [
+            {
+              "key": "prostitute-winter-1",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/prostitute/winter/1.gif",
+              "alt": "Приватную рабочую комнату готовят перед зимней профессиональной сменой."
+            },
+            {
+              "key": "prostitute-winter-2",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/prostitute/winter/2.gif",
+              "alt": "Предметы в комнате приводят в порядок во время зимней профессиональной смены."
+            },
+            {
+              "key": "prostitute-winter-3",
+              "kind": "gif",
+              "src": "assets/staging/non-shipped/ten-career/prostitute/winter/3.gif",
+              "alt": "К профессиональной встрече готовятся в нейтральной обстановке во время зимней смены."
+            }
+          ]
+        },
+        "static": {
+          "kind": "image",
+          "src": "assets/stage-room.svg",
+          "alt": "prostitute winter static fallback"
+        }
+      },
+      "candidates": [
+        {
+          "key": "prostitute-winter-1",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/prostitute/winter/1.gif",
+          "runtimeAltFallback": "Приватную рабочую комнату готовят перед зимней профессиональной сменой.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/prostitute/shift/winter/default/candidate/prostitute-winter-1/alt",
+            "en": "loc/presentation/job/prostitute/shift/winter/default/candidate/prostitute-winter-1/alt"
+          },
+          "alt": {
+            "ru": "Приватную рабочую комнату готовят перед зимней профессиональной сменой.",
+            "en": "A private professional room is prepared before the winter professional shift."
+          }
+        },
+        {
+          "key": "prostitute-winter-2",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/prostitute/winter/2.gif",
+          "runtimeAltFallback": "Предметы в комнате приводят в порядок во время зимней профессиональной смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/prostitute/shift/winter/default/candidate/prostitute-winter-2/alt",
+            "en": "loc/presentation/job/prostitute/shift/winter/default/candidate/prostitute-winter-2/alt"
+          },
+          "alt": {
+            "ru": "Предметы в комнате приводят в порядок во время зимней профессиональной смены.",
+            "en": "Items in the room are reset during the winter professional shift."
+          }
+        },
+        {
+          "key": "prostitute-winter-3",
+          "kind": "gif",
+          "src": "assets/staging/non-shipped/ten-career/prostitute/winter/3.gif",
+          "runtimeAltFallback": "К профессиональной встрече готовятся в нейтральной обстановке во время зимней смены.",
+          "altLocalizationKeys": {
+            "ru": "loc/presentation/job/prostitute/shift/winter/default/candidate/prostitute-winter-3/alt",
+            "en": "loc/presentation/job/prostitute/shift/winter/default/candidate/prostitute-winter-3/alt"
+          },
+          "alt": {
+            "ru": "К профессиональной встрече готовятся в нейтральной обстановке во время зимней смены.",
+            "en": "Preparation for a professional meeting takes place in a neutral setting during the winter shift."
+          }
+        }
+      ],
+      "staticFallback": "assets/stage-room.svg"
+    }
+  ],
+  "policy": {
+    "hardWorkSurfacesInvented": false,
+    "relationshipSurfacesInvented": false,
+    "placeholderPathsCountAsRealAssets": false,
+    "localeAffectsMediaIdentity": false
+  }
+}
