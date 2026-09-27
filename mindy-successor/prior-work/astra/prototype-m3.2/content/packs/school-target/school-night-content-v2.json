@@ -1,0 +1,1864 @@
+{
+  "schemaVersion": 1,
+  "id": "school-night-content-v2",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "housing": true
+    },
+    "writes": {}
+  },
+  "media": [
+    {
+      "id": "school/night-v2/literacy-and-numbers/study",
+      "kind": "image",
+      "src": "assets/stage-school.svg",
+      "alt": "Literacy & Numbers Night-study presentation."
+    },
+    {
+      "id": "school/night-v2/arcana/study",
+      "kind": "image",
+      "src": "assets/stage-school.svg",
+      "alt": "Arcana Night-study presentation."
+    },
+    {
+      "id": "school/night-v2/rhetoric-and-social/study",
+      "kind": "image",
+      "src": "assets/stage-school.svg",
+      "alt": "Rhetoric & Social Night-study presentation."
+    },
+    {
+      "id": "school/night-v2/etiquette-and-presentation/study",
+      "kind": "image",
+      "src": "assets/stage-school.svg",
+      "alt": "Etiquette & Presentation Night-study presentation."
+    },
+    {
+      "id": "school/night-v2/field-craft/study",
+      "kind": "image",
+      "src": "assets/stage-school.svg",
+      "alt": "Field Craft Night-study presentation."
+    },
+    {
+      "id": "school/night-v2/physical-training/study",
+      "kind": "image",
+      "src": "assets/stage-school.svg",
+      "alt": "Physical Training Night-study presentation."
+    },
+    {
+      "id": "school/night-v2/arts-and-performance/study",
+      "kind": "image",
+      "src": "assets/stage-school.svg",
+      "alt": "Arts & Performance Night-study presentation."
+    },
+    {
+      "id": "school/night-v2/body-confidence/study",
+      "kind": "image",
+      "src": "assets/stage-school.svg",
+      "alt": "Body Confidence Night-study presentation."
+    }
+  ],
+  "events": [
+    {
+      "id": "school.night-v2.literacy-and-numbers.reason",
+      "title": "Night study — Literacy & Numbers — reason",
+      "sourceDomain": "school.track.literacy_and_numbers",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.literacy_and_numbers.reason"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 1,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "cheap-housing",
+          "text": "In the cramped room, you keep the materials close and work in short, careful bursts. You keep the focus on reason without adding any second School effect.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ],
+          "media": [
+            "school/night-v2/literacy-and-numbers/study"
+          ]
+        },
+        {
+          "id": "normal-housing",
+          "text": "With a quiet desk and enough room to spread out, the session settles into a steady rhythm. The session emphasizes reason while the completed Night-study action remains the only mechanics transaction.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            }
+          ],
+          "media": [
+            "school/night-v2/literacy-and-numbers/study"
+          ]
+        },
+        {
+          "id": "quiet",
+          "text": "You work through notes and figures by lamplight, checking each line before moving on. The evening focus is reason.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/literacy-and-numbers/study"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "A confusing passage becomes clearer when you rewrite it in your own words and reduce it to one useful question. You connect the insight back to reason.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/literacy-and-numbers/study"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Let the Night flow continue after the presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.night-v2.literacy-and-numbers.wits",
+      "title": "Night study — Literacy & Numbers — wits",
+      "sourceDomain": "school.track.literacy_and_numbers",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.literacy_and_numbers.wits"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 1,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "cheap-housing",
+          "text": "In the cramped room, you keep the materials close and work in short, careful bursts. You keep the focus on wits without adding any second School effect.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ],
+          "media": [
+            "school/night-v2/literacy-and-numbers/study"
+          ]
+        },
+        {
+          "id": "normal-housing",
+          "text": "With a quiet desk and enough room to spread out, the session settles into a steady rhythm. The session emphasizes wits while the completed Night-study action remains the only mechanics transaction.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            }
+          ],
+          "media": [
+            "school/night-v2/literacy-and-numbers/study"
+          ]
+        },
+        {
+          "id": "quiet",
+          "text": "You work through notes and figures by lamplight, checking each line before moving on. The evening focus is wits.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/literacy-and-numbers/study"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "A confusing passage becomes clearer when you rewrite it in your own words and reduce it to one useful question. You connect the insight back to wits.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/literacy-and-numbers/study"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Let the Night flow continue after the presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.night-v2.arcana.magic",
+      "title": "Night study — Arcana — magic",
+      "sourceDomain": "school.track.arcana",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.arcana.magic"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 1,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "cheap-housing",
+          "text": "With little space for safe practical work, you keep the session to reading, comparison, and written reasoning. You keep the focus on magic without adding any second School effect.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ],
+          "media": [
+            "school/night-v2/arcana/study"
+          ]
+        },
+        {
+          "id": "normal-housing",
+          "text": "The quiet room gives you space to lay out diagrams and compare observations carefully. The session emphasizes magic while the completed Night-study action remains the only mechanics transaction.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            }
+          ],
+          "media": [
+            "school/night-v2/arcana/study"
+          ]
+        },
+        {
+          "id": "quiet",
+          "text": "You review diagrams and observations without attempting anything dramatic, marking where evidence and theory still disagree. The evening focus is magic.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/arcana/study"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "One relationship between two notes becomes clear enough to explain without guesswork. You connect the insight back to magic.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/arcana/study"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Let the Night flow continue after the presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.night-v2.arcana.reason",
+      "title": "Night study — Arcana — reason",
+      "sourceDomain": "school.track.arcana",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.arcana.reason"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 1,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "cheap-housing",
+          "text": "With little space for safe practical work, you keep the session to reading, comparison, and written reasoning. You keep the focus on reason without adding any second School effect.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ],
+          "media": [
+            "school/night-v2/arcana/study"
+          ]
+        },
+        {
+          "id": "normal-housing",
+          "text": "The quiet room gives you space to lay out diagrams and compare observations carefully. The session emphasizes reason while the completed Night-study action remains the only mechanics transaction.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            }
+          ],
+          "media": [
+            "school/night-v2/arcana/study"
+          ]
+        },
+        {
+          "id": "quiet",
+          "text": "You review diagrams and observations without attempting anything dramatic, marking where evidence and theory still disagree. The evening focus is reason.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/arcana/study"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "One relationship between two notes becomes clear enough to explain without guesswork. You connect the insight back to reason.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/arcana/study"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Let the Night flow continue after the presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.night-v2.arcana.creativity",
+      "title": "Night study — Arcana — creativity",
+      "sourceDomain": "school.track.arcana",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.arcana.creativity"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 1,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "cheap-housing",
+          "text": "With little space for safe practical work, you keep the session to reading, comparison, and written reasoning. You keep the focus on creativity without adding any second School effect.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ],
+          "media": [
+            "school/night-v2/arcana/study"
+          ]
+        },
+        {
+          "id": "normal-housing",
+          "text": "The quiet room gives you space to lay out diagrams and compare observations carefully. The session emphasizes creativity while the completed Night-study action remains the only mechanics transaction.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            }
+          ],
+          "media": [
+            "school/night-v2/arcana/study"
+          ]
+        },
+        {
+          "id": "quiet",
+          "text": "You review diagrams and observations without attempting anything dramatic, marking where evidence and theory still disagree. The evening focus is creativity.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/arcana/study"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "One relationship between two notes becomes clear enough to explain without guesswork. You connect the insight back to creativity.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/arcana/study"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Let the Night flow continue after the presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.night-v2.rhetoric-and-social.charm",
+      "title": "Night study — Rhetoric & Social — charm",
+      "sourceDomain": "school.track.rhetoric_and_social",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.rhetoric_and_social.charm"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 1,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "cheap-housing",
+          "text": "You keep your voice low and rehearse internally, shaping phrasing and timing without disturbing anyone nearby. You keep the focus on charm without adding any second School effect.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ],
+          "media": [
+            "school/night-v2/rhetoric-and-social/study"
+          ]
+        },
+        {
+          "id": "normal-housing",
+          "text": "With privacy to speak softly, you test several openings and hear the difference between confidence and noise. The session emphasizes charm while the completed Night-study action remains the only mechanics transaction.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            }
+          ],
+          "media": [
+            "school/night-v2/rhetoric-and-social/study"
+          ]
+        },
+        {
+          "id": "quiet",
+          "text": "You rehearse several ways to begin the same conversation and listen for how each opening changes the tone. The evening focus is charm.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/rhetoric-and-social/study"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "An awkward sentence becomes easier when you change the goal from winning the exchange to keeping it open. You connect the insight back to charm.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/rhetoric-and-social/study"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Let the Night flow continue after the presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.night-v2.rhetoric-and-social.sociability",
+      "title": "Night study — Rhetoric & Social — sociability",
+      "sourceDomain": "school.track.rhetoric_and_social",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.rhetoric_and_social.sociability"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 1,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "cheap-housing",
+          "text": "You keep your voice low and rehearse internally, shaping phrasing and timing without disturbing anyone nearby. You keep the focus on sociability without adding any second School effect.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ],
+          "media": [
+            "school/night-v2/rhetoric-and-social/study"
+          ]
+        },
+        {
+          "id": "normal-housing",
+          "text": "With privacy to speak softly, you test several openings and hear the difference between confidence and noise. The session emphasizes sociability while the completed Night-study action remains the only mechanics transaction.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            }
+          ],
+          "media": [
+            "school/night-v2/rhetoric-and-social/study"
+          ]
+        },
+        {
+          "id": "quiet",
+          "text": "You rehearse several ways to begin the same conversation and listen for how each opening changes the tone. The evening focus is sociability.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/rhetoric-and-social/study"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "An awkward sentence becomes easier when you change the goal from winning the exchange to keeping it open. You connect the insight back to sociability.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/rhetoric-and-social/study"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Let the Night flow continue after the presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.night-v2.rhetoric-and-social.wits",
+      "title": "Night study — Rhetoric & Social — wits",
+      "sourceDomain": "school.track.rhetoric_and_social",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.rhetoric_and_social.wits"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 1,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "cheap-housing",
+          "text": "You keep your voice low and rehearse internally, shaping phrasing and timing without disturbing anyone nearby. You keep the focus on wits without adding any second School effect.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ],
+          "media": [
+            "school/night-v2/rhetoric-and-social/study"
+          ]
+        },
+        {
+          "id": "normal-housing",
+          "text": "With privacy to speak softly, you test several openings and hear the difference between confidence and noise. The session emphasizes wits while the completed Night-study action remains the only mechanics transaction.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            }
+          ],
+          "media": [
+            "school/night-v2/rhetoric-and-social/study"
+          ]
+        },
+        {
+          "id": "quiet",
+          "text": "You rehearse several ways to begin the same conversation and listen for how each opening changes the tone. The evening focus is wits.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/rhetoric-and-social/study"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "An awkward sentence becomes easier when you change the goal from winning the exchange to keeping it open. You connect the insight back to wits.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/rhetoric-and-social/study"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Let the Night flow continue after the presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.night-v2.etiquette-and-presentation.manners",
+      "title": "Night study — Etiquette & Presentation — manners",
+      "sourceDomain": "school.track.etiquette_and_presentation",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.etiquette_and_presentation.manners"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 1,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "cheap-housing",
+          "text": "Limited space turns the session into careful preparation: clothing, notes, posture, and timing. You keep the focus on manners without adding any second School effect.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ],
+          "media": [
+            "school/night-v2/etiquette-and-presentation/study"
+          ]
+        },
+        {
+          "id": "normal-housing",
+          "text": "A quiet room lets you practice movement, preparation, and formal timing without rushing. The session emphasizes manners while the completed Night-study action remains the only mechanics transaction.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            }
+          ],
+          "media": [
+            "school/night-v2/etiquette-and-presentation/study"
+          ]
+        },
+        {
+          "id": "quiet",
+          "text": "You rehearse introductions, posture, and preparation until each step feels deliberate rather than performative. The evening focus is manners.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/etiquette-and-presentation/study"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "One small adjustment makes the whole presentation feel more natural, reminding you not to correct everything at once. You connect the insight back to manners.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/etiquette-and-presentation/study"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Let the Night flow continue after the presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.night-v2.etiquette-and-presentation.grooming",
+      "title": "Night study — Etiquette & Presentation — grooming",
+      "sourceDomain": "school.track.etiquette_and_presentation",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.etiquette_and_presentation.grooming"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 1,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "cheap-housing",
+          "text": "Limited space turns the session into careful preparation: clothing, notes, posture, and timing. You keep the focus on grooming without adding any second School effect.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ],
+          "media": [
+            "school/night-v2/etiquette-and-presentation/study"
+          ]
+        },
+        {
+          "id": "normal-housing",
+          "text": "A quiet room lets you practice movement, preparation, and formal timing without rushing. The session emphasizes grooming while the completed Night-study action remains the only mechanics transaction.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            }
+          ],
+          "media": [
+            "school/night-v2/etiquette-and-presentation/study"
+          ]
+        },
+        {
+          "id": "quiet",
+          "text": "You rehearse introductions, posture, and preparation until each step feels deliberate rather than performative. The evening focus is grooming.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/etiquette-and-presentation/study"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "One small adjustment makes the whole presentation feel more natural, reminding you not to correct everything at once. You connect the insight back to grooming.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/etiquette-and-presentation/study"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Let the Night flow continue after the presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.night-v2.etiquette-and-presentation.charm",
+      "title": "Night study — Etiquette & Presentation — charm",
+      "sourceDomain": "school.track.etiquette_and_presentation",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.etiquette_and_presentation.charm"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 1,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "cheap-housing",
+          "text": "Limited space turns the session into careful preparation: clothing, notes, posture, and timing. You keep the focus on charm without adding any second School effect.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ],
+          "media": [
+            "school/night-v2/etiquette-and-presentation/study"
+          ]
+        },
+        {
+          "id": "normal-housing",
+          "text": "A quiet room lets you practice movement, preparation, and formal timing without rushing. The session emphasizes charm while the completed Night-study action remains the only mechanics transaction.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            }
+          ],
+          "media": [
+            "school/night-v2/etiquette-and-presentation/study"
+          ]
+        },
+        {
+          "id": "quiet",
+          "text": "You rehearse introductions, posture, and preparation until each step feels deliberate rather than performative. The evening focus is charm.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/etiquette-and-presentation/study"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "One small adjustment makes the whole presentation feel more natural, reminding you not to correct everything at once. You connect the insight back to charm.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/etiquette-and-presentation/study"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Let the Night flow continue after the presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.night-v2.field-craft.dexterity",
+      "title": "Night study — Field Craft — dexterity",
+      "sourceDomain": "school.track.field_craft",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.field_craft.dexterity"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 1,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "cheap-housing",
+          "text": "There is little room to spread out, so you organize one tool or sketch at a time. You keep the focus on dexterity without adding any second School effect.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ],
+          "media": [
+            "school/night-v2/field-craft/study"
+          ]
+        },
+        {
+          "id": "normal-housing",
+          "text": "You spread out maps and tools, then reduce them to the smallest set that still solves the imagined problem. The session emphasizes dexterity while the completed Night-study action remains the only mechanics transaction.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            }
+          ],
+          "media": [
+            "school/night-v2/field-craft/study"
+          ]
+        },
+        {
+          "id": "quiet",
+          "text": "You sort route notes, knots, tool layouts, and sketches until tomorrow's choices become easier to picture. The evening focus is dexterity.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/field-craft/study"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "A more efficient arrangement of tools reveals a solution that was hidden by clutter rather than complexity. You connect the insight back to dexterity.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/field-craft/study"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Let the Night flow continue after the presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.night-v2.field-craft.wits",
+      "title": "Night study — Field Craft — wits",
+      "sourceDomain": "school.track.field_craft",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.field_craft.wits"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 1,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "cheap-housing",
+          "text": "There is little room to spread out, so you organize one tool or sketch at a time. You keep the focus on wits without adding any second School effect.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ],
+          "media": [
+            "school/night-v2/field-craft/study"
+          ]
+        },
+        {
+          "id": "normal-housing",
+          "text": "You spread out maps and tools, then reduce them to the smallest set that still solves the imagined problem. The session emphasizes wits while the completed Night-study action remains the only mechanics transaction.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            }
+          ],
+          "media": [
+            "school/night-v2/field-craft/study"
+          ]
+        },
+        {
+          "id": "quiet",
+          "text": "You sort route notes, knots, tool layouts, and sketches until tomorrow's choices become easier to picture. The evening focus is wits.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/field-craft/study"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "A more efficient arrangement of tools reveals a solution that was hidden by clutter rather than complexity. You connect the insight back to wits.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/field-craft/study"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Let the Night flow continue after the presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.night-v2.field-craft.creativity",
+      "title": "Night study — Field Craft — creativity",
+      "sourceDomain": "school.track.field_craft",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.field_craft.creativity"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 1,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "cheap-housing",
+          "text": "There is little room to spread out, so you organize one tool or sketch at a time. You keep the focus on creativity without adding any second School effect.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ],
+          "media": [
+            "school/night-v2/field-craft/study"
+          ]
+        },
+        {
+          "id": "normal-housing",
+          "text": "You spread out maps and tools, then reduce them to the smallest set that still solves the imagined problem. The session emphasizes creativity while the completed Night-study action remains the only mechanics transaction.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            }
+          ],
+          "media": [
+            "school/night-v2/field-craft/study"
+          ]
+        },
+        {
+          "id": "quiet",
+          "text": "You sort route notes, knots, tool layouts, and sketches until tomorrow's choices become easier to picture. The evening focus is creativity.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/field-craft/study"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "A more efficient arrangement of tools reveals a solution that was hidden by clutter rather than complexity. You connect the insight back to creativity.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/field-craft/study"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Let the Night flow continue after the presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.night-v2.physical-training.strength",
+      "title": "Night study — Physical Training — strength",
+      "sourceDomain": "school.track.physical_training",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.physical_training.strength"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 1,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "cheap-housing",
+          "text": "With limited room, you keep the work to quiet mobility, balance, and controlled bodyweight movement. You keep the focus on strength without adding any second School effect.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ],
+          "media": [
+            "school/night-v2/physical-training/study"
+          ]
+        },
+        {
+          "id": "normal-housing",
+          "text": "With room to move safely, you practice clean form at low intensity and stop before fatigue turns it sloppy. The session emphasizes strength while the completed Night-study action remains the only mechanics transaction.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            }
+          ],
+          "media": [
+            "school/night-v2/physical-training/study"
+          ]
+        },
+        {
+          "id": "quiet",
+          "text": "You use the night for controlled form review, mobility, and pacing rather than another full daytime workout. The evening focus is strength.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/physical-training/study"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "A small change in stance makes the movement more efficient, so you repeat it just enough to remember the difference. You connect the insight back to strength.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/physical-training/study"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Let the Night flow continue after the presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.night-v2.physical-training.endurance",
+      "title": "Night study — Physical Training — endurance",
+      "sourceDomain": "school.track.physical_training",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.physical_training.endurance"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 1,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "cheap-housing",
+          "text": "With limited room, you keep the work to quiet mobility, balance, and controlled bodyweight movement. You keep the focus on endurance without adding any second School effect.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ],
+          "media": [
+            "school/night-v2/physical-training/study"
+          ]
+        },
+        {
+          "id": "normal-housing",
+          "text": "With room to move safely, you practice clean form at low intensity and stop before fatigue turns it sloppy. The session emphasizes endurance while the completed Night-study action remains the only mechanics transaction.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            }
+          ],
+          "media": [
+            "school/night-v2/physical-training/study"
+          ]
+        },
+        {
+          "id": "quiet",
+          "text": "You use the night for controlled form review, mobility, and pacing rather than another full daytime workout. The evening focus is endurance.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/physical-training/study"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "A small change in stance makes the movement more efficient, so you repeat it just enough to remember the difference. You connect the insight back to endurance.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/physical-training/study"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Let the Night flow continue after the presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.night-v2.physical-training.dexterity",
+      "title": "Night study — Physical Training — dexterity",
+      "sourceDomain": "school.track.physical_training",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.physical_training.dexterity"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 1,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "cheap-housing",
+          "text": "With limited room, you keep the work to quiet mobility, balance, and controlled bodyweight movement. You keep the focus on dexterity without adding any second School effect.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ],
+          "media": [
+            "school/night-v2/physical-training/study"
+          ]
+        },
+        {
+          "id": "normal-housing",
+          "text": "With room to move safely, you practice clean form at low intensity and stop before fatigue turns it sloppy. The session emphasizes dexterity while the completed Night-study action remains the only mechanics transaction.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            }
+          ],
+          "media": [
+            "school/night-v2/physical-training/study"
+          ]
+        },
+        {
+          "id": "quiet",
+          "text": "You use the night for controlled form review, mobility, and pacing rather than another full daytime workout. The evening focus is dexterity.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/physical-training/study"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "A small change in stance makes the movement more efficient, so you repeat it just enough to remember the difference. You connect the insight back to dexterity.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/physical-training/study"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Let the Night flow continue after the presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.night-v2.arts-and-performance.creativity",
+      "title": "Night study — Arts & Performance — creativity",
+      "sourceDomain": "school.track.arts_and_performance",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.arts_and_performance.creativity"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 1,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "cheap-housing",
+          "text": "You choose a quiet form of practice—notes, gestures, sketching, or silent rhythm—so limited space becomes a constraint rather than a barrier. You keep the focus on creativity without adding any second School effect.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ],
+          "media": [
+            "school/night-v2/arts-and-performance/study"
+          ]
+        },
+        {
+          "id": "normal-housing",
+          "text": "You have enough room to test a few variations, then settle on the one that communicates most clearly. The session emphasizes creativity while the completed Night-study action remains the only mechanics transaction.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            }
+          ],
+          "media": [
+            "school/night-v2/arts-and-performance/study"
+          ]
+        },
+        {
+          "id": "quiet",
+          "text": "You repeat a short phrase, step, rhythm, or sketch until one choice feels intentional instead of accidental. The evening focus is creativity.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/arts-and-performance/study"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "A small timing change gives the work a clearer direction, and you mark it before the idea disappears. You connect the insight back to creativity.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/arts-and-performance/study"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Let the Night flow continue after the presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.night-v2.arts-and-performance.charm",
+      "title": "Night study — Arts & Performance — charm",
+      "sourceDomain": "school.track.arts_and_performance",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.arts_and_performance.charm"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 1,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "cheap-housing",
+          "text": "You choose a quiet form of practice—notes, gestures, sketching, or silent rhythm—so limited space becomes a constraint rather than a barrier. You keep the focus on charm without adding any second School effect.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ],
+          "media": [
+            "school/night-v2/arts-and-performance/study"
+          ]
+        },
+        {
+          "id": "normal-housing",
+          "text": "You have enough room to test a few variations, then settle on the one that communicates most clearly. The session emphasizes charm while the completed Night-study action remains the only mechanics transaction.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            }
+          ],
+          "media": [
+            "school/night-v2/arts-and-performance/study"
+          ]
+        },
+        {
+          "id": "quiet",
+          "text": "You repeat a short phrase, step, rhythm, or sketch until one choice feels intentional instead of accidental. The evening focus is charm.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/arts-and-performance/study"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "A small timing change gives the work a clearer direction, and you mark it before the idea disappears. You connect the insight back to charm.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/arts-and-performance/study"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Let the Night flow continue after the presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.night-v2.arts-and-performance.sociability",
+      "title": "Night study — Arts & Performance — sociability",
+      "sourceDomain": "school.track.arts_and_performance",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.arts_and_performance.sociability"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 1,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "cheap-housing",
+          "text": "You choose a quiet form of practice—notes, gestures, sketching, or silent rhythm—so limited space becomes a constraint rather than a barrier. You keep the focus on sociability without adding any second School effect.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ],
+          "media": [
+            "school/night-v2/arts-and-performance/study"
+          ]
+        },
+        {
+          "id": "normal-housing",
+          "text": "You have enough room to test a few variations, then settle on the one that communicates most clearly. The session emphasizes sociability while the completed Night-study action remains the only mechanics transaction.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            }
+          ],
+          "media": [
+            "school/night-v2/arts-and-performance/study"
+          ]
+        },
+        {
+          "id": "quiet",
+          "text": "You repeat a short phrase, step, rhythm, or sketch until one choice feels intentional instead of accidental. The evening focus is sociability.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/arts-and-performance/study"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "A small timing change gives the work a clearer direction, and you mark it before the idea disappears. You connect the insight back to sociability.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/arts-and-performance/study"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Let the Night flow continue after the presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.night-v2.arts-and-performance.dexterity",
+      "title": "Night study — Arts & Performance — dexterity",
+      "sourceDomain": "school.track.arts_and_performance",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.arts_and_performance.dexterity"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 1,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "cheap-housing",
+          "text": "You choose a quiet form of practice—notes, gestures, sketching, or silent rhythm—so limited space becomes a constraint rather than a barrier. You keep the focus on dexterity without adding any second School effect.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ],
+          "media": [
+            "school/night-v2/arts-and-performance/study"
+          ]
+        },
+        {
+          "id": "normal-housing",
+          "text": "You have enough room to test a few variations, then settle on the one that communicates most clearly. The session emphasizes dexterity while the completed Night-study action remains the only mechanics transaction.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            }
+          ],
+          "media": [
+            "school/night-v2/arts-and-performance/study"
+          ]
+        },
+        {
+          "id": "quiet",
+          "text": "You repeat a short phrase, step, rhythm, or sketch until one choice feels intentional instead of accidental. The evening focus is dexterity.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/arts-and-performance/study"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "A small timing change gives the work a clearer direction, and you mark it before the idea disappears. You connect the insight back to dexterity.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/arts-and-performance/study"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Let the Night flow continue after the presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.night-v2.body-confidence.sexuality",
+      "title": "Night study — Body Confidence — sexuality",
+      "sourceDomain": "school.track.body_confidence",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.body_confidence.sexuality"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 1,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "cheap-housing",
+          "text": "Privacy is limited, so the practice centers on small, discreet routines that still let you choose how you present yourself. You keep the focus on sexuality without adding any second School effect.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ],
+          "media": [
+            "school/night-v2/body-confidence/study"
+          ]
+        },
+        {
+          "id": "normal-housing",
+          "text": "The quiet room gives you space to practice deliberate movement and preparation without an audience. The session emphasizes sexuality while the completed Night-study action remains the only mechanics transaction.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            }
+          ],
+          "media": [
+            "school/night-v2/body-confidence/study"
+          ]
+        },
+        {
+          "id": "quiet",
+          "text": "You move through a calm grooming or posture routine focused on deliberate self-care rather than display. The evening focus is sexuality.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/body-confidence/study"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "A small change in posture or routine makes you feel more prepared without making you feel more artificial. You connect the insight back to sexuality.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/body-confidence/study"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Let the Night flow continue after the presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.night-v2.body-confidence.grooming",
+      "title": "Night study — Body Confidence — grooming",
+      "sourceDomain": "school.track.body_confidence",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.body_confidence.grooming"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 1,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "cheap-housing",
+          "text": "Privacy is limited, so the practice centers on small, discreet routines that still let you choose how you present yourself. You keep the focus on grooming without adding any second School effect.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ],
+          "media": [
+            "school/night-v2/body-confidence/study"
+          ]
+        },
+        {
+          "id": "normal-housing",
+          "text": "The quiet room gives you space to practice deliberate movement and preparation without an audience. The session emphasizes grooming while the completed Night-study action remains the only mechanics transaction.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            }
+          ],
+          "media": [
+            "school/night-v2/body-confidence/study"
+          ]
+        },
+        {
+          "id": "quiet",
+          "text": "You move through a calm grooming or posture routine focused on deliberate self-care rather than display. The evening focus is grooming.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/body-confidence/study"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "A small change in posture or routine makes you feel more prepared without making you feel more artificial. You connect the insight back to grooming.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/body-confidence/study"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Let the Night flow continue after the presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.night-v2.body-confidence.endurance",
+      "title": "Night study — Body Confidence — endurance",
+      "sourceDomain": "school.track.body_confidence",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.body_confidence.endurance"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 1,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "cheap-housing",
+          "text": "Privacy is limited, so the practice centers on small, discreet routines that still let you choose how you present yourself. You keep the focus on endurance without adding any second School effect.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ],
+          "media": [
+            "school/night-v2/body-confidence/study"
+          ]
+        },
+        {
+          "id": "normal-housing",
+          "text": "The quiet room gives you space to practice deliberate movement and preparation without an audience. The session emphasizes endurance while the completed Night-study action remains the only mechanics transaction.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "normal"
+            }
+          ],
+          "media": [
+            "school/night-v2/body-confidence/study"
+          ]
+        },
+        {
+          "id": "quiet",
+          "text": "You move through a calm grooming or posture routine focused on deliberate self-care rather than display. The evening focus is endurance.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/body-confidence/study"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "A small change in posture or routine makes you feel more prepared without making you feel more artificial. You connect the insight back to endurance.",
+          "conditions": [],
+          "media": [
+            "school/night-v2/body-confidence/study"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Let the Night flow continue after the presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    }
+  ]
+}
