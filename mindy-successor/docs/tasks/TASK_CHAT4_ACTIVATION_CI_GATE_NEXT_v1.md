@@ -2583,3 +2583,103 @@ Create NEW file only:
 Summarize readiness after items 175–185 for static media, non-Lumber result localization, Forest route presentation, Chat2 non-career assets, and current Product-open boundaries.
 
 Continue items 175–186 sequentially without waiting for Lead review.
+
+
+## Queue item 175 — project-owned static Lead branch source audit v2
+Create NEW file only:
+- `docs/qa-prep/PROJECT_OWNED_STATIC_LEAD_BRANCH_SOURCE_AUDIT_V2.md`
+
+Review Lead branch `lead/project-owned-static-media-v1` against current main and Chat2 items 184–195.
+Require selective copy only, actual 21 project-owned SVGs, current semantic IDs, no external media, no gameplay drift.
+
+## Queue item 176 — presentation altKey schema compatibility QA v1
+Create NEW file only:
+- `docs/qa-prep/PRESENTATION_ALTKEY_SCHEMA_COMPATIBILITY_QA_V1.md`
+
+Review any Lead addition of optional media `altKey`:
+- optional/backward-compatible;
+- locale-neutral asset/candidate identity;
+- no Save field;
+- no gameplay RNG input;
+- editor/custom override compatibility;
+- GIF candidate selection unchanged.
+
+## Queue item 177 — static presentation slot mapping QA v1
+Create NEW file only:
+- `docs/qa-prep/STATIC_PRESENTATION_SLOT_MAPPING_QA_V1.md`
+
+Validate every production static override uses an existing current semantic presentationId and correct intended asset family. Reject staged/Product-open IDs.
+
+## Queue item 178 — static media build-distribution QA v2
+Create NEW file only:
+- `docs/qa-prep/STATIC_MEDIA_BUILD_DISTRIBUTION_QA_V2.md`
+
+Verify all selectively integrated SVG files ship into `dist/assets/presentation`, preserve bytes, and every root presentation path resolves.
+
+## Queue item 179 — static media RU EN invariance QA v1
+Create NEW file only:
+- `docs/qa-prep/STATIC_MEDIA_RU_EN_INVARIANCE_QA_V1.md`
+
+Require same physical asset/source/semantic slot across RU↔EN; only alt/caption text may change. Check representative career, School, poverty, Forest and Foreman surfaces.
+
+## Queue item 180 — Chat2 seasonal static source QA v1
+Create NEW file only:
+- `docs/qa-prep/CHAT2_SEASONAL_STATIC_SOURCE_QA_V1.md`
+
+Review Chat2 items 196–207: 40 seasonal career SVGs, exact current semantic IDs, 50/50 claimed result+seasonal coverage, accessibility and build tests. Worker branch remains selective-copy only.
+
+## Queue item 181 — Chat2 non-career static wave QA v1
+Create NEW file only:
+- `docs/qa-prep/CHAT2_NON_CAREER_STATIC_WAVE_QA_V1.md`
+
+Review items 208–219 as they appear. Separate current shipped School/poverty/Forest/Foreman identities from Product-open/staged surfaces.
+
+## Queue item 182 — Chat3 post-PR45 text and Forest route QA v1
+Create NEW file only:
+- `docs/qa-prep/CHAT3_POST_PR45_FOREST_ROUTE_QA_V1.md`
+
+Review Chat3 items 185–208 actual Git:
+- poverty text-only patch;
+- shared Night/lodging presentation strings;
+- current two Forest route presentation sources;
+- Product-open isolation.
+No gameplay approval.
+
+## Queue item 183 — Chat5 seasonal content QA v1
+Create NEW file only:
+- `docs/qa-prep/CHAT5_NON_LUMBER_SEASONAL_CONTENT_QA_V1.md`
+
+Review Chat5 items 49–60 as they appear. Require exact nine non-Lumber current seasonal presentation identities, RU+EN text-only content, no mechanic/Forest-route bleed.
+
+## Queue item 184 — static media production PR acceptance v1
+Create NEW file only:
+- `docs/qa-prep/STATIC_MEDIA_PRODUCTION_PR_ACCEPTANCE_V1.md`
+
+For the forthcoming Lead static-media PR, require:
+- exact-head CI;
+- presentation validator/schema compatibility;
+- build distribution;
+- RU↔EN alt invariance;
+- same selected asset identity;
+- no gameplay/state drift;
+- post-merge main CI.
+
+## Queue item 185 — current-main regression floor v4
+Create NEW file only:
+- `docs/qa-prep/CURRENT_MAIN_CI_REGRESSION_FLOOR_V4.md`
+
+Record exact current main SHA, latest successful push run, validator counts/test counts, and later update only with fresh evidence after static-media merge if it occurs during this wave.
+
+## Queue item 186 — next production integration gate v14
+Create NEW file only:
+- `docs/qa-prep/NEXT_PRODUCTION_INTEGRATION_GATE_V14.md`
+
+Summarize items 175–185:
+- static-media Lead readiness;
+- seasonal career source readiness;
+- non-career static source readiness;
+- poverty/Forest route text readiness;
+- non-Lumber seasonal text readiness;
+- Product-open isolation.
+
+Continue items 175–186 sequentially without waiting for Lead review.
