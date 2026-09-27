@@ -842,3 +842,23 @@ Define the smallest future implementation/content packages for:
 Separate human decisions from content authoring and runtime changes.
 
 Continue items 49–57 sequentially without waiting for Lead review.
+
+
+## Queue item 58 — School balance-parameter ledger
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_BALANCE_PARAMETER_LEDGER_v1.md`
+
+Inventory School values that remain balance/Product-owned versus mechanics already locked:
+- tuition values;
+- course stat-package numbers where already locked vs still tunable;
+- management/accounting milestone threshold;
+- Arcana/Forest milestone threshold;
+- certificate/project/exam thresholds if adopted;
+- Night study values that are already locked and therefore must be marked non-open.
+
+For each open value identify affected tracks, simulations/acceptance needed, and whether the eventual change is balance-data, content-authoring, or runtime.
+
+Do not choose final numbers or reopen locked Night-study mechanics.
+
+Continue items 50–58 sequentially without waiting for Lead review.
