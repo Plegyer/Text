@@ -2001,3 +2001,121 @@ Produce the smallest Lead implementation packet:
 - no-save-migration preferred path.
 
 Continue items 107–115 sequentially without waiting for Lead review.
+
+
+## Queue item 116 — deterministic media-pool selector fixture v2
+
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-multi-gif-selector-v2.fixture.json`
+
+Provide deterministic selection examples for 3–5 candidate GIF pools using:
+- semantic presentationId;
+- stable occurrence key;
+- pool version;
+- candidate stable key;
+- optional presentation-only weights.
+
+Include reload-stability examples and prove no gameplay RNG/state is required.
+
+## Queue item 117 — multi-GIF selector black-box test plan
+
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/presentation-multi-gif-selector-blackbox.test.ts`
+
+Write current/future-compatible black-box tests for:
+- same occurrence -> same selected first candidate;
+- different occurrence keys may vary;
+- pool ordering/replacement remains deterministic;
+- candidate failure exposes remaining pool/fallback;
+- no mutation of game Save/RNG.
+
+Do not edit shared presentation runtime.
+
+## Queue item 118 — ten-career media-pool density audit
+
+Create NEW file only:
+- `docs/presentation-prep/TEN_CAREER_MEDIA_POOL_DENSITY_AUDIT_v1.md`
+
+For all 10 ordinary careers now on main, audit shipped base shift/result semantic surfaces and target visual diversity.
+
+For each surface record:
+- current fallback;
+- target 3–5 GIF count;
+- reuse opportunities;
+- seasonal differentiation;
+- missing authored content before additional pools.
+
+## Queue item 119 — poverty production media-pool mapping v2
+
+Create NEW file only:
+- `docs/presentation-prep/POVERTY_PRODUCTION_MEDIA_POOL_MAPPING_v2.md`
+
+Map the actual PR37 production event identities to 3–5 GIF pools:
+- street;
+- cheap lodging;
+- recovery/help;
+- pressure/bad-luck.
+
+Visual candidate selection must never select or alter gameplay outcome.
+
+## Queue item 120 — School reachable-hook media mapping v2
+
+Create NEW file only:
+- `docs/presentation-prep/SCHOOL_REACHABLE_HOOK_MEDIA_MAPPING_v2.md`
+
+Using PR38's safe routing model, distinguish:
+- reachable generic post-paid-lesson hooks;
+- exact Night-study hooks;
+- staged teacher/course-specific libraries awaiting routing.
+
+Prepare 3–5 GIF pool targets only for identities that are actually reachable or clearly staged.
+
+## Queue item 121 — GIF producer batch: ordinary work loops v1
+
+Create NEW file only:
+- `docs/presentation-prep/GIF_PRODUCER_BATCH_ORDINARY_WORK_V1.md`
+
+Create production cards for the first media batch covering all 10 ordinary career base shifts.
+
+For each career provide 3–5 distinct loop briefs that show visual variety without implying different gameplay outcomes. Keep character appearance/art style open unless already authored.
+
+## Queue item 122 — GIF producer batch: School/poverty loops v1
+
+Create NEW file only:
+- `docs/presentation-prep/GIF_PRODUCER_BATCH_SCHOOL_POVERTY_V1.md`
+
+Create production cards for:
+- reachable School lesson/Night contexts;
+- street sleep;
+- cheap lodging;
+- representative poverty event contexts.
+
+Use 3–5 candidate loops where repetition warrants it.
+
+## Queue item 123 — media-pool accessibility/alt audit v1
+
+Create NEW file only:
+- `docs/presentation-prep/MEDIA_POOL_ACCESSIBILITY_ALT_AUDIT_v1.md`
+
+Define and audit alt-text requirements for multi-GIF pools:
+- each candidate needs useful alt text;
+- alt text describes presentation, not hidden mechanics;
+- reused GIF may need context-specific alt;
+- fallback text remains meaningful.
+
+Cover representative career, School and poverty pools.
+
+## Queue item 124 — multi-GIF adoption handoff v3
+
+Create NEW file only:
+- `docs/presentation-prep/MULTI_GIF_ADOPTION_HANDOFF_v3.md`
+
+Consolidate items 116–123 with current main/Lead implementation status:
+- selector evidence;
+- all-ten-career media coverage;
+- poverty/School mappings;
+- producer-ready batches;
+- exact remaining runtime gap;
+- selective integration list.
+
+Continue items 116–124 sequentially without waiting for Lead review.
