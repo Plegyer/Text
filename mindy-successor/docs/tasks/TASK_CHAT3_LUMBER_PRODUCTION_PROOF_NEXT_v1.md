@@ -1976,3 +1976,18 @@ Summarize which of the two streams can safely enter production next:
 Do not recommend Product answers; separate implementation readiness from human decisions.
 
 Continue items 114–122 sequentially without waiting for Lead review.
+
+
+## Cross-cutting Product rule — RU + EN from now on
+
+Effective immediately by direct Product decision:
+- the game ships in **Russian and English**;
+- Russian is the source authoring language; English is a full second locale;
+- one gameplay/content identity, one semantic ID, one set of mechanics and one save-state serve both languages;
+- language affects presentation/text only;
+- no locale-specific conditions, rewards, timing, RNG, eligibility or save identity;
+- Forest/Secret Debt authoring: every new player-facing authored scene, choice label or result text must be supplied in RU + EN with identical mechanics/identity across locales.
+- if an already-assigned item has player-facing text and is not yet committed, author both locales now;
+- if an item was already committed before this rule, do not rewrite it blindly; record it for localization migration/review.
+
+Do not create a second copy of the gameplay event for English.
