@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "fixtureId": "foreman-night-choice-localization-acceptance-v1",
+  "choiceId": "lumber.foreman.night",
+  "localizationKey": "nightChoice.lumber.foreman.night.label",
+  "fallbackLabel": "Talk with the Foreman",
+  "labels": {
+    "ru": "Поговорить с бригадиром",
+    "en": "Talk with the Foreman"
+  },
+  "acceptance": {
+    "sameChoiceIdAcrossLocales": true,
+    "sameNightFlowStateAcrossLocales": true,
+    "sameSaveAcrossLocales": true,
+    "sameRelationshipStateAcrossLocales": true,
+    "sameGameplayRngAcrossLocales": true,
+    "nextDayEnergyDelta": 0
+  },
+  "currentMainStatus": "SHARED_UI_REQUIRED",
+  "currentMainNote": "The ordinary Night menu currently localizes School Night-study labels only. Generic Night-choice localization remains Lead-owned shared UI work."
+}
