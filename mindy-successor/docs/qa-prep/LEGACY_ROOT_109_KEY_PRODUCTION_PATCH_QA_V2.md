@@ -1,10 +1,10 @@
 # Legacy root 109-key production patch QA v2
 
-Status: COMPLETE / GREEN_SELECTIVE_LOCALIZATION_SOURCE
+Status: COMPLETE / GREEN_POST_MERGE_MAIN
 
-Current main reviewed:
-`1a2f6e428da41e356f8d48df4a72923a5cc1928c`
-(after PR51 poverty copyedit).
+Current main:
+`5dffefd15703d431a604b4cc9f831c4e55460aed`
+(PR52 legacy root localization merge, on top of PR51).
 
 Source:
 `legacy-root-localization-production-patch-v2.fixture.json`.
@@ -144,35 +144,84 @@ Lead selective integration must:
 The 109-key legacy root patch is clean against current main and contains only current-ID bilingual presentation text.
 
 
-## Live PR52 integration attempt
+## PR52 integration history
 
 PR #52:
 `Lead: integrate legacy root RU EN localization`.
 
-Current exact head during this refresh:
+Base:
+`1a2f6e428da41e356f8d48df4a72923a5cc1928c`.
+
+### Failed first exact head
+
+Head:
 `a47c766725f4b1034aa27c3cb74ce3819dfa4c47`.
 
-State:
-`OPEN / NOT_MERGED`.
-
-Exact-head workflow:
-- run #86;
+Run #86:
 - id `36347027713`;
-- conclusion: FAILURE;
-- validator still reaches 17 packs / 46 events / 35 actions / 9 endings;
+- FAILURE;
+- validator: 17 packs / 46 events / 35 actions / 9 endings;
 - tests: 325;
 - pass: 324;
 - fail: 1.
 
-Blocking failure:
+Failure:
 `tests/legacy-root-localization-production-v1.test.ts`
-cannot open:
-`content/legacy-root-localization-production-patch-v2.fixture.json`
-(`ENOENT`).
+attempted to open missing:
+`content/legacy-root-localization-production-patch-v2.fixture.json`.
 
-This is an integration-copy/test-fixture completeness failure on the exact PR52 head, not evidence of a localization-key collision or gameplay regression.
+This was an integration-copy/test-fixture completeness failure, not a localization/gameplay failure.
 
-QA status for PR52 exact head:
-`BLOCKED_EXACT_HEAD_CI`.
+### Accepted fixed exact head
 
-Do not merge that exact head. A fixed head must include the required reviewed fixture (or adjust the regression only if the production test intentionally becomes self-contained), then rerun full exact-head CI.
+Fixed head:
+`eefcdff5f4eb4c0eb4c9f60a91a708b5da49d962`.
+
+Run #87:
+- id `36347164191`;
+- SUCCESS;
+- validator: 17 / 46 / 35 / 9;
+- tests: 329;
+- pass: 329;
+- fail: 0.
+
+Relevant tests PASS:
+- `production legacy patch covers exact current event and media identities`;
+- `production legacy patch is complete RU EN and locale-neutral`;
+- `production root collision policy is additive, identical, or explicitly reviewed replacement`;
+- `production legacy patch contains localization only`;
+- `production legacy patch excludes other-owner namespaces`.
+
+### Merge + current main
+
+PR52 merged as:
+`5dffefd15703d431a604b4cc9f831c4e55460aed`.
+
+Post-merge main run #88:
+- id `36347268518`;
+- SUCCESS;
+- validator: 17 / 46 / 35 / 9;
+- tests: 329;
+- pass: 329;
+- fail: 0.
+
+The same legacy production regressions pass on merged main.
+
+## Shipped root effect
+
+Current root localization now contains:
+`511` keys.
+
+Missing RU:
+`0`.
+
+Missing EN:
+`0`.
+
+The patch adds/retains bilingual current event/media strings only; no gameplay count changes occur.
+
+## Final verdict
+
+`GREEN_POST_MERGE_MAIN`.
+
+The 109-key legacy root localization integration is shipped on current main.
