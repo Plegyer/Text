@@ -16,10 +16,18 @@ const gifD='data:image/gif;base64,R0lGODlhAQABAIAAAP8AAP///ywAAAAAAQABAAACAUwAOw
 const gifE='data:image/gif;base64,R0lGODlhAQABAIAAAAAA/////ywAAAAAAQABAAACAUwAOw==';
 const png='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAB';
 
-const pool=(candidates=3)=>({
+type TestPoolCandidate={key:string;kind:'gif';src:string;alt:string;weight?:number};
+type TestPool={
+  version:number;
+  ordering:'ordered'|'unordered';
+  selectionPolicy:'unweighted'|'weighted';
+  candidates:TestPoolCandidate[];
+};
+
+const pool=(candidates=3):TestPool=>({
   version:1,
-  ordering:'ordered' as const,
-  selectionPolicy:'unweighted' as const,
+  ordering:'ordered',
+  selectionPolicy:'unweighted',
   candidates:[
     {key:'a',kind:'gif' as const,src:gifA,alt:'A'},
     {key:'b',kind:'gif' as const,src:gifB,alt:'B'},
