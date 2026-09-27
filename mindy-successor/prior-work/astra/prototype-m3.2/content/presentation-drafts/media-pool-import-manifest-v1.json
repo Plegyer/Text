@@ -1,0 +1,162 @@
+{
+  "formatVersion": 1,
+  "kind": "presentation-media-pool-import-manifest",
+  "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+  "runtimeWiring": false,
+  "notes": [
+    "Candidate pools are presentation-only.",
+    "Weights, where present, are presentation-selection weights and must not consume or modify gameplay RNG.",
+    "authoring://non-shipped paths are placeholders until approved assets are delivered."
+  ],
+  "policy": {
+    "candidateCount": {
+      "min": 3,
+      "max": 5
+    },
+    "gameplayMutationAllowed": false,
+    "semanticIdRenameAllowed": false,
+    "frameTimePersistenceAllowed": false,
+    "missingCandidateFatal": false
+  },
+  "pools": [
+    {
+      "presentationId": "job/lumber/shift/spring/default",
+      "ordering": "ordered",
+      "selectionPolicy": "presentation-only-rotation",
+      "candidates": [
+        {
+          "candidateId": "lumber-spring-a",
+          "kind": "gif",
+          "src": "authoring://non-shipped/job/lumber/shift/spring/default/a.gif",
+          "alt": "Spring Lumber work visual variation A.",
+          "weight": null
+        },
+        {
+          "candidateId": "lumber-spring-b",
+          "kind": "gif",
+          "src": "authoring://non-shipped/job/lumber/shift/spring/default/b.gif",
+          "alt": "Spring Lumber work visual variation B.",
+          "weight": null
+        },
+        {
+          "candidateId": "lumber-spring-c",
+          "kind": "gif",
+          "src": "authoring://non-shipped/job/lumber/shift/spring/default/c.gif",
+          "alt": "Spring Lumber work visual variation C.",
+          "weight": null
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-lumber.svg",
+        "alt": "Static Lumber work fallback."
+      },
+      "textFallback": "Existing authored spring Lumber shift text.",
+      "replacement": {
+        "scope": "semantic-slot-pool",
+        "replaceByPresentationId": true,
+        "atomicPreferred": true
+      },
+      "rollback": {
+        "restore": "shipped-static-and-prior-pool",
+        "priorStatic": "assets/stage-lumber.svg"
+      }
+    },
+    {
+      "presentationId": "school/arcana/lesson/default",
+      "ordering": "unordered",
+      "selectionPolicy": "presentation-only-weighted",
+      "candidates": [
+        {
+          "candidateId": "arcana-lesson-observe",
+          "kind": "gif",
+          "src": "authoring://non-shipped/school/arcana/lesson/default/observe.gif",
+          "alt": "Arcana lesson visual variation focused on observation.",
+          "weight": 1
+        },
+        {
+          "candidateId": "arcana-lesson-pattern",
+          "kind": "gif",
+          "src": "authoring://non-shipped/school/arcana/lesson/default/pattern.gif",
+          "alt": "Arcana lesson visual variation with a controlled practice pattern.",
+          "weight": 1
+        },
+        {
+          "candidateId": "arcana-lesson-method",
+          "kind": "gif",
+          "src": "authoring://non-shipped/school/arcana/lesson/default/method.gif",
+          "alt": "Arcana lesson visual variation focused on comparing explanations.",
+          "weight": 1
+        }
+      ],
+      "weightSemantics": "PRESENTATION_ONLY_DO_NOT_USE_GAMEPLAY_RNG",
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-school.svg",
+        "alt": "Static School lesson fallback."
+      },
+      "textFallback": "Existing authored Arcana lesson text.",
+      "replacement": {
+        "scope": "semantic-slot-pool",
+        "replaceByPresentationId": true,
+        "atomicPreferred": true
+      },
+      "rollback": {
+        "restore": "shipped-static-and-prior-pool",
+        "priorStatic": "assets/stage-school.svg"
+      }
+    },
+    {
+      "presentationId": "night/rest/default",
+      "ordering": "unordered",
+      "selectionPolicy": "presentation-only-unweighted",
+      "candidates": [
+        {
+          "candidateId": "rest-a",
+          "kind": "gif",
+          "src": "authoring://non-shipped/night/rest/default/a.gif",
+          "alt": "Night lodging and rest visual variation A.",
+          "weight": null
+        },
+        {
+          "candidateId": "rest-b",
+          "kind": "gif",
+          "src": "authoring://non-shipped/night/rest/default/b.gif",
+          "alt": "Night lodging and rest visual variation B.",
+          "weight": null
+        },
+        {
+          "candidateId": "rest-c",
+          "kind": "gif",
+          "src": "authoring://non-shipped/night/rest/default/c.gif",
+          "alt": "Night lodging and rest visual variation C.",
+          "weight": null
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-school.svg",
+        "alt": "Current static rest/lodging fallback."
+      },
+      "textFallback": "Current authored rest/lodging text.",
+      "replacement": {
+        "scope": "semantic-slot-pool",
+        "replaceByPresentationId": true,
+        "atomicPreferred": true
+      },
+      "rollback": {
+        "restore": "shipped-static-and-prior-pool",
+        "priorStatic": "assets/stage-school.svg"
+      }
+    }
+  ],
+  "importAcceptance": {
+    "rejectUnknownPresentationId": true,
+    "rejectInvalidCandidateKind": true,
+    "rejectMissingAlt": true,
+    "rejectUnsafePath": true,
+    "preserveStaticFallback": true,
+    "animationsOffSkipsGifPool": true,
+    "saveGameplayStateUnchanged": true
+  }
+}
