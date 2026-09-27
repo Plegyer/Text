@@ -853,3 +853,110 @@ Consolidate post-PR24 state into:
 Explicitly mark the old pre-fix PR24 presentation audit as superseded where it omitted `base.school`.
 
 Continue items 43–48 sequentially without waiting for Lead review.
+
+
+## Queue item 49 — PR25 merged presentation gate reconciliation
+
+Create NEW files only:
+- `docs/presentation-prep/PRESENTATION_PR25_GATE_RECONCILIATION_v1.md`
+- `prior-work/astra/prototype-m3.2/tests/presentation-pr25-gate-reconciliation.test.ts`
+
+Review merged/final PR25 semantics from the presentation side.
+
+Confirm:
+- paid School lesson -> real blocking School scene -> NightFlow ordering;
+- presentation ownership remains lastAction/pendingScene/NightFlow/Activity/ending;
+- no presentation timing drives mechanics;
+- no PR25 QA fixture introduces a new production presentation identity.
+
+Do not edit shared runtime/UI/catalog.
+
+## Queue item 50 — production semantic-slot completeness negative suite
+
+Create NEW files only:
+- `prior-work/astra/prototype-m3.2/content/presentation-slot-completeness-negative.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/presentation-slot-completeness-negative.test.ts`
+
+Truthfully detect missing production-facing semantic presentation coverage for the RC slice.
+
+Cover:
+- Lumber;
+- Foreman;
+- School paid lesson;
+- blocking School scene;
+- Night;
+- Forest route/result;
+- ending;
+- New Run.
+
+Classify missing slot as:
+- BLOCKING_IDENTITY_GAP;
+- SAFE_STATIC_FALLBACK;
+- SAFE_TEXT_FALLBACK;
+- FUTURE_ASSET_ONLY.
+
+## Queue item 51 — fallback failure-injection suite v2
+
+Create NEW files only:
+- `prior-work/astra/prototype-m3.2/content/presentation-fallback-failure-injection-v2.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/presentation-fallback-failure-injection-v2.test.ts`
+
+Inject representative failures on merged RC semantic IDs:
+- missing GIF;
+- missing static;
+- invalid override;
+- stale override;
+- fallback cycle;
+- animations disabled.
+
+Verify gameplay remains unchanged or invalid presentation config rejects before persistence.
+
+## Queue item 52 — operator replacement smoke manifest v2
+
+Create:
+- `docs/presentation-prep/PRESENTATION_OPERATOR_SMOKE_V2.md`
+- `prior-work/astra/prototype-m3.2/content/presentation-operator-smoke-v2.fixture.json`
+
+Produce a short operator smoke for replacing one representative asset by presentationId:
+- import;
+- validate;
+- preview;
+- persist;
+- reload;
+- animations-off;
+- rollback.
+
+No source-path editing.
+
+## Queue item 53 — presentation authoring decision matrix
+
+Create:
+- `docs/presentation-prep/PRESENTATION_AUTHORING_DECISION_MATRIX_v1.md`
+
+List only unresolved human/content decisions:
+- which future GIFs to author first;
+- missing final art for routes/challenges;
+- School teacher/content visuals;
+- ending polish.
+
+Separate these from already-green presentation runtime mechanics.
+
+Do not choose a preferred art direction.
+
+## Queue item 54 — final presentation closeout pack v5
+
+Create:
+- `docs/presentation-prep/PRESENTATION_FINAL_CLOSEOUT_PACK_v5.md`
+- `prior-work/astra/prototype-m3.2/content/presentation-final-closeout-pack.fixture.json`
+
+Produce the smallest final handoff:
+- SHIPPED_GREEN;
+- MUST_INTEGRATE_QA;
+- HUMAN_ASSET_DECISION;
+- AUTHORING_BLOCKED;
+- SUPERSEDED;
+- POST_RELEASE.
+
+Name exact files and explicitly supersede stale pre-fix PR24 artifacts.
+
+Continue items 49–54 sequentially without waiting for Lead review.
