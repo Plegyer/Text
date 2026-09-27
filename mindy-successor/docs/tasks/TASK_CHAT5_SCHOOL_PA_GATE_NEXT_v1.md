@@ -2121,3 +2121,71 @@ Create NEW file only:
 Consolidate 137–144 into exact files/tests Lead can selectively integrate on current main after PR42.
 
 Continue items 137–145 sequentially without waiting for Lead review.
+
+
+## Queue item 146 — School production localization patch v1
+
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/school-localization-production-patch-v1.fixture.json`
+
+Consolidate only SAFE current-main School localization entries from items 137–145 into one exact patch for `content/localization.json`.
+
+Include:
+- School panel/help UI;
+- all 8 course labels/descriptions;
+- tuition/Energy wording;
+- generic reachable post-lesson events;
+- exact routed Night-study events;
+- media alt for reachable School media.
+
+Exclude staged teacher/course-specific content.
+
+## Queue item 147 — School production localization patch test
+
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/school-localization-production-patch-v1.test.ts`
+
+Validate item 146:
+- RU and EN complete;
+- keys unique/locale-neutral;
+- all 8 course IDs represented;
+- only reachable generic/Night event identities included;
+- staged teacher/course exact content absent;
+- no gameplay fields.
+
+## Queue item 148 — School panel locale UI smoke fixture v1
+
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/school-ui-locale-smoke-v1.fixture.json`
+
+Provide exact expected RU/EN UI text pairs for:
+- panel title/help;
+- 8 course labels;
+- tuition/Energy template;
+- lesson action label;
+- Night-study context/action labels.
+
+No mechanics values changed.
+
+## Queue item 149 — School reachable event localization key map v1
+
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/school-reachable-event-localization-key-map-v1.fixture.json`
+
+Map current reachable School generic and exact Night event/variant/choice/media IDs to the Lead runtime key convention.
+
+Do not include staged exact-course teacher events.
+
+## Queue item 150 — School exact-course routing fixture v2
+
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/school-exact-course-routing-v2.fixture.json`
+
+Using the existing proposed seam only, encode expected locale-neutral exact-course reaction identities for all 8 paid courses.
+
+This is staging evidence only:
+- no shared runtime edits;
+- no gameplay transaction duplication;
+- no teacher event promoted to production yet.
+
+Continue items 142–150 sequentially without waiting for Lead review.
