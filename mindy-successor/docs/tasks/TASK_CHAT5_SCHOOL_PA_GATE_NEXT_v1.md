@@ -961,3 +961,21 @@ Create a fill-in template for human decisions on:
 For each field record downstream content/runtime/test impact while preserving locked course and Night-study mechanics.
 
 Continue items 55–63 sequentially without waiting for Lead review.
+
+
+## Queue item 64 — School teacher-relationship boundary template
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_TEACHER_RELATIONSHIP_BOUNDARY_TEMPLATE_v1.md`
+
+Define how future teacher/presenter relationships may interact with School while preserving ownership:
+- School owns lesson transaction/progress;
+- relationship domain owns relationship state;
+- public results bridge systems;
+- teacher relationship cannot silently become a paid-lesson prerequisite;
+- Night/relationship scenes remain separate from School payment;
+- save/reload remains exactly-once.
+
+Leave teacher identities and relationship content OPEN.
+
+Continue items 56–64 sequentially without waiting for Lead review.
