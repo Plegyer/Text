@@ -1112,3 +1112,28 @@ Require:
 Apply generically to careers, School, poverty and Activity.
 
 Continue items 63–71 sequentially without waiting for Lead review.
+
+
+## Queue item 72 — human-decision readiness crosscheck v1
+
+Create NEW file only:
+- `docs/qa-prep/HUMAN_DECISION_READINESS_CROSSCHECK_v1.md`
+
+Cross-check current authoritative decision packets for:
+- Old Boundary Token;
+- hunter trail;
+- School management/accounting;
+- School Arcana/Forest;
+- poverty/Secret Debt;
+- optional presentation/art priorities.
+
+For each distinguish:
+- genuinely human-owned decision;
+- already locked and must not be re-asked;
+- content authoring that does not need a decision;
+- balance value that can remain parameterized;
+- technical work that can proceed now.
+
+Goal: minimize the number of questions Lead eventually asks the user.
+
+Continue items 64–72 sequentially without waiting for Lead review.
