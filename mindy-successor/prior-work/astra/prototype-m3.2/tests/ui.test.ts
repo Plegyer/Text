@@ -95,3 +95,25 @@ test('renderer: editor replaces GIF by presentationId and rejects invalid replac
   assert.deepEqual(errors,[]);
  }finally{dom.window.close();}
 });
+
+
+test('renderer: Work panel exposes exactly the ten target ordinary career shifts',async()=>{
+ const {w,dom}=boot(JSON.stringify(started()));try{
+  await wait(()=>!!w.document.querySelector('[data-panel="work"]'));
+  w.document.querySelector('[data-panel="work"]').click();
+  const ids=[...w.document.querySelectorAll('[data-action]')].map((node:any)=>node.getAttribute('data-action')).filter(Boolean);
+  assert.deepEqual(ids,[
+   'lumber.shift',
+   'satyr-maid.shift',
+   'undead-farm.shift',
+   'tavern.shift',
+   'hunter.shift',
+   'guard.shift',
+   'merchant.shift',
+   'artist-geisha.shift',
+   'assassin.shift',
+   'prostitute.shift'
+  ]);
+  for(const legacy of ['tavern','hunt','guard'])assert.equal(ids.includes(legacy),false,legacy);
+ }finally{dom.window.close();}
+});
