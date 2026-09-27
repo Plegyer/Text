@@ -1660,3 +1660,65 @@ Define representative natural-path smoke coverage for:
 Use actual current-main evidence and identify any path still lacking executable smoke.
 
 Continue items 95–103 sequentially without waiting for Lead review.
+
+
+## Queue item 104 — PR38 post-merge School verification
+
+Create NEW file only:
+- `docs/qa-prep/PR38_POST_MERGE_SCHOOL_VERIFICATION_v1.md`
+
+Verify current main after PR #38:
+- merge SHA;
+- exact-head 286/286 PASS;
+- post-merge main CI;
+- production/staging split is preserved;
+- no fake exact-course routing;
+- no School mechanics drift.
+
+Use Git evidence only.
+
+## Queue item 105 — multi-GIF implementation PR review template
+
+Create NEW file only:
+- `docs/qa-prep/MULTI_GIF_IMPLEMENTATION_PR_REVIEW_TEMPLATE_v1.md`
+
+Prepare exact independent review checks for the upcoming Lead multi-GIF runtime PR:
+- pool schema 3..5;
+- primary+pool ambiguity;
+- deterministic selector;
+- occurrence key stability;
+- no gameplay RNG;
+- no Save migration;
+- error fallback ordering;
+- animation-off behavior;
+- old overrides still parse;
+- UI call-site occurrence keys.
+
+## Queue item 106 — Forest result production pack QA gate
+
+Create NEW file only:
+- `docs/qa-prep/FOREST_RESULT_PRODUCTION_PACK_QA_GATE_v1.md`
+
+Review requirements for Chat3 Forest result pack:
+- exact `activityResult` trigger;
+- success/escape/failure distinct;
+- no Lumber Hard Work dependency;
+- no duplicate effect on reload;
+- strict pack namespace;
+- presentation fallback;
+- CI on fresh Lead branch.
+
+## Queue item 107 — Secret Debt authored-content false-green audit
+
+Create NEW file only:
+- `docs/qa-prep/SECRET_DEBT_AUTHORED_CONTENT_FALSE_GREEN_AUDIT_v1.md`
+
+Ensure authored lender/work/Night/outcome text is not misreported as implemented mechanics.
+
+Explicitly separate:
+- authored content ready;
+- probability/debt/delay/penalty/threshold/reward still OPEN;
+- runtime state ownership/gating not yet shipped;
+- production inclusion not yet present.
+
+Continue items 99–107 sequentially without waiting for Lead review.
