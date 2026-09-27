@@ -1636,3 +1636,27 @@ Verify:
 Use actual PR head/current Git evidence. Do not invent art direction.
 
 Continue items 82–90 sequentially without waiting for Lead review.
+
+
+## Queue item 91 — starter-trio GIF production batch v1
+
+Create NEW file only:
+- `docs/presentation-prep/STARTER_TRIO_GIF_PRODUCTION_BATCH_v1.md`
+
+Prepare a concrete first media-production batch for already-shipped/PR32 semantic surfaces:
+- Lumber seasonal shift/result;
+- Satyr Maid seasonal shift/result if PR32 remains green;
+- Undead Farm seasonal shift/result if PR32 remains green.
+
+For each slot include:
+- semantic presentationId;
+- current fallback media;
+- reusable-vs-dedicated recommendation category;
+- source content authority;
+- variant count;
+- alt-text requirement;
+- import/rollback acceptance.
+
+Do not invent character appearance or final art style.
+
+Continue items 83–91 sequentially without waiting for Lead review.
