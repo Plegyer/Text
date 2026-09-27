@@ -6,11 +6,11 @@ import {freshSave,parseSave} from '../src/core/engine.ts';
 import {packSchema} from '../src/core/schema.ts';
 import {definitions} from './helpers.ts';
 
-const raw=JSON.parse(
-  readFileSync(
-    'content/packs/school-teachers-v1.json',
-    'utf8'
-  )
+const production=JSON.parse(
+  readFileSync('content/packs/school-teachers-v1.json','utf8')
+);
+const library=JSON.parse(
+  readFileSync('content/packs/school-target/school-teachers-v1.json','utf8')
 );
 
 const courseIds=[
@@ -24,53 +24,45 @@ const courseIds=[
   'school.course.body_confidence'
 ];
 
-test('teacher production pack conforms to the current strict pack schema',()=>{
-  assert.doesNotThrow(()=>packSchema.parse(raw));
-  assert.equal(raw.id,'school-teachers-v1');
-  assert.equal(raw.events.length,8);
+test('teacher production media pack and full staging library conform to pack schema',()=>{
+  assert.doesNotThrow(()=>packSchema.parse(production));
+  assert.doesNotThrow(()=>packSchema.parse(library));
+  assert.equal(production.id,'school-teachers-v1');
+  assert.equal(production.events.length,0);
+  assert.equal(library.events.length,8);
 });
 
-test('teacher production pack represents all eight locked course identities without inventing a teacher metadata schema',()=>{
-  const serialized=JSON.stringify(raw);
-  for(const courseId of courseIds){
-    assert.equal(serialized.includes(courseId),true,courseId);
-  }
+test('full staging teacher library represents all eight locked course identities',()=>{
+  const serialized=JSON.stringify(library);
+  for(const courseId of courseIds)assert.equal(serialized.includes(courseId),true,courseId);
   assert.equal(
-    raw.events.every((event:any)=>
-      typeof event.sourceDomain==='string'&&
-      event.sourceDomain.startsWith('school.teacher.')
+    library.events.every((event:any)=>
+      typeof event.sourceDomain==='string'&&event.sourceDomain.startsWith('school.teacher.')
     ),
     true
   );
 });
 
-test('teacher production pack is presentation-only and cannot mutate the School transaction',()=>{
-  assert.deepEqual(raw.reads,[]);
-  assert.deepEqual(raw.writes,[]);
-  assert.equal('capabilities' in raw,false);
-
-  for(const event of raw.events){
+test('course-specific teacher scenes remain staging-only until exact course routing exists',()=>{
+  for(const event of library.events){
     assert.deepEqual(event.trigger,[],event.id);
     assert.deepEqual(event.reactionTriggers,[],event.id);
-    for(const choice of event.choices){
-      assert.deepEqual(choice.effects,[],event.id);
-    }
+    for(const choice of event.choices)assert.deepEqual(choice.effects,[],event.id);
   }
+  assert.deepEqual(production.reads,[]);
+  assert.deepEqual(production.writes,[]);
+  assert.equal('capabilities' in production,false);
 });
 
-test('teacher semantic presentation surfaces are unique',()=>{
-  const mediaIds=raw.media.map((entry:any)=>entry.id);
-  const eventIds=raw.events.map((entry:any)=>entry.id);
+test('production teacher media identities are unique and presentation-only',()=>{
+  const mediaIds=production.media.map((entry:any)=>entry.id);
+  assert.equal(mediaIds.length,8);
   assert.equal(new Set(mediaIds).size,mediaIds.length);
-  assert.equal(new Set(eventIds).size,eventIds.length);
-  assert.equal(
-    mediaIds.every((id:string)=>id.startsWith('school.teacher.')),
-    true
-  );
+  assert.equal(mediaIds.every((id:string)=>id.startsWith('school.teacher.')),true);
 });
 
-test('loading teacher authored content leaves save schema/state unchanged',()=>{
-  const cat=loadCatalog(definitions,[raw]);
+test('loading production teacher media pack leaves save schema/state unchanged',()=>{
+  const cat=loadCatalog(definitions,[production]);
   const before=freshSave();
   const restored=parseSave(JSON.stringify(before),cat);
 
