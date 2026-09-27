@@ -498,3 +498,96 @@ Create NEW file only:
 Consolidate items 37–47 into SAFE_TO_COPY_NOW / SHARED_UI_REQUIRED / PRESENTATION_ONLY / PRODUCT_OPEN with exact selective-copy file list and recommended next work only after Lead integration.
 
 Continue items 37–48 sequentially without waiting for Lead review.
+
+
+## Queue item 49 — non-Lumber seasonal work-scene copy audit v1
+Create NEW file only:
+- `docs/relationship-prep/NON_LUMBER_SEASONAL_WORK_SCENE_COPY_AUDIT_V1.md`
+
+Audit current main seasonal work-scene presentation text for the nine non-Lumber ordinary careers.
+For each spring/summer/autumn/winter identity classify:
+- SHIPPED_RU_ONLY;
+- SHIPPED_RU_EN;
+- GENERIC_OR_REUSED;
+- MISSING;
+- PRODUCT_OPEN.
+
+Do not change mechanics or semantic IDs.
+
+## Queue item 50 — Satyr Maid seasonal scene bank RU+EN v1
+Create NEW file only:
+- `docs/relationship-prep/SATYR_MAID_SEASONAL_SCENE_BANK_RU_EN_V1.md`
+
+Author concise RU-source + full EN spring/summer/autumn/winter work-scene prose for the exact current Satyr Maid seasonal presentation identities.
+
+## Queue item 51 — Undead Farm seasonal scene bank RU+EN v1
+Create NEW file only:
+- `docs/relationship-prep/UNDEAD_FARM_SEASONAL_SCENE_BANK_RU_EN_V1.md`
+
+Same for current Undead Farm seasonal identities.
+
+## Queue item 52 — Tavern seasonal scene bank RU+EN v1
+Create NEW file only:
+- `docs/relationship-prep/TAVERN_SEASONAL_SCENE_BANK_RU_EN_V1.md`
+
+Same for current Tavern seasonal identities.
+
+## Queue item 53 — Hunter ordinary-work seasonal scene bank RU+EN v1
+Create NEW file only:
+- `docs/relationship-prep/HUNTER_ORDINARY_WORK_SEASONAL_SCENE_BANK_RU_EN_V1.md`
+
+Cover only ordinary Hunter work seasonal presentation.
+Do not introduce Forest Hunter route, clue, token, Old Boundary or expedition semantics.
+
+## Queue item 54 — Guard seasonal scene bank RU+EN v1
+Create NEW file only:
+- `docs/relationship-prep/GUARD_SEASONAL_SCENE_BANK_RU_EN_V1.md`
+
+Same for current Guard seasonal identities.
+
+## Queue item 55 — Merchant seasonal scene bank RU+EN v1
+Create NEW file only:
+- `docs/relationship-prep/MERCHANT_SEASONAL_SCENE_BANK_RU_EN_V1.md`
+
+Same for current Merchant seasonal identities.
+
+## Queue item 56 — Artist/Geisha seasonal scene bank RU+EN v1
+Create NEW file only:
+- `docs/relationship-prep/ARTIST_GEISHA_SEASONAL_SCENE_BANK_RU_EN_V1.md`
+
+Same for current Artist/Geisha seasonal identities.
+
+## Queue item 57 — Assassin seasonal scene bank RU+EN v1
+Create NEW file only:
+- `docs/relationship-prep/ASSASSIN_SEASONAL_SCENE_BANK_RU_EN_V1.md`
+
+Presentation-only seasonal work prose for current Assassin identities.
+Do not add violence mechanics/rewards or new mission semantics.
+
+## Queue item 58 — Prostitute seasonal scene bank RU+EN v1
+Create NEW file only:
+- `docs/relationship-prep/PROSTITUTE_SEASONAL_SCENE_BANK_RU_EN_V1.md`
+
+Presentation-only seasonal work prose for current career identities.
+Keep content non-explicit, voluntary and mechanics-neutral.
+
+## Queue item 59 — non-Lumber seasonal scene localization fixture v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/non-lumber-seasonal-scene-localization-v1.fixture.json`
+
+Map items 50–58 to the exact current 36 seasonal presentation IDs/keys.
+Requirements:
+- RU+EN complete;
+- current IDs only;
+- no gameplay fields;
+- no Lumber edits;
+- no media path duplication;
+- compatible with Chat2 project-owned seasonal static assets.
+
+## Queue item 60 — non-Lumber seasonal scene integration handoff v1
+Create NEW file only:
+- `docs/relationship-prep/NON_LUMBER_SEASONAL_SCENE_INTEGRATION_HANDOFF_V1.md`
+
+Consolidate items 49–59 into SAFE_TEXT_SOURCE / SHARED_PRESENTATION_CONSUMER_REQUIRED / PRODUCT_OPEN with exact selective-copy files and the expected Lead/QA invariants.
+
+Continue items 49–60 sequentially without waiting for Lead review.
