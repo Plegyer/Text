@@ -1105,3 +1105,28 @@ Map what School may contribute to Palace/meta progression while preserving:
 Keep exact Palace/School content and rewards OPEN.
 
 Continue items 63–71 sequentially without waiting for Lead review.
+
+
+## Queue item 72 — School human-decision packet v2
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_HUMAN_DECISION_PACKET_v2.md`
+
+Consolidate only current School decisions that require human/Product input:
+- management/accounting provider;
+- management/accounting milestone form/value;
+- Arcana/Forest provider;
+- Arcana/Forest milestone form/value and whether retained in scope;
+- teacher/presenter identities;
+- whether certificates/projects/exams participate in minimum authored School;
+- any truly blocking presentation priority.
+
+For each record:
+- locked surrounding mechanics;
+- acceptable answer shape;
+- downstream content/runtime/tests affected;
+- what can proceed without the answer.
+
+Do not recommend a preferred choice.
+
+Continue items 64–72 sequentially without waiting for Lead review.
