@@ -1036,3 +1036,20 @@ Define future simulation scenarios for:
 Specify measurable outputs while preserving locked course mechanics and leaving OPEN thresholds/providers undecided.
 
 Continue items 59–67 sequentially without waiting for Lead review.
+
+
+## Queue item 68 — School production pack file-layout plan
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_PRODUCTION_PACK_FILE_LAYOUT_v1.md`
+
+Define a scalable file/package layout for future authored School content:
+- base repeatable lesson variants;
+- teacher-specific packs;
+- milestone/public-result packs;
+- cross-career reaction packs;
+- presentation/media mapping.
+
+The layout must preserve explicit inclusion, avoid one giant pack, and keep fixture-only authoring out of production. Do not modify current production files.
+
+Continue items 60–68 sequentially without waiting for Lead review.
