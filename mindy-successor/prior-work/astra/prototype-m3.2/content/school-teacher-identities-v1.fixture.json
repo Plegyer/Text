@@ -1,0 +1,126 @@
+{
+  "formatVersion": 1,
+  "id": "school.teacher-identities-v1.fixture",
+  "status": "CONTENT_DRAFT",
+  "teachers": [
+    {
+      "contentId": "school.teacher.mara-fen",
+      "displayName": "Mara Fen",
+      "role": "civic scribe and practical numeracy instructor",
+      "tracks": [
+        "school.track.literacy_and_numbers"
+      ],
+      "courseIds": [
+        "school.course.literacy_and_numbers"
+      ],
+      "teachingVoice": "patient, exact, quietly amused by clever shortcuts",
+      "relationshipPotential": "mentor/friendship through repeated practical problem-solving",
+      "visualBriefSeed": "ink-stained sleeves, slate board, ledgers, warm window light"
+    },
+    {
+      "contentId": "school.teacher.ilyra-venn",
+      "displayName": "Ilyra Venn",
+      "role": "academy arcanist and careful experimentalist",
+      "tracks": [
+        "school.track.arcana"
+      ],
+      "courseIds": [
+        "school.course.arcana"
+      ],
+      "teachingVoice": "precise, curious, insists on observation before confidence",
+      "relationshipPotential": "intellectual mentorship; guarded trust around dangerous knowledge",
+      "visualBriefSeed": "layered robes, chalk sigils, glass instruments, blue-white lamplight"
+    },
+    {
+      "contentId": "school.teacher.cassian-reed",
+      "displayName": "Cassian Reed",
+      "role": "public speaker, mediator and debate tutor",
+      "tracks": [
+        "school.track.rhetoric_and_social"
+      ],
+      "courseIds": [
+        "school.course.rhetoric_and_social"
+      ],
+      "teachingVoice": "energetic, playful, turns mistakes into live exercises",
+      "relationshipPotential": "social mentor/rivalry based on wit and composure",
+      "visualBriefSeed": "open lecture floor, cue cards, animated hand gestures"
+    },
+    {
+      "contentId": "school.teacher.eliane-marrow",
+      "displayName": "Eliane Marrow",
+      "role": "court-trained etiquette and presentation tutor",
+      "tracks": [
+        "school.track.etiquette_and_presentation"
+      ],
+      "courseIds": [
+        "school.course.etiquette_and_presentation"
+      ],
+      "teachingVoice": "controlled, observant, dry rather than cruel",
+      "relationshipPotential": "professional respect; possible confidante after sustained discipline",
+      "visualBriefSeed": "tailored formalwear, mirror wall, posture cane used as pointer"
+    },
+    {
+      "contentId": "school.teacher.rowan-pike",
+      "displayName": "Rowan Pike",
+      "role": "scout, guide and practical field instructor",
+      "tracks": [
+        "school.track.field_craft"
+      ],
+      "courseIds": [
+        "school.course.field_craft"
+      ],
+      "teachingVoice": "concise, grounded, teaches by making students notice what they missed",
+      "relationshipPotential": "trust built through competence and reliability",
+      "visualBriefSeed": "weathered coat, maps, rope, knives as tools, outdoor practice yard"
+    },
+    {
+      "contentId": "school.teacher.tovan-kest",
+      "displayName": "Tovan Kest",
+      "role": "conditioning coach and former caravan guard",
+      "tracks": [
+        "school.track.physical_training"
+      ],
+      "courseIds": [
+        "school.course.physical_training"
+      ],
+      "teachingVoice": "direct, encouraging, values repeatable form over bravado",
+      "relationshipPotential": "coach/mentor bond through consistency",
+      "visualBriefSeed": "wrapped hands, training yard, weighted poles, bright morning light"
+    },
+    {
+      "contentId": "school.teacher.nessa-lark",
+      "displayName": "Nessa Lark",
+      "role": "performer, choreographer and multidisciplinary arts tutor",
+      "tracks": [
+        "school.track.arts_and_performance"
+      ],
+      "courseIds": [
+        "school.course.arts_and_performance"
+      ],
+      "teachingVoice": "expressive, demanding about intention, generous with experimentation",
+      "relationshipPotential": "artistic mentorship; friendship through shared performance work",
+      "visualBriefSeed": "rehearsal hall, ribbons, masks, instruments, strong stage light"
+    },
+    {
+      "contentId": "school.teacher.sera-vey",
+      "displayName": "Sera Vey",
+      "role": "movement, grooming and self-presentation instructor",
+      "tracks": [
+        "school.track.body_confidence"
+      ],
+      "courseIds": [
+        "school.course.body_confidence"
+      ],
+      "teachingVoice": "calm, affirming, practical, emphasizes deliberate self-possession",
+      "relationshipPotential": "mentor/friendship around confidence and boundaries",
+      "visualBriefSeed": "dressing room mirrors, fabrics, combs, movement studio, soft side light"
+    }
+  ],
+  "constraints": {
+    "mechanicsIncluded": false,
+    "thresholdsIncluded": false,
+    "ordinaryLessonPrerequisitesAdded": false,
+    "managementPublicResultSelected": false,
+    "arcanaForestPublicResultSelected": false
+  }
+}
