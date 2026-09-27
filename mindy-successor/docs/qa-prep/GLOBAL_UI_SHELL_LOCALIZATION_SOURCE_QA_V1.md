@@ -7,7 +7,7 @@ Reviewed Chat 5 items:
 as currently completed on `chat5/relationships-night-content-next`.
 
 Current main:
-`f93878b954385a1c61d8a06a0673354207d11d70`.
+`1a2f6e428da41e356f8d48df4a72923a5cc1928c`.
 
 Current `src/ui/app.ts` blob:
 `312399d01b211f13c29017c1e17b61f2027d21b3`.
@@ -223,3 +223,15 @@ Still outside items 85–96:
 The 34-key Chat 5 UI-shell source is safe for selective root localization + Lead UI wiring.
 
 Do not merge the worker branch wholesale.
+
+
+## PR51 compatibility note
+
+PR51 changes ordinary-poverty localization values only.
+It does not change the app/engine/presentation seams audited by this document.
+
+Current app blob remains:
+`312399d01b211f13c29017c1e17b61f2027d21b3`.
+
+Current presentation blob remains:
+`0bed8e1a4a88358b7e1e8ef22d787f5bcee323f4`.
