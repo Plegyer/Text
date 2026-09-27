@@ -1,0 +1,165 @@
+{
+  "version": 5,
+  "kind": "presentation-final-closeout-pack",
+  "status": "post-pr25-minimal",
+  "mainBaseline": "4c86946167bf424665a499875c597afeb340ab8f",
+  "SHIPPED_GREEN": [
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/src/core/presentation.ts",
+      "reason": "Shipped semantic slot/fallback runtime."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/release-candidate-shipped-e2e.test.ts",
+      "reason": "Merged one-Save shipped E2E with School blocking scene and Hard Work/New Run."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/qa-minimal-rc-acceptance-gate-v2.test.ts",
+      "reason": "PR25 final technical RC gate; QA-only, production contracts green."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/packs/base.json",
+      "reason": "Shipped base.school -> lesson/listen blocking content."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/packs/stage.json",
+      "reason": "Shipped town/Lumber/School/Forest media fallbacks."
+    }
+  ],
+  "MUST_INTEGRATE_QA": [
+    {
+      "path": "mindy-successor/docs/presentation-prep/PRESENTATION_PR25_GATE_RECONCILIATION_v1.md",
+      "reason": "Canonical post-PR25 presentation reconciliation."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-pr25-gate-reconciliation.test.ts",
+      "reason": "Guards School ordering, ownership and no new PR25 production presentation identity."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-slot-completeness-negative.fixture.json",
+      "reason": "Negative completeness classification for required RC surfaces."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-slot-completeness-negative.test.ts",
+      "reason": "Detects blocking identity loss vs safe fallback/future-asset loss."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-fallback-failure-injection-v2.fixture.json",
+      "reason": "Merged-RC failure scenarios."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-fallback-failure-injection-v2.test.ts",
+      "reason": "Failure injection for missing media, invalid/stale override, cycle and animation-off."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-final-no-timing-coupling.test.ts",
+      "reason": "Final no frame/time/playback or animation-owned-mechanics sentinel."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-one-save-ownership-v2.fixture.json",
+      "reason": "Exact current state ownership matrix."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-one-save-ownership-v2.test.ts",
+      "reason": "Ownership guard including base.school pendingScene."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation-semantic-coverage-checksum.fixture.json",
+      "reason": "Canonical 27-ID RC semantic set."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-semantic-coverage-checksum.test.ts",
+      "reason": "Stable checksum and rename/duplicate guard."
+    }
+  ],
+  "HUMAN_ASSET_DECISION": [
+    {
+      "path": "mindy-successor/docs/presentation-prep/PRESENTATION_AUTHORING_DECISION_MATRIX_v1.md",
+      "reason": "Neutral list of remaining human/content visual decisions."
+    },
+    {
+      "path": "mindy-successor/docs/presentation-prep/PRESENTATION_OPERATOR_SMOKE_V2.md",
+      "reason": "Operator lifecycle reference if external replacement is productized."
+    }
+  ],
+  "AUTHORING_BLOCKED": [
+    {
+      "semanticFamily": "activity/forest/route/hunter-trail/*",
+      "reason": "Hunter-trail product/content identity still open."
+    },
+    {
+      "semanticFamily": "activity/forest/route/old-boundary/*",
+      "reason": "Final visual specialization waits on token acquisition/retain-consume decisions."
+    },
+    {
+      "semanticFamily": "activity/forest/challenge/navigation/*",
+      "reason": "Challenge authoring open."
+    },
+    {
+      "semanticFamily": "activity/forest/challenge/physical-obstacle/*",
+      "reason": "Challenge authoring open."
+    },
+    {
+      "semanticFamily": "activity/forest/challenge/interpretation-ritual-anomaly/*",
+      "reason": "Challenge authoring open."
+    },
+    {
+      "semanticFamily": "school-management-accounting-result",
+      "reason": "Final public-result gameplay identity not authored."
+    }
+  ],
+  "SUPERSEDED": [
+    {
+      "historicalRevision": {
+        "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-pr24-one-save-audit.test.ts",
+        "commit": "6a88cf816e52d52a8d67cb42fd39f74bcc9aa209"
+      },
+      "reason": "Pre-fix revision omitted real base.school -> listen boundary."
+    },
+    {
+      "path": "mindy-successor/docs/presentation-prep/PRESENTATION_PR24_ONE_SAVE_AUDIT_v1.md",
+      "reason": "Superseded by PR24 merged reconciliation and PR25 gate reconciliation."
+    },
+    {
+      "path": "mindy-successor/docs/presentation-prep/PRESENTATION_FINAL_DECISION_EVIDENCE_HANDOFF_v4.md",
+      "reason": "Superseded by this v5 closeout."
+    },
+    {
+      "path": "mindy-successor/docs/presentation-prep/PRESENTATION_RC_EVIDENCE_PACK_v1.md",
+      "reason": "Superseded by this v5 closeout."
+    },
+    {
+      "path": "mindy-successor/docs/presentation-prep/PRESENTATION_FINAL_INTEGRATION_HANDOFF_v3.md",
+      "reason": "Pre-PR24 handoff."
+    },
+    {
+      "path": "mindy-successor/docs/presentation-prep/PRESENTATION_RELEASE_CANDIDATE_HANDOFF_v2.md",
+      "reason": "Pre-PR24 handoff."
+    }
+  ],
+  "POST_RELEASE": [
+    {
+      "path": "mindy-successor/docs/presentation-prep/FUTURE_GIF_DROP_IN_PACKAGE_v1.md",
+      "reason": "Seven optional GIFs; no RC dependency."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/future-gif-drop-in-package.fixture.json",
+      "reason": "Optional future asset metadata."
+    },
+    {
+      "path": "mindy-successor/docs/presentation-prep/PRESENTATION_OVERRIDE_IMPORT_EXPORT_CONTRACT_v1.md",
+      "reason": "External replacement import/export productization."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-override-import-export-contract.test.ts",
+      "reason": "Future import/export QA."
+    },
+    {
+      "path": "mindy-successor/docs/presentation-prep/PRESENTATION_REPLACEMENT_BUNDLE_MIGRATION_v1.md",
+      "reason": "Future bundle migration productization."
+    },
+    {
+      "path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/presentation-replacement-bundle-migration.test.ts",
+      "reason": "Future migration QA."
+    }
+  ]
+}
