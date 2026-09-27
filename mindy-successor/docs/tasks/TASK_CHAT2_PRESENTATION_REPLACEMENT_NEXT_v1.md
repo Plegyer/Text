@@ -1618,12 +1618,12 @@ Do not invent character appearance or art direction.
 Continue items 81–89 sequentially without waiting for Lead review.
 
 
-## Queue item 90 — PR32 starter-career presentation coverage audit
+## Queue item 90 — PR34 starter-career presentation coverage audit
 
 Create NEW file only:
-- `docs/presentation-prep/PR32_STARTER_CAREER_PRESENTATION_COVERAGE_v1.md`
+- `docs/presentation-prep/PR34_STARTER_CAREER_PRESENTATION_COVERAGE_v1.md`
 
-Audit PR #32 presentation consequences for Satyr Maid and Undead Farm.
+Audit PR #34 presentation consequences for Satyr Maid and Undead Farm.
 
 Verify:
 - target action IDs map to `job/satyr-maid/*` and `job/undead-farm/*`;
@@ -1643,10 +1643,10 @@ Continue items 82–90 sequentially without waiting for Lead review.
 Create NEW file only:
 - `docs/presentation-prep/STARTER_TRIO_GIF_PRODUCTION_BATCH_v1.md`
 
-Prepare a concrete first media-production batch for already-shipped/PR32 semantic surfaces:
+Prepare a concrete first media-production batch for already-shipped/PR34 semantic surfaces:
 - Lumber seasonal shift/result;
-- Satyr Maid seasonal shift/result if PR32 remains green;
-- Undead Farm seasonal shift/result if PR32 remains green.
+- Satyr Maid seasonal shift/result if PR34 remains green;
+- Undead Farm seasonal shift/result if PR34 remains green.
 
 For each slot include:
 - semantic presentationId;
@@ -1668,14 +1668,14 @@ Create NEW files only:
 - `docs/presentation-prep/STARTER_TRIO_PRESENTATION_REGISTRY_DELTA_v1.md`
 - `prior-work/astra/prototype-m3.2/content/starter-trio-presentation-registry-delta.fixture.json`
 
-Using current main plus PR32 evidence, enumerate the semantic slots added/confirmed for Lumber, Satyr Maid and Undead Farm:
+Using current main plus PR34 evidence, enumerate the semantic slots added/confirmed for Lumber, Satyr Maid and Undead Farm:
 - seasonal shift slots;
 - result/default slots;
 - current base media;
 - fallback chain;
 - whether the slot is READY_FOR_GIF / CONTENT_FIRST / OPTIONAL_POLISH.
 
-Do not add gameplay IDs that are not in production/PR32.
+Do not add gameplay IDs that are not in production/PR34.
 
 ## Queue item 93 — starter-trio media draft bundle
 
@@ -1696,7 +1696,7 @@ The draft must not be wired as mandatory production media.
 Create NEW test only:
 - `prior-work/astra/prototype-m3.2/tests/starter-trio-presentation-draft.test.ts`
 
-Validate the item-93 draft against the presentation schema/catalog where the referenced PR32 slots exist.
+Validate the item-93 draft against the presentation schema/catalog where the referenced PR34 slots exist.
 
 Cover:
 - semantic IDs resolve;
@@ -1704,7 +1704,7 @@ Cover:
 - no save/gameplay mutation;
 - Satyr Maid and Undead Farm remain separate semantic identities despite reused base media.
 
-If PR32 is not yet on the worker branch, build the test against a minimal explicit fixture and label that limitation; do not fake main state.
+If PR34 is not yet on the worker branch, build the test against a minimal explicit fixture and label that limitation; do not fake main state.
 
 ## Queue item 95 — external GIF filename/import convention
 
@@ -1748,7 +1748,7 @@ Create NEW file only:
 Consolidate items 89–96 into a concise Lead-facing handoff:
 - media that can be produced now;
 - media waiting on authored identities;
-- PR32-related starter-trio slots;
+- PR34-related starter-trio slots;
 - School/poverty dependencies;
 - human art decisions that are optional;
 - exact files ready for selective integration.
