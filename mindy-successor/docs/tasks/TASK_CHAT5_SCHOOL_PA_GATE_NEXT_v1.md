@@ -1169,3 +1169,23 @@ Include:
 Keep exact identities/thresholds OPEN until Product decides them.
 
 Continue items 66–74 sequentially without waiting for Lead review.
+
+
+## Queue item 75 — School production package acceptance plan
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_PRODUCTION_PACKAGE_ACCEPTANCE_PLAN_v1.md`
+
+Define acceptance for the first real authored School production package after Product decisions:
+- production content included explicitly;
+- locked paid-course mechanics unchanged;
+- authored teacher/milestone identity present;
+- public-result publication exactly once where applicable;
+- downstream consumer uses public boundary only;
+- save/reload exactly once;
+- presentation fallback valid;
+- targeted and full regression requirements.
+
+Do not claim the package is implemented yet.
+
+Continue items 67–75 sequentially without waiting for Lead review.
