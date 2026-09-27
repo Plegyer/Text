@@ -1,0 +1,28 @@
+{
+  "formatVersion": 1,
+  "kind": "first-project-owned-gif-pool",
+  "status": "BLOCKED_BY_GIF_EXPORT",
+  "targetPresentationId": "job/lumber/shift/spring/default",
+  "sourceFrameSequences": [
+    "assets/presentation-frames/lumber-spring-work-loop-a-frame-01.svg",
+    "assets/presentation-frames/lumber-spring-work-loop-a-frame-02.svg",
+    "assets/presentation-frames/lumber-spring-work-loop-a-frame-03.svg",
+    "assets/presentation-frames/lumber-spring-work-loop-a-frame-04.svg"
+  ],
+  "gifCandidates": [],
+  "presentationPatch": {
+    "version": 1,
+    "texts": {},
+    "media": {},
+    "slots": {}
+  },
+  "currentStaticFallback": "assets/presentation/career-lumber-shift-spring.svg",
+  "blocker": "No declared reproducible SVG-frame to animated-GIF exporter is available in the current repo/CI toolchain.",
+  "invariants": {
+    "fakeCandidates": false,
+    "gameplayRng": false,
+    "saveMutation": false,
+    "localeNeutralCandidateIdentity": true,
+    "staticFallbackPreserved": true
+  }
+}
