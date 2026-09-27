@@ -849,3 +849,23 @@ Define how QA should distinguish:
 Apply the framework to career, School, poverty and Activity content without assigning scores or inventing decisions.
 
 Continue items 49–57 sequentially without waiting for Lead review.
+
+
+## Queue item 58 — worker-queue deliverable verification template
+
+Create NEW file only:
+- `docs/qa-prep/WORKER_QUEUE_DELIVERABLE_VERIFICATION_TEMPLATE_v1.md`
+
+Define a reusable Git-verification checklist for Lead when a worker reports completion:
+- exact expected files present;
+- correct branch;
+- no forbidden/shared-file edits;
+- task requirements reflected in content;
+- locked decisions preserved;
+- fixture-only assumptions not promoted to Product truth;
+- tests/validation evidence recorded where required;
+- integration subset identified.
+
+This is a coordination QA tool, not a new runtime gate.
+
+Continue items 50–58 sequentially without waiting for Lead review.
