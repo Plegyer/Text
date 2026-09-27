@@ -1189,3 +1189,22 @@ Define acceptance for the first real authored School production package after Pr
 Do not claim the package is implemented yet.
 
 Continue items 67–75 sequentially without waiting for Lead review.
+
+
+## Queue item 76 — School authored-content data shape draft
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_AUTHORED_CONTENT_DATA_SHAPE_DRAFT_v1.md`
+
+Define a content-facing, non-runtime draft shape for authored School units:
+- track/course reference;
+- teacher/presenter content ID;
+- repeatable lesson variant ID/text;
+- milestone/public-result reference;
+- relationship/career hook references;
+- semantic presentationId;
+- media fallback references.
+
+Keep current runtime schema untouched. Mark fields that depend on unresolved Product decisions as optional/OPEN rather than inventing values.
+
+Continue items 68–76 sequentially without waiting for Lead review.
