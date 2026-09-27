@@ -34,3 +34,29 @@ Recommended branch names:
 - chat5/<package>
 
 Never assign two active chats to the same shared file.
+
+
+## Superseding continuous-production queue policy — 2026-09-27
+
+The historical A5/A6 ownership paragraph above is retained for provenance. Current work is in the post-RC production-authoring phase and uses all four worker chats continuously.
+
+Current role split:
+- Chat 1: Lead / Integrator; owns shared runtime/schema/build/UI integration and coordination documents.
+- Chat 2: presentation/GIF production preparation in isolated presentation docs/fixtures/tests.
+- Chat 3: Forest, ordinary poverty and Secret Debt/Slave production preparation in isolated subsystem docs/fixtures/tests.
+- Chat 4: QA, scope-preservation and acceptance preparation in isolated QA docs/tests.
+- Chat 5: School production-authoring preparation in isolated School docs/fixtures/tests.
+
+### Queue depth rule
+
+Target active queue depth is **9 independent tasks per worker** whenever practical.
+
+Lead behavior:
+1. verify worker completion from Git, never prose alone;
+2. if a worker finishes its queue, immediately append the next **9** independent tasks in the same branch when ownership remains compatible;
+3. if a worker has fewer than 9 queued/outstanding tasks and more independent work is available, top the queue back up to 9;
+4. review/integrate completed checkpoints asynchronously; Lead review must not block worker continuation;
+5. preserve one active owner per file path;
+6. do not create filler tasks merely to reach nine—tasks must advance production, authoring readiness, validation or integration.
+
+Git remains the only source of truth for queue completion.
