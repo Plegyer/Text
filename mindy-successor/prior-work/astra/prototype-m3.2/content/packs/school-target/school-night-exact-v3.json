@@ -1,0 +1,1426 @@
+{
+  "schemaVersion": 1,
+  "id": "school.night.exact.v3",
+  "reads": [],
+  "writes": [],
+  "media": [
+    {
+      "id": "school.night.exact.v3.media.literacy_and_numbers",
+      "kind": "image",
+      "src": "assets/stage-school.svg",
+      "alt": "Literacy & Numbers Night-study presentation."
+    },
+    {
+      "id": "school.night.exact.v3.media.arcana",
+      "kind": "image",
+      "src": "assets/stage-school.svg",
+      "alt": "Arcana Night-study presentation."
+    },
+    {
+      "id": "school.night.exact.v3.media.rhetoric_and_social",
+      "kind": "image",
+      "src": "assets/stage-school.svg",
+      "alt": "Rhetoric & Social Night-study presentation."
+    },
+    {
+      "id": "school.night.exact.v3.media.etiquette_and_presentation",
+      "kind": "image",
+      "src": "assets/stage-school.svg",
+      "alt": "Etiquette & Presentation Night-study presentation."
+    },
+    {
+      "id": "school.night.exact.v3.media.field_craft",
+      "kind": "image",
+      "src": "assets/stage-school.svg",
+      "alt": "Field Craft Night-study presentation."
+    },
+    {
+      "id": "school.night.exact.v3.media.physical_training",
+      "kind": "image",
+      "src": "assets/stage-school.svg",
+      "alt": "Physical Training Night-study presentation."
+    },
+    {
+      "id": "school.night.exact.v3.media.arts_and_performance",
+      "kind": "image",
+      "src": "assets/stage-school.svg",
+      "alt": "Arts & Performance Night-study presentation."
+    },
+    {
+      "id": "school.night.exact.v3.media.body_confidence",
+      "kind": "image",
+      "src": "assets/stage-school.svg",
+      "alt": "Body Confidence Night-study presentation."
+    }
+  ],
+  "events": [
+    {
+      "id": "school.night.exact.v3.literacy_and_numbers.reason",
+      "title": "Night study — Literacy & Numbers — reason",
+      "sourceDomain": "school.track.literacy_and_numbers",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.literacy_and_numbers.reason"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 0,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "focused",
+          "text": "You work through a difficult example line by line until the logic becomes easier to explain than to memorize.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.literacy_and_numbers"
+          ]
+        },
+        {
+          "id": "difficult",
+          "text": "One hidden assumption breaks an otherwise neat result, so you restart from the premise instead of the arithmetic.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.literacy_and_numbers"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "A simpler explanation finally exposes why the earlier method felt harder than it needed to be.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.literacy_and_numbers"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Continue after the Night-study presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.night.exact.v3.literacy_and_numbers.wits",
+      "title": "Night study — Literacy & Numbers — wits",
+      "sourceDomain": "school.track.literacy_and_numbers",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.literacy_and_numbers.wits"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 0,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "focused",
+          "text": "You compare several short examples and look for the detail that changes which rule applies.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.literacy_and_numbers"
+          ]
+        },
+        {
+          "id": "difficult",
+          "text": "Two nearly identical problems produce different answers, forcing you to notice the small clue you first ignored.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.literacy_and_numbers"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "The pattern becomes easier once you stop treating every detail as equally important.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.literacy_and_numbers"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Continue after the Night-study presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.night.exact.v3.arcana.magic",
+      "title": "Night study — Arcana — magic",
+      "sourceDomain": "school.track.arcana",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.arcana.magic"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 0,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "focused",
+          "text": "You review a controlled magical pattern and pay attention to rhythm, stability, and the point where the effect weakens.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.arcana"
+          ]
+        },
+        {
+          "id": "difficult",
+          "text": "The sequence refuses to settle until you reconstruct it from the last stable step.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.arcana"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "One small correction makes the pattern feel less fragile without making it more dramatic.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.arcana"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Continue after the Night-study presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.night.exact.v3.arcana.reason",
+      "title": "Night study — Arcana — reason",
+      "sourceDomain": "school.track.arcana",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.arcana.reason"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 0,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "focused",
+          "text": "You compare two explanations for the same arcane observation and write down what evidence would distinguish them.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.arcana"
+          ]
+        },
+        {
+          "id": "difficult",
+          "text": "Both explanations seem plausible until one prediction fails under closer inspection.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.arcana"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "The useful insight is the test that would have exposed the wrong answer sooner.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.arcana"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Continue after the Night-study presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.night.exact.v3.arcana.creativity",
+      "title": "Night study — Arcana — creativity",
+      "sourceDomain": "school.track.arcana",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.arcana.creativity"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 0,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "focused",
+          "text": "You redraw a familiar arcane arrangement several ways while keeping its structure intact.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.arcana"
+          ]
+        },
+        {
+          "id": "difficult",
+          "text": "The first alternatives are only decoration, so you ask what could change function rather than appearance.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.arcana"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "A new arrangement finally feels like an actual idea instead of variation for its own sake.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.arcana"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Continue after the Night-study presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.night.exact.v3.rhetoric_and_social.charm",
+      "title": "Night study — Rhetoric & Social — charm",
+      "sourceDomain": "school.track.rhetoric_and_social",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.rhetoric_and_social.charm"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 0,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "focused",
+          "text": "You rehearse a difficult opening until it sounds natural enough to invite a response instead of demanding one.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.rhetoric_and_social"
+          ]
+        },
+        {
+          "id": "difficult",
+          "text": "Every polished version feels too calculated, so you strip the line back to something easier to say honestly.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.rhetoric_and_social"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "The best version works because it leaves room for the other person.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.rhetoric_and_social"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Continue after the Night-study presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.night.exact.v3.rhetoric_and_social.sociability",
+      "title": "Night study — Rhetoric & Social — sociability",
+      "sourceDomain": "school.track.rhetoric_and_social",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.rhetoric_and_social.sociability"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 0,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "focused",
+          "text": "You replay a recent conversation and focus on where attention shifted rather than on the words alone.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.rhetoric_and_social"
+          ]
+        },
+        {
+          "id": "difficult",
+          "text": "The exchange becomes harder to interpret when you realize two people were responding to different concerns.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.rhetoric_and_social"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "Once you name what each person seemed to need, the social shape becomes clearer.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.rhetoric_and_social"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Continue after the Night-study presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.night.exact.v3.rhetoric_and_social.wits",
+      "title": "Night study — Rhetoric & Social — wits",
+      "sourceDomain": "school.track.rhetoric_and_social",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.rhetoric_and_social.wits"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 0,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "focused",
+          "text": "You practice answering the same challenge in several different ways without losing the point.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.rhetoric_and_social"
+          ]
+        },
+        {
+          "id": "difficult",
+          "text": "The cleverest answer solves the wrong problem, so you restart with less flourish and better timing.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.rhetoric_and_social"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "A shorter response works better because it reaches the useful point before the room moves on.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.rhetoric_and_social"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Continue after the Night-study presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.night.exact.v3.etiquette_and_presentation.manners",
+      "title": "Night study — Etiquette & Presentation — manners",
+      "sourceDomain": "school.track.etiquette_and_presentation",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.etiquette_and_presentation.manners"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 0,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "focused",
+          "text": "You review a formal sequence by asking what comfort or clarity each rule is meant to protect.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.etiquette_and_presentation"
+          ]
+        },
+        {
+          "id": "difficult",
+          "text": "The rules blur until you reconnect each step to its purpose instead of memorizing order.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.etiquette_and_presentation"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "The sequence becomes easier once you can explain why it exists.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.etiquette_and_presentation"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Continue after the Night-study presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.night.exact.v3.etiquette_and_presentation.grooming",
+      "title": "Night study — Etiquette & Presentation — grooming",
+      "sourceDomain": "school.track.etiquette_and_presentation",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.etiquette_and_presentation.grooming"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 0,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "focused",
+          "text": "You refine a simple preparation routine and remove steps that add fuss without making you more ready.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.etiquette_and_presentation"
+          ]
+        },
+        {
+          "id": "difficult",
+          "text": "The routine starts to feel like performance for an imaginary audience, so you rebuild it around what actually serves you.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.etiquette_and_presentation"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "A smaller, more deliberate routine leaves you feeling more prepared.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.etiquette_and_presentation"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Continue after the Night-study presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.night.exact.v3.etiquette_and_presentation.charm",
+      "title": "Night study — Etiquette & Presentation — charm",
+      "sourceDomain": "school.track.etiquette_and_presentation",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.etiquette_and_presentation.charm"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 0,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "focused",
+          "text": "You practice making a formal greeting feel warm without becoming overly familiar.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.etiquette_and_presentation"
+          ]
+        },
+        {
+          "id": "difficult",
+          "text": "The first versions are either stiff or too casual, and the middle ground takes more attention than expected.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.etiquette_and_presentation"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "The greeting improves when you focus on making the other person comfortable rather than sounding polished.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.etiquette_and_presentation"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Continue after the Night-study presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.night.exact.v3.field_craft.dexterity",
+      "title": "Night study — Field Craft — dexterity",
+      "sourceDomain": "school.track.field_craft",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.field_craft.dexterity"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 0,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "focused",
+          "text": "You repeat a small practical motion slowly enough to notice where your hands waste effort.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.field_craft"
+          ]
+        },
+        {
+          "id": "difficult",
+          "text": "The movement keeps slipping when you rush it, so you reduce speed until the sequence stays clean.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.field_craft"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "The final repetition feels easier because the motion is organized.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.field_craft"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Continue after the Night-study presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.night.exact.v3.field_craft.wits",
+      "title": "Night study — Field Craft — wits",
+      "sourceDomain": "school.track.field_craft",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.field_craft.wits"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 0,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "focused",
+          "text": "You study a route sketch and list what would make the obvious path a bad choice.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.field_craft"
+          ]
+        },
+        {
+          "id": "difficult",
+          "text": "The first plan ignores one simple environmental detail and has to be rebuilt.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.field_craft"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "The best route emerges once you stop assuming shortest means safest or fastest.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.field_craft"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Continue after the Night-study presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.night.exact.v3.field_craft.creativity",
+      "title": "Night study — Field Craft — creativity",
+      "sourceDomain": "school.track.field_craft",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.field_craft.creativity"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 0,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "focused",
+          "text": "You limit yourself to a small set of tools and invent several ways to solve the same practical problem.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.field_craft"
+          ]
+        },
+        {
+          "id": "difficult",
+          "text": "Most ideas are awkward, but one works because it uses a tool for a function you had not considered.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.field_craft"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "The constraint makes the good improvisation easier to recognize.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.field_craft"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Continue after the Night-study presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.night.exact.v3.physical_training.strength",
+      "title": "Night study — Physical Training — strength",
+      "sourceDomain": "school.track.physical_training",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.physical_training.strength"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 0,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "focused",
+          "text": "You review controlled strength work at low intensity, paying attention to bracing and clean force rather than maximum effort.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.physical_training"
+          ]
+        },
+        {
+          "id": "difficult",
+          "text": "Fatigue makes the movement less organized, so you reduce the load instead of pushing through sloppy repetitions.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.physical_training"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "A small technical correction makes the same effort feel more stable.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.physical_training"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Continue after the Night-study presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.night.exact.v3.physical_training.endurance",
+      "title": "Night study — Physical Training — endurance",
+      "sourceDomain": "school.track.physical_training",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.physical_training.endurance"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 0,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "focused",
+          "text": "You practice steady pacing and controlled breathing without turning the session into another full workout.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.physical_training"
+          ]
+        },
+        {
+          "id": "difficult",
+          "text": "The pace feels too easy at first and too hard later, revealing where you spent effort too quickly.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.physical_training"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "The final rhythm is less dramatic but far more sustainable.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.physical_training"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Continue after the Night-study presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.night.exact.v3.physical_training.dexterity",
+      "title": "Night study — Physical Training — dexterity",
+      "sourceDomain": "school.track.physical_training",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.physical_training.dexterity"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 0,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "focused",
+          "text": "You repeat a coordination drill slowly enough to keep every step aligned.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.physical_training"
+          ]
+        },
+        {
+          "id": "difficult",
+          "text": "Speed keeps hiding small errors, so you rebuild the sequence from the cleanest position.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.physical_training"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "Once the order becomes automatic, the movement starts to feel lighter.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.physical_training"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Continue after the Night-study presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.night.exact.v3.arts_and_performance.creativity",
+      "title": "Night study — Arts & Performance — creativity",
+      "sourceDomain": "school.track.arts_and_performance",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.arts_and_performance.creativity"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 0,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "focused",
+          "text": "You take one familiar phrase or shape and transform only a single element at a time.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.arts_and_performance"
+          ]
+        },
+        {
+          "id": "difficult",
+          "text": "The first experiments feel random until you decide what each change is meant to communicate.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.arts_and_performance"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "One variation finally feels like a choice rather than an accident.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.arts_and_performance"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Continue after the Night-study presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.night.exact.v3.arts_and_performance.charm",
+      "title": "Night study — Arts & Performance — charm",
+      "sourceDomain": "school.track.arts_and_performance",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.arts_and_performance.charm"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 0,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "focused",
+          "text": "You rehearse how the same performance choice changes when it is meant to invite rather than impress.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.arts_and_performance"
+          ]
+        },
+        {
+          "id": "difficult",
+          "text": "The polished version feels distant, so you replace one showy moment with something more direct.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.arts_and_performance"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "The result is less decorative and more engaging.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.arts_and_performance"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Continue after the Night-study presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.night.exact.v3.arts_and_performance.sociability",
+      "title": "Night study — Arts & Performance — sociability",
+      "sourceDomain": "school.track.arts_and_performance",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.arts_and_performance.sociability"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 0,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "focused",
+          "text": "You imagine the same scene with different partners and notice how timing changes when another person needs room to respond.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.arts_and_performance"
+          ]
+        },
+        {
+          "id": "difficult",
+          "text": "The exercise falls flat whenever you treat the partner as scenery.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.arts_and_performance"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "The scene becomes livelier once listening is part of the performance.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.arts_and_performance"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Continue after the Night-study presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.night.exact.v3.arts_and_performance.dexterity",
+      "title": "Night study — Arts & Performance — dexterity",
+      "sourceDomain": "school.track.arts_and_performance",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.arts_and_performance.dexterity"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 0,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "focused",
+          "text": "You repeat a small sequence until the transitions stop requiring conscious correction.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.arts_and_performance"
+          ]
+        },
+        {
+          "id": "difficult",
+          "text": "One awkward movement keeps interrupting the rhythm, so you isolate it and rebuild the connection.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.arts_and_performance"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "The whole sequence smooths out once the transition is no longer an afterthought.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.arts_and_performance"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Continue after the Night-study presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.night.exact.v3.body_confidence.sexuality",
+      "title": "Night study — Body Confidence — sexuality",
+      "sourceDomain": "school.track.body_confidence",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.body_confidence.sexuality"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 0,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "focused",
+          "text": "You reflect on what kind of presentation feels chosen rather than performed for approval.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.body_confidence"
+          ]
+        },
+        {
+          "id": "difficult",
+          "text": "The exercise becomes uncomfortable when you notice how much of the first choice was based on anticipated judgment.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.body_confidence"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "A more deliberate choice feels steadier because it belongs to you.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.body_confidence"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Continue after the Night-study presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.night.exact.v3.body_confidence.grooming",
+      "title": "Night study — Body Confidence — grooming",
+      "sourceDomain": "school.track.body_confidence",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.body_confidence.grooming"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 0,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "focused",
+          "text": "You simplify a grooming routine until each step has a clear purpose.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.body_confidence"
+          ]
+        },
+        {
+          "id": "difficult",
+          "text": "The longer routine feels impressive but leaves you less prepared, so you remove what does not serve the day ahead.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.body_confidence"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "The final routine is easier to maintain and easier to own.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.body_confidence"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Continue after the Night-study presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "school.night.exact.v3.body_confidence.endurance",
+      "title": "Night study — Body Confidence — endurance",
+      "sourceDomain": "school.track.body_confidence",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.body_confidence.endurance"
+        }
+      ],
+      "priorityClass": "notification",
+      "priority": 0,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 160,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "focused",
+          "text": "You practice steady posture and controlled movement without chasing intensity.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.body_confidence"
+          ]
+        },
+        {
+          "id": "difficult",
+          "text": "Fatigue makes you tense unnecessarily, so you slow down and distinguish effort from strain.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.body_confidence"
+          ]
+        },
+        {
+          "id": "insight",
+          "text": "The session improves when you choose a pace you can maintain without losing composure.",
+          "conditions": [],
+          "media": [
+            "school.night.exact.v3.media.body_confidence"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Continue after the Night-study presentation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    }
+  ]
+}
