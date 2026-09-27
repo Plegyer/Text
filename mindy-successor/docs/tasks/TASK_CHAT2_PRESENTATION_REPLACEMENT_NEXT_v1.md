@@ -1280,3 +1280,22 @@ For all 10 ordinary career drafts plus Palace and Secret Debt, identify which au
 Do not invent missing content IDs. The purpose is to make the handoff from career authoring to GIF production deterministic.
 
 Continue items 64–72 sequentially without waiting for Lead review.
+
+
+## Queue item 73 — full-game media reuse safety checklist
+
+Create NEW file only:
+- `docs/presentation-prep/FULL_GAME_MEDIA_REUSE_SAFETY_CHECKLIST_v1.md`
+
+Define checks required before one GIF/static asset is reused across multiple semantic IDs:
+- distinct gameplay IDs remain distinct;
+- text/choice context remains correct;
+- fallback chain remains independent;
+- animation-off behavior remains valid;
+- accessibility alt text is context-correct;
+- no save identity derives from filename;
+- replacement/rollback can affect one mapping without corrupting others where intended.
+
+Apply as a generic production checklist, not a media catalog.
+
+Continue items 65–73 sequentially without waiting for Lead review.
