@@ -1318,3 +1318,24 @@ Define when an authored gameplay content unit is ready to enter GIF/static produ
 This should prevent art production from running ahead of unstable content identity.
 
 Continue items 66–74 sequentially without waiting for Lead review.
+
+
+## Queue item 75 — presentation production batch acceptance ledger
+
+Create NEW file only:
+- `docs/presentation-prep/PRESENTATION_PRODUCTION_BATCH_ACCEPTANCE_LEDGER_v1.md`
+
+Define a compact ledger format for each future media production batch:
+- source content batch;
+- semantic IDs covered;
+- fallback coverage before/after;
+- reused assets;
+- newly added assets;
+- animations-off verification;
+- replacement/rollback result;
+- gameplay-state invariance;
+- reviewer/acceptance evidence.
+
+No media implementation in this task.
+
+Continue items 67–75 sequentially without waiting for Lead review.
