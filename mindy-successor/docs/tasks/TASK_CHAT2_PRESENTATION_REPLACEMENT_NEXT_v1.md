@@ -1826,7 +1826,7 @@ Do not choose final art style or character appearance.
 Create NEW file only:
 - `docs/presentation-prep/REMAINING_SEVEN_MULTI_GIF_SLOT_PLAN_v1.md`
 
-Assuming PR35 remains/lands green, map repeatable shift surfaces for Tavern, Hunter, Guard, Merchant, Artist/Geisha, Assassin and Prostitute to 3–5-GIF candidate pools.
+Assuming PR36 remains/lands green, map repeatable shift surfaces for Tavern, Hunter, Guard, Merchant, Artist/Geisha, Assassin and Prostitute to 3–5-GIF candidate pools.
 
 Keep candidate counts as production planning, not gameplay rules. Do not invent Hard Work/endings/NPC scenes.
 
