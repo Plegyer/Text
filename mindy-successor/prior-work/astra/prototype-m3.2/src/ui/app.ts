@@ -15,6 +15,12 @@ let panel='',screen='town',busy=false,locked=false,message='',error=false,mediaI
 let locale:Locale=normalizeLocale(localStorage.getItem('portal-life.locale'));
 let animationsEnabled=localStorage.getItem('portal-life.presentation.animations')!=='off';
 const tr=(key:string,fallback='')=>resolveLocalizedText(localization,key,locale,fallback);
+const activityLabel=(id:string,fallback:string)=>tr(`activity.${id}.label`,fallback);
+const activityOptionLabel=(id:string,fallback:string)=>tr(`activityOption.${id}.label`,fallback);
+const eventTitle=(id:string,fallback:string)=>tr(`event.${id}.title`,fallback);
+const eventVariantText=(eventId:string,variantId:string,fallback:string)=>tr(`event.${eventId}.variant.${variantId}.text`,fallback);
+const eventChoiceLabel=(eventId:string,choiceId:string,fallback:string)=>tr(`event.${eventId}.choice.${choiceId}.label`,fallback);
+const mediaAlt=(mediaId:string|undefined,fallback:string)=>mediaId?tr(`media.${mediaId}.alt`,fallback):fallback;
 const fmt=(text:string,values:Record<string,string|number>)=>Object.entries(values).reduce((out,[key,value])=>out.replaceAll(`{${key}}`,String(value)),text);
 const professions=['lumber.shift','satyr-maid.shift','undead-farm.shift','tavern.shift','hunter.shift','guard.shift','merchant.shift','artist-geisha.shift','assassin.shift','prostitute.shift'];
 function explain(c:Condition):string{
@@ -88,7 +94,7 @@ function activityEntryDisabled(id:string){
   !eligible(activity.entryConditions,state,catalog)||state.run.dayState.energyCurrent<activity.entryEnergyCost;
 }
 function activityEntryList(ids:string[]){
- return `<div class="activity-list">${ids.map(id=>catalog.definitions.activities.find(item=>item.id===id)).filter(Boolean).map(activity=>`<article class="activity"><div><h3>${esc(activity!.label)}</h3><p>Отдельная Activity · checkpoint save/reload</p><small>${activity!.entryEnergyCost} энергии на вход</small></div><button data-enter-activity="${activity!.id}" ${activityEntryDisabled(activity!.id)?'disabled':''}>Войти</button></article>`).join('')}</div>`;
+ return `<div class="activity-list">${ids.map(id=>catalog.definitions.activities.find(item=>item.id===id)).filter(Boolean).map(activity=>`<article class="activity"><div><h3>${esc(activityLabel(activity!.id,activity!.label))}</h3><p>Отдельная Activity · checkpoint save/reload</p><small>${activity!.entryEnergyCost} энергии на вход</small></div><button data-enter-activity="${activity!.id}" ${activityEntryDisabled(activity!.id)?'disabled':''}>Войти</button></article>`).join('')}</div>`;
 }
 function nightChoiceList(){
  const choices=catalog.definitions.nightChoices.filter(choice=>eligible(choice.conditions,state,catalog));
@@ -117,13 +123,14 @@ function mediaHTML(presentationId:string){
  const resolved=resolvePresentation(catalog,patch,presentationId,{animationsEnabled,occurrenceKey});
  const m=resolved.candidates[mediaIndex];
  if(!m)return `<div class="media-window missing-art" data-presentation-id="${esc(presentationId)}"><span>Сцена доступна без медиа</span></div>`;
- return `<div class="media-window" data-presentation-id="${esc(presentationId)}" data-resolved-slot="${esc(m.slotId)}" data-media-id="${esc(m.mediaId??'')}" data-candidate-key="${esc(m.candidateKey??'')}" data-candidate-index="${mediaIndex}">${m.kind==='video'?`<video src="${esc(m.src)}" aria-label="${esc(m.alt)}" autoplay loop muted playsinline controls></video>`:`<img src="${esc(m.src)}" alt="${esc(m.alt)}">`}</div>`;
+ const alt=mediaAlt(m.mediaId,m.alt);
+ return `<div class="media-window" data-presentation-id="${esc(presentationId)}" data-resolved-slot="${esc(m.slotId)}" data-media-id="${esc(m.mediaId??'')}" data-candidate-key="${esc(m.candidateKey??'')}" data-candidate-index="${mediaIndex}">${m.kind==='video'?`<video src="${esc(m.src)}" aria-label="${esc(alt)}" autoplay loop muted playsinline controls></video>`:`<img src="${esc(m.src)}" alt="${esc(alt)}">`}</div>`;
 }
 function central(){
  const r=state.run,p=r.pending;
  if(!r.creation.complete)return `<section class="creation"><div class="creation-art">${mediaHTML('location/town/default')}<div><span class="eyebrow">До первого шага</span><h1>Кем вы войдёте<br>в этот мир?</h1><p>Новый город ещё ничего о вас не знает.</p></div></div><div class="creation-form"><h2>Ваша героиня</h2><p>25 лет · свободных очков: <strong id="points">${r.creation.remaining}</strong></p><div class="creation-stats">${stats.map(k=>`<div class="allocate" title="${esc(hints[k])}"><span>${labels[k]}</span><button data-stat="${k}" data-delta="-1" aria-label="Уменьшить ${labels[k]}" ${busy||locked||!r.creation.allocated[k]?'disabled':''}>−</button><strong>${r.metrics[k]}</strong><button data-stat="${k}" data-delta="1" aria-label="Увеличить ${labels[k]}" ${busy||locked||!r.creation.remaining?'disabled':''}>+</button></div>`).join('')}</div><button id="create" class="primary" ${r.creation.remaining||busy||locked?'disabled':''}>Начать историю</button></div></section>`;
  if(p){const e=catalog.events.find(e=>e.id===p.eventId)!,v=e.variants.find(v=>v.id===p.variantId)!;
- return `<section class="stage scene">${mediaHTML(p.presentationId??presentationIdForEvent(catalog,e.id,v.id))}<div class="stage-title"><span class="eyebrow">Встреча</span><h1>${esc(e.title)}</h1></div></section><section class="dialogue"><p>${esc(v.text)}</p><div class="choices">${e.choices.map(c=>`<button data-choice="${c.id}" ${busy||locked||!eligible(c.conditions,state)?'disabled':''}>${esc(c.label)}</button>`).join('')}</div></section>`;}
+ return `<section class="stage scene">${mediaHTML(p.presentationId??presentationIdForEvent(catalog,e.id,v.id))}<div class="stage-title"><span class="eyebrow">Встреча</span><h1>${esc(eventTitle(e.id,e.title))}</h1></div></section><section class="dialogue"><p>${esc(eventVariantText(e.id,v.id,v.text))}</p><div class="choices">${e.choices.map(c=>`<button data-choice="${c.id}" ${busy||locked||!eligible(c.conditions,state)?'disabled':''}>${esc(eventChoiceLabel(e.id,c.id,c.label))}</button>`).join('')}</div></section>`;}
  if(r.status!=='active'){return `<section class="stage">${mediaHTML(r.acceptedEnding?presentationIdForEnding(r.acceptedEnding):'location/town/default')}<div class="stage-title"><h1>${r.status==='ended'?'Судьба принята':'Срок истёк'}</h1></div></section><section class="dialogue"><p>${esc(r.journal.at(-1)??'')}</p><button data-panel="legacy">Судьбы и следующая жизнь</button></section>`;}
  if(!r.flags['story.arrived'])return `<section class="stage">${mediaHTML('location/town/default')}<div class="stage-title"><span class="eyebrow">По ту сторону люка</span><h1>Следуйте за сусликом</h1></div></section><section class="dialogue"><p>Обычный день. Белый суслик. Люк, который кто-то забыл закрыть.</p><button data-action="arrival" class="primary" ${locked||busy?'disabled':''}>Пойти за ним</button></section>`;
  if(r.flow.activity){
@@ -131,7 +138,7 @@ function central(){
   const definition=catalog.definitions.activities.find(item=>item.id===activity.activityId);
   const slug=activity.activityId.split('.').at(-1)??'activity';
   const actions=availableActivityActions(state,catalog);
-  return `<section class="stage scene">${mediaHTML(`activity/${slug}/route/default`)}<div class="stage-title"><span class="eyebrow">Activity</span><h1>${esc(definition?.label??activity.activityId)}</h1></div></section><section class="dialogue"><p>Прогресс: ${activity.internalState.progress} · Выносливость: ${activity.internalState.endurance} · checkpoint: ${esc(activity.checkpoint)}${activity.internalState.routeId?` · route: ${esc(activity.internalState.routeId)}`:''}</p><div class="choices">${actions.map((action,index)=>`<button data-activity-action="${esc(action.id)}" class="${index===0?'primary':''}" ${busy||locked?'disabled':''}>${esc(action.label)}</button>`).join('')}</div></section>`;
+  return `<section class="stage scene">${mediaHTML(`activity/${slug}/route/default`)}<div class="stage-title"><span class="eyebrow">Activity</span><h1>${esc(activityLabel(activity.activityId,definition?.label??activity.activityId))}</h1></div></section><section class="dialogue"><p>Прогресс: ${activity.internalState.progress} · Выносливость: ${activity.internalState.endurance} · checkpoint: ${esc(activity.checkpoint)}${activity.internalState.routeId?` · route: ${esc(activity.internalState.routeId)}`:''}</p><div class="choices">${actions.map((action,index)=>`<button data-activity-action="${esc(action.id)}" class="${index===0?'primary':''}" ${busy||locked?'disabled':''}>${esc(activityOptionLabel(action.id,action.label))}</button>`).join('')}</div></section>`;
  }
  if(r.flow.night){
   const night=r.flow.night;
