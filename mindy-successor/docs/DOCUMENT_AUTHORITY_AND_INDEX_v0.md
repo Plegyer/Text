@@ -249,3 +249,7 @@ The first post-RC full-game production-authoring wave is represented on main by 
 - `school-prep/SCHOOL_PRODUCTION_CONTINUITY_PACK_v7.md` — current School production-authoring continuity boundary.
 
 These files supplement, but do not supersede, `NEW_GAME_SPEC_v1.md`, direct user decisions, or locked technical contracts.
+
+## Bilingual localization — locked 2026-09-27
+
+- `BILINGUAL_LOCALIZATION_CONTRACT_v1.md` — **PRODUCT LOCK / TARGET CONTRACT**: Russian source authoring + full English locale; one locale-neutral gameplay/presentation identity; localization is text/presentation-only; no duplicated RU/EN gameplay; shared GIF pools with localized alt/captions; no save split by language.
