@@ -2270,3 +2270,57 @@ Summarize items 125–132 for Lead:
 - what remains staged/Product-blocked.
 
 Continue items 125–133 sequentially without waiting for Lead review.
+
+
+## Queue item 134 — localization-key convention for presentation surfaces
+
+Create NEW file only:
+- `docs/presentation-prep/LOCALIZATION_KEY_CONVENTION_FOR_PRESENTATION_v1.md`
+
+Define stable locale-neutral text keys for:
+- action labels/descriptions;
+- event variant text;
+- choice labels;
+- semantic presentation captions;
+- GIF/image alt text.
+
+Keys must derive from existing stable IDs and must not become gameplay identity.
+
+## Queue item 135 — bilingual fallback audit for current presentation
+
+Create NEW file only:
+- `docs/presentation-prep/BILINGUAL_PRESENTATION_FALLBACK_AUDIT_v1.md`
+
+Audit representative current-main career/School/poverty presentation surfaces for:
+- RU source availability;
+- EN coverage available from worker authoring;
+- safe Russian fallback;
+- missing alt/caption localization debt;
+- no gameplay dependency on locale.
+
+## Queue item 136 — bilingual presentation migration batch v1
+
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/bilingual-presentation-migration-batch-v1.json`
+
+Prepare a locale-neutral migration batch for the first production slice:
+- Work panel / 10 ordinary career labels;
+- Lumber result/season surfaces;
+- reachable School generic/Night surfaces;
+- ordinary poverty representative surfaces.
+
+Provide RU+EN strings/alt where authored; do not edit shared runtime.
+
+## Queue item 137 — localization + multi-GIF regression matrix v1
+
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/presentation-localization-multigif-contract.test.ts`
+
+Contract-test authoring fixtures for:
+- locale switch keeps same semantic presentation ID;
+- locale switch keeps same media candidate key;
+- RU/EN alt/caption vary only as text;
+- missing EN falls back to RU;
+- gameplay/event IDs are unchanged.
+
+Continue items 129–137 sequentially without waiting for Lead review.
