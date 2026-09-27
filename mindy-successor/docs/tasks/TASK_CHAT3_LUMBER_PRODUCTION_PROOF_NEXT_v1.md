@@ -2568,3 +2568,88 @@ Create NEW file only:
 Consolidate items 161–171 into exact SAFE_TO_COPY / STAGING_ONLY / PRODUCT_OPEN / BLOCKED categories and identify the next useful work only after Lead poverty localization integration or Forest route-presentation binding.
 
 Continue items 161–172 sequentially without waiting for Lead review.
+
+
+## Queue item 173 — ordinary poverty RU source copyedit v1
+Create NEW file only:
+- `docs/poverty-prep/ORDINARY_POVERTY_RU_COPYEDIT_V1.md`
+
+Review the full 84-key ordinary-poverty RU payload for grammar, tone, consistency, repetition and player-facing clarity. Propose text-only replacements by exact key. Do not change IDs or mechanics.
+
+## Queue item 174 — ordinary poverty EN localization copyedit v1
+Create NEW file only:
+- `docs/poverty-prep/ORDINARY_POVERTY_EN_COPYEDIT_V1.md`
+
+Review the full EN payload against RU source for natural English, semantic fidelity and consistent terminology. Propose exact-key text-only corrections. No gameplay changes.
+
+## Queue item 175 — poverty recurring-scene variation bank v1
+Create NEW file only:
+- `docs/poverty-prep/ORDINARY_POVERTY_RECURRING_VARIATION_BANK_v1.md`
+
+Author RU+EN presentation-only variation banks for already-shipped repeatable ordinary-poverty event families. Variants must not imply new effects/rewards/conditions.
+
+## Queue item 176 — cheap lodging atmosphere bank v1
+Create NEW file only:
+- `docs/poverty-prep/CHEAP_LODGING_ATMOSPHERE_BANK_V1.md`
+
+Author reusable RU+EN effect-free scene prose for current cheap-lodging context: crowding, quiet, weather carryover, shared room, morning transition. No new Night mechanics.
+
+## Queue item 177 — street lodging atmosphere bank v1
+Create NEW file only:
+- `docs/poverty-prep/STREET_LODGING_ATMOSPHERE_BANK_V1.md`
+
+Author RU+EN effect-free scene prose for current street-lodging context. Preserve ordinary poverty / Secret Debt separation.
+
+## Queue item 178 — poverty media-alt depth bank v1
+Create NEW file only:
+- `docs/poverty-prep/ORDINARY_POVERTY_MEDIA_ALT_DEPTH_BANK_V1.md`
+
+Provide concise RU+EN alt/caption alternatives for current poverty presentation identities and future real media. No media files or runtime changes.
+
+## Queue item 179 — Secret Debt lender dialogue bank v2
+Create NEW file only:
+- `docs/poverty-prep/SECRET_DEBT_LENDER_DIALOGUE_BANK_V2.md`
+
+Expand already-authored RU+EN lender dialogue options and refusals while keeping every unresolved probability/principal/debt/delay value symbolic or omitted. Authoring-only.
+
+## Queue item 180 — Secret Debt delayed-activation scene bank v2
+Create NEW file only:
+- `docs/poverty-prep/SECRET_DEBT_DELAYED_ACTIVATION_SCENE_BANK_V2.md`
+
+Author RU+EN delayed-activation scenes without choosing delay length, debt amount, penalties or activation mechanics.
+
+## Queue item 181 — Secret Debt hidden-work scene bank v2
+Create NEW file only:
+- `docs/poverty-prep/SECRET_DEBT_HIDDEN_WORK_SCENE_BANK_V2.md`
+
+Expand RU+EN hidden-work presentation for the already established Secret Debt concept. Do not choose pay, Energy, progression or forced-Night tuning.
+
+## Queue item 182 — Secret Debt forced-Night presentation bank v2
+Create NEW file only:
+- `docs/poverty-prep/SECRET_DEBT_FORCED_NIGHT_PRESENTATION_BANK_V2.md`
+
+Author RU+EN forced-Night presentation variants only. Explicitly leave interception policy, penalties and frequency Product-open.
+
+## Queue item 183 — Secret Debt outcome presentation bank v2
+Create NEW file only:
+- `docs/poverty-prep/SECRET_DEBT_OUTCOME_PRESENTATION_BANK_V2.md`
+
+Expand RU+EN presentation for the existing outcome families:
+- `paid_freedom`
+- `bound_life`
+- `takeover`
+
+Do not choose thresholds, dependencies, rewards or Palace interaction beyond the locked exclusion from Palace 10/10.
+
+## Queue item 184 — poverty/Secret Debt authoring handoff v4
+Create NEW file only:
+- `docs/poverty-prep/POVERTY_SECRET_DEBT_AUTHORING_HANDOFF_V4.md`
+
+Consolidate items 173–183 into:
+- SAFE_TEXT_POLISH;
+- PRESENTATION_ONLY;
+- AUTHORING_ONLY_SECRET_DEBT;
+- PRODUCT_BLOCKED;
+- exact text keys/content banks useful after Lead poverty integration.
+
+Continue items 173–184 sequentially without waiting for Lead review.
