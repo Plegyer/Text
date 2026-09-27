@@ -979,3 +979,20 @@ Define how future teacher/presenter relationships may interact with School while
 Leave teacher identities and relationship content OPEN.
 
 Continue items 56–64 sequentially without waiting for Lead review.
+
+
+## Queue item 65 — School milestone presentation dependency map
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_MILESTONE_PRESENTATION_DEPENDENCY_MAP_v1.md`
+
+Map presentation dependencies for each allowed milestone form:
+- lesson-count milestone;
+- exam;
+- project;
+- certificate;
+- mixed authored gate.
+
+For each identify what must be decided/authored before semantic presentation IDs and GIF/static assets can be finalized. Do not select a milestone form.
+
+Continue items 57–65 sequentially without waiting for Lead review.
