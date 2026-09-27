@@ -1056,3 +1056,22 @@ For each define what evidence is sufficient to merge versus when the PR must rem
 Use PR29 as a concrete current example without changing it.
 
 Continue items 60–68 sequentially without waiting for Lead review.
+
+
+## Queue item 69 — integration evidence by change-class matrix
+
+Create NEW file only:
+- `docs/qa-prep/INTEGRATION_EVIDENCE_BY_CHANGE_CLASS_v1.md`
+
+Define required merge evidence by change class:
+- docs-only;
+- fixtures-only;
+- tests-only;
+- production content/data;
+- runtime/schema;
+- UI/presentation runtime;
+- build/packaging.
+
+For each specify minimum review, targeted test, full-check and post-merge evidence. Preserve the rule that no PASS count is claimed without execution.
+
+Continue items 61–69 sequentially without waiting for Lead review.
