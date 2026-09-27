@@ -1000,3 +1000,25 @@ Interpretation:
 Chat 2 is now preparing the exact contract/fixtures/tests for this. Lead owns any required shared presentation runtime/schema extension.
 
 PR #35 is the current Lead implementation for the seven remaining ordinary-career base layers. The first CI run correctly rejected orphan stages; Lead removed undeclared future stages from the base layer and a corrected exact-head run is in progress.
+
+
+## 24. Live product lock — Russian + English
+
+Direct Product decision on 2026-09-27:
+- ship/authored game is bilingual RU+EN from the start;
+- Russian is source authoring language, English is full second locale;
+- gameplay/content IDs and semantic presentation IDs are locale-neutral;
+- mechanics/save/RNG/timing are identical across locales;
+- language is presentation/text only;
+- multi-GIF assets are shared, with localized alt/caption text;
+- new player-facing content should be authored RU+EN immediately;
+- old monolingual content is migrated subsystem-by-subsystem rather than duplicated as separate gameplay.
+
+Authority: `BILINGUAL_LOCALIZATION_CONTRACT_v1.md`.
+
+Current main after PR #40:
+- merge `c71898654ea8419799816d9642184c4dcf23b039`;
+- exact-head PR CI 288/288 PASS;
+- post-merge main CI SUCCESS;
+- Work UI exposes all 10 target ordinary careers;
+- `lumber.shift` reuses existing Lumber wage formula and UI regression proves money is awarded through the rendered Work flow.
