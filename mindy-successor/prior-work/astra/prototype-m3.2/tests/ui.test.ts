@@ -413,3 +413,54 @@ test('renderer: ordinary poverty pending scene localizes RU EN without changing 
   assert.deepEqual(errors,[]);
  }finally{dom.window.close();}
 });
+
+
+test('renderer: Foreman relationship and voluntary Night scene localize RU EN without gameplay drift',async()=>{
+ let s=started();
+ // Natural current-production progression through first Lumber shift and its two blocking relationship milestones.
+ // Seed only the already-authoritative current relationship stage; the test changes no runtime definitions.
+ s.run.progression.careers['lumber'].stage='accepted-hand';
+ s.run.progression.careers['lumber'].counters.completed_shifts=1;
+ s.run.progression.relationships['lumber.foreman'].stage='route-professional';
+ s.run.progression.relationships['lumber.foreman'].choices.route='professional';
+ const {w,dom,errors}=boot(JSON.stringify(s));try{
+  await wait(()=>!!w.document.querySelector('[data-panel="sleep"]'));
+  w.document.querySelector('[data-panel="sleep"]').click();
+  w.document.querySelector('[data-end-day]').click();
+  await wait(()=>!!w.document.querySelector('[data-lodging="lodging.normal"]'));
+  w.document.querySelector('[data-lodging="lodging.normal"]').click();
+  await wait(()=>!!w.document.querySelector('[data-night-choice="lumber.foreman.night"]'));
+  const ruChoice=w.document.querySelector('[data-night-choice="lumber.foreman.night"]');
+  assert.match(ruChoice.textContent,/Поговорить с бригадиром/);
+  const beforeLocale=w.localStorage.getItem('portal-life.v1');
+
+  w.document.querySelector('[data-panel="menu"]').click();
+  w.document.querySelector('#language-toggle').click();
+  await wait(()=>w.document.documentElement.lang==='en');
+  assert.equal(w.localStorage.getItem('portal-life.v1'),beforeLocale);
+  w.document.querySelector('#close').click();
+  const enChoice=w.document.querySelector('[data-night-choice="lumber.foreman.night"]');
+  assert.match(enChoice.textContent,/Talk with the Foreman/);
+
+  enChoice.click();
+  await wait(()=>/After-shift conversation/.test(w.document.querySelector('.stage-title h1')?.textContent??''));
+  const pendingEn=w.localStorage.getItem('portal-life.v1');
+  const parsedEn=JSON.parse(pendingEn);
+  assert.equal(parsedEn.run.flow.pendingScene.eventId,'lumber-night.foreman-professional');
+  assert.equal(parsedEn.run.flow.pendingScene.variantId,'default');
+  assert.equal(parsedEn.run.progression.relationships['lumber.foreman'].counters.night_meetings,1);
+  assert.equal(parsedEn.run.dayState.nextDayModifiers.energyDelta,0);
+  assert.match(w.document.querySelector('.dialogue p').textContent,/voluntary continuation/);
+  assert.match(w.document.querySelector('[data-choice="continue"]').textContent,/Continue professionally/);
+  assert.match(w.document.querySelector('.media-window img').getAttribute('alt'),/calm evening conversation/);
+
+  w.document.querySelector('[data-panel="menu"]').click();
+  w.document.querySelector('#language-toggle').click();
+  await wait(()=>w.document.documentElement.lang==='ru');
+  assert.equal(w.localStorage.getItem('portal-life.v1'),pendingEn);
+  assert.match(w.document.querySelector('.stage-title h1').textContent,/Разговор после смены/);
+  assert.match(w.document.querySelector('.dialogue p').textContent,/добровольное продолжение/);
+  assert.match(w.document.querySelector('[data-choice="continue"]').textContent,/Продолжить по-деловому/);
+  assert.deepEqual(errors,[]);
+ }finally{dom.window.close();}
+});
