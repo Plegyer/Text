@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "id": "poverty-cheap-production-v2",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "calendar": true,
+      "housing": true
+    },
+    "writes": {}
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "poverty-cheap-production-v2.shared-room-seasons",
+      "title": "A room shared by the season",
+      "sourceDomain": "poverty",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightPhase",
+          "point": "after_lodging"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 25,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "nightPolicy": {
+        "intercept": "after_lodging",
+        "suppressLodgingPayment": false,
+        "suppressVoluntaryMenu": false,
+        "consumesNight": false
+      },
+      "cooldownDays": 2,
+      "variantCooldownDays": 0,
+      "maxShows": 40,
+      "conditions": [
+        {
+          "kind": "housingTier",
+          "value": "cheap"
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "spring"
+            },
+            {
+              "kind": "calendarSeason",
+              "value": "summer"
+            },
+            {
+              "kind": "calendarSeason",
+              "value": "winter"
+            }
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "id": "spring-window",
+          "text": "Spring air slips through a cracked window in the shared room. Someone has wedged it open with a chipped cup, and nobody wants to argue with the first mild night.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "spring"
+            }
+          ],
+          "media": [
+            "stage.room"
+          ]
+        },
+        {
+          "id": "summer-heat",
+          "text": "The cheap room holds the day's summer heat. Bedrolls are spaced as far apart as the floor allows, and everyone agrees that the open window belongs to everybody.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "summer"
+            }
+          ],
+          "media": [
+            "stage.room"
+          ]
+        },
+        {
+          "id": "winter-stove",
+          "text": "A small stove ticks in the corner while winter coats hang from every spare peg. The room is crowded, warm enough, and quieter than the street outside.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "winter"
+            }
+          ],
+          "media": [
+            "stage.room"
+          ]
+        },
+        {
+          "id": "shared-room",
+          "text": "The cheap shared room is plain and crowded, but it is still a roof, a door, and a place to sleep without adding another street-night risk.",
+          "conditions": [],
+          "media": [
+            "stage.room"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "settle-in",
+          "label": "Settle in",
+          "text": "You keep your space tidy and let the shared room wind down. No extra cost or penalty is added by this context event.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    }
+  ]
+}
