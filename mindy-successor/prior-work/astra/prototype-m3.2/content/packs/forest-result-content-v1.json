@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "id": "forest-result-content-v1",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "activities": [
+        "lumber.forest"
+      ]
+    },
+    "writes": {}
+  },
+  "media": [
+    {
+      "id": "forest-result-content-v1.success",
+      "kind": "image",
+      "src": "assets/stage-forest.svg",
+      "alt": "Forest Activity success reaction fallback."
+    },
+    {
+      "id": "forest-result-content-v1.escape",
+      "kind": "image",
+      "src": "assets/stage-forest.svg",
+      "alt": "Forest Activity escape reaction fallback."
+    },
+    {
+      "id": "forest-result-content-v1.failure",
+      "kind": "image",
+      "src": "assets/stage-forest.svg",
+      "alt": "Forest Activity failure reaction fallback."
+    }
+  ],
+  "events": [
+    {
+      "id": "forest-result-content-v1.success",
+      "title": "The Forest gives way",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "activityResult",
+          "activity": "lumber.forest",
+          "outcome": "success",
+          "result": "lumber.forest.success"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 45,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 100,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The route finally resolves into something you can carry back with certainty. Whatever else the Forest keeps, this expedition has reached its successful end.",
+          "conditions": [],
+          "media": [
+            "forest-result-content-v1.success"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "return",
+          "label": "Return from the Forest",
+          "text": "You leave the Activity result intact and return to the city-side flow.",
+          "conditions": [],
+          "effects": []
+        }
+      ],
+      "sourceDomain": "lumber"
+    },
+    {
+      "id": "forest-result-content-v1.escape",
+      "title": "Back out while the route is still open",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "activityResult",
+          "activity": "lumber.forest",
+          "outcome": "escape",
+          "result": "lumber.forest.escape"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 45,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 100,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "default",
+          "text": "You turn back before the expedition becomes a loss. The route remains unfinished, but leaving under your own control is not the same thing as failing it.",
+          "conditions": [],
+          "media": [
+            "forest-result-content-v1.escape"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "return",
+          "label": "Return safely",
+          "text": "You keep the escape result distinct and return without converting it into success.",
+          "conditions": [],
+          "effects": []
+        }
+      ],
+      "sourceDomain": "lumber"
+    },
+    {
+      "id": "forest-result-content-v1.failure",
+      "title": "The Forest ends the attempt",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "activityResult",
+          "activity": "lumber.forest",
+          "outcome": "failure",
+          "result": "lumber.forest.failure"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 45,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 100,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The expedition ends without the result you came for. The failure is recorded as its own Forest outcome rather than being rewritten as an escape or a success.",
+          "conditions": [],
+          "media": [
+            "forest-result-content-v1.failure"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "return",
+          "label": "Return and recover",
+          "text": "You accept the failed Activity result as recorded and return to ordinary flow.",
+          "conditions": [],
+          "effects": []
+        }
+      ],
+      "sourceDomain": "lumber"
+    }
+  ]
+}
