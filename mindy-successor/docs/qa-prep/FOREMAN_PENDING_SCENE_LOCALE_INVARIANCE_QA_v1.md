@@ -1,129 +1,108 @@
 # Foreman pending-scene locale invariance QA v1
 
-Status: COMPLETE / IMPLEMENTATION_GREEN / AWAITING_EXACT_HEAD_CI
+Status: COMPLETE / GREEN_SHIPPED
 
-Reviewed PR46 latest head during this audit:
-`c71b29580da6350a92e0c236c86e499aebd3979c`.
+Accepted PR46 head:
+`1ee9d26ce0dd12cb4b77b9e5b18ee1a117ce6433`.
 
-The latest head replaces the invalid direct relationship-state mutation from the first PR46 attempt with the current production Lumber -> Foreman progression path.
+Merged main:
+`1af3104c1e4c180019b965adac8e87e67de89347`.
 
-## Natural route to Foreman professional state
+## Natural route
 
-The renderer regression now:
-1. starts from the ordinary current save;
-2. opens Work;
-3. performs the real `lumber.shift`;
-4. resolves current `lumber.career-first-shift` through choice `continue`;
-5. reaches current `lumber.foreman-notice`;
-6. resolves current `professional` choice;
-7. verifies:
-   - `completed_shifts = 1`;
-   - relationship stage `route-professional`;
-   - relationship choice `route=professional`.
+The final renderer regression reaches the existing professional Foreman route through current production:
+1. perform real `lumber.shift`;
+2. resolve `lumber.career-first-shift`;
+3. resolve `lumber.foreman-notice`;
+4. choose `professional`;
+5. verify `completed_shifts=1`;
+6. verify relationship stage `route-professional`;
+7. verify relationship choice `route=professional`.
 
-This is superior to fabricating a relationship state object because it proves the current production reaction chain still owns the relationship transition.
+No fabricated relationship state object is used.
 
-## Voluntary Night choice invariance
+## Voluntary Night choice
 
-The test then enters current NightFlow:
-- End Day;
-- normal lodging;
-- voluntary Night choice list.
-
-Exact Night choice:
+The test enters current NightFlow and reaches:
 `lumber.foreman.night`.
 
-Before gameplay selection:
-- RU label is visible;
-- serialized gameplay Save is captured.
+RU label:
+`Поговорить с бригадиром`.
 
-RU -> EN switch:
-- changes the visible label to `Talk with the Foreman`;
-- asserts the serialized life Save is byte-identical.
+Before gameplay selection, the serialized life Save is captured.
 
-Therefore locale switching before the Night command preserves:
-- NightFlow phase;
-- lodging selection;
-- eligible gameplay choice ID;
-- relationship stage/choice;
-- relationship counters;
+After RU -> EN:
+- visible label becomes `Talk with the Foreman`;
+- serialized gameplay Save remains byte-identical.
+
+This preserves:
+- NightFlow;
+- lodging;
+- relationship state;
 - resources;
 - next-day modifiers;
-- RNG state;
-- all other serialized gameplay state.
-
-The locale remains external presentation preference.
+- RNG;
+- all persisted gameplay identity.
 
 ## Choice transaction
 
-Selecting the same exact gameplay ID in EN:
+Selecting the same exact gameplay ID:
 `lumber.foreman.night`
 
-must perform the authoritative current effect once:
-`relationship[lumber.foreman].counters.night_meetings += 1`.
-
-The current definition remains:
+applies current mechanics once:
+- `night_meetings += 1`;
 - `nextDayEnergyDelta = 0`;
 - `nextDayEffects = []`.
 
-The regression checks after choice:
-- pending event is `lumber-night.foreman-professional`;
-- pending variant is `default`;
-- `night_meetings = 1`;
-- accumulated next-day Energy delta remains `0`.
+The resulting blocking event is:
+- event `lumber-night.foreman-professional`;
+- variant `default`.
 
-No daytime relationship Energy transaction is added.
+## Pending event invariance
 
-## Pending event RU↔EN invariance
+While the Foreman Night event is pending, the test captures serialized Save in EN.
 
-While `lumber-night.foreman-professional/default` is pending, the test captures the serialized Save in EN.
+After EN -> RU:
+- the serialized Save is byte-identical;
+- title/body/choice copy changes language only.
 
-It then switches EN -> RU and requires:
-`localStorage['portal-life.v1']`
-to remain byte-identical.
+Because the full serialized Save is equal, this covers:
+- pending event ID;
+- pending variant ID;
+- relationship counter;
+- relationship stage/choice;
+- next-day Energy delta;
+- RNG state;
+- NightFlow;
+- resources/history/progression.
 
-This single equality covers the required invariants:
-- pending event ID unchanged;
-- pending variant ID unchanged;
-- reaction/presentation-owned persisted identity unchanged;
-- `night_meetings` unchanged;
-- next-day Energy delta unchanged;
-- RNG state unchanged;
-- relationship stage/choice unchanged;
-- NightFlow unchanged;
-- no duplicate Night choice effect.
+No duplicate Night-choice effect occurs during locale switching.
 
-Only rendered title/body/choice text changes language.
+## Media identity
 
-## Media and presentation
+The same current Foreman Night media identity remains selected.
 
-The same pending event resolves:
-- EN title/body/choice/media alt;
-- RU title/body/choice after locale switch.
+Only localized alt/presentation text changes; locale does not create a second media/gameplay identity.
 
-The media identity itself is not localized or duplicated.
+## Hard Work / Forest protection
 
-The regression does not alter candidate selection/gameplay RNG to choose media.
+PR46 contract coverage also proves:
+- Lumber Hard Work only `completed_shifts >= 50`;
+- Meta reward `hardWork:lumber`;
+- current Forest identities remain unchanged.
 
-## Hard Work and Forest boundary
+## CI evidence
 
-The updated PR46 contract test now finds the actual ending:
-`ending.lumber.hard-work`
+Exact PR head workflow #70:
+- 307/307 PASS.
 
-and separately asserts:
-- only `completed_shifts >= 50`;
-- Meta reward `hardWork:lumber`.
+Post-merge main workflow #71:
+- 307/307 PASS.
 
-PR46 production diff does not change Forest result identities or the exact Lumber Forest continuation.
+The Foreman renderer invariance test passes on both exact head and merged main.
 
-## Remaining execution status
+## Verdict
 
-The latest PR46 workflow for head `c71b295...` was still running when this item was written.
+`GREEN_SHIPPED`.
 
-Therefore implementation review is:
-`GREEN`
-
-but merge acceptance remains:
-`AWAITING_EXACT_HEAD_CI`.
-
-The exact head must complete full typecheck/validate/build/tests successfully before PR46 can be accepted.
+Voluntary Foreman Night choice localization and its blocking event preserve gameplay state across RU↔EN and are accepted on current main.
