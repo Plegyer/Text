@@ -892,3 +892,27 @@ Current active worker ranges after further verified completion and queue repleni
 - Chat 5: **56–64**.
 
 Queue target remains nine outstanding independent tasks whenever practical.
+
+
+## 21. Live recovery — stream interruption checkpoint
+
+This is a live continuity note, not a final transfer.
+
+After a Chat 1 HTTP/UI stream interruption, Git was re-read before retrying any write. No repository corruption or duplicate main integration was found.
+
+Current nine-deep worker ranges:
+- Chat 2: **77–85**;
+- Chat 3: **72–80**;
+- Chat 4: **66–74**;
+- Chat 5: **73–81**.
+
+PR #29:
+- OPEN, mergeable;
+- independent Chat 4 content review = GREEN_FOR_MERGE;
+- no executable GitHub workflow result is attached/visible for the exact head through the connected integration;
+- do not promote the technical pass floor beyond PR #27's 221/221 solely because of PR29 review.
+
+PR #30 remains the latest merged production-authority PR:
+`dbe78efdb9cd5ed384b66f7536bb5145702779c7`.
+
+Continue normal Lead operation: verify Git, top queues back to nine, integrate minimal useful subsets, and keep human/Product decisions separate from technical inference.
