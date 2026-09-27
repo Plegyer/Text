@@ -1296,3 +1296,120 @@ Create one concise human-authoring intake table for all eight teacher/presenter 
 Do not propose canonical names or identities.
 
 Continue items 73–81 sequentially without waiting for Lead review.
+
+
+## Queue item 82 — canonical teacher content draft v1
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_CANONICAL_TEACHER_CONTENT_DRAFT_v1.md`
+
+Author concrete draft teacher/presenter identities for all eight School tracks as delegated content authoring, not mechanics.
+
+For each provide:
+- stable proposed content ID;
+- player-facing name;
+- in-world role;
+- track(s);
+- concise personality/teaching voice;
+- optional relationship potential;
+- visual brief seed.
+
+Guardrails:
+- do not change tuition/Energy/stat packages;
+- do not add lesson prerequisites;
+- do not select management/Arcana public-result semantics;
+- mark identities as CONTENT_DRAFT until Lead integration.
+
+## Queue item 83 — teacher identity fixture
+
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/school-teacher-identities-v1.fixture.json`
+
+Mirror item-82 identities in a machine-readable authoring fixture for later production conversion.
+
+Include no mechanics or thresholds.
+
+## Queue item 84 — eight-track repeatable lesson text bank v1
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_REPEATABLE_LESSON_TEXT_BANK_v1.md`
+
+Author a bounded bank of reusable lesson scene text for all eight tracks.
+
+Target:
+- several distinct short lesson variants per track;
+- teacher voice consistent with item 82;
+- no mechanical claims beyond the locked course package;
+- no new stat, Lust, tuition or Energy effects;
+- no milestone prerequisite implied.
+
+## Queue item 85 — School milestone-neutral scene bank
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_MILESTONE_NEUTRAL_SCENE_BANK_v1.md`
+
+Author scenes that enrich School life without selecting unresolved milestone semantics:
+- arrival/classroom moments;
+- teacher feedback;
+- peer/context moments;
+- post-lesson reactions;
+- Night-study flavor.
+
+Do not assert exam/certificate/project completion unless separately decided.
+
+## Queue item 86 — teacher relationship seed matrix
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_TEACHER_RELATIONSHIP_SEEDS_v1.md`
+
+For each drafted teacher, author optional relationship seeds:
+- first impression;
+- repeated-contact hook;
+- Night/social hook shape;
+- career/world reaction hook.
+
+These remain optional content and must never gate ordinary paid lessons.
+
+## Queue item 87 — School teacher presentation briefs
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_TEACHER_PRESENTATION_BRIEFS_v1.md`
+
+Create concise visual/media briefs for the eight drafted teacher identities:
+- portrait/static need;
+- optional GIF loop;
+- classroom/location motif;
+- semantic School presentation context;
+- reuse opportunities;
+- alt-text seed.
+
+Do not select final art style.
+
+## Queue item 88 — School authored-content consistency audit
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_AUTHORED_CONTENT_CONSISTENCY_AUDIT_v1.md`
+
+Cross-check items 82–87 against locked School mechanics and current course IDs.
+
+Reject any authored sentence that implies:
+- different tuition/Energy/stat gains;
+- Lust gain;
+- paid lesson/night-study counter mixing;
+- teacher prerequisite;
+- unapproved public result.
+
+## Queue item 89 — School authored-content integration handoff v8
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_AUTHORED_CONTENT_INTEGRATION_HANDOFF_v8.md`
+
+Provide Lead with:
+- exact teacher draft identities;
+- text banks ready for integration;
+- presentation briefs;
+- what remains Product-blocked;
+- what can ship as content without new runtime;
+- selective integration file list.
+
+Complete item 73 first if still missing, then continue items 82–89 without waiting for Lead review.
