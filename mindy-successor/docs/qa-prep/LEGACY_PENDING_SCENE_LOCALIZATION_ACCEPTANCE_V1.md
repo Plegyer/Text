@@ -3,7 +3,7 @@
 Status: COMPLETE / ACCEPTANCE_CONTRACT_READY
 
 Current main:
-`f93878b954385a1c61d8a06a0673354207d11d70`.
+`1a2f6e428da41e356f8d48df4a72923a5cc1928c`.
 
 Source localization:
 Chat 5 109-key legacy root patch.
@@ -179,3 +179,15 @@ Every locale-switch smoke must assert byte-identical gameplay Save before choice
 The existing pending-scene renderer architecture is suitable for the 109-key source.
 
 Production acceptance requires exact-head executable locale-invariance tests after the strings are actually root-loaded.
+
+
+## PR51 compatibility note
+
+PR51 changes ordinary-poverty localization values only.
+It does not change the app/engine/presentation seams audited by this document.
+
+Current app blob remains:
+`312399d01b211f13c29017c1e17b61f2027d21b3`.
+
+Current presentation blob remains:
+`0bed8e1a4a88358b7e1e8ef22d787f5bcee323f4`.
