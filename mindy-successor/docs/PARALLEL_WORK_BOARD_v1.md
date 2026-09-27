@@ -3,7 +3,7 @@
 Status: LIVE COORDINATION BOARD.
 
 Current main baseline:
-`961208ea995ca034e8dfe896337a38828db52415`.
+`6cd990f45d368291b4a288f9f48c569f6e0b207f`.
 
 ## Coordination rule — no worker idle
 
@@ -331,3 +331,27 @@ Current long queues:
 - Chat 5 — `chat5/school-pa-gate-next`: items 37–42 active.
 
 Important: Chat 4/5 verbal completion reports are not authoritative until their expected post-PR25 files appear in Git.
+
+
+## RC closeout/hardening merged — PR #26 / #27
+
+Main technical baseline:
+`6cd990f45d368291b4a288f9f48c569f6e0b207f`
+
+PR #26:
+- docs-only RC closeout and neutral human decision ledger.
+
+PR #27:
+- one-Save drift sentinel v2;
+- direct schema4 School omission compatibility;
+- direct schema4 presentationId omission compatibility;
+- no production runtime/content/UI changes;
+- merge-ref **221/221 tests PASS**.
+
+Current worker progress:
+- Chat 2 — `chat2/presentation-replacement-next`: items 49–51 committed; 52–54 active.
+- Chat 3 — `chat3/lumber-production-proof-next`: items 49–54 queued after completing 43–48.
+- Chat 4 — `chat4/activation-ci-gate-next`: items 43–48 queued after completing 37–42.
+- Chat 5 — `chat5/school-pa-gate-next`: items 37–41 committed; 42 active.
+
+Git remains authoritative over worker verbal reports.
