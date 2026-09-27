@@ -1,0 +1,311 @@
+{
+  "formatVersion": 1,
+  "id": "school.eight-track-teacher-authoring.fixture.v1",
+  "mechanicsPolicy": {
+    "preserveCourseIds": true,
+    "preserveTrackIds": true,
+    "preserveTuition": true,
+    "preserveEnergyCost": true,
+    "preserveStatPackages": true,
+    "preservePresentationIds": true,
+    "canonicalTeachersSelected": false
+  },
+  "tracks": [
+    {
+      "courseId": "school.course.literacy_and_numbers",
+      "trackId": "school.track.literacy_and_numbers",
+      "label": "Literacy & Numbers",
+      "tuition": 300,
+      "energyCost": 1,
+      "statEffects": [
+        {
+          "stat": "reason",
+          "amount": 4
+        },
+        {
+          "stat": "wits",
+          "amount": 2
+        }
+      ],
+      "presentationId": "school/literacy-and-numbers/lesson/default",
+      "teacherPresenter": {
+        "canonicalId": null,
+        "displayName": null
+      },
+      "worldRole": null,
+      "lessonTone": null,
+      "relationshipHooks": [],
+      "milestoneRole": null,
+      "presentationNeeds": {
+        "teacherPortrait": null,
+        "lessonStill": null,
+        "gif": null,
+        "textFallbackRequired": true
+      },
+      "status": "OPEN_AUTHORING"
+    },
+    {
+      "courseId": "school.course.arcana",
+      "trackId": "school.track.arcana",
+      "label": "Arcana",
+      "tuition": 500,
+      "energyCost": 1,
+      "statEffects": [
+        {
+          "stat": "magic",
+          "amount": 4
+        },
+        {
+          "stat": "reason",
+          "amount": 4
+        },
+        {
+          "stat": "creativity",
+          "amount": 2
+        }
+      ],
+      "presentationId": "school/arcana/lesson/default",
+      "teacherPresenter": {
+        "canonicalId": null,
+        "displayName": null
+      },
+      "worldRole": null,
+      "lessonTone": null,
+      "relationshipHooks": [],
+      "milestoneRole": null,
+      "presentationNeeds": {
+        "teacherPortrait": null,
+        "lessonStill": null,
+        "gif": null,
+        "textFallbackRequired": true
+      },
+      "status": "OPEN_AUTHORING"
+    },
+    {
+      "courseId": "school.course.rhetoric_and_social",
+      "trackId": "school.track.rhetoric_and_social",
+      "label": "Rhetoric & Social",
+      "tuition": 300,
+      "energyCost": 1,
+      "statEffects": [
+        {
+          "stat": "charm",
+          "amount": 3
+        },
+        {
+          "stat": "sociability",
+          "amount": 3
+        },
+        {
+          "stat": "wits",
+          "amount": 2
+        }
+      ],
+      "presentationId": "school/rhetoric-and-social/lesson/default",
+      "teacherPresenter": {
+        "canonicalId": null,
+        "displayName": null
+      },
+      "worldRole": null,
+      "lessonTone": null,
+      "relationshipHooks": [],
+      "milestoneRole": null,
+      "presentationNeeds": {
+        "teacherPortrait": null,
+        "lessonStill": null,
+        "gif": null,
+        "textFallbackRequired": true
+      },
+      "status": "OPEN_AUTHORING"
+    },
+    {
+      "courseId": "school.course.etiquette_and_presentation",
+      "trackId": "school.track.etiquette_and_presentation",
+      "label": "Etiquette & Presentation",
+      "tuition": 400,
+      "energyCost": 1,
+      "statEffects": [
+        {
+          "stat": "manners",
+          "amount": 3
+        },
+        {
+          "stat": "grooming",
+          "amount": 3
+        },
+        {
+          "stat": "charm",
+          "amount": 2
+        }
+      ],
+      "presentationId": "school/etiquette-and-presentation/lesson/default",
+      "teacherPresenter": {
+        "canonicalId": null,
+        "displayName": null
+      },
+      "worldRole": null,
+      "lessonTone": null,
+      "relationshipHooks": [],
+      "milestoneRole": null,
+      "presentationNeeds": {
+        "teacherPortrait": null,
+        "lessonStill": null,
+        "gif": null,
+        "textFallbackRequired": true
+      },
+      "status": "OPEN_AUTHORING"
+    },
+    {
+      "courseId": "school.course.field_craft",
+      "trackId": "school.track.field_craft",
+      "label": "Field Craft",
+      "tuition": 400,
+      "energyCost": 1,
+      "statEffects": [
+        {
+          "stat": "dexterity",
+          "amount": 3
+        },
+        {
+          "stat": "wits",
+          "amount": 3
+        },
+        {
+          "stat": "creativity",
+          "amount": 2
+        }
+      ],
+      "presentationId": "school/field-craft/lesson/default",
+      "teacherPresenter": {
+        "canonicalId": null,
+        "displayName": null
+      },
+      "worldRole": null,
+      "lessonTone": null,
+      "relationshipHooks": [],
+      "milestoneRole": null,
+      "presentationNeeds": {
+        "teacherPortrait": null,
+        "lessonStill": null,
+        "gif": null,
+        "textFallbackRequired": true
+      },
+      "status": "OPEN_AUTHORING"
+    },
+    {
+      "courseId": "school.course.physical_training",
+      "trackId": "school.track.physical_training",
+      "label": "Physical Training",
+      "tuition": 400,
+      "energyCost": 1,
+      "statEffects": [
+        {
+          "stat": "strength",
+          "amount": 3
+        },
+        {
+          "stat": "endurance",
+          "amount": 3
+        },
+        {
+          "stat": "dexterity",
+          "amount": 2
+        }
+      ],
+      "presentationId": "school/physical-training/lesson/default",
+      "teacherPresenter": {
+        "canonicalId": null,
+        "displayName": null
+      },
+      "worldRole": null,
+      "lessonTone": null,
+      "relationshipHooks": [],
+      "milestoneRole": null,
+      "presentationNeeds": {
+        "teacherPortrait": null,
+        "lessonStill": null,
+        "gif": null,
+        "textFallbackRequired": true
+      },
+      "status": "OPEN_AUTHORING"
+    },
+    {
+      "courseId": "school.course.arts_and_performance",
+      "trackId": "school.track.arts_and_performance",
+      "label": "Arts & Performance",
+      "tuition": 500,
+      "energyCost": 1,
+      "statEffects": [
+        {
+          "stat": "creativity",
+          "amount": 3
+        },
+        {
+          "stat": "charm",
+          "amount": 3
+        },
+        {
+          "stat": "sociability",
+          "amount": 2
+        },
+        {
+          "stat": "dexterity",
+          "amount": 2
+        }
+      ],
+      "presentationId": "school/arts-and-performance/lesson/default",
+      "teacherPresenter": {
+        "canonicalId": null,
+        "displayName": null
+      },
+      "worldRole": null,
+      "lessonTone": null,
+      "relationshipHooks": [],
+      "milestoneRole": null,
+      "presentationNeeds": {
+        "teacherPortrait": null,
+        "lessonStill": null,
+        "gif": null,
+        "textFallbackRequired": true
+      },
+      "status": "OPEN_AUTHORING"
+    },
+    {
+      "courseId": "school.course.body_confidence",
+      "trackId": "school.track.body_confidence",
+      "label": "Body Confidence",
+      "tuition": 400,
+      "energyCost": 1,
+      "statEffects": [
+        {
+          "stat": "sexuality",
+          "amount": 3
+        },
+        {
+          "stat": "grooming",
+          "amount": 3
+        },
+        {
+          "stat": "endurance",
+          "amount": 2
+        }
+      ],
+      "presentationId": "school/body-confidence/lesson/default",
+      "teacherPresenter": {
+        "canonicalId": null,
+        "displayName": null
+      },
+      "worldRole": null,
+      "lessonTone": null,
+      "relationshipHooks": [],
+      "milestoneRole": null,
+      "presentationNeeds": {
+        "teacherPortrait": null,
+        "lessonStill": null,
+        "gif": null,
+        "textFallbackRequired": true
+      },
+      "status": "OPEN_AUTHORING"
+    }
+  ]
+}
