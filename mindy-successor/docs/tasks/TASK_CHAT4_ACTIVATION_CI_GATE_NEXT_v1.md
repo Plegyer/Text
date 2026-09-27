@@ -1917,3 +1917,64 @@ Summarize current RU+EN integration readiness after Lead runtime patch status:
 - multi-GIF alt/caption coverage.
 
 Continue items 111–119 sequentially without waiting for Lead review.
+
+
+## Queue item 120 — PR41 localization runtime review
+
+Create NEW file only:
+- `docs/qa-prep/PR41_LOCALIZATION_RUNTIME_REVIEW_v1.md`
+
+Review PR #41 against the locked bilingual contract:
+- localization preference outside Save;
+- RU fallback;
+- RU+EN Work/town slice;
+- 10 action IDs unchanged;
+- availability/wages unchanged;
+- language switch cannot mutate life Save;
+- no duplicate gameplay content;
+- exact-head CI evidence.
+
+Conclude GREEN / BLOCKED.
+
+## Queue item 121 — localization shipped-coverage audit v1
+
+Create NEW file only:
+- `docs/qa-prep/LOCALIZATION_SHIPPED_COVERAGE_AUDIT_v1.md`
+
+Audit player-facing current-main surfaces and classify:
+SHIPPED_RU_EN / RU_FALLBACK / STAGED_RU_EN / MISSING.
+
+Do not count fallback-only as translated.
+
+## Queue item 122 — localized Work gameplay-invariance QA v1
+
+Create NEW file only:
+- `docs/qa-prep/LOCALIZED_WORK_GAMEPLAY_INVARIANCE_QA_v1.md`
+
+Verify for all 10 career buttons under RU and EN:
+- same action IDs;
+- same enabled/disabled state;
+- same Energy costs;
+- same wage forecast values;
+- same dispatch effects/counters;
+- only labels/descriptions/UI copy differ.
+
+## Queue item 123 — localization plus multi-GIF QA gate v2
+
+Create NEW file only:
+- `docs/qa-prep/LOCALIZATION_MULTI_GIF_QA_GATE_v2.md`
+
+Define combined acceptance for future shared media-pool runtime:
+- locale switch keeps selected media key stable;
+- alt/caption localize independently;
+- candidate failures/fallback independent of locale;
+- animation-off remains presentation-only.
+
+## Queue item 124 — next localization integration gate v1
+
+Create NEW file only:
+- `docs/qa-prep/NEXT_LOCALIZATION_INTEGRATION_GATE_v1.md`
+
+Summarize safe next localization integrations for School, poverty, Forest and presentation after PR41.
+
+Continue items 116–124 sequentially without waiting for Lead review.
