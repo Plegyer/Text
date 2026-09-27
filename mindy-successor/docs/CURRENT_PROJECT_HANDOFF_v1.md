@@ -788,3 +788,28 @@ Do not wait for all workers before reviewing/integrating useful completed work. 
 5. update live board and this recovery snapshot after meaningful phase changes.
 
 Do not create a final transfer document merely because context may eventually expire. Keep these durable Git documents current so a replacement Lead can recover at any time.
+
+
+## 18. Live queue-policy update — nine-deep worker queues
+
+This is a live continuity update, not a final transfer.
+
+User-directed worker queue policy now targets **9 independent outstanding tasks per worker whenever practical**. This supersedes earlier six-deep queue guidance.
+
+Authoritative protocol update:
+- `PARALLEL_WORK_PROTOCOL_v1.md`;
+- policy commit: `562515ca04c574987066b6724e2306223c6f2e7f`.
+
+Latest board recheck/update:
+- `PARALLEL_WORK_BOARD_v1.md`;
+- board commit: `5e2b49be2ee7256c6e27562145a489754bb547b3`.
+
+Current active ranges:
+- Chat 2 / `chat2/presentation-replacement-next`: **61–69**.
+- Chat 3 / `chat3/lumber-production-proof-next`: **55–63**.
+- Chat 4 / `chat4/activation-ci-gate-next`: **49–57**.
+- Chat 5 / `chat5/school-pa-gate-next`: **49–57**.
+
+At the recheck immediately before topping up to nine, none of the newly assigned six-item production queues had yet produced their expected output files. Their previously reported prior queues had already been verified complete. Therefore the current ranges above are active work, not stale completed work.
+
+When any worker reports completion, verify exact expected files/commits in Git and then immediately provide the next nine independent tasks (or top the outstanding queue back to nine) while preserving one-file-one-active-owner.
