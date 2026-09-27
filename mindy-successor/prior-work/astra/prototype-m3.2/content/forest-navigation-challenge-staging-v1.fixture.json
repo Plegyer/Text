@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "id": "forest.navigation-challenge-staging.v1",
+  "status": "CONTENT_DRAFT_PRODUCT_OPEN",
+  "family": "navigation",
+  "sourceLocale": "ru",
+  "locales": [
+    "ru",
+    "en"
+  ],
+  "semanticPresentationNamespace": "activity/forest/challenge/navigation",
+  "runtimeCapablePrimitives": {
+    "possibleConditionKinds": [
+      "stat(wits)",
+      "stat(reason)",
+      "worldFact(accepted route knowledge)",
+      "itemCapability(accepted navigation support)",
+      "careerFact/careerStage/careerCounter(only if Product assigns ownership)",
+      "calendarSeason(only if mechanics are explicitly seasonal)",
+      "all/any"
+    ],
+    "activityOptionFields": [
+      "conditions",
+      "progressDelta",
+      "enduranceCost",
+      "setRoute"
+    ],
+    "note": "These primitives are capabilities of current runtime, not selected rules for this family."
+  },
+  "productOpen": {
+    "gameplayChallengeId": null,
+    "routeBinding": null,
+    "selectedCondition": null,
+    "threshold": null,
+    "knowledgeFactId": null,
+    "capabilityId": null,
+    "provider": null,
+    "progressDelta": null,
+    "enduranceCost": null,
+    "reward": null,
+    "seasonalMechanic": null
+  },
+  "authoredCandidates": [
+    {
+      "authoringKey": "forest/challenge/navigation/split-trail",
+      "semanticPresentationId": "activity/forest/challenge/navigation/split-trail",
+      "text": {
+        "ru": "Тропа расходится вокруг молодого подлеска. Слева — старые следы, мягкая земля и признаки недавнего движения. Справа — более твёрдая почва, меньше отпечатков и линия, которая, кажется, не теряет высоту. Когда механика будет авторизована, выбор должен оставаться реальным решением по маршруту или информации.",
+        "en": "The route divides around a stand of young trees. To the left are older footprints, softer ground, and signs of recent passage. To the right the footing is firmer, tracks are fewer, and the line appears to keep elevation. When mechanics are authored, the choice should remain a genuine route or information decision."
+      }
+    },
+    {
+      "authoringKey": "forest/challenge/navigation/lost-horizon",
+      "semanticPresentationId": "activity/forest/challenge/navigation/lost-horizon",
+      "text": {
+        "ru": "Кроны закрывают дальний обзор. Ориентироваться приходится по мелким признакам: уклону, ветру, мху, шуму воды и памяти о предыдущих поворотах.",
+        "en": "The canopy blocks any long view. Navigation has to rely on smaller evidence: slope, wind, moss, water sound, and memory of earlier turns."
+      }
+    },
+    {
+      "authoringKey": "forest/challenge/navigation/crossed-tracks",
+      "semanticPresentationId": "activity/forest/challenge/navigation/crossed-tracks",
+      "text": {
+        "ru": "Свежие следы пересекают текущий путь. Они могут принадлежать рабочим, охотникам, зверям или самой героине с предыдущего участка маршрута. Задача здесь — разобраться в информации о пути, а не вступить в бой.",
+        "en": "Fresh tracks cross the current path. They may belong to workers, hunters, animals, or the heroine herself from an earlier part of the route. The challenge is to interpret route information, not to enter combat."
+      }
+    },
+    {
+      "authoringKey": "forest/challenge/navigation/washed-markers",
+      "semanticPresentationId": "activity/forest/challenge/navigation/washed-markers",
+      "text": {
+        "ru": "Дождь и сток смыли самые заметные следы. Остались только обломанная линия веток, сдвинутые камни, царапина на коре и утрамбованная грязь. Этого может быть достаточно — если будущая проверка действительно разрешает такой способ чтения маршрута.",
+        "en": "Rain and runoff have erased the clearest signs. Only a broken line of twigs, disturbed stones, a bark scrape, and compacted mud remain. That may be enough—if the future authored check actually allows the route to be read this way."
+      }
+    },
+    {
+      "authoringKey": "forest/challenge/navigation/ridge-choice",
+      "semanticPresentationId": "activity/forest/challenge/navigation/ridge-choice",
+      "text": {
+        "ru": "Один путь поднимается на гребень и обещает лучший обзор. Другой остаётся ниже и выглядит короче. Позже им можно назначить разные риски или затраты, но этот текст не задаёт ни одного числового значения.",
+        "en": "One path climbs toward a ridge and promises a better view. The other stays lower and looks shorter. Different risks or costs may be authored later, but this text assigns no numeric value."
+      }
+    }
+  ],
+  "approachLabels": [
+    {
+      "key": "read-ground",
+      "label": {
+        "ru": "Читать следы на земле",
+        "en": "Read the ground"
+      }
+    },
+    {
+      "key": "climb-for-view",
+      "label": {
+        "ru": "Подняться выше ради обзора",
+        "en": "Climb for a better view"
+      }
+    },
+    {
+      "key": "follow-water",
+      "label": {
+        "ru": "Ориентироваться по воде",
+        "en": "Follow the water"
+      }
+    },
+    {
+      "key": "trust-marked-route",
+      "label": {
+        "ru": "Довериться отмеченному пути",
+        "en": "Trust the marked route"
+      }
+    },
+    {
+      "key": "use-trail-knowledge",
+      "label": {
+        "ru": "Использовать знание этой тропы",
+        "en": "Use what you know about the trail"
+      }
+    }
+  ],
+  "invariants": {
+    "createsGameplayId": false,
+    "choosesThreshold": false,
+    "choosesReward": false,
+    "choosesRouteBinding": false,
+    "choosesProvider": false,
+    "presentationIdsLocaleNeutral": true
+  }
+}
