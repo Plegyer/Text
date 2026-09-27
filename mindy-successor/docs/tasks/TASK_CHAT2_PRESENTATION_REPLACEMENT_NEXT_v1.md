@@ -3038,3 +3038,96 @@ Create NEW file only:
 Consolidate items 196–206 with exact asset/data/test selective-copy list, semantic mapping, build evidence, accessibility coverage and remaining final-GIF-only work.
 
 Continue items 196–207 sequentially without waiting for Lead review.
+
+
+## Queue item 208 — non-career static coverage gap audit v1
+Create NEW file only:
+- `docs/presentation-prep/NON_CAREER_STATIC_COVERAGE_GAP_AUDIT_v1.md`
+
+Audit current-main shipped semantic presentation identities outside the 10 ordinary careers:
+- reachable School;
+- ordinary poverty;
+- current Forest routes/results;
+- current Foreman relationship/Night.
+Classify UNIQUE_PROJECT_OWNED / GENERIC_EXISTING / MISSING / PRODUCT_OPEN.
+
+## Queue item 209 — School eight-course static batch v1
+Create NEW original SVG assets only under:
+- `prior-work/astra/prototype-m3.2/assets/presentation/`
+
+Create distinct project-owned static fallbacks for the eight current School course lesson presentation IDs.
+No teacher/exact-course staged identities.
+
+## Queue item 210 — School Night-study static batch v1
+Create NEW original SVG assets only under:
+- `prior-work/astra/prototype-m3.2/assets/presentation/`
+
+Create project-owned static fallbacks for current reachable generic School Night-study presentation identities only.
+
+## Queue item 211 — ordinary-poverty street event static batch v1
+Create NEW original SVG assets only under:
+- `prior-work/astra/prototype-m3.2/assets/presentation/`
+
+Create distinct static fallbacks for current shipped ordinary-poverty street event identities.
+Secret Debt excluded.
+
+## Queue item 212 — ordinary-poverty lodging/recovery static batch v1
+Create NEW original SVG assets only under:
+- `prior-work/astra/prototype-m3.2/assets/presentation/`
+
+Create distinct static fallbacks for current cheap-lodging and recovery/help ordinary-poverty identities.
+No new lodging mechanics.
+
+## Queue item 213 — ordinary-poverty pressure static batch v1
+Create NEW original SVG assets only under:
+- `prior-work/astra/prototype-m3.2/assets/presentation/`
+
+Create distinct static fallbacks for current pressure/cold-rain/noisy-loading/muddy-splash identities.
+No Secret Debt imagery.
+
+## Queue item 214 — Forest route static batch v1
+Create NEW original SVG assets only under:
+- `prior-work/astra/prototype-m3.2/assets/presentation/`
+
+Create distinct project-owned static fallbacks for current shipped route identities:
+- logging road;
+- old boundary.
+
+Do not invent Hunter route or token semantics.
+
+## Queue item 215 — Forest result/reaction static refinement v2
+Create NEW original SVG assets only if they improve current coverage under:
+- `prior-work/astra/prototype-m3.2/assets/presentation/`
+
+Ensure success / escape / failure Activity return identities and their current reaction-event identities have semantically appropriate project-owned static fallback coverage. Reuse an existing asset only when the semantic scene is genuinely the same.
+
+## Queue item 216 — Foreman relationship/Night static refinement v2
+Create NEW original SVG assets only under:
+- `prior-work/astra/prototype-m3.2/assets/presentation/`
+
+Refine current shipped Foreman professional milestone and voluntary Night follow-up coverage. No new relationship route/stage.
+
+## Queue item 217 — non-career project-owned static manifest v2
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/project-owned-non-career-static-media-v2.json`
+
+Map actual items 209–216 assets to exact current semantic presentation IDs, repo paths and stable RU+EN alt/caption keys. Presentation-only.
+
+## Queue item 218 — non-career static localization + build regression v2
+Create NEW files only:
+- `prior-work/astra/prototype-m3.2/content/project-owned-non-career-static-localization-v2.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/project-owned-non-career-static-build-v2.test.ts`
+
+Validate actual assets, current semantic IDs, RU+EN alt/caption coverage, build distribution, no external URLs and no gameplay fields.
+
+## Queue item 219 — project-owned static full-scope handoff v3
+Create NEW file only:
+- `docs/presentation-prep/PROJECT_OWNED_STATIC_FULL_SCOPE_HANDOFF_V3.md`
+
+Consolidate items 208–218 plus prior career result/seasonal work:
+- exact total static coverage;
+- exact selective-copy assets/data/tests;
+- remaining GENERIC_EXISTING / MISSING / PRODUCT_OPEN;
+- what remains final-GIF-only.
+
+Continue items 208–219 sequentially without waiting for Lead review.
