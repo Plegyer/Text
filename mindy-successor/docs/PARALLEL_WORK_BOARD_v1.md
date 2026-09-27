@@ -664,3 +664,35 @@ PR #35 is the bounded base-layer implementation for the seven remaining ordinary
 Its first exact-head CI failed because unreachable draft stages were declared without transitions.
 Lead corrected the package so the base layer declares only reachable initial stages; full draft stages will be added only together with real transitions/content.
 A fresh exact-head CI run is in progress. Do not merge PR35 until green.
+
+
+## Localization + multi-GIF runtime milestone — PR41 / PR42
+
+Current main production infrastructure now includes:
+
+- PR #41 — RU/EN localization runtime:
+  - merge `974d6e077ffc511e304a64aef32f2aab81167f41`;
+  - exact-head CI: **291/291 PASS**;
+  - post-merge main CI: SUCCESS;
+  - locale preference is presentation-only in localStorage, not gameplay Save;
+  - Russian fallback;
+  - first shipped RU/EN slice covers town/HUD/Work and all 10 ordinary career labels/descriptions.
+
+- PR #42 — deterministic multi-GIF presentation pools:
+  - merge `55adc69dcda4c41c71548cd146756896fa5976d0`;
+  - exact-head CI: **295/295 PASS**;
+  - one semantic presentation identity may own **3–5 GIF candidates**;
+  - deterministic selection from presentationId + persisted occurrence key;
+  - no gameplay RNG;
+  - no Save schema migration;
+  - RU↔EN locale switching keeps the same selected media candidate;
+  - animation-off uses static fallback;
+  - old primary/static presentation overrides remain backward-compatible.
+
+Next Lead priority is selective content integration on fresh main:
+1. School localization safe/reachable delta;
+2. Forest bilingual result content;
+3. ordinary-poverty localization;
+4. real multi-GIF media pools only where actual GIF assets exist; placeholder manifests are not production assets.
+
+Chat 4 remains product/CI QA only; it does not manage other workers.
