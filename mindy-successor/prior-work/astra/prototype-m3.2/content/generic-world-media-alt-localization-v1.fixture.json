@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "defaultLocale": "ru",
+  "strings": {
+    "media.base.workshop.alt": {
+      "ru": "Условная иллюстрация алхимической лавки.",
+      "en": "A stylized illustration of the alchemy workshop."
+    },
+    "media.base.town.alt": {
+      "ru": "Условная иллюстрация фэнтезийного города.",
+      "en": "A stylized illustration of the fantasy town."
+    },
+    "media.gopher.arrival.default.alt": {
+      "ru": "Городская сцена с белым сусликом и открытым люком.",
+      "en": "A town scene with a white gopher and an open hatch."
+    },
+    "media.gopher.tavern-intro.default.alt": {
+      "ru": "Сцена таверны для первой рабочей встречи с Мареком.",
+      "en": "A tavern scene for the first work encounter with Marek."
+    },
+    "media.gopher.tavern-quest.default.alt": {
+      "ru": "Сцена таверны для разговора о пропавшей накладной.",
+      "en": "A tavern scene for the conversation about the missing delivery note."
+    },
+    "media.gopher.receipt.default.alt": {
+      "ru": "Лесная сцена, связанная с найденной накладной.",
+      "en": "A forest scene associated with the recovered delivery note."
+    },
+    "media.gopher.tavern-resolution.default.alt": {
+      "ru": "Сцена таверны для решения судьбы найденного документа.",
+      "en": "A tavern scene for deciding what to do with the recovered document."
+    },
+    "media.gopher.tavern-routine.spring.alt": {
+      "ru": "Весенняя сцена обычной смены в таверне.",
+      "en": "A spring scene from an ordinary tavern shift."
+    },
+    "media.gopher.tavern-routine.summer.alt": {
+      "ru": "Летняя сцена обычной смены в таверне.",
+      "en": "A summer scene from an ordinary tavern shift."
+    },
+    "media.gopher.tavern-routine.autumn.alt": {
+      "ru": "Осенняя сцена обычной смены в таверне.",
+      "en": "An autumn scene from an ordinary tavern shift."
+    },
+    "media.gopher.tavern-routine.winter.alt": {
+      "ru": "Зимняя сцена обычной смены в таверне.",
+      "en": "A winter scene from an ordinary tavern shift."
+    },
+    "media.gopher.tavern-routine.default.alt": {
+      "ru": "Обычная рабочая сцена в таверне.",
+      "en": "An ordinary work scene in the tavern."
+    },
+    "media.gopher.woods-intro.default.alt": {
+      "ru": "Рабочая сцена лесной артели для знакомства с Бронном.",
+      "en": "A lumber-crew work scene for the introduction to Bron."
+    },
+    "media.gopher.hunt-intro.default.alt": {
+      "ru": "Лесная сцена для вводного инструктажа следопыта Рена.",
+      "en": "A forest scene for tracker Ren’s introductory briefing."
+    },
+    "media.gopher.landlord.default.alt": {
+      "ru": "Комната для вводного разговора с домовладельцем Силаном.",
+      "en": "A room scene for the introductory conversation with landlord Silan."
+    },
+    "media.stage.goblin.alt": {
+      "ru": "Рабочая сцена с взрослым гоблином-плотником Тиком у верстака.",
+      "en": "A work scene with the adult goblin carpenter Tik by the workbench."
+    }
+  }
+}
