@@ -1010,3 +1010,25 @@ Define the smallest future implementation package boundaries for:
 For each package list dependencies, allowed ownership domains, acceptance evidence and what remains Product-owned.
 
 Continue items 55–63 sequentially without waiting for Lead review.
+
+
+## Queue item 64 — poverty balance-parameter ledger
+
+Create NEW file only:
+- `docs/poverty-prep/POVERTY_BALANCE_PARAMETER_LEDGER_v1.md`
+
+Inventory every numeric value in ordinary poverty and Secret Debt that is still balance-owned rather than structurally locked:
+- lodging costs;
+- street penalties;
+- lender chance;
+- principal;
+- delayed debt amount;
+- activation delay where applicable;
+- forced-Night Energy penalty;
+- career gains/rewards/thresholds.
+
+For each value identify source authority, current placeholder/range if any, systems affected, simulations required, and whether changing it needs content-only, balance-data, or runtime work.
+
+Do not choose final numbers.
+
+Continue items 56–64 sequentially without waiting for Lead review.
