@@ -3136,3 +3136,120 @@ Create NEW file only:
 Consolidate items 233–243 into SAFE_TEXT_PATCH / SHARED_UI_REQUIRED / ROUTE_PRESENTATION_READY / PRODUCT_OPEN with exact selective-copy files.
 
 Continue items 233–244 sequentially without waiting for Lead review.
+
+
+## Queue item 245 — post-PR50 Forest/poverty baseline v9
+Create NEW file only:
+- `docs/lumber-prep/POST_PR50_FOREST_POVERTY_BASELINE_V9.md`
+
+Re-audit exact current main after PR50:
+- ordinary-poverty localization state;
+- shared Night/lodging hardcoded UI debt;
+- `activity/forest/route/default` static now shipped;
+- route-specific presentation seam still absent;
+- Product-open boundaries unchanged.
+
+## Queue item 246 — shared Night/lodging RU EN copy final review v6
+Create NEW file only:
+- `docs/poverty-prep/SHARED_NIGHT_LODGING_COPY_FINAL_REVIEW_V6.md`
+
+Re-review the finalized 20-key shared UI patch for concise player-facing RU-source and full EN.
+No NightFlow/lodging/housing mechanic changes.
+
+## Queue item 247 — shared Night/lodging root patch candidate v5
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/poverty-shared-ui-localization-v5.fixture.json`
+
+Produce the exact final 20 additive RU+EN keys against current post-PR50 main.
+No reused existing keys duplicated in the payload.
+
+## Queue item 248 — shared Night/lodging exact consumer map v2
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/shared-night-lodging-consumer-map-v2.fixture.json`
+
+Refresh exact `src/ui/app.ts` consumer seams/fallback text against post-PR50 main.
+
+## Queue item 249 — shared Night/lodging UI invariance expectation v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/shared-night-lodging-ui-invariance-v1.fixture.json`
+
+For representative Night/Lodging paths record:
+- stable phase/lodging/nightChoice IDs;
+- expected RU text;
+- expected EN text;
+- exact unchanged costs/Energy/housing/Save fields.
+
+## Queue item 250 — logging-road route presentation copy final review v6
+Create NEW file only:
+- `docs/lumber-prep/LOGGING_ROAD_ROUTE_PRESENTATION_COPY_FINAL_REVIEW_V6.md`
+
+Finalize concise RU+EN route-specific presentation copy for the exact current logging-road route only.
+No route availability/progress/result changes.
+
+## Queue item 251 — old-boundary route presentation copy final review v6
+Create NEW file only:
+- `docs/lumber-prep/OLD_BOUNDARY_ROUTE_PRESENTATION_COPY_FINAL_REVIEW_V6.md`
+
+Finalize concise RU+EN presentation copy using only currently established stones/marks semantics.
+Do not imply token origin/use, Hunter knowledge, constructed gate, hidden reward or deeper lore.
+
+## Queue item 252 — old-boundary visual brief correction v2
+Create NEW file only:
+- `docs/lumber-prep/OLD_BOUNDARY_VISUAL_BRIEF_CORRECTION_V2.md`
+
+Describe a safe replacement visual brief for future project-owned static/GIF source:
+- neutral old stones/marks/path boundary;
+- no constructed arch/gate;
+- no token;
+- no Hunter;
+- no reward/challenge implication.
+
+## Queue item 253 — route-specific localization final candidate v6
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/forest-route-presentation-final-v6.fixture.json`
+
+Consolidate items 250–252 into exact additive RU+EN text/help/alt/caption keys for:
+- `activity/forest/route/logging-road`;
+- `activity/forest/route/old-boundary`.
+
+No gameplay fields.
+
+## Queue item 254 — route presentationId seam contract v3
+Create NEW file only:
+- `docs/lumber-prep/FOREST_ROUTE_PRESENTATION_ID_SEAM_CONTRACT_V3.md`
+
+Specify the minimal Lead-owned seam:
+- derive presentationId from authoritative route state only;
+- shared default before route selection;
+- route-specific ID after route selection;
+- no Save write;
+- no RNG use;
+- no route/result mutation.
+
+No code changes.
+
+## Queue item 255 — route-specific natural-path acceptance matrix v3
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/forest-route-natural-path-acceptance-v3.fixture.json`
+
+For logging-road and old-boundary record:
+- natural path;
+- exact route state;
+- expected default->specific presentation transition;
+- RU/EN presentation;
+- exact unchanged result continuation and Hard Work invariants.
+
+## Queue item 256 — post-PR50 Forest/poverty handoff v9
+Create NEW file only:
+- `docs/lumber-prep/POST_PR50_FOREST_POVERTY_HANDOFF_V9.md`
+
+Consolidate items 245–255 into:
+- SHARED_NIGHT_UI_READY;
+- ROUTE_PRESENTATION_COPY_READY;
+- ROUTE_SEAM_REQUIRED;
+- VISUAL_SOURCE_REVISION_REQUIRED;
+- PRODUCT_OPEN.
+
+Include exact selective-copy files.
+
+Continue items 245–256 sequentially without waiting for Lead review.
