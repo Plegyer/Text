@@ -1263,3 +1263,20 @@ Separate the fixed forced-Night product requirement from unresolved authoring/ba
 Do not choose final intercept mechanics if multiple current-compatible options remain.
 
 Continue items 68–76 sequentially without waiting for Lead review.
+
+
+## Queue item 77 — Secret Debt career-availability gating implementation contract
+
+Create NEW file only:
+- `docs/poverty-prep/SECRET_DEBT_CAREER_AVAILABILITY_GATING_CONTRACT_v1.md`
+
+Define the bounded runtime behavior needed to enforce the already-directed rule:
+- when bound, the 10 ordinary careers are unavailable;
+- Secret Debt/Slave work is available;
+- ordinary career progress is preserved, not reset;
+- after resolution, ordinary availability is restored subject to their normal gates;
+- Palace Meta prerequisite continues to count only ordinary Hard Work.
+
+Map whether this should be expressed through action conditions, a shared availability helper, public state, or another existing-compatible seam, without selecting unresolved School/Activity blocking policy.
+
+Continue items 69–77 sequentially without waiting for Lead review.
