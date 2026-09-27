@@ -22,6 +22,19 @@ const eventVariantText=(eventId:string,variantId:string,fallback:string)=>tr(`ev
 const eventChoiceLabel=(eventId:string,choiceId:string,fallback:string)=>tr(`event.${eventId}.choice.${choiceId}.label`,fallback);
 const mediaAlt=(mediaId:string|undefined,fallback:string)=>mediaId?tr(`media.${mediaId}.alt`,fallback):fallback;
 const fmt=(text:string,values:Record<string,string|number>)=>Object.entries(values).reduce((out,[key,value])=>out.replaceAll(`{${key}}`,String(value)),text);
+const schoolCourseLabel=(course:SchoolCourse)=>tr(`${course.id}.label`,course.label);
+const schoolCourseDescription=(course:SchoolCourse)=>tr(`${course.id}.description`,'');
+const schoolStatLabel=(stat:string)=>tr(`stat.${stat}.label`,labels[stat]??stat);
+function localizedNightChoiceLabel(id:string,fallback:string){
+ const prefix='school.night_study.';
+ if(!id.startsWith(prefix))return fallback;
+ const rest=id.slice(prefix.length),split=rest.lastIndexOf('.');
+ if(split<1)return fallback;
+ const course=SCHOOL_COURSES.find(item=>item.id===`school.course.${rest.slice(0,split)}`);
+ if(!course)return fallback;
+ const stat=rest.slice(split+1);
+ return fmt(tr('ui.school.nightStudyChoice','Ночная учёба: {course} — {stat}'),{course:schoolCourseLabel(course),stat:schoolStatLabel(stat)});
+}
 const professions=['lumber.shift','satyr-maid.shift','undead-farm.shift','tavern.shift','hunter.shift','guard.shift','merchant.shift','artist-geisha.shift','assassin.shift','prostitute.shift'];
 function explain(c:Condition):string{
  const cmp=(op:'gte'|'lte'|'eq',value:number)=>`${op==='gte'?'≥':op==='lte'?'≤':'='} ${value}`;
@@ -86,7 +99,7 @@ function schoolCourseDisabled(course:SchoolCourse){
   state.run.resources.money<course.tuition||state.run.dayState.energyCurrent<course.energyCost;
 }
 function schoolList(){
- return `<div class="activity-list">${SCHOOL_COURSES.map(course=>`<article class="activity"><div><h3>${esc(course.label)}</h3><p>${course.statEffects.map(effect=>`${esc(labels[effect.stat]??effect.stat)} +${effect.amount}`).join(' · ')}</p><small>${course.tuition} монет · ${course.energyCost} энергия</small></div><button data-school-course="${course.id}" ${schoolCourseDisabled(course)?'disabled':''}>Учиться</button></article>`).join('')}</div>`;
+ return `<div class="activity-list">${SCHOOL_COURSES.map(course=>`<article class="activity"><div><h3>${esc(schoolCourseLabel(course))}</h3><p>${esc(schoolCourseDescription(course))}</p><p>${course.statEffects.map(effect=>`${esc(schoolStatLabel(effect.stat))} +${effect.amount}`).join(' · ')}</p><small>${esc(fmt(tr('ui.school.tuitionEnergy','Стоимость: {tuition} монет · Энергия сегодня: {energy}'),{tuition:course.tuition,energy:course.energyCost}))}</small></div><button data-school-course="${course.id}" ${schoolCourseDisabled(course)?'disabled':''}>${esc(tr('ui.school.lessonButton','Учиться'))}</button></article>`).join('')}</div>`;
 }
 function activityEntryDisabled(id:string){
  const activity=catalog.definitions.activities.find(item=>item.id===id);
@@ -98,7 +111,7 @@ function activityEntryList(ids:string[]){
 }
 function nightChoiceList(){
  const choices=catalog.definitions.nightChoices.filter(choice=>eligible(choice.conditions,state,catalog));
- return `<div class="activity-list">${choices.map(choice=>`<article class="activity"><div><h3>${esc(choice.label)}</h3><small>Ночной слот${choice.nextDayEnergyDelta?` · энергия завтра ${choice.nextDayEnergyDelta>0?'+':''}${choice.nextDayEnergyDelta}`:''}</small></div><button data-night-choice="${choice.id}" ${busy||locked?'disabled':''}>Выбрать</button></article>`).join('')}</div>`;
+ return `<div class="activity-list">${choices.map(choice=>{const schoolNight=choice.id.startsWith('school.night_study.');return `<article class="activity"><div><h3>${esc(localizedNightChoiceLabel(choice.id,choice.label))}</h3><small>${schoolNight?esc(tr('ui.school.nightStudyContext','Ночная учёба: выбранная характеристика +2, Energy следующего дня −1.')):`Ночной слот${choice.nextDayEnergyDelta?` · энергия завтра ${choice.nextDayEnergyDelta>0?'+':''}${choice.nextDayEnergyDelta}`:''}`}</small></div><button data-night-choice="${choice.id}" ${busy||locked?'disabled':''}>${schoolNight?esc(tr('ui.school.nightStudyButton','Учиться ночью')):'Выбрать'}</button></article>`;}).join('')}</div>`;
 }
 function presentationOccurrenceKey(presentationId:string){
  const r=state.run;
@@ -151,13 +164,16 @@ function central(){
   return `<section class="stage scene">${mediaHTML('night/default')}<div class="stage-title"><span class="eyebrow">Night</span><h1>Ночная последовательность</h1></div></section><section class="dialogue"><p>${esc(night.phase)}</p></section>`;
  }
  if(screen==='scene'&&r.lastAction){const last=r.lastAction,a=catalog.definitions.actions.find(a=>a.id===last.id)!;
- return `<section class="stage">${mediaHTML(last.presentationId??presentationIdForActionResult(catalog,last.id,last.media))}<div class="stage-title"><span class="eyebrow">${professions.includes(a.id)?`${esc(tr('ui.result.shift','Смена'))} ${r.actionCounts[a.id]??0}`:esc(tr('ui.result.default','Результат'))}</span><h1>${esc(last.title)}</h1></div><div class="result-deltas">${Object.entries(last.deltas).filter(([k])=>!['work','trust','health'].includes(k)).map(([k,v])=>`<span class="${v>0?'gain':'loss'}">${esc(labels[k]??k)} ${v>0?'+':''}${v}</span>`).join('')}</div></section><section class="dialogue"><p>${esc(last.text)}</p><div class="choices">${professions.includes(a.id)?`<button data-action="${a.id}" class="primary" ${disabled(a)?'disabled':''}>${esc(tr('ui.work.again','Работать ещё · 1 энергия'))}</button>`:''}<button id="to-town">${esc(tr('ui.result.returnTown','Вернуться в город'))}</button>${r.metrics.energy===0?'<button data-panel="sleep" class="primary">Выбрать ночлег</button>':''}</div></section>`;
+  const schoolCourse=last.id==='school'?SCHOOL_COURSES.find(course=>course.presentationId===last.presentationId):undefined;
+  const shownTitle=schoolCourse?schoolCourseLabel(schoolCourse):last.title;
+  const shownText=schoolCourse?fmt(tr('ui.school.lessonResult','Урок завершён: {course}.'),{course:schoolCourseLabel(schoolCourse)}):last.text;
+ return `<section class="stage">${mediaHTML(last.presentationId??presentationIdForActionResult(catalog,last.id,last.media))}<div class="stage-title"><span class="eyebrow">${professions.includes(a.id)?`${esc(tr('ui.result.shift','Смена'))} ${r.actionCounts[a.id]??0}`:esc(tr('ui.result.default','Результат'))}</span><h1>${esc(shownTitle)}</h1></div><div class="result-deltas">${Object.entries(last.deltas).filter(([k])=>!['work','trust','health'].includes(k)).map(([k,v])=>`<span class="${v>0?'gain':'loss'}">${esc(labels[k]??k)} ${v>0?'+':''}${v}</span>`).join('')}</div></section><section class="dialogue"><p>${esc(shownText)}</p><div class="choices">${professions.includes(a.id)?`<button data-action="${a.id}" class="primary" ${disabled(a)?'disabled':''}>${esc(tr('ui.work.again','Работать ещё · 1 энергия'))}</button>`:''}<button id="to-town">${esc(tr('ui.result.returnTown','Вернуться в город'))}</button>${r.metrics.energy===0?'<button data-panel="sleep" class="primary">Выбрать ночлег</button>':''}</div></section>`;
  }
  return `<section class="stage town-stage">${mediaHTML('location/town/default')}<div class="stage-title"><span class="eyebrow">${esc(tr('ui.town.eyebrow','По ту сторону люка'))}</span><h1>${esc(tr('ui.town.title','Листоград'))}</h1><p>${esc(r.metrics.energy?tr('ui.town.energyPrompt','Город полон чужих планов. Какими будут ваши?'):tr('ui.town.noEnergyPrompt','На сегодня сил больше нет. Пора выбрать ночлег.'))}</p></div><div class="town-actions"><button data-panel="work"><b>${esc(tr('ui.panel.work','Работа'))}</b><span>${esc(tr('ui.town.work.subtitle','Смены и знакомства'))}</span></button><button data-panel="school"><b>${esc(tr('ui.panel.school','Школа'))}</b><span>${esc(tr('ui.town.school.subtitle','Занятия и практика'))}</span></button><button data-panel="explore"><b>${esc(tr('ui.panel.explore','Окрестности'))}</b><span>${esc(tr('ui.town.explore.subtitle','Поручения и находки'))}</span></button><button data-panel="sleep"><b>${esc(tr('ui.panel.sleep','Ночлег'))}</b><span>${esc(tr('ui.town.sleep.subtitle','Комната или навес'))}</span></button></div></section><section class="town-note"><span>${esc(labels[r.housing])}</span><span>Ночлег сегодня: ${rent(state)} ${esc(tr('ui.work.coins','монет'))}</span></section>`;
 }
 function panelContent(){
  if(panel==='work')return `<h2>${esc(tr('ui.work.title','Куда устроимся?'))}</h2>${actionList(professions)}`;
- if(panel==='school')return `<h2>Школа</h2><p>Восемь оплачиваемых курсов. Урок списывает tuition + 1 Energy атомарно.</p>${schoolList()}`;
+ if(panel==='school')return `<h2>${esc(tr('ui.school.title','Школа'))}</h2><p>${esc(tr('ui.school.help','Восемь оплачиваемых курсов. Урок списывает tuition + 1 Energy атомарно.'))}</p>${schoolList()}`;
  if(panel==='explore')return `<h2>Окрестности и поручения</h2>${activityEntryList(['lumber.forest'])}<details><summary>Обычные поручения</summary>${actionList(['forest-search','tavern-talk','forage','landlord','visit','oddjob'])}</details>`;
  if(panel==='sleep')return `<h2>Ночь</h2><p>NightFlow отдельно фиксирует lodging, voluntary choice и следующий день.</p><button data-end-day class="primary" ${busy||locked||!!state.run.pending||!!state.run.flow.night||!!state.run.flow.activity?'disabled':''}>Начать NightFlow</button>`;
  if(panel==='stats')return `<h2>Героиня</h2><div class="character-stats">${stats.map(k=>`<article><div><strong>${labels[k]}</strong><b>${state.run.metrics[k]}</b></div><progress value="${state.run.metrics[k]}" max="100"></progress><p>${hints[k]}</p></article>`).join('')}</div><h3>Профессии</h3><p>${professions.map(id=>`${esc(catalog.definitions.actions.find(a=>a.id===id)!.label)}: ${state.run.actionCounts[id]??0}`).join(' · ')}</p>`;

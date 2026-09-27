@@ -70,6 +70,18 @@ Public 1.0 может выпускаться только когда заявл�
 
 При необходимости короткие statuses (muddy/wet/etc.) отдельны.
 
+
+### D13 — worker queue depth
+Coordination target: **12 independent outstanding tasks per active worker whenever practical**.
+
+This is a production-coordination rule, not a requirement to invent filler work:
+- Lead verifies completion from Git before replenishing;
+- replenish toward 12 when useful independent work exists;
+- if a worker has no useful independent task, it may remain idle rather than create low-value staging paperwork;
+- one file = one active owner remains mandatory.
+
+This supersedes the earlier nine-deep queue target.
+
 ## Still open after this lock
 
 - exact seasonal packages per job;
