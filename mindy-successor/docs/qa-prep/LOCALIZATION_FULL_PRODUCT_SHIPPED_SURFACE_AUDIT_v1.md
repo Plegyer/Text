@@ -3,10 +3,11 @@
 Status: COMPLETE / CURRENT_MAIN_PARTIAL_BILINGUAL
 
 Audit point:
-- current main: `ab53da4059e348734703c2de490e43e94c02b057` (PR44 merge);
-- authoritative `content/localization.json` blob: `58960889c3559870b17bb4076889ca4c36c4d3f8`;
-- post-merge main workflow #62: SUCCESS, 301/301 tests;
-- ordinary-poverty localization remains a reviewed worker/selective-integration source and is not yet in main.
+- current main: `c0763f9f9fa9887593fe8567165bbedce2b6cd3a` (PR45 merge);
+- authoritative `content/localization.json` blob: `d23a3b7a86db460e6dc88bf25d0f34a0559c092b`;
+- post-merge main workflow #67 / id `36323485949`: SUCCESS;
+- tests: 304/304;
+- validator: 17 packs, 46 events, 35 actions, 9 endings.
 
 Classification:
 - `SHIPPED_RU_EN`: current main has non-empty RU+EN and production consumes the localization path.
@@ -16,17 +17,17 @@ Classification:
 
 ## Current-main bundle facts
 
-Current `localization.json` contains 130 keys:
+Current `localization.json` contains 214 keys:
 - `ui.*`: 44
 - `action.*`: 20
 - `activity.*`: 1
 - `activityOption.*`: 2
-- `event.*`: 28
-- `media.*`: 7
+- `event.*`: 110
+- `media.*`: 9
 - `school.*`: 16
 - `stat.*`: 12
 
-All 130 entries have non-empty English.
+All 214 entries have non-empty English.
 
 Therefore:
 `RU_FALLBACK_ONLY = 0`
@@ -36,13 +37,13 @@ Absent/hardcoded player-facing surfaces are still `MISSING`; fallback rendering 
 
 ## SHIPPED_RU_EN
 
-### Town / Work slice
+### Town / Work
 
 Current main ships the established RU+EN town/Work path:
 - localized main town/dock copy where routed through `tr(...)`;
 - Work panel and controls;
 - all ten ordinary career action labels and descriptions;
-- existing language/menu strings covered by the bundle.
+- current language/menu strings covered by the bundle.
 
 Gameplay action IDs remain locale-neutral.
 
@@ -56,9 +57,9 @@ Current main ships:
 
 The exact `activityResult` identities remain unchanged.
 
-### School after PR44
+### School
 
-PR44 is now shipped on main.
+PR44 is shipped on main.
 
 Current main contains and consumes RU+EN for:
 - School panel title/help;
@@ -70,34 +71,35 @@ Current main contains and consumes RU+EN for:
 - twelve stat labels used by School;
 - current School lesson/life event title/body/choice fields;
 - School event media alt;
-- the reachable legacy `base.school` title/body/choice surface.
-
-PR44 added 56 localization keys relative to the prior 74-key main baseline, for a current total of 130.
+- reachable legacy `base.school` title/body/choice.
 
 Exact-head and post-merge UI tests prove RU/EN switching does not alter the paid-lesson pending Save or active School NightFlow Save.
+
+### Ordinary poverty
+
+PR45 is now shipped on main.
+
+The production bundle contains the exact 84 reviewed ordinary-poverty localization surfaces:
+- 82 event title/body/choice keys across the six shipped ordinary-poverty packs;
+- 2 shared media alt keys: `media.stage.outside.alt` and `media.stage.room.alt`.
+
+Post-merge main test coverage confirms:
+- all 84 required surfaces exist with RU+EN;
+- every key remains locale-neutral;
+- all six shipped poverty packs have Resolver-driven natural paths;
+- representative effects commit once and remain stable after reload;
+- RU/EN lookup does not alter pending gameplay state;
+- renderer RU↔EN switching preserves gameplay Save;
+- Secret Debt markers are absent from the ordinary-poverty localization set.
 
 Classification:
 `SHIPPED_RU_EN`.
 
 ## MISSING on current main
 
-### Ordinary poverty
-
-Current main still contains zero localization keys with ordinary-poverty identities.
-
-The six shipped ordinary-poverty packs therefore remain `MISSING` for bilingual event title/body/choice/media-alt coverage on main.
-
-Chat 3 provides:
-- reviewed 84-key RU+EN delta;
-- current-ID collision guard;
-- executable natural-path RU/EN invariance.
-
-Classification:
-`STAGED_RU_EN / READY_FOR_SELECTIVE_PR`.
-
 ### Foreman relationship / ordinary relationship Night
 
-Current main has no localization entries for:
+Current main still has no localization entries for:
 - `lumber.foreman-notice`;
 - `lumber-night.foreman-professional`;
 - their relationship media;
@@ -105,14 +107,14 @@ Current main has no localization entries for:
 
 Chat 5 provides an 11-key RU+EN source fixture.
 
-Ten event/media keys already match generic event/media localization paths. The Night-choice label key still needs generic current UI wiring; current School-specific Night localization does not automatically localize Foreman.
+Ten event/media keys already match generic event/media localization paths. The Night-choice label key still needs generic current UI wiring; School-specific Night localization does not automatically localize Foreman.
 
 Classification:
 `MISSING` on main, `STAGED_RU_EN` in Chat 5.
 
 ### Other root/legacy authored events
 
-Several current root-loaded event families still rely on embedded fallback text rather than complete RU+EN entries. These include player-facing legacy and career/cross-system event surfaces outside the now-localized Forest and School subsets.
+Several current root-loaded event families still rely on embedded fallback text rather than complete RU+EN entries. These include player-facing legacy and career/cross-system event surfaces outside the localized Forest, School and ordinary-poverty subsets.
 
 A pack fallback string is not counted as bilingual merely because it renders.
 
@@ -134,11 +136,6 @@ Unless an exact RU+EN key is present and consumed, classification remains:
 
 ## STAGED
 
-### Ordinary poverty
-
-84 RU+EN keys plus executable/collision tests:
-`STAGED_RU_EN / NEXT_SELECTIVE_CANDIDATE`.
-
 ### Foreman relationship
 
 11 RU+EN worker keys:
@@ -151,7 +148,7 @@ The Night-choice label specifically remains:
 
 No real production GIF pool exists.
 
-Item 177/178 correctly contain zero real candidates and zero fake localization entries.
+Chat 2 item 177/178 correctly contain zero real candidates and zero fake localization entries.
 
 Classification:
 `BLOCKED_BY_REAL_ASSETS`.
@@ -166,6 +163,8 @@ CI/QA must continue to distinguish:
 - missing localization path;
 - staged/unmerged bilingual material.
 
+Russian fallback remains a resilience feature, not evidence of English coverage.
+
 ## Current full-product conclusion
 
 Current main is `PARTIAL_BILINGUAL`.
@@ -173,8 +172,9 @@ Current main is `PARTIAL_BILINGUAL`.
 Strong shipped bilingual slices now include:
 - town/Work and ten ordinary career action copy;
 - Forest Activity/result presentation;
-- School panel/course/Night/current reachable event presentation after PR44.
+- School panel/course/Night/current reachable event presentation;
+- all six shipped ordinary-poverty event families.
 
-The next clean reviewed localization candidate is ordinary poverty. Foreman event/media localization is also viable selectively, with the voluntary Night label requiring explicit UI wiring.
+The next reviewed localization candidate is Foreman relationship event/media content, with the voluntary Night label requiring explicit generic UI wiring.
 
 Full-product bilingual acceptance remains blocked by untranslated legacy/root event families and remaining hardcoded UI surfaces.
