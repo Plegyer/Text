@@ -1,0 +1,19 @@
+{
+  "formatVersion": 1,
+  "kind": "first-real-production-pool",
+  "status": "BLOCKED_BY_REAL_ASSETS",
+  "reason": "Item 174 imported zero compatible production GIF files; no current semantic presentationId has 3 real repository GIF candidates from this batch.",
+  "sourceDiscovery": "docs/presentation-prep/FIRST_REAL_GIF_SOURCE_DISCOVERY_BATCH_v1.md",
+  "importBlocker": "docs/presentation-prep/FIRST_REAL_GIF_IMPORT_BLOCKER_v1.md",
+  "presentationPatch": {
+    "version": 1,
+    "texts": {},
+    "media": {},
+    "slots": {}
+  },
+  "productionClaims": {
+    "realGifCandidates": 0,
+    "realPools": 0,
+    "placeholderCandidates": 0
+  }
+}
