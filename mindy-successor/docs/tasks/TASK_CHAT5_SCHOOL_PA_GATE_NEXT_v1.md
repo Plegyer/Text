@@ -1948,3 +1948,73 @@ Include coverage status per key:
 No shared runtime edits.
 
 Continue items 120–128 sequentially without waiting for Lead review.
+
+
+## Queue item 129 — School localization migration test v1
+
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/school-localization-migration-v1.test.ts`
+
+Validate item 128 migration bundle:
+- deterministic locale-neutral keys;
+- RU+EN content where marked translated;
+- fallback status explicit;
+- no mechanics/effects duplicated by locale.
+
+## Queue item 130 — eight-course UI RU+EN text pack v1
+
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/school-ui-ru-en-v1.fixture.json`
+
+Provide RU+EN UI text for all 8 paid courses:
+- course label;
+- concise description;
+- tuition/Energy wording template;
+- supported-stat display terminology.
+
+Do not alter course numbers or mechanics.
+
+## Queue item 131 — School generic reachable localization bundle v2
+
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/school-generic-localization-v2.fixture.json`
+
+Map currently reachable generic School events to localization keys with RU+EN text.
+
+## Queue item 132 — School Night localization bundle v2
+
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/school-night-localization-v2.fixture.json`
+
+Map exact Night-study identities to localization keys with RU+EN text while preserving exact mechanics.
+
+## Queue item 133 — staged teacher/course localization bundle v2
+
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/school-teacher-course-localization-v2.fixture.json`
+
+Provide RU+EN keyed content for all staged exact-course teacher/lesson identities.
+Remain STAGED until exact-course routing is implemented.
+
+## Queue item 134 — School localization production readiness audit
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_LOCALIZATION_PRODUCTION_READINESS_v1.md`
+
+Classify each School text family as SHIPPED / SAFE_TO_INTEGRATE / STAGED_ROUTING_BLOCKED / PRODUCT_BLOCKED.
+
+## Queue item 135 — School localization UI acceptance plan
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_LOCALIZATION_UI_ACCEPTANCE_v1.md`
+
+Define UI acceptance for switching RU/EN on School panel and Night-study flows without changing tuition/Energy/progress.
+
+## Queue item 136 — School bilingual production handoff v13
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_BILINGUAL_PRODUCTION_HANDOFF_v13.md`
+
+Consolidate items 127–135 for Lead selective integration after localization runtime lands.
+
+Continue items 128–136 sequentially without waiting for Lead review.
