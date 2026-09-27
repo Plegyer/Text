@@ -1,0 +1,223 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "real-media-intake-manifest-schema-v1",
+  "title": "Real Media Intake Manifest v1",
+  "description": "Presentation-only intake schema for repository-backed real media. This schema does not activate or ship a presentation pool by itself.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "kind",
+    "status",
+    "pools"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "kind": {
+      "const": "real-media-intake-manifest"
+    },
+    "status": {
+      "enum": [
+        "INTAKE_ONLY",
+        "PRODUCTION_READY"
+      ]
+    },
+    "pools": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/pool"
+      }
+    }
+  },
+  "$defs": {
+    "relativeAssetPath": {
+      "type": "string",
+      "pattern": "^assets/[a-zA-Z0-9/_-]+\\.(gif|svg|png|jpg|jpeg|webp)$"
+    },
+    "localizationKey": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 300,
+      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._/-]*$"
+    },
+    "candidateKey": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120,
+      "pattern": "^[a-z0-9][a-z0-9._-]*$"
+    },
+    "candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "key",
+        "src",
+        "kind",
+        "altLocalizationKeys",
+        "provenanceSourceNote",
+        "reuseApproval"
+      ],
+      "properties": {
+        "key": {
+          "$ref": "#/$defs/candidateKey"
+        },
+        "src": {
+          "$ref": "#/$defs/relativeAssetPath"
+        },
+        "kind": {
+          "const": "gif"
+        },
+        "altLocalizationKeys": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "ru",
+            "en"
+          ],
+          "properties": {
+            "ru": {
+              "$ref": "#/$defs/localizationKey"
+            },
+            "en": {
+              "$ref": "#/$defs/localizationKey"
+            }
+          }
+        },
+        "provenanceSourceNote": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000
+        },
+        "reuseApproval": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "approved",
+            "semanticIds",
+            "note"
+          ],
+          "properties": {
+            "approved": {
+              "type": "boolean"
+            },
+            "semanticIds": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 240,
+                "pattern": "^[a-z0-9][a-z0-9/._-]*$"
+              }
+            },
+            "note": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000
+            }
+          }
+        }
+      }
+    },
+    "staticFallback": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "src",
+        "kind"
+      ],
+      "properties": {
+        "src": {
+          "$ref": "#/$defs/relativeAssetPath"
+        },
+        "kind": {
+          "const": "image"
+        }
+      }
+    },
+    "pool": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "presentationId",
+        "readiness",
+        "candidates",
+        "staticFallback"
+      ],
+      "properties": {
+        "presentationId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240,
+          "pattern": "^[a-z0-9][a-z0-9/._-]*$"
+        },
+        "readiness": {
+          "enum": [
+            "INTAKE_ONLY",
+            "PRODUCTION_READY"
+          ]
+        },
+        "candidates": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 5,
+          "items": {
+            "$ref": "#/$defs/candidate"
+          }
+        },
+        "staticFallback": {
+          "$ref": "#/$defs/staticFallback"
+        }
+      }
+    }
+  },
+  "x-productionRules": {
+    "productionReadyPoolSize": {
+      "min": 3,
+      "max": 5
+    },
+    "candidateFilesMustExistInRepo": true,
+    "gifSignatureRequired": true,
+    "externalUrlsForbidden": true,
+    "placeholderMarkersForbidden": true,
+    "uniqueCandidateKeysPerPool": true,
+    "gameplayFieldsForbidden": true,
+    "note": "Conditional production-readiness rules are enforced by media-asset-preflight.mjs rather than JSON Schema alone."
+  },
+  "x-example": {
+    "schemaVersion": 1,
+    "kind": "real-media-intake-manifest",
+    "status": "INTAKE_ONLY",
+    "pools": [
+      {
+        "presentationId": "job/lumber/shift/spring/default",
+        "readiness": "INTAKE_ONLY",
+        "candidates": [
+          {
+            "key": "lumber-shift-01",
+            "src": "assets/gif/careers/lumber/shift-01.gif",
+            "kind": "gif",
+            "altLocalizationKeys": {
+              "ru": "presentation.job.lumber.shift.01.alt.ru",
+              "en": "presentation.job.lumber.shift.01.alt.en"
+            },
+            "provenanceSourceNote": "Example field only. Record the actual creator/source and permission status when the real file is supplied.",
+            "reuseApproval": {
+              "approved": false,
+              "semanticIds": [
+                "job/lumber/shift/spring/default"
+              ],
+              "note": "Example only; cross-season reuse requires visual review."
+            }
+          }
+        ],
+        "staticFallback": {
+          "src": "assets/stage-lumber.svg",
+          "kind": "image"
+        }
+      }
+    ]
+  }
+}
