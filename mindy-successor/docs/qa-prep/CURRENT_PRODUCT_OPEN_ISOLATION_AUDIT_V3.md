@@ -3,9 +3,9 @@
 Status: COMPLETE / PASS_ISOLATION
 
 Authority reviewed:
-- current main: `ab53da4059e348734703c2de490e43e94c02b057` (PR44 merge);
+- current main: `c0763f9f9fa9887593fe8567165bbedce2b6cd3a` (PR45 merge);
 - PR44 accepted exact head: `07912a4870f82472a01f6ff8d0d81f1f67081593`, merged as `ab53da4059e348734703c2de490e43e94c02b057`;
-- Chat 3 ordinary-poverty localization stream;
+- PR45 ordinary-poverty localization merged from reviewed Chat 3 source;
 - Chat 2 real-GIF sourcing stream;
 - Chat 5 Relationships/Night stream.
 
@@ -83,7 +83,7 @@ Verdict:
 
 ## Secret Debt / Slave boundary
 
-Current ordinary-poverty localization work is explicitly limited to the six shipped ordinary-poverty packs.
+Current main now ships PR45 RU+EN localization for exactly the six ordinary-poverty production packs; the integration is presentation-only.
 
 Chat 3 executable and collision tests reject Secret Debt markers including lender/forced-night and debt-route identities.
 
@@ -93,7 +93,7 @@ Chat 5 ordinary Relationships/Night explicitly separates voluntary relationship 
 
 Chat 2 media sourcing contains no gameplay activation.
 
-No reviewed current-main root production integration promotes Secret Debt mechanics/rewards.
+PR45 post-merge tests explicitly exclude Secret Debt markers from the ordinary-poverty localization set. No reviewed current-main root production integration promotes Secret Debt mechanics/rewards.
 
 Verdict:
 `ISOLATED / PRODUCT_BLOCKED`.
