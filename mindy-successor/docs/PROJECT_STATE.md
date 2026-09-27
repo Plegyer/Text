@@ -802,3 +802,38 @@ Remaining authoring decisions are still OPEN and must not be inferred from this 
 - School public-result providers/thresholds;
 - hunter-trail final capability/clue identity;
 - full Forest route/challenge/season content depth.
+
+
+## Final release-candidate acceptance gate — PR #25 — 2026-09-26
+
+- PR #25 merged as `961208ea995ca034e8dfe896337a38828db52415`.
+- It adds only release-candidate QA/fixture coverage; no production runtime/content/UI files changed.
+- Integrated final RC checks cover:
+  - exact Hard Work condition/reward;
+  - inventory-derived item capability semantics;
+  - schema4 pre-option Activity backward compatibility;
+  - merged one-Save School/Night/Forest/ending path;
+  - real School blocking-scene ordering before NightFlow;
+  - blocking-scene save/reload;
+  - no duplicate School tuition/Energy/typed progress on scene resolution;
+  - ending transaction exactly once;
+  - New Run Meta persistence.
+- Merge-ref GitHub Actions: typecheck PASS, validate PASS, build PASS, **218/218 tests PASS**.
+
+Current technical disposition:
+- architecture/runtime integration: GREEN;
+- save/backward compatibility: GREEN for the exercised RC surface;
+- release-candidate QA floor: GREEN;
+- full authored Product Acceptance content: still PARTIAL where product decisions/content depth remain OPEN.
+
+Remaining non-runtime work is concentrated in:
+1. Old Boundary Token reachable acquisition source and final retain/consume policy;
+2. hunter-trail final clue/capability authoring where still unresolved;
+3. School management/accounting public-result provider + threshold;
+4. School Arcana/Forest public-result provider + threshold;
+5. full Forest 3-route / 3-challenge / seasonal topology authoring;
+6. presentation asset/content polish that is non-blocking where static/text fallback is already safe.
+
+Hard Work remains locked:
+- ONLY `completed_shifts >= 50`;
+- exact rewardId `hardWork:lumber`.
