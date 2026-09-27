@@ -1531,3 +1531,73 @@ Summarize current integration readiness for:
 Separate SHIPPED / CI_GREEN_READY / CONTENT_READY / PRODUCT_BLOCKED / RUNTIME_EXTENSION_REQUIRED.
 
 Continue items 87–95 sequentially without waiting for Lead review.
+
+
+## Queue item 96 — PR37 ordinary-poverty post-merge audit
+
+Create NEW file only:
+- `docs/qa-prep/PR37_ORDINARY_POVERTY_POST_MERGE_AUDIT_v1.md`
+
+Verify current main after PR #37:
+- merge SHA;
+- exact-head 270/270 CI evidence;
+- post-merge main CI;
+- six production poverty packs actually included by root catalog loading;
+- no Secret Debt content;
+- no lodging base-price/penalty drift;
+- Lumber/Forest locked invariants unchanged.
+
+Use Git evidence only.
+
+## Queue item 97 — PR38 School production integration review
+
+Create NEW file only:
+- `docs/qa-prep/PR38_SCHOOL_PRODUCTION_INTEGRATION_REVIEW_v1.md`
+
+Review Lead PR #38 and its reruns.
+
+Verify:
+- three School authored packs are included intentionally;
+- strict pack media namespace fix is presentation-only;
+- all eight teacher/course identities remain represented;
+- no tuition/Energy/stat/Lust changes;
+- no teacher prerequisite;
+- no unapproved public result;
+- generic School presentation hooks remain effect-free;
+- exact-head CI result.
+
+Conclude GREEN / BLOCKED with exact reason.
+
+## Queue item 98 — multi-GIF runtime implementation review gate
+
+Create NEW file only:
+- `docs/qa-prep/MULTI_GIF_RUNTIME_IMPLEMENTATION_REVIEW_GATE_v1.md`
+
+Define concrete review checks for the upcoming Lead shared-runtime patch:
+- explicit 3–5 GIF candidate pool;
+- old primary/static overrides remain compatible;
+- deterministic presentation-only selection;
+- no gameplay RNG consumption;
+- occurrence stability across reload;
+- no frame/time save fields;
+- animation-off static fallback;
+- missing candidate fallback;
+- no semantic-ID merge.
+
+## Queue item 99 — current production-state audit after poverty/School
+
+Create NEW file only:
+- `docs/qa-prep/CURRENT_PRODUCTION_STATE_AUDIT_v1.md`
+
+Audit current main after PR37 and PR38 status:
+- all 10 ordinary career base layers;
+- ordinary poverty production depth;
+- School authored production depth;
+- Forest/Lumber status;
+- Secret Debt state;
+- multi-GIF state;
+- Palace/Meta state.
+
+Classify each as SHIPPED_BASE / SHIPPED_CONTENT / CONTENT_OPEN / PRODUCT_BLOCKED / RUNTIME_EXTENSION_REQUIRED.
+
+Continue items 91–99 sequentially without waiting for Lead review.
