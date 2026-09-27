@@ -1400,3 +1400,24 @@ Include:
 Do not choose final money values, probabilities, canonical NPC identities, or new runtime architecture.
 
 Continue items 74–82 sequentially without waiting for Lead review.
+
+
+## Queue item 83 — Secret Debt minimal runtime extension checklist
+
+Create NEW file only:
+- `docs/poverty-prep/SECRET_DEBT_MINIMAL_RUNTIME_EXTENSION_CHECKLIST_v1.md`
+
+From the current runtime-seam plan, isolate only technical extensions that are unavoidable even with Product values left parameterized.
+
+For each proposed extension record:
+- exact current limitation;
+- smallest runtime/schema/content seam change;
+- migration impact;
+- save/reload invariant;
+- test required;
+- whether implementation can wait until Product decisions;
+- whether current primitives already suffice.
+
+Do not implement and do not invent Product values.
+
+Continue items 75–83 sequentially without waiting for Lead review.
