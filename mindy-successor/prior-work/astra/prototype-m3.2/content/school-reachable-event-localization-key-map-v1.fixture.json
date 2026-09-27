@@ -1,0 +1,958 @@
+{
+  "formatVersion": 1,
+  "id": "school-reachable-event-localization-key-map-v1",
+  "status": "SAFE_REACHABLE_KEY_MAP",
+  "leadRuntimeConvention": {
+    "localizationKey": "locale-neutral dotted string key resolved after gameplay identity/materialization",
+    "gameplayIdentitySharedAcrossLocales": true,
+    "variantIdentitySharedAcrossLocales": true,
+    "choiceIdentitySharedAcrossLocales": true,
+    "mediaSemanticIdentitySharedAcrossLocales": true
+  },
+  "generic": [
+    {
+      "eventId": "school.generic.reachable.v2.after.school",
+      "trigger": {
+        "kind": "actionCompleted",
+        "action": "school"
+      },
+      "titleKey": "school.generic.after_school.title",
+      "variants": [
+        {
+          "variantId": "notes",
+          "textKey": "school.generic.after_school.variant.notes"
+        },
+        {
+          "variantId": "one.point",
+          "textKey": "school.generic.after_school.variant.one.point"
+        },
+        {
+          "variantId": "question",
+          "textKey": "school.generic.after_school.variant.question"
+        },
+        {
+          "variantId": "compare.notes",
+          "textKey": "school.generic.after_school.variant.compare.notes"
+        },
+        {
+          "variantId": "small.correction",
+          "textKey": "school.generic.after_school.variant.small.correction"
+        },
+        {
+          "variantId": "shared.confusion",
+          "textKey": "school.generic.after_school.variant.shared.confusion"
+        },
+        {
+          "variantId": "enough.today",
+          "textKey": "school.generic.after_school.variant.enough.today"
+        },
+        {
+          "variantId": "hallway",
+          "textKey": "school.generic.after_school.variant.hallway"
+        },
+        {
+          "variantId": "board",
+          "textKey": "school.generic.after_school.variant.board"
+        },
+        {
+          "variantId": "reminder",
+          "textKey": "school.generic.after_school.variant.reminder"
+        }
+      ],
+      "choices": [
+        {
+          "choiceId": "continue",
+          "labelKey": "school.generic.after_school.choice.continue.label",
+          "textKey": "school.generic.after_school.choice.continue.text"
+        }
+      ],
+      "media": [
+        {
+          "mediaId": "school.generic.reachable.v2.classroom",
+          "altKey": "school.media.generic.classroom.alt",
+          "captionKey": "school.media.generic.classroom.caption"
+        }
+      ]
+    }
+  ],
+  "exactNight": [
+    {
+      "eventId": "school.night.exact.v3.literacy_and_numbers.reason",
+      "trigger": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.literacy_and_numbers.reason"
+      },
+      "titleKey": "school.night.literacy_and_numbers.reason.title",
+      "variants": [
+        {
+          "variantId": "focused",
+          "textKey": "school.night.literacy_and_numbers.reason.variant.focused"
+        },
+        {
+          "variantId": "difficult",
+          "textKey": "school.night.literacy_and_numbers.reason.variant.difficult"
+        },
+        {
+          "variantId": "insight",
+          "textKey": "school.night.literacy_and_numbers.reason.variant.insight"
+        }
+      ],
+      "choices": [
+        {
+          "choiceId": "continue",
+          "labelKey": "school.night.choice.continue.label",
+          "textKey": "school.night.choice.continue.text"
+        }
+      ],
+      "media": [
+        {
+          "mediaId": "school.night.exact.v3.media.literacy_and_numbers",
+          "altKey": "school.media.night.literacy_and_numbers.alt",
+          "captionKey": "school.media.night.literacy_and_numbers.caption"
+        }
+      ]
+    },
+    {
+      "eventId": "school.night.exact.v3.literacy_and_numbers.wits",
+      "trigger": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.literacy_and_numbers.wits"
+      },
+      "titleKey": "school.night.literacy_and_numbers.wits.title",
+      "variants": [
+        {
+          "variantId": "focused",
+          "textKey": "school.night.literacy_and_numbers.wits.variant.focused"
+        },
+        {
+          "variantId": "difficult",
+          "textKey": "school.night.literacy_and_numbers.wits.variant.difficult"
+        },
+        {
+          "variantId": "insight",
+          "textKey": "school.night.literacy_and_numbers.wits.variant.insight"
+        }
+      ],
+      "choices": [
+        {
+          "choiceId": "continue",
+          "labelKey": "school.night.choice.continue.label",
+          "textKey": "school.night.choice.continue.text"
+        }
+      ],
+      "media": [
+        {
+          "mediaId": "school.night.exact.v3.media.literacy_and_numbers",
+          "altKey": "school.media.night.literacy_and_numbers.alt",
+          "captionKey": "school.media.night.literacy_and_numbers.caption"
+        }
+      ]
+    },
+    {
+      "eventId": "school.night.exact.v3.arcana.magic",
+      "trigger": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.arcana.magic"
+      },
+      "titleKey": "school.night.arcana.magic.title",
+      "variants": [
+        {
+          "variantId": "focused",
+          "textKey": "school.night.arcana.magic.variant.focused"
+        },
+        {
+          "variantId": "difficult",
+          "textKey": "school.night.arcana.magic.variant.difficult"
+        },
+        {
+          "variantId": "insight",
+          "textKey": "school.night.arcana.magic.variant.insight"
+        }
+      ],
+      "choices": [
+        {
+          "choiceId": "continue",
+          "labelKey": "school.night.choice.continue.label",
+          "textKey": "school.night.choice.continue.text"
+        }
+      ],
+      "media": [
+        {
+          "mediaId": "school.night.exact.v3.media.arcana",
+          "altKey": "school.media.night.arcana.alt",
+          "captionKey": "school.media.night.arcana.caption"
+        }
+      ]
+    },
+    {
+      "eventId": "school.night.exact.v3.arcana.reason",
+      "trigger": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.arcana.reason"
+      },
+      "titleKey": "school.night.arcana.reason.title",
+      "variants": [
+        {
+          "variantId": "focused",
+          "textKey": "school.night.arcana.reason.variant.focused"
+        },
+        {
+          "variantId": "difficult",
+          "textKey": "school.night.arcana.reason.variant.difficult"
+        },
+        {
+          "variantId": "insight",
+          "textKey": "school.night.arcana.reason.variant.insight"
+        }
+      ],
+      "choices": [
+        {
+          "choiceId": "continue",
+          "labelKey": "school.night.choice.continue.label",
+          "textKey": "school.night.choice.continue.text"
+        }
+      ],
+      "media": [
+        {
+          "mediaId": "school.night.exact.v3.media.arcana",
+          "altKey": "school.media.night.arcana.alt",
+          "captionKey": "school.media.night.arcana.caption"
+        }
+      ]
+    },
+    {
+      "eventId": "school.night.exact.v3.arcana.creativity",
+      "trigger": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.arcana.creativity"
+      },
+      "titleKey": "school.night.arcana.creativity.title",
+      "variants": [
+        {
+          "variantId": "focused",
+          "textKey": "school.night.arcana.creativity.variant.focused"
+        },
+        {
+          "variantId": "difficult",
+          "textKey": "school.night.arcana.creativity.variant.difficult"
+        },
+        {
+          "variantId": "insight",
+          "textKey": "school.night.arcana.creativity.variant.insight"
+        }
+      ],
+      "choices": [
+        {
+          "choiceId": "continue",
+          "labelKey": "school.night.choice.continue.label",
+          "textKey": "school.night.choice.continue.text"
+        }
+      ],
+      "media": [
+        {
+          "mediaId": "school.night.exact.v3.media.arcana",
+          "altKey": "school.media.night.arcana.alt",
+          "captionKey": "school.media.night.arcana.caption"
+        }
+      ]
+    },
+    {
+      "eventId": "school.night.exact.v3.rhetoric_and_social.charm",
+      "trigger": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.rhetoric_and_social.charm"
+      },
+      "titleKey": "school.night.rhetoric_and_social.charm.title",
+      "variants": [
+        {
+          "variantId": "focused",
+          "textKey": "school.night.rhetoric_and_social.charm.variant.focused"
+        },
+        {
+          "variantId": "difficult",
+          "textKey": "school.night.rhetoric_and_social.charm.variant.difficult"
+        },
+        {
+          "variantId": "insight",
+          "textKey": "school.night.rhetoric_and_social.charm.variant.insight"
+        }
+      ],
+      "choices": [
+        {
+          "choiceId": "continue",
+          "labelKey": "school.night.choice.continue.label",
+          "textKey": "school.night.choice.continue.text"
+        }
+      ],
+      "media": [
+        {
+          "mediaId": "school.night.exact.v3.media.rhetoric_and_social",
+          "altKey": "school.media.night.rhetoric_and_social.alt",
+          "captionKey": "school.media.night.rhetoric_and_social.caption"
+        }
+      ]
+    },
+    {
+      "eventId": "school.night.exact.v3.rhetoric_and_social.sociability",
+      "trigger": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.rhetoric_and_social.sociability"
+      },
+      "titleKey": "school.night.rhetoric_and_social.sociability.title",
+      "variants": [
+        {
+          "variantId": "focused",
+          "textKey": "school.night.rhetoric_and_social.sociability.variant.focused"
+        },
+        {
+          "variantId": "difficult",
+          "textKey": "school.night.rhetoric_and_social.sociability.variant.difficult"
+        },
+        {
+          "variantId": "insight",
+          "textKey": "school.night.rhetoric_and_social.sociability.variant.insight"
+        }
+      ],
+      "choices": [
+        {
+          "choiceId": "continue",
+          "labelKey": "school.night.choice.continue.label",
+          "textKey": "school.night.choice.continue.text"
+        }
+      ],
+      "media": [
+        {
+          "mediaId": "school.night.exact.v3.media.rhetoric_and_social",
+          "altKey": "school.media.night.rhetoric_and_social.alt",
+          "captionKey": "school.media.night.rhetoric_and_social.caption"
+        }
+      ]
+    },
+    {
+      "eventId": "school.night.exact.v3.rhetoric_and_social.wits",
+      "trigger": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.rhetoric_and_social.wits"
+      },
+      "titleKey": "school.night.rhetoric_and_social.wits.title",
+      "variants": [
+        {
+          "variantId": "focused",
+          "textKey": "school.night.rhetoric_and_social.wits.variant.focused"
+        },
+        {
+          "variantId": "difficult",
+          "textKey": "school.night.rhetoric_and_social.wits.variant.difficult"
+        },
+        {
+          "variantId": "insight",
+          "textKey": "school.night.rhetoric_and_social.wits.variant.insight"
+        }
+      ],
+      "choices": [
+        {
+          "choiceId": "continue",
+          "labelKey": "school.night.choice.continue.label",
+          "textKey": "school.night.choice.continue.text"
+        }
+      ],
+      "media": [
+        {
+          "mediaId": "school.night.exact.v3.media.rhetoric_and_social",
+          "altKey": "school.media.night.rhetoric_and_social.alt",
+          "captionKey": "school.media.night.rhetoric_and_social.caption"
+        }
+      ]
+    },
+    {
+      "eventId": "school.night.exact.v3.etiquette_and_presentation.manners",
+      "trigger": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.etiquette_and_presentation.manners"
+      },
+      "titleKey": "school.night.etiquette_and_presentation.manners.title",
+      "variants": [
+        {
+          "variantId": "focused",
+          "textKey": "school.night.etiquette_and_presentation.manners.variant.focused"
+        },
+        {
+          "variantId": "difficult",
+          "textKey": "school.night.etiquette_and_presentation.manners.variant.difficult"
+        },
+        {
+          "variantId": "insight",
+          "textKey": "school.night.etiquette_and_presentation.manners.variant.insight"
+        }
+      ],
+      "choices": [
+        {
+          "choiceId": "continue",
+          "labelKey": "school.night.choice.continue.label",
+          "textKey": "school.night.choice.continue.text"
+        }
+      ],
+      "media": [
+        {
+          "mediaId": "school.night.exact.v3.media.etiquette_and_presentation",
+          "altKey": "school.media.night.etiquette_and_presentation.alt",
+          "captionKey": "school.media.night.etiquette_and_presentation.caption"
+        }
+      ]
+    },
+    {
+      "eventId": "school.night.exact.v3.etiquette_and_presentation.grooming",
+      "trigger": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.etiquette_and_presentation.grooming"
+      },
+      "titleKey": "school.night.etiquette_and_presentation.grooming.title",
+      "variants": [
+        {
+          "variantId": "focused",
+          "textKey": "school.night.etiquette_and_presentation.grooming.variant.focused"
+        },
+        {
+          "variantId": "difficult",
+          "textKey": "school.night.etiquette_and_presentation.grooming.variant.difficult"
+        },
+        {
+          "variantId": "insight",
+          "textKey": "school.night.etiquette_and_presentation.grooming.variant.insight"
+        }
+      ],
+      "choices": [
+        {
+          "choiceId": "continue",
+          "labelKey": "school.night.choice.continue.label",
+          "textKey": "school.night.choice.continue.text"
+        }
+      ],
+      "media": [
+        {
+          "mediaId": "school.night.exact.v3.media.etiquette_and_presentation",
+          "altKey": "school.media.night.etiquette_and_presentation.alt",
+          "captionKey": "school.media.night.etiquette_and_presentation.caption"
+        }
+      ]
+    },
+    {
+      "eventId": "school.night.exact.v3.etiquette_and_presentation.charm",
+      "trigger": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.etiquette_and_presentation.charm"
+      },
+      "titleKey": "school.night.etiquette_and_presentation.charm.title",
+      "variants": [
+        {
+          "variantId": "focused",
+          "textKey": "school.night.etiquette_and_presentation.charm.variant.focused"
+        },
+        {
+          "variantId": "difficult",
+          "textKey": "school.night.etiquette_and_presentation.charm.variant.difficult"
+        },
+        {
+          "variantId": "insight",
+          "textKey": "school.night.etiquette_and_presentation.charm.variant.insight"
+        }
+      ],
+      "choices": [
+        {
+          "choiceId": "continue",
+          "labelKey": "school.night.choice.continue.label",
+          "textKey": "school.night.choice.continue.text"
+        }
+      ],
+      "media": [
+        {
+          "mediaId": "school.night.exact.v3.media.etiquette_and_presentation",
+          "altKey": "school.media.night.etiquette_and_presentation.alt",
+          "captionKey": "school.media.night.etiquette_and_presentation.caption"
+        }
+      ]
+    },
+    {
+      "eventId": "school.night.exact.v3.field_craft.dexterity",
+      "trigger": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.field_craft.dexterity"
+      },
+      "titleKey": "school.night.field_craft.dexterity.title",
+      "variants": [
+        {
+          "variantId": "focused",
+          "textKey": "school.night.field_craft.dexterity.variant.focused"
+        },
+        {
+          "variantId": "difficult",
+          "textKey": "school.night.field_craft.dexterity.variant.difficult"
+        },
+        {
+          "variantId": "insight",
+          "textKey": "school.night.field_craft.dexterity.variant.insight"
+        }
+      ],
+      "choices": [
+        {
+          "choiceId": "continue",
+          "labelKey": "school.night.choice.continue.label",
+          "textKey": "school.night.choice.continue.text"
+        }
+      ],
+      "media": [
+        {
+          "mediaId": "school.night.exact.v3.media.field_craft",
+          "altKey": "school.media.night.field_craft.alt",
+          "captionKey": "school.media.night.field_craft.caption"
+        }
+      ]
+    },
+    {
+      "eventId": "school.night.exact.v3.field_craft.wits",
+      "trigger": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.field_craft.wits"
+      },
+      "titleKey": "school.night.field_craft.wits.title",
+      "variants": [
+        {
+          "variantId": "focused",
+          "textKey": "school.night.field_craft.wits.variant.focused"
+        },
+        {
+          "variantId": "difficult",
+          "textKey": "school.night.field_craft.wits.variant.difficult"
+        },
+        {
+          "variantId": "insight",
+          "textKey": "school.night.field_craft.wits.variant.insight"
+        }
+      ],
+      "choices": [
+        {
+          "choiceId": "continue",
+          "labelKey": "school.night.choice.continue.label",
+          "textKey": "school.night.choice.continue.text"
+        }
+      ],
+      "media": [
+        {
+          "mediaId": "school.night.exact.v3.media.field_craft",
+          "altKey": "school.media.night.field_craft.alt",
+          "captionKey": "school.media.night.field_craft.caption"
+        }
+      ]
+    },
+    {
+      "eventId": "school.night.exact.v3.field_craft.creativity",
+      "trigger": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.field_craft.creativity"
+      },
+      "titleKey": "school.night.field_craft.creativity.title",
+      "variants": [
+        {
+          "variantId": "focused",
+          "textKey": "school.night.field_craft.creativity.variant.focused"
+        },
+        {
+          "variantId": "difficult",
+          "textKey": "school.night.field_craft.creativity.variant.difficult"
+        },
+        {
+          "variantId": "insight",
+          "textKey": "school.night.field_craft.creativity.variant.insight"
+        }
+      ],
+      "choices": [
+        {
+          "choiceId": "continue",
+          "labelKey": "school.night.choice.continue.label",
+          "textKey": "school.night.choice.continue.text"
+        }
+      ],
+      "media": [
+        {
+          "mediaId": "school.night.exact.v3.media.field_craft",
+          "altKey": "school.media.night.field_craft.alt",
+          "captionKey": "school.media.night.field_craft.caption"
+        }
+      ]
+    },
+    {
+      "eventId": "school.night.exact.v3.physical_training.strength",
+      "trigger": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.physical_training.strength"
+      },
+      "titleKey": "school.night.physical_training.strength.title",
+      "variants": [
+        {
+          "variantId": "focused",
+          "textKey": "school.night.physical_training.strength.variant.focused"
+        },
+        {
+          "variantId": "difficult",
+          "textKey": "school.night.physical_training.strength.variant.difficult"
+        },
+        {
+          "variantId": "insight",
+          "textKey": "school.night.physical_training.strength.variant.insight"
+        }
+      ],
+      "choices": [
+        {
+          "choiceId": "continue",
+          "labelKey": "school.night.choice.continue.label",
+          "textKey": "school.night.choice.continue.text"
+        }
+      ],
+      "media": [
+        {
+          "mediaId": "school.night.exact.v3.media.physical_training",
+          "altKey": "school.media.night.physical_training.alt",
+          "captionKey": "school.media.night.physical_training.caption"
+        }
+      ]
+    },
+    {
+      "eventId": "school.night.exact.v3.physical_training.endurance",
+      "trigger": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.physical_training.endurance"
+      },
+      "titleKey": "school.night.physical_training.endurance.title",
+      "variants": [
+        {
+          "variantId": "focused",
+          "textKey": "school.night.physical_training.endurance.variant.focused"
+        },
+        {
+          "variantId": "difficult",
+          "textKey": "school.night.physical_training.endurance.variant.difficult"
+        },
+        {
+          "variantId": "insight",
+          "textKey": "school.night.physical_training.endurance.variant.insight"
+        }
+      ],
+      "choices": [
+        {
+          "choiceId": "continue",
+          "labelKey": "school.night.choice.continue.label",
+          "textKey": "school.night.choice.continue.text"
+        }
+      ],
+      "media": [
+        {
+          "mediaId": "school.night.exact.v3.media.physical_training",
+          "altKey": "school.media.night.physical_training.alt",
+          "captionKey": "school.media.night.physical_training.caption"
+        }
+      ]
+    },
+    {
+      "eventId": "school.night.exact.v3.physical_training.dexterity",
+      "trigger": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.physical_training.dexterity"
+      },
+      "titleKey": "school.night.physical_training.dexterity.title",
+      "variants": [
+        {
+          "variantId": "focused",
+          "textKey": "school.night.physical_training.dexterity.variant.focused"
+        },
+        {
+          "variantId": "difficult",
+          "textKey": "school.night.physical_training.dexterity.variant.difficult"
+        },
+        {
+          "variantId": "insight",
+          "textKey": "school.night.physical_training.dexterity.variant.insight"
+        }
+      ],
+      "choices": [
+        {
+          "choiceId": "continue",
+          "labelKey": "school.night.choice.continue.label",
+          "textKey": "school.night.choice.continue.text"
+        }
+      ],
+      "media": [
+        {
+          "mediaId": "school.night.exact.v3.media.physical_training",
+          "altKey": "school.media.night.physical_training.alt",
+          "captionKey": "school.media.night.physical_training.caption"
+        }
+      ]
+    },
+    {
+      "eventId": "school.night.exact.v3.arts_and_performance.creativity",
+      "trigger": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.arts_and_performance.creativity"
+      },
+      "titleKey": "school.night.arts_and_performance.creativity.title",
+      "variants": [
+        {
+          "variantId": "focused",
+          "textKey": "school.night.arts_and_performance.creativity.variant.focused"
+        },
+        {
+          "variantId": "difficult",
+          "textKey": "school.night.arts_and_performance.creativity.variant.difficult"
+        },
+        {
+          "variantId": "insight",
+          "textKey": "school.night.arts_and_performance.creativity.variant.insight"
+        }
+      ],
+      "choices": [
+        {
+          "choiceId": "continue",
+          "labelKey": "school.night.choice.continue.label",
+          "textKey": "school.night.choice.continue.text"
+        }
+      ],
+      "media": [
+        {
+          "mediaId": "school.night.exact.v3.media.arts_and_performance",
+          "altKey": "school.media.night.arts_and_performance.alt",
+          "captionKey": "school.media.night.arts_and_performance.caption"
+        }
+      ]
+    },
+    {
+      "eventId": "school.night.exact.v3.arts_and_performance.charm",
+      "trigger": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.arts_and_performance.charm"
+      },
+      "titleKey": "school.night.arts_and_performance.charm.title",
+      "variants": [
+        {
+          "variantId": "focused",
+          "textKey": "school.night.arts_and_performance.charm.variant.focused"
+        },
+        {
+          "variantId": "difficult",
+          "textKey": "school.night.arts_and_performance.charm.variant.difficult"
+        },
+        {
+          "variantId": "insight",
+          "textKey": "school.night.arts_and_performance.charm.variant.insight"
+        }
+      ],
+      "choices": [
+        {
+          "choiceId": "continue",
+          "labelKey": "school.night.choice.continue.label",
+          "textKey": "school.night.choice.continue.text"
+        }
+      ],
+      "media": [
+        {
+          "mediaId": "school.night.exact.v3.media.arts_and_performance",
+          "altKey": "school.media.night.arts_and_performance.alt",
+          "captionKey": "school.media.night.arts_and_performance.caption"
+        }
+      ]
+    },
+    {
+      "eventId": "school.night.exact.v3.arts_and_performance.sociability",
+      "trigger": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.arts_and_performance.sociability"
+      },
+      "titleKey": "school.night.arts_and_performance.sociability.title",
+      "variants": [
+        {
+          "variantId": "focused",
+          "textKey": "school.night.arts_and_performance.sociability.variant.focused"
+        },
+        {
+          "variantId": "difficult",
+          "textKey": "school.night.arts_and_performance.sociability.variant.difficult"
+        },
+        {
+          "variantId": "insight",
+          "textKey": "school.night.arts_and_performance.sociability.variant.insight"
+        }
+      ],
+      "choices": [
+        {
+          "choiceId": "continue",
+          "labelKey": "school.night.choice.continue.label",
+          "textKey": "school.night.choice.continue.text"
+        }
+      ],
+      "media": [
+        {
+          "mediaId": "school.night.exact.v3.media.arts_and_performance",
+          "altKey": "school.media.night.arts_and_performance.alt",
+          "captionKey": "school.media.night.arts_and_performance.caption"
+        }
+      ]
+    },
+    {
+      "eventId": "school.night.exact.v3.arts_and_performance.dexterity",
+      "trigger": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.arts_and_performance.dexterity"
+      },
+      "titleKey": "school.night.arts_and_performance.dexterity.title",
+      "variants": [
+        {
+          "variantId": "focused",
+          "textKey": "school.night.arts_and_performance.dexterity.variant.focused"
+        },
+        {
+          "variantId": "difficult",
+          "textKey": "school.night.arts_and_performance.dexterity.variant.difficult"
+        },
+        {
+          "variantId": "insight",
+          "textKey": "school.night.arts_and_performance.dexterity.variant.insight"
+        }
+      ],
+      "choices": [
+        {
+          "choiceId": "continue",
+          "labelKey": "school.night.choice.continue.label",
+          "textKey": "school.night.choice.continue.text"
+        }
+      ],
+      "media": [
+        {
+          "mediaId": "school.night.exact.v3.media.arts_and_performance",
+          "altKey": "school.media.night.arts_and_performance.alt",
+          "captionKey": "school.media.night.arts_and_performance.caption"
+        }
+      ]
+    },
+    {
+      "eventId": "school.night.exact.v3.body_confidence.sexuality",
+      "trigger": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.body_confidence.sexuality"
+      },
+      "titleKey": "school.night.body_confidence.sexuality.title",
+      "variants": [
+        {
+          "variantId": "focused",
+          "textKey": "school.night.body_confidence.sexuality.variant.focused"
+        },
+        {
+          "variantId": "difficult",
+          "textKey": "school.night.body_confidence.sexuality.variant.difficult"
+        },
+        {
+          "variantId": "insight",
+          "textKey": "school.night.body_confidence.sexuality.variant.insight"
+        }
+      ],
+      "choices": [
+        {
+          "choiceId": "continue",
+          "labelKey": "school.night.choice.continue.label",
+          "textKey": "school.night.choice.continue.text"
+        }
+      ],
+      "media": [
+        {
+          "mediaId": "school.night.exact.v3.media.body_confidence",
+          "altKey": "school.media.night.body_confidence.alt",
+          "captionKey": "school.media.night.body_confidence.caption"
+        }
+      ]
+    },
+    {
+      "eventId": "school.night.exact.v3.body_confidence.grooming",
+      "trigger": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.body_confidence.grooming"
+      },
+      "titleKey": "school.night.body_confidence.grooming.title",
+      "variants": [
+        {
+          "variantId": "focused",
+          "textKey": "school.night.body_confidence.grooming.variant.focused"
+        },
+        {
+          "variantId": "difficult",
+          "textKey": "school.night.body_confidence.grooming.variant.difficult"
+        },
+        {
+          "variantId": "insight",
+          "textKey": "school.night.body_confidence.grooming.variant.insight"
+        }
+      ],
+      "choices": [
+        {
+          "choiceId": "continue",
+          "labelKey": "school.night.choice.continue.label",
+          "textKey": "school.night.choice.continue.text"
+        }
+      ],
+      "media": [
+        {
+          "mediaId": "school.night.exact.v3.media.body_confidence",
+          "altKey": "school.media.night.body_confidence.alt",
+          "captionKey": "school.media.night.body_confidence.caption"
+        }
+      ]
+    },
+    {
+      "eventId": "school.night.exact.v3.body_confidence.endurance",
+      "trigger": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.body_confidence.endurance"
+      },
+      "titleKey": "school.night.body_confidence.endurance.title",
+      "variants": [
+        {
+          "variantId": "focused",
+          "textKey": "school.night.body_confidence.endurance.variant.focused"
+        },
+        {
+          "variantId": "difficult",
+          "textKey": "school.night.body_confidence.endurance.variant.difficult"
+        },
+        {
+          "variantId": "insight",
+          "textKey": "school.night.body_confidence.endurance.variant.insight"
+        }
+      ],
+      "choices": [
+        {
+          "choiceId": "continue",
+          "labelKey": "school.night.choice.continue.label",
+          "textKey": "school.night.choice.continue.text"
+        }
+      ],
+      "media": [
+        {
+          "mediaId": "school.night.exact.v3.media.body_confidence",
+          "altKey": "school.media.night.body_confidence.alt",
+          "captionKey": "school.media.night.body_confidence.caption"
+        }
+      ]
+    }
+  ],
+  "exclusions": {
+    "teacherSpecificEvents": true,
+    "exactCoursePaidLessonEvents": true,
+    "stagedRepeatableLessonEvents": true,
+    "relationshipRouteEvents": true,
+    "productBlockedMilestoneResultEvents": true
+  },
+  "invariants": {
+    "noLocaleSpecificGameplayIds": true,
+    "noLocaleSpecificConditions": true,
+    "noLocaleSpecificEffects": true,
+    "noLocaleSpecificRewards": true,
+    "noLocaleSpecificSaveIdentity": true
+  }
+}
