@@ -1,0 +1,736 @@
+{
+  "formatVersion": 1,
+  "kind": "project-owned-seasonal-static-media",
+  "status": "STAGING_ONLY_NOT_ROOT_LOADED",
+  "semanticBaseline": "main@c0763f9f9fa9887593fe8567165bbedce2b6cd3a",
+  "sourceRoot": "assets/presentation/",
+  "assets": [
+    {
+      "key": "career-lumber-shift-spring",
+      "kind": "image",
+      "src": "assets/presentation/career-lumber-shift-spring.svg",
+      "presentationId": "job/lumber/shift/spring/default",
+      "career": "lumber",
+      "season": "spring",
+      "fallbackPurpose": "ordinary career seasonal shift static fallback",
+      "localization": {
+        "altKey": "presentation.static.career.lumber.shift.spring.alt",
+        "captionKey": "presentation.static.career.lumber.shift.spring.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-lumber-shift-summer",
+      "kind": "image",
+      "src": "assets/presentation/career-lumber-shift-summer.svg",
+      "presentationId": "job/lumber/shift/summer/default",
+      "career": "lumber",
+      "season": "summer",
+      "fallbackPurpose": "ordinary career seasonal shift static fallback",
+      "localization": {
+        "altKey": "presentation.static.career.lumber.shift.summer.alt",
+        "captionKey": "presentation.static.career.lumber.shift.summer.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-lumber-shift-autumn",
+      "kind": "image",
+      "src": "assets/presentation/career-lumber-shift-autumn.svg",
+      "presentationId": "job/lumber/shift/autumn/default",
+      "career": "lumber",
+      "season": "autumn",
+      "fallbackPurpose": "ordinary career seasonal shift static fallback",
+      "localization": {
+        "altKey": "presentation.static.career.lumber.shift.autumn.alt",
+        "captionKey": "presentation.static.career.lumber.shift.autumn.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-lumber-shift-winter",
+      "kind": "image",
+      "src": "assets/presentation/career-lumber-shift-winter.svg",
+      "presentationId": "job/lumber/shift/winter/default",
+      "career": "lumber",
+      "season": "winter",
+      "fallbackPurpose": "ordinary career seasonal shift static fallback",
+      "localization": {
+        "altKey": "presentation.static.career.lumber.shift.winter.alt",
+        "captionKey": "presentation.static.career.lumber.shift.winter.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-satyr-maid-shift-spring",
+      "kind": "image",
+      "src": "assets/presentation/career-satyr-maid-shift-spring.svg",
+      "presentationId": "job/satyr-maid/shift/spring/default",
+      "career": "satyr-maid",
+      "season": "spring",
+      "fallbackPurpose": "ordinary career seasonal shift static fallback",
+      "localization": {
+        "altKey": "presentation.static.career.satyr-maid.shift.spring.alt",
+        "captionKey": "presentation.static.career.satyr-maid.shift.spring.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-satyr-maid-shift-summer",
+      "kind": "image",
+      "src": "assets/presentation/career-satyr-maid-shift-summer.svg",
+      "presentationId": "job/satyr-maid/shift/summer/default",
+      "career": "satyr-maid",
+      "season": "summer",
+      "fallbackPurpose": "ordinary career seasonal shift static fallback",
+      "localization": {
+        "altKey": "presentation.static.career.satyr-maid.shift.summer.alt",
+        "captionKey": "presentation.static.career.satyr-maid.shift.summer.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-satyr-maid-shift-autumn",
+      "kind": "image",
+      "src": "assets/presentation/career-satyr-maid-shift-autumn.svg",
+      "presentationId": "job/satyr-maid/shift/autumn/default",
+      "career": "satyr-maid",
+      "season": "autumn",
+      "fallbackPurpose": "ordinary career seasonal shift static fallback",
+      "localization": {
+        "altKey": "presentation.static.career.satyr-maid.shift.autumn.alt",
+        "captionKey": "presentation.static.career.satyr-maid.shift.autumn.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-satyr-maid-shift-winter",
+      "kind": "image",
+      "src": "assets/presentation/career-satyr-maid-shift-winter.svg",
+      "presentationId": "job/satyr-maid/shift/winter/default",
+      "career": "satyr-maid",
+      "season": "winter",
+      "fallbackPurpose": "ordinary career seasonal shift static fallback",
+      "localization": {
+        "altKey": "presentation.static.career.satyr-maid.shift.winter.alt",
+        "captionKey": "presentation.static.career.satyr-maid.shift.winter.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-undead-farm-shift-spring",
+      "kind": "image",
+      "src": "assets/presentation/career-undead-farm-shift-spring.svg",
+      "presentationId": "job/undead-farm/shift/spring/default",
+      "career": "undead-farm",
+      "season": "spring",
+      "fallbackPurpose": "ordinary career seasonal shift static fallback",
+      "localization": {
+        "altKey": "presentation.static.career.undead-farm.shift.spring.alt",
+        "captionKey": "presentation.static.career.undead-farm.shift.spring.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-undead-farm-shift-summer",
+      "kind": "image",
+      "src": "assets/presentation/career-undead-farm-shift-summer.svg",
+      "presentationId": "job/undead-farm/shift/summer/default",
+      "career": "undead-farm",
+      "season": "summer",
+      "fallbackPurpose": "ordinary career seasonal shift static fallback",
+      "localization": {
+        "altKey": "presentation.static.career.undead-farm.shift.summer.alt",
+        "captionKey": "presentation.static.career.undead-farm.shift.summer.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-undead-farm-shift-autumn",
+      "kind": "image",
+      "src": "assets/presentation/career-undead-farm-shift-autumn.svg",
+      "presentationId": "job/undead-farm/shift/autumn/default",
+      "career": "undead-farm",
+      "season": "autumn",
+      "fallbackPurpose": "ordinary career seasonal shift static fallback",
+      "localization": {
+        "altKey": "presentation.static.career.undead-farm.shift.autumn.alt",
+        "captionKey": "presentation.static.career.undead-farm.shift.autumn.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-undead-farm-shift-winter",
+      "kind": "image",
+      "src": "assets/presentation/career-undead-farm-shift-winter.svg",
+      "presentationId": "job/undead-farm/shift/winter/default",
+      "career": "undead-farm",
+      "season": "winter",
+      "fallbackPurpose": "ordinary career seasonal shift static fallback",
+      "localization": {
+        "altKey": "presentation.static.career.undead-farm.shift.winter.alt",
+        "captionKey": "presentation.static.career.undead-farm.shift.winter.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-tavern-shift-spring",
+      "kind": "image",
+      "src": "assets/presentation/career-tavern-shift-spring.svg",
+      "presentationId": "job/tavern/shift/spring/default",
+      "career": "tavern",
+      "season": "spring",
+      "fallbackPurpose": "ordinary career seasonal shift static fallback",
+      "localization": {
+        "altKey": "presentation.static.career.tavern.shift.spring.alt",
+        "captionKey": "presentation.static.career.tavern.shift.spring.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-tavern-shift-summer",
+      "kind": "image",
+      "src": "assets/presentation/career-tavern-shift-summer.svg",
+      "presentationId": "job/tavern/shift/summer/default",
+      "career": "tavern",
+      "season": "summer",
+      "fallbackPurpose": "ordinary career seasonal shift static fallback",
+      "localization": {
+        "altKey": "presentation.static.career.tavern.shift.summer.alt",
+        "captionKey": "presentation.static.career.tavern.shift.summer.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-tavern-shift-autumn",
+      "kind": "image",
+      "src": "assets/presentation/career-tavern-shift-autumn.svg",
+      "presentationId": "job/tavern/shift/autumn/default",
+      "career": "tavern",
+      "season": "autumn",
+      "fallbackPurpose": "ordinary career seasonal shift static fallback",
+      "localization": {
+        "altKey": "presentation.static.career.tavern.shift.autumn.alt",
+        "captionKey": "presentation.static.career.tavern.shift.autumn.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-tavern-shift-winter",
+      "kind": "image",
+      "src": "assets/presentation/career-tavern-shift-winter.svg",
+      "presentationId": "job/tavern/shift/winter/default",
+      "career": "tavern",
+      "season": "winter",
+      "fallbackPurpose": "ordinary career seasonal shift static fallback",
+      "localization": {
+        "altKey": "presentation.static.career.tavern.shift.winter.alt",
+        "captionKey": "presentation.static.career.tavern.shift.winter.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-hunter-shift-spring",
+      "kind": "image",
+      "src": "assets/presentation/career-hunter-shift-spring.svg",
+      "presentationId": "job/hunter/shift/spring/default",
+      "career": "hunter",
+      "season": "spring",
+      "fallbackPurpose": "ordinary career seasonal shift static fallback",
+      "localization": {
+        "altKey": "presentation.static.career.hunter.shift.spring.alt",
+        "captionKey": "presentation.static.career.hunter.shift.spring.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-hunter-shift-summer",
+      "kind": "image",
+      "src": "assets/presentation/career-hunter-shift-summer.svg",
+      "presentationId": "job/hunter/shift/summer/default",
+      "career": "hunter",
+      "season": "summer",
+      "fallbackPurpose": "ordinary career seasonal shift static fallback",
+      "localization": {
+        "altKey": "presentation.static.career.hunter.shift.summer.alt",
+        "captionKey": "presentation.static.career.hunter.shift.summer.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-hunter-shift-autumn",
+      "kind": "image",
+      "src": "assets/presentation/career-hunter-shift-autumn.svg",
+      "presentationId": "job/hunter/shift/autumn/default",
+      "career": "hunter",
+      "season": "autumn",
+      "fallbackPurpose": "ordinary career seasonal shift static fallback",
+      "localization": {
+        "altKey": "presentation.static.career.hunter.shift.autumn.alt",
+        "captionKey": "presentation.static.career.hunter.shift.autumn.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-hunter-shift-winter",
+      "kind": "image",
+      "src": "assets/presentation/career-hunter-shift-winter.svg",
+      "presentationId": "job/hunter/shift/winter/default",
+      "career": "hunter",
+      "season": "winter",
+      "fallbackPurpose": "ordinary career seasonal shift static fallback",
+      "localization": {
+        "altKey": "presentation.static.career.hunter.shift.winter.alt",
+        "captionKey": "presentation.static.career.hunter.shift.winter.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-guard-shift-spring",
+      "kind": "image",
+      "src": "assets/presentation/career-guard-shift-spring.svg",
+      "presentationId": "job/guard/shift/spring/default",
+      "career": "guard",
+      "season": "spring",
+      "fallbackPurpose": "ordinary career seasonal shift static fallback",
+      "localization": {
+        "altKey": "presentation.static.career.guard.shift.spring.alt",
+        "captionKey": "presentation.static.career.guard.shift.spring.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-guard-shift-summer",
+      "kind": "image",
+      "src": "assets/presentation/career-guard-shift-summer.svg",
+      "presentationId": "job/guard/shift/summer/default",
+      "career": "guard",
+      "season": "summer",
+      "fallbackPurpose": "ordinary career seasonal shift static fallback",
+      "localization": {
+        "altKey": "presentation.static.career.guard.shift.summer.alt",
+        "captionKey": "presentation.static.career.guard.shift.summer.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-guard-shift-autumn",
+      "kind": "image",
+      "src": "assets/presentation/career-guard-shift-autumn.svg",
+      "presentationId": "job/guard/shift/autumn/default",
+      "career": "guard",
+      "season": "autumn",
+      "fallbackPurpose": "ordinary career seasonal shift static fallback",
+      "localization": {
+        "altKey": "presentation.static.career.guard.shift.autumn.alt",
+        "captionKey": "presentation.static.career.guard.shift.autumn.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-guard-shift-winter",
+      "kind": "image",
+      "src": "assets/presentation/career-guard-shift-winter.svg",
+      "presentationId": "job/guard/shift/winter/default",
+      "career": "guard",
+      "season": "winter",
+      "fallbackPurpose": "ordinary career seasonal shift static fallback",
+      "localization": {
+        "altKey": "presentation.static.career.guard.shift.winter.alt",
+        "captionKey": "presentation.static.career.guard.shift.winter.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-merchant-shift-spring",
+      "kind": "image",
+      "src": "assets/presentation/career-merchant-shift-spring.svg",
+      "presentationId": "job/merchant/shift/spring/default",
+      "career": "merchant",
+      "season": "spring",
+      "fallbackPurpose": "ordinary career seasonal shift static fallback",
+      "localization": {
+        "altKey": "presentation.static.career.merchant.shift.spring.alt",
+        "captionKey": "presentation.static.career.merchant.shift.spring.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-merchant-shift-summer",
+      "kind": "image",
+      "src": "assets/presentation/career-merchant-shift-summer.svg",
+      "presentationId": "job/merchant/shift/summer/default",
+      "career": "merchant",
+      "season": "summer",
+      "fallbackPurpose": "ordinary career seasonal shift static fallback",
+      "localization": {
+        "altKey": "presentation.static.career.merchant.shift.summer.alt",
+        "captionKey": "presentation.static.career.merchant.shift.summer.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-merchant-shift-autumn",
+      "kind": "image",
+      "src": "assets/presentation/career-merchant-shift-autumn.svg",
+      "presentationId": "job/merchant/shift/autumn/default",
+      "career": "merchant",
+      "season": "autumn",
+      "fallbackPurpose": "ordinary career seasonal shift static fallback",
+      "localization": {
+        "altKey": "presentation.static.career.merchant.shift.autumn.alt",
+        "captionKey": "presentation.static.career.merchant.shift.autumn.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-merchant-shift-winter",
+      "kind": "image",
+      "src": "assets/presentation/career-merchant-shift-winter.svg",
+      "presentationId": "job/merchant/shift/winter/default",
+      "career": "merchant",
+      "season": "winter",
+      "fallbackPurpose": "ordinary career seasonal shift static fallback",
+      "localization": {
+        "altKey": "presentation.static.career.merchant.shift.winter.alt",
+        "captionKey": "presentation.static.career.merchant.shift.winter.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-artist-geisha-shift-spring",
+      "kind": "image",
+      "src": "assets/presentation/career-artist-geisha-shift-spring.svg",
+      "presentationId": "job/artist-geisha/shift/spring/default",
+      "career": "artist-geisha",
+      "season": "spring",
+      "fallbackPurpose": "ordinary career seasonal shift static fallback",
+      "localization": {
+        "altKey": "presentation.static.career.artist-geisha.shift.spring.alt",
+        "captionKey": "presentation.static.career.artist-geisha.shift.spring.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-artist-geisha-shift-summer",
+      "kind": "image",
+      "src": "assets/presentation/career-artist-geisha-shift-summer.svg",
+      "presentationId": "job/artist-geisha/shift/summer/default",
+      "career": "artist-geisha",
+      "season": "summer",
+      "fallbackPurpose": "ordinary career seasonal shift static fallback",
+      "localization": {
+        "altKey": "presentation.static.career.artist-geisha.shift.summer.alt",
+        "captionKey": "presentation.static.career.artist-geisha.shift.summer.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-artist-geisha-shift-autumn",
+      "kind": "image",
+      "src": "assets/presentation/career-artist-geisha-shift-autumn.svg",
+      "presentationId": "job/artist-geisha/shift/autumn/default",
+      "career": "artist-geisha",
+      "season": "autumn",
+      "fallbackPurpose": "ordinary career seasonal shift static fallback",
+      "localization": {
+        "altKey": "presentation.static.career.artist-geisha.shift.autumn.alt",
+        "captionKey": "presentation.static.career.artist-geisha.shift.autumn.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-artist-geisha-shift-winter",
+      "kind": "image",
+      "src": "assets/presentation/career-artist-geisha-shift-winter.svg",
+      "presentationId": "job/artist-geisha/shift/winter/default",
+      "career": "artist-geisha",
+      "season": "winter",
+      "fallbackPurpose": "ordinary career seasonal shift static fallback",
+      "localization": {
+        "altKey": "presentation.static.career.artist-geisha.shift.winter.alt",
+        "captionKey": "presentation.static.career.artist-geisha.shift.winter.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-assassin-shift-spring",
+      "kind": "image",
+      "src": "assets/presentation/career-assassin-shift-spring.svg",
+      "presentationId": "job/assassin/shift/spring/default",
+      "career": "assassin",
+      "season": "spring",
+      "fallbackPurpose": "ordinary career seasonal shift static fallback",
+      "localization": {
+        "altKey": "presentation.static.career.assassin.shift.spring.alt",
+        "captionKey": "presentation.static.career.assassin.shift.spring.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-assassin-shift-summer",
+      "kind": "image",
+      "src": "assets/presentation/career-assassin-shift-summer.svg",
+      "presentationId": "job/assassin/shift/summer/default",
+      "career": "assassin",
+      "season": "summer",
+      "fallbackPurpose": "ordinary career seasonal shift static fallback",
+      "localization": {
+        "altKey": "presentation.static.career.assassin.shift.summer.alt",
+        "captionKey": "presentation.static.career.assassin.shift.summer.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-assassin-shift-autumn",
+      "kind": "image",
+      "src": "assets/presentation/career-assassin-shift-autumn.svg",
+      "presentationId": "job/assassin/shift/autumn/default",
+      "career": "assassin",
+      "season": "autumn",
+      "fallbackPurpose": "ordinary career seasonal shift static fallback",
+      "localization": {
+        "altKey": "presentation.static.career.assassin.shift.autumn.alt",
+        "captionKey": "presentation.static.career.assassin.shift.autumn.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-assassin-shift-winter",
+      "kind": "image",
+      "src": "assets/presentation/career-assassin-shift-winter.svg",
+      "presentationId": "job/assassin/shift/winter/default",
+      "career": "assassin",
+      "season": "winter",
+      "fallbackPurpose": "ordinary career seasonal shift static fallback",
+      "localization": {
+        "altKey": "presentation.static.career.assassin.shift.winter.alt",
+        "captionKey": "presentation.static.career.assassin.shift.winter.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-prostitute-shift-spring",
+      "kind": "image",
+      "src": "assets/presentation/career-prostitute-shift-spring.svg",
+      "presentationId": "job/prostitute/shift/spring/default",
+      "career": "prostitute",
+      "season": "spring",
+      "fallbackPurpose": "ordinary career seasonal shift static fallback",
+      "localization": {
+        "altKey": "presentation.static.career.prostitute.shift.spring.alt",
+        "captionKey": "presentation.static.career.prostitute.shift.spring.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-prostitute-shift-summer",
+      "kind": "image",
+      "src": "assets/presentation/career-prostitute-shift-summer.svg",
+      "presentationId": "job/prostitute/shift/summer/default",
+      "career": "prostitute",
+      "season": "summer",
+      "fallbackPurpose": "ordinary career seasonal shift static fallback",
+      "localization": {
+        "altKey": "presentation.static.career.prostitute.shift.summer.alt",
+        "captionKey": "presentation.static.career.prostitute.shift.summer.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-prostitute-shift-autumn",
+      "kind": "image",
+      "src": "assets/presentation/career-prostitute-shift-autumn.svg",
+      "presentationId": "job/prostitute/shift/autumn/default",
+      "career": "prostitute",
+      "season": "autumn",
+      "fallbackPurpose": "ordinary career seasonal shift static fallback",
+      "localization": {
+        "altKey": "presentation.static.career.prostitute.shift.autumn.alt",
+        "captionKey": "presentation.static.career.prostitute.shift.autumn.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    },
+    {
+      "key": "career-prostitute-shift-winter",
+      "kind": "image",
+      "src": "assets/presentation/career-prostitute-shift-winter.svg",
+      "presentationId": "job/prostitute/shift/winter/default",
+      "career": "prostitute",
+      "season": "winter",
+      "fallbackPurpose": "ordinary career seasonal shift static fallback",
+      "localization": {
+        "altKey": "presentation.static.career.prostitute.shift.winter.alt",
+        "captionKey": "presentation.static.career.prostitute.shift.winter.caption",
+        "requiredLocales": [
+          "ru",
+          "en"
+        ]
+      },
+      "provenance": "project-authored original SVG; no external media dependency"
+    }
+  ],
+  "invariants": {
+    "presentationOnly": true,
+    "gameplayFields": false,
+    "localeNeutralAssetIdentity": true,
+    "localeNeutralSemanticIdentity": true,
+    "rootLoaded": false
+  }
+}
