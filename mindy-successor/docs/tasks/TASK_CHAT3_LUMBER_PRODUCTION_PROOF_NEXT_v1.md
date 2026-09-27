@@ -1484,3 +1484,135 @@ Prepare a bounded first authored content batch that can ship before Secret Debt 
 Separate what can be authored immediately from anything requiring Product choice.
 
 Continue items 78–86 sequentially without waiting for Lead review.
+
+
+## Queue item 87 — ordinary street production pack v1
+
+Create NEW production files only:
+- `prior-work/astra/prototype-m3.2/content/packs/poverty-street-production.json`
+- `prior-work/astra/prototype-m3.2/tests/poverty-street-production.test.ts`
+
+Implement the first naturally reachable ordinary-poverty street content pack using existing NightFlow/event primitives only.
+
+Required:
+- activates only in production street housing context after lodging;
+- at least three authored event families represented across helpful / neutral / bad pressure;
+- no Secret Debt/lender state or content;
+- no named canonical rescuer NPC required;
+- use only existing item/resource/stat/next-day primitives;
+- any numeric effects are explicitly treated by test/docs as INITIAL_TUNING, not Product locks;
+- every event retains a safe/free resolution path where engine validation requires it;
+- existing `stage.outside` or text-only fallback is acceptable;
+- natural-path test must reach events through EndDay -> street lodging, not injected pending state.
+
+Do not edit shared engine/schema/definitions.
+
+## Queue item 88 — street-event save/reload regression
+
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/poverty-street-reload.test.ts`
+
+Using the item-87 production pack, verify:
+- selected event/variant survives reload without reroll;
+- effect commits once;
+- NightFlow resumes correctly;
+- next-day modifier applies once;
+- calendar advances once;
+- event history/cooldown persists.
+
+Do not duplicate exact tunable numbers except by reading them from the loaded pack/state.
+
+## Queue item 89 — street seasonal-context regression
+
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/poverty-street-seasonal.test.ts`
+
+Verify at least one production street event family has deterministic seasonal/context variation using existing calendar conditions.
+
+Cover representative spring/summer/autumn/winter or the actual authored seasonal subset, and reload stability.
+
+Do not require four bespoke event families if the pack intentionally reuses variants.
+
+## Queue item 90 — street anti-softlock production regression
+
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/poverty-street-content-anti-softlock.test.ts`
+
+Verify the new ordinary-poverty content cannot remove the baseline recovery invariant:
+- start with zero money;
+- naturally enter street Night;
+- resolve the worst available ordinary street outcome;
+- next day remains reachable;
+- at least one starter job action remains executable;
+- Secret Debt is not required.
+
+Preserve current poverty contract already merged via PR33.
+
+## Queue item 91 — cheap-lodging visible content pack
+
+Create NEW production files only:
+- `prior-work/astra/prototype-m3.2/content/packs/poverty-cheap-production.json`
+- `prior-work/astra/prototype-m3.2/tests/poverty-cheap-production.test.ts`
+
+Add one small authored cheap-lodging Night/context family so cheap lodging differs from normal beyond price, without changing existing lodging prices or base penalties.
+
+Requirements:
+- `housingTier=cheap`;
+- existing NightFlow only;
+- no unique NPC identity required;
+- no Secret Debt;
+- save/reload stable;
+- fallback presentation valid.
+
+## Queue item 92 — ordinary poverty initial-tuning ledger
+
+Create NEW file only:
+- `docs/poverty-prep/ORDINARY_POVERTY_INITIAL_TUNING_LEDGER_v1.md`
+
+Record every numeric/content choice introduced by items 87/91 as:
+- INITIAL_TUNING;
+- rationale;
+- affected event;
+- anti-softlock bound;
+- safe adjustment direction;
+- not a Product lock.
+
+Do not alter already locked structural rules.
+
+## Queue item 93 — ordinary poverty presentation draft
+
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/ordinary-poverty-v1.json`
+
+Prepare optional static/text presentation mappings for the actual item-87/91 event identities using existing shipped media only. No invented GIF paths.
+
+## Queue item 94 — ordinary poverty production acceptance evidence
+
+Create NEW file only:
+- `docs/poverty-prep/ORDINARY_POVERTY_PRODUCTION_ACCEPTANCE_v1.md`
+
+Record actual validation performed on items 87–93:
+- content validation;
+- targeted tests;
+- full check if executed in the worker environment;
+- natural reachability;
+- reload;
+- anti-softlock;
+- presentation fallback.
+
+Never claim commands/results that were not actually run.
+
+## Queue item 95 — ordinary poverty integration handoff v3
+
+Create NEW file only:
+- `docs/poverty-prep/ORDINARY_POVERTY_INTEGRATION_HANDOFF_v3.md`
+
+Produce the minimal selective-integration list for Lead:
+- exact production pack files;
+- exact tests;
+- exact presentation draft;
+- tuning values explicitly non-locked;
+- Secret Debt explicitly excluded;
+- known remaining gaps.
+
+Continue items 87–95 sequentially without waiting for Lead review.
