@@ -2324,3 +2324,77 @@ Contract-test authoring fixtures for:
 - gameplay/event IDs are unchanged.
 
 Continue items 129–137 sequentially without waiting for Lead review.
+
+
+## Queue item 138 — ten-career localization presentation bundle v1
+
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/ten-career-localization-v1.json`
+
+Create a machine-readable RU+EN presentation bundle for all 10 target career base shifts:
+- locale-neutral semantic/action IDs;
+- RU label/description/result-shell text;
+- EN equivalents;
+- shared media-pool references;
+- RU/EN alt text where media candidates exist.
+
+Do not duplicate gameplay actions.
+
+## Queue item 139 — localized career media alt pack v1
+
+Create NEW file only:
+- `docs/presentation-prep/TEN_CAREER_MEDIA_ALT_RU_EN_v1.md`
+
+For every current base-shift media candidate, provide concise RU+EN alt text.
+Visual meaning must be equivalent across locales and must not disclose hidden mechanics.
+
+## Queue item 140 — localization fallback fixture v1
+
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/localization-fallback-v1.fixture.json`
+
+Provide representative:
+- fully translated entry;
+- RU-only migration-debt entry;
+- missing-key legacy fallback;
+- localized multi-GIF alt/caption entry.
+
+No gameplay fields.
+
+## Queue item 141 — presentation locale-switch regression contract v2
+
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/presentation-locale-switch-contract-v2.test.ts`
+
+Validate authoring fixtures:
+- semantic IDs/media keys remain identical RU↔EN;
+- switching locale cannot choose another GIF candidate;
+- RU fallback is deterministic;
+- missing EN is QA-visible;
+- no gameplay conditions/effects appear in localization bundles.
+
+## Queue item 142 — bilingual presentation production coverage matrix v2
+
+Create NEW file only:
+- `docs/presentation-prep/BILINGUAL_PRESENTATION_PRODUCTION_COVERAGE_v2.md`
+
+Audit current-main after PR41 status for:
+- town/HUD;
+- 10 career Work panel;
+- School;
+- poverty;
+- Forest;
+- Night;
+- endings;
+- multi-GIF alt/captions.
+
+Separate SHIPPED_RU_EN / RU_FALLBACK / STAGED_RU_EN / NOT_MIGRATED.
+
+## Queue item 143 — localization presentation handoff v2
+
+Create NEW file only:
+- `docs/presentation-prep/LOCALIZATION_PRESENTATION_HANDOFF_v2.md`
+
+Consolidate 134–142 into exact Lead integration guidance and next production media batches.
+
+Continue items 135–143 sequentially without waiting for Lead review.
