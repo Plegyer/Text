@@ -1170,3 +1170,57 @@ Produce a concise current-state handoff for the Lead containing:
 - no-runtime-change guardrails.
 
 Continue items 61–66 sequentially without waiting for Lead review.
+
+
+## Queue item 67 — full-game GIF batching plan
+
+Create NEW files only:
+- `docs/presentation-prep/FULL_GAME_GIF_BATCHING_PLAN_v1.md`
+- `prior-work/astra/prototype-m3.2/content/full-game-gif-batching-plan.fixture.json`
+
+Group future GIF production into reusable batches across:
+- starter trio;
+- remaining seven ordinary careers;
+- School;
+- ordinary poverty;
+- Secret Debt/Slave;
+- Forest/Activity;
+- Palace;
+- endings/Meta.
+
+For each batch record shared reusable motion/setting intent, required semantic identities, content-authoring dependencies, and fallback availability.
+
+Do not merge distinct gameplay IDs merely because they can reuse the same GIF.
+
+## Queue item 68 — full-scope presentation namespace collision audit
+
+Create NEW file only:
+- `docs/presentation-prep/FULL_SCOPE_PRESENTATION_NAMESPACE_COLLISION_AUDIT_v1.md`
+
+Audit proposed/current semantic presentation namespaces across careers, School, Night, poverty, Secret Debt, Activity, Palace, endings and Meta.
+
+Identify:
+- existing canonical patterns;
+- collision risks;
+- places where content identity must be authored before assigning a final ID;
+- safe reuse where media can be shared without identity collision.
+
+Do not rename shipped IDs.
+
+## Queue item 69 — batch asset operator checklist
+
+Create NEW file only:
+- `docs/presentation-prep/BATCH_ASSET_OPERATOR_CHECKLIST_v1.md`
+
+Define a repeatable operator checklist for importing or replacing a batch of GIF/static assets:
+- semantic-ID manifest validation;
+- duplicate/collision check;
+- fallback validation;
+- animations-on/off preview;
+- save/reload smoke;
+- rollback;
+- zero gameplay mutation confirmation.
+
+The checklist must work for later full-game content production without source-path editing.
+
+Continue items 61–69 sequentially without waiting for Lead review.
