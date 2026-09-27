@@ -1,0 +1,37 @@
+{
+  "formatVersion": 1,
+  "id": "school.public-result-publication-contract.fixture.v1",
+  "genericContract": {
+    "stableResultId": null,
+    "privateTrigger": {
+      "owner": "school",
+      "providerId": null,
+      "thresholdOrCompletion": null
+    },
+    "publication": {
+      "policy": "exactly-once",
+      "durableBoundary": "worldFacts/worldFactAdded or approved typed public equivalent",
+      "transactionProofRequired": true,
+      "reloadBeforePublication": "may publish once later if trigger remains true",
+      "reloadAfterPublication": "must not duplicate durable result or reaction"
+    },
+    "downstream": {
+      "readsOnlyPublicResult": true,
+      "readsPrivateSchoolCounters": false,
+      "writesPrivateSchoolProgress": false
+    }
+  },
+  "managementAccounting": {
+    "finalResultId": null,
+    "providerId": null,
+    "threshold": null,
+    "status": "OPEN"
+  },
+  "arcanaForest": {
+    "finalResultId": null,
+    "providerId": null,
+    "threshold": null,
+    "directConsumerId": null,
+    "status": "OPEN"
+  }
+}
