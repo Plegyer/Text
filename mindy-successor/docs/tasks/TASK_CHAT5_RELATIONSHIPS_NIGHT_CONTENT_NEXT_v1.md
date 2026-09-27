@@ -393,3 +393,108 @@ Create NEW file only:
 Consolidate items 25–35 into SAFE_PRESENTATION_COPY / STAGING_ONLY / PRODUCT_OPEN / SHARED_UI_REQUIRED with exact Lead selective-copy list.
 
 Continue items 25–36 sequentially without waiting for Lead review.
+
+
+## Queue item 37 — non-Lumber result localization production delta v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/non-lumber-career-result-localization-v1.fixture.json`
+
+Convert items 26–34 into exact stable RU+EN localization entries for current non-Lumber result presentation only.
+Use existing action/result identities; no new gameplay/content pack IDs.
+
+## Queue item 38 — non-Lumber result localization collision guard v1
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/non-lumber-career-result-localization-v1.test.ts`
+
+Validate item 37 against current main:
+- exact nine current ordinary-career action IDs;
+- RU+EN completeness;
+- additive or exact-identical keys only;
+- no mechanics/effects/rewards/RNG/Save fields;
+- no Lumber/Forest/Secret Debt contamination.
+
+## Queue item 39 — non-Lumber result UI expected-state fixture v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/non-lumber-career-result-ui-smoke-v1.fixture.json`
+
+For all nine careers, provide:
+- action ID;
+- current result presentationId;
+- expected RU title/body;
+- expected EN title/body;
+- exact unchanged result mechanics references.
+
+Fixture only; shared UI remains Lead-owned.
+
+## Queue item 40 — Tavern/Hunter/Guard result copy normalization v2
+Create NEW file only:
+- `docs/relationship-prep/TAVERN_HUNTER_GUARD_RESULT_COPY_NORMALIZATION_V2.md`
+
+Normalize authored RU+EN result prose from items 28–30 for consistent length, tone, no internal implementation language and no invented mechanics.
+
+## Queue item 41 — Merchant/Artist-Geisha result copy normalization v2
+Create NEW file only:
+- `docs/relationship-prep/MERCHANT_ARTIST_GEISHA_RESULT_COPY_NORMALIZATION_V2.md`
+
+Same normalization for items 31–32.
+
+## Queue item 42 — Assassin/Prostitute result copy normalization v2
+Create NEW file only:
+- `docs/relationship-prep/ASSASSIN_PROSTITUTE_RESULT_COPY_NORMALIZATION_V2.md`
+
+Same normalization for items 33–34.
+Keep Prostitute content non-explicit and Assassin content presentation-only.
+
+## Queue item 43 — Satyr Maid/Undead Farm result parity review v2
+Create NEW file only:
+- `docs/relationship-prep/SATYR_MAID_UNDEAD_FARM_RESULT_PARITY_REVIEW_V2.md`
+
+Compare existing current-main prose against items 26–27 and identify exact text-only replacements needed for RU-source/EN parity.
+
+## Queue item 44 — ordinary-career result presentation key map v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/ordinary-career-result-localization-key-map-v1.fixture.json`
+
+Map all 10 ordinary careers, including Lumber as reference-only, to:
+- action ID;
+- result presentationId;
+- title localization key;
+- body localization key;
+- media alt key.
+Do not modify Lumber content.
+
+## Queue item 45 — non-Lumber result copy duplication audit v1
+Create NEW file only:
+- `docs/relationship-prep/NON_LUMBER_RESULT_COPY_DUPLICATION_AUDIT_V1.md`
+
+Detect near-duplicate RU/EN lines across the nine career result banks.
+Recommend text-only differentiation by career while preserving current mechanics and semantic IDs.
+
+## Queue item 46 — non-Lumber result localization natural-path plan v1
+Create NEW file only:
+- `docs/relationship-prep/NON_LUMBER_RESULT_LOCALIZATION_NATURAL_PATH_PLAN_V1.md`
+
+For each of the nine current careers, document the shortest existing production path to a result screen and the invariants Lead tests must check across RU↔EN.
+
+No new test runtime helpers.
+
+## Queue item 47 — non-Lumber result production integration checklist v1
+Create NEW file only:
+- `docs/relationship-prep/NON_LUMBER_RESULT_PRODUCTION_INTEGRATION_CHECKLIST_V1.md`
+
+Define exact Lead acceptance:
+- root localization merge;
+- shared UI result title/body consumption;
+- same result presentationId;
+- same deltas/actionCounts/Save;
+- RU↔EN switch invariance;
+- exact-head CI;
+- no worker branch wholesale merge.
+
+## Queue item 48 — non-Lumber result integration handoff v2
+Create NEW file only:
+- `docs/relationship-prep/NON_LUMBER_CAREER_CONTENT_DEPTH_HANDOFF_V2.md`
+
+Consolidate items 37–47 into SAFE_TO_COPY_NOW / SHARED_UI_REQUIRED / PRESENTATION_ONLY / PRODUCT_OPEN with exact selective-copy file list and recommended next work only after Lead integration.
+
+Continue items 37–48 sequentially without waiting for Lead review.
