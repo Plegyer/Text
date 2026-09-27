@@ -664,3 +664,100 @@ Produce the smallest non-redundant Lead handoff after PR24:
 - superseded artifacts.
 
 Continue items 37–42 sequentially without waiting for Lead review.
+
+
+## Queue item 43 — PR25 Lumber final-gate reconciliation
+
+Create NEW files only:
+- `docs/lumber-prep/LUMBER_PR25_FINAL_GATE_RECONCILIATION_v1.md`
+- `prior-work/astra/prototype-m3.2/tests/lumber-pr25-final-gate-reconciliation.test.ts`
+
+Reconcile Lumber evidence against merged PR25.
+
+Confirm:
+- PR25 changes QA only;
+- Hard Work remains exactly one `completed_shifts >= 50` condition;
+- exact rewardId remains `hardWork:lumber`;
+- item capability remains inventory-derived;
+- one-Save path still uses logging-road naturally;
+- Old Boundary acquisition/retain-consume remain OPEN.
+
+## Queue item 44 — Old Boundary Token decision test-vector pack
+
+Create NEW files only:
+- `prior-work/astra/prototype-m3.2/content/old-boundary-token-decision-vectors.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/old-boundary-token-decision-vectors.test.ts`
+
+For each unresolved decision dimension:
+- acquisition source type;
+- retained vs consumed;
+- repeatable vs one-shot acquisition;
+- visible inventory vs hidden capability;
+
+define option-neutral expected invariants and downstream tests.
+
+Do not select any option or invent a vendor/event.
+
+## Queue item 45 — hunter-trail decision matrix v2
+
+Create:
+- `docs/lumber-prep/HUNTER_TRAIL_DECISION_MATRIX_v2.md`
+- `prior-work/astra/prototype-m3.2/content/hunter-trail-decision-matrix-v2.fixture.json`
+
+Separate locked route identity from unresolved:
+- clue/capability identity;
+- acquisition source;
+- narrative provider;
+- route reward/lore.
+
+For each unresolved point list affected runtime/content/test seams.
+
+## Queue item 46 — Forest content-authoring completeness validator
+
+Create NEW files only:
+- `prior-work/astra/prototype-m3.2/content/forest-content-completeness.fixture.json`
+- `prior-work/astra/prototype-m3.2/tests/forest-content-completeness.test.ts`
+
+Build a truthful validator for the final Forest authoring target:
+- three routes;
+- three challenge families;
+- at least one season-dependent topology difference;
+- save/reload checkpoints;
+- distinct success/escape/failure;
+- capability hooks.
+
+Current production may fail completeness honestly; do not fabricate pass.
+
+## Queue item 47 — Lumber human-decision closeout ledger
+
+Create:
+- `docs/lumber-prep/LUMBER_HUMAN_DECISION_CLOSEOUT_v1.md`
+
+List only decisions that still need a human/product answer after PR25.
+
+For each include:
+- current locked context;
+- permissible answer shape;
+- files/systems affected;
+- PA rows affected;
+- whether runtime is already ready.
+
+Do not recommend a preferred answer.
+
+## Queue item 48 — Lumber final closeout pack v6
+
+Create:
+- `docs/lumber-prep/LUMBER_FINAL_CLOSEOUT_PACK_v6.md`
+- `prior-work/astra/prototype-m3.2/content/lumber-final-closeout-pack.fixture.json`
+
+Consolidate post-PR25 Lumber work into:
+- SHIPPED_GREEN;
+- MUST_INTEGRATE_QA;
+- HUMAN_DECISION_REQUIRED;
+- CONTENT_AUTHORING_REQUIRED;
+- PRESENTATION_ASSET_ONLY;
+- SUPERSEDED.
+
+Keep Hard Work under SHIPPED_GREEN.
+
+Continue items 43–48 sequentially without waiting for Lead review.
