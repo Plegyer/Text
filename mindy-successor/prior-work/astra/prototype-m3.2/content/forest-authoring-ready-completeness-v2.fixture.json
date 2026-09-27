@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "id": "forest.authoring-ready-completeness-v2.fixture",
+  "status": "RUNTIME_READY_AUTHORING_INCOMPLETE",
+  "runtimeReady": {
+    "activityId": "lumber.forest",
+    "entryEnergyCost": 2,
+    "resumePolicy": "allowed",
+    "routeOptionPrimitive": true,
+    "itemCapabilityCondition": true,
+    "inventoryDerivedCapabilities": true,
+    "routeStatePersistence": true,
+    "legacyOptionModel0Compatible": true,
+    "terminalResults": [
+      "lumber.forest.success",
+      "lumber.forest.escape",
+      "lumber.forest.failure"
+    ],
+    "exactA5": "activityResult",
+    "presentationFallbackReady": true
+  },
+  "authoredCurrent": {
+    "routes": [
+      {
+        "routeKey": "logging-road",
+        "optionId": "forest.route.logging-road",
+        "condition": "none",
+        "status": "SHIPPED"
+      },
+      {
+        "routeKey": "old-boundary",
+        "optionId": "forest.route.old-boundary",
+        "condition": {
+          "kind": "itemCapability",
+          "capability": "enter_old_boundary",
+          "present": true
+        },
+        "status": "SHIPPED_RUNTIME_GATE"
+      }
+    ],
+    "challengeFamilies": [],
+    "seasonalTopologyBindings": []
+  },
+  "missingAuthoring": {
+    "thirdRoute": {
+      "routeKey": "hunter-trail",
+      "status": "MISSING",
+      "productionOptionId": null,
+      "clueFactId": null,
+      "navigationCapabilityId": null,
+      "sourceProvider": null,
+      "rewardLore": null,
+      "threshold": null
+    },
+    "challengeFamilies": [
+      {
+        "id": "forest.challenge.navigation",
+        "status": "MISSING",
+        "finalInstanceIds": []
+      },
+      {
+        "id": "forest.challenge.physical-obstacle",
+        "status": "MISSING",
+        "finalInstanceIds": []
+      },
+      {
+        "id": "forest.challenge.interpretation-ritual-anomaly",
+        "status": "MISSING",
+        "finalInstanceIds": []
+      }
+    ],
+    "seasonalTopology": {
+      "status": "MISSING",
+      "requiredDifference": "at least one deterministic route/challenge availability or Activity-resource behavior difference by season"
+    }
+  },
+  "presentation": {
+    "centralStageReady": true,
+    "semanticPresentationIdReady": true,
+    "staticTextFallbackSafe": true,
+    "rcBlockingAssets": 0,
+    "routeChallengeSpecialization": "AUTHORING_DEPENDENT",
+    "optionalGifPolishOnly": true
+  },
+  "completeness": {
+    "runtimeReady": true,
+    "fullPA16": false,
+    "missingDimensions": [
+      "hunter-trail",
+      "navigation challenge",
+      "physical obstacle challenge",
+      "interpretation/ritual anomaly challenge",
+      "season-dependent topology/options"
+    ]
+  },
+  "hardWorkIsolation": {
+    "forestCompletenessMayChangeHardWork": false,
+    "onlyCondition": {
+      "kind": "careerCounter",
+      "career": "lumber",
+      "counter": "completed_shifts",
+      "op": "gte",
+      "value": 50
+    },
+    "rewardId": "hardWork:lumber"
+  }
+}
