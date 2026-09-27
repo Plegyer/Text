@@ -1164,3 +1164,25 @@ Map which Secret Debt/Slave presentation surfaces can be prepared from fixed str
 Do not choose art, prose, exact rewards, or balance numbers.
 
 Continue items 63–71 sequentially without waiting for Lead review.
+
+
+## Queue item 72 — poverty production test-case inventory
+
+Create NEW file only:
+- `docs/poverty-prep/POVERTY_PRODUCTION_TEST_CASE_INVENTORY_v1.md`
+
+Inventory future executable test cases for:
+- normal/cheap/street lodging;
+- zero-money recovery;
+- ordinary street events;
+- save/reload around poverty Night;
+- lender offer/refusal/acceptance;
+- delayed debt activation;
+- job blocking;
+- forced Night;
+- three Secret Debt outcomes;
+- Palace prerequisite exclusion.
+
+Mark which cases are executable now, decision-blocked, content-blocked, or future runtime work. Do not fabricate test inputs for OPEN decisions.
+
+Continue items 64–72 sequentially without waiting for Lead review.
