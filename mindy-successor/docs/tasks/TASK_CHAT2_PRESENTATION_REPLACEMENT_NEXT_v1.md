@@ -3131,3 +3131,110 @@ Consolidate items 208–218 plus prior career result/seasonal work:
 - what remains final-GIF-only.
 
 Continue items 208–219 sequentially without waiting for Lead review.
+
+
+## Queue item 220 — post-PR47 static media baseline reconciliation v1
+Create NEW file only:
+- `docs/presentation-prep/POST_PR47_STATIC_MEDIA_BASELINE_RECONCILIATION_V1.md`
+
+Re-audit exact current main after PR47.
+Record which project-owned static assets/mappings are now shipped versus still worker-only.
+Use actual root `presentation.json` and `localization.json`, not prior assumptions.
+
+## Queue item 221 — seasonal static incremental production manifest v2
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/seasonal-static-incremental-production-v2.json`
+
+Contain only the 40 seasonal career mappings not already shipped by PR47.
+Exact current semantic IDs only; no duplicates of shipped result/default mappings.
+
+## Queue item 222 — seasonal static incremental localization delta v2
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/seasonal-static-incremental-localization-v2.fixture.json`
+
+Contain only RU+EN alt/caption keys needed by item 221 and not already present in current root localization.
+
+## Queue item 223 — seasonal static current-main collision regression v2
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/seasonal-static-current-main-collision-v2.test.ts`
+
+Validate item 221/222 against exact current main:
+- 40 exact current seasonal semantic IDs;
+- no root slot overwrite except intentional absent-static fill;
+- additive/identical localization only;
+- all 40 actual SVGs exist;
+- no gameplay fields.
+
+## Queue item 224 — non-career safe production subset manifest v3
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/non-career-safe-production-subset-v3.json`
+
+From item 217 keep only current-production mappings safe now:
+- 8 School course lesson IDs;
+- current generic School Night refinement;
+- 10 ordinary-poverty event IDs;
+- 6 Forest return/reaction IDs;
+- 2 Foreman IDs.
+Exclude both route-specific Product-open assets.
+
+## Queue item 225 — non-career safe localization delta v3
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/non-career-safe-static-localization-v3.fixture.json`
+
+Contain only RU+EN alt/caption keys required by item 224 that are not already shipped after PR47.
+
+## Queue item 226 — non-career current-main collision regression v3
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/non-career-static-current-main-collision-v3.test.ts`
+
+Validate item 224/225 against exact current main, including no Product-open route IDs and no staged teacher-specific School IDs.
+
+## Queue item 227 — shared Forest route default project-owned fallback v1
+Create NEW original SVG only:
+- `prior-work/astra/prototype-m3.2/assets/presentation/forest-route-default-v1.svg`
+
+Create one project-owned generic route-in-progress fallback for the already-shipped semantic ID:
+- `activity/forest/route/default`.
+
+It must remain semantically neutral between logging-road and old-boundary and must not imply Hunter/token/challenge mechanics.
+
+## Queue item 228 — shared Forest route default media record v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/forest-route-default-static-v1.json`
+
+Map item 227 only to existing `activity/forest/route/default`.
+Provide stable RU+EN alt/caption key references and no gameplay fields.
+
+## Queue item 229 — static asset supersession/retention ledger v1
+Create NEW file only:
+- `docs/presentation-prep/STATIC_ASSET_SUPERSESSION_RETENTION_LEDGER_V1.md`
+
+Classify all project-owned presentation SVGs as:
+- SHIPPED_CURRENT;
+- READY_INCREMENTAL;
+- SUPERSEDED_KEEP_SOURCE_HISTORY;
+- PRODUCT_OPEN;
+- UNUSED_CANDIDATE.
+
+Do not delete files.
+
+## Queue item 230 — post-PR47 full static coverage closure v4
+Create NEW file only:
+- `docs/presentation-prep/POST_PR47_FULL_STATIC_COVERAGE_CLOSURE_V4.md`
+
+Recompute current production semantic coverage after items 220–229:
+- 10 career results;
+- 40 career seasons;
+- reachable School;
+- ordinary poverty;
+- Forest route default + returns/reactions;
+- Foreman.
+Report exact UNIQUE_PROJECT_OWNED / GENERIC_EXISTING / MISSING counts.
+
+## Queue item 231 — next static-media selective integration handoff v4
+Create NEW file only:
+- `docs/presentation-prep/NEXT_STATIC_MEDIA_SELECTIVE_INTEGRATION_HANDOFF_V4.md`
+
+Consolidate items 220–230 with exact incremental assets/data/tests safe for Lead after PR47 and exact Product-open exclusions.
+
+Continue items 220–231 sequentially without waiting for Lead review.
