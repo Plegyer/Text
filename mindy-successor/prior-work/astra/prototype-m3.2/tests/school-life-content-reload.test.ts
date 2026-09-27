@@ -54,7 +54,7 @@ test('materialized School-life optional content keeps the same variant across re
     q=>q.instanceId===offerId
   );
   assert.ok(queued);
-  assert.equal(queued.eventId,'school-life.after-paid-lesson');
+  assert.equal(queued.eventId,'school-life-content-v1.after-paid-lesson');
 
   const first=parseSave(JSON.stringify(out),cat);
   const second=parseSave(JSON.stringify(first),cat);
@@ -107,7 +107,7 @@ test('opening and resolving School-life content commits no mechanics twice',()=>
   assert.deepEqual(resolved.run.character.stats,before.stats);
   assert.deepEqual(resolved.run.progression,before.progression);
   assert.equal(
-    resolved.run.history['school-life.after-paid-lesson']?.count,
+    resolved.run.history['school-life-content-v1.after-paid-lesson']?.count,
     1
   );
 });
@@ -132,7 +132,7 @@ test('Night-study flavor content does not own Night-study mechanics',()=>{
   ).state;
 
   const offer=out.run.flow.reaction.queued.find(
-    q=>q.eventId==='school-life.after-night-study'
+    q=>q.eventId==='school-life-content-v1.after-night-study'
   );
   assert.ok(offer);
 
