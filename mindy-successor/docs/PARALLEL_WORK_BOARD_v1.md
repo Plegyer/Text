@@ -581,3 +581,40 @@ Latest merged production-authority milestone remains PR #30:
 `dbe78efdb9cd5ed384b66f7536bb5145702779c7`.
 
 No locked Product or Lumber invariants changed during recovery.
+
+
+## CI-enabled production baseline — PR31 / PR33 / PR34
+
+GitHub Actions full-check CI is now installed and active:
+- workflow: `.github/workflows/mindy-successor-check.yml`;
+- bootstrap PR #31 merged as `ed92f1f2067d1208446a961af4ba801a25e5b940`;
+- workflow runs on relevant pull requests and pushes to main;
+- command: `npm ci` then `npm run check` in `mindy-successor/prior-work/astra/prototype-m3.2`.
+
+Production milestones after the former PR #27 technical floor:
+
+- PR #33 — poverty anti-softlock regression, merged:
+  `e36cc1aaa44991d3340276b4f82efa5c9d9cf15a`.
+  Exact-head CI: **223/223 PASS**.
+  Supersedes unmerged PR #29.
+
+- PR #34 — first target production layer for the other two starter careers, merged:
+  `712ab6c7368ab21906f3fcb0184b35d4f3e1411c`.
+  Exact-head CI: **227/227 PASS**.
+  Adds Satyr Maid + Undead Farm repeatable 1-Energy shifts, typed career progress/first transition, seasonal presentation surfaces and save/reload coverage.
+  It intentionally does NOT invent Hard Work thresholds/endings/meta rewards for those careers.
+
+Current main push CI after PR #34: SUCCESS.
+
+Current worker queues remain nine-deep:
+- Chat 2: **89–97** — starter-trio/media production.
+- Chat 3: **87–95** — first ordinary-poverty production packs/tests.
+- Chat 4: **78–86** — PR34/post-merge/CI and production-pack QA.
+- Chat 5: **73 + 82–89** — one skipped School post-decision map plus concrete School authored-content wave.
+
+Worker branches are long-lived and substantially behind main. Do NOT merge them wholesale. Selectively copy reviewed deliverables onto a fresh Lead branch based on current main, then require exact-head CI for any non-doc integration.
+
+Locked Lumber invariants remain:
+- Hard Work eligibility ONLY `completed_shifts >= 50`;
+- exact reward `hardWork:lumber`;
+- exact Forest continuation `activityResult`.
