@@ -1,0 +1,88 @@
+{
+  "formatVersion": 6,
+  "id": "school.product-authoring-handoff-v6.fixture",
+  "currentMain": {
+    "reconciliationBase": "post-PR26/PR27",
+    "technicalFloor": "221/221"
+  },
+  "policy": {
+    "reopenShippedMechanicsOnlyOnConcreteFailingEvidence": true,
+    "humanDecisionPacketHasPreferredAnswer": false,
+    "qaFixtureMayBecomeProductionAuthoring": false,
+    "privateSchoolCountersMayBeReadByLumberForest": false
+  },
+  "LOCKED_AND_SHIPPED": [
+    "mindy-successor/prior-work/astra/prototype-m3.2/src/core/school.ts",
+    "mindy-successor/prior-work/astra/prototype-m3.2/src/core/schema.ts",
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/definitions.json",
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/packs/base.json",
+    "mindy-successor/docs/school-prep/SCHOOL_TRACK_DATA_MAP_v1.md",
+    "mindy-successor/docs/school-prep/SCHOOL_PROGRESSION_STRUCTURE_v1.md",
+    "mindy-successor/docs/school-prep/SCHOOL_PRESENTATION_SLOT_CATALOG_v1.md",
+    "mindy-successor/docs/school-prep/SCHOOL_PR27_MAIN_RECONCILIATION_v1.md"
+  ],
+  "TECHNICAL_QA_GREEN": [
+    "mindy-successor/prior-work/astra/prototype-m3.2/tests/qa-minimal-rc-acceptance-gate-v2.test.ts",
+    "mindy-successor/prior-work/astra/prototype-m3.2/tests/qa-schema4-omission-compat.test.ts",
+    "mindy-successor/prior-work/astra/prototype-m3.2/tests/school-blocking-scene-compat.test.ts",
+    "mindy-successor/prior-work/astra/prototype-m3.2/tests/school-activation-boundary.test.ts",
+    "mindy-successor/docs/qa-prep/RC_CLOSEOUT_STATUS_v1.md"
+  ],
+  "HUMAN_DECISION_REQUIRED": [
+    "mindy-successor/docs/qa-prep/RC_HUMAN_DECISIONS_REQUIRED_v1.md",
+    "mindy-successor/docs/school-prep/SCHOOL_AUTHORING_DECISION_READY_PACKET_v1.md",
+    "mindy-successor/docs/school-prep/SCHOOL_MANAGEMENT_RESULT_DECISION_SCHEMA_v1.md",
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/school-management-result-decision-schema.fixture.json",
+    "mindy-successor/docs/school-prep/SCHOOL_ARCANA_FOREST_RESULT_DECISION_SCHEMA_v1.md",
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/school-arcana-forest-result-decision-schema.fixture.json"
+  ],
+  "CONTENT_AUTHORING_REQUIRED": [
+    "mindy-successor/docs/school-prep/SCHOOL_CONTENT_DEPTH_AUTHORING_TEMPLATE_v1.md"
+  ],
+  "OPTIONAL_PRESENTATION_POLISH": [],
+  "READY_AFTER_DECISION": [
+    "mindy-successor/docs/school-prep/SCHOOL_POST_DECISION_VERIFICATION_MATRIX_v1.md",
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/packs/lumber-cross-production.json",
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/definitions.json",
+    "mindy-successor/prior-work/astra/prototype-m3.2/tests/qa-minimal-rc-acceptance-gate-v2.test.ts",
+    "mindy-successor/prior-work/astra/prototype-m3.2/tests/school-blocking-scene-compat.test.ts"
+  ],
+  "SUPERSEDED": [
+    "mindy-successor/docs/school-prep/SCHOOL_INTEGRATION_HANDOFF_v1.md",
+    "mindy-successor/docs/school-prep/SCHOOL_RELEASE_CANDIDATE_HANDOFF_v2.md",
+    "mindy-successor/docs/school-prep/SCHOOL_FINAL_INTEGRATION_HANDOFF_v3.md",
+    "mindy-successor/docs/school-prep/SCHOOL_FINAL_DECISION_EVIDENCE_HANDOFF_v4.md",
+    "mindy-successor/docs/school-prep/SCHOOL_FINAL_EVIDENCE_PACK_v5.md",
+    "mindy-successor/docs/school-prep/SCHOOL_RELEASE_READINESS_v1.md",
+    "mindy-successor/docs/school-prep/SCHOOL_PA_BLOCKER_BURNDOWN_v1.md"
+  ],
+  "unresolved": {
+    "managementAccounting": {
+      "provider": null,
+      "milestoneType": null,
+      "threshold": null,
+      "publicResultId": null
+    },
+    "arcanaForest": {
+      "provider": null,
+      "milestoneType": null,
+      "threshold": null,
+      "publicResultId": null,
+      "directForestConsumer": null
+    },
+    "contentDepth": {
+      "teachers": null,
+      "certificates": null,
+      "projects": null,
+      "exams": null
+    }
+  },
+  "optionalPresentationBacklog": [
+    "teacher portraits",
+    "course stills",
+    "lesson/result stills",
+    "Night-study stills",
+    "GIF loops",
+    "milestone/certificate cards"
+  ]
+}
