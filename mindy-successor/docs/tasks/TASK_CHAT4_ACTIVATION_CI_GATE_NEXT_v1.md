@@ -1389,3 +1389,145 @@ Summarize what Lead may integrate next based on current evidence:
 Separate CI-green, review-ready, Product-blocked and authoring-ready work.
 
 Continue items 78–86 sequentially without waiting for Lead review.
+
+
+## Queue item 87 — PR35 remaining-seven production review
+
+Create NEW file only:
+- `docs/qa-prep/PR35_REMAINING_SEVEN_PRODUCTION_REVIEW_v1.md`
+
+Review PR #35 against all seven authoritative career drafts and current main.
+
+Verify:
+- only base target shifts/career initial states + tests;
+- 1 Energy each;
+- typed `completed_shifts`;
+- seasonal semantic presentation coverage;
+- no guessed Hard Work thresholds/endings/meta rewards;
+- tuning values are not Product locks;
+- Lumber exact invariants unchanged;
+- exact-head CI evidence.
+
+Conclude GREEN / BLOCKED.
+
+## Queue item 88 — ten-career base-layer completeness audit
+
+Create NEW file only:
+- `docs/qa-prep/TEN_CAREER_BASE_LAYER_COMPLETENESS_AUDIT_v1.md`
+
+After PR35 status is known, audit all 10 ordinary careers for:
+- production action presence;
+- 1-Energy repeatable work;
+- typed progress;
+- initial stage;
+- seasonal presentation identity;
+- save/reload coverage;
+- Hard Work implementation status.
+
+Distinguish BASE_LAYER_SHIPPED from CONTENT_DEPTH_OPEN.
+
+## Queue item 89 — Chat3 ordinary-poverty pack review v1
+
+Create NEW file only:
+- `docs/qa-prep/ORDINARY_POVERTY_PACK_REVIEW_v1.md`
+
+Review Chat3 items 87–104 as they appear:
+- production schema validity;
+- natural-path reachability;
+- content diversity;
+- initial tuning labeling;
+- anti-softlock;
+- reload/idempotency;
+- no Secret Debt bleed;
+- selective integration readiness.
+
+## Queue item 90 — Chat5 School authored-content review v1
+
+Create NEW file only:
+- `docs/qa-prep/SCHOOL_AUTHORED_CONTENT_REVIEW_v1.md`
+
+Review Chat5 items 82–89:
+- all eight tracks represented;
+- teacher identities do not change mechanics;
+- lesson text matches course identities;
+- no invented public-result decision;
+- no teacher prerequisite;
+- presentation briefs are content-only;
+- selective integration readiness.
+
+## Queue item 91 — multi-GIF contract QA requirements
+
+Create NEW file only:
+- `docs/qa-prep/MULTI_GIF_PRESENTATION_QA_REQUIREMENTS_v1.md`
+
+Define QA for one semantic event owning 3–5 GIF candidates:
+- same gameplay outcome/effects;
+- no media-driven timing;
+- reload semantics;
+- animations-off fallback;
+- missing/corrupt candidate fallback;
+- media pool cannot merge semantic IDs;
+- selection distribution is presentation-only.
+
+Do not prescribe art style.
+
+## Queue item 92 — production event content-density acceptance matrix
+
+Create NEW file only:
+- `docs/qa-prep/CONTENT_DENSITY_ACCEPTANCE_MATRIX_v1.md`
+
+Define evidence that a repeated gameplay surface has enough authored variation to avoid obvious repetition:
+- text variants;
+- event variants;
+- 3–5 media candidates where appropriate;
+- seasonal/context variation;
+- reuse limits.
+
+Treat these as production/content targets, not mechanics locks.
+
+## Queue item 93 — stale-worker selective-copy checklist v2
+
+Create NEW file only:
+- `docs/qa-prep/STALE_WORKER_SELECTIVE_COPY_CHECKLIST_v2.md`
+
+Specialize integration checks for workers ~75+ commits behind main:
+- never merge branch wholesale;
+- identify exact deliverable files;
+- inspect dependency assumptions;
+- recreate on fresh main;
+- run exact-head CI;
+- compare semantic IDs/namespaces against current main;
+- preserve provenance.
+
+## Queue item 94 — production CI floor after PR35
+
+Create NEW file only:
+- `docs/qa-prep/PRODUCTION_CI_FLOOR_AFTER_PR35_v1.md`
+
+Record actual CI baseline after PR35 resolves:
+- exact head;
+- test count;
+- main merge SHA if merged;
+- post-merge main run;
+- newly covered careers;
+- still-uncovered production systems.
+
+Use Git evidence only.
+
+## Queue item 95 — next full-game integration gate v7
+
+Create NEW file only:
+- `docs/qa-prep/NEXT_FULL_GAME_INTEGRATION_GATE_v7.md`
+
+Summarize current integration readiness for:
+- all 10 career base layers;
+- ordinary poverty packs;
+- School authored content;
+- multi-GIF presentation support;
+- Secret Debt;
+- Forest depth;
+- Palace.
+
+Separate SHIPPED / CI_GREEN_READY / CONTENT_READY / PRODUCT_BLOCKED / RUNTIME_EXTENSION_REQUIRED.
+
+Continue items 87–95 sequentially without waiting for Lead review.
