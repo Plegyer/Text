@@ -1927,3 +1927,52 @@ Summarize items 114–118 plus Secret Debt items 111–113 once complete:
 - selective integration order.
 
 Continue items 111–119 sequentially without waiting for Lead review.
+
+
+## Queue item 120 — Forest multi-GIF presentation identity map
+
+Create NEW file only:
+- `docs/lumber-prep/FOREST_MULTI_GIF_PRESENTATION_IDENTITY_MAP_v1.md`
+
+Map current/authoritative Forest route, challenge and result identities to 3–5 GIF candidate pools:
+- logging road;
+- hunter trail only where identity is already authoritative;
+- old boundary only where identity is already authoritative;
+- navigation challenge;
+- physical obstacle;
+- interpretation/ritual anomaly;
+- success / escape / failure result.
+
+Do not invent unresolved route/token mechanics.
+
+## Queue item 121 — Forest production content density audit
+
+Create NEW file only:
+- `docs/lumber-prep/FOREST_PRODUCTION_CONTENT_DENSITY_AUDIT_v1.md`
+
+Audit authored Forest content depth after items 114–118:
+- route text variants;
+- challenge variants;
+- seasonal coverage;
+- result reactions;
+- presentation fallback;
+- multi-GIF opportunities;
+- remaining Product-blocked identities.
+
+Classify each family READY / CONTENT_THIN / PRODUCT_BLOCKED.
+
+## Queue item 122 — Secret Debt / Forest next-integration boundary v1
+
+Create NEW file only:
+- `docs/lumber-prep/SECRET_DEBT_FOREST_NEXT_INTEGRATION_BOUNDARY_v1.md`
+
+Summarize which of the two streams can safely enter production next:
+- Secret Debt authored content vs mechanics still Product-blocked;
+- Forest authored/result content vs route/token decisions;
+- exact runtime seams;
+- tests ready;
+- files Lead may selectively integrate now.
+
+Do not recommend Product answers; separate implementation readiness from human decisions.
+
+Continue items 114–122 sequentially without waiting for Lead review.
