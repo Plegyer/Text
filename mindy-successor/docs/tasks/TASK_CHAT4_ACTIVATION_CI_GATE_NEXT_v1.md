@@ -1237,3 +1237,25 @@ For a test-only PR such as #29, define acceptable validation routes when GitHub 
 Do not claim any route has been executed. Keep production runtime/data PRs under stricter evidence rules.
 
 Continue items 69–77 sequentially without waiting for Lead review.
+
+
+## Queue item 78 — PR32 starter-trio production review
+
+Create NEW file only:
+- `docs/qa-prep/PR32_STARTER_TRIO_PRODUCTION_REVIEW_v1.md`
+
+Review Lead PR #32 against authoritative Satyr Maid / Undead Farm drafts and current runtime.
+
+Verify:
+- only target starter shifts/career states + tests are added;
+- 1 Energy remains correct;
+- no guessed Hard Work threshold/ending/meta reward is added;
+- wage/stat values are treated as tunable implementation baseline, not Product locks;
+- semantic presentation namespaces are correct;
+- existing media reuse does not merge gameplay identity;
+- Lumber Hard Work and exact Forest `activityResult` remain untouched;
+- test assumptions match engine/presentation behavior.
+
+Use actual CI evidence if available at review time. Conclude GREEN / BLOCKED with exact reason.
+
+Continue items 70–78 sequentially without waiting for Lead review.
