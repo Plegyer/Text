@@ -1280,3 +1280,32 @@ Define the bounded runtime behavior needed to enforce the already-directed rule:
 Map whether this should be expressed through action conditions, a shared availability helper, public state, or another existing-compatible seam, without selecting unresolved School/Activity blocking policy.
 
 Continue items 69–77 sequentially without waiting for Lead review.
+
+
+## Queue item 78 — poverty / Secret Debt human-decision packet v1
+
+Create NEW file only:
+- `docs/poverty-prep/POVERTY_SECRET_DEBT_HUMAN_DECISION_PACKET_v1.md`
+
+Consolidate only decisions that genuinely require human/Product input before production implementation can proceed.
+
+At minimum include:
+- exact ordinary lodging prices if still open;
+- exact street/cheap penalties if still open;
+- lender encounter probability;
+- principal and delayed debt amount;
+- delayed activation interval if still balance-owned;
+- School/Activity availability while bound;
+- forced-Night exact penalty;
+- exact eligibility/content thresholds for paid_freedom / bound_life / takeover;
+- exact Meta rewards.
+
+For each decision give:
+- already-fixed surrounding constraints;
+- acceptable answer shape/range from authority;
+- downstream files/systems affected;
+- whether implementation can proceed partially without the decision.
+
+Do not recommend or select answers.
+
+Continue items 70–78 sequentially without waiting for Lead review.
