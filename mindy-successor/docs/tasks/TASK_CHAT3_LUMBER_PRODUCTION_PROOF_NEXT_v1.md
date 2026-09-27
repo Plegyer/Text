@@ -1069,3 +1069,20 @@ Map the intended sequencing between:
 Use current NightFlow phases and identify which Secret Debt sequencing points remain Product-owned. Do not change runtime or choose open penalties/chances.
 
 Continue items 58–66 sequentially without waiting for Lead review.
+
+
+## Queue item 67 — Secret Debt outcome-to-Meta decision boundary
+
+Create NEW file only:
+- `docs/poverty-prep/SECRET_DEBT_META_DECISION_BOUNDARY_v1.md`
+
+For `paid_freedom`, `bound_life`, and `takeover`, separate:
+- ending identity/outcome structure already required;
+- Meta reward family ideas already documented;
+- exact reward still requiring Product decision;
+- Palace prerequisite exclusion;
+- save/RunResult transaction expectations already supplied by generic ending infrastructure.
+
+Do not select exact Meta rewards or make Secret Debt count toward ordinary Hard Work.
+
+Continue items 59–67 sequentially without waiting for Lead review.
