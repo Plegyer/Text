@@ -1,0 +1,280 @@
+{
+  "version": 1,
+  "kind": "starter-trio-presentation-registry-delta",
+  "currentMain": "22772b1439c247d67fdd20c4e3fd55cc2eba4e20",
+  "pr34Merge": "712ab6c7368ab21906f3fcb0184b35d4f3e1411c",
+  "policy": {
+    "gameplayIdsMustExistInProduction": true,
+    "mediaReuseDoesNotMergeSemanticIdentity": true,
+    "staticFallbackRequired": true
+  },
+  "rows": [
+    {
+      "career": "lumber",
+      "slotType": "seasonal-shift",
+      "presentationId": "job/lumber/shift/spring/default",
+      "currentBaseMediaIds": [
+        "job.lumber.shift.spring.default"
+      ],
+      "currentBaseAssets": [
+        "assets/stage-lumber.svg"
+      ],
+      "fallbackChain": [
+        "job/lumber/shift/spring/default",
+        "location/town/default"
+      ],
+      "readiness": "READY_FOR_GIF",
+      "sourceAuthority": "current main Lumber production"
+    },
+    {
+      "career": "lumber",
+      "slotType": "seasonal-shift",
+      "presentationId": "job/lumber/shift/summer/default",
+      "currentBaseMediaIds": [
+        "job.lumber.shift.summer.default"
+      ],
+      "currentBaseAssets": [
+        "assets/stage-lumber.svg"
+      ],
+      "fallbackChain": [
+        "job/lumber/shift/summer/default",
+        "location/town/default"
+      ],
+      "readiness": "READY_FOR_GIF",
+      "sourceAuthority": "current main Lumber production"
+    },
+    {
+      "career": "lumber",
+      "slotType": "seasonal-shift",
+      "presentationId": "job/lumber/shift/autumn/default",
+      "currentBaseMediaIds": [
+        "job.lumber.shift.autumn.default"
+      ],
+      "currentBaseAssets": [
+        "assets/stage-lumber.svg"
+      ],
+      "fallbackChain": [
+        "job/lumber/shift/autumn/default",
+        "location/town/default"
+      ],
+      "readiness": "READY_FOR_GIF",
+      "sourceAuthority": "current main Lumber production"
+    },
+    {
+      "career": "lumber",
+      "slotType": "seasonal-shift",
+      "presentationId": "job/lumber/shift/winter/default",
+      "currentBaseMediaIds": [
+        "job.lumber.shift.winter.default"
+      ],
+      "currentBaseAssets": [
+        "assets/stage-lumber.svg"
+      ],
+      "fallbackChain": [
+        "job/lumber/shift/winter/default",
+        "location/town/default"
+      ],
+      "readiness": "READY_FOR_GIF",
+      "sourceAuthority": "current main Lumber production"
+    },
+    {
+      "career": "lumber",
+      "slotType": "result",
+      "presentationId": "job/lumber/result/default",
+      "currentBaseMediaIds": [
+        "job.lumber.shift.spring.default",
+        "job.lumber.shift.summer.default",
+        "job.lumber.shift.autumn.default",
+        "job.lumber.shift.winter.default"
+      ],
+      "currentBaseAssets": [
+        "assets/stage-lumber.svg"
+      ],
+      "fallbackChain": [
+        "job/lumber/result/default",
+        "job/lumber/shift/spring/default",
+        "location/town/default"
+      ],
+      "readiness": "OPTIONAL_POLISH",
+      "sourceAuthority": "current main Lumber production"
+    },
+    {
+      "career": "satyr-maid",
+      "slotType": "seasonal-shift",
+      "presentationId": "job/satyr-maid/shift/spring/default",
+      "currentBaseMediaIds": [
+        "stage.tavern.spring"
+      ],
+      "currentBaseAssets": [
+        "assets/stage-tavern.svg"
+      ],
+      "fallbackChain": [
+        "job/satyr-maid/shift/spring/default",
+        "location/town/default"
+      ],
+      "readiness": "READY_FOR_GIF",
+      "sourceAuthority": "PR34 merge 712ab6c7368ab21906f3fcb0184b35d4f3e1411c"
+    },
+    {
+      "career": "satyr-maid",
+      "slotType": "seasonal-shift",
+      "presentationId": "job/satyr-maid/shift/summer/default",
+      "currentBaseMediaIds": [
+        "stage.tavern.summer"
+      ],
+      "currentBaseAssets": [
+        "assets/stage-tavern.svg"
+      ],
+      "fallbackChain": [
+        "job/satyr-maid/shift/summer/default",
+        "location/town/default"
+      ],
+      "readiness": "READY_FOR_GIF",
+      "sourceAuthority": "PR34 merge 712ab6c7368ab21906f3fcb0184b35d4f3e1411c"
+    },
+    {
+      "career": "satyr-maid",
+      "slotType": "seasonal-shift",
+      "presentationId": "job/satyr-maid/shift/autumn/default",
+      "currentBaseMediaIds": [
+        "stage.tavern.autumn"
+      ],
+      "currentBaseAssets": [
+        "assets/stage-tavern.svg"
+      ],
+      "fallbackChain": [
+        "job/satyr-maid/shift/autumn/default",
+        "location/town/default"
+      ],
+      "readiness": "READY_FOR_GIF",
+      "sourceAuthority": "PR34 merge 712ab6c7368ab21906f3fcb0184b35d4f3e1411c"
+    },
+    {
+      "career": "satyr-maid",
+      "slotType": "seasonal-shift",
+      "presentationId": "job/satyr-maid/shift/winter/default",
+      "currentBaseMediaIds": [
+        "stage.tavern.winter"
+      ],
+      "currentBaseAssets": [
+        "assets/stage-tavern.svg"
+      ],
+      "fallbackChain": [
+        "job/satyr-maid/shift/winter/default",
+        "location/town/default"
+      ],
+      "readiness": "READY_FOR_GIF",
+      "sourceAuthority": "PR34 merge 712ab6c7368ab21906f3fcb0184b35d4f3e1411c"
+    },
+    {
+      "career": "satyr-maid",
+      "slotType": "result",
+      "presentationId": "job/satyr-maid/result/default",
+      "currentBaseMediaIds": [
+        "stage.tavern.spring",
+        "stage.tavern.summer",
+        "stage.tavern.autumn",
+        "stage.tavern.winter"
+      ],
+      "currentBaseAssets": [
+        "assets/stage-tavern.svg"
+      ],
+      "fallbackChain": [
+        "job/satyr-maid/result/default",
+        "job/satyr-maid/shift/spring/default",
+        "location/town/default"
+      ],
+      "readiness": "OPTIONAL_POLISH",
+      "sourceAuthority": "PR34 merge 712ab6c7368ab21906f3fcb0184b35d4f3e1411c"
+    },
+    {
+      "career": "undead-farm",
+      "slotType": "seasonal-shift",
+      "presentationId": "job/undead-farm/shift/spring/default",
+      "currentBaseMediaIds": [
+        "stage.hunt.spring"
+      ],
+      "currentBaseAssets": [
+        "assets/stage-forest.svg"
+      ],
+      "fallbackChain": [
+        "job/undead-farm/shift/spring/default",
+        "location/town/default"
+      ],
+      "readiness": "READY_FOR_GIF",
+      "sourceAuthority": "PR34 merge 712ab6c7368ab21906f3fcb0184b35d4f3e1411c"
+    },
+    {
+      "career": "undead-farm",
+      "slotType": "seasonal-shift",
+      "presentationId": "job/undead-farm/shift/summer/default",
+      "currentBaseMediaIds": [
+        "stage.hunt.summer"
+      ],
+      "currentBaseAssets": [
+        "assets/stage-forest.svg"
+      ],
+      "fallbackChain": [
+        "job/undead-farm/shift/summer/default",
+        "location/town/default"
+      ],
+      "readiness": "READY_FOR_GIF",
+      "sourceAuthority": "PR34 merge 712ab6c7368ab21906f3fcb0184b35d4f3e1411c"
+    },
+    {
+      "career": "undead-farm",
+      "slotType": "seasonal-shift",
+      "presentationId": "job/undead-farm/shift/autumn/default",
+      "currentBaseMediaIds": [
+        "stage.hunt.autumn"
+      ],
+      "currentBaseAssets": [
+        "assets/stage-forest.svg"
+      ],
+      "fallbackChain": [
+        "job/undead-farm/shift/autumn/default",
+        "location/town/default"
+      ],
+      "readiness": "READY_FOR_GIF",
+      "sourceAuthority": "PR34 merge 712ab6c7368ab21906f3fcb0184b35d4f3e1411c"
+    },
+    {
+      "career": "undead-farm",
+      "slotType": "seasonal-shift",
+      "presentationId": "job/undead-farm/shift/winter/default",
+      "currentBaseMediaIds": [
+        "stage.hunt.winter"
+      ],
+      "currentBaseAssets": [
+        "assets/stage-forest.svg"
+      ],
+      "fallbackChain": [
+        "job/undead-farm/shift/winter/default",
+        "location/town/default"
+      ],
+      "readiness": "READY_FOR_GIF",
+      "sourceAuthority": "PR34 merge 712ab6c7368ab21906f3fcb0184b35d4f3e1411c"
+    },
+    {
+      "career": "undead-farm",
+      "slotType": "result",
+      "presentationId": "job/undead-farm/result/default",
+      "currentBaseMediaIds": [
+        "stage.hunt.spring",
+        "stage.hunt.summer",
+        "stage.hunt.autumn",
+        "stage.hunt.winter"
+      ],
+      "currentBaseAssets": [
+        "assets/stage-forest.svg"
+      ],
+      "fallbackChain": [
+        "job/undead-farm/result/default",
+        "job/undead-farm/shift/spring/default",
+        "location/town/default"
+      ],
+      "readiness": "OPTIONAL_POLISH",
+      "sourceAuthority": "PR34 merge 712ab6c7368ab21906f3fcb0184b35d4f3e1411c"
+    }
+  ]
+}
