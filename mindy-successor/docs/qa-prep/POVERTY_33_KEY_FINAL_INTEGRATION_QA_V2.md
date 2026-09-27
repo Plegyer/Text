@@ -1,10 +1,18 @@
 # Poverty 33-key final integration QA v2
 
-Status: COMPLETE / GREEN_SAFE_TEXT_PATCH
+Status: COMPLETE / GREEN_POST_MERGE_MAIN
 
-Current main reviewed:
+Initial reviewed base:
 `f93878b954385a1c61d8a06a0673354207d11d70`
 (after PR50).
+
+The reviewed patch was subsequently integrated by PR #51.
+
+Accepted exact PR51 head:
+`b90099f6bda958053c1325ec250ea07e7f6fb7c7`.
+
+Merged as current main:
+`1a2f6e428da41e356f8d48df4a72923a5cc1928c`.
 
 Source:
 `poverty-copyedit-post-pr48-v4.fixture.json`.
@@ -118,3 +126,33 @@ On the fresh integration head:
 `GREEN_SAFE_TEXT_PATCH`.
 
 The 33-key ordinary-poverty copyedit is ready for selective integration from current main.
+
+
+## Post-review production integration
+
+PR #51:
+`Lead: apply ordinary-poverty bilingual copyedit`.
+
+Exact-head workflow:
+- run #84;
+- id `36346807780`;
+- SUCCESS;
+- validator 17 packs / 46 events / 35 actions / 9 endings;
+- 323 / 323 tests.
+
+Post-merge main workflow:
+- run #85;
+- id `36346898672`;
+- SUCCESS;
+- validator 17 / 46 / 35 / 9;
+- 323 / 323 tests.
+
+PR51 production regressions PASS:
+- `poverty copyedit production patch is exactly 33 existing RU EN text keys`;
+- `poverty copyedit leaves ordinary production identity set exact`;
+- `poverty copyedit is text-only and excludes Secret Debt`;
+- all-six-pack ordinary-poverty locale-invariant natural-path regression;
+- ordinary-poverty pending-scene RU↔EN Save-invariance renderer regression.
+
+Current classification is therefore:
+`GREEN_POST_MERGE_MAIN`.
