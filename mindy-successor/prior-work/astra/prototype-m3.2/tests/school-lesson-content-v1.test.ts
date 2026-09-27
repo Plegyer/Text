@@ -20,14 +20,14 @@ const typedProgress=JSON.parse(
 );
 
 const trackEventIds=[
-  'school.lesson-content.literacy-and-numbers',
-  'school.lesson-content.arcana',
-  'school.lesson-content.rhetoric-and-social',
-  'school.lesson-content.etiquette-and-presentation',
-  'school.lesson-content.field-craft',
-  'school.lesson-content.physical-training',
-  'school.lesson-content.arts-and-performance',
-  'school.lesson-content.body-confidence'
+  'school-lesson-content-v1.literacy-and-numbers',
+  'school-lesson-content-v1.arcana',
+  'school-lesson-content-v1.rhetoric-and-social',
+  'school-lesson-content-v1.etiquette-and-presentation',
+  'school-lesson-content-v1.field-craft',
+  'school-lesson-content-v1.physical-training',
+  'school-lesson-content-v1.arts-and-performance',
+  'school-lesson-content-v1.body-confidence'
 ];
 
 test('repeatable lesson authored pack conforms to current pack schema',()=>{
@@ -105,7 +105,7 @@ test('authored presentation fallback references resolve inside the pack catalog'
 
 test('current event primitives expose only a generic safe post-School hook; course-specific authored events stay untriggered',()=>{
   const generic=pack.events.find(
-    (event:any)=>event.id==='school.lesson-content.after-school'
+    (event:any)=>event.id==='school-lesson-content-v1.after-school'
   );
   assert.ok(generic);
   assert.deepEqual(generic.reactionTriggers,[
