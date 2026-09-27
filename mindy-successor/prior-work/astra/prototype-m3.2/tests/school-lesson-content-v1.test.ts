@@ -6,17 +6,14 @@ import {SCHOOL_COURSES} from '../src/core/school.ts';
 import {packSchema} from '../src/core/schema.ts';
 import {definitions} from './helpers.ts';
 
-const pack=JSON.parse(
-  readFileSync(
-    'content/packs/school-lesson-content-v1.json',
-    'utf8'
-  )
+const production=JSON.parse(
+  readFileSync('content/packs/school-lesson-content-v1.json','utf8')
+);
+const library=JSON.parse(
+  readFileSync('content/packs/school-target/school-lesson-content-v1.json','utf8')
 );
 const typedProgress=JSON.parse(
-  readFileSync(
-    'content/school-typed-progress-exactly-once.fixture.json',
-    'utf8'
-  )
+  readFileSync('content/school-typed-progress-exactly-once.fixture.json','utf8')
 );
 
 const trackEventIds=[
@@ -30,19 +27,21 @@ const trackEventIds=[
   'school-lesson-content-v1.body-confidence'
 ];
 
-test('repeatable lesson authored pack conforms to current pack schema',()=>{
-  assert.doesNotThrow(()=>packSchema.parse(pack));
-  assert.equal(pack.id,'school-lesson-content-v1');
+test('reachable lesson production pack and full authored library conform to pack schema',()=>{
+  assert.doesNotThrow(()=>packSchema.parse(production));
+  assert.doesNotThrow(()=>packSchema.parse(library));
+  assert.equal(production.id,'school-lesson-content-v1');
+  assert.deepEqual(production.events.map((e:any)=>e.id),['school-lesson-content-v1.after-school']);
 });
 
-test('all eight School tracks have authored repeatable lesson content',()=>{
-  const ids=new Set(pack.events.map((event:any)=>event.id));
+test('all eight School tracks retain three authored lesson variants in staging',()=>{
+  const ids=new Set(library.events.map((event:any)=>event.id));
   for(const eventId of trackEventIds)assert.equal(ids.has(eventId),true,eventId);
-
   for(const eventId of trackEventIds){
-    const event=pack.events.find((entry:any)=>entry.id===eventId);
+    const event=library.events.find((entry:any)=>entry.id===eventId);
     assert.ok(event);
     assert.equal(event.variants.length,3,eventId);
+    assert.deepEqual(event.reactionTriggers,[],eventId);
   }
 });
 
@@ -66,54 +65,38 @@ test('authored lesson content does not modify locked course mechanics',()=>{
     ]
   );
 
-  for(const event of pack.events){
-    for(const choice of event.choices)assert.deepEqual(choice.effects,[],event.id);
+  for(const pack of [production,library]){
+    for(const event of pack.events){
+      for(const choice of event.choices)assert.deepEqual(choice.effects,[],event.id);
+    }
   }
 });
 
 test('paid typed-progress contract remains lessons_completed only and Night remains separate',()=>{
   assert.equal(typedProgress.entries.length,8);
   for(const entry of typedProgress.entries){
-    assert.deepEqual(entry.paidLessonDelta,{
-      lessons_completed:1,
-      night_study_sessions:0
-    },entry.courseId);
-    assert.deepEqual(entry.nightStudyDelta,{
-      lessons_completed:0,
-      night_study_sessions:1
-    },entry.courseId);
+    assert.deepEqual(entry.paidLessonDelta,{lessons_completed:1,night_study_sessions:0},entry.courseId);
+    assert.deepEqual(entry.nightStudyDelta,{lessons_completed:0,night_study_sessions:1},entry.courseId);
   }
 });
 
-test('authored lesson pack contains no ordinary Lust gain',()=>{
-  const serialized=JSON.stringify(pack).toLowerCase();
-  assert.equal(serialized.includes('"lust"'),false);
+test('authored lesson content contains no ordinary Lust gain',()=>{
+  assert.equal(JSON.stringify(library).toLowerCase().includes('"lust"'),false);
 });
 
-test('authored presentation fallback references resolve inside the pack catalog',()=>{
-  const cat=loadCatalog(definitions,[pack]);
+test('reachable generic after-School presentation fallback resolves in production catalog',()=>{
+  const cat=loadCatalog(definitions,[production]);
   const mediaIds=new Set(cat.media.map(media=>media.id));
-
-  for(const event of pack.events){
+  for(const event of production.events){
     for(const variant of event.variants){
-      for(const mediaId of variant.media){
-        assert.equal(mediaIds.has(mediaId),true,event.id+':'+mediaId);
-      }
+      for(const mediaId of variant.media)assert.equal(mediaIds.has(mediaId),true,event.id+':'+mediaId);
     }
   }
 });
 
-test('current event primitives expose only a generic safe post-School hook; course-specific authored events stay untriggered',()=>{
-  const generic=pack.events.find(
-    (event:any)=>event.id==='school-lesson-content-v1.after-school'
-  );
-  assert.ok(generic);
-  assert.deepEqual(generic.reactionTriggers,[
-    {kind:'actionCompleted',action:'school'}
-  ]);
-
-  for(const eventId of trackEventIds){
-    const event=pack.events.find((entry:any)=>entry.id===eventId);
-    assert.deepEqual(event.reactionTriggers,[],eventId);
-  }
+test('current routing exposes only the generic safe post-School hook',()=>{
+  const generic=production.events[0];
+  assert.equal(generic.id,'school-lesson-content-v1.after-school');
+  assert.deepEqual(generic.reactionTriggers,[{kind:'actionCompleted',action:'school'}]);
+  assert.equal(trackEventIds.some(id=>production.events.some((e:any)=>e.id===id)),false);
 });
