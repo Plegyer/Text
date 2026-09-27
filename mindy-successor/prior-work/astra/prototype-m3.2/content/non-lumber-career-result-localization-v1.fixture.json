@@ -1,0 +1,172 @@
+{
+  "version": 1,
+  "fixtureId": "non-lumber-career-result-localization-v1",
+  "defaultLocale": "ru",
+  "scope": "current non-Lumber ordinary-career result presentation only",
+  "actionIds": [
+    "satyr-maid.shift",
+    "undead-farm.shift",
+    "tavern.shift",
+    "hunter.shift",
+    "guard.shift",
+    "merchant.shift",
+    "artist-geisha.shift",
+    "assassin.shift",
+    "prostitute.shift"
+  ],
+  "strings": {
+    "action.satyr-maid.shift.result.spring.default.text": {
+      "ru": "Весенняя смена в баре сатиров начинается с новых путников и первых по-настоящему занятых столов сезона. Приходится быстро запоминать лица, заказы и ритм зала.",
+      "en": "The spring shift at the satyr bar brings new travelers and the first truly busy tables of the season. You have to learn faces, orders, and the room’s rhythm quickly."
+    },
+    "action.satyr-maid.shift.result.summer.default.text": {
+      "ru": "Летом зал остаётся шумным допоздна. Поток гостей почти не ослабевает, и хорошая смена зависит от темпа, памяти и умения не теряться в разговорах.",
+      "en": "In summer the room stays loud late into the evening. The flow of guests barely slows, and a good shift depends on pace, memory, and staying composed in conversation."
+    },
+    "action.satyr-maid.shift.result.autumn.default.text": {
+      "ru": "Осенняя смена проходит на фоне праздничного движения. Обычная подача превращается в управление очередями, просьбами и постоянно меняющимися столами.",
+      "en": "The autumn shift runs through festival traffic. Ordinary service turns into managing queues, requests, and tables that keep changing."
+    },
+    "action.satyr-maid.shift.result.winter.default.text": {
+      "ru": "Зимой незнакомцев меньше, зато постоянные гости задерживаются дольше. Работа становится спокойнее по темпу, но требует больше внимания к привычкам и разговорам.",
+      "en": "Winter brings fewer strangers, but regulars stay longer. The pace is calmer, while the work asks for more attention to habits and conversation."
+    },
+    "action.undead-farm.shift.result.spring.default.text": {
+      "ru": "Весенняя смена проходит на мокрой земле среди свежих всходов и нестабильной магии. Приходится постоянно проверять грядки, инструменты и тех, кто работает рядом.",
+      "en": "The spring shift runs across wet ground among fresh growth and unstable magic. You constantly check the beds, the tools, and the workers beside you."
+    },
+    "action.undead-farm.shift.result.summer.default.text": {
+      "ru": "Летом всё растёт слишком быстро, поэтому обслуживание не заканчивается ни на минуту. Живые культуры и нежить требуют разного внимания, но общий порядок должен держаться.",
+      "en": "In summer everything grows too quickly, so maintenance never really stops. Living crops and undead workers need different attention, while the whole routine still has to hold together."
+    },
+    "action.undead-farm.shift.result.autumn.default.text": {
+      "ru": "Осенняя смена занята сбором, сортировкой и подготовкой запасов. Каждый час приходится решать, что убрать первым и что ещё может подождать.",
+      "en": "The autumn shift is filled with harvesting, sorting, and preparing stores. Every hour means deciding what must be handled first and what can still wait."
+    },
+    "action.undead-farm.shift.result.winter.default.text": {
+      "ru": "Зимой работа уходит в помещения: ремонт, хранение и осторожное обращение со странными сохранёнными материалами требуют терпения больше, чем скорости.",
+      "en": "In winter the work moves indoors: repairs, storage, and careful handling of strange preserved materials demand patience more than speed."
+    },
+    "action.tavern.shift.result.spring.default.text": {
+      "ru": "Весной в таверне становится больше новых лиц. Смена проходит между обычными заказами, короткими разговорами и попытками быстро понять, кому что нужно.",
+      "en": "Spring brings more unfamiliar faces into the tavern. The shift moves between ordinary orders, short conversations, and quickly working out what each guest needs."
+    },
+    "action.tavern.shift.result.summer.default.text": {
+      "ru": "Летом столы освобождаются ненадолго и тут же занимают новые гости. Хорошая смена зависит от темпа, ясной памяти и умения не путать просьбы.",
+      "en": "In summer tables stay empty only briefly before new guests take them. A good shift depends on pace, a clear memory, and keeping requests from getting mixed up."
+    },
+    "action.tavern.shift.result.autumn.default.text": {
+      "ru": "Осенью поток гостей становится неровным: то зал почти пуст, то все приходят сразу. Приходится постоянно менять порядок задач, не теряя обычного уровня обслуживания.",
+      "en": "Autumn traffic comes in waves: the room is nearly empty one moment and crowded the next. You keep rearranging priorities without letting ordinary service slip."
+    },
+    "action.tavern.shift.result.winter.default.text": {
+      "ru": "Зимой люди задерживаются дольше у тёплых столов. Смена проходит спокойнее, но требует больше внимания к постоянным гостям и мелким деталям.",
+      "en": "In winter people linger longer around warm tables. The shift is calmer, but it asks for more attention to regulars and small details."
+    },
+    "action.hunter.shift.result.spring.default.text": {
+      "ru": "Весенняя работа проходит по знакомым окрестным маршрутам. Земля ещё сырая, следы читаются хорошо, а главная задача — не превращать обычную смену в большую экспедицию.",
+      "en": "The spring job follows familiar local routes. The ground is still damp, tracks are easy to read, and the main task is to keep ordinary work from turning into a major expedition."
+    },
+    "action.hunter.shift.result.summer.default.text": {
+      "ru": "Летом приходится выбирать более короткие маршруты и внимательнее следить за темпом. Обычная работа ценит точность и выносливость больше, чем дальность похода.",
+      "en": "In summer you choose shorter routes and watch the pace more carefully. Ordinary work rewards accuracy and endurance more than the distance covered."
+    },
+    "action.hunter.shift.result.autumn.default.text": {
+      "ru": "Осенью местная работа становится плотнее: следов больше, погода меняется быстрее, а возвращаться нужно с ясным результатом, а не с новой загадкой.",
+      "en": "Autumn makes local work denser: there are more tracks, the weather changes faster, and the goal is to return with a clear result rather than a new mystery."
+    },
+    "action.hunter.shift.result.winter.default.text": {
+      "ru": "Зимой обычная охотничья смена требует осторожного маршрута и раннего возвращения. Работа остаётся местной и практической, без выхода в отдельный экспедиционный слой.",
+      "en": "In winter an ordinary hunting shift calls for a careful route and an early return. The work stays local and practical, without entering a separate expedition layer."
+    },
+    "action.guard.shift.result.spring.default.text": {
+      "ru": "Весенний патруль проходит по ожившим улицам, где после зимы снова становится тесно. Работа состоит из обычных проверок, коротких разговоров и внимательности к мелким нарушениям порядка.",
+      "en": "The spring patrol moves through streets growing busy again after winter. The work is ordinary checks, short conversations, and attention to small disruptions."
+    },
+    "action.guard.shift.result.summer.default.text": {
+      "ru": "Летом людей на улицах больше и маршруты плотнее. Смена требует ровного темпа, терпения и умения не превращать каждую мелочь в большой конфликт.",
+      "en": "Summer puts more people on the streets and makes the routes busier. The shift calls for steady pacing, patience, and not turning every small problem into a larger conflict."
+    },
+    "action.guard.shift.result.autumn.default.text": {
+      "ru": "Осенью к обычным патрулям добавляется больше организационной суеты. Приходится внимательнее следить за проходами, очередями и тем, чтобы правила оставались понятными для всех.",
+      "en": "Autumn adds more organizational pressure to ordinary patrols. You pay closer attention to routes, queues, and keeping the rules clear for everyone."
+    },
+    "action.guard.shift.result.winter.default.text": {
+      "ru": "Зимой смена становится медленнее и осторожнее. Скользкие улицы и ранняя темнота требуют больше внимания к маршруту и меньше спешки.",
+      "en": "Winter makes the shift slower and more cautious. Slippery streets and early darkness require more attention to the route and less haste."
+    },
+    "action.merchant.shift.result.spring.default.text": {
+      "ru": "Весной рынок быстро наполняется новыми товарами и новыми покупателями. Смена проходит между оценкой, короткими переговорами и проверкой того, что действительно стоит выставлять сегодня.",
+      "en": "Spring quickly fills the market with new goods and new buyers. The shift moves between appraisal, short negotiations, and checking what is actually worth offering today."
+    },
+    "action.merchant.shift.result.summer.default.text": {
+      "ru": "Летом торговые ряды шумнее и быстрее. Приходится держать в голове цены, сроки и обещания, не позволяя спешке превращать обычную сделку в ошибку.",
+      "en": "Summer makes the market louder and faster. You keep prices, timing, and promises in mind without letting haste turn an ordinary deal into a mistake."
+    },
+    "action.merchant.shift.result.autumn.default.text": {
+      "ru": "Осенью больше внимания уходит на запасы и расчёт. Смена требует понимать, что стоит продать сейчас, что придержать и где не переплатить за чужую срочность.",
+      "en": "Autumn puts more attention on stock and calculation. The shift is about knowing what to sell now, what to hold, and where not to overpay for someone else’s urgency."
+    },
+    "action.merchant.shift.result.winter.default.text": {
+      "ru": "Зимой выбор становится уже, а договорённости важнее. Хорошая смена зависит от точного учёта и умения заранее замечать нехватку.",
+      "en": "Winter narrows the selection and makes agreements more important. A good shift depends on accurate records and noticing shortages before they become problems."
+    },
+    "action.artist-geisha.shift.result.spring.default.text": {
+      "ru": "Весенняя смена в Доме искусств проходит между репетицией, подготовкой пространства и вниманием к первым гостям сезона. Хороший результат зависит от собранности не меньше, чем от выразительности.",
+      "en": "The spring shift at the Artist House moves between rehearsal, preparing the space, and attending to the first guests of the season. A good result depends on composure as much as expression."
+    },
+    "action.artist-geisha.shift.result.summer.default.text": {
+      "ru": "Летом программа плотнее, а гости задерживаются дольше. Приходится быстро переключаться между выступлением, подготовкой и спокойным общением.",
+      "en": "Summer brings a denser program and guests who stay longer. You switch quickly between performance, preparation, and calm conversation."
+    },
+    "action.artist-geisha.shift.result.autumn.default.text": {
+      "ru": "Осенью работа становится более требовательной к деталям. Репетиции, порядок программы и ожидания гостей нужно удерживать одновременно, не теряя общего ритма.",
+      "en": "Autumn makes the work more demanding of detail. Rehearsal, program order, and guest expectations all have to be held together without losing the overall rhythm."
+    },
+    "action.artist-geisha.shift.result.winter.default.text": {
+      "ru": "Зимой смена проходит в более камерном темпе. Меньше движения означает больше внимания к точности, манерам и качеству каждого отдельного выступления.",
+      "en": "Winter gives the shift a more intimate pace. Less movement means more attention to precision, manners, and the quality of each individual performance."
+    },
+    "action.assassin.shift.result.spring.default.text": {
+      "ru": "Весенняя смена проходит в наблюдении и проверке маршрутов. Людей на улицах становится больше, поэтому особенно важны терпение и незаметность.",
+      "en": "The spring shift is spent on observation and route checks. More people are back on the streets, so patience and discretion matter more."
+    },
+    "action.assassin.shift.result.summer.default.text": {
+      "ru": "Летом город остаётся оживлённым дольше. Приходится точнее выбирать время для доставки, наблюдения и подготовки маршрута.",
+      "en": "In summer the city stays busy later. Timing matters more for delivery, observation, and route preparation."
+    },
+    "action.assassin.shift.result.autumn.default.text": {
+      "ru": "Осенью работа требует больше проверки деталей: расписания меняются, проходы становятся менее предсказуемыми, а ошибки заметнее.",
+      "en": "Autumn demands more checking of details: schedules shift, routes become less predictable, and mistakes are easier to notice."
+    },
+    "action.assassin.shift.result.winter.default.text": {
+      "ru": "Зимой обычная скрытая работа становится медленнее и осторожнее. Ранний сумрак меняет маршруты и требует лучшей подготовки.",
+      "en": "In winter ordinary covert work becomes slower and more careful. Early darkness changes routes and requires better preparation."
+    },
+    "action.prostitute.shift.result.spring.default.text": {
+      "ru": "Весенняя смена проходит спокойно: больше новых клиентов, больше разговоров о правилах и границах, больше внимания к тому, чтобы ожидания были понятны заранее.",
+      "en": "The spring shift stays calm: more new clients, more conversations about rules and boundaries, and more attention to making expectations clear in advance."
+    },
+    "action.prostitute.shift.result.summer.default.text": {
+      "ru": "Летом поток становится плотнее, поэтому особенно важны расписание, паузы и ясные договорённости. Смена остаётся добровольной и проходит в заранее обозначенных рамках.",
+      "en": "Summer brings a busier flow, making scheduling, breaks, and clear agreements especially important. The shift remains voluntary and stays within stated boundaries."
+    },
+    "action.prostitute.shift.result.autumn.default.text": {
+      "ru": "Осенью работа становится ровнее и привычнее. Больше времени уходит на организацию, повторные встречи и поддержание профессионального порядка.",
+      "en": "Autumn makes the work steadier and more familiar. More time goes into organization, repeat appointments, and maintaining professional routines."
+    },
+    "action.prostitute.shift.result.winter.default.text": {
+      "ru": "Зимой смена проходит тише. Меньше спешки позволяет уделить больше внимания комфорту, границам и аккуратному завершению каждой встречи.",
+      "en": "Winter makes the shift quieter. Less rush leaves more room to focus on comfort, boundaries, and closing each appointment carefully."
+    }
+  },
+  "invariants": {
+    "existingActionIdsOnly": true,
+    "newGameplayIds": false,
+    "mechanicsIncluded": false,
+    "effectsIncluded": false,
+    "rewardsIncluded": false,
+    "rngIncluded": false,
+    "saveFieldsIncluded": false
+  }
+}
