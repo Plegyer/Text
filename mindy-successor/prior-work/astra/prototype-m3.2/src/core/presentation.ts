@@ -31,11 +31,35 @@ const staticOverrideSchema=z.object({
   src:staticSource,
   alt:z.string().min(1).max(300)
 }).strict();
+const poolCandidateKeySchema=z.string().min(1).max(120).regex(/^[a-z0-9][a-z0-9._-]*$/,'Некорректный media candidate key.');
+const poolCandidateSchema=z.object({
+  key:poolCandidateKeySchema,
+  kind:z.literal('gif'),
+  src:gifSource,
+  alt:z.string().min(1).max(300),
+  weight:z.number().finite().positive().optional()
+}).strict();
+const mediaPoolSchema=z.object({
+  version:z.number().int().min(1).max(1000).default(1),
+  ordering:z.enum(['ordered','unordered']).default('ordered'),
+  selectionPolicy:z.enum(['unweighted','weighted']).default('unweighted'),
+  candidates:z.array(poolCandidateSchema).min(3).max(5)
+}).strict().superRefine((pool,ctx)=>{
+  const keys=new Set<string>();
+  for(let i=0;i<pool.candidates.length;i++){
+    const key=pool.candidates[i]!.key;
+    if(keys.has(key))ctx.addIssue({code:'custom',path:['candidates',i,'key'],message:`Duplicate media candidate key ${key}.`});
+    keys.add(key);
+  }
+});
 const slotOverrideSchema=z.object({
   primary:gifOverrideSchema.optional(),
+  pool:mediaPoolSchema.optional(),
   static:staticOverrideSchema.optional(),
   fallbackId:presentationIdSchema.optional()
-}).strict();
+}).strict().superRefine((slot,ctx)=>{
+  if(slot.primary&&slot.pool)ctx.addIssue({code:'custom',path:['pool'],message:'presentation slot cannot define both primary and pool.'});
+});
 
 export const presentationSchema=z.object({
   version:z.literal(1),
@@ -60,13 +84,17 @@ export interface ResolvedPresentationMedia {
   src:string;
   alt:string;
   slotId:string;
-  source:'override-primary'|'override-static'|'catalog';
+  source:'override-primary'|'override-pool'|'override-static'|'catalog';
   mediaId?:string;
+  candidateKey?:string;
+  weight?:number;
+  poolVersion?:number;
 }
 
 export interface ResolvedPresentation {
   requestedId:string;
   candidates:ResolvedPresentationMedia[];
+  selected?:ResolvedPresentationMedia;
   textOnly:boolean;
   diagnostics:string[];
 }
@@ -294,7 +322,41 @@ export function applyPresentation(base:Catalog,input:unknown):Catalog{
   return checked;
 }
 
-function mediaCandidates(cat:Catalog,slot:PresentationSlot,override:PresentationSlotOverride|undefined,animationsEnabled:boolean){
+function stablePresentationHash(value:string){
+  let hash=2166136261;
+  for(let i=0;i<value.length;i++){
+    hash^=value.charCodeAt(i);
+    hash=Math.imul(hash,16777619);
+  }
+  return hash>>>0;
+}
+
+export function selectPresentationPoolIndex(
+  candidates:ReadonlyArray<{weight?:number}>,
+  input:{presentationId:string;occurrenceKey?:string;poolVersion?:number;selectionPolicy?:'unweighted'|'weighted'}
+){
+  if(!candidates.length)return -1;
+  const seed=stablePresentationHash(`${input.presentationId}|${input.occurrenceKey??input.presentationId}|v${input.poolVersion??1}`);
+  if(input.selectionPolicy==='weighted'){
+    const weights=candidates.map(candidate=>candidate.weight??1);
+    const total=weights.reduce((sum,weight)=>sum+weight,0);
+    let ticket=(seed/4294967296)*total;
+    for(let i=0;i<weights.length;i++){
+      ticket-=weights[i]!;
+      if(ticket<0)return i;
+    }
+    return weights.length-1;
+  }
+  return seed%candidates.length;
+}
+
+function mediaCandidates(
+  cat:Catalog,
+  slot:PresentationSlot,
+  override:PresentationSlotOverride|undefined,
+  animationsEnabled:boolean,
+  occurrenceKey?:string
+){
   const result:ResolvedPresentationMedia[]=[];
   const push=(candidate:ResolvedPresentationMedia)=>result.push(candidate);
 
@@ -303,10 +365,36 @@ function mediaCandidates(cat:Catalog,slot:PresentationSlot,override:Presentation
     push({...override.primary,slotId:slot.id,source:'override-primary'});
     if(override.static)push({...override.static,slotId:slot.id,source:'override-static'});
   }
+  if(animationsEnabled&&override?.pool){
+    const pool=override.pool;
+    const selected=selectPresentationPoolIndex(pool.candidates,{
+      presentationId:slot.id,
+      occurrenceKey,
+      poolVersion:pool.version,
+      selectionPolicy:pool.selectionPolicy
+    });
+    const order=selected<0?[]:[
+      pool.candidates[selected]!,
+      ...pool.candidates.filter((_,index)=>index!==selected)
+    ];
+    for(const candidate of order){
+      push({
+        kind:'gif',
+        src:candidate.src,
+        alt:candidate.alt,
+        slotId:slot.id,
+        source:'override-pool',
+        candidateKey:candidate.key,
+        weight:candidate.weight,
+        poolVersion:pool.version
+      });
+    }
+    if(override.static)push({...override.static,slotId:slot.id,source:'override-static'});
+  }
   if(animationsEnabled){
     for(const m of base.filter(m=>m.kind==='gif'))push({kind:m.kind,src:m.src,alt:m.alt,slotId:slot.id,source:'catalog',mediaId:m.id});
   }
-  if(!override?.primary&&override?.static)push({...override.static,slotId:slot.id,source:'override-static'});
+  if(!override?.primary&&!override?.pool&&override?.static)push({...override.static,slotId:slot.id,source:'override-static'});
   if(!animationsEnabled&&override?.static)push({...override.static,slotId:slot.id,source:'override-static'});
   for(const m of base.filter(m=>m.kind==='image'))push({kind:m.kind,src:m.src,alt:m.alt,slotId:slot.id,source:'catalog',mediaId:m.id});
   if(animationsEnabled){
@@ -315,7 +403,7 @@ function mediaCandidates(cat:Catalog,slot:PresentationSlot,override:Presentation
   return result;
 }
 
-export function resolvePresentation(cat:Catalog,input:unknown,presentationId:string,options:{animationsEnabled?:boolean}={}):ResolvedPresentation{
+export function resolvePresentation(cat:Catalog,input:unknown,presentationId:string,options:{animationsEnabled?:boolean;occurrenceKey?:string}={}):ResolvedPresentation{
   const patch=presentationSchema.parse(input);
   validateSlotOverrides(cat,patch);
   const animationsEnabled=options.animationsEnabled??true;
@@ -332,7 +420,7 @@ export function resolvePresentation(cat:Catalog,input:unknown,presentationId:str
   const seenSlots=new Set<string>();
   while(current&&!seenSlots.has(current.id)){
     seenSlots.add(current.id);
-    candidates.push(...mediaCandidates(cat,current,patch.slots?.[current.id],animationsEnabled));
+    candidates.push(...mediaCandidates(cat,current,patch.slots?.[current.id],animationsEnabled,options.occurrenceKey));
     const fallbackId=patch.slots?.[current.id]?.fallbackId??current.fallbackId;
     current=fallbackId?byId.get(fallbackId):undefined;
   }
@@ -348,6 +436,7 @@ export function resolvePresentation(cat:Catalog,input:unknown,presentationId:str
   return {
     requestedId:presentationId,
     candidates:unique,
+    selected:unique[0],
     textOnly:unique.length===0,
     diagnostics
   };

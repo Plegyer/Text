@@ -124,7 +124,8 @@ export function mountEditor(root:HTMLElement,base:Catalog,current:Presentation,s
 
   gif.onchange=()=>readFile(gif,['image/gif'],dataUrl=>{
     const currentSlot=slotOverride()??{};
-    writeSlot({...currentSlot,primary:{kind:'gif',src:dataUrl,alt:alt.value||slots.find(s=>s.id===media.value)?.label||media.value}});
+    const {pool:_pool,...withoutPool}=currentSlot;
+    writeSlot({...withoutPool,primary:{kind:'gif',src:dataUrl,alt:alt.value||slots.find(s=>s.id===media.value)?.label||media.value}});
     status.textContent='GIF выбран. Проверьте preview и сохраните замену.';
   });
   staticFile.onchange=()=>readFile(staticFile,['image/png','image/jpeg','image/webp'],(dataUrl,file)=>{
