@@ -2493,3 +2493,78 @@ Consolidate items 149–159:
 - recommended next useful 12-task wave only if real independent work remains.
 
 Continue items 149–160 sequentially without waiting for Lead review.
+
+
+## Queue item 161 — ordinary poverty all-six-pack bilingual natural-path matrix v1
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/ordinary-poverty-all-pack-bilingual-paths-v1.test.ts`
+
+Cover every current ordinary-poverty production pack with at least one naturally reachable representative path. Validate RU+EN key presence, locale-neutral pending identity, exact-once effects, reload stability and Secret Debt exclusion.
+
+## Queue item 162 — ordinary poverty shared Night/UI copy inventory v1
+Create NEW file only:
+- `docs/poverty-prep/ORDINARY_POVERTY_SHARED_NIGHT_UI_COPY_INVENTORY_v1.md`
+
+Inventory remaining player-facing lodging/Night text surrounding poverty events that is outside event payloads. Classify SHIPPED_RU_EN / RU_FALLBACK_ONLY / MISSING / SHARED_UI_OWNER. Do not edit shared UI.
+
+## Queue item 163 — ordinary poverty shared-surface localization delta v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/poverty-shared-surface-localization-v1.fixture.json`
+
+Provide RU+EN presentation-only keys for current poverty-adjacent lodging/Night surfaces that can safely be localized without changing mechanics. Exclude keys already owned by Lead/shared UI if collision risk exists; document omissions explicitly.
+
+## Queue item 164 — Forest logging-road route-scene localization delta v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/forest-logging-road-localization-v1.fixture.json`
+
+Convert the existing logging-road scene bank into locale-neutral RU+EN localization entries only. No route/mechanics changes.
+
+## Queue item 165 — Forest old-boundary route-scene localization delta v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/forest-old-boundary-localization-v1.fixture.json`
+
+Convert only existing shipped old-boundary route identity scene prose into RU+EN localization entries. Do not invent token acquisition/use semantics.
+
+## Queue item 166 — Forest route-scene localization collision guard v1
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/forest-route-localization-collision-v1.test.ts`
+
+Validate items 164–165 are locale-neutral, additive or exact-identical against current localization, reference only existing shipped route identities, and contain no Hunter production identity or gameplay fields.
+
+## Queue item 167 — Forest navigation challenge staging fixture v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/forest-navigation-challenge-staging-v1.fixture.json`
+
+Machine-readable CONTENT_DRAFT only. Map current runtime-capable primitives and authored RU+EN prose candidates for the navigation family. Keep IDs/thresholds/rewards/route binding explicitly PRODUCT_OPEN.
+
+## Queue item 168 — Forest physical challenge staging fixture v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/forest-physical-challenge-staging-v1.fixture.json`
+
+Same boundary for physical obstacle family. Existing capabilities may be referenced as possibilities, never selected as new Product rules.
+
+## Queue item 169 — Forest anomaly challenge staging fixture v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/forest-anomaly-challenge-staging-v1.fixture.json`
+
+Same boundary for interpretation/ritual-anomaly family. School Arcana public-result provider/threshold remains Product-open and must not be invented.
+
+## Queue item 170 — Secret Debt bilingual localization-key inventory v1
+Create NEW file only:
+- `docs/poverty-prep/SECRET_DEBT_BILINGUAL_LOCALIZATION_KEY_INVENTORY_v1.md`
+
+Inventory already-authored Secret Debt player-facing RU+EN surfaces and propose stable presentation localization keys. Authoring-only: no activation probability, debt amount, delay, penalties, outcome thresholds or Meta rewards.
+
+## Queue item 171 — Secret Debt authored-content isolation regression v1
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/secret-debt-authored-content-isolation-v1.test.ts`
+
+Validate current authored/staging Secret Debt material cannot be mistaken for root-loaded production gameplay: no current main pack activation, no Palace 10/10 counting, no ordinary-poverty ID collision, no guessed mechanics/rewards.
+
+## Queue item 172 — Forest poverty selective integration handoff v3
+Create NEW file only:
+- `docs/lumber-prep/FOREST_POVERTY_SELECTIVE_INTEGRATION_HANDOFF_v3.md`
+
+Consolidate items 161–171 into exact SAFE_TO_COPY / STAGING_ONLY / PRODUCT_OPEN / BLOCKED categories and identify the next useful work only after Lead poverty localization integration or Forest route-presentation binding.
+
+Continue items 161–172 sequentially without waiting for Lead review.
