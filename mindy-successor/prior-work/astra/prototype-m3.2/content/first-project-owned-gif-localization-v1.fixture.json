@@ -1,0 +1,14 @@
+{
+  "formatVersion": 1,
+  "kind": "first-project-owned-gif-localization",
+  "status": "BLOCKED_BY_GIF_EXPORT",
+  "sourcePool": "content/presentation-drafts/first-project-owned-gif-pool-v1.json",
+  "strings": {},
+  "candidateBindings": [],
+  "reason": "No actual GIF candidates exist, so no RU/EN candidate alt or caption keys are emitted.",
+  "invariants": {
+    "localeChangesCandidateSelection": false,
+    "candidateIdentityLocaleNeutral": true,
+    "fakeLocalizationEntries": false
+  }
+}
