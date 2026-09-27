@@ -1,0 +1,525 @@
+{
+  "formatVersion": 1,
+  "id": "school-ui-ru-en-v1",
+  "status": "AUTHORING_FIXTURE_NOT_RUNTIME_PACK",
+  "sourceLocale": "ru",
+  "supportedLocales": [
+    "ru",
+    "en"
+  ],
+  "courses": [
+    {
+      "courseId": "school.course.literacy_and_numbers",
+      "label": {
+        "ru": "Грамотность и счёт",
+        "en": "Literacy & Numbers"
+      },
+      "description": {
+        "ru": "Практическая грамотность, счёт, работа с записями и ясное объяснение.",
+        "en": "Practical literacy, numeracy, record work, and clear explanation."
+      },
+      "tuition": 300,
+      "energyCost": 1,
+      "stats": [
+        [
+          "reason",
+          4
+        ],
+        [
+          "wits",
+          2
+        ]
+      ],
+      "tuitionEnergyTemplate": {
+        "ru": "Стоимость: {tuition}. Энергия сегодня: {energy}.",
+        "en": "Tuition: {tuition}. Energy today: {energy}."
+      },
+      "supportedStats": [
+        {
+          "statId": "reason",
+          "amount": 4,
+          "display": {
+            "ru": "Разум",
+            "en": "Reason"
+          }
+        },
+        {
+          "statId": "wits",
+          "amount": 2,
+          "display": {
+            "ru": "Смекалка",
+            "en": "Wits"
+          }
+        }
+      ]
+    },
+    {
+      "courseId": "school.course.arcana",
+      "label": {
+        "ru": "Аркана",
+        "en": "Arcana"
+      },
+      "description": {
+        "ru": "Наблюдение, магическая теория, безопасный эксперимент и проверка гипотез.",
+        "en": "Observation, magical theory, careful experimentation, and testing hypotheses."
+      },
+      "tuition": 500,
+      "energyCost": 1,
+      "stats": [
+        [
+          "magic",
+          4
+        ],
+        [
+          "reason",
+          4
+        ],
+        [
+          "creativity",
+          2
+        ]
+      ],
+      "tuitionEnergyTemplate": {
+        "ru": "Стоимость: {tuition}. Энергия сегодня: {energy}.",
+        "en": "Tuition: {tuition}. Energy today: {energy}."
+      },
+      "supportedStats": [
+        {
+          "statId": "magic",
+          "amount": 4,
+          "display": {
+            "ru": "Магия",
+            "en": "Magic"
+          }
+        },
+        {
+          "statId": "reason",
+          "amount": 4,
+          "display": {
+            "ru": "Разум",
+            "en": "Reason"
+          }
+        },
+        {
+          "statId": "creativity",
+          "amount": 2,
+          "display": {
+            "ru": "Творчество",
+            "en": "Creativity"
+          }
+        }
+      ]
+    },
+    {
+      "courseId": "school.course.rhetoric_and_social",
+      "label": {
+        "ru": "Риторика и общение",
+        "en": "Rhetoric & Social"
+      },
+      "description": {
+        "ru": "Речь, слушание, чтение социальной ситуации и адаптация подачи.",
+        "en": "Speaking, listening, reading social situations, and adapting delivery."
+      },
+      "tuition": 300,
+      "energyCost": 1,
+      "stats": [
+        [
+          "charm",
+          3
+        ],
+        [
+          "sociability",
+          3
+        ],
+        [
+          "wits",
+          2
+        ]
+      ],
+      "tuitionEnergyTemplate": {
+        "ru": "Стоимость: {tuition}. Энергия сегодня: {energy}.",
+        "en": "Tuition: {tuition}. Energy today: {energy}."
+      },
+      "supportedStats": [
+        {
+          "statId": "charm",
+          "amount": 3,
+          "display": {
+            "ru": "Обаяние",
+            "en": "Charm"
+          }
+        },
+        {
+          "statId": "sociability",
+          "amount": 3,
+          "display": {
+            "ru": "Общительность",
+            "en": "Sociability"
+          }
+        },
+        {
+          "statId": "wits",
+          "amount": 2,
+          "display": {
+            "ru": "Смекалка",
+            "en": "Wits"
+          }
+        }
+      ]
+    },
+    {
+      "courseId": "school.course.etiquette_and_presentation",
+      "label": {
+        "ru": "Этикет и самопрезентация",
+        "en": "Etiquette & Presentation"
+      },
+      "description": {
+        "ru": "Социальные правила, подготовка, уход, осанка и осознанная самопрезентация.",
+        "en": "Social conventions, preparation, grooming, posture, and deliberate presentation."
+      },
+      "tuition": 400,
+      "energyCost": 1,
+      "stats": [
+        [
+          "manners",
+          3
+        ],
+        [
+          "grooming",
+          3
+        ],
+        [
+          "charm",
+          2
+        ]
+      ],
+      "tuitionEnergyTemplate": {
+        "ru": "Стоимость: {tuition}. Энергия сегодня: {energy}.",
+        "en": "Tuition: {tuition}. Energy today: {energy}."
+      },
+      "supportedStats": [
+        {
+          "statId": "manners",
+          "amount": 3,
+          "display": {
+            "ru": "Манеры",
+            "en": "Manners"
+          }
+        },
+        {
+          "statId": "grooming",
+          "amount": 3,
+          "display": {
+            "ru": "Ухоженность",
+            "en": "Grooming"
+          }
+        },
+        {
+          "statId": "charm",
+          "amount": 2,
+          "display": {
+            "ru": "Обаяние",
+            "en": "Charm"
+          }
+        }
+      ]
+    },
+    {
+      "courseId": "school.course.field_craft",
+      "label": {
+        "ru": "Полевая практика",
+        "en": "Field Craft"
+      },
+      "description": {
+        "ru": "Наблюдение, маршруты, практические инструменты и надёжная импровизация.",
+        "en": "Observation, route choice, practical tools, and reliable improvisation."
+      },
+      "tuition": 400,
+      "energyCost": 1,
+      "stats": [
+        [
+          "dexterity",
+          3
+        ],
+        [
+          "wits",
+          3
+        ],
+        [
+          "creativity",
+          2
+        ]
+      ],
+      "tuitionEnergyTemplate": {
+        "ru": "Стоимость: {tuition}. Энергия сегодня: {energy}.",
+        "en": "Tuition: {tuition}. Energy today: {energy}."
+      },
+      "supportedStats": [
+        {
+          "statId": "dexterity",
+          "amount": 3,
+          "display": {
+            "ru": "Ловкость",
+            "en": "Dexterity"
+          }
+        },
+        {
+          "statId": "wits",
+          "amount": 3,
+          "display": {
+            "ru": "Смекалка",
+            "en": "Wits"
+          }
+        },
+        {
+          "statId": "creativity",
+          "amount": 2,
+          "display": {
+            "ru": "Творчество",
+            "en": "Creativity"
+          }
+        }
+      ]
+    },
+    {
+      "courseId": "school.course.physical_training",
+      "label": {
+        "ru": "Физическая подготовка",
+        "en": "Physical Training"
+      },
+      "description": {
+        "ru": "Сила, выносливость, координация, техника и восстановление.",
+        "en": "Strength, endurance, coordination, technique, and recovery."
+      },
+      "tuition": 400,
+      "energyCost": 1,
+      "stats": [
+        [
+          "strength",
+          3
+        ],
+        [
+          "endurance",
+          3
+        ],
+        [
+          "dexterity",
+          2
+        ]
+      ],
+      "tuitionEnergyTemplate": {
+        "ru": "Стоимость: {tuition}. Энергия сегодня: {energy}.",
+        "en": "Tuition: {tuition}. Energy today: {energy}."
+      },
+      "supportedStats": [
+        {
+          "statId": "strength",
+          "amount": 3,
+          "display": {
+            "ru": "Сила",
+            "en": "Strength"
+          }
+        },
+        {
+          "statId": "endurance",
+          "amount": 3,
+          "display": {
+            "ru": "Выносливость",
+            "en": "Endurance"
+          }
+        },
+        {
+          "statId": "dexterity",
+          "amount": 2,
+          "display": {
+            "ru": "Ловкость",
+            "en": "Dexterity"
+          }
+        }
+      ]
+    },
+    {
+      "courseId": "school.course.arts_and_performance",
+      "label": {
+        "ru": "Искусство и выступление",
+        "en": "Arts & Performance"
+      },
+      "description": {
+        "ru": "Творческий выбор, ритм, выразительность, репетиция и сценическое взаимодействие.",
+        "en": "Creative choices, rhythm, expression, rehearsal, and performance interaction."
+      },
+      "tuition": 500,
+      "energyCost": 1,
+      "stats": [
+        [
+          "creativity",
+          3
+        ],
+        [
+          "charm",
+          3
+        ],
+        [
+          "sociability",
+          2
+        ],
+        [
+          "dexterity",
+          2
+        ]
+      ],
+      "tuitionEnergyTemplate": {
+        "ru": "Стоимость: {tuition}. Энергия сегодня: {energy}.",
+        "en": "Tuition: {tuition}. Energy today: {energy}."
+      },
+      "supportedStats": [
+        {
+          "statId": "creativity",
+          "amount": 3,
+          "display": {
+            "ru": "Творчество",
+            "en": "Creativity"
+          }
+        },
+        {
+          "statId": "charm",
+          "amount": 3,
+          "display": {
+            "ru": "Обаяние",
+            "en": "Charm"
+          }
+        },
+        {
+          "statId": "sociability",
+          "amount": 2,
+          "display": {
+            "ru": "Общительность",
+            "en": "Sociability"
+          }
+        },
+        {
+          "statId": "dexterity",
+          "amount": 2,
+          "display": {
+            "ru": "Ловкость",
+            "en": "Dexterity"
+          }
+        }
+      ]
+    },
+    {
+      "courseId": "school.course.body_confidence",
+      "label": {
+        "ru": "Уверенность в теле",
+        "en": "Body Confidence"
+      },
+      "description": {
+        "ru": "Движение, уход за собой, границы и осознанная самопрезентация.",
+        "en": "Movement, grooming, boundaries, and deliberate self-presentation."
+      },
+      "tuition": 400,
+      "energyCost": 1,
+      "stats": [
+        [
+          "sexuality",
+          3
+        ],
+        [
+          "grooming",
+          3
+        ],
+        [
+          "endurance",
+          2
+        ]
+      ],
+      "tuitionEnergyTemplate": {
+        "ru": "Стоимость: {tuition}. Энергия сегодня: {energy}.",
+        "en": "Tuition: {tuition}. Energy today: {energy}."
+      },
+      "supportedStats": [
+        {
+          "statId": "sexuality",
+          "amount": 3,
+          "display": {
+            "ru": "Сексуальность",
+            "en": "Sexuality"
+          }
+        },
+        {
+          "statId": "grooming",
+          "amount": 3,
+          "display": {
+            "ru": "Ухоженность",
+            "en": "Grooming"
+          }
+        },
+        {
+          "statId": "endurance",
+          "amount": 2,
+          "display": {
+            "ru": "Выносливость",
+            "en": "Endurance"
+          }
+        }
+      ]
+    }
+  ],
+  "statDisplayTerminology": {
+    "strength": {
+      "ru": "Сила",
+      "en": "Strength"
+    },
+    "endurance": {
+      "ru": "Выносливость",
+      "en": "Endurance"
+    },
+    "dexterity": {
+      "ru": "Ловкость",
+      "en": "Dexterity"
+    },
+    "reason": {
+      "ru": "Разум",
+      "en": "Reason"
+    },
+    "magic": {
+      "ru": "Магия",
+      "en": "Magic"
+    },
+    "creativity": {
+      "ru": "Творчество",
+      "en": "Creativity"
+    },
+    "wits": {
+      "ru": "Смекалка",
+      "en": "Wits"
+    },
+    "charm": {
+      "ru": "Обаяние",
+      "en": "Charm"
+    },
+    "sociability": {
+      "ru": "Общительность",
+      "en": "Sociability"
+    },
+    "manners": {
+      "ru": "Манеры",
+      "en": "Manners"
+    },
+    "grooming": {
+      "ru": "Ухоженность",
+      "en": "Grooming"
+    },
+    "sexuality": {
+      "ru": "Сексуальность",
+      "en": "Sexuality"
+    }
+  },
+  "invariants": {
+    "courseIdsLocaleNeutral": true,
+    "mechanicsSharedAcrossLocales": true,
+    "tuitionTemplatePresentationOnly": true,
+    "energyTemplatePresentationOnly": true,
+    "ordinaryLustMutation": false
+  }
+}
