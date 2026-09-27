@@ -1445,3 +1445,23 @@ Evaluate only technical consequences:
 State the smallest technically sufficient option and why, while leaving Product values/policies OPEN. Do not alter runtime.
 
 Continue items 76–84 sequentially without waiting for Lead review.
+
+
+## Queue item 85 — Secret Debt implementation precondition ledger
+
+Create NEW file only:
+- `docs/poverty-prep/SECRET_DEBT_IMPLEMENTATION_PRECONDITION_LEDGER_v1.md`
+
+List the exact preconditions before Lead can start production Secret Debt implementation.
+
+Separate:
+- technical preconditions already satisfied;
+- Product decisions truly blocking;
+- balance values that may be parameterized/tuned later;
+- content identities/prose that can be authored independently;
+- tests that can be written before implementation;
+- tests requiring final decisions.
+
+Goal: prevent over-blocking implementation on nonessential decisions.
+
+Continue items 77–85 sequentially without waiting for Lead review.
