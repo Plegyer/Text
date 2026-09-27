@@ -501,6 +501,26 @@
     "media.school.life.night-study.default.alt": {
       "ru": "Тихая учебная сцена как резервное изображение ночной учёбы.",
       "en": "A quiet School study scene used as a fallback for Night-study presentation."
+    },
+    "event.base.school.title": {
+      "ru": "Класс устойчивого кипения",
+      "en": "The Steady Boil Class"
+    },
+    "event.base.school.variant.lesson.text": {
+      "ru": "Преподаватель начинает с главного: «Если зелье спорит с вами, не спорьте в ответ». Ваш сосед по парте немедленно прячет говорящую колбу.",
+      "en": "The teacher starts with the essential rule: “If a potion argues with you, do not argue back.” Your desk neighbor immediately hides a talking flask."
+    },
+    "event.base.school.choice.listen.label": {
+      "ru": "Записать правило",
+      "en": "Write down the rule"
+    },
+    "event.base.school.choice.listen.text": {
+      "ru": "Вы записали правило и имя преподавателя. Колба потребовала записать и её.",
+      "en": "You write down the rule and the teacher's name. The flask demands to be written down too."
+    },
+    "media.base.workshop.alt": {
+      "ru": "Условная иллюстрация алхимической лавки.",
+      "en": "A stylized illustration of the alchemy workshop."
     }
   }
 }
