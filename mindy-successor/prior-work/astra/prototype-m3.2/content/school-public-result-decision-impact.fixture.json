@@ -1,0 +1,52 @@
+{
+  "formatVersion": 1,
+  "id": "school.public-result-decision-impact.fixture.v1",
+  "decisions": [
+    {
+      "id": "management-accounting",
+      "authoringSource": null,
+      "thresholdMilestoneType": null,
+      "downstreamLumberListenerId": "lumber-cross.school-management-return",
+      "listenerTrigger": {
+        "kind": "worldFactAdded",
+        "fact": "lumber.school.management-ready"
+      },
+      "saveReloadSemantics": "publish-once; reload-before may publish later; reload-after cannot re-emit; pending listener scene persists",
+      "resolverBoundary": "school-private-result -> public-fact -> worldFactAdded -> lumber-cross.school-management-return",
+      "paRows": ["PA07", "PA08"],
+      "affectedFiles": [
+        "content/packs/lumber-cross-production.json",
+        "content/school-public-fact-authoring.fixture.json",
+        "content/school-public-boundary-exactly-once.fixture.json",
+        "tests/school-public-boundary-exactly-once.test.ts"
+      ],
+      "status": "HUMAN_DECISION_REQUIRED"
+    },
+    {
+      "id": "arcana-forest",
+      "authoringSource": null,
+      "thresholdMilestoneType": null,
+      "downstreamLumberListenerId": null,
+      "requiredDirectListenerSurface": "lumber.forest option/condition or another explicitly authored Forest interpretation listener",
+      "currentForestActivityId": "lumber.forest",
+      "currentActivityResultId": "lumber.forest.success",
+      "currentPostActivityLumberListenerId": "lumber-cross.activity-forest-return",
+      "currentPostActivityWorldFact": "lumber.forest.truth-known",
+      "saveReloadSemantics": "School publication once; unlocked Forest option stable across reload; Activity listener remains result-driven",
+      "resolverBoundary": "school-private-arcana-result -> public-fact -> worldFactAdded -> authored-Forest-listener -> lumber.forest -> activityResult -> lumber-cross.activity-forest-return",
+      "paRows": ["PA08", "PA14", "PA15", "PA16", "PA18"],
+      "affectedFiles": [
+        "content/packs/lumber-cross-production.json",
+        "content/definitions.json",
+        "content/school-public-fact-authoring.fixture.json",
+        "content/school-public-boundary-exactly-once.fixture.json"
+      ],
+      "status": "HUMAN_DECISION_REQUIRED"
+    }
+  ],
+  "constraints": {
+    "selectsProvider": false,
+    "selectsThreshold": false,
+    "inventsDirectArcanaForestListener": false
+  }
+}
