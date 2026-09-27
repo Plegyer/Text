@@ -1,19 +1,14 @@
 {
   "schemaVersion": 5,
   "id": "lumber.final-evidence-pack.fixture",
-  "status": "POST_PR24_MINIMAL_NON_REDUNDANT_HANDOFF",
+  "status": "POST_PR25_MINIMAL_NON_REDUNDANT_HANDOFF",
   "baseline": {
     "pr24Merge": "9aa0eaf964735e82b9b964bbdcaf5362c292868a",
-    "mainIsProductionSourceOfTruth": true
+    "mainIsProductionSourceOfTruth": true,
+    "pr25FinalRcGateMerge": "961208ea995ca034e8dfe896337a38828db52415",
+    "pr25TechnicalGate": "GREEN_218_OF_218"
   },
   "qaBundlesWorthIntegrating": [
-    {
-      "id": "post-pr24-reconciliation",
-      "files": [
-        "mindy-successor/docs/lumber-prep/LUMBER_POST_PR24_RECONCILIATION_v1.md",
-        "mindy-successor/prior-work/astra/prototype-m3.2/tests/lumber-post-pr24-reconciliation.test.ts"
-      ]
-    },
     {
       "id": "hunter-trail-boundary",
       "files": [
@@ -57,7 +52,6 @@
     }
   ],
   "docsWorthIndexing": [
-    "mindy-successor/docs/lumber-prep/LUMBER_POST_PR24_RECONCILIATION_v1.md",
     "mindy-successor/docs/lumber-prep/LUMBER_FINAL_RC_ACCEPTANCE_MATRIX_v1.md",
     "mindy-successor/docs/lumber-prep/OLD_BOUNDARY_TOKEN_DECISION_READY_PACKET_v1.md",
     "mindy-successor/docs/lumber-prep/OLD_BOUNDARY_TOKEN_PRODUCT_DECISION_IMPACT_v1.md",
@@ -143,7 +137,9 @@
     "mindy-successor/docs/lumber-prep/FOREST_DEPTH_GAP_TO_SPEC_v1.md",
     "mindy-successor/prior-work/astra/prototype-m3.2/tests/lumber-forest-depth-gap.test.ts",
     "mindy-successor/docs/lumber-prep/FOREST_PRODUCTION_AUTHORING_MATRIX_v1.md",
-    "mindy-successor/prior-work/astra/prototype-m3.2/content/forest-production-authoring-matrix.fixture.json"
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/forest-production-authoring-matrix.fixture.json",
+    "mindy-successor/docs/lumber-prep/LUMBER_POST_PR24_RECONCILIATION_v1.md",
+    "mindy-successor/prior-work/astra/prototype-m3.2/tests/lumber-post-pr24-reconciliation.test.ts"
   ],
   "productionDoNotReintegrate": [
     "mindy-successor/prior-work/astra/prototype-m3.2/content/definitions.json",
@@ -153,7 +149,10 @@
     "mindy-successor/prior-work/astra/prototype-m3.2/content/packs/lumber-target/lumber-production.pack.json",
     "mindy-successor/prior-work/astra/prototype-m3.2/content/packs/lumber-target/lumber-cross-system.pack.json",
     "mindy-successor/prior-work/astra/prototype-m3.2/content/packs/lumber-target/lumber-night-acceptance.pack.json",
-    "mindy-successor/prior-work/astra/prototype-m3.2/tests/release-candidate-shipped-e2e.test.ts"
+    "mindy-successor/prior-work/astra/prototype-m3.2/tests/release-candidate-shipped-e2e.test.ts",
+    "mindy-successor/prior-work/astra/prototype-m3.2/tests/qa-minimal-rc-acceptance-gate-v2.test.ts",
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/school-blocking-scene-compat.fixture.json",
+    "mindy-successor/prior-work/astra/prototype-m3.2/tests/school-blocking-scene-compat.test.ts"
   ],
   "lockedInvariants": {
     "hardWork": {

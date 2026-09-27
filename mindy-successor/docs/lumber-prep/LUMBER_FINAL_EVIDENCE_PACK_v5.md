@@ -1,6 +1,6 @@
 # Lumber Final Evidence Pack v5
 
-Status: smallest non-redundant Chat 3 handoff after merged PR #24.
+Status: smallest non-redundant Chat 3 handoff after merged PR #25.
 
 Production baseline:
 `9aa0eaf964735e82b9b964bbdcaf5362c292868a`
@@ -12,7 +12,7 @@ Machine-readable pack:
 
 ## Tests worth integrating
 
-Integrate these seven QA bundles and their required fixture/doc dependencies:
+PR #25 already integrates the merged one-Save/Hard Work/item-capability/legacy-save technical gate. Integrate only these six non-redundant worker QA bundles and their required fixture/doc dependencies:
 
 1. post-PR24 reconciliation:
    - `docs/lumber-prep/LUMBER_POST_PR24_RECONCILIATION_v1.md`
@@ -20,26 +20,26 @@ Integrate these seven QA bundles and their required fixture/doc dependencies:
 2. Hunter-trail locked/open boundary:
    - `content/forest-hunter-trail-boundary.fixture.json`
    - `tests/forest-hunter-trail-boundary.test.ts`
-3. three-family implementation skeleton:
+2. three-family implementation skeleton:
    - `content/forest-challenge-skeleton.fixture.json`
    - `tests/forest-challenge-skeleton.test.ts`
-4. RC false-green sentinel:
+3. RC false-green sentinel:
    - `tests/lumber-rc-no-false-green.test.ts`
-5. PA16 truthful gap sentinel:
+4. PA16 truthful gap sentinel:
    - `content/forest-route-completeness-negative.fixture.json`
    - `tests/forest-route-completeness-negative.test.ts`
-6. future Forest authoring compatibility:
+5. future Forest authoring compatibility:
    - `content/forest-future-authoring-compat.fixture.json`
    - `tests/forest-future-authoring-compat.test.ts`
-7. final RC acceptance classification:
+6. final RC acceptance classification:
    - `docs/lumber-prep/LUMBER_FINAL_RC_ACCEPTANCE_MATRIX_v1.md`
    - `tests/lumber-final-rc-acceptance-matrix.test.ts`
 
-These bundles are non-redundant: reconciliation covers final merged PR24 behavior; boundary/skeleton tests protect still-open authoring; sentinels prevent false-green closure; compatibility protects shipped routes/results; final matrix provides the PA00–PA26 closure view.
+These bundles are non-redundant after PR #25: boundary/skeleton tests protect still-open authoring; sentinels prevent false-green closure; compatibility protects shipped routes/results; final matrix provides the PA00–PA26 closure view. The post-PR24 reconciliation test is now redundant with the stronger merged PR25 gate.
 
 ## Docs worth indexing
 
-Current index set:
+Current index set after PR #25:
 - `LUMBER_POST_PR24_RECONCILIATION_v1.md` — merged one-Save truth;
 - `LUMBER_FINAL_RC_ACCEPTANCE_MATRIX_v1.md` — final PA00–PA26 classification;
 - `OLD_BOUNDARY_TOKEN_DECISION_READY_PACKET_v1.md` — acceptable Product answer types;
@@ -100,7 +100,7 @@ The older `FOREST_PRODUCTION_AUTHORING_MATRIX_v1.md` is superseded as the curren
 
 Do not use these as current Lead source of truth:
 - PR22 closure parity audit/test — post-PR24 reconciliation supersedes the final-state view;
-- PR24 one-Save state audit/test — written before merge and superseded by post-merge reconciliation;
+- PR24 one-Save state audit/test — written before merge;\n- post-PR24 reconciliation doc/test — now superseded as integration evidence by merged PR25 `qa-minimal-rc-acceptance-gate-v2.test.ts`;
 - v4 decision/evidence handoff — replaced by v5;
 - old token decision matrix — replaced by decision-ready packet + impact matrix;
 - v2/v3 release/RC handoffs;
@@ -118,7 +118,7 @@ Use merged main as production source of truth for:
 - core schema/engine;
 - UI Activity option surface;
 - three Lumber target packs;
-- merged `release-candidate-shipped-e2e.test.ts`.
+- merged `release-candidate-shipped-e2e.test.ts`;\n- merged PR25 `qa-minimal-rc-acceptance-gate-v2.test.ts` and School blocking-scene compatibility QA.
 
 PR24 already proves the one-Save shipped path with real `base.school -> listen`, natural logging-road, a labeled 49 threshold accelerator, a real 50th Lumber shift, ending completion and New Run.
 

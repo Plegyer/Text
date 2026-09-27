@@ -7,9 +7,9 @@ Production baseline:
 - PR #21 Product Acceptance evidence: `e6c32903516d1ba40b9a3ffbf955d5f04783ac25`;
 - PR #22 item-capability / Activity-option closure: `011572ef1335deda5ac33120c3a7ea7f9849dbbf`;
 - PR #23 RC QA floor: `e12665ce9063689400d8f39f893378f6f01911f3`;
-- PR #24 one-Save RC smoke: `9aa0eaf964735e82b9b964bbdcaf5362c292868a`.
+- PR #24 one-Save RC smoke: `9aa0eaf964735e82b9b964bbdcaf5362c292868a`;\n- PR #25 final technical RC gate: `961208ea995ca034e8dfe896337a38828db52415`.
 
-Classification vocabulary:
+PR #25 adds no production runtime/content/UI changes; it locks the exact Hard Work contract, inventory-derived capability semantics, schema4 legacy Activity compatibility, real School blocking-scene ordering, and the one-Save RC path in the merged gate.\n\nClassification vocabulary:
 - **SHIPPED_GREEN** — merged production behavior is directly executable and the relevant contract is covered by current shipped/RC evidence;
 - **RUNTIME_GREEN_AUTHORING_OPEN** — generic runtime support is shipped, but final product authoring is still missing;
 - **CONTENT_DEPTH_OPEN** — the core runtime and basic path are shipped, but required authored product depth is incomplete;
