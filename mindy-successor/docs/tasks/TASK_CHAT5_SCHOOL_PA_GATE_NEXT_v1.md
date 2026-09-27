@@ -1130,3 +1130,22 @@ For each record:
 Do not recommend a preferred choice.
 
 Continue items 64–72 sequentially without waiting for Lead review.
+
+
+## Queue item 73 — School post-decision implementation map
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_POST_DECISION_IMPLEMENTATION_MAP_v1.md`
+
+Assume the human School decision packet is later answered. Map the immediate implementation/content sequence for:
+1. teacher identities/content;
+2. management/accounting milestone/public result;
+3. Arcana/Forest result if retained;
+4. milestone/project/certificate/exam scenes;
+5. career/Activity consumers;
+6. presentation/GIF follow-up;
+7. acceptance/regression.
+
+Name expected production file domains and tests without pre-filling unanswered decisions.
+
+Continue items 65–73 sequentially without waiting for Lead review.
