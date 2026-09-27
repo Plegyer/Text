@@ -1850,6 +1850,971 @@
           }
         ]
       }
+    },
+    {
+      "id": "tavern.shift",
+      "label": "Tavern shift",
+      "description": "Work an ordinary tavern shift. Initial wage/stat tuning remains balance-owned.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [],
+      "effects": [
+        {
+          "kind": "incrementCareerCounter",
+          "career": "tavern",
+          "counter": "completed_shifts",
+          "amount": 1
+        }
+      ],
+      "mode": "normal",
+      "wage": {
+        "base": 15,
+        "weights": [
+          {
+            "stat": "charm",
+            "factor": 0.3
+          },
+          {
+            "stat": "wits",
+            "factor": 0.3
+          },
+          {
+            "stat": "manners",
+            "factor": 0.2
+          }
+        ]
+      },
+      "scenes": [
+        {
+          "id": "spring.default",
+          "text": "Spring tavern shift: the season changes the ordinary work context.",
+          "conditions": [],
+          "media": [
+            "stage.tavern.spring"
+          ]
+        },
+        {
+          "id": "summer.default",
+          "text": "Summer tavern shift: demand, routes, or crowds shift with the season.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "summer"
+            }
+          ],
+          "media": [
+            "stage.tavern.summer"
+          ]
+        },
+        {
+          "id": "autumn.default",
+          "text": "Autumn tavern shift: seasonal pressure changes the work mix.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "autumn"
+            }
+          ],
+          "media": [
+            "stage.tavern.autumn"
+          ]
+        },
+        {
+          "id": "winter.default",
+          "text": "Winter tavern shift: scarcity, access, or regular clients change the routine.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "winter"
+            }
+          ],
+          "media": [
+            "stage.tavern.winter"
+          ]
+        }
+      ],
+      "seasonal": {
+        "spring": [
+          {
+            "kind": "modifyStat",
+            "stat": "charm",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "wits",
+            "delta": 1
+          }
+        ],
+        "summer": [
+          {
+            "kind": "modifyStat",
+            "stat": "charm",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "manners",
+            "delta": 1
+          }
+        ],
+        "autumn": [
+          {
+            "kind": "modifyStat",
+            "stat": "wits",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "reason",
+            "delta": 1
+          }
+        ],
+        "winter": [
+          {
+            "kind": "modifyStat",
+            "stat": "manners",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "wits",
+            "delta": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "hunter.shift",
+      "label": "Hunter shift",
+      "description": "Complete an ordinary local hunting job without entering the 2-Energy expedition layer. Initial tuning remains balance-owned.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [],
+      "effects": [
+        {
+          "kind": "incrementCareerCounter",
+          "career": "hunter",
+          "counter": "completed_shifts",
+          "amount": 1
+        }
+      ],
+      "mode": "normal",
+      "wage": {
+        "base": 15,
+        "weights": [
+          {
+            "stat": "dexterity",
+            "factor": 0.35
+          },
+          {
+            "stat": "endurance",
+            "factor": 0.3
+          },
+          {
+            "stat": "wits",
+            "factor": 0.2
+          }
+        ]
+      },
+      "scenes": [
+        {
+          "id": "spring.default",
+          "text": "Spring hunter shift: the season changes the ordinary work context.",
+          "conditions": [],
+          "media": [
+            "stage.hunt.spring"
+          ]
+        },
+        {
+          "id": "summer.default",
+          "text": "Summer hunter shift: demand, routes, or crowds shift with the season.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "summer"
+            }
+          ],
+          "media": [
+            "stage.hunt.summer"
+          ]
+        },
+        {
+          "id": "autumn.default",
+          "text": "Autumn hunter shift: seasonal pressure changes the work mix.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "autumn"
+            }
+          ],
+          "media": [
+            "stage.hunt.autumn"
+          ]
+        },
+        {
+          "id": "winter.default",
+          "text": "Winter hunter shift: scarcity, access, or regular clients change the routine.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "winter"
+            }
+          ],
+          "media": [
+            "stage.hunt.winter"
+          ]
+        }
+      ],
+      "seasonal": {
+        "spring": [
+          {
+            "kind": "modifyStat",
+            "stat": "dexterity",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "wits",
+            "delta": 1
+          }
+        ],
+        "summer": [
+          {
+            "kind": "modifyStat",
+            "stat": "endurance",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "dexterity",
+            "delta": 1
+          }
+        ],
+        "autumn": [
+          {
+            "kind": "modifyStat",
+            "stat": "dexterity",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "endurance",
+            "delta": 1
+          }
+        ],
+        "winter": [
+          {
+            "kind": "modifyStat",
+            "stat": "wits",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "endurance",
+            "delta": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "guard.shift",
+      "label": "Guard patrol",
+      "description": "Work an ordinary guard patrol or city-duty shift. Initial tuning remains balance-owned.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [],
+      "effects": [
+        {
+          "kind": "incrementCareerCounter",
+          "career": "guard",
+          "counter": "completed_shifts",
+          "amount": 1
+        }
+      ],
+      "mode": "normal",
+      "wage": {
+        "base": 15,
+        "weights": [
+          {
+            "stat": "endurance",
+            "factor": 0.3
+          },
+          {
+            "stat": "manners",
+            "factor": 0.25
+          },
+          {
+            "stat": "strength",
+            "factor": 0.2
+          },
+          {
+            "stat": "reason",
+            "factor": 0.15
+          }
+        ]
+      },
+      "scenes": [
+        {
+          "id": "spring.default",
+          "text": "Spring guard patrol: the season changes the ordinary work context.",
+          "conditions": [],
+          "media": [
+            "stage.guard.spring"
+          ]
+        },
+        {
+          "id": "summer.default",
+          "text": "Summer guard patrol: demand, routes, or crowds shift with the season.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "summer"
+            }
+          ],
+          "media": [
+            "stage.guard.summer"
+          ]
+        },
+        {
+          "id": "autumn.default",
+          "text": "Autumn guard patrol: seasonal pressure changes the work mix.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "autumn"
+            }
+          ],
+          "media": [
+            "stage.guard.autumn"
+          ]
+        },
+        {
+          "id": "winter.default",
+          "text": "Winter guard patrol: scarcity, access, or regular clients change the routine.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "winter"
+            }
+          ],
+          "media": [
+            "stage.guard.winter"
+          ]
+        }
+      ],
+      "seasonal": {
+        "spring": [
+          {
+            "kind": "modifyStat",
+            "stat": "endurance",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "manners",
+            "delta": 1
+          }
+        ],
+        "summer": [
+          {
+            "kind": "modifyStat",
+            "stat": "endurance",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "strength",
+            "delta": 1
+          }
+        ],
+        "autumn": [
+          {
+            "kind": "modifyStat",
+            "stat": "manners",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "reason",
+            "delta": 1
+          }
+        ],
+        "winter": [
+          {
+            "kind": "modifyStat",
+            "stat": "endurance",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "dexterity",
+            "delta": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "merchant.shift",
+      "label": "Merchant shift",
+      "description": "Work an ordinary market, appraisal, delivery, or negotiation shift. Initial tuning remains balance-owned.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [],
+      "effects": [
+        {
+          "kind": "incrementCareerCounter",
+          "career": "merchant",
+          "counter": "completed_shifts",
+          "amount": 1
+        }
+      ],
+      "mode": "normal",
+      "wage": {
+        "base": 15,
+        "weights": [
+          {
+            "stat": "wits",
+            "factor": 0.35
+          },
+          {
+            "stat": "charm",
+            "factor": 0.25
+          },
+          {
+            "stat": "manners",
+            "factor": 0.2
+          },
+          {
+            "stat": "reason",
+            "factor": 0.15
+          }
+        ]
+      },
+      "scenes": [
+        {
+          "id": "spring.default",
+          "text": "Spring merchant shift: the season changes the ordinary work context.",
+          "conditions": [],
+          "media": [
+            "stage.town"
+          ]
+        },
+        {
+          "id": "summer.default",
+          "text": "Summer merchant shift: demand, routes, or crowds shift with the season.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "summer"
+            }
+          ],
+          "media": [
+            "stage.town"
+          ]
+        },
+        {
+          "id": "autumn.default",
+          "text": "Autumn merchant shift: seasonal pressure changes the work mix.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "autumn"
+            }
+          ],
+          "media": [
+            "stage.town"
+          ]
+        },
+        {
+          "id": "winter.default",
+          "text": "Winter merchant shift: scarcity, access, or regular clients change the routine.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "winter"
+            }
+          ],
+          "media": [
+            "stage.town"
+          ]
+        }
+      ],
+      "seasonal": {
+        "spring": [
+          {
+            "kind": "modifyStat",
+            "stat": "wits",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "charm",
+            "delta": 1
+          }
+        ],
+        "summer": [
+          {
+            "kind": "modifyStat",
+            "stat": "charm",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "manners",
+            "delta": 1
+          }
+        ],
+        "autumn": [
+          {
+            "kind": "modifyStat",
+            "stat": "wits",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "reason",
+            "delta": 1
+          }
+        ],
+        "winter": [
+          {
+            "kind": "modifyStat",
+            "stat": "reason",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "wits",
+            "delta": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "artist-geisha.shift",
+      "label": "Artist House shift",
+      "description": "Work an ordinary rehearsal, performance, or guest-facing Artist House shift. Initial tuning remains balance-owned.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [],
+      "effects": [
+        {
+          "kind": "incrementCareerCounter",
+          "career": "artist-geisha",
+          "counter": "completed_shifts",
+          "amount": 1
+        }
+      ],
+      "mode": "normal",
+      "wage": {
+        "base": 15,
+        "weights": [
+          {
+            "stat": "manners",
+            "factor": 0.3
+          },
+          {
+            "stat": "charm",
+            "factor": 0.3
+          },
+          {
+            "stat": "sexuality",
+            "factor": 0.15
+          },
+          {
+            "stat": "dexterity",
+            "factor": 0.15
+          }
+        ]
+      },
+      "scenes": [
+        {
+          "id": "spring.default",
+          "text": "Spring artist house shift: the season changes the ordinary work context.",
+          "conditions": [],
+          "media": [
+            "stage.tavern.spring"
+          ]
+        },
+        {
+          "id": "summer.default",
+          "text": "Summer artist house shift: demand, routes, or crowds shift with the season.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "summer"
+            }
+          ],
+          "media": [
+            "stage.tavern.summer"
+          ]
+        },
+        {
+          "id": "autumn.default",
+          "text": "Autumn artist house shift: seasonal pressure changes the work mix.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "autumn"
+            }
+          ],
+          "media": [
+            "stage.tavern.autumn"
+          ]
+        },
+        {
+          "id": "winter.default",
+          "text": "Winter artist house shift: scarcity, access, or regular clients change the routine.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "winter"
+            }
+          ],
+          "media": [
+            "stage.tavern.winter"
+          ]
+        }
+      ],
+      "seasonal": {
+        "spring": [
+          {
+            "kind": "modifyStat",
+            "stat": "manners",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "charm",
+            "delta": 1
+          }
+        ],
+        "summer": [
+          {
+            "kind": "modifyStat",
+            "stat": "charm",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "dexterity",
+            "delta": 1
+          }
+        ],
+        "autumn": [
+          {
+            "kind": "modifyStat",
+            "stat": "manners",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "sexuality",
+            "delta": 1
+          }
+        ],
+        "winter": [
+          {
+            "kind": "modifyStat",
+            "stat": "charm",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "reason",
+            "delta": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "assassin.shift",
+      "label": "Assassin shift",
+      "description": "Complete an ordinary covert work shift such as surveillance, delivery, route preparation, or cleanup. Initial tuning remains balance-owned.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [],
+      "effects": [
+        {
+          "kind": "incrementCareerCounter",
+          "career": "assassin",
+          "counter": "completed_shifts",
+          "amount": 1
+        }
+      ],
+      "mode": "normal",
+      "wage": {
+        "base": 15,
+        "weights": [
+          {
+            "stat": "dexterity",
+            "factor": 0.35
+          },
+          {
+            "stat": "wits",
+            "factor": 0.3
+          },
+          {
+            "stat": "reason",
+            "factor": 0.2
+          },
+          {
+            "stat": "manners",
+            "factor": 0.1
+          }
+        ]
+      },
+      "scenes": [
+        {
+          "id": "spring.default",
+          "text": "Spring assassin shift: the season changes the ordinary work context.",
+          "conditions": [],
+          "media": [
+            "stage.town"
+          ]
+        },
+        {
+          "id": "summer.default",
+          "text": "Summer assassin shift: demand, routes, or crowds shift with the season.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "summer"
+            }
+          ],
+          "media": [
+            "stage.town"
+          ]
+        },
+        {
+          "id": "autumn.default",
+          "text": "Autumn assassin shift: seasonal pressure changes the work mix.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "autumn"
+            }
+          ],
+          "media": [
+            "stage.town"
+          ]
+        },
+        {
+          "id": "winter.default",
+          "text": "Winter assassin shift: scarcity, access, or regular clients change the routine.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "winter"
+            }
+          ],
+          "media": [
+            "stage.town"
+          ]
+        }
+      ],
+      "seasonal": {
+        "spring": [
+          {
+            "kind": "modifyStat",
+            "stat": "dexterity",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "wits",
+            "delta": 1
+          }
+        ],
+        "summer": [
+          {
+            "kind": "modifyStat",
+            "stat": "dexterity",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "manners",
+            "delta": 1
+          }
+        ],
+        "autumn": [
+          {
+            "kind": "modifyStat",
+            "stat": "wits",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "reason",
+            "delta": 1
+          }
+        ],
+        "winter": [
+          {
+            "kind": "modifyStat",
+            "stat": "dexterity",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "reason",
+            "delta": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "prostitute.shift",
+      "label": "Professional shift",
+      "description": "Work a voluntary ordinary professional shift with player agency and boundaries. Initial tuning remains balance-owned.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [],
+      "effects": [
+        {
+          "kind": "incrementCareerCounter",
+          "career": "prostitute",
+          "counter": "completed_shifts",
+          "amount": 1
+        }
+      ],
+      "mode": "normal",
+      "wage": {
+        "base": 15,
+        "weights": [
+          {
+            "stat": "sexuality",
+            "factor": 0.35
+          },
+          {
+            "stat": "charm",
+            "factor": 0.3
+          },
+          {
+            "stat": "manners",
+            "factor": 0.2
+          },
+          {
+            "stat": "endurance",
+            "factor": 0.15
+          }
+        ]
+      },
+      "scenes": [
+        {
+          "id": "spring.default",
+          "text": "Spring professional shift: the season changes the ordinary work context.",
+          "conditions": [],
+          "media": [
+            "stage.room"
+          ]
+        },
+        {
+          "id": "summer.default",
+          "text": "Summer professional shift: demand, routes, or crowds shift with the season.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "summer"
+            }
+          ],
+          "media": [
+            "stage.room"
+          ]
+        },
+        {
+          "id": "autumn.default",
+          "text": "Autumn professional shift: seasonal pressure changes the work mix.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "autumn"
+            }
+          ],
+          "media": [
+            "stage.room"
+          ]
+        },
+        {
+          "id": "winter.default",
+          "text": "Winter professional shift: scarcity, access, or regular clients change the routine.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "winter"
+            }
+          ],
+          "media": [
+            "stage.room"
+          ]
+        }
+      ],
+      "seasonal": {
+        "spring": [
+          {
+            "kind": "modifyStat",
+            "stat": "sexuality",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "charm",
+            "delta": 1
+          }
+        ],
+        "summer": [
+          {
+            "kind": "modifyStat",
+            "stat": "charm",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "endurance",
+            "delta": 1
+          }
+        ],
+        "autumn": [
+          {
+            "kind": "modifyStat",
+            "stat": "manners",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "sexuality",
+            "delta": 1
+          }
+        ],
+        "winter": [
+          {
+            "kind": "modifyStat",
+            "stat": "charm",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "manners",
+            "delta": 1
+          }
+        ]
+      }
     }
   ],
   "endings": [
@@ -2124,6 +3089,120 @@
           ]
         }
       ]
+    },
+    {
+      "id": "tavern",
+      "label": "Tavern",
+      "initialStage": "new-hand",
+      "stages": [
+        "new-hand",
+        "trusted-worker",
+        "house-node",
+        "veteran",
+        "innkeeper",
+        "information-broker",
+        "sanctuary",
+        "outcome-ready"
+      ],
+      "transitions": []
+    },
+    {
+      "id": "hunter",
+      "label": "Hunter",
+      "initialStage": "novice",
+      "stages": [
+        "novice",
+        "tracker",
+        "recognized-hunter",
+        "veteran",
+        "master-hunter",
+        "warden",
+        "legend",
+        "outcome-ready"
+      ],
+      "transitions": []
+    },
+    {
+      "id": "guard",
+      "label": "Guard",
+      "initialStage": "recruit",
+      "stages": [
+        "recruit",
+        "trusted-guard",
+        "senior",
+        "veteran",
+        "officer",
+        "reform",
+        "network",
+        "major-case",
+        "outcome-ready"
+      ],
+      "transitions": []
+    },
+    {
+      "id": "merchant",
+      "label": "Merchant",
+      "initialStage": "stall-hand",
+      "stages": [
+        "stall-hand",
+        "independent-trader",
+        "networked-merchant",
+        "veteran",
+        "merchant-house",
+        "speculator-smuggler",
+        "patron-of-routes",
+        "outcome-ready"
+      ],
+      "transitions": []
+    },
+    {
+      "id": "artist-geisha",
+      "label": "Artist House",
+      "initialStage": "novice",
+      "stages": [
+        "novice",
+        "performer",
+        "recognized-artist",
+        "veteran",
+        "master-artist",
+        "patron-network",
+        "court-invitation",
+        "outcome-ready"
+      ],
+      "transitions": []
+    },
+    {
+      "id": "assassin",
+      "label": "Assassin",
+      "initialStage": "runner",
+      "stages": [
+        "runner",
+        "operative",
+        "trusted-blade",
+        "veteran",
+        "ghost",
+        "turncoat",
+        "handler-takeover",
+        "refusal-chain",
+        "outcome-ready"
+      ],
+      "transitions": []
+    },
+    {
+      "id": "prostitute",
+      "label": "Professional",
+      "initialStage": "new-independent-worker",
+      "stages": [
+        "new-independent-worker",
+        "known-professional",
+        "established",
+        "veteran",
+        "independent-house",
+        "elite-clientele",
+        "network-advocacy",
+        "outcome-ready"
+      ],
+      "transitions": []
     }
   ],
   "quests": [],
