@@ -2089,3 +2089,88 @@ Summarize readiness after PR41/42 for:
 - Secret Debt authored-only content.
 
 Continue items 124–132 sequentially without waiting for Lead review.
+
+
+## Queue item 133 — PR43 Forest bilingual post-merge audit
+
+Create NEW file only:
+- `docs/qa-prep/PR43_FOREST_BILINGUAL_POST_MERGE_AUDIT_v1.md`
+
+Verify:
+- PR43 merge SHA;
+- exact-head 299/299 PASS;
+- post-merge main CI;
+- 17 packs / 46 events;
+- exact activityResult success/escape/failure reaction identities;
+- RU/EN renderer path;
+- Lumber Hard Work invariant unchanged;
+- Product-blocked Hunter/Old Boundary semantics untouched.
+
+## Queue item 134 — School localization delta integration QA gate v3
+
+Create NEW file only:
+- `docs/qa-prep/SCHOOL_LOCALIZATION_DELTA_INTEGRATION_QA_V3.md`
+
+Review Chat5 137–145 as files appear:
+- exact localization.json delta;
+- all 8 courses;
+- generic reachable School content;
+- exact Night content;
+- staged teacher/course exclusion;
+- no gameplay fields;
+- RU/EN completeness;
+- natural-path smoke requirements.
+
+## Queue item 135 — poverty localization delta integration QA gate v2
+
+Create NEW file only:
+- `docs/qa-prep/POVERTY_LOCALIZATION_DELTA_INTEGRATION_QA_V2.md`
+
+Review Chat3 140–148:
+- exact current-main poverty identity mapping;
+- RU/EN completeness;
+- no Secret Debt bleed;
+- no gameplay duplication;
+- natural-path invariance;
+- multi-GIF staging remains presentation-only.
+
+## Queue item 136 — real-GIF pool production QA baseline v1
+
+Create NEW file only:
+- `docs/qa-prep/REAL_GIF_POOL_PRODUCTION_QA_BASELINE_v1.md`
+
+Define acceptance for production multi-GIF pools:
+- 3..5 real repo assets;
+- no placeholder/external path;
+- stable unique keys;
+- valid current semantic ID;
+- static fallback;
+- RU/EN alt coverage;
+- locale switch keeps candidate;
+- gameplay untouched.
+
+## Queue item 137 — localization event resolver regression gate v1
+
+Create NEW file only:
+- `docs/qa-prep/LOCALIZATION_EVENT_RESOLVER_REGRESSION_GATE_v1.md`
+
+Audit the generic event/activity/media localization resolver introduced by PR43:
+- old Russian fallback remains functional;
+- missing EN is non-fatal;
+- event title/body/choice map by stable IDs;
+- media alt mapping cannot affect media choice;
+- no pending-state mutation.
+
+## Queue item 138 — next production integration gate v10
+
+Create NEW file only:
+- `docs/qa-prep/NEXT_PRODUCTION_INTEGRATION_GATE_v10.md`
+
+Summarize current readiness after PR43 for:
+- School localization delta;
+- ordinary poverty localization;
+- real-GIF multi-pools;
+- Forest remaining content;
+- Secret Debt authored-only state.
+
+Continue items 130–138 sequentially without waiting for Lead review.
