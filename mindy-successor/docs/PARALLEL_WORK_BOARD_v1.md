@@ -444,3 +444,37 @@ Locked Lumber invariants remain unchanged:
 - Forest continuation through exact `activityResult`.
 
 One file = one active owner remains mandatory. Lead continues integration/review asynchronously while workers execute their queues.
+
+
+## Queue depth raised to nine — 2026-09-27
+
+User-directed coordination rule:
+**keep 9 independent tasks queued/outstanding per worker whenever practical** so workers are less likely to idle while Lead reviews or integrates.
+
+Latest Git recheck after the previous completed checkpoints:
+- Chat 2 current production queue items 61–66: no expected output artifacts committed yet at recheck time.
+- Chat 3 current production queue items 55–60: no expected output artifacts committed yet at recheck time.
+- Chat 4 current production queue items 49–54: no expected output artifacts committed yet at recheck time.
+- Chat 5 current production queue items 49–54: no expected output artifacts committed yet at recheck time.
+
+These are newly assigned queues, not regressions of the previously verified completion.
+
+Lead topped each current branch from six to nine tasks:
+
+- Chat 2 — `chat2/presentation-replacement-next`: active/outstanding **61–69**.
+  Queue-top-up commit: `59b9c9053482d4fb5e46ddf8957f41d60f239f1a`.
+  Added: full-game GIF batching plan, presentation namespace collision audit, batch asset operator checklist.
+
+- Chat 3 — `chat3/lumber-production-proof-next`: active/outstanding **55–63**.
+  Queue-top-up commit: `8420cb9f4f1909a4e7d84d95ec002ad7a6a6bc75`.
+  Added: ordinary street-event authoring template, Secret Debt career content-depth matrix, poverty implementation-package boundary.
+
+- Chat 4 — `chat4/activation-ci-gate-next`: active/outstanding **49–57**.
+  Queue-top-up commit: `4dd8042590390a61a75ea0252aabf1b9f33703e1`.
+  Added: reusable full-game production package gate, product-scope omission sentinel matrix, content-authoring acceptance framework.
+
+- Chat 5 — `chat5/school-pa-gate-next`: active/outstanding **49–57**.
+  Queue-top-up commit: `8045b9e49fb92e62c994eb4aa25aa27cfee8053e`.
+  Added: School teacher/lesson variant template, career-hook validation checklist, School implementation-package boundary.
+
+Lead review/integration continues asynchronously. One file = one active owner remains mandatory.
