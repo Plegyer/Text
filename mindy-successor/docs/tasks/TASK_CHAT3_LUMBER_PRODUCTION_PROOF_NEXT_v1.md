@@ -2098,3 +2098,42 @@ Summarize:
 - selective integration order.
 
 Continue items 123–131 sequentially without waiting for Lead review.
+
+
+## Queue item 132 — Forest bilingual production pack v2
+
+Create NEW production-oriented file only:
+- `prior-work/astra/prototype-m3.2/content/packs/forest-result-content-bilingual-v2.json`
+
+Prepare strict pack-compatible Forest result reactions with locale-neutral event IDs plus localization-ready RU+EN payload/evidence compatible with the new Lead localization seam.
+
+Do not change exact activityResult mechanics.
+
+## Queue item 133 — Forest bilingual production regression v2
+
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/forest-result-bilingual-v2.test.ts`
+
+Validate:
+- strict pack namespace;
+- exact success/escape/failure activityResult triggers;
+- locale-neutral IDs;
+- RU+EN content coverage evidence;
+- no Lumber Hard Work drift;
+- no duplicate gameplay events by locale.
+
+## Queue item 134 — Forest localization migration bundle v1
+
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/forest-localization-migration-v1.fixture.json`
+
+Map current Forest player-facing identities to deterministic localization keys with RU+EN text and coverage status.
+
+## Queue item 135 — Forest bilingual production handoff v4
+
+Create NEW file only:
+- `docs/lumber-prep/FOREST_BILINGUAL_PRODUCTION_HANDOFF_v4.md`
+
+Summarize production-safe Forest bilingual content, exact files/tests, Product-blocked route identities, and selective integration order.
+
+Continue items 127–135 sequentially without waiting for Lead review.
