@@ -1,0 +1,550 @@
+{
+  "formatVersion": 1,
+  "kind": "ten-career-localization-presentation-bundle",
+  "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+  "locales": {
+    "source": "ru",
+    "shipped": [
+      "ru",
+      "en"
+    ]
+  },
+  "identityPolicy": {
+    "actionIdsLocaleNeutral": true,
+    "semanticIdsLocaleNeutral": true,
+    "mediaPoolRefsLocaleNeutral": true,
+    "duplicateGameplayActions": false
+  },
+  "careers": [
+    {
+      "careerId": "lumber",
+      "actionId": "lumber.shift",
+      "localizationKeys": {
+        "label": "loc/action/lumber.shift/label",
+        "description": "loc/action/lumber.shift/description",
+        "resultShell": "loc/presentation/job/lumber/result/default/fallback/text"
+      },
+      "label": {
+        "ru": "Смена лесорубов",
+        "en": "Lumber shift"
+      },
+      "description": {
+        "ru": "Обычная сезонная работа с древесиной, инструментами и рабочей площадкой.",
+        "en": "Ordinary seasonal work with timber, tools and the worksite."
+      },
+      "resultShell": {
+        "ru": "Смена лесорубов завершена.",
+        "en": "The lumber shift is complete."
+      },
+      "seasonalPresentationIds": [
+        "job/lumber/shift/spring/default",
+        "job/lumber/shift/summer/default",
+        "job/lumber/shift/autumn/default",
+        "job/lumber/shift/winter/default"
+      ],
+      "resultPresentationId": "job/lumber/result/default",
+      "sharedMediaPoolRef": "presentation-drafts/ten-career-multi-gif-v1.json#lumber",
+      "staticFallback": "assets/stage-lumber.svg",
+      "sharedCandidateAlt": [
+        {
+          "candidateKey": "lumber-handle",
+          "alt": {
+            "ru": "На рабочей площадке переносят и укладывают древесину.",
+            "en": "Timber is carried and stacked around the worksite."
+          }
+        },
+        {
+          "candidateKey": "lumber-tools",
+          "alt": {
+            "ru": "Инструменты проверяют и готовят к обычной смене.",
+            "en": "Tools are checked and prepared for an ordinary shift."
+          }
+        },
+        {
+          "candidateKey": "lumber-cleanup",
+          "alt": {
+            "ru": "Рабочую площадку приводят в порядок между этапами смены.",
+            "en": "The worksite is tidied between parts of the shift."
+          }
+        }
+      ]
+    },
+    {
+      "careerId": "satyr-maid",
+      "actionId": "satyr-maid.shift",
+      "localizationKeys": {
+        "label": "loc/action/satyr-maid.shift/label",
+        "description": "loc/action/satyr-maid.shift/description",
+        "resultShell": "loc/presentation/job/satyr-maid/result/default/fallback/text"
+      },
+      "label": {
+        "ru": "Смена в баре сатиров",
+        "en": "Satyr Maid shift"
+      },
+      "description": {
+        "ru": "Обычная сезонная работа в баре: обслуживание, подготовка зала и уборка.",
+        "en": "Ordinary seasonal bar work: service, room preparation and cleanup."
+      },
+      "resultShell": {
+        "ru": "Смена в баре сатиров завершена.",
+        "en": "The satyr-bar shift is complete."
+      },
+      "seasonalPresentationIds": [
+        "job/satyr-maid/shift/spring/default",
+        "job/satyr-maid/shift/summer/default",
+        "job/satyr-maid/shift/autumn/default",
+        "job/satyr-maid/shift/winter/default"
+      ],
+      "resultPresentationId": "job/satyr-maid/result/default",
+      "sharedMediaPoolRef": "presentation-drafts/ten-career-multi-gif-v1.json#satyr-maid",
+      "staticFallback": "assets/stage-tavern.svg",
+      "sharedCandidateAlt": [
+        {
+          "candidateKey": "satyr-service",
+          "alt": {
+            "ru": "Заказы разносят между столами в обычную смену.",
+            "en": "Orders are carried between tables during an ordinary shift."
+          }
+        },
+        {
+          "candidateKey": "satyr-reset",
+          "alt": {
+            "ru": "После гостей стол приводят в порядок для следующего обслуживания.",
+            "en": "A table is reset after guests for the next service."
+          }
+        },
+        {
+          "candidateKey": "satyr-prep",
+          "alt": {
+            "ru": "Зону обслуживания готовят к новым посетителям.",
+            "en": "The service area is prepared for new visitors."
+          }
+        }
+      ]
+    },
+    {
+      "careerId": "undead-farm",
+      "actionId": "undead-farm.shift",
+      "localizationKeys": {
+        "label": "loc/action/undead-farm.shift/label",
+        "description": "loc/action/undead-farm.shift/description",
+        "resultShell": "loc/presentation/job/undead-farm/result/default/fallback/text"
+      },
+      "label": {
+        "ru": "Смена на ферме нежити",
+        "en": "Undead Farm shift"
+      },
+      "description": {
+        "ru": "Обычная сезонная производственная работа: уход, сортировка и обслуживание фермы.",
+        "en": "Ordinary seasonal production work: tending, sorting and farm maintenance."
+      },
+      "resultShell": {
+        "ru": "Смена на ферме нежити завершена.",
+        "en": "The undead-farm shift is complete."
+      },
+      "seasonalPresentationIds": [
+        "job/undead-farm/shift/spring/default",
+        "job/undead-farm/shift/summer/default",
+        "job/undead-farm/shift/autumn/default",
+        "job/undead-farm/shift/winter/default"
+      ],
+      "resultPresentationId": "job/undead-farm/result/default",
+      "sharedMediaPoolRef": "presentation-drafts/ten-career-multi-gif-v1.json#undead-farm",
+      "staticFallback": "assets/stage-forest.svg",
+      "sharedCandidateAlt": [
+        {
+          "candidateKey": "farm-tend",
+          "alt": {
+            "ru": "Рабочий участок фермы проверяют и обслуживают в ходе обычной смены.",
+            "en": "A farm work area is checked and tended during an ordinary shift."
+          }
+        },
+        {
+          "candidateKey": "farm-sort",
+          "alt": {
+            "ru": "Собранные материалы сортируют для дальнейшей обработки.",
+            "en": "Gathered materials are sorted for later processing."
+          }
+        },
+        {
+          "candidateKey": "farm-maintain",
+          "alt": {
+            "ru": "Инструменты и рабочее место приводят в порядок между задачами.",
+            "en": "Tools and the work area are maintained between tasks."
+          }
+        }
+      ]
+    },
+    {
+      "careerId": "tavern",
+      "actionId": "tavern.shift",
+      "localizationKeys": {
+        "label": "loc/action/tavern.shift/label",
+        "description": "loc/action/tavern.shift/description",
+        "resultShell": "loc/presentation/job/tavern/result/default/fallback/text"
+      },
+      "label": {
+        "ru": "Смена в таверне",
+        "en": "Tavern shift"
+      },
+      "description": {
+        "ru": "Обычная сезонная работа в таверне: обслуживание, уборка и перенос припасов.",
+        "en": "Ordinary seasonal tavern work: service, cleanup and moving supplies."
+      },
+      "resultShell": {
+        "ru": "Смена в таверне завершена.",
+        "en": "The tavern shift is complete."
+      },
+      "seasonalPresentationIds": [
+        "job/tavern/shift/spring/default",
+        "job/tavern/shift/summer/default",
+        "job/tavern/shift/autumn/default",
+        "job/tavern/shift/winter/default"
+      ],
+      "resultPresentationId": "job/tavern/result/default",
+      "sharedMediaPoolRef": "presentation-drafts/ten-career-multi-gif-v1.json#tavern",
+      "staticFallback": "assets/stage-tavern.svg",
+      "sharedCandidateAlt": [
+        {
+          "candidateKey": "tavern-serve",
+          "alt": {
+            "ru": "В обычной смене обслуживают столы и разносят заказы.",
+            "en": "Tables are served and orders carried during an ordinary shift."
+          }
+        },
+        {
+          "candidateKey": "tavern-clean",
+          "alt": {
+            "ru": "Зал убирают и готовят к следующему потоку гостей.",
+            "en": "The room is cleaned and prepared for the next group of guests."
+          }
+        },
+        {
+          "candidateKey": "tavern-supplies",
+          "alt": {
+            "ru": "Припасы переносят между складом и зоной обслуживания.",
+            "en": "Supplies are moved between storage and the service area."
+          }
+        }
+      ]
+    },
+    {
+      "careerId": "hunter",
+      "actionId": "hunter.shift",
+      "localizationKeys": {
+        "label": "loc/action/hunter.shift/label",
+        "description": "loc/action/hunter.shift/description",
+        "resultShell": "loc/presentation/job/hunter/result/default/fallback/text"
+      },
+      "label": {
+        "ru": "Охотничья смена",
+        "en": "Hunter shift"
+      },
+      "description": {
+        "ru": "Обычная местная охотничья работа вне экспедиционного слоя Activity.",
+        "en": "Ordinary local hunting work outside the expedition Activity layer."
+      },
+      "resultShell": {
+        "ru": "Охотничья смена завершена.",
+        "en": "The hunter shift is complete."
+      },
+      "seasonalPresentationIds": [
+        "job/hunter/shift/spring/default",
+        "job/hunter/shift/summer/default",
+        "job/hunter/shift/autumn/default",
+        "job/hunter/shift/winter/default"
+      ],
+      "resultPresentationId": "job/hunter/result/default",
+      "sharedMediaPoolRef": "presentation-drafts/ten-career-multi-gif-v1.json#hunter",
+      "staticFallback": "assets/stage-forest.svg",
+      "sharedCandidateAlt": [
+        {
+          "candidateKey": "hunter-tracks",
+          "alt": {
+            "ru": "На обычном маршруте проверяют следы и признаки зверя.",
+            "en": "Tracks and signs are checked along an ordinary local route."
+          }
+        },
+        {
+          "candidateKey": "hunter-gear",
+          "alt": {
+            "ru": "Полевое снаряжение проверяют перед продолжением смены.",
+            "en": "Field gear is checked before the shift continues."
+          }
+        },
+        {
+          "candidateKey": "hunter-carry",
+          "alt": {
+            "ru": "Обычные собранные материалы несут по местному лесному маршруту.",
+            "en": "Ordinary gathered materials are carried along a local forest route."
+          }
+        }
+      ]
+    },
+    {
+      "careerId": "guard",
+      "actionId": "guard.shift",
+      "localizationKeys": {
+        "label": "loc/action/guard.shift/label",
+        "description": "loc/action/guard.shift/description",
+        "resultShell": "loc/presentation/job/guard/result/default/fallback/text"
+      },
+      "label": {
+        "ru": "Патруль стражи",
+        "en": "Guard patrol"
+      },
+      "description": {
+        "ru": "Обычная сезонная городская служба: патруль, пост и повседневные проверки.",
+        "en": "Ordinary seasonal city duty: patrol, watch and routine checks."
+      },
+      "resultShell": {
+        "ru": "Смена стражи завершена.",
+        "en": "The guard shift is complete."
+      },
+      "seasonalPresentationIds": [
+        "job/guard/shift/spring/default",
+        "job/guard/shift/summer/default",
+        "job/guard/shift/autumn/default",
+        "job/guard/shift/winter/default"
+      ],
+      "resultPresentationId": "job/guard/result/default",
+      "sharedMediaPoolRef": "presentation-drafts/ten-career-multi-gif-v1.json#guard",
+      "staticFallback": "assets/stage-town.svg",
+      "sharedCandidateAlt": [
+        {
+          "candidateKey": "guard-patrol",
+          "alt": {
+            "ru": "Стража проходит обычный участок городского патруля.",
+            "en": "A guard walks an ordinary section of the city patrol."
+          }
+        },
+        {
+          "candidateKey": "guard-watch",
+          "alt": {
+            "ru": "На городском посту несут обычное дежурство.",
+            "en": "Routine watch duty continues at a city post."
+          }
+        },
+        {
+          "candidateKey": "guard-check",
+          "alt": {
+            "ru": "Обычную повозку или проход проверяют без задержания и конфликта.",
+            "en": "An ordinary cart or passage is checked without an arrest or conflict."
+          }
+        }
+      ]
+    },
+    {
+      "careerId": "merchant",
+      "actionId": "merchant.shift",
+      "localizationKeys": {
+        "label": "loc/action/merchant.shift/label",
+        "description": "loc/action/merchant.shift/description",
+        "resultShell": "loc/presentation/job/merchant/result/default/fallback/text"
+      },
+      "label": {
+        "ru": "Торговая смена",
+        "en": "Merchant shift"
+      },
+      "description": {
+        "ru": "Обычная сезонная торговая работа: рынок, оценка, доставка и переговоры.",
+        "en": "Ordinary seasonal merchant work: market activity, appraisal, delivery and negotiation."
+      },
+      "resultShell": {
+        "ru": "Торговая смена завершена.",
+        "en": "The merchant shift is complete."
+      },
+      "seasonalPresentationIds": [
+        "job/merchant/shift/spring/default",
+        "job/merchant/shift/summer/default",
+        "job/merchant/shift/autumn/default",
+        "job/merchant/shift/winter/default"
+      ],
+      "resultPresentationId": "job/merchant/result/default",
+      "sharedMediaPoolRef": "presentation-drafts/ten-career-multi-gif-v1.json#merchant",
+      "staticFallback": "assets/stage-town.svg",
+      "sharedCandidateAlt": [
+        {
+          "candidateKey": "merchant-inspect",
+          "alt": {
+            "ru": "Обычные товары и записи проверяют у торгового места.",
+            "en": "Ordinary goods and records are checked at a market position."
+          }
+        },
+        {
+          "candidateKey": "merchant-display",
+          "alt": {
+            "ru": "Товар раскладывают и готовят к обычной торговле.",
+            "en": "Goods are arranged and prepared for ordinary trade."
+          }
+        },
+        {
+          "candidateKey": "merchant-parcel",
+          "alt": {
+            "ru": "Обычную посылку готовят к передаче или доставке.",
+            "en": "An ordinary parcel is prepared for handoff or delivery."
+          }
+        }
+      ]
+    },
+    {
+      "careerId": "artist-geisha",
+      "actionId": "artist-geisha.shift",
+      "localizationKeys": {
+        "label": "loc/action/artist-geisha.shift/label",
+        "description": "loc/action/artist-geisha.shift/description",
+        "resultShell": "loc/presentation/job/artist-geisha/result/default/fallback/text"
+      },
+      "label": {
+        "ru": "Смена в Доме искусств",
+        "en": "Artist House shift"
+      },
+      "description": {
+        "ru": "Обычная сезонная репетиция, подготовка пространства и работа с гостями.",
+        "en": "Ordinary seasonal rehearsal, space preparation and guest-facing work."
+      },
+      "resultShell": {
+        "ru": "Смена в Доме искусств завершена.",
+        "en": "The Artist House shift is complete."
+      },
+      "seasonalPresentationIds": [
+        "job/artist-geisha/shift/spring/default",
+        "job/artist-geisha/shift/summer/default",
+        "job/artist-geisha/shift/autumn/default",
+        "job/artist-geisha/shift/winter/default"
+      ],
+      "resultPresentationId": "job/artist-geisha/result/default",
+      "sharedMediaPoolRef": "presentation-drafts/ten-career-multi-gif-v1.json#artist-geisha",
+      "staticFallback": "assets/stage-tavern.svg",
+      "sharedCandidateAlt": [
+        {
+          "candidateKey": "artist-rehearse",
+          "alt": {
+            "ru": "В обычной смене проходит спокойная репетиция движения или ритма.",
+            "en": "A quiet movement or rhythm rehearsal takes place during an ordinary shift."
+          }
+        },
+        {
+          "candidateKey": "artist-prepare",
+          "alt": {
+            "ru": "Пространство готовят к обычному выступлению или приёму гостей.",
+            "en": "The space is prepared for an ordinary performance or guest reception."
+          }
+        },
+        {
+          "candidateKey": "artist-host",
+          "alt": {
+            "ru": "Гостей встречают в нейтральной рабочей обстановке без отдельного сюжетного исхода.",
+            "en": "Guests are received in a neutral work setting without a separate narrative outcome."
+          }
+        }
+      ]
+    },
+    {
+      "careerId": "assassin",
+      "actionId": "assassin.shift",
+      "localizationKeys": {
+        "label": "loc/action/assassin.shift/label",
+        "description": "loc/action/assassin.shift/description",
+        "resultShell": "loc/presentation/job/assassin/result/default/fallback/text"
+      },
+      "label": {
+        "ru": "Смена ассасина",
+        "en": "Assassin shift"
+      },
+      "description": {
+        "ru": "Обычная скрытая работа: наблюдение, доставка, подготовка маршрута или уборка следов.",
+        "en": "Ordinary covert work: surveillance, delivery, route preparation or cleanup."
+      },
+      "resultShell": {
+        "ru": "Скрытая смена завершена.",
+        "en": "The covert shift is complete."
+      },
+      "seasonalPresentationIds": [
+        "job/assassin/shift/spring/default",
+        "job/assassin/shift/summer/default",
+        "job/assassin/shift/autumn/default",
+        "job/assassin/shift/winter/default"
+      ],
+      "resultPresentationId": "job/assassin/result/default",
+      "sharedMediaPoolRef": "presentation-drafts/ten-career-multi-gif-v1.json#assassin",
+      "staticFallback": "assets/stage-town.svg",
+      "sharedCandidateAlt": [
+        {
+          "candidateKey": "assassin-observe",
+          "alt": {
+            "ru": "Городской маршрут наблюдают с нейтральной точки без видимой цели.",
+            "en": "A city route is observed from a neutral vantage point without a visible target."
+          }
+        },
+        {
+          "candidateKey": "assassin-prepare",
+          "alt": {
+            "ru": "Обычные инструменты или посылку готовят к скрытой работе.",
+            "en": "Ordinary tools or a parcel are prepared for covert work."
+          }
+        },
+        {
+          "candidateKey": "assassin-route",
+          "alt": {
+            "ru": "По городскому маршруту перемещаются без изображения результата задания.",
+            "en": "A city route is traversed without depicting the result of an assignment."
+          }
+        }
+      ]
+    },
+    {
+      "careerId": "prostitute",
+      "actionId": "prostitute.shift",
+      "localizationKeys": {
+        "label": "loc/action/prostitute.shift/label",
+        "description": "loc/action/prostitute.shift/description",
+        "resultShell": "loc/presentation/job/prostitute/result/default/fallback/text"
+      },
+      "label": {
+        "ru": "Профессиональная смена",
+        "en": "Professional shift"
+      },
+      "description": {
+        "ru": "Обычная добровольная профессиональная работа с сохранением агентности и границ персонажа.",
+        "en": "Ordinary voluntary professional work with the character's agency and boundaries preserved."
+      },
+      "resultShell": {
+        "ru": "Профессиональная смена завершена.",
+        "en": "The professional shift is complete."
+      },
+      "seasonalPresentationIds": [
+        "job/prostitute/shift/spring/default",
+        "job/prostitute/shift/summer/default",
+        "job/prostitute/shift/autumn/default",
+        "job/prostitute/shift/winter/default"
+      ],
+      "resultPresentationId": "job/prostitute/result/default",
+      "sharedMediaPoolRef": "presentation-drafts/ten-career-multi-gif-v1.json#prostitute",
+      "staticFallback": "assets/stage-room.svg",
+      "sharedCandidateAlt": [
+        {
+          "candidateKey": "professional-room",
+          "alt": {
+            "ru": "Приватную рабочую комнату готовят перед обычной сменой.",
+            "en": "A private professional room is prepared before an ordinary shift."
+          }
+        },
+        {
+          "candidateKey": "professional-reset",
+          "alt": {
+            "ru": "Предметы в комнате аккуратно приводят в порядок между рабочими эпизодами.",
+            "en": "Items in the room are reset neatly between work periods."
+          }
+        },
+        {
+          "candidateKey": "professional-presentation",
+          "alt": {
+            "ru": "В нейтральной обстановке готовятся к профессиональной встрече без изображения клиента.",
+            "en": "Preparation for a professional meeting takes place in a neutral setting without depicting a client."
+          }
+        }
+      ]
+    }
+  ]
+}
