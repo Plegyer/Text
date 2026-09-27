@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "id": "forest.route-seam-acceptance.v2",
+  "status": "EXECUTABLE_EXPECTATION_FIXTURE_FOR_SHARED_PRESENTATION_SEAM",
+  "baseMain": "d383a2282a15eb4ebc1bbb2fef2bbf9f3f2087fe",
+  "activityId": "lumber.forest",
+  "paths": [
+    {
+      "routeId": "forest.route.logging-road",
+      "routeState": "logging-road",
+      "authoritativeConditions": [],
+      "presentationId": "activity/forest/route/logging-road",
+      "unchangedSave": {
+        "activityId": "lumber.forest",
+        "routeId": "logging-road",
+        "selectedOptionId": "forest.route.logging-road",
+        "presentationWritesGameplaySave": false
+      },
+      "unchangedRng": {
+        "globalRunRngAdvancedByPresentation": false,
+        "activityRngAdvancedByPresentation": false
+      },
+      "unchangedResults": {
+        "success": "lumber.forest.success",
+        "escape": "lumber.forest.escape",
+        "failure": "lumber.forest.failure"
+      },
+      "exactActivityResultContinuation": {
+        "success": {
+          "kind": "activityResult",
+          "activity": "lumber.forest",
+          "outcome": "success",
+          "result": "lumber.forest.success"
+        },
+        "escape": {
+          "kind": "activityResult",
+          "activity": "lumber.forest",
+          "outcome": "escape",
+          "result": "lumber.forest.escape"
+        },
+        "failure": {
+          "kind": "activityResult",
+          "activity": "lumber.forest",
+          "outcome": "failure",
+          "result": "lumber.forest.failure"
+        }
+      }
+    },
+    {
+      "routeId": "forest.route.old-boundary",
+      "routeState": "old-boundary",
+      "authoritativeConditions": [
+        {
+          "kind": "itemCapability",
+          "capability": "enter_old_boundary",
+          "present": true
+        }
+      ],
+      "presentationId": "activity/forest/route/old-boundary",
+      "unchangedSave": {
+        "activityId": "lumber.forest",
+        "routeId": "old-boundary",
+        "selectedOptionId": "forest.route.old-boundary",
+        "presentationWritesGameplaySave": false
+      },
+      "unchangedRng": {
+        "globalRunRngAdvancedByPresentation": false,
+        "activityRngAdvancedByPresentation": false
+      },
+      "unchangedResults": {
+        "success": "lumber.forest.success",
+        "escape": "lumber.forest.escape",
+        "failure": "lumber.forest.failure"
+      },
+      "exactActivityResultContinuation": {
+        "success": {
+          "kind": "activityResult",
+          "activity": "lumber.forest",
+          "outcome": "success",
+          "result": "lumber.forest.success"
+        },
+        "escape": {
+          "kind": "activityResult",
+          "activity": "lumber.forest",
+          "outcome": "escape",
+          "result": "lumber.forest.escape"
+        },
+        "failure": {
+          "kind": "activityResult",
+          "activity": "lumber.forest",
+          "outcome": "failure",
+          "result": "lumber.forest.failure"
+        }
+      }
+    }
+  ],
+  "saveInvariantFields": [
+    "run.flow.activity.activityId",
+    "run.flow.activity.internalState.routeId",
+    "run.flow.activity.internalState.progress",
+    "run.flow.activity.internalState.endurance",
+    "run.flow.activity.internalState.resolvedOptionIds",
+    "run.flow.activity.checkpoint",
+    "run.rng",
+    "run.flow.activity.rngState"
+  ],
+  "hardWorkInvariant": {
+    "endingId": "ending.lumber.hard-work",
+    "conditions": [
+      {
+        "kind": "careerCounter",
+        "career": "lumber",
+        "counter": "completed_shifts",
+        "op": "gte",
+        "value": 50
+      }
+    ],
+    "metaRewards": [
+      {
+        "kind": "hardWork",
+        "rewardId": "hardWork:lumber",
+        "career": "lumber"
+      }
+    ],
+    "humanReadable": "completed_shifts >= 50 only; reward hardWork:lumber"
+  },
+  "acceptanceRules": [
+    "Route presentationId is derived only after authoritative route selection.",
+    "Presentation lookup does not mutate gameplay Save.",
+    "Presentation lookup advances neither global nor Activity RNG.",
+    "Locale changes presentation strings only.",
+    "Success/escape/failure identities and activityResult continuations remain exact.",
+    "Lumber Hard Work keeps its exact current condition and reward."
+  ]
+}
