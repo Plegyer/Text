@@ -960,3 +960,109 @@ Produce the smallest final handoff:
 Name exact files and explicitly supersede stale pre-fix PR24 artifacts.
 
 Continue items 49–54 sequentially without waiting for Lead review.
+
+
+## Queue item 55 — PR27/current-main presentation authority reconciliation
+
+Create NEW file only:
+- `docs/presentation-prep/PRESENTATION_PR27_MAIN_RECONCILIATION_v1.md`
+
+Reconcile the presentation closeout against current main after PR #27 and the direct post-merge docs commits.
+
+Confirm:
+- technical RC floor remains 221/221;
+- missing schema4 `presentationId` remains compatibility-only and does not change presentation identity rules;
+- no PR27 change introduced production runtime/content/UI presentation behavior;
+- current human/content gaps remain asset authoring and product content depth, not presentation mechanics.
+
+Do not edit shared runtime/UI/catalog or select art direction.
+
+## Queue item 56 — Forest content-depth presentation dependency matrix
+
+Create NEW files only:
+- `docs/presentation-prep/PRESENTATION_FOREST_CONTENT_DEPTH_ASSET_MATRIX_v1.md`
+- `prior-work/astra/prototype-m3.2/content/presentation-forest-content-depth-asset-matrix.fixture.json`
+
+Map presentation needs for the still-open Forest product depth without inventing content:
+- logging road;
+- hunter trail;
+- old boundary;
+- navigation challenge family;
+- physical obstacle family;
+- interpretation/ritual anomaly family;
+- seasonal topology variants;
+- success / escape / failure result surfaces.
+
+Classify each row as:
+- SHIPPED_IDENTITY_READY;
+- AUTHORING_DECISION_REQUIRED;
+- CONTENT_FIRST_THEN_ASSET;
+- OPTIONAL_POLISH.
+
+Keep gameplay identity separate from media assets.
+
+## Queue item 57 — School authoring-to-asset dependency matrix
+
+Create NEW files only:
+- `docs/presentation-prep/PRESENTATION_SCHOOL_AUTHORING_ASSET_DEPENDENCIES_v1.md`
+- `prior-work/astra/prototype-m3.2/content/presentation-school-authoring-asset-dependencies.fixture.json`
+
+Map unresolved School authoring decisions to presentation work:
+- teacher identities;
+- management/accounting public-result milestone;
+- Arcana/Forest public-result milestone;
+- certificate/project content where still OPEN;
+- paid lesson and blocking-scene visuals already supported by semantic IDs.
+
+Do not invent teacher identities, thresholds, providers, or certificates.
+
+## Queue item 58 — human asset decision packet
+
+Create NEW file only:
+- `docs/presentation-prep/PRESENTATION_HUMAN_ASSET_DECISION_PACKET_v1.md`
+
+Produce a neutral decision packet containing only choices a human/Product author must make before final art/GIF production.
+
+For each decision record:
+- affected semantic presentation IDs;
+- whether content authoring must happen first;
+- fallback currently available;
+- whether the decision is blocking for authored product depth or only polish;
+- downstream replacement/import work.
+
+Do not recommend a preferred visual style.
+
+## Queue item 59 — post-decision asset integration checklist
+
+Create NEW file only:
+- `docs/presentation-prep/PRESENTATION_POST_DECISION_ASSET_INTEGRATION_CHECKLIST_v1.md`
+
+Define the deterministic operator sequence after Product/content decisions are made:
+- receive approved content/asset mapping;
+- validate semantic IDs;
+- validate fallback preservation;
+- import replacement media;
+- preview with animations on/off;
+- save/reload smoke;
+- rollback smoke;
+- confirm zero gameplay-state mutation.
+
+No runtime implementation.
+
+## Queue item 60 — presentation content-depth handoff v6
+
+Create NEW files only:
+- `docs/presentation-prep/PRESENTATION_CONTENT_DEPTH_HANDOFF_v6.md`
+- `prior-work/astra/prototype-m3.2/content/presentation-content-depth-handoff-v6.fixture.json`
+
+Produce the smallest current-main handoff with:
+- TECHNICAL_PRESENTATION_GREEN;
+- HUMAN_ASSET_DECISION;
+- CONTENT_FIRST_THEN_ASSET;
+- OPTIONAL_POLISH;
+- READY_AFTER_PRODUCT_DECISION;
+- SUPERSEDED.
+
+Name exact current authoritative presentation files and explicitly reference PR27/current-main compatibility status.
+
+Continue items 55–60 sequentially without waiting for Lead review.
