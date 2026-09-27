@@ -549,3 +549,35 @@ Lead replenished queues back to nine:
 - Chat 5: **56–64** on `chat5/school-pa-gate-next`.
 
 One file = one active owner. Full-game scope remains mandatory; Lumber is a reference slice, not the whole product.
+
+
+## Stream-recovery coordination checkpoint — 2026-09-27
+
+A Chat 1 UI/HTTP stream interruption occurred after ongoing queue maintenance. Git was re-read before any repeated action; repository state was intact and worker branches had continued progressing.
+
+Verified first outstanding items after recovery:
+- Chat 2: item **77**; items 70–76 are present.
+- Chat 3: item **72**; items 67–71 are present.
+- Chat 4: item **66**; items 61–65 are present.
+- Chat 5: item **73**; items 64–72 are present.
+
+Queue depth restored/confirmed at exactly nine outstanding tasks:
+- Chat 2 / `chat2/presentation-replacement-next`: **77–85**.
+  Recovery top-up commit: `5254a9bf41d86feb425a327e7e559ec88d489334`.
+- Chat 3 / `chat3/lumber-production-proof-next`: **72–80**.
+- Chat 4 / `chat4/activation-ci-gate-next`: **66–74**.
+- Chat 5 / `chat5/school-pa-gate-next`: **73–81**.
+  Recovery top-up commit: `02815a291735b6e2e89252fb522ee74836c501b0`.
+
+PR #29 remains OPEN and mergeable:
+- head `bdd26e6dbfcd8feaf207b89a304efc8cc42bb225`;
+- independent Chat 4 review: `GREEN_FOR_MERGE`;
+- review explicitly notes no attached GitHub Actions run;
+- connected GitHub workflow query still returns no workflow runs for the head;
+- combined-status endpoint is inaccessible to the integration (403);
+- therefore do not claim a new executed full-check or merge solely from review evidence.
+
+Latest merged production-authority milestone remains PR #30:
+`dbe78efdb9cd5ed384b66f7536bb5145702779c7`.
+
+No locked Product or Lumber invariants changed during recovery.
