@@ -1660,3 +1660,97 @@ For each slot include:
 Do not invent character appearance or final art style.
 
 Continue items 83–91 sequentially without waiting for Lead review.
+
+
+## Queue item 92 — starter-trio presentation registry delta
+
+Create NEW files only:
+- `docs/presentation-prep/STARTER_TRIO_PRESENTATION_REGISTRY_DELTA_v1.md`
+- `prior-work/astra/prototype-m3.2/content/starter-trio-presentation-registry-delta.fixture.json`
+
+Using current main plus PR32 evidence, enumerate the semantic slots added/confirmed for Lumber, Satyr Maid and Undead Farm:
+- seasonal shift slots;
+- result/default slots;
+- current base media;
+- fallback chain;
+- whether the slot is READY_FOR_GIF / CONTENT_FIRST / OPTIONAL_POLISH.
+
+Do not add gameplay IDs that are not in production/PR32.
+
+## Queue item 93 — starter-trio media draft bundle
+
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/starter-trio-media-batch-v1.json`
+
+Prepare a valid presentation override draft for existing starter-trio semantic slots using only static/base fallback mappings already available. Do not invent GIF paths or files.
+
+Purpose:
+- provide a ready import shape for later GIF replacement;
+- prove semantic slots can be addressed independently;
+- keep gameplay unchanged.
+
+The draft must not be wired as mandatory production media.
+
+## Queue item 94 — starter-trio presentation draft validation
+
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/starter-trio-presentation-draft.test.ts`
+
+Validate the item-93 draft against the presentation schema/catalog where the referenced PR32 slots exist.
+
+Cover:
+- semantic IDs resolve;
+- animation-off fallback remains usable;
+- no save/gameplay mutation;
+- Satyr Maid and Undead Farm remain separate semantic identities despite reused base media.
+
+If PR32 is not yet on the worker branch, build the test against a minimal explicit fixture and label that limitation; do not fake main state.
+
+## Queue item 95 — external GIF filename/import convention
+
+Create NEW file only:
+- `docs/presentation-prep/EXTERNAL_GIF_FILENAME_IMPORT_CONVENTION_v1.md`
+
+Define a deterministic external-asset convention derived from semantic presentation IDs:
+- canonical relative asset path suggestion;
+- collision handling;
+- season/context suffixes;
+- reusable-loop grouping;
+- alt-text sidecar requirement;
+- import manifest mapping.
+
+Filenames remain presentation-only and never become gameplay identity.
+
+## Queue item 96 — media producer acceptance card template
+
+Create NEW file only:
+- `docs/presentation-prep/MEDIA_PRODUCER_ACCEPTANCE_CARD_TEMPLATE_v1.md`
+
+Create the smallest card an external GIF producer needs for one asset:
+- semantic ID;
+- scene context;
+- action/motion;
+- reusable/dedicated;
+- loop expectation;
+- season/context;
+- visual exclusions;
+- static fallback;
+- alt text;
+- approval source.
+
+No mechanics, thresholds or save rules beyond “media cannot drive them.”
+
+## Queue item 97 — presentation production integration handoff v8
+
+Create NEW file only:
+- `docs/presentation-prep/PRESENTATION_PRODUCTION_INTEGRATION_HANDOFF_v8.md`
+
+Consolidate items 89–96 into a concise Lead-facing handoff:
+- media that can be produced now;
+- media waiting on authored identities;
+- PR32-related starter-trio slots;
+- School/poverty dependencies;
+- human art decisions that are optional;
+- exact files ready for selective integration.
+
+Continue items 89–97 sequentially without waiting for Lead review.
