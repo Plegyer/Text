@@ -1496,3 +1496,37 @@ Define a reusable batch packet for producing multiple GIF/static assets at once:
 Keep media production separate from gameplay authoring.
 
 Continue items 75–83 sequentially without waiting for Lead review.
+
+
+## Queue item 84 — starter-trio semantic GIF shot list
+
+Create NEW file only:
+- `docs/presentation-prep/STARTER_TRIO_SEMANTIC_GIF_SHOT_LIST_v1.md`
+
+Using only already-authored/authoritative content, prepare production shot-list entries for Lumber, Satyr Maid and Undead Farm:
+- semantic presentation surface;
+- gameplay/content context;
+- reusable vs dedicated loop;
+- seasonal/context variants;
+- static/text fallback;
+- content dependency still OPEN, if any.
+
+Do not choose art style, character appearance, explicit prose, or invent missing gameplay IDs. Lumber may be more complete than the other two; represent that honestly.
+
+## Queue item 85 — School/poverty semantic GIF shot list
+
+Create NEW file only:
+- `docs/presentation-prep/SCHOOL_POVERTY_SEMANTIC_GIF_SHOT_LIST_v1.md`
+
+Prepare media-production shot-list entries for:
+- eight School course lesson surfaces;
+- Night study presentation;
+- normal room;
+- cheap lodging;
+- street sleep;
+- ordinary poverty event families;
+- future Secret Debt surfaces only where structural identity is already known.
+
+Mark CONTENT_AUTHORING_FIRST or PRODUCT_DECISION_REQUIRED where final semantic identity is not ready. Keep GIF production independent from mechanics.
+
+Continue items 77–85 sequentially without waiting for Lead review.
