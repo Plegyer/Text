@@ -1,0 +1,1776 @@
+{
+  "formatVersion": 1,
+  "kind": "ten-career-multi-gif-production-manifest",
+  "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+  "authority": {
+    "pr36Merged": true,
+    "mainCommit": "279c71fcf87c9c06c5b96699c8516616a8350062"
+  },
+  "scope": {
+    "ordinaryCareerCount": 10,
+    "seasonalShiftSlots": 40,
+    "resultSlots": 10,
+    "totalSlots": 50,
+    "hardWorkIdsInvented": false,
+    "relationshipIdsInvented": false,
+    "eventIdsInvented": false
+  },
+  "policy": {
+    "candidateCountPerSlot": 3,
+    "mediaSelectionPresentationOnly": true,
+    "gameplayIdentityUnchanged": true,
+    "animationsOffUsesStaticFallback": true
+  },
+  "pools": [
+    {
+      "careerId": "lumber",
+      "sourceActionId": "lumber.shift",
+      "surface": "seasonal-shift",
+      "presentationId": "job/lumber/shift/spring/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "lumber-spring-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/lumber/shift/spring/1.gif",
+          "alt": "lumber spring shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "lumber-spring-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/lumber/shift/spring/2.gif",
+          "alt": "lumber spring shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "lumber-spring-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/lumber/shift/spring/3.gif",
+          "alt": "lumber spring shift visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-lumber.svg",
+        "alt": "lumber spring static fallback."
+      }
+    },
+    {
+      "careerId": "lumber",
+      "sourceActionId": "lumber.shift",
+      "surface": "seasonal-shift",
+      "presentationId": "job/lumber/shift/summer/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "lumber-summer-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/lumber/shift/summer/1.gif",
+          "alt": "lumber summer shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "lumber-summer-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/lumber/shift/summer/2.gif",
+          "alt": "lumber summer shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "lumber-summer-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/lumber/shift/summer/3.gif",
+          "alt": "lumber summer shift visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-lumber.svg",
+        "alt": "lumber summer static fallback."
+      }
+    },
+    {
+      "careerId": "lumber",
+      "sourceActionId": "lumber.shift",
+      "surface": "seasonal-shift",
+      "presentationId": "job/lumber/shift/autumn/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "lumber-autumn-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/lumber/shift/autumn/1.gif",
+          "alt": "lumber autumn shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "lumber-autumn-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/lumber/shift/autumn/2.gif",
+          "alt": "lumber autumn shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "lumber-autumn-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/lumber/shift/autumn/3.gif",
+          "alt": "lumber autumn shift visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-lumber.svg",
+        "alt": "lumber autumn static fallback."
+      }
+    },
+    {
+      "careerId": "lumber",
+      "sourceActionId": "lumber.shift",
+      "surface": "seasonal-shift",
+      "presentationId": "job/lumber/shift/winter/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "lumber-winter-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/lumber/shift/winter/1.gif",
+          "alt": "lumber winter shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "lumber-winter-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/lumber/shift/winter/2.gif",
+          "alt": "lumber winter shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "lumber-winter-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/lumber/shift/winter/3.gif",
+          "alt": "lumber winter shift visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-lumber.svg",
+        "alt": "lumber winter static fallback."
+      }
+    },
+    {
+      "careerId": "lumber",
+      "sourceActionId": "lumber.shift",
+      "surface": "result",
+      "presentationId": "job/lumber/result/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "lumber-result-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/lumber/result/1.gif",
+          "alt": "lumber completed-shift result visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "lumber-result-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/lumber/result/2.gif",
+          "alt": "lumber completed-shift result visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "lumber-result-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/lumber/result/3.gif",
+          "alt": "lumber completed-shift result visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-lumber.svg",
+        "alt": "lumber result static fallback."
+      }
+    },
+    {
+      "careerId": "satyr-maid",
+      "sourceActionId": "satyr-maid.shift",
+      "surface": "seasonal-shift",
+      "presentationId": "job/satyr-maid/shift/spring/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "satyr-maid-spring-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/satyr-maid/shift/spring/1.gif",
+          "alt": "satyr-maid spring shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "satyr-maid-spring-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/satyr-maid/shift/spring/2.gif",
+          "alt": "satyr-maid spring shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "satyr-maid-spring-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/satyr-maid/shift/spring/3.gif",
+          "alt": "satyr-maid spring shift visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-tavern.svg",
+        "alt": "satyr-maid spring static fallback."
+      }
+    },
+    {
+      "careerId": "satyr-maid",
+      "sourceActionId": "satyr-maid.shift",
+      "surface": "seasonal-shift",
+      "presentationId": "job/satyr-maid/shift/summer/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "satyr-maid-summer-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/satyr-maid/shift/summer/1.gif",
+          "alt": "satyr-maid summer shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "satyr-maid-summer-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/satyr-maid/shift/summer/2.gif",
+          "alt": "satyr-maid summer shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "satyr-maid-summer-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/satyr-maid/shift/summer/3.gif",
+          "alt": "satyr-maid summer shift visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-tavern.svg",
+        "alt": "satyr-maid summer static fallback."
+      }
+    },
+    {
+      "careerId": "satyr-maid",
+      "sourceActionId": "satyr-maid.shift",
+      "surface": "seasonal-shift",
+      "presentationId": "job/satyr-maid/shift/autumn/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "satyr-maid-autumn-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/satyr-maid/shift/autumn/1.gif",
+          "alt": "satyr-maid autumn shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "satyr-maid-autumn-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/satyr-maid/shift/autumn/2.gif",
+          "alt": "satyr-maid autumn shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "satyr-maid-autumn-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/satyr-maid/shift/autumn/3.gif",
+          "alt": "satyr-maid autumn shift visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-tavern.svg",
+        "alt": "satyr-maid autumn static fallback."
+      }
+    },
+    {
+      "careerId": "satyr-maid",
+      "sourceActionId": "satyr-maid.shift",
+      "surface": "seasonal-shift",
+      "presentationId": "job/satyr-maid/shift/winter/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "satyr-maid-winter-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/satyr-maid/shift/winter/1.gif",
+          "alt": "satyr-maid winter shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "satyr-maid-winter-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/satyr-maid/shift/winter/2.gif",
+          "alt": "satyr-maid winter shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "satyr-maid-winter-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/satyr-maid/shift/winter/3.gif",
+          "alt": "satyr-maid winter shift visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-tavern.svg",
+        "alt": "satyr-maid winter static fallback."
+      }
+    },
+    {
+      "careerId": "satyr-maid",
+      "sourceActionId": "satyr-maid.shift",
+      "surface": "result",
+      "presentationId": "job/satyr-maid/result/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "satyr-maid-result-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/satyr-maid/result/1.gif",
+          "alt": "satyr-maid completed-shift result visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "satyr-maid-result-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/satyr-maid/result/2.gif",
+          "alt": "satyr-maid completed-shift result visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "satyr-maid-result-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/satyr-maid/result/3.gif",
+          "alt": "satyr-maid completed-shift result visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-tavern.svg",
+        "alt": "satyr-maid result static fallback."
+      }
+    },
+    {
+      "careerId": "undead-farm",
+      "sourceActionId": "undead-farm.shift",
+      "surface": "seasonal-shift",
+      "presentationId": "job/undead-farm/shift/spring/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "undead-farm-spring-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/undead-farm/shift/spring/1.gif",
+          "alt": "undead-farm spring shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "undead-farm-spring-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/undead-farm/shift/spring/2.gif",
+          "alt": "undead-farm spring shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "undead-farm-spring-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/undead-farm/shift/spring/3.gif",
+          "alt": "undead-farm spring shift visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-forest.svg",
+        "alt": "undead-farm spring static fallback."
+      }
+    },
+    {
+      "careerId": "undead-farm",
+      "sourceActionId": "undead-farm.shift",
+      "surface": "seasonal-shift",
+      "presentationId": "job/undead-farm/shift/summer/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "undead-farm-summer-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/undead-farm/shift/summer/1.gif",
+          "alt": "undead-farm summer shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "undead-farm-summer-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/undead-farm/shift/summer/2.gif",
+          "alt": "undead-farm summer shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "undead-farm-summer-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/undead-farm/shift/summer/3.gif",
+          "alt": "undead-farm summer shift visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-forest.svg",
+        "alt": "undead-farm summer static fallback."
+      }
+    },
+    {
+      "careerId": "undead-farm",
+      "sourceActionId": "undead-farm.shift",
+      "surface": "seasonal-shift",
+      "presentationId": "job/undead-farm/shift/autumn/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "undead-farm-autumn-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/undead-farm/shift/autumn/1.gif",
+          "alt": "undead-farm autumn shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "undead-farm-autumn-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/undead-farm/shift/autumn/2.gif",
+          "alt": "undead-farm autumn shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "undead-farm-autumn-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/undead-farm/shift/autumn/3.gif",
+          "alt": "undead-farm autumn shift visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-forest.svg",
+        "alt": "undead-farm autumn static fallback."
+      }
+    },
+    {
+      "careerId": "undead-farm",
+      "sourceActionId": "undead-farm.shift",
+      "surface": "seasonal-shift",
+      "presentationId": "job/undead-farm/shift/winter/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "undead-farm-winter-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/undead-farm/shift/winter/1.gif",
+          "alt": "undead-farm winter shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "undead-farm-winter-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/undead-farm/shift/winter/2.gif",
+          "alt": "undead-farm winter shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "undead-farm-winter-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/undead-farm/shift/winter/3.gif",
+          "alt": "undead-farm winter shift visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-forest.svg",
+        "alt": "undead-farm winter static fallback."
+      }
+    },
+    {
+      "careerId": "undead-farm",
+      "sourceActionId": "undead-farm.shift",
+      "surface": "result",
+      "presentationId": "job/undead-farm/result/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "undead-farm-result-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/undead-farm/result/1.gif",
+          "alt": "undead-farm completed-shift result visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "undead-farm-result-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/undead-farm/result/2.gif",
+          "alt": "undead-farm completed-shift result visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "undead-farm-result-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/undead-farm/result/3.gif",
+          "alt": "undead-farm completed-shift result visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-forest.svg",
+        "alt": "undead-farm result static fallback."
+      }
+    },
+    {
+      "careerId": "tavern",
+      "sourceActionId": "tavern.shift",
+      "surface": "seasonal-shift",
+      "presentationId": "job/tavern/shift/spring/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "tavern-spring-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/tavern/shift/spring/1.gif",
+          "alt": "tavern spring shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "tavern-spring-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/tavern/shift/spring/2.gif",
+          "alt": "tavern spring shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "tavern-spring-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/tavern/shift/spring/3.gif",
+          "alt": "tavern spring shift visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-tavern.svg",
+        "alt": "tavern spring static fallback."
+      }
+    },
+    {
+      "careerId": "tavern",
+      "sourceActionId": "tavern.shift",
+      "surface": "seasonal-shift",
+      "presentationId": "job/tavern/shift/summer/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "tavern-summer-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/tavern/shift/summer/1.gif",
+          "alt": "tavern summer shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "tavern-summer-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/tavern/shift/summer/2.gif",
+          "alt": "tavern summer shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "tavern-summer-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/tavern/shift/summer/3.gif",
+          "alt": "tavern summer shift visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-tavern.svg",
+        "alt": "tavern summer static fallback."
+      }
+    },
+    {
+      "careerId": "tavern",
+      "sourceActionId": "tavern.shift",
+      "surface": "seasonal-shift",
+      "presentationId": "job/tavern/shift/autumn/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "tavern-autumn-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/tavern/shift/autumn/1.gif",
+          "alt": "tavern autumn shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "tavern-autumn-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/tavern/shift/autumn/2.gif",
+          "alt": "tavern autumn shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "tavern-autumn-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/tavern/shift/autumn/3.gif",
+          "alt": "tavern autumn shift visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-tavern.svg",
+        "alt": "tavern autumn static fallback."
+      }
+    },
+    {
+      "careerId": "tavern",
+      "sourceActionId": "tavern.shift",
+      "surface": "seasonal-shift",
+      "presentationId": "job/tavern/shift/winter/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "tavern-winter-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/tavern/shift/winter/1.gif",
+          "alt": "tavern winter shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "tavern-winter-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/tavern/shift/winter/2.gif",
+          "alt": "tavern winter shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "tavern-winter-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/tavern/shift/winter/3.gif",
+          "alt": "tavern winter shift visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-tavern.svg",
+        "alt": "tavern winter static fallback."
+      }
+    },
+    {
+      "careerId": "tavern",
+      "sourceActionId": "tavern.shift",
+      "surface": "result",
+      "presentationId": "job/tavern/result/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "tavern-result-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/tavern/result/1.gif",
+          "alt": "tavern completed-shift result visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "tavern-result-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/tavern/result/2.gif",
+          "alt": "tavern completed-shift result visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "tavern-result-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/tavern/result/3.gif",
+          "alt": "tavern completed-shift result visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-tavern.svg",
+        "alt": "tavern result static fallback."
+      }
+    },
+    {
+      "careerId": "hunter",
+      "sourceActionId": "hunter.shift",
+      "surface": "seasonal-shift",
+      "presentationId": "job/hunter/shift/spring/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "hunter-spring-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/hunter/shift/spring/1.gif",
+          "alt": "hunter spring shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "hunter-spring-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/hunter/shift/spring/2.gif",
+          "alt": "hunter spring shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "hunter-spring-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/hunter/shift/spring/3.gif",
+          "alt": "hunter spring shift visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-forest.svg",
+        "alt": "hunter spring static fallback."
+      }
+    },
+    {
+      "careerId": "hunter",
+      "sourceActionId": "hunter.shift",
+      "surface": "seasonal-shift",
+      "presentationId": "job/hunter/shift/summer/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "hunter-summer-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/hunter/shift/summer/1.gif",
+          "alt": "hunter summer shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "hunter-summer-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/hunter/shift/summer/2.gif",
+          "alt": "hunter summer shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "hunter-summer-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/hunter/shift/summer/3.gif",
+          "alt": "hunter summer shift visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-forest.svg",
+        "alt": "hunter summer static fallback."
+      }
+    },
+    {
+      "careerId": "hunter",
+      "sourceActionId": "hunter.shift",
+      "surface": "seasonal-shift",
+      "presentationId": "job/hunter/shift/autumn/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "hunter-autumn-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/hunter/shift/autumn/1.gif",
+          "alt": "hunter autumn shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "hunter-autumn-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/hunter/shift/autumn/2.gif",
+          "alt": "hunter autumn shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "hunter-autumn-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/hunter/shift/autumn/3.gif",
+          "alt": "hunter autumn shift visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-forest.svg",
+        "alt": "hunter autumn static fallback."
+      }
+    },
+    {
+      "careerId": "hunter",
+      "sourceActionId": "hunter.shift",
+      "surface": "seasonal-shift",
+      "presentationId": "job/hunter/shift/winter/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "hunter-winter-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/hunter/shift/winter/1.gif",
+          "alt": "hunter winter shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "hunter-winter-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/hunter/shift/winter/2.gif",
+          "alt": "hunter winter shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "hunter-winter-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/hunter/shift/winter/3.gif",
+          "alt": "hunter winter shift visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-forest.svg",
+        "alt": "hunter winter static fallback."
+      }
+    },
+    {
+      "careerId": "hunter",
+      "sourceActionId": "hunter.shift",
+      "surface": "result",
+      "presentationId": "job/hunter/result/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "hunter-result-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/hunter/result/1.gif",
+          "alt": "hunter completed-shift result visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "hunter-result-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/hunter/result/2.gif",
+          "alt": "hunter completed-shift result visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "hunter-result-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/hunter/result/3.gif",
+          "alt": "hunter completed-shift result visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-forest.svg",
+        "alt": "hunter result static fallback."
+      }
+    },
+    {
+      "careerId": "guard",
+      "sourceActionId": "guard.shift",
+      "surface": "seasonal-shift",
+      "presentationId": "job/guard/shift/spring/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "guard-spring-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/guard/shift/spring/1.gif",
+          "alt": "guard spring shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "guard-spring-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/guard/shift/spring/2.gif",
+          "alt": "guard spring shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "guard-spring-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/guard/shift/spring/3.gif",
+          "alt": "guard spring shift visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-town.svg",
+        "alt": "guard spring static fallback."
+      }
+    },
+    {
+      "careerId": "guard",
+      "sourceActionId": "guard.shift",
+      "surface": "seasonal-shift",
+      "presentationId": "job/guard/shift/summer/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "guard-summer-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/guard/shift/summer/1.gif",
+          "alt": "guard summer shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "guard-summer-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/guard/shift/summer/2.gif",
+          "alt": "guard summer shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "guard-summer-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/guard/shift/summer/3.gif",
+          "alt": "guard summer shift visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-town.svg",
+        "alt": "guard summer static fallback."
+      }
+    },
+    {
+      "careerId": "guard",
+      "sourceActionId": "guard.shift",
+      "surface": "seasonal-shift",
+      "presentationId": "job/guard/shift/autumn/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "guard-autumn-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/guard/shift/autumn/1.gif",
+          "alt": "guard autumn shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "guard-autumn-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/guard/shift/autumn/2.gif",
+          "alt": "guard autumn shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "guard-autumn-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/guard/shift/autumn/3.gif",
+          "alt": "guard autumn shift visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-town.svg",
+        "alt": "guard autumn static fallback."
+      }
+    },
+    {
+      "careerId": "guard",
+      "sourceActionId": "guard.shift",
+      "surface": "seasonal-shift",
+      "presentationId": "job/guard/shift/winter/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "guard-winter-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/guard/shift/winter/1.gif",
+          "alt": "guard winter shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "guard-winter-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/guard/shift/winter/2.gif",
+          "alt": "guard winter shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "guard-winter-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/guard/shift/winter/3.gif",
+          "alt": "guard winter shift visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-town.svg",
+        "alt": "guard winter static fallback."
+      }
+    },
+    {
+      "careerId": "guard",
+      "sourceActionId": "guard.shift",
+      "surface": "result",
+      "presentationId": "job/guard/result/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "guard-result-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/guard/result/1.gif",
+          "alt": "guard completed-shift result visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "guard-result-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/guard/result/2.gif",
+          "alt": "guard completed-shift result visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "guard-result-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/guard/result/3.gif",
+          "alt": "guard completed-shift result visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-town.svg",
+        "alt": "guard result static fallback."
+      }
+    },
+    {
+      "careerId": "merchant",
+      "sourceActionId": "merchant.shift",
+      "surface": "seasonal-shift",
+      "presentationId": "job/merchant/shift/spring/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "merchant-spring-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/merchant/shift/spring/1.gif",
+          "alt": "merchant spring shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "merchant-spring-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/merchant/shift/spring/2.gif",
+          "alt": "merchant spring shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "merchant-spring-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/merchant/shift/spring/3.gif",
+          "alt": "merchant spring shift visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-town.svg",
+        "alt": "merchant spring static fallback."
+      }
+    },
+    {
+      "careerId": "merchant",
+      "sourceActionId": "merchant.shift",
+      "surface": "seasonal-shift",
+      "presentationId": "job/merchant/shift/summer/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "merchant-summer-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/merchant/shift/summer/1.gif",
+          "alt": "merchant summer shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "merchant-summer-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/merchant/shift/summer/2.gif",
+          "alt": "merchant summer shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "merchant-summer-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/merchant/shift/summer/3.gif",
+          "alt": "merchant summer shift visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-town.svg",
+        "alt": "merchant summer static fallback."
+      }
+    },
+    {
+      "careerId": "merchant",
+      "sourceActionId": "merchant.shift",
+      "surface": "seasonal-shift",
+      "presentationId": "job/merchant/shift/autumn/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "merchant-autumn-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/merchant/shift/autumn/1.gif",
+          "alt": "merchant autumn shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "merchant-autumn-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/merchant/shift/autumn/2.gif",
+          "alt": "merchant autumn shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "merchant-autumn-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/merchant/shift/autumn/3.gif",
+          "alt": "merchant autumn shift visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-town.svg",
+        "alt": "merchant autumn static fallback."
+      }
+    },
+    {
+      "careerId": "merchant",
+      "sourceActionId": "merchant.shift",
+      "surface": "seasonal-shift",
+      "presentationId": "job/merchant/shift/winter/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "merchant-winter-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/merchant/shift/winter/1.gif",
+          "alt": "merchant winter shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "merchant-winter-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/merchant/shift/winter/2.gif",
+          "alt": "merchant winter shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "merchant-winter-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/merchant/shift/winter/3.gif",
+          "alt": "merchant winter shift visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-town.svg",
+        "alt": "merchant winter static fallback."
+      }
+    },
+    {
+      "careerId": "merchant",
+      "sourceActionId": "merchant.shift",
+      "surface": "result",
+      "presentationId": "job/merchant/result/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "merchant-result-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/merchant/result/1.gif",
+          "alt": "merchant completed-shift result visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "merchant-result-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/merchant/result/2.gif",
+          "alt": "merchant completed-shift result visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "merchant-result-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/merchant/result/3.gif",
+          "alt": "merchant completed-shift result visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-town.svg",
+        "alt": "merchant result static fallback."
+      }
+    },
+    {
+      "careerId": "artist-geisha",
+      "sourceActionId": "artist-geisha.shift",
+      "surface": "seasonal-shift",
+      "presentationId": "job/artist-geisha/shift/spring/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "artist-geisha-spring-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/artist-geisha/shift/spring/1.gif",
+          "alt": "artist-geisha spring shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "artist-geisha-spring-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/artist-geisha/shift/spring/2.gif",
+          "alt": "artist-geisha spring shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "artist-geisha-spring-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/artist-geisha/shift/spring/3.gif",
+          "alt": "artist-geisha spring shift visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-tavern.svg",
+        "alt": "artist-geisha spring static fallback."
+      }
+    },
+    {
+      "careerId": "artist-geisha",
+      "sourceActionId": "artist-geisha.shift",
+      "surface": "seasonal-shift",
+      "presentationId": "job/artist-geisha/shift/summer/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "artist-geisha-summer-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/artist-geisha/shift/summer/1.gif",
+          "alt": "artist-geisha summer shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "artist-geisha-summer-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/artist-geisha/shift/summer/2.gif",
+          "alt": "artist-geisha summer shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "artist-geisha-summer-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/artist-geisha/shift/summer/3.gif",
+          "alt": "artist-geisha summer shift visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-tavern.svg",
+        "alt": "artist-geisha summer static fallback."
+      }
+    },
+    {
+      "careerId": "artist-geisha",
+      "sourceActionId": "artist-geisha.shift",
+      "surface": "seasonal-shift",
+      "presentationId": "job/artist-geisha/shift/autumn/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "artist-geisha-autumn-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/artist-geisha/shift/autumn/1.gif",
+          "alt": "artist-geisha autumn shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "artist-geisha-autumn-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/artist-geisha/shift/autumn/2.gif",
+          "alt": "artist-geisha autumn shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "artist-geisha-autumn-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/artist-geisha/shift/autumn/3.gif",
+          "alt": "artist-geisha autumn shift visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-tavern.svg",
+        "alt": "artist-geisha autumn static fallback."
+      }
+    },
+    {
+      "careerId": "artist-geisha",
+      "sourceActionId": "artist-geisha.shift",
+      "surface": "seasonal-shift",
+      "presentationId": "job/artist-geisha/shift/winter/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "artist-geisha-winter-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/artist-geisha/shift/winter/1.gif",
+          "alt": "artist-geisha winter shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "artist-geisha-winter-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/artist-geisha/shift/winter/2.gif",
+          "alt": "artist-geisha winter shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "artist-geisha-winter-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/artist-geisha/shift/winter/3.gif",
+          "alt": "artist-geisha winter shift visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-tavern.svg",
+        "alt": "artist-geisha winter static fallback."
+      }
+    },
+    {
+      "careerId": "artist-geisha",
+      "sourceActionId": "artist-geisha.shift",
+      "surface": "result",
+      "presentationId": "job/artist-geisha/result/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "artist-geisha-result-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/artist-geisha/result/1.gif",
+          "alt": "artist-geisha completed-shift result visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "artist-geisha-result-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/artist-geisha/result/2.gif",
+          "alt": "artist-geisha completed-shift result visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "artist-geisha-result-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/artist-geisha/result/3.gif",
+          "alt": "artist-geisha completed-shift result visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-tavern.svg",
+        "alt": "artist-geisha result static fallback."
+      }
+    },
+    {
+      "careerId": "assassin",
+      "sourceActionId": "assassin.shift",
+      "surface": "seasonal-shift",
+      "presentationId": "job/assassin/shift/spring/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "assassin-spring-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/assassin/shift/spring/1.gif",
+          "alt": "assassin spring shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "assassin-spring-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/assassin/shift/spring/2.gif",
+          "alt": "assassin spring shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "assassin-spring-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/assassin/shift/spring/3.gif",
+          "alt": "assassin spring shift visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-town.svg",
+        "alt": "assassin spring static fallback."
+      }
+    },
+    {
+      "careerId": "assassin",
+      "sourceActionId": "assassin.shift",
+      "surface": "seasonal-shift",
+      "presentationId": "job/assassin/shift/summer/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "assassin-summer-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/assassin/shift/summer/1.gif",
+          "alt": "assassin summer shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "assassin-summer-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/assassin/shift/summer/2.gif",
+          "alt": "assassin summer shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "assassin-summer-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/assassin/shift/summer/3.gif",
+          "alt": "assassin summer shift visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-town.svg",
+        "alt": "assassin summer static fallback."
+      }
+    },
+    {
+      "careerId": "assassin",
+      "sourceActionId": "assassin.shift",
+      "surface": "seasonal-shift",
+      "presentationId": "job/assassin/shift/autumn/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "assassin-autumn-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/assassin/shift/autumn/1.gif",
+          "alt": "assassin autumn shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "assassin-autumn-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/assassin/shift/autumn/2.gif",
+          "alt": "assassin autumn shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "assassin-autumn-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/assassin/shift/autumn/3.gif",
+          "alt": "assassin autumn shift visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-town.svg",
+        "alt": "assassin autumn static fallback."
+      }
+    },
+    {
+      "careerId": "assassin",
+      "sourceActionId": "assassin.shift",
+      "surface": "seasonal-shift",
+      "presentationId": "job/assassin/shift/winter/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "assassin-winter-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/assassin/shift/winter/1.gif",
+          "alt": "assassin winter shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "assassin-winter-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/assassin/shift/winter/2.gif",
+          "alt": "assassin winter shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "assassin-winter-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/assassin/shift/winter/3.gif",
+          "alt": "assassin winter shift visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-town.svg",
+        "alt": "assassin winter static fallback."
+      }
+    },
+    {
+      "careerId": "assassin",
+      "sourceActionId": "assassin.shift",
+      "surface": "result",
+      "presentationId": "job/assassin/result/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "assassin-result-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/assassin/result/1.gif",
+          "alt": "assassin completed-shift result visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "assassin-result-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/assassin/result/2.gif",
+          "alt": "assassin completed-shift result visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "assassin-result-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/assassin/result/3.gif",
+          "alt": "assassin completed-shift result visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-town.svg",
+        "alt": "assassin result static fallback."
+      }
+    },
+    {
+      "careerId": "prostitute",
+      "sourceActionId": "prostitute.shift",
+      "surface": "seasonal-shift",
+      "presentationId": "job/prostitute/shift/spring/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "prostitute-spring-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/prostitute/shift/spring/1.gif",
+          "alt": "prostitute spring shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "prostitute-spring-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/prostitute/shift/spring/2.gif",
+          "alt": "prostitute spring shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "prostitute-spring-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/prostitute/shift/spring/3.gif",
+          "alt": "prostitute spring shift visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-room.svg",
+        "alt": "prostitute spring static fallback."
+      }
+    },
+    {
+      "careerId": "prostitute",
+      "sourceActionId": "prostitute.shift",
+      "surface": "seasonal-shift",
+      "presentationId": "job/prostitute/shift/summer/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "prostitute-summer-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/prostitute/shift/summer/1.gif",
+          "alt": "prostitute summer shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "prostitute-summer-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/prostitute/shift/summer/2.gif",
+          "alt": "prostitute summer shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "prostitute-summer-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/prostitute/shift/summer/3.gif",
+          "alt": "prostitute summer shift visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-room.svg",
+        "alt": "prostitute summer static fallback."
+      }
+    },
+    {
+      "careerId": "prostitute",
+      "sourceActionId": "prostitute.shift",
+      "surface": "seasonal-shift",
+      "presentationId": "job/prostitute/shift/autumn/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "prostitute-autumn-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/prostitute/shift/autumn/1.gif",
+          "alt": "prostitute autumn shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "prostitute-autumn-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/prostitute/shift/autumn/2.gif",
+          "alt": "prostitute autumn shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "prostitute-autumn-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/prostitute/shift/autumn/3.gif",
+          "alt": "prostitute autumn shift visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-room.svg",
+        "alt": "prostitute autumn static fallback."
+      }
+    },
+    {
+      "careerId": "prostitute",
+      "sourceActionId": "prostitute.shift",
+      "surface": "seasonal-shift",
+      "presentationId": "job/prostitute/shift/winter/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "prostitute-winter-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/prostitute/shift/winter/1.gif",
+          "alt": "prostitute winter shift visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "prostitute-winter-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/prostitute/shift/winter/2.gif",
+          "alt": "prostitute winter shift visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "prostitute-winter-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/prostitute/shift/winter/3.gif",
+          "alt": "prostitute winter shift visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-room.svg",
+        "alt": "prostitute winter static fallback."
+      }
+    },
+    {
+      "careerId": "prostitute",
+      "sourceActionId": "prostitute.shift",
+      "surface": "result",
+      "presentationId": "job/prostitute/result/default",
+      "status": "AUTHORING_ONLY_NOT_RUNTIME_WIRED",
+      "candidates": [
+        {
+          "key": "prostitute-result-1",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/prostitute/result/1.gif",
+          "alt": "prostitute completed-shift result visual variation 1.",
+          "shipped": false
+        },
+        {
+          "key": "prostitute-result-2",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/prostitute/result/2.gif",
+          "alt": "prostitute completed-shift result visual variation 2.",
+          "shipped": false
+        },
+        {
+          "key": "prostitute-result-3",
+          "kind": "gif",
+          "src": "authoring://non-shipped/ten-career/prostitute/result/3.gif",
+          "alt": "prostitute completed-shift result visual variation 3.",
+          "shipped": false
+        }
+      ],
+      "staticFallback": {
+        "kind": "image",
+        "src": "assets/stage-room.svg",
+        "alt": "prostitute result static fallback."
+      }
+    }
+  ]
+}
