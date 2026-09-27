@@ -904,3 +904,24 @@ For each distinguish:
 Never allow downstream systems to read School-private counters directly and do not invent new Hard Work prerequisites.
 
 Continue items 52–60 sequentially without waiting for Lead review.
+
+
+## Queue item 61 — School authored-scene completeness matrix template
+
+Create NEW file only:
+- `docs/school-prep/SCHOOL_AUTHORED_SCENE_COMPLETENESS_TEMPLATE_v1.md`
+
+Provide a reusable completeness matrix for each School track:
+- repeatable lesson variants;
+- teacher/presenter scenes;
+- milestone scenes;
+- relationship/career reaction hooks;
+- public-result scene if approved;
+- Night-study presentation;
+- ending/Meta relevance if any;
+- semantic presentation coverage;
+- save/reload acceptance.
+
+Keep all not-yet-authored content OPEN rather than filling it.
+
+Continue items 53–61 sequentially without waiting for Lead review.
