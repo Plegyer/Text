@@ -591,3 +591,127 @@ Create NEW file only:
 Consolidate items 49–59 into SAFE_TEXT_SOURCE / SHARED_PRESENTATION_CONSUMER_REQUIRED / PRODUCT_OPEN with exact selective-copy files and the expected Lead/QA invariants.
 
 Continue items 49–60 sequentially without waiting for Lead review.
+
+
+## Queue item 61 — generic world bilingual debt audit v1
+Create NEW file only:
+- `docs/relationship-prep/GENERIC_WORLD_BILINGUAL_DEBT_AUDIT_V1.md`
+
+Audit current main root-event localization debt outside Chat3/School/Lumber ownership.
+Scope only:
+- `base.*` except already-localized `base.school`;
+- `gopher.*`;
+- `stage.goblin`.
+
+Explicitly exclude:
+- `ds-lumber.*`;
+- `lumber-cross.*`;
+- `lumber.career-first-shift`;
+- poverty;
+- School;
+- Forest;
+- Secret Debt.
+
+## Queue item 62 — base generic-world RU+EN localization delta v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/base-generic-world-localization-v1.fixture.json`
+
+Provide complete RU-source + EN localization for current shipped:
+- `base.arrival`;
+- `base.order`;
+- `base.bran`;
+- `base.invite`;
+- `base.workday`;
+- `base.winter`;
+- `base.shelter`.
+
+Exact existing event/variant/choice identities only.
+
+## Queue item 63 — gopher early-chain localization delta v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/gopher-early-chain-localization-v1.fixture.json`
+
+Cover current shipped:
+- `gopher.arrival`;
+- `gopher.tavern-intro`;
+- `gopher.tavern-quest`;
+- `gopher.receipt`.
+
+No trigger/effect/reward changes.
+
+## Queue item 64 — gopher resolution/routine localization delta v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/gopher-resolution-localization-v1.fixture.json`
+
+Cover current shipped:
+- `gopher.tavern-resolution`;
+- `gopher.tavern-routine`.
+
+## Queue item 65 — gopher woods/hunt/landlord localization delta v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/gopher-world-hooks-localization-v1.fixture.json`
+
+Cover current shipped:
+- `gopher.woods-intro`;
+- `gopher.hunt-intro`;
+- `gopher.landlord`.
+
+Hunter here is only the existing gopher/tutorial event text; do not introduce Forest Hunter route semantics.
+
+## Queue item 66 — stage goblin bilingual localization delta v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/stage-goblin-localization-v1.fixture.json`
+
+Provide complete RU+EN title/variant/choice text for current `stage.goblin` event only.
+No mechanics changes.
+
+## Queue item 67 — generic-world localization collision guard v1
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/generic-world-localization-collision-v1.test.ts`
+
+Validate items 62–66:
+- exact current event IDs;
+- RU+EN complete;
+- additive or exact-identical root collision policy;
+- no gameplay fields;
+- excluded Lumber/poverty/School/Secret Debt namespaces absent.
+
+## Queue item 68 — generic-world natural-path inventory v1
+Create NEW file only:
+- `docs/relationship-prep/GENERIC_WORLD_NATURAL_PATH_INVENTORY_V1.md`
+
+Document the shortest current production path to every event covered by items 62–66 and whether it is blocking/queued/repeatable.
+Do not invent new trigger behavior.
+
+## Queue item 69 — generic-world media-alt debt audit v1
+Create NEW file only:
+- `docs/relationship-prep/GENERIC_WORLD_MEDIA_ALT_DEBT_AUDIT_V1.md`
+
+For media used by covered base/gopher/stage events, classify:
+- ROOT_RU_EN_ALT;
+- EMBEDDED_RU_ONLY;
+- SHARED_GENERIC;
+- MISSING;
+- NOT_PLAYER_FACING.
+
+## Queue item 70 — generic-world media-alt localization fixture v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/generic-world-media-alt-localization-v1.fixture.json`
+
+Provide RU+EN alt strings only for current player-facing media identities actually used by items 62–66.
+No media path changes.
+
+## Queue item 71 — generic-world locale-invariance acceptance plan v1
+Create NEW file only:
+- `docs/relationship-prep/GENERIC_WORLD_LOCALE_INVARIANCE_ACCEPTANCE_PLAN_V1.md`
+
+Define Lead/QA checks for RU↔EN switch:
+same event/variant/choice IDs, same media identity, same RNG/Save, same effects exactly once, only text/alt changes.
+
+## Queue item 72 — generic-world bilingual integration handoff v1
+Create NEW file only:
+- `docs/relationship-prep/GENERIC_WORLD_BILINGUAL_INTEGRATION_HANDOFF_V1.md`
+
+Consolidate 61–71 into SAFE_TO_COPY_NOW / SHARED_UI_OR_MEDIA_REQUIRED / PRODUCT_OPEN with exact selective-copy files and current-main baseline.
+
+Continue items 61–72 sequentially without waiting for Lead review.
