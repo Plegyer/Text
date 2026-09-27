@@ -1828,3 +1828,24 @@ Effective immediately by direct Product decision:
 - if an item was already committed before this rule, do not rewrite it blindly; record it for localization migration/review.
 
 Do not create a second copy of the gameplay event for English.
+
+
+## Queue item 114 — bilingual production QA baseline v1
+
+Create NEW file only:
+- `docs/qa-prep/BILINGUAL_PRODUCTION_QA_BASELINE_v1.md`
+
+Define the QA baseline for the new direct Product decision RU+EN:
+- one locale-neutral gameplay/content identity;
+- RU and EN player-facing coverage;
+- no locale-specific mechanics/conditions/rewards/RNG/timing;
+- no duplicated gameplay event per locale;
+- language switch cannot reroll gameplay or GIF selection;
+- multi-GIF assets shared across locales;
+- RU/EN alt text completeness;
+- no save identity split by language;
+- backward compatibility for already shipped monolingual content during migration.
+
+Apply to career, School, poverty, Forest, Secret Debt and presentation content.
+
+Continue items 106–114 sequentially without waiting for Lead review.
