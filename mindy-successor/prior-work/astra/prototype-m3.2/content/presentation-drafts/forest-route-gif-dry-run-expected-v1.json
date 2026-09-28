@@ -1,0 +1,178 @@
+{
+  "formatVersion": 1,
+  "kind": "forest-route-gif-dry-run-expected-output",
+  "status": "EXPECTED_ONLY_NO_FILES",
+  "currentMainBaseline": "54131488c65302f81b3001abaaa345d21f0281e2",
+  "exporter": "tools/export-project-owned-gif.mjs",
+  "outputs": [
+    {
+      "presentationId": "activity/forest/route/logging-road",
+      "candidateKey": "forest-logging-road-loop-a",
+      "sourceSequenceKey": "forest-route-logging-road-loop-a",
+      "sourceFrames": [
+        "assets/presentation-frames/forest-route-logging-road-loop-a-frame-01.svg",
+        "assets/presentation-frames/forest-route-logging-road-loop-a-frame-02.svg",
+        "assets/presentation-frames/forest-route-logging-road-loop-a-frame-03.svg",
+        "assets/presentation-frames/forest-route-logging-road-loop-a-frame-04.svg"
+      ],
+      "expectedGifPath": "assets/gif/forest/routes/logging-road-loop-a.gif",
+      "timing": {
+        "frameCount": 4,
+        "frameDelayMs": 650,
+        "totalDurationMs": 2600,
+        "loopCount": 0
+      },
+      "targetRaster": {
+        "width": 640,
+        "height": 360,
+        "maxPaletteColors": 256
+      },
+      "staticFallback": "assets/presentation/forest-route-logging-road.svg",
+      "fallbackPresentationId": "activity/forest/route/default",
+      "exists": false
+    },
+    {
+      "presentationId": "activity/forest/route/logging-road",
+      "candidateKey": "forest-logging-road-loop-b",
+      "sourceSequenceKey": "forest-route-logging-road-loop-b",
+      "sourceFrames": [
+        "assets/presentation-frames/forest-route-logging-road-loop-b-frame-01.svg",
+        "assets/presentation-frames/forest-route-logging-road-loop-b-frame-02.svg",
+        "assets/presentation-frames/forest-route-logging-road-loop-b-frame-03.svg",
+        "assets/presentation-frames/forest-route-logging-road-loop-b-frame-04.svg"
+      ],
+      "expectedGifPath": "assets/gif/forest/routes/logging-road-loop-b.gif",
+      "timing": {
+        "frameCount": 4,
+        "frameDelayMs": 650,
+        "totalDurationMs": 2600,
+        "loopCount": 0
+      },
+      "targetRaster": {
+        "width": 640,
+        "height": 360,
+        "maxPaletteColors": 256
+      },
+      "staticFallback": "assets/presentation/forest-route-logging-road.svg",
+      "fallbackPresentationId": "activity/forest/route/default",
+      "exists": false
+    },
+    {
+      "presentationId": "activity/forest/route/logging-road",
+      "candidateKey": "forest-logging-road-loop-c",
+      "sourceSequenceKey": "forest-route-logging-road-loop-c",
+      "sourceFrames": [
+        "assets/presentation-frames/forest-route-logging-road-loop-c-frame-01.svg",
+        "assets/presentation-frames/forest-route-logging-road-loop-c-frame-02.svg",
+        "assets/presentation-frames/forest-route-logging-road-loop-c-frame-03.svg",
+        "assets/presentation-frames/forest-route-logging-road-loop-c-frame-04.svg"
+      ],
+      "expectedGifPath": "assets/gif/forest/routes/logging-road-loop-c.gif",
+      "timing": {
+        "frameCount": 4,
+        "frameDelayMs": 650,
+        "totalDurationMs": 2600,
+        "loopCount": 0
+      },
+      "targetRaster": {
+        "width": 640,
+        "height": 360,
+        "maxPaletteColors": 256
+      },
+      "staticFallback": "assets/presentation/forest-route-logging-road.svg",
+      "fallbackPresentationId": "activity/forest/route/default",
+      "exists": false
+    },
+    {
+      "presentationId": "activity/forest/route/old-boundary",
+      "candidateKey": "forest-old-boundary-loop-a",
+      "sourceSequenceKey": "forest-route-old-boundary-loop-a",
+      "sourceFrames": [
+        "assets/presentation-frames/forest-route-old-boundary-loop-a-frame-01.svg",
+        "assets/presentation-frames/forest-route-old-boundary-loop-a-frame-02.svg",
+        "assets/presentation-frames/forest-route-old-boundary-loop-a-frame-03.svg",
+        "assets/presentation-frames/forest-route-old-boundary-loop-a-frame-04.svg"
+      ],
+      "expectedGifPath": "assets/gif/forest/routes/old-boundary-loop-a.gif",
+      "timing": {
+        "frameCount": 4,
+        "frameDelayMs": 800,
+        "totalDurationMs": 3200,
+        "loopCount": 0
+      },
+      "targetRaster": {
+        "width": 640,
+        "height": 360,
+        "maxPaletteColors": 256
+      },
+      "staticFallback": "assets/presentation/forest-route-old-boundary-v3.svg",
+      "fallbackPresentationId": "activity/forest/route/default",
+      "exists": false
+    },
+    {
+      "presentationId": "activity/forest/route/old-boundary",
+      "candidateKey": "forest-old-boundary-loop-b",
+      "sourceSequenceKey": "forest-route-old-boundary-loop-b",
+      "sourceFrames": [
+        "assets/presentation-frames/forest-route-old-boundary-loop-b-frame-01.svg",
+        "assets/presentation-frames/forest-route-old-boundary-loop-b-frame-02.svg",
+        "assets/presentation-frames/forest-route-old-boundary-loop-b-frame-03.svg",
+        "assets/presentation-frames/forest-route-old-boundary-loop-b-frame-04.svg"
+      ],
+      "expectedGifPath": "assets/gif/forest/routes/old-boundary-loop-b.gif",
+      "timing": {
+        "frameCount": 4,
+        "frameDelayMs": 800,
+        "totalDurationMs": 3200,
+        "loopCount": 0
+      },
+      "targetRaster": {
+        "width": 640,
+        "height": 360,
+        "maxPaletteColors": 256
+      },
+      "staticFallback": "assets/presentation/forest-route-old-boundary-v3.svg",
+      "fallbackPresentationId": "activity/forest/route/default",
+      "exists": false
+    },
+    {
+      "presentationId": "activity/forest/route/old-boundary",
+      "candidateKey": "forest-old-boundary-loop-c",
+      "sourceSequenceKey": "forest-route-old-boundary-loop-c",
+      "sourceFrames": [
+        "assets/presentation-frames/forest-route-old-boundary-loop-c-frame-01.svg",
+        "assets/presentation-frames/forest-route-old-boundary-loop-c-frame-02.svg",
+        "assets/presentation-frames/forest-route-old-boundary-loop-c-frame-03.svg",
+        "assets/presentation-frames/forest-route-old-boundary-loop-c-frame-04.svg"
+      ],
+      "expectedGifPath": "assets/gif/forest/routes/old-boundary-loop-c.gif",
+      "timing": {
+        "frameCount": 4,
+        "frameDelayMs": 800,
+        "totalDurationMs": 3200,
+        "loopCount": 0
+      },
+      "targetRaster": {
+        "width": 640,
+        "height": 360,
+        "maxPaletteColors": 256
+      },
+      "staticFallback": "assets/presentation/forest-route-old-boundary-v3.svg",
+      "fallbackPresentationId": "activity/forest/route/default",
+      "exists": false
+    }
+  ],
+  "summary": {
+    "semanticIdentities": 2,
+    "expectedCandidates": 6,
+    "expectedFilesPresent": 0
+  },
+  "invariants": {
+    "noActualGifClaim": true,
+    "noGifPathField": true,
+    "localExpectedPathsOnly": true,
+    "staticFallbackRequired": true,
+    "gameplayFields": false,
+    "localeNeutralCandidateKeys": true
+  }
+}
