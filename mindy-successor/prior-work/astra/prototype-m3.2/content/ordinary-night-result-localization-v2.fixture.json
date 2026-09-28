@@ -1,0 +1,45 @@
+{
+  "version": 2,
+  "defaultLocale": "ru",
+  "strings": {
+    "nightChoice.night.sleep.label": {
+      "ru": "Спать",
+      "en": "Sleep"
+    },
+    "nightChoice.lumber.foreman.night.label": {
+      "ru": "Поговорить с бригадиром",
+      "en": "Talk with the Foreman"
+    },
+    "event.lumber-night.foreman-professional.title": {
+      "ru": "Разговор после смены",
+      "en": "After-shift conversation"
+    },
+    "event.lumber-night.foreman-professional.variant.default.text": {
+      "ru": "После работы вы задерживаетесь ненадолго и спокойно обсуждаете дела артели. Это добровольное продолжение рабочего знакомства занимает вечер, но не превращает его в ещё одну дневную смену.",
+      "en": "After work, you stay a little longer and calmly talk through crew business. This voluntary continuation of the working acquaintance takes the evening, but it does not turn into another daytime shift."
+    },
+    "event.lumber-night.foreman-professional.choice.continue.label": {
+      "ru": "Продолжить по-деловому",
+      "en": "Continue professionally"
+    },
+    "event.lumber-night.foreman-professional.choice.continue.text": {
+      "ru": "Сохранить разговор в рамках профессионального доверия.",
+      "en": "Keep the conversation within the bounds of professional trust."
+    }
+  },
+  "invariants": {
+    "sourceBaseline": "01b31b9ab0d0267d95edf5b5b80638acd63f5c04",
+    "ordinaryNightChoiceIds": [
+      "night.sleep",
+      "lumber.foreman.night"
+    ],
+    "resultEventIds": [
+      "lumber-night.foreman-professional"
+    ],
+    "secretDebtExcluded": true,
+    "schoolExactCourseChoicesExcluded": true,
+    "nextDayEnergySemanticsIncluded": false,
+    "gameplayFieldsIncluded": false,
+    "currentRootClassification": "IDENTICAL"
+  }
+}
