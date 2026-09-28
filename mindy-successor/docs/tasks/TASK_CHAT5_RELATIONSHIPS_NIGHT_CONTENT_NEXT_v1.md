@@ -1287,3 +1287,86 @@ Create NEW file only:
 Consolidate items 109–119 into SAFE_LABEL_KEYS / REUSE_EXISTING / SHARED_UI_WIRING_REQUIRED / EXCLUDED_DEBUG / REMAINING_DEBT.
 
 Continue items 109–120 sequentially without waiting for Lead review.
+
+
+## Queue item 121 — ordinary action localization debt audit v1
+Create NEW file only:
+- `docs/relationship-prep/ORDINARY_ACTION_LOCALIZATION_DEBT_AUDIT_V1.md`
+
+Audit current non-career, non-School ordinary actions still relying on raw catalog RU:
+forest-search, forage, brew, sell, scales, exam, deliver, visit, oddjob, repay, rent-room, rest, arrival and other exact current equivalents.
+
+## Queue item 122 — ordinary action labels descriptions RU EN v1
+Create NEW file only:
+- `docs/relationship-prep/ORDINARY_ACTION_LABELS_DESCRIPTIONS_RU_EN_V1.md`
+
+Author RU-source + full EN for exact current ordinary action labels/descriptions only.
+No mechanics/economics changes.
+
+## Queue item 123 — ordinary action scene text RU EN v1
+Create NEW file only:
+- `docs/relationship-prep/ORDINARY_ACTION_SCENE_TEXT_RU_EN_V1.md`
+
+Author RU+EN for exact current ordinary action scene text that can appear as action result/pending text.
+Do not duplicate School/poverty/Forest-result owned text.
+
+## Queue item 124 — brew recipe UI copy RU EN v2
+Create NEW file only:
+- `docs/relationship-prep/BREW_RECIPE_UI_COPY_RU_EN_V2.md`
+
+Audit and finalize generic brewing recipe/button/result wording only.
+No brew mechanics, yields or mastery gates change.
+
+## Queue item 125 — ordinary action localization fixture v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/ordinary-action-localization-v1.fixture.json`
+
+Consolidate items 122–124 into stable RU+EN keys for exact current action IDs/scenes.
+Presentation-only.
+
+## Queue item 126 — ordinary action consumer map v1
+Create NEW file only:
+- `docs/relationship-prep/ORDINARY_ACTION_CONSUMER_MAP_V1.md`
+
+Map item-125 keys to exact current app/catalog consumer seams and current fallback strings.
+
+## Queue item 127 — ordinary action collision audit v1
+Create NEW file only:
+- `docs/relationship-prep/ORDINARY_ACTION_LOCALIZATION_COLLISION_AUDIT_V1.md`
+
+Classify item-125 keys against exact current root:
+ADDITIVE / IDENTICAL / REUSE_EXISTING / CONFLICT.
+
+## Queue item 128 — ordinary action result localization expectations v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/ordinary-action-result-localization-v1.fixture.json`
+
+For representative actions record expected RU/EN action label, result title/body and locale-neutral action identity.
+No Save changes.
+
+## Queue item 129 — ordinary action journal expectations v1
+Create NEW file only:
+- `docs/relationship-prep/ORDINARY_ACTION_JOURNAL_LOCALIZATION_EXPECTATIONS_V1.md`
+
+Classify which ordinary action result strings remain raw journal fallback versus which can be rendered through current locale-neutral refs.
+Do not propose fuzzy text migration.
+
+## Queue item 130 — ordinary action natural-path smoke matrix v1
+Create NEW file only:
+- `docs/relationship-prep/ORDINARY_ACTION_LOCALIZATION_NATURAL_PATH_MATRIX_V1.md`
+
+Choose representative natural paths for action list, requirements, result and RU↔EN switch acceptance.
+
+## Queue item 131 — post-action-localization visible debt inventory v1
+Create NEW file only:
+- `docs/relationship-prep/POST_ACTION_LOCALIZATION_VISIBLE_DEBT_INVENTORY_V1.md`
+
+Recompute remaining normal-player raw RU after generic labels + ordinary action source are accounted for.
+
+## Queue item 132 — ordinary action localization handoff v1
+Create NEW file only:
+- `docs/relationship-prep/ORDINARY_ACTION_LOCALIZATION_HANDOFF_V1.md`
+
+Consolidate items 121–131 into SAFE_ACTION_KEYS / REUSE_EXISTING / RESULT_CONSUMER_REQUIRED / JOURNAL_LIMITATION / REMAINING_DEBT.
+
+Continue items 121–132 sequentially without waiting for Lead review.
