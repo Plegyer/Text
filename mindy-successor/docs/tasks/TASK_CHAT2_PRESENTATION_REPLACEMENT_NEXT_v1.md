@@ -3649,3 +3649,98 @@ Create NEW file only:
 Consolidate items 268–278 with exact selective-copy files and no production GIF claim.
 
 Continue items 268–279 sequentially without waiting for Lead review.
+
+
+## Queue item 280 — exporter dependency patch candidate v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/gif-exporter-dependency-patch-v1.json`
+
+Describe the exact dev-only package.json/package-lock changes needed for the currently recommended reproducible exporter.
+Do not edit package.json or package-lock.json.
+
+## Queue item 281 — exporter CLI contract v1
+Create NEW file only:
+- `docs/presentation-prep/GIF_EXPORTER_CLI_CONTRACT_V1.md`
+
+Define exact local CLI inputs/outputs:
+- source manifest path;
+- semantic presentationId;
+- sequence key(s);
+- output GIF path;
+- frame timing;
+- dimensions;
+- deterministic encoding expectations;
+- nonzero exit on invalid/missing source.
+
+## Queue item 282 — exporter script source v1
+Create NEW source only:
+- `prior-work/astra/prototype-m3.2/tools/export-project-owned-gif.mjs`
+
+Implement the exporter against the proposed dev-only dependency API, but do not alter package manifests.
+The script must operate only on repo-local project-owned SVG frame sources.
+
+## Queue item 283 — exporter script dry-run validation v1
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/project-owned-gif-exporter-dry-run-v1.test.ts`
+
+Validate CLI argument parsing, manifest lookup, source validation, deterministic output naming, and refusal of external URLs/unknown semantic IDs without requiring dependency installation.
+
+## Queue item 284 — exporter dependency security/license review v1
+Create NEW file only:
+- `docs/presentation-prep/GIF_EXPORTER_DEPENDENCY_SECURITY_LICENSE_REVIEW_V1.md`
+
+Record package licenses, transitive/native risks, install-script behavior, CI portability, and whether the proposed versions are acceptable for dev-only use.
+
+## Queue item 285 — exporter reproducibility acceptance v1
+Create NEW file only:
+- `docs/presentation-prep/GIF_EXPORTER_REPRODUCIBILITY_ACCEPTANCE_V1.md`
+
+Define exact acceptance:
+same source frames + pinned versions + timing -> byte-identical or explicitly deterministic-equivalent GIFs, with recorded dimensions/frame count/loop.
+
+## Queue item 286 — first three pool export plan v2
+Create NEW file only:
+- `docs/presentation-prep/FIRST_THREE_POOL_EXPORT_PLAN_V2.md`
+
+For Lumber spring, Guard summer, Tavern autumn list exact three source sequences, intended GIF filenames, candidate keys, timing and static fallback.
+
+## Queue item 287 — future GIF technical budget v1
+Create NEW file only:
+- `docs/presentation-prep/PROJECT_OWNED_GIF_TECHNICAL_BUDGET_V1.md`
+
+Set practical per-file and per-pool size budgets, dimensions, frame count and loop duration targets for this project.
+No gameplay semantics.
+
+## Queue item 288 — GIF output validator source v1
+Create NEW source only:
+- `prior-work/astra/prototype-m3.2/tools/validate-project-owned-gif.mjs`
+
+Implement validation for actual future GIF bytes:
+GIF signature, local path, file size budget, dimensions/frame metadata where available, no placeholder/external provenance.
+
+## Queue item 289 — GIF output validator regression v1
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/project-owned-gif-validator-v1.test.ts`
+
+Test validator behavior using safe fixture bytes/data generated in-test where possible.
+Do not claim production GIF assets exist.
+
+## Queue item 290 — exporter integration exact-file checklist v1
+Create NEW file only:
+- `docs/presentation-prep/GIF_EXPORTER_INTEGRATION_EXACT_FILE_CHECKLIST_V1.md`
+
+List the exact files Lead would need to selectively copy/modify to approve exporter integration, and exact files that must remain untouched.
+
+## Queue item 291 — exporter integration handoff v5
+Create NEW file only:
+- `docs/presentation-prep/PROJECT_OWNED_GIF_EXPORTER_HANDOFF_V5.md`
+
+Consolidate items 280–290:
+- exact dependency patch candidate;
+- script source;
+- dry-run/tests;
+- security/license/reproducibility review;
+- first-three-pool export plan;
+- exact Lead approval decision required.
+
+Continue items 280–291 sequentially without waiting for Lead review.
