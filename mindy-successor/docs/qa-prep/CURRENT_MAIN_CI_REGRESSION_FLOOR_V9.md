@@ -3,17 +3,17 @@
 Status: COMPLETE / CURRENT_MAIN_CI_GREEN
 
 Current main:
-`df0119fd6574b69ab89cf1a99ae77adae3d811f1`
-(PR57 Forest route-specific presentation seam merge).
+`52ddc76148e33836d3161b63bf4c25ffb5c39d02`
+(PR58 generic labels/hints RU+EN merge, on top of PR57 route presentation seam).
 
 ## Latest successful main push
 
 Workflow:
 - `mindy-successor check`;
-- run #106;
-- id `36405622065`;
+- run #109;
+- id `36406510233`;
 - event: push;
-- head SHA: `df0119fd6574b69ab89cf1a99ae77adae3d811f1`;
+- head SHA: `52ddc76148e33836d3161b63bf4c25ffb5c39d02`;
 - conclusion: SUCCESS.
 
 Validator:
@@ -23,50 +23,64 @@ Validator:
 - endings: 9.
 
 Tests:
-- 351 total;
-- 351 pass;
+- 356 total;
+- 356 pass;
 - 0 fail.
 
-## PR57 exact-head corroboration
+## PR58 exact-head corroboration
 
-Accepted PR57 head:
-`138c9889daf8e63dc280b1868e0e868a638111e1`.
+Accepted PR58 head:
+`923e9b0d90ea6f20ed453a43ea0d98e0a6ae4a19`.
 
-Run #105 / id `36405377265`:
+Run #108 / id `36406325995`:
 - SUCCESS;
 - validator 17 / 46 / 35 / 9;
-- 351 / 351 tests.
+- 356 / 356 tests.
 
 Relevant PASS:
-- exact Forest route-specific semantic IDs with neutral fallback;
-- route-specific IDs resolve through shipped neutral default;
-- presentation helper is read-only;
-- renderer follows route state without Save drift;
-- exact Forest activityResult boundaries;
-- Lumber Hard Work remains exactly 50 completed shifts with no Forest prerequisite.
+- 49-key generic-label production fixture fully merged RU+EN;
+- generic-label consumer wiring;
+- presentation-only patch invariant;
+- Stats/Bag RU↔EN Save-invariance renderer smoke;
+- pending encounter identity invariance;
+- retained Forest route seam, Journal stable-ref and Hard Work regressions.
 
-## PR56 shell floor retained
+## PR57 floor retained
+
+PR57 merged as:
+`df0119fd6574b69ab89cf1a99ae77adae3d811f1`.
+
+Run #106:
+- SUCCESS;
+- 351/351;
+- validator 17/46/35/9.
+
+Current 356-test suite retains:
+- exact route-specific semantic IDs;
+- neutral default fallback;
+- route-state UI Save-invariance;
+- exact Forest activityResult boundaries;
+- exact Lumber Hard Work 50-shift rule.
+
+## PR56 floor retained
 
 PR56 merged as:
 `4223be1f90f15a43938e072bc2171b0de5d2d1aa`.
 
 Run #104:
 - SUCCESS;
-- 347 / 347;
-- validator 17 / 46 / 35 / 9.
+- 347/347;
+- validator 17/46/35/9.
 
-Current 351-test suite retains:
-- 108-key shell production fixture regression;
-- creation/menu/season RU↔EN Save-invariance;
-- Activity shell RU↔EN gameplay-invariance.
+Current suite retains the 108-key global-shell production and RU↔EN shell regressions.
 
 ## Localization floor
 
 Current root localization blob:
-`4b3f7f9d843779bebf717eb9a00ebf7cf6af7704`.
+`5280ea702332210ed914d5765b02753e0f5bef61`.
 
 Current root localization:
-`630` keys.
+`658` keys.
 
 Missing RU:
 `0`.
@@ -74,7 +88,7 @@ Missing RU:
 Missing EN:
 `0`.
 
-PR57 adds no root localization key and does not alter the PR56 630-key bilingual floor.
+PR58 adds 28 reviewed domain/generic-label keys while retaining 21 exact-identical reviewed fixture keys already present.
 
 ## Static/presentation floor
 
@@ -87,45 +101,45 @@ Active project-owned static root mappings:
 Unique active project-owned physical sources:
 `79`.
 
-Established current static target:
+Established static target:
 `80 / 80`.
 
-Current root route static overrides:
-- `activity/forest/route/default` only.
+Root route static override remains:
+`activity/forest/route/default`.
 
-PR57 generates route-specific semantic slots at catalog/runtime presentation level:
-- `activity/forest/route/logging-road`;
-- `activity/forest/route/old-boundary`.
-
-Until specific media is selectively integrated, both safely resolve through the default root slot.
+PR57-generated route-specific semantic slots remain active and safely fall back to the default until specific media is integrated.
 
 ## Current app floor
 
-App blob:
-`548b4d4de9ec95e43b58bc153827e32176b79b59`.
+Current app blob:
+`25a23d5fe80a4ca9a2cb991add67eb92c9b516a6`.
 
-Current active Forest Activity UI derives media presentation ID from authoritative `activity.internalState.routeId` without persisting the derived presentation ID into gameplay Save.
+Shipped presentation consumers now include:
+- PR56 remaining global shell/condition grammar;
+- PR57 route-state presentation seam;
+- PR58 generic stat/hint/resource/item labels and encounter/inactive-run shell;
+- prior PR54 Journal/outcome stable refs;
+- prior PR55 shared Night/lodging UI.
 
 ## Journal/outcome compatibility floor
 
-Retained on current main:
-- optional locale-neutral `outcomeRef`;
-- parallel `journalRefs`;
-- schema-4 missing-ref compatibility;
-- index alignment;
+Retained:
+- locale-neutral event-choice refs;
+- aligned `journalRefs`;
+- old schema-4 missing-ref compatibility;
 - no fuzzy prose migration;
 - School course-result priority;
-- RU↔EN ref-backed Journal/result rendering with unchanged Save.
+- locale-only ref-backed Journal/result rendering with unchanged Save.
 
-Run #106 retains the Journal/lastAction stable-ref renderer regression.
+Run #109 retains the Journal/lastAction stable-ref renderer test.
 
 ## Minimum next-integration floor
 
-Unless an intentional reviewed change says otherwise:
+Unless intentionally reviewed:
 - validator remains 17 packs / 46 events / 35 actions / 9 endings;
-- test count does not drop below 351;
+- existing test count does not drop below 356;
 - failures remain 0;
-- root localization does not silently lose current 630 keys;
+- root localization does not silently lose current 658 keys;
 - active project-owned static root mappings remain at least 80;
 - static target remains 80/80;
 - route-specific semantic slots retain default fallback safety.
@@ -135,25 +149,32 @@ Unless an intentional reviewed change says otherwise:
 Protect:
 - Lumber Hard Work eligibility only `completed_shifts >= 50`;
 - reward exactly `hardWork:lumber`;
-- Forest exact success/escape/failure result IDs;
+- exact Forest success/escape/failure result IDs;
 - exact activityResult reactions;
 - Old Boundary current `enter_old_boundary` gate;
 - route presentation derivation performs no Save/RNG/result mutation;
+- generic labels do not change stat/resource/item/housing IDs or economics;
 - School locale Save invariance;
 - poverty natural paths;
-- journal-ref compatibility/no fuzzy migration;
+- Journal stable-ref compatibility;
 - Night lodging costs/effects;
-- presentation/media resolution independent of gameplay RNG.
+- presentation selection independent of gameplay RNG.
 
-## Open PR58 note
+## Current route-specific visual state
 
-PR #58 `Lead: localize generic labels and hints RU EN` is open and is not part of this current-main floor.
+The route semantic seam is shipped.
 
-Its exact head must complete full CI successfully before its counts can replace this authoritative floor.
+Specific root visual overrides are not yet shipped.
+
+Current Chat2 replacement route SVGs are QA-green source candidates, but any later visual integration must preserve:
+- exact route-specific semantic IDs;
+- `activity/forest/route/default` fallback;
+- locale-neutral media identity;
+- Product-open isolation.
 
 ## Verdict
 
 `CURRENT_MAIN_CI_GREEN`.
 
 Authoritative floor:
-`main df0119f... / run #106 / 351 of 351 passing / 17 packs, 46 events, 35 actions, 9 endings / 630 bilingual root keys / static 80 of 80`.
+`main 52ddc76... / run #109 / 356 of 356 passing / 17 packs, 46 events, 35 actions, 9 endings / 658 bilingual root keys / static 80 of 80`.
