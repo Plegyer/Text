@@ -1561,3 +1561,90 @@ Create NEW file only:
 Consolidate items 133–143 into ENDING_KEYS_READY / ACTION_RESULT_KEYS_READY / SHARED_CONSUMER_REQUIRED / SELECTIVE_COPY / REMAINING_DEBT.
 
 Continue items 133–144 sequentially without waiting for Lead review.
+
+
+## Queue item 145 — post-PR59 ending/action rebase audit v2
+Create NEW file only:
+- `docs/relationship-prep/POST_PR59_ENDING_ACTION_REBASE_AUDIT_V2.md`
+
+Recheck items 136/141 against exact current main after PR59.
+Classify ADDITIVE / IDENTICAL / REUSE_EXISTING / CONFLICT.
+
+## Queue item 146 — ending localization production patch v2
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/ending-localization-production-v2.fixture.json`
+
+Contain only exact current ending title/description RU+EN keys still needed after item 145.
+No condition/reward/meta fields.
+
+## Queue item 147 — ordinary action result production patch v3
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/ordinary-action-result-localization-v3.fixture.json`
+
+Contain only exact current ordinary action result title/body RU+EN keys still needed.
+No gameplay fields.
+
+## Queue item 148 — ending consumer current-main map v2
+Create NEW file only:
+- `docs/relationship-prep/ENDING_CURRENT_MAIN_CONSUMER_MAP_V2.md`
+
+Map item-146 keys to exact Legacy/end-state UI fallback consumers.
+No UI edits.
+
+## Queue item 149 — ordinary action result consumer map v3
+Create NEW file only:
+- `docs/relationship-prep/ORDINARY_ACTION_RESULT_CONSUMER_MAP_V3.md`
+
+Map actionId + sceneId result keys to exact current result/lastAction consumer seams.
+No engine/UI edits.
+
+## Queue item 150 — ordinary action journal ref eligibility matrix v1
+Create NEW file only:
+- `docs/relationship-prep/ORDINARY_ACTION_JOURNAL_REF_ELIGIBILITY_MATRIX_V1.md`
+
+Classify which action results already have stable locale-neutral identity sufficient for localized Journal rendering and which remain raw fallback.
+No new Save schema proposal.
+
+## Queue item 151 — ending RU EN natural-path expectation v2
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/ending-localization-natural-path-v2.fixture.json`
+
+For each exact current ending record title/description/acceptance RU+EN and exact unchanged eligibility/reward/meta identity.
+
+## Queue item 152 — ordinary action result RU EN natural-path expectation v2
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/ordinary-action-result-natural-path-v2.fixture.json`
+
+For representative current actions record exact result identity, RU/EN render expectation and unchanged deltas/RNG/Save.
+
+## Queue item 153 — ending/action overlap with generic labels audit v1
+Create NEW file only:
+- `docs/relationship-prep/ENDING_ACTION_GENERIC_LABEL_OVERLAP_AUDIT_V1.md`
+
+Check item-146/147 keys against shipped generic labels/hints and legacy event localization.
+Avoid duplicate semantic keys.
+
+## Queue item 154 — ending/action localization regression source v2
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/ending-action-localization-source-v2.test.ts`
+
+Validate exact current IDs, RU+EN completeness, no condition/effect/reward/RNG/Save fields, no cross-owner collisions.
+
+## Queue item 155 — post-ending/action visible debt inventory v2
+Create NEW file only:
+- `docs/relationship-prep/POST_ENDING_ACTION_VISIBLE_DEBT_INVENTORY_V2.md`
+
+Recompute remaining normal-player visible localization debt after accounting for items 146/147.
+
+## Queue item 156 — ending/action localization handoff v2
+Create NEW file only:
+- `docs/relationship-prep/ENDING_ACTION_LOCALIZATION_HANDOFF_V2.md`
+
+Consolidate items 145–155 into:
+- ENDING_PATCH_READY;
+- ACTION_RESULT_PATCH_READY;
+- SHARED_CONSUMER_REQUIRED;
+- JOURNAL_REF_LIMITATION;
+- REMAINING_VISIBLE_DEBT.
+
+Continue items 145–156 sequentially without waiting for Lead review.
