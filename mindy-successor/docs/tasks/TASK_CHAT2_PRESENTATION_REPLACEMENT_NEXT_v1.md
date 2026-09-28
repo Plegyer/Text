@@ -3744,3 +3744,96 @@ Consolidate items 280–290:
 - exact Lead approval decision required.
 
 Continue items 280–291 sequentially without waiting for Lead review.
+
+
+## Queue item 280 — first exporter proof-of-concept patch v1
+Create NEW file only:
+- `docs/presentation-prep/FIRST_EXPORTER_PROOF_OF_CONCEPT_PATCH_V1.md`
+
+Using the previously recommended exporter/toolchain, write the exact minimal proposed package.json/script patch that would export local SVG frame sequences to GIF.
+Do not install or modify dependencies yet.
+
+## Queue item 281 — exporter reproducibility smoke design v1
+Create NEW file only:
+- `docs/presentation-prep/GIF_EXPORTER_REPRODUCIBILITY_SMOKE_V1.md`
+
+Define the exact CI/dev smoke:
+same local frame inputs -> same candidate ordering, dimensions, frame count, timing and valid GIF signature.
+Do not claim byte-identical output unless the chosen tool guarantees it.
+
+## Queue item 282 — Lumber spring candidate metadata v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/lumber-spring-animation-candidates-v1.json`
+
+Describe the three existing Lumber spring source sequences as future animation candidates:
+candidate keys, source sequence paths, target timing, static fallback and semantic presentationId.
+No GIF paths unless actual files exist.
+
+## Queue item 283 — Guard summer candidate metadata v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/guard-summer-animation-candidates-v1.json`
+
+Same rules as item 282.
+
+## Queue item 284 — Tavern autumn candidate metadata v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/tavern-autumn-animation-candidates-v1.json`
+
+Same rules.
+
+## Queue item 285 — School literacy candidate metadata v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/school-literacy-animation-candidates-v1.json`
+
+Same rules; no School mechanics.
+
+## Queue item 286 — Poverty helpful-summer candidate metadata v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/poverty-helpful-summer-animation-candidates-v1.json`
+
+Ordinary poverty only; Secret Debt excluded.
+
+## Queue item 287 — Forest success-return candidate metadata v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/forest-success-return-animation-candidates-v1.json`
+
+No route/challenge/result mechanics changes.
+
+## Queue item 288 — Foreman Night candidate metadata v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/foreman-night-animation-candidates-v1.json`
+
+No relationship/Night mechanics changes.
+
+## Queue item 289 — animation candidate cross-pool validator v1
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/animation-candidate-source-metadata-v1.test.ts`
+
+Validate items 282–288:
+- exactly 3 source candidates per semantic identity;
+- all source frames exist;
+- unique candidate keys;
+- exact current semantic presentationId;
+- valid static fallback;
+- no GIF path unless real GIF bytes exist;
+- no gameplay fields.
+
+## Queue item 290 — first exporter approval packet v1
+Create NEW file only:
+- `docs/presentation-prep/FIRST_EXPORTER_APPROVAL_PACKET_V1.md`
+
+Summarize the smallest dependency/script change Lead would need to approve before actual GIF export.
+Include exact risk, rollback, CI and licensing notes.
+
+## Queue item 291 — animation export handoff v5
+Create NEW file only:
+- `docs/presentation-prep/PROJECT_OWNED_ANIMATION_EXPORT_HANDOFF_V5.md`
+
+Consolidate items 280–290:
+- exporter proposal;
+- seven candidate metadata pools;
+- exact source readiness;
+- exact blocker to real GIF bytes;
+- selective-copy files.
+
+Continue items 280–291 sequentially without waiting for Lead review.
