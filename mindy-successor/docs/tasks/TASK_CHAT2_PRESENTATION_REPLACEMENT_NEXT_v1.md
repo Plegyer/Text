@@ -4226,3 +4226,119 @@ Consolidate items 316–326 into:
 - PRODUCT_OPEN_EXCLUDED.
 
 Continue items 316–327 sequentially without waiting for Lead review.
+
+
+## Queue item 328 — exporter implementation source draft v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/tools/export-presentation-gif.mjs`
+
+Author the deterministic local SVG-frame -> GIF exporter source expected to use the already-reviewed dev dependencies:
+- `sharp@0.35.4`;
+- `gifenc@1.0.3`.
+
+Do not modify package.json or lockfiles.
+No external URLs or remote assets.
+
+## Queue item 329 — exporter CLI contract v1
+Create NEW file only:
+- `docs/presentation-prep/GIF_EXPORTER_CLI_CONTRACT_V1.md`
+
+Define exact CLI:
+- source manifest path;
+- semantic presentationId;
+- sequence key;
+- output path;
+- width/height;
+- frame duration;
+- loop count;
+- deterministic palette/encoding expectations.
+
+## Queue item 330 — exporter fixture manifest v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/gif-exporter-fixture-manifest-v1.json`
+
+Use one existing Lumber spring source sequence only.
+No claim that GIF bytes exist.
+
+## Queue item 331 — exporter unit-test source v1
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/gif-exporter-source-v1.test.ts`
+
+Static-test the exporter source:
+- local-only inputs;
+- deterministic ordered frames;
+- no network;
+- exact output naming;
+- no gameplay/RNG/Save access;
+- dependency versions documented.
+
+Do not require dependencies to be installed.
+
+## Queue item 332 — exporter rollback packet v1
+Create NEW file only:
+- `docs/presentation-prep/GIF_EXPORTER_ROLLBACK_PACKET_V1.md`
+
+Document exact files a Lead dependency-integration PR would touch and exact rollback if native install/CI portability fails.
+
+## Queue item 333 — first Lumber GIF pool production manifest candidate v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/lumber-spring-gif-pool-production-candidate-v1.json`
+
+Prepare the exact future PR42-compatible pool for the 3 Lumber spring source sequences:
+- current semantic presentationId;
+- 3 candidate keys;
+- expected local GIF paths;
+- static fallback;
+- locale-neutral keys.
+
+Mark expected files as NOT_YET_EXPORTED.
+
+## Queue item 334 — Guard summer GIF pool production manifest candidate v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/guard-summer-gif-pool-production-candidate-v1.json`
+
+Same constraints as item 333, using the 3 Guard summer source sequences.
+
+## Queue item 335 — School literacy GIF pool production manifest candidate v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/school-literacy-gif-pool-production-candidate-v1.json`
+
+Same constraints; School mechanics remain untouched.
+
+## Queue item 336 — GIF accessibility key plan v1
+Create NEW file only:
+- `docs/presentation-prep/GIF_ACCESSIBILITY_KEY_PLAN_V1.md`
+
+Define RU+EN alt/caption key families for the first 3 candidate pools without duplicating static semantics unnecessarily.
+
+## Queue item 337 — GIF candidate provenance ledger v1
+Create NEW file only:
+- `docs/presentation-prep/PROJECT_OWNED_GIF_PROVENANCE_LEDGER_V1.md`
+
+For every future candidate in items 333–335, point to exact project-owned SVG frame sources.
+No external provenance.
+
+## Queue item 338 — dependency-integration acceptance packet v1
+Create NEW file only:
+- `docs/presentation-prep/GIF_EXPORTER_DEPENDENCY_INTEGRATION_ACCEPTANCE_V1.md`
+
+Define exact Lead acceptance:
+- pinned dev dependencies only;
+- npm ci on Node 22;
+- exporter smoke;
+- deterministic same-input output;
+- no runtime dependency;
+- no production GIF pool until actual bytes + validator pass.
+
+## Queue item 339 — exporter-prep handoff v9
+Create NEW file only:
+- `docs/presentation-prep/GIF_EXPORTER_PREP_HANDOFF_V9.md`
+
+Consolidate items 328–338 into:
+- EXPORTER_SOURCE_READY;
+- DEPENDENCY_PR_REQUIRED;
+- FIRST_THREE_POOLS_MANIFEST_READY;
+- NO_GIF_BYTES_YET;
+- PROJECT_OWNED_ONLY.
+
+Continue items 328–339 sequentially without waiting for Lead review.
