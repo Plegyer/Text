@@ -3,17 +3,17 @@
 Status: COMPLETE / CURRENT_MAIN_CI_GREEN
 
 Current main:
-`295e6fc74d235f0b7555794555a18373451e8b7e`
-(PR55 shared Night/lodging localization merge).
+`df0119fd6574b69ab89cf1a99ae77adae3d811f1`
+(PR57 Forest route-specific presentation seam merge).
 
 ## Latest successful main push
 
 Workflow:
 - `mindy-successor check`;
-- run #99;
-- id `36403132544`;
+- run #106;
+- id `36405622065`;
 - event: push;
-- head SHA: `295e6fc74d235f0b7555794555a18373451e8b7e`;
+- head SHA: `df0119fd6574b69ab89cf1a99ae77adae3d811f1`;
 - conclusion: SUCCESS.
 
 Validator:
@@ -23,45 +23,50 @@ Validator:
 - endings: 9.
 
 Tests:
-- 342 total;
-- 342 pass;
+- 351 total;
+- 351 pass;
 - 0 fail.
 
-## PR55 exact-head corroboration
+## PR57 exact-head corroboration
 
-Accepted PR55 head:
-`724ab70a5a83424fb8a576c3deb082b60256ffc0`.
+Accepted PR57 head:
+`138c9889daf8e63dc280b1868e0e868a638111e1`.
 
-Run #98:
-- id `36402925719`;
+Run #105 / id `36405377265`:
 - SUCCESS;
 - validator 17 / 46 / 35 / 9;
-- 342 / 342 tests.
+- 351 / 351 tests.
 
 Relevant PASS:
-- exact 16 additive RU+EN Night UI keys;
-- stable localization consumers without NightFlow mechanic change;
-- presentation-only fixture;
-- renderer shared Night/lodging RU↔EN without state drift;
-- existing exactly-once lodging/Night regressions.
+- exact Forest route-specific semantic IDs with neutral fallback;
+- route-specific IDs resolve through shipped neutral default;
+- presentation helper is read-only;
+- renderer follows route state without Save drift;
+- exact Forest activityResult boundaries;
+- Lumber Hard Work remains exactly 50 completed shifts with no Forest prerequisite.
 
-## PR54 floor retained
+## PR56 shell floor retained
 
-PR54 stable journal/outcome refs remain shipped beneath current main.
+PR56 merged as:
+`4223be1f90f15a43938e072bc2171b0de5d2d1aa`.
 
-PR54 merge:
-`6e2a5147603b71eed89a0966af417a33dd28d7a7`.
+Run #104:
+- SUCCESS;
+- 347 / 347;
+- validator 17 / 46 / 35 / 9.
 
-Run #97:
-- 338/338;
-- validator 17/46/35/9.
-
-Current 342-test suite retains stable-ref, old-save and School compatibility regressions.
+Current 351-test suite retains:
+- 108-key shell production fixture regression;
+- creation/menu/season RU↔EN Save-invariance;
+- Activity shell RU↔EN gameplay-invariance.
 
 ## Localization floor
 
+Current root localization blob:
+`4b3f7f9d843779bebf717eb9a00ebf7cf6af7704`.
+
 Current root localization:
-`556`.
+`630` keys.
 
 Missing RU:
 `0`.
@@ -69,75 +74,86 @@ Missing RU:
 Missing EN:
 `0`.
 
-Event coverage:
-`40 / 46` fully root-localized.
+PR57 adds no root localization key and does not alter the PR56 630-key bilingual floor.
 
-Choice labels:
-`59 / 68`.
+## Static/presentation floor
 
-Choice bodies:
-`59 / 68`.
+Root presentation blob:
+`0bed8e1a4a88358b7e1e8ef22d787f5bcee323f4`.
 
-## Static floor
-
-Active project-owned static mappings:
+Active project-owned static root mappings:
 `80`.
 
-Unique active project-owned sources:
+Unique active project-owned physical sources:
 `79`.
 
-Established target:
+Established current static target:
 `80 / 80`.
 
-Presentation blob remains:
-`0bed8e1a4a88358b7e1e8ef22d787f5bcee323f4`.
+Current root route static overrides:
+- `activity/forest/route/default` only.
+
+PR57 generates route-specific semantic slots at catalog/runtime presentation level:
+- `activity/forest/route/logging-road`;
+- `activity/forest/route/old-boundary`.
+
+Until specific media is selectively integrated, both safely resolve through the default root slot.
 
 ## Current app floor
 
 App blob:
-`8bc496f8678640e7134730dda943e326a9379fb1`.
+`548b4d4de9ec95e43b58bc153827e32176b79b59`.
 
-PR55 localizes current Night/lodging presentation seams without changing NightFlow mechanics.
+Current active Forest Activity UI derives media presentation ID from authoritative `activity.internalState.routeId` without persisting the derived presentation ID into gameplay Save.
+
+## Journal/outcome compatibility floor
+
+Retained on current main:
+- optional locale-neutral `outcomeRef`;
+- parallel `journalRefs`;
+- schema-4 missing-ref compatibility;
+- index alignment;
+- no fuzzy prose migration;
+- School course-result priority;
+- RU↔EN ref-backed Journal/result rendering with unchanged Save.
+
+Run #106 retains the Journal/lastAction stable-ref renderer regression.
 
 ## Minimum next-integration floor
 
-Unless intentionally reviewed:
+Unless an intentional reviewed change says otherwise:
 - validator remains 17 packs / 46 events / 35 actions / 9 endings;
-- test count does not drop below 342;
+- test count does not drop below 351;
 - failures remain 0;
-- root localization does not silently lose current 556 keys;
-- active project-owned static mappings remain >=80;
-- static target remains 80/80.
+- root localization does not silently lose current 630 keys;
+- active project-owned static root mappings remain at least 80;
+- static target remains 80/80;
+- route-specific semantic slots retain default fallback safety.
 
 ## Locked invariants
 
 Protect:
-- Lumber Hard Work only `completed_shifts >= 50`;
-- reward `hardWork:lumber`;
-- exact Forest results/reactions;
-- Old Boundary `enter_old_boundary` gate;
+- Lumber Hard Work eligibility only `completed_shifts >= 50`;
+- reward exactly `hardWork:lumber`;
+- Forest exact success/escape/failure result IDs;
+- exact activityResult reactions;
+- Old Boundary current `enter_old_boundary` gate;
+- route presentation derivation performs no Save/RNG/result mutation;
 - School locale Save invariance;
 - poverty natural paths;
-- PR54 journal-ref compatibility/no fuzzy migration;
-- Night lodging costs/housing/next-day effects;
-- Foreman voluntary Night behavior;
+- journal-ref compatibility/no fuzzy migration;
+- Night lodging costs/effects;
 - presentation/media resolution independent of gameplay RNG.
 
-## Next route/presentation work
+## Open PR58 note
 
-Forest route-specific seam:
-- pure presentation mapping only;
-- 10 additive localized route keys;
-- no route/result/Hard Work mutation.
+PR #58 `Lead: localize generic labels and hints RU EN` is open and is not part of this current-main floor.
 
-Animation exporter:
-- dev-only candidate design acceptable;
-- package/lock integration still requires Lead approval and native CI verification;
-- no production GIFs yet.
+Its exact head must complete full CI successfully before its counts can replace this authoritative floor.
 
 ## Verdict
 
 `CURRENT_MAIN_CI_GREEN`.
 
 Authoritative floor:
-`main 295e6fc... / run #99 / 342 of 342 passing / 17 packs, 46 events, 35 actions, 9 endings / static 80 of 80`.
+`main df0119f... / run #106 / 351 of 351 passing / 17 packs, 46 events, 35 actions, 9 endings / 630 bilingual root keys / static 80 of 80`.
