@@ -3254,3 +3254,92 @@ Summarize items 235–245:
 - Product-open isolation.
 
 Continue items 235–246 sequentially without waiting for Lead review.
+
+
+## Queue item 235 — PR56 exact-head and post-merge audit v1
+Create NEW file only:
+- `docs/qa-prep/PR56_GLOBAL_UI_SHELL_V2_AUDIT_V1.md`
+
+Verify exact-head success, merge SHA, current main and post-merge push CI.
+Confirm 108-key fixture, 74 new root keys, reuse of stat.endurance.label and no gameplay/Save drift.
+
+## Queue item 236 — post-PR56 visible shell bilingual QA v1
+Create NEW file only:
+- `docs/qa-prep/POST_PR56_VISIBLE_SHELL_BILINGUAL_QA_V1.md`
+
+Natural-path QA for creation, menu, season HUD, Activity shell, save/recovery messages and condition explanations in RU+EN.
+
+## Queue item 237 — Chat5 generic-label 49-key QA v1
+Create NEW file only:
+- `docs/qa-prep/CHAT5_GENERIC_LABELS_49_KEY_QA_V1.md`
+
+Review Chat5 item 115 against exact current main:
+- exact 49 keys;
+- RU+EN completeness;
+- no gameplay IDs changed;
+- labels/hints only;
+- collision/reuse status.
+
+## Queue item 238 — generic-label consumer wiring acceptance v1
+Create NEW file only:
+- `docs/qa-prep/GENERIC_LABEL_CONSUMER_WIRING_ACCEPTANCE_V1.md`
+
+Define exact acceptance for labels.ts/app consumers:
+locale switch presentation-only, stable resource/stat/item IDs, no economics/mechanics changes.
+
+## Queue item 239 — Forest route presentationId seam QA v1
+Create NEW file only:
+- `docs/qa-prep/FOREST_ROUTE_PRESENTATION_ID_SEAM_QA_V1.md`
+
+Review forthcoming Lead seam:
+route state absent -> default;
+logging-road -> route-specific;
+old-boundary -> route-specific;
+unknown -> safe default;
+no Save write/RNG/result mutation.
+
+## Queue item 240 — Forest route route-specific slot/fallback QA v1
+Create NEW file only:
+- `docs/qa-prep/FOREST_ROUTE_SPECIFIC_SLOT_FALLBACK_QA_V1.md`
+
+Verify route-specific slots may safely fallback to activity/forest/route/default and missing route-specific assets cannot break gameplay.
+
+## Queue item 241 — Forest route localized copy QA v3
+Create NEW file only:
+- `docs/qa-prep/FOREST_ROUTE_LOCALIZED_COPY_QA_V3.md`
+
+Review latest Chat3 route copy/title/help/alt/caption fixtures for current IDs, RU+EN parity and Product-open isolation.
+
+## Queue item 242 — Chat2 route-specific visual QA v1
+Create NEW file only:
+- `docs/qa-prep/CHAT2_FOREST_ROUTE_VISUAL_QA_V1.md`
+
+Review Chat2 items 292–303 as they appear:
+logging-road safe semantics, old-boundary no gate/token/Hunter/reward leak, local assets only, normalized alt keys.
+
+## Queue item 243 — animation exporter approval QA v2
+Create NEW file only:
+- `docs/qa-prep/ANIMATION_EXPORTER_APPROVAL_QA_V2.md`
+
+Review Chat2 exporter packet for dependency pinning, license, CI portability, reproducibility and rollback.
+No production GIF claim.
+
+## Queue item 244 — journal/outcome post-merge regression QA v2
+Create NEW file only:
+- `docs/qa-prep/JOURNAL_OUTCOME_POST_MERGE_REGRESSION_QA_V2.md`
+
+Recheck current main journalRefs/outcomeRef behavior, schema4 omission compatibility and RU↔EN Save invariance.
+
+## Queue item 245 — current-main CI regression floor v9
+Create NEW file only:
+- `docs/qa-prep/CURRENT_MAIN_CI_REGRESSION_FLOOR_V9.md`
+
+Record exact current main SHA, latest successful push run, validator counts and test count after PR56.
+
+## Queue item 246 — next production integration gate v19
+Create NEW file only:
+- `docs/qa-prep/NEXT_PRODUCTION_INTEGRATION_GATE_V19.md`
+
+Summarize items 235–245 and classify route seam, generic labels, route visuals and animation exporter readiness.
+
+Continue items 235–246 sequentially without waiting for Lead review.
