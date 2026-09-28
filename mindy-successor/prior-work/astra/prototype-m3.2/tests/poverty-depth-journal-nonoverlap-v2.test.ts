@@ -76,15 +76,15 @@ test('depth keys remain pending-scene presentation keys only',()=>{
 test('current engine keeps resolved Journal identity as eventId + choiceId only',()=>{
   assert.match(
     engineSource,
-    /const outcomeRef=\{kind:'eventChoice' as const,eventId:e\.id,choiceId:choice\.id\}/
+    /const outcomeRef=\{kind:'eventChoice' as const,eventId:pending\.eventId,choiceId:command\.id\}/
   );
   assert.match(
     engineSource,
-    /historyState\.journalRefs\.push\(outcomeRef\)/
+    /log\(s,sceneChoice\.text,outcomeRef\)/
   );
   assert.match(
     engineSource,
-    /lastAction=\{[^\n]*outcomeRef/
+    /lastAction\.outcomeRef=outcomeRef/
   );
 
   for(const pack of packs){
