@@ -1,0 +1,124 @@
+{
+  "version": 1,
+  "defaultLocale": "ru",
+  "strings": {
+    "ui.condition.state.present": {
+      "ru": "есть",
+      "en": "present"
+    },
+    "ui.condition.state.absent": {
+      "ru": "отсутствует",
+      "en": "absent"
+    },
+    "ui.condition.state.yes": {
+      "ru": "есть",
+      "en": "yes"
+    },
+    "ui.condition.state.no": {
+      "ru": "нет",
+      "en": "no"
+    },
+    "ui.condition.state.completed": {
+      "ru": "пройдена",
+      "en": "completed"
+    },
+    "ui.condition.state.notCompleted": {
+      "ru": "не пройдена",
+      "en": "not completed"
+    },
+    "ui.condition.state.finished": {
+      "ru": "завершён",
+      "en": "completed"
+    },
+    "ui.condition.state.notFinished": {
+      "ru": "не завершён",
+      "en": "not completed"
+    },
+    "ui.condition.word.stage": {
+      "ru": "этап",
+      "en": "stage"
+    },
+    "ui.condition.word.shifts": {
+      "ru": "смен",
+      "en": "shifts"
+    },
+    "ui.condition.word.fact": {
+      "ru": "факт",
+      "en": "fact"
+    },
+    "ui.condition.word.career": {
+      "ru": "Карьера",
+      "en": "Career"
+    },
+    "ui.condition.word.quest": {
+      "ru": "Задание",
+      "en": "Quest"
+    },
+    "ui.condition.word.relationship": {
+      "ru": "Отношения",
+      "en": "Relationship"
+    },
+    "ui.condition.word.worldFact": {
+      "ru": "Факт мира",
+      "en": "World fact"
+    },
+    "ui.condition.word.legacy": {
+      "ru": "Наследие",
+      "en": "Legacy"
+    },
+    "ui.condition.word.fate": {
+      "ru": "Судьба",
+      "en": "Fate"
+    },
+    "ui.condition.word.hardWork": {
+      "ru": "Тяжкий труд",
+      "en": "Hard Work"
+    },
+    "ui.condition.word.year": {
+      "ru": "Год",
+      "en": "Year"
+    },
+    "ui.condition.word.dayOfYear": {
+      "ru": "День года",
+      "en": "Day of year"
+    },
+    "ui.condition.word.daysElapsed": {
+      "ru": "Прошло дней",
+      "en": "Days elapsed"
+    },
+    "ui.condition.word.housing": {
+      "ru": "Жильё",
+      "en": "Housing"
+    },
+    "ui.condition.compare.gte": {
+      "ru": "≥",
+      "en": "≥"
+    },
+    "ui.condition.compare.lte": {
+      "ru": "≤",
+      "en": "≤"
+    },
+    "ui.condition.compare.eq": {
+      "ru": "=",
+      "en": "="
+    },
+    "ui.condition.andSeparator": {
+      "ru": " и ",
+      "en": " and "
+    },
+    "ui.condition.orSeparator": {
+      "ru": " или ",
+      "en": " or "
+    },
+    "ui.condition.notRequiredPrefix": {
+      "ru": "Не требуется: ",
+      "en": "Not required: "
+    }
+  },
+  "invariants": {
+    "presentationOnly": true,
+    "conditionObjectsIncluded": false,
+    "comparisonSemanticsChanged": false,
+    "localeNeutralKeys": true
+  }
+}
