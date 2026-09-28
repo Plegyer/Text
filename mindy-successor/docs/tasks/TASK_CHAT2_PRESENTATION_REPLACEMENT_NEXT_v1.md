@@ -4342,3 +4342,103 @@ Consolidate items 328–338 into:
 - PROJECT_OWNED_ONLY.
 
 Continue items 328–339 sequentially without waiting for Lead review.
+
+
+## Queue item 340 — exporter dependency patch fixture v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/gif-exporter-package-patch-v1.fixture.json`
+
+Describe the exact future package.json delta only:
+- devDependency `sharp@0.35.4`;
+- devDependency `gifenc@1.0.3`;
+- script `media:export-gif`.
+
+Do not modify package.json or lockfiles.
+
+## Queue item 341 — exporter install portability matrix v1
+Create NEW file only:
+- `docs/presentation-prep/GIF_EXPORTER_INSTALL_PORTABILITY_MATRIX_V1.md`
+
+Document expected install/build risks for Node 22 + Ubuntu CI, macOS and Windows authoring.
+No package installation.
+
+## Queue item 342 — deterministic export golden contract v1
+Create NEW file only:
+- `docs/presentation-prep/GIF_EXPORT_DETERMINISM_GOLDEN_CONTRACT_V1.md`
+
+Define exact same-input byte-identity acceptance, dimensions, loop count, frame duration, palette and metadata expectations.
+
+## Queue item 343 — Lumber export smoke command fixture v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/lumber-gif-export-smoke-v1.fixture.json`
+
+Record the exact future local command/input/output for one Lumber spring sequence.
+No GIF bytes.
+
+## Queue item 344 — Guard export smoke command fixture v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/guard-gif-export-smoke-v1.fixture.json`
+
+Same constraints for Guard summer.
+
+## Queue item 345 — School export smoke command fixture v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/school-gif-export-smoke-v1.fixture.json`
+
+Same constraints for School literacy.
+
+## Queue item 346 — first-pool output validator source v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/tools/validate-exported-presentation-gif.mjs`
+
+Author a local-only validator source for:
+- GIF signature;
+- dimensions;
+- frame count;
+- loop metadata;
+- max file size;
+- expected output path;
+- no external URLs.
+
+Do not require actual GIF files yet.
+
+## Queue item 347 — first-pool validator static test v1
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/exported-presentation-gif-validator-source-v1.test.ts`
+
+Static-test item 346 and its local-only/no-gameplay contract.
+
+## Queue item 348 — poverty first GIF pool candidate v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/poverty-helpful-gif-pool-production-candidate-v1.json`
+
+Use the existing 3 project-owned source sequences for the exact helpful-poverty semantic identity.
+Expected GIF paths only; mark NOT_YET_EXPORTED.
+
+## Queue item 349 — Forest return first GIF pool candidate v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/forest-return-success-gif-pool-production-candidate-v1.json`
+
+Use exact current Forest success-return semantic identity and 3 validated source sequences.
+Expected GIF paths only.
+
+## Queue item 350 — Foreman Night first GIF pool candidate v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/foreman-night-gif-pool-production-candidate-v1.json`
+
+Use exact current Foreman voluntary-Night presentation identity and validated source sequences.
+No relationship/gameplay changes.
+
+## Queue item 351 — exporter integration prep handoff v10
+Create NEW file only:
+- `docs/presentation-prep/GIF_EXPORTER_INTEGRATION_PREP_HANDOFF_V10.md`
+
+Consolidate items 340–350 into:
+- PACKAGE_PATCH_READY;
+- PORTABILITY_REVIEW_READY;
+- EXPORTER_AND_VALIDATOR_SOURCE_READY;
+- FIVE_POOL_CANDIDATES_READY;
+- NO_GIF_BYTES_YET;
+- LEAD_DEPENDENCY_PR_REQUIRED.
+
+Continue items 340–351 sequentially without waiting for Lead review.
