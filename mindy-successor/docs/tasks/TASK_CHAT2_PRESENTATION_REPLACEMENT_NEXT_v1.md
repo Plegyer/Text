@@ -4442,3 +4442,75 @@ Consolidate items 340–350 into:
 - LEAD_DEPENDENCY_PR_REQUIRED.
 
 Continue items 340–351 sequentially without waiting for Lead review.
+
+
+## Queue item 352 — merchant spring animation source sequence A v1
+Create NEW original SVG frame sources only under:
+- `prior-work/astra/prototype-m3.2/assets/presentation-frames/`
+
+Create one 4-frame project-owned source sequence for exact current semantic ID:
+- `job/merchant/shift/spring/default`.
+
+No GIF claim and no gameplay semantics beyond the shipped static scene.
+
+## Queue item 353 — merchant spring animation source sequence B v1
+Create a second distinct 4-frame source sequence for:
+- `job/merchant/shift/spring/default`.
+
+## Queue item 354 — merchant spring animation source sequence C v1
+Create a third distinct 4-frame source sequence for:
+- `job/merchant/shift/spring/default`.
+
+## Queue item 355 — hunter autumn animation source sequence A v1
+Create one 4-frame project-owned source sequence for exact current semantic ID:
+- `job/hunter/shift/autumn/default`.
+
+No Forest-route/Hunter lore expansion.
+
+## Queue item 356 — hunter autumn animation source sequence B v1
+Create a second distinct 4-frame source sequence for:
+- `job/hunter/shift/autumn/default`.
+
+## Queue item 357 — hunter autumn animation source sequence C v1
+Create a third distinct 4-frame source sequence for:
+- `job/hunter/shift/autumn/default`.
+
+## Queue item 358 — artist-geisha winter animation source sequence A v1
+Create one 4-frame project-owned source sequence for exact current semantic ID:
+- `job/artist-geisha/shift/winter/default`.
+
+No new career mechanics or content facts.
+
+## Queue item 359 — artist-geisha winter animation source sequence B v1
+Create a second distinct 4-frame source sequence for:
+- `job/artist-geisha/shift/winter/default`.
+
+## Queue item 360 — artist-geisha winter animation source sequence C v1
+Create a third distinct 4-frame source sequence for:
+- `job/artist-geisha/shift/winter/default`.
+
+## Queue item 361 — expanded animation source validator v5
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/project-owned-animation-frames-v5.test.ts`
+
+Validate all new sequences from items 352–360:
+- exact current semantic IDs;
+- 4 ordered frames per sequence;
+- consistent dimensions/viewBox per sequence;
+- no external URLs/scripts;
+- no gameplay/RNG/Save fields;
+- project-owned only.
+
+## Queue item 362 — additional export-ready source manifest v4
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/project-owned-animation-source-manifest-v4.json`
+
+Add the 9 new sequences to the current source manifest with exact semantic IDs, candidate keys, ordered frame paths, timing targets and static fallbacks.
+
+## Queue item 363 — additional career animation source handoff v11
+Create NEW file only:
+- `docs/presentation-prep/ADDITIONAL_CAREER_ANIMATION_SOURCE_HANDOFF_V11.md`
+
+Consolidate items 352–362 and identify exact current semantic IDs that now have 3 compatible source sequences ready for future GIF export.
+
+Continue items 352–363 sequentially without waiting for Lead review.
