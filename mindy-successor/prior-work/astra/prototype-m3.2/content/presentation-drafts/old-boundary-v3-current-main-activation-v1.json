@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "kind": "old-boundary-current-main-activation-candidate",
+  "status": "POST_PR59_PRESENTATION_ONLY_NOT_ROOT_LOADED",
+  "currentMainBaseline": "54131488c65302f81b3001abaaa345d21f0281e2",
+  "slot": {
+    "presentationId": "activity/forest/route/old-boundary",
+    "static": {
+      "kind": "image",
+      "src": "assets/presentation/forest-route-old-boundary-v3.svg",
+      "alt": "Старая межевая линия с замшелыми камнями и выветренными метками.",
+      "altKey": "presentation.activity.forest.route.old-boundary.alt"
+    },
+    "captionKey": "presentation.activity.forest.route.old-boundary.caption",
+    "fallbackId": "activity/forest/route/default"
+  },
+  "invariants": {
+    "presentationOnly": true,
+    "gameplayFields": false,
+    "runtimeChangeRequired": false,
+    "localeNeutralMediaIdentity": true,
+    "neutralFallbackRetained": true
+  }
+}
