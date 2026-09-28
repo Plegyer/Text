@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "id": "lumber-leadership-progress",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {"careers": ["lumber"]},
+    "writes": {"careers": ["lumber"]}
+  },
+  "events": [
+    {
+      "id": "lumber.leadership-opportunity",
+      "title": "Leadership opportunity",
+      "trigger": [],
+      "reactionTriggers": [
+        {"kind":"careerFactAdded","career":"lumber","fact":"forewoman-ready"}
+      ],
+      "priorityClass":"normal_progression",
+      "priority":80,
+      "blocking":true,
+      "delivery":{"policy":"live"},
+      "cooldownDays":0,
+      "variantCooldownDays":0,
+      "maxShows":1,
+      "conditions":[
+        {"kind":"careerFact","career":"lumber","fact":"forewoman-ready"}
+      ],
+      "variants":[
+        {"id":"default","text":"The crew trusts the worker with greater responsibility.","conditions":[],"media":[]}
+      ],
+      "choices":[
+        {
+          "id":"continue",
+          "label":"Accept responsibility",
+          "text":"Continue the Lumber leadership route.",
+          "conditions":[],
+          "effects":[
+            {"kind":"addCareerFact","career":"lumber","fact":"leadership-experience"}
+          ]
+        }
+      ],
+      "sourceDomain":"lumber"
+    }
+  ]
+}
