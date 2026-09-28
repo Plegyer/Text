@@ -1478,3 +1478,86 @@ Consolidate items 109–119 into:
 - PRODUCT_OPEN.
 
 Continue items 109–120 sequentially without waiting for Lead review.
+
+
+## Queue item 133 — current-main ending localization debt audit v1
+Create NEW file only:
+- `docs/relationship-prep/CURRENT_MAIN_ENDING_LOCALIZATION_DEBT_AUDIT_V1.md`
+
+Audit exact current ending IDs/titles/descriptions and current localization coverage after PR58.
+Do not invent endings.
+
+## Queue item 134 — ending RU source copy polish v1
+Create NEW file only:
+- `docs/relationship-prep/ENDING_RU_SOURCE_COPY_POLISH_V1.md`
+
+Polish Russian source copy for exact current ending titles/descriptions only.
+No conditions/rewards/meta changes.
+
+## Queue item 135 — ending EN parity review v1
+Create NEW file only:
+- `docs/relationship-prep/ENDING_EN_PARITY_REVIEW_V1.md`
+
+Produce/review full English parity for item 134.
+
+## Queue item 136 — ending localization fixture v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/ending-localization-v1.fixture.json`
+
+Stable RU+EN keys for exact current ending IDs only.
+Presentation-only.
+
+## Queue item 137 — ending localization consumer map v1
+Create NEW file only:
+- `docs/relationship-prep/ENDING_LOCALIZATION_CONSUMER_MAP_V1.md`
+
+Map item-136 keys to exact current Legacy/end-state UI consumers and fallback strings.
+No UI edits.
+
+## Queue item 138 — ending condition display expectation matrix v1
+Create NEW file only:
+- `docs/relationship-prep/ENDING_CONDITION_DISPLAY_EXPECTATION_MATRIX_V1.md`
+
+For representative exact ending conditions record expected RU/EN visible requirement text while preserving exact condition objects.
+
+## Queue item 139 — ending natural-path RU EN matrix v1
+Create NEW file only:
+- `docs/relationship-prep/ENDING_NATURAL_PATH_RU_EN_MATRIX_V1.md`
+
+For exact current endings document expected title/description/acceptance presentation in RU+EN and same eligibility/reward/meta identity.
+
+## Queue item 140 — ordinary action result key map v2
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/ordinary-action-result-key-map-v2.fixture.json`
+
+Refine item-128 result mapping against exact current post-PR58 main:
+actionId + sceneId -> title/body localization keys.
+No Save fields.
+
+## Queue item 141 — ordinary action result presentation source v2
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/ordinary-action-result-localization-v2.fixture.json`
+
+Finalize RU+EN expected result title/body for exact current ordinary actions.
+No mechanics.
+
+## Queue item 142 — ending/action localization collision audit v1
+Create NEW file only:
+- `docs/relationship-prep/ENDING_ACTION_LOCALIZATION_COLLISION_AUDIT_V1.md`
+
+Classify item-136 and item-141 keys vs exact current root:
+ADDITIVE / IDENTICAL / REUSE_EXISTING / CONFLICT.
+
+## Queue item 143 — ending/action localization regression source v1
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/ending-action-localization-source-v1.test.ts`
+
+Validate exact current IDs, RU+EN completeness, no conditions/effects/rewards/RNG/Save fields.
+
+## Queue item 144 — ending/action localization handoff v1
+Create NEW file only:
+- `docs/relationship-prep/ENDING_ACTION_LOCALIZATION_HANDOFF_V1.md`
+
+Consolidate items 133–143 into ENDING_KEYS_READY / ACTION_RESULT_KEYS_READY / SHARED_CONSUMER_REQUIRED / SELECTIVE_COPY / REMAINING_DEBT.
+
+Continue items 133–144 sequentially without waiting for Lead review.
