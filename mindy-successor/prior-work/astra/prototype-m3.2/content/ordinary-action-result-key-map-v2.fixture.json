@@ -1,0 +1,126 @@
+{
+  "version": 2,
+  "fixtureId": "ordinary-action-result-key-map-v2",
+  "entries": [
+    {
+      "actionId": "work",
+      "sceneId": "default",
+      "presentationId": "location/town/work/default",
+      "titleKey": "action.work.label",
+      "bodyKey": "action.work.scene.default.text"
+    },
+    {
+      "actionId": "forage",
+      "sceneId": "default",
+      "presentationId": "location/town/forage/default",
+      "titleKey": "action.forage.label",
+      "bodyKey": "action.forage.scene.default.text"
+    },
+    {
+      "actionId": "brew",
+      "sceneId": "default",
+      "presentationId": "location/town/brew/default",
+      "titleKey": "action.brew.label",
+      "bodyKey": "action.brew.scene.default.text"
+    },
+    {
+      "actionId": "sell",
+      "sceneId": "default",
+      "presentationId": "location/town/sell/default",
+      "titleKey": "action.sell.label",
+      "bodyKey": "action.sell.scene.default.text"
+    },
+    {
+      "actionId": "scales",
+      "sceneId": "default",
+      "presentationId": "location/town/scales/default",
+      "titleKey": "action.scales.label",
+      "bodyKey": "action.scales.scene.default.text"
+    },
+    {
+      "actionId": "exam",
+      "sceneId": "default",
+      "presentationId": "location/town/exam/default",
+      "titleKey": "action.exam.label",
+      "bodyKey": "action.exam.scene.default.text"
+    },
+    {
+      "actionId": "deliver",
+      "sceneId": "default",
+      "presentationId": "location/town/deliver/default",
+      "titleKey": "action.deliver.label",
+      "bodyKey": "action.deliver.scene.default.text"
+    },
+    {
+      "actionId": "visit",
+      "sceneId": "default",
+      "presentationId": "location/town/visit/default",
+      "titleKey": "action.visit.label",
+      "bodyKey": "action.visit.scene.default.text"
+    },
+    {
+      "actionId": "oddjob",
+      "sceneId": "default",
+      "presentationId": "location/town/oddjob/default",
+      "titleKey": "action.oddjob.label",
+      "bodyKey": "action.oddjob.scene.default.text"
+    },
+    {
+      "actionId": "repay",
+      "sceneId": "default",
+      "presentationId": "location/town/repay/default",
+      "titleKey": "action.repay.label",
+      "bodyKey": "action.repay.scene.default.text"
+    },
+    {
+      "actionId": "rent-room",
+      "sceneId": "default",
+      "presentationId": "night/rent-room/default",
+      "titleKey": "action.rent-room.label",
+      "bodyKey": "action.rent-room.scene.default.text"
+    },
+    {
+      "actionId": "rest",
+      "sceneId": "default",
+      "presentationId": "night/rest/default",
+      "titleKey": "action.rest.label",
+      "bodyKey": "action.rest.scene.default.text"
+    },
+    {
+      "actionId": "arrival",
+      "sceneId": "default",
+      "presentationId": "location/town/arrival/default",
+      "titleKey": "action.arrival.label",
+      "bodyKey": "action.arrival.scene.default.text"
+    },
+    {
+      "actionId": "forest-search",
+      "sceneId": "default",
+      "presentationId": "activity/forest/route/default",
+      "titleKey": "action.forest-search.label",
+      "bodyKey": "action.forest-search.scene.default.text"
+    },
+    {
+      "actionId": "tavern-talk",
+      "sceneId": "default",
+      "presentationId": "location/town/tavern-talk/default",
+      "titleKey": "action.tavern-talk.label",
+      "bodyKey": "action.tavern-talk.scene.default.text"
+    },
+    {
+      "actionId": "landlord",
+      "sceneId": "default",
+      "presentationId": "location/town/landlord/default",
+      "titleKey": "action.landlord.label",
+      "bodyKey": "action.landlord.scene.default.text"
+    }
+  ],
+  "invariants": {
+    "exactCurrentActionIdsOnly": true,
+    "exactCurrentSceneIdsOnly": true,
+    "localeNeutralIdentity": true,
+    "saveFieldsIncluded": false,
+    "mechanicsFieldsIncluded": false,
+    "sourceBaseline": "52ddc76148e33836d3161b63bf4c25ffb5c39d02"
+  }
+}
