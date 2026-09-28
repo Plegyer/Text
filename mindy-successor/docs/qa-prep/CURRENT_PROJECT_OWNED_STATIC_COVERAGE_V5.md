@@ -3,7 +3,7 @@
 Status: COMPLETE / CURRENT_MAIN_82_MAPPINGS
 
 Current main:
-`01b31b9ab0d0267d95edf5b5b80638acd63f5c04`.
+`1b0ea9dc3c10a8acb24df2ca2edd0e5f609dd515`.
 
 Root presentation blob:
 `d403fe7b367ba4a578ac156a60d03dd301c42281`.
@@ -94,12 +94,12 @@ describes static coverage only.
 
 ## Accessibility
 
-Current root localization after later PR61:
-714 bilingual keys, missing RU 0, missing EN 0.
+Current root localization after PR62:
+744 bilingual keys, missing RU 0, missing EN 0.
 
 Both route-specific statics have complete bilingual accessibility keys.
 
-PR61 changes text/consumers only and does not alter static mapping counts.
+PR61 and PR62 change localization/presentation consumers only and do not alter static mapping counts.
 
 ## Regression floor
 
@@ -120,3 +120,16 @@ Current project-owned static coverage:
 - unique active physical sources: 81;
 - neutral route/default fallback retained;
 - real production GIFs: 0.
+
+
+## PR62 refresh
+
+PR62 does not edit `content/presentation.json` or project-owned static assets.
+
+Post-merge run #126 remains green at 375/375 with validator 17/46/35/9.
+
+Therefore the current static floor remains exactly:
+- 82 semantic mappings;
+- 81 unique active physical sources;
+- 3 Forest route presentation statics, of which 2 are route-specific and 1 is neutral fallback;
+- 0 production GIFs.
