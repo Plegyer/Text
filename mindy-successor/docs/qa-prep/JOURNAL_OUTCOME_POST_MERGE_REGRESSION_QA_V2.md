@@ -2,15 +2,19 @@
 
 Status: COMPLETE / GREEN_CURRENT_MAIN
 
+Previous reviewed main:
+`4223be1f90f15a43938e072bc2171b0de5d2d1aa`.
+
 Current main:
-`4223be1f90f15a43938e072bc2171b0de5d2d1aa`
-(PR56 merge on top of PR54/55).
+`df0119fd6574b69ab89cf1a99ae77adae3d811f1`
+(PR57 route-presentation seam merge).
 
 PR56 does not edit core journal/outcome persistence.
 
 Current blobs:
 - engine `0fd8975f82ee8fc65457b9e6e5730b2b91943793`;
-- app `505ab4fbe0467067eba2748aa9ef01fbbab99b6e`.
+- PR56 app `505ab4fbe0467067eba2748aa9ef01fbbab99b6e`;
+- current app `548b4d4de9ec95e43b58bc153827e32176b79b59`.
 
 ## Stable ref write path
 
@@ -121,3 +125,18 @@ Locale switch does not:
 `GREEN_CURRENT_MAIN`.
 
 Current main retains PR54 stable-ref behavior, schema-4 omission compatibility, School priority and RU↔EN Save invariance after PR56.
+
+
+## PR57 compatibility refresh
+
+PR57 changes only the presentation route helper/generated semantic slots and current Activity media request. It does not edit event-choice dispatch, `journalRefs`, `outcomeRef`, Save schema/migration or Journal rendering.
+
+Post-merge main run #106 / id `36405622065`:
+- SUCCESS;
+- 351 / 351 tests;
+- validator 17 / 46 / 35 / 9.
+
+Retained PASS includes schema-4 no-ref fallback, Journal ref alignment, localized Journal/lastAction stable-ref rendering, exact Forest activityResult and Lumber Hard Work regressions.
+
+Current verdict remains:
+`GREEN_CURRENT_MAIN`.
