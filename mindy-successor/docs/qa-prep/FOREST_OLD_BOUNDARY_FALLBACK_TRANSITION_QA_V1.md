@@ -1,6 +1,6 @@
 # Forest route Old Boundary fallback transition QA v1
 
-Status: COMPLETE / EXECUTABLE_ACCEPTANCE_CONTRACT
+Status: COMPLETE / TRANSITION_IMPLEMENTED / GREEN_EXACT_HEAD
 
 Current main:
 `54131488c65302f81b3001abaaa345d21f0281e2`.
@@ -190,3 +190,39 @@ Accept only:
 `same old-boundary gameplay state + same semantic presentationId -> safer route-specific physical static`.
 
 No gameplay identity may move during the fallback transition.
+
+
+## PR60 transition evidence
+
+PR60 accepted exact head:
+`36f933d8c01a249992d84295bc69c3d554bb1f89`.
+
+Run #119:
+- SUCCESS;
+- 363/363;
+- validator 17/46/35/9.
+
+PR60 merged as:
+`2ad9fb8b0572f8903bbf57d144c8c5938023a440`.
+
+Current root transition is now real:
+
+Before PR60:
+- requested old-boundary semantic ID;
+- resolved physical slot route/default.
+
+After PR60:
+- same requested old-boundary semantic ID;
+- same persisted routeId;
+- resolved physical slot old-boundary;
+- physical source `forest-route-old-boundary-v3.svg`;
+- route/default fallback retained.
+
+Current exact-head regression confirms both routes use reviewed project-owned static media with neutral fallback metadata retained.
+
+The first PR60 head exposed four stale pre-activation tests; Lead updated those expectations without weakening gameplay invariants.
+
+Current classification:
+`TRANSITION_IMPLEMENTED / GREEN_EXACT_HEAD`.
+
+Post-merge run #120 remains required for final current-main production acceptance.
