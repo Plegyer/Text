@@ -1,0 +1,41 @@
+{
+  "formatVersion": 1,
+  "kind": "gif-export-smoke-fixture",
+  "status": "COMMAND_ONLY_NO_GIF_BYTES",
+  "presentationId": "job/lumber/shift/spring/default",
+  "sequenceKey": "lumber-spring-work-loop-a",
+  "candidateKey": "lumber-spring-loop-a",
+  "manifest": "content/presentation-drafts/project-owned-animation-source-manifest-v3.json",
+  "command": [
+    "node",
+    "tools/export-presentation-gif.mjs",
+    "--manifest",
+    "content/presentation-drafts/project-owned-animation-source-manifest-v3.json",
+    "--presentation-id",
+    "job/lumber/shift/spring/default",
+    "--sequence",
+    "lumber-spring-work-loop-a",
+    "--output",
+    "assets/gif/smoke/lumber-spring-loop-a.gif",
+    "--width",
+    "640",
+    "--height",
+    "360",
+    "--frame-duration-ms",
+    "600",
+    "--loop-count",
+    "0"
+  ],
+  "expected": {
+    "output": "assets/gif/smoke/lumber-spring-loop-a.gif",
+    "width": 640,
+    "height": 360,
+    "frameCount": 4,
+    "frameDurationMs": 600,
+    "totalDurationMs": 2400,
+    "loopCount": 0,
+    "maxPaletteColors": 256,
+    "fileExists": false
+  },
+  "cleanup": "Delete smoke output unless separately promoted through production media QA."
+}
