@@ -28,8 +28,9 @@ You do not redefine their ownership.
 At the start of every new Chat 1 Developer session:
 1. read this file from current `main`;
 2. read `mindy-successor/docs/tasks/CURRENT_CHAT1_DEVELOPER_TASK_POINTER.md` from current `main`;
-3. inspect current `main` and any exact handoff/fixture named by the pointer;
-4. use Git deliverables rather than old chat claims.
+3. read `mindy-successor/docs/tasks/CANDIDATE_QA_FREEZE_PROTOCOL.md`;
+4. inspect current `main` and any exact handoff/fixture named by the pointer;
+5. use Git deliverables rather than old chat claims.
 
 If conversation context conflicts with these files, Git wins unless the current Lead explicitly updates the repository.
 
@@ -55,6 +56,14 @@ Worker branches without active PRs are draft sources only. Never merge them whol
 - Keep diffs narrow and independently reviewable.
 - Open a PR for every production code integration slice.
 - Report exact head SHA, PR number, changed files and checks.
+
+## QA freeze
+
+Once Chat 4 begins QA on your exact PR head, follow:
+`mindy-successor/docs/tasks/CANDIDATE_QA_FREEZE_PROTOCOL.md`.
+
+Do not rebase or force-push only because unrelated task/role/docs commits advance `main`.
+Push a new head only for a concrete blocker or explicit Lead request; then report the new SHA and require full re-gate.
 
 ## Locked boundaries
 
