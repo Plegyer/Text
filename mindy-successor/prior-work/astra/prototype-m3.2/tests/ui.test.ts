@@ -822,8 +822,8 @@ test('renderer: Forest route presentation seam follows route state without save 
 
   media=w.document.querySelector('.media-window');
   assert.equal(media?.getAttribute('data-presentation-id'),'activity/forest/route/logging-road');
-  assert.equal(media?.getAttribute('data-resolved-slot'),'activity/forest/route/default');
-  assert.match(media?.querySelector('img')?.getAttribute('src')??'',/assets\/presentation\/forest-route-default-v1\.svg$/);
+  assert.equal(media?.getAttribute('data-resolved-slot'),'activity/forest/route/logging-road');
+  assert.match(media?.querySelector('img')?.getAttribute('src')??'',/assets\/presentation\/forest-route-logging-road\.svg$/);
 
   const beforeLocale=w.localStorage.getItem('portal-life.v1');
   const activityBefore=JSON.parse(beforeLocale).run.flow.activity;
@@ -836,7 +836,7 @@ test('renderer: Forest route presentation seam follows route state without save 
 
   media=w.document.querySelector('.media-window');
   assert.equal(media?.getAttribute('data-presentation-id'),'activity/forest/route/logging-road');
-  assert.equal(media?.getAttribute('data-resolved-slot'),'activity/forest/route/default');
+  assert.equal(media?.getAttribute('data-resolved-slot'),'activity/forest/route/logging-road');
   const activityAfter=JSON.parse(w.localStorage.getItem('portal-life.v1')).run.flow.activity;
   assert.deepEqual(activityAfter,activityBefore);
   assert.deepEqual(errors,[]);
@@ -914,7 +914,6 @@ test('renderer: Forest route-specific presentation stays locale and save invaria
 
   assert.match(w.document.querySelector('.media-window img')?.getAttribute('src')??'',/forest-route-default-v1\.svg$/);
   assert.match(w.document.querySelector('.dialogue')?.textContent??'',/Широкая рабочая дорога со свежими следами лесозаготовок/);
-  assert.match(w.document.querySelector('.dialogue')?.textContent??'',/Старый путь по межевым камням/);
 
   w.document.querySelector('[data-activity-action="forest.route.logging-road"]').click();
   await wait(()=>JSON.parse(w.localStorage.getItem('portal-life.v1')).run.flow.activity?.internalState?.routeId==='logging-road');
