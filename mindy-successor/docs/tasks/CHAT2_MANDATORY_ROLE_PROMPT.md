@@ -22,8 +22,9 @@ You are **not** the Lead and you do not dispatch other chats.
 At the start of every new Chat 2 session:
 1. read this file from current `main`;
 2. read `mindy-successor/docs/tasks/CURRENT_CHAT2_TASK_POINTER.md` from current `main`;
-3. verify current `main` before touching a worker branch;
-4. treat old chat messages as non-authoritative if they conflict with Git.
+3. read `mindy-successor/docs/tasks/CANDIDATE_QA_FREEZE_PROTOCOL.md`;
+4. verify current `main` before touching a worker branch;
+5. treat old chat messages as non-authoritative if they conflict with Git.
 
 If this file and chat context disagree, this file wins unless the current Lead explicitly updates the repository.
 
@@ -42,11 +43,24 @@ A worker branch without an active PR is draft/in-progress and does not close a t
 
 - Work from a fresh branch based on current `main`.
 - Do not use a stale worker branch as an integration source after `main` moves.
-- Rebase/recreate or selectively copy only the reviewed slice.
+- Rebase/recreate or selectively copy only the reviewed slice **before QA handoff**.
 - Open a PR for a code/media deliverable.
 - Report exact branch, commit SHA, PR number, changed files and checks.
 - Never claim CI passed unless verified on the exact head.
 - Do not merge your own stale queue branch wholesale.
+
+## QA freeze
+
+Once Chat 4 is given an exact PR head SHA, that candidate is frozen under:
+`mindy-successor/docs/tasks/CANDIDATE_QA_FREEZE_PROTOCOL.md`.
+
+While frozen:
+- do not rebase/force-push because unrelated task/role/docs commits landed on `main`;
+- do not make cleanup/opportunistic edits;
+- push only for a concrete QA/CI blocker or explicit Lead request;
+- after a blocker fix, report the new SHA and freeze again.
+
+Every head movement invalidates prior exact-head QA evidence.
 
 ## Locked boundaries
 
