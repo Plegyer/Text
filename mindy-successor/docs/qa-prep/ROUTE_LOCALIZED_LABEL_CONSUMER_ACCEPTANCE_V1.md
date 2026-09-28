@@ -1,90 +1,94 @@
 # Route localized-label consumer acceptance v1
 
-Status: COMPLETE / ACCEPTANCE_CONTRACT_READY
+Status: COMPLETE / ACCEPTANCE_CONTRACT_SATISFIED_BY_PR62
 
 Current main:
-`01b31b9ab0d0267d95edf5b5b80638acd63f5c04`.
-
-Current app still renders the selected Activity route value directly from:
-`activity.internalState.routeId`.
-
-Visible machine values are:
-- `logging-road`;
-- `old-boundary`.
-
-The wrapper `ui.activity.routeLabel` is already localized, and approved route-option labels already exist.
+`1b0ea9dc3c10a8acb24df2ca2edd0e5f609dd515`.
 
 ## Required mapping
 
-For a selected routeId:
-1. read the current Activity definition;
-2. find the exact option whose `setRoute === routeId`;
-3. reuse `activityOption.<optionId>.label`;
-4. fall back to the authored option label;
-5. use raw routeId only as an unknown historical compatibility fallback.
-
-Forest examples:
-- `logging-road` -> `forest.route.logging-road` -> Лесовозная дорога / Logging road;
-- `old-boundary` -> `forest.route.old-boundary` -> Старая межевая тропа / Old boundary path.
-
-## Persisted identity
-
-Save must continue to store exactly:
+Persisted Forest route state remains:
 - `logging-road`;
 - `old-boundary`.
 
-Never persist translated route labels.
+Player-visible selected-route text must resolve through the exact current option label:
+- `logging-road` -> `activityOption.forest.route.logging-road.label`;
+- `old-boundary` -> `activityOption.forest.route.old-boundary.label`.
 
-No Save migration is required.
+Localized text must never replace the persisted routeId.
 
-## Locale invariance
+## PR62 implementation
 
-From one post-selection Save, RU↔EN must preserve:
-- routeId;
+PR #62:
+`Lead: localize profession unlock and Forest route display labels`.
+
+Accepted exact head:
+`0b8c7e4b010426188a196decbc9a40cf58b64fc2`.
+
+Merge:
+`1b0ea9dc3c10a8acb24df2ca2edd0e5f609dd515`.
+
+The Activity status now renders:
+`activityOptionLabel('forest.route.' + activity.internalState.routeId, activity.internalState.routeId)`.
+
+It also localizes a route checkpoint when the persisted checkpoint itself is a current `forest.route.*` option ID.
+
+No route state is rewritten.
+
+## RU↔EN acceptance
+
+Current renderer regression proves for logging-road:
+- RU shows `Маршрут: Лесовозная дорога`;
+- EN shows `Route: Logging road`;
+- raw `logging-road` is absent from visible dialogue;
+- persisted routeId remains `logging-road`;
+- media source remains the same;
+- Activity RNG remains the same;
+- run RNG remains the same;
+- serialized gameplay Save remains byte-identical.
+
+The same lookup contract applies to old-boundary through its existing bilingual option label.
+
+## Gameplay/media firewall
+
+PR62 does not change:
 - Activity ID;
-- checkpoint;
+- route option IDs;
+- route availability;
+- Old Boundary gate;
+- checkpoint persistence;
 - progress/endurance;
-- resolved option IDs;
 - accumulated rewards;
-- semantic presentationId;
-- selected physical media;
-- Activity RNG;
-- run RNG;
-- serialized gameplay Save.
+- presentationId derivation;
+- route static assets;
+- Forest result identities;
+- RNG;
+- Save.
 
-Only the rendered route label changes.
+Current media remains:
+- logging-road -> reviewed specific static;
+- old-boundary -> reviewed v3 specific static;
+- route/default -> neutral fallback.
 
-## Current media state
+## CI evidence
 
-Latest main has:
-- logging-road specific static;
-- old-boundary v3 specific static;
-- neutral route/default retained as fallback.
+Exact-head run #125 / id `36411878494`:
+- SUCCESS;
+- validator 17 / 46 / 35 / 9;
+- 375 / 375 tests.
 
-Route-label localization must not alter any of those presentation selections.
+Post-merge run #126 / id `36412267106`:
+- SUCCESS;
+- validator 17 / 46 / 35 / 9;
+- 375 / 375 tests.
 
-## Old Boundary gate
-
-The label consumer must not grant or bypass:
-`itemCapability(enter_old_boundary) present=true`.
-
-## Required executable regression
-
-For each current route:
-- enter real Forest Activity;
-- select the exact route legitimately;
-- snapshot Save/RNG;
-- assert localized RU selected-route label;
-- switch EN;
-- assert localized EN label;
-- require identical routeId/presentationId/media/Save/RNG;
-- continue through an unchanged current result.
+Relevant PASS:
+- Forest persisted route IDs have bilingual display labels;
+- route-specific renderer locale/Save/RNG invariance;
+- all prior Forest route/result/Hard Work regressions.
 
 ## Verdict
 
-`ACCEPTANCE_CONTRACT_READY`.
+`ACCEPTANCE_CONTRACT_SATISFIED_BY_PR62`.
 
-Correct direction:
-`stable persisted routeId -> exact authored route option -> localized display label`.
-
-Gameplay identity remains unchanged.
+Selected-route display is now localized from stable option identity while persisted routeId remains unchanged.
