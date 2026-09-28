@@ -1,0 +1,71 @@
+{
+  "formatVersion": 1,
+  "kind": "pr42-gif-pool-production-candidate",
+  "status": "NOT_YET_EXPORTED",
+  "presentationId": "school/literacy-and-numbers/lesson/default",
+  "slotCandidate": {
+    "pool": {
+      "version": 1,
+      "ordering": "ordered",
+      "selectionPolicy": "unweighted",
+      "candidates": [
+        {
+          "key": "school-literacy-loop-a",
+          "kind": "gif",
+          "src": "assets/gif/school/literacy-and-numbers/lesson-loop-a.gif",
+          "alt": "Учебная сцена курса «Грамота и числа» с небольшим движением страниц и счётных материалов.",
+          "altKey": "presentation.gif.school.literacy-and-numbers.lesson.school-literacy-loop-a.alt"
+        },
+        {
+          "key": "school-literacy-loop-b",
+          "kind": "gif",
+          "src": "assets/gif/school/literacy-and-numbers/lesson-loop-b.gif",
+          "alt": "Учебная сцена курса «Грамота и числа» с небольшим движением страниц и счётных материалов.",
+          "altKey": "presentation.gif.school.literacy-and-numbers.lesson.school-literacy-loop-b.alt"
+        },
+        {
+          "key": "school-literacy-loop-c",
+          "kind": "gif",
+          "src": "assets/gif/school/literacy-and-numbers/lesson-loop-c.gif",
+          "alt": "Учебная сцена курса «Грамота и числа» с небольшим движением страниц и счётных материалов.",
+          "altKey": "presentation.gif.school.literacy-and-numbers.lesson.school-literacy-loop-c.alt"
+        }
+      ]
+    },
+    "static": {
+      "kind": "image",
+      "src": "assets/presentation/school-course-literacy-and-numbers.svg",
+      "alt": "Учебная сцена курса «Грамота и числа» с характерными материалами и без изображения преподавателя.",
+      "altKey": "presentation.static.school-course-literacy-and-numbers.alt"
+    }
+  },
+  "expectedFiles": [
+    {
+      "candidateKey": "school-literacy-loop-a",
+      "expectedSrc": "assets/gif/school/literacy-and-numbers/lesson-loop-a.gif",
+      "status": "NOT_YET_EXPORTED",
+      "exists": false
+    },
+    {
+      "candidateKey": "school-literacy-loop-b",
+      "expectedSrc": "assets/gif/school/literacy-and-numbers/lesson-loop-b.gif",
+      "status": "NOT_YET_EXPORTED",
+      "exists": false
+    },
+    {
+      "candidateKey": "school-literacy-loop-c",
+      "expectedSrc": "assets/gif/school/literacy-and-numbers/lesson-loop-c.gif",
+      "status": "NOT_YET_EXPORTED",
+      "exists": false
+    }
+  ],
+  "invariants": {
+    "exactlyThreeCandidates": true,
+    "candidateKeysLocaleNeutral": true,
+    "staticFallbackPreserved": true,
+    "noGifBytesClaim": true,
+    "noGameplayFields": true,
+    "noGameplayRng": true,
+    "noSaveMutation": true
+  }
+}
