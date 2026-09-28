@@ -2,172 +2,133 @@
 
 Status: ASSIGNED
 Owner: Chat 4 / QA + Product Acceptance Gate
-Queue: **1–12 QA gate tasks**
+Queue: **13–24**
+Queue size: **12**
 Role contract: `mindy-successor/docs/tasks/CHAT4_MANDATORY_ROLE_PROMPT.md`
+Ownership matrix: `mindy-successor/docs/tasks/ACTIVE_TEAM_OWNERSHIP_MATRIX.md`
 Freeze protocol: `mindy-successor/docs/tasks/CANDIDATE_QA_FREEZE_PROTOCOL.md`
 
-## Frozen candidate set
+## Baseline
 
-### PR #65 — Foreman semantic localization
-- producer: Chat 1 Developer
-- branch: `chat1-dev/foreman-semantic-localization-v3`
-- frozen exact head: `85076aa452ac624340406503b2b6ecf551c72e87`
-- changed files: 4
-- required workflow run: `36422933185`
-- repository `mindy-successor check`: PASS
-- PR #63 is CLOSED/SUPERSEDED and must not be audited as a second active candidate
+Lead has merged:
+- PR #64 — Chat 2 career animation source queue 352–363;
+- PR #65 — Foreman semantic localization;
+- PR #66 — Chat 5 School residual localization handoff.
 
-### PR #64 — additional career animation sources 352–363
-- producer: Chat 2
-- branch: `chat2/additional-career-animation-sources-352-363-r2`
-- frozen exact head: `933ee8e0789034e5a64829505a1c9f1071571109`
-- changed files: 39
-- required workflow run: `36422956497`
-- repository `mindy-successor check`: PASS
+This queue is a **post-merge current-main acceptance sweep** plus readiness for the next candidate wave.
 
-These two heads are frozen. Do not chase later heads.
+Do not re-open or re-audit superseded PR #63 as an active candidate.
 
-If either moves unexpectedly:
-- invalidate the old exact-head result;
-- mark that candidate `UNSTABLE / QA PAUSED`;
-- wait for Lead/producer to declare a replacement frozen SHA;
-- restart the exact-head gate once.
+## 13 — exact current-main merge provenance audit
 
-Unrelated role/task/coordination docs landing on `main` do not by themselves require a producer rebase.
+Read current `main` and record exact merge SHAs for #64/#65/#66.
 
-## Task 1 — inventory and freeze confirmation
+Verify all three are actually ancestors of current `main`.
 
-Read current `main`, PR #65 and PR #64.
+## 14 — current-main workflow/CI audit
 
-Confirm:
-- #65 is still open at `85076aa452ac624340406503b2b6ecf551c72e87`;
-- #64 is still open at `933ee8e0789034e5a64829505a1c9f1071571109`;
-- #63 remains closed.
+Verify latest repository `mindy-successor check` state for current `main` after the three merges.
 
-If either active head moved, pause that PR rather than following successive revisions.
+If current-main CI is missing/pending/failing, record exact status.
 
-## Task 2 — PR65 actual-diff scope audit
+## 15 — merged Chat 2 source integrity audit
 
-Inspect the actual PR65 diff.
-
-Confirm it contains only:
-- reviewed Foreman semantic RU+EN localization;
-- the existing generic relationship-condition presentation wiring;
-- focused regression/fixture coverage.
-
-Flag unrelated gameplay, Save, RNG, content-canon, media or architecture changes.
-
-## Task 3 — PR65 current-main collision/base-drift audit
-
-Re-check the eight `relationship.lumber.foreman.*` keys against exact current `main`.
-
-Confirm ADDITIVE / IDENTICAL / CONFLICT / SUPERSEDED classification remains valid.
-
-Do not demand a rebase solely for coordination-doc movement.
-
-## Task 4 — PR65 presentation-invariant audit
-
-Verify:
-- stable relationship/stage/counter/fact/choice/value IDs unchanged;
-- no relationship transitions/effects changed;
-- no Save schema/state mutation added;
-- no RNG/economy/progression/NightFlow change;
-- unknown semantic IDs retain raw-ID fallback;
-- no new UI surface was invented only to consume unused keys.
-
-## Task 5 — PR65 exact-head CI/check audit
-
-Verify repository-required checks on exact frozen head:
-`85076aa452ac624340406503b2b6ecf551c72e87`.
-
-Record actual workflow state, not PR prose.
-
-## Task 6 — PR65 product-acceptance gate
-
-Record:
-- PASS;
-- PASS-WITH-NOTES;
-- BLOCK;
-- or UNSTABLE / QA PAUSED.
-
-Include exact frozen head, changed files, CI state, invariants and concrete blocker if any.
-
-Do not merge.
-
-## Task 7 — PR64 asset-inventory scope audit
-
-Inspect exact frozen PR64 diff at:
-`933ee8e0789034e5a64829505a1c9f1071571109`.
-
-Confirm:
-- 9 source sequences;
-- 4 SVG frames each;
-- 36 total frame files;
-- exact three assigned semantic IDs;
-- validator v5;
+Verify the merged #64 source package still contains:
+- 9 sequences;
+- 36 frames;
 - manifest v4;
-- handoff v11.
+- validator v5;
+- handoff v11;
+- zero GIF bytes;
+- no production activation.
 
-Flag unrelated runtime/gameplay/localization changes.
+## 16 — merged Foreman semantic acceptance audit
 
-## Task 8 — PR64 media semantic-safety audit
+Verify current `main` contains the intended eight Foreman semantic keys and existing generic relationship-condition localization wiring.
+
+Recheck raw-ID fallbacks and no mechanics/Save/RNG change.
+
+## 17 — merged School handoff acceptance audit
+
+Verify #66 is present as worker handoff/data/docs/test material only and has not silently changed production School localization/runtime.
+
+Record the exact four proposed residual accessibility keys for the Developer queue.
+
+## 18 — cross-slice ownership/collision audit
+
+Check merged #64/#65/#66 plus active new pointers for:
+- duplicate production ownership;
+- changed-file collisions;
+- semantic namespace collision.
+
+Expected active boundaries:
+- Chat 2 media-source staging;
+- Chat 3 poverty/Forest content;
+- Chat 5 School teacher staging;
+- Chat 1 Developer School residual production integration.
+
+## 19 — localization root consistency audit
+
+Check current root localization after #65 and before the new Developer School patch:
+- Foreman keys present;
+- School residual four keys still at pre-patch current values;
+- no duplicate/invalid locale entries introduced by merged worker handoffs.
+
+## 20 — presentation fallback audit
 
 Verify:
-- local project-owned SVG assets only;
-- no external URLs/scripts/data URLs;
-- exact semantic presentation IDs;
-- consistent frame metadata/viewBox;
-- no reward/effect/RNG/Save/gameplay metadata;
-- zero actual GIF bytes.
+- current production presentation slots retain valid static fallbacks;
+- merged Chat 2 source-only frames are not accidentally active;
+- School authored/staging identities are not accidentally promoted.
 
-## Task 9 — PR64 manifest/validator coherence audit
+## 21 — invariant smoke audit
 
-Verify manifest v4 and validator v5 agree on:
-- sequence keys;
-- presentation IDs;
-- frame ordering;
-- timing;
-- static fallbacks;
-- 9/36 counts.
+Run/review focused current-main regressions for:
+- Save identity;
+- RNG invariance;
+- locale presentation-only behavior;
+- Journal stable refs where relevant;
+- NightFlow unchanged.
 
-Confirm fallbacks point to valid current presentation assets/slots.
+Do not invent new gameplay tests outside current contracts.
 
-## Task 10 — PR64 exact-head CI/check audit
+## 22 — stale candidate/branch cleanup inventory
 
-Verify required repository CI on exact frozen head:
-`933ee8e0789034e5a64829505a1c9f1071571109`.
+Create:
+- `mindy-successor/docs/qa-prep/POST_MERGE_STALE_CANDIDATE_INVENTORY_V1.md`
 
-The authoritative repository workflow run recorded by Lead is:
-- run `36422956497`
-- `mindy-successor check`
-- PASS.
+Classify superseded/merged worker branches and closed PRs as:
+- SAFE_TO_DELETE_BRANCH;
+- KEEP_FOR_ACTIVE_WORK;
+- KEEP_FOR_UNMERGED_HANDOFF;
+- NEEDS_LEAD_REVIEW.
 
-Independently confirm it from Git before gating.
+Do not delete branches yourself.
 
-If a real blocker appears, return it to Chat 2. Do not edit the same media slice unless Lead explicitly transfers that narrow fix.
+## 23 — next-wave preflight audit
 
-## Task 11 — cross-PR interference audit
+Read all active task pointers and `ACTIVE_TEAM_OWNERSHIP_MATRIX.md`.
 
-Compare PR #65 and PR #64 with current `main` and with each other.
+Verify the next queues do not duplicate one production slice:
+- Chat 2 364–375;
+- Chat 3 341–352;
+- Chat 5 205–216;
+- Chat 1 Developer 13–24.
 
-Determine whether production files/semantic ownership overlap.
+Report only concrete overlap/blockers.
 
-QA review of another chat's PR is not duplicate implementation.
+## 24 — post-merge QA handoff
 
-Report actual overlap only; coordination-doc drift is not material overlap.
+Create on a dedicated QA branch:
+- `mindy-successor/docs/qa-prep/POST_PR64_PR65_PR66_CURRENT_MAIN_QA_V1.md`
 
-## Task 12 — QA gate handoff
+Include:
+- exact current main SHA;
+- current-main CI state;
+- #64/#65/#66 post-merge acceptance;
+- ownership/collision result;
+- stale branch cleanup candidates;
+- next-wave preflight result;
+- any blocker requiring Lead action.
 
-Create/update on a dedicated QA branch:
-- `mindy-successor/docs/qa-prep/CURRENT_PR64_PR65_QA_GATE_V1.md`
-
-Record:
-- current main SHA;
-- PR65 frozen head + gate result;
-- PR64 frozen head + gate result;
-- exact CI result for both;
-- cross-PR overlap result;
-- concrete blockers;
-- whether any QA-fix ownership transfer was needed.
-
-Do not commit QA handoff directly to `main` while the producer PRs are active unless Lead explicitly requests it.
+Open a focused QA PR only if the handoff itself is worth review; otherwise report exact branch/commit checkpoint to Lead.
