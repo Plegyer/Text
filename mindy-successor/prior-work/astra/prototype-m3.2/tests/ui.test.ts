@@ -842,3 +842,62 @@ test('renderer: Forest route presentation seam follows route state without save 
   assert.deepEqual(errors,[]);
  }finally{dom.window.close();}
 });
+
+
+test('renderer: generic labels and hints localize Stats Bag and encounter shell without save drift',async()=>{
+ const s=started();
+ const {w,dom,errors}=boot(JSON.stringify(s));try{
+  await wait(()=>!!w.document.querySelector('[data-panel="stats"]'));
+  const before=w.localStorage.getItem('portal-life.v1');
+
+  w.document.querySelector('[data-panel="stats"]').click();
+  assert.match(w.document.querySelector('.panel')?.textContent??'',/Сила/);
+  assert.match(w.document.querySelector('.panel')?.textContent??'',/Грубая физическая сила/);
+  w.document.querySelector('#close').click();
+
+  w.document.querySelector('[data-panel="bag"]').click();
+  assert.match(w.document.querySelector('.panel')?.textContent??'',/Травы|Микстуры|Весы/);
+  w.document.querySelector('#close').click();
+
+  w.document.querySelector('[data-panel="menu"]').click();
+  w.document.querySelector('#language-toggle').click();
+  await wait(()=>w.document.documentElement.lang==='en');
+  assert.equal(w.localStorage.getItem('portal-life.v1'),before);
+  w.document.querySelector('#close').click();
+
+  w.document.querySelector('[data-panel="stats"]').click();
+  assert.match(w.document.querySelector('.panel')?.textContent??'',/Strength/);
+  assert.match(w.document.querySelector('.panel')?.textContent??'',/Raw physical strength/);
+  w.document.querySelector('#close').click();
+
+  w.document.querySelector('[data-panel="bag"]').click();
+  assert.match(w.document.querySelector('.panel')?.textContent??'',/Herbs|Tonics|Scales/);
+  w.document.querySelector('#close').click();
+
+  assert.equal(w.localStorage.getItem('portal-life.v1'),before);
+  assert.deepEqual(errors,[]);
+ }finally{dom.window.close();}
+});
+
+test('renderer: pending encounter eyebrow localizes without changing pending scene identity',async()=>{
+ const s=started();
+ s.run.pending={eventId:'base.arrival',variantId:'welcome',allowedChoiceIds:['introduce']};
+ const {w,dom,errors}=boot(JSON.stringify(s));try{
+  await wait(()=>!!w.document.querySelector('[data-choice="introduce"]'));
+  const before=w.localStorage.getItem('portal-life.v1');
+  assert.equal(w.document.querySelector('.stage-title .eyebrow')?.textContent,'Встреча');
+
+  w.document.querySelector('[data-panel="menu"]').click();
+  w.document.querySelector('#language-toggle').click();
+  await wait(()=>w.document.documentElement.lang==='en');
+  assert.equal(w.localStorage.getItem('portal-life.v1'),before);
+  w.document.querySelector('#close').click();
+
+  assert.equal(w.document.querySelector('.stage-title .eyebrow')?.textContent,'Encounter');
+  const after=JSON.parse(w.localStorage.getItem('portal-life.v1'));
+  assert.equal(after.run.flow.pendingScene.eventId,'base.arrival');
+  assert.equal(after.run.flow.pendingScene.variantId,'welcome');
+  assert.deepEqual(after.run.flow.pendingScene.allowedChoiceIds,['introduce']);
+  assert.deepEqual(errors,[]);
+ }finally{dom.window.close();}
+});
