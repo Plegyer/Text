@@ -1,0 +1,174 @@
+{
+  "formatVersion": 1,
+  "kind": "forest-route-project-owned-source-manifest",
+  "status": "SOURCE_ONLY_NO_PRODUCTION_GIF",
+  "currentMainBaseline": "54131488c65302f81b3001abaaa345d21f0281e2",
+  "staticSources": [
+    {
+      "presentationId": "activity/forest/route/default",
+      "src": "assets/presentation/forest-route-default-v1.svg",
+      "status": "SHIPPED_CURRENT",
+      "purpose": "neutral shared route fallback"
+    },
+    {
+      "presentationId": "activity/forest/route/logging-road",
+      "src": "assets/presentation/forest-route-logging-road.svg",
+      "status": "SHIPPED_CURRENT",
+      "purpose": "current safe logging-road static"
+    },
+    {
+      "presentationId": "activity/forest/route/old-boundary",
+      "src": "assets/presentation/forest-route-old-boundary-safe-v1.svg",
+      "status": "SAFE_STATIC_READY",
+      "purpose": "corrected safe old-boundary replacement source",
+      "fallbackPresentationId": "activity/forest/route/default"
+    }
+  ],
+  "sourceHistory": [
+    {
+      "src": "assets/presentation/forest-route-logging-road-v2.svg",
+      "classification": "SAFE_WORKER_SOURCE_HISTORY"
+    },
+    {
+      "src": "assets/presentation/forest-route-old-boundary-v3.svg",
+      "classification": "SAFE_WORKER_SOURCE_HISTORY"
+    },
+    {
+      "src": "assets/presentation/forest-route-old-boundary.svg",
+      "classification": "DO_NOT_SHIP_SOURCE_HISTORY"
+    }
+  ],
+  "animationSequences": [
+    {
+      "presentationId": "activity/forest/route/logging-road",
+      "sequenceKey": "forest-route-logging-road-loop-a",
+      "status": "ANIMATION_SOURCE_READY",
+      "preferred": true,
+      "staticFallback": "assets/presentation/forest-route-logging-road.svg",
+      "frames": [
+        "assets/presentation-frames/forest-route-logging-road-loop-a-frame-01.svg",
+        "assets/presentation-frames/forest-route-logging-road-loop-a-frame-02.svg",
+        "assets/presentation-frames/forest-route-logging-road-loop-a-frame-03.svg",
+        "assets/presentation-frames/forest-route-logging-road-loop-a-frame-04.svg"
+      ]
+    },
+    {
+      "presentationId": "activity/forest/route/logging-road",
+      "sequenceKey": "forest-route-logging-road-loop-b",
+      "status": "ANIMATION_SOURCE_READY",
+      "preferred": true,
+      "staticFallback": "assets/presentation/forest-route-logging-road.svg",
+      "frames": [
+        "assets/presentation-frames/forest-route-logging-road-loop-b-frame-01.svg",
+        "assets/presentation-frames/forest-route-logging-road-loop-b-frame-02.svg",
+        "assets/presentation-frames/forest-route-logging-road-loop-b-frame-03.svg",
+        "assets/presentation-frames/forest-route-logging-road-loop-b-frame-04.svg"
+      ]
+    },
+    {
+      "presentationId": "activity/forest/route/logging-road",
+      "sequenceKey": "forest-route-logging-road-loop-c",
+      "status": "ANIMATION_SOURCE_READY",
+      "preferred": true,
+      "staticFallback": "assets/presentation/forest-route-logging-road.svg",
+      "frames": [
+        "assets/presentation-frames/forest-route-logging-road-loop-c-frame-01.svg",
+        "assets/presentation-frames/forest-route-logging-road-loop-c-frame-02.svg",
+        "assets/presentation-frames/forest-route-logging-road-loop-c-frame-03.svg",
+        "assets/presentation-frames/forest-route-logging-road-loop-c-frame-04.svg"
+      ]
+    },
+    {
+      "presentationId": "activity/forest/route/old-boundary",
+      "sequenceKey": "forest-route-old-boundary-loop-a",
+      "status": "SUPERSEDED_SOURCE_HISTORY",
+      "preferred": false,
+      "staticFallback": "assets/presentation/forest-route-old-boundary-safe-v1.svg",
+      "frames": [
+        "assets/presentation-frames/forest-route-old-boundary-loop-a-frame-01.svg",
+        "assets/presentation-frames/forest-route-old-boundary-loop-a-frame-02.svg",
+        "assets/presentation-frames/forest-route-old-boundary-loop-a-frame-03.svg",
+        "assets/presentation-frames/forest-route-old-boundary-loop-a-frame-04.svg"
+      ]
+    },
+    {
+      "presentationId": "activity/forest/route/old-boundary",
+      "sequenceKey": "forest-route-old-boundary-loop-b",
+      "status": "SUPERSEDED_SOURCE_HISTORY",
+      "preferred": false,
+      "staticFallback": "assets/presentation/forest-route-old-boundary-safe-v1.svg",
+      "frames": [
+        "assets/presentation-frames/forest-route-old-boundary-loop-b-frame-01.svg",
+        "assets/presentation-frames/forest-route-old-boundary-loop-b-frame-02.svg",
+        "assets/presentation-frames/forest-route-old-boundary-loop-b-frame-03.svg",
+        "assets/presentation-frames/forest-route-old-boundary-loop-b-frame-04.svg"
+      ]
+    },
+    {
+      "presentationId": "activity/forest/route/old-boundary",
+      "sequenceKey": "forest-route-old-boundary-loop-c",
+      "status": "SUPERSEDED_SOURCE_HISTORY",
+      "preferred": false,
+      "staticFallback": "assets/presentation/forest-route-old-boundary-safe-v1.svg",
+      "frames": [
+        "assets/presentation-frames/forest-route-old-boundary-loop-c-frame-01.svg",
+        "assets/presentation-frames/forest-route-old-boundary-loop-c-frame-02.svg",
+        "assets/presentation-frames/forest-route-old-boundary-loop-c-frame-03.svg",
+        "assets/presentation-frames/forest-route-old-boundary-loop-c-frame-04.svg"
+      ]
+    },
+    {
+      "presentationId": "activity/forest/route/old-boundary",
+      "sequenceKey": "forest-route-old-boundary-safe-loop-a",
+      "status": "ANIMATION_SOURCE_READY",
+      "preferred": true,
+      "staticFallback": "assets/presentation/forest-route-old-boundary-safe-v1.svg",
+      "frames": [
+        "assets/presentation-frames/forest-route-old-boundary-safe-loop-a-frame-01.svg",
+        "assets/presentation-frames/forest-route-old-boundary-safe-loop-a-frame-02.svg",
+        "assets/presentation-frames/forest-route-old-boundary-safe-loop-a-frame-03.svg",
+        "assets/presentation-frames/forest-route-old-boundary-safe-loop-a-frame-04.svg"
+      ]
+    },
+    {
+      "presentationId": "activity/forest/route/old-boundary",
+      "sequenceKey": "forest-route-old-boundary-safe-loop-b",
+      "status": "ANIMATION_SOURCE_READY",
+      "preferred": true,
+      "staticFallback": "assets/presentation/forest-route-old-boundary-safe-v1.svg",
+      "frames": [
+        "assets/presentation-frames/forest-route-old-boundary-safe-loop-b-frame-01.svg",
+        "assets/presentation-frames/forest-route-old-boundary-safe-loop-b-frame-02.svg",
+        "assets/presentation-frames/forest-route-old-boundary-safe-loop-b-frame-03.svg",
+        "assets/presentation-frames/forest-route-old-boundary-safe-loop-b-frame-04.svg"
+      ]
+    },
+    {
+      "presentationId": "activity/forest/route/old-boundary",
+      "sequenceKey": "forest-route-old-boundary-safe-loop-c",
+      "status": "ANIMATION_SOURCE_READY",
+      "preferred": true,
+      "staticFallback": "assets/presentation/forest-route-old-boundary-safe-v1.svg",
+      "frames": [
+        "assets/presentation-frames/forest-route-old-boundary-safe-loop-c-frame-01.svg",
+        "assets/presentation-frames/forest-route-old-boundary-safe-loop-c-frame-02.svg",
+        "assets/presentation-frames/forest-route-old-boundary-safe-loop-c-frame-03.svg",
+        "assets/presentation-frames/forest-route-old-boundary-safe-loop-c-frame-04.svg"
+      ]
+    }
+  ],
+  "summary": {
+    "staticSources": 3,
+    "animationSequences": 9,
+    "preferredAnimationSequences": 6,
+    "sourceFrames": 36,
+    "actualGifPaths": 0
+  },
+  "invariants": {
+    "projectOwnedLocalSourcesOnly": true,
+    "noGifClaim": true,
+    "sharedDefaultFallbackPreserved": true,
+    "gameplayFields": false,
+    "localeNeutralMediaIdentity": true
+  }
+}
