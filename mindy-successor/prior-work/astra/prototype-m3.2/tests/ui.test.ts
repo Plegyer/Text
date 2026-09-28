@@ -743,8 +743,7 @@ test('renderer: shared Night and lodging UI localizes RU EN without state drift'
 
 
 test('renderer: remaining UI shell v2 localizes creation menu and season without save drift',async()=>{
- const s=created();
- const {w,dom,errors}=boot(JSON.stringify(s));try{
+ const {w,dom,errors}=boot();try{
   await wait(()=>!!w.document.querySelector('#create'));
   const before=w.localStorage.getItem('portal-life.v1');
   assert.match(w.document.querySelector('.creation h1')?.textContent??'',/Кем вы войдёте в этот мир/);
