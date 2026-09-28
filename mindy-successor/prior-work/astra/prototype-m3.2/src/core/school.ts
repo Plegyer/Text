@@ -242,7 +242,9 @@ export function executeSchoolLesson(
     deltas
   };
   paid.run.historyState.journal.push(`School: ${course.label}. Tuition ${course.tuition}; Energy -${course.energyCost}.`);
+  paid.run.historyState.journalRefs.push(null);
   paid.run.historyState.journal=paid.run.historyState.journal.slice(-160);
+  paid.run.historyState.journalRefs=paid.run.historyState.journalRefs.slice(-160);
   runtime.register?.(paid,cat);
   const reactionFacts=schoolReactionFacts(input,paid,course);
   const resolved=runtime.resolveReactions(paid,reactionFacts,cat,{newEpoch:true});
