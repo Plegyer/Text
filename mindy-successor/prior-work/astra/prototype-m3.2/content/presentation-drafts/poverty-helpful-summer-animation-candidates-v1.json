@@ -1,0 +1,90 @@
+{
+  "formatVersion": 1,
+  "kind": "animation-candidate-source-metadata",
+  "status": "SOURCE_READY_GIF_EXPORT_BLOCKED",
+  "currentMainBaseline": "295e6fc74d235f0b7555794555a18373451e8b7e",
+  "domain": "ordinary-poverty",
+  "presentationId": "location/town/event/poverty-street-production-helpful-summer/default",
+  "staticFallback": "assets/presentation/poverty-street-helpful-summer.svg",
+  "candidates": [
+    {
+      "candidateKey": "poverty-helpful-summer-loop-a",
+      "sourceSequenceKey": "poverty-helpful-summer-loop-a",
+      "sourceFrames": [
+        "assets/presentation-frames/poverty-helpful-summer-loop-a-frame-01.svg",
+        "assets/presentation-frames/poverty-helpful-summer-loop-a-frame-02.svg",
+        "assets/presentation-frames/poverty-helpful-summer-loop-a-frame-03.svg",
+        "assets/presentation-frames/poverty-helpful-summer-loop-a-frame-04.svg"
+      ],
+      "targetTiming": {
+        "sourceLoopDurationMs": 2400,
+        "normalizedExportLoopDurationMs": 2400,
+        "normalizedFrameDelayMs": 600,
+        "frameCount": 4,
+        "loopCount": 0
+      },
+      "targetRaster": {
+        "width": 640,
+        "height": 360,
+        "maxPaletteColors": 256
+      },
+      "gifPath": null
+    },
+    {
+      "candidateKey": "poverty-helpful-summer-loop-b",
+      "sourceSequenceKey": "poverty-helpful-summer-loop-b",
+      "sourceFrames": [
+        "assets/presentation-frames/poverty-helpful-summer-loop-b-frame-01.svg",
+        "assets/presentation-frames/poverty-helpful-summer-loop-b-frame-02.svg",
+        "assets/presentation-frames/poverty-helpful-summer-loop-b-frame-03.svg",
+        "assets/presentation-frames/poverty-helpful-summer-loop-b-frame-04.svg"
+      ],
+      "targetTiming": {
+        "sourceLoopDurationMs": 2600,
+        "normalizedExportLoopDurationMs": 2400,
+        "normalizedFrameDelayMs": 600,
+        "frameCount": 4,
+        "loopCount": 0
+      },
+      "targetRaster": {
+        "width": 640,
+        "height": 360,
+        "maxPaletteColors": 256
+      },
+      "gifPath": null
+    },
+    {
+      "candidateKey": "poverty-helpful-summer-loop-c",
+      "sourceSequenceKey": "poverty-helpful-summer-loop-c",
+      "sourceFrames": [
+        "assets/presentation-frames/poverty-helpful-summer-loop-c-frame-01.svg",
+        "assets/presentation-frames/poverty-helpful-summer-loop-c-frame-02.svg",
+        "assets/presentation-frames/poverty-helpful-summer-loop-c-frame-03.svg",
+        "assets/presentation-frames/poverty-helpful-summer-loop-c-frame-04.svg"
+      ],
+      "targetTiming": {
+        "sourceLoopDurationMs": 2200,
+        "normalizedExportLoopDurationMs": 2400,
+        "normalizedFrameDelayMs": 600,
+        "frameCount": 4,
+        "loopCount": 0
+      },
+      "targetRaster": {
+        "width": 640,
+        "height": 360,
+        "maxPaletteColors": 256
+      },
+      "gifPath": null
+    }
+  ],
+  "note": "Ordinary poverty helpful-summer event only; Secret Debt excluded.",
+  "invariants": {
+    "exactlyThreeSourceCandidates": true,
+    "actualGifBytesRequiredBeforeGifPath": true,
+    "localeNeutralCandidateKeys": true,
+    "staticFallbackPreserved": true,
+    "gameplayFields": false,
+    "gameplayRng": false,
+    "saveMutation": false
+  }
+}
