@@ -1,259 +1,202 @@
 # GIF Exporter CLI Contract v1
 
-Tool:
-`prior-work/astra/prototype-m3.2/tools/export-project-owned-gif.mjs`.
+Current implementation source:
+
+`prior-work/astra/prototype-m3.2/tools/export-presentation-gif.mjs`.
 
 Purpose:
-convert one validated project-owned SVG frame sequence into one local animated GIF candidate after the proposed dev-only exporter dependencies are approved and installed.
+deterministically convert one repository-local project-owned SVG frame sequence into one animated GIF candidate after Lead approves the exact dev-only dependencies.
 
-The CLI is presentation-authoring only. It must not mutate gameplay/runtime/schema/UI state.
+Expected exact dev dependencies:
+- `sharp@0.35.4`;
+- `gifenc@1.0.3`.
 
-## Invocation
+The exporter is authoring-only and must not touch gameplay/runtime/schema/UI state.
+
+## Exact CLI
 
 Run from the prototype root:
 
 ```bash
-node tools/export-project-owned-gif.mjs \
+node tools/export-presentation-gif.mjs \
   --manifest content/presentation-drafts/project-owned-animation-source-manifest-v3.json \
   --presentation-id job/lumber/shift/spring/default \
   --sequence lumber-spring-work-loop-a \
-  --output assets/gif/careers/lumber/spring-loop-a.gif
+  --output assets/gif/careers/lumber/spring-loop-a.gif \
+  --width 640 \
+  --height 360 \
+  --frame-duration-ms 600 \
+  --loop-count 0
 ```
 
-Dry-run validation requires no exporter dependencies:
+Dependency-free validation:
 
 ```bash
-node tools/export-project-owned-gif.mjs \
-  --manifest content/presentation-drafts/project-owned-animation-source-manifest-v3.json \
-  --presentation-id job/lumber/shift/spring/default \
-  --sequence lumber-spring-work-loop-a \
-  --dry-run
+node tools/export-presentation-gif.mjs ... --dry-run
 ```
 
-## Required inputs
+## Arguments
 
 ### `--manifest <path>`
+Required.
 
-Default:
-`content/presentation-drafts/project-owned-animation-source-manifest-v3.json`.
-
-Constraints:
+Rules:
 - repository-relative;
 - under `content/presentation-drafts/`;
-- JSON file;
+- JSON only;
 - no URL/scheme;
 - no absolute path;
-- no `..` traversal.
+- no traversal.
 
 ### `--presentation-id <id>`
-
 Required.
 
-Must exactly match a current source-manifest `presentationId`.
-
-Unknown IDs are a hard error.
+Must exactly match a manifest sequence semantic identity.
 
 ### `--sequence <key>`
-
 Required.
 
-Must exactly match a source-manifest `sequenceKey` owned by the supplied presentationId.
-
-The first implementation exports one sequence per process invocation. Multiple pool candidates are exported through multiple deterministic invocations.
+Must belong to the supplied presentationId.
 
 ### `--output <path>`
+Required.
 
-Optional.
-
-When supplied:
+Rules:
 - repository-relative;
-- must be under `assets/gif/`;
-- must end in `.gif`;
+- under `assets/gif/`;
+- `.gif` extension;
 - no URL/scheme;
 - no absolute path;
-- no `..` traversal.
-
-Deterministic default when omitted:
-
-`assets/gif/project-owned/<candidateKey>.gif`
-
-where `candidateKey` comes from the validated source manifest.
+- no traversal.
 
 ### `--width <px>`
-
-Optional.
-
-Default:
-`640`.
-
-Allowed:
-64–1920.
+Optional. Default: `640`. Allowed: 64–1920.
 
 ### `--height <px>`
+Optional. Default: `360`. Allowed: 64–1080.
 
-Optional.
+### `--frame-duration-ms <ms>`
+Optional only when the manifest provides `normalizedFrameDelayMs`.
 
-Default:
-`360`.
+Resolution order:
+1. CLI override;
+2. manifest normalized delay.
 
-Allowed:
-64–1080.
+Rules:
+- integer;
+- 20–5000 ms;
+- divisible by 10 ms for exact GIF centisecond timing.
 
-First-wave production target is 640×360.
+### `--loop-count <count>`
+Optional. Default: `0`.
 
-### `--delay-ms <ms>`
-
-Optional override.
-
-Default:
-the manifest's `normalizedFrameDelayMs`.
-
-Constraints:
-- positive integer;
-- divisible by 10 ms so GIF centisecond timing is exact;
-- 20–5000 ms.
-
-### `--palette <count>`
-
-Optional.
-
-Default:
-`256`.
-
-Allowed:
-2–256.
-
-### `--loop <count>`
-
-Optional.
-
-Default:
-`0`.
-
-Meaning follows the encoder contract:
-- `0`: repeat forever;
-- `-1`: play once;
+Meaning:
+- `0`: infinite loop;
+- `-1`: play once where encoder semantics allow;
 - positive integer: explicit repeat count.
 
-Production project-owned presentation loops use `0`.
+Production presentation target: `0`.
+
+### `--palette <count>`
+Optional. Default: 256. Allowed: 2–256.
 
 ### `--dry-run`
+Validates/prints the resolved plan without importing `sharp` or `gifenc` and without writing bytes.
 
-Optional flag.
+## Source contract
 
-Behavior:
-- parses CLI;
-- reads and validates manifest;
-- resolves exact semantic ID and sequence;
-- verifies all source SVG files exist locally;
-- verifies SVG source is local/no scripts/no external resource URL;
-- validates output naming/timing/dimensions;
-- prints deterministic JSON export plan;
-- does **not** import `sharp` or `gifenc`;
-- writes no GIF bytes.
+Every source frame must:
+- be under `assets/presentation-frames/`;
+- be local `.svg`;
+- physically exist;
+- carry exact `data-presentation-id`;
+- carry exact `data-sequence-id`;
+- carry exact ordered `data-frame-index`;
+- contain no script;
+- contain no external/embedded resource URL.
 
-## Exporter outputs
+Frame order comes only from the manifest array.
 
-Successful dry run prints one JSON object containing:
-- manifest path;
+No directory/glob order is permitted.
+
+## Deterministic encoding contract
+
+Given identical:
+- SVG bytes/order;
+- exporter revision;
+- exact dependency/lockfile bytes;
+- Node/platform environment;
+- width/height;
+- frame duration;
+- loop count;
+- palette size;
+
+the exporter must:
+1. rasterize frames in manifest order;
+2. use fixed dimensions;
+3. convert to sRGB RGBA;
+4. concatenate frame pixels in stable order;
+5. derive one global palette deterministically;
+6. map every frame using that palette;
+7. encode frames in source order;
+8. write explicit frame delay/loop;
+9. avoid timestamps/randomness/network inputs.
+
+Same pinned environment is expected to produce byte-identical output.
+
+## Dry-run output
+
+Prints:
+- manifest;
 - presentationId;
 - sequenceKey;
 - candidateKey;
 - ordered frame paths;
-- source loop duration;
-- normalized/export frame delay;
-- target width/height;
-- palette size;
-- loop count;
-- deterministic output path;
 - static fallback;
-- dryRun status.
-
-Successful real export additionally records:
 - output path;
-- byte size;
-- SHA-256 of GIF bytes;
-- frame count;
-- dimensions;
-- encoded frame delay;
-- loop count.
+- width/height;
+- frameDurationMs;
+- totalDurationMs;
+- loopCount;
+- palette;
+- dryRun=true.
 
-## Deterministic encoding expectations
+## Real export output
 
-With:
-- identical SVG source bytes;
-- identical exact dependency versions;
-- identical Node/platform dependency graph;
-- identical width/height;
-- identical palette size;
-- identical frame delay;
-- identical frame order;
-- identical loop count;
+Adds:
+- frameCount;
+- byteSize;
+- SHA-256.
 
-the exporter must perform:
-1. SVG rasterization in manifest order;
-2. fixed 640×360-style dimensions or supplied exact dimensions;
-3. sRGB RGBA conversion;
-4. one deterministic global palette derived from ordered frame pixels;
-5. deterministic nearest-palette mapping;
-6. ordered GIF frame writes;
-7. explicit delay;
-8. explicit loop behavior.
+## Hard failures
 
-No timestamps, random seeds or filesystem-order enumeration may enter output generation.
-
-## Source validation
-
-Every frame must:
-- begin under `assets/presentation-frames/`;
-- end in `.svg`;
-- physically exist;
-- contain SVG root markup;
-- contain the exact manifest `data-presentation-id`;
-- contain the exact manifest `data-sequence-id`;
-- contain no `<script>`;
-- contain no external `href/src` URL.
-
-The script reads the ordered frame array from the manifest; it must not discover frames by directory order or glob order.
-
-## Hard failures / nonzero exit
-
-The CLI exits nonzero for:
-- unknown argument;
-- missing required presentationId/sequence;
-- unreadable/invalid manifest;
-- unknown presentationId;
-- sequence not owned by presentationId;
-- invalid candidate metadata;
-- missing frame;
-- external/absolute/traversal source path;
-- invalid SVG;
-- external resource URL/script inside SVG;
-- invalid dimensions;
-- delay outside contract or not centisecond-exact;
-- invalid palette;
-- output outside `assets/gif/`;
-- missing exporter dependencies during a real export;
+Nonzero exit for:
+- unknown/missing argument;
+- invalid path;
+- unknown semantic ID;
+- sequence mismatch;
+- missing static fallback;
+- missing/invalid frame;
+- frame metadata mismatch;
+- external resource/script;
+- invalid dimensions/timing/palette/loop;
+- dependency import/API mismatch;
 - write failure.
 
-A failure must never leave a claimed successful candidate mapping.
+## Network boundary
 
-## Network / external media boundary
+Exporter contains no fetch/download behavior.
 
-The exporter:
-- accepts no HTTP(S) frame input;
-- performs no fetch;
-- performs no URL download;
-- consumes only project-owned repository-local source SVGs.
+It accepts only repository-local input paths.
 
 ## Gameplay boundary
 
-CLI inputs/outputs contain no:
-- reward;
-- effect;
+The exporter never reads/writes:
+- reward/effect;
 - eligibility;
 - gameplay RNG;
-- Save mutation;
-- gameplay duration control.
+- Save;
+- outcome;
+- gameplay duration.
 
-GIF loop time is presentation-only.
+Animation timing is presentation-only.
