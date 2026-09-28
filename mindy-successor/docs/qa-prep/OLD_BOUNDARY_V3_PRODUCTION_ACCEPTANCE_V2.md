@@ -1,6 +1,6 @@
 # Old Boundary v3 production acceptance v2
 
-Status: COMPLETE / GREEN_SELECTIVE_SOURCE / NOT_ROOT_LOADED
+Status: COMPLETE / GREEN_EXACT_HEAD / MERGED / POST_MERGE_PUSH_PENDING
 
 Current production main:
 `54131488c65302f81b3001abaaa345d21f0281e2`
@@ -186,3 +186,46 @@ Then require:
 Old Boundary v3 is safe for selective production activation.
 
 It does not authorize Hunter/token/challenge/reward or any other Product-open Forest mechanics.
+
+
+## PR60 production integration update
+
+Lead integrated the reviewed v3 asset as PR #60:
+`Lead: activate safe old-boundary Forest static`.
+
+Base:
+`54131488c65302f81b3001abaaa345d21f0281e2`.
+
+Initial head:
+`e1f9ca92ae35720a5dcce2f0e1c9099ad7aec916`
+failed run #116 because four existing regressions still asserted the deliberate pre-activation neutral-fallback state.
+
+Important:
+the three new v3-specific tests already PASS on that initial head.
+
+Lead fixed the stale expectations and advanced to accepted exact head:
+`36f933d8c01a249992d84295bc69c3d554bb1f89`.
+
+Exact-head run #119:
+- id `36410203903`;
+- SUCCESS;
+- validator 17 / 46 / 35 / 9;
+- 363 / 363 tests.
+
+Relevant PASS:
+- old-boundary has one safe project-owned static slot;
+- source remains semantically narrow/locale-neutral;
+- build output preserves source bytes when build runs;
+- both Forest routes use reviewed safe media with neutral fallback retained;
+- route-specific localization remains presentation-only;
+- exact Forest activityResult and Hard Work regressions.
+
+PR60 merged as:
+`2ad9fb8b0572f8903bbf57d144c8c5938023a440`.
+
+Current root now contains the exact old-boundary v3 static override.
+
+Post-merge main run #120 was still in progress when this update was written; final current-main green status belongs in the CI floor once that push completes.
+
+Updated classification:
+`GREEN_EXACT_HEAD / MERGED / POST_MERGE_PUSH_PENDING`.
