@@ -1206,3 +1206,84 @@ Create NEW file only:
 Consolidate items 109–119 with exact selective-copy fixtures, consumer seams and remaining blockers.
 
 Continue items 109–120 sequentially without waiting for Lead review.
+
+
+## Queue item 109 — generic labels and hints localization debt audit v1
+Create NEW file only:
+- `docs/relationship-prep/GENERIC_LABELS_HINTS_LOCALIZATION_DEBT_AUDIT_V1.md`
+
+Audit current `src/ui/labels.ts` plus direct `labels[...]/hints[...]` consumers that remain visible in normal gameplay.
+Exclude debug-only labels.
+
+## Queue item 110 — core stat labels/hints RU EN source v2
+Create NEW file only:
+- `docs/relationship-prep/CORE_STAT_LABELS_HINTS_RU_EN_V2.md`
+
+Provide RU-source + full EN for all current player-visible core stats/hints not already covered by School stat keys.
+
+## Queue item 111 — inventory/resource labels RU EN source v1
+Create NEW file only:
+- `docs/relationship-prep/INVENTORY_RESOURCE_LABELS_RU_EN_V1.md`
+
+Author current inventory/resource labels only.
+Do not change inventory IDs or economics.
+
+## Queue item 112 — housing/season generic labels RU EN source v1
+Create NEW file only:
+- `docs/relationship-prep/HOUSING_SEASON_GENERIC_LABELS_RU_EN_V1.md`
+
+Provide RU+EN source for current housing and season labels used outside Night-specific copy.
+
+## Queue item 113 — generic encounter eyebrow/end-state shell RU EN v1
+Create NEW file only:
+- `docs/relationship-prep/GENERIC_ENCOUNTER_ENDSTATE_SHELL_RU_EN_V1.md`
+
+Author RU+EN for current generic encounter eyebrow plus ended/expired headings and next-life shell buttons.
+No ending mechanics/content changes.
+
+## Queue item 114 — ordinary action requirement prose audit v1
+Create NEW file only:
+- `docs/relationship-prep/ORDINARY_ACTION_REQUIREMENT_PROSE_AUDIT_V1.md`
+
+Audit player-visible requirement/explain text after the global UI v2 work.
+Identify only remaining raw IDs or Russian-only grammar.
+
+## Queue item 115 — generic labels localization fixture v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/generic-labels-localization-v1.fixture.json`
+
+Consolidate safe RU+EN keys from items 110–113.
+Presentation-only; no gameplay fields.
+
+## Queue item 116 — labels consumer map v1
+Create NEW file only:
+- `docs/relationship-prep/GENERIC_LABELS_CONSUMER_MAP_V1.md`
+
+Map every item-115 key to exact current consumer seam in app/labels files.
+
+## Queue item 117 — generic labels collision audit v1
+Create NEW file only:
+- `docs/relationship-prep/GENERIC_LABELS_COLLISION_AUDIT_V1.md`
+
+Classify item-115 keys vs exact current root: ADDITIVE / IDENTICAL / REUSE_EXISTING / CONFLICT.
+
+## Queue item 118 — localized requirement text expectation matrix v1
+Create NEW file only:
+- `docs/relationship-prep/LOCALIZED_REQUIREMENT_TEXT_EXPECTATION_MATRIX_V1.md`
+
+For representative ending/action conditions record expected RU and EN visible requirement strings while preserving exact condition objects.
+
+## Queue item 119 — post-global-shell remaining visible debt inventory v1
+Create NEW file only:
+- `docs/relationship-prep/POST_GLOBAL_SHELL_VISIBLE_TEXT_DEBT_INVENTORY_V1.md`
+
+Recompute remaining normal-player visible hardcoded text after the Lead global UI shell work.
+Exclude debug/editor internals unless exposed in normal flow.
+
+## Queue item 120 — generic labels localization handoff v1
+Create NEW file only:
+- `docs/relationship-prep/GENERIC_LABELS_LOCALIZATION_HANDOFF_V1.md`
+
+Consolidate items 109–119 into SAFE_LABEL_KEYS / REUSE_EXISTING / SHARED_UI_WIRING_REQUIRED / EXCLUDED_DEBUG / REMAINING_DEBT.
+
+Continue items 109–120 sequentially without waiting for Lead review.
