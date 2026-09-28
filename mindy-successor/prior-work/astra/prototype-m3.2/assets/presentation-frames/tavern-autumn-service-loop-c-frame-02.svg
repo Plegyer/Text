@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img"
+ data-presentation-id="job/tavern/shift/autumn/default"
+ data-sequence-id="tavern-autumn-service-loop-c"
+ data-frame-index="2" data-frame-count="4" data-loop-duration-ms="2400">
+<defs><linearGradient id="bg" x2="0" y2="1"><stop stop-color="#37424d"/><stop offset="1" stop-color="#9e694f"/></linearGradient><radialGradient id="light"><stop stop-color="#efbd7f" stop-opacity=".48"/><stop offset="1" stop-color="#efbd7f" stop-opacity="0"/></radialGradient></defs>
+<rect width="1200" height="675" fill="url(#bg)"/><circle cx="690" cy="240" r="320" fill="url(#light)"/><path d="M0 390Q230 300 480 380T1200 330V675H0Z" fill="#5d5847"/><path d="M0 520Q300 455 600 515T1200 475V675H0Z" fill="#c47a49" opacity=".18"/>
+<rect x="130" y="440" width="430" height="54" rx="10" fill="#966846"/><path d="M175 494l-28 120M515 494l28 120" stroke="#593d35" stroke-width="24"/>
+<g transform="translate(247 420)"><path d="M0 0h120l18 24H18z" fill="#b88f72"/><path d="M15 10h95" stroke="#d8c2a0" stroke-width="5"/></g>
+<g transform="translate(640 215)"><ellipse cx="18" cy="365" rx="108" ry="20" fill="#151d23" opacity=".42"/><circle cx="19" cy="51" r="31" fill="#ddad86"/><path d="M-12 44Q-2 3 44 14L60 46 39 35 19 25Z" fill="#46363b"/><path d="M-25 96Q18 74 62 96L67 235H-27Z" fill="#748e83"/><path d="M-27 157h94" stroke="#a87552" stroke-width="14"/><path d="M-8 235L-31 350H0L21 262 42 350H73L63 235Z" fill="#303944"/><path d="M-15 126L-68 198M56 129L109 198" stroke="#d6a680" stroke-width="14" stroke-linecap="round"/></g>
+<g fill="#d1b57a"><rect x="405" y="390" width="34" height="48" rx="8"/><rect x="470" y="398" width="36" height="40" rx="8"/></g>
+<g fill="#bd7146"><path d="M185 420l18 12-18 13-14-12z"/><path d="M940 440l17 11-16 13-14-12z"/></g>
+<rect y="646" width="1200" height="29" fill="#151a25" opacity=".28"/></svg>
