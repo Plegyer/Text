@@ -1,0 +1,59 @@
+{
+  "formatVersion": 1,
+  "kind": "gif-exporter-dependency-patch-candidate",
+  "status": "PROPOSAL_ONLY_NOT_APPLIED",
+  "currentMainBaseline": "3fc5495310e281cf5cbe52da3642000f1cb1fb05",
+  "prototypeRoot": "prior-work/astra/prototype-m3.2",
+  "packageJsonPatch": {
+    "devDependencies": {
+      "gifenc": "1.0.3",
+      "sharp": "0.35.4"
+    },
+    "scripts": {
+      "media:export-gif": "node tools/export-project-owned-gif.mjs"
+    }
+  },
+  "packageLockPatch": {
+    "lockfileVersion": 3,
+    "requiredRootPackageChanges": {
+      "packages[\"\"]": {
+        "devDependencies": {
+          "gifenc": "1.0.3",
+          "sharp": "0.35.4"
+        }
+      }
+    },
+    "requiredResolvedPackages": [
+      {
+        "package": "gifenc",
+        "version": "1.0.3",
+        "license": "MIT",
+        "requirement": "package-lock must contain the registry-resolved exact package entry produced by npm"
+      },
+      {
+        "package": "sharp",
+        "version": "0.35.4",
+        "license": "Apache-2.0",
+        "requirement": "package-lock must contain sharp plus its platform/transitive packages exactly as resolved by npm for the locked dependency graph"
+      }
+    ],
+    "generationCommand": "npm install --save-dev --save-exact sharp@0.35.4 gifenc@1.0.3",
+    "policy": [
+      "Generate package-lock.json with the repository package manager; do not hand-author registry integrity hashes.",
+      "Review package-lock diff for only dependency graph changes caused by sharp/gifenc and their transitive/platform packages.",
+      "Commit package.json and package-lock.json together if Lead approves the exporter dependency.",
+      "Require npm ci on the exact integration head before exporter activation."
+    ]
+  },
+  "sourceReferences": {
+    "exporterPlan": "docs/presentation-prep/RECOMMENDED_GIF_EXPORTER_INTEGRATION_PLAN_V2.md",
+    "sourceManifest": "content/presentation-drafts/project-owned-animation-source-manifest-v3.json"
+  },
+  "invariants": {
+    "devOnly": true,
+    "packageJsonModifiedByThisItem": false,
+    "packageLockModifiedByThisItem": false,
+    "runtimeDependencyAdded": false,
+    "gameplayFilesModified": false
+  }
+}
