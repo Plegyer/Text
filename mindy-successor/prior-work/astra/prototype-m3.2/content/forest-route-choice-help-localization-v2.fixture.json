@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "id": "forest.route-choice-help-localization.v2",
+  "status": "PRESENTATION_ONLY_EXACT_CURRENT_ROUTE_OPTIONS",
+  "baseMain": "5dffefd15703d431a604b4cc9f831c4e55460aed",
+  "routes": [
+    {
+      "routeId": "forest.route.logging-road",
+      "routeState": "logging-road",
+      "labelKey": "activityOption.forest.route.logging-road.label",
+      "helpKey": "activityOption.forest.route.logging-road.help"
+    },
+    {
+      "routeId": "forest.route.old-boundary",
+      "routeState": "old-boundary",
+      "labelKey": "activityOption.forest.route.old-boundary.label",
+      "helpKey": "activityOption.forest.route.old-boundary.help"
+    }
+  ],
+  "strings": {
+    "activityOption.forest.route.logging-road.label": {
+      "ru": "Лесовозная дорога",
+      "en": "Logging road"
+    },
+    "activityOption.forest.route.logging-road.help": {
+      "ru": "Широкая рабочая дорога со свежими следами лесозаготовок.",
+      "en": "A broad work road with fresh signs of logging."
+    },
+    "activityOption.forest.route.old-boundary.label": {
+      "ru": "Старая межевая тропа",
+      "en": "Old boundary path"
+    },
+    "activityOption.forest.route.old-boundary.help": {
+      "ru": "Старый путь по межевым камням и выветренным меткам.",
+      "en": "An old route traced by boundary stones and weathered marks."
+    }
+  },
+  "ownership": {
+    "existingIdenticalKeys": [
+      "activityOption.forest.route.logging-road.label",
+      "activityOption.forest.route.old-boundary.label"
+    ],
+    "additiveKeys": [
+      "activityOption.forest.route.logging-road.help",
+      "activityOption.forest.route.old-boundary.help"
+    ]
+  },
+  "invariants": {
+    "presentationOnly": true,
+    "exactCurrentRouteIdsOnly": true,
+    "changesAvailability": false,
+    "changesConditions": false,
+    "changesRouteState": false,
+    "changesProgress": false,
+    "changesEndurance": false,
+    "changesResults": false,
+    "changesRng": false,
+    "changesSaveState": false,
+    "changesOldBoundaryTokenSemantics": false,
+    "createsHunterRoute": false
+  }
+}
