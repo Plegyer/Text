@@ -3708,3 +3708,105 @@ Consolidate items 293–303 into:
 Include exact selective-copy files and remaining blockers.
 
 Continue items 293–304 sequentially without waiting for Lead review.
+
+
+## Queue item 269 — post-PR58 Night/Forest baseline v11
+Create NEW file only:
+- `docs/lumber-prep/POST_PR58_NIGHT_FOREST_BASELINE_V11.md`
+
+Re-audit exact current main after PR58:
+- shipped global UI/localization;
+- shared Night/lodging remaining UI consumers;
+- Journal/outcome stable-ref behavior now shipped;
+- Forest route/default static;
+- route-specific seam still outstanding.
+
+## Queue item 270 — shared Night/lodging post-PR58 rebase v8
+Create NEW file only:
+- `docs/poverty-prep/SHARED_NIGHT_LODGING_POST_PR58_REBASE_V8.md`
+
+Rebase the current shared Night/lodging fixture against exact main.
+Classify every key as ADDITIVE / IDENTICAL / SUPERSEDED / CONFLICT.
+Do not author UI code.
+
+## Queue item 271 — shared Night/lodging final delta v6
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/poverty-shared-ui-localization-v6.fixture.json`
+
+Contain only keys still needed after item 270.
+Exclude keys already shipped or superseded by `ui.sleep.*`.
+
+## Queue item 272 — shared Night/lodging current-main consumer map v3
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/shared-night-lodging-consumer-map-v3.fixture.json`
+
+Map each item-271 key to the exact current `src/ui/app.ts` consumer seam/fallback on post-PR58 main.
+
+## Queue item 273 — Night/lodging RU EN natural-path expectation v2
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/shared-night-lodging-ui-invariance-v2.fixture.json`
+
+Cover representative natural paths:
+- normal lodging;
+- cheap lodging;
+- street/no lodging;
+- voluntary night choice;
+- result -> choose lodging bridge.
+
+Record exact unchanged costs/Energy/housing/nightChoice/Save invariants.
+
+## Queue item 274 — Forest route-specific presentation post-PR58 rebase v7
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/forest-route-presentation-post-pr58-v7.fixture.json`
+
+Rebase logging-road / old-boundary presentation text, choice/help, alt/caption keys against exact current main.
+Presentation-only.
+
+## Queue item 275 — Forest route seam current-main regression v5
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/forest-route-presentation-seam-v5.test.ts`
+
+Refresh the expected default -> route-specific presentationId transition against exact post-PR58 runtime identities.
+No engine/UI edits.
+
+## Queue item 276 — Forest route old-boundary safe visual source brief v3
+Create NEW file only:
+- `docs/lumber-prep/OLD_BOUNDARY_SAFE_VISUAL_SOURCE_BRIEF_V3.md`
+
+Define the final safe visual semantics for future project-owned media:
+old stones / marks / path boundary only.
+No gate, token, Hunter, reward, hidden challenge or deeper lore implication.
+
+## Queue item 277 — poverty journal localized-render verification matrix v2
+Create NEW file only:
+- `docs/poverty-prep/POVERTY_JOURNAL_LOCALIZED_RENDER_VERIFICATION_V2.md`
+
+Using the shipped Journal/outcome stable-ref design, map all ordinary-poverty event choices to exact expected RU/EN render keys and fallback behavior.
+No Save mutation.
+
+## Queue item 278 — Forest journal localized-render verification matrix v2
+Create NEW file only:
+- `docs/lumber-prep/FOREST_JOURNAL_LOCALIZED_RENDER_VERIFICATION_V2.md`
+
+Map current Forest result/reaction event choices to expected RU/EN render keys under shipped stable refs.
+Preserve exact `activityResult` continuation and result identities.
+
+## Queue item 279 — Night/Forest hardcoded player-language debt audit v1
+Create NEW file only:
+- `docs/lumber-prep/NIGHT_FOREST_HARDCODED_PLAYER_LANGUAGE_DEBT_AUDIT_V1.md`
+
+Audit exact current UI/content for remaining player-visible RU-only or mixed-language strings in Night/lodging/Forest owned scope.
+Exclude debug/internal and Product-open content.
+
+## Queue item 280 — post-PR58 Night/Forest handoff v11
+Create NEW file only:
+- `docs/lumber-prep/POST_PR58_NIGHT_FOREST_HANDOFF_V11.md`
+
+Consolidate items 269–279 into:
+- SHARED_NIGHT_UI_READY;
+- ROUTE_PRESENTATION_READY;
+- JOURNAL_RENDER_VERIFIED;
+- VISUAL_SOURCE_ONLY;
+- PRODUCT_OPEN.
+
+Continue items 269–280 sequentially without waiting for Lead review.
