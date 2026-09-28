@@ -1,4 +1,4 @@
-import test from 'node:test';import assert from 'node:assert/strict';import {readFileSync} from 'node:fs';import {createRequire} from 'node:module';import {started} from './helpers.ts';
+import test from 'node:test';import assert from 'node:assert/strict';import {readFileSync} from 'node:fs';import {createRequire} from 'node:module';import {started,created} from './helpers.ts';
 const {JSDOM,VirtualConsole}=createRequire(import.meta.url)('jsdom');
 const html=readFileSync('dist/index.html','utf8'),bundle=readFileSync('dist/app.js','utf8'),data=JSON.parse(readFileSync('dist/content.json','utf8'));
 async function wait(check:()=>boolean){for(let i=0;i<100;i++){if(check())return;await new Promise(r=>setTimeout(r,5));}throw new Error('UI update timed out');}
@@ -578,6 +578,80 @@ test('renderer: legacy gopher pending scene localizes RU EN without gameplay dri
   assert.deepEqual(after.run.flow.pendingScene.allowedChoiceIds,beforeSave.run.flow.pendingScene.allowedChoiceIds);
   assert.equal(after.run.rngState.state,beforeSave.run.rngState.state);
   assert.deepEqual(after.run.flow.night,beforeSave.run.flow.night);
+  assert.deepEqual(errors,[]);
+ }finally{dom.window.close();}
+});
+
+
+test('renderer: global UI shell localizes panels RU EN without changing save',async()=>{
+ const s=started();
+ const {w,dom,errors}=boot(JSON.stringify(s));try{
+  await wait(()=>!!w.document.querySelector('[data-panel="explore"]'));
+  const before=w.localStorage.getItem('portal-life.v1');
+
+  w.document.querySelector('[data-panel="explore"]').click();
+  assert.equal(w.document.querySelector('.panel h2')?.textContent,'Окрестности и поручения');
+  assert.match(w.document.querySelector('.panel')?.textContent??'',/Отдельная вылазка/);
+  assert.equal(w.document.querySelector('[data-enter-activity="lumber.forest"]')?.textContent,'Войти');
+  w.document.querySelector('#close').click();
+
+  w.document.querySelector('[data-panel="menu"]').click();
+  w.document.querySelector('#language-toggle').click();
+  await wait(()=>w.document.documentElement.lang==='en');
+  assert.equal(w.localStorage.getItem('portal-life.v1'),before);
+  w.document.querySelector('#close').click();
+
+  w.document.querySelector('[data-panel="explore"]').click();
+  assert.equal(w.document.querySelector('.panel h2')?.textContent,'Outskirts and errands');
+  assert.match(w.document.querySelector('.panel')?.textContent??'',/separate outing/i);
+  assert.equal(w.document.querySelector('[data-enter-activity="lumber.forest"]')?.textContent,'Enter');
+  w.document.querySelector('#close').click();
+
+  w.document.querySelector('[data-panel="sleep"]').click();
+  assert.equal(w.document.querySelector('.panel h2')?.textContent,'Night');
+  assert.equal(w.document.querySelector('[data-end-day]')?.textContent,'Start the night sequence');
+  w.document.querySelector('#close').click();
+
+  w.document.querySelector('[data-panel="stats"]').click();
+  assert.equal(w.document.querySelector('.panel h2')?.textContent,'Heroine');
+  assert.match(w.document.querySelector('.panel')?.textContent??'',/Careers/);
+  w.document.querySelector('#close').click();
+
+  w.document.querySelector('[data-panel="journal"]').click();
+  assert.equal(w.document.querySelector('.panel h2')?.textContent,'Journal');
+  w.document.querySelector('#close').click();
+
+  w.document.querySelector('[data-panel="bag"]').click();
+  assert.equal(w.document.querySelector('.panel h2')?.textContent,'Bag and errands');
+  assert.match(w.document.querySelector('.panel')?.textContent??'',/Debt:/);
+  w.document.querySelector('#close').click();
+
+  w.document.querySelector('[data-panel="legacy"]').click();
+  assert.equal(w.document.querySelector('.panel h2')?.textContent,'Fates');
+  assert.match(w.document.querySelector('.panel')?.textContent??'',/Accept fate/);
+  assert.equal(w.localStorage.getItem('portal-life.v1'),before);
+  assert.deepEqual(errors,[]);
+ }finally{dom.window.close();}
+});
+
+test('renderer: arrival shell localizes RU EN before gameplay state changes',async()=>{
+ const s=created();
+ const {w,dom,errors}=boot(JSON.stringify(s));try{
+  await wait(()=>!!w.document.querySelector('[data-action="arrival"]'));
+  const before=w.localStorage.getItem('portal-life.v1');
+  assert.equal(w.document.querySelector('.stage-title h1')?.textContent,'Следуйте за сусликом');
+  assert.match(w.document.querySelector('.dialogue p')?.textContent??'',/Белый суслик/);
+  assert.equal(w.document.querySelector('[data-action="arrival"]')?.textContent,'Пойти за ним');
+
+  w.document.querySelector('[data-panel="menu"]').click();
+  w.document.querySelector('#language-toggle').click();
+  await wait(()=>w.document.documentElement.lang==='en');
+  assert.equal(w.localStorage.getItem('portal-life.v1'),before);
+  w.document.querySelector('#close').click();
+
+  assert.equal(w.document.querySelector('.stage-title h1')?.textContent,'Follow the gopher');
+  assert.match(w.document.querySelector('.dialogue p')?.textContent??'',/white gopher/i);
+  assert.equal(w.document.querySelector('[data-action="arrival"]')?.textContent,'Follow it');
   assert.deepEqual(errors,[]);
  }finally{dom.window.close();}
 });
