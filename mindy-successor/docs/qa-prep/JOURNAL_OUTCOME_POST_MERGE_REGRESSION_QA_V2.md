@@ -5,9 +5,12 @@ Status: COMPLETE / GREEN_CURRENT_MAIN
 Previous reviewed main:
 `4223be1f90f15a43938e072bc2171b0de5d2d1aa`.
 
+PR57 reviewed main:
+`df0119fd6574b69ab89cf1a99ae77adae3d811f1`.
+
 Current main:
-`df0119fd6574b69ab89cf1a99ae77adae3d811f1`
-(PR57 route-presentation seam merge).
+`52ddc76148e33836d3161b63bf4c25ffb5c39d02`
+(PR58 generic-label merge).
 
 PR56 does not edit core journal/outcome persistence.
 
@@ -139,4 +142,19 @@ Post-merge main run #106 / id `36405622065`:
 Retained PASS includes schema-4 no-ref fallback, Journal ref alignment, localized Journal/lastAction stable-ref rendering, exact Forest activityResult and Lumber Hard Work regressions.
 
 Current verdict remains:
+`GREEN_CURRENT_MAIN`.
+
+
+## PR58 compatibility refresh
+
+PR58 changes localization and generic display-label consumers only. It does not edit event-choice ref persistence or Save migration.
+
+Post-merge run #109 / id `36406510233`:
+- SUCCESS;
+- 356 / 356 tests;
+- validator 17 / 46 / 35 / 9.
+
+The ref-backed Journal/lastAction renderer regression and schema-4 no-ref compatibility remain PASS.
+
+Current classification remains:
 `GREEN_CURRENT_MAIN`.
