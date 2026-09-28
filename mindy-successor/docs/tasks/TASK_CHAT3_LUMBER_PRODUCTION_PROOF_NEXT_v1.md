@@ -3333,3 +3333,88 @@ Create NEW file only:
 Consolidate items 257–267 into SHARED_UI_TEXT_READY / ROUTE_COPY_READY / JOURNAL_CONSUMER_DEPENDENT / PRODUCT_OPEN.
 
 Continue items 257–268 sequentially without waiting for Lead review.
+
+
+## Queue item 269 — shared Night UI production fixture v6
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/shared-night-ui-localization-v6.fixture.json`
+
+Consolidate the final additive RU+EN shared Night/lodging strings safe against current main.
+Exclude keys already owned by the global UI-shell PR when exact-identical.
+
+## Queue item 270 — shared Night UI consumer map v3
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/shared-night-ui-consumer-map-v3.fixture.json`
+
+Map every item-269 key to exact current app.ts consumer/fallback seam after PR53.
+
+## Queue item 271 — shared Night UI natural-path expectation v2
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/shared-night-ui-natural-path-v2.fixture.json`
+
+Cover lodging resolution, voluntary Night choice, next-day consequences and result-to-lodging path.
+Record stable IDs and unchanged money/Energy/housing/Save fields.
+
+## Queue item 272 — ordinary-poverty journal localization expectation v2
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/poverty-journal-localization-expectation-v2.fixture.json`
+
+Map all current ordinary-poverty resolved event choices to exact event/choice localization keys expected by the Lead journal-ref consumer.
+
+## Queue item 273 — Forest journal localization expectation v2
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/forest-journal-localization-expectation-v2.fixture.json`
+
+Map current Forest result/reaction resolved choices to exact stable event/choice keys expected by the same consumer.
+
+## Queue item 274 — route presentation semantic-ID inventory v4
+Create NEW file only:
+- `docs/lumber-prep/FOREST_ROUTE_PRESENTATION_SEMANTIC_ID_INVENTORY_V4.md`
+
+Reconfirm exact default/logging-road/old-boundary semantic IDs and authoritative route-state source.
+No new route.
+
+## Queue item 275 — route seam pure-function contract v4
+Create NEW file only:
+- `docs/lumber-prep/FOREST_ROUTE_PURE_PRESENTATION_FUNCTION_CONTRACT_V4.md`
+
+Specify a pure routeState -> presentationId mapping:
+null -> default;
+logging-road -> logging-road semantic ID;
+old-boundary -> old-boundary semantic ID.
+No Save writes or RNG.
+
+## Queue item 276 — route seam test vectors v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/forest-route-presentation-test-vectors-v1.fixture.json`
+
+Provide exact test vectors for null/logging-road/old-boundary route states and invalid-state rejection/fallback expectations.
+
+## Queue item 277 — route-specific localized presentation delta v7
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/forest-route-localization-delta-v7.fixture.json`
+
+Final exact additive RU+EN route title/body/help/alt/caption keys only.
+No gameplay fields.
+
+## Queue item 278 — route-specific visual source acceptance v3
+Create NEW file only:
+- `docs/lumber-prep/FOREST_ROUTE_VISUAL_SOURCE_ACCEPTANCE_V3.md`
+
+Define what a future logging-road/old-boundary static/GIF source may show, including corrected old-boundary semantics.
+No activation.
+
+## Queue item 279 — Night/Forest post-journal-consumer QA matrix v1
+Create NEW file only:
+- `docs/lumber-prep/NIGHT_FOREST_POST_JOURNAL_CONSUMER_QA_MATRIX_V1.md`
+
+Define exact checks once Lead journal refs ship:
+localized Journal + lastAction, unchanged effects/RNG/Save identity, Night/lodging invariance, Forest result continuity.
+
+## Queue item 280 — Night/Forest integration handoff v11
+Create NEW file only:
+- `docs/lumber-prep/NIGHT_FOREST_INTEGRATION_HANDOFF_V11.md`
+
+Consolidate items 269–279 into SHARED_NIGHT_UI_READY / JOURNAL_EXPECTATIONS_READY / ROUTE_SEAM_READY / VISUAL_SOURCE_ONLY / PRODUCT_OPEN.
+
+Continue items 269–280 sequentially without waiting for Lead review.
