@@ -1,0 +1,90 @@
+{
+  "formatVersion": 1,
+  "kind": "animation-candidate-source-metadata",
+  "status": "SOURCE_READY_GIF_EXPORT_BLOCKED",
+  "currentMainBaseline": "295e6fc74d235f0b7555794555a18373451e8b7e",
+  "domain": "ordinary-career",
+  "presentationId": "job/tavern/shift/autumn/default",
+  "staticFallback": "assets/presentation/career-tavern-shift-autumn.svg",
+  "candidates": [
+    {
+      "candidateKey": "tavern-autumn-loop-a",
+      "sourceSequenceKey": "tavern-autumn-service-loop-a",
+      "sourceFrames": [
+        "assets/presentation-frames/tavern-autumn-service-loop-a-frame-01.svg",
+        "assets/presentation-frames/tavern-autumn-service-loop-a-frame-02.svg",
+        "assets/presentation-frames/tavern-autumn-service-loop-a-frame-03.svg",
+        "assets/presentation-frames/tavern-autumn-service-loop-a-frame-04.svg"
+      ],
+      "targetTiming": {
+        "sourceLoopDurationMs": 2600,
+        "normalizedExportLoopDurationMs": 2600,
+        "normalizedFrameDelayMs": 650,
+        "frameCount": 4,
+        "loopCount": 0
+      },
+      "targetRaster": {
+        "width": 640,
+        "height": 360,
+        "maxPaletteColors": 256
+      },
+      "gifPath": null
+    },
+    {
+      "candidateKey": "tavern-autumn-loop-b",
+      "sourceSequenceKey": "tavern-autumn-service-loop-b",
+      "sourceFrames": [
+        "assets/presentation-frames/tavern-autumn-service-loop-b-frame-01.svg",
+        "assets/presentation-frames/tavern-autumn-service-loop-b-frame-02.svg",
+        "assets/presentation-frames/tavern-autumn-service-loop-b-frame-03.svg",
+        "assets/presentation-frames/tavern-autumn-service-loop-b-frame-04.svg"
+      ],
+      "targetTiming": {
+        "sourceLoopDurationMs": 2800,
+        "normalizedExportLoopDurationMs": 2600,
+        "normalizedFrameDelayMs": 650,
+        "frameCount": 4,
+        "loopCount": 0
+      },
+      "targetRaster": {
+        "width": 640,
+        "height": 360,
+        "maxPaletteColors": 256
+      },
+      "gifPath": null
+    },
+    {
+      "candidateKey": "tavern-autumn-loop-c",
+      "sourceSequenceKey": "tavern-autumn-service-loop-c",
+      "sourceFrames": [
+        "assets/presentation-frames/tavern-autumn-service-loop-c-frame-01.svg",
+        "assets/presentation-frames/tavern-autumn-service-loop-c-frame-02.svg",
+        "assets/presentation-frames/tavern-autumn-service-loop-c-frame-03.svg",
+        "assets/presentation-frames/tavern-autumn-service-loop-c-frame-04.svg"
+      ],
+      "targetTiming": {
+        "sourceLoopDurationMs": 2400,
+        "normalizedExportLoopDurationMs": 2600,
+        "normalizedFrameDelayMs": 650,
+        "frameCount": 4,
+        "loopCount": 0
+      },
+      "targetRaster": {
+        "width": 640,
+        "height": 360,
+        "maxPaletteColors": 256
+      },
+      "gifPath": null
+    }
+  ],
+  "note": "Ordinary Tavern autumn shift presentation only.",
+  "invariants": {
+    "exactlyThreeSourceCandidates": true,
+    "actualGifBytesRequiredBeforeGifPath": true,
+    "localeNeutralCandidateKeys": true,
+    "staticFallbackPreserved": true,
+    "gameplayFields": false,
+    "gameplayRng": false,
+    "saveMutation": false
+  }
+}
