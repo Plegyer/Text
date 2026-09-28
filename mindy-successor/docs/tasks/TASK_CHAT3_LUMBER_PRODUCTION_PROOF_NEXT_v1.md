@@ -3988,3 +3988,112 @@ Consolidate items 317–327 into:
 - SELECTIVE_COPY.
 
 Continue items 317–328 sequentially without waiting for Lead review.
+
+
+## Queue item 329 — ordinary poverty depth current-main rebase audit v3
+Create NEW file only:
+- `docs/poverty-prep/ORDINARY_POVERTY_DEPTH_CURRENT_MAIN_REBASE_AUDIT_V3.md`
+
+Recheck the 26-key v2 depth patch against exact current main.
+Classify every key ADDITIVE / IDENTICAL / CONFLICT / SUPERSEDED.
+No runtime or root edits.
+
+## Queue item 330 — poverty static accessibility wording debt inventory v2
+Create NEW file only:
+- `docs/poverty-prep/POVERTY_STATIC_ACCESSIBILITY_WORDING_DEBT_V2.md`
+
+Audit exact current poverty static alt/caption strings and identify meta-mechanical wording that should be replaced by player-facing visual description.
+Secret Debt excluded.
+
+## Queue item 331 — poverty static accessibility RU source v2
+Create NEW file only:
+- `docs/poverty-prep/POVERTY_STATIC_ACCESSIBILITY_RU_SOURCE_V2.md`
+
+Provide polished Russian alt/caption replacements for exact current ordinary-poverty static assets only.
+Describe visible scene content, not gameplay mechanics.
+
+## Queue item 332 — poverty static accessibility EN parity v2
+Create NEW file only:
+- `docs/poverty-prep/POVERTY_STATIC_ACCESSIBILITY_EN_PARITY_V2.md`
+
+Provide full English parity for item 331.
+
+## Queue item 333 — poverty static accessibility localization fixture v2
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/poverty-static-accessibility-v2.fixture.json`
+
+Contain exact-current RU+EN alt/caption replacements only.
+No media path changes, no event IDs, no gameplay fields.
+
+## Queue item 334 — poverty depth candidate ordering ledger v1
+Create NEW file only:
+- `docs/poverty-prep/POVERTY_DEPTH_CANDIDATE_ORDERING_LEDGER_V1.md`
+
+For every exact eventId + variantId group, record deterministic ordered depth-key candidates and first-show/next-show sequence.
+No RNG and no Save writes.
+
+## Queue item 335 — poverty depth fallback coverage audit v1
+Create NEW file only:
+- `docs/poverty-prep/POVERTY_DEPTH_FALLBACK_COVERAGE_AUDIT_V1.md`
+
+Verify every current ordinary-poverty event/variant either:
+- has mapped depth candidates; or
+- explicitly falls back to current core variant text.
+
+No invented variants.
+
+## Queue item 336 — poverty depth render lookup fixture v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/poverty-depth-render-lookup-v1.fixture.json`
+
+Machine-readable exact mapping:
+- eventId;
+- variantId;
+- ordered depth localization keys;
+- fallback source key/text identity.
+
+Presentation-only.
+
+## Queue item 337 — poverty depth Journal non-overlap regression source v1
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/poverty-depth-journal-nonoverlap-v1.test.ts`
+
+Validate:
+- depth keys affect pending-scene presentation only;
+- event-choice Journal refs remain eventId + choiceId;
+- no depth key enters Save identity;
+- no gameplay RNG field is referenced.
+
+## Queue item 338 — poverty depth / shared Night ownership audit v1
+Create NEW file only:
+- `docs/poverty-prep/POVERTY_DEPTH_SHARED_NIGHT_OWNERSHIP_AUDIT_V1.md`
+
+Check v2/v3 poverty presentation keys against current shared Night/lodging localization and UI ownership.
+Flag real collisions only; Secret Debt remains separate.
+
+## Queue item 339 — poverty depth current-main collision regression v3
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/ordinary-poverty-localization-depth-v3.test.ts`
+
+Validate exact current:
+- 26 depth keys;
+- event/variant mappings;
+- RU+EN completeness;
+- accessibility v2 key targets;
+- zero unreviewed root conflicts;
+- no Secret Debt;
+- no gameplay fields.
+
+## Queue item 340 — ordinary poverty depth handoff v3
+Create NEW file only:
+- `docs/poverty-prep/ORDINARY_POVERTY_DEPTH_HANDOFF_V3.md`
+
+Consolidate items 329–339 into:
+- DEPTH_KEYS_REBASED;
+- ACCESSIBILITY_COPY_READY;
+- ORDERED_LOOKUP_READY;
+- JOURNAL_NONOVERLAP_PROVEN;
+- SHARED_NIGHT_ISOLATED;
+- SELECTIVE_COPY.
+
+Continue items 329–340 sequentially without waiting for Lead review.
