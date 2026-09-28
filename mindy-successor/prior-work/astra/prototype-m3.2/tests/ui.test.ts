@@ -796,3 +796,49 @@ test('renderer: Activity shell v2 localizes labels without gameplay drift',async
   assert.deepEqual(errors,[]);
  }finally{dom.window.close();}
 });
+
+
+test('renderer: Forest route presentation seam follows route state without save drift',async()=>{
+ const s=started();
+ const {w,dom,errors}=boot(JSON.stringify(s));try{
+  await wait(()=>!!w.document.querySelector('[data-panel="explore"]'));
+  w.document.querySelector('[data-panel="explore"]').click();
+  await wait(()=>!!w.document.querySelector('[data-enter-activity="lumber.forest"]'));
+  w.document.querySelector('[data-enter-activity="lumber.forest"]').click();
+  await wait(()=>!!w.document.querySelector('[data-activity-action="forest.route.logging-road"]'));
+
+  let media=w.document.querySelector('.media-window');
+  assert.equal(media?.getAttribute('data-presentation-id'),'activity/forest/route/default');
+  assert.equal(media?.getAttribute('data-resolved-slot'),'activity/forest/route/default');
+
+  w.document.querySelector('[data-activity-action="forest.route.logging-road"]').click();
+  await wait(()=>{
+   const raw=w.localStorage.getItem('portal-life.v1');
+   const presentationId=w.document.querySelector('.media-window')?.getAttribute('data-presentation-id');
+   return !!raw
+    && JSON.parse(raw).run.flow.activity?.internalState?.routeId==='logging-road'
+    && presentationId==='activity/forest/route/logging-road';
+  });
+
+  media=w.document.querySelector('.media-window');
+  assert.equal(media?.getAttribute('data-presentation-id'),'activity/forest/route/logging-road');
+  assert.equal(media?.getAttribute('data-resolved-slot'),'activity/forest/route/default');
+  assert.match(media?.querySelector('img')?.getAttribute('src')??'',/assets\/presentation\/forest-route-default-v1\.svg$/);
+
+  const beforeLocale=w.localStorage.getItem('portal-life.v1');
+  const activityBefore=JSON.parse(beforeLocale).run.flow.activity;
+
+  w.document.querySelector('[data-panel="menu"]').click();
+  w.document.querySelector('#language-toggle').click();
+  await wait(()=>w.document.documentElement.lang==='en');
+  assert.equal(w.localStorage.getItem('portal-life.v1'),beforeLocale);
+  w.document.querySelector('#close').click();
+
+  media=w.document.querySelector('.media-window');
+  assert.equal(media?.getAttribute('data-presentation-id'),'activity/forest/route/logging-road');
+  assert.equal(media?.getAttribute('data-resolved-slot'),'activity/forest/route/default');
+  const activityAfter=JSON.parse(w.localStorage.getItem('portal-life.v1')).run.flow.activity;
+  assert.deepEqual(activityAfter,activityBefore);
+  assert.deepEqual(errors,[]);
+ }finally{dom.window.close();}
+});
