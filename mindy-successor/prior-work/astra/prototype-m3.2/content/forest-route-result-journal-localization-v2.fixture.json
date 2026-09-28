@@ -1,0 +1,203 @@
+{
+  "schemaVersion": 1,
+  "id": "forest.route-result-journal-localization.v2",
+  "status": "POST_PR54_EXPECTED_RENDER_BY_STABLE_REF",
+  "baseMain": "295e6fc74d235f0b7555794555a18373451e8b7e",
+  "mappings": [
+    {
+      "routeId": "forest.route.logging-road",
+      "routeState": "logging-road",
+      "outcome": "success",
+      "resultId": "lumber.forest.success",
+      "reactionEventId": "forest-result-content-v1.success",
+      "choiceId": "return",
+      "journalRef": {
+        "kind": "eventChoice",
+        "eventId": "forest-result-content-v1.success",
+        "choiceId": "return"
+      },
+      "titleKey": "event.forest-result-content-v1.success.title",
+      "textKey": "event.forest-result-content-v1.success.choice.return.text",
+      "expectedRender": {
+        "ru": {
+          "title": "Лес уступает дорогу",
+          "text": "Ты оставляешь результат экспедиции неизменным и возвращаешься к обычному городскому ходу дня."
+        },
+        "en": {
+          "title": "The Forest gives way",
+          "text": "You leave the Activity result intact and return to the city-side flow."
+        }
+      },
+      "exactContinuation": {
+        "kind": "activityResult",
+        "activity": "lumber.forest",
+        "outcome": "success",
+        "result": "lumber.forest.success"
+      }
+    },
+    {
+      "routeId": "forest.route.logging-road",
+      "routeState": "logging-road",
+      "outcome": "escape",
+      "resultId": "lumber.forest.escape",
+      "reactionEventId": "forest-result-content-v1.escape",
+      "choiceId": "return",
+      "journalRef": {
+        "kind": "eventChoice",
+        "eventId": "forest-result-content-v1.escape",
+        "choiceId": "return"
+      },
+      "titleKey": "event.forest-result-content-v1.escape.title",
+      "textKey": "event.forest-result-content-v1.escape.choice.return.text",
+      "expectedRender": {
+        "ru": {
+          "title": "Отступить, пока путь ещё открыт",
+          "text": "Ты сохраняешь результат «отступление» отдельным и возвращаешься, не превращая его в успех."
+        },
+        "en": {
+          "title": "Back out while the route is still open",
+          "text": "You keep the escape result distinct and return without converting it into success."
+        }
+      },
+      "exactContinuation": {
+        "kind": "activityResult",
+        "activity": "lumber.forest",
+        "outcome": "escape",
+        "result": "lumber.forest.escape"
+      }
+    },
+    {
+      "routeId": "forest.route.logging-road",
+      "routeState": "logging-road",
+      "outcome": "failure",
+      "resultId": "lumber.forest.failure",
+      "reactionEventId": "forest-result-content-v1.failure",
+      "choiceId": "return",
+      "journalRef": {
+        "kind": "eventChoice",
+        "eventId": "forest-result-content-v1.failure",
+        "choiceId": "return"
+      },
+      "titleKey": "event.forest-result-content-v1.failure.title",
+      "textKey": "event.forest-result-content-v1.failure.choice.return.text",
+      "expectedRender": {
+        "ru": {
+          "title": "Лес обрывает попытку",
+          "text": "Ты принимаешь зафиксированное поражение и возвращаешься к обычному ходу игры."
+        },
+        "en": {
+          "title": "The Forest ends the attempt",
+          "text": "You accept the failed Activity result as recorded and return to ordinary flow."
+        }
+      },
+      "exactContinuation": {
+        "kind": "activityResult",
+        "activity": "lumber.forest",
+        "outcome": "failure",
+        "result": "lumber.forest.failure"
+      }
+    },
+    {
+      "routeId": "forest.route.old-boundary",
+      "routeState": "old-boundary",
+      "outcome": "success",
+      "resultId": "lumber.forest.success",
+      "reactionEventId": "forest-result-content-v1.success",
+      "choiceId": "return",
+      "journalRef": {
+        "kind": "eventChoice",
+        "eventId": "forest-result-content-v1.success",
+        "choiceId": "return"
+      },
+      "titleKey": "event.forest-result-content-v1.success.title",
+      "textKey": "event.forest-result-content-v1.success.choice.return.text",
+      "expectedRender": {
+        "ru": {
+          "title": "Лес уступает дорогу",
+          "text": "Ты оставляешь результат экспедиции неизменным и возвращаешься к обычному городскому ходу дня."
+        },
+        "en": {
+          "title": "The Forest gives way",
+          "text": "You leave the Activity result intact and return to the city-side flow."
+        }
+      },
+      "exactContinuation": {
+        "kind": "activityResult",
+        "activity": "lumber.forest",
+        "outcome": "success",
+        "result": "lumber.forest.success"
+      }
+    },
+    {
+      "routeId": "forest.route.old-boundary",
+      "routeState": "old-boundary",
+      "outcome": "escape",
+      "resultId": "lumber.forest.escape",
+      "reactionEventId": "forest-result-content-v1.escape",
+      "choiceId": "return",
+      "journalRef": {
+        "kind": "eventChoice",
+        "eventId": "forest-result-content-v1.escape",
+        "choiceId": "return"
+      },
+      "titleKey": "event.forest-result-content-v1.escape.title",
+      "textKey": "event.forest-result-content-v1.escape.choice.return.text",
+      "expectedRender": {
+        "ru": {
+          "title": "Отступить, пока путь ещё открыт",
+          "text": "Ты сохраняешь результат «отступление» отдельным и возвращаешься, не превращая его в успех."
+        },
+        "en": {
+          "title": "Back out while the route is still open",
+          "text": "You keep the escape result distinct and return without converting it into success."
+        }
+      },
+      "exactContinuation": {
+        "kind": "activityResult",
+        "activity": "lumber.forest",
+        "outcome": "escape",
+        "result": "lumber.forest.escape"
+      }
+    },
+    {
+      "routeId": "forest.route.old-boundary",
+      "routeState": "old-boundary",
+      "outcome": "failure",
+      "resultId": "lumber.forest.failure",
+      "reactionEventId": "forest-result-content-v1.failure",
+      "choiceId": "return",
+      "journalRef": {
+        "kind": "eventChoice",
+        "eventId": "forest-result-content-v1.failure",
+        "choiceId": "return"
+      },
+      "titleKey": "event.forest-result-content-v1.failure.title",
+      "textKey": "event.forest-result-content-v1.failure.choice.return.text",
+      "expectedRender": {
+        "ru": {
+          "title": "Лес обрывает попытку",
+          "text": "Ты принимаешь зафиксированное поражение и возвращаешься к обычному ходу игры."
+        },
+        "en": {
+          "title": "The Forest ends the attempt",
+          "text": "You accept the failed Activity result as recorded and return to ordinary flow."
+        }
+      },
+      "exactContinuation": {
+        "kind": "activityResult",
+        "activity": "lumber.forest",
+        "outcome": "failure",
+        "result": "lumber.forest.failure"
+      }
+    }
+  ],
+  "invariants": {
+    "routeCount": 2,
+    "outcomeCount": 3,
+    "routeDoesNotCreateResultNamespace": true,
+    "renderLocaleAtReadTime": true,
+    "replayEffects": false,
+    "changesSaveIdentity": false,
+    "changesRng": false
+  }
+}
