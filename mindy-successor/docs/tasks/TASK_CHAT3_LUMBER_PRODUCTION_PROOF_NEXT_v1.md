@@ -3810,3 +3810,97 @@ Consolidate items 269–279 into:
 - PRODUCT_OPEN.
 
 Continue items 269–280 sequentially without waiting for Lead review.
+
+
+## Queue item 305 — post-PR58 ordinary poverty production inventory v1
+Create NEW file only:
+- `docs/poverty-prep/POST_PR58_ORDINARY_POVERTY_PRODUCTION_INVENTORY_V1.md`
+
+Audit exact current main for all ordinary-poverty packs/events/actions/presentationIds/localization keys after PR58.
+Exclude Secret Debt entirely.
+
+## Queue item 306 — ordinary poverty event depth audit v1
+Create NEW file only:
+- `docs/poverty-prep/ORDINARY_POVERTY_EVENT_DEPTH_AUDIT_V1.md`
+
+For every exact current ordinary-poverty event, record:
+- title/body/choice depth;
+- seasonal coverage;
+- RU/EN quality;
+- journal/outcome coverage;
+- presentation identity;
+- content gaps only.
+
+No mechanics changes.
+
+## Queue item 307 — helpful poverty variant bank RU EN v1
+Create NEW file only:
+- `docs/poverty-prep/HELPFUL_POVERTY_VARIANT_BANK_RU_EN_V1.md`
+
+Author additional RU-source + full EN presentation-only variants for exact current helpful/recovery poverty identities.
+Use existing IDs only.
+
+## Queue item 308 — pressure poverty variant bank RU EN v1
+Create NEW file only:
+- `docs/poverty-prep/PRESSURE_POVERTY_VARIANT_BANK_RU_EN_V1.md`
+
+Author additional RU+EN presentation-only variants for exact current pressure/harsh poverty identities.
+No Secret Debt semantics.
+
+## Queue item 309 — cheap/recovery poverty variant bank RU EN v1
+Create NEW file only:
+- `docs/poverty-prep/CHEAP_RECOVERY_POVERTY_VARIANT_BANK_RU_EN_V1.md`
+
+Author RU+EN text variants for exact current cheap/recovery identities only.
+
+## Queue item 310 — poverty event-choice journal map v2
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/poverty-event-choice-journal-map-v2.fixture.json`
+
+Map exact current poverty event/choice IDs to shipped locale-neutral eventChoice localization keys.
+No new Save identity.
+
+## Queue item 311 — poverty presentation identity map v2
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/poverty-presentation-identity-map-v2.fixture.json`
+
+Map exact current poverty event/result identities to current semantic presentationIds.
+Presentation-only.
+
+## Queue item 312 — ordinary poverty localization depth patch v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/ordinary-poverty-localization-depth-v1.fixture.json`
+
+Consolidate only exact existing IDs/keys plus safe additive RU+EN presentation keys from items 307–309.
+No gameplay fields.
+
+## Queue item 313 — ordinary poverty natural-path localization matrix v3
+Create NEW file only:
+- `docs/poverty-prep/ORDINARY_POVERTY_NATURAL_PATH_LOCALIZATION_MATRIX_V3.md`
+
+For representative helpful/pressure/cheap/recovery paths record expected RU/EN, same event/choice/result identity, same costs/effects/RNG/Save.
+
+## Queue item 314 — poverty ownership firewall refresh v2
+Create NEW file only:
+- `docs/poverty-prep/ORDINARY_POVERTY_OWNERSHIP_FIREWALL_V2.md`
+
+Reconfirm strict separation from:
+- Secret Debt;
+- Palace;
+- Foreman/relationship Night;
+- School;
+- Forest Activity result content.
+
+## Queue item 315 — ordinary poverty localization collision regression v1
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/ordinary-poverty-localization-depth-v1.test.ts`
+
+Validate exact current IDs, RU+EN completeness, no Secret Debt keys, no gameplay fields, no namespace collisions.
+
+## Queue item 316 — ordinary poverty depth handoff v1
+Create NEW file only:
+- `docs/poverty-prep/ORDINARY_POVERTY_DEPTH_HANDOFF_V1.md`
+
+Consolidate items 305–315 into SAFE_DEPTH_KEYS / JOURNAL_READY / PRESENTATION_READY / PRODUCT_OPEN_EXCLUDED / SELECTIVE_COPY.
+
+Continue items 305–316 sequentially without waiting for Lead review.
