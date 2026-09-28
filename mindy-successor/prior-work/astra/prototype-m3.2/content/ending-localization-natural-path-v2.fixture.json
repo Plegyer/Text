@@ -1,0 +1,297 @@
+{
+  "version": 2,
+  "fixtureId": "ending-localization-natural-path-v2",
+  "entries": [
+    {
+      "endingId": "guild-life",
+      "titleKey": "ending.guild-life.title",
+      "descriptionKey": "ending.guild-life.description",
+      "acceptKey": "ui.legacy.acceptButton",
+      "expected": {
+        "ru": {
+          "title": "Своя в артели",
+          "description": "Пять практик в лавке, организация 6 и выполненный общий заказ. Наследие: ночлег за полцены и организация +5 в следующей жизни.",
+          "accept": "Принять судьбу"
+        },
+        "en": {
+          "title": "One of the Crew",
+          "description": "Five shop practices, organization 6, and the shared order completed. Legacy: half-price lodging and +5 organization in the next life.",
+          "accept": "Accept fate"
+        }
+      },
+      "eligibility": [
+        {
+          "kind": "metric",
+          "key": "work",
+          "op": "gte",
+          "value": 5
+        },
+        {
+          "kind": "metric",
+          "key": "organization",
+          "op": "gte",
+          "value": 6
+        },
+        {
+          "kind": "flag",
+          "key": "alchemy.delivered",
+          "value": true
+        }
+      ],
+      "rewardId": "guild",
+      "metaRewards": []
+    },
+    {
+      "endingId": "scholar-life",
+      "titleKey": "ending.scholar-life.title",
+      "descriptionKey": "ending.scholar-life.description",
+      "acceptKey": "ui.legacy.acceptButton",
+      "expected": {
+        "ru": {
+          "title": "Дипломированная алхимичка",
+          "description": "Сдать экзамен. Наследие: смекалка +5 на старте и один бесплатный урок каждую неделю.",
+          "accept": "Принять судьбу"
+        },
+        "en": {
+          "title": "Certified Alchemist",
+          "description": "Pass the exam. Legacy: +5 intelligence at the start and one free lesson every week.",
+          "accept": "Accept fate"
+        }
+      },
+      "eligibility": [
+        {
+          "kind": "flag",
+          "key": "school.exam",
+          "value": true
+        }
+      ],
+      "rewardId": "scholar",
+      "metaRewards": []
+    },
+    {
+      "endingId": "tavern-stay",
+      "titleKey": "ending.tavern-stay.title",
+      "descriptionKey": "ending.tavern-stay.description",
+      "acceptKey": "ui.legacy.acceptButton",
+      "expected": {
+        "ru": {
+          "title": "Хозяйка третьего тоста",
+          "description": "18 смен в таверне. Наследие: обаяние +5 в следующей жизни.",
+          "accept": "Принять судьбу"
+        },
+        "en": {
+          "title": "Mistress of the Third Toast",
+          "description": "Complete 18 tavern shifts. Legacy: +5 charm in the next life.",
+          "accept": "Accept fate"
+        }
+      },
+      "eligibility": [
+        {
+          "kind": "visits",
+          "action": "tavern",
+          "value": 18
+        }
+      ],
+      "rewardId": "host",
+      "metaRewards": []
+    },
+    {
+      "endingId": "tavern-guild",
+      "titleKey": "ending.tavern-guild.title",
+      "descriptionKey": "ending.tavern-guild.description",
+      "acceptKey": "ui.legacy.acceptButton",
+      "expected": {
+        "ru": {
+          "title": "Праздник без разрешения",
+          "description": "Защитить самостоятельность городского праздника. Наследие: чуткость +5.",
+          "accept": "Принять судьбу"
+        },
+        "en": {
+          "title": "Festival Without Permission",
+          "description": "Protect the town festival’s independence. Legacy: +5 empathy.",
+          "accept": "Accept fate"
+        }
+      },
+      "eligibility": [
+        {
+          "kind": "flag",
+          "key": "tavern.guild",
+          "value": true
+        }
+      ],
+      "rewardId": "mediator",
+      "metaRewards": []
+    },
+    {
+      "endingId": "tavern-court",
+      "titleKey": "ending.tavern-court.title",
+      "descriptionKey": "ending.tavern-court.description",
+      "acceptKey": "ui.legacy.acceptButton",
+      "expected": {
+        "ru": {
+          "title": "Приглашение под печатью",
+          "description": "Передать накладную принцу. Наследие: дерзость +5.",
+          "accept": "Принять судьбу"
+        },
+        "en": {
+          "title": "Invitation Under Seal",
+          "description": "Give the delivery note to the prince. Legacy: +5 boldness.",
+          "accept": "Accept fate"
+        }
+      },
+      "eligibility": [
+        {
+          "kind": "flag",
+          "key": "tavern.prince",
+          "value": true
+        }
+      ],
+      "rewardId": "court",
+      "metaRewards": []
+    },
+    {
+      "endingId": "lumber-stay",
+      "titleKey": "ending.lumber-stay.title",
+      "descriptionKey": "ending.lumber-stay.description",
+      "acceptKey": "ui.legacy.acceptButton",
+      "expected": {
+        "ru": {
+          "title": "Бригадир поневоле",
+          "description": "24 смены у лесорубов. В следующей жизни дневной запас энергии +1.",
+          "accept": "Принять судьбу"
+        },
+        "en": {
+          "title": "Reluctant Forewoman",
+          "description": "Complete 24 lumber shifts. In the next life, daytime Energy maximum is +1.",
+          "accept": "Accept fate"
+        }
+      },
+      "eligibility": [
+        {
+          "kind": "visits",
+          "action": "lumber",
+          "value": 24
+        }
+      ],
+      "rewardId": "vitality",
+      "metaRewards": []
+    },
+    {
+      "endingId": "ending.lumber.hard-work",
+      "titleKey": "ending.ending.lumber.hard-work.title",
+      "descriptionKey": "ending.ending.lumber.hard-work.description",
+      "acceptKey": "ui.legacy.acceptButton",
+      "expected": {
+        "ru": {
+          "title": "Лесоруб: тяжкий труд",
+          "description": "Завершить 50 смен в карьере лесоруба. Судьба отмечает упорство без дополнительных сюжетных условий.",
+          "accept": "Принять судьбу"
+        },
+        "en": {
+          "title": "Lumber: Hard Work",
+          "description": "Complete 50 shifts in the Lumber career. This fate recognizes persistence without additional story requirements.",
+          "accept": "Accept fate"
+        }
+      },
+      "eligibility": [
+        {
+          "kind": "careerCounter",
+          "career": "lumber",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 50
+        }
+      ],
+      "rewardId": "lumber.hardwork.compat",
+      "metaRewards": [
+        {
+          "kind": "hardWork",
+          "rewardId": "hardWork:lumber",
+          "career": "lumber"
+        }
+      ]
+    },
+    {
+      "endingId": "ending.lumber.forewoman",
+      "titleKey": "ending.ending.lumber.forewoman.title",
+      "descriptionKey": "ending.ending.lumber.forewoman.description",
+      "acceptKey": "ui.legacy.acceptButton",
+      "expected": {
+        "ru": {
+          "title": "Бригадир лесной артели",
+          "description": "Судьба профессионального пути: нужные карьерные факты после обучения и завершения проблемы, а также профессиональный этап отношений с бригадиром.",
+          "accept": "Принять судьбу"
+        },
+        "en": {
+          "title": "Lumber Forewoman",
+          "description": "Professional-route fate: the required career facts after training and resolving the problem, plus the professional relationship stage with the Foreman.",
+          "accept": "Accept fate"
+        }
+      },
+      "eligibility": [
+        {
+          "kind": "careerFact",
+          "career": "lumber",
+          "fact": "management-school-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "lumber",
+          "fact": "forewoman-problem-resolved",
+          "present": true
+        },
+        {
+          "kind": "relationshipStage",
+          "relationship": "lumber.foreman",
+          "stage": "route-professional"
+        }
+      ],
+      "rewardId": "lumber.forewoman.compat",
+      "metaRewards": []
+    },
+    {
+      "endingId": "ending.lumber.forest",
+      "titleKey": "ending.ending.lumber.forest.title",
+      "descriptionKey": "ending.ending.lumber.forest.description",
+      "acceptKey": "ui.legacy.acceptButton",
+      "expected": {
+        "ru": {
+          "title": "Лесная развязка артели",
+          "description": "Судьба после подтверждённой лесной правды и завершения связанной карьерной проблемы в артели.",
+          "accept": "Принять судьбу"
+        },
+        "en": {
+          "title": "Lumber Forest Resolution",
+          "description": "A fate reached after the forest truth is confirmed and the related Lumber career problem is resolved.",
+          "accept": "Accept fate"
+        }
+      },
+      "eligibility": [
+        {
+          "kind": "careerFact",
+          "career": "lumber",
+          "fact": "forest-truth-known",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "lumber",
+          "fact": "forest-problem-resolved",
+          "present": true
+        }
+      ],
+      "rewardId": "lumber.forest.compat",
+      "metaRewards": []
+    }
+  ],
+  "invariants": {
+    "sourceBaseline": "54131488c65302f81b3001abaaa345d21f0281e2",
+    "exactCurrentEndingIdsOnly": true,
+    "eligibilityIdentityUnchanged": true,
+    "rewardIdentityUnchanged": true,
+    "metaRewardIdentityUnchanged": true,
+    "localeSwitchMutatesSave": false,
+    "localeSwitchConsumesRng": false
+  }
+}
