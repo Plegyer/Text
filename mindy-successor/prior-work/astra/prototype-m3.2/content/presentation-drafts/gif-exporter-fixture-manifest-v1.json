@@ -1,0 +1,42 @@
+{
+  "formatVersion": 1,
+  "kind": "gif-exporter-fixture-manifest",
+  "status": "FIXTURE_SOURCE_ONLY_NO_GIF_BYTES",
+  "dependencyExpectation": {
+    "sharp": "0.35.4",
+    "gifenc": "1.0.3"
+  },
+  "sequences": [
+    {
+      "presentationId": "job/lumber/shift/spring/default",
+      "sequenceKey": "lumber-spring-work-loop-a",
+      "candidateKey": "lumber-spring-loop-a",
+      "frames": [
+        "assets/presentation-frames/lumber-spring-work-loop-a-frame-01.svg",
+        "assets/presentation-frames/lumber-spring-work-loop-a-frame-02.svg",
+        "assets/presentation-frames/lumber-spring-work-loop-a-frame-03.svg",
+        "assets/presentation-frames/lumber-spring-work-loop-a-frame-04.svg"
+      ],
+      "normalizedFrameDelayMs": 600,
+      "normalizedExportLoopDurationMs": 2400,
+      "staticFallback": "assets/presentation/career-lumber-shift-spring.svg",
+      "gifPath": null
+    }
+  ],
+  "expectedDryRun": {
+    "output": "assets/gif/fixtures/lumber-spring-loop-a.gif",
+    "width": 640,
+    "height": 360,
+    "frameDurationMs": 600,
+    "totalDurationMs": 2400,
+    "loopCount": 0,
+    "palette": 256,
+    "expectedFileExists": false
+  },
+  "invariants": {
+    "localProjectOwnedSvgOnly": true,
+    "noGifClaim": true,
+    "noGameplayFields": true,
+    "localeNeutralCandidateKey": true
+  }
+}
