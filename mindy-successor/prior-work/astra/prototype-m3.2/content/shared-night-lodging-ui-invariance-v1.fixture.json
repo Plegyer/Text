@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "id": "shared-night-lodging-ui-invariance.v1",
+  "status": "PRESENTATION_ONLY_EXPECTATION",
+  "baseMain": "5dffefd15703d431a604b4cc9f831c4e55460aed",
+  "representativePaths": [
+    {
+      "id": "normal-room-sleep",
+      "phases": [
+        "LodgingResolution",
+        "VoluntaryNightChoice"
+      ],
+      "lodgingId": "lodging.normal",
+      "nightChoiceId": "night.sleep",
+      "expectedPresentation": {
+        "lodgingLabel": {
+          "ru": "Обычная комната",
+          "en": "Normal room"
+        },
+        "lodgingPrompt": {
+          "ru": "Выберите место на эту ночь. Плата за ночлег списывается один раз.",
+          "en": "Choose a place for tonight. The lodging cost is charged once."
+        },
+        "nightChoiceLabel": {
+          "ru": "Спать",
+          "en": "Sleep"
+        },
+        "nightChoicePrompt": {
+          "ru": "Выберите одно добровольное ночное занятие. Дневная Энергия при этом не расходуется.",
+          "en": "Choose one voluntary night activity. This does not spend daytime Energy."
+        }
+      },
+      "unchangedGameplay": {
+        "moneyCost": 100,
+        "housing": "normal",
+        "lodgingNextDayEnergyDelta": 0,
+        "lodgingNextDayEffects": [],
+        "nightChoiceNextDayEnergyDelta": 0,
+        "nightChoiceEffects": []
+      }
+    },
+    {
+      "id": "cheap-lodging-sleep",
+      "phases": [
+        "LodgingResolution",
+        "VoluntaryNightChoice"
+      ],
+      "lodgingId": "lodging.cheap",
+      "nightChoiceId": "night.sleep",
+      "expectedPresentation": {
+        "lodgingLabel": {
+          "ru": "Дешёвый ночлег",
+          "en": "Cheap lodging"
+        },
+        "lodgingPrompt": {
+          "ru": "Выберите место на эту ночь. Плата за ночлег списывается один раз.",
+          "en": "Choose a place for tonight. The lodging cost is charged once."
+        },
+        "nightChoiceLabel": {
+          "ru": "Спать",
+          "en": "Sleep"
+        },
+        "nightChoicePrompt": {
+          "ru": "Выберите одно добровольное ночное занятие. Дневная Энергия при этом не расходуется.",
+          "en": "Choose one voluntary night activity. This does not spend daytime Energy."
+        }
+      },
+      "unchangedGameplay": {
+        "moneyCost": 50,
+        "housing": "cheap",
+        "lodgingNextDayEnergyDelta": 0,
+        "lodgingNextDayEffects": [],
+        "nightChoiceNextDayEnergyDelta": 0,
+        "nightChoiceEffects": []
+      }
+    },
+    {
+      "id": "street-sleep",
+      "phases": [
+        "LodgingResolution",
+        "VoluntaryNightChoice"
+      ],
+      "lodgingId": "lodging.street",
+      "nightChoiceId": "night.sleep",
+      "expectedPresentation": {
+        "lodgingLabel": {
+          "ru": "Улица / без ночлега",
+          "en": "Street / no lodging"
+        },
+        "lodgingPrompt": {
+          "ru": "Выберите место на эту ночь. Плата за ночлег списывается один раз.",
+          "en": "Choose a place for tonight. The lodging cost is charged once."
+        },
+        "nightChoiceLabel": {
+          "ru": "Спать",
+          "en": "Sleep"
+        },
+        "nightChoicePrompt": {
+          "ru": "Выберите одно добровольное ночное занятие. Дневная Энергия при этом не расходуется.",
+          "en": "Choose one voluntary night activity. This does not spend daytime Energy."
+        }
+      },
+      "unchangedGameplay": {
+        "moneyCost": 0,
+        "housing": "street",
+        "lodgingNextDayEnergyDelta": -1,
+        "lodgingNextDayEffects": [
+          {
+            "stat": "grooming",
+            "delta": -1
+          }
+        ],
+        "nightChoiceNextDayEnergyDelta": 0,
+        "nightChoiceEffects": []
+      }
+    }
+  ],
+  "invariantSaveFields": [
+    "run.flow.night.phase",
+    "run.flow.night.selectedLodgingId",
+    "run.flow.night.lodgingPaymentCommitted",
+    "run.flow.night.selectedNightChoiceId",
+    "run.resources.money",
+    "run.housingState.current",
+    "run.housingState.paidForCurrentNight",
+    "run.nextDay",
+    "run.day"
+  ],
+  "rules": [
+    "Changing locale changes only presentation strings.",
+    "Lodging IDs and Night choice IDs stay locale-neutral and exact.",
+    "Money cost, housing assignment, next-day Energy and next-day effects remain authoritative definitions values.",
+    "Localization lookup writes no gameplay Save field.",
+    "NightFlow phase identity is never translated in state.",
+    "School and Foreman Night choices keep their existing mechanics and ownership."
+  ]
+}
