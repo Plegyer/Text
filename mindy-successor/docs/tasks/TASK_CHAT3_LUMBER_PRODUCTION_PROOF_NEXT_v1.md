@@ -3603,3 +3603,108 @@ Create NEW file only:
 Consolidate items 269–279 into ROUTE_COPY_READY / ALT_READY / JOURNAL_READY / SEAM_REQUIRED / VISUAL_SOURCE_STATUS / PRODUCT_OPEN.
 
 Continue items 269–280 sequentially without waiting for Lead review.
+
+
+## Queue item 293 — current-main Secret Debt production inventory v1
+Create NEW file only:
+- `docs/poverty-prep/SECRET_DEBT_CURRENT_MAIN_PRODUCTION_INVENTORY_V1.md`
+
+Audit exact current main for every existing Secret Debt / forced-debt-night event, ending hook, localization key, presentationId and current consumer seam.
+Use only exact existing IDs.
+Keep Secret Debt separate from ordinary poverty and from Palace career-count logic.
+
+## Queue item 294 — Secret Debt forced-Night identity audit v1
+Create NEW file only:
+- `docs/poverty-prep/SECRET_DEBT_FORCED_NIGHT_IDENTITY_AUDIT_V1.md`
+
+Document exact current forced-night identities and triggers already present in production.
+Do not invent new NightFlow phases, route IDs, debt thresholds or relationship identities.
+
+## Queue item 295 — Secret Debt RU source copy polish v1
+Create NEW file only:
+- `docs/poverty-prep/SECRET_DEBT_RU_SOURCE_COPY_POLISH_V1.md`
+
+Polish current Russian source text for exact existing Secret Debt scenes/endings only.
+Preserve mechanics, tone boundaries and identity.
+
+## Queue item 296 — Secret Debt EN parity review v1
+Create NEW file only:
+- `docs/poverty-prep/SECRET_DEBT_EN_PARITY_REVIEW_V1.md`
+
+Produce/review full English parity for item 295.
+No event duplication by locale.
+
+## Queue item 297 — Secret Debt localization fixture v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/secret-debt-localization-v1.fixture.json`
+
+Contain RU+EN strings for exact current Secret Debt identities only.
+Presentation/text fields only; no mechanics fields.
+
+## Queue item 298 — Secret Debt natural-path matrix v1
+Create NEW file only:
+- `docs/poverty-prep/SECRET_DEBT_NATURAL_PATH_MATRIX_V1.md`
+
+For each exact current Secret Debt scene/result/ending, document:
+- natural trigger path;
+- exact event/result/ending identity;
+- expected RU/EN text;
+- exact unchanged debt/Night/Save/RNG invariants.
+
+## Queue item 299 — Secret Debt ownership firewall v1
+Create NEW file only:
+- `docs/poverty-prep/SECRET_DEBT_OWNERSHIP_FIREWALL_V1.md`
+
+Explicitly separate:
+- ordinary poverty content;
+- Secret Debt forced-night content;
+- Palace career content;
+- relationship voluntary Night content.
+
+No cross-owner promotion or ID reuse.
+
+## Queue item 300 — Secret Debt / Palace exclusion audit v1
+Create NEW file only:
+- `docs/poverty-prep/SECRET_DEBT_PALACE_EXCLUSION_AUDIT_V1.md`
+
+Verify from exact current content that Secret Debt remains excluded from the Palace 10/10 career structure and does not become an ordinary career.
+Document exact evidence only.
+
+## Queue item 301 — Secret Debt presentation identity map v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/secret-debt-presentation-identity-map-v1.fixture.json`
+
+Map exact current Secret Debt event/result/ending identities to current or proposed semantic presentationIds.
+Presentation-only.
+Do not add new gameplay IDs.
+
+## Queue item 302 — Secret Debt journal/outcome localization expectations v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/secret-debt-journal-localization-v1.fixture.json`
+
+Record expected RU/EN Journal/lastAction rendering under the shipped locale-neutral journal ref mechanism.
+Do not add fuzzy migration or new Save identity.
+
+## Queue item 303 — Secret Debt selective production patch candidate v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/secret-debt-production-patch-v1.fixture.json`
+
+If exact current Secret Debt identities exist and items 293–302 prove them safe, consolidate only additive/identical/reviewed RU+EN text keys.
+
+If current main has no exact production identities suitable for a patch, self-declare CONTENT_BLOCKED and emit no invented IDs.
+
+## Queue item 304 — Secret Debt integration handoff v1
+Create NEW file only:
+- `docs/poverty-prep/SECRET_DEBT_INTEGRATION_HANDOFF_V1.md`
+
+Consolidate items 293–303 into:
+- CURRENT_IDENTITIES;
+- SAFE_LOCALIZATION;
+- JOURNAL_READY;
+- PRESENTATION_READY;
+- PALACE_EXCLUDED;
+- CONTENT_BLOCKED where applicable.
+
+Include exact selective-copy files and remaining blockers.
+
+Continue items 293–304 sequentially without waiting for Lead review.
