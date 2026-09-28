@@ -1,0 +1,41 @@
+{
+  "formatVersion": 1,
+  "kind": "gif-export-smoke-fixture",
+  "status": "COMMAND_ONLY_NO_GIF_BYTES",
+  "presentationId": "school/literacy-and-numbers/lesson/default",
+  "sequenceKey": "school-literacy-study-loop-a",
+  "candidateKey": "school-literacy-loop-a",
+  "manifest": "content/presentation-drafts/project-owned-animation-source-manifest-v3.json",
+  "command": [
+    "node",
+    "tools/export-presentation-gif.mjs",
+    "--manifest",
+    "content/presentation-drafts/project-owned-animation-source-manifest-v3.json",
+    "--presentation-id",
+    "school/literacy-and-numbers/lesson/default",
+    "--sequence",
+    "school-literacy-study-loop-a",
+    "--output",
+    "assets/gif/smoke/school-literacy-loop-a.gif",
+    "--width",
+    "640",
+    "--height",
+    "360",
+    "--frame-duration-ms",
+    "750",
+    "--loop-count",
+    "0"
+  ],
+  "expected": {
+    "output": "assets/gif/smoke/school-literacy-loop-a.gif",
+    "width": 640,
+    "height": 360,
+    "frameCount": 4,
+    "frameDurationMs": 750,
+    "totalDurationMs": 3000,
+    "loopCount": 0,
+    "maxPaletteColors": 256,
+    "fileExists": false
+  },
+  "cleanup": "Delete smoke output unless separately promoted through production media QA."
+}
