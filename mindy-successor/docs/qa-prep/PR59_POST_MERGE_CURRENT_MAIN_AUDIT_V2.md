@@ -8,8 +8,11 @@ PR:
 - accepted exact head: `01109fd08cece24308d3d9a64127b08e6fc5d702`
 - merge SHA: `54131488c65302f81b3001abaaa345d21f0281e2`
 
-Current main:
+PR59 immediate post-merge main:
 `54131488c65302f81b3001abaaa345d21f0281e2`.
+
+Current main later advanced by PR60 to:
+`2ad9fb8b0572f8903bbf57d144c8c5938023a440`.
 
 ## PR59 shipped scope
 
@@ -171,3 +174,17 @@ PR59 is production-accepted on current main.
 
 Logging-road has a safe route-specific static.
 Old-boundary deliberately remains on the neutral fallback.
+
+
+## Superseding current-main note
+
+PR60 subsequently activated the reviewed Old Boundary v3 static and passed:
+- exact run #119: 363/363;
+- post-merge main run #120: 363/363;
+- validator 17/46/35/9.
+
+Therefore the statement “Old Boundary uses neutral physical fallback” is correct for the audited PR59 merge state, but no longer describes latest main.
+
+Latest main now has route-specific physical statics for both logging-road and old-boundary while retaining route/default fallback metadata.
+
+PR59 itself remains fully accepted.
