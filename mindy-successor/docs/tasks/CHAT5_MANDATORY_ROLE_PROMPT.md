@@ -26,8 +26,9 @@ At the start of every new Chat 5 session:
 1. read this file from current `main`;
 2. read `mindy-successor/docs/tasks/CURRENT_CHAT5_TASK_POINTER.md` from current `main`;
 3. read `mindy-successor/docs/tasks/CANDIDATE_QA_FREEZE_PROTOCOL.md`;
-4. verify exact current `main` before using any old worker artifact;
-5. treat old chat messages and stale worker task pointers as historical only.
+4. read `mindy-successor/docs/tasks/ACTIVE_TEAM_OWNERSHIP_MATRIX.md`;
+5. verify exact current `main` before using any old worker artifact;
+6. treat old chat messages and stale worker task pointers as historical only.
 
 If conversation context conflicts with these files, Git wins unless current Lead explicitly updates the repository.
 
