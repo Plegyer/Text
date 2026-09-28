@@ -940,3 +940,58 @@ test('renderer: Forest route-specific presentation stays locale and save invaria
   assert.deepEqual(errors,[]);
  }finally{dom.window.close();}
 });
+
+
+test('renderer: ordinary action result localizes RU EN without changing save',async()=>{
+ const s=started();
+ const {w,dom,errors}=boot(JSON.stringify(s));try{
+  await wait(()=>!!w.document.querySelector('[data-panel="explore"]'));
+  w.document.querySelector('[data-panel="explore"]').click();
+  await wait(()=>!!w.document.querySelector('[data-action="oddjob"]'));
+  w.document.querySelector('[data-action="oddjob"]').click();
+  await wait(()=>w.document.querySelector('.stage-title h1')?.textContent==='Мелкая подработка');
+
+  assert.match(w.document.querySelector('.dialogue p')?.textContent??'',/10 монет за поручение/);
+  const before=w.localStorage.getItem('portal-life.v1');
+  const beforeParsed=JSON.parse(before);
+
+  w.document.querySelector('[data-panel="menu"]').click();
+  w.document.querySelector('#language-toggle').click();
+  await wait(()=>w.document.documentElement.lang==='en');
+  assert.equal(w.localStorage.getItem('portal-life.v1'),before);
+  w.document.querySelector('#close').click();
+
+  assert.equal(w.document.querySelector('.stage-title h1')?.textContent,'Take a small odd job');
+  assert.match(w.document.querySelector('.dialogue p')?.textContent??'',/Earn 10 coins for an errand/);
+  const after=JSON.parse(w.localStorage.getItem('portal-life.v1'));
+  assert.equal(after.run.historyState.actionCounts.oddjob,beforeParsed.run.historyState.actionCounts.oddjob);
+  assert.equal(after.run.rngState.state,beforeParsed.run.rngState.state);
+  assert.deepEqual(after.run.flow.lastAction,beforeParsed.run.flow.lastAction);
+  assert.deepEqual(errors,[]);
+ }finally{dom.window.close();}
+});
+
+test('renderer: ending cards localize RU EN without changing eligibility or save',async()=>{
+ const s=started();
+ const {w,dom,errors}=boot(JSON.stringify(s));try{
+  await wait(()=>!!w.document.querySelector('[data-panel="legacy"]'));
+  const before=w.localStorage.getItem('portal-life.v1');
+
+  w.document.querySelector('[data-panel="legacy"]').click();
+  assert.match(w.document.querySelector('.panel')?.textContent??'',/Своя в артели/);
+  assert.match(w.document.querySelector('.panel')?.textContent??'',/Пять практик в лавке/);
+  w.document.querySelector('#close').click();
+
+  w.document.querySelector('[data-panel="menu"]').click();
+  w.document.querySelector('#language-toggle').click();
+  await wait(()=>w.document.documentElement.lang==='en');
+  assert.equal(w.localStorage.getItem('portal-life.v1'),before);
+  w.document.querySelector('#close').click();
+
+  w.document.querySelector('[data-panel="legacy"]').click();
+  assert.match(w.document.querySelector('.panel')?.textContent??'',/One of the Crew/);
+  assert.match(w.document.querySelector('.panel')?.textContent??'',/Five shop practices/);
+  assert.equal(w.localStorage.getItem('portal-life.v1'),before);
+  assert.deepEqual(errors,[]);
+ }finally{dom.window.close();}
+});

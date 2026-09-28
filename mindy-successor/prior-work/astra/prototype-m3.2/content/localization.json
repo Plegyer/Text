@@ -2657,6 +2657,206 @@
     "presentation.activity.forest.route.old-boundary.caption": {
       "ru": "Камни и старые знаки складываются в линию, не совпадающую с новой лесовозной дорогой.",
       "en": "Stones and old markers form a line that does not follow the newer logging road."
+    },
+    "ending.guild-life.title": {
+      "ru": "Своя в артели",
+      "en": "One of the Crew"
+    },
+    "ending.guild-life.description": {
+      "ru": "Пять практик в лавке, организация 6 и выполненный общий заказ. Наследие: ночлег за полцены и организация +5 в следующей жизни.",
+      "en": "Five shop practices, organization 6, and the shared order completed. Legacy: half-price lodging and +5 organization in the next life."
+    },
+    "ending.scholar-life.title": {
+      "ru": "Дипломированная алхимичка",
+      "en": "Certified Alchemist"
+    },
+    "ending.scholar-life.description": {
+      "ru": "Сдать экзамен. Наследие: смекалка +5 на старте и один бесплатный урок каждую неделю.",
+      "en": "Pass the exam. Legacy: +5 intelligence at the start and one free lesson every week."
+    },
+    "ending.tavern-stay.title": {
+      "ru": "Хозяйка третьего тоста",
+      "en": "Mistress of the Third Toast"
+    },
+    "ending.tavern-stay.description": {
+      "ru": "18 смен в таверне. Наследие: обаяние +5 в следующей жизни.",
+      "en": "Complete 18 tavern shifts. Legacy: +5 charm in the next life."
+    },
+    "ending.tavern-guild.title": {
+      "ru": "Праздник без разрешения",
+      "en": "Festival Without Permission"
+    },
+    "ending.tavern-guild.description": {
+      "ru": "Защитить самостоятельность городского праздника. Наследие: чуткость +5.",
+      "en": "Protect the town festival’s independence. Legacy: +5 empathy."
+    },
+    "ending.tavern-court.title": {
+      "ru": "Приглашение под печатью",
+      "en": "Invitation Under Seal"
+    },
+    "ending.tavern-court.description": {
+      "ru": "Передать накладную принцу. Наследие: дерзость +5.",
+      "en": "Give the delivery note to the prince. Legacy: +5 boldness."
+    },
+    "ending.lumber-stay.title": {
+      "ru": "Бригадир поневоле",
+      "en": "Reluctant Forewoman"
+    },
+    "ending.lumber-stay.description": {
+      "ru": "24 смены у лесорубов. В следующей жизни дневной запас энергии +1.",
+      "en": "Complete 24 lumber shifts. In the next life, daytime Energy maximum is +1."
+    },
+    "ending.ending.lumber.hard-work.title": {
+      "ru": "Лесоруб: тяжкий труд",
+      "en": "Lumber: Hard Work"
+    },
+    "ending.ending.lumber.hard-work.description": {
+      "ru": "Завершить 50 смен в карьере лесоруба. Судьба отмечает упорство без дополнительных сюжетных условий.",
+      "en": "Complete 50 shifts in the Lumber career. This fate recognizes persistence without additional story requirements."
+    },
+    "ending.ending.lumber.forewoman.title": {
+      "ru": "Бригадир лесной артели",
+      "en": "Lumber Forewoman"
+    },
+    "ending.ending.lumber.forewoman.description": {
+      "ru": "Судьба профессионального пути: нужные карьерные факты после обучения и завершения проблемы, а также профессиональный этап отношений с бригадиром.",
+      "en": "Professional-route fate: the required career facts after training and resolving the problem, plus the professional relationship stage with the Foreman."
+    },
+    "ending.ending.lumber.forest.title": {
+      "ru": "Лесная развязка артели",
+      "en": "Lumber Forest Resolution"
+    },
+    "ending.ending.lumber.forest.description": {
+      "ru": "Судьба после подтверждённой лесной правды и завершения связанной карьерной проблемы в артели.",
+      "en": "A fate reached after the forest truth is confirmed and the related Lumber career problem is resolved."
+    },
+    "action.work.label": {
+      "ru": "Практика в учебной лавке",
+      "en": "Practice in the training shop"
+    },
+    "action.work.scene.default.text": {
+      "ru": "30 монет, опыт и знакомства. Занимает одно действие.",
+      "en": "30 coins, practice, and new connections. Takes one action."
+    },
+    "action.forage.label": {
+      "ru": "Собрать травы",
+      "en": "Gather herbs"
+    },
+    "action.forage.scene.default.text": {
+      "ru": "Две порции трав. В зимнем городе сбор заменяет работа с запасами.",
+      "en": "Gather two portions of herbs. In winter, city foraging is replaced by working with stored supplies."
+    },
+    "action.brew.label": {
+      "ru": "Приготовить микстуру",
+      "en": "Brew a tonic"
+    },
+    "action.brew.scene.default.text": {
+      "ru": "Одна трава и один ход. Щадящий нагрев даёт одну микстуру; быстрый — две при мастерстве 3 или наличии весов.",
+      "en": "One herb and one action. Gentle heating yields one tonic; the fast method yields two with mastery 3 or a set of scales."
+    },
+    "action.sell.label": {
+      "ru": "Продать микстуру",
+      "en": "Sell a tonic"
+    },
+    "action.sell.scene.default.text": {
+      "ru": "Продажа одной готовой микстуры за 24 монеты.",
+      "en": "Sell one finished tonic for 24 coins."
+    },
+    "action.scales.label": {
+      "ru": "Купить точные весы",
+      "en": "Buy precise scales"
+    },
+    "action.scales.scene.default.text": {
+      "ru": "60 монет. Открывают быстрый способ приготовления без риска пены.",
+      "en": "Costs 60 coins. Unlocks the fast brewing method without the risk of foam."
+    },
+    "action.exam.label": {
+      "ru": "Сдать экзамен",
+      "en": "Take the exam"
+    },
+    "action.exam.scene.default.text": {
+      "ru": "3 урока, смекалка 7 и мастерство 2. Экзамен стоит 20 монет.",
+      "en": "Requires 3 lessons, intelligence 7, and alchemy mastery 2. The exam costs 20 coins."
+    },
+    "action.deliver.label": {
+      "ru": "Сдать общий заказ",
+      "en": "Deliver the shared order"
+    },
+    "action.deliver.scene.default.text": {
+      "ru": "Передать две микстуры артели: награда 50 монет, доступ к судьбе.",
+      "en": "Deliver two tonics to the crew: reward 50 coins and access to a fate."
+    },
+    "action.visit.label": {
+      "ru": "Зайти в чайную",
+      "en": "Visit the tea shop"
+    },
+    "action.visit.scene.default.text": {
+      "ru": "Поговорить с Браном. Линия открывается после первого знакомства.",
+      "en": "Talk with Bran. This line opens after your first meeting."
+    },
+    "action.oddjob.label": {
+      "ru": "Мелкая подработка",
+      "en": "Take a small odd job"
+    },
+    "action.oddjob.scene.default.text": {
+      "ru": "10 монет за поручение. Доступна без образования и инструментов.",
+      "en": "Earn 10 coins for an errand. Available without education or tools."
+    },
+    "action.repay.label": {
+      "ru": "Погасить часть долга",
+      "en": "Repay part of the debt"
+    },
+    "action.repay.scene.default.text": {
+      "ru": "Вернуть до 10 монет, не больше остатка долга. Долг не исчезает при переезде.",
+      "en": "Repay up to 10 coins, never more than the remaining debt. Moving does not erase the debt."
+    },
+    "action.rent-room.label": {
+      "ru": "Вернуться в комнату",
+      "en": "Return to a room"
+    },
+    "action.rent-room.scene.default.text": {
+      "ru": "Снять комнату за 18 монет после погашения старого долга. Ночлег оплачивается отдельно.",
+      "en": "Rent a room for 18 coins after clearing the old debt. Night lodging is paid separately."
+    },
+    "action.rest.label": {
+      "ru": "Отдохнуть",
+      "en": "Rest"
+    },
+    "action.rest.scene.default.text": {
+      "ru": "Выбрать ночлег. Оплата монетами, помощь хозяину или бесплатный навес.",
+      "en": "Choose lodging: pay with coins, help the host, or use the free shelter."
+    },
+    "action.arrival.label": {
+      "ru": "Пойти за белым сусликом",
+      "en": "Follow the white gopher"
+    },
+    "action.arrival.scene.default.text": {
+      "ru": "За белым сусликом — в новую жизнь.",
+      "en": "Follow the white gopher into a new life."
+    },
+    "action.forest-search.label": {
+      "ru": "Проверить лесной склад",
+      "en": "Check the forest storehouse"
+    },
+    "action.forest-search.scene.default.text": {
+      "ru": "Найти накладную Марека; нужно чутьё 3. Текстовая вылазка на лесной склад.",
+      "en": "Find Marek’s delivery note; requires perception 3. A text-based outing to the forest storehouse."
+    },
+    "action.tavern-talk.label": {
+      "ru": "Обсудить накладную с трактирщиком",
+      "en": "Discuss the delivery note with the innkeeper"
+    },
+    "action.tavern-talk.scene.default.text": {
+      "ru": "Вернуться с уликой и решить, кому достанется право на праздник.",
+      "en": "Return with the clue and decide who receives the right to hold the festival."
+    },
+    "action.landlord.label": {
+      "ru": "Навестить хозяина комнаты",
+      "en": "Visit the landlord"
+    },
+    "action.landlord.scene.default.text": {
+      "ru": "Силан расскажет о жилье и предложит чай. Первое знакомство.",
+      "en": "Silan will explain the housing arrangement and offer tea. First meeting."
     }
   }
 }
