@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img"
+ data-presentation-id="activity/forest/route/old-boundary"
+ data-sequence-id="forest-route-old-boundary-loop-c"
+ data-frame-index="2" data-frame-count="4" data-loop-duration-ms="3400">
+<defs>
+  <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#20343d"/><stop offset="1" stop-color="#6b6151"/></linearGradient>
+  <radialGradient id="mist"><stop stop-color="#c5c8ad" stop-opacity=".25"/><stop offset="1" stop-color="#c5c8ad" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1200" height="675" fill="url(#bg)"/>
+<circle cx="628" cy="235" r="345" fill="url(#mist)"/>
+<path d="M0 330Q185 214 375 340T758 298T1200 250V675H0Z" fill="#304c41"/>
+<path d="M0 470Q260 334 545 458T1200 388V675H0Z" fill="#273f37"/>
+<path d="M438 675L555 392H645L805 675Z" fill="#84725b"/>
+<g fill="#73746c" stroke="#555c56" stroke-width="7">
+  <path d="M278 520l18-86 64-18 26 94-47 43z"/>
+  <path d="M850 495l28-98 71 11 15 92-54 43z"/>
+  <path d="M355 558l13-57 47-9 18 61-35 34z"/>
+  <path d="M785 558l15-63 49-8 17 65-37 33z"/>
+</g>
+<g stroke="#a19a81" stroke-width="7" opacity=".74">
+  <path d="M306 450l35 48"/>
+  <path d="M317 494l27-33"/>
+  <path d="M886 420l38 50"/>
+  <path d="M896 468l27-37"/>
+</g>
+<g fill="#c3c6ae" opacity=".15"><ellipse cx="468" cy="470" rx="135" ry="25"/><ellipse cx="751" cy="435" rx="150" ry="25"/></g>
+<g fill="#81917a"><circle cx="220" cy="517" r="9"/><circle cx="330" cy="496" r="8"/><circle cx="980" cy="512.6666666666666" r="9"/></g>
+<g stroke="#657468" stroke-width="8" opacity=".72"><path d="M690 435l48-26"/><path d="M710 468l56-9"/><path d="M692 500l49 14"/></g>
+<g fill="#21362f"><rect x="55" y="118" width="44" height="512"/><circle cx="78" cy="107" r="124"/><rect x="1083" y="108" width="45" height="522"/><circle cx="1106" cy="98" r="137"/></g>
+<rect y="646" width="1200" height="29" fill="#151a25" opacity=".28"/>
+</svg>
