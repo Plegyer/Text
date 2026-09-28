@@ -1,0 +1,224 @@
+{
+  "schemaVersion": 1,
+  "id": "shared-night-ui-consumer-map.v3",
+  "status": "EXACT_POST_PR53_APP_CONSUMER_MAP",
+  "baseMain": "3fc5495310e281cf5cbe52da3642000f1cb1fb05",
+  "sourceUi": {
+    "path": "src/ui/app.ts",
+    "sha": "30626e7fd68e6d92fcd01f0eb3bea1a1605002fb"
+  },
+  "sourceLocalizationFixture": "content/shared-night-ui-localization-v6.fixture.json",
+  "entries": [
+    {
+      "key": "ui.night.eyebrow",
+      "consumers": [
+        {
+          "seam": "central:LodgingResolution.stage-title.eyebrow",
+          "currentFallback": "Night"
+        },
+        {
+          "seam": "central:VoluntaryNightChoice.stage-title.eyebrow",
+          "currentFallback": "Night"
+        },
+        {
+          "seam": "central:NightFallback.stage-title.eyebrow",
+          "currentFallback": "Night"
+        }
+      ]
+    },
+    {
+      "key": "ui.night.lodging.prompt",
+      "consumers": [
+        {
+          "seam": "central:LodgingResolution.dialogue.prompt",
+          "currentFallback": "Выберите место на эту ночь. Оплата фиксируется ровно один раз."
+        }
+      ]
+    },
+    {
+      "key": "ui.night.nextDayEnergy",
+      "consumers": [
+        {
+          "seam": "central:LodgingResolution.lodging.nextDayEnergySuffix",
+          "currentFallbackTemplate": "энергия завтра {delta}"
+        },
+        {
+          "seam": "nightChoiceList:generic.nextDayEnergySuffix",
+          "currentFallbackTemplate": "энергия завтра {delta}"
+        }
+      ]
+    },
+    {
+      "key": "ui.night.choice.title",
+      "consumers": [
+        {
+          "seam": "central:VoluntaryNightChoice.stage-title.heading",
+          "currentFallback": "Вечер"
+        }
+      ]
+    },
+    {
+      "key": "ui.night.choice.prompt",
+      "consumers": [
+        {
+          "seam": "central:VoluntaryNightChoice.dialogue.prompt",
+          "currentFallback": "Один добровольный Night choice. Daytime Energy не расходуется."
+        }
+      ]
+    },
+    {
+      "key": "ui.night.choice.slot",
+      "consumers": [
+        {
+          "seam": "nightChoiceList:generic.context",
+          "currentFallback": "Ночной слот"
+        }
+      ]
+    },
+    {
+      "key": "ui.night.choice.select",
+      "consumers": [
+        {
+          "seam": "nightChoiceList:generic.actionButton",
+          "currentFallback": "Выбрать"
+        }
+      ]
+    },
+    {
+      "key": "ui.night.sequence.title",
+      "consumers": [
+        {
+          "seam": "central:NightFallback.stage-title.heading",
+          "currentFallback": "Ночная последовательность"
+        }
+      ]
+    },
+    {
+      "key": "ui.night.panel.title",
+      "consumers": [
+        {
+          "seam": "panelContent:sleep.heading",
+          "currentConsumerKey": "ui.sleep.title",
+          "currentFallback": "Ночь",
+          "disposition": "NO_DIRECT_CONSUMER_GLOBAL_SHELL_KEY_ACTIVE"
+        }
+      ]
+    },
+    {
+      "key": "ui.night.panel.description",
+      "consumers": [
+        {
+          "seam": "panelContent:sleep.description",
+          "currentConsumerKey": "ui.sleep.help",
+          "currentFallback": "Сначала выбирается ночлег, затем — добровольное вечернее действие, после чего начинается следующий день.",
+          "disposition": "NO_DIRECT_CONSUMER_GLOBAL_SHELL_KEY_ACTIVE"
+        }
+      ]
+    },
+    {
+      "key": "ui.night.panel.start",
+      "consumers": [
+        {
+          "seam": "panelContent:sleep.data-end-day.button",
+          "currentConsumerKey": "ui.sleep.startButton",
+          "currentFallback": "Начать ночную последовательность",
+          "disposition": "NO_DIRECT_CONSUMER_GLOBAL_SHELL_KEY_ACTIVE"
+        }
+      ]
+    },
+    {
+      "key": "ui.town.lodgingToday",
+      "consumers": [
+        {
+          "seam": "central:town-note.lodging-summary",
+          "currentFallbackTemplate": "Ночлег сегодня: {cost} {coins}"
+        }
+      ]
+    },
+    {
+      "key": "lodging.lodging.normal.label",
+      "consumers": [
+        {
+          "seam": "central:LodgingResolution.catalog.definitions.lodgings.label",
+          "identity": "lodging.normal",
+          "currentFallback": "Normal room"
+        }
+      ]
+    },
+    {
+      "key": "lodging.lodging.cheap.label",
+      "consumers": [
+        {
+          "seam": "central:LodgingResolution.catalog.definitions.lodgings.label",
+          "identity": "lodging.cheap",
+          "currentFallback": "Cheap lodging"
+        }
+      ]
+    },
+    {
+      "key": "lodging.lodging.street.label",
+      "consumers": [
+        {
+          "seam": "central:LodgingResolution.catalog.definitions.lodgings.label",
+          "identity": "lodging.street",
+          "currentFallback": "Street / no lodging"
+        }
+      ]
+    },
+    {
+      "key": "housing.room.label",
+      "consumers": [
+        {
+          "seam": "central:town-note.labels[r.housing]",
+          "identity": "room",
+          "currentFallback": "Обычная комната"
+        }
+      ]
+    },
+    {
+      "key": "housing.hostel.label",
+      "consumers": [
+        {
+          "seam": "central:town-note.labels[r.housing]",
+          "identity": "hostel",
+          "currentFallback": "Дешёвый ночлег"
+        }
+      ]
+    },
+    {
+      "key": "housing.shelter.label",
+      "consumers": [
+        {
+          "seam": "central:town-note.labels[r.housing]",
+          "identity": "shelter",
+          "currentFallback": "Улица"
+        }
+      ]
+    },
+    {
+      "key": "nightChoice.night.sleep.label",
+      "consumers": [
+        {
+          "seam": "localizedNightChoiceLabel -> tr(`nightChoice.${id}.label`,fallback)",
+          "identity": "night.sleep",
+          "currentFallback": "Sleep",
+          "currentResolverAlreadyExists": true
+        }
+      ]
+    }
+  ],
+  "excludedGlobalUiShellExactIdentical": [
+    "ui.result.chooseLodging"
+  ],
+  "currentGlobalShellOverlaps": {
+    "ui.night.panel.title": "ui.sleep.title",
+    "ui.night.panel.description": "ui.sleep.help",
+    "ui.night.panel.start": "ui.sleep.startButton"
+  },
+  "invariants": {
+    "mappedKeyCount": 19,
+    "uiEditsIncluded": false,
+    "gameplayIdsUnchanged": true,
+    "saveStateUnchanged": true
+  }
+}
