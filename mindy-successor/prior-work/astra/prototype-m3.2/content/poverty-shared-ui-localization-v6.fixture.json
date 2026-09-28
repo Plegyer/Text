@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "id": "poverty.shared-ui-localization.v6",
+  "status": "NO_ADDITIVE_KEYS_POST_PR58",
+  "baseMain": "52ddc76148e33836d3161b63bf4c25ffb5c39d02",
+  "target": "content/localization.json",
+  "strings": {},
+  "classifications": {
+    "additive": [],
+    "identical": [
+      "ui.night.eyebrow",
+      "ui.night.lodging.prompt",
+      "ui.night.nextDayEnergy",
+      "ui.night.choice.title",
+      "ui.night.choice.prompt",
+      "ui.night.choice.slot",
+      "ui.night.choice.select",
+      "ui.night.sequence.title",
+      "ui.result.chooseLodging",
+      "ui.town.lodgingToday",
+      "lodging.lodging.normal.label",
+      "lodging.lodging.cheap.label",
+      "lodging.lodging.street.label",
+      "housing.room.label",
+      "housing.hostel.label",
+      "housing.shelter.label",
+      "nightChoice.night.sleep.label"
+    ],
+    "superseded": [
+      "ui.night.panel.title",
+      "ui.night.panel.description",
+      "ui.night.panel.start"
+    ],
+    "conflicts": []
+  },
+  "supersededBy": {
+    "ui.night.panel.title": "ui.sleep.title",
+    "ui.night.panel.description": "ui.sleep.help",
+    "ui.night.panel.start": "ui.sleep.startButton"
+  },
+  "invariants": {
+    "stringCount": 0,
+    "presentationOnly": true,
+    "changesNightFlow": false,
+    "changesLodgingCost": false,
+    "changesEnergyMechanics": false,
+    "changesHousingMechanics": false,
+    "changesSaveState": false
+  }
+}
