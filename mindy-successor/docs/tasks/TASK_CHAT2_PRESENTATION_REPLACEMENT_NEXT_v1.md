@@ -4020,3 +4020,102 @@ Consolidate items 304–314 into:
 - PRODUCT_OPEN_EXCLUDED.
 
 Continue items 304–315 sequentially without waiting for Lead review.
+
+
+## Queue item 280 — corrected old-boundary project-owned static v1
+Create NEW original SVG only:
+- `prior-work/astra/prototype-m3.2/assets/presentation/forest-route-old-boundary-safe-v1.svg`
+
+Follow the authoritative safe visual brief:
+- moss-covered boundary stones;
+- weathered marks on trees;
+- narrow stony path/line;
+- no gate/arch/barrier;
+- no token/Hunter/reward/challenge/magic implication.
+
+Semantic target:
+- `activity/forest/route/old-boundary`.
+
+## Queue item 281 — old-boundary safe static semantic QA source v1
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/forest-route-old-boundary-safe-static-v1.test.ts`
+
+Validate item 280:
+- local project-owned SVG;
+- correct dimensions/viewBox;
+- no external URLs/scripts;
+- semantic metadata exact;
+- forbidden gate/token/Hunter/reward terms absent;
+- no gameplay fields.
+
+## Queue item 282 — old-boundary animation source sequence A v1
+Create NEW original 4-frame SVG sequence under:
+- `prior-work/astra/prototype-m3.2/assets/presentation-frames/`
+
+Semantic:
+- `activity/forest/route/old-boundary`.
+
+Subtle motion only: leaves/light/grass/camera drift across stones/marks.
+
+## Queue item 283 — old-boundary animation source sequence B v1
+Create NEW distinct 4-frame source sequence for the same semantic identity.
+
+## Queue item 284 — old-boundary animation source sequence C v1
+Create NEW distinct 4-frame source sequence for the same semantic identity.
+
+After items 282–284, old-boundary must have three compatible project-owned animation source sequences.
+
+## Queue item 285 — old-boundary source compatibility ledger v1
+Create NEW file only:
+- `docs/presentation-prep/OLD_BOUNDARY_SAFE_SOURCE_COMPATIBILITY_LEDGER_V1.md`
+
+Compare item 280 and sequences A/B/C against current safe route copy/alt/caption semantics.
+No Product-open inference.
+
+## Queue item 286 — Forest route source manifest v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/forest-route-project-owned-source-manifest-v1.json`
+
+Record:
+- generic route/default shipped asset;
+- logging-road current safe static;
+- old-boundary safe static item 280;
+- all route animation source sequences;
+- exact semantic presentation IDs;
+- static fallbacks;
+- no GIF claim.
+
+## Queue item 287 — Merchant spring animation sequence A v1
+Create NEW original 4-frame SVG source sequence for:
+- `job/merchant/shift/spring/default`.
+
+## Queue item 288 — Merchant spring animation sequence B v1
+Create NEW distinct 4-frame source sequence for the same semantic identity.
+
+## Queue item 289 — Merchant spring animation sequence C v1
+Create NEW distinct 4-frame source sequence for the same semantic identity.
+
+## Queue item 290 — animation source validator v5
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/project-owned-animation-frames-v5.test.ts`
+
+Validate all source sequences through items 282–289 and prior source manifest:
+- current semantic IDs;
+- 4 frames per sequence;
+- consistent viewBox;
+- no external resources;
+- no gameplay/RNG/Save metadata;
+- identify semantic identities with >=3 compatible sequences.
+
+## Queue item 291 — old-boundary/media source handoff v5
+Create NEW file only:
+- `docs/presentation-prep/OLD_BOUNDARY_AND_ANIMATION_SOURCE_HANDOFF_V5.md`
+
+Consolidate items 280–290 with exact selective-copy files.
+Explicitly separate:
+- SAFE_STATIC_READY;
+- ANIMATION_SOURCE_READY;
+- GIF_EXPORT_BLOCKED;
+- PRODUCT_OPEN_EXCLUDED.
+
+Continue items 280–291 sequentially without waiting for Lead review.
