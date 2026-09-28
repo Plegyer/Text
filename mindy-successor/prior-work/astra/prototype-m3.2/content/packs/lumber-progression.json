@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "id": "lumber-progression",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "careers": ["lumber"]
+    },
+    "writes": {
+      "careers": ["lumber"]
+    }
+  },
+  "events": [
+    {
+      "id": "lumber.trusted-worker-progress",
+      "title": "Trusted worker recognition",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerCounterChanged",
+          "career": "lumber",
+          "counter": "completed_shifts"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 80,
+      "blocking": true,
+      "delivery": {"policy": "live"},
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "lumber",
+          "stage": "accepted-hand"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "lumber",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 10
+        }
+      ],
+      "variants": [{"id":"default","text":"The Lumber crew recognizes reliable work.","conditions":[],"media":[]}],
+      "choices": [{
+        "id":"continue",
+        "label":"Continue",
+        "text":"Accept the recognition.",
+        "conditions":[],
+        "effects":[
+          {"kind":"addCareerFact","career":"lumber","fact":"trusted-worker"}
+        ]
+      }],
+      "sourceDomain":"lumber"
+    },
+    {
+      "id":"lumber.veteran-progress",
+      "title":"Veteran Lumber worker",
+      "trigger":[],
+      "reactionTriggers":[{"kind":"careerCounterChanged","career":"lumber","counter":"completed_shifts"}],
+      "priorityClass":"normal_progression",
+      "priority":80,
+      "blocking":true,
+      "delivery":{"policy":"live"},
+      "cooldownDays":0,
+      "variantCooldownDays":0,
+      "maxShows":1,
+      "conditions":[{"kind":"careerCounter","career":"lumber","counter":"completed_shifts","op":"gte","value":25}],
+      "variants":[{"id":"default","text":"Years of work make the Lumber worker a veteran.","conditions":[],"media":[]}],
+      "choices":[{"id":"continue","label":"Continue","text":"Continue the career path.","conditions":[],"effects":[{"kind":"addCareerFact","career":"lumber","fact":"veteran"}]}],
+      "sourceDomain":"lumber"
+    },
+    {
+      "id":"lumber.outcome-ready-progress",
+      "title":"Lumber outcome ready",
+      "trigger":[],
+      "reactionTriggers":[{"kind":"careerCounterChanged","career":"lumber","counter":"completed_shifts"}],
+      "priorityClass":"critical_progression",
+      "priority":85,
+      "blocking":true,
+      "delivery":{"policy":"live"},
+      "cooldownDays":0,
+      "variantCooldownDays":0,
+      "maxShows":1,
+      "conditions":[{"kind":"careerCounter","career":"lumber","counter":"completed_shifts","op":"gte","value":50}],
+      "variants":[{"id":"default","text":"The Lumber career reaches a major milestone.","conditions":[],"media":[]}],
+      "choices":[{"id":"continue","label":"Continue","text":"Proceed to available endings through the existing flow.","conditions":[],"effects":[{"kind":"addCareerFact","career":"lumber","fact":"outcome-ready"}]}],
+      "sourceDomain":"lumber"
+    }
+  ]
+}
