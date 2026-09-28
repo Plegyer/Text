@@ -1,0 +1,72 @@
+{
+  "formatVersion": 1,
+  "kind": "pr42-gif-pool-production-candidate",
+  "status": "NOT_YET_EXPORTED",
+  "currentMainBaseline": "01b31b9ab0d0267d95edf5b5b80638acd63f5c04",
+  "presentationId": "relationship/lumber-foreman/lumber-night-foreman-professional/default",
+  "slotCandidate": {
+    "pool": {
+      "version": 1,
+      "ordering": "ordered",
+      "selectionPolicy": "unweighted",
+      "candidates": [
+        {
+          "key": "foreman-night-professional-loop-a",
+          "kind": "gif",
+          "src": "assets/gif/relationships/lumber-foreman/night-professional-loop-a.gif",
+          "alt": "Спокойный вечерний разговор с бригадиром у огня с небольшим движением пламени и поз.",
+          "altKey": "presentation.gif.relationship.lumber-foreman.night-professional.foreman-night-professional-loop-a.alt"
+        },
+        {
+          "key": "foreman-night-professional-loop-b",
+          "kind": "gif",
+          "src": "assets/gif/relationships/lumber-foreman/night-professional-loop-b.gif",
+          "alt": "Спокойный вечерний разговор с бригадиром у огня с небольшим движением пламени и поз.",
+          "altKey": "presentation.gif.relationship.lumber-foreman.night-professional.foreman-night-professional-loop-b.alt"
+        },
+        {
+          "key": "foreman-night-professional-loop-c",
+          "kind": "gif",
+          "src": "assets/gif/relationships/lumber-foreman/night-professional-loop-c.gif",
+          "alt": "Спокойный вечерний разговор с бригадиром у огня с небольшим движением пламени и поз.",
+          "altKey": "presentation.gif.relationship.lumber-foreman.night-professional.foreman-night-professional-loop-c.alt"
+        }
+      ]
+    },
+    "static": {
+      "kind": "image",
+      "src": "assets/presentation/foreman-night-voluntary-v2.svg",
+      "alt": "Добровольный спокойный вечерний разговор с бригадиром у огня.",
+      "altKey": "presentation.static.foreman-night-voluntary-v2.alt"
+    }
+  },
+  "expectedFiles": [
+    {
+      "candidateKey": "foreman-night-professional-loop-a",
+      "expectedSrc": "assets/gif/relationships/lumber-foreman/night-professional-loop-a.gif",
+      "status": "NOT_YET_EXPORTED",
+      "exists": false
+    },
+    {
+      "candidateKey": "foreman-night-professional-loop-b",
+      "expectedSrc": "assets/gif/relationships/lumber-foreman/night-professional-loop-b.gif",
+      "status": "NOT_YET_EXPORTED",
+      "exists": false
+    },
+    {
+      "candidateKey": "foreman-night-professional-loop-c",
+      "expectedSrc": "assets/gif/relationships/lumber-foreman/night-professional-loop-c.gif",
+      "status": "NOT_YET_EXPORTED",
+      "exists": false
+    }
+  ],
+  "invariants": {
+    "exactlyThreeCandidates": true,
+    "localeNeutralCandidateKeys": true,
+    "staticFallbackPreserved": true,
+    "noGifBytesClaim": true,
+    "noGameplayFields": true,
+    "noGameplayRng": true,
+    "noSaveMutation": true
+  }
+}
