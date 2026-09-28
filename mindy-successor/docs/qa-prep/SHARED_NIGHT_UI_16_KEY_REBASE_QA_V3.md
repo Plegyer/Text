@@ -1,6 +1,6 @@
 # Shared Night UI 16-key rebase QA v3
 
-Status: COMPLETE / GREEN_REBASED_16_KEY_SOURCE
+Status: COMPLETE / SHIPPED_GREEN
 
 Current main:
 `6e2a5147603b71eed89a0966af417a33dd28d7a7`
@@ -170,3 +170,38 @@ Then wire only the still-hardcoded Night/lodging consumers.
 `GREEN_REBASED_16_KEY_SOURCE`.
 
 The production-ready Chat3 Night/lodging localization payload is exactly 16 new keys with zero current-root collision and no NightFlow mechanic change.
+
+
+## Subsequent production integration
+
+Lead integrated this exact 16-key rebased slice as PR #55:
+`Lead: localize shared Night and lodging UI`.
+
+Base:
+`6e2a5147603b71eed89a0966af417a33dd28d7a7`.
+
+Accepted exact head:
+`724ab70a5a83424fb8a576c3deb082b60256ffc0`.
+
+Exact-head run #98:
+- id `36402925719`;
+- SUCCESS;
+- validator 17 packs / 46 events / 35 actions / 9 endings;
+- 342 / 342 tests.
+
+PR55 production regression confirms:
+- exactly 16 additive RU+EN keys;
+- stable localization consumers;
+- presentation-only payload.
+
+Merged as:
+`295e6fc74d235f0b7555794555a18373451e8b7e`.
+
+Post-merge main run #99:
+- id `36403132544`;
+- SUCCESS;
+- 342 / 342;
+- validator 17 / 46 / 35 / 9.
+
+Current classification:
+`SHIPPED_GREEN`.
