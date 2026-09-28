@@ -1,6 +1,6 @@
 # Forest route Old Boundary fallback transition QA v1
 
-Status: COMPLETE / TRANSITION_IMPLEMENTED / GREEN_EXACT_HEAD
+Status: COMPLETE / TRANSITION_IMPLEMENTED / GREEN_POST_MERGE_MAIN
 
 Current main:
 `54131488c65302f81b3001abaaa345d21f0281e2`.
@@ -226,3 +226,21 @@ Current classification:
 `TRANSITION_IMPLEMENTED / GREEN_EXACT_HEAD`.
 
 Post-merge run #120 remains required for final current-main production acceptance.
+
+
+## Post-merge transition proof
+
+Current main:
+`2ad9fb8b0572f8903bbf57d144c8c5938023a440`.
+
+Run #120 / id `36410358345`:
+- SUCCESS;
+- 363/363;
+- validator 17/46/35/9.
+
+The current root now resolves both route-specific semantic IDs to their reviewed specific statics while retaining neutral route/default fallback metadata.
+
+The post-merge suite retains route-state Save invariance, exact Forest result continuation and exact Hard Work.
+
+Final transition status:
+`GREEN_POST_MERGE_MAIN`.
