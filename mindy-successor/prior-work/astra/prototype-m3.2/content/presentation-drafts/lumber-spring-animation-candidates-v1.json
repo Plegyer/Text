@@ -1,0 +1,90 @@
+{
+  "formatVersion": 1,
+  "kind": "animation-candidate-source-metadata",
+  "status": "SOURCE_READY_GIF_EXPORT_BLOCKED",
+  "currentMainBaseline": "295e6fc74d235f0b7555794555a18373451e8b7e",
+  "domain": "ordinary-career",
+  "presentationId": "job/lumber/shift/spring/default",
+  "staticFallback": "assets/presentation/career-lumber-shift-spring.svg",
+  "candidates": [
+    {
+      "candidateKey": "lumber-spring-loop-a",
+      "sourceSequenceKey": "lumber-spring-work-loop-a",
+      "sourceFrames": [
+        "assets/presentation-frames/lumber-spring-work-loop-a-frame-01.svg",
+        "assets/presentation-frames/lumber-spring-work-loop-a-frame-02.svg",
+        "assets/presentation-frames/lumber-spring-work-loop-a-frame-03.svg",
+        "assets/presentation-frames/lumber-spring-work-loop-a-frame-04.svg"
+      ],
+      "targetTiming": {
+        "sourceLoopDurationMs": 2400,
+        "normalizedExportLoopDurationMs": 2400,
+        "normalizedFrameDelayMs": 600,
+        "frameCount": 4,
+        "loopCount": 0
+      },
+      "targetRaster": {
+        "width": 640,
+        "height": 360,
+        "maxPaletteColors": 256
+      },
+      "gifPath": null
+    },
+    {
+      "candidateKey": "lumber-spring-loop-b",
+      "sourceSequenceKey": "lumber-spring-work-loop-b",
+      "sourceFrames": [
+        "assets/presentation-frames/lumber-spring-work-loop-b-frame-01.svg",
+        "assets/presentation-frames/lumber-spring-work-loop-b-frame-02.svg",
+        "assets/presentation-frames/lumber-spring-work-loop-b-frame-03.svg",
+        "assets/presentation-frames/lumber-spring-work-loop-b-frame-04.svg"
+      ],
+      "targetTiming": {
+        "sourceLoopDurationMs": 2200,
+        "normalizedExportLoopDurationMs": 2400,
+        "normalizedFrameDelayMs": 600,
+        "frameCount": 4,
+        "loopCount": 0
+      },
+      "targetRaster": {
+        "width": 640,
+        "height": 360,
+        "maxPaletteColors": 256
+      },
+      "gifPath": null
+    },
+    {
+      "candidateKey": "lumber-spring-loop-c",
+      "sourceSequenceKey": "lumber-spring-work-loop-c",
+      "sourceFrames": [
+        "assets/presentation-frames/lumber-spring-work-loop-c-frame-01.svg",
+        "assets/presentation-frames/lumber-spring-work-loop-c-frame-02.svg",
+        "assets/presentation-frames/lumber-spring-work-loop-c-frame-03.svg",
+        "assets/presentation-frames/lumber-spring-work-loop-c-frame-04.svg"
+      ],
+      "targetTiming": {
+        "sourceLoopDurationMs": 2600,
+        "normalizedExportLoopDurationMs": 2400,
+        "normalizedFrameDelayMs": 600,
+        "frameCount": 4,
+        "loopCount": 0
+      },
+      "targetRaster": {
+        "width": 640,
+        "height": 360,
+        "maxPaletteColors": 256
+      },
+      "gifPath": null
+    }
+  ],
+  "note": "Ordinary Lumber spring shift presentation only.",
+  "invariants": {
+    "exactlyThreeSourceCandidates": true,
+    "actualGifBytesRequiredBeforeGifPath": true,
+    "localeNeutralCandidateKeys": true,
+    "staticFallbackPreserved": true,
+    "gameplayFields": false,
+    "gameplayRng": false,
+    "saveMutation": false
+  }
+}
