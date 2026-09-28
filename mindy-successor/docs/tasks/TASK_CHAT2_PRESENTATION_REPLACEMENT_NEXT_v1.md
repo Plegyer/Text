@@ -4119,3 +4119,110 @@ Explicitly separate:
 - PRODUCT_OPEN_EXCLUDED.
 
 Continue items 280–291 sequentially without waiting for Lead review.
+
+
+## Queue item 316 — post-PR59 Forest route media rebase audit v1
+Create NEW file only:
+- `docs/presentation-prep/POST_PR59_FOREST_ROUTE_MEDIA_REBASE_AUDIT_V1.md`
+
+Re-audit exact current main after PR59:
+- logging-road static now shipped;
+- old-boundary still neutral fallback;
+- current safe old-boundary replacement source;
+- route animation sources;
+- no production GIFs.
+
+## Queue item 317 — old-boundary v3 current-main activation candidate v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/old-boundary-v3-current-main-activation-v1.json`
+
+Prepare exact presentation-only candidate for:
+- `activity/forest/route/old-boundary`
+using current safe project-owned:
+- `assets/presentation/forest-route-old-boundary-v3.svg`
+
+No runtime/gameplay fields.
+
+## Queue item 318 — old-boundary v3 accessibility delta v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/old-boundary-v3-accessibility-v1.fixture.json`
+
+Provide exact RU+EN alt/caption keys for item 317.
+No lore beyond stones/marks/path.
+
+## Queue item 319 — old-boundary v3 activation regression source v1
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/old-boundary-v3-current-main-activation-v1.test.ts`
+
+Validate current semantic ID, local SVG, build copy, locale-neutral media identity, neutral fallback retention, forbidden semantics absent.
+
+## Queue item 320 — shipped Forest static supersession ledger v2
+Create NEW file only:
+- `docs/presentation-prep/SHIPPED_FOREST_STATIC_SUPERSESSION_LEDGER_V2.md`
+
+Classify every Forest route/static source:
+- SHIPPED_CURRENT;
+- READY_REPLACEMENT;
+- SUPERSEDED_SOURCE_HISTORY;
+- ANIMATION_SOURCE_ONLY;
+- PRODUCT_OPEN_EXCLUDED.
+
+Do not delete files.
+
+## Queue item 321 — route animation frame optimization audit v1
+Create NEW file only:
+- `docs/presentation-prep/ROUTE_ANIMATION_FRAME_OPTIMIZATION_AUDIT_V1.md`
+
+Audit 24 current route frame SVGs for avoidable size/duplication while preserving visuals/metadata.
+No destructive optimization yet.
+
+## Queue item 322 — route animation source-size ledger v1
+Create NEW file only:
+- `docs/presentation-prep/ROUTE_ANIMATION_SOURCE_SIZE_LEDGER_V1.md`
+
+Record byte size per frame/sequence and projected raster/GIF target envelope.
+
+## Queue item 323 — exporter dependency license packet v1
+Create NEW file only:
+- `docs/presentation-prep/EXPORTER_DEPENDENCY_LICENSE_PACKET_V1.md`
+
+Document license/notice requirements for proposed exact dev dependencies:
+- `sharp@0.35.4`
+- `gifenc@1.0.3`
+
+No package changes.
+
+## Queue item 324 — exporter CI portability packet v1
+Create NEW file only:
+- `docs/presentation-prep/EXPORTER_CI_PORTABILITY_PACKET_V1.md`
+
+Document Node 22 / Ubuntu CI considerations, native install risk, deterministic export assumptions and rollback path.
+No dependency install.
+
+## Queue item 325 — first route GIF dry-run expected-output manifest v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/forest-route-gif-dry-run-expected-v1.json`
+
+Describe expected six future GIF outputs from the 6 source sequences:
+paths, semantic IDs, candidate keys, timing, static fallback.
+No claim files exist.
+
+## Queue item 326 — route media current-main collision guard v1
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/forest-route-media-current-main-collision-v1.test.ts`
+
+Validate items 317–325 against exact post-PR59 main:
+no root ID collision, no gameplay fields, no external assets, no fake GIF paths.
+
+## Queue item 327 — post-PR59 route media handoff v8
+Create NEW file only:
+- `docs/presentation-prep/POST_PR59_ROUTE_MEDIA_HANDOFF_V8.md`
+
+Consolidate items 316–326 into:
+- OLD_BOUNDARY_STATIC_READY;
+- ROUTE_ANIMATION_SOURCE_READY;
+- EXPORTER_APPROVAL_READY;
+- NO_PRODUCTION_GIF;
+- PRODUCT_OPEN_EXCLUDED.
+
+Continue items 316–327 sequentially without waiting for Lead review.
