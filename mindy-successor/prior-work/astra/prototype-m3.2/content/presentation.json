@@ -651,6 +651,14 @@
         "alt": "Героиня идёт по нейтральной лесной тропе без указания конкретного маршрута или исхода.",
         "altKey": "presentation.static.forest.route.default.alt"
       }
+    },
+    "activity/forest/route/logging-road": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/forest-route-logging-road.svg",
+        "alt": "Лесовозная дорога с колеями и следами недавних работ.",
+        "altKey": "presentation.activity.forest.route.logging-road.alt"
+      }
     }
   }
 }
