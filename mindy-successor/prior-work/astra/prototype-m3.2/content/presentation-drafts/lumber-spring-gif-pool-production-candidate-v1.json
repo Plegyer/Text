@@ -1,0 +1,71 @@
+{
+  "formatVersion": 1,
+  "kind": "pr42-gif-pool-production-candidate",
+  "status": "NOT_YET_EXPORTED",
+  "presentationId": "job/lumber/shift/spring/default",
+  "slotCandidate": {
+    "pool": {
+      "version": 1,
+      "ordering": "ordered",
+      "selectionPolicy": "unweighted",
+      "candidates": [
+        {
+          "key": "lumber-spring-loop-a",
+          "kind": "gif",
+          "src": "assets/gif/careers/lumber/spring-loop-a.gif",
+          "alt": "Весенняя рабочая сцена лесоруба с небольшим движением инструментов и лесного окружения.",
+          "altKey": "presentation.gif.job.lumber.shift.spring.lumber-spring-loop-a.alt"
+        },
+        {
+          "key": "lumber-spring-loop-b",
+          "kind": "gif",
+          "src": "assets/gif/careers/lumber/spring-loop-b.gif",
+          "alt": "Весенняя рабочая сцена лесоруба с небольшим движением инструментов и лесного окружения.",
+          "altKey": "presentation.gif.job.lumber.shift.spring.lumber-spring-loop-b.alt"
+        },
+        {
+          "key": "lumber-spring-loop-c",
+          "kind": "gif",
+          "src": "assets/gif/careers/lumber/spring-loop-c.gif",
+          "alt": "Весенняя рабочая сцена лесоруба с небольшим движением инструментов и лесного окружения.",
+          "altKey": "presentation.gif.job.lumber.shift.spring.lumber-spring-loop-c.alt"
+        }
+      ]
+    },
+    "static": {
+      "kind": "image",
+      "src": "assets/presentation/career-lumber-shift-spring.svg",
+      "alt": "Рабочая сцена лесоруба весной; сезон показан окружением и не меняет игровой исход.",
+      "altKey": "presentation.static.career.lumber.shift.spring.alt"
+    }
+  },
+  "expectedFiles": [
+    {
+      "candidateKey": "lumber-spring-loop-a",
+      "expectedSrc": "assets/gif/careers/lumber/spring-loop-a.gif",
+      "status": "NOT_YET_EXPORTED",
+      "exists": false
+    },
+    {
+      "candidateKey": "lumber-spring-loop-b",
+      "expectedSrc": "assets/gif/careers/lumber/spring-loop-b.gif",
+      "status": "NOT_YET_EXPORTED",
+      "exists": false
+    },
+    {
+      "candidateKey": "lumber-spring-loop-c",
+      "expectedSrc": "assets/gif/careers/lumber/spring-loop-c.gif",
+      "status": "NOT_YET_EXPORTED",
+      "exists": false
+    }
+  ],
+  "invariants": {
+    "exactlyThreeCandidates": true,
+    "candidateKeysLocaleNeutral": true,
+    "staticFallbackPreserved": true,
+    "noGifBytesClaim": true,
+    "noGameplayFields": true,
+    "noGameplayRng": true,
+    "noSaveMutation": true
+  }
+}
