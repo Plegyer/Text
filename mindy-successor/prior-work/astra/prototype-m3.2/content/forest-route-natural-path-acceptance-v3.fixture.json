@@ -1,0 +1,203 @@
+{
+  "schemaVersion": 1,
+  "id": "forest.route-natural-path-acceptance.v3",
+  "status": "NATURAL_PATH_EXPECTATION_PRESENTATION_ONLY",
+  "baseMain": "5dffefd15703d431a604b4cc9f831c4e55460aed",
+  "activityId": "lumber.forest",
+  "paths": [
+    {
+      "routeId": "forest.route.logging-road",
+      "naturalPath": [
+        {
+          "step": "enterActivity",
+          "activityId": "lumber.forest",
+          "presentationId": "activity/forest/route/default"
+        },
+        {
+          "step": "chooseRoute",
+          "optionId": "forest.route.logging-road",
+          "expectedRouteState": "logging-road",
+          "presentationId": "activity/forest/route/logging-road"
+        },
+        {
+          "step": "continueActivity",
+          "actions": [
+            "advance",
+            "advance"
+          ],
+          "expectedOutcome": "success"
+        }
+      ],
+      "authoritativeConditions": [],
+      "exactRouteState": "logging-road",
+      "presentationTransition": {
+        "beforeRouteSelection": "activity/forest/route/default",
+        "afterRouteSelection": "activity/forest/route/logging-road"
+      },
+      "expectedPresentation": {
+        "ru": {
+          "textKey": "forestRouteScene.forest.route.logging-road.wheel-ruts.text",
+          "text": "Лесовозная дорога шире соседних троп. Свежие колеи режут грязь, а обрубленные ветви сложены по краям. Здесь трудно потерять путь: люди уже расчистили лес под дорогу.",
+          "helpKey": "activityOption.forest.route.logging-road.help",
+          "help": "Широкая рабочая дорога со свежими следами лесозаготовок.",
+          "altKey": "presentation.activity.forest.route.logging-road.alt",
+          "alt": "Лесовозная дорога с колеями и следами недавних работ.",
+          "captionKey": "presentation.activity.forest.route.logging-road.caption",
+          "caption": "Здесь путь читается по следам работы: колеям, ветвям и меткам на деревьях."
+        },
+        "en": {
+          "textKey": "forestRouteScene.forest.route.logging-road.wheel-ruts.text",
+          "text": "The logging road is wider than the nearby trails. Fresh ruts cut through the mud, and trimmed branches lie along the edges. It is hard to lose the route here; people have already cleared a road through the forest.",
+          "helpKey": "activityOption.forest.route.logging-road.help",
+          "help": "A broad work road with fresh signs of logging.",
+          "altKey": "presentation.activity.forest.route.logging-road.alt",
+          "alt": "Logging road with wheel ruts and signs of recent work.",
+          "captionKey": "presentation.activity.forest.route.logging-road.caption",
+          "caption": "Here the route is readable through signs of work: wheel ruts, cut branches, and marks on trees."
+        }
+      },
+      "unchangedResultContinuation": {
+        "success": {
+          "kind": "activityResult",
+          "activity": "lumber.forest",
+          "outcome": "success",
+          "result": "lumber.forest.success"
+        },
+        "escape": {
+          "kind": "activityResult",
+          "activity": "lumber.forest",
+          "outcome": "escape",
+          "result": "lumber.forest.escape"
+        },
+        "failure": {
+          "kind": "activityResult",
+          "activity": "lumber.forest",
+          "outcome": "failure",
+          "result": "lumber.forest.failure"
+        }
+      },
+      "invariance": {
+        "saveWritesFromPresentation": false,
+        "globalRngConsumedByPresentation": false,
+        "activityRngConsumedByPresentation": false,
+        "routeAvailabilityChanged": false,
+        "progressChangedByPresentation": false,
+        "enduranceChangedByPresentation": false
+      }
+    },
+    {
+      "routeId": "forest.route.old-boundary",
+      "naturalPath": [
+        {
+          "step": "enterActivity",
+          "activityId": "lumber.forest",
+          "presentationId": "activity/forest/route/default"
+        },
+        {
+          "step": "chooseRoute",
+          "optionId": "forest.route.old-boundary",
+          "expectedRouteState": "old-boundary",
+          "presentationId": "activity/forest/route/old-boundary"
+        },
+        {
+          "step": "continueActivity",
+          "actions": [
+            "advance",
+            "advance"
+          ],
+          "expectedOutcome": "success"
+        }
+      ],
+      "authoritativeConditions": [
+        {
+          "kind": "itemCapability",
+          "capability": "enter_old_boundary",
+          "present": true
+        }
+      ],
+      "exactRouteState": "old-boundary",
+      "presentationTransition": {
+        "beforeRouteSelection": "activity/forest/route/default",
+        "afterRouteSelection": "activity/forest/route/old-boundary"
+      },
+      "expectedPresentation": {
+        "ru": {
+          "textKey": "forestRouteScene.forest.route.old-boundary.stones.text",
+          "text": "Первый межевой камень почти целиком ушёл во мох. Стоит заметить один — и следующий уже легче отличить от обычного валуна. Камни складываются в линию, не совпадающую с новой лесовозной дорогой.",
+          "helpKey": "activityOption.forest.route.old-boundary.help",
+          "help": "Старый путь по межевым камням и выветренным меткам.",
+          "altKey": "presentation.activity.forest.route.old-boundary.alt",
+          "alt": "Старая межевая линия с замшелыми камнями и выветренными метками.",
+          "captionKey": "presentation.activity.forest.route.old-boundary.caption",
+          "caption": "Камни и старые знаки складываются в линию, не совпадающую с новой лесовозной дорогой."
+        },
+        "en": {
+          "textKey": "forestRouteScene.forest.route.old-boundary.stones.text",
+          "text": "The first boundary stone is almost lost beneath the moss. Once you notice one, the next is easier to distinguish from ordinary rock. The stones form a line that does not follow the newer logging road.",
+          "helpKey": "activityOption.forest.route.old-boundary.help",
+          "help": "An old route traced by boundary stones and weathered marks.",
+          "altKey": "presentation.activity.forest.route.old-boundary.alt",
+          "alt": "Old boundary line with moss-covered stones and weathered marks.",
+          "captionKey": "presentation.activity.forest.route.old-boundary.caption",
+          "caption": "Stones and old markers form a line that does not follow the newer logging road."
+        }
+      },
+      "unchangedResultContinuation": {
+        "success": {
+          "kind": "activityResult",
+          "activity": "lumber.forest",
+          "outcome": "success",
+          "result": "lumber.forest.success"
+        },
+        "escape": {
+          "kind": "activityResult",
+          "activity": "lumber.forest",
+          "outcome": "escape",
+          "result": "lumber.forest.escape"
+        },
+        "failure": {
+          "kind": "activityResult",
+          "activity": "lumber.forest",
+          "outcome": "failure",
+          "result": "lumber.forest.failure"
+        }
+      },
+      "invariance": {
+        "saveWritesFromPresentation": false,
+        "globalRngConsumedByPresentation": false,
+        "activityRngConsumedByPresentation": false,
+        "routeAvailabilityChanged": false,
+        "progressChangedByPresentation": false,
+        "enduranceChangedByPresentation": false
+      }
+    }
+  ],
+  "hardWorkInvariant": {
+    "endingId": "ending.lumber.hard-work",
+    "conditions": [
+      {
+        "kind": "careerCounter",
+        "career": "lumber",
+        "counter": "completed_shifts",
+        "op": "gte",
+        "value": 50
+      }
+    ],
+    "metaRewards": [
+      {
+        "kind": "hardWork",
+        "rewardId": "hardWork:lumber",
+        "career": "lumber"
+      }
+    ],
+    "humanReadable": "completed_shifts >= 50 only; reward hardWork:lumber"
+  },
+  "acceptanceRules": [
+    "Default presentation is used before authoritative route selection.",
+    "Specific presentation ID is derived from authoritative route state after selection.",
+    "RU and EN share the same gameplay and presentation identities.",
+    "Presentation causes no Save/RNG/progress/endurance drift.",
+    "Exact activityResult continuation remains unchanged for all outcomes.",
+    "Lumber Hard Work remains completed_shifts >= 50 only with hardWork:lumber."
+  ]
+}
