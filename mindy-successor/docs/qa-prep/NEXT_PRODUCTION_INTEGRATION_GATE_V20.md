@@ -3,204 +3,176 @@
 Status: COMPLETE / CURRENT_GATE_RECORDED
 
 Audit point:
-after PR59 logging-road route media and PR60 safe Old Boundary v3 static activation.
+after PR59 logging-road static, PR60 old-boundary v3 static, PR61 ending/action localization and PR62 profession/unlock/Forest route display-label cleanup.
 
 Current main:
-`2ad9fb8b0572f8903bbf57d144c8c5938023a440`.
+`1b0ea9dc3c10a8acb24df2ca2edd0e5f609dd515`.
 
 Current main CI:
-- run #120;
-- id `36410358345`;
-- event: push;
-- conclusion: SUCCESS;
-- validator: 17 packs, 46 events, 35 actions, 9 endings;
-- tests: 363 / 363 pass / 0 fail.
+- run #126;
+- id `36412267106`;
+- SUCCESS;
+- validator 17 packs / 46 events / 35 actions / 9 endings;
+- 375 / 375 tests;
+- 0 failures.
 
-This gate summarizes Chat 4 items 247–257.
+This gate summarizes Chat4 items 247–257.
 
 No whole worker/chat branch is approved for merge.
 
-## PR59
+## 247 — PR59 post-merge audit
 
 `GREEN_POST_MERGE_MAIN`.
 
-PR59 merge:
+PR59 accepted head:
+`01109fd08cece24308d3d9a64127b08e6fc5d702`.
+
+Merge:
 `54131488c65302f81b3001abaaa345d21f0281e2`.
 
-Shipped:
-- logging-road route-specific project-owned static;
-- route help RU+EN;
-- both route alt/caption RU+EN;
-- route locale/Save/RNG invariance.
-
-PR59 exact/post-merge:
+Exact/post-merge:
 - run #114: 360/360;
 - run #115: 360/360;
 - validator 17/46/35/9.
 
-Its old-boundary neutral-fallback state was the correct historical PR59 state.
+PR59 correctly shipped logging-road project-owned static while old-boundary remained neutral fallback at that historical checkpoint.
 
-## PR60
+Later PR60 superseded only the physical old-boundary fallback state by safely activating v3.
+
+## 248 — selected-route localized label consumer
+
+`SATISFIED_BY_PR62`.
+
+PR62 now maps persisted Forest route state to the existing bilingual route-option labels at render time.
+
+RU/EN display:
+- logging-road -> Лесовозная дорога / Logging road;
+- old-boundary -> Старая межевая тропа / Old boundary path.
+
+Persisted routeId remains unchanged.
+
+PR62 renderer regression proves same Save/RNG/media across RU↔EN.
+
+The route checkpoint also reuses the option label when it is a current `forest.route.*` checkpoint.
+
+## 249 — old-boundary v3 production acceptance
 
 `GREEN_POST_MERGE_MAIN`.
 
-Reviewed v3 asset:
-`forest-route-old-boundary-v3.svg`.
+Chat2 items 317–319 were accepted as safe presentation-only source.
 
-PR60 accepted exact head:
-`36f933d8c01a249992d84295bc69c3d554bb1f89`.
+Asset:
+`assets/presentation/forest-route-old-boundary-v3.svg`.
 
-Merge:
-`2ad9fb8b0572f8903bbf57d144c8c5938023a440`.
+Safe semantics:
+- narrow path;
+- weathered/low stones;
+- old marks;
+- vegetation.
 
-Exact run #119:
-- SUCCESS;
-- 363/363;
-- validator 17/46/35/9.
-
-Post-merge run #120:
-- SUCCESS;
-- 363/363;
-- same validator counts.
-
-Initial run #116 failed four stale tests that still asserted the deliberate pre-activation fallback state. The new v3 safety tests already passed. The fixed head updated stale expectations without weakening route/gameplay invariants.
-
-Current Forest route physical presentation:
-- route/default -> neutral default SVG;
-- logging-road -> reviewed specific SVG;
-- old-boundary -> reviewed v3 specific SVG.
-
-Neutral fallback metadata remains retained.
-
-## Selected route label debt
-
-`ACCEPTANCE_CONTRACT_READY`.
-
-Current Activity status still exposes persisted raw:
-- `logging-road`;
-- `old-boundary`
-after localized `Route/Маршрут`.
-
-Existing approved bilingual route-option labels should be reused.
-
-Required:
-`routeId -> exact current option.setRoute match -> activityOption.<optionId>.label`.
-
-Persisted routeId, presentationId, Save and RNG stay unchanged.
-
-This is now the clearest small Forest presentation debt.
-
-## Old Boundary v3 acceptance
-
-`SHIPPED_GREEN`.
-
-Reviewed source is limited to:
-- narrow old path;
-- low/weathered stones;
-- old marks/moss.
-
-No:
+Excluded:
 - gate/barrier;
 - token/key;
 - Hunter;
 - challenge/reward/result;
 - magic activation.
 
-PR60 reuses existing PR59 RU+EN alt/caption keys.
+PR60:
+- exact head `36f933d8c01a249992d84295bc69c3d554bb1f89`;
+- run #119: 363/363;
+- merge `2ad9fb8b0572f8903bbf57d144c8c5938023a440`;
+- run #120: 363/363.
 
-Exact and post-merge CI are green.
+## 250 — ending localization
 
-## Ending localization
-
-`GREEN_TEXT_SOURCE / CONSUMER_REQUIRED`.
+`SHIPPED_GREEN_VIA_PR61`.
 
 Exact current endings:
-9.
+`9`.
 
-Prepared:
+Reviewed localization:
 - 9 titles;
 - 9 descriptions;
-- 18 RU+EN keys;
-- current-root conflicts: 0.
+- 18 RU+EN strings;
+- no condition/reward/meta/Save/RNG fields.
 
-No condition/reward/meta/Save/RNG fields.
-
-Locked Hard Work:
+Hard Work remains:
 - only `completed_shifts >= 50`;
 - meta reward `hardWork:lumber`.
 
-Current Legacy panel still renders raw catalog ending title/description.
+PR61 now localizes Legacy ending cards from stable ending IDs.
 
-## Ordinary action result localization
+## 251 — ordinary action result localization
 
-`GREEN_TEXT_SOURCE / CONSUMER_REQUIRED`.
+`SHIPPED_GREEN_VIA_PR61`.
 
-Reviewed ordinary slice:
+Reviewed:
 - 16 exact current action IDs;
 - exact scene `default` for each;
-- 32 RU+EN result strings;
-- current-root conflicts: 0.
+- 32 RU+EN title/body strings;
+- no gameplay/Save/RNG fields.
 
-No mechanics/Save/RNG fields.
+Current result consumer keeps:
+1. School specialized result;
+2. event-choice outcomeRef;
+3. ordinary action stable-ID localization;
+4. raw fallback.
 
-Current generic result screen still uses raw ordinary:
-- `lastAction.title`;
-- `lastAction.text`.
+Multi-scene seasonal career results remain outside this consumer.
 
-Current one-scene set permits safe actionId + default lookup.
+## 252 — ending/action shared consumer acceptance
 
-Future multi-scene actions require explicit locale-neutral scene identity.
+`SATISFIED_BY_PR61`.
 
-## Ending/action shared consumer
+PR61 renderer tests prove:
+- ending cards localize RU↔EN without changing eligibility or Save;
+- ordinary action result localizes RU↔EN without changing Save.
 
-`ACCEPTANCE_CONTRACT_READY`.
+No eligibility/effect/reward/RNG/Save identity is derived from localized prose.
 
-Ending cards:
-- stable ending ID -> localized title/description.
+Ordinary action Journal identity remains separate work.
 
-Ordinary results:
-1. preserve School special path;
-2. preserve event outcomeRef path;
-3. use reviewed action + scene identity;
-4. raw fallback otherwise.
+## 253 — remaining bilingual visible debt
 
-Locale switching must not change:
-- ending availability;
-- condition objects;
-- rewards/meta;
-- action effects/deltas/economics;
-- pending event identity;
-- RNG;
-- Save.
-
-Ordinary action Journal rows remain separate because they currently have null journal refs.
-
-## Current normal-player bilingual debt
-
-Product remains:
+Current product remains:
 `PARTIAL_BILINGUAL`.
 
-Highest-value remaining visible debt:
+PR62 closes:
+- selected route raw-ID display;
+- Stats profession raw labels;
+- Legacy unlock raw labels;
+- route checkpoint machine option ID where it maps to a Forest route option.
 
-1. selected Forest route shows raw routeId;
-2. Legacy ending cards are raw/mixed-language catalog source;
-3. 16 ordinary action cards lack root label/description localization;
-4. ordinary action result screen remains raw fallback;
-5. profession result screen may show English source in RU;
-6. ordinary action Journal rows remain raw/no stable ref;
-7. ending epilogue/end-state Journal prose remains raw;
-8. Stats profession summary reads raw catalog labels;
-9. Work effect tags use raw RU label dictionary;
-10. Legacy inheritance names use raw label dictionary;
-11. some ending/condition text exposes stable machine IDs;
-12. generic Night fallback can expose raw phase text;
-13. runtime command errors can expose source-language messages;
-14. 6 current events still have zero root event-localization coverage;
-15. generic root media-alt localization remains incomplete.
+Highest-value remaining normal-player debt:
+1. 40 seasonal profession result bodies + stable scene-aware result consumer;
+2. 16 ordinary action-card description keys;
+3. Work effect tags still use raw RU label dictionary;
+4. Lumber ending requirement display exposes some stable machine IDs;
+5. ordinary action Journal rows lack stable refs;
+6. ending completion/epilogue history remains source prose;
+7. generic Night fallback may expose raw phase ID;
+8. runtime errors can expose source-language messages;
+9. six current events still have zero root event-localization coverage.
 
-Debug/internal and Product-open surfaces are excluded from this prioritization.
+Debug/internal and Product-open surfaces are excluded.
 
-## Animation exporter
+## 254 — old-boundary fallback transition
+
+`TRANSITION_IMPLEMENTED / GREEN_POST_MERGE_MAIN`.
+
+Before PR60:
+- requested old-boundary semantic ID;
+- physical route/default.
+
+After PR60:
+- same requested semantic ID;
+- same persisted routeId;
+- physical old-boundary v3 specific static;
+- neutral route/default fallback retained.
+
+No Save/RNG/result/Hard Work change.
+
+## 255 — animation exporter preapproval
 
 `READY_FOR_LEAD_APPROVAL / INSTALL_AND_CI_PROOF_REQUIRED`.
 
@@ -208,86 +180,96 @@ Proposed exact dev-only dependencies:
 - `sharp@0.35.4`;
 - `gifenc@1.0.3`.
 
-Latest Chat2 packets cover:
-- Apache-2.0/MIT notice requirements;
-- sharp native/libvips install risk;
-- Node 22.18 / Ubuntu CI portability;
-- deterministic export assumptions;
-- rollback.
+Current package/lock remain unchanged:
+- package blob `91de0847c3ae3b8de394334968307ccf6252820a`;
+- lock blob `77b325bc6b2115499c475adf92d3bae218bf37a1`.
 
-Worker package/lock remain unchanged from current main baseline.
-
-Lead may approve a dedicated tooling integration attempt.
-
-Still required on actual integration head:
-- exact package/lock diff;
-- npm ci;
-- sharp/gifenc imports;
-- local project-owned export smoke;
-- actual GIF validator;
-- repeat-export determinism;
+Lead tooling integration must still prove:
+- generated lockfile review;
+- notices/licenses;
+- Node 22.18 / Ubuntu `npm ci`;
+- sharp/gifenc import;
+- local SVG raster/export smoke;
+- no export-time network access;
+- GIF validator;
+- repeated same-environment byte identity;
 - full CI.
 
-Production GIFs:
-0.
+Actual production GIFs:
+`0`.
 
-Production GIF pools:
-0.
+Production 3–5 GIF pools:
+`0`.
 
-No production animation claim is approved.
+## 256 — project-owned static coverage
 
-## Current project-owned static coverage
+Current:
+- established baseline target: 80/80;
+- route-specific extension: 2/2;
+- active semantic static mappings: 82;
+- unique active physical sources: 81;
+- neutral route/default retained;
+- logging-road specific shipped;
+- old-boundary v3 specific shipped.
 
-Current main:
-- active semantic project-owned static mappings: 82;
-- unique active physical project-owned sources: 81;
-- physical presentation files: 91;
-- active physical files: 81;
-- retained inactive/source-history: 10.
+Static coverage is not animation coverage.
 
-Established baseline target:
-80/80.
+## 257 — current-main CI floor
 
-Route-specific extension:
-2/2 current Forest route identities now have reviewed specific statics.
-
-Neutral route/default remains retained as fallback.
-
-Static coverage is not GIF coverage.
-
-## Current-main CI floor
-
-Authoritative floor:
-- main `2ad9fb8...`;
-- run #120;
-- 363/363;
+Authoritative:
+- main `1b0ea9dc3c10a8acb24df2ca2edd0e5f609dd515`;
+- run #126 / id `36412267106`;
+- 375/375;
 - validator 17/46/35/9;
-- root localization 664 bilingual keys;
-- project-owned static mappings 82;
-- unique active physical sources 81.
+- root localization 744 keys, all RU+EN complete;
+- static 82 semantic / 81 unique physical.
 
-Future localization/presentation PRs must not silently regress these counts.
+PR62 exact head:
+`0b8c7e4b010426188a196decbc9a40cf58b64fc2`.
 
-## Recommended next integration order
+Run #125:
+375/375 PASS.
 
-### 1. Localized selected-route status
-Small render-only change using existing route-option labels.
+## Locked invariants
 
-### 2. Ending + ordinary result localization
-Selective root source + shared UI result/card consumers.
+Continue to protect:
+- Lumber Hard Work only `completed_shifts >= 50`;
+- meta reward `hardWork:lumber`;
+- exact Forest success/escape/failure result IDs;
+- exact activityResult reactions;
+- Old Boundary `enter_old_boundary` gate;
+- persisted route IDs independent of localized display;
+- ending eligibility/reward/meta identity;
+- ordinary action effects/economics;
+- School specialized result precedence;
+- Journal event-choice stable refs;
+- Night costs/effects;
+- locale-independent gameplay RNG/Save/media identity.
 
-Keep ordinary Journal refs out of this PR.
+## Recommended next production slices
 
-### 3. Action-card/Stats direct-label cleanup
-Reuse existing generic/action localization sources before adding new namespaces.
+### Seasonal profession result localization
+Highest-value current normal-player bilingual gap.
 
-### 4. Ordinary action Journal identity
-Separate Save/runtime design if dynamic historical rerendering is required.
+Requires:
+- exact stable scene identity for the 40 seasonal career result scenes;
+- RU+EN result bodies;
+- render-only consumer;
+- Save/RNG/effect invariance.
 
-### 5. Animation exporter
-Dedicated dev-tooling PR only.
+### Ordinary action-card descriptions
+The 16 immediate results are localized, but their action-list descriptions still need bilingual `action.<id>.description` source.
 
-Do not combine dependency approval with production GIF activation.
+### Generic-label reuse cleanup
+Work effect tags should use existing generic/stat localization rather than raw RU dictionary.
+
+### Historical result identity
+Ordinary action Journal localization needs a separate stable-ref design; do not fuzzy-match stored prose.
+
+### Exporter tooling
+May proceed as a dedicated dev-tooling PR after explicit Lead approval.
+
+Do not combine dependency integration with a production GIF activation claim.
 
 ## Product-open isolation
 
@@ -298,24 +280,25 @@ Still isolated:
 - unresolved School providers;
 - Secret Debt;
 - authored Palace content;
-- deeper not-current ending/relationship decisions.
+- deeper not-current relationship/ending decisions.
 
-Old-boundary static activation does not authorize any of those mechanics.
+Route media and localization do not authorize those mechanics.
 
 ## Final gate verdict
 
 - current main CI: `GREEN`;
 - PR59 logging-road media: `SHIPPED_GREEN`;
 - PR60 old-boundary v3 media: `SHIPPED_GREEN`;
+- PR61 endings/action results: `SHIPPED_GREEN`;
+- PR62 route/profession/unlock display labels: `SHIPPED_GREEN`;
 - Forest route-specific static coverage: `2/2 CURRENT ROUTES`;
-- route status label consumer: `READY`;
-- ending localization source: `GREEN`;
-- ordinary action result source: `GREEN`;
-- ending/action shared consumer contract: `READY`;
-- full-product bilingual state: `PARTIAL_BILINGUAL`;
-- animation exporter: `READY_FOR_LEAD_APPROVAL / CI_PROOF_REQUIRED`;
+- route label debt: `CLOSED`;
+- ending localization: `CLOSED_FOR_CURRENT_CARDS`;
+- ordinary default-scene action results: `CLOSED_FOR_16 REVIEWED ACTIONS`;
+- animation exporter: `READY_FOR_LEAD_APPROVAL / CI PROOF REQUIRED`;
 - production GIFs/pools: `NONE`;
-- static coverage: `82 semantic / 81 unique physical`;
+- project-owned static coverage: `82 semantic / 81 unique physical`;
+- full-product bilingual state: `PARTIAL_BILINGUAL`;
 - Product-open content: `ISOLATED`.
 
 No whole worker/chat branch is approved for merge.
