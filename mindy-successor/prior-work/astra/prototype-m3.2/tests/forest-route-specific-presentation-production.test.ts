@@ -18,7 +18,7 @@ test('Forest authoritative route state resolves exact semantic presentation IDs'
  assert.ok(ids.has('activity/forest/route/old-boundary'));
 });
 
-test('logging-road has safe project-owned static while old-boundary keeps neutral fallback',()=>{
+test('both Forest routes use reviewed project-owned static with neutral fallback metadata retained',()=>{
  presentationSchema.parse(presentation);
  const checked=applyPresentation(catalog,presentation);
  const before=JSON.stringify(catalog);
@@ -30,8 +30,11 @@ test('logging-road has safe project-owned static while old-boundary keeps neutra
  assert.ok(existsSync('dist/assets/presentation/forest-route-logging-road.svg'));
 
  const boundary=resolvePresentation(checked,presentation,'activity/forest/route/old-boundary',{animationsEnabled:true,occurrenceKey:'same'});
- assert.equal(boundary.selected?.src,'assets/presentation/forest-route-default-v1.svg');
- assert.equal(boundary.selected?.slotId,'activity/forest/route/default');
+ assert.equal(boundary.selected?.src,'assets/presentation/forest-route-old-boundary-v3.svg');
+ assert.equal(boundary.selected?.slotId,'activity/forest/route/old-boundary');
+ assert.equal(boundary.selected?.altKey,'presentation.activity.forest.route.old-boundary.alt');
+ assert.ok(existsSync('assets/presentation/forest-route-old-boundary-v3.svg'));
+ assert.ok(existsSync('dist/assets/presentation/forest-route-old-boundary-v3.svg'));
 
  assert.equal(JSON.stringify(catalog),before);
 });
@@ -48,7 +51,9 @@ test('Forest route presentation localization is complete and presentation-only',
   assert.ok(localization[key]?.ru?.trim(),key+' ru');
   assert.ok(localization[key]?.en?.trim(),key+' en');
  }
- const serialized=JSON.stringify(presentation.slots['activity/forest/route/logging-road']);
- assert.doesNotMatch(serialized,/hunter|token|reward|challenge|condition|effect|rng|save/i);
- assert.equal(presentation.slots['activity/forest/route/old-boundary'],undefined);
+ for(const id of ['activity/forest/route/logging-road','activity/forest/route/old-boundary']){
+  const serialized=JSON.stringify(presentation.slots[id]);
+  assert.doesNotMatch(serialized,/hunter|token|reward|challenge|condition|effect|rng|save/i,id);
+ }
+ assert.equal(presentation.slots['activity/forest/route/old-boundary']?.static?.src,'assets/presentation/forest-route-old-boundary-v3.svg');
 });
