@@ -1,0 +1,269 @@
+{
+  "formatVersion": 2,
+  "kind": "project-owned-animation-source-manifest",
+  "status": "SOURCE_READY_GIF_EXPORT_BLOCKED",
+  "currentMainBaseline": "d383a2282a15eb4ebc1bbb2fef2bbf9f3f2087fe",
+  "sequences": [
+    {
+      "sequenceKey": "lumber-spring-work-loop-a",
+      "presentationId": "job/lumber/shift/spring/default",
+      "exportReady": true,
+      "candidateKey": "lumber-spring-loop-a",
+      "targetLoopDurationMs": 2400,
+      "staticFallback": "assets/presentation/career-lumber-shift-spring.svg",
+      "frames": [
+        "assets/presentation-frames/lumber-spring-work-loop-a-frame-01.svg",
+        "assets/presentation-frames/lumber-spring-work-loop-a-frame-02.svg",
+        "assets/presentation-frames/lumber-spring-work-loop-a-frame-03.svg",
+        "assets/presentation-frames/lumber-spring-work-loop-a-frame-04.svg"
+      ],
+      "gifPath": null
+    },
+    {
+      "sequenceKey": "lumber-spring-work-loop-b",
+      "presentationId": "job/lumber/shift/spring/default",
+      "exportReady": true,
+      "candidateKey": "lumber-spring-loop-b",
+      "targetLoopDurationMs": 2200,
+      "staticFallback": "assets/presentation/career-lumber-shift-spring.svg",
+      "frames": [
+        "assets/presentation-frames/lumber-spring-work-loop-b-frame-01.svg",
+        "assets/presentation-frames/lumber-spring-work-loop-b-frame-02.svg",
+        "assets/presentation-frames/lumber-spring-work-loop-b-frame-03.svg",
+        "assets/presentation-frames/lumber-spring-work-loop-b-frame-04.svg"
+      ],
+      "gifPath": null
+    },
+    {
+      "sequenceKey": "lumber-spring-work-loop-c",
+      "presentationId": "job/lumber/shift/spring/default",
+      "exportReady": true,
+      "candidateKey": "lumber-spring-loop-c",
+      "targetLoopDurationMs": 2600,
+      "staticFallback": "assets/presentation/career-lumber-shift-spring.svg",
+      "frames": [
+        "assets/presentation-frames/lumber-spring-work-loop-c-frame-01.svg",
+        "assets/presentation-frames/lumber-spring-work-loop-c-frame-02.svg",
+        "assets/presentation-frames/lumber-spring-work-loop-c-frame-03.svg",
+        "assets/presentation-frames/lumber-spring-work-loop-c-frame-04.svg"
+      ],
+      "gifPath": null
+    },
+    {
+      "sequenceKey": "guard-summer-watch-loop-a",
+      "presentationId": "job/guard/shift/summer/default",
+      "exportReady": true,
+      "candidateKey": "guard-summer-loop-a",
+      "targetLoopDurationMs": 2800,
+      "staticFallback": "assets/presentation/career-guard-shift-summer.svg",
+      "frames": [
+        "assets/presentation-frames/guard-summer-watch-loop-a-frame-01.svg",
+        "assets/presentation-frames/guard-summer-watch-loop-a-frame-02.svg",
+        "assets/presentation-frames/guard-summer-watch-loop-a-frame-03.svg",
+        "assets/presentation-frames/guard-summer-watch-loop-a-frame-04.svg"
+      ],
+      "gifPath": null
+    },
+    {
+      "sequenceKey": "guard-summer-watch-loop-b",
+      "presentationId": "job/guard/shift/summer/default",
+      "exportReady": true,
+      "candidateKey": "guard-summer-loop-b",
+      "targetLoopDurationMs": 3000,
+      "staticFallback": "assets/presentation/career-guard-shift-summer.svg",
+      "frames": [
+        "assets/presentation-frames/guard-summer-watch-loop-b-frame-01.svg",
+        "assets/presentation-frames/guard-summer-watch-loop-b-frame-02.svg",
+        "assets/presentation-frames/guard-summer-watch-loop-b-frame-03.svg",
+        "assets/presentation-frames/guard-summer-watch-loop-b-frame-04.svg"
+      ],
+      "gifPath": null
+    },
+    {
+      "sequenceKey": "guard-summer-watch-loop-c",
+      "presentationId": "job/guard/shift/summer/default",
+      "exportReady": true,
+      "candidateKey": "guard-summer-loop-c",
+      "targetLoopDurationMs": 2600,
+      "staticFallback": "assets/presentation/career-guard-shift-summer.svg",
+      "frames": [
+        "assets/presentation-frames/guard-summer-watch-loop-c-frame-01.svg",
+        "assets/presentation-frames/guard-summer-watch-loop-c-frame-02.svg",
+        "assets/presentation-frames/guard-summer-watch-loop-c-frame-03.svg",
+        "assets/presentation-frames/guard-summer-watch-loop-c-frame-04.svg"
+      ],
+      "gifPath": null
+    },
+    {
+      "sequenceKey": "tavern-autumn-service-loop-a",
+      "presentationId": "job/tavern/shift/autumn/default",
+      "exportReady": true,
+      "candidateKey": "tavern-autumn-loop-a",
+      "targetLoopDurationMs": 2600,
+      "staticFallback": "assets/presentation/career-tavern-shift-autumn.svg",
+      "frames": [
+        "assets/presentation-frames/tavern-autumn-service-loop-a-frame-01.svg",
+        "assets/presentation-frames/tavern-autumn-service-loop-a-frame-02.svg",
+        "assets/presentation-frames/tavern-autumn-service-loop-a-frame-03.svg",
+        "assets/presentation-frames/tavern-autumn-service-loop-a-frame-04.svg"
+      ],
+      "gifPath": null
+    },
+    {
+      "sequenceKey": "tavern-autumn-service-loop-b",
+      "presentationId": "job/tavern/shift/autumn/default",
+      "exportReady": true,
+      "candidateKey": "tavern-autumn-loop-b",
+      "targetLoopDurationMs": 2800,
+      "staticFallback": "assets/presentation/career-tavern-shift-autumn.svg",
+      "frames": [
+        "assets/presentation-frames/tavern-autumn-service-loop-b-frame-01.svg",
+        "assets/presentation-frames/tavern-autumn-service-loop-b-frame-02.svg",
+        "assets/presentation-frames/tavern-autumn-service-loop-b-frame-03.svg",
+        "assets/presentation-frames/tavern-autumn-service-loop-b-frame-04.svg"
+      ],
+      "gifPath": null
+    },
+    {
+      "sequenceKey": "tavern-autumn-service-loop-c",
+      "presentationId": "job/tavern/shift/autumn/default",
+      "exportReady": true,
+      "candidateKey": "tavern-autumn-loop-c",
+      "targetLoopDurationMs": 2400,
+      "staticFallback": "assets/presentation/career-tavern-shift-autumn.svg",
+      "frames": [
+        "assets/presentation-frames/tavern-autumn-service-loop-c-frame-01.svg",
+        "assets/presentation-frames/tavern-autumn-service-loop-c-frame-02.svg",
+        "assets/presentation-frames/tavern-autumn-service-loop-c-frame-03.svg",
+        "assets/presentation-frames/tavern-autumn-service-loop-c-frame-04.svg"
+      ],
+      "gifPath": null
+    },
+    {
+      "sequenceKey": "school-literacy-study-loop-a",
+      "presentationId": "school/literacy-and-numbers/lesson/default",
+      "exportReady": true,
+      "candidateKey": "school-literacy-loop-a",
+      "targetLoopDurationMs": 3000,
+      "staticFallback": "assets/presentation/school-course-literacy-and-numbers.svg",
+      "frames": [
+        "assets/presentation-frames/school-literacy-study-loop-a-frame-01.svg",
+        "assets/presentation-frames/school-literacy-study-loop-a-frame-02.svg",
+        "assets/presentation-frames/school-literacy-study-loop-a-frame-03.svg",
+        "assets/presentation-frames/school-literacy-study-loop-a-frame-04.svg"
+      ],
+      "gifPath": null
+    },
+    {
+      "sequenceKey": "school-literacy-study-loop-b",
+      "presentationId": "school/literacy-and-numbers/lesson/default",
+      "exportReady": true,
+      "candidateKey": "school-literacy-loop-b",
+      "targetLoopDurationMs": 2800,
+      "staticFallback": "assets/presentation/school-course-literacy-and-numbers.svg",
+      "frames": [
+        "assets/presentation-frames/school-literacy-study-loop-b-frame-01.svg",
+        "assets/presentation-frames/school-literacy-study-loop-b-frame-02.svg",
+        "assets/presentation-frames/school-literacy-study-loop-b-frame-03.svg",
+        "assets/presentation-frames/school-literacy-study-loop-b-frame-04.svg"
+      ],
+      "gifPath": null
+    },
+    {
+      "sequenceKey": "school-literacy-study-loop-c",
+      "presentationId": "school/literacy-and-numbers/lesson/default",
+      "exportReady": true,
+      "candidateKey": "school-literacy-loop-c",
+      "targetLoopDurationMs": 3200,
+      "staticFallback": "assets/presentation/school-course-literacy-and-numbers.svg",
+      "frames": [
+        "assets/presentation-frames/school-literacy-study-loop-c-frame-01.svg",
+        "assets/presentation-frames/school-literacy-study-loop-c-frame-02.svg",
+        "assets/presentation-frames/school-literacy-study-loop-c-frame-03.svg",
+        "assets/presentation-frames/school-literacy-study-loop-c-frame-04.svg"
+      ],
+      "gifPath": null
+    },
+    {
+      "sequenceKey": "poverty-helpful-summer-loop-a",
+      "presentationId": "location/town/event/poverty-street-production-helpful-summer/default",
+      "exportReady": false,
+      "candidateKey": "poverty-helpful-summer-loop-a",
+      "targetLoopDurationMs": 2400,
+      "staticFallback": "assets/presentation/poverty-street-helpful-summer.svg",
+      "frames": [
+        "assets/presentation-frames/poverty-helpful-summer-loop-a-frame-01.svg",
+        "assets/presentation-frames/poverty-helpful-summer-loop-a-frame-02.svg",
+        "assets/presentation-frames/poverty-helpful-summer-loop-a-frame-03.svg",
+        "assets/presentation-frames/poverty-helpful-summer-loop-a-frame-04.svg"
+      ],
+      "gifPath": null
+    },
+    {
+      "sequenceKey": "forest-success-return-loop-a",
+      "presentationId": "activity/forest/return/success",
+      "exportReady": false,
+      "candidateKey": "forest-success-return-loop-a",
+      "targetLoopDurationMs": 3200,
+      "staticFallback": "assets/presentation/forest-return-success-v2.svg",
+      "frames": [
+        "assets/presentation-frames/forest-success-return-loop-a-frame-01.svg",
+        "assets/presentation-frames/forest-success-return-loop-a-frame-02.svg",
+        "assets/presentation-frames/forest-success-return-loop-a-frame-03.svg",
+        "assets/presentation-frames/forest-success-return-loop-a-frame-04.svg"
+      ],
+      "gifPath": null
+    },
+    {
+      "sequenceKey": "foreman-night-professional-loop-a",
+      "presentationId": "relationship/lumber-foreman/lumber-night-foreman-professional/default",
+      "exportReady": false,
+      "candidateKey": "foreman-night-professional-loop-a",
+      "targetLoopDurationMs": 3600,
+      "staticFallback": "assets/presentation/foreman-night-voluntary-v2.svg",
+      "frames": [
+        "assets/presentation-frames/foreman-night-professional-loop-a-frame-01.svg",
+        "assets/presentation-frames/foreman-night-professional-loop-a-frame-02.svg",
+        "assets/presentation-frames/foreman-night-professional-loop-a-frame-03.svg",
+        "assets/presentation-frames/foreman-night-professional-loop-a-frame-04.svg"
+      ],
+      "gifPath": null
+    },
+    {
+      "sequenceKey": "school-arcana-rune-loop-a",
+      "presentationId": "school/arcana/lesson/default",
+      "exportReady": false,
+      "candidateKey": "school-arcana-loop-a",
+      "targetLoopDurationMs": 3000,
+      "staticFallback": "assets/presentation/school-course-arcana.svg",
+      "frames": [
+        "assets/presentation-frames/school-arcana-rune-loop-a-frame-01.svg",
+        "assets/presentation-frames/school-arcana-rune-loop-a-frame-02.svg",
+        "assets/presentation-frames/school-arcana-rune-loop-a-frame-03.svg",
+        "assets/presentation-frames/school-arcana-rune-loop-a-frame-04.svg"
+      ],
+      "gifPath": null
+    }
+  ],
+  "summary": {
+    "validatedSequences": 16,
+    "validatedFrameFiles": 64,
+    "semanticIdentities": 8,
+    "exportReadySemanticIds": [
+      "job/guard/shift/summer/default",
+      "job/lumber/shift/spring/default",
+      "job/tavern/shift/autumn/default",
+      "school/literacy-and-numbers/lesson/default"
+    ],
+    "exportReadySequenceCount": 12,
+    "actualGifPaths": 0
+  },
+  "exportBlocker": "Approved reproducible SVG-frame to animated-GIF exporter is not yet present in the repo/CI toolchain.",
+  "invariants": {
+    "noFakeGifPaths": true,
+    "presentationOnly": true,
+    "gameplayFields": false,
+    "localeNeutralCandidateKeys": true,
+    "staticFallbackRequired": true
+  }
+}
