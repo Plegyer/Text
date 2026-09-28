@@ -3,18 +3,14 @@
 Status: COMPLETE / READY_FOR_LEAD_APPROVAL / INSTALL_AND_CI_PROOF_REQUIRED
 
 Current main:
-`54131488c65302f81b3001abaaa345d21f0281e2`.
+`01b31b9ab0d0267d95edf5b5b80638acd63f5c04`.
 
-Reviewed current Chat2 exporter packet, including:
-- `EXPORTER_DEPENDENCY_LICENSE_PACKET_V1.md`;
-- `EXPORTER_CI_PORTABILITY_PACKET_V1.md`;
-- prior exact dependency/CLI/security/reproducibility/validator packet.
-
-Latest packet blobs reviewed:
-- license packet:
-  `772bf4c382cea333e8b9f64e730ff5320f7fa08e`;
-- CI portability packet:
-  `06f57a896d7540e8458ad894fa1f463a376acc9a`.
+Reviewed Chat2 packets include:
+- `EXPORTER_DEPENDENCY_LICENSE_PACKET_V1.md`
+  blob `772bf4c382cea333e8b9f64e730ff5320f7fa08e`;
+- `EXPORTER_CI_PORTABILITY_PACKET_V1.md`
+  blob `06f57a896d7540e8458ad894fa1f463a376acc9a`;
+- prior exact dependency/security/reproducibility/exporter/validator packet.
 
 ## Proposed exact dev-only dependencies
 
@@ -24,172 +20,128 @@ Latest packet blobs reviewed:
 No semver ranges.
 
 Purpose:
-authoring-time project-owned SVG frame -> GIF export.
+authoring-time repository-local project-owned SVG frames -> GIF export.
 
 Not application runtime.
 
 ## Current package integrity
 
-Worker and current main still have identical:
-- `package.json` blob
-  `91de0847c3ae3b8de394334968307ccf6252820a`;
-- `package-lock.json` blob
-  `77b325bc6b2115499c475adf92d3bae218bf37a1`.
+Current main package files are still unchanged from the preapproval baseline:
 
-Therefore Chat2 has not silently installed or committed the proposed dependency change.
+`package.json` blob:
+`91de0847c3ae3b8de394334968307ccf6252820a`.
 
-This is the correct preapproval state.
+`package-lock.json` blob:
+`77b325bc6b2115499c475adf92d3bae218bf37a1`.
 
-## License review
+Neither sharp nor gifenc is currently installed.
 
-### sharp 0.35.4
-License:
+## License / notice
+
+`sharp@0.35.4`:
 Apache-2.0.
 
-Required Lead obligations:
-- retain required notices;
-- include in development-tool third-party inventory if project policy uses one;
-- review transitive/platform packages in generated lockfile;
-- review native/libvips distribution surface;
-- review install lifecycle behavior.
+Required Lead checks:
+- notices;
+- generated transitive/platform lockfile surface;
+- native/libvips packages;
+- install lifecycle behavior.
 
-### gifenc 1.0.3
-License:
+`gifenc@1.0.3`:
 MIT.
 
 Required:
-- retain MIT notice/copyright;
+- MIT notice;
 - exact pin;
-- third-party development-tool inventory as applicable.
+- development-tool inventory as applicable.
 
-These dependency licenses do not change ownership/license of project-authored frames or exported media.
+Dependency licenses do not change ownership/license of project-authored media.
 
-## CI baseline
+## CI portability
 
-Current project:
-- Node engine >=22.18.0;
-- GitHub runner Ubuntu latest;
+Project baseline:
+- Node >=22.18.0;
 - CI Node 22.18.0;
+- Ubuntu runner;
 - `npm ci`;
-- `npm run check`;
-- lockfileVersion 3.
+- `npm run check`.
 
-This is a suitable explicit target environment for approval testing.
+Principal risk:
+sharp native/prebuilt installation.
 
-## Native install risk
+Actual approval integration must prove:
+1. exact generated lockfile;
+2. `npm ci` succeeds;
+3. sharp import succeeds;
+4. gifenc import succeeds;
+5. local project-owned SVG rasterizes;
+6. GIF encodes with no export-time network access;
+7. validator accepts actual bytes;
+8. two same-environment exports are byte/SHA identical;
+9. full current CI remains green.
 
-Primary risk:
-`sharp`.
+Unexpected native source-build/fallback behavior is blocking until reviewed.
 
-Approval is conditional on exact current CI proving:
-1. generated lockfile resolves supported Linux packages;
-2. `npm ci` succeeds without manual ImageMagick/ffmpeg/system provisioning;
-3. `import('sharp')` succeeds on Node 22.18.0;
-4. one local SVG rasterizes at the required size;
-5. no export-time network fetch is required.
+## Input security
 
-Unexpected source build/native fallback:
-`BLOCKING_UNTIL_REVIEWED`.
-
-## gifenc portability
-
-Expected JS-only path is lower risk.
-
-Still require:
-- import smoke;
-- exact API use;
-- deterministic wrapper tests;
-- exact package pin.
-
-## Input/provenance security
-
-Exporter approval remains constrained to:
-- repository-local;
-- project-owned SVG frame sources.
+Exporter must remain restricted to:
+- repository-local inputs;
+- `assets/presentation-frames/`;
+- project-owned SVG sources.
 
 Reject:
-- external URLs;
+- URLs;
 - absolute paths;
 - traversal;
 - remote art;
 - data-resource injection;
 - scripts/external SVG resources.
 
-No downloaded third-party GIF/media is approved.
+Output remains under:
+`assets/gif/`.
 
 ## Determinism
 
-Same pinned CI environment must fix:
-- Node;
-- OS/arch;
-- lockfile;
+Same pinned environment fixes:
+- Node/OS/arch;
+- package lock;
 - exporter revision;
 - source frame hashes/order;
 - dimensions;
-- palette/quantization;
-- frame delay;
+- palette;
+- timing;
 - loop.
 
-Before production media activation:
-two repeated exports of the same exact source/config on the approved environment should be byte-identical/SHA-identical.
+Same exact input must yield byte-identical output.
 
-Cross-platform byte identity is not assumed.
+Cross-platform byte identity is not assumed without evidence.
 
 ## Rollback
 
-If install/export portability fails:
-1. remove exact devDependencies;
-2. remove exporter npm script if added;
-3. regenerate/restore lockfile;
-4. retain project-owned SVG frame sources;
-5. retain static fallbacks;
-6. activate no GIF paths.
+If dependency/tooling integration fails:
+- remove exact devDependencies;
+- remove exporter script entry;
+- regenerate/restore lockfile;
+- retain SVG source frames;
+- retain static fallbacks;
+- activate no GIF paths.
 
 No gameplay/Save migration is involved.
 
-## Current route animation source readiness
+## Production animation state
 
-Chat2 has route frame/source authoring, but source SVG sequences are not production GIF candidates.
-
-Current actual project-owned production GIFs:
+Current actual production GIFs:
 `0`.
 
-Current production 3–5 candidate pools:
+Current production 3–5 candidate GIF pools:
 `0`.
 
-No GIF path should be added merely because dependency approval is granted.
-
-## Approval classification
-
-The documentation/design packet is sufficient for Lead to decide and attempt the exact dev-only integration.
-
-Therefore:
-`READY_FOR_LEAD_APPROVAL`.
-
-But dependency approval is not equivalent to completed toolchain validation.
-
-The actual integration head remains required to prove:
-- package/lock diff;
-- notices/transitive review;
-- npm ci;
-- sharp/gifenc import;
-- export smoke;
-- GIF validator;
-- repeated determinism;
-- full current CI.
-
-## No production GIF claim
-
-This QA explicitly does not approve:
-- any actual GIF bytes;
-- any GIF candidate pool;
-- any root GIF activation;
-- any runtime dependency.
+Source frame readiness does not count as production animation.
 
 ## Verdict
 
 `READY_FOR_LEAD_APPROVAL / INSTALL_AND_CI_PROOF_REQUIRED`.
 
-The proposed dev-only dependency change is ready for Lead approval as a tooling experiment/integration.
+The proposed dev-only dependency change is ready for an explicit Lead tooling integration attempt.
 
-Production animation remains unapproved until real project-owned GIF bytes separately pass pool acceptance.
+No production GIF/pool claim is approved.
