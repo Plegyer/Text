@@ -2633,6 +2633,30 @@
     "ui.run.fatesAndNextLife": {
       "ru": "Судьбы и следующая жизнь",
       "en": "Fates and next life"
+    },
+    "activityOption.forest.route.logging-road.help": {
+      "ru": "Широкая рабочая дорога со свежими следами лесозаготовок.",
+      "en": "A broad work road with fresh signs of logging."
+    },
+    "activityOption.forest.route.old-boundary.help": {
+      "ru": "Старый путь по межевым камням и выветренным меткам.",
+      "en": "An old route traced by boundary stones and weathered marks."
+    },
+    "presentation.activity.forest.route.logging-road.alt": {
+      "ru": "Лесовозная дорога с колеями и следами недавних работ.",
+      "en": "Logging road with wheel ruts and signs of recent work."
+    },
+    "presentation.activity.forest.route.logging-road.caption": {
+      "ru": "Здесь путь читается по следам работы: колеям, ветвям и меткам на деревьях.",
+      "en": "Here the route is readable through signs of work: wheel ruts, cut branches, and marks on trees."
+    },
+    "presentation.activity.forest.route.old-boundary.alt": {
+      "ru": "Старая межевая линия с замшелыми камнями и выветренными метками.",
+      "en": "Old boundary line with moss-covered stones and weathered marks."
+    },
+    "presentation.activity.forest.route.old-boundary.caption": {
+      "ru": "Камни и старые знаки складываются в линию, не совпадающую с новой лесовозной дорогой.",
+      "en": "Stones and old markers form a line that does not follow the newer logging road."
     }
   }
 }

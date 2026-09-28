@@ -822,8 +822,8 @@ test('renderer: Forest route presentation seam follows route state without save 
 
   media=w.document.querySelector('.media-window');
   assert.equal(media?.getAttribute('data-presentation-id'),'activity/forest/route/logging-road');
-  assert.equal(media?.getAttribute('data-resolved-slot'),'activity/forest/route/default');
-  assert.match(media?.querySelector('img')?.getAttribute('src')??'',/assets\/presentation\/forest-route-default-v1\.svg$/);
+  assert.equal(media?.getAttribute('data-resolved-slot'),'activity/forest/route/logging-road');
+  assert.match(media?.querySelector('img')?.getAttribute('src')??'',/assets\/presentation\/forest-route-logging-road\.svg$/);
 
   const beforeLocale=w.localStorage.getItem('portal-life.v1');
   const activityBefore=JSON.parse(beforeLocale).run.flow.activity;
@@ -836,7 +836,7 @@ test('renderer: Forest route presentation seam follows route state without save 
 
   media=w.document.querySelector('.media-window');
   assert.equal(media?.getAttribute('data-presentation-id'),'activity/forest/route/logging-road');
-  assert.equal(media?.getAttribute('data-resolved-slot'),'activity/forest/route/default');
+  assert.equal(media?.getAttribute('data-resolved-slot'),'activity/forest/route/logging-road');
   const activityAfter=JSON.parse(w.localStorage.getItem('portal-life.v1')).run.flow.activity;
   assert.deepEqual(activityAfter,activityBefore);
   assert.deepEqual(errors,[]);
@@ -898,6 +898,45 @@ test('renderer: pending encounter eyebrow localizes without changing pending sce
   assert.equal(after.run.flow.pendingScene.eventId,'base.arrival');
   assert.equal(after.run.flow.pendingScene.variantId,'welcome');
   assert.deepEqual(after.run.flow.pendingScene.allowedChoiceIds,['introduce']);
+  assert.deepEqual(errors,[]);
+ }finally{dom.window.close();}
+});
+
+
+test('renderer: Forest route-specific presentation stays locale and save invariant',async()=>{
+ const s=started();
+ const {w,dom,errors}=boot(JSON.stringify(s));try{
+  await wait(()=>!!w.document.querySelector('[data-panel="explore"]'));
+  w.document.querySelector('[data-panel="explore"]').click();
+  await wait(()=>!!w.document.querySelector('[data-enter-activity="lumber.forest"]'));
+  w.document.querySelector('[data-enter-activity="lumber.forest"]').click();
+  await wait(()=>!!w.document.querySelector('[data-activity-action="forest.route.logging-road"]'));
+
+  assert.match(w.document.querySelector('.media-window img')?.getAttribute('src')??'',/forest-route-default-v1\.svg$/);
+  assert.match(w.document.querySelector('.dialogue')?.textContent??'',/Широкая рабочая дорога со свежими следами лесозаготовок/);
+
+  w.document.querySelector('[data-activity-action="forest.route.logging-road"]').click();
+  await wait(()=>JSON.parse(w.localStorage.getItem('portal-life.v1')).run.flow.activity?.internalState?.routeId==='logging-road');
+  const before=w.localStorage.getItem('portal-life.v1');
+  const beforeParsed=JSON.parse(before);
+  const imgRu=w.document.querySelector('.media-window img');
+  assert.match(imgRu?.getAttribute('src')??'',/forest-route-logging-road\.svg$/);
+  assert.match(imgRu?.getAttribute('alt')??'',/Лесовозная дорога с колеями/);
+
+  w.document.querySelector('[data-panel="menu"]').click();
+  w.document.querySelector('#language-toggle').click();
+  await wait(()=>w.document.documentElement.lang==='en');
+  assert.equal(w.localStorage.getItem('portal-life.v1'),before);
+  w.document.querySelector('#close').click();
+
+  const imgEn=w.document.querySelector('.media-window img');
+  assert.equal(imgEn?.getAttribute('src'),imgRu?.getAttribute('src'));
+  assert.match(imgEn?.getAttribute('alt')??'',/Logging road with wheel ruts/);
+  const after=JSON.parse(w.localStorage.getItem('portal-life.v1'));
+  assert.equal(after.run.flow.activity.internalState.routeId,'logging-road');
+  assert.equal(after.run.flow.activity.rngState,beforeParsed.run.flow.activity.rngState);
+  assert.equal(after.run.rngState.state,beforeParsed.run.rngState.state);
+  assert.deepEqual(after.run.flow.activity.accumulatedRewards,beforeParsed.run.flow.activity.accumulatedRewards);
   assert.deepEqual(errors,[]);
  }finally{dom.window.close();}
 });

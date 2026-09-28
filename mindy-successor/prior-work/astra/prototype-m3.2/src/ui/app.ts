@@ -17,6 +17,7 @@ let animationsEnabled=localStorage.getItem('portal-life.presentation.animations'
 const tr=(key:string,fallback='')=>resolveLocalizedText(localization,key,locale,fallback);
 const activityLabel=(id:string,fallback:string)=>tr(`activity.${id}.label`,fallback);
 const activityOptionLabel=(id:string,fallback:string)=>tr(`activityOption.${id}.label`,fallback);
+const activityOptionHelp=(id:string)=>tr(`activityOption.${id}.help`,'');
 const eventTitle=(id:string,fallback:string)=>tr(`event.${id}.title`,fallback);
 const eventVariantText=(eventId:string,variantId:string,fallback:string)=>tr(`event.${eventId}.variant.${variantId}.text`,fallback);
 const eventChoiceLabel=(eventId:string,choiceId:string,fallback:string)=>tr(`event.${eventId}.choice.${choiceId}.label`,fallback);
@@ -175,7 +176,7 @@ function central(){
   const slug=activity.activityId.split('.').at(-1)??'activity';
   const actions=availableActivityActions(state,catalog);
   const activityPresentationId=presentationIdForActivityRoute(catalog,activity.activityId,activity.internalState.routeId);
-  return `<section class="stage scene">${mediaHTML(activityPresentationId)}<div class="stage-title"><span class="eyebrow">${esc(tr('ui.activity.eyebrow','Вылазка'))}</span><h1>${esc(activityLabel(activity.activityId,definition?.label??activity.activityId))}</h1></div></section><section class="dialogue"><p>${esc(tr('ui.activity.progressLabel','Прогресс'))}: ${activity.internalState.progress} · ${esc(tr('stat.endurance.label','Выносливость'))}: ${activity.internalState.endurance} · ${esc(tr('ui.activity.checkpointLabel','Контрольная точка'))}: ${esc(activity.checkpoint)}${activity.internalState.routeId?` · ${esc(tr('ui.activity.routeLabel','Маршрут'))}: ${esc(activity.internalState.routeId)}`:''}</p><div class="choices">${actions.map((action,index)=>`<button data-activity-action="${esc(action.id)}" class="${index===0?'primary':''}" ${busy||locked?'disabled':''}>${esc(activityOptionLabel(action.id,action.label))}</button>`).join('')}</div></section>`;
+  return `<section class="stage scene">${mediaHTML(activityPresentationId)}<div class="stage-title"><span class="eyebrow">${esc(tr('ui.activity.eyebrow','Вылазка'))}</span><h1>${esc(activityLabel(activity.activityId,definition?.label??activity.activityId))}</h1></div></section><section class="dialogue"><p>${esc(tr('ui.activity.progressLabel','Прогресс'))}: ${activity.internalState.progress} · ${esc(tr('stat.endurance.label','Выносливость'))}: ${activity.internalState.endurance} · ${esc(tr('ui.activity.checkpointLabel','Контрольная точка'))}: ${esc(activity.checkpoint)}${activity.internalState.routeId?` · ${esc(tr('ui.activity.routeLabel','Маршрут'))}: ${esc(activity.internalState.routeId)}`:''}</p><div class="choices">${actions.map((action,index)=>{const help=activityOptionHelp(action.id);return `<div class="choice-with-help"><button data-activity-action="${esc(action.id)}" class="${index===0?'primary':''}" ${busy||locked?'disabled':''} title="${esc(help)}">${esc(activityOptionLabel(action.id,action.label))}</button>${help?`<small>${esc(help)}</small>`:''}</div>`;}).join('')}</div></section>`;
  }
  if(r.flow.night){
   const night=r.flow.night;

@@ -22,7 +22,7 @@ test('baseline project-owned static slots use current semantic IDs and bilingual
     assert.ok(known.has(id),id);
     assert.equal(slot.static.kind,'image',id);
     assert.match(slot.static.src,/^assets\/presentation\/[a-z0-9-]+\.svg$/);
-    assert.match(slot.static.altKey,/^presentation\.static\..+\.alt$/);
+    assert.match(slot.static.altKey,/^presentation\.(?:static|activity)\..+\.alt$/);
     assert.ok(localization[slot.static.altKey]?.ru?.trim(),slot.static.altKey+' ru');
     assert.ok(localization[slot.static.altKey]?.en?.trim(),slot.static.altKey+' en');
     assert.ok(existsSync(slot.static.src),slot.static.src);

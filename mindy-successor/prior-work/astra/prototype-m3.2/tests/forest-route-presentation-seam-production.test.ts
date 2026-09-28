@@ -30,17 +30,27 @@ test('Forest route presentation seam exposes exact specific IDs with neutral fal
  }
 });
 
-test('route-specific IDs resolve through the shipped neutral default until specific media exists',()=>{
+test('route-specific IDs resolve through safe media or neutral fallback',()=>{
  const checked=applyPresentation(catalog,presentation);
- for(const route of ['logging-road','old-boundary']){
-  const id=presentationIdForActivityRoute(catalog,'lumber.forest',route);
-  const on=resolvePresentation(checked,presentation,id,{animationsEnabled:true,occurrenceKey:'route'});
-  const off=resolvePresentation(checked,presentation,id,{animationsEnabled:false,occurrenceKey:'route'});
-  for(const resolved of [on,off]){
-   assert.equal(resolved.requestedId,id);
-   assert.equal(resolved.selected?.slotId,'activity/forest/route/default');
-   assert.equal(resolved.selected?.src,'assets/presentation/forest-route-default-v1.svg');
-  }
+
+ const loggingId=presentationIdForActivityRoute(catalog,'lumber.forest','logging-road');
+ for(const resolved of [
+  resolvePresentation(checked,presentation,loggingId,{animationsEnabled:true,occurrenceKey:'route'}),
+  resolvePresentation(checked,presentation,loggingId,{animationsEnabled:false,occurrenceKey:'route'})
+ ]){
+  assert.equal(resolved.requestedId,loggingId);
+  assert.equal(resolved.selected?.slotId,'activity/forest/route/logging-road');
+  assert.equal(resolved.selected?.src,'assets/presentation/forest-route-logging-road.svg');
+ }
+
+ const boundaryId=presentationIdForActivityRoute(catalog,'lumber.forest','old-boundary');
+ for(const resolved of [
+  resolvePresentation(checked,presentation,boundaryId,{animationsEnabled:true,occurrenceKey:'route'}),
+  resolvePresentation(checked,presentation,boundaryId,{animationsEnabled:false,occurrenceKey:'route'})
+ ]){
+  assert.equal(resolved.requestedId,boundaryId);
+  assert.equal(resolved.selected?.slotId,'activity/forest/route/default');
+  assert.equal(resolved.selected?.src,'assets/presentation/forest-route-default-v1.svg');
  }
 });
 
