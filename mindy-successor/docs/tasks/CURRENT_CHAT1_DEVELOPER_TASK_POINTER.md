@@ -2,126 +2,67 @@
 
 Status: ASSIGNED
 Owner: Chat 1 Developer / Integration Developer
-Queue: **13–24**
-Queue size: **12**
-Role contract: `mindy-successor/docs/tasks/CHAT1_DEVELOPER_MANDATORY_ROLE_PROMPT.md`
-Ownership matrix: `mindy-successor/docs/tasks/ACTIVE_TEAM_OWNERSHIP_MATRIX.md`
-Freeze protocol: `mindy-successor/docs/tasks/CANDIDATE_QA_FREEZE_PROTOCOL.md`
+Queue: CAREER ROUTE IMPLEMENTATION PACKAGE
 
-## Baseline
+Source of truth:
+- ACTIVE_TEAM_OWNERSHIP_MATRIX.md
+- PROJECT_WORK_ENTRYPOINT.md
 
-Foreman semantic localization was delivered through merged PR #65.
+## Objective
+Implement one complete existing career route using existing `careers` definitions, `stages`, `transitions`, event conditions/effects, `RunState.progression.careers`, and existing `endings` completion flow.
 
-Next production integration slice:
-**School residual accessibility localization**, using the merged Chat 5 handoff from PR #66.
+No new career state layer.
 
-Authoritative handoff:
-- `mindy-successor/docs/school-prep/SCHOOL_RESIDUAL_LOCALIZATION_HANDOFF_V1.md`
-- `mindy-successor/prior-work/astra/prototype-m3.2/content/school-residual-localization-v1.fixture.json`
+## Route
+Use the existing Lumber career route prepared in current career materials.
 
-Expected current scope:
-- exactly four existing School accessibility localization keys;
-- same-key text corrections only;
-- no new keys;
-- no runtime/UI change required.
+Implementation scope:
+- connect the existing career stages into playable progression;
+- verify stage transitions are driven by existing conditions/effects;
+- verify career state persists through `RunState.progression.careers`;
+- verify terminal route outcome enters existing endings mechanism.
 
-Start a fresh branch from exact current `main`.
-Recommended:
-- `chat1-dev/school-residual-accessibility-v1`
+## Required gameplay path
 
-## 13 — exact-current-main School residual audit
+Stage 1: Apprentice Lumber Worker
+Transition condition:
+- existing starting career event eligibility.
+Event/effect:
+- existing career assignment/progression effect.
 
-Re-read current `main` and confirm the four handoff keys still exist in root localization and current presentation slots still consume them.
+Stage 2: Skilled Lumber Worker
+Transition condition:
+- existing required work events and progression conditions.
+Event/effect:
+- existing stage advancement effect.
 
-Record any main drift since Chat 5 handoff.
+Stage 3: Forest Specialist
+Transition condition:
+- existing mastery/progression requirements.
+Event/effect:
+- existing career completion/outcome effect.
 
-## 14 — exact fixture/value review
+Outcome:
+- route completion must resolve through existing `endings` acceptance flow, not a new career ending store.
 
-Read the merged School residual fixture and verify the four RU+EN pairs against the handoff audits.
+## Allowed files
+Only modify:
+- existing career definition files;
+- existing event condition/effect files;
+- existing UI presentation route files needed to show the route;
+- focused tests for this route.
 
-Reject any key that no longer matches current consumer identity.
+Do not create:
+- parallel profession state;
+- new Save schema;
+- new ending framework.
 
-## 15 — current collision classification
+## Verification
+Add/run a route test proving:
+- career assignment;
+- stage 1 -> stage 2 -> stage 3 transitions;
+- RunState.progression.careers update;
+- ending acceptance path;
+- UI displays current stage and final outcome.
 
-Classify the four root keys on exact current `main`:
-- SUPERSEDED_REPLACE;
-- IDENTICAL_NOW;
-- CONFLICT;
-- NO_LONGER_CONSUMED.
-
-Do not touch conflicts without Lead review.
-
-## 16 — production root localization patch
-
-Apply only approved same-key RU+EN replacements to:
-- `mindy-successor/prior-work/astra/prototype-m3.2/content/localization.json`
-
-No new localization namespace.
-
-## 17 — presentation-slot consumer verification
-
-Verify the four keys remain referenced by exact current School presentation slots and consumed through the existing media alt resolver.
-
-No presentation path/selection edits.
-
-## 18 — no-new-runtime proof
-
-Document/test that this integration needs no:
-- UI code change;
-- localization runtime change;
-- presentation schema change;
-- media asset change.
-
-## 19 — production regression adaptation
-
-Add a focused production regression:
-- `mindy-successor/prior-work/astra/prototype-m3.2/tests/school-residual-localization-production-v1.test.ts`
-
-Validate exact root values and exact current consumers.
-
-## 20 — locale and state invariance regression
-
-Verify RU↔EN changes only rendered accessibility text and leaves:
-- School gameplay IDs;
-- course state;
-- Save JSON;
-- RNG;
-- tuition/Energy/stat values unchanged.
-
-## 21 — ownership regression
-
-Verify this production patch has no overlap with:
-- Chat 2 media-source queue 364–375;
-- Chat 3 poverty/Forest queue 341–352;
-- Chat 5 teacher staging queue 205–216.
-
-## 22 — targeted verification
-
-Run the new production regression plus relevant School/localization/presentation tests.
-
-Record exact commands/results.
-
-## 23 — full exact-head verification
-
-Run:
-- `npm run check`
-
-from:
-- `mindy-successor/prior-work/astra/prototype-m3.2`
-
-Fix only defects caused by this integration.
-
-## 24 — focused candidate PR
-
-Open a PR against `main`.
-
-PR description must state:
-- exact four-key classification;
-- exact values changed;
-- current consumers;
-- no runtime/media changes;
-- Save/RNG/gameplay invariants;
-- targeted/full check results;
-- exact head SHA.
-
-Freeze the candidate after handoff to QA.
+Deliver one PR with exact files, commit SHA and test results.
