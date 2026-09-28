@@ -3138,3 +3138,119 @@ Create NEW file only:
 Summarize items 223–233 and classify next Lead slices: journal/outcome consumer, global UI shell, shared Night UI, route-specific presentation seam, animation exporter.
 
 Continue items 223–234 sequentially without waiting for Lead review.
+
+
+## Queue item 235 — PR54 current-head compatibility re-audit v2
+Create NEW file only:
+- `docs/qa-prep/PR54_CURRENT_HEAD_COMPATIBILITY_REAUDIT_V2.md`
+
+Re-audit the latest PR54 exact head after Lead compatibility fixes:
+- School direct journal producer keeps refs aligned;
+- legacy `run.journal=` assignment keeps refs aligned;
+- School course-result presentation retains course title/text priority;
+- old schema-4 save omission remains supported;
+- no fuzzy prose migration.
+
+Use actual Git head/run evidence, not gate-v18 snapshot.
+
+## Queue item 236 — PR54 exact-head CI audit v2
+Create NEW file only:
+- `docs/qa-prep/PR54_EXACT_HEAD_CI_AUDIT_V2.md`
+
+Record latest exact head, workflow run, validator counts and pass/fail count.
+If still red, identify only current failures.
+If green, classify GREEN_EXACT_HEAD.
+
+## Queue item 237 — PR54 post-merge audit v1
+Create NEW file only:
+- `docs/qa-prep/PR54_POST_MERGE_AUDIT_V1.md`
+
+Only after Git proves merge:
+- exact merge SHA;
+- current main;
+- post-merge push CI;
+- journal ref compatibility;
+- no gameplay validator drift.
+Until then mark NOT_YET_MERGED.
+
+## Queue item 238 — shared Night UI 16-key rebase QA v3
+Create NEW file only:
+- `docs/qa-prep/SHARED_NIGHT_UI_16_KEY_REBASE_QA_V3.md`
+
+Review Chat3 current post-PR53/54 shared Night UI source.
+Require:
+- omit outer Sleep aliases superseded by PR53;
+- reuse shipped `ui.result.chooseLodging`;
+- only genuinely additive shared Night/lodging keys;
+- no NightFlow mechanics changes.
+
+## Queue item 239 — shared Night UI natural-path invariance QA v2
+Create NEW file only:
+- `docs/qa-prep/SHARED_NIGHT_UI_NATURAL_PATH_INVARIANCE_QA_V2.md`
+
+Define exact RU↔EN natural-path acceptance for lodging resolution, voluntary Night choice and next-day consequence text with unchanged costs/Energy/housing/Save.
+
+## Queue item 240 — Forest route pure presentation seam QA v3
+Create NEW file only:
+- `docs/qa-prep/FOREST_ROUTE_PURE_PRESENTATION_SEAM_QA_V3.md`
+
+Review Chat3 route seam source:
+- null -> default;
+- logging-road -> exact logging-road presentationId;
+- old-boundary -> exact old-boundary presentationId;
+- no Save writes;
+- no RNG;
+- no route/result mutation;
+- Hard Work invariant untouched.
+
+## Queue item 241 — route-specific localization delta QA v2
+Create NEW file only:
+- `docs/qa-prep/FOREST_ROUTE_LOCALIZATION_DELTA_QA_V2.md`
+
+Review current route-specific title/body/help/alt/caption keys for exact RU+EN completeness and collision safety after PR54/main changes.
+
+## Queue item 242 — animation exporter patch-candidate QA v2
+Create NEW file only:
+- `docs/qa-prep/ANIMATION_EXPORTER_PATCH_CANDIDATE_QA_V2.md`
+
+Review Chat2 items 280–291 as they appear:
+- dependency patch is dev-only;
+- no package manifest mutation by worker;
+- local project-owned input only;
+- deterministic naming/timing;
+- no URL/absolute/traversal inputs;
+- CI/security/license/reproducibility acceptable.
+
+## Queue item 243 — first-three GIF pool export acceptance v1
+Create NEW file only:
+- `docs/qa-prep/FIRST_THREE_GIF_POOL_EXPORT_ACCEPTANCE_V1.md`
+
+Define production acceptance for first actual Lumber/Guard/Tavern pools:
+3 real GIFs each, GIF signatures, build copy, size budget, deterministic locale-neutral selection, static fallback, no gameplay RNG/Save mutation.
+
+## Queue item 244 — bilingual coverage post-PR54 recompute v4
+Create NEW file only:
+- `docs/qa-prep/BILINGUAL_COVERAGE_POST_PR54_RECOMPUTE_V4.md`
+
+After PR54 status is known, recompute actual root coverage and visible hardcoded debt from current main/head.
+Do not carry forward stale counts.
+
+## Queue item 245 — current-main CI regression floor v9
+Create NEW file only:
+- `docs/qa-prep/CURRENT_MAIN_CI_REGRESSION_FLOOR_V9.md`
+
+Record exact current main, latest successful push workflow, validator counts, test count and 80/80 static coverage.
+
+## Queue item 246 — next production integration gate v19
+Create NEW file only:
+- `docs/qa-prep/NEXT_PRODUCTION_INTEGRATION_GATE_V19.md`
+
+Summarize items 235–245:
+- PR54 stable-ref status;
+- shared Night UI;
+- Forest route seam/localization;
+- animation exporter approval readiness;
+- remaining bilingual debt;
+- Product-open isolation.
+
+Continue items 235–246 sequentially without waiting for Lead review.
