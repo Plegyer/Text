@@ -3,158 +3,120 @@
 Status: COMPLETE / CURRENT_MAIN_82_MAPPINGS
 
 Current main:
-`2ad9fb8b0572f8903bbf57d144c8c5938023a440`
-(PR60 safe old-boundary static merge).
+`01b31b9ab0d0267d95edf5b5b80638acd63f5c04`.
 
 Root presentation blob:
 `d403fe7b367ba4a578ac156a60d03dd301c42281`.
 
-## Active project-owned root mappings
+## Current active mappings
 
-Current root semantic static mappings under:
-`assets/presentation/*.svg`
-
-= `82`.
+Project-owned root semantic static mappings:
+`82`.
 
 Unique active physical project-owned sources:
 `81`.
 
-The one active physical source shared by two semantic slots remains:
-`school-day-study.svg`.
+The one shared physical source is:
+`assets/presentation/school-day-study.svg`,
+used by two current School semantic slots.
 
-Therefore:
-- semantic mappings: 82;
-- unique active physical sources: 81.
+## Category breakdown
 
-## Established baseline target
+- ordinary career result statics: 10;
+- ordinary career seasonal statics: 40;
+- current/reachable School statics: 11;
+- ordinary-poverty statics: 10;
+- Forest result/return statics: 6;
+- Foreman statics: 2;
+- Forest route statics: 3.
 
-The established non-route-specific/current fallback target remains:
-`80 / 80`
-semantic IDs.
+Total:
+`82`.
 
-It includes the neutral:
-`activity/forest/route/default`
-slot.
+## PR59 checkpoint
 
-PR59 added one route-specific logging-road mapping.
+Immediately after PR59:
+- baseline/current target: 80;
+- logging-road route-specific extension: +1;
+- total semantic mappings: 81;
+- unique active physical sources: 80;
+- old-boundary still used neutral physical fallback.
 
-PR60 adds one route-specific old-boundary mapping.
-
-Thus current total:
-`80 baseline + 2 route-specific = 82 semantic static mappings`.
-
-## Forest route static breakdown
+## Current route coverage after PR60
 
 ### Neutral default
-
 `activity/forest/route/default`
 -> `assets/presentation/forest-route-default-v1.svg`.
 
 Role:
 - pre-route neutral presentation;
-- fallback if a route-specific media override is absent/invalid.
+- final route fallback.
 
 ### Logging road
-
 `activity/forest/route/logging-road`
 -> `assets/presentation/forest-route-logging-road.svg`.
 
 Shipped by PR59.
 
 ### Old boundary
-
 `activity/forest/route/old-boundary`
 -> `assets/presentation/forest-route-old-boundary-v3.svg`.
 
 Shipped by PR60.
 
-Both route-specific statics retain the neutral route/default fallback in the presentation catalog.
+Thus current route-specific static coverage:
+`2 / 2`
+current route identities, plus retained neutral route/default.
 
-## Route-specific physical coverage
+## Neutral fallback vs route-specific media
 
-Current route-specific current route identities:
-`2`.
+Do not count route/default as a third gameplay route.
 
-Current route-specific root physical media:
-`2 / 2`.
+It is a neutral presentation fallback.
 
-This is static visual coverage only.
+Gameplay routes remain exactly:
+- logging-road;
+- old-boundary.
 
-It does not imply:
-- new route gameplay;
-- token lifecycle;
-- challenge/reward;
-- animation coverage.
+Both specific route slots retain safe fallback semantics to route/default at the presentation layer.
 
-## Physical asset directory
+## Static vs animation
 
-Current main `assets/presentation/` files:
-`91`.
+Real production project-owned GIFs:
+`0`.
 
-Active physical files referenced by root project-owned static slots:
-`81`.
+Production GIF pools:
+`0`.
 
-Retained inactive/source-history files:
-`10`.
-
-Inactive list:
-- `foreman-night-professional.svg`;
-- `foreman-professional.svg`;
-- `forest-result-escape.svg`;
-- `forest-result-failure.svg`;
-- `forest-result-success.svg`;
-- `poverty-cheap-lodging.svg`;
-- `poverty-pressure.svg`;
-- `poverty-recovery-help.svg`;
-- `poverty-street.svg`;
-- `school-night-study.svg`.
-
-Old-boundary v3 is now active and therefore is not in the inactive list.
+Therefore:
+`82 semantic / 81 unique physical`
+describes static coverage only.
 
 ## Accessibility
 
-Current root localization remains:
-`664` bilingual keys.
+Current root localization after later PR61:
+714 bilingual keys, missing RU 0, missing EN 0.
 
-Missing RU:
-`0`.
+Both route-specific statics have complete bilingual accessibility keys.
 
-Missing EN:
-`0`.
+PR61 changes text/consumers only and does not alter static mapping counts.
 
-Route-specific accessibility:
-- logging-road alt/caption: shipped RU+EN;
-- old-boundary alt/caption: shipped RU+EN.
+## Regression floor
 
-PR60 reuses the already-shipped PR59 old-boundary accessibility keys rather than inventing duplicates.
+Current run #122 keeps:
+- both reviewed Forest route statics;
+- route/state locale Save invariance;
+- exact Forest results/reactions;
+- Old Boundary gate;
+- Hard Work lock;
+- project-owned static production validation.
 
-## Locale/media invariance
+## Verdict
 
-Accepted PR60 exact-head run #119 verifies:
-- route-specific media is semantically narrow;
-- both Forest routes resolve reviewed project-owned static media;
-- neutral fallback metadata remains;
-- route localization remains presentation-only;
-- Save/RNG/result/Hard Work regressions remain green.
-
-## Animation coverage
-
-Current real project-owned production GIFs:
-`0`.
-
-Current production GIF candidate pools:
-`0`.
-
-Static coverage:
-`82 semantic / 81 unique physical`
-must not be described as animation coverage.
-
-## Current verdict
-
-Current project-owned static state:
-- baseline target: `80/80`;
-- route-specific static extension: `2/2`;
-- total active semantic mappings: `82`;
-- unique active physical sources: `81`;
-- neutral route/default fallback: retained;
+Current project-owned static coverage:
+- established baseline target: 80/80;
+- route-specific extension: 2/2;
+- total active semantic mappings: 82;
+- unique active physical sources: 81;
+- neutral route/default fallback retained;
 - real production GIFs: 0.
