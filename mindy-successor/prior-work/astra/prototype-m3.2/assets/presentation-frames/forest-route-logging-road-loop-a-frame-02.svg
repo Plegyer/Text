@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img"
+ data-presentation-id="activity/forest/route/logging-road"
+ data-sequence-id="forest-route-logging-road-loop-a"
+ data-frame-index="2" data-frame-count="4" data-loop-duration-ms="2600">
+<defs>
+  <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#29424a"/><stop offset="1" stop-color="#8f7459"/></linearGradient>
+  <radialGradient id="light"><stop stop-color="#edcc8d" stop-opacity="0.46"/><stop offset="1" stop-color="#edcc8d" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1200" height="675" fill="url(#bg)"/>
+<circle cx="650" cy="225" r="330" fill="url(#light)"/>
+<path d="M0 340Q190 225 375 340T760 300T1200 248V675H0Z" fill="#3b5f4d"/>
+<path d="M0 468Q260 345 535 452T1200 390V675H0Z" fill="#304a3f"/>
+<g fill="#243d35"><rect x="58" y="130" width="42" height="500"/><circle cx="79" cy="118" r="118"/><rect x="1080" y="118" width="44" height="512"/><circle cx="1102" cy="107" r="132"/></g>
+<path d="M300 675L470 365H735L930 675Z" fill="#a18360"/>
+<path d="M365 675L520 410H690L850 675Z" fill="#b49469"/>
+<g fill="none" stroke="#715941" stroke-width="15" opacity=".78"><path d="M455 675Q525 555 555 405"/><path d="M770 675Q710 555 680 405"/></g>
+<g transform="translate(150 455)"><rect width="290" height="52" rx="26" fill="#73503d"/><circle cx="25" cy="26" r="23" fill="#c19868"/><circle cx="265" cy="26" r="23" fill="#b27f54"/></g>
+<g stroke="#76563f" stroke-width="13" stroke-linecap="round"><path d="M870 460l75-47"/><path d="M902 497.5l92-58"/></g>
+<g fill="#80694f" opacity=".76"><ellipse cx="545" cy="557" rx="34" ry="9"/><ellipse cx="685" cy="570" rx="39" ry="10"/><ellipse cx="581.3333333333334" cy="610" rx="43" ry="11"/></g>
+<g fill="#70886a"><path d="M250 525q38-105 78 0-42-18-78 0z"/><path d="M995 520q42-115 84 0-45-18-84 0z"/></g>
+<rect y="646" width="1200" height="29" fill="#151a25" opacity=".28"/>
+</svg>
