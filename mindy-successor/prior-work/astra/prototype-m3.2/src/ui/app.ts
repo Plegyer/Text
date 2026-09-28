@@ -35,6 +35,12 @@ const itemLabel=(id:string)=>tr(`item.${id}.label`,labels[id]??id);
 const genericValueLabel=(id:string)=>tr(`stat.${id}.label`,tr(`resource.${id}.label`,tr(`item.${id}.label`,labels[id]??id)));
 const schoolStatLabel=(stat:string)=>statLabel(stat);
 const seasonLabel=(id:string,fallback:string)=>tr(`season.${id}.label`,fallback);
+const relationshipLabel=(id:string)=>tr(`relationship.${id}.label`,id);
+const relationshipStageLabel=(id:string,stage:string)=>tr(`relationship.${id}.stage.${stage}.label`,stage);
+const relationshipCounterLabel=(id:string,counter:string)=>tr(`relationship.${id}.counter.${counter}.label`,counter);
+const relationshipFactLabel=(id:string,fact:string)=>tr(`relationship.${id}.fact.${fact}.label`,fact);
+const relationshipChoiceLabel=(id:string,choice:string)=>tr(`relationship.${id}.choice.${choice}.label`,choice);
+const relationshipChoiceValueLabel=(id:string,choice:string,value:string)=>tr(`relationship.${id}.choice.${choice}.value.${value}.label`,value);
 function localizedNightChoiceLabel(id:string,fallback:string){
  const prefix='school.night_study.';
  if(id.startsWith(prefix)){
@@ -73,10 +79,10 @@ function explain(c:Condition):string{
  case 'questCounter':return fmt(tr('ui.condition.questCounter','Задание {quest}: {counter} {comparison}'),{quest:c.quest,counter:c.counter,comparison:cmp(c.op,c.value)});
  case 'questFact':return fmt(tr('ui.condition.questFact','Задание {quest}: факт {fact} {state}'),{quest:c.quest,fact:c.fact,state:c.present?present():absent()});
  case 'questChoice':return fmt(tr('ui.condition.questChoice','Задание {quest}: {choice} = {value}'),{quest:c.quest,choice:c.choice,value:c.value});
- case 'relationshipStage':return fmt(tr('ui.condition.relationshipStage','Отношения {relationship}: этап {stage}'),{relationship:c.relationship,stage:c.stage});
- case 'relationshipCounter':return fmt(tr('ui.condition.relationshipCounter','Отношения {relationship}: {counter} {comparison}'),{relationship:c.relationship,counter:c.counter,comparison:cmp(c.op,c.value)});
- case 'relationshipFact':return fmt(tr('ui.condition.relationshipFact','Отношения {relationship}: факт {fact} {state}'),{relationship:c.relationship,fact:c.fact,state:c.present?present():absent()});
- case 'relationshipChoice':return fmt(tr('ui.condition.relationshipChoice','Отношения {relationship}: {choice} = {value}'),{relationship:c.relationship,choice:c.choice,value:c.value});
+ case 'relationshipStage':return fmt(tr('ui.condition.relationshipStage','Отношения {relationship}: этап {stage}'),{relationship:relationshipLabel(c.relationship),stage:relationshipStageLabel(c.relationship,c.stage)});
+ case 'relationshipCounter':return fmt(tr('ui.condition.relationshipCounter','Отношения {relationship}: {counter} {comparison}'),{relationship:relationshipLabel(c.relationship),counter:relationshipCounterLabel(c.relationship,c.counter),comparison:cmp(c.op,c.value)});
+ case 'relationshipFact':return fmt(tr('ui.condition.relationshipFact','Отношения {relationship}: факт {fact} {state}'),{relationship:relationshipLabel(c.relationship),fact:relationshipFactLabel(c.relationship,c.fact),state:c.present?present():absent()});
+ case 'relationshipChoice':return fmt(tr('ui.condition.relationshipChoice','Отношения {relationship}: {choice} = {value}'),{relationship:relationshipLabel(c.relationship),choice:relationshipChoiceLabel(c.relationship,c.choice),value:relationshipChoiceValueLabel(c.relationship,c.choice,c.value)});
  case 'worldFact':return fmt(tr('ui.condition.worldFact','Факт мира {fact}: {state}'),{fact:c.fact,state:c.present?yes():no()});
  case 'metaUnlock':return fmt(tr('ui.condition.metaUnlock','Наследие {unlock}: {state}'),{unlock:c.unlock,state:c.present?yes():no()});
  case 'metaEndingCompleted':return fmt(tr('ui.condition.metaEndingCompleted','Судьба {ending}: {state}'),{ending:c.ending,state:c.present?tr('ui.condition.state.completed','пройдена'):tr('ui.condition.state.notCompleted','не пройдена')});
