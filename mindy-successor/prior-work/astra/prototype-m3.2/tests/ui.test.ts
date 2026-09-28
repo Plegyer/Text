@@ -895,9 +895,9 @@ test('renderer: pending encounter eyebrow localizes without changing pending sce
 
   assert.equal(w.document.querySelector('.stage-title .eyebrow')?.textContent,'Encounter');
   const after=JSON.parse(w.localStorage.getItem('portal-life.v1'));
-  assert.equal(after.run.pending.eventId,'base.arrival');
-  assert.equal(after.run.pending.variantId,'welcome');
-  assert.deepEqual(after.run.pending.allowedChoiceIds,['introduce']);
+  assert.equal(after.run.flow.pendingScene.eventId,'base.arrival');
+  assert.equal(after.run.flow.pendingScene.variantId,'welcome');
+  assert.deepEqual(after.run.flow.pendingScene.allowedChoiceIds,['introduce']);
   assert.deepEqual(errors,[]);
  }finally{dom.window.close();}
 });
