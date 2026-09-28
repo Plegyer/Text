@@ -72,11 +72,11 @@ test('safe non-career refinements preserve semantic identity and animation-mode 
   }
 });
 
-test('route-specific Product-open Forest assets remain absent from root production presentation',()=>{
+test('only reviewed Forest route-specific media is active in root production presentation',()=>{
   const serialized=JSON.stringify(presentation);
-  assert.doesNotMatch(serialized,/forest-route-logging-road\.svg/);
-  assert.doesNotMatch(serialized,/forest-route-old-boundary\.svg/);
-  assert.equal(presentation.slots['activity/forest/route/logging-road'],undefined);
+  assert.match(serialized,/forest-route-logging-road\.svg/);
+  assert.doesNotMatch(serialized,/forest-route-old-boundary(?:-safe)?\.svg/);
+  assert.equal(presentation.slots['activity/forest/route/logging-road']?.static?.src,'assets/presentation/forest-route-logging-road.svg');
   assert.equal(presentation.slots['activity/forest/route/old-boundary'],undefined);
   assert.ok(presentation.slots['activity/forest/route/default']===undefined || presentation.slots['activity/forest/route/default']);
 });
