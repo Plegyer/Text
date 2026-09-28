@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img"
+ data-presentation-id="job/merchant/shift/spring/default"
+ data-sequence-id="merchant-spring-market-loop-c"
+ data-frame-index="3" data-frame-count="4" data-loop-duration-ms="2600">
+<defs><linearGradient id="bg" x2="0" y2="1"><stop stop-color="#35505a"/><stop offset="1" stop-color="#b88465"/></linearGradient><radialGradient id="light"><stop stop-color="#efd09a" stop-opacity=".45"/><stop offset="1" stop-color="#efd09a" stop-opacity="0"/></radialGradient></defs>
+<rect width="1200" height="675" fill="url(#bg)"/><circle cx="720" cy="220" r="330" fill="url(#light)"/>
+<path d="M0 390Q220 305 480 375T1200 330V675H0Z" fill="#526c55"/>
+<rect x="135" y="375" width="405" height="138" rx="12" fill="#8b6548"/>
+<g transform="translate(195 405)"><rect width="105" height="78" rx="8" fill="#a07c55"/><path d="M15 20h75M15 44h65" stroke="#c6aa75" stroke-width="7"/></g>
+<g transform="translate(325 405) rotate(6 55 35)"><rect width="110" height="70" rx="8" fill="#7e694d"/><circle cx="25" cy="26" r="11" fill="#789761"/><circle cx="54" cy="24" r="10" fill="#84a46a"/><circle cx="83" cy="28" r="11" fill="#70905a"/></g>
+<g transform="translate(650 215)"><ellipse cx="18" cy="365" rx="108" ry="20" fill="#151d23" opacity=".42"/><circle cx="19" cy="51" r="31" fill="#ddad86"/><path d="M-12 44Q-2 3 44 14L60 46 39 35 19 25Z" fill="#46363b"/><path d="M-25 96Q18 74 62 96L67 235H-27Z" fill="#718a79"/><path d="M-27 157h94" stroke="#a87552" stroke-width="14"/><path d="M-8 235L-31 350H0L21 262 42 350H73L63 235Z" fill="#303944"/><path d="M-15 129L-68 201M56 129L109 198" stroke="#d6a680" stroke-width="14" stroke-linecap="round"/></g>
+<g fill="#a2c188"><circle cx="190" cy="512" r="10"/><circle cx="238" cy="501" r="8"/><circle cx="990" cy="511" r="9"/></g>
+<rect y="646" width="1200" height="29" fill="#151a25" opacity=".28"/></svg>
