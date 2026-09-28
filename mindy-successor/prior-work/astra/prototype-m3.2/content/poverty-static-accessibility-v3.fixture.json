@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "id": "poverty.static-accessibility.v3",
+  "status": "CURRENT_ACTIVE_TARGET_PRESENTATION_REPLACEMENTS",
+  "baseMain": "60753968e28e86d9bb63b7818d39c23fd08fe5fa",
+  "target": "content/localization.json",
+  "strings": {
+    "presentation.static.poverty-street-helpful-summer.alt": {
+      "ru": "Летняя городская улица на закате: героиня стоит между простыми домами рядом с закрывающимся прилавком и ящиком.",
+      "en": "A summer city street at sunset: the heroine stands between simple buildings near a closing stall and a crate."
+    },
+    "presentation.static.poverty-street-helpful-summer.caption": {
+      "ru": "Летний вечер у закрывающегося прилавка.",
+      "en": "A summer evening beside a closing stall."
+    },
+    "presentation.static.poverty-street-neutral-autumn.alt": {
+      "ru": "Спокойная осенняя улица на закате: героиня стоит между домами, а по камням лежат опавшие листья.",
+      "en": "A quiet autumn street at sunset: the heroine stands between buildings with fallen leaves scattered across the stones."
+    },
+    "presentation.static.poverty-street-neutral-autumn.caption": {
+      "ru": "Тихая осенняя улица с опавшими листьями.",
+      "en": "A quiet autumn street with fallen leaves."
+    },
+    "presentation.static.poverty-street-pressure-winter.alt": {
+      "ru": "Холодная зимняя улица: героиня стоит между тёмными домами под редким снегом.",
+      "en": "A cold winter street: the heroine stands between dark buildings under light falling snow."
+    },
+    "presentation.static.poverty-street-pressure-winter.caption": {
+      "ru": "Зимний вечер на холодной улице.",
+      "en": "A winter evening on a cold street."
+    },
+    "presentation.static.poverty-cheap-shared-quiet-autumn.alt": {
+      "ru": "Тесная дешёвая комната с простой кроватью и скромной обстановкой; героиня стоит у края комнаты.",
+      "en": "A cramped low-cost room with a simple bed and sparse furnishings; the heroine stands near the side of the room."
+    },
+    "presentation.static.poverty-cheap-shared-quiet-autumn.caption": {
+      "ru": "Тихая общая комната с простой кроватью.",
+      "en": "A quiet shared room with a simple bed."
+    },
+    "presentation.static.poverty-recovery-small-coin-help.alt": {
+      "ru": "Героиня стоит на городской улице рядом с двумя монетами и небольшим свёртком.",
+      "en": "The heroine stands on a city street beside two coins and a small parcel."
+    },
+    "presentation.static.poverty-recovery-small-coin-help.caption": {
+      "ru": "Монеты и небольшой свёрток у дороги.",
+      "en": "Coins and a small parcel by the road."
+    },
+    "presentation.static.poverty-recovery-short-cleanup.alt": {
+      "ru": "Героиня стоит рядом с метлой и ящиком на городской улице после короткой уборки.",
+      "en": "The heroine stands beside a broom and a box on a city street after a short cleanup."
+    },
+    "presentation.static.poverty-recovery-short-cleanup.caption": {
+      "ru": "Метла и ящик после уборки.",
+      "en": "A broom and box after cleanup."
+    },
+    "presentation.static.poverty-recovery-herb-bundle.alt": {
+      "ru": "Героиня стоит рядом с перевязанным пучком трав и небольшим ящиком.",
+      "en": "The heroine stands beside a tied bundle of herbs and a small box."
+    },
+    "presentation.static.poverty-recovery-herb-bundle.caption": {
+      "ru": "Перевязанный пучок трав у ящика.",
+      "en": "A tied bundle of herbs beside a box."
+    },
+    "presentation.static.poverty-pressure-cold-rain.alt": {
+      "ru": "Героиня стоит на тёмной городской улице под косым холодным дождём; на камнях собирается вода.",
+      "en": "The heroine stands on a dark city street under slanting cold rain while water gathers on the stones."
+    },
+    "presentation.static.poverty-pressure-cold-rain.caption": {
+      "ru": "Холодный дождь на тёмной улице.",
+      "en": "Cold rain on a dark street."
+    },
+    "presentation.static.poverty-pressure-noisy-loading.alt": {
+      "ru": "Героиня стоит на городской улице рядом со сложенными ящиками и местом погрузки.",
+      "en": "The heroine stands on a city street beside stacked crates and a loading area."
+    },
+    "presentation.static.poverty-pressure-noisy-loading.caption": {
+      "ru": "Ящики на месте ранней уличной погрузки.",
+      "en": "Crates at an early street loading area."
+    },
+    "presentation.static.poverty-pressure-muddy-splash.alt": {
+      "ru": "Героиня стоит на мокрой городской улице рядом с грязными лужами и брызгами.",
+      "en": "The heroine stands on a wet city street beside muddy puddles and splashes."
+    },
+    "presentation.static.poverty-pressure-muddy-splash.caption": {
+      "ru": "Грязные лужи и брызги на улице.",
+      "en": "Muddy puddles and splashes on the street."
+    }
+  }
+}
