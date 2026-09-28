@@ -3904,3 +3904,87 @@ Create NEW file only:
 Consolidate items 305–315 into SAFE_DEPTH_KEYS / JOURNAL_READY / PRESENTATION_READY / PRODUCT_OPEN_EXCLUDED / SELECTIVE_COPY.
 
 Continue items 305–316 sequentially without waiting for Lead review.
+
+
+## Queue item 317 — ordinary poverty depth consumer design v1
+Create NEW file only:
+- `docs/poverty-prep/ORDINARY_POVERTY_DEPTH_CONSUMER_DESIGN_V1.md`
+
+Design a presentation-only consumption strategy for the 26 additive `presentation.poverty.depth.*` keys using exact current event/variant identities.
+No gameplay IDs or mechanics changes.
+
+## Queue item 318 — poverty depth key-to-variant map v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/poverty-depth-key-to-variant-map-v1.fixture.json`
+
+Map all 26 depth keys to exact current eventId + variantId only.
+
+## Queue item 319 — poverty depth deterministic selection contract v1
+Create NEW file only:
+- `docs/poverty-prep/POVERTY_DEPTH_DETERMINISTIC_SELECTION_CONTRACT_V1.md`
+
+Define presentation-only deterministic selection rules that do not consume gameplay RNG and do not alter Save.
+Do not implement runtime.
+
+## Queue item 320 — helpful poverty scene-depth bank v2
+Create NEW file only:
+- `docs/poverty-prep/HELPFUL_POVERTY_SCENE_DEPTH_BANK_V2.md`
+
+Refine RU+EN presentation variants for exact current helpful identities only.
+
+## Queue item 321 — pressure poverty scene-depth bank v2
+Create NEW file only:
+- `docs/poverty-prep/PRESSURE_POVERTY_SCENE_DEPTH_BANK_V2.md`
+
+Refine RU+EN presentation variants for exact current pressure identities only.
+
+## Queue item 322 — cheap/recovery scene-depth bank v2
+Create NEW file only:
+- `docs/poverty-prep/CHEAP_RECOVERY_SCENE_DEPTH_BANK_V2.md`
+
+Refine RU+EN presentation variants for exact current cheap/recovery identities only.
+
+## Queue item 323 — poverty depth accessibility audit v1
+Create NEW file only:
+- `docs/poverty-prep/POVERTY_DEPTH_ACCESSIBILITY_AUDIT_V1.md`
+
+Check static alt/caption text against current poverty scene semantics and the new depth banks.
+No asset changes.
+
+## Queue item 324 — poverty depth localization patch v2
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/ordinary-poverty-localization-depth-v2.fixture.json`
+
+Consolidate only exact current IDs plus additive RU+EN presentation keys.
+No gameplay fields; Secret Debt excluded.
+
+## Queue item 325 — poverty depth current-main collision regression v2
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/ordinary-poverty-localization-depth-v2.test.ts`
+
+Validate exact current event/variant refs, RU+EN completeness, no current-root conflicts, no Secret Debt, no gameplay fields.
+
+## Queue item 326 — poverty depth natural-path render expectations v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/poverty-depth-natural-path-render-v1.fixture.json`
+
+For representative helpful/pressure/cheap/recovery paths record expected RU/EN presentation variants and exact unchanged gameplay identity/effects/RNG/Save.
+
+## Queue item 327 — ordinary poverty depth selective integration checklist v1
+Create NEW file only:
+- `docs/poverty-prep/ORDINARY_POVERTY_DEPTH_SELECTIVE_INTEGRATION_CHECKLIST_V1.md`
+
+Define exact Lead acceptance for adding a presentation-only consumer and the v2 depth patch without changing event/variant IDs.
+
+## Queue item 328 — ordinary poverty depth handoff v2
+Create NEW file only:
+- `docs/poverty-prep/ORDINARY_POVERTY_DEPTH_HANDOFF_V2.md`
+
+Consolidate items 317–327 into:
+- DEPTH_KEYS_READY;
+- PRESENTATION_CONSUMER_REQUIRED;
+- JOURNAL_ALREADY_READY;
+- SECRET_DEBT_EXCLUDED;
+- SELECTIVE_COPY.
+
+Continue items 317–328 sequentially without waiting for Lead review.
