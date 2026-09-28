@@ -1,6 +1,6 @@
 # Old Boundary v3 production acceptance v2
 
-Status: COMPLETE / GREEN_EXACT_HEAD / MERGED / POST_MERGE_PUSH_PENDING
+Status: COMPLETE / GREEN_POST_MERGE_MAIN
 
 Current production main:
 `54131488c65302f81b3001abaaa345d21f0281e2`
@@ -229,3 +229,28 @@ Post-merge main run #120 was still in progress when this update was written; fin
 
 Updated classification:
 `GREEN_EXACT_HEAD / MERGED / POST_MERGE_PUSH_PENDING`.
+
+
+## PR60 post-merge completion
+
+Post-merge main:
+`2ad9fb8b0572f8903bbf57d144c8c5938023a440`.
+
+Main push run #120:
+- id `36410358345`;
+- SUCCESS;
+- validator 17 / 46 / 35 / 9;
+- 363 / 363 tests.
+
+Relevant post-merge PASS includes:
+- safe old-boundary project-owned static slot;
+- semantically narrow/locale-neutral source;
+- source/dist byte-preservation regression;
+- both Forest routes use reviewed project-owned static with neutral fallback metadata retained;
+- route presentation localization remains presentation-only;
+- exact Forest activityResult boundaries;
+- exact Lumber Hard Work rule;
+- route-specific renderer locale/Save/RNG invariance.
+
+Final classification:
+`GREEN_POST_MERGE_MAIN`.
