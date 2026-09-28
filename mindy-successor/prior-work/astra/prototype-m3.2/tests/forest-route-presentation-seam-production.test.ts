@@ -30,7 +30,7 @@ test('Forest route presentation seam exposes exact specific IDs with neutral fal
  }
 });
 
-test('route-specific IDs resolve through safe media or neutral fallback',()=>{
+test('route-specific IDs resolve through reviewed safe media with neutral fallback retained',()=>{
  const checked=applyPresentation(catalog,presentation);
 
  const loggingId=presentationIdForActivityRoute(catalog,'lumber.forest','logging-road');
@@ -49,8 +49,8 @@ test('route-specific IDs resolve through safe media or neutral fallback',()=>{
   resolvePresentation(checked,presentation,boundaryId,{animationsEnabled:false,occurrenceKey:'route'})
  ]){
   assert.equal(resolved.requestedId,boundaryId);
-  assert.equal(resolved.selected?.slotId,'activity/forest/route/default');
-  assert.equal(resolved.selected?.src,'assets/presentation/forest-route-default-v1.svg');
+  assert.equal(resolved.selected?.slotId,'activity/forest/route/old-boundary');
+  assert.equal(resolved.selected?.src,'assets/presentation/forest-route-old-boundary-v3.svg');
  }
 });
 
