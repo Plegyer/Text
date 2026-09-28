@@ -1,0 +1,232 @@
+{
+  "version": 1,
+  "defaultLocale": "ru",
+  "strings": {
+    "season.spring.label": {
+      "ru": "Весна",
+      "en": "Spring"
+    },
+    "season.summer.label": {
+      "ru": "Лето",
+      "en": "Summer"
+    },
+    "season.autumn.label": {
+      "ru": "Осень",
+      "en": "Autumn"
+    },
+    "season.winter.label": {
+      "ru": "Зима",
+      "en": "Winter"
+    },
+    "stat.strength.hint": {
+      "ru": "Грубая физическая сила.",
+      "en": "Raw physical strength."
+    },
+    "stat.endurance.hint": {
+      "ru": "Перенос нагрузки и тяжёлых условий. Не равна дневной Energy.",
+      "en": "Tolerance for exertion and harsh conditions. Not the same as daytime Energy."
+    },
+    "stat.dexterity.hint": {
+      "ru": "Координация, точность и скрытные физические действия.",
+      "en": "Coordination, precision, and stealthy physical actions."
+    },
+    "stat.reason.hint": {
+      "ru": "Учёба, теория, память и анализ.",
+      "en": "Study, theory, memory, and analysis."
+    },
+    "stat.magic.hint": {
+      "ru": "Чувствительность и практика взаимодействия с магией.",
+      "en": "Sensitivity to and practice with magic."
+    },
+    "stat.creativity.hint": {
+      "ru": "Искусство, создание нового и выразительные решения.",
+      "en": "Art, creating new things, and expressive solutions."
+    },
+    "stat.wits.hint": {
+      "ru": "Практическая хитрость, импровизация и обход препятствий.",
+      "en": "Practical cleverness, improvisation, and finding ways around obstacles."
+    },
+    "stat.charm.hint": {
+      "ru": "Личное влияние и привлекательность общения.",
+      "en": "Personal influence and social appeal."
+    },
+    "stat.sociability.hint": {
+      "ru": "Неформальные связи, группы и поддержание контактов.",
+      "en": "Informal connections, groups, and maintaining contacts."
+    },
+    "stat.manners.hint": {
+      "ru": "Этикет, статусное поведение и формальная социальная дисциплина.",
+      "en": "Etiquette, status behavior, and formal social discipline."
+    },
+    "stat.grooming.hint": {
+      "ru": "Уход за собой и профессиональная презентация; может быстро расти и падать.",
+      "en": "Self-care and professional presentation; it can rise and fall quickly."
+    },
+    "stat.sexuality.hint": {
+      "ru": "Телесная уверенность и профессиональная сексуальная подача.",
+      "en": "Bodily confidence and professional sexual presentation."
+    },
+    "housing.normal.label": {
+      "ru": "Обычная комната",
+      "en": "Normal room"
+    },
+    "housing.cheap.label": {
+      "ru": "Дешёвый ночлег",
+      "en": "Cheap lodging"
+    },
+    "housing.street.label": {
+      "ru": "Улица",
+      "en": "Street"
+    },
+    "housing.room.label": {
+      "ru": "Обычная комната",
+      "en": "Normal room"
+    },
+    "housing.hostel.label": {
+      "ru": "Дешёвый ночлег",
+      "en": "Cheap lodging"
+    },
+    "housing.shelter.label": {
+      "ru": "Улица",
+      "en": "Street"
+    },
+    "resource.money.label": {
+      "ru": "Монеты",
+      "en": "Coins"
+    },
+    "resource.energy.label": {
+      "ru": "Энергия",
+      "en": "Energy"
+    },
+    "item.herb.label": {
+      "ru": "Травы",
+      "en": "Herbs"
+    },
+    "item.tonic.label": {
+      "ru": "Микстуры",
+      "en": "Tonics"
+    },
+    "item.scales.label": {
+      "ru": "Весы",
+      "en": "Scales"
+    },
+    "item.reinforced_axe.label": {
+      "ru": "Усиленный топор",
+      "en": "Reinforced axe"
+    },
+    "item.rope_kit.label": {
+      "ru": "Набор верёвок",
+      "en": "Rope kit"
+    },
+    "item.field_preservation_kit.label": {
+      "ru": "Полевой набор для сохранения образцов",
+      "en": "Field preservation kit"
+    },
+    "item.old_boundary_token.label": {
+      "ru": "Жетон Старой границы",
+      "en": "Old Boundary token"
+    },
+    "metric.health.label": {
+      "ru": "Здоровье",
+      "en": "Health"
+    },
+    "metric.debt.label": {
+      "ru": "Долг",
+      "en": "Debt"
+    },
+    "metric.trust.label": {
+      "ru": "Доверие",
+      "en": "Trust"
+    },
+    "metric.work.label": {
+      "ru": "Практика в лавке",
+      "en": "Shop practice"
+    },
+    "metric.lessons.label": {
+      "ru": "Уроки",
+      "en": "Lessons"
+    },
+    "metric.alchemy.label": {
+      "ru": "Алхимия",
+      "en": "Alchemy"
+    },
+    "metric.perception.label": {
+      "ru": "Чутьё (legacy)",
+      "en": "Perception (legacy)"
+    },
+    "metric.intelligence.label": {
+      "ru": "Разум (legacy)",
+      "en": "Intelligence (legacy)"
+    },
+    "metric.empathy.label": {
+      "ru": "Чуткость (legacy)",
+      "en": "Empathy (legacy)"
+    },
+    "metric.persuasion.label": {
+      "ru": "Обаяние (legacy)",
+      "en": "Persuasion (legacy)"
+    },
+    "metric.composure.label": {
+      "ru": "Самообладание (legacy)",
+      "en": "Composure (legacy)"
+    },
+    "metric.organization.label": {
+      "ru": "Организация (legacy)",
+      "en": "Organization (legacy)"
+    },
+    "metric.lust.label": {
+      "ru": "Похоть",
+      "en": "Lust"
+    },
+    "unlock.guild.label": {
+      "ru": "Своя в артели",
+      "en": "One of the crew"
+    },
+    "unlock.scholar.label": {
+      "ru": "Образование",
+      "en": "Education"
+    },
+    "unlock.host.label": {
+      "ru": "Гостеприимство",
+      "en": "Hospitality"
+    },
+    "unlock.mediator.label": {
+      "ru": "Посредница",
+      "en": "Mediator"
+    },
+    "unlock.court.label": {
+      "ru": "Придворная выдержка",
+      "en": "Court composure"
+    },
+    "unlock.calendar.label": {
+      "ru": "Дополнительное время",
+      "en": "Extra time"
+    },
+    "unlock.vitality.label": {
+      "ru": "Запас сил",
+      "en": "Vitality reserve"
+    }
+  },
+  "reuses": {
+    "targetStatLabels": [
+      "stat.strength.label",
+      "stat.endurance.label",
+      "stat.dexterity.label",
+      "stat.reason.label",
+      "stat.magic.label",
+      "stat.creativity.label",
+      "stat.wits.label",
+      "stat.charm.label",
+      "stat.sociability.label",
+      "stat.manners.label",
+      "stat.grooming.label",
+      "stat.sexuality.label"
+    ]
+  },
+  "invariants": {
+    "presentationOnly": true,
+    "gameplayFieldsIncluded": false,
+    "localeNeutralKeys": true,
+    "targetStatLabelKeysAlreadyShipped": true
+  }
+}
