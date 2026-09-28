@@ -1370,3 +1370,111 @@ Create NEW file only:
 Consolidate items 121–131 into SAFE_ACTION_KEYS / REUSE_EXISTING / RESULT_CONSUMER_REQUIRED / JOURNAL_LIMITATION / REMAINING_DEBT.
 
 Continue items 121–132 sequentially without waiting for Lead review.
+
+
+## Queue item 109 — post-PR58 UI localization baseline audit v3
+Create NEW file only:
+- `docs/relationship-prep/POST_PR58_UI_LOCALIZATION_BASELINE_AUDIT_V3.md`
+
+Audit exact current main after PR58:
+- what from item 105 is now shipped;
+- what remains hardcoded;
+- what is owned by Chat3 Night/lodging;
+- what is debug/internal;
+- what still needs Lead wiring.
+
+## Queue item 110 — creation/menu remaining localization delta v3
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/global-ui-shell-remaining-localization-v3.fixture.json`
+
+Contain only post-PR58 still-needed RU+EN keys for:
+- character creation;
+- menu;
+- toast/error/accessibility;
+- Activity generic shell;
+- generic result shell;
+- condition explanation templates.
+
+Exclude already-shipped keys and Chat3 Night/lodging ownership.
+
+## Queue item 111 — creation UI current-main consumer map v2
+Create NEW file only:
+- `docs/relationship-prep/CHARACTER_CREATION_CURRENT_MAIN_CONSUMER_MAP_V2.md`
+
+Map each remaining creation key to exact post-PR58 `src/ui/app.ts` consumer/fallback.
+
+## Queue item 112 — menu/toast current-main consumer map v2
+Create NEW file only:
+- `docs/relationship-prep/MENU_TOAST_CURRENT_MAIN_CONSUMER_MAP_V2.md`
+
+Map remaining menu, import/export, presentation toggle, restart, toast and player-facing error keys to exact post-PR58 consumers.
+
+## Queue item 113 — Activity/result generic consumer map v2
+Create NEW file only:
+- `docs/relationship-prep/ACTIVITY_RESULT_GENERIC_CONSUMER_MAP_V2.md`
+
+Map remaining generic Activity/result shell strings to exact current consumers.
+Exclude Forest route-specific copy and career-result authored prose.
+
+## Queue item 114 — condition explanation localization templates v2
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/condition-explanation-localization-v2.fixture.json`
+
+Finalize RU+EN presentation templates for current condition kinds used by player-visible eligibility/ending explanations.
+No condition-schema or eligibility changes.
+
+## Queue item 115 — condition explanation expected-render matrix v1
+Create NEW file only:
+- `docs/relationship-prep/CONDITION_EXPLANATION_EXPECTED_RENDER_MATRIX_V1.md`
+
+For each current condition kind, provide exact representative RU/EN rendering with stable IDs/values/operators unchanged.
+
+## Queue item 116 — post-PR58 hardcoded UI text debt ledger v2
+Create NEW file only:
+- `docs/relationship-prep/POST_PR58_HARDCODED_UI_TEXT_DEBT_LEDGER_V2.md`
+
+Recompute exact remaining player-facing hardcoded strings in `src/ui/app.ts`.
+Classify:
+- SAFE_SHARED_UI;
+- CHAT3_NIGHT;
+- CONTENT_AUTHORED;
+- DEBUG_INTERNAL;
+- PRODUCT_OPEN.
+
+## Queue item 117 — player-facing error wrapper localization matrix v1
+Create NEW file only:
+- `docs/relationship-prep/PLAYER_FACING_ERROR_WRAPPER_LOCALIZATION_MATRIX_V1.md`
+
+Separate localizable wrapper text from raw validator/internal payloads.
+Provide RU+EN wrapper strings only; do not rewrite underlying exception identity.
+
+## Queue item 118 — accessibility-label localization completeness audit v1
+Create NEW file only:
+- `docs/relationship-prep/ACCESSIBILITY_LABEL_LOCALIZATION_COMPLETENESS_AUDIT_V1.md`
+
+Audit visible/ARIA labels after PR58 for RU+EN completeness.
+Exclude hidden debug/editor internals unless reachable in normal player UI.
+
+## Queue item 119 — global UI shell current-main regression source v3
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/global-ui-shell-current-main-v3.test.ts`
+
+Validate item-110/114 keys against exact current main:
+- RU+EN complete;
+- no collisions;
+- presentation-only;
+- current consumer seams exist;
+- no gameplay fields.
+
+## Queue item 120 — post-PR58 global UI localization handoff v3
+Create NEW file only:
+- `docs/relationship-prep/POST_PR58_GLOBAL_UI_LOCALIZATION_HANDOFF_V3.md`
+
+Consolidate items 109–119 into:
+- SAFE_TO_MERGE_DATA;
+- SHARED_UI_WIRING_REQUIRED;
+- CHAT3_NIGHT_EXCLUDED;
+- DEBUG_EXCLUDED;
+- PRODUCT_OPEN.
+
+Continue items 109–120 sequentially without waiting for Lead review.
