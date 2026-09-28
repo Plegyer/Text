@@ -1042,3 +1042,86 @@ Consolidate items 85–95 into:
 Include exact selective-copy files and remaining hardcoded player-facing debt.
 
 Continue items 85–96 sequentially without waiting for Lead review.
+
+
+## Queue item 97 — character creation screen RU EN source v1
+Create NEW file only:
+- `docs/relationship-prep/CHARACTER_CREATION_UI_COPY_RU_EN_V1.md`
+
+Author RU-source + full EN for creation eyebrow/title/body/free-points text/start button and stat allocation accessibility labels.
+No creation mechanics changes.
+
+## Queue item 98 — HUD/date/energy/coins RU EN audit v1
+Create NEW file only:
+- `docs/relationship-prep/HUD_DATE_ENERGY_COINS_RU_EN_AUDIT_V1.md`
+
+Audit current HUD strings and provide missing RU+EN source only.
+Reuse existing localization keys where already shipped.
+
+## Queue item 99 — menu shell RU EN source v1
+Create NEW file only:
+- `docs/relationship-prep/MENU_SHELL_UI_COPY_RU_EN_V1.md`
+
+Author RU+EN source for export/import, editor, animation toggle, restart, informational footer and related generic menu text.
+
+## Queue item 100 — toast/error/close accessibility RU EN source v1
+Create NEW file only:
+- `docs/relationship-prep/TOAST_ERROR_ACCESSIBILITY_COPY_RU_EN_V1.md`
+
+Author RU+EN for dismiss/close/recovery/import-error/player-facing shell messages.
+Do not alter error handling.
+
+## Queue item 101 — Activity generic shell RU EN source v1
+Create NEW file only:
+- `docs/relationship-prep/ACTIVITY_GENERIC_SHELL_UI_COPY_RU_EN_V1.md`
+
+Author RU+EN generic Activity shell labels/instructions/fallbacks that are not Forest-route-specific.
+No Activity mechanics.
+
+## Queue item 102 — result screen generic RU EN source v1
+Create NEW file only:
+- `docs/relationship-prep/RESULT_SCREEN_GENERIC_UI_COPY_RU_EN_V1.md`
+
+Audit generic result eyebrow/buttons/fallbacks and provide missing RU+EN only.
+Do not duplicate career-specific result prose.
+
+## Queue item 103 — ending condition explanation shell audit v1
+Create NEW file only:
+- `docs/relationship-prep/ENDING_CONDITION_EXPLANATION_SHELL_AUDIT_V1.md`
+
+Audit player-facing generic condition explanation text used in ending/eligibility display.
+Propose presentation-only RU+EN keys without changing conditions.
+
+## Queue item 104 — player-facing validation/recovery copy inventory v1
+Create NEW file only:
+- `docs/relationship-prep/PLAYER_FACING_VALIDATION_RECOVERY_COPY_INVENTORY_V1.md`
+
+Inventory only errors/messages that can actually reach normal players.
+Exclude developer/debug/catalog-inspector text.
+
+## Queue item 105 — UI shell localization fixture v2
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/global-ui-shell-localization-v2.fixture.json`
+
+Consolidate items 97–104 plus safe item-94 keys into one exact RU+EN presentation-only fixture.
+
+## Queue item 106 — UI shell current-main consumer map v2
+Create NEW file only:
+- `docs/relationship-prep/GLOBAL_UI_SHELL_CONSUMER_MAP_V2.md`
+
+Map every item-105 key to exact post-PR52 current `src/ui/app.ts` consumer seam/fallback.
+
+## Queue item 107 — UI shell duplication/collision audit v1
+Create NEW file only:
+- `docs/relationship-prep/GLOBAL_UI_SHELL_DUPLICATION_COLLISION_AUDIT_V1.md`
+
+Check item-105 keys against root localization after PR52.
+Classify ADDITIVE / IDENTICAL / REUSE_EXISTING / CONFLICT.
+
+## Queue item 108 — global UI shell handoff v2
+Create NEW file only:
+- `docs/relationship-prep/GLOBAL_UI_SHELL_LOCALIZATION_HANDOFF_V2.md`
+
+Consolidate items 97–107 with exact selective-copy files and remaining player-facing hardcoded debt.
+
+Continue items 97–108 sequentially without waiting for Lead review.
