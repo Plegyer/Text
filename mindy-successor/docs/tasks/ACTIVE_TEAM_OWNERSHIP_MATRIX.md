@@ -6,73 +6,107 @@ Owner: Chat 1 / Lead
 
 This file prevents two implementation workers from owning the same production slice at the same time.
 
-## Active ownership
+## Chat 1 / Lead
 
-### Chat 1 / Lead
 Owns:
-- project coordination;
-- current `main` truth;
+- coordination and current-main truth;
 - task pointers/role contracts;
-- integration order and merge decisions;
-- cross-chat ownership arbitration.
+- integration order/merge decisions;
+- cross-chat ownership arbitration;
+- CI/PR triage.
 
-Does not duplicate worker implementation unless a blocker requires direct Lead action.
+Lead does not duplicate worker implementation unless a blocker requires direct action.
 
-### Chat 1 Developer
-Active slice:
-- PR #65 — Foreman semantic localization integration.
-- frozen head: `85076aa452ac624340406503b2b6ecf551c72e87`.
+## Chat 1 Developer
 
-Reserved boundary:
-- shared production/runtime integration from reviewed worker handoffs.
-
-No other chat may independently implement the same Foreman semantic wiring while PR #65 is active.
-
-### Chat 2
-Active slice:
-- PR #64 — career animation source preparation for queue 352–363.
-- frozen head: `933ee8e0789034e5a64829505a1c9f1071571109`.
-
-Owns:
-- presentation/media source assets;
-- media manifests/validators.
-
-Does not own School text, poverty text, Foreman semantic runtime wiring or QA.
-
-### Chat 3
-Owns:
-- Forest / ordinary-poverty / Secret-Debt content-side bundles when assigned;
-- authored localization/presentation fixtures;
-- content-side validation/handoff sources.
-
-Current next work is a fresh-current-main refresh of the ordinary-poverty depth handoff.
-Production runtime/UI integration of that handoff remains Lead/Chat 1 Developer ownership.
-
-### Chat 4
-Owns:
-- QA / Product Acceptance Gate only;
-- current exact-head review of PR #64 and PR #65.
-
-QA review is not duplicate implementation.
-Chat 4 must not patch the producer's slice unless Lead explicitly transfers a narrow blocker fix.
-
-### Chat 5
 Active queue:
-- School residual localization 193–204.
+- **13–24**
+- production integration of the four reviewed School residual accessibility localization corrections from merged PR #66.
+
+May change:
+- root School accessibility localization values;
+- focused production regression.
+
+Must not change:
+- School media assets;
+- teacher staging/canon;
+- poverty/Forest content;
+- unrelated runtime architecture.
+
+## Chat 2
+
+Active queue:
+- **364–375**
+- School authored/staging media-source preparation.
 
 Owns:
-- School + assigned text-localization preparation;
-- RU/EN fixtures, consumer maps, regression sources and handoffs.
+- original SVG animation source frames;
+- media-source manifests/validators;
+- media accessibility source preparation.
 
-Does not touch Foreman PR #65, Chat 2 media, or Chat 3 poverty/Forest/Secret-Debt ownership.
+Must not:
+- activate staging IDs in production;
+- select final teacher canon;
+- edit School mechanics/text ownership;
+- duplicate Developer localization integration.
+
+## Chat 3
+
+Active queue:
+- **341–352**
+- current-main refresh of ordinary-poverty depth/accessibility/lookup handoff.
+
+Owns:
+- ordinary poverty / Forest / Secret Debt content-side bundles when assigned;
+- fixtures, audits, regression sources and selective handoffs.
+
+Must not implement shared production runtime/UI wiring in this queue.
+
+## Chat 4
+
+Active queue:
+- **13–24 QA**
+- post-merge current-main acceptance of PR #64/#65/#66;
+- next-wave ownership/collision preflight.
+
+Owns QA/product acceptance only.
+May not duplicate producer implementation unless Lead explicitly transfers a narrow blocker fix.
+
+## Chat 5
+
+Active queue:
+- **205–216**
+- School teacher authoring/readiness and staging localization/text.
+
+Owns:
+- teacher text/content proposals;
+- RU/EN parity;
+- authoring boundaries;
+- staging localization fixture/regression.
+
+Must not:
+- edit media assets (Chat 2);
+- promote teacher staging to production;
+- patch root School residual accessibility keys (Chat 1 Developer);
+- touch poverty/Forest/Secret Debt (Chat 3).
+
+## Current delivered baseline
+
+Merged into `main`:
+- PR #64 — career animation source queue 352–363;
+- PR #65 — Foreman semantic localization;
+- PR #66 — School residual localization worker handoff.
+
+PR #63 is closed/superseded and has no active ownership.
 
 ## Duplicate-work rule
 
-Before starting a new queue or PR, every worker must check this matrix plus its current task pointer.
+Before starting a new queue or PR, every worker must read this matrix plus its current task pointer.
 
-If two active assignments appear to change the same production behavior/file set:
+If two active implementation assignments appear to change the same production behavior/file set:
 - stop the newer assignment;
 - report the overlap to Lead;
 - do not resolve ownership independently.
 
-Review/testing of a producer PR by Chat 4 is expected and is not considered duplicate implementation.
+QA review by Chat 4 is expected and is not duplicate implementation.
+Text authoring by Chat 5 and media-source preparation by Chat 2 may reference the same School staging identity, but they must not modify each other's owned files or activate production semantics.
