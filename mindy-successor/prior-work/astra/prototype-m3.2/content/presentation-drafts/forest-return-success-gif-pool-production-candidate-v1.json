@@ -1,0 +1,72 @@
+{
+  "formatVersion": 1,
+  "kind": "pr42-gif-pool-production-candidate",
+  "status": "NOT_YET_EXPORTED",
+  "currentMainBaseline": "01b31b9ab0d0267d95edf5b5b80638acd63f5c04",
+  "presentationId": "activity/forest/return/success",
+  "slotCandidate": {
+    "pool": {
+      "version": 1,
+      "ordering": "ordered",
+      "selectionPolicy": "unweighted",
+      "candidates": [
+        {
+          "key": "forest-success-return-loop-a",
+          "kind": "gif",
+          "src": "assets/gif/forest/return/success-loop-a.gif",
+          "alt": "Возвращение по лесной тропе после удачного выхода с небольшим движением листвы и снаряжения.",
+          "altKey": "presentation.gif.forest.return.success.forest-success-return-loop-a.alt"
+        },
+        {
+          "key": "forest-success-return-loop-b",
+          "kind": "gif",
+          "src": "assets/gif/forest/return/success-loop-b.gif",
+          "alt": "Возвращение по лесной тропе после удачного выхода с небольшим движением листвы и снаряжения.",
+          "altKey": "presentation.gif.forest.return.success.forest-success-return-loop-b.alt"
+        },
+        {
+          "key": "forest-success-return-loop-c",
+          "kind": "gif",
+          "src": "assets/gif/forest/return/success-loop-c.gif",
+          "alt": "Возвращение по лесной тропе после удачного выхода с небольшим движением листвы и снаряжения.",
+          "altKey": "presentation.gif.forest.return.success.forest-success-return-loop-c.alt"
+        }
+      ]
+    },
+    "static": {
+      "kind": "image",
+      "src": "assets/presentation/forest-return-success-v2.svg",
+      "alt": "Сцена успешного возвращения непосредственно у лесной тропы.",
+      "altKey": "presentation.static.forest-return-success-v2.alt"
+    }
+  },
+  "expectedFiles": [
+    {
+      "candidateKey": "forest-success-return-loop-a",
+      "expectedSrc": "assets/gif/forest/return/success-loop-a.gif",
+      "status": "NOT_YET_EXPORTED",
+      "exists": false
+    },
+    {
+      "candidateKey": "forest-success-return-loop-b",
+      "expectedSrc": "assets/gif/forest/return/success-loop-b.gif",
+      "status": "NOT_YET_EXPORTED",
+      "exists": false
+    },
+    {
+      "candidateKey": "forest-success-return-loop-c",
+      "expectedSrc": "assets/gif/forest/return/success-loop-c.gif",
+      "status": "NOT_YET_EXPORTED",
+      "exists": false
+    }
+  ],
+  "invariants": {
+    "exactlyThreeCandidates": true,
+    "localeNeutralCandidateKeys": true,
+    "staticFallbackPreserved": true,
+    "noGifBytesClaim": true,
+    "noGameplayFields": true,
+    "noGameplayRng": true,
+    "noSaveMutation": true
+  }
+}
