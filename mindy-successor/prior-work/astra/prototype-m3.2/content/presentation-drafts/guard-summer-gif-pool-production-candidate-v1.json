@@ -1,0 +1,71 @@
+{
+  "formatVersion": 1,
+  "kind": "pr42-gif-pool-production-candidate",
+  "status": "NOT_YET_EXPORTED",
+  "presentationId": "job/guard/shift/summer/default",
+  "slotCandidate": {
+    "pool": {
+      "version": 1,
+      "ordering": "ordered",
+      "selectionPolicy": "unweighted",
+      "candidates": [
+        {
+          "key": "guard-summer-loop-a",
+          "kind": "gif",
+          "src": "assets/gif/careers/guard/summer-loop-a.gif",
+          "alt": "Летняя сцена обычной службы стражницы с небольшим движением поста и окружающих деталей.",
+          "altKey": "presentation.gif.job.guard.shift.summer.guard-summer-loop-a.alt"
+        },
+        {
+          "key": "guard-summer-loop-b",
+          "kind": "gif",
+          "src": "assets/gif/careers/guard/summer-loop-b.gif",
+          "alt": "Летняя сцена обычной службы стражницы с небольшим движением поста и окружающих деталей.",
+          "altKey": "presentation.gif.job.guard.shift.summer.guard-summer-loop-b.alt"
+        },
+        {
+          "key": "guard-summer-loop-c",
+          "kind": "gif",
+          "src": "assets/gif/careers/guard/summer-loop-c.gif",
+          "alt": "Летняя сцена обычной службы стражницы с небольшим движением поста и окружающих деталей.",
+          "altKey": "presentation.gif.job.guard.shift.summer.guard-summer-loop-c.alt"
+        }
+      ]
+    },
+    "static": {
+      "kind": "image",
+      "src": "assets/presentation/career-guard-shift-summer.svg",
+      "alt": "Стражница несёт обычную службу на городском посту летом; сезон показан окружением и не меняет игровой исход.",
+      "altKey": "presentation.static.career.guard.shift.summer.alt"
+    }
+  },
+  "expectedFiles": [
+    {
+      "candidateKey": "guard-summer-loop-a",
+      "expectedSrc": "assets/gif/careers/guard/summer-loop-a.gif",
+      "status": "NOT_YET_EXPORTED",
+      "exists": false
+    },
+    {
+      "candidateKey": "guard-summer-loop-b",
+      "expectedSrc": "assets/gif/careers/guard/summer-loop-b.gif",
+      "status": "NOT_YET_EXPORTED",
+      "exists": false
+    },
+    {
+      "candidateKey": "guard-summer-loop-c",
+      "expectedSrc": "assets/gif/careers/guard/summer-loop-c.gif",
+      "status": "NOT_YET_EXPORTED",
+      "exists": false
+    }
+  ],
+  "invariants": {
+    "exactlyThreeCandidates": true,
+    "candidateKeysLocaleNeutral": true,
+    "staticFallbackPreserved": true,
+    "noGifBytesClaim": true,
+    "noGameplayFields": true,
+    "noGameplayRng": true,
+    "noSaveMutation": true
+  }
+}
