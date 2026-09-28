@@ -3444,3 +3444,87 @@ Summarize items 235–245:
 - Product-open isolation.
 
 Continue items 235–246 sequentially without waiting for Lead review.
+
+
+## Queue item 247 — PR59 post-merge current-main audit v2
+Create NEW file only:
+- `docs/qa-prep/PR59_POST_MERGE_CURRENT_MAIN_AUDIT_V2.md`
+
+Verify actual PR59 merge SHA, current main, logging-road static activation, old-boundary neutral fallback and post-merge CI.
+
+## Queue item 248 — route localized-label consumer acceptance v1
+Create NEW file only:
+- `docs/qa-prep/ROUTE_LOCALIZED_LABEL_CONSUMER_ACCEPTANCE_V1.md`
+
+Define acceptance for replacing raw persisted route IDs in player-visible Activity text with localized route labels while keeping persisted routeId unchanged.
+
+## Queue item 249 — old-boundary v3 production acceptance v2
+Create NEW file only:
+- `docs/qa-prep/OLD_BOUNDARY_V3_PRODUCTION_ACCEPTANCE_V2.md`
+
+Review Chat2 items 317–319:
+safe stones/marks/path semantics, local asset, RU+EN alt/caption, no Product-open leakage.
+
+## Queue item 250 — ending localization source QA v1
+Create NEW file only:
+- `docs/qa-prep/ENDING_LOCALIZATION_SOURCE_QA_V1.md`
+
+Review Chat5 items 133–139 against exact current ending IDs/conditions.
+Text-only; no eligibility/reward/meta changes.
+
+## Queue item 251 — ordinary action result localization QA v1
+Create NEW file only:
+- `docs/qa-prep/ORDINARY_ACTION_RESULT_LOCALIZATION_QA_V1.md`
+
+Review Chat5 items 140–143:
+exact current actionId + sceneId mapping, RU+EN completeness, no Save/gameplay fields.
+
+## Queue item 252 — ending/action shared consumer acceptance v1
+Create NEW file only:
+- `docs/qa-prep/ENDING_ACTION_SHARED_CONSUMER_ACCEPTANCE_V1.md`
+
+Define exact Lead acceptance for current UI consumers:
+stable ending/action IDs, locale switch render-only, no eligibility/effect/RNG/Save drift.
+
+## Queue item 253 — post-PR59 bilingual visible-debt audit v1
+Create NEW file only:
+- `docs/qa-prep/POST_PR59_BILINGUAL_VISIBLE_DEBT_AUDIT_V1.md`
+
+Recompute current normal-player RU-only/mixed-language surfaces after PR59.
+Exclude debug/internal/Product-open.
+
+## Queue item 254 — Forest route old-boundary fallback transition QA v1
+Create NEW file only:
+- `docs/qa-prep/FOREST_OLD_BOUNDARY_FALLBACK_TRANSITION_QA_V1.md`
+
+Define acceptance for neutral fallback -> safe old-boundary static replacement:
+same presentationId, same route state, same Save/RNG/result identity.
+
+## Queue item 255 — animation exporter preapproval QA v3
+Create NEW file only:
+- `docs/qa-prep/ANIMATION_EXPORTER_PREAPPROVAL_QA_V3.md`
+
+Review Chat2 license/CI packets and classify whether proposed dev-only dependency change is ready for Lead approval.
+No production GIF claim.
+
+## Queue item 256 — current project-owned static coverage v5
+Create NEW file only:
+- `docs/qa-prep/CURRENT_PROJECT_OWNED_STATIC_COVERAGE_V5.md`
+
+Recompute exact root semantic mappings and unique physical sources after PR59.
+Separate neutral fallback from route-specific media.
+
+## Queue item 257 — current-main CI regression floor v10
+Create NEW file only:
+- `docs/qa-prep/CURRENT_MAIN_CI_REGRESSION_FLOOR_V10.md`
+
+Record exact current main SHA, latest successful push run, validator counts and test count after PR59 merge.
+
+## Queue item 258 — next production integration gate v20
+Create NEW file only:
+- `docs/qa-prep/NEXT_PRODUCTION_INTEGRATION_GATE_V20.md`
+
+Summarize items 247–257:
+route label debt, old-boundary static, ending localization, action result localization, exporter approval, remaining bilingual debt.
+
+Continue items 247–258 sequentially without waiting for Lead review.
