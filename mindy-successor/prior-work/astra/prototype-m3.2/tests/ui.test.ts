@@ -700,3 +700,43 @@ test('renderer: journal and lastAction choice outcome localize from stable refs'
   assert.deepEqual(errors,[]);
  }finally{dom.window.close();}
 });
+
+
+test('renderer: shared Night and lodging UI localizes RU EN without state drift',async()=>{
+ const s=started();
+ s.run.resources.money=2_000;
+ s.run.dayState.energyCurrent=0;
+ const {w,dom,errors}=boot(JSON.stringify(s));try{
+  await wait(()=>!!w.document.querySelector('[data-panel="sleep"]'));
+  w.document.querySelector('[data-panel="sleep"]').click();
+  w.document.querySelector('[data-end-day]').click();
+  await wait(()=>!!w.document.querySelector('[data-lodging="lodging.normal"]'));
+
+  assert.equal(w.document.querySelector('.stage-title .eyebrow')?.textContent,'Ночь');
+  assert.equal(w.document.querySelector('.stage-title h1')?.textContent,'Ночлег');
+  assert.match(w.document.querySelector('.dialogue p')?.textContent??'',/Плата за ночлег списывается один раз/);
+  assert.match(w.document.querySelector('[data-lodging="lodging.normal"]')?.textContent??'',/Обычная комната/);
+
+  const before=w.localStorage.getItem('portal-life.v1');
+  w.document.querySelector('[data-panel="menu"]').click();
+  w.document.querySelector('#language-toggle').click();
+  await wait(()=>w.document.documentElement.lang==='en');
+  assert.equal(w.localStorage.getItem('portal-life.v1'),before);
+  w.document.querySelector('#close').click();
+
+  assert.equal(w.document.querySelector('.stage-title .eyebrow')?.textContent,'Night');
+  assert.equal(w.document.querySelector('.stage-title h1')?.textContent,'Lodging');
+  assert.match(w.document.querySelector('.dialogue p')?.textContent??'',/lodging cost is charged once/);
+  assert.match(w.document.querySelector('[data-lodging="lodging.normal"]')?.textContent??'',/Normal room/);
+
+  w.document.querySelector('[data-lodging="lodging.normal"]').click();
+  await wait(()=>!!w.document.querySelector('[data-night-choice="night.sleep"]'));
+  assert.equal(w.document.querySelector('.stage-title h1')?.textContent,'Evening');
+  assert.match(w.document.querySelector('.dialogue p')?.textContent??'',/voluntary night activity/);
+  const sleep=w.document.querySelector('[data-night-choice="night.sleep"]')?.closest('article');
+  assert.match(sleep?.textContent??'',/Sleep/);
+  assert.match(sleep?.textContent??'',/Night activity/);
+  assert.equal(w.document.querySelector('[data-night-choice="night.sleep"]')?.textContent,'Choose');
+  assert.deepEqual(errors,[]);
+ }finally{dom.window.close();}
+});
