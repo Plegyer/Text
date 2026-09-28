@@ -78,11 +78,15 @@ PR60 later activated the reviewed old-boundary v3 specific static.
 
 PR61 later localized ending cards and ordinary action results.
 
-Current main at final refresh:
+PR61-era main reviewed during the wave:
 `01b31b9ab0d0267d95edf5b5b80638acd63f5c04`.
 
-Current main run #122 remains green:
-369 / 369, validator 17 / 46 / 35 / 9.
+Latest current main:
+`1b0ea9dc3c10a8acb24df2ca2edd0e5f609dd515`
+(PR62).
+
+Latest main run #126 remains green:
+375 / 375, validator 17 / 46 / 35 / 9.
 
 Those later merges do not invalidate PR59 acceptance.
 
