@@ -1,0 +1,195 @@
+{
+  "schemaVersion": 1,
+  "id": "shared-night-ui-natural-path.v2",
+  "status": "PRESENTATION_EXPECTATION_POST_PR53",
+  "baseMain": "3fc5495310e281cf5cbe52da3642000f1cb1fb05",
+  "paths": [
+    {
+      "id": "normal-lodging-to-sleep",
+      "steps": [
+        {
+          "phase": "LodgingResolution",
+          "command": {
+            "type": "chooseLodging",
+            "id": "lodging.normal"
+          }
+        },
+        {
+          "phase": "VoluntaryNightChoice",
+          "command": {
+            "type": "chooseNightChoice",
+            "id": "night.sleep"
+          }
+        },
+        {
+          "phase": "next-day",
+          "expectedResultToLodgingKey": "ui.result.chooseLodging"
+        }
+      ],
+      "stableIds": {
+        "lodgingId": "lodging.normal",
+        "nightChoiceId": "night.sleep"
+      },
+      "expectedPresentation": {
+        "lodgingLabel": {
+          "ru": "Обычная комната",
+          "en": "Normal room"
+        },
+        "nightChoiceLabel": {
+          "ru": "Спать",
+          "en": "Sleep"
+        },
+        "lodgingPrompt": {
+          "ru": "Выберите место на эту ночь. Плата за ночлег списывается один раз.",
+          "en": "Choose a place for tonight. The lodging cost is charged once."
+        },
+        "nextDayEnergyTemplate": {
+          "ru": "Энергия завтра: {delta}",
+          "en": "Energy tomorrow: {delta}"
+        },
+        "resultToLodgingKeyOwnedByMain": "ui.result.chooseLodging"
+      },
+      "unchanged": {
+        "moneyCost": 100,
+        "housing": "normal",
+        "lodgingNextDayEnergyDelta": 0,
+        "lodgingNextDayEffects": [],
+        "nightChoiceNextDayEnergyDelta": 0,
+        "nightChoiceEffects": []
+      }
+    },
+    {
+      "id": "cheap-lodging-to-sleep",
+      "steps": [
+        {
+          "phase": "LodgingResolution",
+          "command": {
+            "type": "chooseLodging",
+            "id": "lodging.cheap"
+          }
+        },
+        {
+          "phase": "VoluntaryNightChoice",
+          "command": {
+            "type": "chooseNightChoice",
+            "id": "night.sleep"
+          }
+        },
+        {
+          "phase": "next-day",
+          "expectedResultToLodgingKey": "ui.result.chooseLodging"
+        }
+      ],
+      "stableIds": {
+        "lodgingId": "lodging.cheap",
+        "nightChoiceId": "night.sleep"
+      },
+      "expectedPresentation": {
+        "lodgingLabel": {
+          "ru": "Дешёвый ночлег",
+          "en": "Cheap lodging"
+        },
+        "nightChoiceLabel": {
+          "ru": "Спать",
+          "en": "Sleep"
+        },
+        "lodgingPrompt": {
+          "ru": "Выберите место на эту ночь. Плата за ночлег списывается один раз.",
+          "en": "Choose a place for tonight. The lodging cost is charged once."
+        },
+        "nextDayEnergyTemplate": {
+          "ru": "Энергия завтра: {delta}",
+          "en": "Energy tomorrow: {delta}"
+        },
+        "resultToLodgingKeyOwnedByMain": "ui.result.chooseLodging"
+      },
+      "unchanged": {
+        "moneyCost": 50,
+        "housing": "cheap",
+        "lodgingNextDayEnergyDelta": 0,
+        "lodgingNextDayEffects": [],
+        "nightChoiceNextDayEnergyDelta": 0,
+        "nightChoiceEffects": []
+      }
+    },
+    {
+      "id": "street-lodging-to-sleep",
+      "steps": [
+        {
+          "phase": "LodgingResolution",
+          "command": {
+            "type": "chooseLodging",
+            "id": "lodging.street"
+          }
+        },
+        {
+          "phase": "VoluntaryNightChoice",
+          "command": {
+            "type": "chooseNightChoice",
+            "id": "night.sleep"
+          }
+        },
+        {
+          "phase": "next-day",
+          "expectedResultToLodgingKey": "ui.result.chooseLodging"
+        }
+      ],
+      "stableIds": {
+        "lodgingId": "lodging.street",
+        "nightChoiceId": "night.sleep"
+      },
+      "expectedPresentation": {
+        "lodgingLabel": {
+          "ru": "Улица / без ночлега",
+          "en": "Street / no lodging"
+        },
+        "nightChoiceLabel": {
+          "ru": "Спать",
+          "en": "Sleep"
+        },
+        "lodgingPrompt": {
+          "ru": "Выберите место на эту ночь. Плата за ночлег списывается один раз.",
+          "en": "Choose a place for tonight. The lodging cost is charged once."
+        },
+        "nextDayEnergyTemplate": {
+          "ru": "Энергия завтра: {delta}",
+          "en": "Energy tomorrow: {delta}"
+        },
+        "resultToLodgingKeyOwnedByMain": "ui.result.chooseLodging"
+      },
+      "unchanged": {
+        "moneyCost": 0,
+        "housing": "street",
+        "lodgingNextDayEnergyDelta": -1,
+        "lodgingNextDayEffects": [
+          {
+            "stat": "grooming",
+            "delta": -1
+          }
+        ],
+        "nightChoiceNextDayEnergyDelta": 0,
+        "nightChoiceEffects": []
+      }
+    }
+  ],
+  "stableSaveFields": [
+    "run.flow.night.phase",
+    "run.flow.night.selectedLodgingId",
+    "run.flow.night.lodgingPaymentCommitted",
+    "run.flow.night.selectedNightChoiceId",
+    "run.resources.money",
+    "run.housingState.current",
+    "run.housingState.paidForCurrentNight",
+    "run.nextDay",
+    "run.day"
+  ],
+  "invariants": {
+    "localeChangesPresentationOnly": true,
+    "changesMoney": false,
+    "changesEnergy": false,
+    "changesHousing": false,
+    "changesNightFlowIds": false,
+    "changesSaveSchema": false,
+    "changesCommands": false
+  }
+}
