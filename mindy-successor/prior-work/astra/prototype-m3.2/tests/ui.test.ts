@@ -740,3 +740,59 @@ test('renderer: shared Night and lodging UI localizes RU EN without state drift'
   assert.deepEqual(errors,[]);
  }finally{dom.window.close();}
 });
+
+
+test('renderer: remaining UI shell v2 localizes creation menu and season without save drift',async()=>{
+ const {w,dom,errors}=boot();try{
+  await wait(()=>!!w.document.querySelector('#create'));
+  const before=w.localStorage.getItem('portal-life.v1');
+  assert.match(w.document.querySelector('.creation h1')?.textContent??'',/Кем вы войдёте в этот мир/);
+  assert.match(w.document.querySelector('.creation')?.textContent??'',/Ваша героиня/);
+
+  w.document.querySelector('[data-panel="menu"]').click();
+  assert.match(w.document.querySelector('.panel')?.textContent??'',/Экспорт сохранения/);
+  assert.match(w.document.querySelector('.panel')?.textContent??'',/Новая героиня с сохранением наследия/);
+  w.document.querySelector('#language-toggle').click();
+  await wait(()=>w.document.documentElement.lang==='en');
+  assert.equal(w.localStorage.getItem('portal-life.v1'),before);
+  assert.match(w.document.querySelector('.panel')?.textContent??'',/Export save/);
+  assert.match(w.document.querySelector('.panel')?.textContent??'',/New heroine with legacy preserved/);
+  w.document.querySelector('#close').click();
+
+  assert.match(w.document.querySelector('.creation h1')?.textContent??'',/Who will you be when you enter this world/);
+  assert.match(w.document.querySelector('.creation')?.textContent??'',/Your heroine/);
+  assert.match(w.document.querySelector('.date strong')?.textContent??'',/Spring/);
+  assert.equal(w.localStorage.getItem('portal-life.v1'),before);
+  assert.deepEqual(errors,[]);
+ }finally{dom.window.close();}
+});
+
+test('renderer: Activity shell v2 localizes labels without gameplay drift',async()=>{
+ const s=started();
+ const {w,dom,errors}=boot(JSON.stringify(s));try{
+  await wait(()=>!!w.document.querySelector('[data-panel="explore"]'));
+  w.document.querySelector('[data-panel="explore"]').click();
+  await wait(()=>!!w.document.querySelector('[data-enter-activity="lumber.forest"]'));
+  w.document.querySelector('[data-enter-activity="lumber.forest"]').click();
+  await wait(()=>!!w.document.querySelector('[data-activity-action]'));
+  const before=w.localStorage.getItem('portal-life.v1');
+
+  assert.match(w.document.querySelector('.stage-title .eyebrow')?.textContent??'',/Вылазка/);
+  assert.match(w.document.querySelector('.dialogue p')?.textContent??'',/Прогресс:/);
+  assert.match(w.document.querySelector('.dialogue p')?.textContent??'',/Выносливость:/);
+  assert.match(w.document.querySelector('.dialogue p')?.textContent??'',/Контрольная точка:/);
+
+  w.document.querySelector('[data-panel="menu"]').click();
+  w.document.querySelector('#language-toggle').click();
+  await wait(()=>w.document.documentElement.lang==='en');
+  assert.equal(w.localStorage.getItem('portal-life.v1'),before);
+  w.document.querySelector('#close').click();
+
+  assert.match(w.document.querySelector('.stage-title .eyebrow')?.textContent??'',/Activity/);
+  assert.match(w.document.querySelector('.dialogue p')?.textContent??'',/Progress:/);
+  assert.match(w.document.querySelector('.dialogue p')?.textContent??'',/Endurance:/);
+  assert.match(w.document.querySelector('.dialogue p')?.textContent??'',/Checkpoint:/);
+  assert.equal(w.localStorage.getItem('portal-life.v1'),before);
+  assert.deepEqual(errors,[]);
+ }finally{dom.window.close();}
+});
