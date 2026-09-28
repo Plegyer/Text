@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "id": "forest.route-title-help-localization.v3",
+  "status": "PRESENTATION_ONLY_CURRENT_ROUTE_IDENTITIES",
+  "baseMain": "295e6fc74d235f0b7555794555a18373451e8b7e",
+  "routes": [
+    {
+      "routeId": "forest.route.logging-road",
+      "routeState": "logging-road",
+      "choiceLabelKey": "activityOption.forest.route.logging-road.label",
+      "titleKey": "presentation.activity.forest.route.logging-road.title",
+      "helpKey": "presentation.activity.forest.route.logging-road.help"
+    },
+    {
+      "routeId": "forest.route.old-boundary",
+      "routeState": "old-boundary",
+      "choiceLabelKey": "activityOption.forest.route.old-boundary.label",
+      "titleKey": "presentation.activity.forest.route.old-boundary.title",
+      "helpKey": "presentation.activity.forest.route.old-boundary.help"
+    }
+  ],
+  "strings": {
+    "activityOption.forest.route.logging-road.label": {
+      "ru": "Лесовозная дорога",
+      "en": "Logging road"
+    },
+    "presentation.activity.forest.route.logging-road.title": {
+      "ru": "Лесовозная дорога",
+      "en": "Logging road"
+    },
+    "presentation.activity.forest.route.logging-road.help": {
+      "ru": "Широкая рабочая дорога со свежими следами лесозаготовок.",
+      "en": "A broad work road with fresh signs of logging."
+    },
+    "activityOption.forest.route.old-boundary.label": {
+      "ru": "Старая межевая тропа",
+      "en": "Old boundary path"
+    },
+    "presentation.activity.forest.route.old-boundary.title": {
+      "ru": "Старая межевая тропа",
+      "en": "Old boundary path"
+    },
+    "presentation.activity.forest.route.old-boundary.help": {
+      "ru": "Старый путь по межевым камням и выветренным меткам.",
+      "en": "An old route traced by boundary stones and weathered marks."
+    }
+  },
+  "ownership": {
+    "existingIdenticalKeys": [
+      "activityOption.forest.route.logging-road.label",
+      "activityOption.forest.route.old-boundary.label"
+    ],
+    "additiveKeys": [
+      "presentation.activity.forest.route.logging-road.title",
+      "presentation.activity.forest.route.logging-road.help",
+      "presentation.activity.forest.route.old-boundary.title",
+      "presentation.activity.forest.route.old-boundary.help"
+    ]
+  },
+  "invariants": {
+    "presentationOnly": true,
+    "exactCurrentRouteIdsOnly": true,
+    "changesConditions": false,
+    "changesEffects": false,
+    "changesRewards": false,
+    "changesRng": false,
+    "changesSaveState": false
+  }
+}
