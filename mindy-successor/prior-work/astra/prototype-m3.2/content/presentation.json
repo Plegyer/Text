@@ -659,6 +659,14 @@
         "alt": "Лесовозная дорога с колеями и следами недавних работ.",
         "altKey": "presentation.activity.forest.route.logging-road.alt"
       }
+    },
+    "activity/forest/route/old-boundary": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/forest-route-old-boundary-v3.svg",
+        "alt": "Старая межевая линия с замшелыми камнями и выветренными метками.",
+        "altKey": "presentation.activity.forest.route.old-boundary.alt"
+      }
     }
   }
 }
