@@ -1,0 +1,327 @@
+{
+  "schemaVersion": 1,
+  "id": "poverty.depth-render-lookup.v1",
+  "status": "PRESENTATION_ONLY_EXACT_CURRENT_LOOKUP",
+  "baseMain": "01b31b9ab0d0267d95edf5b5b80638acd63f5c04",
+  "entries": [
+    {
+      "eventId": "poverty-street-production.helpful-summer",
+      "variantId": "default",
+      "orderedDepthLocalizationKeys": [
+        "presentation.poverty.depth.poverty-street-production-helpful-summer.default.a.text",
+        "presentation.poverty.depth.poverty-street-production-helpful-summer.default.b.text"
+      ],
+      "fallback": {
+        "localizationKey": "event.poverty-street-production.helpful-summer.variant.default.text",
+        "sourceText": "Before the street settles for the night, a nearby stall needs one last crate carried under cover. The work is brief and anonymous.",
+        "localized": {
+          "ru": "Перед тем как улица стихнет на ночь, у соседнего прилавка нужно убрать под навес последний ящик. Работа короткая, без лишних вопросов и обязательств.",
+          "en": "Before the street settles for the night, a nearby stall needs one last crate moved under the awning. It is a brief job with no questions and no obligations attached."
+        }
+      }
+    },
+    {
+      "eventId": "poverty-street-production.neutral-autumn",
+      "variantId": "default",
+      "orderedDepthLocalizationKeys": [],
+      "fallback": {
+        "localizationKey": "event.poverty-street-production.neutral-autumn.variant.default.text",
+        "sourceText": "A shop awning leaves a dry strip of pavement after closing. Nobody offers help and nobody drives you away; for tonight, that is enough.",
+        "localized": {
+          "ru": "После закрытия магазина под навесом остаётся сухая полоса мостовой. Никто не предлагает помощь и никто тебя не прогоняет; на эту ночь этого достаточно.",
+          "en": "A shop awning leaves a dry strip of pavement after closing. Nobody offers help and nobody drives you away; for tonight, that is enough."
+        }
+      }
+    },
+    {
+      "eventId": "poverty-street-production.pressure-winter",
+      "variantId": "default",
+      "orderedDepthLocalizationKeys": [
+        "presentation.poverty.depth.poverty-street-production-pressure-winter.default.a.text",
+        "presentation.poverty.depth.poverty-street-production-pressure-winter.default.b.text"
+      ],
+      "fallback": {
+        "localizationKey": "event.poverty-street-production.pressure-winter.variant.default.text",
+        "sourceText": "The stones keep the day's cold. You can stay tucked beneath an overhang or keep moving and arrive at morning more exhausted.",
+        "localized": {
+          "ru": "Камни держат холод дольше, чем дневной свет. Можно остаться под навесом или продолжить идти, жертвуя частью отдыха.",
+          "en": "The stones hold the cold longer than the daylight. You can remain under the overhang or keep walking and give up part of your rest."
+        }
+      }
+    },
+    {
+      "eventId": "poverty-street-production-v2.helpful-summer-shade",
+      "variantId": "market-closing",
+      "orderedDepthLocalizationKeys": [
+        "presentation.poverty.depth.poverty-street-production-v2-helpful-summer-shade.market-closing.a.text"
+      ],
+      "fallback": {
+        "localizationKey": "event.poverty-street-production-v2.helpful-summer-shade.variant.market-closing.text",
+        "sourceText": "As the market shutters come down, someone needs a canvas rolled and tied before the evening heat turns to rain. It is a short, anonymous job.",
+        "localized": {
+          "ru": "Пока на рынке закрывают ставни, кому-то нужно свернуть и связать полотно до вечернего дождя. Работа короткая и ни к чему тебя не привязывает.",
+          "en": "As the market shutters come down, someone needs a canvas rolled and tied before the evening rain. The job is brief and binds you to nothing."
+        }
+      }
+    },
+    {
+      "eventId": "poverty-street-production-v2.helpful-summer-shade",
+      "variantId": "late-shade",
+      "orderedDepthLocalizationKeys": [
+        "presentation.poverty.depth.poverty-street-production-v2-helpful-summer-shade.late-shade.b.text"
+      ],
+      "fallback": {
+        "localizationKey": "event.poverty-street-production-v2.helpful-summer-shade.variant.late-shade.text",
+        "sourceText": "A strip of shade survives beside a closed stall. A last small task is still available, but keeping the quiet place for the night is equally possible.",
+        "localized": {
+          "ru": "У закрытого прилавка ещё держится полоска тени. Можно взять последнее небольшое поручение или сохранить тихое место на ночь.",
+          "en": "A strip of shade remains beside a closed stall. You can take one last small task or keep the quiet place for the night."
+        }
+      }
+    },
+    {
+      "eventId": "poverty-street-production-v2.neutral-autumn-crossing",
+      "variantId": "drizzle",
+      "orderedDepthLocalizationKeys": [],
+      "fallback": {
+        "localizationKey": "event.poverty-street-production-v2.neutral-autumn-crossing.variant.drizzle.text",
+        "sourceText": "A light autumn drizzle sends late pedestrians beneath the arcade. They pass without comment, leaving only wet footprints and a little borrowed shelter.",
+        "localized": {
+          "ru": "Лёгкая осенняя морось загоняет поздних прохожих под аркаду. Они проходят мимо без комментариев, оставляя мокрые следы и разделяя с тобой укрытие всего на несколько минут.",
+          "en": "A light autumn drizzle sends late pedestrians beneath the arcade. They pass without comment, leaving wet footprints and sharing the shelter with you for a few minutes."
+        }
+      }
+    },
+    {
+      "eventId": "poverty-street-production-v2.neutral-autumn-crossing",
+      "variantId": "dry-arcade",
+      "orderedDepthLocalizationKeys": [],
+      "fallback": {
+        "localizationKey": "event.poverty-street-production-v2.neutral-autumn-crossing.variant.dry-arcade.text",
+        "sourceText": "The arcade stays dry tonight. Shops are closed, footsteps fade, and the street offers a rare hour that asks nothing from you.",
+        "localized": {
+          "ru": "Сегодня под аркадой сухо. Магазины закрыты, шаги затихают, и улица дарит редкий час, когда от тебя ничего не требуется.",
+          "en": "The arcade stays dry tonight. Shops are closed, footsteps fade, and the street offers a rare hour that asks nothing from you."
+        }
+      }
+    },
+    {
+      "eventId": "poverty-street-production-v2.pressure-winter-wind",
+      "variantId": "crosswind",
+      "orderedDepthLocalizationKeys": [
+        "presentation.poverty.depth.poverty-street-production-v2-pressure-winter-wind.crosswind.a.text"
+      ],
+      "fallback": {
+        "localizationKey": "event.poverty-street-production-v2.pressure-winter-wind.variant.crosswind.text",
+        "sourceText": "A hard crosswind cuts through the lane and makes every exposed corner feel colder. A recessed doorway nearby offers the safer choice.",
+        "localized": {
+          "ru": "Резкий боковой ветер проходит сквозь переулок и выдувает тепло из каждого открытого угла. Рядом есть утопленный дверной проём, где можно укрыться.",
+          "en": "A hard crosswind cuts through the lane and strips the warmth from every exposed corner. A recessed doorway nearby offers shelter."
+        }
+      }
+    },
+    {
+      "eventId": "poverty-street-production-v2.pressure-winter-wind",
+      "variantId": "long-gusts",
+      "orderedDepthLocalizationKeys": [
+        "presentation.poverty.depth.poverty-street-production-v2-pressure-winter-wind.long-gusts.b.text"
+      ],
+      "fallback": {
+        "localizationKey": "event.poverty-street-production-v2.pressure-winter-wind.variant.long-gusts.text",
+        "sourceText": "Long gusts rattle shutters along the lane. You can stay tucked away or keep moving and pay for it in tomorrow's energy.",
+        "localized": {
+          "ru": "Долгие порывы трясут ставни вдоль переулка. Можно остаться в укрытии или продолжить идти, пожертвовав частью завтрашних сил.",
+          "en": "Long gusts rattle shutters along the lane. You can stay sheltered or keep walking and give up some of tomorrow’s strength."
+        }
+      }
+    },
+    {
+      "eventId": "poverty-cheap-production.shared-quiet-autumn",
+      "variantId": "default",
+      "orderedDepthLocalizationKeys": [
+        "presentation.poverty.depth.poverty-cheap-production-shared-quiet-autumn.default.a.text",
+        "presentation.poverty.depth.poverty-cheap-production-shared-quiet-autumn.default.b.text"
+      ],
+      "fallback": {
+        "localizationKey": "event.poverty-cheap-production.shared-quiet-autumn.variant.default.text",
+        "sourceText": "The cheap lodging settles early. Thin walls carry every cough and footstep, so the shared room agrees on quiet before anyone starts an argument.",
+        "localized": {
+          "ru": "В дешёвом ночлеге рано становится тихо. Через тонкие стены слышны кашель, шаги и шорох вещей, поэтому общая комната сама собой переходит на полголоса.",
+          "en": "The cheap lodging settles early. Thin walls carry coughs, footsteps, and the rustle of belongings, so the shared room gradually drops to a whisper."
+        }
+      }
+    },
+    {
+      "eventId": "poverty-cheap-production-v2.shared-room-seasons",
+      "variantId": "spring-window",
+      "orderedDepthLocalizationKeys": [
+        "presentation.poverty.depth.poverty-cheap-production-v2-shared-room-seasons.spring-window.a.text"
+      ],
+      "fallback": {
+        "localizationKey": "event.poverty-cheap-production-v2.shared-room-seasons.variant.spring-window.text",
+        "sourceText": "Spring air slips through a cracked window in the shared room. Someone has wedged it open with a chipped cup, and nobody wants to argue with the first mild night.",
+        "localized": {
+          "ru": "Весенний воздух просачивается через приоткрытое окно общей комнаты. Кто-то подпёр его щербатой чашкой, и никто не хочет спорить с первой мягкой ночью.",
+          "en": "Spring air slips through a cracked window in the shared room. Someone has wedged it open with a chipped cup, and nobody wants to argue with the first mild night."
+        }
+      }
+    },
+    {
+      "eventId": "poverty-cheap-production-v2.shared-room-seasons",
+      "variantId": "summer-heat",
+      "orderedDepthLocalizationKeys": [
+        "presentation.poverty.depth.poverty-cheap-production-v2-shared-room-seasons.summer-heat.b.text"
+      ],
+      "fallback": {
+        "localizationKey": "event.poverty-cheap-production-v2.shared-room-seasons.variant.summer-heat.text",
+        "sourceText": "The cheap room holds the day's summer heat. Bedrolls are spaced as far apart as the floor allows, and everyone agrees that the open window belongs to everybody.",
+        "localized": {
+          "ru": "Дешёвая комната хранит дневной летний жар. Подстилки разложены настолько далеко друг от друга, насколько позволяет пол, и все согласны, что открытое окно принадлежит всем.",
+          "en": "The cheap room holds the day's summer heat. Bedrolls are spaced as far apart as the floor allows, and everyone agrees that the open window belongs to everybody."
+        }
+      }
+    },
+    {
+      "eventId": "poverty-cheap-production-v2.shared-room-seasons",
+      "variantId": "winter-stove",
+      "orderedDepthLocalizationKeys": [
+        "presentation.poverty.depth.poverty-cheap-production-v2-shared-room-seasons.winter-stove.c.text"
+      ],
+      "fallback": {
+        "localizationKey": "event.poverty-cheap-production-v2.shared-room-seasons.variant.winter-stove.text",
+        "sourceText": "A small stove ticks in the corner while winter coats hang from every spare peg. The room is crowded, warm enough, and quieter than the street outside.",
+        "localized": {
+          "ru": "В углу тихо потрескивает маленькая печь, а зимние пальто висят на каждом свободном крючке. Здесь тесно, достаточно тепло и тише, чем на улице.",
+          "en": "A small stove ticks in the corner while winter coats hang from every spare peg. The room is crowded, warm enough, and quieter than the street outside."
+        }
+      }
+    },
+    {
+      "eventId": "poverty-cheap-production-v2.shared-room-seasons",
+      "variantId": "shared-room",
+      "orderedDepthLocalizationKeys": [
+        "presentation.poverty.depth.poverty-cheap-production-v2-shared-room-seasons.shared-room.d.text"
+      ],
+      "fallback": {
+        "localizationKey": "event.poverty-cheap-production-v2.shared-room-seasons.variant.shared-room.text",
+        "sourceText": "The cheap shared room is plain and crowded, but it is still a roof, a door, and a place to sleep without adding another street-night risk.",
+        "localized": {
+          "ru": "Дешёвая общая комната простая и тесная, но здесь есть крыша, дверь и место, где можно спокойно переждать ночь.",
+          "en": "The cheap shared room is plain and crowded, but it still has a roof, a door, and a place to wait out the night in relative quiet."
+        }
+      }
+    },
+    {
+      "eventId": "poverty-recovery-production.small-coin-help",
+      "variantId": "default",
+      "orderedDepthLocalizationKeys": [
+        "presentation.poverty.depth.poverty-recovery-production-small-coin-help.default.a.text",
+        "presentation.poverty.depth.poverty-recovery-production-small-coin-help.default.b.text"
+      ],
+      "fallback": {
+        "localizationKey": "event.poverty-recovery-production.small-coin-help.variant.default.text",
+        "sourceText": "A paper parcel of yesterday's bread has been left on a public ledge with a few loose coins beside it and no name attached.",
+        "localized": {
+          "ru": "На общей полке оставили бумажный свёрток со вчерашним хлебом и несколько мелких монет рядом. Никакого имени или подписи.",
+          "en": "A paper parcel of yesterday's bread has been left on a public ledge with a few loose coins beside it and no name attached."
+        }
+      }
+    },
+    {
+      "eventId": "poverty-recovery-production.short-cleanup",
+      "variantId": "default",
+      "orderedDepthLocalizationKeys": [
+        "presentation.poverty.depth.poverty-recovery-production-short-cleanup.default.a.text",
+        "presentation.poverty.depth.poverty-recovery-production-short-cleanup.default.b.text"
+      ],
+      "fallback": {
+        "localizationKey": "event.poverty-recovery-production.short-cleanup.variant.default.text",
+        "sourceText": "A closing stall has one small cleanup left: stack two stools, sweep a narrow strip, and carry a bucket to the drain.",
+        "localized": {
+          "ru": "У закрывающегося прилавка осталось одно небольшое дело: сложить два табурета, подмести узкую полосу и отнести ведро к стоку.",
+          "en": "A closing stall has one small cleanup left: stack two stools, sweep a narrow strip, and carry a bucket to the drain."
+        }
+      }
+    },
+    {
+      "eventId": "poverty-recovery-production.herb-bundle",
+      "variantId": "default",
+      "orderedDepthLocalizationKeys": [
+        "presentation.poverty.depth.poverty-recovery-production-herb-bundle.default.a.text",
+        "presentation.poverty.depth.poverty-recovery-production-herb-bundle.default.b.text"
+      ],
+      "fallback": {
+        "localizationKey": "event.poverty-recovery-production.herb-bundle.variant.default.text",
+        "sourceText": "A small tied bundle of ordinary herbs has been forgotten beside an empty market crate. Nothing marks it as anyone's special property.",
+        "localized": {
+          "ru": "Небольшой связанный пучок обычных трав забыли рядом с пустым рыночным ящиком. Ничто не указывает, что это чья-то особая собственность.",
+          "en": "A small tied bundle of ordinary herbs has been forgotten beside an empty market crate. Nothing marks it as anyone's special property."
+        }
+      }
+    },
+    {
+      "eventId": "poverty-pressure-production.cold-rain",
+      "variantId": "default",
+      "orderedDepthLocalizationKeys": [
+        "presentation.poverty.depth.poverty-pressure-production-cold-rain.default.a.text",
+        "presentation.poverty.depth.poverty-pressure-production-cold-rain.default.b.text"
+      ],
+      "fallback": {
+        "localizationKey": "event.poverty-pressure-production.cold-rain.variant.default.text",
+        "sourceText": "Cold spring rain reaches the curb and creeps beneath the edge of your shelter. A deeper doorway remains open if you move now.",
+        "localized": {
+          "ru": "Холодный весенний дождь добирается до края тротуара и затекает под укрытие. Чуть дальше есть глубокий дверной проём, куда можно перебраться.",
+          "en": "Cold spring rain reaches the curb and creeps beneath the edge of your shelter. A deeper doorway nearby offers a drier place to move."
+        }
+      }
+    },
+    {
+      "eventId": "poverty-pressure-production.noisy-loading",
+      "variantId": "default",
+      "orderedDepthLocalizationKeys": [
+        "presentation.poverty.depth.poverty-pressure-production-noisy-loading.default.a.text",
+        "presentation.poverty.depth.poverty-pressure-production-noisy-loading.default.b.text"
+      ],
+      "fallback": {
+        "localizationKey": "event.poverty-pressure-production.noisy-loading.variant.default.text",
+        "sourceText": "A loading crew starts earlier than expected. Wheels, crates, and shouted counts make the corner useless for quiet sleep.",
+        "localized": {
+          "ru": "Погрузочная бригада начинает раньше, чем ожидалось. Колёса, ящики и выкрикиваемые числа делают этот угол бесполезным для спокойного сна.",
+          "en": "A loading crew starts earlier than expected. Wheels, crates, and shouted counts make the corner useless for quiet sleep."
+        }
+      }
+    },
+    {
+      "eventId": "poverty-pressure-production.muddy-splash",
+      "variantId": "default",
+      "orderedDepthLocalizationKeys": [
+        "presentation.poverty.depth.poverty-pressure-production-muddy-splash.default.a.text",
+        "presentation.poverty.depth.poverty-pressure-production-muddy-splash.default.b.text"
+      ],
+      "fallback": {
+        "localizationKey": "event.poverty-pressure-production.muddy-splash.variant.default.text",
+        "sourceText": "A late cart catches a puddle at the wrong angle. Mud spatters the edge of your clothes before the driver even notices.",
+        "localized": {
+          "ru": "Поздняя телега цепляет колесом лужу под неудачным углом. Грязь забрызгивает край одежды раньше, чем возница успевает это заметить.",
+          "en": "A late cart clips a puddle at the wrong angle. Mud spatters the edge of your clothes before the driver even notices."
+        }
+      }
+    }
+  ],
+  "selection": {
+    "candidateOrdering": "lexicographic",
+    "occurrenceSource": "historyState.eventHistory[eventId].count",
+    "indexRule": "max(showCount - 1, 0) % candidateCount",
+    "whenNoCandidates": "use fallback.localizationKey"
+  },
+  "invariants": {
+    "entryCount": 20,
+    "mappedEntryCount": 17,
+    "fallbackOnlyEntryCount": 3,
+    "presentationOnly": true,
+    "changesRng": false,
+    "writesSave": false,
+    "createsGameplayIds": false,
+    "secretDebtIncluded": false
+  }
+}
