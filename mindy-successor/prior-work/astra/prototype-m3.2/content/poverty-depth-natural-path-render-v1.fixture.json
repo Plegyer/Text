@@ -1,0 +1,280 @@
+{
+  "schemaVersion": 1,
+  "id": "poverty.depth-natural-path-render.v1",
+  "status": "PRESENTATION_ONLY_EXPECTATION",
+  "baseMain": "01b31b9ab0d0267d95edf5b5b80638acd63f5c04",
+  "selectorContract": "docs/poverty-prep/POVERTY_DEPTH_DETERMINISTIC_SELECTION_CONTRACT_V1.md",
+  "paths": [
+    {
+      "kind": "helpful",
+      "packId": "poverty-street-production",
+      "eventId": "poverty-street-production.helpful-summer",
+      "variantId": "default",
+      "choiceId": "take-errand",
+      "existingShowCount": 1,
+      "deterministicSelection": {
+        "orderedCandidateKeys": [
+          "presentation.poverty.depth.poverty-street-production-helpful-summer.default.a.text",
+          "presentation.poverty.depth.poverty-street-production-helpful-summer.default.b.text"
+        ],
+        "selectedIndex": 0,
+        "selectedKey": "presentation.poverty.depth.poverty-street-production-helpful-summer.default.a.text"
+      },
+      "expectedRender": {
+        "ru": "Под навесом торговец убирает последние ящики от вечерней сырости. Ему нужна ещё одна пара рук всего на несколько минут.",
+        "en": "Under the awning, a merchant is moving the last crates out of the evening damp. One extra pair of hands is needed for only a few minutes."
+      },
+      "unchangedGameplay": {
+        "reactionTriggers": [
+          {
+            "kind": "nightPhase",
+            "point": "after_lodging"
+          }
+        ],
+        "eventConditions": [
+          {
+            "kind": "housingTier",
+            "value": "street"
+          },
+          {
+            "kind": "calendarSeason",
+            "value": "summer"
+          }
+        ],
+        "variantConditions": [],
+        "choiceConditions": [],
+        "choiceEffects": [
+          {
+            "kind": "modifyResource",
+            "resource": "money",
+            "delta": 10
+          }
+        ],
+        "journalRef": {
+          "kind": "eventChoice",
+          "eventId": "poverty-street-production.helpful-summer",
+          "choiceId": "take-errand"
+        }
+      },
+      "invariance": {
+        "presentationUsesGameplayRng": false,
+        "presentationWritesSave": false,
+        "eventIdUnchanged": true,
+        "variantIdUnchanged": true,
+        "choiceIdUnchanged": true,
+        "effectsUnchanged": true
+      }
+    },
+    {
+      "kind": "pressure",
+      "packId": "poverty-pressure-production",
+      "eventId": "poverty-pressure-production.cold-rain",
+      "variantId": "default",
+      "choiceId": "wait-it-out",
+      "existingShowCount": 1,
+      "deterministicSelection": {
+        "orderedCandidateKeys": [
+          "presentation.poverty.depth.poverty-pressure-production-cold-rain.default.a.text",
+          "presentation.poverty.depth.poverty-pressure-production-cold-rain.default.b.text"
+        ],
+        "selectedIndex": 0,
+        "selectedKey": "presentation.poverty.depth.poverty-pressure-production-cold-rain.default.a.text"
+      },
+      "expectedRender": {
+        "ru": "Холодная вода медленно подбирается под край укрытия. По камням уже тянется новая тонкая струйка.",
+        "en": "Cold water slowly creeps beneath the edge of the shelter. A fresh thin stream is already running over the stones."
+      },
+      "unchangedGameplay": {
+        "reactionTriggers": [
+          {
+            "kind": "nightPhase",
+            "point": "after_lodging"
+          }
+        ],
+        "eventConditions": [
+          {
+            "kind": "housingTier",
+            "value": "street"
+          },
+          {
+            "kind": "calendarSeason",
+            "value": "spring"
+          },
+          {
+            "kind": "calendarDayInYear",
+            "op": "eq",
+            "value": 7
+          }
+        ],
+        "variantConditions": [],
+        "choiceConditions": [],
+        "choiceEffects": [
+          {
+            "kind": "addNextDayModifier",
+            "energyDelta": -1,
+            "statEffects": [
+              {
+                "stat": "grooming",
+                "delta": -1
+              }
+            ],
+            "tag": "poverty.pressure.initial-cold-rain"
+          }
+        ],
+        "journalRef": {
+          "kind": "eventChoice",
+          "eventId": "poverty-pressure-production.cold-rain",
+          "choiceId": "wait-it-out"
+        }
+      },
+      "invariance": {
+        "presentationUsesGameplayRng": false,
+        "presentationWritesSave": false,
+        "eventIdUnchanged": true,
+        "variantIdUnchanged": true,
+        "choiceIdUnchanged": true,
+        "effectsUnchanged": true
+      }
+    },
+    {
+      "kind": "cheap",
+      "packId": "poverty-cheap-production",
+      "eventId": "poverty-cheap-production.shared-quiet-autumn",
+      "variantId": "default",
+      "choiceId": "settle-quietly",
+      "existingShowCount": 1,
+      "deterministicSelection": {
+        "orderedCandidateKeys": [
+          "presentation.poverty.depth.poverty-cheap-production-shared-quiet-autumn.default.a.text",
+          "presentation.poverty.depth.poverty-cheap-production-shared-quiet-autumn.default.b.text"
+        ],
+        "selectedIndex": 0,
+        "selectedKey": "presentation.poverty.depth.poverty-cheap-production-shared-quiet-autumn.default.a.text"
+      },
+      "expectedRender": {
+        "ru": "В дешёвой комнате разговор стихает рано. Через тонкие стены слышны шаги и кашель, и жильцы стараются не добавлять лишнего шума.",
+        "en": "Conversation dies down early in the cheap room. Footsteps and coughs carry through the thin walls, and the residents try not to add more noise."
+      },
+      "unchangedGameplay": {
+        "reactionTriggers": [
+          {
+            "kind": "nightPhase",
+            "point": "after_lodging"
+          }
+        ],
+        "eventConditions": [
+          {
+            "kind": "housingTier",
+            "value": "cheap"
+          },
+          {
+            "kind": "calendarSeason",
+            "value": "autumn"
+          }
+        ],
+        "variantConditions": [],
+        "choiceConditions": [],
+        "choiceEffects": [],
+        "journalRef": {
+          "kind": "eventChoice",
+          "eventId": "poverty-cheap-production.shared-quiet-autumn",
+          "choiceId": "settle-quietly"
+        }
+      },
+      "invariance": {
+        "presentationUsesGameplayRng": false,
+        "presentationWritesSave": false,
+        "eventIdUnchanged": true,
+        "variantIdUnchanged": true,
+        "choiceIdUnchanged": true,
+        "effectsUnchanged": true
+      }
+    },
+    {
+      "kind": "recovery",
+      "packId": "poverty-recovery-production",
+      "eventId": "poverty-recovery-production.short-cleanup",
+      "variantId": "default",
+      "choiceId": "do-cleanup",
+      "existingShowCount": 1,
+      "deterministicSelection": {
+        "orderedCandidateKeys": [
+          "presentation.poverty.depth.poverty-recovery-production-short-cleanup.default.a.text",
+          "presentation.poverty.depth.poverty-recovery-production-short-cleanup.default.b.text"
+        ],
+        "selectedIndex": 0,
+        "selectedKey": "presentation.poverty.depth.poverty-recovery-production-short-cleanup.default.a.text"
+      },
+      "expectedRender": {
+        "ru": "Хозяин закрывающейся лавки просит сложить пару табуретов и подмести у порога. Работы всего на несколько минут.",
+        "en": "The owner of a closing stall asks for two stools to be stacked and the doorstep swept. It is only a few minutes of work."
+      },
+      "unchangedGameplay": {
+        "reactionTriggers": [
+          {
+            "kind": "nightPhase",
+            "point": "after_lodging"
+          }
+        ],
+        "eventConditions": [
+          {
+            "kind": "housingTier",
+            "value": "street"
+          },
+          {
+            "kind": "calendarSeason",
+            "value": "spring"
+          },
+          {
+            "kind": "calendarDayInYear",
+            "op": "eq",
+            "value": 4
+          }
+        ],
+        "variantConditions": [],
+        "choiceConditions": [],
+        "choiceEffects": [
+          {
+            "kind": "modifyResource",
+            "resource": "money",
+            "delta": 5
+          }
+        ],
+        "journalRef": {
+          "kind": "eventChoice",
+          "eventId": "poverty-recovery-production.short-cleanup",
+          "choiceId": "do-cleanup"
+        }
+      },
+      "invariance": {
+        "presentationUsesGameplayRng": false,
+        "presentationWritesSave": false,
+        "eventIdUnchanged": true,
+        "variantIdUnchanged": true,
+        "choiceIdUnchanged": true,
+        "effectsUnchanged": true
+      }
+    }
+  ],
+  "saveInvariantFields": [
+    "run.pending.eventId",
+    "run.pending.variantId",
+    "run.pending.allowedChoiceIds",
+    "run.historyState.eventHistory",
+    "run.historyState.journalRefs",
+    "run.resources",
+    "run.metrics",
+    "run.progression",
+    "run.flow.night",
+    "run.rng"
+  ],
+  "invariants": {
+    "representativePathCount": 4,
+    "localeChangesPresentationOnly": true,
+    "changesGameplayRng": false,
+    "changesSaveState": false,
+    "changesEventVariantChoiceIdentity": false,
+    "changesEffects": false,
+    "secretDebtIncluded": false
+  }
+}
