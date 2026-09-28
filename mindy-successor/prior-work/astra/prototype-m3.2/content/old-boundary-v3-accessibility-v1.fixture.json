@@ -1,0 +1,31 @@
+{
+  "formatVersion": 1,
+  "kind": "old-boundary-v3-accessibility",
+  "status": "FIXTURE_ONLY_POST_PR59",
+  "currentMainBaseline": "54131488c65302f81b3001abaaa345d21f0281e2",
+  "sourceLocale": "ru",
+  "supportedLocales": [
+    "ru",
+    "en"
+  ],
+  "strings": {
+    "presentation.activity.forest.route.old-boundary.alt": {
+      "ru": "Старая межевая линия с замшелыми камнями и выветренными метками.",
+      "en": "Old boundary line with moss-covered stones and weathered marks."
+    },
+    "presentation.activity.forest.route.old-boundary.caption": {
+      "ru": "Камни и старые знаки складываются в линию, не совпадающую с новой лесовозной дорогой.",
+      "en": "Stones and old markers form a line that does not follow the newer logging road."
+    }
+  },
+  "binding": {
+    "presentationId": "activity/forest/route/old-boundary",
+    "altKey": "presentation.activity.forest.route.old-boundary.alt",
+    "captionKey": "presentation.activity.forest.route.old-boundary.caption"
+  },
+  "invariants": {
+    "localeNeutralMediaIdentity": true,
+    "gameplayFields": false,
+    "loreScope": "stones/marks/path only"
+  }
+}
