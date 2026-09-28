@@ -72,11 +72,12 @@ test('safe non-career refinements preserve semantic identity and animation-mode 
   }
 });
 
-test('only reviewed Forest route-specific media is active in root production presentation',()=>{
+test('reviewed Forest route-specific media is active in root production presentation',()=>{
   const serialized=JSON.stringify(presentation);
   assert.match(serialized,/forest-route-logging-road\.svg/);
-  assert.doesNotMatch(serialized,/forest-route-old-boundary(?:-safe)?\.svg/);
+  assert.match(serialized,/forest-route-old-boundary-v3\.svg/);
+  assert.doesNotMatch(serialized,/forest-route-old-boundary-safe-v1\.svg/);
   assert.equal(presentation.slots['activity/forest/route/logging-road']?.static?.src,'assets/presentation/forest-route-logging-road.svg');
-  assert.equal(presentation.slots['activity/forest/route/old-boundary'],undefined);
+  assert.equal(presentation.slots['activity/forest/route/old-boundary']?.static?.src,'assets/presentation/forest-route-old-boundary-v3.svg');
   assert.ok(presentation.slots['activity/forest/route/default']===undefined || presentation.slots['activity/forest/route/default']);
 });
