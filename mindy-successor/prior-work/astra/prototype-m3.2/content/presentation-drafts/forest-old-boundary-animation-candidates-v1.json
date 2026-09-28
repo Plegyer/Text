@@ -1,0 +1,85 @@
+{
+  "formatVersion": 1,
+  "kind": "forest-route-animation-candidate-source-metadata",
+  "status": "SOURCE_READY_GIF_EXPORT_BLOCKED",
+  "currentMainBaseline": "52ddc76148e33836d3161b63bf4c25ffb5c39d02",
+  "presentationId": "activity/forest/route/old-boundary",
+  "staticFallback": "assets/presentation/forest-route-old-boundary-v3.svg",
+  "fallbackPresentationId": "activity/forest/route/default",
+  "candidates": [
+    {
+      "candidateKey": "forest-old-boundary-loop-a",
+      "sourceSequenceKey": "forest-route-old-boundary-loop-a",
+      "sourceFrames": [
+        "assets/presentation-frames/forest-route-old-boundary-loop-a-frame-01.svg",
+        "assets/presentation-frames/forest-route-old-boundary-loop-a-frame-02.svg",
+        "assets/presentation-frames/forest-route-old-boundary-loop-a-frame-03.svg",
+        "assets/presentation-frames/forest-route-old-boundary-loop-a-frame-04.svg"
+      ],
+      "sourceLoopDurationMs": 3200,
+      "normalizedExportLoopDurationMs": 3200,
+      "normalizedFrameDelayMs": 800,
+      "frameCount": 4,
+      "loopCount": 0,
+      "targetRaster": {
+        "width": 640,
+        "height": 360,
+        "maxPaletteColors": 256
+      },
+      "gifPath": null
+    },
+    {
+      "candidateKey": "forest-old-boundary-loop-b",
+      "sourceSequenceKey": "forest-route-old-boundary-loop-b",
+      "sourceFrames": [
+        "assets/presentation-frames/forest-route-old-boundary-loop-b-frame-01.svg",
+        "assets/presentation-frames/forest-route-old-boundary-loop-b-frame-02.svg",
+        "assets/presentation-frames/forest-route-old-boundary-loop-b-frame-03.svg",
+        "assets/presentation-frames/forest-route-old-boundary-loop-b-frame-04.svg"
+      ],
+      "sourceLoopDurationMs": 3000,
+      "normalizedExportLoopDurationMs": 3200,
+      "normalizedFrameDelayMs": 800,
+      "frameCount": 4,
+      "loopCount": 0,
+      "targetRaster": {
+        "width": 640,
+        "height": 360,
+        "maxPaletteColors": 256
+      },
+      "gifPath": null
+    },
+    {
+      "candidateKey": "forest-old-boundary-loop-c",
+      "sourceSequenceKey": "forest-route-old-boundary-loop-c",
+      "sourceFrames": [
+        "assets/presentation-frames/forest-route-old-boundary-loop-c-frame-01.svg",
+        "assets/presentation-frames/forest-route-old-boundary-loop-c-frame-02.svg",
+        "assets/presentation-frames/forest-route-old-boundary-loop-c-frame-03.svg",
+        "assets/presentation-frames/forest-route-old-boundary-loop-c-frame-04.svg"
+      ],
+      "sourceLoopDurationMs": 3400,
+      "normalizedExportLoopDurationMs": 3200,
+      "normalizedFrameDelayMs": 800,
+      "frameCount": 4,
+      "loopCount": 0,
+      "targetRaster": {
+        "width": 640,
+        "height": 360,
+        "maxPaletteColors": 256
+      },
+      "gifPath": null
+    }
+  ],
+  "invariants": {
+    "exactlyThreeSourceCandidates": true,
+    "routeSpecificStaticFallbackPreserved": true,
+    "sharedDefaultFallbackPreserved": true,
+    "noProductionGifClaim": true,
+    "localeNeutralCandidateKeys": true,
+    "gameplayFields": false,
+    "gameplayRng": false,
+    "saveMutation": false,
+    "constructedBarrierSemanticsExcluded": true
+  }
+}
