@@ -1735,3 +1735,89 @@ Consolidate items 157–167 into:
 - SELECTIVE_COPY.
 
 Continue items 157–168 sequentially without waiting for Lead review.
+
+
+## Queue item 169 — current-main ordinary Night identity audit v2
+Create NEW file only:
+- `docs/relationship-prep/CURRENT_MAIN_ORDINARY_NIGHT_IDENTITY_AUDIT_V2.md`
+
+Re-audit exact current voluntary Night choices/events after latest main.
+Exclude Secret Debt and School-owned exact-course mechanics.
+
+## Queue item 170 — current-main Foreman relationship identity audit v2
+Create NEW file only:
+- `docs/relationship-prep/CURRENT_MAIN_FOREMAN_RELATIONSHIP_IDENTITY_AUDIT_V2.md`
+
+Record exact current Foreman relationship/event/night IDs, stages/facts actually present, and Product-open boundaries.
+
+## Queue item 171 — Foreman relationship RU source polish v2
+Create NEW file only:
+- `docs/relationship-prep/FOREMAN_RELATIONSHIP_RU_SOURCE_POLISH_V2.md`
+
+Polish Russian player-facing text for exact current Foreman identities only.
+Do not invent romance, new meters or new NPC identity.
+
+## Queue item 172 — Foreman relationship EN parity v2
+Create NEW file only:
+- `docs/relationship-prep/FOREMAN_RELATIONSHIP_EN_PARITY_V2.md`
+
+Full English parity for item 171.
+
+## Queue item 173 — Foreman relationship localization fixture v2
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/relationship-foreman-localization-v2.fixture.json`
+
+Exact-current additive/identical RU+EN presentation keys only.
+
+## Queue item 174 — ordinary voluntary Night choice copy audit v2
+Create NEW file only:
+- `docs/relationship-prep/ORDINARY_VOLUNTARY_NIGHT_CHOICE_COPY_AUDIT_V2.md`
+
+Audit current non-Secret-Debt voluntary Night choice labels/help/result-facing text.
+No NightFlow changes.
+
+## Queue item 175 — ordinary Night result copy RU EN v2
+Create NEW file only:
+- `docs/relationship-prep/ORDINARY_NIGHT_RESULT_COPY_RU_EN_V2.md`
+
+Author RU-source + EN parity for exact current ordinary voluntary Night outcomes that can be presented to the player.
+
+## Queue item 176 — ordinary Night result localization fixture v2
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/ordinary-night-result-localization-v2.fixture.json`
+
+Exact-current presentation-only keys from items 174–175.
+No Secret Debt, no School exact-course ownership.
+
+## Queue item 177 — Foreman Night accessibility copy v2
+Create NEW file only:
+- `docs/relationship-prep/FOREMAN_NIGHT_ACCESSIBILITY_COPY_V2.md`
+
+Review/generate RU+EN alt/caption copy for the exact current Foreman voluntary-Night presentation identity and existing project-owned static/GIF-source semantics.
+
+## Queue item 178 — relationship/Night consumer map v2
+Create NEW file only:
+- `docs/relationship-prep/RELATIONSHIP_NIGHT_CONSUMER_MAP_V2.md`
+
+Map items 173/176 to exact current UI/runtime presentation consumers and fallback text.
+No code changes.
+
+## Queue item 179 — relationship/Night localization regression source v2
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/relationship-night-localization-source-v2.test.ts`
+
+Validate exact current IDs, RU+EN completeness, no Secret Debt ownership, no new relationship mechanics, no RNG/Save/gameplay fields.
+
+## Queue item 180 — Foreman/ordinary Night handoff v2
+Create NEW file only:
+- `docs/relationship-prep/FOREMAN_ORDINARY_NIGHT_HANDOFF_V2.md`
+
+Consolidate items 169–179 into:
+- FOREMAN_TEXT_READY;
+- ORDINARY_NIGHT_TEXT_READY;
+- ACCESSIBILITY_READY;
+- SHARED_CONSUMER_WIRING_REQUIRED;
+- PRODUCT_OPEN;
+- SECRET_DEBT_EXCLUDED.
+
+Continue items 169–180 sequentially without waiting for Lead review.
