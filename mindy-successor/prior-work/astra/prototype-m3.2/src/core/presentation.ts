@@ -163,6 +163,16 @@ export function presentationIdForActionResult(cat:Catalog,actionId:string,mediaI
   return actionPresentationId(actionId,scene?.id??'default');
 }
 
+export function presentationIdForActivityRoute(cat:Catalog,activityId:string,routeId:string|null|undefined){
+  const activity=cat.definitions.activities?.find(item=>item.id===activityId);
+  const slug=pathParts(activityId).at(-1)??'activity';
+  const fallback=`activity/${slug}/route/default`;
+  if(!activity||!routeId)return fallback;
+  return activity.options.some(option=>option.setRoute===routeId)
+    ?`activity/${slug}/route/${clean(routeId)}`
+    :fallback;
+}
+
 export function presentationIdForEvent(cat:Catalog,eventId:string,variantId:string){
   const event=cat.events.find(e=>e.id===eventId);
   const sourceDomain=event?.sourceDomain;
@@ -264,6 +274,14 @@ export function presentationSlots(cat:Catalog):PresentationSlot[]{
       baseMediaIds:cat.media.some(m=>m.id==='stage.hunt')?['stage.hunt']:[],
       fallbackId:'location/town/default'
     });
+    for(const specificRoute of [...new Set(activity.options.map(option=>option.setRoute).filter((value):value is string=>!!value))]){
+      add({
+        id:`activity/${slug}/route/${clean(specificRoute)}`,
+        label:`${activity.label} · route · ${specificRoute}`,
+        baseMediaIds:[],
+        fallbackId:routeId
+      });
+    }
     for(const result of activity.results){
       add({
         id:`activity/${slug}/return/${result.outcome}`,
