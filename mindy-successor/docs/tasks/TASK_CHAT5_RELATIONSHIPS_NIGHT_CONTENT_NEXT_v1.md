@@ -1648,3 +1648,90 @@ Consolidate items 145–155 into:
 - REMAINING_VISIBLE_DEBT.
 
 Continue items 145–156 sequentially without waiting for Lead review.
+
+
+## Queue item 157 — profession display-label debt audit v1
+Create NEW file only:
+- `docs/relationship-prep/PROFESSION_DISPLAY_LABEL_DEBT_AUDIT_V1.md`
+
+Audit exact current profession/career IDs whose names still surface from raw catalog labels in Work/Stats/Legacy.
+Current 10 ordinary careers + Palace separation only.
+No mechanics changes.
+
+## Queue item 158 — profession RU source labels v1
+Create NEW file only:
+- `docs/relationship-prep/PROFESSION_RU_SOURCE_LABELS_V1.md`
+
+Polish Russian display names/descriptions for exact current profession IDs only.
+
+## Queue item 159 — profession EN parity review v1
+Create NEW file only:
+- `docs/relationship-prep/PROFESSION_EN_PARITY_REVIEW_V1.md`
+
+Provide/review full English parity for item 158.
+
+## Queue item 160 — profession localization fixture v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/profession-localization-v1.fixture.json`
+
+Stable RU+EN display keys for exact current profession IDs.
+No wages, requirements, counters or progression fields.
+
+## Queue item 161 — Stats profession consumer map v1
+Create NEW file only:
+- `docs/relationship-prep/STATS_PROFESSION_CONSUMER_MAP_V1.md`
+
+Map item-160 keys to exact current Stats-panel raw-label consumers.
+No UI edits.
+
+## Queue item 162 — Work profession consumer map v1
+Create NEW file only:
+- `docs/relationship-prep/WORK_PROFESSION_CONSUMER_MAP_V1.md`
+
+Map profession display keys to Work-panel current consumers and fallbacks.
+No action ID changes.
+
+## Queue item 163 — legacy unlock-label debt audit v1
+Create NEW file only:
+- `docs/relationship-prep/LEGACY_UNLOCK_LABEL_DEBT_AUDIT_V1.md`
+
+Audit current meta unlock IDs rendered through raw labels in Legacy.
+Do not invent unlocks/rewards.
+
+## Queue item 164 — legacy unlock RU EN source v1
+Create NEW file only:
+- `docs/relationship-prep/LEGACY_UNLOCK_LABELS_RU_EN_V1.md`
+
+Author RU-source + EN parity for exact current unlock IDs only.
+
+## Queue item 165 — legacy unlock localization fixture v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/legacy-unlock-localization-v1.fixture.json`
+
+Presentation-only RU+EN keys for exact current unlock IDs.
+
+## Queue item 166 — profession/unlock collision audit v1
+Create NEW file only:
+- `docs/relationship-prep/PROFESSION_UNLOCK_LOCALIZATION_COLLISION_AUDIT_V1.md`
+
+Classify item-160/165 keys vs exact current root:
+ADDITIVE / IDENTICAL / REUSE_EXISTING / CONFLICT.
+
+## Queue item 167 — profession/unlock regression source v1
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/profession-unlock-localization-source-v1.test.ts`
+
+Validate exact current IDs, RU+EN completeness and absence of wages/conditions/effects/rewards/RNG/Save fields.
+
+## Queue item 168 — profession/unlock localization handoff v1
+Create NEW file only:
+- `docs/relationship-prep/PROFESSION_UNLOCK_LOCALIZATION_HANDOFF_V1.md`
+
+Consolidate items 157–167 into:
+- PROFESSION_KEYS_READY;
+- STATS_WORK_CONSUMER_REQUIRED;
+- LEGACY_UNLOCK_KEYS_READY;
+- SHARED_UI_WIRING_REQUIRED;
+- SELECTIVE_COPY.
+
+Continue items 157–168 sequentially without waiting for Lead review.
