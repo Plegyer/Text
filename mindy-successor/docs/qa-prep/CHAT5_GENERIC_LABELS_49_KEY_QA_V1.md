@@ -1,6 +1,6 @@
 # Chat5 generic-labels 49-key QA v1
 
-Status: COMPLETE / GREEN_REBASED_SOURCE
+Status: COMPLETE / SHIPPED_GREEN
 
 Current main:
 `4223be1f90f15a43938e072bc2171b0de5d2d1aa`
@@ -123,3 +123,58 @@ It does not change:
 `GREEN_REBASED_SOURCE`.
 
 The 49-key source is complete RU+EN and collision-safe against exact current main, but selective integration must use the post-PR56 24/21/4 classification rather than blindly copying all 49.
+
+
+## Production integration via PR58
+
+Lead integrated the reviewed 49-key source as PR #58:
+`Lead: localize generic labels and hints RU EN`.
+
+PR58 base:
+`df0119fd6574b69ab89cf1a99ae77adae3d811f1`.
+
+Accepted exact head:
+`923e9b0d90ea6f20ed453a43ea0d98e0a6ae4a19`.
+
+Lead elected to root-load the four previously classified semantic reuse candidates as explicit domain keys:
+- `housing.normal.label`;
+- `housing.cheap.label`;
+- `housing.street.label`;
+- `resource.energy.label`.
+
+Their RU+EN values remain exact semantic equivalents of the existing labels, so this is an intentional domain-key addition rather than a conflict.
+
+Production fixture result on the PR58 base:
+- 49 reviewed keys total;
+- 28 additive root keys;
+- 21 exact-identical existing keys;
+- 0 conflicting replacements.
+
+Exact-head run #108 / id `36406325995`:
+- SUCCESS;
+- validator 17 / 46 / 35 / 9;
+- 356 / 356 tests.
+
+Relevant PASS:
+- `generic labels production fixture is fully merged RU EN`;
+- generic-label consumer regression;
+- `generic labels patch is presentation-only`;
+- `renderer: generic labels and hints localize Stats Bag and encounter shell without save drift`;
+- pending encounter eyebrow locale-invariance;
+- Forest route seam, Journal stable-ref and Hard Work regressions.
+
+PR58 merged as:
+`52ddc76148e33836d3161b63bf4c25ffb5c39d02`.
+
+Post-merge main run #109 / id `36406510233`:
+- SUCCESS;
+- validator 17 / 46 / 35 / 9;
+- 356 / 356 tests.
+
+Current root localization:
+`658` keys;
+missing RU = 0;
+missing EN = 0.
+
+Current classification:
+`SHIPPED_GREEN`.
