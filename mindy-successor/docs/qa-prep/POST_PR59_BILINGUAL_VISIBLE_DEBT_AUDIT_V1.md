@@ -2,89 +2,80 @@
 
 Status: COMPLETE / CURRENT_NORMAL_PLAYER_DEBT_RECORDED
 
-Current main:
-`54131488c65302f81b3001abaaa345d21f0281e2`.
+This queue item originated after PR59. PR60 and PR61 merged during the QA wave, so the final inventory uses latest current main:
+`01b31b9ab0d0267d95edf5b5b80638acd63f5c04`.
 
-Scope:
-normal-player visible RU-only or mixed-language presentation after PR59.
+Current root localization:
+- 714 keys;
+- missing RU 0;
+- missing EN 0.
 
 Excluded:
-- debug Event Inspector;
-- editor/developer diagnostics unless surfaced as ordinary player errors;
-- Product-open content/mechanics;
-- staged worker-only text/assets.
+- debug/internal-only UI;
+- Product-open content;
+- worker-only staged material.
 
-## What PR59 improved
+Closed since PR59:
+- PR60 shipped safe old-boundary v3 route static;
+- PR61 shipped all 9 current ending title/description pairs;
+- PR61 shipped 16 exact ordinary default-scene action result title/body pairs;
+- PR61 wired ending cards and those ordinary result screens.
 
-PR59 ships:
-- logging-road route-specific static;
-- route help in RU+EN;
-- logging-road alt/caption RU+EN;
-- old-boundary alt/caption RU+EN;
-- locale-invariant route media behavior.
+## Remaining normal-player debt
 
-Root localization now contains:
-`664` bilingual keys.
-
-Missing RU:
-`0`.
-
-Missing EN:
-`0`.
-
-Existing-key completeness does not equal full visible bilingual completion because several player surfaces still consume raw catalog/Save identifiers/text.
-
-## 1. Selected Forest route displays raw persisted routeId
-
-Current Activity status line renders:
-`ui.activity.routeLabel`
-followed by:
-`activity.internalState.routeId`.
-
-Visible values:
+### 1. Selected Forest route status
+The Activity line still displays raw persisted:
 - `logging-road`;
 - `old-boundary`.
 
-Approved bilingual route-option labels already exist:
-- Лесовозная дорога / Logging road;
-- Старая межевая тропа / Old boundary path.
+Existing bilingual route-option labels should be reused at render time.
+
+Persisted routeId must stay unchanged.
+
+### 2. Activity checkpoint
+The same Activity line displays `activity.checkpoint` directly.
+
+If the checkpoint is a machine identifier, it remains implementation text in both locales.
+
+### 3. Seasonal profession result bodies
+The ten current career `*.shift` actions each have four seasonal scenes: 40 current result scene identities.
+
+Root has bilingual profession action labels/descriptions, but no `action.<shift>.scene.<season>.default.text` keys.
+
+The current result consumer correctly refuses to guess scene identity for multi-scene actions, so these result bodies fall back to the authored English scene text.
 
 Debt:
-`SHARED_ROUTE_LABEL_CONSUMER`.
+40 seasonal profession result bodies plus a stable scene-aware presentation consumer.
 
-Fix is render-only and must keep persisted routeId unchanged.
+### 4. Ordinary action card descriptions
+For the 16 PR61 ordinary actions:
+- localized label: 16/16;
+- localized immediate result body: 16/16;
+- localized `action.<id>.description`: 0/16.
 
-## 2. Legacy ending cards remain raw catalog text
+Action-list cards can therefore still show Russian source description in EN.
 
-Current Legacy panel renders:
-- `e.title`;
-- `e.description`
-directly.
+### 5. Stats profession names
+Stats profession summary renders raw catalog `.label` for the ten current profession actions.
 
-Current 9-ending catalog is mixed-language by source:
-- six older ending titles/descriptions are Russian source;
-- three Lumber fixture ending titles/descriptions are English source.
+Those source labels are English, so RU Stats can show English profession names despite existing bilingual action-label keys.
 
-Consequences:
-- EN locale still shows Russian source on the first six cards;
-- RU locale still shows English source on the three Lumber fixture cards.
+### 6. Work effect tags
+Work-card effect tags use `labels[e.key]` directly.
 
-Chat5 has complete 18-key RU+EN source for all 9 endings.
+In EN, these stat-effect names can remain Russian.
 
-Debt:
-`ENDING_CARD_CONSUMER + ROOT_KEYS`.
+Existing generic stat/resource label helpers should be reused.
 
-## 3. Ending condition values still expose stable raw semantic IDs
+### 7. Legacy inheritance names
+Legacy inheritance renders `state.meta.unlocks.map(k => labels[k])`.
 
-PR56 localizes condition grammar, but some values remain intentionally raw:
-- career IDs;
-- counters;
-- career facts;
-- relationship IDs;
-- relationship stages;
-- item capabilities.
+In EN, these names remain Russian source labels.
 
-Examples on current Lumber endings include:
+Stable Meta unlock IDs must not be renamed to fix presentation.
+
+### 8. Lumber ending requirement semantic values
+Condition grammar is localized, but current Lumber ending requirements still insert raw stable values such as:
 - `lumber`;
 - `completed_shifts`;
 - `management-school-ready`;
@@ -94,200 +85,28 @@ Examples on current Lumber endings include:
 - `forest-truth-known`;
 - `forest-problem-resolved`.
 
-This is not gameplay drift, but it is mixed technical/player text.
+This needs a semantic display-name layer, not gameplay ID changes.
 
-Debt:
-`SEMANTIC_NAME_LAYER`.
+### 9. Ordinary action Journal rows
+PR54 dynamic Journal localization applies to event-choice refs.
 
-Do not rename persisted IDs to solve it.
+Ordinary action completion still has no stable ordinary-action Journal ref, so historical/current ordinary action rows remain stored source prose.
 
-## 4. Legacy ending visit requirements use raw action labels
-
-The `visits` condition display for:
-- tavern;
-- lumber
-derives from current action definitions.
-
-Dedicated bilingual:
-- `action.tavern.label`;
-- `action.lumber.label`
-are not currently root-loaded.
-
-Full EN ending requirement presentation therefore remains incomplete.
-
-Debt:
-`LEGACY_ACTION_LABEL_SOURCE/CONSUMER`.
-
-## 5. Ordinary action cards remain RU fallback for the 16 legacy action slice
-
-Current action-list UI calls:
-- `action.<id>.label`;
-- `action.<id>.description`
-with raw catalog fallback.
-
-For the reviewed 16 ordinary/legacy actions:
-- root `action.<id>.label` present: 0/16;
-- root `action.<id>.description` present: 0/16.
-
-Thus EN Explore/Bag/ordinary-action cards still show Russian catalog fallback for these actions.
-
-Chat5 result source covers:
-- 16 bilingual labels;
-- 16 bilingual result bodies.
-
-It does not by itself add all action-card descriptions.
-
-Debt:
-`ORDINARY_ACTION_LABEL/DESCRIPTION_ROOT_SOURCE`.
-
-## 6. Ordinary action result screen remains raw fallback
-
-Current generic result screen localizes:
-- School result via School-specific path;
-- event-choice result via PR54 outcomeRef.
-
-Otherwise it renders:
-- `lastAction.title`;
-- `lastAction.text`.
-
-For the exact 16 ordinary actions in the Chat5 result source, current EN result presentation remains raw Russian fallback.
-
-Chat5 has:
-- 16 exact action IDs;
-- sceneId `default`;
-- 32 complete RU+EN result keys.
-
-Debt:
-`ORDINARY_ACTION_RESULT_CONSUMER + ROOT_KEYS`.
-
-## 7. Profession result screen can remain English source in RU
-
-The 10 current career shift action cards have bilingual:
-- `action.<shift>.label`;
-- `action.<shift>.description`.
-
-But generic post-action result rendering still uses raw stored `lastAction.title/text` unless it is School/event-choice.
-
-Current profession action definitions use English source labels/descriptions.
-
-Therefore an RU career-shift result can still show English raw result text even though the Work card itself is localized.
-
-Seasonal scene-text localization remains a separate prior source/consumer debt.
-
-Debt:
-`CAREER_ACTION_RESULT_CONSUMER / SEASONAL_SCENE_TEXT`.
-
-## 8. Ordinary action Journal rows remain raw stored prose
-
-PR54 Journal refs localize event-choice rows only.
-
-Current ordinary action completion logging uses:
-`journalRef = null`.
-
-The stored row is raw source prose.
-
-Brew success/failure extra rows also have no stable ref.
-
-Consequences:
-- locale switch cannot safely rerender these historical rows;
-- old/current raw rows remain in their source language.
-
-Debt:
-`ORDINARY_ACTION_JOURNAL_REF_LAYER`.
+PR61 fixes the immediate result screen only.
 
 Do not fuzzy-match prose.
 
-## 9. Ending epilogue/end-state Journal prose remains raw
+### 10. Ending completion / epilogue history
+Ending cards are localized, but completion/epilogue Journal text is separate stored prose and can remain source-language on inactive-run/history presentation.
 
-Current inactive-run screen shows:
-`r.journal.at(-1)`.
+### 11. Generic Night fallback
+Primary Night/lodging stages are localized, but the generic fallback still renders raw `night.phase` if that fallback becomes visible.
 
-Ending title/description source does not localize:
-- ending epilogues;
-- acceptance/completion Journal prose.
+### 12. Runtime errors
+Command failures can surface raw `Error.message`; some engine error messages remain source-language rather than stable-code localized.
 
-Debt:
-`ENDING_EPILOGUE/JOURNAL_PRESENTATION`.
-
-Do not alter ending eligibility/reward to solve it.
-
-## 10. Stats profession names use raw catalog action labels
-
-Current Stats panel profession summary uses:
-`catalog.definitions.actions.find(...).label`
-directly.
-
-The 10 profession source labels in definitions are English.
-
-Even though bilingual action label keys already exist for these professions, Stats does not use them.
-
-RU Stats can therefore show English profession names.
-
-Debt:
-`GENERIC_ACTION_LABEL_CONSUMER`.
-
-## 11. Work effect tags use raw RU label dictionary
-
-Current Work action effect tags use:
-`labels[e.key]`
-directly rather than the shipped stat label helper.
-
-In EN, these stat-effect tags can remain Russian.
-
-Debt:
-`STAT_LABEL_CONSUMER_REUSE`.
-
-No new stat localization source is needed; PR58 already ships stat labels.
-
-## 12. Legacy inheritance names use raw label dictionary
-
-Current Legacy inheritance row uses:
-`state.meta.unlocks.map(k => labels[k])`.
-
-This remains dictionary/raw-source presentation and lacks a complete stable bilingual unlock-name consumer.
-
-Debt:
-`META_UNLOCK_DISPLAY_LABELS`.
-
-Meta unlock identity must not be renamed.
-
-## 13. Generic Night fallback exposes machine phase text
-
-Known LodgingResolution and VoluntaryNightChoice screens are localized.
-
-The generic Night fallback still renders:
-`night.phase`
-directly.
-
-If reached visibly, the player can see a machine phase identifier.
-
-Debt:
-`NIGHT_PHASE_DISPLAY_LABEL`.
-
-This is render text only; NightFlow phase persistence must remain unchanged.
-
-## 14. Runtime gameplay error payloads
-
-Ordinary command failures can surface raw:
-`Error.message`
-inside the player toast.
-
-Some engine messages remain source-language strings.
-
-A proper future solution needs stable semantic error codes/parameters.
-
-Debt:
-`RUNTIME_ERROR_PRESENTATION_LAYER`.
-
-Do not branch mechanics on translated error text.
-
-## 15. Event localization coverage remains incomplete
-
-Current root event coverage from the post-PR52/PR58 baseline remains:
-- fully root-localized: 40/46;
-- zero root event-localization: 6/46.
-
-Remaining IDs:
+### 13. Remaining event localization
+Six current root event IDs still have zero root event-localization coverage:
 - `ds-lumber.first`;
 - `ds-lumber.second`;
 - `ds-lumber.done`;
@@ -295,60 +114,29 @@ Remaining IDs:
 - `lumber-cross.activity-forest-return`;
 - `lumber.career-first-shift`.
 
-PR59 does not add event title/body/choice localization for these.
+Reachability/frequency differs, so this audit does not claim equal user impact for all six.
 
-Reachability varies; this audit does not equate all six with the same current player frequency.
+## Not counted as current normal-player blocker
 
-## 16. Root media-alt key debt remains
+Not counted:
+- Event Inspector/debug strings;
+- Product-open teacher/Hunter/token/Secret Debt/Palace content;
+- unexported animation source frames;
+- old pre-feature Journal entries intentionally kept as text-only fallback;
+- generic root media-alt debt without current reachability proof.
 
-Current root pack-media bilingual alt coverage remains incomplete.
+## Priority
 
-Project-owned semantic static accessibility is much stronger and PR59 adds route accessibility, but generic pack media still has untranslated-root-key debt.
+Highest-value next fixes:
+1. localized selected-route status;
+2. seasonal profession result bodies with stable scene identity;
+3. ordinary action card descriptions;
+4. Stats profession label helper reuse;
+5. Work effect-tag helper reuse;
+6. Meta unlock display labels;
+7. semantic names for ending requirement IDs;
+8. ordinary action Journal identity;
+9. ending history/epilogue localization.
 
-Do not count Product-open/catalog-only media as normal-player blockers without reachability proof.
-
-## Already closed normal-player slices
-
-Do not reopen:
-- creation shell;
-- menu primary shell;
-- season HUD;
-- global UI shell;
-- shared Night/lodging primary screens;
-- Stats stat labels/hints;
-- Bag item labels;
-- pending event eyebrow;
-- event-choice Journal/lastAction refs;
-- School result localization;
-- logging-road route help/media accessibility.
-
-## Product-open exclusions
-
-This debt audit does not request localization/activation of:
-- Hunter Forest token/clue mechanics;
-- Old Boundary token lifecycle;
-- route challenge/reward topology;
-- teacher routing;
-- Secret Debt;
-- Palace authored content;
-- deeper relationship/endings not in current definitions.
-
-## Priority closure order
-
-Highest-value current normal-player fixes:
-
-1. selected route label consumer;
-2. ending card title/description integration;
-3. ordinary action result integration;
-4. ordinary action card title/description integration;
-5. Stats profession/effect-tag helper reuse;
-6. ordinary action Journal identity/ref design;
-7. ending epilogue/end-state Journal source;
-8. semantic display names for stable IDs/runtime errors.
-
-## Verdict
-
-Current product remains:
+Verdict:
 `PARTIAL_BILINGUAL`.
-
-PR59 closes route media/accessibility for logging-road, but raw identity/result/history consumers remain the dominant normal-player mixed-language debt.
