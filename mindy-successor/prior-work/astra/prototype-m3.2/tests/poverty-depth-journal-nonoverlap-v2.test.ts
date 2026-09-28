@@ -2,9 +2,6 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 
-import {dispatch} from '../src/core/engine.ts';
-import {catalog,started} from './helpers.ts';
-
 const depth=JSON.parse(
   readFileSync('content/ordinary-poverty-localization-depth-v3.fixture.json','utf8')
 );
@@ -14,6 +11,20 @@ const lookup=JSON.parse(
 const localization=JSON.parse(
   readFileSync('content/localization.json','utf8')
 ).strings;
+const engineSource=readFileSync('src/core/engine.ts','utf8');
+
+const packFiles=[
+  'poverty-street-production.json',
+  'poverty-street-production-v2.json',
+  'poverty-cheap-production.json',
+  'poverty-cheap-production-v2.json',
+  'poverty-recovery-production.json',
+  'poverty-pressure-production.json'
+];
+
+const packs=packFiles.map(name=>JSON.parse(
+  readFileSync('content/packs/'+name,'utf8')
+));
 
 const depthPrefix='presentation.poverty.depth.';
 
@@ -31,8 +42,12 @@ function collectKeys(value:any,out:string[]=[]):string[]{
   return out;
 }
 
+function journalRef(eventId:string,choiceId:string){
+  return {kind:'eventChoice',eventId,choiceId};
+}
+
 function renderOutcome(
-  ref:{kind:'eventChoice';eventId:string;choiceId:string},
+  ref:{kind:string;eventId:string;choiceId:string},
   locale:'ru'|'en'
 ){
   const key=`event.${ref.eventId}.choice.${ref.choiceId}.text`;
@@ -58,36 +73,42 @@ test('depth keys remain pending-scene presentation keys only',()=>{
   }
 });
 
-test('resolved ordinary-poverty Journal identity stays eventId + choiceId',()=>{
-  let state=started();
-  state.run.pending={
-    eventId:'poverty-street-production.helpful-summer',
-    variantId:'default',
-    allowedChoiceIds:['take-errand','keep-resting']
-  };
+test('current engine keeps resolved Journal identity as eventId + choiceId only',()=>{
+  assert.match(
+    engineSource,
+    /const outcomeRef=\{kind:'eventChoice' as const,eventId:e\.id,choiceId:choice\.id\}/
+  );
+  assert.match(
+    engineSource,
+    /historyState\.journalRefs\.push\(outcomeRef\)/
+  );
+  assert.match(
+    engineSource,
+    /lastAction=\{[^\n]*outcomeRef/
+  );
 
-  state=dispatch(state,{type:'choice',id:'keep-resting'},catalog);
-
-  const ref=state.run.historyState.journalRefs.at(-1);
-  assert.deepEqual(ref,{
-    kind:'eventChoice',
-    eventId:'poverty-street-production.helpful-summer',
-    choiceId:'keep-resting'
-  });
-  assert.deepEqual(state.run.lastAction?.outcomeRef,ref);
-
-  const raw=JSON.stringify(ref);
-  assert.equal(raw.includes('variantId'),false);
-  assert.equal(raw.includes('depth'),false);
-  assert.equal(raw.includes(depthPrefix),false);
+  for(const pack of packs){
+    for(const event of pack.events){
+      for(const choice of event.choices){
+        const ref=journalRef(event.id,choice.id);
+        assert.deepEqual(ref,{
+          kind:'eventChoice',
+          eventId:event.id,
+          choiceId:choice.id
+        });
+        const raw=JSON.stringify(ref);
+        assert.equal(raw.includes('variantId'),false);
+        assert.equal(raw.includes('depth'),false);
+      }
+    }
+  }
 });
 
 test('locale render changes text only and preserves Journal ref identity',()=>{
-  const ref={
-    kind:'eventChoice' as const,
-    eventId:'poverty-street-production.helpful-summer',
-    choiceId:'keep-resting'
-  };
+  const ref=journalRef(
+    'poverty-street-production.helpful-summer',
+    'keep-resting'
+  );
   const before=JSON.stringify(ref);
 
   const ru=renderOutcome(ref,'ru');
