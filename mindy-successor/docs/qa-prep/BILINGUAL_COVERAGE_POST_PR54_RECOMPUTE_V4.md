@@ -2,19 +2,21 @@
 
 Status: COMPLETE / CURRENT_MAIN_PARTIAL_BILINGUAL
 
-Current main:
-`6e2a5147603b71eed89a0966af417a33dd28d7a7`
-(PR54 merge).
+PR54 baseline is shipped, and PR55 merged while this QA wave was executing.
 
-This recompute uses actual current-main root files.
+Current main:
+`295e6fc74d235f0b7555794555a18373451e8b7e`
+(PR55 shared Night/lodging localization merge).
+
+This is the actual current-main recompute rather than a stale PR54-only snapshot.
 
 ## Root localization
 
-Current `content/localization.json` blob:
-`76c1e66cb051bbd4652e6c40c6c486ff4e3e1705`.
+Current localization blob:
+`f90a8cae4e0d8c9b0ad46e762d0947c9d3ececf0`.
 
-Total root localization keys:
-`540`.
+Total keys:
+`556`.
 
 Missing RU:
 `0`.
@@ -22,8 +24,8 @@ Missing RU:
 Missing EN:
 `0`.
 
-Current top-level key groups:
-- `ui.*`: 73;
+Top-level groups:
+- `ui.*`: 82;
 - `action.*`: 20;
 - `activity.*`: 1;
 - `activityOption.*`: 2;
@@ -31,31 +33,26 @@ Current top-level key groups:
 - `media.*`: 26;
 - `school.*`: 16;
 - `stat.*`: 12;
-- `nightChoice.*`: 1;
-- `presentation.*`: 178.
+- `nightChoice.*`: 2;
+- `presentation.*`: 178;
+- `lodging.*`: 3;
+- `housing.*`: 3.
 
-PR54 adds no localization keys; it adds stable presentation refs/consumers for existing event-choice strings.
+## Event coverage
 
-## Current event coverage
-
-Current root events:
+Current events:
 `46`.
 
-Fully covered by bilingual:
-- event title;
-- every variant body;
-- every choice label;
-- every choice body
+Fully root-localized:
+`40 / 46`.
 
-= `40 / 46`.
-
-Partially covered:
+Partially localized:
 `0`.
 
-Zero root event-localization coverage:
+Zero root-localization:
 `6 / 46`.
 
-Remaining zero-coverage event IDs:
+Remaining:
 - `ds-lumber.first`;
 - `ds-lumber.second`;
 - `ds-lumber.done`;
@@ -63,239 +60,207 @@ Remaining zero-coverage event IDs:
 - `lumber-cross.activity-forest-return`;
 - `lumber.career-first-shift`.
 
-## Current choice coverage
+## Choice coverage
 
 Current event choices:
 `68`.
 
-Bilingual choice-label keys:
+Bilingual choice labels:
 `59 / 68`.
 
-Bilingual choice-body/outcome keys:
+Bilingual choice bodies:
 `59 / 68`.
 
-## PR54 visible outcome effect
+PR54 stable refs now allow newly resolved ref-backed event choices to render localized Journal/lastAction text without rewriting gameplay Save.
 
-PR54 now stores locale-neutral:
-`eventId + choiceId`
-presentation refs for newly resolved event choices.
-
-For ref-backed entries:
-- lastAction can resolve localized event title/outcome;
-- Journal can resolve localized choice outcome at render time;
-- RU↔EN does not rewrite gameplay Save.
-
-Therefore the 59 choices with bilingual body keys can now participate in dynamic RU/EN outcome rendering when resolved through the new ref path.
-
-The remaining 9 choices without root bilingual body keys still fall back to embedded source text.
-
-Old pre-feature text-only Journal entries remain stored fallback text because PR54 deliberately does not infer identity from prose.
+Old text-only history remains fallback text.
 
 ## Root media-alt coverage
 
-Current root pack media identities:
+Current media IDs:
 `64`.
 
-Bilingual `media.<id>.alt`:
+Bilingual root media-alt keys:
 `26 / 64`.
 
-Remaining root media-alt debt:
+Remaining root-media-alt key debt:
 `38 / 64`.
 
-This is root-media-key presence only.
+Presentation-specific accessibility remains broader through `presentation.*`.
 
-Many active semantic surfaces have separate project-owned `presentation.*` accessibility keys.
+## Static coverage
 
-## Project-owned static coverage
-
-Current `content/presentation.json` blob:
+Current presentation blob:
 `0bed8e1a4a88358b7e1e8ef22d787f5bcee323f4`.
 
-Active project-owned static semantic mappings:
+Active project-owned static mappings:
 `80`.
 
-Unique active physical project-owned sources:
+Unique active project-owned sources:
 `79`.
 
-Established target:
+Established static target:
 `80 / 80`.
 
-Route-specific:
-- `activity/forest/route/logging-road`;
-- `activity/forest/route/old-boundary`
-are still absent from root presentation.
+Route-specific logging-road/old-boundary root slots remain absent.
 
-Generic:
-`activity/forest/route/default`
-remains shipped.
+## PR53 global UI shell
 
-## Global UI shell
+Still shipped/green:
+- Explore;
+- outer Sleep shell;
+- Stats;
+- Journal shell;
+- Bag/debt;
+- Legacy/endings;
+- arrival;
+- shared controls.
 
-PR53 remains shipped.
+## PR55 shared Night/lodging
 
-Reviewed global UI-shell keys:
-`34 / 34`
-present/consumed in the approved shell slice.
+PR55 ships the exact rebased 16-key slice:
+- Night stage eyebrow;
+- lodging prompt;
+- next-day Energy formatter;
+- voluntary Night shell;
+- generic Night sequence title;
+- town lodging summary;
+- 3 lodging labels;
+- 3 housing labels;
+- generic sleep Night-choice label.
 
-Current app after PR54:
-blob `7f8845d6515466ad7c5daeecf3c8fca7f470b1ed`.
+It reuses:
+`ui.result.chooseLodging`.
 
-PR54 changes Journal/result outcome rendering but does not regress PR53 shell localization.
+It does not add the superseded outer Sleep aliases.
 
-## Direct hardcoded player-facing/source debt recompute
+Exact/post-merge CI:
+- run #98: 342/342;
+- run #99: 342/342.
 
-Reproducible source rule:
-count a source line only when it contains direct Cyrillic-bearing visible/status text not fully wrapped as a localization fallback through `tr(...)`.
+NightFlow mechanics remain unchanged.
 
-Current `app.ts` Cyrillic-bearing source lines:
+## Direct hardcoded RU-bearing app debt
+
+Current app blob:
+`8bc496f8678640e7134730dda943e326a9379fb1`.
+
+Current Cyrillic-bearing source lines:
 `64`.
 
-Lines that are localization-helper fallbacks only:
-`16`.
+Using the reproducible rule:
+count only lines with direct hardcoded visible/status Cyrillic text, excluding lines whose Cyrillic occurs only as `tr(...)` fallback.
 
-Remaining direct hardcoded Cyrillic-bearing source occurrences by line:
-`48`.
+Remaining direct hardcoded RU-bearing source lines:
+`43`.
 
 ### Structured condition explanations — 26
 
-`explain()` still emits direct Russian for:
-- item capability;
-- calendar year/day/elapsed days;
-- housing tier;
-- career stage/counters/facts/choices;
-- quest stage/counters/facts/choices;
-- relationship stage/counters/facts/choices;
+Direct `explain()` output remains for:
+- capabilities;
+- calendar requirements;
+- housing;
+- career/quest/relationship facts/stages/counters/choices;
 - world facts;
-- Meta unlock/ending/Hard Work;
+- Meta conditions;
 - visits;
 - flags;
-- item/not/all/any connectors.
+- not/all/any composition.
 
-These are visible in requirements/ending conditions.
+### Missing-media fallback — 1
 
-### Shared Night/lodging — 5
-
-Still direct:
-- generic Night-choice context/button line;
-- LodgingResolution;
-- VoluntaryNightChoice;
-- generic Night sequence fallback;
-- town lodging summary.
-
-The reviewed 16-key Chat3 rebase is intended for these active Night/lodging seams.
+Direct:
+`Сцена доступна без медиа`.
 
 ### Character creation — 1
 
-The compact creation template still contains multiple direct RU strings on one source line.
-
-### Active Activity presentation — 1
-
-Progress/endurance/checkpoint/route display still uses direct implementation-heavy copy.
+Compact creation template still contains direct RU copy/aria labels.
 
 ### Event/inactive-run shell — 2
 
 Still direct:
 - event eyebrow;
-- ended/expired life presentation + Legacy shortcut.
+- ended/expired run shell.
 
-### Missing-media fallback — 1
+### Active Activity presentation — 1
 
-`Сцена доступна без медиа`
-is still direct.
+Direct progress/endurance/checkpoint/route line remains.
 
-### Menu/save/status/error/developer surfaces — 11
+### Event inspector — 1
 
-Still direct on current source lines:
-- menu export/import/editor/animation/restart/descriptive text;
+Developer-facing inspector heading remains direct.
+
+### Menu/save/status/error group — 11
+
+Direct source remains for:
+- export/import/editor/animation/restart menu items and explanatory copy;
 - ending confirmation;
 - restart confirmation;
-- import validation/confirm/success;
+- import size/confirm/success;
 - editor save status;
-- content load error;
-- presentation load error;
-- storage recovery;
-- backup recovery/error;
-- stopped-load error;
-- startup error.
-
-### Event inspector developer surface — 1
-
-`Инспектор событий`
-remains direct.
+- catalog/presentation load errors;
+- storage/backup recovery;
+- stopped-load/startup errors.
 
 Total:
-26 + 5 + 1 + 1 + 2 + 1 + 11 + 1 = `48`.
+26 + 1 + 1 + 2 + 1 + 1 + 11 = `43`.
 
-This count is line-based because the compact UI source often contains multiple strings per line.
+## Night-specific visible debt after PR55
 
-## Shared Night/lodging readiness after PR54
+The 16-key shared Night UI slice is no longer a localization-key gap.
 
-Current production-ready source:
-- 16 genuinely additive keys;
-- one shipped result-to-lodging key reused;
-- three obsolete `ui.night.panel.*` aliases omitted.
+One residual presentation-quality issue remains outside the 16-key patch:
+the generic fallback still renders raw `night.phase` machine text in the dialogue body.
 
-Current NightFlow mechanics remain unchanged.
+That is not a gameplay defect, but it remains player-language debt.
 
-## Forest route-specific localization
+## Forest route-specific presentation
 
-Chat3 route delta:
-- 10 keys;
-- complete RU+EN;
-- current-root collisions after PR54: 0.
+Chat3 source remains ready:
+- pure route-state -> presentationId mapping;
+- 10 additive RU+EN route keys;
+- zero current-root collision.
 
-Not root-loaded yet.
-
-Route-specific seam still requires Lead implementation.
+No route-specific root slot is shipped yet.
 
 ## Non-Lumber seasonal scene prose
 
-Current root still has no proposed 36 non-Lumber seasonal scene-text keys.
+Proposed 36 scene-text keys remain not root-loaded.
 
-Project-owned seasonal static media is shipped, but scene prose localization remains a shared-consumer gap.
+Seasonal static media is shipped; localized scene prose remains a future shared consumer/data slice.
 
 ## Animation/GIF
 
-Real production GIF candidates:
+Real production GIFs:
 `0`.
 
 Production GIF pools:
 `0`.
 
-Project-owned frame/source authoring exists, but real export remains pending explicit toolchain integration.
+Exporter patch candidate is review-ready but not integrated into package manifests.
 
 ## Product-open isolation
 
-Still not counted as shipped:
-- School exact-course teacher gameplay/routing;
-- management/accounting public-result provider;
-- Arcana/Forest provider/result;
-- Hunter route/clue/token semantics;
+Still open/isolated:
+- School teacher routing and unresolved providers;
+- Hunter Forest route/clue/token semantics;
 - Old Boundary token lifecycle;
 - Forest challenge/reward topology;
 - deeper relationship/endings;
 - Secret Debt;
 - authored Palace content.
 
-## Product conclusion
+## Conclusion
 
 Current full-product status:
 `PARTIAL_BILINGUAL`.
 
-Strong shipped state:
-- 540/540 existing localization entries bilingual;
-- 40/46 current events fully root-localized;
-- 59/68 choice outcomes have bilingual keys;
-- PR54 makes stable-ref Journal/lastAction outcome localization real for new ref-backed choices;
-- 34/34 approved global UI-shell keys shipped;
-- 80/80 established project-owned static target shipped.
-
-Largest remaining visible/shared debt:
-- 6 zero-localized current events;
-- 9 choices without bilingual label/body coverage;
-- 38 root media IDs without root alt keys;
-- 16 shared Night/lodging keys + wiring;
-- 48 direct hardcoded RU-bearing app source lines under the stated counting rule;
-- route-specific Forest presentation seam/localization;
-- 36 non-Lumber seasonal scene-text keys + consumer;
-- real GIF export/pools.
+Current measurable floor:
+- 556 bilingual root keys;
+- 40/46 fully root-localized events;
+- 59/68 bilingual choice bodies;
+- PR54 stable-ref dynamic outcome rendering;
+- PR53 global UI shell shipped;
+- PR55 shared Night/lodging shipped;
+- 80/80 static target;
+- 43 remaining direct hardcoded RU-bearing app source lines under the stated rule.
