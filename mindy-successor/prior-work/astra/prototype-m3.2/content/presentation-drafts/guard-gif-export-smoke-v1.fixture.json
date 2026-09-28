@@ -1,0 +1,41 @@
+{
+  "formatVersion": 1,
+  "kind": "gif-export-smoke-fixture",
+  "status": "COMMAND_ONLY_NO_GIF_BYTES",
+  "presentationId": "job/guard/shift/summer/default",
+  "sequenceKey": "guard-summer-watch-loop-a",
+  "candidateKey": "guard-summer-loop-a",
+  "manifest": "content/presentation-drafts/project-owned-animation-source-manifest-v3.json",
+  "command": [
+    "node",
+    "tools/export-presentation-gif.mjs",
+    "--manifest",
+    "content/presentation-drafts/project-owned-animation-source-manifest-v3.json",
+    "--presentation-id",
+    "job/guard/shift/summer/default",
+    "--sequence",
+    "guard-summer-watch-loop-a",
+    "--output",
+    "assets/gif/smoke/guard-summer-loop-a.gif",
+    "--width",
+    "640",
+    "--height",
+    "360",
+    "--frame-duration-ms",
+    "700",
+    "--loop-count",
+    "0"
+  ],
+  "expected": {
+    "output": "assets/gif/smoke/guard-summer-loop-a.gif",
+    "width": 640,
+    "height": 360,
+    "frameCount": 4,
+    "frameDurationMs": 700,
+    "totalDurationMs": 2800,
+    "loopCount": 0,
+    "maxPaletteColors": 256,
+    "fileExists": false
+  },
+  "cleanup": "Delete smoke output unless separately promoted through production media QA."
+}
