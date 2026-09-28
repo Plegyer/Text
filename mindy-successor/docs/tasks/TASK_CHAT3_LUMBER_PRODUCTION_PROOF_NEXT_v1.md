@@ -3517,3 +3517,89 @@ Consolidate items 281–291 into:
 Include exact selective-copy files.
 
 Continue items 281–292 sequentially without waiting for Lead review.
+
+
+## Queue item 269 — post-PR54 Forest route integration baseline v11
+Create NEW file only:
+- `docs/lumber-prep/POST_PR54_FOREST_ROUTE_INTEGRATION_BASELINE_V11.md`
+
+Re-audit exact current main after Journal/outcome localization:
+- route IDs;
+- generic route/default presentation;
+- route-specific seam still absent/present;
+- result continuation invariants;
+- current localization keys.
+
+## Queue item 270 — logging-road final localized scene bank v8
+Create NEW file only:
+- `docs/lumber-prep/LOGGING_ROAD_FINAL_LOCALIZED_SCENE_BANK_V8.md`
+
+Author 8 concise RU-source + full EN presentation-only variants for current logging-road identity.
+No mechanics/effects/rewards.
+
+## Queue item 271 — old-boundary final localized scene bank v8
+Create NEW file only:
+- `docs/lumber-prep/OLD_BOUNDARY_FINAL_LOCALIZED_SCENE_BANK_V8.md`
+
+Author 8 concise RU+EN variants using only established stones/marks/path semantics.
+No Hunter/token/gate/reward implication.
+
+## Queue item 272 — Forest route localized title/help fixture v3
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/forest-route-title-help-localization-v3.fixture.json`
+
+Final RU+EN titles/help/choice labels for exact current logging-road and old-boundary route identities.
+
+## Queue item 273 — Forest route route-specific alt/caption fixture v3
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/forest-route-alt-caption-localization-v3.fixture.json`
+
+Use normalized shipped key grammar.
+No media paths or mechanics fields.
+
+## Queue item 274 — Forest route result-journal localized expectation v2
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/forest-route-result-journal-localization-v2.fixture.json`
+
+Record expected RU/EN rendered Journal/lastAction text for route-driven result scenes under the new locale-neutral journal consumer.
+No Save identity changes.
+
+## Queue item 275 — Forest route presentation seam current-main acceptance v5
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/forest-route-presentation-seam-acceptance-v5.fixture.json`
+
+Exact expected default -> route-specific presentation transition for both routes, with unchanged RNG/Save/result/activityResult identities.
+
+## Queue item 276 — Forest route static visual source audit v3
+Create NEW file only:
+- `docs/lumber-prep/FOREST_ROUTE_STATIC_VISUAL_SOURCE_AUDIT_V3.md`
+
+Recheck all existing Chat2 Forest route/default and route-specific SVG source candidates.
+Classify SAFE / NEEDS_REVISION / PRODUCT_SEMANTICS_LEAK.
+Do not activate assets.
+
+## Queue item 277 — old-boundary safe visual delta brief v3
+Create NEW file only:
+- `docs/lumber-prep/OLD_BOUNDARY_SAFE_VISUAL_DELTA_BRIEF_V3.md`
+
+If current source still overstates semantics, specify the minimal visual corrections only.
+
+## Queue item 278 — Forest route presentation-only regression source v5
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/forest-route-presentation-only-v5.test.ts`
+
+Validate staging fixtures contain no gameplay conditions/effects/rewards/RNG/Save writes and preserve locked result/Hard Work continuation.
+
+## Queue item 279 — Forest route Product-open firewall v11
+Create NEW file only:
+- `docs/lumber-prep/FOREST_ROUTE_PRODUCT_OPEN_FIREWALL_V11.md`
+
+Reconfirm Hunter/token/challenge/reward/topology/deeper-lore exclusions.
+
+## Queue item 280 — Forest route integration handoff v11
+Create NEW file only:
+- `docs/lumber-prep/FOREST_ROUTE_INTEGRATION_HANDOFF_V11.md`
+
+Consolidate items 269–279 into ROUTE_COPY_READY / ALT_READY / JOURNAL_READY / SEAM_REQUIRED / VISUAL_SOURCE_STATUS / PRODUCT_OPEN.
+
+Continue items 269–280 sequentially without waiting for Lead review.
