@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 1,
+  "id": "forest.route-presentation-seam-acceptance.v5",
+  "status": "CURRENT_MAIN_POST_PR54_ACCEPTANCE",
+  "baseMain": "295e6fc74d235f0b7555794555a18373451e8b7e",
+  "activityId": "lumber.forest",
+  "paths": [
+    {
+      "routeOptionId": "forest.route.logging-road",
+      "routeState": "logging-road",
+      "authoritativeConditions": [],
+      "transition": {
+        "beforeSelection": {
+          "routeState": null,
+          "presentationId": "activity/forest/route/default",
+          "rootSlotPresent": true
+        },
+        "afterSelection": {
+          "routeState": "logging-road",
+          "presentationId": "activity/forest/route/logging-road"
+        }
+      },
+      "invariance": {
+        "gameplaySaveWriteFromPresentation": false,
+        "globalRngUse": false,
+        "activityRngUse": false,
+        "progressMutation": false,
+        "enduranceMutation": false,
+        "routeAvailabilityMutation": false
+      },
+      "exactResults": {
+        "success": {
+          "resultId": "lumber.forest.success",
+          "activityResult": {
+            "kind": "activityResult",
+            "activity": "lumber.forest",
+            "outcome": "success",
+            "result": "lumber.forest.success"
+          }
+        },
+        "escape": {
+          "resultId": "lumber.forest.escape",
+          "activityResult": {
+            "kind": "activityResult",
+            "activity": "lumber.forest",
+            "outcome": "escape",
+            "result": "lumber.forest.escape"
+          }
+        },
+        "failure": {
+          "resultId": "lumber.forest.failure",
+          "activityResult": {
+            "kind": "activityResult",
+            "activity": "lumber.forest",
+            "outcome": "failure",
+            "result": "lumber.forest.failure"
+          }
+        }
+      }
+    },
+    {
+      "routeOptionId": "forest.route.old-boundary",
+      "routeState": "old-boundary",
+      "authoritativeConditions": [
+        {
+          "kind": "itemCapability",
+          "capability": "enter_old_boundary",
+          "present": true
+        }
+      ],
+      "transition": {
+        "beforeSelection": {
+          "routeState": null,
+          "presentationId": "activity/forest/route/default",
+          "rootSlotPresent": true
+        },
+        "afterSelection": {
+          "routeState": "old-boundary",
+          "presentationId": "activity/forest/route/old-boundary"
+        }
+      },
+      "invariance": {
+        "gameplaySaveWriteFromPresentation": false,
+        "globalRngUse": false,
+        "activityRngUse": false,
+        "progressMutation": false,
+        "enduranceMutation": false,
+        "routeAvailabilityMutation": false
+      },
+      "exactResults": {
+        "success": {
+          "resultId": "lumber.forest.success",
+          "activityResult": {
+            "kind": "activityResult",
+            "activity": "lumber.forest",
+            "outcome": "success",
+            "result": "lumber.forest.success"
+          }
+        },
+        "escape": {
+          "resultId": "lumber.forest.escape",
+          "activityResult": {
+            "kind": "activityResult",
+            "activity": "lumber.forest",
+            "outcome": "escape",
+            "result": "lumber.forest.escape"
+          }
+        },
+        "failure": {
+          "resultId": "lumber.forest.failure",
+          "activityResult": {
+            "kind": "activityResult",
+            "activity": "lumber.forest",
+            "outcome": "failure",
+            "result": "lumber.forest.failure"
+          }
+        }
+      }
+    }
+  ],
+  "hardWorkInvariant": {
+    "endingId": "ending.lumber.hard-work",
+    "conditions": [
+      {
+        "kind": "careerCounter",
+        "career": "lumber",
+        "counter": "completed_shifts",
+        "op": "gte",
+        "value": 50
+      }
+    ],
+    "metaRewards": [
+      {
+        "kind": "hardWork",
+        "rewardId": "hardWork:lumber",
+        "career": "lumber"
+      }
+    ]
+  },
+  "invariants": {
+    "defaultBeforeSelection": true,
+    "routeSpecificAfterSelection": true,
+    "noSaveWrites": true,
+    "noRng": true,
+    "noResultMutation": true,
+    "noHardWorkMutation": true
+  }
+}
