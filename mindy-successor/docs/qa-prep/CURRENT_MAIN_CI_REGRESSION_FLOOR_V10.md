@@ -3,17 +3,17 @@
 Status: COMPLETE / CURRENT_MAIN_CI_GREEN
 
 Current main:
-`2ad9fb8b0572f8903bbf57d144c8c5938023a440`
-(PR60 safe Old Boundary static merge, on top of PR59).
+`01b31b9ab0d0267d95edf5b5b80638acd63f5c04`
+(PR61 ending/action localization merge, on top of PR60 and PR59).
 
 ## Latest successful main push
 
 Workflow:
 - `mindy-successor check`;
-- run #120;
-- id `36410358345`;
+- run #122;
+- id `36410874877`;
 - event: push;
-- head SHA: `2ad9fb8b0572f8903bbf57d144c8c5938023a440`;
+- head SHA: `01b31b9ab0d0267d95edf5b5b80638acd63f5c04`;
 - conclusion: SUCCESS.
 
 Validator:
@@ -23,44 +23,56 @@ Validator:
 - endings: 9.
 
 Tests:
-- 363 total;
-- 363 pass;
+- 369 total;
+- 369 pass;
 - 0 fail.
 
-## PR60 exact-head corroboration
+## PR61 exact-head corroboration
 
-Accepted PR60 head:
-`36f933d8c01a249992d84295bc69c3d554bb1f89`.
+Accepted head:
+`a7b16eca18ccba37719fc84432c1fe1a9b275bf5`.
 
-Run #119:
-- id `36410203903`;
+Run #121 / id `36410716736`:
 - SUCCESS;
 - validator 17 / 46 / 35 / 9;
-- 363 / 363 tests.
+- 369 / 369 tests.
 
-The initial PR60 head failed run #116 only because four older regressions still asserted the intentional pre-activation old-boundary neutral fallback state.
+Relevant PASS:
+- ending production patch exact current identities;
+- ordinary action result patch exact current one-scene identities;
+- ordinary action result RU↔EN without Save change;
+- ending cards RU↔EN without eligibility/Save change;
+- Journal stable-ref regression;
+- Forest route-specific media regression;
+- exact Lumber Hard Work regression.
 
-The new old-boundary safety tests already passed there.
+## PR60 floor retained
 
-The accepted head updates those stale expectations while retaining gameplay locks.
+PR60 merge:
+`2ad9fb8b0572f8903bbf57d144c8c5938023a440`.
+
+Run #120:
+363 / 363 PASS, validator 17/46/35/9.
+
+Current suite retains safe old-boundary v3/static build and route invariance tests.
 
 ## PR59 floor retained
-
-PR59 logging-road activation remains shipped beneath current main.
 
 PR59 merge:
 `54131488c65302f81b3001abaaa345d21f0281e2`.
 
-Its post-merge run #115:
-- 360 / 360;
-- validator 17 / 46 / 35 / 9.
+Run #115:
+360 / 360 PASS, validator 17/46/35/9.
 
-Current 363-test suite retains the PR59 logging-road and route locale/Save/RNG invariance regressions.
+Current suite retains logging-road/static locale/Save/RNG invariance.
 
 ## Localization floor
 
-Current root localization:
-`664` keys.
+Current root localization blob:
+`2ae08a0b64ee9762e7194ea4352cbe7703f421b2`.
+
+Total root keys:
+`714`.
 
 Missing RU:
 `0`.
@@ -68,95 +80,71 @@ Missing RU:
 Missing EN:
 `0`.
 
-PR60 adds no new localization keys; it reuses the PR59 old-boundary alt/caption keys.
+PR61 adds exactly:
+- 18 ending title/description keys;
+- 32 ordinary action result title/body keys.
+
+Total PR61 localization delta:
+`50`.
 
 ## Static floor
 
-Current root project-owned semantic static mappings:
+Root presentation blob:
+`d403fe7b367ba4a578ac156a60d03dd301c42281`.
+
+Active project-owned static semantic mappings:
 `82`.
 
-Unique active physical project-owned sources:
+Unique active project-owned physical sources:
 `81`.
 
-Established baseline target:
-`80 / 80`.
-
-Route-specific extension:
-`2 / 2` current Forest route identities have reviewed route-specific static media.
-
-Current Forest route root statics:
+Forest route statics:
 - neutral route/default;
 - logging-road specific;
 - old-boundary v3 specific.
 
-Neutral route/default fallback metadata remains retained.
+## Current app floor
 
-## Physical asset floor
+Current app blob:
+`bcefef82bd0009040e6b5a84ae032a9806f15289`.
 
-Current `assets/presentation/` files:
-`91`.
-
-Active physical project-owned sources:
-`81`.
-
-Retained inactive/source-history:
-`10`.
-
-## Current route invariants
-
-Logging road:
-- persisted routeId `logging-road`;
-- semantic presentationId logging-road;
-- reviewed specific static.
-
-Old boundary:
-- persisted routeId `old-boundary`;
-- semantic presentationId old-boundary;
-- reviewed v3 specific static;
-- current capability gate unchanged.
-
-Current exact Old Boundary gate:
-`itemCapability(enter_old_boundary) present=true`.
-
-## Current gameplay locks
-
-Retained PASS on run #120:
-- exact Forest activityResult boundaries;
-- exact Forest success/escape/failure identities;
-- exact Lumber Hard Work false at 49 / eligible at 50;
-- no Forest/School/relationship prerequisite added to Hard Work;
-- Journal stable-ref locale invariance;
-- route-state renderer Save invariance.
+Shipped consumers include:
+- ending title/description localization;
+- ordinary default-scene action result localization;
+- stable event-choice outcome refs;
+- global shell/generic labels/Night UI;
+- Forest route-state presentation seam.
 
 ## Minimum next-integration floor
 
 Unless intentionally reviewed:
 - validator remains 17 packs / 46 events / 35 actions / 9 endings;
-- test count does not silently drop below 363;
+- existing tests do not drop below 369;
 - failures remain 0;
-- root localization does not lose current 664 keys;
-- active project-owned static mappings remain at least 82;
-- unique active physical project-owned sources remain at least 81;
-- all three current Forest route static slots remain valid;
-- route/default fallback remains retained.
+- root localization does not silently lose 714 keys;
+- static mappings remain at least 82;
+- unique active static sources remain at least 81;
+- all three Forest route presentation statics remain valid.
 
 ## Locked invariants
 
 Protect:
 - Lumber Hard Work only `completed_shifts >= 50`;
 - meta reward `hardWork:lumber`;
-- exact Forest result IDs/reactions;
-- Old Boundary current `enter_old_boundary` gate;
-- route presentation remains read-only;
-- School locale Save invariance;
-- poverty natural paths;
-- Journal ref compatibility;
+- exact Forest success/escape/failure IDs;
+- exact activityResult reactions;
+- Old Boundary `enter_old_boundary` gate;
+- route presentation read-only behavior;
+- ending eligibility/reward/meta identity;
+- ordinary action effects/economics;
+- School result precedence;
+- Journal stable-ref compatibility;
 - Night costs/effects;
-- locale independent gameplay RNG and media identity.
+- locale-independent gameplay RNG/Save/media identity.
 
 ## Verdict
 
 `CURRENT_MAIN_CI_GREEN`.
 
-Authoritative current floor:
-`main 2ad9fb8... / run #120 / 363 of 363 passing / 17 packs, 46 events, 35 actions, 9 endings / 664 bilingual root keys / 82 active project-owned static mappings`.
+Authoritative floor:
+`main 01b31b9... / run #122 / 369 of 369 passing / 17 packs, 46 events, 35 actions, 9 endings / 714 bilingual root keys / 82 active project-owned static mappings`.
