@@ -1,68 +1,78 @@
 # Current Chat 1 Developer task pointer
 
-Status: ASSIGNED
+Status: BLOCKED_PENDING_DESIGN_TO_CODE_MAPPING
 Owner: Chat 1 Developer / Integration Developer
-Queue: CAREER ROUTE IMPLEMENTATION PACKAGE
 
 Source of truth:
 - ACTIVE_TEAM_OWNERSHIP_MATRIX.md
 - PROJECT_WORK_ENTRYPOINT.md
+- CAREER_LUMBER_DRAFT_v0.md
 
-## Objective
-Implement one complete existing career route using existing `careers` definitions, `stages`, `transitions`, event conditions/effects, `RunState.progression.careers`, and existing `endings` completion flow.
+## Verified design
 
-No new career state layer.
+Lumber design exists in:
+- mindy-successor/docs/CAREER_LUMBER_DRAFT_v0.md
 
-## Route
-Use the existing Lumber career route prepared in current career materials.
+Design stages described there:
+- L0 Newcomer
+- L1 Accepted Hand
+- L2 Trusted Worker
+- L3A Veteran track
+- L3B Forewoman track
+- L3C Forest track
+- L4 Outcome-ready
 
-Implementation scope:
-- connect the existing career stages into playable progression;
-- verify stage transitions are driven by existing conditions/effects;
-- verify career state persists through `RunState.progression.careers`;
-- verify terminal route outcome enters existing endings mechanism.
+These names are design references only until matching implementation IDs are confirmed in code.
 
-## Required gameplay path
+## Confirmed implementation state
 
-Stage 1: Apprentice Lumber Worker
-Transition condition:
-- existing starting career event eligibility.
-Event/effect:
-- existing career assignment/progression effect.
+Previous assignment incorrectly treated design stages as implemented IDs.
+Do not create guessed stage IDs.
+Do not add parallel career state.
 
-Stage 2: Skilled Lumber Worker
-Transition condition:
-- existing required work events and progression conditions.
-Event/effect:
-- existing stage advancement effect.
+Required implementation model:
+- existing careers definitions;
+- existing stages/transitions;
+- event conditions/effects;
+- RunState.progression.careers;
+- existing endings acceptance flow.
 
-Stage 3: Forest Specialist
-Transition condition:
-- existing mastery/progression requirements.
-Event/effect:
-- existing career completion/outcome effect.
+## Required next action
 
-Outcome:
-- route completion must resolve through existing `endings` acceptance flow, not a new career ending store.
+Before code changes, identify the actual Lumber implementation identifiers in code:
+- career id;
+- implemented stage ids;
+- transition ids;
+- event ids;
+- ending ids.
+
+Compare them against CAREER_LUMBER_DRAFT_v0.
+
+If a designed stage has no implementation ID, create the smallest missing implementation slice only after applying project ID naming rules and marking the ID as NEW.
 
 ## Allowed files
-Only modify:
+
+Only:
 - existing career definition files;
 - existing event condition/effect files;
-- existing UI presentation route files needed to show the route;
-- focused tests for this route.
+- existing ending integration files if required by existing framework;
+- UI route files required to display current career stage/outcome;
+- focused tests.
 
-Do not create:
-- parallel profession state;
+Forbidden:
+- new profession state layer;
 - new Save schema;
-- new ending framework.
+- new ending framework;
+- new gameplay rules not present in design.
 
-## Verification
-Add/run a route test proving:
+## Acceptance
+
+A completed PR must prove one playable Lumber route through:
 - career assignment;
-- stage 1 -> stage 2 -> stage 3 transitions;
+- actual stage transitions;
 - RunState.progression.careers update;
-- ending acceptance path;
-- UI displays current stage and final outcome.
+- UI stage display;
+- existing ending acceptance flow.
 
-Deliver one PR with exact files, commit SHA and test results.
+Current blocker:
+The repository design names are confirmed, but concrete code IDs for Lumber stages/transitions/events/endings have not yet been mapped.
