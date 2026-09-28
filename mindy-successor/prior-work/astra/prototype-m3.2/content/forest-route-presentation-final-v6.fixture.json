@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 1,
+  "id": "forest.route-presentation.final.v6",
+  "status": "POST_PR50_PRESENTATION_ONLY_FINAL_CANDIDATE",
+  "baseMain": "5dffefd15703d431a604b4cc9f831c4e55460aed",
+  "sourceReviews": [
+    "docs/lumber-prep/LOGGING_ROAD_ROUTE_PRESENTATION_COPY_FINAL_REVIEW_V6.md",
+    "docs/lumber-prep/OLD_BOUNDARY_ROUTE_PRESENTATION_COPY_FINAL_REVIEW_V6.md",
+    "docs/lumber-prep/OLD_BOUNDARY_VISUAL_BRIEF_CORRECTION_V2.md"
+  ],
+  "routes": [
+    {
+      "routeId": "forest.route.logging-road",
+      "routeState": "logging-road",
+      "presentationId": "activity/forest/route/logging-road",
+      "currentChoiceLabel": {
+        "key": "activityOption.forest.route.logging-road.label",
+        "value": {
+          "ru": "Лесовозная дорога",
+          "en": "Logging road"
+        }
+      },
+      "helpKey": "activityOption.forest.route.logging-road.help",
+      "textKeys": [
+        "forestRouteScene.forest.route.logging-road.wheel-ruts.text",
+        "forestRouteScene.forest.route.logging-road.timber-stack.text",
+        "forestRouteScene.forest.route.logging-road.work-marks.text",
+        "forestRouteScene.forest.route.logging-road.narrowing.text",
+        "forestRouteScene.forest.route.logging-road.reaction.text"
+      ],
+      "altKey": "presentation.activity.forest.route.logging-road.alt",
+      "captionKey": "presentation.activity.forest.route.logging-road.caption"
+    },
+    {
+      "routeId": "forest.route.old-boundary",
+      "routeState": "old-boundary",
+      "presentationId": "activity/forest/route/old-boundary",
+      "currentChoiceLabel": {
+        "key": "activityOption.forest.route.old-boundary.label",
+        "value": {
+          "ru": "Старая межевая тропа",
+          "en": "Old boundary path"
+        }
+      },
+      "helpKey": "activityOption.forest.route.old-boundary.help",
+      "textKeys": [
+        "forestRouteScene.forest.route.old-boundary.stones.text",
+        "forestRouteScene.forest.route.old-boundary.old-marks.text",
+        "forestRouteScene.forest.route.old-boundary.clearing.text",
+        "forestRouteScene.forest.route.old-boundary.beyond-markers.text",
+        "forestRouteScene.forest.route.old-boundary.reaction.text"
+      ],
+      "altKey": "presentation.activity.forest.route.old-boundary.alt",
+      "captionKey": "presentation.activity.forest.route.old-boundary.caption"
+    }
+  ],
+  "strings": {
+    "forestRouteScene.forest.route.logging-road.wheel-ruts.text": {
+      "ru": "Лесовозная дорога шире соседних троп. Свежие колеи режут грязь, а обрубленные ветви сложены по краям. Здесь трудно потерять путь: люди уже расчистили лес под дорогу.",
+      "en": "The logging road is wider than the nearby trails. Fresh ruts cut through the mud, and trimmed branches lie along the edges. It is hard to lose the route here; people have already cleared a road through the forest."
+    },
+    "forestRouteScene.forest.route.logging-road.timber-stack.text": {
+      "ru": "Дорога выходит к просеке со штабелями брёвен. Ровные стволы сложены отдельно, повреждённые — в стороне, а кора и щепа втоптаны в землю.",
+      "en": "The road opens onto a clearing stacked with timber. Straight trunks are kept together, damaged pieces lie apart, and bark and chips are ground into the soil."
+    },
+    "forestRouteScene.forest.route.logging-road.work-marks.text": {
+      "ru": "На деревьях у дороги остались старые меловые метки и зарубки. Одни ведут к уже законченной работе, другие отмечают места, к которым никто не вернулся.",
+      "en": "Old chalk marks and axe cuts remain on trees beside the road. Some point toward finished work; others mark places nobody returned to."
+    },
+    "forestRouteScene.forest.route.logging-road.narrowing.text": {
+      "ru": "Построенная дорога постепенно сдаётся лесу. Колеи сужаются до следов, штабеля исчезают, и рабочий порядок растворяется среди деревьев.",
+      "en": "The built road gradually gives way to the forest. Wheel ruts narrow into tracks, timber stacks disappear, and the order of the worksite dissolves among the trees."
+    },
+    "forestRouteScene.forest.route.logging-road.reaction.text": {
+      "ru": "По крайней мере, эту дорогу строили так, чтобы по ней можно было идти.",
+      "en": "At least this road was built to be followed."
+    },
+    "forestRouteScene.forest.route.old-boundary.stones.text": {
+      "ru": "Первый межевой камень почти целиком ушёл во мох. Стоит заметить один — и следующий уже легче отличить от обычного валуна. Камни складываются в линию, не совпадающую с новой лесовозной дорогой.",
+      "en": "The first boundary stone is almost lost beneath the moss. Once you notice one, the next is easier to distinguish from ordinary rock. The stones form a line that does not follow the newer logging road."
+    },
+    "forestRouteScene.forest.route.old-boundary.old-marks.text": {
+      "ru": "На нескольких стволах видны выветренные зарубки. Они повторяются слишком ровно для случайных повреждений и явно старше нынешних работ.",
+      "en": "Several trunks bear weathered cuts. They repeat too regularly to be accidental and are clearly older than the current logging work."
+    },
+    "forestRouteScene.forest.route.old-boundary.clearing.text": {
+      "ru": "Деревья отступают от узкой полосы каменистой земли. Границу создаёт не преграда, а повторение: камень, знак, просвет, следующий камень.",
+      "en": "The trees pull back from a narrow strip of stony ground. The boundary is made not by a barrier, but by repetition: stone, mark, gap, another stone."
+    },
+    "forestRouteScene.forest.route.old-boundary.beyond-markers.text": {
+      "ru": "За самыми заметными знаками лес выглядит менее обжитым. Старые следы людей ещё встречаются, но современные дороги уже не объясняют, откуда они пришли и куда вели.",
+      "en": "Beyond the clearest markers, the forest looks less worked. Old traces of people remain, but modern roads no longer explain where they came from or where they led."
+    },
+    "forestRouteScene.forest.route.old-boundary.reaction.text": {
+      "ru": "Эти знаки настолько старые, что путь приходится скорее читать, чем просто проходить.",
+      "en": "The markers are old enough that the route has to be read rather than simply followed."
+    },
+    "presentation.activity.forest.route.logging-road.alt": {
+      "ru": "Лесовозная дорога с колеями и следами недавних работ.",
+      "en": "Logging road with wheel ruts and signs of recent work."
+    },
+    "presentation.activity.forest.route.logging-road.caption": {
+      "ru": "Здесь путь читается по следам работы: колеям, ветвям и меткам на деревьях.",
+      "en": "Here the route is readable through signs of work: wheel ruts, cut branches, and marks on trees."
+    },
+    "presentation.activity.forest.route.old-boundary.alt": {
+      "ru": "Старая межевая линия с замшелыми камнями и выветренными метками.",
+      "en": "Old boundary line with moss-covered stones and weathered marks."
+    },
+    "presentation.activity.forest.route.old-boundary.caption": {
+      "ru": "Камни и старые знаки складываются в линию, не совпадающую с новой лесовозной дорогой.",
+      "en": "Stones and old markers form a line that does not follow the newer logging road."
+    },
+    "activityOption.forest.route.logging-road.help": {
+      "ru": "Широкая рабочая дорога со свежими следами лесозаготовок.",
+      "en": "A broad work road with fresh signs of logging."
+    },
+    "activityOption.forest.route.old-boundary.help": {
+      "ru": "Старый путь по межевым камням и выветренным меткам.",
+      "en": "An old route traced by boundary stones and weathered marks."
+    }
+  },
+  "currentRootCollisionStatus": {
+    "proposedKeyCount": 16,
+    "exactCollisions": []
+  },
+  "visualPolicy": {
+    "defaultBeforeRouteSelection": "activity/forest/route/default",
+    "loggingRoadRouteSpecificVisual": "allowed after shared seam and asset review",
+    "oldBoundaryRouteSpecificVisual": "neutral stones/marks/path only; no constructed gate/arch/token/Hunter/reward semantics",
+    "neutralFallback": "activity/forest/route/default"
+  },
+  "integrationPolicy": {
+    "keepCurrentChoiceLabels": true,
+    "additiveHelpCopyOnly": true,
+    "normalizedAltCaptionKeys": true,
+    "presentationIdsLocaleNeutral": true,
+    "deriveRouteSpecificPresentationIdOnlyFromAuthoritativeRouteState": true,
+    "noGameplaySaveWrite": true,
+    "noGameplayRngUse": true
+  },
+  "invariants": {
+    "presentationOnly": true,
+    "exactCurrentRouteIdsOnly": true,
+    "createsRoute": false,
+    "changesRouteAvailability": false,
+    "changesConditions": false,
+    "changesEffects": false,
+    "changesRewards": false,
+    "changesRng": false,
+    "changesSaveState": false,
+    "changesOldBoundaryTokenSemantics": false,
+    "createsHunterRoute": false,
+    "changesLumberHardWork": false
+  }
+}
