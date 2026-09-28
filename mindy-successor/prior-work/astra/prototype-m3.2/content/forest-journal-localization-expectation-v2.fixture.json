@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "id": "forest.journal-localization-expectation.v2",
+  "status": "EXPECTATION_FOR_LEAD_JOURNAL_REF_CONSUMER",
+  "baseMain": "3fc5495310e281cf5cbe52da3642000f1cb1fb05",
+  "mappings": [
+    {
+      "packId": "forest-result-content-v1",
+      "eventId": "forest-result-content-v1.success",
+      "choiceId": "return",
+      "titleKey": "event.forest-result-content-v1.success.title",
+      "choiceLabelKey": "event.forest-result-content-v1.success.choice.return.label",
+      "choiceTextKey": "event.forest-result-content-v1.success.choice.return.text",
+      "currentLocalizedText": {
+        "ru": "Ты оставляешь результат экспедиции неизменным и возвращаешься к обычному городскому ходу дня.",
+        "en": "You leave the Activity result intact and return to the city-side flow."
+      },
+      "reactionTrigger": {
+        "kind": "activityResult",
+        "activity": "lumber.forest",
+        "outcome": "success",
+        "result": "lumber.forest.success"
+      },
+      "expectedJournalRef": {
+        "eventId": "forest-result-content-v1.success",
+        "choiceId": "return"
+      }
+    },
+    {
+      "packId": "forest-result-content-v1",
+      "eventId": "forest-result-content-v1.escape",
+      "choiceId": "return",
+      "titleKey": "event.forest-result-content-v1.escape.title",
+      "choiceLabelKey": "event.forest-result-content-v1.escape.choice.return.label",
+      "choiceTextKey": "event.forest-result-content-v1.escape.choice.return.text",
+      "currentLocalizedText": {
+        "ru": "Ты сохраняешь результат «отступление» отдельным и возвращаешься, не превращая его в успех.",
+        "en": "You keep the escape result distinct and return without converting it into success."
+      },
+      "reactionTrigger": {
+        "kind": "activityResult",
+        "activity": "lumber.forest",
+        "outcome": "escape",
+        "result": "lumber.forest.escape"
+      },
+      "expectedJournalRef": {
+        "eventId": "forest-result-content-v1.escape",
+        "choiceId": "return"
+      }
+    },
+    {
+      "packId": "forest-result-content-v1",
+      "eventId": "forest-result-content-v1.failure",
+      "choiceId": "return",
+      "titleKey": "event.forest-result-content-v1.failure.title",
+      "choiceLabelKey": "event.forest-result-content-v1.failure.choice.return.label",
+      "choiceTextKey": "event.forest-result-content-v1.failure.choice.return.text",
+      "currentLocalizedText": {
+        "ru": "Ты принимаешь зафиксированное поражение и возвращаешься к обычному ходу игры.",
+        "en": "You accept the failed Activity result as recorded and return to ordinary flow."
+      },
+      "reactionTrigger": {
+        "kind": "activityResult",
+        "activity": "lumber.forest",
+        "outcome": "failure",
+        "result": "lumber.forest.failure"
+      },
+      "expectedJournalRef": {
+        "eventId": "forest-result-content-v1.failure",
+        "choiceId": "return"
+      }
+    }
+  ],
+  "exactResultContinuations": [
+    {
+      "outcome": "success",
+      "result": "lumber.forest.success"
+    },
+    {
+      "outcome": "escape",
+      "result": "lumber.forest.escape"
+    },
+    {
+      "outcome": "failure",
+      "result": "lumber.forest.failure"
+    }
+  ],
+  "invariants": {
+    "mappingCount": 3,
+    "stableEventChoiceIdentity": true,
+    "renderLocaleAtReadTime": true,
+    "rewriteSavedHistoryOnLocaleSwitch": false,
+    "replayEffects": false,
+    "changesActivityResult": false,
+    "changesRng": false,
+    "changesSaveSchema": false
+  }
+}
