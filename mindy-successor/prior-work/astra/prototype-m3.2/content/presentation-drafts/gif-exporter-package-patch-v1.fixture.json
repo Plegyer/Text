@@ -1,0 +1,24 @@
+{
+  "formatVersion": 1,
+  "kind": "gif-exporter-package-patch-fixture",
+  "status": "FUTURE_PACKAGE_JSON_DELTA_ONLY_NOT_APPLIED",
+  "currentMainBaseline": "01b31b9ab0d0267d95edf5b5b80638acd63f5c04",
+  "target": "package.json",
+  "patch": {
+    "devDependencies": {
+      "gifenc": "1.0.3",
+      "sharp": "0.35.4"
+    },
+    "scripts": {
+      "media:export-gif": "node tools/export-presentation-gif.mjs"
+    }
+  },
+  "constraints": {
+    "exactVersionsOnly": true,
+    "devDependenciesOnly": true,
+    "runtimeDependenciesUnchanged": true,
+    "packageJsonModifiedByThisFixture": false,
+    "packageLockModifiedByThisFixture": false
+  },
+  "lockfileInstruction": "If Lead approves, generate package-lock.json with npm install --save-dev --save-exact sharp@0.35.4 gifenc@1.0.3; do not hand-author integrity/platform entries."
+}
