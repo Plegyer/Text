@@ -922,6 +922,8 @@ test('renderer: Forest route-specific presentation stays locale and save invaria
   const imgRu=w.document.querySelector('.media-window img');
   assert.match(imgRu?.getAttribute('src')??'',/forest-route-logging-road\.svg$/);
   assert.match(imgRu?.getAttribute('alt')??'',/Лесовозная дорога с колеями/);
+  assert.match(w.document.querySelector('.dialogue')?.textContent??'',/Маршрут: Лесовозная дорога/);
+  assert.doesNotMatch(w.document.querySelector('.dialogue')?.textContent??'',/logging-road/);
 
   w.document.querySelector('[data-panel="menu"]').click();
   w.document.querySelector('#language-toggle').click();
@@ -932,6 +934,8 @@ test('renderer: Forest route-specific presentation stays locale and save invaria
   const imgEn=w.document.querySelector('.media-window img');
   assert.equal(imgEn?.getAttribute('src'),imgRu?.getAttribute('src'));
   assert.match(imgEn?.getAttribute('alt')??'',/Logging road with wheel ruts/);
+  assert.match(w.document.querySelector('.dialogue')?.textContent??'',/Route: Logging road/);
+  assert.doesNotMatch(w.document.querySelector('.dialogue')?.textContent??'',/logging-road/);
   const after=JSON.parse(w.localStorage.getItem('portal-life.v1'));
   assert.equal(after.run.flow.activity.internalState.routeId,'logging-road');
   assert.equal(after.run.flow.activity.rngState,beforeParsed.run.flow.activity.rngState);
@@ -991,6 +995,32 @@ test('renderer: ending cards localize RU EN without changing eligibility or save
   w.document.querySelector('[data-panel="legacy"]').click();
   assert.match(w.document.querySelector('.panel')?.textContent??'',/One of the Crew/);
   assert.match(w.document.querySelector('.panel')?.textContent??'',/Five shop practices/);
+  assert.equal(w.localStorage.getItem('portal-life.v1'),before);
+  assert.deepEqual(errors,[]);
+ }finally{dom.window.close();}
+});
+
+
+test('renderer: Stats profession labels localize without save changes',async()=>{
+ const s=started();
+ const {w,dom,errors}=boot(JSON.stringify(s));try{
+  await wait(()=>!!w.document.querySelector('[data-panel="stats"]'));
+  const before=w.localStorage.getItem('portal-life.v1');
+
+  w.document.querySelector('[data-panel="stats"]').click();
+  assert.match(w.document.querySelector('.panel')?.textContent??'',/Смена лесоруба/);
+  assert.doesNotMatch(w.document.querySelector('.panel')?.textContent??'',/lumber\.shift/);
+  w.document.querySelector('#close').click();
+
+  w.document.querySelector('[data-panel="menu"]').click();
+  w.document.querySelector('#language-toggle').click();
+  await wait(()=>w.document.documentElement.lang==='en');
+  assert.equal(w.localStorage.getItem('portal-life.v1'),before);
+  w.document.querySelector('#close').click();
+
+  w.document.querySelector('[data-panel="stats"]').click();
+  assert.match(w.document.querySelector('.panel')?.textContent??'',/Lumber shift/);
+  assert.doesNotMatch(w.document.querySelector('.panel')?.textContent??'',/lumber\.shift/);
   assert.equal(w.localStorage.getItem('portal-life.v1'),before);
   assert.deepEqual(errors,[]);
  }finally{dom.window.close();}
