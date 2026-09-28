@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 1,
+  "id": "forest.route-seam-ui-expectation.v5",
+  "status": "NATURAL_PATH_PRESENTATION_EXPECTATION_POST_PR54",
+  "baseMain": "295e6fc74d235f0b7555794555a18373451e8b7e",
+  "paths": [
+    {
+      "routeOptionId": "forest.route.logging-road",
+      "routeState": "logging-road",
+      "authoritativeConditions": [],
+      "naturalPath": [
+        {
+          "step": "openExplore",
+          "uiPanel": "explore"
+        },
+        {
+          "step": "enterActivity",
+          "activityId": "lumber.forest",
+          "expectedPresentationId": "activity/forest/route/default"
+        },
+        {
+          "step": "chooseRoute",
+          "optionId": "forest.route.logging-road",
+          "expectedRouteState": "logging-road",
+          "expectedPresentationId": "activity/forest/route/logging-road"
+        },
+        {
+          "step": "continueActivity",
+          "note": "presentation lookup must not alter available gameplay actions or state"
+        }
+      ],
+      "frozenInvariants": {
+        "activityId": "lumber.forest",
+        "routeState": "logging-road",
+        "selectedOptionId": "forest.route.logging-road",
+        "saveWritesFromPresentation": false,
+        "globalRngConsumedByPresentation": false,
+        "activityRngConsumedByPresentation": false,
+        "routeAvailabilityChangedByPresentation": false,
+        "resultContinuations": {
+          "success": {
+            "kind": "activityResult",
+            "activity": "lumber.forest",
+            "outcome": "success",
+            "result": "lumber.forest.success"
+          },
+          "escape": {
+            "kind": "activityResult",
+            "activity": "lumber.forest",
+            "outcome": "escape",
+            "result": "lumber.forest.escape"
+          },
+          "failure": {
+            "kind": "activityResult",
+            "activity": "lumber.forest",
+            "outcome": "failure",
+            "result": "lumber.forest.failure"
+          }
+        }
+      }
+    },
+    {
+      "routeOptionId": "forest.route.old-boundary",
+      "routeState": "old-boundary",
+      "authoritativeConditions": [
+        {
+          "kind": "itemCapability",
+          "capability": "enter_old_boundary",
+          "present": true
+        }
+      ],
+      "naturalPath": [
+        {
+          "step": "openExplore",
+          "uiPanel": "explore"
+        },
+        {
+          "step": "enterActivity",
+          "activityId": "lumber.forest",
+          "expectedPresentationId": "activity/forest/route/default"
+        },
+        {
+          "step": "chooseRoute",
+          "optionId": "forest.route.old-boundary",
+          "expectedRouteState": "old-boundary",
+          "expectedPresentationId": "activity/forest/route/old-boundary"
+        },
+        {
+          "step": "continueActivity",
+          "note": "presentation lookup must not alter available gameplay actions or state"
+        }
+      ],
+      "frozenInvariants": {
+        "activityId": "lumber.forest",
+        "routeState": "old-boundary",
+        "selectedOptionId": "forest.route.old-boundary",
+        "saveWritesFromPresentation": false,
+        "globalRngConsumedByPresentation": false,
+        "activityRngConsumedByPresentation": false,
+        "routeAvailabilityChangedByPresentation": false,
+        "resultContinuations": {
+          "success": {
+            "kind": "activityResult",
+            "activity": "lumber.forest",
+            "outcome": "success",
+            "result": "lumber.forest.success"
+          },
+          "escape": {
+            "kind": "activityResult",
+            "activity": "lumber.forest",
+            "outcome": "escape",
+            "result": "lumber.forest.escape"
+          },
+          "failure": {
+            "kind": "activityResult",
+            "activity": "lumber.forest",
+            "outcome": "failure",
+            "result": "lumber.forest.failure"
+          }
+        }
+      }
+    }
+  ],
+  "hardWorkInvariant": {
+    "endingId": "ending.lumber.hard-work",
+    "conditions": [
+      {
+        "kind": "careerCounter",
+        "career": "lumber",
+        "counter": "completed_shifts",
+        "op": "gte",
+        "value": 50
+      }
+    ],
+    "metaRewards": [
+      {
+        "kind": "hardWork",
+        "rewardId": "hardWork:lumber",
+        "career": "lumber"
+      }
+    ]
+  },
+  "invariants": {
+    "defaultBeforeSelection": true,
+    "routeSpecificAfterSelection": true,
+    "changesSave": false,
+    "changesRng": false,
+    "changesResults": false,
+    "changesHardWork": false
+  }
+}
