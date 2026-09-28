@@ -1,0 +1,44 @@
+{
+  "formatVersion": 4,
+  "kind": "forest-route-static-localization-candidate",
+  "status": "CANDIDATE_NOT_ROOT_LOADED",
+  "sourceLocale": "ru",
+  "supportedLocales": [
+    "ru",
+    "en"
+  ],
+  "strings": {
+    "presentation.static.forest.route.logging-road.alt": {
+      "ru": "Широкая лесовозная дорога с колеями, срезанными ветками и обычными следами лесных работ.",
+      "en": "A broad logging road with wheel ruts, cut branches, and ordinary signs of forest work."
+    },
+    "presentation.static.forest.route.logging-road.caption": {
+      "ru": "Лесовозная дорога проходит через рабочую часть леса.",
+      "en": "The logging road runs through the worked part of the forest."
+    },
+    "presentation.static.forest.route.old-boundary.alt": {
+      "ru": "Узкая старая межевая тропа проходит между выветренными камнями и старыми отметинами.",
+      "en": "A narrow old boundary path runs between weathered stones and old markings."
+    },
+    "presentation.static.forest.route.old-boundary.caption": {
+      "ru": "Старая межевая тропа идёт вдоль линии камней.",
+      "en": "The old boundary path follows a line of stones."
+    }
+  },
+  "bindings": {
+    "activity/forest/route/logging-road": {
+      "altKey": "presentation.static.forest.route.logging-road.alt",
+      "captionKey": "presentation.static.forest.route.logging-road.caption"
+    },
+    "activity/forest/route/old-boundary": {
+      "altKey": "presentation.static.forest.route.old-boundary.alt",
+      "captionKey": "presentation.static.forest.route.old-boundary.caption"
+    }
+  },
+  "invariants": {
+    "normalizedKeyGrammar": "presentation.static.forest.route.<route>.alt|caption",
+    "mediaIdentityLocaleNeutral": true,
+    "routeSelectionLocaleNeutral": true,
+    "gameplayFields": false
+  }
+}
