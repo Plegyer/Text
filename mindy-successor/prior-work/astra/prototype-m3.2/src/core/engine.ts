@@ -126,7 +126,11 @@ export function attachLegacyFacade(s:Save):Save{
   if(!Object.getOwnPropertyDescriptor(r,'pending'))defineCompat(r,'pending',()=>r.flow.pendingScene,(v:typeof r.flow.pendingScene)=>{r.flow.pendingScene=v;});
   if(!Object.getOwnPropertyDescriptor(r,'availableEndings'))defineCompat(r,'availableEndings',()=>r.endings.eligible,(v:string[])=>{r.endings.eligible=v;});
   if(!Object.getOwnPropertyDescriptor(r,'acceptedEnding'))defineCompat(r,'acceptedEnding',()=>r.endings.committed,(v:string|null)=>{r.endings.committed=v;});
-  if(!Object.getOwnPropertyDescriptor(r,'journal'))defineCompat(r,'journal',()=>r.historyState.journal,(v:string[])=>{r.historyState.journal=v;});
+  if(!Object.getOwnPropertyDescriptor(r,'journal'))defineCompat(r,'journal',()=>r.historyState.journal,(v:string[])=>{
+    r.historyState.journal=v;
+    const refs=r.historyState.journalRefs??[];
+    r.historyState.journalRefs=v.map((_,index)=>refs[index]??null);
+  });
   attachMetaFacade(s.meta);
   return s;
 }
