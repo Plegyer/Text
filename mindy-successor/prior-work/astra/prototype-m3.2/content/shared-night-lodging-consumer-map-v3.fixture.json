@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "id": "shared-night-lodging-consumer-map.v3",
+  "status": "POST_PR58_ZERO_DELTA_CONSUMER_MAP",
+  "baseMain": "52ddc76148e33836d3161b63bf4c25ffb5c39d02",
+  "sourceUi": {
+    "path": "src/ui/app.ts",
+    "sha": "25a23d5fe80a4ca9a2cb991add67eb92c9b516a6"
+  },
+  "sourceDelta": "content/poverty-shared-ui-localization-v6.fixture.json",
+  "entries": [],
+  "shippedConsumers": [
+    {
+      "key": "ui.night.eyebrow",
+      "seams": [
+        "central:LodgingResolution.eyebrow",
+        "central:VoluntaryNightChoice.eyebrow",
+        "central:NightFallback.eyebrow"
+      ]
+    },
+    {
+      "key": "ui.night.lodging.prompt",
+      "seams": [
+        "central:LodgingResolution.prompt"
+      ]
+    },
+    {
+      "key": "ui.night.nextDayEnergy",
+      "seams": [
+        "central:LodgingResolution.nextDayEnergy",
+        "nightChoiceList:generic.nextDayEnergy"
+      ]
+    },
+    {
+      "key": "ui.night.choice.title",
+      "seams": [
+        "central:VoluntaryNightChoice.title"
+      ]
+    },
+    {
+      "key": "ui.night.choice.prompt",
+      "seams": [
+        "central:VoluntaryNightChoice.prompt"
+      ]
+    },
+    {
+      "key": "ui.night.choice.slot",
+      "seams": [
+        "nightChoiceList:generic.context"
+      ]
+    },
+    {
+      "key": "ui.night.choice.select",
+      "seams": [
+        "nightChoiceList:generic.button"
+      ]
+    },
+    {
+      "key": "ui.night.sequence.title",
+      "seams": [
+        "central:NightFallback.title"
+      ]
+    },
+    {
+      "key": "ui.result.chooseLodging",
+      "seams": [
+        "central:result.energyZero.bridge"
+      ]
+    },
+    {
+      "key": "ui.town.lodgingToday",
+      "seams": [
+        "central:town.lodgingSummary"
+      ]
+    },
+    {
+      "key": "lodging.lodging.normal.label",
+      "seams": [
+        "central:LodgingResolution.lodging.normal"
+      ]
+    },
+    {
+      "key": "lodging.lodging.cheap.label",
+      "seams": [
+        "central:LodgingResolution.lodging.cheap"
+      ]
+    },
+    {
+      "key": "lodging.lodging.street.label",
+      "seams": [
+        "central:LodgingResolution.lodging.street"
+      ]
+    },
+    {
+      "key": "housing.room.label",
+      "seams": [
+        "central:town.housingLabel.room"
+      ]
+    },
+    {
+      "key": "housing.hostel.label",
+      "seams": [
+        "central:town.housingLabel.hostel"
+      ]
+    },
+    {
+      "key": "housing.shelter.label",
+      "seams": [
+        "central:town.housingLabel.shelter"
+      ]
+    },
+    {
+      "key": "nightChoice.night.sleep.label",
+      "seams": [
+        "localizedNightChoiceLabel:night.sleep"
+      ]
+    }
+  ],
+  "supersededPanelConsumers": [
+    {
+      "supersededKey": "ui.night.panel.title",
+      "currentKey": "ui.sleep.title",
+      "seam": "panelContent:sleep.heading"
+    },
+    {
+      "supersededKey": "ui.night.panel.description",
+      "currentKey": "ui.sleep.help",
+      "seam": "panelContent:sleep.description"
+    },
+    {
+      "supersededKey": "ui.night.panel.start",
+      "currentKey": "ui.sleep.startButton",
+      "seam": "panelContent:sleep.startButton"
+    }
+  ],
+  "invariants": {
+    "deltaKeyCount": 0,
+    "uiEditsIncluded": false,
+    "gameplayIdsUnchanged": true,
+    "saveStateUnchanged": true
+  }
+}
