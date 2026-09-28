@@ -3,17 +3,17 @@
 Status: COMPLETE / CURRENT_MAIN_CI_GREEN
 
 Current main:
-`6e2a5147603b71eed89a0966af417a33dd28d7a7`
-(PR54 journal/outcome stable-ref merge).
+`295e6fc74d235f0b7555794555a18373451e8b7e`
+(PR55 shared Night/lodging localization merge).
 
 ## Latest successful main push
 
 Workflow:
 - `mindy-successor check`;
-- run #97;
-- id `36402495113`;
+- run #99;
+- id `36403132544`;
 - event: push;
-- head SHA: `6e2a5147603b71eed89a0966af417a33dd28d7a7`;
+- head SHA: `295e6fc74d235f0b7555794555a18373451e8b7e`;
 - conclusion: SUCCESS.
 
 Validator:
@@ -23,33 +23,45 @@ Validator:
 - endings: 9.
 
 Tests:
-- 338 total;
-- 338 pass;
+- 342 total;
+- 342 pass;
 - 0 fail.
 
-## PR54 exact-head corroboration
+## PR55 exact-head corroboration
 
-Accepted exact head:
-`81664ef3cf70e58daaa7b323dd42267971860088`.
+Accepted PR55 head:
+`724ab70a5a83424fb8a576c3deb082b60256ffc0`.
 
-Workflow:
-- run #96;
-- id `36402224927`;
+Run #98:
+- id `36402925719`;
 - SUCCESS;
 - validator 17 / 46 / 35 / 9;
-- 338 / 338 tests.
+- 342 / 342 tests.
 
-Relevant new/compatibility tests PASS:
-- stable event-choice refs stored beside fallback text;
-- old schema-4 save without refs loads with null refs;
-- malformed ref alignment rejected;
-- existing School reload/result regressions;
-- Journal/lastAction RU↔EN stable-ref rendering preserves Save.
+Relevant PASS:
+- exact 16 additive RU+EN Night UI keys;
+- stable localization consumers without NightFlow mechanic change;
+- presentation-only fixture;
+- renderer shared Night/lodging RU↔EN without state drift;
+- existing exactly-once lodging/Night regressions.
 
-## Current localization floor
+## PR54 floor retained
 
-Root localization:
-`540` keys.
+PR54 stable journal/outcome refs remain shipped beneath current main.
+
+PR54 merge:
+`6e2a5147603b71eed89a0966af417a33dd28d7a7`.
+
+Run #97:
+- 338/338;
+- validator 17/46/35/9.
+
+Current 342-test suite retains stable-ref, old-save and School compatibility regressions.
+
+## Localization floor
+
+Current root localization:
+`556`.
 
 Missing RU:
 `0`.
@@ -57,18 +69,18 @@ Missing RU:
 Missing EN:
 `0`.
 
-Fully root-localized events:
-`40 / 46`.
+Event coverage:
+`40 / 46` fully root-localized.
 
-Choice-label coverage:
+Choice labels:
 `59 / 68`.
 
-Choice-body coverage:
+Choice bodies:
 `59 / 68`.
 
-## Current static-media floor
+## Static floor
 
-Active project-owned static semantic mappings:
+Active project-owned static mappings:
 `80`.
 
 Unique active project-owned sources:
@@ -77,91 +89,55 @@ Unique active project-owned sources:
 Established target:
 `80 / 80`.
 
-Current route-specific Forest slots:
-`0`
-for logging-road/old-boundary.
+Presentation blob remains:
+`0bed8e1a4a88358b7e1e8ef22d787f5bcee323f4`.
 
-This absence is intentional until the reviewed presentation seam ships.
+## Current app floor
 
-## Current stable-ref compatibility floor
+App blob:
+`8bc496f8678640e7134730dda943e326a9379fb1`.
 
-Current main must preserve:
-- schemaVersion 4 old-save omission compatibility;
-- `journal.length === journalRefs.length`;
-- legacy `run.journal=` assignment realignment;
-- School direct journal producer realignment;
-- no fuzzy prose migration;
-- School course result priority;
-- locale-only Journal/result rendering with unchanged Save.
-
-## Previous integration floors retained
-
-PR53 global UI shell:
-- shipped;
-- Save-invariance renderer tests retained.
-
-PR52 legacy root localization:
-- shipped;
-- production localization regressions retained.
-
-PR51 poverty copyedit:
-- shipped;
-- natural-path and pending-scene locale invariance retained.
-
-PR50 Forest route/default:
-- shipped;
-- generic neutral route static and natural-path invariance retained.
+PR55 localizes current Night/lodging presentation seams without changing NightFlow mechanics.
 
 ## Minimum next-integration floor
 
 Unless intentionally reviewed:
-- validator must remain 17 packs / 46 events / 35 actions / 9 endings;
-- existing test count must not drop below 338;
-- failures must remain 0;
-- root localization must not silently lose keys;
-- active project-owned static mapping count must remain at least 80;
+- validator remains 17 packs / 46 events / 35 actions / 9 endings;
+- test count does not drop below 342;
+- failures remain 0;
+- root localization does not silently lose current 556 keys;
+- active project-owned static mappings remain >=80;
 - static target remains 80/80.
 
-## Locked gameplay invariants
+## Locked invariants
 
-Continue to protect:
+Protect:
 - Lumber Hard Work only `completed_shifts >= 50`;
-- meta reward `hardWork:lumber`;
-- Forest success/escape/failure exact result IDs;
-- exact activityResult reactions;
+- reward `hardWork:lumber`;
+- exact Forest results/reactions;
 - Old Boundary `enter_old_boundary` gate;
 - School locale Save invariance;
-- ordinary-poverty natural paths;
-- Foreman voluntary Night mechanics;
-- Night/lodging exact costs/effects;
-- gameplay RNG independent of presentation selection.
+- poverty natural paths;
+- PR54 journal-ref compatibility/no fuzzy migration;
+- Night lodging costs/housing/next-day effects;
+- Foreman voluntary Night behavior;
+- presentation/media resolution independent of gameplay RNG.
 
-## Future shared-UI/presentation work
+## Next route/presentation work
 
-Shared Night UI:
-- only 16 genuinely additive keys after PR53/54 rebase.
-
-Forest route-specific:
-- pure presentation seam + 10 additive localization keys;
-- no gameplay/result/Hard Work mutation.
+Forest route-specific seam:
+- pure presentation mapping only;
+- 10 additive localized route keys;
+- no route/result/Hard Work mutation.
 
 Animation exporter:
-- dev-only candidate acceptable only after exact dependency/CI approval;
-- no real production GIF claim until actual bytes/pools exist.
-
-## Future CI evidence
-
-Require:
-- exact head SHA;
-- exact successful workflow;
-- validator counts;
-- total/pass/fail;
-- domain regressions;
-- successful post-merge main push.
+- dev-only candidate design acceptable;
+- package/lock integration still requires Lead approval and native CI verification;
+- no production GIFs yet.
 
 ## Verdict
 
 `CURRENT_MAIN_CI_GREEN`.
 
-Authoritative current floor:
-`main 6e2a514... / run #97 / 338 of 338 passing / 17 packs, 46 events, 35 actions, 9 endings / static 80 of 80`.
+Authoritative floor:
+`main 295e6fc... / run #99 / 342 of 342 passing / 17 packs, 46 events, 35 actions, 9 endings / static 80 of 80`.
