@@ -1,0 +1,533 @@
+{
+  "schemaVersion": 1,
+  "id": "poverty.presentation-identity-map.v2",
+  "status": "CURRENT_MAIN_PRESENTATION_ONLY",
+  "baseMain": "52ddc76148e33836d3161b63bf4c25ffb5c39d02",
+  "derivation": "location/town/event/<clean-event-id>/<clean-variant-id>",
+  "events": [
+    {
+      "packId": "poverty-street-production",
+      "eventId": "poverty-street-production.helpful-summer",
+      "variants": [
+        {
+          "variantId": "default",
+          "presentationId": "location/town/event/poverty-street-production-helpful-summer/default",
+          "rootSlotPresent": true
+        }
+      ],
+      "choiceResults": [
+        {
+          "choiceId": "take-errand",
+          "journalResultIdentity": {
+            "kind": "eventChoice",
+            "eventId": "poverty-street-production.helpful-summer",
+            "choiceId": "take-errand"
+          },
+          "presentationIdsPossibleForResolvedChoice": [
+            "location/town/event/poverty-street-production-helpful-summer/default"
+          ],
+          "createsResultPresentationId": false
+        },
+        {
+          "choiceId": "keep-resting",
+          "journalResultIdentity": {
+            "kind": "eventChoice",
+            "eventId": "poverty-street-production.helpful-summer",
+            "choiceId": "keep-resting"
+          },
+          "presentationIdsPossibleForResolvedChoice": [
+            "location/town/event/poverty-street-production-helpful-summer/default"
+          ],
+          "createsResultPresentationId": false
+        }
+      ]
+    },
+    {
+      "packId": "poverty-street-production",
+      "eventId": "poverty-street-production.neutral-autumn",
+      "variants": [
+        {
+          "variantId": "default",
+          "presentationId": "location/town/event/poverty-street-production-neutral-autumn/default",
+          "rootSlotPresent": true
+        }
+      ],
+      "choiceResults": [
+        {
+          "choiceId": "settle-in",
+          "journalResultIdentity": {
+            "kind": "eventChoice",
+            "eventId": "poverty-street-production.neutral-autumn",
+            "choiceId": "settle-in"
+          },
+          "presentationIdsPossibleForResolvedChoice": [
+            "location/town/event/poverty-street-production-neutral-autumn/default"
+          ],
+          "createsResultPresentationId": false
+        }
+      ]
+    },
+    {
+      "packId": "poverty-street-production",
+      "eventId": "poverty-street-production.pressure-winter",
+      "variants": [
+        {
+          "variantId": "default",
+          "presentationId": "location/town/event/poverty-street-production-pressure-winter/default",
+          "rootSlotPresent": true
+        }
+      ],
+      "choiceResults": [
+        {
+          "choiceId": "take-shelter",
+          "journalResultIdentity": {
+            "kind": "eventChoice",
+            "eventId": "poverty-street-production.pressure-winter",
+            "choiceId": "take-shelter"
+          },
+          "presentationIdsPossibleForResolvedChoice": [
+            "location/town/event/poverty-street-production-pressure-winter/default"
+          ],
+          "createsResultPresentationId": false
+        },
+        {
+          "choiceId": "keep-moving",
+          "journalResultIdentity": {
+            "kind": "eventChoice",
+            "eventId": "poverty-street-production.pressure-winter",
+            "choiceId": "keep-moving"
+          },
+          "presentationIdsPossibleForResolvedChoice": [
+            "location/town/event/poverty-street-production-pressure-winter/default"
+          ],
+          "createsResultPresentationId": false
+        }
+      ]
+    },
+    {
+      "packId": "poverty-street-production-v2",
+      "eventId": "poverty-street-production-v2.helpful-summer-shade",
+      "variants": [
+        {
+          "variantId": "market-closing",
+          "presentationId": "location/town/event/poverty-street-production-v2-helpful-summer-shade/market-closing",
+          "rootSlotPresent": false
+        },
+        {
+          "variantId": "late-shade",
+          "presentationId": "location/town/event/poverty-street-production-v2-helpful-summer-shade/late-shade",
+          "rootSlotPresent": false
+        }
+      ],
+      "choiceResults": [
+        {
+          "choiceId": "take-small-task",
+          "journalResultIdentity": {
+            "kind": "eventChoice",
+            "eventId": "poverty-street-production-v2.helpful-summer-shade",
+            "choiceId": "take-small-task"
+          },
+          "presentationIdsPossibleForResolvedChoice": [
+            "location/town/event/poverty-street-production-v2-helpful-summer-shade/market-closing",
+            "location/town/event/poverty-street-production-v2-helpful-summer-shade/late-shade"
+          ],
+          "createsResultPresentationId": false
+        },
+        {
+          "choiceId": "keep-place",
+          "journalResultIdentity": {
+            "kind": "eventChoice",
+            "eventId": "poverty-street-production-v2.helpful-summer-shade",
+            "choiceId": "keep-place"
+          },
+          "presentationIdsPossibleForResolvedChoice": [
+            "location/town/event/poverty-street-production-v2-helpful-summer-shade/market-closing",
+            "location/town/event/poverty-street-production-v2-helpful-summer-shade/late-shade"
+          ],
+          "createsResultPresentationId": false
+        }
+      ]
+    },
+    {
+      "packId": "poverty-street-production-v2",
+      "eventId": "poverty-street-production-v2.neutral-autumn-crossing",
+      "variants": [
+        {
+          "variantId": "drizzle",
+          "presentationId": "location/town/event/poverty-street-production-v2-neutral-autumn-crossing/drizzle",
+          "rootSlotPresent": false
+        },
+        {
+          "variantId": "dry-arcade",
+          "presentationId": "location/town/event/poverty-street-production-v2-neutral-autumn-crossing/dry-arcade",
+          "rootSlotPresent": false
+        }
+      ],
+      "choiceResults": [
+        {
+          "choiceId": "wait-out-night",
+          "journalResultIdentity": {
+            "kind": "eventChoice",
+            "eventId": "poverty-street-production-v2.neutral-autumn-crossing",
+            "choiceId": "wait-out-night"
+          },
+          "presentationIdsPossibleForResolvedChoice": [
+            "location/town/event/poverty-street-production-v2-neutral-autumn-crossing/drizzle",
+            "location/town/event/poverty-street-production-v2-neutral-autumn-crossing/dry-arcade"
+          ],
+          "createsResultPresentationId": false
+        }
+      ]
+    },
+    {
+      "packId": "poverty-street-production-v2",
+      "eventId": "poverty-street-production-v2.pressure-winter-wind",
+      "variants": [
+        {
+          "variantId": "crosswind",
+          "presentationId": "location/town/event/poverty-street-production-v2-pressure-winter-wind/crosswind",
+          "rootSlotPresent": false
+        },
+        {
+          "variantId": "long-gusts",
+          "presentationId": "location/town/event/poverty-street-production-v2-pressure-winter-wind/long-gusts",
+          "rootSlotPresent": false
+        }
+      ],
+      "choiceResults": [
+        {
+          "choiceId": "use-recess",
+          "journalResultIdentity": {
+            "kind": "eventChoice",
+            "eventId": "poverty-street-production-v2.pressure-winter-wind",
+            "choiceId": "use-recess"
+          },
+          "presentationIdsPossibleForResolvedChoice": [
+            "location/town/event/poverty-street-production-v2-pressure-winter-wind/crosswind",
+            "location/town/event/poverty-street-production-v2-pressure-winter-wind/long-gusts"
+          ],
+          "createsResultPresentationId": false
+        },
+        {
+          "choiceId": "keep-walking",
+          "journalResultIdentity": {
+            "kind": "eventChoice",
+            "eventId": "poverty-street-production-v2.pressure-winter-wind",
+            "choiceId": "keep-walking"
+          },
+          "presentationIdsPossibleForResolvedChoice": [
+            "location/town/event/poverty-street-production-v2-pressure-winter-wind/crosswind",
+            "location/town/event/poverty-street-production-v2-pressure-winter-wind/long-gusts"
+          ],
+          "createsResultPresentationId": false
+        }
+      ]
+    },
+    {
+      "packId": "poverty-cheap-production",
+      "eventId": "poverty-cheap-production.shared-quiet-autumn",
+      "variants": [
+        {
+          "variantId": "default",
+          "presentationId": "location/town/event/poverty-cheap-production-shared-quiet-autumn/default",
+          "rootSlotPresent": true
+        }
+      ],
+      "choiceResults": [
+        {
+          "choiceId": "settle-quietly",
+          "journalResultIdentity": {
+            "kind": "eventChoice",
+            "eventId": "poverty-cheap-production.shared-quiet-autumn",
+            "choiceId": "settle-quietly"
+          },
+          "presentationIdsPossibleForResolvedChoice": [
+            "location/town/event/poverty-cheap-production-shared-quiet-autumn/default"
+          ],
+          "createsResultPresentationId": false
+        }
+      ]
+    },
+    {
+      "packId": "poverty-cheap-production-v2",
+      "eventId": "poverty-cheap-production-v2.shared-room-seasons",
+      "variants": [
+        {
+          "variantId": "spring-window",
+          "presentationId": "location/town/event/poverty-cheap-production-v2-shared-room-seasons/spring-window",
+          "rootSlotPresent": false
+        },
+        {
+          "variantId": "summer-heat",
+          "presentationId": "location/town/event/poverty-cheap-production-v2-shared-room-seasons/summer-heat",
+          "rootSlotPresent": false
+        },
+        {
+          "variantId": "winter-stove",
+          "presentationId": "location/town/event/poverty-cheap-production-v2-shared-room-seasons/winter-stove",
+          "rootSlotPresent": false
+        },
+        {
+          "variantId": "shared-room",
+          "presentationId": "location/town/event/poverty-cheap-production-v2-shared-room-seasons/shared-room",
+          "rootSlotPresent": false
+        }
+      ],
+      "choiceResults": [
+        {
+          "choiceId": "settle-in",
+          "journalResultIdentity": {
+            "kind": "eventChoice",
+            "eventId": "poverty-cheap-production-v2.shared-room-seasons",
+            "choiceId": "settle-in"
+          },
+          "presentationIdsPossibleForResolvedChoice": [
+            "location/town/event/poverty-cheap-production-v2-shared-room-seasons/spring-window",
+            "location/town/event/poverty-cheap-production-v2-shared-room-seasons/summer-heat",
+            "location/town/event/poverty-cheap-production-v2-shared-room-seasons/winter-stove",
+            "location/town/event/poverty-cheap-production-v2-shared-room-seasons/shared-room"
+          ],
+          "createsResultPresentationId": false
+        }
+      ]
+    },
+    {
+      "packId": "poverty-recovery-production",
+      "eventId": "poverty-recovery-production.small-coin-help",
+      "variants": [
+        {
+          "variantId": "default",
+          "presentationId": "location/town/event/poverty-recovery-production-small-coin-help/default",
+          "rootSlotPresent": true
+        }
+      ],
+      "choiceResults": [
+        {
+          "choiceId": "take-coins",
+          "journalResultIdentity": {
+            "kind": "eventChoice",
+            "eventId": "poverty-recovery-production.small-coin-help",
+            "choiceId": "take-coins"
+          },
+          "presentationIdsPossibleForResolvedChoice": [
+            "location/town/event/poverty-recovery-production-small-coin-help/default"
+          ],
+          "createsResultPresentationId": false
+        },
+        {
+          "choiceId": "leave-them",
+          "journalResultIdentity": {
+            "kind": "eventChoice",
+            "eventId": "poverty-recovery-production.small-coin-help",
+            "choiceId": "leave-them"
+          },
+          "presentationIdsPossibleForResolvedChoice": [
+            "location/town/event/poverty-recovery-production-small-coin-help/default"
+          ],
+          "createsResultPresentationId": false
+        }
+      ]
+    },
+    {
+      "packId": "poverty-recovery-production",
+      "eventId": "poverty-recovery-production.short-cleanup",
+      "variants": [
+        {
+          "variantId": "default",
+          "presentationId": "location/town/event/poverty-recovery-production-short-cleanup/default",
+          "rootSlotPresent": true
+        }
+      ],
+      "choiceResults": [
+        {
+          "choiceId": "do-cleanup",
+          "journalResultIdentity": {
+            "kind": "eventChoice",
+            "eventId": "poverty-recovery-production.short-cleanup",
+            "choiceId": "do-cleanup"
+          },
+          "presentationIdsPossibleForResolvedChoice": [
+            "location/town/event/poverty-recovery-production-short-cleanup/default"
+          ],
+          "createsResultPresentationId": false
+        },
+        {
+          "choiceId": "keep-resting",
+          "journalResultIdentity": {
+            "kind": "eventChoice",
+            "eventId": "poverty-recovery-production.short-cleanup",
+            "choiceId": "keep-resting"
+          },
+          "presentationIdsPossibleForResolvedChoice": [
+            "location/town/event/poverty-recovery-production-short-cleanup/default"
+          ],
+          "createsResultPresentationId": false
+        }
+      ]
+    },
+    {
+      "packId": "poverty-recovery-production",
+      "eventId": "poverty-recovery-production.herb-bundle",
+      "variants": [
+        {
+          "variantId": "default",
+          "presentationId": "location/town/event/poverty-recovery-production-herb-bundle/default",
+          "rootSlotPresent": true
+        }
+      ],
+      "choiceResults": [
+        {
+          "choiceId": "take-herb",
+          "journalResultIdentity": {
+            "kind": "eventChoice",
+            "eventId": "poverty-recovery-production.herb-bundle",
+            "choiceId": "take-herb"
+          },
+          "presentationIdsPossibleForResolvedChoice": [
+            "location/town/event/poverty-recovery-production-herb-bundle/default"
+          ],
+          "createsResultPresentationId": false
+        },
+        {
+          "choiceId": "leave-herb",
+          "journalResultIdentity": {
+            "kind": "eventChoice",
+            "eventId": "poverty-recovery-production.herb-bundle",
+            "choiceId": "leave-herb"
+          },
+          "presentationIdsPossibleForResolvedChoice": [
+            "location/town/event/poverty-recovery-production-herb-bundle/default"
+          ],
+          "createsResultPresentationId": false
+        }
+      ]
+    },
+    {
+      "packId": "poverty-pressure-production",
+      "eventId": "poverty-pressure-production.cold-rain",
+      "variants": [
+        {
+          "variantId": "default",
+          "presentationId": "location/town/event/poverty-pressure-production-cold-rain/default",
+          "rootSlotPresent": true
+        }
+      ],
+      "choiceResults": [
+        {
+          "choiceId": "take-doorway",
+          "journalResultIdentity": {
+            "kind": "eventChoice",
+            "eventId": "poverty-pressure-production.cold-rain",
+            "choiceId": "take-doorway"
+          },
+          "presentationIdsPossibleForResolvedChoice": [
+            "location/town/event/poverty-pressure-production-cold-rain/default"
+          ],
+          "createsResultPresentationId": false
+        },
+        {
+          "choiceId": "wait-it-out",
+          "journalResultIdentity": {
+            "kind": "eventChoice",
+            "eventId": "poverty-pressure-production.cold-rain",
+            "choiceId": "wait-it-out"
+          },
+          "presentationIdsPossibleForResolvedChoice": [
+            "location/town/event/poverty-pressure-production-cold-rain/default"
+          ],
+          "createsResultPresentationId": false
+        }
+      ]
+    },
+    {
+      "packId": "poverty-pressure-production",
+      "eventId": "poverty-pressure-production.noisy-loading",
+      "variants": [
+        {
+          "variantId": "default",
+          "presentationId": "location/town/event/poverty-pressure-production-noisy-loading/default",
+          "rootSlotPresent": true
+        }
+      ],
+      "choiceResults": [
+        {
+          "choiceId": "move-corner",
+          "journalResultIdentity": {
+            "kind": "eventChoice",
+            "eventId": "poverty-pressure-production.noisy-loading",
+            "choiceId": "move-corner"
+          },
+          "presentationIdsPossibleForResolvedChoice": [
+            "location/town/event/poverty-pressure-production-noisy-loading/default"
+          ],
+          "createsResultPresentationId": false
+        },
+        {
+          "choiceId": "stay-put",
+          "journalResultIdentity": {
+            "kind": "eventChoice",
+            "eventId": "poverty-pressure-production.noisy-loading",
+            "choiceId": "stay-put"
+          },
+          "presentationIdsPossibleForResolvedChoice": [
+            "location/town/event/poverty-pressure-production-noisy-loading/default"
+          ],
+          "createsResultPresentationId": false
+        }
+      ]
+    },
+    {
+      "packId": "poverty-pressure-production",
+      "eventId": "poverty-pressure-production.muddy-splash",
+      "variants": [
+        {
+          "variantId": "default",
+          "presentationId": "location/town/event/poverty-pressure-production-muddy-splash/default",
+          "rootSlotPresent": true
+        }
+      ],
+      "choiceResults": [
+        {
+          "choiceId": "wipe-down",
+          "journalResultIdentity": {
+            "kind": "eventChoice",
+            "eventId": "poverty-pressure-production.muddy-splash",
+            "choiceId": "wipe-down"
+          },
+          "presentationIdsPossibleForResolvedChoice": [
+            "location/town/event/poverty-pressure-production-muddy-splash/default"
+          ],
+          "createsResultPresentationId": false
+        },
+        {
+          "choiceId": "leave-for-morning",
+          "journalResultIdentity": {
+            "kind": "eventChoice",
+            "eventId": "poverty-pressure-production.muddy-splash",
+            "choiceId": "leave-for-morning"
+          },
+          "presentationIdsPossibleForResolvedChoice": [
+            "location/town/event/poverty-pressure-production-muddy-splash/default"
+          ],
+          "createsResultPresentationId": false
+        }
+      ]
+    }
+  ],
+  "resultPolicy": {
+    "stableResolvedIdentity": "eventChoice(eventId, choiceId)",
+    "note": "A resolved choice does not create a new gameplay/result presentation namespace. It remains associated with the already-selected event/variant semantic presentation context.",
+    "createsNewGameplayResultId": false
+  },
+  "invariants": {
+    "eventCount": 14,
+    "variantCount": 20,
+    "presentationOnly": true,
+    "createsGameplayIds": false,
+    "changesConditions": false,
+    "changesEffects": false,
+    "changesRng": false,
+    "changesSaveState": false,
+    "secretDebtIncluded": false
+  }
+}
