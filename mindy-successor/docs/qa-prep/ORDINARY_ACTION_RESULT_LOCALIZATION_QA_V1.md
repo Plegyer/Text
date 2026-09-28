@@ -1,38 +1,21 @@
 # Ordinary action result localization QA v1
 
-Status: COMPLETE / GREEN_TEXT_SOURCE / SHARED_CONSUMER_REQUIRED
+Status: COMPLETE / GREEN_SOURCE / SHIPPED_GREEN_VIA_PR61
 
-Current main:
-`54131488c65302f81b3001abaaa345d21f0281e2`.
-
-Reviewed Chat 5 items:
+Reviewed Chat5 items:
 `140–143`.
 
 Key map:
-`content/ordinary-action-result-key-map-v2.fixture.json`.
-
-Blob:
-`646c565e1f8139ffb0ba37c7d84d6112d12de6b4`.
+`ordinary-action-result-key-map-v2.fixture.json`
+blob `646c565e1f8139ffb0ba37c7d84d6112d12de6b4`.
 
 Localization source:
-`content/ordinary-action-result-localization-v2.fixture.json`.
+`ordinary-action-result-localization-v2.fixture.json`
+blob `628a450dfe9b5e2ee32b7dfbec0ea172f7941e98`.
 
-Blob:
-`628a450dfe9b5e2ee32b7dfbec0ea172f7941e98`.
+## Exact actionId + sceneId mapping
 
-## Exact current identity map
-
-Mapped ordinary actions:
-`16`.
-
-Every mapped actionId exists in exact current definitions.
-
-Every mapped current scene ID is:
-`default`.
-
-No scene mismatch found.
-
-Mapped actions:
+Exactly 16 current actions, each with exact scene `default`:
 - work;
 - forage;
 - brew;
@@ -50,129 +33,94 @@ Mapped actions:
 - tavern-talk;
 - landlord.
 
-This source intentionally does not claim all 35 current actions.
+All 16 action IDs and all 16 default scene IDs exist on current main.
 
-It is the reviewed ordinary/legacy result slice only.
+## Localization completeness
 
-## Stable localization keys
+Per action:
+- `action.<id>.label`;
+- `action.<id>.scene.default.text`.
 
-Per mapped action:
-- title: `action.<actionId>.label`;
-- body: `action.<actionId>.scene.default.text`.
-
-Total localization strings:
+Total strings:
 `32`.
-
-Expected from 16 × 2:
-`32`.
-
-Missing expected key:
-`0`.
-
-Extra key:
-`0`.
-
-## RU+EN completeness
 
 Missing RU:
-`0`.
+0.
 
 Missing EN:
-`0`.
+0.
 
-Post-PR59 current-root collisions:
-`0`.
+No extra action/scene mapping.
 
-Therefore all 32 remain additive.
+## Scope boundary
 
-Chat5 production-v3 source confirms the same 16 action/default-scene mapping and 32-key additive result after PR59.
+This source intentionally excludes:
+- School specialized result ownership;
+- event-choice outcomeRef ownership;
+- multi-scene seasonal career results;
+- Product-open results.
 
-## Current result consumer
+The 10 current career `*.shift` actions have four seasonal scenes each and are not falsely treated as default-only actions.
 
-Current generic result screen handles:
-1. School special case;
-2. event `outcomeRef`;
-3. otherwise raw:
-   - `lastAction.title`;
-   - `lastAction.text`.
+## No gameplay/Save fields
 
-Thus these 32 strings are not yet consumed for ordinary action results.
+The source contains no:
+- conditions;
+- costs;
+- wages;
+- effects;
+- rewards;
+- RNG;
+- Save fields.
 
-## Current runtime identity limitation
+It is presentation-only.
 
-Current ordinary `lastAction` persists:
-- action ID;
-- raw title;
-- raw text;
-- media;
-- presentationId;
-- deltas.
+## Production integration
 
-It does not persist an explicit ordinary-action sceneId.
+PR61 production patch:
+`ordinary-action-result-localization-v3.fixture.json`
+blob `7752bad708975174e3e6c92d0f949d102dc65b26`.
 
-For this exact audited 16-action set, the current scene is unambiguously `default`.
+All 32 production strings are present exactly in current root localization.
 
-Therefore current result rendering can safely derive:
-`actionId + default`
-for this set.
+Current result consumer priority:
+1. School specialized course result;
+2. event-choice outcomeRef;
+3. ordinary action localized title;
+4. localized body only for exactly-one-default-scene action;
+5. stored fallback otherwise.
 
-If any action later gains multiple current scenes, exact selected-scene identity must be retained/derived explicitly before localization lookup.
+This matches the reviewed 16-action scope.
 
-Do not guess from prose.
+PR61 exact head:
+`a7b16eca18ccba37719fc84432c1fe1a9b275bf5`.
 
-## forest-search boundary
+Run #121:
+- SUCCESS;
+- 369 / 369;
+- validator 17 / 46 / 35 / 9.
 
-`forest-search` here is the ordinary legacy/tutorial action result:
-- action ID `forest-search`;
-- scene ID `default`.
+Merged current main:
+`01b31b9ab0d0267d95edf5b5b80638acd63f5c04`.
 
-It is not Forest Activity route/result ownership.
+Run #122:
+- SUCCESS;
+- 369 / 369;
+- validator 17 / 46 / 35 / 9.
 
-PR59 route-specific media does not change this action-result text identity.
+Renderer PASS:
+`ordinary action result localizes RU EN without changing save`.
 
 ## Journal limitation
 
-Current ordinary action completion Journal rows have:
-`journalRef = null`.
+Ordinary action Journal rows still have no stable ordinary-action ref.
 
-The result screen can be localized from current action identity, but existing/current Journal rows cannot safely be retroactively localized without a stable ordinary-action Journal ref.
+PR61 localizes the result screen, not historical ordinary-action Journal entries.
 
-Do not fuzzy-match stored text.
-
-This QA approves result source, not Journal migration.
-
-## Presentation-only payload
-
-The localization fixture contains no:
-- cost;
-- wage;
-- condition;
-- effect;
-- reward;
-- RNG;
-- Save
-field.
-
-It contains only localization text, entries and invariants.
-
-## Required future consumer test
-
-From identical pre-action Saves:
-- perform exact same action under RU and EN;
-- same selected current scene;
-- same deltas;
-- same resources;
-- same flags/metrics;
-- same RNG evolution;
-- same presentationId;
-- result title/body localized by stable action/default-scene identity.
-
-Locale switch after result:
-- same serialized gameplay Save;
-- only visible title/body changes.
+Do not infer action identity from stored prose.
 
 ## Verdict
 
-`GREEN_TEXT_SOURCE / SHARED_CONSUMER_REQUIRED`.
+`SHIPPED_GREEN_VIA_PR61`.
 
-The 16 exact current ordinary action/default-scene identities have complete RU+EN title/body source with no gameplay or Save fields.
+The exact 16 current default-scene ordinary action results are now bilingual in production without Save/gameplay drift.
