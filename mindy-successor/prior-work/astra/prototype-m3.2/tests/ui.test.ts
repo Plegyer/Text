@@ -1008,7 +1008,7 @@ test('renderer: Stats profession labels localize without save changes',async()=>
   const before=w.localStorage.getItem('portal-life.v1');
 
   w.document.querySelector('[data-panel="stats"]').click();
-  assert.match(w.document.querySelector('.panel')?.textContent??'',/Смена лесоруба/);
+  assert.match(w.document.querySelector('.panel')?.textContent??'',/Лесоруб:/);
   assert.doesNotMatch(w.document.querySelector('.panel')?.textContent??'',/lumber\.shift/);
   w.document.querySelector('#close').click();
 
@@ -1019,8 +1019,35 @@ test('renderer: Stats profession labels localize without save changes',async()=>
   w.document.querySelector('#close').click();
 
   w.document.querySelector('[data-panel="stats"]').click();
-  assert.match(w.document.querySelector('.panel')?.textContent??'',/Lumber shift/);
+  assert.match(w.document.querySelector('.panel')?.textContent??'',/Lumber Worker:/);
   assert.doesNotMatch(w.document.querySelector('.panel')?.textContent??'',/lumber\.shift/);
+  assert.equal(w.localStorage.getItem('portal-life.v1'),before);
+  assert.deepEqual(errors,[]);
+ }finally{dom.window.close();}
+});
+
+
+test('renderer: legacy unlock labels localize without save changes',async()=>{
+ const s=started();
+ s.meta.unlocks=['guild','palace'];
+ const {w,dom,errors}=boot(JSON.stringify(s));try{
+  await wait(()=>!!w.document.querySelector('[data-panel="legacy"]'));
+  const before=w.localStorage.getItem('portal-life.v1');
+
+  w.document.querySelector('[data-panel="legacy"]').click();
+  assert.match(w.document.querySelector('.panel')?.textContent??'',/Своя в артели/);
+  assert.match(w.document.querySelector('.panel')?.textContent??'',/Дворец/);
+  w.document.querySelector('#close').click();
+
+  w.document.querySelector('[data-panel="menu"]').click();
+  w.document.querySelector('#language-toggle').click();
+  await wait(()=>w.document.documentElement.lang==='en');
+  assert.equal(w.localStorage.getItem('portal-life.v1'),before);
+  w.document.querySelector('#close').click();
+
+  w.document.querySelector('[data-panel="legacy"]').click();
+  assert.match(w.document.querySelector('.panel')?.textContent??'',/One of the Crew/);
+  assert.match(w.document.querySelector('.panel')?.textContent??'',/Palace/);
   assert.equal(w.localStorage.getItem('portal-life.v1'),before);
   assert.deepEqual(errors,[]);
  }finally{dom.window.close();}
