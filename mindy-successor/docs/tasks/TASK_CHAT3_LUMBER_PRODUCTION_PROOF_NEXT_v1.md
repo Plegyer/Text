@@ -3418,3 +3418,102 @@ Create NEW file only:
 Consolidate items 269–279 into SHARED_NIGHT_UI_READY / JOURNAL_EXPECTATIONS_READY / ROUTE_SEAM_READY / VISUAL_SOURCE_ONLY / PRODUCT_OPEN.
 
 Continue items 269–280 sequentially without waiting for Lead review.
+
+
+## Queue item 281 — post-PR54 poverty journal ref audit v3
+Create NEW file only:
+- `docs/poverty-prep/POST_PR54_POVERTY_JOURNAL_REF_AUDIT_V3.md`
+
+Verify every current ordinary-poverty resolved choice against merged PR54 journal-ref behavior.
+Record exact eventId/choiceId -> localization key and confirm no Secret Debt coverage.
+
+## Queue item 282 — post-PR54 Forest journal ref audit v3
+Create NEW file only:
+- `docs/lumber-prep/POST_PR54_FOREST_JOURNAL_REF_AUDIT_V3.md`
+
+Verify current Forest success/escape/failure reaction choices against merged PR54 journal/lastAction refs.
+Confirm exact result identities and no replay/mutation.
+
+## Queue item 283 — poverty journal expected-render fixture v3
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/poverty-journal-expected-render-v3.fixture.json`
+
+For all current ordinary-poverty choice outcomes, provide exact RU and EN rendered Journal/lastAction text expected from stable refs.
+
+## Queue item 284 — Forest journal expected-render fixture v3
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/forest-journal-expected-render-v3.fixture.json`
+
+For current Forest reaction choices, provide exact RU and EN expected Journal/lastAction rendering and unchanged result continuation identity.
+
+## Queue item 285 — Forest route localization post-PR54 rebase v8
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/forest-route-localization-delta-v8.fixture.json`
+
+Rebase the exact 10 route-specific RU+EN presentation keys against current main after PR54.
+Classify additive/identical/conflict and emit only safe final values.
+
+## Queue item 286 — logging-road copy ambiguity scrub v8
+Create NEW file only:
+- `docs/lumber-prep/LOGGING_ROAD_COPY_AMBIGUITY_SCRUB_V8.md`
+
+Review every logging-road title/body/help/alt/caption line for accidental reward/challenge/Hunter/mechanical implication.
+Provide corrected RU+EN wording only where needed.
+
+## Queue item 287 — old-boundary copy ambiguity scrub v8
+Create NEW file only:
+- `docs/lumber-prep/OLD_BOUNDARY_COPY_AMBIGUITY_SCRUB_V8.md`
+
+Review every old-boundary line for accidental token/gate/Hunter/magic/reward implication.
+Keep only established stones/marks/path-boundary semantics.
+
+## Queue item 288 — route-specific accessibility copy ledger v1
+Create NEW file only:
+- `docs/lumber-prep/FOREST_ROUTE_ACCESSIBILITY_COPY_LEDGER_V1.md`
+
+List final RU+EN title/body/help/alt/caption coverage for default/logging-road/old-boundary and identify exact fallback behavior before/after route selection.
+
+## Queue item 289 — route seam natural-path UI expectation v5
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/forest-route-seam-ui-expectation-v5.fixture.json`
+
+Record exact natural path:
+Explore -> lumber.forest -> default presentation -> choose route -> route-specific presentation.
+Freeze Save/RNG/route/result invariants.
+
+## Queue item 290 — route seam invalid-state safety matrix v1
+Create NEW file only:
+- `docs/lumber-prep/FOREST_ROUTE_INVALID_STATE_SAFETY_MATRIX_V1.md`
+
+Document expected behavior for unsupported/missing route state:
+- strict helper rejection;
+- safe UI fallback to default;
+- never invent route identity;
+- no Save mutation.
+
+## Queue item 291 — Forest route selective integration acceptance v4
+Create NEW file only:
+- `docs/lumber-prep/FOREST_ROUTE_SELECTIVE_INTEGRATION_ACCEPTANCE_V4.md`
+
+Define Lead acceptance for:
+- 10-key localization delta;
+- pure route->presentationId seam;
+- default-before-selection;
+- route-specific-after-selection;
+- no route-specific visual activation required;
+- exact Hard Work/result invariants.
+
+## Queue item 292 — post-PR54 Forest/poverty handoff v12
+Create NEW file only:
+- `docs/lumber-prep/POST_PR54_FOREST_POVERTY_HANDOFF_V12.md`
+
+Consolidate items 281–291 into:
+- JOURNAL_REF_VERIFIED;
+- ROUTE_LOCALIZATION_READY;
+- ROUTE_SEAM_ACCEPTANCE_READY;
+- VISUAL_SOURCE_STILL_OPTIONAL;
+- PRODUCT_OPEN.
+
+Include exact selective-copy files.
+
+Continue items 281–292 sequentially without waiting for Lead review.
