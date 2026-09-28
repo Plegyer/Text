@@ -1,15 +1,19 @@
 # Forest route presentationId seam QA v1
 
-Status: COMPLETE / GREEN_EXACT_HEAD / POST_MERGE_PENDING
+Status: COMPLETE / GREEN_POST_MERGE_MAIN
 
-Current production main at audit:
+PR57 base main:
 `4223be1f90f15a43938e072bc2171b0de5d2d1aa`.
+
+Current production main:
+`df0119fd6574b69ab89cf1a99ae77adae3d811f1`
+(PR57 merge).
 
 Live Lead PR:
 - #57 `Lead: add Forest route-specific presentation seam`
 - base `4223be1f90f15a43938e072bc2171b0de5d2d1aa`
 - exact head `138c9889daf8e63dc280b1868e0e868a638111e1`
-- state: OPEN / NOT_MERGED.
+- merged as `df0119fd6574b69ab89cf1a99ae77adae3d811f1`.
 
 ## Pure presentation helper
 
@@ -134,10 +138,25 @@ Relevant PASS:
 
 ## Verdict
 
-`GREEN_EXACT_HEAD / POST_MERGE_PENDING`.
+GREEN_POST_MERGE_MAIN`.
 
 The PR57 exact head implements the required safe pure mapping:
 authoritative route state -> locale-neutral semantic presentation ID,
 with unknown/absent route -> neutral default and no Save/RNG/result mutation.
 
-Do not mark shipped until merge + successful main push CI.
+## Post-merge main proof
+
+PR57 merged as:
+`df0119fd6574b69ab89cf1a99ae77adae3d811f1`.
+
+Main push workflow:
+- run #106;
+- id `36405622065`;
+- conclusion: SUCCESS;
+- validator 17 packs / 46 events / 35 actions / 9 endings;
+- 351 / 351 tests;
+- 0 failures.
+
+The same route-seam, exact activityResult, stable Journal-ref and Hard Work regressions pass on merged main.
+
+Therefore the presentation seam is now shipped.
