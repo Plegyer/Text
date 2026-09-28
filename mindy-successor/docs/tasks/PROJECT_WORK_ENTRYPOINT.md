@@ -3,6 +3,13 @@
 Status: ACTIVE
 Repository: `Plegyer/Text`
 
+## Persistent memory
+
+For future Lead handoff:
+
+- `WHITE_SQUIRREL_CHRONICLES_MASTER_MEMORY.md` — project overview and long-term coordination memory.
+- `DESIGN_MEMORY_ARCHIVE.md` — approved design memories requiring reconciliation with runtime implementation.
+
 ## Source of truth
 
 For active coordination use, in order:
