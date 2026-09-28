@@ -3,7 +3,7 @@
 Status: COMPLETE / ACCEPTANCE_CONTRACT_SATISFIED_BY_PR61
 
 Current main:
-`01b31b9ab0d0267d95edf5b5b80638acd63f5c04`.
+`1b0ea9dc3c10a8acb24df2ca2edd0e5f609dd515`.
 
 Current Legacy consumer now renders localized ending title/description from stable ending ID while eligibility continues to use the unchanged ending condition objects and `availableEndings`.
 
