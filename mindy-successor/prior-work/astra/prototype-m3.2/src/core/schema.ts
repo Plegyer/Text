@@ -504,7 +504,8 @@ const reactionStateSchema=z.object({
   cascadeDepth:n.max(16),
   queued:z.array(queuedEventInstanceSchema).max(64)
 }).strict();
-const lastActionSchema=z.object({id,title:z.string(),text:z.string(),media:z.array(id),presentationId:semanticPresentationId.optional(),deltas:z.record(z.string(),z.number())}).strict();
+const eventChoicePresentationRefSchema=z.object({kind:z.literal('eventChoice'),eventId:id,choiceId:id}).strict();
+const lastActionSchema=z.object({id,title:z.string(),text:z.string(),media:z.array(id),presentationId:semanticPresentationId.optional(),outcomeRef:eventChoicePresentationRefSchema.optional(),deltas:z.record(z.string(),z.number())}).strict();
 export const nightFlowStateSchema=z.object({
   phase:z.enum(['PreLodgingForcedCheck','LodgingResolution','PostLodgingForcedCheck','VoluntaryNightChoice','NightEventResolution','NextDayModifiersFinalized','CalendarAdvance','StartDay']),
   startedDay:n.max(159),
@@ -540,7 +541,8 @@ export const historyStateSchema=z.object({
   eventHistory:z.record(z.string(),historyEntry),
   actionCounts:z.record(id,n),
   dayActionCount:n.max(1000),
-  journal:z.array(z.string().max(6000)).max(160)
+  journal:z.array(z.string().max(6000)).max(160),
+  journalRefs:z.array(eventChoicePresentationRefSchema.nullable()).max(160).default([])
 }).strict();
 
 export const legacyCompatSchema=z.object({
