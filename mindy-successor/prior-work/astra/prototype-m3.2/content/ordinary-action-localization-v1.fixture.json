@@ -1,0 +1,240 @@
+{
+  "version": 1,
+  "defaultLocale": "ru",
+  "strings": {
+    "action.work.label": {
+      "ru": "Практика в учебной лавке",
+      "en": "Practice in the training shop"
+    },
+    "action.work.description": {
+      "ru": "30 монет, опыт и знакомства. Занимает одно действие.",
+      "en": "30 coins, practice, and new connections. Takes one action."
+    },
+    "action.work.scene.default.text": {
+      "ru": "30 монет, опыт и знакомства. Занимает одно действие.",
+      "en": "30 coins, practice, and new connections. Takes one action."
+    },
+    "action.forage.label": {
+      "ru": "Собрать травы",
+      "en": "Gather herbs"
+    },
+    "action.forage.description": {
+      "ru": "Две порции трав. В зимнем городе сбор заменяет работа с запасами.",
+      "en": "Gather two portions of herbs. In winter, city foraging is replaced by working with stored supplies."
+    },
+    "action.forage.scene.default.text": {
+      "ru": "Две порции трав. В зимнем городе сбор заменяет работа с запасами.",
+      "en": "Gather two portions of herbs. In winter, city foraging is replaced by working with stored supplies."
+    },
+    "action.brew.label": {
+      "ru": "Приготовить микстуру",
+      "en": "Brew a tonic"
+    },
+    "action.brew.description": {
+      "ru": "Одна трава и один ход. Щадящий нагрев даёт одну микстуру; быстрый — две при мастерстве 3 или наличии весов.",
+      "en": "One herb and one action. Gentle heating yields one tonic; the fast method yields two with mastery 3 or a set of scales."
+    },
+    "action.brew.scene.default.text": {
+      "ru": "Одна трава и один ход. Щадящий нагрев даёт одну микстуру; быстрый — две при мастерстве 3 или наличии весов.",
+      "en": "One herb and one action. Gentle heating yields one tonic; the fast method yields two with mastery 3 or a set of scales."
+    },
+    "action.sell.label": {
+      "ru": "Продать микстуру",
+      "en": "Sell a tonic"
+    },
+    "action.sell.description": {
+      "ru": "Продажа одной готовой микстуры за 24 монеты.",
+      "en": "Sell one finished tonic for 24 coins."
+    },
+    "action.sell.scene.default.text": {
+      "ru": "Продажа одной готовой микстуры за 24 монеты.",
+      "en": "Sell one finished tonic for 24 coins."
+    },
+    "action.scales.label": {
+      "ru": "Купить точные весы",
+      "en": "Buy precise scales"
+    },
+    "action.scales.description": {
+      "ru": "60 монет. Открывают быстрый способ приготовления без риска пены.",
+      "en": "Costs 60 coins. Unlocks the fast brewing method without the risk of foam."
+    },
+    "action.scales.scene.default.text": {
+      "ru": "60 монет. Открывают быстрый способ приготовления без риска пены.",
+      "en": "Costs 60 coins. Unlocks the fast brewing method without the risk of foam."
+    },
+    "action.exam.label": {
+      "ru": "Сдать экзамен",
+      "en": "Take the exam"
+    },
+    "action.exam.description": {
+      "ru": "3 урока, смекалка 7 и мастерство 2. Экзамен стоит 20 монет.",
+      "en": "Requires 3 lessons, intelligence 7, and alchemy mastery 2. The exam costs 20 coins."
+    },
+    "action.exam.scene.default.text": {
+      "ru": "3 урока, смекалка 7 и мастерство 2. Экзамен стоит 20 монет.",
+      "en": "Requires 3 lessons, intelligence 7, and alchemy mastery 2. The exam costs 20 coins."
+    },
+    "action.deliver.label": {
+      "ru": "Сдать общий заказ",
+      "en": "Deliver the shared order"
+    },
+    "action.deliver.description": {
+      "ru": "Передать две микстуры артели: награда 50 монет, доступ к судьбе.",
+      "en": "Deliver two tonics to the crew: reward 50 coins and access to a fate."
+    },
+    "action.deliver.scene.default.text": {
+      "ru": "Передать две микстуры артели: награда 50 монет, доступ к судьбе.",
+      "en": "Deliver two tonics to the crew: reward 50 coins and access to a fate."
+    },
+    "action.visit.label": {
+      "ru": "Зайти в чайную",
+      "en": "Visit the tea shop"
+    },
+    "action.visit.description": {
+      "ru": "Поговорить с Браном. Линия открывается после первого знакомства.",
+      "en": "Talk with Bran. This line opens after your first meeting."
+    },
+    "action.visit.scene.default.text": {
+      "ru": "Поговорить с Браном. Линия открывается после первого знакомства.",
+      "en": "Talk with Bran. This line opens after your first meeting."
+    },
+    "action.oddjob.label": {
+      "ru": "Мелкая подработка",
+      "en": "Take a small odd job"
+    },
+    "action.oddjob.description": {
+      "ru": "10 монет за поручение. Доступна без образования и инструментов.",
+      "en": "Earn 10 coins for an errand. Available without education or tools."
+    },
+    "action.oddjob.scene.default.text": {
+      "ru": "10 монет за поручение. Доступна без образования и инструментов.",
+      "en": "Earn 10 coins for an errand. Available without education or tools."
+    },
+    "action.repay.label": {
+      "ru": "Погасить часть долга",
+      "en": "Repay part of the debt"
+    },
+    "action.repay.description": {
+      "ru": "Вернуть до 10 монет, не больше остатка долга. Долг не исчезает при переезде.",
+      "en": "Repay up to 10 coins, never more than the remaining debt. Moving does not erase the debt."
+    },
+    "action.repay.scene.default.text": {
+      "ru": "Вернуть до 10 монет, не больше остатка долга. Долг не исчезает при переезде.",
+      "en": "Repay up to 10 coins, never more than the remaining debt. Moving does not erase the debt."
+    },
+    "action.rent-room.label": {
+      "ru": "Вернуться в комнату",
+      "en": "Return to a room"
+    },
+    "action.rent-room.description": {
+      "ru": "Снять комнату за 18 монет после погашения старого долга. Ночлег оплачивается отдельно.",
+      "en": "Rent a room for 18 coins after clearing the old debt. Night lodging is paid separately."
+    },
+    "action.rent-room.scene.default.text": {
+      "ru": "Снять комнату за 18 монет после погашения старого долга. Ночлег оплачивается отдельно.",
+      "en": "Rent a room for 18 coins after clearing the old debt. Night lodging is paid separately."
+    },
+    "action.rest.label": {
+      "ru": "Отдохнуть",
+      "en": "Rest"
+    },
+    "action.rest.description": {
+      "ru": "Выбрать ночлег. Оплата монетами, помощь хозяину или бесплатный навес.",
+      "en": "Choose lodging: pay with coins, help the host, or use the free shelter."
+    },
+    "action.rest.scene.default.text": {
+      "ru": "Выбрать ночлег. Оплата монетами, помощь хозяину или бесплатный навес.",
+      "en": "Choose lodging: pay with coins, help the host, or use the free shelter."
+    },
+    "action.arrival.label": {
+      "ru": "Пойти за белым сусликом",
+      "en": "Follow the white gopher"
+    },
+    "action.arrival.description": {
+      "ru": "Начать историю. Это вступление не расходует действие.",
+      "en": "Begin the story. This introduction does not consume an action."
+    },
+    "action.arrival.scene.default.text": {
+      "ru": "За белым сусликом — в новую жизнь.",
+      "en": "Follow the white gopher into a new life."
+    },
+    "action.forest-search.label": {
+      "ru": "Проверить лесной склад",
+      "en": "Check the forest storehouse"
+    },
+    "action.forest-search.description": {
+      "ru": "Найти накладную Марека; нужно чутьё 3. Текстовая вылазка на лесной склад.",
+      "en": "Find Marek’s delivery note; requires perception 3. A text-based outing to the forest storehouse."
+    },
+    "action.forest-search.scene.default.text": {
+      "ru": "Найти накладную Марека; нужно чутьё 3. Текстовая вылазка на лесной склад.",
+      "en": "Find Marek’s delivery note; requires perception 3. A text-based outing to the forest storehouse."
+    },
+    "action.tavern-talk.label": {
+      "ru": "Обсудить накладную с трактирщиком",
+      "en": "Discuss the delivery note with the innkeeper"
+    },
+    "action.tavern-talk.description": {
+      "ru": "Вернуться с уликой и решить, кому достанется право на праздник.",
+      "en": "Return with the clue and decide who receives the right to hold the festival."
+    },
+    "action.tavern-talk.scene.default.text": {
+      "ru": "Вернуться с уликой и решить, кому достанется право на праздник.",
+      "en": "Return with the clue and decide who receives the right to hold the festival."
+    },
+    "action.landlord.label": {
+      "ru": "Навестить хозяина комнаты",
+      "en": "Visit the landlord"
+    },
+    "action.landlord.description": {
+      "ru": "Силан расскажет о жилье и предложит чай. Первое знакомство.",
+      "en": "Silan will explain the housing arrangement and offer tea. First meeting."
+    },
+    "action.landlord.scene.default.text": {
+      "ru": "Силан расскажет о жилье и предложит чай. Первое знакомство.",
+      "en": "Silan will explain the housing arrangement and offer tea. First meeting."
+    },
+    "ui.work.recipeReliable": {
+      "ru": "Надёжно",
+      "en": "Reliable"
+    },
+    "ui.work.recipeFast": {
+      "ru": "Быстро",
+      "en": "Fast"
+    },
+    "action.brew.recipe.success.text": {
+      "ru": "Микстура готова. Этикетка обещает бодрость, а не бессмертие — хороший знак.",
+      "en": "The tonic is ready. The label promises vigor, not immortality — a good sign."
+    },
+    "action.brew.recipe.fastFailure.text": {
+      "ru": "Смесь превратилась в пену. Для быстрого способа нужны весы или мастерство 3. Опыт сохранён.",
+      "en": "The mixture turned to foam. The fast method needs scales or mastery 3. The practice still counts."
+    }
+  },
+  "invariants": {
+    "presentationOnly": true,
+    "actionIds": [
+      "work",
+      "forage",
+      "brew",
+      "sell",
+      "scales",
+      "exam",
+      "deliver",
+      "visit",
+      "oddjob",
+      "repay",
+      "rent-room",
+      "rest",
+      "arrival",
+      "forest-search",
+      "tavern-talk",
+      "landlord"
+    ],
+    "currentSceneIdsOnly": true,
+    "mechanicsFieldsIncluded": false,
+    "forestActivityResultExcluded": true,
+    "schoolCourseContentExcluded": true,
+    "careerShiftContentExcluded": true
+  }
+}
