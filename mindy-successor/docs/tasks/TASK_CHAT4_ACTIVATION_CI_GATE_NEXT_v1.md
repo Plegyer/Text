@@ -3062,3 +3062,79 @@ Summarize items 211–221:
 - Product-open isolation.
 
 Continue items 211–222 sequentially without waiting for Lead review.
+
+
+## Queue item 223 — PR51 post-merge poverty audit v1
+Create NEW file only:
+- `docs/qa-prep/PR51_POVERTY_COPYEDIT_POST_MERGE_AUDIT_V1.md`
+
+Verify PR51 merge SHA, current main, 33 existing-key replacements, no media/Secret Debt/gameplay drift, and post-merge CI.
+
+## Queue item 224 — PR52 exact-head legacy localization audit v1
+Create NEW file only:
+- `docs/qa-prep/PR52_LEGACY_ROOT_LOCALIZATION_EXACT_HEAD_AUDIT_V1.md`
+
+Verify 109-key scope, 108 additive + 1 identical, exact legacy event/media IDs, RU+EN completeness and exact-head CI.
+
+## Queue item 225 — PR52 post-merge legacy localization audit v1
+Create NEW file only:
+- `docs/qa-prep/PR52_LEGACY_ROOT_LOCALIZATION_POST_MERGE_AUDIT_V1.md`
+
+Verify actual merge SHA/current main/post-merge push CI.
+
+## Queue item 226 — locale-neutral journal ref schema QA v1
+Create NEW file only:
+- `docs/qa-prep/LOCALE_NEUTRAL_JOURNAL_REF_SCHEMA_QA_V1.md`
+
+Review the forthcoming Lead journal/outcome design:
+old text-only saves remain valid, refs are optional/backward-compatible, no fuzzy prose migration, no gameplay identity changes.
+
+## Queue item 227 — localized lastAction outcome QA v1
+Create NEW file only:
+- `docs/qa-prep/LOCALIZED_LASTACTION_OUTCOME_QA_V1.md`
+
+Require stable event/choice-derived localization for choice outcomes while existing action/school results remain unaffected.
+
+## Queue item 228 — journal RU EN switch invariance QA v1
+Create NEW file only:
+- `docs/qa-prep/JOURNAL_RU_EN_SWITCH_INVARIANCE_QA_V1.md`
+
+Acceptance: locale switch changes rendered journal text only; serialized gameplay state/ref identity remains byte-stable where expected.
+
+## Queue item 229 — Chat5 global UI shell production-readiness QA v2
+Create NEW file only:
+- `docs/qa-prep/CHAT5_GLOBAL_UI_SHELL_PRODUCTION_READINESS_QA_V2.md`
+
+Review items 85–96 against current post-PR52 main and classify exact keys/consumers safe for Lead wiring.
+
+## Queue item 230 — Chat3 shared Night UI production-readiness QA v2
+Create NEW file only:
+- `docs/qa-prep/CHAT3_SHARED_NIGHT_UI_PRODUCTION_READINESS_QA_V2.md`
+
+Review Chat3 current shared Night/lodging fixture and consumer map against current main.
+
+## Queue item 231 — Chat2 animation exporter proposal QA v1
+Create NEW file only:
+- `docs/qa-prep/CHAT2_ANIMATION_EXPORTER_PROPOSAL_QA_V1.md`
+
+Review exporter options/recommendation for reproducibility, dependency risk, CI portability and no external asset ingestion.
+
+## Queue item 232 — current-main bilingual coverage recompute v3
+Create NEW file only:
+- `docs/qa-prep/CURRENT_MAIN_BILINGUAL_COVERAGE_RECOMPUTE_V3.md`
+
+Recompute shipped RU+EN coverage after PR51/52 from actual root localization and reachable player-facing surfaces.
+
+## Queue item 233 — current-main CI regression floor v8
+Create NEW file only:
+- `docs/qa-prep/CURRENT_MAIN_CI_REGRESSION_FLOOR_V8.md`
+
+Record exact current main SHA, latest successful push run, validator and test counts.
+
+## Queue item 234 — next production integration gate v18
+Create NEW file only:
+- `docs/qa-prep/NEXT_PRODUCTION_INTEGRATION_GATE_V18.md`
+
+Summarize items 223–233 and classify next Lead slices: journal/outcome consumer, global UI shell, shared Night UI, route-specific presentation seam, animation exporter.
+
+Continue items 223–234 sequentially without waiting for Lead review.
