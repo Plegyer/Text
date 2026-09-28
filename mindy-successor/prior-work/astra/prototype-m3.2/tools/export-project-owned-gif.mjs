@@ -83,6 +83,8 @@ export function parseCliArgs(argv){
 
   if(!args.presentationId)fail('--presentation-id is required');
   if(!args.sequence)fail('--sequence is required');
+  assertLocalRepoPath(args.manifest,{label:'manifest path',prefix:'content/presentation-drafts/',extension:'.json'});
+  if(args.output)assertLocalRepoPath(args.output,{label:'output path',prefix:'assets/gif/',extension:'.gif'});
   if(args.delayMs!==null&&args.delayMs%10!==0)fail('--delay-ms must be divisible by 10 ms for GIF centisecond timing');
   return args;
 }
