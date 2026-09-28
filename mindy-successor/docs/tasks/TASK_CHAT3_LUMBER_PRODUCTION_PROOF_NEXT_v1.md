@@ -3253,3 +3253,83 @@ Consolidate items 245–255 into:
 Include exact selective-copy files.
 
 Continue items 245–256 sequentially without waiting for Lead review.
+
+
+## Queue item 257 — shared Night/lodging production-copy matrix v7
+Create NEW file only:
+- `docs/poverty-prep/SHARED_NIGHT_LODGING_PRODUCTION_COPY_MATRIX_V7.md`
+
+For the finalized shared Night/lodging UI keys, map exact RU/EN text to current phase/lodging/nightChoice consumer context and fallback wording.
+
+## Queue item 258 — NightFlow player-language terminology audit v1
+Create NEW file only:
+- `docs/poverty-prep/NIGHTFLOW_PLAYER_LANGUAGE_TERMINOLOGY_AUDIT_V1.md`
+
+Find internal terms still visible to players such as NightFlow/phase wording and propose player-facing RU+EN replacements without changing IDs/mechanics.
+
+## Queue item 259 — lodging consequence copy bank RU+EN v1
+Create NEW file only:
+- `docs/poverty-prep/LODGING_CONSEQUENCE_COPY_BANK_RU_EN_V1.md`
+
+Author concise RU-source + full EN presentation text for current lodging consequences only.
+No cost/Energy/housing changes.
+
+## Queue item 260 — poverty journal-facing copy audit v1
+Create NEW file only:
+- `docs/poverty-prep/POVERTY_JOURNAL_FACING_COPY_AUDIT_V1.md`
+
+Audit ordinary-poverty choice outcome strings that may appear in journal/lastAction.
+Text only; Secret Debt excluded.
+
+## Queue item 261 — logging-road route scene variants v7
+Create NEW file only:
+- `docs/lumber-prep/LOGGING_ROAD_ROUTE_SCENE_VARIANTS_V7.md`
+
+Provide 6 concise RU+EN effect-free presentation variants for current logging-road route identity.
+
+## Queue item 262 — old-boundary route scene variants v7
+Create NEW file only:
+- `docs/lumber-prep/OLD_BOUNDARY_ROUTE_SCENE_VARIANTS_V7.md`
+
+Provide 6 concise RU+EN variants using only established stones/marks/path-boundary semantics.
+
+## Queue item 263 — Forest route choice/help localization v2
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/forest-route-choice-help-localization-v2.fixture.json`
+
+Final RU+EN labels/help for exact current route options only.
+No availability/condition changes.
+
+## Queue item 264 — route presentation seam regression source v4
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/forest-route-presentation-seam-v4.test.ts`
+
+Author regression source for default -> route-specific presentation identity transition with no Save/RNG/result drift.
+
+## Queue item 265 — route copy/static compatibility matrix v2
+Create NEW file only:
+- `docs/lumber-prep/FOREST_ROUTE_COPY_STATIC_COMPATIBILITY_MATRIX_V2.md`
+
+Check current route copy against generic/default static and route-specific future visual briefs.
+Flag semantic mismatches only.
+
+## Queue item 266 — poverty/Forest localized-journal acceptance matrix v1
+Create NEW file only:
+- `docs/lumber-prep/POVERTY_FOREST_LOCALIZED_JOURNAL_ACCEPTANCE_V1.md`
+
+Define expected RU/EN rendering for ordinary-poverty and Forest choice outcomes once the Lead locale-neutral journal consumer ships.
+No engine/schema changes.
+
+## Queue item 267 — Product-open isolation refresh v10
+Create NEW file only:
+- `docs/lumber-prep/FOREST_PRODUCT_OPEN_ISOLATION_REFRESH_V10.md`
+
+Reconfirm no Hunter route, token acquisition/use, challenge rewards, seasonal topology or deeper lore is introduced by items 257–266.
+
+## Queue item 268 — Night/Forest integration handoff v10
+Create NEW file only:
+- `docs/lumber-prep/NIGHT_FOREST_INTEGRATION_HANDOFF_V10.md`
+
+Consolidate items 257–267 into SHARED_UI_TEXT_READY / ROUTE_COPY_READY / JOURNAL_CONSUMER_DEPENDENT / PRODUCT_OPEN.
+
+Continue items 257–268 sequentially without waiting for Lead review.
