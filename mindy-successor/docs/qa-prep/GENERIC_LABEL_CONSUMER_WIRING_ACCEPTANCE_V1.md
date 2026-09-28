@@ -1,6 +1,6 @@
 # Generic-label consumer wiring acceptance v1
 
-Status: COMPLETE / ACCEPTANCE_CONTRACT_READY
+Status: COMPLETE / SHIPPED_GREEN
 
 Current main:
 `4223be1f90f15a43938e072bc2171b0de5d2d1aa`.
@@ -186,3 +186,55 @@ At minimum:
 `ACCEPTANCE_CONTRACT_READY`.
 
 Accept only presentation-layer label/hint wiring that preserves all stable IDs, values, economics, condition objects and gameplay state.
+
+
+## PR58 implementation evidence
+
+PR58 implements the reviewed consumer pattern with locale-aware helpers:
+- `statLabel(id)`;
+- `statHint(id)`;
+- `resourceLabel(id)`;
+- `itemLabel(id)`;
+- `genericValueLabel(id)`.
+
+Current consumers now localize:
+- creation stat labels/hints and aria labels;
+- Stats panel labels/hints;
+- Bag item labels;
+- typed stat/resource/item requirement text;
+- result delta labels;
+- pending encounter eyebrow;
+- inactive-run accepted/expired/Legacy navigation shell.
+
+Stable IDs/values remain the input to all lookups.
+
+## Exact-head and post-merge proof
+
+PR58 accepted head:
+`923e9b0d90ea6f20ed453a43ea0d98e0a6ae4a19`.
+
+Run #108:
+- SUCCESS;
+- 356/356;
+- validator 17/46/35/9.
+
+Merged current main:
+`52ddc76148e33836d3161b63bf4c25ffb5c39d02`.
+
+Run #109:
+- SUCCESS;
+- 356/356;
+- validator 17/46/35/9.
+
+Executable renderer coverage proves:
+- Stats labels/hints RU↔EN with same Save;
+- Bag item labels RU↔EN with same inventory/Save;
+- pending encounter eyebrow RU↔EN with same event/variant/allowed-choice identity.
+
+The full suite retains typed condition mechanics, economics, Forest, School, Night, Journal-ref and Hard Work invariants.
+
+## Final verdict
+
+`SHIPPED_GREEN`.
+
+The generic-label consumer wiring is now production-shipped as presentation-only localization over stable gameplay IDs.
