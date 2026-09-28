@@ -3343,3 +3343,104 @@ Create NEW file only:
 Summarize items 235–245 and classify route seam, generic labels, route visuals and animation exporter readiness.
 
 Continue items 235–246 sequentially without waiting for Lead review.
+
+
+## Queue item 235 — PR54 journal stable-ref post-merge audit v1
+Create NEW file only:
+- `docs/qa-prep/PR54_JOURNAL_STABLE_REF_POST_MERGE_AUDIT_V1.md`
+
+Verify actual merged PR54 head/merge SHA/current main:
+- schemaVersion remains 4;
+- old save omission compatibility;
+- eventId+choiceId refs;
+- no fuzzy prose migration;
+- RU↔EN render only;
+- exact-head and post-merge CI evidence.
+
+## Queue item 236 — PR58 generic labels post-merge audit v1
+Create NEW file only:
+- `docs/qa-prep/PR58_GENERIC_LABELS_POST_MERGE_AUDIT_V1.md`
+
+Verify 49-key generic labels/hints scope, consumer wiring, Save invariance and actual merge/main CI evidence.
+
+## Queue item 237 — PR59 Forest route presentation exact-head audit v1
+Create NEW file only:
+- `docs/qa-prep/PR59_FOREST_ROUTE_PRESENTATION_EXACT_HEAD_AUDIT_V1.md`
+
+Review current PR59 exact head:
+- logging-road safe project-owned static;
+- old-boundary neutral fallback;
+- route help RU+EN;
+- exact route IDs;
+- no mechanics/RNG/Save/result/Hard Work drift;
+- exact-head CI.
+
+## Queue item 238 — PR59 post-merge Forest route audit v1
+Create NEW file only:
+- `docs/qa-prep/PR59_FOREST_ROUTE_PRESENTATION_POST_MERGE_AUDIT_V1.md`
+
+Only after Git proves merge, record exact merge SHA/current main/post-merge CI.
+Otherwise mark NOT_YET_MERGED.
+
+## Queue item 239 — Forest route player-facing label QA v1
+Create NEW file only:
+- `docs/qa-prep/FOREST_ROUTE_PLAYER_FACING_LABEL_QA_V1.md`
+
+Audit current Activity progress line and route choices for raw internal route IDs.
+Define acceptance for rendering localized route labels without changing persisted route state.
+
+## Queue item 240 — old-boundary safe asset acceptance v1
+Create NEW file only:
+- `docs/qa-prep/OLD_BOUNDARY_SAFE_ASSET_ACCEPTANCE_V1.md`
+
+Review Chat2 item 280 when present:
+must show old stones/marks/path only and reject gate/token/Hunter/reward/challenge implications.
+
+## Queue item 241 — Chat3 post-PR58 Night/Forest wave QA v1
+Create NEW file only:
+- `docs/qa-prep/CHAT3_POST_PR58_NIGHT_FOREST_WAVE_QA_V1.md`
+
+Review Chat3 items 269–280 as they appear:
+shared Night rebasing, route presentation, journal rendering expectations and Product-open isolation.
+
+## Queue item 242 — Chat5 post-PR58 UI localization wave QA v1
+Create NEW file only:
+- `docs/qa-prep/CHAT5_POST_PR58_UI_LOCALIZATION_WAVE_QA_V1.md`
+
+Review Chat5 items 109–120 as they appear against exact current main:
+remaining safe UI strings, condition templates, accessibility and collision status.
+
+## Queue item 243 — hardcoded player-facing text debt recompute v2
+Create NEW file only:
+- `docs/qa-prep/HARDCODED_PLAYER_FACING_TEXT_DEBT_RECOMPUTE_V2.md`
+
+Recompute exact current `src/ui/app.ts` player-facing hardcoded/mixed-language debt after PR58 and PR59 status.
+Exclude debug/internal.
+
+## Queue item 244 — current bilingual coverage recompute v4
+Create NEW file only:
+- `docs/qa-prep/CURRENT_BILINGUAL_COVERAGE_RECOMPUTE_V4.md`
+
+Recompute current event/choice/media-alt/UI shell coverage using actual current root files.
+No stale prior counts.
+
+## Queue item 245 — current-main CI regression floor v9
+Create NEW file only:
+- `docs/qa-prep/CURRENT_MAIN_CI_REGRESSION_FLOOR_V9.md`
+
+Record exact current main, latest successful push run, validator counts, test count and project-owned static coverage.
+
+## Queue item 246 — next production integration gate v19
+Create NEW file only:
+- `docs/qa-prep/NEXT_PRODUCTION_INTEGRATION_GATE_V19.md`
+
+Summarize items 235–245:
+- PR54/58;
+- PR59;
+- raw route-label debt;
+- old-boundary safe asset;
+- Chat3/5 new waves;
+- remaining bilingual debt;
+- Product-open isolation.
+
+Continue items 235–246 sequentially without waiting for Lead review.
