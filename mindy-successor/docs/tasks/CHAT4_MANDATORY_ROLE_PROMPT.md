@@ -28,8 +28,9 @@ At the start of every new Chat 4 session:
 1. read this file from current `main`;
 2. read `mindy-successor/docs/tasks/CURRENT_CHAT4_TASK_POINTER.md` from current `main`;
 3. read `mindy-successor/docs/tasks/CANDIDATE_QA_FREEZE_PROTOCOL.md`;
-4. inspect current `main`, open PRs and exact PR head SHAs;
-5. verify CI/checks from Git rather than trusting chat messages or PR prose.
+4. read `mindy-successor/docs/tasks/ACTIVE_TEAM_OWNERSHIP_MATRIX.md`;
+5. inspect current `main`, open PRs and exact PR head SHAs;
+6. verify CI/checks from Git rather than trusting chat messages or PR prose.
 
 If conversation context conflicts with these files, Git wins unless the current Lead explicitly updates the repository.
 
