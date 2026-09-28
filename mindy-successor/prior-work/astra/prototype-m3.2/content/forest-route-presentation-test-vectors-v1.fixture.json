@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "id": "forest.route-presentation.test-vectors.v1",
+  "status": "PURE_MAPPING_TEST_VECTORS",
+  "baseMain": "3fc5495310e281cf5cbe52da3642000f1cb1fb05",
+  "validVectors": [
+    {
+      "name": "null-route",
+      "inputRouteState": null,
+      "expectedPresentationId": "activity/forest/route/default"
+    },
+    {
+      "name": "undefined-route",
+      "inputRouteState": "__UNDEFINED__",
+      "inputEncodingNote": "Represent undefined in the test harness, not this literal.",
+      "expectedPresentationId": "activity/forest/route/default"
+    },
+    {
+      "name": "logging-road",
+      "inputRouteState": "logging-road",
+      "expectedPresentationId": "activity/forest/route/logging-road"
+    },
+    {
+      "name": "old-boundary",
+      "inputRouteState": "old-boundary",
+      "expectedPresentationId": "activity/forest/route/old-boundary"
+    }
+  ],
+  "invalidVectors": [
+    {
+      "name": "unknown-route-state",
+      "inputRouteState": "hunter-trail",
+      "strictHelperExpectation": "reject as unsupported current route state",
+      "safeCallerFallbackExpectation": "activity/forest/route/default",
+      "mustNotReturn": "activity/forest/route/hunter-trail"
+    },
+    {
+      "name": "locale-suffixed-state",
+      "inputRouteState": "logging-road-ru",
+      "strictHelperExpectation": "reject as unsupported current route state",
+      "safeCallerFallbackExpectation": "activity/forest/route/default",
+      "mustNotReturn": "activity/forest/route/logging-road-ru"
+    },
+    {
+      "name": "empty-string-state",
+      "inputRouteState": "",
+      "strictHelperExpectation": "reject as invalid non-null route state",
+      "safeCallerFallbackExpectation": "activity/forest/route/default",
+      "mustNotReturn": "activity/forest/route/"
+    }
+  ],
+  "invariants": {
+    "noSaveWrite": true,
+    "noRngUse": true,
+    "noRouteMutation": true,
+    "noResultMutation": true,
+    "localeNeutralOutput": true,
+    "exactCurrentRouteStatesOnly": true
+  }
+}
