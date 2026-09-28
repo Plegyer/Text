@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img"
+ data-presentation-id="activity/forest/route/old-boundary"
+ data-forest-route="old-boundary"
+ data-source-kind="project-owned">
+<defs>
+  <linearGradient id="bg" x2="0" y2="1">
+    <stop stop-color="#243840"/>
+    <stop offset="1" stop-color="#716655"/>
+  </linearGradient>
+  <radialGradient id="light">
+    <stop stop-color="#c9c3a0" stop-opacity=".25"/>
+    <stop offset="1" stop-color="#c9c3a0" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<rect width="1200" height="675" fill="url(#bg)"/>
+<circle cx="625" cy="230" r="330" fill="url(#light)"/>
+
+<path d="M0 338Q180 225 370 345T755 305T1200 255V675H0Z" fill="#345044"/>
+<path d="M0 475Q260 345 540 465T1200 398V675H0Z" fill="#2a4239"/>
+
+<g fill="#22372f">
+  <rect x="68" y="120" width="42" height="510"/>
+  <circle cx="90" cy="108" r="120"/>
+  <rect x="1070" y="112" width="44" height="518"/>
+  <circle cx="1092" cy="102" r="130"/>
+</g>
+
+<path d="M438 675L552 392H648L806 675Z" fill="#8c795f"/>
+<path d="M500 675L585 435H625L735 675Z" fill="#a08b6c" opacity=".62"/>
+
+<g fill="#68706a" stroke="#505852" stroke-width="6">
+  <path d="M270 525l20-82 62-18 25 88-45 42z"/>
+  <path d="M352 563l13-55 46-10 18 59-34 32z"/>
+  <path d="M835 505l27-92 68 11 16 88-50 41z"/>
+  <path d="M770 567l14-60 48-8 17 62-36 31z"/>
+</g>
+
+<g fill="#59755f" opacity=".95">
+  <path d="M258 486q28-34 54 0-29-11-54 0z"/>
+  <path d="M330 535q24-30 48 0-25-10-48 0z"/>
+  <path d="M820 468q29-37 58 0-31-12-58 0z"/>
+  <path d="M760 535q22-29 44 0-23-9-44 0z"/>
+</g>
+
+<g stroke="#aaa184" stroke-width="7" opacity=".76">
+  <path d="M300 452l31 42"/>
+  <path d="M310 491l24-30"/>
+  <path d="M870 432l34 46"/>
+  <path d="M881 473l24-31"/>
+  <path d="M375 518l18 28"/>
+  <path d="M798 520l20 29"/>
+</g>
+
+<g stroke="#7b8a78" stroke-width="8" opacity=".75">
+  <path d="M696 442l44-24"/>
+  <path d="M712 476l53-8"/>
+  <path d="M690 510l47 13"/>
+</g>
+
+<g fill="#7e9277">
+  <path d="M208 545q34-92 69 0-36-15-69 0z"/>
+  <path d="M968 530q40-108 80 0-42-17-80 0z"/>
+  <path d="M318 612q27-72 54 0-28-12-54 0z"/>
+</g>
+
+<rect y="646" width="1200" height="29" fill="#151a25" opacity=".28"/>
+</svg>
