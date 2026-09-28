@@ -1,0 +1,84 @@
+{
+  "formatVersion": 1,
+  "kind": "forest-route-animation-candidate-source-metadata",
+  "status": "SOURCE_READY_GIF_EXPORT_BLOCKED",
+  "currentMainBaseline": "52ddc76148e33836d3161b63bf4c25ffb5c39d02",
+  "presentationId": "activity/forest/route/logging-road",
+  "staticFallback": "assets/presentation/forest-route-logging-road-v2.svg",
+  "fallbackPresentationId": "activity/forest/route/default",
+  "candidates": [
+    {
+      "candidateKey": "forest-logging-road-loop-a",
+      "sourceSequenceKey": "forest-route-logging-road-loop-a",
+      "sourceFrames": [
+        "assets/presentation-frames/forest-route-logging-road-loop-a-frame-01.svg",
+        "assets/presentation-frames/forest-route-logging-road-loop-a-frame-02.svg",
+        "assets/presentation-frames/forest-route-logging-road-loop-a-frame-03.svg",
+        "assets/presentation-frames/forest-route-logging-road-loop-a-frame-04.svg"
+      ],
+      "sourceLoopDurationMs": 2600,
+      "normalizedExportLoopDurationMs": 2600,
+      "normalizedFrameDelayMs": 650,
+      "frameCount": 4,
+      "loopCount": 0,
+      "targetRaster": {
+        "width": 640,
+        "height": 360,
+        "maxPaletteColors": 256
+      },
+      "gifPath": null
+    },
+    {
+      "candidateKey": "forest-logging-road-loop-b",
+      "sourceSequenceKey": "forest-route-logging-road-loop-b",
+      "sourceFrames": [
+        "assets/presentation-frames/forest-route-logging-road-loop-b-frame-01.svg",
+        "assets/presentation-frames/forest-route-logging-road-loop-b-frame-02.svg",
+        "assets/presentation-frames/forest-route-logging-road-loop-b-frame-03.svg",
+        "assets/presentation-frames/forest-route-logging-road-loop-b-frame-04.svg"
+      ],
+      "sourceLoopDurationMs": 2800,
+      "normalizedExportLoopDurationMs": 2600,
+      "normalizedFrameDelayMs": 650,
+      "frameCount": 4,
+      "loopCount": 0,
+      "targetRaster": {
+        "width": 640,
+        "height": 360,
+        "maxPaletteColors": 256
+      },
+      "gifPath": null
+    },
+    {
+      "candidateKey": "forest-logging-road-loop-c",
+      "sourceSequenceKey": "forest-route-logging-road-loop-c",
+      "sourceFrames": [
+        "assets/presentation-frames/forest-route-logging-road-loop-c-frame-01.svg",
+        "assets/presentation-frames/forest-route-logging-road-loop-c-frame-02.svg",
+        "assets/presentation-frames/forest-route-logging-road-loop-c-frame-03.svg",
+        "assets/presentation-frames/forest-route-logging-road-loop-c-frame-04.svg"
+      ],
+      "sourceLoopDurationMs": 2400,
+      "normalizedExportLoopDurationMs": 2600,
+      "normalizedFrameDelayMs": 650,
+      "frameCount": 4,
+      "loopCount": 0,
+      "targetRaster": {
+        "width": 640,
+        "height": 360,
+        "maxPaletteColors": 256
+      },
+      "gifPath": null
+    }
+  ],
+  "invariants": {
+    "exactlyThreeSourceCandidates": true,
+    "routeSpecificStaticFallbackPreserved": true,
+    "sharedDefaultFallbackPreserved": true,
+    "noProductionGifClaim": true,
+    "localeNeutralCandidateKeys": true,
+    "gameplayFields": false,
+    "gameplayRng": false,
+    "saveMutation": false
+  }
+}
