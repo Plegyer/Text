@@ -1,0 +1,303 @@
+{
+  "version": 2,
+  "fixtureId": "ordinary-action-result-natural-path-v2",
+  "entries": [
+    {
+      "caseId": "forage.default",
+      "actionId": "forage",
+      "sceneId": "default",
+      "titleKey": "action.forage.label",
+      "bodyKey": "action.forage.scene.default.text",
+      "precondition": "eligible; any season unless seasonal effects are separately asserted",
+      "expected": {
+        "ru": {
+          "title": "Собрать травы",
+          "body": "Две порции трав. В зимнем городе сбор заменяет работа с запасами."
+        },
+        "en": {
+          "title": "Gather herbs",
+          "body": "Gather two portions of herbs. In winter, city foraging is replaced by working with stored supplies."
+        }
+      },
+      "unchangedGameplayExpectation": {
+        "metricDeltas": {
+          "energy": -1,
+          "perception": 1
+        },
+        "otherChanges": [
+          "inventory herb +2"
+        ],
+        "rng": "same baseline resolver/RNG evolution in both locales",
+        "saveIdentity": "same action/scene IDs and gameplay state; locale changes presentation only"
+      }
+    },
+    {
+      "caseId": "oddjob.default",
+      "actionId": "oddjob",
+      "sceneId": "default",
+      "titleKey": "action.oddjob.label",
+      "bodyKey": "action.oddjob.scene.default.text",
+      "precondition": "eligible",
+      "expected": {
+        "ru": {
+          "title": "Мелкая подработка",
+          "body": "10 монет за поручение. Доступна без образования и инструментов."
+        },
+        "en": {
+          "title": "Take a small odd job",
+          "body": "Earn 10 coins for an errand. Available without education or tools."
+        }
+      },
+      "unchangedGameplayExpectation": {
+        "metricDeltas": {
+          "energy": -1,
+          "money": 10
+        },
+        "otherChanges": [],
+        "rng": "same baseline resolver/RNG evolution in both locales",
+        "saveIdentity": "same action/scene IDs and gameplay state; locale changes presentation only"
+      }
+    },
+    {
+      "caseId": "repay.debt-at-least-10",
+      "actionId": "repay",
+      "sceneId": "default",
+      "titleKey": "action.repay.label",
+      "bodyKey": "action.repay.scene.default.text",
+      "precondition": "debt >= 10; money >= 10; energy >= 1",
+      "expected": {
+        "ru": {
+          "title": "Погасить часть долга",
+          "body": "Вернуть до 10 монет, не больше остатка долга. Долг не исчезает при переезде."
+        },
+        "en": {
+          "title": "Repay part of the debt",
+          "body": "Repay up to 10 coins, never more than the remaining debt. Moving does not erase the debt."
+        }
+      },
+      "unchangedGameplayExpectation": {
+        "metricDeltas": {
+          "energy": -1,
+          "money": -10,
+          "debt": -10
+        },
+        "otherChanges": [],
+        "rng": "same baseline resolver/RNG evolution in both locales",
+        "saveIdentity": "same action/scene IDs and gameplay state; locale changes presentation only"
+      }
+    },
+    {
+      "caseId": "rent-room.default",
+      "actionId": "rent-room",
+      "sceneId": "default",
+      "titleKey": "action.rent-room.label",
+      "bodyKey": "action.rent-room.scene.default.text",
+      "precondition": "debt = 0; housing != room; money >= 18; energy >= 1",
+      "expected": {
+        "ru": {
+          "title": "Вернуться в комнату",
+          "body": "Снять комнату за 18 монет после погашения старого долга. Ночлег оплачивается отдельно."
+        },
+        "en": {
+          "title": "Return to a room",
+          "body": "Rent a room for 18 coins after clearing the old debt. Night lodging is paid separately."
+        }
+      },
+      "unchangedGameplayExpectation": {
+        "metricDeltas": {
+          "energy": -1,
+          "money": -18
+        },
+        "otherChanges": [
+          "housing becomes room"
+        ],
+        "rng": "same baseline resolver/RNG evolution in both locales",
+        "saveIdentity": "same action/scene IDs and gameplay state; locale changes presentation only"
+      }
+    },
+    {
+      "caseId": "arrival.default",
+      "actionId": "arrival",
+      "sceneId": "default",
+      "titleKey": "action.arrival.label",
+      "bodyKey": "action.arrival.scene.default.text",
+      "precondition": "story.arrived = false",
+      "expected": {
+        "ru": {
+          "title": "Пойти за белым сусликом",
+          "body": "За белым сусликом — в новую жизнь."
+        },
+        "en": {
+          "title": "Follow the white gopher",
+          "body": "Follow the white gopher into a new life."
+        }
+      },
+      "unchangedGameplayExpectation": {
+        "metricDeltas": {
+          "energy": 0,
+          "money": 0
+        },
+        "otherChanges": [
+          "story action consumes no action slot; resolver/event behavior unchanged"
+        ],
+        "rng": "same baseline resolver/RNG evolution in both locales",
+        "saveIdentity": "same action/scene IDs and gameplay state; locale changes presentation only"
+      }
+    },
+    {
+      "caseId": "forest-search.default",
+      "actionId": "forest-search",
+      "sceneId": "default",
+      "titleKey": "action.forest-search.label",
+      "bodyKey": "action.forest-search.scene.default.text",
+      "precondition": "story.arrived=true; tavern.quest=true; forest.receipt=false; perception>=3; energy>=1",
+      "expected": {
+        "ru": {
+          "title": "Проверить лесной склад",
+          "body": "Найти накладную Марека; нужно чутьё 3. Текстовая вылазка на лесной склад."
+        },
+        "en": {
+          "title": "Check the forest storehouse",
+          "body": "Find Marek’s delivery note; requires perception 3. A text-based outing to the forest storehouse."
+        }
+      },
+      "unchangedGameplayExpectation": {
+        "metricDeltas": {
+          "energy": -1
+        },
+        "otherChanges": [
+          "forest.receipt becomes true",
+          "legacy/tutorial action only"
+        ],
+        "rng": "same baseline resolver/RNG evolution in both locales",
+        "saveIdentity": "same action/scene IDs and gameplay state; locale changes presentation only"
+      }
+    },
+    {
+      "caseId": "tavern-talk.default",
+      "actionId": "tavern-talk",
+      "sceneId": "default",
+      "titleKey": "action.tavern-talk.label",
+      "bodyKey": "action.tavern-talk.scene.default.text",
+      "precondition": "story.arrived=true; forest.receipt=true; tavern.resolved=false; energy>=1",
+      "expected": {
+        "ru": {
+          "title": "Обсудить накладную с трактирщиком",
+          "body": "Вернуться с уликой и решить, кому достанется право на праздник."
+        },
+        "en": {
+          "title": "Discuss the delivery note with the innkeeper",
+          "body": "Return with the clue and decide who receives the right to hold the festival."
+        }
+      },
+      "unchangedGameplayExpectation": {
+        "metricDeltas": {
+          "energy": -1
+        },
+        "otherChanges": [
+          "resolver may open the same current resolution event"
+        ],
+        "rng": "same baseline resolver/RNG evolution in both locales",
+        "saveIdentity": "same action/scene IDs and gameplay state; locale changes presentation only"
+      }
+    },
+    {
+      "caseId": "brew.gentle-success",
+      "actionId": "brew",
+      "sceneId": "default",
+      "titleKey": "action.brew.label",
+      "bodyKey": "action.brew.scene.default.text",
+      "precondition": "herb>=1; energy>=1; recipe=gentle",
+      "expected": {
+        "ru": {
+          "title": "Приготовить микстуру",
+          "body": "Одна трава и один ход. Щадящий нагрев даёт одну микстуру; быстрый — две при мастерстве 3 или наличии весов."
+        },
+        "en": {
+          "title": "Brew a tonic",
+          "body": "One herb and one action. Gentle heating yields one tonic; the fast method yields two with mastery 3 or a set of scales."
+        }
+      },
+      "unchangedGameplayExpectation": {
+        "metricDeltas": {
+          "energy": -1,
+          "alchemy": 1
+        },
+        "otherChanges": [
+          "inventory herb -1",
+          "inventory tonic +1"
+        ],
+        "rng": "same baseline resolver/RNG evolution in both locales",
+        "saveIdentity": "same action/scene IDs and gameplay state; locale changes presentation only"
+      }
+    },
+    {
+      "caseId": "brew.bold-success",
+      "actionId": "brew",
+      "sceneId": "default",
+      "titleKey": "action.brew.label",
+      "bodyKey": "action.brew.scene.default.text",
+      "precondition": "herb>=1; energy>=1; recipe=bold; alchemy>=3 OR scales owned",
+      "expected": {
+        "ru": {
+          "title": "Приготовить микстуру",
+          "body": "Одна трава и один ход. Щадящий нагрев даёт одну микстуру; быстрый — две при мастерстве 3 или наличии весов."
+        },
+        "en": {
+          "title": "Brew a tonic",
+          "body": "One herb and one action. Gentle heating yields one tonic; the fast method yields two with mastery 3 or a set of scales."
+        }
+      },
+      "unchangedGameplayExpectation": {
+        "metricDeltas": {
+          "energy": -1,
+          "alchemy": 1
+        },
+        "otherChanges": [
+          "inventory herb -1",
+          "inventory tonic +2"
+        ],
+        "rng": "same baseline resolver/RNG evolution in both locales",
+        "saveIdentity": "same action/scene IDs and gameplay state; locale changes presentation only"
+      }
+    },
+    {
+      "caseId": "brew.bold-failure",
+      "actionId": "brew",
+      "sceneId": "default",
+      "titleKey": "action.brew.label",
+      "bodyKey": "action.brew.scene.default.text",
+      "precondition": "herb>=1; energy>=1; recipe=bold; alchemy<3; no scales",
+      "expected": {
+        "ru": {
+          "title": "Приготовить микстуру",
+          "body": "Одна трава и один ход. Щадящий нагрев даёт одну микстуру; быстрый — две при мастерстве 3 или наличии весов."
+        },
+        "en": {
+          "title": "Brew a tonic",
+          "body": "One herb and one action. Gentle heating yields one tonic; the fast method yields two with mastery 3 or a set of scales."
+        }
+      },
+      "unchangedGameplayExpectation": {
+        "metricDeltas": {
+          "energy": -1,
+          "alchemy": 1
+        },
+        "otherChanges": [
+          "inventory herb -1",
+          "no tonic gained"
+        ],
+        "rng": "same baseline resolver/RNG evolution in both locales",
+        "saveIdentity": "same action/scene IDs and gameplay state; locale changes presentation only"
+      }
+    }
+  ],
+  "invariants": {
+    "sourceBaseline": "54131488c65302f81b3001abaaa345d21f0281e2",
+    "exactCurrentActionsOnly": true,
+    "localizationChangesPresentationOnly": true,
+    "resultIdentityLocaleNeutral": true,
+    "noAdditionalRngFromLocaleSwitch": true,
+    "noSaveMutationFromLocaleSwitch": true
+  }
+}
