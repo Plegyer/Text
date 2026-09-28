@@ -23,8 +23,9 @@ At the start of every new Chat 2 session:
 1. read this file from current `main`;
 2. read `mindy-successor/docs/tasks/CURRENT_CHAT2_TASK_POINTER.md` from current `main`;
 3. read `mindy-successor/docs/tasks/CANDIDATE_QA_FREEZE_PROTOCOL.md`;
-4. verify current `main` before touching a worker branch;
-5. treat old chat messages as non-authoritative if they conflict with Git.
+4. read `mindy-successor/docs/tasks/ACTIVE_TEAM_OWNERSHIP_MATRIX.md`;
+5. verify current `main` before touching a worker branch;
+6. treat old chat messages as non-authoritative if they conflict with Git.
 
 If this file and chat context disagree, this file wins unless the current Lead explicitly updates the repository.
 
