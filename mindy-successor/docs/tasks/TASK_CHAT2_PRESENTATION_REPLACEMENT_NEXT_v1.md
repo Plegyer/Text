@@ -3933,3 +3933,90 @@ Create NEW file only:
 Consolidate items 292–302 into LOGGING_STATIC_READY / OLD_BOUNDARY_STATIC_READY / LOCALIZATION_READY / BUILD_READY / ANIMATION_FUTURE / PRODUCT_OPEN_EXCLUDED.
 
 Continue items 292–303 sequentially without waiting for Lead review.
+
+
+## Queue item 304 — logging-road animation source sequence A v1
+Create NEW original SVG frame sources only under:
+- `prior-work/astra/prototype-m3.2/assets/presentation-frames/`
+
+Create a 4-frame route-specific source sequence for:
+- `activity/forest/route/logging-road`
+
+Allowed semantics:
+wheel ruts, cut branches, timber-work traces, broad work road.
+No result/reward/Hunter/token/challenge semantics.
+
+## Queue item 305 — logging-road animation source sequence B v1
+Create NEW original 4-frame SVG source sequence for the same semantic identity, visually distinct from A.
+
+## Queue item 306 — logging-road animation source sequence C v1
+Create NEW original 4-frame SVG source sequence for the same semantic identity, visually distinct from A/B.
+
+## Queue item 307 — old-boundary animation source sequence A v1
+Create NEW original 4-frame SVG source sequence for:
+- `activity/forest/route/old-boundary`
+
+Allowed semantics:
+weathered stones, old marks, narrow path, low boundary stones.
+Explicitly exclude gate/arch, token/key, Hunter, challenge/reward/result cues.
+
+## Queue item 308 — old-boundary animation source sequence B v1
+Create NEW original 4-frame SVG source sequence for the same semantic identity, visually distinct from A.
+
+## Queue item 309 — old-boundary animation source sequence C v1
+Create NEW original 4-frame SVG source sequence for the same semantic identity, visually distinct from A/B.
+
+## Queue item 310 — Forest route animation frame validator v1
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/forest-route-animation-frames-v1.test.ts`
+
+Validate items 304–309:
+- exactly 3 source sequences per route;
+- exactly 4 ordered frames per sequence;
+- consistent dimensions/viewBox;
+- local project-owned SVG only;
+- no scripts/external URLs;
+- exact semantic presentationIds;
+- no gameplay/RNG/Save metadata;
+- old-boundary forbidden semantics absent from source metadata/text.
+
+## Queue item 311 — logging-road animation candidate metadata v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/forest-logging-road-animation-candidates-v1.json`
+
+Describe exactly 3 future candidates, their ordered local SVG frame sources, timing, static fallback, and semantic presentationId.
+No GIF path unless actual GIF bytes exist.
+
+## Queue item 312 — old-boundary animation candidate metadata v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/forest-old-boundary-animation-candidates-v1.json`
+
+Same rules as item 311.
+
+## Queue item 313 — Forest route animation source manifest v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/forest-route-animation-source-manifest-v1.json`
+
+Consolidate both route identities, six sequences and 24 SVG frames.
+Record export-ready source status only, not production GIF status.
+
+## Queue item 314 — Forest route exporter dry-run plan v1
+Create NEW file only:
+- `docs/presentation-prep/FOREST_ROUTE_EXPORTER_DRY_RUN_PLAN_V1.md`
+
+Define the exact future dry-run/export validation sequence for the two route pools using the already-proposed exporter.
+Do not modify dependencies/package files.
+
+## Queue item 315 — Forest route animation handoff v7
+Create NEW file only:
+- `docs/presentation-prep/FOREST_ROUTE_ANIMATION_HANDOFF_V7.md`
+
+Consolidate items 304–314 into:
+- LOGGING_SOURCE_READY;
+- OLD_BOUNDARY_SOURCE_READY;
+- THREE_CANDIDATES_EACH;
+- EXPORTER_DEPENDENCY_STILL_LEAD_OWNED;
+- NO_PRODUCTION_GIF_YET;
+- PRODUCT_OPEN_EXCLUDED.
+
+Continue items 304–315 sequentially without waiting for Lead review.
