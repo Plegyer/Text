@@ -6,70 +6,66 @@ Queue: **1–12 QA gate tasks**
 Role contract: `mindy-successor/docs/tasks/CHAT4_MANDATORY_ROLE_PROMPT.md`
 Freeze protocol: `mindy-successor/docs/tasks/CANDIDATE_QA_FREEZE_PROTOCOL.md`
 
-## Current candidate set
+## Frozen candidate set
 
-At assignment time the following production candidate PRs are open:
+### PR #65 — Foreman semantic localization
+- producer: Chat 1 Developer
+- branch: `chat1-dev/foreman-semantic-localization-v3`
+- frozen exact head: `85076aa452ac624340406503b2b6ecf551c72e87`
+- changed files: 4
+- required workflow run: `36422933185`
+- repository `mindy-successor check`: PASS
+- PR #63 is CLOSED/SUPERSEDED and must not be audited as a second active candidate
 
-### PR #63 — Foreman semantic localization
-- head branch: `chat1-dev/foreman-semantic-localization-v1`
-- assignment-time head: `c47bac380febf26322f5e82cfef44c578175890f`
-- ownership: Chat 1 Developer selective integration
-- expected scope: 8 Foreman RU+EN semantic labels + existing generic relationship-condition presentation wiring + regression
+### PR #64 — additional career animation sources 352–363
+- producer: Chat 2
+- branch: `chat2/additional-career-animation-sources-352-363-r2`
+- frozen exact head: `933ee8e0789034e5a64829505a1c9f1071571109`
+- changed files: 39
+- required workflow run: `36422956497`
+- repository `mindy-successor check`: PASS
 
-### PR #64 — Chat 2 additional career animation sources 352–363
-- head branch: `chat2/additional-career-animation-sources-352-363-r2`
-- assignment-time head: `1d8b2a17d24fc7030aec522c12da0694770c818c`
-- ownership: Chat 2 Presentation & Media
-- expected scope: 36 project-owned SVG frames, validator v5, manifest v4, handoff v11; no GIF bytes
+These two heads are frozen. Do not chase later heads.
 
-The assignment-time SHA is historical once a PR moves. Always read the live PR head.
+If either moves unexpectedly:
+- invalidate the old exact-head result;
+- mark that candidate `UNSTABLE / QA PAUSED`;
+- wait for Lead/producer to declare a replacement frozen SHA;
+- restart the exact-head gate once.
 
-## Mandatory moving-head behavior
+Unrelated role/task/coordination docs landing on `main` do not by themselves require a producer rebase.
 
-Do **not** continuously chase a PR whose head changes during QA.
+## Task 1 — inventory and freeze confirmation
 
-For each PR:
-1. record one exact head;
-2. treat it as frozen;
-3. audit that exact head;
-4. if it moves unexpectedly, mark `UNSTABLE / QA PAUSED`;
-5. wait for producer/Lead to declare a new frozen exact head;
-6. restart the full exact-head gate only on that frozen replacement.
+Read current `main`, PR #65 and PR #64.
 
-A producer may move the head to fix a concrete CI/QA blocker, but that invalidates the previous gate.
+Confirm:
+- #65 is still open at `85076aa452ac624340406503b2b6ecf551c72e87`;
+- #64 is still open at `933ee8e0789034e5a64829505a1c9f1071571109`;
+- #63 remains closed.
 
-Unrelated role/task/docs commits on `main` do not by themselves require a producer rebase.
+If either active head moved, pause that PR rather than following successive revisions.
 
-## Task 1 — current-main and PR inventory audit
+## Task 2 — PR65 actual-diff scope audit
 
-Read exact current `main` and list all open PRs.
+Inspect the actual PR65 diff.
 
-Confirm whether #63 and #64 are still open and record their current live head SHAs.
-
-If a head differs from the assignment-time SHA **before** you begin its audit, use the current head and freeze it for that audit.
-
-If it changes **after** you begin its audit, pause that PR under the moving-head rule rather than chasing it.
-
-## Task 2 — PR63 actual-diff scope audit
-
-Inspect the actual PR63 changed files/diff.
-
-Confirm that it contains only:
-- reviewed Foreman localization data/fixture;
-- existing presentation consumer wiring;
-- focused regression coverage.
+Confirm it contains only:
+- reviewed Foreman semantic RU+EN localization;
+- the existing generic relationship-condition presentation wiring;
+- focused regression/fixture coverage.
 
 Flag unrelated gameplay, Save, RNG, content-canon, media or architecture changes.
 
-## Task 3 — PR63 current-main collision/base-drift audit
+## Task 3 — PR65 current-main collision/base-drift audit
 
 Re-check the eight `relationship.lumber.foreman.*` keys against exact current `main`.
 
-Confirm whether the PR's ADDITIVE/IDENTICAL/CONFLICT/SUPERSEDED classification remains correct.
+Confirm ADDITIVE / IDENTICAL / CONFLICT / SUPERSEDED classification remains valid.
 
-Do not demand a rebase merely because unrelated coordination docs landed on `main`.
+Do not demand a rebase solely for coordination-doc movement.
 
-## Task 4 — PR63 presentation-invariant audit
+## Task 4 — PR65 presentation-invariant audit
 
 Verify:
 - stable relationship/stage/counter/fact/choice/value IDs unchanged;
@@ -77,38 +73,33 @@ Verify:
 - no Save schema/state mutation added;
 - no RNG/economy/progression/NightFlow change;
 - unknown semantic IDs retain raw-ID fallback;
-- no new UI surface was invented solely to consume unused keys.
+- no new UI surface was invented only to consume unused keys.
 
-## Task 5 — PR63 exact-head CI/check audit
+## Task 5 — PR65 exact-head CI/check audit
 
-Verify repository-required checks for the exact frozen PR63 head.
+Verify repository-required checks on exact frozen head:
+`85076aa452ac624340406503b2b6ecf551c72e87`.
 
-Distinguish the repository `mindy-successor check` from unrelated Vercel deployment quota failures.
+Record actual workflow state, not PR prose.
 
-If required repository CI is not verifiably green on the exact head, report BLOCK/PENDING.
+## Task 6 — PR65 product-acceptance gate
 
-## Task 6 — PR63 product-acceptance gate
-
-Record one result:
+Record:
 - PASS;
 - PASS-WITH-NOTES;
 - BLOCK;
-- UNSTABLE / QA PAUSED.
+- or UNSTABLE / QA PAUSED.
 
-Include:
-- exact frozen head SHA;
-- actual changed files;
-- CI state;
-- any invariant concerns;
-- whether Lead can safely merge/selectively integrate.
+Include exact frozen head, changed files, CI state, invariants and concrete blocker if any.
 
-Do not merge the PR yourself unless Lead explicitly asks.
+Do not merge.
 
 ## Task 7 — PR64 asset-inventory scope audit
 
-Inspect the actual frozen PR64 changed files.
+Inspect exact frozen PR64 diff at:
+`933ee8e0789034e5a64829505a1c9f1071571109`.
 
-Confirm the claimed inventory:
+Confirm:
 - 9 source sequences;
 - 4 SVG frames each;
 - 36 total frame files;
@@ -117,17 +108,17 @@ Confirm the claimed inventory:
 - manifest v4;
 - handoff v11.
 
-Flag unexpected source/runtime/gameplay/localization changes.
+Flag unrelated runtime/gameplay/localization changes.
 
 ## Task 8 — PR64 media semantic-safety audit
 
-Verify the SVG/source package is presentation-only:
-- project-owned local assets;
+Verify:
+- local project-owned SVG assets only;
 - no external URLs/scripts/data URLs;
 - exact semantic presentation IDs;
-- consistent frame metadata/viewBox per sequence;
+- consistent frame metadata/viewBox;
 - no reward/effect/RNG/Save/gameplay metadata;
-- no GIF byte claim.
+- zero actual GIF bytes.
 
 ## Task 9 — PR64 manifest/validator coherence audit
 
@@ -136,42 +127,47 @@ Verify manifest v4 and validator v5 agree on:
 - presentation IDs;
 - frame ordering;
 - timing;
-- static fallback paths;
+- static fallbacks;
 - 9/36 counts.
 
-Confirm fallback paths refer to valid current presentation assets/slots.
+Confirm fallbacks point to valid current presentation assets/slots.
 
 ## Task 10 — PR64 exact-head CI/check audit
 
-Verify required repository checks for the exact frozen PR64 head.
+Verify required repository CI on exact frozen head:
+`933ee8e0789034e5a64829505a1c9f1071571109`.
 
-If CI fails, record the concrete blocker and return ownership to Chat 2 for a narrow fix.
-Do not modify the same media slice yourself unless Lead explicitly transfers that fix.
+The authoritative repository workflow run recorded by Lead is:
+- run `36422956497`
+- `mindy-successor check`
+- PASS.
 
-When Chat 2 reports a new frozen head, restart Tasks 7–10 on that one head.
+Independently confirm it from Git before gating.
 
-## Task 11 — cross-PR interference and merge-order audit
+If a real blocker appears, return it to Chat 2. Do not edit the same media slice unless Lead explicitly transfers that narrow fix.
 
-Compare PR63 and PR64 against current `main` and against each other.
+## Task 11 — cross-PR interference audit
 
-Determine whether their changed files or semantics overlap.
+Compare PR #65 and PR #64 with current `main` and with each other.
 
-If they are independent, record that. If current `main` has materially overlapping production changes or an actual conflict, state whether a candidate requires rebase/retest.
+Determine whether production files/semantic ownership overlap.
 
-Do not treat coordination-only main movement as automatic rebase debt.
+QA review of another chat's PR is not duplicate implementation.
+
+Report actual overlap only; coordination-doc drift is not material overlap.
 
 ## Task 12 — QA gate handoff
 
-Produce a concise QA handoff under:
-- `mindy-successor/docs/qa-prep/CURRENT_PR63_PR64_QA_GATE_V1.md`
+Create/update on a dedicated QA branch:
+- `mindy-successor/docs/qa-prep/CURRENT_PR64_PR65_QA_GATE_V1.md`
 
-It must contain:
+Record:
 - current main SHA;
-- PR63 frozen exact head + PASS/PASS-WITH-NOTES/BLOCK/PAUSED;
-- PR64 frozen exact head + PASS/PASS-WITH-NOTES/BLOCK/PAUSED;
-- exact required CI state for each;
+- PR65 frozen head + gate result;
+- PR64 frozen head + gate result;
+- exact CI result for both;
 - cross-PR overlap result;
-- concrete blockers, if any;
-- whether a small QA-fix PR was necessary.
+- concrete blockers;
+- whether any QA-fix ownership transfer was needed.
 
-Do not push this QA handoff directly to `main` while producer PRs are under active gate. Use a dedicated QA branch/checkpoint unless Lead explicitly requests a main commit.
+Do not commit QA handoff directly to `main` while the producer PRs are active unless Lead explicitly requests it.
