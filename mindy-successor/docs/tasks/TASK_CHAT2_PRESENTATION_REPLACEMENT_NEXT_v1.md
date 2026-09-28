@@ -3582,3 +3582,70 @@ Consolidate items 256–266:
 - no production animation claim until actual GIF bytes exist.
 
 Continue items 256–267 sequentially without waiting for Lead review.
+
+
+## Queue item 268 — poverty animation source expansion v1
+Create NEW original SVG frame sources only under:
+- `prior-work/astra/prototype-m3.2/assets/presentation-frames/`
+
+Create two additional distinct 4-frame source sequences for:
+- `location/town/event/poverty-street-production-helpful-summer/default`.
+
+Together with the existing sequence, this semantic identity should have 3 compatible animation source sequences.
+
+## Queue item 269 — Forest success-return second source sequence v1
+Create NEW original SVG frame sources only for:
+- `activity/forest/return/success`.
+
+## Queue item 270 — Forest success-return third source sequence v1
+Create NEW original SVG frame sources only for the same semantic identity.
+
+## Queue item 271 — Foreman Night second source sequence v1
+Create NEW original SVG frame sources only for:
+- `relationship/lumber-foreman/lumber-night-foreman-professional/default`.
+
+## Queue item 272 — Foreman Night third source sequence v1
+Create NEW original SVG frame sources only for the same semantic identity.
+
+## Queue item 273 — School Arcana second source sequence v1
+Create NEW original SVG frame sources only for:
+- `school/arcana/lesson/default`.
+
+Presentation-only; no Arcana public fact/result mechanics.
+
+## Queue item 274 — School Arcana third source sequence v1
+Create NEW original SVG frame sources only for the same semantic identity.
+
+## Queue item 275 — multi-scene animation timing normalization v1
+Create NEW file only:
+- `docs/presentation-prep/ANIMATION_TIMING_NORMALIZATION_V1.md`
+
+Normalize target loop timing/frame pacing for every semantic identity with >=3 source sequences.
+No GIF bytes required.
+
+## Queue item 276 — animation source manifest v3
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/project-owned-animation-source-manifest-v3.json`
+
+Include every validated source sequence and identify semantic IDs with >=3 compatible source sequences.
+
+## Queue item 277 — animation source validator v4
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/project-owned-animation-frames-v4.test.ts`
+
+Validate all source sequences through item 276:
+exact current semantic IDs, ordered frames, consistent viewBox, no external resources, no gameplay/RNG/Save metadata.
+
+## Queue item 278 — first-three-pool source readiness ledger v1
+Create NEW file only:
+- `docs/presentation-prep/FIRST_THREE_POOL_SOURCE_READINESS_LEDGER_V1.md`
+
+Identify at least three semantic identities that now have 3 compatible source sequences and are ready for GIF export once exporter approval lands.
+
+## Queue item 279 — animation source handoff v4
+Create NEW file only:
+- `docs/presentation-prep/PROJECT_OWNED_ANIMATION_SOURCE_HANDOFF_V4.md`
+
+Consolidate items 268–278 with exact selective-copy files and no production GIF claim.
+
+Continue items 268–279 sequentially without waiting for Lead review.
