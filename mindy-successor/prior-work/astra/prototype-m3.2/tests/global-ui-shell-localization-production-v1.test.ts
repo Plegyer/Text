@@ -8,7 +8,7 @@ const app=readFileSync('src/ui/app.ts','utf8');
 
 test('global UI shell production fixture is fully merged RU EN',()=>{
  assert.equal(Object.keys(fixture.strings).length,34);
- for(const [key,value] of Object.entries(fixture.strings)){
+ for(const [key,value] of Object.entries(fixture.strings as Record<string,{ru:string;en:string}>)){
   assert.deepEqual(root[key],value,key);
   assert.ok(value.ru?.trim(),key+' ru');
   assert.ok(value.en?.trim(),key+' en');
