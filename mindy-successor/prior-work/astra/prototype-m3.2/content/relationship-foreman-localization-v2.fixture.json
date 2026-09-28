@@ -1,0 +1,83 @@
+{
+  "version": 2,
+  "defaultLocale": "ru",
+  "strings": {
+    "relationship.lumber.foreman.label": {
+      "ru": "Бригадир лесной артели",
+      "en": "Lumber Foreman"
+    },
+    "relationship.lumber.foreman.stage.unknown.label": {
+      "ru": "Ещё не знакомы",
+      "en": "Not yet acquainted"
+    },
+    "relationship.lumber.foreman.stage.professional.label": {
+      "ru": "Рабочее доверие",
+      "en": "Professional trust"
+    },
+    "relationship.lumber.foreman.stage.route-professional.label": {
+      "ru": "Профессиональный путь",
+      "en": "Professional route"
+    },
+    "relationship.lumber.foreman.counter.night_meetings.label": {
+      "ru": "Вечерние разговоры",
+      "en": "Evening conversations"
+    },
+    "relationship.lumber.foreman.fact.night-followup-complete.label": {
+      "ru": "Вечерний рабочий разговор завершён",
+      "en": "After-work conversation completed"
+    },
+    "relationship.lumber.foreman.choice.route.professional.label": {
+      "ru": "Держаться профессионального пути",
+      "en": "Keep to the professional route"
+    },
+    "event.lumber.foreman-notice.title": {
+      "ru": "Бригадир замечает работу",
+      "en": "The Foreman notices the work"
+    },
+    "event.lumber.foreman-notice.variant.default.text": {
+      "ru": "После первой признанной смены бригадир обращается к тебе уже не как к случайной подёнщице. Разговор остаётся рабочим: он отмечает, что на тебя можно рассчитывать, и предлагает дальше держаться профессионально.",
+      "en": "After your first recognized shift, the Foreman no longer treats you like a passing day laborer. The conversation stays work-focused: he notes that you can be relied on and suggests keeping things professional."
+    },
+    "event.lumber.foreman-notice.choice.professional.label": {
+      "ru": "Оставить всё по-деловому",
+      "en": "Keep it professional"
+    },
+    "event.lumber.foreman-notice.choice.professional.text": {
+      "ru": "Принять рабочее доверие без обещаний о более близких отношениях.",
+      "en": "Accept the professional trust without promising a closer relationship."
+    }
+  },
+  "invariants": {
+    "sourceBaseline": "01b31b9ab0d0267d95edf5b5b80638acd63f5c04",
+    "relationshipId": "lumber.foreman",
+    "exactCurrentStages": [
+      "unknown",
+      "professional",
+      "route-professional"
+    ],
+    "exactCurrentCounter": "night_meetings",
+    "exactCurrentFact": "night-followup-complete",
+    "exactCurrentChoice": {
+      "choice": "route",
+      "value": "professional"
+    },
+    "currentMilestoneEventId": "lumber.foreman-notice",
+    "additiveKeys": [
+      "relationship.lumber.foreman.label",
+      "relationship.lumber.foreman.stage.unknown.label",
+      "relationship.lumber.foreman.stage.professional.label",
+      "relationship.lumber.foreman.stage.route-professional.label",
+      "relationship.lumber.foreman.counter.night_meetings.label",
+      "relationship.lumber.foreman.fact.night-followup-complete.label",
+      "relationship.lumber.foreman.choice.route.professional.label"
+    ],
+    "identicalRootKeys": [
+      "event.lumber.foreman-notice.title",
+      "event.lumber.foreman-notice.variant.default.text",
+      "event.lumber.foreman-notice.choice.professional.label",
+      "event.lumber.foreman-notice.choice.professional.text"
+    ],
+    "productOpenNoNewRelationshipMechanics": true,
+    "gameplayFieldsIncluded": false
+  }
+}
