@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "id": "forest.route-localization.delta.v8",
+  "status": "POST_PR54_SAFE_FINAL_VALUES",
+  "baseMain": "295e6fc74d235f0b7555794555a18373451e8b7e",
+  "target": "content/localization.json",
+  "classifications": [
+    {
+      "key": "presentation.activity.forest.route.logging-road.title",
+      "classification": "ADDITIVE",
+      "current": null,
+      "finalValue": {
+        "ru": "Лесовозная дорога",
+        "en": "Logging road"
+      }
+    },
+    {
+      "key": "presentation.activity.forest.route.logging-road.body",
+      "classification": "ADDITIVE",
+      "current": null,
+      "finalValue": {
+        "ru": "Лесовозная дорога шире соседних троп. Свежие колеи режут грязь, а обрубленные ветви сложены по краям. Следы недавней работы тянутся дальше между деревьями.",
+        "en": "The logging road is wider than the nearby trails. Fresh ruts cut through the mud, and trimmed branches lie along the edges. Signs of recent work continue between the trees."
+      }
+    },
+    {
+      "key": "presentation.activity.forest.route.logging-road.help",
+      "classification": "ADDITIVE",
+      "current": null,
+      "finalValue": {
+        "ru": "Широкая рабочая дорога со свежими следами лесозаготовок.",
+        "en": "A broad work road with fresh signs of logging."
+      }
+    },
+    {
+      "key": "presentation.activity.forest.route.logging-road.alt",
+      "classification": "ADDITIVE",
+      "current": null,
+      "finalValue": {
+        "ru": "Лесовозная дорога с колеями и следами недавних работ.",
+        "en": "Logging road with wheel ruts and signs of recent work."
+      }
+    },
+    {
+      "key": "presentation.activity.forest.route.logging-road.caption",
+      "classification": "ADDITIVE",
+      "current": null,
+      "finalValue": {
+        "ru": "Вдоль дороги остаются следы работы: колеи, срезанные ветви и метки на деревьях.",
+        "en": "Signs of work line the road: wheel ruts, cut branches, and marks on trees."
+      }
+    },
+    {
+      "key": "presentation.activity.forest.route.old-boundary.title",
+      "classification": "ADDITIVE",
+      "current": null,
+      "finalValue": {
+        "ru": "Старая межевая тропа",
+        "en": "Old boundary path"
+      }
+    },
+    {
+      "key": "presentation.activity.forest.route.old-boundary.body",
+      "classification": "ADDITIVE",
+      "current": null,
+      "finalValue": {
+        "ru": "Первый межевой камень почти целиком ушёл во мох. Стоит заметить один — и следующий уже легче отличить от обычного валуна. Камни складываются в линию, не совпадающую с новой лесовозной дорогой.",
+        "en": "The first boundary stone is almost lost beneath the moss. Once you notice one, the next is easier to distinguish from ordinary rock. The stones form a line that does not follow the newer logging road."
+      }
+    },
+    {
+      "key": "presentation.activity.forest.route.old-boundary.help",
+      "classification": "ADDITIVE",
+      "current": null,
+      "finalValue": {
+        "ru": "Старый путь по межевым камням и выветренным меткам.",
+        "en": "An old route traced by boundary stones and weathered marks."
+      }
+    },
+    {
+      "key": "presentation.activity.forest.route.old-boundary.alt",
+      "classification": "ADDITIVE",
+      "current": null,
+      "finalValue": {
+        "ru": "Старая межевая линия с замшелыми камнями и выветренными метками.",
+        "en": "Old boundary line with moss-covered stones and weathered marks."
+      }
+    },
+    {
+      "key": "presentation.activity.forest.route.old-boundary.caption",
+      "classification": "ADDITIVE",
+      "current": null,
+      "finalValue": {
+        "ru": "Камни и старые знаки складываются в линию, не совпадающую с новой лесовозной дорогой.",
+        "en": "Stones and old markers form a line that does not follow the newer logging road."
+      }
+    }
+  ],
+  "strings": {
+    "presentation.activity.forest.route.logging-road.title": {
+      "ru": "Лесовозная дорога",
+      "en": "Logging road"
+    },
+    "presentation.activity.forest.route.logging-road.body": {
+      "ru": "Лесовозная дорога шире соседних троп. Свежие колеи режут грязь, а обрубленные ветви сложены по краям. Следы недавней работы тянутся дальше между деревьями.",
+      "en": "The logging road is wider than the nearby trails. Fresh ruts cut through the mud, and trimmed branches lie along the edges. Signs of recent work continue between the trees."
+    },
+    "presentation.activity.forest.route.logging-road.help": {
+      "ru": "Широкая рабочая дорога со свежими следами лесозаготовок.",
+      "en": "A broad work road with fresh signs of logging."
+    },
+    "presentation.activity.forest.route.logging-road.alt": {
+      "ru": "Лесовозная дорога с колеями и следами недавних работ.",
+      "en": "Logging road with wheel ruts and signs of recent work."
+    },
+    "presentation.activity.forest.route.logging-road.caption": {
+      "ru": "Вдоль дороги остаются следы работы: колеи, срезанные ветви и метки на деревьях.",
+      "en": "Signs of work line the road: wheel ruts, cut branches, and marks on trees."
+    },
+    "presentation.activity.forest.route.old-boundary.title": {
+      "ru": "Старая межевая тропа",
+      "en": "Old boundary path"
+    },
+    "presentation.activity.forest.route.old-boundary.body": {
+      "ru": "Первый межевой камень почти целиком ушёл во мох. Стоит заметить один — и следующий уже легче отличить от обычного валуна. Камни складываются в линию, не совпадающую с новой лесовозной дорогой.",
+      "en": "The first boundary stone is almost lost beneath the moss. Once you notice one, the next is easier to distinguish from ordinary rock. The stones form a line that does not follow the newer logging road."
+    },
+    "presentation.activity.forest.route.old-boundary.help": {
+      "ru": "Старый путь по межевым камням и выветренным меткам.",
+      "en": "An old route traced by boundary stones and weathered marks."
+    },
+    "presentation.activity.forest.route.old-boundary.alt": {
+      "ru": "Старая межевая линия с замшелыми камнями и выветренными метками.",
+      "en": "Old boundary line with moss-covered stones and weathered marks."
+    },
+    "presentation.activity.forest.route.old-boundary.caption": {
+      "ru": "Камни и старые знаки складываются в линию, не совпадающую с новой лесовозной дорогой.",
+      "en": "Stones and old markers form a line that does not follow the newer logging road."
+    }
+  },
+  "invariants": {
+    "additiveKeyCount": 10,
+    "presentationOnly": true,
+    "exactCurrentRouteIdsOnly": true,
+    "changesGameplayIds": false,
+    "changesRouteAvailability": false,
+    "changesConditions": false,
+    "changesEffects": false,
+    "changesRewards": false,
+    "changesRng": false,
+    "changesSaveState": false,
+    "changesOldBoundaryTokenSemantics": false,
+    "createsHunterRoute": false
+  }
+}
