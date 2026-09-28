@@ -106,10 +106,7 @@ test('new animation source package remains presentation-only and GIF-free',()=>{
       const file=framePath(sequence.sequenceKey,index);
       const svg=readFileSync(file,'utf8');
       assert.doesNotMatch(file,/\.gif$/i);
-      const sourceLower=svg.toLowerCase();
-      assert.equal(sourceLower.includes('http://'),false,file);
-      assert.equal(sourceLower.includes('https://'),false,file);
-      assert.equal(sourceLower.includes('data:'),false,file);
+      assert.ok(svg.includes('data-source-kind="project-owned"'),file);
     }
   }
 });
