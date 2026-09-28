@@ -4,109 +4,94 @@ Status: ACTIVE
 Repository: `Plegyer/Text`
 Owner: Chat 1 / Lead
 
-This file prevents two implementation workers from owning the same production slice at the same time.
+Entry point: `mindy-successor/docs/tasks/PROJECT_WORK_ENTRYPOINT.md`
+
+This file prevents duplicate implementation ownership.
+
+## Current production priority
+
+1. playable gameplay loops;
+2. professions with stages and outcomes;
+3. School milestones connected to career progression;
+4. expedition challenges with meaningful outcomes;
+5. localization and presentation in parallel.
 
 ## Chat 1 / Lead
 
 Owns:
-- coordination and current-main truth;
-- task pointers/role contracts;
-- integration order/merge decisions;
-- cross-chat ownership arbitration;
+- current-main truth;
+- coordination;
+- integration order;
+- merge decisions;
+- ownership arbitration;
 - CI/PR triage.
-
-Lead does not duplicate worker implementation unless a blocker requires direct action.
 
 ## Chat 1 Developer
 
-Active queue:
-- **13–24**
-- production integration of the four reviewed School residual accessibility localization corrections from merged PR #66.
+Current queue:
+- 13–24.
 
-May change:
-- root School accessibility localization values;
-- focused production regression.
-
-Must not change:
-- School media assets;
-- teacher staging/canon;
-- poverty/Forest content;
-- unrelated runtime architecture.
+Focus:
+- production integration packages only;
+- group small related changes instead of artificial task splitting.
 
 ## Chat 2
 
-Active queue:
-- **364–375**
-- School authored/staging media-source preparation.
+Current queue:
+- 364–375.
+
+Previous queue 352–363 is delivered through merged PR #64 and must not be restarted.
 
 Owns:
-- original SVG animation source frames;
-- media-source manifests/validators;
-- media accessibility source preparation.
-
-Must not:
-- activate staging IDs in production;
-- select final teacher canon;
-- edit School mechanics/text ownership;
-- duplicate Developer localization integration.
+- presentation/media source preparation;
+- validators/manifests;
+- presentation accessibility source material.
 
 ## Chat 3
 
-Active queue:
-- **341–352**
-- current-main refresh of ordinary-poverty depth/accessibility/lookup handoff.
+Current queue:
+- 341–352.
 
 Owns:
-- ordinary poverty / Forest / Secret Debt content-side bundles when assigned;
-- fixtures, audits, regression sources and selective handoffs.
+- Forest/poverty/content bundles when assigned;
+- content fixtures and handoffs.
 
-Must not implement shared production runtime/UI wiring in this queue.
+Must not duplicate production runtime integration.
 
 ## Chat 4
 
-Active queue:
-- **13–24 QA**
-- post-merge current-main acceptance of PR #64/#65/#66;
-- next-wave ownership/collision preflight.
+Current queue:
+- QA/product acceptance.
 
-Owns QA/product acceptance only.
-May not duplicate producer implementation unless Lead explicitly transfers a narrow blocker fix.
+Owns:
+- verification;
+- CI checks;
+- collision detection;
+- acceptance gates.
 
 ## Chat 5
 
-Active queue:
-- **205–216**
-- School teacher authoring/readiness and staging localization/text.
+Current queue:
+- 205–216.
 
 Owns:
-- teacher text/content proposals;
+- School teacher text/content readiness;
 - RU/EN parity;
-- authoring boundaries;
-- staging localization fixture/regression.
+- staging localization.
 
-Must not:
-- edit media assets (Chat 2);
-- promote teacher staging to production;
-- patch root School residual accessibility keys (Chat 1 Developer);
-- touch poverty/Forest/Secret Debt (Chat 3).
+## Completed baseline
 
-## Current delivered baseline
-
-Merged into `main`:
-- PR #64 — career animation source queue 352–363;
+Merged:
+- PR #64 — Chat 2 animation source queue 352–363;
 - PR #65 — Foreman semantic localization;
-- PR #66 — School residual localization worker handoff.
-
-PR #63 is closed/superseded and has no active ownership.
+- PR #66 — School residual localization.
 
 ## Duplicate-work rule
 
-Before starting a new queue or PR, every worker must read this matrix plus its current task pointer.
+Before new implementation:
 
-If two active implementation assignments appear to change the same production behavior/file set:
-- stop the newer assignment;
-- report the overlap to Lead;
-- do not resolve ownership independently.
+1. inspect current task pointer;
+2. inspect ownership matrix;
+3. inspect merged PRs and active branches.
 
-QA review by Chat 4 is expected and is not duplicate implementation.
-Text authoring by Chat 5 and media-source preparation by Chat 2 may reference the same School staging identity, but they must not modify each other's owned files or activate production semantics.
+Do not recreate completed queues.
