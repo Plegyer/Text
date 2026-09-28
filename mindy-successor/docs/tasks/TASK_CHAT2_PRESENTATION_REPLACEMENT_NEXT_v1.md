@@ -3837,3 +3837,99 @@ Consolidate items 280–290:
 - selective-copy files.
 
 Continue items 280–291 sequentially without waiting for Lead review.
+
+
+## Queue item 292 — Forest route static source current audit v4
+Create NEW file only:
+- `docs/presentation-prep/FOREST_ROUTE_STATIC_SOURCE_CURRENT_AUDIT_V4.md`
+
+Audit all existing project-owned Forest route/default/logging-road/old-boundary visual sources against current main and Chat3 route semantics.
+Classify SAFE / REVISE / DO_NOT_SHIP.
+
+## Queue item 293 — logging-road route-specific static v2
+Create NEW original SVG only:
+- `prior-work/astra/prototype-m3.2/assets/presentation/forest-route-logging-road-v2.svg`
+
+Semantics allowed:
+- broad logging road;
+- wheel ruts;
+- cut branches;
+- ordinary work marks.
+No result/reward implication.
+
+## Queue item 294 — old-boundary route-specific static v3
+Create NEW original SVG only:
+- `prior-work/astra/prototype-m3.2/assets/presentation/forest-route-old-boundary-v3.svg`
+
+Semantics allowed:
+- old stones;
+- weathered marks;
+- narrow path/boundary line.
+Explicitly exclude constructed gate/arch, token, Hunter, challenge/reward implication.
+
+## Queue item 295 — Forest route static localization candidate v4
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/forest-route-static-localization-v4.json`
+
+Provide exact RU+EN alt/caption keys for items 293–294 using current normalized key grammar.
+
+## Queue item 296 — Forest route static slot candidate v2
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/presentation-drafts/forest-route-static-slots-v2.json`
+
+Candidate presentation-only slots for:
+- `activity/forest/route/logging-road`;
+- `activity/forest/route/old-boundary`.
+
+Each route-specific slot must fallback to `activity/forest/route/default`.
+
+## Queue item 297 — Forest route static semantics regression v2
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/forest-route-static-semantics-v2.test.ts`
+
+Validate:
+- both SVGs exist;
+- no external resources/scripts;
+- normalized alt keys;
+- exact semantic presentationIds;
+- fallback is shared default;
+- old-boundary metadata/text contains no Hunter/token/gate/reward semantics.
+
+## Queue item 298 — Forest route RU EN static invariance source v2
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/forest-route-static-locale-invariance-v2.test.ts`
+
+Validate route-specific static selection is locale-neutral and only alt/caption change by locale.
+
+## Queue item 299 — route static build-copy audit v1
+Create NEW file only:
+- `docs/presentation-prep/FOREST_ROUTE_STATIC_BUILD_COPY_AUDIT_V1.md`
+
+Verify exact expected source -> dist copy paths for items 293–294 under current build pipeline.
+
+## Queue item 300 — route static accessibility review v1
+Create NEW file only:
+- `docs/presentation-prep/FOREST_ROUTE_STATIC_ACCESSIBILITY_REVIEW_V1.md`
+
+Review RU+EN alt/caption for concise, non-spoilery accessibility wording.
+
+## Queue item 301 — route-specific animation source backlog v1
+Create NEW file only:
+- `docs/presentation-prep/FOREST_ROUTE_ANIMATION_SOURCE_BACKLOG_V1.md`
+
+Define future three-sequence animation-source backlog separately for logging-road and old-boundary, using the now-safe static semantics.
+Do not create GIF claims.
+
+## Queue item 302 — Forest route visual selective-copy manifest v1
+Create NEW file only:
+- `docs/presentation-prep/FOREST_ROUTE_VISUAL_SELECTIVE_COPY_MANIFEST_V1.md`
+
+List exact files from 293–300 safe for a fresh Lead branch.
+
+## Queue item 303 — Forest route visual integration handoff v6
+Create NEW file only:
+- `docs/presentation-prep/FOREST_ROUTE_VISUAL_INTEGRATION_HANDOFF_V6.md`
+
+Consolidate items 292–302 into LOGGING_STATIC_READY / OLD_BOUNDARY_STATIC_READY / LOCALIZATION_READY / BUILD_READY / ANIMATION_FUTURE / PRODUCT_OPEN_EXCLUDED.
+
+Continue items 292–303 sequentially without waiting for Lead review.
