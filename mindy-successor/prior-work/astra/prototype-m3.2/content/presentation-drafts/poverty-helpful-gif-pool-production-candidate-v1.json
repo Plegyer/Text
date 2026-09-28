@@ -1,0 +1,72 @@
+{
+  "formatVersion": 1,
+  "kind": "pr42-gif-pool-production-candidate",
+  "status": "NOT_YET_EXPORTED",
+  "currentMainBaseline": "01b31b9ab0d0267d95edf5b5b80638acd63f5c04",
+  "presentationId": "location/town/event/poverty-street-production-helpful-summer/default",
+  "slotCandidate": {
+    "pool": {
+      "version": 1,
+      "ordering": "ordered",
+      "selectionPolicy": "unweighted",
+      "candidates": [
+        {
+          "key": "poverty-helpful-summer-loop-a",
+          "kind": "gif",
+          "src": "assets/gif/poverty/helpful-summer-loop-a.gif",
+          "alt": "Летняя уличная сцена небольшой помощи с лёгким движением людей и окружающих деталей.",
+          "altKey": "presentation.gif.poverty.helpful-summer.poverty-helpful-summer-loop-a.alt"
+        },
+        {
+          "key": "poverty-helpful-summer-loop-b",
+          "kind": "gif",
+          "src": "assets/gif/poverty/helpful-summer-loop-b.gif",
+          "alt": "Летняя уличная сцена небольшой помощи с лёгким движением людей и окружающих деталей.",
+          "altKey": "presentation.gif.poverty.helpful-summer.poverty-helpful-summer-loop-b.alt"
+        },
+        {
+          "key": "poverty-helpful-summer-loop-c",
+          "kind": "gif",
+          "src": "assets/gif/poverty/helpful-summer-loop-c.gif",
+          "alt": "Летняя уличная сцена небольшой помощи с лёгким движением людей и окружающих деталей.",
+          "altKey": "presentation.gif.poverty.helpful-summer.poverty-helpful-summer-loop-c.alt"
+        }
+      ]
+    },
+    "static": {
+      "kind": "image",
+      "src": "assets/presentation/poverty-street-helpful-summer.svg",
+      "alt": "Летняя уличная сцена небольшой помощи в бедном городском районе без показа награды.",
+      "altKey": "presentation.static.poverty-street-helpful-summer.alt"
+    }
+  },
+  "expectedFiles": [
+    {
+      "candidateKey": "poverty-helpful-summer-loop-a",
+      "expectedSrc": "assets/gif/poverty/helpful-summer-loop-a.gif",
+      "status": "NOT_YET_EXPORTED",
+      "exists": false
+    },
+    {
+      "candidateKey": "poverty-helpful-summer-loop-b",
+      "expectedSrc": "assets/gif/poverty/helpful-summer-loop-b.gif",
+      "status": "NOT_YET_EXPORTED",
+      "exists": false
+    },
+    {
+      "candidateKey": "poverty-helpful-summer-loop-c",
+      "expectedSrc": "assets/gif/poverty/helpful-summer-loop-c.gif",
+      "status": "NOT_YET_EXPORTED",
+      "exists": false
+    }
+  ],
+  "invariants": {
+    "exactlyThreeCandidates": true,
+    "localeNeutralCandidateKeys": true,
+    "staticFallbackPreserved": true,
+    "noGifBytesClaim": true,
+    "noGameplayFields": true,
+    "noGameplayRng": true,
+    "noSaveMutation": true
+  }
+}
