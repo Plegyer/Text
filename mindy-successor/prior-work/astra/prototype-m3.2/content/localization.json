@@ -2977,6 +2977,110 @@
     "unlock.palace.label": {
       "ru": "Дворец",
       "en": "Palace"
+    },
+    "presentation.poverty.depth.poverty-street-production-helpful-summer.default.a.text": {
+      "ru": "Под навесом торговец убирает последние ящики от вечерней сырости. Ему нужна ещё одна пара рук всего на несколько минут.",
+      "en": "Under the awning, a merchant is moving the last crates out of the evening damp. One extra pair of hands is needed for only a few minutes."
+    },
+    "presentation.poverty.depth.poverty-street-production-helpful-summer.default.b.text": {
+      "ru": "У закрывающегося прилавка остался тяжёлый свёрнутый тент. Его нужно сложить и убрать, пока площадь окончательно не опустела.",
+      "en": "A heavy rolled awning remains beside a closing stall. It needs folding and putting away before the square empties completely."
+    },
+    "presentation.poverty.depth.poverty-street-production-v2-helpful-summer-shade.market-closing.a.text": {
+      "ru": "Рынок уже закрывается: кто-то снимает верёвки с навеса и торопится сложить полотно до темноты. Короткая помощь здесь пришлась бы кстати.",
+      "en": "The market is already closing: someone is untying an awning and hurrying to fold the canvas before dark. A little brief help would be useful here."
+    },
+    "presentation.poverty.depth.poverty-street-production-v2-helpful-summer-shade.late-shade.b.text": {
+      "ru": "Между закрытыми лавками ещё держится полоса тени. Рядом собирают складной навес, и вечерняя работа почти закончена.",
+      "en": "A strip of shade still lingers between the closed stalls. Nearby, a folding awning is being packed away and the evening work is nearly finished."
+    },
+    "presentation.poverty.depth.poverty-street-production-pressure-winter.default.a.text": {
+      "ru": "Камень под ногами уже отдал дневное тепло. Под навесом суше, но зимний холод всё равно тянется с улицы.",
+      "en": "The stone underfoot has already lost the day’s warmth. It is drier under the awning, but the winter cold still reaches in from the street."
+    },
+    "presentation.poverty.depth.poverty-street-production-pressure-winter.default.b.text": {
+      "ru": "Ветер идёт вдоль стены и быстро выдувает остатки тепла из угла. Ночь здесь будет беспокойной и холодной.",
+      "en": "Wind runs along the wall and quickly carries the remaining warmth out of the corner. The night here will be restless and cold."
+    },
+    "presentation.poverty.depth.poverty-street-production-v2-pressure-winter-wind.crosswind.a.text": {
+      "ru": "Поперечный ветер режет переулок насквозь. Даже места за выступами стены быстро снова становятся холодными.",
+      "en": "A crosswind cuts straight through the lane. Even spots behind the wall’s projections quickly turn cold again."
+    },
+    "presentation.poverty.depth.poverty-street-production-v2-pressure-winter-wind.long-gusts.b.text": {
+      "ru": "Длинные порывы трясут ставни и гонят по камням сухой мусор. Между ними едва успевает наступить тишина.",
+      "en": "Long gusts rattle the shutters and drive dry scraps across the stones. There is barely time for quiet between them."
+    },
+    "presentation.poverty.depth.poverty-pressure-production-cold-rain.default.a.text": {
+      "ru": "Холодная вода медленно подбирается под край укрытия. По камням уже тянется новая тонкая струйка.",
+      "en": "Cold water slowly creeps beneath the edge of the shelter. A fresh thin stream is already running over the stones."
+    },
+    "presentation.poverty.depth.poverty-pressure-production-cold-rain.default.b.text": {
+      "ru": "Дождь косит вдоль улицы и добирается до привычного места. Чуть дальше виден более глубокий дверной проём.",
+      "en": "Rain slants along the street and reaches the familiar spot. A deeper doorway is visible a little farther away."
+    },
+    "presentation.poverty.depth.poverty-pressure-production-noisy-loading.default.a.text": {
+      "ru": "Первый грузовой воз приезжает ещё до рассвета. Колёса, ящики и голоса сразу заполняют улицу шумом.",
+      "en": "The first loading cart arrives before dawn. Wheels, crates, and voices fill the street with noise almost at once."
+    },
+    "presentation.poverty.depth.poverty-pressure-production-noisy-loading.default.b.text": {
+      "ru": "Рабочие перекрикиваются через улицу, пересчитывая ящики. Каждый новый воз делает этот угол ещё шумнее.",
+      "en": "Workers call across the street as they count crates. Each new cart makes the corner louder."
+    },
+    "presentation.poverty.depth.poverty-pressure-production-muddy-splash.default.a.text": {
+      "ru": "Колесо телеги входит в лужу у самого края дороги. Грязные брызги успевают долететь до одежды раньше, чем воз проходит мимо.",
+      "en": "A cartwheel hits a puddle at the edge of the road. Mud reaches the clothes before the cart has fully passed."
+    },
+    "presentation.poverty.depth.poverty-pressure-production-muddy-splash.default.b.text": {
+      "ru": "После проехавшей телеги на ткани остаются мокрые грязные пятна. На улице быстро привести одежду в порядок почти нечем.",
+      "en": "Wet muddy marks remain on the fabric after the cart passes. There is little nearby to clean the clothes with properly."
+    },
+    "presentation.poverty.depth.poverty-cheap-production-shared-quiet-autumn.default.a.text": {
+      "ru": "В дешёвой комнате разговор стихает рано. Через тонкие стены слышны шаги и кашель, и жильцы стараются не добавлять лишнего шума.",
+      "en": "Conversation dies down early in the cheap room. Footsteps and coughs carry through the thin walls, and the residents try not to add more noise."
+    },
+    "presentation.poverty.depth.poverty-cheap-production-shared-quiet-autumn.default.b.text": {
+      "ru": "Комната тесная, и вещи приходится держать рядом с собой. К вечеру жильцы молча распределяют оставшиеся свободные углы.",
+      "en": "The room is cramped, and belongings have to stay close. By evening, the residents quietly divide the remaining free corners."
+    },
+    "presentation.poverty.depth.poverty-cheap-production-v2-shared-room-seasons.spring-window.a.text": {
+      "ru": "Из приоткрытого окна тянет прохладой. Под раму подложили старую кружку, и первый мягкий вечер проветривает всю комнату.",
+      "en": "Cool air comes through the partly open window. An old cup has been wedged under the frame, letting the first mild evening air through the room."
+    },
+    "presentation.poverty.depth.poverty-cheap-production-v2-shared-room-seasons.summer-heat.b.text": {
+      "ru": "После жаркого дня каждый старается оставить вокруг постели немного воздуха. Окно остаётся открытым для всей комнаты.",
+      "en": "After a hot day, everyone tries to leave a little air around their bedroll. The window stays open for the whole room."
+    },
+    "presentation.poverty.depth.poverty-cheap-production-v2-shared-room-seasons.winter-stove.c.text": {
+      "ru": "Маленькая печь потрескивает в углу, а на свободных крючках сушится одежда. В комнате тесно, но заметно теплее, чем снаружи.",
+      "en": "A small stove ticks in the corner while clothes dry from spare hooks. The room is crowded, but noticeably warmer than outside."
+    },
+    "presentation.poverty.depth.poverty-cheap-production-v2-shared-room-seasons.shared-room.d.text": {
+      "ru": "Здесь мало места и почти нет уединения, зато есть крыша, закрывающаяся дверь и сухой угол на ночь.",
+      "en": "There is little space and almost no privacy, but there is a roof, a closing door, and a dry corner for the night."
+    },
+    "presentation.poverty.depth.poverty-recovery-production-small-coin-help.default.a.text": {
+      "ru": "На общественной полке лежит бумажный свёрток с вчерашним хлебом. Рядом оставлены несколько мелких монет без подписи.",
+      "en": "A paper parcel of yesterday’s bread rests on a public shelf. A few small coins have been left beside it without a name."
+    },
+    "presentation.poverty.depth.poverty-recovery-production-small-coin-help.default.b.text": {
+      "ru": "Возле корзины с бесплатным хлебом кто-то оставил немного мелочи. Никакой записки, имени или просьбы рядом нет.",
+      "en": "Someone has left a little loose change beside a basket of free bread. There is no note, name, or request beside it."
+    },
+    "presentation.poverty.depth.poverty-recovery-production-short-cleanup.default.a.text": {
+      "ru": "Хозяин закрывающейся лавки просит сложить пару табуретов и подмести у порога. Работы всего на несколько минут.",
+      "en": "The owner of a closing stall asks for two stools to be stacked and the doorstep swept. It is only a few minutes of work."
+    },
+    "presentation.poverty.depth.poverty-recovery-production-short-cleanup.default.b.text": {
+      "ru": "После закрытия нужно вынести ведро к стоку и убрать узкую полосу пола. Небольшая работа ещё ждёт желающего.",
+      "en": "After closing, a bucket needs carrying to the drain and a narrow strip of floor needs cleaning. A small task is still available."
+    },
+    "presentation.poverty.depth.poverty-recovery-production-herb-bundle.default.a.text": {
+      "ru": "У пустого ящика лежит перевязанный пучок обычных трав. Похоже, его забыли после рынка.",
+      "en": "A tied bundle of ordinary herbs lies beside an empty crate. It looks as though it was forgotten after the market."
+    },
+    "presentation.poverty.depth.poverty-recovery-production-herb-bundle.default.b.text": {
+      "ru": "На краю прилавка остался небольшой пучок простых трав, стянутый обычной бечёвкой. Никакой особой метки на нём нет.",
+      "en": "A small bundle of common herbs remains at the edge of a stall, tied with ordinary string. There is no special mark on it."
     }
   }
 }
