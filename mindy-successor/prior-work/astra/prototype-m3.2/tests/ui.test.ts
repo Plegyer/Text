@@ -655,3 +655,48 @@ test('renderer: arrival shell localizes RU EN before gameplay state changes',asy
   assert.deepEqual(errors,[]);
  }finally{dom.window.close();}
 });
+
+
+test('renderer: journal and lastAction choice outcome localize from stable refs',async()=>{
+ const s=started();
+ s.run.pending={eventId:'base.arrival',variantId:'welcome',allowedChoiceIds:['introduce']};
+ const {w,dom,errors}=boot(JSON.stringify(s));try{
+  await wait(()=>!!w.document.querySelector('[data-choice="introduce"]'));
+  w.document.querySelector('[data-choice="introduce"]').click();
+  await wait(()=>{
+   const raw=w.localStorage.getItem('portal-life.v1');
+   if(!raw)return false;
+   const parsed=JSON.parse(raw);
+   return parsed.run.flow.lastAction?.outcomeRef?.eventId==='base.arrival';
+  });
+
+  assert.match(w.document.querySelector('.dialogue p')?.textContent??'',/Вы договорились начать с простого/);
+  assert.match(w.document.querySelector('.stage-title h1')?.textContent??'',/Помощница, а не чайник/);
+
+  w.document.querySelector('[data-panel="journal"]').click();
+  assert.match(w.document.querySelector('.panel')?.textContent??'',/Вы договорились начать с простого/);
+  w.document.querySelector('#close').click();
+
+  const before=w.localStorage.getItem('portal-life.v1');
+  const parsedBefore=JSON.parse(before);
+  assert.deepEqual(parsedBefore.run.historyState.journalRefs.at(-1),{
+   kind:'eventChoice',
+   eventId:'base.arrival',
+   choiceId:'introduce'
+  });
+
+  w.document.querySelector('[data-panel="menu"]').click();
+  w.document.querySelector('#language-toggle').click();
+  await wait(()=>w.document.documentElement.lang==='en');
+  assert.equal(w.localStorage.getItem('portal-life.v1'),before);
+  w.document.querySelector('#close').click();
+
+  assert.match(w.document.querySelector('.dialogue p')?.textContent??'',/You agree to start with something simple/);
+  assert.match(w.document.querySelector('.stage-title h1')?.textContent??'',/An assistant, not a kettle/);
+
+  w.document.querySelector('[data-panel="journal"]').click();
+  assert.match(w.document.querySelector('.panel')?.textContent??'',/You agree to start with something simple/);
+  assert.equal(w.localStorage.getItem('portal-life.v1'),before);
+  assert.deepEqual(errors,[]);
+ }finally{dom.window.close();}
+});
