@@ -1,5 +1,5 @@
 import {mountEditor} from './editor.ts';
-import {applyPresentation,emptyPresentation,resolvePresentation,presentationIdForActionResult,presentationIdForEvent,presentationIdForEnding,type Presentation} from '../core/presentation.ts';
+import {applyPresentation,emptyPresentation,resolvePresentation,presentationIdForActionResult,presentationIdForActivityRoute,presentationIdForEvent,presentationIdForEnding,type Presentation} from '../core/presentation.ts';
 import {loadCatalog} from '../core/content.ts';
 import {freshSave,dispatch,parseSave,eligible,calendar,actionCost,meets,energyMax,rent,favorStat,availableActivityActions,type Command} from '../core/engine.ts';
 import {stats,type Save,type Catalog,type Condition,type Action} from '../core/schema.ts';
@@ -169,7 +169,8 @@ function central(){
   const definition=catalog.definitions.activities.find(item=>item.id===activity.activityId);
   const slug=activity.activityId.split('.').at(-1)??'activity';
   const actions=availableActivityActions(state,catalog);
-  return `<section class="stage scene">${mediaHTML(`activity/${slug}/route/default`)}<div class="stage-title"><span class="eyebrow">${esc(tr('ui.activity.eyebrow','Вылазка'))}</span><h1>${esc(activityLabel(activity.activityId,definition?.label??activity.activityId))}</h1></div></section><section class="dialogue"><p>${esc(tr('ui.activity.progressLabel','Прогресс'))}: ${activity.internalState.progress} · ${esc(tr('stat.endurance.label','Выносливость'))}: ${activity.internalState.endurance} · ${esc(tr('ui.activity.checkpointLabel','Контрольная точка'))}: ${esc(activity.checkpoint)}${activity.internalState.routeId?` · ${esc(tr('ui.activity.routeLabel','Маршрут'))}: ${esc(activity.internalState.routeId)}`:''}</p><div class="choices">${actions.map((action,index)=>`<button data-activity-action="${esc(action.id)}" class="${index===0?'primary':''}" ${busy||locked?'disabled':''}>${esc(activityOptionLabel(action.id,action.label))}</button>`).join('')}</div></section>`;
+  const activityPresentationId=presentationIdForActivityRoute(catalog,activity.activityId,activity.internalState.routeId);
+  return `<section class="stage scene">${mediaHTML(activityPresentationId)}<div class="stage-title"><span class="eyebrow">${esc(tr('ui.activity.eyebrow','Вылазка'))}</span><h1>${esc(activityLabel(activity.activityId,definition?.label??activity.activityId))}</h1></div></section><section class="dialogue"><p>${esc(tr('ui.activity.progressLabel','Прогресс'))}: ${activity.internalState.progress} · ${esc(tr('stat.endurance.label','Выносливость'))}: ${activity.internalState.endurance} · ${esc(tr('ui.activity.checkpointLabel','Контрольная точка'))}: ${esc(activity.checkpoint)}${activity.internalState.routeId?` · ${esc(tr('ui.activity.routeLabel','Маршрут'))}: ${esc(activity.internalState.routeId)}`:''}</p><div class="choices">${actions.map((action,index)=>`<button data-activity-action="${esc(action.id)}" class="${index===0?'primary':''}" ${busy||locked?'disabled':''}>${esc(activityOptionLabel(action.id,action.label))}</button>`).join('')}</div></section>`;
  }
  if(r.flow.night){
   const night=r.flow.night;
