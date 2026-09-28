@@ -3,455 +3,406 @@
 Status: COMPLETE / CURRENT_GATE_RECORDED
 
 Audit point:
-after PR54 stable-ref Journal/outcome integration and PR55 shared Night/lodging UI localization.
+after PR56 remaining global UI shell, PR57 Forest route-specific presentation seam, and PR58 generic labels/hints localization.
 
 Current main:
-`295e6fc74d235f0b7555794555a18373451e8b7e`.
+`52ddc76148e33836d3161b63bf4c25ffb5c39d02`.
 
 Current main CI:
-- run #99;
-- id `36403132544`;
+- run #109;
+- id `36406510233`;
 - event: push;
 - conclusion: SUCCESS;
 - validator: 17 packs, 46 events, 35 actions, 9 endings;
-- tests: 342 / 342 pass / 0 fail.
+- tests: 356 / 356 pass / 0 fail.
 
-Open PRs at gate time:
-none.
-
-This gate summarizes Chat 4 items 235–245.
+This gate summarizes active Chat 4 queue items 235–245.
 
 No whole worker/chat branch is approved for merge.
 
-## 1. PR54 current-head compatibility
-
-Classification:
-`GREEN_COMPATIBILITY`.
-
-Accepted exact PR54 head:
-`81664ef3cf70e58daaa7b323dd42267971860088`.
-
-Compatibility fixes verified:
-- School direct journal producer appends matching null ref;
-- legacy `run.journal=` setter keeps refs index-aligned;
-- School course-result presentation keeps priority over event-choice refs;
-- schema-4 saves without refs load with null refs;
-- no fuzzy prose migration.
-
-Stable refs are created only on actual event-choice resolution:
-`eventId + choiceId`.
-
-Old text-only entries remain fallback text.
-
-## 2. PR54 exact-head CI
-
-Classification:
-`GREEN_EXACT_HEAD`.
-
-Run #96:
-- id `36402224927`;
-- SUCCESS;
-- validator 17/46/35/9;
-- 338/338 tests.
-
-Relevant stable-ref/compatibility tests PASS:
-- ref storage beside fallback text;
-- old schema-4 omission support;
-- explicit ref-alignment validation;
-- School save/reload/result regressions;
-- Journal/lastAction RU↔EN stable-ref Save invariance.
-
-Earlier red head `0a46de81...` remains historical only and is not accepted.
-
-## 3. PR54 post-merge
+## 1. PR56 global UI shell v2
 
 Classification:
 `GREEN_POST_MERGE_MAIN`.
 
-PR54 merged as:
-`6e2a5147603b71eed89a0966af417a33dd28d7a7`.
-
-Post-merge run #97:
-- SUCCESS;
-- 338/338;
+PR56:
+- exact head `fb008084613e384582a25a01925d4abdaf6a184d`;
+- merge SHA `4223be1f90f15a43938e072bc2171b0de5d2d1aa`;
+- exact run #103 SUCCESS;
+- post-merge run #104 SUCCESS;
+- 347/347;
 - validator 17/46/35/9.
 
-Shipped:
-- optional locale-neutral event-choice refs on lastAction;
-- parallel journalRefs;
-- old-save omission compatibility;
-- legacy journal realignment;
-- render-time localized Journal/lastAction outcome text.
+Production fixture:
+- 108 RU+EN keys;
+- 74 genuinely new root keys;
+- 34 existing exact/reused keys;
+- 0 existing-value replacement;
+- `stat.endurance.label` reused rather than duplicating `ui.activity.enduranceLabel`.
 
-Gameplay conditions/effects/RNG/content counts are unchanged.
+Shipped visible shell includes:
+- creation;
+- season HUD;
+- menu/import/export/restart/editor/animation shell;
+- confirmations;
+- save/import/recovery/startup wrapper text;
+- Activity shell labels;
+- missing-media fallback;
+- typed-condition presentation grammar.
 
-## 4. Shared Night UI 16-key rebase
+Gameplay/Save schema/economics/RNG are unchanged.
 
-Initial classification:
-`GREEN_REBASED_16_KEY_SOURCE`.
+## 2. Post-PR56 bilingual visible-shell acceptance
 
-Worker source had 19 post-PR53 keys.
+Classification:
+`GREEN_CORE_PATHS / TARGETED_E2E_GAP_FOR_ERROR_BRANCHES`.
 
-Correct production rebase:
-- 16 genuinely additive keys;
-- reuse shipped `ui.result.chooseLodging`;
-- omit 3 superseded outer Sleep aliases:
-  - `ui.night.panel.title`;
-  - `ui.night.panel.description`;
-  - `ui.night.panel.start`.
+Direct browser RU↔EN Save-invariance exists for:
+- creation;
+- primary menu;
+- season HUD;
+- active Forest Activity shell.
 
-The active outer Sleep shell already uses:
-- `ui.sleep.title`;
-- `ui.sleep.help`;
-- `ui.sleep.startButton`.
+The production consumers for save/recovery/error wrappers and full typed-condition grammar are wired and full-CI green.
 
-### Subsequent PR55 integration
+Additional targeted browser forcing of every recovery/error branch and every condition kind remains useful but is not a production blocker for PR56.
 
-Lead shipped the exact rebased slice as PR #55.
+## 3. Generic labels/hints source and PR58 integration
 
-Exact head:
-`724ab70a5a83424fb8a576c3deb082b60256ffc0`.
+Chat5 source:
+`generic-labels-localization-v1.fixture.json`
+with 49 complete RU+EN keys.
 
-Run #98:
-- SUCCESS;
-- 342/342;
-- validator 17/46/35/9.
+Post-PR56 source classification before integration:
+- 21 exact-identical existing keys;
+- 24 genuinely additive keys;
+- 4 semantic reuse candidates;
+- 0 conflicts.
 
-Merged as current main:
-`295e6fc74d235f0b7555794555a18373451e8b7e`.
+Lead chose to add the four semantic reuse candidates as explicit domain keys:
+- `housing.normal.label`;
+- `housing.cheap.label`;
+- `housing.street.label`;
+- `resource.energy.label`.
 
-Post-merge run #99:
-- SUCCESS;
-- 342/342;
-- same validator counts.
+Thus PR58 production fixture classification on its exact base became:
+- 28 additive root keys;
+- 21 exact-identical existing keys;
+- 0 conflicts;
+- total 49.
+
+PR58:
+- title `Lead: localize generic labels and hints RU EN`;
+- accepted head `923e9b0d90ea6f20ed453a43ea0d98e0a6ae4a19`;
+- exact run #108 SUCCESS;
+- 356/356;
+- validator 17/46/35/9;
+- merged as `52ddc76148e33836d3161b63bf4c25ffb5c39d02`;
+- post-merge run #109 SUCCESS;
+- 356/356.
 
 Current classification:
 `SHIPPED_GREEN`.
 
-## 5. Shared Night natural-path invariance
+Shipped generic consumers:
+- stat labels/hints;
+- resource labels;
+- item labels;
+- creation aria labels;
+- Stats;
+- Bag;
+- typed requirement labels;
+- result deltas;
+- pending encounter eyebrow;
+- inactive-run shell.
 
-Classification:
+No stable gameplay ID, stat/resource/item value, housing state, economics or condition object changes.
+
+## 4. Forest route presentation seam
+
+PR57 classification:
 `GREEN_POST_MERGE_MAIN`.
 
-Current exact mechanics remain:
-
-### Normal lodging
-- ID `lodging.normal`;
-- cost 100;
-- housing normal;
-- next-day Energy delta 0.
-
-### Cheap lodging
-- ID `lodging.cheap`;
-- cost 50;
-- housing cheap;
-- next-day Energy delta 0.
-
-### Street
-- ID `lodging.street`;
-- cost 0;
-- housing street;
-- next-day Energy delta -1;
-- grooming -1 next-day effect.
-
-### Generic sleep
-- ID `night.sleep`;
-- next-day Energy delta 0;
-- no immediate effect.
-
-PR55 regressions prove:
-- exact 16-key presentation-only payload;
-- shared Night consumers use stable localization keys;
-- RU↔EN shared Night/lodging rendering causes no state drift;
-- existing exactly-once lodging/Night behavior remains green.
-
-School Night Study and Foreman Night remain separately owned.
-
-## 6. Forest route pure presentation seam
-
-Classification:
-`GREEN_SOURCE / LEAD_IMPLEMENTATION_REQUIRED`.
-
-Authoritative input:
-`run.flow.activity.internalState.routeId`.
-
-Required pure mapping:
-- null/undefined -> `activity/forest/route/default`;
+Pure mapping:
+- absent/null -> `activity/forest/route/default`;
 - `logging-road` -> `activity/forest/route/logging-road`;
-- `old-boundary` -> `activity/forest/route/old-boundary`.
+- `old-boundary` -> `activity/forest/route/old-boundary`;
+- unknown -> default.
 
-Requirements:
-- no Save writes;
-- no gameplay RNG;
-- no Activity RNG;
-- no route selection;
-- no result mutation;
-- locale-neutral output.
+The helper derives from the exact authored Activity option `setRoute` values.
 
-Current route gameplay remains:
-- `forest.route.logging-road`;
-- `forest.route.old-boundary`;
-- Old Boundary gate `itemCapability(enter_old_boundary) present=true`.
+No Save write, RNG use, route selection, progress/endurance mutation or result selection.
 
-Exact Forest results/reactions remain unchanged.
+PR57:
+- exact head `138c9889daf8e63dc280b1868e0e868a638111e1`;
+- run #105 SUCCESS;
+- 351/351;
+- merged as `df0119fd6574b69ab89cf1a99ae77adae3d811f1`;
+- post-merge run #106 SUCCESS;
+- 351/351.
 
-Lumber Hard Work remains:
-- condition only `completed_shifts >= 50`;
-- meta reward `hardWork:lumber`.
+Current PR58 main retains the same seam and tests green.
 
-## 7. Forest route localization delta
+## 5. Route-specific slot/fallback
 
 Classification:
-`GREEN_ADDITIVE_RU_EN_SOURCE`.
+`SHIPPED_GREEN_SEAM / SAFE_NEUTRAL_FALLBACK`.
 
-Current Chat3 delta:
-- 10 keys;
-- logging-road title/body/help/alt/caption;
-- old-boundary title/body/help/alt/caption;
+PR57 generates exact route-specific presentation slots:
+- logging-road;
+- old-boundary.
+
+Each:
+- has no route-specific base media by default;
+- falls back to `activity/forest/route/default`.
+
+Current root presentation still has only the neutral default route static override.
+
+Therefore:
+- requested semantic presentation ID becomes route-specific after route selection;
+- physical visual remains neutral default until specific media is integrated;
+- missing specific assets cannot break gameplay.
+
+Locale switch after route selection preserves:
+- requested route-specific ID;
+- default physical fallback;
+- serialized Save;
+- Activity state.
+
+## 6. Forest route localized copy
+
+Classification:
+`GREEN_SELECTIVE_LOCALIZATION_SOURCE`.
+
+Latest Chat3 safe source:
+- two current route-choice labels already exact-identical;
+- 4 additive route title/help keys;
+- 4 additive normalized route alt/caption keys;
+- total strings reviewed: 10;
+- additive: 8;
+- exact-identical reuse: 2;
+- conflicts: 0;
 - missing RU: 0;
-- missing EN: 0;
-- current-root collisions after PR55: 0.
+- missing EN: 0.
 
-Localization keys use normalized dot-form.
+Logging-road copy:
+ordinary road/ruts/cut branches/work marks only.
 
-Semantic presentation IDs remain slash-form.
+Old-boundary copy:
+old stones/weathered marks/path line only.
 
-The delta changes no:
-- route availability;
-- conditions;
-- effects;
-- results;
-- reward;
-- RNG;
-- Save;
-- token semantics.
-
-No route-specific root presentation slot is shipped yet.
-
-## 8. Route-specific visual boundary
-
-Logging-road safe visual semantics:
-- ordinary logging road/work traces.
-
-Old-boundary safe semantics:
-- mossed stones;
-- weathered marks;
-- old path/line.
-
-Reject route-specific visuals that imply:
-- token operation;
-- gate/checkpoint;
+No:
 - Hunter ownership;
-- magic activation;
-- challenge/reward.
+- token use;
+- gate/checkpoint;
+- challenge/reward;
+- success/failure;
+- deeper lore truth.
 
-Neutral route/default static remains the safe shipped fallback.
+Recommended root text delta:
+add only the 8 genuinely additive title/help/alt/caption keys and reuse the two route-choice labels.
 
-## 9. Animation exporter patch candidate
+## 7. Chat2 route-specific visuals
 
 Classification:
-`ACCEPTABLE_FOR_LEAD_INTEGRATION_WITH_NATIVE_CI_CHECK`.
+`GREEN_SOURCE / NO_ROOT_ACTIVATION_YET`.
 
-Reviewed Chat2 items 280–291.
+Reviewed current Chat2 items 292–303.
 
-Proposed exact devDependencies:
+Safe replacement assets:
+- `forest-route-logging-road-v2.svg`
+  blob `a94f196ef46162eba13962eb7f1555ac01d83bac`;
+- `forest-route-old-boundary-v3.svg`
+  blob `97c38b2f08073b2e833289d2ca31fc29841ec4a3`.
+
+Logging v2:
+- broad road;
+- paired wheel ruts;
+- cut branches;
+- ordinary work/timber marks.
+
+Old-boundary v3:
+- narrow path;
+- weathered stones;
+- old marks;
+- no former gate/crossbar overstatement.
+
+Both:
+- project-owned local SVG;
+- 1200×675;
+- no external resources/scripts;
+- exact route-specific presentation metadata;
+- no Product-open mechanics/results.
+
+Static candidate slots:
+- exact route-specific IDs;
+- local SVGs;
+- fallback to neutral default.
+
+Static accessibility:
+- complete RU+EN;
+- normalized `presentation.static.forest.route.<route>.alt|caption` keys;
+- non-spoilery.
+
+Build:
+existing recursive assets -> dist copy is sufficient.
+
+Animation:
+future backlog only;
+actual route-specific animation frames/GIFs = 0.
+
+Old superseded route assets should remain source history only.
+
+## 8. Animation exporter tooling
+
+Classification:
+`APPROVABLE_DEV_TOOLCHAIN_CHANGE / NO_PRODUCTION_GIF_CLAIM`.
+
+Proposed exact dev dependencies:
 - `sharp@0.35.4`;
 - `gifenc@1.0.3`.
 
-Worker package.json/package-lock blobs are identical to current main baseline used by the worker:
-no silent dependency mutation.
+Worker has not silently changed package/lock files.
 
-Exporter properties:
-- project-owned local SVG frames only;
-- no fetch/download;
-- reject URL/scheme;
-- reject absolute/traversal paths;
-- output only under `assets/gif/`;
-- deterministic candidate naming;
-- manifest-owned frame order;
-- exact timing controls;
-- dry-run does not require dependencies.
+Approval requirements:
+- exact lockfile generation;
+- license/notices review;
+- native install/postinstall review;
+- `npm ci` on current Ubuntu / Node 22.18 CI;
+- local-only project-owned SVG frame input;
+- URL/absolute/traversal/external-resource rejection;
+- deterministic frame order/timing/naming;
+- same-platform repeat export byte identity;
+- actual GIF validator;
+- full exact-head CI.
 
-Security/license review:
-- gifenc MIT, acceptable dev-only;
-- sharp Apache-2.0/native, acceptable dev-only with exact `npm ci`/install-script/platform verification.
+Current production:
+- real project-owned GIFs = 0;
+- production 3–5 GIF pools = 0.
 
-Reproducibility:
-same pinned environment must be byte-identical.
+Tooling approval does not activate any animation content.
 
-Current dependencies remain uninstalled.
-
-## 10. First-three GIF pool acceptance
+## 9. Journal/outcome regression
 
 Classification:
-`ACCEPTANCE_CONTRACT_READY / NO_REAL_GIFS_YET`.
+`GREEN_CURRENT_MAIN`.
 
-Planned first pools:
-- Lumber spring;
-- Guard summer;
-- Tavern autumn.
+Current behavior retains:
+- locale-neutral event-choice refs;
+- journal/ref index alignment;
+- old schema-4 missing-ref compatibility;
+- no fuzzy prose migration;
+- School course-result priority;
+- ordinary-action compatibility;
+- RU↔EN ref-backed Journal/lastAction rendering without Save mutation.
 
-Each requires exactly 3 real GIFs.
+PR57 and PR58 do not modify the ref persistence model.
 
-Total first-wave required files:
-`9`.
+Current run #109 retains:
+- old no-ref save regression;
+- stable-ref Journal/lastAction renderer regression;
+- School compatibility.
 
-Current actual:
-`0 / 9`.
-
-Every candidate must pass:
-- GIF87a/GIF89a signature;
-- 640×360;
-- 4 frames;
-- expected delay/loop duration;
-- infinite loop;
-- file/pool size budgets;
-- build copy byte identity;
-- project-owned provenance receipt;
-- deterministic locale-neutral selection;
-- static fallback;
-- no gameplay RNG;
-- no gameplay Save mutation.
-
-Production 3–5 candidate rule remains locked.
-
-No source SVG sequence counts as a GIF candidate.
-
-## 11. Bilingual coverage after PR54/55
-
-Current root localization:
-`556` keys.
-
-Missing RU:
-`0`.
-
-Missing EN:
-`0`.
-
-Events fully root-localized:
-`40 / 46`.
-
-Choice labels:
-`59 / 68`.
-
-Choice bodies:
-`59 / 68`.
-
-Root media-alt:
-`26 / 64`.
-
-PR54:
-stable-ref dynamic Journal/lastAction localization shipped.
-
-PR55:
-shared Night/lodging presentation shipped.
-
-Project-owned static target:
-`80 / 80`.
-
-## 12. Remaining hardcoded visible/source debt
-
-Current app:
-`8bc496f8678640e7134730dda943e326a9379fb1`.
-
-Current direct hardcoded RU-bearing source-line count under the documented rule:
-`43`.
-
-Largest remaining groups:
-- structured condition explanations: 26;
-- menu/save/status/error surfaces;
-- creation shell;
-- event/inactive-run shell;
-- active Activity state copy;
-- missing-media fallback;
-- event inspector.
-
-PR55 removes the former 5-line direct shared Night/lodging RU debt.
-
-One generic Night fallback still exposes raw machine phase text; this remains player-language debt but is not counted as Cyrillic hardcoding.
-
-## 13. Current main CI floor
+## 10. Current main regression floor
 
 Current main:
-`295e6fc74d235f0b7555794555a18373451e8b7e`.
+`52ddc76148e33836d3161b63bf4c25ffb5c39d02`.
 
-Run #99:
+Run #109:
 - SUCCESS;
-- 342/342;
+- 356/356;
 - validator 17/46/35/9.
 
-Static:
-`80 / 80`.
+Root localization:
+- 658 keys;
+- missing RU 0;
+- missing EN 0.
 
-Next localization/presentation-only PR must not silently regress:
-- test count below 342;
-- validator counts;
-- 556 current root keys;
-- 80 active static mappings.
+Root project-owned static:
+- 80 active mappings;
+- 79 unique active physical sources;
+- established static target 80/80.
 
-## 14. Current recommended integration order
+Current route root static:
+- neutral default only.
 
-### Forest route pure seam
-`READY_FOR_FRESH_MAIN_LEAD_IMPLEMENTATION`.
+Route-specific semantic slots:
+- shipped/generated by PR57;
+- safe default fallback.
 
-Keep code change small and presentation-only.
+## 11. Locked gameplay invariants
 
-Then selectively add the 10 route-localization keys.
+Must remain:
+- Lumber Hard Work eligibility only `completed_shifts >= 50`;
+- reward exactly `hardWork:lumber`;
+- Forest results exactly `lumber.forest.success/escape/failure`;
+- exact activityResult continuation;
+- Old Boundary current gate `itemCapability(enter_old_boundary) present=true`;
+- School locale Save invariance;
+- poverty natural paths;
+- Night lodging costs/effects;
+- Journal stable-ref compatibility;
+- locale does not affect gameplay RNG/Save/media candidate identity.
 
-Do not bundle Product-open Forest mechanics.
+## 12. Product-open isolation
+
+Still not promoted through this wave:
+- Hunter Forest route/clue/token mechanics;
+- Old Boundary acquisition/consume/retain/turn-in semantics;
+- route challenge/reward topology;
+- School Arcana/Forest authority;
+- deeper Forest lore;
+- Secret Debt;
+- authored Palace route content;
+- deeper relationship/housing/endings decisions.
+
+Presentation copy/assets are not gameplay authorization.
+
+## 13. Recommended next integration sequence
+
+### Route-specific static activation
+Now technically eligible for a fresh selective PR because:
+- route semantic seam is shipped;
+- both replacement Chat2 SVGs are QA-green;
+- route static fallback is defined;
+- localized route copy is ready.
+
+A fresh Lead branch should selectively copy:
+- the two safe replacement SVGs;
+- route-specific static slot overrides;
+- required static alt keys;
+- route visual regressions.
+
+Keep default fallback.
+
+### Route title/help/alt/caption
+Selective additive root integration:
+- 8 new keys;
+- 2 existing route choice labels reused.
 
 ### Animation exporter
-`READY_FOR_LEAD_TOOLCHAIN_DECISION`.
+Separate tooling PR only.
 
-If approved:
-1. fresh current-main branch;
-2. copy exporter sources/tests/contracts;
-3. add exact devDependencies;
-4. regenerate lockfile with npm;
-5. verify `npm ci`;
-6. smoke export;
-7. validate/reproducibility check;
-8. full exact-head CI.
+Do not mix tooling approval with a production GIF pool claim.
 
-Do not activate root GIF pools in the same approval step unless real bytes separately pass pool QA.
-
-### Remaining UI localization
-Future slices may target:
-- condition explanation formatter;
-- creation shell;
-- menu/save/status/errors;
-- active Activity player-facing wording;
-- remaining six event families.
-
-## 15. Product-open isolation
-
-Still unresolved/isolated:
-- School exact-course teacher gameplay/routing;
-- School management/accounting provider/result;
-- School Arcana/Forest provider/result;
-- Hunter Forest route/clue/token semantics;
-- Old Boundary acquisition/consume/retain/turn-in;
-- challenge thresholds/rewards;
-- deeper relationship stages/housing/endings;
-- Secret Debt;
-- authored Palace content.
-
-Presentation/localization/tooling work does not authorize these mechanics.
+### Remaining visible localization
+Future work can continue on:
+- residual semantic-name layers;
+- developer/debug UI only if product wants it;
+- remaining untranslated event families/media-alt debt.
 
 ## Final gate verdict
 
 - current main CI: `GREEN`;
-- PR54 stable refs: `SHIPPED_GREEN`;
-- PR55 shared Night UI: `SHIPPED_GREEN`;
-- shared Night natural-path invariance: `GREEN`;
-- Forest route pure seam source: `GREEN / IMPLEMENTATION_REQUIRED`;
-- route localization delta: `GREEN_ADDITIVE_SOURCE`;
-- route-specific visual activation: `WAIT_FOR_SEAM_AND_SAFE_ASSET`;
-- animation exporter candidate: `ACCEPTABLE_WITH_LEAD_APPROVAL_AND_NATIVE_CI_CHECK`;
-- first three GIF pools: `0/3 PRODUCTION READY`;
-- real GIF candidates: `0/9`;
-- project-owned static target: `80/80`;
-- full-product bilingual status: `PARTIAL_BILINGUAL`;
+- PR56 shell v2: `SHIPPED_GREEN`;
+- PR58 generic labels/hints: `SHIPPED_GREEN`;
+- PR57 Forest route presentation seam: `SHIPPED_GREEN`;
+- route-specific fallback: `SAFE_NEUTRAL_FALLBACK`;
+- route localized copy: `GREEN_SELECTIVE_SOURCE`;
+- Chat2 route replacement visuals: `GREEN_SOURCE / READY_FOR_SELECTIVE_ACTIVATION`;
+- animation exporter design: `APPROVABLE_DEV_TOOLCHAIN_CHANGE`;
+- production GIFs/pools: `NONE`;
+- Journal/outcome stable refs: `GREEN_CURRENT_MAIN`;
 - Product-open content: `ISOLATED`.
 
 No whole worker/chat branch is approved for merge.
