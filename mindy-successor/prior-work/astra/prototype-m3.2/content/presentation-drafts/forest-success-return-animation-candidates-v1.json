@@ -1,0 +1,90 @@
+{
+  "formatVersion": 1,
+  "kind": "animation-candidate-source-metadata",
+  "status": "SOURCE_READY_GIF_EXPORT_BLOCKED",
+  "currentMainBaseline": "295e6fc74d235f0b7555794555a18373451e8b7e",
+  "domain": "forest",
+  "presentationId": "activity/forest/return/success",
+  "staticFallback": "assets/presentation/forest-return-success-v2.svg",
+  "candidates": [
+    {
+      "candidateKey": "forest-success-return-loop-a",
+      "sourceSequenceKey": "forest-success-return-loop-a",
+      "sourceFrames": [
+        "assets/presentation-frames/forest-success-return-loop-a-frame-01.svg",
+        "assets/presentation-frames/forest-success-return-loop-a-frame-02.svg",
+        "assets/presentation-frames/forest-success-return-loop-a-frame-03.svg",
+        "assets/presentation-frames/forest-success-return-loop-a-frame-04.svg"
+      ],
+      "targetTiming": {
+        "sourceLoopDurationMs": 3200,
+        "normalizedExportLoopDurationMs": 3200,
+        "normalizedFrameDelayMs": 800,
+        "frameCount": 4,
+        "loopCount": 0
+      },
+      "targetRaster": {
+        "width": 640,
+        "height": 360,
+        "maxPaletteColors": 256
+      },
+      "gifPath": null
+    },
+    {
+      "candidateKey": "forest-success-return-loop-b",
+      "sourceSequenceKey": "forest-success-return-loop-b",
+      "sourceFrames": [
+        "assets/presentation-frames/forest-success-return-loop-b-frame-01.svg",
+        "assets/presentation-frames/forest-success-return-loop-b-frame-02.svg",
+        "assets/presentation-frames/forest-success-return-loop-b-frame-03.svg",
+        "assets/presentation-frames/forest-success-return-loop-b-frame-04.svg"
+      ],
+      "targetTiming": {
+        "sourceLoopDurationMs": 3000,
+        "normalizedExportLoopDurationMs": 3200,
+        "normalizedFrameDelayMs": 800,
+        "frameCount": 4,
+        "loopCount": 0
+      },
+      "targetRaster": {
+        "width": 640,
+        "height": 360,
+        "maxPaletteColors": 256
+      },
+      "gifPath": null
+    },
+    {
+      "candidateKey": "forest-success-return-loop-c",
+      "sourceSequenceKey": "forest-success-return-loop-c",
+      "sourceFrames": [
+        "assets/presentation-frames/forest-success-return-loop-c-frame-01.svg",
+        "assets/presentation-frames/forest-success-return-loop-c-frame-02.svg",
+        "assets/presentation-frames/forest-success-return-loop-c-frame-03.svg",
+        "assets/presentation-frames/forest-success-return-loop-c-frame-04.svg"
+      ],
+      "targetTiming": {
+        "sourceLoopDurationMs": 3400,
+        "normalizedExportLoopDurationMs": 3200,
+        "normalizedFrameDelayMs": 800,
+        "frameCount": 4,
+        "loopCount": 0
+      },
+      "targetRaster": {
+        "width": 640,
+        "height": 360,
+        "maxPaletteColors": 256
+      },
+      "gifPath": null
+    }
+  ],
+  "note": "Existing Forest success-return presentation only; no route/challenge/result-mechanics change.",
+  "invariants": {
+    "exactlyThreeSourceCandidates": true,
+    "actualGifBytesRequiredBeforeGifPath": true,
+    "localeNeutralCandidateKeys": true,
+    "staticFallbackPreserved": true,
+    "gameplayFields": false,
+    "gameplayRng": false,
+    "saveMutation": false
+  }
+}
