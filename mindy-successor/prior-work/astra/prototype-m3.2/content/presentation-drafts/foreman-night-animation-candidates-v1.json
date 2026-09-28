@@ -1,0 +1,90 @@
+{
+  "formatVersion": 1,
+  "kind": "animation-candidate-source-metadata",
+  "status": "SOURCE_READY_GIF_EXPORT_BLOCKED",
+  "currentMainBaseline": "295e6fc74d235f0b7555794555a18373451e8b7e",
+  "domain": "relationship",
+  "presentationId": "relationship/lumber-foreman/lumber-night-foreman-professional/default",
+  "staticFallback": "assets/presentation/foreman-night-voluntary-v2.svg",
+  "candidates": [
+    {
+      "candidateKey": "foreman-night-professional-loop-a",
+      "sourceSequenceKey": "foreman-night-professional-loop-a",
+      "sourceFrames": [
+        "assets/presentation-frames/foreman-night-professional-loop-a-frame-01.svg",
+        "assets/presentation-frames/foreman-night-professional-loop-a-frame-02.svg",
+        "assets/presentation-frames/foreman-night-professional-loop-a-frame-03.svg",
+        "assets/presentation-frames/foreman-night-professional-loop-a-frame-04.svg"
+      ],
+      "targetTiming": {
+        "sourceLoopDurationMs": 3600,
+        "normalizedExportLoopDurationMs": 3600,
+        "normalizedFrameDelayMs": 900,
+        "frameCount": 4,
+        "loopCount": 0
+      },
+      "targetRaster": {
+        "width": 640,
+        "height": 360,
+        "maxPaletteColors": 256
+      },
+      "gifPath": null
+    },
+    {
+      "candidateKey": "foreman-night-professional-loop-b",
+      "sourceSequenceKey": "foreman-night-professional-loop-b",
+      "sourceFrames": [
+        "assets/presentation-frames/foreman-night-professional-loop-b-frame-01.svg",
+        "assets/presentation-frames/foreman-night-professional-loop-b-frame-02.svg",
+        "assets/presentation-frames/foreman-night-professional-loop-b-frame-03.svg",
+        "assets/presentation-frames/foreman-night-professional-loop-b-frame-04.svg"
+      ],
+      "targetTiming": {
+        "sourceLoopDurationMs": 3400,
+        "normalizedExportLoopDurationMs": 3600,
+        "normalizedFrameDelayMs": 900,
+        "frameCount": 4,
+        "loopCount": 0
+      },
+      "targetRaster": {
+        "width": 640,
+        "height": 360,
+        "maxPaletteColors": 256
+      },
+      "gifPath": null
+    },
+    {
+      "candidateKey": "foreman-night-professional-loop-c",
+      "sourceSequenceKey": "foreman-night-professional-loop-c",
+      "sourceFrames": [
+        "assets/presentation-frames/foreman-night-professional-loop-c-frame-01.svg",
+        "assets/presentation-frames/foreman-night-professional-loop-c-frame-02.svg",
+        "assets/presentation-frames/foreman-night-professional-loop-c-frame-03.svg",
+        "assets/presentation-frames/foreman-night-professional-loop-c-frame-04.svg"
+      ],
+      "targetTiming": {
+        "sourceLoopDurationMs": 3800,
+        "normalizedExportLoopDurationMs": 3600,
+        "normalizedFrameDelayMs": 900,
+        "frameCount": 4,
+        "loopCount": 0
+      },
+      "targetRaster": {
+        "width": 640,
+        "height": 360,
+        "maxPaletteColors": 256
+      },
+      "gifPath": null
+    }
+  ],
+  "note": "Existing Foreman professional Night presentation only; no relationship/Night mechanics change.",
+  "invariants": {
+    "exactlyThreeSourceCandidates": true,
+    "actualGifBytesRequiredBeforeGifPath": true,
+    "localeNeutralCandidateKeys": true,
+    "staticFallbackPreserved": true,
+    "gameplayFields": false,
+    "gameplayRng": false,
+    "saveMutation": false
+  }
+}
