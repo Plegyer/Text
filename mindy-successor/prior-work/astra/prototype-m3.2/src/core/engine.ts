@@ -271,7 +271,7 @@ export function freshSave(metaInput?:Partial<Meta>&{completed?:string[];lives?:n
       endings:{eligible:[],committed:null,result:null},
       flow:{pendingScene:null,reaction:{epochCounter:0,currentEpochId:null,attemptedEventIds:[],cascadeDepth:0,queued:[]},night:null,activity:null,lastAction:null},
       rngState:{state:(meta.runsStarted*2654435761)>>>0},
-      historyState:{eventHistory:{},actionCounts:{},dayActionCount:0,journal:['Белый суслик, открытый люк и совершенно незнакомое небо. Ваша новая жизнь начинается в Листограде.']},
+      historyState:{eventHistory:{},actionCounts:{},dayActionCount:0,journal:['Белый суслик, открытый люк и совершенно незнакомое небо. Ваша новая жизнь начинается в Листограде.'],journalRefs:[null]},
       legacyCompat:{source:'m3.2' as const,metrics:defaultLegacyMetrics(),flags:{}}
     }
   } as unknown as Save;
@@ -285,7 +285,10 @@ export function freshSave(metaInput?:Partial<Meta>&{completed?:string[];lives?:n
 function delta(before:Record<string,number>,after:Record<string,number>){
   return Object.fromEntries((metrics as readonly string[]).filter(k=>(after[k]??0)!==(before[k]??0)&&k!=='stress').map(k=>[k,(after[k]??0)-(before[k]??0)]));
 }
-function log(s:Save,text:string){s.run.journal.push(text);s.run.journal=s.run.journal.slice(-160);}
+function log(s:Save,text:string,ref:Save['run']['historyState']['journalRefs'][number]=null){
+  s.run.journal.push(text);s.run.historyState.journalRefs.push(ref);
+  s.run.journal=s.run.journal.slice(-160);s.run.historyState.journalRefs=s.run.historyState.journalRefs.slice(-160);
+}
 
 function addUnique(target:string[],value:string){if(!target.includes(value))target.push(value);}
 function removeValue(target:string[],value:string){const i=target.indexOf(value);if(i>=0)target.splice(i,1);}
@@ -1155,9 +1158,10 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
     if(!sceneChoice||!eligible(sceneChoice.conditions,s,cat))throw new Error('Выбор недоступен.');
     const nightPoint=s.run.flow.night?.currentIntercept??null;
     if(nightPoint&&s.run.flow.night)addUnique(s.run.flow.night.handledEventIds,pending.eventId);
-    const beforeMetrics={...s.run.metrics};applyEffectsMutable(s,sceneChoice.effects,cat,true);log(s,sceneChoice.text);
+    const outcomeRef={kind:'eventChoice' as const,eventId:pending.eventId,choiceId:command.id};
+    const beforeMetrics={...s.run.metrics};applyEffectsMutable(s,sceneChoice.effects,cat,true);log(s,sceneChoice.text,outcomeRef);
     if(s.run.lastAction){
-      s.run.lastAction.title=e!.title;s.run.lastAction.text=sceneChoice.text;
+      s.run.lastAction.title=e!.title;s.run.lastAction.text=sceneChoice.text;s.run.lastAction.outcomeRef=outcomeRef;
       if(sceneChoice.media)s.run.lastAction.media=sceneChoice.media;
       for(const [k,v] of Object.entries(delta(beforeMetrics,s.run.metrics)))s.run.lastAction.deltas[k]=(s.run.lastAction.deltas[k]??0)+v;
     }
@@ -1256,7 +1260,8 @@ function migrateV3(raw:any){
         eventHistory:{...(raw.run.history??{})},
         actionCounts:{...(raw.run.actionCounts??{})},
         dayActionCount:Math.max(0,raw.run.slot??0),
-        journal:[...(raw.run.journal??[])]
+        journal:[...(raw.run.journal??[])],
+        journalRefs:Array((raw.run.journal??[]).length).fill(null)
       },
       legacyCompat:{source:'m3.2',metrics:legacyMetrics,flags:{...(raw.run.flags??{})},originalLimitDays:raw.run.limitDays}
     }
@@ -1279,6 +1284,12 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
   if(raw.schemaVersion===4){
     raw.meta=raw.meta??{};
     raw.meta.appliedResultTransactions=raw.meta.appliedResultTransactions??[];
+    const journal=raw.run?.historyState?.journal;
+    if(Array.isArray(journal)){
+      const refs=raw.run.historyState.journalRefs;
+      if(refs===undefined)raw.run.historyState.journalRefs=Array(journal.length).fill(null);
+      else if(!Array.isArray(refs)||refs.length!==journal.length)throw new Error('Некорректные ссылки дневника.');
+    }
     const committed=raw.run?.endings?.committed;
     if(raw.run?.status==='ended'&&committed&&!raw.run.endings.result){
       const ids=resultIdentityFor(raw.run.id,Math.max(1,raw.meta.runsStarted??raw.meta.lives??1),committed);
