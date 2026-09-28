@@ -1821,3 +1821,100 @@ Consolidate items 169–179 into:
 - SECRET_DEBT_EXCLUDED.
 
 Continue items 169–180 sequentially without waiting for Lead review.
+
+
+## Queue item 181 — Foreman semantic display debt audit v1
+Create NEW file only:
+- `docs/relationship-prep/FOREMAN_SEMANTIC_DISPLAY_DEBT_AUDIT_V1.md`
+
+Audit exact current Foreman relationship IDs/stages/counters/facts/choice values that can surface as raw identifiers in UI/debug-adjacent player presentation.
+Current identities only.
+
+## Queue item 182 — Foreman relationship label/stage RU source v1
+Create NEW file only:
+- `docs/relationship-prep/FOREMAN_RELATIONSHIP_STAGE_LABELS_RU_V1.md`
+
+Polish Russian display labels for exact current:
+- relationship `lumber.foreman`;
+- stages `unknown`, `professional`, `route-professional`.
+
+No new stages.
+
+## Queue item 183 — Foreman relationship label/stage EN parity v1
+Create NEW file only:
+- `docs/relationship-prep/FOREMAN_RELATIONSHIP_STAGE_LABELS_EN_V1.md`
+
+Full English parity for item 182.
+
+## Queue item 184 — Foreman counter/fact display copy RU EN v1
+Create NEW file only:
+- `docs/relationship-prep/FOREMAN_COUNTER_FACT_LABELS_RU_EN_V1.md`
+
+Author RU+EN presentation labels for exact current:
+- counter `night_meetings`;
+- fact `night-followup-complete`.
+
+No semantic or mechanics changes.
+
+## Queue item 185 — Foreman route-choice display copy RU EN v1
+Create NEW file only:
+- `docs/relationship-prep/FOREMAN_ROUTE_CHOICE_LABELS_RU_EN_V1.md`
+
+Author RU+EN presentation labels for exact current relationship choice/value:
+- choice `route`;
+- value `professional`.
+
+No romance or additional route values.
+
+## Queue item 186 — Foreman semantic localization fixture v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/relationship-foreman-semantic-labels-v1.fixture.json`
+
+Consolidate items 182–185 into stable RU+EN presentation keys only.
+No relationship state or gameplay fields.
+
+## Queue item 187 — Foreman semantic current-main collision audit v1
+Create NEW file only:
+- `docs/relationship-prep/FOREMAN_SEMANTIC_LABEL_COLLISION_AUDIT_V1.md`
+
+Compare item 186 with exact current root localization.
+Classify ADDITIVE / IDENTICAL / REUSE_EXISTING / CONFLICT.
+
+## Queue item 188 — Foreman semantic consumer map v1
+Create NEW file only:
+- `docs/relationship-prep/FOREMAN_SEMANTIC_CONSUMER_MAP_V1.md`
+
+Map item-186 keys to exact current player-facing UI/presentation seams where raw relationship/stage/counter/fact/value labels could be rendered.
+No code edits.
+
+## Queue item 189 — Foreman Night natural-path localization matrix v3
+Create NEW file only:
+- `docs/relationship-prep/FOREMAN_NIGHT_NATURAL_PATH_LOCALIZATION_MATRIX_V3.md`
+
+Record exact current natural path into voluntary Foreman Night, expected RU/EN presentation, exact unchanged Night choice/event/presentation IDs and Save/RNG invariants.
+
+## Queue item 190 — Foreman relationship stage-transition display matrix v1
+Create NEW file only:
+- `docs/relationship-prep/FOREMAN_STAGE_TRANSITION_DISPLAY_MATRIX_V1.md`
+
+Document exact current transitions among existing Foreman stages and expected localized display labels.
+Do not alter transition rules.
+
+## Queue item 191 — Foreman semantic localization regression source v1
+Create NEW test only:
+- `prior-work/astra/prototype-m3.2/tests/relationship-foreman-semantic-labels-v1.test.ts`
+
+Validate exact current IDs, RU+EN completeness, no new stages/facts/counters/choices, and absence of gameplay/RNG/Save fields in item 186.
+
+## Queue item 192 — Foreman semantic localization handoff v3
+Create NEW file only:
+- `docs/relationship-prep/FOREMAN_SEMANTIC_LOCALIZATION_HANDOFF_V3.md`
+
+Consolidate items 181–191 into:
+- SEMANTIC_LABELS_READY;
+- CURRENT_IDENTITIES_ONLY;
+- SHARED_CONSUMER_WIRING_REQUIRED;
+- NIGHT_PATH_VERIFIED;
+- PRODUCT_OPEN_EXCLUDED.
+
+Continue items 181–192 sequentially without waiting for Lead review.
