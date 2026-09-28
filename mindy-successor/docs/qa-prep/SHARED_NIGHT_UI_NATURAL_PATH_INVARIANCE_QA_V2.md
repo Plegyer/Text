@@ -2,7 +2,7 @@
 
 Status: COMPLETE / EXECUTABLE_ACCEPTANCE_CONTRACT
 
-Current main:
+Initial acceptance baseline:
 `6e2a5147603b71eed89a0966af417a33dd28d7a7`.
 
 Source expectation:
@@ -234,3 +234,33 @@ Accept only:
 `same Night gameplay state + same command = same mechanics/result in RU and EN`.
 
 Localization may change presentation text only.
+
+
+## PR55 executable evidence
+
+PR55 exact head:
+`724ab70a5a83424fb8a576c3deb082b60256ffc0`.
+
+Run #98:
+- SUCCESS;
+- 342/342.
+
+Post-merge main:
+`295e6fc74d235f0b7555794555a18373451e8b7e`.
+
+Run #99:
+- SUCCESS;
+- 342/342.
+
+Relevant passing regressions include:
+- `shared Night UI production fixture contains exactly 16 additive RU EN keys`;
+- `shared Night UI consumers use stable localization keys without NightFlow mechanics changes`;
+- `shared Night UI fixture is presentation-only`;
+- `renderer: shared Night and lodging UI localizes RU EN without state drift`;
+- existing exactly-once street lodging -> voluntary sleep day-advance regression;
+- existing normal lodging + optional Foreman Night exactly-once regression.
+
+Thus the natural-path presentation contract is now backed by production CI on merged main.
+
+Current status:
+`GREEN_POST_MERGE_MAIN`.
