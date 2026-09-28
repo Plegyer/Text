@@ -1,0 +1,401 @@
+{
+  "schemaVersion": 1,
+  "id": "poverty.journal-localization-expectation.v2",
+  "status": "EXPECTATION_FOR_LEAD_JOURNAL_REF_CONSUMER",
+  "baseMain": "3fc5495310e281cf5cbe52da3642000f1cb1fb05",
+  "mappings": [
+    {
+      "packId": "poverty-street-production",
+      "eventId": "poverty-street-production.helpful-summer",
+      "choiceId": "take-errand",
+      "titleKey": "event.poverty-street-production.helpful-summer.title",
+      "choiceLabelKey": "event.poverty-street-production.helpful-summer.choice.take-errand.label",
+      "choiceTextKey": "event.poverty-street-production.helpful-summer.choice.take-errand.text",
+      "currentLocalizedText": {
+        "ru": "Ты переносишь ящик под навес и получаешь небольшую плату за несколько минут работы.",
+        "en": "You carry the crate under cover and earn a small payment for a few minutes of work."
+      },
+      "expectedJournalRef": {
+        "eventId": "poverty-street-production.helpful-summer",
+        "choiceId": "take-errand"
+      }
+    },
+    {
+      "packId": "poverty-street-production",
+      "eventId": "poverty-street-production.helpful-summer",
+      "choiceId": "keep-resting",
+      "titleKey": "event.poverty-street-production.helpful-summer.title",
+      "choiceLabelKey": "event.poverty-street-production.helpful-summer.choice.keep-resting.label",
+      "choiceTextKey": "event.poverty-street-production.helpful-summer.choice.keep-resting.text",
+      "currentLocalizedText": {
+        "ru": "Ты сохраняешь более безопасное место для сна и пропускаешь поручение.",
+        "en": "You keep the safer sleeping spot and let the errand pass."
+      },
+      "expectedJournalRef": {
+        "eventId": "poverty-street-production.helpful-summer",
+        "choiceId": "keep-resting"
+      }
+    },
+    {
+      "packId": "poverty-street-production",
+      "eventId": "poverty-street-production.neutral-autumn",
+      "choiceId": "settle-in",
+      "titleKey": "event.poverty-street-production.neutral-autumn.title",
+      "choiceLabelKey": "event.poverty-street-production.neutral-autumn.choice.settle-in.label",
+      "choiceTextKey": "event.poverty-street-production.neutral-autumn.choice.settle-in.text",
+      "currentLocalizedText": {
+        "ru": "Ты остаёшься в сухом углу. Ночь проходит без неожиданной помощи и без новых проблем.",
+        "en": "You keep the dry corner. The night passes without unexpected help and without a new problem."
+      },
+      "expectedJournalRef": {
+        "eventId": "poverty-street-production.neutral-autumn",
+        "choiceId": "settle-in"
+      }
+    },
+    {
+      "packId": "poverty-street-production",
+      "eventId": "poverty-street-production.pressure-winter",
+      "choiceId": "take-shelter",
+      "titleKey": "event.poverty-street-production.pressure-winter.title",
+      "choiceLabelKey": "event.poverty-street-production.pressure-winter.choice.take-shelter.label",
+      "choiceTextKey": "event.poverty-street-production.pressure-winter.choice.take-shelter.text",
+      "currentLocalizedText": {
+        "ru": "Ты остаёшься под навесом и сохраняешь столько отдыха, сколько позволяет эта ночь.",
+        "en": "You stay beneath the overhang and keep as much rest as the night allows."
+      },
+      "expectedJournalRef": {
+        "eventId": "poverty-street-production.pressure-winter",
+        "choiceId": "take-shelter"
+      }
+    },
+    {
+      "packId": "poverty-street-production",
+      "eventId": "poverty-street-production.pressure-winter",
+      "choiceId": "keep-moving",
+      "titleKey": "event.poverty-street-production.pressure-winter.title",
+      "choiceLabelKey": "event.poverty-street-production.pressure-winter.choice.keep-moving.label",
+      "choiceTextKey": "event.poverty-street-production.pressure-winter.choice.keep-moving.text",
+      "currentLocalizedText": {
+        "ru": "Ты меняешь отдых на движение и встречаешь утро более уставшей.",
+        "en": "You trade rest for movement and reach morning more tired."
+      },
+      "expectedJournalRef": {
+        "eventId": "poverty-street-production.pressure-winter",
+        "choiceId": "keep-moving"
+      }
+    },
+    {
+      "packId": "poverty-street-production-v2",
+      "eventId": "poverty-street-production-v2.helpful-summer-shade",
+      "choiceId": "take-small-task",
+      "titleKey": "event.poverty-street-production-v2.helpful-summer-shade.title",
+      "choiceLabelKey": "event.poverty-street-production-v2.helpful-summer-shade.choice.take-small-task.label",
+      "choiceTextKey": "event.poverty-street-production-v2.helpful-summer-shade.choice.take-small-task.text",
+      "currentLocalizedText": {
+        "ru": "Ты заканчиваешь короткую работу и получаешь небольшую плату.",
+        "en": "You finish the brief job and receive a small payment."
+      },
+      "expectedJournalRef": {
+        "eventId": "poverty-street-production-v2.helpful-summer-shade",
+        "choiceId": "take-small-task"
+      }
+    },
+    {
+      "packId": "poverty-street-production-v2",
+      "eventId": "poverty-street-production-v2.helpful-summer-shade",
+      "choiceId": "keep-place",
+      "titleKey": "event.poverty-street-production-v2.helpful-summer-shade.title",
+      "choiceLabelKey": "event.poverty-street-production-v2.helpful-summer-shade.choice.keep-place.label",
+      "choiceTextKey": "event.poverty-street-production-v2.helpful-summer-shade.choice.keep-place.text",
+      "currentLocalizedText": {
+        "ru": "Ты сохраняешь место для отдыха и пропускаешь небольшую работу.",
+        "en": "You keep your resting spot and let the small job pass."
+      },
+      "expectedJournalRef": {
+        "eventId": "poverty-street-production-v2.helpful-summer-shade",
+        "choiceId": "keep-place"
+      }
+    },
+    {
+      "packId": "poverty-street-production-v2",
+      "eventId": "poverty-street-production-v2.neutral-autumn-crossing",
+      "choiceId": "wait-out-night",
+      "titleKey": "event.poverty-street-production-v2.neutral-autumn-crossing.title",
+      "choiceLabelKey": "event.poverty-street-production-v2.neutral-autumn-crossing.choice.wait-out-night.label",
+      "choiceTextKey": "event.poverty-street-production-v2.neutral-autumn-crossing.choice.wait-out-night.text",
+      "currentLocalizedText": {
+        "ru": "Ты позволяешь улице постепенно стихнуть вокруг. Ночь не приносит ни помощи, ни новой неприятности.",
+        "en": "You let the street settle around you. The night brings neither help nor a new problem."
+      },
+      "expectedJournalRef": {
+        "eventId": "poverty-street-production-v2.neutral-autumn-crossing",
+        "choiceId": "wait-out-night"
+      }
+    },
+    {
+      "packId": "poverty-street-production-v2",
+      "eventId": "poverty-street-production-v2.pressure-winter-wind",
+      "choiceId": "use-recess",
+      "titleKey": "event.poverty-street-production-v2.pressure-winter-wind.title",
+      "choiceLabelKey": "event.poverty-street-production-v2.pressure-winter-wind.choice.use-recess.label",
+      "choiceTextKey": "event.poverty-street-production-v2.pressure-winter-wind.choice.use-recess.text",
+      "currentLocalizedText": {
+        "ru": "Ты устраиваешься в утопленном дверном проёме и пережидаешь самые сильные порывы.",
+        "en": "You settle into the recessed doorway and wait out the strongest gusts."
+      },
+      "expectedJournalRef": {
+        "eventId": "poverty-street-production-v2.pressure-winter-wind",
+        "choiceId": "use-recess"
+      }
+    },
+    {
+      "packId": "poverty-street-production-v2",
+      "eventId": "poverty-street-production-v2.pressure-winter-wind",
+      "choiceId": "keep-walking",
+      "titleKey": "event.poverty-street-production-v2.pressure-winter-wind.title",
+      "choiceLabelKey": "event.poverty-street-production-v2.pressure-winter-wind.choice.keep-walking.label",
+      "choiceTextKey": "event.poverty-street-production-v2.pressure-winter-wind.choice.keep-walking.text",
+      "currentLocalizedText": {
+        "ru": "Ты остаёшься в движении, пока ветер не стихает, и к утру сильнее чувствуешь усталость.",
+        "en": "You keep moving until the wind eases and feel the lost rest more sharply by morning."
+      },
+      "expectedJournalRef": {
+        "eventId": "poverty-street-production-v2.pressure-winter-wind",
+        "choiceId": "keep-walking"
+      }
+    },
+    {
+      "packId": "poverty-cheap-production",
+      "eventId": "poverty-cheap-production.shared-quiet-autumn",
+      "choiceId": "settle-quietly",
+      "titleKey": "event.poverty-cheap-production.shared-quiet-autumn.title",
+      "choiceLabelKey": "event.poverty-cheap-production.shared-quiet-autumn.choice.settle-quietly.label",
+      "choiceTextKey": "event.poverty-cheap-production.shared-quiet-autumn.choice.settle-quietly.text",
+      "currentLocalizedText": {
+        "ru": "Ты освобождаешь немного места, держишь вещи рядом и позволяешь комнате постепенно затихнуть.",
+        "en": "You make a little space, keep your belongings close, and let the room gradually settle."
+      },
+      "expectedJournalRef": {
+        "eventId": "poverty-cheap-production.shared-quiet-autumn",
+        "choiceId": "settle-quietly"
+      }
+    },
+    {
+      "packId": "poverty-cheap-production-v2",
+      "eventId": "poverty-cheap-production-v2.shared-room-seasons",
+      "choiceId": "settle-in",
+      "titleKey": "event.poverty-cheap-production-v2.shared-room-seasons.title",
+      "choiceLabelKey": "event.poverty-cheap-production-v2.shared-room-seasons.choice.settle-in.label",
+      "choiceTextKey": "event.poverty-cheap-production-v2.shared-room-seasons.choice.settle-in.text",
+      "currentLocalizedText": {
+        "ru": "Ты приводишь своё место в порядок и позволяешь общей комнате постепенно затихнуть.",
+        "en": "You tidy your place and let the shared room gradually wind down."
+      },
+      "expectedJournalRef": {
+        "eventId": "poverty-cheap-production-v2.shared-room-seasons",
+        "choiceId": "settle-in"
+      }
+    },
+    {
+      "packId": "poverty-recovery-production",
+      "eventId": "poverty-recovery-production.small-coin-help",
+      "choiceId": "take-coins",
+      "titleKey": "event.poverty-recovery-production.small-coin-help.title",
+      "choiceLabelKey": "event.poverty-recovery-production.small-coin-help.choice.take-coins.label",
+      "choiceTextKey": "event.poverty-recovery-production.small-coin-help.choice.take-coins.text",
+      "currentLocalizedText": {
+        "ru": "Ты берёшь только свободно лежащие монеты и оставляешь хлеб на месте. Небольшой суммы хватает, чтобы немного облегчить ближайшие расходы.",
+        "en": "You take only the loose coins and leave the bread where it is. The small amount makes the next few expenses a little easier."
+      },
+      "expectedJournalRef": {
+        "eventId": "poverty-recovery-production.small-coin-help",
+        "choiceId": "take-coins"
+      }
+    },
+    {
+      "packId": "poverty-recovery-production",
+      "eventId": "poverty-recovery-production.small-coin-help",
+      "choiceId": "leave-them",
+      "titleKey": "event.poverty-recovery-production.small-coin-help.title",
+      "choiceLabelKey": "event.poverty-recovery-production.small-coin-help.choice.leave-them.label",
+      "choiceTextKey": "event.poverty-recovery-production.small-coin-help.choice.leave-them.text",
+      "currentLocalizedText": {
+        "ru": "Ты оставляешь монеты тому, кому они понадобятся следующим, и сохраняешь своё место на ночь.",
+        "en": "You leave the coins for whoever needs them next and keep your place for the night."
+      },
+      "expectedJournalRef": {
+        "eventId": "poverty-recovery-production.small-coin-help",
+        "choiceId": "leave-them"
+      }
+    },
+    {
+      "packId": "poverty-recovery-production",
+      "eventId": "poverty-recovery-production.short-cleanup",
+      "choiceId": "do-cleanup",
+      "titleKey": "event.poverty-recovery-production.short-cleanup.title",
+      "choiceLabelKey": "event.poverty-recovery-production.short-cleanup.choice.do-cleanup.label",
+      "choiceTextKey": "event.poverty-recovery-production.short-cleanup.choice.do-cleanup.text",
+      "currentLocalizedText": {
+        "ru": "Работа занимает всего несколько минут. Ты складываешь табуреты, подметаешь у прилавка и получаешь небольшую плату.",
+        "en": "The work takes only a few minutes. You stack the stools, sweep around the stall, and receive a small payment."
+      },
+      "expectedJournalRef": {
+        "eventId": "poverty-recovery-production.short-cleanup",
+        "choiceId": "do-cleanup"
+      }
+    },
+    {
+      "packId": "poverty-recovery-production",
+      "eventId": "poverty-recovery-production.short-cleanup",
+      "choiceId": "keep-resting",
+      "titleKey": "event.poverty-recovery-production.short-cleanup.title",
+      "choiceLabelKey": "event.poverty-recovery-production.short-cleanup.choice.keep-resting.label",
+      "choiceTextKey": "event.poverty-recovery-production.short-cleanup.choice.keep-resting.text",
+      "currentLocalizedText": {
+        "ru": "Ты отказываешься от дополнительной работы и сохраняешь место для отдыха без штрафа.",
+        "en": "You decline the extra work and preserve your resting spot without penalty."
+      },
+      "expectedJournalRef": {
+        "eventId": "poverty-recovery-production.short-cleanup",
+        "choiceId": "keep-resting"
+      }
+    },
+    {
+      "packId": "poverty-recovery-production",
+      "eventId": "poverty-recovery-production.herb-bundle",
+      "choiceId": "take-herb",
+      "titleKey": "event.poverty-recovery-production.herb-bundle.title",
+      "choiceLabelKey": "event.poverty-recovery-production.herb-bundle.choice.take-herb.label",
+      "choiceTextKey": "event.poverty-recovery-production.herb-bundle.choice.take-herb.text",
+      "currentLocalizedText": {
+        "ru": "Ты забираешь пучок обычных трав и убираешь его к своим вещам.",
+        "en": "You keep the bundle of ordinary herbs and tuck it in with your things."
+      },
+      "expectedJournalRef": {
+        "eventId": "poverty-recovery-production.herb-bundle",
+        "choiceId": "take-herb"
+      }
+    },
+    {
+      "packId": "poverty-recovery-production",
+      "eventId": "poverty-recovery-production.herb-bundle",
+      "choiceId": "leave-herb",
+      "titleKey": "event.poverty-recovery-production.herb-bundle.title",
+      "choiceLabelKey": "event.poverty-recovery-production.herb-bundle.choice.leave-herb.label",
+      "choiceTextKey": "event.poverty-recovery-production.herb-bundle.choice.leave-herb.text",
+      "currentLocalizedText": {
+        "ru": "Ты оставляешь пучок на месте и продолжаешь устраиваться на ночь без него.",
+        "en": "You leave the bundle where it is and continue settling in for the night without it."
+      },
+      "expectedJournalRef": {
+        "eventId": "poverty-recovery-production.herb-bundle",
+        "choiceId": "leave-herb"
+      }
+    },
+    {
+      "packId": "poverty-pressure-production",
+      "eventId": "poverty-pressure-production.cold-rain",
+      "choiceId": "take-doorway",
+      "titleKey": "event.poverty-pressure-production.cold-rain.title",
+      "choiceLabelKey": "event.poverty-pressure-production.cold-rain.choice.take-doorway.label",
+      "choiceTextKey": "event.poverty-pressure-production.cold-rain.choice.take-doorway.text",
+      "currentLocalizedText": {
+        "ru": "Ты перебираешься в глубокий дверной проём, где дождь почти не достаёт до одежды.",
+        "en": "You move into the deeper doorway, where the rain barely reaches your clothes."
+      },
+      "expectedJournalRef": {
+        "eventId": "poverty-pressure-production.cold-rain",
+        "choiceId": "take-doorway"
+      }
+    },
+    {
+      "packId": "poverty-pressure-production",
+      "eventId": "poverty-pressure-production.cold-rain",
+      "choiceId": "wait-it-out",
+      "titleKey": "event.poverty-pressure-production.cold-rain.title",
+      "choiceLabelKey": "event.poverty-pressure-production.cold-rain.choice.wait-it-out.label",
+      "choiceTextKey": "event.poverty-pressure-production.cold-rain.choice.wait-it-out.text",
+      "currentLocalizedText": {
+        "ru": "Ты остаёшься на месте. К утру сырость сильнее сказывается и на силах, и на внешнем виде.",
+        "en": "You stay where you are. By morning, the damp has taken more out of you and left you looking rougher."
+      },
+      "expectedJournalRef": {
+        "eventId": "poverty-pressure-production.cold-rain",
+        "choiceId": "wait-it-out"
+      }
+    },
+    {
+      "packId": "poverty-pressure-production",
+      "eventId": "poverty-pressure-production.noisy-loading",
+      "choiceId": "move-corner",
+      "titleKey": "event.poverty-pressure-production.noisy-loading.title",
+      "choiceLabelKey": "event.poverty-pressure-production.noisy-loading.choice.move-corner.label",
+      "choiceTextKey": "event.poverty-pressure-production.noisy-loading.choice.move-corner.text",
+      "currentLocalizedText": {
+        "ru": "Ты оставляешь привычное место и находишь угол подальше от колёс, ящиков и криков.",
+        "en": "You leave the familiar spot and find a corner farther from the wheels, crates, and shouted counts."
+      },
+      "expectedJournalRef": {
+        "eventId": "poverty-pressure-production.noisy-loading",
+        "choiceId": "move-corner"
+      }
+    },
+    {
+      "packId": "poverty-pressure-production",
+      "eventId": "poverty-pressure-production.noisy-loading",
+      "choiceId": "stay-put",
+      "titleKey": "event.poverty-pressure-production.noisy-loading.title",
+      "choiceLabelKey": "event.poverty-pressure-production.noisy-loading.choice.stay-put.label",
+      "choiceTextKey": "event.poverty-pressure-production.noisy-loading.choice.stay-put.text",
+      "currentLocalizedText": {
+        "ru": "Ты сохраняешь место, но погрузка не даёт нормально отдохнуть до рассвета.",
+        "en": "You keep your place, but the loading never lets you get proper rest before dawn."
+      },
+      "expectedJournalRef": {
+        "eventId": "poverty-pressure-production.noisy-loading",
+        "choiceId": "stay-put"
+      }
+    },
+    {
+      "packId": "poverty-pressure-production",
+      "eventId": "poverty-pressure-production.muddy-splash",
+      "choiceId": "wipe-down",
+      "titleKey": "event.poverty-pressure-production.muddy-splash.title",
+      "choiceLabelKey": "event.poverty-pressure-production.muddy-splash.choice.wipe-down.label",
+      "choiceTextKey": "event.poverty-pressure-production.muddy-splash.choice.wipe-down.text",
+      "currentLocalizedText": {
+        "ru": "Ты тратишь несколько минут, чтобы убрать самые заметные пятна, пока грязь не успела высохнуть.",
+        "en": "You spend a few minutes wiping away the worst of the mud before it can dry."
+      },
+      "expectedJournalRef": {
+        "eventId": "poverty-pressure-production.muddy-splash",
+        "choiceId": "wipe-down"
+      }
+    },
+    {
+      "packId": "poverty-pressure-production",
+      "eventId": "poverty-pressure-production.muddy-splash",
+      "choiceId": "leave-for-morning",
+      "titleKey": "event.poverty-pressure-production.muddy-splash.title",
+      "choiceLabelKey": "event.poverty-pressure-production.muddy-splash.choice.leave-for-morning.label",
+      "choiceTextKey": "event.poverty-pressure-production.muddy-splash.choice.leave-for-morning.text",
+      "currentLocalizedText": {
+        "ru": "Ты оставляешь грязь до утра. К началу нового дня одежда и внешний вид будут заметно хуже.",
+        "en": "You leave the mud until morning. By the start of the new day, your clothes and appearance are noticeably worse."
+      },
+      "expectedJournalRef": {
+        "eventId": "poverty-pressure-production.muddy-splash",
+        "choiceId": "leave-for-morning"
+      }
+    }
+  ],
+  "invariants": {
+    "mappingCount": 24,
+    "stableEventChoiceIdentity": true,
+    "renderLocaleAtReadTime": true,
+    "rewriteSavedHistoryOnLocaleSwitch": false,
+    "replayEffects": false,
+    "changesRng": false,
+    "secretDebtIncluded": false
+  }
+}
