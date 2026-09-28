@@ -1125,3 +1125,84 @@ Create NEW file only:
 Consolidate items 97–107 with exact selective-copy files and remaining player-facing hardcoded debt.
 
 Continue items 97–108 sequentially without waiting for Lead review.
+
+
+## Queue item 109 — labels dictionary localization debt audit v1
+Create NEW file only:
+- `docs/relationship-prep/LABELS_DICTIONARY_LOCALIZATION_DEBT_AUDIT_V1.md`
+
+Audit player-facing uses of the shared labels dictionary: stats, seasons, housing, inventory/resource labels and other visible generic labels.
+Separate already-localized keys from RU-only debt.
+
+## Queue item 110 — hints dictionary RU EN source v1
+Create NEW file only:
+- `docs/relationship-prep/HINTS_DICTIONARY_RU_EN_SOURCE_V1.md`
+
+Author full EN parity for player-facing stat/tooltips/hints currently sourced from hardcoded RU hints.
+Presentation only.
+
+## Queue item 111 — housing labels RU EN source v1
+Create NEW file only:
+- `docs/relationship-prep/HOUSING_LABELS_RU_EN_SOURCE_V1.md`
+
+Author/review exact RU+EN labels for current housing identities only.
+No housing mechanics/cost changes.
+
+## Queue item 112 — inventory/resource labels RU EN source v1
+Create NEW file only:
+- `docs/relationship-prep/INVENTORY_RESOURCE_LABELS_RU_EN_SOURCE_V1.md`
+
+Cover current player-visible item/resource labels used in Bag, condition explanation and result deltas.
+No item mechanics.
+
+## Queue item 113 — condition explanation templates RU EN v2
+Create NEW file only:
+- `docs/relationship-prep/CONDITION_EXPLANATION_TEMPLATES_RU_EN_V2.md`
+
+Finalize RU+EN templates for every current player-facing `Condition` kind used by explain(c), keeping IDs/values authoritative.
+
+## Queue item 114 — condition state-word dictionary v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/condition-state-word-localization-v1.fixture.json`
+
+Provide stable RU+EN presentation words/separators for present/absent, completed/not completed, and/or/not required, stages, counters, comparisons.
+No condition object changes.
+
+## Queue item 115 — creation/menu/recovery localization delta v3
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/global-ui-shell-localization-v3.fixture.json`
+
+Rebase item-105 on post-PR53 current root, remove already-shipped exact-identical keys, reuse existing semantic keys where possible, and include only remaining additive UI-shell labels/templates.
+
+## Queue item 116 — labels/hints localization fixture v1
+Create NEW file only:
+- `prior-work/astra/prototype-m3.2/content/global-labels-hints-localization-v1.fixture.json`
+
+Produce exact stable RU+EN keys for items 109–112.
+No gameplay fields.
+
+## Queue item 117 — app consumer map labels/hints/conditions v1
+Create NEW file only:
+- `docs/relationship-prep/LABELS_HINTS_CONDITIONS_CONSUMER_MAP_V1.md`
+
+Map item-114/115/116 keys to exact current app.ts consumers and fallback strings after PR53.
+
+## Queue item 118 — player-facing error wrapper localization v2
+Create NEW file only:
+- `docs/relationship-prep/PLAYER_FACING_ERROR_WRAPPER_LOCALIZATION_V2.md`
+
+Define localized wrappers for import/load/recovery/presentation-edit errors while leaving raw validator payloads untouched when no stable semantic code exists.
+
+## Queue item 119 — remaining hardcoded RU debt closure audit v2
+Create NEW file only:
+- `docs/relationship-prep/REMAINING_HARDCODED_RU_DEBT_CLOSURE_AUDIT_V2.md`
+
+After items 109–118, inventory remaining normal-player hardcoded RU in app.ts and classify SHIP_NEXT / OTHER_OWNER / DEBUG_INTERNAL / ACCEPTABLE_FALLBACK.
+
+## Queue item 120 — labels and condition localization handoff v3
+Create NEW file only:
+- `docs/relationship-prep/LABELS_CONDITIONS_LOCALIZATION_HANDOFF_V3.md`
+
+Consolidate items 109–119 with exact selective-copy fixtures, consumer seams and remaining blockers.
+
+Continue items 109–120 sequentially without waiting for Lead review.
