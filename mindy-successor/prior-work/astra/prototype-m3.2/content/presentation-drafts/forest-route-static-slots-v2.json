@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "texts": {},
+  "media": {},
+  "slots": {
+    "activity/forest/route/logging-road": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/forest-route-logging-road-v2.svg",
+        "alt": "Широкая лесовозная дорога с колеями, срезанными ветками и обычными следами лесных работ.",
+        "altKey": "presentation.static.forest.route.logging-road.alt"
+      },
+      "fallbackId": "activity/forest/route/default"
+    },
+    "activity/forest/route/old-boundary": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/forest-route-old-boundary-v3.svg",
+        "alt": "Узкая старая межевая тропа проходит между выветренными камнями и старыми отметинами.",
+        "altKey": "presentation.static.forest.route.old-boundary.alt"
+      },
+      "fallbackId": "activity/forest/route/default"
+    }
+  }
+}
