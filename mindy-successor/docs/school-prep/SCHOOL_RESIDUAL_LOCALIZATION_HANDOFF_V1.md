@@ -156,6 +156,15 @@ Exact-head production CI remains Lead/QA responsibility.
 203. `mindy-successor/prior-work/astra/prototype-m3.2/tests/school-residual-localization-source-v1.test.ts`
 204. `mindy-successor/docs/school-prep/SCHOOL_RESIDUAL_LOCALIZATION_HANDOFF_V1.md`
 
+## Final current-main revalidation
+
+Before candidate handoff, current `main` was re-read at:
+- `eb6b9a79e01a8094ffc4b3062d8633e001f41d84`
+
+Changes since the worker branch point are coordination/task/QA-freeze documents only. Exact current School production localization values for all four residual keys are unchanged, so the 4-key SUPERSEDED classification remains valid.
+
+The active Candidate / QA Freeze Protocol was also read. This worker head should not be rebased merely for unrelated coordination-doc movement on `main`.
+
 ## OUT_OF_SCOPE
 
 Not changed or duplicated:
