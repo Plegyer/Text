@@ -413,5 +413,15 @@
     "schoolEventSlots": 3,
     "teacherMediaSurfaces": 8,
     "animationSources": 0
+  },
+  "validation": {
+    "test": "tests/starter-school-presentation-source-manifest-v1.test.ts",
+    "requireUniqueSemanticIds": true,
+    "requireUniqueTeacherMediaIds": true,
+    "requireSourceAssetExistence": true,
+    "requireBuiltAssetCopy": true,
+    "requireStaticFallback": true,
+    "requireBilingualAccessibilityForSemanticSlots": true,
+    "requireAnimationIndependentStaticResolution": true
   }
 }
