@@ -1,149 +1,83 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {readFileSync} from 'node:fs';
+import {readFileSync,readdirSync,statSync} from 'node:fs';
+import {join,relative} from 'node:path';
 import {execFileSync} from 'node:child_process';
 
-const manifest=JSON.parse(
-  readFileSync('content/chat3-content-ownership-collision-v1.fixture.json','utf8')
-);
+const manifest=JSON.parse(readFileSync('content/chat3-content-ownership-collision-v1.fixture.json','utf8'));
 
-const repoPath=(relative:string)=>
-  'mindy-successor/prior-work/astra/prototype-m3.2/'+relative;
-
-function git(...args:string[]){
-  return execFileSync('git',args,{encoding:'utf8'}).trim();
+function fnv1a(s:string){
+ let h=0x811c9dc5;
+ for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,0x01000193)>>>0;}
+ return h.toString(16).padStart(8,'0');
+}
+function canonical(v:any):string{
+ if(Array.isArray(v))return '['+v.map(canonical).join(',')+']';
+ if(v&&typeof v==='object')return '{'+Object.keys(v).sort().map(k=>JSON.stringify(k)+':'+canonical(v[k])).join(',')+'}';
+ return JSON.stringify(v);
+}
+function hashObject(path:string){
+ return execFileSync('git',['hash-object',path],{encoding:'utf8'}).trim();
+}
+function walk(dir:string):string[]{
+ const out:string[]=[];
+ for(const name of readdirSync(dir)){
+  const path=join(dir,name);
+  if(statSync(path).isDirectory())out.push(...walk(path)); else out.push(path.replaceAll('\\','/'));
+ }
+ return out;
 }
 
-function gitShow(path:string){
-  return git('show',manifest.baseMain+':'+path);
-}
-
-function sorted(values:string[]){
-  return [...values].sort((a,b)=>a.localeCompare(b));
-}
-
-test('Chat 3 candidate diff stays inside the content-side allowlist',()=>{
-  const changed=git('diff','--name-only',manifest.baseMain+'...HEAD')
-    .split('\n')
-    .filter(Boolean);
-
-  const allowed=new Set(manifest.allowedChangedPaths);
-  const unexpected=changed.filter(path=>!allowed.has(path));
-  assert.deepEqual(unexpected,[],'unexpected Chat 3 candidate paths: '+unexpected.join(', '));
-
-  for(const path of changed){
-    for(const prefix of manifest.protectedPathPrefixes){
-      assert.equal(
-        path.startsWith(prefix),
-        false,
-        'protected ownership prefix changed: '+path
-      );
-    }
-    assert.equal(
-      manifest.protectedExactPaths.includes(path),
-      false,
-      'protected ownership path changed: '+path
-    );
-  }
-
-  const modifiedProduction=changed.filter(path=>
-    path.includes('/content/') &&
-    !path.endsWith('.fixture.json') &&
-    !path.includes('/tests/')
-  );
-
-  for(const path of modifiedProduction){
-    assert.ok(
-      manifest.allowedModifiedProductionPaths.includes(path),
-      'unexpected production content path: '+path
-    );
-  }
+test('protected runtime, School and Foreman-owned files retain exact baseline blobs',()=>{
+ for(const [path,sha] of Object.entries(manifest.protectedFileBlobShas)){
+  assert.equal(hashObject(path),sha,'protected file changed: '+path);
+ }
+ assert.equal(manifest.assertions.schoolOwnershipUntouched,true);
+ assert.equal(manifest.assertions.saveSchemaUntouched,true);
+ assert.equal(manifest.assertions.gameplayRngUntouched,true);
+ assert.equal(manifest.assertions.foremanCanonUntouched,true);
+ assert.equal(manifest.assertions.sharedRuntimeArchitectureUntouched,true);
 });
 
-test('localization delta is Forest-only and does not touch School or Foreman canon',()=>{
-  const path=repoPath('content/localization.json');
-  const before=JSON.parse(gitShow(path)).strings;
-  const after=JSON.parse(readFileSync('content/localization.json','utf8')).strings;
+test('Chat 2 presentation assets retain exact aggregate identity',()=>{
+ const dir=manifest.presentationAssets.directory;
+ const entries=walk(dir).sort().map(path=>path+':'+hashObject(path));
+ assert.equal(entries.length,manifest.presentationAssets.fileCount);
+ assert.equal(fnv1a(entries.join('\n')),manifest.presentationAssets.aggregateFNV1a32);
+ assert.equal(manifest.assertions.mediaSourceOwnershipUntouched,true);
+});
 
-  const added=Object.keys(after).filter(key=>!(key in before));
-  const removed=Object.keys(before).filter(key=>!(key in after));
-  const changed=Object.keys(after).filter(
-    key=>key in before && JSON.stringify(after[key])!==JSON.stringify(before[key])
-  );
-
-  assert.deepEqual(sorted(added),sorted(manifest.localizationDelta.allowedAddedKeys));
-  assert.deepEqual(sorted(removed),sorted(manifest.localizationDelta.allowedRemovedKeys));
-  assert.deepEqual(sorted(changed),sorted(manifest.localizationDelta.allowedChangedKeys));
-
-  for(const key of [...added,...removed,...changed]){
-    for(const prefix of manifest.localizationDelta.forbiddenPrefixes){
-      assert.equal(
-        key.startsWith(prefix),
-        false,
-        'forbidden localization ownership changed: '+key
-      );
-    }
-  }
+test('localization changes are limited to the exact Forest result/return keys',()=>{
+ const strings=JSON.parse(readFileSync('content/localization.json','utf8')).strings;
+ for(const [key,value] of Object.entries(manifest.localization.expectedMutableValues)){
+  assert.deepEqual(strings[key],value,'unexpected value for '+key);
+ }
+ const mutable=new Set(manifest.localization.mutableKeys);
+ const unchanged=Object.fromEntries(Object.entries(strings).filter(([key])=>!mutable.has(key)));
+ const fingerprint=fnv1a(Object.keys(unchanged).sort().map(key=>key+'='+canonical(unchanged[key])).join('\n'));
+ assert.equal(Object.keys(unchanged).length,manifest.localization.baselineUnchangedKeyCount);
+ assert.equal(fingerprint,manifest.localization.baselineUnchangedFNV1a32);
 });
 
 test('Forest result refresh changes presentation copy only, not result mechanics',()=>{
-  const relative='content/packs/forest-result-content-bilingual-v2.json';
-  const path=repoPath(relative);
-  const before=JSON.parse(gitShow(path));
-  const after=JSON.parse(readFileSync(relative,'utf8'));
-
-  const fields=new Set(manifest.forestResultPack.presentationFieldsAllowedToDiffer);
-  const redact=(value:any):any=>{
-    if(Array.isArray(value))return value.map(redact);
-    if(value&&typeof value==='object'){
-      return Object.fromEntries(
-        Object.entries(value)
-          .filter(([key])=>!fields.has(key))
-          .map(([key,item])=>[key,redact(item)])
-      );
-    }
-    return value;
-  };
-
-  assert.deepEqual(redact(after),redact(before));
-
-  assert.deepEqual(
-    after.events.map((event:any)=>event.id),
-    manifest.forestResultPack.requiredEventIds
+ const pack=JSON.parse(readFileSync(manifest.forestResultPack.path,'utf8'));
+ const fields=new Set(manifest.forestResultPack.presentationFieldsAllowedToDiffer);
+ const redact=(value:any):any=>{
+  if(Array.isArray(value))return value.map(redact);
+  if(value&&typeof value==='object')return Object.fromEntries(
+   Object.entries(value).filter(([key])=>!fields.has(key)).map(([key,item])=>[key,redact(item)])
   );
-
-  const resultIds=after.events.map(
-    (event:any)=>event.reactionTriggers[0]?.result
-  );
-  assert.deepEqual(resultIds,manifest.forestResultPack.requiredActivityResultIds);
-
-  for(const event of after.events){
-    assert.deepEqual(event.conditions,[]);
-    assert.equal(event.variants.length,1);
-    assert.equal(event.variants[0].id,'default');
-    assert.equal(event.choices.length,1);
-    assert.equal(event.choices[0].id,'return');
-    assert.deepEqual(event.choices[0].effects,[]);
-  }
-});
-
-test('ownership manifest explicitly protects School, media, Save/RNG, Foreman and shared runtime',()=>{
-  assert.equal(manifest.assertions.schoolOwnershipUntouched,true);
-  assert.equal(manifest.assertions.mediaSourceOwnershipUntouched,true);
-  assert.equal(manifest.assertions.saveSchemaUntouched,true);
-  assert.equal(manifest.assertions.gameplayRngUntouched,true);
-  assert.equal(manifest.assertions.foremanCanonUntouched,true);
-  assert.equal(manifest.assertions.sharedRuntimeArchitectureUntouched,true);
-
-  const protectedJoined=[
-    ...manifest.protectedPathPrefixes,
-    ...manifest.protectedExactPaths
-  ].join('\n');
-
-  assert.match(protectedJoined,/\/src\//);
-  assert.match(protectedJoined,/\/assets\//);
-  assert.match(protectedJoined,/definitions\.json/);
-  assert.match(protectedJoined,/presentation\.json/);
-  assert.match(protectedJoined,/school/i);
-  assert.match(protectedJoined,/lumber-night/i);
+  return value;
+ };
+ assert.equal(fnv1a(canonical(redact(pack))),manifest.forestResultPack.baselineMechanicsFNV1a32);
+ assert.deepEqual(pack.events.map((event:any)=>event.id),manifest.forestResultPack.requiredEventIds);
+ assert.deepEqual(pack.events.map((event:any)=>event.reactionTriggers[0]?.result),manifest.forestResultPack.requiredActivityResultIds);
+ for(const event of pack.events){
+  assert.deepEqual(event.conditions,[]);
+  assert.equal(event.variants.length,1);
+  assert.equal(event.variants[0].id,'default');
+  assert.equal(event.choices.length,1);
+  assert.equal(event.choices[0].id,'return');
+  assert.deepEqual(event.choices[0].effects,[]);
+ }
 });
