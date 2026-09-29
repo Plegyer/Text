@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "id": "forest.seasonal-result-depth.v1",
+  "status": "CONTENT_SIDE_HANDOFF",
+  "task": "C3-32",
+  "activityId": "lumber.forest",
+  "variants": [
+    {
+      "id": "spring-path-check",
+      "targetIdentity": "forest.entry",
+      "localizationKey": "presentation.activity.forest.season.spring.path-check.text"
+    },
+    {
+      "id": "summer-canopy-work",
+      "targetIdentity": "forest.result.success",
+      "localizationKey": "presentation.activity.forest.season.summer.canopy-work.text"
+    },
+    {
+      "id": "autumn-old-boundary",
+      "targetIdentity": "forest.entry.old-boundary",
+      "localizationKey": "presentation.activity.forest.season.autumn.old-boundary.text"
+    },
+    {
+      "id": "winter-return-route",
+      "targetIdentity": "forest.result.escape",
+      "localizationKey": "presentation.activity.forest.season.winter.return-route.text"
+    }
+  ],
+  "strings": {
+    "presentation.activity.forest.season.spring.path-check.text": {
+      "ru": "Весной лесная дорога меняется быстрее: вода собирается в низинах, а старые следы становятся заметнее после дождей. Ты проверяешь знакомый путь и отмечаешь безопасные ориентиры.",
+      "en": "In spring, the forest route changes faster: water gathers in low places and old tracks become clearer after rain. You check the familiar path and note safe landmarks."
+    },
+    "presentation.activity.forest.season.summer.canopy-work.text": {
+      "ru": "Летом под кронами сложнее оценить расстояние. Ты держишь рабочий маршрут, не отходишь от знакомых отметок и возвращаешься по тому же пути, который уже удалось проверить.",
+      "en": "In summer, the canopy makes distances harder to judge. You keep the work route, stay near familiar markers, and return by the path that has already been checked."
+    },
+    "presentation.activity.forest.season.autumn.old-boundary.text": {
+      "ru": "Осенью старая межевая линия снова видна между листьями и мхом. Ты сравниваешь её с прежними отметками, не заменяя старые ориентиры новой дорогой.",
+      "en": "In autumn, the old boundary line becomes visible again among leaves and moss. You compare it with earlier markers without replacing the old guides with the new road."
+    },
+    "presentation.activity.forest.season.winter.return-route.text": {
+      "ru": "Зимой обратная дорога требует больше внимания. Ты выбираешь проверенный выход и не пытаешься углубляться дальше только ради нового следа.",
+      "en": "In winter, the way back requires more attention. You choose the checked exit route and do not push farther just for a new trail."
+    }
+  },
+  "invariants": {
+    "existingActivityOnly": true,
+    "existingResultIdentitiesOnly": true,
+    "noNewRewards": true,
+    "noNewEffects": true,
+    "noNewConditions": true,
+    "noSaveOrRngChange": true,
+    "noSecretDebt": true
+  }
+}
