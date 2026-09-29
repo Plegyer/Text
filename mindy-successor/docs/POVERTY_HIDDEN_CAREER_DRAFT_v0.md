@@ -9,7 +9,17 @@
 - последнее прямое решение пользователя: ветка должна быть **секретной**, запускаться через редкое одноразовое событие помощи во время ночёвки на улице и только позже раскрывать настоящую цену;
 - пользователь зафиксировал три обязательных outcome families: выплата долга, жизнь в зависимости по типу «Упорного труда», убийство рабовладельца и занятие его места.
 
-Точные числа ниже помечены как текущие пользовательские ориентиры, если они ещё требуют балансировки.
+## Current-authority override
+
+This draft preserves the Secret Debt concept, but its historical numeric examples are **not current user locks**.
+
+Current authority:
+- ordinary poverty and Secret Debt remain distinct;
+- Secret Debt is an extra hidden/forced route outside the 10 ordinary professions;
+- exact trigger probability, immediate offer amount, activation delay, debt amount, penalties and rewards are OPEN;
+- historical examples such as 10–20%, 2000, 10 days and 20000 must not be implemented unless a later explicit user decision locks them.
+
+
 
 ---
 
@@ -37,15 +47,15 @@
 
 ## 2. Trigger
 
-Текущее прямое решение пользователя:
+Current non-numeric concept boundary:
 
-- событие возможно только при ночёвке на улице;
-- шанс ориентировочно **10–20%**;
-- событие может произойти **не более одного раза за run**;
-- NPC-"добряк" предлагает примерно **2000 денег**;
-- игрок может принять или отказаться.
+- event belongs to the hidden poverty/Secret Debt route;
+- occurrence policy must remain rare/hidden rather than mandatory poverty progression;
+- repeatability policy, trigger probability and exact eligibility remain OPEN unless separately locked;
+- immediate offer amount is OPEN;
+- player can accept or refuse.
 
-Exact chance и сумма остаются balance parameters внутри указанного диапазона/масштаба, пока экономика всей игры не утверждена.
+Do not recover numeric values from historical drafts.
 
 ### Формулировка предложения
 
@@ -58,8 +68,8 @@ Exact chance и сумма остаются balance parameters внутри ук
 Игрок знает только, что деньги нужно будет когда-нибудь вернуть.
 
 Не раскрываются заранее:
-- срок в 10 дней;
-- будущая сумма около 20000;
+- exact activation delay;
+- exact future debt amount;
 - скрытая профессия;
 - блокировка остальных профессий;
 - ночные обязательства;
@@ -73,18 +83,18 @@ Exact chance и сумма остаются balance parameters внутри ук
 
 ```text
 loanAcceptedAtDay = currentDay
-activationDay = currentDay + 10
-principalReceived ~= 2000
-futureDebt ~= 20000
+activationDay = currentDay + ACTIVATION_DELAY_OPEN
+principalReceived = OFFER_AMOUNT_OPEN
+futureDebt = DEBT_AMOUNT_OPEN
 ```
 
-Через **10 дней** появляется требование примерно **20000**.
+После отдельного, пока OPEN activation delay появляется требование по пока OPEN debt amount.
 
 Точный механизм роста суммы может быть нарративным/контрактным; он не обязан моделировать реалистичные банковские проценты.
 
 Важно именно игровое соотношение:
 - помощь сейчас очень привлекательна для бедной героини;
-- через 10 дней сумма становится практически неподъёмной обычными средствами;
+- после delayed activation долг должен создавать реальное давление, но точная сумма/задержка пока OPEN;
 - это открывает скрытую карьеру.
 
 ## 4. Скрытая профессия "Рабыня"
