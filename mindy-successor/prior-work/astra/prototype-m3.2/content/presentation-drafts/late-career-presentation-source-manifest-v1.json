@@ -224,6 +224,61 @@
       "fallbackRequired": true,
       "altKey": "presentation.static.career.merchant.result.alt",
       "captionKey": "presentation.static.career.merchant.result.caption"
+    },
+    {
+      "presentationId": "job/artist-geisha/shift/spring/default",
+      "domain": "artist-geisha",
+      "role": "seasonal-shift",
+      "sourceAsset": "assets/presentation/career-artist-geisha-shift-spring.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "altKey": "presentation.static.career.artist-geisha.shift.spring.alt",
+      "captionKey": "presentation.static.career.artist-geisha.shift.spring.caption"
+    },
+    {
+      "presentationId": "job/artist-geisha/shift/summer/default",
+      "domain": "artist-geisha",
+      "role": "seasonal-shift",
+      "sourceAsset": "assets/presentation/career-artist-geisha-shift-summer.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "altKey": "presentation.static.career.artist-geisha.shift.summer.alt",
+      "captionKey": "presentation.static.career.artist-geisha.shift.summer.caption"
+    },
+    {
+      "presentationId": "job/artist-geisha/shift/autumn/default",
+      "domain": "artist-geisha",
+      "role": "seasonal-shift",
+      "sourceAsset": "assets/presentation/career-artist-geisha-shift-autumn.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "altKey": "presentation.static.career.artist-geisha.shift.autumn.alt",
+      "captionKey": "presentation.static.career.artist-geisha.shift.autumn.caption"
+    },
+    {
+      "presentationId": "job/artist-geisha/shift/winter/default",
+      "domain": "artist-geisha",
+      "role": "seasonal-shift",
+      "sourceAsset": "assets/presentation/career-artist-geisha-shift-winter.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "altKey": "presentation.static.career.artist-geisha.shift.winter.alt",
+      "captionKey": "presentation.static.career.artist-geisha.shift.winter.caption"
+    },
+    {
+      "presentationId": "job/artist-geisha/result/default",
+      "domain": "artist-geisha",
+      "role": "shift-result",
+      "sourceAsset": "assets/presentation/career-artist-geisha-result.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "altKey": "presentation.static.career.artist-geisha.result.alt",
+      "captionKey": "presentation.static.career.artist-geisha.result.caption"
     }
   ],
   "documentedMissingSlots": [
