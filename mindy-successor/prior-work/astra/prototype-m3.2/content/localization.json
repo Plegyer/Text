@@ -2090,6 +2090,26 @@
       "ru": "Здесь показано, сколько обычных смен завершено в каждой профессии.",
       "en": "This shows how many ordinary shifts have been completed in each career."
     },
+    "ui.stats.lumberProgressTitle": {
+      "ru": "Карьера лесоруба",
+      "en": "Lumber career"
+    },
+    "ui.stats.currentCareerStage": {
+      "ru": "Текущий этап: {stage}",
+      "en": "Current stage: {stage}"
+    },
+    "ui.stats.outcomesTitle": {
+      "ru": "Готовность судьбы",
+      "en": "Outcome readiness"
+    },
+    "ui.stats.outcomeReady": {
+      "ru": "готово",
+      "en": "ready"
+    },
+    "ui.stats.outcomeNotReady": {
+      "ru": "не готово",
+      "en": "not ready"
+    },
     "ui.journal.empty": {
       "ru": "Пока записей нет.",
       "en": "No entries yet."
@@ -2865,6 +2885,34 @@
     "profession.lumber.description": {
       "ru": "Работа в лесной артели: заготовка, распил и обычные хозяйственные задачи.",
       "en": "Work with the lumber crew on logging, sawing, and ordinary worksite tasks."
+    },
+    "career.lumber.stage.newcomer.label": {
+      "ru": "Новичок",
+      "en": "Newcomer"
+    },
+    "career.lumber.stage.accepted-hand.label": {
+      "ru": "Принятая работница",
+      "en": "Accepted Hand"
+    },
+    "career.lumber.stage.trusted-worker.label": {
+      "ru": "Надёжная работница",
+      "en": "Trusted Worker"
+    },
+    "career.lumber.stage.veteran.label": {
+      "ru": "Опытная работница",
+      "en": "Veteran"
+    },
+    "career.lumber.stage.forewoman-ready.label": {
+      "ru": "Готова к руководству",
+      "en": "Forewoman Ready"
+    },
+    "career.lumber.stage.forest-ready.label": {
+      "ru": "Готова к лесному пути",
+      "en": "Forest Ready"
+    },
+    "career.lumber.stage.outcome-ready.label": {
+      "ru": "Готова к развязке",
+      "en": "Outcome Ready"
     },
     "profession.satyr-maid.label": {
       "ru": "Служанка у сатиров",
