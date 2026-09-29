@@ -235,6 +235,17 @@ export function meets(c:Condition,s:Save,cat?:Catalog):boolean {
 }
 export const eligible=(conditions:Condition[],s:Save,cat?:Catalog)=>conditions.every(c=>meets(c,s,cat));
 
+export const starterOrdinaryCareerShiftIds=['lumber.shift','satyr-maid.shift','undead-farm.shift'] as const;
+const starterOrdinaryCareerShiftIdSet=new Set<string>(starterOrdinaryCareerShiftIds);
+const ordinaryCareerShiftIdSet=new Set<string>(ordinaryHardWorkCareers.map(career=>`${career}.shift`));
+
+export function actionAvailable(a:Action,s:Save,cat?:Catalog):boolean{
+  if(!eligible(a.conditions,s,cat))return false;
+  if(!ordinaryCareerShiftIdSet.has(a.id))return true;
+  if(starterOrdinaryCareerShiftIdSet.has(a.id))return true;
+  return a.conditions.length>0;
+}
+
 export function actionCost(a:Action,s:Save){
   if(a.id==='repay')return Math.min(a.cost.money,getMetric(s,'debt'));
   return a.id==='school'&&s.meta.unlocks.includes('scholar')&&!s.run.flags[`system.scholar.${Math.floor(s.run.day/7)}`]?0:a.cost.money;
@@ -1182,7 +1193,7 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
   if(s.run.flow.activity)throw new Error('Сначала завершите Activity.');
   if(command.id==='rest')throw new Error('Выберите способ ночлега.');
   const a=cat.definitions.actions.find(a=>a.id===command.id);
-  if(!a||!eligible(a.conditions,s,cat))throw new Error('Условия действия не выполнены.');
+  if(!a||!actionAvailable(a,s,cat))throw new Error('Условия действия не выполнены.');
   if(a.id!=='arrival'&&!s.run.flags['story.arrived'])throw new Error('Сначала завершите вступление.');
   const before={...s.run.metrics};
   const cost=actionCost(a,s);
