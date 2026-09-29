@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "id": "lumber.progression",
+  "reads": ["lumber"],
+  "writes": ["lumber"],
+  "events": [
+    {
+      "id": "lumber.trusted-worker-milestone",
+      "title": "Trusted worker milestone",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerCounterChanged",
+          "career": "lumber",
+          "counter": "completed_shifts"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "lumber",
+          "stage": "accepted-hand"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "lumber",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 10
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The foreman recognizes consistent work and trust.",
+          "conditions": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Accept the new responsibility.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "advanceCareer",
+              "career": "lumber",
+              "transition": "trusted-worker"
+            }
+          ]
+        }
+      ],
+      "sourceDomain": "lumber"
+    }
+  ]
+}
