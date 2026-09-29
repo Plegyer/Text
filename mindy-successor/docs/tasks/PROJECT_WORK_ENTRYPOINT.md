@@ -44,6 +44,14 @@ Priority order:
 5. localization and presentation improvements in parallel;
 6. cleanup/documentation only when it removes an active blocker.
 
+## Active production focus
+
+Current Lead coordination focus:
+
+- Lumber career vertical slice is the active profession integration target.
+- Implementation must use existing career stages, transitions, event resolver, RunState progression and ending acceptance flow.
+- New standalone content packages are not considered complete until connected to a playable route.
+
 ## Work packaging rule
 
 Small related edits should be grouped into a single implementation package with:
