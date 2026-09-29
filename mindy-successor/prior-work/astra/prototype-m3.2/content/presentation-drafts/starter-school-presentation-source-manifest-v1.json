@@ -48,6 +48,50 @@
       "fallbackRequired": true,
       "altKey": "presentation.static.career.satyr-maid.shift.winter.alt",
       "captionKey": "presentation.static.career.satyr-maid.shift.winter.caption"
+    },
+    {
+      "presentationId": "job/undead-farm/shift/spring/default",
+      "domain": "undead-farm",
+      "role": "seasonal-shift",
+      "sourceAsset": "assets/presentation/career-undead-farm-shift-spring.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "altKey": "presentation.static.career.undead-farm.shift.spring.alt",
+      "captionKey": "presentation.static.career.undead-farm.shift.spring.caption"
+    },
+    {
+      "presentationId": "job/undead-farm/shift/summer/default",
+      "domain": "undead-farm",
+      "role": "seasonal-shift",
+      "sourceAsset": "assets/presentation/career-undead-farm-shift-summer.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "altKey": "presentation.static.career.undead-farm.shift.summer.alt",
+      "captionKey": "presentation.static.career.undead-farm.shift.summer.caption"
+    },
+    {
+      "presentationId": "job/undead-farm/shift/autumn/default",
+      "domain": "undead-farm",
+      "role": "seasonal-shift",
+      "sourceAsset": "assets/presentation/career-undead-farm-shift-autumn.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "altKey": "presentation.static.career.undead-farm.shift.autumn.alt",
+      "captionKey": "presentation.static.career.undead-farm.shift.autumn.caption"
+    },
+    {
+      "presentationId": "job/undead-farm/shift/winter/default",
+      "domain": "undead-farm",
+      "role": "seasonal-shift",
+      "sourceAsset": "assets/presentation/career-undead-farm-shift-winter.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "altKey": "presentation.static.career.undead-farm.shift.winter.alt",
+      "captionKey": "presentation.static.career.undead-farm.shift.winter.caption"
     }
   ],
   "mediaSurfaces": [],
