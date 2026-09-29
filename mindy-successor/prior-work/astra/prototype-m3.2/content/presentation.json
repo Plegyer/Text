@@ -675,6 +675,14 @@
         "alt": "Рабочая сцена лесоруба после первой подтверждённой смены; визуал отмечает карьерный рубеж без изображения числового порога.",
         "altKey": "presentation.static.lumber-career-first-shift.alt"
       }
+    },
+    "job/lumber/event/lumber-cross-school-management-return/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/foreman-professional.svg",
+        "alt": "Профессиональная сцена на лесной площадке, где управленческий результат применяется к действующему маршруту без изменения игрового исхода.",
+        "altKey": "presentation.static.lumber-forewoman-route.alt"
+      }
     }
   }
 }

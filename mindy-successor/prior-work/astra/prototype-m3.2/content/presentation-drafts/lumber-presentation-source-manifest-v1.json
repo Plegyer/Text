@@ -72,6 +72,17 @@
       "gameplayIdentity": "lumber-night.foreman-professional",
       "relationshipIdentity": "lumber.foreman",
       "nightChoiceIdentity": "lumber.foreman.night"
+    },
+    {
+      "presentationId": "job/lumber/event/lumber-cross-school-management-return/default",
+      "role": "forewoman-leadership-route",
+      "sourceAsset": "assets/presentation/foreman-professional.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "gameplayIdentity": "lumber-cross.school-management-return",
+      "relationshipIdentity": "lumber.foreman",
+      "reusedProjectAsset": true
     }
   ],
   "invariants": {
