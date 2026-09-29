@@ -136,7 +136,7 @@ School и meta rewards позволяют пробивать stat-gates рань
 
 Подробности: `ORDINARY_JOB_UNLOCK_MODEL_v1.md`.
 
-Roster технически расширяем.
+Current lock: ordinary roster is exactly 10. Изменение числа ordinary professions требует нового прямого решения пользователя.
 
 ## 9. Palace — LOCKED UNLOCK RULE
 

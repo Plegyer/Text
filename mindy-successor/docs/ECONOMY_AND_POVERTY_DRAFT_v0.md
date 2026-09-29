@@ -1,5 +1,23 @@
 # Economy + Ordinary Poverty Draft v0
 
+## Current-authority override
+
+Current explicit decisions supersede historical numeric Secret Debt examples in this draft.
+
+Locked:
+- ordinary poverty is separate from Secret Debt;
+- Secret Debt is extra/hidden and outside the 10 ordinary professions.
+
+OPEN:
+- Secret Debt trigger probability;
+- offer amount;
+- activation delay;
+- debt amount;
+- penalties/rewards.
+
+Historical examples must not be promoted into production without a new explicit user lock.
+
+
 Дата: 2026-09-25.
 
 Статус: **PRODUCT DESIGN DRAFT**, без финальных чисел.
@@ -79,12 +97,12 @@ Exact housing names/world fiction OPEN.
 Secret Debt route НЕ является стандартным выходом из poverty.
 
 Условия:
-- только street sleep;
-- 10–20% ориентировочный шанс;
-- максимум один offer за run;
-- ~2000 сейчас;
-- «вернёшь позже»;
-- через 10 дней ~20000 и hidden Slave career.
+- hidden trigger tied to the approved poverty/Secret Debt boundary;
+- exact trigger/repeatability policy OPEN;
+- exact immediate offer amount OPEN;
+- exact activation delay OPEN;
+- exact debt amount OPEN;
+- hidden forced/debt career remains distinct from ordinary poverty.
 
 Обычная бедность должна работать даже если этот event никогда не выпал или игрок отказался.
 
@@ -227,7 +245,7 @@ Activity 2 Energy + 1 work.
 2 school + 1 work.
 
 ### Debt trap
-Accept ~2000 -> 10 days normal -> ~20000 obligation.
+Accept candidate offer -> OPEN activation delay -> OPEN debt obligation.
 
 Смотреть:
 - softlocks;

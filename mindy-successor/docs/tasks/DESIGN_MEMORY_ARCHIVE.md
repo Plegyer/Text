@@ -3,29 +3,45 @@
 Status: ACTIVE MEMORY ARCHIVE
 Project: White Squirrel Chronicles
 
-This file stores approved design memories and owner decisions. It is historical design context and must not override current runtime definitions, tests, or active task pointers.
+This file stores historical owner concepts and approved design memories.
 
-## Approved design memories
+IMPORTANT:
+- this archive is not runtime authority;
+- current explicit user decisions override older concepts;
+- `mindy-successor/docs/USER_DECISIONS_LOCKED_v1.md` and active task pointers take precedence;
+- historical numeric examples must never be promoted into production unless a current decision explicitly locks them.
 
-### Poverty / Slave Secret Profession
+## Historical design memories
 
-Recorded owner concept:
+### Poverty / Secret Debt hidden profession
 
-- poverty state;
-- sleeping outside home;
-- offer of 2000;
-- debt of 20000 after 10 days;
-- normal professions becoming unavailable;
-- hidden profession: slave;
-- three endings.
+Historical owner concept included:
+- a poverty state;
+- sleeping outside normal housing;
+- an offer/debt escalation route;
+- normal-profession restrictions;
+- a hidden forced/debt profession;
+- multiple endings.
+
+Older notes also contained example numbers such as 2000 / 20000 / 10 days.
+
+Those numbers are **HISTORICAL / NOT CURRENTLY APPROVED**.
+
+Current authority keeps exact Secret Debt numbers, penalties and rewards OPEN. Workers must not reuse the historical values unless a later explicit user decision locks them.
+
+Current boundary:
+- ordinary poverty remains a separate life route;
+- Secret Debt is a distinct hidden forced/debt route;
+- it is not one of the 10 ordinary professions;
+- it does not count toward Palace unlock;
+- it must use existing careers/events/conditions/effects/RunState/endings architecture rather than a parallel state system.
 
 Implementation rule:
-
-This concept must be mapped onto the existing data-driven systems before implementation:
-- existing careers;
+Map any future approved Secret Debt design onto the existing data-driven systems:
+- careers;
 - events;
 - conditions/effects;
 - RunState progression;
-- existing endings mechanism.
+- endings.
 
-No parallel state system should be created without a demonstrated limitation.
+Do not create a parallel state system without a demonstrated limitation.

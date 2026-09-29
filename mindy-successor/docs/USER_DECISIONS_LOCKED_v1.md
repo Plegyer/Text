@@ -82,6 +82,43 @@ This is a production-coordination rule, not a requirement to invent filler work:
 
 This supersedes the earlier nine-deep queue target.
 
+### D14 — starting careers
+
+Стартовые карьеры ровно три:
+
+- Dwarven Lumber;
+- Satyr Maid;
+- Undead Farm.
+
+Старый набор стартовых профессий с Tavern/Hunter не является текущим дизайном.
+
+Другие ordinary professions открываются позже через stats/build/system progression.
+
+### D15 — profession count and hidden routes
+
+Основная структура:
+
+- 10 ordinary professions;
+- hidden Palace как 11-я main profession;
+- Secret Debt — отдельный extra hidden/forced route и не входит в эти 10;
+- Secret Debt не считается для Palace unlock.
+
+### D16 — ending eligibility is non-terminal
+
+Достижение eligibility для ending не обязано завершать run.
+
+Игрок может продолжать игру после появления доступного ending до явного принятия/commit через существующий ending flow.
+
+### D17 — Lumber Hard Work
+
+Для Dwarven Lumber зафиксировано:
+
+`completed_shifts >= 50`
+
+Это условие Hard Work ending.
+
+Старые промежуточные Lumber thresholds вроде 10/25/30 не считаются утверждёнными автоматически.
+
 ## Still open after this lock
 
 - exact seasonal packages per job;

@@ -8,6 +8,15 @@
 
 Цель: показать на одной стартовой профессии требуемую глубину до написания массового контента.
 
+## Current-authority override
+
+Current locked runtime/design authority:
+- Lumber Hard Work eligibility is `completed_shifts >= 50`;
+- exact intermediate Lumber thresholds (`MILESTONE_A`, `MILESTONE_B`) remain OPEN;
+- old draft values such as 10 / 25 / 30 are not approved merely because they appear in historical branches;
+- ending eligibility is non-terminal until explicit commitment.
+
+
 ## 1. Fantasy / системная роль
 
 Героиня устраивается в артель гномов на физическую работу в лесу.

@@ -117,7 +117,7 @@ Each season = 28 days.
 - достаточно места для одной глубокой career + второй/третьей side-route;
 - делает School/Activity реальной конкуренцией за Energy.
 
-Это рекомендация SOL, не lock.
+Это CURRENT LOCK: пользователь принял 160-day target. Изменение длительности требует нового прямого решения пользователя.
 
 ## 7. Career pacing implication
 

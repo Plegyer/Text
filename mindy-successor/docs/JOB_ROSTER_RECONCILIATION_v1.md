@@ -4,6 +4,17 @@
 
 Статус: **PROVISIONAL DESIGN BASELINE**, не финальный баланс и не контентное ТЗ.
 
+## Current-authority override
+
+This document is a design roster reference. Current explicit user decisions override any older provisional wording below.
+
+Locked now:
+- exactly 10 ordinary professions;
+- Palace is the hidden 11th main profession;
+- Secret Debt is an extra hidden forced route and is outside the 10 ordinary professions;
+- exactly three starting careers: Lumber, Satyr Maid, Undead Farm;
+- the ordinary count is not open for expansion without a new explicit user decision.
+
 Основание:
 - `USER_VISION_AND_ACCEPTANCE.md`;
 - `JOB_CANDIDATE_LINEAGE_v0.md`;
@@ -34,7 +45,7 @@
 
 - **Рабыня** — секретная долговая career, активируемая ловушкой с займом; не занимает ordinary slot и не заменяет Дворец.
 
-Ordinary count может быть увеличен, если матрица покажет реальную недостающую системную роль. Число 10 не является техническим потолком.
+Current lock: ordinary roster count is exactly 10. Изменение этого числа требует нового прямого решения пользователя.
 
 ---
 
