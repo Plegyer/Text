@@ -279,6 +279,61 @@
       "fallbackRequired": true,
       "altKey": "presentation.static.career.artist-geisha.result.alt",
       "captionKey": "presentation.static.career.artist-geisha.result.caption"
+    },
+    {
+      "presentationId": "job/assassin/shift/spring/default",
+      "domain": "assassin",
+      "role": "seasonal-shift",
+      "sourceAsset": "assets/presentation/career-assassin-shift-spring.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "altKey": "presentation.static.career.assassin.shift.spring.alt",
+      "captionKey": "presentation.static.career.assassin.shift.spring.caption"
+    },
+    {
+      "presentationId": "job/assassin/shift/summer/default",
+      "domain": "assassin",
+      "role": "seasonal-shift",
+      "sourceAsset": "assets/presentation/career-assassin-shift-summer.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "altKey": "presentation.static.career.assassin.shift.summer.alt",
+      "captionKey": "presentation.static.career.assassin.shift.summer.caption"
+    },
+    {
+      "presentationId": "job/assassin/shift/autumn/default",
+      "domain": "assassin",
+      "role": "seasonal-shift",
+      "sourceAsset": "assets/presentation/career-assassin-shift-autumn.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "altKey": "presentation.static.career.assassin.shift.autumn.alt",
+      "captionKey": "presentation.static.career.assassin.shift.autumn.caption"
+    },
+    {
+      "presentationId": "job/assassin/shift/winter/default",
+      "domain": "assassin",
+      "role": "seasonal-shift",
+      "sourceAsset": "assets/presentation/career-assassin-shift-winter.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "altKey": "presentation.static.career.assassin.shift.winter.alt",
+      "captionKey": "presentation.static.career.assassin.shift.winter.caption"
+    },
+    {
+      "presentationId": "job/assassin/result/default",
+      "domain": "assassin",
+      "role": "shift-result",
+      "sourceAsset": "assets/presentation/career-assassin-result.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "altKey": "presentation.static.career.assassin.result.alt",
+      "captionKey": "presentation.static.career.assassin.result.caption"
     }
   ],
   "documentedMissingSlots": [
