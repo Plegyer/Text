@@ -334,6 +334,66 @@
       "fallbackRequired": true,
       "altKey": "presentation.static.career.assassin.result.alt",
       "captionKey": "presentation.static.career.assassin.result.caption"
+    },
+    {
+      "presentationId": "job/prostitute/shift/spring/default",
+      "domain": "prostitute",
+      "role": "seasonal-shift",
+      "sourceAsset": "assets/presentation/career-prostitute-shift-spring.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "altKey": "presentation.static.career.prostitute.shift.spring.alt",
+      "captionKey": "presentation.static.career.prostitute.shift.spring.caption",
+      "safetyClass": "non-explicit-work-preparation"
+    },
+    {
+      "presentationId": "job/prostitute/shift/summer/default",
+      "domain": "prostitute",
+      "role": "seasonal-shift",
+      "sourceAsset": "assets/presentation/career-prostitute-shift-summer.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "altKey": "presentation.static.career.prostitute.shift.summer.alt",
+      "captionKey": "presentation.static.career.prostitute.shift.summer.caption",
+      "safetyClass": "non-explicit-work-preparation"
+    },
+    {
+      "presentationId": "job/prostitute/shift/autumn/default",
+      "domain": "prostitute",
+      "role": "seasonal-shift",
+      "sourceAsset": "assets/presentation/career-prostitute-shift-autumn.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "altKey": "presentation.static.career.prostitute.shift.autumn.alt",
+      "captionKey": "presentation.static.career.prostitute.shift.autumn.caption",
+      "safetyClass": "non-explicit-work-preparation"
+    },
+    {
+      "presentationId": "job/prostitute/shift/winter/default",
+      "domain": "prostitute",
+      "role": "seasonal-shift",
+      "sourceAsset": "assets/presentation/career-prostitute-shift-winter.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "altKey": "presentation.static.career.prostitute.shift.winter.alt",
+      "captionKey": "presentation.static.career.prostitute.shift.winter.caption",
+      "safetyClass": "non-explicit-work-preparation"
+    },
+    {
+      "presentationId": "job/prostitute/result/default",
+      "domain": "prostitute",
+      "role": "shift-result",
+      "sourceAsset": "assets/presentation/career-prostitute-result.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "altKey": "presentation.static.career.prostitute.result.alt",
+      "captionKey": "presentation.static.career.prostitute.result.caption",
+      "safetyClass": "non-explicit-completed-work"
     }
   ],
   "documentedMissingSlots": [
