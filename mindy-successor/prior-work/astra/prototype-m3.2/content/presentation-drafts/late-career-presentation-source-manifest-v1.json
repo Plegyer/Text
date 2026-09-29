@@ -169,6 +169,61 @@
       "fallbackRequired": true,
       "altKey": "presentation.static.career.guard.result.alt",
       "captionKey": "presentation.static.career.guard.result.caption"
+    },
+    {
+      "presentationId": "job/merchant/shift/spring/default",
+      "domain": "merchant",
+      "role": "seasonal-shift",
+      "sourceAsset": "assets/presentation/career-merchant-shift-spring.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "altKey": "presentation.static.career.merchant.shift.spring.alt",
+      "captionKey": "presentation.static.career.merchant.shift.spring.caption"
+    },
+    {
+      "presentationId": "job/merchant/shift/summer/default",
+      "domain": "merchant",
+      "role": "seasonal-shift",
+      "sourceAsset": "assets/presentation/career-merchant-shift-summer.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "altKey": "presentation.static.career.merchant.shift.summer.alt",
+      "captionKey": "presentation.static.career.merchant.shift.summer.caption"
+    },
+    {
+      "presentationId": "job/merchant/shift/autumn/default",
+      "domain": "merchant",
+      "role": "seasonal-shift",
+      "sourceAsset": "assets/presentation/career-merchant-shift-autumn.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "altKey": "presentation.static.career.merchant.shift.autumn.alt",
+      "captionKey": "presentation.static.career.merchant.shift.autumn.caption"
+    },
+    {
+      "presentationId": "job/merchant/shift/winter/default",
+      "domain": "merchant",
+      "role": "seasonal-shift",
+      "sourceAsset": "assets/presentation/career-merchant-shift-winter.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "altKey": "presentation.static.career.merchant.shift.winter.alt",
+      "captionKey": "presentation.static.career.merchant.shift.winter.caption"
+    },
+    {
+      "presentationId": "job/merchant/result/default",
+      "domain": "merchant",
+      "role": "shift-result",
+      "sourceAsset": "assets/presentation/career-merchant-result.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "altKey": "presentation.static.career.merchant.result.alt",
+      "captionKey": "presentation.static.career.merchant.result.caption"
     }
   ],
   "documentedMissingSlots": [
