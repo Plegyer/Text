@@ -2,34 +2,24 @@
 
 Status: ASSIGNED
 Owner: Chat 2 / Presentation & Media Worker
-Queue: CAREER + SCHOOL PRESENTATION SUPPORT
 
-Previous queue 352–363 is delivered through merged PR #64. Do not restart it.
+Mandatory startup:
+- `CHAT2_MANDATORY_ROLE_PROMPT.md`
+- `WORKER_CHAT_RECREATION_PROTOCOL_v1.md`
+- `ACTIVE_TEAM_OWNERSHIP_MATRIX.md`
+- `CANDIDATE_QA_FREEZE_PROTOCOL.md`
+- `TASK_CHAT2_PRESENTATION_QUEUE_v2.md`
 
-Ownership:
-- media sources, presentation assets, validators;
-- no gameplay state changes.
+Current queue:
+- C2-01 through C2-12.
 
-Current support package:
-Prepare presentation assets needed by active career route integration.
+Primary goal:
+- presentation/media support for the active Lumber vertical slice.
 
-Inputs:
-- existing career presentation definitions;
-- current UI presentation slots;
-- existing static fallbacks.
+Do not restart merged PR #64 or historical queue 352–363.
 
-Allowed outputs:
-- presentation source assets;
-- presentation manifests;
-- focused presentation tests.
+No gameplay state, progression, endings, Save, RNG or content-canon ownership.
 
-Do not modify:
-- RunState;
-- career progression logic;
-- endings logic;
-- Save schema.
+Report to Lead after every completed queue item and on every blocker using `WORKER_CHAT_RECREATION_PROTOCOL_v1.md`.
 
-Required result:
-Provide production-ready presentation support for the selected existing career route while preserving existing fallback behaviour.
-
-Report exact branch, files, SHA and checks.
+Do not self-assign beyond C2-12.
