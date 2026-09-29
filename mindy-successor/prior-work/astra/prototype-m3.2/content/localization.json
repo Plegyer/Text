@@ -3009,6 +3009,22 @@
     "relationship.lumber.foreman.choice.route.value.professional.label": {
       "ru": "Профессиональный путь",
       "en": "Professional route"
+    },
+    "event.lumber-cross.activity-forest-return.title": {
+      "ru": "Лесной результат доходит до артели",
+      "en": "The Forest result reaches the crew"
+    },
+    "event.lumber-cross.activity-forest-return.variant.default.text": {
+      "ru": "Ты возвращаешься к рабочей площадке с тем, что удалось подтвердить в лесу. Разговор сразу смещается от самой вылазки к тому, что этот результат значит для артели.",
+      "en": "You return to the worksite with what you managed to confirm in the Forest. The conversation shifts at once from the expedition itself to what this result means for the crew."
+    },
+    "event.lumber-cross.activity-forest-return.choice.continue.label": {
+      "ru": "Передать результат",
+      "en": "Hand over the result"
+    },
+    "event.lumber-cross.activity-forest-return.choice.continue.text": {
+      "ru": "Ты вводишь лесные наблюдения в рабочий разговор, и подтверждённый результат становится частью дальнейшего решения артели.",
+      "en": "You bring the Forest observations into the work discussion, and the confirmed result becomes part of the crew's next decision."
     }
   }
 }
