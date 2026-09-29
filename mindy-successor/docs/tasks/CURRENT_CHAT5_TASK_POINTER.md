@@ -1,4 +1,4 @@
-# CURRENT CHAT5 TASK POINTER
+# Current Chat 5 task pointer
 
 Status: ASSIGNED
 Owner: Chat 5 / School + Text Localization Content Worker
@@ -7,15 +7,15 @@ Mandatory startup:
 - `WORKER_CHAT_RECREATION_PROTOCOL_v1.md`
 - `ACTIVE_TEAM_OWNERSHIP_MATRIX.md`
 - `CANDIDATE_QA_FREEZE_PROTOCOL.md`
-- `TASK_CHAT5_SCHOOL_QUEUE_v3.md`
+- `TASK_CHAT5_SCHOOL_QUEUE_v4.md`
 
 Current queue:
-- C5-13 through C5-24.
+- C5-25 through C5-36.
 
 Primary goal:
-- repair PR #85, then deepen the existing School catalog.
+- School/localization preparation for the seven non-starter ordinary careers using existing courses only.
 
-Do not restart completed earlier queue items.
+Do not restart PR #90 / C5-15..24 candidate work.
 
 Keep technical evidence in Git only. Personal chat output:
 - `Задание выполнено`
