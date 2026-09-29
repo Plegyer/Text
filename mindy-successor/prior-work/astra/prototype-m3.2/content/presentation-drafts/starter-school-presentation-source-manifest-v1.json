@@ -257,6 +257,39 @@
       "fallbackRequired": true,
       "altKey": "presentation.static.school-course-body-confidence.alt",
       "captionKey": "presentation.static.school-course-body-confidence.caption"
+    },
+    {
+      "presentationId": "location/town/event/school-lesson-content-v1-after-school/default",
+      "sourceAsset": "assets/presentation/school-day-study.svg",
+      "altKey": "presentation.static.school.day.alt",
+      "captionKey": "presentation.static.school.day.caption",
+      "role": "school-event",
+      "domain": "school",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true
+    },
+    {
+      "presentationId": "location/town/event/school-life-content-v1-after-paid-lesson/default",
+      "sourceAsset": "assets/presentation/school-day-study.svg",
+      "altKey": "presentation.static.school.day.alt",
+      "captionKey": "presentation.static.school.day.caption",
+      "role": "school-event",
+      "domain": "school",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true
+    },
+    {
+      "presentationId": "location/town/event/school-life-content-v1-after-night-study/default",
+      "sourceAsset": "assets/presentation/school-night-study-generic-v2.svg",
+      "altKey": "presentation.static.school-night-study-generic-v2.alt",
+      "captionKey": "presentation.static.school-night-study-generic-v2.caption",
+      "role": "school-event",
+      "domain": "school",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true
     }
   ],
   "mediaSurfaces": [
@@ -361,5 +394,24 @@
     "altRequiredForSelectedStarterCareerSlots": true,
     "captionRequiredForSelectedStarterCareerSlots": true,
     "safeStaticRequired": true
+  },
+  "inventoryDocs": [
+    "docs/presentation-prep/SATYR_MAID_PRESENTATION_INVENTORY_V1.md",
+    "docs/presentation-prep/UNDEAD_FARM_PRESENTATION_INVENTORY_V1.md",
+    "docs/presentation-prep/SCHOOL_PRESENTATION_INVENTORY_V1.md"
+  ],
+  "replaceability": {
+    "mechanism": "presentation-v1-slot-override",
+    "semanticPresentationIdPreserved": true,
+    "gameplayIdentityPreserved": true,
+    "saveIdentityPreserved": true
+  },
+  "summary": {
+    "semanticSlots": 26,
+    "starterCareerSlots": 15,
+    "schoolCourseSlots": 8,
+    "schoolEventSlots": 3,
+    "teacherMediaSurfaces": 8,
+    "animationSources": 0
   }
 }
