@@ -13,6 +13,8 @@
     "mindy-successor/docs/poverty-prep/POVERTY_RECOVERY_ROUTE_HANDOFF_V1.md",
     "mindy-successor/docs/poverty-prep/POVERTY_SURVIVAL_CONTACT_BUNDLE_V1.md",
     "mindy-successor/docs/tasks/CHAT3_FOREST_POVERTY_CANDIDATE_HANDOFF_V1.md",
+    "mindy-successor/docs/tasks/CHAT3_OWNERSHIP_COLLISION_REGRESSIONS_V1.md",
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/chat3-content-ownership-collision-v1.fixture.json",
     "mindy-successor/prior-work/astra/prototype-m3.2/content/forest-entry-content-v1.fixture.json",
     "mindy-successor/prior-work/astra/prototype-m3.2/content/forest-to-lumber-return-hooks-v1.fixture.json",
     "mindy-successor/prior-work/astra/prototype-m3.2/content/localization.json",
@@ -21,7 +23,6 @@
     "mindy-successor/prior-work/astra/prototype-m3.2/content/poverty-recovery-route-v1.fixture.json",
     "mindy-successor/prior-work/astra/prototype-m3.2/content/poverty-secret-debt-boundary-audit-v1.fixture.json",
     "mindy-successor/prior-work/astra/prototype-m3.2/content/poverty-survival-contact-depth-v1.fixture.json",
-    "mindy-successor/prior-work/astra/prototype-m3.2/content/chat3-content-ownership-collision-v1.fixture.json",
     "mindy-successor/prior-work/astra/prototype-m3.2/tests/chat3-content-ownership-collision-v1.test.ts"
   ],
   "allowedModifiedProductionPaths": [
