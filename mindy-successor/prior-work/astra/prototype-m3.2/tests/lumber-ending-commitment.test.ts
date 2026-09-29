@@ -1,10 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {dispatch} from '../src/core/engine.ts';
-import {catalog,created} from './helpers.ts';
+import {catalog,started} from './helpers.ts';
 
 test('Lumber ending eligibility stays playable until explicit commit and completes through RunResult flow',()=>{
-  let s=created();
+  let s=started();
   s.run.progression.careers.lumber={
     stage:'accepted-hand',
     shifts:0,
