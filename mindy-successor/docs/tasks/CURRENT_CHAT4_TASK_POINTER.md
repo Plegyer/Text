@@ -11,8 +11,16 @@ Mandatory startup:
 - `TASK_CHAT4_QA_QUEUE_v5.md`
 
 Current queue sequence:
-- finish remaining C4-25 through C4-36 from `TASK_CHAT4_QA_QUEUE_v4.md`;
-- then continue C4-37 through C4-41 from `TASK_CHAT4_QA_QUEUE_v5.md` without waiting for a new chat instruction.
+- finish any still-open C4-25 through C4-36 items from `TASK_CHAT4_QA_QUEUE_v4.md`;
+- continue C4-37 through C4-41 from `TASK_CHAT4_QA_QUEUE_v5.md` without waiting for a new chat instruction.
+
+Immediate work available now:
+- C4-37: gate frozen PR #88;
+- C4-38: gate frozen PR #90;
+- C4-39: current-main integration health gate after merged #84/#85/#89;
+- C4-41: gate Chat 3 PR #93, whose exact-head repository CI is green.
+
+C4-40 remains waiting for the next frozen Chat 1 starter-trio candidate.
 
 Primary goal:
 - gate current candidates and starter-trio runtime behavior.
