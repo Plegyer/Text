@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {dispatch,eligible,parseSave} from '../src/core/engine.ts';
 import type {Save} from '../src/core/schema.ts';
-import {catalog,created} from './helpers.ts';
+import {catalog,started} from './helpers.ts';
 
 function resolvePending(input:Save){
   let s=input;
@@ -20,7 +20,7 @@ function resolvePending(input:Save){
 }
 
 test('Lumber career stage facts and completed-shift counter survive existing save parse reload',()=>{
-  let s=created();
+  let s=started();
   s=dispatch(s,{type:'action',id:'lumber.shift'},catalog);
   assert.equal(s.run.pending?.eventId,'lumber.career-first-shift');
 
