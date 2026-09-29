@@ -13,7 +13,9 @@
       "sourceKind": "static",
       "animationSource": null,
       "fallbackRequired": true,
-      "gameplayIdentity": "lumber.shift"
+      "gameplayIdentity": "lumber.shift",
+      "altKey": "presentation.static.career.lumber.shift.spring.alt",
+      "captionKey": "presentation.static.career.lumber.shift.spring.caption"
     },
     {
       "presentationId": "job/lumber/shift/summer/default",
@@ -22,7 +24,9 @@
       "sourceKind": "static",
       "animationSource": null,
       "fallbackRequired": true,
-      "gameplayIdentity": "lumber.shift"
+      "gameplayIdentity": "lumber.shift",
+      "altKey": "presentation.static.career.lumber.shift.summer.alt",
+      "captionKey": "presentation.static.career.lumber.shift.summer.caption"
     },
     {
       "presentationId": "job/lumber/shift/autumn/default",
@@ -31,7 +35,9 @@
       "sourceKind": "static",
       "animationSource": null,
       "fallbackRequired": true,
-      "gameplayIdentity": "lumber.shift"
+      "gameplayIdentity": "lumber.shift",
+      "altKey": "presentation.static.career.lumber.shift.autumn.alt",
+      "captionKey": "presentation.static.career.lumber.shift.autumn.caption"
     },
     {
       "presentationId": "job/lumber/shift/winter/default",
@@ -40,7 +46,9 @@
       "sourceKind": "static",
       "animationSource": null,
       "fallbackRequired": true,
-      "gameplayIdentity": "lumber.shift"
+      "gameplayIdentity": "lumber.shift",
+      "altKey": "presentation.static.career.lumber.shift.winter.alt",
+      "captionKey": "presentation.static.career.lumber.shift.winter.caption"
     },
     {
       "presentationId": "job/lumber/event/lumber-career-first-shift/default",
@@ -50,7 +58,9 @@
       "animationSource": null,
       "fallbackRequired": true,
       "gameplayIdentity": "lumber.career-first-shift",
-      "reusedProjectAsset": true
+      "reusedProjectAsset": true,
+      "altKey": "presentation.static.lumber-career-first-shift.alt",
+      "captionKey": "presentation.static.lumber-career-first-shift.caption"
     },
     {
       "presentationId": "relationship/lumber-foreman/lumber-foreman-notice/default",
@@ -60,7 +70,9 @@
       "animationSource": null,
       "fallbackRequired": true,
       "gameplayIdentity": "lumber.foreman-notice",
-      "relationshipIdentity": "lumber.foreman"
+      "relationshipIdentity": "lumber.foreman",
+      "altKey": "presentation.static.foreman-professional-milestone-v2.alt",
+      "captionKey": "presentation.static.foreman-professional-milestone-v2.caption"
     },
     {
       "presentationId": "relationship/lumber-foreman/lumber-night-foreman-professional/default",
@@ -71,7 +83,9 @@
       "fallbackRequired": true,
       "gameplayIdentity": "lumber-night.foreman-professional",
       "relationshipIdentity": "lumber.foreman",
-      "nightChoiceIdentity": "lumber.foreman.night"
+      "nightChoiceIdentity": "lumber.foreman.night",
+      "altKey": "presentation.static.foreman-night-voluntary-v2.alt",
+      "captionKey": "presentation.static.foreman-night-voluntary-v2.caption"
     },
     {
       "presentationId": "job/lumber/event/lumber-cross-school-management-return/default",
@@ -82,7 +96,9 @@
       "fallbackRequired": true,
       "gameplayIdentity": "lumber-cross.school-management-return",
       "relationshipIdentity": "lumber.foreman",
-      "reusedProjectAsset": true
+      "reusedProjectAsset": true,
+      "altKey": "presentation.static.lumber-forewoman-route.alt",
+      "captionKey": "presentation.static.lumber-forewoman-route.caption"
     },
     {
       "presentationId": "activity/forest/route/default",
@@ -92,7 +108,9 @@
       "animationSource": null,
       "fallbackRequired": true,
       "gameplayIdentity": "lumber.forest",
-      "reusedProjectAsset": true
+      "reusedProjectAsset": true,
+      "altKey": "presentation.static.forest.route.default.alt",
+      "captionKey": "presentation.static.forest.route.default.caption"
     },
     {
       "presentationId": "activity/forest/route/logging-road",
@@ -102,7 +120,9 @@
       "animationSource": null,
       "fallbackRequired": true,
       "gameplayIdentity": "lumber.forest",
-      "reusedProjectAsset": true
+      "reusedProjectAsset": true,
+      "altKey": "presentation.activity.forest.route.logging-road.alt",
+      "captionKey": "presentation.activity.forest.route.logging-road.caption"
     },
     {
       "presentationId": "activity/forest/route/old-boundary",
@@ -112,7 +132,9 @@
       "animationSource": null,
       "fallbackRequired": true,
       "gameplayIdentity": "lumber.forest",
-      "reusedProjectAsset": true
+      "reusedProjectAsset": true,
+      "altKey": "presentation.activity.forest.route.old-boundary.alt",
+      "captionKey": "presentation.activity.forest.route.old-boundary.caption"
     },
     {
       "presentationId": "activity/forest/return/success",
@@ -122,7 +144,9 @@
       "animationSource": null,
       "fallbackRequired": true,
       "gameplayIdentity": "lumber.forest.success",
-      "reusedProjectAsset": true
+      "reusedProjectAsset": true,
+      "altKey": "presentation.static.forest-return-success-v2.alt",
+      "captionKey": "presentation.static.forest-return-success-v2.caption"
     },
     {
       "presentationId": "activity/forest/return/escape",
@@ -132,7 +156,9 @@
       "animationSource": null,
       "fallbackRequired": true,
       "gameplayIdentity": "lumber.forest.escape",
-      "reusedProjectAsset": true
+      "reusedProjectAsset": true,
+      "altKey": "presentation.static.forest-return-escape-v2.alt",
+      "captionKey": "presentation.static.forest-return-escape-v2.caption"
     },
     {
       "presentationId": "activity/forest/return/failure",
@@ -142,7 +168,9 @@
       "animationSource": null,
       "fallbackRequired": true,
       "gameplayIdentity": "lumber.forest.failure",
-      "reusedProjectAsset": true
+      "reusedProjectAsset": true,
+      "altKey": "presentation.static.forest-return-failure-v2.alt",
+      "captionKey": "presentation.static.forest-return-failure-v2.caption"
     },
     {
       "presentationId": "job/lumber/event/forest-result-content-v1-success/default",
@@ -152,7 +180,9 @@
       "animationSource": null,
       "fallbackRequired": true,
       "gameplayIdentity": "forest-result-content-v1.success",
-      "reusedProjectAsset": true
+      "reusedProjectAsset": true,
+      "altKey": "presentation.static.forest-reaction-success-v2.alt",
+      "captionKey": "presentation.static.forest-reaction-success-v2.caption"
     },
     {
       "presentationId": "job/lumber/event/forest-result-content-v1-escape/default",
@@ -162,7 +192,9 @@
       "animationSource": null,
       "fallbackRequired": true,
       "gameplayIdentity": "forest-result-content-v1.escape",
-      "reusedProjectAsset": true
+      "reusedProjectAsset": true,
+      "altKey": "presentation.static.forest-reaction-escape-v2.alt",
+      "captionKey": "presentation.static.forest-reaction-escape-v2.caption"
     },
     {
       "presentationId": "job/lumber/event/forest-result-content-v1-failure/default",
@@ -172,7 +204,9 @@
       "animationSource": null,
       "fallbackRequired": true,
       "gameplayIdentity": "forest-result-content-v1.failure",
-      "reusedProjectAsset": true
+      "reusedProjectAsset": true,
+      "altKey": "presentation.static.forest-reaction-failure-v2.alt",
+      "captionKey": "presentation.static.forest-reaction-failure-v2.caption"
     },
     {
       "presentationId": "job/lumber/event/lumber-cross-activity-forest-return/default",
@@ -182,7 +216,9 @@
       "animationSource": null,
       "fallbackRequired": true,
       "gameplayIdentity": "lumber-cross.activity-forest-return",
-      "reusedProjectAsset": true
+      "reusedProjectAsset": true,
+      "altKey": "presentation.static.forest-reaction-success-v2.alt",
+      "captionKey": "presentation.static.forest-reaction-success-v2.caption"
     },
     {
       "presentationId": "ending/lumber/hard-work",
@@ -192,7 +228,9 @@
       "animationSource": null,
       "fallbackRequired": true,
       "gameplayIdentity": "ending.lumber.hard-work",
-      "reusedProjectAsset": true
+      "reusedProjectAsset": true,
+      "altKey": "presentation.static.lumber-ending-hard-work.alt",
+      "captionKey": "presentation.static.lumber-ending-hard-work.caption"
     },
     {
       "presentationId": "ending/lumber/forewoman",
@@ -202,7 +240,9 @@
       "animationSource": null,
       "fallbackRequired": true,
       "gameplayIdentity": "ending.lumber.forewoman",
-      "reusedProjectAsset": true
+      "reusedProjectAsset": true,
+      "altKey": "presentation.static.lumber-ending-forewoman.alt",
+      "captionKey": "presentation.static.lumber-ending-forewoman.caption"
     },
     {
       "presentationId": "ending/lumber/forest",
@@ -212,7 +252,9 @@
       "animationSource": null,
       "fallbackRequired": true,
       "gameplayIdentity": "ending.lumber.forest",
-      "reusedProjectAsset": true
+      "reusedProjectAsset": true,
+      "altKey": "presentation.static.lumber-ending-forest.alt",
+      "captionKey": "presentation.static.lumber-ending-forest.caption"
     },
     {
       "presentationId": "job/lumber/result/default",
@@ -222,7 +264,9 @@
       "animationSource": null,
       "fallbackRequired": true,
       "gameplayIdentity": "lumber.shift",
-      "reusedProjectAsset": true
+      "reusedProjectAsset": true,
+      "altKey": "presentation.static.career.lumber.result.alt",
+      "captionKey": "presentation.static.career.lumber.result.caption"
     }
   ],
   "invariants": {
@@ -243,5 +287,14 @@
     "selectedSlots": 22,
     "selectedSlotsWithStaticSource": 22,
     "selectedSlotsWithAnimationSource": 0
+  },
+  "accessibility": {
+    "localeParity": [
+      "ru",
+      "en"
+    ],
+    "altRequiredForEveryManifestSlot": true,
+    "captionRequiredForEveryManifestSlot": true,
+    "schoolOrPovertyCopyAuthoredByChat2": false
   }
 }
