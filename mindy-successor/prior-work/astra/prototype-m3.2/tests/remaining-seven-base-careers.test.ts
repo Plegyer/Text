@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import {dispatch,parseSave} from '../src/core/engine.ts';
+import {actionAvailable,parseSave} from '../src/core/engine.ts';
 import {presentationSlots} from '../src/core/presentation.ts';
 import {catalog,started} from './helpers.ts';
 import type {Save} from '../src/core/schema.ts';
@@ -32,17 +32,20 @@ test('remaining seven ordinary careers expose target repeatable 1-Energy base sh
   }
 });
 
-test('remaining seven base shifts persist typed progress without guessing milestone transitions',()=>{
+test('remaining seven base shifts keep typed initial state while Day-1 availability waits for authored unlock conditions',()=>{
   for(const [career,initialStage] of careers){
     let s=started();
-    s=dispatch(s,{type:'action',id:career+'.shift'},catalog);
-
+    const action=catalog.definitions.actions.find(a=>a.id===career+'.shift');
+    assert.ok(action,career);
+    assert.deepEqual(action.conditions,[],career+' has no approved unlock condition yet');
+    assert.equal(actionAvailable(action,s,catalog),false,career);
     assert.equal(s.run.progression.careers[career]?.stage,initialStage,career);
-    assert.equal(s.run.progression.careers[career]?.counters.completed_shifts,1,career);
+    assert.equal(s.run.progression.careers[career]?.counters.completed_shifts??0,0,career);
 
     s=reload(s);
+    assert.equal(actionAvailable(action,s,catalog),false,career);
     assert.equal(s.run.progression.careers[career]?.stage,initialStage,career);
-    assert.equal(s.run.progression.careers[career]?.counters.completed_shifts,1,career);
+    assert.equal(s.run.progression.careers[career]?.counters.completed_shifts??0,0,career);
   }
 });
 
