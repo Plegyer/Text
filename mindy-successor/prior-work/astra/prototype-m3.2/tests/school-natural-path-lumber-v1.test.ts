@@ -1,21 +1,12 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {readFileSync} from 'node:fs';
-
-import {loadCatalog} from '../src/core/content.ts';
 import {applyEffects,dispatch,freshSave,resolveReactions} from '../src/core/engine.ts';
 import type {Catalog,Save} from '../src/core/schema.ts';
-
-const definitions=JSON.parse(readFileSync('content/definitions.json','utf8'));
-const lumberPack=JSON.parse(readFileSync('content/packs/lumber-production.json','utf8'));
-const crossPack=JSON.parse(readFileSync('content/packs/lumber-cross-production.json','utf8'));
-const handoff=JSON.parse(readFileSync('content/school-to-career-handoff-v1.fixture.json','utf8'));
+import {catalog as shippedCatalog} from './helpers.ts';
+import handoff from '../content/school-to-career-handoff-v1.fixture.json' with {type:'json'};
 
 function catalog():Catalog{
-  return loadCatalog(structuredClone(definitions),[
-    structuredClone(lumberPack),
-    structuredClone(crossPack)
-  ]);
+  return shippedCatalog;
 }
 
 function ready():Save{
