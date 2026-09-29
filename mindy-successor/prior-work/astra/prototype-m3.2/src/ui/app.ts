@@ -19,6 +19,11 @@ const tr=(key:string,fallback='')=>resolveLocalizedText(localization,key,locale,
 const activityLabel=(id:string,fallback:string)=>tr(`activity.${id}.label`,fallback);
 const activityOptionLabel=(id:string,fallback:string)=>tr(`activityOption.${id}.label`,fallback);
 const activityOptionHelp=(id:string)=>tr(`activityOption.${id}.help`,'');
+const activityNarrative=(activityId:string,routeId:string|null)=>{
+ if(activityId!=='lumber.forest')return '';
+ const suffix=routeId??'default';
+ return tr(`presentation.activity.forest.entry.${suffix}.text`,'');
+};
 const eventTitle=(id:string,fallback:string)=>tr(`event.${id}.title`,fallback);
 const eventVariantText=(eventId:string,variantId:string,fallback:string)=>tr(`event.${eventId}.variant.${variantId}.text`,fallback);
 const pendingEventVariantText=(eventId:string,variantId:string,fallback:string)=>{
@@ -205,7 +210,8 @@ function central(){
   const actions=availableActivityActions(state,catalog);
   const activityPresentationId=presentationIdForActivityRoute(catalog,activity.activityId,activity.internalState.routeId);
   const checkpointLabel=activity.checkpoint.startsWith('forest.route.')?activityOptionLabel(activity.checkpoint,activity.checkpoint):activity.checkpoint;
-  return `<section class="stage scene">${mediaHTML(activityPresentationId)}<div class="stage-title"><span class="eyebrow">${esc(tr('ui.activity.eyebrow','Вылазка'))}</span><h1>${esc(activityLabel(activity.activityId,definition?.label??activity.activityId))}</h1></div></section><section class="dialogue"><p>${esc(tr('ui.activity.progressLabel','Прогресс'))}: ${activity.internalState.progress} · ${esc(tr('stat.endurance.label','Выносливость'))}: ${activity.internalState.endurance} · ${esc(tr('ui.activity.checkpointLabel','Контрольная точка'))}: ${esc(checkpointLabel)}${activity.internalState.routeId?` · ${esc(tr('ui.activity.routeLabel','Маршрут'))}: ${esc(activityOptionLabel(`forest.route.${activity.internalState.routeId}`,activity.internalState.routeId))}`:''}</p><div class="choices">${actions.map((action,index)=>{const help=activityOptionHelp(action.id);return `<div class="choice-with-help"><button data-activity-action="${esc(action.id)}" class="${index===0?'primary':''}" ${busy||locked?'disabled':''} title="${esc(help)}">${esc(activityOptionLabel(action.id,action.label))}</button>${help?`<small>${esc(help)}</small>`:''}</div>`;}).join('')}</div></section>`;
+  const narrative=activityNarrative(activity.activityId,activity.internalState.routeId);
+  return `<section class="stage scene">${mediaHTML(activityPresentationId)}<div class="stage-title"><span class="eyebrow">${esc(tr('ui.activity.eyebrow','Вылазка'))}</span><h1>${esc(activityLabel(activity.activityId,definition?.label??activity.activityId))}</h1></div></section><section class="dialogue">${narrative?`<p>${esc(narrative)}</p>`:''}<p>${esc(tr('ui.activity.progressLabel','Прогресс'))}: ${activity.internalState.progress} · ${esc(tr('stat.endurance.label','Выносливость'))}: ${activity.internalState.endurance} · ${esc(tr('ui.activity.checkpointLabel','Контрольная точка'))}: ${esc(checkpointLabel)}${activity.internalState.routeId?` · ${esc(tr('ui.activity.routeLabel','Маршрут'))}: ${esc(activityOptionLabel(`forest.route.${activity.internalState.routeId}`,activity.internalState.routeId))}`:''}</p><div class="choices">${actions.map((action,index)=>{const help=activityOptionHelp(action.id);return `<div class="choice-with-help"><button data-activity-action="${esc(action.id)}" class="${index===0?'primary':''}" ${busy||locked?'disabled':''} title="${esc(help)}">${esc(activityOptionLabel(action.id,action.label))}</button>${help?`<small>${esc(help)}</small>`:''}</div>`;}).join('')}</div></section>`;
  }
  if(r.flow.night){
   const night=r.flow.night;
