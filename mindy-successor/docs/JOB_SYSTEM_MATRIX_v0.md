@@ -2,6 +2,17 @@
 
 Дата: 2026-09-25.
 
+## Current-authority override
+
+This matrix is design-analysis history. Current explicit decisions override older provisional assumptions below.
+
+Locked now:
+- 12 progression stats, each starting at 1, with 10 allocation points; Lust is separate;
+- exactly 10 ordinary professions plus hidden Palace;
+- Palace unlock requires Hard Work on all 10 ordinary professions;
+- Secret Debt remains distinct from ordinary poverty;
+- exact Secret Debt trigger chance, debt amounts, penalties and rewards are OPEN.
+
 Статус: **DESIGN DRAFT FOR STAT/ECONOMY COVERAGE**, не финальный stat lock.
 
 Основание: `JOB_ROSTER_RECONCILIATION_v1.md`, `USER_VISION_AND_ACCEPTANCE.md`, job architecture research.
@@ -143,7 +154,7 @@ Poverty не обязана вести в Secret Debt route.
 
 Ночёвка на улице:
 - имеет обычные последствия/события;
-- только один раз может предложить secret loan encounter с шансом 10–20%.
+- может предложить secret debt encounter по отдельному approved trigger; exact probability/trigger numbers OPEN.
 
 Если debt trap активирован:
 - ordinary jobs блокируются;
@@ -225,13 +236,15 @@ Complex outcomes:
 
 ## 12. Что матрица НЕ позволяет пока зафиксировать
 
-Пока рано утверждать:
-- 9 ли core stats;
-- являются ли Похоть и Сексуальность одной шкалой;
+Current stat-count authority supersedes the old uncertainty:
+- 12 progression stats are locked;
+- Lust is separate;
+
+По-прежнему не зафиксированы точные profession-specific stat packages;
 - окончательные +2/+2/-1 packages;
 - exact salary formulas;
 - exact unlock thresholds;
-- exact Hard Work count для Palace.
+- exact per-profession Hard Work shift thresholds beyond explicitly locked values; Palace unlock itself is locked to Hard Work on all 10 ordinary professions.
 
 Следующий полезный design шаг:
 **Stat Coverage Matrix v1 + School Curriculum Draft**, потому что теперь известны реальные функции профессий, которые эти stats должны обслуживать.
