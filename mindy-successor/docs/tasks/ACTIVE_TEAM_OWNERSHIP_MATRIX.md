@@ -79,8 +79,8 @@ Must not own shared runtime/UI integration, Chat 2 media production, Chat 5 Scho
 ## Worker 4 — Chat 4 / QA + Product Acceptance Gate
 
 Queue:
-- `TASK_CHAT4_QA_QUEUE_v3.md`
-- C4-13 through C4-24.
+- `TASK_CHAT4_QA_QUEUE_v4.md`
+- C4-25 through C4-36.
 
 Owns exact-head PR/CI verification, scope/collision review, runtime/catalog gates, cross-system acceptance and final Lumber product-acceptance gate.
 
@@ -94,8 +94,8 @@ Must not create duplicate production content.
 ## Worker 5 — Chat 5 / School + Text Localization Content Worker
 
 Queue:
-- `TASK_CHAT5_SCHOOL_QUEUE_v2.md`
-- C5-01 through C5-12.
+- `TASK_CHAT5_SCHOOL_QUEUE_v3.md`
+- C5-13 through C5-24.
 
 Owns School player-facing content/localization, teacher/milestone/night-study text preparation, RU/EN parity, School-to-career content handoff fixtures and School content-side regressions.
 
