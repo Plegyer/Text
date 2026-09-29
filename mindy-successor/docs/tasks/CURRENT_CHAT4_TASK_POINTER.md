@@ -1,25 +1,28 @@
 # Current Chat 4 task pointer
 
 Status: ASSIGNED
-Owner: Chat 4 / QA + Product Acceptance
+Owner: Chat 4 / QA + Product Acceptance Gate
 
-Primary role:
-Validate gameplay slices, not create duplicate implementations.
+Mandatory startup:
+- `CHAT4_MANDATORY_ROLE_PROMPT.md`
+- `WORKER_CHAT_RECREATION_PROTOCOL_v1.md`
+- `ACTIVE_TEAM_OWNERSHIP_MATRIX.md`
+- `CANDIDATE_QA_FREEZE_PROTOCOL.md`
+- `TASK_CHAT4_QA_QUEUE_v2.md`
 
-Check:
-- career route integration;
-- School milestone integration;
-- expedition challenge content integration;
-- PR/CI correctness;
-- ownership boundaries.
+Current queue:
+- C4-01 through C4-12.
 
-Required acceptance:
-- existing systems used;
-- no parallel state layers;
-- Save/RNG invariants preserved;
-- UI can display resulting player state;
-- existing endings flow remains intact.
+Immediate evidence/candidates:
+- merged Lead PR #68;
+- open Chat 3 PR #67;
+- draft source `chat1/lumber-vertical-slice` for contract audit only until a production PR exists.
 
-Do not create reports without a concrete validation purpose.
+Primary goal:
+- exact-head QA and final product-acceptance gate for the playable Lumber slice.
 
-Report blockers with exact files, commits or failing checks.
+Do not implement duplicate production content or silently repair another worker's scope.
+
+Report every PASS/BLOCK/PASS-WITH-NOTES to Lead with exact PR/head/check evidence using `WORKER_CHAT_RECREATION_PROTOCOL_v1.md`.
+
+Do not self-assign beyond C4-12.
