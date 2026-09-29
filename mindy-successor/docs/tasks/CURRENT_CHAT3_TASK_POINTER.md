@@ -23,6 +23,6 @@ Primary goals:
 
 Chat 3 owns content/fixtures/handoffs only. Shared runtime/UI integration belongs to Chat 1 Developer/Lead.
 
-Report to Lead after every completed queue item and on every blocker using `WORKER_CHAT_RECREATION_PROTOCOL_v1.md`.
+Keep detailed evidence/blockers in Git. In personal chat use only the completion messages defined by `WORKER_CHAT_RECREATION_PROTOCOL_v1.md`.
 
 Do not self-assign beyond C3-12.
