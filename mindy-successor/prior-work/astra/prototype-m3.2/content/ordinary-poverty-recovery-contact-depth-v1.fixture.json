@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "id": "ordinary-poverty.recovery-contact-depth.v1",
+  "status": "CONTENT_SIDE_HANDOFF",
+  "task": "C3-34",
+  "routeIdentity": "ordinary-poverty",
+  "variants": [
+    {
+      "id": "old-contact-return",
+      "topic": "contacts",
+      "localizationKey": "poverty.recovery.contact.old-return.text"
+    },
+    {
+      "id": "shared-space-step",
+      "topic": "housing_recovery",
+      "localizationKey": "poverty.recovery.housing.shared-space.text"
+    },
+    {
+      "id": "stable-work-step",
+      "topic": "work_recovery",
+      "localizationKey": "poverty.recovery.work.stable-step.text"
+    }
+  ],
+  "strings": {
+    "poverty.recovery.contact.old-return.text": {
+      "ru": "Возвращение к старым знакомым не меняет жизнь мгновенно, но иногда открывает новый разговор и возможность начать с более спокойного шага.",
+      "en": "Reconnecting with old acquaintances does not change life instantly, but it can open a new conversation and a chance to begin with a calmer step."
+    },
+    "poverty.recovery.housing.shared-space.text": {
+      "ru": "Общее жильё остаётся компромиссом, но даёт передышку. Ты используешь это время, чтобы восстановить порядок и искать более устойчивый вариант.",
+      "en": "Shared housing remains a compromise, but it provides breathing room. You use that time to rebuild routines and look for a more stable option."
+    },
+    "poverty.recovery.work.stable-step.text": {
+      "ru": "Небольшая стабильная работа может стать первым шагом к восстановлению. Ты сохраняешь навыки, укрепляешь связи и постепенно расширяешь доступные возможности.",
+      "en": "A small stable job can become a first step toward recovery. You keep your skills, strengthen connections, and gradually expand available opportunities."
+    }
+  },
+  "boundaries": {
+    "noSecretDebt": true,
+    "noCareerUnlock": true,
+    "noResourceRewards": true,
+    "noPersistentMechanics": true,
+    "noSaveOrRngChange": true
+  }
+}
