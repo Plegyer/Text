@@ -4,94 +4,129 @@ Status: ACTIVE
 Repository: `Plegyer/Text`
 Owner: Chat 1 / Lead
 
-Entry point: `mindy-successor/docs/tasks/PROJECT_WORK_ENTRYPOINT.md`
+Entry point:
+- `mindy-successor/docs/tasks/PROJECT_WORK_ENTRYPOINT.md`
+- `mindy-successor/docs/tasks/WORKER_CHAT_RECREATION_PROTOCOL_v1.md`
 
-This file prevents duplicate implementation ownership.
+## Coordination model
+
+Chat 1 / Lead is the only coordinator, archive owner, integration-order owner, merge-decision owner, ownership arbiter and CI/PR triage owner.
+
+Five worker chats execute narrow queues under Lead control. Deleted chats are recreated from Git contracts and pointers, not from memory.
+
+Target queue depth:
+- 12 useful outstanding tasks per active worker when practical;
+- no filler work;
+- no self-assignment beyond the active queue.
 
 ## Current production priority
 
-1. playable gameplay loops;
-2. professions with stages and outcomes;
-3. School milestones connected to career progression;
-4. expedition challenges with meaningful outcomes;
-5. localization and presentation in parallel.
+1. keep a valid shipped runtime baseline;
+2. playable Lumber vertical slice;
+3. professions with stages and outcomes;
+4. School milestones connected to career progression;
+5. Forest/Expedition challenges with meaningful outcomes;
+6. poverty depth and alternative-life routes;
+7. presentation/localization in parallel;
+8. QA on frozen exact heads.
 
-## Chat 1 / Lead
+## Worker 1 — Chat 1 Developer / Integration Developer
 
-Owns:
-- current-main truth;
-- coordination;
-- integration order;
-- merge decisions;
-- ownership arbitration;
-- CI/PR triage.
-
-## Chat 1 Developer
-
-Current queue:
-- 13–24.
-
-Focus:
-- production integration packages only;
-- group small related changes instead of artificial task splitting.
-
-## Chat 2
-
-Current queue:
-- 364–375.
-
-Previous queue 352–363 is delivered through merged PR #64 and must not be restarted.
+Queue:
+- `TASK_CHAT1_DEVELOPER_QUEUE_v2.md`
+- C1D-01 through C1D-12.
 
 Owns:
-- presentation/media source preparation;
-- validators/manifests;
-- presentation accessibility source material.
+- selective integration of approved worker handoffs;
+- Lumber production career integration;
+- shared runtime/UI seams required by assigned slices;
+- focused integration regressions;
+- candidate production PRs.
 
-## Chat 3
+Resume source:
+- `chat1/lumber-vertical-slice` is a draft source and must not be restarted or merged wholesale.
+- baseline repair PR #68 is merged and must not be recreated.
 
-Current queue:
-- 341–352.
+Must not own media asset production, Forest/poverty authoring, School authoring/localization or QA acceptance.
 
-Owns:
-- Forest/poverty/content bundles when assigned;
-- content fixtures and handoffs.
+## Worker 2 — Chat 2 / Presentation & Media Worker
 
-Must not duplicate production runtime integration.
+Queue:
+- `TASK_CHAT2_PRESENTATION_QUEUE_v2.md`
+- C2-01 through C2-12.
 
-## Chat 4
+Owns project-owned presentation/media sources, presentation IDs/registries/manifests, static/animation fallbacks, presentation-specific accessibility metadata and presentation validators.
 
-Current queue:
-- QA/product acceptance.
+Merged work not to restart:
+- PR #64 / old queue 352–363.
 
-Owns:
-- verification;
-- CI checks;
-- collision detection;
-- acceptance gates.
+Must not modify gameplay mechanics, progression, Save/RNG or content canon.
 
-## Chat 5
+## Worker 3 — Chat 3 / Forest + Poverty Content Bundles Worker
 
-Current queue:
-- 205–216.
+Queue:
+- `TASK_CHAT3_CONTENT_QUEUE_v2.md`
+- C3-01 through C3-12.
 
-Owns:
-- School teacher text/content readiness;
-- RU/EN parity;
-- staging localization.
+Owns ordinary poverty content/localization bundles, Forest/Expedition content hooks and result bundles, explicitly assigned Secret Debt boundary/content preparation, fixtures/collision audits/content regressions and selective-integration handoffs.
 
-## Completed baseline
+Resume source:
+- open PR #67 / `chat3/ordinary-poverty-depth-refresh-341-352`;
+- do not rebuild it from scratch.
 
-Merged:
-- PR #64 — Chat 2 animation source queue 352–363;
-- PR #65 — Foreman semantic localization;
-- PR #66 — School residual localization.
+Must not own shared runtime/UI integration, Chat 2 media production, Chat 5 School content or QA.
+
+## Worker 4 — Chat 4 / QA + Product Acceptance Gate
+
+Queue:
+- `TASK_CHAT4_QA_QUEUE_v2.md`
+- C4-01 through C4-12.
+
+Owns exact-head PR/CI verification, scope/collision review, runtime/catalog gates, cross-system acceptance and final Lumber product-acceptance gate.
+
+Immediate evidence/candidates:
+- merged baseline PR #68;
+- open Chat 3 PR #67;
+- later Integration/Presentation/School candidates.
+
+Must not create duplicate production content.
+
+## Worker 5 — Chat 5 / School + Text Localization Content Worker
+
+Queue:
+- `TASK_CHAT5_SCHOOL_QUEUE_v2.md`
+- C5-01 through C5-12.
+
+Owns School player-facing content/localization, teacher/milestone/night-study text preparation, RU/EN parity, School-to-career content handoff fixtures and School content-side regressions.
+
+Merged work not to restart:
+- PR #66 / residual localization 193–204.
+
+Must not create career state, shared runtime architecture, Save fields, NightFlow rules or new curriculum without Lead-approved design.
+
+## Mandatory worker reporting
+
+Every worker follows `WORKER_CHAT_RECREATION_PROTOCOL_v1.md`.
+
+After each completed task and immediately on blockers, report to Lead:
+- worker/chat;
+- task ID;
+- branch;
+- exact SHA;
+- PR if any;
+- files changed;
+- checks actually run;
+- result;
+- blocker/dependency;
+- next selected task.
 
 ## Duplicate-work rule
 
-Before new implementation:
-
+Before any edit:
 1. inspect current task pointer;
-2. inspect ownership matrix;
-3. inspect merged PRs and active branches.
+2. inspect this ownership matrix;
+3. inspect current main;
+4. inspect open PRs and named draft branches;
+5. do not restart delivered/active work.
 
-Do not recreate completed queues.
+One file/slice has one active owner. Cross-role dependencies are reported, not solved by trespassing into another role.
