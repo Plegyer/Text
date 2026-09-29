@@ -296,5 +296,12 @@
     "altRequiredForEveryManifestSlot": true,
     "captionRequiredForEveryManifestSlot": true,
     "schoolOrPovertyCopyAuthoredByChat2": false
+  },
+  "replaceability": {
+    "mechanism": "presentation-v1-slot-override",
+    "editorStorageKey": "portal-life.presentation.v1",
+    "semanticPresentationIdPreserved": true,
+    "gameplayIdentityPreserved": true,
+    "replacementValidatedBeforeSave": true
   }
 }
