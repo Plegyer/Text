@@ -8,18 +8,18 @@ Mandatory startup:
 - `WORKER_CHAT_RECREATION_PROTOCOL_v1.md`
 - `ACTIVE_TEAM_OWNERSHIP_MATRIX.md`
 - `CANDIDATE_QA_FREEZE_PROTOCOL.md`
-- `TASK_CHAT5_SCHOOL_QUEUE_v2.md`
+- `TASK_CHAT5_SCHOOL_QUEUE_v3.md`
 
 Current queue:
-- C5-01 through C5-12.
+- C5-13 through C5-24.
 
-Primary goal:
-- prepare School milestone content/handoffs that remain a standalone School line and can feed Lumber/career conditions through existing systems.
+Immediate priority:
+- C5-13 repair PR #85 repository CI;
+- C5-14 re-freeze #85 only after exact-head repository check is green;
+- then continue C5-15..24.
 
-Do not restart merged PR #66 or delivered residual localization queue 193–204.
+Do not create new courses, thresholds, Save fields, NightFlow mechanics or career state.
 
-Do not create a new course/curriculum, career state, Save field or NightFlow rule merely to close a content gap. Report the exact missing decision instead.
+Keep technical evidence in Git only. Personal chat uses only the compact completion messages from `WORKER_CHAT_RECREATION_PROTOCOL_v1.md`.
 
-Keep detailed evidence/blockers in Git. In personal chat use only the completion messages defined by `WORKER_CHAT_RECREATION_PROTOCOL_v1.md`.
-
-Do not self-assign beyond C5-12.
+Do not self-assign beyond C5-24.
