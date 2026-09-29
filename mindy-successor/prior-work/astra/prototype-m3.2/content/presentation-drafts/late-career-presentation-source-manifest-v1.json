@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "id": "late-career-presentation-source-manifest-v1",
+  "owner": "chat2-presentation-media",
+  "baselineMain": "05fa2d1084a48cab20d42f23885e19ee627d3d09",
+  "gameplayMutation": false,
+  "slots": [
+    {
+      "presentationId": "job/tavern/shift/spring/default",
+      "domain": "tavern",
+      "role": "seasonal-shift",
+      "sourceAsset": "assets/presentation/career-tavern-shift-spring.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "altKey": "presentation.static.career.tavern.shift.spring.alt",
+      "captionKey": "presentation.static.career.tavern.shift.spring.caption"
+    },
+    {
+      "presentationId": "job/tavern/shift/summer/default",
+      "domain": "tavern",
+      "role": "seasonal-shift",
+      "sourceAsset": "assets/presentation/career-tavern-shift-summer.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "altKey": "presentation.static.career.tavern.shift.summer.alt",
+      "captionKey": "presentation.static.career.tavern.shift.summer.caption"
+    },
+    {
+      "presentationId": "job/tavern/shift/autumn/default",
+      "domain": "tavern",
+      "role": "seasonal-shift",
+      "sourceAsset": "assets/presentation/career-tavern-shift-autumn.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "altKey": "presentation.static.career.tavern.shift.autumn.alt",
+      "captionKey": "presentation.static.career.tavern.shift.autumn.caption"
+    },
+    {
+      "presentationId": "job/tavern/shift/winter/default",
+      "domain": "tavern",
+      "role": "seasonal-shift",
+      "sourceAsset": "assets/presentation/career-tavern-shift-winter.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "altKey": "presentation.static.career.tavern.shift.winter.alt",
+      "captionKey": "presentation.static.career.tavern.shift.winter.caption"
+    },
+    {
+      "presentationId": "job/tavern/result/default",
+      "domain": "tavern",
+      "role": "shift-result",
+      "sourceAsset": "assets/presentation/career-tavern-result.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "altKey": "presentation.static.career.tavern.result.alt",
+      "captionKey": "presentation.static.career.tavern.result.caption"
+    }
+  ],
+  "documentedMissingSlots": [
+    {
+      "presentationId": "ending/tavern-stay",
+      "reason": "Current gameplay ending exists, but C2-26 scope is shift/result only."
+    },
+    {
+      "presentationId": "ending/tavern-guild",
+      "reason": "Current gameplay ending exists, but C2-26 scope is shift/result only."
+    },
+    {
+      "presentationId": "ending/tavern-court",
+      "reason": "Current gameplay ending exists, but C2-26 scope is shift/result only."
+    }
+  ],
+  "invariants": {
+    "existingSemanticIdsOnly": true,
+    "projectOwnedLocalSourcesOnly": true,
+    "staticFallbackRequired": true,
+    "noGameplayFieldsChanged": true,
+    "noSaveOrRngMutation": true,
+    "nonExplicitProfessionalCoverage": true
+  }
+}
