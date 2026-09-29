@@ -20,6 +20,6 @@ Do not restart merged PR #66 or delivered residual localization queue 193–204.
 
 Do not create a new course/curriculum, career state, Save field or NightFlow rule merely to close a content gap. Report the exact missing decision instead.
 
-Report to Lead after every completed queue item and on every blocker using `WORKER_CHAT_RECREATION_PROTOCOL_v1.md`.
+Keep detailed evidence/blockers in Git. In personal chat use only the completion messages defined by `WORKER_CHAT_RECREATION_PROTOCOL_v1.md`.
 
 Do not self-assign beyond C5-12.
