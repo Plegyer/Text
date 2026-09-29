@@ -39,13 +39,14 @@ test('remaining seven base shifts keep typed initial state while Day-1 availabil
     assert.ok(action,career);
     assert.deepEqual(action.conditions,[],career+' has no approved unlock condition yet');
     assert.equal(actionAvailable(action,s,catalog),false,career);
-    assert.equal(s.run.progression.careers[career]?.stage,initialStage,career);
-    assert.equal(s.run.progression.careers[career]?.counters.completed_shifts??0,0,career);
+    const definition=catalog.definitions.careers?.find(item=>item.id===career);
+    assert.equal(definition?.initialStage,initialStage,career);
+    assert.equal(s.run.progression.careers[career],undefined,career+' stays virtual before first legal shift');
 
     s=reload(s);
     assert.equal(actionAvailable(action,s,catalog),false,career);
-    assert.equal(s.run.progression.careers[career]?.stage,initialStage,career);
-    assert.equal(s.run.progression.careers[career]?.counters.completed_shifts??0,0,career);
+    assert.equal(catalog.definitions.careers?.find(item=>item.id===career)?.initialStage,initialStage,career);
+    assert.equal(s.run.progression.careers[career],undefined,career+' stays virtual across reload');
   }
 });
 
