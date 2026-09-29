@@ -92,6 +92,39 @@
       "fallbackRequired": true,
       "altKey": "presentation.static.career.undead-farm.shift.winter.alt",
       "captionKey": "presentation.static.career.undead-farm.shift.winter.caption"
+    },
+    {
+      "presentationId": "job/lumber/result/default",
+      "domain": "lumber",
+      "role": "shift-result",
+      "sourceAsset": "assets/presentation/career-lumber-result.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "altKey": "presentation.static.career.lumber.result.alt",
+      "captionKey": "presentation.static.career.lumber.result.caption"
+    },
+    {
+      "presentationId": "job/satyr-maid/result/default",
+      "domain": "satyr-maid",
+      "role": "shift-result",
+      "sourceAsset": "assets/presentation/career-satyr-maid-result.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "altKey": "presentation.static.career.satyr-maid.result.alt",
+      "captionKey": "presentation.static.career.satyr-maid.result.caption"
+    },
+    {
+      "presentationId": "job/undead-farm/result/default",
+      "domain": "undead-farm",
+      "role": "shift-result",
+      "sourceAsset": "assets/presentation/career-undead-farm-result.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "altKey": "presentation.static.career.undead-farm.result.alt",
+      "captionKey": "presentation.static.career.undead-farm.result.caption"
     }
   ],
   "mediaSurfaces": [],
