@@ -1,25 +1,24 @@
-# Current Chat 2 task pointer
+# CURRENT CHAT2 TASK POINTER
 
 Status: ASSIGNED
 Owner: Chat 2 / Presentation & Media Worker
 
 Mandatory startup:
-- `CHAT2_MANDATORY_ROLE_PROMPT.md`
 - `WORKER_CHAT_RECREATION_PROTOCOL_v1.md`
 - `ACTIVE_TEAM_OWNERSHIP_MATRIX.md`
 - `CANDIDATE_QA_FREEZE_PROTOCOL.md`
-- `TASK_CHAT2_PRESENTATION_QUEUE_v2.md`
+- `TASK_CHAT2_PRESENTATION_QUEUE_v3.md`
 
 Current queue:
-- C2-01 through C2-12.
+- C2-13 through C2-24.
 
 Primary goal:
-- presentation/media support for the active Lumber vertical slice.
+- Satyr Maid, Undead Farm and School presentation coverage.
 
-Do not restart merged PR #64 or historical queue 352–363.
+Do not restart completed earlier queue items.
 
-No gameplay state, progression, endings, Save, RNG or content-canon ownership.
+Keep technical evidence in Git only. Personal chat output:
+- `Задание выполнено`
+- `Задания выполнены`
 
-Keep detailed evidence/blockers in Git. In personal chat use only the completion messages defined by `WORKER_CHAT_RECREATION_PROTOCOL_v1.md`.
-
-Do not self-assign beyond C2-12.
+Do not self-assign beyond this queue.
