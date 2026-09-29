@@ -5,6 +5,7 @@
   "baseMain": "32f48d15708a543ee26b90b78761da63b3363da2",
   "career": {
     "id": "satyr-maid",
+    "label": "Satyr Maid",
     "initialStage": "new-maid",
     "stages": [
       "new-maid",
