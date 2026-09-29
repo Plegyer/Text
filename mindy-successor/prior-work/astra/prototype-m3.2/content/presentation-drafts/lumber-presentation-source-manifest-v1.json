@@ -51,6 +51,27 @@
       "fallbackRequired": true,
       "gameplayIdentity": "lumber.career-first-shift",
       "reusedProjectAsset": true
+    },
+    {
+      "presentationId": "relationship/lumber-foreman/lumber-foreman-notice/default",
+      "role": "foreman-professional-opening",
+      "sourceAsset": "assets/presentation/foreman-professional-milestone-v2.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "gameplayIdentity": "lumber.foreman-notice",
+      "relationshipIdentity": "lumber.foreman"
+    },
+    {
+      "presentationId": "relationship/lumber-foreman/lumber-night-foreman-professional/default",
+      "role": "foreman-professional-night-follow-up",
+      "sourceAsset": "assets/presentation/foreman-night-voluntary-v2.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "gameplayIdentity": "lumber-night.foreman-professional",
+      "relationshipIdentity": "lumber.foreman",
+      "nightChoiceIdentity": "lumber.foreman.night"
     }
   ],
   "invariants": {
