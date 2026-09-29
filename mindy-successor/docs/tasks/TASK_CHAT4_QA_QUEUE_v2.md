@@ -44,4 +44,4 @@ Verify Chat 2 assets/slots, missing-media fallbacks, accessibility metadata and 
 ### C4-12 — Lumber product-acceptance gate
 Run the complete player-facing vertical-slice acceptance and record PASS/BLOCK/PASS-WITH-NOTES against one frozen exact integrated head.
 
-Every QA result must identify exact PR/head SHA and checks actually observed.
+Every QA result must identify exact PR/head SHA and checks actually observed in Git.
