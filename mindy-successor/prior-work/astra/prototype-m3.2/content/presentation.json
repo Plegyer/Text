@@ -667,6 +667,54 @@
         "alt": "Старая межевая линия с замшелыми камнями и выветренными метками.",
         "altKey": "presentation.activity.forest.route.old-boundary.alt"
       }
+    },
+    "job/lumber/event/lumber-career-first-shift/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-lumber-result.svg",
+        "alt": "Рабочая сцена лесоруба после первой подтверждённой смены; визуал отмечает карьерный рубеж без изображения числового порога.",
+        "altKey": "presentation.static.lumber-career-first-shift.alt"
+      }
+    },
+    "job/lumber/event/lumber-cross-school-management-return/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/foreman-professional.svg",
+        "alt": "Профессиональная сцена на лесной площадке, где управленческий результат применяется к действующему маршруту без изменения игрового исхода.",
+        "altKey": "presentation.static.lumber-forewoman-route.alt"
+      }
+    },
+    "job/lumber/event/lumber-cross-activity-forest-return/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/forest-reaction-success-v2.svg",
+        "alt": "Отдельная рабочая реакция после успешного возвращения из леса.",
+        "altKey": "presentation.static.forest-reaction-success-v2.alt"
+      }
+    },
+    "ending/lumber/hard-work": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-lumber-result.svg",
+        "alt": "Завершённая рабочая сцена лесоруба с древесиной и инструментом как визуал финала «Тяжёлый труд».",
+        "altKey": "presentation.static.lumber-ending-hard-work.alt"
+      }
+    },
+    "ending/lumber/forewoman": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/foreman-professional.svg",
+        "alt": "Профессиональная сцена на лесной площадке с рабочим столом и бригадиром как визуал управленческого финала.",
+        "altKey": "presentation.static.lumber-ending-forewoman.alt"
+      }
+    },
+    "ending/lumber/forest": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/forest-return-success-v2.svg",
+        "alt": "Успешное возвращение с лесного маршрута как визуал лесного финала.",
+        "altKey": "presentation.static.lumber-ending-forest.alt"
+      }
     }
   }
 }
