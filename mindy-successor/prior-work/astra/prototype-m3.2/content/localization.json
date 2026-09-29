@@ -3037,6 +3037,46 @@
     "presentation.activity.forest.entry.old-boundary.text": {
       "ru": "Старая межевая линия уходит между замшелыми камнями и выветренными знаками, не совпадая с новой лесовозной дорогой. Тропа уже и тише, поэтому ориентироваться приходится по самим старым меткам.",
       "en": "The old boundary line runs between moss-covered stones and weathered marks instead of following the newer logging road. The trail is narrower and quieter, so the old markers themselves have to guide the way."
+    },
+    "presentation.static.lumber-career-first-shift.alt": {
+      "ru": "Рабочая сцена лесоруба после первой подтверждённой смены; визуал отмечает карьерный рубеж без изображения числового порога.",
+      "en": "A lumber work scene after the first completed shift; the visual marks a career milestone without depicting a numeric threshold."
+    },
+    "presentation.static.lumber-career-first-shift.caption": {
+      "ru": "Первая завершённая смена отмечена как карьерный рубеж.",
+      "en": "The first completed shift is acknowledged as a career milestone."
+    },
+    "presentation.static.lumber-forewoman-route.alt": {
+      "ru": "Профессиональная сцена на лесной площадке, где управленческий результат применяется к действующему маршруту без изменения игрового исхода.",
+      "en": "A professional lumber-site scene where the management result is applied to the existing route without changing the gameplay outcome."
+    },
+    "presentation.static.lumber-forewoman-route.caption": {
+      "ru": "Управленческий результат признан в профессиональном маршруте лесорубов.",
+      "en": "The management result is acknowledged within the professional Lumber route."
+    },
+    "presentation.static.lumber-ending-hard-work.alt": {
+      "ru": "Завершённая рабочая сцена лесоруба с древесиной и инструментом как визуал финала «Тяжёлый труд».",
+      "en": "A completed lumber work scene with timber and tools as the visual for the Hard Work ending."
+    },
+    "presentation.static.lumber-ending-hard-work.caption": {
+      "ru": "Финал лесоруба: тяжёлый труд.",
+      "en": "Lumber ending: Hard Work."
+    },
+    "presentation.static.lumber-ending-forewoman.alt": {
+      "ru": "Профессиональная сцена на лесной площадке с рабочим столом и бригадиром как визуал управленческого финала.",
+      "en": "A professional lumber-site scene with the work table and foreman as the visual for the management ending."
+    },
+    "presentation.static.lumber-ending-forewoman.caption": {
+      "ru": "Финал лесоруба: управленческий путь.",
+      "en": "Lumber ending: management route."
+    },
+    "presentation.static.lumber-ending-forest.alt": {
+      "ru": "Успешное возвращение с лесного маршрута как визуал лесного финала.",
+      "en": "A successful return from the forest route as the visual for the Forest ending."
+    },
+    "presentation.static.lumber-ending-forest.caption": {
+      "ru": "Финал лесоруба: лесной путь.",
+      "en": "Lumber ending: Forest route."
     }
   }
 }
