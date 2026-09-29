@@ -54,7 +54,7 @@ For each candidate PR:
 - verify claimed tests/checks on the exact head when possible;
 - verify scope boundaries and locked invariants;
 - distinguish repository CI from unrelated external deployment failures;
-- report BLOCK / PASS / PASS-WITH-NOTES with concrete evidence;
+- record BLOCK / PASS / PASS-WITH-NOTES with concrete evidence in Git;
 - do not approve a slice whose exact-head required check is unknown or failing;
 - do not invent product requirements not present in current contracts/handoffs.
 
@@ -102,8 +102,10 @@ Do not create broad architecture or content batches.
 
 ## Completion rule
 
-QA is complete only when the exact candidate head has been inspected and the gate result is recorded.
+A branch alone is not delivery. Candidate and merged states remain defined by Git/QA.
 
-A statement such as "worker says tests passed" is not acceptance evidence.
+After each completed assigned task, write only `Задание выполнено` in the personal chat, then immediately re-read the current pointer/queue and continue the next assigned unblocked task.
 
-After the current QA queue is complete, stop and wait for Lead.
+If no further assigned unblocked tasks exist, write only `Задания выполнены`.
+
+All technical details, blockers, SHAs, checks and handoffs stay in Git unless Leader explicitly asks for them.

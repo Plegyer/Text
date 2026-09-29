@@ -28,6 +28,6 @@ Locked:
 - no new Save layer;
 - no new ending framework.
 
-Report to Lead after every completed queue item and on every blocker using the mandatory report fields in `WORKER_CHAT_RECREATION_PROTOCOL_v1.md`.
+Keep detailed evidence/blockers in Git. In personal chat use only the completion messages defined by `WORKER_CHAT_RECREATION_PROTOCOL_v1.md`.
 
 Do not self-assign work beyond C1D-12.

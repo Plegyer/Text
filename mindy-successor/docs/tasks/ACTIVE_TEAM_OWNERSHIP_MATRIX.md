@@ -104,21 +104,15 @@ Merged work not to restart:
 
 Must not create career state, shared runtime architecture, Save fields, NightFlow rules or new curriculum without Lead-approved design.
 
-## Mandatory worker reporting
+## Worker communication
 
-Every worker follows `WORKER_CHAT_RECREATION_PROTOCOL_v1.md`.
+Detailed task evidence belongs in Git branches, PRs, checks and handoffs.
 
-After each completed task and immediately on blockers, report to Lead:
-- worker/chat;
-- task ID;
-- branch;
-- exact SHA;
-- PR if any;
-- files changed;
-- checks actually run;
-- result;
-- blocker/dependency;
-- next selected task.
+Personal chat output is intentionally minimal:
+- after one completed task: `Задание выполнено`;
+- after rechecking the current pointer/queue and finding no further assigned unblocked work: `Задания выполнены`.
+
+No long worker reports are required unless Leader explicitly asks for one.
 
 ## Duplicate-work rule
 

@@ -56,7 +56,7 @@ Worker branches without active PRs are draft sources only. Never merge them whol
 - Do not create new architecture unless a documented blocker makes the current seam unusable.
 - Keep diffs narrow and independently reviewable.
 - Open a PR for every production code integration slice.
-- Report exact head SHA, PR number, changed files and checks.
+- Record exact head SHA, PR number, changed files and checks in Git/PR/handoff.
 
 ## QA freeze
 
@@ -64,7 +64,7 @@ Once Chat 4 begins QA on your exact PR head, follow:
 `mindy-successor/docs/tasks/CANDIDATE_QA_FREEZE_PROTOCOL.md`.
 
 Do not rebase or force-push only because unrelated task/role/docs commits advance `main`.
-Push a new head only for a concrete blocker or explicit Lead request; then report the new SHA and require full re-gate.
+Push a new head only for a concrete blocker or explicit Lead request; then record the new SHA in Git and require full re-gate.
 
 ## Locked boundaries
 
@@ -83,10 +83,10 @@ RU/EN switching must remain presentation-only.
 
 ## Completion rule
 
-`implementation branch exists != delivered`
+A branch alone is not delivery. Candidate and merged states remain defined by Git/QA.
 
-`open PR + exact head + reviewed checks = candidate deliverable`
+After each completed assigned task, write only `Задание выполнено` in the personal chat, then immediately re-read the current pointer/queue and continue the next assigned unblocked task.
 
-`merged main = delivered`
+If no further assigned unblocked tasks exist, write only `Задания выполнены`.
 
-When the assigned queue is complete, stop and wait for Lead.
+All technical details, blockers, SHAs, checks and handoffs stay in Git unless Leader explicitly asks for them.

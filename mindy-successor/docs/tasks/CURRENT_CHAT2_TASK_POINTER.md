@@ -20,6 +20,6 @@ Do not restart merged PR #64 or historical queue 352–363.
 
 No gameplay state, progression, endings, Save, RNG or content-canon ownership.
 
-Report to Lead after every completed queue item and on every blocker using `WORKER_CHAT_RECREATION_PROTOCOL_v1.md`.
+Keep detailed evidence/blockers in Git. In personal chat use only the completion messages defined by `WORKER_CHAT_RECREATION_PROTOCOL_v1.md`.
 
 Do not self-assign beyond C2-12.

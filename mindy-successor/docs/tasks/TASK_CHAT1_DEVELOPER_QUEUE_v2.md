@@ -51,6 +51,6 @@ After Chat 5 provides an approved School milestone handoff, consume it through e
 After Chat 3 provides approved Forest result hooks, consume them through existing Activity/world/career facts without altering Activity architecture.
 
 ### C1D-12 — Playable Lumber candidate
-Produce one focused candidate PR proving the full reachable route available with approved decisions: work -> career progression -> external/relationship hook -> eligible ending -> explicit commitment -> persisted result. Report exact head/files/checks.
+Produce one focused candidate PR proving the full reachable route available with approved decisions: work -> career progression -> external/relationship hook -> eligible ending -> explicit commitment -> persisted result. Record exact head/files/checks in the candidate PR/handoff.
 
 Dependencies do not authorize scope expansion. If C1D-04 is blocked by an open product value, continue independent regression/UI tasks and report the blocker.
