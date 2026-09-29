@@ -5,6 +5,7 @@ import {freshSave,dispatch,parseSave,eligible,calendar,actionCost,meets,energyMa
 import {stats,type Save,type Catalog,type Condition,type Action} from '../core/schema.ts';
 import {SCHOOL_COURSES,type SchoolCourse} from '../core/school.ts';
 import {labels,hints} from './labels.ts';
+import {povertyPendingLocalizationKey} from './povertyDepth.ts';
 import {emptyLocalization,localizationSchema,normalizeLocale,resolveLocalizedText,type Locale,type LocalizationBundle} from '../core/localization.ts';
 declare global {interface Window {gameStorage?:{load:()=>Promise<{text:string;recovered:boolean}|null>;save:(text:string)=>Promise<void>}}}
 const app=document.querySelector<HTMLDivElement>('#app')!;
@@ -20,6 +21,12 @@ const activityOptionLabel=(id:string,fallback:string)=>tr(`activityOption.${id}.
 const activityOptionHelp=(id:string)=>tr(`activityOption.${id}.help`,'');
 const eventTitle=(id:string,fallback:string)=>tr(`event.${id}.title`,fallback);
 const eventVariantText=(eventId:string,variantId:string,fallback:string)=>tr(`event.${eventId}.variant.${variantId}.text`,fallback);
+const pendingEventVariantText=(eventId:string,variantId:string,fallback:string)=>{
+ const core=eventVariantText(eventId,variantId,fallback);
+ const count=state.run.historyState.eventHistory[eventId]?.count??0;
+ const key=povertyPendingLocalizationKey(eventId,variantId,count);
+ return key?tr(key,core):core;
+};
 const eventChoiceLabel=(eventId:string,choiceId:string,fallback:string)=>tr(`event.${eventId}.choice.${choiceId}.label`,fallback);
 const eventChoiceText=(eventId:string,choiceId:string,fallback:string)=>tr(`event.${eventId}.choice.${choiceId}.text`,fallback);
 const mediaAlt=(mediaId:string|undefined,fallback:string)=>mediaId?tr(`media.${mediaId}.alt`,fallback):fallback;
@@ -188,7 +195,7 @@ function central(){
  const r=state.run,p=r.pending;
  if(!r.creation.complete)return `<section class="creation"><div class="creation-art">${mediaHTML('location/town/default')}<div><span class="eyebrow">${esc(tr('ui.creation.eyebrow','До первого шага'))}</span><h1>${esc(tr('ui.creation.title','Кем вы войдёте в этот мир?'))}</h1><p>${esc(tr('ui.creation.body','Новый город ещё ничего о вас не знает.'))}</p></div></div><div class="creation-form"><h2>${esc(tr('ui.creation.heroineTitle','Ваша героиня'))}</h2><p>${esc(tr('ui.creation.freePoints','25 лет · свободных очков: {points}').replace('{points}',''))}<strong id="points">${r.creation.remaining}</strong></p><div class="creation-stats">${stats.map(k=>`<div class="allocate" title="${esc(statHint(k))}"><span>${esc(statLabel(k))}</span><button data-stat="${k}" data-delta="-1" aria-label="${esc(fmt(tr('ui.creation.decreaseStatAria','Уменьшить {stat}'),{stat:statLabel(k)}))}" ${busy||locked||!r.creation.allocated[k]?'disabled':''}>−</button><strong>${r.metrics[k]}</strong><button data-stat="${k}" data-delta="1" aria-label="${esc(fmt(tr('ui.creation.increaseStatAria','Увеличить {stat}'),{stat:statLabel(k)}))}" ${busy||locked||!r.creation.remaining?'disabled':''}>+</button></div>`).join('')}</div><button id="create" class="primary" ${r.creation.remaining||busy||locked?'disabled':''}>${esc(tr('ui.creation.startButton','Начать историю'))}</button></div></section>`;
  if(p){const e=catalog.events.find(e=>e.id===p.eventId)!,v=e.variants.find(v=>v.id===p.variantId)!;
- return `<section class="stage scene">${mediaHTML(p.presentationId??presentationIdForEvent(catalog,e.id,v.id))}<div class="stage-title"><span class="eyebrow">${esc(tr('ui.event.eyebrow','Встреча'))}</span><h1>${esc(eventTitle(e.id,e.title))}</h1></div></section><section class="dialogue"><p>${esc(eventVariantText(e.id,v.id,v.text))}</p><div class="choices">${e.choices.map(c=>`<button data-choice="${c.id}" ${busy||locked||!eligible(c.conditions,state)?'disabled':''}>${esc(eventChoiceLabel(e.id,c.id,c.label))}</button>`).join('')}</div></section>`;}
+ return `<section class="stage scene">${mediaHTML(p.presentationId??presentationIdForEvent(catalog,e.id,v.id))}<div class="stage-title"><span class="eyebrow">${esc(tr('ui.event.eyebrow','Встреча'))}</span><h1>${esc(eventTitle(e.id,e.title))}</h1></div></section><section class="dialogue"><p>${esc(pendingEventVariantText(e.id,v.id,v.text))}</p><div class="choices">${e.choices.map(c=>`<button data-choice="${c.id}" ${busy||locked||!eligible(c.conditions,state)?'disabled':''}>${esc(eventChoiceLabel(e.id,c.id,c.label))}</button>`).join('')}</div></section>`;}
  if(r.status!=='active'){return `<section class="stage">${mediaHTML(r.acceptedEnding?presentationIdForEnding(r.acceptedEnding):'location/town/default')}<div class="stage-title"><h1>${esc(r.status==='ended'?tr('ui.run.endingAccepted','Судьба принята'):tr('ui.run.timeExpired','Срок истёк'))}</h1></div></section><section class="dialogue"><p>${esc(r.journal.at(-1)??'')}</p><button data-panel="legacy">${esc(tr('ui.run.fatesAndNextLife','Судьбы и следующая жизнь'))}</button></section>`;}
  if(!r.flags['story.arrived'])return `<section class="stage">${mediaHTML('location/town/default')}<div class="stage-title"><span class="eyebrow">${esc(tr('ui.town.eyebrow','По ту сторону люка'))}</span><h1>${esc(tr('ui.arrival.title','Следуйте за сусликом'))}</h1></div></section><section class="dialogue"><p>${esc(tr('ui.arrival.body','Обычный день. Белый суслик. Люк, который кто-то забыл закрыть.'))}</p><button data-action="arrival" class="primary" ${locked||busy?'disabled':''}>${esc(tr('ui.arrival.button','Пойти за ним'))}</button></section>`;
  if(r.flow.activity){
