@@ -46,7 +46,7 @@ A worker branch without an active PR is draft/in-progress and does not close a t
 - Do not use a stale worker branch as an integration source after `main` moves.
 - Rebase/recreate or selectively copy only the reviewed slice **before QA handoff**.
 - Open a PR for a code/media deliverable.
-- Report exact branch, commit SHA, PR number, changed files and checks.
+- Record exact branch, commit SHA, PR number, changed files and checks in Git/PR/handoff.
 - Never claim CI passed unless verified on the exact head.
 - Do not merge your own stale queue branch wholesale.
 
@@ -79,10 +79,10 @@ Presentation work must preserve existing semantic/gameplay identity.
 
 ## Completion rule
 
-`branch exists != done`
+A branch alone is not delivery. Candidate and merged states remain defined by Git/QA.
 
-`branch + open PR + exact head + review/checks = candidate deliverable`
+After each completed assigned task, write only `Задание выполнено` in the personal chat, then immediately re-read the current pointer/queue and continue the next assigned unblocked task.
 
-`merged main = delivered`
+If no further assigned unblocked tasks exist, write only `Задания выполнены`.
 
-After the current queue is complete, stop and wait for the Lead. Do not self-assign a new queue.
+All technical details, blockers, SHAs, checks and handoffs stay in Git unless Leader explicitly asks for them.
