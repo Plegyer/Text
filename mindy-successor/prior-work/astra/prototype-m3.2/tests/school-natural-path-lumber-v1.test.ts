@@ -1,9 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
 import {applyEffects,dispatch,freshSave,resolveReactions} from '../src/core/engine.ts';
 import type {Catalog,Save} from '../src/core/schema.ts';
 import {catalog as shippedCatalog} from './helpers.ts';
-import handoff from '../content/school-to-career-handoff-v1.fixture.json' with {type:'json'};
+
+const handoff=JSON.parse(
+  readFileSync('content/school-to-career-handoff-v1.fixture.json','utf8')
+);
 
 function catalog():Catalog{
   return shippedCatalog;
