@@ -1,25 +1,24 @@
-# Current Chat 5 task pointer
+# CURRENT CHAT5 TASK POINTER
 
 Status: ASSIGNED
 Owner: Chat 5 / School + Text Localization Content Worker
 
 Mandatory startup:
-- `CHAT5_MANDATORY_ROLE_PROMPT.md`
 - `WORKER_CHAT_RECREATION_PROTOCOL_v1.md`
 - `ACTIVE_TEAM_OWNERSHIP_MATRIX.md`
 - `CANDIDATE_QA_FREEZE_PROTOCOL.md`
-- `TASK_CHAT5_SCHOOL_QUEUE_v2.md`
+- `TASK_CHAT5_SCHOOL_QUEUE_v3.md`
 
 Current queue:
-- C5-01 through C5-12.
+- C5-13 through C5-24.
 
 Primary goal:
-- prepare School milestone content/handoffs that remain a standalone School line and can feed Lumber/career conditions through existing systems.
+- repair PR #85, then deepen the existing School catalog.
 
-Do not restart merged PR #66 or delivered residual localization queue 193–204.
+Do not restart completed earlier queue items.
 
-Do not create a new course/curriculum, career state, Save field or NightFlow rule merely to close a content gap. Report the exact missing decision instead.
+Keep technical evidence in Git only. Personal chat output:
+- `Задание выполнено`
+- `Задания выполнены`
 
-Keep detailed evidence/blockers in Git. In personal chat use only the completion messages defined by `WORKER_CHAT_RECREATION_PROTOCOL_v1.md`.
-
-Do not self-assign beyond C5-12.
+Do not self-assign beyond this queue.
