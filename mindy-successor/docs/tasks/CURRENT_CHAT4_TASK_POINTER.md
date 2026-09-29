@@ -8,22 +8,21 @@ Mandatory startup:
 - `WORKER_CHAT_RECREATION_PROTOCOL_v1.md`
 - `ACTIVE_TEAM_OWNERSHIP_MATRIX.md`
 - `CANDIDATE_QA_FREEZE_PROTOCOL.md`
-- `TASK_CHAT4_QA_QUEUE_v3.md`
+- `TASK_CHAT4_QA_QUEUE_v4.md`
 
 Current queue:
-- C4-13 through C4-24.
-
-Primary goal:
-- re-gate the current open candidates against current main and QA the next integrated Lumber candidate.
+- C4-25 through C4-36.
 
 Immediate work available now:
-- C4-13 through C4-19;
-- C4-20 when Chat 2 declares the current presentation candidate ready/frozen (active working PR is #79).
+- C4-25;
+- C4-30;
+- C4-32;
+- C4-33.
 
-C4-21 through C4-24 become active as the corresponding worker candidates appear.
+Then continue other queue items as their candidate heads become ready.
 
-Do not implement duplicate production content or silently repair another worker's scope.
+Do not implement production fixes.
 
-Record PASS/BLOCK/PASS-WITH-NOTES and exact PR/head/check evidence in Git. In personal chat use only the completion messages defined by `WORKER_CHAT_RECREATION_PROTOCOL_v1.md`.
+Keep exact PASS/BLOCK evidence in Git only. Personal chat uses only the compact completion messages from `WORKER_CHAT_RECREATION_PROTOCOL_v1.md`.
 
-Do not self-assign beyond C4-24.
+Do not self-assign beyond C4-36.
