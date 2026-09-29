@@ -17,7 +17,8 @@ Primary goal:
 - re-gate the current open candidates against current main and QA the next integrated Lumber candidate.
 
 Immediate work available now:
-- C4-13 through C4-20.
+- C4-13 through C4-19;
+- C4-20 when Chat 2 declares the current presentation candidate ready/frozen (active working PR is #79).
 
 C4-21 through C4-24 become active as the corresponding worker candidates appear.
 
