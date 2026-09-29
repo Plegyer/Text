@@ -1,7 +1,7 @@
 import {mountEditor} from './editor.ts';
 import {applyPresentation,emptyPresentation,resolvePresentation,presentationIdForActionResult,presentationIdForActivityRoute,presentationIdForEvent,presentationIdForEnding,type Presentation} from '../core/presentation.ts';
 import {loadCatalog} from '../core/content.ts';
-import {freshSave,dispatch,parseSave,eligible,calendar,actionCost,meets,energyMax,rent,favorStat,availableActivityActions,type Command} from '../core/engine.ts';
+import {freshSave,dispatch,parseSave,eligible,calendar,actionCost,actionAvailable,meets,energyMax,rent,favorStat,availableActivityActions,type Command} from '../core/engine.ts';
 import {stats,type Save,type Catalog,type Condition,type Action} from '../core/schema.ts';
 import {SCHOOL_COURSES,type SchoolCourse} from '../core/school.ts';
 import {labels,hints} from './labels.ts';
@@ -19,6 +19,11 @@ const tr=(key:string,fallback='')=>resolveLocalizedText(localization,key,locale,
 const activityLabel=(id:string,fallback:string)=>tr(`activity.${id}.label`,fallback);
 const activityOptionLabel=(id:string,fallback:string)=>tr(`activityOption.${id}.label`,fallback);
 const activityOptionHelp=(id:string)=>tr(`activityOption.${id}.help`,'');
+const forestActivityContext=(activityId:string,routeId:string|null)=>{
+ if(activityId!=='lumber.forest')return '';
+ const suffix=routeId==='logging-road'?'logging-road':routeId==='old-boundary'?'old-boundary':'default';
+ return tr(`presentation.activity.forest.entry.${suffix}.text`,'');
+};
 const eventTitle=(id:string,fallback:string)=>tr(`event.${id}.title`,fallback);
 const eventVariantText=(eventId:string,variantId:string,fallback:string)=>tr(`event.${eventId}.variant.${variantId}.text`,fallback);
 const pendingEventVariantText=(eventId:string,variantId:string,fallback:string)=>{
@@ -136,7 +141,7 @@ async function perform(cmd:Command){
  }catch(e){message=e instanceof Error?e.message:String(e);error=true;}
  busy=false;render();
 }
-function disabled(a:Action){return busy||locked||state.run.status!=='active'||!state.run.creation.complete||!!state.run.pending||!!state.run.flow.night||!!state.run.flow.activity||!eligible(a.conditions,state,catalog)||state.run.metrics.money<actionCost(a,state)||state.run.metrics.energy<a.cost.energy;}
+function disabled(a:Action){return busy||locked||state.run.status!=='active'||!state.run.creation.complete||!!state.run.pending||!!state.run.flow.night||!!state.run.flow.activity||!actionAvailable(a,state,catalog)||state.run.metrics.money<actionCost(a,state)||state.run.metrics.energy<a.cost.energy;}
 function actionList(ids:string[]){return `<div class="activity-list">${ids.map(id=>catalog.definitions.actions.find(a=>a.id===id)).filter((a):a is Action=>!!a).map(a=>{
  const miss=a.conditions.filter(c=>!meets(c,state,catalog));
  const statsEffects=[...a.effects,...(a.seasonal?.[calendar(state.run.day).season]??[])].filter(e=>e.kind==='metric'&&(stats as readonly string[]).includes(e.key));
@@ -205,7 +210,8 @@ function central(){
   const actions=availableActivityActions(state,catalog);
   const activityPresentationId=presentationIdForActivityRoute(catalog,activity.activityId,activity.internalState.routeId);
   const checkpointLabel=activity.checkpoint.startsWith('forest.route.')?activityOptionLabel(activity.checkpoint,activity.checkpoint):activity.checkpoint;
-  return `<section class="stage scene">${mediaHTML(activityPresentationId)}<div class="stage-title"><span class="eyebrow">${esc(tr('ui.activity.eyebrow','Вылазка'))}</span><h1>${esc(activityLabel(activity.activityId,definition?.label??activity.activityId))}</h1></div></section><section class="dialogue"><p>${esc(tr('ui.activity.progressLabel','Прогресс'))}: ${activity.internalState.progress} · ${esc(tr('stat.endurance.label','Выносливость'))}: ${activity.internalState.endurance} · ${esc(tr('ui.activity.checkpointLabel','Контрольная точка'))}: ${esc(checkpointLabel)}${activity.internalState.routeId?` · ${esc(tr('ui.activity.routeLabel','Маршрут'))}: ${esc(activityOptionLabel(`forest.route.${activity.internalState.routeId}`,activity.internalState.routeId))}`:''}</p><div class="choices">${actions.map((action,index)=>{const help=activityOptionHelp(action.id);return `<div class="choice-with-help"><button data-activity-action="${esc(action.id)}" class="${index===0?'primary':''}" ${busy||locked?'disabled':''} title="${esc(help)}">${esc(activityOptionLabel(action.id,action.label))}</button>${help?`<small>${esc(help)}</small>`:''}</div>`;}).join('')}</div></section>`;
+  const context=forestActivityContext(activity.activityId,activity.internalState.routeId);
+  return `<section class="stage scene">${mediaHTML(activityPresentationId)}<div class="stage-title"><span class="eyebrow">${esc(tr('ui.activity.eyebrow','Вылазка'))}</span><h1>${esc(activityLabel(activity.activityId,definition?.label??activity.activityId))}</h1></div></section><section class="dialogue">${context?`<p class="activity-context">${esc(context)}</p>`:''}<p>${esc(tr('ui.activity.progressLabel','Прогресс'))}: ${activity.internalState.progress} · ${esc(tr('stat.endurance.label','Выносливость'))}: ${activity.internalState.endurance} · ${esc(tr('ui.activity.checkpointLabel','Контрольная точка'))}: ${esc(checkpointLabel)}${activity.internalState.routeId?` · ${esc(tr('ui.activity.routeLabel','Маршрут'))}: ${esc(activityOptionLabel(`forest.route.${activity.internalState.routeId}`,activity.internalState.routeId))}`:''}</p><div class="choices">${actions.map((action,index)=>{const help=activityOptionHelp(action.id);return `<div class="choice-with-help"><button data-activity-action="${esc(action.id)}" class="${index===0?'primary':''}" ${busy||locked?'disabled':''} title="${esc(help)}">${esc(activityOptionLabel(action.id,action.label))}</button>${help?`<small>${esc(help)}</small>`:''}</div>`;}).join('')}</div></section>`;
  }
  if(r.flow.night){
   const night=r.flow.night;
