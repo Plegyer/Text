@@ -444,5 +444,21 @@
     "resultSlots": 7,
     "animationSources": 0,
     "documentedMissingOutOfScope": 3
+  },
+  "validation": {
+    "test": "tests/late-career-presentation-replacement-validator.test.ts",
+    "requireUniqueSemanticIds": true,
+    "requireExistingRegistrySlot": true,
+    "requireExactStaticBinding": true,
+    "requireSourceAssetExistence": true,
+    "requireFallbackChain": true,
+    "requireEditorReplacementWithoutGameplayMutation": true,
+    "requireSaveIdentityPreserved": true
+  },
+  "replaceability": {
+    "mechanism": "presentation-v1-slot-override",
+    "semanticPresentationIdPreserved": true,
+    "gameplayIdentityPreserved": true,
+    "saveIdentityPreserved": true
   }
 }
