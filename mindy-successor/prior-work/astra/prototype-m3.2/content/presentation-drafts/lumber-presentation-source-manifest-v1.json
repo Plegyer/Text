@@ -41,6 +41,16 @@
       "animationSource": null,
       "fallbackRequired": true,
       "gameplayIdentity": "lumber.shift"
+    },
+    {
+      "presentationId": "job/lumber/event/lumber-career-first-shift/default",
+      "role": "career-milestone",
+      "sourceAsset": "assets/presentation/career-lumber-result.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "gameplayIdentity": "lumber.career-first-shift",
+      "reusedProjectAsset": true
     }
   ],
   "invariants": {

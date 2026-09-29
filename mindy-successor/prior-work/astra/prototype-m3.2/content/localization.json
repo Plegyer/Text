@@ -3009,6 +3009,14 @@
     "relationship.lumber.foreman.choice.route.value.professional.label": {
       "ru": "Профессиональный путь",
       "en": "Professional route"
+    },
+    "presentation.static.lumber-career-first-shift.alt": {
+      "ru": "Рабочая сцена лесоруба после первой подтверждённой смены; визуал отмечает карьерный рубеж без изображения числового порога.",
+      "en": "A lumber work scene after the first completed shift; the visual marks a career milestone without depicting a numeric threshold."
+    },
+    "presentation.static.lumber-career-first-shift.caption": {
+      "ru": "Первая завершённая смена отмечена как карьерный рубеж.",
+      "en": "The first completed shift is acknowledged as a career milestone."
     }
   }
 }

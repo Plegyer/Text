@@ -667,6 +667,14 @@
         "alt": "Старая межевая линия с замшелыми камнями и выветренными метками.",
         "altKey": "presentation.activity.forest.route.old-boundary.alt"
       }
+    },
+    "job/lumber/event/lumber-career-first-shift/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-lumber-result.svg",
+        "alt": "Рабочая сцена лесоруба после первой подтверждённой смены; визуал отмечает карьерный рубеж без изображения числового порога.",
+        "altKey": "presentation.static.lumber-career-first-shift.alt"
+      }
     }
   }
 }
