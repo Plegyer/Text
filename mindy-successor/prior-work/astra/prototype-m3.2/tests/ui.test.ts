@@ -394,18 +394,18 @@ test('renderer: ordinary poverty pending scene localizes RU EN without changing 
   assert.match(w.document.querySelector('.stage-title h1').textContent,/Небольшое платное поручение/);
   const before=w.localStorage.getItem('portal-life.v1');
   const beforeSave=JSON.parse(before);
-  assert.match(w.document.querySelector('.dialogue p').textContent,/соседнего прилавка/);
+  assert.match(w.document.querySelector('.dialogue p').textContent,/Под навесом торговец/);
   assert.match(w.document.querySelector('[data-choice="take-errand"]').textContent,/Взяться/);
-  assert.match(w.document.querySelector('.media-window img').getAttribute('alt'),/Летняя уличная сцена небольшой помощи/);
+  assert.match(w.document.querySelector('.media-window img').getAttribute('alt'),/Летняя городская улица на закате/);
 
   w.document.querySelector('[data-panel="menu"]').click();
   w.document.querySelector('#language-toggle').click();
   await wait(()=>w.document.documentElement.lang==='en');
   assert.equal(w.localStorage.getItem('portal-life.v1'),before);
   assert.match(w.document.querySelector('.stage-title h1').textContent,/A small paid errand/);
-  assert.match(w.document.querySelector('.dialogue p').textContent,/nearby stall/);
+  assert.match(w.document.querySelector('.dialogue p').textContent,/Under the awning, a merchant/);
   assert.match(w.document.querySelector('[data-choice="take-errand"]').textContent,/Take/);
-  assert.match(w.document.querySelector('.media-window img').getAttribute('alt'),/A summer street scene of small help/);
+  assert.match(w.document.querySelector('.media-window img').getAttribute('alt'),/A summer city street at sunset/);
 
   const after=JSON.parse(w.localStorage.getItem('portal-life.v1'));
   assert.equal(after.run.flow.pendingScene.eventId,beforeSave.run.flow.pendingScene.eventId);
