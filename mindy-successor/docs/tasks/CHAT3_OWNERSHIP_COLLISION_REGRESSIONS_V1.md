@@ -1,6 +1,6 @@
-# Chat 3 Ownership / Collision Regressions v1
+# Chat 3 Ownership / Collision Regressions v2
 
-Status: C3-11 focused regression handoff.
+Status: C3-11 focused regression handoff, refreshed after PR #82 CI exposed shallow-checkout incompatibility.
 Owner: Chat 3 / Forest + Poverty Content Bundles Worker.
 Exact comparison base: `ef16d9fa0c85e3792e3dc223baadd247df95ec7f`.
 
@@ -10,154 +10,46 @@ Executable regression:
 Regression manifest:
 `prior-work/astra/prototype-m3.2/content/chat3-content-ownership-collision-v1.fixture.json`.
 
-## Purpose
+## CI-compatible design
 
-The C3-03…C3-10 worker slice is content-side only.
+GitHub Actions checks out the pull-request merge ref with depth 1, so the worker regression must not require the base commit object to exist locally.
 
-This regression proves the candidate stays inside that ownership boundary and does not silently modify:
-- School;
-- Chat 2 media-source ownership;
-- Save schema/persistence;
-- gameplay RNG/shared engine behavior;
-- Lumber Foreman canon;
-- shared runtime/UI architecture.
+The regression is therefore self-contained:
+- exact baseline Git blob SHAs protect all `src/` files, School-owned content, `definitions.json`, `presentation.json`, and protected Lumber Night/Foreman packs;
+- all `assets/presentation/` files are protected by count + aggregate path/blob fingerprint;
+- localization is protected by an exact expected-value map for the 15 permitted Forest keys plus a fingerprint of every unaffected localization entry;
+- the Forest result pack is protected by a mechanics fingerprint after removing only `title`, `text`, and `label`.
 
-## Exact-base diff guard
+This proves the candidate does not modify School, Chat 2 media sources, Save/RNG/shared runtime, Foreman canon, or Forest result mechanics without depending on Git history.
 
-The test runs:
+## Allowed content deltas
 
-`git diff --name-only <baseMain>...HEAD`
+Localization:
+- 4 additive `event.lumber-cross.activity-forest-return.*` keys;
+- 11 changed `event.forest-result-content-v1.*` player-facing text keys;
+- all other localization entries must match the exact-base fingerprint.
 
-against the exact base recorded in the fixture.
+Forest result pack:
+- only `title/text/label` may differ;
+- exact event IDs, ActivityResult IDs, variants, choices, conditions and effects remain mechanically identical.
 
-Every changed path must be present in the manifest allowlist.
+## Existing UI content regression
 
-Protected prefixes include:
-- `prototype-m3.2/src/`;
-- `prototype-m3.2/assets/`;
-- School content/test path prefixes.
+Because C3-05 intentionally refreshes the success copy, the existing renderer content assertion in `tests/ui.test.ts` is updated to the new RU/EN title/body/choice strings.
 
-Protected exact paths include:
-- `content/definitions.json`;
-- `content/presentation.json`;
-- Lumber Night/Foreman integration packs.
+That test continues to prove:
+- same pending scene identity;
+- same locale-switch save;
+- same media alt/presentation behavior.
 
-Therefore a candidate that changes shared runtime, UI, Save/RNG source, presentation/media source, School-owned content, or protected Foreman integration fails the regression.
+No UI implementation is changed.
 
-## Production modification allowlist
+## Candidate-diff evidence
 
-Only two pre-existing production files are allowed to differ from the exact base:
+Changed-path scope remains checked in GitHub PR compare/review rather than by the executable test. This is deliberate: a shallow PR checkout does not reliably contain the base commit needed for `git diff <base>...HEAD`.
 
-1. `content/localization.json`
-2. `content/packs/forest-result-content-bilingual-v2.json`
-
-All other C3 artifacts are new content fixtures, tests, or handoff documents.
-
-## Localization collision guard
-
-The exact allowed additive localization keys are only:
-- `event.lumber-cross.activity-forest-return.title`;
-- `event.lumber-cross.activity-forest-return.variant.default.text`;
-- `event.lumber-cross.activity-forest-return.choice.continue.label`;
-- `event.lumber-cross.activity-forest-return.choice.continue.text`.
-
-The exact allowed changed localization keys are the eleven C3-05 Forest result text keys:
-- success title/body/return label/return text;
-- escape title/body/return label/return text;
-- failure title/body/return text.
-
-`event.forest-result-content-v1.failure.choice.return.label` remains unchanged and therefore is not in the delta allowlist.
-
-No localization removal is allowed.
-
-Forbidden localization ownership prefixes include School and Foreman namespaces.
-
-This catches accidental mutation of:
-- School localization;
-- School presentation localization;
-- `relationship.lumber.foreman.*` canon.
-
-## Forest mechanics non-overlap guard
-
-The Forest result pack is compared to exact-base main after recursively removing only:
-- `title`;
-- `text`;
-- `label`.
-
-The remaining structure must be identical.
-
-The regression additionally requires:
-- event IDs remain `forest-result-content-v1.success|escape|failure`;
-- result IDs remain `lumber.forest.success|escape|failure`;
-- one `default` variant each;
-- one `return` choice each;
-- no event conditions;
-- empty choice effects.
-
-Therefore C3-05 copy cannot change Activity result mechanics.
-
-## Chat 2 media ownership guard
-
-The candidate allowlist excludes:
-- `assets/`;
-- `content/presentation.json`.
-
-The existing media arrays in the Forest result pack are protected indirectly by the mechanics-equivalence comparison because `media` is not a permitted presentation-copy field.
-
-C3 fixtures may reference existing presentation IDs for handoff, but they do not own or replace media files/slots.
-
-## Save / RNG / shared runtime guard
-
-The candidate diff must contain no path under:
-`prototype-m3.2/src/`.
-
-This protects:
-- `core/schema.ts`;
-- `core/persistence.ts`;
-- `core/engine.ts`;
-- `core/presentation.ts`;
-- `ui/app.ts`;
-- shared runtime architecture generally.
-
-No C3 regression claims that content fixtures themselves provide runtime capability.
-
-## School ownership guard
-
-No School production path is allowed in the candidate diff.
-
-The localization exact-delta guard also rejects School-owned localization changes.
-
-C3 documents may describe School as an external boundary, but no School content/state is mutated.
-
-## Foreman canon guard
-
-The candidate does not modify:
-- `content/definitions.json`;
-- Lumber Night/Foreman packs;
-- Foreman relationship localization.
-
-Forest-to-Lumber C3 content consumes the already-existing success continuation; it does not alter `lumber.foreman` relationship stages/transitions/canon.
-
-## Current execution status
-
-C3-11 adds the executable test and exact-base manifest.
-
-Before C3-12 candidate freeze, Chat 3 must:
-1. create the candidate from fresh current main;
-2. update `baseMain` only if main advanced;
-3. ensure the candidate handoff path is in the allowlist;
-4. run targeted regression;
-5. run repository full check through exact-head CI.
-
-No QA acceptance is claimed by C3-11.
+C3-12 records the exact GitHub changed-file inventory and QA owns final scope acceptance.
 
 ## C3-11 disposition
 
-Regression source is ready.
-
-It is deliberately ownership-focused, not gameplay QA:
-- it proves what Chat 3 did not change;
-- it proves Forest copy remains mechanics-equivalent;
-- it proves localization deltas stay inside exact Forest keys.
-
-QA acceptance remains Chat 4 ownership.
+The regression now runs under the repository's actual pull-request checkout model and remains ownership-focused rather than QA ownership.
