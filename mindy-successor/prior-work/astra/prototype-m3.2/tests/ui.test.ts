@@ -119,20 +119,23 @@ test('renderer: Work panel exposes exactly the ten target ordinary career shifts
 });
 
 
-test('renderer: all ten target careers are available at start and Lumber shift pays through UI',async()=>{
+test('renderer: only the starter trio is executable at start and Lumber shift pays through UI',async()=>{
  const initial=started();
  const beforeMoney=initial.run.resources.money;
  const {w,dom,errors}=boot(JSON.stringify(initial));try{
   await wait(()=>!!w.document.querySelector('[data-panel="work"]'));
   w.document.querySelector('[data-panel="work"]').click();
-  const ids=[
-   'lumber.shift','satyr-maid.shift','undead-farm.shift','tavern.shift','hunter.shift',
-   'guard.shift','merchant.shift','artist-geisha.shift','assassin.shift','prostitute.shift'
-  ];
-  for(const id of ids){
+  const starter=['lumber.shift','satyr-maid.shift','undead-farm.shift'];
+  const later=['tavern.shift','hunter.shift','guard.shift','merchant.shift','artist-geisha.shift','assassin.shift','prostitute.shift'];
+  for(const id of starter){
    const button=w.document.querySelector('[data-action="'+id+'"]');
    assert.ok(button,id);
    assert.equal(button.disabled,false,id+' should be available at start');
+  }
+  for(const id of later){
+   const button=w.document.querySelector('[data-action="'+id+'"]');
+   assert.ok(button,id);
+   assert.equal(button.disabled,true,id+' should be locked at start');
   }
 
   w.document.querySelector('[data-action="lumber.shift"]').click();
@@ -159,6 +162,7 @@ test('renderer: locale switch changes presentation only and preserves Work gamep
   assert.match(w.document.querySelector('[data-action="lumber.shift"]').closest('article').textContent,/Смена лесоруба/);
   assert.equal(w.document.documentElement.lang,'ru');
   const idsRu=[...w.document.querySelectorAll('[data-action]')].map((node:any)=>node.getAttribute('data-action'));
+  const disabledRu=Object.fromEntries(idsRu.filter(Boolean).map((id:any)=>[id,w.document.querySelector('[data-action="'+id+'"]').disabled]));
 
   w.document.querySelector('#close').click();
   w.document.querySelector('[data-panel="menu"]').click();
@@ -175,7 +179,7 @@ test('renderer: locale switch changes presentation only and preserves Work gamep
   assert.deepEqual(idsEn,idsRu);
   for(const id of idsEn){
     const button=w.document.querySelector('[data-action="'+id+'"]');
-    assert.equal(button.disabled,false,id+' remains available after locale switch');
+    assert.equal(button.disabled,disabledRu[id],id+' availability remains unchanged after locale switch');
   }
   assert.equal(w.localStorage.getItem('portal-life.v1'),before);
 
@@ -245,19 +249,19 @@ test('renderer: Forest result scene localizes RU EN without changing pending gam
   allowedChoiceIds:['return']
  };
  const {w,dom,errors}=boot(JSON.stringify(s));try{
-  await wait(()=>/Лес уступает дорогу/.test(w.document.querySelector('.stage-title h1')?.textContent??''));
+  await wait(()=>/Вернуться с ясным следом/.test(w.document.querySelector('.stage-title h1')?.textContent??''));
   const before=w.localStorage.getItem('portal-life.v1');
-  assert.match(w.document.querySelector('.dialogue p').textContent,/Маршрут наконец/);
-  assert.match(w.document.querySelector('[data-choice="return"]').textContent,/Вернуться из леса/);
+  assert.match(w.document.querySelector('.dialogue p').textContent,/К концу маршрута/);
+  assert.match(w.document.querySelector('[data-choice="return"]').textContent,/Вернуться с результатом/);
   assert.match(w.document.querySelector('.media-window img').getAttribute('alt'),/Отдельная рабочая реакция/);
 
   w.document.querySelector('[data-panel="menu"]').click();
   w.document.querySelector('#language-toggle').click();
   await wait(()=>w.document.documentElement.lang==='en');
   assert.equal(w.localStorage.getItem('portal-life.v1'),before);
-  assert.match(w.document.querySelector('.stage-title h1').textContent,/The Forest gives way/);
-  assert.match(w.document.querySelector('.dialogue p').textContent,/route finally resolves/);
-  assert.match(w.document.querySelector('[data-choice="return"]').textContent,/Return from the Forest/);
+  assert.match(w.document.querySelector('.stage-title h1').textContent,/Return with a clear trail/);
+  assert.match(w.document.querySelector('.dialogue p').textContent,/By the end of the route/);
+  assert.match(w.document.querySelector('[data-choice="return"]').textContent,/Return with the result/);
   assert.match(w.document.querySelector('.media-window img').getAttribute('alt'),/A separate worksite reaction after a successful return from the forest/);
 
   const stored=JSON.parse(w.localStorage.getItem('portal-life.v1'));
@@ -482,18 +486,18 @@ test('renderer: Foreman relationship and voluntary Night scene localize RU EN wi
 });
 
 
-test('renderer: project-owned static fallback keeps asset identity across RU EN locale switch',async()=>{
+test('renderer: project-owned starter-career static fallback keeps asset identity across RU EN locale switch',async()=>{
  const s=started();
  const {w,dom,errors}=boot(JSON.stringify(s));try{
   await wait(()=>!!w.document.querySelector('[data-panel="work"]'));
   w.document.querySelector('[data-panel="work"]').click();
-  w.document.querySelector('[data-action="guard.shift"]').click();
-  await wait(()=>!!w.document.querySelector('.media-window img')&&/career-guard-result\.svg$/.test(w.document.querySelector('.media-window img').getAttribute('src')??''));
+  w.document.querySelector('[data-action="satyr-maid.shift"]').click();
+  await wait(()=>!!w.document.querySelector('.media-window img')&&/career-satyr-maid-result\.svg$/.test(w.document.querySelector('.media-window img').getAttribute('src')??''));
 
   const imgRu=w.document.querySelector('.media-window img');
   const src=imgRu.getAttribute('src');
-  assert.match(src,/assets\/presentation\/career-guard-result\.svg$/);
-  assert.match(imgRu.getAttribute('alt'),/Стражница на городском посту/);
+  assert.match(src,/assets\/presentation\/career-satyr-maid-result\.svg$/);
+  assert.match(imgRu.getAttribute('alt'),/Служанка в таверне/);
   const before=w.localStorage.getItem('portal-life.v1');
 
   w.document.querySelector('[data-panel="menu"]').click();
@@ -504,7 +508,7 @@ test('renderer: project-owned static fallback keeps asset identity across RU EN 
 
   const imgEn=w.document.querySelector('.media-window img');
   assert.equal(imgEn.getAttribute('src'),src);
-  assert.match(imgEn.getAttribute('alt'),/A guard at a city watch post/);
+  assert.match(imgEn.getAttribute('alt'),/A tavern maid/);
   assert.deepEqual(errors,[]);
  }finally{dom.window.close();}
 });
@@ -522,6 +526,7 @@ test('renderer: neutral Forest route static fallback preserves save across RU EN
   const imgRu=w.document.querySelector('.media-window img');
   assert.match(imgRu.getAttribute('src'),/assets\/presentation\/forest-route-default-v1\.svg$/);
   assert.match(imgRu.getAttribute('alt'),/нейтральной лесной тропе/);
+  assert.match(w.document.querySelector('.activity-context')?.textContent??'',/За кромкой леса городской шум/);
   const before=w.localStorage.getItem('portal-life.v1');
   const activityBefore=JSON.parse(before).run.flow.activity;
   assert.equal(activityBefore.activityId,'lumber.forest');
@@ -536,6 +541,7 @@ test('renderer: neutral Forest route static fallback preserves save across RU EN
   const imgEn=w.document.querySelector('.media-window img');
   assert.equal(imgEn.getAttribute('src'),imgRu.getAttribute('src'));
   assert.match(imgEn.getAttribute('alt'),/neutral forest trail/);
+  assert.match(w.document.querySelector('.activity-context')?.textContent??'',/Beyond the forest edge, the town noise fades/);
   const after=JSON.parse(w.localStorage.getItem('portal-life.v1'));
   assert.deepEqual(after.run.flow.activity,activityBefore);
   assert.deepEqual(errors,[]);
