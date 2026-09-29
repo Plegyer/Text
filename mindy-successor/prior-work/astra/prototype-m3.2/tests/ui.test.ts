@@ -249,19 +249,19 @@ test('renderer: Forest result scene localizes RU EN without changing pending gam
   allowedChoiceIds:['return']
  };
  const {w,dom,errors}=boot(JSON.stringify(s));try{
-  await wait(()=>/Лес уступает дорогу/.test(w.document.querySelector('.stage-title h1')?.textContent??''));
+  await wait(()=>/Вернуться с ясным следом/.test(w.document.querySelector('.stage-title h1')?.textContent??''));
   const before=w.localStorage.getItem('portal-life.v1');
-  assert.match(w.document.querySelector('.dialogue p').textContent,/Маршрут наконец/);
-  assert.match(w.document.querySelector('[data-choice="return"]').textContent,/Вернуться из леса/);
+  assert.match(w.document.querySelector('.dialogue p').textContent,/К концу маршрута/);
+  assert.match(w.document.querySelector('[data-choice="return"]').textContent,/Вернуться с результатом/);
   assert.match(w.document.querySelector('.media-window img').getAttribute('alt'),/Отдельная рабочая реакция/);
 
   w.document.querySelector('[data-panel="menu"]').click();
   w.document.querySelector('#language-toggle').click();
   await wait(()=>w.document.documentElement.lang==='en');
   assert.equal(w.localStorage.getItem('portal-life.v1'),before);
-  assert.match(w.document.querySelector('.stage-title h1').textContent,/The Forest gives way/);
-  assert.match(w.document.querySelector('.dialogue p').textContent,/route finally resolves/);
-  assert.match(w.document.querySelector('[data-choice="return"]').textContent,/Return from the Forest/);
+  assert.match(w.document.querySelector('.stage-title h1').textContent,/Return with a clear trail/);
+  assert.match(w.document.querySelector('.dialogue p').textContent,/By the end of the route/);
+  assert.match(w.document.querySelector('[data-choice="return"]').textContent,/Return with the result/);
   assert.match(w.document.querySelector('.media-window img').getAttribute('alt'),/A separate worksite reaction after a successful return from the forest/);
 
   const stored=JSON.parse(w.localStorage.getItem('portal-life.v1'));
@@ -526,6 +526,7 @@ test('renderer: neutral Forest route static fallback preserves save across RU EN
   const imgRu=w.document.querySelector('.media-window img');
   assert.match(imgRu.getAttribute('src'),/assets\/presentation\/forest-route-default-v1\.svg$/);
   assert.match(imgRu.getAttribute('alt'),/нейтральной лесной тропе/);
+  assert.match(w.document.querySelector('.activity-context')?.textContent??'',/За кромкой леса городской шум/);
   const before=w.localStorage.getItem('portal-life.v1');
   const activityBefore=JSON.parse(before).run.flow.activity;
   assert.equal(activityBefore.activityId,'lumber.forest');
@@ -540,6 +541,7 @@ test('renderer: neutral Forest route static fallback preserves save across RU EN
   const imgEn=w.document.querySelector('.media-window img');
   assert.equal(imgEn.getAttribute('src'),imgRu.getAttribute('src'));
   assert.match(imgEn.getAttribute('alt'),/neutral forest trail/);
+  assert.match(w.document.querySelector('.activity-context')?.textContent??'',/Beyond the forest edge, the town noise fades/);
   const after=JSON.parse(w.localStorage.getItem('portal-life.v1'));
   assert.deepEqual(after.run.flow.activity,activityBefore);
   assert.deepEqual(errors,[]);
