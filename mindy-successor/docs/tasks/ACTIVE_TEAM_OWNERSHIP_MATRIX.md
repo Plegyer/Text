@@ -33,8 +33,8 @@ Target queue depth:
 ## Worker 1 — Chat 1 Developer / Integration Developer
 
 Queue:
-- `TASK_CHAT1_DEVELOPER_QUEUE_v2.md`
-- C1D-01 through C1D-12.
+- `TASK_CHAT1_DEVELOPER_QUEUE_v3.md`
+- C1D-13 through C1D-24.
 
 Owns:
 - selective integration of approved worker handoffs;
@@ -79,8 +79,8 @@ Must not own shared runtime/UI integration, Chat 2 media production, Chat 5 Scho
 ## Worker 4 — Chat 4 / QA + Product Acceptance Gate
 
 Queue:
-- `TASK_CHAT4_QA_QUEUE_v2.md`
-- C4-01 through C4-12.
+- `TASK_CHAT4_QA_QUEUE_v3.md`
+- C4-13 through C4-24.
 
 Owns exact-head PR/CI verification, scope/collision review, runtime/catalog gates, cross-system acceptance and final Lumber product-acceptance gate.
 
