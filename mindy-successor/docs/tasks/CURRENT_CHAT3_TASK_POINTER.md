@@ -1,30 +1,28 @@
 # Current Chat 3 task pointer
 
 Status: ASSIGNED
-Owner: Chat 3 / Content Systems Worker
+Owner: Chat 3 / Forest + Poverty Content Bundles Worker
 
-Priority:
-Finish existing Forest/Poverty content bundles and prepare content needed for expedition challenge integration.
+Mandatory startup:
+- `CHAT3_MANDATORY_ROLE_PROMPT.md`
+- `WORKER_CHAT_RECREATION_PROTOCOL_v1.md`
+- `ACTIVE_TEAM_OWNERSHIP_MATRIX.md`
+- `CANDIDATE_QA_FREEZE_PROTOCOL.md`
+- `TASK_CHAT3_CONTENT_QUEUE_v2.md`
 
-Use existing systems only:
-- events;
-- conditions/effects;
-- localization/content bundles.
+Current queue:
+- C3-01 through C3-12.
 
-Do not create runtime state layers.
+Resume, do not restart:
+- open PR #67 / branch `chat3/ordinary-poverty-depth-refresh-341-352`.
 
-Allowed outputs:
-- content definitions;
-- fixtures;
-- localization bundles;
-- focused tests.
+Primary goals:
+- preserve and revalidate the ordinary-poverty candidate;
+- prepare Forest/Expedition content hooks for Lumber;
+- keep Secret Debt boundaries separate from ordinary poverty.
 
-Required result:
-Provide complete expedition challenge content hooks that can consume existing event systems.
+Chat 3 owns content/fixtures/handoffs only. Shared runtime/UI integration belongs to Chat 1 Developer/Lead.
 
-Preserve:
-- Save identity;
-- RNG rules;
-- existing gameplay contracts.
+Report to Lead after every completed queue item and on every blocker using `WORKER_CHAT_RECREATION_PROTOCOL_v1.md`.
 
-Report exact branch, SHA, files and checks.
+Do not self-assign beyond C3-12.
