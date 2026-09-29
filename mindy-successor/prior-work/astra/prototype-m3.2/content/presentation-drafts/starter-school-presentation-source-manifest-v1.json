@@ -125,6 +125,50 @@
       "fallbackRequired": true,
       "altKey": "presentation.static.career.undead-farm.result.alt",
       "captionKey": "presentation.static.career.undead-farm.result.caption"
+    },
+    {
+      "presentationId": "job/lumber/shift/spring/default",
+      "domain": "lumber",
+      "role": "seasonal-shift",
+      "sourceAsset": "assets/presentation/career-lumber-shift-spring.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "altKey": "presentation.static.career.lumber.shift.spring.alt",
+      "captionKey": "presentation.static.career.lumber.shift.spring.caption"
+    },
+    {
+      "presentationId": "job/lumber/shift/summer/default",
+      "domain": "lumber",
+      "role": "seasonal-shift",
+      "sourceAsset": "assets/presentation/career-lumber-shift-summer.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "altKey": "presentation.static.career.lumber.shift.summer.alt",
+      "captionKey": "presentation.static.career.lumber.shift.summer.caption"
+    },
+    {
+      "presentationId": "job/lumber/shift/autumn/default",
+      "domain": "lumber",
+      "role": "seasonal-shift",
+      "sourceAsset": "assets/presentation/career-lumber-shift-autumn.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "altKey": "presentation.static.career.lumber.shift.autumn.alt",
+      "captionKey": "presentation.static.career.lumber.shift.autumn.caption"
+    },
+    {
+      "presentationId": "job/lumber/shift/winter/default",
+      "domain": "lumber",
+      "role": "seasonal-shift",
+      "sourceAsset": "assets/presentation/career-lumber-shift-winter.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "altKey": "presentation.static.career.lumber.shift.winter.alt",
+      "captionKey": "presentation.static.career.lumber.shift.winter.caption"
     }
   ],
   "mediaSurfaces": [],
@@ -134,5 +178,19 @@
     "staticFallbackRequired": true,
     "noGameplayFieldsChanged": true,
     "noSaveOrRngMutation": true
+  },
+  "accessibility": {
+    "starterCareerDomains": [
+      "lumber",
+      "satyr-maid",
+      "undead-farm"
+    ],
+    "localeParity": [
+      "ru",
+      "en"
+    ],
+    "altRequiredForSelectedStarterCareerSlots": true,
+    "captionRequiredForSelectedStarterCareerSlots": true,
+    "safeStaticRequired": true
   }
 }
