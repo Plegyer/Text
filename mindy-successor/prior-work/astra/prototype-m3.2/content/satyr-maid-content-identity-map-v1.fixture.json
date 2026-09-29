@@ -17,18 +17,22 @@
           "new-maid"
         ],
         "to": "known-face",
-        "condition": {
-          "kind": "careerCounter",
-          "career": "satyr-maid",
-          "counter": "completed_shifts",
-          "op": "gte",
-          "value": 1
-        },
-        "effect": {
-          "kind": "addCareerFact",
-          "career": "satyr-maid",
-          "fact": "first-shift-complete"
-        }
+        "conditions": [
+          {
+            "kind": "careerCounter",
+            "career": "satyr-maid",
+            "counter": "completed_shifts",
+            "op": "gte",
+            "value": 1
+          }
+        ],
+        "effects": [
+          {
+            "kind": "addCareerFact",
+            "career": "satyr-maid",
+            "fact": "first-shift-complete"
+          }
+        ]
       }
     ]
   },
