@@ -303,5 +303,13 @@
     "semanticPresentationIdPreserved": true,
     "gameplayIdentityPreserved": true,
     "replacementValidatedBeforeSave": true
+  },
+  "validation": {
+    "test": "tests/lumber-presentation-source-manifest-v1.test.ts",
+    "expectedSelectedSlots": 22,
+    "requireExactPresentationStaticBinding": true,
+    "requireBuiltAssetCopy": true,
+    "requireBilingualAccessibility": true,
+    "requireAnimationIndependentStaticResolution": true
   }
 }
