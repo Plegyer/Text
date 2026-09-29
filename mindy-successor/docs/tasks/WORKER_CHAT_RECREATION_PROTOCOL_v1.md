@@ -6,7 +6,7 @@ Repository: `Plegyer/Text`
 
 ## Purpose
 
-Five worker chats are disposable execution surfaces. Git is the durable coordination memory.
+Five worker chats are execution surfaces. Git is the durable coordination memory and the only detailed reporting channel.
 
 The active workers are:
 1. Chat 1 Developer / Integration Developer.
@@ -36,32 +36,48 @@ Each active worker receives up to 12 useful outstanding tasks when practical.
 
 A 12-deep queue is not permission to invent filler work. Tasks with unmet dependencies remain queued but blocked; the worker proceeds to another independent allowed item if one exists.
 
-The worker must not self-assign task 13 or broaden scope. Lead replenishes the queue.
+The worker must not self-assign task 13 or broaden scope. Lead replenishes the queue in Git.
 
 ## Role isolation
 
 One active owner per file/slice. A worker must not edit another worker's owned system merely to unblock itself.
 
 If a task requires another role:
-- record the exact dependency;
-- continue another independent task;
-- report the blocker to Lead.
+- record the exact dependency in Git;
+- continue another independent assigned task;
+- do not produce a long chat explanation.
 
-## Mandatory report to Lead
+## Detailed evidence lives in Git
 
-After every completed queue item, and immediately on any blocker, report:
-- worker/chat;
-- queue item ID;
-- branch;
-- exact commit SHA;
-- PR number if any;
-- exact files changed;
-- checks actually run and exact result;
-- gameplay/content result;
-- remaining blocker or dependency;
-- next queue item selected.
+For each completed task, put all technical evidence in the branch/PR/handoff as appropriate:
+- task ID and scope;
+- exact commit/head;
+- files changed;
+- checks and results;
+- blockers/dependencies;
+- selective-integration notes.
 
-Never report a branch as delivered. Delivery states are:
+Do not paste those details into the personal chat unless Leader explicitly asks for them.
+
+## Mandatory chat output
+
+After completing one assigned task, the worker writes only:
+
+`Задание выполнено`
+
+Then immediately re-read the current pointer/queue in `main` and continue the next assigned, unblocked task without waiting for confirmation.
+
+If there are no further assigned, unblocked tasks, write only:
+
+`Задания выполнены`
+
+No summaries, status tables, explanations, SHA lists or long reports in personal chat unless Leader explicitly requests them.
+
+## Delivery states
+
+A branch alone is not delivery.
+
+Delivery states remain:
 - draft branch;
 - candidate PR + frozen exact head;
 - QA accepted candidate;
@@ -69,7 +85,7 @@ Never report a branch as delivered. Delivery states are:
 
 ## Durable handoff
 
-Any candidate PR must include or reference a concise handoff containing:
+Any candidate PR must include or reference a concise Git handoff containing:
 - scope;
 - current-main baseline;
 - exact identities consumed;
