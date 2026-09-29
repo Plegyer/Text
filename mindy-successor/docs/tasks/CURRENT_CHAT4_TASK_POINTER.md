@@ -8,9 +8,11 @@ Mandatory startup:
 - `ACTIVE_TEAM_OWNERSHIP_MATRIX.md`
 - `CANDIDATE_QA_FREEZE_PROTOCOL.md`
 - `TASK_CHAT4_QA_QUEUE_v4.md`
+- `TASK_CHAT4_QA_QUEUE_v5.md`
 
-Current queue:
-- C4-25 through C4-36.
+Current queue sequence:
+- finish remaining C4-25 through C4-36 from `TASK_CHAT4_QA_QUEUE_v4.md`;
+- then continue C4-37 through C4-41 from `TASK_CHAT4_QA_QUEUE_v5.md` without waiting for a new chat instruction.
 
 Primary goal:
 - gate current candidates and starter-trio runtime behavior.
