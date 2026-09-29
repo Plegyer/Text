@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {dispatch,eligible} from '../src/core/engine.ts';
-import {catalog,created} from './helpers.ts';
+import {catalog,started} from './helpers.ts';
 
 test('shipped Lumber Hard Work remains independently gated at 50 completed shifts',()=>{
   const ending=catalog.definitions.endings.find(e=>e.id==='ending.lumber.hard-work');
@@ -11,7 +11,7 @@ test('shipped Lumber Hard Work remains independently gated at 50 completed shift
   ]);
 
   for(const completed of [0,1,10,25,30,49]){
-    const s=created();
+    const s=started();
     s.run.progression.careers.lumber={
       stage:'accepted-hand',
       shifts:0,
@@ -26,7 +26,7 @@ test('shipped Lumber Hard Work remains independently gated at 50 completed shift
     );
   }
 
-  let s=created();
+  let s=started();
   s.run.progression.careers.lumber={
     stage:'accepted-hand',
     shifts:0,
