@@ -13,6 +13,7 @@ test('late-career semantic IDs are unique, known, exact-bound and source-backed'
   presentationSchema.parse(presentation);
   const registry=new Map(presentationSlots(catalog).map(slot=>[slot.id,slot]));
   const ids=new Set<string>();
+  const legacyDefaultFallback=new Set(['lumber','tavern','guard']);
   assert.equal(manifest.slots.length,35);
   for(const entry of manifest.slots){
     assert.equal(ids.has(entry.presentationId),false,'duplicate '+entry.presentationId);
@@ -26,7 +27,10 @@ test('late-career semantic IDs are unique, known, exact-bound and source-backed'
     if(entry.role==='seasonal-shift'){
       assert.equal(semantic.fallbackId,'location/town/default',entry.presentationId+' fallback');
     } else {
-      assert.equal(semantic.fallbackId,`job/${entry.domain}/shift/spring/default`,entry.presentationId+' fallback');
+      const expectedFallback=legacyDefaultFallback.has(entry.domain)
+        ?`job/${entry.domain}/shift/default`
+        :`job/${entry.domain}/shift/spring/default`;
+      assert.equal(semantic.fallbackId,expectedFallback,entry.presentationId+' fallback');
     }
   }
 });

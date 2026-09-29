@@ -60,8 +60,7 @@ Across all ten ordinary careers, current main has:
 - 0 missing Work/result static overrides;
 - 0 stale ordinary Work/result overrides.
 
-Current registry fallback shape for target career shifts:
-`job/<career>/result/default -> job/<career>/shift/spring/default -> location/town/default`.
+Current result fallback is compatibility-sensitive: Lumber, Tavern, and Guard use `job/<career>/result/default -> job/<career>/shift/default -> location/town/default` because their legacy base actions register the shared result slot first. Satyr Maid, Undead Farm, Hunter, Merchant, Artist-Geisha, Assassin, and Prostitute use `job/<career>/result/default -> job/<career>/shift/spring/default -> location/town/default`. Every seasonal shift slot falls back to `location/town/default`.
 
 Normal resolution does not reach that generic chain because all 50 audited Work/result semantic IDs have exact static overrides.
 

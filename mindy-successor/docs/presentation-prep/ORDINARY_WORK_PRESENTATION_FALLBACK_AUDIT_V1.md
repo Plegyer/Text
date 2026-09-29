@@ -19,15 +19,21 @@ For each current target-shaped ordinary career action `<career>.shift`, the pres
 - seasonal Work slot: `job/<career>/shift/<season>/default`;
 - result slot: `job/<career>/result/default`.
 
-The registry fallback chain for the current catalog is:
+The result slot is shared across seasonal scenes, but current fallback registration has two compatibility shapes because some careers still have a legacy base action before the target `<career>.shift` action.
+
+For Lumber, Tavern, and Guard, the legacy base action registers `job/<career>/result/default` first from its `default` scene. The fallback chain is:
+
+1. `job/<career>/result/default`
+2. `job/<career>/shift/default`
+3. `location/town/default`
+
+For Satyr Maid, Undead Farm, Hunter, Merchant, Artist-Geisha, Assassin, and Prostitute, the target-shaped action is the first source of the shared result slot. Its first seasonal scene is spring, so the fallback chain is:
 
 1. `job/<career>/result/default`
 2. `job/<career>/shift/spring/default`
 3. `location/town/default`
 
-The result slot is shared across the four seasonal scenes. The registry's first result-slot creation comes from the current spring scene, so its fallback points to the spring shift semantic slot. Each seasonal shift slot falls back to `location/town/default`.
-
-This is a fallback safety chain, not a statement that spring presentation should replace another season. On current main every audited result and seasonal Work slot has its own static override, so normal resolution stops at that exact semantic ID.
+Every seasonal shift slot itself falls back to `location/town/default`. These are safety chains, not a statement that default or spring presentation should replace another season. On current main every audited result and seasonal Work slot has its own static override, so normal resolution stops at that exact semantic ID.
 
 ## Coverage matrix
 
@@ -61,7 +67,7 @@ No stale ordinary Work/result semantic override was found:
 
 ## Root fallback
 
-`location/town/default` has no explicit static override in `content/presentation.json`, but the registry supplies catalog media `stage.town` for that semantic slot. This remains the final generic fallback seam.
+`location/town/default` has no explicit static override in `content/presentation.json`, but the registry supplies catalog media `stage.town` for that semantic slot. This remains the final generic fallback seam. The intermediate `job/lumber|tavern|guard/shift/default` compatibility slots are likewise registry/catalog-backed legacy surfaces rather than late-career static override requirements.
 
 Because all 50 audited ordinary Work/result slots have exact project-owned static overrides, none currently depends on the generic town fallback in the normal presentation path.
 
