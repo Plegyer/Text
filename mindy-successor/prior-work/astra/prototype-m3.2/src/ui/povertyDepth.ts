@@ -171,7 +171,7 @@ export const povertyDepthLookupEntries=[
   }
 ] as const satisfies readonly PovertyDepthLookupEntry[];
 
-const byPair=new Map(
+const byPair=new Map<string,PovertyDepthLookupEntry>(
   povertyDepthLookupEntries.map(entry=>[`${entry.eventId}|${entry.variantId}`,entry] as const)
 );
 
