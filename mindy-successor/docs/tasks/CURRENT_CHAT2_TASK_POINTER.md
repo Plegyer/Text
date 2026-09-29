@@ -8,18 +8,20 @@ Mandatory startup:
 - `WORKER_CHAT_RECREATION_PROTOCOL_v1.md`
 - `ACTIVE_TEAM_OWNERSHIP_MATRIX.md`
 - `CANDIDATE_QA_FREEZE_PROTOCOL.md`
-- `TASK_CHAT2_PRESENTATION_QUEUE_v2.md`
+- `TASK_CHAT2_PRESENTATION_QUEUE_v3.md`
 
 Current queue:
-- C2-01 through C2-12.
+- C2-13 through C2-24.
 
-Primary goal:
-- presentation/media support for the active Lumber vertical slice.
+Immediate priority:
+- C2-13 Satyr Maid presentation inventory;
+- C2-14 Undead Farm presentation inventory;
+- then continue the remaining assigned queue.
 
-Do not restart merged PR #64 or historical queue 352–363.
+Do not restart C2-01..12 or merged historical presentation work.
 
-No gameplay state, progression, endings, Save, RNG or content-canon ownership.
+No gameplay state, progression, endings, Save, RNG, School authoring or Forest/Poverty authoring ownership.
 
-Keep detailed evidence/blockers in Git. In personal chat use only the completion messages defined by `WORKER_CHAT_RECREATION_PROTOCOL_v1.md`.
+Keep detailed evidence in Git only. Personal chat uses only the compact completion messages from `WORKER_CHAT_RECREATION_PROTOCOL_v1.md`.
 
-Do not self-assign beyond C2-12.
+Do not self-assign beyond C2-24.
