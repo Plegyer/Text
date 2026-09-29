@@ -1,28 +1,27 @@
 # Current Chat 5 task pointer
 
 Status: ASSIGNED
-Owner: Chat 5 / School Content Worker
+Owner: Chat 5 / School + Text Localization Content Worker
 
-Priority:
-Prepare School milestone content that connects to future career progression.
+Mandatory startup:
+- `CHAT5_MANDATORY_ROLE_PROMPT.md`
+- `WORKER_CHAT_RECREATION_PROTOCOL_v1.md`
+- `ACTIVE_TEAM_OWNERSHIP_MATRIX.md`
+- `CANDIDATE_QA_FREEZE_PROTOCOL.md`
+- `TASK_CHAT5_SCHOOL_QUEUE_v2.md`
 
-Use existing systems:
-- School events;
-- milestone conditions;
-- career preparation content hooks.
+Current queue:
+- C5-01 through C5-12.
 
-Do not create:
-- career state;
-- new progression layer;
-- new ending system.
+Primary goal:
+- prepare School milestone content/handoffs that remain a standalone School line and can feed Lumber/career conditions through existing systems.
 
-Allowed outputs:
-- content definitions;
-- localization;
-- fixtures;
-- focused tests.
+Do not restart:
+- merged PR #66;
+- delivered residual localization queue 193–204.
 
-Required result:
-Provide School milestone content that can feed existing career route conditions without changing runtime architecture.
+Do not create a new course/curriculum, career state, Save field or NightFlow rule merely to close a content gap. Report the exact missing decision instead.
 
-Report exact branch, SHA, files and checks.
+Report to Lead after every completed queue item and on every blocker using `WORKER_CHAT_RECREATION_PROTOCOL_v1.md`.
+
+Do not self-assign beyond C5-12.
