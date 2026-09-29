@@ -1,28 +1,24 @@
-# Current Chat 3 task pointer
+# CURRENT CHAT3 TASK POINTER
 
 Status: ASSIGNED
 Owner: Chat 3 / Forest + Poverty Content Bundles Worker
 
 Mandatory startup:
-- `CHAT3_MANDATORY_ROLE_PROMPT.md`
 - `WORKER_CHAT_RECREATION_PROTOCOL_v1.md`
 - `ACTIVE_TEAM_OWNERSHIP_MATRIX.md`
 - `CANDIDATE_QA_FREEZE_PROTOCOL.md`
-- `TASK_CHAT3_CONTENT_QUEUE_v2.md`
+- `TASK_CHAT3_CONTENT_QUEUE_v3.md`
 
 Current queue:
-- C3-01 through C3-12.
+- C3-13 through C3-24.
 
-Resume, do not restart:
-- open PR #67 / branch `chat3/ordinary-poverty-depth-refresh-341-352`.
+Primary goal:
+- repair PR #82, then extend Satyr Maid, Undead Farm and poverty content.
 
-Primary goals:
-- preserve and revalidate the ordinary-poverty candidate;
-- prepare Forest/Expedition content hooks for Lumber;
-- keep Secret Debt boundaries separate from ordinary poverty.
+Do not restart completed earlier queue items.
 
-Chat 3 owns content/fixtures/handoffs only. Shared runtime/UI integration belongs to Chat 1 Developer/Lead.
+Keep technical evidence in Git only. Personal chat output:
+- `Задание выполнено`
+- `Задания выполнены`
 
-Keep detailed evidence/blockers in Git. In personal chat use only the completion messages defined by `WORKER_CHAT_RECREATION_PROTOCOL_v1.md`.
-
-Do not self-assign beyond C3-12.
+Do not self-assign beyond this queue.
