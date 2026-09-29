@@ -43,9 +43,10 @@ Owns:
 - focused integration regressions;
 - candidate production PRs.
 
-Resume source:
-- `chat1/lumber-vertical-slice` is a draft source and must not be restarted or merged wholesale.
-- baseline repair PR #68 is merged and must not be recreated.
+Historical sources not to restart:
+- `chat1/lumber-vertical-slice` remains draft history only;
+- baseline repair PR #68 is merged;
+- current-main Lumber consolidation PR #84 is merged.
 
 Must not own media asset production, Forest/poverty authoring, School authoring/localization or QA acceptance.
 
@@ -57,8 +58,9 @@ Queue:
 
 Owns project-owned presentation/media sources, presentation IDs/registries/manifests, static/animation fallbacks, presentation-specific accessibility metadata and presentation validators.
 
-Merged work not to restart:
-- PR #64 / old queue 352–363.
+Merged/integrated work not to restart:
+- PR #64 / old queue 352–363;
+- Lumber presentation candidate PR #79, integrated through Lead PR #89.
 
 Must not modify gameplay mechanics, progression, Save/RNG or content canon.
 
@@ -70,9 +72,9 @@ Queue:
 
 Owns ordinary poverty content/localization bundles, Forest/Expedition content hooks and result bundles, explicitly assigned Secret Debt boundary/content preparation, fixtures/collision audits/content regressions and selective-integration handoffs.
 
-Resume source:
-- open PR #67 / `chat3/ordinary-poverty-depth-refresh-341-352`;
-- do not rebuild it from scratch.
+Historical/integrated sources not to restart:
+- PR #67 / `chat3/ordinary-poverty-depth-refresh-341-352` is historical selective-source material already consumed where approved;
+- repaired Forest/poverty candidate PR #82 was integrated through Lead PR #89.
 
 Must not own shared runtime/UI integration, Chat 2 media production, Chat 5 School content or QA.
 
@@ -85,9 +87,9 @@ Queue:
 Owns exact-head PR/CI verification, scope/collision review, runtime/catalog gates, cross-system acceptance and final Lumber product-acceptance gate.
 
 Immediate evidence/candidates:
-- merged baseline PR #68;
-- open Chat 3 PR #67;
-- later Integration/Presentation/School candidates.
+- use current main and the current worker pointers first;
+- merged #84, #85 and #89 are historical accepted integration evidence;
+- gate only still-open/new frozen candidates named by the active QA queue.
 
 Must not create duplicate production content.
 
@@ -99,8 +101,9 @@ Queue:
 
 Owns School player-facing content/localization, teacher/milestone/night-study text preparation, RU/EN parity, School-to-career content handoff fixtures and School content-side regressions.
 
-Merged work not to restart:
-- PR #66 / residual localization 193–204.
+Merged/integrated work not to restart:
+- PR #66 / residual localization 193–204;
+- repaired School handoff PR #85.
 
 Must not create career state, shared runtime architecture, Save fields, NightFlow rules or new curriculum without Lead-approved design.
 

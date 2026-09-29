@@ -30,6 +30,7 @@ Old chat prose is not a source of truth.
 ## Current production focus
 
 Current Lead coordination focus:
+- treat merged PR #84 (Lumber consolidation), #85 (repaired School handoff) and #89 (QA-accepted Chat 2/3 integration) as current-main history, not open worker work;
 - maintain a valid shipped runtime baseline;
 - finish a connected playable Lumber vertical slice;
 - integrate School and Forest through existing runtime contracts;
