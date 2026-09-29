@@ -417,5 +417,32 @@
     "noGameplayFieldsChanged": true,
     "noSaveOrRngMutation": true,
     "nonExplicitProfessionalCoverage": true
+  },
+  "accessibility": {
+    "domains": [
+      "tavern",
+      "hunter",
+      "guard",
+      "merchant",
+      "artist-geisha",
+      "assassin",
+      "prostitute"
+    ],
+    "localeParity": [
+      "ru",
+      "en"
+    ],
+    "altRequired": true,
+    "captionRequired": true,
+    "safeStaticRequired": true,
+    "prostituteCoverage": "non-explicit"
+  },
+  "summary": {
+    "semanticSlots": 35,
+    "lateCareerDomains": 7,
+    "seasonalShiftSlots": 28,
+    "resultSlots": 7,
+    "animationSources": 0,
+    "documentedMissingOutOfScope": 3
   }
 }
