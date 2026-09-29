@@ -42,3 +42,58 @@ Worker candidate state at this checkpoint:
 - Chat 5 PR #85 is not yet consumable: previous exact head was QA-blocked; repaired head/CI/QA acceptance must be rechecked before C1D-30.
 
 No earlier C1D-01..24 implementation is restarted here.
+
+
+## C1D-33 — Satyr Maid integration inventory
+
+Current production state:
+- action: `satyr-maid.shift`;
+- Day-1 starter career;
+- cost: 1 Energy, 0 money;
+- typed write: `completed_shifts += 1`;
+- existing first-shift transition is executed by the action itself;
+- career machine: `new-maid -> known-face` through transition `first-shift`;
+- transition condition: existing `completed_shifts >= 1`;
+- transition effect: existing career fact `first-shift-complete`;
+- existing seasonal scenes: Spring / Summer / Autumn / Winter;
+- existing semantic result/seasonal presentation slots are already present in the base presentation registry.
+
+Current missing production seams:
+- no dedicated Satyr Maid production event pack;
+- no Satyr Maid relationship machine;
+- no Satyr Maid quest machine;
+- no Satyr Maid Activity;
+- no Satyr Maid ending identity;
+- no approved post-`known-face` stages/transitions;
+- no approved later thresholds/rewards/cross-system gates.
+
+Integration rule:
+- preserve the existing first-shift typed progression;
+- do not invent later Satyr Maid stages, events, ending IDs, thresholds, School hooks, Forest hooks, or media/content owned by other workers.
+
+## C1D-34 — Undead Farm integration inventory
+
+Current production state:
+- action: `undead-farm.shift`;
+- Day-1 starter career;
+- cost: 1 Energy, 0 money;
+- typed write: `completed_shifts += 1`;
+- existing first-shift transition is executed by the action itself;
+- career machine: `new-hand -> reliable-helper` through transition `first-shift`;
+- transition condition: existing `completed_shifts >= 1`;
+- transition effect: existing career fact `first-shift-complete`;
+- existing seasonal scenes: Spring / Summer / Autumn / Winter;
+- existing semantic result/seasonal presentation slots are already present in the base presentation registry.
+
+Current missing production seams:
+- no dedicated Undead Farm production event pack;
+- no Undead Farm relationship machine;
+- no Undead Farm quest machine;
+- no Undead Farm Activity;
+- no Undead Farm ending identity;
+- no approved post-`reliable-helper` stages/transitions;
+- no approved later thresholds/rewards/cross-system gates.
+
+Integration rule:
+- preserve the existing first-shift typed progression;
+- do not invent later Undead Farm stages, events, ending IDs, thresholds, School hooks, Forest hooks, or presentation/content beyond approved worker handoffs.
