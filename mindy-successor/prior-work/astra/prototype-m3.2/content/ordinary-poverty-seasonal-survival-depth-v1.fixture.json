@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "id": "ordinary-poverty.seasonal-survival-depth.v1",
+  "status": "CONTENT_SIDE_HANDOFF",
+  "task": "C3-33",
+  "routeIdentity": "ordinary-poverty",
+  "boundaries": {
+    "independentFromSecretDebt": true,
+    "noDebtCareer": true,
+    "noAmounts": true,
+    "noProbabilities": true
+  },
+  "variants": [
+    {
+      "id": "cold-lodging-pressure",
+      "topic": "cheap_lodging",
+      "localizationKey": "poverty.season.cold.lodging.pressure.text"
+    },
+    {
+      "id": "street-small-job",
+      "topic": "small_work",
+      "localizationKey": "poverty.season.street.small-job.text"
+    },
+    {
+      "id": "community-help",
+      "topic": "help",
+      "localizationKey": "poverty.season.community.help.text"
+    },
+    {
+      "id": "shared-room-recovery",
+      "topic": "recovery",
+      "localizationKey": "poverty.season.shared-room.recovery.text"
+    }
+  ],
+  "strings": {
+    "poverty.season.cold.lodging.pressure.text": {
+      "ru": "Когда погода ухудшается, дешёвое жильё становится теснее и менее надёжным. Ты ищешь место, где можно переждать сложный период и сохранить силы для следующего дня.",
+      "en": "When the weather worsens, cheap lodging becomes more crowded and less reliable. You look for a place to get through a difficult period and keep enough strength for the next day."
+    },
+    "poverty.season.street.small-job.text": {
+      "ru": "Небольшие подработки меняются вместе с сезоном. Ты берёшь доступную работу, сравниваешь варианты и стараешься удержать привычный ритм жизни.",
+      "en": "Small jobs change with the season. You take available work, compare options, and try to keep a stable rhythm of life."
+    },
+    "poverty.season.community.help.text": {
+      "ru": "Иногда помощь приходит через знакомых или соседей. Это не решает все проблемы сразу, но даёт время восстановиться и найти следующий шаг.",
+      "en": "Sometimes help comes through acquaintances or neighbors. It does not solve every problem at once, but it gives time to recover and find the next step."
+    },
+    "poverty.season.shared-room.recovery.text": {
+      "ru": "После тяжёлого периода даже небольшая стабильность имеет значение. Совместное жильё, новые контакты и аккуратные решения помогают постепенно выйти из кризиса.",
+      "en": "After a difficult period, even small stability matters. Shared housing, new contacts, and careful choices can gradually help move out of a crisis."
+    }
+  },
+  "integration": {
+    "consumer": "Chat 1 Developer / Lead",
+    "runtimeCapabilityRequired": false
+  }
+}
