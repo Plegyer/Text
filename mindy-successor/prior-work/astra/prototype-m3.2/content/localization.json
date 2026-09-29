@@ -3217,6 +3217,18 @@
     "event.lumber-cross.activity-forest-return.choice.continue.text": {
       "ru": "Ты вводишь лесные наблюдения в рабочий разговор, и подтверждённый результат становится частью дальнейшего решения артели.",
       "en": "You bring the Forest observations into the work discussion, and the confirmed result becomes part of the crew's next decision."
+    },
+    "presentation.activity.forest.entry.default.text": {
+      "ru": "За кромкой леса городской шум быстро стихает. Впереди расходятся знакомая рабочая дорога и более старая линия тропы; прежде чем идти дальше, нужно выбрать путь и держать силы на обратную дорогу.",
+      "en": "Beyond the forest edge, the town noise fades quickly. Ahead, the familiar work road and an older line of trail pull apart; before going farther, you need to choose a route and keep enough strength for the way back."
+    },
+    "presentation.activity.forest.entry.logging-road.text": {
+      "ru": "Лесовозная дорога широкая и легко читается по колеям, свежим срезам веток и меткам на стволах. Здесь путь понятнее, но лес всё равно требует смотреть под ноги и не тратить силы впустую.",
+      "en": "The logging road is broad and easy to read from wheel ruts, freshly cut branches, and marks on trunks. The route is clearer here, but the forest still rewards careful footing and conserving strength."
+    },
+    "presentation.activity.forest.entry.old-boundary.text": {
+      "ru": "Старая межевая линия уходит между замшелыми камнями и выветренными знаками, не совпадая с новой лесовозной дорогой. Тропа уже и тише, поэтому ориентироваться приходится по самим старым меткам.",
+      "en": "The old boundary line runs between moss-covered stones and weathered marks instead of following the newer logging road. The trail is narrower and quieter, so the old markers themselves have to guide the way."
     }
   }
 }
