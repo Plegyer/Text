@@ -23,7 +23,7 @@ function publishManagementSignal(input:Save){
   ],catalog);
   return resolveReactions(withFact,[
     {kind:'worldFactAdded',fact:'lumber.school.management-ready'}
-  ],catalog);
+  ],catalog).state;
 }
 
 test('Foreman professional route is a required Lumber leadership gate and adds no extra shift',()=>{
