@@ -97,3 +97,40 @@ Current missing production seams:
 Integration rule:
 - preserve the existing first-shift typed progression;
 - do not invent later Undead Farm stages, events, ending IDs, thresholds, School hooks, Forest hooks, or presentation/content beyond approved worker handoffs.
+
+
+## Queue v4 implementation ledger before combined CI
+
+- C1D-25 COMPLETE — Day-1 audit recorded the gap: all ten ordinary career actions were executable because every later-career action had an empty condition list and both engine/UI used plain condition eligibility.
+- C1D-26 COMPLETE — engine now uses one central `actionAvailable()` guard. Lumber, Satyr Maid and Undead Farm remain starter shifts; later ordinary career shifts with no authored conditions are rejected.
+- C1D-27 COMPLETE — Work UI uses the same exported `actionAvailable()` contract; no duplicate career-unlock thresholds or UI-only state exists.
+- C1D-28 COMPLETE — focused engine/UI regressions prove exactly the three starter shifts are executable on fresh Day 1 and still spend one Energy; the seven later careers remain visible but disabled and direct commands are rejected.
+- C1D-29 COMPLETE — test-only synthetic world-fact condition proves that a later ordinary career reuses the existing action-condition evaluator when an approved non-empty unlock condition is eventually authored. No production threshold/value was added.
+- C1D-30 BLOCKED/SKIPPED at this checkpoint — PR #85 repaired head `35c42c04a59a1c58d54d1bf0d331c7e734883318` has green repository CI, but Chat 4 C4-26 explicitly remains QA PAUSED until Chat 5 declares that exact SHA frozen. No School candidate content is consumed before QA acceptance.
+- C1D-31 COMPLETE — selectively consumed QA-accepted Chat 3 PR #82 frozen head `b12667b1cb8453e13e3406f3fe9d589475f28c6f`: Forest terminal copy/localization, existing Lumber-return localization, and the approved Forest entry-context strings through the existing Activity UI localization seam. Escape/failure gain no new state effects.
+- C1D-32 COMPLETE — selectively consumed QA-accepted Chat 2 PR #79 frozen head `fefdcb8337923e6d1407cdcc1674303abf2fe640`: current Lumber presentation registry bindings plus their exact accessibility localization keys. No media bytes or gameplay semantics were copied.
+- C1D-33 COMPLETE — Satyr Maid inventory recorded above.
+- C1D-34 COMPLETE — Undead Farm inventory recorded above.
+
+## Preserved product boundaries
+
+- starter careers are exactly Lumber, Satyr Maid and Undead Farm;
+- no later ordinary career threshold, stat gate, calendar gate or year fallback is selected here;
+- Lumber Hard Work remains exactly `completed_shifts >= 50`;
+- no new Save field/layer;
+- no new career state machine;
+- no new ending framework;
+- no School producer for `lumber.school.management-ready` is invented;
+- Chat 3 escape/failure Forest outcomes remain content-return-only with no new Lumber facts;
+- Chat 2 media remains presentation-only.
+
+## C1D-35 candidate composition
+
+This branch is the focused current-main starter-career candidate. It contains:
+- starter-trio engine/UI availability guard and regressions;
+- QA-accepted Chat 3 Forest/Lumber production-copy + shared presentation consumer subset;
+- QA-accepted Chat 2 Lumber presentation binding/localization subset;
+- Satyr Maid and Undead Farm integration inventories;
+- no unaccepted Chat 5 content.
+
+Full repository CI is required on one exact PR head before C1D-35 is complete.
