@@ -691,6 +691,30 @@
         "alt": "Отдельная рабочая реакция после успешного возвращения из леса.",
         "altKey": "presentation.static.forest-reaction-success-v2.alt"
       }
+    },
+    "ending/lumber/hard-work": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-lumber-result.svg",
+        "alt": "Завершённая рабочая сцена лесоруба с древесиной и инструментом как визуал финала «Тяжёлый труд».",
+        "altKey": "presentation.static.lumber-ending-hard-work.alt"
+      }
+    },
+    "ending/lumber/forewoman": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/foreman-professional.svg",
+        "alt": "Профессиональная сцена на лесной площадке с рабочим столом и бригадиром как визуал управленческого финала.",
+        "altKey": "presentation.static.lumber-ending-forewoman.alt"
+      }
+    },
+    "ending/lumber/forest": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/forest-return-success-v2.svg",
+        "alt": "Успешное возвращение с лесного маршрута как визуал лесного финала.",
+        "altKey": "presentation.static.lumber-ending-forest.alt"
+      }
     }
   }
 }

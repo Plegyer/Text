@@ -183,6 +183,36 @@
       "fallbackRequired": true,
       "gameplayIdentity": "lumber-cross.activity-forest-return",
       "reusedProjectAsset": true
+    },
+    {
+      "presentationId": "ending/lumber/hard-work",
+      "role": "lumber-ending",
+      "sourceAsset": "assets/presentation/career-lumber-result.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "gameplayIdentity": "ending.lumber.hard-work",
+      "reusedProjectAsset": true
+    },
+    {
+      "presentationId": "ending/lumber/forewoman",
+      "role": "lumber-ending",
+      "sourceAsset": "assets/presentation/foreman-professional.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "gameplayIdentity": "ending.lumber.forewoman",
+      "reusedProjectAsset": true
+    },
+    {
+      "presentationId": "ending/lumber/forest",
+      "role": "lumber-ending",
+      "sourceAsset": "assets/presentation/forest-return-success-v2.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "gameplayIdentity": "ending.lumber.forest",
+      "reusedProjectAsset": true
     }
   ],
   "invariants": {
