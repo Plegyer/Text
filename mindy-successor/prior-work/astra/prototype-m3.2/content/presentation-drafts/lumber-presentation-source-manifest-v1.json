@@ -213,6 +213,16 @@
       "fallbackRequired": true,
       "gameplayIdentity": "ending.lumber.forest",
       "reusedProjectAsset": true
+    },
+    {
+      "presentationId": "job/lumber/result/default",
+      "role": "ordinary-shift-result",
+      "sourceAsset": "assets/presentation/career-lumber-result.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "gameplayIdentity": "lumber.shift",
+      "reusedProjectAsset": true
     }
   ],
   "invariants": {
@@ -221,5 +231,17 @@
     "staticFallbackRequired": true,
     "noGameplayFieldsChanged": true,
     "noSaveOrRngMutation": true
+  },
+  "fallbackPolicy": {
+    "productionMode": "static-first-for-selected-lumber-slots",
+    "animationRequired": false,
+    "dynamicSourceMayBeAbsent": true,
+    "staticSourceRequiredForEveryManifestSlot": true,
+    "missingStaticSourceIsValidationFailure": true
+  },
+  "summary": {
+    "selectedSlots": 22,
+    "selectedSlotsWithStaticSource": 22,
+    "selectedSlotsWithAnimationSource": 0
   }
 }
