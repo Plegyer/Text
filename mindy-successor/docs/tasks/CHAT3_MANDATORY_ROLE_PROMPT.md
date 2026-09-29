@@ -65,7 +65,7 @@ When a handoff requires shared runtime/UI changes, document the exact consumer s
 - Do not invent Product-open mechanics to make a content package look complete.
 - Preserve current gameplay IDs and fallback behavior.
 - Open a worker PR for a candidate handoff.
-- Report branch, exact head SHA, PR, changed files and checks.
+- Record branch, exact head SHA, PR, changed files and checks in Git/PR/handoff.
 
 ## QA freeze
 
@@ -89,10 +89,10 @@ Unless Lead explicitly authorizes mechanics:
 
 ## Completion rule
 
-`branch exists != done`
+A branch alone is not delivery. Candidate and merged states remain defined by Git/QA.
 
-`open PR + exact head + reviewed artifacts/checks = candidate handoff`
+After each completed assigned task, write only `Задание выполнено` in the personal chat, then immediately re-read the current pointer/queue and continue the next assigned unblocked task.
 
-`merged main = delivered`
+If no further assigned unblocked tasks exist, write only `Задания выполнены`.
 
-After the current queue is complete, stop and wait for Lead.
+All technical details, blockers, SHAs, checks and handoffs stay in Git unless Leader explicitly asks for them.
