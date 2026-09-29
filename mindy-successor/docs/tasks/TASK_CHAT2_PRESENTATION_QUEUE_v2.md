@@ -43,6 +43,6 @@ Verify Lumber presentation sources can be replaced through the existing presenta
 Add focused manifest/asset/fallback validation for the selected Lumber presentation set and ensure no missing media path ships.
 
 ### C2-12 — Candidate media handoff
-Open one focused PR or, if assets are dependency-blocked, a complete production-ready source handoff. Report branch, exact SHA, files, checks and unresolved consumer IDs.
+Open one focused PR or, if assets are dependency-blocked, a complete production-ready source handoff. Record branch, exact SHA, files, checks and unresolved consumer IDs in the candidate PR/handoff.
 
 No gameplay state, rewards, conditions, Save or RNG changes are allowed.
