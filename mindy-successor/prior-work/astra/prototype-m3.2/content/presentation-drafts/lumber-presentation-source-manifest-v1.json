@@ -83,6 +83,106 @@
       "gameplayIdentity": "lumber-cross.school-management-return",
       "relationshipIdentity": "lumber.foreman",
       "reusedProjectAsset": true
+    },
+    {
+      "presentationId": "activity/forest/route/default",
+      "role": "forest-route-entry",
+      "sourceAsset": "assets/presentation/forest-route-default-v1.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "gameplayIdentity": "lumber.forest",
+      "reusedProjectAsset": true
+    },
+    {
+      "presentationId": "activity/forest/route/logging-road",
+      "role": "forest-route-entry",
+      "sourceAsset": "assets/presentation/forest-route-logging-road.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "gameplayIdentity": "lumber.forest",
+      "reusedProjectAsset": true
+    },
+    {
+      "presentationId": "activity/forest/route/old-boundary",
+      "role": "forest-route-entry",
+      "sourceAsset": "assets/presentation/forest-route-old-boundary-v3.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "gameplayIdentity": "lumber.forest",
+      "reusedProjectAsset": true
+    },
+    {
+      "presentationId": "activity/forest/return/success",
+      "role": "forest-return",
+      "sourceAsset": "assets/presentation/forest-return-success-v2.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "gameplayIdentity": "lumber.forest.success",
+      "reusedProjectAsset": true
+    },
+    {
+      "presentationId": "activity/forest/return/escape",
+      "role": "forest-return",
+      "sourceAsset": "assets/presentation/forest-return-escape-v2.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "gameplayIdentity": "lumber.forest.escape",
+      "reusedProjectAsset": true
+    },
+    {
+      "presentationId": "activity/forest/return/failure",
+      "role": "forest-return",
+      "sourceAsset": "assets/presentation/forest-return-failure-v2.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "gameplayIdentity": "lumber.forest.failure",
+      "reusedProjectAsset": true
+    },
+    {
+      "presentationId": "job/lumber/event/forest-result-content-v1-success/default",
+      "role": "forest-result-reaction",
+      "sourceAsset": "assets/presentation/forest-reaction-success-v2.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "gameplayIdentity": "forest-result-content-v1.success",
+      "reusedProjectAsset": true
+    },
+    {
+      "presentationId": "job/lumber/event/forest-result-content-v1-escape/default",
+      "role": "forest-result-reaction",
+      "sourceAsset": "assets/presentation/forest-reaction-escape-v2.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "gameplayIdentity": "forest-result-content-v1.escape",
+      "reusedProjectAsset": true
+    },
+    {
+      "presentationId": "job/lumber/event/forest-result-content-v1-failure/default",
+      "role": "forest-result-reaction",
+      "sourceAsset": "assets/presentation/forest-reaction-failure-v2.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "gameplayIdentity": "forest-result-content-v1.failure",
+      "reusedProjectAsset": true
+    },
+    {
+      "presentationId": "job/lumber/event/lumber-cross-activity-forest-return/default",
+      "role": "lumber-forest-continuation",
+      "sourceAsset": "assets/presentation/forest-reaction-success-v2.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "gameplayIdentity": "lumber-cross.activity-forest-return",
+      "reusedProjectAsset": true
     }
   ],
   "invariants": {

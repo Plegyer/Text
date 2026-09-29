@@ -683,6 +683,14 @@
         "alt": "Профессиональная сцена на лесной площадке, где управленческий результат применяется к действующему маршруту без изменения игрового исхода.",
         "altKey": "presentation.static.lumber-forewoman-route.alt"
       }
+    },
+    "job/lumber/event/lumber-cross-activity-forest-return/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/forest-reaction-success-v2.svg",
+        "alt": "Отдельная рабочая реакция после успешного возвращения из леса.",
+        "altKey": "presentation.static.forest-reaction-success-v2.alt"
+      }
     }
   }
 }
