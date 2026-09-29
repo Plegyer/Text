@@ -239,60 +239,60 @@
       "en": "Old boundary path"
     },
     "event.forest-result-content-v1.success.title": {
-      "ru": "Лес уступает дорогу",
-      "en": "The Forest gives way"
+      "ru": "Вернуться с ясным следом",
+      "en": "Return with a clear trail"
     },
     "event.forest-result-content-v1.success.variant.default.text": {
-      "ru": "Маршрут наконец складывается в результат, который можно с уверенностью унести обратно. Что бы ещё ни скрывал лес, эта экспедиция дошла до успешного конца.",
-      "en": "The route finally resolves into something you can carry back with certainty. Whatever else the Forest keeps, this expedition has reached its successful end."
+      "ru": "К концу маршрута разрозненные приметы складываются в ясную картину. Теперь из леса можно вынести не догадку, а подтверждённый результат, с которым есть смысл возвращаться в артель.",
+      "en": "By the end of the route, scattered signs resolve into a clear picture. You can carry back more than a guess now: a confirmed result worth bringing to the lumber crew."
     },
     "event.forest-result-content-v1.success.choice.return.label": {
-      "ru": "Вернуться из леса",
-      "en": "Return from the Forest"
+      "ru": "Вернуться с результатом",
+      "en": "Return with the result"
     },
     "event.forest-result-content-v1.success.choice.return.text": {
-      "ru": "Ты оставляешь результат экспедиции неизменным и возвращаешься к обычному городскому ходу дня.",
-      "en": "You leave the Activity result intact and return to the city-side flow."
+      "ru": "Ты собираешь записи и возвращаешься к артели, чтобы лесной результат дошёл до тех, кого он касается.",
+      "en": "You gather your notes and return to the crew so the Forest result reaches the people it concerns."
     },
     "media.forest-result-content-v1.success.alt": {
       "ru": "Лес после успешного завершения экспедиции.",
       "en": "Forest after a successful expedition."
     },
     "event.forest-result-content-v1.escape.title": {
-      "ru": "Отступить, пока путь ещё открыт",
-      "en": "Back out while the route is still open"
+      "ru": "Отступить, сохранив путь назад",
+      "en": "Turn back with the route still open"
     },
     "event.forest-result-content-v1.escape.variant.default.text": {
-      "ru": "Ты поворачиваешь назад до того, как экспедиция превращается в поражение. Маршрут остаётся незавершённым, но уйти по собственной воле — не то же самое, что провалить попытку.",
-      "en": "You turn back before the expedition becomes a loss. The route remains unfinished, but leaving under your own control is not the same thing as failing it."
+      "ru": "Ты решаешь не продавливать маршрут дальше. Разворачиваешься по собственным следам, сохраняя то, что успела увидеть, но не выдавая незавершённую вылазку за успех.",
+      "en": "You decide not to force the route farther. You retrace your own steps, keeping what you managed to observe without pretending the unfinished expedition was a success."
     },
     "event.forest-result-content-v1.escape.choice.return.label": {
-      "ru": "Вернуться в безопасности",
-      "en": "Return safely"
+      "ru": "Вернуться по своим следам",
+      "en": "Return by your own tracks"
     },
     "event.forest-result-content-v1.escape.choice.return.text": {
-      "ru": "Ты сохраняешь результат «отступление» отдельным и возвращаешься, не превращая его в успех.",
-      "en": "You keep the escape result distinct and return without converting it into success."
+      "ru": "Ты выходишь к кромке леса по знакомому пути и возвращаешься, сохраняя отступление отдельным исходом.",
+      "en": "You reach the forest edge by the familiar path and return, keeping the escape as its own outcome."
     },
     "media.forest-result-content-v1.escape.alt": {
       "ru": "Безопасное отступление из леса.",
       "en": "Safe retreat from the Forest."
     },
     "event.forest-result-content-v1.failure.title": {
-      "ru": "Лес обрывает попытку",
-      "en": "The Forest ends the attempt"
+      "ru": "Вернуться без ответа",
+      "en": "Return without an answer"
     },
     "event.forest-result-content-v1.failure.variant.default.text": {
-      "ru": "Экспедиция заканчивается без результата, ради которого ты пришла. Поражение остаётся отдельным лесным исходом и не переписывается ни в отступление, ни в успех.",
-      "en": "The expedition ends without the result you came for. The failure is recorded as its own Forest outcome rather than being rewritten as an escape or a success."
+      "ru": "Сил на продолжение больше не остаётся. Приходится оборвать маршрут без результата, ради которого началась вылазка; этот исход остаётся отдельным от добровольного отступления.",
+      "en": "You no longer have the endurance to continue. The route has to end without the result that brought you here; this remains separate from a voluntary retreat."
     },
     "event.forest-result-content-v1.failure.choice.return.label": {
       "ru": "Вернуться и восстановиться",
       "en": "Return and recover"
     },
     "event.forest-result-content-v1.failure.choice.return.text": {
-      "ru": "Ты принимаешь зафиксированное поражение и возвращаешься к обычному ходу игры.",
-      "en": "You accept the failed Activity result as recorded and return to ordinary flow."
+      "ru": "Ты прекращаешь поиски и возвращаешься к обычному ходу дня, оставляя неудачный исход как есть.",
+      "en": "You stop the search and return to the day's ordinary rhythm, accepting that this attempt ended without the answer you came for."
     },
     "media.forest-result-content-v1.failure.alt": {
       "ru": "Возвращение после неудачной лесной экспедиции.",
@@ -3161,6 +3161,74 @@
     "presentation.poverty.depth.poverty-recovery-production-herb-bundle.default.b.text": {
       "ru": "На краю прилавка остался небольшой пучок простых трав, стянутый обычной бечёвкой. Никакой особой метки на нём нет.",
       "en": "A small bundle of common herbs remains at the edge of a stall, tied with ordinary string. There is no special mark on it."
+    },
+    "event.lumber-cross.activity-forest-return.title": {
+      "ru": "Лесной результат доходит до артели",
+      "en": "The Forest result reaches the crew"
+    },
+    "event.lumber-cross.activity-forest-return.variant.default.text": {
+      "ru": "Ты возвращаешься к рабочей площадке с тем, что удалось подтвердить в лесу. Разговор сразу смещается от самой вылазки к тому, что этот результат значит для артели.",
+      "en": "You return to the worksite with what you managed to confirm in the Forest. The conversation shifts at once from the expedition itself to what this result means for the crew."
+    },
+    "event.lumber-cross.activity-forest-return.choice.continue.label": {
+      "ru": "Передать результат",
+      "en": "Hand over the result"
+    },
+    "event.lumber-cross.activity-forest-return.choice.continue.text": {
+      "ru": "Ты вводишь лесные наблюдения в рабочий разговор, и подтверждённый результат становится частью дальнейшего решения артели.",
+      "en": "You bring the Forest observations into the work discussion, and the confirmed result becomes part of the crew's next decision."
+    },
+    "presentation.activity.forest.entry.default.text": {
+      "ru": "За кромкой леса городской шум быстро стихает. Впереди расходятся знакомая рабочая дорога и более старая линия тропы; прежде чем идти дальше, нужно выбрать путь и держать силы на обратную дорогу.",
+      "en": "Beyond the forest edge, the town noise fades quickly. Ahead, the familiar work road and an older line of trail pull apart; before going farther, you need to choose a route and keep enough strength for the way back."
+    },
+    "presentation.activity.forest.entry.logging-road.text": {
+      "ru": "Лесовозная дорога широкая и легко читается по колеям, свежим срезам веток и меткам на стволах. Здесь путь понятнее, но лес всё равно требует смотреть под ноги и не тратить силы впустую.",
+      "en": "The logging road is broad and easy to read from wheel ruts, freshly cut branches, and marks on trunks. The route is clearer here, but the forest still rewards careful footing and conserving strength."
+    },
+    "presentation.activity.forest.entry.old-boundary.text": {
+      "ru": "Старая межевая линия уходит между замшелыми камнями и выветренными знаками, не совпадая с новой лесовозной дорогой. Тропа уже и тише, поэтому ориентироваться приходится по самим старым меткам.",
+      "en": "The old boundary line runs between moss-covered stones and weathered marks instead of following the newer logging road. The trail is narrower and quieter, so the old markers themselves have to guide the way."
+    },
+    "presentation.static.lumber-career-first-shift.alt": {
+      "ru": "Рабочая сцена лесоруба после первой подтверждённой смены; визуал отмечает карьерный рубеж без изображения числового порога.",
+      "en": "A lumber work scene after the first completed shift; the visual marks a career milestone without depicting a numeric threshold."
+    },
+    "presentation.static.lumber-career-first-shift.caption": {
+      "ru": "Первая завершённая смена отмечена как карьерный рубеж.",
+      "en": "The first completed shift is acknowledged as a career milestone."
+    },
+    "presentation.static.lumber-forewoman-route.alt": {
+      "ru": "Профессиональная сцена на лесной площадке, где управленческий результат применяется к действующему маршруту без изменения игрового исхода.",
+      "en": "A professional lumber-site scene where the management result is applied to the existing route without changing the gameplay outcome."
+    },
+    "presentation.static.lumber-forewoman-route.caption": {
+      "ru": "Управленческий результат признан в профессиональном маршруте лесорубов.",
+      "en": "The management result is acknowledged within the professional Lumber route."
+    },
+    "presentation.static.lumber-ending-hard-work.alt": {
+      "ru": "Завершённая рабочая сцена лесоруба с древесиной и инструментом как визуал финала «Тяжёлый труд».",
+      "en": "A completed lumber work scene with timber and tools as the visual for the Hard Work ending."
+    },
+    "presentation.static.lumber-ending-hard-work.caption": {
+      "ru": "Финал лесоруба: тяжёлый труд.",
+      "en": "Lumber ending: Hard Work."
+    },
+    "presentation.static.lumber-ending-forewoman.alt": {
+      "ru": "Профессиональная сцена на лесной площадке с рабочим столом и бригадиром как визуал управленческого финала.",
+      "en": "A professional lumber-site scene with the work table and foreman as the visual for the management ending."
+    },
+    "presentation.static.lumber-ending-forewoman.caption": {
+      "ru": "Финал лесоруба: управленческий путь.",
+      "en": "Lumber ending: management route."
+    },
+    "presentation.static.lumber-ending-forest.alt": {
+      "ru": "Успешное возвращение с лесного маршрута как визуал лесного финала.",
+      "en": "A successful return from the forest route as the visual for the Forest ending."
+    },
+    "presentation.static.lumber-ending-forest.caption": {
+      "ru": "Финал лесоруба: лесной путь.",
+      "en": "Lumber ending: Forest route."
     }
   }
 }
