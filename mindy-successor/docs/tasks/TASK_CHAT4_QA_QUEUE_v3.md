@@ -28,8 +28,8 @@ Audit the Lumber career UI candidate against current main, including localizatio
 ### C4-19 — Re-gate PR #77
 Audit the Foreman leadership integration regression against current main and ensure it is not being misused as proof of natural School reachability.
 
-### C4-20 — Re-gate PR #72
-Audit the Chat 2 C2-01 presentation inventory against current main. Record whether it remains a valid source for the active presentation queue.
+### C4-20 — Gate current Chat 2 presentation candidate
+Gate the current Chat 2 presentation/media candidate (currently PR #79, or its later replacement if Chat 2 freezes a newer C2-12 head). Verify exact head, CI, changed assets/slots, static fallback, accessibility metadata, editor/replacement compatibility and no gameplay drift. Use PR #72 only as historical C2-01 inventory context, not as the production candidate.
 
 ### C4-21 — Gate Chat 3 next candidate
 When Chat 3 C3-12 candidate exists, gate its exact frozen head, scope, CI and ownership. If absent, skip to another available item.
