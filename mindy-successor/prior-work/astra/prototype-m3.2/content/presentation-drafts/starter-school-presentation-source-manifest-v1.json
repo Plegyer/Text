@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "id": "starter-school-presentation-source-manifest-v1",
+  "owner": "chat2-presentation-media",
+  "baselineMain": "b56628a81098146e7a2fc2c70b193e2587b9f025",
+  "gameplayMutation": false,
+  "slots": [
+    {
+      "presentationId": "job/satyr-maid/shift/spring/default",
+      "domain": "satyr-maid",
+      "role": "seasonal-shift",
+      "sourceAsset": "assets/presentation/career-satyr-maid-shift-spring.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "altKey": "presentation.static.career.satyr-maid.shift.spring.alt",
+      "captionKey": "presentation.static.career.satyr-maid.shift.spring.caption"
+    },
+    {
+      "presentationId": "job/satyr-maid/shift/summer/default",
+      "domain": "satyr-maid",
+      "role": "seasonal-shift",
+      "sourceAsset": "assets/presentation/career-satyr-maid-shift-summer.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "altKey": "presentation.static.career.satyr-maid.shift.summer.alt",
+      "captionKey": "presentation.static.career.satyr-maid.shift.summer.caption"
+    },
+    {
+      "presentationId": "job/satyr-maid/shift/autumn/default",
+      "domain": "satyr-maid",
+      "role": "seasonal-shift",
+      "sourceAsset": "assets/presentation/career-satyr-maid-shift-autumn.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "altKey": "presentation.static.career.satyr-maid.shift.autumn.alt",
+      "captionKey": "presentation.static.career.satyr-maid.shift.autumn.caption"
+    },
+    {
+      "presentationId": "job/satyr-maid/shift/winter/default",
+      "domain": "satyr-maid",
+      "role": "seasonal-shift",
+      "sourceAsset": "assets/presentation/career-satyr-maid-shift-winter.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "altKey": "presentation.static.career.satyr-maid.shift.winter.alt",
+      "captionKey": "presentation.static.career.satyr-maid.shift.winter.caption"
+    }
+  ],
+  "mediaSurfaces": [],
+  "invariants": {
+    "existingSemanticIdsOnly": true,
+    "projectOwnedLocalSourcesOnly": true,
+    "staticFallbackRequired": true,
+    "noGameplayFieldsChanged": true,
+    "noSaveOrRngMutation": true
+  }
+}
