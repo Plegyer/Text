@@ -67,8 +67,8 @@ Must not modify gameplay mechanics, progression, Save/RNG or content canon.
 ## Worker 3 — Chat 3 / Forest + Poverty Content Bundles Worker
 
 Queue:
-- `TASK_CHAT3_CONTENT_QUEUE_v3.md`
-- C3-13 through C3-24.
+- `TASK_CHAT3_CONTENT_QUEUE_v4.md`
+- C3-25 through C3-36.
 
 Owns ordinary poverty content/localization bundles, Forest/Expedition content hooks and result bundles, explicitly assigned Secret Debt boundary/content preparation, fixtures/collision audits/content regressions and selective-integration handoffs.
 
