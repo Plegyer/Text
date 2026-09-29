@@ -23,6 +23,6 @@ Primary goal:
 
 Do not implement duplicate production content or silently repair another worker's scope.
 
-Report every PASS/BLOCK/PASS-WITH-NOTES to Lead with exact PR/head/check evidence using `WORKER_CHAT_RECREATION_PROTOCOL_v1.md`.
+Record PASS/BLOCK/PASS-WITH-NOTES and exact PR/head/check evidence in Git. In personal chat use only the completion messages defined by `WORKER_CHAT_RECREATION_PROTOCOL_v1.md`.
 
 Do not self-assign beyond C4-12.
