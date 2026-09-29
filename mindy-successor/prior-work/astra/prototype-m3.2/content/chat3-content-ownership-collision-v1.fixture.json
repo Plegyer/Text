@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "id": "chat3.content-ownership-collision-regression.v1",
+  "status": "C3_11_EXACT_BASE_GUARD",
+  "baseMain": "95322727dc481b2ac54a9f764d31eb2067343149",
+  "allowedChangedPaths": [
+    "mindy-successor/docs/lumber-prep/FOREST_ENTRY_CONTENT_BUNDLE_V1.md",
+    "mindy-successor/docs/lumber-prep/FOREST_RESULT_CONTENT_BUNDLE_V1.md",
+    "mindy-successor/docs/lumber-prep/FOREST_TO_LUMBER_RETURN_HOOKS_V1.md",
+    "mindy-successor/docs/lumber-prep/LUMBER_FOREST_CONTENT_IDENTITY_MAP_V1.md",
+    "mindy-successor/docs/poverty-prep/ORDINARY_POVERTY_SECRET_DEBT_BOUNDARY_AUDIT_V1.md",
+    "mindy-successor/docs/poverty-prep/POVERTY_HOUSING_DEPTH_BUNDLE_V1.md",
+    "mindy-successor/docs/poverty-prep/POVERTY_RECOVERY_ROUTE_HANDOFF_V1.md",
+    "mindy-successor/docs/poverty-prep/POVERTY_SURVIVAL_CONTACT_BUNDLE_V1.md",
+    "mindy-successor/docs/tasks/CHAT3_FOREST_POVERTY_CANDIDATE_HANDOFF_V1.md",
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/forest-entry-content-v1.fixture.json",
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/forest-to-lumber-return-hooks-v1.fixture.json",
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/localization.json",
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/packs/forest-result-content-bilingual-v2.json",
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/poverty-housing-depth-v1.fixture.json",
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/poverty-recovery-route-v1.fixture.json",
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/poverty-secret-debt-boundary-audit-v1.fixture.json",
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/poverty-survival-contact-depth-v1.fixture.json",
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/chat3-content-ownership-collision-v1.fixture.json",
+    "mindy-successor/prior-work/astra/prototype-m3.2/tests/chat3-content-ownership-collision-v1.test.ts"
+  ],
+  "allowedModifiedProductionPaths": [
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/localization.json",
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/packs/forest-result-content-bilingual-v2.json"
+  ],
+  "protectedPathPrefixes": [
+    "mindy-successor/prior-work/astra/prototype-m3.2/src/",
+    "mindy-successor/prior-work/astra/prototype-m3.2/assets/",
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/packs/school",
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/school",
+    "mindy-successor/prior-work/astra/prototype-m3.2/tests/school"
+  ],
+  "protectedExactPaths": [
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/definitions.json",
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation.json",
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/packs/lumber-night-production.json",
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/packs/lumber-target/lumber-night-acceptance.pack.json"
+  ],
+  "localizationDelta": {
+    "allowedAddedKeys": [
+      "event.lumber-cross.activity-forest-return.title",
+      "event.lumber-cross.activity-forest-return.variant.default.text",
+      "event.lumber-cross.activity-forest-return.choice.continue.label",
+      "event.lumber-cross.activity-forest-return.choice.continue.text"
+    ],
+    "allowedChangedKeys": [
+      "event.forest-result-content-v1.success.title",
+      "event.forest-result-content-v1.success.variant.default.text",
+      "event.forest-result-content-v1.success.choice.return.label",
+      "event.forest-result-content-v1.success.choice.return.text",
+      "event.forest-result-content-v1.escape.title",
+      "event.forest-result-content-v1.escape.variant.default.text",
+      "event.forest-result-content-v1.escape.choice.return.label",
+      "event.forest-result-content-v1.escape.choice.return.text",
+      "event.forest-result-content-v1.failure.title",
+      "event.forest-result-content-v1.failure.variant.default.text",
+      "event.forest-result-content-v1.failure.choice.return.text"
+    ],
+    "allowedRemovedKeys": [],
+    "forbiddenPrefixes": [
+      "school.",
+      "ui.school.",
+      "course.",
+      "relationship.lumber.foreman.",
+      "career.lumber.foreman.",
+      "presentation.school.",
+      "presentation.static.school."
+    ]
+  },
+  "forestResultPack": {
+    "path": "mindy-successor/prior-work/astra/prototype-m3.2/content/packs/forest-result-content-bilingual-v2.json",
+    "presentationFieldsAllowedToDiffer": [
+      "title",
+      "text",
+      "label"
+    ],
+    "requiredEventIds": [
+      "forest-result-content-v1.success",
+      "forest-result-content-v1.escape",
+      "forest-result-content-v1.failure"
+    ],
+    "requiredActivityResultIds": [
+      "lumber.forest.success",
+      "lumber.forest.escape",
+      "lumber.forest.failure"
+    ]
+  },
+  "assertions": {
+    "schoolOwnershipUntouched": true,
+    "mediaSourceOwnershipUntouched": true,
+    "saveSchemaUntouched": true,
+    "gameplayRngUntouched": true,
+    "foremanCanonUntouched": true,
+    "sharedRuntimeArchitectureUntouched": true
+  }
+}
