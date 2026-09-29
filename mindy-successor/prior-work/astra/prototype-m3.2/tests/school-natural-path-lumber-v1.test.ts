@@ -63,6 +63,9 @@ test('C5-09 existing Lumber seam works after a test-only public-boundary injecti
   const cat=catalog();
   let s=establishProfessionalRoute(ready(),cat);
   s=dispatch(s,{type:'schoolLesson',id:'school.course.literacy_and_numbers'},cat);
+  if(s.run.flow.pendingScene?.eventId==='base.school'){
+    s=dispatch(s,{type:'choice',id:'listen'},cat);
+  }
 
   const lessonsBefore=s.run.progression.school.tracks['school.track.literacy_and_numbers']
     ?.counters.lessons_completed;
