@@ -8,18 +8,15 @@ Mandatory startup:
 - `WORKER_CHAT_RECREATION_PROTOCOL_v1.md`
 - `ACTIVE_TEAM_OWNERSHIP_MATRIX.md`
 - `CANDIDATE_QA_FREEZE_PROTOCOL.md`
-- `TASK_CHAT1_DEVELOPER_QUEUE_v2.md`
+- `TASK_CHAT1_DEVELOPER_QUEUE_v3.md`
 
 Current queue:
-- C1D-01 through C1D-12.
+- C1D-13 through C1D-24.
 
 Primary goal:
-- finish a playable Lumber career vertical slice using existing runtime systems.
+- consolidate the already-validated Lumber work onto current main and produce one focused current-main integration candidate.
 
-Resume, do not restart:
-- inspect draft branch `chat1/lumber-vertical-slice`;
-- preserve useful work selectively;
-- baseline repair PR #68 is already merged.
+Do not restart completed C1D-01..12 work.
 
 Locked:
 - Hard Work is `completed_shifts >= 50`;
@@ -30,4 +27,4 @@ Locked:
 
 Keep detailed evidence/blockers in Git. In personal chat use only the completion messages defined by `WORKER_CHAT_RECREATION_PROTOCOL_v1.md`.
 
-Do not self-assign work beyond C1D-12.
+Do not self-assign work beyond C1D-24.
