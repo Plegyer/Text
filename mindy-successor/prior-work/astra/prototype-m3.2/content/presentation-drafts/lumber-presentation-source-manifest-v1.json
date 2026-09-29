@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "lumber-presentation-source-manifest-v1",
+  "owner": "chat2-presentation-media",
+  "scope": "active-lumber-vertical-slice",
+  "gameplayMutation": false,
+  "assetsRoot": "assets/presentation",
+  "slots": [
+    {
+      "presentationId": "job/lumber/shift/spring/default",
+      "role": "ordinary-shift-season",
+      "sourceAsset": "assets/presentation/career-lumber-shift-spring.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "gameplayIdentity": "lumber.shift"
+    },
+    {
+      "presentationId": "job/lumber/shift/summer/default",
+      "role": "ordinary-shift-season",
+      "sourceAsset": "assets/presentation/career-lumber-shift-summer.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "gameplayIdentity": "lumber.shift"
+    },
+    {
+      "presentationId": "job/lumber/shift/autumn/default",
+      "role": "ordinary-shift-season",
+      "sourceAsset": "assets/presentation/career-lumber-shift-autumn.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "gameplayIdentity": "lumber.shift"
+    },
+    {
+      "presentationId": "job/lumber/shift/winter/default",
+      "role": "ordinary-shift-season",
+      "sourceAsset": "assets/presentation/career-lumber-shift-winter.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "gameplayIdentity": "lumber.shift"
+    }
+  ],
+  "invariants": {
+    "semanticIdsExistingOnly": true,
+    "projectOwnedLocalSourcesOnly": true,
+    "staticFallbackRequired": true,
+    "noGameplayFieldsChanged": true,
+    "noSaveOrRngMutation": true
+  }
+}
