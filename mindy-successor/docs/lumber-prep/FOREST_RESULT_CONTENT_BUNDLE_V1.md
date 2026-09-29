@@ -97,9 +97,9 @@ Return text:
 
 The copy reflects the existing endurance-based terminal failure without exposing thresholds or changing failure policy.
 
-## Localization keys changed
+## Localization keys reviewed
 
-Exactly these 12 existing keys are refreshed:
+These 12 existing keys were reviewed as the complete title/body/return-label/return-text surface for the three outcomes. Eleven have textual deltas in this task; `event.forest-result-content-v1.failure.choice.return.label` already matched the desired RU/EN value and remains unchanged:
 - `event.forest-result-content-v1.success.title`;
 - `event.forest-result-content-v1.success.variant.default.text`;
 - `event.forest-result-content-v1.success.choice.return.label`;
@@ -110,7 +110,7 @@ Exactly these 12 existing keys are refreshed:
 - `event.forest-result-content-v1.escape.choice.return.text`;
 - `event.forest-result-content-v1.failure.title`;
 - `event.forest-result-content-v1.failure.variant.default.text`;
-- `event.forest-result-content-v1.failure.choice.return.label`;
+- `event.forest-result-content-v1.failure.choice.return.label` — revalidated, no textual delta;
 - `event.forest-result-content-v1.failure.choice.return.text`.
 
 Existing media alt keys are unchanged because their current success/escape/failure semantics are already accurate.
@@ -127,7 +127,9 @@ Result:
 - variant IDs unchanged;
 - choice IDs unchanged;
 - choice effects remain empty;
-- RU source text matches RU localization for all three events.
+- RU source text matches RU localization for all three events;
+- localization key-set additions/removals: 0;
+- localization textual deltas: 11.
 
 ## Forest -> Lumber boundary
 
