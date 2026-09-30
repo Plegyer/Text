@@ -57,7 +57,7 @@ test('Forest Activity consumes approved entry context without mutating gameplay 
   try{
     await wait(()=>!!routed.w.document.querySelector('.dialogue p')||routed.errors.length>0);
     assert.deepEqual(routed.errors,[]);
-    assert.match(routed.w.document.querySelector('.dialogue p').textContent,/Лесовозная дорога широкая/);
+    assert.match(routed.w.document.querySelector('.dialogue p').textContent,/Весенняя вода смывает мелкие следы/);
   }finally{
     routed.dom.window.close();
   }
