@@ -1,0 +1,59 @@
+{
+  "formatVersion": 1,
+  "id": "school.body-confidence-boundary-audit.v3",
+  "status": "CONTENT_AUDIT_ONLY",
+  "baseline": "a341303183dc277a26b3e64a61d8ed8e35c5d05f",
+  "courseId": "school.course.body_confidence",
+  "trackId": "school.track.body_confidence",
+  "teacherContentId": "school.teacher.sera-vey",
+  "auditedSurfaces": [
+    {
+      "surface": "canonical course description",
+      "boundarySafe": true
+    },
+    {
+      "surface": "school-body-confidence-depth-v1.fixture.json",
+      "boundarySafe": true,
+      "lustEffects": 0,
+      "publishesWorldFacts": 0
+    },
+    {
+      "surface": "school-body-confidence-reactive-v2.fixture.json",
+      "boundarySafe": true,
+      "lustEffects": 0,
+      "consentRuleChanges": 0,
+      "careerWrites": 0
+    },
+    {
+      "surface": "school-teacher-tone-consistency-matrix-v3.fixture.json",
+      "boundarySafe": true,
+      "teacherRelationshipWrites": 0
+    },
+    {
+      "surface": "exact Night-study Body Confidence choices",
+      "boundarySafe": true,
+      "choiceCount": 3,
+      "nextDayEnergyDelta": -1
+    },
+    {
+      "surface": "localized teacher/presentation metadata",
+      "boundarySafe": true,
+      "mechanicClaims": 0
+    }
+  ],
+  "boundaries": [
+    "Body Confidence may cover movement, grooming, comfort, deliberate presence, sexuality as self-presentation, and personal boundaries.",
+    "Attractiveness, Sexuality, confidence, grooming, or professional presentation never imply consent.",
+    "Body Confidence does not write or measure Lust.",
+    "Body Confidence does not unlock or advance an adult career.",
+    "Body Confidence Night-study uses only the normal School Night-study contract."
+  ],
+  "violationsFound": [],
+  "constraints": {
+    "changesLustRules": false,
+    "changesConsentRules": false,
+    "changesAdultCareerMechanics": false,
+    "changesRuntime": false,
+    "changesNightFlow": false
+  }
+}
