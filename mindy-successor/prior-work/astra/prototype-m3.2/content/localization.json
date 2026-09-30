@@ -3357,6 +3357,38 @@
     "school.transfer.teacher.sera_vey.body": {
       "ru": "Сера одинаково подчёркивает это в сервисе, сценической работе и добровольной профессиональной практике: уверенная или привлекательная подача остаётся выбором и не является согласием. Граница может быть ясной без отказа от уверенности.",
       "en": "Sera emphasizes the same point in service, performance work, and voluntary professional practice: confident or attractive presentation remains a choice and is not consent. A boundary can be clear without giving up confidence."
+    },
+    "presentation.activity.forest.logging-road-depth.spring.meltwater.text": {
+      "ru": "Весной лесовозная дорога держит направление лучше троп, но талая вода собирается в глубоких колеях. Ты обходишь самые тёмные лужи по краю и сверяешь путь по свежим следам работ, не меняя сам маршрут.",
+      "en": "In spring, the logging road holds its direction better than the trails, but meltwater gathers in the deep ruts. You skirt the darkest pools and check the route against fresh signs of work without changing the route itself."
+    },
+    "presentation.activity.forest.logging-road-depth.summer.cut-branches.text": {
+      "ru": "Летом свежие срезы на ветках почти скрываются под новой листвой. Ты держишься широкой дороги, отмечаешь недавние повороты техники и не принимаешь боковые просеки за отдельные пути.",
+      "en": "In summer, fresh cuts on branches nearly disappear beneath new leaves. You stay on the broad road, note recent machinery turns, and do not mistake side clearings for separate routes."
+    },
+    "presentation.activity.forest.logging-road-depth.autumn.leaf-ruts.text": {
+      "ru": "Осенью листья заполняют старые колеи и делают дорогу ровнее на вид, чем она есть. Ты читаешь путь по краям колёсных следов, пням и меткам на стволах, сохраняя рабочее направление.",
+      "en": "In autumn, leaves fill the old ruts and make the road look smoother than it is. You read the route from the edges of wheel tracks, stumps, and marks on trunks, keeping the work direction."
+    },
+    "presentation.activity.forest.logging-road-depth.winter.frozen-ruts.text": {
+      "ru": "Зимой колеи замерзают и становятся жёсткими ориентирами, но скользкими местами для шага. Ты идёшь между ними, проверяя редкие рабочие знаки там, где снег закрывает свежие следы.",
+      "en": "In winter, the ruts freeze into hard landmarks but slippery footing. You walk between them, checking the sparse work signs where snow has covered the fresher tracks."
+    },
+    "presentation.activity.forest.old-boundary-depth.spring.wet-stones.text": {
+      "ru": "Весной вода собирается у межевых камней и подчёркивает старую линию пути. Ты сверяешь мокрые выступы и выцветшие отметки по одному, не меняя условий доступа к тропе.",
+      "en": "In spring, water gathers around the boundary stones and makes the old route line easier to see. You check the wet stones and faded marks one by one without changing the route's access conditions."
+    },
+    "presentation.activity.forest.old-boundary-depth.summer.hidden-markers.text": {
+      "ru": "Летом трава и молодые ветви скрывают часть старых знаков. Ты ищешь следующий камень там, где линия уже известна, и не превращаешь густую зелень в новый маршрут или испытание.",
+      "en": "In summer, grass and young branches hide some of the old signs. You look for the next stone where the line is already known, without turning the dense growth into a new route or challenge."
+    },
+    "presentation.activity.forest.old-boundary-depth.autumn.marker-line.text": {
+      "ru": "Осенью опавшие листья открывают края камней и старые зарубки на нижних стволах. Межа снова складывается в заметную линию, отдельную от следов современной лесозаготовки.",
+      "en": "In autumn, fallen leaves reveal the edges of stones and old cuts low on the trunks. The boundary forms a visible line again, separate from the signs of modern logging."
+    },
+    "presentation.activity.forest.old-boundary-depth.winter.stone-line.text": {
+      "ru": "Зимой снег делает камни похожими друг на друга, но их расстояние всё ещё выдаёт старую межу. Ты идёшь от одного ориентира к следующему и не предполагаешь новых возможностей только из-за сезона.",
+      "en": "In winter, snow makes the stones look alike, but their spacing still reveals the old boundary. You move from one landmark to the next without assuming any new capability just because of the season."
     }
   }
 }
