@@ -1,0 +1,73 @@
+{
+  "formatVersion": 1,
+  "id": "school.post-v8-reachability-audit.v1",
+  "status": "CONTENT_AUDIT_ONLY",
+  "baseline": "a341303183dc277a26b3e64a61d8ed8e35c5d05f",
+  "classifications": [
+    {
+      "surfaceId": "school-life-content-v1.after-paid-lesson",
+      "classification": "PLAYER_FACING",
+      "identity": "actionCompleted:school",
+      "consumerReady": true
+    },
+    {
+      "surfaceId": "school-lesson-content-v1.after-school",
+      "classification": "PLAYER_FACING",
+      "identity": "actionCompleted:school",
+      "consumerReady": true
+    },
+    {
+      "surfaceId": "school-life-content-v1.after-night-study",
+      "classification": "PLAYER_FACING",
+      "identity": "24 exact nightChoiceCompleted(choice)",
+      "consumerReady": true
+    },
+    {
+      "surfaceId": "school.runtime.paid-lesson-journal",
+      "classification": "PLAYER_FACING",
+      "identity": "exact English course label",
+      "consumerReady": true,
+      "localized": false
+    },
+    {
+      "surfaceId": "school-whole-career-transfer-atlas-v1",
+      "classification": "PREPARATION_ONLY",
+      "consumerReady": false
+    },
+    {
+      "surfaceId": "school-generic-after-school-depth-v1",
+      "classification": "PREPARATION_ONLY",
+      "consumerReady": false
+    },
+    {
+      "surfaceId": "school-exact-night-study-reactive-depth-v1",
+      "classification": "PREPARATION_ONLY",
+      "consumerReady": true,
+      "runtimeAttachmentSelected": false
+    },
+    {
+      "surfaceId": "school-target",
+      "classification": "PREPARATION_ONLY",
+      "consumerReady": true,
+      "runtimeAttachmentSelected": false
+    },
+    {
+      "surfaceId": "pr-132",
+      "classification": "PREPARATION_ONLY",
+      "consumerReady": false,
+      "mergedToMain": false
+    }
+  ],
+  "obsoleteSurfaces": [],
+  "routingGaps": [
+    "Generic paid-lesson reaction facts still expose no exact course or teacher identity.",
+    "Night-study facts expose exact choice/course identity but do not emit teacher presence.",
+    "Paid-lesson journal remains player-facing raw English with null localization reference.",
+    "Transfer text has no approved runtime consumer, threshold, or public-result producer."
+  ],
+  "constraints": {
+    "changesRuntime": false,
+    "changesProductionPacks": false,
+    "changesRootLocalization": false
+  }
+}
