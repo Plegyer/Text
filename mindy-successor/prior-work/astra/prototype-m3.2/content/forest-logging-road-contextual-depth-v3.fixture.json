@@ -66,20 +66,20 @@
       "en": "In autumn, fresh strips of bark and chips lie along the roadside from recent work. They confirm that the road is in use without changing its progress, endurance cost, or possible outcome."
     },
     "presentation.activity.forest.logging-road-v3.winter.packed-center.text": {
-      "ru": "Зимой середина дороги утоптана плотнее, чем края, и по ней легче держать прямую линию. Это сезонная деталь того же Logging Road, а не новая механика движения.",
-      "en": "In winter, the center of the road is packed harder than the edges and holds a straighter line. It is a seasonal detail of the same Logging Road, not a new movement mechanic."
+      "ru": "Зимой середина дороги утоптана плотнее, чем края, и по ней легче держать прямую линию. Маршрут кажется яснее, но сама дорога остаётся той же.",
+      "en": "In winter, the center of the road is packed harder than the edges and holds a straighter line. The route feels clearer, but the road itself remains the same."
     },
     "presentation.activity.forest.logging-road-v3.success.route-confirmed.text": {
-      "ru": "После успешной вылазки рабочая дорога остаётся самой простой частью объяснения: её можно проследить назад по тем же колеям и отметкам. Подтверждённый результат остаётся существующим success.",
-      "en": "After a successful expedition, the work road is the simplest part to explain: it can be traced back along the same ruts and work marks. The confirmed outcome remains the existing success."
+      "ru": "После успешной вылазки рабочая дорога остаётся самой простой частью объяснения: её можно проследить назад по тем же колеям и отметкам. Нужная последовательность уже подтверждена.",
+      "en": "After a successful expedition, the work road is the simplest part to explain: it can be traced back along the same ruts and work marks. The needed sequence is already confirmed."
     },
     "presentation.activity.forest.logging-road-v3.escape.route-incomplete.text": {
-      "ru": "При добровольном отходе дорога остаётся читаемой, но нужный участок не доведён до подтверждённого конца. Это существующий escape, а не частичный success.",
-      "en": "During a voluntary retreat, the road remains readable, but the needed stretch was not carried through to a confirmed end. It is the existing escape, not a partial success."
+      "ru": "При добровольном отходе дорога остаётся читаемой, но нужный участок не доведён до подтверждённого конца. Наблюдения остаются незавершёнными.",
+      "en": "During a voluntary retreat, the road remains readable, but the needed stretch was not carried through to a confirmed end. The observations remain unfinished."
     },
     "presentation.activity.forest.logging-road-v3.failure.route-lost.text": {
-      "ru": "При неудаче знакомая лесовозная линия уже не помогает собрать наблюдения в надёжный ответ. Сам маршрут остаётся тем же, а исход — существующим failure без дополнительных штрафов.",
-      "en": "On failure, the familiar logging line no longer helps turn the observations into a reliable answer. The route remains the same, and the outcome remains the existing failure with no added penalty."
+      "ru": "При неудаче знакомая лесовозная линия уже не помогает собрать наблюдения в надёжный ответ. Сам маршрут остаётся прежним, но уверенного вывода нет.",
+      "en": "On failure, the familiar logging line no longer helps turn the observations into a reliable answer. The route remains the same, but there is no confident conclusion."
     }
   },
   "invariants": {
