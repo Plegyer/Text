@@ -245,11 +245,67 @@ export function ordinaryCareerForShiftAction(action:Action):OrdinaryHardWorkCare
   return ordinaryCareerSet.has(career)?career as OrdinaryHardWorkCareer:null;
 }
 
-export function actionAvailable(action:Action,s:Save,cat?:Catalog):boolean{
-  if(!eligible(action.conditions,s,cat))return false;
+export type ActionAvailabilityBlocker=
+  |'run-inactive'
+  |'creation-incomplete'
+  |'pending-scene'
+  |'night-active'
+  |'activity-active'
+  |'arrival-incomplete'
+  |'authored-condition'
+  |'career-contract-missing'
+  |'money'
+  |'energy';
+
+export type ActionAvailabilityResult={
+  available:boolean;
+  eligible:boolean;
+  missingConditions:Condition[];
+  careerContractMissing:boolean;
+  blockers:ActionAvailabilityBlocker[];
+  moneyCost:number;
+  energyCost:number;
+};
+
+function actionEligibility(action:Action,s:Save,cat?:Catalog){
+  const missingConditions=action.conditions.filter(condition=>!meets(condition,s,cat));
   const career=ordinaryCareerForShiftAction(action);
-  if(!career||starterCareerSet.has(career))return true;
-  return action.conditions.length>0;
+  const careerContractMissing=!!career&&!starterCareerSet.has(career)&&action.conditions.length===0;
+  return {
+    eligible:missingConditions.length===0&&!careerContractMissing,
+    missingConditions,
+    careerContractMissing
+  };
+}
+
+export function actionAvailable(action:Action,s:Save,cat?:Catalog):boolean{
+  return actionEligibility(action,s,cat).eligible;
+}
+
+export function actionAvailability(action:Action,s:Save,cat?:Catalog):ActionAvailabilityResult{
+  const {eligible:actionEligible,missingConditions,careerContractMissing}=actionEligibility(action,s,cat);
+  const moneyCost=actionCost(action,s);
+  const energyCost=action.cost.energy;
+  const blockers:ActionAvailabilityBlocker[]=[];
+  if(s.run.status!=='active')blockers.push('run-inactive');
+  if(!s.run.creation.complete)blockers.push('creation-incomplete');
+  if(s.run.pending)blockers.push('pending-scene');
+  if(s.run.flow.night)blockers.push('night-active');
+  if(s.run.flow.activity)blockers.push('activity-active');
+  if(action.id!=='arrival'&&!s.run.flags['story.arrived'])blockers.push('arrival-incomplete');
+  if(missingConditions.length)blockers.push('authored-condition');
+  if(careerContractMissing)blockers.push('career-contract-missing');
+  if(s.run.metrics.money<moneyCost)blockers.push('money');
+  if(s.run.metrics.energy<energyCost)blockers.push('energy');
+  return {
+    available:blockers.length===0,
+    eligible:actionEligible,
+    missingConditions,
+    careerContractMissing,
+    blockers,
+    moneyCost,
+    energyCost
+  };
 }
 
 export function actionCost(a:Action,s:Save){
