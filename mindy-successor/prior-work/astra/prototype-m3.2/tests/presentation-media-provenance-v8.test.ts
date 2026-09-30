@@ -37,7 +37,7 @@ test('every queue-v8 teacher media source is project-owned, present and attached
 });
 
 test('provenance manifest covers every active queue-v8 source use',()=>{
-  const bySource=new Map(manifest.projectOwnedSources.map((entry:any)=>[entry.sourceAsset,entry]));
+  const bySource=new Map<string,any>(manifest.projectOwnedSources.map((entry:any)=>[entry.sourceAsset,entry]));
   for(const entry of manifest.semanticSlots){
     assert.ok(bySource.get(entry.sourceAsset)?.semanticIds.includes(entry.presentationId),entry.presentationId);
   }
