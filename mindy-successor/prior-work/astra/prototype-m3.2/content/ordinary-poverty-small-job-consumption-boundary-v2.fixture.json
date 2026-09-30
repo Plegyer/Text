@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "id": "ordinary-poverty.small-job-consumption-boundary.v2",
+  "status": "CURRENT_MAIN_CONSUMPTION_BOUNDARY",
+  "task": "C3-91",
+  "baseMain": "f4de3b01a4369417ae9eff4b384f755790f75279",
+  "resultConsumer": {
+    "identityShape": [
+      "eventId",
+      "choiceId"
+    ],
+    "variantAware": false,
+    "localizationShape": "event.<eventId>.choice.<choiceId>.text"
+  },
+  "safe": [
+    {
+      "eventId": "poverty-street-production.helpful-summer",
+      "variantId": "default",
+      "choiceId": "take-errand",
+      "reason": "single event variant"
+    },
+    {
+      "eventId": "poverty-recovery-production.short-cleanup",
+      "variantId": "default",
+      "choiceId": "do-cleanup",
+      "reason": "single event variant"
+    },
+    {
+      "eventId": "poverty-recovery-production.small-coin-help",
+      "variantId": "default",
+      "choiceId": "take-coins",
+      "reason": "single event variant"
+    },
+    {
+      "eventId": "poverty-recovery-production.herb-bundle",
+      "variantId": "default",
+      "choiceId": "take-herb",
+      "reason": "single event variant"
+    }
+  ],
+  "preparationOnly": [
+    {
+      "eventId": "poverty-street-production-v2.helpful-summer-shade",
+      "variantId": "market-closing",
+      "choiceId": "take-small-task",
+      "reason": "shares result identity with late-shade"
+    },
+    {
+      "eventId": "poverty-street-production-v2.helpful-summer-shade",
+      "variantId": "late-shade",
+      "choiceId": "take-small-task",
+      "reason": "shares result identity with market-closing"
+    }
+  ],
+  "rules": {
+    "doNotCollapseVariantSpecificCopy": true,
+    "doNotInventOutcomeIdentity": true,
+    "doNotChangeRuntimeInChat3": true,
+    "currentSharedChoiceResultFallbackPreserved": true
+  }
+}
