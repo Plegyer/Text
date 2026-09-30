@@ -385,6 +385,22 @@ test('renderer: School Night-study labels localize without changing NightFlow sa
   assert.match(en.textContent,/selected stat gains \+2/);
   assert.match(en.querySelector('button').textContent,/Study at night/);
   assert.equal(w.localStorage.getItem('portal-life.v1'),before);
+
+  en.querySelector('button').click();
+  await wait(()=>!!w.document.querySelector('[data-choice="continue"]'));
+  assert.match(w.document.querySelector('.stage-title h1').textContent,/Check the reasoning/);
+  assert.match(w.document.querySelector('.dialogue p').textContent,/You reread one calculation and mark every step/);
+  const pendingEn=w.localStorage.getItem('portal-life.v1');
+  const pendingSave=JSON.parse(pendingEn);
+  assert.equal(pendingSave.run.flow.night.selectedNightChoiceId,'school.night_study.literacy_and_numbers.reason');
+  assert.equal(pendingSave.run.flow.pendingScene.eventId,'school-life-content-v1.after-night-study');
+
+  w.document.querySelector('[data-panel="menu"]').click();
+  w.document.querySelector('#language-toggle').click();
+  await wait(()=>w.document.documentElement.lang==='ru');
+  assert.equal(w.localStorage.getItem('portal-life.v1'),pendingEn);
+  assert.match(w.document.querySelector('.stage-title h1').textContent,/Проверить ход мысли/);
+  assert.match(w.document.querySelector('.dialogue p').textContent,/Ты перечитываешь один расчёт и отмечаешь каждый переход/);
   assert.deepEqual(errors,[]);
  }finally{dom.window.close();}
 });
