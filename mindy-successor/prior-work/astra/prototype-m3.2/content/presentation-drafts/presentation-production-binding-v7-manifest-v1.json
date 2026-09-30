@@ -737,6 +737,168 @@
         "captionKey": "presentation.static.ending.tavern-court.caption",
         "fallbackId": "location/town/default"
       }
+    ],
+    "ordinaryPovertyBindings": [
+      {
+        "presentationId": "location/town/event/poverty-street-production-helpful-summer/default",
+        "state": "active-current-main",
+        "sourceAsset": "assets/presentation/poverty-street-helpful-summer.svg",
+        "altKey": "presentation.static.poverty-street-helpful-summer.alt",
+        "captionKey": "presentation.static.poverty-street-helpful-summer.caption",
+        "fallbackId": "location/town/default"
+      },
+      {
+        "presentationId": "location/town/event/poverty-street-production-neutral-autumn/default",
+        "state": "active-current-main",
+        "sourceAsset": "assets/presentation/poverty-street-neutral-autumn.svg",
+        "altKey": "presentation.static.poverty-street-neutral-autumn.alt",
+        "captionKey": "presentation.static.poverty-street-neutral-autumn.caption",
+        "fallbackId": "location/town/default"
+      },
+      {
+        "presentationId": "location/town/event/poverty-street-production-pressure-winter/default",
+        "state": "active-current-main",
+        "sourceAsset": "assets/presentation/poverty-street-pressure-winter.svg",
+        "altKey": "presentation.static.poverty-street-pressure-winter.alt",
+        "captionKey": "presentation.static.poverty-street-pressure-winter.caption",
+        "fallbackId": "location/town/default"
+      },
+      {
+        "presentationId": "location/town/event/poverty-cheap-production-shared-quiet-autumn/default",
+        "state": "active-current-main",
+        "sourceAsset": "assets/presentation/poverty-cheap-shared-quiet-autumn.svg",
+        "altKey": "presentation.static.poverty-cheap-shared-quiet-autumn.alt",
+        "captionKey": "presentation.static.poverty-cheap-shared-quiet-autumn.caption",
+        "fallbackId": "location/town/default"
+      },
+      {
+        "presentationId": "location/town/event/poverty-recovery-production-small-coin-help/default",
+        "state": "active-current-main",
+        "sourceAsset": "assets/presentation/poverty-recovery-small-coin-help.svg",
+        "altKey": "presentation.static.poverty-recovery-small-coin-help.alt",
+        "captionKey": "presentation.static.poverty-recovery-small-coin-help.caption",
+        "fallbackId": "location/town/default"
+      },
+      {
+        "presentationId": "location/town/event/poverty-recovery-production-short-cleanup/default",
+        "state": "active-current-main",
+        "sourceAsset": "assets/presentation/poverty-recovery-short-cleanup.svg",
+        "altKey": "presentation.static.poverty-recovery-short-cleanup.alt",
+        "captionKey": "presentation.static.poverty-recovery-short-cleanup.caption",
+        "fallbackId": "location/town/default"
+      },
+      {
+        "presentationId": "location/town/event/poverty-recovery-production-herb-bundle/default",
+        "state": "active-current-main",
+        "sourceAsset": "assets/presentation/poverty-recovery-herb-bundle.svg",
+        "altKey": "presentation.static.poverty-recovery-herb-bundle.alt",
+        "captionKey": "presentation.static.poverty-recovery-herb-bundle.caption",
+        "fallbackId": "location/town/default"
+      },
+      {
+        "presentationId": "location/town/event/poverty-pressure-production-cold-rain/default",
+        "state": "active-current-main",
+        "sourceAsset": "assets/presentation/poverty-pressure-cold-rain.svg",
+        "altKey": "presentation.static.poverty-pressure-cold-rain.alt",
+        "captionKey": "presentation.static.poverty-pressure-cold-rain.caption",
+        "fallbackId": "location/town/default"
+      },
+      {
+        "presentationId": "location/town/event/poverty-pressure-production-noisy-loading/default",
+        "state": "active-current-main",
+        "sourceAsset": "assets/presentation/poverty-pressure-noisy-loading.svg",
+        "altKey": "presentation.static.poverty-pressure-noisy-loading.alt",
+        "captionKey": "presentation.static.poverty-pressure-noisy-loading.caption",
+        "fallbackId": "location/town/default"
+      },
+      {
+        "presentationId": "location/town/event/poverty-pressure-production-muddy-splash/default",
+        "state": "active-current-main",
+        "sourceAsset": "assets/presentation/poverty-pressure-muddy-splash.svg",
+        "altKey": "presentation.static.poverty-pressure-muddy-splash.alt",
+        "captionKey": "presentation.static.poverty-pressure-muddy-splash.caption",
+        "fallbackId": "location/town/default"
+      },
+      {
+        "presentationId": "location/town/event/poverty-street-production-v2-helpful-summer-shade/market-closing",
+        "state": "active-current-main",
+        "sourceAsset": "assets/presentation/poverty-street-helpful-summer.svg",
+        "altKey": "presentation.static.location.town.event.poverty-street-production-v2-helpful-summer-shade.market-closing.alt",
+        "captionKey": "presentation.static.location.town.event.poverty-street-production-v2-helpful-summer-shade.market-closing.caption",
+        "fallbackId": "location/town/default"
+      },
+      {
+        "presentationId": "location/town/event/poverty-street-production-v2-helpful-summer-shade/late-shade",
+        "state": "active-current-main",
+        "sourceAsset": "assets/presentation/poverty-street-helpful-summer.svg",
+        "altKey": "presentation.static.location.town.event.poverty-street-production-v2-helpful-summer-shade.late-shade.alt",
+        "captionKey": "presentation.static.location.town.event.poverty-street-production-v2-helpful-summer-shade.late-shade.caption",
+        "fallbackId": "location/town/default"
+      },
+      {
+        "presentationId": "location/town/event/poverty-street-production-v2-neutral-autumn-crossing/drizzle",
+        "state": "active-current-main",
+        "sourceAsset": "assets/presentation/poverty-street-neutral-autumn.svg",
+        "altKey": "presentation.static.location.town.event.poverty-street-production-v2-neutral-autumn-crossing.drizzle.alt",
+        "captionKey": "presentation.static.location.town.event.poverty-street-production-v2-neutral-autumn-crossing.drizzle.caption",
+        "fallbackId": "location/town/default"
+      },
+      {
+        "presentationId": "location/town/event/poverty-street-production-v2-neutral-autumn-crossing/dry-arcade",
+        "state": "active-current-main",
+        "sourceAsset": "assets/presentation/poverty-street-neutral-autumn.svg",
+        "altKey": "presentation.static.location.town.event.poverty-street-production-v2-neutral-autumn-crossing.dry-arcade.alt",
+        "captionKey": "presentation.static.location.town.event.poverty-street-production-v2-neutral-autumn-crossing.dry-arcade.caption",
+        "fallbackId": "location/town/default"
+      },
+      {
+        "presentationId": "location/town/event/poverty-street-production-v2-pressure-winter-wind/crosswind",
+        "state": "active-current-main",
+        "sourceAsset": "assets/presentation/poverty-street-pressure-winter.svg",
+        "altKey": "presentation.static.location.town.event.poverty-street-production-v2-pressure-winter-wind.crosswind.alt",
+        "captionKey": "presentation.static.location.town.event.poverty-street-production-v2-pressure-winter-wind.crosswind.caption",
+        "fallbackId": "location/town/default"
+      },
+      {
+        "presentationId": "location/town/event/poverty-street-production-v2-pressure-winter-wind/long-gusts",
+        "state": "active-current-main",
+        "sourceAsset": "assets/presentation/poverty-street-pressure-winter.svg",
+        "altKey": "presentation.static.location.town.event.poverty-street-production-v2-pressure-winter-wind.long-gusts.alt",
+        "captionKey": "presentation.static.location.town.event.poverty-street-production-v2-pressure-winter-wind.long-gusts.caption",
+        "fallbackId": "location/town/default"
+      },
+      {
+        "presentationId": "location/town/event/poverty-cheap-production-v2-shared-room-seasons/spring-window",
+        "state": "active-current-main",
+        "sourceAsset": "assets/presentation/poverty-cheap-lodging.svg",
+        "altKey": "presentation.static.location.town.event.poverty-cheap-production-v2-shared-room-seasons.spring-window.alt",
+        "captionKey": "presentation.static.location.town.event.poverty-cheap-production-v2-shared-room-seasons.spring-window.caption",
+        "fallbackId": "location/town/default"
+      },
+      {
+        "presentationId": "location/town/event/poverty-cheap-production-v2-shared-room-seasons/summer-heat",
+        "state": "active-current-main",
+        "sourceAsset": "assets/presentation/poverty-cheap-lodging.svg",
+        "altKey": "presentation.static.location.town.event.poverty-cheap-production-v2-shared-room-seasons.summer-heat.alt",
+        "captionKey": "presentation.static.location.town.event.poverty-cheap-production-v2-shared-room-seasons.summer-heat.caption",
+        "fallbackId": "location/town/default"
+      },
+      {
+        "presentationId": "location/town/event/poverty-cheap-production-v2-shared-room-seasons/winter-stove",
+        "state": "active-current-main",
+        "sourceAsset": "assets/presentation/poverty-cheap-lodging.svg",
+        "altKey": "presentation.static.location.town.event.poverty-cheap-production-v2-shared-room-seasons.winter-stove.alt",
+        "captionKey": "presentation.static.location.town.event.poverty-cheap-production-v2-shared-room-seasons.winter-stove.caption",
+        "fallbackId": "location/town/default"
+      },
+      {
+        "presentationId": "location/town/event/poverty-cheap-production-v2-shared-room-seasons/shared-room",
+        "state": "active-current-main",
+        "sourceAsset": "assets/presentation/poverty-cheap-lodging.svg",
+        "altKey": "presentation.static.location.town.event.poverty-cheap-production-v2-shared-room-seasons.shared-room.alt",
+        "captionKey": "presentation.static.location.town.event.poverty-cheap-production-v2-shared-room-seasons.shared-room.caption",
+        "fallbackId": "location/town/default"
+      }
     ]
   }
 }
