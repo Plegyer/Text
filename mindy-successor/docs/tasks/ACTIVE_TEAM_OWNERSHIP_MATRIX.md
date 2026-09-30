@@ -33,8 +33,8 @@ Target queue depth:
 ## Worker 1 — Chat 1 Developer / Integration Developer
 
 Queue:
-- `TASK_CHAT1_DEVELOPER_QUEUE_v6.md` then `TASK_CHAT1_DEVELOPER_QUEUE_v7.md`
-- C1D-49 through C1D-72.
+- `TASK_CHAT1_DEVELOPER_QUEUE_v6.md` then `TASK_CHAT1_DEVELOPER_QUEUE_v7.md` then `TASK_CHAT1_DEVELOPER_QUEUE_v8.md`
+- C1D-49 through C1D-84.
 
 Owns:
 - selective integration of approved worker handoffs;
