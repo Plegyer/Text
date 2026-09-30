@@ -311,16 +311,6 @@
         "fallbackId": "location/town/default"
       }
     ],
-    "frozenDependency": {
-      "pr": 109,
-      "exactHead": "946d8b6188ff7aab8b7bf41faabdcbe42faf8445",
-      "presentationIds": [
-        "ending/tavern-stay",
-        "ending/tavern-guild",
-        "ending/tavern-court"
-      ],
-      "note": "Do not duplicate while PR #109 remains frozen and unmerged."
-    },
     "preparedHere": [
       {
         "presentationId": "ending/guild-life",
@@ -371,6 +361,16 @@
         }
       }
     ],
-    "totalCurrentEndingIds": 9
+    "totalCurrentEndingIds": 9,
+    "mergedSource": {
+      "pr": 109,
+      "exactHead": "946d8b6188ff7aab8b7bf41faabdcbe42faf8445",
+      "presentationIds": [
+        "ending/tavern-stay",
+        "ending/tavern-guild",
+        "ending/tavern-court"
+      ],
+      "note": "PR #109 is merged on current main; Tavern source assets and queue-v5 handoff are now current-main inputs."
+    }
   }
 }
