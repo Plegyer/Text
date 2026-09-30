@@ -73,7 +73,7 @@ Integration uses only existing state already present while the current generic a
 - `run.flow.night.selectedNightChoiceId`;
 - existing pending event `school-life-content-v1.after-night-study`.
 
-`src/ui/schoolNightStudyReactive.ts` maps the 24 exact current choice IDs to accepted title/body keys. The UI selects exact text on the existing pending scene, falling back to the existing generic event text when no exact mapping is present.
+`src/ui/schoolNightStudyReactive.ts` maps the 24 exact current choice IDs to accepted title/body keys. The existing `school-life-content-v1.after-night-study` event is switched from non-blocking optional delivery to the existing blocking/live Night intercept path so its already-authored `nightChoiceCompleted` triggers become player-facing before NightFlow resumes. The UI selects exact text from `selectedNightChoiceId`, falling back to the event's generic text when no exact mapping is present.
 
 Promoted root localization: exactly 48 RU/EN keys (24 titles + 24 bodies). No new event, ReactionFact, NightFlow field, curriculum, threshold, relationship state or School progression write.
 
@@ -114,7 +114,7 @@ Explicit non-goals:
 - no career thresholds;
 - no `jobUnlocked`/parallel unlock state;
 - no new School generic event or producer fact;
-- no new NightFlow/Save field;
+- no new NightFlow/Save field; the existing after-Night-study event uses the existing blocking/live intercept contract;
 - no Forest/poverty selector duplication from frozen PR #124;
 - no media-source edits;
 - no ending-rule changes.
