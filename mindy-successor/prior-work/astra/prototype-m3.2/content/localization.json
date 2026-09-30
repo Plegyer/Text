@@ -3525,6 +3525,38 @@
     "media.school.teacher.body-confidence.classroom.caption": {
       "ru": "Преподаватель: Сера Вей — «Уверенность в теле».",
       "en": "Teacher: Sera Vey — Body Confidence."
+    },
+    "ui.action.unavailable.money": {
+      "ru": "Нужно {needed} монет; доступно {available}.",
+      "en": "Needs {needed} coins; {available} available."
+    },
+    "ui.action.unavailable.energy": {
+      "ru": "Нужно {needed} энергии; доступно {available}.",
+      "en": "Needs {needed} Energy; {available} available."
+    },
+    "ui.action.unavailable.arrival": {
+      "ru": "Сначала завершите вступление.",
+      "en": "Finish the arrival first."
+    },
+    "ui.action.unavailable.pending": {
+      "ru": "Сначала завершите текущую сцену.",
+      "en": "Finish the current scene first."
+    },
+    "ui.action.unavailable.night": {
+      "ru": "Сначала завершите ночь.",
+      "en": "Finish the current Night first."
+    },
+    "ui.action.unavailable.activity": {
+      "ru": "Сначала завершите вылазку.",
+      "en": "Finish the current Activity first."
+    },
+    "ui.action.unavailable.creation": {
+      "ru": "Сначала завершите создание героини.",
+      "en": "Finish character creation first."
+    },
+    "ui.action.unavailable.run": {
+      "ru": "Текущая жизнь уже не активна.",
+      "en": "The current life is no longer active."
     }
   }
 }
