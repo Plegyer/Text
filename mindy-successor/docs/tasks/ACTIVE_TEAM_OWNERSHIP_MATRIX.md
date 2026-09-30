@@ -54,8 +54,8 @@ Must not own media asset production, Forest/poverty authoring, School authoring/
 ## Worker 2 — Chat 2 / Presentation & Media Worker
 
 Queue:
-- `TASK_CHAT2_PRESENTATION_QUEUE_v6.md` then `TASK_CHAT2_PRESENTATION_QUEUE_v7.md`
-- C2-49 through C2-72.
+- `TASK_CHAT2_PRESENTATION_QUEUE_v7.md` then `TASK_CHAT2_PRESENTATION_QUEUE_v8.md`
+- C2-61 through C2-84.
 
 Owns project-owned presentation/media sources, presentation IDs/registries/manifests, static/animation fallbacks, presentation-specific accessibility metadata and presentation validators.
 
@@ -70,8 +70,8 @@ Must not modify gameplay mechanics, progression, Save/RNG or content canon.
 ## Worker 3 — Chat 3 / Forest + Poverty Content Bundles Worker
 
 Queue:
-- `TASK_CHAT3_CONTENT_QUEUE_v6.md` then `TASK_CHAT3_CONTENT_QUEUE_v7.md`
-- C3-49 through C3-72.
+- `TASK_CHAT3_CONTENT_QUEUE_v7.md` then `TASK_CHAT3_CONTENT_QUEUE_v8.md`
+- C3-61 through C3-84.
 
 Owns ordinary poverty content/localization bundles, Forest/Expedition content hooks and result bundles, explicitly assigned Secret Debt boundary/content preparation, fixtures/collision audits/content regressions and selective-integration handoffs.
 
@@ -86,8 +86,8 @@ Must not own shared runtime/UI integration, Chat 2 media production, Chat 5 Scho
 ## Worker 4 — Chat 4 / QA + Product Acceptance Gate
 
 Queue:
-- `TASK_CHAT4_QA_QUEUE_v8.md` then `TASK_CHAT4_QA_QUEUE_v9.md`
-- C4-58 through C4-89.
+- `TASK_CHAT4_QA_QUEUE_v9.md` then `TASK_CHAT4_QA_QUEUE_v10.md`
+- C4-78 through C4-101.
 
 Owns exact-head PR/CI verification, scope/collision review, runtime/catalog gates, cross-system acceptance and final Lumber product-acceptance gate.
 
@@ -96,9 +96,10 @@ Immediate evidence/candidates:
 - merged #84, #85, #88, #89, #90, #93, #97, #98, #99 and #100 are historical accepted integration evidence;
 - queue-v5 candidates #106, #109, #108 and #105 are QA-gated and merged;
 - PR #114 (Chat 3 C3-60) is QA PASS-WITH-NOTES and merged;
-- PR #116 (Chat 2 C2-60) is frozen/green and ready for C4-80;
-- PR #118 is the refreshed Chat 5 C5-60 candidate awaiting exact-head CI/C4-78 QA; PR #113/#115 are superseded source/history;
-- PR #119 (Chat 1 C1D-60) remains draft/blocked until a new green frozen head exists;
+- PR #116 (Chat 2 C2-60) passed C4-80 and is merged;
+- PR #118 is the refreshed Chat 5 C5-60 candidate at a green frozen head awaiting C4-78 QA; PR #113/#115 are superseded source/history;
+- PR #124 is the current Chat 1 C1D-60 candidate and is CI-blocked pending repair; PR #119/#123 are superseded/closed;
+- PR #126 is the current Chat 3 C3-72 candidate awaiting exact-head CI/freeze;
 - when dependency-gated, Chat 4 continues independent v8/v9 QA instead of idling.
 
 Must not create duplicate production content.
@@ -106,8 +107,8 @@ Must not create duplicate production content.
 ## Worker 5 — Chat 5 / School + Text Localization Content Worker
 
 Queue:
-- `TASK_CHAT5_SCHOOL_QUEUE_v6.md` then `TASK_CHAT5_SCHOOL_QUEUE_v7.md`
-- C5-49 through C5-72.
+- `TASK_CHAT5_SCHOOL_QUEUE_v7.md` then `TASK_CHAT5_SCHOOL_QUEUE_v8.md`
+- C5-61 through C5-84.
 
 Owns School player-facing content/localization, teacher/milestone/night-study text preparation, RU/EN parity, School-to-career content handoff fixtures and School content-side regressions.
 
