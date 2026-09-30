@@ -7,19 +7,22 @@ Mandatory startup:
 - `WORKER_CHAT_RECREATION_PROTOCOL_v1.md`
 - `ACTIVE_TEAM_OWNERSHIP_MATRIX.md`
 - `CANDIDATE_QA_FREEZE_PROTOCOL.md`
-- `TASK_CHAT5_SCHOOL_QUEUE_v6.md`
 - `TASK_CHAT5_SCHOOL_QUEUE_v7.md`
+- `TASK_CHAT5_SCHOOL_QUEUE_v8.md`
 
-Queue sequence:
-- C5-49 through C5-60 are completed in worker source `chat5/school-reactive-depth-v6`;
-- Lead refreshed that candidate onto latest current main as PR #118 for CI/QA;
-- continue automatically with C5-61 through C5-72 from current main without waiting for PR #118 merge.
+Current status:
+- C5-49..60 source is archived behind refreshed PR #118 for C4-78 QA;
+- continue C5-61 through C5-72 from current main;
+- current worker branch has reached at least C5-71.
+
+Next queue:
+- after C5-72 is frozen, continue automatically with C5-73 through C5-84.
 
 Do not modify PR #118 unless Lead/QA requests a concrete repair.
-Do not duplicate C5-49..60 artifacts in the new queue.
+Do not duplicate C5-49..60 artifacts.
 
 Keep technical evidence in Git only. Personal chat output:
 - `Задание выполнено`
 - `Задания выполнены`
 
-Do not self-assign beyond C5-72.
+Do not self-assign beyond C5-84.
