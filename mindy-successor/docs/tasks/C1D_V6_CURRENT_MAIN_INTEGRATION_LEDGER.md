@@ -113,3 +113,54 @@ The regression also asserts no research/specimen/successor/external career fact 
 No new Farm research/progression state or Save field is added.
 
 Implementation commit: `c19b7a48118bfe8b0d9b890865baa07b898b7f6a`.
+
+
+## C1D-54 — starter-career localized result persistence
+
+Dependency checkpoint:
+- PR #106 exact head `58779c2d1b37394d0d2a6c23ad759b67b88e38f6` has C4-54 PASS-WITH-NOTES for the selective integration diff;
+- PR #106 is still open/unmerged at this checkpoint;
+- current main therefore still lacks the generic multi-scene Satyr Maid / Undead Farm localization consumer and its promoted strings.
+
+Disposition at this checkpoint: DEPENDENCY / defer exact C1D-54 UI persistence proof until the QA-accepted #106 consumer is merged into current main. Do not duplicate the frozen #106 implementation into queue v6.
+
+Independent Save persistence for both careers is already covered by C1D-52/53.
+
+## C1D-55 — School exact-course reactive-routing audit
+
+Exact course identity **is available safely to presentation/text consumers without a new Save field**:
+- the `schoolLesson` command carries exact `SchoolCourseId`;
+- `executeSchoolLesson()` writes the selected course's unique semantic `presentationId` into existing `run.flow.lastAction.presentationId`;
+- root UI already recovers the exact `SchoolCourse` with `SCHOOL_COURSES.find(course => course.presentationId === last.presentationId)`;
+- the School track counter also records exact `trackId`.
+
+What is not available to the reaction event resolver:
+- emitted reaction fact remains generic `{kind:'actionCompleted', action:'school'}`;
+- current production School notification packs therefore cannot distinguish exact paid course through reaction facts;
+- no exact teacher ID is serialized in Save.
+
+Approved merged Chat 5 material provides a one-to-one content mapping from exact `sourceCourseId` to `teacherContentId` and one transfer body per existing course/teacher.
+
+Conclusion:
+- exact-course UI/presentation routing is safe;
+- exact-course reaction-event routing is not safe without changing reaction facts;
+- C1D-56 must remain a UI/text consumer using the already persisted course presentation identity, not a new gameplay reaction fact or Save field.
+
+## C1D-56 — minimal School reactive consumer
+
+Implemented presentation-only exact-course School reactive text:
+- added `src/ui/schoolReactive.ts`;
+- mapping contains exactly the eight approved Chat 5 `sourceCourseId -> teacherContentId -> bodyKey` bindings;
+- UI keeps the existing exact course title and resolves one approved teacher-transfer body from the exact recovered course;
+- fallback remains the previous generic `ui.school.lessonResult` text;
+- no course mechanics, tuition, Energy, stat package, School progress, reaction facts, Save fields, thresholds or producer facts change.
+
+Promoted only the eight corresponding approved RU/EN body strings from the merged Chat 5 fixture. The eight fixture title strings remain preparation-only because the existing result title continues to show the exact course label.
+
+Implementation commits:
+- `dcf9ca85d3e0f54cec6e57c07704fcd501461eb0` — exact-course binding;
+- `7d06e5d8fecb6a3ca0284deefca4ec8fd7ed53ac` — UI consumer;
+- `4b605963e07019f4f2e76328abf49a9282c7c844` — eight RU/EN bodies;
+- `a068a69270e0ba8585d96f1d581d5e2d1bcb37e0` — focused audit/consumer/browser regression.
+
+The browser regression proves Rhetoric & Social resolves the Cassian transfer body in RU and EN from existing course identity and locale switching does not mutate the serialized Save.
