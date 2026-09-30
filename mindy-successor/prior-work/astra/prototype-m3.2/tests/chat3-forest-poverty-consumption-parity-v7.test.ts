@@ -66,7 +66,11 @@ test('C3-62/C3-63 Forest route consumption handoffs use exact current identities
     assertBilingual(pair.source.strings);
     for(const entry of pair.handoff.entries){
       assert.ok(pair.source.strings[entry.localizationKey],entry.localizationKey);
-      assert.equal(entry.localizationKey in localization,false,'Forest preparation key unexpectedly live: '+entry.localizationKey);
+      assert.deepEqual(
+        localization[entry.localizationKey],
+        pair.source.strings[entry.localizationKey],
+        'integrated Forest route key mismatch: '+entry.localizationKey
+      );
     }
   }
 });
@@ -97,7 +101,19 @@ test('C3-64/C3-65 aftermath handoffs use exact current result/event identities',
     assertBilingual(pair.source.strings);
     for(const entry of pair.handoff.entries){
       assert.ok(pair.source.strings[entry.localizationKey],entry.localizationKey);
-      assert.equal(entry.localizationKey in localization,false,'Forest aftermath key unexpectedly live: '+entry.localizationKey);
+      if(entry.surface==='result_event'){
+        assert.deepEqual(
+          localization[entry.localizationKey],
+          pair.source.strings[entry.localizationKey],
+          'integrated Forest result key mismatch: '+entry.localizationKey
+        );
+      }else{
+        assert.equal(
+          entry.localizationKey in localization,
+          false,
+          'selector-less Forest aftermath key entered production: '+entry.localizationKey
+        );
+      }
     }
   }
 });
@@ -107,7 +123,20 @@ test('C3-66/C3-67/C3-68 poverty handoffs use current event/variant/choice identi
     assertBilingual(pair.source.strings);
     for(const entry of pair.handoff.entries){
       assert.ok(pair.source.strings[entry.localizationKey],entry.localizationKey);
-      assert.equal(entry.localizationKey in localization,false,'consumer-ready key already live: '+entry.localizationKey);
+      const selected=pair.handoff.id!=='ordinary-poverty.small-job-consumption-handoff.v2';
+      if(selected){
+        assert.deepEqual(
+          localization[entry.localizationKey],
+          pair.source.strings[entry.localizationKey],
+          'integrated poverty key mismatch: '+entry.localizationKey
+        );
+      }else{
+        assert.equal(
+          entry.localizationKey in localization,
+          false,
+          'variant+choice poverty key entered production without a safe persisted seam: '+entry.localizationKey
+        );
+      }
 
       const event=povertyEvents.find((candidate:any)=>candidate.id===entry.eventId);
       assert.ok(event,entry.eventId);
