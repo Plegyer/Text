@@ -13,7 +13,7 @@ Current queue:
 - C1D-37 through C1D-48.
 
 Current-main resync rule:
-- PR #97, #98, #99, #93, #88 and #90 are now merged into main;
+- PR #97, #98, #99, #93, #88, #90 and #100 are now merged into main;
 - any working branch created before those merges is stale as a final delivery base;
 - do not duplicate-copy merged artifacts;
 - before C1D-48 freeze, rebuild/rebase selectively from current main and carry forward only queue-v5 changes that are still absent from main;
