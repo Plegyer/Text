@@ -12,12 +12,14 @@ Mandatory startup:
 Current queue:
 - C1D-37 through C1D-48.
 
-Immediate priority:
-- revalidate completed PR #97;
-- continue current-main selective integration work from C1D-38 onward;
-- wait for Chat 4 acceptance before consuming worker candidates that require QA.
+Current-main resync rule:
+- PR #97, #98, #99, #93, #88 and #90 are now merged into main;
+- any working branch created before those merges is stale as a final delivery base;
+- do not duplicate-copy merged artifacts;
+- before C1D-48 freeze, rebuild/rebase selectively from current main and carry forward only queue-v5 changes that are still absent from main;
+- treat C1D-42..47 as revalidation/no-op when their source candidate is already merged, unless an actual current-main consumer gap remains.
 
-Do not restart C1D-01..36 or stale `chat1/c1d-v4-*` branches.
+Do not restart C1D-01..36 or merge stale worker branches wholesale.
 
 Keep technical evidence in Git only. Personal chat output:
 - `Задание выполнено`
