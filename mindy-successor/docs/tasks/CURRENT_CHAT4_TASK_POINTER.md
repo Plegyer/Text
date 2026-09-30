@@ -15,7 +15,7 @@ Queue sequence:
 - then continue automatically with C4-78 through C4-89.
 
 Immediate new candidate:
-- C4-78 gates PR #115 exact refreshed Chat 5 C5-60 candidate after its required repository CI completes.
+- C4-78 gates PR #118 exact refreshed Chat 5 C5-60 candidate after its required repository CI completes.
 
 Do not report `Задания выполнены` while any assigned independent QA task is available.
 Do not implement production fixes.

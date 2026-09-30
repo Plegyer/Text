@@ -95,7 +95,7 @@ Immediate evidence/candidates:
 - use current main and the current worker pointers first;
 - merged #84, #85, #88, #89, #90, #93, #97, #98, #99 and #100 are historical accepted integration evidence;
 - queue-v5 candidates #106, #109, #108 and #105 are QA-gated and merged;
-- PR #115 is the refreshed Chat 5 C5-60 candidate awaiting exact-head CI/QA;
+- PR #118 is the refreshed Chat 5 C5-60 candidate awaiting exact-head CI/QA; PR #115 is superseded/closed;
 - when C4-59..65 are dependency-blocked, Chat 4 continues independent v8/v9 QA instead of idling.
 
 Must not create duplicate production content.
