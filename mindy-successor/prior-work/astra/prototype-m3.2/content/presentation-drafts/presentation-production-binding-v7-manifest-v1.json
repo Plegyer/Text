@@ -1278,6 +1278,17 @@
       "mediaIdentityPreserved": true,
       "gameplayDefinitionsPreserved": true,
       "saveIdentityPreserved": true
+    },
+    "registryCollisionStaleId": {
+      "test": "tests/presentation-registry-collision-stale-v7.test.ts",
+      "selectedSemanticSlots": 47,
+      "requireUniqueSemanticIds": true,
+      "requireCurrentRegistryIdentity": true,
+      "requireExactProductionBinding": true,
+      "requireSourceExistence": true,
+      "requireFallbackChain": true,
+      "requireNoPreparedOnlyBindings": true,
+      "requireTeacherMediaIdentity": true
     }
   }
 }
