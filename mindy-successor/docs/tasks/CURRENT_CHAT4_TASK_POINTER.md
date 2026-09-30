@@ -11,7 +11,7 @@ Mandatory startup:
 - `TASK_CHAT4_QA_QUEUE_v10.md`
 
 Current candidate state:
-- C4-78: PR #118 exact head `dbec65d3607844342a09a79549c0900860d30198` is green/frozen and awaits QA verdict;
+- C4-78: PR #118 PASS-WITH-NOTES at exact head `dbec65d3607844342a09a79549c0900860d30198` and merged;
 - C4-79: PR #124 is the current Chat 1 C1D-60 candidate; its current exact-head CI #354 is red, so wait for a repaired green/frozen head;
 - C4-80: PR #116 PASS and merged;
 - C4-81: PR #114 PASS-WITH-NOTES and merged;
@@ -21,7 +21,7 @@ Current candidate state:
 - C4-93: PR #127 exact head `3195c2981949173320ebf8f2a8e9c654d17cd0de`, CI #358 green/frozen.
 
 Queue sequence:
-- continue any available C4-78..89 work;
+- continue any available C4-82..89 work;
 - if remaining v9 items are dependency-blocked, continue immediately into available C4-91..93 instead of idling;
 - C4-90 waits for a future frozen C1D-72 candidate;
 - then continue the rest of C4-94..101 as dependencies become available.
