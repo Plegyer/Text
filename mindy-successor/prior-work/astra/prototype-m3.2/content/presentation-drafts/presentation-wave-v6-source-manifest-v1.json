@@ -223,5 +223,15 @@
     "ruEnAccessibilityRequired": true,
     "noGameplayFieldsChanged": true,
     "noSaveOrRngMutation": true
+  },
+  "coveragePolicies": {
+    "forest": {
+      "selectedSemanticSlots": 10,
+      "exactStaticRequired": true,
+      "fallbackRequired": true,
+      "ruEnAccessibilityRequired": true,
+      "animationIndependent": true,
+      "gameplayMutation": false
+    }
   }
 }
