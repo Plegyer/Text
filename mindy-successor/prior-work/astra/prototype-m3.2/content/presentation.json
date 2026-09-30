@@ -715,6 +715,30 @@
         "alt": "Успешное возвращение с лесного маршрута как визуал лесного финала.",
         "altKey": "presentation.static.lumber-ending-forest.alt"
       }
+    },
+    "ending/tavern-stay": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/tavern-ending-stay.svg",
+        "alt": "Тёплая таверна после закрытия: стойка, кружка и связка ключей обозначают решение остаться и вести это место.",
+        "altKey": "presentation.static.ending.tavern-stay.alt"
+      }
+    },
+    "ending/tavern-guild": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/tavern-ending-guild.svg",
+        "alt": "Стол таверны с кружкой, книгой учёта и знаком артели обозначает переход от смен к более широкой работе с гильдией.",
+        "altKey": "presentation.static.ending.tavern-guild.alt"
+      }
+    },
+    "ending/tavern-court": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/tavern-ending-court.svg",
+        "alt": "Запечатанное приглашение рядом с таверной кружкой обозначает приглашение ко двору без изображения конкретных персонажей.",
+        "altKey": "presentation.static.ending.tavern-court.alt"
+      }
     }
   }
 }

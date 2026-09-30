@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "id": "cross-domain-presentation-source-manifest-v1",
+  "owner": "chat2-presentation-media",
+  "baselineMain": "8265a6af2bd87b9e69f0bce96e6a20a80a9e852c",
+  "gameplayMutation": false,
+  "semanticSlots": [
+    {
+      "presentationId": "ending/tavern-stay",
+      "domain": "ending",
+      "role": "tavern-ending",
+      "sourceAsset": "assets/presentation/tavern-ending-stay.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.ending.tavern-stay.alt",
+      "captionKey": "presentation.static.ending.tavern-stay.caption"
+    },
+    {
+      "presentationId": "ending/tavern-guild",
+      "domain": "ending",
+      "role": "tavern-ending",
+      "sourceAsset": "assets/presentation/tavern-ending-guild.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.ending.tavern-guild.alt",
+      "captionKey": "presentation.static.ending.tavern-guild.caption"
+    },
+    {
+      "presentationId": "ending/tavern-court",
+      "domain": "ending",
+      "role": "tavern-ending",
+      "sourceAsset": "assets/presentation/tavern-ending-court.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.ending.tavern-court.alt",
+      "captionKey": "presentation.static.ending.tavern-court.caption"
+    }
+  ],
+  "teacherMediaSurfaces": [],
+  "documentedGaps": [
+    {
+      "presentationId": "ending/guild-life",
+      "reason": "Current ending identity; outside C2-38 Tavern and C2-39 target-Lumber scopes."
+    },
+    {
+      "presentationId": "ending/scholar-life",
+      "reason": "Current ending identity; outside C2-38 Tavern and C2-39 target-Lumber scopes."
+    },
+    {
+      "presentationId": "ending/lumber-stay",
+      "reason": "Current legacy Lumber ending identity; C2-39 explicitly targets Hard Work / Forewoman / Forest."
+    }
+  ],
+  "invariants": {
+    "existingSemanticIdsOnly": true,
+    "projectOwnedLocalSourcesOnly": true,
+    "staticFallbackRequired": true,
+    "noGameplayFieldsChanged": true,
+    "noSaveOrRngMutation": true
+  }
+}

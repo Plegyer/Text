@@ -3217,6 +3217,30 @@
     "event.lumber-cross.activity-forest-return.choice.continue.text": {
       "ru": "Ты вводишь лесные наблюдения в рабочий разговор, и подтверждённый результат становится частью дальнейшего решения артели.",
       "en": "You bring the Forest observations into the work discussion, and the confirmed result becomes part of the crew's next decision."
+    },
+    "presentation.static.ending.tavern-stay.alt": {
+      "ru": "Тёплая таверна после закрытия: стойка, кружка и связка ключей обозначают решение остаться и вести это место.",
+      "en": "A warm tavern after closing, with a counter, mug, and keys representing the choice to stay and run the place."
+    },
+    "presentation.static.ending.tavern-stay.caption": {
+      "ru": "Финал таверны: остаться в «Третьем тосте».",
+      "en": "Tavern ending: staying at the Third Toast."
+    },
+    "presentation.static.ending.tavern-guild.alt": {
+      "ru": "Стол таверны с кружкой, книгой учёта и знаком артели обозначает переход от смен к более широкой работе с гильдией.",
+      "en": "A tavern table with a mug, ledger, and guild mark representing a move from shifts into broader guild work."
+    },
+    "presentation.static.ending.tavern-guild.caption": {
+      "ru": "Финал таверны: путь через гильдию.",
+      "en": "Tavern ending: the guild route."
+    },
+    "presentation.static.ending.tavern-court.alt": {
+      "ru": "Запечатанное приглашение рядом с таверной кружкой обозначает приглашение ко двору без изображения конкретных персонажей.",
+      "en": "A sealed invitation beside a tavern mug represents a court invitation without depicting specific characters."
+    },
+    "presentation.static.ending.tavern-court.caption": {
+      "ru": "Финал таверны: приглашение ко двору.",
+      "en": "Tavern ending: an invitation to court."
     }
   }
 }
