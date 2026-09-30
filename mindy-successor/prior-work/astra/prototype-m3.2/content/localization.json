@@ -3229,6 +3229,38 @@
     "presentation.activity.forest.entry.old-boundary.text": {
       "ru": "Старая межевая линия уходит между замшелыми камнями и выветренными знаками, не совпадая с новой лесовозной дорогой. Тропа уже и тише, поэтому ориентироваться приходится по самим старым меткам.",
       "en": "The old boundary line runs between moss-covered stones and weathered marks instead of following the newer logging road. The trail is narrower and quieter, so the old markers themselves have to guide the way."
+    },
+    "school.teacher.late_career.mara_fen.transfer.body": {
+      "ru": "Мара просит тебя смотреть на учебную запись так, будто завтра её будет использовать незнакомый человек — в таверне, на рынке, в карауле или в дороге. Она не обещает, что хорошая ведомость откроет профессию. Только напоминает: ясная запись полезна именно тогда, когда работа уже вышла за пределы класса.",
+      "en": "Mara asks you to look at a practice record as though tomorrow it will be used by someone you do not know—in a tavern, at a market, on watch, or on the road. She does not promise that a good ledger unlocks a profession. She only reminds you that a clear record becomes useful precisely when the work has left the classroom."
+    },
+    "school.teacher.late_career.ilyra_venn.transfer.body": {
+      "ru": "Илира сравнивает охотничий след, странный товар и подозрительный магический остаток. Во всех трёх случаях вопрос одинаков: что ты наблюдала, что проверила и где начинается догадка. Она не выдаёт профессиональный допуск; она закрепляет привычку, которую можно унести в любую работу со странными вещами.",
+      "en": "Ilyra compares a hunting trace, an unusual trade good, and a suspicious magical residue. In all three cases, the question is the same: what did you observe, what did you test, and where does the guess begin? She grants no professional clearance; she reinforces a habit you can carry into any work involving strange things."
+    },
+    "school.teacher.late_career.cassian_reed.transfer.body": {
+      "ru": "Кассиан перечисляет разные рабочие ситуации: спор гостей, разговор со свидетелем, торг, формальный приём, сбор информации и обсуждение личной границы. Полезный разговор начинается с того, что ты понимаешь цель и слышишь ответ, а не только готовишь следующую реплику.",
+      "en": "Cassian lists very different work situations: a guest dispute, a witness conversation, a bargain, a formal reception, information gathering, and a discussion of personal boundaries. A useful conversation begins when you understand the purpose and hear the answer, rather than merely preparing your next line."
+    },
+    "school.teacher.late_career.eliane_marrow.transfer.body": {
+      "ru": "Элиан напоминает, что формальный гость, рынок, служба и закрытая встреча требуют разных деталей, но не новой личности каждый раз. Она просит искать уместность: достаточно аккуратности, ясности и контроля, чтобы самопрезентация не становилась отдельным препятствием работе.",
+      "en": "Eliane reminds you that a formal guest, a market, public duty, and a private meeting call for different details, but not a new personality every time. She asks you to look for appropriateness: enough care, clarity, and control that presentation does not become a separate obstacle to the work."
+    },
+    "school.teacher.late_career.rowan_pike.transfer.body": {
+      "ru": "Роуэн связывает полевую подготовку с привычкой заранее отмечать ориентиры, запасной путь и признаки, после которых решение нужно пересмотреть. На охоте или в скрытной работе эта привычка может пригодиться, но школа не превращает её в автоматический доступ к маршруту.",
+      "en": "Rowan connects field preparation to the habit of marking landmarks, a fallback route, and the signs that should make you reconsider a decision. That habit may help in hunting or covert work, but School does not turn it into automatic access to a route."
+    },
+    "school.teacher.late_career.tovan_kest.transfer.body": {
+      "ru": "Тован не спрашивает, какая профессия ждёт дальше. Ему важнее, можешь ли ты сохранять движение, равновесие и темп, когда задача затягивается. Охота, караул и скрытная работа потребуют разного, но ни одна не выигрывает от силы, исчезающей после первого рывка.",
+      "en": "Tovan does not ask which profession waits next. He cares whether you can preserve movement, balance, and pace when a task runs long. Hunting, guard duty, and covert work demand different things, but none benefit from strength that disappears after the first burst."
+    },
+    "school.teacher.late_career.nessa_lark.transfer.body": {
+      "ru": "Несса обсуждает работу, где внимание публики или собеседника становится частью профессии. Она просит различать выразительность и подчинение ожиданиям: роль можно сыграть убедительно, не отдавая ей право решать за тебя.",
+      "en": "Nessa discusses work in which the attention of an audience or another person becomes part of the profession. She asks you to distinguish expression from submission to expectation: a role can be played convincingly without giving it the right to decide for you."
+    },
+    "school.teacher.late_career.sera_vey.transfer.body": {
+      "ru": "Сера возвращается к простому упражнению: выбрать заметную манеру держаться и отдельно назвать то, чего ты не выбираешь. Уверенность, привлекательность или профессиональная подача не отменяют границ. Этот принцип остаётся школьным навыком, а не механикой согласия или Похоти.",
+      "en": "Sera returns to a simple exercise: choose a noticeable way of carrying yourself and separately name what you are not choosing. Confidence, attractiveness, or professional presentation does not erase boundaries. The principle remains a School skill, not a consent or Lust mechanic."
     }
   }
 }
