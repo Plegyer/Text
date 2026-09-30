@@ -710,5 +710,33 @@
     "preparedOnlySemanticSlots": 0,
     "activeTeacherMediaSurfaces": 8,
     "activeWorkControls": 10
+  },
+  "packages": {
+    "tavernEndingBindings": [
+      {
+        "presentationId": "ending/tavern-stay",
+        "state": "active-current-main",
+        "sourceAsset": "assets/presentation/tavern-ending-stay.svg",
+        "altKey": "presentation.static.ending.tavern-stay.alt",
+        "captionKey": "presentation.static.ending.tavern-stay.caption",
+        "fallbackId": "location/town/default"
+      },
+      {
+        "presentationId": "ending/tavern-guild",
+        "state": "active-current-main",
+        "sourceAsset": "assets/presentation/tavern-ending-guild.svg",
+        "altKey": "presentation.static.ending.tavern-guild.alt",
+        "captionKey": "presentation.static.ending.tavern-guild.caption",
+        "fallbackId": "location/town/default"
+      },
+      {
+        "presentationId": "ending/tavern-court",
+        "state": "active-current-main",
+        "sourceAsset": "assets/presentation/tavern-ending-court.svg",
+        "altKey": "presentation.static.ending.tavern-court.alt",
+        "captionKey": "presentation.static.ending.tavern-court.caption",
+        "fallbackId": "location/town/default"
+      }
+    ]
   }
 }
