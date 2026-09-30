@@ -617,6 +617,20 @@
       "selectedSemanticSlots": 47,
       "animationsDisabledMustSelectStatic": true,
       "missingOptionalDynamicMustLeaveStaticCandidate": true
+    },
+    "staleSemanticValidator": {
+      "activeManifestFiles": [
+        "content/presentation-drafts/lumber-presentation-source-manifest-v1.json",
+        "content/presentation-drafts/starter-school-presentation-source-manifest-v1.json",
+        "content/presentation-drafts/late-career-presentation-source-manifest-v1.json",
+        "content/presentation-drafts/cross-domain-presentation-source-manifest-v1.json",
+        "content/presentation-drafts/presentation-wave-v6-source-manifest-v1.json"
+      ],
+      "validateRegistryIdentity": true,
+      "validateSourceExistence": true,
+      "validateTeacherMediaIdentity": true,
+      "validateWorkActionIdentity": true,
+      "deleteGameplayIdentity": false
     }
   },
   "summary": {
