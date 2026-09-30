@@ -1,0 +1,119 @@
+{
+  "formatVersion": 1,
+  "id": "school.journal-result-terminology-consistency.v3",
+  "status": "CONTENT_AUDIT_ONLY",
+  "baseline": "a341303183dc277a26b3e64a61d8ed8e35c5d05f",
+  "courses": [
+    {
+      "courseId": "school.course.literacy_and_numbers",
+      "canonical": {
+        "ru": "Грамотность и счёт",
+        "en": "Literacy & Numbers"
+      },
+      "presentationCourseNameRu": "Грамота и числа",
+      "teacherMediaCourseNameRu": "Грамота и числа",
+      "aligned": false
+    },
+    {
+      "courseId": "school.course.arcana",
+      "canonical": {
+        "ru": "Аркана",
+        "en": "Arcana"
+      },
+      "presentationCourseNameRu": "Аркана",
+      "teacherMediaCourseNameRu": "Аркана",
+      "aligned": true
+    },
+    {
+      "courseId": "school.course.rhetoric_and_social",
+      "canonical": {
+        "ru": "Риторика и общение",
+        "en": "Rhetoric & Social"
+      },
+      "presentationCourseNameRu": "Риторика и общение",
+      "teacherMediaCourseNameRu": "Риторика и общение",
+      "aligned": true
+    },
+    {
+      "courseId": "school.course.etiquette_and_presentation",
+      "canonical": {
+        "ru": "Этикет и самопрезентация",
+        "en": "Etiquette & Presentation"
+      },
+      "presentationCourseNameRu": "Этикет и подача",
+      "teacherMediaCourseNameRu": "Этикет и подача",
+      "aligned": false
+    },
+    {
+      "courseId": "school.course.field_craft",
+      "canonical": {
+        "ru": "Полевая практика",
+        "en": "Field Craft"
+      },
+      "presentationCourseNameRu": "Полевая практика",
+      "teacherMediaCourseNameRu": "Полевая практика",
+      "aligned": true
+    },
+    {
+      "courseId": "school.course.physical_training",
+      "canonical": {
+        "ru": "Физическая подготовка",
+        "en": "Physical Training"
+      },
+      "presentationCourseNameRu": "Физическая подготовка",
+      "teacherMediaCourseNameRu": "Физическая подготовка",
+      "aligned": true
+    },
+    {
+      "courseId": "school.course.arts_and_performance",
+      "canonical": {
+        "ru": "Искусство и выступление",
+        "en": "Arts & Performance"
+      },
+      "presentationCourseNameRu": "Искусство и выступление",
+      "teacherMediaCourseNameRu": "Искусство и выступление",
+      "aligned": true
+    },
+    {
+      "courseId": "school.course.body_confidence",
+      "canonical": {
+        "ru": "Уверенность в теле",
+        "en": "Body Confidence"
+      },
+      "presentationCourseNameRu": "Уверенность в теле",
+      "teacherMediaCourseNameRu": "Уверенность в теле",
+      "aligned": true
+    }
+  ],
+  "runtimeJournal": {
+    "playerFacing": true,
+    "localized": false,
+    "journalRef": null,
+    "sourceCourseLabelLanguage": "en",
+    "template": "School: <English course label>. Tuition <value>; Energy -<value>."
+  },
+  "lastAction": {
+    "rawFallbackLanguage": "en",
+    "localizedUiResultKey": "ui.school.lessonResult",
+    "localizedUiResultPair": {
+      "ru": "Урок завершён: {course}.",
+      "en": "School lesson completed: {course}."
+    }
+  },
+  "lessonPreparation": {
+    "canonicalCourseLabelPairsComplete": 8,
+    "canonicalCourseDescriptionPairsComplete": 8,
+    "coursePresentationPairsComplete": 8,
+    "teacherMediaAltCaptionPairsComplete": 8
+  },
+  "terminologyMismatches": [
+    "Literacy & Numbers canonical RU differs from presentation/teacher metadata.",
+    "Etiquette & Presentation canonical RU differs from presentation/teacher metadata."
+  ],
+  "constraints": {
+    "changesRuntime": false,
+    "changesJournalSchema": false,
+    "changesRootLocalization": false,
+    "changesMedia": false
+  }
+}
