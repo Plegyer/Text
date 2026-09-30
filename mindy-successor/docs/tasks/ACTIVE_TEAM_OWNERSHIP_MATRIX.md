@@ -96,9 +96,9 @@ Immediate evidence/candidates:
 - merged #84, #85, #88, #89, #90, #93, #97, #98, #99 and #100 are historical accepted integration evidence;
 - queue-v5 candidates #106, #109, #108 and #105 are QA-gated and merged;
 - PR #114 (Chat 3 C3-60) is QA PASS-WITH-NOTES and merged;
-- PR #116 (Chat 2 C2-60) is frozen/green and ready for C4-80;
-- PR #118 is the refreshed Chat 5 C5-60 candidate awaiting exact-head CI/C4-78 QA; PR #113/#115 are superseded source/history;
-- PR #119 (Chat 1 C1D-60) remains draft/blocked until a new green frozen head exists;
+- PR #116 (Chat 2 C2-60) is QA PASS and merged;
+- PR #118 is the refreshed Chat 5 C5-60 candidate, exact green frozen head, ready for C4-78; PR #113/#115 are superseded source/history;
+- PR #119 (Chat 1 C1D-60) now has an exact green frozen head and is ready for C4-79;
 - when dependency-gated, Chat 4 continues independent v8/v9 QA instead of idling.
 
 Must not create duplicate production content.
