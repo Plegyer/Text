@@ -7,22 +7,24 @@ Mandatory startup:
 - `WORKER_CHAT_RECREATION_PROTOCOL_v1.md`
 - `ACTIVE_TEAM_OWNERSHIP_MATRIX.md`
 - `CANDIDATE_QA_FREEZE_PROTOCOL.md`
-- `TASK_CHAT4_QA_QUEUE_v8.md`
 - `TASK_CHAT4_QA_QUEUE_v9.md`
 - `TASK_CHAT4_QA_QUEUE_v10.md`
 
 Current candidate state:
 - C4-78: PR #118 exact head `dbec65d3607844342a09a79549c0900860d30198` is green/frozen and awaits QA verdict;
-- C4-79: use PR #124 as the current Chat 1 C1D-60 candidate; its current exact-head CI failed, so wait for a new green/frozen head; PR #119/#123 are superseded/closed;
+- C4-79: PR #124 is the current Chat 1 C1D-60 candidate; its current exact-head CI #354 is red, so wait for a repaired green/frozen head;
 - C4-80: PR #116 PASS and merged;
 - C4-81: PR #114 PASS-WITH-NOTES and merged;
 - C4-82..89 remain assigned independent/current-main gates;
-- C4-92 will gate PR #126 or an explicitly refreshed successor after exact-head green freeze.
+- C4-91: PR #125 exact head `827a77bf40238ffcad509876c43d2b05481ffb17`, CI #355 green/frozen;
+- C4-92: PR #126 exact head `3129a7bc87e6abae64b630bbbef69d2011dcbb78`, CI #356 green/frozen;
+- C4-93: PR #127 exact head `3195c2981949173320ebf8f2a8e9c654d17cd0de`, CI #358 green/frozen.
 
 Queue sequence:
-- continue available C4-78..89;
-- then continue automatically with C4-90..101;
-- do not idle on one blocked candidate while independent assigned QA work exists.
+- continue any available C4-78..89 work;
+- if remaining v9 items are dependency-blocked, continue immediately into available C4-91..93 instead of idling;
+- C4-90 waits for a future frozen C1D-72 candidate;
+- then continue the rest of C4-94..101 as dependencies become available.
 
 Do not implement production fixes.
 
