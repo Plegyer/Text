@@ -96,8 +96,10 @@ test('C5-47 Lumber re-audit keeps current consumer seam and unresolved School pr
   assert.equal(lumberAudit.constraints.createsProducerFact,false);
 });
 
-test('C5-47 all prepared reactive localization has RU EN parity, stable refs and no root collision',()=>{
+test('C5-47 prepared localization keeps parity while only exact-course teacher bodies are selectively integrated',()=>{
   const seen=new Set<string>();
+  const teacherTransfer=reactive[7];
+  const integratedBodyKeys=new Set(teacherTransfer.teachers.map((teacher:any)=>teacher.keys.body));
 
   for(const fixture of reactive){
     assert.equal(fixture.formatVersion,1,fixture.id);
@@ -112,11 +114,16 @@ test('C5-47 all prepared reactive localization has RU EN parity, stable refs and
       assert.ok(pair.ru.trim().length>0,`${key}: RU`);
       assert.ok(pair.en.trim().length>0,`${key}: EN`);
       assert.equal(seen.has(key),false,`duplicate prepared key: ${key}`);
-      assert.equal(localization.strings?.[key],undefined,`root localization collision: ${key}`);
+      if(integratedBodyKeys.has(key)){
+        assert.deepEqual(localization.strings?.[key],pair,`integrated teacher body: ${key}`);
+      }else{
+        assert.equal(localization.strings?.[key],undefined,`unselected prepared key entered root localization: ${key}`);
+      }
       seen.add(key);
     }
   }
 
+  assert.equal(integratedBodyKeys.size,8);
   assert.equal(seen.size,120);
 });
 
