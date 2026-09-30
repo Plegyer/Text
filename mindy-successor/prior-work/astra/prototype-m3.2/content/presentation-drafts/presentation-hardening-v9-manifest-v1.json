@@ -1615,6 +1615,42 @@
       "selectedSemanticBindings": 102,
       "productionDynamicBindings": 0,
       "preparedSequences": 9
+    },
+    "keyboardFocusV2": {
+      "test": "tests/presentation-keyboard-focus-v9.test.ts",
+      "domains": [
+        "work",
+        "endings",
+        "school"
+      ],
+      "preparedPredecessorGap": "locked-reason-focusability-pr136"
+    }
+  },
+  "accessibilityAudit": {
+    "work": {
+      "controls": 10,
+      "starterEnabled": 3,
+      "lockedDisabled": 7,
+      "lockedButtonsAriaDisabled": true,
+      "lockedButtonsAriaDescribedBy": true,
+      "visibleLockedReason": true,
+      "focusableLockedReason": "prepared-in-pr136-not-current-main"
+    },
+    "endings": {
+      "existingIds": 9,
+      "visibleActionName": true,
+      "disabledWhenUnavailable": true,
+      "enabledWhenEligible": true
+    },
+    "school": {
+      "courseControls": 8,
+      "visibleActionName": true,
+      "disabledStateUsesExistingAvailability": true,
+      "adjacentCourseHeadingProvidesContext": true
+    },
+    "panel": {
+      "closeReceivesInitialFocus": true,
+      "noGameplayChange": true
     }
   }
 }
