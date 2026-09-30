@@ -10,6 +10,9 @@ const html=readFileSync('dist/index.html','utf8');
 const bundle=readFileSync('dist/app.js','utf8');
 const data=JSON.parse(readFileSync('dist/content.json','utf8'));
 const localization=JSON.parse(readFileSync('content/localization.json','utf8')).strings;
+const housingV5=JSON.parse(readFileSync('content/ordinary-poverty-housing-seasonal-depth-v1.fixture.json','utf8'));
+const recoveryV5=JSON.parse(readFileSync('content/ordinary-poverty-recovery-depth-v1.fixture.json','utf8'));
+const smallJobV5=JSON.parse(readFileSync('content/ordinary-poverty-small-job-depth-v1.fixture.json','utf8'));
 
 async function wait(check:()=>boolean){
   for(let i=0;i<100;i++){
@@ -82,7 +85,11 @@ test('poverty depth lookup preserves the approved deterministic occurrence contr
   );
   assert.equal(
     povertyPendingLocalizationKey('poverty-street-production.neutral-autumn','default',1),
-    'event.poverty-street-production.neutral-autumn.variant.default.text'
+    'presentation.poverty.recovery-depth-v5.street.autumn-no-milestone.text'
+  );
+  assert.equal(
+    povertyPendingLocalizationKey('poverty-street-production-v2.helpful-summer-shade','late-shade',4),
+    'presentation.poverty.housing-depth-v5.street.summer.late-shade.text'
   );
   assert.equal(povertyPendingLocalizationKey('not-poverty','default',1),null);
 
@@ -93,6 +100,21 @@ test('poverty depth lookup preserves the approved deterministic occurrence contr
     }
     assert.ok(localization[entry.coreFallbackLocalizationKey]?.ru?.trim(),entry.coreFallbackLocalizationKey+' ru');
     assert.ok(localization[entry.coreFallbackLocalizationKey]?.en?.trim(),entry.coreFallbackLocalizationKey+' en');
+  }
+
+  for(const fixture of [housingV5,recoveryV5]){
+    for(const entry of fixture.entries){
+      const lookup=povertyDepthLookupEntries.find(item=>item.eventId===entry.eventId&&item.variantId===entry.variantId);
+      assert.ok(lookup,entry.eventId+' / '+entry.variantId);
+      assert.ok(lookup.orderedDepthLocalizationKeys.includes(entry.localizationKey),entry.localizationKey);
+      assert.deepEqual(localization[entry.localizationKey],fixture.strings[entry.localizationKey]);
+    }
+  }
+
+  const selectedKeys=new Set(povertyDepthLookupEntries.flatMap(entry=>entry.orderedDepthLocalizationKeys));
+  for(const entry of smallJobV5.entries){
+    assert.equal(selectedKeys.has(entry.localizationKey),false,'choice-specific text must not enter pending selector: '+entry.localizationKey);
+    assert.equal(entry.localizationKey in localization,false,'choice-specific text must stay fixture-local: '+entry.localizationKey);
   }
 });
 
