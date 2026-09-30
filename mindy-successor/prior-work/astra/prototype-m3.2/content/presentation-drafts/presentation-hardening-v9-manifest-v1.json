@@ -1653,6 +1653,12 @@
       "test": "tests/presentation-replacement-editor-invariance-v9.test.ts",
       "semanticBindings": 102,
       "teacherMedia": 8
+    },
+    "localeAccessibilityParityV4": {
+      "test": "tests/presentation-locale-accessibility-v9.test.ts",
+      "semanticBindings": 102,
+      "teacherMedia": 8,
+      "helpKeys": 5
     }
   },
   "accessibilityAudit": {
@@ -3077,5 +3083,34 @@
     "eventIdentityPreserved": true,
     "saveSerializationPreserved": true,
     "presentationStorageSeparate": true
+  },
+  "localeAccessibility": {
+    "locales": [
+      "ru",
+      "en"
+    ],
+    "activeExactSemanticBindings": {
+      "count": 102,
+      "complete": 102
+    },
+    "schoolTeacherMedia": {
+      "count": 8,
+      "complete": 8
+    },
+    "helpKeys": [
+      "ui.work.lockedCareerHelp",
+      "ui.work.lockedCareerAria",
+      "ui.school.help",
+      "ui.legacy.help",
+      "ui.media.missing"
+    ],
+    "helpComplete": 5,
+    "fallbackRoot": {
+      "presentationId": "location/town/default",
+      "mediaId": "stage.town",
+      "altKey": "media.stage.town.alt",
+      "captionKey": "media.stage.town.caption",
+      "currentMainState": "prepared-in-pr136-not-current-main"
+    }
   }
 }
