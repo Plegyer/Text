@@ -2,11 +2,26 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 
-import {actionAvailable,dispatch,parseSave} from '../src/core/engine.ts';
+import {actionAvailable,dispatch,eligible,parseSave} from '../src/core/engine.ts';
 import {presentationIdForActivityRoute,presentationIdForEnding} from '../src/core/presentation.ts';
 import {catalog,started} from './helpers.ts';
 
 const presentation=JSON.parse(readFileSync('content/presentation.json','utf8'));
+
+function resolvePending(input:ReturnType<typeof started>){
+  let s=input;
+  let guard=0;
+  while(s.run.pending){
+    if(++guard>12)throw new Error('pending scene loop');
+    const event=catalog.events.find(item=>item.id===s.run.pending!.eventId);
+    assert.ok(event,s.run.pending.eventId);
+    const allowed=s.run.pending.allowedChoiceIds??event.choices.map(choice=>choice.id);
+    const choice=event.choices.find(item=>allowed.includes(item.id)&&eligible(item.conditions,s,catalog));
+    assert.ok(choice,event.id);
+    s=dispatch(s,{type:'choice',id:choice.id},catalog);
+  }
+  return s;
+}
 
 test('C1D-82 current main starter School Forest poverty presentation and Save contracts coexist',()=>{
   let s=started();
@@ -24,6 +39,7 @@ test('C1D-82 current main starter School Forest poverty presentation and Save co
   assert.equal(s.run.lastAction?.id,'school');
   assert.equal(s.run.lastAction?.presentationId,'school/rhetoric-and-social/lesson/default');
   assert.equal(s.run.progression.worldFacts.includes('lumber.school.management-ready'),false);
+  s=resolvePending(s);
   s=parseSave(JSON.stringify(s),catalog);
 
   s=dispatch(s,{type:'enterActivity',id:'lumber.forest'},catalog);
