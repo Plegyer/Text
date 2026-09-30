@@ -9,16 +9,18 @@ Mandatory startup:
 - `CANDIDATE_QA_FREEZE_PROTOCOL.md`
 - `TASK_CHAT1_DEVELOPER_QUEUE_v6.md`
 - `TASK_CHAT1_DEVELOPER_QUEUE_v7.md`
+- `TASK_CHAT1_DEVELOPER_QUEUE_v8.md`
 
 Current work:
 - finish C1D-49 through C1D-60 on PR #124;
 - PR #119 and PR #123 are superseded/closed and must not be used for QA;
-- PR #124 exact-head CI is currently red because the candidate tests import missing `src/ui/schoolReactive.ts`; repair only owned integration/test-contract scope, then obtain one new exact green frozen head.
+- keep repairing only concrete integration/CI blockers until one exact PR #124 head is green and frozen for C4-79.
 
-Next queue:
-- after C1D-60 is frozen, continue automatically with C1D-61 through C1D-72.
+Queue sequence:
+- after C1D-60 is frozen, continue automatically with C1D-61 through C1D-72;
+- after C1D-72 is frozen, continue automatically with C1D-73 through C1D-84 without waiting for a new chat instruction.
 
-At the queue boundary:
+At every queue boundary:
 - re-read current main and this pointer;
 - do not duplicate artifacts already merged while the prior queue was in progress;
 - final candidates must be refreshed from then-current main.
@@ -27,4 +29,4 @@ Keep technical evidence in Git only. Personal chat output:
 - `Задание выполнено`
 - `Задания выполнены`
 
-Do not self-assign beyond C1D-72.
+Do not self-assign beyond C1D-84.
