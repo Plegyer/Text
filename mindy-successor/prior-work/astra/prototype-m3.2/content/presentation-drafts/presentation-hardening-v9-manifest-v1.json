@@ -1624,6 +1624,10 @@
         "school"
       ],
       "preparedPredecessorGap": "locked-reason-focusability-pr136"
+    },
+    "endingParityV2": {
+      "test": "tests/presentation-ending-parity-v9.test.ts",
+      "endingIds": 9
     }
   },
   "accessibilityAudit": {
@@ -1652,5 +1656,116 @@
       "closeReceivesInitialFocus": true,
       "noGameplayChange": true
     }
+  },
+  "endingParity": {
+    "existingEndingPresentationIds": [
+      {
+        "presentationId": "ending/lumber/hard-work",
+        "sourceAsset": "assets/presentation/career-lumber-result.svg",
+        "altKey": "presentation.static.lumber-ending-hard-work.alt",
+        "captionKey": "presentation.static.lumber-ending-hard-work.caption",
+        "ruAlt": true,
+        "enAlt": true,
+        "ruCaption": true,
+        "enCaption": true,
+        "fallbackId": "location/town/default"
+      },
+      {
+        "presentationId": "ending/lumber/forewoman",
+        "sourceAsset": "assets/presentation/foreman-professional.svg",
+        "altKey": "presentation.static.lumber-ending-forewoman.alt",
+        "captionKey": "presentation.static.lumber-ending-forewoman.caption",
+        "ruAlt": true,
+        "enAlt": true,
+        "ruCaption": true,
+        "enCaption": true,
+        "fallbackId": "location/town/default"
+      },
+      {
+        "presentationId": "ending/lumber/forest",
+        "sourceAsset": "assets/presentation/forest-return-success-v2.svg",
+        "altKey": "presentation.static.lumber-ending-forest.alt",
+        "captionKey": "presentation.static.lumber-ending-forest.caption",
+        "ruAlt": true,
+        "enAlt": true,
+        "ruCaption": true,
+        "enCaption": true,
+        "fallbackId": "location/town/default"
+      },
+      {
+        "presentationId": "ending/guild-life",
+        "sourceAsset": "assets/presentation/ending-guild-life.svg",
+        "altKey": "presentation.static.ending.guild-life.alt",
+        "captionKey": "presentation.static.ending.guild-life.caption",
+        "ruAlt": true,
+        "enAlt": true,
+        "ruCaption": true,
+        "enCaption": true,
+        "fallbackId": "location/town/default"
+      },
+      {
+        "presentationId": "ending/scholar-life",
+        "sourceAsset": "assets/presentation/ending-scholar-life.svg",
+        "altKey": "presentation.static.ending.scholar-life.alt",
+        "captionKey": "presentation.static.ending.scholar-life.caption",
+        "ruAlt": true,
+        "enAlt": true,
+        "ruCaption": true,
+        "enCaption": true,
+        "fallbackId": "location/town/default"
+      },
+      {
+        "presentationId": "ending/tavern-stay",
+        "sourceAsset": "assets/presentation/tavern-ending-stay.svg",
+        "altKey": "presentation.static.ending.tavern-stay.alt",
+        "captionKey": "presentation.static.ending.tavern-stay.caption",
+        "ruAlt": true,
+        "enAlt": true,
+        "ruCaption": true,
+        "enCaption": true,
+        "fallbackId": "location/town/default"
+      },
+      {
+        "presentationId": "ending/tavern-guild",
+        "sourceAsset": "assets/presentation/tavern-ending-guild.svg",
+        "altKey": "presentation.static.ending.tavern-guild.alt",
+        "captionKey": "presentation.static.ending.tavern-guild.caption",
+        "ruAlt": true,
+        "enAlt": true,
+        "ruCaption": true,
+        "enCaption": true,
+        "fallbackId": "location/town/default"
+      },
+      {
+        "presentationId": "ending/tavern-court",
+        "sourceAsset": "assets/presentation/tavern-ending-court.svg",
+        "altKey": "presentation.static.ending.tavern-court.alt",
+        "captionKey": "presentation.static.ending.tavern-court.caption",
+        "ruAlt": true,
+        "enAlt": true,
+        "ruCaption": true,
+        "enCaption": true,
+        "fallbackId": "location/town/default"
+      },
+      {
+        "presentationId": "ending/lumber-stay",
+        "sourceAsset": "assets/presentation/ending-lumber-stay.svg",
+        "altKey": "presentation.static.ending.lumber-stay.alt",
+        "captionKey": "presentation.static.ending.lumber-stay.caption",
+        "ruAlt": true,
+        "enAlt": true,
+        "ruCaption": true,
+        "enCaption": true,
+        "fallbackId": "location/town/default"
+      }
+    ],
+    "eligibleState": "active-current-main",
+    "committedState": {
+      "engineState": "ending_committed",
+      "semanticIdPreserved": true,
+      "distinctLocalizedUiLabel": "prepared-in-pr136-not-current-main"
+    },
+    "completedState": "active-current-main",
+    "exactStaticCount": 9
   }
 }
