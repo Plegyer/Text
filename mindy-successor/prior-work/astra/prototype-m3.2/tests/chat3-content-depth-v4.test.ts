@@ -64,7 +64,7 @@ test('C3-29/C3-30 Undead Farm depth uses only current seasonal shift/result iden
   assertBilingual(undeadResearch.strings);
   assert.equal(undeadAgriculture.invariants.noResearchFact,true);
   assert.equal(undeadResearch.invariants.noResearchFact,true);
-  assert.equal(undeadResearch.existingResearchAdjacentIdentity.currentUndeadFarmConsumer,false);
+  assert.equal(undeadResearch.adjacentExistingCapability.currentUndeadFarmConsumer,false);
 });
 
 test('C3-31 Forest audit matches current route and terminal result identities',()=>{
