@@ -10,6 +10,7 @@ const html=readFileSync('dist/index.html','utf8');
 const bundle=readFileSync('dist/app.js','utf8');
 const data=JSON.parse(readFileSync('dist/content.json','utf8'));
 const localization=JSON.parse(readFileSync('content/localization.json','utf8')).strings;
+const smallJobV2=JSON.parse(readFileSync('content/ordinary-poverty-small-job-depth-v2.fixture.json','utf8'));
 
 async function wait(check:()=>boolean){
   for(let i=0;i<100;i++){
@@ -81,10 +82,25 @@ test('poverty depth lookup preserves the approved deterministic occurrence contr
     'presentation.poverty.depth.poverty-street-production-v2-helpful-summer-shade.late-shade.g.text'
   );
   assert.equal(
+    povertyPendingLocalizationKey('poverty-street-production-v2.helpful-summer-shade','late-shade',4),
+    'presentation.poverty.housing-depth-v2.street.summer.late-wall.text'
+  );
+  assert.equal(
+    povertyPendingLocalizationKey('poverty-pressure-production.cold-rain','default',4),
+    'presentation.poverty.housing-depth-v2.street.spring.doorway.text'
+  );
+  assert.equal(
+    povertyPendingLocalizationKey('poverty-cheap-production-v2.shared-room-seasons','spring-window',3),
+    'presentation.poverty.housing-depth-v2.cheap.spring.window.text'
+  );
+  assert.equal(
+    povertyPendingLocalizationKey('poverty-cheap-production-v2.shared-room-seasons','spring-window',4),
+    'presentation.poverty.contact-recovery-v2.shared-room.spring-routine.text'
+  );
+  assert.equal(
     povertyPendingLocalizationKey('poverty-street-production.neutral-autumn','default',1),
     'event.poverty-street-production.neutral-autumn.variant.default.text'
   );
-  assert.equal(povertyPendingLocalizationKey('not-poverty','default',1),null);
 
   for(const entry of povertyDepthLookupEntries){
     for(const key of entry.orderedDepthLocalizationKeys){
@@ -93,6 +109,12 @@ test('poverty depth lookup preserves the approved deterministic occurrence contr
     }
     assert.ok(localization[entry.coreFallbackLocalizationKey]?.ru?.trim(),entry.coreFallbackLocalizationKey+' ru');
     assert.ok(localization[entry.coreFallbackLocalizationKey]?.en?.trim(),entry.coreFallbackLocalizationKey+' en');
+  }
+
+  const selectedKeys=new Set(povertyDepthLookupEntries.flatMap(entry=>entry.orderedDepthLocalizationKeys));
+  for(const key of Object.keys(smallJobV2.strings)){
+    assert.equal(localization[key],undefined,key+' remains fixture-local without persisted variant+choice identity');
+    assert.equal(selectedKeys.has(key),false,key+' stays outside the variant selector');
   }
 });
 
