@@ -45,6 +45,8 @@ test('saved replacement survives render refresh and locale change without touchi
     w.localStorage.setItem('portal-life.locale','ru');
     w.eval(bundle);
 
+    await wait(()=>!!w.document.querySelector('#home'));
+    w.document.querySelector('#home').click();
     await wait(()=>w.document.querySelector('[data-presentation-id="location/town/default"] img')?.getAttribute('src')===png);
     assert.equal(w.document.documentElement.lang,'ru');
 

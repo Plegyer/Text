@@ -37,7 +37,13 @@ test('dead presentation asset inventory matches production packs, presentation r
     ...files('content/presentation-drafts').filter(path=>path.endsWith('.json'))
   ];
   for(const path of jsonPaths){
-    for(const ref of assetRefs(readFileSync(path,'utf8')))referenced.add(ref);
+    let text=readFileSync(path,'utf8');
+    if(path==='content/presentation-drafts/presentation-hardening-v8-manifest-v1.json'){
+      const self=JSON.parse(text);
+      delete self.deadAssetAudit;
+      text=JSON.stringify(self);
+    }
+    for(const ref of assetRefs(text))referenced.add(ref);
   }
   const allPresentationAssets=files('assets/presentation')
     .map(path=>relative('.',path).replaceAll('\\','/'))
