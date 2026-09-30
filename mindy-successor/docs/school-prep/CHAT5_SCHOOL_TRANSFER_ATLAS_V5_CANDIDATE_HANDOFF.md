@@ -4,8 +4,8 @@ Date: 2026-09-30
 Owner: Chat 5 / School + Text Localization Content Worker
 Task: C5-48
 Branch: `chat5/school-transfer-atlas-v5`
-Initial baseline: `main@8265a6af2bd87b9e69f0bce96e6a20a80a9e852c`
-Pre-PR current-main revalidation: `14c59901fce0899aa05c62edf6ebc6c556547d43`
+Queue initial baseline: `main@8265a6af2bd87b9e69f0bce96e6a20a80a9e852c`
+Refreshed candidate base: `main@14c59901fce0899aa05c62edf6ebc6c556547d43`
 
 ## Scope
 
@@ -237,22 +237,24 @@ C5-39 through C5-46 prepare:
 
 Prepared strings remain fixture-local. Root `content/localization.json` is not modified.
 
-## Current-main movement during queue execution
+## Current-main refresh before freeze
 
 The queue started on `8265a6af...`.
 
-Before PR handoff, main advanced to `14c59901...` and now includes the previously frozen/merged School depth and late-career preparation sources from PR #90 / PR #99 plus other worker content.
+Before C5-48 freeze, current main advanced to `14c59901...` and the current Chat 5 pointer explicitly required a fresh-current-main candidate carrying forward only new queue-v5 School docs/fixtures/tests.
 
-This queue did not restart or edit those files. All C5-37..47 paths are new, append-only School-owned paths.
+The candidate branch was therefore rebuilt on `14c59901fce0899aa05c62edf6ebc6c556547d43` with exactly the 23 new C5-37..48 paths. Earlier branch history was not carried into the refreshed candidate.
 
-Revalidation against `14c59901...` found:
+Current main already contains the merged School depth and late-career preparation sources from PR #90 / PR #99. This queue does not duplicate or modify those merged paths.
+
+Revalidation on the refreshed base found:
 - all ten career IDs still exist;
 - all ten `.shift` action IDs still exist;
 - all mapped School course IDs still exist;
 - all threshold / producer fields remain null;
 - all 120 new localization keys remain collision-free against current root localization.
 
-The current-main drift therefore creates no content conflict requiring a rebase solely for base movement. PR mergeability and exact-head CI remain authoritative.
+The refreshed candidate now satisfies the pointer resync rule before exact-head CI / QA freeze.
 
 ## Pre-PR static validation
 
