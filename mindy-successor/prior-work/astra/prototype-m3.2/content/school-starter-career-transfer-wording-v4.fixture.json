@@ -1,0 +1,147 @@
+{
+  "formatVersion": 1,
+  "id": "school.starter-career-transfer-wording-v4",
+  "status": "CONTENT_PREP_ONLY",
+  "selectedThresholds": {
+    "lumber": null,
+    "satyr-maid": null,
+    "undead-farm": null
+  },
+  "selectedPublicResultIds": {
+    "lumber": null,
+    "satyr-maid": null,
+    "undead-farm": null
+  },
+  "entries": [
+    {
+      "careerId": "lumber",
+      "actionId": "lumber.shift",
+      "courseIds": [
+        "school.course.literacy_and_numbers",
+        "school.course.rhetoric_and_social"
+      ],
+      "keys": {
+        "title": "school.transfer_v4.starter.lumber.sequence.title",
+        "body": "school.transfer_v4.starter.lumber.sequence.body"
+      }
+    },
+    {
+      "careerId": "lumber",
+      "actionId": "lumber.shift",
+      "courseIds": [
+        "school.course.arcana",
+        "school.course.field_craft"
+      ],
+      "keys": {
+        "title": "school.transfer_v4.starter.lumber.conditions.title",
+        "body": "school.transfer_v4.starter.lumber.conditions.body"
+      }
+    },
+    {
+      "careerId": "satyr-maid",
+      "actionId": "satyr-maid.shift",
+      "courseIds": [
+        "school.course.rhetoric_and_social",
+        "school.course.etiquette_and_presentation",
+        "school.course.body_confidence"
+      ],
+      "keys": {
+        "title": "school.transfer_v4.starter.satyr_maid.confirm.title",
+        "body": "school.transfer_v4.starter.satyr_maid.confirm.body"
+      }
+    },
+    {
+      "careerId": "satyr-maid",
+      "actionId": "satyr-maid.shift",
+      "courseIds": [
+        "school.course.literacy_and_numbers",
+        "school.course.rhetoric_and_social"
+      ],
+      "keys": {
+        "title": "school.transfer_v4.starter.satyr_maid.handoff.title",
+        "body": "school.transfer_v4.starter.satyr_maid.handoff.body"
+      }
+    },
+    {
+      "careerId": "undead-farm",
+      "actionId": "undead-farm.shift",
+      "courseIds": [
+        "school.course.arcana",
+        "school.course.literacy_and_numbers"
+      ],
+      "keys": {
+        "title": "school.transfer_v4.starter.undead_farm.compare.title",
+        "body": "school.transfer_v4.starter.undead_farm.compare.body"
+      }
+    },
+    {
+      "careerId": "undead-farm",
+      "actionId": "undead-farm.shift",
+      "courseIds": [
+        "school.course.field_craft",
+        "school.course.rhetoric_and_social"
+      ],
+      "keys": {
+        "title": "school.transfer_v4.starter.undead_farm.fallback.title",
+        "body": "school.transfer_v4.starter.undead_farm.fallback.body"
+      }
+    }
+  ],
+  "strings": {
+    "school.transfer_v4.starter.lumber.sequence.title": {
+      "ru": "Передача начинается с последовательности",
+      "en": "A handoff begins with sequence"
+    },
+    "school.transfer_v4.starter.lumber.sequence.body": {
+      "ru": "После смены полезно записать не только итог, но и порядок незавершённых шагов. Школьная привычка к ясной записи помогает следующему человеку продолжить работу без догадок, не создавая нового карьерного этапа.",
+      "en": "After a shift, it helps to record not only the result but the order of unfinished steps. The School habit of clear records helps the next person continue without guessing, without creating a new career stage."
+    },
+    "school.transfer_v4.starter.lumber.conditions.title": {
+      "ru": "Условия важнее красивой версии",
+      "en": "Conditions matter more than a neat explanation"
+    },
+    "school.transfer_v4.starter.lumber.conditions.body": {
+      "ru": "Необычное наблюдение рядом с лесной работой сначала получает список условий и повторяемых признаков. Аркана и полевая практика помогают проверить вопрос аккуратнее, но не публикуют лесной результат сами.",
+      "en": "An unusual observation near lumber work first gets a list of conditions and repeatable signs. Arcana and Field Craft help test the question more carefully, but do not publish a forest result themselves."
+    },
+    "school.transfer_v4.starter.satyr_maid.confirm.title": {
+      "ru": "Подтвердить просьбу своими словами",
+      "en": "Confirm the request in your own words"
+    },
+    "school.transfer_v4.starter.satyr_maid.confirm.body": {
+      "ru": "Короткое уточнение перед действием снижает риск неверно понять гостя. Риторика и уместная самопрезентация поддерживают профессиональную ясность, не превращая вежливость в согласие на всё.",
+      "en": "A brief restatement before acting reduces the risk of misunderstanding a guest. Rhetoric and appropriate presentation support professional clarity without turning courtesy into agreement to everything."
+    },
+    "school.transfer_v4.starter.satyr_maid.handoff.title": {
+      "ru": "Передать просьбу без потери смысла",
+      "en": "Pass the request on without losing meaning"
+    },
+    "school.transfer_v4.starter.satyr_maid.handoff.body": {
+      "ru": "Когда просьба переходит к другому человеку, полезны короткая запись, имя, срок и точная формулировка. Школьные навыки помогают смене работать связнее, но не меняют оплату или должность.",
+      "en": "When a request passes to another person, a short note, name, deadline, and precise wording help. School skills make the shift more coherent without changing pay or position."
+    },
+    "school.transfer_v4.starter.undead_farm.compare.title": {
+      "ru": "Сравнить условия двух результатов",
+      "en": "Compare the conditions behind two results"
+    },
+    "school.transfer_v4.starter.undead_farm.compare.body": {
+      "ru": "Два похожих рабочих результата полезнее сравнивать по условиям, чем объяснять каждый отдельно. Аркана и грамотная запись делают различия видимыми, не создавая исследовательский статус.",
+      "en": "Two similar work results are more useful when compared by conditions than explained separately. Arcana and clear recordkeeping make the differences visible without creating research status."
+    },
+    "school.transfer_v4.starter.undead_farm.fallback.title": {
+      "ru": "Оставить рабочий запасной вариант",
+      "en": "Keep a practical fallback"
+    },
+    "school.transfer_v4.starter.undead_farm.fallback.body": {
+      "ru": "Если инструмент, срок или участок работы меняется, полевая практика подсказывает заранее оставить второй способ продолжить или остановиться. Это подготовка к изменившимся условиям, а не новая карьерная механика.",
+      "en": "If a tool, deadline, or work area changes, Field Craft suggests keeping a second way to continue or stop. That is preparation for changing conditions, not a new career mechanic."
+    }
+  },
+  "mechanics": {
+    "effects": [],
+    "careerWrites": [],
+    "activityWrites": [],
+    "economyChanges": [],
+    "publishesWorldFacts": []
+  }
+}
