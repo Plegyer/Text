@@ -709,7 +709,10 @@
     "activeSemanticSlots": 47,
     "preparedOnlySemanticSlots": 0,
     "activeTeacherMediaSurfaces": 8,
-    "activeWorkControls": 10
+    "activeWorkControls": 10,
+    "currentEndingIds": 9,
+    "currentEndingExactStatic": 9,
+    "currentEndingGaps": 0
   },
   "packages": {
     "tavernEndingBindings": [
@@ -979,6 +982,80 @@
         "sourceAsset": "assets/presentation/forest-reaction-success-v2.svg",
         "altKey": "presentation.static.forest-reaction-success-v2.alt",
         "captionKey": "presentation.static.forest-reaction-success-v2.caption",
+        "fallbackId": "location/town/default"
+      }
+    ],
+    "endingGapAudit": [
+      {
+        "endingId": "guild-life",
+        "presentationId": "ending/guild-life",
+        "exactStatic": true,
+        "sourceAsset": "assets/presentation/ending-guild-life.svg",
+        "altKey": "presentation.static.ending.guild-life.alt",
+        "fallbackId": "location/town/default"
+      },
+      {
+        "endingId": "scholar-life",
+        "presentationId": "ending/scholar-life",
+        "exactStatic": true,
+        "sourceAsset": "assets/presentation/ending-scholar-life.svg",
+        "altKey": "presentation.static.ending.scholar-life.alt",
+        "fallbackId": "location/town/default"
+      },
+      {
+        "endingId": "tavern-stay",
+        "presentationId": "ending/tavern-stay",
+        "exactStatic": true,
+        "sourceAsset": "assets/presentation/tavern-ending-stay.svg",
+        "altKey": "presentation.static.ending.tavern-stay.alt",
+        "fallbackId": "location/town/default"
+      },
+      {
+        "endingId": "tavern-guild",
+        "presentationId": "ending/tavern-guild",
+        "exactStatic": true,
+        "sourceAsset": "assets/presentation/tavern-ending-guild.svg",
+        "altKey": "presentation.static.ending.tavern-guild.alt",
+        "fallbackId": "location/town/default"
+      },
+      {
+        "endingId": "tavern-court",
+        "presentationId": "ending/tavern-court",
+        "exactStatic": true,
+        "sourceAsset": "assets/presentation/tavern-ending-court.svg",
+        "altKey": "presentation.static.ending.tavern-court.alt",
+        "fallbackId": "location/town/default"
+      },
+      {
+        "endingId": "lumber-stay",
+        "presentationId": "ending/lumber-stay",
+        "exactStatic": true,
+        "sourceAsset": "assets/presentation/ending-lumber-stay.svg",
+        "altKey": "presentation.static.ending.lumber-stay.alt",
+        "fallbackId": "location/town/default"
+      },
+      {
+        "endingId": "ending.lumber.hard-work",
+        "presentationId": "ending/lumber/hard-work",
+        "exactStatic": true,
+        "sourceAsset": "assets/presentation/career-lumber-result.svg",
+        "altKey": "presentation.static.lumber-ending-hard-work.alt",
+        "fallbackId": "location/town/default"
+      },
+      {
+        "endingId": "ending.lumber.forewoman",
+        "presentationId": "ending/lumber/forewoman",
+        "exactStatic": true,
+        "sourceAsset": "assets/presentation/foreman-professional.svg",
+        "altKey": "presentation.static.lumber-ending-forewoman.alt",
+        "fallbackId": "location/town/default"
+      },
+      {
+        "endingId": "ending.lumber.forest",
+        "presentationId": "ending/lumber/forest",
+        "exactStatic": true,
+        "sourceAsset": "assets/presentation/forest-return-success-v2.svg",
+        "altKey": "presentation.static.lumber-ending-forest.alt",
         "fallbackId": "location/town/default"
       }
     ]
