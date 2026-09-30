@@ -10,9 +10,13 @@ Mandatory startup:
 - `TASK_CHAT1_DEVELOPER_QUEUE_v6.md`
 - `TASK_CHAT1_DEVELOPER_QUEUE_v7.md`
 
-Queue sequence:
-- finish C1D-49 through C1D-60;
-- then continue automatically with C1D-61 through C1D-72 without waiting for a new chat instruction.
+Current work:
+- finish C1D-49 through C1D-60 on PR #124;
+- PR #119 and PR #123 are superseded/closed and must not be used for QA;
+- PR #124 exact-head CI is currently red because the candidate tests import missing `src/ui/schoolReactive.ts`; repair only owned integration/test-contract scope, then obtain one new exact green frozen head.
+
+Next queue:
+- after C1D-60 is frozen, continue automatically with C1D-61 through C1D-72.
 
 At the queue boundary:
 - re-read current main and this pointer;
