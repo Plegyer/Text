@@ -3461,6 +3461,70 @@
     "presentation.static.location.town.event.poverty-cheap-production-v2-shared-room-seasons.shared-room.caption": {
       "ru": "Дешёвое жильё: обычная сцена в общей комнате.",
       "en": "Cheap lodging: an ordinary shared-room scene."
+    },
+    "media.school.teacher.literacy-and-numbers.classroom.alt": {
+      "ru": "Мара Фен в учебной аудитории курса «Грамота и числа».",
+      "en": "Mara Fen in the Literacy & Numbers School classroom."
+    },
+    "media.school.teacher.literacy-and-numbers.classroom.caption": {
+      "ru": "Преподаватель: Мара Фен — «Грамота и числа».",
+      "en": "Teacher: Mara Fen — Literacy & Numbers."
+    },
+    "media.school.teacher.arcana.classroom.alt": {
+      "ru": "Илира Венн в учебной аудитории курса «Аркана».",
+      "en": "Ilyra Venn in the Arcana School classroom."
+    },
+    "media.school.teacher.arcana.classroom.caption": {
+      "ru": "Преподаватель: Илира Венн — «Аркана».",
+      "en": "Teacher: Ilyra Venn — Arcana."
+    },
+    "media.school.teacher.rhetoric-and-social.classroom.alt": {
+      "ru": "Кассиан Рид в учебной аудитории курса «Риторика и общение».",
+      "en": "Cassian Reed in the Rhetoric & Social School classroom."
+    },
+    "media.school.teacher.rhetoric-and-social.classroom.caption": {
+      "ru": "Преподаватель: Кассиан Рид — «Риторика и общение».",
+      "en": "Teacher: Cassian Reed — Rhetoric & Social."
+    },
+    "media.school.teacher.etiquette-and-presentation.classroom.alt": {
+      "ru": "Элиан Марроу в учебной аудитории курса «Этикет и подача».",
+      "en": "Eliane Marrow in the Etiquette & Presentation School classroom."
+    },
+    "media.school.teacher.etiquette-and-presentation.classroom.caption": {
+      "ru": "Преподаватель: Элиан Марроу — «Этикет и подача».",
+      "en": "Teacher: Eliane Marrow — Etiquette & Presentation."
+    },
+    "media.school.teacher.field-craft.classroom.alt": {
+      "ru": "Роуэн Пайк в учебной аудитории курса «Полевая практика».",
+      "en": "Rowan Pike in the Field Craft School classroom."
+    },
+    "media.school.teacher.field-craft.classroom.caption": {
+      "ru": "Преподаватель: Роуэн Пайк — «Полевая практика».",
+      "en": "Teacher: Rowan Pike — Field Craft."
+    },
+    "media.school.teacher.physical-training.classroom.alt": {
+      "ru": "Тован Кест в учебной аудитории курса «Физическая подготовка».",
+      "en": "Tovan Kest in the Physical Training School classroom."
+    },
+    "media.school.teacher.physical-training.classroom.caption": {
+      "ru": "Преподаватель: Тован Кест — «Физическая подготовка».",
+      "en": "Teacher: Tovan Kest — Physical Training."
+    },
+    "media.school.teacher.arts-and-performance.classroom.alt": {
+      "ru": "Несса Ларк в учебной аудитории курса «Искусство и выступление».",
+      "en": "Nessa Lark in the Arts & Performance School classroom."
+    },
+    "media.school.teacher.arts-and-performance.classroom.caption": {
+      "ru": "Преподаватель: Несса Ларк — «Искусство и выступление».",
+      "en": "Teacher: Nessa Lark — Arts & Performance."
+    },
+    "media.school.teacher.body-confidence.classroom.alt": {
+      "ru": "Сера Вей в учебной аудитории курса «Уверенность в теле».",
+      "en": "Sera Vey in the Body Confidence School classroom."
+    },
+    "media.school.teacher.body-confidence.classroom.caption": {
+      "ru": "Преподаватель: Сера Вей — «Уверенность в теле».",
+      "en": "Teacher: Sera Vey — Body Confidence."
     }
   }
 }

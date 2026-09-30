@@ -712,7 +712,8 @@
     "activeWorkControls": 10,
     "currentEndingIds": 9,
     "currentEndingExactStatic": 9,
-    "currentEndingGaps": 0
+    "currentEndingGaps": 0,
+    "teacherLocaleFallbacks": 8
   },
   "packages": {
     "tavernEndingBindings": [
@@ -1195,6 +1196,64 @@
       "ariaDescribedBy": true,
       "ariaDisabled": true,
       "unlockLogicMutation": false
-    }
+    },
+    "schoolTeacherFallback": [
+      {
+        "mediaId": "school.teacher.literacy-and-numbers.classroom",
+        "sourceAsset": "assets/stage-school.svg",
+        "altKey": "media.school.teacher.literacy-and-numbers.classroom.alt",
+        "captionKey": "media.school.teacher.literacy-and-numbers.classroom.caption",
+        "state": "active-localized"
+      },
+      {
+        "mediaId": "school.teacher.arcana.classroom",
+        "sourceAsset": "assets/stage-school.svg",
+        "altKey": "media.school.teacher.arcana.classroom.alt",
+        "captionKey": "media.school.teacher.arcana.classroom.caption",
+        "state": "active-localized"
+      },
+      {
+        "mediaId": "school.teacher.rhetoric-and-social.classroom",
+        "sourceAsset": "assets/stage-school.svg",
+        "altKey": "media.school.teacher.rhetoric-and-social.classroom.alt",
+        "captionKey": "media.school.teacher.rhetoric-and-social.classroom.caption",
+        "state": "active-localized"
+      },
+      {
+        "mediaId": "school.teacher.etiquette-and-presentation.classroom",
+        "sourceAsset": "assets/stage-school.svg",
+        "altKey": "media.school.teacher.etiquette-and-presentation.classroom.alt",
+        "captionKey": "media.school.teacher.etiquette-and-presentation.classroom.caption",
+        "state": "active-localized"
+      },
+      {
+        "mediaId": "school.teacher.field-craft.classroom",
+        "sourceAsset": "assets/stage-school.svg",
+        "altKey": "media.school.teacher.field-craft.classroom.alt",
+        "captionKey": "media.school.teacher.field-craft.classroom.caption",
+        "state": "active-localized"
+      },
+      {
+        "mediaId": "school.teacher.physical-training.classroom",
+        "sourceAsset": "assets/stage-school.svg",
+        "altKey": "media.school.teacher.physical-training.classroom.alt",
+        "captionKey": "media.school.teacher.physical-training.classroom.caption",
+        "state": "active-localized"
+      },
+      {
+        "mediaId": "school.teacher.arts-and-performance.classroom",
+        "sourceAsset": "assets/stage-school.svg",
+        "altKey": "media.school.teacher.arts-and-performance.classroom.alt",
+        "captionKey": "media.school.teacher.arts-and-performance.classroom.caption",
+        "state": "active-localized"
+      },
+      {
+        "mediaId": "school.teacher.body-confidence.classroom",
+        "sourceAsset": "assets/stage-school.svg",
+        "altKey": "media.school.teacher.body-confidence.classroom.alt",
+        "captionKey": "media.school.teacher.body-confidence.classroom.caption",
+        "state": "active-localized"
+      }
+    ]
   }
 }
