@@ -130,7 +130,88 @@
       "captionKey": "presentation.static.lumber-ending-forest.caption"
     }
   ],
-  "forestSlots": [],
+  "forestSlots": [
+    {
+      "presentationId": "activity/forest/route/default",
+      "sourceAsset": "assets/presentation/forest-route-default-v1.svg",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.forest.route.default.alt",
+      "captionKey": "presentation.static.forest.route.default.caption",
+      "state": "current-exact"
+    },
+    {
+      "presentationId": "activity/forest/route/logging-road",
+      "sourceAsset": "assets/presentation/forest-route-logging-road.svg",
+      "fallbackId": "activity/forest/route/default",
+      "altKey": "presentation.activity.forest.route.logging-road.alt",
+      "captionKey": "presentation.activity.forest.route.logging-road.caption",
+      "state": "current-exact"
+    },
+    {
+      "presentationId": "activity/forest/route/old-boundary",
+      "sourceAsset": "assets/presentation/forest-route-old-boundary-v3.svg",
+      "fallbackId": "activity/forest/route/default",
+      "altKey": "presentation.activity.forest.route.old-boundary.alt",
+      "captionKey": "presentation.activity.forest.route.old-boundary.caption",
+      "state": "current-exact"
+    },
+    {
+      "presentationId": "activity/forest/return/success",
+      "sourceAsset": "assets/presentation/forest-return-success-v2.svg",
+      "fallbackId": "activity/forest/route/default",
+      "altKey": "presentation.static.forest-return-success-v2.alt",
+      "captionKey": "presentation.static.forest-return-success-v2.caption",
+      "state": "current-exact"
+    },
+    {
+      "presentationId": "activity/forest/return/escape",
+      "sourceAsset": "assets/presentation/forest-return-escape-v2.svg",
+      "fallbackId": "activity/forest/route/default",
+      "altKey": "presentation.static.forest-return-escape-v2.alt",
+      "captionKey": "presentation.static.forest-return-escape-v2.caption",
+      "state": "current-exact"
+    },
+    {
+      "presentationId": "activity/forest/return/failure",
+      "sourceAsset": "assets/presentation/forest-return-failure-v2.svg",
+      "fallbackId": "activity/forest/route/default",
+      "altKey": "presentation.static.forest-return-failure-v2.alt",
+      "captionKey": "presentation.static.forest-return-failure-v2.caption",
+      "state": "current-exact"
+    },
+    {
+      "presentationId": "job/lumber/event/forest-result-content-v1-success/default",
+      "sourceAsset": "assets/presentation/forest-reaction-success-v2.svg",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.forest-reaction-success-v2.alt",
+      "captionKey": "presentation.static.forest-reaction-success-v2.caption",
+      "state": "current-exact"
+    },
+    {
+      "presentationId": "job/lumber/event/forest-result-content-v1-escape/default",
+      "sourceAsset": "assets/presentation/forest-reaction-escape-v2.svg",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.forest-reaction-escape-v2.alt",
+      "captionKey": "presentation.static.forest-reaction-escape-v2.caption",
+      "state": "current-exact"
+    },
+    {
+      "presentationId": "job/lumber/event/forest-result-content-v1-failure/default",
+      "sourceAsset": "assets/presentation/forest-reaction-failure-v2.svg",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.forest-reaction-failure-v2.alt",
+      "captionKey": "presentation.static.forest-reaction-failure-v2.caption",
+      "state": "current-exact"
+    },
+    {
+      "presentationId": "job/lumber/event/lumber-cross-activity-forest-return/default",
+      "sourceAsset": "assets/presentation/forest-reaction-success-v2.svg",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.forest-reaction-success-v2.alt",
+      "captionKey": "presentation.static.forest-reaction-success-v2.caption",
+      "state": "current-exact"
+    }
+  ],
   "povertySlots": [],
   "schoolCourseSlots": [],
   "teacherMediaSurfaces": [],
