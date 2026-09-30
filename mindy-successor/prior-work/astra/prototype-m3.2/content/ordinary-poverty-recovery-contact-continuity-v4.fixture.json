@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "id": "ordinary-poverty.recovery-contact-continuity.v4",
+  "status": "CONTENT_SIDE_HANDOFF",
+  "task": "C3-90",
+  "baseMain": "f4de3b01a4369417ae9eff4b384f755790f75279",
+  "entries": [
+    {
+      "id": "coins-one-less-choice",
+      "eventId": "poverty-recovery-production.small-coin-help",
+      "variantId": "default",
+      "localizationKey": "presentation.poverty.recovery-v4.coins.one-less-choice.text"
+    },
+    {
+      "id": "cleanup-finished-here",
+      "eventId": "poverty-recovery-production.short-cleanup",
+      "variantId": "default",
+      "localizationKey": "presentation.poverty.recovery-v4.cleanup.finished-here.text"
+    },
+    {
+      "id": "herb-kept-dry",
+      "eventId": "poverty-recovery-production.herb-bundle",
+      "variantId": "default",
+      "localizationKey": "presentation.poverty.recovery-v4.herb.kept-dry.text"
+    },
+    {
+      "id": "spring-room-morning-order",
+      "eventId": "poverty-cheap-production-v2.shared-room-seasons",
+      "variantId": "spring-window",
+      "localizationKey": "presentation.poverty.recovery-v4.room.spring-morning-order.text"
+    },
+    {
+      "id": "autumn-room-short-talk",
+      "eventId": "poverty-cheap-production.shared-quiet-autumn",
+      "variantId": "default",
+      "localizationKey": "presentation.poverty.recovery-v4.room.autumn-short-talk.text"
+    },
+    {
+      "id": "summer-market-nod",
+      "eventId": "poverty-street-production.helpful-summer",
+      "variantId": "default",
+      "localizationKey": "presentation.poverty.recovery-v4.market.summer-nod.text"
+    }
+  ],
+  "strings": {
+    "presentation.poverty.recovery-v4.coins.one-less-choice.text": {
+      "ru": "Небольшая помощь не меняет всё сразу, но хотя бы одно ближайшее решение перестаёт быть безвыходным. Этой передышки достаточно на сейчас.",
+      "en": "A small amount of help does not change everything at once, but at least one near-term decision stops feeling impossible. That reprieve is enough for now."
+    },
+    "presentation.poverty.recovery-v4.cleanup.finished-here.text": {
+      "ru": "Короткая уборка заканчивается там же, где началась: ведро возвращено, ступень чистая, оплата получена. Завтра никто не обязан ждать тебя снова.",
+      "en": "The short cleanup ends where it began: the bucket is returned, the step is clean, and the payment is received. No one is obliged to expect you again tomorrow."
+    },
+    "presentation.poverty.recovery-v4.herb.kept-dry.text": {
+      "ru": "Пучок трав удаётся завернуть так, чтобы он не отсырел до следующего раза. Это просто полезная вещь в запасе, а не обещание дальнейшей помощи.",
+      "en": "The herb bundle can be wrapped so it stays dry until it is needed. It is simply a useful thing kept in reserve, not a promise of further help."
+    },
+    "presentation.poverty.recovery-v4.room.spring-morning-order.text": {
+      "ru": "Утром после общей комнаты вещи собраны аккуратнее, чем после ночи на улице. Такой маленький порядок помогает начать день, но не делает жильё постоянным.",
+      "en": "In the morning after a shared room, belongings are in better order than after a night on the street. That small amount of order helps start the day without making the lodging permanent."
+    },
+    "presentation.poverty.recovery-v4.room.autumn-short-talk.text": {
+      "ru": "Перед сном соседи обмениваются парой бытовых фраз о погоде и закрытых лавках. Утром каждый уходит своей дорогой, и разговор остаётся частью одной ночи.",
+      "en": "Before sleep, the people sharing the room exchange a few practical words about the weather and closed shops. In the morning, everyone goes their own way and the conversation remains part of one night."
+    },
+    "presentation.poverty.recovery-v4.market.summer-nod.text": {
+      "ru": "На летнем рынке знакомое лицо может коротко кивнуть, вспомнив прошлую мелкую помощь. Узнавание ничего не обещает, но делает место чуть менее чужим.",
+      "en": "At the summer market, a familiar face may give a brief nod, remembering a small favor from before. The recognition promises nothing, but it makes the place feel a little less unfamiliar."
+    }
+  },
+  "invariants": {
+    "existingEventVariantIdsOnly": true,
+    "noEffectChanges": true,
+    "noPersistentRelationship": true,
+    "noContactCounter": true,
+    "noRecoveryMilestone": true,
+    "noRecoveryCounter": true,
+    "noGuaranteedFutureOpportunity": true,
+    "noSecretDebt": true,
+    "noSaveOrRng": true,
+    "noMedia": true
+  }
+}
