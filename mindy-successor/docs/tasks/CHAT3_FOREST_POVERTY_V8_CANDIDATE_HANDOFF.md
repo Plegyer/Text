@@ -2,7 +2,7 @@
 
 Status: C3-84 candidate handoff.
 Owner: Chat 3 / Forest + Poverty Content Bundles Worker.
-Candidate base after required current-main refresh: `main@099d292ef962230a7dc11b0306296a76b5b93a6f`.
+Candidate base after required current-main refresh: `main@f4de3b01a4369417ae9eff4b384f755790f75279`.
 
 ## Scope
 
