@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "id": "ordinary-poverty.recovery-continuity.v3",
+  "status": "CONTENT_SIDE_HANDOFF",
+  "task": "C3-78",
+  "baseMain": "8fb0985ccc353f3f35a2cc2fc140c07dff81cd11",
+  "entries": [
+    {
+      "id": "coins-next-choice",
+      "eventId": "poverty-recovery-production.small-coin-help",
+      "variantId": "default",
+      "localizationKey": "presentation.poverty.recovery-v3.coins.next-choice.text"
+    },
+    {
+      "id": "cleanup-day-easier",
+      "eventId": "poverty-recovery-production.short-cleanup",
+      "variantId": "default",
+      "localizationKey": "presentation.poverty.recovery-v3.cleanup.day-easier.text"
+    },
+    {
+      "id": "herb-kept-for-later",
+      "eventId": "poverty-recovery-production.herb-bundle",
+      "variantId": "default",
+      "localizationKey": "presentation.poverty.recovery-v3.herb.kept-for-later.text"
+    },
+    {
+      "id": "spring-room-reset",
+      "eventId": "poverty-cheap-production-v2.shared-room-seasons",
+      "variantId": "spring-window",
+      "localizationKey": "presentation.poverty.recovery-v3.room.spring-reset.text"
+    },
+    {
+      "id": "autumn-room-familiar-routine",
+      "eventId": "poverty-cheap-production.shared-quiet-autumn",
+      "variantId": "default",
+      "localizationKey": "presentation.poverty.recovery-v3.room.autumn-routine.text"
+    },
+    {
+      "id": "market-brief-recognition",
+      "eventId": "poverty-street-production.helpful-summer",
+      "variantId": "default",
+      "localizationKey": "presentation.poverty.recovery-v3.market.brief-recognition.text"
+    }
+  ],
+  "strings": {
+    "presentation.poverty.recovery-v3.coins.next-choice.text": {
+      "ru": "Несколько монет не закрывают проблему целиком, но позволяют не принимать следующее решение в полной спешке. Это небольшой запас времени и вариантов, а не recovery milestone.",
+      "en": "A few coins do not solve the problem outright, but they keep the next decision from being made in complete haste. It is a small reserve of time and options, not a recovery milestone."
+    },
+    "presentation.poverty.recovery-v3.cleanup.day-easier.text": {
+      "ru": "После короткой уборки вечер становится чуть проще благодаря уже существующей оплате. Полезная работа закончилась вместе с задачей и не продолжается как отдельная линия занятости.",
+      "en": "After the short cleanup, the evening becomes a little easier because of the existing payment. The useful work ends with the task and does not continue as a separate employment route."
+    },
+    "presentation.poverty.recovery-v3.herb.kept-for-later.text": {
+      "ru": "Пучок трав можно убрать в сумку и оставить до момента, когда он действительно понадобится. Сам факт запаса не создаёт скрытого счётчика устойчивости.",
+      "en": "The herb bundle can be put away and kept until it is actually useful. Having a reserve does not create a hidden stability counter."
+    },
+    "presentation.poverty.recovery-v3.room.spring-reset.text": {
+      "ru": "Ночь под крышей позволяет утром начать с более аккуратно собранными вещами и высушенной одеждой. Это локальная передышка одной ночи, не новая постоянная стадия.",
+      "en": "A night under a roof makes it possible to start the morning with drier clothes and belongings in better order. It is a local reprieve for one night, not a new permanent stage."
+    },
+    "presentation.poverty.recovery-v3.room.autumn-routine.text": {
+      "ru": "Несколько привычных действий перед сном возвращают ощущение порядка, хотя сама жизненная линия остаётся нестабильной. Ритуал не создаёт relationship или recovery state.",
+      "en": "A few familiar actions before sleep restore a sense of order even while the life route remains unstable. The routine creates neither relationship nor recovery state."
+    },
+    "presentation.poverty.recovery-v3.market.brief-recognition.text": {
+      "ru": "На рынке кто-то может вспомнить тебя по прошлой мелкой помощи и кивнуть при встрече. Это человеческое узнавание без persistent contact, скидки или гарантированной следующей работы.",
+      "en": "At the market, someone may remember you from a previous small favor and nod when you meet. It is ordinary recognition with no persistent contact, discount, or guaranteed next job."
+    }
+  },
+  "invariants": {
+    "existingEventVariantIdsOnly": true,
+    "noEffectChanges": true,
+    "noPersistentRelationship": true,
+    "noContactCounter": true,
+    "noRecoveryMilestone": true,
+    "noRecoveryCounter": true,
+    "noGuaranteedFutureOpportunity": true,
+    "noSecretDebt": true,
+    "noSaveOrRng": true,
+    "noMedia": true
+  }
+}
