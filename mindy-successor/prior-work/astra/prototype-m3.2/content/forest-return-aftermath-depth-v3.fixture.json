@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "id": "forest.return-aftermath-depth.v3",
+  "status": "CONTENT_SIDE_HANDOFF",
+  "task": "C3-76",
+  "baseMain": "8fb0985ccc353f3f35a2cc2fc140c07dff81cd11",
+  "activityId": "lumber.forest",
+  "outcomes": [
+    {
+      "outcome": "success",
+      "resultId": "lumber.forest.success",
+      "eventId": "forest-result-content-v1.success",
+      "returnPresentationId": "activity/forest/return/success",
+      "lumberContinuation": "lumber-cross.activity-forest-return"
+    },
+    {
+      "outcome": "escape",
+      "resultId": "lumber.forest.escape",
+      "eventId": "forest-result-content-v1.escape",
+      "returnPresentationId": "activity/forest/return/escape",
+      "lumberContinuation": null
+    },
+    {
+      "outcome": "failure",
+      "resultId": "lumber.forest.failure",
+      "eventId": "forest-result-content-v1.failure",
+      "returnPresentationId": "activity/forest/return/failure",
+      "lumberContinuation": null
+    }
+  ],
+  "variants": [
+    {
+      "id": "success-edge-breath",
+      "outcome": "success",
+      "localizationKey": "presentation.activity.forest.return-v3.success.edge-breath.text"
+    },
+    {
+      "id": "success-notes-ready",
+      "outcome": "success",
+      "localizationKey": "presentation.activity.forest.return-v3.success.notes-ready.text"
+    },
+    {
+      "id": "success-worksite-focus",
+      "outcome": "success",
+      "localizationKey": "presentation.activity.forest.return-v3.success.worksite-focus.text"
+    },
+    {
+      "id": "escape-clean-break",
+      "outcome": "escape",
+      "localizationKey": "presentation.activity.forest.return-v3.escape.clean-break.text"
+    },
+    {
+      "id": "escape-partial-record",
+      "outcome": "escape",
+      "localizationKey": "presentation.activity.forest.return-v3.escape.partial-record.text"
+    },
+    {
+      "id": "escape-no-continuation",
+      "outcome": "escape",
+      "localizationKey": "presentation.activity.forest.return-v3.escape.no-continuation.text"
+    },
+    {
+      "id": "failure-heavy-return",
+      "outcome": "failure",
+      "localizationKey": "presentation.activity.forest.return-v3.failure.heavy-return.text"
+    },
+    {
+      "id": "failure-uncertain-notes",
+      "outcome": "failure",
+      "localizationKey": "presentation.activity.forest.return-v3.failure.uncertain-notes.text"
+    },
+    {
+      "id": "failure-no-extra-state",
+      "outcome": "failure",
+      "localizationKey": "presentation.activity.forest.return-v3.failure.no-extra-state.text"
+    }
+  ],
+  "strings": {
+    "presentation.activity.forest.return-v3.success.edge-breath.text": {
+      "ru": "У кромки леса можно наконец остановиться и перевести дыхание: нужная последовательность ориентиров уже подтверждена. Эта пауза ничего не добавляет к существующему success result.",
+      "en": "At the forest edge, you can finally stop and catch your breath: the needed sequence of landmarks is already confirmed. The pause adds nothing to the existing success result."
+    },
+    "presentation.activity.forest.return-v3.success.notes-ready.text": {
+      "ru": "Перед дорогой обратно ты приводишь записи в порядок, чтобы не смешать уверенные наблюдения со случайными деталями. Это подготовка к существующему Lumber continuation, а не новый факт.",
+      "en": "Before heading back, you put the notes in order so confirmed observations do not blur together with incidental details. It prepares the existing Lumber continuation rather than creating a new fact."
+    },
+    "presentation.activity.forest.return-v3.success.worksite-focus.text": {
+      "ru": "После успешного возвращения лесная часть истории быстро уступает место рабочему вопросу артели. Продолжение остаётся тем же существующим событием возвращения к Lumber.",
+      "en": "After a successful return, the Forest part of the story quickly gives way to the crew's work problem. The continuation remains the same existing Lumber return event."
+    },
+    "presentation.activity.forest.return-v3.escape.clean-break.text": {
+      "ru": "Отход получился чистым: обратные ориентиры не потеряны, но цель не подтверждена. Это сохраняет escape отдельным от success без дополнительной награды.",
+      "en": "The retreat is clean: the return landmarks are intact, but the objective is not confirmed. That keeps escape distinct from success without adding a reward."
+    },
+    "presentation.activity.forest.return-v3.escape.partial-record.text": {
+      "ru": "В заметках остаётся несколько наблюдений, которых недостаточно для рабочего вывода. Они не открывают Lumber continuation и не становятся скрытым world fact.",
+      "en": "A few observations remain in the notes, but not enough for a work conclusion. They open no Lumber continuation and become no hidden world fact."
+    },
+    "presentation.activity.forest.return-v3.escape.no-continuation.text": {
+      "ru": "После добровольного отхода возвращение заканчивается существующим escape-событием. C3-76 не добавляет следующий карьерный узел или компенсацию.",
+      "en": "After the voluntary retreat, the return ends with the existing escape event. C3-76 adds no next career node or compensation."
+    },
+    "presentation.activity.forest.return-v3.failure.heavy-return.text": {
+      "ru": "Обратная дорога после неудачи кажется длиннее, потому что сил осталось мало. Это атмосферная деталь существующего failure, без новой травмы или штрафа.",
+      "en": "The return after failure feels longer because little strength remains. It is atmosphere within the existing failure, with no new injury or penalty."
+    },
+    "presentation.activity.forest.return-v3.failure.uncertain-notes.text": {
+      "ru": "Записи сохраняют противоречия, и их нельзя честно выдать за подтверждённый результат. Неудача остаётся неудачей без скрытого прогресса.",
+      "en": "The notes retain contradictions and cannot honestly be presented as a confirmed result. Failure remains failure without hidden progress."
+    },
+    "presentation.activity.forest.return-v3.failure.no-extra-state.text": {
+      "ru": "Кромка леса завершает вылазку, но не создаёт отдельного состояния восстановления. Существующие эффекты failure остаются единственными.",
+      "en": "The forest edge ends the expedition without creating a separate recovery state. The existing failure effects remain the only effects."
+    }
+  },
+  "invariants": {
+    "noResultEffectChanges": true,
+    "noWorldFactChanges": true,
+    "noCareerFactChanges": true,
+    "noLumberContinuationForEscapeFailure": true,
+    "noPenaltyOrInjuryChanges": true,
+    "noPersistentState": true,
+    "noRewardChanges": true,
+    "noSaveOrRng": true,
+    "noMedia": true
+  }
+}
