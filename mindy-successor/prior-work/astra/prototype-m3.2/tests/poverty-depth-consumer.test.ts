@@ -10,6 +10,7 @@ const html=readFileSync('dist/index.html','utf8');
 const bundle=readFileSync('dist/app.js','utf8');
 const data=JSON.parse(readFileSync('dist/content.json','utf8'));
 const localization=JSON.parse(readFileSync('content/localization.json','utf8')).strings;
+const smallJob=JSON.parse(readFileSync('content/ordinary-poverty-small-job-depth-v1.fixture.json','utf8'));
 
 async function wait(check:()=>boolean){
   for(let i=0;i<100;i++){
@@ -82,7 +83,19 @@ test('poverty depth lookup preserves the approved deterministic occurrence contr
   );
   assert.equal(
     povertyPendingLocalizationKey('poverty-street-production.neutral-autumn','default',1),
-    'event.poverty-street-production.neutral-autumn.variant.default.text'
+    'presentation.poverty.recovery-depth-v5.street.autumn-no-milestone.text'
+  );
+  assert.equal(
+    povertyPendingLocalizationKey('poverty-pressure-production.cold-rain','default',4),
+    'presentation.poverty.housing-depth-v5.street.spring.cold-rain.text'
+  );
+  assert.equal(
+    povertyPendingLocalizationKey('poverty-cheap-production-v2.shared-room-seasons','spring-window',3),
+    'presentation.poverty.housing-depth-v5.cheap.spring.window.text'
+  );
+  assert.equal(
+    povertyPendingLocalizationKey('poverty-cheap-production-v2.shared-room-seasons','spring-window',4),
+    'presentation.poverty.recovery-depth-v5.shared-room.spring-breathing-space.text'
   );
   assert.equal(povertyPendingLocalizationKey('not-poverty','default',1),null);
 
@@ -93,6 +106,12 @@ test('poverty depth lookup preserves the approved deterministic occurrence contr
     }
     assert.ok(localization[entry.coreFallbackLocalizationKey]?.ru?.trim(),entry.coreFallbackLocalizationKey+' ru');
     assert.ok(localization[entry.coreFallbackLocalizationKey]?.en?.trim(),entry.coreFallbackLocalizationKey+' en');
+  }
+
+  const selectedKeys=new Set(povertyDepthLookupEntries.flatMap(entry=>entry.orderedDepthLocalizationKeys));
+  for(const key of Object.keys(smallJob.strings)){
+    assert.equal(localization[key],undefined,key+' stays fixture-local because outcomeRef lacks variant identity');
+    assert.equal(selectedKeys.has(key),false,key+' stays out of variant selector');
   }
 });
 
