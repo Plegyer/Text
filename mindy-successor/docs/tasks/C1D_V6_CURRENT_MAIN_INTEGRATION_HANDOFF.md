@@ -3,7 +3,7 @@
 Status: WORKING
 Owner: Chat 1 Developer / Integration Developer
 Queue: C1D-49..C1D-60
-Fresh current-main baseline: `eb155400f5bb594da3c1cd6cfdfc03d5a13377ba`
+Fresh current-main baseline: `b57036527a1fa5d5db99efda59f43dc28a5d06d2`
 Branch: `chat1/c1d-v6-final-v3-current-main`
 
 This branch is the queue-v6 rebuild from current main after the accepted Chat 2 presentation wave and Chat 3 Forest/poverty v6 wave were merged. Earlier queue-v6 branches are selective source only and must not be merged.
@@ -19,6 +19,7 @@ Already merged/current-main before this final rebuild:
 - PR #114: Chat 3 Forest/poverty v6 preparation; C4-81 PASS-WITH-NOTES;
 - PR #116: presentation wave v6; C4-80 PASS; includes a narrow Work-panel locked-career accessibility/help patch;
 - PR #118: School reactive v6 preparation; C4-78 PASS-WITH-NOTES; supplies the current QA-accepted exact-course presentation metadata/text consumed selectively by C1D-56.
+- PR #125/#126/#127: queue-v7 Presentation, Forest/Poverty and School handoffs are already merged into this refresh baseline; they are not consumed by C1D-49..60 beyond preserving current-main compatibility.
 
 Current-main facts are never duplicate-copied solely because they appeared in an earlier worker branch.
 
