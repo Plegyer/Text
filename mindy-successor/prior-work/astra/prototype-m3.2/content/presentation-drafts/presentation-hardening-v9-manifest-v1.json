@@ -16,7 +16,7 @@
       "work": 56,
       "endings": 9,
       "school": 11,
-      "forest": 9,
+      "forest": 10,
       "ordinary-poverty": 20
     },
     "activeExact": [
@@ -1256,7 +1256,8 @@
       {
         "presentationId": "job/lumber/event/lumber-cross-activity-forest-return/default",
         "domains": [
-          "work"
+          "work",
+          "forest"
         ],
         "state": "active-exact-current-main",
         "sourceAsset": "assets/presentation/forest-reaction-success-v2.svg",
@@ -1628,6 +1629,10 @@
     "endingParityV2": {
       "test": "tests/presentation-ending-parity-v9.test.ts",
       "endingIds": 9
+    },
+    "forestParityV2": {
+      "test": "tests/presentation-forest-parity-v9.test.ts",
+      "semanticIds": 10
     }
   },
   "accessibilityAudit": {
@@ -1767,5 +1772,96 @@
     },
     "completedState": "active-current-main",
     "exactStaticCount": 9
+  },
+  "forestParity": {
+    "currentSemanticIds": [
+      {
+        "presentationId": "activity/forest/return/success",
+        "kind": "result",
+        "sourceAsset": "assets/presentation/forest-return-success-v2.svg",
+        "altKey": "presentation.static.forest-return-success-v2.alt",
+        "captionKey": "presentation.static.forest-return-success-v2.caption",
+        "exactStatic": true
+      },
+      {
+        "presentationId": "job/lumber/event/forest-result-content-v1-success/default",
+        "kind": "reaction",
+        "sourceAsset": "assets/presentation/forest-reaction-success-v2.svg",
+        "altKey": "presentation.static.forest-reaction-success-v2.alt",
+        "captionKey": "presentation.static.forest-reaction-success-v2.caption",
+        "exactStatic": true
+      },
+      {
+        "presentationId": "activity/forest/return/escape",
+        "kind": "result",
+        "sourceAsset": "assets/presentation/forest-return-escape-v2.svg",
+        "altKey": "presentation.static.forest-return-escape-v2.alt",
+        "captionKey": "presentation.static.forest-return-escape-v2.caption",
+        "exactStatic": true
+      },
+      {
+        "presentationId": "job/lumber/event/forest-result-content-v1-escape/default",
+        "kind": "reaction",
+        "sourceAsset": "assets/presentation/forest-reaction-escape-v2.svg",
+        "altKey": "presentation.static.forest-reaction-escape-v2.alt",
+        "captionKey": "presentation.static.forest-reaction-escape-v2.caption",
+        "exactStatic": true
+      },
+      {
+        "presentationId": "activity/forest/return/failure",
+        "kind": "result",
+        "sourceAsset": "assets/presentation/forest-return-failure-v2.svg",
+        "altKey": "presentation.static.forest-return-failure-v2.alt",
+        "captionKey": "presentation.static.forest-return-failure-v2.caption",
+        "exactStatic": true
+      },
+      {
+        "presentationId": "job/lumber/event/forest-result-content-v1-failure/default",
+        "kind": "reaction",
+        "sourceAsset": "assets/presentation/forest-reaction-failure-v2.svg",
+        "altKey": "presentation.static.forest-reaction-failure-v2.alt",
+        "captionKey": "presentation.static.forest-reaction-failure-v2.caption",
+        "exactStatic": true
+      },
+      {
+        "presentationId": "activity/forest/route/default",
+        "kind": "route",
+        "sourceAsset": "assets/presentation/forest-route-default-v1.svg",
+        "altKey": "presentation.static.forest.route.default.alt",
+        "captionKey": "presentation.static.forest.route.default.caption",
+        "exactStatic": true
+      },
+      {
+        "presentationId": "activity/forest/route/logging-road",
+        "kind": "route",
+        "sourceAsset": "assets/presentation/forest-route-logging-road.svg",
+        "altKey": "presentation.activity.forest.route.logging-road.alt",
+        "captionKey": "presentation.activity.forest.route.logging-road.caption",
+        "exactStatic": true
+      },
+      {
+        "presentationId": "activity/forest/route/old-boundary",
+        "kind": "route",
+        "sourceAsset": "assets/presentation/forest-route-old-boundary-v3.svg",
+        "altKey": "presentation.activity.forest.route.old-boundary.alt",
+        "captionKey": "presentation.activity.forest.route.old-boundary.caption",
+        "exactStatic": true
+      },
+      {
+        "presentationId": "job/lumber/event/lumber-cross-activity-forest-return/default",
+        "kind": "reaction",
+        "sourceAsset": "assets/presentation/forest-reaction-success-v2.svg",
+        "altKey": "presentation.static.forest-reaction-success-v2.alt",
+        "captionKey": "presentation.static.forest-reaction-success-v2.caption",
+        "exactStatic": true
+      }
+    ],
+    "counts": {
+      "route": 3,
+      "result": 3,
+      "reaction": 4
+    },
+    "fixesRequired": 0,
+    "gameplayMutation": false
   }
 }

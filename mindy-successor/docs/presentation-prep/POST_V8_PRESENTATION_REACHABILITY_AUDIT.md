@@ -14,10 +14,10 @@ Domain membership counts:
 - Work: **56**;
 - endings: **9**;
 - School: **11**;
-- Forest: **9**;
+- Forest: **10**;
 - ordinary poverty: **20**.
 
-Forest intentionally overlaps Work for the three existing Lumber Forest-result reaction IDs. School includes eight course lesson IDs and three existing School event IDs.
+Forest intentionally overlaps Work for the three existing Lumber Forest-result reaction IDs plus the existing Lumber cross-Activity Forest-return reaction ID. School includes eight course lesson IDs and three existing School event IDs.
 
 Current production overrides outside this queue-v9 domain set: **2** (`relationship/lumber-foreman/lumber-foreman-notice/default`, `relationship/lumber-foreman/lumber-night-foreman-professional/default`).
 
