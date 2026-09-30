@@ -46,7 +46,8 @@ Owns:
 Historical sources not to restart:
 - `chat1/lumber-vertical-slice` remains draft history only;
 - baseline repair PR #68 is merged;
-- current-main Lumber consolidation PR #84 is merged.
+- current-main Lumber consolidation PR #84 is merged;
+- starter-trio availability PR #97 is merged and is now current-main behavior.
 
 Must not own media asset production, Forest/poverty authoring, School authoring/localization or QA acceptance.
 
@@ -60,7 +61,9 @@ Owns project-owned presentation/media sources, presentation IDs/registries/manif
 
 Merged/integrated work not to restart:
 - PR #64 / old queue 352–363;
-- Lumber presentation candidate PR #79, integrated through Lead PR #89.
+- Lumber presentation candidate PR #79, integrated through Lead PR #89;
+- starter/School presentation validation PR #88 is merged;
+- late-career presentation validation PR #98 is merged.
 
 Must not modify gameplay mechanics, progression, Save/RNG or content canon.
 
@@ -74,7 +77,9 @@ Owns ordinary poverty content/localization bundles, Forest/Expedition content ho
 
 Historical/integrated sources not to restart:
 - PR #67 / `chat3/ordinary-poverty-depth-refresh-341-352` is historical selective-source material already consumed where approved;
-- repaired Forest/poverty candidate PR #82 was integrated through Lead PR #89.
+- repaired Forest/poverty candidate PR #82 was integrated through Lead PR #89;
+- starter-career/poverty content PR #93 is merged;
+- PR #100 remains the current frozen Chat 3 depth candidate pending QA.
 
 Must not own shared runtime/UI integration, Chat 2 media production, Chat 5 School content or QA.
 
@@ -88,7 +93,8 @@ Owns exact-head PR/CI verification, scope/collision review, runtime/catalog gate
 
 Immediate evidence/candidates:
 - use current main and the current worker pointers first;
-- merged #84, #85 and #89 are historical accepted integration evidence;
+- merged #84, #85, #89, #93, #97, #98, #99, #88 and #90 are historical accepted integration evidence;
+- PR #100 is the only currently open frozen candidate from the prior worker wave;
 - gate only still-open/new frozen candidates named by the active QA queue.
 
 Must not create duplicate production content.
@@ -103,7 +109,9 @@ Owns School player-facing content/localization, teacher/milestone/night-study te
 
 Merged/integrated work not to restart:
 - PR #66 / residual localization 193–204;
-- repaired School handoff PR #85.
+- repaired School handoff PR #85;
+- School depth preparation PR #90 is merged;
+- late-career School preparation PR #99 is merged.
 
 Must not create career state, shared runtime architecture, Save fields, NightFlow rules or new curriculum without Lead-approved design.
 
