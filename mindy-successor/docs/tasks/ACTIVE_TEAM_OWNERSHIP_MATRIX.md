@@ -79,7 +79,7 @@ Historical/integrated sources not to restart:
 - PR #67 / `chat3/ordinary-poverty-depth-refresh-341-352` is historical selective-source material already consumed where approved;
 - repaired Forest/poverty candidate PR #82 was integrated through Lead PR #89;
 - starter-career/poverty content PR #93 is merged;
-- PR #100 remains the current frozen Chat 3 depth candidate pending QA.
+- content-depth PR #100 is merged.
 
 Must not own shared runtime/UI integration, Chat 2 media production, Chat 5 School content or QA.
 
@@ -93,8 +93,7 @@ Owns exact-head PR/CI verification, scope/collision review, runtime/catalog gate
 
 Immediate evidence/candidates:
 - use current main and the current worker pointers first;
-- merged #84, #85, #89, #93, #97, #98, #99, #88 and #90 are historical accepted integration evidence;
-- PR #100 is the only currently open frozen candidate from the prior worker wave;
+- merged #84, #85, #88, #89, #90, #93, #97, #98, #99 and #100 are historical accepted integration evidence;
 - gate only still-open/new frozen candidates named by the active QA queue.
 
 Must not create duplicate production content.
