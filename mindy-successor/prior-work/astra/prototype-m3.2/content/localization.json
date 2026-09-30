@@ -3525,6 +3525,62 @@
     "media.school.teacher.body-confidence.classroom.caption": {
       "ru": "Преподаватель: Сера Вей — «Уверенность в теле».",
       "en": "Teacher: Sera Vey — Body Confidence."
+    },
+    "ui.run.endingCommitted": {
+      "ru": "Судьба выбрана",
+      "en": "Fate selected"
+    },
+    "media.stage.town.alt": {
+      "ru": "Центральная городская сцена Листограда без привязки к конкретному событию.",
+      "en": "A central Listograd town scene without tying it to a specific event."
+    },
+    "media.stage.town.caption": {
+      "ru": "Городской фон для безопасного резервного показа.",
+      "en": "Town background used as a safe presentation fallback."
+    },
+    "media.stage.school.alt": {
+      "ru": "Нейтральная учебная аудитория Школы без привязки к конкретному курсу или преподавателю.",
+      "en": "A neutral School classroom without tying it to a specific course or teacher."
+    },
+    "media.stage.school.caption": {
+      "ru": "Школьная аудитория как резервный фон учебной сцены.",
+      "en": "School classroom used as a fallback for lesson presentation."
+    },
+    "media.stage.hunt.alt": {
+      "ru": "Нейтральная лесная сцена для маршрута или возвращения без указания конкретного исхода.",
+      "en": "A neutral forest scene for a route or return without implying a specific outcome."
+    },
+    "media.stage.hunt.caption": {
+      "ru": "Лесной фон для безопасного резервного показа.",
+      "en": "Forest background used as a safe presentation fallback."
+    },
+    "media.stage.outside.caption": {
+      "ru": "Уличный фон для обычной бедной или ночной сцены.",
+      "en": "Street background for an ordinary poverty or night scene."
+    },
+    "media.stage.room.caption": {
+      "ru": "Общая комната как резервный фон дешёвого жилья.",
+      "en": "Shared room used as a fallback for cheap lodging presentation."
+    },
+    "media.forest-result-content-v1.success.caption": {
+      "ru": "Резервная лесная сцена успешного возвращения.",
+      "en": "Fallback forest scene for a successful return."
+    },
+    "media.forest-result-content-v1.escape.caption": {
+      "ru": "Резервная лесная сцена безопасного отступления.",
+      "en": "Fallback forest scene for a safe retreat."
+    },
+    "media.forest-result-content-v1.failure.caption": {
+      "ru": "Резервная лесная сцена неудачного возвращения.",
+      "en": "Fallback forest scene for an unsuccessful return."
+    },
+    "media.job.lumber.event.forest-return.alt": {
+      "ru": "Лесная сцена реакции артели после возвращения из вылазки без указания результата.",
+      "en": "A forest scene for the lumber crew's reaction after a return, without implying the result."
+    },
+    "media.job.lumber.event.forest-return.caption": {
+      "ru": "Резервный фон реакции после лесной вылазки.",
+      "en": "Fallback background for a reaction after a Forest outing."
     }
   }
 }

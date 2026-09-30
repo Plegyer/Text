@@ -1,0 +1,1412 @@
+{
+  "schemaVersion": 1,
+  "id": "presentation-hardening-v8-manifest-v1",
+  "owner": "chat2-presentation-media",
+  "baselineMain": "f4de3b01a4369417ae9eff4b384f755790f75279",
+  "upstreamFrozenV7": {
+    "pr": 125,
+    "head": "827a77bf40238ffcad509876c43d2b05481ffb17",
+    "state": "merged-current-main",
+    "merged": true
+  },
+  "semanticSlots": [
+    {
+      "presentationId": "ending/guild-life",
+      "sourceAsset": "assets/presentation/ending-guild-life.svg",
+      "state": "exact-after-c2-52",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.ending.guild-life.alt",
+      "captionKey": "presentation.static.ending.guild-life.caption",
+      "domain": "endingSlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/ending-guild-life.svg",
+      "activeAltKey": "presentation.static.ending.guild-life.alt"
+    },
+    {
+      "presentationId": "ending/scholar-life",
+      "sourceAsset": "assets/presentation/ending-scholar-life.svg",
+      "state": "exact-after-c2-52",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.ending.scholar-life.alt",
+      "captionKey": "presentation.static.ending.scholar-life.caption",
+      "domain": "endingSlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/ending-scholar-life.svg",
+      "activeAltKey": "presentation.static.ending.scholar-life.alt"
+    },
+    {
+      "presentationId": "ending/tavern-stay",
+      "sourceAsset": "assets/presentation/tavern-ending-stay.svg",
+      "state": "exact-after-c2-52",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.ending.tavern-stay.alt",
+      "captionKey": "presentation.static.ending.tavern-stay.caption",
+      "domain": "endingSlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/tavern-ending-stay.svg",
+      "activeAltKey": "presentation.static.ending.tavern-stay.alt"
+    },
+    {
+      "presentationId": "ending/tavern-guild",
+      "sourceAsset": "assets/presentation/tavern-ending-guild.svg",
+      "state": "exact-after-c2-52",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.ending.tavern-guild.alt",
+      "captionKey": "presentation.static.ending.tavern-guild.caption",
+      "domain": "endingSlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/tavern-ending-guild.svg",
+      "activeAltKey": "presentation.static.ending.tavern-guild.alt"
+    },
+    {
+      "presentationId": "ending/tavern-court",
+      "sourceAsset": "assets/presentation/tavern-ending-court.svg",
+      "state": "exact-after-c2-52",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.ending.tavern-court.alt",
+      "captionKey": "presentation.static.ending.tavern-court.caption",
+      "domain": "endingSlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/tavern-ending-court.svg",
+      "activeAltKey": "presentation.static.ending.tavern-court.alt"
+    },
+    {
+      "presentationId": "ending/lumber-stay",
+      "sourceAsset": "assets/presentation/ending-lumber-stay.svg",
+      "state": "exact-after-c2-52",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.ending.lumber-stay.alt",
+      "captionKey": "presentation.static.ending.lumber-stay.caption",
+      "domain": "endingSlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/ending-lumber-stay.svg",
+      "activeAltKey": "presentation.static.ending.lumber-stay.alt"
+    },
+    {
+      "presentationId": "ending/lumber/hard-work",
+      "sourceAsset": "assets/presentation/career-lumber-result.svg",
+      "state": "existing-exact",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.lumber-ending-hard-work.alt",
+      "captionKey": "presentation.static.lumber-ending-hard-work.caption",
+      "domain": "endingSlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/career-lumber-result.svg",
+      "activeAltKey": "presentation.static.lumber-ending-hard-work.alt"
+    },
+    {
+      "presentationId": "ending/lumber/forewoman",
+      "sourceAsset": "assets/presentation/foreman-professional.svg",
+      "state": "existing-exact",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.lumber-ending-forewoman.alt",
+      "captionKey": "presentation.static.lumber-ending-forewoman.caption",
+      "domain": "endingSlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/foreman-professional.svg",
+      "activeAltKey": "presentation.static.lumber-ending-forewoman.alt"
+    },
+    {
+      "presentationId": "ending/lumber/forest",
+      "sourceAsset": "assets/presentation/forest-return-success-v2.svg",
+      "state": "existing-exact",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.lumber-ending-forest.alt",
+      "captionKey": "presentation.static.lumber-ending-forest.caption",
+      "domain": "endingSlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/forest-return-success-v2.svg",
+      "activeAltKey": "presentation.static.lumber-ending-forest.alt"
+    },
+    {
+      "presentationId": "activity/forest/route/default",
+      "sourceAsset": "assets/presentation/forest-route-default-v1.svg",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.forest.route.default.alt",
+      "captionKey": "presentation.static.forest.route.default.caption",
+      "state": "current-exact",
+      "domain": "forestSlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/forest-route-default-v1.svg",
+      "activeAltKey": "presentation.static.forest.route.default.alt"
+    },
+    {
+      "presentationId": "activity/forest/route/logging-road",
+      "sourceAsset": "assets/presentation/forest-route-logging-road.svg",
+      "fallbackId": "activity/forest/route/default",
+      "altKey": "presentation.activity.forest.route.logging-road.alt",
+      "captionKey": "presentation.activity.forest.route.logging-road.caption",
+      "state": "current-exact",
+      "domain": "forestSlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/forest-route-logging-road.svg",
+      "activeAltKey": "presentation.activity.forest.route.logging-road.alt"
+    },
+    {
+      "presentationId": "activity/forest/route/old-boundary",
+      "sourceAsset": "assets/presentation/forest-route-old-boundary-v3.svg",
+      "fallbackId": "activity/forest/route/default",
+      "altKey": "presentation.activity.forest.route.old-boundary.alt",
+      "captionKey": "presentation.activity.forest.route.old-boundary.caption",
+      "state": "current-exact",
+      "domain": "forestSlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/forest-route-old-boundary-v3.svg",
+      "activeAltKey": "presentation.activity.forest.route.old-boundary.alt"
+    },
+    {
+      "presentationId": "activity/forest/return/success",
+      "sourceAsset": "assets/presentation/forest-return-success-v2.svg",
+      "fallbackId": "activity/forest/route/default",
+      "altKey": "presentation.static.forest-return-success-v2.alt",
+      "captionKey": "presentation.static.forest-return-success-v2.caption",
+      "state": "current-exact",
+      "domain": "forestSlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/forest-return-success-v2.svg",
+      "activeAltKey": "presentation.static.forest-return-success-v2.alt"
+    },
+    {
+      "presentationId": "activity/forest/return/escape",
+      "sourceAsset": "assets/presentation/forest-return-escape-v2.svg",
+      "fallbackId": "activity/forest/route/default",
+      "altKey": "presentation.static.forest-return-escape-v2.alt",
+      "captionKey": "presentation.static.forest-return-escape-v2.caption",
+      "state": "current-exact",
+      "domain": "forestSlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/forest-return-escape-v2.svg",
+      "activeAltKey": "presentation.static.forest-return-escape-v2.alt"
+    },
+    {
+      "presentationId": "activity/forest/return/failure",
+      "sourceAsset": "assets/presentation/forest-return-failure-v2.svg",
+      "fallbackId": "activity/forest/route/default",
+      "altKey": "presentation.static.forest-return-failure-v2.alt",
+      "captionKey": "presentation.static.forest-return-failure-v2.caption",
+      "state": "current-exact",
+      "domain": "forestSlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/forest-return-failure-v2.svg",
+      "activeAltKey": "presentation.static.forest-return-failure-v2.alt"
+    },
+    {
+      "presentationId": "job/lumber/event/forest-result-content-v1-success/default",
+      "sourceAsset": "assets/presentation/forest-reaction-success-v2.svg",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.forest-reaction-success-v2.alt",
+      "captionKey": "presentation.static.forest-reaction-success-v2.caption",
+      "state": "current-exact",
+      "domain": "forestSlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/forest-reaction-success-v2.svg",
+      "activeAltKey": "presentation.static.forest-reaction-success-v2.alt"
+    },
+    {
+      "presentationId": "job/lumber/event/forest-result-content-v1-escape/default",
+      "sourceAsset": "assets/presentation/forest-reaction-escape-v2.svg",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.forest-reaction-escape-v2.alt",
+      "captionKey": "presentation.static.forest-reaction-escape-v2.caption",
+      "state": "current-exact",
+      "domain": "forestSlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/forest-reaction-escape-v2.svg",
+      "activeAltKey": "presentation.static.forest-reaction-escape-v2.alt"
+    },
+    {
+      "presentationId": "job/lumber/event/forest-result-content-v1-failure/default",
+      "sourceAsset": "assets/presentation/forest-reaction-failure-v2.svg",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.forest-reaction-failure-v2.alt",
+      "captionKey": "presentation.static.forest-reaction-failure-v2.caption",
+      "state": "current-exact",
+      "domain": "forestSlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/forest-reaction-failure-v2.svg",
+      "activeAltKey": "presentation.static.forest-reaction-failure-v2.alt"
+    },
+    {
+      "presentationId": "job/lumber/event/lumber-cross-activity-forest-return/default",
+      "sourceAsset": "assets/presentation/forest-reaction-success-v2.svg",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.forest-reaction-success-v2.alt",
+      "captionKey": "presentation.static.forest-reaction-success-v2.caption",
+      "state": "current-exact",
+      "domain": "forestSlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/forest-reaction-success-v2.svg",
+      "activeAltKey": "presentation.static.forest-reaction-success-v2.alt"
+    },
+    {
+      "presentationId": "location/town/event/poverty-street-production-helpful-summer/default",
+      "sourceAsset": "assets/presentation/poverty-street-helpful-summer.svg",
+      "state": "current-exact",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.poverty-street-helpful-summer.alt",
+      "captionKey": "presentation.static.poverty-street-helpful-summer.caption",
+      "domain": "povertySlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/poverty-street-helpful-summer.svg",
+      "activeAltKey": "presentation.static.poverty-street-helpful-summer.alt"
+    },
+    {
+      "presentationId": "location/town/event/poverty-street-production-neutral-autumn/default",
+      "sourceAsset": "assets/presentation/poverty-street-neutral-autumn.svg",
+      "state": "current-exact",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.poverty-street-neutral-autumn.alt",
+      "captionKey": "presentation.static.poverty-street-neutral-autumn.caption",
+      "domain": "povertySlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/poverty-street-neutral-autumn.svg",
+      "activeAltKey": "presentation.static.poverty-street-neutral-autumn.alt"
+    },
+    {
+      "presentationId": "location/town/event/poverty-street-production-pressure-winter/default",
+      "sourceAsset": "assets/presentation/poverty-street-pressure-winter.svg",
+      "state": "current-exact",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.poverty-street-pressure-winter.alt",
+      "captionKey": "presentation.static.poverty-street-pressure-winter.caption",
+      "domain": "povertySlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/poverty-street-pressure-winter.svg",
+      "activeAltKey": "presentation.static.poverty-street-pressure-winter.alt"
+    },
+    {
+      "presentationId": "location/town/event/poverty-cheap-production-shared-quiet-autumn/default",
+      "sourceAsset": "assets/presentation/poverty-cheap-shared-quiet-autumn.svg",
+      "state": "current-exact",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.poverty-cheap-shared-quiet-autumn.alt",
+      "captionKey": "presentation.static.poverty-cheap-shared-quiet-autumn.caption",
+      "domain": "povertySlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/poverty-cheap-shared-quiet-autumn.svg",
+      "activeAltKey": "presentation.static.poverty-cheap-shared-quiet-autumn.alt"
+    },
+    {
+      "presentationId": "location/town/event/poverty-recovery-production-small-coin-help/default",
+      "sourceAsset": "assets/presentation/poverty-recovery-small-coin-help.svg",
+      "state": "current-exact",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.poverty-recovery-small-coin-help.alt",
+      "captionKey": "presentation.static.poverty-recovery-small-coin-help.caption",
+      "domain": "povertySlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/poverty-recovery-small-coin-help.svg",
+      "activeAltKey": "presentation.static.poverty-recovery-small-coin-help.alt"
+    },
+    {
+      "presentationId": "location/town/event/poverty-recovery-production-short-cleanup/default",
+      "sourceAsset": "assets/presentation/poverty-recovery-short-cleanup.svg",
+      "state": "current-exact",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.poverty-recovery-short-cleanup.alt",
+      "captionKey": "presentation.static.poverty-recovery-short-cleanup.caption",
+      "domain": "povertySlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/poverty-recovery-short-cleanup.svg",
+      "activeAltKey": "presentation.static.poverty-recovery-short-cleanup.alt"
+    },
+    {
+      "presentationId": "location/town/event/poverty-recovery-production-herb-bundle/default",
+      "sourceAsset": "assets/presentation/poverty-recovery-herb-bundle.svg",
+      "state": "current-exact",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.poverty-recovery-herb-bundle.alt",
+      "captionKey": "presentation.static.poverty-recovery-herb-bundle.caption",
+      "domain": "povertySlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/poverty-recovery-herb-bundle.svg",
+      "activeAltKey": "presentation.static.poverty-recovery-herb-bundle.alt"
+    },
+    {
+      "presentationId": "location/town/event/poverty-pressure-production-cold-rain/default",
+      "sourceAsset": "assets/presentation/poverty-pressure-cold-rain.svg",
+      "state": "current-exact",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.poverty-pressure-cold-rain.alt",
+      "captionKey": "presentation.static.poverty-pressure-cold-rain.caption",
+      "domain": "povertySlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/poverty-pressure-cold-rain.svg",
+      "activeAltKey": "presentation.static.poverty-pressure-cold-rain.alt"
+    },
+    {
+      "presentationId": "location/town/event/poverty-pressure-production-noisy-loading/default",
+      "sourceAsset": "assets/presentation/poverty-pressure-noisy-loading.svg",
+      "state": "current-exact",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.poverty-pressure-noisy-loading.alt",
+      "captionKey": "presentation.static.poverty-pressure-noisy-loading.caption",
+      "domain": "povertySlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/poverty-pressure-noisy-loading.svg",
+      "activeAltKey": "presentation.static.poverty-pressure-noisy-loading.alt"
+    },
+    {
+      "presentationId": "location/town/event/poverty-pressure-production-muddy-splash/default",
+      "sourceAsset": "assets/presentation/poverty-pressure-muddy-splash.svg",
+      "state": "current-exact",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.poverty-pressure-muddy-splash.alt",
+      "captionKey": "presentation.static.poverty-pressure-muddy-splash.caption",
+      "domain": "povertySlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/poverty-pressure-muddy-splash.svg",
+      "activeAltKey": "presentation.static.poverty-pressure-muddy-splash.alt"
+    },
+    {
+      "presentationId": "location/town/event/poverty-street-production-v2-helpful-summer-shade/market-closing",
+      "sourceAsset": "assets/presentation/poverty-street-helpful-summer.svg",
+      "state": "current-exact",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.location.town.event.poverty-street-production-v2-helpful-summer-shade.market-closing.alt",
+      "captionKey": "presentation.static.location.town.event.poverty-street-production-v2-helpful-summer-shade.market-closing.caption",
+      "domain": "povertySlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/poverty-street-helpful-summer.svg",
+      "activeAltKey": "presentation.static.location.town.event.poverty-street-production-v2-helpful-summer-shade.market-closing.alt"
+    },
+    {
+      "presentationId": "location/town/event/poverty-street-production-v2-helpful-summer-shade/late-shade",
+      "sourceAsset": "assets/presentation/poverty-street-helpful-summer.svg",
+      "state": "current-exact",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.location.town.event.poverty-street-production-v2-helpful-summer-shade.late-shade.alt",
+      "captionKey": "presentation.static.location.town.event.poverty-street-production-v2-helpful-summer-shade.late-shade.caption",
+      "domain": "povertySlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/poverty-street-helpful-summer.svg",
+      "activeAltKey": "presentation.static.location.town.event.poverty-street-production-v2-helpful-summer-shade.late-shade.alt"
+    },
+    {
+      "presentationId": "location/town/event/poverty-street-production-v2-neutral-autumn-crossing/drizzle",
+      "sourceAsset": "assets/presentation/poverty-street-neutral-autumn.svg",
+      "state": "current-exact",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.location.town.event.poverty-street-production-v2-neutral-autumn-crossing.drizzle.alt",
+      "captionKey": "presentation.static.location.town.event.poverty-street-production-v2-neutral-autumn-crossing.drizzle.caption",
+      "domain": "povertySlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/poverty-street-neutral-autumn.svg",
+      "activeAltKey": "presentation.static.location.town.event.poverty-street-production-v2-neutral-autumn-crossing.drizzle.alt"
+    },
+    {
+      "presentationId": "location/town/event/poverty-street-production-v2-neutral-autumn-crossing/dry-arcade",
+      "sourceAsset": "assets/presentation/poverty-street-neutral-autumn.svg",
+      "state": "current-exact",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.location.town.event.poverty-street-production-v2-neutral-autumn-crossing.dry-arcade.alt",
+      "captionKey": "presentation.static.location.town.event.poverty-street-production-v2-neutral-autumn-crossing.dry-arcade.caption",
+      "domain": "povertySlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/poverty-street-neutral-autumn.svg",
+      "activeAltKey": "presentation.static.location.town.event.poverty-street-production-v2-neutral-autumn-crossing.dry-arcade.alt"
+    },
+    {
+      "presentationId": "location/town/event/poverty-street-production-v2-pressure-winter-wind/crosswind",
+      "sourceAsset": "assets/presentation/poverty-street-pressure-winter.svg",
+      "state": "current-exact",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.location.town.event.poverty-street-production-v2-pressure-winter-wind.crosswind.alt",
+      "captionKey": "presentation.static.location.town.event.poverty-street-production-v2-pressure-winter-wind.crosswind.caption",
+      "domain": "povertySlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/poverty-street-pressure-winter.svg",
+      "activeAltKey": "presentation.static.location.town.event.poverty-street-production-v2-pressure-winter-wind.crosswind.alt"
+    },
+    {
+      "presentationId": "location/town/event/poverty-street-production-v2-pressure-winter-wind/long-gusts",
+      "sourceAsset": "assets/presentation/poverty-street-pressure-winter.svg",
+      "state": "current-exact",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.location.town.event.poverty-street-production-v2-pressure-winter-wind.long-gusts.alt",
+      "captionKey": "presentation.static.location.town.event.poverty-street-production-v2-pressure-winter-wind.long-gusts.caption",
+      "domain": "povertySlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/poverty-street-pressure-winter.svg",
+      "activeAltKey": "presentation.static.location.town.event.poverty-street-production-v2-pressure-winter-wind.long-gusts.alt"
+    },
+    {
+      "presentationId": "location/town/event/poverty-cheap-production-v2-shared-room-seasons/spring-window",
+      "sourceAsset": "assets/presentation/poverty-cheap-lodging.svg",
+      "state": "current-exact",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.location.town.event.poverty-cheap-production-v2-shared-room-seasons.spring-window.alt",
+      "captionKey": "presentation.static.location.town.event.poverty-cheap-production-v2-shared-room-seasons.spring-window.caption",
+      "domain": "povertySlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/poverty-cheap-lodging.svg",
+      "activeAltKey": "presentation.static.location.town.event.poverty-cheap-production-v2-shared-room-seasons.spring-window.alt"
+    },
+    {
+      "presentationId": "location/town/event/poverty-cheap-production-v2-shared-room-seasons/summer-heat",
+      "sourceAsset": "assets/presentation/poverty-cheap-lodging.svg",
+      "state": "current-exact",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.location.town.event.poverty-cheap-production-v2-shared-room-seasons.summer-heat.alt",
+      "captionKey": "presentation.static.location.town.event.poverty-cheap-production-v2-shared-room-seasons.summer-heat.caption",
+      "domain": "povertySlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/poverty-cheap-lodging.svg",
+      "activeAltKey": "presentation.static.location.town.event.poverty-cheap-production-v2-shared-room-seasons.summer-heat.alt"
+    },
+    {
+      "presentationId": "location/town/event/poverty-cheap-production-v2-shared-room-seasons/winter-stove",
+      "sourceAsset": "assets/presentation/poverty-cheap-lodging.svg",
+      "state": "current-exact",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.location.town.event.poverty-cheap-production-v2-shared-room-seasons.winter-stove.alt",
+      "captionKey": "presentation.static.location.town.event.poverty-cheap-production-v2-shared-room-seasons.winter-stove.caption",
+      "domain": "povertySlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/poverty-cheap-lodging.svg",
+      "activeAltKey": "presentation.static.location.town.event.poverty-cheap-production-v2-shared-room-seasons.winter-stove.alt"
+    },
+    {
+      "presentationId": "location/town/event/poverty-cheap-production-v2-shared-room-seasons/shared-room",
+      "sourceAsset": "assets/presentation/poverty-cheap-lodging.svg",
+      "state": "current-exact",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.location.town.event.poverty-cheap-production-v2-shared-room-seasons.shared-room.alt",
+      "captionKey": "presentation.static.location.town.event.poverty-cheap-production-v2-shared-room-seasons.shared-room.caption",
+      "domain": "povertySlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/poverty-cheap-lodging.svg",
+      "activeAltKey": "presentation.static.location.town.event.poverty-cheap-production-v2-shared-room-seasons.shared-room.alt"
+    },
+    {
+      "presentationId": "school/literacy-and-numbers/lesson/default",
+      "sourceAsset": "assets/presentation/school-course-literacy-and-numbers.svg",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.school-course-literacy-and-numbers.alt",
+      "captionKey": "presentation.static.school-course-literacy-and-numbers.caption",
+      "state": "current-exact",
+      "domain": "schoolCourseSlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/school-course-literacy-and-numbers.svg",
+      "activeAltKey": "presentation.static.school-course-literacy-and-numbers.alt"
+    },
+    {
+      "presentationId": "school/arcana/lesson/default",
+      "sourceAsset": "assets/presentation/school-course-arcana.svg",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.school-course-arcana.alt",
+      "captionKey": "presentation.static.school-course-arcana.caption",
+      "state": "current-exact",
+      "domain": "schoolCourseSlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/school-course-arcana.svg",
+      "activeAltKey": "presentation.static.school-course-arcana.alt"
+    },
+    {
+      "presentationId": "school/rhetoric-and-social/lesson/default",
+      "sourceAsset": "assets/presentation/school-course-rhetoric-and-social.svg",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.school-course-rhetoric-and-social.alt",
+      "captionKey": "presentation.static.school-course-rhetoric-and-social.caption",
+      "state": "current-exact",
+      "domain": "schoolCourseSlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/school-course-rhetoric-and-social.svg",
+      "activeAltKey": "presentation.static.school-course-rhetoric-and-social.alt"
+    },
+    {
+      "presentationId": "school/etiquette-and-presentation/lesson/default",
+      "sourceAsset": "assets/presentation/school-course-etiquette-and-presentation.svg",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.school-course-etiquette-and-presentation.alt",
+      "captionKey": "presentation.static.school-course-etiquette-and-presentation.caption",
+      "state": "current-exact",
+      "domain": "schoolCourseSlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/school-course-etiquette-and-presentation.svg",
+      "activeAltKey": "presentation.static.school-course-etiquette-and-presentation.alt"
+    },
+    {
+      "presentationId": "school/field-craft/lesson/default",
+      "sourceAsset": "assets/presentation/school-course-field-craft.svg",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.school-course-field-craft.alt",
+      "captionKey": "presentation.static.school-course-field-craft.caption",
+      "state": "current-exact",
+      "domain": "schoolCourseSlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/school-course-field-craft.svg",
+      "activeAltKey": "presentation.static.school-course-field-craft.alt"
+    },
+    {
+      "presentationId": "school/physical-training/lesson/default",
+      "sourceAsset": "assets/presentation/school-course-physical-training.svg",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.school-course-physical-training.alt",
+      "captionKey": "presentation.static.school-course-physical-training.caption",
+      "state": "current-exact",
+      "domain": "schoolCourseSlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/school-course-physical-training.svg",
+      "activeAltKey": "presentation.static.school-course-physical-training.alt"
+    },
+    {
+      "presentationId": "school/arts-and-performance/lesson/default",
+      "sourceAsset": "assets/presentation/school-course-arts-and-performance.svg",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.school-course-arts-and-performance.alt",
+      "captionKey": "presentation.static.school-course-arts-and-performance.caption",
+      "state": "current-exact",
+      "domain": "schoolCourseSlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/school-course-arts-and-performance.svg",
+      "activeAltKey": "presentation.static.school-course-arts-and-performance.alt"
+    },
+    {
+      "presentationId": "school/body-confidence/lesson/default",
+      "sourceAsset": "assets/presentation/school-course-body-confidence.svg",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.school-course-body-confidence.alt",
+      "captionKey": "presentation.static.school-course-body-confidence.caption",
+      "state": "current-exact",
+      "domain": "schoolCourseSlots",
+      "reachability": "active-current-main",
+      "exactProductionBinding": true,
+      "activeSourceAsset": "assets/presentation/school-course-body-confidence.svg",
+      "activeAltKey": "presentation.static.school-course-body-confidence.alt"
+    }
+  ],
+  "workControls": [
+    {
+      "actionId": "lumber.shift",
+      "state": "available",
+      "accessibilityHelpRequired": false,
+      "reachability": "active-current-main"
+    },
+    {
+      "actionId": "satyr-maid.shift",
+      "state": "available",
+      "accessibilityHelpRequired": false,
+      "reachability": "active-current-main"
+    },
+    {
+      "actionId": "undead-farm.shift",
+      "state": "available",
+      "accessibilityHelpRequired": false,
+      "reachability": "active-current-main"
+    },
+    {
+      "actionId": "tavern.shift",
+      "state": "locked",
+      "accessibilityHelpRequired": true,
+      "reachability": "active-current-main"
+    },
+    {
+      "actionId": "hunter.shift",
+      "state": "locked",
+      "accessibilityHelpRequired": true,
+      "reachability": "active-current-main"
+    },
+    {
+      "actionId": "guard.shift",
+      "state": "locked",
+      "accessibilityHelpRequired": true,
+      "reachability": "active-current-main"
+    },
+    {
+      "actionId": "merchant.shift",
+      "state": "locked",
+      "accessibilityHelpRequired": true,
+      "reachability": "active-current-main"
+    },
+    {
+      "actionId": "artist-geisha.shift",
+      "state": "locked",
+      "accessibilityHelpRequired": true,
+      "reachability": "active-current-main"
+    },
+    {
+      "actionId": "assassin.shift",
+      "state": "locked",
+      "accessibilityHelpRequired": true,
+      "reachability": "active-current-main"
+    },
+    {
+      "actionId": "prostitute.shift",
+      "state": "locked",
+      "accessibilityHelpRequired": true,
+      "reachability": "active-current-main"
+    }
+  ],
+  "teacherMediaSurfaces": [
+    {
+      "mediaId": "school.teacher.literacy-and-numbers.classroom",
+      "reachability": "active-catalog-media",
+      "sourceAsset": "assets/stage-school.svg",
+      "sourceKind": "image",
+      "currentCatalogAlt": "Mara Fen in a School classroom presentation.",
+      "localeAltState": "active-current-main",
+      "localeCaptionState": "active-current-main",
+      "preparedAltKey": "media.school.teacher.literacy-and-numbers.classroom.alt",
+      "preparedCaptionKey": "media.school.teacher.literacy-and-numbers.classroom.caption",
+      "preparedAccessibility": {
+        "alt": {
+          "ru": "Мара Фен в учебной аудитории курса «Грамота и числа».",
+          "en": "Mara Fen in the Literacy & Numbers School classroom."
+        },
+        "caption": {
+          "ru": "Преподаватель: Мара Фен — «Грамота и числа».",
+          "en": "Teacher: Mara Fen — Literacy & Numbers."
+        }
+      }
+    },
+    {
+      "mediaId": "school.teacher.arcana.classroom",
+      "reachability": "active-catalog-media",
+      "sourceAsset": "assets/stage-school.svg",
+      "sourceKind": "image",
+      "currentCatalogAlt": "Ilyra Venn in a School classroom presentation.",
+      "localeAltState": "active-current-main",
+      "localeCaptionState": "active-current-main",
+      "preparedAltKey": "media.school.teacher.arcana.classroom.alt",
+      "preparedCaptionKey": "media.school.teacher.arcana.classroom.caption",
+      "preparedAccessibility": {
+        "alt": {
+          "ru": "Илира Венн в учебной аудитории курса «Аркана».",
+          "en": "Ilyra Venn in the Arcana School classroom."
+        },
+        "caption": {
+          "ru": "Преподаватель: Илира Венн — «Аркана».",
+          "en": "Teacher: Ilyra Venn — Arcana."
+        }
+      }
+    },
+    {
+      "mediaId": "school.teacher.rhetoric-and-social.classroom",
+      "reachability": "active-catalog-media",
+      "sourceAsset": "assets/stage-school.svg",
+      "sourceKind": "image",
+      "currentCatalogAlt": "Cassian Reed in a School classroom presentation.",
+      "localeAltState": "active-current-main",
+      "localeCaptionState": "active-current-main",
+      "preparedAltKey": "media.school.teacher.rhetoric-and-social.classroom.alt",
+      "preparedCaptionKey": "media.school.teacher.rhetoric-and-social.classroom.caption",
+      "preparedAccessibility": {
+        "alt": {
+          "ru": "Кассиан Рид в учебной аудитории курса «Риторика и общение».",
+          "en": "Cassian Reed in the Rhetoric & Social School classroom."
+        },
+        "caption": {
+          "ru": "Преподаватель: Кассиан Рид — «Риторика и общение».",
+          "en": "Teacher: Cassian Reed — Rhetoric & Social."
+        }
+      }
+    },
+    {
+      "mediaId": "school.teacher.etiquette-and-presentation.classroom",
+      "reachability": "active-catalog-media",
+      "sourceAsset": "assets/stage-school.svg",
+      "sourceKind": "image",
+      "currentCatalogAlt": "Eliane Marrow in a School classroom presentation.",
+      "localeAltState": "active-current-main",
+      "localeCaptionState": "active-current-main",
+      "preparedAltKey": "media.school.teacher.etiquette-and-presentation.classroom.alt",
+      "preparedCaptionKey": "media.school.teacher.etiquette-and-presentation.classroom.caption",
+      "preparedAccessibility": {
+        "alt": {
+          "ru": "Элиан Марроу в учебной аудитории курса «Этикет и подача».",
+          "en": "Eliane Marrow in the Etiquette & Presentation School classroom."
+        },
+        "caption": {
+          "ru": "Преподаватель: Элиан Марроу — «Этикет и подача».",
+          "en": "Teacher: Eliane Marrow — Etiquette & Presentation."
+        }
+      }
+    },
+    {
+      "mediaId": "school.teacher.field-craft.classroom",
+      "reachability": "active-catalog-media",
+      "sourceAsset": "assets/stage-school.svg",
+      "sourceKind": "image",
+      "currentCatalogAlt": "Rowan Pike in a School classroom presentation.",
+      "localeAltState": "active-current-main",
+      "localeCaptionState": "active-current-main",
+      "preparedAltKey": "media.school.teacher.field-craft.classroom.alt",
+      "preparedCaptionKey": "media.school.teacher.field-craft.classroom.caption",
+      "preparedAccessibility": {
+        "alt": {
+          "ru": "Роуэн Пайк в учебной аудитории курса «Полевая практика».",
+          "en": "Rowan Pike in the Field Craft School classroom."
+        },
+        "caption": {
+          "ru": "Преподаватель: Роуэн Пайк — «Полевая практика».",
+          "en": "Teacher: Rowan Pike — Field Craft."
+        }
+      }
+    },
+    {
+      "mediaId": "school.teacher.physical-training.classroom",
+      "reachability": "active-catalog-media",
+      "sourceAsset": "assets/stage-school.svg",
+      "sourceKind": "image",
+      "currentCatalogAlt": "Tovan Kest in a School classroom presentation.",
+      "localeAltState": "active-current-main",
+      "localeCaptionState": "active-current-main",
+      "preparedAltKey": "media.school.teacher.physical-training.classroom.alt",
+      "preparedCaptionKey": "media.school.teacher.physical-training.classroom.caption",
+      "preparedAccessibility": {
+        "alt": {
+          "ru": "Тован Кест в учебной аудитории курса «Физическая подготовка».",
+          "en": "Tovan Kest in the Physical Training School classroom."
+        },
+        "caption": {
+          "ru": "Преподаватель: Тован Кест — «Физическая подготовка».",
+          "en": "Teacher: Tovan Kest — Physical Training."
+        }
+      }
+    },
+    {
+      "mediaId": "school.teacher.arts-and-performance.classroom",
+      "reachability": "active-catalog-media",
+      "sourceAsset": "assets/stage-school.svg",
+      "sourceKind": "image",
+      "currentCatalogAlt": "Nessa Lark in a School classroom presentation.",
+      "localeAltState": "active-current-main",
+      "localeCaptionState": "active-current-main",
+      "preparedAltKey": "media.school.teacher.arts-and-performance.classroom.alt",
+      "preparedCaptionKey": "media.school.teacher.arts-and-performance.classroom.caption",
+      "preparedAccessibility": {
+        "alt": {
+          "ru": "Несса Ларк в учебной аудитории курса «Искусство и выступление».",
+          "en": "Nessa Lark in the Arts & Performance School classroom."
+        },
+        "caption": {
+          "ru": "Преподаватель: Несса Ларк — «Искусство и выступление».",
+          "en": "Teacher: Nessa Lark — Arts & Performance."
+        }
+      }
+    },
+    {
+      "mediaId": "school.teacher.body-confidence.classroom",
+      "reachability": "active-catalog-media",
+      "sourceAsset": "assets/stage-school.svg",
+      "sourceKind": "image",
+      "currentCatalogAlt": "Sera Vey in a School classroom presentation.",
+      "localeAltState": "active-current-main",
+      "localeCaptionState": "active-current-main",
+      "preparedAltKey": "media.school.teacher.body-confidence.classroom.alt",
+      "preparedCaptionKey": "media.school.teacher.body-confidence.classroom.caption",
+      "preparedAccessibility": {
+        "alt": {
+          "ru": "Сера Вей в учебной аудитории курса «Уверенность в теле».",
+          "en": "Sera Vey in the Body Confidence School classroom."
+        },
+        "caption": {
+          "ru": "Преподаватель: Сера Вей — «Уверенность в теле».",
+          "en": "Teacher: Sera Vey — Body Confidence."
+        }
+      }
+    }
+  ],
+  "summary": {
+    "semanticSlots": 47,
+    "activeSemanticSlots": 47,
+    "preparedOnlySemanticSlots": 0,
+    "workControls": 10,
+    "activeWorkControls": 10,
+    "teacherMediaSurfaces": 8,
+    "activeTeacherMediaSurfaces": 8,
+    "teacherLocaleFallbacksActive": 8,
+    "teacherLocaleFallbacksPrepared": 0
+  },
+  "invariants": {
+    "presentationEvidenceOnly": true,
+    "noGameplayMutation": true,
+    "noSaveOrRngMutation": true,
+    "noSyntheticSemanticIds": true,
+    "currentMainWins": true
+  },
+  "validation": {
+    "animationOffV3": {
+      "test": "tests/presentation-animation-off-coverage-v8.test.ts",
+      "semanticSlots": 47,
+      "workControls": 10,
+      "staticResolutionRequired": true,
+      "workAvailabilityInvariant": true
+    },
+    "missingMediaDeterministicFallback": {
+      "test": "tests/presentation-missing-media-fallback-v8.test.ts",
+      "checks": [
+        "missing-primary",
+        "missing-static",
+        "registry-fallback",
+        "unknown-id-safe-fallback",
+        "ui-error-advance"
+      ],
+      "gameplayBranching": false
+    },
+    "replacementPersistence": {
+      "test": "tests/presentation-replacement-persistence-v8.test.ts",
+      "survivesRenderRefresh": true,
+      "survivesLocaleChange": true,
+      "customPresentationStoragePreserved": true,
+      "gameplaySavePreserved": true
+    },
+    "lockedWorkKeyboardFocus": {
+      "test": "tests/work-locked-focus-accessibility-v8.test.ts",
+      "lockedControls": 7,
+      "disabledButtonsRemainDisabled": true,
+      "focusableVisibleReason": true,
+      "ariaDescribedByPreserved": true,
+      "availabilityContractUnchanged": true
+    },
+    "endingStateConsistency": {
+      "test": "tests/ending-state-presentation-consistency-v8.test.ts",
+      "eligibleState": "active",
+      "committedState": "ending_committed",
+      "completedState": "ended",
+      "currentEndingIds": 9,
+      "gameplayRulesChanged": false
+    },
+    "schoolCourseTeacherAlignment": {
+      "courseSlots": 8,
+      "teacherMediaSurfaces": 8,
+      "identityPairs": 8,
+      "newSemanticIds": 0,
+      "courseSourceRequired": true,
+      "teacherSourceRequired": true
+    },
+    "mediaProvenance": {
+      "test": "tests/presentation-media-provenance-v8.test.ts",
+      "activeSemanticSlots": 47,
+      "teacherMediaSurfaces": 8,
+      "uniqueSourceAssets": 37,
+      "requireAssetsPath": true,
+      "requireSourceFile": true,
+      "requireDistCopy": true,
+      "requireLiveIdentity": true
+    },
+    "altCaptionParityV3": {
+      "test": "tests/presentation-alt-caption-parity-v8.test.ts",
+      "semanticSlots": 47,
+      "teacherMediaSurfaces": 8,
+      "fallbackMediaSurfaces": 9,
+      "locales": [
+        "ru",
+        "en"
+      ],
+      "requireAlt": true,
+      "requireCaption": true
+    },
+    "deadAssetSourceManifestV3": {
+      "test": "tests/presentation-dead-asset-source-audit-v8.test.ts",
+      "expectedDeadPresentationAssets": 8,
+      "activeMissingSourcesAllowed": 0,
+      "staleManifestRowsAllowed": 0
+    },
+    "crossDomainV3": {
+      "test": "tests/cross-domain-presentation-regression-v8.test.ts",
+      "domains": [
+        "work",
+        "endings",
+        "forest",
+        "poverty",
+        "school"
+      ],
+      "semanticSlots": 47,
+      "teacherMediaSurfaces": 8,
+      "workControls": 10,
+      "requireExactStatic": true,
+      "requireAnimationOffStatic": true,
+      "requireBilingualAccessibility": true,
+      "requireLiveIdentity": true,
+      "requireGameplaySaveInvariance": true
+    }
+  },
+  "schoolAlignment": [
+    {
+      "coursePresentationId": "school/literacy-and-numbers/lesson/default",
+      "courseSourceAsset": "assets/presentation/school-course-literacy-and-numbers.svg",
+      "teacherMediaId": "school.teacher.literacy-and-numbers.classroom",
+      "teacherSourceAsset": "assets/stage-school.svg",
+      "teacherFallbackAlt": "Mara Fen in a School classroom presentation.",
+      "teacherLocaleState": "active-current-main",
+      "identityAlignment": "one-course-to-one-current-teacher-media"
+    },
+    {
+      "coursePresentationId": "school/arcana/lesson/default",
+      "courseSourceAsset": "assets/presentation/school-course-arcana.svg",
+      "teacherMediaId": "school.teacher.arcana.classroom",
+      "teacherSourceAsset": "assets/stage-school.svg",
+      "teacherFallbackAlt": "Ilyra Venn in a School classroom presentation.",
+      "teacherLocaleState": "active-current-main",
+      "identityAlignment": "one-course-to-one-current-teacher-media"
+    },
+    {
+      "coursePresentationId": "school/rhetoric-and-social/lesson/default",
+      "courseSourceAsset": "assets/presentation/school-course-rhetoric-and-social.svg",
+      "teacherMediaId": "school.teacher.rhetoric-and-social.classroom",
+      "teacherSourceAsset": "assets/stage-school.svg",
+      "teacherFallbackAlt": "Cassian Reed in a School classroom presentation.",
+      "teacherLocaleState": "active-current-main",
+      "identityAlignment": "one-course-to-one-current-teacher-media"
+    },
+    {
+      "coursePresentationId": "school/etiquette-and-presentation/lesson/default",
+      "courseSourceAsset": "assets/presentation/school-course-etiquette-and-presentation.svg",
+      "teacherMediaId": "school.teacher.etiquette-and-presentation.classroom",
+      "teacherSourceAsset": "assets/stage-school.svg",
+      "teacherFallbackAlt": "Eliane Marrow in a School classroom presentation.",
+      "teacherLocaleState": "active-current-main",
+      "identityAlignment": "one-course-to-one-current-teacher-media"
+    },
+    {
+      "coursePresentationId": "school/field-craft/lesson/default",
+      "courseSourceAsset": "assets/presentation/school-course-field-craft.svg",
+      "teacherMediaId": "school.teacher.field-craft.classroom",
+      "teacherSourceAsset": "assets/stage-school.svg",
+      "teacherFallbackAlt": "Rowan Pike in a School classroom presentation.",
+      "teacherLocaleState": "active-current-main",
+      "identityAlignment": "one-course-to-one-current-teacher-media"
+    },
+    {
+      "coursePresentationId": "school/physical-training/lesson/default",
+      "courseSourceAsset": "assets/presentation/school-course-physical-training.svg",
+      "teacherMediaId": "school.teacher.physical-training.classroom",
+      "teacherSourceAsset": "assets/stage-school.svg",
+      "teacherFallbackAlt": "Tovan Kest in a School classroom presentation.",
+      "teacherLocaleState": "active-current-main",
+      "identityAlignment": "one-course-to-one-current-teacher-media"
+    },
+    {
+      "coursePresentationId": "school/arts-and-performance/lesson/default",
+      "courseSourceAsset": "assets/presentation/school-course-arts-and-performance.svg",
+      "teacherMediaId": "school.teacher.arts-and-performance.classroom",
+      "teacherSourceAsset": "assets/stage-school.svg",
+      "teacherFallbackAlt": "Nessa Lark in a School classroom presentation.",
+      "teacherLocaleState": "active-current-main",
+      "identityAlignment": "one-course-to-one-current-teacher-media"
+    },
+    {
+      "coursePresentationId": "school/body-confidence/lesson/default",
+      "courseSourceAsset": "assets/presentation/school-course-body-confidence.svg",
+      "teacherMediaId": "school.teacher.body-confidence.classroom",
+      "teacherSourceAsset": "assets/stage-school.svg",
+      "teacherFallbackAlt": "Sera Vey in a School classroom presentation.",
+      "teacherLocaleState": "active-current-main",
+      "identityAlignment": "one-course-to-one-current-teacher-media"
+    }
+  ],
+  "projectOwnedSources": [
+    {
+      "sourceAsset": "assets/presentation/career-lumber-result.svg",
+      "semanticIds": [
+        "ending/lumber/hard-work"
+      ],
+      "mediaIds": []
+    },
+    {
+      "sourceAsset": "assets/presentation/ending-guild-life.svg",
+      "semanticIds": [
+        "ending/guild-life"
+      ],
+      "mediaIds": []
+    },
+    {
+      "sourceAsset": "assets/presentation/ending-lumber-stay.svg",
+      "semanticIds": [
+        "ending/lumber-stay"
+      ],
+      "mediaIds": []
+    },
+    {
+      "sourceAsset": "assets/presentation/ending-scholar-life.svg",
+      "semanticIds": [
+        "ending/scholar-life"
+      ],
+      "mediaIds": []
+    },
+    {
+      "sourceAsset": "assets/presentation/foreman-professional.svg",
+      "semanticIds": [
+        "ending/lumber/forewoman"
+      ],
+      "mediaIds": []
+    },
+    {
+      "sourceAsset": "assets/presentation/forest-reaction-escape-v2.svg",
+      "semanticIds": [
+        "job/lumber/event/forest-result-content-v1-escape/default"
+      ],
+      "mediaIds": []
+    },
+    {
+      "sourceAsset": "assets/presentation/forest-reaction-failure-v2.svg",
+      "semanticIds": [
+        "job/lumber/event/forest-result-content-v1-failure/default"
+      ],
+      "mediaIds": []
+    },
+    {
+      "sourceAsset": "assets/presentation/forest-reaction-success-v2.svg",
+      "semanticIds": [
+        "job/lumber/event/forest-result-content-v1-success/default",
+        "job/lumber/event/lumber-cross-activity-forest-return/default"
+      ],
+      "mediaIds": []
+    },
+    {
+      "sourceAsset": "assets/presentation/forest-return-escape-v2.svg",
+      "semanticIds": [
+        "activity/forest/return/escape"
+      ],
+      "mediaIds": []
+    },
+    {
+      "sourceAsset": "assets/presentation/forest-return-failure-v2.svg",
+      "semanticIds": [
+        "activity/forest/return/failure"
+      ],
+      "mediaIds": []
+    },
+    {
+      "sourceAsset": "assets/presentation/forest-return-success-v2.svg",
+      "semanticIds": [
+        "ending/lumber/forest",
+        "activity/forest/return/success"
+      ],
+      "mediaIds": []
+    },
+    {
+      "sourceAsset": "assets/presentation/forest-route-default-v1.svg",
+      "semanticIds": [
+        "activity/forest/route/default"
+      ],
+      "mediaIds": []
+    },
+    {
+      "sourceAsset": "assets/presentation/forest-route-logging-road.svg",
+      "semanticIds": [
+        "activity/forest/route/logging-road"
+      ],
+      "mediaIds": []
+    },
+    {
+      "sourceAsset": "assets/presentation/forest-route-old-boundary-v3.svg",
+      "semanticIds": [
+        "activity/forest/route/old-boundary"
+      ],
+      "mediaIds": []
+    },
+    {
+      "sourceAsset": "assets/presentation/poverty-cheap-lodging.svg",
+      "semanticIds": [
+        "location/town/event/poverty-cheap-production-v2-shared-room-seasons/spring-window",
+        "location/town/event/poverty-cheap-production-v2-shared-room-seasons/summer-heat",
+        "location/town/event/poverty-cheap-production-v2-shared-room-seasons/winter-stove",
+        "location/town/event/poverty-cheap-production-v2-shared-room-seasons/shared-room"
+      ],
+      "mediaIds": []
+    },
+    {
+      "sourceAsset": "assets/presentation/poverty-cheap-shared-quiet-autumn.svg",
+      "semanticIds": [
+        "location/town/event/poverty-cheap-production-shared-quiet-autumn/default"
+      ],
+      "mediaIds": []
+    },
+    {
+      "sourceAsset": "assets/presentation/poverty-pressure-cold-rain.svg",
+      "semanticIds": [
+        "location/town/event/poverty-pressure-production-cold-rain/default"
+      ],
+      "mediaIds": []
+    },
+    {
+      "sourceAsset": "assets/presentation/poverty-pressure-muddy-splash.svg",
+      "semanticIds": [
+        "location/town/event/poverty-pressure-production-muddy-splash/default"
+      ],
+      "mediaIds": []
+    },
+    {
+      "sourceAsset": "assets/presentation/poverty-pressure-noisy-loading.svg",
+      "semanticIds": [
+        "location/town/event/poverty-pressure-production-noisy-loading/default"
+      ],
+      "mediaIds": []
+    },
+    {
+      "sourceAsset": "assets/presentation/poverty-recovery-herb-bundle.svg",
+      "semanticIds": [
+        "location/town/event/poverty-recovery-production-herb-bundle/default"
+      ],
+      "mediaIds": []
+    },
+    {
+      "sourceAsset": "assets/presentation/poverty-recovery-short-cleanup.svg",
+      "semanticIds": [
+        "location/town/event/poverty-recovery-production-short-cleanup/default"
+      ],
+      "mediaIds": []
+    },
+    {
+      "sourceAsset": "assets/presentation/poverty-recovery-small-coin-help.svg",
+      "semanticIds": [
+        "location/town/event/poverty-recovery-production-small-coin-help/default"
+      ],
+      "mediaIds": []
+    },
+    {
+      "sourceAsset": "assets/presentation/poverty-street-helpful-summer.svg",
+      "semanticIds": [
+        "location/town/event/poverty-street-production-helpful-summer/default",
+        "location/town/event/poverty-street-production-v2-helpful-summer-shade/market-closing",
+        "location/town/event/poverty-street-production-v2-helpful-summer-shade/late-shade"
+      ],
+      "mediaIds": []
+    },
+    {
+      "sourceAsset": "assets/presentation/poverty-street-neutral-autumn.svg",
+      "semanticIds": [
+        "location/town/event/poverty-street-production-neutral-autumn/default",
+        "location/town/event/poverty-street-production-v2-neutral-autumn-crossing/drizzle",
+        "location/town/event/poverty-street-production-v2-neutral-autumn-crossing/dry-arcade"
+      ],
+      "mediaIds": []
+    },
+    {
+      "sourceAsset": "assets/presentation/poverty-street-pressure-winter.svg",
+      "semanticIds": [
+        "location/town/event/poverty-street-production-pressure-winter/default",
+        "location/town/event/poverty-street-production-v2-pressure-winter-wind/crosswind",
+        "location/town/event/poverty-street-production-v2-pressure-winter-wind/long-gusts"
+      ],
+      "mediaIds": []
+    },
+    {
+      "sourceAsset": "assets/presentation/school-course-arcana.svg",
+      "semanticIds": [
+        "school/arcana/lesson/default"
+      ],
+      "mediaIds": []
+    },
+    {
+      "sourceAsset": "assets/presentation/school-course-arts-and-performance.svg",
+      "semanticIds": [
+        "school/arts-and-performance/lesson/default"
+      ],
+      "mediaIds": []
+    },
+    {
+      "sourceAsset": "assets/presentation/school-course-body-confidence.svg",
+      "semanticIds": [
+        "school/body-confidence/lesson/default"
+      ],
+      "mediaIds": []
+    },
+    {
+      "sourceAsset": "assets/presentation/school-course-etiquette-and-presentation.svg",
+      "semanticIds": [
+        "school/etiquette-and-presentation/lesson/default"
+      ],
+      "mediaIds": []
+    },
+    {
+      "sourceAsset": "assets/presentation/school-course-field-craft.svg",
+      "semanticIds": [
+        "school/field-craft/lesson/default"
+      ],
+      "mediaIds": []
+    },
+    {
+      "sourceAsset": "assets/presentation/school-course-literacy-and-numbers.svg",
+      "semanticIds": [
+        "school/literacy-and-numbers/lesson/default"
+      ],
+      "mediaIds": []
+    },
+    {
+      "sourceAsset": "assets/presentation/school-course-physical-training.svg",
+      "semanticIds": [
+        "school/physical-training/lesson/default"
+      ],
+      "mediaIds": []
+    },
+    {
+      "sourceAsset": "assets/presentation/school-course-rhetoric-and-social.svg",
+      "semanticIds": [
+        "school/rhetoric-and-social/lesson/default"
+      ],
+      "mediaIds": []
+    },
+    {
+      "sourceAsset": "assets/presentation/tavern-ending-court.svg",
+      "semanticIds": [
+        "ending/tavern-court"
+      ],
+      "mediaIds": []
+    },
+    {
+      "sourceAsset": "assets/presentation/tavern-ending-guild.svg",
+      "semanticIds": [
+        "ending/tavern-guild"
+      ],
+      "mediaIds": []
+    },
+    {
+      "sourceAsset": "assets/presentation/tavern-ending-stay.svg",
+      "semanticIds": [
+        "ending/tavern-stay"
+      ],
+      "mediaIds": []
+    },
+    {
+      "sourceAsset": "assets/stage-school.svg",
+      "semanticIds": [],
+      "mediaIds": [
+        "school.teacher.literacy-and-numbers.classroom",
+        "school.teacher.arcana.classroom",
+        "school.teacher.rhetoric-and-social.classroom",
+        "school.teacher.etiquette-and-presentation.classroom",
+        "school.teacher.field-craft.classroom",
+        "school.teacher.physical-training.classroom",
+        "school.teacher.arts-and-performance.classroom",
+        "school.teacher.body-confidence.classroom"
+      ]
+    }
+  ],
+  "currentMainResync": "f4de3b01a4369417ae9eff4b384f755790f75279",
+  "fallbackMediaSurfaces": [
+    {
+      "mediaId": "stage.town",
+      "sourceAsset": "assets/stage-town.svg",
+      "altKey": "media.stage.town.alt",
+      "captionKey": "media.stage.town.caption",
+      "state": "active-localized"
+    },
+    {
+      "mediaId": "stage.school",
+      "sourceAsset": "assets/stage-school.svg",
+      "altKey": "media.stage.school.alt",
+      "captionKey": "media.stage.school.caption",
+      "state": "active-localized"
+    },
+    {
+      "mediaId": "stage.hunt",
+      "sourceAsset": "assets/stage-forest.svg",
+      "altKey": "media.stage.hunt.alt",
+      "captionKey": "media.stage.hunt.caption",
+      "state": "active-localized"
+    },
+    {
+      "mediaId": "stage.outside",
+      "sourceAsset": "assets/stage-outside.svg",
+      "altKey": "media.stage.outside.alt",
+      "captionKey": "media.stage.outside.caption",
+      "state": "active-localized"
+    },
+    {
+      "mediaId": "stage.room",
+      "sourceAsset": "assets/stage-room.svg",
+      "altKey": "media.stage.room.alt",
+      "captionKey": "media.stage.room.caption",
+      "state": "active-localized"
+    },
+    {
+      "mediaId": "forest-result-content-v1.success",
+      "sourceAsset": "assets/stage-forest.svg",
+      "altKey": "media.forest-result-content-v1.success.alt",
+      "captionKey": "media.forest-result-content-v1.success.caption",
+      "state": "active-localized"
+    },
+    {
+      "mediaId": "forest-result-content-v1.escape",
+      "sourceAsset": "assets/stage-forest.svg",
+      "altKey": "media.forest-result-content-v1.escape.alt",
+      "captionKey": "media.forest-result-content-v1.escape.caption",
+      "state": "active-localized"
+    },
+    {
+      "mediaId": "forest-result-content-v1.failure",
+      "sourceAsset": "assets/stage-forest.svg",
+      "altKey": "media.forest-result-content-v1.failure.alt",
+      "captionKey": "media.forest-result-content-v1.failure.caption",
+      "state": "active-localized"
+    },
+    {
+      "mediaId": "job.lumber.event.forest-return",
+      "sourceAsset": "assets/stage-forest.svg",
+      "altKey": "media.job.lumber.event.forest-return.alt",
+      "captionKey": "media.job.lumber.event.forest-return.caption",
+      "state": "active-localized"
+    }
+  ],
+  "deadAssetAudit": {
+    "referenceScope": [
+      "content/presentation.json",
+      "content/packs/**/*.json",
+      "content/presentation-drafts/*.json"
+    ],
+    "unreferencedPresentationAssets": [
+      "assets/presentation/foreman-night-professional.svg",
+      "assets/presentation/forest-result-escape.svg",
+      "assets/presentation/forest-result-failure.svg",
+      "assets/presentation/forest-result-success.svg",
+      "assets/presentation/poverty-pressure.svg",
+      "assets/presentation/poverty-recovery-help.svg",
+      "assets/presentation/poverty-street.svg",
+      "assets/presentation/school-night-study.svg"
+    ],
+    "deleteInThisTask": false,
+    "activeMissingSources": 0,
+    "staleSelectedManifestRows": 0
+  },
+  "finalCandidateBase": "f4de3b01a4369417ae9eff4b384f755790f75279"
+}
