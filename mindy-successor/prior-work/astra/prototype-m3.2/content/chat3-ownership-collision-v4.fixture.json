@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "chat3.ownership-collision-regression.v4",
+  "status": "CONTENT_OWNERSHIP_COLLISION_REGRESSION",
+  "task": "C3-83",
+  "auditedMain": "beb699637f5326ff74f2a2039d8e3272f0223f13",
+  "v8FixturePaths": [
+    "content/forest-logging-road-contextual-depth-v3.fixture.json",
+    "content/forest-old-boundary-capability-depth-v3.fixture.json",
+    "content/forest-return-aftermath-depth-v3.fixture.json",
+    "content/ordinary-poverty-housing-continuity-v3.fixture.json",
+    "content/ordinary-poverty-recovery-continuity-v3.fixture.json",
+    "content/ordinary-poverty-small-job-identity-limitation-audit-v1.fixture.json",
+    "content/secret-debt-separation-audit-v4.fixture.json",
+    "content/chat3-post-consumer-reachability-audit-v1.fixture.json",
+    "content/chat3-variant-density-voice-consistency-v2.fixture.json"
+  ],
+  "existingPresentationIds": [
+    "activity/forest/route/logging-road",
+    "activity/forest/route/old-boundary",
+    "activity/forest/return/success",
+    "activity/forest/return/escape",
+    "activity/forest/return/failure"
+  ],
+  "ownership": {
+    "schoolUntouched": true,
+    "mediaSourcesUntouched": true,
+    "presentationRegistryUntouched": true,
+    "sharedRuntimeUntouched": true,
+    "sharedUiUntouched": true,
+    "saveSchemaUntouched": true,
+    "gameplayRngUntouched": true,
+    "activityMechanicsUntouched": true,
+    "careerStateMachineUntouched": true,
+    "relationshipStateMachineUntouched": true,
+    "nightFlowUntouched": true,
+    "endingFrameworkUntouched": true,
+    "secretDebtProductValuesUntouched": true
+  },
+  "forbiddenClaims": [
+    "School content ownership",
+    "media source ownership",
+    "shared runtime/UI ownership",
+    "Save/RNG ownership",
+    "Activity mechanics ownership",
+    "Secret Debt Product-value ownership"
+  ]
+}
