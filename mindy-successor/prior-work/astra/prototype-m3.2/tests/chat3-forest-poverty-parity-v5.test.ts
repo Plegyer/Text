@@ -126,16 +126,26 @@ test('C3-43/C3-44/C3-45 poverty depth points only at current event/variant ident
   }
 });
 
-test('all v5 authored strings are RU/EN complete, unique and additive',()=>{
+test('v5 authored strings stay unique while only selected safe consumer keys enter root localization',()=>{
   const all=[...forestFixtures,...povertyFixtures];
+  const integratedFixtureIds=new Set([
+    'forest.logging-road-seasonal-depth.v1',
+    'forest.old-boundary-seasonal-depth.v1',
+    'ordinary-poverty.housing-seasonal-depth.v1',
+    'ordinary-poverty.recovery-depth.v1'
+  ]);
   const seen=new Set<string>();
 
   for(const fixture of all){
     assertBilingual(fixture.strings??{});
-    for(const key of Object.keys(fixture.strings??{})){
+    for(const [key,pair] of Object.entries(fixture.strings??{})){
       assert.equal(seen.has(key),false,'duplicate key '+key);
       seen.add(key);
-      assert.equal(key in localization,false,'production localization collision '+key);
+      if(integratedFixtureIds.has(fixture.id)){
+        assert.deepEqual(localization[key],pair,'selected integration key '+key);
+      }else{
+        assert.equal(key in localization,false,'selector-less/choice-specific key entered production '+key);
+      }
     }
   }
 });
