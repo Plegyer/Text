@@ -164,3 +164,71 @@ Implementation commits:
 - `a068a69270e0ba8585d96f1d581d5e2d1bcb37e0` — focused audit/consumer/browser regression.
 
 The browser regression proves Rhetoric & Social resolves the Cassian transfer body in RU and EN from existing course identity and locale switching does not mutate the serialized Save.
+
+
+## C1D-55 — School exact-course reactive-routing audit
+
+Current main already contains a presentation-only exact-course School bridge:
+- each paid School lesson writes the exact current `SchoolCourse.presentationId` into existing `run.flow.lastAction.presentationId`;
+- `src/ui/app.ts` recovers the exact course by matching that stable presentation ID against `SCHOOL_COURSES`;
+- `src/ui/schoolReactive.ts` then maps that exact course ID to the authored teacher content identity and one existing Chat 5 reaction body key;
+- all eight course IDs are covered by one static mapping.
+
+Concrete identity boundary:
+- exact **course** identity is safely available to presentation/text consumers through the already persisted presentation ID;
+- teacher identity is not a new Save field and is not dynamically persisted; it is a static authored course→teacher presentation mapping only;
+- no milestone, threshold, certificate, relationship or career publisher is implied by that mapping.
+
+No runtime state change is required for C1D-55.
+
+Focused regression added in `tests/school-reactive-current-main.test.ts`:
+- a real Rhetoric & Social paid lesson preserves the exact course presentation ID through existing `parseSave`;
+- that recovered course resolves the exact Cassian Reed binding;
+- the bound text has RU/EN root localization.
+
+Implementation/test commit: `e95b3a4b255113ac4da41caa062bbb6499d081ad`.
+
+## C1D-56 — minimal School reactive consumer
+
+Disposition: CURRENT-MAIN CONSUMER ALREADY PRESENT; regression refreshed rather than duplicating runtime code.
+
+Current main already wires:
+- `schoolReactiveBody(course)` in the School result branch;
+- exact course recovery from existing `lastAction.presentationId`;
+- `schoolTeacherReactionBinding(course.id)`;
+- root RU/EN `school.teacher.late_career.*.transfer.body` strings.
+
+The C1D-56 regression proves:
+- all eight exact current course IDs have a binding;
+- every binding has an authored teacher-content ID and bilingual root text;
+- a real Rhetoric & Social lesson renders Cassian Reed's authored reactive body;
+- switching RU→EN changes only presentation text and does not mutate the Save.
+
+No School mechanics, thresholds, Save fields, teacher relationship state, career writes or publisher facts are added.
+
+Regression commit: `e95b3a4b255113ac4da41caa062bbb6499d081ad`.
+
+## C1D-57 — Forest depth selective consumer
+
+Selected only QA-accepted/current-main Forest content whose own fixture points at existing identities:
+- existing Activity: `lumber.forest`;
+- existing routes: `logging-road`, `old-boundary`;
+- existing result events:
+  - `forest-result-content-v1.success`
+  - `forest-result-content-v1.escape`
+  - `forest-result-content-v1.failure`.
+
+Implementation:
+- `src/ui/forestDepth.ts` maps the four authored seasonal route texts by existing route + existing calendar season;
+- terminal result depth maps the existing result event ID to two approved texts and rotates only by existing event-history count;
+- `src/ui/app.ts` keeps the current Forest entry/result text as fallback and overlays depth only when an exact existing identity matches;
+- all 10 approved Forest depth RU/EN strings are promoted to root localization.
+
+No new Activity state, route, result, event, effect, condition, reward, world fact, career fact, Save field or RNG state is introduced.
+
+Implementation commits:
+- selector: `21d794f103a8da109e2eac89a2de3d02cb0faff4` + type fix `fbe16b43519c456a13daa73c2a6791ce3ac098ad`;
+- localization: `de0c27686962a7cc4cc422cca282970d281aa082`;
+- UI wiring: `e70449dee50a72b1627fdd24766dd985cd9a3bbc`;
+- entry regression alignment: `9d1d13501e8a044289729e61393108541425ab5a`;
+- focused route/result depth regressions: `f093c3884b72214da5cefb50fafccd49530e8cc3`.
