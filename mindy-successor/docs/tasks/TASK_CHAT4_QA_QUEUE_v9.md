@@ -8,10 +8,10 @@ Begin automatically after available C4-58..77 work is exhausted.
 ## Queue
 
 ### C4-78 — Gate refreshed C5-60 candidate
-Gate PR #115 exact head for CI, additive School-only scope, parity/stable IDs and preservation of the missing exact paid-course reactive-routing gap.
+Gate PR #118 exact frozen head for CI, additive School-only scope, parity/stable IDs and preservation of the missing exact paid-course reactive-routing gap.
 
 ### C4-79 — Gate C1D-60 candidate
-When frozen, gate exact head for Save/reload, generic School/Night-study routing, Forest/poverty consumers and no invented Product decisions.
+Use the current Chat 1 candidate PR named by the Chat 4 pointer; when frozen, gate exact head for Save/reload, generic School/Night-study routing, Forest/poverty consumers and no invented Product decisions.
 
 ### C4-80 — Gate C2-60 candidate
 When frozen, gate exact head for presentation accessibility/fallback/stale-ID validation and gameplay invariance.
