@@ -59,32 +59,32 @@
   ],
   "strings": {
     "presentation.activity.forest.old-boundary-v3.spring.stone-gap.text": {
-      "ru": "Весной талая вода обходит старые камни и оставляет между ними тёмные промежутки земли. Эти детали помогают читать уже доступную межу, но не заменяют существующее условие «enter_old_boundary».",
-      "en": "In spring, meltwater bends around the old stones and leaves dark gaps of earth between them. Those details help read an already accessible boundary, but they do not replace the existing enter_old_boundary condition."
+      "ru": "Весной талая вода обходит старые камни и оставляет между ними тёмные промежутки земли. Эти детали помогают читать уже знакомую межу, но сами по себе не открывают путь.",
+      "en": "In spring, meltwater bends around the old stones and leaves dark gaps of earth between them. Those details help read a boundary already known, but they do not open the path by themselves."
     },
     "presentation.activity.forest.old-boundary-v3.summer.low-notch.text": {
       "ru": "Летом высокая зелень скрывает часть линии, зато низкая зарубка на стволе остаётся видна под листьями. Она подтверждает старый путь после входа, а не открывает его сама.",
       "en": "In summer, tall growth hides part of the line, while a low notch on a trunk remains visible beneath the leaves. It confirms the old path after entry; it does not unlock the path itself."
     },
     "presentation.activity.forest.old-boundary-v3.autumn.open-marker.text": {
-      "ru": "Осенью после листопада старые отметки видны дальше вперёд, и межа кажется почти прямой. Сезон облегчает чтение сцены только в тексте, не меняя capability gate.",
-      "en": "In autumn, after leaf fall, the old marks can be seen farther ahead and the boundary almost looks straight. The season makes the scene easier to read only in prose; it does not change the capability gate."
+      "ru": "Осенью после листопада старые отметки видны дальше вперёд, и межа кажется почти прямой. Сезон делает путь понятнее на взгляд, не меняя того, кто вообще может по нему идти.",
+      "en": "In autumn, after leaf fall, the old marks can be seen farther ahead and the boundary almost looks straight. The season makes the path easier to read without changing who can enter it."
     },
     "presentation.activity.forest.old-boundary-v3.winter.snow-edge.text": {
       "ru": "Зимой снег собирается по одной стороне камней и подчёркивает старую границу неровной белой кромкой. Это ориентир внутри уже открытого маршрута, не новый ключ доступа.",
       "en": "In winter, snow gathers on one side of the stones and outlines the old boundary with an uneven white edge. It is a landmark within an already unlocked route, not a new access key."
     },
     "presentation.activity.forest.old-boundary-v3.success.boundary-confirmed.text": {
-      "ru": "При успехе старая межа становится частью подтверждённого рассказа о пути, но не получает отдельного world fact. Результат остаётся тем же «lumber.forest.success».",
-      "en": "On success, the old boundary becomes part of the confirmed account of the route, but it gains no separate world fact. The result remains the same lumber.forest.success."
+      "ru": "При успехе старая межа становится частью подтверждённого рассказа о пути. Ничего отдельного к найденному результату она не добавляет.",
+      "en": "On success, the old boundary becomes part of the confirmed account of the route. It adds nothing separate to the result already found."
     },
     "presentation.activity.forest.old-boundary-v3.escape.boundary-retreat.text": {
-      "ru": "При отходе ты возвращаешься по уже прочитанной линии камней, не объявляя незавершённый участок доказательством. Это существующий escape без нового состояния доступа.",
-      "en": "On retreat, you return along the line of stones already read without treating the unfinished stretch as proof. It is the existing escape with no new access state."
+      "ru": "При отходе ты возвращаешься по уже прочитанной линии камней, не объявляя незавершённый участок доказательством. Доступный путь остаётся тем же.",
+      "en": "On retreat, you return along the line of stones already read without treating the unfinished stretch as proof. The available path remains the same."
     },
     "presentation.activity.forest.old-boundary-v3.failure.boundary-unclear.text": {
-      "ru": "При неудаче старые отметки перестают складываться в уверенную последовательность. Capability по-прежнему лишь разрешает вход; она не гарантирует успех и не создаёт компенсацию.",
-      "en": "On failure, the old marks no longer form a reliable sequence. The capability still only allows entry; it guarantees neither success nor compensation."
+      "ru": "При неудаче старые отметки перестают складываться в уверенную последовательность. Возможность пройти сюда ещё не означает, что ответ удастся найти.",
+      "en": "On failure, the old marks no longer form a reliable sequence. Being able to enter this way does not mean an answer is guaranteed."
     }
   },
   "invariants": {
