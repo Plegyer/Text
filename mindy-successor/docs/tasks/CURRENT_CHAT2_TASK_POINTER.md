@@ -7,18 +7,19 @@ Mandatory startup:
 - `WORKER_CHAT_RECREATION_PROTOCOL_v1.md`
 - `ACTIVE_TEAM_OWNERSHIP_MATRIX.md`
 - `CANDIDATE_QA_FREEZE_PROTOCOL.md`
-- `TASK_CHAT2_PRESENTATION_QUEUE_v4.md`
+- `TASK_CHAT2_PRESENTATION_QUEUE_v5.md`
 
 Current queue:
-- C2-25 through C2-36.
+- C2-37 through C2-48.
 
-Primary goal:
-- presentation/media coverage for the seven non-starter ordinary careers.
+Immediate priority:
+- C2-37 existing ending presentation inventory;
+- continue through relationships, Forest, poverty and School-teacher presentation coverage.
 
-Do not restart PR #88 / C2-13..24 candidate work.
+Do not restart PR #98 / C2-25..36 or older candidates.
 
 Keep technical evidence in Git only. Personal chat output:
 - `Задание выполнено`
 - `Задания выполнены`
 
-Do not self-assign beyond this queue.
+Do not self-assign beyond C2-48.
