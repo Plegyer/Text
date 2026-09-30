@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "id": "chat3.forest-poverty-parity.v8",
+  "status": "STABLE_ID_RU_EN_REGRESSION_MANIFEST",
+  "task": "C3-82",
+  "auditedMain": "beb699637f5326ff74f2a2039d8e3272f0223f13",
+  "fixtures": {
+    "reachability": "content/chat3-post-consumer-reachability-audit-v1.fixture.json",
+    "logging": "content/forest-logging-road-contextual-depth-v3.fixture.json",
+    "oldBoundary": "content/forest-old-boundary-capability-depth-v3.fixture.json",
+    "returnAftermath": "content/forest-return-aftermath-depth-v3.fixture.json",
+    "housing": "content/ordinary-poverty-housing-continuity-v3.fixture.json",
+    "recovery": "content/ordinary-poverty-recovery-continuity-v3.fixture.json",
+    "smallJobAudit": "content/ordinary-poverty-small-job-identity-limitation-audit-v1.fixture.json",
+    "secretDebt": "content/secret-debt-separation-audit-v4.fixture.json",
+    "densityVoice": "content/chat3-variant-density-voice-consistency-v2.fixture.json"
+  },
+  "expectedForest": {
+    "activityId": "lumber.forest",
+    "routeOptions": [
+      {
+        "id": "forest.route.logging-road",
+        "setRoute": "logging-road"
+      },
+      {
+        "id": "forest.route.old-boundary",
+        "setRoute": "old-boundary"
+      }
+    ],
+    "oldBoundaryCondition": {
+      "kind": "itemCapability",
+      "capability": "enter_old_boundary",
+      "present": true
+    },
+    "results": [
+      {
+        "id": "lumber.forest.success",
+        "outcome": "success"
+      },
+      {
+        "id": "lumber.forest.escape",
+        "outcome": "escape"
+      },
+      {
+        "id": "lumber.forest.failure",
+        "outcome": "failure"
+      }
+    ],
+    "resultEvents": [
+      "forest-result-content-v1.success",
+      "forest-result-content-v1.escape",
+      "forest-result-content-v1.failure"
+    ],
+    "successContinuation": "lumber-cross.activity-forest-return"
+  },
+  "ordinaryPovertyPackIds": [
+    "poverty-street-production",
+    "poverty-street-production-v2",
+    "poverty-cheap-production",
+    "poverty-cheap-production-v2",
+    "poverty-recovery-production",
+    "poverty-pressure-production"
+  ]
+}

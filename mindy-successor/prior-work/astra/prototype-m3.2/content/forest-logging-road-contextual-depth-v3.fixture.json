@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "id": "forest.logging-road-contextual-depth.v3",
+  "status": "CONTENT_SIDE_HANDOFF",
+  "task": "C3-74",
+  "baseMain": "8fb0985ccc353f3f35a2cc2fc140c07dff81cd11",
+  "activityId": "lumber.forest",
+  "routeOptionId": "forest.route.logging-road",
+  "routeId": "logging-road",
+  "routePresentationId": "activity/forest/route/logging-road",
+  "variants": [
+    {
+      "id": "spring-drainage-cut",
+      "season": "spring",
+      "resultId": null,
+      "localizationKey": "presentation.activity.forest.logging-road-v3.spring.drainage-cut.text"
+    },
+    {
+      "id": "summer-wheel-shadow",
+      "season": "summer",
+      "resultId": null,
+      "localizationKey": "presentation.activity.forest.logging-road-v3.summer.wheel-shadow.text"
+    },
+    {
+      "id": "autumn-bark-scatter",
+      "season": "autumn",
+      "resultId": null,
+      "localizationKey": "presentation.activity.forest.logging-road-v3.autumn.bark-scatter.text"
+    },
+    {
+      "id": "winter-packed-center",
+      "season": "winter",
+      "resultId": null,
+      "localizationKey": "presentation.activity.forest.logging-road-v3.winter.packed-center.text"
+    },
+    {
+      "id": "success-route-confirmed",
+      "season": null,
+      "resultId": "lumber.forest.success",
+      "localizationKey": "presentation.activity.forest.logging-road-v3.success.route-confirmed.text"
+    },
+    {
+      "id": "escape-route-incomplete",
+      "season": null,
+      "resultId": "lumber.forest.escape",
+      "localizationKey": "presentation.activity.forest.logging-road-v3.escape.route-incomplete.text"
+    },
+    {
+      "id": "failure-route-lost",
+      "season": null,
+      "resultId": "lumber.forest.failure",
+      "localizationKey": "presentation.activity.forest.logging-road-v3.failure.route-lost.text"
+    }
+  ],
+  "strings": {
+    "presentation.activity.forest.logging-road-v3.spring.drainage-cut.text": {
+      "ru": "Весной вода прорывает поперёк дороги узкие канавы, и колея местами уходит под мутный ручей. Ты держишь направление по рабочим следам и краям дороги, не превращая размыв в отдельное препятствие.",
+      "en": "In spring, runoff cuts narrow channels across the road and the ruts sometimes vanish beneath muddy water. You keep direction from work traces and the road edges without turning the washout into a separate obstacle."
+    },
+    "presentation.activity.forest.logging-road-v3.summer.wheel-shadow.text": {
+      "ru": "Летом сухая дорога светлее лесной подстилки, а тени от колёсных борозд заметны даже под листвой. Это помогает читать уже выбранный путь, не создавая нового бонуса навигации.",
+      "en": "In summer, the dry road is lighter than the forest floor, and shadows in the wheel ruts remain visible under the leaves. It helps read the chosen route without creating a new navigation bonus."
+    },
+    "presentation.activity.forest.logging-road-v3.autumn.bark-scatter.text": {
+      "ru": "Осенью у обочины лежат свежие полоски коры и щепа, оставленные недавней работой. Они подтверждают, что дорога используется, но не меняют её прогресс, стоимость выносливости или возможный исход.",
+      "en": "In autumn, fresh strips of bark and chips lie along the roadside from recent work. They confirm that the road is in use without changing its progress, endurance cost, or possible outcome."
+    },
+    "presentation.activity.forest.logging-road-v3.winter.packed-center.text": {
+      "ru": "Зимой середина дороги утоптана плотнее, чем края, и по ней легче держать прямую линию. Маршрут кажется яснее, но сама дорога остаётся той же.",
+      "en": "In winter, the center of the road is packed harder than the edges and holds a straighter line. The route feels clearer, but the road itself remains the same."
+    },
+    "presentation.activity.forest.logging-road-v3.success.route-confirmed.text": {
+      "ru": "После успешной вылазки рабочая дорога остаётся самой простой частью объяснения: её можно проследить назад по тем же колеям и отметкам. Нужная последовательность уже подтверждена.",
+      "en": "After a successful expedition, the work road is the simplest part to explain: it can be traced back along the same ruts and work marks. The needed sequence is already confirmed."
+    },
+    "presentation.activity.forest.logging-road-v3.escape.route-incomplete.text": {
+      "ru": "При добровольном отходе дорога остаётся читаемой, но нужный участок не доведён до подтверждённого конца. Наблюдения остаются незавершёнными.",
+      "en": "During a voluntary retreat, the road remains readable, but the needed stretch was not carried through to a confirmed end. The observations remain unfinished."
+    },
+    "presentation.activity.forest.logging-road-v3.failure.route-lost.text": {
+      "ru": "При неудаче знакомая лесовозная линия уже не помогает собрать наблюдения в надёжный ответ. Сам маршрут остаётся прежним, но уверенного вывода нет.",
+      "en": "On failure, the familiar logging line no longer helps turn the observations into a reliable answer. The route remains the same, but there is no confident conclusion."
+    }
+  },
+  "invariants": {
+    "noNewRoute": true,
+    "noNewResult": true,
+    "noMechanics": true,
+    "noProgressChange": true,
+    "noEnduranceChange": true,
+    "noSaveOrRng": true,
+    "noMedia": true
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "id": "ordinary-poverty.housing-continuity.v3",
+  "status": "CONTENT_SIDE_HANDOFF",
+  "task": "C3-77",
+  "baseMain": "8fb0985ccc353f3f35a2cc2fc140c07dff81cd11",
+  "entries": [
+    {
+      "id": "street-spring-runoff",
+      "housingTier": "street",
+      "season": "spring",
+      "eventId": "poverty-pressure-production.cold-rain",
+      "variantId": "default",
+      "localizationKey": "presentation.poverty.housing-v3.street.spring.runoff.text"
+    },
+    {
+      "id": "street-summer-stone-heat",
+      "housingTier": "street",
+      "season": "summer",
+      "eventId": "poverty-street-production-v2.helpful-summer-shade",
+      "variantId": "late-shade",
+      "localizationKey": "presentation.poverty.housing-v3.street.summer.stone-heat.text"
+    },
+    {
+      "id": "street-autumn-closing-arcade",
+      "housingTier": "street",
+      "season": "autumn",
+      "eventId": "poverty-street-production-v2.neutral-autumn-crossing",
+      "variantId": "dry-arcade",
+      "localizationKey": "presentation.poverty.housing-v3.street.autumn.closing-arcade.text"
+    },
+    {
+      "id": "street-winter-wall-gap",
+      "housingTier": "street",
+      "season": "winter",
+      "eventId": "poverty-street-production-v2.pressure-winter-wind",
+      "variantId": "crosswind",
+      "localizationKey": "presentation.poverty.housing-v3.street.winter.wall-gap.text"
+    },
+    {
+      "id": "cheap-spring-drying-line",
+      "housingTier": "cheap",
+      "season": "spring",
+      "eventId": "poverty-cheap-production-v2.shared-room-seasons",
+      "variantId": "spring-window",
+      "localizationKey": "presentation.poverty.housing-v3.cheap.spring.drying-line.text"
+    },
+    {
+      "id": "cheap-summer-doorway-air",
+      "housingTier": "cheap",
+      "season": "summer",
+      "eventId": "poverty-cheap-production-v2.shared-room-seasons",
+      "variantId": "summer-heat",
+      "localizationKey": "presentation.poverty.housing-v3.cheap.summer.doorway-air.text"
+    },
+    {
+      "id": "cheap-autumn-quiet-corner",
+      "housingTier": "cheap",
+      "season": "autumn",
+      "eventId": "poverty-cheap-production.shared-quiet-autumn",
+      "variantId": "default",
+      "localizationKey": "presentation.poverty.housing-v3.cheap.autumn.quiet-corner.text"
+    },
+    {
+      "id": "cheap-winter-stove-queue",
+      "housingTier": "cheap",
+      "season": "winter",
+      "eventId": "poverty-cheap-production-v2.shared-room-seasons",
+      "variantId": "winter-stove",
+      "localizationKey": "presentation.poverty.housing-v3.cheap.winter.stove-queue.text"
+    }
+  ],
+  "strings": {
+    "presentation.poverty.housing-v3.street.spring.runoff.text": {
+      "ru": "Весной сухой участок под навесом может исчезнуть за час, когда вода меняет путь по мостовой. Приходится переставлять вещи и снова проверять угол, но это всё ещё тот же временный уличный ночлег.",
+      "en": "In spring, a dry patch beneath an awning can disappear within an hour as runoff changes course across the street. Belongings have to be moved and the corner checked again, but it remains the same temporary street lodging."
+    },
+    "presentation.poverty.housing-v3.street.summer.stone-heat.text": {
+      "ru": "Летом камень долго отдаёт накопленное за день тепло, поэтому прохладный угол ищется позже обычного. Такая сезонная передышка не превращает улицу в устойчивое жильё.",
+      "en": "In summer, stone holds the day's heat for a long time, so a cooler corner is found later than usual. That seasonal relief does not turn the street into stable housing."
+    },
+    "presentation.poverty.housing-v3.street.autumn.closing-arcade.text": {
+      "ru": "Осенью аркада становится спокойной только после того, как последние лавки закрываются. До утра здесь можно укрыться от мороси, но утро по-прежнему возвращает место городу.",
+      "en": "In autumn, the arcade becomes quiet only after the last shops close. It can shelter you from drizzle until morning, but morning still returns the space to the city."
+    },
+    "presentation.poverty.housing-v3.street.winter.wall-gap.text": {
+      "ru": "Зимой даже небольшой разрыв между стенами меняет силу ветра, и место приходится выбирать по сквозняку. Это влияет на описание ночи, а не на существующие эффекты или цену ночлега.",
+      "en": "In winter, even a narrow gap between walls changes the force of the wind, so the spot is chosen by the draft. It changes the description of the night, not the existing effects or lodging cost."
+    },
+    "presentation.poverty.housing-v3.cheap.spring.drying-line.text": {
+      "ru": "Весной в общей комнате верёвка для мокрой одежды занята почти постоянно. Возможность высушить вещи добавляет бытовой устойчивости одной ночи, не создавая постоянного улучшения жилья.",
+      "en": "In spring, the line for wet clothes in the shared room is almost always in use. Being able to dry things adds practical stability to one night without creating a permanent housing upgrade."
+    },
+    "presentation.poverty.housing-v3.cheap.summer.doorway-air.text": {
+      "ru": "Летом прохлада держится ближе к двери, и люди стараются не загромождать проход. Комната остаётся дешёвой и тесной, но всё же отделяет сон от улицы.",
+      "en": "In summer, cooler air lingers near the door, so people try not to block the passage. The room remains cheap and cramped, but it still separates sleep from the street."
+    },
+    "presentation.poverty.housing-v3.cheap.autumn.quiet-corner.text": {
+      "ru": "Осенью в общей комнате особенно ценится тихий угол, где можно сложить вещи и не мешать соседям. Это просто привычный порядок временного ночлега.",
+      "en": "In autumn, a quiet corner of the shared room matters because belongings can be kept together without bothering neighbors. It is simply part of the routine of temporary lodging."
+    },
+    "presentation.poverty.housing-v3.cheap.winter.stove-queue.text": {
+      "ru": "Зимой возле печи образуется негласная очередь: сначала сушат промокшее, потом дают место следующему. Совместная привычка относится к этой ночи и не создаёт постоянного сообщества.",
+      "en": "In winter, an informal queue forms by the stove: wet things dry first, then the space passes to someone else. The shared routine belongs to this night and creates no permanent community."
+    }
+  },
+  "invariants": {
+    "existingEventVariantIdsOnly": true,
+    "noEffectChanges": true,
+    "noNightFlowChanges": true,
+    "noEconomyChanges": true,
+    "noHousingState": true,
+    "noPersistentCommunity": true,
+    "noSecretDebt": true,
+    "noSaveOrRng": true,
+    "noMedia": true
+  }
+}

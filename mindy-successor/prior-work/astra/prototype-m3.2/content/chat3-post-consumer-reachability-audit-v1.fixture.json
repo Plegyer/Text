@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "chat3.post-consumer-reachability-audit.v1",
+  "status": "BLOCKED_BY_INTEGRATION_ADVANCE",
+  "task": "C3-73",
+  "baseMain": "8fb0985ccc353f3f35a2cc2fc140c07dff81cd11",
+  "priorAudit": "chat3.current-content-reachability.v1",
+  "integrationAdvanceSinceC3_61": {
+    "productionFilesChanged": false,
+    "onlyCoordinationDocsChanged": true,
+    "sourceKeyCount": 46,
+    "sourceKeysNowInRootLocalization": 0,
+    "sourceKeysNowReferencedByApp": 0,
+    "sourceKeysNowReferencedByPovertyDepth": 0
+  },
+  "currentClassification": {
+    "playerFacing": [
+      "Forest entry body",
+      "Forest route label/help/presentation",
+      "terminal Forest result copy",
+      "success-only Lumber continuation",
+      "production ordinary-poverty event copy",
+      "current 42-key poverty-depth rotation"
+    ],
+    "consumerReady": [
+      "ordinary-poverty.housing-depth.v2",
+      "ordinary-poverty.small-job-depth.v2",
+      "ordinary-poverty.contact-recovery-depth.v2"
+    ],
+    "preparationOnly": [
+      "forest.logging-road-depth.v2",
+      "forest.old-boundary-depth.v2",
+      "forest.success-aftermath-depth.v2",
+      "forest.escape-failure-aftermath-depth.v2"
+    ]
+  },
+  "blocker": {
+    "classification": "BLOCKED_BY_INTEGRATION_ADVANCE",
+    "dependency": "A production consumer/integration change must land before reachability can materially advance beyond C3-61.",
+    "owner": "Chat 1 Developer / Integration",
+    "actionByChat3": "Do not modify shared runtime/UI; continue independent queue-v8 content work."
+  }
+}

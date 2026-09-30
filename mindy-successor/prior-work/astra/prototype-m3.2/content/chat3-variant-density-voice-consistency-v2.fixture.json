@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "id": "chat3.variant-density-voice-consistency.v2",
+  "status": "CONTENT_DENSITY_VOICE_AUDIT",
+  "task": "C3-81",
+  "auditedMain": "beb699637f5326ff74f2a2039d8e3272f0223f13",
+  "totals": {
+    "currentPreparationStringPairs": 83,
+    "exactDuplicateKeys": 0,
+    "exactDuplicateRuTexts": 0,
+    "exactDuplicateEnTexts": 0
+  },
+  "queueV8V3": {
+    "stringPairs": 37,
+    "technicalJargonInPlayerFacingText": 0,
+    "classification": "VOICE_CLEAN"
+  },
+  "priorV2VoiceRisks": [
+    "presentation.activity.forest.success-aftermath-v2.confirmed-thread.text",
+    "presentation.activity.forest.success-aftermath-v2.crew-briefing.text",
+    "presentation.activity.forest.escape-failure-v2.failure.return-effort.text",
+    "presentation.activity.forest.escape-failure-v2.failure.no-state.text",
+    "presentation.poverty.housing-depth-v2.cheap.autumn.lamp.text",
+    "presentation.poverty.contact-recovery-v2.cleanup.familiar-face.text",
+    "presentation.poverty.contact-recovery-v2.shared-room.autumn-neighbors.text"
+  ],
+  "priorV2RiskClassification": "NEEDS_REWRITE_BEFORE_PLAYER_FACING_CONSUMPTION",
+  "unreachablePreparationOnly": [
+    "forest.logging-road-depth.v2",
+    "forest.old-boundary-depth.v2",
+    "forest.success-aftermath-depth.v2",
+    "forest.escape-failure-aftermath-depth.v2",
+    "forest.logging-road-contextual-depth.v3",
+    "forest.old-boundary-capability-depth.v3",
+    "forest.return-aftermath-depth.v3"
+  ],
+  "blockedByIdentity": [
+    "ordinary-poverty.small-job-depth.v2 / market-awning result-specific prose",
+    "ordinary-poverty.small-job-depth.v2 / late-shade-carry result-specific prose"
+  ],
+  "disposition": {
+    "queueV8V3TrimRequired": false,
+    "queueV8V3RewriteRequired": false,
+    "priorV2RiskKeysMustNotBePublishedUnchanged": true,
+    "preparationOnlyMustStayLabeled": true
+  }
+}
