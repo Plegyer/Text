@@ -62,7 +62,23 @@ test('poverty depth lookup preserves the approved deterministic occurrence contr
   );
   assert.equal(
     povertyPendingLocalizationKey('poverty-street-production.helpful-summer','default',3),
+    'presentation.poverty.depth.poverty-street-production-helpful-summer.default.f.text'
+  );
+  assert.equal(
+    povertyPendingLocalizationKey('poverty-street-production.helpful-summer','default',4),
+    'presentation.poverty.depth.poverty-street-production-helpful-summer.default.g.text'
+  );
+  assert.equal(
+    povertyPendingLocalizationKey('poverty-street-production.helpful-summer','default',5),
     'presentation.poverty.depth.poverty-street-production-helpful-summer.default.a.text'
+  );
+  assert.equal(
+    povertyPendingLocalizationKey('poverty-street-production-v2.helpful-summer-shade','late-shade',2),
+    'presentation.poverty.depth.poverty-street-production-v2-helpful-summer-shade.late-shade.f.text'
+  );
+  assert.equal(
+    povertyPendingLocalizationKey('poverty-street-production-v2.helpful-summer-shade','late-shade',3),
+    'presentation.poverty.depth.poverty-street-production-v2-helpful-summer-shade.late-shade.g.text'
   );
   assert.equal(
     povertyPendingLocalizationKey('poverty-street-production.neutral-autumn','default',1),

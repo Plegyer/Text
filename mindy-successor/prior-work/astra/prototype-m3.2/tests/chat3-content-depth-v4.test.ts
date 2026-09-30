@@ -123,8 +123,9 @@ test('C3-33/C3-34 poverty depth maps to exact production event/variant IDs',()=>
     assert.ok(event,entry.eventId);
     assert.ok(event.variants.some((variant:any)=>variant.id===entry.variantId),
       entry.eventId+' / '+entry.variantId);
-    assert.equal(entry.localizationKey in localization,false,
-      'candidate key already exists in production localization: '+entry.localizationKey);
+    const source=povertySeasonal.strings[entry.localizationKey]??povertyRecovery.strings[entry.localizationKey];
+    assert.deepEqual(localization[entry.localizationKey],source,
+      'QA-accepted poverty depth key should be selectively integrated: '+entry.localizationKey);
   }
 
   assertBilingual(povertySeasonal.strings);
@@ -183,23 +184,28 @@ test('C3-35 Secret Debt audit preserves ordinary poverty and generic-debt separa
   assert.equal(secretDebtAudit.invariants.noGenericDebtRepurpose,true);
 });
 
-test('all v4 candidate localization keys are additive and bilingual',()=>{
-  const fixtures=[
-    satyrService,
-    satyrBoundary,
-    undeadAgriculture,
-    undeadResearch,
-    forestDepth,
-    povertySeasonal,
-    povertyRecovery
-  ];
+test('v4 fixture keys stay unique while only approved poverty-consumer keys are integrated',()=>{
+  const unselected=[satyrService,satyrBoundary,undeadAgriculture,undeadResearch,forestDepth];
+  const integrated=[povertySeasonal,povertyRecovery];
   const seen=new Set<string>();
-  for(const fixture of fixtures){
+
+  for(const fixture of [...unselected,...integrated]){
     assertBilingual(fixture.strings);
     for(const key of Object.keys(fixture.strings)){
       assert.equal(seen.has(key),false,'duplicate candidate key: '+key);
       seen.add(key);
-      assert.equal(key in localization,false,'production collision: '+key);
+    }
+  }
+
+  for(const fixture of unselected){
+    for(const key of Object.keys(fixture.strings)){
+      assert.equal(key in localization,false,'unselected selector-less key entered production: '+key);
+    }
+  }
+
+  for(const fixture of integrated){
+    for(const [key,value] of Object.entries(fixture.strings)){
+      assert.deepEqual(localization[key],value,'integrated poverty key: '+key);
     }
   }
 });

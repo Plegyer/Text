@@ -5,7 +5,7 @@ export type PovertyDepthLookupEntry={
   coreFallbackLocalizationKey:string;
 };
 
-export const povertyDepthLookupEntries=[
+const basePovertyDepthLookupEntries=[
   {
     "eventId": "poverty-street-production.helpful-summer",
     "variantId": "default",
@@ -170,6 +170,32 @@ export const povertyDepthLookupEntries=[
     "coreFallbackLocalizationKey": "event.poverty-pressure-production.muddy-splash.variant.default.text"
   }
 ] as const satisfies readonly PovertyDepthLookupEntry[];
+
+const acceptedPovertyDepthAdditions=[
+  ['poverty-pressure-production.cold-rain','default','presentation.poverty.depth.poverty-pressure-production-cold-rain.default.f.text'],
+  ['poverty-cheap-production-v2.shared-room-seasons','spring-window','presentation.poverty.depth.poverty-cheap-production-v2-shared-room-seasons.spring-window.f.text'],
+  ['poverty-street-production.helpful-summer','default','presentation.poverty.depth.poverty-street-production-helpful-summer.default.f.text'],
+  ['poverty-street-production-v2.helpful-summer-shade','late-shade','presentation.poverty.depth.poverty-street-production-v2-helpful-summer-shade.late-shade.f.text'],
+  ['poverty-cheap-production-v2.shared-room-seasons','summer-heat','presentation.poverty.depth.poverty-cheap-production-v2-shared-room-seasons.summer-heat.f.text'],
+  ['poverty-street-production-v2.neutral-autumn-crossing','drizzle','presentation.poverty.depth.poverty-street-production-v2-neutral-autumn-crossing.drizzle.f.text'],
+  ['poverty-cheap-production.shared-quiet-autumn','default','presentation.poverty.depth.poverty-cheap-production-shared-quiet-autumn.default.f.text'],
+  ['poverty-street-production.pressure-winter','default','presentation.poverty.depth.poverty-street-production-pressure-winter.default.f.text'],
+  ['poverty-street-production-v2.pressure-winter-wind','crosswind','presentation.poverty.depth.poverty-street-production-v2-pressure-winter-wind.crosswind.f.text'],
+  ['poverty-cheap-production-v2.shared-room-seasons','winter-stove','presentation.poverty.depth.poverty-cheap-production-v2-shared-room-seasons.winter-stove.f.text'],
+  ['poverty-recovery-production.small-coin-help','default','presentation.poverty.depth.poverty-recovery-production-small-coin-help.default.f.text'],
+  ['poverty-recovery-production.short-cleanup','default','presentation.poverty.depth.poverty-recovery-production-short-cleanup.default.f.text'],
+  ['poverty-recovery-production.herb-bundle','default','presentation.poverty.depth.poverty-recovery-production-herb-bundle.default.f.text'],
+  ['poverty-street-production.helpful-summer','default','presentation.poverty.depth.poverty-street-production-helpful-summer.default.g.text'],
+  ['poverty-street-production-v2.helpful-summer-shade','market-closing','presentation.poverty.depth.poverty-street-production-v2-helpful-summer-shade.market-closing.g.text'],
+  ['poverty-street-production-v2.helpful-summer-shade','late-shade','presentation.poverty.depth.poverty-street-production-v2-helpful-summer-shade.late-shade.g.text']
+] as const;
+
+export const povertyDepthLookupEntries:readonly PovertyDepthLookupEntry[]=basePovertyDepthLookupEntries.map(entry=>{
+  const extra=acceptedPovertyDepthAdditions
+    .filter(([eventId,variantId])=>eventId===entry.eventId&&variantId===entry.variantId)
+    .map(([, ,localizationKey])=>localizationKey);
+  return extra.length?{...entry,orderedDepthLocalizationKeys:[...entry.orderedDepthLocalizationKeys,...extra]}:entry;
+});
 
 const byPair=new Map<string,PovertyDepthLookupEntry>(
   povertyDepthLookupEntries.map(entry=>[`${entry.eventId}|${entry.variantId}`,entry] as const)

@@ -49,5 +49,6 @@ test('shared consumers use stable ending and action localization namespaces',()=
  assert.ok(app.includes("tr(`ending.${e.id}.title`,e.title)"));
  assert.ok(app.includes("tr(`ending.${e.id}.description`,e.description)"));
  assert.ok(app.includes("tr(`action.${a.id}.label`,last.title)"));
- assert.ok(app.includes("tr(`action.${a!.id}.scene.${defaultActionScene.id}.text`,last.text)"));
+ assert.ok(app.includes("tr(`action.${action.id}.scene.${scene.id}.text`,lastText)"));
+ assert.ok(app.includes("a?localizedActionSceneText(a,last.text):last.text"));
 });
