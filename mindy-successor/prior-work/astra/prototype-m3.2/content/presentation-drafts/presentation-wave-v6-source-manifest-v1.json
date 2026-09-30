@@ -612,6 +612,20 @@
       "teacherStaticRequired": true,
       "teacherBilingualHandoffRequired": true,
       "inventedTeacherSemanticIds": false
+    },
+    "animationFallback": {
+      "selectedSemanticSlots": 47,
+      "animationsDisabledMustSelectStatic": true,
+      "missingOptionalDynamicMustLeaveStaticCandidate": true
     }
+  },
+  "summary": {
+    "workControls": 10,
+    "endingSlots": 9,
+    "forestSlots": 10,
+    "povertySlots": 20,
+    "schoolCourseSlots": 8,
+    "teacherMediaSurfaces": 8,
+    "selectedSemanticSlots": 47
   }
 }
