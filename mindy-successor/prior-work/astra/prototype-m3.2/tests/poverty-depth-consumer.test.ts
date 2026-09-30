@@ -71,6 +71,10 @@ test('poverty depth lookup preserves the approved deterministic occurrence contr
   );
   assert.equal(
     povertyPendingLocalizationKey('poverty-street-production.helpful-summer','default',5),
+    'presentation.poverty.contact-recovery-v2.market.recognition.text'
+  );
+  assert.equal(
+    povertyPendingLocalizationKey('poverty-street-production.helpful-summer','default',6),
     'presentation.poverty.depth.poverty-street-production-helpful-summer.default.a.text'
   );
   assert.equal(
