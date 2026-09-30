@@ -16,7 +16,8 @@
       "content/ordinary-poverty-small-job-depth-v1.fixture.json",
       "content/ordinary-poverty-recovery-depth-v1.fixture.json"
     ],
-    "separation": "content/secret-debt-separation-regression-v2.fixture.json"
+    "separation": "content/secret-debt-separation-regression-v2.fixture.json",
+    "coverageAudit": "content/forest-route-coverage-audit-v1.fixture.json"
   },
   "expectedForest": {
     "activityId": "lumber.forest",
