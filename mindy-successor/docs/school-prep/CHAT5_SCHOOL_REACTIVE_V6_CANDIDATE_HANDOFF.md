@@ -4,16 +4,15 @@ Date: 2026-09-30
 Owner: Chat 5 / School + Text Localization Content Worker
 Task: C5-60
 Branch: `chat5/school-reactive-depth-v6`
-Queue-start baseline: `main@593f9936d72296557b36a0e0ca7d3c7bb780839c`
-Required C5-60 refresh base: `main@5f2685f1fde6b4718483febd6f49108eaa4ac873`
+Refreshed candidate base: `main@f3a684448b0681c355452b7d24d836e3926cb594`
 
 ## Scope
 
 Candidate for C5-49 through C5-59.
 
-The queue audits the current School reactive-consumer boundary, prepares exact-course RU/EN lesson/teacher response content for all eight existing courses, adds a three-context response matrix for all eight existing teachers, and adds focused parity/stable-ID/collision regression.
+The queue audits the exact School reactive-consumer boundary, prepares v2 RU/EN exact-course response depth for all eight existing courses, prepares an eight-teacher response matrix, and adds a focused stable-ID / parity / collision regression.
 
-No runtime, production pack, root localization, presentation registry, curriculum, threshold, public producer fact, Save field, NightFlow rule, career mechanic or Activity mechanic is changed.
+No runtime, Save, NightFlow, economy, career, Activity, relationship, curriculum, threshold or public-producer state is added.
 
 ## C5-49 — reactive-consumer capability audit
 
@@ -21,146 +20,50 @@ Added:
 - `content/school-reactive-consumer-capability-audit-v1.fixture.json`
 - `docs/school-prep/SCHOOL_REACTIVE_CONSUMER_CAPABILITY_AUDIT_V1.md`
 
-Exact-current findings:
+Current safe seams:
 - `executeSchoolLesson` receives and returns exact course identity;
 - `lastAction.presentationId` preserves exact paid-course presentation identity;
-- `lastAction.id` remains generic `school`;
-- paid-lesson ReactionFacts emit generic `actionCompleted: school`, stat/resource/Energy changes and eligible endings;
-- no paid-lesson ReactionFact carries exact course, track or teacher identity;
-- overlapping stat deltas are not a safe proxy for course identity;
-- the production teacher pack exposes eight classroom media identities but zero teacher events;
+- generic `actionCompleted: school` supports generic after-paid-lesson text;
+- Night study exposes exact choice identity through `nightChoiceCompleted(choice)`.
+
+Current missing seams:
+- paid-lesson ReactionFact does not carry exact course ID;
+- no exact paid-course ReactionTrigger exists;
 - no teacher reaction fact exists;
-- the staged course lesson pack contains authored course-specific variants but no exact-course reactive triggers;
-- generic after-school text can safely consume `actionCompleted: school`;
-- Night-study has an exact semantic choice ID and can be routed by `nightChoiceCompleted(choice)`.
+- production teacher pack has no teacher events;
+- staged course-specific lesson events remain non-production/reference content without exact reactive triggers.
 
-Safe current seams:
-1. direct caller-owned exact course result handling;
-2. exact `lastAction.presentationId`;
-3. generic after-paid-lesson reaction;
-4. exact Night-study choice reaction.
+The audit explicitly rejects inferring paid-course identity from stat deltas because course stat packages overlap.
 
-Missing seams:
-1. exact paid-course ReactionFact/ReactionTrigger;
-2. teacher-specific reactive identity;
-3. production exact-course teacher/lesson consumer.
+## C5-50 through C5-57 — exact-course reactive depth v2
 
-No runtime seam is invented by this candidate.
+Prepared one fixture and one handoff document for each existing course:
+- Literacy & Numbers / Mara Fen;
+- Arcana / Ilyra Venn;
+- Rhetoric & Social / Cassian Reed;
+- Etiquette & Presentation / Eliane Marrow;
+- Field Craft / Rowan Pike;
+- Physical Training / Tovan Kest;
+- Arts & Performance / Nessa Lark;
+- Body Confidence / Sera Vey.
 
-## C5-50 — Literacy & Numbers reactive depth v2
+Each course fixture contains four RU/EN response roles:
+1. lesson success;
+2. ordinary repetition;
+3. teacher feedback;
+4. transfer context.
 
-Added:
-- `content/school-literacy-and-numbers-reactive-v2.fixture.json`
-- `docs/school-prep/SCHOOL_LITERACY_NUMBERS_REACTIVE_V2.md`
+Every course fixture keeps:
+- `selectedRuntimeConsumerId: null`;
+- `selectedThreshold: null`;
+- `selectedPublicFactId: null`;
+- empty gameplay effect/career/public-fact arrays.
 
-Existing identities only:
-- `school.course.literacy_and_numbers`
-- `school.track.literacy_and_numbers`
-- `school.teacher.mara-fen`
-
-Prepared RU/EN:
-- lesson success;
-- ordinary repetition;
-- Mara Fen feedback;
-- transfer reflection.
-
-No milestone, certificate, threshold, public result, career write or runtime consumer is selected.
-
-## C5-51 — Arcana reactive depth v2
-
-Added:
-- `content/school-arcana-reactive-v2.fixture.json`
-- `docs/school-prep/SCHOOL_ARCANA_REACTIVE_V2.md`
-
-Existing identities:
-- `school.course.arcana`
-- `school.track.arcana`
-- `school.teacher.ilyra-venn`
-
-Prepared RU/EN around testability, repetition, uncertainty and transfer. No Forest/Activity result, research state, threshold or public fact is created.
-
-## C5-52 — Rhetoric & Social reactive depth v2
-
-Added:
-- `content/school-rhetoric-and-social-reactive-v2.fixture.json`
-- `docs/school-prep/SCHOOL_RHETORIC_SOCIAL_REACTIVE_V2.md`
-
-Existing identities:
-- `school.course.rhetoric_and_social`
-- `school.track.rhetoric_and_social`
-- `school.teacher.cassian-reed`
-
-Prepared RU/EN lesson success, repetition, teacher feedback and transfer context. No relationship/career write or reactive runtime trigger is created.
-
-## C5-53 — Etiquette & Presentation reactive depth v2
-
-Added:
-- `content/school-etiquette-and-presentation-reactive-v2.fixture.json`
-- `docs/school-prep/SCHOOL_ETIQUETTE_PRESENTATION_REACTIVE_V2.md`
-
-Existing identities:
-- `school.course.etiquette_and_presentation`
-- `school.track.etiquette_and_presentation`
-- `school.teacher.eliane-marrow`
-
-Prepared RU/EN contextual-form, repetition, teacher feedback and transfer text. No status gate, Palace access, threshold or public result is created.
-
-## C5-54 — Field Craft reactive depth v2
-
-Added:
-- `content/school-field-craft-reactive-v2.fixture.json`
-- `docs/school-prep/SCHOOL_FIELD_CRAFT_REACTIVE_V2.md`
-
-Existing identities:
-- `school.course.field_craft`
-- `school.track.field_craft`
-- `school.teacher.rowan-pike`
-
-Prepared RU/EN around observation, fallback planning, repeated condition changes and transfer. No Activity write, route unlock, entry-condition change or capability item is created.
-
-## C5-55 — Physical Training reactive depth v2
-
-Added:
-- `content/school-physical-training-reactive-v2.fixture.json`
-- `docs/school-prep/SCHOOL_PHYSICAL_TRAINING_REACTIVE_V2.md`
-
-Existing identities:
-- `school.course.physical_training`
-- `school.track.physical_training`
-- `school.teacher.tovan-kest`
-
-Prepared RU/EN around repeatable form, repetition, controlled stopping and transfer. No Energy-rule, stat-package, shift-cost or career-threshold change is created.
-
-## C5-56 — Arts & Performance reactive depth v2
-
-Added:
-- `content/school-arts-and-performance-reactive-v2.fixture.json`
-- `docs/school-prep/SCHOOL_ARTS_PERFORMANCE_REACTIVE_V2.md`
-
-Existing identities:
-- `school.course.arts_and_performance`
-- `school.track.arts_and_performance`
-- `school.teacher.nessa-lark`
-
-Prepared RU/EN around intention, repetition, partner response and transfer. No festival, career or relationship mechanic is created.
-
-## C5-57 — Body Confidence reactive depth v2
-
-Added:
-- `content/school-body-confidence-reactive-v2.fixture.json`
-- `docs/school-prep/SCHOOL_BODY_CONFIDENCE_REACTIVE_V2.md`
-
-Existing identities:
-- `school.course.body_confidence`
-- `school.track.body_confidence`
-- `school.teacher.sera-vey`
-
-Prepared RU/EN around comfortable deliberate presence, repetition, clear boundaries and transfer.
-
-Explicit boundary:
-- presentation/confidence is not consent;
-- Body Confidence/Sexuality is not Lust;
-- no Lust effect, consent rule, relationship write or career state is added.
+Course-specific guardrails:
+- Field Craft adds no Activity write or route unlock;
+- Physical Training adds no Energy rule or stat-package change;
+- Arts & Performance adds no festival, career or relationship mechanic;
+- Body Confidence adds no Lust effect, consent rule or relationship write.
 
 ## C5-58 — teacher response matrix v2
 
@@ -168,80 +71,80 @@ Added:
 - `content/school-teacher-response-matrix-v2.fixture.json`
 - `docs/school-prep/SCHOOL_TEACHER_RESPONSE_MATRIX_V2.md`
 
-Covers all eight current teachers:
-- Mara Fen;
-- Ilyra Venn;
-- Cassian Reed;
-- Eliane Marrow;
-- Rowan Pike;
-- Tovan Kest;
-- Nessa Lark;
-- Sera Vey.
-
-Exactly three contexts per teacher:
+The matrix covers all eight current teachers in exactly three contexts:
 - lesson success;
 - ordinary repetition;
 - transfer context.
 
-That produces 24 response variants / 48 RU/EN localization keys.
+It provides 24 teacher response variants and preserves exact current teacher/course/track identities.
 
-Teachers remain School educators, not career gates or state writers.
+Teacher responses remain School content only. They do not select runtime consumers, thresholds, public results, careers or relationships.
 
-## C5-59 — reactive parity / collision regression
+Sera Vey copy explicitly preserves Body Confidence != consent/Lust.
+Tovan Kest copy changes no Energy rule.
+Rowan Pike copy opens no Activity route.
+
+## C5-59 — parity / stable-ID / collision regression
 
 Added:
 - `tests/school-reactive-v2-parity.test.ts`
 - `docs/school-prep/SCHOOL_REACTIVE_V2_PARITY_REGRESSION.md`
 
-Regression locks:
-- safe vs missing reactive seams from C5-49;
-- exact eight course/track/teacher tuples;
-- four exact response roles in every course fixture;
-- three exact contexts in the teacher matrix;
-- null runtime-consumer, threshold and public-result selections;
-- complete RU/EN parity;
-- unique stable keys;
-- zero current root-localization collisions;
-- Field Craft no Activity/route changes;
-- Physical Training no Energy/stat-rule changes;
-- Arts & Performance no festival/relationship mechanics;
-- Body Confidence no Lust/consent/relationship mechanics.
+The regression locks:
+- exact safe versus missing reactive-routing seams from C5-49;
+- exact eight current course/track/teacher triples;
+- four exact response roles for every course fixture;
+- null runtime-consumer/threshold/public-result selections;
+- exact eight-teacher matrix coverage;
+- complete fixture-local RU/EN parity;
+- stable localization-key references;
+- zero duplicate prepared keys;
+- zero root-localization collisions;
+- mechanics-neutral Field Craft / Physical Training / Arts & Performance / Body Confidence boundaries.
 
-## Prepared localization inventory
+## Localization inventory
 
-C5-50 through C5-58 prepare:
+Prepared by C5-50 through C5-58:
 - 112 unique fixture-local localization keys;
 - 112/112 RU non-empty;
 - 112/112 EN non-empty;
 - zero duplicate prepared keys;
-- zero collision with root localization on current-main refresh base.
+- zero collision against current root localization at pre-candidate validation.
+
+Breakdown:
+- 8 course fixtures × 4 variants × 2 strings = 64 keys;
+- 8 teachers × 3 contexts × 2 strings = 48 keys;
+- total = 112 keys.
 
 Root `content/localization.json` is not modified.
 
-## Current-main refresh before C5-60
+## Candidate refresh
 
-The v6 queue began from `main@593f9936...`.
+The v6 working branch started on `main@593f9936d72296557b36a0e0ca7d3c7bb780839c`.
 
-Before candidate freeze, main advanced to `5f2685f1fde6b4718483febd6f49108eaa4ac873`, including the merged v5 School transfer-atlas candidate and other worker integrations.
+Before C5-60 candidate handoff, main advanced and the queue contract required the final candidate to be refreshed from then-current main.
 
-Per the active Chat 5 pointer, the final C5-60 candidate must be refreshed from then-current main and carry forward only new v6 School artifacts.
+The candidate branch was therefore rebuilt from:
+- `main@f3a684448b0681c355452b7d24d836e3926cb594`;
 
-The refreshed candidate therefore carries exactly the new C5-49..60 docs/fixtures/test listed in this handoff on top of `5f2685f1...`. It does not duplicate or modify merged v5 artifacts.
+while carrying forward only the 22 new C5-49..59 School docs/fixtures/test paths.
 
-## Pre-refresh / current-main validation
+Earlier merged School atlas content from PR #105 remains on main and is not duplicated in this candidate.
 
-PASS against `main@5f2685f1fde6b4718483febd6f49108eaa4ac873`:
+## Pre-candidate static validation
+
+PASS:
 - 10 v6 JSON fixtures parse;
-- all eight source course IDs still exist;
-- every course fixture keeps exact current course/track/teacher identities;
-- all `selectedRuntimeConsumerId` values remain null;
-- all threshold/public-result selections remain null;
-- 112 prepared keys scanned;
+- all eight course fixture source IDs exist in current School source;
+- all eight `selectedRuntimeConsumerId` values remain null;
+- all eight thresholds remain null;
+- all eight public-result selections remain null;
+- reactive audit still records exact-course paid-lesson reaction identity as missing;
+- 112 prepared keys;
 - 112/112 RU non-empty;
 - 112/112 EN non-empty;
 - 112/112 unique;
-- zero root-localization collisions;
-- C5-49 exact-course reaction gap remains present in current runtime.
+- zero current root-localization collisions.
 
 ## Ownership surface
 
@@ -252,31 +155,23 @@ Candidate adds only:
 
 It does not modify:
 - `src/`;
-- production packs;
 - `content/definitions.json`;
 - root `content/localization.json`;
-- presentation/media;
+- production content packs;
+- presentation/media assets;
 - Save/RNG;
 - NightFlow;
-- Activity runtime;
-- career/relationship mechanics;
-- economy/balance.
+- Energy/stat rules;
+- career/relationship/Activity mechanics.
 
-## Open integration dependency
+## Explicit integration dependency
 
-Exact paid-course reactive routing is still missing from the generic resolver boundary.
+Exact paid-course reactive routing remains a shared Integration concern.
 
-Until Integration/Product approves a seam:
-- course-specific v2 reaction content must not be attached by guessing from stat deltas;
-- teacher-specific content must not invent teacher events;
-- generic after-school text may continue to use `actionCompleted: school`;
-- direct exact-course presentation may continue to use the existing `lastAction.presentationId`;
-- exact Night-study reactions may use exact Night-choice identity.
+The current runtime provides exact course identity at the direct `executeSchoolLesson` boundary and exact presentation identity through `lastAction.presentationId`, but the generic reaction resolver receives only `actionCompleted: school` plus non-identity deltas.
+
+Therefore this candidate does not create an exact-course ReactionFact, ReactionTrigger or teacher event. Any future production integration must use an approved exact identity seam rather than guessing from stats.
 
 ## Candidate state
 
-After refreshing the branch onto `main@5f2685f1fde6b4718483febd6f49108eaa4ac873` with only these v6 paths:
-1. open one focused C5-60 PR;
-2. require exact-head `mindy-successor check` green;
-3. record the exact frozen head for Chat 4 QA;
-4. do not move it for unrelated main drift.
+Open one focused PR from this refreshed branch. Freeze only the exact PR head that passes `mindy-successor check`. Record that exact head as `CANDIDATE_FROZEN` for Chat 4 QA. Do not move it for unrelated main drift.
