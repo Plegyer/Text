@@ -101,7 +101,9 @@ Immediate evidence/candidates:
 - PR #125 (Chat 2 C2-72) passed C4-91 and is merged;
 - PR #126 (Chat 3 C3-72) passed C4-92 PASS-WITH-NOTES and is merged;
 - PR #127 (Chat 5 C5-72) passed C4-93 PASS-WITH-NOTES and is merged;
-- PR #124 is the current Chat 1 C1D-60 candidate; it must be refreshed/revalidated against current main after merged #125/#126/#127 before freeze; PR #119/#123 are superseded/closed;
+- PR #124 is Chat 1 C1D-60, exact frozen head green and ready for C4-79; PR #119/#123 are superseded/closed;
+- PR #134 is Chat 3 C3-84, exact frozen head green and ready for C4-104;
+- PR #132 is Chat 5 C5-84, exact frozen head green and ready for C4-105;
 - when dependency-gated, Chat 4 continues independent v8/v9 QA instead of idling.
 
 Must not create duplicate production content.
