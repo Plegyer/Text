@@ -26,6 +26,20 @@ const expectedNightIds=definitions.nightChoices
   .map((x:any)=>x.id)
   .filter((id:string)=>id.startsWith('school.night_study.'));
 
+function stringLeaves(value:any,out:string[]){
+  if(typeof value==='string'){
+    out.push(value);
+    return;
+  }
+  if(Array.isArray(value)){
+    for(const item of value)stringLeaves(item,out);
+    return;
+  }
+  if(value&&typeof value==='object'){
+    for(const item of Object.values(value))stringLeaves(item,out);
+  }
+}
+
 function refs(value:any,out:string[]=[]):string[]{
   if(Array.isArray(value)){
     for(const item of value)refs(item,out);
@@ -33,8 +47,8 @@ function refs(value:any,out:string[]=[]):string[]{
   }
   if(!value||typeof value!=='object')return out;
   for(const [key,item] of Object.entries(value)){
-    if(key==='keys'&&item&&typeof item==='object'&&!Array.isArray(item)){
-      for(const ref of Object.values(item))if(typeof ref==='string')out.push(ref);
+    if(key==='keys'&&item&&typeof item==='object'){
+      stringLeaves(item,out);
     }else if(key!=='strings'){
       refs(item,out);
     }
