@@ -8,21 +8,19 @@ Mandatory startup:
 - `ACTIVE_TEAM_OWNERSHIP_MATRIX.md`
 - `CANDIDATE_QA_FREEZE_PROTOCOL.md`
 - `TASK_CHAT1_DEVELOPER_QUEUE_v5.md`
+- `TASK_CHAT1_DEVELOPER_QUEUE_v6.md`
 
-Current queue:
-- C1D-37 through C1D-48.
+Queue sequence:
+- finish C1D-37 through C1D-48;
+- then continue automatically with C1D-49 through C1D-60 without waiting for a new chat instruction.
 
-Current-main resync rule:
-- PR #97, #98, #99, #93, #88, #90 and #100 are now merged into main;
-- any working branch created before those merges is stale as a final delivery base;
-- do not duplicate-copy merged artifacts;
-- before C1D-48 freeze, rebuild/rebase selectively from current main and carry forward only queue-v5 changes that are still absent from main;
-- treat C1D-42..47 as revalidation/no-op when their source candidate is already merged, unless an actual current-main consumer gap remains.
-
-Do not restart C1D-01..36 or merge stale worker branches wholesale.
+At the boundary between queues:
+- re-read current main and this pointer;
+- do not duplicate artifacts already merged while the current queue was in progress;
+- freeze final candidates only from then-current main or an explicitly approved selective refresh.
 
 Keep technical evidence in Git only. Personal chat output:
 - `Задание выполнено`
 - `Задания выполнены`
 
-Do not self-assign beyond C1D-48.
+Do not self-assign beyond C1D-60.
