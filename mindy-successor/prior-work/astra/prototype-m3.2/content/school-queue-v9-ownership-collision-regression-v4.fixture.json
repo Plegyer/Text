@@ -1,0 +1,55 @@
+{
+  "formatVersion": 1,
+  "id": "school.queue-v9-ownership-collision-regression.v4",
+  "status": "TEST_CONTRACT_ONLY",
+  "baseline": "a341303183dc277a26b3e64a61d8ed8e35c5d05f",
+  "ownedArtifactRoots": [
+    "mindy-successor/docs/school-prep/",
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/school-",
+    "mindy-successor/prior-work/astra/prototype-m3.2/tests/school-"
+  ],
+  "forbiddenProductionOwnership": [
+    "mindy-successor/prior-work/astra/prototype-m3.2/src/",
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/definitions.json",
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/localization.json",
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation.json",
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/packs/",
+    "mindy-successor/prior-work/astra/prototype-m3.2/assets/"
+  ],
+  "queueArtifacts": [
+    "content/school-post-v8-reachability-audit-v1.fixture.json",
+    "content/school-generic-after-school-depth-v3.fixture.json",
+    "content/school-exact-night-study-depth-v3.fixture.json",
+    "content/school-journal-result-terminology-consistency-v3.fixture.json",
+    "content/school-teacher-identity-safety-audit-v3.fixture.json",
+    "content/school-starter-career-transfer-wording-v4.fixture.json",
+    "content/school-late-career-transfer-wording-v4.fixture.json",
+    "content/school-body-confidence-boundary-audit-v3.fixture.json",
+    "content/school-fallback-localization-audit-v2.fixture.json"
+  ],
+  "forbiddenMechanicOwnership": [
+    "Save schema",
+    "RNG",
+    "NightFlow",
+    "career state",
+    "Activity state",
+    "economy/prices",
+    "presentation/media",
+    "producer/public-result state",
+    "curriculum",
+    "course identity",
+    "teacher canon"
+  ],
+  "constraints": {
+    "modifiesRuntime": false,
+    "modifiesSave": false,
+    "modifiesNightFlow": false,
+    "modifiesCareer": false,
+    "modifiesActivity": false,
+    "modifiesMedia": false,
+    "modifiesProducerState": false,
+    "modifiesEconomy": false,
+    "modifiesCurriculum": false,
+    "modifiesTeacherCanon": false
+  }
+}
