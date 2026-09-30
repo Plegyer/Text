@@ -7,12 +7,15 @@ Mandatory startup:
 - `WORKER_CHAT_RECREATION_PROTOCOL_v1.md`
 - `ACTIVE_TEAM_OWNERSHIP_MATRIX.md`
 - `CANDIDATE_QA_FREEZE_PROTOCOL.md`
-- `TASK_CHAT3_CONTENT_QUEUE_v6.md`
 - `TASK_CHAT3_CONTENT_QUEUE_v7.md`
+- `TASK_CHAT3_CONTENT_QUEUE_v8.md`
 
-Queue sequence:
-- finish C3-49 through C3-60;
-- then continue automatically with C3-61 through C3-72 without waiting for a new chat instruction.
+Current status:
+- C3-49..60 candidate PR #114 passed QA and is merged;
+- C3-61..72 candidate is PR #126 and must freeze only after exact-head repository CI is green.
+
+Next queue:
+- after C3-72 is frozen, continue automatically with C3-73 through C3-84 without waiting for a new chat instruction.
 
 At the queue boundary:
 - re-read current main and this pointer;
@@ -23,4 +26,4 @@ Keep technical evidence in Git only. Personal chat output:
 - `Задание выполнено`
 - `Задания выполнены`
 
-Do not self-assign beyond C3-72.
+Do not self-assign beyond C3-84.
