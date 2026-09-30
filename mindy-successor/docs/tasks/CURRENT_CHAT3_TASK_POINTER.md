@@ -10,9 +10,14 @@ Mandatory startup:
 - `TASK_CHAT3_CONTENT_QUEUE_v8.md`
 - `TASK_CHAT3_CONTENT_QUEUE_v9.md`
 
-Queue sequence:
-- finish C3-73 through C3-84;
-- then continue automatically with C3-85 through C3-96 without waiting for a new chat instruction.
+Current status:
+- C3-73 through C3-84 are complete;
+- frozen candidate: PR #134 exact head `fac977ba10e16c38f519782c6ce415aa39abba19`;
+- exact-head repository CI #396 is green;
+- do not move PR #134 unless QA requests a concrete repair.
+
+Active queue:
+- continue automatically with C3-85 through C3-96 from current main.
 
 At each queue boundary:
 - re-read current main and this pointer;
