@@ -1659,6 +1659,13 @@
       "semanticBindings": 102,
       "teacherMedia": 8,
       "helpKeys": 5
+    },
+    "staleDeadBindingV4": {
+      "test": "tests/presentation-stale-dead-binding-v9.test.ts",
+      "manifests": 8,
+      "productionStaleAllowed": 0,
+      "manifestStaleAllowed": 0,
+      "missingSourceAllowed": 0
     }
   },
   "accessibilityAudit": {
@@ -3112,5 +3119,23 @@
       "captionKey": "media.stage.town.caption",
       "currentMainState": "prepared-in-pr136-not-current-main"
     }
+  },
+  "staleDeadBindingAudit": {
+    "selectedManifests": [
+      "content/presentation-drafts/lumber-presentation-source-manifest-v1.json",
+      "content/presentation-drafts/starter-school-presentation-source-manifest-v1.json",
+      "content/presentation-drafts/late-career-presentation-source-manifest-v1.json",
+      "content/presentation-drafts/cross-domain-presentation-source-manifest-v1.json",
+      "content/presentation-drafts/presentation-wave-v6-source-manifest-v1.json",
+      "content/presentation-drafts/presentation-production-binding-v7-manifest-v1.json",
+      "content/presentation-drafts/project-owned-animation-source-manifest-v4.json",
+      "content/presentation-drafts/presentation-hardening-v9-manifest-v1.json"
+    ],
+    "productionStaleSlotIds": 0,
+    "selectedManifestStalePresentationIds": 0,
+    "missingProductionSources": 0,
+    "missingManifestSources": 0,
+    "invalidFallbackChainsAccepted": 0,
+    "unknownIdPolicy": "safe-fallback-diagnostic"
   }
 }
