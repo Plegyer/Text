@@ -3381,6 +3381,62 @@
     "presentation.activity.forest.failure-depth.not-escape.text": {
       "ru": "Это не тот случай, когда ты вовремя решила остановиться: маршрут пришлось прекратить после того, как продолжение стало невозможным. Неудача остаётся отдельной от добровольного отхода и не получает успеховых карьерных фактов.",
       "en": "This is not a case of choosing to stop in time: the route had to end after continuing became impossible. Failure remains separate from voluntary retreat and receives none of the success career facts."
+    },
+    "presentation.poverty.housing-depth-v5.street.spring.cold-rain.text": {
+      "ru": "Весной место под крышей приходится искать между потоками воды и чужими дверями. Даже удачный козырёк остаётся временным убежищем: здесь можно переждать дождь, но нельзя считать угол своим жильём.",
+      "en": "In spring, shelter has to be found between running water and other people's doorways. Even a good awning remains temporary: it can get you through the rain, but it does not make the corner a home."
+    },
+    "presentation.poverty.housing-depth-v5.street.summer.late-shade.text": {
+      "ru": "Летом улица дольше остаётся тёплой, и поздняя тень у стены становится частью ночного расчёта. Она даёт передышку от жары, но не дверь, не кровать и не обещание, что место останется свободным завтра.",
+      "en": "In summer, the street stays warm longer, and the late shade by a wall becomes part of the night's calculation. It offers relief from the heat, but not a door, a bed, or any promise that the place will be free tomorrow."
+    },
+    "presentation.poverty.housing-depth-v5.street.autumn.dry-arcade.text": {
+      "ru": "Осенью сухая аркада ценится за то, что здесь хотя бы не капает сверху. После закрытия лавок она на несколько часов становится тихой, но утром снова окажется обычным проходом, а не постоянным жильём.",
+      "en": "In autumn, a dry arcade matters because at least nothing drips from above. After the shops close it becomes quiet for a few hours, but by morning it will be an ordinary passage again, not permanent housing."
+    },
+    "presentation.poverty.housing-depth-v5.street.winter.long-gusts.text": {
+      "ru": "Зимой даже глубокая ниша только ослабляет длинные порывы ветра. Ты устраиваешь вещи так, чтобы сохранить сухое место и не терять тепло без необходимости, понимая, что улица остаётся самым тяжёлым уровнем ночлега.",
+      "en": "In winter, even a deep recess only softens the long gusts. You arrange your things to keep one dry place and lose as little warmth as possible, knowing the street remains the harshest lodging tier."
+    },
+    "presentation.poverty.housing-depth-v5.cheap.spring.window.text": {
+      "ru": "Весной общая комната пахнет сырой одеждой и воздухом из приоткрытого окна. Здесь тесно и приходится договариваться о мелочах, зато ночь проходит за закрытой дверью и под настоящей крышей.",
+      "en": "In spring, the shared room smells of damp clothes and air from a partly open window. It is cramped and full of small compromises, but the night passes behind a closed door and under a real roof."
+    },
+    "presentation.poverty.housing-depth-v5.cheap.summer.heat.text": {
+      "ru": "Летом дешёвая комната хранит жару до поздней ночи. Люди освобождают проход к окну и двигают вещи к стенам; теснота никуда не исчезает, но жильё всё равно отделяет ночь от улицы.",
+      "en": "In summer, the cheap room holds the heat late into the night. People clear the path to the window and move belongings toward the walls; the crowding remains, but the room still separates the night from the street."
+    },
+    "presentation.poverty.housing-depth-v5.cheap.autumn.shared-quiet.text": {
+      "ru": "Осенью дождь слышен уже снаружи, а внутри остаются только тихие разговоры и шорох чужих вещей. Это не собственная комната, но несколько спокойных часов под крышей дают больше устойчивости, чем сухой угол на улице.",
+      "en": "In autumn, the rain is already outside while only quiet talk and the rustle of other people's belongings remain indoors. It is not a room of your own, but several calm hours under a roof offer more stability than a dry street corner."
+    },
+    "presentation.poverty.housing-depth-v5.cheap.winter.stove.text": {
+      "ru": "Зимой маленькая печь превращает общую комнату в место, где можно действительно согреться. Тепло приходится делить и поддерживать вместе, но оно остаётся частью оплаченного ночлега, а не новой наградой или постоянным улучшением жилья.",
+      "en": "In winter, the small stove turns the shared room into a place where you can actually get warm. The heat has to be shared and maintained together, but it remains part of the lodging for that night, not a new reward or permanent housing upgrade."
+    },
+    "presentation.poverty.recovery-depth-v5.small-coin.breathing-room.text": {
+      "ru": "Несколько монет не меняют положение навсегда, но дают чуть больше свободы в ближайших решениях. Этого достаточно для короткой передышки, а не для отметки, что бедность закончилась.",
+      "en": "A few coins do not change your situation permanently, but they give a little more room in the next decisions. That is enough for a brief reprieve, not for a marker saying poverty is over."
+    },
+    "presentation.poverty.recovery-depth-v5.cleanup.one-step.text": {
+      "ru": "Короткая уборка заканчивается небольшой оплатой и ощущением, что сегодняшний вечер стал чуть проще. Это один полезный шаг внутри текущих ресурсов, а не переход в новую стадию или постоянную работу.",
+      "en": "The short cleanup ends with a small payment and the sense that tonight is a little easier. It is one useful step within current resources, not a transition into a new stage or permanent job."
+    },
+    "presentation.poverty.recovery-depth-v5.herb.useful-buffer.text": {
+      "ru": "Пучок трав может пригодиться позже и немного расширяет доступные варианты, но сам по себе ничего не решает. Находка остаётся ресурсом, а не скрытым счётчиком восстановления.",
+      "en": "The herb bundle may be useful later and slightly widen your options, but it solves nothing by itself. The find remains a resource, not a hidden recovery counter."
+    },
+    "presentation.poverty.recovery-depth-v5.shared-room.spring-breathing-space.text": {
+      "ru": "Ночь в общей комнате даёт передышку от улицы: можно высушить вещи, поспать за дверью и утром начать с меньшей усталостью. Это временная устойчивость текущей ночи, не постоянное улучшение жилья.",
+      "en": "A night in the shared room offers relief from the street: clothes can dry, you can sleep behind a door, and morning begins with less strain. It is temporary stability for the current night, not a permanent housing upgrade."
+    },
+    "presentation.poverty.recovery-depth-v5.shared-room.autumn-routine.text": {
+      "ru": "Тихий вечер под крышей позволяет вернуть несколько обычных привычек — сложить вещи, спокойно поесть, лечь вовремя. Такие мелочи помогают пережить сложный период, не создавая отдельного состояния восстановления.",
+      "en": "A quiet evening under a roof lets a few ordinary routines return—put things away, eat calmly, go to bed on time. Those small things help through a difficult period without creating a separate recovery state."
+    },
+    "presentation.poverty.recovery-depth-v5.street.autumn-no-milestone.text": {
+      "ru": "Даже после удачного дня ночь может снова закончиться под навесом. Это не отменяет прошлые небольшие улучшения и не превращает их в провал; ordinary poverty остаётся линией из меняющихся условий, а не лестницей обязательных стадий.",
+      "en": "Even after a better day, the night may still end beneath an awning. That does not erase earlier small improvements or turn them into failure; ordinary poverty remains a line of changing circumstances rather than a ladder of mandatory stages."
     }
   }
 }
