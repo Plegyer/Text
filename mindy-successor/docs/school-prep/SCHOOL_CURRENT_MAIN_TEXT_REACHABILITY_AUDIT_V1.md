@@ -1,7 +1,7 @@
 # Current-main School Text Reachability Audit v1
 
 Task: C5-73
-Baseline: `main@8fb0985ccc353f3f35a2cc2fc140c07dff81cd11`
+Baseline: `main@099d292ef962230a7dc11b0306296a76b5b93a6f`
 
 Production/player-facing now:
 - both generic paid-lesson reactions under root `content/packs`;
