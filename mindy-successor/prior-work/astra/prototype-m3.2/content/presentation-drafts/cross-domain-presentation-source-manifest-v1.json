@@ -76,6 +76,30 @@
       "fallbackId": "location/town/default",
       "altKey": "presentation.static.lumber-ending-forest.alt",
       "captionKey": "presentation.static.lumber-ending-forest.caption"
+    },
+    {
+      "presentationId": "relationship/lumber-foreman/lumber-foreman-notice/default",
+      "domain": "relationship/lumber.foreman",
+      "role": "milestone-professional",
+      "sourceAsset": "assets/presentation/foreman-professional-milestone-v2.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.foreman-professional-milestone-v2.alt",
+      "captionKey": "presentation.static.foreman-professional-milestone-v2.caption"
+    },
+    {
+      "presentationId": "relationship/lumber-foreman/lumber-night-foreman-professional/default",
+      "domain": "relationship/lumber.foreman",
+      "role": "night-professional",
+      "sourceAsset": "assets/presentation/foreman-night-voluntary-v2.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.foreman-night-voluntary-v2.alt",
+      "captionKey": "presentation.static.foreman-night-voluntary-v2.caption"
     }
   ],
   "teacherMediaSurfaces": [],
