@@ -94,7 +94,8 @@ Owns exact-head PR/CI verification, scope/collision review, runtime/catalog gate
 Immediate evidence/candidates:
 - use current main and the current worker pointers first;
 - merged #84, #85, #88, #89, #90, #93, #97, #98, #99 and #100 are historical accepted integration evidence;
-- gate only still-open/new frozen candidates named by the active QA queue.
+- active frozen queue-v5 candidates awaiting QA: #106 (Chat 1), #109 (Chat 2), #108 (Chat 3), #105 (Chat 5);
+- gate only exact frozen heads named by the active QA queue.
 
 Must not create duplicate production content.
 
