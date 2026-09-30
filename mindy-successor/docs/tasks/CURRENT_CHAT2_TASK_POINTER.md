@@ -11,12 +11,13 @@ Mandatory startup:
 - `TASK_CHAT2_PRESENTATION_QUEUE_v8.md`
 
 Current status:
-- C2-49..60 candidate PR #116 passed C4-80 and is merged;
-- continue C2-61 through C2-72 on current main;
-- current worker branch has reached at least C2-70.
+- C2-61 through C2-72 are complete;
+- frozen candidate: PR #125 exact head `827a77bf40238ffcad509876c43d2b05481ffb17`;
+- exact-head repository CI #355 is green;
+- do not move PR #125 unless QA requests a concrete repair.
 
-Next queue:
-- after C2-72 is frozen, continue automatically with C2-73 through C2-84.
+Active queue:
+- continue automatically with C2-73 through C2-84 from current main.
 
 At the queue boundary:
 - re-read current main and this pointer;
