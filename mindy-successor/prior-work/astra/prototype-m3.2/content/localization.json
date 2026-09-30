@@ -3217,6 +3217,198 @@
     "event.lumber-cross.activity-forest-return.choice.continue.text": {
       "ru": "Ты вводишь лесные наблюдения в рабочий разговор, и подтверждённый результат становится частью дальнейшего решения артели.",
       "en": "You bring the Forest observations into the work discussion, and the confirmed result becomes part of the crew's next decision."
+    },
+    "school.depth.rhetoric_and_social.same_point_new_room.title": {
+      "ru": "Одна мысль, три комнаты",
+      "en": "One point, three rooms"
+    },
+    "school.depth.rhetoric_and_social.same_point_new_room.body": {
+      "ru": "Кассиан просит тебя объяснить одну и ту же просьбу другу, настороженному незнакомцу и скучающему чиновнику. Содержание почти не меняется, зато порядок слов, длина пауз и выбранный пример становятся другими. «Убеждать — не значит надевать маску, — говорит он. — Это значит открыть правильную дверь к той же мысли».",
+      "en": "Cassian asks you to make the same request to a friend, a wary stranger, and a bored official. The substance barely changes, but the order of words, the length of the pauses, and the chosen example all do. “Persuasion is not wearing a mask,” he says. “It is finding the right door to the same idea.”"
+    },
+    "school.depth.rhetoric_and_social.listen_for_assumption.title": {
+      "ru": "То, что собеседник достраивает сам",
+      "en": "What the listener supplies"
+    },
+    "school.depth.rhetoric_and_social.listen_for_assumption.body": {
+      "ru": "Кассиан рассказывает короткую историю и велит прервать его только тогда, когда услышишь предположение, которое он ни разу не произнёс вслух. Первая попытка проходит мимо. Во второй ты замечаешь, как одно невинное слово заставляет слушателя самому достроить виноватого. Кассиан улыбается: иногда спор начинается не с сказанного, а с того, что все поспешили добавить.",
+      "en": "Cassian tells a short story and asks you to interrupt only when you hear an assumption he never actually says aloud. The first attempt slips past you. On the second, you notice how one innocent word makes the listener supply a culprit on their own. Cassian smiles: sometimes an argument begins not with what was said, but with what everyone rushed to add."
+    },
+    "school.depth.rhetoric_and_social.recover_the_opening.title": {
+      "ru": "Неудачное первое предложение",
+      "en": "A bad first sentence"
+    },
+    "school.depth.rhetoric_and_social.recover_the_opening.body": {
+      "ru": "Кассиан намеренно выдаёт тебе нелепую вступительную фразу и запрещает начинать заново. Приходится признать неловкость, перевести внимание на смысл и продолжить так, будто это тоже часть упражнения. После нескольких попыток ты перестаёшь бороться за идеальное начало. Оказывается, уверенность лучше видна в том, как человек возвращает разговор на курс.",
+      "en": "Cassian deliberately gives you an awkward opening line and forbids you to start over. You have to acknowledge the stumble, move attention back to the point, and continue as though recovery were part of the exercise. After several attempts, you stop fighting for a perfect beginning. Confidence, it turns out, is easier to see in how someone brings the conversation back on course."
+    },
+    "school.depth.rhetoric_and_social.read_the_room.title": {
+      "ru": "Пауза перед ответом",
+      "en": "The pause before answering"
+    },
+    "school.depth.rhetoric_and_social.read_the_room.body": {
+      "ru": "На этот раз Кассиан почти не поправляет твои слова. Вместо этого он отмечает момент, когда ты заметила, что аудитория устала спорить, и сменила темп до того, как потеряла её совсем. Он не объявляет испытание пройденным и не выдаёт нового статуса. Только говорит, что хорошая речь начинается раньше слов — с умения заметить, что происходит между людьми.",
+      "en": "This time Cassian barely corrects your words. Instead, he points to the moment you noticed the room was tired of arguing and changed pace before losing it entirely. He declares no test passed and grants no new status. He only says that good speaking begins before the words—with noticing what is happening between people."
+    },
+    "school.depth.etiquette_and_presentation.entering_the_room.title": {
+      "ru": "Войти и не спешить",
+      "en": "Enter without rushing"
+    },
+    "school.depth.etiquette_and_presentation.entering_the_room.body": {
+      "ru": "Элиан заставляет тебя несколько раз войти в одну и ту же комнату, меняя только темп, взгляд и момент первого приветствия. Слишком быстро — и кажется, будто ты просишь разрешения занять место; слишком медленно — будто ждёшь оценки. На удачной попытке она ничего не поправляет. «Присутствие начинается не с того, как на тебя смотрят, — говорит Элиан. — А с того, как ты сама решила быть здесь».",
+      "en": "Eliane has you enter the same room several times, changing only your pace, gaze, and the moment of the first greeting. Too fast, and it seems as though you are asking permission to take up space; too slow, and it seems as though you are waiting to be judged. On the successful attempt she corrects nothing. “Presence does not begin with how they look at you,” Eliane says. “It begins with how you decided to be here.”"
+    },
+    "school.depth.etiquette_and_presentation.rule_with_a_purpose.title": {
+      "ru": "Правило, которое решает задачу",
+      "en": "A rule that solves a problem"
+    },
+    "school.depth.etiquette_and_presentation.rule_with_a_purpose.body": {
+      "ru": "Элиан убирает половину приборов с учебного стола и спрашивает, зачем вообще существовали правила, которые ты только что заучивала. Ответы про «так принято» она отклоняет один за другим. Наконец остаются более полезные причины: не мешать соседу, не заставлять гостя гадать, не превращать мелкую ошибку в публичное унижение. После этого запомнить порядок становится проще.",
+      "en": "Eliane removes half the pieces from the practice table and asks why the rules you have just memorized exist at all. She rejects one answer after another when it amounts to “because that is the custom.” What remains are more useful reasons: do not obstruct your neighbor, do not make a guest guess, do not turn a small mistake into a public humiliation. After that, the sequence becomes easier to remember."
+    },
+    "school.depth.etiquette_and_presentation.one_detail_at_a_time.title": {
+      "ru": "Одно исправление вместо нового образа",
+      "en": "One correction instead of a new persona"
+    },
+    "school.depth.etiquette_and_presentation.one_detail_at_a_time.body": {
+      "ru": "Ты готовишься к воображаемому официальному визиту и слишком стараешься выглядеть «правильно». Элиан останавливает тебя раньше, чем ты успеваешь переделать всё: поправляет только линию воротника и просит назвать впечатление, которое ты хочешь оставить. Остальное она велит не трогать. Самопрезентация становится яснее, когда в ней меньше попыток понравиться всем одновременно.",
+      "en": "You prepare for an imaginary formal visit and work too hard at looking “correct.” Eliane stops you before you can remake everything: she adjusts only the line of your collar and asks what impression you actually intend to leave. She tells you to leave the rest alone. Presentation becomes clearer when it contains fewer attempts to please everyone at once."
+    },
+    "school.depth.etiquette_and_presentation.composure.title": {
+      "ru": "Спокойствие после мелкой ошибки",
+      "en": "Composure after a small mistake"
+    },
+    "school.depth.etiquette_and_presentation.composure.body": {
+      "ru": "В упражнении ты нарушаешь одно из правил и замечаешь это раньше Элиан. Вместо того чтобы резко исправляться, ты продолжаешь разговор, а затем спокойно устраняешь ошибку в подходящий момент. Она отмечает не безошибочность, а выбор не делать из промаха отдельное представление. Никакого звания или допуска это не даёт — только более надёжную привычку держать себя в руках.",
+      "en": "During the exercise you break one rule and notice it before Eliane does. Instead of correcting yourself sharply, you continue the conversation and fix the mistake calmly at an appropriate moment. She notes not perfection but the choice not to turn a stumble into a second performance. It grants no title or access—only a more reliable habit of staying composed."
+    },
+    "school.depth.field_craft.notice_before_moving.title": {
+      "ru": "Сначала заметить, потом идти",
+      "en": "Notice first, then move"
+    },
+    "school.depth.field_craft.notice_before_moving.body": {
+      "ru": "Роуэн проводит тебя через учебный двор, затем разворачивает спиной и просит перечислить, что изменилось. Свежий след у ворот, верёвка на другом крюке, приоткрытая калитка — всё это было видно, но легко оказалось «фоном». Он не просит угадывать причину. Сначала достаточно доказать, что ты умеешь увидеть изменение до того, как начнёшь строить историю.",
+      "en": "Rowan walks you across the practice yard, turns you around, and asks what changed. A fresh print near the gate, a rope on a different hook, a half-open side door—every detail was visible and easy to dismiss as background. He does not ask you to guess the cause. First, it is enough to prove that you can notice a change before building a story around it."
+    },
+    "school.depth.field_craft.missing_tool.title": {
+      "ru": "Когда нужного инструмента нет",
+      "en": "When the expected tool is missing"
+    },
+    "school.depth.field_craft.missing_tool.body": {
+      "ru": "В простой полевой задаче Роуэн намеренно убирает один привычный инструмент. Первые несколько решений сводятся к поиску замены, но он просит начать заново и назвать саму задачу: удержать, отметить, перенести, измерить. Как только цель сформулирована отдельно от инструмента, появляются более простые варианты. «Снаряжение помогает, — говорит он. — Зависимость делает тебя слепее».",
+      "en": "In a simple field exercise Rowan deliberately removes one familiar tool. Your first few solutions are all attempts to replace it, but he asks you to start over and name the task itself: secure, mark, carry, measure. Once the goal is separated from the tool, simpler options appear. “Equipment helps,” he says. “Dependence makes you less observant.”"
+    },
+    "school.depth.field_craft.route_by_purpose.title": {
+      "ru": "Маршрут зависит от задачи",
+      "en": "The route depends on the purpose"
+    },
+    "school.depth.field_craft.route_by_purpose.body": {
+      "ru": "На схеме три пути: самый короткий, самый безопасный и тот, с которого проще всего отступить. Роуэн принимает любой выбор, пока ты можешь объяснить, для какой цели он хорош и в какой момент перестанет быть хорошим. Упражнение заканчивается не «правильной дорогой», а привычкой заранее знать, что именно ты пытаешься сохранить: время, силы, обзор или возможность вернуться.",
+      "en": "The map offers three paths: the shortest, the safest, and the easiest to retreat from. Rowan accepts any choice as long as you can explain what purpose it serves and when it would stop serving it. The exercise ends not with a “correct road” but with the habit of knowing what you are trying to preserve: time, strength, visibility, or the ability to turn back."
+    },
+    "school.depth.field_craft.field_note.title": {
+      "ru": "Запись, полезная вне класса",
+      "en": "A note useful outside the classroom"
+    },
+    "school.depth.field_craft.field_note.body": {
+      "ru": "Роуэн просматривает твой короткий полевой отчёт и вычёркивает почти все прилагательные. Остаются ориентиры, расстояния, запасной путь и две вещи, которые нужно проверить на месте. Он не называет это допуском к экспедиции и не открывает новую тропу. Просто говорит, что хорошая запись помогает человеку действовать там, где тебя рядом уже не будет.",
+      "en": "Rowan reads your short field report and crosses out almost every adjective. What remains are landmarks, distances, a fallback path, and two things that must be checked on site. He does not call it permission to join an expedition or use it to open a new route. He only says that a good note helps someone act where you will no longer be standing beside them."
+    },
+    "school.depth.physical_training.repeatable_form.title": {
+      "ru": "Сила, которую можно повторить",
+      "en": "Strength you can repeat"
+    },
+    "school.depth.physical_training.repeatable_form.body": {
+      "ru": "Тован останавливает упражнение в тот момент, когда ты уже почти гордишься скоростью. Он просит начать заново медленнее и сделать каждое движение одинаковым. Второй подход выглядит менее эффектно, зато последний повтор не рассыпается. «Если техника исчезает вместе со свежими силами, — говорит Тован, — это пока не техника».",
+      "en": "Tovan stops the drill just as you are beginning to feel proud of your speed. He asks you to begin again more slowly and make every repetition look the same. The second set is less dramatic, but the final movement does not fall apart. “If your form disappears with your freshness,” Tovan says, “it is not really form yet.”"
+    },
+    "school.depth.physical_training.pace_the_set.title": {
+      "ru": "Не тратить всё в первой минуте",
+      "en": "Do not spend everything in the first minute"
+    },
+    "school.depth.physical_training.pace_the_set.body": {
+      "ru": "Тован задаёт ровный темп и запрещает ускоряться на лёгкой части упражнения. Сначала ограничение раздражает, но к концу становится понятно, зачем оно было нужно: у тебя остаётся достаточно сил, чтобы сохранить координацию. Он называет это не осторожностью, а умением распределять усилие так, чтобы задача действительно была закончена.",
+      "en": "Tovan sets a steady pace and forbids you to speed up during the easy part of the drill. At first the restraint is irritating, but by the end its purpose is obvious: you still have enough strength to keep your coordination. He calls it not caution but the ability to distribute effort so the task is actually completed."
+    },
+    "school.depth.physical_training.alignment_before_force.title": {
+      "ru": "Сначала направление, потом усилие",
+      "en": "Direction before force"
+    },
+    "school.depth.physical_training.alignment_before_force.body": {
+      "ru": "С утяжелённым шестом Тован просит тебя не поднимать больше, а двигаться чище. Небольшой поворот стопы и положение плеч внезапно делают упражнение легче. Он не делает из этого магии: просто показывает, сколько лишней работы появляется, когда тело тянет в разные стороны. Сила становится полезнее, когда ей не приходится спорить с собственной механикой.",
+      "en": "With a weighted pole, Tovan asks you not to lift more but to move more cleanly. A small adjustment to your foot and shoulder position suddenly makes the exercise feel lighter. He makes no mystery of it: he simply shows how much extra work appears when the body pulls against itself. Strength becomes more useful when it does not have to fight its own mechanics."
+    },
+    "school.depth.physical_training.consistency.title": {
+      "ru": "Одинаково хорошо в конце",
+      "en": "Still clean at the end"
+    },
+    "school.depth.physical_training.consistency.body": {
+      "ru": "На последнем круге Тован почти не смотрит на первые повторения. Его интересует, что происходит, когда усталость уже мешает. Ты замедляешься сама, сохраняешь форму и заканчиваешь без показного рывка. Он отмечает не рекорд и не «сданное испытание», а привычку выбирать качество движения даже тогда, когда проще впечатлить одним последним усилием.",
+      "en": "On the final round, Tovan barely watches the first repetitions. He is interested in what happens once fatigue begins to interfere. You slow yourself down, keep your form, and finish without a theatrical burst. He notes no record and declares no test passed; what matters is the habit of choosing movement quality even when one last show of effort would be easier."
+    },
+    "school.depth.arts_and_performance.commit_to_intention.title": {
+      "ru": "Выбрать намерение",
+      "en": "Choose the intention"
+    },
+    "school.depth.arts_and_performance.commit_to_intention.body": {
+      "ru": "Несса останавливает репетицию на жесте, который одновременно хочет быть и шуткой, и угрозой, и приглашением. Она просит выбрать одно намерение, довести его почти до преувеличения и только потом сделать тоньше. Когда движение наконец становится ясным, оно неожиданно выглядит естественнее. «Зритель может не согласиться с тобой, — говорит Несса, — но он должен понимать, что ты решила сказать».",
+      "en": "Nessa stops the rehearsal on a gesture that seems to want to be a joke, a warning, and an invitation all at once. She asks you to choose one intention, exaggerate it almost to the point of absurdity, and only then make it subtler. Once the movement becomes clear, it unexpectedly looks more natural. “The audience may disagree with you,” Nessa says, “but they should understand what you decided to say.”"
+    },
+    "school.depth.arts_and_performance.tempo_changes_scene.title": {
+      "ru": "Три темпа, три смысла",
+      "en": "Three tempos, three meanings"
+    },
+    "school.depth.arts_and_performance.tempo_changes_scene.body": {
+      "ru": "Одна и та же короткая фраза звучит на трёх скоростях. В быстром темпе она становится дерзкой, в медленном — тяжёлой, в среднем — почти будничной. Несса не даёт назвать один вариант «правильным»: вместо этого спрашивает, какой результат нужен сцене. Темп превращается из украшения в решение.",
+      "en": "The same short phrase is performed at three speeds. Fast, it becomes bold; slow, it becomes heavy; at a middle pace, almost ordinary. Nessa refuses to call any version “correct.” Instead she asks what result the scene needs. Tempo stops being decoration and becomes a decision."
+    },
+    "school.depth.arts_and_performance.make_pattern_yours.title": {
+      "ru": "Из чужого рисунка в свой",
+      "en": "From an old pattern to your own"
+    },
+    "school.depth.arts_and_performance.make_pattern_yours.body": {
+      "ru": "Несса даёт тебе старую последовательность движений и просит изменить только один элемент, не разрушая ритм. Первая попытка выглядит как случайная вставка. Во второй изменение начинает отвечать на то, что было до него. К третьей схема всё ещё узнаваема, но уже звучит твоим голосом. Несса кивает: творчество часто начинается не с пустого листа, а с осмысленного изменения.",
+      "en": "Nessa gives you an older movement pattern and asks you to change only one element without breaking the rhythm. The first attempt looks like a random insertion. In the second, the change begins to answer what came before it. By the third, the structure is still recognizable but already sounds like your voice. Nessa nods: creativity often begins not with a blank page, but with a deliberate change."
+    },
+    "school.depth.arts_and_performance.partner_cue.title": {
+      "ru": "Услышать партнёра до своей реплики",
+      "en": "Hear your partner before your cue"
+    },
+    "school.depth.arts_and_performance.partner_cue.body": {
+      "ru": "На совместной репетиции ты впервые не ждёшь своей реплики как сигнала к началу. Ты замечаешь, как партнёр меняет дыхание и темп, и входишь чуть иначе, не ломая сцену. Несса после этого почти ничего не говорит. Она только отмечает, что выступление стало общим раньше, чем кто-то объявил тебя готовой к чему-либо. Никакого статуса это не присваивает — просто появляется привычка работать не только «на публику», но и с людьми рядом.",
+      "en": "During a paired rehearsal, for the first time you do not wait for your own line as the signal to begin. You notice your partner change breath and pace, and you enter a little differently without breaking the scene. Nessa says almost nothing afterward. She only notes that the performance became shared before anyone declared you ready for anything. It grants no status; it simply marks a habit of working not only toward an audience, but with the people beside you."
+    },
+    "school.depth.body_confidence.release_tension.title": {
+      "ru": "Не поза, а устойчивость",
+      "en": "Not a pose, but steadiness"
+    },
+    "school.depth.body_confidence.release_tension.body": {
+      "ru": "Сера просит тебя просто встать так, как удобно, и найти места, где тело удерживает напряжение без причины. Плечи опускаются, дыхание становится ровнее, вес распределяется спокойнее. Она не требует выглядеть «впечатляюще». Уверенность в этом упражнении начинается с ощущения, что ты не обязана бороться с собственным телом, чтобы занять место.",
+      "en": "Sera asks you simply to stand in a comfortable way and notice where your body is holding tension for no useful reason. Your shoulders lower, your breathing settles, and your weight distributes more evenly. She does not ask you to look “impressive.” In this exercise, confidence begins with the feeling that you do not have to fight your own body in order to take up space."
+    },
+    "school.depth.body_confidence.care_for_yourself.title": {
+      "ru": "Уход без воображаемой публики",
+      "en": "Care without an imagined audience"
+    },
+    "school.depth.body_confidence.care_for_yourself.body": {
+      "ru": "Обычная последовательность ухода превращается у Серы в упражнение на выбор. Она просит разделить шаги на те, после которых тебе действительно удобнее и собраннее, и те, которые ты выполняешь только потому, что представляешь чужую оценку. Несколько привычек остаются, несколько отпадают. Результат выглядит не «идеальнее», зато ощущается твоим.",
+      "en": "A familiar grooming routine becomes an exercise in choice under Sera's direction. She asks you to separate the steps that genuinely leave you more comfortable and prepared from the ones you perform only because you imagine someone else's judgment. Some habits stay and some fall away. The result looks no more “perfect,” but it feels more like yours."
+    },
+    "school.depth.body_confidence.boundary_in_practice.title": {
+      "ru": "Ясная граница без извинений",
+      "en": "A clear boundary without apology"
+    },
+    "school.depth.body_confidence.boundary_in_practice.body": {
+      "ru": "Сера разыгрывает несколько безобидных социальных ситуаций, где от тебя ждут слишком близкого шага, лишнего прикосновения или согласия на неудобную форму подачи. Задача — отказаться ясно, не превращая отказ ни в нападение, ни в длинное оправдание. После нескольких попыток фраза становится короче, а голос — спокойнее. «Граница не обязана быть драмой, чтобы быть настоящей», — говорит Сера.",
+      "en": "Sera runs through several harmless social scenarios in which someone expects you to step too close, accept an unnecessary touch, or agree to a form of presentation that makes you uncomfortable. The exercise is to refuse clearly without turning the refusal into either an attack or a long apology. After several attempts, the sentence becomes shorter and your voice steadier. “A boundary does not have to become a drama to be real,” Sera says."
+    },
+    "school.depth.body_confidence.deliberate_presence.title": {
+      "ru": "Выбор, который не нужно защищать",
+      "en": "A choice that needs no defense"
+    },
+    "school.depth.body_confidence.deliberate_presence.body": {
+      "ru": "Сера предлагает несколько вариантов одежды и подачи и просит выбрать тот, который кажется намеренным именно сегодня. Ты выбираешь, объясняешь причину одним предложением и останавливаешься — без попытки угадать, какой ответ она считает лучшим. Сера отмечает не смелость и не привлекательность, а спокойствие решения. Никакого нового допуска или отдельной «похоти» это не создаёт: это остаётся навыком осознанной самопрезентации.",
+      "en": "Sera offers several options for dress and presentation and asks you to choose the one that feels intentional today. You choose, give one sentence of explanation, and stop there—without trying to guess which answer she prefers. Sera notes neither boldness nor attractiveness, but the steadiness of the decision. It grants no new access and creates no separate “lust” state; it remains a skill of deliberate self-presentation."
     }
   }
 }
