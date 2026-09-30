@@ -3325,6 +3325,62 @@
     "presentation.poverty.depth.poverty-street-production-v2-helpful-summer-shade.late-shade.g.text": {
       "ru": "Тебя замечают в тени и предлагают коротко помочь до закрытия. Можно согласиться ради небольшого заработка или остаться отдыхать; ни один выбор не превращает случайную встречу в обязанность, карьеру или отношения.",
       "en": "Someone notices you in the shade and offers a short task before closing. You can take it for a little money or keep resting; neither choice turns the chance meeting into an obligation, career, or relationship."
+    },
+    "presentation.activity.forest.logging-road-depth.spring.meltwater.text": {
+      "ru": "Весной лесовозная дорога держит направление лучше троп, но талая вода собирается в глубоких колеях. Ты обходишь самые тёмные лужи по краю и сверяешь путь по свежим следам работ, не меняя сам маршрут.",
+      "en": "In spring, the logging road holds its direction better than the trails, but meltwater gathers in the deep ruts. You skirt the darkest pools and check the route against fresh signs of work without changing the route itself."
+    },
+    "presentation.activity.forest.logging-road-depth.summer.cut-branches.text": {
+      "ru": "Летом свежие срезы на ветках почти скрываются под новой листвой. Ты держишься широкой дороги, отмечаешь недавние повороты техники и не принимаешь боковые просеки за отдельные пути.",
+      "en": "In summer, fresh cuts on branches nearly disappear beneath new leaves. You stay on the broad road, note recent machinery turns, and do not mistake side clearings for separate routes."
+    },
+    "presentation.activity.forest.logging-road-depth.autumn.leaf-ruts.text": {
+      "ru": "Осенью листья заполняют старые колеи и делают дорогу ровнее на вид, чем она есть. Ты читаешь путь по краям колёсных следов, пням и меткам на стволах, сохраняя рабочее направление.",
+      "en": "In autumn, leaves fill the old ruts and make the road look smoother than it is. You read the route from the edges of wheel tracks, stumps, and marks on trunks, keeping the work direction."
+    },
+    "presentation.activity.forest.logging-road-depth.winter.frozen-ruts.text": {
+      "ru": "Зимой колеи замерзают и становятся жёсткими ориентирами, но скользкими местами для шага. Ты идёшь между ними, проверяя редкие рабочие знаки там, где снег закрывает свежие следы.",
+      "en": "In winter, the ruts freeze into hard landmarks but slippery footing. You walk between them, checking the sparse work signs where snow has covered the fresher tracks."
+    },
+    "presentation.activity.forest.old-boundary-depth.spring.wet-stones.text": {
+      "ru": "Весной вода собирается у межевых камней и подчёркивает старую линию пути. Ты сверяешь мокрые выступы и выцветшие отметки по одному, не меняя условий доступа к тропе.",
+      "en": "In spring, water gathers around the boundary stones and makes the old route line easier to see. You check the wet stones and faded marks one by one without changing the route's access conditions."
+    },
+    "presentation.activity.forest.old-boundary-depth.summer.hidden-markers.text": {
+      "ru": "Летом трава и молодые ветви скрывают часть старых знаков. Ты ищешь следующий камень там, где линия уже известна, и не превращаешь густую зелень в новый маршрут или испытание.",
+      "en": "In summer, grass and young branches hide some of the old signs. You look for the next stone where the line is already known, without turning the dense growth into a new route or challenge."
+    },
+    "presentation.activity.forest.old-boundary-depth.autumn.marker-line.text": {
+      "ru": "Осенью опавшие листья открывают края камней и старые зарубки на нижних стволах. Межа снова складывается в заметную линию, отдельную от следов современной лесозаготовки.",
+      "en": "In autumn, fallen leaves reveal the edges of stones and old cuts low on the trunks. The boundary forms a visible line again, separate from the signs of modern logging."
+    },
+    "presentation.activity.forest.old-boundary-depth.winter.stone-line.text": {
+      "ru": "Зимой снег делает камни похожими друг на друга, но их расстояние всё ещё выдаёт старую межу. Ты идёшь от одного ориентира к следующему и не предполагаешь новых возможностей только из-за сезона.",
+      "en": "In winter, snow makes the stones look alike, but their spacing still reveals the old boundary. You move from one landmark to the next without assuming any new capability just because of the season."
+    },
+    "presentation.activity.forest.success-depth.clear-pattern.text": {
+      "ru": "Отдельные наблюдения наконец складываются в понятную последовательность: где проходит путь, какие отметки повторяются и где прежняя версия не сходилась с местностью. Это остаётся тем же подтверждённым лесным результатом.",
+      "en": "The separate observations finally form a clear sequence: where the route runs, which markers repeat, and where the earlier account did not match the ground. It remains the same confirmed Forest result."
+    },
+    "presentation.activity.forest.success-depth.route-record.text": {
+      "ru": "Запись маршрута теперь достаточно точна, чтобы другой человек смог проверить её по тем же ориентирам. Ты не объявляешь новых открытий — только приводишь успешный результат в форму, пригодную для рабочего разговора.",
+      "en": "The route record is now precise enough for another person to check it against the same landmarks. You claim no new discovery—only put the successful result into a form useful for a work discussion."
+    },
+    "presentation.activity.forest.escape-depth.partial-notes.text": {
+      "ru": "В записях остаются полезные наблюдения, но они не складываются в подтверждённый ответ. Ты сохраняешь их как часть незавершённой вылазки, не создавая из частичного материала успешный результат.",
+      "en": "The notes still contain useful observations, but they do not form a confirmed answer. You keep them as part of an unfinished expedition without turning partial material into a successful result."
+    },
+    "presentation.activity.forest.escape-depth.unfinished-route.text": {
+      "ru": "Маршрут пройден не до конца, и именно это остаётся главным фактом возвращения. Ты можешь объяснить, где остановилась, но существующая ветка не превращает такой исход в карьерное продолжение.",
+      "en": "The route was not completed, and that remains the central fact of the return. You can explain where you stopped, but the existing branch does not turn this outcome into career progression."
+    },
+    "presentation.activity.forest.failure-depth.no-confirmation.text": {
+      "ru": "Собранные приметы противоречат друг другу, а сил на повторную проверку не осталось. Ты возвращаешься без подтверждения, не записывая сомнение как знание и не открывая скрытое продолжение.",
+      "en": "The collected signs contradict one another, and there is no endurance left for another check. You return without confirmation, neither recording uncertainty as knowledge nor opening a hidden continuation."
+    },
+    "presentation.activity.forest.failure-depth.not-escape.text": {
+      "ru": "Это не тот случай, когда ты вовремя решила остановиться: маршрут пришлось прекратить после того, как продолжение стало невозможным. Неудача остаётся отдельной от добровольного отхода и не получает успеховых карьерных фактов.",
+      "en": "This is not a case of choosing to stop in time: the route had to end after continuing became impossible. Failure remains separate from voluntary retreat and receives none of the success career facts."
     }
   }
 }
