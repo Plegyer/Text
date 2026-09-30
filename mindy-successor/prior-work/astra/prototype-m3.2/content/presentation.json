@@ -763,6 +763,86 @@
         "alt": "Сложенные брёвна и рабочие инструменты обозначают решение остаться в лесной артели без изменения карьерных условий.",
         "altKey": "presentation.static.ending.lumber-stay.alt"
       }
+    },
+    "location/town/event/poverty-street-production-v2-helpful-summer-shade/market-closing": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/poverty-street-helpful-summer.svg",
+        "alt": "Летняя небогатая улица у закрывающегося рынка, используемая как статичная сцена для короткой помощи у прилавков.",
+        "altKey": "presentation.prepared.location.town.event.poverty-street-production-v2-helpful-summer-shade.market-closing.alt"
+      }
+    },
+    "location/town/event/poverty-street-production-v2-helpful-summer-shade/late-shade": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/poverty-street-helpful-summer.svg",
+        "alt": "Летняя небогатая улица с тенью от навесов, используемая как статичная сцена для спокойной уличной помощи.",
+        "altKey": "presentation.prepared.location.town.event.poverty-street-production-v2-helpful-summer-shade.late-shade.alt"
+      }
+    },
+    "location/town/event/poverty-street-production-v2-neutral-autumn-crossing/drizzle": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/poverty-street-neutral-autumn.svg",
+        "alt": "Спокойная осенняя улица с укрытиями у домов, используемая как статичная сцена для перехода во время мороси.",
+        "altKey": "presentation.prepared.location.town.event.poverty-street-production-v2-neutral-autumn-crossing.drizzle.alt"
+      }
+    },
+    "location/town/event/poverty-street-production-v2-neutral-autumn-crossing/dry-arcade": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/poverty-street-neutral-autumn.svg",
+        "alt": "Спокойная осенняя улица с крытым проходом, используемая как статичная сцена для сухого укрытия под аркадой.",
+        "altKey": "presentation.prepared.location.town.event.poverty-street-production-v2-neutral-autumn-crossing.dry-arcade.alt"
+      }
+    },
+    "location/town/event/poverty-street-production-v2-pressure-winter-wind/crosswind": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/poverty-street-pressure-winter.svg",
+        "alt": "Холодная зимняя улица без показа механического штрафа, используемая как статичная сцена для сильного бокового ветра.",
+        "altKey": "presentation.prepared.location.town.event.poverty-street-production-v2-pressure-winter-wind.crosswind.alt"
+      }
+    },
+    "location/town/event/poverty-street-production-v2-pressure-winter-wind/long-gusts": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/poverty-street-pressure-winter.svg",
+        "alt": "Холодная зимняя улица без показа механического штрафа, используемая как статичная сцена для долгих порывов ветра.",
+        "altKey": "presentation.prepared.location.town.event.poverty-street-production-v2-pressure-winter-wind.long-gusts.alt"
+      }
+    },
+    "location/town/event/poverty-cheap-production-v2-shared-room-seasons/spring-window": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/poverty-cheap-lodging.svg",
+        "alt": "Простая дешёвая общая комната, используемая как нейтральный статичный фон для весенней сцены у окна.",
+        "altKey": "presentation.prepared.location.town.event.poverty-cheap-production-v2-shared-room-seasons.spring-window.alt"
+      }
+    },
+    "location/town/event/poverty-cheap-production-v2-shared-room-seasons/summer-heat": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/poverty-cheap-lodging.svg",
+        "alt": "Простая дешёвая общая комната, используемая как нейтральный статичный фон для летней духоты.",
+        "altKey": "presentation.prepared.location.town.event.poverty-cheap-production-v2-shared-room-seasons.summer-heat.alt"
+      }
+    },
+    "location/town/event/poverty-cheap-production-v2-shared-room-seasons/winter-stove": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/poverty-cheap-lodging.svg",
+        "alt": "Простая дешёвая общая комната, используемая как нейтральный статичный фон для зимней сцены у печи.",
+        "altKey": "presentation.prepared.location.town.event.poverty-cheap-production-v2-shared-room-seasons.winter-stove.alt"
+      }
+    },
+    "location/town/event/poverty-cheap-production-v2-shared-room-seasons/shared-room": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/poverty-cheap-lodging.svg",
+        "alt": "Простая дешёвая общая комната с минимальной обстановкой, используемая как нейтральный статичный фон бытовой сцены.",
+        "altKey": "presentation.prepared.location.town.event.poverty-cheap-production-v2-shared-room-seasons.shared-room.alt"
+      }
     }
   }
 }

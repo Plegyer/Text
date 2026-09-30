@@ -219,8 +219,7 @@
       "state": "current-exact",
       "fallbackId": "location/town/default",
       "altKey": "presentation.static.poverty-street-helpful-summer.alt",
-      "captionKey": "presentation.static.poverty-street-helpful-summer.caption",
-      "accessibility": null
+      "captionKey": "presentation.static.poverty-street-helpful-summer.caption"
     },
     {
       "presentationId": "location/town/event/poverty-street-production-neutral-autumn/default",
@@ -228,8 +227,7 @@
       "state": "current-exact",
       "fallbackId": "location/town/default",
       "altKey": "presentation.static.poverty-street-neutral-autumn.alt",
-      "captionKey": "presentation.static.poverty-street-neutral-autumn.caption",
-      "accessibility": null
+      "captionKey": "presentation.static.poverty-street-neutral-autumn.caption"
     },
     {
       "presentationId": "location/town/event/poverty-street-production-pressure-winter/default",
@@ -237,8 +235,7 @@
       "state": "current-exact",
       "fallbackId": "location/town/default",
       "altKey": "presentation.static.poverty-street-pressure-winter.alt",
-      "captionKey": "presentation.static.poverty-street-pressure-winter.caption",
-      "accessibility": null
+      "captionKey": "presentation.static.poverty-street-pressure-winter.caption"
     },
     {
       "presentationId": "location/town/event/poverty-cheap-production-shared-quiet-autumn/default",
@@ -246,8 +243,7 @@
       "state": "current-exact",
       "fallbackId": "location/town/default",
       "altKey": "presentation.static.poverty-cheap-shared-quiet-autumn.alt",
-      "captionKey": "presentation.static.poverty-cheap-shared-quiet-autumn.caption",
-      "accessibility": null
+      "captionKey": "presentation.static.poverty-cheap-shared-quiet-autumn.caption"
     },
     {
       "presentationId": "location/town/event/poverty-recovery-production-small-coin-help/default",
@@ -255,8 +251,7 @@
       "state": "current-exact",
       "fallbackId": "location/town/default",
       "altKey": "presentation.static.poverty-recovery-small-coin-help.alt",
-      "captionKey": "presentation.static.poverty-recovery-small-coin-help.caption",
-      "accessibility": null
+      "captionKey": "presentation.static.poverty-recovery-small-coin-help.caption"
     },
     {
       "presentationId": "location/town/event/poverty-recovery-production-short-cleanup/default",
@@ -264,8 +259,7 @@
       "state": "current-exact",
       "fallbackId": "location/town/default",
       "altKey": "presentation.static.poverty-recovery-short-cleanup.alt",
-      "captionKey": "presentation.static.poverty-recovery-short-cleanup.caption",
-      "accessibility": null
+      "captionKey": "presentation.static.poverty-recovery-short-cleanup.caption"
     },
     {
       "presentationId": "location/town/event/poverty-recovery-production-herb-bundle/default",
@@ -273,8 +267,7 @@
       "state": "current-exact",
       "fallbackId": "location/town/default",
       "altKey": "presentation.static.poverty-recovery-herb-bundle.alt",
-      "captionKey": "presentation.static.poverty-recovery-herb-bundle.caption",
-      "accessibility": null
+      "captionKey": "presentation.static.poverty-recovery-herb-bundle.caption"
     },
     {
       "presentationId": "location/town/event/poverty-pressure-production-cold-rain/default",
@@ -282,8 +275,7 @@
       "state": "current-exact",
       "fallbackId": "location/town/default",
       "altKey": "presentation.static.poverty-pressure-cold-rain.alt",
-      "captionKey": "presentation.static.poverty-pressure-cold-rain.caption",
-      "accessibility": null
+      "captionKey": "presentation.static.poverty-pressure-cold-rain.caption"
     },
     {
       "presentationId": "location/town/event/poverty-pressure-production-noisy-loading/default",
@@ -291,8 +283,7 @@
       "state": "current-exact",
       "fallbackId": "location/town/default",
       "altKey": "presentation.static.poverty-pressure-noisy-loading.alt",
-      "captionKey": "presentation.static.poverty-pressure-noisy-loading.caption",
-      "accessibility": null
+      "captionKey": "presentation.static.poverty-pressure-noisy-loading.caption"
     },
     {
       "presentationId": "location/town/event/poverty-pressure-production-muddy-splash/default",
@@ -300,188 +291,87 @@
       "state": "current-exact",
       "fallbackId": "location/town/default",
       "altKey": "presentation.static.poverty-pressure-muddy-splash.alt",
-      "captionKey": "presentation.static.poverty-pressure-muddy-splash.caption",
-      "accessibility": null
+      "captionKey": "presentation.static.poverty-pressure-muddy-splash.caption"
     },
     {
       "presentationId": "location/town/event/poverty-street-production-v2-helpful-summer-shade/market-closing",
       "sourceAsset": "assets/presentation/poverty-street-helpful-summer.svg",
-      "state": "prepared-from-v5",
+      "state": "current-exact",
       "fallbackId": "location/town/default",
       "altKey": "presentation.prepared.location.town.event.poverty-street-production-v2-helpful-summer-shade.market-closing.alt",
-      "captionKey": "presentation.prepared.location.town.event.poverty-street-production-v2-helpful-summer-shade.market-closing.caption",
-      "accessibility": {
-        "alt": {
-          "ru": "Летняя небогатая улица у закрывающегося рынка, используемая как статичная сцена для короткой помощи у прилавков.",
-          "en": "A modest summer street by a closing market, used as a static scene for a short helping task near the stalls."
-        },
-        "caption": {
-          "ru": "Летняя улица: помощь у закрывающегося рынка.",
-          "en": "Summer street: helping near a closing market."
-        }
-      }
+      "captionKey": "presentation.prepared.location.town.event.poverty-street-production-v2-helpful-summer-shade.market-closing.caption"
     },
     {
       "presentationId": "location/town/event/poverty-street-production-v2-helpful-summer-shade/late-shade",
       "sourceAsset": "assets/presentation/poverty-street-helpful-summer.svg",
-      "state": "prepared-from-v5",
+      "state": "current-exact",
       "fallbackId": "location/town/default",
       "altKey": "presentation.prepared.location.town.event.poverty-street-production-v2-helpful-summer-shade.late-shade.alt",
-      "captionKey": "presentation.prepared.location.town.event.poverty-street-production-v2-helpful-summer-shade.late-shade.caption",
-      "accessibility": {
-        "alt": {
-          "ru": "Летняя небогатая улица с тенью от навесов, используемая как статичная сцена для спокойной уличной помощи.",
-          "en": "A modest summer street shaded by awnings, used as a static scene for a calm helping moment outdoors."
-        },
-        "caption": {
-          "ru": "Летняя улица: поздняя тень у навесов.",
-          "en": "Summer street: late shade beneath the awnings."
-        }
-      }
+      "captionKey": "presentation.prepared.location.town.event.poverty-street-production-v2-helpful-summer-shade.late-shade.caption"
     },
     {
       "presentationId": "location/town/event/poverty-street-production-v2-neutral-autumn-crossing/drizzle",
       "sourceAsset": "assets/presentation/poverty-street-neutral-autumn.svg",
-      "state": "prepared-from-v5",
+      "state": "current-exact",
       "fallbackId": "location/town/default",
       "altKey": "presentation.prepared.location.town.event.poverty-street-production-v2-neutral-autumn-crossing.drizzle.alt",
-      "captionKey": "presentation.prepared.location.town.event.poverty-street-production-v2-neutral-autumn-crossing.drizzle.caption",
-      "accessibility": {
-        "alt": {
-          "ru": "Спокойная осенняя улица с укрытиями у домов, используемая как статичная сцена для перехода во время мороси.",
-          "en": "A calm autumn street with shelter along the buildings, used as a static scene for crossing during drizzle."
-        },
-        "caption": {
-          "ru": "Осенняя улица: переход под моросящим дождём.",
-          "en": "Autumn street: crossing in light drizzle."
-        }
-      }
+      "captionKey": "presentation.prepared.location.town.event.poverty-street-production-v2-neutral-autumn-crossing.drizzle.caption"
     },
     {
       "presentationId": "location/town/event/poverty-street-production-v2-neutral-autumn-crossing/dry-arcade",
       "sourceAsset": "assets/presentation/poverty-street-neutral-autumn.svg",
-      "state": "prepared-from-v5",
+      "state": "current-exact",
       "fallbackId": "location/town/default",
       "altKey": "presentation.prepared.location.town.event.poverty-street-production-v2-neutral-autumn-crossing.dry-arcade.alt",
-      "captionKey": "presentation.prepared.location.town.event.poverty-street-production-v2-neutral-autumn-crossing.dry-arcade.caption",
-      "accessibility": {
-        "alt": {
-          "ru": "Спокойная осенняя улица с крытым проходом, используемая как статичная сцена для сухого укрытия под аркадой.",
-          "en": "A calm autumn street with a covered passage, used as a static scene for dry shelter beneath an arcade."
-        },
-        "caption": {
-          "ru": "Осенняя улица: сухое укрытие под аркадой.",
-          "en": "Autumn street: dry shelter beneath the arcade."
-        }
-      }
+      "captionKey": "presentation.prepared.location.town.event.poverty-street-production-v2-neutral-autumn-crossing.dry-arcade.caption"
     },
     {
       "presentationId": "location/town/event/poverty-street-production-v2-pressure-winter-wind/crosswind",
       "sourceAsset": "assets/presentation/poverty-street-pressure-winter.svg",
-      "state": "prepared-from-v5",
+      "state": "current-exact",
       "fallbackId": "location/town/default",
       "altKey": "presentation.prepared.location.town.event.poverty-street-production-v2-pressure-winter-wind.crosswind.alt",
-      "captionKey": "presentation.prepared.location.town.event.poverty-street-production-v2-pressure-winter-wind.crosswind.caption",
-      "accessibility": {
-        "alt": {
-          "ru": "Холодная зимняя улица без показа механического штрафа, используемая как статичная сцена для сильного бокового ветра.",
-          "en": "A cold winter street without depicting a mechanical penalty, used as a static scene for strong crosswind."
-        },
-        "caption": {
-          "ru": "Зимняя улица: сильный боковой ветер.",
-          "en": "Winter street: strong crosswind."
-        }
-      }
+      "captionKey": "presentation.prepared.location.town.event.poverty-street-production-v2-pressure-winter-wind.crosswind.caption"
     },
     {
       "presentationId": "location/town/event/poverty-street-production-v2-pressure-winter-wind/long-gusts",
       "sourceAsset": "assets/presentation/poverty-street-pressure-winter.svg",
-      "state": "prepared-from-v5",
+      "state": "current-exact",
       "fallbackId": "location/town/default",
       "altKey": "presentation.prepared.location.town.event.poverty-street-production-v2-pressure-winter-wind.long-gusts.alt",
-      "captionKey": "presentation.prepared.location.town.event.poverty-street-production-v2-pressure-winter-wind.long-gusts.caption",
-      "accessibility": {
-        "alt": {
-          "ru": "Холодная зимняя улица без показа механического штрафа, используемая как статичная сцена для долгих порывов ветра.",
-          "en": "A cold winter street without depicting a mechanical penalty, used as a static scene for long gusts of wind."
-        },
-        "caption": {
-          "ru": "Зимняя улица: долгие порывы ветра.",
-          "en": "Winter street: long gusts of wind."
-        }
-      }
+      "captionKey": "presentation.prepared.location.town.event.poverty-street-production-v2-pressure-winter-wind.long-gusts.caption"
     },
     {
       "presentationId": "location/town/event/poverty-cheap-production-v2-shared-room-seasons/spring-window",
       "sourceAsset": "assets/presentation/poverty-cheap-lodging.svg",
-      "state": "prepared-from-v5",
+      "state": "current-exact",
       "fallbackId": "location/town/default",
       "altKey": "presentation.prepared.location.town.event.poverty-cheap-production-v2-shared-room-seasons.spring-window.alt",
-      "captionKey": "presentation.prepared.location.town.event.poverty-cheap-production-v2-shared-room-seasons.spring-window.caption",
-      "accessibility": {
-        "alt": {
-          "ru": "Простая дешёвая общая комната, используемая как нейтральный статичный фон для весенней сцены у окна.",
-          "en": "A simple inexpensive shared room used as a neutral static background for the spring window scene."
-        },
-        "caption": {
-          "ru": "Дешёвое жильё: весенняя сцена у окна.",
-          "en": "Cheap lodging: a spring window scene."
-        }
-      }
+      "captionKey": "presentation.prepared.location.town.event.poverty-cheap-production-v2-shared-room-seasons.spring-window.caption"
     },
     {
       "presentationId": "location/town/event/poverty-cheap-production-v2-shared-room-seasons/summer-heat",
       "sourceAsset": "assets/presentation/poverty-cheap-lodging.svg",
-      "state": "prepared-from-v5",
+      "state": "current-exact",
       "fallbackId": "location/town/default",
       "altKey": "presentation.prepared.location.town.event.poverty-cheap-production-v2-shared-room-seasons.summer-heat.alt",
-      "captionKey": "presentation.prepared.location.town.event.poverty-cheap-production-v2-shared-room-seasons.summer-heat.caption",
-      "accessibility": {
-        "alt": {
-          "ru": "Простая дешёвая общая комната, используемая как нейтральный статичный фон для летней духоты.",
-          "en": "A simple inexpensive shared room used as a neutral static background for the summer heat scene."
-        },
-        "caption": {
-          "ru": "Дешёвое жильё: летняя духота в общей комнате.",
-          "en": "Cheap lodging: summer heat in the shared room."
-        }
-      }
+      "captionKey": "presentation.prepared.location.town.event.poverty-cheap-production-v2-shared-room-seasons.summer-heat.caption"
     },
     {
       "presentationId": "location/town/event/poverty-cheap-production-v2-shared-room-seasons/winter-stove",
       "sourceAsset": "assets/presentation/poverty-cheap-lodging.svg",
-      "state": "prepared-from-v5",
+      "state": "current-exact",
       "fallbackId": "location/town/default",
       "altKey": "presentation.prepared.location.town.event.poverty-cheap-production-v2-shared-room-seasons.winter-stove.alt",
-      "captionKey": "presentation.prepared.location.town.event.poverty-cheap-production-v2-shared-room-seasons.winter-stove.caption",
-      "accessibility": {
-        "alt": {
-          "ru": "Простая дешёвая общая комната, используемая как нейтральный статичный фон для зимней сцены у печи.",
-          "en": "A simple inexpensive shared room used as a neutral static background for the winter stove scene."
-        },
-        "caption": {
-          "ru": "Дешёвое жильё: зимняя сцена у печи.",
-          "en": "Cheap lodging: a winter stove scene."
-        }
-      }
+      "captionKey": "presentation.prepared.location.town.event.poverty-cheap-production-v2-shared-room-seasons.winter-stove.caption"
     },
     {
       "presentationId": "location/town/event/poverty-cheap-production-v2-shared-room-seasons/shared-room",
       "sourceAsset": "assets/presentation/poverty-cheap-lodging.svg",
-      "state": "prepared-from-v5",
+      "state": "current-exact",
       "fallbackId": "location/town/default",
       "altKey": "presentation.prepared.location.town.event.poverty-cheap-production-v2-shared-room-seasons.shared-room.alt",
-      "captionKey": "presentation.prepared.location.town.event.poverty-cheap-production-v2-shared-room-seasons.shared-room.caption",
-      "accessibility": {
-        "alt": {
-          "ru": "Простая дешёвая общая комната с минимальной обстановкой, используемая как нейтральный статичный фон бытовой сцены.",
-          "en": "A simple inexpensive shared room with minimal furnishings, used as a neutral static background for an everyday lodging scene."
-        },
-        "caption": {
-          "ru": "Дешёвое жильё: обычная сцена в общей комнате.",
-          "en": "Cheap lodging: an ordinary shared-room scene."
-        }
-      }
+      "captionKey": "presentation.prepared.location.town.event.poverty-cheap-production-v2-shared-room-seasons.shared-room.caption"
     }
   ],
   "schoolCourseSlots": [],
@@ -502,6 +392,14 @@
       "fallbackRequired": true,
       "ruEnAccessibilityRequired": true,
       "animationIndependent": true,
+      "gameplayMutation": false
+    },
+    "poverty": {
+      "selectedSemanticSlots": 20,
+      "exactStaticRequired": true,
+      "fallbackRequired": true,
+      "ruEnAccessibilityRequired": true,
+      "secretDebtIncluded": false,
       "gameplayMutation": false
     }
   }
