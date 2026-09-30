@@ -68,3 +68,48 @@ Conclusion:
 - C1D-50 itself does not choose or invent any unlock threshold.
 
 C1D-51 will lock the engine behavior with test-only authored conditions, not production values.
+
+
+## C1D-51 — generic late-career unlock-condition regression seam
+
+Current main already contains the exact focused regression requested by C1D-51 in `tests/starter-trio-availability.test.ts`.
+
+It proves:
+- a current late-career shift with `conditions=[]` is unavailable and dispatch is rejected;
+- a test-only authored `worldFact` condition is evaluated through the existing condition evaluator;
+- before the fact exists, availability is false and dispatch rejects;
+- after the fact exists, availability is true and dispatch executes the existing career shift;
+- no production stat/calendar/year/threshold value is selected.
+
+Disposition: CURRENT-MAIN NO-OP. No duplicate test was added.
+
+## C1D-52 — Satyr Maid Save/reload regression
+
+Added `tests/starter-career-save-reload.test.ts`.
+
+The Satyr Maid regression:
+- begins from the shipped started state;
+- dispatches current `satyr-maid.shift`;
+- proves career stage `known-face`;
+- proves `completed_shifts=1`, `shifts=1`, fact `first-shift-complete`;
+- snapshots the existing `lastAction` including the current presentation ID and selected source-scene text;
+- round-trips through existing `parseSave` twice;
+- requires exact career state and `lastAction` equality after each reload.
+
+No new progression state or Save field is added.
+
+Implementation commit: `c19b7a48118bfe8b0d9b890865baa07b898b7f6a`.
+
+## C1D-53 — Undead Farm Save/reload regression
+
+The same focused test file proves current `undead-farm.shift` survives two existing Save parse/reloads with:
+- career stage `reliable-helper`;
+- `completed_shifts=1`, `shifts=1`;
+- only current fact `first-shift-complete`;
+- exact existing `lastAction` persistence.
+
+The regression also asserts no research/specimen/successor/external career fact is introduced by the current shift.
+
+No new Farm research/progression state or Save field is added.
+
+Implementation commit: `c19b7a48118bfe8b0d9b890865baa07b898b7f6a`.
