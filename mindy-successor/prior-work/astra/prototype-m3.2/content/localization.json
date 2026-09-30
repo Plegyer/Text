@@ -3409,6 +3409,38 @@
     "school.depth.body_confidence.deliberate_presence.body": {
       "ru": "Сера предлагает несколько вариантов одежды и подачи и просит выбрать тот, который кажется намеренным именно сегодня. Ты выбираешь, объясняешь причину одним предложением и останавливаешься — без попытки угадать, какой ответ она считает лучшим. Сера отмечает не смелость и не привлекательность, а спокойствие решения. Никакого нового допуска или отдельной «похоти» это не создаёт: это остаётся навыком осознанной самопрезентации.",
       "en": "Sera offers several options for dress and presentation and asks you to choose the one that feels intentional today. You choose, give one sentence of explanation, and stop there—without trying to guess which answer she prefers. Sera notes neither boldness nor attractiveness, but the steadiness of the decision. It grants no new access and creates no separate “lust” state; it remains a skill of deliberate self-presentation."
+    },
+    "action.satyr-maid.shift.scene.spring.default.text": {
+      "ru": "Весной зал снова заполняют путешественники. Ты принимаешь простой заказ, освобождаешь край стола от мокрых плащей и успеваешь объяснить новому гостю, что сегодня подают быстрее всего. Это обычное обслуживание: короткий разговор заканчивается вместе с заказом.",
+      "en": "In spring, travellers fill the room again. You take a simple order, clear wet cloaks from the edge of a table, and tell a new guest what the kitchen can serve fastest today. It is ordinary service: the brief conversation ends with the order."
+    },
+    "action.satyr-maid.shift.scene.summer.default.text": {
+      "ru": "Летом подносы почти не успевают опустеть. Ты собираешь большой заказ сразу с двух столов, повторяешь его вслух, чтобы никто не спорил о кружках, и возвращаешься через шумный зал, пока следующая компания уже машет тебе от двери.",
+      "en": "In summer, the trays barely have time to empty. You gather one large order from two tables, repeat it back so nobody argues about the mugs, and cross the noisy room again while the next group is already waving from the door."
+    },
+    "action.satyr-maid.shift.scene.autumn.default.text": {
+      "ru": "Осенний праздник делает обычную смену тесной и громкой. Один стол просит ещё места для блюда, соседний спорит, чей заказ был первым, и тебе приходится спокойно развести поток: переставить посуду, подтвердить очередь и не дать чужой спешке стать твоей ошибкой.",
+      "en": "The autumn festival makes an ordinary shift crowded and loud. One table needs room for another dish while the next argues over whose order came first, so you keep the flow orderly: move the dishes, confirm the queue, and refuse to let someone else's rush become your mistake."
+    },
+    "action.satyr-maid.shift.scene.winter.default.text": {
+      "ru": "Зимой случайных гостей меньше, зато знакомые лица задерживаются дольше. Ты приносишь привычный заказ без лишней суеты, выслушиваешь пару бытовых замечаний о погоде и дровах и возвращаешься к работе, не превращая узнавание в обещание личной близости.",
+      "en": "In winter there are fewer passing guests, but familiar faces stay longer. You bring a usual order without fuss, hear a few ordinary remarks about the weather and firewood, and return to work without turning recognition into a promise of personal closeness."
+    },
+    "action.undead-farm.shift.scene.spring.default.text": {
+      "ru": "Весной почва тяжёлая от воды, а новые ростки ведут себя не совсем как обычные растения. Ты закрепляешь грядки, проверяешь метки на контейнерах и отмечаешь, какие побеги реагируют на магический фон сильнее остальных. Это наблюдение внутри обычной смены, а не отдельный исследовательский результат.",
+      "en": "In spring, the ground is heavy with water and the new shoots do not behave quite like ordinary plants. You brace the beds, check the marks on the containers, and note which growth reacts more strongly to the magical background. It is observation within an ordinary shift, not a separate research result."
+    },
+    "action.undead-farm.shift.scene.summer.default.text": {
+      "ru": "Летом всё растёт быстрее, чем успевают освобождаться проходы. Ты прочищаешь каналы, следишь, чтобы неживые работники не сбились с участка, и мягко гасишь слишком резкую магическую реакцию там, где она мешает уходу за растениями.",
+      "en": "In summer, everything grows faster than the paths can stay clear. You open the channels, make sure the undead workers do not drift off their assigned plots, and gently damp an overactive magical reaction where it gets in the way of ordinary crop care."
+    },
+    "action.undead-farm.shift.scene.autumn.default.text": {
+      "ru": "Осенью урожай нужно не только собрать, но и правильно разобрать. Ты отделяешь обычные партии от странных, сверяешь бирки и складываешь ящики так, чтобы позже было понятно, что созрело хорошо, а что потребует отдельного внимания.",
+      "en": "In autumn, the harvest has to be sorted as carefully as it is gathered. You separate ordinary batches from the strange ones, check the tags, and stack the crates so it will be clear later what ripened well and what needs separate attention."
+    },
+    "action.undead-farm.shift.scene.winter.default.text": {
+      "ru": "Зимой работа уходит под крышу: ремонт, хранение и проверка самых странных запасов. Ты сравниваешь старые пометки, следишь за целостностью сосудов и осторожно работаешь рядом с материалом, который лучше сначала понять, чем сразу пытаться использовать.",
+      "en": "In winter, the work moves indoors: repairs, storage, and checks on the strangest supplies. You compare old notes, inspect the containers, and work carefully around material that is better understood before anyone tries to use it."
     }
   }
 }
