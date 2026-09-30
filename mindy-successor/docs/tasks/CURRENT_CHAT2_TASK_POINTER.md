@@ -12,11 +12,13 @@ Mandatory startup:
 Current queue:
 - C2-37 through C2-48.
 
-Immediate priority:
-- C2-37 existing ending presentation inventory;
-- continue through relationships, Forest, poverty and School-teacher presentation coverage.
+Current-main resync rule:
+- PR #88 and PR #98 are now merged;
+- current main also includes the accepted starter/content/School wave #93/#97/#99/#90;
+- keep C2-37..47 work, but before C2-48 freeze refresh from current main and carry forward only new queue-v5 presentation docs/manifests/tests/assets;
+- do not re-add files already merged from #88/#98 or rewrite gameplay/runtime to resolve drift.
 
-Do not restart PR #98 / C2-25..36 or older candidates.
+Do not restart C2-01..36 or older candidates.
 
 Keep technical evidence in Git only. Personal chat output:
 - `Задание выполнено`

@@ -12,11 +12,13 @@ Mandatory startup:
 Current queue:
 - C5-37 through C5-48.
 
-Immediate priority:
-- C5-37 whole-School transfer atlas;
-- continue School reactive/localization depth across existing ordinary-career mappings.
+Current-main resync rule:
+- PR #90 and PR #99 are now merged into main;
+- continue C5-37..47 on current School identities only;
+- before C5-48 freeze refresh from current main and carry forward only new queue-v5 School docs/fixtures/tests;
+- do not duplicate merged #90/#99 files, create producer facts, thresholds, curriculum or runtime consumers.
 
-Do not restart PR #99 / C5-25..36 or older candidates.
+Do not restart C5-01..36 or older candidates.
 
 Keep technical evidence in Git only. Personal chat output:
 - `Задание выполнено`
