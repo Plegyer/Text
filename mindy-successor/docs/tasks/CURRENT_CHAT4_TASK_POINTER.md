@@ -15,12 +15,12 @@ Queue sequence:
 - then continue automatically with C4-78 through C4-89.
 
 Current v9 candidate state:
-- C4-78: PR #118, refreshed Chat 5 C5-60 candidate; gate exact current head only after green repository CI;
-- C4-79: PR #119 is still draft/blocked until Chat 1 produces a new green frozen head;
-- C4-80: PR #116 is frozen at `2e470446787db18d7aef1d16eed0c2cb2bb6a139`, repository CI #338 green, ready for QA now;
-- C4-81: PR #114 exact head was QA PASS-WITH-NOTES and is merged; do not re-gate unless its delivered payload changes.
+- C4-78: PR #118 frozen at `dbec65d3607844342a09a79549c0900860d30198`, repository CI #348 green; ready for QA now;
+- C4-79: PR #119 frozen at `8e94543ec96dc02d02a6981077759c30806b2528`, repository CI #346 green; ready for QA now;
+- C4-80: PR #116 exact head was QA PASS and is merged; do not re-gate unless delivered payload changes;
+- C4-81: PR #114 exact head was QA PASS-WITH-NOTES and is merged; do not re-gate unless delivered payload changes.
 
-When C4-78/79 are blocked, continue C4-80 and independent v8/v9 audits.
+When any candidate gate is temporarily blocked, continue independent v8/v9 audits.
 Do not report `Задания выполнены` while any assigned independent QA task is available.
 Do not implement production fixes.
 
