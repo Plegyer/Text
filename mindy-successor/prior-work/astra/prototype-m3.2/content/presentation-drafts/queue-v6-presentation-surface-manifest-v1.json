@@ -434,5 +434,21 @@
     "missingStatic": 0,
     "missingAccessibility": 0,
     "staleSelectedIds": 0
+  },
+  "forestDepth": {
+    "selectedPresentationIds": [
+      "activity/forest/route/default",
+      "activity/forest/route/logging-road",
+      "activity/forest/route/old-boundary",
+      "activity/forest/return/success",
+      "activity/forest/return/escape",
+      "activity/forest/return/failure"
+    ],
+    "exactStaticRequired": true,
+    "staticFallbackRequired": true,
+    "ruEnAltCaptionRequired": true,
+    "optionalDynamicMediaRequired": false,
+    "gameplayTimingIndependent": true,
+    "newAssetsRequired": 0
   }
 }
