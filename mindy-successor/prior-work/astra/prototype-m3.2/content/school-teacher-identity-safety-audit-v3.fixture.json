@@ -1,0 +1,102 @@
+{
+  "formatVersion": 1,
+  "id": "school.teacher-identity-safety-audit.v3",
+  "status": "CONTENT_AUDIT_ONLY",
+  "baseline": "a341303183dc277a26b3e64a61d8ed8e35c5d05f",
+  "teachers": [
+    {
+      "teacherContentId": "school.teacher.mara-fen",
+      "courseId": "school.course.literacy_and_numbers",
+      "mediaId": "school.teacher.literacy-and-numbers.classroom",
+      "educatorOnly": true
+    },
+    {
+      "teacherContentId": "school.teacher.ilyra-venn",
+      "courseId": "school.course.arcana",
+      "mediaId": "school.teacher.arcana.classroom",
+      "educatorOnly": true
+    },
+    {
+      "teacherContentId": "school.teacher.cassian-reed",
+      "courseId": "school.course.rhetoric_and_social",
+      "mediaId": "school.teacher.rhetoric-and-social.classroom",
+      "educatorOnly": true
+    },
+    {
+      "teacherContentId": "school.teacher.eliane-marrow",
+      "courseId": "school.course.etiquette_and_presentation",
+      "mediaId": "school.teacher.etiquette-and-presentation.classroom",
+      "educatorOnly": true
+    },
+    {
+      "teacherContentId": "school.teacher.rowan-pike",
+      "courseId": "school.course.field_craft",
+      "mediaId": "school.teacher.field-craft.classroom",
+      "educatorOnly": true
+    },
+    {
+      "teacherContentId": "school.teacher.tovan-kest",
+      "courseId": "school.course.physical_training",
+      "mediaId": "school.teacher.physical-training.classroom",
+      "educatorOnly": true
+    },
+    {
+      "teacherContentId": "school.teacher.nessa-lark",
+      "courseId": "school.course.arts_and_performance",
+      "mediaId": "school.teacher.arts-and-performance.classroom",
+      "educatorOnly": true
+    },
+    {
+      "teacherContentId": "school.teacher.sera-vey",
+      "courseId": "school.course.body_confidence",
+      "mediaId": "school.teacher.body-confidence.classroom",
+      "educatorOnly": true
+    }
+  ],
+  "surfaces": [
+    {
+      "surface": "production teacher media localization",
+      "exactIdentity": "exact teacher media ID",
+      "teacherSpecificWording": "SAFE_FOR_ALT_CAPTION",
+      "teacherPresenceClaim": "PRESENTATION_METADATA_ONLY"
+    },
+    {
+      "surface": "generic paid-lesson reaction",
+      "exactIdentity": "school action only",
+      "teacherSpecificWording": "UNSAFE",
+      "requiredWording": "GENERIC"
+    },
+    {
+      "surface": "paid-lesson journal",
+      "exactIdentity": "exact course label only",
+      "teacherSpecificWording": "UNSAFE",
+      "requiredWording": "COURSE_ONLY"
+    },
+    {
+      "surface": "exact Night-study reaction",
+      "exactIdentity": "exact choice/course",
+      "teacherSpecificWording": "SAFE_AS_REMEMBERED_METHOD",
+      "teacherPresenceClaim": "UNSAFE"
+    },
+    {
+      "surface": "school-target teacher presentation events",
+      "exactIdentity": "exact teacher/course authored mapping",
+      "teacherSpecificWording": "SAFE_IF_EXACTLY_ROUTED",
+      "productionStatus": "TARGET_ONLY_NOT_ROOT_PRODUCTION"
+    }
+  ],
+  "runtimeTeacherEventCount": 0,
+  "forbidden": [
+    "Infer a teacher from generic actionCompleted:school.",
+    "Claim a teacher is live/present during Night study solely from choice identity.",
+    "Write teacher relationship state.",
+    "Create a new teacher runtime event or trigger.",
+    "Attach a teacher's words to the wrong exact course identity."
+  ],
+  "constraints": {
+    "addsTeacherEvent": false,
+    "changesRuntime": false,
+    "writesRelationship": false,
+    "changesTeacherCanon": false
+  }
+}
