@@ -44,8 +44,8 @@
   ],
   "strings": {
     "presentation.poverty.recovery-v3.coins.next-choice.text": {
-      "ru": "Несколько монет не закрывают проблему целиком, но позволяют не принимать следующее решение в полной спешке. Это небольшой запас времени и вариантов, а не recovery milestone.",
-      "en": "A few coins do not solve the problem outright, but they keep the next decision from being made in complete haste. It is a small reserve of time and options, not a recovery milestone."
+      "ru": "Несколько монет не закрывают проблему целиком, но позволяют не принимать следующее решение в полной спешке. Это небольшой запас времени и вариантов, а не окончательное решение.",
+      "en": "A few coins do not solve the problem outright, but they keep the next decision from being made in complete haste. It is a small reserve of time and options, not a final solution."
     },
     "presentation.poverty.recovery-v3.cleanup.day-easier.text": {
       "ru": "После короткой уборки вечер становится чуть проще благодаря уже существующей оплате. Полезная работа закончилась вместе с задачей и не продолжается как отдельная линия занятости.",
@@ -60,12 +60,12 @@
       "en": "A night under a roof makes it possible to start the morning with drier clothes and belongings in better order. It is a local reprieve for one night, not a new permanent stage."
     },
     "presentation.poverty.recovery-v3.room.autumn-routine.text": {
-      "ru": "Несколько привычных действий перед сном возвращают ощущение порядка, хотя сама жизненная линия остаётся нестабильной. Ритуал не создаёт relationship или recovery state.",
-      "en": "A few familiar actions before sleep restore a sense of order even while the life route remains unstable. The routine creates neither relationship nor recovery state."
+      "ru": "Несколько привычных действий перед сном возвращают ощущение порядка, хотя сама жизненная линия остаётся нестабильной. Утром эта передышка может закончиться вместе с ночлегом.",
+      "en": "A few familiar actions before sleep restore a sense of order even while the life route remains unstable. By morning, that reprieve may end with the lodging."
     },
     "presentation.poverty.recovery-v3.market.brief-recognition.text": {
-      "ru": "На рынке кто-то может вспомнить тебя по прошлой мелкой помощи и кивнуть при встрече. Это человеческое узнавание без persistent contact, скидки или гарантированной следующей работы.",
-      "en": "At the market, someone may remember you from a previous small favor and nod when you meet. It is ordinary recognition with no persistent contact, discount, or guaranteed next job."
+      "ru": "На рынке кто-то может вспомнить тебя по прошлой мелкой помощи и кивнуть при встрече. Это обычное узнавание без обещания скидки, новой работы или следующей встречи.",
+      "en": "At the market, someone may remember you from a previous small favor and nod when you meet. It is ordinary recognition with no promise of a discount, new work, or another meeting."
     }
   },
   "invariants": {
