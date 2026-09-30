@@ -1,0 +1,140 @@
+{
+  "formatVersion": 1,
+  "id": "school.generic-after-school-depth-v3",
+  "status": "CONTENT_PREP_ONLY",
+  "safeTrigger": {
+    "kind": "actionCompleted",
+    "action": "school"
+  },
+  "selectedRuntimeConsumerId": null,
+  "variants": [
+    {
+      "id": "one_line",
+      "keys": {
+        "title": "school.generic_after_v3.one_line.title",
+        "body": "school.generic_after_v3.one_line.body"
+      }
+    },
+    {
+      "id": "keep_unknown",
+      "keys": {
+        "title": "school.generic_after_v3.keep_unknown.title",
+        "body": "school.generic_after_v3.keep_unknown.body"
+      }
+    },
+    {
+      "id": "clean_margin",
+      "keys": {
+        "title": "school.generic_after_v3.clean_margin.title",
+        "body": "school.generic_after_v3.clean_margin.body"
+      }
+    },
+    {
+      "id": "no_second_lesson",
+      "keys": {
+        "title": "school.generic_after_v3.no_second_lesson.title",
+        "body": "school.generic_after_v3.no_second_lesson.body"
+      }
+    },
+    {
+      "id": "two_columns",
+      "keys": {
+        "title": "school.generic_after_v3.two_columns.title",
+        "body": "school.generic_after_v3.two_columns.body"
+      }
+    },
+    {
+      "id": "good_enough",
+      "keys": {
+        "title": "school.generic_after_v3.good_enough.title",
+        "body": "school.generic_after_v3.good_enough.body"
+      }
+    },
+    {
+      "id": "next_question",
+      "keys": {
+        "title": "school.generic_after_v3.next_question.title",
+        "body": "school.generic_after_v3.next_question.body"
+      }
+    },
+    {
+      "id": "close_and_go",
+      "keys": {
+        "title": "school.generic_after_v3.close_and_go.title",
+        "body": "school.generic_after_v3.close_and_go.body"
+      }
+    }
+  ],
+  "strings": {
+    "school.generic_after_v3.one_line.title": {
+      "ru": "Одна строка перед возвращением к дню",
+      "en": "One line before returning to the day"
+    },
+    "school.generic_after_v3.one_line.body": {
+      "ru": "Ты оставляешь в тетради одну строку о том, что стоит помнить, и на этом заканчиваешь. Урок уже состоялся; последующая пауза ничего не покупает, не расходует и не начисляет повторно.",
+      "en": "You leave one line in your notes about what is worth remembering and stop there. The lesson has already happened; the follow-up pause buys, spends, and awards nothing a second time."
+    },
+    "school.generic_after_v3.keep_unknown.title": {
+      "ru": "Оставить непонятное непонятным",
+      "en": "Let the unclear stay unclear"
+    },
+    "school.generic_after_v3.keep_unknown.body": {
+      "ru": "Неясный момент получает вопросительный знак вместо поспешного ответа. Этого достаточно, чтобы вернуться к нему позже без притворной уверенности.",
+      "en": "An unclear point gets a question mark instead of a hurried answer. That is enough to return to it later without pretending certainty."
+    },
+    "school.generic_after_v3.clean_margin.title": {
+      "ru": "Освободить поле от лишнего",
+      "en": "Clear the margin"
+    },
+    "school.generic_after_v3.clean_margin.body": {
+      "ru": "Ты вычёркиваешь повторяющиеся пометки и оставляешь только то, что поможет восстановить ход мысли. Короткая запись становится полезнее, не превращаясь в дополнительное занятие.",
+      "en": "You cross out repeated notes and keep only what will help reconstruct the train of thought. The shorter record becomes more useful without turning into another lesson."
+    },
+    "school.generic_after_v3.no_second_lesson.title": {
+      "ru": "Не делать второй урок из паузы",
+      "en": "Do not make a second lesson out of the pause"
+    },
+    "school.generic_after_v3.no_second_lesson.body": {
+      "ru": "Материал можно обдумать, но не нужно добирать скрытую тренировку. Стоимость и текущая Energy уже относятся к завершённому уроку, а дальнейшая практика будет отдельным выбором.",
+      "en": "The material can be considered without smuggling in hidden practice. Tuition and current-day Energy already belong to the completed lesson; any further practice will be a separate choice."
+    },
+    "school.generic_after_v3.two_columns.title": {
+      "ru": "Что понялось и что осталось",
+      "en": "What settled and what remains"
+    },
+    "school.generic_after_v3.two_columns.body": {
+      "ru": "Страница делится на две короткие колонки: «стало яснее» и «вернуться позже». Такое резюме не требует угадывать конкретный курс или преподавателя.",
+      "en": "The page becomes two short columns: “clearer now” and “return later.” This kind of summary does not require guessing a particular course or teacher."
+    },
+    "school.generic_after_v3.good_enough.title": {
+      "ru": "Достаточно для сегодня",
+      "en": "Enough for today"
+    },
+    "school.generic_after_v3.good_enough.body": {
+      "ru": "Ты замечаешь момент, когда дальнейшее переписывание уже не добавляет ясности. На сегодня этого достаточно; завершённый урок не обязан выглядеть идеальным.",
+      "en": "You notice the point where more rewriting no longer adds clarity. That is enough for today; a completed lesson does not have to look perfect."
+    },
+    "school.generic_after_v3.next_question.title": {
+      "ru": "Следующий вопрос вместо следующего вывода",
+      "en": "A next question instead of a next conclusion"
+    },
+    "school.generic_after_v3.next_question.body": {
+      "ru": "Вместо ещё одного вывода ты формулируешь вопрос, который можно проверить на следующем занятии. Он остаётся заметкой, а не новым школьным действием.",
+      "en": "Instead of adding another conclusion, you phrase a question that can be checked in a later lesson. It remains a note, not a new School action."
+    },
+    "school.generic_after_v3.close_and_go.title": {
+      "ru": "Закрыть записи и идти дальше",
+      "en": "Close the notes and move on"
+    },
+    "school.generic_after_v3.close_and_go.body": {
+      "ru": "Ты убираешь материалы, оставляя урок завершённым там, где он завершился. Остаток дня снова принадлежит обычным делам и новым самостоятельным решениям.",
+      "en": "You put the materials away and leave the lesson completed where it ended. The rest of the day belongs again to ordinary tasks and new independent choices."
+    }
+  },
+  "mechanics": {
+    "effects": [],
+    "careerWrites": [],
+    "relationshipWrites": [],
+    "publishesWorldFacts": []
+  }
+}
