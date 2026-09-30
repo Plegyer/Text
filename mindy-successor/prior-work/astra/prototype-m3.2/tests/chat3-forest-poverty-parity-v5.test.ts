@@ -66,7 +66,7 @@ test('C3-38 Forest coverage audit matches current production IDs and RU/EN surfa
 
 test('C3-39/C3-40 route depth preserves current route IDs and Old Boundary gate',()=>{
   const activity=definitions.activities.find((entry:any)=>entry.id===manifest.expectedForest.activityId);
-  const optionById=new Map(activity.options.map((entry:any)=>[entry.id,entry]));
+  const optionById=new Map<string,any>(activity.options.map((entry:any)=>[entry.id,entry]));
   const logging=forestFixtures.find((fixture:any)=>fixture.id==='forest.logging-road-seasonal-depth.v1');
   const oldBoundary=forestFixtures.find((fixture:any)=>fixture.id==='forest.old-boundary-seasonal-depth.v1');
 
