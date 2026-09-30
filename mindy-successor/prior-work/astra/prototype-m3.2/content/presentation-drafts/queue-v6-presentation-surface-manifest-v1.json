@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 1,
+  "id": "queue-v6-presentation-surface-manifest-v1",
+  "owner": "chat2-presentation-media",
+  "baselineMain": "593f9936d72296557b36a0e0ca7d3c7bb780839c",
+  "gameplayMutation": false,
+  "careerAvailability": [
+    {
+      "careerId": "lumber",
+      "actionId": "lumber.shift",
+      "currentPresentationState": "available",
+      "reason": "starter-career availability policy",
+      "relatedPresentationIds": [
+        "job/lumber/shift/spring/default",
+        "job/lumber/shift/summer/default",
+        "job/lumber/shift/autumn/default",
+        "job/lumber/shift/winter/default",
+        "job/lumber/result/default"
+      ],
+      "accessibility": {
+        "stateLabel": {
+          "ru": "Доступно",
+          "en": "Available"
+        },
+        "controlHelp": {
+          "ru": "Профессия доступна для обычной смены при наличии энергии.",
+          "en": "This career is available for an ordinary shift when enough Energy remains."
+        }
+      }
+    },
+    {
+      "careerId": "satyr-maid",
+      "actionId": "satyr-maid.shift",
+      "currentPresentationState": "available",
+      "reason": "starter-career availability policy",
+      "relatedPresentationIds": [
+        "job/satyr-maid/shift/spring/default",
+        "job/satyr-maid/shift/summer/default",
+        "job/satyr-maid/shift/autumn/default",
+        "job/satyr-maid/shift/winter/default",
+        "job/satyr-maid/result/default"
+      ],
+      "accessibility": {
+        "stateLabel": {
+          "ru": "Доступно",
+          "en": "Available"
+        },
+        "controlHelp": {
+          "ru": "Профессия доступна для обычной смены при наличии энергии.",
+          "en": "This career is available for an ordinary shift when enough Energy remains."
+        }
+      }
+    },
+    {
+      "careerId": "undead-farm",
+      "actionId": "undead-farm.shift",
+      "currentPresentationState": "available",
+      "reason": "starter-career availability policy",
+      "relatedPresentationIds": [
+        "job/undead-farm/shift/spring/default",
+        "job/undead-farm/shift/summer/default",
+        "job/undead-farm/shift/autumn/default",
+        "job/undead-farm/shift/winter/default",
+        "job/undead-farm/result/default"
+      ],
+      "accessibility": {
+        "stateLabel": {
+          "ru": "Доступно",
+          "en": "Available"
+        },
+        "controlHelp": {
+          "ru": "Профессия доступна для обычной смены при наличии энергии.",
+          "en": "This career is available for an ordinary shift when enough Energy remains."
+        }
+      }
+    },
+    {
+      "careerId": "tavern",
+      "actionId": "tavern.shift",
+      "currentPresentationState": "locked",
+      "reason": "current non-starter career availability policy; no authored unlock condition yet",
+      "relatedPresentationIds": [
+        "job/tavern/shift/spring/default",
+        "job/tavern/shift/summer/default",
+        "job/tavern/shift/autumn/default",
+        "job/tavern/shift/winter/default",
+        "job/tavern/result/default"
+      ],
+      "accessibility": {
+        "stateLabel": {
+          "ru": "Сейчас недоступно",
+          "en": "Currently unavailable"
+        },
+        "controlHelp": {
+          "ru": "Профессия сейчас недоступна. Текущий контент ещё не задаёт условие её открытия.",
+          "en": "This career is currently unavailable. Current content does not yet define an unlock condition."
+        }
+      }
+    },
+    {
+      "careerId": "hunter",
+      "actionId": "hunter.shift",
+      "currentPresentationState": "locked",
+      "reason": "current non-starter career availability policy; no authored unlock condition yet",
+      "relatedPresentationIds": [
+        "job/hunter/shift/spring/default",
+        "job/hunter/shift/summer/default",
+        "job/hunter/shift/autumn/default",
+        "job/hunter/shift/winter/default",
+        "job/hunter/result/default"
+      ],
+      "accessibility": {
+        "stateLabel": {
+          "ru": "Сейчас недоступно",
+          "en": "Currently unavailable"
+        },
+        "controlHelp": {
+          "ru": "Профессия сейчас недоступна. Текущий контент ещё не задаёт условие её открытия.",
+          "en": "This career is currently unavailable. Current content does not yet define an unlock condition."
+        }
+      }
+    },
+    {
+      "careerId": "guard",
+      "actionId": "guard.shift",
+      "currentPresentationState": "locked",
+      "reason": "current non-starter career availability policy; no authored unlock condition yet",
+      "relatedPresentationIds": [
+        "job/guard/shift/spring/default",
+        "job/guard/shift/summer/default",
+        "job/guard/shift/autumn/default",
+        "job/guard/shift/winter/default",
+        "job/guard/result/default"
+      ],
+      "accessibility": {
+        "stateLabel": {
+          "ru": "Сейчас недоступно",
+          "en": "Currently unavailable"
+        },
+        "controlHelp": {
+          "ru": "Профессия сейчас недоступна. Текущий контент ещё не задаёт условие её открытия.",
+          "en": "This career is currently unavailable. Current content does not yet define an unlock condition."
+        }
+      }
+    },
+    {
+      "careerId": "merchant",
+      "actionId": "merchant.shift",
+      "currentPresentationState": "locked",
+      "reason": "current non-starter career availability policy; no authored unlock condition yet",
+      "relatedPresentationIds": [
+        "job/merchant/shift/spring/default",
+        "job/merchant/shift/summer/default",
+        "job/merchant/shift/autumn/default",
+        "job/merchant/shift/winter/default",
+        "job/merchant/result/default"
+      ],
+      "accessibility": {
+        "stateLabel": {
+          "ru": "Сейчас недоступно",
+          "en": "Currently unavailable"
+        },
+        "controlHelp": {
+          "ru": "Профессия сейчас недоступна. Текущий контент ещё не задаёт условие её открытия.",
+          "en": "This career is currently unavailable. Current content does not yet define an unlock condition."
+        }
+      }
+    },
+    {
+      "careerId": "artist-geisha",
+      "actionId": "artist-geisha.shift",
+      "currentPresentationState": "locked",
+      "reason": "current non-starter career availability policy; no authored unlock condition yet",
+      "relatedPresentationIds": [
+        "job/artist-geisha/shift/spring/default",
+        "job/artist-geisha/shift/summer/default",
+        "job/artist-geisha/shift/autumn/default",
+        "job/artist-geisha/shift/winter/default",
+        "job/artist-geisha/result/default"
+      ],
+      "accessibility": {
+        "stateLabel": {
+          "ru": "Сейчас недоступно",
+          "en": "Currently unavailable"
+        },
+        "controlHelp": {
+          "ru": "Профессия сейчас недоступна. Текущий контент ещё не задаёт условие её открытия.",
+          "en": "This career is currently unavailable. Current content does not yet define an unlock condition."
+        }
+      }
+    },
+    {
+      "careerId": "assassin",
+      "actionId": "assassin.shift",
+      "currentPresentationState": "locked",
+      "reason": "current non-starter career availability policy; no authored unlock condition yet",
+      "relatedPresentationIds": [
+        "job/assassin/shift/spring/default",
+        "job/assassin/shift/summer/default",
+        "job/assassin/shift/autumn/default",
+        "job/assassin/shift/winter/default",
+        "job/assassin/result/default"
+      ],
+      "accessibility": {
+        "stateLabel": {
+          "ru": "Сейчас недоступно",
+          "en": "Currently unavailable"
+        },
+        "controlHelp": {
+          "ru": "Профессия сейчас недоступна. Текущий контент ещё не задаёт условие её открытия.",
+          "en": "This career is currently unavailable. Current content does not yet define an unlock condition."
+        }
+      }
+    },
+    {
+      "careerId": "prostitute",
+      "actionId": "prostitute.shift",
+      "currentPresentationState": "locked",
+      "reason": "current non-starter career availability policy; no authored unlock condition yet",
+      "relatedPresentationIds": [
+        "job/prostitute/shift/spring/default",
+        "job/prostitute/shift/summer/default",
+        "job/prostitute/shift/autumn/default",
+        "job/prostitute/shift/winter/default",
+        "job/prostitute/result/default"
+      ],
+      "accessibility": {
+        "stateLabel": {
+          "ru": "Сейчас недоступно",
+          "en": "Currently unavailable"
+        },
+        "controlHelp": {
+          "ru": "Профессия сейчас недоступна. Текущий контент ещё не задаёт условие её открытия.",
+          "en": "This career is currently unavailable. Current content does not yet define an unlock condition."
+        }
+      }
+    }
+  ],
+  "endingStates": [],
+  "forestSurfaces": [],
+  "povertySurfaces": [],
+  "schoolSurfaces": [],
+  "invariants": {
+    "currentGameplayIdentityOnly": true,
+    "noUnlockLogicChanges": true,
+    "noGameplayFieldsChanged": true,
+    "noSaveOrRngMutation": true
+  }
+}
