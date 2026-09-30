@@ -12,9 +12,11 @@ Mandatory startup:
 Current queue:
 - C3-37 through C3-48.
 
-Immediate priority:
-- finish/freeze PR #100 through C3-37;
-- then continue Forest and ordinary-poverty content depth.
+Current-main resync rule:
+- PR #93 is now merged into main;
+- PR #100 remains frozen and pending C4-45 QA;
+- queue-v5 work may continue, but the final C3-48 candidate must be refreshed from current main after #93 and any accepted #100 merge;
+- do not duplicate PR #93 payload or convert fixture metadata into gameplay state.
 
 Do not restart C3-01..36.
 
