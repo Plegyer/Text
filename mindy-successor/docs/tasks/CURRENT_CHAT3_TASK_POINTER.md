@@ -11,11 +11,13 @@ Mandatory startup:
 - `TASK_CHAT3_CONTENT_QUEUE_v8.md`
 
 Current status:
-- C3-49..60 candidate PR #114 passed QA and is merged;
-- C3-61..72 candidate is PR #126 and must freeze only after exact-head repository CI is green.
+- C3-61 through C3-72 are complete;
+- frozen candidate: PR #126 exact head `3129a7bc87e6abae64b630bbbef69d2011dcbb78`;
+- exact-head repository CI #356 is green;
+- do not move PR #126 unless QA requests a concrete repair.
 
-Next queue:
-- after C3-72 is frozen, continue automatically with C3-73 through C3-84 without waiting for a new chat instruction.
+Active queue:
+- continue automatically with C3-73 through C3-84 from current main.
 
 At the queue boundary:
 - re-read current main and this pointer;
