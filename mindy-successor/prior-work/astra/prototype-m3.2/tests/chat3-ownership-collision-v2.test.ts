@@ -14,12 +14,30 @@ const keys=(fixtures:any[])=>fixtures.flatMap(fixture=>Object.keys(fixture.strin
 const v6Keys=keys(v6);
 const v5Keys=new Set<string>(keys(v5));
 
-test('C3-59 v6 keys are unique and do not collide with production localization',()=>{
+test('C3-59 v6 keys remain unique while only the approved Chat 1 consumer subset enters root localization',()=>{
   assert.equal(new Set(v6Keys).size,v6Keys.length);
   assert.equal(v6Keys.length,manifest.evidence.v6CandidateStringCount);
-  for(const key of v6Keys){
-    assert.equal(key in localization,false,'root localization collision: '+key);
+
+  const integrated=new Set<string>();
+  for(const fixture of v6){
+    if(['forest.logging-road-depth.v2','forest.old-boundary-depth.v2'].includes(fixture.id)){
+      for(const key of Object.keys(fixture.strings??{}))integrated.add(key);
+    }
+    if(['forest.success-aftermath-depth.v2','forest.escape-failure-aftermath-depth.v2'].includes(fixture.id)){
+      for(const variant of fixture.variants??[])if(variant.surface==='result_event')integrated.add(variant.localizationKey);
+    }
+    if(['ordinary-poverty.housing-depth.v2','ordinary-poverty.contact-recovery-depth.v2'].includes(fixture.id)){
+      for(const key of Object.keys(fixture.strings??{}))integrated.add(key);
+    }
   }
+
+  for(const fixture of v6){
+    for(const [key,value] of Object.entries(fixture.strings??{})){
+      if(integrated.has(key))assert.deepEqual(localization[key],value,'integrated key mismatch: '+key);
+      else assert.equal(key in localization,false,'selector-less key entered production: '+key);
+    }
+  }
+  assert.equal(integrated.size,32);
 });
 
 test('C3-59 v6 keys do not collide with merged C3-38..47 fixture-local keys',()=>{
