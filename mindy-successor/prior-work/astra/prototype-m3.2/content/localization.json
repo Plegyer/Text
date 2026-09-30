@@ -3382,83 +3382,83 @@
       "ru": "Финал: остаться в лесной артели.",
       "en": "Ending: staying with the lumber crew."
     },
-    "presentation.prepared.location.town.event.poverty-street-production-v2-helpful-summer-shade.market-closing.alt": {
+    "presentation.static.location.town.event.poverty-street-production-v2-helpful-summer-shade.market-closing.alt": {
       "ru": "Летняя небогатая улица у закрывающегося рынка, используемая как статичная сцена для короткой помощи у прилавков.",
       "en": "A modest summer street by a closing market, used as a static scene for a short helping task near the stalls."
     },
-    "presentation.prepared.location.town.event.poverty-street-production-v2-helpful-summer-shade.market-closing.caption": {
+    "presentation.static.location.town.event.poverty-street-production-v2-helpful-summer-shade.market-closing.caption": {
       "ru": "Летняя улица: помощь у закрывающегося рынка.",
       "en": "Summer street: helping near a closing market."
     },
-    "presentation.prepared.location.town.event.poverty-street-production-v2-helpful-summer-shade.late-shade.alt": {
+    "presentation.static.location.town.event.poverty-street-production-v2-helpful-summer-shade.late-shade.alt": {
       "ru": "Летняя небогатая улица с тенью от навесов, используемая как статичная сцена для спокойной уличной помощи.",
       "en": "A modest summer street shaded by awnings, used as a static scene for a calm helping moment outdoors."
     },
-    "presentation.prepared.location.town.event.poverty-street-production-v2-helpful-summer-shade.late-shade.caption": {
+    "presentation.static.location.town.event.poverty-street-production-v2-helpful-summer-shade.late-shade.caption": {
       "ru": "Летняя улица: поздняя тень у навесов.",
       "en": "Summer street: late shade beneath the awnings."
     },
-    "presentation.prepared.location.town.event.poverty-street-production-v2-neutral-autumn-crossing.drizzle.alt": {
+    "presentation.static.location.town.event.poverty-street-production-v2-neutral-autumn-crossing.drizzle.alt": {
       "ru": "Спокойная осенняя улица с укрытиями у домов, используемая как статичная сцена для перехода во время мороси.",
       "en": "A calm autumn street with shelter along the buildings, used as a static scene for crossing during drizzle."
     },
-    "presentation.prepared.location.town.event.poverty-street-production-v2-neutral-autumn-crossing.drizzle.caption": {
+    "presentation.static.location.town.event.poverty-street-production-v2-neutral-autumn-crossing.drizzle.caption": {
       "ru": "Осенняя улица: переход под моросящим дождём.",
       "en": "Autumn street: crossing in light drizzle."
     },
-    "presentation.prepared.location.town.event.poverty-street-production-v2-neutral-autumn-crossing.dry-arcade.alt": {
+    "presentation.static.location.town.event.poverty-street-production-v2-neutral-autumn-crossing.dry-arcade.alt": {
       "ru": "Спокойная осенняя улица с крытым проходом, используемая как статичная сцена для сухого укрытия под аркадой.",
       "en": "A calm autumn street with a covered passage, used as a static scene for dry shelter beneath an arcade."
     },
-    "presentation.prepared.location.town.event.poverty-street-production-v2-neutral-autumn-crossing.dry-arcade.caption": {
+    "presentation.static.location.town.event.poverty-street-production-v2-neutral-autumn-crossing.dry-arcade.caption": {
       "ru": "Осенняя улица: сухое укрытие под аркадой.",
       "en": "Autumn street: dry shelter beneath the arcade."
     },
-    "presentation.prepared.location.town.event.poverty-street-production-v2-pressure-winter-wind.crosswind.alt": {
+    "presentation.static.location.town.event.poverty-street-production-v2-pressure-winter-wind.crosswind.alt": {
       "ru": "Холодная зимняя улица без показа механического штрафа, используемая как статичная сцена для сильного бокового ветра.",
       "en": "A cold winter street without depicting a mechanical penalty, used as a static scene for strong crosswind."
     },
-    "presentation.prepared.location.town.event.poverty-street-production-v2-pressure-winter-wind.crosswind.caption": {
+    "presentation.static.location.town.event.poverty-street-production-v2-pressure-winter-wind.crosswind.caption": {
       "ru": "Зимняя улица: сильный боковой ветер.",
       "en": "Winter street: strong crosswind."
     },
-    "presentation.prepared.location.town.event.poverty-street-production-v2-pressure-winter-wind.long-gusts.alt": {
+    "presentation.static.location.town.event.poverty-street-production-v2-pressure-winter-wind.long-gusts.alt": {
       "ru": "Холодная зимняя улица без показа механического штрафа, используемая как статичная сцена для долгих порывов ветра.",
       "en": "A cold winter street without depicting a mechanical penalty, used as a static scene for long gusts of wind."
     },
-    "presentation.prepared.location.town.event.poverty-street-production-v2-pressure-winter-wind.long-gusts.caption": {
+    "presentation.static.location.town.event.poverty-street-production-v2-pressure-winter-wind.long-gusts.caption": {
       "ru": "Зимняя улица: долгие порывы ветра.",
       "en": "Winter street: long gusts of wind."
     },
-    "presentation.prepared.location.town.event.poverty-cheap-production-v2-shared-room-seasons.spring-window.alt": {
+    "presentation.static.location.town.event.poverty-cheap-production-v2-shared-room-seasons.spring-window.alt": {
       "ru": "Простая дешёвая общая комната, используемая как нейтральный статичный фон для весенней сцены у окна.",
       "en": "A simple inexpensive shared room used as a neutral static background for the spring window scene."
     },
-    "presentation.prepared.location.town.event.poverty-cheap-production-v2-shared-room-seasons.spring-window.caption": {
+    "presentation.static.location.town.event.poverty-cheap-production-v2-shared-room-seasons.spring-window.caption": {
       "ru": "Дешёвое жильё: весенняя сцена у окна.",
       "en": "Cheap lodging: a spring window scene."
     },
-    "presentation.prepared.location.town.event.poverty-cheap-production-v2-shared-room-seasons.summer-heat.alt": {
+    "presentation.static.location.town.event.poverty-cheap-production-v2-shared-room-seasons.summer-heat.alt": {
       "ru": "Простая дешёвая общая комната, используемая как нейтральный статичный фон для летней духоты.",
       "en": "A simple inexpensive shared room used as a neutral static background for the summer heat scene."
     },
-    "presentation.prepared.location.town.event.poverty-cheap-production-v2-shared-room-seasons.summer-heat.caption": {
+    "presentation.static.location.town.event.poverty-cheap-production-v2-shared-room-seasons.summer-heat.caption": {
       "ru": "Дешёвое жильё: летняя духота в общей комнате.",
       "en": "Cheap lodging: summer heat in the shared room."
     },
-    "presentation.prepared.location.town.event.poverty-cheap-production-v2-shared-room-seasons.winter-stove.alt": {
+    "presentation.static.location.town.event.poverty-cheap-production-v2-shared-room-seasons.winter-stove.alt": {
       "ru": "Простая дешёвая общая комната, используемая как нейтральный статичный фон для зимней сцены у печи.",
       "en": "A simple inexpensive shared room used as a neutral static background for the winter stove scene."
     },
-    "presentation.prepared.location.town.event.poverty-cheap-production-v2-shared-room-seasons.winter-stove.caption": {
+    "presentation.static.location.town.event.poverty-cheap-production-v2-shared-room-seasons.winter-stove.caption": {
       "ru": "Дешёвое жильё: зимняя сцена у печи.",
       "en": "Cheap lodging: a winter stove scene."
     },
-    "presentation.prepared.location.town.event.poverty-cheap-production-v2-shared-room-seasons.shared-room.alt": {
+    "presentation.static.location.town.event.poverty-cheap-production-v2-shared-room-seasons.shared-room.alt": {
       "ru": "Простая дешёвая общая комната с минимальной обстановкой, используемая как нейтральный статичный фон бытовой сцены.",
       "en": "A simple inexpensive shared room with minimal furnishings, used as a neutral static background for an everyday lodging scene."
     },
-    "presentation.prepared.location.town.event.poverty-cheap-production-v2-shared-room-seasons.shared-room.caption": {
+    "presentation.static.location.town.event.poverty-cheap-production-v2-shared-room-seasons.shared-room.caption": {
       "ru": "Дешёвое жильё: обычная сцена в общей комнате.",
       "en": "Cheap lodging: an ordinary shared-room scene."
     }
