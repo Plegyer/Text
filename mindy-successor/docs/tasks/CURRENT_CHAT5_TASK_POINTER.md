@@ -11,15 +11,16 @@ Mandatory startup:
 - `TASK_CHAT5_SCHOOL_QUEUE_v8.md`
 
 Current status:
-- C5-49..60 source is archived behind refreshed PR #118 for C4-78 QA;
-- continue C5-61 through C5-72 from current main;
-- current worker branch has reached at least C5-71.
+- C5-61 through C5-72 are complete;
+- frozen candidate: PR #127 exact head `3195c2981949173320ebf8f2a8e9c654d17cd0de`;
+- exact-head repository CI #358 is green;
+- do not move PR #127 unless QA requests a concrete repair;
+- older C5-49..60 refresh PR #118 remains separately assigned to C4-78 QA.
 
-Next queue:
-- after C5-72 is frozen, continue automatically with C5-73 through C5-84.
+Active queue:
+- continue automatically with C5-73 through C5-84 from current main.
 
-Do not modify PR #118 unless Lead/QA requests a concrete repair.
-Do not duplicate C5-49..60 artifacts.
+Do not duplicate C5-49..72 artifacts in the new queue.
 
 Keep technical evidence in Git only. Personal chat output:
 - `Задание выполнено`
