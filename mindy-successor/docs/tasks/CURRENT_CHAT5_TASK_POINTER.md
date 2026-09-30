@@ -12,10 +12,10 @@ Mandatory startup:
 
 Queue sequence:
 - C5-49 through C5-60 are completed in worker source `chat5/school-reactive-depth-v6`;
-- Lead refreshed that candidate onto current main as PR #115 for CI/QA;
-- continue automatically with C5-61 through C5-72 from current main without waiting for PR #115 merge.
+- Lead refreshed that candidate onto latest current main as PR #118 for CI/QA;
+- continue automatically with C5-61 through C5-72 from current main without waiting for PR #118 merge.
 
-Do not modify PR #115 unless Lead/QA requests a concrete repair.
+Do not modify PR #118 unless Lead/QA requests a concrete repair.
 Do not duplicate C5-49..60 artifacts in the new queue.
 
 Keep technical evidence in Git only. Personal chat output:
