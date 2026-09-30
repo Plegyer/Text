@@ -1269,6 +1269,15 @@
         "ru",
         "en"
       ]
+    },
+    "replacementEditor": {
+      "test": "tests/presentation-replacement-editor-regression-v7.test.ts",
+      "semanticSlots": 47,
+      "teacherMediaSurfaces": 8,
+      "semanticIdentityPreserved": true,
+      "mediaIdentityPreserved": true,
+      "gameplayDefinitionsPreserved": true,
+      "saveIdentityPreserved": true
     }
   }
 }
