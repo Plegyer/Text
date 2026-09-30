@@ -29,6 +29,9 @@ Old chat prose is not a source of truth.
 
 ## Current production focus
 
+Current unresolved product blockers:
+- `CURRENT_PRODUCT_DECISION_BLOCKERS.md` — natural School→Lumber management publisher and intermediate Lumber progression contract.
+
 Current Lead coordination focus:
 - treat merged PR #84, #85, #88, #89, #90, #93, #97, #98, #99 and #100 as current-main history, not open worker work;
 - maintain a valid shipped runtime baseline;
