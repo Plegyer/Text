@@ -8,20 +8,19 @@ Mandatory startup:
 - `ACTIVE_TEAM_OWNERSHIP_MATRIX.md`
 - `CANDIDATE_QA_FREEZE_PROTOCOL.md`
 - `TASK_CHAT2_PRESENTATION_QUEUE_v5.md`
+- `TASK_CHAT2_PRESENTATION_QUEUE_v6.md`
 
-Current queue:
-- C2-37 through C2-48.
+Queue sequence:
+- finish C2-37 through C2-48;
+- then continue automatically with C2-49 through C2-60 without waiting for a new chat instruction.
 
-Current-main resync rule:
-- PR #88 and PR #98 are now merged;
-- current main also includes the accepted starter/content/School wave #93/#97/#99/#90;
-- keep C2-37..47 work, but before C2-48 freeze refresh from current main and carry forward only new queue-v5 presentation docs/manifests/tests/assets;
-- do not re-add files already merged from #88/#98 or rewrite gameplay/runtime to resolve drift.
-
-Do not restart C2-01..36 or older candidates.
+At the boundary between queues:
+- re-read current main and this pointer;
+- do not duplicate artifacts already merged while the current queue was in progress;
+- freeze final candidates only from then-current main or an explicitly approved selective refresh.
 
 Keep technical evidence in Git only. Personal chat output:
 - `Задание выполнено`
 - `Задания выполнены`
 
-Do not self-assign beyond C2-48.
+Do not self-assign beyond C2-60.

@@ -8,20 +8,19 @@ Mandatory startup:
 - `ACTIVE_TEAM_OWNERSHIP_MATRIX.md`
 - `CANDIDATE_QA_FREEZE_PROTOCOL.md`
 - `TASK_CHAT5_SCHOOL_QUEUE_v5.md`
+- `TASK_CHAT5_SCHOOL_QUEUE_v6.md`
 
-Current queue:
-- C5-37 through C5-48.
+Queue sequence:
+- finish C5-37 through C5-48;
+- then continue automatically with C5-49 through C5-60 without waiting for a new chat instruction.
 
-Current-main resync rule:
-- PR #90 and PR #99 are now merged into main;
-- continue C5-37..47 on current School identities only;
-- before C5-48 freeze refresh from current main and carry forward only new queue-v5 School docs/fixtures/tests;
-- do not duplicate merged #90/#99 files, create producer facts, thresholds, curriculum or runtime consumers.
-
-Do not restart C5-01..36 or older candidates.
+At the boundary between queues:
+- re-read current main and this pointer;
+- do not duplicate artifacts already merged while the current queue was in progress;
+- freeze final candidates only from then-current main or an explicitly approved selective refresh.
 
 Keep technical evidence in Git only. Personal chat output:
 - `Задание выполнено`
 - `Задания выполнены`
 
-Do not self-assign beyond C5-48.
+Do not self-assign beyond C5-60.
