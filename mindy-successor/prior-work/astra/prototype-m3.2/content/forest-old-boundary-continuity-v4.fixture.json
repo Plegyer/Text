@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "id": "forest.old-boundary-continuity.v4",
+  "status": "CONTENT_SIDE_HANDOFF",
+  "task": "C3-87",
+  "baseMain": "f4de3b01a4369417ae9eff4b384f755790f75279",
+  "activityId": "lumber.forest",
+  "routeOptionId": "forest.route.old-boundary",
+  "routeId": "old-boundary",
+  "routePresentationId": "activity/forest/route/old-boundary",
+  "existingUnlockCondition": {
+    "kind": "itemCapability",
+    "capability": "enter_old_boundary",
+    "present": true
+  },
+  "variants": [
+    {
+      "id": "spring-wet-marker",
+      "season": "spring",
+      "resultId": null,
+      "localizationKey": "presentation.activity.forest.old-boundary-v4.spring.wet-marker.text"
+    },
+    {
+      "id": "summer-fern-edge",
+      "season": "summer",
+      "resultId": null,
+      "localizationKey": "presentation.activity.forest.old-boundary-v4.summer.fern-edge.text"
+    },
+    {
+      "id": "autumn-stone-spacing",
+      "season": "autumn",
+      "resultId": null,
+      "localizationKey": "presentation.activity.forest.old-boundary-v4.autumn.stone-spacing.text"
+    },
+    {
+      "id": "winter-bare-notch",
+      "season": "winter",
+      "resultId": null,
+      "localizationKey": "presentation.activity.forest.old-boundary-v4.winter.bare-notch.text"
+    },
+    {
+      "id": "success-line-held",
+      "season": null,
+      "resultId": "lumber.forest.success",
+      "localizationKey": "presentation.activity.forest.old-boundary-v4.success.line-held.text"
+    },
+    {
+      "id": "escape-known-way-back",
+      "season": null,
+      "resultId": "lumber.forest.escape",
+      "localizationKey": "presentation.activity.forest.old-boundary-v4.escape.known-way-back.text"
+    },
+    {
+      "id": "failure-markers-break",
+      "season": null,
+      "resultId": "lumber.forest.failure",
+      "localizationKey": "presentation.activity.forest.old-boundary-v4.failure.markers-break.text"
+    }
+  ],
+  "strings": {
+    "presentation.activity.forest.old-boundary-v4.spring.wet-marker.text": {
+      "ru": "Весной мокрый камень темнее мха вокруг него и заметнее издалека. Такие детали помогают следовать уже доступной меже, но не открывают её сами.",
+      "en": "In spring, a wet stone is darker than the moss around it and easier to see from a distance. Details like that help follow an already available boundary but do not open it by themselves."
+    },
+    "presentation.activity.forest.old-boundary-v4.summer.fern-edge.text": {
+      "ru": "Летом папоротник подходит вплотную к камням, оставляя вдоль старой линии неровный край. Ты читаешь его только после того, как путь уже открыт.",
+      "en": "In summer, ferns grow close to the stones and leave an uneven edge along the old line. You read it only after the path is already open."
+    },
+    "presentation.activity.forest.old-boundary-v4.autumn.stone-spacing.text": {
+      "ru": "Осенью опавшая листва скрывает мелкие отметки, зато расстояние между крупными камнями видно лучше. Межа держится на последовательности, а не на одном знаке.",
+      "en": "In autumn, fallen leaves hide the smaller marks while the spacing between larger stones becomes clearer. The boundary is carried by a sequence rather than one sign."
+    },
+    "presentation.activity.forest.old-boundary-v4.winter.bare-notch.text": {
+      "ru": "Зимой голые стволы открывают старые зарубки выше снежной кромки. Они подтверждают направление знакомой межи и ничего не меняют в доступе к ней.",
+      "en": "In winter, bare trunks reveal old notches above the snow line. They confirm the direction of the familiar boundary and change nothing about access to it."
+    },
+    "presentation.activity.forest.old-boundary-v4.success.line-held.text": {
+      "ru": "При успехе старые камни и зарубки складываются в одну проверяемую линию. Её достаточно, чтобы уверенно пересказать путь назад.",
+      "en": "On success, the old stones and notches form one checkable line. It is enough to recount the route back with confidence."
+    },
+    "presentation.activity.forest.old-boundary-v4.escape.known-way-back.text": {
+      "ru": "При отходе старая межа полезнее всего как знакомый путь назад. Ты не пытаешься превращать незавершённый участок в доказательство.",
+      "en": "On retreat, the old boundary is most useful as a known way back. You do not try to turn the unfinished stretch into proof."
+    },
+    "presentation.activity.forest.old-boundary-v4.failure.markers-break.text": {
+      "ru": "При неудаче промежутки между отметками становятся слишком большими, чтобы уверенно продолжать линию. Возможность войти сюда не гарантирует ответа.",
+      "en": "On failure, the gaps between markers become too large to continue the line with confidence. Being able to enter this way does not guarantee an answer."
+    }
+  },
+  "invariants": {
+    "existingUnlockConditionOnly": true,
+    "noCapabilityValueChange": true,
+    "existingRouteOnly": true,
+    "existingResultsOnly": true,
+    "noMechanics": true,
+    "noSaveOrRng": true,
+    "noMedia": true
+  }
+}
