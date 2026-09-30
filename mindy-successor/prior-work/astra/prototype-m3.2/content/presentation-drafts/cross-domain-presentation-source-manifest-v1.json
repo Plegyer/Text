@@ -243,5 +243,18 @@
     "staticFallbackRequired": true,
     "noGameplayFieldsChanged": true,
     "noSaveOrRngMutation": true
+  },
+  "coveragePolicies": {
+    "forest": {
+      "selectedSemanticSlots": 10,
+      "routeSlots": 3,
+      "returnSlots": 3,
+      "eventReactionSlots": 4,
+      "exactStaticRequired": true,
+      "localizedAltRequired": true,
+      "localizedCaptionRequired": true,
+      "animationsOptional": true,
+      "gameplayTimingIndependent": true
+    }
   }
 }
