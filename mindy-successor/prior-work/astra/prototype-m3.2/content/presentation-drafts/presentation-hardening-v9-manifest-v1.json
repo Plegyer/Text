@@ -3137,5 +3137,15 @@
     "missingManifestSources": 0,
     "invalidFallbackChainsAccepted": 0,
     "unknownIdPolicy": "safe-fallback-diagnostic"
+  },
+  "candidate": {
+    "taskRange": "C2-85..C2-96",
+    "branch": "chat2/presentation-hardening-c2-85-96",
+    "baselineMain": "a341303183dc277a26b3e64a61d8ed8e35c5d05f",
+    "predecessorPr": 136,
+    "predecessorFrozenHead": "fecb773b056d8912439350bb0d44a59b6009a7e0",
+    "productionFilesChanged": 0,
+    "gameplayFilesChanged": 0,
+    "readyForExactHeadCi": true
   }
 }
