@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+<title id="title">Lumber stay ending</title><desc id="desc">A forest worksite with stacked timber, tools, and work tags.</desc>
+<rect width="960" height="540" fill="#294033"/><rect y="360" width="960" height="180" fill="#59452f"/>
+<circle cx="140" cy="150" r="75" fill="#466d50"/><circle cx="810" cy="135" r="85" fill="#466d50"/>
+<rect x="270" y="270" width="360" height="48" rx="24" fill="#9a6b3f"/><rect x="310" y="320" width="360" height="48" rx="24" fill="#a97847"/>
+<path d="M700 170l-85 165m56-108l72 37" stroke="#c5a36b" stroke-width="16" stroke-linecap="round"/>
+<rect x="205" y="205" width="78" height="50" rx="8" fill="#d5c49e"/><circle cx="225" cy="230" r="8" fill="#6f5740"/>
+</svg>

@@ -283,5 +283,94 @@
     "noUnlockLogicChanges": true,
     "noGameplayFieldsChanged": true,
     "noSaveOrRngMutation": true
+  },
+  "endingCoverage": {
+    "currentExact": [
+      {
+        "presentationId": "ending/lumber/hard-work",
+        "state": "current-exact",
+        "sourceAsset": "assets/presentation/career-lumber-result.svg",
+        "altKey": "presentation.static.lumber-ending-hard-work.alt",
+        "captionKey": "presentation.static.lumber-ending-hard-work.caption",
+        "fallbackId": "location/town/default"
+      },
+      {
+        "presentationId": "ending/lumber/forewoman",
+        "state": "current-exact",
+        "sourceAsset": "assets/presentation/foreman-professional.svg",
+        "altKey": "presentation.static.lumber-ending-forewoman.alt",
+        "captionKey": "presentation.static.lumber-ending-forewoman.caption",
+        "fallbackId": "location/town/default"
+      },
+      {
+        "presentationId": "ending/lumber/forest",
+        "state": "current-exact",
+        "sourceAsset": "assets/presentation/forest-return-success-v2.svg",
+        "altKey": "presentation.static.lumber-ending-forest.alt",
+        "captionKey": "presentation.static.lumber-ending-forest.caption",
+        "fallbackId": "location/town/default"
+      }
+    ],
+    "frozenDependency": {
+      "pr": 109,
+      "exactHead": "946d8b6188ff7aab8b7bf41faabdcbe42faf8445",
+      "presentationIds": [
+        "ending/tavern-stay",
+        "ending/tavern-guild",
+        "ending/tavern-court"
+      ],
+      "note": "Do not duplicate while PR #109 remains frozen and unmerged."
+    },
+    "preparedHere": [
+      {
+        "presentationId": "ending/guild-life",
+        "state": "prepared-here",
+        "sourceAsset": "assets/presentation/ending-guild-life.svg",
+        "fallbackId": "location/town/default",
+        "accessibility": {
+          "alt": {
+            "ru": "Рабочий стол артели с журналом, инструментами и знаком сообщества обозначает финал устойчивой жизни внутри артели.",
+            "en": "A guild worktable with a ledger, tools, and community mark represents an ending built around a stable life in the guild."
+          },
+          "caption": {
+            "ru": "Финал: своя в артели.",
+            "en": "Ending: a place in the guild."
+          }
+        }
+      },
+      {
+        "presentationId": "ending/scholar-life",
+        "state": "prepared-here",
+        "sourceAsset": "assets/presentation/ending-scholar-life.svg",
+        "fallbackId": "location/town/default",
+        "accessibility": {
+          "alt": {
+            "ru": "Учебный стол с закрытой книгой, заметками и алхимическим стеклом обозначает завершённый учебный путь без показа новых игровых наград.",
+            "en": "A study desk with a closed book, notes, and alchemical glassware represents a completed scholarly path without depicting new gameplay rewards."
+          },
+          "caption": {
+            "ru": "Финал: дипломированная алхимичка.",
+            "en": "Ending: qualified alchemist."
+          }
+        }
+      },
+      {
+        "presentationId": "ending/lumber-stay",
+        "state": "prepared-here",
+        "sourceAsset": "assets/presentation/ending-lumber-stay.svg",
+        "fallbackId": "location/town/default",
+        "accessibility": {
+          "alt": {
+            "ru": "Лесная рабочая площадка с аккуратно сложенной древесиной, инструментом и связкой рабочих меток обозначает решение остаться в артели.",
+            "en": "A forest worksite with stacked timber, tools, and work tags represents the decision to remain with the lumber crew."
+          },
+          "caption": {
+            "ru": "Финал: остаться в лесной артели.",
+            "en": "Ending: staying with the lumber crew."
+          }
+        }
+      }
+    ],
+    "totalCurrentEndingIds": 9
   }
 }

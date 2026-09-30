@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+<title id="title">Scholar life ending</title><desc id="desc">A study desk with a book, notes, and alchemical glassware.</desc>
+<rect width="960" height="540" fill="#263044"/><rect y="350" width="960" height="190" fill="#5b4637"/>
+<rect x="190" y="180" width="360" height="165" rx="12" fill="#ded1ae"/><path d="M370 180v165" stroke="#a68d61" stroke-width="7"/>
+<path d="M645 165v80l-45 75h150l-45-75v-80" fill="#7fa9a8" stroke="#d7e2df" stroke-width="8"/>
+<circle cx="675" cy="275" r="22" fill="#d8c070"/><path d="M245 220h85m-85 35h95m-95 35h70" stroke="#8e7957" stroke-width="8" stroke-linecap="round"/>
+</svg>

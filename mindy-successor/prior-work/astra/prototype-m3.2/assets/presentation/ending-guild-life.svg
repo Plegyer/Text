@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+<title id="title">Guild life ending</title><desc id="desc">A guild worktable with a ledger, tools, and a simple community emblem.</desc>
+<rect width="960" height="540" fill="#28342f"/><rect y="345" width="960" height="195" fill="#574432"/>
+<rect x="180" y="155" width="390" height="190" rx="16" fill="#d8c8a6"/><path d="M375 155v190" stroke="#9b8059" stroke-width="7"/>
+<path d="M625 180l52 30v60l-52 30-52-30v-60z" fill="#7fa080"/><path d="M600 240h50m-25-25v50" stroke="#28342f" stroke-width="10" stroke-linecap="round"/>
+<path d="M690 310l80-115m-95 100l55 38" stroke="#c5a36b" stroke-width="14" stroke-linecap="round"/>
+</svg>
