@@ -7,20 +7,19 @@ Mandatory startup:
 - `WORKER_CHAT_RECREATION_PROTOCOL_v1.md`
 - `ACTIVE_TEAM_OWNERSHIP_MATRIX.md`
 - `CANDIDATE_QA_FREEZE_PROTOCOL.md`
-- `TASK_CHAT5_SCHOOL_QUEUE_v5.md`
 - `TASK_CHAT5_SCHOOL_QUEUE_v6.md`
+- `TASK_CHAT5_SCHOOL_QUEUE_v7.md`
 
 Queue sequence:
-- finish C5-37 through C5-48;
-- then continue automatically with C5-49 through C5-60 without waiting for a new chat instruction.
+- C5-49 through C5-60 are completed in worker source `chat5/school-reactive-depth-v6`;
+- Lead refreshed that candidate onto current main as PR #115 for CI/QA;
+- continue automatically with C5-61 through C5-72 from current main without waiting for PR #115 merge.
 
-At the boundary between queues:
-- re-read current main and this pointer;
-- do not duplicate artifacts already merged while the current queue was in progress;
-- freeze final candidates only from then-current main or an explicitly approved selective refresh.
+Do not modify PR #115 unless Lead/QA requests a concrete repair.
+Do not duplicate C5-49..60 artifacts in the new queue.
 
 Keep technical evidence in Git only. Personal chat output:
 - `Задание выполнено`
 - `Задания выполнены`
 
-Do not self-assign beyond C5-60.
+Do not self-assign beyond C5-72.
