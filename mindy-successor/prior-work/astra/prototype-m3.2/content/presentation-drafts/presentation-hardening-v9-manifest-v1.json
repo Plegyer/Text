@@ -1637,6 +1637,11 @@
     "ordinaryPovertyParityV2": {
       "test": "tests/presentation-ordinary-poverty-parity-v9.test.ts",
       "semanticIds": 20
+    },
+    "schoolCourseTeacherParityV3": {
+      "test": "tests/presentation-school-course-teacher-parity-v9.test.ts",
+      "courses": 8,
+      "teachers": 8
     }
   },
   "accessibilityAudit": {
@@ -2022,5 +2027,110 @@
     "secretDebtRows": 0,
     "fixesRequired": 0,
     "secretDebtBoundary": "separate"
+  },
+  "schoolParity": {
+    "courseRows": [
+      {
+        "presentationId": "school/literacy-and-numbers/lesson/default",
+        "sourceAsset": "assets/presentation/school-course-literacy-and-numbers.svg",
+        "altKey": "presentation.static.school-course-literacy-and-numbers.alt",
+        "captionKey": "presentation.static.school-course-literacy-and-numbers.caption",
+        "fallbackMediaId": "stage.school",
+        "fallbackSourceAsset": "assets/stage-school.svg",
+        "teacherMediaId": "school.teacher.literacy-and-numbers.classroom",
+        "teacherSourceAsset": "assets/stage-school.svg",
+        "teacherAltKey": "media.school.teacher.literacy-and-numbers.classroom.alt",
+        "teacherCaptionKey": "media.school.teacher.literacy-and-numbers.classroom.caption"
+      },
+      {
+        "presentationId": "school/arcana/lesson/default",
+        "sourceAsset": "assets/presentation/school-course-arcana.svg",
+        "altKey": "presentation.static.school-course-arcana.alt",
+        "captionKey": "presentation.static.school-course-arcana.caption",
+        "fallbackMediaId": "stage.school",
+        "fallbackSourceAsset": "assets/stage-school.svg",
+        "teacherMediaId": "school.teacher.arcana.classroom",
+        "teacherSourceAsset": "assets/stage-school.svg",
+        "teacherAltKey": "media.school.teacher.arcana.classroom.alt",
+        "teacherCaptionKey": "media.school.teacher.arcana.classroom.caption"
+      },
+      {
+        "presentationId": "school/rhetoric-and-social/lesson/default",
+        "sourceAsset": "assets/presentation/school-course-rhetoric-and-social.svg",
+        "altKey": "presentation.static.school-course-rhetoric-and-social.alt",
+        "captionKey": "presentation.static.school-course-rhetoric-and-social.caption",
+        "fallbackMediaId": "stage.school",
+        "fallbackSourceAsset": "assets/stage-school.svg",
+        "teacherMediaId": "school.teacher.rhetoric-and-social.classroom",
+        "teacherSourceAsset": "assets/stage-school.svg",
+        "teacherAltKey": "media.school.teacher.rhetoric-and-social.classroom.alt",
+        "teacherCaptionKey": "media.school.teacher.rhetoric-and-social.classroom.caption"
+      },
+      {
+        "presentationId": "school/etiquette-and-presentation/lesson/default",
+        "sourceAsset": "assets/presentation/school-course-etiquette-and-presentation.svg",
+        "altKey": "presentation.static.school-course-etiquette-and-presentation.alt",
+        "captionKey": "presentation.static.school-course-etiquette-and-presentation.caption",
+        "fallbackMediaId": "stage.school",
+        "fallbackSourceAsset": "assets/stage-school.svg",
+        "teacherMediaId": "school.teacher.etiquette-and-presentation.classroom",
+        "teacherSourceAsset": "assets/stage-school.svg",
+        "teacherAltKey": "media.school.teacher.etiquette-and-presentation.classroom.alt",
+        "teacherCaptionKey": "media.school.teacher.etiquette-and-presentation.classroom.caption"
+      },
+      {
+        "presentationId": "school/field-craft/lesson/default",
+        "sourceAsset": "assets/presentation/school-course-field-craft.svg",
+        "altKey": "presentation.static.school-course-field-craft.alt",
+        "captionKey": "presentation.static.school-course-field-craft.caption",
+        "fallbackMediaId": "stage.school",
+        "fallbackSourceAsset": "assets/stage-school.svg",
+        "teacherMediaId": "school.teacher.field-craft.classroom",
+        "teacherSourceAsset": "assets/stage-school.svg",
+        "teacherAltKey": "media.school.teacher.field-craft.classroom.alt",
+        "teacherCaptionKey": "media.school.teacher.field-craft.classroom.caption"
+      },
+      {
+        "presentationId": "school/physical-training/lesson/default",
+        "sourceAsset": "assets/presentation/school-course-physical-training.svg",
+        "altKey": "presentation.static.school-course-physical-training.alt",
+        "captionKey": "presentation.static.school-course-physical-training.caption",
+        "fallbackMediaId": "stage.school",
+        "fallbackSourceAsset": "assets/stage-school.svg",
+        "teacherMediaId": "school.teacher.physical-training.classroom",
+        "teacherSourceAsset": "assets/stage-school.svg",
+        "teacherAltKey": "media.school.teacher.physical-training.classroom.alt",
+        "teacherCaptionKey": "media.school.teacher.physical-training.classroom.caption"
+      },
+      {
+        "presentationId": "school/arts-and-performance/lesson/default",
+        "sourceAsset": "assets/presentation/school-course-arts-and-performance.svg",
+        "altKey": "presentation.static.school-course-arts-and-performance.alt",
+        "captionKey": "presentation.static.school-course-arts-and-performance.caption",
+        "fallbackMediaId": "stage.school",
+        "fallbackSourceAsset": "assets/stage-school.svg",
+        "teacherMediaId": "school.teacher.arts-and-performance.classroom",
+        "teacherSourceAsset": "assets/stage-school.svg",
+        "teacherAltKey": "media.school.teacher.arts-and-performance.classroom.alt",
+        "teacherCaptionKey": "media.school.teacher.arts-and-performance.classroom.caption"
+      },
+      {
+        "presentationId": "school/body-confidence/lesson/default",
+        "sourceAsset": "assets/presentation/school-course-body-confidence.svg",
+        "altKey": "presentation.static.school-course-body-confidence.alt",
+        "captionKey": "presentation.static.school-course-body-confidence.caption",
+        "fallbackMediaId": "stage.school",
+        "fallbackSourceAsset": "assets/stage-school.svg",
+        "teacherMediaId": "school.teacher.body-confidence.classroom",
+        "teacherSourceAsset": "assets/stage-school.svg",
+        "teacherAltKey": "media.school.teacher.body-confidence.classroom.alt",
+        "teacherCaptionKey": "media.school.teacher.body-confidence.classroom.caption"
+      }
+    ],
+    "courseCount": 8,
+    "teacherMediaCount": 8,
+    "exactCourseSources": 8,
+    "teacherFallbackSources": 8,
+    "fixesRequired": 0
   }
 }
