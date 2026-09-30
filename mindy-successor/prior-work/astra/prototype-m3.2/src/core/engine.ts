@@ -1255,12 +1255,14 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
   if(s.run.flow.activity)throw new Error('Сначала завершите Activity.');
   if(command.id==='rest')throw new Error('Выберите способ ночлега.');
   const a=cat.definitions.actions.find(a=>a.id===command.id);
-  if(!a||!actionAvailable(a,s,cat))throw new Error('Условия действия не выполнены.');
-  if(a.id!=='arrival'&&!s.run.flags['story.arrived'])throw new Error('Сначала завершите вступление.');
+  if(!a)throw new Error('Неизвестное действие.');
+  const availability=actionAvailability(a,s,cat);
+  if(!availability.eligible)throw new Error('Условия действия не выполнены.');
+  if(availability.blockers.includes('arrival-incomplete'))throw new Error('Сначала завершите вступление.');
+  if(availability.blockers.includes('money')||availability.blockers.includes('energy'))throw new Error('Не хватает денег или энергии.');
   const before={...s.run.metrics};
-  const cost=actionCost(a,s);
+  const cost=availability.moneyCost;
   const freeLesson=a.id==='school'&&s.meta.unlocks.includes('scholar')&&!s.run.flags[`system.scholar.${Math.floor(s.run.day/7)}`];
-  if(s.run.metrics.money<cost||s.run.metrics.energy<a.cost.energy)throw new Error('Не хватает денег или энергии.');
   if(a.mode==='brew'&&!['gentle','bold'].includes(command.recipe??''))throw new Error('Выберите способ приготовления.');
   s.run.metrics.money-=cost;s.run.metrics.energy-=a.cost.energy;
   applyEffectsMutable(s,a.effects,cat,true);
