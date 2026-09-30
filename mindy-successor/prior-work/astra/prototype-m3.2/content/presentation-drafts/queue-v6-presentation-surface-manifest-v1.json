@@ -236,7 +236,45 @@
       }
     }
   ],
-  "endingStates": [],
+  "endingStates": [
+    {
+      "state": "ineligible",
+      "semanticIdentity": "existing ending ID",
+      "visualSignal": "condition checklist contains unmet ○ markers and accept control disabled",
+      "accessibility": {
+        "ru": "Судьба пока недоступна.",
+        "en": "This ending is not yet eligible."
+      }
+    },
+    {
+      "state": "eligible",
+      "semanticIdentity": "existing ending ID",
+      "visualSignal": "conditions satisfied and accept control enabled",
+      "accessibility": {
+        "ru": "Судьба доступна, но жизнь ещё продолжается.",
+        "en": "This ending is eligible, but the current life continues until commitment."
+      }
+    },
+    {
+      "state": "committed",
+      "semanticIdentity": "run.endings.committed existing ending ID",
+      "visualSignal": "current central UI enters non-active branch but incorrectly uses time-expired heading",
+      "accessibility": {
+        "ru": "Судьба выбрана; требуется завершить выбранный финал.",
+        "en": "This ending is committed; the selected final flow still needs completion."
+      },
+      "presentationGap": true
+    },
+    {
+      "state": "completed",
+      "semanticIdentity": "run.endings.result.endingId existing ending ID",
+      "visualSignal": "ended run uses ending presentation and accepted-ending heading",
+      "accessibility": {
+        "ru": "Судьба завершена; результат жизни зафиксирован.",
+        "en": "This ending is completed and the run result is recorded."
+      }
+    }
+  ],
   "forestSurfaces": [],
   "povertySurfaces": [],
   "schoolSurfaces": [],
