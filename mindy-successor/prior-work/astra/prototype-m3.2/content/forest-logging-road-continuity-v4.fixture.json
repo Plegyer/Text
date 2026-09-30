@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "id": "forest.logging-road-continuity.v4",
+  "status": "CONTENT_SIDE_HANDOFF",
+  "task": "C3-86",
+  "baseMain": "f4de3b01a4369417ae9eff4b384f755790f75279",
+  "activityId": "lumber.forest",
+  "routeOptionId": "forest.route.logging-road",
+  "routeId": "logging-road",
+  "routePresentationId": "activity/forest/route/logging-road",
+  "variants": [
+    {
+      "id": "spring-cart-water",
+      "season": "spring",
+      "resultId": null,
+      "localizationKey": "presentation.activity.forest.logging-road-v4.spring.cart-water.text"
+    },
+    {
+      "id": "summer-pale-dust",
+      "season": "summer",
+      "resultId": null,
+      "localizationKey": "presentation.activity.forest.logging-road-v4.summer.pale-dust.text"
+    },
+    {
+      "id": "autumn-track-edge",
+      "season": "autumn",
+      "resultId": null,
+      "localizationKey": "presentation.activity.forest.logging-road-v4.autumn.track-edge.text"
+    },
+    {
+      "id": "winter-wheel-ridge",
+      "season": "winter",
+      "resultId": null,
+      "localizationKey": "presentation.activity.forest.logging-road-v4.winter.wheel-ridge.text"
+    },
+    {
+      "id": "success-work-line",
+      "season": null,
+      "resultId": "lumber.forest.success",
+      "localizationKey": "presentation.activity.forest.logging-road-v4.success.work-line.text"
+    },
+    {
+      "id": "escape-turnback",
+      "season": null,
+      "resultId": "lumber.forest.escape",
+      "localizationKey": "presentation.activity.forest.logging-road-v4.escape.turnback.text"
+    },
+    {
+      "id": "failure-empty-line",
+      "season": null,
+      "resultId": "lumber.forest.failure",
+      "localizationKey": "presentation.activity.forest.logging-road-v4.failure.empty-line.text"
+    }
+  ],
+  "strings": {
+    "presentation.activity.forest.logging-road-v4.spring.cart-water.text": {
+      "ru": "Весной вода стоит в самых глубоких колеях, а по краям видны более свежие следы телег. Ты держишься рабочей линии, не принимая каждый обход лужи за отдельную тропу.",
+      "en": "In spring, water sits in the deepest ruts while fresher cart marks show along the edges. You keep to the work line without treating every detour around a puddle as a separate trail."
+    },
+    "presentation.activity.forest.logging-road-v4.summer.pale-dust.text": {
+      "ru": "Летом светлая пыль оседает на траве вдоль дороги и выдаёт недавнее движение. След помогает не потерять направление, но путь остаётся прежним.",
+      "en": "In summer, pale dust settles on the grass beside the road and shows recent traffic. The trace helps keep direction, but the route remains the same."
+    },
+    "presentation.activity.forest.logging-road-v4.autumn.track-edge.text": {
+      "ru": "Осенью мокрые листья забивают середину колеи, зато её край всё ещё читается по примятой земле. Рабочая дорога остаётся надёжнее случайных ответвлений.",
+      "en": "In autumn, wet leaves fill the middle of the rut, while its edge still shows in the pressed earth. The work road remains more reliable than incidental side cuts."
+    },
+    "presentation.activity.forest.logging-road-v4.winter.wheel-ridge.text": {
+      "ru": "Зимой старые борозды схватываются морозом и образуют низкие твёрдые гребни. По ним легко сверять направление, хотя идти приходится осторожнее.",
+      "en": "In winter, old wheel grooves freeze into low hard ridges. They make direction easy to check even when footing requires more care."
+    },
+    "presentation.activity.forest.logging-road-v4.success.work-line.text": {
+      "ru": "После удачной вылазки дорогу можно описать без догадок: рабочие следы сходятся с найденными ориентирами от начала до конца.",
+      "en": "After a successful expedition, the road can be described without guesswork: the work traces line up with the landmarks from beginning to end."
+    },
+    "presentation.activity.forest.logging-road-v4.escape.turnback.text": {
+      "ru": "При отходе знакомые колеи помогают спокойно вернуться к началу пути, но дальше проверенного участка уверенности нет.",
+      "en": "On retreat, the familiar ruts make it possible to return calmly to the start of the route, but there is no certainty beyond the checked stretch."
+    },
+    "presentation.activity.forest.logging-road-v4.failure.empty-line.text": {
+      "ru": "При неудаче сама дорога остаётся заметной, однако нужные признаки так и не складываются в ответ. Видимый путь ещё не означает найденную истину.",
+      "en": "On failure, the road itself remains visible, but the needed signs never form an answer. A visible route does not by itself mean the truth was found."
+    }
+  },
+  "invariants": {
+    "existingRouteOnly": true,
+    "existingResultsOnly": true,
+    "noProgressOrEnduranceChange": true,
+    "noMechanics": true,
+    "noSaveOrRng": true,
+    "noMedia": true
+  }
+}
