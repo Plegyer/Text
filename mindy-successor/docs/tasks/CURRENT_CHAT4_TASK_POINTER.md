@@ -7,29 +7,19 @@ Mandatory startup:
 - `WORKER_CHAT_RECREATION_PROTOCOL_v1.md`
 - `ACTIVE_TEAM_OWNERSHIP_MATRIX.md`
 - `CANDIDATE_QA_FREEZE_PROTOCOL.md`
-- `TASK_CHAT4_QA_QUEUE_v9.md`
 - `TASK_CHAT4_QA_QUEUE_v10.md`
-
-Completed candidate gates:
-- C4-78: PR #118 PASS-WITH-NOTES and merged;
-- C4-80: PR #116 PASS and merged;
-- C4-81: PR #114 PASS-WITH-NOTES and merged;
-- C4-91: PR #125 PASS and merged;
-- C4-92: PR #126 PASS-WITH-NOTES and merged;
-- C4-93: PR #127 PASS-WITH-NOTES and merged.
+- `TASK_CHAT4_QA_QUEUE_v11.md`
 
 Current work:
-- C4-79 waits for a current-main-refreshed, exact green/frozen PR #124 head;
-- C4-82..89 remain assigned current-main gates;
+- continue available C4-94 through C4-101;
 - C4-90 waits for a future frozen C1D-72 candidate;
-- C4-94 post-v7 current-main health gate is now immediately available after merged #125/#126/#127;
-- continue C4-95..101 as their dependencies become available.
+- C4-102 through C4-113 are preassigned next-wave QA and begin automatically when available v10 work is exhausted;
+- do not idle on one blocked candidate while independent assigned QA work exists.
 
-Do not idle on one blocked candidate while independent assigned QA work exists.
 Do not implement production fixes.
 
 Keep technical evidence in Git only. Personal chat output:
 - `Задание выполнено`
 - `Задания выполнены`
 
-Do not self-assign beyond C4-101.
+Do not self-assign beyond C4-113.
