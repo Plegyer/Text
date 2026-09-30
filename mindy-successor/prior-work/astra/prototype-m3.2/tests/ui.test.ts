@@ -257,7 +257,7 @@ test('renderer: Forest result scene localizes RU EN without changing pending gam
  const {w,dom,errors}=boot(JSON.stringify(s));try{
   await wait(()=>/Вернуться с ясным следом/.test(w.document.querySelector('.stage-title h1')?.textContent??''));
   const before=w.localStorage.getItem('portal-life.v1');
-  assert.match(w.document.querySelector('.dialogue p').textContent,/К концу маршрута/);
+  assert.match(w.document.querySelector('.dialogue p').textContent,/Найденные признаки выглядят убедительно именно потому/);
   assert.match(w.document.querySelector('[data-choice="return"]').textContent,/Вернуться с результатом/);
   assert.match(w.document.querySelector('.media-window img').getAttribute('alt'),/Отдельная рабочая реакция/);
 
@@ -266,7 +266,7 @@ test('renderer: Forest result scene localizes RU EN without changing pending gam
   await wait(()=>w.document.documentElement.lang==='en');
   assert.equal(w.localStorage.getItem('portal-life.v1'),before);
   assert.match(w.document.querySelector('.stage-title h1').textContent,/Return with a clear trail/);
-  assert.match(w.document.querySelector('.dialogue p').textContent,/By the end of the route/);
+  assert.match(w.document.querySelector('.dialogue p').textContent,/The observed signs are convincing because they repeat in the right order/);
   assert.match(w.document.querySelector('[data-choice="return"]').textContent,/Return with the result/);
   assert.match(w.document.querySelector('.media-window img').getAttribute('alt'),/A separate worksite reaction after a successful return from the forest/);
 
@@ -351,7 +351,7 @@ test('renderer: School RU EN localization preserves course command and pending s
   const resolved=JSON.parse(w.localStorage.getItem('portal-life.v1'));
   assert.equal(resolved.run.legacyCompat?.flags?.['school.enrolled'],true);
   assert.match(w.document.querySelector('.stage-title h1')?.textContent??'',/Грамотность и счёт/);
-  assert.match(w.document.querySelector('.dialogue p')?.textContent??'',/Урок завершён: Грамотность и счёт/);
+  assert.match(w.document.querySelector('.dialogue p')?.textContent??'',/Мара возвращает страницу почти без пометок/);
   assert.match(w.document.querySelector('.media-window img')?.getAttribute('src')??'',/assets\/presentation\/school-course-literacy-and-numbers\.svg$/);
   assert.match(w.document.querySelector('.media-window img')?.getAttribute('alt')??'',/Грамота и числа/);
   assert.deepEqual(errors,[]);
