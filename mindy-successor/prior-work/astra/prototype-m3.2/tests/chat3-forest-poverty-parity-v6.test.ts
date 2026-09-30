@@ -98,18 +98,36 @@ test('C3-54/C3-55/C3-56 poverty depth maps only to current production event vari
   }
 });
 
-test('all queue-v6 authored player-facing strings are RU/EN complete, unique and additive',()=>{
+test('queue-v6 strings stay unique while only identities with a safe shared consumer enter root localization',()=>{
   const fixtures=[...forestFixtures,...povertyFixtures];
   const seen=new Set<string>();
-  for(const fixture of fixtures){
-    assertBilingual(fixture.strings??{});
-    for(const key of Object.keys(fixture.strings??{})){
-      assert.equal(seen.has(key),false,'duplicate candidate key: '+key);
-      seen.add(key);
-      assert.equal(key in localization,false,'production localization collision: '+key);
+  const selected=new Set<string>();
+
+  for(const fixture of forestFixtures){
+    if(['forest.logging-road-depth.v2','forest.old-boundary-depth.v2'].includes(fixture.id)){
+      for(const key of Object.keys(fixture.strings??{}))selected.add(key);
+    }
+    if(['forest.success-aftermath-depth.v2','forest.escape-failure-aftermath-depth.v2'].includes(fixture.id)){
+      for(const variant of fixture.variants??[])if(variant.surface==='result_event')selected.add(variant.localizationKey);
     }
   }
-  assert.ok(seen.size>0);
+  for(const fixture of povertyFixtures){
+    if(['ordinary-poverty.housing-depth.v2','ordinary-poverty.contact-recovery-depth.v2'].includes(fixture.id)){
+      for(const key of Object.keys(fixture.strings??{}))selected.add(key);
+    }
+  }
+
+  for(const fixture of fixtures){
+    assertBilingual(fixture.strings??{});
+    for(const [key,value] of Object.entries(fixture.strings??{})){
+      assert.equal(seen.has(key),false,'duplicate candidate key: '+key);
+      seen.add(key);
+      if(selected.has(key))assert.deepEqual(localization[key],value,'integrated current-safe key: '+key);
+      else assert.equal(key in localization,false,'selector-less key entered production: '+key);
+    }
+  }
+
+  assert.equal(selected.size,32);
 });
 
 test('C3-57 ordinary poverty remains separate from Secret Debt',()=>{
