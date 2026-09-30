@@ -899,6 +899,88 @@
         "captionKey": "presentation.static.location.town.event.poverty-cheap-production-v2-shared-room-seasons.shared-room.caption",
         "fallbackId": "location/town/default"
       }
+    ],
+    "forestBindings": [
+      {
+        "presentationId": "activity/forest/route/default",
+        "state": "active-current-main",
+        "sourceAsset": "assets/presentation/forest-route-default-v1.svg",
+        "altKey": "presentation.static.forest.route.default.alt",
+        "captionKey": "presentation.static.forest.route.default.caption",
+        "fallbackId": "location/town/default"
+      },
+      {
+        "presentationId": "activity/forest/route/logging-road",
+        "state": "active-current-main",
+        "sourceAsset": "assets/presentation/forest-route-logging-road.svg",
+        "altKey": "presentation.activity.forest.route.logging-road.alt",
+        "captionKey": "presentation.activity.forest.route.logging-road.caption",
+        "fallbackId": "activity/forest/route/default"
+      },
+      {
+        "presentationId": "activity/forest/route/old-boundary",
+        "state": "active-current-main",
+        "sourceAsset": "assets/presentation/forest-route-old-boundary-v3.svg",
+        "altKey": "presentation.activity.forest.route.old-boundary.alt",
+        "captionKey": "presentation.activity.forest.route.old-boundary.caption",
+        "fallbackId": "activity/forest/route/default"
+      },
+      {
+        "presentationId": "activity/forest/return/success",
+        "state": "active-current-main",
+        "sourceAsset": "assets/presentation/forest-return-success-v2.svg",
+        "altKey": "presentation.static.forest-return-success-v2.alt",
+        "captionKey": "presentation.static.forest-return-success-v2.caption",
+        "fallbackId": "activity/forest/route/default"
+      },
+      {
+        "presentationId": "activity/forest/return/escape",
+        "state": "active-current-main",
+        "sourceAsset": "assets/presentation/forest-return-escape-v2.svg",
+        "altKey": "presentation.static.forest-return-escape-v2.alt",
+        "captionKey": "presentation.static.forest-return-escape-v2.caption",
+        "fallbackId": "activity/forest/route/default"
+      },
+      {
+        "presentationId": "activity/forest/return/failure",
+        "state": "active-current-main",
+        "sourceAsset": "assets/presentation/forest-return-failure-v2.svg",
+        "altKey": "presentation.static.forest-return-failure-v2.alt",
+        "captionKey": "presentation.static.forest-return-failure-v2.caption",
+        "fallbackId": "activity/forest/route/default"
+      },
+      {
+        "presentationId": "job/lumber/event/forest-result-content-v1-success/default",
+        "state": "active-current-main",
+        "sourceAsset": "assets/presentation/forest-reaction-success-v2.svg",
+        "altKey": "presentation.static.forest-reaction-success-v2.alt",
+        "captionKey": "presentation.static.forest-reaction-success-v2.caption",
+        "fallbackId": "location/town/default"
+      },
+      {
+        "presentationId": "job/lumber/event/forest-result-content-v1-escape/default",
+        "state": "active-current-main",
+        "sourceAsset": "assets/presentation/forest-reaction-escape-v2.svg",
+        "altKey": "presentation.static.forest-reaction-escape-v2.alt",
+        "captionKey": "presentation.static.forest-reaction-escape-v2.caption",
+        "fallbackId": "location/town/default"
+      },
+      {
+        "presentationId": "job/lumber/event/forest-result-content-v1-failure/default",
+        "state": "active-current-main",
+        "sourceAsset": "assets/presentation/forest-reaction-failure-v2.svg",
+        "altKey": "presentation.static.forest-reaction-failure-v2.alt",
+        "captionKey": "presentation.static.forest-reaction-failure-v2.caption",
+        "fallbackId": "location/town/default"
+      },
+      {
+        "presentationId": "job/lumber/event/lumber-cross-activity-forest-return/default",
+        "state": "active-current-main",
+        "sourceAsset": "assets/presentation/forest-reaction-success-v2.svg",
+        "altKey": "presentation.static.forest-reaction-success-v2.alt",
+        "captionKey": "presentation.static.forest-reaction-success-v2.caption",
+        "fallbackId": "location/town/default"
+      }
     ]
   }
 }
