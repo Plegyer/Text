@@ -33,7 +33,7 @@ Current unresolved product blockers:
 - `CURRENT_PRODUCT_DECISION_BLOCKERS.md` — natural School→Lumber management publisher and intermediate Lumber progression contract.
 
 Current Lead coordination focus:
-- treat merged PR #84, #85, #88, #89, #90, #93, #97, #98, #99, #100, #105, #106, #108, #109, #114, #116 and #118 as current-main history, not open worker work;
+- treat merged PR #84, #85, #88, #89, #90, #93, #97, #98, #99, #100, #105, #106, #108, #109, #114, #116, #118, #125, #126 and #127 as current-main history, not open worker work;
 - maintain a valid shipped runtime baseline;
 - finish a connected playable Lumber vertical slice;
 - integrate School and Forest through existing runtime contracts;
@@ -41,11 +41,10 @@ Current Lead coordination focus:
 - keep presentation/localization moving in parallel;
 - gate candidates on frozen exact heads.
 
-Current candidate state:
-- PR #124: Chat 1 C1D-60 current candidate, CI-blocked pending worker repair;
-- PR #125: Chat 2 C2-72, exact green frozen head, awaiting C4-91 QA;
-- PR #126: Chat 3 C3-72, exact green frozen head, awaiting C4-92 QA;
-- PR #127: Chat 5 C5-72, exact green frozen head, awaiting C4-93 QA.
+Current candidate/worker state:
+- PR #124: Chat 1 C1D-60 current candidate; it must be current-main refreshed and revalidated before C4-79 freeze;
+- Chat 2, Chat 3 and Chat 5 are active in their queue-v8 work after merged #125/#126/#127;
+- Chat 4 C4-94 post-v7 current-main health gate is immediately available.
 
 Locked Lumber rule:
 - Hard Work = `completed_shifts >= 50`.
