@@ -160,7 +160,7 @@ async function perform(cmd:Command){
  busy=false;render();
 }
 function disabled(a:Action){return busy||locked||!actionAvailability(a,state,catalog).available;}
-function actionAvailabilityHelp(a:Action,availability:ReturnType<typeof actionAvailability>){
+function actionAvailabilityHelp(availability:ReturnType<typeof actionAvailability>){
  const parts:string[]=[];
  if(availability.missingConditions.length)parts.push(availability.missingConditions.map(explain).join(' · '));
  if(availability.careerContractMissing)parts.push(tr('ui.work.lockedCareerHelp','Этот карьерный путь пока недоступен. Необходимое условие открытия ещё не задано.'));
@@ -177,7 +177,7 @@ function actionAvailabilityHelp(a:Action,availability:ReturnType<typeof actionAv
 function actionList(ids:string[]){return `<div class="activity-list">${ids.map(id=>catalog.definitions.actions.find(a=>a.id===id)).filter((a):a is Action=>!!a).map(a=>{
  const availability=actionAvailability(a,state,catalog);
  const careerLocked=professions.includes(a.id)&&!availability.eligible;
- const requirement=actionAvailabilityHelp(a,availability);
+ const requirement=actionAvailabilityHelp(availability);
  const helpId=!availability.available&&requirement?`work-lock-${a.id.replace(/[^a-z0-9_-]+/gi,'-')}`:'';
  const statsEffects=[...a.effects,...(a.seasonal?.[calendar(state.run.day).season]??[])].filter(e=>e.kind==='metric'&&(stats as readonly string[]).includes(e.key));
  const forecast=a.wage?Math.round(a.wage.base+a.wage.weights.reduce((sum,w)=>sum+state.run.metrics[w.stat]*w.factor,0)):null;
