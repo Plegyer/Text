@@ -208,8 +208,7 @@ const acceptedPovertyDepthV5Additions=[
 ] as const;
 
 export const povertyDepthLookupEntries:readonly PovertyDepthLookupEntry[]=basePovertyDepthLookupEntries.map(entry=>{
-  const extra=acceptedPovertyDepthAdditions
-    .concat(acceptedPovertyDepthV5Additions)
+  const extra=[...acceptedPovertyDepthAdditions,...acceptedPovertyDepthV5Additions]
     .filter(([eventId,variantId])=>eventId===entry.eventId&&variantId===entry.variantId)
     .map(([, ,localizationKey])=>localizationKey);
   return extra.length?{...entry,orderedDepthLocalizationKeys:[...entry.orderedDepthLocalizationKeys,...extra]}:entry;
