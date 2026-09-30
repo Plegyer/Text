@@ -1,0 +1,479 @@
+{
+  "formatVersion": 1,
+  "id": "school.exact-night-study-depth-v3",
+  "status": "CONTENT_PREP_ONLY",
+  "selectedRuntimeConsumerId": null,
+  "entries": [
+    {
+      "choiceId": "school.night_study.literacy_and_numbers.reason",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.literacy_and_numbers.reason"
+      },
+      "keys": {
+        "title": "school.night_context_v3.literacy_and_numbers_reason.title",
+        "body": "school.night_context_v3.literacy_and_numbers_reason.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.literacy_and_numbers.wits",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.literacy_and_numbers.wits"
+      },
+      "keys": {
+        "title": "school.night_context_v3.literacy_and_numbers_wits.title",
+        "body": "school.night_context_v3.literacy_and_numbers_wits.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.arcana.magic",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.arcana.magic"
+      },
+      "keys": {
+        "title": "school.night_context_v3.arcana_magic.title",
+        "body": "school.night_context_v3.arcana_magic.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.arcana.reason",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.arcana.reason"
+      },
+      "keys": {
+        "title": "school.night_context_v3.arcana_reason.title",
+        "body": "school.night_context_v3.arcana_reason.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.arcana.creativity",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.arcana.creativity"
+      },
+      "keys": {
+        "title": "school.night_context_v3.arcana_creativity.title",
+        "body": "school.night_context_v3.arcana_creativity.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.rhetoric_and_social.charm",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.rhetoric_and_social.charm"
+      },
+      "keys": {
+        "title": "school.night_context_v3.rhetoric_and_social_charm.title",
+        "body": "school.night_context_v3.rhetoric_and_social_charm.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.rhetoric_and_social.sociability",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.rhetoric_and_social.sociability"
+      },
+      "keys": {
+        "title": "school.night_context_v3.rhetoric_and_social_sociability.title",
+        "body": "school.night_context_v3.rhetoric_and_social_sociability.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.rhetoric_and_social.wits",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.rhetoric_and_social.wits"
+      },
+      "keys": {
+        "title": "school.night_context_v3.rhetoric_and_social_wits.title",
+        "body": "school.night_context_v3.rhetoric_and_social_wits.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.etiquette_and_presentation.manners",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.etiquette_and_presentation.manners"
+      },
+      "keys": {
+        "title": "school.night_context_v3.etiquette_and_presentation_manners.title",
+        "body": "school.night_context_v3.etiquette_and_presentation_manners.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.etiquette_and_presentation.grooming",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.etiquette_and_presentation.grooming"
+      },
+      "keys": {
+        "title": "school.night_context_v3.etiquette_and_presentation_grooming.title",
+        "body": "school.night_context_v3.etiquette_and_presentation_grooming.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.etiquette_and_presentation.charm",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.etiquette_and_presentation.charm"
+      },
+      "keys": {
+        "title": "school.night_context_v3.etiquette_and_presentation_charm.title",
+        "body": "school.night_context_v3.etiquette_and_presentation_charm.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.field_craft.dexterity",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.field_craft.dexterity"
+      },
+      "keys": {
+        "title": "school.night_context_v3.field_craft_dexterity.title",
+        "body": "school.night_context_v3.field_craft_dexterity.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.field_craft.wits",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.field_craft.wits"
+      },
+      "keys": {
+        "title": "school.night_context_v3.field_craft_wits.title",
+        "body": "school.night_context_v3.field_craft_wits.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.field_craft.creativity",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.field_craft.creativity"
+      },
+      "keys": {
+        "title": "school.night_context_v3.field_craft_creativity.title",
+        "body": "school.night_context_v3.field_craft_creativity.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.physical_training.strength",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.physical_training.strength"
+      },
+      "keys": {
+        "title": "school.night_context_v3.physical_training_strength.title",
+        "body": "school.night_context_v3.physical_training_strength.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.physical_training.endurance",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.physical_training.endurance"
+      },
+      "keys": {
+        "title": "school.night_context_v3.physical_training_endurance.title",
+        "body": "school.night_context_v3.physical_training_endurance.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.physical_training.dexterity",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.physical_training.dexterity"
+      },
+      "keys": {
+        "title": "school.night_context_v3.physical_training_dexterity.title",
+        "body": "school.night_context_v3.physical_training_dexterity.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.arts_and_performance.creativity",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.arts_and_performance.creativity"
+      },
+      "keys": {
+        "title": "school.night_context_v3.arts_and_performance_creativity.title",
+        "body": "school.night_context_v3.arts_and_performance_creativity.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.arts_and_performance.charm",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.arts_and_performance.charm"
+      },
+      "keys": {
+        "title": "school.night_context_v3.arts_and_performance_charm.title",
+        "body": "school.night_context_v3.arts_and_performance_charm.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.arts_and_performance.sociability",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.arts_and_performance.sociability"
+      },
+      "keys": {
+        "title": "school.night_context_v3.arts_and_performance_sociability.title",
+        "body": "school.night_context_v3.arts_and_performance_sociability.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.arts_and_performance.dexterity",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.arts_and_performance.dexterity"
+      },
+      "keys": {
+        "title": "school.night_context_v3.arts_and_performance_dexterity.title",
+        "body": "school.night_context_v3.arts_and_performance_dexterity.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.body_confidence.sexuality",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.body_confidence.sexuality"
+      },
+      "keys": {
+        "title": "school.night_context_v3.body_confidence_sexuality.title",
+        "body": "school.night_context_v3.body_confidence_sexuality.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.body_confidence.grooming",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.body_confidence.grooming"
+      },
+      "keys": {
+        "title": "school.night_context_v3.body_confidence_grooming.title",
+        "body": "school.night_context_v3.body_confidence_grooming.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.body_confidence.endurance",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.body_confidence.endurance"
+      },
+      "keys": {
+        "title": "school.night_context_v3.body_confidence_endurance.title",
+        "body": "school.night_context_v3.body_confidence_endurance.body"
+      }
+    }
+  ],
+  "strings": {
+    "school.night_context_v3.literacy_and_numbers_reason.title": {
+      "ru": "Проверить один переход",
+      "en": "Check one transition"
+    },
+    "school.night_context_v3.literacy_and_numbers_reason.body": {
+      "ru": "Ты проверяешь только переход между одной строкой и следующим выводом. Короткая проверка делает рассуждение прозрачнее без дополнительного действия сверх уже выбранной ночной учёбы.",
+      "en": "You check only the transition between one line and the next conclusion. The short review makes the reasoning clearer without adding an action beyond the Night-study choice already made."
+    },
+    "school.night_context_v3.literacy_and_numbers_wits.title": {
+      "ru": "Свести запись к опорным словам",
+      "en": "Reduce the note to anchors"
+    },
+    "school.night_context_v3.literacy_and_numbers_wits.body": {
+      "ru": "Ты оставляешь только ключевые данные и действие, которое из них следует. Если завтра смысл можно восстановить без догадки, сокращение сработало.",
+      "en": "You keep only the key facts and the action that follows from them. If tomorrow's meaning can be reconstructed without guessing, the reduction worked."
+    },
+    "school.night_context_v3.arcana_magic.title": {
+      "ru": "Сравнить одинаковые условия",
+      "en": "Compare matching conditions"
+    },
+    "school.night_context_v3.arcana_magic.body": {
+      "ru": "Ты сопоставляешь два наблюдения при максимально похожих условиях и отмечаешь различие. Ночная работа уточняет запись, не создавая нового магического результата.",
+      "en": "You compare two observations under nearly identical conditions and mark the difference. The night work sharpens the record without creating a new magical result."
+    },
+    "school.night_context_v3.arcana_reason.title": {
+      "ru": "Назвать границу знания",
+      "en": "Name the boundary of knowledge"
+    },
+    "school.night_context_v3.arcana_reason.body": {
+      "ru": "Ты отделяешь подтверждённое от пока неизвестного. Граница между ними становится полезнее красивой версии.",
+      "en": "You separate what is confirmed from what is still unknown. The boundary between them becomes more useful than an elegant explanation."
+    },
+    "school.night_context_v3.arcana_creativity.title": {
+      "ru": "Предложить альтернативную проверку",
+      "en": "Propose an alternative test"
+    },
+    "school.night_context_v3.arcana_creativity.body": {
+      "ru": "Ты ищешь второй безопасный способ проверить ту же гипотезу. Творчество работает как источник проверяемых путей, а не как доказательство.",
+      "en": "You look for a second safe way to test the same hypothesis. Creativity supplies testable paths rather than proof."
+    },
+    "school.night_context_v3.rhetoric_and_social_charm.title": {
+      "ru": "Смягчить форму, не смысл",
+      "en": "Soften the form, not the meaning"
+    },
+    "school.night_context_v3.rhetoric_and_social_charm.body": {
+      "ru": "Ты переписываешь одну прямую фразу теплее, сохраняя тот же смысл и границу. Обаяние помогает подаче, а не подменяет содержание.",
+      "en": "You rewrite one direct sentence more warmly while preserving the same meaning and boundary. Charm supports delivery without replacing content."
+    },
+    "school.night_context_v3.rhetoric_and_social_sociability.title": {
+      "ru": "Увидеть место для ответа",
+      "en": "Find room for an answer"
+    },
+    "school.night_context_v3.rhetoric_and_social_sociability.body": {
+      "ru": "Ты отмечаешь в разговоре место, где пауза дала бы другому человеку больше пространства. Практика сосредоточена на обмене, а не на победе.",
+      "en": "You mark a place in the conversation where a pause would give the other person more room. The practice focuses on exchange rather than winning."
+    },
+    "school.night_context_v3.rhetoric_and_social_wits.title": {
+      "ru": "Спросить без подсказки",
+      "en": "Ask without leading"
+    },
+    "school.night_context_v3.rhetoric_and_social_wits.body": {
+      "ru": "Ты убираешь из вопроса слова, которые подталкивают к нужному ответу. Чем меньше подсказки, тем полезнее настоящая реакция.",
+      "en": "You remove words that steer the question toward the answer you want. The less leading there is, the more useful the real response becomes."
+    },
+    "school.night_context_v3.etiquette_and_presentation_manners.title": {
+      "ru": "Подобрать форму под контекст",
+      "en": "Fit the form to the context"
+    },
+    "school.night_context_v3.etiquette_and_presentation_manners.body": {
+      "ru": "Ты берёшь одно вежливое действие и представляешь его в трёх ситуациях. Уважение остаётся, а форма меняется вместе с контекстом.",
+      "en": "You take one courteous action and imagine it in three situations. Respect remains while the form changes with context."
+    },
+    "school.night_context_v3.etiquette_and_presentation_grooming.title": {
+      "ru": "Оставить только полезный уход",
+      "en": "Keep only useful care"
+    },
+    "school.night_context_v3.etiquette_and_presentation_grooming.body": {
+      "ru": "Ты пересматриваешь привычный уход и оставляешь то, что помогает комфорту и собранности. Внешний вид остаётся личным выбором, а не обязанностью.",
+      "en": "You review a familiar care routine and keep what supports comfort and readiness. Appearance remains a personal choice rather than an obligation."
+    },
+    "school.night_context_v3.etiquette_and_presentation_charm.title": {
+      "ru": "Тёпло и точно",
+      "en": "Warm and precise"
+    },
+    "school.night_context_v3.etiquette_and_presentation_charm.body": {
+      "ru": "Ты тренируешь короткое приветствие, пока дружелюбие не перестаёт размывать смысл. Хорошая подача остаётся ясной даже тогда, когда звучит мягко.",
+      "en": "You practice a short greeting until warmth stops blurring the meaning. Good delivery remains clear even when it sounds gentle."
+    },
+    "school.night_context_v3.field_craft_dexterity.title": {
+      "ru": "Повторить порядок руками",
+      "en": "Repeat the sequence by hand"
+    },
+    "school.night_context_v3.field_craft_dexterity.body": {
+      "ru": "Ты медленно проходишь знакомую последовательность движений и проверяешь, не меняется ли порядок под спешкой. Надёжность важнее скорости.",
+      "en": "You slowly repeat a familiar sequence and check whether haste changes the order. Reliability matters more than speed."
+    },
+    "school.night_context_v3.field_craft_wits.title": {
+      "ru": "Отметить условие отмены",
+      "en": "Mark the abort condition"
+    },
+    "school.night_context_v3.field_craft_wits.body": {
+      "ru": "В коротком плане появляется отдельная строка: при каком признаке нужно остановиться и пересмотреть решение. Хорошая подготовка умеет вовремя отказаться от себя.",
+      "en": "A short plan gains a separate line: which sign means stop and reconsider. Good preparation knows when to abandon itself."
+    },
+    "school.night_context_v3.field_craft_creativity.title": {
+      "ru": "Собрать решение из доступного",
+      "en": "Build from what is available"
+    },
+    "school.night_context_v3.field_craft_creativity.body": {
+      "ru": "Ты представляешь знакомую задачу без привычного инструмента и перечисляешь реальные замены. Импровизация начинается с ограничений, а не с выдуманных ресурсов.",
+      "en": "You imagine a familiar task without the usual tool and list real substitutes. Improvisation begins with constraints rather than imaginary resources."
+    },
+    "school.night_context_v3.physical_training_strength.title": {
+      "ru": "Убрать лишнее напряжение",
+      "en": "Remove wasted tension"
+    },
+    "school.night_context_v3.physical_training_strength.body": {
+      "ru": "Ты разбираешь движение и отмечаешь момент, где напряжение перестаёт помогать. Ночная учёба остаётся анализом техники, а не второй тяжёлой тренировкой.",
+      "en": "You review the movement and mark where tension stops helping. Night study remains technique analysis rather than a second hard workout."
+    },
+    "school.night_context_v3.physical_training_endurance.title": {
+      "ru": "Проверить темп по всей дистанции",
+      "en": "Check the pace across the whole effort"
+    },
+    "school.night_context_v3.physical_training_endurance.body": {
+      "ru": "Ты сравниваешь начало и конец тренировки и ищешь место, где темп стал слишком дорогим. Цель — сохранить качество до завершения.",
+      "en": "You compare the beginning and end of training and look for where the pace became too costly. The goal is to preserve quality to the finish."
+    },
+    "school.night_context_v3.physical_training_dexterity.title": {
+      "ru": "Разделить движение на опорные точки",
+      "en": "Break the movement into anchors"
+    },
+    "school.night_context_v3.physical_training_dexterity.body": {
+      "ru": "Ты мысленно отмечаешь начало, перенос веса и остановку. Ясные опорные точки помогают заметить лишнее движение без нового расхода текущей Energy.",
+      "en": "You mentally mark the start, weight transfer, and stop. Clear anchors make unnecessary movement easier to notice without another current-day Energy cost."
+    },
+    "school.night_context_v3.arts_and_performance_creativity.title": {
+      "ru": "Сохранить правило, изменить одну вещь",
+      "en": "Keep the rule, change one thing"
+    },
+    "school.night_context_v3.arts_and_performance_creativity.body": {
+      "ru": "Ты берёшь знакомую форму и меняешь один элемент, чтобы увидеть, что действительно влияет на результат. Новизна становится осмысленной, а не случайной.",
+      "en": "You take a familiar form and change one element to see what actually affects the result. Novelty becomes deliberate rather than random."
+    },
+    "school.night_context_v3.arts_and_performance_charm.title": {
+      "ru": "Найти естественный темп",
+      "en": "Find the natural pace"
+    },
+    "school.night_context_v3.arts_and_performance_charm.body": {
+      "ru": "Ты повторяешь одну фразу с разными паузами, пока выразительность не перестаёт звучать как усилие понравиться. Убедительность остаётся в ритме, а не в нажиме.",
+      "en": "You repeat one line with different pauses until expression stops sounding like an effort to please. Persuasiveness remains in rhythm rather than pressure."
+    },
+    "school.night_context_v3.arts_and_performance_sociability.title": {
+      "ru": "Подхватить чужой ритм",
+      "en": "Pick up another person's rhythm"
+    },
+    "school.night_context_v3.arts_and_performance_sociability.body": {
+      "ru": "Ты находишь в совместной сцене момент, где партнёр уже изменил темп до твоей следующей реплики. Хорошее взаимодействие начинается с замеченного изменения.",
+      "en": "You find the moment in a shared scene when your partner changed pace before your next line. Good interaction begins with noticing that change."
+    },
+    "school.night_context_v3.arts_and_performance_dexterity.title": {
+      "ru": "Очистить рисунок движения",
+      "en": "Clean up the movement pattern"
+    },
+    "school.night_context_v3.arts_and_performance_dexterity.body": {
+      "ru": "Ты медленно проходишь последовательность и убираешь жесты, которые не поддерживают ритм или смысл. Точность делает форму свободнее, а не жёстче.",
+      "en": "You move slowly through the sequence and remove gestures that support neither rhythm nor meaning. Precision makes the form freer rather than stiffer."
+    },
+    "school.night_context_v3.body_confidence_sexuality.title": {
+      "ru": "Выбрать выразительность самой",
+      "en": "Choose expression for yourself"
+    },
+    "school.night_context_v3.body_confidence_sexuality.body": {
+      "ru": "Ты отмечаешь, какая манера присутствия сегодня ощущается намеренной. Sexuality здесь описывает самопрезентацию и не означает согласия, обещания или Похоти.",
+      "en": "You note which way of being present feels intentional today. Sexuality here describes self-presentation and does not imply consent, a promise, or Lust."
+    },
+    "school.night_context_v3.body_confidence_grooming.title": {
+      "ru": "Уход, который помогает тебе",
+      "en": "Care that serves you"
+    },
+    "school.night_context_v3.body_confidence_grooming.body": {
+      "ru": "Ты оставляешь в вечерней последовательности только то, после чего чувствуешь себя удобнее и собраннее. Подготовка остаётся твоим решением, а не сигналом для чужих ожиданий.",
+      "en": "You keep only the evening care steps that leave you more comfortable and prepared. Presentation remains your decision, not a signal for someone else's expectations."
+    },
+    "school.night_context_v3.body_confidence_endurance.title": {
+      "ru": "Сберечь силы через устойчивость",
+      "en": "Save effort through steadiness"
+    },
+    "school.night_context_v3.body_confidence_endurance.body": {
+      "ru": "Ты замечаешь, где тело держит лишнее напряжение, и ищешь более устойчивое положение. Выносливость начинается с экономии ненужной борьбы, а не с требования терпеть дискомфорт.",
+      "en": "You notice where the body holds unnecessary tension and look for a steadier position. Endurance begins with avoiding wasted struggle, not with requiring yourself to tolerate discomfort."
+    }
+  },
+  "invariants": {
+    "tuitionDelta": 0,
+    "currentDayEnergyDelta": 0,
+    "statGain": 2,
+    "nextDayEnergyDelta": -1
+  },
+  "mechanics": {
+    "effects": [],
+    "careerWrites": [],
+    "relationshipWrites": [],
+    "nightFlowChanges": [],
+    "publishesWorldFacts": []
+  }
+}
