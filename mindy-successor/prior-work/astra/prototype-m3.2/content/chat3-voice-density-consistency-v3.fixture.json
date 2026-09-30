@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "chat3.voice-density-consistency.v3",
+  "status": "CONTENT_DENSITY_VOICE_AUDIT",
+  "task": "C3-93",
+  "auditedMain": "f4de3b01a4369417ae9eff4b384f755790f75279",
+  "frozenV8Head": "fac977ba10e16c38f519782c6ce415aa39abba19",
+  "totals": {
+    "v2Pairs": 46,
+    "v3Pairs": 37,
+    "v4Pairs": 34,
+    "totalPairs": 117,
+    "exactDuplicateKeys": 0,
+    "exactDuplicateRuTexts": 0,
+    "exactDuplicateEnTexts": 0
+  },
+  "queueV9": {
+    "technicalJargonInPlayerFacingText": 0,
+    "trimRequired": false,
+    "rewriteRequired": false
+  },
+  "priorRisks": {
+    "v2NeedsRewriteBeforePublication": 7,
+    "v3VoiceClean": true,
+    "smallJobVariantSpecificPreparationOnly": 2
+  },
+  "reachabilityNotes": [
+    "Forest v2/v3/v4 route and aftermath variants remain preparation-only until an approved consumer selects them.",
+    "Poverty v4 continuity maps to exact event/variant IDs but is not published by this queue.",
+    "Variant-specific helpful-summer-shade post-choice prose remains preparation-only."
+  ],
+  "disposition": "QUEUE_V9_V4_KEEP_ALL; DO_NOT_PUBLISH_PRIOR_V2_RISK_KEYS_UNCHANGED"
+}

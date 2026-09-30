@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "id": "ordinary-poverty.housing-continuity.v4",
+  "status": "CONTENT_SIDE_HANDOFF",
+  "task": "C3-89",
+  "baseMain": "f4de3b01a4369417ae9eff4b384f755790f75279",
+  "entries": [
+    {
+      "id": "street-spring-shallow-step",
+      "housingTier": "street",
+      "season": "spring",
+      "eventId": "poverty-pressure-production.cold-rain",
+      "variantId": "default",
+      "localizationKey": "presentation.poverty.housing-v4.street.spring.shallow-step.text"
+    },
+    {
+      "id": "street-summer-cool-paving",
+      "housingTier": "street",
+      "season": "summer",
+      "eventId": "poverty-street-production-v2.helpful-summer-shade",
+      "variantId": "late-shade",
+      "localizationKey": "presentation.poverty.housing-v4.street.summer.cool-paving.text"
+    },
+    {
+      "id": "street-autumn-shop-awning",
+      "housingTier": "street",
+      "season": "autumn",
+      "eventId": "poverty-street-production-v2.neutral-autumn-crossing",
+      "variantId": "dry-arcade",
+      "localizationKey": "presentation.poverty.housing-v4.street.autumn.shop-awning.text"
+    },
+    {
+      "id": "street-winter-door-recess",
+      "housingTier": "street",
+      "season": "winter",
+      "eventId": "poverty-street-production-v2.pressure-winter-wind",
+      "variantId": "crosswind",
+      "localizationKey": "presentation.poverty.housing-v4.street.winter.door-recess.text"
+    },
+    {
+      "id": "cheap-spring-boots-drying",
+      "housingTier": "cheap",
+      "season": "spring",
+      "eventId": "poverty-cheap-production-v2.shared-room-seasons",
+      "variantId": "spring-window",
+      "localizationKey": "presentation.poverty.housing-v4.cheap.spring.boots-drying.text"
+    },
+    {
+      "id": "cheap-summer-window-turn",
+      "housingTier": "cheap",
+      "season": "summer",
+      "eventId": "poverty-cheap-production-v2.shared-room-seasons",
+      "variantId": "summer-heat",
+      "localizationKey": "presentation.poverty.housing-v4.cheap.summer.window-turn.text"
+    },
+    {
+      "id": "cheap-autumn-early-quiet",
+      "housingTier": "cheap",
+      "season": "autumn",
+      "eventId": "poverty-cheap-production.shared-quiet-autumn",
+      "variantId": "default",
+      "localizationKey": "presentation.poverty.housing-v4.cheap.autumn.early-quiet.text"
+    },
+    {
+      "id": "cheap-winter-dry-sleeves",
+      "housingTier": "cheap",
+      "season": "winter",
+      "eventId": "poverty-cheap-production-v2.shared-room-seasons",
+      "variantId": "winter-stove",
+      "localizationKey": "presentation.poverty.housing-v4.cheap.winter.dry-sleeves.text"
+    }
+  ],
+  "strings": {
+    "presentation.poverty.housing-v4.street.spring.shallow-step.text": {
+      "ru": "Весной самая сухая ступень часто оказывается не самой глубокой, а той, с которой вода быстрее уходит на мостовую. Ты устраиваешься там на ночь, не рассчитывая, что место останется таким завтра.",
+      "en": "In spring, the driest step is often not the deepest one but the one where water drains fastest toward the street. You settle there for the night without expecting the spot to stay the same tomorrow."
+    },
+    "presentation.poverty.housing-v4.street.summer.cool-paving.text": {
+      "ru": "Летом после заката камни остывают неравномерно, и у стены находится полоса прохладнее остальных. Она делает вечер терпимее, но остаётся просто местом на одну ночь.",
+      "en": "In summer, the paving cools unevenly after sunset, leaving a strip by the wall cooler than the rest. It makes the evening easier, but it remains only a place for one night."
+    },
+    "presentation.poverty.housing-v4.street.autumn.shop-awning.text": {
+      "ru": "Осенью после закрытия лавки под тентом остаётся узкая сухая полоса. Её хватает, чтобы убрать вещи от дождя, но утром всё снова придётся собирать.",
+      "en": "In autumn, after a shop closes, a narrow dry strip remains beneath the awning. It is enough to keep belongings out of the rain, but everything will have to be packed again in the morning."
+    },
+    "presentation.poverty.housing-v4.street.winter.door-recess.text": {
+      "ru": "Зимой глубокий дверной проём немного гасит боковой ветер. Ты прижимаешь вещи к внутренней стене и оставляешь проход свободным, понимая, что это всё ещё улица.",
+      "en": "In winter, a deep doorway softens some of the crosswind. You keep belongings against the inner wall and leave the passage clear, knowing it is still the street."
+    },
+    "presentation.poverty.housing-v4.cheap.spring.boots-drying.text": {
+      "ru": "Весной у общей стены стоят несколько пар мокрой обуви, и место для сушки приходится делить. Даже такая мелкая возможность делает ночь под крышей заметно спокойнее.",
+      "en": "In spring, several pairs of wet shoes line the shared wall and drying space has to be shared. Even that small convenience makes a night under a roof noticeably calmer."
+    },
+    "presentation.poverty.housing-v4.cheap.summer.window-turn.text": {
+      "ru": "Летом люди по очереди занимают место ближе к открытому окну, а потом уступают его следующим. Теснота остаётся, но жара становится терпимее.",
+      "en": "In summer, people take turns with the spot nearest the open window and then give it to someone else. The crowding remains, but the heat becomes more manageable."
+    },
+    "presentation.poverty.housing-v4.cheap.autumn.early-quiet.text": {
+      "ru": "Осенью разговоры затихают раньше, когда дождь стучит по крыше и всем хочется выспаться. Несколько спокойных часов остаются частью временного ночлега.",
+      "en": "In autumn, conversation fades earlier when rain taps on the roof and everyone wants sleep. A few quiet hours remain part of temporary lodging."
+    },
+    "presentation.poverty.housing-v4.cheap.winter.dry-sleeves.text": {
+      "ru": "Зимой у печи сначала сушат рукава и носки, чтобы утром не надевать холодное и мокрое. Тепло помогает этой ночью, не обещая ничего на следующую.",
+      "en": "In winter, sleeves and socks are dried first by the stove so morning does not begin in cold wet clothes. The warmth helps tonight without promising anything about the next one."
+    }
+  },
+  "invariants": {
+    "existingEventVariantIdsOnly": true,
+    "noEffectChanges": true,
+    "noNightFlowChanges": true,
+    "noEconomyChanges": true,
+    "noHousingState": true,
+    "noPersistentCommunity": true,
+    "noSecretDebt": true,
+    "noSaveOrRng": true,
+    "noMedia": true
+  }
+}

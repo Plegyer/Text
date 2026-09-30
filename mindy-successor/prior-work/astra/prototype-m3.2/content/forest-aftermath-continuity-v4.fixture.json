@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "id": "forest.aftermath-continuity.v4",
+  "status": "CONTENT_SIDE_HANDOFF",
+  "task": "C3-88",
+  "baseMain": "f4de3b01a4369417ae9eff4b384f755790f75279",
+  "activityId": "lumber.forest",
+  "outcomes": [
+    {
+      "outcome": "success",
+      "resultId": "lumber.forest.success",
+      "eventId": "forest-result-content-v1.success",
+      "returnPresentationId": "activity/forest/return/success",
+      "lumberContinuation": "lumber-cross.activity-forest-return"
+    },
+    {
+      "outcome": "escape",
+      "resultId": "lumber.forest.escape",
+      "eventId": "forest-result-content-v1.escape",
+      "returnPresentationId": "activity/forest/return/escape",
+      "lumberContinuation": null
+    },
+    {
+      "outcome": "failure",
+      "resultId": "lumber.forest.failure",
+      "eventId": "forest-result-content-v1.failure",
+      "returnPresentationId": "activity/forest/return/failure",
+      "lumberContinuation": null
+    }
+  ],
+  "variants": [
+    {
+      "id": "success-last-check",
+      "outcome": "success",
+      "localizationKey": "presentation.activity.forest.aftermath-v4.success.last-check.text"
+    },
+    {
+      "id": "success-crew-ready",
+      "outcome": "success",
+      "localizationKey": "presentation.activity.forest.aftermath-v4.success.crew-ready.text"
+    },
+    {
+      "id": "escape-known-limit",
+      "outcome": "escape",
+      "localizationKey": "presentation.activity.forest.aftermath-v4.escape.known-limit.text"
+    },
+    {
+      "id": "escape-light-pack",
+      "outcome": "escape",
+      "localizationKey": "presentation.activity.forest.aftermath-v4.escape.light-pack.text"
+    },
+    {
+      "id": "failure-rest-first",
+      "outcome": "failure",
+      "localizationKey": "presentation.activity.forest.aftermath-v4.failure.rest-first.text"
+    },
+    {
+      "id": "failure-notes-left-open",
+      "outcome": "failure",
+      "localizationKey": "presentation.activity.forest.aftermath-v4.failure.notes-left-open.text"
+    }
+  ],
+  "strings": {
+    "presentation.activity.forest.aftermath-v4.success.last-check.text": {
+      "ru": "Перед тем как окончательно уйти с лесной кромки, ты ещё раз сверяешь порядок заметок. Всё нужное уже подтверждено, и возвращение не требует новых доказательств.",
+      "en": "Before leaving the forest edge for good, you check the order of the notes once more. Everything needed is already confirmed, and the return requires no new proof."
+    },
+    "presentation.activity.forest.aftermath-v4.success.crew-ready.text": {
+      "ru": "Записи собраны так, чтобы их можно было пересказать артели без догадок и лишних украшений. Лесная вылазка готова перейти в обычный рабочий разговор.",
+      "en": "The notes are arranged so they can be explained to the crew without guesswork or embellishment. The Forest expedition is ready to pass into an ordinary work discussion."
+    },
+    "presentation.activity.forest.aftermath-v4.escape.known-limit.text": {
+      "ru": "Отход оставляет ясную границу между тем, что успела проверить, и тем, что осталось дальше. Этого достаточно для честного рассказа о незавершённой вылазке.",
+      "en": "The retreat leaves a clear boundary between what you managed to check and what remained farther on. That is enough for an honest account of an unfinished expedition."
+    },
+    "presentation.activity.forest.aftermath-v4.escape.light-pack.text": {
+      "ru": "Возвращаясь, ты не набираешь по дороге случайные приметы только ради того, чтобы принести больше заметок. Лучше сохранить точность того немногого, что действительно видела.",
+      "en": "On the way back, you do not gather incidental signs just to return with more notes. It is better to preserve the accuracy of the little you actually saw."
+    },
+    "presentation.activity.forest.aftermath-v4.failure.rest-first.text": {
+      "ru": "После тяжёлого возвращения сначала хочется просто сесть и дать рукам перестать дрожать. Никакого нового вывода из усталости не появляется.",
+      "en": "After the difficult return, the first need is simply to sit down and let your hands stop shaking. Fatigue produces no new conclusion."
+    },
+    "presentation.activity.forest.aftermath-v4.failure.notes-left-open.text": {
+      "ru": "В заметках остаются пробелы, которые сегодня уже не проверить. Ты оставляешь их открытыми, не превращая неопределённость в уверенный ответ.",
+      "en": "The notes retain gaps that cannot be checked today. You leave them open rather than turning uncertainty into a confident answer."
+    }
+  },
+  "invariants": {
+    "noResultEffectChanges": true,
+    "noWorldFactChanges": true,
+    "noCareerFactChanges": true,
+    "noLumberContinuationForEscapeFailure": true,
+    "noPenaltyOrInjuryChanges": true,
+    "noPersistentState": true,
+    "noRewards": true,
+    "noSaveOrRng": true,
+    "noMedia": true
+  }
+}
