@@ -56,6 +56,12 @@ Worker chat prose is not durable project memory. Detailed evidence belongs in Gi
 
 Priority is connected playable routes rather than isolated content packages.
 
+Current operational state:
+- starter-trio Day-1 availability is enforced in current main;
+- Lumber/School/Forest/presentation/poverty integration has advanced through merged #105/#106/#108/#109/#114;
+- current queue-v6 candidates are gated on exact frozen heads before merge;
+- natural School→Lumber management publishing and intermediate Lumber progression remain explicit Product blockers in `CURRENT_PRODUCT_DECISION_BLOCKERS.md`.
+
 Current primary slice:
 1. valid shipped runtime baseline;
 2. playable Dwarven Lumber vertical slice;
