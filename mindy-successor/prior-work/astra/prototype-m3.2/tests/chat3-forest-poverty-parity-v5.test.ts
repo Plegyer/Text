@@ -126,18 +126,36 @@ test('C3-43/C3-44/C3-45 poverty depth points only at current event/variant ident
   }
 });
 
-test('all v5 authored strings are RU/EN complete, unique and additive',()=>{
+test('v5 authored strings stay unique while only current safe consumers are integrated',()=>{
   const all=[...forestFixtures,...povertyFixtures];
   const seen=new Set<string>();
 
-  for(const fixture of all){
-    assertBilingual(fixture.strings??{});
-    for(const key of Object.keys(fixture.strings??{})){
-      assert.equal(seen.has(key),false,'duplicate key '+key);
-      seen.add(key);
-      assert.equal(key in localization,false,'production localization collision '+key);
+  const selected=new Set<string>();
+  for(const fixture of forestFixtures){
+    if(['forest.logging-road-seasonal-depth.v1','forest.old-boundary-seasonal-depth.v1'].includes(fixture.id)){
+      for(const key of Object.keys(fixture.strings??{}))selected.add(key);
+    }
+    if(['forest.success-aftermath-depth.v1','forest.escape-failure-depth.v1'].includes(fixture.id)){
+      for(const variant of fixture.variants??[])if(variant.surface==='result_event')selected.add(variant.localizationKey);
     }
   }
+  for(const fixture of povertyFixtures){
+    if(['ordinary-poverty.housing-seasonal-depth.v1','ordinary-poverty.recovery-depth.v1'].includes(fixture.id)){
+      for(const key of Object.keys(fixture.strings??{}))selected.add(key);
+    }
+  }
+
+  for(const fixture of all){
+    assertBilingual(fixture.strings??{});
+    for(const [key,value] of Object.entries(fixture.strings??{})){
+      assert.equal(seen.has(key),false,'duplicate key '+key);
+      seen.add(key);
+      if(selected.has(key))assert.deepEqual(localization[key],value,'integrated current-safe key '+key);
+      else assert.equal(key in localization,false,'selector-less key entered production '+key);
+    }
+  }
+
+  assert.equal(selected.size,28);
 });
 
 test('C3-46 separation fixture keeps ordinary poverty independent from Secret Debt',()=>{
