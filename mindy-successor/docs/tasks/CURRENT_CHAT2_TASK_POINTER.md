@@ -8,18 +8,19 @@ Mandatory startup:
 - `ACTIVE_TEAM_OWNERSHIP_MATRIX.md`
 - `CANDIDATE_QA_FREEZE_PROTOCOL.md`
 - `TASK_CHAT2_PRESENTATION_QUEUE_v8.md`
+- `TASK_CHAT2_PRESENTATION_QUEUE_v9.md`
 
-Current status:
-- C2-61 through C2-72 passed C4-91 and PR #125 is merged;
-- C2-73 through C2-84 is the active queue.
+Queue sequence:
+- finish C2-73 through C2-84;
+- then continue automatically with C2-85 through C2-96 without waiting for a new chat instruction.
 
-Current-main resync:
-- queue-v8 work may continue on the existing worker branch;
-- before C2-84 freeze, refresh from then-current main containing merged #125/#126/#127 and carry forward only new queue-v8 Presentation-owned changes;
-- do not duplicate #125 payload or resolve drift by changing gameplay/state.
+At each queue boundary:
+- re-read current main and this pointer;
+- carry forward only new Presentation-owned changes absent from main;
+- do not resolve drift by changing gameplay/state.
 
 Keep technical evidence in Git only. Personal chat output:
 - `Задание выполнено`
 - `Задания выполнены`
 
-Do not self-assign beyond C2-84.
+Do not self-assign beyond C2-96.
