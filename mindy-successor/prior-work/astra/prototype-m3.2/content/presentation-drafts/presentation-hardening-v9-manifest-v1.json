@@ -1648,6 +1648,11 @@
       "uniqueSources": 89,
       "requireSourceAndDist": true,
       "requireLiveIdentity": true
+    },
+    "replacementEditorInvarianceV3": {
+      "test": "tests/presentation-replacement-editor-invariance-v9.test.ts",
+      "semanticBindings": 102,
+      "teacherMedia": 8
     }
   },
   "accessibilityAudit": {
@@ -3063,5 +3068,14 @@
     "duplicateSourceRows": 0,
     "missingSourceCount": 0,
     "deadIdentityReferenceCount": 0
+  },
+  "replacementEditorInvariance": {
+    "semanticBindings": 102,
+    "teacherMedia": 8,
+    "replacementSource": "assets/stage-town.svg",
+    "gameplayDefinitionsPreserved": true,
+    "eventIdentityPreserved": true,
+    "saveSerializationPreserved": true,
+    "presentationStorageSeparate": true
   }
 }
