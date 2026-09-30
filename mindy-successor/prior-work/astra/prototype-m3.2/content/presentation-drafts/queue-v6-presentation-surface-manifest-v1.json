@@ -275,7 +275,62 @@
       }
     }
   ],
-  "forestSurfaces": [],
+  "forestSurfaces": [
+    {
+      "presentationId": "activity/forest/route/default",
+      "state": "current-exact",
+      "sourceAsset": "assets/presentation/forest-route-default-v1.svg",
+      "altKey": "presentation.static.forest.route.default.alt",
+      "captionKey": "presentation.static.forest.route.default.caption",
+      "fallbackId": "location/town/default",
+      "accessibilityComplete": true
+    },
+    {
+      "presentationId": "activity/forest/route/logging-road",
+      "state": "current-exact",
+      "sourceAsset": "assets/presentation/forest-route-logging-road.svg",
+      "altKey": "presentation.activity.forest.route.logging-road.alt",
+      "captionKey": "presentation.activity.forest.route.logging-road.caption",
+      "fallbackId": "activity/forest/route/default",
+      "accessibilityComplete": true
+    },
+    {
+      "presentationId": "activity/forest/route/old-boundary",
+      "state": "current-exact",
+      "sourceAsset": "assets/presentation/forest-route-old-boundary-v3.svg",
+      "altKey": "presentation.activity.forest.route.old-boundary.alt",
+      "captionKey": "presentation.activity.forest.route.old-boundary.caption",
+      "fallbackId": "activity/forest/route/default",
+      "accessibilityComplete": true
+    },
+    {
+      "presentationId": "activity/forest/return/success",
+      "state": "current-exact",
+      "sourceAsset": "assets/presentation/forest-return-success-v2.svg",
+      "altKey": "presentation.static.forest-return-success-v2.alt",
+      "captionKey": "presentation.static.forest-return-success-v2.caption",
+      "fallbackId": "activity/forest/route/default",
+      "accessibilityComplete": true
+    },
+    {
+      "presentationId": "activity/forest/return/escape",
+      "state": "current-exact",
+      "sourceAsset": "assets/presentation/forest-return-escape-v2.svg",
+      "altKey": "presentation.static.forest-return-escape-v2.alt",
+      "captionKey": "presentation.static.forest-return-escape-v2.caption",
+      "fallbackId": "activity/forest/route/default",
+      "accessibilityComplete": true
+    },
+    {
+      "presentationId": "activity/forest/return/failure",
+      "state": "current-exact",
+      "sourceAsset": "assets/presentation/forest-return-failure-v2.svg",
+      "altKey": "presentation.static.forest-return-failure-v2.alt",
+      "captionKey": "presentation.static.forest-return-failure-v2.caption",
+      "fallbackId": "activity/forest/route/default",
+      "accessibilityComplete": true
+    }
+  ],
   "povertySurfaces": [],
   "schoolSurfaces": [],
   "invariants": {
@@ -372,5 +427,12 @@
       ],
       "note": "PR #109 is merged on current main; Tavern source assets and queue-v5 handoff are now current-main inputs."
     }
+  },
+  "forestReaudit": {
+    "currentMain": "5f2685f1fde6b4718483febd6f49108eaa4ac873",
+    "selectedRouteResultIds": 6,
+    "missingStatic": 0,
+    "missingAccessibility": 0,
+    "staleSelectedIds": 0
   }
 }
