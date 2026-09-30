@@ -3325,6 +3325,14 @@
     "presentation.poverty.depth.poverty-street-production-v2-helpful-summer-shade.late-shade.g.text": {
       "ru": "Тебя замечают в тени и предлагают коротко помочь до закрытия. Можно согласиться ради небольшого заработка или остаться отдыхать; ни один выбор не превращает случайную встречу в обязанность, карьеру или отношения.",
       "en": "Someone notices you in the shade and offers a short task before closing. You can take it for a little money or keep resting; neither choice turns the chance meeting into an obligation, career, or relationship."
+    },
+    "ui.work.lockedCareerHelp": {
+      "ru": "Этот карьерный путь пока недоступен. Необходимое условие открытия ещё не задано.",
+      "en": "This career path is currently unavailable. Its unlock requirement has not been defined yet."
+    },
+    "ui.work.lockedCareerAria": {
+      "ru": "{career}: недоступно. {reason}",
+      "en": "{career}: unavailable. {reason}"
     }
   }
 }
