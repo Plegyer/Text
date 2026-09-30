@@ -6,6 +6,8 @@ import {stats,type Save,type Catalog,type Condition,type Action} from '../core/s
 import {SCHOOL_COURSES,type SchoolCourse} from '../core/school.ts';
 import {labels,hints} from './labels.ts';
 import {povertyPendingLocalizationKey} from './povertyDepth.ts';
+import {forestResultDepthLocalizationKey,forestRouteDepthLocalizationKey} from './forestDepth.ts';
+import {schoolTeacherReactionBinding} from './schoolReactive.ts';
 import {emptyLocalization,localizationSchema,normalizeLocale,resolveLocalizedText,type Locale,type LocalizationBundle} from '../core/localization.ts';
 declare global {interface Window {gameStorage?:{load:()=>Promise<{text:string;recovered:boolean}|null>;save:(text:string)=>Promise<void>}}}
 const app=document.querySelector<HTMLDivElement>('#app')!;
@@ -22,14 +24,17 @@ const activityOptionHelp=(id:string)=>tr(`activityOption.${id}.help`,'');
 const activityNarrative=(activityId:string,routeId:string|null)=>{
  if(activityId!=='lumber.forest')return '';
  const suffix=routeId??'default';
- return tr(`presentation.activity.forest.entry.${suffix}.text`,'');
+ const core=tr(`presentation.activity.forest.entry.${suffix}.text`,'');
+ const steps=state.run.flow.activity?.internalState.steps??0;
+ const key=forestRouteDepthLocalizationKey(routeId,calendar(state.run.day).season,steps);
+ return key?tr(key,core):core;
 };
 const eventTitle=(id:string,fallback:string)=>tr(`event.${id}.title`,fallback);
 const eventVariantText=(eventId:string,variantId:string,fallback:string)=>tr(`event.${eventId}.variant.${variantId}.text`,fallback);
 const pendingEventVariantText=(eventId:string,variantId:string,fallback:string)=>{
  const core=eventVariantText(eventId,variantId,fallback);
  const count=state.run.historyState.eventHistory[eventId]?.count??0;
- const key=povertyPendingLocalizationKey(eventId,variantId,count);
+ const key=povertyPendingLocalizationKey(eventId,variantId,count)??forestResultDepthLocalizationKey(eventId,count);
  return key?tr(key,core):core;
 };
 const eventChoiceLabel=(eventId:string,choiceId:string,fallback:string)=>tr(`event.${eventId}.choice.${choiceId}.label`,fallback);
@@ -40,6 +45,11 @@ const housingLabel=(id:string,fallback:string)=>tr(`housing.${id}.label`,fallbac
 const fmt=(text:string,values:Record<string,string|number>)=>Object.entries(values).reduce((out,[key,value])=>out.replaceAll(`{${key}}`,String(value)),text);
 const schoolCourseLabel=(course:SchoolCourse)=>tr(`${course.id}.label`,course.label);
 const schoolCourseDescription=(course:SchoolCourse)=>tr(`${course.id}.description`,'');
+const schoolReactiveBody=(course:SchoolCourse)=>{
+ const fallback=fmt(tr('ui.school.lessonResult','Урок завершён: {course}.'),{course:schoolCourseLabel(course)});
+ const binding=schoolTeacherReactionBinding(course.id);
+ return tr(binding.bodyKey,fallback);
+};
 const localizedActionSceneText=(action:Action,lastText:string)=>{
  const scene=action.scenes?.find(item=>item.text===lastText);
  return scene?tr(`action.${action.id}.scene.${scene.id}.text`,lastText):lastText;
@@ -234,7 +244,7 @@ function central(){
  if(screen==='scene'&&r.lastAction){const last=r.lastAction,a=catalog.definitions.actions.find(a=>a.id===last.id),isProfession=!!a&&professions.includes(a.id);
   const schoolCourse=last.id==='school'?SCHOOL_COURSES.find(course=>course.presentationId===last.presentationId):undefined;
   const shownTitle=schoolCourse?schoolCourseLabel(schoolCourse):last.outcomeRef?eventTitle(last.outcomeRef.eventId,last.title):a?tr(`action.${a.id}.label`,last.title):last.title;
-  const shownText=schoolCourse?fmt(tr('ui.school.lessonResult','Урок завершён: {course}.'),{course:schoolCourseLabel(schoolCourse)}):last.outcomeRef?eventChoiceText(last.outcomeRef.eventId,last.outcomeRef.choiceId,last.text):a?localizedActionSceneText(a,last.text):last.text;
+  const shownText=schoolCourse?schoolReactiveBody(schoolCourse):last.outcomeRef?eventChoiceText(last.outcomeRef.eventId,last.outcomeRef.choiceId,last.text):a?localizedActionSceneText(a,last.text):last.text;
  return `<section class="stage">${mediaHTML(last.presentationId??presentationIdForActionResult(catalog,last.id,last.media))}<div class="stage-title"><span class="eyebrow">${isProfession?`${esc(tr('ui.result.shift','Смена'))} ${r.actionCounts[a!.id]??0}`:esc(tr('ui.result.default','Результат'))}</span><h1>${esc(shownTitle)}</h1></div><div class="result-deltas">${Object.entries(last.deltas).filter(([k])=>!['work','trust','health'].includes(k)).map(([k,v])=>`<span class="${v>0?'gain':'loss'}">${esc(genericValueLabel(k))} ${v>0?'+':''}${v}</span>`).join('')}</div></section><section class="dialogue"><p>${esc(shownText)}</p><div class="choices">${isProfession?`<button data-action="${a!.id}" class="primary" ${disabled(a!)?'disabled':''}>${esc(tr('ui.work.again','Работать ещё · 1 энергия'))}</button>`:''}<button id="to-town">${esc(tr('ui.result.returnTown','Вернуться в город'))}</button>${r.metrics.energy===0?`<button data-panel="sleep" class="primary">${esc(tr('ui.result.chooseLodging','Выбрать ночлег'))}</button>`:''}</div></section>`;
  }
  return `<section class="stage town-stage">${mediaHTML('location/town/default')}<div class="stage-title"><span class="eyebrow">${esc(tr('ui.town.eyebrow','По ту сторону люка'))}</span><h1>${esc(tr('ui.town.title','Листоград'))}</h1><p>${esc(r.metrics.energy?tr('ui.town.energyPrompt','Город полон чужих планов. Какими будут ваши?'):tr('ui.town.noEnergyPrompt','На сегодня сил больше нет. Пора выбрать ночлег.'))}</p></div><div class="town-actions"><button data-panel="work"><b>${esc(tr('ui.panel.work','Работа'))}</b><span>${esc(tr('ui.town.work.subtitle','Смены и знакомства'))}</span></button><button data-panel="school"><b>${esc(tr('ui.panel.school','Школа'))}</b><span>${esc(tr('ui.town.school.subtitle','Занятия и практика'))}</span></button><button data-panel="explore"><b>${esc(tr('ui.panel.explore','Окрестности'))}</b><span>${esc(tr('ui.town.explore.subtitle','Поручения и находки'))}</span></button><button data-panel="sleep"><b>${esc(tr('ui.panel.sleep','Ночлег'))}</b><span>${esc(tr('ui.town.sleep.subtitle','Комната или навес'))}</span></button></div></section><section class="town-note"><span>${esc(housingLabel(r.housing,labels[r.housing]??r.housing))}</span><span>${esc(fmt(tr('ui.town.lodgingToday','Ночлег сегодня: {cost} {coins}'),{cost:rent(state),coins:tr('ui.work.coins','монет')}))}</span></section>`;
