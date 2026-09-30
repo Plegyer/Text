@@ -77,8 +77,8 @@
   ],
   "strings": {
     "presentation.activity.forest.return-v3.success.edge-breath.text": {
-      "ru": "У кромки леса можно наконец остановиться и перевести дыхание: нужная последовательность ориентиров уже подтверждена. Эта пауза ничего не добавляет к существующему success result.",
-      "en": "At the forest edge, you can finally stop and catch your breath: the needed sequence of landmarks is already confirmed. The pause adds nothing to the existing success result."
+      "ru": "У кромки леса можно наконец остановиться и перевести дыхание: нужная последовательность ориентиров уже подтверждена. Больше ничего доказывать по дороге назад не требуется.",
+      "en": "At the forest edge, you can finally stop and catch your breath: the needed sequence of landmarks is already confirmed. Nothing else needs proving on the way back."
     },
     "presentation.activity.forest.return-v3.success.notes-ready.text": {
       "ru": "Перед дорогой обратно ты приводишь записи в порядок, чтобы не смешать уверенные наблюдения со случайными деталями. Это подготовка к существующему Lumber continuation, а не новый факт.",
@@ -93,12 +93,12 @@
       "en": "The retreat is clean: the return landmarks are intact, but the objective is not confirmed. That keeps escape distinct from success without adding a reward."
     },
     "presentation.activity.forest.return-v3.escape.partial-record.text": {
-      "ru": "В заметках остаётся несколько наблюдений, которых недостаточно для рабочего вывода. Они не открывают Lumber continuation и не становятся скрытым world fact.",
-      "en": "A few observations remain in the notes, but not enough for a work conclusion. They open no Lumber continuation and become no hidden world fact."
+      "ru": "В заметках остаётся несколько наблюдений, которых недостаточно для рабочего вывода. Они остаются частью незавершённой вылазки.",
+      "en": "A few observations remain in the notes, but not enough for a work conclusion. They remain part of an unfinished expedition."
     },
     "presentation.activity.forest.return-v3.escape.no-continuation.text": {
-      "ru": "После добровольного отхода возвращение заканчивается существующим escape-событием. C3-76 не добавляет следующий карьерный узел или компенсацию.",
-      "en": "After the voluntary retreat, the return ends with the existing escape event. C3-76 adds no next career node or compensation."
+      "ru": "После добровольного отхода возвращение заканчивается обычным объяснением того, где пришлось остановиться. Дальнейший рабочий разговор на этом не строится.",
+      "en": "After the voluntary retreat, the return ends with a straightforward account of where you had to stop. No further work discussion is built on it."
     },
     "presentation.activity.forest.return-v3.failure.heavy-return.text": {
       "ru": "Обратная дорога после неудачи кажется длиннее, потому что сил осталось мало. Это атмосферная деталь существующего failure, без новой травмы или штрафа.",
@@ -109,8 +109,8 @@
       "en": "The notes retain contradictions and cannot honestly be presented as a confirmed result. Failure remains failure without hidden progress."
     },
     "presentation.activity.forest.return-v3.failure.no-extra-state.text": {
-      "ru": "Кромка леса завершает вылазку, но не создаёт отдельного состояния восстановления. Существующие эффекты failure остаются единственными.",
-      "en": "The forest edge ends the expedition without creating a separate recovery state. The existing failure effects remain the only effects."
+      "ru": "Кромка леса завершает вылазку. Неудачный путь остаётся позади без нового обещания, награды или особой отметки на будущее.",
+      "en": "The forest edge ends the expedition. The failed route is left behind without a new promise, reward, or special mark for the future."
     }
   },
   "invariants": {
