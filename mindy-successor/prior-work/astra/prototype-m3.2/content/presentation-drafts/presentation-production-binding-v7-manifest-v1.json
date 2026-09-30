@@ -1255,5 +1255,20 @@
         "state": "active-localized"
       }
     ]
+  },
+  "validation": {
+    "localeAccessibilityParity": {
+      "test": "tests/presentation-locale-accessibility-parity-v7.test.ts",
+      "semanticSlots": 47,
+      "teacherMediaSurfaces": 8,
+      "workAccessibilityKeys": [
+        "ui.work.lockedCareerHelp",
+        "ui.work.lockedCareerAria"
+      ],
+      "locales": [
+        "ru",
+        "en"
+      ]
+    }
   }
 }
