@@ -16,15 +16,15 @@ Coverage is intentionally split to avoid duplicating the frozen C2-37..48 candid
 
 All three have exact static bindings and RU/EN presentation accessibility metadata.
 
-## Frozen dependency — PR #109
+## Merged source — PR #109
 
-PR #109, frozen exact head `946d8b6188ff7aab8b7bf41faabdcbe42faf8445`, already owns prepared coverage for:
+PR #109, exact head `946d8b6188ff7aab8b7bf41faabdcbe42faf8445`, is now merged on current main and supplies prepared Tavern assets/coverage for:
 
 - `ending/tavern-stay`
 - `ending/tavern-guild`
 - `ending/tavern-court`
 
-C2-52 does not duplicate those assets or manifest entries while that candidate remains frozen.
+C2-52 does not duplicate those already-merged assets. Final queue-v6 production coverage may bind these existing semantic IDs to the now-current-main Tavern assets.
 
 ## New C2-52 coverage
 
@@ -45,8 +45,8 @@ Current ending semantic IDs: **9**.
 
 Exact current-main ending overrides: **3**.
 
-Frozen PR #109 prepared Tavern overrides: **3**.
+Merged PR #109 prepared Tavern overrides/assets: **3**.
 
 New C2-52 prepared overrides: **3**.
 
-Current ending identities without owned presentation coverage across current main + frozen/active Chat 2 candidates: **0**.
+Current ending identities without owned presentation coverage across current main + C2-52 prepared sources: **0**.
