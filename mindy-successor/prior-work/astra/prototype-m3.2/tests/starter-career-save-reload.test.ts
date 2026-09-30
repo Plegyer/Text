@@ -13,7 +13,8 @@ function shiftAndReload(actionId:'satyr-maid.shift'|'undead-farm.shift',careerId
   const career=shifted.run.progression.careers[careerId];
   assert.ok(career,careerId);
   assert.equal(career.counters.completed_shifts,1);
-  assert.equal(career.shifts,1);
+  assert.equal(career.shifts,0);
+  assert.equal(shifted.run.actionCounts[actionId],1);
   assert.ok(career.facts.includes('first-shift-complete'));
 
   const lastAction=shifted.run.lastAction;
@@ -25,10 +26,12 @@ function shiftAndReload(actionId:'satyr-maid.shift'|'undead-farm.shift',careerId
 
   const restored=parseSave(JSON.stringify(shifted),catalog);
   assert.deepEqual(restored.run.progression.careers[careerId],career);
+  assert.equal(restored.run.actionCounts[actionId],1);
   assert.deepEqual(restored.run.lastAction,lastAction);
 
   const secondReload=parseSave(JSON.stringify(restored),catalog);
   assert.deepEqual(secondReload.run.progression.careers[careerId],career);
+  assert.equal(secondReload.run.actionCounts[actionId],1);
   assert.deepEqual(secondReload.run.lastAction,lastAction);
 
   return {career,lastAction};
