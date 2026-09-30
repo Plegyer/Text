@@ -1,0 +1,44 @@
+{
+  "formatVersion": 1,
+  "id": "school.fallback-localization-audit.v2",
+  "status": "CONTENT_AUDIT_ONLY",
+  "baseline": "a341303183dc277a26b3e64a61d8ed8e35c5d05f",
+  "summary": {
+    "canonicalCourseLabelPairs": 8,
+    "canonicalCourseDescriptionPairs": 8,
+    "coursePresentationAltPairs": 8,
+    "coursePresentationCaptionPairs": 8,
+    "teacherMediaAltPairs": 8,
+    "teacherMediaCaptionPairs": 8,
+    "genericAfterSchoolLocalizedEvents": 2,
+    "genericNightStudyLocalizedEvents": 1,
+    "exactNightStudyDefinitionLabels": 24,
+    "exactNightStudyLocalizedUiTemplate": true,
+    "paidLessonJournalLocalizationRef": false,
+    "lastActionRawFallbackLocalized": false
+  },
+  "missingOrEmptyPairs": [],
+  "fallbackOnlySurfaces": [
+    {
+      "surface": "paid-lesson journal",
+      "detail": "Raw English course label/template; journalRefs entry is null."
+    },
+    {
+      "surface": "paid-lesson lastAction fallback",
+      "detail": "Raw English title/text exists even though ui.school.lessonResult is localized."
+    },
+    {
+      "surface": "exact Night-study definition labels",
+      "detail": "24 raw English definition labels are fallback data; rendered UI has localized ui.school.nightStudyChoice."
+    }
+  ],
+  "consistencyNotes": [
+    "Teacher media now have dedicated RU/EN alt and caption pairs on current main.",
+    "Two RU course presentation/teacher labels still use alternate terminology: «Грамота и числа» and «Этикет и подача»."
+  ],
+  "constraints": {
+    "changesRootLocalization": false,
+    "changesRuntime": false,
+    "changesMedia": false
+  }
+}
