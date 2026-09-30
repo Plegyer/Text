@@ -1642,6 +1642,12 @@
       "test": "tests/presentation-school-course-teacher-parity-v9.test.ts",
       "courses": 8,
       "teachers": 8
+    },
+    "projectOwnedSourceIntegrityV2": {
+      "test": "tests/presentation-source-integrity-v9.test.ts",
+      "uniqueSources": 89,
+      "requireSourceAndDist": true,
+      "requireLiveIdentity": true
     }
   },
   "accessibilityAudit": {
@@ -2132,5 +2138,930 @@
     "exactCourseSources": 8,
     "teacherFallbackSources": 8,
     "fixesRequired": 0
+  },
+  "sourceIntegrity": {
+    "selectedSemanticBindings": 102,
+    "fallbackRoots": 1,
+    "schoolTeacherMedia": 8,
+    "uniqueProjectOwnedSources": [
+      {
+        "sourceAsset": "assets/presentation/career-artist-geisha-result.svg",
+        "semanticIds": [
+          "job/artist-geisha/result/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-artist-geisha-shift-autumn.svg",
+        "semanticIds": [
+          "job/artist-geisha/shift/autumn/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-artist-geisha-shift-spring.svg",
+        "semanticIds": [
+          "job/artist-geisha/shift/spring/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-artist-geisha-shift-summer.svg",
+        "semanticIds": [
+          "job/artist-geisha/shift/summer/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-artist-geisha-shift-winter.svg",
+        "semanticIds": [
+          "job/artist-geisha/shift/winter/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-assassin-result.svg",
+        "semanticIds": [
+          "job/assassin/result/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-assassin-shift-autumn.svg",
+        "semanticIds": [
+          "job/assassin/shift/autumn/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-assassin-shift-spring.svg",
+        "semanticIds": [
+          "job/assassin/shift/spring/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-assassin-shift-summer.svg",
+        "semanticIds": [
+          "job/assassin/shift/summer/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-assassin-shift-winter.svg",
+        "semanticIds": [
+          "job/assassin/shift/winter/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-guard-result.svg",
+        "semanticIds": [
+          "job/guard/result/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-guard-shift-autumn.svg",
+        "semanticIds": [
+          "job/guard/shift/autumn/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-guard-shift-spring.svg",
+        "semanticIds": [
+          "job/guard/shift/spring/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-guard-shift-summer.svg",
+        "semanticIds": [
+          "job/guard/shift/summer/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-guard-shift-winter.svg",
+        "semanticIds": [
+          "job/guard/shift/winter/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-hunter-result.svg",
+        "semanticIds": [
+          "job/hunter/result/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-hunter-shift-autumn.svg",
+        "semanticIds": [
+          "job/hunter/shift/autumn/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-hunter-shift-spring.svg",
+        "semanticIds": [
+          "job/hunter/shift/spring/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-hunter-shift-summer.svg",
+        "semanticIds": [
+          "job/hunter/shift/summer/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-hunter-shift-winter.svg",
+        "semanticIds": [
+          "job/hunter/shift/winter/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-lumber-result.svg",
+        "semanticIds": [
+          "ending/lumber/hard-work",
+          "job/lumber/event/lumber-career-first-shift/default",
+          "job/lumber/result/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-lumber-shift-autumn.svg",
+        "semanticIds": [
+          "job/lumber/shift/autumn/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-lumber-shift-spring.svg",
+        "semanticIds": [
+          "job/lumber/shift/spring/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-lumber-shift-summer.svg",
+        "semanticIds": [
+          "job/lumber/shift/summer/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-lumber-shift-winter.svg",
+        "semanticIds": [
+          "job/lumber/shift/winter/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-merchant-result.svg",
+        "semanticIds": [
+          "job/merchant/result/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-merchant-shift-autumn.svg",
+        "semanticIds": [
+          "job/merchant/shift/autumn/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-merchant-shift-spring.svg",
+        "semanticIds": [
+          "job/merchant/shift/spring/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-merchant-shift-summer.svg",
+        "semanticIds": [
+          "job/merchant/shift/summer/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-merchant-shift-winter.svg",
+        "semanticIds": [
+          "job/merchant/shift/winter/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-prostitute-result.svg",
+        "semanticIds": [
+          "job/prostitute/result/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-prostitute-shift-autumn.svg",
+        "semanticIds": [
+          "job/prostitute/shift/autumn/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-prostitute-shift-spring.svg",
+        "semanticIds": [
+          "job/prostitute/shift/spring/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-prostitute-shift-summer.svg",
+        "semanticIds": [
+          "job/prostitute/shift/summer/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-prostitute-shift-winter.svg",
+        "semanticIds": [
+          "job/prostitute/shift/winter/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-satyr-maid-result.svg",
+        "semanticIds": [
+          "job/satyr-maid/result/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-satyr-maid-shift-autumn.svg",
+        "semanticIds": [
+          "job/satyr-maid/shift/autumn/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-satyr-maid-shift-spring.svg",
+        "semanticIds": [
+          "job/satyr-maid/shift/spring/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-satyr-maid-shift-summer.svg",
+        "semanticIds": [
+          "job/satyr-maid/shift/summer/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-satyr-maid-shift-winter.svg",
+        "semanticIds": [
+          "job/satyr-maid/shift/winter/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-tavern-result.svg",
+        "semanticIds": [
+          "job/tavern/result/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-tavern-shift-autumn.svg",
+        "semanticIds": [
+          "job/tavern/shift/autumn/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-tavern-shift-spring.svg",
+        "semanticIds": [
+          "job/tavern/shift/spring/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-tavern-shift-summer.svg",
+        "semanticIds": [
+          "job/tavern/shift/summer/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-tavern-shift-winter.svg",
+        "semanticIds": [
+          "job/tavern/shift/winter/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-undead-farm-result.svg",
+        "semanticIds": [
+          "job/undead-farm/result/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-undead-farm-shift-autumn.svg",
+        "semanticIds": [
+          "job/undead-farm/shift/autumn/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-undead-farm-shift-spring.svg",
+        "semanticIds": [
+          "job/undead-farm/shift/spring/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-undead-farm-shift-summer.svg",
+        "semanticIds": [
+          "job/undead-farm/shift/summer/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/career-undead-farm-shift-winter.svg",
+        "semanticIds": [
+          "job/undead-farm/shift/winter/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/ending-guild-life.svg",
+        "semanticIds": [
+          "ending/guild-life"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/ending-lumber-stay.svg",
+        "semanticIds": [
+          "ending/lumber-stay"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/ending-scholar-life.svg",
+        "semanticIds": [
+          "ending/scholar-life"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/foreman-professional.svg",
+        "semanticIds": [
+          "ending/lumber/forewoman",
+          "job/lumber/event/lumber-cross-school-management-return/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/forest-reaction-escape-v2.svg",
+        "semanticIds": [
+          "job/lumber/event/forest-result-content-v1-escape/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/forest-reaction-failure-v2.svg",
+        "semanticIds": [
+          "job/lumber/event/forest-result-content-v1-failure/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/forest-reaction-success-v2.svg",
+        "semanticIds": [
+          "job/lumber/event/forest-result-content-v1-success/default",
+          "job/lumber/event/lumber-cross-activity-forest-return/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/forest-return-escape-v2.svg",
+        "semanticIds": [
+          "activity/forest/return/escape"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/forest-return-failure-v2.svg",
+        "semanticIds": [
+          "activity/forest/return/failure"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/forest-return-success-v2.svg",
+        "semanticIds": [
+          "activity/forest/return/success",
+          "ending/lumber/forest"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/forest-route-default-v1.svg",
+        "semanticIds": [
+          "activity/forest/route/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/forest-route-logging-road.svg",
+        "semanticIds": [
+          "activity/forest/route/logging-road"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/forest-route-old-boundary-v3.svg",
+        "semanticIds": [
+          "activity/forest/route/old-boundary"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/poverty-cheap-lodging.svg",
+        "semanticIds": [
+          "location/town/event/poverty-cheap-production-v2-shared-room-seasons/shared-room",
+          "location/town/event/poverty-cheap-production-v2-shared-room-seasons/spring-window",
+          "location/town/event/poverty-cheap-production-v2-shared-room-seasons/summer-heat",
+          "location/town/event/poverty-cheap-production-v2-shared-room-seasons/winter-stove"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/poverty-cheap-shared-quiet-autumn.svg",
+        "semanticIds": [
+          "location/town/event/poverty-cheap-production-shared-quiet-autumn/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/poverty-pressure-cold-rain.svg",
+        "semanticIds": [
+          "location/town/event/poverty-pressure-production-cold-rain/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/poverty-pressure-muddy-splash.svg",
+        "semanticIds": [
+          "location/town/event/poverty-pressure-production-muddy-splash/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/poverty-pressure-noisy-loading.svg",
+        "semanticIds": [
+          "location/town/event/poverty-pressure-production-noisy-loading/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/poverty-recovery-herb-bundle.svg",
+        "semanticIds": [
+          "location/town/event/poverty-recovery-production-herb-bundle/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/poverty-recovery-short-cleanup.svg",
+        "semanticIds": [
+          "location/town/event/poverty-recovery-production-short-cleanup/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/poverty-recovery-small-coin-help.svg",
+        "semanticIds": [
+          "location/town/event/poverty-recovery-production-small-coin-help/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/poverty-street-helpful-summer.svg",
+        "semanticIds": [
+          "location/town/event/poverty-street-production-helpful-summer/default",
+          "location/town/event/poverty-street-production-v2-helpful-summer-shade/late-shade",
+          "location/town/event/poverty-street-production-v2-helpful-summer-shade/market-closing"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/poverty-street-neutral-autumn.svg",
+        "semanticIds": [
+          "location/town/event/poverty-street-production-neutral-autumn/default",
+          "location/town/event/poverty-street-production-v2-neutral-autumn-crossing/drizzle",
+          "location/town/event/poverty-street-production-v2-neutral-autumn-crossing/dry-arcade"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/poverty-street-pressure-winter.svg",
+        "semanticIds": [
+          "location/town/event/poverty-street-production-pressure-winter/default",
+          "location/town/event/poverty-street-production-v2-pressure-winter-wind/crosswind",
+          "location/town/event/poverty-street-production-v2-pressure-winter-wind/long-gusts"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/school-course-arcana.svg",
+        "semanticIds": [
+          "school/arcana/lesson/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/school-course-arts-and-performance.svg",
+        "semanticIds": [
+          "school/arts-and-performance/lesson/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/school-course-body-confidence.svg",
+        "semanticIds": [
+          "school/body-confidence/lesson/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/school-course-etiquette-and-presentation.svg",
+        "semanticIds": [
+          "school/etiquette-and-presentation/lesson/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/school-course-field-craft.svg",
+        "semanticIds": [
+          "school/field-craft/lesson/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/school-course-literacy-and-numbers.svg",
+        "semanticIds": [
+          "school/literacy-and-numbers/lesson/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/school-course-physical-training.svg",
+        "semanticIds": [
+          "school/physical-training/lesson/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/school-course-rhetoric-and-social.svg",
+        "semanticIds": [
+          "school/rhetoric-and-social/lesson/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/school-day-study.svg",
+        "semanticIds": [
+          "location/town/event/school-lesson-content-v1-after-school/default",
+          "location/town/event/school-life-content-v1-after-paid-lesson/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/school-night-study-generic-v2.svg",
+        "semanticIds": [
+          "location/town/event/school-life-content-v1-after-night-study/default"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/tavern-ending-court.svg",
+        "semanticIds": [
+          "ending/tavern-court"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/tavern-ending-guild.svg",
+        "semanticIds": [
+          "ending/tavern-guild"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/presentation/tavern-ending-stay.svg",
+        "semanticIds": [
+          "ending/tavern-stay"
+        ],
+        "mediaIds": [],
+        "roles": [
+          "exact-static"
+        ]
+      },
+      {
+        "sourceAsset": "assets/stage-school.svg",
+        "semanticIds": [],
+        "mediaIds": [
+          "school.teacher.arcana.classroom",
+          "school.teacher.arts-and-performance.classroom",
+          "school.teacher.body-confidence.classroom",
+          "school.teacher.etiquette-and-presentation.classroom",
+          "school.teacher.field-craft.classroom",
+          "school.teacher.literacy-and-numbers.classroom",
+          "school.teacher.physical-training.classroom",
+          "school.teacher.rhetoric-and-social.classroom"
+        ],
+        "roles": [
+          "school-teacher-media"
+        ]
+      },
+      {
+        "sourceAsset": "assets/stage-town.svg",
+        "semanticIds": [
+          "location/town/default"
+        ],
+        "mediaIds": [
+          "stage.town"
+        ],
+        "roles": [
+          "fallback-root"
+        ]
+      }
+    ],
+    "uniqueSourceCount": 89,
+    "duplicateSourceRows": 0,
+    "missingSourceCount": 0,
+    "deadIdentityReferenceCount": 0
   }
 }
