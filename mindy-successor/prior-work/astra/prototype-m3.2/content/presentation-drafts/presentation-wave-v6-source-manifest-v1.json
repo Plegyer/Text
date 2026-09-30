@@ -298,80 +298,80 @@
       "sourceAsset": "assets/presentation/poverty-street-helpful-summer.svg",
       "state": "current-exact",
       "fallbackId": "location/town/default",
-      "altKey": "presentation.prepared.location.town.event.poverty-street-production-v2-helpful-summer-shade.market-closing.alt",
-      "captionKey": "presentation.prepared.location.town.event.poverty-street-production-v2-helpful-summer-shade.market-closing.caption"
+      "altKey": "presentation.static.location.town.event.poverty-street-production-v2-helpful-summer-shade.market-closing.alt",
+      "captionKey": "presentation.static.location.town.event.poverty-street-production-v2-helpful-summer-shade.market-closing.caption"
     },
     {
       "presentationId": "location/town/event/poverty-street-production-v2-helpful-summer-shade/late-shade",
       "sourceAsset": "assets/presentation/poverty-street-helpful-summer.svg",
       "state": "current-exact",
       "fallbackId": "location/town/default",
-      "altKey": "presentation.prepared.location.town.event.poverty-street-production-v2-helpful-summer-shade.late-shade.alt",
-      "captionKey": "presentation.prepared.location.town.event.poverty-street-production-v2-helpful-summer-shade.late-shade.caption"
+      "altKey": "presentation.static.location.town.event.poverty-street-production-v2-helpful-summer-shade.late-shade.alt",
+      "captionKey": "presentation.static.location.town.event.poverty-street-production-v2-helpful-summer-shade.late-shade.caption"
     },
     {
       "presentationId": "location/town/event/poverty-street-production-v2-neutral-autumn-crossing/drizzle",
       "sourceAsset": "assets/presentation/poverty-street-neutral-autumn.svg",
       "state": "current-exact",
       "fallbackId": "location/town/default",
-      "altKey": "presentation.prepared.location.town.event.poverty-street-production-v2-neutral-autumn-crossing.drizzle.alt",
-      "captionKey": "presentation.prepared.location.town.event.poverty-street-production-v2-neutral-autumn-crossing.drizzle.caption"
+      "altKey": "presentation.static.location.town.event.poverty-street-production-v2-neutral-autumn-crossing.drizzle.alt",
+      "captionKey": "presentation.static.location.town.event.poverty-street-production-v2-neutral-autumn-crossing.drizzle.caption"
     },
     {
       "presentationId": "location/town/event/poverty-street-production-v2-neutral-autumn-crossing/dry-arcade",
       "sourceAsset": "assets/presentation/poverty-street-neutral-autumn.svg",
       "state": "current-exact",
       "fallbackId": "location/town/default",
-      "altKey": "presentation.prepared.location.town.event.poverty-street-production-v2-neutral-autumn-crossing.dry-arcade.alt",
-      "captionKey": "presentation.prepared.location.town.event.poverty-street-production-v2-neutral-autumn-crossing.dry-arcade.caption"
+      "altKey": "presentation.static.location.town.event.poverty-street-production-v2-neutral-autumn-crossing.dry-arcade.alt",
+      "captionKey": "presentation.static.location.town.event.poverty-street-production-v2-neutral-autumn-crossing.dry-arcade.caption"
     },
     {
       "presentationId": "location/town/event/poverty-street-production-v2-pressure-winter-wind/crosswind",
       "sourceAsset": "assets/presentation/poverty-street-pressure-winter.svg",
       "state": "current-exact",
       "fallbackId": "location/town/default",
-      "altKey": "presentation.prepared.location.town.event.poverty-street-production-v2-pressure-winter-wind.crosswind.alt",
-      "captionKey": "presentation.prepared.location.town.event.poverty-street-production-v2-pressure-winter-wind.crosswind.caption"
+      "altKey": "presentation.static.location.town.event.poverty-street-production-v2-pressure-winter-wind.crosswind.alt",
+      "captionKey": "presentation.static.location.town.event.poverty-street-production-v2-pressure-winter-wind.crosswind.caption"
     },
     {
       "presentationId": "location/town/event/poverty-street-production-v2-pressure-winter-wind/long-gusts",
       "sourceAsset": "assets/presentation/poverty-street-pressure-winter.svg",
       "state": "current-exact",
       "fallbackId": "location/town/default",
-      "altKey": "presentation.prepared.location.town.event.poverty-street-production-v2-pressure-winter-wind.long-gusts.alt",
-      "captionKey": "presentation.prepared.location.town.event.poverty-street-production-v2-pressure-winter-wind.long-gusts.caption"
+      "altKey": "presentation.static.location.town.event.poverty-street-production-v2-pressure-winter-wind.long-gusts.alt",
+      "captionKey": "presentation.static.location.town.event.poverty-street-production-v2-pressure-winter-wind.long-gusts.caption"
     },
     {
       "presentationId": "location/town/event/poverty-cheap-production-v2-shared-room-seasons/spring-window",
       "sourceAsset": "assets/presentation/poverty-cheap-lodging.svg",
       "state": "current-exact",
       "fallbackId": "location/town/default",
-      "altKey": "presentation.prepared.location.town.event.poverty-cheap-production-v2-shared-room-seasons.spring-window.alt",
-      "captionKey": "presentation.prepared.location.town.event.poverty-cheap-production-v2-shared-room-seasons.spring-window.caption"
+      "altKey": "presentation.static.location.town.event.poverty-cheap-production-v2-shared-room-seasons.spring-window.alt",
+      "captionKey": "presentation.static.location.town.event.poverty-cheap-production-v2-shared-room-seasons.spring-window.caption"
     },
     {
       "presentationId": "location/town/event/poverty-cheap-production-v2-shared-room-seasons/summer-heat",
       "sourceAsset": "assets/presentation/poverty-cheap-lodging.svg",
       "state": "current-exact",
       "fallbackId": "location/town/default",
-      "altKey": "presentation.prepared.location.town.event.poverty-cheap-production-v2-shared-room-seasons.summer-heat.alt",
-      "captionKey": "presentation.prepared.location.town.event.poverty-cheap-production-v2-shared-room-seasons.summer-heat.caption"
+      "altKey": "presentation.static.location.town.event.poverty-cheap-production-v2-shared-room-seasons.summer-heat.alt",
+      "captionKey": "presentation.static.location.town.event.poverty-cheap-production-v2-shared-room-seasons.summer-heat.caption"
     },
     {
       "presentationId": "location/town/event/poverty-cheap-production-v2-shared-room-seasons/winter-stove",
       "sourceAsset": "assets/presentation/poverty-cheap-lodging.svg",
       "state": "current-exact",
       "fallbackId": "location/town/default",
-      "altKey": "presentation.prepared.location.town.event.poverty-cheap-production-v2-shared-room-seasons.winter-stove.alt",
-      "captionKey": "presentation.prepared.location.town.event.poverty-cheap-production-v2-shared-room-seasons.winter-stove.caption"
+      "altKey": "presentation.static.location.town.event.poverty-cheap-production-v2-shared-room-seasons.winter-stove.alt",
+      "captionKey": "presentation.static.location.town.event.poverty-cheap-production-v2-shared-room-seasons.winter-stove.caption"
     },
     {
       "presentationId": "location/town/event/poverty-cheap-production-v2-shared-room-seasons/shared-room",
       "sourceAsset": "assets/presentation/poverty-cheap-lodging.svg",
       "state": "current-exact",
       "fallbackId": "location/town/default",
-      "altKey": "presentation.prepared.location.town.event.poverty-cheap-production-v2-shared-room-seasons.shared-room.alt",
-      "captionKey": "presentation.prepared.location.town.event.poverty-cheap-production-v2-shared-room-seasons.shared-room.caption"
+      "altKey": "presentation.static.location.town.event.poverty-cheap-production-v2-shared-room-seasons.shared-room.alt",
+      "captionKey": "presentation.static.location.town.event.poverty-cheap-production-v2-shared-room-seasons.shared-room.caption"
     }
   ],
   "schoolCourseSlots": [
