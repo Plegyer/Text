@@ -3325,6 +3325,142 @@
     "presentation.poverty.depth.poverty-street-production-v2-helpful-summer-shade.late-shade.g.text": {
       "ru": "Тебя замечают в тени и предлагают коротко помочь до закрытия. Можно согласиться ради небольшого заработка или остаться отдыхать; ни один выбор не превращает случайную встречу в обязанность, карьеру или отношения.",
       "en": "Someone notices you in the shade and offers a short task before closing. You can take it for a little money or keep resting; neither choice turns the chance meeting into an obligation, career, or relationship."
+    },
+    "ui.work.lockedCareerHelp": {
+      "ru": "Этот карьерный путь пока недоступен. Необходимое условие открытия ещё не задано.",
+      "en": "This career path is currently unavailable. Its unlock requirement has not been defined yet."
+    },
+    "ui.work.lockedCareerAria": {
+      "ru": "{career}: недоступно. {reason}",
+      "en": "{career}: unavailable. {reason}"
+    },
+    "presentation.static.ending.guild-life.alt": {
+      "ru": "Символ артели, книга учёта и рабочие инструменты обозначают жизнь в гильдии без показа конкретной награды.",
+      "en": "A guild emblem, ledger, and work tools represent a life in the guild without depicting a specific reward."
+    },
+    "presentation.static.ending.guild-life.caption": {
+      "ru": "Финал: жизнь в гильдии.",
+      "en": "Ending: life in the guild."
+    },
+    "presentation.static.ending.scholar-life.alt": {
+      "ru": "Учебный стол с книгами, записями и лампой обозначает продолжение жизни через образование.",
+      "en": "A study desk with books, notes, and a lamp represents continuing life through education."
+    },
+    "presentation.static.ending.scholar-life.caption": {
+      "ru": "Финал: жизнь через образование.",
+      "en": "Ending: a life shaped by education."
+    },
+    "presentation.static.ending.tavern-stay.alt": {
+      "ru": "Тёплая таверна после закрытия: стойка, кружка и связка ключей обозначают решение остаться и вести это место.",
+      "en": "A warm tavern after closing, with a counter, mug, and keys representing the choice to stay and run the place."
+    },
+    "presentation.static.ending.tavern-stay.caption": {
+      "ru": "Финал таверны: остаться в «Третьем тосте».",
+      "en": "Tavern ending: staying at the Third Toast."
+    },
+    "presentation.static.ending.tavern-guild.alt": {
+      "ru": "Стол таверны с кружкой, книгой учёта и знаком артели обозначает переход от смен к более широкой работе с гильдией.",
+      "en": "A tavern table with a mug, ledger, and guild mark representing a move from shifts into broader guild work."
+    },
+    "presentation.static.ending.tavern-guild.caption": {
+      "ru": "Финал таверны: путь через гильдию.",
+      "en": "Tavern ending: the guild route."
+    },
+    "presentation.static.ending.tavern-court.alt": {
+      "ru": "Запечатанное приглашение рядом с таверной кружкой обозначает приглашение ко двору без изображения конкретных персонажей.",
+      "en": "A sealed invitation beside a tavern mug represents a court invitation without depicting specific characters."
+    },
+    "presentation.static.ending.tavern-court.caption": {
+      "ru": "Финал таверны: приглашение ко двору.",
+      "en": "Tavern ending: an invitation to court."
+    },
+    "presentation.static.ending.lumber-stay.alt": {
+      "ru": "Сложенные брёвна и рабочие инструменты обозначают решение остаться в лесной артели без изменения карьерных условий.",
+      "en": "Stacked logs and work tools represent the choice to remain with the lumber crew without changing career conditions."
+    },
+    "presentation.static.ending.lumber-stay.caption": {
+      "ru": "Финал: остаться в лесной артели.",
+      "en": "Ending: staying with the lumber crew."
+    },
+    "presentation.prepared.location.town.event.poverty-street-production-v2-helpful-summer-shade.market-closing.alt": {
+      "ru": "Летняя небогатая улица у закрывающегося рынка, используемая как статичная сцена для короткой помощи у прилавков.",
+      "en": "A modest summer street by a closing market, used as a static scene for a short helping task near the stalls."
+    },
+    "presentation.prepared.location.town.event.poverty-street-production-v2-helpful-summer-shade.market-closing.caption": {
+      "ru": "Летняя улица: помощь у закрывающегося рынка.",
+      "en": "Summer street: helping near a closing market."
+    },
+    "presentation.prepared.location.town.event.poverty-street-production-v2-helpful-summer-shade.late-shade.alt": {
+      "ru": "Летняя небогатая улица с тенью от навесов, используемая как статичная сцена для спокойной уличной помощи.",
+      "en": "A modest summer street shaded by awnings, used as a static scene for a calm helping moment outdoors."
+    },
+    "presentation.prepared.location.town.event.poverty-street-production-v2-helpful-summer-shade.late-shade.caption": {
+      "ru": "Летняя улица: поздняя тень у навесов.",
+      "en": "Summer street: late shade beneath the awnings."
+    },
+    "presentation.prepared.location.town.event.poverty-street-production-v2-neutral-autumn-crossing.drizzle.alt": {
+      "ru": "Спокойная осенняя улица с укрытиями у домов, используемая как статичная сцена для перехода во время мороси.",
+      "en": "A calm autumn street with shelter along the buildings, used as a static scene for crossing during drizzle."
+    },
+    "presentation.prepared.location.town.event.poverty-street-production-v2-neutral-autumn-crossing.drizzle.caption": {
+      "ru": "Осенняя улица: переход под моросящим дождём.",
+      "en": "Autumn street: crossing in light drizzle."
+    },
+    "presentation.prepared.location.town.event.poverty-street-production-v2-neutral-autumn-crossing.dry-arcade.alt": {
+      "ru": "Спокойная осенняя улица с крытым проходом, используемая как статичная сцена для сухого укрытия под аркадой.",
+      "en": "A calm autumn street with a covered passage, used as a static scene for dry shelter beneath an arcade."
+    },
+    "presentation.prepared.location.town.event.poverty-street-production-v2-neutral-autumn-crossing.dry-arcade.caption": {
+      "ru": "Осенняя улица: сухое укрытие под аркадой.",
+      "en": "Autumn street: dry shelter beneath the arcade."
+    },
+    "presentation.prepared.location.town.event.poverty-street-production-v2-pressure-winter-wind.crosswind.alt": {
+      "ru": "Холодная зимняя улица без показа механического штрафа, используемая как статичная сцена для сильного бокового ветра.",
+      "en": "A cold winter street without depicting a mechanical penalty, used as a static scene for strong crosswind."
+    },
+    "presentation.prepared.location.town.event.poverty-street-production-v2-pressure-winter-wind.crosswind.caption": {
+      "ru": "Зимняя улица: сильный боковой ветер.",
+      "en": "Winter street: strong crosswind."
+    },
+    "presentation.prepared.location.town.event.poverty-street-production-v2-pressure-winter-wind.long-gusts.alt": {
+      "ru": "Холодная зимняя улица без показа механического штрафа, используемая как статичная сцена для долгих порывов ветра.",
+      "en": "A cold winter street without depicting a mechanical penalty, used as a static scene for long gusts of wind."
+    },
+    "presentation.prepared.location.town.event.poverty-street-production-v2-pressure-winter-wind.long-gusts.caption": {
+      "ru": "Зимняя улица: долгие порывы ветра.",
+      "en": "Winter street: long gusts of wind."
+    },
+    "presentation.prepared.location.town.event.poverty-cheap-production-v2-shared-room-seasons.spring-window.alt": {
+      "ru": "Простая дешёвая общая комната, используемая как нейтральный статичный фон для весенней сцены у окна.",
+      "en": "A simple inexpensive shared room used as a neutral static background for the spring window scene."
+    },
+    "presentation.prepared.location.town.event.poverty-cheap-production-v2-shared-room-seasons.spring-window.caption": {
+      "ru": "Дешёвое жильё: весенняя сцена у окна.",
+      "en": "Cheap lodging: a spring window scene."
+    },
+    "presentation.prepared.location.town.event.poverty-cheap-production-v2-shared-room-seasons.summer-heat.alt": {
+      "ru": "Простая дешёвая общая комната, используемая как нейтральный статичный фон для летней духоты.",
+      "en": "A simple inexpensive shared room used as a neutral static background for the summer heat scene."
+    },
+    "presentation.prepared.location.town.event.poverty-cheap-production-v2-shared-room-seasons.summer-heat.caption": {
+      "ru": "Дешёвое жильё: летняя духота в общей комнате.",
+      "en": "Cheap lodging: summer heat in the shared room."
+    },
+    "presentation.prepared.location.town.event.poverty-cheap-production-v2-shared-room-seasons.winter-stove.alt": {
+      "ru": "Простая дешёвая общая комната, используемая как нейтральный статичный фон для зимней сцены у печи.",
+      "en": "A simple inexpensive shared room used as a neutral static background for the winter stove scene."
+    },
+    "presentation.prepared.location.town.event.poverty-cheap-production-v2-shared-room-seasons.winter-stove.caption": {
+      "ru": "Дешёвое жильё: зимняя сцена у печи.",
+      "en": "Cheap lodging: a winter stove scene."
+    },
+    "presentation.prepared.location.town.event.poverty-cheap-production-v2-shared-room-seasons.shared-room.alt": {
+      "ru": "Простая дешёвая общая комната с минимальной обстановкой, используемая как нейтральный статичный фон бытовой сцены.",
+      "en": "A simple inexpensive shared room with minimal furnishings, used as a neutral static background for an everyday lodging scene."
+    },
+    "presentation.prepared.location.town.event.poverty-cheap-production-v2-shared-room-seasons.shared-room.caption": {
+      "ru": "Дешёвое жильё: обычная сцена в общей комнате.",
+      "en": "Cheap lodging: an ordinary shared-room scene."
     }
   }
 }
