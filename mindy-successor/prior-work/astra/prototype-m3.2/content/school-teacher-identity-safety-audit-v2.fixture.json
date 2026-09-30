@@ -1,0 +1,88 @@
+{
+  "formatVersion": 1,
+  "id": "school.teacher-identity-safety-audit-v2",
+  "status": "CONTENT_AUDIT_ONLY",
+  "baseline": "8fb0985ccc353f3f35a2cc2fc140c07dff81cd11",
+  "teachers": [
+    {
+      "teacherContentId": "school.teacher.mara-fen",
+      "courseId": "school.course.literacy_and_numbers",
+      "educatorOnly": true
+    },
+    {
+      "teacherContentId": "school.teacher.ilyra-venn",
+      "courseId": "school.course.arcana",
+      "educatorOnly": true
+    },
+    {
+      "teacherContentId": "school.teacher.cassian-reed",
+      "courseId": "school.course.rhetoric_and_social",
+      "educatorOnly": true
+    },
+    {
+      "teacherContentId": "school.teacher.eliane-marrow",
+      "courseId": "school.course.etiquette_and_presentation",
+      "educatorOnly": true
+    },
+    {
+      "teacherContentId": "school.teacher.rowan-pike",
+      "courseId": "school.course.field_craft",
+      "educatorOnly": true
+    },
+    {
+      "teacherContentId": "school.teacher.tovan-kest",
+      "courseId": "school.course.physical_training",
+      "educatorOnly": true
+    },
+    {
+      "teacherContentId": "school.teacher.nessa-lark",
+      "courseId": "school.course.arts_and_performance",
+      "educatorOnly": true
+    },
+    {
+      "teacherContentId": "school.teacher.sera-vey",
+      "courseId": "school.course.body_confidence",
+      "educatorOnly": true
+    }
+  ],
+  "surfaces": [
+    {
+      "surface": "generic paid-lesson reaction",
+      "identityAvailable": "generic school action only",
+      "teacherSpecificCopySafe": false,
+      "requiredCopy": "GENERIC"
+    },
+    {
+      "surface": "exact Night-study reaction",
+      "identityAvailable": "exact choice and course identity",
+      "teacherSpecificCopySafe": "REMEMBERED_METHOD_ONLY",
+      "requiredCopy": "NO LIVE TEACHER PRESENCE"
+    },
+    {
+      "surface": "school-target course libraries",
+      "identityAvailable": "authored course/teacher library mapping",
+      "teacherSpecificCopySafe": true,
+      "requiredCopy": "SAFE ONLY WHEN ROUTED BY EXACT ID",
+      "runtimeReachability": "INERT_UNTIL_ROUTED"
+    },
+    {
+      "surface": "teacher media pack",
+      "identityAvailable": "media ID + raw English alt",
+      "teacherSpecificCopySafe": true,
+      "requiredCopy": "PRESENTATION_METADATA_ONLY",
+      "runtimeEvents": 0
+    }
+  ],
+  "forbidden": [
+    "invent teacher event",
+    "claim Night-study teacher presence",
+    "teacher relationship write",
+    "infer paid course from generic actionCompleted:school",
+    "attach wrong teacher to generic result"
+  ],
+  "constraints": {
+    "addsTeacherEvent": false,
+    "changesRuntime": false,
+    "writesRelationship": false
+  }
+}

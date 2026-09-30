@@ -1,0 +1,175 @@
+{
+  "formatVersion": 1,
+  "id": "school.late-career-transfer-wording-v3",
+  "status": "CONTENT_PREP_ONLY",
+  "selectedThresholds": {
+    "tavern": null,
+    "hunter": null,
+    "guard": null,
+    "merchant": null,
+    "artist-geisha": null,
+    "assassin": null,
+    "prostitute": null
+  },
+  "selectedPublicResultIds": {
+    "tavern": null,
+    "hunter": null,
+    "guard": null,
+    "merchant": null,
+    "artist-geisha": null,
+    "assassin": null,
+    "prostitute": null
+  },
+  "entries": [
+    {
+      "careerId": "tavern",
+      "actionId": "tavern.shift",
+      "courseIds": [
+        "school.course.rhetoric_and_social",
+        "school.course.literacy_and_numbers"
+      ],
+      "keys": {
+        "title": "school.transfer_v3.late.tavern.room_and_record.title",
+        "body": "school.transfer_v3.late.tavern.room_and_record.body"
+      }
+    },
+    {
+      "careerId": "hunter",
+      "actionId": "hunter.shift",
+      "courseIds": [
+        "school.course.field_craft",
+        "school.course.physical_training"
+      ],
+      "keys": {
+        "title": "school.transfer_v3.late.hunter.return_plan.title",
+        "body": "school.transfer_v3.late.hunter.return_plan.body"
+      }
+    },
+    {
+      "careerId": "guard",
+      "actionId": "guard.shift",
+      "courseIds": [
+        "school.course.literacy_and_numbers",
+        "school.course.rhetoric_and_social"
+      ],
+      "keys": {
+        "title": "school.transfer_v3.late.guard.facts_first.title",
+        "body": "school.transfer_v3.late.guard.facts_first.body"
+      }
+    },
+    {
+      "careerId": "merchant",
+      "actionId": "merchant.shift",
+      "courseIds": [
+        "school.course.literacy_and_numbers",
+        "school.course.etiquette_and_presentation"
+      ],
+      "keys": {
+        "title": "school.transfer_v3.late.merchant.terms.title",
+        "body": "school.transfer_v3.late.merchant.terms.body"
+      }
+    },
+    {
+      "careerId": "artist-geisha",
+      "actionId": "artist-geisha.shift",
+      "courseIds": [
+        "school.course.arts_and_performance",
+        "school.course.body_confidence"
+      ],
+      "keys": {
+        "title": "school.transfer_v3.late.artist_geisha.presence.title",
+        "body": "school.transfer_v3.late.artist_geisha.presence.body"
+      }
+    },
+    {
+      "careerId": "assassin",
+      "actionId": "assassin.shift",
+      "courseIds": [
+        "school.course.field_craft",
+        "school.course.literacy_and_numbers"
+      ],
+      "keys": {
+        "title": "school.transfer_v3.late.assassin.gaps.title",
+        "body": "school.transfer_v3.late.assassin.gaps.body"
+      }
+    },
+    {
+      "careerId": "prostitute",
+      "actionId": "prostitute.shift",
+      "courseIds": [
+        "school.course.rhetoric_and_social",
+        "school.course.body_confidence"
+      ],
+      "keys": {
+        "title": "school.transfer_v3.late.prostitute.terms_and_choice.title",
+        "body": "school.transfer_v3.late.prostitute.terms_and_choice.body"
+      }
+    }
+  ],
+  "strings": {
+    "school.transfer_v3.late.tavern.room_and_record.title": {
+      "ru": "Шумная смена проверяет ясность",
+      "en": "A noisy shift tests clarity"
+    },
+    "school.transfer_v3.late.tavern.room_and_record.body": {
+      "ru": "В шумной комнате полезно одновременно слышать уточнение и сохранять короткую рабочую запись. Школьные привычки помогают не терять смысл разговора и детали передачи смены, не создавая нового карьерного ранга.",
+      "en": "In a noisy room, it helps to hear the clarification and keep a short work record at the same time. School habits preserve the meaning of the exchange and shift details without creating a new career rank."
+    },
+    "school.transfer_v3.late.hunter.return_plan.title": {
+      "ru": "Маршрут включает возвращение",
+      "en": "The route includes the return"
+    },
+    "school.transfer_v3.late.hunter.return_plan.body": {
+      "ru": "Полевой план становится лучше, когда в нём есть запасной путь, точка остановки и темп на обратную дорогу. Это перенос практики и выносливости, а не новый охотничий допуск.",
+      "en": "A field plan improves when it includes a fallback route, a stopping point, and enough pace for the return. This transfers practical planning and endurance without creating a new hunting qualification."
+    },
+    "school.transfer_v3.late.guard.facts_first.title": {
+      "ru": "Факты до обвинения",
+      "en": "Facts before accusation"
+    },
+    "school.transfer_v3.late.guard.facts_first.body": {
+      "ru": "Короткая запись наблюдаемого и нейтральный вопрос помогают не превращать предположение в официальный вывод. Школьная практика делает отчёт и разговор точнее без автоматического служебного повышения.",
+      "en": "A short record of what was observed and a neutral question help keep assumption from becoming an official conclusion. School practice makes the report and conversation more precise without an automatic promotion."
+    },
+    "school.transfer_v3.late.merchant.terms.title": {
+      "ru": "Условия должны оставаться понятными",
+      "en": "Terms should remain understandable"
+    },
+    "school.transfer_v3.late.merchant.terms.body": {
+      "ru": "Числа, сроки и формальная подача полезны только тогда, когда договор остаётся понятным обеим сторонам. Школьная ясность помогает переговорам, но не меняет цены, кредит или торговый статус.",
+      "en": "Numbers, deadlines, and formal presentation only help when the agreement remains understandable to both sides. School clarity supports negotiation without changing prices, credit, or trade status."
+    },
+    "school.transfer_v3.late.artist_geisha.presence.title": {
+      "ru": "Присутствие выбирают, а не доказывают",
+      "en": "Presence is chosen, not proven"
+    },
+    "school.transfer_v3.late.artist_geisha.presence.body": {
+      "ru": "Выразительность становится устойчивее, когда поза, темп и внимание выбраны намеренно, а не ради обязательного одобрения. Школьная практика поддерживает сцену без автоматического доступа к новым гостям или статусу.",
+      "en": "Expression becomes steadier when posture, pace, and attention are chosen deliberately rather than for mandatory approval. School practice supports the scene without automatic access to new guests or status."
+    },
+    "school.transfer_v3.late.assassin.gaps.title": {
+      "ru": "План показывает и пробелы",
+      "en": "A plan shows the gaps too"
+    },
+    "school.transfer_v3.late.assassin.gaps.body": {
+      "ru": "Хорошая схема отмечает не только маршрут, но и неизвестные участки, запасной выход и момент пересмотра. Это общий навык анализа и планирования, не инструкция по нападению и не контрактный допуск.",
+      "en": "A good plan marks not only the route but also unknown spans, a fallback exit, and the point for reconsideration. This is a general analysis and planning skill, not attack instruction or contractual clearance."
+    },
+    "school.transfer_v3.late.prostitute.terms_and_choice.title": {
+      "ru": "Ясные условия не отменяют выбор",
+      "en": "Clear terms do not remove choice"
+    },
+    "school.transfer_v3.late.prostitute.terms_and_choice.body": {
+      "ru": "Короткое обсуждение времени, оплаты и границ помогает сделать профессиональную смену понятнее. Уверенная подача остаётся отдельной от согласия на новый запрос и не создаёт механику Похоти или скрытого долга.",
+      "en": "A concise discussion of time, payment, and boundaries makes the professional shift clearer. Confident presentation remains separate from agreement to a new request and creates no Lust or hidden-debt mechanic."
+    }
+  },
+  "mechanics": {
+    "effects": [],
+    "careerWrites": [],
+    "activityWrites": [],
+    "economyChanges": [],
+    "relationshipWrites": [],
+    "publishesWorldFacts": []
+  }
+}

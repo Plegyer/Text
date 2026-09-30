@@ -1,0 +1,50 @@
+{
+  "formatVersion": 1,
+  "id": "school.queue-v8-ownership-collision-regression.v3",
+  "status": "TEST_CONTRACT_ONLY",
+  "baseline": "8fb0985ccc353f3f35a2cc2fc140c07dff81cd11",
+  "ownedArtifactRoots": [
+    "mindy-successor/docs/school-prep/",
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/school-",
+    "mindy-successor/prior-work/astra/prototype-m3.2/tests/school-"
+  ],
+  "forbiddenProductionOwnership": [
+    "mindy-successor/prior-work/astra/prototype-m3.2/src/",
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/definitions.json",
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/localization.json",
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation.json",
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/packs/",
+    "mindy-successor/prior-work/astra/prototype-m3.2/assets/"
+  ],
+  "forbiddenMechanicOwnership": [
+    "Save schema",
+    "RNG",
+    "NightFlow",
+    "career state",
+    "Activity state",
+    "economy/prices",
+    "presentation/media",
+    "producer/public-result state"
+  ],
+  "queueArtifacts": [
+    "content/school-current-main-text-reachability-audit-v1.fixture.json",
+    "content/school-generic-after-school-repetition-depth-v2.fixture.json",
+    "content/school-exact-night-study-context-depth-v2.fixture.json",
+    "content/school-course-journal-result-consistency-v2.fixture.json",
+    "content/school-teacher-identity-safety-audit-v2.fixture.json",
+    "content/school-starter-career-transfer-wording-v3.fixture.json",
+    "content/school-late-career-transfer-wording-v3.fixture.json",
+    "content/school-body-confidence-boundary-audit-v2.fixture.json",
+    "content/school-localization-fallback-coverage-v1.fixture.json"
+  ],
+  "constraints": {
+    "modifiesRuntime": false,
+    "modifiesSave": false,
+    "modifiesNightFlow": false,
+    "modifiesCareer": false,
+    "modifiesActivity": false,
+    "modifiesMedia": false,
+    "modifiesProducerState": false,
+    "modifiesEconomy": false
+  }
+}

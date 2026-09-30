@@ -1,0 +1,53 @@
+{
+  "formatVersion": 1,
+  "id": "school.body-confidence-boundary-audit-v2",
+  "status": "CONTENT_AUDIT_ONLY",
+  "baseline": "8fb0985ccc353f3f35a2cc2fc140c07dff81cd11",
+  "sourceCourseId": "school.course.body_confidence",
+  "sourceTrackId": "school.track.body_confidence",
+  "teacherContentId": "school.teacher.sera-vey",
+  "verifiedSurfaces": [
+    {
+      "surface": "course description",
+      "separateFromLust": true,
+      "separateFromConsentMechanics": true,
+      "separateFromAdultCareerMechanics": true
+    },
+    {
+      "surface": "school-body-confidence-depth-v1.fixture.json",
+      "lustEffects": 0,
+      "lustRoutingChanges": 0,
+      "sexualityPackageChanges": 0,
+      "groomingPackageChanges": 0,
+      "endurancePackageChanges": 0,
+      "publishesWorldFacts": 0
+    },
+    {
+      "surface": "school-whole-career-transfer-atlas-v1.fixture.json",
+      "role": "preparation mapping only",
+      "selectedThreshold": null,
+      "selectedProducerPublicFactId": null
+    },
+    {
+      "surface": "school-night-study-late-career-depth-v1.fixture.json",
+      "choiceId": "school.night_study.body_confidence.grooming",
+      "nextDayEnergyDelta": -1,
+      "careerWrites": 0,
+      "nightFlowChanges": 0
+    }
+  ],
+  "boundaries": [
+    "Body Confidence may describe deliberate presence, comfort, grooming, movement, self-possession, and personal boundaries.",
+    "Body Confidence does not establish consent to another request.",
+    "Body Confidence stat content does not write or measure Lust.",
+    "Body Confidence does not itself unlock or advance an adult career.",
+    "Body Confidence Night-study keeps the normal School Night-study mechanics only."
+  ],
+  "violationsFound": [],
+  "constraints": {
+    "changesLustRules": false,
+    "changesConsentRules": false,
+    "changesAdultCareerMechanics": false,
+    "changesRuntime": false
+  }
+}

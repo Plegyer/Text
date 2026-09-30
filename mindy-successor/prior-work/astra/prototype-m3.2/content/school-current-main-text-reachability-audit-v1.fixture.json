@@ -1,0 +1,75 @@
+{
+  "formatVersion": 1,
+  "id": "school.current-main-text-reachability-audit.v1",
+  "status": "CONTENT_AUDIT_ONLY",
+  "baseline": "8fb0985ccc353f3f35a2cc2fc140c07dff81cd11",
+  "surfaces": [
+    {
+      "id": "school-life-content-v1.after-paid-lesson",
+      "kind": "generic_after_school",
+      "location": "content/packs/school-life-content-v1.json",
+      "classification": "PLAYER_FACING_CONSUMER_READY",
+      "trigger": {
+        "kind": "actionCompleted",
+        "action": "school"
+      },
+      "exactCourseIdentity": false,
+      "teacherIdentity": false
+    },
+    {
+      "id": "school-lesson-content-v1.after-school",
+      "kind": "generic_after_school",
+      "location": "content/packs/school-lesson-content-v1.json",
+      "classification": "PLAYER_FACING_CONSUMER_READY",
+      "trigger": {
+        "kind": "actionCompleted",
+        "action": "school"
+      },
+      "exactCourseIdentity": false,
+      "teacherIdentity": false
+    },
+    {
+      "id": "school-life-content-v1.after-night-study",
+      "kind": "exact_night_study_consumer",
+      "location": "content/packs/school-life-content-v1.json",
+      "classification": "PLAYER_FACING_CONSUMER_READY",
+      "triggerKind": "nightChoiceCompleted",
+      "exactChoiceCount": 24,
+      "exactCourseIdentity": true,
+      "teacherIdentity": false
+    },
+    {
+      "id": "school-night-study-late-career-depth-v1",
+      "kind": "exact_night_study_preparation",
+      "location": "content/school-night-study-late-career-depth-v1.fixture.json",
+      "classification": "PREPARATION_ONLY",
+      "exactChoiceCount": 8
+    },
+    {
+      "id": "school-whole-career-transfer-atlas-v1",
+      "kind": "transfer_mapping",
+      "location": "content/school-whole-career-transfer-atlas-v1.fixture.json",
+      "classification": "PREPARATION_ONLY",
+      "careerCount": 10,
+      "consumerSelected": false
+    },
+    {
+      "id": "school-authored-production-inclusion-v1",
+      "kind": "target_school_content",
+      "location": "content/school-authored-production-inclusion-v1.fixture.json",
+      "classification": "PREPARATION_ONLY",
+      "statusValue": "PROPOSED_NOT_INCLUDED"
+    }
+  ],
+  "routingGaps": [
+    "Generic paid-lesson reaction facts do not expose exact course identity.",
+    "Night-study reaction facts expose exact choice identity but not teacher identity.",
+    "Transfer fixtures have no approved runtime consumer, threshold or producer/public-result selection.",
+    "school-target authored libraries are proposed/selective material rather than production bootstrap input."
+  ],
+  "constraints": {
+    "changesRuntime": false,
+    "changesProductionPacks": false,
+    "changesRootLocalization": false
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "formatVersion": 1,
+  "id": "school.starter-career-transfer-wording-v3",
+  "status": "CONTENT_PREP_ONLY",
+  "selectedThresholds": {
+    "lumber": null,
+    "satyr-maid": null,
+    "undead-farm": null
+  },
+  "selectedPublicResultIds": {
+    "lumber": null,
+    "satyr-maid": null,
+    "undead-farm": null
+  },
+  "entries": [
+    {
+      "careerId": "lumber",
+      "actionId": "lumber.shift",
+      "courseIds": [
+        "school.course.literacy_and_numbers",
+        "school.course.rhetoric_and_social"
+      ],
+      "keys": {
+        "title": "school.transfer_v3.starter.lumber.handoff.title",
+        "body": "school.transfer_v3.starter.lumber.handoff.body"
+      }
+    },
+    {
+      "careerId": "lumber",
+      "actionId": "lumber.shift",
+      "courseIds": [
+        "school.course.arcana",
+        "school.course.field_craft"
+      ],
+      "keys": {
+        "title": "school.transfer_v3.starter.lumber.observe.title",
+        "body": "school.transfer_v3.starter.lumber.observe.body"
+      }
+    },
+    {
+      "careerId": "satyr-maid",
+      "actionId": "satyr-maid.shift",
+      "courseIds": [
+        "school.course.rhetoric_and_social",
+        "school.course.etiquette_and_presentation",
+        "school.course.body_confidence"
+      ],
+      "keys": {
+        "title": "school.transfer_v3.starter.satyr_maid.request.title",
+        "body": "school.transfer_v3.starter.satyr_maid.request.body"
+      }
+    },
+    {
+      "careerId": "satyr-maid",
+      "actionId": "satyr-maid.shift",
+      "courseIds": [
+        "school.course.literacy_and_numbers",
+        "school.course.arts_and_performance"
+      ],
+      "keys": {
+        "title": "school.transfer_v3.starter.satyr_maid.sequence.title",
+        "body": "school.transfer_v3.starter.satyr_maid.sequence.body"
+      }
+    },
+    {
+      "careerId": "undead-farm",
+      "actionId": "undead-farm.shift",
+      "courseIds": [
+        "school.course.arcana",
+        "school.course.literacy_and_numbers"
+      ],
+      "keys": {
+        "title": "school.transfer_v3.starter.undead_farm.log.title",
+        "body": "school.transfer_v3.starter.undead_farm.log.body"
+      }
+    },
+    {
+      "careerId": "undead-farm",
+      "actionId": "undead-farm.shift",
+      "courseIds": [
+        "school.course.field_craft",
+        "school.course.rhetoric_and_social"
+      ],
+      "keys": {
+        "title": "school.transfer_v3.starter.undead_farm.adapt.title",
+        "body": "school.transfer_v3.starter.undead_farm.adapt.body"
+      }
+    }
+  ],
+  "strings": {
+    "school.transfer_v3.starter.lumber.handoff.title": {
+      "ru": "Проверяемая передача вместо устной памяти",
+      "en": "A verifiable handoff instead of memory"
+    },
+    "school.transfer_v3.starter.lumber.handoff.body": {
+      "ru": "После смены школьная привычка записывать сумму, срок и следующий шаг оказывается полезнее длинного пересказа. Навык помогает передать работу точнее, но сам по себе не открывает должность или новый этап карьеры.",
+      "en": "After a shift, the School habit of recording the amount, deadline, and next step proves more useful than a long retelling. The skill makes the handoff clearer without unlocking a role or career stage by itself."
+    },
+    "school.transfer_v3.starter.lumber.observe.title": {
+      "ru": "Сначала наблюдение, потом объяснение",
+      "en": "Observation before explanation"
+    },
+    "school.transfer_v3.starter.lumber.observe.body": {
+      "ru": "Странный след у лесной дороги становится поводом перечислить условия, а не сразу давать ему имя. Аркана и полевая практика помогают сформулировать следующий вопрос без автоматического лесного результата.",
+      "en": "An unusual trace by the logging road becomes a reason to list conditions rather than name it immediately. Arcana and Field Craft help frame the next question without producing an automatic forest result."
+    },
+    "school.transfer_v3.starter.satyr_maid.request.title": {
+      "ru": "Уточнить запрос и назвать границу",
+      "en": "Clarify the request and state the boundary"
+    },
+    "school.transfer_v3.starter.satyr_maid.request.body": {
+      "ru": "В занятой смене полезно отделить то, что гость просит, от того, что он лишь подразумевает. Риторика и самопрезентация помогают ответить ясно и профессионально, не превращая вежливость в обязательство соглашаться.",
+      "en": "During a busy shift, it helps to separate what a guest actually requests from what they merely imply. Rhetoric and presentation support a clear professional answer without turning courtesy into an obligation to agree."
+    },
+    "school.transfer_v3.starter.satyr_maid.sequence.title": {
+      "ru": "Порядок обслуживания тоже можно записать",
+      "en": "Service order can be written down too"
+    },
+    "school.transfer_v3.starter.satyr_maid.sequence.body": {
+      "ru": "Короткая запись приоритетов и ритм работы помогают не потерять просьбы в общей спешке. Это перенос школьных навыков организации и выступления, а не новый бонус к оплате или статусу.",
+      "en": "A short priority note and a steady work rhythm keep requests from disappearing in the rush. This transfers School organization and performance habits without creating a new pay or status bonus."
+    },
+    "school.transfer_v3.starter.undead_farm.log.title": {
+      "ru": "Необычный результат нуждается в журнале",
+      "en": "An unusual result needs a log"
+    },
+    "school.transfer_v3.starter.undead_farm.log.body": {
+      "ru": "Если рабочий результат выглядит необычно, школьный метод предлагает сохранить условия, наблюдение и неизвестное раздельно. Запись облегчает сравнение позже, но не создаёт исследовательский ранг.",
+      "en": "When a work result looks unusual, the School method keeps conditions, observations, and unknowns separate. The record makes later comparison easier without creating a research rank."
+    },
+    "school.transfer_v3.starter.undead_farm.adapt.title": {
+      "ru": "Перестроить задачу без нового правила",
+      "en": "Adapt the task without inventing a new rule"
+    },
+    "school.transfer_v3.starter.undead_farm.adapt.body": {
+      "ru": "Неудобный инструмент или изменившийся срок превращаются в практическую задачу: что доступно, что можно заменить и когда нужно остановиться. Полевая практика и ясный разговор помогают перестроиться без нового карьерного механизма.",
+      "en": "An awkward tool or changed deadline becomes a practical problem: what is available, what can be substituted, and when should the plan stop. Field Craft and clear conversation help adaptation without a new career mechanic."
+    }
+  },
+  "mechanics": {
+    "effects": [],
+    "careerWrites": [],
+    "activityWrites": [],
+    "economyChanges": [],
+    "publishesWorldFacts": []
+  }
+}

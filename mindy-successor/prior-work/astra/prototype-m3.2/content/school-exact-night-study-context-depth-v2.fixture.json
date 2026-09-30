@@ -1,0 +1,477 @@
+{
+  "formatVersion": 1,
+  "id": "school.exact-night-study-context-depth-v2",
+  "status": "CONTENT_PREP_ONLY",
+  "entries": [
+    {
+      "choiceId": "school.night_study.literacy_and_numbers.reason",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.literacy_and_numbers.reason"
+      },
+      "keys": {
+        "title": "school.night_context_v2.literacy_and_numbers_reason.title",
+        "body": "school.night_context_v2.literacy_and_numbers_reason.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.literacy_and_numbers.wits",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.literacy_and_numbers.wits"
+      },
+      "keys": {
+        "title": "school.night_context_v2.literacy_and_numbers_wits.title",
+        "body": "school.night_context_v2.literacy_and_numbers_wits.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.arcana.magic",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.arcana.magic"
+      },
+      "keys": {
+        "title": "school.night_context_v2.arcana_magic.title",
+        "body": "school.night_context_v2.arcana_magic.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.arcana.reason",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.arcana.reason"
+      },
+      "keys": {
+        "title": "school.night_context_v2.arcana_reason.title",
+        "body": "school.night_context_v2.arcana_reason.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.arcana.creativity",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.arcana.creativity"
+      },
+      "keys": {
+        "title": "school.night_context_v2.arcana_creativity.title",
+        "body": "school.night_context_v2.arcana_creativity.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.rhetoric_and_social.charm",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.rhetoric_and_social.charm"
+      },
+      "keys": {
+        "title": "school.night_context_v2.rhetoric_and_social_charm.title",
+        "body": "school.night_context_v2.rhetoric_and_social_charm.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.rhetoric_and_social.sociability",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.rhetoric_and_social.sociability"
+      },
+      "keys": {
+        "title": "school.night_context_v2.rhetoric_and_social_sociability.title",
+        "body": "school.night_context_v2.rhetoric_and_social_sociability.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.rhetoric_and_social.wits",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.rhetoric_and_social.wits"
+      },
+      "keys": {
+        "title": "school.night_context_v2.rhetoric_and_social_wits.title",
+        "body": "school.night_context_v2.rhetoric_and_social_wits.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.etiquette_and_presentation.manners",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.etiquette_and_presentation.manners"
+      },
+      "keys": {
+        "title": "school.night_context_v2.etiquette_and_presentation_manners.title",
+        "body": "school.night_context_v2.etiquette_and_presentation_manners.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.etiquette_and_presentation.grooming",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.etiquette_and_presentation.grooming"
+      },
+      "keys": {
+        "title": "school.night_context_v2.etiquette_and_presentation_grooming.title",
+        "body": "school.night_context_v2.etiquette_and_presentation_grooming.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.etiquette_and_presentation.charm",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.etiquette_and_presentation.charm"
+      },
+      "keys": {
+        "title": "school.night_context_v2.etiquette_and_presentation_charm.title",
+        "body": "school.night_context_v2.etiquette_and_presentation_charm.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.field_craft.dexterity",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.field_craft.dexterity"
+      },
+      "keys": {
+        "title": "school.night_context_v2.field_craft_dexterity.title",
+        "body": "school.night_context_v2.field_craft_dexterity.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.field_craft.wits",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.field_craft.wits"
+      },
+      "keys": {
+        "title": "school.night_context_v2.field_craft_wits.title",
+        "body": "school.night_context_v2.field_craft_wits.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.field_craft.creativity",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.field_craft.creativity"
+      },
+      "keys": {
+        "title": "school.night_context_v2.field_craft_creativity.title",
+        "body": "school.night_context_v2.field_craft_creativity.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.physical_training.strength",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.physical_training.strength"
+      },
+      "keys": {
+        "title": "school.night_context_v2.physical_training_strength.title",
+        "body": "school.night_context_v2.physical_training_strength.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.physical_training.endurance",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.physical_training.endurance"
+      },
+      "keys": {
+        "title": "school.night_context_v2.physical_training_endurance.title",
+        "body": "school.night_context_v2.physical_training_endurance.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.physical_training.dexterity",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.physical_training.dexterity"
+      },
+      "keys": {
+        "title": "school.night_context_v2.physical_training_dexterity.title",
+        "body": "school.night_context_v2.physical_training_dexterity.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.arts_and_performance.creativity",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.arts_and_performance.creativity"
+      },
+      "keys": {
+        "title": "school.night_context_v2.arts_and_performance_creativity.title",
+        "body": "school.night_context_v2.arts_and_performance_creativity.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.arts_and_performance.charm",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.arts_and_performance.charm"
+      },
+      "keys": {
+        "title": "school.night_context_v2.arts_and_performance_charm.title",
+        "body": "school.night_context_v2.arts_and_performance_charm.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.arts_and_performance.sociability",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.arts_and_performance.sociability"
+      },
+      "keys": {
+        "title": "school.night_context_v2.arts_and_performance_sociability.title",
+        "body": "school.night_context_v2.arts_and_performance_sociability.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.arts_and_performance.dexterity",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.arts_and_performance.dexterity"
+      },
+      "keys": {
+        "title": "school.night_context_v2.arts_and_performance_dexterity.title",
+        "body": "school.night_context_v2.arts_and_performance_dexterity.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.body_confidence.sexuality",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.body_confidence.sexuality"
+      },
+      "keys": {
+        "title": "school.night_context_v2.body_confidence_sexuality.title",
+        "body": "school.night_context_v2.body_confidence_sexuality.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.body_confidence.grooming",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.body_confidence.grooming"
+      },
+      "keys": {
+        "title": "school.night_context_v2.body_confidence_grooming.title",
+        "body": "school.night_context_v2.body_confidence_grooming.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.body_confidence.endurance",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.body_confidence.endurance"
+      },
+      "keys": {
+        "title": "school.night_context_v2.body_confidence_endurance.title",
+        "body": "school.night_context_v2.body_confidence_endurance.body"
+      }
+    }
+  ],
+  "strings": {
+    "school.night_context_v2.literacy_and_numbers_reason.title": {
+      "ru": "Ночная практика: рассуждение",
+      "en": "Night practice: reason"
+    },
+    "school.night_context_v2.literacy_and_numbers_reason.body": {
+      "ru": "Ты выбираешь короткое упражнение на рассуждение и останавливаешься после одного осмысленного повтора. Ночная учёба остаётся отдельным уже заданным действием: без оплаты и расхода текущей Energy, с обычным эффектом выбранного варианта.",
+      "en": "You choose one short reason exercise and stop after a single deliberate repetition. Night study remains the existing separate action: no tuition or current-day Energy cost, with only the normal effect of the selected choice."
+    },
+    "school.night_context_v2.literacy_and_numbers_wits.title": {
+      "ru": "Ночная практика: сообразительность",
+      "en": "Night practice: wits"
+    },
+    "school.night_context_v2.literacy_and_numbers_wits.body": {
+      "ru": "Ты выбираешь короткое упражнение на сообразительность и останавливаешься после одного осмысленного повтора. Ночная учёба остаётся отдельным уже заданным действием: без оплаты и расхода текущей Energy, с обычным эффектом выбранного варианта.",
+      "en": "You choose one short wits exercise and stop after a single deliberate repetition. Night study remains the existing separate action: no tuition or current-day Energy cost, with only the normal effect of the selected choice."
+    },
+    "school.night_context_v2.arcana_magic.title": {
+      "ru": "Ночная практика: магия",
+      "en": "Night practice: magic"
+    },
+    "school.night_context_v2.arcana_magic.body": {
+      "ru": "Ты выбираешь короткое упражнение на магия и останавливаешься после одного осмысленного повтора. Ночная учёба остаётся отдельным уже заданным действием: без оплаты и расхода текущей Energy, с обычным эффектом выбранного варианта.",
+      "en": "You choose one short magic exercise and stop after a single deliberate repetition. Night study remains the existing separate action: no tuition or current-day Energy cost, with only the normal effect of the selected choice."
+    },
+    "school.night_context_v2.arcana_reason.title": {
+      "ru": "Ночная практика: рассуждение",
+      "en": "Night practice: reason"
+    },
+    "school.night_context_v2.arcana_reason.body": {
+      "ru": "Ты выбираешь короткое упражнение на рассуждение и останавливаешься после одного осмысленного повтора. Ночная учёба остаётся отдельным уже заданным действием: без оплаты и расхода текущей Energy, с обычным эффектом выбранного варианта.",
+      "en": "You choose one short reason exercise and stop after a single deliberate repetition. Night study remains the existing separate action: no tuition or current-day Energy cost, with only the normal effect of the selected choice."
+    },
+    "school.night_context_v2.arcana_creativity.title": {
+      "ru": "Ночная практика: творчество",
+      "en": "Night practice: creativity"
+    },
+    "school.night_context_v2.arcana_creativity.body": {
+      "ru": "Ты выбираешь короткое упражнение на творчество и останавливаешься после одного осмысленного повтора. Ночная учёба остаётся отдельным уже заданным действием: без оплаты и расхода текущей Energy, с обычным эффектом выбранного варианта.",
+      "en": "You choose one short creativity exercise and stop after a single deliberate repetition. Night study remains the existing separate action: no tuition or current-day Energy cost, with only the normal effect of the selected choice."
+    },
+    "school.night_context_v2.rhetoric_and_social_charm.title": {
+      "ru": "Ночная практика: обаяние",
+      "en": "Night practice: charm"
+    },
+    "school.night_context_v2.rhetoric_and_social_charm.body": {
+      "ru": "Ты выбираешь короткое упражнение на обаяние и останавливаешься после одного осмысленного повтора. Ночная учёба остаётся отдельным уже заданным действием: без оплаты и расхода текущей Energy, с обычным эффектом выбранного варианта.",
+      "en": "You choose one short charm exercise and stop after a single deliberate repetition. Night study remains the existing separate action: no tuition or current-day Energy cost, with only the normal effect of the selected choice."
+    },
+    "school.night_context_v2.rhetoric_and_social_sociability.title": {
+      "ru": "Ночная практика: общительность",
+      "en": "Night practice: sociability"
+    },
+    "school.night_context_v2.rhetoric_and_social_sociability.body": {
+      "ru": "Ты выбираешь короткое упражнение на общительность и останавливаешься после одного осмысленного повтора. Ночная учёба остаётся отдельным уже заданным действием: без оплаты и расхода текущей Energy, с обычным эффектом выбранного варианта.",
+      "en": "You choose one short sociability exercise and stop after a single deliberate repetition. Night study remains the existing separate action: no tuition or current-day Energy cost, with only the normal effect of the selected choice."
+    },
+    "school.night_context_v2.rhetoric_and_social_wits.title": {
+      "ru": "Ночная практика: сообразительность",
+      "en": "Night practice: wits"
+    },
+    "school.night_context_v2.rhetoric_and_social_wits.body": {
+      "ru": "Ты выбираешь короткое упражнение на сообразительность и останавливаешься после одного осмысленного повтора. Ночная учёба остаётся отдельным уже заданным действием: без оплаты и расхода текущей Energy, с обычным эффектом выбранного варианта.",
+      "en": "You choose one short wits exercise and stop after a single deliberate repetition. Night study remains the existing separate action: no tuition or current-day Energy cost, with only the normal effect of the selected choice."
+    },
+    "school.night_context_v2.etiquette_and_presentation_manners.title": {
+      "ru": "Ночная практика: манеры",
+      "en": "Night practice: manners"
+    },
+    "school.night_context_v2.etiquette_and_presentation_manners.body": {
+      "ru": "Ты выбираешь короткое упражнение на манеры и останавливаешься после одного осмысленного повтора. Ночная учёба остаётся отдельным уже заданным действием: без оплаты и расхода текущей Energy, с обычным эффектом выбранного варианта.",
+      "en": "You choose one short manners exercise and stop after a single deliberate repetition. Night study remains the existing separate action: no tuition or current-day Energy cost, with only the normal effect of the selected choice."
+    },
+    "school.night_context_v2.etiquette_and_presentation_grooming.title": {
+      "ru": "Ночная практика: уход",
+      "en": "Night practice: grooming"
+    },
+    "school.night_context_v2.etiquette_and_presentation_grooming.body": {
+      "ru": "Ты выбираешь короткое упражнение на уход и останавливаешься после одного осмысленного повтора. Ночная учёба остаётся отдельным уже заданным действием: без оплаты и расхода текущей Energy, с обычным эффектом выбранного варианта.",
+      "en": "You choose one short grooming exercise and stop after a single deliberate repetition. Night study remains the existing separate action: no tuition or current-day Energy cost, with only the normal effect of the selected choice."
+    },
+    "school.night_context_v2.etiquette_and_presentation_charm.title": {
+      "ru": "Ночная практика: обаяние",
+      "en": "Night practice: charm"
+    },
+    "school.night_context_v2.etiquette_and_presentation_charm.body": {
+      "ru": "Ты выбираешь короткое упражнение на обаяние и останавливаешься после одного осмысленного повтора. Ночная учёба остаётся отдельным уже заданным действием: без оплаты и расхода текущей Energy, с обычным эффектом выбранного варианта.",
+      "en": "You choose one short charm exercise and stop after a single deliberate repetition. Night study remains the existing separate action: no tuition or current-day Energy cost, with only the normal effect of the selected choice."
+    },
+    "school.night_context_v2.field_craft_dexterity.title": {
+      "ru": "Ночная практика: ловкость",
+      "en": "Night practice: dexterity"
+    },
+    "school.night_context_v2.field_craft_dexterity.body": {
+      "ru": "Ты выбираешь короткое упражнение на ловкость и останавливаешься после одного осмысленного повтора. Ночная учёба остаётся отдельным уже заданным действием: без оплаты и расхода текущей Energy, с обычным эффектом выбранного варианта.",
+      "en": "You choose one short dexterity exercise and stop after a single deliberate repetition. Night study remains the existing separate action: no tuition or current-day Energy cost, with only the normal effect of the selected choice."
+    },
+    "school.night_context_v2.field_craft_wits.title": {
+      "ru": "Ночная практика: сообразительность",
+      "en": "Night practice: wits"
+    },
+    "school.night_context_v2.field_craft_wits.body": {
+      "ru": "Ты выбираешь короткое упражнение на сообразительность и останавливаешься после одного осмысленного повтора. Ночная учёба остаётся отдельным уже заданным действием: без оплаты и расхода текущей Energy, с обычным эффектом выбранного варианта.",
+      "en": "You choose one short wits exercise and stop after a single deliberate repetition. Night study remains the existing separate action: no tuition or current-day Energy cost, with only the normal effect of the selected choice."
+    },
+    "school.night_context_v2.field_craft_creativity.title": {
+      "ru": "Ночная практика: творчество",
+      "en": "Night practice: creativity"
+    },
+    "school.night_context_v2.field_craft_creativity.body": {
+      "ru": "Ты выбираешь короткое упражнение на творчество и останавливаешься после одного осмысленного повтора. Ночная учёба остаётся отдельным уже заданным действием: без оплаты и расхода текущей Energy, с обычным эффектом выбранного варианта.",
+      "en": "You choose one short creativity exercise and stop after a single deliberate repetition. Night study remains the existing separate action: no tuition or current-day Energy cost, with only the normal effect of the selected choice."
+    },
+    "school.night_context_v2.physical_training_strength.title": {
+      "ru": "Ночная практика: сила",
+      "en": "Night practice: strength"
+    },
+    "school.night_context_v2.physical_training_strength.body": {
+      "ru": "Ты выбираешь короткое упражнение на сила и останавливаешься после одного осмысленного повтора. Ночная учёба остаётся отдельным уже заданным действием: без оплаты и расхода текущей Energy, с обычным эффектом выбранного варианта.",
+      "en": "You choose one short strength exercise and stop after a single deliberate repetition. Night study remains the existing separate action: no tuition or current-day Energy cost, with only the normal effect of the selected choice."
+    },
+    "school.night_context_v2.physical_training_endurance.title": {
+      "ru": "Ночная практика: выносливость",
+      "en": "Night practice: endurance"
+    },
+    "school.night_context_v2.physical_training_endurance.body": {
+      "ru": "Ты выбираешь короткое упражнение на выносливость и останавливаешься после одного осмысленного повтора. Ночная учёба остаётся отдельным уже заданным действием: без оплаты и расхода текущей Energy, с обычным эффектом выбранного варианта.",
+      "en": "You choose one short endurance exercise and stop after a single deliberate repetition. Night study remains the existing separate action: no tuition or current-day Energy cost, with only the normal effect of the selected choice."
+    },
+    "school.night_context_v2.physical_training_dexterity.title": {
+      "ru": "Ночная практика: ловкость",
+      "en": "Night practice: dexterity"
+    },
+    "school.night_context_v2.physical_training_dexterity.body": {
+      "ru": "Ты выбираешь короткое упражнение на ловкость и останавливаешься после одного осмысленного повтора. Ночная учёба остаётся отдельным уже заданным действием: без оплаты и расхода текущей Energy, с обычным эффектом выбранного варианта.",
+      "en": "You choose one short dexterity exercise and stop after a single deliberate repetition. Night study remains the existing separate action: no tuition or current-day Energy cost, with only the normal effect of the selected choice."
+    },
+    "school.night_context_v2.arts_and_performance_creativity.title": {
+      "ru": "Ночная практика: творчество",
+      "en": "Night practice: creativity"
+    },
+    "school.night_context_v2.arts_and_performance_creativity.body": {
+      "ru": "Ты выбираешь короткое упражнение на творчество и останавливаешься после одного осмысленного повтора. Ночная учёба остаётся отдельным уже заданным действием: без оплаты и расхода текущей Energy, с обычным эффектом выбранного варианта.",
+      "en": "You choose one short creativity exercise and stop after a single deliberate repetition. Night study remains the existing separate action: no tuition or current-day Energy cost, with only the normal effect of the selected choice."
+    },
+    "school.night_context_v2.arts_and_performance_charm.title": {
+      "ru": "Ночная практика: обаяние",
+      "en": "Night practice: charm"
+    },
+    "school.night_context_v2.arts_and_performance_charm.body": {
+      "ru": "Ты выбираешь короткое упражнение на обаяние и останавливаешься после одного осмысленного повтора. Ночная учёба остаётся отдельным уже заданным действием: без оплаты и расхода текущей Energy, с обычным эффектом выбранного варианта.",
+      "en": "You choose one short charm exercise and stop after a single deliberate repetition. Night study remains the existing separate action: no tuition or current-day Energy cost, with only the normal effect of the selected choice."
+    },
+    "school.night_context_v2.arts_and_performance_sociability.title": {
+      "ru": "Ночная практика: общительность",
+      "en": "Night practice: sociability"
+    },
+    "school.night_context_v2.arts_and_performance_sociability.body": {
+      "ru": "Ты выбираешь короткое упражнение на общительность и останавливаешься после одного осмысленного повтора. Ночная учёба остаётся отдельным уже заданным действием: без оплаты и расхода текущей Energy, с обычным эффектом выбранного варианта.",
+      "en": "You choose one short sociability exercise and stop after a single deliberate repetition. Night study remains the existing separate action: no tuition or current-day Energy cost, with only the normal effect of the selected choice."
+    },
+    "school.night_context_v2.arts_and_performance_dexterity.title": {
+      "ru": "Ночная практика: ловкость",
+      "en": "Night practice: dexterity"
+    },
+    "school.night_context_v2.arts_and_performance_dexterity.body": {
+      "ru": "Ты выбираешь короткое упражнение на ловкость и останавливаешься после одного осмысленного повтора. Ночная учёба остаётся отдельным уже заданным действием: без оплаты и расхода текущей Energy, с обычным эффектом выбранного варианта.",
+      "en": "You choose one short dexterity exercise and stop after a single deliberate repetition. Night study remains the existing separate action: no tuition or current-day Energy cost, with only the normal effect of the selected choice."
+    },
+    "school.night_context_v2.body_confidence_sexuality.title": {
+      "ru": "Ночная практика: сексуальность",
+      "en": "Night practice: sexuality"
+    },
+    "school.night_context_v2.body_confidence_sexuality.body": {
+      "ru": "Ты выбираешь короткое упражнение на сексуальность и останавливаешься после одного осмысленного повтора. Ночная учёба остаётся отдельным уже заданным действием: без оплаты и расхода текущей Energy, с обычным эффектом выбранного варианта.",
+      "en": "You choose one short sexuality exercise and stop after a single deliberate repetition. Night study remains the existing separate action: no tuition or current-day Energy cost, with only the normal effect of the selected choice."
+    },
+    "school.night_context_v2.body_confidence_grooming.title": {
+      "ru": "Ночная практика: уход",
+      "en": "Night practice: grooming"
+    },
+    "school.night_context_v2.body_confidence_grooming.body": {
+      "ru": "Ты выбираешь короткое упражнение на уход и останавливаешься после одного осмысленного повтора. Ночная учёба остаётся отдельным уже заданным действием: без оплаты и расхода текущей Energy, с обычным эффектом выбранного варианта.",
+      "en": "You choose one short grooming exercise and stop after a single deliberate repetition. Night study remains the existing separate action: no tuition or current-day Energy cost, with only the normal effect of the selected choice."
+    },
+    "school.night_context_v2.body_confidence_endurance.title": {
+      "ru": "Ночная практика: выносливость",
+      "en": "Night practice: endurance"
+    },
+    "school.night_context_v2.body_confidence_endurance.body": {
+      "ru": "Ты выбираешь короткое упражнение на выносливость и останавливаешься после одного осмысленного повтора. Ночная учёба остаётся отдельным уже заданным действием: без оплаты и расхода текущей Energy, с обычным эффектом выбранного варианта.",
+      "en": "You choose one short endurance exercise and stop after a single deliberate repetition. Night study remains the existing separate action: no tuition or current-day Energy cost, with only the normal effect of the selected choice."
+    }
+  },
+  "invariants": {
+    "tuitionDelta": 0,
+    "currentDayEnergyDelta": 0,
+    "statGain": 2,
+    "nextDayEnergyDelta": -1
+  },
+  "mechanics": {
+    "effects": [],
+    "nightFlowChanges": [],
+    "careerWrites": [],
+    "publishesWorldFacts": []
+  }
+}

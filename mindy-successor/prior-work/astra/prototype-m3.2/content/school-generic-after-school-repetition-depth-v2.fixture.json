@@ -1,0 +1,140 @@
+{
+  "formatVersion": 1,
+  "id": "school.generic-after-school-repetition-depth-v2",
+  "status": "CONTENT_PREP_ONLY",
+  "safeTrigger": {
+    "kind": "actionCompleted",
+    "action": "school"
+  },
+  "selectedRuntimeConsumerId": null,
+  "variants": [
+    {
+      "id": "close_notebook",
+      "keys": {
+        "title": "school.generic_after_v2.close_notebook.title",
+        "body": "school.generic_after_v2.close_notebook.body"
+      }
+    },
+    {
+      "id": "question_for_later",
+      "keys": {
+        "title": "school.generic_after_v2.question_for_later.title",
+        "body": "school.generic_after_v2.question_for_later.body"
+      }
+    },
+    {
+      "id": "clearer_than_before",
+      "keys": {
+        "title": "school.generic_after_v2.clearer_than_before.title",
+        "body": "school.generic_after_v2.clearer_than_before.body"
+      }
+    },
+    {
+      "id": "no_extra_cost",
+      "keys": {
+        "title": "school.generic_after_v2.no_extra_cost.title",
+        "body": "school.generic_after_v2.no_extra_cost.body"
+      }
+    },
+    {
+      "id": "notes_for_tomorrow",
+      "keys": {
+        "title": "school.generic_after_v2.notes_for_tomorrow.title",
+        "body": "school.generic_after_v2.notes_for_tomorrow.body"
+      }
+    },
+    {
+      "id": "stop_at_enough",
+      "keys": {
+        "title": "school.generic_after_v2.stop_at_enough.title",
+        "body": "school.generic_after_v2.stop_at_enough.body"
+      }
+    },
+    {
+      "id": "small_summary",
+      "keys": {
+        "title": "school.generic_after_v2.small_summary.title",
+        "body": "school.generic_after_v2.small_summary.body"
+      }
+    },
+    {
+      "id": "return_to_day",
+      "keys": {
+        "title": "school.generic_after_v2.return_to_day.title",
+        "body": "school.generic_after_v2.return_to_day.body"
+      }
+    }
+  ],
+  "strings": {
+    "school.generic_after_v2.close_notebook.title": {
+      "ru": "Закрыть тетрадь вовремя",
+      "en": "Close the notebook on time"
+    },
+    "school.generic_after_v2.close_notebook.body": {
+      "ru": "Ты отмечаешь одну мысль, которую стоит сохранить, и закрываешь записи. Урок уже завершён; дополнительная пауза не должна превращаться в скрытое второе занятие.",
+      "en": "You mark one idea worth keeping and close the notes. The lesson is already complete; the follow-up pause should not become a hidden second lesson."
+    },
+    "school.generic_after_v2.question_for_later.title": {
+      "ru": "Один вопрос на потом",
+      "en": "One question for later"
+    },
+    "school.generic_after_v2.question_for_later.body": {
+      "ru": "Вместо попытки немедленно разобраться во всём ты записываешь один точный вопрос на следующее занятие. Остаток дня остаётся свободным от дополнительного школьного действия.",
+      "en": "Instead of trying to resolve everything immediately, you write down one precise question for the next lesson. The rest of the day remains free of another School action."
+    },
+    "school.generic_after_v2.clearer_than_before.title": {
+      "ru": "Чуть яснее, чем до урока",
+      "en": "A little clearer than before"
+    },
+    "school.generic_after_v2.clearer_than_before.body": {
+      "ru": "Не каждая тема обязана стать простой за один раз. Достаточно заметить, что одна связь теперь понятнее, и оставить остальное для будущей практики.",
+      "en": "Not every subject has to become simple in one session. It is enough to notice that one connection is clearer now and leave the rest for future practice."
+    },
+    "school.generic_after_v2.no_extra_cost.title": {
+      "ru": "Без второго списания",
+      "en": "No second charge"
+    },
+    "school.generic_after_v2.no_extra_cost.body": {
+      "ru": "Стоимость и текущая Energy уже были учтены завершённым уроком. Эта короткая сцена ничего не списывает повторно и не добавляет отдельного прогресса.",
+      "en": "Tuition and current-day Energy were already accounted for by the completed lesson. This short scene does not charge them again or add separate progress."
+    },
+    "school.generic_after_v2.notes_for_tomorrow.title": {
+      "ru": "Запись для завтрашней себя",
+      "en": "A note for tomorrow"
+    },
+    "school.generic_after_v2.notes_for_tomorrow.body": {
+      "ru": "Ты переписываешь одну фразу так, чтобы завтра она всё ещё имела смысл без контекста класса. После этого можно возвращаться к дневным делам.",
+      "en": "You rewrite one sentence so it will still make sense tomorrow without the classroom context. After that, you can return to the rest of the day."
+    },
+    "school.generic_after_v2.stop_at_enough.title": {
+      "ru": "Остановиться на достаточном",
+      "en": "Stop at enough"
+    },
+    "school.generic_after_v2.stop_at_enough.body": {
+      "ru": "Желание довести всё до идеала остаётся за дверью класса. Сегодняшний урок уже сделал свою работу; следующая попытка будет отдельным выбором.",
+      "en": "The urge to make everything perfect stays outside the classroom door. Today's lesson has already done its work; the next attempt will be a separate choice."
+    },
+    "school.generic_after_v2.small_summary.title": {
+      "ru": "Короткое резюме",
+      "en": "A short summary"
+    },
+    "school.generic_after_v2.small_summary.body": {
+      "ru": "Ты формулируешь итог в двух предложениях: что стало понятнее и что пока остаётся вопросом. Ни курс, ни преподаватель для такой записи не нужно угадывать.",
+      "en": "You summarize the result in two sentences: what became clearer and what remains a question. This kind of note does not require guessing the course or teacher."
+    },
+    "school.generic_after_v2.return_to_day.title": {
+      "ru": "Вернуться к дню",
+      "en": "Return to the day"
+    },
+    "school.generic_after_v2.return_to_day.body": {
+      "ru": "Ты убираешь материалы и возвращаешься к обычным делам. Размышление заканчивается там же, где начинается следующий самостоятельный выбор.",
+      "en": "You put the materials away and return to ordinary tasks. The reflection ends where the next independent choice begins."
+    }
+  },
+  "mechanics": {
+    "effects": [],
+    "careerWrites": [],
+    "relationshipWrites": [],
+    "publishesWorldFacts": []
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "formatVersion": 1,
+  "id": "school.course-journal-result-consistency-v2",
+  "status": "CONTENT_AUDIT_ONLY",
+  "baseline": "8fb0985ccc353f3f35a2cc2fc140c07dff81cd11",
+  "courses": [
+    {
+      "courseId": "school.course.literacy_and_numbers",
+      "canonical": {
+        "ru": "Грамотность и счёт",
+        "en": "Literacy & Numbers"
+      },
+      "presentationCaptionRu": "Грамота и числа",
+      "terminologyAligned": false
+    },
+    {
+      "courseId": "school.course.arcana",
+      "canonical": {
+        "ru": "Аркана",
+        "en": "Arcana"
+      },
+      "presentationCaptionRu": "Аркана",
+      "terminologyAligned": true
+    },
+    {
+      "courseId": "school.course.rhetoric_and_social",
+      "canonical": {
+        "ru": "Риторика и общение",
+        "en": "Rhetoric & Social"
+      },
+      "presentationCaptionRu": "Риторика и общение",
+      "terminologyAligned": true
+    },
+    {
+      "courseId": "school.course.etiquette_and_presentation",
+      "canonical": {
+        "ru": "Этикет и самопрезентация",
+        "en": "Etiquette & Presentation"
+      },
+      "presentationCaptionRu": "Этикет и подача",
+      "terminologyAligned": false
+    },
+    {
+      "courseId": "school.course.field_craft",
+      "canonical": {
+        "ru": "Полевая практика",
+        "en": "Field Craft"
+      },
+      "presentationCaptionRu": "Полевая практика",
+      "terminologyAligned": true
+    },
+    {
+      "courseId": "school.course.physical_training",
+      "canonical": {
+        "ru": "Физическая подготовка",
+        "en": "Physical Training"
+      },
+      "presentationCaptionRu": "Физическая подготовка",
+      "terminologyAligned": true
+    },
+    {
+      "courseId": "school.course.arts_and_performance",
+      "canonical": {
+        "ru": "Искусство и выступление",
+        "en": "Arts & Performance"
+      },
+      "presentationCaptionRu": "Искусство и выступление",
+      "terminologyAligned": true
+    },
+    {
+      "courseId": "school.course.body_confidence",
+      "canonical": {
+        "ru": "Уверенность в теле",
+        "en": "Body Confidence"
+      },
+      "presentationCaptionRu": "Уверенность в теле",
+      "terminologyAligned": true
+    }
+  ],
+  "runtimeJournal": {
+    "localized": false,
+    "templateLanguage": "en",
+    "journalRef": null,
+    "template": "School: <course English label>. Tuition <value>; Energy -<value>."
+  },
+  "localizedResult": {
+    "key": "ui.school.lessonResult",
+    "ru": "Урок завершён: {course}.",
+    "en": "School lesson completed: {course}."
+  },
+  "knownTerminologyMismatches": [
+    "school.course.literacy_and_numbers RU presentation caption",
+    "school.course.etiquette_and_presentation RU presentation caption"
+  ],
+  "constraints": {
+    "changesRuntime": false,
+    "changesRootLocalization": false,
+    "changesJournalSchema": false
+  }
+}

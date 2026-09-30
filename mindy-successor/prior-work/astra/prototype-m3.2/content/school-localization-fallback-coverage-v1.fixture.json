@@ -1,0 +1,57 @@
+{
+  "formatVersion": 1,
+  "id": "school.localization-fallback-coverage.v1",
+  "status": "CONTENT_AUDIT_ONLY",
+  "baseline": "8fb0985ccc353f3f35a2cc2fc140c07dff81cd11",
+  "summary": {
+    "courseLabelPairsComplete": 8,
+    "courseDescriptionPairsComplete": 8,
+    "coursePresentationAltPairsComplete": 8,
+    "coursePresentationCaptionPairsComplete": 8,
+    "genericAfterSchoolLocalizedSurfacesComplete": 2,
+    "genericNightStudyLocalizedSurfacesComplete": 1,
+    "teacherMediaRawEnglishFallbacks": 8,
+    "teacherMediaRootLocalizedPairs": 0,
+    "exactNightStudyDefinitionRawEnglishLabels": 24,
+    "exactNightStudyUiTemplateLocalized": true
+  },
+  "gaps": [
+    {
+      "surface": "teacher media alt text",
+      "count": 8,
+      "severity": "CONTENT_LOCALIZATION_GAP",
+      "detail": "Root school teacher media use English raw alt strings and have no dedicated RU/EN localization keys."
+    },
+    {
+      "surface": "runtime paid-lesson journal",
+      "count": 1,
+      "severity": "RUNTIME_LOCALIZATION_GAP",
+      "detail": "Journal uses a raw English template and null localization ref."
+    },
+    {
+      "surface": "exact Night-study definition labels",
+      "count": 24,
+      "severity": "FALLBACK_ONLY",
+      "detail": "Definitions carry English raw labels; localized UI template exists for rendered Night-study choice formatting."
+    },
+    {
+      "surface": "course RU terminology",
+      "count": 2,
+      "severity": "CONSISTENCY_GAP",
+      "detail": "Two course presentation captions use alternate RU names rather than the canonical course label."
+    }
+  ],
+  "completeSurfaces": [
+    "all eight canonical course label pairs",
+    "all eight canonical course description pairs",
+    "all eight course presentation alt/caption RU/EN pairs",
+    "generic paid-lesson localized event text",
+    "generic Night-study localized event text",
+    "localized generic Night-study UI template"
+  ],
+  "constraints": {
+    "changesRootLocalization": false,
+    "changesRuntime": false,
+    "changesMedia": false
+  }
+}
