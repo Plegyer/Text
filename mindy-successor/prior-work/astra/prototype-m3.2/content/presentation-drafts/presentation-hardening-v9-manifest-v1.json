@@ -1596,5 +1596,25 @@
     "noSaveOrRngMutation": true,
     "noSyntheticSemanticIds": true,
     "secretDebtExcludedFromOrdinaryPoverty": true
+  },
+  "reducedMotion": {
+    "activeDynamicProductionBindings": 0,
+    "preparedAnimationSequences": 9,
+    "preparedAnimationSemanticIds": [
+      "job/merchant/shift/spring/default",
+      "job/hunter/shift/autumn/default",
+      "job/artist-geisha/shift/winter/default"
+    ],
+    "preparedGifPaths": 0,
+    "staticFallbackRequired": true,
+    "animationOffDeterministic": true
+  },
+  "validation": {
+    "reducedMotionV9": {
+      "test": "tests/presentation-reduced-motion-v9.test.ts",
+      "selectedSemanticBindings": 102,
+      "productionDynamicBindings": 0,
+      "preparedSequences": 9
+    }
   }
 }
