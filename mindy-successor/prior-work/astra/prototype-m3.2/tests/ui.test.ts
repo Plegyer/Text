@@ -119,20 +119,26 @@ test('renderer: Work panel exposes exactly the ten target ordinary career shifts
 });
 
 
-test('renderer: all ten target careers are available at start and Lumber shift pays through UI',async()=>{
+test('renderer: all ten target careers are exposed but only starter trio is available at start',async()=>{
  const initial=started();
  const beforeMoney=initial.run.resources.money;
  const {w,dom,errors}=boot(JSON.stringify(initial));try{
   await wait(()=>!!w.document.querySelector('[data-panel="work"]'));
   w.document.querySelector('[data-panel="work"]').click();
-  const ids=[
-   'lumber.shift','satyr-maid.shift','undead-farm.shift','tavern.shift','hunter.shift',
-   'guard.shift','merchant.shift','artist-geisha.shift','assassin.shift','prostitute.shift'
+  const starter=['lumber.shift','satyr-maid.shift','undead-farm.shift'];
+  const late=[
+   'tavern.shift','hunter.shift','guard.shift','merchant.shift',
+   'artist-geisha.shift','assassin.shift','prostitute.shift'
   ];
-  for(const id of ids){
+  for(const id of starter){
    const button=w.document.querySelector('[data-action="'+id+'"]');
    assert.ok(button,id);
    assert.equal(button.disabled,false,id+' should be available at start');
+  }
+  for(const id of late){
+   const button=w.document.querySelector('[data-action="'+id+'"]');
+   assert.ok(button,id);
+   assert.equal(button.disabled,true,id+' should wait for an authored unlock condition');
   }
 
   w.document.querySelector('[data-action="lumber.shift"]').click();
@@ -173,9 +179,13 @@ test('renderer: locale switch changes presentation only and preserves Work gamep
   assert.match(w.document.querySelector('[data-action="merchant.shift"]').closest('article').textContent,/Merchant shift/);
   const idsEn=[...w.document.querySelectorAll('[data-action]')].map((node:any)=>node.getAttribute('data-action'));
   assert.deepEqual(idsEn,idsRu);
-  for(const id of idsEn){
+  for(const id of ['lumber.shift','satyr-maid.shift','undead-farm.shift']){
     const button=w.document.querySelector('[data-action="'+id+'"]');
     assert.equal(button.disabled,false,id+' remains available after locale switch');
+  }
+  for(const id of ['tavern.shift','hunter.shift','guard.shift','merchant.shift','artist-geisha.shift','assassin.shift','prostitute.shift']){
+    const button=w.document.querySelector('[data-action="'+id+'"]');
+    assert.equal(button.disabled,true,id+' remains locked after locale switch');
   }
   assert.equal(w.localStorage.getItem('portal-life.v1'),before);
 
@@ -487,13 +497,13 @@ test('renderer: project-owned static fallback keeps asset identity across RU EN 
  const {w,dom,errors}=boot(JSON.stringify(s));try{
   await wait(()=>!!w.document.querySelector('[data-panel="work"]'));
   w.document.querySelector('[data-panel="work"]').click();
-  w.document.querySelector('[data-action="guard.shift"]').click();
-  await wait(()=>!!w.document.querySelector('.media-window img')&&/career-guard-result\.svg$/.test(w.document.querySelector('.media-window img').getAttribute('src')??''));
+  w.document.querySelector('[data-action="satyr-maid.shift"]').click();
+  await wait(()=>!!w.document.querySelector('.media-window img')&&/career-satyr-maid-result\.svg$/.test(w.document.querySelector('.media-window img').getAttribute('src')??''));
 
   const imgRu=w.document.querySelector('.media-window img');
   const src=imgRu.getAttribute('src');
-  assert.match(src,/assets\/presentation\/career-guard-result\.svg$/);
-  assert.match(imgRu.getAttribute('alt'),/Стражница на городском посту/);
+  assert.match(src,/assets\/presentation\/career-satyr-maid-result\.svg$/);
+  assert.match(imgRu.getAttribute('alt'),/Служанка в таверне/);
   const before=w.localStorage.getItem('portal-life.v1');
 
   w.document.querySelector('[data-panel="menu"]').click();
@@ -504,7 +514,7 @@ test('renderer: project-owned static fallback keeps asset identity across RU EN 
 
   const imgEn=w.document.querySelector('.media-window img');
   assert.equal(imgEn.getAttribute('src'),src);
-  assert.match(imgEn.getAttribute('alt'),/A guard at a city watch post/);
+  assert.match(imgEn.getAttribute('alt'),/A tavern maid finishes resetting a table/);
   assert.deepEqual(errors,[]);
  }finally{dom.window.close();}
 });
