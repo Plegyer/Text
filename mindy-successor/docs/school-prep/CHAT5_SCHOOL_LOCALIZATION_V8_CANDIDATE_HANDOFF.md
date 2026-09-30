@@ -3,7 +3,7 @@
 Owner: Chat 5 / School + Text Localization Content Worker
 Queue: C5-73 through C5-84
 Candidate branch: `chat5/school-localization-v8`
-Refreshed candidate base: `main@beb699637f5326ff74f2a2039d8e3272f0223f13`
+Refreshed candidate base: `main@099d292ef962230a7dc11b0306296a76b5b93a6f`
 
 ## Scope
 
@@ -149,7 +149,7 @@ The contract explicitly excludes runtime, Save, NightFlow, career, Activity, eco
 
 ## Static pre-PR validation
 
-Revalidated against current main `beb699637f5326ff74f2a2039d8e3272f0223f13`:
+Revalidated against current main `099d292ef962230a7dc11b0306296a76b5b93a6f`:
 - 90 prepared localization keys;
 - 90 unique;
 - RU/EN non-empty for all;
@@ -169,6 +169,12 @@ Not invented by this candidate:
 - teacher media do not yet have dedicated root RU/EN alt localization;
 - paid-lesson journal has no localization reference;
 - transfer text has no approved runtime consumer/threshold/public-result producer.
+
+## Current-main resync
+
+Per the current Chat 5 pointer, the candidate was refreshed again from `main@099d292ef962230a7dc11b0306296a76b5b93a6f`, which contains the merged v7 worker wave including #125/#126/#127. Only the 24 new queue-v8 School-owned docs/fixtures/tests were carried forward.
+
+The earlier pre-resync freeze is superseded and does not count as C5-84 acceptance evidence.
 
 ## Candidate rule
 
