@@ -86,16 +86,17 @@ Must not own shared runtime/UI integration, Chat 2 media production, Chat 5 Scho
 ## Worker 4 — Chat 4 / QA + Product Acceptance Gate
 
 Queue:
-- `TASK_CHAT4_QA_QUEUE_v6.md` then `TASK_CHAT4_QA_QUEUE_v7.md`
-- C4-42 through C4-65.
+- `TASK_CHAT4_QA_QUEUE_v7.md` then `TASK_CHAT4_QA_QUEUE_v8.md`
+- C4-54 through C4-77.
 
 Owns exact-head PR/CI verification, scope/collision review, runtime/catalog gates, cross-system acceptance and final Lumber product-acceptance gate.
 
 Immediate evidence/candidates:
 - use current main and the current worker pointers first;
 - merged #84, #85, #88, #89, #90, #93, #97, #98, #99 and #100 are historical accepted integration evidence;
-- active frozen queue-v5 candidates awaiting QA: #106 (Chat 1), #109 (Chat 2), #108 (Chat 3), #105 (Chat 5);
-- gate only exact frozen heads named by the active QA queue.
+- queue-v5 candidates #106, #109, #108 and #105 are QA-gated and merged;
+- C4-58 current-main post-wave health gate is active;
+- when C4-59..65 are dependency-blocked, Chat 4 continues independent QA queue v8 instead of idling.
 
 Must not create duplicate production content.
 
