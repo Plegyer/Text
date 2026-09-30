@@ -1,0 +1,175 @@
+{
+  "formatVersion": 1,
+  "id": "school.late-career-transfer-wording-v4",
+  "status": "CONTENT_PREP_ONLY",
+  "selectedThresholds": {
+    "tavern": null,
+    "hunter": null,
+    "guard": null,
+    "merchant": null,
+    "artist-geisha": null,
+    "assassin": null,
+    "prostitute": null
+  },
+  "selectedPublicResultIds": {
+    "tavern": null,
+    "hunter": null,
+    "guard": null,
+    "merchant": null,
+    "artist-geisha": null,
+    "assassin": null,
+    "prostitute": null
+  },
+  "entries": [
+    {
+      "careerId": "tavern",
+      "actionId": "tavern.shift",
+      "courseIds": [
+        "school.course.rhetoric_and_social",
+        "school.course.literacy_and_numbers"
+      ],
+      "keys": {
+        "title": "school.transfer_v4.late.tavern.confirm_and_note.title",
+        "body": "school.transfer_v4.late.tavern.confirm_and_note.body"
+      }
+    },
+    {
+      "careerId": "hunter",
+      "actionId": "hunter.shift",
+      "courseIds": [
+        "school.course.field_craft",
+        "school.course.arcana"
+      ],
+      "keys": {
+        "title": "school.transfer_v4.late.hunter.trace_conditions.title",
+        "body": "school.transfer_v4.late.hunter.trace_conditions.body"
+      }
+    },
+    {
+      "careerId": "guard",
+      "actionId": "guard.shift",
+      "courseIds": [
+        "school.course.rhetoric_and_social",
+        "school.course.literacy_and_numbers"
+      ],
+      "keys": {
+        "title": "school.transfer_v4.late.guard.neutral_report.title",
+        "body": "school.transfer_v4.late.guard.neutral_report.body"
+      }
+    },
+    {
+      "careerId": "merchant",
+      "actionId": "merchant.shift",
+      "courseIds": [
+        "school.course.literacy_and_numbers",
+        "school.course.etiquette_and_presentation"
+      ],
+      "keys": {
+        "title": "school.transfer_v4.late.merchant.clear_terms.title",
+        "body": "school.transfer_v4.late.merchant.clear_terms.body"
+      }
+    },
+    {
+      "careerId": "artist-geisha",
+      "actionId": "artist-geisha.shift",
+      "courseIds": [
+        "school.course.arts_and_performance",
+        "school.course.body_confidence"
+      ],
+      "keys": {
+        "title": "school.transfer_v4.late.artist_geisha.chosen_presence.title",
+        "body": "school.transfer_v4.late.artist_geisha.chosen_presence.body"
+      }
+    },
+    {
+      "careerId": "assassin",
+      "actionId": "assassin.shift",
+      "courseIds": [
+        "school.course.field_craft",
+        "school.course.literacy_and_numbers"
+      ],
+      "keys": {
+        "title": "school.transfer_v4.late.assassin.uncertainty_map.title",
+        "body": "school.transfer_v4.late.assassin.uncertainty_map.body"
+      }
+    },
+    {
+      "careerId": "prostitute",
+      "actionId": "prostitute.shift",
+      "courseIds": [
+        "school.course.rhetoric_and_social",
+        "school.course.body_confidence"
+      ],
+      "keys": {
+        "title": "school.transfer_v4.late.prostitute.clear_boundary.title",
+        "body": "school.transfer_v4.late.prostitute.clear_boundary.body"
+      }
+    }
+  ],
+  "strings": {
+    "school.transfer_v4.late.tavern.confirm_and_note.title": {
+      "ru": "Сначала подтвердить, потом записать",
+      "en": "Confirm first, then record"
+    },
+    "school.transfer_v4.late.tavern.confirm_and_note.body": {
+      "ru": "В шумной смене просьба легко меняется по дороге от гостя к записи. Короткое уточнение и ясная пометка помогают сохранить смысл без нового карьерного бонуса.",
+      "en": "During a noisy shift, a request can easily change between the guest and the record. A brief confirmation and clear note preserve the meaning without a new career bonus."
+    },
+    "school.transfer_v4.late.hunter.trace_conditions.title": {
+      "ru": "След получает условия, а не имя",
+      "en": "A trace gets conditions, not a name"
+    },
+    "school.transfer_v4.late.hunter.trace_conditions.body": {
+      "ru": "Полевая привычка фиксировать место и условия сочетается с арканической осторожностью к объяснениям. Наблюдение становится проверяемее, но не превращается в новый охотничий результат автоматически.",
+      "en": "The field habit of recording place and conditions combines with Arcana's caution about explanations. The observation becomes easier to verify without automatically becoming a new hunting result."
+    },
+    "school.transfer_v4.late.guard.neutral_report.title": {
+      "ru": "Нейтральный вопрос и нейтральная запись",
+      "en": "A neutral question and a neutral record"
+    },
+    "school.transfer_v4.late.guard.neutral_report.body": {
+      "ru": "Когда ситуация спорная, полезно отдельно записать наблюдаемое и задать вопрос без обвинения. Школьная практика помогает отчёту оставаться проверяемым без автоматического служебного продвижения.",
+      "en": "When a situation is disputed, it helps to record what was observed separately and ask a question without accusation. School practice keeps the report verifiable without automatic official advancement."
+    },
+    "school.transfer_v4.late.merchant.clear_terms.title": {
+      "ru": "Формальные условия должны читаться просто",
+      "en": "Formal terms should read simply"
+    },
+    "school.transfer_v4.late.merchant.clear_terms.body": {
+      "ru": "Даже аккуратно оформленная сделка остаётся плохой, если сумма, срок и обязательство спрятаны в форме. Школьная ясность помогает сделать условия понятными, не меняя цены или кредит.",
+      "en": "Even a neatly presented deal is poor if the amount, deadline, and obligation are hidden by the form. School clarity helps make terms understandable without changing prices or credit."
+    },
+    "school.transfer_v4.late.artist_geisha.chosen_presence.title": {
+      "ru": "Выбранное присутствие держит сцену",
+      "en": "Chosen presence holds the scene"
+    },
+    "school.transfer_v4.late.artist_geisha.chosen_presence.body": {
+      "ru": "Осознанный темп, поза и внимание делают выступление устойчивее, когда они выбраны ради намерения, а не ради обязательного одобрения. Это подготовка, не автоматический доступ к новому статусу.",
+      "en": "Deliberate pace, posture, and attention make a performance steadier when they serve an intention rather than compulsory approval. That is preparation, not automatic access to new status."
+    },
+    "school.transfer_v4.late.assassin.uncertainty_map.title": {
+      "ru": "Неизвестное тоже отмечают на плане",
+      "en": "Unknowns belong on the plan too"
+    },
+    "school.transfer_v4.late.assassin.uncertainty_map.body": {
+      "ru": "Схема становится надёжнее, когда неизвестные участки, точка отмены и запасной путь обозначены прямо. Это общий навык планирования и анализа, не инструкция по нападению и не карьерный допуск.",
+      "en": "A plan becomes more reliable when unknown areas, an abort point, and a fallback route are marked explicitly. This is a general planning and analysis skill, not attack instruction or career clearance."
+    },
+    "school.transfer_v4.late.prostitute.clear_boundary.title": {
+      "ru": "Профессиональная ясность не отменяет границу",
+      "en": "Professional clarity does not erase the boundary"
+    },
+    "school.transfer_v4.late.prostitute.clear_boundary.body": {
+      "ru": "Условия работы можно сформулировать коротко и уверенно, но ни тон, ни внешняя подача не означают согласия на новый запрос. Школьная подготовка остаётся отдельной от Похоти, механики согласия и скрытого долга.",
+      "en": "Work terms can be stated briefly and confidently, but neither tone nor outward presentation implies agreement to a new request. School preparation remains separate from Lust, consent mechanics, and hidden debt."
+    }
+  },
+  "mechanics": {
+    "effects": [],
+    "careerWrites": [],
+    "activityWrites": [],
+    "economyChanges": [],
+    "relationshipWrites": [],
+    "publishesWorldFacts": []
+  }
+}
