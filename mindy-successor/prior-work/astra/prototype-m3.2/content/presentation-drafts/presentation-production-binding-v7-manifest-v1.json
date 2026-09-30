@@ -1177,6 +1177,24 @@
         "ruCaption": true,
         "enCaption": true
       }
-    ]
+    ],
+    "workLockedState": {
+      "controls": [
+        "tavern.shift",
+        "hunter.shift",
+        "guard.shift",
+        "merchant.shift",
+        "artist-geisha.shift",
+        "assassin.shift",
+        "prostitute.shift"
+      ],
+      "presentationState": "active-current-main",
+      "derivesFromActionAvailable": true,
+      "visibleHelpKey": "ui.work.lockedCareerHelp",
+      "ariaTemplateKey": "ui.work.lockedCareerAria",
+      "ariaDescribedBy": true,
+      "ariaDisabled": true,
+      "unlockLogicMutation": false
+    }
   }
 }
