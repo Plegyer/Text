@@ -112,7 +112,7 @@ test('opening and resolving School-life content commits no mechanics twice',()=>
   );
 });
 
-test('Night-study flavor content does not own Night-study mechanics',()=>{
+test('Night-study reactive content remains effect-free when delivered on the blocking Night intercept',()=>{
   const cat=loadCatalog(definitions(),[pack]);
   const start=ready();
   const before=JSON.stringify({
@@ -131,10 +131,9 @@ test('Night-study flavor content does not own Night-study mechanics',()=>{
     cat
   ).state;
 
-  const offer=out.run.flow.reaction.queued.find(
-    q=>q.eventId==='school-life-content-v1.after-night-study'
-  );
-  assert.ok(offer);
+  assert.equal(out.run.pending?.eventId,'school-life-content-v1.after-night-study');
+  assert.equal(out.run.pending?.variantId,'default');
+  assert.deepEqual(out.run.pending?.allowedChoiceIds,['continue']);
 
   assert.equal(
     JSON.stringify({
