@@ -1,6 +1,6 @@
-import type {Season} from '../core/presentation.ts';
+type ForestSeason='spring'|'summer'|'autumn'|'winter';
 
-const routeDepth:Readonly<Record<string,Partial<Record<Season,string>>>>={
+const routeDepth:Readonly<Record<string,Partial<Record<ForestSeason,string>>>>={
   'logging-road':{
     spring:'presentation.activity.forest.depth.route.logging-road.spring.text',
     summer:'presentation.activity.forest.depth.route.logging-road.summer.text'
@@ -26,7 +26,7 @@ const resultDepth:Readonly<Record<string,readonly string[]>>={
   ]
 };
 
-export function forestRouteDepthLocalizationKey(routeId:string|null,season:Season):string|null{
+export function forestRouteDepthLocalizationKey(routeId:string|null,season:ForestSeason):string|null{
   if(!routeId)return null;
   return routeDepth[routeId]?.[season]??null;
 }
