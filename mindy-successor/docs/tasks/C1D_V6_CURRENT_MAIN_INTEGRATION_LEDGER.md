@@ -2,16 +2,10 @@
 
 Owner: Chat 1 Developer / Integration Developer
 Queue: C1D-49..C1D-60
-Refreshed production baseline: `5f2685f1fde6b4718483febd6f49108eaa4ac873`
-Working branch: `chat1/c1d-v6-current-main-refresh`
+Final refreshed baseline: `871a9a94e76e1df0449fdef513e9173bd9fce009`
+Working branch: `chat1/c1d-v6-current-main-final`
 
-Current main at final pre-gate recheck: `f3a684448b0681c355452b7d24d836e3926cb594`.
-Drift from the refreshed production baseline is 4 commits and changes only:
-- `ACTIVE_TEAM_OWNERSHIP_MATRIX.md`;
-- `CURRENT_CHAT4_TASK_POINTER.md`;
-- new `TASK_CHAT4_QA_QUEUE_v8.md`.
-
-No runtime/content/localization/test path in this candidate overlaps that drift.
+This refresh includes the merged Chat 3 PR #114 content-side v6 fixtures/tests on current main. Queue-v6 does not duplicate or newly consume those later v2 preparation artifacts; the pointer assigns the exact-route/result and exact-event/variant re-audits to C1D-70/C1D-71 in queue v7. The v6 candidate keeps only its already-selected PR #108 consumer slice and must pass the new PR #114 regressions on the same head.
 
 ## C1D-49 — post-v5 consolidation inventory
 
@@ -19,7 +13,8 @@ Merged current-main inputs, not duplicate-copied:
 - PR #106 / C1D v5 content-consumer integration;
 - PR #109 / Chat 2 cross-domain presentation candidate;
 - PR #108 / Chat 3 Forest + poverty depth v5;
-- PR #105 / Chat 5 whole-School transfer atlas.
+- PR #105 / Chat 5 whole-School transfer atlas;
+- PR #114 / Chat 3 Forest + poverty depth v6, included as current-main baseline only and not duplicate-copied.
 
 Still product-open:
 - natural School -> Lumber management publisher contract;
@@ -62,7 +57,9 @@ Added `tests/starter-career-save-reload.test.ts`.
 Proves current Satyr Maid shift state survives two existing `parseSave` round-trips:
 - stage `known-face`;
 - `completed_shifts=1`;
-- `shifts=1`;
+- typed career `shifts` remains the current value `0`;
+- action count for `satyr-maid.shift` is `1`;
+- typed `completed_shifts=1` counter;
 - fact `first-shift-complete`;
 - existing `lastAction` including semantic presentation identity and selected source-scene text.
 
@@ -72,8 +69,9 @@ No new progression or Save state.
 
 Same focused regression proves:
 - stage `reliable-helper`;
-- `completed_shifts=1`;
-- `shifts=1`;
+- typed `completed_shifts=1` counter;
+- typed career `shifts` remains the current value `0`;
+- action count for `undead-farm.shift` is `1`;
 - only current fact `first-shift-complete`;
 - existing `lastAction` survives two reloads;
 - no research/specimen/successor/external career fact is introduced.
@@ -132,7 +130,7 @@ No School mechanics, thresholds, public producer fact, reaction-fact schema or S
 
 ## C1D-57 — Forest depth selective consumer
 
-Merged PR #108 provides one unambiguous text variant for each existing route ID + season pair.
+Merged PR #108 provides one unambiguous text variant for each existing route ID + season pair. Later merged PR #114 is present in the final current-main baseline but its v2 depth remains preparation for the queue-v7 C1D-70 re-audit rather than being silently added during the v6 freeze.
 
 Added `src/ui/forestDepth.ts`:
 - `logging-road` + spring/summer/autumn/winter;
@@ -155,7 +153,7 @@ Added `tests/forest-depth-consumer-v6.test.ts` for fixture parity, selector-less
 
 ## C1D-58 — ordinary-poverty depth selective consumer
 
-Merged PR #108 material was split by safe existing consumer.
+Merged PR #108 material was split by safe existing consumer. Later merged PR #114 is present in the final current-main baseline; its v2 poverty layer is intentionally deferred to the assigned C1D-71 re-audit rather than expanding v6 after its consumer contract was already tested.
 
 Consumed:
 - 8 `ordinary-poverty.housing-seasonal-depth.v1` strings;
