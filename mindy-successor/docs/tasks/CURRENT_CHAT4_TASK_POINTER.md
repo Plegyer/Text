@@ -8,21 +8,19 @@ Mandatory startup:
 - `ACTIVE_TEAM_OWNERSHIP_MATRIX.md`
 - `CANDIDATE_QA_FREEZE_PROTOCOL.md`
 - `TASK_CHAT4_QA_QUEUE_v6.md`
+- `TASK_CHAT4_QA_QUEUE_v7.md`
 
-Current queue:
-- C4-42 through C4-53.
+Queue sequence:
+- finish C4-42 through C4-53;
+- then continue automatically with C4-54 through C4-65 without waiting for a new chat instruction.
 
-Immediate work:
-- C4-42 gate PR #97;
-- C4-43 gate PR #98;
-- C4-44 gate PR #99;
-- C4-45 gate PR #100 once Chat 3 freezes a green head;
-- then continue current-main health/collision gates.
-
-Do not restart C4-01..41.
+At the boundary between queues:
+- re-read current main and this pointer;
+- do not duplicate artifacts already merged while the current queue was in progress;
+- freeze final candidates only from then-current main or an explicitly approved selective refresh.
 
 Keep technical evidence in Git only. Personal chat output:
 - `Задание выполнено`
 - `Задания выполнены`
 
-Do not self-assign beyond C4-53.
+Do not self-assign beyond C4-65.
