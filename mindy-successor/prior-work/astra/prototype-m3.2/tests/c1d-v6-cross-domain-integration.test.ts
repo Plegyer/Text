@@ -18,6 +18,16 @@ const povertyPackPaths=[
   'content/packs/poverty-pressure-production.json'
 ];
 
+function settlePending(input:ReturnType<typeof started>){
+  let s=input;
+  while(s.run.pending){
+    const choice=s.run.pending.allowedChoiceIds?.[0];
+    assert.ok(choice,'pending scene must preserve an allowed choice');
+    s=dispatch(s,{type:'choice',id:choice},catalog);
+  }
+  return s;
+}
+
 test('C1D-59 cross-domain current-main integration stays on existing identities and survives reload',()=>{
   let s=started();
 
@@ -41,6 +51,7 @@ test('C1D-59 cross-domain current-main integration stays on existing identities 
   assert.equal(schoolBinding.teacherContentId,'school.teacher.cassian-reed');
   assert.ok(localization[schoolBinding.bodyKey]?.ru?.trim());
   assert.ok(localization[schoolBinding.bodyKey]?.en?.trim());
+  s=settlePending(s);
 
   s=dispatch(s,{type:'enterActivity',id:'lumber.forest'},catalog);
   s=dispatch(s,{type:'activityAction',id:'forest.route.logging-road'},catalog);
