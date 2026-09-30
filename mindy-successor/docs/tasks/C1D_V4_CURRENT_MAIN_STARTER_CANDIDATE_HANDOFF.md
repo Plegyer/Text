@@ -1,6 +1,6 @@
 # Chat 1 Developer — C1D v4 current-main starter integration handoff
 
-Status: WORKING
+Status: HISTORICAL — completed queue evidence; current work is governed by `CURRENT_CHAT1_DEVELOPER_TASK_POINTER.md`
 Owner: Chat 1 Developer / Integration Developer
 Queue: C1D-25..C1D-36
 Fresh baseline: `05fa2d1084a48cab20d42f23885e19ee627d3d09`
