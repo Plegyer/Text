@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "id": "presentation-wave-v6-source-manifest-v1",
+  "owner": "chat2-presentation-media",
+  "baselineMain": "5f2685f1fde6b4718483febd6f49108eaa4ac873",
+  "gameplayMutation": false,
+  "workControls": [
+    {
+      "actionId": "lumber.shift",
+      "state": "available",
+      "accessibilityHelpRequired": false
+    },
+    {
+      "actionId": "satyr-maid.shift",
+      "state": "available",
+      "accessibilityHelpRequired": false
+    },
+    {
+      "actionId": "undead-farm.shift",
+      "state": "available",
+      "accessibilityHelpRequired": false
+    },
+    {
+      "actionId": "tavern.shift",
+      "state": "locked",
+      "accessibilityHelpRequired": true
+    },
+    {
+      "actionId": "hunter.shift",
+      "state": "locked",
+      "accessibilityHelpRequired": true
+    },
+    {
+      "actionId": "guard.shift",
+      "state": "locked",
+      "accessibilityHelpRequired": true
+    },
+    {
+      "actionId": "merchant.shift",
+      "state": "locked",
+      "accessibilityHelpRequired": true
+    },
+    {
+      "actionId": "artist-geisha.shift",
+      "state": "locked",
+      "accessibilityHelpRequired": true
+    },
+    {
+      "actionId": "assassin.shift",
+      "state": "locked",
+      "accessibilityHelpRequired": true
+    },
+    {
+      "actionId": "prostitute.shift",
+      "state": "locked",
+      "accessibilityHelpRequired": true
+    }
+  ],
+  "endingSlots": [
+    {
+      "presentationId": "ending/guild-life",
+      "sourceAsset": "assets/presentation/ending-guild-life.svg",
+      "state": "exact-after-c2-52",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.ending.guild-life.alt",
+      "captionKey": "presentation.static.ending.guild-life.caption"
+    },
+    {
+      "presentationId": "ending/scholar-life",
+      "sourceAsset": "assets/presentation/ending-scholar-life.svg",
+      "state": "exact-after-c2-52",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.ending.scholar-life.alt",
+      "captionKey": "presentation.static.ending.scholar-life.caption"
+    },
+    {
+      "presentationId": "ending/tavern-stay",
+      "sourceAsset": "assets/presentation/tavern-ending-stay.svg",
+      "state": "exact-after-c2-52",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.ending.tavern-stay.alt",
+      "captionKey": "presentation.static.ending.tavern-stay.caption"
+    },
+    {
+      "presentationId": "ending/tavern-guild",
+      "sourceAsset": "assets/presentation/tavern-ending-guild.svg",
+      "state": "exact-after-c2-52",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.ending.tavern-guild.alt",
+      "captionKey": "presentation.static.ending.tavern-guild.caption"
+    },
+    {
+      "presentationId": "ending/tavern-court",
+      "sourceAsset": "assets/presentation/tavern-ending-court.svg",
+      "state": "exact-after-c2-52",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.ending.tavern-court.alt",
+      "captionKey": "presentation.static.ending.tavern-court.caption"
+    },
+    {
+      "presentationId": "ending/lumber-stay",
+      "sourceAsset": "assets/presentation/ending-lumber-stay.svg",
+      "state": "exact-after-c2-52",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.ending.lumber-stay.alt",
+      "captionKey": "presentation.static.ending.lumber-stay.caption"
+    },
+    {
+      "presentationId": "ending/lumber/hard-work",
+      "sourceAsset": "assets/presentation/career-lumber-result.svg",
+      "state": "existing-exact",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.lumber-ending-hard-work.alt",
+      "captionKey": "presentation.static.lumber-ending-hard-work.caption"
+    },
+    {
+      "presentationId": "ending/lumber/forewoman",
+      "sourceAsset": "assets/presentation/foreman-professional.svg",
+      "state": "existing-exact",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.lumber-ending-forewoman.alt",
+      "captionKey": "presentation.static.lumber-ending-forewoman.caption"
+    },
+    {
+      "presentationId": "ending/lumber/forest",
+      "sourceAsset": "assets/presentation/forest-return-success-v2.svg",
+      "state": "existing-exact",
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.lumber-ending-forest.alt",
+      "captionKey": "presentation.static.lumber-ending-forest.caption"
+    }
+  ],
+  "forestSlots": [],
+  "povertySlots": [],
+  "schoolCourseSlots": [],
+  "teacherMediaSurfaces": [],
+  "invariants": {
+    "existingSemanticIdsOnly": true,
+    "projectOwnedLocalSourcesOnly": true,
+    "animationsOptional": true,
+    "staticFallbackRequired": true,
+    "ruEnAccessibilityRequired": true,
+    "noGameplayFieldsChanged": true,
+    "noSaveOrRngMutation": true
+  }
+}
