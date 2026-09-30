@@ -40,6 +40,42 @@
       "fallbackId": "location/town/default",
       "altKey": "presentation.static.ending.tavern-court.alt",
       "captionKey": "presentation.static.ending.tavern-court.caption"
+    },
+    {
+      "presentationId": "ending/lumber/hard-work",
+      "domain": "ending",
+      "role": "lumber-target-ending",
+      "sourceAsset": "assets/presentation/career-lumber-result.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.lumber-ending-hard-work.alt",
+      "captionKey": "presentation.static.lumber-ending-hard-work.caption"
+    },
+    {
+      "presentationId": "ending/lumber/forewoman",
+      "domain": "ending",
+      "role": "lumber-target-ending",
+      "sourceAsset": "assets/presentation/foreman-professional.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.lumber-ending-forewoman.alt",
+      "captionKey": "presentation.static.lumber-ending-forewoman.caption"
+    },
+    {
+      "presentationId": "ending/lumber/forest",
+      "domain": "ending",
+      "role": "lumber-target-ending",
+      "sourceAsset": "assets/presentation/forest-return-success-v2.svg",
+      "sourceKind": "static",
+      "animationSource": null,
+      "fallbackRequired": true,
+      "fallbackId": "location/town/default",
+      "altKey": "presentation.static.lumber-ending-forest.alt",
+      "captionKey": "presentation.static.lumber-ending-forest.caption"
     }
   ],
   "teacherMediaSurfaces": [],
