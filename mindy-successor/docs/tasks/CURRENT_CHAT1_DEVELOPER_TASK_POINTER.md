@@ -14,7 +14,8 @@ Mandatory startup:
 Current work:
 - finish C1D-49 through C1D-60 on PR #124;
 - PR #119 and PR #123 are superseded/closed and must not be used for QA;
-- keep repairing only concrete integration/CI blockers until one exact PR #124 head is green and frozen for C4-79.
+- merged PR #125/#126/#127 advanced current main while PR #124 was being repaired;
+- even if a moving PR #124 head becomes green, do not freeze it until it is selectively refreshed/revalidated against current main containing #125/#126/#127, with a fresh exact-head green repository run.
 
 Queue sequence:
 - after C1D-60 is frozen, continue automatically with C1D-61 through C1D-72;
