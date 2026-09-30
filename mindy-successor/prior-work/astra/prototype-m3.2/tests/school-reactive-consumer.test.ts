@@ -24,9 +24,15 @@ async function wait(check:()=>boolean){
 }
 
 function schoolResult(courseId:SchoolCourseId){
-  const s=started();
-  s.run.resources.money=2_000;
-  return dispatch(s,{type:'schoolLesson',id:courseId},catalog);
+  const start=started();
+  start.run.resources.money=2_000;
+  let s=dispatch(start,{type:'schoolLesson',id:courseId},catalog);
+  while(s.run.pending){
+    const choice=s.run.pending.allowedChoiceIds?.[0];
+    assert.ok(choice,'pending School scene must preserve an allowed choice');
+    s=dispatch(s,{type:'choice',id:choice},catalog);
+  }
+  return s;
 }
 
 function boot(saved:string){
