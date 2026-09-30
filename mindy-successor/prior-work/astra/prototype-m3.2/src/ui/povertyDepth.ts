@@ -190,8 +190,25 @@ const acceptedPovertyDepthAdditions=[
   ['poverty-street-production-v2.helpful-summer-shade','late-shade','presentation.poverty.depth.poverty-street-production-v2-helpful-summer-shade.late-shade.g.text']
 ] as const;
 
+const acceptedPovertyDepthV5Additions=[
+  ['poverty-pressure-production.cold-rain','default','presentation.poverty.housing-depth-v5.street.spring.cold-rain.text'],
+  ['poverty-street-production-v2.helpful-summer-shade','late-shade','presentation.poverty.housing-depth-v5.street.summer.late-shade.text'],
+  ['poverty-street-production-v2.neutral-autumn-crossing','dry-arcade','presentation.poverty.housing-depth-v5.street.autumn.dry-arcade.text'],
+  ['poverty-street-production-v2.pressure-winter-wind','long-gusts','presentation.poverty.housing-depth-v5.street.winter.long-gusts.text'],
+  ['poverty-cheap-production-v2.shared-room-seasons','spring-window','presentation.poverty.housing-depth-v5.cheap.spring.window.text'],
+  ['poverty-cheap-production-v2.shared-room-seasons','summer-heat','presentation.poverty.housing-depth-v5.cheap.summer.heat.text'],
+  ['poverty-cheap-production.shared-quiet-autumn','default','presentation.poverty.housing-depth-v5.cheap.autumn.shared-quiet.text'],
+  ['poverty-cheap-production-v2.shared-room-seasons','winter-stove','presentation.poverty.housing-depth-v5.cheap.winter.stove.text'],
+  ['poverty-recovery-production.small-coin-help','default','presentation.poverty.recovery-depth-v5.small-coin.breathing-room.text'],
+  ['poverty-recovery-production.short-cleanup','default','presentation.poverty.recovery-depth-v5.cleanup.one-step.text'],
+  ['poverty-recovery-production.herb-bundle','default','presentation.poverty.recovery-depth-v5.herb.useful-buffer.text'],
+  ['poverty-cheap-production-v2.shared-room-seasons','spring-window','presentation.poverty.recovery-depth-v5.shared-room.spring-breathing-space.text'],
+  ['poverty-cheap-production.shared-quiet-autumn','default','presentation.poverty.recovery-depth-v5.shared-room.autumn-routine.text'],
+  ['poverty-street-production.neutral-autumn','default','presentation.poverty.recovery-depth-v5.street.autumn-no-milestone.text']
+] as const;
+
 export const povertyDepthLookupEntries:readonly PovertyDepthLookupEntry[]=basePovertyDepthLookupEntries.map(entry=>{
-  const extra=acceptedPovertyDepthAdditions
+  const extra=[...acceptedPovertyDepthAdditions,...acceptedPovertyDepthV5Additions]
     .filter(([eventId,variantId])=>eventId===entry.eventId&&variantId===entry.variantId)
     .map(([, ,localizationKey])=>localizationKey);
   return extra.length?{...entry,orderedDepthLocalizationKeys:[...entry.orderedDepthLocalizationKeys,...extra]}:entry;
