@@ -97,7 +97,7 @@ Immediate evidence/candidates:
 - queue-v5 candidates #106, #109, #108 and #105 are QA-gated and merged;
 - PR #114 (Chat 3 C3-60) is QA PASS-WITH-NOTES and merged;
 - PR #116 (Chat 2 C2-60) passed C4-80 and is merged;
-- PR #118 is the refreshed Chat 5 C5-60 candidate at a green frozen head awaiting C4-78 QA; PR #113/#115 are superseded source/history;
+- PR #118 (Chat 5 C5-60 refresh) passed C4-78 PASS-WITH-NOTES and is merged; PR #113/#115 are superseded source/history;
 - PR #125 is Chat 2 C2-72, exact frozen head green and ready for C4-91;
 - PR #126 is Chat 3 C3-72, exact frozen head green and ready for C4-92;
 - PR #127 is Chat 5 C5-72, exact frozen head green and ready for C4-93;
