@@ -164,7 +164,7 @@
       ],
       "priorityClass": "notification",
       "priority": 0,
-      "blocking": false,
+      "blocking": true,
       "delivery": {
         "policy": "live"
       },
