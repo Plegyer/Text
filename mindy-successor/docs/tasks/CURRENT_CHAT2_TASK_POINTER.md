@@ -7,20 +7,20 @@ Mandatory startup:
 - `WORKER_CHAT_RECREATION_PROTOCOL_v1.md`
 - `ACTIVE_TEAM_OWNERSHIP_MATRIX.md`
 - `CANDIDATE_QA_FREEZE_PROTOCOL.md`
-- `TASK_CHAT2_PRESENTATION_QUEUE_v5.md`
 - `TASK_CHAT2_PRESENTATION_QUEUE_v6.md`
+- `TASK_CHAT2_PRESENTATION_QUEUE_v7.md`
 
 Queue sequence:
-- finish C2-37 through C2-48;
-- then continue automatically with C2-49 through C2-60 without waiting for a new chat instruction.
+- finish C2-49 through C2-60;
+- then continue automatically with C2-61 through C2-72 without waiting for a new chat instruction.
 
-At the boundary between queues:
+At the queue boundary:
 - re-read current main and this pointer;
-- do not duplicate artifacts already merged while the current queue was in progress;
-- freeze final candidates only from then-current main or an explicitly approved selective refresh.
+- carry forward only new presentation/media artifacts absent from main;
+- do not resolve drift by changing gameplay/state.
 
 Keep technical evidence in Git only. Personal chat output:
 - `Задание выполнено`
 - `Задания выполнены`
 
-Do not self-assign beyond C2-60.
+Do not self-assign beyond C2-72.
