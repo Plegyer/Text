@@ -33,8 +33,8 @@ Target queue depth:
 ## Worker 1 — Chat 1 Developer / Integration Developer
 
 Queue:
-- `TASK_CHAT1_DEVELOPER_QUEUE_v4.md`
-- C1D-25 through C1D-36.
+- `TASK_CHAT1_DEVELOPER_QUEUE_v5.md`
+- C1D-37 through C1D-48.
 
 Owns:
 - selective integration of approved worker handoffs;
@@ -53,8 +53,8 @@ Must not own media asset production, Forest/poverty authoring, School authoring/
 ## Worker 2 — Chat 2 / Presentation & Media Worker
 
 Queue:
-- `TASK_CHAT2_PRESENTATION_QUEUE_v4.md`
-- C2-25 through C2-36.
+- `TASK_CHAT2_PRESENTATION_QUEUE_v5.md`
+- C2-37 through C2-48.
 
 Owns project-owned presentation/media sources, presentation IDs/registries/manifests, static/animation fallbacks, presentation-specific accessibility metadata and presentation validators.
 
@@ -67,8 +67,8 @@ Must not modify gameplay mechanics, progression, Save/RNG or content canon.
 ## Worker 3 — Chat 3 / Forest + Poverty Content Bundles Worker
 
 Queue:
-- `TASK_CHAT3_CONTENT_QUEUE_v4.md`
-- C3-25 through C3-36.
+- `TASK_CHAT3_CONTENT_QUEUE_v5.md`
+- C3-37 through C3-48.
 
 Owns ordinary poverty content/localization bundles, Forest/Expedition content hooks and result bundles, explicitly assigned Secret Debt boundary/content preparation, fixtures/collision audits/content regressions and selective-integration handoffs.
 
@@ -81,8 +81,8 @@ Must not own shared runtime/UI integration, Chat 2 media production, Chat 5 Scho
 ## Worker 4 — Chat 4 / QA + Product Acceptance Gate
 
 Queue:
-- `TASK_CHAT4_QA_QUEUE_v4.md` then `TASK_CHAT4_QA_QUEUE_v5.md`
-- C4-25 through C4-41.
+- `TASK_CHAT4_QA_QUEUE_v6.md`
+- C4-42 through C4-53.
 
 Owns exact-head PR/CI verification, scope/collision review, runtime/catalog gates, cross-system acceptance and final Lumber product-acceptance gate.
 
@@ -96,8 +96,8 @@ Must not create duplicate production content.
 ## Worker 5 — Chat 5 / School + Text Localization Content Worker
 
 Queue:
-- `TASK_CHAT5_SCHOOL_QUEUE_v4.md`
-- C5-25 through C5-36.
+- `TASK_CHAT5_SCHOOL_QUEUE_v5.md`
+- C5-37 through C5-48.
 
 Owns School player-facing content/localization, teacher/milestone/night-study text preparation, RU/EN parity, School-to-career content handoff fixtures and School content-side regressions.
 
