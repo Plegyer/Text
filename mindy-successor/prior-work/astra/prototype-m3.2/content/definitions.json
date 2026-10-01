@@ -4050,6 +4050,97 @@
           ]
         }
       ]
+    },
+    {
+      "id": "satyr-maid.recurring-guest",
+      "label": "Recurring Guest",
+      "initialStage": "introduced",
+      "stages": [
+        "introduced",
+        "professional-trust",
+        "night-contact",
+        "request-open",
+        "request-resolved"
+      ],
+      "transitions": [
+        {
+          "id": "build-trust",
+          "from": [
+            "introduced"
+          ],
+          "to": "professional-trust",
+          "conditions": [
+            {
+              "kind": "relationshipFact",
+              "relationship": "satyr-maid.recurring-guest",
+              "fact": "introduced-at-work",
+              "present": true
+            },
+            {
+              "kind": "relationshipCounter",
+              "relationship": "satyr-maid.recurring-guest",
+              "counter": "service-meetings",
+              "op": "gte",
+              "value": 2
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "satyr-maid.recurring-guest",
+              "fact": "professional-trust-earned"
+            }
+          ]
+        },
+        {
+          "id": "night-contact",
+          "from": [
+            "professional-trust"
+          ],
+          "to": "night-contact",
+          "conditions": [
+            {
+              "kind": "relationshipFact",
+              "relationship": "satyr-maid.recurring-guest",
+              "fact": "night-met",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "request-open",
+          "from": [
+            "night-contact"
+          ],
+          "to": "request-open",
+          "conditions": [
+            {
+              "kind": "relationshipFact",
+              "relationship": "satyr-maid.recurring-guest",
+              "fact": "request-open",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "request-resolved",
+          "from": [
+            "request-open"
+          ],
+          "to": "request-resolved",
+          "conditions": [
+            {
+              "kind": "relationshipFact",
+              "relationship": "satyr-maid.recurring-guest",
+              "fact": "request-resolved",
+              "present": true
+            }
+          ],
+          "effects": []
+        }
+      ]
     }
   ],
   "lodgings": [
@@ -4934,6 +5025,46 @@
       ],
       "nextDayEffects": [],
       "nextDayEnergyDelta": -1
+    },
+    {
+      "id": "satyr-maid.night.recurring-guest",
+      "label": "Meet the recurring guest",
+      "conditions": [
+        {
+          "kind": "relationshipStage",
+          "relationship": "satyr-maid.recurring-guest",
+          "stage": "professional-trust"
+        },
+        {
+          "kind": "relationshipChoice",
+          "relationship": "satyr-maid.recurring-guest",
+          "choice": "night-response",
+          "value": "accepted"
+        }
+      ],
+      "effects": [],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": 0
+    },
+    {
+      "id": "satyr-maid.night.staff-debrief",
+      "label": "Stay for a staff debrief",
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "satyr-maid",
+          "stage": "house-regular"
+        }
+      ],
+      "effects": [
+        {
+          "kind": "addCareerFact",
+          "career": "satyr-maid",
+          "fact": "staff-debrief-attended"
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": 0
     }
   ],
   "activities": [
