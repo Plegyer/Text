@@ -118,8 +118,11 @@ Result IDs / outcomes:
 - `hunter.expedition.escape` -> `escape`
 - `hunter.expedition.failure` -> `failure`
 
-Return event:
-- `hunter.activity.expedition-return`
+Frozen-runtime return authority:
+- no live `hunter.activity.expedition-return` event exists on exact #201 head;
+- Activity return presentation therefore binds the real result/outcome identities `hunter.expedition.success` / `success`, `hunter.expedition.escape` / `escape`, and `hunter.expedition.failure` / `failure` through `activity/expedition/return/<outcome>`.
+
+The contract mentions `hunter.activity.expedition-return`, but C2-157 does **not** publish that non-existent event as live presentation identity.
 
 ## School
 
