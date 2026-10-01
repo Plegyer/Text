@@ -11,7 +11,8 @@ const ORDINARY_PREFIXES=[
   'poverty-cheap-production.',
   'poverty-cheap-production-v2.',
   'poverty-recovery-production.',
-  'poverty-pressure-production.'
+  'poverty-pressure-production.',
+  'poverty-closure-production-v14.'
 ];
 
 function isOrdinaryPovertyEvent(id:string){

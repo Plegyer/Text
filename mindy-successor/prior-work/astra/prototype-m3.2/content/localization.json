@@ -4317,6 +4317,242 @@
     "action.forest.collect-field-kit.description": {
       "ru": "После первого настоящего занятия забрать в школе контейнеры, бирки и полевые заметки.",
       "en": "After a real lesson, collect containers, labels, and field notes from the School desk."
+    },
+    "event.poverty-closure-production-v14.normal-tight-budget.title": {
+      "ru": "Оплаченная комната при пустеющем кошельке",
+      "en": "A paid room on a tight budget"
+    },
+    "event.poverty-closure-production-v14.normal-tight-budget.variant.school-spend.text": {
+      "ru": "Комната уже оплачена, но недавний урок в Школе заметно облегчил кошелёк. Здесь важна предсказуемость: уличный штраф к ночи не добавляется, а обычная работа завтра по-прежнему доступна.",
+      "en": "The room is already paid for, but a recent School lesson has made the remaining purse noticeably lighter. The advantage here is predictability: no street-night penalty is added, and tomorrow's ordinary work is still available."
+    },
+    "event.poverty-closure-production-v14.normal-tight-budget.variant.low-cash.text": {
+      "ru": "Комната уже оплачена, а денег осталось мало. Разница видна прямо сейчас: крыша и приватность стоят денег, но само это событие не добавляет нового штрафа сверх выбранного ночлега.",
+      "en": "The room is already paid for and the purse is light. That tradeoff is visible tonight: privacy and a full roof cost money, but this context adds no extra penalty beyond the lodging choice itself."
+    },
+    "event.poverty-closure-production-v14.normal-tight-budget.choice.keep-plan.label": {
+      "ru": "Оставить комнату и спланировать завтра",
+      "en": "Keep the room and plan tomorrow"
+    },
+    "event.poverty-closure-production-v14.normal-tight-budget.choice.keep-plan.text": {
+      "ru": "Ты остаёшься в оплаченной комнате, сохраняешь ночной отдых и оставляешь восстановление бюджета обычной работе завтра, не добавляя новых расходов.",
+      "en": "You keep the paid room, protect tonight's rest, and leave tomorrow's recovery to ordinary work rather than adding another cost."
+    },
+    "event.poverty-closure-production-v14.cheap-seasonal-boundaries.title": {
+      "ru": "Границы общей комнаты",
+      "en": "Shared-room boundaries"
+    },
+    "event.poverty-closure-production-v14.cheap-seasonal-boundaries.variant.spring-noise.text": {
+      "ru": "Весенний дождь удерживает больше людей внутри, поэтому поздний разговор слышен через тонкие перегородки. Комната дешевле потому, что приватности меньше, а не потому, что ночь тайно меняет характеристики.",
+      "en": "Spring rain keeps more people indoors, so every late conversation carries through the thin partitions. The room is cheaper because privacy is limited, not because the night secretly changes your stats."
+    },
+    "event.poverty-closure-production-v14.cheap-seasonal-boundaries.variant.summer-privacy.text": {
+      "ru": "Летом общая комната долго остаётся тёплой и оживлённой. Крыша есть, но переодеваться, разбирать вещи и искать тихий угол приходится с оглядкой на чужое пространство.",
+      "en": "In summer the shared room stays warm and busy. You can sleep under a roof, but changing clothes, sorting belongings, and finding a quiet corner all require more attention to other people's space."
+    },
+    "event.poverty-closure-production-v14.cheap-seasonal-boundaries.variant.autumn-shared-space.text": {
+      "ru": "Осенняя сырость приносит в тесную комнату мокрые плащи и сумки. Место есть у всех, но проход и пространство для сушки приходится делить, а не считать своими по умолчанию.",
+      "en": "Autumn damp brings wet coats and bags into the same narrow room. Everyone has a place, but the passage and drying space have to be negotiated rather than assumed."
+    },
+    "event.poverty-closure-production-v14.cheap-seasonal-boundaries.variant.winter-quiet-hours.text": {
+      "ru": "Зимой общая комната одновременно особенно ценна и особенно тесна. Тишина важнее обычного: один беспокойный человек легко разбудит почти всех у печи.",
+      "en": "Winter makes the shared room valuable and crowded at the same time. Quiet hours matter more because one restless person can wake almost everyone near the stove."
+    },
+    "event.poverty-closure-production-v14.cheap-seasonal-boundaries.variant.shared-room.text": {
+      "ru": "Дешёвая комната даёт крышу и предсказуемую постель, но почти не даёт приватности. Шум, общее пространство и чужой распорядок — часть этой сделки.",
+      "en": "The cheap room buys a roof and a predictable bed, but not much privacy. Noise, shared space, and other people's schedules are part of the bargain."
+    },
+    "event.poverty-closure-production-v14.cheap-seasonal-boundaries.choice.ask-for-quiet.label": {
+      "ru": "Попросить немного тишины",
+      "en": "Ask for a little quiet"
+    },
+    "event.poverty-closure-production-v14.cheap-seasonal-boundaries.choice.ask-for-quiet.text": {
+      "ru": "Ты просишь спокойно и без лишних требований. Комната остаётся общей; новый расход или скрытый штраф не появляется.",
+      "en": "You ask plainly and keep the request small. The room remains shared; no extra cost or hidden penalty is created."
+    },
+    "event.poverty-closure-production-v14.cheap-seasonal-boundaries.choice.keep-small-space.label": {
+      "ru": "Держаться своего места",
+      "en": "Keep to your space"
+    },
+    "event.poverty-closure-production-v14.cheap-seasonal-boundaries.choice.keep-small-space.text": {
+      "ru": "Ты держишь вещи рядом и подстраиваешься под правила общей комнаты, не превращая неудобство в новую механику.",
+      "en": "You keep your belongings close and work within the room's shared rules without turning the inconvenience into a new mechanic."
+    },
+    "event.poverty-closure-production-v14.street-spring-neutral.title": {
+      "ru": "Сухая ступень между ливнями",
+      "en": "A dry step between showers"
+    },
+    "event.poverty-closure-production-v14.street-spring-neutral.variant.default.text": {
+      "ru": "Между весенними ливнями одна высокая каменная ступень остаётся достаточно сухой, чтобы присесть. Она не отменяет обычную цену уличной ночи, но даёт нейтральную паузу вместо очередного кризиса.",
+      "en": "Between spring showers, one raised stone step stays dry enough to sit on. It does not erase the ordinary street-night cost, but it gives the evening a neutral pause instead of another crisis."
+    },
+    "event.poverty-closure-production-v14.street-spring-neutral.choice.take-dry-step.label": {
+      "ru": "Использовать сухую ступень",
+      "en": "Use the dry step"
+    },
+    "event.poverty-closure-production-v14.street-spring-neutral.choice.take-dry-step.text": {
+      "ru": "Ты пользуешься сухим местом, пока оно свободно. Единственной механической ценой остаются обычные последствия уличного ночлега.",
+      "en": "You use the dry place while it lasts. The normal street lodging consequences remain the only mechanical cost."
+    },
+    "event.poverty-closure-production-v14.street-spring-neutral.choice.keep-route.label": {
+      "ru": "Идти привычным маршрутом",
+      "en": "Keep your usual route"
+    },
+    "event.poverty-closure-production-v14.street-spring-neutral.choice.keep-route.text": {
+      "ru": "Ты продолжаешь идти по знакомым улицам и не получаешь дополнительного штрафа.",
+      "en": "You keep moving through familiar streets and avoid creating any extra penalty."
+    },
+    "event.poverty-closure-production-v14.street-summer-pressure.title": {
+      "ru": "Камень держит дневную жару",
+      "en": "Heat held by the stone"
+    },
+    "event.poverty-closure-production-v14.street-summer-pressure.variant.default.text": {
+      "ru": "Даже после заката камень ещё держит дневную жару. Давление вполне реальное — устроить отдых сложнее, — но остаётся бесплатный выбор между более продуваемым углом и привычным местом.",
+      "en": "Long after sunset, the stone still holds the day's heat. The pressure is real—rest is harder to arrange—but there is still a free choice between a breezier corner and keeping the familiar place."
+    },
+    "event.poverty-closure-production-v14.street-summer-pressure.choice.find-breeze.label": {
+      "ru": "Найти место с ветром",
+      "en": "Find a breezier corner"
+    },
+    "event.poverty-closure-production-v14.street-summer-pressure.choice.find-breeze.text": {
+      "ru": "Ты переходишь к открытому воздуху и принимаешь менее знакомое место, не добавляя нового глобального штрафа.",
+      "en": "You move toward open air and accept a less familiar spot without adding a new global penalty."
+    },
+    "event.poverty-closure-production-v14.street-summer-pressure.choice.keep-place.label": {
+      "ru": "Остаться на привычном месте",
+      "en": "Keep the familiar place"
+    },
+    "event.poverty-closure-production-v14.street-summer-pressure.choice.keep-place.text": {
+      "ru": "Ты сохраняешь знакомое место. Это событие не добавляет отдельной настройки поверх уже существующей уличной ночи.",
+      "en": "You keep the spot you already know. This event adds no extra tuning beyond the existing street-night structure."
+    },
+    "event.poverty-closure-production-v14.street-autumn-helpful.title": {
+      "ru": "Навес остаётся раскрытым после закрытия",
+      "en": "A closing awning stays up"
+    },
+    "event.poverty-closure-production-v14.street-autumn-helpful.variant.default.text": {
+      "ru": "Хозяин лавки оставляет внешний навес раскрытым, пока проходит последний осенний дождь. Укрытие обращено к улице и временно; никто не требует обещаний, платы или личных обязательств.",
+      "en": "A shopkeeper leaves one outer awning up while the last autumn drizzle passes. The shelter is public-facing and temporary; nobody asks for a promise, payment, or private obligation."
+    },
+    "event.poverty-closure-production-v14.street-autumn-helpful.choice.use-awning.label": {
+      "ru": "Переждать под навесом",
+      "en": "Wait under the awning"
+    },
+    "event.poverty-closure-production-v14.street-autumn-helpful.choice.use-awning.text": {
+      "ru": "Ты пользуешься обычным публичным укрытием, пока дождь не ослабеет, а затем возвращаешься к своему плану.",
+      "en": "You use the ordinary public shelter until the drizzle eases, then return to your own plan."
+    },
+    "event.poverty-closure-production-v14.street-autumn-helpful.choice.leave-space.label": {
+      "ru": "Оставить место свободным",
+      "en": "Leave the space open"
+    },
+    "event.poverty-closure-production-v14.street-autumn-helpful.choice.leave-space.text": {
+      "ru": "Ты оставляешь сухую полосу кому-то другому и продолжаешь ночь без штрафа.",
+      "en": "You leave the sheltered strip for someone else and continue without penalty."
+    },
+    "event.poverty-closure-production-v14.street-winter-neutral.title": {
+      "ru": "Смена городского караула",
+      "en": "The watch changes posts"
+    },
+    "event.poverty-closure-production-v14.street-winter-neutral.variant.default.text": {
+      "ru": "Во время зимней смены караула одна боковая улица ненадолго становится тише и лучше освещена. За тебя ничего не решают, но обычную ночь становится проще прочитать и спланировать.",
+      "en": "During the winter watch change, one side street becomes briefly quieter and better lit. Nothing is solved for you, but the ordinary night becomes easier to read and plan."
+    },
+    "event.poverty-closure-production-v14.street-winter-neutral.choice.use-lit-route.label": {
+      "ru": "Выбрать освещённый путь",
+      "en": "Use the better-lit route"
+    },
+    "event.poverty-closure-production-v14.street-winter-neutral.choice.use-lit-route.text": {
+      "ru": "Ты идёшь по более ясному маршруту и сохраняешь предсказуемость ночи, не получая особого покровителя.",
+      "en": "You take the clearer route and keep the night predictable without gaining a special protector."
+    },
+    "event.poverty-closure-production-v14.street-winter-neutral.choice.stay-known-route.label": {
+      "ru": "Остаться на знакомом пути",
+      "en": "Stay on the route you know"
+    },
+    "event.poverty-closure-production-v14.street-winter-neutral.choice.stay-known-route.text": {
+      "ru": "Ты держишься привычных ориентиров и принимаешь обычную основу уличной ночи.",
+      "en": "You keep to familiar landmarks and accept the ordinary street-night baseline."
+    },
+    "event.poverty-closure-production-v14.recovery-map.title": {
+      "ru": "Практический план на завтра",
+      "en": "A practical plan for tomorrow"
+    },
+    "event.poverty-closure-production-v14.recovery-map.variant.default.text": {
+      "ru": "Когда денег почти не осталось, полезно помнить: обычные пути восстановления всё ещё существуют. Иногда появляются короткие оплачиваемые поручения и уборка, найденный пучок трав может стать запасом, а стартовая работа остаётся доступной на следующий день.",
+      "en": "With almost no money left, the useful fact is that ordinary recovery routes still exist. Short paid errands and cleanup work can appear on some nights, a found herb bundle can become a reserve, and starter work remains available the next day."
+    },
+    "event.poverty-closure-production-v14.recovery-map.choice.plan-work.label": {
+      "ru": "Спланировать обычную работу",
+      "en": "Plan around ordinary work"
+    },
+    "event.poverty-closure-production-v14.recovery-map.choice.plan-work.text": {
+      "ru": "Первой целью на завтра становится стартовая смена. Для этого пути не нужен обязательный помощник или скрытая карьера.",
+      "en": "You make tomorrow's first goal a starter shift. No helper, loan, or hidden career is required for that route."
+    },
+    "event.poverty-closure-production-v14.recovery-map.choice.rest-first.label": {
+      "ru": "Сначала сохранить отдых",
+      "en": "Protect tonight's rest"
+    },
+    "event.poverty-closure-production-v14.recovery-map.choice.rest-first.text": {
+      "ru": "Ты оставляешь бесплатный план на ночь простым, чтобы на следующий день по-прежнему можно было выйти на обычную работу.",
+      "en": "You keep the free sleeping plan simple so the next day can still reach ordinary work."
+    },
+    "event.poverty-closure-production-v14.herb-acknowledgement.title": {
+      "ru": "Сохранить небольшой запас сухим",
+      "en": "Keeping a small reserve dry"
+    },
+    "event.poverty-closure-production-v14.herb-acknowledgement.variant.default.text": {
+      "ru": "Пучок трав в вещах — небольшой запас, а не валюта. Ты защищаешь его от уличной пыли и сырости, чтобы он пригодился позже; это не превращает предмет в продажу или бартер.",
+      "en": "The herb bundle in your belongings is a small reserve, not currency. You wrap it against street dust and damp so it stays usable later; nothing here turns it into a sale or barter system."
+    },
+    "event.poverty-closure-production-v14.herb-acknowledgement.choice.keep-herb-dry.label": {
+      "ru": "Сохранить травы сухими",
+      "en": "Keep the herb bundle dry"
+    },
+    "event.poverty-closure-production-v14.herb-acknowledgement.choice.keep-herb-dry.text": {
+      "ru": "Ты аккуратно перепаковываешь пучок. Он остаётся в инвентаре: его не расходуют, не продают и не обменивают.",
+      "en": "You repack the herb bundle carefully. It remains in inventory and is not consumed, sold, or exchanged."
+    },
+    "event.poverty-closure-production-v14.public-relationship-ack.title": {
+      "ru": "Знакомое лицо на людях",
+      "en": "A familiar face in public"
+    },
+    "event.poverty-closure-production-v14.public-relationship-ack.variant.default.text": {
+      "ru": "Постоянный гость таверны узнаёт тебя на улице и кивает так же профессионально, как на работе. Узнавание реально, но не превращается в деньги, ночлег, личное спасение или обязательство.",
+      "en": "A recurring guest from the tavern recognizes you in public and gives the same professional nod as at work. The recognition is real, but it does not become money, lodging, a private rescue, or an obligation."
+    },
+    "event.poverty-closure-production-v14.public-relationship-ack.choice.return-nod.label": {
+      "ru": "Ответить на приветствие",
+      "en": "Return the greeting"
+    },
+    "event.poverty-closure-production-v14.public-relationship-ack.choice.return-nod.text": {
+      "ru": "Ты отвечаешь знакомому лицу и продолжаешь собственный план на ночь. Отношение меняет тон сцены, а не механику бедности.",
+      "en": "You acknowledge the familiar face and keep your own plan for the night. The relationship changes the tone, not the poverty mechanics."
+    },
+    "event.poverty-closure-production-v14.cheap-school-budget.title": {
+      "ru": "Расходы на Школу и дешёвая комната",
+      "en": "School spending meets a cheap room"
+    },
+    "event.poverty-closure-production-v14.cheap-school-budget.variant.default.text": {
+      "ru": "Урок в Школе уже забрал часть сегодняшних денег и Энергии, а дешёвая комната делает этот компромисс заметным без изменения платы за учёбу или жильё. Практический путь восстановления остаётся обычным: выспаться, а завтра воспользоваться доступной работой.",
+      "en": "A School lesson has already spent part of today's money and Energy, and the cheap room makes that tradeoff visible without changing tuition or rent. The practical recovery remains ordinary: sleep, then use available work when the next day begins."
+    },
+    "event.poverty-closure-production-v14.cheap-school-budget.choice.protect-sleep.label": {
+      "ru": "Сохранить оставшийся отдых",
+      "en": "Protect the remaining rest"
+    },
+    "event.poverty-closure-production-v14.cheap-school-budget.choice.protect-sleep.text": {
+      "ru": "Ты больше не тратишь деньги этой ночью и оставляешь общую комнату более дешёвым платным вариантом.",
+      "en": "You stop spending for the night and keep the shared room as the cheaper paid option."
+    },
+    "event.poverty-closure-production-v14.cheap-school-budget.choice.plan-starter-work.label": {
+      "ru": "Запланировать стартовую смену",
+      "en": "Plan a starter shift"
+    },
+    "event.poverty-closure-production-v14.cheap-school-budget.choice.plan-starter-work.text": {
+      "ru": "Ты оставляешь восстановление на завтра обычной стартовой работе, не создавая новую аварийную систему.",
+      "en": "You leave tomorrow's recovery to an ordinary starter job rather than creating a new emergency system."
     }
   }
 }
