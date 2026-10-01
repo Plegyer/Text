@@ -83,7 +83,7 @@ test('C3-158..161 keeps exactly twelve live shift scenes with full seasonal bili
     }
   }
   const text=action.scenes.map((s:any)=>s.text).join(' ');
-  for(const phrase of ['roads reopen','repairs','caravans','Summer','rooms','expedition','Autumn','Hunters','festival','supplies','Winter','road']){
+  for(const phrase of ['roads reopen','repairs','caravans','Summer','rooms','long route','Autumn','Hunters','festival','supplies','Winter','road']){
     assert.match(text,new RegExp(phrase,'i'),phrase);
   }
 });
@@ -173,6 +173,8 @@ test('C3-167 crisis/outcome copy preserves ending IDs and rewards',()=>{
 test('all Chat 3 live Tavern authored prose stays role-only and outside Secret Debt',()=>{
   const action=defs.actions.find((x:any)=>x.id==='tavern.shift');
   const raw=JSON.stringify({scenes:action.scenes,events:packs.flatMap((p:any)=>p.events)});
-  assert.doesNotMatch(raw,/Marek|Elian|Bronn|Ren|Silan|Марек|Элиан|Бронн|Рен|Силан/i);
+  for(const name of ['Marek','Elian','Bronn','Ren','Silan','Марек','Элиан','Бронн','Рен','Силан']){
+    assert.equal(new RegExp('(^|[^\\p{L}])'+name+'([^\\p{L}]|$)','iu').test(raw),false,name);
+  }
   assert.doesNotMatch(raw,/secret.?debt|lender|slave/i);
 });

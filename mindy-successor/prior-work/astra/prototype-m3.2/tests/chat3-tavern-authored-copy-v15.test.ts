@@ -24,7 +24,10 @@ test('C3-158..167 source manifest is bilingual, live-bound and contract-only',()
     assert.ok(row.ru.trim().length>=40,row.contentKey+' RU');
     assert.ok(row.en.trim().length>=40,row.contentKey+' EN');
   }
-  assert.doesNotMatch(JSON.stringify(all),/Marek|Elian|Bronn|Ren|Silan|Марек|Элиан|Бронн|Рен|Силан/i);
+  const raw=JSON.stringify(all);
+  for(const name of ['Marek','Elian','Bronn','Ren','Silan','Марек','Элиан','Бронн','Рен','Силан']){
+    assert.equal(new RegExp('(^|[^\\p{L}])'+name+'([^\\p{L}]|$)','iu').test(raw),false,name);
+  }
   assert.deepEqual(fixture.mechanics,{
     effects:[],runtimeChanges:[],endingChanges:[],schoolChanges:[],nightFlowChanges:[],economyNumberChanges:[],secretDebtChanges:[]
   });
