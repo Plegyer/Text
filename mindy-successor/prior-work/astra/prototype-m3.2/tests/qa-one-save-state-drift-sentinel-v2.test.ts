@@ -109,6 +109,10 @@ test('final one-Save drift sentinel v2 preserves PR24 state across School, Night
     schoolCommitted.foremanStage
   );
 
+  s=dispatch(s,{type:'action',id:'forest.collect-field-kit'},catalog);
+  assert.equal(s.run.resources.inventory.field_preservation_kit,1);
+  assert.ok(s.run.progression.worldFacts.includes('forest.school-field-notes'));
+
   // Night: lodging once, Foreman Night once, day advances once.
   s=reload(s);
   s=dispatch(s,{type:'endDay'},catalog);
@@ -189,13 +193,21 @@ test('final one-Save drift sentinel v2 preserves PR24 state across School, Night
   assert.ok(actions.includes('advance'));
   assert.ok(actions.includes('escape'));
 
-  s=dispatch(s,{type:'activityAction',id:'advance'},catalog);
+  s=dispatch(s,{type:'activityAction',id:'forest.challenge.logging-navigation'},catalog);
   assert.equal(s.run.flow.activity?.internalState.progress,1);
 
   s=reload(s);
   assert.equal(s.run.flow.activity?.internalState.progress,1);
   assert.equal(s.run.flow.activity?.internalState.routeId,'logging-road');
 
+  s=dispatch(s,{type:'activityAction',id:'forest.challenge.logging-spring-mud'},catalog);
+  s=reload(s);
+  s=dispatch(s,{type:'activityAction',id:'forest.challenge.logging-preserve-sample'},catalog);
+  assert.equal(s.run.flow.activity?.internalState.progress,4);
+
+  s=reload(s);
+  s=dispatch(s,{type:'activityAction',id:'advance'},catalog);
+  s=reload(s);
   s=dispatch(s,{type:'activityAction',id:'advance'},catalog);
 
   assert.equal(s.run.flow.activity,null);
