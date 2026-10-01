@@ -4245,6 +4245,26 @@
     "presentation.static.satyr-maid-ending-house-power.caption": {
       "ru": "Финал «Влияние в доме».",
       "en": "House Power ending."
+    },
+    "ending.ending.satyr-maid.boundary-mastery.title": {
+      "ru": "Служанка у сатиров — мастерство границ",
+      "en": "Satyr Maid — Boundary Mastery"
+    },
+    "ending.ending.satyr-maid.boundary-mastery.description": {
+      "ru": "Сложный карьерный исход, основанный на явном отказе, ясных условиях обслуживания, уверенности, подкреплённой школой, и разрешённом кризисе давления со стороны посетителей.",
+      "en": "A complex Satyr Maid ending built through explicit refusal, clear service terms, School-backed confidence, and a resolved customer-pressure crisis."
+    },
+    "ending.ending.satyr-maid.boundary-mastery.epilogue": {
+      "ru": "Вас знают по тёплому профессиональному обслуживанию на ясных условиях, не требующему отказываться от собственных границ.",
+      "en": "You become known for service on clear terms: professional warmth without surrendering control over your own boundaries."
+    },
+    "presentation.static.satyr-maid-ending-boundary-mastery.alt": {
+      "ru": "Служанка у сатиров завершает карьерный путь, сохраняя ясные профессиональные условия и личные границы.",
+      "en": "A Satyr Maid completes her career path while keeping clear professional terms and personal boundaries."
+    },
+    "presentation.static.satyr-maid-ending-boundary-mastery.caption": {
+      "ru": "Финал «Мастерство границ».",
+      "en": "Boundary Mastery ending."
     }
   }
 }
