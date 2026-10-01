@@ -446,9 +446,12 @@
       "trigger": [],
       "reactionTriggers": [
         {
-          "kind": "careerFactAdded",
-          "career": "satyr-maid",
-          "fact": "outcome-ready"
+          "kind": "endingEligible",
+          "ending": "ending.satyr-maid.house-power"
+        },
+        {
+          "kind": "endingEligible",
+          "ending": "ending.satyr-maid.boundary-mastery"
         }
       ],
       "priorityClass": "critical_progression",
@@ -485,7 +488,7 @@
           "kind": "careerFact",
           "career": "satyr-maid",
           "fact": "outcome-ready",
-          "present": true
+          "present": false
         }
       ],
       "variants": [
@@ -503,6 +506,11 @@
           "text": "Keep playing until you explicitly commit an ending.",
           "conditions": [],
           "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "satyr-maid",
+              "fact": "outcome-ready"
+            },
             {
               "kind": "advanceCareer",
               "career": "satyr-maid",
