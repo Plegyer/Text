@@ -5197,6 +5197,22 @@
     "event.lumber-cross.activity-forest-return.variant.rope-kit.text": {
       "ru": "В рассказе ясно отмечено место, где верёвочный набор сделал опасный переход контролируемым. Для артели это важно как доказательство проходимости, а не как украшение истории.",
       "en": "Your account clearly marks where the rope kit turned a dangerous crossing into a controlled one. For the crew, that matters as evidence of passability rather than decoration for the story."
+    },
+    "event.hunter.school.field-craft.title": {
+      "ru": "Маршрут считается вместе с возвращением",
+      "en": "A route includes the way back"
+    },
+    "event.hunter.school.field-craft.variant.default.text": {
+      "ru": "Роуэн просит разобрать путь к учебной точке не по скорости, а по условиям: где останется заметный ориентир, когда стоит сменить маршрут и при каком признаке нужно повернуть назад. Упражнение готовит к охотничьей работе через планирование и наблюдение, а не через выдуманную гарантию безопасного исхода.",
+      "en": "Rowan asks you to judge a route to a practice point by conditions rather than speed: which landmark will stay visible, when the route should change, and what sign should make you turn back. The exercise prepares you for Hunter work through planning and observation, not through an invented guarantee of a safe outcome."
+    },
+    "event.hunter.school.field-craft.choice.apply.label": {
+      "ru": "Применить полевой метод",
+      "en": "Apply the field method"
+    },
+    "event.hunter.school.field-craft.choice.apply.text": {
+      "ru": "Полевой метод готов к Hunter-local реакции через существующие школьные полевые записи без дополнительной охотничьей смены. Школа: Роуэн связал полевую практику с маршрутом, запасным планом и существующими `forest.school-field-notes`. Новый числовой порог не вводится.",
+      "en": "The field method is ready for a Hunter-local reaction through the existing School field notes without an additional Hunter shift. School: Rowan connected Field Craft to route choice, fallback planning, and the existing `forest.school-field-notes`. No new numeric threshold is introduced."
     }
   }
 }
