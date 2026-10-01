@@ -1,5 +1,5 @@
 import {mountEditor} from './editor.ts';
-import {applyPresentation,emptyPresentation,resolvePresentation,presentationIdForActionResult,presentationIdForActivityRoute,presentationIdForEvent,presentationIdForEnding,presentationIdForSatyrMaidStage,presentationIdForUndeadFarmStage,presentationIdForTavernNightChoice,presentationIdForTavernRelationshipStage,presentationIdForTavernStage,presentationIdForTavernState,TAVERN_NIGHT_CHOICE_IDS,type Presentation} from '../core/presentation.ts';
+import {applyPresentation,emptyPresentation,resolvePresentation,presentationIdForActionResult,presentationIdForActivityRoute,presentationIdForEvent,presentationIdForEnding,presentationIdForGuardItem,presentationIdForGuardRelationshipStage,presentationIdForGuardStage,presentationIdForGuardState,presentationIdForSatyrMaidStage,presentationIdForUndeadFarmStage,presentationIdForTavernNightChoice,presentationIdForTavernRelationshipStage,presentationIdForTavernStage,presentationIdForTavernState,TAVERN_NIGHT_CHOICE_IDS,type Presentation} from '../core/presentation.ts';
 import {loadCatalog} from '../core/content.ts';
 import {freshSave,dispatch,parseSave,eligible,calendar,actionCost,actionAvailable,meets,energyMax,rent,favorStat,availableActivityActions,type Command} from '../core/engine.ts';
 import {stats,type Save,type Catalog,type Condition,type Action} from '../core/schema.ts';
@@ -103,6 +103,22 @@ function undeadFarmKeeperChoiceState(eventId:string,choiceId:string){
  if(eventId==='undead-farm.keeper.request'&&choiceId==='decline')return 'request-refusal';
  return '';
 }
+const guardRelationshipEventStates:Record<string,string>={
+ 'guard.relationship.intro':'intro',
+ 'guard.relationship.trust':'professional-trust',
+ 'guard.relationship.conflict-open':'conflict-open',
+ 'guard.relationship.conflict-resolve':'conflict-resolve',
+ 'guard.relationship.case-support':'case-support'
+};
+function guardRelationshipEventState(eventId:string){return guardRelationshipEventStates[eventId]??'';}
+function guardRelationshipChoiceState(eventId:string,choiceId:string){
+ if(eventId==='guard.relationship.conflict-resolve'&&choiceId==='cooperate')return 'cooperate';
+ if(eventId==='guard.relationship.conflict-resolve'&&choiceId==='rivalry')return 'rivalry';
+ if(eventId==='guard.relationship.conflict-resolve'&&choiceId==='decline')return 'refusal';
+ if(eventId==='guard.relationship.case-support'&&choiceId==='accept')return 'case-support-accepted';
+ if(eventId==='guard.relationship.case-support'&&choiceId==='decline')return 'case-support-refused';
+ return '';
+}
 const professions=['lumber.shift','satyr-maid.shift','undead-farm.shift','tavern.shift','hunter.shift','guard.shift','merchant.shift','artist-geisha.shift','assassin.shift','prostitute.shift'];
 const lateCareerProfessions=new Set(['tavern.shift','hunter.shift','guard.shift','merchant.shift','artist-geisha.shift','assassin.shift','prostitute.shift']);
 const lumberOutcomeIds=['ending.lumber.hard-work','ending.lumber.forewoman','ending.lumber.forest'] as const;
@@ -148,6 +164,46 @@ function tavernPresentationStatusHTML(){
   :'';
  const stateHtml=tavernPresentationStates().map(row=>`<span class="tavern-state-chip" data-tavern-state="${esc(row.id)}" data-presentation-id="${esc(presentationIdForTavernState(row.id))}" tabindex="0" aria-label="${esc(fmt(tr('ui.tavern.stateAria','Состояние таверны: {state}'),{state:row.label}))}">${esc(row.label)}</span>`).join('');
  return `<div class="tavern-presentation-status"><p class="tavern-career-stage" data-tavern-stage="${esc(stage)}" data-presentation-id="${esc(presentationIdForTavernStage(stage))}" tabindex="0" aria-label="${esc(fmt(tr('ui.tavern.stageAria','Этап карьеры таверны: {stage}'),{stage:stageLabel}))}">${esc(stageLabel)}</p>${relationshipHtml}${stateHtml?`<div class="tavern-state-list">${stateHtml}</div>`:''}</div>`;
+}
+function guardPresentationStatusHTML(){
+ const career=state.run.progression.careers.guard;
+ if(!career)return '';
+ const stage=career.stage;
+ const stageLabel=tr(`presentation.guard.stage.${stage}.label`,stage);
+ const relationship=state.run.progression.relationships['guard.partner'];
+ const relationshipStage=relationship?.stage??'';
+ const relationshipLabel=relationshipStage?tr(`presentation.guard.relationship.stage.${relationshipStage}.label`,relationshipStage):'';
+ const itemRows=[
+  ['guard_badge','Guard Badge'],
+  ['guard_sealed_pass','Sealed Guard Pass']
+ ].filter(([itemId])=>(state.run.resources.inventory[itemId]??0)>0).map(([itemId,fallback])=>({
+  id:itemId,label:tr(`presentation.guard.item.${itemId}.label`,fallback)
+ }));
+ const stateRows=[
+  ['city-dispute-resolved',career.facts.includes('city-dispute-resolved')],
+  ['crowd-pressure-resolved',career.facts.includes('crowd-pressure-resolved')],
+  ['duty-report-evidence',career.facts.includes('duty-report-evidence')],
+  ['cargo-pass-evidence',career.facts.includes('cargo-pass-evidence')],
+  ['poverty-response-recorded',career.facts.includes('poverty-response-recorded')],
+  ['tavern-evidence-known',career.facts.includes('tavern-evidence-known')],
+  ['veteran-ready',career.facts.includes('veteran-ready')],
+  ['officer-ready',career.facts.includes('officer-route-ready')],
+  ['reform-ready',career.facts.includes('reform-route-ready')],
+  ['network-ready',career.facts.includes('network-route-ready')],
+  ['major-case-thread',career.facts.includes('major-case-thread-ready')],
+  ['major-case-ready',career.facts.includes('major-case-ready')],
+  ['crisis-resolved',career.facts.includes('crisis-resolved')],
+  ['refusal-respected',!!relationship?.facts.includes('refusal-respected')],
+  ['partner-case-support',!!relationship?.facts.includes('case-support-ready')||career.facts.includes('partner-case-support')]
+ ].filter(([,active])=>active).map(([id])=>({
+  id:String(id),label:tr(`presentation.guard.state.${id}.label`,String(id))
+ }));
+ const relationshipHtml=relationshipStage
+  ?`<p class="guard-relationship-stage" data-guard-relationship-stage="${esc(relationshipStage)}" data-presentation-id="${esc(presentationIdForGuardRelationshipStage(relationshipStage))}" tabindex="0" aria-label="${esc(fmt(tr('ui.guard.relationshipAria','Профессиональная связь с напарницей стражи: {stage}'),{stage:relationshipLabel}))}">${esc(relationshipLabel)}</p>`
+  :'';
+ const itemHtml=itemRows.map(row=>`<span class="guard-item-chip" data-guard-item="${esc(row.id)}" data-presentation-id="${esc(presentationIdForGuardItem(row.id))}" tabindex="0" aria-label="${esc(fmt(tr('ui.guard.itemAria','Служебный доступ: {item}'),{item:row.label}))}">${esc(row.label)}</span>`).join('');
+ const stateHtml=stateRows.map(row=>`<span class="guard-state-chip" data-guard-state="${esc(row.id)}" data-presentation-id="${esc(presentationIdForGuardState(row.id))}" tabindex="0" aria-label="${esc(fmt(tr('ui.guard.stateAria','Состояние службы стражи: {state}'),{state:row.label}))}">${esc(row.label)}</span>`).join('');
+ return `<div class="guard-presentation-status"><p class="guard-career-stage" data-guard-stage="${esc(stage)}" data-presentation-id="${esc(presentationIdForGuardStage(stage))}" tabindex="0" aria-label="${esc(fmt(tr('ui.guard.stageAria','Этап карьеры стражи: {stage}'),{stage:stageLabel}))}">${esc(stageLabel)}</p>${relationshipHtml}${itemHtml||stateHtml?`<div class="guard-status-list">${itemHtml}${stateHtml}</div>`:''}</div>`;
 }
 function explain(c:Condition):string{
  const cmp=(op:'gte'|'lte'|'eq',value:number)=>`${op==='gte'?'>=':op==='lte'?'<=':'='} ${value}`;
@@ -234,9 +290,13 @@ function tavernPresentationFeedback(before:Save,cmd:Command){
  if(cmd.type!=='choice'||before.run.pending?.eventId!=='tavern.crisis.occupancy-supply-confidentiality')return '';
  return tr(`ui.tavern.crisisFeedback.${cmd.id}`,'');
 }
+function guardPresentationFeedback(before:Save,cmd:Command){
+ if(cmd.type!=='choice'||before.run.pending?.eventId!=='guard.crisis.market-gate-pressure')return '';
+ return tr(`ui.guard.crisisFeedback.${cmd.id}`,'');
+}
 async function perform(cmd:Command){
  if(busy||locked)return;busy=true;render();
- try{const next=dispatch(state,cmd,catalog);const discovery=lateCareerDiscoveryMessage(state,next);const satyrFeedback=satyrPresentationFeedback(state,cmd);const farmFeedback=undeadFarmPresentationFeedback(state,cmd);const tavernFeedback=tavernPresentationFeedback(state,cmd);await write(next);state=next;error=false;message=farmFeedback||satyrFeedback||tavernFeedback||discovery;mediaIndex=0;
+ try{const next=dispatch(state,cmd,catalog);const discovery=lateCareerDiscoveryMessage(state,next);const satyrFeedback=satyrPresentationFeedback(state,cmd);const farmFeedback=undeadFarmPresentationFeedback(state,cmd);const tavernFeedback=tavernPresentationFeedback(state,cmd);const guardFeedback=guardPresentationFeedback(state,cmd);await write(next);state=next;error=false;message=guardFeedback||farmFeedback||satyrFeedback||tavernFeedback||discovery;mediaIndex=0;
   if(!['allocate','finishCreation'].includes(cmd.type)){panel='';screen=['restart','newLife'].includes(cmd.type)?'town':'scene';}
  }catch(e){message=e instanceof Error?e.message:String(e);error=true;}
  busy=false;render();
@@ -265,9 +325,10 @@ function actionList(ids:string[]){return `<div class="activity-list">${ids.map(i
  const undeadFarmStageLabel=undeadFarmStage?tr(`presentation.undead-farm.stage.${undeadFarmStage}.label`,undeadFarmStage):'';
  const undeadFarmStageStatus=undeadFarmStage?`<p class="undead-farm-stage" data-career-stage="${esc(undeadFarmStage)}" data-stage-presentation-id="${esc(undeadFarmStagePresentation)}" tabindex="0" aria-label="${esc(fmt(tr('ui.work.undeadFarmStageAria','Этап карьеры фермы нежити: {stage}'),{stage:undeadFarmStageLabel}))}">${esc(undeadFarmStageLabel)}</p>`:'';
  const tavernStatus=a.id==='tavern.shift'?tavernPresentationStatusHTML():'';
+ const guardStatus=a.id==='guard.shift'?guardPresentationStatusHTML():'';
  const availability=
   lateCareer?`<p class="career-availability" data-career-availability="${availabilityState}" tabindex="0" role="status" aria-label="${esc(fmt(tr('ui.work.lateCareer.stateAria','{career}: {state}'),{career:label,state:availabilityLabel}))}">${esc(availabilityLabel)}</p>`:'';
- return `<article class="activity" ${lateCareer?`data-late-career="${esc(a.id)}"`:''} ${satyrStage?`data-satyr-maid-stage="${esc(satyrStage)}"`:''} ${undeadFarmStage?`data-undead-farm-stage="${esc(undeadFarmStage)}"`:''} ${a.id==='tavern.shift'?'data-tavern-presentation="true"':''}><div><h3>${esc(label)}</h3>${availability}${satyrStageStatus}${undeadFarmStageStatus}${tavernStatus}<p>${esc(description)}</p><small>${a.cost.energy} ${esc(tr('ui.work.energy','энергии'))}${actionCost(a,state)?` · ${actionCost(a,state)} ${esc(tr('ui.work.coins','монет'))}`:''}${forecast!==null?` · ${esc(tr('ui.work.income','доход ≈'))} ${forecast}`:''}</small><div class="effect-tags">${statsEffects.map(e=>e.kind==='metric'?`<span class="${e.delta>0?'gain':'loss'}">${esc(labels[e.key])} ${e.delta>0?'+':''}${e.delta}</span>`:'').join('')}</div>${miss.length?`<p class="requirement">${esc(miss.map(explain).join(' · '))}</p>`:''}${careerLocked?`<p class="requirement" id="${esc(helpId)}" tabindex="0">${esc(lockHelp)}</p>`:''}</div>${a.mode==='brew'?`<div><button data-action="${a.id}" data-recipe="gentle" ${disabled(a)?'disabled':''}>${esc(tr('ui.work.recipeReliable','Надёжно'))}</button><button data-action="${a.id}" data-recipe="bold" ${disabled(a)?'disabled':''}>${esc(tr('ui.work.recipeFast','Быстро'))}</button></div>`:`<button data-action="${a.id}" ${careerButtonAria?`aria-label="${esc(careerButtonAria)}"`:''} ${careerLocked?`aria-describedby="${esc(helpId)}" aria-disabled="true"`:lateCareer?'aria-disabled="false"':''} ${disabled(a)?'disabled':''}>${professions.includes(a.id)?esc(tr('ui.work.button','Работать')):esc(tr('ui.generic.selectButton','Выбрать'))}</button>`}</article>`;
+ return `<article class="activity" ${lateCareer?`data-late-career="${esc(a.id)}"`:''} ${satyrStage?`data-satyr-maid-stage="${esc(satyrStage)}"`:''} ${undeadFarmStage?`data-undead-farm-stage="${esc(undeadFarmStage)}"`:''} ${a.id==='tavern.shift'?'data-tavern-presentation="true"':''} ${a.id==='guard.shift'?'data-guard-presentation="true"':''}><div><h3>${esc(label)}</h3>${availability}${satyrStageStatus}${undeadFarmStageStatus}${tavernStatus}${guardStatus}<p>${esc(description)}</p><small>${a.cost.energy} ${esc(tr('ui.work.energy','энергии'))}${actionCost(a,state)?` · ${actionCost(a,state)} ${esc(tr('ui.work.coins','монет'))}`:''}${forecast!==null?` · ${esc(tr('ui.work.income','доход ≈'))} ${forecast}`:''}</small><div class="effect-tags">${statsEffects.map(e=>e.kind==='metric'?`<span class="${e.delta>0?'gain':'loss'}">${esc(labels[e.key])} ${e.delta>0?'+':''}${e.delta}</span>`:'').join('')}</div>${miss.length?`<p class="requirement">${esc(miss.map(explain).join(' · '))}</p>`:''}${careerLocked?`<p class="requirement" id="${esc(helpId)}" tabindex="0">${esc(lockHelp)}</p>`:''}</div>${a.mode==='brew'?`<div><button data-action="${a.id}" data-recipe="gentle" ${disabled(a)?'disabled':''}>${esc(tr('ui.work.recipeReliable','Надёжно'))}</button><button data-action="${a.id}" data-recipe="bold" ${disabled(a)?'disabled':''}>${esc(tr('ui.work.recipeFast','Быстро'))}</button></div>`:`<button data-action="${a.id}" ${careerButtonAria?`aria-label="${esc(careerButtonAria)}"`:''} ${careerLocked?`aria-describedby="${esc(helpId)}" aria-disabled="true"`:lateCareer?'aria-disabled="false"':''} ${disabled(a)?'disabled':''}>${professions.includes(a.id)?esc(tr('ui.work.button','Работать')):esc(tr('ui.generic.selectButton','Выбрать'))}</button>`}</article>`;
  }).join('')}</div>`;}
 function schoolCourseDisabled(course:SchoolCourse){
  return busy||locked||state.run.status!=='active'||!state.run.creation.complete||!state.run.flags['story.arrived']||
