@@ -107,7 +107,7 @@ Current open candidates must not be counted as shipped before integration:
 - #139 contains useful central availability + exact Night-study production delta still absent from main.
 - #143/#145 are preparation/evidence candidates, not shipped player-facing content.
 - #146 is a fresh Chat 3 production-promotion candidate but its first exact-head CI run failed and it is not accepted/frozen.
-- #147 is the active Chat 1 v9 late-career/Hard-Work candidate. Its frozen `15d6ee3d91c5ad3fef82fe52a06ec2a590089003` head was C4-blocked on the Satyr Maid / Undead Farm natural-repeatability defect, then invalidated by head movement. Current head `987438954cfec9739281a512a1589cb2707095e5` adds only a Meta test, leaves the production defect unchanged, and is not accepted.
+- #147 is the active Chat 1 v9 late-career/Hard-Work candidate. Its frozen `15d6ee3d91c5ad3fef82fe52a06ec2a590089003` head was C4-blocked on the Satyr Maid / Undead Farm natural-repeatability defect, then invalidated by head movement. Producer work has since resumed on a mutable draft head; no post-block head is accepted until a fresh freeze + exact-head C4 gate.
 
 ## Acceptance conclusion
 
