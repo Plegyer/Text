@@ -51,7 +51,7 @@ test('C2-131 live production catalog owns every Satyr presentation identity',()=
     assert.ok(presentation.slots?.[presentationId]?.static,presentationId+' production override');
   }
 
-  const career=catalog.definitions.careers.find(item=>item.id==='satyr-maid');
+  const career=catalog.definitions.careers?.find(item=>item.id==='satyr-maid');
   assert.ok(career,'satyr-maid production career');
   for(const stage of SATYR_MAID_PRESENTATION_STAGES){
     assert.ok(career.stages.includes(stage),stage+' production stage');
