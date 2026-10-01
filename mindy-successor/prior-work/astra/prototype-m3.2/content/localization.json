@@ -455,8 +455,8 @@
       "en": "Continue"
     },
     "event.school-lesson-content-v1.after-school.choice.continue.text": {
-      "ru": "Вернуться к дневным делам после урока.",
-      "en": "Return to the day after the lesson."
+      "ru": "Урок завершён; основная запись сохранена, и день продолжается.",
+      "en": "The lesson is complete; the main note is settled, and the day continues."
     },
     "media.school.lesson.context.default.alt": {
       "ru": "Учебная сцена после школьного урока.",
@@ -475,8 +475,8 @@
       "en": "Continue"
     },
     "event.school-life-content-v1.after-paid-lesson.choice.continue.text": {
-      "ru": "Вернуться к дневным делам.",
-      "en": "Return to the day."
+      "ru": "Оплаченный урок завершён без дополнительной платы или скрытого прогресса; день продолжается.",
+      "en": "The paid lesson is complete with no extra charge or hidden progress; the day continues."
     },
     "media.school.life.classroom.default.alt": {
       "ru": "Школьный класс как резервная сцена для событий школьной жизни.",
@@ -3563,8 +3563,8 @@
       "en": "Continue"
     },
     "event.school-life-content-v1.night-study.literacy-and-numbers-reason.choice.continue.text": {
-      "ru": "Продолжить ночь.",
-      "en": "Let the Night flow continue."
+      "ru": "Ночная учёба завершена; ночь продолжается без дополнительных эффектов.",
+      "en": "Night study is complete; the Night continues with no additional effects."
     },
     "event.school-life-content-v1.night-study.literacy-and-numbers-wits.title": {
       "ru": "Сделать запись короче",
@@ -3579,8 +3579,8 @@
       "en": "Continue"
     },
     "event.school-life-content-v1.night-study.literacy-and-numbers-wits.choice.continue.text": {
-      "ru": "Продолжить ночь.",
-      "en": "Let the Night flow continue."
+      "ru": "Ночная учёба завершена; ночь продолжается без дополнительных эффектов.",
+      "en": "Night study is complete; the Night continues with no additional effects."
     },
     "event.school-life-content-v1.night-study.arcana-magic.title": {
       "ru": "Наблюдать магический отклик",
@@ -3595,8 +3595,8 @@
       "en": "Continue"
     },
     "event.school-life-content-v1.night-study.arcana-magic.choice.continue.text": {
-      "ru": "Продолжить ночь.",
-      "en": "Let the Night flow continue."
+      "ru": "Ночная учёба завершена; ночь продолжается без дополнительных эффектов.",
+      "en": "Night study is complete; the Night continues with no additional effects."
     },
     "event.school-life-content-v1.night-study.arcana-reason.title": {
       "ru": "Отделить факт от версии",
@@ -3611,8 +3611,8 @@
       "en": "Continue"
     },
     "event.school-life-content-v1.night-study.arcana-reason.choice.continue.text": {
-      "ru": "Продолжить ночь.",
-      "en": "Let the Night flow continue."
+      "ru": "Ночная учёба завершена; ночь продолжается без дополнительных эффектов.",
+      "en": "Night study is complete; the Night continues with no additional effects."
     },
     "event.school-life-content-v1.night-study.arcana-creativity.title": {
       "ru": "Придумать ещё одну проверку",
@@ -3627,8 +3627,8 @@
       "en": "Continue"
     },
     "event.school-life-content-v1.night-study.arcana-creativity.choice.continue.text": {
-      "ru": "Продолжить ночь.",
-      "en": "Let the Night flow continue."
+      "ru": "Ночная учёба завершена; ночь продолжается без дополнительных эффектов.",
+      "en": "Night study is complete; the Night continues with no additional effects."
     },
     "event.school-life-content-v1.night-study.rhetoric-and-social-charm.title": {
       "ru": "Сохранить смысл, сменить подачу",
@@ -3643,8 +3643,8 @@
       "en": "Continue"
     },
     "event.school-life-content-v1.night-study.rhetoric-and-social-charm.choice.continue.text": {
-      "ru": "Продолжить ночь.",
-      "en": "Let the Night flow continue."
+      "ru": "Ночная учёба завершена; ночь продолжается без дополнительных эффектов.",
+      "en": "Night study is complete; the Night continues with no additional effects."
     },
     "event.school-life-content-v1.night-study.rhetoric-and-social-sociability.title": {
       "ru": "Услышать паузу",
@@ -3659,8 +3659,8 @@
       "en": "Continue"
     },
     "event.school-life-content-v1.night-study.rhetoric-and-social-sociability.choice.continue.text": {
-      "ru": "Продолжить ночь.",
-      "en": "Let the Night flow continue."
+      "ru": "Ночная учёба завершена; ночь продолжается без дополнительных эффектов.",
+      "en": "Night study is complete; the Night continues with no additional effects."
     },
     "event.school-life-content-v1.night-study.rhetoric-and-social-wits.title": {
       "ru": "Убрать ответ из вопроса",
@@ -3675,8 +3675,8 @@
       "en": "Continue"
     },
     "event.school-life-content-v1.night-study.rhetoric-and-social-wits.choice.continue.text": {
-      "ru": "Продолжить ночь.",
-      "en": "Let the Night flow continue."
+      "ru": "Ночная учёба завершена; ночь продолжается без дополнительных эффектов.",
+      "en": "Night study is complete; the Night continues with no additional effects."
     },
     "event.school-life-content-v1.night-study.etiquette-and-presentation-manners.title": {
       "ru": "Один принцип, три ситуации",
@@ -3691,8 +3691,8 @@
       "en": "Continue"
     },
     "event.school-life-content-v1.night-study.etiquette-and-presentation-manners.choice.continue.text": {
-      "ru": "Продолжить ночь.",
-      "en": "Let the Night flow continue."
+      "ru": "Ночная учёба завершена; ночь продолжается без дополнительных эффектов.",
+      "en": "Night study is complete; the Night continues with no additional effects."
     },
     "event.school-life-content-v1.night-study.etiquette-and-presentation-grooming.title": {
       "ru": "Подготовка без лишнего",
@@ -3707,8 +3707,8 @@
       "en": "Continue"
     },
     "event.school-life-content-v1.night-study.etiquette-and-presentation-grooming.choice.continue.text": {
-      "ru": "Продолжить ночь.",
-      "en": "Let the Night flow continue."
+      "ru": "Ночная учёба завершена; ночь продолжается без дополнительных эффектов.",
+      "en": "Night study is complete; the Night continues with no additional effects."
     },
     "event.school-life-content-v1.night-study.etiquette-and-presentation-charm.title": {
       "ru": "Тёплая подача без заискивания",
@@ -3723,8 +3723,8 @@
       "en": "Continue"
     },
     "event.school-life-content-v1.night-study.etiquette-and-presentation-charm.choice.continue.text": {
-      "ru": "Продолжить ночь.",
-      "en": "Let the Night flow continue."
+      "ru": "Ночная учёба завершена; ночь продолжается без дополнительных эффектов.",
+      "en": "Night study is complete; the Night continues with no additional effects."
     },
     "event.school-life-content-v1.night-study.field-craft-dexterity.title": {
       "ru": "Точный узел без спешки",
@@ -3739,8 +3739,8 @@
       "en": "Continue"
     },
     "event.school-life-content-v1.night-study.field-craft-dexterity.choice.continue.text": {
-      "ru": "Продолжить ночь.",
-      "en": "Let the Night flow continue."
+      "ru": "Ночная учёба завершена; ночь продолжается без дополнительных эффектов.",
+      "en": "Night study is complete; the Night continues with no additional effects."
     },
     "event.school-life-content-v1.night-study.field-craft-wits.title": {
       "ru": "План с запасным вариантом",
@@ -3755,8 +3755,8 @@
       "en": "Continue"
     },
     "event.school-life-content-v1.night-study.field-craft-wits.choice.continue.text": {
-      "ru": "Продолжить ночь.",
-      "en": "Let the Night flow continue."
+      "ru": "Ночная учёба завершена; ночь продолжается без дополнительных эффектов.",
+      "en": "Night study is complete; the Night continues with no additional effects."
     },
     "event.school-life-content-v1.night-study.field-craft-creativity.title": {
       "ru": "Решить задачу другим инструментом",
@@ -3771,8 +3771,8 @@
       "en": "Continue"
     },
     "event.school-life-content-v1.night-study.field-craft-creativity.choice.continue.text": {
-      "ru": "Продолжить ночь.",
-      "en": "Let the Night flow continue."
+      "ru": "Ночная учёба завершена; ночь продолжается без дополнительных эффектов.",
+      "en": "Night study is complete; the Night continues with no additional effects."
     },
     "event.school-life-content-v1.night-study.physical-training-strength.title": {
       "ru": "Усилие без рывка",
@@ -3787,8 +3787,8 @@
       "en": "Continue"
     },
     "event.school-life-content-v1.night-study.physical-training-strength.choice.continue.text": {
-      "ru": "Продолжить ночь.",
-      "en": "Let the Night flow continue."
+      "ru": "Ночная учёба завершена; ночь продолжается без дополнительных эффектов.",
+      "en": "Night study is complete; the Night continues with no additional effects."
     },
     "event.school-life-content-v1.night-study.physical-training-endurance.title": {
       "ru": "Распределить силы до конца",
@@ -3803,8 +3803,8 @@
       "en": "Continue"
     },
     "event.school-life-content-v1.night-study.physical-training-endurance.choice.continue.text": {
-      "ru": "Продолжить ночь.",
-      "en": "Let the Night flow continue."
+      "ru": "Ночная учёба завершена; ночь продолжается без дополнительных эффектов.",
+      "en": "Night study is complete; the Night continues with no additional effects."
     },
     "event.school-life-content-v1.night-study.physical-training-dexterity.title": {
       "ru": "Чистое движение в медленном темпе",
@@ -3819,8 +3819,8 @@
       "en": "Continue"
     },
     "event.school-life-content-v1.night-study.physical-training-dexterity.choice.continue.text": {
-      "ru": "Продолжить ночь.",
-      "en": "Let the Night flow continue."
+      "ru": "Ночная учёба завершена; ночь продолжается без дополнительных эффектов.",
+      "en": "Night study is complete; the Night continues with no additional effects."
     },
     "event.school-life-content-v1.night-study.arts-and-performance-creativity.title": {
       "ru": "Изменить одну деталь осмысленно",
@@ -3835,8 +3835,8 @@
       "en": "Continue"
     },
     "event.school-life-content-v1.night-study.arts-and-performance-creativity.choice.continue.text": {
-      "ru": "Продолжить ночь.",
-      "en": "Let the Night flow continue."
+      "ru": "Ночная учёба завершена; ночь продолжается без дополнительных эффектов.",
+      "en": "Night study is complete; the Night continues with no additional effects."
     },
     "event.school-life-content-v1.night-study.arts-and-performance-charm.title": {
       "ru": "Выразительность без лишнего нажима",
@@ -3851,8 +3851,8 @@
       "en": "Continue"
     },
     "event.school-life-content-v1.night-study.arts-and-performance-charm.choice.continue.text": {
-      "ru": "Продолжить ночь.",
-      "en": "Let the Night flow continue."
+      "ru": "Ночная учёба завершена; ночь продолжается без дополнительных эффектов.",
+      "en": "Night study is complete; the Night continues with no additional effects."
     },
     "event.school-life-content-v1.night-study.arts-and-performance-sociability.title": {
       "ru": "Оставить место партнёру",
@@ -3867,8 +3867,8 @@
       "en": "Continue"
     },
     "event.school-life-content-v1.night-study.arts-and-performance-sociability.choice.continue.text": {
-      "ru": "Продолжить ночь.",
-      "en": "Let the Night flow continue."
+      "ru": "Ночная учёба завершена; ночь продолжается без дополнительных эффектов.",
+      "en": "Night study is complete; the Night continues with no additional effects."
     },
     "event.school-life-content-v1.night-study.arts-and-performance-dexterity.title": {
       "ru": "Повторить рисунок движения чище",
@@ -3883,8 +3883,8 @@
       "en": "Continue"
     },
     "event.school-life-content-v1.night-study.arts-and-performance-dexterity.choice.continue.text": {
-      "ru": "Продолжить ночь.",
-      "en": "Let the Night flow continue."
+      "ru": "Ночная учёба завершена; ночь продолжается без дополнительных эффектов.",
+      "en": "Night study is complete; the Night continues with no additional effects."
     },
     "event.school-life-content-v1.night-study.body-confidence-sexuality.title": {
       "ru": "Выбрать подачу самой",
@@ -3899,8 +3899,8 @@
       "en": "Continue"
     },
     "event.school-life-content-v1.night-study.body-confidence-sexuality.choice.continue.text": {
-      "ru": "Продолжить ночь.",
-      "en": "Let the Night flow continue."
+      "ru": "Ночная учёба завершена; ночь продолжается без дополнительных эффектов.",
+      "en": "Night study is complete; the Night continues with no additional effects."
     },
     "event.school-life-content-v1.night-study.body-confidence-grooming.title": {
       "ru": "Уход для собственного комфорта",
@@ -3915,8 +3915,8 @@
       "en": "Continue"
     },
     "event.school-life-content-v1.night-study.body-confidence-grooming.choice.continue.text": {
-      "ru": "Продолжить ночь.",
-      "en": "Let the Night flow continue."
+      "ru": "Ночная учёба завершена; ночь продолжается без дополнительных эффектов.",
+      "en": "Night study is complete; the Night continues with no additional effects."
     },
     "event.school-life-content-v1.night-study.body-confidence-endurance.title": {
       "ru": "Расслабить лишнее напряжение",
@@ -3931,8 +3931,8 @@
       "en": "Continue"
     },
     "event.school-life-content-v1.night-study.body-confidence-endurance.choice.continue.text": {
-      "ru": "Продолжить ночь.",
-      "en": "Let the Night flow continue."
+      "ru": "Ночная учёба завершена; ночь продолжается без дополнительных эффектов.",
+      "en": "Night study is complete; the Night continues with no additional effects."
     }
   }
 }
