@@ -103,3 +103,6 @@ That attempted repair is not acceptable yet:
 - the new natural 50-shift regression also fails because its helper does not complete NightFlow before later work.
 
 C4-124 therefore remains **BLOCK**. A new verdict requires a fresh producer-owned repair, exact-head full green CI, and an explicit new freeze SHA.
+
+
+Producer head-movement note: after the repair-cycle evidence above was recorded, PR #147 moved again to `e9e1c4d5cdafcdf5e8571170cd9b699426536746` while remaining draft. The PR body still names the superseded frozen SHA `15d6ee3d...`. QA does not issue a new verdict on this mutable head; the standing C4-124 disposition remains BLOCK until an explicit new freeze + exact-head green CI.
