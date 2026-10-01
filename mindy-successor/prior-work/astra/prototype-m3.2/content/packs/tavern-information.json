@@ -26,11 +26,6 @@
         {
           "kind": "careerFactAdded",
           "career": "tavern",
-          "fact": "traveler-rumour-known"
-        },
-        {
-          "kind": "careerFactAdded",
-          "career": "tavern",
           "fact": "confidentiality-resolved"
         }
       ],
