@@ -79,7 +79,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "Trusted ordinary duty now includes a formal Guard badge. It proves assigned access; it does not grant immunity or define a universal law system.",
+          "text": "The badge confirms that the holder is performing assigned Guard duty. It can justify narrow official access, but it grants no immunity, no right to every door, and no automatic correctness in a dispute.",
           "conditions": [],
           "media": []
         }
@@ -167,7 +167,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "A recorded cargo-pass discrepancy justifies one sealed work pass for a restricted follow-up. The pass grants only this authored access capability.",
+          "text": "The sealed pass belongs to a specific follow-up. It confirms permission to proceed within that case and does not become a universal city-wide pass.",
           "conditions": [],
           "media": []
         }
@@ -294,7 +294,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "The formal report and cargo discrepancy can now be linked as one Guard-local evidence thread. This is evidence handling, not a global crime ledger.",
+          "text": "Linking two documents into one thread means showing why they concern the same question and where each came from. It is a local evidence trail, not a global crime ledger.",
           "conditions": [],
           "media": []
         }
