@@ -16,7 +16,7 @@ function finishPending(s:Save){
   while(s.run.pending){
     const pending=s.run.pending;
     const e=catalog.events.find(x=>x.id===pending.eventId)!;
-    const choice=e.choices.find(c=>pending.allowedChoiceIds.includes(c.id))!;
+    const choice=e.choices.find(c=>(pending.allowedChoiceIds??[]).includes(c.id))!;
     s=dispatch(s,{type:'choice',id:choice.id},catalog);
   }
   return s;
