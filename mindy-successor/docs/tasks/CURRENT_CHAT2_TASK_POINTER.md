@@ -1,25 +1,21 @@
 # CURRENT CHAT2 TASK POINTER
 
-Status: **SATYR v12 FROZEN + UNDEAD v13 ACTIVE**
+Status: **UNDEAD PRESENTATION v13 FROZEN + TAVERN v14 ACTIVE**
 Owner: Chat 2 / Presentation & Media Worker
 
-Frozen Satyr presentation candidate:
-- PR #174
-- exact head: `56ca78ccb0210225136aeca1c68978296ba7d61d`
-- exact-head CI #582: **SUCCESS, 616/616**
-- do not move this PR while Chat 4 gates it.
+Frozen Undead presentation candidate:
+- PR #182
+- exact head `703cabefff9cbf9f681089d1c0f0c1ae70880c2c`
+- CI #626 SUCCESS, 644/644
+- do not move it while Chat 4 gates it.
 
-Continue work immediately on a new branch; do not wait for QA.
+Continue immediately on a new branch.
 
-Next queue:
-- `TASK_CHAT2_PRESENTATION_QUEUE_v13.md`
-- C2-133..144
-- target: **Undead Farm Complete Career Presentation**
+Current queue:
+- `TASK_CHAT2_PRESENTATION_QUEUE_v14.md`
+- C2-145..156
+- target: **Tavern Complete Career Presentation**
 
-Authoritative gameplay identity source:
-- `mindy-successor/docs/tasks/UNDEAD_FARM_RUNTIME_CONTRACT_v1.json`
-- currently published by Chat 1 v11 branch.
+Read Chat 1's C1D-121 Tavern runtime contract as soon as it appears. You may inventory existing Tavern assets/endings before the contract is published, but do not invent gameplay IDs.
 
-You may author against the stable contract before the full Undead runtime freezes, but C2-143 production reachability must wait for the final exact runtime candidate and must consume its real catalog IDs.
-
-No gameplay/Save/RNG/career/School/ending reward changes.
+Do not wait for #182 QA.
