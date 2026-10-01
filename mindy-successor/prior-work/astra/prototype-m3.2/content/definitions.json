@@ -1603,11 +1603,6 @@
           "career": "satyr-maid",
           "counter": "completed_shifts",
           "amount": 1
-        },
-        {
-          "kind": "advanceCareer",
-          "career": "satyr-maid",
-          "transition": "first-shift"
         }
       ],
       "mode": "normal",
@@ -3480,7 +3475,14 @@
       "initialStage": "new-maid",
       "stages": [
         "new-maid",
-        "known-face"
+        "floor-rhythm",
+        "known-face",
+        "house-regular",
+        "veteran-service",
+        "house-power",
+        "personal-network",
+        "boundaries",
+        "outcome-ready"
       ],
       "transitions": [
         {
@@ -3488,7 +3490,7 @@
           "from": [
             "new-maid"
           ],
-          "to": "known-face",
+          "to": "floor-rhythm",
           "conditions": [
             {
               "kind": "careerCounter",
@@ -3505,6 +3507,140 @@
               "fact": "first-shift-complete"
             }
           ]
+        },
+        {
+          "id": "known-face",
+          "from": [
+            "floor-rhythm"
+          ],
+          "to": "known-face",
+          "conditions": [
+            {
+              "kind": "careerCounter",
+              "career": "satyr-maid",
+              "counter": "completed_shifts",
+              "op": "gte",
+              "value": 3
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "satyr-maid",
+              "fact": "floor-rhythm-complete"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "satyr-maid",
+              "fact": "known-face-established"
+            }
+          ]
+        },
+        {
+          "id": "house-regular",
+          "from": [
+            "known-face"
+          ],
+          "to": "house-regular",
+          "conditions": [
+            {
+              "kind": "careerCounter",
+              "career": "satyr-maid",
+              "counter": "completed_shifts",
+              "op": "gte",
+              "value": 8
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "satyr-maid",
+              "fact": "house-regular-established"
+            }
+          ]
+        },
+        {
+          "id": "veteran-service",
+          "from": [
+            "house-regular"
+          ],
+          "to": "veteran-service",
+          "conditions": [
+            {
+              "kind": "careerCounter",
+              "career": "satyr-maid",
+              "counter": "completed_shifts",
+              "op": "gte",
+              "value": 15
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "branch-house-power",
+          "from": [
+            "veteran-service"
+          ],
+          "to": "house-power",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "satyr-maid",
+              "fact": "house-power-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "branch-personal-network",
+          "from": [
+            "veteran-service"
+          ],
+          "to": "personal-network",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "satyr-maid",
+              "fact": "personal-network-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "branch-boundaries",
+          "from": [
+            "veteran-service"
+          ],
+          "to": "boundaries",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "satyr-maid",
+              "fact": "boundaries-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "outcome-ready",
+          "from": [
+            "house-power",
+            "personal-network",
+            "boundaries"
+          ],
+          "to": "outcome-ready",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "satyr-maid",
+              "fact": "outcome-ready",
+              "present": true
+            }
+          ],
+          "effects": []
         }
       ]
     },
