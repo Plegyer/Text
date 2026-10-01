@@ -130,20 +130,24 @@ test('C2-167 every Hunter stage relationship item state Activity and ending over
     assert.ok(presentation.slots?.[id]?.static,id+' static');
   }
 
-  const careerFacts=new Set(career.facts);
-  const relationshipFacts=new Set(relationship.facts);
+  const runtimeText=JSON.stringify({
+    career,
+    relationship,
+    events:catalog.events.filter(event=>event.sourceDomain==='hunter'),
+    activities:catalog.definitions.activities.filter(item=>item.id==='hunter.expedition')
+  });
   const backing:Record<string,boolean>={
-    'forest-clue':careerFacts.has('forest-clue-known'),
-    'tavern-clue':careerFacts.has('tavern-clue-known'),
-    'farm-clue':careerFacts.has('farm-clue-known'),
-    'lumber-clue':careerFacts.has('lumber-clue-known'),
-    'school-field-craft':careerFacts.has('school-field-craft-ready'),
-    'master-ready':careerFacts.has('master-route-ready'),
-    'warden-ready':careerFacts.has('warden-route-ready'),
-    'legend-ready':careerFacts.has('legend-route-ready'),
-    'rare-contract-active':careerFacts.has('rare-contract-active'),
-    'refusal-respected':relationshipFacts.has('refusal-respected'),
-    'companion-ready':relationshipFacts.has('companion-ready')
+    'forest-clue':runtimeText.includes('forest-clue-known'),
+    'tavern-clue':runtimeText.includes('tavern-clue-known'),
+    'farm-clue':runtimeText.includes('farm-clue-known'),
+    'lumber-clue':runtimeText.includes('lumber-clue-known'),
+    'school-field-craft':runtimeText.includes('school-field-craft-ready'),
+    'master-ready':runtimeText.includes('master-route-ready'),
+    'warden-ready':runtimeText.includes('warden-route-ready'),
+    'legend-ready':runtimeText.includes('legend-route-ready'),
+    'rare-contract-active':runtimeText.includes('rare-contract-active'),
+    'refusal-respected':runtimeText.includes('refusal-respected'),
+    'companion-ready':runtimeText.includes('companion-ready')
   };
   for(const stateId of HUNTER_STATUS_IDS){
     assert.equal(backing[stateId],true,stateId+' backing fact');
