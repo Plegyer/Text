@@ -93,11 +93,23 @@
           ]
         },
         {
-          "kind": "schoolCounter",
-          "track": "school.track.literacy_and_numbers",
-          "counter": "lessons_completed",
-          "op": "gte",
-          "value": 3
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "schoolCounter",
+              "track": "school.track.literacy_and_numbers",
+              "counter": "lessons_completed",
+              "op": "gte",
+              "value": 3
+            },
+            {
+              "kind": "schoolCounter",
+              "track": "school.track.literacy_and_numbers",
+              "counter": "night_study_sessions",
+              "op": "gte",
+              "value": 3
+            }
+          ]
         },
         {
           "kind": "careerFact",
@@ -111,7 +123,9 @@
           "id": "default",
           "text": "Three Literacy & Numbers lessons make room, supply, and order records usable as Tavern management state.",
           "conditions": [],
-          "media": []
+          "media": [
+            "school.teacher.literacy-and-numbers.classroom"
+          ]
         }
       ],
       "choices": [
@@ -204,11 +218,23 @@
           ]
         },
         {
-          "kind": "schoolCounter",
-          "track": "school.track.rhetoric_and_social",
-          "counter": "lessons_completed",
-          "op": "gte",
-          "value": 3
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "schoolCounter",
+              "track": "school.track.rhetoric_and_social",
+              "counter": "lessons_completed",
+              "op": "gte",
+              "value": 3
+            },
+            {
+              "kind": "schoolCounter",
+              "track": "school.track.rhetoric_and_social",
+              "counter": "night_study_sessions",
+              "op": "gte",
+              "value": 3
+            }
+          ]
         },
         {
           "kind": "careerFact",
@@ -222,7 +248,9 @@
           "id": "default",
           "text": "Three Rhetoric & Social lessons give you a Tavern-local method for handling conflict and passing information without turning rumours into a global currency.",
           "conditions": [],
-          "media": []
+          "media": [
+            "school.teacher.rhetoric-and-social.classroom"
+          ]
         }
       ],
       "choices": [
@@ -315,11 +343,23 @@
           ]
         },
         {
-          "kind": "schoolCounter",
-          "track": "school.track.etiquette_and_presentation",
-          "counter": "lessons_completed",
-          "op": "gte",
-          "value": 3
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "schoolCounter",
+              "track": "school.track.etiquette_and_presentation",
+              "counter": "lessons_completed",
+              "op": "gte",
+              "value": 3
+            },
+            {
+              "kind": "schoolCounter",
+              "track": "school.track.etiquette_and_presentation",
+              "counter": "night_study_sessions",
+              "op": "gte",
+              "value": 3
+            }
+          ]
         },
         {
           "kind": "careerFact",
@@ -333,7 +373,9 @@
           "id": "default",
           "text": "Three Etiquette & Presentation lessons make formal guest handling available as a Tavern-local capability.",
           "conditions": [],
-          "media": []
+          "media": [
+            "school.teacher.etiquette-and-presentation.classroom"
+          ]
         }
       ],
       "choices": [
@@ -426,11 +468,23 @@
           ]
         },
         {
-          "kind": "schoolCounter",
-          "track": "school.track.arcana",
-          "counter": "lessons_completed",
-          "op": "gte",
-          "value": 3
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "schoolCounter",
+              "track": "school.track.arcana",
+              "counter": "lessons_completed",
+              "op": "gte",
+              "value": 3
+            },
+            {
+              "kind": "schoolCounter",
+              "track": "school.track.arcana",
+              "counter": "night_study_sessions",
+              "op": "gte",
+              "value": 3
+            }
+          ]
         },
         {
           "kind": "careerFact",
@@ -444,7 +498,9 @@
           "id": "default",
           "text": "Three Arcana lessons let you interpret a strange guest or rumour without creating a new global School certificate.",
           "conditions": [],
-          "media": []
+          "media": [
+            "school.teacher.arcana.classroom"
+          ]
         }
       ],
       "choices": [
