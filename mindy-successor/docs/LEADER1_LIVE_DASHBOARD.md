@@ -41,7 +41,7 @@ Do not describe those two careers as naturally repeatable until a repaired candi
 | Chat 2 Presentation | C2-109..120 | PR #151, frozen exact head `463d877009b5ecc1d255d7aa27a91bb7c38016e5`, CI #474 **GREEN** | Full-roster Hard Work/late-career presentation, starter media pools, RU/EN, accessibility and safe static fallback. Awaiting QA after higher-priority shared runtime gate. |
 | Chat 3 Forest/Poverty | C3-109..120 | PR #146 head `e750480404b1270ffbe47ca1dad2cb381bcf29d1`, CI #436 **RED** (539/568) | Must repair its production-promotion candidate. It is not QA-eligible. Do not count its promoted variants as shipped. |
 | Chat 4 QA | C4-124 | Previous blocker evidence merged on main | Re-gate repaired Chat 1 PR #147 exact head first. QA does not implement fixes. After that gate, move to the next green/frozen candidate. |
-| Chat 5 School | C5-109..120 | PR #156 current head `97b659d78ac3a2ccfe72c556344631f7de570507`; CI #489 **IN PROGRESS** at snapshot | Promotes reachable School teacher/lesson/Night-study RU/EN content using existing mechanics. Do not gate until current exact head is green/frozen. |
+| Chat 5 School | C5-109..120 | PR #156 current head `97b659d78ac3a2ccfe72c556344631f7de570507`; CI #489 **GREEN** | Promotes reachable School teacher/lesson/Night-study RU/EN content using existing mechanics. PR body still says awaiting CI at snapshot; Chat 5 must explicitly freeze this exact head before Chat 4 gates it. |
 
 ## Open PRs that matter
 
@@ -49,7 +49,7 @@ Do not describe those two careers as naturally repeatable until a repaired candi
 - #147 — Chat 1 shared runtime / career unlock / Hard Work / Meta. **Green and frozen; QA re-gate required.**
 - #151 — Chat 2 presentation production. **Green and frozen; QA pending.**
 - #146 — Chat 3 Forest/poverty production promotion. **Red; repair required.**
-- #156 — Chat 5 School production promotion. **CI in progress at snapshot.**
+- #156 — Chat 5 School production promotion. **Exact-head CI #489 green; explicit candidate freeze still needs to be recorded.**
 
 ### Selective-source legacy PRs
 These contain distinct useful deltas but are **not** safe whole-PR merges:
