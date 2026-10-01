@@ -1,0 +1,46 @@
+{
+  "formatVersion": 1,
+  "id": "school.localization-v10.handoff-refresh.v1",
+  "status": "CONTENT_HANDOFF_ONLY",
+  "baseline": "6afc01061646bc52cec824863bf89e8ad8c309d0",
+  "exactCurrentSources": [
+    "src/core/school.ts",
+    "content/definitions.json",
+    "content/localization.json",
+    "content/packs/school-life-content-v1.json",
+    "content/packs/school-lesson-content-v1.json",
+    "content/packs/school-teachers-v1.json",
+    "content/school-whole-career-transfer-atlas-v1.fixture.json",
+    "content/school-teacher-milestone-depth-v1.fixture.json"
+  ],
+  "currentConsumers": {
+    "genericPaidLesson": [
+      "school-life-content-v1.after-paid-lesson",
+      "school-lesson-content-v1.after-school"
+    ],
+    "exactNightStudy": "school-life-content-v1.after-night-study",
+    "paidLessonJournal": "school.runtime.paid-lesson-journal"
+  },
+  "exactIdentityCounts": {
+    "courses": 8,
+    "teachers": 8,
+    "nightStudyChoices": 24,
+    "ordinaryCareers": 10
+  },
+  "openDependencies": [
+    "No exact course/teacher identity in generic paid-lesson reaction facts.",
+    "No teacher-presence fact for Night study.",
+    "No localization ref for paid-lesson journal.",
+    "No approved School-to-career thresholds or producer/public-result selections.",
+    "Two RU course-name terminology mismatches and three EN article issues remain in presentation accessibility text."
+  ],
+  "selectedRuntimeConsumerId": null,
+  "selectedThreshold": null,
+  "selectedProducerPublicFactId": null,
+  "constraints": {
+    "changesRuntime": false,
+    "changesRootLocalization": false,
+    "changesCareerState": false,
+    "changesNightFlow": false
+  }
+}
