@@ -155,6 +155,7 @@ test('PA14-PA20: Forest entry/logging-road/reload/success/escape are shipped; Ol
   const energyBefore=s.run.dayState.energyCurrent;
   // Dedicated Activity fixture: acquisition is covered by the v12 producer tests.
   s.run.character.stats.reason=3;
+  s.run.character.stats.strength=4;
   s.run.resources.inventory.field_preservation_kit=1;
 
   s=dispatch(s,{type:'enterActivity',id:'lumber.forest'},catalog);
