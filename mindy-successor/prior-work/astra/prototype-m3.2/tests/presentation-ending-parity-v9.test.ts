@@ -40,9 +40,10 @@ test('current ending definitions map only to the audited existing semantic IDs',
   }
 });
 
-test('committed-state label gap remains classified as predecessor prepared work, not duplicated here',()=>{
+test('historical v9 committed-state classification does not override current live presentation coverage',()=>{
   assert.equal(manifest.endingParity.committedState.engineState,'ending_committed');
   assert.equal(manifest.endingParity.committedState.semanticIdPreserved,true);
   assert.equal(manifest.endingParity.committedState.distinctLocalizedUiLabel,'prepared-in-pr136-not-current-main');
-  assert.equal(localization['ui.run.endingCommitted'],undefined);
+  assert.ok(localization['ui.run.endingCommitted']?.ru?.trim());
+  assert.ok(localization['ui.run.endingCommitted']?.en?.trim());
 });
