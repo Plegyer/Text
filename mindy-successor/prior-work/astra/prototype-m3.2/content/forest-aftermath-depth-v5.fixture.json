@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "id": "forest.aftermath-depth.v5",
+  "status": "CONTENT_SIDE_PREPARATION",
+  "task": "C3-99",
+  "baseMain": "6afc01061646bc52cec824863bf89e8ad8c309d0",
+  "activityId": "lumber.forest",
+  "outcomes": [
+    {
+      "outcome": "success",
+      "resultId": "lumber.forest.success",
+      "eventId": "forest-result-content-v1.success",
+      "lumberContinuation": "lumber-cross.activity-forest-return"
+    },
+    {
+      "outcome": "escape",
+      "resultId": "lumber.forest.escape",
+      "eventId": "forest-result-content-v1.escape",
+      "lumberContinuation": null
+    },
+    {
+      "outcome": "failure",
+      "resultId": "lumber.forest.failure",
+      "eventId": "forest-result-content-v1.failure",
+      "lumberContinuation": null
+    }
+  ],
+  "variants": [
+    {
+      "id": "success-edge-summary",
+      "outcome": "success",
+      "localizationKey": "presentation.activity.forest.aftermath-v5.success.edge-summary.text"
+    },
+    {
+      "id": "success-notes-ordered",
+      "outcome": "success",
+      "localizationKey": "presentation.activity.forest.aftermath-v5.success.notes-ordered.text"
+    },
+    {
+      "id": "success-return-briefing",
+      "outcome": "success",
+      "localizationKey": "presentation.activity.forest.aftermath-v5.success.return-briefing.text"
+    },
+    {
+      "id": "escape-safe-turn",
+      "outcome": "escape",
+      "localizationKey": "presentation.activity.forest.aftermath-v5.escape.safe-turn.text"
+    },
+    {
+      "id": "escape-partial-notes",
+      "outcome": "escape",
+      "localizationKey": "presentation.activity.forest.aftermath-v5.escape.partial-notes.text"
+    },
+    {
+      "id": "escape-work-left-open",
+      "outcome": "escape",
+      "localizationKey": "presentation.activity.forest.aftermath-v5.escape.work-left-open.text"
+    },
+    {
+      "id": "failure-last-clear-marker",
+      "outcome": "failure",
+      "localizationKey": "presentation.activity.forest.aftermath-v5.failure.last-clear-marker.text"
+    },
+    {
+      "id": "failure-contradicting-signs",
+      "outcome": "failure",
+      "localizationKey": "presentation.activity.forest.aftermath-v5.failure.contradicting-signs.text"
+    },
+    {
+      "id": "failure-return-without-answer",
+      "outcome": "failure",
+      "localizationKey": "presentation.activity.forest.aftermath-v5.failure.return-without-answer.text"
+    }
+  ],
+  "strings": {
+    "presentation.activity.forest.aftermath-v5.success.edge-summary.text": {
+      "ru": "У кромки леса ты ещё раз проходишь маршрут в памяти от первой отметки до последней. Последовательность не распадается, и её можно спокойно пересказать обратно в артели.",
+      "en": "At the forest edge, you run through the route once more from the first marker to the last. The sequence still holds together and can be explained calmly back at the worksite."
+    },
+    "presentation.activity.forest.aftermath-v5.success.notes-ordered.text": {
+      "ru": "Перед возвращением ты отделяешь уверенные наблюдения от случайных деталей и складываешь записи по порядку. Так найденное не теряется в пересказе.",
+      "en": "Before returning, you separate the reliable observations from incidental details and put the notes in order. That keeps what you found from being lost in the retelling."
+    },
+    "presentation.activity.forest.aftermath-v5.success.return-briefing.text": {
+      "ru": "В артели разговор быстро переходит от самой вылазки к тому, что теперь известно о проблеме. Лес остаётся источником ответа, а не новой отдельной историей.",
+      "en": "Back with the crew, the conversation moves quickly from the expedition itself to what is now known about the problem. The Forest remains the source of the answer rather than a separate new story."
+    },
+    "presentation.activity.forest.aftermath-v5.escape.safe-turn.text": {
+      "ru": "Ты поворачиваешь назад, пока обратный путь ещё читается уверенно. Нужный участок остаётся непроверенным, но выход получается спокойным и без лишнего риска.",
+      "en": "You turn back while the return route is still clear enough to trust. The needed stretch remains unverified, but the exit is calm and avoids unnecessary risk."
+    },
+    "presentation.activity.forest.aftermath-v5.escape.partial-notes.text": {
+      "ru": "В записях остаётся несколько полезных наблюдений, но они не складываются в законченный ответ. Их приходится оставить как материал незавершённой вылазки.",
+      "en": "A few useful observations remain in the notes, but they do not form a complete answer. They have to stay as material from an unfinished expedition."
+    },
+    "presentation.activity.forest.aftermath-v5.escape.work-left-open.text": {
+      "ru": "Вернувшись, ты можешь точно объяснить, где пришлось остановиться и почему. Этого хватает для честного отчёта, но не для завершённого рабочего вывода.",
+      "en": "After returning, you can explain exactly where you stopped and why. That is enough for an honest account, but not for a completed work conclusion."
+    },
+    "presentation.activity.forest.aftermath-v5.failure.last-clear-marker.text": {
+      "ru": "Последний уверенный ориентир остаётся позади, а дальше следы уже не складываются в понятную линию. Возвращаться приходится без ответа.",
+      "en": "The last reliable landmark is behind you, and beyond it the signs no longer form a clear line. You have to return without an answer."
+    },
+    "presentation.activity.forest.aftermath-v5.failure.contradicting-signs.text": {
+      "ru": "Несколько признаков противоречат друг другу, и попытка выбрать один из них наугад только сделала бы вывод хуже. Ты оставляешь записи как есть и идёшь обратно.",
+      "en": "Several signs contradict one another, and choosing one at random would only make the conclusion worse. You leave the notes as they are and head back."
+    },
+    "presentation.activity.forest.aftermath-v5.failure.return-without-answer.text": {
+      "ru": "Обратная дорога занимает остаток сил, и у кромки леса уже нечего перепроверять. Вылазка заканчивается без подтверждённого ответа и без дополнительных обещаний.",
+      "en": "The return route uses the rest of your strength, and by the forest edge there is nothing left to recheck. The expedition ends without a confirmed answer and without additional promises."
+    }
+  },
+  "invariants": {
+    "noResultEffectChanges": true,
+    "noWorldFactChanges": true,
+    "noCareerFactChanges": true,
+    "noLumberContinuationForEscapeFailure": true,
+    "noMechanics": true,
+    "noRewards": true,
+    "noPenalties": true,
+    "noInjuries": true,
+    "noPersistentState": true,
+    "noSaveOrRngChanges": true,
+    "noMediaChanges": true
+  }
+}
