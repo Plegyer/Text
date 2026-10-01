@@ -1,5 +1,15 @@
 # Leader 1 — Live Dashboard
 
+## PIPELINE UPDATE — HUNTER QA READY / CHAT 3 ADVANCED — 2026-10-01
+
+- Hunter authored PR #209 is frozen/ready at `7e51a0c28037cbfbb9dc00c4c438e32248ec45bf`, CI #794 SUCCESS, validator 37 packs / 136 events / 39 actions / 20 endings, tests 693/693.
+- Hunter presentation PR #210 is frozen/ready at `b5ec54134f2363041ce32a31fafc7bdfbbabe6f9`, CI #790 SUCCESS, same validator counts, tests 696/696.
+- Chat 4 C4-152 and C4-153 are executable immediately; current pointer and PR #170 comment were refreshed with exact evidence. C4-154 follows both verdicts.
+- Chat 3 Hunter v16 is complete/frozen and has advanced to Guard authored v17, queue C3-181..192, branch `chat3/guard-live-authored-v17`.
+- Chat 5 remains correctly blocked on C5-180 until Guard runtime #208 becomes exact frozen green.
+- Chat 1 Guard runtime #208 is still draft/red at the last check; Chat 2 Guard presentation v16 prep is assigned and may proceed independently.
+
+
 ## CHAT 2 PIPELINE ADVANCE — 2026-10-01
 
 - Hunter presentation v15 is complete/frozen as final PR #210 @ `b5ec54134f2363041ce32a31fafc7bdfbbabe6f9`, CI #790 SUCCESS, 696/696.
