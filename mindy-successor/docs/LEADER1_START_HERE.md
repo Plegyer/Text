@@ -172,6 +172,7 @@ When a worker candidate arrives:
 - selectively integrate useful current deltas if the branch contains stale history;
 - never merge a long-lived worker branch merely because its PR is green;
 - rerun main CI after merge;
+- treat the repository workflow `mindy-successor check` as the executable game gate; unrelated Vercel preview/deployment quota failures are not substitutes for this gate (delivery/platform validation is tracked separately when relevant);
 - then update the live dashboard and affected task pointer.
 
 Old open PRs are not automatically technical debt to merge. They may be historical/superseded evidence.
