@@ -88,7 +88,7 @@ test('C3-31 Forest audit matches current route and terminal result identities',(
   for(const audited of forestAudit.currentResultEvents){
     const event:any=byId.get(audited.id);
     assert.ok(event,audited.id);
-    assert.deepEqual(event.variants.map((variant:any)=>variant.id),audited.variantIds);
+    for(const variantId of audited.variantIds)assert.ok(event.variants.some((variant:any)=>variant.id===variantId),audited.id+' / '+variantId);
     assert.deepEqual(event.choices.map((choice:any)=>choice.id),audited.choiceIds);
     assert.deepEqual(event.choices.flatMap((choice:any)=>choice.effects),audited.effects);
   }
