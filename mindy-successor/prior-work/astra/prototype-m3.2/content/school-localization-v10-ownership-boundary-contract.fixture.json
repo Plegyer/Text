@@ -1,0 +1,47 @@
+{
+  "formatVersion": 1,
+  "id": "school.localization-v10.ownership-boundary-contract.v1",
+  "status": "TEST_CONTRACT_ONLY",
+  "baseline": "6afc01061646bc52cec824863bf89e8ad8c309d0",
+  "allowedRoots": [
+    "mindy-successor/docs/school-prep/",
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/school-",
+    "mindy-successor/prior-work/astra/prototype-m3.2/tests/school-"
+  ],
+  "forbiddenRoots": [
+    "mindy-successor/prior-work/astra/prototype-m3.2/src/",
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/packs/",
+    "mindy-successor/prior-work/astra/prototype-m3.2/assets/"
+  ],
+  "forbiddenExactFiles": [
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/definitions.json",
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/localization.json",
+    "mindy-successor/prior-work/astra/prototype-m3.2/content/presentation.json"
+  ],
+  "forbiddenSystems": [
+    "RunState",
+    "Save schema",
+    "RNG",
+    "NightFlow",
+    "energy rules",
+    "career state",
+    "Activity state",
+    "economy/prices",
+    "producer facts",
+    "curriculum",
+    "teacher canon"
+  ],
+  "constraints": {
+    "modifiesRuntime": false,
+    "modifiesSave": false,
+    "modifiesRng": false,
+    "modifiesNightFlow": false,
+    "modifiesEnergyRules": false,
+    "modifiesCareerState": false,
+    "modifiesActivityState": false,
+    "modifiesEconomy": false,
+    "modifiesProducerFacts": false,
+    "modifiesCurriculum": false,
+    "modifiesTeacherCanon": false
+  }
+}
