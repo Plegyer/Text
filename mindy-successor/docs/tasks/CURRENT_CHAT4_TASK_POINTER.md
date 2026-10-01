@@ -1,41 +1,39 @@
 # CURRENT CHAT4 TASK POINTER
 
-Status: **ACTIVE — GATE CURRENT GREEN/FROZEN WAVE**
+Status: **ACTIVE — C4-131 POST-MERGE MAIN GATE**
 Owner: Chat 4 / QA + Product Acceptance Gate
 
 Current queue:
 - `TASK_CHAT4_QA_QUEUE_v13.md`
 - C4-126..137
 
-Start immediately and do not stop after a blocked candidate.
+Completed:
+- C4-126 — PR #147: PASS-WITH-NOTES
+- C4-127 — PR #151: PASS-WITH-NOTES
+- C4-128 — PR #146: PASS-WITH-NOTES
+- C4-129 — PR #156: PASS-WITH-NOTES
+- C4-130 — integration order/collision review recorded in Git
 
-Gate in this order unless current Git invalidates a head:
+Lead has now merged the first accepted integration:
+- integration PR #160
+- new main: `522dbc08b51e23ba33753ad8fa79497896bb078d`
 
-1. PR #147 — Chat 1
-   - head `e9e1c4d5cdafcdf5e8571170cd9b699426536746`
-   - CI #483 SUCCESS
-2. PR #151 — Chat 2
-   - head `463d877009b5ecc1d255d7aa27a91bb7c38016e5`
-   - CI #474 SUCCESS
-3. PR #146 — Chat 3
-   - head `8fa771f212190e5ad9ba4145869d5ce0b04d2cf2`
-   - CI #500 SUCCESS
-4. PR #156 — Chat 5
-   - head `97b659d78ac3a2ccfe72c556344631f7de570507`
-   - CI #489 SUCCESS
+**Do C4-131 now.**
 
-Before each gate, re-query the PR. If its head moved, old CI/QA evidence is invalid.
+Required C4-131:
+1. re-query exact current main and latest main CI;
+2. run/review the product-critical acceptance assertions affected by Chat 1 v9:
+   - Satyr Maid first + second real shift;
+   - Undead Farm first + second real shift;
+   - natural 50-shift Hard Work reachability for both;
+   - strict generic wrong-stage typed transition still rejects invalid repeat;
+   - seven late-career stat/calendar unlocks;
+   - all-ten ordinary Hard Work endings / Meta exactly once;
+   - derived Palace 10/10 predicate;
+3. record exact main SHA + exact CI/run evidence;
+4. if PASS, immediately continue to C4-132 after Lead integrates the next candidate; if the next merge has not happened yet, record C4-131 and wait only on that concrete merge.
 
-For a blocker:
-- record exact blocker;
-- return it to producer;
-- continue to the next still-eligible candidate;
-- do not implement the fix yourself.
+Do not implement production fixes.
+Do not reuse QA evidence from pre-merge heads as substitute for current-main verification.
 
-Mandatory:
-- `../LEADER1_LIVE_DASHBOARD.md`
-- `CHAT4_OPEN_PR_DISPOSITION_LEDGER_2026-10-01.md`
-- `CHAT4_EXECUTABLE_ACCEPTANCE_TRUTH_2026-10-01.md`
-- `CANDIDATE_QA_FREEZE_PROTOCOL.md`
-
-Do not self-assign beyond C4-137.
+After C4-131, continue automatically through C4-132..137 as their prerequisites become true.
