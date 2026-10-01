@@ -119,7 +119,9 @@
           "id": "default",
           "text": "Three completed Rhetoric & Social lessons give you a concrete negotiation pattern you can use on the bar floor immediately.",
           "conditions": [],
-          "media": []
+          "media": [
+            "school.teacher.rhetoric-and-social.classroom"
+          ]
         }
       ],
       "choices": [
@@ -231,7 +233,9 @@
           "id": "default",
           "text": "Three completed Literacy & Numbers lessons make schedules and supply records usable as a real management tool.",
           "conditions": [],
-          "media": []
+          "media": [
+            "school.teacher.literacy-and-numbers.classroom"
+          ]
         }
       ],
       "choices": [
@@ -347,7 +351,9 @@
           "id": "default",
           "text": "Three completed Body Confidence lessons help turn a personal refusal into a clear professional service boundary.",
           "conditions": [],
-          "media": []
+          "media": [
+            "school.teacher.body-confidence.classroom"
+          ]
         }
       ],
       "choices": [
