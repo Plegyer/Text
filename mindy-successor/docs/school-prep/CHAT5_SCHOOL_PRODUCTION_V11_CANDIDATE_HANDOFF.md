@@ -211,3 +211,5 @@ The compatibility event now uses one known exact Night-study trigger plus an exa
 Open one focused PR from this branch. Freeze only the exact head that passes repository `mindy-successor check`. Any later head movement requires a concrete CI/QA blocker or explicit Lead request and a complete exact-head re-gate.
 
 Pre-freeze PR refresh note: PR #150 was reopened once before freeze so GitHub could refresh its moving `main` base after coordination-only main commits; this occurred before any frozen-head handoff and does not authorize later candidate movement.
+
+PR synchronization note: the open candidate was explicitly refreshed to the current `main` base before this final pre-freeze head; exact-head CI evidence must refer to the head after this note.
