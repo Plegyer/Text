@@ -194,6 +194,21 @@ export const SATYR_MAID_PRESENTATION_STAGES=[
   'house-power','personal-network','boundaries','outcome-ready'
 ] as const;
 
+export const SATYR_MAID_CAREER_EVENT_IDS=[
+  'satyr-maid.career.first-shift',
+  'satyr-maid.career.known-face',
+  'satyr-maid.career.house-regular',
+  'satyr-maid.career.veteran-service',
+  'satyr-maid.career.house-power',
+  'satyr-maid.career.personal-network',
+  'satyr-maid.career.boundaries',
+  'satyr-maid.career.outcome-ready'
+] as const;
+
+export function presentationIdForSatyrMaidCareerEvent(eventId:string){
+  return `job/satyr-maid/event/${clean(eventId)}/default`;
+}
+
 export function presentationIdForSatyrMaidStage(stage:string){
   return `job/satyr-maid/stage/${clean(stage)}`;
 }
@@ -261,6 +276,18 @@ export function presentationSlots(cat:Catalog):PresentationSlot[]{
     add({
       id:presentationIdForSatyrMaidStage(stage),
       label:`Satyr Maid · stage · ${stage}`,
+      baseMediaIds:[],
+      fallbackId:'job/satyr-maid/result/default'
+    });
+  }
+
+  // C1D-98 publishes the career event IDs on Chat 1's Satyr branch. Reserve
+  // their presentation identities so this stacked presentation branch can be
+  // built before the gameplay branch is merged.
+  for(const eventId of SATYR_MAID_CAREER_EVENT_IDS){
+    add({
+      id:presentationIdForSatyrMaidCareerEvent(eventId),
+      label:`Satyr Maid · career event · ${eventId}`,
       baseMediaIds:[],
       fallbackId:'job/satyr-maid/result/default'
     });
