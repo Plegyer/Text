@@ -4809,6 +4809,14 @@
     "ui.tavern.crisisFeedback.protect-shelter": {
       "ru": "Защита убежища подтверждена существующим кризисным выбором.",
       "en": "Shelter protection is confirmed by the existing crisis choice."
+    },
+    "presentation.static.relationship.tavern-recurring-traveler.default.alt": {
+      "ru": "Рабочая сцена таверны для профессионального разговора с постоянным путешественником; без собственного имени и без романтического допущения.",
+      "en": "A Tavern work scene for a professional conversation with the recurring traveler; no proper name and no romance assumption."
+    },
+    "presentation.static.relationship.tavern-recurring-traveler.default.caption": {
+      "ru": "Таверна: профессиональный разговор с постоянным путешественником.",
+      "en": "Tavern: a professional conversation with the recurring traveler."
     }
   }
 }
