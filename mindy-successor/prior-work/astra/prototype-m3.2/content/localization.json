@@ -4225,6 +4225,26 @@
     "ui.satyrMaid.crisisFeedback.customer-terms": {
       "ru": "Условия обслуживания обозначены; кризисная сцена завершена.",
       "en": "Service terms are made clear; the crisis scene is resolved."
+    },
+    "ending.ending.satyr-maid.house-power.title": {
+      "ru": "Служанка у сатиров — влияние в доме",
+      "en": "Satyr Maid — House Power"
+    },
+    "ending.ending.satyr-maid.house-power.description": {
+      "ru": "Сложный карьерный исход, в котором опытная работа, школьные навыки управления или переговоров и успешно разрешённый кризис превращаются в реальное влияние на правила работы заведения.",
+      "en": "A complex Satyr Maid ending built on veteran service, School-backed management or negotiation, and a resolved house crisis."
+    },
+    "ending.ending.satyr-maid.house-power.epilogue": {
+      "ru": "Вы становитесь одной из тех, кто определяет рабочие правила заведения и помогает ему оставаться на плаву.",
+      "en": "You become one of the people who can set the house's working terms and keep its business running."
+    },
+    "presentation.static.satyr-maid-ending-house-power.alt": {
+      "ru": "Служанка у сатиров завершает карьерный путь как опытная сотрудница, влияющая на организацию работы заведения.",
+      "en": "A Satyr Maid completes her career path as an experienced worker who helps shape how the house is run."
+    },
+    "presentation.static.satyr-maid-ending-house-power.caption": {
+      "ru": "Финал «Влияние в доме».",
+      "en": "House Power ending."
     }
   }
 }
