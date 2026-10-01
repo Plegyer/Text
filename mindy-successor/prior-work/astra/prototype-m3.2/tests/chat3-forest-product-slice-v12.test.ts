@@ -98,7 +98,7 @@ test('C3-125 extraction capability is mechanically required for success',()=>{
   assert.equal(s.run.resources.inventory.forest_preserved_specimen??0,0);
 });
 
-test('C3-131 route/challenge save-resume is deterministic and Forest specimen is consumed by Lumber',()=>{
+test('C3-131 route/challenge save-resume is deterministic and Forest specimen is read by Lumber',()=>{
   let s=started();
   s=act(s,'forest.hunter-outfitter');
   s=dispatch(s,{type:'schoolLesson',id:'school.course.field_craft'},catalog);
@@ -129,6 +129,6 @@ test('C3-131 route/challenge save-resume is deterministic and Forest specimen is
   assert.equal(a.run.pending?.eventId,'lumber-cross.activity-forest-return');
 
   const returned=dispatch(a,{type:'choice',id:'continue'},catalog);
-  assert.equal(returned.run.resources.inventory.forest_preserved_specimen,0);
+  assert.equal(returned.run.resources.inventory.forest_preserved_specimen,1);
   assert.ok(returned.run.progression.careers.lumber.facts.includes('forest-specimen-catalogued'));
 });
