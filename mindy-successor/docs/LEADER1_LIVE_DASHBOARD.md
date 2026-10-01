@@ -61,8 +61,8 @@ The runtime is not the bottleneck. The bottleneck is completing naturally reacha
 
 | Worker | Active assignment | Observed branch/head | Last observed progress | Leader interpretation |
 |---|---|---|---|---|
-| Chat 1 Developer | C1D-85..96 | `chat1/c1d-85-96-late-career-hard-work` @ `987438954cfec9739281a512a1589cb2707095e5` | `C1D-89: verify all-ten Hard Work Meta rewards` at 04:40Z; branch also contains later queue work | PR #147 is now non-draft. Exact-head CI run #451 is **IN PROGRESS** at snapshot time. Do not integrate until green + Chat 4 gate. |
-| Chat 2 Presentation | C2-109..120 | `chat2/presentation-c2-109-120` @ `b4cd3865813b996fcbed7cf8ac952fc2d605b213` | `C2-120 prepare focused candidate handoff before exact-head CI` at 04:40Z | PR #151 is open and #152 is a duplicate/draft candidate on the same head. CI runs #457/#458 are **IN PROGRESS** at snapshot time. Prefer one canonical candidate after CI settles. |
+| Chat 1 Developer | C1D-85..96 | `chat1/c1d-85-96-late-career-hard-work` @ `987438954cfec9739281a512a1589cb2707095e5` | `C1D-89: verify all-ten Hard Work Meta rewards` at 04:40Z; branch also contains later queue work | PR #147 is non-draft and exact-head CI run #451 is **GREEN**. It is now the first eligible fresh candidate for Chat 4 C4-124. Do not integrate before independent Chat 4 gate. |
+| Chat 2 Presentation | C2-109..120 | `chat2/presentation-c2-109-120` @ `b4cd3865813b996fcbed7cf8ac952fc2d605b213` | `C2-120 prepare focused candidate handoff before exact-head CI` at 04:40Z | PR #151 is open and #152 is a duplicate/draft candidate on the same head. Exact-head CI #458 **FAILED: 554/565 pass, 11 fail**. Failures include static-vs-GIF presentation expectations and a localization consumer assertion. Chat 2 must reconcile/repair before QA; keep only one canonical candidate afterward. |
 | Chat 3 Forest/Poverty | C3-109..120 | `chat3/forest-poverty-production-v11` @ `e750480404b1270ffbe47ca1dad2cb381bcf29d1` | v11 production candidate handoff at 04:30Z | PR #146 exact-head CI #436 **FAILED**: 539/568 pass, 29 fail. It is not QA-eligible and must be repaired/refreshed by Chat 3 before gating. |
 | Chat 4 QA | C4-114..125 | merged evidence from `chat4/c4-123-125-qa-evidence` | PR #148 merged as `a30272dc91cab3d5286558a189d5d816f1841db7` | Backlog disposition + executable acceptance truth are now on main. C4-124 remains the live task: gate the first **green/frozen** fresh candidate; do not gate red/mutable heads. |
 | Chat 5 School | C5-109..120 | `chat5/school-production-v11` @ `fc0751e48c78f260d3516258bd2c33719ab89f33` | C5-119 compatibility-only Night event gate at 04:40Z | PR #150 is open, but exact-head CI #456 **FAILED during validation** with `Недопустимая typed capability: read calendar`. Chat 5 must repair before QA. |
@@ -84,9 +84,9 @@ Current open PRs include:
 - #143 — Chat 5 v10 candidate;
 - #145 — Chat 3 v10 candidate;
 - #146 — Chat 3 v11 production promotion candidate — **red CI** at snapshot;
-- #147 — Chat 1 v9 late-career unlock / all-ten Hard Work Meta candidate — non-draft, CI in progress;
+- #147 — Chat 1 v9 late-career unlock / all-ten Hard Work Meta candidate — **GREEN exact-head CI**, next fresh QA candidate;
 - #150 — Chat 5 v11 School production candidate — **red validation** at snapshot;
-- #151 — Chat 2 v11 presentation candidate — CI in progress;
+- #151 — Chat 2 v11 presentation candidate — **red CI, 554/565**;
 - #152 — duplicate/draft Chat 2 candidate on same head as #151.
 
 PR #148 is no longer open: its QA ledger/acceptance truth was merged into main.
@@ -124,8 +124,8 @@ The goal is fewer "prepared-only" assets and more actual player-facing content.
 When the current worker wave finishes, the default order is:
 
 1. use the merged Chat 4 disposition ledger to close superseded PRs and selectively integrate the distinct #124/#136/#139 deltas on current main rather than wholesale;
-2. wait for/fix current worker exact-head CI, then have Chat 4 gate the first green/frozen candidate;
-3. QA and integrate Chat 1 v9 shared career runtime once green;
+2. have Chat 4 gate **PR #147 first** now that its exact-head CI is green;
+3. integrate Chat 1 v9 shared career runtime only if that QA gate accepts it;
 4. repair then QA/integrate Chat 3 v11 and Chat 5 v11 production content;
 5. QA/integrate Chat 2 v11 presentation coverage where it matches merged gameplay identities;
 6. refresh main CI and this dashboard;
