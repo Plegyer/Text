@@ -202,7 +202,8 @@ export const SATYR_MAID_CAREER_EVENT_IDS=[
   'satyr-maid.career.house-power',
   'satyr-maid.career.personal-network',
   'satyr-maid.career.boundaries',
-  'satyr-maid.career.outcome-ready'
+  'satyr-maid.career.outcome-ready',
+  'satyr-maid.staff-debrief.night'
 ] as const;
 
 export const SATYR_MAID_RELATIONSHIP_EVENT_IDS=[
