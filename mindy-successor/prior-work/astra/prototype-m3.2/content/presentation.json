@@ -1603,6 +1603,42 @@
           }
         ]
       }
+    },
+    "ending/satyr-maid/house-power": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-result.svg",
+        "alt": "Satyr Maid House Power ending static presentation.",
+        "altKey": "presentation.static.satyr-maid-ending-house-power.alt"
+      },
+      "pool": {
+        "version": 1,
+        "ordering": "ordered",
+        "selectionPolicy": "unweighted",
+        "candidates": [
+          {
+            "key": "service-a",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-a.gif",
+            "alt": "Satyr Maid service work candidate A.",
+            "altKey": "presentation.motion.career.satyr-maid.service.a.alt"
+          },
+          {
+            "key": "service-b",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-b.gif",
+            "alt": "Satyr Maid service work candidate B.",
+            "altKey": "presentation.motion.career.satyr-maid.service.b.alt"
+          },
+          {
+            "key": "service-c",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-c.gif",
+            "alt": "Satyr Maid service work candidate C.",
+            "altKey": "presentation.motion.career.satyr-maid.service.c.alt"
+          }
+        ]
+      }
     }
   }
 }
