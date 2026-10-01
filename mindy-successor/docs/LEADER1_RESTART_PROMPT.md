@@ -1,5 +1,13 @@
 # Leader 1 Restart Prompt
 
+## Current handoff checkpoint
+
+Before the older live dashboard/state files, read:
+- `mindy-successor/docs/LEADER1_HANDOFF_CHECKPOINT_2026-10-01.md`.
+
+Then verify current Git. This checkpoint supersedes stale worker/PR details in older status prose.
+
+
 Use this prompt when a Leader 1 chat loses context or a new Leader 1 takes over.
 
 ---
