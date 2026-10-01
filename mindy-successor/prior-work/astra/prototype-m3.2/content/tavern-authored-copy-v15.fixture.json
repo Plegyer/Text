@@ -1,18 +1,20 @@
 {
   "formatVersion": 1,
   "id": "chat3.tavern-authored-copy.v15",
-  "status": "CONTENT_PREP_ONLY_PENDING_RUNTIME_PRODUCERS",
+  "status": "SOURCE_MANIFEST_LIVE_BOUND",
   "contract": {
     "path": "mindy-successor/docs/tasks/TAVERN_RUNTIME_CONTRACT_v1.json",
     "sourceBranch": "chat1/tavern-complete-v12",
-    "exactHead": "4c416b5103ebef18378f40b8bc1f80bbaac2f798"
+    "exactHead": "061190c7324f6942b85d4444de6429c0a87e3ba9",
+    "runtimeProducerHead": "061190c7324f6942b85d4444de6429c0a87e3ba9"
   },
   "bindingPolicy": {
     "createsGameplayIds": false,
     "useProducerEventIdsOnly": true,
     "useProducerVariantIdsWhenPublished": true,
     "mechanicsOwner": "Chat 1 Developer",
-    "authoredContentOwner": "Chat 3"
+    "authoredContentOwner": "Chat 3",
+    "liveBound": true
   },
   "seasonalShift": [
     {
