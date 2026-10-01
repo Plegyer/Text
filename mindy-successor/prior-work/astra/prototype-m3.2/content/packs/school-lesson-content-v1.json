@@ -71,7 +71,7 @@
         {
           "id": "continue",
           "label": "Continue",
-          "text": "Return to the day after the lesson.",
+          "text": "The lesson is complete; the main note is settled, and the day continues.",
           "conditions": [],
           "effects": []
         }
