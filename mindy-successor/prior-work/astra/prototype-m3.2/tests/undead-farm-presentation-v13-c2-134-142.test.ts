@@ -161,7 +161,7 @@ test('C2-140 crisis presentation covers three systemic families and defer withou
   const id=presentationIdForUndeadFarmCareerEvent('undead-farm.crisis.supply-labor-containment');
   const slot=presentation.slots[id];
   assert.ok(slot?.static,id+' static');
-  assert.equal(slot.pool?.candidates.length,3,id+' safe work pool');
+  assert.equal(slot.pool,undefined,id+' remains static-only');
   for(const choice of ['stabilize-production','contain-and-study','trust-network','defer']){
     for(const suffix of ['label','text']){
       const key=`event.undead-farm.crisis.supply-labor-containment.choice.${choice}.${suffix}`;
