@@ -333,6 +333,11 @@ function transitionFor(cat:Catalog,kind:DomainKind,id:string,transitionId:string
 function applyTransition(s:Save,kind:DomainKind,id:string,transitionId:string,cat:Catalog){
   const {t}=transitionFor(cat,kind,id,transitionId);
   const state=ensureDomainState(s,kind,id,cat);
+  // Repeating an action that carries its one-time transition must not make the
+  // action itself one-time. Once the machine is already at this transition's
+  // destination, the transition is an idempotent no-op; unrelated stages still
+  // fail the typed from-gate below.
+  if(state.stage===t.to)return;
   if(!t.from.includes(state.stage))throw new Error(`Transition ${kind}.${id}.${transitionId} недоступен из stage ${state.stage}`);
   if(!eligible(t.conditions,s,cat))throw new Error(`Условия transition ${kind}.${id}.${transitionId} не выполнены`);
   state.stage=t.to;
