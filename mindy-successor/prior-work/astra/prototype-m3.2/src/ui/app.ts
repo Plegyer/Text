@@ -139,9 +139,28 @@ async function write(s:Save){const text=JSON.stringify(s);parseSave(text,catalog
  const old=localStorage.getItem('portal-life.v1');if(old){try{parseSave(old,catalog);localStorage.setItem('portal-life.v1.bak',old);}catch{}}
  localStorage.setItem('portal-life.v1',text);
 }}
+function derivedUnlockedLateCareers(save:Save){
+ return [...lateCareerProfessions].filter(id=>{
+  const action=catalog.definitions.actions.find(a=>a.id===id);
+  return !!action&&actionAvailable(action,save,catalog);
+ });
+}
+function lateCareerDiscoveryMessage(before:Save,after:Save){
+ const prior=new Set(derivedUnlockedLateCareers(before));
+ const newly=derivedUnlockedLateCareers(after).filter(id=>!prior.has(id));
+ if(!newly.length)return '';
+ const careers=newly.map(id=>{
+  const action=catalog.definitions.actions.find(a=>a.id===id)!;
+  const career=id.replace(/\.shift$/,'');
+  return tr(`profession.${career}.label`,tr(`action.${id}.label`,action.label));
+ });
+ return careers.length===1
+  ?fmt(tr('ui.work.lateCareer.discovery','Новая профессия открыта: {career}'),{career:careers[0]!})
+  :fmt(tr('ui.work.lateCareer.discoveryMany','Открыты новые профессии: {careers}'),{careers:careers.join(', ')});
+}
 async function perform(cmd:Command){
  if(busy||locked)return;busy=true;render();
- try{const next=dispatch(state,cmd,catalog);await write(next);state=next;error=false;message='';mediaIndex=0;
+ try{const next=dispatch(state,cmd,catalog);const discovery=lateCareerDiscoveryMessage(state,next);await write(next);state=next;error=false;message=discovery;mediaIndex=0;
   if(!['allocate','finishCreation'].includes(cmd.type)){panel='';screen=['restart','newLife'].includes(cmd.type)?'town':'scene';}
  }catch(e){message=e instanceof Error?e.message:String(e);error=true;}
  busy=false;render();
