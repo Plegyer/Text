@@ -1,0 +1,45 @@
+{
+  "formatVersion": 1,
+  "id": "school.localization-v10.regression-coverage.v1",
+  "status": "TEST_CONTRACT_ONLY",
+  "baseline": "6afc01061646bc52cec824863bf89e8ad8c309d0",
+  "tasks": {
+    "C5-97": [
+      "content/school-localization-v10-reachability-audit.fixture.json"
+    ],
+    "C5-98": [
+      "content/school-localization-parity-v10-audit.fixture.json"
+    ],
+    "C5-99": [
+      "content/school-teacher-milestone-text-audit-v10.fixture.json"
+    ],
+    "C5-100": [
+      "content/school-night-study-text-preparation-v10.fixture.json"
+    ],
+    "C5-101": [
+      "content/school-to-career-handoff-audit-v10.fixture.json"
+    ],
+    "C5-102": [
+      "content/school-terminology-consistency-audit-v10.fixture.json"
+    ],
+    "C5-103": [
+      "content/school-localization-v10-fixture-collision-contract.fixture.json",
+      "tests/school-localization-v10-collision.test.ts"
+    ],
+    "C5-104": [
+      "content/school-localization-v10-ownership-boundary-contract.fixture.json",
+      "tests/school-localization-v10-ownership.test.ts"
+    ],
+    "C5-105": [
+      "content/school-accessibility-text-parity-audit-v10.fixture.json"
+    ],
+    "C5-106": [
+      "content/school-localization-v10-handoff-refresh.fixture.json"
+    ],
+    "C5-107": [
+      "content/school-localization-v10-regression-coverage.fixture.json",
+      "tests/school-localization-v10-coverage.test.ts"
+    ]
+  },
+  "expectedPreparedLocalizationKeys": 48
+}
