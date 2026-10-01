@@ -292,6 +292,20 @@ export function presentationSlots(cat:Catalog):PresentationSlot[]{
     }
   }
 
+  // Presentation-owned full-roster Hard Work semantic surface. These IDs do not
+  // create ending gameplay/state; they keep media/accessibility ready for the
+  // ordinary career IDs already present in the production catalog.
+  for(const career of cat.definitions.careers??[]){
+    const careerId=clean(career.id);
+    const resultId=`job/${careerId}/result/default`;
+    add({
+      id:`ending/${careerId}/hard-work`,
+      label:`${career.label} · Hard Work · финал`,
+      baseMediaIds:[],
+      fallbackId:slots.has(resultId)?resultId:'location/town/default'
+    });
+  }
+
   for(const ending of cat.definitions.endings){
     add({
       id:presentationIdForEnding(ending.id),
