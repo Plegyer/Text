@@ -98,9 +98,17 @@ test('starter target shifts expose deterministic seasonal presentation surfaces 
   ])assert.ok(slots.has(id),id);
 });
 
-test('new starter target layer does not create guessed Hard Work endings or alter Lumber Hard Work',()=>{
-  assert.equal(catalog.definitions.endings.some(e=>e.id==='ending.satyr-maid.hard-work'),false);
-  assert.equal(catalog.definitions.endings.some(e=>e.id==='ending.undead-farm.hard-work'),false);
+test('starter target layer exposes the approved 50-shift Hard Work endings and preserves Lumber Hard Work',()=>{
+  for(const career of ['satyr-maid','undead-farm'] as const){
+    const ending=catalog.definitions.endings.find(e=>e.id===`ending.${career}.hard-work`);
+    assert.ok(ending,career);
+    assert.deepEqual(ending.conditions,[{
+      kind:'careerCounter',career,counter:'completed_shifts',op:'gte',value:50
+    }],career);
+    assert.deepEqual(ending.metaRewards,[{
+      kind:'hardWork',rewardId:`hardWork:${career}`,career
+    }],career);
+  }
 
   const lumber=catalog.definitions.endings.find(e=>e.id==='ending.lumber.hard-work');
   assert.ok(lumber);

@@ -23,8 +23,10 @@ test('ending and ordinary action production patches are fully merged RU EN',()=>
  }
 });
 
-test('ending patch targets exact current ending IDs without gameplay fields',()=>{
- assert.deepEqual(definitions.endings.map((ending:any)=>ending.id).sort(),endingIds);
+test('ending localization patch remains an exact presentation-only subset of current ending IDs',()=>{
+ const currentIds=new Set(definitions.endings.map((ending:any)=>ending.id));
+ for(const id of endingIds)assert.ok(currentIds.has(id),id);
+ assert.equal(new Set(endingIds).size,endingIds.length);
  const raw=JSON.stringify(endings).toLowerCase();
  for(const token of ['"conditions"','"rewards"','"metarewards"','"rng"','"save"'])assert.equal(raw.includes(token),false,token);
 });

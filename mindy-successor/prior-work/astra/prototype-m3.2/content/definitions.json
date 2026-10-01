@@ -1872,7 +1872,35 @@
         "money": 0,
         "energy": 1
       },
-      "conditions": [],
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "stat",
+                  "stat": "charm",
+                  "op": "gte",
+                  "value": 45
+                },
+                {
+                  "kind": "stat",
+                  "stat": "sociability",
+                  "op": "gte",
+                  "value": 35
+                }
+              ]
+            },
+            {
+              "kind": "calendarYear",
+              "op": "gte",
+              "value": 2
+            }
+          ]
+        }
+      ],
       "effects": [
         {
           "kind": "incrementCareerCounter",
@@ -2007,7 +2035,41 @@
         "money": 0,
         "energy": 1
       },
-      "conditions": [],
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "stat",
+                  "stat": "dexterity",
+                  "op": "gte",
+                  "value": 25
+                },
+                {
+                  "kind": "stat",
+                  "stat": "endurance",
+                  "op": "gte",
+                  "value": 20
+                },
+                {
+                  "kind": "stat",
+                  "stat": "wits",
+                  "op": "gte",
+                  "value": 15
+                }
+              ]
+            },
+            {
+              "kind": "calendarYear",
+              "op": "gte",
+              "value": 2
+            }
+          ]
+        }
+      ],
       "effects": [
         {
           "kind": "incrementCareerCounter",
@@ -2142,7 +2204,41 @@
         "money": 0,
         "energy": 1
       },
-      "conditions": [],
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "stat",
+                  "stat": "strength",
+                  "op": "gte",
+                  "value": 30
+                },
+                {
+                  "kind": "stat",
+                  "stat": "endurance",
+                  "op": "gte",
+                  "value": 30
+                },
+                {
+                  "kind": "stat",
+                  "stat": "manners",
+                  "op": "gte",
+                  "value": 20
+                }
+              ]
+            },
+            {
+              "kind": "calendarYear",
+              "op": "gte",
+              "value": 2
+            }
+          ]
+        }
+      ],
       "effects": [
         {
           "kind": "incrementCareerCounter",
@@ -2281,7 +2377,41 @@
         "money": 0,
         "energy": 1
       },
-      "conditions": [],
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "stat",
+                  "stat": "wits",
+                  "op": "gte",
+                  "value": 20
+                },
+                {
+                  "kind": "stat",
+                  "stat": "reason",
+                  "op": "gte",
+                  "value": 20
+                },
+                {
+                  "kind": "stat",
+                  "stat": "sociability",
+                  "op": "gte",
+                  "value": 15
+                }
+              ]
+            },
+            {
+              "kind": "calendarYear",
+              "op": "gte",
+              "value": 2
+            }
+          ]
+        }
+      ],
       "effects": [
         {
           "kind": "incrementCareerCounter",
@@ -2420,7 +2550,41 @@
         "money": 0,
         "energy": 1
       },
-      "conditions": [],
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "stat",
+                  "stat": "creativity",
+                  "op": "gte",
+                  "value": 35
+                },
+                {
+                  "kind": "stat",
+                  "stat": "manners",
+                  "op": "gte",
+                  "value": 25
+                },
+                {
+                  "kind": "stat",
+                  "stat": "grooming",
+                  "op": "gte",
+                  "value": 30
+                }
+              ]
+            },
+            {
+              "kind": "calendarYear",
+              "op": "gte",
+              "value": 3
+            }
+          ]
+        }
+      ],
       "effects": [
         {
           "kind": "incrementCareerCounter",
@@ -2559,7 +2723,41 @@
         "money": 0,
         "energy": 1
       },
-      "conditions": [],
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "stat",
+                  "stat": "dexterity",
+                  "op": "gte",
+                  "value": 30
+                },
+                {
+                  "kind": "stat",
+                  "stat": "wits",
+                  "op": "gte",
+                  "value": 25
+                },
+                {
+                  "kind": "stat",
+                  "stat": "reason",
+                  "op": "gte",
+                  "value": 20
+                }
+              ]
+            },
+            {
+              "kind": "calendarYear",
+              "op": "gte",
+              "value": 3
+            }
+          ]
+        }
+      ],
       "effects": [
         {
           "kind": "incrementCareerCounter",
@@ -2698,7 +2896,41 @@
         "money": 0,
         "energy": 1
       },
-      "conditions": [],
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "stat",
+                  "stat": "sexuality",
+                  "op": "gte",
+                  "value": 55
+                },
+                {
+                  "kind": "stat",
+                  "stat": "charm",
+                  "op": "gte",
+                  "value": 40
+                },
+                {
+                  "kind": "stat",
+                  "stat": "sociability",
+                  "op": "gte",
+                  "value": 35
+                }
+              ]
+            },
+            {
+              "kind": "calendarYear",
+              "op": "gte",
+              "value": 3
+            }
+          ]
+        }
+      ],
       "effects": [
         {
           "kind": "incrementCareerCounter",
@@ -2949,6 +3181,213 @@
         }
       ],
       "epilogue": "Fixture epilogue for Lumber Hard Work."
+    },
+    {
+      "id": "ending.satyr-maid.hard-work",
+      "title": "Satyr Maid Hard Work",
+      "description": "Persistence ending: fifty completed Satyr Maid shifts.",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "satyr-maid",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 50
+        }
+      ],
+      "reward": "satyr-maid.hardwork.compat",
+      "metaRewards": [
+        {
+          "kind": "hardWork",
+          "rewardId": "hardWork:satyr-maid",
+          "career": "satyr-maid"
+        }
+      ],
+      "epilogue": "Hard Work completion recorded for Satyr Maid."
+    },
+    {
+      "id": "ending.undead-farm.hard-work",
+      "title": "Undead Farm Hard Work",
+      "description": "Persistence ending: fifty completed Undead Farm shifts.",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "undead-farm",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 50
+        }
+      ],
+      "reward": "undead-farm.hardwork.compat",
+      "metaRewards": [
+        {
+          "kind": "hardWork",
+          "rewardId": "hardWork:undead-farm",
+          "career": "undead-farm"
+        }
+      ],
+      "epilogue": "Hard Work completion recorded for Undead Farm."
+    },
+    {
+      "id": "ending.tavern.hard-work",
+      "title": "Tavern Hard Work",
+      "description": "Persistence ending: fifty completed Tavern shifts.",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "tavern",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 50
+        }
+      ],
+      "reward": "tavern.hardwork.compat",
+      "metaRewards": [
+        {
+          "kind": "hardWork",
+          "rewardId": "hardWork:tavern",
+          "career": "tavern"
+        }
+      ],
+      "epilogue": "Hard Work completion recorded for Tavern."
+    },
+    {
+      "id": "ending.hunter.hard-work",
+      "title": "Hunter Hard Work",
+      "description": "Persistence ending: fifty completed Hunter shifts.",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "hunter",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 50
+        }
+      ],
+      "reward": "hunter.hardwork.compat",
+      "metaRewards": [
+        {
+          "kind": "hardWork",
+          "rewardId": "hardWork:hunter",
+          "career": "hunter"
+        }
+      ],
+      "epilogue": "Hard Work completion recorded for Hunter."
+    },
+    {
+      "id": "ending.guard.hard-work",
+      "title": "Guard Hard Work",
+      "description": "Persistence ending: fifty completed Guard shifts.",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "guard",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 50
+        }
+      ],
+      "reward": "guard.hardwork.compat",
+      "metaRewards": [
+        {
+          "kind": "hardWork",
+          "rewardId": "hardWork:guard",
+          "career": "guard"
+        }
+      ],
+      "epilogue": "Hard Work completion recorded for Guard."
+    },
+    {
+      "id": "ending.merchant.hard-work",
+      "title": "Merchant Hard Work",
+      "description": "Persistence ending: fifty completed Merchant shifts.",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "merchant",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 50
+        }
+      ],
+      "reward": "merchant.hardwork.compat",
+      "metaRewards": [
+        {
+          "kind": "hardWork",
+          "rewardId": "hardWork:merchant",
+          "career": "merchant"
+        }
+      ],
+      "epilogue": "Hard Work completion recorded for Merchant."
+    },
+    {
+      "id": "ending.artist-geisha.hard-work",
+      "title": "Artist/Geisha Hard Work",
+      "description": "Persistence ending: fifty completed Artist/Geisha shifts.",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "artist-geisha",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 50
+        }
+      ],
+      "reward": "artist-geisha.hardwork.compat",
+      "metaRewards": [
+        {
+          "kind": "hardWork",
+          "rewardId": "hardWork:artist-geisha",
+          "career": "artist-geisha"
+        }
+      ],
+      "epilogue": "Hard Work completion recorded for Artist/Geisha."
+    },
+    {
+      "id": "ending.assassin.hard-work",
+      "title": "Assassin Hard Work",
+      "description": "Persistence ending: fifty completed Assassin shifts.",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "assassin",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 50
+        }
+      ],
+      "reward": "assassin.hardwork.compat",
+      "metaRewards": [
+        {
+          "kind": "hardWork",
+          "rewardId": "hardWork:assassin",
+          "career": "assassin"
+        }
+      ],
+      "epilogue": "Hard Work completion recorded for Assassin."
+    },
+    {
+      "id": "ending.prostitute.hard-work",
+      "title": "Prostitute Hard Work",
+      "description": "Persistence ending: fifty completed Prostitute shifts.",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "prostitute",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 50
+        }
+      ],
+      "reward": "prostitute.hardwork.compat",
+      "metaRewards": [
+        {
+          "kind": "hardWork",
+          "rewardId": "hardWork:prostitute",
+          "career": "prostitute"
+        }
+      ],
+      "epilogue": "Hard Work completion recorded for Prostitute."
     },
     {
       "id": "ending.lumber.forewoman",

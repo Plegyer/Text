@@ -37,7 +37,7 @@ test('remaining seven base shifts keep typed initial state while Day-1 availabil
     let s=started();
     const action=catalog.definitions.actions.find(a=>a.id===career+'.shift');
     assert.ok(action,career);
-    assert.deepEqual(action.conditions,[],career+' has no approved unlock condition yet');
+    assert.ok(action.conditions.length>0,career+' has an approved derived unlock condition');
     assert.equal(actionAvailable(action,s,catalog),false,career);
     const definition=catalog.definitions.careers?.find(item=>item.id===career);
     assert.equal(definition?.initialStage,initialStage,career);
@@ -60,13 +60,16 @@ test('remaining seven base shifts expose seasonal semantic presentation identiti
   }
 });
 
-test('remaining-seven base layer does not guess new Hard Work endings or alter Lumber lock',()=>{
+test('remaining-seven base layer exposes the approved 50-shift Hard Work endings without altering Lumber lock',()=>{
   for(const [career] of careers){
-    assert.equal(
-      catalog.definitions.endings.some(e=>e.id===`ending.${career}.hard-work`),
-      false,
-      career
-    );
+    const ending=catalog.definitions.endings.find(e=>e.id===`ending.${career}.hard-work`);
+    assert.ok(ending,career);
+    assert.deepEqual(ending.conditions,[{
+      kind:'careerCounter',career,counter:'completed_shifts',op:'gte',value:50
+    }],career);
+    assert.deepEqual(ending.metaRewards,[{
+      kind:'hardWork',rewardId:`hardWork:${career}`,career
+    }],career);
   }
 
   const lumber=catalog.definitions.endings.find(e=>e.id==='ending.lumber.hard-work');
