@@ -1,21 +1,35 @@
 # CURRENT CHAT2 TASK POINTER
 
-Status: **UNDEAD PRESENTATION v13 FROZEN + TAVERN v14 ACTIVE**
+Status: **TAVERN PRESENTATION v14 FROZEN + HUNTER PRESENTATION v15 ACTIVE**
 Owner: Chat 2 / Presentation & Media Worker
 
-Frozen Undead presentation candidate:
-- PR #182
-- exact head `703cabefff9cbf9f681089d1c0f0c1ae70880c2c`
-- CI #626 SUCCESS, 644/644
-- do not move it while Chat 4 gates it.
+Frozen Tavern presentation candidate:
+- PR #200
+- exact head `4cf8aab9637e6393237d174e6d007dd0f3dcd24a`
+- exact-head CI #721 / id `36843623336`: SUCCESS
+- do not move it while Chat 4/integration uses it.
 
-Continue immediately on a new branch.
+Frozen Hunter runtime dependency:
+- PR #201
+- exact head `8af661de2ce6d73e4db0f61fe4206d3334822998`
+- exact-head CI #734 / id `36844983432`: SUCCESS
+
+Related Hunter School candidate:
+- PR #199
+- exact head `f04c93db866b1d2603f6917b41297670f86b0bef`
+- CI #745 SUCCESS
+- preserve its School-owned authority; do not invent extra School consumers.
+
+Active branch:
+- `chat2/hunter-presentation-v15`
+- created directly from frozen Hunter runtime head `8af661de2ce6d73e4db0f61fe4206d3334822998`
 
 Current queue:
-- `TASK_CHAT2_PRESENTATION_QUEUE_v14.md`
-- C2-145..156
-- target: **Tavern Complete Career Presentation**
+- `TASK_CHAT2_PRESENTATION_QUEUE_v15.md`
+- C2-157..168
+- target: **Hunter Complete Career Presentation**
 
-Read Chat 1's C1D-121 Tavern runtime contract as soon as it appears. You may inventory existing Tavern assets/endings before the contract is published, but do not invent gameplay IDs.
+Start C2-157 immediately and continue through every unblocked task.
 
-Do not wait for #182 QA.
+Presentation/media/accessibility only.
+Do not change gameplay/runtime, Save/RNG, career state, School/NightFlow, Activity mechanics, economy, ending eligibility/rewards or Meta.
