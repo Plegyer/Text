@@ -1,19 +1,28 @@
 # CURRENT CHAT3 TASK POINTER
 
-Status: **ACTIVE — FINISH FOREST AUTHORED DEPTH v13**
+Status: **FOREST v13 FROZEN + ORDINARY POVERTY v14 ACTIVE**
 Owner: Chat 3 / Forest + Poverty Content Worker
 
-Current PR:
-- #175 — Forest authored depth v13
-- queue: `TASK_CHAT3_CONTENT_QUEUE_v13.md`
-- C3-133..144.
+Frozen Forest authored-depth candidate:
+- PR #175
+- exact head: `234e1a6fac0d25b0393f7ffec84eac4007347c32`
+- exact-head CI #593: **SUCCESS**
+- do not move this PR while Chat 4 gates it.
 
-Known CI repair:
-- v13 introduced calendar-season conditions in `forest-result-content-bilingual-v2.json`;
-- the pack must declare `capabilities.reads.calendar: true`;
-- do not weaken the typed-capability validator.
-- also audit every other v13 pack for calendar conditions without the same declaration.
+Continue immediately on a new branch; do not wait for QA.
 
-The previous Forest product slice is already integrated to main; do not wait on PR #162.
+Current queue:
+- `TASK_CHAT3_CONTENT_QUEUE_v14.md`
+- C3-145..156
+- target: **Ordinary Poverty Production Closure**.
 
-Finish C3-144 only when the latest exact head has full repository CI green. Freeze one focused candidate for Chat 4.
+Start C3-145 now.
+
+Hard boundaries:
+- no Secret Debt state;
+- no final economy-number locks;
+- no poverty ending;
+- no unapproved shop/sale system;
+- no shared runtime rewrite.
+
+Use current live NightFlow/lodging primitives and production poverty packs; convert remaining breadth/recovery/anti-softlock gaps into player-facing production content and regressions.
