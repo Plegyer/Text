@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "id": "tavern.information",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "careers": [
+        "tavern"
+      ]
+    },
+    "writes": {
+      "careers": [
+        "tavern"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "tavern.information.rumour-route",
+      "title": "A rumour becomes route state",
+      "sourceDomain": "tavern",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "tavern",
+          "fact": "confidentiality-resolved"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 84,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "traveler-rumour-known",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "rumour-route-open",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The traveler's rumour is now specific enough to become a route question: it can be checked against a live external result instead of becoming a generic information currency.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record-route",
+          "label": "Record the route question",
+          "text": "Keep one typed Tavern route fact for later verification.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "tavern",
+              "fact": "rumour-route-open"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
