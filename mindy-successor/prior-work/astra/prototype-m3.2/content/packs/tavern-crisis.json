@@ -177,7 +177,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "High occupancy, strained supplies, and a confidentiality problem land on the same house decision. The crisis has management, information, and shelter solutions rather than a universal morality score.",
+          "text": "The house faces crowded rooms, a disrupted supply, and a request to keep one guest's route private at the same time. There is no single clever sentence that solves all three; you have to choose which responsibility you take on and which risk remains for the rest of the house.",
           "conditions": [],
           "media": []
         }
@@ -186,7 +186,7 @@
         {
           "id": "stabilize-house",
           "label": "Stabilize rooms and supplies through records",
-          "text": "Use the house ledger and School-backed records to make a defensible occupancy and supply plan.",
+          "text": "You start with the stability of the house: check available rooms, working records, and what actually remains in storage. It is not the most dramatic solution, but the next shift knows what was promised, what is missing, and who owns the follow-up.",
           "conditions": [
             {
               "kind": "careerFact",
@@ -224,7 +224,7 @@
         {
           "id": "manage-information",
           "label": "Resolve the conflict through verified information",
-          "text": "Use the confirmed route rumour and confidentiality decision to separate useful information from private identity.",
+          "text": "You start with information: separate confirmed details, rumors, and private facts, then pass on only what is needed to solve the problem. The value is not the number of secrets you possess, but that people can act on accurate information.",
           "conditions": [
             {
               "kind": "careerFact",
@@ -261,7 +261,7 @@
         {
           "id": "protect-shelter",
           "label": "Protect temporary shelter and confidentiality",
-          "text": "Use the house's existing assistance practice and the kept confidence to protect a narrow sanctuary policy.",
+          "text": "You start with the safety of people who have nowhere practical to go tonight, then adjust the house rules so temporary protection does not become a promise of unlimited free housing. The house helps while keeping boundaries, rules, and the ability to function tomorrow.",
           "conditions": [
             {
               "kind": "careerFact",
