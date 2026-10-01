@@ -1129,7 +1129,7 @@
         "kind": "image",
         "src": "assets/presentation/career-satyr-maid-result.svg",
         "alt": "Hard Work ending static presentation for satyr-maid.",
-        "altKey": "presentation.static.career.satyr-maid.ending.hard-work.alt"
+        "altKey": "presentation.static.satyr-maid-ending-hard-work.alt"
       }
     },
     "ending/undead-farm/hard-work": {
@@ -1137,7 +1137,7 @@
         "kind": "image",
         "src": "assets/presentation/career-undead-farm-result.svg",
         "alt": "Hard Work ending static presentation for undead-farm.",
-        "altKey": "presentation.static.career.undead-farm.ending.hard-work.alt"
+        "altKey": "presentation.static.undead-farm-ending-hard-work.alt"
       }
     },
     "ending/tavern/hard-work": {
@@ -1145,7 +1145,7 @@
         "kind": "image",
         "src": "assets/presentation/career-tavern-result.svg",
         "alt": "Hard Work ending static presentation for tavern.",
-        "altKey": "presentation.static.career.tavern.ending.hard-work.alt"
+        "altKey": "presentation.static.tavern-ending-hard-work.alt"
       }
     },
     "ending/hunter/hard-work": {
@@ -1153,7 +1153,7 @@
         "kind": "image",
         "src": "assets/presentation/career-hunter-result.svg",
         "alt": "Hard Work ending static presentation for hunter.",
-        "altKey": "presentation.static.career.hunter.ending.hard-work.alt"
+        "altKey": "presentation.static.hunter-ending-hard-work.alt"
       }
     },
     "ending/guard/hard-work": {
@@ -1161,7 +1161,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Hard Work ending static presentation for guard.",
-        "altKey": "presentation.static.career.guard.ending.hard-work.alt"
+        "altKey": "presentation.static.guard-ending-hard-work.alt"
       }
     },
     "ending/merchant/hard-work": {
@@ -1169,7 +1169,7 @@
         "kind": "image",
         "src": "assets/presentation/career-merchant-result.svg",
         "alt": "Hard Work ending static presentation for merchant.",
-        "altKey": "presentation.static.career.merchant.ending.hard-work.alt"
+        "altKey": "presentation.static.merchant-ending-hard-work.alt"
       }
     },
     "ending/artist-geisha/hard-work": {
@@ -1177,7 +1177,7 @@
         "kind": "image",
         "src": "assets/presentation/career-artist-geisha-result.svg",
         "alt": "Hard Work ending static presentation for artist-geisha.",
-        "altKey": "presentation.static.career.artist-geisha.ending.hard-work.alt"
+        "altKey": "presentation.static.artist-geisha-ending-hard-work.alt"
       }
     },
     "ending/assassin/hard-work": {
@@ -1185,7 +1185,7 @@
         "kind": "image",
         "src": "assets/presentation/career-assassin-result.svg",
         "alt": "Hard Work ending static presentation for assassin.",
-        "altKey": "presentation.static.career.assassin.ending.hard-work.alt"
+        "altKey": "presentation.static.assassin-ending-hard-work.alt"
       }
     },
     "ending/prostitute/hard-work": {
@@ -1193,7 +1193,7 @@
         "kind": "image",
         "src": "assets/presentation/career-prostitute-result.svg",
         "alt": "Hard Work ending static presentation for prostitute.",
-        "altKey": "presentation.static.career.prostitute.ending.hard-work.alt"
+        "altKey": "presentation.static.prostitute-ending-hard-work.alt"
       }
     }
   }
