@@ -1,0 +1,54 @@
+{
+  "formatVersion": 1,
+  "id": "school.hunter.v15.arcana",
+  "task": "C5-159",
+  "careerId": "hunter",
+  "role": "magical_target_analysis",
+  "courseId": "school.course.arcana",
+  "trackId": "school.track.arcana",
+  "teacherContentId": "school.teacher.ilyra-venn",
+  "teacherMediaId": "school.teacher.arcana.classroom",
+  "bindingStatus": "C1D_133_FACT_BOUND_EVENT_THRESHOLD_BLOCKED",
+  "reactionEvent": "BLOCKED_NOT_PUBLISHED_BY_C1D_133",
+  "careerFact": "school-arcana-ready",
+  "localThreshold": {
+    "counter": "lessons_completed",
+    "value": null,
+    "scope": "hunter-only",
+    "authority": "C1D_133_EXPLICITLY_NULL"
+  },
+  "copy": {
+    "title": {
+      "ru": "Сначала след, потом версия",
+      "en": "Trace first, theory second"
+    },
+    "body": {
+      "ru": "Илира даёт безопасный учебный след и просит отделить наблюдаемое от объяснения: форму, изменение со временем и реакцию на проверку записывают раньше любых догадок о существе или магии. Такой метод может подготовить к странной цели или аномальному следу, не закрепляя неавторизованный вид существа, происхождение или финальный лор.",
+      "en": "Ilyra gives you a safe practice trace and asks you to separate observation from explanation: shape, change over time, and response to a test are recorded before any guess about creature or magic. The method can prepare you for a strange target or anomalous trace without fixing an unauthorized creature type, origin, or final lore."
+    },
+    "result": {
+      "ru": "Метод арканного анализа готов к Hunter-local реакции после публикации точного consumer.",
+      "en": "The Arcana analysis method is ready for a Hunter-local reaction after the exact consumer is published."
+    },
+    "journal": {
+      "ru": "Школа: Илира связала арканное наблюдение с проверяемыми признаками охотничьей цели. Конкретное существо и финальный лор не определены.",
+      "en": "School: Ilyra connected Arcana observation to testable signs of a Hunter target. No specific creature or final lore is established."
+    },
+    "accessibility": {
+      "ru": "Школьная подготовка: наблюдение и проверка необычного следа.",
+      "en": "School preparation: observing and testing an unusual trace."
+    }
+  },
+  "constraints": {
+    "declaresFinalLore": false,
+    "namesUnauthorizedCreature": false,
+    "createsCombatSystem": false,
+    "advancesCareerDirectly": false,
+    "publishesGlobalCertificate": false,
+    "publishesGlobalProject": false
+  },
+  "runtimeContract": {
+    "head": "7895b8ce5e17419a1204169112cf9df23002996e",
+    "blob": "9723fed6e77058fc29463395f55b39eee185134a"
+  }
+}
