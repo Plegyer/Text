@@ -1,22 +1,22 @@
 # Chat 4 Executable Acceptance Truth — 2026-10-01
 
-Status: C4-135 refreshed QA evidence; supersedes C4-125/C4-134 snapshots  
+Status: C4-143 exact-current-main truth; closes v13 C4-137-equivalent  
 Owner: Chat 4 / QA + Product Acceptance Gate  
 Repository: `Plegyer/Text`
 
 ## Exact executable baseline
 
-The last exact main SHA that changed product/test code is:
+Exact current-main evidence after integration of the accepted #172/#174/#175 wave:
 
-- SHA: `a44d0f765fffd9f8b74307d116bf5f15e7688590`;
+- SHA: `afed43c73b7c964bc6e42eb2955eca5165a3c1f7`;
 - workflow: `mindy-successor check`;
-- run #591 / id `36825365041`;
+- run #679 / id `36833488957`;
+- event: push on `main`;
 - result: **SUCCESS**;
 - validator: **22 packs / 88 events / 39 actions / 20 endings**;
-- tests: **628 / 628 pass, 0 fail**.
+- tests: **672 / 672 pass, 0 fail**.
 
-Latest main observed during C4-135 was `70b8a7e371cb70b87ddbebf3b22566d49f367e1c`.
-The comparison `a44d0f7... -> 70b8a7e...` contains only task-pointer and queue-document changes. No production or test path changed, so #591 remains the exact executable evidence for the current shipped product tree.
+This exact SHA contains Satyr School v12, Satyr complete-career presentation v12 and Forest Authored Depth v13. C4-143 revalidated the combined shipped tree rather than reusing producer-head CI.
 
 Open/frozen PR behavior is not counted as shipped until integrated.
 
@@ -58,7 +58,13 @@ Live production includes:
 
 Exact-main regression evidence includes the clean natural Satyr run through real shifts, relationship/Night, paid School, crisis, 50-shift Hard Work, complex-ending eligibility, commit/completion and New Life.
 
-The richer Satyr presentation candidate #174 and School-v12 candidate #172 are **not** part of this shipped baseline.
+Satyr presentation #174 and Satyr School v12 #172 are now shipped on this baseline.
+
+- all live Satyr runtime events/stages/complex endings map to production presentation slots;
+- a real Satyr shift writes the exact live presentation ID;
+- project-owned static fallback, animation-off and missing-motion safety remain green;
+- the 12 collision-sensitive Satyr School localization values preserve Chat 5 ownership after Presentation integration;
+- RU/EN School/relationship/crisis/ending presentation remains presentation-only and does not mutate gameplay Save.
 
 ### Lumber
 
@@ -84,7 +90,7 @@ Live production includes:
 
 The current School production still keeps unresolved global producer/certificate/project design outside live authority.
 
-Satyr School v12 PR #172 adds narrower Satyr-specific content/parity and is not shipped on this baseline.
+Satyr School v12 #172 is shipped. Its three career-local hooks preserve the approved local paid-lesson/Night-study thresholds, existing teacher continuity, immediate Resolver behavior, exactly-once/reload semantics and the global School-threshold firewall.
 
 ### Forest / items — v11 + v12
 
@@ -117,7 +123,13 @@ Therefore Old Boundary is no longer classified as test-only/capability-injected 
 - The existing Lumber continuation reads the specimen and records the current Lumber career facts.
 - Route/challenge/checkpoint state and terminal result selection remain deterministic across save/reload.
 
-Forest Authored Depth v13 PR #175 is not shipped on this baseline.
+Forest Authored Depth v13 #175 is shipped.
+
+- route/challenge narrative responds to the real persisted route, season, last roll, stats, facts and exact item capabilities;
+- Logging Road, Hunter Trail and Old Boundary have bilingual authored depth without new Activity mechanics;
+- city preparation and equipment are acknowledged through existing facts/capabilities;
+- success/escape/failure and Lumber-return aftermath have live item/preparation variants;
+- repeated route/challenge copy remains deterministic across reload and does not mutate gameplay state.
 
 ### Ordinary poverty
 
@@ -150,9 +162,9 @@ Forest Authored Depth v13 PR #175 is not shipped on this baseline.
 - Secret Debt is absent as a production hidden career/state machine.
 - Lumber Forewoman lacks its natural School producer.
 - Full School certificate/project/ending design remains incomplete.
-- Forest v13 authored narrative depth is not shipped until #175 is integrated.
-- Satyr complete-career presentation v12 is not shipped until #174 is integrated.
-- Satyr School v12 is not shipped until #172 is integrated.
+- The accepted Undead complete-runtime / School / presentation wave (#178/#181/#182) is not shipped until Lead integration and the required C4-144/C4-146 exact-main gates.
+- Ordinary Poverty closure v14 #180 is accepted by QA but not shipped until Lead integration and C4-145.
+- Tavern complete-career runtime/content/presentation/School remains the next active producer wave and is not shipped until frozen green candidates pass C4-147/C4-148 and integration.
 
 ## C4-133 legacy selective-source disposition
 
@@ -183,9 +195,9 @@ QA has gated all three frozen candidates assigned by the current Chat 4 pointer:
 - PR #175 @ `234e1a6fac0d25b0393f7ffec84eac4007347c32`, CI #593, 581/581 — **PASS-WITH-NOTES**;
 - PR #172 @ `41ed6a9d54965a16bff004dae6e7fc79a2841883`, CI #592, 645/645 — **PASS-WITH-NOTES**.
 
-These verdicts do not make their content shipped. Lead integration plus exact current-main validation remains required.
+All three C4-136 candidates are now integrated. C4-143 re-gated exact current main `afed43c...` with CI #679 / 672 of 672 and closed the v13 current-main truth requirement.
 
-PR #178 is outside the current accepted gate set until it is rebuilt/frozen from the required current-main product base with exact-head green CI.
+The v14 candidates #178, #180, #181 and #182 have separately received C4-138..C4-141 PASS-WITH-NOTES verdicts on their frozen exact heads. They remain unshipped until their Lead integrations and post-merge main gates.
 
 ## Acceptance conclusion
 
@@ -193,8 +205,8 @@ Current main is a healthy executable product baseline.
 
 The trustworthy split is:
 
-- **directly/naturally player-reachable:** all three starter work loops; all-ten Hard Work/Meta; late-career base unlock/work; complete Satyr runtime slice; eight paid School courses and current School v11 content; Forest v12 natural item acquisition, three route contexts/challenge families, seasonal topology and extraction -> Lumber continuation; ordinary poverty/Night recovery; current RU/EN/save/presentation infrastructure.
+- **directly/naturally player-reachable:** all three starter work loops; all-ten Hard Work/Meta; late-career base unlock/work; complete Satyr runtime + School v12 + presentation slice; eight paid School courses; Forest v12 natural item acquisition/three-route challenge product plus Forest v13 authored depth; ordinary poverty/Night recovery; current RU/EN/save/presentation infrastructure.
 - **test/dependency-accelerated:** Lumber Forewoman's missing natural School producer and some repetition-heavy acceptance setup.
-- **not yet complete/shipped:** full Undead Farm career life, deep lives for the seven later careers, playable Palace, Secret Debt, complete School certificate/project/endings, and the open #174/#175/#172 presentation/content layers until integrated.
+- **not yet complete/shipped:** accepted but unintegrated Undead runtime/School/presentation wave, accepted but unintegrated Poverty v14 closure, deep lives for the remaining later careers, playable Palace, Secret Debt, complete global School certificate/project/endings, and the active Tavern wave.
 
 No fixture, preparation artifact, draft head or frozen-but-unmerged candidate is promoted to shipped status by this document.
