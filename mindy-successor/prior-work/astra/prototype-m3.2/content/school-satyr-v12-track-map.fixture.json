@@ -3,6 +3,10 @@
   "id": "school.satyr-maid.v12.track-map",
   "status": "LIVE_ID_MAP",
   "careerId": "satyr-maid",
+  "runtimeContract": {
+    "path": "mindy-successor/docs/tasks/SATYR_MAID_RUNTIME_CONTRACT_v1.json",
+    "c1d97Blob": "3b6f7e7fafe5d54dafe1d8a8521890dc9957ee03"
+  },
   "localMinorHookPolicy": {
     "counter": "lessons_completed",
     "threshold": 3,
@@ -15,7 +19,9 @@
       "courseId": "school.course.literacy_and_numbers",
       "trackId": "school.track.literacy_and_numbers",
       "satyrRole": "accounting_management",
-      "minorHookRelevant": true
+      "minorHookRelevant": true,
+      "careerFact": "school-management-ready",
+      "reactionEvent": "satyr-maid.school.management"
     },
     {
       "courseId": "school.course.arcana",
@@ -27,7 +33,9 @@
       "courseId": "school.course.rhetoric_and_social",
       "trackId": "school.track.rhetoric_and_social",
       "satyrRole": "rhetoric_social",
-      "minorHookRelevant": true
+      "minorHookRelevant": true,
+      "careerFact": "school-rhetoric-ready",
+      "reactionEvent": "satyr-maid.school.rhetoric"
     },
     {
       "courseId": "school.course.etiquette_and_presentation",
@@ -57,7 +65,9 @@
       "courseId": "school.course.body_confidence",
       "trackId": "school.track.body_confidence",
       "satyrRole": "body_confidence_boundary",
-      "minorHookRelevant": true
+      "minorHookRelevant": true,
+      "careerFact": "school-boundaries-ready",
+      "reactionEvent": "satyr-maid.school.boundaries"
     }
   ]
 }
