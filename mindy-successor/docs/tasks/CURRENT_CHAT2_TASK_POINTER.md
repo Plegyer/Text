@@ -1,35 +1,35 @@
 # CURRENT CHAT2 TASK POINTER
 
-Status: **TAVERN PRESENTATION v14 FROZEN + HUNTER PRESENTATION v15 ACTIVE**
+Status: **HUNTER PRESENTATION v15 FROZEN + GUARD PRESENTATION v16 ACTIVE PREP**
 Owner: Chat 2 / Presentation & Media Worker
 
-Frozen Tavern presentation candidate:
-- PR #200
-- exact head `4cf8aab9637e6393237d174e6d007dd0f3dcd24a`
-- exact-head CI #721 / id `36843623336`: SUCCESS
-- do not move it while Chat 4/integration uses it.
+Frozen Hunter final candidate:
+- PR #210
+- branch `chat2/hunter-presentation-v15-final`
+- exact head `b5ec54134f2363041ce32a31fafc7bdfbbabe6f9`
+- CI #790 / id `36867037325`: **SUCCESS**
+- validator: 37 packs / 136 events / 39 actions / 20 endings
+- tests: 696/696
+- status: CANDIDATE_FROZEN / READY FOR CHAT 4 QA
+- do not move it.
 
-Frozen Hunter runtime dependency:
-- PR #201
-- exact head `8af661de2ce6d73e4db0f61fe4206d3334822998`
-- exact-head CI #734 / id `36844983432`: SUCCESS
+Old Hunter working PR #207 is superseded by #210 for QA/integration.
 
-Related Hunter School candidate:
-- PR #199
-- exact head `f04c93db866b1d2603f6917b41297670f86b0bef`
-- CI #745 SUCCESS
-- preserve its School-owned authority; do not invent extra School consumers.
+Active next queue:
+- `TASK_CHAT2_PRESENTATION_QUEUE_v16.md`
+- C2-169..180
+- target: **Guard Complete Career Presentation**
+- working branch: `chat2/guard-presentation-v16`
 
-Active branch:
-- `chat2/hunter-presentation-v15`
-- created directly from frozen Hunter runtime head `8af661de2ce6d73e4db0f61fe4206d3334822998`
+Dependency rule:
+- Guard runtime PR #208 is still draft/mutable.
+- Contract-independent presentation inventory/copy/accessibility work may proceed now.
+- Final live identity binding and C2-180 freeze must wait for one exact frozen green Guard runtime head.
+- Final candidate must be rebuilt as a focused delta on that frozen runtime head.
 
-Current queue:
-- `TASK_CHAT2_PRESENTATION_QUEUE_v15.md`
-- C2-157..168
-- target: **Hunter Complete Career Presentation**
+Global boundary:
+- presentation/media/accessibility only;
+- no gameplay/runtime, Save/RNG, School/NightFlow/Activity mechanics, economy, ending eligibility/rewards or Meta changes.
 
-Start C2-157 immediately and continue through every unblocked task.
-
-Presentation/media/accessibility only.
-Do not change gameplay/runtime, Save/RNG, career state, School/NightFlow, Activity mechanics, economy, ending eligibility/rewards or Meta.
+Current project handoff:
+- `../LEADER1_HANDOFF_CHECKPOINT_2026-10-01.md`

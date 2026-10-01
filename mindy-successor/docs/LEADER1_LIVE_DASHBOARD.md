@@ -1,5 +1,14 @@
 # Leader 1 — Live Dashboard
 
+## CHAT 2 PIPELINE ADVANCE — 2026-10-01
+
+- Hunter presentation v15 is complete/frozen as final PR #210 @ `b5ec54134f2363041ce32a31fafc7bdfbbabe6f9`, CI #790 SUCCESS, 696/696.
+- Working draft #207 is superseded for QA/integration by #210.
+- Chat 2 advances immediately to Guard presentation v16 under the pipeline/no-idle rule.
+- Guard presentation may do contract-independent prep now; final C2-180 binding/freeze waits for one frozen green Guard runtime head from PR #208.
+- Frozen #210 must remain immutable while Chat 4 gates it.
+
+
 ## TAVERN SHIPPED / HUNTER NEXT — 2026-10-01 13:02Z
 
 This block supersedes the earlier resumed-Tavern snapshot.
