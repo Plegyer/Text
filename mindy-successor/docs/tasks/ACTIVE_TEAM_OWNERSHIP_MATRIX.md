@@ -1,5 +1,19 @@
 # Active Team Ownership Matrix
 
+## HANDOFF OWNERSHIP — 2026-10-01 11:33+03
+
+Current takeover source:
+- `../LEADER1_HANDOFF_CHECKPOINT_2026-10-01.md`.
+
+- **Chat 1 Developer / Integration** — Tavern runtime PR #187 is frozen, CI #682 green, C4-147 PASS-WITH-NOTES. No new runtime queue assigned until Lead chooses the next complete ordinary career.
+- **Chat 2 Presentation & Media** — must finalize Tavern presentation C2-155..156 against frozen runtime #187; draft #183 is not the final QA candidate.
+- **Chat 3 World + Career Content** — Tavern authored content PR #185 is frozen green and waiting for Chat 4 C4-148.
+- **Chat 4 QA + Product Acceptance** — next mandatory gate is C4-144 after the merged Undead runtime main CI; then C4-145, C4-146, Tavern C4-148.
+- **Chat 5 School + Text Localization** — Tavern School PR #191 is frozen green and waiting for Chat 4 C4-148. Undead School #181 remains accepted and pending Lead integration before #182.
+
+One file/slice = one active owner remains mandatory.
+
+
 ## LIVE OWNERSHIP — 2026-10-01 10:10+03
 
 This section supersedes older queue ranges below.
