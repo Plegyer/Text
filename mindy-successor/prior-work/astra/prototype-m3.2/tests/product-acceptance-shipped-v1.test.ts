@@ -153,6 +153,10 @@ test('PA10-PA13: normal lodging and optional Foreman Night are shipped and exact
 test('PA14-PA20: Forest entry/logging-road/reload/success/escape are shipped; Old Boundary item action-space remains acquisition-accelerated',()=>{
   let s=started();
   const energyBefore=s.run.dayState.energyCurrent;
+  // Dedicated Activity fixture: acquisition is covered by the v12 producer tests.
+  s.run.character.stats.reason=3;
+  s.run.character.stats.strength=4;
+  s.run.resources.inventory.field_preservation_kit=1;
 
   s=dispatch(s,{type:'enterActivity',id:'lumber.forest'},catalog);
   assert.equal(s.run.dayState.energyCurrent,energyBefore-2);
@@ -169,9 +173,21 @@ test('PA14-PA20: Forest entry/logging-road/reload/success/escape are shipped; Ol
   assert.equal(s.run.flow.activity?.internalState.routeId,'logging-road');
 
   s=reload(s);
-  s=dispatch(s,{type:'activityAction',id:'advance'},catalog);
+  s=dispatch(s,{type:'activityAction',id:'forest.challenge.logging-navigation'},catalog);
   assert.equal(s.run.flow.activity?.internalState.progress,1);
   assert.equal(s.run.dayState.energyCurrent,energyBefore-2);
+
+  s=reload(s);
+  s=dispatch(s,{type:'activityAction',id:'forest.challenge.logging-spring-mud'},catalog);
+  assert.equal(s.run.flow.activity?.internalState.progress,2);
+
+  s=reload(s);
+  s=dispatch(s,{type:'activityAction',id:'forest.challenge.logging-preserve-sample'},catalog);
+  assert.equal(s.run.flow.activity?.internalState.progress,4);
+
+  s=reload(s);
+  s=dispatch(s,{type:'activityAction',id:'advance'},catalog);
+  assert.equal(s.run.flow.activity?.internalState.progress,5);
 
   s=reload(s);
   s=dispatch(s,{type:'activityAction',id:'advance'},catalog);

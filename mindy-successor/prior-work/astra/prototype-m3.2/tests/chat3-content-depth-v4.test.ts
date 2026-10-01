@@ -71,14 +71,16 @@ test('C3-31 Forest audit matches current route and terminal result identities',(
   const activity=definitions.activities.find((entry:any)=>entry.id==='lumber.forest');
   assert.ok(activity);
 
-  assert.deepEqual(
-    activity.options.map((entry:any)=>entry.id),
-    forestAudit.activity.routeOptions.map((entry:any)=>entry.id)
-  );
+  const optionIds=new Set(activity.options.map((entry:any)=>entry.id));
+  for(const route of forestAudit.activity.routeOptions){
+    assert.ok(optionIds.has(route.id),route.id);
+  }
   assert.deepEqual(
     activity.results.map((entry:any)=>({id:entry.id,outcome:entry.outcome})),
     forestAudit.activity.resultIds.map((entry:any)=>({id:entry.id,outcome:entry.outcome}))
   );
+  // This v4 fixture remains a historical audit of the then-live slice.
+  // v12 extends the same Activity with authored challenges without rewriting the fixture.
   assert.deepEqual(forestAudit.activity.nonTerminalEncounterIds,[]);
   assert.deepEqual(forestAudit.activity.challengeIds,[]);
 

@@ -3319,6 +3319,139 @@
           }
         ]
       }
+    },
+    {
+      "id": "forest.hunter-outfitter",
+      "label": "Hunter outfitter",
+      "description": "Ask the hunter outfitter for a rope kit and the current trail signs.",
+      "cost": {
+        "money": 12,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "itemCount",
+          "id": "rope_kit",
+          "op": "eq",
+          "count": 0
+        },
+        {
+          "kind": "worldFact",
+          "fact": "forest.hunter-trail-clue",
+          "present": false
+        }
+      ],
+      "effects": [
+        {
+          "kind": "addItem",
+          "id": "rope_kit",
+          "count": 1
+        },
+        {
+          "kind": "addWorldFact",
+          "fact": "forest.hunter-trail-clue"
+        }
+      ],
+      "mode": "normal"
+    },
+    {
+      "id": "forest.collect-reinforced-axe",
+      "label": "Collect the reinforced axe",
+      "description": "Collect the reinforced work axe earned after being accepted by the Lumber crew.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "lumber",
+          "stage": "accepted-hand"
+        },
+        {
+          "kind": "itemCount",
+          "id": "reinforced_axe",
+          "op": "eq",
+          "count": 0
+        }
+      ],
+      "effects": [
+        {
+          "kind": "addItem",
+          "id": "reinforced_axe",
+          "count": 1
+        },
+        {
+          "kind": "addCareerFact",
+          "career": "lumber",
+          "fact": "forest-route-surveyed"
+        }
+      ],
+      "mode": "normal"
+    },
+    {
+      "id": "forest.claim-boundary-token",
+      "label": "Claim the Old Boundary token",
+      "description": "Ask the foreman for the old boundary token after the professional route is established.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "relationshipStage",
+          "relationship": "lumber.foreman",
+          "stage": "route-professional"
+        },
+        {
+          "kind": "itemCount",
+          "id": "old_boundary_token",
+          "op": "eq",
+          "count": 0
+        }
+      ],
+      "effects": [
+        {
+          "kind": "addItem",
+          "id": "old_boundary_token",
+          "count": 1
+        }
+      ],
+      "mode": "normal"
+    },
+    {
+      "id": "forest.collect-field-kit",
+      "label": "Collect the field preservation kit",
+      "description": "Collect the School field kit after enrolling in a real lesson.",
+      "cost": {
+        "money": 0,
+        "energy": 0
+      },
+      "conditions": [
+        {
+          "kind": "flag",
+          "key": "school.enrolled",
+          "value": true
+        },
+        {
+          "kind": "itemCount",
+          "id": "field_preservation_kit",
+          "op": "eq",
+          "count": 0
+        }
+      ],
+      "effects": [
+        {
+          "kind": "addItem",
+          "id": "field_preservation_kit",
+          "count": 1
+        },
+        {
+          "kind": "addWorldFact",
+          "fact": "forest.school-field-notes"
+        }
+      ],
+      "mode": "normal"
     }
   ],
   "endings": [
@@ -5178,9 +5311,9 @@
       "failurePolicy": "exit_to_day",
       "adapter": "counter.v1",
       "adapterConfig": {
-        "initialEndurance": 5,
-        "advanceEnduranceCost": 1,
-        "successAtProgress": 2,
+        "initialEndurance": 6,
+        "advanceEnduranceCost": 2,
+        "successAtProgress": 6,
         "failAtEndurance": 0
       },
       "results": [
@@ -5191,6 +5324,11 @@
             {
               "kind": "addWorldFact",
               "fact": "lumber.forest.truth-known"
+            },
+            {
+              "kind": "addItem",
+              "id": "forest_preserved_specimen",
+              "count": 1
             }
           ]
         },
@@ -5226,6 +5364,34 @@
           "setRoute": "logging-road"
         },
         {
+          "id": "forest.route.hunter-trail",
+          "label": "Hunter Trail",
+          "category": "route",
+          "conditions": [
+            {
+              "kind": "worldFact",
+              "fact": "forest.hunter-trail-clue",
+              "present": true
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "calendarSeason",
+                  "value": "summer"
+                },
+                {
+                  "kind": "calendarSeason",
+                  "value": "autumn"
+                }
+              ]
+            }
+          ],
+          "progressDelta": 0,
+          "enduranceCost": 0,
+          "setRoute": "hunter-trail"
+        },
+        {
           "id": "forest.route.old-boundary",
           "label": "Old boundary path",
           "category": "route",
@@ -5237,6 +5403,377 @@
             }
           ],
           "progressDelta": 0,
+          "enduranceCost": 0,
+          "setRoute": "old-boundary"
+        },
+        {
+          "id": "forest.challenge.logging-navigation",
+          "label": "Read the work marks",
+          "category": "navigation",
+          "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "stat",
+                  "stat": "reason",
+                  "op": "gte",
+                  "value": 3
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "lumber",
+                  "fact": "forest-route-surveyed",
+                  "present": true
+                }
+              ]
+            }
+          ],
+          "progressDelta": 1,
+          "enduranceCost": 0,
+          "setRoute": "logging-road"
+        },
+        {
+          "id": "forest.challenge.logging-spring-mud",
+          "label": "Cross the spring ruts",
+          "category": "physical_obstacle",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "spring"
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "stat",
+                  "stat": "strength",
+                  "op": "gte",
+                  "value": 4
+                },
+                {
+                  "kind": "itemCapability",
+                  "capability": "cross_rough_route",
+                  "present": true
+                }
+              ]
+            }
+          ],
+          "progressDelta": 1,
+          "enduranceCost": 1,
+          "setRoute": "logging-road"
+        },
+        {
+          "id": "forest.challenge.logging-summer-deadfall",
+          "label": "Clear the summer deadfall",
+          "category": "physical_obstacle",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "summer"
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "stat",
+                  "stat": "strength",
+                  "op": "gte",
+                  "value": 4
+                },
+                {
+                  "kind": "itemCapability",
+                  "capability": "cut_heavy_wood",
+                  "present": true
+                }
+              ]
+            }
+          ],
+          "progressDelta": 1,
+          "enduranceCost": 1,
+          "setRoute": "logging-road"
+        },
+        {
+          "id": "forest.challenge.logging-autumn-deadfall",
+          "label": "Open the autumn timber choke",
+          "category": "physical_obstacle",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "autumn"
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "stat",
+                  "stat": "endurance",
+                  "op": "gte",
+                  "value": 4
+                },
+                {
+                  "kind": "itemCapability",
+                  "capability": "cut_heavy_wood",
+                  "present": true
+                }
+              ]
+            }
+          ],
+          "progressDelta": 1,
+          "enduranceCost": 1,
+          "setRoute": "logging-road"
+        },
+        {
+          "id": "forest.challenge.logging-winter-ruts",
+          "label": "Balance across frozen ruts",
+          "category": "physical_obstacle",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "winter"
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "stat",
+                  "stat": "dexterity",
+                  "op": "gte",
+                  "value": 4
+                },
+                {
+                  "kind": "itemCapability",
+                  "capability": "cross_rough_route",
+                  "present": true
+                }
+              ]
+            }
+          ],
+          "progressDelta": 1,
+          "enduranceCost": 1,
+          "setRoute": "logging-road"
+        },
+        {
+          "id": "forest.challenge.logging-preserve-sample",
+          "label": "Preserve the resin sample",
+          "category": "extraction",
+          "conditions": [
+            {
+              "kind": "itemCapability",
+              "capability": "preserve_specimen",
+              "present": true
+            }
+          ],
+          "progressDelta": 2,
+          "enduranceCost": 0,
+          "setRoute": "logging-road"
+        },
+        {
+          "id": "forest.challenge.hunter-navigation",
+          "label": "Follow the hunter signs",
+          "category": "navigation",
+          "conditions": [
+            {
+              "kind": "worldFact",
+              "fact": "forest.hunter-trail-clue",
+              "present": true
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "calendarSeason",
+                  "value": "summer"
+                },
+                {
+                  "kind": "calendarSeason",
+                  "value": "autumn"
+                }
+              ]
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "stat",
+                  "stat": "wits",
+                  "op": "gte",
+                  "value": 3
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "forest.school-field-notes",
+                  "present": true
+                }
+              ]
+            }
+          ],
+          "progressDelta": 1,
+          "enduranceCost": 0,
+          "setRoute": "hunter-trail"
+        },
+        {
+          "id": "forest.challenge.hunter-rough-crossing",
+          "label": "Cross the washed ravine",
+          "category": "physical_obstacle",
+          "conditions": [
+            {
+              "kind": "worldFact",
+              "fact": "forest.hunter-trail-clue",
+              "present": true
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "calendarSeason",
+                  "value": "summer"
+                },
+                {
+                  "kind": "calendarSeason",
+                  "value": "autumn"
+                }
+              ]
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "itemCapability",
+                  "capability": "cross_rough_route",
+                  "present": true
+                },
+                {
+                  "kind": "stat",
+                  "stat": "dexterity",
+                  "op": "gte",
+                  "value": 4
+                }
+              ]
+            }
+          ],
+          "progressDelta": 1,
+          "enduranceCost": 1,
+          "setRoute": "hunter-trail"
+        },
+        {
+          "id": "forest.challenge.hunter-preserve-sample",
+          "label": "Preserve the trail specimen",
+          "category": "extraction",
+          "conditions": [
+            {
+              "kind": "worldFact",
+              "fact": "forest.hunter-trail-clue",
+              "present": true
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "calendarSeason",
+                  "value": "summer"
+                },
+                {
+                  "kind": "calendarSeason",
+                  "value": "autumn"
+                }
+              ]
+            },
+            {
+              "kind": "itemCapability",
+              "capability": "preserve_specimen",
+              "present": true
+            }
+          ],
+          "progressDelta": 2,
+          "enduranceCost": 0,
+          "setRoute": "hunter-trail"
+        },
+        {
+          "id": "forest.challenge.boundary-interpretation",
+          "label": "Interpret the boundary rite",
+          "category": "interpretation_ritual",
+          "conditions": [
+            {
+              "kind": "itemCapability",
+              "capability": "enter_old_boundary",
+              "present": true
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "stat",
+                  "stat": "magic",
+                  "op": "gte",
+                  "value": 3
+                },
+                {
+                  "kind": "stat",
+                  "stat": "reason",
+                  "op": "gte",
+                  "value": 4
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "forest.school-field-notes",
+                  "present": true
+                }
+              ]
+            }
+          ],
+          "progressDelta": 1,
+          "enduranceCost": 0,
+          "setRoute": "old-boundary"
+        },
+        {
+          "id": "forest.challenge.boundary-rough-crossing",
+          "label": "Cross the broken boundary wall",
+          "category": "physical_obstacle",
+          "conditions": [
+            {
+              "kind": "itemCapability",
+              "capability": "enter_old_boundary",
+              "present": true
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "itemCapability",
+                  "capability": "cross_rough_route",
+                  "present": true
+                },
+                {
+                  "kind": "stat",
+                  "stat": "dexterity",
+                  "op": "gte",
+                  "value": 4
+                }
+              ]
+            }
+          ],
+          "progressDelta": 1,
+          "enduranceCost": 1,
+          "setRoute": "old-boundary"
+        },
+        {
+          "id": "forest.challenge.boundary-preserve-sample",
+          "label": "Preserve the boundary sample",
+          "category": "extraction",
+          "conditions": [
+            {
+              "kind": "itemCapability",
+              "capability": "enter_old_boundary",
+              "present": true
+            },
+            {
+              "kind": "itemCapability",
+              "capability": "preserve_specimen",
+              "present": true
+            }
+          ],
+          "progressDelta": 2,
           "enduranceCost": 0,
           "setRoute": "old-boundary"
         }

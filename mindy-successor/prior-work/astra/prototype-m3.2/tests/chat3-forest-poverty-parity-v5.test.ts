@@ -31,14 +31,12 @@ test('C3-38 Forest coverage audit matches current production IDs and RU/EN surfa
   const activity=definitions.activities.find((entry:any)=>entry.id===manifest.expectedForest.activityId);
   assert.ok(activity);
 
-  assert.deepEqual(
-    activity.options.map((entry:any)=>entry.id),
-    manifest.expectedForest.routeOptionIds
-  );
-  assert.deepEqual(
-    activity.options.map((entry:any)=>entry.setRoute),
-    manifest.expectedForest.routeIds
-  );
+  const optionById=new Map<string,any>(activity.options.map((entry:any)=>[entry.id,entry]));
+  for(let i=0;i<manifest.expectedForest.routeOptionIds.length;i++){
+    const option=optionById.get(manifest.expectedForest.routeOptionIds[i]);
+    assert.ok(option,manifest.expectedForest.routeOptionIds[i]);
+    assert.equal(option.setRoute,manifest.expectedForest.routeIds[i]);
+  }
   assert.deepEqual(
     activity.results.map((entry:any)=>entry.id),
     manifest.expectedForest.resultIds

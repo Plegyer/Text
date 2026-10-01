@@ -70,6 +70,10 @@ test('release-candidate shipped E2E keeps one Save coherent across Lumber, Schoo
     schoolLessonsCommitted
   );
 
+  s=dispatch(s,{type:'action',id:'forest.collect-field-kit'},catalog);
+  assert.equal(s.run.resources.inventory.field_preservation_kit,1);
+  assert.ok(s.run.progression.worldFacts.includes('forest.school-field-notes'));
+
   // Explicit NightFlow -> paid normal lodging -> optional professional Foreman Night.
   s=reload(s);
   s=dispatch(s,{type:'endDay'},catalog);
@@ -92,7 +96,7 @@ test('release-candidate shipped E2E keeps one Save coherent across Lumber, Schoo
   assert.equal(s.run.dayState.energyCurrent,3);
   assert.equal(s.run.resources.money,lumberMoney-600);
 
-  // Shipped Forest logging-road path, no item/capability accelerator.
+  // Shipped Forest logging-road path with the naturally collected preservation kit.
   s=dispatch(s,{type:'enterActivity',id:'lumber.forest'},catalog);
   assert.equal(s.run.dayState.energyCurrent,1);
   assert.equal(s.run.flow.activity?.optionModelVersion,1);
@@ -106,9 +110,17 @@ test('release-candidate shipped E2E keeps one Save coherent across Lumber, Schoo
   assert.equal(s.run.flow.activity?.internalState.routeId,'logging-road');
 
   s=reload(s);
-  s=dispatch(s,{type:'activityAction',id:'advance'},catalog);
+  s=dispatch(s,{type:'activityAction',id:'forest.challenge.logging-navigation'},catalog);
   assert.equal(s.run.flow.activity?.internalState.progress,1);
 
+  s=reload(s);
+  s=dispatch(s,{type:'activityAction',id:'forest.challenge.logging-spring-mud'},catalog);
+  s=reload(s);
+  s=dispatch(s,{type:'activityAction',id:'forest.challenge.logging-preserve-sample'},catalog);
+  assert.equal(s.run.flow.activity?.internalState.progress,4);
+
+  s=reload(s);
+  s=dispatch(s,{type:'activityAction',id:'advance'},catalog);
   s=reload(s);
   s=dispatch(s,{type:'activityAction',id:'advance'},catalog);
   assert.equal(s.run.flow.activity,null);

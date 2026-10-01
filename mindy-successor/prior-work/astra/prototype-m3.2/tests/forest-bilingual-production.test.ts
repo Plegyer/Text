@@ -75,10 +75,16 @@ test('Forest RU source text matches localization fallback and Lumber Hard Work s
 
   const activity=definitions.activities.find((entry:any)=>entry.id==='lumber.forest');
   assert.ok(activity);
-  assert.deepEqual(activity.options.map((entry:any)=>entry.id),[
+  const optionIds=new Set(activity.options.map((entry:any)=>entry.id));
+  for(const id of [
     'forest.route.logging-road',
+    'forest.route.hunter-trail',
     'forest.route.old-boundary'
-  ]);
+  ])assert.ok(optionIds.has(id),id);
+  const categories=new Set(activity.options.map((entry:any)=>entry.category));
+  assert.ok(categories.has('navigation'));
+  assert.ok(categories.has('physical_obstacle'));
+  assert.ok(categories.has('interpretation_ritual'));
 
   const ending=definitions.endings.find((entry:any)=>entry.id==='ending.lumber.hard-work');
   assert.ok(ending);
