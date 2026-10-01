@@ -1,7 +1,7 @@
 # Chat 3 — Tavern Live Authored Content v15 Status
 
 Branch: `chat3/tavern-live-authored-v15`
-Base: `main` `778494d2d2bcefdfa714630e01a0331c570d7d94`
+Base runtime: `chat1/tavern-complete-v12` `061190c7324f6942b85d4444de6429c0a87e3ba9`
 
 C3-157: **COMPLETE**
 - inventoried legacy Gopher Tavern vs typed `tavern.shift` skeleton;
@@ -10,16 +10,19 @@ C3-157: **COMPLETE**
 - identified exact live authored gaps for C3-158..167;
 - made no runtime, balance, ending, or gameplay-ID changes.
 
-C1D-121: **CONSUMED** from `chat1/tavern-complete-v12` exact head `4c416b5103ebef18378f40b8bc1f80bbaac2f798`.
+C1D-121..130 producer surface: **CONSUMED** from `chat1/tavern-complete-v12` exact head `061190c7324f6942b85d4444de6429c0a87e3ba9`.
 
-C3-158..167 authored copy preparation: **COMPLETE / LIVE BINDING WAITING ON PRODUCER EVENTS**
-- prepared four bilingual variants for each Spring/Summer/Autumn/Winter shift family;
-- prepared bilingual rooms/confidentiality, rumour/evidence, role-relationship, housing/poverty, Forest return, and crisis/outcome copy;
-- every cross-system target is taken from `TAVERN_RUNTIME_CONTRACT_v1.json`;
-- no gameplay/event IDs, mechanics, effects, economy numbers, ending rules, School rules, NightFlow rules, or Secret Debt state were introduced.
+C3-158..167: **LIVE BOUND**
+- 16 seasonal shift scenes are live: four per Spring/Summer/Autumn/Winter, including a late-stage variant per season;
+- rooms/staff-key/guest-ledger/confidentiality copy is bound to exact access and relationship producers;
+- rumour/evidence copy is bound to exact information and Activity-return producers;
+- recurring-traveler work/Night/refusal/confidentiality copy is bound to the role-only relationship producer;
+- cheap/street housing assistance has distinct live copy while preserving ordinary lodging economics;
+- Forest return consumes the existing Activity result without a parallel Activity mechanic;
+- occupancy/supply/confidentiality crisis plus Innkeeper/Broker/Sanctuary/veteran/outcome-ready events have route-specific authored depth;
+- RU/EN localization covers every Chat 3 touched live Tavern scene/event/choice;
+- a producer-head mechanics baseline guards triggers, conditions, effects, Night policy, career/relationship definitions, item capability, economy tuning, and ending eligibility/rewards.
 
-The stable contract exists, but Chat 1 has not yet published all producer event/relationship/Night/item definitions required to bind C3-162..167 as live production. Chat 3 will bind only to those producer definitions as they appear.
-
-C3-168: not started; full exact-head CI/freeze applies only after the authored copy is bound to live producer definitions.
+C3-168: **IN PROGRESS** — focused production reachability/save-reload/no-mechanics-drift regression is installed; exact-head full CI/freeze remains.
 
 Hard boundaries remain: no shared runtime, no ending-condition rewrite, no School mechanics, no Secret Debt, no invented economy numbers, and no replacement gameplay IDs.

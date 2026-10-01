@@ -16,9 +16,10 @@ function variants(value:any,out:any[]=[]):any[]{
 
 test('C3-158..167 authored copy prep consumes the exact published C1D-121 contract',()=>{
   assert.equal(fixture.contract.path,'mindy-successor/docs/tasks/TAVERN_RUNTIME_CONTRACT_v1.json');
-  assert.equal(fixture.contract.exactHead,'4c416b5103ebef18378f40b8bc1f80bbaac2f798');
+  assert.equal(fixture.contract.exactHead,'061190c7324f6942b85d4444de6429c0a87e3ba9');
   assert.equal(fixture.bindingPolicy.createsGameplayIds,false);
   assert.equal(fixture.bindingPolicy.useProducerEventIdsOnly,true);
+  assert.equal(fixture.bindingPolicy.liveBound,true);
 
   assert.equal(fixture.seasonalShift.every((x:any)=>x.targetAction==='tavern.shift'),true);
   assert.ok(definitions.actions.some((x:any)=>x.id==='tavern.shift'));
