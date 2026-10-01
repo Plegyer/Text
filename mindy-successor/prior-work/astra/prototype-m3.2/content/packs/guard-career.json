@@ -318,7 +318,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "Substantial ordinary duty plus seasonal breadth makes Veteran service a complete route independent of any Major Case.",
+          "text": "Veteran is the route of broad ordinary service: many shifts across seasons, disputes, crowds, market duty, reports, and winter relief. Its identity is repeatable reliability rather than a Major Case.",
           "conditions": [],
           "media": []
         }
@@ -418,7 +418,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "Several Guard routes may now be ready. Readiness is not commitment: choose one branch now or leave all ready facts intact for later.",
+          "text": "Late-route readiness means the prerequisites for choosing a branch are present. It need not commit the career immediately and it does not create a new public ending.",
           "conditions": [],
           "media": []
         }
