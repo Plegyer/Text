@@ -6,11 +6,11 @@ Repository: `Plegyer/Text`
 
 ## Exact current-main health
 
-Current main inspected: `6f0e8803ea327b55c5079afb137b5aa016f614ec`.
+Current main inspected: `a30272dc91cab3d5286558a189d5d816f1841db7`.
 
 Exact-head GitHub Actions evidence:
 - workflow: `mindy-successor check`;
-- run #435 / id `36814269258`;
+- run #459 / id `36816282846`;
 - event: push on `main`;
 - conclusion: SUCCESS;
 - `Install dependencies`: SUCCESS;
@@ -71,11 +71,38 @@ This ledger is disposition/evidence only. It does not:
 - resolve producer-owned blockers.
 
 
-## C4-124 dependency state
+## C4-124 fresh-candidate gate
 
-At the first fresh-candidate check after C4-123:
+Chat 1 v9 became the first eligible fresh candidate.
 
-- Chat 1 v9 PR #147 was still draft/mutable. Its first head `8257571da18d24009f23d4e342dd494398536fbc` failed exact-head CI run #437 (560/570 pass); producer then moved the branch to a new mutable head, so the failed head is not QA-gated.
-- Chat 3 v11 PR #146 was the first fresh C2/C3/C5-v11 candidate visible, but head `e750480404b1270ffbe47ca1dad2cb381bcf29d1` failed exact-head CI run #436 (539/568 pass) and was not declared frozen.
-- Therefore C4-124 had **no eligible frozen candidate** at that snapshot. QA does not gate mutable or red heads and does not repair producer branches.
-- C4-124 remains pending until Chat 1 v9 freezes first, or—if it is not frozen—the first green/frozen C2/C3/C5 v11 candidate appears.
+- PR #147 first declared frozen head: `15d6ee3d91c5ad3fef82fe52a06ec2a590089003`.
+- Exact-head CI #448 / id `36815947100`: SUCCESS; 17 packs / 46 events / 35 actions / 18 endings; 570/570 tests.
+- Locked late-career thresholds, 50-shift Hard Work definitions, automatic all-ten Meta rewards and the derived 10/10 Palace predicate match the assigned master spec.
+- C4-124 verdict: **BLOCK** because current production Satyr Maid and Undead Farm shift actions unconditionally execute their one-time `first-shift` career transition on every shift. After the first shift advances to `known-face` / `reliable-helper`, the second real shift hits the typed transition `from` guard and throws. Direct test priming to 49 shifts or direct ending eligibility does not prove natural 50-shift reachability.
+- The producer then moved #147 to `987438954cfec9739281a512a1589cb2707095e5`, invalidating the old freeze. That intermediate delta added only `tests/ordinary-hard-work-meta.test.ts`; it did not repair production definitions/runtime. Exact-head CI #451 was green, but green CI did not remove the reachability blocker.
+- Producer repair work then resumed on a newer **draft/mutable** head. Per freeze protocol, QA does not gate that moving head until a new exact SHA is explicitly frozen.
+- Required producer repair is recorded on PR #147. QA did not modify production.
+
+This also corrects executable acceptance truth for current main: Satyr Maid and Undead Farm are Day-1 selectable and their first shifts work, but the shipped base work loops are not naturally repeatable after the first typed transition.
+
+
+## C4-124 repair-cycle update
+
+Independent exact-main verification at `a30272dc91cab3d5286558a189d5d816f1841db7` confirms the blocker is real production behavior, not a PR-comment interpretation:
+
+- `satyr-maid.shift` increments `completed_shifts` and then unconditionally calls `advanceCareer(satyr-maid, first-shift)`;
+- `undead-farm.shift` does the same for `undead-farm`;
+- those `first-shift` transitions are one-time only: `new-maid -> known-face` and `new-hand -> reliable-helper`;
+- current-main `applyTransition(...)` strictly rejects a transition when the current stage is not in the transition's `from` set.
+
+The latest producer repair-cycle head observed during QA, `c0ebb6034c9714a943f2193b7b16ae7277c10cc4`, is still draft/mutable and its exact-head run #467 / id `36816536264` is FAILURE (570/572 pass).
+
+That attempted repair is not acceptable yet:
+- it globally weakens the typed-transition wrong-stage invariant by treating `state.stage === transition.to` as a no-op;
+- the existing atomic wrong-stage regression fails;
+- the new natural 50-shift regression also fails because its helper does not complete NightFlow before later work.
+
+C4-124 therefore remains **BLOCK**. A new verdict requires a fresh producer-owned repair, exact-head full green CI, and an explicit new freeze SHA.
+
+
+Producer head-movement note: after the repair-cycle evidence above was recorded, PR #147 moved again to `e9e1c4d5cdafcdf5e8571170cd9b699426536746` while remaining draft. The PR body still names the superseded frozen SHA `15d6ee3d...`. QA does not issue a new verdict on this mutable head; the standing C4-124 disposition remains BLOCK until an explicit new freeze + exact-head green CI.
