@@ -4889,119 +4889,6 @@
       ]
     },
     {
-      "id": "tavern.recurring-traveler",
-      "label": "Recurring Traveler",
-      "initialStage": "introduced",
-      "stages": [
-        "introduced",
-        "trusted",
-        "night-request",
-        "request-resolved",
-        "confidentiality-resolved"
-      ],
-      "transitions": [
-        {
-          "id": "build-trust",
-          "from": [
-            "introduced"
-          ],
-          "to": "trusted",
-          "conditions": [
-            {
-              "kind": "relationshipFact",
-              "relationship": "tavern.recurring-traveler",
-              "fact": "introduced-at-work",
-              "present": true
-            },
-            {
-              "kind": "relationshipCounter",
-              "relationship": "tavern.recurring-traveler",
-              "counter": "work-meetings",
-              "op": "gte",
-              "value": 2
-            }
-          ],
-          "effects": [
-            {
-              "kind": "addRelationshipFact",
-              "relationship": "tavern.recurring-traveler",
-              "fact": "professional-trust-earned"
-            }
-          ]
-        },
-        {
-          "id": "night-request",
-          "from": [
-            "trusted"
-          ],
-          "to": "night-request",
-          "conditions": [
-            {
-              "kind": "relationshipFact",
-              "relationship": "tavern.recurring-traveler",
-              "fact": "night-met",
-              "present": true
-            }
-          ],
-          "effects": []
-        },
-        {
-          "id": "request-resolved",
-          "from": [
-            "night-request"
-          ],
-          "to": "request-resolved",
-          "conditions": [
-            {
-              "kind": "relationshipFact",
-              "relationship": "tavern.recurring-traveler",
-              "fact": "request-resolved",
-              "present": true
-            }
-          ],
-          "effects": []
-        },
-        {
-          "id": "confidentiality-kept",
-          "from": [
-            "request-resolved"
-          ],
-          "to": "confidentiality-resolved",
-          "conditions": [
-            {
-              "kind": "relationshipChoice",
-              "relationship": "tavern.recurring-traveler",
-              "choice": "confidentiality-response",
-              "value": "keep-private"
-            }
-          ],
-          "effects": [
-            {
-              "kind": "addRelationshipFact",
-              "relationship": "tavern.recurring-traveler",
-              "fact": "confidentiality-kept"
-            }
-          ]
-        },
-        {
-          "id": "confidentiality-shared",
-          "from": [
-            "request-resolved"
-          ],
-          "to": "confidentiality-resolved",
-          "conditions": [
-            {
-              "kind": "relationshipChoice",
-              "relationship": "tavern.recurring-traveler",
-              "choice": "confidentiality-response",
-              "value": "share-route-only"
-            }
-          ],
-          "effects": []
-        }
-      ]
-    },
-    {
       "id": "tavern",
       "label": "Tavern",
       "initialStage": "new-hand",
@@ -5505,6 +5392,119 @@
               "fact": "partner-ready"
             }
           ]
+        }
+      ]
+    },
+    {
+      "id": "tavern.recurring-traveler",
+      "label": "Recurring Traveler",
+      "initialStage": "introduced",
+      "stages": [
+        "introduced",
+        "trusted",
+        "night-request",
+        "request-resolved",
+        "confidentiality-resolved"
+      ],
+      "transitions": [
+        {
+          "id": "build-trust",
+          "from": [
+            "introduced"
+          ],
+          "to": "trusted",
+          "conditions": [
+            {
+              "kind": "relationshipFact",
+              "relationship": "tavern.recurring-traveler",
+              "fact": "introduced-at-work",
+              "present": true
+            },
+            {
+              "kind": "relationshipCounter",
+              "relationship": "tavern.recurring-traveler",
+              "counter": "work-meetings",
+              "op": "gte",
+              "value": 2
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "tavern.recurring-traveler",
+              "fact": "professional-trust-earned"
+            }
+          ]
+        },
+        {
+          "id": "night-request",
+          "from": [
+            "trusted"
+          ],
+          "to": "night-request",
+          "conditions": [
+            {
+              "kind": "relationshipFact",
+              "relationship": "tavern.recurring-traveler",
+              "fact": "night-met",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "request-resolved",
+          "from": [
+            "night-request"
+          ],
+          "to": "request-resolved",
+          "conditions": [
+            {
+              "kind": "relationshipFact",
+              "relationship": "tavern.recurring-traveler",
+              "fact": "request-resolved",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "confidentiality-kept",
+          "from": [
+            "request-resolved"
+          ],
+          "to": "confidentiality-resolved",
+          "conditions": [
+            {
+              "kind": "relationshipChoice",
+              "relationship": "tavern.recurring-traveler",
+              "choice": "confidentiality-response",
+              "value": "keep-private"
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "tavern.recurring-traveler",
+              "fact": "confidentiality-kept"
+            }
+          ]
+        },
+        {
+          "id": "confidentiality-shared",
+          "from": [
+            "request-resolved"
+          ],
+          "to": "confidentiality-resolved",
+          "conditions": [
+            {
+              "kind": "relationshipChoice",
+              "relationship": "tavern.recurring-traveler",
+              "choice": "confidentiality-response",
+              "value": "share-route-only"
+            }
+          ],
+          "effects": []
         }
       ]
     }
