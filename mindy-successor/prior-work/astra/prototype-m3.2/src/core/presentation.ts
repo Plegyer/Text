@@ -668,7 +668,7 @@ export function presentationSlots(cat:Catalog):PresentationSlot[]{
   }
 
   for(const itemId of GUARD_ITEM_IDS){
-    if((cat.definitions.itemDefinitions??[]).some(item=>item.id===itemId)){
+    if((cat.definitions.itemDefinitions??[]).some(item=>String(item.id)===itemId)){
       add({
         id:presentationIdForGuardItem(itemId),
         label:`Guard · item · ${itemId}`,
