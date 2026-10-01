@@ -1,43 +1,33 @@
 # CURRENT CHAT4 TASK POINTER
 
-Status: **ACTIVE — C4-132 POST-MERGE MAIN GATE**
+Status: **ACTIVE — C4-133/C4-134 + NEXT-WAVE QA**
 Owner: Chat 4 / QA + Product Acceptance Gate
 
-Current queue:
-- `TASK_CHAT4_QA_QUEUE_v13.md`
-- C4-126..137
-
 Completed:
-- C4-126 — PR #147: PASS-WITH-NOTES
-- C4-127 — PR #151: PASS-WITH-NOTES
-- C4-128 — PR #146: PASS-WITH-NOTES
-- C4-129 — PR #156: PASS-WITH-NOTES
-- C4-130 — integration order/collision review
-- C4-131 — post-Chat1 main gate: PASS
+- C4-126..130 — accepted #147/#151/#146/#156 and integration order;
+- C4-131 — post-Chat1 main PASS;
+- C4-132 — post-Chat2 main PASS on `63a1f89e9dd7f754f7ec1c6851396a2a7b15bb53`, CI #552, 581/581.
 
-Second accepted integration is now merged:
-- Lead integration PR #163
-- production merge commit: `bdc4fe74f267c4d95b30aedcac9dc2c65751378b`
-- source candidate: PR #151 frozen head `463d877009b5ecc1d255d7aa27a91bb7c38016e5`
-- integration exact-head CI #543: **SUCCESS**
-- the narrow ending-presentation assertion collision was resolved without changing production semantics.
+Continue immediately:
 
-**Do C4-132 now.**
+### First
+- C4-133 — legacy selective-source check for #124/#136/#139;
+- C4-134 — refresh starter trio truth on current main.
 
-Required C4-132:
-1. re-query exact current main and latest main CI;
-2. verify the combined Chat 1 + Chat 2 production state, especially:
-   - all 18 current ending definitions still map to unique live semantic slots;
-   - all-ten Hard Work static/presentation surfaces are reachable;
-   - committed-state localization is live RU/EN;
-   - Satyr Maid / Undead Farm 3-candidate media pools + static fallback remain valid;
-   - animation-off/missing-media safety remains green;
-   - Chat 1 gameplay/Meta/Palace assertions remain green;
-3. record exact main SHA + exact CI/run evidence;
-4. if PASS, continue automatically to C4-133 while Lead advances the accepted Forest/School integrations.
+### Then use C4-136 as live next-wave gates
+Priority:
+1. PR #164 — Satyr Maid complete-career runtime
+   - frozen head `de27bb5ac70edb7238657fcb51c1f201a1b1908e`
+   - CI #555 SUCCESS
+2. PR #162 — Forest first product slice
+   - frozen head `86e6af0d4743a4b42bd23eec1f8ba89ab0f401f9`
+   - CI #544 SUCCESS
+3. Chat 2 Satyr v12 final candidate once C2-132 freezes it.
+4. Chat 5 Satyr School v12 clean candidate once C5-132 freezes it.
 
-Next Lead integration already prepared:
-- PR #167 — accepted Chat 3 #146 over current Chat 2 state; retargeted to main and awaiting fresh combined CI.
+Do not wait idly on one blocked candidate. Gate the next eligible frozen green head.
 
-Do not implement production fixes.
-Do not reuse pre-merge QA evidence as substitute for current-main verification.
+C4-135 remains the Forest/School current-main truth refresh after those accepted integrations actually land.
+C4-137 closes the queue with durable acceptance evidence.
+
+Do not implement producer fixes.
