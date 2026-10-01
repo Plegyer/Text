@@ -1998,11 +1998,6 @@
           "career": "undead-farm",
           "counter": "completed_shifts",
           "amount": 1
-        },
-        {
-          "kind": "advanceCareer",
-          "career": "undead-farm",
-          "transition": "first-shift"
         }
       ],
       "mode": "normal",
@@ -2026,15 +2021,51 @@
       "scenes": [
         {
           "id": "spring.default",
-          "text": "Spring farm shift: wet ground, fresh growth, and the first unstable magical shoots need constant attention.",
+          "text": "Spring farm shift: wet ground, fresh growth, and ordinary planting work define the day.",
           "conditions": [],
           "media": [
             "stage.hunt.spring"
           ]
         },
         {
+          "id": "spring.wet-beds",
+          "text": "Spring runoff forces you to choose what can be planted now and what needs drainage first.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "spring"
+            },
+            {
+              "kind": "careerStage",
+              "career": "undead-farm",
+              "stage": "reliable-helper"
+            }
+          ],
+          "media": [
+            "stage.hunt.spring"
+          ]
+        },
+        {
+          "id": "spring.process-check",
+          "text": "As process keeper, you separate ordinary spring output from anything unstable before it reaches storage.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "spring"
+            },
+            {
+              "kind": "careerStage",
+              "career": "undead-farm",
+              "stage": "keeper-of-process"
+            }
+          ],
+          "media": [
+            "stage.hunt.spring"
+          ]
+        },
+        {
           "id": "summer.default",
-          "text": "Summer farm shift: fast growth and heavy maintenance keep both living crops and undead workers busy.",
+          "text": "Summer farm shift: fast growth and heavy maintenance make ordinary output abundant.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -2046,8 +2077,44 @@
           ]
         },
         {
+          "id": "summer.overgrowth",
+          "text": "Summer overgrowth turns the shift into triage between harvest volume and worker maintenance.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "summer"
+            },
+            {
+              "kind": "careerStage",
+              "career": "undead-farm",
+              "stage": "reliable-helper"
+            }
+          ],
+          "media": [
+            "stage.hunt.summer"
+          ]
+        },
+        {
+          "id": "summer.production-run",
+          "text": "Keeper-level summer work is a production run: sort the high-volume crop before the heat spoils it.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "summer"
+            },
+            {
+              "kind": "careerStage",
+              "career": "undead-farm",
+              "stage": "keeper-of-process"
+            }
+          ],
+          "media": [
+            "stage.hunt.summer"
+          ]
+        },
+        {
           "id": "autumn.default",
-          "text": "Autumn farm shift: harvest, sorting, and processing compete for every hour before storage closes.",
+          "text": "Autumn farm shift: harvest and processing compete for storage space and time.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -2059,12 +2126,84 @@
           ]
         },
         {
+          "id": "autumn.contract-sort",
+          "text": "Autumn work shifts toward sorting stable goods that can actually survive delivery.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "autumn"
+            },
+            {
+              "kind": "careerStage",
+              "career": "undead-farm",
+              "stage": "reliable-helper"
+            }
+          ],
+          "media": [
+            "stage.hunt.autumn"
+          ]
+        },
+        {
+          "id": "autumn.reserve",
+          "text": "As process keeper, you reserve part of the autumn output for reliable supply instead of pushing everything out at once.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "autumn"
+            },
+            {
+              "kind": "careerStage",
+              "career": "undead-farm",
+              "stage": "keeper-of-process"
+            }
+          ],
+          "media": [
+            "stage.hunt.autumn"
+          ]
+        },
+        {
           "id": "winter.default",
-          "text": "Winter farm shift: storage, repair, and careful work with the strangest preserved materials move indoors.",
+          "text": "Winter farm shift: storage, repair, and strange preserved materials move indoors.",
           "conditions": [
             {
               "kind": "calendarSeason",
               "value": "winter"
+            }
+          ],
+          "media": [
+            "stage.hunt.winter"
+          ]
+        },
+        {
+          "id": "winter.specimen-check",
+          "text": "Winter storage exposes a small unstable specimen that needs separation from ordinary stock.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "winter"
+            },
+            {
+              "kind": "careerStage",
+              "career": "undead-farm",
+              "stage": "reliable-helper"
+            }
+          ],
+          "media": [
+            "stage.hunt.winter"
+          ]
+        },
+        {
+          "id": "winter.analysis-bench",
+          "text": "Keeper-level winter work turns the indoor bench into a controlled specimen and storage station.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "winter"
+            },
+            {
+              "kind": "careerStage",
+              "career": "undead-farm",
+              "stage": "keeper-of-process"
             }
           ],
           "media": [
@@ -2083,6 +2222,11 @@
             "kind": "modifyStat",
             "stat": "magic",
             "delta": 1
+          },
+          {
+            "kind": "addItem",
+            "id": "farm_produce",
+            "count": 1
           }
         ],
         "summer": [
@@ -2095,6 +2239,11 @@
             "kind": "modifyStat",
             "stat": "strength",
             "delta": 1
+          },
+          {
+            "kind": "addItem",
+            "id": "farm_produce",
+            "count": 2
           }
         ],
         "autumn": [
@@ -2107,6 +2256,11 @@
             "kind": "modifyStat",
             "stat": "reason",
             "delta": 1
+          },
+          {
+            "kind": "addItem",
+            "id": "farm_produce",
+            "count": 2
           }
         ],
         "winter": [
@@ -2119,6 +2273,11 @@
             "kind": "modifyStat",
             "stat": "reason",
             "delta": 1
+          },
+          {
+            "kind": "addItem",
+            "id": "farm_unstable_specimen",
+            "count": 1
           }
         ]
       }
@@ -3928,6 +4087,87 @@
         }
       ],
       "epilogue": "You become known for service on clear terms: professional warmth without surrendering control over your own boundaries."
+    },
+    {
+      "id": "ending.undead-farm.research-farmer",
+      "title": "Undead Farm — Research Farmer",
+      "description": "A complex Farm ending built from School-backed analysis, a preserved specimen, and a solved containment crisis.",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "undead-farm",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 15
+        },
+        {
+          "kind": "careerFact",
+          "career": "undead-farm",
+          "fact": "school-research-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "undead-farm",
+          "fact": "sample-preserved",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "undead-farm",
+          "fact": "crisis-research",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "undead-farm",
+          "fact": "research-ready",
+          "present": true
+        }
+      ],
+      "reward": "undead-farm.research-farmer.compat",
+      "metaRewards": [],
+      "epilogue": "You turn the farm's strange production into a disciplined field of study without requiring a new permanent Meta modifier."
+    },
+    {
+      "id": "ending.undead-farm.successor",
+      "title": "Undead Farm — Successor",
+      "description": "A management ending built from production experience, professional trust, School-backed records, and a resolved farm crisis.",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "undead-farm",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 15
+        },
+        {
+          "kind": "careerFact",
+          "career": "undead-farm",
+          "fact": "school-management-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "undead-farm",
+          "fact": "successor-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "undead-farm",
+          "fact": "crisis-successor",
+          "present": true
+        },
+        {
+          "kind": "relationshipStage",
+          "relationship": "undead-farm.keeper",
+          "stage": "partner-ready"
+        }
+      ],
+      "reward": "undead-farm.successor.compat",
+      "metaRewards": [],
+      "epilogue": "You take responsibility for the farm through production records and professional trust, not a romance shortcut."
     }
   ],
   "careers": [
@@ -4146,7 +4386,13 @@
       "initialStage": "new-hand",
       "stages": [
         "new-hand",
-        "reliable-helper"
+        "reliable-helper",
+        "keeper-of-process",
+        "veteran",
+        "research",
+        "successor",
+        "external-anomaly",
+        "outcome-ready"
       ],
       "transitions": [
         {
@@ -4171,6 +4417,161 @@
               "fact": "first-shift-complete"
             }
           ]
+        },
+        {
+          "id": "keeper-of-process",
+          "from": [
+            "reliable-helper"
+          ],
+          "to": "keeper-of-process",
+          "conditions": [
+            {
+              "kind": "careerCounter",
+              "career": "undead-farm",
+              "counter": "completed_shifts",
+              "op": "gte",
+              "value": 8
+            },
+            {
+              "kind": "careerFact",
+              "career": "undead-farm",
+              "fact": "basic-production-ready",
+              "present": true
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "undead-farm",
+              "fact": "process-keeper-ready"
+            }
+          ]
+        },
+        {
+          "id": "branch-veteran",
+          "from": [
+            "keeper-of-process"
+          ],
+          "to": "veteran",
+          "conditions": [
+            {
+              "kind": "careerCounter",
+              "career": "undead-farm",
+              "counter": "completed_shifts",
+              "op": "gte",
+              "value": 20
+            },
+            {
+              "kind": "careerFact",
+              "career": "undead-farm",
+              "fact": "crisis-veteran",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "branch-research",
+          "from": [
+            "keeper-of-process"
+          ],
+          "to": "research",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "undead-farm",
+              "fact": "school-research-ready",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "undead-farm",
+              "fact": "sample-preserved",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "undead-farm",
+              "fact": "crisis-research",
+              "present": true
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "undead-farm",
+              "fact": "research-ready"
+            }
+          ]
+        },
+        {
+          "id": "branch-successor",
+          "from": [
+            "keeper-of-process"
+          ],
+          "to": "successor",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "undead-farm",
+              "fact": "successor-ready",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "undead-farm",
+              "fact": "crisis-successor",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "branch-external-anomaly",
+          "from": [
+            "keeper-of-process"
+          ],
+          "to": "external-anomaly",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "undead-farm",
+              "fact": "activity-source-returned",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "undead-farm",
+              "fact": "sample-preserved",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "undead-farm",
+              "fact": "external-anomaly-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "outcome-ready",
+          "from": [
+            "veteran",
+            "research",
+            "successor",
+            "external-anomaly"
+          ],
+          "to": "outcome-ready",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "undead-farm",
+              "fact": "outcome-ready",
+              "present": true
+            }
+          ],
+          "effects": []
         }
       ]
     },
@@ -4371,6 +4772,103 @@
             }
           ],
           "effects": []
+        }
+      ]
+    },
+    {
+      "id": "undead-farm.keeper",
+      "label": "Farm Keeper",
+      "initialStage": "introduced",
+      "stages": [
+        "introduced",
+        "professional-trust",
+        "night-request",
+        "request-resolved",
+        "partner-ready"
+      ],
+      "transitions": [
+        {
+          "id": "build-trust",
+          "from": [
+            "introduced"
+          ],
+          "to": "professional-trust",
+          "conditions": [
+            {
+              "kind": "relationshipFact",
+              "relationship": "undead-farm.keeper",
+              "fact": "introduced-at-work",
+              "present": true
+            },
+            {
+              "kind": "relationshipCounter",
+              "relationship": "undead-farm.keeper",
+              "counter": "work-meetings",
+              "op": "gte",
+              "value": 2
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "undead-farm.keeper",
+              "fact": "professional-trust-earned"
+            }
+          ]
+        },
+        {
+          "id": "night-request",
+          "from": [
+            "professional-trust"
+          ],
+          "to": "night-request",
+          "conditions": [
+            {
+              "kind": "relationshipFact",
+              "relationship": "undead-farm.keeper",
+              "fact": "night-met",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "request-resolved",
+          "from": [
+            "night-request"
+          ],
+          "to": "request-resolved",
+          "conditions": [
+            {
+              "kind": "relationshipFact",
+              "relationship": "undead-farm.keeper",
+              "fact": "request-resolved",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "partner-ready",
+          "from": [
+            "request-resolved"
+          ],
+          "to": "partner-ready",
+          "conditions": [
+            {
+              "kind": "relationshipChoice",
+              "relationship": "undead-farm.keeper",
+              "choice": "request-response",
+              "value": "accepted"
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "undead-farm.keeper",
+              "fact": "partner-ready"
+            }
+          ]
         }
       ]
     }
@@ -5297,6 +5795,46 @@
       ],
       "nextDayEffects": [],
       "nextDayEnergyDelta": 0
+    },
+    {
+      "id": "undead-farm.night.keeper-request",
+      "label": "Meet the farm keeper after work",
+      "conditions": [
+        {
+          "kind": "relationshipStage",
+          "relationship": "undead-farm.keeper",
+          "stage": "professional-trust"
+        },
+        {
+          "kind": "relationshipChoice",
+          "relationship": "undead-farm.keeper",
+          "choice": "night-response",
+          "value": "accepted"
+        }
+      ],
+      "effects": [],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": 0
+    },
+    {
+      "id": "undead-farm.night.process-notes",
+      "label": "Review farm process notes",
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "undead-farm",
+          "stage": "keeper-of-process"
+        }
+      ],
+      "effects": [
+        {
+          "kind": "addCareerFact",
+          "career": "undead-farm",
+          "fact": "process-notes-reviewed"
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": 0
     }
   ],
   "activities": [
@@ -5807,6 +6345,34 @@
       "label": "Old Boundary Token",
       "capabilities": [
         "enter_old_boundary"
+      ]
+    },
+    {
+      "id": "farm_produce",
+      "label": "Farm Produce",
+      "capabilities": [
+        "farm_product"
+      ]
+    },
+    {
+      "id": "farm_unstable_specimen",
+      "label": "Unstable Farm Specimen",
+      "capabilities": [
+        "unstable_farm_sample"
+      ]
+    },
+    {
+      "id": "farm_preserved_specimen",
+      "label": "Preserved Farm Specimen",
+      "capabilities": [
+        "preserved_farm_sample"
+      ]
+    },
+    {
+      "id": "farm_delivery_input",
+      "label": "Prepared Farm Delivery",
+      "capabilities": [
+        "farm_delivery_input"
       ]
     }
   ]

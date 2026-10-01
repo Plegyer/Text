@@ -16,6 +16,7 @@ const undeadSuccessor=load(manifest.fixtures.undeadSuccessor);
 const povertySeasonal=load(manifest.fixtures.povertySeasonal);
 const povertyContacts=load(manifest.fixtures.povertyContacts);
 const satyrRuntime=load('../../../docs/tasks/SATYR_MAID_RUNTIME_CONTRACT_v1.json');
+const undeadRuntime=load('../../../docs/tasks/UNDEAD_FARM_RUNTIME_CONTRACT_v1.json');
 
 const packs=manifest.expected.povertyPackIds.map((id:string)=>
   load('content/packs/'+id+'.json')
@@ -40,14 +41,16 @@ test('C3 starter-career identity maps stay exact to current production careers a
     'first-shift','known-face','house-regular','veteran-service',
     'branch-house-power','branch-personal-network','branch-boundaries','outcome-ready'
   ]);
-  assert.deepEqual(undead,undeadIdentity.career);
+  assert.equal(undead.initialStage,undeadRuntime.career.stages[0]);
+  assert.deepEqual(undead.stages,undeadRuntime.career.stages);
+  assert.deepEqual(undead.transitions.map((transition:any)=>transition.id),undeadRuntime.career.transitions);
 
   const satyrAction=definitions.actions.find((action:any)=>action.id===manifest.expected.satyrActionId);
   const undeadAction=definitions.actions.find((action:any)=>action.id===manifest.expected.undeadActionId);
   assert.ok(satyrAction);
   assert.ok(undeadAction);
   for(const id of manifest.expected.satyrSceneIds)assert.ok(satyrAction.scenes.some((scene:any)=>scene.id===id),id);
-  assert.deepEqual(undeadAction.scenes.map((scene:any)=>scene.id),manifest.expected.undeadSceneIds);
+  for(const id of manifest.expected.undeadSceneIds)assert.ok(undeadAction.scenes.some((scene:any)=>scene.id===id),id);
 
   const satyrScenes=new Set(satyrAction.scenes.map((scene:any)=>scene.id));
   const undeadScenes=new Set(undeadAction.scenes.map((scene:any)=>scene.id));
@@ -57,56 +60,42 @@ test('C3 starter-career identity maps stay exact to current production careers a
   for(const entry of undeadSuccessor.hooks)assert.ok(undeadScenes.has(entry.sceneId),entry.sceneId);
 });
 
-test('C3 starter-career collision guard accepts approved Satyr v10 runtime and still forbids guessed Undead systems',()=>{
-  assert.equal((definitions.events??[]).some((event:any)=>/undead-farm/.test(JSON.stringify(event))),false);
-  assert.equal((definitions.relationships??[]).some((rel:any)=>/undead-farm/.test(JSON.stringify(rel))),false);
-
+test('C3 starter-career collision guard accepts approved Satyr and Undead runtime contracts',()=>{
   const satyrRelationship=definitions.relationships.find((rel:any)=>rel.id===satyrRuntime.relationship.id);
   assert.ok(satyrRelationship);
   assert.deepEqual(satyrRelationship.stages,satyrRuntime.relationship.stages);
 
+  const undeadRelationship=definitions.relationships.find((rel:any)=>rel.id===undeadRuntime.relationship.id);
+  assert.ok(undeadRelationship);
+  assert.deepEqual(undeadRelationship.stages,undeadRuntime.relationship.stages);
+
   assert.deepEqual(
-    definitions.endings
-      .filter((ending:any)=>/satyr-maid/.test(ending.id))
-      .map((ending:any)=>ending.id)
-      .sort(),
+    definitions.endings.filter((ending:any)=>/satyr-maid/.test(ending.id)).map((ending:any)=>ending.id).sort(),
     [...satyrRuntime.endings].sort()
   );
   assert.deepEqual(
-    definitions.endings
-      .filter((ending:any)=>/undead-farm/.test(ending.id))
-      .map((ending:any)=>ending.id),
-    ['ending.undead-farm.hard-work']
+    definitions.endings.filter((ending:any)=>/undead-farm/.test(ending.id)).map((ending:any)=>ending.id).sort(),
+    [...undeadRuntime.endings].sort()
   );
 
-  // These fixtures predate the approved runtime and remain historical content-only evidence.
+  // Preparation fixtures predate both approved complete-career runtimes and remain historical evidence only.
   assert.equal(satyrIdentity.identityFamilies.guest.productionIdentityPresent,false);
   assert.equal(satyrService.invariants.noNewGuestIdentity,true);
   assert.equal(satyrBoundary.boundaries.persistentBoundaryState,false);
-
   assert.equal(undeadIdentity.research.productionIdentityPresent,false);
   assert.equal(undeadIdentity.successor.productionIdentityPresent,false);
   assert.equal(undeadIdentity.external.productionIdentityPresent,false);
-  assert.equal(undeadResearch.boundaries.noResearchFact,true);
-  assert.equal(undeadResearch.boundaries.noSpecimenItemCreated,true);
-  assert.equal(undeadSuccessor.invariants.noNewRelationshipState,true);
-  assert.equal(undeadSuccessor.invariants.noNewWorldFact,true);
-  assert.equal(undeadSuccessor.invariants.noNewActivityHook,true);
 });
 
-test('existing preservation capability is referenced without inventing an Undead Farm consumer',()=>{
-  const item=definitions.itemDefinitions.find(
-    (entry:any)=>entry.id===manifest.expected.preservationItemId
-  );
+test('approved Undead runtime reuses the existing preservation capability without changing the historical fixtures',()=>{
+  const item=definitions.itemDefinitions.find((entry:any)=>entry.id===manifest.expected.preservationItemId);
   assert.ok(item);
   assert.ok(item.capabilities.includes(manifest.expected.preservationCapability));
-  assert.equal(
-    undeadIdentity.research.existingCrossSystemCapability.currentUndeadFarmConsumer,
-    false
-  );
+  assert.equal(undeadRuntime.items.preservationKit.id,manifest.expected.preservationItemId);
+  assert.equal(undeadRuntime.items.preservationKit.capability,manifest.expected.preservationCapability);
+  assert.equal(undeadIdentity.research.existingCrossSystemCapability.currentUndeadFarmConsumer,false);
   assert.equal(undeadResearch.existingResearchAdjacentIdentity.currentUndeadFarmConsumer,false);
   assert.equal(undeadSuccessor.adjacentExistingCapability.currentUndeadFarmConsumer,false);
-  assert.equal(undeadSuccessor.adjacentExistingCapability.useInThisBundle,false);
 });
 
 test('new starter-career RU EN strings are complete and use content-only namespaces',()=>{

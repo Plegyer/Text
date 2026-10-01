@@ -10,7 +10,7 @@ export const seasons = ['spring','summer','autumn','winter'] as const;
 export const housing = ['room','hostel','shelter'] as const;
 export const targetHousing = ['normal','cheap','street'] as const;
 export const unlocks = ['guild','scholar','calendar','host','mediator','court','vitality'] as const;
-export const items = ['herb','tonic','scales','reinforced_axe','rope_kit','field_preservation_kit','old_boundary_token'] as const;
+export const items = ['herb','tonic','scales','reinforced_axe','rope_kit','field_preservation_kit','old_boundary_token','farm_produce','farm_unstable_specimen','farm_preserved_specimen','farm_delivery_input'] as const;
 
 export type Stat = typeof stats[number];
 export type ResourceId = typeof targetResources[number];
@@ -423,7 +423,7 @@ export const endingSchema=z.object({
   description:z.string(),
   conditions:z.array(conditionSchema),
   reward:id,
-  metaRewards:z.array(metaRewardSchema).max(16).default([]),
+  metaRewards:z.array(metaRewardSchema).max(16).optional(),
   epilogue:z.string()
 }).strict();
 export const definitionsSchema=z.object({
