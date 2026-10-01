@@ -25,7 +25,7 @@
   "events": [
     {
       "id": "tavern.recurring-traveler.night",
-      "title": "After-hours road conversation",
+      "title": "A voluntary conversation after closing",
       "sourceDomain": "tavern.recurring-traveler",
       "trigger": [],
       "reactionTriggers": [
@@ -65,7 +65,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "After closing, the traveler describes a road problem and a rumour without turning the meeting into paid work or an automatic next-day Energy penalty.",
+          "text": "A request to talk after closing is an invitation, not part of the shift. If you accept, the meeting remains voluntary and does not turn future work into a personal obligation.",
           "conditions": [],
           "media": []
         }
@@ -74,7 +74,7 @@
         {
           "id": "finish",
           "label": "Finish the conversation",
-          "text": "Record the voluntary contact and return to the normal Night flow.",
+          "text": "End the voluntary conversation on your own terms; the contact returns to ordinary professional rules afterward.",
           "conditions": [],
           "effects": [
             {
@@ -99,7 +99,7 @@
     },
     {
       "id": "tavern.house-notes.night",
-      "title": "House notes",
+      "title": "Rooms, supplies, and the next handoff",
       "sourceDomain": "tavern",
       "trigger": [],
       "reactionTriggers": [
@@ -134,7 +134,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "You review room and supply notes after closing. It uses the Night slot but adds no extra daytime Energy cost.",
+          "text": "The guest ledger is useful only when there is a clear reason to open it. You look for the entry connected to the current task and do not turn neighboring names, dates, and routes into material for curiosity.",
           "conditions": [],
           "media": []
         }
