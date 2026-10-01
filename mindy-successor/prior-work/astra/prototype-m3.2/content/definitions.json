@@ -2882,15 +2882,46 @@
       "scenes": [
         {
           "id": "spring.default",
-          "text": "Spring guard patrol: the season changes the ordinary work context.",
+          "text": "Spring guard patrol: thawing roads, property disputes, and returning traffic reshape ordinary duty.",
           "conditions": [],
           "media": [
             "stage.guard.spring"
           ]
         },
         {
+          "id": "spring.property-dispute",
+          "text": "A spring patrol becomes a boundary and property dispute where the main work is hearing both sides and recording what is actually contested.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "spring"
+            }
+          ],
+          "media": [
+            "stage.guard.spring"
+          ]
+        },
+        {
+          "id": "spring.road-reopen",
+          "text": "A reopened spring road brings travelers, repair crews, and arguments over who gets through first.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "spring"
+            },
+            {
+              "kind": "careerStage",
+              "career": "guard",
+              "stage": "trusted-guard"
+            }
+          ],
+          "media": [
+            "stage.guard.spring"
+          ]
+        },
+        {
           "id": "summer.default",
-          "text": "Summer guard patrol: demand, routes, or crowds shift with the season.",
+          "text": "Summer guard patrol: festivals, crowds, heat, and street pressure change the ordinary duty mix.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -2902,8 +2933,39 @@
           ]
         },
         {
+          "id": "summer.festival",
+          "text": "Festival duty is crowd direction, lost-property questions, and keeping a narrow lane open without turning the shift into combat.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "summer"
+            }
+          ],
+          "media": [
+            "stage.guard.summer"
+          ]
+        },
+        {
+          "id": "summer.market-crowd",
+          "text": "A trusted summer shift means balancing market flow, arguments, and a growing crowd before anyone needs a harder intervention.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "summer"
+            },
+            {
+              "kind": "careerStage",
+              "career": "guard",
+              "stage": "trusted-guard"
+            }
+          ],
+          "media": [
+            "stage.guard.summer"
+          ]
+        },
+        {
           "id": "autumn.default",
-          "text": "Autumn guard patrol: seasonal pressure changes the work mix.",
+          "text": "Autumn guard patrol: trade traffic, suspicious cargo, and harvest disputes make paperwork as important as walking the streets.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -2915,12 +2977,74 @@
           ]
         },
         {
+          "id": "autumn.cargo-check",
+          "text": "An autumn gate shift means checking a suspicious cargo pass without treating uncertainty as guilt.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "autumn"
+            }
+          ],
+          "media": [
+            "stage.guard.autumn"
+          ]
+        },
+        {
+          "id": "autumn.market-records",
+          "text": "A senior autumn duty turns on matching market complaints with written passes and prior reports rather than relying on memory.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "autumn"
+            },
+            {
+              "kind": "careerStage",
+              "career": "guard",
+              "stage": "senior-guard"
+            }
+          ],
+          "media": [
+            "stage.guard.autumn"
+          ]
+        },
+        {
           "id": "winter.default",
-          "text": "Winter guard patrol: scarcity, access, or regular clients change the routine.",
+          "text": "Winter guard patrol: scarcity, lodging pressure, stranded travelers, and closed routes change what ordinary public duty looks like.",
           "conditions": [
             {
               "kind": "calendarSeason",
               "value": "winter"
+            }
+          ],
+          "media": [
+            "stage.guard.winter"
+          ]
+        },
+        {
+          "id": "winter.lodging-pressure",
+          "text": "A winter street round becomes a question of shelter pressure and how to keep access routes clear without erasing poverty into a crime category.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "winter"
+            }
+          ],
+          "media": [
+            "stage.guard.winter"
+          ]
+        },
+        {
+          "id": "winter.closed-quarter",
+          "text": "A senior winter shift is route triage around a closed quarter, scarce supplies, and travelers who need clear instructions more than threats.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "winter"
+            },
+            {
+              "kind": "careerStage",
+              "career": "guard",
+              "stage": "senior-guard"
             }
           ],
           "media": [
@@ -2939,6 +3063,18 @@
             "kind": "modifyStat",
             "stat": "manners",
             "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "guard",
+            "counter": "patrol_duties",
+            "amount": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "guard",
+            "counter": "dispute_duties",
+            "amount": 1
           }
         ],
         "summer": [
@@ -2951,6 +3087,18 @@
             "kind": "modifyStat",
             "stat": "strength",
             "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "guard",
+            "counter": "patrol_duties",
+            "amount": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "guard",
+            "counter": "crowd_duties",
+            "amount": 1
           }
         ],
         "autumn": [
@@ -2963,6 +3111,18 @@
             "kind": "modifyStat",
             "stat": "reason",
             "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "guard",
+            "counter": "market_duties",
+            "amount": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "guard",
+            "counter": "report_duties",
+            "amount": 1
           }
         ],
         "winter": [
@@ -2975,6 +3135,18 @@
             "kind": "modifyStat",
             "stat": "dexterity",
             "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "guard",
+            "counter": "patrol_duties",
+            "amount": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "guard",
+            "counter": "winter_relief_duties",
+            "amount": 1
           }
         ]
       }
@@ -5121,9 +5293,175 @@
       "label": "Guard",
       "initialStage": "recruit",
       "stages": [
-        "recruit"
+        "recruit",
+        "trusted-guard",
+        "senior-guard",
+        "veteran",
+        "officer",
+        "reform-order",
+        "network",
+        "major-case",
+        "outcome-ready"
       ],
-      "transitions": []
+      "transitions": [
+        {
+          "id": "first-shift",
+          "from": [
+            "recruit"
+          ],
+          "to": "trusted-guard",
+          "conditions": [
+            {
+              "kind": "careerCounter",
+              "career": "guard",
+              "counter": "completed_shifts",
+              "op": "gte",
+              "value": 1
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "guard",
+              "fact": "first-shift-complete"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "guard",
+              "fact": "trusted-ready"
+            }
+          ]
+        },
+        {
+          "id": "senior-guard",
+          "from": [
+            "trusted-guard"
+          ],
+          "to": "senior-guard",
+          "conditions": [
+            {
+              "kind": "careerCounter",
+              "career": "guard",
+              "counter": "completed_shifts",
+              "op": "gte",
+              "value": 8
+            },
+            {
+              "kind": "careerFact",
+              "career": "guard",
+              "fact": "trusted-ready",
+              "present": true
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "guard",
+              "fact": "senior-ready"
+            }
+          ]
+        },
+        {
+          "id": "branch-veteran",
+          "from": [
+            "senior-guard"
+          ],
+          "to": "veteran",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "guard",
+              "fact": "veteran-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "branch-officer",
+          "from": [
+            "senior-guard"
+          ],
+          "to": "officer",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "guard",
+              "fact": "officer-route-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "branch-reform-order",
+          "from": [
+            "senior-guard"
+          ],
+          "to": "reform-order",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "guard",
+              "fact": "reform-route-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "branch-network",
+          "from": [
+            "senior-guard"
+          ],
+          "to": "network",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "guard",
+              "fact": "network-route-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "branch-major-case",
+          "from": [
+            "senior-guard"
+          ],
+          "to": "major-case",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "guard",
+              "fact": "major-case-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "outcome-ready",
+          "from": [
+            "veteran",
+            "officer",
+            "reform-order",
+            "network",
+            "major-case"
+          ],
+          "to": "outcome-ready",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "guard",
+              "fact": "outcome-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        }
+      ]
     },
     {
       "id": "merchant",
@@ -5502,6 +5840,157 @@
               "relationship": "tavern.recurring-traveler",
               "choice": "confidentiality-response",
               "value": "share-route-only"
+            }
+          ],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "guard.partner",
+      "label": "Guard Partner",
+      "initialStage": "introduced",
+      "stages": [
+        "introduced",
+        "professional-trust",
+        "conflict-open",
+        "cooperation-ready",
+        "route-resolved"
+      ],
+      "transitions": [
+        {
+          "id": "build-trust",
+          "from": [
+            "introduced"
+          ],
+          "to": "professional-trust",
+          "conditions": [
+            {
+              "kind": "relationshipFact",
+              "relationship": "guard.partner",
+              "fact": "introduced-at-work",
+              "present": true
+            },
+            {
+              "kind": "relationshipCounter",
+              "relationship": "guard.partner",
+              "counter": "work-meetings",
+              "op": "gte",
+              "value": 2
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "guard.partner",
+              "fact": "professional-trust-earned"
+            }
+          ]
+        },
+        {
+          "id": "open-conflict",
+          "from": [
+            "professional-trust"
+          ],
+          "to": "conflict-open",
+          "conditions": [
+            {
+              "kind": "relationshipFact",
+              "relationship": "guard.partner",
+              "fact": "conflict-opened",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "cooperate",
+          "from": [
+            "conflict-open"
+          ],
+          "to": "cooperation-ready",
+          "conditions": [
+            {
+              "kind": "relationshipChoice",
+              "relationship": "guard.partner",
+              "choice": "conflict-response",
+              "value": "cooperate"
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "guard.partner",
+              "fact": "conflict-resolved"
+            },
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "guard.partner",
+              "fact": "cooperation-ready"
+            }
+          ]
+        },
+        {
+          "id": "rivalry",
+          "from": [
+            "conflict-open"
+          ],
+          "to": "route-resolved",
+          "conditions": [
+            {
+              "kind": "relationshipChoice",
+              "relationship": "guard.partner",
+              "choice": "conflict-response",
+              "value": "rivalry"
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "guard.partner",
+              "fact": "conflict-resolved"
+            }
+          ]
+        },
+        {
+          "id": "refusal",
+          "from": [
+            "conflict-open"
+          ],
+          "to": "route-resolved",
+          "conditions": [
+            {
+              "kind": "relationshipChoice",
+              "relationship": "guard.partner",
+              "choice": "conflict-response",
+              "value": "declined"
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "guard.partner",
+              "fact": "conflict-resolved"
+            },
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "guard.partner",
+              "fact": "refusal-respected"
+            }
+          ]
+        },
+        {
+          "id": "finish-cooperation",
+          "from": [
+            "cooperation-ready"
+          ],
+          "to": "route-resolved",
+          "conditions": [
+            {
+              "kind": "relationshipFact",
+              "relationship": "guard.partner",
+              "fact": "case-support-ready",
+              "present": true
             }
           ],
           "effects": []
@@ -7056,6 +7545,20 @@
       "label": "Tavern Staff Key",
       "capabilities": [
         "access_guest_rooms_staff"
+      ]
+    },
+    {
+      "id": "guard_badge",
+      "label": "Guard Badge",
+      "capabilities": [
+        "official_guard_access"
+      ]
+    },
+    {
+      "id": "guard_sealed_pass",
+      "label": "Sealed Guard Pass",
+      "capabilities": [
+        "guard_sealed_pass"
       ]
     }
   ]
