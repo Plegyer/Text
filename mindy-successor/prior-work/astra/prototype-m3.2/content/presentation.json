@@ -1411,6 +1411,130 @@
           }
         ]
       }
+    },
+    "relationship/satyr-maid.recurring-guest/satyr-maid.recurring-guest.intro/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-result.svg",
+        "alt": "A familiar guest speaks with the maid during ordinary service on the floor.",
+        "altKey": "presentation.static.relationship.satyr-maid.recurring-guest.intro.alt"
+      },
+      "pool": {
+        "version": 1,
+        "ordering": "ordered",
+        "selectionPolicy": "unweighted",
+        "candidates": [
+          {
+            "key": "service-a",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-a.gif",
+            "alt": "Satyr Maid service work candidate A.",
+            "altKey": "presentation.motion.career.satyr-maid.service.a.alt"
+          },
+          {
+            "key": "service-b",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-b.gif",
+            "alt": "Satyr Maid service work candidate B.",
+            "altKey": "presentation.motion.career.satyr-maid.service.b.alt"
+          },
+          {
+            "key": "service-c",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-c.gif",
+            "alt": "Satyr Maid service work candidate C.",
+            "altKey": "presentation.motion.career.satyr-maid.service.c.alt"
+          }
+        ]
+      }
+    },
+    "relationship/satyr-maid.recurring-guest/satyr-maid.recurring-guest.service/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-result.svg",
+        "alt": "The maid and a familiar guest talk at a table after another professional service exchange.",
+        "altKey": "presentation.static.relationship.satyr-maid.recurring-guest.service.alt"
+      },
+      "pool": {
+        "version": 1,
+        "ordering": "ordered",
+        "selectionPolicy": "unweighted",
+        "candidates": [
+          {
+            "key": "service-a",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-a.gif",
+            "alt": "Satyr Maid service work candidate A.",
+            "altKey": "presentation.motion.career.satyr-maid.service.a.alt"
+          },
+          {
+            "key": "service-b",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-b.gif",
+            "alt": "Satyr Maid service work candidate B.",
+            "altKey": "presentation.motion.career.satyr-maid.service.b.alt"
+          },
+          {
+            "key": "service-c",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-c.gif",
+            "alt": "Satyr Maid service work candidate C.",
+            "altKey": "presentation.motion.career.satyr-maid.service.c.alt"
+          }
+        ]
+      }
+    },
+    "relationship/satyr-maid.recurring-guest/satyr-maid.recurring-guest.night/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-result.svg",
+        "alt": "A calm voluntary conversation after closing, separate from the paid work shift.",
+        "altKey": "presentation.static.relationship.satyr-maid.recurring-guest.night.alt"
+      }
+    },
+    "relationship/satyr-maid.recurring-guest/satyr-maid.recurring-guest.request/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-result.svg",
+        "alt": "A familiar guest makes an additional professional request to the maid.",
+        "altKey": "presentation.static.relationship.satyr-maid.recurring-guest.request.alt"
+      }
+    },
+    "relationship/satyr-maid.recurring-guest/satyr-maid.recurring-guest.return/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-result.svg",
+        "alt": "The familiar guest returns during a work shift and the request is handled through ordinary professional service.",
+        "altKey": "presentation.static.relationship.satyr-maid.recurring-guest.return.alt"
+      },
+      "pool": {
+        "version": 1,
+        "ordering": "ordered",
+        "selectionPolicy": "unweighted",
+        "candidates": [
+          {
+            "key": "service-a",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-a.gif",
+            "alt": "Satyr Maid service work candidate A.",
+            "altKey": "presentation.motion.career.satyr-maid.service.a.alt"
+          },
+          {
+            "key": "service-b",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-b.gif",
+            "alt": "Satyr Maid service work candidate B.",
+            "altKey": "presentation.motion.career.satyr-maid.service.b.alt"
+          },
+          {
+            "key": "service-c",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-c.gif",
+            "alt": "Satyr Maid service work candidate C.",
+            "altKey": "presentation.motion.career.satyr-maid.service.c.alt"
+          }
+        ]
+      }
     }
   }
 }
