@@ -198,6 +198,14 @@ This candidate does not invent:
 - paid-lesson raw journal localization plumbing;
 - event-scene raw journal localization plumbing.
 
+## Pre-freeze CI blocker fixes
+
+Two candidate-only compatibility blockers were found by repository validation before freeze:
+- retaining the legacy generic Night-study event with no trigger is invalid because every authored event requires a trigger;
+- disabling it through a calendar condition is invalid for this zero-capability School pack because typed calendar reads require a declared capability.
+
+The compatibility event now uses one known exact Night-study trigger plus an exact zero-chance policy (`base=0`, `perPoint=0`, `max=0`). This satisfies authored-event validation, creates no new offer, and keeps the old event ID available for historical queued Save instances.
+
 ## C5-120 candidate rule
 
 Open one focused PR from this branch. Freeze only the exact head that passes repository `mindy-successor check`. Any later head movement requires a concrete CI/QA blocker or explicit Lead request and a complete exact-head re-gate.
