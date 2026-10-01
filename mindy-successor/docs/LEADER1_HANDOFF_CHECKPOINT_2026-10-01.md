@@ -1,4 +1,28 @@
-# Leader 1 Handoff Checkpoint — 2026-10-01 11:33+03
+# Leader 1 Handoff Checkpoint — 2026-10-01
+
+## LATEST USER-PAUSE RECOVERY NOTE
+
+The user explicitly paused every worker except Chat 5 for a temporary cleanup/continuity window. If future Git shows no movement from Chat 1–4 after this point, interpret that first as intentional pause.
+
+Current exact frozen source truth:
+- Tavern runtime #187 `38c58cc...` / CI #682 / C4-147 PASS-WITH-NOTES;
+- Tavern authored #185 `d2a5447a...` / CI #694;
+- Tavern School #191 `b31c10ac...` / CI #692;
+- Tavern presentation #200 `4cf8aab9...` / CI #721;
+- Hunter runtime #201 `8af661de...` / CI #734;
+- Hunter School #199 `f04c93db...` / CI #745 / 704/704.
+
+Product main immediately before continuity-only documentation updates:
+- `d97a970283612ce25591741a521aa31d2a982c95`;
+- **Integrate QA-accepted Undead presentation v13**;
+- CI #719 SUCCESS.
+
+Critical warnings for takeover:
+- #170 contains stale Tavern C4-148 intake text from before #185/#191/#200 finalized.
+- #202 -> #203 -> #204 are draft Tavern integration prep only; they do not yet represent final Tavern integration and no final-presentation #200 prep layer was observed here.
+- Hunter School v15 is complete/frozen, but no v16 is assigned.
+- Do not mutate #191, #199, #200, #201 for base drift alone.
+- Resume Tavern QA/integration before allowing the already-frozen Hunter wave to bypass it.
 
 ## VERIFIED CONTINUITY UPDATE — Chat 5 Hunter School v15
 

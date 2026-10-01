@@ -32,7 +32,13 @@ Current main observed when this pointer was refreshed:
 - `d97a970283612ce25591741a521aa31d2a982c95`
 - main CI #719: SUCCESS.
 
+Queue record:
+- `TASK_CHAT5_SCHOOL_QUEUE_v15.md`
+
 No Chat 5 queue newer than v15 was assigned at this refresh. Check Git before creating v16 work.
+
+Coordination note:
+- the user temporarily paused all other workers during this cleanup window; do not interpret their inactivity as invalidating frozen candidates.
 
 Current project handoff:
 - `../LEADER1_HANDOFF_CHECKPOINT_2026-10-01.md`

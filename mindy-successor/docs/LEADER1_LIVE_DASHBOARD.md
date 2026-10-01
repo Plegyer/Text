@@ -1,5 +1,41 @@
 # Leader 1 — Live Dashboard
 
+## USER MAINTENANCE PAUSE / INTEGRATION SNAPSHOT — 2026-10-01
+
+This block is newer than every snapshot below.
+
+- The user explicitly paused all workers other than Chat 5 temporarily so Chat 5 could clean/edit and preserve project continuity. Treat their inactivity during this window as intentional coordination pause, not failure or abandonment.
+- Current main at the start of this block is a continuity-doc head built on product main `d97a970283612ce25591741a521aa31d2a982c95`; that product main passed CI #719 / id `36843239627`.
+- Do not move frozen producer candidates merely because their owners are paused.
+
+### Tavern wave — all four source siblings are frozen
+
+- #187 runtime: `38c58ccdaa1d357f189cd640053d0b2a8605b9b4`, CI #682 SUCCESS, C4-147 PASS-WITH-NOTES.
+- #185 authored content: `d2a5447a25a32253eb5ff5a6ab7821fb33a10600`, CI #694 SUCCESS.
+- #191 School: `b31c10ac3b2e024018a8499bd1ff7b8f39d8824c`, CI #692 SUCCESS.
+- #200 final presentation: `4cf8aab9637e6393237d174e6d007dd0f3dcd24a`, CI #721 SUCCESS.
+- old Tavern presentation draft #183 is superseded by #200.
+- PR #170's C4-148 intake paragraph is stale because it predates the final #185/#191/#200 states; re-read Git rather than trusting that paragraph.
+
+Lead current-main prep exists as #202 runtime -> #203 authored -> #204 School. These are draft prep, not completed integration. No equivalent final-presentation #200 prep layer was observed in this snapshot.
+
+### Hunter wave — frozen partial sibling set
+
+- #201 Hunter runtime: `8af661de2ce6d73e4db0f61fe4206d3334822998`, CI #734 SUCCESS.
+- #199 Hunter School: `f04c93db866b1d2603f6917b41297670f86b0bef`, CI #745 SUCCESS, 704/704 tests.
+- #199 is stacked exactly on helper base `chat5/hunter-school-v15-base` at #201 head.
+- Hunter School authority remains deliberately narrow: only `hunter.school.field-craft` is a live consumer via existing `forest.school-field-notes`; Arcana/Literacy/Physical have published facts but null numeric thresholds and no authorized live consumer IDs.
+- No other Hunter producer sibling candidate was confirmed by the Git search at this snapshot. Re-check Git after paused workers resume; do not invent missing siblings.
+
+### Resumption order
+
+1. Verify current main/CI and current PR heads.
+2. Resume Tavern QA/integration first from exact frozen heads #187/#185/#191/#200.
+3. Complete collision-safe current-main Tavern presentation integration in addition to existing #202-#204 prep, then exact-main QA.
+4. Keep #201/#199 immutable while Tavern settles.
+5. Gate/integrate Hunter only with exact frozen evidence and only with sibling candidates that actually exist when the team resumes.
+6. Update this dashboard and current pointers before assigning the next career wave.
+
 ## VERIFIED CONTINUITY UPDATE — Chat 5 Hunter School v15
 
 Observed after the original checkpoint; Git was re-verified before writing this block.
