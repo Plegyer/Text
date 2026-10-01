@@ -1,5 +1,7 @@
 # PROJECT STATE
 
+
+> **Corrected QA truth — 2026-10-01:** current main has a confirmed Satyr Maid / Undead Farm post-first-shift repeatability defect. Their Day-1 first shifts work, but the second real shift replays a one-time career transition and fails. Older statements calling those starter work loops repeatable are superseded until the repaired Chat 1 candidate is QA-accepted and merged.
 ## LIVE AUDIT UPDATE — 2026-10-01
 
 **Superseding status:** read `LEAD1_CURRENT_STATE_v1.md` before older milestone sections below.
