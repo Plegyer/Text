@@ -103,16 +103,7 @@
       "cooldownDays": 0,
       "variantCooldownDays": 0,
       "maxShows": 160,
-      "conditions": [
-        {
-          "kind": "not",
-          "condition": {
-            "kind": "calendarYear",
-            "op": "gte",
-            "value": 1
-          }
-        }
-      ],
+      "conditions": [],
       "variants": [
         {
           "id": "default",
@@ -131,7 +122,13 @@
           "conditions": [],
           "effects": []
         }
-      ]
+      ],
+      "chance": {
+        "base": 0,
+        "stat": "intelligence",
+        "perPoint": 0,
+        "max": 0
+      }
     },
     {
       "id": "school-life-content-v1.night-study.literacy-and-numbers-reason",
