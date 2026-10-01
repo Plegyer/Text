@@ -424,6 +424,99 @@ export function presentationIdForTavernState(stateId:string){
   return `job/tavern/state/${clean(stateId)}`;
 }
 
+export const GUARD_PRESENTATION_STAGES=[
+  'recruit','trusted-guard','senior-guard','veteran','officer',
+  'reform-order','network','major-case','outcome-ready'
+] as const;
+
+export const GUARD_CAREER_EVENT_IDS=[
+  'guard.career.first-shift',
+  'guard.career.senior',
+  'guard.career.duty-breadth',
+  'guard.career.veteran-ready',
+  'guard.career.choose-route',
+  'guard.career.choose-major-case',
+  'guard.career.outcome-ready'
+] as const;
+
+export const GUARD_RELATIONSHIP_EVENT_IDS=[
+  'guard.relationship.intro',
+  'guard.relationship.trust',
+  'guard.relationship.conflict-open',
+  'guard.relationship.conflict-resolve',
+  'guard.relationship.case-support'
+] as const;
+
+export const GUARD_CITY_EVENT_IDS=[
+  'guard.city.dispute',
+  'guard.city.crowd-pressure',
+  'guard.city.suspicious-pass',
+  'guard.city.poverty-response',
+  'guard.city.formal-report'
+] as const;
+
+export const GUARD_ACCESS_EVENT_IDS=[
+  'guard.access.badge',
+  'guard.access.sealed-pass',
+  'guard.access.evidence-ledger'
+] as const;
+
+export const GUARD_CROSS_SYSTEM_EVENT_IDS=[
+  'guard.cross.tavern-receipt'
+] as const;
+
+export const GUARD_ROUTE_EVENT_IDS=[
+  'guard.crisis.market-gate-pressure',
+  'guard.routes.officer-ready',
+  'guard.routes.reform-ready',
+  'guard.routes.network-ready',
+  'guard.routes.major-case-ready'
+] as const;
+
+export const GUARD_SCHOOL_EVENT_IDS=[] as const;
+
+export const GUARD_RELATIONSHIP_STAGES=[
+  'introduced','professional-trust','conflict-open','cooperation-ready','route-resolved'
+] as const;
+
+export const GUARD_ITEM_IDS=[
+  'guard_badge','guard_sealed_pass'
+] as const;
+
+export const GUARD_STATUS_IDS=[
+  'city-dispute-resolved',
+  'crowd-pressure-resolved',
+  'duty-report-evidence',
+  'cargo-pass-evidence',
+  'poverty-response-recorded',
+  'tavern-evidence-known',
+  'veteran-ready',
+  'officer-ready',
+  'reform-ready',
+  'network-ready',
+  'major-case-thread',
+  'major-case-ready',
+  'crisis-resolved',
+  'refusal-respected',
+  'partner-case-support'
+] as const;
+
+export function presentationIdForGuardStage(stage:string){
+  return `job/guard/stage/${clean(stage)}`;
+}
+
+export function presentationIdForGuardRelationshipStage(stage:string){
+  return `relationship/guard-partner/stage/${clean(stage)}`;
+}
+
+export function presentationIdForGuardItem(itemId:string){
+  return `job/guard/item/${clean(itemId)}`;
+}
+
+export function presentationIdForGuardState(stateId:string){
+  return `job/guard/state/${clean(stateId)}`;
+}
+
 export function presentationIdForEnding(endingId:string){
   const parts=pathParts(endingId);
   if(parts[0]==='ending')parts.shift();
@@ -543,12 +636,89 @@ export function presentationSlots(cat:Catalog):PresentationSlot[]{
     });
   }
 
+  // Guard v16 prep is runtime-conditional: semantic surfaces are emitted only
+  // when the production catalog actually contains the backing identity/fact.
+  // This keeps mutable runtime-contract preparation from reserving fake IDs.
+  const guardCareer=(cat.definitions.careers??[]).find(item=>item.id==='guard');
+  if(guardCareer){
+    for(const stage of GUARD_PRESENTATION_STAGES){
+      if(guardCareer.stages.includes(stage)){
+        add({
+          id:presentationIdForGuardStage(stage),
+          label:`Guard · stage · ${stage}`,
+          baseMediaIds:[],
+          fallbackId:'job/guard/result/default'
+        });
+      }
+    }
+  }
+
+  const guardRelationship=(cat.definitions.relationships??[]).find(item=>item.id==='guard.partner');
+  if(guardRelationship){
+    for(const stage of GUARD_RELATIONSHIP_STAGES){
+      if(guardRelationship.stages.includes(stage)){
+        add({
+          id:presentationIdForGuardRelationshipStage(stage),
+          label:`Guard · partner · ${stage}`,
+          baseMediaIds:[],
+          fallbackId:'job/guard/result/default'
+        });
+      }
+    }
+  }
+
+  for(const itemId of GUARD_ITEM_IDS){
+    if((cat.definitions.itemDefinitions??[]).some(item=>item.id===itemId)){
+      add({
+        id:presentationIdForGuardItem(itemId),
+        label:`Guard · item · ${itemId}`,
+        baseMediaIds:[],
+        fallbackId:'job/guard/result/default'
+      });
+    }
+  }
+
+  const guardRuntimeText=JSON.stringify({
+    career:guardCareer,
+    relationship:guardRelationship,
+    events:cat.events.filter(event=>event.sourceDomain==='guard')
+  });
+  const guardStateBackings:Record<(typeof GUARD_STATUS_IDS)[number],boolean>={
+    'city-dispute-resolved':guardRuntimeText.includes('city-dispute-resolved'),
+    'crowd-pressure-resolved':guardRuntimeText.includes('crowd-pressure-resolved'),
+    'duty-report-evidence':guardRuntimeText.includes('duty-report-evidence'),
+    'cargo-pass-evidence':guardRuntimeText.includes('cargo-pass-evidence'),
+    'poverty-response-recorded':guardRuntimeText.includes('poverty-response-recorded'),
+    'tavern-evidence-known':guardRuntimeText.includes('tavern-evidence-known'),
+    'veteran-ready':guardRuntimeText.includes('veteran-ready'),
+    'officer-ready':guardRuntimeText.includes('officer-route-ready'),
+    'reform-ready':guardRuntimeText.includes('reform-route-ready'),
+    'network-ready':guardRuntimeText.includes('network-route-ready'),
+    'major-case-thread':guardRuntimeText.includes('major-case-thread-ready'),
+    'major-case-ready':guardRuntimeText.includes('major-case-ready'),
+    'crisis-resolved':guardRuntimeText.includes('crisis-resolved'),
+    'refusal-respected':guardRuntimeText.includes('refusal-respected'),
+    'partner-case-support':guardRuntimeText.includes('case-support-ready')||guardRuntimeText.includes('partner-case-support')
+  };
+  for(const stateId of GUARD_STATUS_IDS){
+    if(guardStateBackings[stateId]){
+      add({
+        id:presentationIdForGuardState(stateId),
+        label:`Guard · state · ${stateId}`,
+        baseMediaIds:[],
+        fallbackId:'job/guard/result/default'
+      });
+    }
+  }
+
   for(const event of cat.events){
     const tavernFallback=event.sourceDomain==='tavern'
       ?'job/tavern/result/default'
       :event.sourceDomain==='tavern.recurring-traveler'
        ?presentationIdForTavernRelationshipRoot()
-       :'location/town/default';
+       :event.sourceDomain==='guard'
+        ?'job/guard/result/default'
+        :'location/town/default';
     for(const variant of event.variants){
       add({
         id:presentationIdForEvent(cat,event.id,variant.id),
