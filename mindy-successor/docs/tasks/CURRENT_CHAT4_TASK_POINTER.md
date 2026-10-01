@@ -1,29 +1,43 @@
 # CURRENT CHAT4 TASK POINTER
 
-Status: **ACTIVE — CURRENT-MAIN CLOSEOUT + HUNTER QA v15**
+Status: **ACTIVE — HUNTER QA v15 / NEW CONTEXT WINDOW**
 Owner: Chat 4 / QA + Product Acceptance Gate
 
-Current queue:
-- `TASK_CHAT4_QA_QUEUE_v15.md`
-- C4-149..155
+Context rule:
+- previous Chat 4 context window ended;
+- Git is authority; re-read this pointer, `TASK_CHAT4_QA_QUEUE_v15.md`, and `CHAT4_EXECUTABLE_ACCEPTANCE_TRUTH_2026-10-01.md`;
+- do not reconstruct old-chat history from memory.
+
+Shipped Tavern baseline:
+- exact product main: `8652251051d24b507042b73c4fce4295277c38fe`;
+- exact workflow #768 / id `36865274621`: **SUCCESS**;
+- validator: 40 packs / 142 events / 39 actions / 22 endings;
+- tests: 764/764 pass;
+- Tavern runtime + authored + School + presentation are now shipped.
+
+Completed Hunter gates:
+- C4-150 runtime #201 @ `8af661de2ce6d73e4db0f61fe4206d3334822998`: PASS-WITH-NOTES, CI #734 SUCCESS.
+- C4-151 School #199 @ `f04c93db866b1d2603f6917b41297670f86b0bef`: PASS-WITH-NOTES, CI #745 SUCCESS.
 
 Do now:
-1. C4-149 durable closeout on current main `2d16029a6a17e90b7b9b7faacc93ca8a1a4a08a0`, push CI #756 SUCCESS.
-2. C4-150 gate frozen Hunter runtime PR #201 @ `8af661de2ce6d73e4db0f61fe4206d3334822998`, CI #734 SUCCESS.
-3. C4-151 gate frozen Hunter School PR #199 @ `f04c93db866b1d2603f6917b41297670f86b0bef`, CI #745 SUCCESS.
-4. Then gate Chat 2/3 Hunter siblings independently as each freezes; do not wait for a blocked sibling.
+1. C4-152: gate Chat 3 Hunter authored candidate immediately when it is frozen exact-head green.
+2. C4-153: gate Chat 2 Hunter presentation candidate immediately when it is frozen exact-head green.
+3. Do not wait for one sibling if the other is eligible.
+4. After all actual Hunter siblings are accepted, execute C4-154 collision ledger against then-current Tavern-shipped main.
+5. C4-155 only after Lead integrates the accepted Hunter wave.
 
-Ordering:
-- Tavern sibling QA is complete (#187/#185/#191/#200 accepted), but Tavern still integrates before Hunter.
-- QA may run Hunter candidate gates in parallel; it must not authorize Hunter to bypass Tavern integration order.
-- Do not implement producer fixes.
-- Do not mutate frozen producer candidates.
+Boundaries:
+- QA does not implement producer fixes.
+- Never mutate frozen candidates.
+- Every verdict records exact head SHA, exact workflow run, validator/test evidence.
+- Hunter may not be called shipped before C4-155.
+- Guard work may proceed in parallel but must not bypass Hunter integration.
 
-Current producer state:
-- Chat 1: Guard runtime v14 assigned, C1D-145..156.
-- Chat 2: Hunter presentation v15 assigned, C2-157..168.
-- Chat 3: Hunter authored content v16 active, C3-169..180.
-- Chat 5: Hunter School #199 frozen; no v16 assigned.
+Current producer lanes:
+- Chat 1: Guard runtime v14 active.
+- Chat 2: Hunter presentation v15 active.
+- Chat 3: Hunter authored v16 active.
+- Chat 5: Guard School v16 active; Hunter School #199 frozen.
 
 Current project handoff:
 - `../LEADER1_HANDOFF_CHECKPOINT_2026-10-01.md`

@@ -1,5 +1,24 @@
 # Worker reallocation update — 2026-10-01
 
+## TAVERN SHIPPED / HUNTER NEXT — 2026-10-01 13:02Z
+
+This block supersedes the earlier resumed-Tavern snapshot.
+
+- Tavern integration completed in accepted order: #202 runtime -> #203 authored -> #204 School -> #205 presentation.
+- Exact product main after final Tavern merge: `8652251051d24b507042b73c4fce4295277c38fe`.
+- Exact current-product workflow #768 / id `36865274621`: **SUCCESS**.
+- Validator: **40 packs / 142 events / 39 actions / 22 endings**.
+- Tests: **764 / 764 pass, 0 fail**.
+- Exact-main acceptance includes natural Tavern Year-2 unlock, cross-system routes, overlapping endings/New Run persistence, School immediate/Night-study parity, live authored seasonal breadth, real presentation IDs, RU/EN accessibility, animation-off and missing-GIF static fallback.
+- Comparison from accepted #205 head to exact product main changes only Leader/task coordination Markdown; no product path drift.
+- Tavern is now **shipped**.
+- Next incomplete ordinary career on shipped product truth is **Hunter**.
+- Hunter runtime #201 and Hunter School #199 are already C4-accepted but remain unshipped pending the authored/presentation siblings and collision ledger.
+- Chat 2 Hunter presentation and Chat 3 Hunter authored work are active; gate each independently when it freezes green.
+- Chat 1 Guard runtime and Chat 5 Guard School are active in parallel but must not bypass Hunter integration order.
+- Chat 4 old context window ended. Replacement Chat 4 must continue from Git/current pointer, not from transcript reconstruction.
+
+
 ## RESUMED LEADER CHECKPOINT — 2026-10-01 12:55Z
 
 This block is newer than every snapshot below.
