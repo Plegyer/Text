@@ -8,7 +8,7 @@
   "trackId": "school.track.rhetoric_and_social",
   "teacherContentId": "school.teacher.cassian-reed",
   "teacherMediaId": "school.teacher.rhetoric-and-social.classroom",
-  "bindingStatus": "WAIT_FOR_C1D_121",
+  "bindingStatus": "C1D_121_BOUND",
   "copy": {
     "title": {
       "ru": "Сначала понять, о чём теперь спор",
@@ -37,5 +37,11 @@
     "advancesCareerDirectly": false,
     "publishesGlobalCertificate": false,
     "publishesGlobalProject": false
-  }
+  },
+  "runtimeContract": {
+    "head": "7bf2531f208c8b3faf5f83c16064885b6295167b",
+    "blob": "48120605195463dddbc34205b2246fa4b7276907"
+  },
+  "reactionEvent": "tavern.school.broker",
+  "careerFact": "school-broker-ready"
 }
