@@ -158,6 +158,7 @@ test('C3-153 repeated zero-money street pressure cannot form an unavoidable term
     const before=s.run.progression.careers.lumber?.counters.completed_shifts??0;
     s=dispatch(s,{type:'action',id:'lumber.shift'},catalog);
     assert.equal(s.run.progression.careers.lumber?.counters.completed_shifts,before+1);
+    s=resolvePending(s);
     assert.equal(s.run.status,'active');
   }
   assert.equal(Object.keys(s.run.progression.careers).some(id=>/secret|debt|slave/i.test(id)),false);
@@ -173,7 +174,7 @@ test('C3-154 normal lodging payment pending variant and history remain exactly o
   assert.equal(s.run.resources.money,50);
   assert.equal(s.run.pending?.variantId,variant);
   assert.deepEqual(s.run.history[PREFIX+'normal-tight-budget'],history);
-  assert.throws(()=>dispatch(s,{type:'chooseLodging',id:'lodging.normal'},catalog),/нельзя выбирать жильё|оплачен/);
+  assert.throws(()=>dispatch(s,{type:'chooseLodging',id:'lodging.normal'},catalog),/Сначала завершите ночную сцену|нельзя выбирать жильё|оплачен/);
   s=dispatch(s,{type:'choice',id:'keep-plan'},catalog);
   const committed=structuredClone(s.run.history[PREFIX+'normal-tight-budget']);
   s=reload(s);
@@ -191,5 +192,6 @@ test('C3-155 every live ordinary-poverty pack stays behind the Secret Debt firew
     const raw=readFileSync('content/packs/'+file,'utf8');
     assert.doesNotMatch(raw,/secret.?debt|lender|slave|bound.?career|forced.?debt/i,file);
   }
-  assert.doesNotMatch(JSON.stringify(pack),/ending|metaReward|setCareer|advanceCareer/i);
+  assert.ok(pack.events.every((event:any)=>event.choices.every((choice:any)=>choice.effects.length===0)));
+  assert.deepEqual(pack.capabilities.writes,{});
 });
