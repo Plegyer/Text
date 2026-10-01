@@ -2709,15 +2709,64 @@
       "scenes": [
         {
           "id": "spring.default",
-          "text": "Spring hunter shift: the season changes the ordinary work context.",
+          "text": "Hunter shift: a short local contract keeps the work inside the city edge instead of launching a full expedition.",
           "conditions": [],
           "media": [
             "stage.hunt.spring"
           ]
         },
         {
+          "id": "spring.melt-tracks",
+          "text": "Spring melt exposes overlapping tracks near the forest edge; the job is to separate fresh signs from old runoff marks.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "spring"
+            }
+          ],
+          "media": [
+            "stage.hunt.spring"
+          ]
+        },
+        {
+          "id": "spring.trap-check",
+          "text": "A spring trap-check becomes maintenance and release work rather than a long pursuit.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "spring"
+            },
+            {
+              "kind": "careerStage",
+              "career": "hunter",
+              "stage": "tracker"
+            }
+          ],
+          "media": [
+            "stage.hunt.spring"
+          ]
+        },
+        {
+          "id": "spring.edge-scout",
+          "text": "Recognized spring work means scouting muddy edge routes and marking which approaches are still safe for later contracts.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "spring"
+            },
+            {
+              "kind": "careerStage",
+              "career": "hunter",
+              "stage": "recognized-hunter"
+            }
+          ],
+          "media": [
+            "stage.hunt.spring"
+          ]
+        },
+        {
           "id": "summer.default",
-          "text": "Summer hunter shift: demand, routes, or crowds shift with the season.",
+          "text": "Summer heat turns a routine escort into route pacing, water checks, and keeping a nervous client on the marked path.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -2729,8 +2778,44 @@
           ]
         },
         {
+          "id": "summer.training",
+          "text": "A summer local job is mostly training: reading disturbed brush, setting a safe line, and returning before the heat peaks.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "summer"
+            },
+            {
+              "kind": "careerStage",
+              "career": "hunter",
+              "stage": "tracker"
+            }
+          ],
+          "media": [
+            "stage.hunt.summer"
+          ]
+        },
+        {
+          "id": "summer.edge-predator",
+          "text": "Recognized summer work focuses on active predator signs at the forest edge without turning the shift into a large hunt.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "summer"
+            },
+            {
+              "kind": "careerStage",
+              "career": "hunter",
+              "stage": "recognized-hunter"
+            }
+          ],
+          "media": [
+            "stage.hunt.summer"
+          ]
+        },
+        {
           "id": "autumn.default",
-          "text": "Autumn hunter shift: seasonal pressure changes the work mix.",
+          "text": "Autumn brings the busiest handoff days: sorting ordinary trophies, checking tags, and keeping contract records attached to the right lot.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -2742,12 +2827,66 @@
           ]
         },
         {
+          "id": "autumn.migration",
+          "text": "A tracker shift follows migration signs long enough to update local routes, then returns before the work becomes an expedition.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "autumn"
+            },
+            {
+              "kind": "careerStage",
+              "career": "hunter",
+              "stage": "tracker"
+            }
+          ],
+          "media": [
+            "stage.hunt.autumn"
+          ]
+        },
+        {
+          "id": "autumn.trophy-handoff",
+          "text": "Recognized autumn work includes a formal trophy handoff and the argument over which signs justify a rarer contract.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "autumn"
+            },
+            {
+              "kind": "careerStage",
+              "career": "hunter",
+              "stage": "recognized-hunter"
+            }
+          ],
+          "media": [
+            "stage.hunt.autumn"
+          ]
+        },
+        {
           "id": "winter.default",
-          "text": "Winter hunter shift: scarcity, access, or regular clients change the routine.",
+          "text": "Winter scarcity makes a short track-check valuable on its own: one wrong route can waste the whole daylight window.",
           "conditions": [
             {
               "kind": "calendarSeason",
               "value": "winter"
+            }
+          ],
+          "media": [
+            "stage.hunt.winter"
+          ]
+        },
+        {
+          "id": "winter.route-limits",
+          "text": "Recognized winter work is route triage—mark what remains passable, what needs rope, and what should wait for a prepared expedition.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "winter"
+            },
+            {
+              "kind": "careerStage",
+              "career": "hunter",
+              "stage": "recognized-hunter"
             }
           ],
           "media": [
@@ -2766,6 +2905,12 @@
             "kind": "modifyStat",
             "stat": "wits",
             "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "hunter",
+            "counter": "spring_contracts",
+            "amount": 1
           }
         ],
         "summer": [
@@ -2778,6 +2923,12 @@
             "kind": "modifyStat",
             "stat": "dexterity",
             "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "hunter",
+            "counter": "summer_contracts",
+            "amount": 1
           }
         ],
         "autumn": [
@@ -2790,6 +2941,12 @@
             "kind": "modifyStat",
             "stat": "endurance",
             "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "hunter",
+            "counter": "autumn_contracts",
+            "amount": 1
           }
         ],
         "winter": [
@@ -2802,6 +2959,12 @@
             "kind": "modifyStat",
             "stat": "endurance",
             "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "hunter",
+            "counter": "winter_contracts",
+            "amount": 1
           }
         ]
       }
@@ -5112,9 +5275,200 @@
       "label": "Hunter",
       "initialStage": "novice",
       "stages": [
-        "novice"
+        "novice",
+        "tracker",
+        "recognized-hunter",
+        "veteran",
+        "master-hunter",
+        "warden",
+        "legend",
+        "outcome-ready"
       ],
-      "transitions": []
+      "transitions": [
+        {
+          "id": "first-shift",
+          "from": [
+            "novice"
+          ],
+          "to": "tracker",
+          "conditions": [
+            {
+              "kind": "careerCounter",
+              "career": "hunter",
+              "counter": "completed_shifts",
+              "op": "gte",
+              "value": 1
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "hunter",
+              "fact": "first-shift-complete"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "hunter",
+              "fact": "tracker-ready"
+            }
+          ]
+        },
+        {
+          "id": "recognized-hunter",
+          "from": [
+            "tracker"
+          ],
+          "to": "recognized-hunter",
+          "conditions": [
+            {
+              "kind": "careerCounter",
+              "career": "hunter",
+              "counter": "completed_shifts",
+              "op": "gte",
+              "value": 8
+            },
+            {
+              "kind": "careerFact",
+              "career": "hunter",
+              "fact": "tracker-ready",
+              "present": true
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "hunter",
+              "fact": "recognized-ready"
+            }
+          ]
+        },
+        {
+          "id": "branch-veteran",
+          "from": [
+            "recognized-hunter"
+          ],
+          "to": "veteran",
+          "conditions": [
+            {
+              "kind": "careerCounter",
+              "career": "hunter",
+              "counter": "completed_shifts",
+              "op": "gte",
+              "value": 20
+            },
+            {
+              "kind": "careerFact",
+              "career": "hunter",
+              "fact": "veteran-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "branch-master-hunter",
+          "from": [
+            "recognized-hunter"
+          ],
+          "to": "master-hunter",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "hunter",
+              "fact": "rare-contract-ready",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "hunter",
+              "fact": "expedition-preserved-sample",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "hunter",
+              "fact": "master-route-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "branch-warden",
+          "from": [
+            "recognized-hunter"
+          ],
+          "to": "warden",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "hunter",
+              "fact": "relationship-trust-ready",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "hunter",
+              "fact": "warden-route-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "branch-legend",
+          "from": [
+            "recognized-hunter"
+          ],
+          "to": "legend",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "hunter",
+              "fact": "forest-clue-known",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "hunter",
+              "fact": "tavern-clue-known",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "hunter",
+              "fact": "expedition-returned",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "hunter",
+              "fact": "legend-route-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "outcome-ready",
+          "from": [
+            "veteran",
+            "master-hunter",
+            "warden",
+            "legend"
+          ],
+          "to": "outcome-ready",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "hunter",
+              "fact": "outcome-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        }
+      ]
     },
     {
       "id": "guard",
@@ -5502,6 +5856,157 @@
               "relationship": "tavern.recurring-traveler",
               "choice": "confidentiality-response",
               "value": "share-route-only"
+            }
+          ],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "hunter.senior-guide",
+      "label": "Senior Hunter / Guide",
+      "initialStage": "introduced",
+      "stages": [
+        "introduced",
+        "professional-trust",
+        "conflict-open",
+        "companion-ready",
+        "route-resolved"
+      ],
+      "transitions": [
+        {
+          "id": "build-trust",
+          "from": [
+            "introduced"
+          ],
+          "to": "professional-trust",
+          "conditions": [
+            {
+              "kind": "relationshipFact",
+              "relationship": "hunter.senior-guide",
+              "fact": "introduced-at-work",
+              "present": true
+            },
+            {
+              "kind": "relationshipCounter",
+              "relationship": "hunter.senior-guide",
+              "counter": "work-meetings",
+              "op": "gte",
+              "value": 2
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "hunter.senior-guide",
+              "fact": "professional-trust-earned"
+            }
+          ]
+        },
+        {
+          "id": "open-conflict",
+          "from": [
+            "professional-trust"
+          ],
+          "to": "conflict-open",
+          "conditions": [
+            {
+              "kind": "relationshipFact",
+              "relationship": "hunter.senior-guide",
+              "fact": "conflict-opened",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "companion-cooperate",
+          "from": [
+            "conflict-open"
+          ],
+          "to": "companion-ready",
+          "conditions": [
+            {
+              "kind": "relationshipChoice",
+              "relationship": "hunter.senior-guide",
+              "choice": "conflict-response",
+              "value": "cooperate"
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "hunter.senior-guide",
+              "fact": "conflict-resolved"
+            },
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "hunter.senior-guide",
+              "fact": "companion-ready"
+            }
+          ]
+        },
+        {
+          "id": "resolve-rivalry",
+          "from": [
+            "conflict-open"
+          ],
+          "to": "route-resolved",
+          "conditions": [
+            {
+              "kind": "relationshipChoice",
+              "relationship": "hunter.senior-guide",
+              "choice": "conflict-response",
+              "value": "rivalry"
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "hunter.senior-guide",
+              "fact": "conflict-resolved"
+            }
+          ]
+        },
+        {
+          "id": "resolve-refusal",
+          "from": [
+            "conflict-open"
+          ],
+          "to": "route-resolved",
+          "conditions": [
+            {
+              "kind": "relationshipChoice",
+              "relationship": "hunter.senior-guide",
+              "choice": "conflict-response",
+              "value": "declined"
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "hunter.senior-guide",
+              "fact": "conflict-resolved"
+            },
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "hunter.senior-guide",
+              "fact": "refusal-respected"
+            }
+          ]
+        },
+        {
+          "id": "finish-companion",
+          "from": [
+            "companion-ready"
+          ],
+          "to": "route-resolved",
+          "conditions": [
+            {
+              "kind": "relationshipFact",
+              "relationship": "hunter.senior-guide",
+              "fact": "companion-response-resolved",
+              "present": true
             }
           ],
           "effects": []
@@ -6990,6 +7495,349 @@
           "progressDelta": 2,
           "enduranceCost": 0,
           "setRoute": "old-boundary"
+        }
+      ]
+    },
+    {
+      "id": "hunter.expedition",
+      "label": "Hunter Hunt Expedition",
+      "version": 1,
+      "entryConditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "hunter",
+              "stage": "recognized-hunter"
+            },
+            {
+              "kind": "careerStage",
+              "career": "hunter",
+              "stage": "veteran"
+            },
+            {
+              "kind": "careerStage",
+              "career": "hunter",
+              "stage": "master-hunter"
+            },
+            {
+              "kind": "careerStage",
+              "career": "hunter",
+              "stage": "warden"
+            },
+            {
+              "kind": "careerStage",
+              "career": "hunter",
+              "stage": "legend"
+            },
+            {
+              "kind": "careerStage",
+              "career": "hunter",
+              "stage": "outcome-ready"
+            }
+          ]
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "expedition-qualified",
+          "present": true
+        }
+      ],
+      "entryEnergyCost": 2,
+      "resumePolicy": "allowed",
+      "timePolicy": "same_day",
+      "failurePolicy": "exit_to_day",
+      "adapter": "counter.v1",
+      "adapterConfig": {
+        "initialEndurance": 8,
+        "advanceEnduranceCost": 2,
+        "successAtProgress": 6,
+        "failAtEndurance": 0
+      },
+      "options": [
+        {
+          "id": "hunter.expedition.local-route",
+          "label": "Take the marked local route",
+          "category": "route",
+          "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "careerFact",
+                  "career": "hunter",
+                  "fact": "rare-contract-active",
+                  "present": false
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "hunter",
+                  "fact": "rare-contract-complete",
+                  "present": true
+                }
+              ]
+            }
+          ],
+          "progressDelta": 0,
+          "enduranceCost": 0,
+          "setRoute": "local-route"
+        },
+        {
+          "id": "hunter.expedition.rough-route",
+          "label": "Cross the rough route with a Rope Kit",
+          "category": "route",
+          "conditions": [
+            {
+              "kind": "itemCapability",
+              "capability": "cross_rough_route",
+              "present": true
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "careerFact",
+                  "career": "hunter",
+                  "fact": "rare-contract-active",
+                  "present": false
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "hunter",
+                  "fact": "rare-contract-complete",
+                  "present": true
+                }
+              ]
+            }
+          ],
+          "progressDelta": 0,
+          "enduranceCost": 0,
+          "setRoute": "rough-route"
+        },
+        {
+          "id": "hunter.expedition.rare-route",
+          "label": "Follow the prepared rare-route clues",
+          "category": "route",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "hunter",
+              "fact": "rare-contract-ready",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "hunter",
+              "fact": "rare-contract-active",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "hunter",
+              "fact": "rare-contract-complete",
+              "present": false
+            },
+            {
+              "kind": "careerFact",
+              "career": "hunter",
+              "fact": "forest-clue-known",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "hunter",
+              "fact": "tavern-clue-known",
+              "present": true
+            },
+            {
+              "kind": "itemCapability",
+              "capability": "preserve_specimen",
+              "present": true
+            }
+          ],
+          "progressDelta": 0,
+          "enduranceCost": 0,
+          "setRoute": "rare-route"
+        },
+        {
+          "id": "hunter.expedition.local-track",
+          "label": "Read the local signs",
+          "category": "tracking",
+          "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "stat",
+                  "stat": "wits",
+                  "op": "gte",
+                  "value": 3
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "hunter",
+                  "fact": "school-field-craft-ready",
+                  "present": true
+                }
+              ]
+            }
+          ],
+          "progressDelta": 2,
+          "enduranceCost": 1,
+          "setRoute": "local-route"
+        },
+        {
+          "id": "hunter.expedition.local-observe",
+          "label": "Observe before closing distance",
+          "category": "study",
+          "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "careerFact",
+                  "career": "hunter",
+                  "fact": "school-arcana-ready",
+                  "present": true
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "hunter",
+                  "fact": "school-literacy-ready",
+                  "present": true
+                }
+              ]
+            }
+          ],
+          "progressDelta": 2,
+          "enduranceCost": 0,
+          "setRoute": "local-route"
+        },
+        {
+          "id": "hunter.expedition.rough-crossing",
+          "label": "Secure the rough crossing",
+          "category": "route_support",
+          "conditions": [
+            {
+              "kind": "itemCapability",
+              "capability": "cross_rough_route",
+              "present": true
+            }
+          ],
+          "progressDelta": 2,
+          "enduranceCost": 0,
+          "setRoute": "rough-route"
+        },
+        {
+          "id": "hunter.expedition.rough-track",
+          "label": "Track beyond the washed ground",
+          "category": "tracking",
+          "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "stat",
+                  "stat": "dexterity",
+                  "op": "gte",
+                  "value": 4
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "hunter",
+                  "fact": "school-field-craft-ready",
+                  "present": true
+                }
+              ]
+            }
+          ],
+          "progressDelta": 2,
+          "enduranceCost": 1,
+          "setRoute": "rough-route"
+        },
+        {
+          "id": "hunter.expedition.rare-tracking",
+          "label": "Join the independent clue lines",
+          "category": "tracking",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "hunter",
+              "fact": "forest-clue-known",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "hunter",
+              "fact": "tavern-clue-known",
+              "present": true
+            }
+          ],
+          "progressDelta": 2,
+          "enduranceCost": 1,
+          "setRoute": "rare-route"
+        },
+        {
+          "id": "hunter.expedition.preserve-evidence",
+          "label": "Preserve a field specimen",
+          "category": "extraction",
+          "conditions": [
+            {
+              "kind": "itemCapability",
+              "capability": "preserve_specimen",
+              "present": true
+            }
+          ],
+          "progressDelta": 2,
+          "enduranceCost": 0,
+          "setRoute": "rare-route"
+        },
+        {
+          "id": "hunter.expedition.study-sign",
+          "label": "Study the unusual sign instead of forcing contact",
+          "category": "interpretation",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "hunter",
+              "fact": "school-arcana-ready",
+              "present": true
+            }
+          ],
+          "progressDelta": 2,
+          "enduranceCost": 0,
+          "setRoute": "rare-route"
+        }
+      ],
+      "results": [
+        {
+          "id": "hunter.expedition.success",
+          "outcome": "success",
+          "effects": [
+            {
+              "kind": "incrementCareerCounter",
+              "career": "hunter",
+              "counter": "successful_expeditions",
+              "amount": 1
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "hunter",
+              "fact": "expedition-returned"
+            }
+          ]
+        },
+        {
+          "id": "hunter.expedition.escape",
+          "outcome": "escape",
+          "effects": []
+        },
+        {
+          "id": "hunter.expedition.failure",
+          "outcome": "failure",
+          "effects": []
         }
       ]
     }
