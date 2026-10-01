@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 
 import {eligible} from '../src/core/engine.ts';
+import type {Condition} from '../src/core/schema.ts';
 import {catalog,started} from './helpers.ts';
 
 const expectedIds=[
@@ -52,7 +53,7 @@ test('known-face and late-career contexts expose distinct Satyr shift variants i
     const s=started();
     s.run.calendar.elapsedDays=day;
     s.run.progression.careers['satyr-maid']={stage,shifts:0,counters:{completed_shifts:20},choices:{},facts:[]};
-    const candidates=action.scenes.filter(scene=>eligible(scene.conditions,s,catalog))
+    const candidates:{id:string;conditions:Condition[]}[]=action.scenes.filter(scene=>eligible(scene.conditions,s,catalog))
       .sort((a,b)=>b.conditions.length-a.conditions.length);
     assert.equal(candidates[0]?.id,id,season+' '+stage);
   }

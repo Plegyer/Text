@@ -101,6 +101,7 @@ function explain(c:Condition):string{
  case 'calendarDayInYear':return fmt(tr('ui.condition.calendarDayInYear','День года {comparison}'),{comparison:cmp(c.op,c.value)});
  case 'calendarElapsedDays':return fmt(tr('ui.condition.calendarElapsedDays','Прошло дней {comparison}'),{comparison:cmp(c.op,c.value)});
  case 'housingTier':return fmt(tr('ui.condition.housingTier','Жильё: {housing}'),{housing:housingLabel(c.value,labels[c.value]??c.value)});
+ case 'schoolCounter':return fmt(tr('ui.condition.schoolCounter','Школа {track}: {counter} {comparison}'),{track:c.track,counter:c.counter,comparison:cmp(c.op,c.value)});
  case 'careerStage':return fmt(tr('ui.condition.careerStage','Карьера {career}: этап {stage}'),{career:c.career,stage:c.stage});
  case 'careerShifts':return fmt(tr('ui.condition.careerShifts','Карьера {career}: смен {comparison}'),{career:c.career,comparison:cmp(c.op,c.value)});
  case 'careerCounter':return fmt(tr('ui.condition.careerCounter','Карьера {career}: {counter} {comparison}'),{career:c.career,counter:c.counter,comparison:cmp(c.op,c.value)});
