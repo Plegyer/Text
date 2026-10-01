@@ -15,6 +15,7 @@ const undeadResearch=load(manifest.fixtures.undeadResearch);
 const undeadSuccessor=load(manifest.fixtures.undeadSuccessor);
 const povertySeasonal=load(manifest.fixtures.povertySeasonal);
 const povertyContacts=load(manifest.fixtures.povertyContacts);
+const satyrRuntime=load('../../../docs/tasks/SATYR_MAID_RUNTIME_CONTRACT_v1.json');
 
 const packs=manifest.expected.povertyPackIds.map((id:string)=>
   load('content/packs/'+id+'.json')
@@ -33,14 +34,19 @@ test('C3 starter-career identity maps stay exact to current production careers a
   const undead=definitions.careers.find((career:any)=>career.id===manifest.expected.undeadCareerId);
   assert.ok(satyr);
   assert.ok(undead);
-  assert.deepEqual(satyr,satyrIdentity.career);
+  assert.equal(satyr.initialStage,satyrRuntime.career.stages[0]);
+  assert.deepEqual(satyr.stages,satyrRuntime.career.stages);
+  assert.deepEqual(satyr.transitions.map((transition:any)=>transition.id),[
+    'first-shift','known-face','house-regular','veteran-service',
+    'branch-house-power','branch-personal-network','branch-boundaries','outcome-ready'
+  ]);
   assert.deepEqual(undead,undeadIdentity.career);
 
   const satyrAction=definitions.actions.find((action:any)=>action.id===manifest.expected.satyrActionId);
   const undeadAction=definitions.actions.find((action:any)=>action.id===manifest.expected.undeadActionId);
   assert.ok(satyrAction);
   assert.ok(undeadAction);
-  assert.deepEqual(satyrAction.scenes.map((scene:any)=>scene.id),manifest.expected.satyrSceneIds);
+  for(const id of manifest.expected.satyrSceneIds)assert.ok(satyrAction.scenes.some((scene:any)=>scene.id===id),id);
   assert.deepEqual(undeadAction.scenes.map((scene:any)=>scene.id),manifest.expected.undeadSceneIds);
 
   const satyrScenes=new Set(satyrAction.scenes.map((scene:any)=>scene.id));
@@ -51,26 +57,31 @@ test('C3 starter-career identity maps stay exact to current production careers a
   for(const entry of undeadSuccessor.hooks)assert.ok(undeadScenes.has(entry.sceneId),entry.sceneId);
 });
 
-test('C3 starter-career content adds no guessed events or relationships beyond the approved Hard Work ending seam',()=>{
-  assert.equal((definitions.events??[]).some((event:any)=>/satyr-maid|undead-farm/.test(JSON.stringify(event))),false);
-  assert.equal((definitions.relationships??[]).some((rel:any)=>/satyr-maid|undead-farm/.test(JSON.stringify(rel))),false);
+test('C3 starter-career collision guard accepts approved Satyr v10 runtime and still forbids guessed Undead systems',()=>{
+  assert.equal((definitions.events??[]).some((event:any)=>/undead-farm/.test(JSON.stringify(event))),false);
+  assert.equal((definitions.relationships??[]).some((rel:any)=>/undead-farm/.test(JSON.stringify(rel))),false);
+
+  const satyrRelationship=definitions.relationships.find((rel:any)=>rel.id===satyrRuntime.relationship.id);
+  assert.ok(satyrRelationship);
+  assert.deepEqual(satyrRelationship.stages,satyrRuntime.relationship.stages);
+
   assert.deepEqual(
     definitions.endings
-      .filter((ending:any)=>/satyr-maid|undead-farm/.test(ending.id))
+      .filter((ending:any)=>/satyr-maid/.test(ending.id))
       .map((ending:any)=>ending.id)
       .sort(),
-    ['ending.satyr-maid.hard-work','ending.undead-farm.hard-work']
+    [...satyrRuntime.endings].sort()
+  );
+  assert.deepEqual(
+    definitions.endings
+      .filter((ending:any)=>/undead-farm/.test(ending.id))
+      .map((ending:any)=>ending.id),
+    ['ending.undead-farm.hard-work']
   );
 
+  // These fixtures predate the approved runtime and remain historical content-only evidence.
   assert.equal(satyrIdentity.identityFamilies.guest.productionIdentityPresent,false);
-  assert.equal(satyrIdentity.identityFamilies.flirt.productionIdentityPresent,false);
-  assert.equal(satyrIdentity.identityFamilies.boundary.productionIdentityPresent,false);
-  assert.equal(satyrIdentity.identityFamilies.reputation.productionIdentityPresent,false);
-
   assert.equal(satyrService.invariants.noNewGuestIdentity,true);
-  assert.equal(satyrService.invariants.noRelationshipState,true);
-  assert.equal(satyrBoundary.boundaries.persistentReputation,false);
-  assert.equal(satyrBoundary.boundaries.persistentFlirt,false);
   assert.equal(satyrBoundary.boundaries.persistentBoundaryState,false);
 
   assert.equal(undeadIdentity.research.productionIdentityPresent,false);

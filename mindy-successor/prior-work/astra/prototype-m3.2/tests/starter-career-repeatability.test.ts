@@ -6,8 +6,8 @@ import type {Save} from '../src/core/schema.ts';
 import {catalog,started} from './helpers.ts';
 
 const cases=[
-  {career:'satyr-maid',action:'satyr-maid.shift',stage:'known-face'},
-  {career:'undead-farm',action:'undead-farm.shift',stage:'reliable-helper'}
+  {career:'satyr-maid',action:'satyr-maid.shift',firstStage:'floor-rhythm',finalStage:'veteran-service'},
+  {career:'undead-farm',action:'undead-farm.shift',firstStage:'reliable-helper',finalStage:'reliable-helper'}
 ] as const;
 
 function settlePending(s:Save){
@@ -56,13 +56,13 @@ test('Satyr Maid and Undead Farm first-shift transitions remain one-time while t
     s=dispatch(s,{type:'action',id:c.action},catalog);
     s=settlePending(s);
     assert.equal(s.run.progression.careers[c.career]?.counters.completed_shifts,1,c.career);
-    assert.equal(s.run.progression.careers[c.career]?.stage,c.stage,c.career);
+    assert.equal(s.run.progression.careers[c.career]?.stage,c.firstStage,c.career);
     assert.ok(s.run.progression.careers[c.career]?.facts.includes('first-shift-complete'),c.career);
 
     s=dispatch(s,{type:'action',id:c.action},catalog);
     s=settlePending(s);
     assert.equal(s.run.progression.careers[c.career]?.counters.completed_shifts,2,c.career);
-    assert.equal(s.run.progression.careers[c.career]?.stage,c.stage,c.career);
+    assert.equal(s.run.progression.careers[c.career]?.stage,c.firstStage,c.career);
     assert.equal(s.run.progression.careers[c.career]?.facts.filter(f=>f==='first-shift-complete').length,1,c.career);
   }
 });
@@ -76,7 +76,7 @@ test('Satyr Maid and Undead Farm naturally reach their 50-shift Hard Work thresh
       s=settlePending(s);
     }
     assert.equal(s.run.progression.careers[c.career]?.counters.completed_shifts,50,c.career);
-    assert.equal(s.run.progression.careers[c.career]?.stage,c.stage,c.career);
+    assert.equal(s.run.progression.careers[c.career]?.stage,c.finalStage,c.career);
     assert.ok(s.run.endings.eligible.includes(`ending.${c.career}.hard-work`),c.career);
   }
 });
