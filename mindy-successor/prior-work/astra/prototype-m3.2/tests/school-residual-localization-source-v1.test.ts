@@ -63,48 +63,13 @@ test('worker RU and EN patches merge consistently into stable pairs',()=>{
   }
 });
 
-test('collision assumptions match exact audited current root',()=>{
+test('promoted residual accessibility keys match the reviewed merged patch',()=>{
   if(Object.keys(merged.strings).length===0)return;
 
   for(const key of expectedKeys){
     assert.ok(root[key],key+' missing current root key');
+    assert.deepEqual(root[key],merged.strings[key],key+' promoted pair mismatch');
   }
-
-  assert.notEqual(
-    root['presentation.static.school-course-literacy-and-numbers.alt'].ru,
-    merged.strings['presentation.static.school-course-literacy-and-numbers.alt'].ru
-  );
-  assert.equal(
-    root['presentation.static.school-course-literacy-and-numbers.alt'].en,
-    merged.strings['presentation.static.school-course-literacy-and-numbers.alt'].en
-  );
-
-  assert.equal(
-    root['presentation.static.school-course-arcana.alt'].ru,
-    merged.strings['presentation.static.school-course-arcana.alt'].ru
-  );
-  assert.notEqual(
-    root['presentation.static.school-course-arcana.alt'].en,
-    merged.strings['presentation.static.school-course-arcana.alt'].en
-  );
-
-  assert.notEqual(
-    root['presentation.static.school-course-etiquette-and-presentation.alt'].ru,
-    merged.strings['presentation.static.school-course-etiquette-and-presentation.alt'].ru
-  );
-  assert.notEqual(
-    root['presentation.static.school-course-etiquette-and-presentation.alt'].en,
-    merged.strings['presentation.static.school-course-etiquette-and-presentation.alt'].en
-  );
-
-  assert.equal(
-    root['presentation.static.school-course-arts-and-performance.alt'].ru,
-    merged.strings['presentation.static.school-course-arts-and-performance.alt'].ru
-  );
-  assert.notEqual(
-    root['presentation.static.school-course-arts-and-performance.alt'].en,
-    merged.strings['presentation.static.school-course-arts-and-performance.alt'].en
-  );
 });
 
 test('fixtures do not promote teacher staging or carry gameplay fields',()=>{
