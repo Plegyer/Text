@@ -1,5 +1,13 @@
 # Leader 1 — Start Here
 
+## TAKEOVER CHECKPOINT — 2026-10-01
+
+For the current handoff, read immediately after this file:
+- `LEADER1_HANDOFF_CHECKPOINT_2026-10-01.md`
+
+It contains the exact current integration/QA order and worker states at the previous Leader 1 context boundary. Verify Git afterward because worker heads may have moved.
+
+
 ## Exact-head delivery rule
 
 A green workflow or QA verdict applies only to the exact PR head SHA it tested. If a producer branch moves afterward, old green/QA evidence is historical until the new head gets its own full CI and required QA gate.
