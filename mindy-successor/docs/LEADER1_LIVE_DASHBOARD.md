@@ -61,11 +61,11 @@ The runtime is not the bottleneck. The bottleneck is completing naturally reacha
 
 | Worker | Active assignment | Observed branch/head | Last observed progress | Leader interpretation |
 |---|---|---|---|---|
-| Chat 1 Developer | C1D-85..96 | `chat1/c1d-85-96-late-career-hard-work` @ `987438954cfec9739281a512a1589cb2707095e5` | `C1D-89: verify all-ten Hard Work Meta rewards` at 04:40Z; branch also contains later queue work | PR #147 is non-draft and exact-head CI run #451 is **GREEN**. It is now the first eligible fresh candidate for Chat 4 C4-124. Do not integrate before independent Chat 4 gate. |
-| Chat 2 Presentation | C2-109..120 | `chat2/presentation-c2-109-120` @ `b4cd3865813b996fcbed7cf8ac952fc2d605b213` | `C2-120 prepare focused candidate handoff before exact-head CI` at 04:40Z | PR #151 is open and #152 is a duplicate/draft candidate on the same head. Exact-head CI #458 **FAILED: 554/565 pass, 11 fail**. Failures include static-vs-GIF presentation expectations and a localization consumer assertion. Chat 2 must reconcile/repair before QA; keep only one canonical candidate afterward. |
+| Chat 1 Developer | C1D-85..96 | `chat1/c1d-85-96-late-career-hard-work` @ `c0ebb6034c9714a943f2193b7b16ae7277c10cc4` | `C1D-96 blocker: drop superseded duplicate Meta regression` at 04:44Z | PR #147 moved again after a previously green head and is draft at this snapshot. Current exact-head CI #467 is **IN PROGRESS**. Treat only the current frozen/green head as QA-eligible. |
+| Chat 2 Presentation | C2-109..120 | `chat2/presentation-c2-109-120` @ `9d1a6e87d101774bf47d5bf66f4e484be4546090` | `C2-120 CI fix retain accepted-ending localization fallback` at 04:45Z | PR #151 was repaired after the 554/565 failure; current exact-head CI #470 is **IN PROGRESS**. PR #152 remains a duplicate/draft repair candidate; keep one canonical candidate after CI settles. |
 | Chat 3 Forest/Poverty | C3-109..120 | `chat3/forest-poverty-production-v11` @ `e750480404b1270ffbe47ca1dad2cb381bcf29d1` | v11 production candidate handoff at 04:30Z | PR #146 exact-head CI #436 **FAILED**: 539/568 pass, 29 fail. It is not QA-eligible and must be repaired/refreshed by Chat 3 before gating. |
 | Chat 4 QA | C4-114..125 | merged evidence from `chat4/c4-123-125-qa-evidence` | PR #148 merged as `a30272dc91cab3d5286558a189d5d816f1841db7` | Backlog disposition + executable acceptance truth are now on main. C4-124 remains the live task: gate the first **green/frozen** fresh candidate; do not gate red/mutable heads. |
-| Chat 5 School | C5-109..120 | `chat5/school-production-v11` @ `fc0751e48c78f260d3516258bd2c33719ab89f33` | C5-119 compatibility-only Night event gate at 04:40Z | PR #150 is open, but exact-head CI #456 **FAILED during validation** with `Недопустимая typed capability: read calendar`. Chat 5 must repair before QA. |
+| Chat 5 School | C5-109..120 | `chat5/school-production-v11` @ `44412489389615428a8674c6ecb8b8f38a52eefb` | `C5-120 record pre-freeze compatibility blocker fixes` at 04:44Z | PR #150 moved after its validation failure. No exact-head workflow was visible yet at this snapshot; do not QA-gate until a current green run exists. |
 
 The task pointers remain authoritative for queue scope.
 
@@ -84,9 +84,9 @@ Current open PRs include:
 - #143 — Chat 5 v10 candidate;
 - #145 — Chat 3 v10 candidate;
 - #146 — Chat 3 v11 production promotion candidate — **red CI** at snapshot;
-- #147 — Chat 1 v9 late-career unlock / all-ten Hard Work Meta candidate — **GREEN exact-head CI**, next fresh QA candidate;
-- #150 — Chat 5 v11 School production candidate — **red validation** at snapshot;
-- #151 — Chat 2 v11 presentation candidate — **red CI, 554/565**;
+- #147 — Chat 1 v9 late-career unlock / all-ten Hard Work Meta candidate — repaired/mutable again; current CI in progress;
+- #150 — Chat 5 v11 School production candidate — repaired after validation failure; current exact-head CI not yet visible;
+- #151 — Chat 2 v11 presentation candidate — repaired after red CI; current CI in progress;
 - #152 — duplicate/draft Chat 2 candidate on same head as #151.
 
 PR #148 is no longer open: its QA ledger/acceptance truth was merged into main.
@@ -124,8 +124,8 @@ The goal is fewer "prepared-only" assets and more actual player-facing content.
 When the current worker wave finishes, the default order is:
 
 1. use the merged Chat 4 disposition ledger to close superseded PRs and selectively integrate the distinct #124/#136/#139 deltas on current main rather than wholesale;
-2. have Chat 4 gate **PR #147 first** now that its exact-head CI is green;
-3. integrate Chat 1 v9 shared career runtime only if that QA gate accepts it;
+2. have Chat 4 gate the first **current** green/frozen fresh candidate, preferring Chat 1 shared-runtime PR #147 when it becomes eligible;
+3. integrate Chat 1 v9 shared career runtime only after a current-head green run and independent QA acceptance;
 4. repair then QA/integrate Chat 3 v11 and Chat 5 v11 production content;
 5. QA/integrate Chat 2 v11 presentation coverage where it matches merged gameplay identities;
 6. refresh main CI and this dashboard;
