@@ -1,0 +1,46 @@
+{
+  "formatVersion": 1,
+  "id": "school.localization-v10.fixture-collision-contract.v1",
+  "status": "TEST_CONTRACT_ONLY",
+  "baseline": "6afc01061646bc52cec824863bf89e8ad8c309d0",
+  "expectedCourseIds": [
+    "school.course.literacy_and_numbers",
+    "school.course.arcana",
+    "school.course.rhetoric_and_social",
+    "school.course.etiquette_and_presentation",
+    "school.course.field_craft",
+    "school.course.physical_training",
+    "school.course.arts_and_performance",
+    "school.course.body_confidence"
+  ],
+  "expectedTeacherIds": [
+    "school.teacher.mara-fen",
+    "school.teacher.ilyra-venn",
+    "school.teacher.cassian-reed",
+    "school.teacher.eliane-marrow",
+    "school.teacher.rowan-pike",
+    "school.teacher.tovan-kest",
+    "school.teacher.nessa-lark",
+    "school.teacher.sera-vey"
+  ],
+  "expectedCareerIds": [
+    "lumber",
+    "satyr-maid",
+    "undead-farm",
+    "tavern",
+    "hunter",
+    "guard",
+    "merchant",
+    "artist-geisha",
+    "assassin",
+    "prostitute"
+  ],
+  "expectedNightChoiceCount": 24,
+  "preparedLocalizationPrefixes": [
+    "school.night_v10."
+  ],
+  "constraints": {
+    "createsIdentity": false,
+    "changesRootLocalization": false
+  }
+}
