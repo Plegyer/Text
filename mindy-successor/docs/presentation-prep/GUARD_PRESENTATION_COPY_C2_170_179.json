@@ -1,0 +1,103 @@
+{
+  "version": 1,
+  "status": "prep-only; do not load as production presentation patch before C2-180",
+  "runtimeAuthority": {
+    "pr": 208,
+    "observedHead": "9dffd8eb97c6db14dd270b494b4285b82111cdc0",
+    "observedWorkflow": {
+      "runNumber": 791,
+      "id": 36867128236,
+      "conclusion": "failure"
+    },
+    "finalBindingRequires": "one exact frozen green Guard runtime head"
+  },
+  "staticFallback": {
+    "slot": "job/guard/result/default",
+    "asset": "assets/presentation/career-guard-result.svg",
+    "principle": "ordinary city duty and official access; no combat/use-of-force mechanic"
+  },
+  "eventGroups": {
+    "career": [
+      "guard.career.first-shift",
+      "guard.career.senior",
+      "guard.career.duty-breadth",
+      "guard.career.veteran-ready",
+      "guard.career.choose-route",
+      "guard.career.choose-major-case",
+      "guard.career.outcome-ready"
+    ],
+    "relationship": [
+      "guard.relationship.intro",
+      "guard.relationship.trust",
+      "guard.relationship.conflict-open",
+      "guard.relationship.conflict-resolve",
+      "guard.relationship.case-support"
+    ],
+    "city": [
+      "guard.city.dispute",
+      "guard.city.crowd-pressure",
+      "guard.city.suspicious-pass",
+      "guard.city.poverty-response",
+      "guard.city.formal-report"
+    ],
+    "access": [
+      "guard.access.badge",
+      "guard.access.sealed-pass",
+      "guard.access.evidence-ledger"
+    ],
+    "crossSystem": [
+      "guard.cross.tavern-receipt"
+    ],
+    "crisisAndRoutes": [
+      "guard.crisis.market-gate-pressure",
+      "guard.routes.officer-ready",
+      "guard.routes.reform-ready",
+      "guard.routes.network-ready",
+      "guard.routes.major-case-ready"
+    ],
+    "school": []
+  },
+  "copyRules": {
+    "career": "Present duty progression/readiness only; never describe a route stage as a committed ending.",
+    "relationship": "Professional partner only. Cooperation, rivalry and refusal remain valid; refusal never implies loss of ordinary Guard work.",
+    "city": "Describe concrete city duty, reports and evidence qualitatively. Never add Morality or corruption currency.",
+    "access": "Badge and Sealed Pass describe access/options only; never immunity or combat bonuses.",
+    "poverty": "Use only the existing poverty-response seam; never Secret Debt clearing.",
+    "tavern": "Use only the existing Tavern receipt/resolution consumer.",
+    "crisis": "Describe the selected handling/reporting route; do not imply a new law/combat system.",
+    "school": "No Guard School event copy may be published without a real frozen consumer.",
+    "ending": "Only ending.guard.hard-work is public in the observed contract."
+  },
+  "altCaptionTemplates": {
+    "careerEvent": {
+      "altRu": "Сцена службы стражи: {label}; статичная подача не меняет условия, эффекты, готовность маршрута или исход.",
+      "altEn": "Guard duty scene: {label}; static presentation does not change conditions, effects, route readiness, or outcome.",
+      "captionRu": "Служба стражи: {label}.",
+      "captionEn": "Guard duty: {label}."
+    },
+    "relationshipEvent": {
+      "altRu": "Профессиональная сцена с напарницей стражи: {label}; отказ и сотрудничество показаны без изменения обычной доступности службы.",
+      "altEn": "Professional guard-partner scene: {label}; refusal and cooperation are presented without changing ordinary duty availability.",
+      "captionRu": "Напарница стражи: {label}.",
+      "captionEn": "Guard partner: {label}."
+    },
+    "cityEvent": {
+      "altRu": "Городская служба стражи: {label}; показаны только конкретная обязанность и качественное состояние доказательств.",
+      "altEn": "City guard duty: {label}; only the concrete duty and qualitative evidence state are presented.",
+      "captionRu": "Городская служба: {label}.",
+      "captionEn": "City duty: {label}."
+    },
+    "accessEvent": {
+      "altRu": "Служебный доступ стражи: {label}; предмет или запись меняют только доступные варианты, а не боевые характеристики.",
+      "altEn": "Guard official access: {label}; the item or record changes available options only, not combat statistics.",
+      "captionRu": "Служебный доступ: {label}.",
+      "captionEn": "Official access: {label}."
+    },
+    "crisisRouteEvent": {
+      "altRu": "Служебная готовность стражи: {label}; сцена показывает решение или готовность маршрута без создания нового финала.",
+      "altEn": "Guard route readiness: {label}; the scene presents a decision or route readiness without creating a new ending.",
+      "captionRu": "Готовность стражи: {label}.",
+      "captionEn": "Guard readiness: {label}."
+    }
+  }
+}
