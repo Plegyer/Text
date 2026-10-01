@@ -59,5 +59,6 @@ test('C5-117 legacy generic Night-study event is retained but unreachable for ne
   assert.ok(legacy);
   assert.deepEqual(legacy.trigger,[]);
   assert.deepEqual(legacy.reactionTriggers,[{kind:'nightChoiceCompleted',choice:'school.night_study.literacy_and_numbers.reason'}]);
-  assert.deepEqual(legacy.conditions,[{kind:'not',condition:{kind:'calendarYear',op:'gte',value:1}}]);
+  assert.deepEqual(legacy.conditions,[]);
+  assert.deepEqual(legacy.chance,{base:0,stat:'intelligence',perPoint:0,max:0});
 });
