@@ -41,6 +41,7 @@
       "staff-access-issued",
       "guest-ledger-evidence-ready",
       "traveler-rumour-known",
+      "rumour-route-open",
       "rumour-confirmed",
       "housing-assistance-complete",
       "confidentiality-resolved",
@@ -149,7 +150,9 @@
   "information": {
     "producedFact": "traveler-rumour-known",
     "confirmedFact": "rumour-confirmed",
-    "consumer": "tavern.career.information-broker"
+    "consumer": "tavern.career.information-broker",
+    "routeFact": "rumour-route-open",
+    "routeEvent": "tavern.information.rumour-route"
   },
   "activityHook": {
     "activity": "lumber.forest",

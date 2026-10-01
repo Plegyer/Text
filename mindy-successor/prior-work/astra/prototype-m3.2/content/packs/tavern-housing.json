@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "id": "tavern-housing",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "careers": [
+        "tavern"
+      ],
+      "housing": true
+    },
+    "writes": {
+      "careers": [
+        "tavern"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "tavern.housing.meal-in-kind",
+      "title": "A staff meal when housing is thin",
+      "sourceDomain": "tavern",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "actionCompleted",
+          "action": "tavern.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 66,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            },
+            {
+              "kind": "housingTier",
+              "value": "street"
+            }
+          ]
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "tavern",
+              "stage": "trusted-worker"
+            },
+            {
+              "kind": "careerStage",
+              "career": "tavern",
+              "stage": "house-node"
+            },
+            {
+              "kind": "careerStage",
+              "career": "tavern",
+              "stage": "outcome-ready"
+            }
+          ]
+        },
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "housing-assistance-complete",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Because your current housing is cheap or street-level, the house can offer one staff meal in kind. It does not pay rent, change your lodging tier, or erase the normal Night housing choice.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "accept-meal",
+          "label": "Accept the staff meal",
+          "text": "Take the narrow in-kind assistance and keep the ordinary housing economy intact.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "tavern",
+              "fact": "housing-assistance-complete"
+            }
+          ]
+        },
+        {
+          "id": "decline-meal",
+          "label": "Decline the meal",
+          "text": "Keep the work relationship unchanged and continue using ordinary housing choices.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "tavern",
+              "fact": "housing-assistance-declined"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
