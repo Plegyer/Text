@@ -1,5 +1,16 @@
 # Mindy Successor Project
 
+## Leader 1 entrypoint
+
+For any current or replacement Leader 1, start here:
+
+1. [LEADER1_START_HERE.md](docs/LEADER1_START_HERE.md)
+2. [LEADER1_LIVE_DASHBOARD.md](docs/LEADER1_LIVE_DASHBOARD.md)
+3. [LEADER1_RESTART_PROMPT.md](docs/LEADER1_RESTART_PROMPT.md) when recreating a Leader chat.
+
+These files are the shortest recovery path to the current project moment, critical path and worker assignments. Git remains authoritative over snapshots.
+
+
 ## CURRENT LIVE ENTRYPOINT — 2026-10-01
 
 Before older handoffs/status prose, read:
