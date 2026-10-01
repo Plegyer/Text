@@ -1,0 +1,86 @@
+{
+  "formatVersion": 1,
+  "id": "school.localization-v10.teacher-milestone-text-audit.v1",
+  "status": "CONTENT_AUDIT_ONLY",
+  "baseline": "6afc01061646bc52cec824863bf89e8ad8c309d0",
+  "teachers": [
+    {
+      "teacherContentId": "school.teacher.mara-fen",
+      "courseId": "school.course.literacy_and_numbers",
+      "educatorOnly": true
+    },
+    {
+      "teacherContentId": "school.teacher.ilyra-venn",
+      "courseId": "school.course.arcana",
+      "educatorOnly": true
+    },
+    {
+      "teacherContentId": "school.teacher.cassian-reed",
+      "courseId": "school.course.rhetoric_and_social",
+      "educatorOnly": true
+    },
+    {
+      "teacherContentId": "school.teacher.eliane-marrow",
+      "courseId": "school.course.etiquette_and_presentation",
+      "educatorOnly": true
+    },
+    {
+      "teacherContentId": "school.teacher.rowan-pike",
+      "courseId": "school.course.field_craft",
+      "educatorOnly": true
+    },
+    {
+      "teacherContentId": "school.teacher.tovan-kest",
+      "courseId": "school.course.physical_training",
+      "educatorOnly": true
+    },
+    {
+      "teacherContentId": "school.teacher.nessa-lark",
+      "courseId": "school.course.arts_and_performance",
+      "educatorOnly": true
+    },
+    {
+      "teacherContentId": "school.teacher.sera-vey",
+      "courseId": "school.course.body_confidence",
+      "educatorOnly": true
+    }
+  ],
+  "milestoneTextCoverage": [
+    {
+      "teacherContentId": "school.teacher.mara-fen",
+      "sourceCourseId": "school.course.literacy_and_numbers",
+      "variantRoles": [
+        "pre_milestone_depth",
+        "milestone_neutral_feedback",
+        "post_result_reflection"
+      ],
+      "selectedMilestoneId": null
+    },
+    {
+      "teacherContentId": "school.teacher.ilyra-venn",
+      "sourceCourseId": "school.course.arcana",
+      "variantRoles": [
+        "pre_milestone_depth",
+        "milestone_neutral_feedback",
+        "post_result_reflection"
+      ],
+      "selectedMilestoneId": null
+    }
+  ],
+  "teachersWithoutMilestoneDepth": [
+    "school.teacher.cassian-reed",
+    "school.teacher.eliane-marrow",
+    "school.teacher.rowan-pike",
+    "school.teacher.tovan-kest",
+    "school.teacher.nessa-lark",
+    "school.teacher.sera-vey"
+  ],
+  "note": "Absence of milestone-depth copy for six teachers is not permission to create milestone mechanics or curriculum.",
+  "constraints": {
+    "createsCurriculum": false,
+    "createsMilestone": false,
+    "selectsThreshold": false,
+    "changesTeacherCanon": false,
+    "changesRuntime": false
+  }
+}
