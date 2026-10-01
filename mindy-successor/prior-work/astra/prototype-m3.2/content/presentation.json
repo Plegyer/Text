@@ -1196,6 +1196,286 @@
         "altKey": "presentation.static.prostitute-ending-hard-work.alt"
       }
     },
+    "job/undead-farm/stage/new-hand": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-result.svg",
+        "alt": "Undead Farm career stage: New hand.",
+        "altKey": "presentation.static.career.undead-farm.stage.new-hand.alt"
+      }
+    },
+    "job/undead-farm/stage/reliable-helper": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-result.svg",
+        "alt": "Undead Farm career stage: Reliable helper.",
+        "altKey": "presentation.static.career.undead-farm.stage.reliable-helper.alt"
+      }
+    },
+    "job/undead-farm/stage/keeper-of-process": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-result.svg",
+        "alt": "Undead Farm career stage: Keeper of process.",
+        "altKey": "presentation.static.career.undead-farm.stage.keeper-of-process.alt"
+      }
+    },
+    "job/undead-farm/stage/veteran": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-result.svg",
+        "alt": "Undead Farm career stage: Farm veteran.",
+        "altKey": "presentation.static.career.undead-farm.stage.veteran.alt"
+      }
+    },
+    "job/undead-farm/stage/research": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-result.svg",
+        "alt": "Undead Farm career stage: Research route.",
+        "altKey": "presentation.static.career.undead-farm.stage.research.alt"
+      }
+    },
+    "job/undead-farm/stage/successor": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-result.svg",
+        "alt": "Undead Farm career stage: Successor route.",
+        "altKey": "presentation.static.career.undead-farm.stage.successor.alt"
+      }
+    },
+    "job/undead-farm/stage/external-anomaly": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-result.svg",
+        "alt": "Undead Farm career stage: External anomaly.",
+        "altKey": "presentation.static.career.undead-farm.stage.external-anomaly.alt"
+      }
+    },
+    "job/undead-farm/stage/outcome-ready": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-result.svg",
+        "alt": "Undead Farm career stage: Outcome ready.",
+        "altKey": "presentation.static.career.undead-farm.stage.outcome-ready.alt"
+      }
+    },
+    "job/undead-farm/event/undead-farm-career-first-shift/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-result.svg",
+        "alt": "Undead Farm presentation: Reliable helper.",
+        "altKey": "presentation.static.career.undead-farm.event.career-first-shift.alt"
+      }
+    },
+    "job/undead-farm/event/undead-farm-career-keeper-of-process/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-result.svg",
+        "alt": "Undead Farm presentation: Keeper of the process.",
+        "altKey": "presentation.static.career.undead-farm.event.career-keeper-of-process.alt"
+      }
+    },
+    "job/undead-farm/event/undead-farm-career-veteran/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-result.svg",
+        "alt": "Undead Farm presentation: Veteran farm route.",
+        "altKey": "presentation.static.career.undead-farm.event.career-veteran.alt"
+      }
+    },
+    "job/undead-farm/event/undead-farm-career-research/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-result.svg",
+        "alt": "Undead Farm presentation: Research route.",
+        "altKey": "presentation.static.career.undead-farm.event.career-research.alt"
+      }
+    },
+    "job/undead-farm/event/undead-farm-career-successor/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-result.svg",
+        "alt": "Undead Farm presentation: Successor route.",
+        "altKey": "presentation.static.career.undead-farm.event.career-successor.alt"
+      }
+    },
+    "job/undead-farm/event/undead-farm-career-external-anomaly/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-result.svg",
+        "alt": "Undead Farm presentation: External anomaly route.",
+        "altKey": "presentation.static.career.undead-farm.event.career-external-anomaly.alt"
+      }
+    },
+    "job/undead-farm/event/undead-farm-career-outcome-ready/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-result.svg",
+        "alt": "Undead Farm presentation: Farm outcomes ready.",
+        "altKey": "presentation.static.career.undead-farm.event.career-outcome-ready.alt"
+      }
+    },
+    "job/undead-farm/event/undead-farm-production-first-output/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-result.svg",
+        "alt": "Undead Farm presentation: A usable farm output.",
+        "altKey": "presentation.static.career.undead-farm.event.production-first-output.alt"
+      }
+    },
+    "job/undead-farm/event/undead-farm-production-prepare-delivery/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-result.svg",
+        "alt": "Undead Farm presentation: Prepare a delivery.",
+        "altKey": "presentation.static.career.undead-farm.event.production-prepare-delivery.alt"
+      }
+    },
+    "job/undead-farm/event/undead-farm-production-preserve-sample/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-result.svg",
+        "alt": "Undead Farm presentation: Preserve the unstable specimen.",
+        "altKey": "presentation.static.career.undead-farm.event.production-preserve-sample.alt"
+      }
+    },
+    "job/undead-farm/event/undead-farm-sample-kit-issued/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-result.svg",
+        "alt": "Undead Farm presentation: Preservation kit from farm supplies.",
+        "altKey": "presentation.static.career.undead-farm.event.sample-kit-issued.alt"
+      }
+    },
+    "relationship/undead-farm-keeper/undead-farm-keeper-intro/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-result.svg",
+        "alt": "Undead Farm presentation: The farm keeper notices your work.",
+        "altKey": "presentation.static.career.undead-farm.event.keeper-intro.alt"
+      }
+    },
+    "relationship/undead-farm-keeper/undead-farm-keeper-trust/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-result.svg",
+        "alt": "Undead Farm presentation: Professional trust.",
+        "altKey": "presentation.static.career.undead-farm.event.keeper-trust.alt"
+      }
+    },
+    "relationship/undead-farm-keeper/undead-farm-keeper-request/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-result.svg",
+        "alt": "Undead Farm presentation: A process request returns to work.",
+        "altKey": "presentation.static.career.undead-farm.event.keeper-request.alt"
+      }
+    },
+    "relationship/undead-farm-keeper/undead-farm-keeper-successor-reaction/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-result.svg",
+        "alt": "Undead Farm presentation: Trust becomes succession readiness.",
+        "altKey": "presentation.static.career.undead-farm.event.keeper-successor-reaction.alt"
+      }
+    },
+    "relationship/undead-farm-keeper/undead-farm-night-keeper-request/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-result.svg",
+        "alt": "Undead Farm presentation: After-hours process review.",
+        "altKey": "presentation.static.career.undead-farm.event.night-keeper-request.alt"
+      }
+    },
+    "job/undead-farm/event/undead-farm-night-process-notes/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-result.svg",
+        "alt": "Undead Farm presentation: Process notes.",
+        "altKey": "presentation.static.career.undead-farm.event.night-process-notes.alt"
+      }
+    },
+    "job/undead-farm/event/undead-farm-school-arcana-research/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-result.svg",
+        "alt": "Undead Farm presentation: Arcana becomes a farm research method.",
+        "altKey": "presentation.static.career.undead-farm.event.school-arcana-research.alt"
+      }
+    },
+    "job/undead-farm/event/undead-farm-school-management-records/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-result.svg",
+        "alt": "Undead Farm presentation: Farm records become management tools.",
+        "altKey": "presentation.static.career.undead-farm.event.school-management-records.alt"
+      }
+    },
+    "job/undead-farm/event/undead-farm-activity-forest-return/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-result.svg",
+        "alt": "Undead Farm presentation: A Forest result matches the farm sample.",
+        "altKey": "presentation.static.career.undead-farm.event.activity-forest-return.alt"
+      }
+    },
+    "job/undead-farm/event/undead-farm-crisis-supply-labor-containment/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-result.svg",
+        "alt": "Undead Farm presentation: Supply, labor, and containment collide.",
+        "altKey": "presentation.static.career.undead-farm.event.crisis-supply-labor-containment.alt"
+      }
+    },
+    "job/undead-farm/resource/farm_produce": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-result.svg",
+        "alt": "Undead Farm result: Ordinary produce.",
+        "altKey": "presentation.static.career.undead-farm.resource.farm_produce.alt"
+      }
+    },
+    "job/undead-farm/resource/farm_unstable_specimen": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-result.svg",
+        "alt": "Undead Farm result: Unstable specimen.",
+        "altKey": "presentation.static.career.undead-farm.resource.farm_unstable_specimen.alt"
+      }
+    },
+    "job/undead-farm/resource/farm_preserved_specimen": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-result.svg",
+        "alt": "Undead Farm result: Preserved specimen.",
+        "altKey": "presentation.static.career.undead-farm.resource.farm_preserved_specimen.alt"
+      }
+    },
+    "job/undead-farm/resource/farm_delivery_input": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-result.svg",
+        "alt": "Undead Farm result: Delivery input.",
+        "altKey": "presentation.static.career.undead-farm.resource.farm_delivery_input.alt"
+      }
+    },
+    "ending/undead-farm/research-farmer": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-result.svg",
+        "alt": "Undead Farm Undead Farm — Research Farmer ending static presentation.",
+        "altKey": "presentation.static.undead-farm-ending-research-farmer.alt"
+      }
+    },
+    "ending/undead-farm/successor": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-result.svg",
+        "alt": "Undead Farm Undead Farm — Successor ending static presentation.",
+        "altKey": "presentation.static.undead-farm-ending-successor.alt"
+      }
+    },
     "job/satyr-maid/stage/new-maid": {
       "static": {
         "kind": "image",
