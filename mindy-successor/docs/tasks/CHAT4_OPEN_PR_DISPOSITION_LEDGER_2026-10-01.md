@@ -71,11 +71,29 @@ This ledger is disposition/evidence only. It does not:
 - resolve producer-owned blockers.
 
 
-## C4-124 dependency state
+## C4-124 fresh-candidate gate
 
-At the first fresh-candidate check after C4-123:
+Chat 1 v9 PR #147 became the first eligible frozen candidate.
 
-- Chat 1 v9 PR #147 was still draft/mutable. Its first head `8257571da18d24009f23d4e342dd494398536fbc` failed exact-head CI run #437 (560/570 pass); producer then moved the branch to a new mutable head, so the failed head is not QA-gated.
-- Chat 3 v11 PR #146 was the first fresh C2/C3/C5-v11 candidate visible, but head `e750480404b1270ffbe47ca1dad2cb381bcf29d1` failed exact-head CI run #436 (539/568 pass) and was not declared frozen.
-- Therefore C4-124 had **no eligible frozen candidate** at that snapshot. QA does not gate mutable or red heads and does not repair producer branches.
-- C4-124 remains pending until Chat 1 v9 freezes first, or—if it is not frozen—the first green/frozen C2/C3/C5 v11 candidate appears.
+Initial frozen gate:
+- exact head: `15d6ee3d91c5ad3fef82fe52a06ec2a590089003`;
+- exact-head CI #448 / id `36815947100`: SUCCESS;
+- QA verdict: **BLOCK**.
+
+Concrete blocker:
+- `satyr-maid.shift` and `undead-farm.shift` still execute their one-time `first-shift` career transition on every shift;
+- after the first shift, the career stage has advanced, so the second natural shift throws because the same transition is no longer legal;
+- their newly-added 50-shift Hard Work endings are therefore not naturally reachable.
+
+The first pre-freeze CI (#437) itself exposed this runtime failure. The frozen lifecycle tests later bypassed it by priming `completed_shifts: 49` while resetting the career to its initial stage.
+
+Post-block head movement:
+- producer moved #147 to `987438954cfec9739281a512a1589cb2707095e5`;
+- exact-head CI #451 is green;
+- delta from the blocked head is test-only (`ordinary-hard-work-meta.test.ts`);
+- no production action/transition repair occurred;
+- the added test directly seeds ending eligibility and does not exercise repeated Satyr Maid / Undead Farm shifts.
+
+Therefore **C4-124 remains BLOCKED pending a real production repair and a new explicit frozen SHA**. Any earlier PASS/PASS-WITH-NOTES comment tied to `15d6ee3...` is superseded by the later blocker evidence and by subsequent head movement.
+
+QA does not repair the producer branch.
