@@ -65,22 +65,31 @@ test('selected Activity route and one-shot option identity survive reload withou
   );
 });
 
-test('logging-road route is usable without any item and preserves ordinary counter.v1 success path',()=>{
+test('logging-road uses the same counter.v1 runtime and reaches success through authored challenges',()=>{
   let s=started();
+  s.run.character.stats.strength=4;
+  s.run.resources.inventory.field_preservation_kit=1;
   s=dispatch(s,{type:'enterActivity',id:'lumber.forest'},catalog);
   s=dispatch(s,{type:'activityAction',id:'forest.route.logging-road'},catalog);
 
   assert.equal(s.run.flow.activity?.internalState.routeId,'logging-road');
   assert.ok(availableActivityActions(s,catalog).some(action=>action.id==='advance'));
 
+  for(const id of [
+    'forest.challenge.logging-navigation',
+    'forest.challenge.logging-spring-mud',
+    'forest.challenge.logging-preserve-sample'
+  ])s=dispatch(s,{type:'activityAction',id},catalog);
+
   s=parseSave(JSON.stringify(s),catalog);
   s=dispatch(s,{type:'activityAction',id:'advance'},catalog);
-  assert.equal(s.run.flow.activity?.internalState.progress,1);
+  assert.equal(s.run.flow.activity?.internalState.progress,5);
 
   s=parseSave(JSON.stringify(s),catalog);
   s=dispatch(s,{type:'activityAction',id:'advance'},catalog);
   assert.equal(s.run.flow.activity,null);
   assert.ok(s.run.progression.worldFacts.includes('lumber.forest.truth-known'));
+  assert.equal(s.run.resources.inventory.forest_preserved_specimen,1);
   assert.equal(s.run.flow.pendingScene?.eventId,'lumber-cross.activity-forest-return');
 });
 
