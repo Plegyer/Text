@@ -25,9 +25,6 @@
     "writes": {
       "careers": [
         "lumber"
-      ],
-      "inventory": [
-        "forest_preserved_specimen"
       ]
     }
   },
@@ -152,11 +149,6 @@
           "text": "Carry the Forest result into Lumber progression.",
           "conditions": [],
           "effects": [
-            {
-              "kind": "removeItem",
-              "id": "forest_preserved_specimen",
-              "count": 1
-            },
             {
               "kind": "addCareerFact",
               "career": "lumber",
