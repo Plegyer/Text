@@ -6,6 +6,7 @@ import {
   applyPresentation,
   presentationIdForTavernEvent,
   presentationIdForTavernNightChoice,
+  presentationIdForTavernRelationshipRoot,
   presentationIdForTavernRelationshipStage,
   presentationIdForTavernStage,
   presentationIdForTavernState,
@@ -99,6 +100,9 @@ test('C2-147 all eight Tavern career stages have stable static presentation and 
 
 test('C2-148 recurring traveler and Tavern Night presentation stays role-only and refusal-safe',()=>{
   const registry=new Set(presentationSlots(catalog).map(slot=>slot.id));
+  const relationshipRoot=presentationIdForTavernRelationshipRoot();
+  assert.ok(registry.has(relationshipRoot),relationshipRoot);
+  assert.ok(presentation.slots?.[relationshipRoot]?.static,relationshipRoot+' static');
   for(const stage of TAVERN_RELATIONSHIP_STAGES){
     const id=presentationIdForTavernRelationshipStage(stage);
     const slot=presentation.slots?.[id];
@@ -204,6 +208,7 @@ test('C2-154 every new Tavern v14 surface has static RU EN alt/caption parity an
     ...TAVERN_PRESENTATION_STAGES.map(presentationIdForTavernStage),
     ...allContractEventIds.map(presentationIdForTavernEvent),
     ...TAVERN_NIGHT_CHOICE_IDS.map(presentationIdForTavernNightChoice),
+    presentationIdForTavernRelationshipRoot(),
     ...TAVERN_RELATIONSHIP_STAGES.map(presentationIdForTavernRelationshipStage),
     ...TAVERN_PRESENTATION_STATE_IDS.map(presentationIdForTavernState)
   ];
