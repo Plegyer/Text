@@ -1,0 +1,63 @@
+{
+  "formatVersion": 1,
+  "id": "school.satyr-maid.v12.track-map",
+  "status": "LIVE_ID_MAP",
+  "careerId": "satyr-maid",
+  "localMinorHookPolicy": {
+    "counter": "lessons_completed",
+    "threshold": 3,
+    "scope": "satyr-maid-only",
+    "globalCertificateRule": false,
+    "globalProjectRule": false
+  },
+  "tracks": [
+    {
+      "courseId": "school.course.literacy_and_numbers",
+      "trackId": "school.track.literacy_and_numbers",
+      "satyrRole": "accounting_management",
+      "minorHookRelevant": true
+    },
+    {
+      "courseId": "school.course.arcana",
+      "trackId": "school.track.arcana",
+      "satyrRole": "none",
+      "minorHookRelevant": false
+    },
+    {
+      "courseId": "school.course.rhetoric_and_social",
+      "trackId": "school.track.rhetoric_and_social",
+      "satyrRole": "rhetoric_social",
+      "minorHookRelevant": true
+    },
+    {
+      "courseId": "school.course.etiquette_and_presentation",
+      "trackId": "school.track.etiquette_and_presentation",
+      "satyrRole": "formal_service_support",
+      "minorHookRelevant": false
+    },
+    {
+      "courseId": "school.course.field_craft",
+      "trackId": "school.track.field_craft",
+      "satyrRole": "none",
+      "minorHookRelevant": false
+    },
+    {
+      "courseId": "school.course.physical_training",
+      "trackId": "school.track.physical_training",
+      "satyrRole": "none",
+      "minorHookRelevant": false
+    },
+    {
+      "courseId": "school.course.arts_and_performance",
+      "trackId": "school.track.arts_and_performance",
+      "satyrRole": "festival_performance_support",
+      "minorHookRelevant": false
+    },
+    {
+      "courseId": "school.course.body_confidence",
+      "trackId": "school.track.body_confidence",
+      "satyrRole": "body_confidence_boundary",
+      "minorHookRelevant": true
+    }
+  ]
+}
