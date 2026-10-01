@@ -160,7 +160,8 @@ test('C3-174 uses only exact narrow Forest Tavern Farm Lumber clue producers',()
   assert.ok(e.conditions.some((c:any)=>c.kind===kind&&(c.fact===value)),id);
   localizedEvent(id);
  }
- assert.doesNotMatch(JSON.stringify(['hunter.clues.forest-trail','hunter.clues.lumber-truth','hunter.clues.tavern-rumour','hunter.clues.farm-sample'].map(event)),/currency/i);
+ const clueEvents=['hunter.clues.forest-trail','hunter.clues.lumber-truth','hunter.clues.tavern-rumour','hunter.clues.farm-sample'].map(event);
+ assert.equal(clueEvents.flatMap((e:any)=>e.choices).flatMap((choice:any)=>choice.effects).some((effect:any)=>['modifyResource','addItem','removeItem'].includes(effect.kind)),false);
 });
 
 test('C3-175 relationship copy stays role-only and refusal/rivalry never block ordinary Hunter work',()=>{
