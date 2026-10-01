@@ -34,7 +34,7 @@
         }
       ],
       "priorityClass": "critical_progression",
-      "priority": 85,
+      "priority": 86,
       "blocking": true,
       "delivery": {
         "policy": "live"
