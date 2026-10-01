@@ -1,0 +1,454 @@
+{
+  "schemaVersion": 1,
+  "id": "guard.relationship",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "careers": [
+        "guard"
+      ],
+      "relationships": [
+        "guard.partner"
+      ]
+    },
+    "writes": {
+      "careers": [
+        "guard"
+      ],
+      "relationships": [
+        "guard.partner"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "guard.relationship.intro",
+      "title": "A partner starts checking your reports",
+      "sourceDomain": "guard",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "actionCompleted",
+          "action": "guard.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 72,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "not",
+          "condition": {
+            "kind": "careerStage",
+            "career": "guard",
+            "stage": "recruit"
+          }
+        },
+        {
+          "kind": "relationshipFact",
+          "relationship": "guard.partner",
+          "fact": "introduced-at-work",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "A Guard partner begins comparing reports and route decisions with you as ordinary professional work.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "professional",
+          "label": "Compare reports",
+          "text": "Keep the first contact practical and non-romantic.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "guard.partner",
+              "fact": "introduced-at-work"
+            },
+            {
+              "kind": "incrementRelationshipCounter",
+              "relationship": "guard.partner",
+              "counter": "work-meetings",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "guard.relationship.trust",
+      "title": "Professional trust",
+      "sourceDomain": "guard",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "actionCompleted",
+          "action": "guard.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 71,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "relationshipStage",
+          "relationship": "guard.partner",
+          "stage": "introduced"
+        },
+        {
+          "kind": "relationshipFact",
+          "relationship": "guard.partner",
+          "fact": "introduced-at-work",
+          "present": true
+        },
+        {
+          "kind": "relationshipCounter",
+          "relationship": "guard.partner",
+          "counter": "work-meetings",
+          "op": "eq",
+          "value": 1
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "A second ordinary duty establishes enough trust for the partner to disagree with you openly about how a pressured route should be handled.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Keep the professional contact",
+          "text": "Build trust without committing to friendship, rivalry, or special favors.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "incrementRelationshipCounter",
+              "relationship": "guard.partner",
+              "counter": "work-meetings",
+              "amount": 1
+            },
+            {
+              "kind": "advanceRelationship",
+              "relationship": "guard.partner",
+              "transition": "build-trust"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "guard",
+              "fact": "relationship-trust-ready"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "guard.relationship.conflict-open",
+      "title": "A professional conflict",
+      "sourceDomain": "guard",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "relationshipTransition",
+          "relationship": "guard.partner"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "guard.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 70,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "relationshipStage",
+          "relationship": "guard.partner",
+          "stage": "professional-trust"
+        },
+        {
+          "kind": "relationshipFact",
+          "relationship": "guard.partner",
+          "fact": "conflict-opened",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Your partner wants a faster, more forceful resolution; you want either a documented process or a negotiated route. The disagreement is concrete and professional.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "open",
+          "label": "State the disagreement clearly",
+          "text": "Move the conflict into an explicit relationship state instead of a hidden affinity score.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "guard.partner",
+              "fact": "conflict-opened"
+            },
+            {
+              "kind": "advanceRelationship",
+              "relationship": "guard.partner",
+              "transition": "open-conflict"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "guard.relationship.conflict-resolve",
+      "title": "Resolve the Guard conflict",
+      "sourceDomain": "guard",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "relationshipTransition",
+          "relationship": "guard.partner"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "guard.shift"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 82,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "relationshipStage",
+          "relationship": "guard.partner",
+          "stage": "conflict-open"
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The conflict can become cooperation, professional rivalry, or a clean refusal to take the relationship route further.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "cooperate",
+          "label": "Build a documented compromise",
+          "text": "Resolve the conflict cooperatively and keep later case support possible.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "setRelationshipChoice",
+              "relationship": "guard.partner",
+              "choice": "conflict-response",
+              "value": "cooperate"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "guard",
+              "fact": "relationship-conflict-resolved"
+            },
+            {
+              "kind": "advanceRelationship",
+              "relationship": "guard.partner",
+              "transition": "cooperate"
+            }
+          ]
+        },
+        {
+          "id": "rivalry",
+          "label": "Remain professional rivals",
+          "text": "Keep the disagreement productive without blocking ordinary Guard progression.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "setRelationshipChoice",
+              "relationship": "guard.partner",
+              "choice": "conflict-response",
+              "value": "rivalry"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "guard",
+              "fact": "relationship-conflict-resolved"
+            },
+            {
+              "kind": "advanceRelationship",
+              "relationship": "guard.partner",
+              "transition": "rivalry"
+            }
+          ]
+        },
+        {
+          "id": "decline",
+          "label": "Step away from the extra relationship route",
+          "text": "Refuse deeper cooperation while keeping ordinary Guard work intact.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "setRelationshipChoice",
+              "relationship": "guard.partner",
+              "choice": "conflict-response",
+              "value": "declined"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "guard",
+              "fact": "relationship-conflict-resolved"
+            },
+            {
+              "kind": "advanceRelationship",
+              "relationship": "guard.partner",
+              "transition": "refusal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "guard.relationship.case-support",
+      "title": "Optional case support",
+      "sourceDomain": "guard",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "relationshipTransition",
+          "relationship": "guard.partner"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "guard.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 66,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "relationshipStage",
+          "relationship": "guard.partner",
+          "stage": "cooperation-ready"
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "After resolving the conflict cooperatively, your partner can support one later evidence thread. This is optional utility, not a gate on paid work.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "accept",
+          "label": "Keep case support available",
+          "text": "Record one narrow cooperation fact for later Officer/Major Case preparation.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "setRelationshipChoice",
+              "relationship": "guard.partner",
+              "choice": "cooperation-response",
+              "value": "accepted"
+            },
+            {
+              "kind": "incrementRelationshipCounter",
+              "relationship": "guard.partner",
+              "counter": "case-meetings",
+              "amount": 1
+            },
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "guard.partner",
+              "fact": "case-support-ready"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "guard",
+              "fact": "partner-case-support"
+            },
+            {
+              "kind": "advanceRelationship",
+              "relationship": "guard.partner",
+              "transition": "finish-cooperation"
+            }
+          ]
+        },
+        {
+          "id": "decline",
+          "label": "Work independently",
+          "text": "Decline partner case support without losing trust or ordinary Guard work.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "setRelationshipChoice",
+              "relationship": "guard.partner",
+              "choice": "cooperation-response",
+              "value": "declined"
+            },
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "guard.partner",
+              "fact": "refusal-respected"
+            },
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "guard.partner",
+              "fact": "case-support-ready"
+            },
+            {
+              "kind": "advanceRelationship",
+              "relationship": "guard.partner",
+              "transition": "finish-cooperation"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
