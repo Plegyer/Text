@@ -84,3 +84,22 @@ Chat 1 v9 became the first eligible fresh candidate.
 - Required producer repair is recorded on PR #147. QA did not modify production.
 
 This also corrects executable acceptance truth for current main: Satyr Maid and Undead Farm are Day-1 selectable and their first shifts work, but the shipped base work loops are not naturally repeatable after the first typed transition.
+
+
+## C4-124 repair-cycle update
+
+Independent exact-main verification at `a30272dc91cab3d5286558a189d5d816f1841db7` confirms the blocker is real production behavior, not a PR-comment interpretation:
+
+- `satyr-maid.shift` increments `completed_shifts` and then unconditionally calls `advanceCareer(satyr-maid, first-shift)`;
+- `undead-farm.shift` does the same for `undead-farm`;
+- those `first-shift` transitions are one-time only: `new-maid -> known-face` and `new-hand -> reliable-helper`;
+- current-main `applyTransition(...)` strictly rejects a transition when the current stage is not in the transition's `from` set.
+
+The latest producer repair-cycle head observed during QA, `c0ebb6034c9714a943f2193b7b16ae7277c10cc4`, is still draft/mutable and its exact-head run #467 / id `36816536264` is FAILURE (570/572 pass).
+
+That attempted repair is not acceptable yet:
+- it globally weakens the typed-transition wrong-stage invariant by treating `state.stage === transition.to` as a no-op;
+- the existing atomic wrong-stage regression fails;
+- the new natural 50-shift regression also fails because its helper does not complete NightFlow before later work.
+
+C4-124 therefore remains **BLOCK**. A new verdict requires a fresh producer-owned repair, exact-head full green CI, and an explicit new freeze SHA.
