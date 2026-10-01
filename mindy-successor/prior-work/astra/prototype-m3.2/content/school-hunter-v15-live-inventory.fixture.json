@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "id": "school.hunter.v15.live-inventory",
   "task": "C5-157",
-  "status": "C1D_139_FIELD_CRAFT_BOUND_OTHER_HOOKS_BLOCKED",
+  "status": "FROZEN_HUNTER_RUNTIME_FIELD_CRAFT_LIVE_OTHER_HOOKS_BLOCKED",
   "careerId": "hunter",
   "actionId": "hunter.shift",
   "productionAudit": {
-    "currentHunterSchoolPack": null,
+    "currentHunterSchoolPack": "content/packs/hunter-school.json",
     "preparationFixture": "content/school-hunter-preparation-v1.fixture.json",
     "reactiveFixture": "content/school-tavern-hunter-reactive-depth-v1.fixture.json",
     "preparationStatus": "CONTENT_PREP_ONLY",
@@ -18,7 +18,7 @@
     "counter": "lessons_completed",
     "threshold": null,
     "scope": "hunter-only",
-    "thresholdAuthority": "C1D_133_EXPLICITLY_NULL",
+    "thresholdAuthority": "FROZEN_CONTRACT_EXPLICITLY_NULL",
     "globalCertificateRule": false,
     "globalProjectRule": false,
     "gameplayEventIds": {
@@ -55,7 +55,7 @@
       "reactionEvent": "hunter.school.field-craft",
       "careerFact": "school-field-craft-ready",
       "threshold": null,
-      "thresholdAuthority": "C1D_133_EXPLICITLY_NULL",
+      "thresholdAuthority": "FROZEN_CONTRACT_EXPLICITLY_NULL",
       "authorizedCondition": {
         "kind": "worldFact",
         "fact": "forest.school-field-notes",
@@ -80,10 +80,10 @@
         "school.night_study.arcana.reason",
         "school.night_study.arcana.creativity"
       ],
-      "reactionEvent": "BLOCKED_NOT_PUBLISHED_BY_CURRENT_AUTHORITY",
+      "reactionEvent": "BLOCKED_NOT_PUBLISHED_BY_FROZEN_HUNTER_RUNTIME",
       "careerFact": "school-arcana-ready",
       "threshold": null,
-      "thresholdAuthority": "C1D_133_EXPLICITLY_NULL",
+      "thresholdAuthority": "FROZEN_CONTRACT_EXPLICITLY_NULL",
       "nightParityStatus": "BLOCKED_NO_AUTHORIZED_CONSUMER"
     },
     {
@@ -96,10 +96,10 @@
         "school.night_study.literacy_and_numbers.reason",
         "school.night_study.literacy_and_numbers.wits"
       ],
-      "reactionEvent": "BLOCKED_NOT_PUBLISHED_BY_CURRENT_AUTHORITY",
+      "reactionEvent": "BLOCKED_NOT_PUBLISHED_BY_FROZEN_HUNTER_RUNTIME",
       "careerFact": "school-literacy-ready",
       "threshold": null,
-      "thresholdAuthority": "C1D_133_EXPLICITLY_NULL",
+      "thresholdAuthority": "FROZEN_CONTRACT_EXPLICITLY_NULL",
       "nightParityStatus": "BLOCKED_NO_AUTHORIZED_CONSUMER"
     },
     {
@@ -113,23 +113,23 @@
         "school.night_study.physical_training.endurance",
         "school.night_study.physical_training.dexterity"
       ],
-      "reactionEvent": "BLOCKED_NOT_PUBLISHED_BY_CURRENT_AUTHORITY",
+      "reactionEvent": "BLOCKED_NOT_PUBLISHED_BY_FROZEN_HUNTER_RUNTIME",
       "careerFact": "school-physical-ready",
       "threshold": null,
-      "thresholdAuthority": "C1D_133_EXPLICITLY_NULL",
+      "thresholdAuthority": "FROZEN_CONTRACT_EXPLICITLY_NULL",
       "nightParityStatus": "BLOCKED_NO_AUTHORIZED_CONSUMER"
     }
   ],
   "runtimeContract": {
     "path": "mindy-successor/docs/tasks/HUNTER_RUNTIME_CONTRACT_v1.json",
     "branch": "chat1/hunter-complete-v13",
-    "head": "7895b8ce5e17419a1204169112cf9df23002996e",
-    "blob": "9723fed6e77058fc29463395f55b39eee185134a"
+    "head": "8af661de2ce6d73e4db0f61fe4206d3334822998",
+    "blob": "160a7000cf49e86c638e9cfdf3c80f268e7c0c12"
   },
   "liveConsumerAuthority": {
-    "task": "C1D-139",
+    "task": "C1D-139/C1D-144",
     "branch": "chat1/hunter-complete-v13",
-    "observedHead": "ef3c941e4252bb7ec53306b5863b80f6a9fd8554",
+    "observedHead": "8af661de2ce6d73e4db0f61fe4206d3334822998",
     "pack": "content/packs/hunter-school.json",
     "packBlob": "4e5ed1f9fcf6705845f8326a0d6ac331047ae763"
   }
