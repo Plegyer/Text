@@ -3573,6 +3573,150 @@
     "presentation.motion.career.undead-farm.field.c.alt": {
       "ru": "Анимированная рабочая сцена фермы нежити: спокойная полевая работа без изменения игрового исхода.",
       "en": "Animated Undead Farm work scene showing calm field work without changing the gameplay outcome."
+    },
+    "ending.ending.satyr-maid.hard-work.title": {
+      "ru": "Служанка-сатирка: тяжкий труд",
+      "en": "Satyr Maid: Hard Work"
+    },
+    "ending.ending.satyr-maid.hard-work.description": {
+      "ru": "Судьба упорного труда в карьере служанки-сатирки, достигнутая обычной работой без дополнительного сюжетного условия.",
+      "en": "A persistence fate for the Satyr Maid career, reached through ordinary work without an additional story requirement."
+    },
+    "presentation.static.satyr-maid-ending-hard-work.alt": {
+      "ru": "Служанка-сатирка после долгой череды обычных смен; поднос и прибранный стол обозначают финал «Тяжкий труд».",
+      "en": "A Satyr Maid after a long run of ordinary shifts; a tray and reset table mark the Hard Work ending."
+    },
+    "presentation.static.satyr-maid-ending-hard-work.caption": {
+      "ru": "Финал служанки-сатирки: тяжкий труд.",
+      "en": "Satyr Maid ending: Hard Work."
+    },
+    "ending.ending.undead-farm.hard-work.title": {
+      "ru": "Ферма нежити: тяжкий труд",
+      "en": "Undead Farm: Hard Work"
+    },
+    "ending.ending.undead-farm.hard-work.description": {
+      "ru": "Судьба упорного труда на ферме нежити, достигнутая обычными сменами без дополнительного сюжетного условия.",
+      "en": "A persistence fate for the Undead Farm career, reached through ordinary shifts without an additional story requirement."
+    },
+    "presentation.static.undead-farm-ending-hard-work.alt": {
+      "ru": "Работница фермы нежити после долгой череды обычных смен среди полей и припасов как визуал финала «Тяжкий труд».",
+      "en": "An Undead Farm worker after a long run of ordinary shifts among fields and supplies as the Hard Work ending visual."
+    },
+    "presentation.static.undead-farm-ending-hard-work.caption": {
+      "ru": "Финал фермы нежити: тяжкий труд.",
+      "en": "Undead Farm ending: Hard Work."
+    },
+    "ending.ending.tavern.hard-work.title": {
+      "ru": "Таверна: тяжкий труд",
+      "en": "Tavern: Hard Work"
+    },
+    "ending.ending.tavern.hard-work.description": {
+      "ru": "Судьба упорного труда в таверне, достигнутая обычными сменами без дополнительного сюжетного условия.",
+      "en": "A persistence fate for the Tavern career, reached through ordinary shifts without an additional story requirement."
+    },
+    "presentation.static.tavern-ending-hard-work.alt": {
+      "ru": "Работница таверны после долгой череды обычных смен у стойки и столов как визуал финала «Тяжкий труд».",
+      "en": "A tavern worker after a long run of ordinary shifts at the counter and tables as the Hard Work ending visual."
+    },
+    "presentation.static.tavern-ending-hard-work.caption": {
+      "ru": "Финал таверны: тяжкий труд.",
+      "en": "Tavern ending: Hard Work."
+    },
+    "ending.ending.hunter.hard-work.title": {
+      "ru": "Охотница: тяжкий труд",
+      "en": "Hunter: Hard Work"
+    },
+    "ending.ending.hunter.hard-work.description": {
+      "ru": "Судьба упорного труда в профессии охотницы, достигнутая обычными сменами без дополнительного сюжетного условия.",
+      "en": "A persistence fate for the Hunter career, reached through ordinary shifts without an additional story requirement."
+    },
+    "presentation.static.hunter-ending-hard-work.alt": {
+      "ru": "Охотница после долгой череды обычных выходов возвращается со снаряжением как визуал финала «Тяжкий труд».",
+      "en": "A hunter returns with her gear after a long run of ordinary outings as the Hard Work ending visual."
+    },
+    "presentation.static.hunter-ending-hard-work.caption": {
+      "ru": "Финал охотницы: тяжкий труд.",
+      "en": "Hunter ending: Hard Work."
+    },
+    "ending.ending.guard.hard-work.title": {
+      "ru": "Стражница: тяжкий труд",
+      "en": "Guard: Hard Work"
+    },
+    "ending.ending.guard.hard-work.description": {
+      "ru": "Судьба упорного труда в городской страже, достигнутая обычными сменами без дополнительного сюжетного условия.",
+      "en": "A persistence fate for the Guard career, reached through ordinary shifts without an additional story requirement."
+    },
+    "presentation.static.guard-ending-hard-work.alt": {
+      "ru": "Стражница после долгой череды патрулей стоит на городском посту как визуал финала «Тяжкий труд».",
+      "en": "A guard stands at a city watch post after a long run of patrols as the Hard Work ending visual."
+    },
+    "presentation.static.guard-ending-hard-work.caption": {
+      "ru": "Финал городской стражи: тяжкий труд.",
+      "en": "Guard ending: Hard Work."
+    },
+    "ending.ending.merchant.hard-work.title": {
+      "ru": "Торговка: тяжкий труд",
+      "en": "Merchant: Hard Work"
+    },
+    "ending.ending.merchant.hard-work.description": {
+      "ru": "Судьба упорного труда в торговле, достигнутая обычными сменами без дополнительного сюжетного условия.",
+      "en": "A persistence fate for the Merchant career, reached through ordinary shifts without an additional story requirement."
+    },
+    "presentation.static.merchant-ending-hard-work.alt": {
+      "ru": "Торговка после долгой череды обычных смен у стойки с товарами и записями как визуал финала «Тяжкий труд».",
+      "en": "A merchant after a long run of ordinary shifts at a stall with goods and records as the Hard Work ending visual."
+    },
+    "presentation.static.merchant-ending-hard-work.caption": {
+      "ru": "Финал торговки: тяжкий труд.",
+      "en": "Merchant ending: Hard Work."
+    },
+    "ending.ending.artist-geisha.hard-work.title": {
+      "ru": "Дом искусств: тяжкий труд",
+      "en": "Artist House: Hard Work"
+    },
+    "ending.ending.artist-geisha.hard-work.description": {
+      "ru": "Судьба упорного труда в Доме искусств, достигнутая обычными репетициями и сменами без дополнительного сюжетного условия.",
+      "en": "A persistence fate for the Artist House career, reached through ordinary rehearsals and shifts without an additional story requirement."
+    },
+    "presentation.static.artist-geisha-ending-hard-work.alt": {
+      "ru": "Исполнительница после долгой череды репетиций на подготовленной сцене как визуал финала «Тяжкий труд».",
+      "en": "A performer after a long run of rehearsals on a prepared stage as the Hard Work ending visual."
+    },
+    "presentation.static.artist-geisha-ending-hard-work.caption": {
+      "ru": "Финал Дома искусств: тяжкий труд.",
+      "en": "Artist House ending: Hard Work."
+    },
+    "ending.ending.assassin.hard-work.title": {
+      "ru": "Ассасинка: тяжкий труд",
+      "en": "Assassin: Hard Work"
+    },
+    "ending.ending.assassin.hard-work.description": {
+      "ru": "Судьба упорного труда в профессии ассасинки, достигнутая обычной подготовительной работой без дополнительного сюжетного условия.",
+      "en": "A persistence fate for the Assassin career, reached through ordinary preparation-focused work without an additional story requirement."
+    },
+    "presentation.static.assassin-ending-hard-work.alt": {
+      "ru": "Тихая неэксплицитная рабочая сцена с подготовленным снаряжением после долгой череды смен как визуал финала «Тяжкий труд».",
+      "en": "A quiet non-explicit work scene with prepared gear after a long run of shifts as the Hard Work ending visual."
+    },
+    "presentation.static.assassin-ending-hard-work.caption": {
+      "ru": "Финал ассасинки: тяжкий труд.",
+      "en": "Assassin ending: Hard Work."
+    },
+    "ending.ending.prostitute.hard-work.title": {
+      "ru": "Независимая профессионалка: тяжкий труд",
+      "en": "Independent Professional: Hard Work"
+    },
+    "ending.ending.prostitute.hard-work.description": {
+      "ru": "Неэксплицитная судьба упорного труда в независимой профессии, достигнутая обычными добровольными сменами без дополнительного сюжетного условия.",
+      "en": "A non-explicit persistence fate for the independent professional career, reached through ordinary voluntary shifts without an additional story requirement."
+    },
+    "presentation.static.prostitute-ending-hard-work.alt": {
+      "ru": "Неэксплицитная рабочая сцена в подготовленной комнате после долгой череды добровольных смен как визуал финала «Тяжкий труд».",
+      "en": "A non-explicit work scene in a prepared room after a long run of voluntary shifts as the Hard Work ending visual."
+    },
+    "presentation.static.prostitute-ending-hard-work.caption": {
+      "ru": "Финал независимой профессионалки: тяжкий труд.",
+      "en": "Independent Professional ending: Hard Work."
     }
   }
 }
