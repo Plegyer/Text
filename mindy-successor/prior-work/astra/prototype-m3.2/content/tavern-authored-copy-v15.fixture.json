@@ -5,8 +5,8 @@
   "contract": {
     "path": "mindy-successor/docs/tasks/TAVERN_RUNTIME_CONTRACT_v1.json",
     "sourceBranch": "chat1/tavern-complete-v12",
-    "exactHead": "41afe8d9dfb9693903dd7e5d96f9ff3699c4777d",
-    "runtimeProducerHead": "41afe8d9dfb9693903dd7e5d96f9ff3699c4777d"
+    "exactHead": "38c58ccdaa1d357f189cd640053d0b2a8605b9b4",
+    "runtimeProducerHead": "38c58ccdaa1d357f189cd640053d0b2a8605b9b4"
   },
   "bindingPolicy": {
     "createsGameplayIds": false,

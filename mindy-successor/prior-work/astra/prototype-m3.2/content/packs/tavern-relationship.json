@@ -316,6 +316,10 @@
           "kind": "careerFactAdded",
           "career": "tavern",
           "fact": "traveler-rumour-known"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "tavern.shift"
         }
       ],
       "priorityClass": "critical_progression",
