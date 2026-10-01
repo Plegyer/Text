@@ -1,22 +1,29 @@
 # CURRENT CHAT3 TASK POINTER
 
-Status: **TAVERN CONTENT v15 FROZEN / HUNTER CONTENT v16 ACTIVE**
+Status: **HUNTER CONTENT v16 FROZEN + GUARD CONTENT v17 ACTIVE PREP**
 Owner: Chat 3 / World + Career Content Bundles
 
-Frozen Tavern authored candidate:
-- PR #185
-- exact head `d2a5447a25a32253eb5ff5a6ab7821fb33a10600`
-- CI #694 SUCCESS
+Frozen Hunter authored candidate:
+- PR #209
+- branch `chat3/hunter-live-authored-v16`
+- exact head `7e51a0c28037cbfbb9dc00c4c438e32248ec45bf`
+- exact-head CI #794 / id `36869428605`: **SUCCESS**
+- validator: 37 packs / 136 events / 39 actions / 20 endings
+- tests: 693/693 pass
+- status: CANDIDATE_FROZEN / QA READY
 - do not move it.
 
-Active stacked branch:
-- `chat3/hunter-live-authored-v16`
+Active next queue:
+- `TASK_CHAT3_CONTENT_QUEUE_v17.md`
+- C3-181..192
+- target: **Guard Live Authored Content**
+- working branch: `chat3/guard-live-authored-v17`
 
-Current queue:
-- `TASK_CHAT3_CONTENT_QUEUE_v16.md`
-- C3-169..180
-- target: **Hunter Live Authored Content**
+Dependency rule:
+- Guard runtime PR #208 is still draft/mutable.
+- Contract-independent inventory, RU/EN prose, role-only relationship copy and qualitative route/crisis copy may proceed now.
+- Final live binding and C3-192 freeze must be rebuilt/audited on one exact frozen green Guard runtime head.
+- Use `GUARD_RUNTIME_CONTRACT_v1.json` only as current authority; re-query at final freeze.
 
-Start C3-169 immediately. Complete contract-independent inventory/seasonal authoring first; bind gameplay identities only to C1D-133 once Chat 1 publishes them.
-
-Do not wait for Tavern integration. Do not alter PR #185.
+Do not wait for Hunter QA/integration.
+Do not alter frozen PR #209.
