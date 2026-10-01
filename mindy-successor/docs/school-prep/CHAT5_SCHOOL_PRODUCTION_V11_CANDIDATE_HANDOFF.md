@@ -74,7 +74,7 @@ All promoted variants are RU/EN localized and effect-free.
 
 The existing 24 exact `school.night_study.*` identities now each have one reachable School-life production event keyed to that exact `nightChoiceCompleted(choice)` fact.
 
-The old generic `school-life-content-v1.after-night-study` identity remains in the pack only for compatibility with historical saved queued instances; its trigger arrays are empty so it no longer creates duplicate new offers.
+The old generic `school-life-content-v1.after-night-study` identity remains in the pack only for compatibility with historical saved queued instances. The production validator requires every event to retain a trigger, so the compatibility event keeps one known Night-study trigger behind an always-false current-run condition (`not calendarYear >= 1`). It therefore remains resolvable for historical queued instances without creating new offers.
 
 Every exact Night-study event:
 - uses an existing exact choice ID;
