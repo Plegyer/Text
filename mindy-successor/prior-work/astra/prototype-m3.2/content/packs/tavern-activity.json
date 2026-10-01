@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "id": "tavern-activity",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "activities": [
+        "lumber.forest"
+      ],
+      "careers": [
+        "tavern"
+      ]
+    },
+    "writes": {
+      "careers": [
+        "tavern"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "tavern.activity.forest-return",
+      "title": "A Forest return confirms the road rumour",
+      "sourceDomain": "tavern",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "activityResult",
+          "activity": "lumber.forest",
+          "outcome": "success",
+          "result": "lumber.forest.success"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 85,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "rumour-route-open",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "rumour-confirmed",
+          "present": false
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "tavern",
+              "stage": "house-node"
+            },
+            {
+              "kind": "careerStage",
+              "career": "tavern",
+              "stage": "trusted-worker"
+            },
+            {
+              "kind": "careerStage",
+              "career": "tavern",
+              "stage": "outcome-ready"
+            }
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "A successful Forest return matches the road detail recorded at the Tavern. The Activity result is consumed here as confirmation; no new Activity action or extra daytime Energy is added.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "confirm-rumour",
+          "label": "Confirm the route information",
+          "text": "Turn the existing Forest result into typed Tavern route evidence.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "tavern",
+              "fact": "activity-returned"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "tavern",
+              "fact": "rumour-confirmed"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
