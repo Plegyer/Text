@@ -8,15 +8,15 @@ Repository: `Plegyer/Text`
 
 Acceptance truth below is for exact current main:
 
-- SHA: `6f0e8803ea327b55c5079afb137b5aa016f614ec`;
+- SHA: `9d2a528951b472bc76266bf985c1d850589d3f0f`;
 - workflow: `mindy-successor check`;
-- run #435 / id `36814269258`;
+- run #449 / id `36816070912`;
 - result: SUCCESS;
 - full `npm run check`: typecheck / validation / build / tests green;
 - production validator: 17 packs / 46 events / 35 actions / 9 endings;
 - tests: 556 / pass 556 / fail 0.
 
-Fixture/preparation-only material and open PR behavior are not counted as shipped.
+The move from the previous executable baseline `6f0e8803...` to `9d2a528...` changes Lead/recovery documentation only; no runtime/content/test path changed, so the executable acceptance classifications below remain the same. After the QA evidence merge, current main became `a30272dc91cab3d5286558a189d5d816f1841db7`; exact-main run #459 / id `36816282846` is SUCCESS and the only diff from `9d2a528...` is these QA evidence documents. Fixture/preparation-only material and open PR behavior are not counted as shipped.
 
 ## Directly player-reachable on current main
 
