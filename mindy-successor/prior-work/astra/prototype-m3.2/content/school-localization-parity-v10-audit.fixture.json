@@ -1,0 +1,39 @@
+{
+  "formatVersion": 1,
+  "id": "school.localization-v10.parity-audit.v1",
+  "status": "CONTENT_AUDIT_ONLY",
+  "baseline": "6afc01061646bc52cec824863bf89e8ad8c309d0",
+  "canonicalCourses": {
+    "count": 8,
+    "labelPairsComplete": 8,
+    "descriptionPairsComplete": 8,
+    "missingOrEmpty": []
+  },
+  "teacherMedia": {
+    "count": 8,
+    "altPairsComplete": 8,
+    "captionPairsComplete": 8,
+    "missingOrEmpty": []
+  },
+  "genericEvents": {
+    "paidLessonEventPairs": 2,
+    "nightStudyEventPairs": 1,
+    "missingOrEmpty": []
+  },
+  "nightStudy": {
+    "exactChoiceCount": 24,
+    "rawDefinitionLabelsLanguage": "en",
+    "localizedUiTemplateKey": "ui.school.nightStudyChoice",
+    "localizedUiTemplatePairComplete": true
+  },
+  "lessonResult": {
+    "localizedUiKey": "ui.school.lessonResult",
+    "localizedPairComplete": true,
+    "rawRuntimeFallbackLanguage": "en"
+  },
+  "result": "PAIR_COMPLETE_WITH_DOCUMENTED_FALLBACKS",
+  "constraints": {
+    "changesRootLocalization": false,
+    "createsLocalizationKeys": false
+  }
+}
