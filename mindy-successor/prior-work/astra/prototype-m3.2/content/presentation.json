@@ -1128,72 +1128,72 @@
       "static": {
         "kind": "image",
         "src": "assets/presentation/career-satyr-maid-result.svg",
-        "alt": "Static Hard Work ending fallback for satyr-maid.",
-        "altKey": "presentation.static.career.satyr-maid.result.alt"
+        "alt": "Static Hard Work ending presentation for satyr-maid.",
+        "altKey": "presentation.static.satyr-maid-ending-hard-work.alt"
       }
     },
     "ending/undead-farm/hard-work": {
       "static": {
         "kind": "image",
         "src": "assets/presentation/career-undead-farm-result.svg",
-        "alt": "Static Hard Work ending fallback for undead-farm.",
-        "altKey": "presentation.static.career.undead-farm.result.alt"
+        "alt": "Static Hard Work ending presentation for undead-farm.",
+        "altKey": "presentation.static.undead-farm-ending-hard-work.alt"
       }
     },
     "ending/tavern/hard-work": {
       "static": {
         "kind": "image",
         "src": "assets/presentation/career-tavern-result.svg",
-        "alt": "Static Hard Work ending fallback for tavern.",
-        "altKey": "presentation.static.career.tavern.result.alt"
+        "alt": "Static Hard Work ending presentation for tavern.",
+        "altKey": "presentation.static.tavern-ending-hard-work.alt"
       }
     },
     "ending/hunter/hard-work": {
       "static": {
         "kind": "image",
         "src": "assets/presentation/career-hunter-result.svg",
-        "alt": "Static Hard Work ending fallback for hunter.",
-        "altKey": "presentation.static.career.hunter.result.alt"
+        "alt": "Static Hard Work ending presentation for hunter.",
+        "altKey": "presentation.static.hunter-ending-hard-work.alt"
       }
     },
     "ending/guard/hard-work": {
       "static": {
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
-        "alt": "Static Hard Work ending fallback for guard.",
-        "altKey": "presentation.static.career.guard.result.alt"
+        "alt": "Static Hard Work ending presentation for guard.",
+        "altKey": "presentation.static.guard-ending-hard-work.alt"
       }
     },
     "ending/merchant/hard-work": {
       "static": {
         "kind": "image",
         "src": "assets/presentation/career-merchant-result.svg",
-        "alt": "Static Hard Work ending fallback for merchant.",
-        "altKey": "presentation.static.career.merchant.result.alt"
+        "alt": "Static Hard Work ending presentation for merchant.",
+        "altKey": "presentation.static.merchant-ending-hard-work.alt"
       }
     },
     "ending/artist-geisha/hard-work": {
       "static": {
         "kind": "image",
         "src": "assets/presentation/career-artist-geisha-result.svg",
-        "alt": "Static Hard Work ending fallback for artist-geisha.",
-        "altKey": "presentation.static.career.artist-geisha.result.alt"
+        "alt": "Static Hard Work ending presentation for artist-geisha.",
+        "altKey": "presentation.static.artist-geisha-ending-hard-work.alt"
       }
     },
     "ending/assassin/hard-work": {
       "static": {
         "kind": "image",
         "src": "assets/presentation/career-assassin-result.svg",
-        "alt": "Static Hard Work ending fallback for assassin.",
-        "altKey": "presentation.static.career.assassin.result.alt"
+        "alt": "Static Hard Work ending presentation for assassin.",
+        "altKey": "presentation.static.assassin-ending-hard-work.alt"
       }
     },
     "ending/prostitute/hard-work": {
       "static": {
         "kind": "image",
         "src": "assets/presentation/career-prostitute-result.svg",
-        "alt": "Static Hard Work ending fallback for prostitute.",
-        "altKey": "presentation.static.career.prostitute.result.alt"
+        "alt": "Static Hard Work ending presentation for prostitute.",
+        "altKey": "presentation.static.prostitute-ending-hard-work.alt"
       }
     }
   }
