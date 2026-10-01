@@ -37,11 +37,11 @@ Do not describe those two careers as naturally repeatable until a repaired candi
 
 | Worker | Queue | Current delivery state | What it is doing now |
 |---|---|---|---|
-| Chat 1 Developer | C1D-85..96 | PR #147, frozen exact head `e9e1c4d5cdafcdf5e8571170cd9b699426536746`, CI #483 **GREEN** | Repairs starter repeatability without weakening generic typed transitions; adds seven late-career unlocks, nine missing ordinary Hard Work endings, all-ten Meta, Palace 10/10 predicate and natural regressions. Previous QA block must be re-gated on this repaired head. |
-| Chat 2 Presentation | C2-109..120 | PR #151, frozen exact head `463d877009b5ecc1d255d7aa27a91bb7c38016e5`, CI #474 **GREEN** | Full-roster Hard Work/late-career presentation, starter media pools, RU/EN, accessibility and safe static fallback. Awaiting QA after higher-priority shared runtime gate. |
+| Chat 1 Developer | C1D-85..96 | PR #147, frozen exact head `e9e1c4d5cdafcdf5e8571170cd9b699426536746`, CI #483 **GREEN — 572/572, validator 18 endings** | Repairs starter repeatability without weakening generic typed transitions; adds seven late-career unlocks, nine missing ordinary Hard Work endings, all-ten Meta, Palace 10/10 predicate and natural regressions. Previous QA block must be re-gated on this repaired head. |
+| Chat 2 Presentation | C2-109..120 | PR #151, frozen exact head `463d877009b5ecc1d255d7aa27a91bb7c38016e5`, CI #474 **GREEN — 565/565** | Full-roster Hard Work/late-career presentation, starter media pools, RU/EN, accessibility and safe static fallback. Awaiting QA after higher-priority shared runtime gate. |
 | Chat 3 Forest/Poverty | C3-109..120 | PR #146 head `e750480404b1270ffbe47ca1dad2cb381bcf29d1`, CI #436 **RED** (539/568) | Must repair its production-promotion candidate. It is not QA-eligible. Do not count its promoted variants as shipped. |
 | Chat 4 QA | C4-124 | Previous blocker evidence merged on main | Re-gate repaired Chat 1 PR #147 exact head first. QA does not implement fixes. After that gate, move to the next green/frozen candidate. |
-| Chat 5 School | C5-109..120 | PR #156 current head `97b659d78ac3a2ccfe72c556344631f7de570507`; CI #489 **GREEN** | Promotes reachable School teacher/lesson/Night-study RU/EN content using existing mechanics. PR metadata has now been updated to **CANDIDATE_FROZEN** on this exact green head. It is QA-ready after the higher-priority PR #147 / then #151 sequence unless Lead changes order. |
+| Chat 5 School | C5-109..120 | PR #156 current head `97b659d78ac3a2ccfe72c556344631f7de570507`; CI #489 **GREEN — 570/570, validator 70 events** | Promotes reachable School teacher/lesson/Night-study RU/EN content using existing mechanics. PR metadata has now been updated to **CANDIDATE_FROZEN** on this exact green head. It is QA-ready after the higher-priority PR #147 / then #151 sequence unless Lead changes order. |
 
 ## Open PRs that matter
 
