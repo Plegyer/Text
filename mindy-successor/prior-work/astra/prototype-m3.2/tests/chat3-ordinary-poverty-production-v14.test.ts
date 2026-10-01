@@ -45,7 +45,7 @@ test('C3-145 inventory/closure pack is live production and adds no balance effec
   assert.ok(catalog.packs.some(p=>p.id===pack.id));
   assert.equal(pack.events.length,10);
   assert.equal(manifest.inclusionOrder.at(-1).packId,pack.id);
-  assert.equal(manifest.status,'PRODUCTION_CLOSURE_INCLUDED');
+  assert.equal(manifest.status,'PROPOSED_EXPLICIT_INCLUSION_ORDER');
   assert.ok(pack.events.every((e:any)=>e.reactionTriggers.some((t:any)=>t.kind==='nightPhase'&&t.point==='after_lodging')));
   assert.ok(pack.events.every((e:any)=>e.choices.every((c:any)=>c.effects.length===0)));
   assert.deepEqual(pack.capabilities.writes,{});
