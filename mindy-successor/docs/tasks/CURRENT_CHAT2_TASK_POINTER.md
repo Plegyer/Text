@@ -1,18 +1,26 @@
 # CURRENT CHAT2 TASK POINTER
 
-Status: **RESTART REQUIRED / ASSIGNED**
+Status: **PR #151 FROZEN + NEXT QUEUE ACTIVE**
 Owner: Chat 2 / Presentation & Media Worker
 
-Context reset prompt:
-- `CHAT2_RESTART_PROMPT_2026-10-01.md`
+Frozen predecessor candidate:
+- PR #151
+- exact head: `463d877009b5ecc1d255d7aa27a91bb7c38016e5`
+- exact-head CI #474: **SUCCESS**
+- do not mutate this PR unless Chat 4 reports a concrete blocker.
 
-Mandatory current sources:
+Continue work now on a **new stacked branch** from the frozen head.
+
+Current queue:
+- `TASK_CHAT2_PRESENTATION_QUEUE_v12.md`
+- C2-121..132
+- target: Satyr Maid complete-career presentation/media/accessibility.
+
+Start C2-121 immediately. For gameplay IDs, consume Chat 1's C1D-97 runtime contract from `chat1/satyr-maid-complete-v10`; do not invent mechanics.
+
+Mandatory:
+- `../LEADER1_LIVE_DASHBOARD.md`
 - `../LEAD1_CURRENT_STATE_v1.md`
-- `ACTIVE_TEAM_OWNERSHIP_MATRIX.md`
 - `CANDIDATE_QA_FREEZE_PROTOCOL.md`
-- `TASK_CHAT2_PRESENTATION_QUEUE_v11.md`
 
-Active queue: **C2-109 through C2-120** from fresh current main.
-Old C2-73..108 work is history/current-open-PR evidence only.
-
-Do not self-assign beyond C2-120.
+Do not self-assign beyond C2-132.
