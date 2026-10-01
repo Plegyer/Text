@@ -297,53 +297,13 @@ export function presentationSlots(cat:Catalog):PresentationSlot[]{
     }
   }
 
-  // Presentation-only stage surfaces reserved from Chat 1's published C1D-97
-  // Satyr Maid runtime contract. They consume a gameplay stage string but do
-  // not define or advance career state.
+  // Stage surfaces consume persisted production career state. Event and ending
+  // surfaces below are intentionally generated only from the live catalog so
+  // C2-131 cannot pass on reserved/preparation IDs alone.
   for(const stage of SATYR_MAID_PRESENTATION_STAGES){
     add({
       id:presentationIdForSatyrMaidStage(stage),
       label:`Satyr Maid · stage · ${stage}`,
-      baseMediaIds:[],
-      fallbackId:'job/satyr-maid/result/default'
-    });
-  }
-
-  // C1D-98 publishes the career event IDs on Chat 1's Satyr branch. Reserve
-  // their presentation identities so this stacked presentation branch can be
-  // built before the gameplay branch is merged.
-  for(const eventId of SATYR_MAID_CAREER_EVENT_IDS){
-    add({
-      id:presentationIdForSatyrMaidCareerEvent(eventId),
-      label:`Satyr Maid · career event · ${eventId}`,
-      baseMediaIds:[],
-      fallbackId:'job/satyr-maid/result/default'
-    });
-  }
-
-  // C1D-100/C1D-101 recurring-guest identities use the relationship domain.
-  for(const eventId of SATYR_MAID_RELATIONSHIP_EVENT_IDS){
-    add({
-      id:presentationIdForSatyrMaidRelationshipEvent(eventId),
-      label:`Satyr Maid · recurring guest · ${eventId}`,
-      baseMediaIds:[],
-      fallbackId:'job/satyr-maid/result/default'
-    });
-  }
-
-  for(const eventId of SATYR_MAID_SCHOOL_EVENT_IDS){
-    add({
-      id:presentationIdForSatyrMaidCareerEvent(eventId),
-      label:`Satyr Maid · School reaction · ${eventId}`,
-      baseMediaIds:[],
-      fallbackId:'job/satyr-maid/result/default'
-    });
-  }
-
-  for(const eventId of SATYR_MAID_CRISIS_EVENT_IDS){
-    add({
-      id:presentationIdForSatyrMaidCareerEvent(eventId),
-      label:`Satyr Maid · crisis · ${eventId}`,
       baseMediaIds:[],
       fallbackId:'job/satyr-maid/result/default'
     });
@@ -407,15 +367,6 @@ export function presentationSlots(cat:Catalog):PresentationSlot[]{
       label:`${career.label} · Hard Work · финал`,
       baseMediaIds:[],
       fallbackId:careerId==='lumber'?'location/town/default':slots.has(resultId)?resultId:'location/town/default'
-    });
-  }
-
-  for(const endingId of SATYR_MAID_COMPLEX_ENDING_IDS){
-    add({
-      id:presentationIdForEnding(endingId),
-      label:`Satyr Maid · complex ending · ${endingId}`,
-      baseMediaIds:[],
-      fallbackId:'job/satyr-maid/result/default'
     });
   }
 
