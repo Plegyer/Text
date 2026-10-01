@@ -67,7 +67,7 @@
         {
           "id": "take-errand",
           "label": "Take the short errand",
-          "text": "You move the crate and receive a small payment. The amount is initial tuning rather than a locked economy value.",
+          "text": "You carry the last heavy crate under cover, set it with the others, and receive payment for this one short errand.",
           "conditions": [],
           "effects": [
             {
@@ -125,7 +125,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "A shop awning leaves a dry strip of pavement after closing. Nobody offers help and nobody drives you away; for tonight, that is enough.",
+          "text": "After the shops close, the arcade leaves a dry strip of stone and a muted city hum. For a few hours, that is enough to make the night quieter.",
           "conditions": [],
           "media": [
             "stage.outside"

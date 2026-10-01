@@ -58,7 +58,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "Cold spring rain reaches the curb and creeps beneath the edge of your shelter. A deeper doorway remains open if you move now.",
+          "text": "Cold rain quickly soaks the exposed edges of your clothes, and even a short walk starts to feel longer. A dry doorway becomes a temporary goal in itself.",
           "conditions": [],
           "media": [
             "stage.outside"
