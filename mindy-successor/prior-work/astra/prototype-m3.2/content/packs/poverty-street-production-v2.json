@@ -159,7 +159,7 @@
       "variants": [
         {
           "id": "drizzle",
-          "text": "A light autumn drizzle sends late pedestrians beneath the arcade. They pass without comment, leaving only wet footprints and a little borrowed shelter.",
+          "text": "Autumn drizzle is barely audible, but the edges of your clothes grow damp little by little. It is better to wait beneath an overhang than spend energy moving endlessly between dry spots.",
           "conditions": [
             {
               "kind": "calendarDayInYear",
@@ -173,7 +173,7 @@
         },
         {
           "id": "dry-arcade",
-          "text": "The arcade stays dry tonight. Shops are closed, footsteps fade, and the street offers a rare hour that asks nothing from you.",
+          "text": "After the shops close, the arcade leaves a dry strip of stone and a muted city hum. For a few hours, that is enough to make the night quieter.",
           "conditions": [],
           "media": [
             "stage.outside"
@@ -239,7 +239,7 @@
       "variants": [
         {
           "id": "crosswind",
-          "text": "A hard crosswind cuts through the lane and makes every exposed corner feel colder. A recessed doorway nearby offers the safer choice.",
+          "text": "Winter wind cuts between buildings at an angle and changes strength from one crossing to the next. Even a small projection in a wall can offer a brief reprieve.",
           "conditions": [
             {
               "kind": "calendarDayInYear",
@@ -253,7 +253,7 @@
         },
         {
           "id": "long-gusts",
-          "text": "Long gusts rattle shutters along the lane. You can stay tucked away or keep moving and pay for it in tomorrow's energy.",
+          "text": "The long gusts come less often, but they chill the spot down to the stone. Between them, you have to adjust your clothes quickly and look for a more sheltered corner.",
           "conditions": [],
           "media": [
             "stage.outside"

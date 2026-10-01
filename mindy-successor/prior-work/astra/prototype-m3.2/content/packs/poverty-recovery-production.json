@@ -63,7 +63,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "A paper parcel of yesterday's bread has been left on a public ledge with a few loose coins beside it and no name attached.",
+          "text": "A few coins do not change the whole situation, but they give a little more room in the next decision. Sometimes that is enough to avoid choosing in a rush.",
           "conditions": [],
           "media": [
             "stage.outside"
@@ -74,7 +74,7 @@
         {
           "id": "take-coins",
           "label": "Take the loose coins",
-          "text": "You take only the loose coins. The small amount is initial tuning and is not required for ordinary recovery.",
+          "text": "You take only the loose coins. Nobody is waiting for an answer or a favor in return, and the small reserve makes the next choice a little easier.",
           "conditions": [],
           "effects": [
             {
@@ -137,7 +137,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "A closing stall has one small cleanup left: stack two stools, sweep a narrow strip, and carry a bucket to the drain.",
+          "text": "The short cleanup ends quickly: sweep the edge of the passage, return the bucket, gather the remaining rubbish. Afterward, the evening becomes a little easier.",
           "conditions": [],
           "media": [
             "stage.outside"
@@ -148,7 +148,7 @@
         {
           "id": "do-cleanup",
           "label": "Do the short cleanup",
-          "text": "The work takes only a few minutes and pays a small tunable amount without becoming a required job route.",
+          "text": "You finish the small cleanup: return the bucket, sweep the edge of the passage, and receive payment for the completed task.",
           "conditions": [],
           "effects": [
             {
@@ -211,7 +211,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "A small tied bundle of ordinary herbs has been forgotten beside an empty market crate. Nothing marks it as anyone's special property.",
+          "text": "The herb bundle can be put away carefully until it is actually needed. A small reserve is useful mainly because it widens the options immediately ahead.",
           "conditions": [],
           "media": [
             "stage.outside"
@@ -222,7 +222,7 @@
         {
           "id": "take-herb",
           "label": "Take the herb bundle",
-          "text": "You keep the ordinary herb bundle. Its count is initial tuning and uses the existing inventory item only.",
+          "text": "You keep the bundle of ordinary herbs and tuck it away with your belongings to use later if it is needed.",
           "conditions": [],
           "effects": [
             {

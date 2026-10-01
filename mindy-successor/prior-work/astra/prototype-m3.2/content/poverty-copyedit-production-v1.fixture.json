@@ -12,8 +12,8 @@
       "en": "Before the street settles for the night, a nearby stall needs one last crate moved under the awning. It is a brief job with no questions and no obligations attached."
     },
     "event.poverty-street-production.helpful-summer.choice.take-errand.text": {
-      "ru": "Ты переносишь ящик под навес и получаешь небольшую плату за несколько минут работы.",
-      "en": "You carry the crate under cover and earn a small payment for a few minutes of work."
+      "ru": "Ты переносишь последний тяжёлый ящик под навес, ставишь его рядом с остальными и получаешь плату за это одно короткое поручение.",
+      "en": "You carry the last heavy crate under cover, set it with the others, and receive payment for this one short errand."
     },
     "event.poverty-street-production.neutral-autumn.choice.settle-in.text": {
       "ru": "Ты остаёшься в сухом углу. Ночь проходит без неожиданной помощи и без новых проблем.",
@@ -48,20 +48,20 @@
       "en": "You keep your resting spot and let the small job pass."
     },
     "event.poverty-street-production-v2.neutral-autumn-crossing.variant.drizzle.text": {
-      "ru": "Лёгкая осенняя морось загоняет поздних прохожих под аркаду. Они проходят мимо без комментариев, оставляя мокрые следы и разделяя с тобой укрытие всего на несколько минут.",
-      "en": "A light autumn drizzle sends late pedestrians beneath the arcade. They pass without comment, leaving wet footprints and sharing the shelter with you for a few minutes."
+      "ru": "Осенняя морось почти не слышна, но одежда постепенно намокает по краям. Лучше переждать её под карнизом и не тратить силы на бесконечные переходы между сухими местами.",
+      "en": "Autumn drizzle is barely audible, but the edges of your clothes grow damp little by little. It is better to wait beneath an overhang than spend energy moving endlessly between dry spots."
     },
     "event.poverty-street-production-v2.neutral-autumn-crossing.choice.wait-out-night.text": {
       "ru": "Ты позволяешь улице постепенно стихнуть вокруг. Ночь не приносит ни помощи, ни новой неприятности.",
       "en": "You let the street settle around you. The night brings neither help nor a new problem."
     },
     "event.poverty-street-production-v2.pressure-winter-wind.variant.crosswind.text": {
-      "ru": "Резкий боковой ветер проходит сквозь переулок и выдувает тепло из каждого открытого угла. Рядом есть утопленный дверной проём, где можно укрыться.",
-      "en": "A hard crosswind cuts through the lane and strips the warmth from every exposed corner. A recessed doorway nearby offers shelter."
+      "ru": "Зимний ветер идёт между домами под углом и меняет силу от перекрёстка к перекрёстку. Даже небольшой выступ стены может дать короткую передышку.",
+      "en": "Winter wind cuts between buildings at an angle and changes strength from one crossing to the next. Even a small projection in a wall can offer a brief reprieve."
     },
     "event.poverty-street-production-v2.pressure-winter-wind.variant.long-gusts.text": {
-      "ru": "Долгие порывы трясут ставни вдоль переулка. Можно остаться в укрытии или продолжить идти, пожертвовав частью завтрашних сил.",
-      "en": "Long gusts rattle shutters along the lane. You can stay sheltered or keep walking and give up some of tomorrow’s strength."
+      "ru": "Длинные порывы приходят реже, но выстуживают место до самого камня. Между ними приходится быстро поправлять одежду и искать более закрытый угол.",
+      "en": "The long gusts come less often, but they chill the spot down to the stone. Between them, you have to adjust your clothes quickly and look for a more sheltered corner."
     },
     "event.poverty-street-production-v2.pressure-winter-wind.choice.use-recess.text": {
       "ru": "Ты устраиваешься в утопленном дверном проёме и пережидаешь самые сильные порывы.",
@@ -72,8 +72,8 @@
       "en": "You keep moving until the wind eases and feel the lost rest more sharply by morning."
     },
     "event.poverty-cheap-production.shared-quiet-autumn.variant.default.text": {
-      "ru": "В дешёвом ночлеге рано становится тихо. Через тонкие стены слышны кашель, шаги и шорох вещей, поэтому общая комната сама собой переходит на полголоса.",
-      "en": "The cheap lodging settles early. Thin walls carry coughs, footsteps, and the rustle of belongings, so the shared room gradually drops to a whisper."
+      "ru": "Осенью под крышей особенно заметна разница между дождём снаружи и тихими разговорами внутри. Несколько спокойных часов дают возможность восстановить обычный ритм вечера.",
+      "en": "In autumn, the contrast between rain outside and quiet voices indoors is especially noticeable. A few calm hours make it possible to recover an ordinary evening rhythm."
     },
     "event.poverty-cheap-production.shared-quiet-autumn.choice.settle-quietly.text": {
       "ru": "Ты освобождаешь немного места, держишь вещи рядом и позволяешь комнате постепенно затихнуть.",
@@ -84,32 +84,32 @@
       "en": "A Shared Room Through the Seasons"
     },
     "event.poverty-cheap-production-v2.shared-room-seasons.variant.shared-room.text": {
-      "ru": "Дешёвая общая комната простая и тесная, но здесь есть крыша, дверь и место, где можно спокойно переждать ночь.",
-      "en": "The cheap shared room is plain and crowded, but it still has a roof, a door, and a place to wait out the night in relative quiet."
+      "ru": "Общая комната живёт простыми правилами: не перекрывать проход, не будить тех, кто уже лёг, держать вещи рядом с собой. Эти мелочи делают одну ночь предсказуемее.",
+      "en": "The shared room runs on simple rules: keep the passage clear, avoid waking those already asleep, and keep belongings close. Those small habits make one night more predictable."
     },
     "event.poverty-cheap-production-v2.shared-room-seasons.choice.settle-in.text": {
       "ru": "Ты приводишь своё место в порядок и позволяешь общей комнате постепенно затихнуть.",
       "en": "You tidy your place and let the shared room gradually wind down."
     },
     "event.poverty-recovery-production.small-coin-help.choice.take-coins.text": {
-      "ru": "Ты берёшь только свободно лежащие монеты и оставляешь хлеб на месте. Небольшой суммы хватает, чтобы немного облегчить ближайшие расходы.",
-      "en": "You take only the loose coins and leave the bread where it is. The small amount makes the next few expenses a little easier."
+      "ru": "Ты берёшь только свободно лежащие монеты. Никто не ждёт ответа или услуги взамен, а небольшой запас делает ближайший выбор чуть спокойнее.",
+      "en": "You take only the loose coins. Nobody is waiting for an answer or a favor in return, and the small reserve makes the next choice a little easier."
     },
     "event.poverty-recovery-production.short-cleanup.choice.do-cleanup.text": {
-      "ru": "Работа занимает всего несколько минут. Ты складываешь табуреты, подметаешь у прилавка и получаешь небольшую плату.",
-      "en": "The work takes only a few minutes. You stack the stools, sweep around the stall, and receive a small payment."
+      "ru": "Ты заканчиваешь небольшую уборку: возвращаешь ведро, подметаешь край прохода и получаешь плату за завершённую работу.",
+      "en": "You finish the small cleanup: return the bucket, sweep the edge of the passage, and receive payment for the completed task."
     },
     "event.poverty-recovery-production.herb-bundle.choice.take-herb.text": {
-      "ru": "Ты забираешь пучок обычных трав и убираешь его к своим вещам.",
-      "en": "You keep the bundle of ordinary herbs and tuck it in with your things."
+      "ru": "Ты забираешь пучок обычных трав и аккуратно убираешь его к своим вещам, чтобы воспользоваться им позже, если понадобится.",
+      "en": "You keep the bundle of ordinary herbs and tuck it away with your belongings to use later if it is needed."
     },
     "event.poverty-recovery-production.herb-bundle.choice.leave-herb.text": {
       "ru": "Ты оставляешь пучок на месте и продолжаешь устраиваться на ночь без него.",
       "en": "You leave the bundle where it is and continue settling in for the night without it."
     },
     "event.poverty-pressure-production.cold-rain.variant.default.text": {
-      "ru": "Холодный весенний дождь добирается до края тротуара и затекает под укрытие. Чуть дальше есть глубокий дверной проём, куда можно перебраться.",
-      "en": "Cold spring rain reaches the curb and creeps beneath the edge of your shelter. A deeper doorway nearby offers a drier place to move."
+      "ru": "Холодный дождь быстро пропитывает открытые края одежды, и даже короткий переход начинает казаться длиннее. Сухой дверной проём становится временной целью сам по себе.",
+      "en": "Cold rain quickly soaks the exposed edges of your clothes, and even a short walk starts to feel longer. A dry doorway becomes a temporary goal in itself."
     },
     "event.poverty-pressure-production.cold-rain.choice.take-doorway.text": {
       "ru": "Ты перебираешься в глубокий дверной проём, где дождь почти не достаёт до одежды.",
