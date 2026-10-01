@@ -1,5 +1,13 @@
 # Mindy Successor Project
 
+## CURRENT LIVE ENTRYPOINT — 2026-10-01
+
+Before older handoffs/status prose, read:
+- [Leader 1 Current State v1](docs/LEAD1_CURRENT_STATE_v1.md)
+
+That file is the current audited production/status authority. Git and current CI still override prose if the repository moves.
+
+
 Рабочая память проекта. Здесь идут две параллельные задачи:
 
 1. Разобрать системный дизайн Simply Mindy настолько, насколько это полезно для нового проекта.
