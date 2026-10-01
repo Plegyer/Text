@@ -30,7 +30,7 @@ function resolveV14PovertyNight(state:Save){
     assert.ok(event,pending.eventId);
     const choice=event.choices.find(entry=>(pending.allowedChoiceIds??event.choices.map(candidate=>candidate.id)).includes(entry.id));
     assert.ok(choice,pending.eventId);
-    s=dispatch(s,{type:'choice',id:choice.id},catalog);
+    s=runtime.dispatch(s,{type:'choice',id:choice.id},catalog);
   }
   return s;
 }
