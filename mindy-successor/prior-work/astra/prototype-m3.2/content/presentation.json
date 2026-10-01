@@ -1535,6 +1535,14 @@
           }
         ]
       }
+    },
+    "job/satyr-maid/event/satyr-maid.staff-debrief.night/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-result.svg",
+        "alt": "Satyr Maid staff debrief after closing.",
+        "altKey": "presentation.static.career.satyr-maid.event.staff-debrief-night.alt"
+      }
     }
   }
 }
