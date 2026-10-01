@@ -20,8 +20,8 @@
       "presentationId": "ending/satyr-maid/hard-work",
       "titleKey": "ending.ending.satyr-maid.hard-work.title",
       "bodyKey": "ending.ending.satyr-maid.hard-work.description",
-      "altKey": "presentation.static.career.satyr-maid.ending.hard-work.alt",
-      "captionKey": "presentation.static.career.satyr-maid.ending.hard-work.caption",
+      "altKey": "presentation.static.satyr-maid-ending-hard-work.alt",
+      "captionKey": "presentation.static.satyr-maid-ending-hard-work.caption",
       "staticFallback": "assets/presentation/career-satyr-maid-result.svg"
     },
     {
@@ -30,8 +30,8 @@
       "presentationId": "ending/undead-farm/hard-work",
       "titleKey": "ending.ending.undead-farm.hard-work.title",
       "bodyKey": "ending.ending.undead-farm.hard-work.description",
-      "altKey": "presentation.static.career.undead-farm.ending.hard-work.alt",
-      "captionKey": "presentation.static.career.undead-farm.ending.hard-work.caption",
+      "altKey": "presentation.static.undead-farm-ending-hard-work.alt",
+      "captionKey": "presentation.static.undead-farm-ending-hard-work.caption",
       "staticFallback": "assets/presentation/career-undead-farm-result.svg"
     },
     {
@@ -40,8 +40,8 @@
       "presentationId": "ending/tavern/hard-work",
       "titleKey": "ending.ending.tavern.hard-work.title",
       "bodyKey": "ending.ending.tavern.hard-work.description",
-      "altKey": "presentation.static.career.tavern.ending.hard-work.alt",
-      "captionKey": "presentation.static.career.tavern.ending.hard-work.caption",
+      "altKey": "presentation.static.tavern-ending-hard-work.alt",
+      "captionKey": "presentation.static.tavern-ending-hard-work.caption",
       "staticFallback": "assets/presentation/career-tavern-result.svg"
     },
     {
@@ -50,8 +50,8 @@
       "presentationId": "ending/hunter/hard-work",
       "titleKey": "ending.ending.hunter.hard-work.title",
       "bodyKey": "ending.ending.hunter.hard-work.description",
-      "altKey": "presentation.static.career.hunter.ending.hard-work.alt",
-      "captionKey": "presentation.static.career.hunter.ending.hard-work.caption",
+      "altKey": "presentation.static.hunter-ending-hard-work.alt",
+      "captionKey": "presentation.static.hunter-ending-hard-work.caption",
       "staticFallback": "assets/presentation/career-hunter-result.svg"
     },
     {
@@ -60,8 +60,8 @@
       "presentationId": "ending/guard/hard-work",
       "titleKey": "ending.ending.guard.hard-work.title",
       "bodyKey": "ending.ending.guard.hard-work.description",
-      "altKey": "presentation.static.career.guard.ending.hard-work.alt",
-      "captionKey": "presentation.static.career.guard.ending.hard-work.caption",
+      "altKey": "presentation.static.guard-ending-hard-work.alt",
+      "captionKey": "presentation.static.guard-ending-hard-work.caption",
       "staticFallback": "assets/presentation/career-guard-result.svg"
     },
     {
@@ -70,8 +70,8 @@
       "presentationId": "ending/merchant/hard-work",
       "titleKey": "ending.ending.merchant.hard-work.title",
       "bodyKey": "ending.ending.merchant.hard-work.description",
-      "altKey": "presentation.static.career.merchant.ending.hard-work.alt",
-      "captionKey": "presentation.static.career.merchant.ending.hard-work.caption",
+      "altKey": "presentation.static.merchant-ending-hard-work.alt",
+      "captionKey": "presentation.static.merchant-ending-hard-work.caption",
       "staticFallback": "assets/presentation/career-merchant-result.svg"
     },
     {
@@ -80,8 +80,8 @@
       "presentationId": "ending/artist-geisha/hard-work",
       "titleKey": "ending.ending.artist-geisha.hard-work.title",
       "bodyKey": "ending.ending.artist-geisha.hard-work.description",
-      "altKey": "presentation.static.career.artist-geisha.ending.hard-work.alt",
-      "captionKey": "presentation.static.career.artist-geisha.ending.hard-work.caption",
+      "altKey": "presentation.static.artist-geisha-ending-hard-work.alt",
+      "captionKey": "presentation.static.artist-geisha-ending-hard-work.caption",
       "staticFallback": "assets/presentation/career-artist-geisha-result.svg"
     },
     {
@@ -90,8 +90,8 @@
       "presentationId": "ending/assassin/hard-work",
       "titleKey": "ending.ending.assassin.hard-work.title",
       "bodyKey": "ending.ending.assassin.hard-work.description",
-      "altKey": "presentation.static.career.assassin.ending.hard-work.alt",
-      "captionKey": "presentation.static.career.assassin.ending.hard-work.caption",
+      "altKey": "presentation.static.assassin-ending-hard-work.alt",
+      "captionKey": "presentation.static.assassin-ending-hard-work.caption",
       "staticFallback": "assets/presentation/career-assassin-result.svg"
     },
     {
@@ -100,8 +100,8 @@
       "presentationId": "ending/prostitute/hard-work",
       "titleKey": "ending.ending.prostitute.hard-work.title",
       "bodyKey": "ending.ending.prostitute.hard-work.description",
-      "altKey": "presentation.static.career.prostitute.ending.hard-work.alt",
-      "captionKey": "presentation.static.career.prostitute.ending.hard-work.caption",
+      "altKey": "presentation.static.prostitute-ending-hard-work.alt",
+      "captionKey": "presentation.static.prostitute-ending-hard-work.caption",
       "staticFallback": "assets/presentation/career-prostitute-result.svg"
     }
   ],
