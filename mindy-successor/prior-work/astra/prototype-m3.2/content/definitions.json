@@ -1666,6 +1666,270 @@
           "media": [
             "stage.tavern.winter"
           ]
+        },
+        {
+          "id": "spring.arrival-rush",
+          "text": "Spring arrival rush: you triage wet cloaks, fresh orders, and new travellers without letting one table capture the whole floor.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "spring"
+            },
+            {
+              "kind": "careerStage",
+              "career": "satyr-maid",
+              "stage": "known-face"
+            }
+          ],
+          "media": [
+            "stage.tavern.spring"
+          ]
+        },
+        {
+          "id": "spring.table-reset",
+          "text": "Spring table reset: you reorganize the room between waves, keeping service moving while staff and guests compete for the same narrow space.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "spring"
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "house-regular"
+                },
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "veteran-service"
+                },
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "house-power"
+                },
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "personal-network"
+                },
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "boundaries"
+                },
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "outcome-ready"
+                }
+              ]
+            }
+          ],
+          "media": [
+            "stage.tavern.spring"
+          ]
+        },
+        {
+          "id": "summer.split-order",
+          "text": "Summer split order: two crowded tables merge requests into one noisy list, and you keep the service sequence clear without promising special treatment.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "summer"
+            },
+            {
+              "kind": "careerStage",
+              "career": "satyr-maid",
+              "stage": "known-face"
+            }
+          ],
+          "media": [
+            "stage.tavern.summer"
+          ]
+        },
+        {
+          "id": "summer.refill-rush",
+          "text": "Summer refill rush: heat and evening traffic keep every tray in motion, so you coordinate refills and staff handoffs instead of racing alone.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "summer"
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "house-regular"
+                },
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "veteran-service"
+                },
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "house-power"
+                },
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "personal-network"
+                },
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "boundaries"
+                },
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "outcome-ready"
+                }
+              ]
+            }
+          ],
+          "media": [
+            "stage.tavern.summer"
+          ]
+        },
+        {
+          "id": "autumn.queue-control",
+          "text": "Autumn queue control: festival guests argue over priority, and you state the service order calmly enough that the room keeps moving.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "autumn"
+            },
+            {
+              "kind": "careerStage",
+              "career": "satyr-maid",
+              "stage": "known-face"
+            }
+          ],
+          "media": [
+            "stage.tavern.autumn"
+          ]
+        },
+        {
+          "id": "autumn.closing-reset",
+          "text": "Autumn closing reset: after the festival wave, you coordinate cleanup, missing cups, and the next shift's setup before the doors finally quiet.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "autumn"
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "house-regular"
+                },
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "veteran-service"
+                },
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "house-power"
+                },
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "personal-network"
+                },
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "boundaries"
+                },
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "outcome-ready"
+                }
+              ]
+            }
+          ],
+          "media": [
+            "stage.tavern.autumn"
+          ]
+        },
+        {
+          "id": "winter.familiar-order",
+          "text": "Winter familiar order: regular patrons know the routine, but recognition stays professional and does not become a promise of private access.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "winter"
+            },
+            {
+              "kind": "careerStage",
+              "career": "satyr-maid",
+              "stage": "known-face"
+            }
+          ],
+          "media": [
+            "stage.tavern.winter"
+          ]
+        },
+        {
+          "id": "winter.hearth-round",
+          "text": "Winter hearth round: a smaller room means every delay is visible, so you balance familiar requests, staff pacing, and the last supply checks of the night.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "winter"
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "house-regular"
+                },
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "veteran-service"
+                },
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "house-power"
+                },
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "personal-network"
+                },
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "boundaries"
+                },
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "outcome-ready"
+                }
+              ]
+            }
+          ],
+          "media": [
+            "stage.tavern.winter"
+          ]
         }
       ],
       "seasonal": {
