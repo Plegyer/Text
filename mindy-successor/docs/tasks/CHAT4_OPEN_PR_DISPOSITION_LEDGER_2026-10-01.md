@@ -79,7 +79,8 @@ Chat 1 v9 became the first eligible fresh candidate.
 - Exact-head CI #448 / id `36815947100`: SUCCESS; 17 packs / 46 events / 35 actions / 18 endings; 570/570 tests.
 - Locked late-career thresholds, 50-shift Hard Work definitions, automatic all-ten Meta rewards and the derived 10/10 Palace predicate match the assigned master spec.
 - C4-124 verdict: **BLOCK** because current production Satyr Maid and Undead Farm shift actions unconditionally execute their one-time `first-shift` career transition on every shift. After the first shift advances to `known-face` / `reliable-helper`, the second real shift hits the typed transition `from` guard and throws. Direct test priming to 49 shifts or direct ending eligibility does not prove natural 50-shift reachability.
-- The producer then moved #147 to `987438954cfec9739281a512a1589cb2707095e5`, invalidating the old freeze. That delta adds only `tests/ordinary-hard-work-meta.test.ts`; it does not repair production definitions/runtime. Exact-head CI #451 is green, but the production blocker remains.
+- The producer then moved #147 to `987438954cfec9739281a512a1589cb2707095e5`, invalidating the old freeze. That intermediate delta added only `tests/ordinary-hard-work-meta.test.ts`; it did not repair production definitions/runtime. Exact-head CI #451 was green, but green CI did not remove the reachability blocker.
+- Producer repair work then resumed on a newer **draft/mutable** head. Per freeze protocol, QA does not gate that moving head until a new exact SHA is explicitly frozen.
 - Required producer repair is recorded on PR #147. QA did not modify production.
 
-This also corrects executable acceptance truth: Satyr Maid and Undead Farm are Day-1 selectable and their first shifts work, but their current base work loops are not naturally repeatable after the first typed transition.
+This also corrects executable acceptance truth for current main: Satyr Maid and Undead Farm are Day-1 selectable and their first shifts work, but the shipped base work loops are not naturally repeatable after the first typed transition.
