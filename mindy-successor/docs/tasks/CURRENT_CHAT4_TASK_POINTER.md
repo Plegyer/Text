@@ -1,6 +1,6 @@
 # CURRENT CHAT4 TASK POINTER
 
-Status: **ACTIVE / C4-124 — GATE PR #147 NOW**
+Status: **ACTIVE / C4-124 — WAIT FOR CURRENT GREEN/FROZEN HEAD**
 Owner: Chat 4 / QA + Product Acceptance Gate
 
 Context reset prompt:
@@ -21,9 +21,8 @@ Completed/merged from queue v12:
 - PR #148 merged to main as `a30272dc91cab3d5286558a189d5d816f1841db7`.
 
 Current task:
-- **C4-124 — gate Chat 1 PR #147 now**.
-- exact head: `987438954cfec9739281a512a1589cb2707095e5`;
-- exact-head CI run #451: **SUCCESS**.
+- **C4-124 — gate the first current fresh candidate that is both frozen/stable and exact-head GREEN**.
+- Prefer Chat 1 PR #147 because it is shared runtime, **but only if its current head is still the green/frozen head at the moment of QA**.
 
 Eligibility rule:
 - candidate must be frozen/stable;
@@ -31,11 +30,12 @@ Eligibility rule:
 - do not QA-gate a mutable or red producer head;
 - do not implement producer fixes.
 
-Current other fresh candidates:
-- Chat 2 PR #151/#152 same candidate head: red, 554/565;
-- Chat 3 PR #146: red, 539/568;
-- Chat 5 PR #150: red during validation (`Недопустимая typed capability: read calendar`).
+Latest snapshot while producers are repairing:
+- Chat 1 PR #147 current head `c0ebb6034c9714a943f2193b7b16ae7277c10cc4`: CI #467 in progress; PR draft at snapshot;
+- Chat 2 PR #151 current head `9d1a6e87d101774bf47d5bf66f4e484be4546090`: CI #470 in progress; #152 is a duplicate/draft repair line;
+- Chat 3 PR #146: still red, 539/568;
+- Chat 5 PR #150 current head `44412489389615428a8674c6ecb8b8f38a52eefb`: repair committed, no current-head CI visible yet.
 
-Therefore PR #147 is the only eligible fresh candidate at this snapshot.
+Re-query Git before choosing the candidate. Never gate an earlier green head after the producer branch has moved.
 
 Do not self-assign beyond C4-125.
