@@ -494,6 +494,9 @@ test('renderer: Foreman relationship and voluntary Night scene localize RU EN wi
 
 test('renderer: project-owned static fallback keeps asset identity across RU EN locale switch',async()=>{
  const s=started();
+ s.run.progression.careers['satyr-maid']={
+  stage:'floor-rhythm',shifts:0,counters:{completed_shifts:1},choices:{},facts:['first-shift-complete']
+ };
  const {w,dom,errors}=boot(JSON.stringify(s));try{
   await wait(()=>!!w.document.querySelector('[data-panel="work"]'));
   w.document.querySelector('[data-panel="menu"]').click();
