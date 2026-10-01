@@ -18,3 +18,6 @@
 
 .tavern-presentation-status{display:grid;gap:.35rem;margin:.45rem 0}.tavern-presentation-status p{margin:0}.tavern-state-list{display:flex;gap:.35rem;flex-wrap:wrap}.tavern-state-chip{display:inline-block;padding:.14rem .42rem;border:1px solid var(--line);border-radius:999px;font:11px Arial,sans-serif;color:var(--muted)}
 .tavern-career-stage[tabindex]:focus-visible,.tavern-relationship-stage[tabindex]:focus-visible,.tavern-state-chip[tabindex]:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+.hunter-presentation-status{display:grid;gap:.35rem;margin:.45rem 0}.hunter-presentation-status p{margin:0}.hunter-status-list{display:flex;gap:.35rem;flex-wrap:wrap}.hunter-item-chip,.hunter-state-chip{display:inline-block;padding:.14rem .42rem;border:1px solid var(--line);border-radius:999px;font:11px Arial,sans-serif;color:var(--muted)}
+.hunter-career-stage[tabindex]:focus-visible,.hunter-relationship-stage[tabindex]:focus-visible,.hunter-item-chip[tabindex]:focus-visible,.hunter-state-chip[tabindex]:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
