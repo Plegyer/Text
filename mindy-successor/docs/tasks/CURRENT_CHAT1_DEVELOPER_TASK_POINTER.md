@@ -1,21 +1,22 @@
 # CURRENT CHAT1 DEVELOPER TASK POINTER
 
-Status: **UNDEAD v11 FROZEN + TAVERN v12 ACTIVE**
+Status: **TAVERN v12 FROZEN / QA ACCEPTED**
 Owner: Chat 1 Developer / Integration Developer
 
-Frozen Undead candidate:
-- PR #178
-- exact head `b75e73c0f5e37b19277cb25cf0321587f6444ab4`
-- CI #616 SUCCESS
-- do not move it while Chat 4 gates it.
+Current Tavern runtime candidate:
+- PR #187
+- exact head: `38c58ccdaa1d357f189cd640053d0b2a8605b9b4`
+- exact-head CI #682: **SUCCESS, 678/678**
+- C4-147: **PASS-WITH-NOTES**
+- do not move this PR.
 
-Continue immediately on a new Tavern branch.
+No additional Tavern runtime scope is assigned.
 
-Current queue:
-- `TASK_CHAT1_DEVELOPER_QUEUE_v12.md`
-- C1D-121..132
-- target: **Tavern Complete Career Runtime**
+Current instruction:
+- preserve #187 frozen;
+- do not invent new Tavern features;
+- wait for Lead integration sequencing;
+- when Lead assigns the next complete ordinary career, start only from the new explicit queue.
 
-Start C1D-121 now: publish the Tavern runtime contract first, then continue automatically through every unblocked task.
-
-Do not wait for #178 QA.
+Current project handoff:
+- `../LEADER1_HANDOFF_CHECKPOINT_2026-10-01.md`
