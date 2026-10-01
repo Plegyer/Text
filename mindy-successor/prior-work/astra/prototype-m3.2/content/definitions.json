@@ -4505,6 +4505,12 @@
             {
               "kind": "careerFact",
               "career": "tavern",
+              "fact": "rumour-route-open",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "tavern",
               "fact": "rumour-confirmed",
               "present": true
             },
