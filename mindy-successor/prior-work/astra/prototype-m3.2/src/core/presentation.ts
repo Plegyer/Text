@@ -189,6 +189,15 @@ export function presentationIdForEvent(cat:Catalog,eventId:string,variantId:stri
   return `location/town/event/${clean(eventId)}/${clean(variantId)}`;
 }
 
+export const SATYR_MAID_PRESENTATION_STAGES=[
+  'new-maid','floor-rhythm','known-face','house-regular','veteran-service',
+  'house-power','personal-network','boundaries','outcome-ready'
+] as const;
+
+export function presentationIdForSatyrMaidStage(stage:string){
+  return `job/satyr-maid/stage/${clean(stage)}`;
+}
+
 export function presentationIdForEnding(endingId:string){
   const parts=pathParts(endingId);
   if(parts[0]==='ending')parts.shift();
@@ -243,6 +252,18 @@ export function presentationSlots(cat:Catalog):PresentationSlot[]{
         });
       }
     }
+  }
+
+  // Presentation-only stage surfaces reserved from Chat 1's published C1D-97
+  // Satyr Maid runtime contract. They consume a gameplay stage string but do
+  // not define or advance career state.
+  for(const stage of SATYR_MAID_PRESENTATION_STAGES){
+    add({
+      id:presentationIdForSatyrMaidStage(stage),
+      label:`Satyr Maid · stage · ${stage}`,
+      baseMediaIds:[],
+      fallbackId:'job/satyr-maid/result/default'
+    });
   }
 
   for(const event of cat.events){
