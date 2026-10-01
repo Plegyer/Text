@@ -77,7 +77,7 @@
         {
           "id": "continue",
           "label": "Continue",
-          "text": "Return to the day.",
+          "text": "The paid lesson is complete with no extra charge or hidden progress; the day continues.",
           "conditions": [],
           "effects": []
         }
@@ -154,7 +154,7 @@
         {
           "id": "continue",
           "label": "Continue",
-          "text": "Let the Night flow continue.",
+          "text": "Night study is complete; the Night continues with no additional effects.",
           "conditions": [],
           "effects": []
         }
@@ -195,7 +195,7 @@
         {
           "id": "continue",
           "label": "Continue",
-          "text": "Let the Night flow continue.",
+          "text": "Night study is complete; the Night continues with no additional effects.",
           "conditions": [],
           "effects": []
         }
@@ -236,7 +236,7 @@
         {
           "id": "continue",
           "label": "Continue",
-          "text": "Let the Night flow continue.",
+          "text": "Night study is complete; the Night continues with no additional effects.",
           "conditions": [],
           "effects": []
         }
@@ -277,7 +277,7 @@
         {
           "id": "continue",
           "label": "Continue",
-          "text": "Let the Night flow continue.",
+          "text": "Night study is complete; the Night continues with no additional effects.",
           "conditions": [],
           "effects": []
         }
@@ -318,7 +318,7 @@
         {
           "id": "continue",
           "label": "Continue",
-          "text": "Let the Night flow continue.",
+          "text": "Night study is complete; the Night continues with no additional effects.",
           "conditions": [],
           "effects": []
         }
@@ -359,7 +359,7 @@
         {
           "id": "continue",
           "label": "Continue",
-          "text": "Let the Night flow continue.",
+          "text": "Night study is complete; the Night continues with no additional effects.",
           "conditions": [],
           "effects": []
         }
@@ -400,7 +400,7 @@
         {
           "id": "continue",
           "label": "Continue",
-          "text": "Let the Night flow continue.",
+          "text": "Night study is complete; the Night continues with no additional effects.",
           "conditions": [],
           "effects": []
         }
@@ -441,7 +441,7 @@
         {
           "id": "continue",
           "label": "Continue",
-          "text": "Let the Night flow continue.",
+          "text": "Night study is complete; the Night continues with no additional effects.",
           "conditions": [],
           "effects": []
         }
@@ -482,7 +482,7 @@
         {
           "id": "continue",
           "label": "Continue",
-          "text": "Let the Night flow continue.",
+          "text": "Night study is complete; the Night continues with no additional effects.",
           "conditions": [],
           "effects": []
         }
@@ -523,7 +523,7 @@
         {
           "id": "continue",
           "label": "Continue",
-          "text": "Let the Night flow continue.",
+          "text": "Night study is complete; the Night continues with no additional effects.",
           "conditions": [],
           "effects": []
         }
@@ -564,7 +564,7 @@
         {
           "id": "continue",
           "label": "Continue",
-          "text": "Let the Night flow continue.",
+          "text": "Night study is complete; the Night continues with no additional effects.",
           "conditions": [],
           "effects": []
         }
@@ -605,7 +605,7 @@
         {
           "id": "continue",
           "label": "Continue",
-          "text": "Let the Night flow continue.",
+          "text": "Night study is complete; the Night continues with no additional effects.",
           "conditions": [],
           "effects": []
         }
@@ -646,7 +646,7 @@
         {
           "id": "continue",
           "label": "Continue",
-          "text": "Let the Night flow continue.",
+          "text": "Night study is complete; the Night continues with no additional effects.",
           "conditions": [],
           "effects": []
         }
@@ -687,7 +687,7 @@
         {
           "id": "continue",
           "label": "Continue",
-          "text": "Let the Night flow continue.",
+          "text": "Night study is complete; the Night continues with no additional effects.",
           "conditions": [],
           "effects": []
         }
@@ -728,7 +728,7 @@
         {
           "id": "continue",
           "label": "Continue",
-          "text": "Let the Night flow continue.",
+          "text": "Night study is complete; the Night continues with no additional effects.",
           "conditions": [],
           "effects": []
         }
@@ -769,7 +769,7 @@
         {
           "id": "continue",
           "label": "Continue",
-          "text": "Let the Night flow continue.",
+          "text": "Night study is complete; the Night continues with no additional effects.",
           "conditions": [],
           "effects": []
         }
@@ -810,7 +810,7 @@
         {
           "id": "continue",
           "label": "Continue",
-          "text": "Let the Night flow continue.",
+          "text": "Night study is complete; the Night continues with no additional effects.",
           "conditions": [],
           "effects": []
         }
@@ -851,7 +851,7 @@
         {
           "id": "continue",
           "label": "Continue",
-          "text": "Let the Night flow continue.",
+          "text": "Night study is complete; the Night continues with no additional effects.",
           "conditions": [],
           "effects": []
         }
@@ -892,7 +892,7 @@
         {
           "id": "continue",
           "label": "Continue",
-          "text": "Let the Night flow continue.",
+          "text": "Night study is complete; the Night continues with no additional effects.",
           "conditions": [],
           "effects": []
         }
@@ -933,7 +933,7 @@
         {
           "id": "continue",
           "label": "Continue",
-          "text": "Let the Night flow continue.",
+          "text": "Night study is complete; the Night continues with no additional effects.",
           "conditions": [],
           "effects": []
         }
@@ -974,7 +974,7 @@
         {
           "id": "continue",
           "label": "Continue",
-          "text": "Let the Night flow continue.",
+          "text": "Night study is complete; the Night continues with no additional effects.",
           "conditions": [],
           "effects": []
         }
@@ -1015,7 +1015,7 @@
         {
           "id": "continue",
           "label": "Continue",
-          "text": "Let the Night flow continue.",
+          "text": "Night study is complete; the Night continues with no additional effects.",
           "conditions": [],
           "effects": []
         }
@@ -1056,7 +1056,7 @@
         {
           "id": "continue",
           "label": "Continue",
-          "text": "Let the Night flow continue.",
+          "text": "Night study is complete; the Night continues with no additional effects.",
           "conditions": [],
           "effects": []
         }
@@ -1097,7 +1097,7 @@
         {
           "id": "continue",
           "label": "Continue",
-          "text": "Let the Night flow continue.",
+          "text": "Night study is complete; the Night continues with no additional effects.",
           "conditions": [],
           "effects": []
         }
