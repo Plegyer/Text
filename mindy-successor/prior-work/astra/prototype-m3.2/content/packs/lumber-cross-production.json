@@ -25,6 +25,12 @@
         "field_preservation_kit",
         "reinforced_axe",
         "old_boundary_token"
+      ],
+      "itemCapabilities": [
+        "cross_rough_route",
+        "preserve_specimen",
+        "cut_heavy_wood",
+        "enter_old_boundary"
       ]
     },
     "writes": {
