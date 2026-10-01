@@ -23,10 +23,31 @@ function settlePending(s:Save){
   return s;
 }
 
+function finishNight(s:Save){
+  s=dispatch(s,{type:'endDay'},catalog);
+  let guard=0;
+  while(s.run.flow.night||s.run.pending){
+    if(++guard>60)throw new Error('night flow loop');
+    if(s.run.pending){
+      s=settlePending(s);
+      continue;
+    }
+    const phase=s.run.flow.night?.phase;
+    if(phase==='LodgingResolution'){
+      s=dispatch(s,{type:'chooseLodging',id:'lodging.street'},catalog);
+      continue;
+    }
+    if(phase==='VoluntaryNightChoice'){
+      s=dispatch(s,{type:'chooseNightChoice',id:'night.sleep'},catalog);
+      continue;
+    }
+    throw new Error(`night flow stalled at ${phase}`);
+  }
+  return s;
+}
+
 function ensureEnergy(s:Save){
-  if(s.run.dayState.energyCurrent>0)return s;
-  s=dispatch(s,{type:'sleep',payment:'outside'},catalog);
-  return settlePending(s);
+  return s.run.dayState.energyCurrent>0?s:finishNight(s);
 }
 
 test('Satyr Maid and Undead Farm first-shift transitions remain one-time while the second real shift repeats',()=>{
