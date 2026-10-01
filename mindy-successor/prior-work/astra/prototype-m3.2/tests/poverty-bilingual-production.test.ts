@@ -14,7 +14,8 @@ const packNames=[
  'poverty-cheap-production.json',
  'poverty-cheap-production-v2.json',
  'poverty-recovery-production.json',
- 'poverty-pressure-production.json'
+ 'poverty-pressure-production.json',
+ 'poverty-closure-production-v14.json'
 ] as const;
 
 const packs=Object.fromEntries(packNames.map(name=>[
@@ -40,7 +41,7 @@ function requiredKeys(){
 
 test('ordinary poverty production surfaces are fully RU EN localized in the root bundle',()=>{
  const keys=requiredKeys();
- assert.equal(new Set(keys).size,84);
+ assert.equal(new Set(keys).size,143);
  for(const key of keys){
   const entry=strings[key];
   assert.ok(entry,key);
@@ -84,7 +85,7 @@ function projection(s:any){
  });
 }
 
-test('all six ordinary-poverty production packs have locale-invariant natural paths',()=>{
+test('legacy ordinary-poverty natural paths remain locale-invariant after v14 closure',()=>{
  for(const [packId,day,lodging,eventId,variantId,choiceId] of cases){
   let s=enter(day,lodging);
   assert.equal(s.run.pending?.eventId,eventId,packId);
