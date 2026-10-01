@@ -1,18 +1,22 @@
 # CURRENT CHAT3 TASK POINTER
 
-Status: **TAVERN CONTENT v15 FROZEN / READY FOR QA**
+Status: **TAVERN CONTENT v15 FROZEN / HUNTER CONTENT v16 ACTIVE**
 Owner: Chat 3 / World + Career Content Bundles
 
-Current candidate:
+Frozen Tavern authored candidate:
 - PR #185
 - exact head `d2a5447a25a32253eb5ff5a6ab7821fb33a10600`
-- CI #694: **SUCCESS, 688/688**
-- C3-157..168 complete.
-- based on exact frozen Tavern runtime #187.
+- CI #694 SUCCESS
+- do not move it.
 
-Do not move this PR while Chat 4 gates it.
+Active stacked branch:
+- `chat3/hunter-live-authored-v16`
 
-No additional Tavern authored-content scope is assigned at this checkpoint.
+Current queue:
+- `TASK_CHAT3_CONTENT_QUEUE_v16.md`
+- C3-169..180
+- target: **Hunter Live Authored Content**
 
-Current project handoff:
-- `../LEADER1_HANDOFF_CHECKPOINT_2026-10-01.md`
+Start C3-169 immediately. Complete contract-independent inventory/seasonal authoring first; bind gameplay identities only to C1D-133 once Chat 1 publishes them.
+
+Do not wait for Tavern integration. Do not alter PR #185.
