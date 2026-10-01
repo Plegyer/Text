@@ -1,5 +1,25 @@
 # Leader 1 — Live Dashboard
 
+## VERIFIED CONTINUITY UPDATE — Chat 5 Hunter School v15
+
+Observed after the original checkpoint; Git was re-verified before writing this block.
+
+- main observed: `d97a970283612ce25591741a521aa31d2a982c95`;
+- main CI #719 / id `36843239627`: **SUCCESS**;
+- Chat 1 Hunter runtime PR #201 is frozen at `8af661de2ce6d73e4db0f61fe4206d3334822998`;
+- Hunter runtime exact-head CI #734 / id `36844983432`: **SUCCESS**;
+- Chat 5 Hunter School PR #199 is frozen/ready at `f04c93db866b1d2603f6917b41297670f86b0bef`;
+- PR #199 exact-head CI #745 / id `36846888973`: **SUCCESS**;
+- #199 is stacked on immutable helper base `chat5/hunter-school-v15-base` at the frozen Hunter runtime head;
+- focused C5 delta is 15 files; no task pointer/queue or shared-runtime ownership drift is in the candidate;
+- Hunter School authority is intentionally narrow: Field Craft has live event `hunter.school.field-craft` through existing `forest.school-field-notes`; Arcana/Literacy/Physical publish exact career facts but no numeric thresholds or live consumer IDs are invented;
+- real Field Craft Night-study remains School progress only; it does not manufacture Hunter field notes or a Hunter threshold;
+- previous Tavern School PR #191 remains frozen and must not be moved merely because Hunter work is complete.
+
+Immediate Leader 1 action for Chat 5: send exact head #199 to Chat 4 QA when appropriate in integration order. Do not mutate #199 for base drift alone. No v16 Chat 5 queue was assigned at this refresh.
+
+
+
 ## HANDOFF LIVE UPDATE — 2026-10-01 11:33+03
 
 Canonical takeover snapshot:
