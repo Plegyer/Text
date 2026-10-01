@@ -1,0 +1,439 @@
+{
+  "schemaVersion": 1,
+  "id": "hunter.relationship",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "careers": [
+        "hunter"
+      ],
+      "relationships": [
+        "hunter.senior-guide"
+      ]
+    },
+    "writes": {
+      "careers": [
+        "hunter"
+      ],
+      "relationships": [
+        "hunter.senior-guide"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "hunter.relationship.intro",
+      "title": "A senior hunter notices the work",
+      "sourceDomain": "hunter",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "actionCompleted",
+          "action": "hunter.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 74,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "not",
+          "condition": {
+            "kind": "careerStage",
+            "career": "hunter",
+            "stage": "novice"
+          }
+        },
+        {
+          "kind": "relationshipFact",
+          "relationship": "hunter.senior-guide",
+          "fact": "introduced-at-work",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "A senior hunter starts checking your route notes as professional work. The role stays unnamed and does not require friendship or romance.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "professional",
+          "label": "Compare route notes",
+          "text": "Keep the first contact practical and work-focused.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "hunter.senior-guide",
+              "fact": "introduced-at-work"
+            },
+            {
+              "kind": "incrementRelationshipCounter",
+              "relationship": "hunter.senior-guide",
+              "counter": "work-meetings",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hunter.relationship.trust",
+      "title": "Professional trust",
+      "sourceDomain": "hunter",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "actionCompleted",
+          "action": "hunter.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 73,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "relationshipStage",
+          "relationship": "hunter.senior-guide",
+          "stage": "introduced"
+        },
+        {
+          "kind": "relationshipFact",
+          "relationship": "hunter.senior-guide",
+          "fact": "introduced-at-work",
+          "present": true
+        },
+        {
+          "kind": "relationshipCounter",
+          "relationship": "hunter.senior-guide",
+          "counter": "work-meetings",
+          "op": "eq",
+          "value": 1
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "A second ordinary job is enough to establish professional trust. The senior hunter now treats your route decisions as worth arguing about.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Keep the professional contact",
+          "text": "Build trust without committing to friendship, rivalry, or expedition companionship.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "incrementRelationshipCounter",
+              "relationship": "hunter.senior-guide",
+              "counter": "work-meetings",
+              "amount": 1
+            },
+            {
+              "kind": "advanceRelationship",
+              "relationship": "hunter.senior-guide",
+              "transition": "build-trust"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "hunter",
+              "fact": "relationship-trust-ready"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hunter.relationship.conflict-open",
+      "title": "A route conflict",
+      "sourceDomain": "hunter",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "relationshipTransition",
+          "relationship": "hunter.senior-guide"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "hunter.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 72,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "relationshipStage",
+          "relationship": "hunter.senior-guide",
+          "stage": "professional-trust"
+        },
+        {
+          "kind": "relationshipFact",
+          "relationship": "hunter.senior-guide",
+          "fact": "conflict-opened",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The senior hunter wants to push a pressured route; you think the territory needs either protection or a more careful contract line. The disagreement is professional, not a morality score.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "open",
+          "label": "State your position",
+          "text": "Make the route conflict explicit and resolve it on the next relationship beat.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "hunter.senior-guide",
+              "fact": "conflict-opened"
+            },
+            {
+              "kind": "advanceRelationship",
+              "relationship": "hunter.senior-guide",
+              "transition": "open-conflict"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hunter.relationship.conflict-resolve",
+      "title": "Resolve the route conflict",
+      "sourceDomain": "hunter",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "relationshipTransition",
+          "relationship": "hunter.senior-guide"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "hunter.shift"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 84,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "relationshipStage",
+          "relationship": "hunter.senior-guide",
+          "stage": "conflict-open"
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The disagreement can become cooperation, a useful professional rivalry, or a clean refusal to carry the dispute further.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "cooperate",
+          "label": "Protect the route together",
+          "text": "Resolve the conflict around route protection and keep expedition companionship possible.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "setRelationshipChoice",
+              "relationship": "hunter.senior-guide",
+              "choice": "conflict-response",
+              "value": "cooperate"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "hunter",
+              "fact": "protected-route-choice"
+            },
+            {
+              "kind": "advanceRelationship",
+              "relationship": "hunter.senior-guide",
+              "transition": "companion-cooperate"
+            }
+          ]
+        },
+        {
+          "id": "rivalry",
+          "label": "Stay professional rivals",
+          "text": "Keep the disagreement as a productive rivalry without blocking ordinary Hunter work.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "setRelationshipChoice",
+              "relationship": "hunter.senior-guide",
+              "choice": "conflict-response",
+              "value": "rivalry"
+            },
+            {
+              "kind": "advanceRelationship",
+              "relationship": "hunter.senior-guide",
+              "transition": "resolve-rivalry"
+            }
+          ]
+        },
+        {
+          "id": "decline",
+          "label": "Step away from the dispute",
+          "text": "Decline the extra relationship route; ordinary Hunter progression remains available.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "setRelationshipChoice",
+              "relationship": "hunter.senior-guide",
+              "choice": "conflict-response",
+              "value": "declined"
+            },
+            {
+              "kind": "advanceRelationship",
+              "relationship": "hunter.senior-guide",
+              "transition": "resolve-refusal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hunter.relationship.companion",
+      "title": "Optional expedition companion",
+      "sourceDomain": "hunter",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "relationshipTransition",
+          "relationship": "hunter.senior-guide"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "hunter.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 70,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "relationshipStage",
+          "relationship": "hunter.senior-guide",
+          "stage": "companion-ready"
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "With the conflict resolved cooperatively, the senior hunter can join a later expedition. This is optional support, not a gate on ordinary paid work.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "accept",
+          "label": "Keep the companion option",
+          "text": "Accept the senior hunter as a possible expedition companion.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "setRelationshipChoice",
+              "relationship": "hunter.senior-guide",
+              "choice": "companion-response",
+              "value": "accepted"
+            },
+            {
+              "kind": "incrementRelationshipCounter",
+              "relationship": "hunter.senior-guide",
+              "counter": "expedition-meetings",
+              "amount": 1
+            },
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "hunter.senior-guide",
+              "fact": "companion-response-resolved"
+            },
+            {
+              "kind": "advanceRelationship",
+              "relationship": "hunter.senior-guide",
+              "transition": "finish-companion"
+            }
+          ]
+        },
+        {
+          "id": "decline",
+          "label": "Hunt independently",
+          "text": "Decline companionship without losing the professional relationship or career.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "setRelationshipChoice",
+              "relationship": "hunter.senior-guide",
+              "choice": "companion-response",
+              "value": "declined"
+            },
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "hunter.senior-guide",
+              "fact": "refusal-respected"
+            },
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "hunter.senior-guide",
+              "fact": "companion-response-resolved"
+            },
+            {
+              "kind": "advanceRelationship",
+              "relationship": "hunter.senior-guide",
+              "transition": "finish-companion"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
