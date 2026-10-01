@@ -25,7 +25,7 @@
   "events": [
     {
       "id": "tavern.recurring-traveler.intro",
-      "title": "A recurring traveler becomes familiar",
+      "title": "A familiar traveler returns",
       "sourceDomain": "tavern.recurring-traveler",
       "trigger": [],
       "reactionTriggers": [
@@ -74,7 +74,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "A traveler who has passed through before recognizes you during ordinary service. The contact begins as work, not obligation.",
+          "text": "A recurring traveler begins to recognize you from your shifts and approaches you as a staff member who knows how the house works. The exchange stays friendly and professional; familiarity does not require personal intimacy.",
           "conditions": [],
           "media": []
         }
@@ -103,7 +103,7 @@
     },
     {
       "id": "tavern.recurring-traveler.trust",
-      "title": "Professional trust",
+      "title": "Professional trust becomes familiar",
       "sourceDomain": "tavern.recurring-traveler",
       "trigger": [],
       "reactionTriggers": [
@@ -144,7 +144,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "A second work exchange is enough for the traveler to ask whether you would discuss a road problem after closing.",
+          "text": "After several meetings, the traveler no longer repeats the whole context from the beginning and trusts you with practical route details. You answer in kind—with accuracy and predictability, not a promise of special treatment.",
           "conditions": [],
           "media": []
         }
@@ -153,7 +153,7 @@
         {
           "id": "accept-night",
           "label": "Agree to the voluntary meeting",
-          "text": "Accept an after-hours conversation without changing the work contract.",
+          "text": "A request to talk after closing is an invitation, not part of the shift. If you accept, the meeting remains voluntary and does not turn future work into a personal obligation.",
           "conditions": [],
           "effects": [
             {
@@ -178,7 +178,7 @@
         {
           "id": "decline-night",
           "label": "Keep contact inside work",
-          "text": "Decline the Night meeting while preserving professional trust and the Tavern career.",
+          "text": "You decline the after-hours conversation, and the traveler accepts the answer without bargaining. On the next shift, the professional connection continues normally; refusal does not erase trust or block the career.",
           "conditions": [],
           "effects": [
             {
@@ -209,7 +209,7 @@
     },
     {
       "id": "tavern.recurring-traveler.request",
-      "title": "A request tied to a road rumour",
+      "title": "A practical request after the road talk",
       "sourceDomain": "tavern.recurring-traveler",
       "trigger": [],
       "reactionTriggers": [
@@ -243,7 +243,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "The traveler asks you to remember a road rumour and decide later whether their identity should remain confidential.",
+          "text": "A practical request returns to the work context: you check what the house rules allow you to check and state clearly what remains unknown. The help ends with the task rather than becoming an indefinite promise.",
           "conditions": [],
           "media": []
         }
@@ -304,7 +304,7 @@
     },
     {
       "id": "tavern.recurring-traveler.confidentiality",
-      "title": "Confidentiality at work",
+      "title": "What confidentiality means at work",
       "sourceDomain": "tavern.recurring-traveler",
       "trigger": [],
       "reactionTriggers": [
@@ -347,7 +347,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "The rumour is now useful, but the traveler's identity is not automatically part of it. You must choose what confidentiality means in practice.",
+          "text": "Trust becomes more complicated when a request for confidentiality meets your responsibilities to the house. You decide what information genuinely needs to be passed on and do not use the rest as punishment for disagreement.",
           "conditions": [],
           "media": []
         }
@@ -356,7 +356,7 @@
         {
           "id": "keep-private",
           "label": "Keep the traveler private",
-          "text": "Retain only the route information and protect the identity behind it.",
+          "text": "Keep the traveler's identity private while retaining only the route detail the work actually needs.",
           "conditions": [],
           "effects": [
             {
@@ -385,7 +385,7 @@
         {
           "id": "share-route-only",
           "label": "Share only the route detail",
-          "text": "Pass on the useful route detail while withholding personal identity.",
+          "text": "Share only the verified route detail and keep personal identity outside the handoff.",
           "conditions": [],
           "effects": [
             {
