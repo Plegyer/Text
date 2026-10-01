@@ -114,7 +114,7 @@ test('A6 applies exactly one hardWork:lumber reward on committed completion',()=
   s=dispatch(s,{type:'action',id:'lumber.shift'},cat);
   s=resolveAll(s,cat);
   const ending=cat.definitions.endings.find(e=>e.id==='ending.lumber.hard-work')!;
-  assert.deepEqual(ending.metaRewards.map(r=>r.kind==='hardWork'?`${r.kind}:${r.career}`:r.kind),['hardWork:lumber']);
+  assert.deepEqual((ending.metaRewards??[]).map(r=>r.kind==='hardWork'?`${r.kind}:${r.career}`:r.kind),['hardWork:lumber']);
 
   s=dispatch(s,{type:'commitEnding',id:'ending.lumber.hard-work'},cat);
   assert.equal(s.meta.hardWorkProgress.includes('lumber'),false);

@@ -4,7 +4,7 @@ import {loadCatalog} from '../src/core/content.ts';
 import {dispatch,freshSave,parseSave} from '../src/core/engine.ts';
 import {ordinaryHardWorkCareers,type Catalog,type Save} from '../src/core/schema.ts';
 
-function ending(id:string,metaRewards:any[]=[],reward='legacy.placeholder'){
+function ending(id:string,metaRewards?:any[],reward='legacy.placeholder'){
   return {
     id,
     title:id,
@@ -27,7 +27,7 @@ function definitions(){
     actions:[],
     endings:[
       ending('test.unlock',[{kind:'unlock',rewardId:'reward.test.unlock',unlock:'advanced.school'}]),
-      ending('legacy.test',[],'legacy.unlock'),
+      ending('legacy.test',undefined,'legacy.unlock'),
       ...hardWork
     ]
   };
@@ -217,7 +217,7 @@ test('all ten unique Hard Work completions unlock Palace',()=>{
   assert.equal(s.meta.runsCompleted,10);
 });
 
-test('legacy accept remains compatibility shortcut with RunResult proof',()=>{
+test('omitted metaRewards preserves legacy accept compatibility with RunResult proof',()=>{
   const cat=catalog();
   let s=freshReady(cat);
   s=dispatch(s,{type:'accept',id:'legacy.test'},cat);

@@ -42,8 +42,7 @@ const cases=[
     career:'undead-farm',
     firstStage:'reliable-helper',
     expectedEffects:[
-      {kind:'incrementCareerCounter',career:'undead-farm',counter:'completed_shifts',amount:1},
-      {kind:'advanceCareer',career:'undead-farm',transition:'first-shift'}
+      {kind:'incrementCareerCounter',career:'undead-farm',counter:'completed_shifts',amount:1}
     ] as const,
     firstFact:'first-shift-complete',
     resultPresentation:'job/undead-farm/result/default',

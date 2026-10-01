@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "id": "undead-farm.activity",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "activities": [
+        "lumber.forest"
+      ],
+      "careers": [
+        "undead-farm"
+      ],
+      "inventory": [
+        "farm_preserved_specimen"
+      ]
+    },
+    "writes": {
+      "careers": [
+        "undead-farm"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "undead-farm.activity.forest-return",
+      "title": "A Forest result matches the farm sample",
+      "sourceDomain": "undead-farm",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "activityResult",
+          "activity": "lumber.forest",
+          "outcome": "success",
+          "result": "lumber.forest.success"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 86,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerFact",
+          "career": "undead-farm",
+          "fact": "sample-preserved",
+          "present": true
+        },
+        {
+          "kind": "itemCount",
+          "id": "farm_preserved_specimen",
+          "op": "gte",
+          "count": 1
+        },
+        {
+          "kind": "careerFact",
+          "career": "undead-farm",
+          "fact": "activity-source-returned",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The exact successful Forest Activity result matches features of the preserved farm specimen. The Activity runtime stays unchanged; its typed result is consumed here as career evidence.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "compare",
+          "label": "Compare the result with the specimen",
+          "text": "Carry the Forest result back into Farm progression.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "undead-farm",
+              "fact": "activity-source-returned"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "undead-farm",
+              "fact": "external-anomaly-ready"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
