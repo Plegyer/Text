@@ -4319,52 +4319,500 @@
       "en": "After a real lesson, collect containers, labels, and field notes from the School desk."
     },
     "event.satyr-maid.school.management.title": {
-      "ru": "Сводка, которую поймёт следующая смена",
-      "en": "A ledger the next shift can read"
+      "ru": "Записи становятся инструментом управления",
+      "en": "Records become management tools"
     },
     "event.satyr-maid.school.management.variant.default.text": {
-      "ru": "После третьего занятия Мара просит свести учебные расходы так, чтобы другой человек без подсказки увидел остаток, расход и следующую проверку. Она говорит, что такой порядок уже можно перенести в бар: не как диплом или новый школьный статус, а как рабочий способ не терять деньги и договорённости между сменами.",
-      "en": "After the third lesson, Mara asks you to reconcile the practice ledger so another person can see the balance, spending, and next check without explanation. She says that method is ready to carry into the bar—not as a certificate or new School status, but as a working way to keep money and handoffs from disappearing between shifts."
+      "ru": "Три завершённых занятия по грамотности и счёту превращают расписания и записи о запасах в практический рабочий инструмент.",
+      "en": "Three completed Literacy & Numbers lessons make schedules and supply records usable as a real management tool."
     },
     "event.satyr-maid.school.management.choice.apply.label": {
-      "ru": "Применить метод",
-      "en": "Apply the method"
+      "ru": "Применить это в работе",
+      "en": "Apply it at work"
     },
     "event.satyr-maid.school.management.choice.apply.text": {
-      "ru": "Навык учёта готов к рабочей проверке в баре сатиров. Дополнительная смена для появления реакции не требуется. Школа: Мара отметила рабочий уровень учёта для текущей ситуации в баре. Это локальный карьерный крючок, не сертификат.",
-      "en": "The bookkeeping practice is ready for a workplace check at the Satyr bar. No extra work shift is required for the reaction to appear. School: Mara marked the bookkeeping practice as ready for the current bar situation. This is a local career hook, not a certificate."
+      "ru": "Применить метод ведения записей в работе заведения.",
+      "en": "Apply the record-keeping method to the house."
     },
     "event.satyr-maid.school.rhetoric.title": {
-      "ru": "Сначала цель разговора",
-      "en": "Name the purpose before the argument"
+      "ru": "Риторика начинает работать в зале",
+      "en": "Service rhetoric clicks"
     },
     "event.satyr-maid.school.rhetoric.variant.default.text": {
-      "ru": "Кассиан просит разобрать шумный спор как рабочую задачу: кто чего добивается, где можно уточнить просьбу и в какой момент нужно назвать правило прямо. После третьего занятия он считает этот приём достаточно отработанным, чтобы проверить его в баре. Это не общий бонус к характеристике и не обещание успеха — только новый способ вести конкретный разговор.",
-      "en": "Cassian asks you to treat a noisy dispute as a work problem: what each person wants, where a clarifying question can help, and when a rule needs to be stated plainly. After the third lesson, he considers the method practiced enough to test at the bar. It is not a generic stat bonus or a promise of success—only a new way to handle a specific conversation."
+      "ru": "Три завершённых занятия по риторике и общению дают конкретный приём переговоров, который можно сразу применить в работе за стойкой.",
+      "en": "Three completed Rhetoric & Social lessons give you a concrete negotiation pattern you can use on the bar floor immediately."
     },
     "event.satyr-maid.school.rhetoric.choice.apply.label": {
-      "ru": "Использовать приём",
-      "en": "Use the technique"
+      "ru": "Применить это в работе",
+      "en": "Apply it at work"
     },
     "event.satyr-maid.school.rhetoric.choice.apply.text": {
-      "ru": "Социальный приём готов к карьерной реакции через Resolver без дополнительной смены. Школа: Кассиан связал риторику с конкретным разговором в баре сатиров. Глобальный школьный milestone не создан.",
-      "en": "The social technique is ready for a career reaction through the Resolver without an additional shift. School: Cassian connected rhetoric to a specific conversation at the Satyr bar. No global School milestone was created."
+      "ru": "Перенести переговорный приём в работу служанки без дополнительной траты дневной энергии.",
+      "en": "Carry the negotiation technique into Satyr Maid work without spending another daytime Energy."
     },
     "event.satyr-maid.school.boundaries.title": {
-      "ru": "Уверенная подача не отменяет границы",
-      "en": "Confident presentation does not erase a boundary"
+      "ru": "Уверенность становится рабочей границей",
+      "en": "Confidence becomes a work boundary"
     },
     "event.satyr-maid.school.boundaries.variant.default.text": {
-      "ru": "Сера просит повторить упражнение так, чтобы дружелюбная подача и ясный отказ существовали одновременно. После третьего занятия она отмечает, что этот навык можно перенести в обслуживание: внимание к телу и манере держаться не превращает просьбу другого человека в обязанность и не связывает профессиональную уверенность с романтическим или интимным согласием.",
-      "en": "Sera asks you to repeat the exercise so a welcoming presentation and a clear refusal can exist at the same time. After the third lesson, she notes that the skill can carry into service: attention to posture and presence does not turn another person's request into an obligation, and professional confidence is not romantic or intimate consent."
+      "ru": "Три завершённых занятия по уверенности в теле помогают превратить личный отказ в ясную профессиональную границу обслуживания.",
+      "en": "Three completed Body Confidence lessons help turn a personal refusal into a clear professional service boundary."
     },
     "event.satyr-maid.school.boundaries.choice.apply.label": {
-      "ru": "Назвать границу",
-      "en": "State the boundary"
+      "ru": "Применить это в работе",
+      "en": "Apply it at work"
     },
     "event.satyr-maid.school.boundaries.choice.apply.text": {
-      "ru": "Навык границ готов к карьерной реакции без обязательного романтического маршрута. Школа: Сера связала уверенную самопрезентацию с правом назвать границу в сервисной работе.",
-      "en": "The boundary skill is ready for a career reaction without requiring a romance route. School: Sera connected confident presentation with the right to state a boundary in service work."
+      "ru": "Использовать более ясные формулировки границ в работе.",
+      "en": "Use the clearer boundary language at work."
+    },
+    "presentation.satyr-maid.stage.new-maid.label": {
+      "ru": "Новая служанка",
+      "en": "New maid"
+    },
+    "presentation.static.career.satyr-maid.stage.new-maid.alt": {
+      "ru": "Служанка у сатиров: карьерный этап «Новая служанка»; статичный рабочий визуал без изменения игрового состояния.",
+      "en": "Satyr Maid career stage “New maid”; a static work visual that does not change gameplay state."
+    },
+    "presentation.static.career.satyr-maid.stage.new-maid.caption": {
+      "ru": "Карьерный этап: Новая служанка.",
+      "en": "Career stage: New maid."
+    },
+    "presentation.satyr-maid.stage.floor-rhythm.label": {
+      "ru": "Ритм зала",
+      "en": "Floor rhythm"
+    },
+    "presentation.static.career.satyr-maid.stage.floor-rhythm.alt": {
+      "ru": "Служанка у сатиров: карьерный этап «Ритм зала»; статичный рабочий визуал без изменения игрового состояния.",
+      "en": "Satyr Maid career stage “Floor rhythm”; a static work visual that does not change gameplay state."
+    },
+    "presentation.static.career.satyr-maid.stage.floor-rhythm.caption": {
+      "ru": "Карьерный этап: Ритм зала.",
+      "en": "Career stage: Floor rhythm."
+    },
+    "presentation.satyr-maid.stage.known-face.label": {
+      "ru": "Знакомое лицо",
+      "en": "Known face"
+    },
+    "presentation.static.career.satyr-maid.stage.known-face.alt": {
+      "ru": "Служанка у сатиров: карьерный этап «Знакомое лицо»; статичный рабочий визуал без изменения игрового состояния.",
+      "en": "Satyr Maid career stage “Known face”; a static work visual that does not change gameplay state."
+    },
+    "presentation.static.career.satyr-maid.stage.known-face.caption": {
+      "ru": "Карьерный этап: Знакомое лицо.",
+      "en": "Career stage: Known face."
+    },
+    "presentation.satyr-maid.stage.house-regular.label": {
+      "ru": "Своя в доме",
+      "en": "House regular"
+    },
+    "presentation.static.career.satyr-maid.stage.house-regular.alt": {
+      "ru": "Служанка у сатиров: карьерный этап «Своя в доме»; статичный рабочий визуал без изменения игрового состояния.",
+      "en": "Satyr Maid career stage “House regular”; a static work visual that does not change gameplay state."
+    },
+    "presentation.static.career.satyr-maid.stage.house-regular.caption": {
+      "ru": "Карьерный этап: Своя в доме.",
+      "en": "Career stage: House regular."
+    },
+    "presentation.satyr-maid.stage.veteran-service.label": {
+      "ru": "Опытная смена",
+      "en": "Veteran service"
+    },
+    "presentation.static.career.satyr-maid.stage.veteran-service.alt": {
+      "ru": "Служанка у сатиров: карьерный этап «Опытная смена»; статичный рабочий визуал без изменения игрового состояния.",
+      "en": "Satyr Maid career stage “Veteran service”; a static work visual that does not change gameplay state."
+    },
+    "presentation.static.career.satyr-maid.stage.veteran-service.caption": {
+      "ru": "Карьерный этап: Опытная смена.",
+      "en": "Career stage: Veteran service."
+    },
+    "presentation.satyr-maid.stage.house-power.label": {
+      "ru": "Влияние в доме",
+      "en": "House power"
+    },
+    "presentation.static.career.satyr-maid.stage.house-power.alt": {
+      "ru": "Служанка у сатиров: карьерный этап «Влияние в доме»; статичный рабочий визуал без изменения игрового состояния.",
+      "en": "Satyr Maid career stage “House power”; a static work visual that does not change gameplay state."
+    },
+    "presentation.static.career.satyr-maid.stage.house-power.caption": {
+      "ru": "Карьерный этап: Влияние в доме.",
+      "en": "Career stage: House power."
+    },
+    "presentation.satyr-maid.stage.personal-network.label": {
+      "ru": "Личная сеть",
+      "en": "Personal network"
+    },
+    "presentation.static.career.satyr-maid.stage.personal-network.alt": {
+      "ru": "Служанка у сатиров: карьерный этап «Личная сеть»; статичный рабочий визуал без изменения игрового состояния.",
+      "en": "Satyr Maid career stage “Personal network”; a static work visual that does not change gameplay state."
+    },
+    "presentation.static.career.satyr-maid.stage.personal-network.caption": {
+      "ru": "Карьерный этап: Личная сеть.",
+      "en": "Career stage: Personal network."
+    },
+    "presentation.satyr-maid.stage.boundaries.label": {
+      "ru": "Правила и границы",
+      "en": "House rules"
+    },
+    "presentation.static.career.satyr-maid.stage.boundaries.alt": {
+      "ru": "Служанка у сатиров: карьерный этап «Правила и границы»; статичный рабочий визуал без изменения игрового состояния.",
+      "en": "Satyr Maid career stage “House rules”; a static work visual that does not change gameplay state."
+    },
+    "presentation.static.career.satyr-maid.stage.boundaries.caption": {
+      "ru": "Карьерный этап: Правила и границы.",
+      "en": "Career stage: House rules."
+    },
+    "presentation.satyr-maid.stage.outcome-ready.label": {
+      "ru": "Готовность к исходу",
+      "en": "Outcome ready"
+    },
+    "presentation.static.career.satyr-maid.stage.outcome-ready.alt": {
+      "ru": "Служанка у сатиров: карьерный этап «Готовность к исходу»; статичный рабочий визуал без изменения игрового состояния.",
+      "en": "Satyr Maid career stage “Outcome ready”; a static work visual that does not change gameplay state."
+    },
+    "presentation.static.career.satyr-maid.stage.outcome-ready.caption": {
+      "ru": "Карьерный этап: Готовность к исходу.",
+      "en": "Career stage: Outcome ready."
+    },
+    "ui.work.satyrMaidStageAria": {
+      "ru": "Этап карьеры: {stage}",
+      "en": "Career stage: {stage}"
+    },
+    "presentation.static.career.satyr-maid.event.first-shift.alt": {
+      "ru": "Служанка у сатиров во время рабочего этапа «Первая устойчивая смена»; статичный визуал сохраняет смысл без анимации.",
+      "en": "Satyr Maid during the work milestone “First steady shift”; the static visual preserves meaning without animation."
+    },
+    "presentation.static.career.satyr-maid.event.first-shift.caption": {
+      "ru": "Рабочий этап: Первая устойчивая смена.",
+      "en": "Work milestone: First steady shift."
+    },
+    "presentation.static.career.satyr-maid.event.known-face.alt": {
+      "ru": "Служанка у сатиров во время рабочего этапа «Знакомое лицо в зале»; статичный визуал сохраняет смысл без анимации.",
+      "en": "Satyr Maid during the work milestone “Known face on the floor”; the static visual preserves meaning without animation."
+    },
+    "presentation.static.career.satyr-maid.event.known-face.caption": {
+      "ru": "Рабочий этап: Знакомое лицо в зале.",
+      "en": "Work milestone: Known face on the floor."
+    },
+    "presentation.static.career.satyr-maid.event.house-regular.alt": {
+      "ru": "Служанка у сатиров во время рабочего этапа «Своя в рабочем ритме дома»; статичный визуал сохраняет смысл без анимации.",
+      "en": "Satyr Maid during the work milestone “House regular at work”; the static visual preserves meaning without animation."
+    },
+    "presentation.static.career.satyr-maid.event.house-regular.caption": {
+      "ru": "Рабочий этап: Своя в рабочем ритме дома.",
+      "en": "Work milestone: House regular at work."
+    },
+    "presentation.static.career.satyr-maid.event.veteran-service.alt": {
+      "ru": "Служанка у сатиров во время рабочего этапа «Опытная работа в напряжённую смену»; статичный визуал сохраняет смысл без анимации.",
+      "en": "Satyr Maid during the work milestone “Veteran service under pressure”; the static visual preserves meaning without animation."
+    },
+    "presentation.static.career.satyr-maid.event.veteran-service.caption": {
+      "ru": "Рабочий этап: Опытная работа в напряжённую смену.",
+      "en": "Work milestone: Veteran service under pressure."
+    },
+    "event.satyr-maid.recurring-guest.intro.title": {
+      "ru": "Знакомый гость замечает вашу работу",
+      "en": "A recurring guest notices your service"
+    },
+    "event.satyr-maid.recurring-guest.intro.variant.default.text": {
+      "ru": "Знакомый гость заводит разговор во время обычной смены. Общение можно оставить полностью профессиональным.",
+      "en": "A familiar guest starts a conversation during ordinary service. You can keep it entirely professional."
+    },
+    "presentation.static.relationship.satyr-maid.recurring-guest.intro.alt": {
+      "ru": "Знакомый гость разговаривает со служанкой во время обычного обслуживания в зале.",
+      "en": "A familiar guest speaks with the maid during ordinary service on the floor."
+    },
+    "presentation.static.relationship.satyr-maid.recurring-guest.intro.caption": {
+      "ru": "Первый профессиональный разговор с постоянным гостем.",
+      "en": "First professional conversation with a recurring guest."
+    },
+    "event.satyr-maid.recurring-guest.service.title": {
+      "ru": "Знакомый гость предлагает встретиться после работы",
+      "en": "A familiar guest asks about meeting after work"
+    },
+    "event.satyr-maid.recurring-guest.service.variant.default.text": {
+      "ru": "После ещё одного профессионального разговора гость спрашивает, захотите ли вы когда-нибудь поговорить после закрытия.",
+      "en": "After another professional exchange, the guest asks whether you would ever want to talk after closing."
+    },
+    "presentation.static.relationship.satyr-maid.recurring-guest.service.alt": {
+      "ru": "Служанка и знакомый гость разговаривают у стола после очередного профессионального обслуживания.",
+      "en": "The maid and a familiar guest talk at a table after another professional service exchange."
+    },
+    "presentation.static.relationship.satyr-maid.recurring-guest.service.caption": {
+      "ru": "Предложение добровольной встречи после смены.",
+      "en": "An invitation to a voluntary meeting after work."
+    },
+    "event.satyr-maid.recurring-guest.night.title": {
+      "ru": "Разговор после закрытия",
+      "en": "After-hours conversation"
+    },
+    "event.satyr-maid.recurring-guest.night.variant.default.text": {
+      "ru": "Вы встречаетесь после закрытия по собственному выбору. Разговор происходит вне оплачиваемой работы и сам по себе не создаёт автоматического штрафа к энергии следующего дня.",
+      "en": "You meet after closing by choice. The conversation stays outside paid work and does not create an automatic next-day Energy penalty."
+    },
+    "presentation.static.relationship.satyr-maid.recurring-guest.night.alt": {
+      "ru": "Добровольный спокойный разговор после закрытия, отдельно от рабочей смены.",
+      "en": "A calm voluntary conversation after closing, separate from the paid work shift."
+    },
+    "presentation.static.relationship.satyr-maid.recurring-guest.night.caption": {
+      "ru": "Добровольная встреча после работы.",
+      "en": "Voluntary after-hours meeting."
+    },
+    "event.satyr-maid.recurring-guest.request.title": {
+      "ru": "Профессиональная просьба",
+      "en": "A professional request"
+    },
+    "event.satyr-maid.recurring-guest.request.variant.default.text": {
+      "ru": "Гость просит помочь организовать сложный повторный визит. Это просьба, а не обязательство.",
+      "en": "The guest asks for help arranging a difficult return visit. It is a request, not an obligation."
+    },
+    "presentation.static.relationship.satyr-maid.recurring-guest.request.alt": {
+      "ru": "Знакомый гость формулирует дополнительную профессиональную просьбу служанке.",
+      "en": "A familiar guest makes an additional professional request to the maid."
+    },
+    "presentation.static.relationship.satyr-maid.recurring-guest.request.caption": {
+      "ru": "Дополнительная просьба без обязательства соглашаться.",
+      "en": "An additional request with no obligation to accept."
+    },
+    "event.satyr-maid.recurring-guest.return.title": {
+      "ru": "Просьба возвращается в рабочий зал",
+      "en": "The request returns to the work floor"
+    },
+    "event.satyr-maid.recurring-guest.return.variant.default.text": {
+      "ru": "Гость возвращается во время настоящей смены. Просьба решается через обычное обслуживание, а не как личное обязательство.",
+      "en": "The guest returns during a real shift. You resolve the request through ordinary service rather than private obligation."
+    },
+    "presentation.static.relationship.satyr-maid.recurring-guest.return.alt": {
+      "ru": "Знакомый гость снова приходит во время рабочей смены, и просьба решается в обычном профессиональном порядке.",
+      "en": "The familiar guest returns during a work shift and the request is handled through ordinary professional service."
+    },
+    "presentation.static.relationship.satyr-maid.recurring-guest.return.caption": {
+      "ru": "Возврат к рабочему формату и профессиональное завершение просьбы.",
+      "en": "Return to the work floor and professional resolution of the request."
+    },
+    "event.satyr-maid.recurring-guest.service.choice.accept-night.label": {
+      "ru": "Согласиться на добровольную встречу",
+      "en": "Agree to a voluntary meeting"
+    },
+    "event.satyr-maid.recurring-guest.service.choice.accept-night.text": {
+      "ru": "Вы соглашаетесь встретиться после работы на собственных условиях.",
+      "en": "You agree to meet after work on your own terms."
+    },
+    "event.satyr-maid.recurring-guest.service.choice.decline-night.label": {
+      "ru": "Отказаться от личной встречи",
+      "en": "Decline the private meeting"
+    },
+    "event.satyr-maid.recurring-guest.service.choice.decline-night.text": {
+      "ru": "Вы отказываетесь от встречи после закрытия, не разрывая профессиональное знакомство.",
+      "en": "You decline the after-hours meeting without ending the professional connection."
+    },
+    "event.satyr-maid.recurring-guest.night.choice.talk.label": {
+      "ru": "Поговорить на своих условиях",
+      "en": "Talk on your own terms"
+    },
+    "event.satyr-maid.recurring-guest.night.choice.talk.text": {
+      "ru": "Вы разговариваете достаточно долго, чтобы сохранить добровольный контакт после работы, а затем нормально завершаете ночь.",
+      "en": "You talk long enough to establish a voluntary after-hours contact, then end the night normally."
+    },
+    "event.satyr-maid.recurring-guest.request.choice.accept-request.label": {
+      "ru": "Принять профессиональную просьбу",
+      "en": "Accept the professional request"
+    },
+    "event.satyr-maid.recurring-guest.request.choice.accept-request.text": {
+      "ru": "Вы соглашаетесь выполнить просьбу через обычную работу заведения.",
+      "en": "You agree to handle the request through the bar's normal work."
+    },
+    "event.satyr-maid.recurring-guest.request.choice.decline-request.label": {
+      "ru": "Отказаться от просьбы",
+      "en": "Decline the request"
+    },
+    "event.satyr-maid.recurring-guest.request.choice.decline-request.text": {
+      "ru": "Вы отказываетесь от дополнительной просьбы и сохраняете профессиональные отношения.",
+      "en": "You decline the extra request and keep the relationship professional."
+    },
+    "event.satyr-maid.recurring-guest.return.choice.resolve-professionally.label": {
+      "ru": "Решить вопрос профессионально",
+      "en": "Resolve it professionally"
+    },
+    "event.satyr-maid.recurring-guest.return.choice.resolve-professionally.text": {
+      "ru": "Вы завершаете просьбу в рамках работы и превращаете повторяющийся профессиональный контакт в надёжную сеть знакомств.",
+      "en": "You complete the request, turning repeated professional contact into a reliable personal network."
+    },
+    "nightChoice.satyr-maid.night.recurring-guest.label": {
+      "ru": "Встретиться со знакомым гостем",
+      "en": "Meet the recurring guest"
+    },
+    "nightChoice.satyr-maid.night.staff-debrief.label": {
+      "ru": "Остаться на разбор смены с персоналом",
+      "en": "Stay for a staff debrief"
+    },
+    "event.satyr-maid.staff-debrief.night.title": {
+      "ru": "Разбор смены после закрытия",
+      "en": "Staff debrief after closing"
+    },
+    "event.satyr-maid.staff-debrief.night.variant.default.text": {
+      "ru": "После закрытия сотрудники обсуждают проблемы обслуживания и подготовку к завтрашнему дню, не расходуя ещё одно дневное действие.",
+      "en": "After closing, the staff compare service problems and tomorrow's setup without consuming another daytime action."
+    },
+    "event.satyr-maid.staff-debrief.night.choice.finish.label": {
+      "ru": "Завершить разбор",
+      "en": "Finish the debrief"
+    },
+    "event.satyr-maid.staff-debrief.night.choice.finish.text": {
+      "ru": "Вы уходите с более ясным планом работы дома и отправляетесь спать.",
+      "en": "You leave the house plan clearer and go to sleep."
+    },
+    "presentation.static.career.satyr-maid.event.staff-debrief-night.alt": {
+      "ru": "Служанка и сотрудники спокойно обсуждают прошедшую смену после закрытия.",
+      "en": "The maid and staff calmly review the completed shift after closing."
+    },
+    "presentation.static.career.satyr-maid.event.staff-debrief-night.caption": {
+      "ru": "Добровольный разбор рабочей смены после закрытия.",
+      "en": "Voluntary staff debrief after closing."
+    },
+    "ui.satyrMaid.relationshipState.work-introduction": {
+      "ru": "Знакомство на работе",
+      "en": "Work introduction"
+    },
+    "ui.satyrMaid.relationshipState.night-invitation": {
+      "ru": "Добровольное приглашение после смены",
+      "en": "Voluntary after-work invitation"
+    },
+    "ui.satyrMaid.relationshipState.accepted-meeting": {
+      "ru": "Принятая добровольная встреча",
+      "en": "Accepted voluntary meeting"
+    },
+    "ui.satyrMaid.relationshipState.external-request": {
+      "ru": "Дополнительная профессиональная просьба",
+      "en": "External professional request"
+    },
+    "ui.satyrMaid.relationshipState.return-to-work": {
+      "ru": "Возврат к рабочему формату",
+      "en": "Return to work"
+    },
+    "ui.satyrMaid.relationshipStateAria": {
+      "ru": "Состояние цепочки: {state}",
+      "en": "Relationship presentation state: {state}"
+    },
+    "ui.satyrMaid.nightChoiceAria": {
+      "ru": "Ночной выбор: {choice}",
+      "en": "Night choice: {choice}"
+    },
+    "presentation.static.career.satyr-maid.school.rhetoric.alt": {
+      "ru": "Служанка применяет выученный приём переговоров во время обычного обслуживания в зале.",
+      "en": "The maid applies a learned negotiation technique during ordinary floor service."
+    },
+    "presentation.static.career.satyr-maid.school.rhetoric.caption": {
+      "ru": "Школьный приём риторики применяется в работе.",
+      "en": "A School rhetoric technique is applied at work."
+    },
+    "presentation.static.career.satyr-maid.school.management.alt": {
+      "ru": "Служанка сверяет рабочие записи и расписание как часть управления сменой.",
+      "en": "The maid reviews work records and scheduling as part of managing a shift."
+    },
+    "presentation.static.career.satyr-maid.school.management.caption": {
+      "ru": "Школьные навыки счёта становятся рабочим инструментом.",
+      "en": "School number skills become a work tool."
+    },
+    "presentation.static.career.satyr-maid.school.boundaries.alt": {
+      "ru": "Служанка спокойно обозначает ясные условия обслуживания во время рабочей сцены.",
+      "en": "The maid calmly states clear service terms during a work scene."
+    },
+    "presentation.static.career.satyr-maid.school.boundaries.caption": {
+      "ru": "Школьная уверенность превращается в профессиональную границу.",
+      "en": "School confidence becomes a professional boundary."
+    },
+    "event.satyr-maid.crisis.house-strain.title": {
+      "ru": "Заведение работает на пределе",
+      "en": "The house is stretched thin"
+    },
+    "event.satyr-maid.crisis.house-strain.variant.default.text": {
+      "ru": "Нехватка персонала, неопределённые запасы и требовательные посетители сходятся в одну тяжёлую смену. Единственного правильного решения здесь нет.",
+      "en": "A staffing shortage, uncertain supplies, and demanding customers hit the same service night. There is no single correct build for solving it."
+    },
+    "event.satyr-maid.crisis.house-strain.choice.supply-plan.label": {
+      "ru": "Перестроить план запасов и смен",
+      "en": "Rebuild the supply and staffing plan"
+    },
+    "event.satyr-maid.crisis.house-strain.choice.supply-plan.text": {
+      "ru": "Использовать записи и расписание, чтобы стабилизировать работу заведения до того, как обслуживание развалится.",
+      "en": "You use records and scheduling to stabilize the house before service collapses."
+    },
+    "event.satyr-maid.crisis.house-strain.choice.staff-protection.label": {
+      "ru": "Согласовать рабочий план обслуживания",
+      "en": "Negotiate a workable service plan"
+    },
+    "event.satyr-maid.crisis.house-strain.choice.staff-protection.text": {
+      "ru": "Использовать переговоры, чтобы защитить нагрузку персонала и при этом сохранить заведение открытым.",
+      "en": "You use social negotiation to protect the staff load while keeping the house open."
+    },
+    "event.satyr-maid.crisis.house-strain.choice.customer-terms.label": {
+      "ru": "Установить ясные условия для посетителей",
+      "en": "Set clear customer terms"
+    },
+    "event.satyr-maid.crisis.house-strain.choice.customer-terms.text": {
+      "ru": "Снизить давление, явно обозначив пределы обслуживания и поддержав персонал, когда посетители пытаются их нарушить.",
+      "en": "You solve the pressure by setting explicit service limits and backing the staff when customers push past them."
+    },
+    "presentation.static.career.satyr-maid.crisis.house-strain.alt": {
+      "ru": "Напряжённая рабочая смена: персонал, запасы и поток посетителей требуют одновременного внимания.",
+      "en": "A strained service shift where staffing, supplies, and customer flow all need attention at once."
+    },
+    "presentation.static.career.satyr-maid.crisis.house-strain.caption": {
+      "ru": "Кризис смены: несколько рабочих проблем требуют решения.",
+      "en": "Shift crisis: several work problems need a response."
+    },
+    "ui.satyrMaid.crisisFeedback.supply-plan": {
+      "ru": "План работы и запасов перестроен; кризисная сцена завершена.",
+      "en": "The work and supply plan is rebuilt; the crisis scene is resolved."
+    },
+    "ui.satyrMaid.crisisFeedback.staff-protection": {
+      "ru": "Нагрузка персонала согласована; кризисная сцена завершена.",
+      "en": "The staff workload is negotiated; the crisis scene is resolved."
+    },
+    "ui.satyrMaid.crisisFeedback.customer-terms": {
+      "ru": "Условия обслуживания обозначены; кризисная сцена завершена.",
+      "en": "Service terms are made clear; the crisis scene is resolved."
+    },
+    "ending.ending.satyr-maid.house-power.title": {
+      "ru": "Служанка у сатиров — влияние в доме",
+      "en": "Satyr Maid — House Power"
+    },
+    "ending.ending.satyr-maid.house-power.description": {
+      "ru": "Сложный карьерный исход, в котором опытная работа, школьные навыки управления или переговоров и успешно разрешённый кризис превращаются в реальное влияние на правила работы заведения.",
+      "en": "A complex Satyr Maid ending built on veteran service, School-backed management or negotiation, and a resolved house crisis."
+    },
+    "ending.ending.satyr-maid.house-power.epilogue": {
+      "ru": "Вы становитесь одной из тех, кто определяет рабочие правила заведения и помогает ему оставаться на плаву.",
+      "en": "You become one of the people who can set the house's working terms and keep its business running."
+    },
+    "presentation.static.satyr-maid-ending-house-power.alt": {
+      "ru": "Служанка у сатиров завершает карьерный путь как опытная сотрудница, влияющая на организацию работы заведения.",
+      "en": "A Satyr Maid completes her career path as an experienced worker who helps shape how the house is run."
+    },
+    "presentation.static.satyr-maid-ending-house-power.caption": {
+      "ru": "Финал «Влияние в доме».",
+      "en": "House Power ending."
+    },
+    "ending.ending.satyr-maid.boundary-mastery.title": {
+      "ru": "Служанка у сатиров — мастерство границ",
+      "en": "Satyr Maid — Boundary Mastery"
+    },
+    "ending.ending.satyr-maid.boundary-mastery.description": {
+      "ru": "Сложный карьерный исход, основанный на явном отказе, ясных условиях обслуживания, уверенности, подкреплённой школой, и разрешённом кризисе давления со стороны посетителей.",
+      "en": "A complex Satyr Maid ending built through explicit refusal, clear service terms, School-backed confidence, and a resolved customer-pressure crisis."
+    },
+    "ending.ending.satyr-maid.boundary-mastery.epilogue": {
+      "ru": "Вас знают по тёплому профессиональному обслуживанию на ясных условиях, не требующему отказываться от собственных границ.",
+      "en": "You become known for service on clear terms: professional warmth without surrendering control over your own boundaries."
+    },
+    "presentation.static.satyr-maid-ending-boundary-mastery.alt": {
+      "ru": "Служанка у сатиров завершает карьерный путь, сохраняя ясные профессиональные условия и личные границы.",
+      "en": "A Satyr Maid completes her career path while keeping clear professional terms and personal boundaries."
+    },
+    "presentation.static.satyr-maid-ending-boundary-mastery.caption": {
+      "ru": "Финал «Мастерство границ».",
+      "en": "Boundary Mastery ending."
     }
   }
 }

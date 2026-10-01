@@ -9,11 +9,24 @@ const presentation=JSON.parse(readFileSync('content/presentation.json','utf8'));
 const manifest=JSON.parse(readFileSync('content/presentation-drafts/presentation-hardening-v9-manifest-v1.json','utf8'));
 const animationSources=JSON.parse(readFileSync('content/presentation-drafts/project-owned-animation-source-manifest-v4.json','utf8'));
 
-test('current production limits active dynamic bindings to starter-career pools with static fallbacks',()=>{
+test('current production limits active dynamic bindings to approved starter and Satyr v12 pools with static fallbacks',()=>{
   const dynamic=Object.entries<any>(presentation.slots??{}).filter(([,slot])=>slot.primary||slot.pool);
-  assert.equal(dynamic.length,10);
+  const starter=/^job\/(?:satyr-maid|undead-farm)\/(?:shift\/(?:spring|summer|autumn|winter)\/default|result\/default)$/;
+  const satyrV12=new Set([
+    'job/satyr-maid/event/satyr-maid-career-first-shift/default',
+    'job/satyr-maid/event/satyr-maid-career-known-face/default',
+    'job/satyr-maid/event/satyr-maid-career-house-regular/default',
+    'job/satyr-maid/event/satyr-maid-career-veteran-service/default',
+    'relationship/satyr-maid-recurring-guest/satyr-maid-recurring-guest-intro/default',
+    'relationship/satyr-maid-recurring-guest/satyr-maid-recurring-guest-service/default',
+    'relationship/satyr-maid-recurring-guest/satyr-maid-recurring-guest-return/default',
+    'job/satyr-maid/event/satyr-maid-crisis-house-strain/default',
+    'ending/satyr-maid/house-power',
+    'ending/satyr-maid/boundary-mastery'
+  ]);
+  assert.equal(dynamic.length,20);
   for(const [id,slot] of dynamic){
-    assert.match(id,/^job\/(?:satyr-maid|undead-farm)\/(?:shift\/(?:spring|summer|autumn|winter)\/default|result\/default)$/);
+    assert.ok(starter.test(id)||satyrV12.has(id),id+' approved dynamic slot');
     assert.equal(slot.primary,undefined,id);
     assert.equal(slot.pool?.candidates.length,3,id);
     assert.ok(slot.static,id+' static fallback');
