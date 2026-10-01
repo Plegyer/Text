@@ -1,6 +1,6 @@
 # CURRENT CHAT4 TASK POINTER
 
-Status: **ACTIVE / C4-124 PENDING ELIGIBLE CANDIDATE**
+Status: **ACTIVE / C4-124 — GATE PR #147 NOW**
 Owner: Chat 4 / QA + Product Acceptance Gate
 
 Context reset prompt:
@@ -21,7 +21,9 @@ Completed/merged from queue v12:
 - PR #148 merged to main as `a30272dc91cab3d5286558a189d5d816f1841db7`.
 
 Current task:
-- **C4-124 — gate the first eligible fresh candidate**.
+- **C4-124 — gate Chat 1 PR #147 now**.
+- exact head: `987438954cfec9739281a512a1589cb2707095e5`;
+- exact-head CI run #451: **SUCCESS**.
 
 Eligibility rule:
 - candidate must be frozen/stable;
@@ -29,12 +31,11 @@ Eligibility rule:
 - do not QA-gate a mutable or red producer head;
 - do not implement producer fixes.
 
-Snapshot when this pointer was refreshed:
-- Chat 1 PR #147: CI in progress;
-- Chat 2 PR #151/#152 same candidate head: CI in progress;
+Current other fresh candidates:
+- Chat 2 PR #151/#152 same candidate head: red, 554/565;
 - Chat 3 PR #146: red, 539/568;
 - Chat 5 PR #150: red during validation (`Недопустимая typed capability: read calendar`).
 
-When more than one green/frozen fresh candidate exists, gate Chat 1 shared-runtime candidate first unless current main/integration order gives a concrete reason not to.
+Therefore PR #147 is the only eligible fresh candidate at this snapshot.
 
 Do not self-assign beyond C4-125.
