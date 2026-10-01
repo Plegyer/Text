@@ -1,5 +1,5 @@
 import {mountEditor} from './editor.ts';
-import {applyPresentation,emptyPresentation,resolvePresentation,presentationIdForActionResult,presentationIdForActivityRoute,presentationIdForEvent,presentationIdForEnding,type Presentation} from '../core/presentation.ts';
+import {applyPresentation,emptyPresentation,resolvePresentation,presentationIdForActionResult,presentationIdForActivityRoute,presentationIdForEvent,presentationIdForEnding,presentationIdForUndeadFarmStage,type Presentation} from '../core/presentation.ts';
 import {loadCatalog} from '../core/content.ts';
 import {freshSave,dispatch,parseSave,eligible,calendar,actionCost,actionAvailable,meets,energyMax,rent,favorStat,availableActivityActions,type Command} from '../core/engine.ts';
 import {stats,type Save,type Catalog,type Condition,type Action} from '../core/schema.ts';
@@ -69,6 +69,21 @@ function localizedNightChoiceLabel(id:string,fallback:string){
   return fmt(tr('ui.school.nightStudyChoice','Ночная учёба: {course} — {stat}'),{course:schoolCourseLabel(course),stat:schoolStatLabel(stat)});
  }
  return tr(`nightChoice.${id}.label`,fallback);
+}
+const undeadFarmKeeperEventStates:Record<string,string>={
+ 'undead-farm.keeper.intro':'work-introduction',
+ 'undead-farm.keeper.trust':'professional-trust',
+ 'undead-farm.night.keeper-request':'night-request',
+ 'undead-farm.keeper.request':'work-request',
+ 'undead-farm.keeper.successor-reaction':'successor-ready'
+};
+function undeadFarmKeeperEventState(eventId:string){return undeadFarmKeeperEventStates[eventId]??'';}
+function undeadFarmKeeperChoiceState(eventId:string,choiceId:string){
+ if(eventId==='undead-farm.keeper.trust'&&choiceId==='accept-night')return 'night-accepted';
+ if(eventId==='undead-farm.keeper.trust'&&choiceId==='decline-night')return 'night-refusal';
+ if(eventId==='undead-farm.keeper.request'&&choiceId==='accept')return 'request-accepted';
+ if(eventId==='undead-farm.keeper.request'&&choiceId==='decline')return 'request-refusal';
+ return '';
 }
 const professions=['lumber.shift','satyr-maid.shift','undead-farm.shift','tavern.shift','hunter.shift','guard.shift','merchant.shift','artist-geisha.shift','assassin.shift','prostitute.shift'];
 const lateCareerProfessions=new Set(['tavern.shift','hunter.shift','guard.shift','merchant.shift','artist-geisha.shift','assassin.shift','prostitute.shift']);
@@ -159,9 +174,13 @@ function lateCareerDiscoveryMessage(before:Save,after:Save){
   ?fmt(tr('ui.work.lateCareer.discovery','Новая профессия открыта: {career}'),{career:careers[0]!})
   :fmt(tr('ui.work.lateCareer.discoveryMany','Открыты новые профессии: {careers}'),{careers:careers.join(', ')});
 }
+function undeadFarmPresentationFeedback(before:Save,cmd:Command){
+ if(cmd.type!=='choice'||before.run.pending?.eventId!=='undead-farm.crisis.supply-labor-containment')return '';
+ return tr(`ui.undeadFarm.crisisFeedback.${cmd.id}`,'');
+}
 async function perform(cmd:Command){
  if(busy||locked)return;busy=true;render();
- try{const next=dispatch(state,cmd,catalog);const discovery=lateCareerDiscoveryMessage(state,next);await write(next);state=next;error=false;message=discovery;mediaIndex=0;
+ try{const next=dispatch(state,cmd,catalog);const discovery=lateCareerDiscoveryMessage(state,next);const farmFeedback=undeadFarmPresentationFeedback(state,cmd);await write(next);state=next;error=false;message=farmFeedback||discovery;mediaIndex=0;
   if(!['allocate','finishCreation'].includes(cmd.type)){panel='';screen=['restart','newLife'].includes(cmd.type)?'town':'scene';}
  }catch(e){message=e instanceof Error?e.message:String(e);error=true;}
  busy=false;render();
@@ -181,9 +200,13 @@ function actionList(ids:string[]){return `<div class="activity-list">${ids.map(i
  const label=tr(`action.${a.id}.label`,a.label);
  const description=tr(`action.${a.id}.description`,a.description);
  const careerButtonAria=careerLocked?fmt(tr('ui.work.lockedCareerAria','{career}: недоступно. {reason}'),{career:label,reason:lockHelp}):lateCareer?fmt(tr('ui.work.unlockedCareerAria','{career}: доступно.'),{career:label}):'';
+ const undeadFarmStage=a.id==='undead-farm.shift'?(state.run.progression.careers['undead-farm']?.stage??'new-hand'):'';
+ const undeadFarmStagePresentation=undeadFarmStage?presentationIdForUndeadFarmStage(undeadFarmStage):'';
+ const undeadFarmStageLabel=undeadFarmStage?tr(`presentation.undead-farm.stage.${undeadFarmStage}.label`,undeadFarmStage):'';
+ const undeadFarmStageStatus=undeadFarmStage?`<p class="undead-farm-stage" data-career-stage="${esc(undeadFarmStage)}" data-stage-presentation-id="${esc(undeadFarmStagePresentation)}" tabindex="0" aria-label="${esc(fmt(tr('ui.work.undeadFarmStageAria','Этап карьеры фермы нежити: {stage}'),{stage:undeadFarmStageLabel}))}">${esc(undeadFarmStageLabel)}</p>`:'';
  const availability=
   lateCareer?`<p class="career-availability" data-career-availability="${availabilityState}" tabindex="0" role="status" aria-label="${esc(fmt(tr('ui.work.lateCareer.stateAria','{career}: {state}'),{career:label,state:availabilityLabel}))}">${esc(availabilityLabel)}</p>`:'';
- return `<article class="activity" ${lateCareer?`data-late-career="${esc(a.id)}"`:''}><div><h3>${esc(label)}</h3>${availability}<p>${esc(description)}</p><small>${a.cost.energy} ${esc(tr('ui.work.energy','энергии'))}${actionCost(a,state)?` · ${actionCost(a,state)} ${esc(tr('ui.work.coins','монет'))}`:''}${forecast!==null?` · ${esc(tr('ui.work.income','доход ≈'))} ${forecast}`:''}</small><div class="effect-tags">${statsEffects.map(e=>e.kind==='metric'?`<span class="${e.delta>0?'gain':'loss'}">${esc(labels[e.key])} ${e.delta>0?'+':''}${e.delta}</span>`:'').join('')}</div>${miss.length?`<p class="requirement">${esc(miss.map(explain).join(' · '))}</p>`:''}${careerLocked?`<p class="requirement" id="${esc(helpId)}" tabindex="0">${esc(lockHelp)}</p>`:''}</div>${a.mode==='brew'?`<div><button data-action="${a.id}" data-recipe="gentle" ${disabled(a)?'disabled':''}>${esc(tr('ui.work.recipeReliable','Надёжно'))}</button><button data-action="${a.id}" data-recipe="bold" ${disabled(a)?'disabled':''}>${esc(tr('ui.work.recipeFast','Быстро'))}</button></div>`:`<button data-action="${a.id}" ${careerButtonAria?`aria-label="${esc(careerButtonAria)}"`:''} ${careerLocked?`aria-describedby="${esc(helpId)}" aria-disabled="true"`:lateCareer?'aria-disabled="false"':''} ${disabled(a)?'disabled':''}>${professions.includes(a.id)?esc(tr('ui.work.button','Работать')):esc(tr('ui.generic.selectButton','Выбрать'))}</button>`}</article>`;
+ return `<article class="activity" ${lateCareer?`data-late-career="${esc(a.id)}"`:''} ${undeadFarmStage?`data-undead-farm-stage="${esc(undeadFarmStage)}"`:''}><div><h3>${esc(label)}</h3>${availability}${undeadFarmStageStatus}<p>${esc(description)}</p><small>${a.cost.energy} ${esc(tr('ui.work.energy','энергии'))}${actionCost(a,state)?` · ${actionCost(a,state)} ${esc(tr('ui.work.coins','монет'))}`:''}${forecast!==null?` · ${esc(tr('ui.work.income','доход ≈'))} ${forecast}`:''}</small><div class="effect-tags">${statsEffects.map(e=>e.kind==='metric'?`<span class="${e.delta>0?'gain':'loss'}">${esc(labels[e.key])} ${e.delta>0?'+':''}${e.delta}</span>`:'').join('')}</div>${miss.length?`<p class="requirement">${esc(miss.map(explain).join(' · '))}</p>`:''}${careerLocked?`<p class="requirement" id="${esc(helpId)}" tabindex="0">${esc(lockHelp)}</p>`:''}</div>${a.mode==='brew'?`<div><button data-action="${a.id}" data-recipe="gentle" ${disabled(a)?'disabled':''}>${esc(tr('ui.work.recipeReliable','Надёжно'))}</button><button data-action="${a.id}" data-recipe="bold" ${disabled(a)?'disabled':''}>${esc(tr('ui.work.recipeFast','Быстро'))}</button></div>`:`<button data-action="${a.id}" ${careerButtonAria?`aria-label="${esc(careerButtonAria)}"`:''} ${careerLocked?`aria-describedby="${esc(helpId)}" aria-disabled="true"`:lateCareer?'aria-disabled="false"':''} ${disabled(a)?'disabled':''}>${professions.includes(a.id)?esc(tr('ui.work.button','Работать')):esc(tr('ui.generic.selectButton','Выбрать'))}</button>`}</article>`;
  }).join('')}</div>`;}
 function schoolCourseDisabled(course:SchoolCourse){
  return busy||locked||state.run.status!=='active'||!state.run.creation.complete||!state.run.flags['story.arrived']||
@@ -203,7 +226,7 @@ function activityEntryList(ids:string[]){
 }
 function nightChoiceList(){
  const choices=catalog.definitions.nightChoices.filter(choice=>eligible(choice.conditions,state,catalog));
- return `<div class="activity-list">${choices.map(choice=>{const schoolNight=choice.id.startsWith('school.night_study.');const delta=choice.nextDayEnergyDelta?fmt(tr('ui.night.nextDayEnergy','Энергия завтра: {delta}'),{delta:`${choice.nextDayEnergyDelta>0?'+':''}${choice.nextDayEnergyDelta}`}):'';return `<article class="activity"><div><h3>${esc(localizedNightChoiceLabel(choice.id,choice.label))}</h3><small>${schoolNight?esc(tr('ui.school.nightStudyContext','Ночная учёба: выбранная характеристика +2, Energy следующего дня −1.')):`${esc(tr('ui.night.choice.slot','Ночное занятие'))}${delta?` · ${esc(delta)}`:''}`}</small></div><button data-night-choice="${choice.id}" ${busy||locked?'disabled':''}>${schoolNight?esc(tr('ui.school.nightStudyButton','Учиться ночью')):esc(tr('ui.night.choice.select','Выбрать'))}</button></article>`;}).join('')}</div>`;
+ return `<div class="activity-list">${choices.map(choice=>{const schoolNight=choice.id.startsWith('school.night_study.');const undeadFarmNight=choice.id.startsWith('undead-farm.night.');const delta=choice.nextDayEnergyDelta?fmt(tr('ui.night.nextDayEnergy','Энергия завтра: {delta}'),{delta:`${choice.nextDayEnergyDelta>0?'+':''}${choice.nextDayEnergyDelta}`}):'';const choiceLabel=localizedNightChoiceLabel(choice.id,choice.label);return `<article class="activity" ${undeadFarmNight?`data-undead-farm-night-option="${esc(choice.id)}"`:''}><div><h3>${esc(choiceLabel)}</h3><small>${schoolNight?esc(tr('ui.school.nightStudyContext','Ночная учёба: выбранная характеристика +2, Energy следующего дня −1.')):`${esc(tr('ui.night.choice.slot','Ночное занятие'))}${delta?` · ${esc(delta)}`:''}`}</small></div><button data-night-choice="${choice.id}" ${undeadFarmNight?`aria-label="${esc(fmt(tr('ui.undeadFarm.nightChoiceAria','Ночной выбор фермы: {choice}'),{choice:choiceLabel}))}"`:''} ${busy||locked?'disabled':''}>${schoolNight?esc(tr('ui.school.nightStudyButton','Учиться ночью')):esc(tr('ui.night.choice.select','Выбрать'))}</button></article>`;}).join('')}</div>`;
 }
 function presentationOccurrenceKey(presentationId:string){
  const r=state.run;
@@ -241,8 +264,8 @@ function mediaHTML(presentationId:string){
 function central(){
  const r=state.run,p=r.pending;
  if(!r.creation.complete)return `<section class="creation"><div class="creation-art">${mediaHTML('location/town/default')}<div><span class="eyebrow">${esc(tr('ui.creation.eyebrow','До первого шага'))}</span><h1>${esc(tr('ui.creation.title','Кем вы войдёте в этот мир?'))}</h1><p>${esc(tr('ui.creation.body','Новый город ещё ничего о вас не знает.'))}</p></div></div><div class="creation-form"><h2>${esc(tr('ui.creation.heroineTitle','Ваша героиня'))}</h2><p>${esc(tr('ui.creation.freePoints','25 лет · свободных очков: {points}').replace('{points}',''))}<strong id="points">${r.creation.remaining}</strong></p><div class="creation-stats">${stats.map(k=>`<div class="allocate" title="${esc(statHint(k))}"><span>${esc(statLabel(k))}</span><button data-stat="${k}" data-delta="-1" aria-label="${esc(fmt(tr('ui.creation.decreaseStatAria','Уменьшить {stat}'),{stat:statLabel(k)}))}" ${busy||locked||!r.creation.allocated[k]?'disabled':''}>−</button><strong>${r.metrics[k]}</strong><button data-stat="${k}" data-delta="1" aria-label="${esc(fmt(tr('ui.creation.increaseStatAria','Увеличить {stat}'),{stat:statLabel(k)}))}" ${busy||locked||!r.creation.remaining?'disabled':''}>+</button></div>`).join('')}</div><button id="create" class="primary" ${r.creation.remaining||busy||locked?'disabled':''}>${esc(tr('ui.creation.startButton','Начать историю'))}</button></div></section>`;
- if(p){const e=catalog.events.find(e=>e.id===p.eventId)!,v=e.variants.find(v=>v.id===p.variantId)!;
- return `<section class="stage scene">${mediaHTML(p.presentationId??presentationIdForEvent(catalog,e.id,v.id))}<div class="stage-title"><span class="eyebrow">${esc(tr('ui.event.eyebrow','Встреча'))}</span><h1>${esc(eventTitle(e.id,e.title))}</h1></div></section><section class="dialogue"><p>${esc(pendingEventVariantText(e.id,v.id,v.text))}</p><div class="choices">${e.choices.map(c=>`<button data-choice="${c.id}" ${busy||locked||!eligible(c.conditions,state)?'disabled':''}>${esc(eventChoiceLabel(e.id,c.id,c.label))}</button>`).join('')}</div></section>`;}
+ if(p){const e=catalog.events.find(e=>e.id===p.eventId)!,v=e.variants.find(v=>v.id===p.variantId)!;const farmState=undeadFarmKeeperEventState(e.id);const farmStateLabel=farmState?tr(`ui.undeadFarm.relationshipState.${farmState}`,farmState):'';
+ return `<section class="stage scene" ${farmState?`data-undead-farm-keeper-state="${esc(farmState)}"`:''}>${mediaHTML(p.presentationId??presentationIdForEvent(catalog,e.id,v.id))}<div class="stage-title"><span class="eyebrow">${esc(tr('ui.event.eyebrow','Встреча'))}</span><h1>${esc(eventTitle(e.id,e.title))}</h1></div></section><section class="dialogue" ${farmState?`tabindex="0" role="region" aria-label="${esc(fmt(tr('ui.undeadFarm.relationshipStateAria','Состояние цепочки хранителя фермы: {state}'),{state:farmStateLabel}))}"`:''}><p>${esc(pendingEventVariantText(e.id,v.id,v.text))}</p><div class="choices">${e.choices.map(c=>{const farmChoiceState=undeadFarmKeeperChoiceState(e.id,c.id);const choiceLabel=eventChoiceLabel(e.id,c.id,c.label);return `<button data-choice="${c.id}" ${farmChoiceState?`data-undead-farm-choice-state="${esc(farmChoiceState)}" aria-label="${esc(choiceLabel)}"`:''} ${busy||locked||!eligible(c.conditions,state)?'disabled':''}>${esc(choiceLabel)}</button>`;}).join('')}</div></section>`;}
  if(r.status!=='active'){
   const endingId=r.endings.result?.endingId??r.endings.committed??r.acceptedEnding;
   const heading=r.status==='ended'
