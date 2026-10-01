@@ -91,12 +91,11 @@ test('C2-153 all assigned Tavern ending identities preserve distinct live semant
   }
 });
 
-test('C2-145 baseline inventory does not pre-bind unpublished Tavern v14 gameplay event IDs',()=>{
-  const published=Object.keys(presentation.slots??{}).filter(id=>id.includes('tavern'));
-  const allowed=new Set([
+test('C2-145 baseline keeps the pre-contract seasonal and ending identities intact after the runtime contract is published',()=>{
+  const published=new Set(Object.keys(presentation.slots??{}).filter(id=>id.includes('tavern')));
+  for(const id of [
     'job/tavern/result/default',
     ...seasons.map(season=>`job/tavern/shift/${season}/default`),
     ...endingIds.map(id=>presentationIdForEnding(id))
-  ]);
-  for(const id of published)assert.ok(allowed.has(id),`unexpected pre-contract Tavern binding: ${id}`);
+  ])assert.ok(published.has(id),id);
 });
