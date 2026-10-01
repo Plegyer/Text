@@ -29,7 +29,7 @@ The project is a runnable TypeScript/HTML/CSS/Electron game runtime, not a docum
 - Exactly three Day-1 careers: Lumber, Satyr Maid, Undead Farm.
 - All ten ordinary career base shift definitions exist.
 - Lumber has the exercised cross-system reference path: career progression, Foreman relationship, School, Night/lodging, Forest Activity, multiple eligible endings, explicit ending commitment/completion and New Run Meta reward.
-- Satyr Maid and Undead Farm have target repeatable shifts, seasonal presentation surfaces and first typed career transition.
+- Satyr Maid and Undead Farm have Day-1 shift actions, seasonal presentation surfaces and a real first typed career transition. **Corrected QA truth:** on current main, their second real shift is blocked because the action replays the one-time first-shift transition. A repaired Chat 1 candidate exists but is not shipped until fresh QA acceptance + merge.
 - Eight paid School courses are executable; typed School track progress and Night study exist.
 - Ordinary poverty / normal-cheap-street housing content is executable and anti-softlock coverage is green.
 - Forest Activity is executable with save/resume, Logging Road and capability-gated Old Boundary routing.
@@ -39,7 +39,7 @@ The project is a runnable TypeScript/HTML/CSS/Electron game runtime, not a docum
 
 1. Seven late-career stat/year unlock conditions are not yet implemented in production.
 2. Nine ordinary careers do not yet have complete Hard Work ending coverage; Lumber is the complete reference.
-3. Satyr Maid / Undead Farm are starter production layers, not full career lives.
+3. Satyr Maid / Undead Farm are starter production layers, not full career lives; current main additionally has the confirmed post-first-shift repeatability defect described above.
 4. The remaining seven ordinary careers are base layers, not complete career state machines with complex outcomes.
 5. Palace is specified but not a playable production career.
 6. Secret Debt is specified but is not yet a production hidden career/state machine.
@@ -48,6 +48,12 @@ The project is a runnable TypeScript/HTML/CSS/Electron game runtime, not a docum
 9. Forest does not yet satisfy complete 3-route / 3-challenge / seasonal product depth.
 10. Target capability items largely lack natural production acquisition paths.
 11. Much prepared Forest/poverty/School material remains fixture/preparation-only.
+
+## Corrected acceptance note — 2026-10-01
+
+Chat 4 independently verified that the current-main Satyr Maid / Undead Farm work loop is not actually repeatable after the first typed transition. This supersedes older status prose that called those starter actions repeatable.
+
+Current repair candidate is tracked through the live dashboard and current Chat 1 / Chat 4 pointers. Do not promote the repaired behavior to shipped truth until it is QA-accepted and merged.
 
 ## Development target
 
