@@ -451,20 +451,24 @@ export function presentationSlots(cat:Catalog):PresentationSlot[]{
     }
   }
 
-  const hunterCareerFacts=new Set(hunterCareer?.facts??[]);
-  const hunterRelationshipFacts=new Set(hunterRelationship?.facts??[]);
+  const hunterRuntimeText=JSON.stringify({
+    career:hunterCareer,
+    relationship:hunterRelationship,
+    events:cat.events.filter(event=>event.sourceDomain==='hunter'),
+    activities:(cat.definitions.activities??[]).filter(activity=>activity.id==='hunter.expedition')
+  });
   const hunterStateBackings:Record<(typeof HUNTER_STATUS_IDS)[number],boolean>={
-    'forest-clue':hunterCareerFacts.has('forest-clue-known'),
-    'tavern-clue':hunterCareerFacts.has('tavern-clue-known'),
-    'farm-clue':hunterCareerFacts.has('farm-clue-known'),
-    'lumber-clue':hunterCareerFacts.has('lumber-clue-known'),
-    'school-field-craft':hunterCareerFacts.has('school-field-craft-ready'),
-    'master-ready':hunterCareerFacts.has('master-route-ready'),
-    'warden-ready':hunterCareerFacts.has('warden-route-ready'),
-    'legend-ready':hunterCareerFacts.has('legend-route-ready'),
-    'rare-contract-active':hunterCareerFacts.has('rare-contract-active'),
-    'refusal-respected':hunterRelationshipFacts.has('refusal-respected'),
-    'companion-ready':hunterRelationshipFacts.has('companion-ready')
+    'forest-clue':hunterRuntimeText.includes('forest-clue-known'),
+    'tavern-clue':hunterRuntimeText.includes('tavern-clue-known'),
+    'farm-clue':hunterRuntimeText.includes('farm-clue-known'),
+    'lumber-clue':hunterRuntimeText.includes('lumber-clue-known'),
+    'school-field-craft':hunterRuntimeText.includes('school-field-craft-ready'),
+    'master-ready':hunterRuntimeText.includes('master-route-ready'),
+    'warden-ready':hunterRuntimeText.includes('warden-route-ready'),
+    'legend-ready':hunterRuntimeText.includes('legend-route-ready'),
+    'rare-contract-active':hunterRuntimeText.includes('rare-contract-active'),
+    'refusal-respected':hunterRuntimeText.includes('refusal-respected'),
+    'companion-ready':hunterRuntimeText.includes('companion-ready')
   };
   for(const stateId of HUNTER_STATUS_IDS){
     if(hunterStateBackings[stateId]){
