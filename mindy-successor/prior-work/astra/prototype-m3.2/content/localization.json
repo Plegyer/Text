@@ -3881,6 +3881,38 @@
     "ui.work.satyrMaidStageAria": {
       "ru": "Этап карьеры: {stage}",
       "en": "Career stage: {stage}"
+    },
+    "presentation.static.career.satyr-maid.event.first-shift.alt": {
+      "ru": "Служанка у сатиров во время рабочего этапа «Первая устойчивая смена»; статичный визуал сохраняет смысл без анимации.",
+      "en": "Satyr Maid during the work milestone “First steady shift”; the static visual preserves meaning without animation."
+    },
+    "presentation.static.career.satyr-maid.event.first-shift.caption": {
+      "ru": "Рабочий этап: Первая устойчивая смена.",
+      "en": "Work milestone: First steady shift."
+    },
+    "presentation.static.career.satyr-maid.event.known-face.alt": {
+      "ru": "Служанка у сатиров во время рабочего этапа «Знакомое лицо в зале»; статичный визуал сохраняет смысл без анимации.",
+      "en": "Satyr Maid during the work milestone “Known face on the floor”; the static visual preserves meaning without animation."
+    },
+    "presentation.static.career.satyr-maid.event.known-face.caption": {
+      "ru": "Рабочий этап: Знакомое лицо в зале.",
+      "en": "Work milestone: Known face on the floor."
+    },
+    "presentation.static.career.satyr-maid.event.house-regular.alt": {
+      "ru": "Служанка у сатиров во время рабочего этапа «Своя в рабочем ритме дома»; статичный визуал сохраняет смысл без анимации.",
+      "en": "Satyr Maid during the work milestone “House regular at work”; the static visual preserves meaning without animation."
+    },
+    "presentation.static.career.satyr-maid.event.house-regular.caption": {
+      "ru": "Рабочий этап: Своя в рабочем ритме дома.",
+      "en": "Work milestone: House regular at work."
+    },
+    "presentation.static.career.satyr-maid.event.veteran-service.alt": {
+      "ru": "Служанка у сатиров во время рабочего этапа «Опытная работа в напряжённую смену»; статичный визуал сохраняет смысл без анимации.",
+      "en": "Satyr Maid during the work milestone “Veteran service under pressure”; the static visual preserves meaning without animation."
+    },
+    "presentation.static.career.satyr-maid.event.veteran-service.caption": {
+      "ru": "Рабочий этап: Опытная работа в напряжённую смену.",
+      "en": "Work milestone: Veteran service under pressure."
     }
   }
 }
