@@ -1,5 +1,10 @@
 # Worker Chat Recreation Protocol v1
 
+## Leader 1 reset — 2026-10-01
+
+Before the generic recreation order below, read `mindy-successor/docs/LEAD1_CURRENT_STATE_v1.md`. Chats 1, 2 and 4 have dedicated restart prompts named in their current task pointers. The five current task pointers are authoritative over older queue ranges.
+
+
 Status: ACTIVE COORDINATION PROTOCOL
 Owner: Chat 1 / Lead
 Repository: `Plegyer/Text`
