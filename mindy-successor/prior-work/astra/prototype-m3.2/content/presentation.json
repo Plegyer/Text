@@ -2377,7 +2377,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Guard career stage recruit; static professional presentation only.",
-        "altKey": "presentation.guard.stage.recruit.alt"
+        "altKey": "presentation.static.guard.stage.recruit.alt"
       }
     },
     "job/guard/stage/trusted-guard": {
@@ -2385,7 +2385,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Guard career stage trusted-guard; static professional presentation only.",
-        "altKey": "presentation.guard.stage.trusted-guard.alt"
+        "altKey": "presentation.static.guard.stage.trusted-guard.alt"
       }
     },
     "job/guard/stage/senior-guard": {
@@ -2393,7 +2393,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Guard career stage senior-guard; static professional presentation only.",
-        "altKey": "presentation.guard.stage.senior-guard.alt"
+        "altKey": "presentation.static.guard.stage.senior-guard.alt"
       }
     },
     "job/guard/stage/veteran": {
@@ -2401,7 +2401,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Guard career stage veteran; static professional presentation only.",
-        "altKey": "presentation.guard.stage.veteran.alt"
+        "altKey": "presentation.static.guard.stage.veteran.alt"
       }
     },
     "job/guard/stage/officer": {
@@ -2409,7 +2409,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Guard career stage officer; static professional presentation only.",
-        "altKey": "presentation.guard.stage.officer.alt"
+        "altKey": "presentation.static.guard.stage.officer.alt"
       }
     },
     "job/guard/stage/reform-order": {
@@ -2417,7 +2417,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Guard career stage reform-order; static professional presentation only.",
-        "altKey": "presentation.guard.stage.reform-order.alt"
+        "altKey": "presentation.static.guard.stage.reform-order.alt"
       }
     },
     "job/guard/stage/network": {
@@ -2425,7 +2425,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Guard career stage network; static professional presentation only.",
-        "altKey": "presentation.guard.stage.network.alt"
+        "altKey": "presentation.static.guard.stage.network.alt"
       }
     },
     "job/guard/stage/major-case": {
@@ -2433,7 +2433,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Guard career stage major-case; static professional presentation only.",
-        "altKey": "presentation.guard.stage.major-case.alt"
+        "altKey": "presentation.static.guard.stage.major-case.alt"
       }
     },
     "job/guard/stage/outcome-ready": {
@@ -2441,7 +2441,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Guard career stage outcome-ready; static professional presentation only.",
-        "altKey": "presentation.guard.stage.outcome-ready.alt"
+        "altKey": "presentation.static.guard.stage.outcome-ready.alt"
       }
     },
     "relationship/guard-partner/stage/introduced": {
@@ -2449,7 +2449,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Professional guard-partner relationship stage introduced.",
-        "altKey": "presentation.guard.relationship.stage.introduced.alt"
+        "altKey": "presentation.static.guard.relationship.stage.introduced.alt"
       }
     },
     "relationship/guard-partner/stage/professional-trust": {
@@ -2457,7 +2457,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Professional guard-partner relationship stage professional-trust.",
-        "altKey": "presentation.guard.relationship.stage.professional-trust.alt"
+        "altKey": "presentation.static.guard.relationship.stage.professional-trust.alt"
       }
     },
     "relationship/guard-partner/stage/conflict-open": {
@@ -2465,7 +2465,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Professional guard-partner relationship stage conflict-open.",
-        "altKey": "presentation.guard.relationship.stage.conflict-open.alt"
+        "altKey": "presentation.static.guard.relationship.stage.conflict-open.alt"
       }
     },
     "relationship/guard-partner/stage/cooperation-ready": {
@@ -2473,7 +2473,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Professional guard-partner relationship stage cooperation-ready.",
-        "altKey": "presentation.guard.relationship.stage.cooperation-ready.alt"
+        "altKey": "presentation.static.guard.relationship.stage.cooperation-ready.alt"
       }
     },
     "relationship/guard-partner/stage/route-resolved": {
@@ -2481,7 +2481,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Professional guard-partner relationship stage route-resolved.",
-        "altKey": "presentation.guard.relationship.stage.route-resolved.alt"
+        "altKey": "presentation.static.guard.relationship.stage.route-resolved.alt"
       }
     },
     "job/guard/item/guard_badge": {
@@ -2489,7 +2489,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Guard official-access item guard_badge.",
-        "altKey": "presentation.guard.item.guard_badge.alt"
+        "altKey": "presentation.static.guard.item.guard_badge.alt"
       }
     },
     "job/guard/item/guard_sealed_pass": {
@@ -2497,7 +2497,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Guard official-access item guard_sealed_pass.",
-        "altKey": "presentation.guard.item.guard_sealed_pass.alt"
+        "altKey": "presentation.static.guard.item.guard_sealed_pass.alt"
       }
     },
     "job/guard/state/city-dispute-resolved": {
@@ -2505,7 +2505,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Qualitative Guard duty state city-dispute-resolved.",
-        "altKey": "presentation.guard.state.city-dispute-resolved.alt"
+        "altKey": "presentation.static.guard.state.city-dispute-resolved.alt"
       }
     },
     "job/guard/state/crowd-pressure-resolved": {
@@ -2513,7 +2513,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Qualitative Guard duty state crowd-pressure-resolved.",
-        "altKey": "presentation.guard.state.crowd-pressure-resolved.alt"
+        "altKey": "presentation.static.guard.state.crowd-pressure-resolved.alt"
       }
     },
     "job/guard/state/duty-report-evidence": {
@@ -2521,7 +2521,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Qualitative Guard duty state duty-report-evidence.",
-        "altKey": "presentation.guard.state.duty-report-evidence.alt"
+        "altKey": "presentation.static.guard.state.duty-report-evidence.alt"
       }
     },
     "job/guard/state/cargo-pass-evidence": {
@@ -2529,7 +2529,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Qualitative Guard duty state cargo-pass-evidence.",
-        "altKey": "presentation.guard.state.cargo-pass-evidence.alt"
+        "altKey": "presentation.static.guard.state.cargo-pass-evidence.alt"
       }
     },
     "job/guard/state/poverty-response-recorded": {
@@ -2537,7 +2537,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Qualitative Guard duty state poverty-response-recorded.",
-        "altKey": "presentation.guard.state.poverty-response-recorded.alt"
+        "altKey": "presentation.static.guard.state.poverty-response-recorded.alt"
       }
     },
     "job/guard/state/tavern-evidence-known": {
@@ -2545,7 +2545,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Qualitative Guard duty state tavern-evidence-known.",
-        "altKey": "presentation.guard.state.tavern-evidence-known.alt"
+        "altKey": "presentation.static.guard.state.tavern-evidence-known.alt"
       }
     },
     "job/guard/state/veteran-ready": {
@@ -2553,7 +2553,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Qualitative Guard duty state veteran-ready.",
-        "altKey": "presentation.guard.state.veteran-ready.alt"
+        "altKey": "presentation.static.guard.state.veteran-ready.alt"
       }
     },
     "job/guard/state/officer-ready": {
@@ -2561,7 +2561,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Qualitative Guard duty state officer-ready.",
-        "altKey": "presentation.guard.state.officer-ready.alt"
+        "altKey": "presentation.static.guard.state.officer-ready.alt"
       }
     },
     "job/guard/state/reform-ready": {
@@ -2569,7 +2569,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Qualitative Guard duty state reform-ready.",
-        "altKey": "presentation.guard.state.reform-ready.alt"
+        "altKey": "presentation.static.guard.state.reform-ready.alt"
       }
     },
     "job/guard/state/network-ready": {
@@ -2577,7 +2577,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Qualitative Guard duty state network-ready.",
-        "altKey": "presentation.guard.state.network-ready.alt"
+        "altKey": "presentation.static.guard.state.network-ready.alt"
       }
     },
     "job/guard/state/major-case-thread": {
@@ -2585,7 +2585,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Qualitative Guard duty state major-case-thread.",
-        "altKey": "presentation.guard.state.major-case-thread.alt"
+        "altKey": "presentation.static.guard.state.major-case-thread.alt"
       }
     },
     "job/guard/state/major-case-ready": {
@@ -2593,7 +2593,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Qualitative Guard duty state major-case-ready.",
-        "altKey": "presentation.guard.state.major-case-ready.alt"
+        "altKey": "presentation.static.guard.state.major-case-ready.alt"
       }
     },
     "job/guard/state/crisis-resolved": {
@@ -2601,7 +2601,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Qualitative Guard duty state crisis-resolved.",
-        "altKey": "presentation.guard.state.crisis-resolved.alt"
+        "altKey": "presentation.static.guard.state.crisis-resolved.alt"
       }
     },
     "job/guard/state/refusal-respected": {
@@ -2609,7 +2609,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Qualitative Guard duty state refusal-respected.",
-        "altKey": "presentation.guard.state.refusal-respected.alt"
+        "altKey": "presentation.static.guard.state.refusal-respected.alt"
       }
     },
     "job/guard/state/partner-case-support": {
@@ -2617,7 +2617,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Qualitative Guard duty state partner-case-support.",
-        "altKey": "presentation.guard.state.partner-case-support.alt"
+        "altKey": "presentation.static.guard.state.partner-case-support.alt"
       }
     },
     "job/guard/event/guard-career-first-shift/default": {
@@ -2625,7 +2625,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Guard production event guard.career.first-shift; static presentation only.",
-        "altKey": "presentation.guard.event.guard-career-first-shift.alt"
+        "altKey": "presentation.static.guard.event.guard-career-first-shift.alt"
       }
     },
     "job/guard/event/guard-career-senior/default": {
@@ -2633,7 +2633,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Guard production event guard.career.senior; static presentation only.",
-        "altKey": "presentation.guard.event.guard-career-senior.alt"
+        "altKey": "presentation.static.guard.event.guard-career-senior.alt"
       }
     },
     "job/guard/event/guard-career-duty-breadth/default": {
@@ -2641,7 +2641,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Guard production event guard.career.duty-breadth; static presentation only.",
-        "altKey": "presentation.guard.event.guard-career-duty-breadth.alt"
+        "altKey": "presentation.static.guard.event.guard-career-duty-breadth.alt"
       }
     },
     "job/guard/event/guard-career-veteran-ready/default": {
@@ -2649,7 +2649,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Guard production event guard.career.veteran-ready; static presentation only.",
-        "altKey": "presentation.guard.event.guard-career-veteran-ready.alt"
+        "altKey": "presentation.static.guard.event.guard-career-veteran-ready.alt"
       }
     },
     "job/guard/event/guard-career-choose-route/default": {
@@ -2657,7 +2657,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Guard production event guard.career.choose-route; static presentation only.",
-        "altKey": "presentation.guard.event.guard-career-choose-route.alt"
+        "altKey": "presentation.static.guard.event.guard-career-choose-route.alt"
       }
     },
     "job/guard/event/guard-career-choose-major-case/default": {
@@ -2665,7 +2665,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Guard production event guard.career.choose-major-case; static presentation only.",
-        "altKey": "presentation.guard.event.guard-career-choose-major-case.alt"
+        "altKey": "presentation.static.guard.event.guard-career-choose-major-case.alt"
       }
     },
     "job/guard/event/guard-career-outcome-ready/default": {
@@ -2673,7 +2673,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Guard production event guard.career.outcome-ready; static presentation only.",
-        "altKey": "presentation.guard.event.guard-career-outcome-ready.alt"
+        "altKey": "presentation.static.guard.event.guard-career-outcome-ready.alt"
       }
     },
     "job/guard/event/guard-city-dispute/default": {
@@ -2681,7 +2681,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Guard production event guard.city.dispute; static presentation only.",
-        "altKey": "presentation.guard.event.guard-city-dispute.alt"
+        "altKey": "presentation.static.guard.event.guard-city-dispute.alt"
       }
     },
     "job/guard/event/guard-city-crowd-pressure/default": {
@@ -2689,7 +2689,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Guard production event guard.city.crowd-pressure; static presentation only.",
-        "altKey": "presentation.guard.event.guard-city-crowd-pressure.alt"
+        "altKey": "presentation.static.guard.event.guard-city-crowd-pressure.alt"
       }
     },
     "job/guard/event/guard-city-suspicious-pass/default": {
@@ -2697,7 +2697,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Guard production event guard.city.suspicious-pass; static presentation only.",
-        "altKey": "presentation.guard.event.guard-city-suspicious-pass.alt"
+        "altKey": "presentation.static.guard.event.guard-city-suspicious-pass.alt"
       }
     },
     "job/guard/event/guard-city-poverty-response/default": {
@@ -2705,7 +2705,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Guard production event guard.city.poverty-response; static presentation only.",
-        "altKey": "presentation.guard.event.guard-city-poverty-response.alt"
+        "altKey": "presentation.static.guard.event.guard-city-poverty-response.alt"
       }
     },
     "job/guard/event/guard-city-formal-report/default": {
@@ -2713,7 +2713,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Guard production event guard.city.formal-report; static presentation only.",
-        "altKey": "presentation.guard.event.guard-city-formal-report.alt"
+        "altKey": "presentation.static.guard.event.guard-city-formal-report.alt"
       }
     },
     "job/guard/event/guard-relationship-intro/default": {
@@ -2721,7 +2721,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Guard production event guard.relationship.intro; static presentation only.",
-        "altKey": "presentation.guard.event.guard-relationship-intro.alt"
+        "altKey": "presentation.static.guard.event.guard-relationship-intro.alt"
       }
     },
     "job/guard/event/guard-relationship-trust/default": {
@@ -2729,7 +2729,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Guard production event guard.relationship.trust; static presentation only.",
-        "altKey": "presentation.guard.event.guard-relationship-trust.alt"
+        "altKey": "presentation.static.guard.event.guard-relationship-trust.alt"
       }
     },
     "job/guard/event/guard-relationship-conflict-open/default": {
@@ -2737,7 +2737,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Guard production event guard.relationship.conflict-open; static presentation only.",
-        "altKey": "presentation.guard.event.guard-relationship-conflict-open.alt"
+        "altKey": "presentation.static.guard.event.guard-relationship-conflict-open.alt"
       }
     },
     "job/guard/event/guard-relationship-conflict-resolve/default": {
@@ -2745,7 +2745,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Guard production event guard.relationship.conflict-resolve; static presentation only.",
-        "altKey": "presentation.guard.event.guard-relationship-conflict-resolve.alt"
+        "altKey": "presentation.static.guard.event.guard-relationship-conflict-resolve.alt"
       }
     },
     "job/guard/event/guard-relationship-case-support/default": {
@@ -2753,7 +2753,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Guard production event guard.relationship.case-support; static presentation only.",
-        "altKey": "presentation.guard.event.guard-relationship-case-support.alt"
+        "altKey": "presentation.static.guard.event.guard-relationship-case-support.alt"
       }
     },
     "job/guard/event/guard-access-badge/default": {
@@ -2761,7 +2761,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Guard production event guard.access.badge; static presentation only.",
-        "altKey": "presentation.guard.event.guard-access-badge.alt"
+        "altKey": "presentation.static.guard.event.guard-access-badge.alt"
       }
     },
     "job/guard/event/guard-access-sealed-pass/default": {
@@ -2769,7 +2769,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Guard production event guard.access.sealed-pass; static presentation only.",
-        "altKey": "presentation.guard.event.guard-access-sealed-pass.alt"
+        "altKey": "presentation.static.guard.event.guard-access-sealed-pass.alt"
       }
     },
     "job/guard/event/guard-access-evidence-ledger/default": {
@@ -2777,7 +2777,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Guard production event guard.access.evidence-ledger; static presentation only.",
-        "altKey": "presentation.guard.event.guard-access-evidence-ledger.alt"
+        "altKey": "presentation.static.guard.event.guard-access-evidence-ledger.alt"
       }
     },
     "job/guard/event/guard-cross-tavern-receipt/default": {
@@ -2785,7 +2785,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Guard production event guard.cross.tavern-receipt; static presentation only.",
-        "altKey": "presentation.guard.event.guard-cross-tavern-receipt.alt"
+        "altKey": "presentation.static.guard.event.guard-cross-tavern-receipt.alt"
       }
     },
     "job/guard/event/guard-crisis-market-gate-pressure/default": {
@@ -2793,7 +2793,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Guard production event guard.crisis.market-gate-pressure; static presentation only.",
-        "altKey": "presentation.guard.event.guard-crisis-market-gate-pressure.alt"
+        "altKey": "presentation.static.guard.event.guard-crisis-market-gate-pressure.alt"
       }
     },
     "job/guard/event/guard-routes-officer-ready/default": {
@@ -2801,7 +2801,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Guard production event guard.routes.officer-ready; static presentation only.",
-        "altKey": "presentation.guard.event.guard-routes-officer-ready.alt"
+        "altKey": "presentation.static.guard.event.guard-routes-officer-ready.alt"
       }
     },
     "job/guard/event/guard-routes-reform-ready/default": {
@@ -2809,7 +2809,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Guard production event guard.routes.reform-ready; static presentation only.",
-        "altKey": "presentation.guard.event.guard-routes-reform-ready.alt"
+        "altKey": "presentation.static.guard.event.guard-routes-reform-ready.alt"
       }
     },
     "job/guard/event/guard-routes-network-ready/default": {
@@ -2817,7 +2817,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Guard production event guard.routes.network-ready; static presentation only.",
-        "altKey": "presentation.guard.event.guard-routes-network-ready.alt"
+        "altKey": "presentation.static.guard.event.guard-routes-network-ready.alt"
       }
     },
     "job/guard/event/guard-routes-major-case-ready/default": {
@@ -2825,7 +2825,7 @@
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
         "alt": "Guard production event guard.routes.major-case-ready; static presentation only.",
-        "altKey": "presentation.guard.event.guard-routes-major-case-ready.alt"
+        "altKey": "presentation.static.guard.event.guard-routes-major-case-ready.alt"
       }
     }
   }
