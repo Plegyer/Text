@@ -321,23 +321,14 @@ export function presentationSlots(cat:Catalog):PresentationSlot[]{
     }
   }
 
-  // Contract-backed Undead Farm v13 preparation. Event/ending reservations
-  // are removed at C2-143 when the frozen runtime catalog is available so
-  // production reachability cannot be satisfied by preparation IDs alone.
+  // Stage and resource surfaces are Presentation-owned semantic views over
+  // real persisted career/item identities. Event and ending slots are generated
+  // only from the live catalog below so C2-143 cannot pass on reserved IDs.
   for(const stage of UNDEAD_FARM_PRESENTATION_STAGES){
     add({id:presentationIdForUndeadFarmStage(stage),label:`Undead Farm · stage · ${stage}`,baseMediaIds:[],fallbackId:'job/undead-farm/result/default'});
   }
-  for(const eventId of [...UNDEAD_FARM_CAREER_EVENT_IDS,...UNDEAD_FARM_PRODUCTION_EVENT_IDS,...UNDEAD_FARM_NIGHT_EVENT_IDS,...UNDEAD_FARM_SCHOOL_EVENT_IDS,...UNDEAD_FARM_ACTIVITY_EVENT_IDS,...UNDEAD_FARM_CRISIS_EVENT_IDS]){
-    add({id:presentationIdForUndeadFarmCareerEvent(eventId),label:`Undead Farm · event · ${eventId}`,baseMediaIds:[],fallbackId:'job/undead-farm/result/default'});
-  }
-  for(const eventId of UNDEAD_FARM_RELATIONSHIP_EVENT_IDS){
-    add({id:presentationIdForUndeadFarmRelationshipEvent(eventId),label:`Undead Farm · Farm Keeper · ${eventId}`,baseMediaIds:[],fallbackId:'job/undead-farm/result/default'});
-  }
   for(const itemId of UNDEAD_FARM_RESOURCE_IDS){
     add({id:presentationIdForUndeadFarmResource(itemId),label:`Undead Farm · resource · ${itemId}`,baseMediaIds:[],fallbackId:'job/undead-farm/result/default'});
-  }
-  for(const endingId of UNDEAD_FARM_ENDING_IDS){
-    add({id:presentationIdForEnding(endingId),label:`Undead Farm · ending · ${endingId}`,baseMediaIds:[],fallbackId:'job/undead-farm/result/default'});
   }
 
   for(const event of cat.events){
