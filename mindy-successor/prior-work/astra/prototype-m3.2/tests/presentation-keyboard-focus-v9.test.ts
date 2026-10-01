@@ -88,7 +88,7 @@ test('ending controls expose a visible name, disable unavailable endings and ena
   const {dom,w,errors}=await boot(s);
   try{
     w.document.querySelector('[data-panel="legacy"]').click();
-    await wait(()=>w.document.querySelectorAll('[data-ending]').length===9);
+    await wait(()=>w.document.querySelectorAll('[data-ending]').length===catalog.definitions.endings.length);
     assert.equal(w.document.activeElement?.id,'close');
     const buttons=[...w.document.querySelectorAll('[data-ending]')];
     for(const button of buttons)assert.ok(button.textContent?.trim(),'ending visible name');

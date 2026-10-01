@@ -51,10 +51,16 @@ test('C3 starter-career identity maps stay exact to current production careers a
   for(const entry of undeadSuccessor.hooks)assert.ok(undeadScenes.has(entry.sceneId),entry.sceneId);
 });
 
-test('C3 starter-career content remains presentation-only where persistent systems are absent',()=>{
+test('C3 starter-career content adds no guessed events or relationships beyond the approved Hard Work ending seam',()=>{
   assert.equal((definitions.events??[]).some((event:any)=>/satyr-maid|undead-farm/.test(JSON.stringify(event))),false);
   assert.equal((definitions.relationships??[]).some((rel:any)=>/satyr-maid|undead-farm/.test(JSON.stringify(rel))),false);
-  assert.equal(definitions.endings.some((ending:any)=>/satyr-maid|undead-farm/.test(JSON.stringify(ending))),false);
+  assert.deepEqual(
+    definitions.endings
+      .filter((ending:any)=>/satyr-maid|undead-farm/.test(ending.id))
+      .map((ending:any)=>ending.id)
+      .sort(),
+    ['ending.satyr-maid.hard-work','ending.undead-farm.hard-work']
+  );
 
   assert.equal(satyrIdentity.identityFamilies.guest.productionIdentityPresent,false);
   assert.equal(satyrIdentity.identityFamilies.flirt.productionIdentityPresent,false);

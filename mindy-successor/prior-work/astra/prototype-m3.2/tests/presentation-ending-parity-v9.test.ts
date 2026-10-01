@@ -31,13 +31,19 @@ test('all existing ending semantic IDs have exact static RU/EN presentation pari
   }
 });
 
-test('current ending definitions map only to the audited existing semantic IDs',()=>{
+test('current ending definitions all map to live semantic slots while the audited legacy subset keeps exact static bindings',()=>{
   const audited=new Set(manifest.endingParity.existingEndingPresentationIds.map((row:any)=>row.presentationId));
-  assert.equal(catalog.definitions.endings.length,9);
+  const registry=new Map(presentationSlots(catalog).map(slot=>[slot.id,slot]));
+  assert.ok(catalog.definitions.endings.length>=audited.size);
+  const seen=new Set<string>();
   for(const ending of catalog.definitions.endings){
     const id=presentationIdForEnding(ending.id);
-    assert.ok(audited.has(id),ending.id+' -> '+id);
+    assert.ok(registry.has(id),ending.id+' -> '+id);
+    assert.equal(seen.has(id),false,'ending presentation collision '+id);
+    seen.add(id);
+    if(!audited.has(id))assert.equal(registry.get(id)?.fallbackId,'location/town/default',id);
   }
+  assert.equal(audited.size,9);
 });
 
 test('committed-state label gap remains classified as predecessor prepared work, not duplicated here',()=>{

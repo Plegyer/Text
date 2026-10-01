@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {existsSync,readFileSync} from 'node:fs';
 
-import {presentationSchema,presentationSlots} from '../src/core/presentation.ts';
+import {presentationIdForEnding,presentationSchema,presentationSlots} from '../src/core/presentation.ts';
 import {catalog} from './helpers.ts';
 
 const presentation=JSON.parse(readFileSync('content/presentation.json','utf8'));
@@ -58,15 +58,17 @@ test('queue-v7 teacher media package has unique live media identities and existi
   }
 });
 
-test('all current gameplay ending identities map to one exact presentation slot without collision',()=>{
+test('all current gameplay ending identities map to one live presentation slot without collision; audited legacy endings stay exact-static',()=>{
   const endingEntries=manifest.packages.endingGapAudit;
   const definitionIds=new Set(catalog.definitions.endings.map(ending=>ending.id));
-  assert.equal(endingEntries.length,definitionIds.size);
-  const presentationIds=endingEntries.map((entry:any)=>entry.presentationId);
-  assert.equal(new Set(presentationIds).size,presentationIds.length,'ending presentation collision');
+  const registry=new Map(presentationSlots(catalog).map(slot=>[slot.id,slot]));
+  const currentPresentationIds=catalog.definitions.endings.map(ending=>presentationIdForEnding(ending.id));
+  assert.equal(new Set(currentPresentationIds).size,currentPresentationIds.length,'ending presentation collision');
+  for(const id of currentPresentationIds)assert.ok(registry.has(id),'missing live ending presentation '+id);
   for(const entry of endingEntries){
     assert.ok(definitionIds.has(entry.endingId),'missing ending definition '+entry.endingId);
     assert.equal(entry.exactStatic,true,entry.presentationId);
     assert.ok(presentation.slots?.[entry.presentationId]?.static,entry.presentationId);
   }
+  assert.equal(endingEntries.length,9);
 });
