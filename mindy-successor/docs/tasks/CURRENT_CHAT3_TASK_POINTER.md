@@ -1,15 +1,29 @@
 # CURRENT CHAT3 TASK POINTER
 
-Status: **ASSIGNED — RESUME NOW**
-Owner: Chat 3 / Forest + Poverty Content Bundles Worker
+Status: **PR #146 REPAIRED/FROZEN + NEXT QUEUE ACTIVE**
+Owner: Chat 3 / Forest + Poverty Content Worker
 
-Mandatory current sources:
-- `../LEAD1_CURRENT_STATE_v1.md`
-- `ACTIVE_TEAM_OWNERSHIP_MATRIX.md`
+Repaired predecessor candidate:
+- PR #146
+- exact head: `8fa771f212190e5ad9ba4145869d5ce0b04d2cf2`
+- exact-head CI #500: **SUCCESS**
+- candidate is frozen for Chat 4 QA.
+
+Do not mutate PR #146.
+
+Continue now on a **new stacked branch** from that exact head.
+
+Current queue:
+- `TASK_CHAT3_CONTENT_QUEUE_v12.md`
+- C3-121..132
+- target: complete the first Forest product slice and natural item acquisition.
+
+Start C3-121 immediately and continue automatically.
+
+Mandatory:
+- `../LEADER1_LIVE_DASHBOARD.md`
+- `../FOREST_ACTIVITY_SLICE_v0.md`
+- `../INITIAL_ITEM_CATALOG_v0.md`
 - `CANDIDATE_QA_FREEZE_PROTOCOL.md`
-- `TASK_CHAT3_CONTENT_QUEUE_v11.md`
 
-Active queue: **C3-109 through C3-120** from fresh current main.
-Goal: promote safe prepared Forest/ordinary-poverty material into reachable production content.
-
-Do not self-assign beyond C3-120.
+Do not self-assign beyond C3-132.
