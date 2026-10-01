@@ -6,11 +6,11 @@ Repository: `Plegyer/Text`
 
 ## Exact current-main health
 
-Current main inspected: `6f0e8803ea327b55c5079afb137b5aa016f614ec`.
+Current main inspected: `a30272dc91cab3d5286558a189d5d816f1841db7`.
 
 Exact-head GitHub Actions evidence:
 - workflow: `mindy-successor check`;
-- run #435 / id `36814269258`;
+- run #459 / id `36816282846`;
 - event: push on `main`;
 - conclusion: SUCCESS;
 - `Install dependencies`: SUCCESS;
@@ -71,11 +71,15 @@ This ledger is disposition/evidence only. It does not:
 - resolve producer-owned blockers.
 
 
-## C4-124 dependency state
+## C4-124 fresh-candidate gate
 
-At the first fresh-candidate check after C4-123:
+Chat 1 v9 became the first eligible fresh candidate.
 
-- Chat 1 v9 PR #147 was still draft/mutable. Its first head `8257571da18d24009f23d4e342dd494398536fbc` failed exact-head CI run #437 (560/570 pass); producer then moved the branch to a new mutable head, so the failed head is not QA-gated.
-- Chat 3 v11 PR #146 was the first fresh C2/C3/C5-v11 candidate visible, but head `e750480404b1270ffbe47ca1dad2cb381bcf29d1` failed exact-head CI run #436 (539/568 pass) and was not declared frozen.
-- Therefore C4-124 had **no eligible frozen candidate** at that snapshot. QA does not gate mutable or red heads and does not repair producer branches.
-- C4-124 remains pending until Chat 1 v9 freezes first, or—if it is not frozen—the first green/frozen C2/C3/C5 v11 candidate appears.
+- PR #147 first declared frozen head: `15d6ee3d91c5ad3fef82fe52a06ec2a590089003`.
+- Exact-head CI #448 / id `36815947100`: SUCCESS; 17 packs / 46 events / 35 actions / 18 endings; 570/570 tests.
+- Locked late-career thresholds, 50-shift Hard Work definitions, automatic all-ten Meta rewards and the derived 10/10 Palace predicate match the assigned master spec.
+- C4-124 verdict: **BLOCK** because current production Satyr Maid and Undead Farm shift actions unconditionally execute their one-time `first-shift` career transition on every shift. After the first shift advances to `known-face` / `reliable-helper`, the second real shift hits the typed transition `from` guard and throws. Direct test priming to 49 shifts or direct ending eligibility does not prove natural 50-shift reachability.
+- The producer then moved #147 to `987438954cfec9739281a512a1589cb2707095e5`, invalidating the old freeze. That delta adds only `tests/ordinary-hard-work-meta.test.ts`; it does not repair production definitions/runtime. Exact-head CI #451 is green, but the production blocker remains.
+- Required producer repair is recorded on PR #147. QA did not modify production.
+
+This also corrects executable acceptance truth: Satyr Maid and Undead Farm are Day-1 selectable and their first shifts work, but their current base work loops are not naturally repeatable after the first typed transition.
