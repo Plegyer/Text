@@ -11,11 +11,11 @@ const teachers=JSON.parse(readFileSync('content/packs/school-teachers-v1.json','
 test('C5-145 pre-contract inventory binds the four Lead-approved Tavern hooks to current live School tracks',()=>{
   assert.equal(inventory.careerId,'tavern');
   assert.equal(inventory.actionId,'tavern.shift');
-  assert.deepEqual(inventory.hooks.map((x:any)=>[x.role,x.courseId,x.trackId]),[
-    ['innkeeper_records','school.course.literacy_and_numbers','school.track.literacy_and_numbers'],
-    ['broker_conflict','school.course.rhetoric_and_social','school.track.rhetoric_and_social'],
-    ['high_status_guest','school.course.etiquette_and_presentation','school.track.etiquette_and_presentation'],
-    ['strange_rumour_guest_interpretation','school.course.arcana','school.track.arcana']
+  assert.deepEqual(inventory.hooks.map((x:any)=>[x.role,x.courseId,x.trackId,x.reactionEvent,x.careerFact]),[
+    ['innkeeper_records','school.course.literacy_and_numbers','school.track.literacy_and_numbers','tavern.school.records','school-records-ready'],
+    ['broker_conflict','school.course.rhetoric_and_social','school.track.rhetoric_and_social','tavern.school.broker','school-broker-ready'],
+    ['high_status_guest','school.course.etiquette_and_presentation','school.track.etiquette_and_presentation','tavern.school.etiquette','school-etiquette-ready'],
+    ['strange_rumour_guest_interpretation','school.course.arcana','school.track.arcana','tavern.school.arcana','school-arcana-ready']
   ]);
   for(const hook of inventory.hooks){
     const course=SCHOOL_COURSES.find(x=>x.id===hook.courseId);
@@ -34,12 +34,13 @@ test('C5-152 inventory reuses the existing four School teachers and media identi
   assert.ok(localization['school.course.arcana.description'].en.includes('Ilyra Venn'));
 });
 
-test('C5-155 pre-contract policy keeps the approved three-lesson thresholds Tavern-local',()=>{
+test('C5-145/C5-155 C1D-121 binding keeps the approved three-lesson thresholds Tavern-local',()=>{
   assert.equal(inventory.localHookPolicy.counter,'lessons_completed');
   assert.equal(inventory.localHookPolicy.threshold,3);
   assert.equal(inventory.localHookPolicy.scope,'tavern-only');
   assert.equal(inventory.localHookPolicy.globalCertificateRule,false);
   assert.equal(inventory.localHookPolicy.globalProjectRule,false);
-  assert.equal(inventory.localHookPolicy.gameplayEventIds,'WAIT_FOR_C1D_121');
-  assert.equal(inventory.localHookPolicy.careerFactIds,'WAIT_FOR_C1D_121');
+  assert.equal(inventory.status,'CONTRACT_BOUND_PRE_RUNTIME');
+  assert.equal(inventory.runtimeContract.head,'7bf2531f208c8b3faf5f83c16064885b6295167b');
+  assert.equal(inventory.runtimeContract.blob,'48120605195463dddbc34205b2246fa4b7276907');
 });
