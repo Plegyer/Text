@@ -101,11 +101,23 @@
           ]
         },
         {
-          "kind": "schoolCounter",
-          "track": "school.track.rhetoric_and_social",
-          "counter": "lessons_completed",
-          "op": "gte",
-          "value": 3
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "schoolCounter",
+              "track": "school.track.rhetoric_and_social",
+              "counter": "lessons_completed",
+              "op": "gte",
+              "value": 3
+            },
+            {
+              "kind": "schoolCounter",
+              "track": "school.track.rhetoric_and_social",
+              "counter": "night_study_sessions",
+              "op": "gte",
+              "value": 3
+            }
+          ]
         },
         {
           "kind": "careerFact",
@@ -215,11 +227,23 @@
           ]
         },
         {
-          "kind": "schoolCounter",
-          "track": "school.track.literacy_and_numbers",
-          "counter": "lessons_completed",
-          "op": "gte",
-          "value": 3
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "schoolCounter",
+              "track": "school.track.literacy_and_numbers",
+              "counter": "lessons_completed",
+              "op": "gte",
+              "value": 3
+            },
+            {
+              "kind": "schoolCounter",
+              "track": "school.track.literacy_and_numbers",
+              "counter": "night_study_sessions",
+              "op": "gte",
+              "value": 3
+            }
+          ]
         },
         {
           "kind": "careerFact",
@@ -333,11 +357,23 @@
           ]
         },
         {
-          "kind": "schoolCounter",
-          "track": "school.track.body_confidence",
-          "counter": "lessons_completed",
-          "op": "gte",
-          "value": 3
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "schoolCounter",
+              "track": "school.track.body_confidence",
+              "counter": "lessons_completed",
+              "op": "gte",
+              "value": 3
+            },
+            {
+              "kind": "schoolCounter",
+              "track": "school.track.body_confidence",
+              "counter": "night_study_sessions",
+              "op": "gte",
+              "value": 3
+            }
+          ]
         },
         {
           "kind": "careerFact",
