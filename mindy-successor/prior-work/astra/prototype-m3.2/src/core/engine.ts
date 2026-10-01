@@ -36,8 +36,14 @@ function defaultLegacyMetrics(){
   } as Record<string,number>;
 }
 
+export function palaceAvailable(meta:Meta):boolean{
+  return ordinaryHardWorkCareers.every(c=>meta.hardWorkProgress.includes(c));
+}
 function ensurePalaceUnlock(meta:Meta){
-  if(ordinaryHardWorkCareers.every(c=>meta.hardWorkProgress.includes(c))&&!meta.unlocks.includes('palace'))meta.unlocks.push('palace');
+  const earned=palaceAvailable(meta);
+  const index=meta.unlocks.indexOf('palace');
+  if(earned&&index<0)meta.unlocks.push('palace');
+  else if(!earned&&index>=0)meta.unlocks.splice(index,1);
 }
 function defaultMeta(input?:Partial<Meta>&{completed?:string[];lives?:number}):Meta {
   const completed=[...new Set(input?.completedEndings??input?.completed??[])];
@@ -215,7 +221,7 @@ export function meets(c:Condition,s:Save,cat?:Catalog):boolean {
     case 'relationshipFact': return (readDomainState(s,'relationship',c.relationship,cat)?.facts.includes(c.fact)??false)===c.present;
     case 'relationshipChoice': return readDomainState(s,'relationship',c.relationship,cat)?.choices[c.choice]===c.value;
     case 'worldFact': return s.run.progression.worldFacts.includes(c.fact)===c.present;
-    case 'metaUnlock': return s.meta.unlocks.includes(c.unlock)===c.present;
+    case 'metaUnlock': return (c.unlock==='palace'?palaceAvailable(s.meta):s.meta.unlocks.includes(c.unlock))===c.present;
     case 'metaEndingCompleted': return s.meta.completedEndings.includes(c.ending)===c.present;
     case 'metaHardWork': return s.meta.hardWorkProgress.includes(c.career)===c.present;
 
