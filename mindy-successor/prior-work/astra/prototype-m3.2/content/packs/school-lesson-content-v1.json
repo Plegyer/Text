@@ -41,6 +41,30 @@
           "media": [
             "school.lesson.context.default"
           ]
+        },
+        {
+          "id": "settle-the-lesson",
+          "text": "After the paid lesson, a few minutes remain to put your thoughts in order. You note what became clearer without trying to turn the reflection into a second lesson.",
+          "conditions": [],
+          "media": [
+            "school.lesson.context.default"
+          ]
+        },
+        {
+          "id": "one-clear-note",
+          "text": "You reread your notes and mark one idea you will still understand tomorrow without extra explanation. That is enough for the lesson to leave a useful trace.",
+          "conditions": [],
+          "media": [
+            "school.lesson.context.default"
+          ]
+        },
+        {
+          "id": "leave-a-question",
+          "text": "Not everything has to settle immediately. You write down one specific question for the next lesson and leave it open instead of inventing a confident answer on the spot.",
+          "conditions": [],
+          "media": [
+            "school.lesson.context.default"
+          ]
         }
       ],
       "choices": [
