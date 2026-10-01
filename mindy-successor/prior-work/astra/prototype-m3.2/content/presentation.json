@@ -1195,6 +1195,326 @@
         "alt": "Hard Work ending static presentation for prostitute.",
         "altKey": "presentation.static.prostitute-ending-hard-work.alt"
       }
+    },
+    "job/tavern/stage/new-hand": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-result.svg",
+        "alt": "Tavern career stage: New hand.",
+        "altKey": "presentation.static.career.tavern.stage.new-hand.alt"
+      }
+    },
+    "job/tavern/stage/trusted-worker": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-result.svg",
+        "alt": "Tavern career stage: Trusted worker.",
+        "altKey": "presentation.static.career.tavern.stage.trusted-worker.alt"
+      }
+    },
+    "job/tavern/stage/house-node": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-result.svg",
+        "alt": "Tavern career stage: House node.",
+        "altKey": "presentation.static.career.tavern.stage.house-node.alt"
+      }
+    },
+    "job/tavern/stage/veteran-service": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-result.svg",
+        "alt": "Tavern career stage: Veteran service.",
+        "altKey": "presentation.static.career.tavern.stage.veteran-service.alt"
+      }
+    },
+    "job/tavern/stage/innkeeper": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-result.svg",
+        "alt": "Tavern career stage: Innkeeper.",
+        "altKey": "presentation.static.career.tavern.stage.innkeeper.alt"
+      }
+    },
+    "job/tavern/stage/information-broker": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-result.svg",
+        "alt": "Tavern career stage: Information broker.",
+        "altKey": "presentation.static.career.tavern.stage.information-broker.alt"
+      }
+    },
+    "job/tavern/stage/sanctuary": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-result.svg",
+        "alt": "Tavern career stage: Sanctuary.",
+        "altKey": "presentation.static.career.tavern.stage.sanctuary.alt"
+      }
+    },
+    "job/tavern/stage/outcome-ready": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-result.svg",
+        "alt": "Tavern career stage: Outcome ready.",
+        "altKey": "presentation.static.career.tavern.stage.outcome-ready.alt"
+      }
+    },
+    "job/tavern/event/tavern-career-first-shift/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-result.svg",
+        "alt": "Tavern presentation: First career milestone.",
+        "altKey": "presentation.static.career.tavern.event.career-first-shift.alt"
+      }
+    },
+    "job/tavern/event/tavern-career-house-node/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-result.svg",
+        "alt": "Tavern presentation: House node.",
+        "altKey": "presentation.static.career.tavern.event.career-house-node.alt"
+      }
+    },
+    "job/tavern/event/tavern-career-veteran-service/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-result.svg",
+        "alt": "Tavern presentation: Veteran service.",
+        "altKey": "presentation.static.career.tavern.event.career-veteran-service.alt"
+      }
+    },
+    "job/tavern/event/tavern-career-innkeeper/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-result.svg",
+        "alt": "Tavern presentation: Innkeeper route.",
+        "altKey": "presentation.static.career.tavern.event.career-innkeeper.alt"
+      }
+    },
+    "job/tavern/event/tavern-career-information-broker/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-result.svg",
+        "alt": "Tavern presentation: Information broker route.",
+        "altKey": "presentation.static.career.tavern.event.career-information-broker.alt"
+      }
+    },
+    "job/tavern/event/tavern-career-sanctuary/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-result.svg",
+        "alt": "Tavern presentation: Sanctuary route.",
+        "altKey": "presentation.static.career.tavern.event.career-sanctuary.alt"
+      }
+    },
+    "job/tavern/event/tavern-career-outcome-ready/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-result.svg",
+        "alt": "Tavern presentation: Outcome ready.",
+        "altKey": "presentation.static.career.tavern.event.career-outcome-ready.alt"
+      }
+    },
+    "job/tavern/event/tavern-school-records/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-result.svg",
+        "alt": "Tavern presentation: Tavern school records.",
+        "altKey": "presentation.static.career.tavern.event.school-records.alt"
+      }
+    },
+    "job/tavern/event/tavern-school-broker/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-result.svg",
+        "alt": "Tavern presentation: Tavern rhetoric hook.",
+        "altKey": "presentation.static.career.tavern.event.school-broker.alt"
+      }
+    },
+    "job/tavern/event/tavern-school-etiquette/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-result.svg",
+        "alt": "Tavern presentation: Tavern etiquette hook.",
+        "altKey": "presentation.static.career.tavern.event.school-etiquette.alt"
+      }
+    },
+    "job/tavern/event/tavern-school-arcana/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-result.svg",
+        "alt": "Tavern presentation: Tavern Arcana hook.",
+        "altKey": "presentation.static.career.tavern.event.school-arcana.alt"
+      }
+    },
+    "job/tavern/event/tavern-access-staff-key/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-result.svg",
+        "alt": "Tavern presentation: Staff room access.",
+        "altKey": "presentation.static.career.tavern.event.access-staff-key.alt"
+      }
+    },
+    "job/tavern/event/tavern-access-guest-ledger/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-result.svg",
+        "alt": "Tavern presentation: Guest ledger.",
+        "altKey": "presentation.static.career.tavern.event.access-guest-ledger.alt"
+      }
+    },
+    "job/tavern/event/tavern-housing-meal-in-kind/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-result.svg",
+        "alt": "Tavern presentation: Tavern housing assistance.",
+        "altKey": "presentation.static.career.tavern.event.housing-meal-in-kind.alt"
+      }
+    },
+    "job/tavern/event/tavern-activity-forest-return/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-result.svg",
+        "alt": "Tavern presentation: Forest return to tavern.",
+        "altKey": "presentation.static.career.tavern.event.activity-forest-return.alt"
+      }
+    },
+    "job/tavern/event/tavern-crisis-occupancy-supply-confidentiality/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-result.svg",
+        "alt": "Tavern presentation: Occupancy, supply, and confidentiality crisis.",
+        "altKey": "presentation.static.career.tavern.event.crisis-occupancy-supply-confidentiality.alt"
+      }
+    },
+    "night/tavern/tavern-night-traveler-request": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-result.svg",
+        "alt": "Tavern Night presentation: Voluntary meeting with the recurring traveler.",
+        "altKey": "presentation.static.career.tavern.night.tavern-night-traveler-request.alt"
+      }
+    },
+    "night/tavern/tavern-night-house-notes": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-result.svg",
+        "alt": "Tavern Night presentation: Night review of tavern house notes.",
+        "altKey": "presentation.static.career.tavern.night.tavern-night-house-notes.alt"
+      }
+    },
+    "relationship/tavern-recurring-traveler/stage/introduced": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-result.svg",
+        "alt": "Tavern recurring traveler relationship stage: Work introduction.",
+        "altKey": "presentation.static.relationship.tavern-recurring-traveler.stage.introduced.alt"
+      }
+    },
+    "relationship/tavern-recurring-traveler/stage/trusted": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-result.svg",
+        "alt": "Tavern recurring traveler relationship stage: Professional trust.",
+        "altKey": "presentation.static.relationship.tavern-recurring-traveler.stage.trusted.alt"
+      }
+    },
+    "relationship/tavern-recurring-traveler/stage/night-request": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-result.svg",
+        "alt": "Tavern recurring traveler relationship stage: Voluntary Night request.",
+        "altKey": "presentation.static.relationship.tavern-recurring-traveler.stage.night-request.alt"
+      }
+    },
+    "relationship/tavern-recurring-traveler/stage/request-resolved": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-result.svg",
+        "alt": "Tavern recurring traveler relationship stage: Request resolved and returned to work.",
+        "altKey": "presentation.static.relationship.tavern-recurring-traveler.stage.request-resolved.alt"
+      }
+    },
+    "relationship/tavern-recurring-traveler/stage/confidentiality-resolved": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-result.svg",
+        "alt": "Tavern recurring traveler relationship stage: Confidentiality request resolved.",
+        "altKey": "presentation.static.relationship.tavern-recurring-traveler.stage.confidentiality-resolved.alt"
+      }
+    },
+    "job/tavern/state/staff-room-access": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-result.svg",
+        "alt": "Tavern state presentation: Staff guest-room access.",
+        "altKey": "presentation.static.career.tavern.state.staff-room-access.alt"
+      }
+    },
+    "job/tavern/state/room-pressure": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-result.svg",
+        "alt": "Tavern state presentation: Room pressure.",
+        "altKey": "presentation.static.career.tavern.state.room-pressure.alt"
+      }
+    },
+    "job/tavern/state/supply-pressure": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-result.svg",
+        "alt": "Tavern state presentation: Supply pressure.",
+        "altKey": "presentation.static.career.tavern.state.supply-pressure.alt"
+      }
+    },
+    "job/tavern/state/guest-ledger": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-result.svg",
+        "alt": "Tavern state presentation: Guest ledger evidence.",
+        "altKey": "presentation.static.career.tavern.state.guest-ledger.alt"
+      }
+    },
+    "job/tavern/state/traveler-rumour": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-result.svg",
+        "alt": "Tavern state presentation: Recurring-traveler rumour.",
+        "altKey": "presentation.static.career.tavern.state.traveler-rumour.alt"
+      }
+    },
+    "job/tavern/state/rumour-confirmed": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-result.svg",
+        "alt": "Tavern state presentation: Confirmed rumour.",
+        "altKey": "presentation.static.career.tavern.state.rumour-confirmed.alt"
+      }
+    },
+    "job/tavern/state/information-routing": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-result.svg",
+        "alt": "Tavern state presentation: Information routing.",
+        "altKey": "presentation.static.career.tavern.state.information-routing.alt"
+      }
+    },
+    "job/tavern/state/confidentiality-kept": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-result.svg",
+        "alt": "Tavern state presentation: Confidentiality kept.",
+        "altKey": "presentation.static.career.tavern.state.confidentiality-kept.alt"
+      }
+    },
+    "job/tavern/state/refusal-respected": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-result.svg",
+        "alt": "Tavern state presentation: Refusal respected without losing the professional route.",
+        "altKey": "presentation.static.career.tavern.state.refusal-respected.alt"
+      }
     }
   }
 }
