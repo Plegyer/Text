@@ -297,7 +297,6 @@ export function presentationSlots(cat:Catalog):PresentationSlot[]{
   // ordinary career IDs already present in the production catalog.
   for(const career of cat.definitions.careers??[]){
     const careerId=clean(career.id);
-    const resultId=`job/${careerId}/result/default`;
     add({
       id:`ending/${careerId}/hard-work`,
       label:`${career.label} · Hard Work · финал`,
