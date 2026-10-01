@@ -14,9 +14,9 @@ test('C5-158..161 Hunter School source copy is complete RU EN and binds only cur
   for(const fixture of files){
     assert.ok(fixture.careerFact.startsWith('school-'),fixture.id);
     assert.equal(fixture.localThreshold.value,null,fixture.id);
-    assert.equal(fixture.localThreshold.authority,'C1D_133_EXPLICITLY_NULL',fixture.id);
-    assert.equal(fixture.runtimeContract.head,'7895b8ce5e17419a1204169112cf9df23002996e',fixture.id);
-    assert.equal(fixture.runtimeContract.blob,'9723fed6e77058fc29463395f55b39eee185134a',fixture.id);
+    assert.equal(fixture.localThreshold.authority,'FROZEN_CONTRACT_EXPLICITLY_NULL',fixture.id);
+    assert.equal(fixture.runtimeContract.head,'8af661de2ce6d73e4db0f61fe4206d3334822998',fixture.id);
+    assert.equal(fixture.runtimeContract.blob,'160a7000cf49e86c638e9cfdf3c80f268e7c0c12',fixture.id);
     for(const field of ['title','body','result','journal','accessibility']){
       const pair=fixture.copy[field];
       assert.ok(pair?.ru?.trim(),fixture.id+' '+field+' ru');
@@ -25,12 +25,12 @@ test('C5-158..161 Hunter School source copy is complete RU EN and binds only cur
     }
   }
   const field=files[0];
-  assert.equal(field.bindingStatus,'C1D_139_EVENT_FACT_BOUND_NON_NUMERIC_CONDITION');
+  assert.equal(field.bindingStatus,'FROZEN_RUNTIME_EVENT_FACT_BOUND_NON_NUMERIC_CONDITION');
   assert.equal(field.reactionEvent,'hunter.school.field-craft');
   assert.equal(field.consumerAuthority.packBlob,'4e5ed1f9fcf6705845f8326a0d6ac331047ae763');
   for(const fixture of files.slice(1)){
-    assert.equal(fixture.bindingStatus,'C1D_133_FACT_BOUND_EVENT_THRESHOLD_BLOCKED',fixture.id);
-    assert.equal(fixture.reactionEvent,'BLOCKED_NOT_PUBLISHED_BY_C1D_133',fixture.id);
+    assert.equal(fixture.bindingStatus,'FROZEN_CONTRACT_FACT_ONLY_EVENT_THRESHOLD_BLOCKED',fixture.id);
+    assert.equal(fixture.reactionEvent,'BLOCKED_NOT_PUBLISHED_BY_FROZEN_HUNTER_RUNTIME',fixture.id);
   }
 });
 
@@ -69,8 +69,8 @@ test('C5-158..161 exact Hunter fact/event bindings preserve the three blocked co
   const byTask=Object.fromEntries(files.map(x=>[x.task,[x.careerFact,x.reactionEvent,x.localThreshold.value]]));
   assert.deepEqual(byTask,{
     'C5-158':['school-field-craft-ready','hunter.school.field-craft',null],
-    'C5-159':['school-arcana-ready','BLOCKED_NOT_PUBLISHED_BY_C1D_133',null],
-    'C5-160':['school-literacy-ready','BLOCKED_NOT_PUBLISHED_BY_C1D_133',null],
-    'C5-161':['school-physical-ready','BLOCKED_NOT_PUBLISHED_BY_C1D_133',null]
+    'C5-159':['school-arcana-ready','BLOCKED_NOT_PUBLISHED_BY_FROZEN_HUNTER_RUNTIME',null],
+    'C5-160':['school-literacy-ready','BLOCKED_NOT_PUBLISHED_BY_FROZEN_HUNTER_RUNTIME',null],
+    'C5-161':['school-physical-ready','BLOCKED_NOT_PUBLISHED_BY_FROZEN_HUNTER_RUNTIME',null]
   });
 });
