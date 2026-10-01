@@ -3561,6 +3561,18 @@
     "presentation.motion.career.satyr-maid.service.c.alt": {
       "ru": "Анимированная рабочая сцена служанки-сатирки: движение подноса и таверненный свет.",
       "en": "Animated Satyr Maid work scene with a moving tray and tavern lights."
+    },
+    "presentation.motion.career.undead-farm.field.a.alt": {
+      "ru": "Анимированная рабочая сцена фермы нежити: грядки, ящик и помощница на обычной смене.",
+      "en": "Animated Undead Farm work scene with field rows, a crate, and a helper on an ordinary shift."
+    },
+    "presentation.motion.career.undead-farm.field.b.alt": {
+      "ru": "Анимированная рабочая сцена фермы нежити: перемещение припасов между рядами.",
+      "en": "Animated Undead Farm work scene with supplies moving between the field rows."
+    },
+    "presentation.motion.career.undead-farm.field.c.alt": {
+      "ru": "Анимированная рабочая сцена фермы нежити: спокойная полевая работа без изменения игрового исхода.",
+      "en": "Animated Undead Farm work scene showing calm field work without changing the gameplay outcome."
     }
   }
 }
