@@ -69,7 +69,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "The already-resolved Tavern receipt chain gives you one concrete supporting document. It is evidence from a live identity, not a fabricated Tavern career state.",
+          "text": "A receipt and an already resolved Tavern chain can serve as external confirmation of time, place, or handoff. Guard uses only that existing trail and does not turn it into a general evidence currency. If the Tavern trail does not confirm the needed detail, the Guard does not invent a Merchant, Palace, or future-career witness to complete the case. A missing source remains a missing source.",
           "conditions": [],
           "media": []
         }
