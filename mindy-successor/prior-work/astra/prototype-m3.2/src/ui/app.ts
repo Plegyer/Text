@@ -119,7 +119,7 @@ function hunterPresentationStatusHTML(){
  const itemRows=[
   ['rope_kit','Rope Kit'],
   ['field_preservation_kit','Field Preservation Kit']
- ].filter(([itemId])=>(state.run.inventory[itemId]??0)>0).map(([itemId,fallback])=>({
+ ].filter(([itemId])=>(state.run.resources.inventory[itemId]??0)>0).map(([itemId,fallback])=>({
   id:itemId,label:tr(`presentation.hunter.item.${itemId}.label`,fallback)
  }));
  const stateRows=[
