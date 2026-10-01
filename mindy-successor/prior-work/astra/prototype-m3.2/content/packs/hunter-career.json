@@ -7,7 +7,8 @@
     "reads": {
       "careers": [
         "hunter"
-      ]
+      ],
+      "housing": true
     },
     "writes": {
       "careers": [
@@ -19,7 +20,7 @@
   "events": [
     {
       "id": "hunter.career.first-shift",
-      "title": "Tracker",
+      "title": "The first reliable return",
       "sourceDomain": "hunter",
       "trigger": [],
       "reactionTriggers": [
@@ -54,8 +55,30 @@
       ],
       "variants": [
         {
+          "id": "street-survival",
+          "text": "When you are sleeping rough, the first Hunter wage matters immediately, but the job does not erase the street-night rules. What changes is practical: you now have ordinary paid work you can return to without accepting a private rescue or hidden obligation.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "street"
+            }
+          ],
+          "media": []
+        },
+        {
+          "id": "cheap-budget",
+          "text": "With a cheap shared room already taking part of the budget, the first Hunter wage feels concrete. The work remains ordinary paid work: it helps the next day without refunding lodging, changing its price, or creating a special housing entitlement.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ],
+          "media": []
+        },
+        {
           "id": "default",
-          "text": "A complete local contract proves you can follow signs, finish the work, and return with a usable report.",
+          "text": "The first completed local contract proves the basic discipline of the work: read enough sign to act, finish the agreed task, and return with notes another hunter can actually use.",
           "conditions": [],
           "media": []
         }
@@ -64,7 +87,7 @@
         {
           "id": "continue",
           "label": "Take tracker work",
-          "text": "Move from novice errands into regular tracking work.",
+          "text": "Move into regular tracking work while keeping ordinary shifts distinct from the separate expedition layer.",
           "conditions": [],
           "effects": [
             {
@@ -78,7 +101,7 @@
     },
     {
       "id": "hunter.career.recognized-hunter",
-      "title": "Recognized Hunter",
+      "title": "Work people can rely on",
       "sourceDomain": "hunter",
       "trigger": [],
       "reactionTriggers": [
@@ -120,7 +143,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "Enough ordinary contracts have ended with reliable returns that rare-route preparation can now be trusted to you.",
+          "text": "Enough local contracts now end with usable notes, clean handoffs, and predictable returns that you are trusted with preparation for work beyond the settled edge. Recognition opens options; it does not turn every paid shift into an expedition.",
           "conditions": [],
           "media": []
         }
@@ -129,7 +152,7 @@
         {
           "id": "continue",
           "label": "Accept recognized work",
-          "text": "Open expedition and rare-contract dependencies without forcing an expedition on every shift.",
+          "text": "Accept recognized Hunter work while keeping expeditions optional and separately prepared.",
           "conditions": [],
           "effects": [
             {
@@ -143,7 +166,7 @@
     },
     {
       "id": "hunter.career.expedition-qualified",
-      "title": "Expedition-qualified",
+      "title": "A separate expedition option",
       "sourceDomain": "hunter",
       "trigger": [],
       "reactionTriggers": [
@@ -188,7 +211,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "Recognition now includes permission to take a separate two-Energy hunt expedition when a contract actually requires one.",
+          "text": "You are now trusted to take the two-Energy expedition when a contract genuinely needs distance, rough access, or extended tracking. Qualification is preparation permission, not an automatic departure.",
           "conditions": [],
           "media": []
         }
@@ -197,7 +220,7 @@
         {
           "id": "record",
           "label": "Keep expedition access available",
-          "text": "Record expedition qualification without consuming Energy or entering Activity.",
+          "text": "Keep expedition access available for a later deliberate departure; spend no Energy and enter no Activity now.",
           "conditions": [],
           "effects": [
             {
@@ -211,7 +234,7 @@
     },
     {
       "id": "hunter.career.veteran-ready",
-      "title": "Veteran route ready",
+      "title": "Ordinary work can be a complete route",
       "sourceDomain": "hunter",
       "trigger": [],
       "reactionTriggers": [
@@ -253,7 +276,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "Twenty ordinary contracts are enough to make veteran service a complete late-career route independent of rare targets.",
+          "text": "Twenty ordinary contracts show a different kind of mastery: reliable tracking, escort, sorting, trap checks, route notes, and handoffs repeated across changing seasons. Veteran service does not require a rare target.",
           "conditions": [],
           "media": []
         }
@@ -262,7 +285,7 @@
         {
           "id": "record",
           "label": "Record veteran readiness",
-          "text": "Keep the veteran route available without closing Master, Warden, or Legend preparation.",
+          "text": "Keep the veteran route available while leaving Master Hunter, Warden, and Legend preparation open.",
           "conditions": [],
           "effects": [
             {
@@ -276,7 +299,7 @@
     },
     {
       "id": "hunter.career.veteran",
-      "title": "Choose Veteran",
+      "title": "Choose seasoned service",
       "sourceDomain": "hunter",
       "trigger": [],
       "reactionTriggers": [
@@ -315,7 +338,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "You could make reliable ordinary hunting the route itself, or leave that route open while preparing something more specialized.",
+          "text": "You can make dependable ordinary Hunter work the late route itself, or keep that route open while preparing a more specialized responsibility. Neither choice rewrites the work already done.",
           "conditions": [],
           "media": []
         }
@@ -324,7 +347,7 @@
         {
           "id": "take-route",
           "label": "Take the Veteran route",
-          "text": "Choose seasoned ordinary work as the late-career branch.",
+          "text": "Choose seasoned local contracts and reliable field practice as the late-career branch.",
           "conditions": [],
           "effects": [
             {
@@ -342,7 +365,7 @@
         {
           "id": "keep-open",
           "label": "Keep the route open",
-          "text": "Do not choose a late branch yet.",
+          "text": "Leave Veteran available while continuing other preparation.",
           "conditions": [],
           "effects": []
         }
@@ -350,7 +373,7 @@
     },
     {
       "id": "hunter.career.master-hunter",
-      "title": "Master Hunter route",
+      "title": "Master Hunter: preparation under difficult contracts",
       "sourceDomain": "hunter",
       "trigger": [],
       "reactionTriggers": [
@@ -415,7 +438,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "Preparation, a preserved return, and rare-contract breadth now support the Master Hunter branch.",
+          "text": "Master Hunter is supported by preparation breadth: hard routes made workable, successful expeditions, preserved field evidence, and readiness for contracts that cannot be solved by routine local work alone.",
           "conditions": [],
           "media": []
         }
@@ -424,7 +447,7 @@
         {
           "id": "take-route",
           "label": "Take the Master Hunter route",
-          "text": "Choose preparation and difficult successful returns as the late branch.",
+          "text": "Choose preparation, rare-contract competence, and difficult successful returns as the late-career branch.",
           "conditions": [],
           "effects": [
             {
@@ -442,7 +465,7 @@
         {
           "id": "keep-open",
           "label": "Keep Master open",
-          "text": "Preserve the route facts while considering another branch.",
+          "text": "Keep the Master Hunter route available without closing protection or investigation routes.",
           "conditions": [],
           "effects": []
         }
@@ -450,7 +473,7 @@
     },
     {
       "id": "hunter.career.warden",
-      "title": "Warden route",
+      "title": "Warden: knowing what should remain workable",
       "sourceDomain": "hunter",
       "trigger": [],
       "reactionTriggers": [
@@ -504,7 +527,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "Knowledge of the territory and a resolved professional conflict now support a protection-focused Warden branch without using a morality score.",
+          "text": "Warden grows from territory knowledge and a concrete protection choice: which routes can bear pressure, which need recovery, and how to keep people moving without treating every sign as a target. It is responsibility, not a morality score.",
           "conditions": [],
           "media": []
         }
@@ -513,7 +536,7 @@
         {
           "id": "take-route",
           "label": "Take the Warden route",
-          "text": "Choose protection and route stewardship as the late branch.",
+          "text": "Choose route protection, local knowledge, and stewardship as the late-career branch.",
           "conditions": [],
           "effects": [
             {
@@ -531,7 +554,7 @@
         {
           "id": "keep-open",
           "label": "Keep Warden open",
-          "text": "Preserve the route facts while considering another branch.",
+          "text": "Keep the Warden route available without declaring other Hunter approaches wrong.",
           "conditions": [],
           "effects": []
         }
@@ -539,7 +562,7 @@
     },
     {
       "id": "hunter.career.legend",
-      "title": "Legend route",
+      "title": "Legend: a route built from unresolved evidence",
       "sourceDomain": "hunter",
       "trigger": [],
       "reactionTriggers": [
@@ -615,7 +638,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "Independent clues and a successful expedition now form a rare multi-system route. No fixed boss or new public ending identity is implied.",
+          "text": "Forest sign, Tavern information, and a successful expedition now support a rare investigation route, but they still do not prove a named beast, boss, or single canonical explanation.",
           "conditions": [],
           "media": []
         }
@@ -624,7 +647,7 @@
         {
           "id": "take-route",
           "label": "Take the Legend route",
-          "text": "Choose the rare multi-system route as the late branch.",
+          "text": "Choose the rare multi-system investigation route without fixing what the unknown target must be.",
           "conditions": [],
           "effects": [
             {
@@ -642,7 +665,7 @@
         {
           "id": "keep-open",
           "label": "Keep Legend open",
-          "text": "Preserve the route facts while considering another branch.",
+          "text": "Keep the evidence and leave the Legend route open while other explanations remain possible.",
           "conditions": [],
           "effects": []
         }
@@ -650,7 +673,7 @@
     },
     {
       "id": "hunter.career.outcome-ready",
-      "title": "Hunter outcome-ready",
+      "title": "A complete Hunter route, not an automatic ending",
       "sourceDomain": "hunter",
       "trigger": [],
       "reactionTriggers": [
@@ -709,7 +732,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "The Hunter career now has a complete late-route state. Hard Work remains independent and any future complex public ending still requires an authorized ID.",
+          "text": "Your Hunter path now has a stable late-career state. Ordinary Hard Work remains independently available, and no unapproved Master, Warden, or Legend ending is created by this authored layer.",
           "conditions": [],
           "media": []
         }
@@ -718,7 +741,7 @@
         {
           "id": "continue",
           "label": "Keep living",
-          "text": "Move to outcome-ready without auto-committing an ending.",
+          "text": "Move to outcome-ready while leaving ending commitment as a separate explicit decision.",
           "conditions": [],
           "effects": [
             {

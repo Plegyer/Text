@@ -28,7 +28,7 @@
   "events": [
     {
       "id": "hunter.routes.master-ready",
-      "title": "Master Hunter route ready",
+      "title": "Master Hunter preparation is ready",
       "sourceDomain": "hunter",
       "trigger": [],
       "reactionTriggers": [
@@ -144,7 +144,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "A full season cycle, repeated successful returns, rough-route preparation, and preserved evidence now form the Master Hunter route. It is not a kill counter.",
+          "text": "A full seasonal cycle, repeated successful expedition returns, rough-route capability, and preserved evidence now form a preparation-heavy Master Hunter route. The proof is method and return quality, not a kill counter.",
           "conditions": [],
           "media": []
         }
@@ -153,7 +153,7 @@
         {
           "id": "record",
           "label": "Record Master Hunter readiness",
-          "text": "Open rare-contract preparation while keeping other late routes available.",
+          "text": "Record rare-contract readiness while keeping Warden, Legend, and Veteran routes available.",
           "conditions": [],
           "effects": [
             {
@@ -172,7 +172,7 @@
     },
     {
       "id": "hunter.routes.warden-ready",
-      "title": "Warden route ready",
+      "title": "Warden territory knowledge is ready",
       "sourceDomain": "hunter",
       "trigger": [],
       "reactionTriggers": [
@@ -266,7 +266,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "A concrete protection choice, professional conflict resolution, and actual territory knowledge now support Warden as a distinct route rather than a morality score.",
+          "text": "A real protection choice, professional conflict resolution, and evidence from the territory now support Warden as a route about keeping ground understandable and usable. It is not a score for being kinder or harsher.",
           "conditions": [],
           "media": []
         }
@@ -275,7 +275,7 @@
         {
           "id": "record",
           "label": "Record Warden readiness",
-          "text": "Keep protection/stewardship as a typed late route.",
+          "text": "Record protection and route-stewardship readiness as its own typed Hunter route.",
           "conditions": [],
           "effects": [
             {
@@ -295,7 +295,7 @@
     },
     {
       "id": "hunter.routes.legend-contract",
-      "title": "Rare multi-system contract",
+      "title": "A rare contract with no settled answer",
       "sourceDomain": "hunter",
       "trigger": [],
       "reactionTriggers": [
@@ -403,8 +403,34 @@
       ],
       "variants": [
         {
+          "id": "farm-comparison",
+          "text": "The Forest and Tavern trail lines now overlap with a preserved Farm comparison. The agreement narrows the investigation, but a biological match is evidence, not a final identity for the rare target.",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "hunter",
+              "fact": "farm-clue-known",
+              "present": true
+            }
+          ],
+          "media": []
+        },
+        {
+          "id": "lumber-route",
+          "text": "The Forest and Tavern trail lines now overlap with a Lumber route observation. The same ground may explain several reports, but shared geography does not prove a single creature or cause.",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "hunter",
+              "fact": "lumber-clue-known",
+              "present": true
+            }
+          ],
+          "media": []
+        },
+        {
           "id": "default",
-          "text": "Independent Forest and Tavern clues now overlap with a Farm or Lumber observation. You can accept a rare investigation contract without defining a fixed boss or combat system.",
+          "text": "Forest and Tavern clues now overlap with another independent observation. The overlap is enough to investigate, not enough to name a species, boss, culprit, or required outcome.",
           "conditions": [],
           "media": []
         }
@@ -413,7 +439,7 @@
         {
           "id": "accept",
           "label": "Accept the rare contract",
-          "text": "Activate the dedicated rare route for the next Hunter expedition.",
+          "text": "Activate the existing rare expedition route and investigate the clue overlap without committing to a fixed answer.",
           "conditions": [],
           "effects": [
             {
@@ -426,7 +452,7 @@
         {
           "id": "defer",
           "label": "Defer the rare contract",
-          "text": "Keep the clues without activating the rare route yet.",
+          "text": "Keep every clue intact and leave the rare contract inactive until you choose to pursue it.",
           "conditions": [],
           "effects": []
         }
@@ -434,7 +460,7 @@
     },
     {
       "id": "hunter.routes.legend-return",
-      "title": "Rare route returned successfully",
+      "title": "The rare route returned with evidence",
       "sourceDomain": "hunter",
       "trigger": [],
       "reactionTriggers": [
@@ -487,8 +513,21 @@
       ],
       "variants": [
         {
+          "id": "preserved-evidence",
+          "text": "The rare route returned with preserved field evidence as well as joined clue lines. The specimen can support study and comparison without turning the investigation into proof of a fixed legendary species.",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "hunter",
+              "fact": "expedition-preserved-sample",
+              "present": true
+            }
+          ],
+          "media": []
+        },
+        {
           "id": "default",
-          "text": "The active rare contract returned successfully through the dedicated rare expedition route. The result is enough to mark Legend readiness without inventing a public ending identity.",
+          "text": "The rare expedition returned successfully. What came back is enough to close this contract and support Legend readiness, but success does not require a named boss, a kill, or a single canonical explanation.",
           "conditions": [],
           "media": []
         }
@@ -497,7 +536,7 @@
         {
           "id": "record",
           "label": "Record the rare return",
-          "text": "Close the rare contract and publish the Legend route fact.",
+          "text": "Close the current rare contract, record what the expedition actually established, and keep the unknown parts unknown.",
           "conditions": [],
           "effects": [
             {

@@ -30,7 +30,7 @@
   "events": [
     {
       "id": "hunter.items.preserve-return",
-      "title": "Preserve the expedition return",
+      "title": "Preserve what the expedition actually found",
       "sourceDomain": "hunter",
       "trigger": [],
       "reactionTriggers": [
@@ -71,8 +71,21 @@
       ],
       "variants": [
         {
+          "id": "rare-investigation",
+          "text": "On a rare-contract return, the Field Preservation Kit lets you separate observation from story: preserve the physical evidence, label where it came from, and leave its final identity unresolved.",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "hunter",
+              "fact": "rare-contract-active",
+              "present": true
+            }
+          ],
+          "media": []
+        },
+        {
           "id": "default",
-          "text": "The Field Preservation Kit gives you a real extraction choice after a successful expedition: preserve evidence for later route work instead of treating every return as a trophy.",
+          "text": "After a successful expedition, the Field Preservation Kit lets you keep evidence in a form that can be compared later. Preservation is an extraction choice, not a trophy requirement and not a new combat system.",
           "conditions": [],
           "media": []
         }
@@ -81,7 +94,7 @@
         {
           "id": "preserve",
           "label": "Preserve the field evidence",
-          "text": "Use the existing preservation capability and record a typed Hunter sample fact.",
+          "text": "Use the existing preserve_specimen capability and record the Hunter sample fact for later comparison.",
           "conditions": [],
           "effects": [
             {
@@ -94,7 +107,7 @@
         {
           "id": "leave",
           "label": "Leave the evidence unpreserved",
-          "text": "Keep the successful return without adding the preservation route fact.",
+          "text": "Keep the successful return without taking or formalizing this evidence; the career remains playable.",
           "conditions": [],
           "effects": []
         }
@@ -102,7 +115,7 @@
     },
     {
       "id": "hunter.items.rough-route-return",
-      "title": "Record the rope-assisted route",
+      "title": "Turn Rope Kit use into route knowledge",
       "sourceDomain": "hunter",
       "trigger": [],
       "reactionTriggers": [
@@ -149,7 +162,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "The Rope Kit made rough-route access a practical option rather than a stat-only shortcut. You can preserve that method as Hunter route knowledge.",
+          "text": "The Rope Kit changed which rough ground was practical to cross, not how much damage you could deal. A successful return lets you record where the secured crossing worked and what preparation the route needs next time.",
           "conditions": [],
           "media": []
         }
@@ -157,8 +170,8 @@
       "choices": [
         {
           "id": "record",
-          "label": "Record the rope route",
-          "text": "Keep the rough-route capability as a typed Hunter progression fact.",
+          "label": "Record the rope-assisted route",
+          "text": "Keep the existing cross_rough_route capability as typed Hunter route knowledge.",
           "conditions": [],
           "effects": [
             {
@@ -170,8 +183,8 @@
         },
         {
           "id": "skip",
-          "label": "Do not formalize it",
-          "text": "Keep the item and ordinary expedition access without adding a route fact.",
+          "label": "Keep it as field experience only",
+          "text": "Keep the Rope Kit and normal expedition access without formalizing a progression fact.",
           "conditions": [],
           "effects": []
         }

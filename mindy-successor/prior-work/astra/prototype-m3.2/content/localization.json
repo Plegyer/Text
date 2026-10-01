@@ -7237,6 +7237,634 @@
     "presentation.static.career.tavern.event.information-rumour-route.caption": {
       "ru": "Таверна: Подтверждение информационного маршрута.",
       "en": "Tavern: Information-route confirmation."
+    },
+    "action.hunter.shift.scene.spring.default.text": {
+      "ru": "Весенняя местная работа остаётся у городской окраины: подтвердить след, закончить оплаченный заказ и вернуться до того, как короткая смена превратится в экспедицию.",
+      "en": "A thaw-season local contract stays close to the city edge: confirm the sign, finish the paid task, and return before a short job turns into an expedition."
+    },
+    "action.hunter.shift.scene.spring.melt-tracks.text": {
+      "ru": "Талая вода пересекла несколько цепочек следов. Ты сравниваешь шаг, глубину и сломанный наст, чтобы не принять свежий след за старую отметину, размытую стоком.",
+      "en": "Meltwater has crossed several track lines. You compare stride, depth, and broken crust so fresh movement is not confused with marks widened by runoff."
+    },
+    "action.hunter.shift.scene.spring.trap-check.text": {
+      "ru": "Весенняя проверка ловушек — это обслуживание: осмотреть линию, безопасно освободить неудачный улов, восстановить только исправное и записать повреждения вместо того, чтобы превращать работу в погоню.",
+      "en": "The spring trap-check is maintenance work: inspect the line, free a bad catch safely, reset only what is usable, and report damage instead of extending the job into a pursuit."
+    },
+    "action.hunter.shift.scene.spring.edge-scout.text": {
+      "ru": "Признанная весенняя работа — разведать грязные подходы у границы леса, отметить размытые переходы и передать следующей смене запись, где обычный маршрут заканчивается и начинается задача для экспедиции.",
+      "en": "Recognized spring work means scouting muddy edge approaches, marking washed crossings, and handing the next shift a route note that distinguishes passable ground from an expedition problem."
+    },
+    "action.hunter.shift.scene.summer.default.text": {
+      "ru": "Летнее сопровождение — обычная оплаченная работа: держать темп на отмеченном пути, проверять остановки с водой, не выпускать клиента за согласованный маршрут и вернуться до того, как жара превратит местную задачу в большой выход.",
+      "en": "A summer escort is ordinary paid work: pace the marked route, check water stops, keep the client inside the agreed line, and return before heat turns a local job into a larger hunt."
+    },
+    "action.hunter.shift.scene.summer.training.text": {
+      "ru": "Учебная работа остаётся практичной. Ты читаешь примятую траву и нарушенную пыль, объясняешь, каким признакам можно доверять, и заканчиваешь упражнение, пока ещё есть свет для нормальной передачи смены.",
+      "en": "Training work stays practical. You read bent brush and disturbed dust, explain which sign is reliable, and end the exercise while there is still enough daylight for a clean handoff."
+    },
+    "action.hunter.shift.scene.summer.edge-predator.text": {
+      "ru": "Свежие признаки хищника у обжитой окраины требуют проверки, а не эффектной погони. Ты подтверждаешь направление, предупреждаешь тех, кто пользуется маршрутом, и оставляешь ясную границу для возможной поздней экспедиции.",
+      "en": "Fresh predator sign near the settled edge calls for verification, not a dramatic chase. You confirm direction, warn the client route, and leave a clear boundary for any later expedition."
+    },
+    "action.hunter.shift.scene.autumn.default.text": {
+      "ru": "Осенью дни передачи особенно заняты. Ты сортируешь бирки, полевые записи и пригодные образцы так, чтобы каждый заказ оставался связан с правильным местом, временем и клиентом.",
+      "en": "Autumn handoff days are busy with ordinary returns. You sort tags, field notes, and usable trophies so each contract stays attached to the right place, time, and client."
+    },
+    "action.hunter.shift.scene.autumn.migration.text": {
+      "ru": "Смена следопыта идёт за признаками миграции лишь настолько далеко, чтобы обновить местную карту. Ты отделяешь сезонное движение от необычного нарушения и приносишь это различие обратно к следующему заказу.",
+      "en": "A tracker shift follows migration sign only far enough to update the local map. You separate seasonal movement from unusual disturbance and bring the distinction back for the next contract."
+    },
+    "action.hunter.shift.scene.autumn.trophy-handoff.text": {
+      "ru": "Признанная передача важна не показом, а происхождением: сопоставить образец или трофей с маршрутными заметками, отделить обычное от необычного и отметить только те признаки, которые действительно могут оправдать редкий контракт.",
+      "en": "A recognized handoff is less about display than provenance: match the specimen or trophy to its route notes, identify what is ordinary, and flag only the evidence that might justify rarer work."
+    },
+    "action.hunter.shift.scene.winter.default.text": {
+      "ru": "Зимой световой день слишком короток для догадок. Короткая проверка следов устанавливает, что прошло недавно, что осталось от старого движения и какой маршрут можно отработать, не рискуя всем днём.",
+      "en": "Winter daylight is too scarce to waste on guesswork. A short local track-check confirms what moved recently, what is old sign, and which route can be worked without gambling the whole day."
+    },
+    "action.hunter.shift.scene.winter.route-limits.text": {
+      "ru": "Признанная зимняя работа — сортировка маршрутов: отметить, где ещё можно пройти, где нужен Rope Kit и что должно ждать подготовленной экспедиции стоимостью в две Энергии.",
+      "en": "Recognized winter work is route triage: mark what remains passable, what needs a Rope Kit, and what should wait for a properly prepared two-Energy expedition."
+    },
+    "activity.hunter.expedition.label": {
+      "ru": "Полевая экспедиция охотника",
+      "en": "Hunter field expedition"
+    },
+    "activityOption.hunter.expedition.local-route.label": {
+      "ru": "Выйти по отмеченному местному маршруту",
+      "en": "Take the marked local expedition route"
+    },
+    "activityOption.hunter.expedition.local-route.help": {
+      "ru": "Надёжный путь для обычной экспедиции. Он не требует Rope Kit и не превращает редкий контракт в обязательный.",
+      "en": "Use the dependable local route for an ordinary expedition without requiring a Rope Kit or activating a rare contract."
+    },
+    "activityOption.hunter.expedition.rough-route.label": {
+      "ru": "Использовать Rope Kit на сложном маршруте",
+      "en": "Use the Rope Kit on the rough route"
+    },
+    "activityOption.hunter.expedition.rough-route.help": {
+      "ru": "Существующая способность cross_rough_route открывает сложный проход как вариант маршрута, а не как боевой бонус.",
+      "en": "Use the existing cross_rough_route capability to make the rough passage a route choice rather than a combat bonus."
+    },
+    "activityOption.hunter.expedition.rare-route.label": {
+      "ru": "Идти по подготовленному маршруту редкого контракта",
+      "en": "Follow the prepared rare-contract route"
+    },
+    "activityOption.hunter.expedition.rare-route.help": {
+      "ru": "Доступен только когда реальные Forest/Tavern clues, активный редкий контракт и Preservation Kit уже подготовили этот путь.",
+      "en": "Use the existing rare-contract, Forest/Tavern clue, and preservation prerequisites to enter the prepared investigation route."
+    },
+    "activityOption.hunter.expedition.local-track.label": {
+      "ru": "Прочитать и сопоставить местные следы",
+      "en": "Read and compare the local signs"
+    },
+    "activityOption.hunter.expedition.local-track.help": {
+      "ru": "Продвигаться по реальным признакам местности; Wits или существующая Field Craft подготовка могут сделать этот способ доступным.",
+      "en": "Advance by reading real terrain signs; Wits or existing Field Craft preparation can make this option available."
+    },
+    "activityOption.hunter.expedition.local-observe.label": {
+      "ru": "Понаблюдать, прежде чем сокращать дистанцию",
+      "en": "Observe before closing the distance"
+    },
+    "activityOption.hunter.expedition.local-observe.help": {
+      "ru": "Использовать подготовку наблюдения и записи, не заставляя экспедицию немедленно переходить к контакту.",
+      "en": "Use observation and note-taking preparation without forcing immediate contact."
+    },
+    "activityOption.hunter.expedition.rough-crossing.label": {
+      "ru": "Закрепить переход с Rope Kit",
+      "en": "Secure the crossing with the Rope Kit"
+    },
+    "activityOption.hunter.expedition.rough-crossing.help": {
+      "ru": "Применить существующую способность cross_rough_route, чтобы безопасно пройти сложный участок.",
+      "en": "Apply the existing Rope Kit capability to secure the difficult crossing."
+    },
+    "activityOption.hunter.expedition.rough-track.label": {
+      "ru": "Продолжить след за размытой землёй",
+      "en": "Track beyond the washed ground"
+    },
+    "activityOption.hunter.expedition.rough-track.help": {
+      "ru": "Читать признаки после сложного перехода; Dexterity или Field Craft подготовка остаются существующими условиями.",
+      "en": "Continue tracking beyond washed ground using the existing Dexterity or Field Craft condition."
+    },
+    "activityOption.hunter.expedition.rare-tracking.label": {
+      "ru": "Соединить независимые линии улик",
+      "en": "Join the independent clue lines"
+    },
+    "activityOption.hunter.expedition.rare-tracking.help": {
+      "ru": "Сопоставить Forest и Tavern clues как две отдельные линии, не превращая их в одну глобальную валюту информации.",
+      "en": "Join the independent Forest and Tavern clue lines without creating a global information currency."
+    },
+    "activityOption.hunter.expedition.preserve-evidence.label": {
+      "ru": "Сохранить полевой образец",
+      "en": "Preserve a field specimen"
+    },
+    "activityOption.hunter.expedition.preserve-evidence.help": {
+      "ru": "Использовать существующую способность preserve_specimen, чтобы вынести проверяемое доказательство вместо обязательного трофея.",
+      "en": "Use preserve_specimen to carry out verifiable evidence instead of requiring a trophy."
+    },
+    "activityOption.hunter.expedition.study-sign.label": {
+      "ru": "Изучить необычный признак без навязанного контакта",
+      "en": "Study the unusual sign without forcing contact"
+    },
+    "activityOption.hunter.expedition.study-sign.help": {
+      "ru": "Использовать доступную Arcana-подготовку для интерпретации следа, не объявляя заранее, какое существо или причина за ним стоит.",
+      "en": "Use existing Arcana preparation to interpret unusual sign without deciding what creature or cause it must represent."
+    },
+    "event.hunter.career.first-shift.title": {
+      "ru": "Первое надёжное возвращение",
+      "en": "The first reliable return"
+    },
+    "event.hunter.career.first-shift.variant.street-survival.text": {
+      "ru": "Когда ты ночуешь на улице, первая охотничья оплата сразу имеет значение, но работа не отменяет обычные правила уличной ночи. Изменение практическое: теперь есть обычная оплаченная работа, к которой можно вернуться без личного спасителя или скрытого обязательства.",
+      "en": "When you are sleeping rough, the first Hunter wage matters immediately, but the job does not erase the street-night rules. What changes is practical: you now have ordinary paid work you can return to without accepting a private rescue or hidden obligation."
+    },
+    "event.hunter.career.first-shift.variant.cheap-budget.text": {
+      "ru": "Если дешёвая общая комната уже забирает часть бюджета, первая охотничья оплата ощущается особенно ясно. Это остаётся обычной работой: она помогает следующему дню, но не возвращает плату за комнату, не меняет цену жилья и не создаёт особого права на ночлег.",
+      "en": "With a cheap shared room already taking part of the budget, the first Hunter wage feels concrete. The work remains ordinary paid work: it helps the next day without refunding lodging, changing its price, or creating a special housing entitlement."
+    },
+    "event.hunter.career.first-shift.variant.default.text": {
+      "ru": "Первый законченный местный заказ доказывает базовую дисциплину профессии: прочитать достаточно признаков для решения, закончить согласованную работу и вернуться с заметками, которыми сможет воспользоваться другой охотник.",
+      "en": "The first completed local contract proves the basic discipline of the work: read enough sign to act, finish the agreed task, and return with notes another hunter can actually use."
+    },
+    "event.hunter.career.first-shift.choice.continue.label": {
+      "ru": "Перейти к работе следопыта",
+      "en": "Take tracker work"
+    },
+    "event.hunter.career.first-shift.choice.continue.text": {
+      "ru": "Перейти к регулярной работе со следами, сохраняя обычные смены отдельными от экспедиционного слоя.",
+      "en": "Move into regular tracking work while keeping ordinary shifts distinct from the separate expedition layer."
+    },
+    "event.hunter.career.recognized-hunter.title": {
+      "ru": "Работа, на которую можно положиться",
+      "en": "Work people can rely on"
+    },
+    "event.hunter.career.recognized-hunter.variant.default.text": {
+      "ru": "Достаточно местных заказов закончились полезными записями, чистой передачей и предсказуемым возвращением, чтобы тебе доверили подготовку работы дальше обжитой окраины. Признание открывает варианты, но не превращает каждую оплачиваемую смену в экспедицию.",
+      "en": "Enough local contracts now end with usable notes, clean handoffs, and predictable returns that you are trusted with preparation for work beyond the settled edge. Recognition opens options; it does not turn every paid shift into an expedition."
+    },
+    "event.hunter.career.recognized-hunter.choice.continue.label": {
+      "ru": "Принять признанную работу",
+      "en": "Accept recognized work"
+    },
+    "event.hunter.career.recognized-hunter.choice.continue.text": {
+      "ru": "Принять работу признанного охотника, сохраняя экспедиции отдельными, добровольно подготовленными выходами.",
+      "en": "Accept recognized Hunter work while keeping expeditions optional and separately prepared."
+    },
+    "event.hunter.career.expedition-qualified.title": {
+      "ru": "Отдельный вариант экспедиции",
+      "en": "A separate expedition option"
+    },
+    "event.hunter.career.expedition-qualified.variant.default.text": {
+      "ru": "Тебе уже доверяют двухэнергетическую экспедицию, когда заказ действительно требует дальнего пути, сложного доступа или длительного выслеживания. Допуск означает разрешение на подготовку, а не автоматический выход.",
+      "en": "You are now trusted to take the two-Energy expedition when a contract genuinely needs distance, rough access, or extended tracking. Qualification is preparation permission, not an automatic departure."
+    },
+    "event.hunter.career.expedition-qualified.choice.record.label": {
+      "ru": "Оставить экспедицию доступной",
+      "en": "Keep expedition access available"
+    },
+    "event.hunter.career.expedition-qualified.choice.record.text": {
+      "ru": "Сохранить доступ к экспедиции для будущего осознанного выхода; сейчас не тратить Энергию и не входить в Activity.",
+      "en": "Keep expedition access available for a later deliberate departure; spend no Energy and enter no Activity now."
+    },
+    "event.hunter.career.veteran-ready.title": {
+      "ru": "Обычная работа может быть полноценным путём",
+      "en": "Ordinary work can be a complete route"
+    },
+    "event.hunter.career.veteran-ready.variant.default.text": {
+      "ru": "Двадцать обычных заказов показывают другой вид мастерства: надёжное выслеживание, сопровождение, сортировка, проверка ловушек, маршрутные записи и передача работы в меняющихся сезонах. Путь ветерана не требует редкой цели.",
+      "en": "Twenty ordinary contracts show a different kind of mastery: reliable tracking, escort, sorting, trap checks, route notes, and handoffs repeated across changing seasons. Veteran service does not require a rare target."
+    },
+    "event.hunter.career.veteran-ready.choice.record.label": {
+      "ru": "Зафиксировать готовность ветерана",
+      "en": "Record veteran readiness"
+    },
+    "event.hunter.career.veteran-ready.choice.record.text": {
+      "ru": "Сохранить путь ветерана доступным, не закрывая подготовку Master Hunter, Warden или Legend.",
+      "en": "Keep the veteran route available while leaving Master Hunter, Warden, and Legend preparation open."
+    },
+    "event.hunter.career.veteran.title": {
+      "ru": "Выбрать опытную службу",
+      "en": "Choose seasoned service"
+    },
+    "event.hunter.career.veteran.variant.default.text": {
+      "ru": "Можно сделать надёжную обычную охоту самостоятельным поздним путём или оставить этот путь открытым, готовясь к более специализированной ответственности. Ни один выбор не переписывает уже сделанную работу.",
+      "en": "You can make dependable ordinary Hunter work the late route itself, or keep that route open while preparing a more specialized responsibility. Neither choice rewrites the work already done."
+    },
+    "event.hunter.career.veteran.choice.take-route.label": {
+      "ru": "Выбрать путь ветерана",
+      "en": "Take the Veteran route"
+    },
+    "event.hunter.career.veteran.choice.take-route.text": {
+      "ru": "Выбрать опытные местные заказы и надёжную полевую практику как позднюю ветку карьеры.",
+      "en": "Choose seasoned local contracts and reliable field practice as the late-career branch."
+    },
+    "event.hunter.career.veteran.choice.keep-open.label": {
+      "ru": "Оставить путь ветерана открытым",
+      "en": "Keep the route open"
+    },
+    "event.hunter.career.veteran.choice.keep-open.text": {
+      "ru": "Сохранить Veteran доступным, продолжая другую подготовку.",
+      "en": "Leave Veteran available while continuing other preparation."
+    },
+    "event.hunter.career.master-hunter.title": {
+      "ru": "Master Hunter: подготовка к сложным контрактам",
+      "en": "Master Hunter: preparation under difficult contracts"
+    },
+    "event.hunter.career.master-hunter.variant.default.text": {
+      "ru": "Master Hunter опирается на широту подготовки: сложные маршруты становятся проходимыми, экспедиции успешно возвращаются, полевые доказательства сохраняются, а редкие контракты не сводятся к обычной местной работе.",
+      "en": "Master Hunter is supported by preparation breadth: hard routes made workable, successful expeditions, preserved field evidence, and readiness for contracts that cannot be solved by routine local work alone."
+    },
+    "event.hunter.career.master-hunter.choice.take-route.label": {
+      "ru": "Выбрать путь Master Hunter",
+      "en": "Take the Master Hunter route"
+    },
+    "event.hunter.career.master-hunter.choice.take-route.text": {
+      "ru": "Выбрать подготовку, работу с редкими контрактами и трудные успешные возвращения как позднюю ветку карьеры.",
+      "en": "Choose preparation, rare-contract competence, and difficult successful returns as the late-career branch."
+    },
+    "event.hunter.career.master-hunter.choice.keep-open.label": {
+      "ru": "Оставить Master Hunter открытым",
+      "en": "Keep Master open"
+    },
+    "event.hunter.career.master-hunter.choice.keep-open.text": {
+      "ru": "Сохранить путь Master Hunter, не закрывая защитный или исследовательский варианты.",
+      "en": "Keep the Master Hunter route available without closing protection or investigation routes."
+    },
+    "event.hunter.career.warden.title": {
+      "ru": "Warden: знать, что должно оставаться рабочим",
+      "en": "Warden: knowing what should remain workable"
+    },
+    "event.hunter.career.warden.variant.default.text": {
+      "ru": "Warden вырастает из знания территории и конкретного выбора защиты: какие маршруты выдержат нагрузку, каким нужно восстановление и как сохранять движение людей, не превращая каждый след в цель. Это ответственность, а не шкала морали.",
+      "en": "Warden grows from territory knowledge and a concrete protection choice: which routes can bear pressure, which need recovery, and how to keep people moving without treating every sign as a target. It is responsibility, not a morality score."
+    },
+    "event.hunter.career.warden.choice.take-route.label": {
+      "ru": "Выбрать путь Warden",
+      "en": "Take the Warden route"
+    },
+    "event.hunter.career.warden.choice.take-route.text": {
+      "ru": "Выбрать защиту маршрутов, местное знание и stewardship как позднюю ветку карьеры.",
+      "en": "Choose route protection, local knowledge, and stewardship as the late-career branch."
+    },
+    "event.hunter.career.warden.choice.keep-open.label": {
+      "ru": "Оставить Warden открытым",
+      "en": "Keep Warden open"
+    },
+    "event.hunter.career.warden.choice.keep-open.text": {
+      "ru": "Сохранить путь Warden, не объявляя другие подходы охотника неправильными.",
+      "en": "Keep the Warden route available without declaring other Hunter approaches wrong."
+    },
+    "event.hunter.career.legend.title": {
+      "ru": "Legend: путь из нерешённых доказательств",
+      "en": "Legend: a route built from unresolved evidence"
+    },
+    "event.hunter.career.legend.variant.default.text": {
+      "ru": "Лесные признаки, информация из Tavern и успешная экспедиция уже поддерживают редкий исследовательский путь, но всё ещё не доказывают конкретного зверя, босса или единственное каноническое объяснение.",
+      "en": "Forest sign, Tavern information, and a successful expedition now support a rare investigation route, but they still do not prove a named beast, boss, or single canonical explanation."
+    },
+    "event.hunter.career.legend.choice.take-route.label": {
+      "ru": "Выбрать путь Legend",
+      "en": "Take the Legend route"
+    },
+    "event.hunter.career.legend.choice.take-route.text": {
+      "ru": "Выбрать редкий межсистемный исследовательский путь, не фиксируя заранее, чем обязана быть неизвестная цель.",
+      "en": "Choose the rare multi-system investigation route without fixing what the unknown target must be."
+    },
+    "event.hunter.career.legend.choice.keep-open.label": {
+      "ru": "Оставить Legend открытым",
+      "en": "Keep Legend open"
+    },
+    "event.hunter.career.legend.choice.keep-open.text": {
+      "ru": "Сохранить доказательства и оставить путь Legend открытым, пока возможны другие объяснения.",
+      "en": "Keep the evidence and leave the Legend route open while other explanations remain possible."
+    },
+    "event.hunter.career.outcome-ready.title": {
+      "ru": "Завершённый путь охотника, но не автоматическая концовка",
+      "en": "A complete Hunter route, not an automatic ending"
+    },
+    "event.hunter.career.outcome-ready.variant.default.text": {
+      "ru": "Путь охотника достиг устойчивого позднего состояния. Обычный Hard Work остаётся независимым, а этот авторский слой не создаёт неутверждённой концовки Master, Warden или Legend.",
+      "en": "Your Hunter path now has a stable late-career state. Ordinary Hard Work remains independently available, and no unapproved Master, Warden, or Legend ending is created by this authored layer."
+    },
+    "event.hunter.career.outcome-ready.choice.continue.label": {
+      "ru": "Продолжать жить",
+      "en": "Keep living"
+    },
+    "event.hunter.career.outcome-ready.choice.continue.text": {
+      "ru": "Перейти в outcome-ready, оставив выбор концовки отдельным явным решением.",
+      "en": "Move to outcome-ready while leaving ending commitment as a separate explicit decision."
+    },
+    "event.hunter.routes.master-ready.title": {
+      "ru": "Подготовка Master Hunter готова",
+      "en": "Master Hunter preparation is ready"
+    },
+    "event.hunter.routes.master-ready.variant.default.text": {
+      "ru": "Полный сезонный цикл, повторные успешные возвращения, возможность сложного маршрута и сохранённые доказательства формируют путь Master Hunter, основанный на подготовке. Доказательство здесь — метод и качество возвращения, а не счётчик убийств.",
+      "en": "A full seasonal cycle, repeated successful expedition returns, rough-route capability, and preserved evidence now form a preparation-heavy Master Hunter route. The proof is method and return quality, not a kill counter."
+    },
+    "event.hunter.routes.master-ready.choice.record.label": {
+      "ru": "Зафиксировать готовность Master Hunter",
+      "en": "Record Master Hunter readiness"
+    },
+    "event.hunter.routes.master-ready.choice.record.text": {
+      "ru": "Зафиксировать готовность к редким контрактам, сохранив Warden, Legend и Veteran доступными.",
+      "en": "Record rare-contract readiness while keeping Warden, Legend, and Veteran routes available."
+    },
+    "event.hunter.routes.warden-ready.title": {
+      "ru": "Знание территории Warden готово",
+      "en": "Warden territory knowledge is ready"
+    },
+    "event.hunter.routes.warden-ready.variant.default.text": {
+      "ru": "Реальный выбор защиты, разрешённый профессиональный конфликт и доказательства с территории поддерживают Warden как путь сохранения понятной и пригодной местности. Это не баллы за «доброту» или «жёсткость».",
+      "en": "A real protection choice, professional conflict resolution, and evidence from the territory now support Warden as a route about keeping ground understandable and usable. It is not a score for being kinder or harsher."
+    },
+    "event.hunter.routes.warden-ready.choice.record.label": {
+      "ru": "Зафиксировать готовность Warden",
+      "en": "Record Warden readiness"
+    },
+    "event.hunter.routes.warden-ready.choice.record.text": {
+      "ru": "Зафиксировать защиту и stewardship маршрутов как отдельный типизированный путь охотника.",
+      "en": "Record protection and route-stewardship readiness as its own typed Hunter route."
+    },
+    "event.hunter.routes.legend-contract.title": {
+      "ru": "Редкий контракт без готового ответа",
+      "en": "A rare contract with no settled answer"
+    },
+    "event.hunter.routes.legend-contract.variant.farm-comparison.text": {
+      "ru": "Линии Forest и Tavern теперь совпадают с сохранённым сравнением из Farm. Совпадение сужает исследование, но биологическая похожесть остаётся доказательством, а не окончательной личностью редкой цели.",
+      "en": "The Forest and Tavern trail lines now overlap with a preserved Farm comparison. The agreement narrows the investigation, but a biological match is evidence, not a final identity for the rare target."
+    },
+    "event.hunter.routes.legend-contract.variant.lumber-route.text": {
+      "ru": "Линии Forest и Tavern теперь совпадают с наблюдением Lumber на маршруте. Одна и та же местность может объяснить несколько сообщений, но общая география не доказывает одно существо или одну причину.",
+      "en": "The Forest and Tavern trail lines now overlap with a Lumber route observation. The same ground may explain several reports, but shared geography does not prove a single creature or cause."
+    },
+    "event.hunter.routes.legend-contract.variant.default.text": {
+      "ru": "Улики Forest и Tavern теперь пересекаются ещё с одним независимым наблюдением. Этого достаточно для расследования, но недостаточно, чтобы назвать вид, босса, виновника или обязательный исход.",
+      "en": "Forest and Tavern clues now overlap with another independent observation. The overlap is enough to investigate, not enough to name a species, boss, culprit, or required outcome."
+    },
+    "event.hunter.routes.legend-contract.choice.accept.label": {
+      "ru": "Принять редкий контракт",
+      "en": "Accept the rare contract"
+    },
+    "event.hunter.routes.legend-contract.choice.accept.text": {
+      "ru": "Активировать существующий редкий маршрут экспедиции и исследовать пересечение улик, не выбирая заранее фиксированный ответ.",
+      "en": "Activate the existing rare expedition route and investigate the clue overlap without committing to a fixed answer."
+    },
+    "event.hunter.routes.legend-contract.choice.defer.label": {
+      "ru": "Отложить редкий контракт",
+      "en": "Defer the rare contract"
+    },
+    "event.hunter.routes.legend-contract.choice.defer.text": {
+      "ru": "Сохранить все улики и оставить редкий контракт неактивным, пока ты сама не решишь продолжить.",
+      "en": "Keep every clue intact and leave the rare contract inactive until you choose to pursue it."
+    },
+    "event.hunter.routes.legend-return.title": {
+      "ru": "Редкий маршрут вернулся с доказательствами",
+      "en": "The rare route returned with evidence"
+    },
+    "event.hunter.routes.legend-return.variant.preserved-evidence.text": {
+      "ru": "Редкий маршрут вернулся с сохранёнными полевыми доказательствами и соединёнными линиями улик. Образец можно изучать и сравнивать, не превращая расследование в доказательство заранее выбранного легендарного вида.",
+      "en": "The rare route returned with preserved field evidence as well as joined clue lines. The specimen can support study and comparison without turning the investigation into proof of a fixed legendary species."
+    },
+    "event.hunter.routes.legend-return.variant.default.text": {
+      "ru": "Редкая экспедиция успешно вернулась. Принесённого достаточно, чтобы закрыть этот контракт и поддержать готовность Legend, но успех не требует названного босса, убийства или одного канонического объяснения.",
+      "en": "The rare expedition returned successfully. What came back is enough to close this contract and support Legend readiness, but success does not require a named boss, a kill, or a single canonical explanation."
+    },
+    "event.hunter.routes.legend-return.choice.record.label": {
+      "ru": "Зафиксировать редкое возвращение",
+      "en": "Record the rare return"
+    },
+    "event.hunter.routes.legend-return.choice.record.text": {
+      "ru": "Закрыть текущий редкий контракт, записать только то, что экспедиция действительно установила, и оставить неизвестное неизвестным.",
+      "en": "Close the current rare contract, record what the expedition actually established, and keep the unknown parts unknown."
+    },
+    "event.hunter.clues.forest-trail.title": {
+      "ru": "Лесная улика становится маршрутным доказательством",
+      "en": "A Forest trail clue becomes route evidence"
+    },
+    "event.hunter.clues.forest-trail.variant.default.text": {
+      "ru": "Улика Hunter Trail из Forest даёт один проверенный фрагмент знания о местности: где нашли признаки и какой подход к ним привёл. Hunter сохраняет маршрутный факт, не копируя лесной лор и не объявляя эту улику объяснением каждого последующего следа.",
+      "en": "The Forest Hunter Trail clue gives you one verified piece of terrain knowledge: where sign was found and which approach produced it. Hunter records the route fact without copying Forest lore or claiming the clue explains every later track."
+    },
+    "event.hunter.clues.forest-trail.choice.record.label": {
+      "ru": "Записать лесное маршрутное доказательство",
+      "en": "Record the Forest route evidence"
+    },
+    "event.hunter.clues.forest-trail.choice.record.text": {
+      "ru": "Перенести существующую улику Forest в Hunter как один узкий факт подготовки маршрута.",
+      "en": "Carry the existing Forest clue into Hunter as one narrow route-preparation fact."
+    },
+    "event.hunter.clues.lumber-truth.title": {
+      "ru": "Наблюдение Lumber пересекает ту же местность",
+      "en": "A Lumber observation crosses the same ground"
+    },
+    "event.hunter.clues.lumber-truth.variant.default.text": {
+      "ru": "Результат Lumber Forest даёт практическое наблюдение о маршруте: состояние земли, доступ и изменения вдоль рабочей дороги. Hunter может сравнить это со своими следами, не меняя прогрессию Lumber.",
+      "en": "Lumber's Forest result contributes a practical route observation—ground condition, access, and what changed along a worked corridor. Hunter can compare that observation with its own tracks without changing Lumber progression."
+    },
+    "event.hunter.clues.lumber-truth.choice.record.label": {
+      "ru": "Записать маршрутное наблюдение Lumber",
+      "en": "Record the Lumber route observation"
+    },
+    "event.hunter.clues.lumber-truth.choice.record.text": {
+      "ru": "Сохранить существующий world result как локальную улику Hunter, а не как общую валюту лора.",
+      "en": "Store the existing world result as a Hunter-local clue, not a shared lore currency."
+    },
+    "event.hunter.clues.tavern-rumour.title": {
+      "ru": "Подтверждённая информация Tavern доходит до поля",
+      "en": "Confirmed Tavern information reaches the field"
+    },
+    "event.hunter.clues.tavern-rumour.variant.default.text": {
+      "ru": "Маршрутное сообщение Tavern уже прошло собственный этап подтверждения. Hunter рассматривает его как одно привязанное к источнику утверждение о времени и месте: полезное рядом с физическими следами, но недостаточное, чтобы само по себе определить редкую цель.",
+      "en": "The Tavern route report has already passed its own confirmation step. Hunter treats it as one sourced statement about time and place, useful beside physical sign but not strong enough to define the rare target by itself."
+    },
+    "event.hunter.clues.tavern-rumour.choice.record.label": {
+      "ru": "Записать подтверждённую улику Tavern",
+      "en": "Record the confirmed Tavern clue"
+    },
+    "event.hunter.clues.tavern-rumour.choice.record.text": {
+      "ru": "Перенести в Hunter только подтверждённый маршрутный факт; сплетни и личность источника остаются за пределами улики.",
+      "en": "Carry only the confirmed route fact into Hunter preparation; gossip and private identity stay outside the clue."
+    },
+    "event.hunter.clues.farm-sample.title": {
+      "ru": "Сохранённый образец Farm даёт сравнение",
+      "en": "A preserved Farm sample offers comparison"
+    },
+    "event.hunter.clues.farm-sample.variant.default.text": {
+      "ru": "Образец Farm уже сохранён и описан, поэтому Hunter может сравнивать строение, повреждение или остатки с доказательствами экспедиции. Сходство сужает вопросы, но не создаёт новую экономику предметов и не доказывает легендарный вид.",
+      "en": "The Farm sample is already preserved and documented, so Hunter can compare structure, damage, or residue against expedition evidence. A resemblance narrows questions; it does not create a new item economy or prove a legendary species."
+    },
+    "event.hunter.clues.farm-sample.choice.record.label": {
+      "ru": "Записать сравнение Farm",
+      "en": "Record the Farm comparison"
+    },
+    "event.hunter.clues.farm-sample.choice.record.text": {
+      "ru": "Сохранить один локальный сравнительный факт Hunter, не затрагивая прогрессию Farm.",
+      "en": "Keep one Hunter-local comparison fact and leave Farm progression untouched."
+    },
+    "event.hunter.items.preserve-return.title": {
+      "ru": "Сохранить то, что действительно нашла экспедиция",
+      "en": "Preserve what the expedition actually found"
+    },
+    "event.hunter.items.preserve-return.variant.rare-investigation.text": {
+      "ru": "При возвращении с редкого контракта Field Preservation Kit помогает отделить наблюдение от рассказа: сохранить физическое доказательство, отметить место происхождения и оставить окончательную идентификацию открытой.",
+      "en": "On a rare-contract return, the Field Preservation Kit lets you separate observation from story: preserve the physical evidence, label where it came from, and leave its final identity unresolved."
+    },
+    "event.hunter.items.preserve-return.variant.default.text": {
+      "ru": "После успешной экспедиции Field Preservation Kit позволяет сохранить доказательство в форме, пригодной для последующего сравнения. Preservation — это выбор извлечения, а не обязательный трофей и не новая боевая система.",
+      "en": "After a successful expedition, the Field Preservation Kit lets you keep evidence in a form that can be compared later. Preservation is an extraction choice, not a trophy requirement and not a new combat system."
+    },
+    "event.hunter.items.preserve-return.choice.preserve.label": {
+      "ru": "Сохранить полевое доказательство",
+      "en": "Preserve the field evidence"
+    },
+    "event.hunter.items.preserve-return.choice.preserve.text": {
+      "ru": "Использовать существующую способность preserve_specimen и записать факт образца Hunter для последующего сравнения.",
+      "en": "Use the existing preserve_specimen capability and record the Hunter sample fact for later comparison."
+    },
+    "event.hunter.items.preserve-return.choice.leave.label": {
+      "ru": "Оставить доказательство несохранённым",
+      "en": "Leave the evidence unpreserved"
+    },
+    "event.hunter.items.preserve-return.choice.leave.text": {
+      "ru": "Сохранить успешное возвращение, не забирая и не формализуя это доказательство; карьера остаётся полностью доступной.",
+      "en": "Keep the successful return without taking or formalizing this evidence; the career remains playable."
+    },
+    "event.hunter.items.rough-route-return.title": {
+      "ru": "Превратить использование Rope Kit в знание маршрута",
+      "en": "Turn Rope Kit use into route knowledge"
+    },
+    "event.hunter.items.rough-route-return.variant.default.text": {
+      "ru": "Rope Kit изменил то, какую сложную местность было реально пройти, а не силу атаки. Успешное возвращение позволяет записать, где закреплённый переход сработал и какая подготовка понадобится этому маршруту в следующий раз.",
+      "en": "The Rope Kit changed which rough ground was practical to cross, not how much damage you could deal. A successful return lets you record where the secured crossing worked and what preparation the route needs next time."
+    },
+    "event.hunter.items.rough-route-return.choice.record.label": {
+      "ru": "Записать маршрут с Rope Kit",
+      "en": "Record the rope-assisted route"
+    },
+    "event.hunter.items.rough-route-return.choice.record.text": {
+      "ru": "Сохранить существующую способность cross_rough_route как типизированное знание маршрута Hunter.",
+      "en": "Keep the existing cross_rough_route capability as typed Hunter route knowledge."
+    },
+    "event.hunter.items.rough-route-return.choice.skip.label": {
+      "ru": "Оставить это полевым опытом",
+      "en": "Keep it as field experience only"
+    },
+    "event.hunter.items.rough-route-return.choice.skip.text": {
+      "ru": "Сохранить Rope Kit и обычный доступ к экспедициям, не формализуя отдельный факт прогрессии.",
+      "en": "Keep the Rope Kit and normal expedition access without formalizing a progression fact."
+    },
+    "event.hunter.relationship.intro.title": {
+      "ru": "Старший проводник проверяет передачу",
+      "en": "A senior guide checks the handoff"
+    },
+    "event.hunter.relationship.intro.variant.client-handoff.text": {
+      "ru": "Клиент принёс вопрос о маршруте, совпадающий с информацией, которую ты уже принесла из города. Старший охотник проверяет записи до ответа; связь с клиентом остаётся практичной и не превращается в личное обязательство.",
+      "en": "A client has brought a route question that matches information you already carried from town. A senior hunter checks your notes before either of you answers, keeping the client relationship practical rather than turning it into a private obligation."
+    },
+    "event.hunter.relationship.intro.variant.forest-local-context.text": {
+      "ru": "Житель лесной окраины сообщил об изменении рядом с маршрутом, уже записанным в твоих Hunter notes. Старший проводник сравнивает полевой отчёт с этим местным наблюдением; местный остаётся источником, а не обязательным спутником или именованным каноническим персонажем.",
+      "en": "A forest-edge local has flagged a change near the route already recorded in your Hunter notes. The senior guide compares your field record with that local observation; the local remains a source, not a mandatory companion or named canon character."
+    },
+    "event.hunter.relationship.intro.variant.default.text": {
+      "ru": "Старший охотник начинает относиться к твоим маршрутным заметкам как к профессиональному материалу, который стоит проверять. Роль может быть наставником, проводником, коллегой или позже соперником; она остаётся без имени и не требует дружбы или романтики.",
+      "en": "A senior hunter starts treating your route notes as professional material worth checking. The role can be mentor, guide, colleague, or later rival; it stays unnamed and never requires friendship or romance."
+    },
+    "event.hunter.relationship.intro.choice.professional.label": {
+      "ru": "Сравнить маршрутные записи",
+      "en": "Compare the route notes"
+    },
+    "event.hunter.relationship.intro.choice.professional.text": {
+      "ru": "Сохранить первый контакт профессиональным и полезным, не обещая личных отношений.",
+      "en": "Keep the first contact professional and useful without promising a personal relationship."
+    },
+    "event.hunter.relationship.trust.title": {
+      "ru": "Профессиональное доверие становится привычным",
+      "en": "Professional trust becomes familiar"
+    },
+    "event.hunter.relationship.trust.variant.default.text": {
+      "ru": "После повторной обычной работы старший проводник доверяет твоим записям достаточно, чтобы спорить с ними напрямую. Эта знакомость может остаться профессиональной, перерасти в дружбу или позже стать соперничеством; ни один тон не обязателен для прогрессии Hunter.",
+      "en": "After repeated ordinary work, the senior guide trusts your notes enough to challenge them directly. That familiarity can stay professional, grow into friendship, or later become rivalry; none of those tones is required for Hunter progression."
+    },
+    "event.hunter.relationship.trust.choice.continue.label": {
+      "ru": "Сохранить рабочее доверие",
+      "en": "Keep the working trust"
+    },
+    "event.hunter.relationship.trust.choice.continue.text": {
+      "ru": "Развивать профессиональное доверие, оставляя дружбу, соперничество и совместную экспедицию необязательными.",
+      "en": "Build professional trust while leaving friendship, rivalry, and expedition companionship optional."
+    },
+    "event.hunter.relationship.conflict-open.title": {
+      "ru": "Настоящее разногласие о маршруте",
+      "en": "A real disagreement about the route"
+    },
+    "event.hunter.relationship.conflict-open.variant.default.text": {
+      "ru": "Старший проводник хочет сильнее нагрузить маршрут; твои наблюдения говорят о защите, задержке или более узком контракте. Конфликт касается полевого решения и ответственности, а не скрытой шкалы морали.",
+      "en": "The senior guide wants to push a pressured route; your reading suggests protection, delay, or a narrower contract. The conflict is about field judgment and responsibility, not a hidden morality score."
+    },
+    "event.hunter.relationship.conflict-open.choice.open.label": {
+      "ru": "Открыто обозначить полевое разногласие",
+      "en": "State the field disagreement"
+    },
+    "event.hunter.relationship.conflict-open.choice.open.text": {
+      "ru": "Сделать конфликт о маршруте явным, чтобы следующим шагом решить его сотрудничеством, соперничеством или отказом.",
+      "en": "Make the route conflict explicit so the next beat can resolve it as cooperation, rivalry, or refusal."
+    },
+    "event.hunter.relationship.conflict-resolve.title": {
+      "ru": "Решить, как продолжится профессиональный конфликт",
+      "en": "Choose how the professional conflict continues"
+    },
+    "event.hunter.relationship.conflict-resolve.variant.default.text": {
+      "ru": "Разногласие можно превратить в сотрудничество, оставить продуктивным соперничеством или полностью отказаться от дополнительной ветки отношений. Обычная работа Hunter остаётся доступной во всех случаях.",
+      "en": "You can turn the disagreement into cooperation, keep it as a productive rivalry, or decline the extra relationship route entirely. Ordinary Hunter work remains available in every case."
+    },
+    "event.hunter.relationship.conflict-resolve.choice.cooperate.label": {
+      "ru": "Защитить маршрут вместе",
+      "en": "Protect the route together"
+    },
+    "event.hunter.relationship.conflict-resolve.choice.cooperate.text": {
+      "ru": "Решить разногласие через защиту маршрута и оставить необязательное совместное сопровождение доступным.",
+      "en": "Resolve the disagreement around route protection and keep optional companionship open."
+    },
+    "event.hunter.relationship.conflict-resolve.choice.rivalry.label": {
+      "ru": "Остаться профессиональными соперниками",
+      "en": "Stay professional rivals"
+    },
+    "event.hunter.relationship.conflict-resolve.choice.rivalry.text": {
+      "ru": "Позволить спору повысить полевые стандарты обоих охотников, не блокируя обычную работу.",
+      "en": "Let the disagreement sharpen both hunters' field standards without blocking ordinary work."
+    },
+    "event.hunter.relationship.conflict-resolve.choice.decline.label": {
+      "ru": "Отойти от дополнительной связи",
+      "en": "Step away from the extra relationship"
+    },
+    "event.hunter.relationship.conflict-resolve.choice.decline.text": {
+      "ru": "Чисто отказаться от ветки отношений; профессиональная работа и прогрессия Hunter остаются целыми.",
+      "en": "Refuse the relationship route cleanly; professional work and Hunter progression remain intact."
+    },
+    "event.hunter.relationship.companion.title": {
+      "ru": "Необязательный проводник или друг в поле",
+      "en": "An optional guide or friend in the field"
+    },
+    "event.hunter.relationship.companion.variant.default.text": {
+      "ru": "После совместного разрешения конфликта старший охотник может пойти в будущую экспедицию как проводник, коллега или друг. Поддержка необязательна и никогда не становится воротами к оплачиваемым сменам или самостоятельной экспедиции.",
+      "en": "After cooperative conflict resolution, the senior hunter can accompany a later expedition as a guide, colleague, or friend. The support is optional and never becomes a gate on paid shifts or solo expedition access."
+    },
+    "event.hunter.relationship.companion.choice.accept.label": {
+      "ru": "Оставить вариант спутника",
+      "en": "Keep the companion option"
+    },
+    "event.hunter.relationship.companion.choice.accept.text": {
+      "ru": "Разрешить необязательное партнёрство в экспедиции, не делая отношения обязательными.",
+      "en": "Allow an optional expedition partnership without making the relationship compulsory."
+    },
+    "event.hunter.relationship.companion.choice.decline.label": {
+      "ru": "Охотиться самостоятельно",
+      "en": "Hunt independently"
+    },
+    "event.hunter.relationship.companion.choice.decline.text": {
+      "ru": "Отказаться от спутника, сохранив профессиональное уважение, обычную работу и всю остальную карьеру.",
+      "en": "Decline companionship while preserving professional respect, ordinary work, and the rest of the career."
     }
   }
 }
