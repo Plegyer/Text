@@ -327,64 +327,64 @@
       "en": "Literacy & Numbers"
     },
     "school.course.literacy_and_numbers.description": {
-      "ru": "Практическая грамотность, счёт, работа с записями и ясное объяснение.",
-      "en": "Practical literacy, numeracy, record work, and clear explanation."
+      "ru": "Мара Фен ведёт практическую грамотность, счёт и работу с записями: главное — чтобы ход решения мог проверить другой человек.",
+      "en": "Mara Fen teaches practical literacy, numeracy, and record work, with an emphasis on reasoning another person can verify."
     },
     "school.course.arcana.label": {
       "ru": "Аркана",
       "en": "Arcana"
     },
     "school.course.arcana.description": {
-      "ru": "Наблюдение, магическая теория, безопасный эксперимент и проверка гипотез.",
-      "en": "Observation, magical theory, careful experimentation, and testing hypotheses."
+      "ru": "Илира Венн учит наблюдать, отделять данные от версии и проверять магические гипотезы безопасным способом.",
+      "en": "Ilyra Venn teaches observation, separating evidence from explanation, and testing magical hypotheses safely."
     },
     "school.course.rhetoric_and_social.label": {
       "ru": "Риторика и общение",
       "en": "Rhetoric & Social"
     },
     "school.course.rhetoric_and_social.description": {
-      "ru": "Речь, слушание, чтение социальной ситуации и адаптация подачи.",
-      "en": "Speaking, listening, reading social situations, and adapting delivery."
+      "ru": "Кассиан Рид учит говорить, слушать и менять подачу под ситуацию, не подменяя разговор манипуляцией.",
+      "en": "Cassian Reed teaches speaking, listening, and adapting delivery to context without turning conversation into manipulation."
     },
     "school.course.etiquette_and_presentation.label": {
       "ru": "Этикет и самопрезентация",
       "en": "Etiquette & Presentation"
     },
     "school.course.etiquette_and_presentation.description": {
-      "ru": "Социальные правила, подготовка, уход, осанка и осознанная самопрезентация.",
-      "en": "Social conventions, preparation, grooming, posture, and deliberate presentation."
+      "ru": "Элиан Марроу разбирает уместность, подготовку и самопрезентацию, отделяя уважение к контексту от покорности статусу.",
+      "en": "Eliane Marrow teaches context, preparation, and presentation while separating respect for a setting from deference to status."
     },
     "school.course.field_craft.label": {
       "ru": "Полевая практика",
       "en": "Field Craft"
     },
     "school.course.field_craft.description": {
-      "ru": "Наблюдение, маршруты, практические инструменты и надёжная импровизация.",
-      "en": "Observation, route choice, practical tools, and reliable improvisation."
+      "ru": "Роуэн Пайк учит наблюдать условия, выбирать маршрут, работать с доступными инструментами и заранее оставлять запасной путь.",
+      "en": "Rowan Pike teaches observation, route choice, practical tools, and keeping a fallback before conditions force one."
     },
     "school.course.physical_training.label": {
       "ru": "Физическая подготовка",
       "en": "Physical Training"
     },
     "school.course.physical_training.description": {
-      "ru": "Сила, выносливость, координация, техника и восстановление.",
-      "en": "Strength, endurance, coordination, technique, and recovery."
+      "ru": "Тован Кест ставит повторяемую технику, темп и безопасную остановку выше рекорда и показного усилия.",
+      "en": "Tovan Kest puts repeatable technique, pacing, and safe stopping ahead of records or performative effort."
     },
     "school.course.arts_and_performance.label": {
       "ru": "Искусство и выступление",
       "en": "Arts & Performance"
     },
     "school.course.arts_and_performance.description": {
-      "ru": "Творческий выбор, ритм, выразительность, репетиция и сценическое взаимодействие.",
-      "en": "Creative choices, rhythm, expression, rehearsal, and performance interaction."
+      "ru": "Несса Ларк работает с намерением, ритмом, выразительностью, репетицией и вниманием к партнёру по сцене.",
+      "en": "Nessa Lark works with intention, rhythm, expression, rehearsal, and attention to a scene partner."
     },
     "school.course.body_confidence.label": {
       "ru": "Уверенность в теле",
       "en": "Body Confidence"
     },
     "school.course.body_confidence.description": {
-      "ru": "Движение, уход за собой, границы и осознанная самопрезентация.",
-      "en": "Movement, grooming, boundaries, and deliberate self-presentation."
+      "ru": "Сера Вей работает с движением, уходом, комфортом, границами и осознанной самопрезентацией без оценки тела и без подмены выбора согласием.",
+      "en": "Sera Vey works with movement, grooming, comfort, boundaries, and deliberate self-presentation without judging the body or treating presentation as consent."
     },
     "ui.school.nightStudyChoice": {
       "ru": "Ночная учёба: {course} — {stat}",
@@ -1391,64 +1391,64 @@
       "en": "Winter shift: non-explicit work preparation."
     },
     "presentation.static.school-course-literacy-and-numbers.alt": {
-      "ru": "Учебная сцена курса «Грамота и числа» с характерными материалами и без изображения преподавателя.",
-      "en": "A Literacy & Numbers lesson scene with course-specific materials and no depicted teacher."
+      "ru": "Учебная сцена курса «Грамотность и счёт» с материалами для записей и расчётов; преподаватель не изображён.",
+      "en": "A Literacy & Numbers lesson scene with materials for records and calculations; no teacher is depicted."
     },
     "presentation.static.school-course-literacy-and-numbers.caption": {
-      "ru": "Грамота и числа: учебное занятие.",
+      "ru": "Грамотность и счёт: учебное занятие.",
       "en": "Literacy & Numbers: lesson session."
     },
     "presentation.static.school-course-arcana.alt": {
-      "ru": "Учебная сцена курса «Аркана» с характерными материалами и без изображения преподавателя.",
-      "en": "A Arcana lesson scene with course-specific materials and no depicted teacher."
+      "ru": "Учебная сцена курса «Аркана» с материалами для наблюдения и безопасной проверки гипотез; преподаватель не изображён.",
+      "en": "An Arcana lesson scene with materials for observation and safe hypothesis testing; no teacher is depicted."
     },
     "presentation.static.school-course-arcana.caption": {
       "ru": "Аркана: учебное занятие.",
       "en": "Arcana: lesson session."
     },
     "presentation.static.school-course-rhetoric-and-social.alt": {
-      "ru": "Учебная сцена курса «Риторика и общение» с характерными материалами и без изображения преподавателя.",
-      "en": "A Rhetoric & Social lesson scene with course-specific materials and no depicted teacher."
+      "ru": "Учебная сцена курса «Риторика и общение» с материалами для речи, слушания и разбора разговора; преподаватель не изображён.",
+      "en": "A Rhetoric & Social lesson scene with materials for speaking, listening, and conversation review; no teacher is depicted."
     },
     "presentation.static.school-course-rhetoric-and-social.caption": {
       "ru": "Риторика и общение: учебное занятие.",
       "en": "Rhetoric & Social: lesson session."
     },
     "presentation.static.school-course-etiquette-and-presentation.alt": {
-      "ru": "Учебная сцена курса «Этикет и подача» с характерными материалами и без изображения преподавателя.",
-      "en": "A Etiquette & Presentation lesson scene with course-specific materials and no depicted teacher."
+      "ru": "Учебная сцена курса «Этикет и самопрезентация» с материалами по уместности и подготовке; преподаватель не изображён.",
+      "en": "An Etiquette & Presentation lesson scene with materials on context and preparation; no teacher is depicted."
     },
     "presentation.static.school-course-etiquette-and-presentation.caption": {
-      "ru": "Этикет и подача: учебное занятие.",
+      "ru": "Этикет и самопрезентация: учебное занятие.",
       "en": "Etiquette & Presentation: lesson session."
     },
     "presentation.static.school-course-field-craft.alt": {
-      "ru": "Учебная сцена курса «Полевая практика» с характерными материалами и без изображения преподавателя.",
-      "en": "A Field Craft lesson scene with course-specific materials and no depicted teacher."
+      "ru": "Учебная сцена курса «Полевая практика» с маршрутными заметками и практическими материалами; преподаватель не изображён.",
+      "en": "A Field Craft lesson scene with route notes and practical materials; no teacher is depicted."
     },
     "presentation.static.school-course-field-craft.caption": {
       "ru": "Полевая практика: учебное занятие.",
       "en": "Field Craft: lesson session."
     },
     "presentation.static.school-course-physical-training.alt": {
-      "ru": "Учебная сцена курса «Физическая подготовка» с характерными материалами и без изображения преподавателя.",
-      "en": "A Physical Training lesson scene with course-specific materials and no depicted teacher."
+      "ru": "Учебная сцена курса «Физическая подготовка» с материалами по технике и темпу; преподаватель не изображён.",
+      "en": "A Physical Training lesson scene with materials on technique and pacing; no teacher is depicted."
     },
     "presentation.static.school-course-physical-training.caption": {
       "ru": "Физическая подготовка: учебное занятие.",
       "en": "Physical Training: lesson session."
     },
     "presentation.static.school-course-arts-and-performance.alt": {
-      "ru": "Учебная сцена курса «Искусство и выступление» с характерными материалами и без изображения преподавателя.",
-      "en": "A Arts & Performance lesson scene with course-specific materials and no depicted teacher."
+      "ru": "Учебная сцена курса «Искусство и выступление» с материалами для репетиции и работы с ритмом; преподаватель не изображён.",
+      "en": "An Arts & Performance lesson scene with rehearsal and rhythm materials; no teacher is depicted."
     },
     "presentation.static.school-course-arts-and-performance.caption": {
       "ru": "Искусство и выступление: учебное занятие.",
       "en": "Arts & Performance: lesson session."
     },
     "presentation.static.school-course-body-confidence.alt": {
-      "ru": "Учебная сцена курса «Уверенность в теле» с характерными материалами и без изображения преподавателя.",
-      "en": "A Body Confidence lesson scene with course-specific materials and no depicted teacher."
+      "ru": "Учебная сцена курса «Уверенность в теле» с материалами по движению, комфорту и самопрезентации; преподаватель не изображён.",
+      "en": "A Body Confidence lesson scene with materials on movement, comfort, and self-presentation; no teacher is depicted."
     },
     "presentation.static.school-course-body-confidence.caption": {
       "ru": "Уверенность в теле: учебное занятие.",
@@ -3463,11 +3463,11 @@
       "en": "Cheap lodging: an ordinary shared-room scene."
     },
     "media.school.teacher.literacy-and-numbers.classroom.alt": {
-      "ru": "Мара Фен в учебной аудитории курса «Грамота и числа».",
+      "ru": "Мара Фен в учебной аудитории курса «Грамотность и счёт».",
       "en": "Mara Fen in the Literacy & Numbers School classroom."
     },
     "media.school.teacher.literacy-and-numbers.classroom.caption": {
-      "ru": "Преподаватель: Мара Фен — «Грамота и числа».",
+      "ru": "Преподаватель: Мара Фен — «Грамотность и счёт».",
       "en": "Teacher: Mara Fen — Literacy & Numbers."
     },
     "media.school.teacher.arcana.classroom.alt": {
@@ -3487,11 +3487,11 @@
       "en": "Teacher: Cassian Reed — Rhetoric & Social."
     },
     "media.school.teacher.etiquette-and-presentation.classroom.alt": {
-      "ru": "Элиан Марроу в учебной аудитории курса «Этикет и подача».",
+      "ru": "Элиан Марроу в учебной аудитории курса «Этикет и самопрезентация».",
       "en": "Eliane Marrow in the Etiquette & Presentation School classroom."
     },
     "media.school.teacher.etiquette-and-presentation.classroom.caption": {
-      "ru": "Преподаватель: Элиан Марроу — «Этикет и подача».",
+      "ru": "Преподаватель: Элиан Марроу — «Этикет и самопрезентация».",
       "en": "Teacher: Eliane Marrow — Etiquette & Presentation."
     },
     "media.school.teacher.field-craft.classroom.alt": {
@@ -3525,6 +3525,414 @@
     "media.school.teacher.body-confidence.classroom.caption": {
       "ru": "Преподаватель: Сера Вей — «Уверенность в теле».",
       "en": "Teacher: Sera Vey — Body Confidence."
+    },
+    "event.school-lesson-content-v1.after-school.variant.settle-the-lesson.text": {
+      "ru": "После оплаченного занятия остаётся несколько минут, чтобы привести мысли в порядок. Ты отмечаешь, что стало понятнее, и не пытаешься превратить короткое осмысление во второй урок.",
+      "en": "After the paid lesson, a few minutes remain to put your thoughts in order. You note what became clearer without trying to turn the reflection into a second lesson."
+    },
+    "event.school-lesson-content-v1.after-school.variant.one-clear-note.text": {
+      "ru": "Ты перечитываешь записи и выделяешь одну мысль, которую сможешь понять завтра без дополнительных пояснений. Этого достаточно, чтобы занятие оставило полезный след.",
+      "en": "You reread your notes and mark one idea you will still understand tomorrow without extra explanation. That is enough for the lesson to leave a useful trace."
+    },
+    "event.school-lesson-content-v1.after-school.variant.leave-a-question.text": {
+      "ru": "Не всё обязано уложиться сразу. Ты записываешь один конкретный вопрос для следующего занятия и оставляешь его открытым вместо того, чтобы придумывать уверенный ответ на ходу.",
+      "en": "Not everything has to settle immediately. You write down one specific question for the next lesson and leave it open instead of inventing a confident answer on the spot."
+    },
+    "event.school-life-content-v1.after-paid-lesson.variant.practice-not-proof.text": {
+      "ru": "Занятие завершено, но оно не обязано доказывать, что ты теперь готова к новой профессии или статусу. Сегодня достаточно того, что навык получил ещё одну честную тренировку.",
+      "en": "The lesson is complete, but it does not have to prove that you are now ready for a new profession or status. For today, it is enough that the skill received another honest practice session."
+    },
+    "event.school-life-content-v1.after-paid-lesson.variant.cost-already-counted.text": {
+      "ru": "Оплата и расход текущей Energy уже относятся к завершённому уроку. Эта короткая пауза ничего не списывает дополнительно и не добавляет скрытого прогресса.",
+      "en": "Tuition and the current-day Energy cost already belong to the completed lesson. This short pause charges nothing extra and adds no hidden progress."
+    },
+    "event.school-life-content-v1.after-paid-lesson.variant.back-to-the-day.text": {
+      "ru": "Ты закрываешь записи и возвращаешься к остатку дня. Материал можно обдумать позже; сейчас дополнительного действия или эффекта не происходит.",
+      "en": "You close your notes and return to the rest of the day. The material can be considered again later; no additional action or effect occurs now."
+    },
+    "event.school-life-content-v1.night-study.literacy-and-numbers-reason.title": {
+      "ru": "Проверить ход мысли",
+      "en": "Check the reasoning"
+    },
+    "event.school-life-content-v1.night-study.literacy-and-numbers-reason.variant.default.text": {
+      "ru": "Ты перечитываешь один расчёт и отмечаешь каждый переход между данными и выводом. Ночная учёба не добавляет второй урок: она просто делает цепочку рассуждения легче для повторной проверки.",
+      "en": "You reread one calculation and mark every step between the evidence and the conclusion. Night study does not add a second lesson; it simply makes the reasoning easier to verify again."
+    },
+    "event.school-life-content-v1.night-study.literacy-and-numbers-reason.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue"
+    },
+    "event.school-life-content-v1.night-study.literacy-and-numbers-reason.choice.continue.text": {
+      "ru": "Продолжить ночь.",
+      "en": "Let the Night flow continue."
+    },
+    "event.school-life-content-v1.night-study.literacy-and-numbers-wits.title": {
+      "ru": "Сделать запись короче",
+      "en": "Make the note shorter"
+    },
+    "event.school-life-content-v1.night-study.literacy-and-numbers-wits.variant.default.text": {
+      "ru": "Ты сокращаешь длинную заметку до суммы, срока, источника и следующего шага. Хорошая краткость убирает шум, но не заставляет следующего читателя угадывать.",
+      "en": "You reduce a long note to the amount, deadline, source, and next step. Good brevity removes noise without forcing the next reader to guess."
+    },
+    "event.school-life-content-v1.night-study.literacy-and-numbers-wits.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue"
+    },
+    "event.school-life-content-v1.night-study.literacy-and-numbers-wits.choice.continue.text": {
+      "ru": "Продолжить ночь.",
+      "en": "Let the Night flow continue."
+    },
+    "event.school-life-content-v1.night-study.arcana-magic.title": {
+      "ru": "Наблюдать магический отклик",
+      "en": "Observe the magical response"
+    },
+    "event.school-life-content-v1.night-study.arcana-magic.variant.default.text": {
+      "ru": "Ты повторяешь безопасное наблюдение и записываешь, что меняется при одинаковых условиях. Никакого нового результата или предмета не появляется — только аккуратнее оформленные данные.",
+      "en": "You repeat a safe observation and record what changes under the same conditions. No new result or item appears—only better organized evidence."
+    },
+    "event.school-life-content-v1.night-study.arcana-magic.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue"
+    },
+    "event.school-life-content-v1.night-study.arcana-magic.choice.continue.text": {
+      "ru": "Продолжить ночь.",
+      "en": "Let the Night flow continue."
+    },
+    "event.school-life-content-v1.night-study.arcana-reason.title": {
+      "ru": "Отделить факт от версии",
+      "en": "Separate evidence from explanation"
+    },
+    "event.school-life-content-v1.night-study.arcana-reason.variant.default.text": {
+      "ru": "Страница делится на наблюдаемое, проверенное и пока неизвестное. Версия остаётся рядом, но не подменяет собой данные.",
+      "en": "The page is divided into observed, tested, and still unknown. The explanation remains beside the evidence without replacing it."
+    },
+    "event.school-life-content-v1.night-study.arcana-reason.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue"
+    },
+    "event.school-life-content-v1.night-study.arcana-reason.choice.continue.text": {
+      "ru": "Продолжить ночь.",
+      "en": "Let the Night flow continue."
+    },
+    "event.school-life-content-v1.night-study.arcana-creativity.title": {
+      "ru": "Придумать ещё одну проверку",
+      "en": "Think of one more test"
+    },
+    "event.school-life-content-v1.night-study.arcana-creativity.variant.default.text": {
+      "ru": "Вместо новой красивой теории ты ищешь другой безопасный способ проверить старую. Творчество здесь работает как источник вариантов, а не как повод объявить догадку фактом.",
+      "en": "Instead of inventing a new elegant theory, you look for another safe way to test the old one. Creativity supplies options rather than turning a guess into a fact."
+    },
+    "event.school-life-content-v1.night-study.arcana-creativity.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue"
+    },
+    "event.school-life-content-v1.night-study.arcana-creativity.choice.continue.text": {
+      "ru": "Продолжить ночь.",
+      "en": "Let the Night flow continue."
+    },
+    "event.school-life-content-v1.night-study.rhetoric-and-social-charm.title": {
+      "ru": "Сохранить смысл, сменить подачу",
+      "en": "Keep the meaning, change the delivery"
+    },
+    "event.school-life-content-v1.night-study.rhetoric-and-social-charm.variant.default.text": {
+      "ru": "Ты пробуешь одну просьбу в трёх тонах, не меняя её содержания. Ночная практика показывает, где обаяние помогает ясности, а где начинает отвлекать от цели.",
+      "en": "You try the same request in three tones without changing its meaning. Night practice shows where charm supports clarity and where it starts distracting from the purpose."
+    },
+    "event.school-life-content-v1.night-study.rhetoric-and-social-charm.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue"
+    },
+    "event.school-life-content-v1.night-study.rhetoric-and-social-charm.choice.continue.text": {
+      "ru": "Продолжить ночь.",
+      "en": "Let the Night flow continue."
+    },
+    "event.school-life-content-v1.night-study.rhetoric-and-social-sociability.title": {
+      "ru": "Услышать паузу",
+      "en": "Hear the pause"
+    },
+    "event.school-life-content-v1.night-study.rhetoric-and-social-sociability.variant.default.text": {
+      "ru": "Ты вспоминаешь разговор и отмечаешь места, где другой человек пытался войти в него, но не успел. Следующая версия диалога оставляет больше пространства для ответа.",
+      "en": "You replay a conversation and mark the places where the other person tried to enter but had no room. The next version leaves more space for an answer."
+    },
+    "event.school-life-content-v1.night-study.rhetoric-and-social-sociability.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue"
+    },
+    "event.school-life-content-v1.night-study.rhetoric-and-social-sociability.choice.continue.text": {
+      "ru": "Продолжить ночь.",
+      "en": "Let the Night flow continue."
+    },
+    "event.school-life-content-v1.night-study.rhetoric-and-social-wits.title": {
+      "ru": "Убрать ответ из вопроса",
+      "en": "Remove the answer from the question"
+    },
+    "event.school-life-content-v1.night-study.rhetoric-and-social-wits.variant.default.text": {
+      "ru": "Ты переписываешь несколько вопросов так, чтобы они не подсказывали желаемый ответ. Чем нейтральнее формулировка, тем полезнее оказывается чужая версия.",
+      "en": "You rewrite several questions so they do not hint at the answer you want. The more neutral the wording, the more useful the other person's account becomes."
+    },
+    "event.school-life-content-v1.night-study.rhetoric-and-social-wits.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue"
+    },
+    "event.school-life-content-v1.night-study.rhetoric-and-social-wits.choice.continue.text": {
+      "ru": "Продолжить ночь.",
+      "en": "Let the Night flow continue."
+    },
+    "event.school-life-content-v1.night-study.etiquette-and-presentation-manners.title": {
+      "ru": "Один принцип, три ситуации",
+      "en": "One principle, three situations"
+    },
+    "event.school-life-content-v1.night-study.etiquette-and-presentation-manners.variant.default.text": {
+      "ru": "Ты берёшь одно правило уважительного поведения и проверяешь, как оно выглядит в шумной комнате, формальной встрече и обычном разговоре. Уместность меняет форму, не уважение.",
+      "en": "You take one principle of respectful conduct and test how it looks in a noisy room, a formal meeting, and an ordinary conversation. Appropriateness changes the form, not the respect."
+    },
+    "event.school-life-content-v1.night-study.etiquette-and-presentation-manners.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue"
+    },
+    "event.school-life-content-v1.night-study.etiquette-and-presentation-manners.choice.continue.text": {
+      "ru": "Продолжить ночь.",
+      "en": "Let the Night flow continue."
+    },
+    "event.school-life-content-v1.night-study.etiquette-and-presentation-grooming.title": {
+      "ru": "Подготовка без лишнего",
+      "en": "Preparation without excess"
+    },
+    "event.school-life-content-v1.night-study.etiquette-and-presentation-grooming.variant.default.text": {
+      "ru": "Ты оставляешь в вечерней последовательности ухода только то, что помогает чувствовать себя собраннее и комфортнее. Подготовка остаётся выбором, а не обязанностью выглядеть определённым образом.",
+      "en": "You keep only the parts of an evening care routine that help you feel more prepared and comfortable. Preparation remains a choice, not an obligation to look a certain way."
+    },
+    "event.school-life-content-v1.night-study.etiquette-and-presentation-grooming.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue"
+    },
+    "event.school-life-content-v1.night-study.etiquette-and-presentation-grooming.choice.continue.text": {
+      "ru": "Продолжить ночь.",
+      "en": "Let the Night flow continue."
+    },
+    "event.school-life-content-v1.night-study.etiquette-and-presentation-charm.title": {
+      "ru": "Тёплая подача без заискивания",
+      "en": "Warmth without deference"
+    },
+    "event.school-life-content-v1.night-study.etiquette-and-presentation-charm.variant.default.text": {
+      "ru": "Ты тренируешь приветствие, которое звучит дружелюбно и уверенно, не превращаясь в попытку заслужить одобрение. Формальность остаётся инструментом, а не оценкой собственной ценности.",
+      "en": "You practice a greeting that sounds warm and confident without becoming an attempt to earn approval. Formality remains a tool rather than a judgment of your worth."
+    },
+    "event.school-life-content-v1.night-study.etiquette-and-presentation-charm.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue"
+    },
+    "event.school-life-content-v1.night-study.etiquette-and-presentation-charm.choice.continue.text": {
+      "ru": "Продолжить ночь.",
+      "en": "Let the Night flow continue."
+    },
+    "event.school-life-content-v1.night-study.field-craft-dexterity.title": {
+      "ru": "Точный узел без спешки",
+      "en": "A precise knot without rushing"
+    },
+    "event.school-life-content-v1.night-study.field-craft-dexterity.variant.default.text": {
+      "ru": "Ты повторяешь знакомую практическую последовательность медленнее обычного, проверяя положение рук и порядок действий. Скорость приходит после надёжности, а не вместо неё.",
+      "en": "You repeat a familiar practical sequence more slowly than usual, checking hand position and order. Speed comes after reliability, not instead of it."
+    },
+    "event.school-life-content-v1.night-study.field-craft-dexterity.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue"
+    },
+    "event.school-life-content-v1.night-study.field-craft-dexterity.choice.continue.text": {
+      "ru": "Продолжить ночь.",
+      "en": "Let the Night flow continue."
+    },
+    "event.school-life-content-v1.night-study.field-craft-wits.title": {
+      "ru": "План с запасным вариантом",
+      "en": "A plan with a fallback"
+    },
+    "event.school-life-content-v1.night-study.field-craft-wits.variant.default.text": {
+      "ru": "На схеме ты отмечаешь путь, ориентир и условие, после которого решение стоит пересмотреть. Хороший план заранее оставляет место для изменения.",
+      "en": "On the sketch, you mark the route, a landmark, and the condition that should make you reconsider. A good plan leaves room for change in advance."
+    },
+    "event.school-life-content-v1.night-study.field-craft-wits.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue"
+    },
+    "event.school-life-content-v1.night-study.field-craft-wits.choice.continue.text": {
+      "ru": "Продолжить ночь.",
+      "en": "Let the Night flow continue."
+    },
+    "event.school-life-content-v1.night-study.field-craft-creativity.title": {
+      "ru": "Решить задачу другим инструментом",
+      "en": "Solve the task with a different tool"
+    },
+    "event.school-life-content-v1.night-study.field-craft-creativity.variant.default.text": {
+      "ru": "Ты берёшь знакомую практическую задачу и намеренно убираешь привычный инструмент. Цель остаётся прежней, а решение приходится строить заново из доступных средств.",
+      "en": "You take a familiar practical task and deliberately remove the usual tool. The goal stays the same, while the solution must be rebuilt from what is available."
+    },
+    "event.school-life-content-v1.night-study.field-craft-creativity.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue"
+    },
+    "event.school-life-content-v1.night-study.field-craft-creativity.choice.continue.text": {
+      "ru": "Продолжить ночь.",
+      "en": "Let the Night flow continue."
+    },
+    "event.school-life-content-v1.night-study.physical-training-strength.title": {
+      "ru": "Усилие без рывка",
+      "en": "Effort without the burst"
+    },
+    "event.school-life-content-v1.night-study.physical-training-strength.variant.default.text": {
+      "ru": "Ты разбираешь технику движения и ищешь место, где лишнее напряжение тратит силу без пользы. Ночная работа остаётся спокойным разбором, а не дополнительной тяжёлой тренировкой.",
+      "en": "You review the movement and look for where unnecessary tension wastes strength. The night session remains a calm technical review, not another hard workout."
+    },
+    "event.school-life-content-v1.night-study.physical-training-strength.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue"
+    },
+    "event.school-life-content-v1.night-study.physical-training-strength.choice.continue.text": {
+      "ru": "Продолжить ночь.",
+      "en": "Let the Night flow continue."
+    },
+    "event.school-life-content-v1.night-study.physical-training-endurance.title": {
+      "ru": "Распределить силы до конца",
+      "en": "Distribute effort to the end"
+    },
+    "event.school-life-content-v1.night-study.physical-training-endurance.variant.default.text": {
+      "ru": "Ты отмечаешь, где в тренировке ускорялась без причины и где это испортило последние повторения. Цель — сохранить качество до конца, а не выиграть первую минуту.",
+      "en": "You mark where you accelerated for no reason and where that damaged the final repetitions. The goal is to preserve quality to the end rather than win the first minute."
+    },
+    "event.school-life-content-v1.night-study.physical-training-endurance.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue"
+    },
+    "event.school-life-content-v1.night-study.physical-training-endurance.choice.continue.text": {
+      "ru": "Продолжить ночь.",
+      "en": "Let the Night flow continue."
+    },
+    "event.school-life-content-v1.night-study.physical-training-dexterity.title": {
+      "ru": "Чистое движение в медленном темпе",
+      "en": "Clean movement at a slow pace"
+    },
+    "event.school-life-content-v1.night-study.physical-training-dexterity.variant.default.text": {
+      "ru": "Ты мысленно разбираешь сложное движение по частям: положение, перенос веса, остановка. Медленный темп делает ошибки заметнее без дополнительного расхода текущей Energy.",
+      "en": "You mentally break a difficult movement into position, weight transfer, and stop. The slower pace makes mistakes easier to notice without another current-day Energy cost."
+    },
+    "event.school-life-content-v1.night-study.physical-training-dexterity.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue"
+    },
+    "event.school-life-content-v1.night-study.physical-training-dexterity.choice.continue.text": {
+      "ru": "Продолжить ночь.",
+      "en": "Let the Night flow continue."
+    },
+    "event.school-life-content-v1.night-study.arts-and-performance-creativity.title": {
+      "ru": "Изменить одну деталь осмысленно",
+      "en": "Change one detail deliberately"
+    },
+    "event.school-life-content-v1.night-study.arts-and-performance-creativity.variant.default.text": {
+      "ru": "Ты берёшь знакомый рисунок или фразу и меняешь только один элемент, сохраняя общую структуру. Идея становится своей через осмысленное изменение, а не случайную новизну.",
+      "en": "You take a familiar pattern or phrase and change only one element while preserving the overall structure. The idea becomes yours through deliberate change rather than random novelty."
+    },
+    "event.school-life-content-v1.night-study.arts-and-performance-creativity.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue"
+    },
+    "event.school-life-content-v1.night-study.arts-and-performance-creativity.choice.continue.text": {
+      "ru": "Продолжить ночь.",
+      "en": "Let the Night flow continue."
+    },
+    "event.school-life-content-v1.night-study.arts-and-performance-charm.title": {
+      "ru": "Выразительность без лишнего нажима",
+      "en": "Expression without forcing it"
+    },
+    "event.school-life-content-v1.night-study.arts-and-performance-charm.variant.default.text": {
+      "ru": "Ты повторяешь одну нейтральную фразу, меняя темп и паузу, пока она не звучит естественно. Выразительность становится точнее, когда не пытается понравиться любой ценой.",
+      "en": "You repeat one neutral line, changing pace and pause until it sounds natural. Expression becomes more precise when it is not trying to please at any cost."
+    },
+    "event.school-life-content-v1.night-study.arts-and-performance-charm.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue"
+    },
+    "event.school-life-content-v1.night-study.arts-and-performance-charm.choice.continue.text": {
+      "ru": "Продолжить ночь.",
+      "en": "Let the Night flow continue."
+    },
+    "event.school-life-content-v1.night-study.arts-and-performance-sociability.title": {
+      "ru": "Оставить место партнёру",
+      "en": "Leave room for a partner"
+    },
+    "event.school-life-content-v1.night-study.arts-and-performance-sociability.variant.default.text": {
+      "ru": "Ты вспоминаешь совместную сцену и отмечаешь момент, где могла бы раньше заметить изменение чужого темпа. Хорошее взаимодействие начинается до собственной следующей реплики.",
+      "en": "You replay a shared scene and mark the moment when you could have noticed the other person's change of pace earlier. Good interaction begins before your own next line."
+    },
+    "event.school-life-content-v1.night-study.arts-and-performance-sociability.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue"
+    },
+    "event.school-life-content-v1.night-study.arts-and-performance-sociability.choice.continue.text": {
+      "ru": "Продолжить ночь.",
+      "en": "Let the Night flow continue."
+    },
+    "event.school-life-content-v1.night-study.arts-and-performance-dexterity.title": {
+      "ru": "Повторить рисунок движения чище",
+      "en": "Repeat the movement pattern more cleanly"
+    },
+    "event.school-life-content-v1.night-study.arts-and-performance-dexterity.variant.default.text": {
+      "ru": "Ты медленно проходишь знакомую последовательность и убираешь лишние движения, которые мешают ритму. Точность помогает выразительности, не заменяя её.",
+      "en": "You move slowly through a familiar sequence and remove unnecessary motions that disturb the rhythm. Precision supports expression without replacing it."
+    },
+    "event.school-life-content-v1.night-study.arts-and-performance-dexterity.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue"
+    },
+    "event.school-life-content-v1.night-study.arts-and-performance-dexterity.choice.continue.text": {
+      "ru": "Продолжить ночь.",
+      "en": "Let the Night flow continue."
+    },
+    "event.school-life-content-v1.night-study.body-confidence-sexuality.title": {
+      "ru": "Выбрать подачу самой",
+      "en": "Choose your presentation yourself"
+    },
+    "event.school-life-content-v1.night-study.body-confidence-sexuality.variant.default.text": {
+      "ru": "Ты отмечаешь, какая манера держаться сегодня ощущается намеренной и удобной. Уверенность и сексуальность в этом упражнении не означают согласия, обещания или готовности к чужому запросу.",
+      "en": "You note which way of carrying yourself feels intentional and comfortable today. Confidence and sexuality in this exercise do not imply consent, a promise, or readiness for someone else's request."
+    },
+    "event.school-life-content-v1.night-study.body-confidence-sexuality.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue"
+    },
+    "event.school-life-content-v1.night-study.body-confidence-sexuality.choice.continue.text": {
+      "ru": "Продолжить ночь.",
+      "en": "Let the Night flow continue."
+    },
+    "event.school-life-content-v1.night-study.body-confidence-grooming.title": {
+      "ru": "Уход для собственного комфорта",
+      "en": "Care for your own comfort"
+    },
+    "event.school-life-content-v1.night-study.body-confidence-grooming.variant.default.text": {
+      "ru": "Ты оставляешь только те шаги ухода, после которых чувствуешь себя собраннее. Внешняя подача остаётся твоим решением и не измеряет Похоть или желание понравиться.",
+      "en": "You keep only the care steps that leave you feeling more prepared. Outward presentation remains your choice and does not measure Lust or a desire to please."
+    },
+    "event.school-life-content-v1.night-study.body-confidence-grooming.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue"
+    },
+    "event.school-life-content-v1.night-study.body-confidence-grooming.choice.continue.text": {
+      "ru": "Продолжить ночь.",
+      "en": "Let the Night flow continue."
+    },
+    "event.school-life-content-v1.night-study.body-confidence-endurance.title": {
+      "ru": "Расслабить лишнее напряжение",
+      "en": "Release unnecessary tension"
+    },
+    "event.school-life-content-v1.night-study.body-confidence-endurance.variant.default.text": {
+      "ru": "Ты замечаешь, где тело продолжает удерживать напряжение без пользы, и возвращаешься к более устойчивому положению. Выносливость здесь начинается с того, чтобы не тратить силы на борьбу с собой.",
+      "en": "You notice where the body keeps holding tension for no useful reason and return to a steadier position. Endurance here begins with not spending effort fighting yourself."
+    },
+    "event.school-life-content-v1.night-study.body-confidence-endurance.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue"
+    },
+    "event.school-life-content-v1.night-study.body-confidence-endurance.choice.continue.text": {
+      "ru": "Продолжить ночь.",
+      "en": "Let the Night flow continue."
     }
   }
 }
