@@ -1,122 +1,212 @@
 # Chat 4 Executable Acceptance Truth — 2026-10-01
 
-Status: C4-125 QA evidence  
+Status: C4-143 exact-current-main truth; closes v13 C4-137-equivalent  
 Owner: Chat 4 / QA + Product Acceptance Gate  
 Repository: `Plegyer/Text`
 
-## Exact baseline
+## Exact executable baseline
 
-Acceptance truth below is for exact current main:
+Exact current-main evidence after integration of the accepted #172/#174/#175 wave:
 
-- SHA: `a30272dc91cab3d5286558a189d5d816f1841db7`;
+- SHA: `afed43c73b7c964bc6e42eb2955eca5165a3c1f7`;
 - workflow: `mindy-successor check`;
-- run #459 / id `36816282846`;
-- result: SUCCESS;
-- full `npm run check`: typecheck / validation / build / tests green;
-- production validator: 17 packs / 46 events / 35 actions / 9 endings;
-- tests: 556 / pass 556 / fail 0.
+- run #679 / id `36833488957`;
+- event: push on `main`;
+- result: **SUCCESS**;
+- validator: **22 packs / 88 events / 39 actions / 20 endings**;
+- tests: **672 / 672 pass, 0 fail**.
 
-Fixture/preparation-only material and open PR behavior are not counted as shipped.
+This exact SHA contains Satyr School v12, Satyr complete-career presentation v12 and Forest Authored Depth v13. C4-143 revalidated the combined shipped tree rather than reusing producer-head CI.
 
-## Directly player-reachable on current main
+Open/frozen PR behavior is not counted as shipped until integrated.
+
+## Directly player-reachable on current product main
 
 ### Core run / presentation
 
-- Character creation, 160-day / 4-year calendar, 3 daily Energy baseline, Save/reload and RU/EN runtime presentation are executable.
-- NightFlow and lodging are executable, including normal / cheap / street lodging choices and next-day continuation.
+- Character creation, the four-year calendar, daily Energy, Save/reload, RU/EN presentation and NightFlow are executable.
+- Normal, cheap and street lodging remain executable and preserve exactly-once Night/payment semantics across reload.
+- Current presentation has project-owned static fallbacks, animation-off behavior and missing-dynamic-media safety without gameplay Save mutation.
 
-### Careers
+### Ordinary careers and Hard Work
 
-- Exactly three ordinary careers are available from the normal starting state: Lumber, Satyr Maid and Undead Farm.
-- Satyr Maid and Undead Farm are Day-1 selectable and their **first** one-Energy shift, seasonal presentation and typed first-shift transition/fact work. They are **not currently repeatable after that transition**: each shift action unconditionally re-applies its one-time `first-shift` transition, so a second real shift reaches the typed `from` guard from `known-face` / `reliable-helper` and throws. They must not be accepted as repeatable career loops on this baseline.
-- Lumber has the current production reference path: first shift, typed Lumber progression, Foreman opening and professional relationship route, repeatable/seasonal work, Night interaction, Forest continuation, eligible endings, explicit ending commitment/completion and New Run Meta application.
-- Lumber Hard Work is a real production ending at exactly 50 completed Lumber shifts. QA/product tests accelerate the repetitive setup by placing the counter at 49 before executing the real 50th shift, but the production condition itself is naturally satisfiable and is not a test-only ending.
-- Lumber Forest ending is naturally reachable through the production Logging Road Forest route: Forest success publishes the existing result fact, the Lumber continuation converts it to the current career facts, and the ending becomes eligible.
+- Lumber, Satyr Maid and Undead Farm are the three Day-1 ordinary career actions.
+- All three have repeatable one-Energy work loops.
+- Satyr Maid and Undead Farm retain one-time first-shift transitions while later real shifts repeat correctly.
+- Both starter careers naturally reach their 50-shift Hard Work thresholds without stage/counter priming.
+- The seven later ordinary careers use their authored stat/calendar unlock conditions and have repeatable base work once unlocked.
+- All ten ordinary careers have live 50-shift Hard Work endings with exactly-once `hardWork:<career>` Meta.
+- Palace availability is a live derived 10/10 Hard Work predicate. Playable Palace career/content is still not shipped.
 
-### School
+### Satyr Maid complete-career runtime
 
-- All eight paid School courses are executable through the typed `schoolLesson` path, with real tuition, one Energy cost, stat gains, track `lessons_completed` progress, stable course presentation identity and Save/reload support.
-- The 24 exact School Night-study choices exist as executable Night choices. Their stat/track effects are real; normal/cheap housing is the ordinary availability boundary used by production definitions.
-- Generic after-School reactions remain executable. Exact prepared teacher/milestone prose beyond the currently merged production consumers is not counted as live.
+The C1D-97..108 runtime is now shipped.
 
-### Forest / poverty
+Live production includes:
 
-- `lumber.forest` is executable with a two-Energy entry cost, Save/resume, Logging Road routing, internal advance, escape and success/failure result boundaries.
-- Logging Road is directly selectable without an item capability.
-- Street/cheap ordinary-poverty production packs are executable through the existing Night/lodging boundaries; bad-pressure paths retain a free safe resolution and zero-money recovery can return to an executable starter career.
-- Ordinary poverty remains independent of Secret Debt.
+- typed Satyr milestone progression beyond the starter shell;
+- 12 seasonal/context repeatable shift variants;
+- recurring-guest work -> voluntary Night -> request -> later-work chain;
+- refusal that preserves the professional path;
+- typed School hooks at three relevant paid lessons with zero extra reaction Energy;
+- staffing/supply/customer crisis branches;
+- House Power and Boundary Mastery complex endings;
+- House Credit (+600 starting money exactly once);
+- Clear Terms narrow later-run negotiation option;
+- coexistence of Hard Work / House Power / Boundary Mastery eligibility;
+- explicit ending commit/completion/RunResult lifecycle.
 
-## Test-accelerated or dependency-accelerated surfaces
+Exact-main regression evidence includes the clean natural Satyr run through real shifts, relationship/Night, paid School, crisis, 50-shift Hard Work, complex-ending eligibility, commit/completion and New Life.
 
-These exist as real production seams, but current natural play does not supply every prerequisite.
+Satyr presentation #174 and Satyr School v12 #172 are now shipped on this baseline.
 
-### Lumber Forewoman ending
+- all live Satyr runtime events/stages/complex endings map to production presentation slots;
+- a real Satyr shift writes the exact live presentation ID;
+- project-owned static fallback, animation-off and missing-motion safety remain green;
+- the 12 collision-sensitive Satyr School localization values preserve Chat 5 ownership after Presentation integration;
+- RU/EN School/relationship/crisis/ending presentation remains presentation-only and does not mutate gameplay Save.
 
-- The production ending `ending.lumber.forewoman` exists and its career/relationship reaction seam works.
-- Natural paid School play does **not** publish `lumber.school.management-ready`.
-- Current test coverage proves the seam only after a test-only public-boundary injection of that world fact.
-- Therefore Forewoman is **not accepted as naturally player-reachable** on current main.
+### Lumber
 
-### Old Boundary Forest route
+- Lumber remains the reference cross-system career with first-shift progression, Foreman professional relationship, voluntary Night and Forest continuation.
+- Lumber Hard Work is naturally reachable at 50 completed shifts.
+- Forest success can feed the Lumber Forest ending through the existing continuation facts.
+- Forewoman remains dependency-accelerated: current School production still does not naturally publish the Lumber management-ready producer required by that ending.
 
-- The production route `forest.route.old-boundary` exists and is gated by capability `enter_old_boundary`.
-- `old_boundary_token` exists in item definitions with that capability.
-- No current root production pack contains a natural `old_boundary_token` / `enter_old_boundary` acquisition write.
-- Tests can inject the capability/world fact and then exercise the route.
-- Therefore Old Boundary is **capability/test-accelerated**, not naturally reachable from the ordinary shipped path.
+### School v11
 
-### Repetition-heavy ending evidence
+The QA-accepted School v11 production promotion is now shipped.
 
-- Lumber Hard Work regression/product acceptance commonly accelerates to 49 completed shifts and executes the 50th shift through the real command path.
-- This is only a test-speed optimization; it does not change the classification of the production ending as naturally reachable.
+Live production includes:
 
-## Still unimplemented or not player-reachable on current main
+- all eight paid courses using typed `schoolLesson`;
+- real tuition, one current-day Energy, stat packages and typed `lessons_completed` progress;
+- exact semantic course presentation identities;
+- the current exact Night-study identities/content;
+- existing teacher continuity on the live course surfaces;
+- RU/EN result/journal/presentation localization;
+- locale switching that does not mutate Save;
+- save/reload preservation of paid transactions and exact Night-study identity.
 
-### Ordinary career roster / Hard Work / Meta
+The current School production still keeps unresolved global producer/certificate/project design outside live authority.
 
-- Tavern, Hunter, Guard, Merchant, Artist-Geisha, Assassin and Prostitute base one-Energy shift definitions exist, but their production actions have no authored unlock conditions and `actionAvailable(...)` intentionally keeps all seven unavailable.
-- Those seven careers therefore are **base definitions, not player-reachable careers** on this baseline.
-- Satyr Maid and Undead Farm are starter production layers only, and current production has a repeatability blocker after the first typed transition because their base shift actions unconditionally invoke the one-time transition again. They do not yet have complete career lives/outcome state machines.
-- The remaining seven ordinary careers have only initial stages and no deeper production transitions.
-- Only Lumber has `ending.<career>.hard-work` + Hard Work Meta. The other nine ordinary careers do not have production Hard Work endings/Meta coverage.
+Satyr School v12 #172 is shipped. Its three career-local hooks preserve the approved local paid-lesson/Night-study thresholds, existing teacher continuity, immediate Resolver behavior, exactly-once/reload semantics and the global School-threshold firewall.
 
-### Palace / Secret Debt
+### Forest / items — v11 + v12
 
-- Palace is not a playable production career. The 10/10 Hard Work unlock seam is not shipped on current main.
-- Secret Debt is not a production hidden career/state machine. Ordinary poverty explicitly remains separate from it.
+The accepted Forest/Poverty v11 promotion and Forest product slice v12 are now shipped.
 
-### School depth
+#### Natural preparation
 
-- Natural School -> Lumber management publishing remains absent, so the Forewoman route is not naturally closed.
-- Independent School milestone/project/certificate/School-ending depth is incomplete.
-- Prepared exact paid-course teacher reaction content and exact Night-study reaction prose in open worker candidates are not live until integrated into production.
-- The paid-lesson journal/fallback localization gap remains a documented gap rather than a shipped fix.
+Current production has natural paths for:
 
-### Forest depth / item acquisition
+- Hunter clue + Rope Kit;
+- Reinforced Axe through Lumber progression;
+- Old Boundary Token through the professional Foreman relationship;
+- Field Preservation Kit after real School enrollment.
 
-- Forest does not yet provide the complete target three-route / three-challenge / full seasonal product depth.
-- Old Boundary natural capability acquisition is absent.
-- Other target capability items similarly lack reliable natural production acquisition paths.
+Therefore Old Boundary is no longer classified as test-only/capability-injected on this baseline.
 
-## Open-PR honesty boundary
+#### Routes and challenge families
 
-Current open candidates must not be counted as shipped before integration:
+- Logging Road is live.
+- Hunter Trail is a live third route with its authored summer/autumn availability.
+- Old Boundary is naturally unlockable through the shipped token path.
+- Navigation, physical-obstacle and interpretation/ritual challenge families run on the existing typed `counter.v1` Activity runtime.
+- Reason, Wits, Strength, Endurance, Dexterity, Magic and item capabilities affect real option availability.
+- Seasons alter route/challenge topology rather than only prose.
 
-- #124 has selective unique Forest/School consumer material but is not a clean whole-PR current-main candidate.
-- #136 contains useful presentation/accessibility production delta still absent from main.
-- #139 contains useful central availability + exact Night-study production delta still absent from main.
-- #143/#145 are preparation/evidence candidates, not shipped player-facing content.
-- #146 is a fresh Chat 3 production-promotion candidate but its first exact-head CI run failed and it is not accepted/frozen.
-- #147 is the active Chat 1 v9 late-career/Hard-Work candidate. Its frozen `15d6ee3d91c5ad3fef82fe52a06ec2a590089003` head was C4-blocked on the Satyr Maid / Undead Farm natural-repeatability defect, then invalidated by head movement. Producer work has since resumed on a mutable draft head; no post-block head is accepted until a fresh freeze + exact-head C4 gate.
+#### Extraction and cross-system continuation
+
+- Preservation capability is mechanically relevant to successful extraction.
+- Successful Forest completion can produce `forest_preserved_specimen`.
+- The existing Lumber continuation reads the specimen and records the current Lumber career facts.
+- Route/challenge/checkpoint state and terminal result selection remain deterministic across save/reload.
+
+Forest Authored Depth v13 #175 is shipped.
+
+- route/challenge narrative responds to the real persisted route, season, last roll, stats, facts and exact item capabilities;
+- Logging Road, Hunter Trail and Old Boundary have bilingual authored depth without new Activity mechanics;
+- city preparation and equipment are acknowledged through existing facts/capabilities;
+- success/escape/failure and Lumber-return aftermath have live item/preparation variants;
+- repeated route/challenge copy remains deterministic across reload and does not mutate gameplay state.
+
+### Ordinary poverty
+
+- Street and cheap ordinary-poverty production packs are live through the existing Night/lodging flow.
+- Seasonal/event variety is deterministic and reload-stable.
+- Safe recovery/help and anti-softlock paths remain available.
+- Ordinary poverty remains independent from Secret Debt.
+- Secret Debt is still not a shipped hidden career/state machine.
+
+## Dependency/test-accelerated surfaces
+
+### Lumber Forewoman
+
+- `ending.lumber.forewoman` and its downstream career/relationship seam exist.
+- Natural current School play still lacks the required Lumber management-ready publisher.
+- Tests can exercise the downstream seam after public-boundary injection.
+- Forewoman therefore remains dependency/test-accelerated.
+
+### Repetition-heavy acceptance setup
+
+- Some all-ten Hard Work lifecycle tests accelerate counters for test speed.
+- This does not make the production 50-shift conditions test-only.
+- Satyr Maid and Undead Farm additionally have natural 50-real-shift coverage.
+
+## Still incomplete / not shipped
+
+- Undead Farm still lacks a complete career life comparable to the now-shipped Satyr complete-career runtime.
+- The seven later ordinary careers still lack their intended deep career-specific milestone/relationship/crisis/outcome structures.
+- Playable Palace content is absent beyond the 10/10 derived availability seam.
+- Secret Debt is absent as a production hidden career/state machine.
+- Lumber Forewoman lacks its natural School producer.
+- Full School certificate/project/ending design remains incomplete.
+- The accepted Undead complete-runtime / School / presentation wave (#178/#181/#182) is not shipped until Lead integration and the required C4-144/C4-146 exact-main gates.
+- Ordinary Poverty closure v14 #180 is accepted by QA but not shipped until Lead integration and C4-145.
+- Tavern complete-career runtime/content/presentation/School remains the next active producer wave and is not shipped until frozen green candidates pass C4-147/C4-148 and integration.
+
+## C4-133 legacy selective-source disposition
+
+Legacy open PRs are not whole-PR merge candidates.
+
+### PR #124
+
+- Superseded: starter Save/reload intent and legacy Forest/poverty selector approaches.
+- Still unique: the narrow exact paid-course teacher-response consumer using persisted exact course presentation identity, its approved response keys and focused regression.
+- If selected later, port only that narrow School hunk against then-current School main.
+
+### PR #136
+
+- Fully superseded by current presentation/accessibility/fallback behavior.
+- No production hunk remains recommended for selective sourcing.
+
+### PR #139
+
+- Still unique: the structured central `actionAvailability(...)` result and shared engine/UI blocker categories/messages.
+- The old exact Night-study consumer architecture is superseded by the shipped newer School architecture.
+- If the availability seam is selected later, re-author it against current main rather than restoring old pre-v9 assumptions.
+
+## C4-136 frozen-candidate status
+
+QA has gated all three frozen candidates assigned by the current Chat 4 pointer:
+
+- PR #174 @ `56ca78ccb0210225136aeca1c68978296ba7d61d`, CI #582, 616/616 — **PASS-WITH-NOTES**;
+- PR #175 @ `234e1a6fac0d25b0393f7ffec84eac4007347c32`, CI #593, 581/581 — **PASS-WITH-NOTES**;
+- PR #172 @ `41ed6a9d54965a16bff004dae6e7fc79a2841883`, CI #592, 645/645 — **PASS-WITH-NOTES**.
+
+All three C4-136 candidates are now integrated. C4-143 re-gated exact current main `afed43c...` with CI #679 / 672 of 672 and closed the v13 current-main truth requirement.
+
+The v14 candidates #178, #180, #181 and #182 have separately received C4-138..C4-141 PASS-WITH-NOTES verdicts on their frozen exact heads. They remain unshipped until their Lead integrations and post-merge main gates.
 
 ## Acceptance conclusion
 
-Current main is a healthy runnable baseline, not a complete target game.
+Current main is a healthy executable product baseline.
 
-The trustworthy acceptance split is:
+The trustworthy split is:
 
-- **directly player-reachable:** all three starter actions on Day 1, but only Lumber currently has a repeatable ordinary-work loop; Satyr Maid / Undead Farm have a working first shift followed by the repeatability blocker described above. Lumber reference path (except natural Forewoman prerequisite), eight School courses, School Night-study mechanics, Logging Road Forest path/results, ordinary poverty/Night recovery, ending lifecycle/New Run Meta for Lumber Hard Work, RU/EN/save/presentation infrastructure;
-- **test/dependency-accelerated:** Forewoman management prerequisite, Old Boundary capability route, repetition-heavy setup in some acceptance tests;
-- **not yet implemented/player-reachable:** a correct repeatable Satyr Maid / Undead Farm base-work loop beyond first shift, seven late-career unlocks and full lives, nine non-Lumber Hard Work/Meta paths, full Satyr Maid/Undead Farm lives, Palace, Secret Debt, complete School depth, complete Forest route/challenge depth and natural capability acquisition.
+- **directly/naturally player-reachable:** all three starter work loops; all-ten Hard Work/Meta; late-career base unlock/work; complete Satyr runtime + School v12 + presentation slice; eight paid School courses; Forest v12 natural item acquisition/three-route challenge product plus Forest v13 authored depth; ordinary poverty/Night recovery; current RU/EN/save/presentation infrastructure.
+- **test/dependency-accelerated:** Lumber Forewoman's missing natural School producer and some repetition-heavy acceptance setup.
+- **not yet complete/shipped:** accepted but unintegrated Undead runtime/School/presentation wave, accepted but unintegrated Poverty v14 closure, deep lives for the remaining later careers, playable Palace, Secret Debt, complete global School certificate/project/endings, and the active Tavern wave.
 
-No fixture/preparation artifact is promoted to shipped status by this document.
+No fixture, preparation artifact, draft head or frozen-but-unmerged candidate is promoted to shipped status by this document.
