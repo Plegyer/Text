@@ -4173,6 +4173,58 @@
     "presentation.static.career.satyr-maid.school.boundaries.caption": {
       "ru": "Школьная уверенность превращается в профессиональную границу.",
       "en": "School confidence becomes a professional boundary."
+    },
+    "event.satyr-maid.crisis.house-strain.title": {
+      "ru": "Заведение работает на пределе",
+      "en": "The house is stretched thin"
+    },
+    "event.satyr-maid.crisis.house-strain.variant.default.text": {
+      "ru": "Нехватка персонала, неопределённые запасы и требовательные посетители сходятся в одну тяжёлую смену. Единственного правильного решения здесь нет.",
+      "en": "A staffing shortage, uncertain supplies, and demanding customers hit the same service night. There is no single correct build for solving it."
+    },
+    "event.satyr-maid.crisis.house-strain.choice.supply-plan.label": {
+      "ru": "Перестроить план запасов и смен",
+      "en": "Rebuild the supply and staffing plan"
+    },
+    "event.satyr-maid.crisis.house-strain.choice.supply-plan.text": {
+      "ru": "Использовать записи и расписание, чтобы стабилизировать работу заведения до того, как обслуживание развалится.",
+      "en": "You use records and scheduling to stabilize the house before service collapses."
+    },
+    "event.satyr-maid.crisis.house-strain.choice.staff-protection.label": {
+      "ru": "Согласовать рабочий план обслуживания",
+      "en": "Negotiate a workable service plan"
+    },
+    "event.satyr-maid.crisis.house-strain.choice.staff-protection.text": {
+      "ru": "Использовать переговоры, чтобы защитить нагрузку персонала и при этом сохранить заведение открытым.",
+      "en": "You use social negotiation to protect the staff load while keeping the house open."
+    },
+    "event.satyr-maid.crisis.house-strain.choice.customer-terms.label": {
+      "ru": "Установить ясные условия для посетителей",
+      "en": "Set clear customer terms"
+    },
+    "event.satyr-maid.crisis.house-strain.choice.customer-terms.text": {
+      "ru": "Снизить давление, явно обозначив пределы обслуживания и поддержав персонал, когда посетители пытаются их нарушить.",
+      "en": "You solve the pressure by setting explicit service limits and backing the staff when customers push past them."
+    },
+    "presentation.static.career.satyr-maid.crisis.house-strain.alt": {
+      "ru": "Напряжённая рабочая смена: персонал, запасы и поток посетителей требуют одновременного внимания.",
+      "en": "A strained service shift where staffing, supplies, and customer flow all need attention at once."
+    },
+    "presentation.static.career.satyr-maid.crisis.house-strain.caption": {
+      "ru": "Кризис смены: несколько рабочих проблем требуют решения.",
+      "en": "Shift crisis: several work problems need a response."
+    },
+    "ui.satyrMaid.crisisFeedback.supply-plan": {
+      "ru": "План работы и запасов перестроен; кризисная сцена завершена.",
+      "en": "The work and supply plan is rebuilt; the crisis scene is resolved."
+    },
+    "ui.satyrMaid.crisisFeedback.staff-protection": {
+      "ru": "Нагрузка персонала согласована; кризисная сцена завершена.",
+      "en": "The staff workload is negotiated; the crisis scene is resolved."
+    },
+    "ui.satyrMaid.crisisFeedback.customer-terms": {
+      "ru": "Условия обслуживания обозначены; кризисная сцена завершена.",
+      "en": "Service terms are made clear; the crisis scene is resolved."
     }
   }
 }
