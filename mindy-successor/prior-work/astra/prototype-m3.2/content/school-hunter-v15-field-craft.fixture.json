@@ -8,14 +8,14 @@
   "trackId": "school.track.field_craft",
   "teacherContentId": "school.teacher.rowan-pike",
   "teacherMediaId": "school.teacher.field-craft.classroom",
-  "bindingStatus": "C1D_139_EVENT_FACT_BOUND_NON_NUMERIC_CONDITION",
+  "bindingStatus": "FROZEN_RUNTIME_EVENT_FACT_BOUND_NON_NUMERIC_CONDITION",
   "reactionEvent": "hunter.school.field-craft",
   "careerFact": "school-field-craft-ready",
   "localThreshold": {
     "counter": "lessons_completed",
     "value": null,
     "scope": "hunter-only",
-    "authority": "C1D_133_EXPLICITLY_NULL"
+    "authority": "FROZEN_CONTRACT_EXPLICITLY_NULL"
   },
   "copy": {
     "title": {
@@ -47,8 +47,8 @@
     "publishesGlobalProject": false
   },
   "runtimeContract": {
-    "head": "7895b8ce5e17419a1204169112cf9df23002996e",
-    "blob": "9723fed6e77058fc29463395f55b39eee185134a"
+    "head": "8af661de2ce6d73e4db0f61fe4206d3334822998",
+    "blob": "160a7000cf49e86c638e9cfdf3c80f268e7c0c12"
   },
   "authorizedCondition": {
     "kind": "worldFact",
@@ -62,8 +62,8 @@
     "addsWorldFact": "forest.school-field-notes"
   },
   "consumerAuthority": {
-    "task": "C1D-139",
-    "observedHead": "ef3c941e4252bb7ec53306b5863b80f6a9fd8554",
+    "task": "C1D-139/C1D-144",
+    "observedHead": "8af661de2ce6d73e4db0f61fe4206d3334822998",
     "packBlob": "4e5ed1f9fcf6705845f8326a0d6ac331047ae763"
   },
   "nightParityStatus": "BLOCKED_NIGHT_STUDY_DOES_NOT_PRODUCE_FIELD_NOTES"
