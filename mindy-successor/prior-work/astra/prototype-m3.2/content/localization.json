@@ -2619,7 +2619,7 @@
       "en": "Rope kit"
     },
     "item.field_preservation_kit.label": {
-      "ru": "Полевой набор для сохранения образцов",
+      "ru": "Набор для консервации образцов",
       "en": "Field preservation kit"
     },
     "item.old_boundary_token.label": {
@@ -4317,6 +4317,830 @@
     "action.forest.collect-field-kit.description": {
       "ru": "После первого настоящего занятия забрать в школе контейнеры, бирки и полевые заметки.",
       "en": "After a real lesson, collect containers, labels, and field notes from the School desk."
+    },
+    "presentation.undead-farm.stage.new-hand.label": {
+      "ru": "Новая помощница",
+      "en": "New hand"
+    },
+    "presentation.static.career.undead-farm.stage.new-hand.alt": {
+      "ru": "Ферма нежити: карьерный этап «Новая помощница»; статичный рабочий визуал не меняет игровое состояние.",
+      "en": "Undead Farm career stage “New hand”; a static work visual that does not change gameplay state."
+    },
+    "presentation.static.career.undead-farm.stage.new-hand.caption": {
+      "ru": "Карьерный этап: Новая помощница.",
+      "en": "Career stage: New hand."
+    },
+    "presentation.undead-farm.stage.reliable-helper.label": {
+      "ru": "Надёжная помощница",
+      "en": "Reliable helper"
+    },
+    "presentation.static.career.undead-farm.stage.reliable-helper.alt": {
+      "ru": "Ферма нежити: карьерный этап «Надёжная помощница»; статичный рабочий визуал не меняет игровое состояние.",
+      "en": "Undead Farm career stage “Reliable helper”; a static work visual that does not change gameplay state."
+    },
+    "presentation.static.career.undead-farm.stage.reliable-helper.caption": {
+      "ru": "Карьерный этап: Надёжная помощница.",
+      "en": "Career stage: Reliable helper."
+    },
+    "presentation.undead-farm.stage.keeper-of-process.label": {
+      "ru": "Хранительница процесса",
+      "en": "Keeper of process"
+    },
+    "presentation.static.career.undead-farm.stage.keeper-of-process.alt": {
+      "ru": "Ферма нежити: карьерный этап «Хранительница процесса»; статичный рабочий визуал не меняет игровое состояние.",
+      "en": "Undead Farm career stage “Keeper of process”; a static work visual that does not change gameplay state."
+    },
+    "presentation.static.career.undead-farm.stage.keeper-of-process.caption": {
+      "ru": "Карьерный этап: Хранительница процесса.",
+      "en": "Career stage: Keeper of process."
+    },
+    "presentation.undead-farm.stage.veteran.label": {
+      "ru": "Ветеран фермы",
+      "en": "Farm veteran"
+    },
+    "presentation.static.career.undead-farm.stage.veteran.alt": {
+      "ru": "Ферма нежити: карьерный этап «Ветеран фермы»; статичный рабочий визуал не меняет игровое состояние.",
+      "en": "Undead Farm career stage “Farm veteran”; a static work visual that does not change gameplay state."
+    },
+    "presentation.static.career.undead-farm.stage.veteran.caption": {
+      "ru": "Карьерный этап: Ветеран фермы.",
+      "en": "Career stage: Farm veteran."
+    },
+    "presentation.undead-farm.stage.research.label": {
+      "ru": "Исследовательский путь",
+      "en": "Research route"
+    },
+    "presentation.static.career.undead-farm.stage.research.alt": {
+      "ru": "Ферма нежити: карьерный этап «Исследовательский путь»; статичный рабочий визуал не меняет игровое состояние.",
+      "en": "Undead Farm career stage “Research route”; a static work visual that does not change gameplay state."
+    },
+    "presentation.static.career.undead-farm.stage.research.caption": {
+      "ru": "Карьерный этап: Исследовательский путь.",
+      "en": "Career stage: Research route."
+    },
+    "presentation.undead-farm.stage.successor.label": {
+      "ru": "Путь преемницы",
+      "en": "Successor route"
+    },
+    "presentation.static.career.undead-farm.stage.successor.alt": {
+      "ru": "Ферма нежити: карьерный этап «Путь преемницы»; статичный рабочий визуал не меняет игровое состояние.",
+      "en": "Undead Farm career stage “Successor route”; a static work visual that does not change gameplay state."
+    },
+    "presentation.static.career.undead-farm.stage.successor.caption": {
+      "ru": "Карьерный этап: Путь преемницы.",
+      "en": "Career stage: Successor route."
+    },
+    "presentation.undead-farm.stage.external-anomaly.label": {
+      "ru": "Внешняя аномалия",
+      "en": "External anomaly"
+    },
+    "presentation.static.career.undead-farm.stage.external-anomaly.alt": {
+      "ru": "Ферма нежити: карьерный этап «Внешняя аномалия»; статичный рабочий визуал не меняет игровое состояние.",
+      "en": "Undead Farm career stage “External anomaly”; a static work visual that does not change gameplay state."
+    },
+    "presentation.static.career.undead-farm.stage.external-anomaly.caption": {
+      "ru": "Карьерный этап: Внешняя аномалия.",
+      "en": "Career stage: External anomaly."
+    },
+    "presentation.undead-farm.stage.outcome-ready.label": {
+      "ru": "Готовность к исходу",
+      "en": "Outcome ready"
+    },
+    "presentation.static.career.undead-farm.stage.outcome-ready.alt": {
+      "ru": "Ферма нежити: карьерный этап «Готовность к исходу»; статичный рабочий визуал не меняет игровое состояние.",
+      "en": "Undead Farm career stage “Outcome ready”; a static work visual that does not change gameplay state."
+    },
+    "presentation.static.career.undead-farm.stage.outcome-ready.caption": {
+      "ru": "Карьерный этап: Готовность к исходу.",
+      "en": "Career stage: Outcome ready."
+    },
+    "event.undead-farm.career.first-shift.title": {
+      "ru": "Надёжная помощница",
+      "en": "Reliable helper"
+    },
+    "event.undead-farm.career.first-shift.variant.default.text": {
+      "ru": "Первая полная смена показывает хранителю фермы, что обычную работу тебе уже можно доверять без постоянного надзора.",
+      "en": "The first full farm shift is enough for the keeper to trust you with ordinary work without constant supervision."
+    },
+    "event.undead-farm.career.first-shift.choice.continue.label": {
+      "ru": "Продолжить работу",
+      "en": "Keep working"
+    },
+    "event.undead-farm.career.first-shift.choice.continue.text": {
+      "ru": "Взять на себя повторяемую часть фермерской рутины.",
+      "en": "Take responsibility for a repeatable part of the farm routine."
+    },
+    "presentation.static.career.undead-farm.event.career-first-shift.alt": {
+      "ru": "Ферма нежити: Надёжная помощница; статичная сцена сохраняет смысл события без изменения механик.",
+      "en": "Undead Farm: Reliable helper; the static scene preserves the event meaning without changing mechanics."
+    },
+    "presentation.static.career.undead-farm.event.career-first-shift.caption": {
+      "ru": "Надёжная помощница.",
+      "en": "Reliable helper."
+    },
+    "event.undead-farm.career.keeper-of-process.title": {
+      "ru": "Хранительница процесса",
+      "en": "Keeper of the process"
+    },
+    "event.undead-farm.career.keeper-of-process.variant.default.text": {
+      "ru": "Через твои руки прошло достаточно обычной продукции, чтобы ты могла удерживать один рабочий процесс от приёмки до хранения.",
+      "en": "Enough ordinary production has passed through your hands that you can keep one farm process stable from intake to storage."
+    },
+    "event.undead-farm.career.keeper-of-process.choice.continue.label": {
+      "ru": "Взять ответственность",
+      "en": "Take responsibility"
+    },
+    "event.undead-farm.career.keeper-of-process.choice.continue.text": {
+      "ru": "Стать той, кто сохраняет процесс связным при изменении условий.",
+      "en": "Become the person who keeps the process coherent when conditions change."
+    },
+    "presentation.static.career.undead-farm.event.career-keeper-of-process.alt": {
+      "ru": "Ферма нежити: Хранительница процесса; статичная сцена сохраняет смысл события без изменения механик.",
+      "en": "Undead Farm: Keeper of the process; the static scene preserves the event meaning without changing mechanics."
+    },
+    "presentation.static.career.undead-farm.event.career-keeper-of-process.caption": {
+      "ru": "Хранительница процесса.",
+      "en": "Keeper of the process."
+    },
+    "event.undead-farm.career.veteran.title": {
+      "ru": "Путь ветерана фермы",
+      "en": "Veteran farm route"
+    },
+    "event.undead-farm.career.veteran.variant.default.text": {
+      "ru": "Сезонного опыта и работы в кризисе уже достаточно, чтобы устойчивый фермерский труд стал самостоятельным профессиональным путём.",
+      "en": "You have enough seasonal repetition and crisis experience to make steady farm work a complete professional route of its own."
+    },
+    "event.undead-farm.career.veteran.choice.continue.label": {
+      "ru": "Остаться с процессом",
+      "en": "Stay with the process"
+    },
+    "event.undead-farm.career.veteran.choice.continue.text": {
+      "ru": "Продолжить путь ветерана без обязательного исследования или владения.",
+      "en": "Take the veteran route without requiring research or ownership."
+    },
+    "presentation.static.career.undead-farm.event.career-veteran.alt": {
+      "ru": "Ферма нежити: Путь ветерана фермы; статичная сцена сохраняет смысл события без изменения механик.",
+      "en": "Undead Farm: Veteran farm route; the static scene preserves the event meaning without changing mechanics."
+    },
+    "presentation.static.career.undead-farm.event.career-veteran.caption": {
+      "ru": "Путь ветерана фермы.",
+      "en": "Veteran farm route."
+    },
+    "event.undead-farm.career.research.title": {
+      "ru": "Исследовательский путь",
+      "en": "Research route"
+    },
+    "event.undead-farm.career.research.variant.default.text": {
+      "ru": "Школьный анализ, сохранённый образец и решённая проблема содержания складываются в устойчивую исследовательскую практику.",
+      "en": "School analysis, a preserved specimen, and a solved containment problem now form a coherent research practice instead of a one-off curiosity."
+    },
+    "event.undead-farm.career.research.choice.continue.label": {
+      "ru": "Оформить исследование",
+      "en": "Formalize the research"
+    },
+    "event.undead-farm.career.research.choice.continue.text": {
+      "ru": "Превратить аномалию фермы в повторяемый исследовательский путь.",
+      "en": "Turn the farm anomaly into a repeatable research route."
+    },
+    "presentation.static.career.undead-farm.event.career-research.alt": {
+      "ru": "Ферма нежити: Исследовательский путь; статичная сцена сохраняет смысл события без изменения механик.",
+      "en": "Undead Farm: Research route; the static scene preserves the event meaning without changing mechanics."
+    },
+    "presentation.static.career.undead-farm.event.career-research.caption": {
+      "ru": "Исследовательский путь.",
+      "en": "Research route."
+    },
+    "event.undead-farm.career.successor.title": {
+      "ru": "Путь преемницы",
+      "en": "Successor route"
+    },
+    "event.undead-farm.career.successor.variant.default.text": {
+      "ru": "Профессиональное доверие и решённый производственный кризис делают преемственность управления реальным рабочим путём.",
+      "en": "Professional trust and a resolved production crisis make management succession a real route rather than a romantic shortcut."
+    },
+    "event.undead-farm.career.successor.choice.continue.label": {
+      "ru": "Взять ответственность",
+      "en": "Take responsibility"
+    },
+    "event.undead-farm.career.successor.choice.continue.text": {
+      "ru": "Войти в путь преемницы на профессиональных условиях.",
+      "en": "Step into the successor route on professional terms."
+    },
+    "presentation.static.career.undead-farm.event.career-successor.alt": {
+      "ru": "Ферма нежити: Путь преемницы; статичная сцена сохраняет смысл события без изменения механик.",
+      "en": "Undead Farm: Successor route; the static scene preserves the event meaning without changing mechanics."
+    },
+    "presentation.static.career.undead-farm.event.career-successor.caption": {
+      "ru": "Путь преемницы.",
+      "en": "Successor route."
+    },
+    "event.undead-farm.career.external-anomaly.title": {
+      "ru": "Путь внешней аномалии",
+      "en": "External anomaly route"
+    },
+    "event.undead-farm.career.external-anomaly.variant.default.text": {
+      "ru": "Сохранённый образец и совпавший результат за пределами фермы показывают, что аномалия не ограничена одним полем.",
+      "en": "A preserved sample and a matching result from outside the farm prove that the anomaly is not contained to one field."
+    },
+    "event.undead-farm.career.external-anomaly.choice.continue.label": {
+      "ru": "Исследовать внешний источник",
+      "en": "Follow the external source"
+    },
+    "event.undead-farm.career.external-anomaly.choice.continue.text": {
+      "ru": "Сохранить путь внешней аномалии без изменения Activity runtime.",
+      "en": "Keep the external anomaly route open without forking the Activity runtime."
+    },
+    "presentation.static.career.undead-farm.event.career-external-anomaly.alt": {
+      "ru": "Ферма нежити: Путь внешней аномалии; статичная сцена сохраняет смысл события без изменения механик.",
+      "en": "Undead Farm: External anomaly route; the static scene preserves the event meaning without changing mechanics."
+    },
+    "presentation.static.career.undead-farm.event.career-external-anomaly.caption": {
+      "ru": "Путь внешней аномалии.",
+      "en": "External anomaly route."
+    },
+    "event.undead-farm.career.outcome-ready.title": {
+      "ru": "Исходы фермы готовы",
+      "en": "Farm outcomes ready"
+    },
+    "event.undead-farm.career.outcome-ready.variant.default.text": {
+      "ru": "Ферма теперь поддерживает несколько завершённых будущих, а жизнь продолжается до явного выбора одного из них.",
+      "en": "The farm now supports more than one complete future. Eligibility can accumulate while the run remains active."
+    },
+    "event.undead-farm.career.outcome-ready.choice.continue.label": {
+      "ru": "Продолжить жизнь",
+      "en": "Keep living"
+    },
+    "event.undead-farm.career.outcome-ready.choice.continue.text": {
+      "ru": "Продолжать работать до явного выбора одного финала.",
+      "en": "Keep working until you explicitly commit one ending."
+    },
+    "presentation.static.career.undead-farm.event.career-outcome-ready.alt": {
+      "ru": "Ферма нежити: Исходы фермы готовы; статичная сцена сохраняет смысл события без изменения механик.",
+      "en": "Undead Farm: Farm outcomes ready; the static scene preserves the event meaning without changing mechanics."
+    },
+    "presentation.static.career.undead-farm.event.career-outcome-ready.caption": {
+      "ru": "Исходы фермы готовы.",
+      "en": "Farm outcomes ready."
+    },
+    "event.undead-farm.production.first-output.title": {
+      "ru": "Полезный результат фермы",
+      "en": "A usable farm output"
+    },
+    "event.undead-farm.production.first-output.variant.default.text": {
+      "ru": "Эта смена дала продукт, который ферма действительно может хранить, учитывать и использовать.",
+      "en": "This shift produced something the farm can actually store, count, and use. Production is now more than wage text."
+    },
+    "event.undead-farm.production.first-output.choice.record.label": {
+      "ru": "Зафиксировать результат",
+      "en": "Record the output"
+    },
+    "event.undead-farm.production.first-output.choice.record.text": {
+      "ru": "Отметить обычное производство как надёжную часть работы.",
+      "en": "Mark ordinary production as a reliable part of your work."
+    },
+    "presentation.static.career.undead-farm.event.production-first-output.alt": {
+      "ru": "Ферма нежити: Полезный результат фермы; статичная сцена сохраняет смысл события без изменения механик.",
+      "en": "Undead Farm: A usable farm output; the static scene preserves the event meaning without changing mechanics."
+    },
+    "presentation.static.career.undead-farm.event.production-first-output.caption": {
+      "ru": "Полезный результат фермы.",
+      "en": "A usable farm output."
+    },
+    "event.undead-farm.production.prepare-delivery.title": {
+      "ru": "Подготовить поставку",
+      "en": "Prepare a delivery"
+    },
+    "event.undead-farm.production.prepare-delivery.variant.default.text": {
+      "ru": "Две единицы обычной продукции можно собрать в одну подготовленную поставку для дальнейшей работы со снабжением.",
+      "en": "Two units of ordinary output can be converted into one prepared delivery input for later supply work."
+    },
+    "event.undead-farm.production.prepare-delivery.choice.prepare.label": {
+      "ru": "Подготовить поставку",
+      "en": "Prepare the delivery"
+    },
+    "event.undead-farm.production.prepare-delivery.choice.prepare.text": {
+      "ru": "Собрать стабильную продукцию в партию, готовую к поставке.",
+      "en": "Use stable produce to assemble a delivery-ready lot."
+    },
+    "event.undead-farm.production.prepare-delivery.choice.hold.label": {
+      "ru": "Оставить продукцию",
+      "en": "Keep the produce"
+    },
+    "event.undead-farm.production.prepare-delivery.choice.hold.text": {
+      "ru": "Пока оставить обычный продукт в инвентаре.",
+      "en": "Leave the ordinary product in inventory for now."
+    },
+    "presentation.static.career.undead-farm.event.production-prepare-delivery.alt": {
+      "ru": "Ферма нежити: Подготовить поставку; статичная сцена сохраняет смысл события без изменения механик.",
+      "en": "Undead Farm: Prepare a delivery; the static scene preserves the event meaning without changing mechanics."
+    },
+    "presentation.static.career.undead-farm.event.production-prepare-delivery.caption": {
+      "ru": "Подготовить поставку.",
+      "en": "Prepare a delivery."
+    },
+    "event.undead-farm.production.preserve-sample.title": {
+      "ru": "Сохранить нестабильный образец",
+      "en": "Preserve the unstable specimen"
+    },
+    "event.undead-farm.production.preserve-sample.variant.default.text": {
+      "ru": "Набор для консервации позволяет превратить нестабильный результат фермы в образец для последующего анализа.",
+      "en": "The preservation kit lets you turn an unstable farm result into a specimen that can survive later School or Activity analysis."
+    },
+    "event.undead-farm.production.preserve-sample.choice.preserve.label": {
+      "ru": "Сохранить образец",
+      "en": "Preserve the sample"
+    },
+    "event.undead-farm.production.preserve-sample.choice.preserve.text": {
+      "ru": "Использовать нестабильный результат и запечатать один сохранённый образец.",
+      "en": "Consume the unstable result and seal one preserved specimen."
+    },
+    "event.undead-farm.production.preserve-sample.choice.leave-unpreserved.label": {
+      "ru": "Пока оставить изолированным",
+      "en": "Leave it isolated for now"
+    },
+    "event.undead-farm.production.preserve-sample.choice.leave-unpreserved.text": {
+      "ru": "Пока не преобразовывать образец.",
+      "en": "Do not consume or transform the specimen yet."
+    },
+    "presentation.static.career.undead-farm.event.production-preserve-sample.alt": {
+      "ru": "Ферма нежити: Сохранить нестабильный образец; статичная сцена сохраняет смысл события без изменения механик.",
+      "en": "Undead Farm: Preserve the unstable specimen; the static scene preserves the event meaning without changing mechanics."
+    },
+    "presentation.static.career.undead-farm.event.production-preserve-sample.caption": {
+      "ru": "Сохранить нестабильный образец.",
+      "en": "Preserve the unstable specimen."
+    },
+    "event.undead-farm.sample.kit-issued.title": {
+      "ru": "Набор для консервации со склада фермы",
+      "en": "Preservation kit from farm supplies"
+    },
+    "event.undead-farm.sample.kit-issued.variant.default.text": {
+      "ru": "Во время обычной работы появляется нестабильный образец, и ферма выдаёт стандартный набор для безопасной консервации.",
+      "en": "An unstable farm specimen appears during ordinary work. The farm supplies a standard preservation kit so it can be handled without inventing a new crafting system."
+    },
+    "event.undead-farm.sample.kit-issued.choice.take-kit.label": {
+      "ru": "Взять набор",
+      "en": "Take the preservation kit"
+    },
+    "event.undead-farm.sample.kit-issued.choice.take-kit.text": {
+      "ru": "Использовать существующую возможность preserve_specimen на пути образца.",
+      "en": "Use the existing preserve_specimen capability on the sample path."
+    },
+    "event.undead-farm.sample.kit-issued.choice.leave-kit.label": {
+      "ru": "Оставить набор на складе",
+      "en": "Leave the kit in stores"
+    },
+    "event.undead-farm.sample.kit-issued.choice.leave-kit.text": {
+      "ru": "Пока не брать новое оборудование со склада фермы.",
+      "en": "Do not take new equipment from the farm supply yet."
+    },
+    "presentation.static.career.undead-farm.event.sample-kit-issued.alt": {
+      "ru": "Ферма нежити: Набор для консервации со склада фермы; статичная сцена сохраняет смысл события без изменения механик.",
+      "en": "Undead Farm: Preservation kit from farm supplies; the static scene preserves the event meaning without changing mechanics."
+    },
+    "presentation.static.career.undead-farm.event.sample-kit-issued.caption": {
+      "ru": "Набор для консервации со склада фермы.",
+      "en": "Preservation kit from farm supplies."
+    },
+    "event.undead-farm.keeper.intro.title": {
+      "ru": "Хранитель фермы замечает твою работу",
+      "en": "The farm keeper notices your work"
+    },
+    "event.undead-farm.keeper.intro.variant.default.text": {
+      "ru": "Хранитель фермы начинает относиться к тебе как к надёжной работнице, а разговор остаётся полностью профессиональным.",
+      "en": "The farm keeper starts treating you as a reliable worker instead of a new hand. The exchange stays entirely professional."
+    },
+    "event.undead-farm.keeper.intro.choice.professional.label": {
+      "ru": "Обсудить работу",
+      "en": "Talk through the work"
+    },
+    "event.undead-farm.keeper.intro.choice.professional.text": {
+      "ru": "Обсудить рабочий процесс, а не личные обязательства.",
+      "en": "Discuss the process, not personal obligations."
+    },
+    "presentation.static.career.undead-farm.event.keeper-intro.alt": {
+      "ru": "Ферма нежити: Хранитель фермы замечает твою работу; статичная сцена сохраняет смысл события без изменения механик.",
+      "en": "Undead Farm: The farm keeper notices your work; the static scene preserves the event meaning without changing mechanics."
+    },
+    "presentation.static.career.undead-farm.event.keeper-intro.caption": {
+      "ru": "Хранитель фермы замечает твою работу.",
+      "en": "The farm keeper notices your work."
+    },
+    "event.undead-farm.keeper.trust.title": {
+      "ru": "Профессиональное доверие",
+      "en": "Professional trust"
+    },
+    "event.undead-farm.keeper.trust.variant.default.text": {
+      "ru": "Второй рабочий разговор превращает обычное сотрудничество в профессиональное доверие; хранитель предлагает добровольно разобрать необычный процесс после смены.",
+      "en": "A second work conversation turns routine cooperation into professional trust. The keeper asks whether you would review an unusual process after hours."
+    },
+    "event.undead-farm.keeper.trust.choice.accept-night.label": {
+      "ru": "Согласиться на ночной разбор",
+      "en": "Agree to review it at Night"
+    },
+    "event.undead-farm.keeper.trust.choice.accept-night.text": {
+      "ru": "Согласиться на добровольную профессиональную встречу после работы.",
+      "en": "Accept a voluntary after-hours professional meeting."
+    },
+    "event.undead-farm.keeper.trust.choice.decline-night.label": {
+      "ru": "Оставить работу в пределах смены",
+      "en": "Keep work inside the shift"
+    },
+    "event.undead-farm.keeper.trust.choice.decline-night.text": {
+      "ru": "Отказаться от ночной встречи, не повреждая профессиональный путь.",
+      "en": "Decline the after-hours meeting without damaging the professional route."
+    },
+    "presentation.static.career.undead-farm.event.keeper-trust.alt": {
+      "ru": "Ферма нежити: Профессиональное доверие; статичная сцена сохраняет смысл события без изменения механик.",
+      "en": "Undead Farm: Professional trust; the static scene preserves the event meaning without changing mechanics."
+    },
+    "presentation.static.career.undead-farm.event.keeper-trust.caption": {
+      "ru": "Профессиональное доверие.",
+      "en": "Professional trust."
+    },
+    "event.undead-farm.keeper.request.title": {
+      "ru": "Рабочая просьба возвращается в смену",
+      "en": "A process request returns to work"
+    },
+    "event.undead-farm.keeper.request.variant.default.text": {
+      "ru": "На смене хранитель спрашивает, хочешь ли ты взять ответственность за одну сложную производственную просьбу.",
+      "en": "Back on shift, the keeper asks whether you want to take responsibility for one difficult production request."
+    },
+    "event.undead-farm.keeper.request.choice.accept.label": {
+      "ru": "Принять просьбу",
+      "en": "Take the request"
+    },
+    "event.undead-farm.keeper.request.choice.accept.text": {
+      "ru": "Принять ответственность как профессиональную работу.",
+      "en": "Accept the responsibility as professional work."
+    },
+    "event.undead-farm.keeper.request.choice.decline.label": {
+      "ru": "Отказаться от просьбы",
+      "en": "Decline the request"
+    },
+    "event.undead-farm.keeper.request.choice.decline.text": {
+      "ru": "Сохранить установленную работу без дополнительной ответственности.",
+      "en": "Keep the established job without taking this extra responsibility."
+    },
+    "presentation.static.career.undead-farm.event.keeper-request.alt": {
+      "ru": "Ферма нежити: Рабочая просьба возвращается в смену; статичная сцена сохраняет смысл события без изменения механик.",
+      "en": "Undead Farm: A process request returns to work; the static scene preserves the event meaning without changing mechanics."
+    },
+    "presentation.static.career.undead-farm.event.keeper-request.caption": {
+      "ru": "Рабочая просьба возвращается в смену.",
+      "en": "A process request returns to work."
+    },
+    "event.undead-farm.keeper.successor-reaction.title": {
+      "ru": "Доверие становится готовностью к преемственности",
+      "en": "Trust becomes succession readiness"
+    },
+    "event.undead-farm.keeper.successor-reaction.variant.default.text": {
+      "ru": "Разрешённая просьба показывает, что профессиональное доверие может поддерживать управленческий путь без романтического условия.",
+      "en": "The resolved request proves professional trust can support a management route without requiring romance."
+    },
+    "event.undead-farm.keeper.successor-reaction.choice.continue.label": {
+      "ru": "Оставить путь открытым",
+      "en": "Keep the route open"
+    },
+    "event.undead-farm.keeper.successor-reaction.choice.continue.text": {
+      "ru": "Перенести это доверие в карьерное развитие.",
+      "en": "Carry that trust into career progression."
+    },
+    "presentation.static.career.undead-farm.event.keeper-successor-reaction.alt": {
+      "ru": "Ферма нежити: Доверие становится готовностью к преемственности; статичная сцена сохраняет смысл события без изменения механик.",
+      "en": "Undead Farm: Trust becomes succession readiness; the static scene preserves the event meaning without changing mechanics."
+    },
+    "presentation.static.career.undead-farm.event.keeper-successor-reaction.caption": {
+      "ru": "Доверие становится готовностью к преемственности.",
+      "en": "Trust becomes succession readiness."
+    },
+    "event.undead-farm.night.keeper-request.title": {
+      "ru": "Разбор процесса после смены",
+      "en": "After-hours process review"
+    },
+    "event.undead-farm.night.keeper-request.variant.default.text": {
+      "ru": "Добровольная ночная встреча остаётся о рабочих сбоях и просьбе, которую можно отложить до следующей смены.",
+      "en": "The voluntary Night meeting stays focused on process failures and a request that can wait until the next work shift."
+    },
+    "event.undead-farm.night.keeper-request.choice.finish.label": {
+      "ru": "Завершить разбор",
+      "en": "Finish the review"
+    },
+    "event.undead-farm.night.keeper-request.choice.finish.text": {
+      "ru": "Оставить просьбу до следующей рабочей смены.",
+      "en": "Leave the request for the next work shift."
+    },
+    "presentation.static.career.undead-farm.event.night-keeper-request.alt": {
+      "ru": "Ферма нежити: Разбор процесса после смены; статичная сцена сохраняет смысл события без изменения механик.",
+      "en": "Undead Farm: After-hours process review; the static scene preserves the event meaning without changing mechanics."
+    },
+    "presentation.static.career.undead-farm.event.night-keeper-request.caption": {
+      "ru": "Разбор процесса после смены.",
+      "en": "After-hours process review."
+    },
+    "event.undead-farm.night.process-notes.title": {
+      "ru": "Записи процесса",
+      "en": "Process notes"
+    },
+    "event.undead-farm.night.process-notes.variant.default.text": {
+      "ru": "Ночью ты просматриваешь записи фермы. Это занимает ночной слот, но не тратит дополнительную дневную энергию и не создаёт штрафа на следующий день.",
+      "en": "You review farm process notes at Night. It costs the Night slot but no extra daytime Energy and applies no next-day penalty."
+    },
+    "event.undead-farm.night.process-notes.choice.finish.label": {
+      "ru": "Закрыть записи",
+      "en": "Close the notes"
+    },
+    "event.undead-farm.night.process-notes.choice.finish.text": {
+      "ru": "Сохранить наблюдения для дальнейшей работы.",
+      "en": "Keep the observations for later work."
+    },
+    "presentation.static.career.undead-farm.event.night-process-notes.alt": {
+      "ru": "Ферма нежити: Записи процесса; статичная сцена сохраняет смысл события без изменения механик.",
+      "en": "Undead Farm: Process notes; the static scene preserves the event meaning without changing mechanics."
+    },
+    "presentation.static.career.undead-farm.event.night-process-notes.caption": {
+      "ru": "Записи процесса.",
+      "en": "Process notes."
+    },
+    "event.undead-farm.school.arcana-research.title": {
+      "ru": "Аркана становится исследовательским методом",
+      "en": "Arcana becomes a farm research method"
+    },
+    "event.undead-farm.school.arcana-research.variant.default.text": {
+      "ru": "Три завершённых занятия по Аркане дают повторяемый способ отличать обычную нестабильность фермы от образца, который стоит сохранить и изучить.",
+      "en": "Three completed Arcana lessons give you a repeatable way to distinguish ordinary farm instability from a sample worth preserving and studying."
+    },
+    "event.undead-farm.school.arcana-research.choice.apply.label": {
+      "ru": "Применить метод на ферме",
+      "en": "Apply the method at the farm"
+    },
+    "event.undead-farm.school.arcana-research.choice.apply.text": {
+      "ru": "Сразу перенести метод Арканы в развитие фермы без дополнительного рабочего действия.",
+      "en": "Carry the Arcana method into Farm progression immediately, without another Work action or extra daytime Energy."
+    },
+    "presentation.static.career.undead-farm.event.school-arcana-research.alt": {
+      "ru": "Ферма нежити: Аркана становится исследовательским методом; статичная сцена сохраняет смысл события без изменения механик.",
+      "en": "Undead Farm: Arcana becomes a farm research method; the static scene preserves the event meaning without changing mechanics."
+    },
+    "presentation.static.career.undead-farm.event.school-arcana-research.caption": {
+      "ru": "Аркана становится исследовательским методом.",
+      "en": "Arcana becomes a farm research method."
+    },
+    "event.undead-farm.school.management-records.title": {
+      "ru": "Фермерские записи становятся инструментом управления",
+      "en": "Farm records become management tools"
+    },
+    "event.undead-farm.school.management-records.variant.default.text": {
+      "ru": "Три занятия по грамотности и счёту превращают учёт запасов и заметки о поставках в практический инструмент управления.",
+      "en": "Three Literacy & Numbers lessons turn stock counts and supply notes into usable management records for the farm."
+    },
+    "event.undead-farm.school.management-records.choice.apply.label": {
+      "ru": "Применить записи",
+      "en": "Apply the records"
+    },
+    "event.undead-farm.school.management-records.choice.apply.text": {
+      "ru": "Перенести метод учёта в управление фермой без дополнительного рабочего действия.",
+      "en": "Carry the accounting method into Farm management without another Work action."
+    },
+    "presentation.static.career.undead-farm.event.school-management-records.alt": {
+      "ru": "Ферма нежити: Фермерские записи становятся инструментом управления; статичная сцена сохраняет смысл события без изменения механик.",
+      "en": "Undead Farm: Farm records become management tools; the static scene preserves the event meaning without changing mechanics."
+    },
+    "presentation.static.career.undead-farm.event.school-management-records.caption": {
+      "ru": "Фермерские записи становятся инструментом управления.",
+      "en": "Farm records become management tools."
+    },
+    "event.undead-farm.activity.forest-return.title": {
+      "ru": "Результат Леса совпадает с образцом фермы",
+      "en": "A Forest result matches the farm sample"
+    },
+    "event.undead-farm.activity.forest-return.variant.default.text": {
+      "ru": "Точный успешный результат Лесной Activity совпадает с признаками сохранённого образца фермы; Activity runtime остаётся без изменений.",
+      "en": "The exact successful Forest Activity result matches features of the preserved farm specimen. The Activity runtime stays unchanged; its typed result is consumed here as career evidence."
+    },
+    "event.undead-farm.activity.forest-return.choice.compare.label": {
+      "ru": "Сравнить результат с образцом",
+      "en": "Compare the result with the specimen"
+    },
+    "event.undead-farm.activity.forest-return.choice.compare.text": {
+      "ru": "Перенести результат Леса обратно в развитие фермы.",
+      "en": "Carry the Forest result back into Farm progression."
+    },
+    "presentation.static.career.undead-farm.event.activity-forest-return.alt": {
+      "ru": "Ферма нежити: Результат Леса совпадает с образцом фермы; статичная сцена сохраняет смысл события без изменения механик.",
+      "en": "Undead Farm: A Forest result matches the farm sample; the static scene preserves the event meaning without changing mechanics."
+    },
+    "presentation.static.career.undead-farm.event.activity-forest-return.caption": {
+      "ru": "Результат Леса совпадает с образцом фермы.",
+      "en": "A Forest result matches the farm sample."
+    },
+    "event.undead-farm.crisis.supply-labor-containment.title": {
+      "ru": "Снабжение, рабочая сила и содержание сталкиваются",
+      "en": "Supply, labor, and containment collide"
+    },
+    "event.undead-farm.crisis.supply-labor-containment.variant.default.text": {
+      "ru": "Задержка снабжения, нехватка работников и нестабильное содержание возникают одновременно; проблему можно решать через логистику, исследование или доверенное управление.",
+      "en": "A supply delay, a labor gap, and an unstable containment problem arrive together. The farm can be stabilized through logistics, research, or trusted management rather than a universal morality score."
+    },
+    "event.undead-farm.crisis.supply-labor-containment.choice.stabilize-production.label": {
+      "ru": "Стабилизировать снабжение подготовленной поставкой",
+      "en": "Use the prepared delivery to stabilize supply"
+    },
+    "event.undead-farm.crisis.supply-labor-containment.choice.stabilize-production.text": {
+      "ru": "Использовать подготовленную поставку, чтобы поддержать обычную производственную линию.",
+      "en": "Consume the prepared delivery input to keep the ordinary production line moving through the shortage."
+    },
+    "event.undead-farm.crisis.supply-labor-containment.choice.contain-and-study.label": {
+      "ru": "Сдержать аномалию и изучить её",
+      "en": "Contain the anomaly and study it"
+    },
+    "event.undead-farm.crisis.supply-labor-containment.choice.contain-and-study.text": {
+      "ru": "Использовать школьный метод и сохранённый образец для решения проблемы содержания.",
+      "en": "Use the School method and preserved sample to solve the containment side of the crisis without pretending the farm is a crafting spreadsheet."
+    },
+    "event.undead-farm.crisis.supply-labor-containment.choice.trust-network.label": {
+      "ru": "Распределить работу через доверенного хранителя",
+      "en": "Delegate through the trusted keeper"
+    },
+    "event.undead-farm.crisis.supply-labor-containment.choice.trust-network.text": {
+      "ru": "Использовать профессиональное доверие для перераспределения работы и ответственности.",
+      "en": "Use established professional trust to redistribute work and take responsibility for the production record."
+    },
+    "event.undead-farm.crisis.supply-labor-containment.choice.defer.label": {
+      "ru": "Пока удержать процесс на плаву",
+      "en": "Keep the process afloat for now"
+    },
+    "event.undead-farm.crisis.supply-labor-containment.choice.defer.text": {
+      "ru": "Не допустить немедленного срыва, не объявляя большой кризис решённым.",
+      "en": "Prevent immediate collapse without claiming the larger crisis is solved."
+    },
+    "presentation.static.career.undead-farm.event.crisis-supply-labor-containment.alt": {
+      "ru": "Ферма нежити: Снабжение, рабочая сила и содержание сталкиваются; статичная сцена сохраняет смысл события без изменения механик.",
+      "en": "Undead Farm: Supply, labor, and containment collide; the static scene preserves the event meaning without changing mechanics."
+    },
+    "presentation.static.career.undead-farm.event.crisis-supply-labor-containment.caption": {
+      "ru": "Снабжение, рабочая сила и содержание сталкиваются.",
+      "en": "Supply, labor, and containment collide."
+    },
+    "presentation.undead-farm.resource.farm_produce.label": {
+      "ru": "Обычная продукция",
+      "en": "Ordinary produce"
+    },
+    "presentation.static.career.undead-farm.resource.farm_produce.alt": {
+      "ru": "Результат работы на ферме нежити: Обычная продукция; статичный визуал не добавляет новых свойств предмета.",
+      "en": "Undead Farm work result: Ordinary produce; the static visual adds no new item properties."
+    },
+    "presentation.static.career.undead-farm.resource.farm_produce.caption": {
+      "ru": "Результат: Обычная продукция.",
+      "en": "Result: Ordinary produce."
+    },
+    "presentation.undead-farm.resource.farm_unstable_specimen.label": {
+      "ru": "Нестабильный образец",
+      "en": "Unstable specimen"
+    },
+    "presentation.static.career.undead-farm.resource.farm_unstable_specimen.alt": {
+      "ru": "Результат работы на ферме нежити: Нестабильный образец; статичный визуал не добавляет новых свойств предмета.",
+      "en": "Undead Farm work result: Unstable specimen; the static visual adds no new item properties."
+    },
+    "presentation.static.career.undead-farm.resource.farm_unstable_specimen.caption": {
+      "ru": "Результат: Нестабильный образец.",
+      "en": "Result: Unstable specimen."
+    },
+    "presentation.undead-farm.resource.farm_preserved_specimen.label": {
+      "ru": "Сохранённый образец",
+      "en": "Preserved specimen"
+    },
+    "presentation.static.career.undead-farm.resource.farm_preserved_specimen.alt": {
+      "ru": "Результат работы на ферме нежити: Сохранённый образец; статичный визуал не добавляет новых свойств предмета.",
+      "en": "Undead Farm work result: Preserved specimen; the static visual adds no new item properties."
+    },
+    "presentation.static.career.undead-farm.resource.farm_preserved_specimen.caption": {
+      "ru": "Результат: Сохранённый образец.",
+      "en": "Result: Preserved specimen."
+    },
+    "presentation.undead-farm.resource.farm_delivery_input.label": {
+      "ru": "Подготовленная поставка",
+      "en": "Delivery input"
+    },
+    "presentation.static.career.undead-farm.resource.farm_delivery_input.alt": {
+      "ru": "Результат работы на ферме нежити: Подготовленная поставка; статичный визуал не добавляет новых свойств предмета.",
+      "en": "Undead Farm work result: Delivery input; the static visual adds no new item properties."
+    },
+    "presentation.static.career.undead-farm.resource.farm_delivery_input.caption": {
+      "ru": "Результат: Подготовленная поставка.",
+      "en": "Result: Delivery input."
+    },
+    "item.farm_produce.label": {
+      "ru": "Обычная продукция фермы",
+      "en": "Farm produce"
+    },
+    "item.farm_unstable_specimen.label": {
+      "ru": "Нестабильный образец фермы",
+      "en": "Farm unstable specimen"
+    },
+    "item.farm_preserved_specimen.label": {
+      "ru": "Сохранённый образец фермы",
+      "en": "Farm preserved specimen"
+    },
+    "item.farm_delivery_input.label": {
+      "ru": "Подготовленная поставка фермы",
+      "en": "Farm delivery input"
+    },
+    "nightChoice.undead-farm.night.keeper-request.label": {
+      "ru": "Разобрать процесс с хранителем фермы",
+      "en": "Review the process with the farm keeper"
+    },
+    "nightChoice.undead-farm.night.process-notes.label": {
+      "ru": "Просмотреть записи фермы",
+      "en": "Review farm process notes"
+    },
+    "ending.ending.undead-farm.research-farmer.title": {
+      "ru": "Исследовательница фермы нежити",
+      "en": "Undead Farm — Research Farmer"
+    },
+    "ending.ending.undead-farm.research-farmer.description": {
+      "ru": "Сложный карьерный финал, основанный на школьном анализе, сохранённом образце и решённой проблеме содержания.",
+      "en": "A complex Farm ending built from School-backed analysis, a preserved specimen, and a solved containment crisis."
+    },
+    "ending.ending.undead-farm.research-farmer.epilogue": {
+      "ru": "Ты превращаешь странное производство фермы в дисциплинированную область исследования без нового постоянного Meta-модификатора.",
+      "en": "You turn the farm's strange production into a disciplined field of study without requiring a new permanent Meta modifier."
+    },
+    "presentation.static.undead-farm-ending-research-farmer.alt": {
+      "ru": "Ферма нежити: статичная сцена финала «Исследовательница фермы нежити».",
+      "en": "Undead Farm: static presentation for the “Undead Farm — Research Farmer” ending."
+    },
+    "presentation.static.undead-farm-ending-research-farmer.caption": {
+      "ru": "Финал: Исследовательница фермы нежити.",
+      "en": "Ending: Undead Farm — Research Farmer."
+    },
+    "ending.ending.undead-farm.successor.title": {
+      "ru": "Преемница фермы нежити",
+      "en": "Undead Farm — Successor"
+    },
+    "ending.ending.undead-farm.successor.description": {
+      "ru": "Управленческий финал, построенный на производственном опыте, профессиональном доверии, школьном учёте и решённом кризисе фермы.",
+      "en": "A management ending built from production experience, professional trust, School-backed records, and a resolved farm crisis."
+    },
+    "ending.ending.undead-farm.successor.epilogue": {
+      "ru": "Ты принимаешь ответственность за ферму через рабочие записи и профессиональное доверие, а не через романтическое условие.",
+      "en": "You take responsibility for the farm through production records and professional trust, not a romance shortcut."
+    },
+    "presentation.static.undead-farm-ending-successor.alt": {
+      "ru": "Ферма нежити: статичная сцена финала «Преемница фермы нежити».",
+      "en": "Undead Farm: static presentation for the “Undead Farm — Successor” ending."
+    },
+    "presentation.static.undead-farm-ending-successor.caption": {
+      "ru": "Финал: Преемница фермы нежити.",
+      "en": "Ending: Undead Farm — Successor."
+    },
+    "ui.work.undeadFarmStageAria": {
+      "ru": "Этап карьеры фермы нежити: {stage}",
+      "en": "Undead Farm career stage: {stage}"
+    },
+    "ui.undeadFarm.relationshipState.work-introduction": {
+      "ru": "Рабочее знакомство",
+      "en": "Work introduction"
+    },
+    "ui.undeadFarm.relationshipState.professional-trust": {
+      "ru": "Профессиональное доверие",
+      "en": "Professional trust"
+    },
+    "ui.undeadFarm.relationshipState.night-request": {
+      "ru": "Добровольный ночной разбор",
+      "en": "Voluntary Night review"
+    },
+    "ui.undeadFarm.relationshipState.work-request": {
+      "ru": "Дополнительная рабочая просьба",
+      "en": "Additional work request"
+    },
+    "ui.undeadFarm.relationshipState.successor-ready": {
+      "ru": "Готовность к преемственности",
+      "en": "Succession readiness"
+    },
+    "ui.undeadFarm.relationshipStateAria": {
+      "ru": "Состояние цепочки хранителя фермы: {state}",
+      "en": "Farm Keeper presentation state: {state}"
+    },
+    "ui.undeadFarm.nightChoiceAria": {
+      "ru": "Ночной выбор фермы: {choice}",
+      "en": "Undead Farm Night choice: {choice}"
+    },
+    "ui.undeadFarm.crisisFeedback.stabilize-production": {
+      "ru": "Снабжение стабилизировано через подготовленную поставку.",
+      "en": "Supply is stabilized through the prepared delivery."
+    },
+    "ui.undeadFarm.crisisFeedback.contain-and-study": {
+      "ru": "Проблема содержания разобрана через исследовательский подход.",
+      "en": "The containment problem is addressed through the research approach."
+    },
+    "ui.undeadFarm.crisisFeedback.trust-network": {
+      "ru": "Работа перераспределена через профессиональное доверие.",
+      "en": "Work is redistributed through professional trust."
+    },
+    "ui.undeadFarm.crisisFeedback.defer": {
+      "ru": "Процесс удержан на плаву, но большой кризис не объявлен решённым.",
+      "en": "The process stays afloat, but the larger crisis is not presented as solved."
     }
   }
 }
