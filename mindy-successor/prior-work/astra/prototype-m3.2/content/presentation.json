@@ -1426,34 +1426,6 @@
         "src": "assets/presentation/career-undead-farm-result.svg",
         "alt": "Undead Farm presentation: Supply, labor, and containment collide.",
         "altKey": "presentation.static.career.undead-farm.event.crisis-supply-labor-containment.alt"
-      },
-      "pool": {
-        "version": 1,
-        "ordering": "ordered",
-        "selectionPolicy": "unweighted",
-        "candidates": [
-          {
-            "key": "field-a",
-            "kind": "gif",
-            "src": "assets/presentation/career-undead-farm-motion-field-a.gif",
-            "alt": "Animated Undead Farm field-work presentation candidate A.",
-            "altKey": "presentation.motion.career.undead-farm.field.a.alt"
-          },
-          {
-            "key": "field-b",
-            "kind": "gif",
-            "src": "assets/presentation/career-undead-farm-motion-field-b.gif",
-            "alt": "Animated Undead Farm field-work presentation candidate B.",
-            "altKey": "presentation.motion.career.undead-farm.field.b.alt"
-          },
-          {
-            "key": "field-c",
-            "kind": "gif",
-            "src": "assets/presentation/career-undead-farm-motion-field-c.gif",
-            "alt": "Animated Undead Farm field-work presentation candidate C.",
-            "altKey": "presentation.motion.career.undead-farm.field.c.alt"
-          }
-        ]
       }
     },
     "job/undead-farm/resource/farm_produce": {
