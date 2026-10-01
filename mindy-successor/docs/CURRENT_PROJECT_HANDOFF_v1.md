@@ -1,5 +1,18 @@
 # Current Project Handoff v1
 
+## Current Leader 1 recovery path
+
+Replacement Leader 1 should not reconstruct the project by reading this long historical file top-to-bottom.
+
+Start with:
+1. `LEADER1_START_HERE.md`;
+2. `LEADER1_LIVE_DASHBOARD.md`;
+3. `LEAD1_CURRENT_STATE_v1.md`;
+4. current worker pointers and actual Git.
+
+Use this file afterward for historical milestone/recovery detail.
+
+
 ## LEADER 1 RECOVERY UPDATE — 2026-10-01
 
 This section supersedes older live-status/worker-queue sections below wherever they conflict.

@@ -1,5 +1,15 @@
 # Document Authority and Index v0
 
+## Leader 1 fast entrypoint
+
+For project leadership/recovery, read first:
+1. `LEADER1_START_HERE.md`;
+2. `LEADER1_LIVE_DASHBOARD.md`;
+3. `LEAD1_CURRENT_STATE_v1.md`.
+
+They do not supersede direct Product decisions or locked specs; they provide the current leadership map and live coordination snapshot.
+
+
 ## Live status authority — 2026-10-01
 
 For current production state and worker assignments, read **before historical handoffs**:

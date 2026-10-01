@@ -1,5 +1,15 @@
 # Project Work Entry Point
 
+## Leader 1
+
+Leader 1 starts with:
+- `../LEADER1_START_HERE.md`;
+- `../LEADER1_LIVE_DASHBOARD.md`;
+- `../LEADER1_RESTART_PROMPT.md` after context loss.
+
+Only then inspect the current worker pointers and live Git state.
+
+
 ## Current entrypoint — 2026-10-01
 
 Read `mindy-successor/docs/LEAD1_CURRENT_STATE_v1.md` first, then the role's current task pointer. Older queue documents are historical unless the current pointer names them.
