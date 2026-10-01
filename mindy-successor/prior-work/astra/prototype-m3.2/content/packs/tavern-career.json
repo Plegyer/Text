@@ -1,0 +1,575 @@
+{
+  "schemaVersion": 1,
+  "id": "tavern-career",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "careers": [
+        "tavern"
+      ]
+    },
+    "writes": {
+      "careers": [
+        "tavern"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "tavern.career.first-shift",
+      "title": "Trusted worker",
+      "sourceDomain": "tavern",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerCounterChanged",
+          "career": "tavern",
+          "counter": "completed_shifts"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 100,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "tavern",
+          "stage": "new-hand"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "tavern",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 1
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "After a complete shift, the house starts trusting you with more than a single table or errand.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Take the responsibility",
+          "text": "Move into trusted work without changing the existing wage contract.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "advanceCareer",
+              "career": "tavern",
+              "transition": "first-shift"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tavern.career.house-node",
+      "title": "House node",
+      "sourceDomain": "tavern",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerCounterChanged",
+          "career": "tavern",
+          "counter": "completed_shifts"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 95,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "tavern",
+          "stage": "trusted-worker"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "tavern",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 8
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Eight shifts are enough for you to become part of how rooms, travelers, supplies, and information move through the house.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Coordinate the house",
+          "text": "Take responsibility for the flow rather than only individual tasks.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "advanceCareer",
+              "career": "tavern",
+              "transition": "house-node"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tavern.career.veteran-service",
+      "title": "Veteran service",
+      "sourceDomain": "tavern",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerCounterChanged",
+          "career": "tavern",
+          "counter": "completed_shifts"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 72,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "tavern",
+          "stage": "house-node"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "tavern",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 20
+        },
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "veteran-ready",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "You now have enough ordinary service experience to make veteran work a complete route, but you do not have to close the other routes yet.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "take-route",
+          "label": "Choose veteran service",
+          "text": "Make reliable service the late-career route.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "tavern",
+              "fact": "veteran-ready"
+            },
+            {
+              "kind": "advanceCareer",
+              "career": "tavern",
+              "transition": "branch-veteran-service"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "tavern",
+              "fact": "outcome-ready"
+            }
+          ]
+        },
+        {
+          "id": "keep-options-open",
+          "label": "Keep other routes open",
+          "text": "Record the experience without choosing the veteran branch.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "tavern",
+              "fact": "veteran-ready"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tavern.career.innkeeper",
+      "title": "Innkeeper route",
+      "sourceDomain": "tavern",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "tavern",
+          "fact": "school-records-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "tavern",
+          "fact": "guest-ledger-evidence-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "tavern",
+          "fact": "crisis-innkeeper"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 88,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "tavern",
+          "stage": "house-node"
+        },
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "school-records-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "guest-ledger-evidence-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "crisis-innkeeper",
+          "present": true
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Records, room access, and a resolved house crisis now support an Innkeeper route.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Take the Innkeeper route",
+          "text": "Make house management the late-career route.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "advanceCareer",
+              "career": "tavern",
+              "transition": "branch-innkeeper"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "tavern",
+              "fact": "outcome-ready"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tavern.career.information-broker",
+      "title": "Information Broker route",
+      "sourceDomain": "tavern",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "tavern",
+          "fact": "school-broker-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "tavern",
+          "fact": "rumour-confirmed"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "tavern",
+          "fact": "confidentiality-resolved"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "tavern",
+          "fact": "crisis-broker"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 87,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "tavern",
+          "stage": "house-node"
+        },
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "school-broker-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "rumour-confirmed",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "confidentiality-resolved",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "crisis-broker",
+          "present": true
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "A verified rumour, a confidentiality decision, and conflict-handling skill now form a professional information route.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Take the Information Broker route",
+          "text": "Treat information as a routed responsibility rather than a global currency.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "advanceCareer",
+              "career": "tavern",
+              "transition": "branch-information-broker"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "tavern",
+              "fact": "outcome-ready"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tavern.career.sanctuary",
+      "title": "Sanctuary route",
+      "sourceDomain": "tavern",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "tavern",
+          "fact": "housing-assistance-complete"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "tavern",
+          "fact": "confidentiality-kept"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "tavern",
+          "fact": "crisis-sanctuary"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 86,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "tavern",
+          "stage": "house-node"
+        },
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "housing-assistance-complete",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "confidentiality-kept",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "crisis-sanctuary",
+          "present": true
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "A concrete shelter choice and a kept confidence make Sanctuary a real house policy rather than a morality score.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Take the Sanctuary route",
+          "text": "Make selective shelter and protection the late-career route.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "advanceCareer",
+              "career": "tavern",
+              "transition": "branch-sanctuary"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "tavern",
+              "fact": "outcome-ready"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tavern.career.outcome-ready",
+      "title": "Tavern outcomes ready",
+      "sourceDomain": "tavern",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerTransition",
+          "career": "tavern"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "tavern",
+          "fact": "outcome-ready"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 80,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "tavern",
+              "stage": "veteran-service"
+            },
+            {
+              "kind": "careerStage",
+              "career": "tavern",
+              "stage": "innkeeper"
+            },
+            {
+              "kind": "careerStage",
+              "career": "tavern",
+              "stage": "information-broker"
+            },
+            {
+              "kind": "careerStage",
+              "career": "tavern",
+              "stage": "sanctuary"
+            }
+          ]
+        },
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "outcome-ready",
+          "present": true
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The Tavern can now support more than one eligible future while the run remains active.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Keep living",
+          "text": "Move to outcome-ready without committing an ending.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "advanceCareer",
+              "career": "tavern",
+              "transition": "outcome-ready"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
