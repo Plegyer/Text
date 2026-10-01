@@ -13,3 +13,8 @@ Live production is exactly:
 Preparation-only material remains outside live routing, including `content/packs/school-target/*`, milestone-depth fixtures, whole-career transfer atlas, teacher response/tone matrices, and unresolved producer/public-result designs.
 
 The machine-readable manifest is `content/school-production-manifest-v11.json`. It explicitly forbids unresolved Lumber management and Arcana/Forest producer facts, milestone thresholds, and invented exact-course reaction routing.
+
+Compatibility note:
+- `school-life-content-v1.after-night-study` is retained for historical queued Save identity;
+- the validator-required known reaction trigger is gated by `not calendarYear >= 1`, which is false for every playable year;
+- new runs therefore use only the 24 exact Night-study events.
