@@ -1515,6 +1515,14 @@
         "alt": "Tavern state presentation: Refusal respected without losing the professional route.",
         "altKey": "presentation.static.career.tavern.state.refusal-respected.alt"
       }
+    },
+    "relationship/tavern-recurring-traveler/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-result.svg",
+        "alt": "Tavern recurring traveler professional conversation.",
+        "altKey": "presentation.static.relationship.tavern-recurring-traveler.default.alt"
+      }
     }
   }
 }
