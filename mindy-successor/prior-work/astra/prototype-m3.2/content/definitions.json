@@ -4774,6 +4774,119 @@
           "effects": []
         }
       ]
+    },
+    {
+      "id": "tavern.recurring-traveler",
+      "label": "Recurring Traveler",
+      "initialStage": "introduced",
+      "stages": [
+        "introduced",
+        "trusted",
+        "night-request",
+        "request-resolved",
+        "confidentiality-resolved"
+      ],
+      "transitions": [
+        {
+          "id": "build-trust",
+          "from": [
+            "introduced"
+          ],
+          "to": "trusted",
+          "conditions": [
+            {
+              "kind": "relationshipFact",
+              "relationship": "tavern.recurring-traveler",
+              "fact": "introduced-at-work",
+              "present": true
+            },
+            {
+              "kind": "relationshipCounter",
+              "relationship": "tavern.recurring-traveler",
+              "counter": "work-meetings",
+              "op": "gte",
+              "value": 2
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "tavern.recurring-traveler",
+              "fact": "professional-trust-earned"
+            }
+          ]
+        },
+        {
+          "id": "night-request",
+          "from": [
+            "trusted"
+          ],
+          "to": "night-request",
+          "conditions": [
+            {
+              "kind": "relationshipFact",
+              "relationship": "tavern.recurring-traveler",
+              "fact": "night-met",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "request-resolved",
+          "from": [
+            "night-request"
+          ],
+          "to": "request-resolved",
+          "conditions": [
+            {
+              "kind": "relationshipFact",
+              "relationship": "tavern.recurring-traveler",
+              "fact": "request-resolved",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "confidentiality-kept",
+          "from": [
+            "request-resolved"
+          ],
+          "to": "confidentiality-resolved",
+          "conditions": [
+            {
+              "kind": "relationshipChoice",
+              "relationship": "tavern.recurring-traveler",
+              "choice": "confidentiality-response",
+              "value": "keep-private"
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "tavern.recurring-traveler",
+              "fact": "confidentiality-kept"
+            }
+          ]
+        },
+        {
+          "id": "confidentiality-shared",
+          "from": [
+            "request-resolved"
+          ],
+          "to": "confidentiality-resolved",
+          "conditions": [
+            {
+              "kind": "relationshipChoice",
+              "relationship": "tavern.recurring-traveler",
+              "choice": "confidentiality-response",
+              "value": "share-route-only"
+            }
+          ],
+          "effects": []
+        }
+      ]
     }
   ],
   "lodgings": [
@@ -5694,6 +5807,46 @@
           "kind": "addCareerFact",
           "career": "satyr-maid",
           "fact": "staff-debrief-attended"
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": 0
+    },
+    {
+      "id": "tavern.night.traveler-request",
+      "label": "Meet a recurring traveler after closing",
+      "conditions": [
+        {
+          "kind": "relationshipStage",
+          "relationship": "tavern.recurring-traveler",
+          "stage": "trusted"
+        },
+        {
+          "kind": "relationshipChoice",
+          "relationship": "tavern.recurring-traveler",
+          "choice": "night-response",
+          "value": "accepted"
+        }
+      ],
+      "effects": [],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": 0
+    },
+    {
+      "id": "tavern.night.house-notes",
+      "label": "Review house notes after closing",
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "tavern",
+          "stage": "house-node"
+        }
+      ],
+      "effects": [
+        {
+          "kind": "addCareerFact",
+          "career": "tavern",
+          "fact": "house-notes-reviewed"
         }
       ],
       "nextDayEffects": [],
