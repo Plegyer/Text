@@ -33,9 +33,9 @@ test('every ordinary Hard Work ending follows eligibility -> continued play -> e
     assert.equal(s.meta.hardWorkProgress.includes(career),false,career);
 
     s.run.dayState.energyCurrent=Math.max(s.run.dayState.energyCurrent,1);
-    s=act(s,`${career}.shift`);
+    s=act(s,'forage');
     assert.equal(s.run.status,'active',career);
-    assert.equal(s.run.progression.careers[career]?.counters.completed_shifts,51,career);
+    assert.equal(s.run.progression.careers[career]?.counters.completed_shifts,50,career);
     assert.equal(s.meta.hardWorkProgress.includes(career),false,career);
 
     s=dispatch(s,{type:'commitEnding',id:endingId},catalog);
