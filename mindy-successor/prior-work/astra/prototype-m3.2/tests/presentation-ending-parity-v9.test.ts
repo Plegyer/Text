@@ -34,6 +34,7 @@ test('all existing ending semantic IDs have exact static RU/EN presentation pari
 test('current ending definitions all map to live semantic slots while the audited legacy subset keeps exact static bindings',()=>{
   const audited=new Set(manifest.endingParity.existingEndingPresentationIds.map((row:any)=>row.presentationId));
   const registry=new Map(presentationSlots(catalog).map(slot=>[slot.id,slot]));
+  const checked=applyPresentation(catalog,presentation);
   assert.ok(catalog.definitions.endings.length>=audited.size);
   const seen=new Set<string>();
   for(const ending of catalog.definitions.endings){
@@ -42,8 +43,8 @@ test('current ending definitions all map to live semantic slots while the audite
     assert.equal(seen.has(id),false,'ending presentation collision '+id);
     seen.add(id);
     if(!audited.has(id)){
-      const slot=registry.get(id);
-      assert.ok(slot?.static || slot?.fallbackId,id+' must have a live presentation surface');
+      const resolved=resolvePresentation(checked,presentation,id,{animationsEnabled:false,occurrenceKey:'ending-parity-v9-live'});
+      assert.ok(resolved.selected,id+' must resolve to a live static/fallback presentation surface');
     }
   }
   assert.equal(audited.size,9);
