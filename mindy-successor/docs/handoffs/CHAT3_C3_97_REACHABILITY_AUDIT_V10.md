@@ -2,28 +2,40 @@
 
 Status: complete
 Worker: Chat 3 / Forest + Poverty Content Bundles
+Baseline main: `6afc01061646bc52cec824863bf89e8ad8c309d0`
 
 ## Scope
 
-Content-side audit only. No runtime, UI, Save, RNG, Activity mechanics, School or ending ownership changes.
+Current-main content-side reachability audit before queue-v10 depth work. No runtime, UI, Save, RNG, Activity mechanics, School, media or ending ownership changes.
 
-## Results
+## Forest findings
 
-Forest content remains preparation/integration material against existing identities only:
-- lumber.forest
-- existing forest route identities
-- existing forest result identities
+Current source-of-truth identities remain:
+- Activity `lumber.forest`;
+- route option `forest.route.logging-road` -> route `logging-road`;
+- route option `forest.route.old-boundary` -> route `old-boundary`;
+- Old Boundary capability `enter_old_boundary`;
+- results `lumber.forest.success`, `lumber.forest.escape`, `lumber.forest.failure`;
+- terminal events `forest-result-content-v1.success|escape|failure`;
+- success-only Lumber continuation `lumber-cross.activity-forest-return`.
 
-Ordinary poverty remains separate from Secret Debt:
-- poverty housing, survival, work and recovery content is not a Secret Debt trigger;
-- generic debt/recovery references are not converted into hidden career logic.
+No new Activity, route, result, reward, penalty, progress/endurance, world/career fact or ending identity is required.
+
+## Ordinary poverty findings
+
+Current ordinary-poverty production packs remain independent from Secret Debt.
+
+The existing poverty-depth selector consumes current production depth keys. New content may map to existing event/variant identities only; ambiguous variant-specific result prose remains preparation-only where the result screen cannot distinguish `variantId`.
 
 ## Reachability classification
 
-- Existing consumed identities: retain.
-- Preparation-only variants: keep isolated until consumer seam exists.
-- Ambiguous variant mappings: no new player-facing consumption.
+- **Player-facing:** existing production content selected by current consumers.
+- **Consumer-ready:** exact existing event/variant identities plus an already-existing selector seam.
+- **Preparation-only:** fixture/localization prose with no exact current consumer selector.
+- **Blocked by identity:** content that requires a distinction the persisted/current result identity does not expose.
 
-## Integration note
+## Integration boundary
 
-Any missing runtime consumer capability remains Chat 1 / Integration ownership.
+Any missing shared consumer capability remains Chat 1 Developer / Integration ownership.
+
+C3-98+ must preserve the current identity contract and ordinary-poverty / Secret-Debt separation.
