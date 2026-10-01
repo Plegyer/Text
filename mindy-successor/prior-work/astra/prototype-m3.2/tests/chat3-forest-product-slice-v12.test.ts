@@ -26,7 +26,7 @@ test('C3-122/C3-124 Hunter outfitter naturally produces clue + Rope Kit and summ
 
   let summer=parseSave(JSON.stringify(s),catalog);
   summer.run.flow.activity=null;
-  summer.run.calendar.elapsedDays=40;
+  summer.run.calendar.elapsedDays=10;
   summer.run.dayState.energyCurrent=3;
   summer=dispatch(summer,{type:'enterActivity',id:'lumber.forest'},catalog);
   assert.ok(ids(summer).includes('forest.route.hunter-trail'));
@@ -54,6 +54,7 @@ test('C3-125/C3-129 a real School lesson yields preservation kit + knowledge pre
   let s=started();
   s=dispatch(s,{type:'schoolLesson',id:'school.course.field_craft'},catalog);
   s=resolvePending(s);
+  s=act(s,'forest.collect-field-kit');
   assert.equal(s.run.resources.inventory.field_preservation_kit,1);
   assert.ok(s.run.progression.worldFacts.includes('forest.school-field-notes'));
   assert.ok((s.run.progression.school.tracks['school.track.field_craft']?.counters.lessons_completed??0)>=1);
@@ -69,7 +70,7 @@ test('C3-127/C3-128 real challenge families read stats/capabilities and season c
   assert.equal(ids(spring).includes('forest.challenge.logging-summer-deadfall'),false);
 
   let summer=started();
-  summer.run.calendar.elapsedDays=40;
+  summer.run.calendar.elapsedDays=10;
   summer.run.character.stats.strength=1;
   summer.run.resources.inventory.reinforced_axe=1;
   summer=dispatch(summer,{type:'enterActivity',id:'lumber.forest'},catalog);
@@ -103,7 +104,8 @@ test('C3-131 route/challenge save-resume is deterministic and Forest specimen is
   s=act(s,'forest.hunter-outfitter');
   s=dispatch(s,{type:'schoolLesson',id:'school.course.field_craft'},catalog);
   s=resolvePending(s);
-  s.run.calendar.elapsedDays=40;
+  s=act(s,'forest.collect-field-kit');
+  s.run.calendar.elapsedDays=10;
   s.run.dayState.energyCurrent=3;
 
   s=dispatch(s,{type:'enterActivity',id:'lumber.forest'},catalog);
