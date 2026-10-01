@@ -74,7 +74,9 @@
           "id": "default",
           "text": "The existing School field-notes result is already a typed navigation/preparation input, so Hunter can consume it without inventing a new lesson threshold.",
           "conditions": [],
-          "media": []
+          "media": [
+            "school.teacher.field-craft.classroom"
+          ]
         }
       ],
       "choices": [
