@@ -1,5 +1,30 @@
 # Current Project Handoff v1
 
+## LEADER 1 RECOVERY UPDATE — 2026-10-01
+
+This section supersedes older live-status/worker-queue sections below wherever they conflict.
+
+Current audited authority:
+- `docs/LEAD1_CURRENT_STATE_v1.md`
+
+Verified pre-update main:
+- `6afc01061646bc52cec824863bf89e8ad8c309d0`
+- CI #417 / run 36809189373: SUCCESS
+- 556/556 tests PASS
+- 17 production packs / 46 events / 35 actions / 9 endings
+
+Product reports all worker chats idle. Chats 1, 2 and 4 have exhausted chat context and must restart from the new Git restart prompts. Chats 3 and 5 receive new queues immediately.
+
+Current assignments:
+- Chat 1: C1D-85..96 — late-career derived unlocks, ordinary Hard Work/Meta, Palace 10/10 seam.
+- Chat 2: C2-109..120 — full-roster/Hard-Work presentation production coverage.
+- Chat 3: C3-109..120 — promote safe Forest/ordinary-poverty prepared material to production.
+- Chat 4: C4-114..125 — clear open/frozen PR backlog and refresh acceptance truth.
+- Chat 5: C5-109..120 — promote safe School prepared writing to production.
+
+Do not infer worker activity from old queue prose below.
+
+
 Date: 2026-09-26
 Status: DURABLE LEAD RECOVERY SNAPSHOT
 
