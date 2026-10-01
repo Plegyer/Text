@@ -302,7 +302,7 @@ export function presentationSlots(cat:Catalog):PresentationSlot[]{
       id:`ending/${careerId}/hard-work`,
       label:`${career.label} · Hard Work · финал`,
       baseMediaIds:[],
-      fallbackId:slots.has(resultId)?resultId:'location/town/default'
+      fallbackId:careerId==='lumber'?'location/town/default':slots.has(resultId)?resultId:'location/town/default'
     });
   }
 
