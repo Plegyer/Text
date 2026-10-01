@@ -1,0 +1,52 @@
+{
+  "formatVersion": 1,
+  "id": "school.localization-v10.career-handoff-audit.v1",
+  "status": "CONTENT_AUDIT_ONLY",
+  "baseline": "6afc01061646bc52cec824863bf89e8ad8c309d0",
+  "careers": [
+    "lumber",
+    "satyr-maid",
+    "undead-farm",
+    "tavern",
+    "hunter",
+    "guard",
+    "merchant",
+    "artist-geisha",
+    "assassin",
+    "prostitute"
+  ],
+  "actionIds": [
+    "lumber.shift",
+    "satyr-maid.shift",
+    "undead-farm.shift",
+    "tavern.shift",
+    "hunter.shift",
+    "guard.shift",
+    "merchant.shift",
+    "artist-geisha.shift",
+    "assassin.shift",
+    "prostitute.shift"
+  ],
+  "allMappingThresholdsNull": true,
+  "allProducerPublicFactsNull": true,
+  "existingConsumerSeams": [
+    {
+      "careerId": "lumber",
+      "publicFactId": "lumber.school.management-ready",
+      "eventId": "lumber-cross.school-management-return",
+      "producerApproved": false
+    }
+  ],
+  "otherApprovedRuntimeConsumers": [],
+  "safety": {
+    "assassin": "CAPABILITY_MATCH_ONLY_NON_COMBAT",
+    "prostitute": "NON_EXPLICIT_VOLUNTARY_ORDINARY_CAREER; Body Confidence/Sexuality remains separate from Lust and consent"
+  },
+  "constraints": {
+    "createsCareerState": false,
+    "createsThreshold": false,
+    "createsProducerFact": false,
+    "changesRuntime": false,
+    "changesEconomy": false
+  }
+}
