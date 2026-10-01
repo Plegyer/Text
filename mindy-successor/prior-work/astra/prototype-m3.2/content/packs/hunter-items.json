@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "id": "hunter.items",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "careers": [
+        "hunter"
+      ],
+      "inventory": [
+        "rope_kit",
+        "field_preservation_kit"
+      ],
+      "itemCapabilities": [
+        "cross_rough_route",
+        "preserve_specimen"
+      ],
+      "activities": [
+        "hunter.expedition"
+      ]
+    },
+    "writes": {
+      "careers": [
+        "hunter"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "hunter.items.preserve-return",
+      "title": "Preserve the expedition return",
+      "sourceDomain": "hunter",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "activityResult",
+          "activity": "hunter.expedition",
+          "outcome": "success",
+          "result": "hunter.expedition.success"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 86,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "itemCapability",
+          "capability": "preserve_specimen",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "expedition-returned",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "expedition-preserved-sample",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The Field Preservation Kit gives you a real extraction choice after a successful expedition: preserve evidence for later route work instead of treating every return as a trophy.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "preserve",
+          "label": "Preserve the field evidence",
+          "text": "Use the existing preservation capability and record a typed Hunter sample fact.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "hunter",
+              "fact": "expedition-preserved-sample"
+            }
+          ]
+        },
+        {
+          "id": "leave",
+          "label": "Leave the evidence unpreserved",
+          "text": "Keep the successful return without adding the preservation route fact.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "hunter.items.rough-route-return",
+      "title": "Record the rope-assisted route",
+      "sourceDomain": "hunter",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "activityResult",
+          "activity": "hunter.expedition",
+          "outcome": "success",
+          "result": "hunter.expedition.success"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "hunter",
+          "fact": "expedition-preserved-sample"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 82,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "itemCapability",
+          "capability": "cross_rough_route",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "expedition-returned",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "expedition-rough-route",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The Rope Kit made rough-route access a practical option rather than a stat-only shortcut. You can preserve that method as Hunter route knowledge.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record the rope route",
+          "text": "Keep the rough-route capability as a typed Hunter progression fact.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "hunter",
+              "fact": "expedition-rough-route"
+            }
+          ]
+        },
+        {
+          "id": "skip",
+          "label": "Do not formalize it",
+          "text": "Keep the item and ordinary expedition access without adding a route fact.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    }
+  ]
+}

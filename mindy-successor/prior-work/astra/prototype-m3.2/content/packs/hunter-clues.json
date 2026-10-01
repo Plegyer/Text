@@ -1,0 +1,323 @@
+{
+  "schemaVersion": 1,
+  "id": "hunter.clues",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "careers": [
+        "hunter",
+        "tavern",
+        "undead-farm"
+      ],
+      "worldFacts": [
+        "forest.hunter-trail-clue",
+        "lumber.forest.truth-known"
+      ]
+    },
+    "writes": {
+      "careers": [
+        "hunter"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "hunter.clues.forest-trail",
+      "title": "Forest trail clue reaches Hunter",
+      "sourceDomain": "hunter",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "worldFactAdded",
+          "fact": "forest.hunter-trail-clue"
+        },
+        {
+          "kind": "careerTransition",
+          "career": "hunter"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "hunter.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 78,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "forest.hunter-trail-clue",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "forest-clue-known",
+          "present": false
+        },
+        {
+          "kind": "not",
+          "condition": {
+            "kind": "careerStage",
+            "career": "hunter",
+            "stage": "novice"
+          }
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The already-live Forest hunter-trail clue becomes useful Hunter route preparation without duplicating the Forest route or its lore.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record the Forest clue",
+          "text": "Store only a Hunter-local route fact.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "hunter",
+              "fact": "forest-clue-known"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hunter.clues.lumber-truth",
+      "title": "Lumber Forest return reaches Hunter",
+      "sourceDomain": "hunter",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "worldFactAdded",
+          "fact": "lumber.forest.truth-known"
+        },
+        {
+          "kind": "careerTransition",
+          "career": "hunter"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "hunter.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 77,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "lumber.forest.truth-known",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "lumber-clue-known",
+          "present": false
+        },
+        {
+          "kind": "not",
+          "condition": {
+            "kind": "careerStage",
+            "career": "hunter",
+            "stage": "novice"
+          }
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "A successful Lumber Forest result supplies a narrow route observation that Hunter can use without changing Lumber progression.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record the Lumber observation",
+          "text": "Keep the existing world result as a Hunter-local clue.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "hunter",
+              "fact": "lumber-clue-known"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hunter.clues.tavern-rumour",
+      "title": "Confirmed Tavern route information reaches Hunter",
+      "sourceDomain": "hunter",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "tavern",
+          "fact": "rumour-confirmed"
+        },
+        {
+          "kind": "careerTransition",
+          "career": "hunter"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "hunter.shift"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 80,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "rumour-confirmed",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "tavern-clue-known",
+          "present": false
+        },
+        {
+          "kind": "not",
+          "condition": {
+            "kind": "careerStage",
+            "career": "hunter",
+            "stage": "novice"
+          }
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The Tavern's confirmed route information can now be used as one independent Hunter clue; it does not become a global information currency.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record the Tavern clue",
+          "text": "Carry only the confirmed route fact into Hunter preparation.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "hunter",
+              "fact": "tavern-clue-known"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hunter.clues.farm-sample",
+      "title": "Farm specimen knowledge reaches Hunter",
+      "sourceDomain": "hunter",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "undead-farm",
+          "fact": "sample-preserved"
+        },
+        {
+          "kind": "careerTransition",
+          "career": "hunter"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "hunter.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 76,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerFact",
+          "career": "undead-farm",
+          "fact": "sample-preserved",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "farm-clue-known",
+          "present": false
+        },
+        {
+          "kind": "not",
+          "condition": {
+            "kind": "careerStage",
+            "career": "hunter",
+            "stage": "novice"
+          }
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "An already-preserved Farm specimen provides a biological comparison point for Hunter preparation without adding a new Farm economy or item system.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record the Farm clue",
+          "text": "Keep one Hunter-local comparison fact.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "hunter",
+              "fact": "farm-clue-known"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

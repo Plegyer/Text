@@ -1,0 +1,734 @@
+{
+  "schemaVersion": 1,
+  "id": "hunter.career",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "careers": [
+        "hunter"
+      ]
+    },
+    "writes": {
+      "careers": [
+        "hunter"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "hunter.career.first-shift",
+      "title": "Tracker",
+      "sourceDomain": "hunter",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerCounterChanged",
+          "career": "hunter",
+          "counter": "completed_shifts"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 100,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "hunter",
+          "stage": "novice"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "hunter",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 1
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "A complete local contract proves you can follow signs, finish the work, and return with a usable report.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Take tracker work",
+          "text": "Move from novice errands into regular tracking work.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "advanceCareer",
+              "career": "hunter",
+              "transition": "first-shift"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hunter.career.recognized-hunter",
+      "title": "Recognized Hunter",
+      "sourceDomain": "hunter",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerCounterChanged",
+          "career": "hunter",
+          "counter": "completed_shifts"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 96,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "hunter",
+          "stage": "tracker"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "hunter",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 8
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "tracker-ready",
+          "present": true
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Enough ordinary contracts have ended with reliable returns that rare-route preparation can now be trusted to you.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Accept recognized work",
+          "text": "Open expedition and rare-contract dependencies without forcing an expedition on every shift.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "advanceCareer",
+              "career": "hunter",
+              "transition": "recognized-hunter"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hunter.career.expedition-qualified",
+      "title": "Expedition-qualified",
+      "sourceDomain": "hunter",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerTransition",
+          "career": "hunter"
+        },
+        {
+          "kind": "careerCounterChanged",
+          "career": "hunter",
+          "counter": "completed_shifts"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 92,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "hunter",
+          "stage": "recognized-hunter"
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "recognized-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "expedition-qualified",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Recognition now includes permission to take a separate two-Energy hunt expedition when a contract actually requires one.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Keep expedition access available",
+          "text": "Record expedition qualification without consuming Energy or entering Activity.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "hunter",
+              "fact": "expedition-qualified"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hunter.career.veteran-ready",
+      "title": "Veteran route ready",
+      "sourceDomain": "hunter",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerCounterChanged",
+          "career": "hunter",
+          "counter": "completed_shifts"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 72,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "hunter",
+          "stage": "recognized-hunter"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "hunter",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 20
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "veteran-ready",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Twenty ordinary contracts are enough to make veteran service a complete late-career route independent of rare targets.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record veteran readiness",
+          "text": "Keep the veteran route available without closing Master, Warden, or Legend preparation.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "hunter",
+              "fact": "veteran-ready"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hunter.career.veteran",
+      "title": "Choose Veteran",
+      "sourceDomain": "hunter",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "hunter",
+          "fact": "veteran-ready"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "hunter.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 60,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "hunter",
+          "stage": "recognized-hunter"
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "veteran-ready",
+          "present": true
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "You could make reliable ordinary hunting the route itself, or leave that route open while preparing something more specialized.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "take-route",
+          "label": "Take the Veteran route",
+          "text": "Choose seasoned ordinary work as the late-career branch.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "advanceCareer",
+              "career": "hunter",
+              "transition": "branch-veteran"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "hunter",
+              "fact": "outcome-ready"
+            }
+          ]
+        },
+        {
+          "id": "keep-open",
+          "label": "Keep the route open",
+          "text": "Do not choose a late branch yet.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "hunter.career.master-hunter",
+      "title": "Master Hunter route",
+      "sourceDomain": "hunter",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "hunter",
+          "fact": "rare-contract-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "hunter",
+          "fact": "expedition-preserved-sample"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "hunter",
+          "fact": "master-route-ready"
+        },
+        {
+          "kind": "careerTransition",
+          "career": "hunter"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "hunter.shift"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 88,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "hunter",
+          "stage": "recognized-hunter"
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "rare-contract-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "expedition-preserved-sample",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "master-route-ready",
+          "present": true
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Preparation, a preserved return, and rare-contract breadth now support the Master Hunter branch.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "take-route",
+          "label": "Take the Master Hunter route",
+          "text": "Choose preparation and difficult successful returns as the late branch.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "advanceCareer",
+              "career": "hunter",
+              "transition": "branch-master-hunter"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "hunter",
+              "fact": "outcome-ready"
+            }
+          ]
+        },
+        {
+          "id": "keep-open",
+          "label": "Keep Master open",
+          "text": "Preserve the route facts while considering another branch.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "hunter.career.warden",
+      "title": "Warden route",
+      "sourceDomain": "hunter",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "hunter",
+          "fact": "relationship-trust-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "hunter",
+          "fact": "warden-route-ready"
+        },
+        {
+          "kind": "careerTransition",
+          "career": "hunter"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "hunter.shift"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 87,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "hunter",
+          "stage": "recognized-hunter"
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "relationship-trust-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "warden-route-ready",
+          "present": true
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Knowledge of the territory and a resolved professional conflict now support a protection-focused Warden branch without using a morality score.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "take-route",
+          "label": "Take the Warden route",
+          "text": "Choose protection and route stewardship as the late branch.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "advanceCareer",
+              "career": "hunter",
+              "transition": "branch-warden"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "hunter",
+              "fact": "outcome-ready"
+            }
+          ]
+        },
+        {
+          "id": "keep-open",
+          "label": "Keep Warden open",
+          "text": "Preserve the route facts while considering another branch.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "hunter.career.legend",
+      "title": "Legend route",
+      "sourceDomain": "hunter",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "hunter",
+          "fact": "forest-clue-known"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "hunter",
+          "fact": "tavern-clue-known"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "hunter",
+          "fact": "expedition-returned"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "hunter",
+          "fact": "legend-route-ready"
+        },
+        {
+          "kind": "careerTransition",
+          "career": "hunter"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "hunter.shift"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 89,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "hunter",
+          "stage": "recognized-hunter"
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "forest-clue-known",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "tavern-clue-known",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "expedition-returned",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "legend-route-ready",
+          "present": true
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Independent clues and a successful expedition now form a rare multi-system route. No fixed boss or new public ending identity is implied.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "take-route",
+          "label": "Take the Legend route",
+          "text": "Choose the rare multi-system route as the late branch.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "advanceCareer",
+              "career": "hunter",
+              "transition": "branch-legend"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "hunter",
+              "fact": "outcome-ready"
+            }
+          ]
+        },
+        {
+          "id": "keep-open",
+          "label": "Keep Legend open",
+          "text": "Preserve the route facts while considering another branch.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "hunter.career.outcome-ready",
+      "title": "Hunter outcome-ready",
+      "sourceDomain": "hunter",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerTransition",
+          "career": "hunter"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "hunter",
+          "fact": "outcome-ready"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 80,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "hunter",
+              "stage": "veteran"
+            },
+            {
+              "kind": "careerStage",
+              "career": "hunter",
+              "stage": "master-hunter"
+            },
+            {
+              "kind": "careerStage",
+              "career": "hunter",
+              "stage": "warden"
+            },
+            {
+              "kind": "careerStage",
+              "career": "hunter",
+              "stage": "legend"
+            }
+          ]
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "outcome-ready",
+          "present": true
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The Hunter career now has a complete late-route state. Hard Work remains independent and any future complex public ending still requires an authorized ID.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Keep living",
+          "text": "Move to outcome-ready without auto-committing an ending.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "advanceCareer",
+              "career": "hunter",
+              "transition": "outcome-ready"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
