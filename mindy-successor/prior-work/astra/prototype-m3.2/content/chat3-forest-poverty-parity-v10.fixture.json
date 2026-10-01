@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "id": "chat3.forest-poverty-parity.v10",
+  "status": "STABLE_ID_RU_EN_REGRESSION_MANIFEST",
+  "task": "C3-104",
+  "baseMain": "6afc01061646bc52cec824863bf89e8ad8c309d0",
+  "fixtures": {
+    "forestContinuity": "content/forest-continuity-depth-v5.fixture.json",
+    "forestAftermath": "content/forest-aftermath-depth-v5.fixture.json",
+    "povertyContinuity": "content/ordinary-poverty-continuity-depth-v5.fixture.json",
+    "smallJobBoundary": "content/ordinary-poverty-small-job-identity-boundary-v3.fixture.json",
+    "secretDebt": "content/secret-debt-separation-audit-v6.fixture.json",
+    "voiceDensity": "content/chat3-voice-density-audit-v4.fixture.json"
+  },
+  "expectedForest": {
+    "activityId": "lumber.forest",
+    "routeOptions": [
+      {
+        "id": "forest.route.logging-road",
+        "setRoute": "logging-road"
+      },
+      {
+        "id": "forest.route.old-boundary",
+        "setRoute": "old-boundary"
+      }
+    ],
+    "oldBoundaryCondition": {
+      "kind": "itemCapability",
+      "capability": "enter_old_boundary",
+      "present": true
+    },
+    "results": [
+      {
+        "id": "lumber.forest.success",
+        "outcome": "success"
+      },
+      {
+        "id": "lumber.forest.escape",
+        "outcome": "escape"
+      },
+      {
+        "id": "lumber.forest.failure",
+        "outcome": "failure"
+      }
+    ],
+    "resultEvents": [
+      "forest-result-content-v1.success",
+      "forest-result-content-v1.escape",
+      "forest-result-content-v1.failure"
+    ],
+    "successContinuation": "lumber-cross.activity-forest-return"
+  },
+  "ordinaryPovertyPackIds": [
+    "poverty-street-production",
+    "poverty-street-production-v2",
+    "poverty-cheap-production",
+    "poverty-cheap-production-v2",
+    "poverty-recovery-production",
+    "poverty-pressure-production"
+  ]
+}
