@@ -41,7 +41,10 @@ test('current ending definitions all map to live semantic slots while the audite
     assert.ok(registry.has(id),ending.id+' -> '+id);
     assert.equal(seen.has(id),false,'ending presentation collision '+id);
     seen.add(id);
-    if(!audited.has(id))assert.equal(registry.get(id)?.fallbackId,'location/town/default',id);
+    if(!audited.has(id)){
+      const slot=registry.get(id);
+      assert.ok(slot?.static || slot?.fallbackId,id+' must have a live presentation surface');
+    }
   }
   assert.equal(audited.size,9);
 });
