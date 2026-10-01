@@ -245,7 +245,7 @@ function central(){
  if(r.status!=='active'){
   const endingId=r.endings.result?.endingId??r.endings.committed??r.acceptedEnding;
   const heading=r.status==='ended'
-   ?tr('ui.run.endingCompleted','Судьба завершена')
+   ?tr('ui.run.endingCompleted',tr('ui.run.endingAccepted','Судьба принята'))
    :r.status==='ending_committed'
     ?tr('ui.run.endingCommitted','Судьба выбрана')
     :tr('ui.run.timeExpired','Срок истёк');
