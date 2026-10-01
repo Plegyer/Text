@@ -1,5 +1,34 @@
 # Worker reallocation update — 2026-10-01
 
+## NEW LEADER 1 TAKEOVER — HUNTER INTEGRATION IN PROGRESS — 2026-10-01 14:04Z
+
+This is the newest recovery block. Re-query Git before acting.
+
+- Current coordination main before this handoff write: `59c812f039bfa8746a5b42af11d00c4c85790ff6`.
+- Shipped product baseline remains Tavern-complete `8652251051d24b507042b73c4fce4295277c38fe`, exact CI #768 SUCCESS, validator 40 packs / 142 events / 39 actions / 22 endings, tests 764/764.
+- Hunter sibling QA is now complete through collision ledger:
+  - runtime #201 @ `8af661de2ce6d73e4db0f61fe4206d3334822998` — C4-150 PASS-WITH-NOTES;
+  - School #199 @ `f04c93db866b1d2603f6917b41297670f86b0bef` — C4-151 PASS-WITH-NOTES;
+  - authored #209 @ `7e51a0c28037cbfbb9dc00c4c438e32248ec45bf`, CI #794, 693/693 — C4-152 PASS-WITH-NOTES;
+  - presentation #210 @ `b5ec54134f2363041ce32a31fafc7bdfbbabe6f9`, CI #790, 696/696 — C4-153 PASS-WITH-NOTES;
+  - C4-154 collision ledger COMPLETE on PR #170 comment `5932927267`.
+- C4-154 safe Hunter application order: runtime -> authored -> School -> presentation. Runtime owns mechanics/state/IDs/effects; authored owns prose/variants subject to runtime; School owns School seam subject to runtime null-threshold authority; presentation owns media/UI while preserving shipped Tavern/Satyr/Undead/Forest consumers.
+- Exact localization changed-key intersections among Hunter authored / School / presentation are empty. Hunter presentation has no exact slot-ID collision with shipped Tavern presentation.
+- Lead integration prep already exists:
+  - #212 runtime, head `b75e953241f5f583c5835f7a8a09706bd8a0b664`, base main, CI #805 SUCCESS;
+  - #214 authored, head `67b6f3b139e30ef418e0701b2c3c4e8634162ad4`, base #212 branch, CI #811 SUCCESS;
+  - #215 School, head `1608c3d11d220b08f5a3d1a25cfa0b0f8b397ae7`, base #214 branch, CI #812 IN_PROGRESS at handoff.
+- First unfinished Lead action: finish the final collision-safe Hunter presentation integration layer on top of #215 using only the focused #210 presentation delta, preserving all shipped non-Hunter shared-file regions. Then require green exact-head CI for that layer before merging the stack.
+- Do not run C4-155 until all four Hunter layers are merged to current main and exact-current-main CI is green.
+- Guard next-wave pipeline is already active in parallel:
+  - Chat 1 #208 Guard runtime head `91afb82ead4b710126079a67436515b1b7e76e14`, CI #813 IN_PROGRESS at handoff;
+  - Chat 2 #211 Guard presentation prep head `1a3ad43bdd54d732acb4f420c35920f9c550cc36`, CI #808 FAILURE, producer owns repair;
+  - Chat 3 #213 Guard authored prep head `ae319e72670796df8093f10bfc7b9480f0a9366f`, CI #810 FAILURE, producer owns repair;
+  - Chat 5 #206 Guard School remains draft/green source prep and C5-180 waits for one frozen green Guard runtime.
+- Lead CI triage note on #208 comment `5932904490`: the then-current #797 failures were two natural-acceptance assertions (duty breadth missing and brittle absolute shift count). Chat 1 has since moved to `91afb82...`; re-query #813 rather than relying on that old failure.
+- Pipeline/no-idle rule is now durable in `LEADER1_START_HERE.md`: workers advance independently; do not wait for all chats to become idle.
+
+
 ## TAVERN SHIPPED / HUNTER NEXT — 2026-10-01 13:02Z
 
 This block supersedes the earlier resumed-Tavern snapshot.
