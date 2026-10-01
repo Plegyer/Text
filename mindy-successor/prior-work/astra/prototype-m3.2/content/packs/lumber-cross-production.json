@@ -16,10 +16,21 @@
       ],
       "worldFacts": [
         "lumber.school.management-ready",
-        "lumber.forest.truth-known"
+        "lumber.forest.truth-known",
+        "forest.school-field-notes"
       ],
       "inventory": [
-        "forest_preserved_specimen"
+        "forest_preserved_specimen",
+        "rope_kit",
+        "field_preservation_kit",
+        "reinforced_axe",
+        "old_boundary_token"
+      ],
+      "itemCapabilities": [
+        "cross_rough_route",
+        "preserve_specimen",
+        "cut_heavy_wood",
+        "enter_old_boundary"
       ]
     },
     "writes": {
@@ -133,6 +144,133 @@
         }
       ],
       "variants": [
+        {
+          "id": "career-surveyed",
+          "text": "The crew recognizes the survey context immediately.",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "lumber",
+              "fact": "forest-route-surveyed",
+              "present": true
+            },
+            {
+              "kind": "worldFact",
+              "fact": "lumber.forest.truth-known",
+              "present": true
+            },
+            {
+              "kind": "itemCount",
+              "id": "forest_preserved_specimen",
+              "op": "gte",
+              "count": 1
+            }
+          ],
+          "media": [
+            "job.lumber.event.forest-return"
+          ]
+        },
+        {
+          "id": "school-field-notes",
+          "text": "The School field method is visible in how the evidence is presented.",
+          "conditions": [
+            {
+              "kind": "worldFact",
+              "fact": "forest.school-field-notes",
+              "present": true
+            },
+            {
+              "kind": "worldFact",
+              "fact": "lumber.forest.truth-known",
+              "present": true
+            },
+            {
+              "kind": "itemCount",
+              "id": "forest_preserved_specimen",
+              "op": "gte",
+              "count": 1
+            }
+          ],
+          "media": [
+            "job.lumber.event.forest-return"
+          ]
+        },
+        {
+          "id": "boundary-token",
+          "text": "The old boundary access is recognized as part of the Forest evidence.",
+          "conditions": [
+            {
+              "kind": "itemCapability",
+              "capability": "enter_old_boundary",
+              "present": true
+            },
+            {
+              "kind": "worldFact",
+              "fact": "lumber.forest.truth-known",
+              "present": true
+            }
+          ],
+          "media": [
+            "job.lumber.event.forest-return"
+          ]
+        },
+        {
+          "id": "preservation-kit",
+          "text": "The preserved sample gives the crew a concrete object to discuss.",
+          "conditions": [
+            {
+              "kind": "itemCapability",
+              "capability": "preserve_specimen",
+              "present": true
+            },
+            {
+              "kind": "worldFact",
+              "fact": "lumber.forest.truth-known",
+              "present": true
+            }
+          ],
+          "media": [
+            "job.lumber.event.forest-return"
+          ]
+        },
+        {
+          "id": "reinforced-axe",
+          "text": "The crew can tell where the reinforced axe changed the practical route.",
+          "conditions": [
+            {
+              "kind": "itemCapability",
+              "capability": "cut_heavy_wood",
+              "present": true
+            },
+            {
+              "kind": "worldFact",
+              "fact": "lumber.forest.truth-known",
+              "present": true
+            }
+          ],
+          "media": [
+            "job.lumber.event.forest-return"
+          ]
+        },
+        {
+          "id": "rope-kit",
+          "text": "The route account makes clear where the rope kit turned a rough crossing into a usable line.",
+          "conditions": [
+            {
+              "kind": "itemCapability",
+              "capability": "cross_rough_route",
+              "present": true
+            },
+            {
+              "kind": "worldFact",
+              "fact": "lumber.forest.truth-known",
+              "present": true
+            }
+          ],
+          "media": [
+            "job.lumber.event.forest-return"
+          ]
+        },
         {
           "id": "default",
           "text": "The successful Forest Activity result triggers a Lumber continuation immediately.",

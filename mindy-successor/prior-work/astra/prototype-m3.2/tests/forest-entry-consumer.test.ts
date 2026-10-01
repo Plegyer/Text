@@ -33,7 +33,7 @@ function boot(saved:string){
   return {dom,w,errors};
 }
 
-test('Forest Activity consumes approved entry context without mutating gameplay save',async()=>{
+test('Forest Activity consumes approved entry and v13 seasonal route context without mutating gameplay save',async()=>{
   let s=started();
   s=dispatch(s,{type:'enterActivity',id:'lumber.forest'},catalog);
   const first=boot(JSON.stringify(s));
@@ -57,7 +57,7 @@ test('Forest Activity consumes approved entry context without mutating gameplay 
   try{
     await wait(()=>!!routed.w.document.querySelector('.dialogue p')||routed.errors.length>0);
     assert.deepEqual(routed.errors,[]);
-    assert.match(routed.w.document.querySelector('.dialogue p').textContent,/Лесовозная дорога широкая/);
+    assert.match(routed.w.document.querySelector('.dialogue p').textContent,/Весенняя лесовозная дорога|Талая вода размывает привычную геометрию дороги/);
   }finally{
     routed.dom.window.close();
   }
