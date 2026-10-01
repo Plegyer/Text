@@ -1,0 +1,51 @@
+{
+  "formatVersion": 1,
+  "id": "school.localization-v10.accessibility-parity-audit.v1",
+  "status": "CONTENT_AUDIT_ONLY",
+  "baseline": "6afc01061646bc52cec824863bf89e8ad8c309d0",
+  "coursePresentationAltPairs": {
+    "count": 8,
+    "ruComplete": 8,
+    "enComplete": 8
+  },
+  "coursePresentationSemanticDebt": [
+    {
+      "key": "presentation.static.school-course-literacy-and-numbers.alt",
+      "kind": "RU_CANONICAL_NAME_MISMATCH"
+    },
+    {
+      "key": "presentation.static.school-course-arcana.alt",
+      "kind": "EN_ARTICLE"
+    },
+    {
+      "key": "presentation.static.school-course-etiquette-and-presentation.alt",
+      "kind": "RU_CANONICAL_NAME_MISMATCH_AND_EN_ARTICLE"
+    },
+    {
+      "key": "presentation.static.school-course-arts-and-performance.alt",
+      "kind": "EN_ARTICLE"
+    }
+  ],
+  "nightStudyAlt": {
+    "key": "presentation.static.school-night-study-generic-v2.alt",
+    "ruComplete": true,
+    "enComplete": true,
+    "semanticParity": true
+  },
+  "teacherMedia": {
+    "count": 8,
+    "altPairsComplete": 8,
+    "captionPairsComplete": 8
+  },
+  "packMediaFallbackAltKeys": [
+    "media.school.lesson.context.default.alt",
+    "media.school.life.classroom.default.alt",
+    "media.school.life.night-study.default.alt"
+  ],
+  "ownerBoundary": "No media asset, path, presentation slot, fallback ID, or selection is modified.",
+  "constraints": {
+    "changesMedia": false,
+    "changesPresentation": false,
+    "changesRootLocalization": false
+  }
+}
