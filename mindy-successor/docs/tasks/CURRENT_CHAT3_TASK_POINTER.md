@@ -1,28 +1,23 @@
 # CURRENT CHAT3 TASK POINTER
 
-Status: **FOREST v13 FROZEN + ORDINARY POVERTY v14 ACTIVE**
-Owner: Chat 3 / Forest + Poverty Content Worker
+Status: **POVERTY v14 FROZEN + TAVERN CONTENT v15 ACTIVE**
+Owner: Chat 3 / World + Career Content Bundles
 
-Frozen Forest authored-depth candidate:
-- PR #175
-- exact head: `234e1a6fac0d25b0393f7ffec84eac4007347c32`
-- exact-head CI #593: **SUCCESS**
-- do not move this PR while Chat 4 gates it.
+Frozen ordinary-poverty candidate:
+- PR #180
+- exact head `4ba5d50b50d8d263e998d13de4126de3119090f2`
+- CI #624 SUCCESS
+- do not move it while Chat 4 gates it.
 
-Continue immediately on a new branch; do not wait for QA.
+Continue immediately on a new branch.
 
 Current queue:
-- `TASK_CHAT3_CONTENT_QUEUE_v14.md`
-- C3-145..156
-- target: **Ordinary Poverty Production Closure**.
+- `TASK_CHAT3_CONTENT_QUEUE_v15.md`
+- C3-157..168
+- target: **Tavern Live Authored Content**
 
-Start C3-145 now.
+Role for this queue is intentionally expanded from Forest/Poverty into data-driven Tavern content. Chat 1 owns Tavern mechanics; Chat 3 owns authored production variants only.
 
-Hard boundaries:
-- no Secret Debt state;
-- no final economy-number locks;
-- no poverty ending;
-- no unapproved shop/sale system;
-- no shared runtime rewrite.
+Start C3-157 now. Consume C1D-121 contract once published; do not create competing gameplay IDs.
 
-Use current live NightFlow/lodging primitives and production poverty packs; convert remaining breadth/recovery/anti-softlock gaps into player-facing production content and regressions.
+Do not wait for #180 QA.
