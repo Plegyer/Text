@@ -3327,8 +3327,8 @@
       "en": "Someone notices you in the shade and offers a short task before closing. You can take it for a little money or keep resting; neither choice turns the chance meeting into an obligation, career, or relationship."
     },
     "ui.work.lockedCareerHelp": {
-      "ru": "Этот карьерный путь пока недоступен. Необходимое условие открытия ещё не задано.",
-      "en": "This career path is currently unavailable. Its unlock requirement has not been defined yet."
+      "ru": "Этот карьерный путь пока недоступен. Выполните указанные условия открытия.",
+      "en": "This career path is not available yet. Meet the listed unlock requirements."
     },
     "ui.work.lockedCareerAria": {
       "ru": "{career}: недоступно. {reason}",
@@ -3525,6 +3525,30 @@
     "media.school.teacher.body-confidence.classroom.caption": {
       "ru": "Преподаватель: Сера Вей — «Уверенность в теле».",
       "en": "Teacher: Sera Vey — Body Confidence."
+    },
+    "ui.work.unlockedCareerAria": {
+      "ru": "{career}: доступно.",
+      "en": "{career}: available."
+    },
+    "ui.work.lateCareer.locked": {
+      "ru": "Закрыто",
+      "en": "Locked"
+    },
+    "ui.work.lateCareer.unlocked": {
+      "ru": "Открыто",
+      "en": "Unlocked"
+    },
+    "ui.work.lateCareer.stateAria": {
+      "ru": "{career}: {state}",
+      "en": "{career}: {state}"
+    },
+    "ui.work.lateCareer.discovery": {
+      "ru": "Новая профессия открыта: {career}",
+      "en": "New career unlocked: {career}"
+    },
+    "ui.work.lateCareer.discoveryMany": {
+      "ru": "Открыты новые профессии: {careers}",
+      "en": "New careers unlocked: {careers}"
     }
   }
 }
