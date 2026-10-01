@@ -44,7 +44,13 @@ test('manifest semantic slots resolve to static sources with animations on and o
     const off=resolvePresentation(checked,presentation,entry.presentationId,{animationsEnabled:false,occurrenceKey:'manifest-validator'});
     assert.equal(on.textOnly,false,entry.presentationId+' on');
     assert.equal(off.textOnly,false,entry.presentationId+' off');
-    assert.equal(on.selected?.src,entry.sourceAsset,entry.presentationId+' on');
+    const slot=presentation.slots?.[entry.presentationId];
+    if(slot?.pool){
+      assert.equal(on.selected?.source,'override-pool',entry.presentationId+' on source');
+      assert.ok(slot.pool.candidates.some((candidate:any)=>candidate.src===on.selected?.src),entry.presentationId+' on pool member');
+    }else{
+      assert.equal(on.selected?.src,entry.sourceAsset,entry.presentationId+' on');
+    }
     assert.equal(off.selected?.src,entry.sourceAsset,entry.presentationId+' off');
   }
 });

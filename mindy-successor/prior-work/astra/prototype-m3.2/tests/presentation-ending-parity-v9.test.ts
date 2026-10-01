@@ -34,6 +34,7 @@ test('all existing ending semantic IDs have exact static RU/EN presentation pari
 test('current ending definitions all map to live semantic slots while the audited legacy subset keeps exact static bindings',()=>{
   const audited=new Set(manifest.endingParity.existingEndingPresentationIds.map((row:any)=>row.presentationId));
   const registry=new Map(presentationSlots(catalog).map(slot=>[slot.id,slot]));
+  const checked=applyPresentation(catalog,presentation);
   assert.ok(catalog.definitions.endings.length>=audited.size);
   const seen=new Set<string>();
   for(const ending of catalog.definitions.endings){
@@ -41,14 +42,18 @@ test('current ending definitions all map to live semantic slots while the audite
     assert.ok(registry.has(id),ending.id+' -> '+id);
     assert.equal(seen.has(id),false,'ending presentation collision '+id);
     seen.add(id);
-    if(!audited.has(id))assert.equal(registry.get(id)?.fallbackId,'location/town/default',id);
+    if(!audited.has(id)){
+      const resolved=resolvePresentation(checked,presentation,id,{animationsEnabled:false,occurrenceKey:'ending-parity-v9-live'});
+      assert.ok(resolved.selected,id+' must resolve to a live static/fallback presentation surface');
+    }
   }
   assert.equal(audited.size,9);
 });
 
-test('committed-state label gap remains classified as predecessor prepared work, not duplicated here',()=>{
+test('historical v9 committed-state classification does not override current live presentation coverage',()=>{
   assert.equal(manifest.endingParity.committedState.engineState,'ending_committed');
   assert.equal(manifest.endingParity.committedState.semanticIdPreserved,true);
   assert.equal(manifest.endingParity.committedState.distinctLocalizedUiLabel,'prepared-in-pr136-not-current-main');
-  assert.equal(localization['ui.run.endingCommitted'],undefined);
+  assert.ok(localization['ui.run.endingCommitted']?.ru?.trim());
+  assert.ok(localization['ui.run.endingCommitted']?.en?.trim());
 });

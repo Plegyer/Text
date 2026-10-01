@@ -27,7 +27,14 @@ test('selected starter-career presentation has bilingual accessibility and safe 
     assert.ok(existsSync(entry.sourceAsset),entry.sourceAsset);
     const on=resolvePresentation(checked,presentation,entry.presentationId,{animationsEnabled:true,occurrenceKey:'starter-accessibility'});
     const off=resolvePresentation(checked,presentation,entry.presentationId,{animationsEnabled:false,occurrenceKey:'starter-accessibility'});
-    assert.equal(on.selected?.src,entry.sourceAsset,entry.presentationId+' on');
+    if(slot.pool){
+      assert.equal(on.selected?.source,'override-pool',entry.presentationId+' on source');
+      assert.ok(slot.pool.candidates.some((candidate:any)=>candidate.src===on.selected?.src),entry.presentationId+' on pool member');
+      assert.ok(on.selected?.altKey&&localization[on.selected.altKey]?.ru?.trim(),entry.presentationId+' pool alt ru');
+      assert.ok(on.selected?.altKey&&localization[on.selected.altKey]?.en?.trim(),entry.presentationId+' pool alt en');
+    }else{
+      assert.equal(on.selected?.src,entry.sourceAsset,entry.presentationId+' on');
+    }
     assert.equal(off.selected?.src,entry.sourceAsset,entry.presentationId+' off');
   }
 });

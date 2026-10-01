@@ -9,10 +9,15 @@ const presentation=JSON.parse(readFileSync('content/presentation.json','utf8'));
 const manifest=JSON.parse(readFileSync('content/presentation-drafts/presentation-hardening-v9-manifest-v1.json','utf8'));
 const animationSources=JSON.parse(readFileSync('content/presentation-drafts/project-owned-animation-source-manifest-v4.json','utf8'));
 
-test('current production contains no active dynamic presentation binding',()=>{
+test('current production limits active dynamic bindings to starter-career pools with static fallbacks',()=>{
   const dynamic=Object.entries<any>(presentation.slots??{}).filter(([,slot])=>slot.primary||slot.pool);
-  assert.equal(dynamic.length,0);
-  assert.equal(manifest.reducedMotion.activeDynamicProductionBindings,0);
+  assert.equal(dynamic.length,10);
+  for(const [id,slot] of dynamic){
+    assert.match(id,/^job\/(?:satyr-maid|undead-farm)\/(?:shift\/(?:spring|summer|autumn|winter)\/default|result\/default)$/);
+    assert.equal(slot.primary,undefined,id);
+    assert.equal(slot.pool?.candidates.length,3,id);
+    assert.ok(slot.static,id+' static fallback');
+  }
 });
 
 test('animation-off resolution is deterministic and static for every queue-v9 active binding',()=>{

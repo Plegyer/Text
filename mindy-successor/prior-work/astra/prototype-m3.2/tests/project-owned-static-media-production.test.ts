@@ -40,9 +40,15 @@ test('baseline project-owned static resolution does not depend on animation mode
   for(const [id,slot] of staticSlots){
     const animated=resolvePresentation(checked,presentation,id,{animationsEnabled:true,occurrenceKey:'same'});
     const reduced=resolvePresentation(checked,presentation,id,{animationsEnabled:false,occurrenceKey:'same'});
-    assert.equal(animated.selected?.src,slot.static.src,id+' animations on');
+    if(slot.pool){
+      assert.equal(animated.selected?.source,'override-pool',id+' animations on source');
+      assert.ok(slot.pool.candidates.some((candidate:any)=>candidate.src===animated.selected?.src),id+' animations on pool member');
+      assert.ok(slot.pool.candidates.some((candidate:any)=>candidate.altKey===animated.selected?.altKey),id+' animations on altKey');
+    }else{
+      assert.equal(animated.selected?.src,slot.static.src,id+' animations on');
+      assert.equal(animated.selected?.altKey,slot.static.altKey,id+' altKey');
+    }
     assert.equal(reduced.selected?.src,slot.static.src,id+' animations off');
-    assert.equal(animated.selected?.altKey,slot.static.altKey,id+' altKey');
     assert.equal(reduced.selected?.altKey,slot.static.altKey,id+' altKey reduced');
   }
 });

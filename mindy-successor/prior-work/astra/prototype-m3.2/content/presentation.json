@@ -26,6 +26,34 @@
         "src": "assets/presentation/career-satyr-maid-result.svg",
         "alt": "Служанка в таверне завершает обслуживание стола с подносом.",
         "altKey": "presentation.static.career.satyr-maid.result.alt"
+      },
+      "pool": {
+        "version": 1,
+        "ordering": "ordered",
+        "selectionPolicy": "unweighted",
+        "candidates": [
+          {
+            "key": "service-a",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-a.gif",
+            "alt": "Animated Satyr Maid service-work presentation candidate A.",
+            "altKey": "presentation.motion.career.satyr-maid.service.a.alt"
+          },
+          {
+            "key": "service-b",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-b.gif",
+            "alt": "Animated Satyr Maid service-work presentation candidate B.",
+            "altKey": "presentation.motion.career.satyr-maid.service.b.alt"
+          },
+          {
+            "key": "service-c",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-c.gif",
+            "alt": "Animated Satyr Maid service-work presentation candidate C.",
+            "altKey": "presentation.motion.career.satyr-maid.service.c.alt"
+          }
+        ]
       }
     },
     "job/undead-farm/result/default": {
@@ -34,6 +62,34 @@
         "src": "assets/presentation/career-undead-farm-result.svg",
         "alt": "Фермерская рабочая сцена с полями, припасами и помощницей после задачи.",
         "altKey": "presentation.static.career.undead-farm.result.alt"
+      },
+      "pool": {
+        "version": 1,
+        "ordering": "ordered",
+        "selectionPolicy": "unweighted",
+        "candidates": [
+          {
+            "key": "field-a",
+            "kind": "gif",
+            "src": "assets/presentation/career-undead-farm-motion-field-a.gif",
+            "alt": "Animated Undead Farm field-work presentation candidate A.",
+            "altKey": "presentation.motion.career.undead-farm.field.a.alt"
+          },
+          {
+            "key": "field-b",
+            "kind": "gif",
+            "src": "assets/presentation/career-undead-farm-motion-field-b.gif",
+            "alt": "Animated Undead Farm field-work presentation candidate B.",
+            "altKey": "presentation.motion.career.undead-farm.field.b.alt"
+          },
+          {
+            "key": "field-c",
+            "kind": "gif",
+            "src": "assets/presentation/career-undead-farm-motion-field-c.gif",
+            "alt": "Animated Undead Farm field-work presentation candidate C.",
+            "altKey": "presentation.motion.career.undead-farm.field.c.alt"
+          }
+        ]
       }
     },
     "job/tavern/result/default": {
@@ -362,6 +418,34 @@
         "src": "assets/presentation/career-satyr-maid-shift-spring.svg",
         "alt": "Служанка работает в таверне весной; сезон показан окружением и не меняет игровой исход.",
         "altKey": "presentation.static.career.satyr-maid.shift.spring.alt"
+      },
+      "pool": {
+        "version": 1,
+        "ordering": "ordered",
+        "selectionPolicy": "unweighted",
+        "candidates": [
+          {
+            "key": "service-a",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-a.gif",
+            "alt": "Animated Satyr Maid service-work presentation candidate A.",
+            "altKey": "presentation.motion.career.satyr-maid.service.a.alt"
+          },
+          {
+            "key": "service-b",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-b.gif",
+            "alt": "Animated Satyr Maid service-work presentation candidate B.",
+            "altKey": "presentation.motion.career.satyr-maid.service.b.alt"
+          },
+          {
+            "key": "service-c",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-c.gif",
+            "alt": "Animated Satyr Maid service-work presentation candidate C.",
+            "altKey": "presentation.motion.career.satyr-maid.service.c.alt"
+          }
+        ]
       }
     },
     "job/satyr-maid/shift/summer/default": {
@@ -370,6 +454,34 @@
         "src": "assets/presentation/career-satyr-maid-shift-summer.svg",
         "alt": "Служанка работает в таверне летом; сезон показан окружением и не меняет игровой исход.",
         "altKey": "presentation.static.career.satyr-maid.shift.summer.alt"
+      },
+      "pool": {
+        "version": 1,
+        "ordering": "ordered",
+        "selectionPolicy": "unweighted",
+        "candidates": [
+          {
+            "key": "service-a",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-a.gif",
+            "alt": "Animated Satyr Maid service-work presentation candidate A.",
+            "altKey": "presentation.motion.career.satyr-maid.service.a.alt"
+          },
+          {
+            "key": "service-b",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-b.gif",
+            "alt": "Animated Satyr Maid service-work presentation candidate B.",
+            "altKey": "presentation.motion.career.satyr-maid.service.b.alt"
+          },
+          {
+            "key": "service-c",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-c.gif",
+            "alt": "Animated Satyr Maid service-work presentation candidate C.",
+            "altKey": "presentation.motion.career.satyr-maid.service.c.alt"
+          }
+        ]
       }
     },
     "job/satyr-maid/shift/autumn/default": {
@@ -378,6 +490,34 @@
         "src": "assets/presentation/career-satyr-maid-shift-autumn.svg",
         "alt": "Служанка работает в таверне осенью; сезон показан окружением и не меняет игровой исход.",
         "altKey": "presentation.static.career.satyr-maid.shift.autumn.alt"
+      },
+      "pool": {
+        "version": 1,
+        "ordering": "ordered",
+        "selectionPolicy": "unweighted",
+        "candidates": [
+          {
+            "key": "service-a",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-a.gif",
+            "alt": "Animated Satyr Maid service-work presentation candidate A.",
+            "altKey": "presentation.motion.career.satyr-maid.service.a.alt"
+          },
+          {
+            "key": "service-b",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-b.gif",
+            "alt": "Animated Satyr Maid service-work presentation candidate B.",
+            "altKey": "presentation.motion.career.satyr-maid.service.b.alt"
+          },
+          {
+            "key": "service-c",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-c.gif",
+            "alt": "Animated Satyr Maid service-work presentation candidate C.",
+            "altKey": "presentation.motion.career.satyr-maid.service.c.alt"
+          }
+        ]
       }
     },
     "job/satyr-maid/shift/winter/default": {
@@ -386,6 +526,34 @@
         "src": "assets/presentation/career-satyr-maid-shift-winter.svg",
         "alt": "Служанка работает в таверне зимой; сезон показан окружением и не меняет игровой исход.",
         "altKey": "presentation.static.career.satyr-maid.shift.winter.alt"
+      },
+      "pool": {
+        "version": 1,
+        "ordering": "ordered",
+        "selectionPolicy": "unweighted",
+        "candidates": [
+          {
+            "key": "service-a",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-a.gif",
+            "alt": "Animated Satyr Maid service-work presentation candidate A.",
+            "altKey": "presentation.motion.career.satyr-maid.service.a.alt"
+          },
+          {
+            "key": "service-b",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-b.gif",
+            "alt": "Animated Satyr Maid service-work presentation candidate B.",
+            "altKey": "presentation.motion.career.satyr-maid.service.b.alt"
+          },
+          {
+            "key": "service-c",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-c.gif",
+            "alt": "Animated Satyr Maid service-work presentation candidate C.",
+            "altKey": "presentation.motion.career.satyr-maid.service.c.alt"
+          }
+        ]
       }
     },
     "job/undead-farm/shift/spring/default": {
@@ -394,6 +562,34 @@
         "src": "assets/presentation/career-undead-farm-shift-spring.svg",
         "alt": "Работница выполняет обычную задачу на ферме нежити весной; сезон показан окружением и не меняет игровой исход.",
         "altKey": "presentation.static.career.undead-farm.shift.spring.alt"
+      },
+      "pool": {
+        "version": 1,
+        "ordering": "ordered",
+        "selectionPolicy": "unweighted",
+        "candidates": [
+          {
+            "key": "field-a",
+            "kind": "gif",
+            "src": "assets/presentation/career-undead-farm-motion-field-a.gif",
+            "alt": "Animated Undead Farm field-work presentation candidate A.",
+            "altKey": "presentation.motion.career.undead-farm.field.a.alt"
+          },
+          {
+            "key": "field-b",
+            "kind": "gif",
+            "src": "assets/presentation/career-undead-farm-motion-field-b.gif",
+            "alt": "Animated Undead Farm field-work presentation candidate B.",
+            "altKey": "presentation.motion.career.undead-farm.field.b.alt"
+          },
+          {
+            "key": "field-c",
+            "kind": "gif",
+            "src": "assets/presentation/career-undead-farm-motion-field-c.gif",
+            "alt": "Animated Undead Farm field-work presentation candidate C.",
+            "altKey": "presentation.motion.career.undead-farm.field.c.alt"
+          }
+        ]
       }
     },
     "job/undead-farm/shift/summer/default": {
@@ -402,6 +598,34 @@
         "src": "assets/presentation/career-undead-farm-shift-summer.svg",
         "alt": "Работница выполняет обычную задачу на ферме нежити летом; сезон показан окружением и не меняет игровой исход.",
         "altKey": "presentation.static.career.undead-farm.shift.summer.alt"
+      },
+      "pool": {
+        "version": 1,
+        "ordering": "ordered",
+        "selectionPolicy": "unweighted",
+        "candidates": [
+          {
+            "key": "field-a",
+            "kind": "gif",
+            "src": "assets/presentation/career-undead-farm-motion-field-a.gif",
+            "alt": "Animated Undead Farm field-work presentation candidate A.",
+            "altKey": "presentation.motion.career.undead-farm.field.a.alt"
+          },
+          {
+            "key": "field-b",
+            "kind": "gif",
+            "src": "assets/presentation/career-undead-farm-motion-field-b.gif",
+            "alt": "Animated Undead Farm field-work presentation candidate B.",
+            "altKey": "presentation.motion.career.undead-farm.field.b.alt"
+          },
+          {
+            "key": "field-c",
+            "kind": "gif",
+            "src": "assets/presentation/career-undead-farm-motion-field-c.gif",
+            "alt": "Animated Undead Farm field-work presentation candidate C.",
+            "altKey": "presentation.motion.career.undead-farm.field.c.alt"
+          }
+        ]
       }
     },
     "job/undead-farm/shift/autumn/default": {
@@ -410,6 +634,34 @@
         "src": "assets/presentation/career-undead-farm-shift-autumn.svg",
         "alt": "Работница выполняет обычную задачу на ферме нежити осенью; сезон показан окружением и не меняет игровой исход.",
         "altKey": "presentation.static.career.undead-farm.shift.autumn.alt"
+      },
+      "pool": {
+        "version": 1,
+        "ordering": "ordered",
+        "selectionPolicy": "unweighted",
+        "candidates": [
+          {
+            "key": "field-a",
+            "kind": "gif",
+            "src": "assets/presentation/career-undead-farm-motion-field-a.gif",
+            "alt": "Animated Undead Farm field-work presentation candidate A.",
+            "altKey": "presentation.motion.career.undead-farm.field.a.alt"
+          },
+          {
+            "key": "field-b",
+            "kind": "gif",
+            "src": "assets/presentation/career-undead-farm-motion-field-b.gif",
+            "alt": "Animated Undead Farm field-work presentation candidate B.",
+            "altKey": "presentation.motion.career.undead-farm.field.b.alt"
+          },
+          {
+            "key": "field-c",
+            "kind": "gif",
+            "src": "assets/presentation/career-undead-farm-motion-field-c.gif",
+            "alt": "Animated Undead Farm field-work presentation candidate C.",
+            "altKey": "presentation.motion.career.undead-farm.field.c.alt"
+          }
+        ]
       }
     },
     "job/undead-farm/shift/winter/default": {
@@ -418,6 +670,34 @@
         "src": "assets/presentation/career-undead-farm-shift-winter.svg",
         "alt": "Работница выполняет обычную задачу на ферме нежити зимой; сезон показан окружением и не меняет игровой исход.",
         "altKey": "presentation.static.career.undead-farm.shift.winter.alt"
+      },
+      "pool": {
+        "version": 1,
+        "ordering": "ordered",
+        "selectionPolicy": "unweighted",
+        "candidates": [
+          {
+            "key": "field-a",
+            "kind": "gif",
+            "src": "assets/presentation/career-undead-farm-motion-field-a.gif",
+            "alt": "Animated Undead Farm field-work presentation candidate A.",
+            "altKey": "presentation.motion.career.undead-farm.field.a.alt"
+          },
+          {
+            "key": "field-b",
+            "kind": "gif",
+            "src": "assets/presentation/career-undead-farm-motion-field-b.gif",
+            "alt": "Animated Undead Farm field-work presentation candidate B.",
+            "altKey": "presentation.motion.career.undead-farm.field.b.alt"
+          },
+          {
+            "key": "field-c",
+            "kind": "gif",
+            "src": "assets/presentation/career-undead-farm-motion-field-c.gif",
+            "alt": "Animated Undead Farm field-work presentation candidate C.",
+            "altKey": "presentation.motion.career.undead-farm.field.c.alt"
+          }
+        ]
       }
     },
     "job/tavern/shift/spring/default": {
@@ -842,6 +1122,78 @@
         "src": "assets/presentation/poverty-cheap-lodging.svg",
         "alt": "Простая дешёвая общая комната с минимальной обстановкой, используемая как нейтральный статичный фон бытовой сцены.",
         "altKey": "presentation.static.location.town.event.poverty-cheap-production-v2-shared-room-seasons.shared-room.alt"
+      }
+    },
+    "ending/satyr-maid/hard-work": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-result.svg",
+        "alt": "Hard Work ending static presentation for satyr-maid.",
+        "altKey": "presentation.static.satyr-maid-ending-hard-work.alt"
+      }
+    },
+    "ending/undead-farm/hard-work": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-result.svg",
+        "alt": "Hard Work ending static presentation for undead-farm.",
+        "altKey": "presentation.static.undead-farm-ending-hard-work.alt"
+      }
+    },
+    "ending/tavern/hard-work": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-result.svg",
+        "alt": "Hard Work ending static presentation for tavern.",
+        "altKey": "presentation.static.tavern-ending-hard-work.alt"
+      }
+    },
+    "ending/hunter/hard-work": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hard Work ending static presentation for hunter.",
+        "altKey": "presentation.static.hunter-ending-hard-work.alt"
+      }
+    },
+    "ending/guard/hard-work": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Hard Work ending static presentation for guard.",
+        "altKey": "presentation.static.guard-ending-hard-work.alt"
+      }
+    },
+    "ending/merchant/hard-work": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-merchant-result.svg",
+        "alt": "Hard Work ending static presentation for merchant.",
+        "altKey": "presentation.static.merchant-ending-hard-work.alt"
+      }
+    },
+    "ending/artist-geisha/hard-work": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-artist-geisha-result.svg",
+        "alt": "Hard Work ending static presentation for artist-geisha.",
+        "altKey": "presentation.static.artist-geisha-ending-hard-work.alt"
+      }
+    },
+    "ending/assassin/hard-work": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Hard Work ending static presentation for assassin.",
+        "altKey": "presentation.static.assassin-ending-hard-work.alt"
+      }
+    },
+    "ending/prostitute/hard-work": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-prostitute-result.svg",
+        "alt": "Hard Work ending static presentation for prostitute.",
+        "altKey": "presentation.static.prostitute-ending-hard-work.alt"
       }
     }
   }
