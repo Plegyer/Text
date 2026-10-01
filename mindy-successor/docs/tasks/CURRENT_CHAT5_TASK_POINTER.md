@@ -7,17 +7,16 @@ Mandatory startup:
 - `WORKER_CHAT_RECREATION_PROTOCOL_v1.md`
 - `ACTIVE_TEAM_OWNERSHIP_MATRIX.md`
 - `CANDIDATE_QA_FREEZE_PROTOCOL.md`
-- `TASK_CHAT5_SCHOOL_QUEUE_v8.md`
 - `TASK_CHAT5_SCHOOL_QUEUE_v9.md`
+- `TASK_CHAT5_SCHOOL_QUEUE_v10.md`
 
 Current status:
 - C5-73 through C5-84 are complete;
-- frozen candidate: PR #132 exact head `43ea615581cd8614a32434888fcaaf01b6e116dd`;
-- exact-head repository CI #390 is green;
-- do not move PR #132 unless QA requests a concrete repair.
+- C5-85 through C5-96 candidate work completed/frozen;
+- continue after C5-96 with the next assigned queue.
 
 Active queue:
-- continue automatically with C5-85 through C5-96 from current main.
+- continue automatically with C5-97 through C5-108 from current main.
 
 At each queue boundary:
 - re-read current main and this pointer;
@@ -28,4 +27,4 @@ Keep technical evidence in Git only. Personal chat output:
 - `Задание выполнено`
 - `Задания выполнены`
 
-Do not self-assign beyond C5-96.
+Do not self-assign beyond C5-108.
