@@ -5197,6 +5197,70 @@
     "event.lumber-cross.activity-forest-return.variant.rope-kit.text": {
       "ru": "В рассказе ясно отмечено место, где верёвочный набор сделал опасный переход контролируемым. Для артели это важно как доказательство проходимости, а не как украшение истории.",
       "en": "Your account clearly marks where the rope kit turned a dangerous crossing into a controlled one. For the crew, that matters as evidence of passability rather than decoration for the story."
+    },
+    "event.tavern.school.records.title": {
+      "ru": "Смена, которая оставляет понятные записи",
+      "en": "A shift that leaves readable records"
+    },
+    "event.tavern.school.records.variant.default.text": {
+      "ru": "Мара просит свести учебный лист так, будто ночью его заберёт другая смена: отдельно оплаченные заказы, долги, исправления и запас, который нужно проверить утром. После третьего занятия она говорит, что такой порядок уже годится для трактирной работы — не как школьный диплом, а как способ передать хозяйство без догадок.",
+      "en": "Mara asks you to reconcile a practice sheet as if another shift will take it over overnight: paid orders, tabs, corrections, and stock that needs checking in the morning all get their own place. After the third lesson, she says the method is ready for tavern work—not as a School credential, but as a way to hand the house over without guesswork."
+    },
+    "event.tavern.school.records.choice.apply.label": {
+      "ru": "Применить записи",
+      "en": "Apply the records"
+    },
+    "event.tavern.school.records.choice.apply.text": {
+      "ru": "Метод учёта готов к трактирной реакции без дополнительной смены. Школа: Мара связала понятные записи с передачей смены и хозяйственными решениями. Это локальный Tavern-крючок, не сертификат.",
+      "en": "The record-keeping method is ready for a Tavern reaction without an additional shift. School: Mara connected readable records to shift handoff and house decisions. This is a local Tavern hook, not a certificate."
+    },
+    "event.tavern.school.broker.title": {
+      "ru": "Сначала понять, о чём теперь спор",
+      "en": "First find out what the argument is about now"
+    },
+    "event.tavern.school.broker.variant.default.text": {
+      "ru": "Кассиан разбирает конфликт двух гостей по репликам и показывает момент, когда спор уже сменил тему, а участники этого не заметили. После третьего занятия он считает приём готовым к трактирной проверке: назвать позиции, уточнить запрос и только потом предлагать посредничество. Это не общий бонус к убеждению и не гарантия, что стороны согласятся.",
+      "en": "Cassian breaks a two-guest dispute down line by line and points out the moment when the argument changed subjects without either person noticing. After the third lesson, he considers the technique ready for a tavern test: state the positions, clarify the request, and only then offer mediation. It is not a generic persuasion bonus or a promise that the sides will agree."
+    },
+    "event.tavern.school.broker.choice.apply.label": {
+      "ru": "Использовать посредничество",
+      "en": "Use the mediation method"
+    },
+    "event.tavern.school.broker.choice.apply.text": {
+      "ru": "Приём посредничества готов к трактирной реакции без дополнительной смены. Школа: Кассиан связал риторику с посредничеством и обращением с информацией в трактире. Глобальный milestone не создан.",
+      "en": "The mediation technique is ready for a Tavern reaction without an additional shift. School: Cassian connected rhetoric to mediation and information handling at the tavern. No global milestone was created."
+    },
+    "event.tavern.school.etiquette.title": {
+      "ru": "Статус меняет форму, не правило",
+      "en": "Status changes the form, not the rule"
+    },
+    "event.tavern.school.etiquette.variant.default.text": {
+      "ru": "Элиан повторяет одну и ту же сервисную ситуацию сначала с обычным путником, затем с важным гостем. После третьего занятия формулировка становится официальнее, но порядок, границы и ясность остаются теми же. Навык готов к трактирной реакции: обслуживать высокий статус без суеты и без превращения уважения в покорность.",
+      "en": "Eliane runs the same service problem first with an ordinary traveler and then with an important guest. After the third lesson, the wording becomes more formal, but the order, boundaries, and clarity stay the same. The skill is ready for a tavern reaction: serve high status without fuss and without turning respect into submission."
+    },
+    "event.tavern.school.etiquette.choice.apply.label": {
+      "ru": "Применить сервисный приём",
+      "en": "Use the service method"
+    },
+    "event.tavern.school.etiquette.choice.apply.text": {
+      "ru": "Формальная подача готова к трактирной реакции без дополнительной смены. Школа: Элиан связала этикет с обслуживанием важного гостя, не создавая отдельного статусного правила.",
+      "en": "The formal-service technique is ready for a Tavern reaction without an additional shift. School: Eliane connected etiquette to serving an important guest without creating a separate status rule."
+    },
+    "event.tavern.school.arcana.title": {
+      "ru": "Слух не становится фактом от повторения",
+      "en": "A rumor does not become a fact by repetition"
+    },
+    "event.tavern.school.arcana.variant.default.text": {
+      "ru": "Илира просит разобрать странный рассказ гостя без догадки о его окончательном смысле: отдельно наблюдаемое, отдельно слова рассказчика, отдельно то, что можно безопасно проверить. После третьего занятия этот порядок готов к трактирной реакции. Он помогает решить, как отнестись к необычному слуху или постояльцу, но не устанавливает финальную природу события.",
+      "en": "Ilyra asks you to examine a guest's strange story without guessing its final meaning: separate what can be observed, what the speaker claims, and what can be checked safely. After the third lesson, that method is ready for a tavern reaction. It helps decide how to treat an unusual rumor or guest without establishing the event's final nature."
+    },
+    "event.tavern.school.arcana.choice.apply.label": {
+      "ru": "Проверить сообщение",
+      "en": "Check the report"
+    },
+    "event.tavern.school.arcana.choice.apply.text": {
+      "ru": "Метод проверки странного сообщения готов к трактирной реакции без дополнительной смены. Школа: Илира связала арканное наблюдение с осторожной трактовкой слуха. Финальный лор и происхождение не определены.",
+      "en": "The method for checking a strange report is ready for a Tavern reaction without an additional shift. School: Ilyra connected Arcana observation to careful rumor interpretation. Final lore and origin remain undetermined."
     }
   }
 }
