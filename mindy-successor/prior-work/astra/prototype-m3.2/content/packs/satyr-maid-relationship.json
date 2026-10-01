@@ -10,6 +10,9 @@
       ],
       "relationships": [
         "satyr-maid.recurring-guest"
+      ],
+      "meta": [
+        "unlock"
       ]
     },
     "writes": {
@@ -309,6 +312,41 @@
               "kind": "addRelationshipFact",
               "relationship": "satyr-maid.recurring-guest",
               "fact": "request-declined"
+            }
+          ]
+        },
+        {
+          "id": "clear-terms-negotiation",
+          "label": "Offer a professional alternative",
+          "text": "Clear Terms lets you refuse the private obligation while proposing a professional service arrangement without damaging the working relationship.",
+          "conditions": [
+            {
+              "kind": "metaUnlock",
+              "unlock": "satyr-maid.clear-terms",
+              "present": true
+            }
+          ],
+          "effects": [
+            {
+              "kind": "setRelationshipChoice",
+              "relationship": "satyr-maid.recurring-guest",
+              "choice": "request-response",
+              "value": "accepted"
+            },
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "satyr-maid.recurring-guest",
+              "fact": "request-open"
+            },
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "satyr-maid.recurring-guest",
+              "fact": "clear-terms-used"
+            },
+            {
+              "kind": "advanceRelationship",
+              "relationship": "satyr-maid.recurring-guest",
+              "transition": "request-open"
             }
           ]
         }
