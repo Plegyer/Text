@@ -1,5 +1,13 @@
 # Document Authority and Index v0
 
+## Live status authority — 2026-10-01
+
+For current production state and worker assignments, read **before historical handoffs**:
+- `LEAD1_CURRENT_STATE_v1.md`.
+
+Current task truth is in the five `docs/tasks/CURRENT_CHAT*_TASK_POINTER.md` files. Older live-board/handoff sections remain historical evidence.
+
+
 Дата: 2026-09-25.
 
 Статус: **PROJECT NAVIGATION CONTRACT**.
