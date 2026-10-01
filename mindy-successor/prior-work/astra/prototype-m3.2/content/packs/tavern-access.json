@@ -28,7 +28,7 @@
   "events": [
     {
       "id": "tavern.access.staff-key",
-      "title": "A staff key is a work tool",
+      "title": "Staff room access",
       "sourceDomain": "tavern",
       "trigger": [],
       "reactionTriggers": [
@@ -81,7 +81,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "A staff key grants access for work, not permission to enter without a reason. You check why the room needs attention, knock even when you believe it is empty, and return the key where the next shift can find it.",
+          "text": "Trusted Tavern work now includes a narrow staff key for guest-room service. It grants only the authored staff-room capability and does not create a generic lock system.",
           "conditions": [],
           "media": []
         }
@@ -90,7 +90,7 @@
         {
           "id": "take-key",
           "label": "Take the staff key",
-          "text": "Take the staff key as a narrow work tool: enter guest rooms only for a defined staff task, knock first, and return it for the next shift.",
+          "text": "Accept the work tool and its narrow guest-room access capability.",
           "conditions": [],
           "effects": [
             {
@@ -122,7 +122,7 @@
     },
     {
       "id": "tavern.access.guest-ledger",
-      "title": "Read only what the task requires",
+      "title": "Guest ledger evidence",
       "sourceDomain": "tavern",
       "trigger": [],
       "reactionTriggers": [
@@ -180,7 +180,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "The guest ledger is useful only when there is a clear reason to open it. You look for the entry connected to the current task and do not turn neighboring names, dates, and routes into material for curiosity.",
+          "text": "The staff key lets you perform the guest-room round and compare room use against the ordinary house ledger. One typed evidence fact is enough; no generic evidence inventory is created.",
           "conditions": [],
           "media": []
         }
@@ -189,7 +189,7 @@
         {
           "id": "record-ledger",
           "label": "Record the ledger evidence",
-          "text": "Record only the room-and-ledger discrepancy relevant to the current task; neighboring names and routes remain outside the evidence.",
+          "text": "Keep the room/ledger discrepancy as a Tavern route fact.",
           "conditions": [],
           "effects": [
             {

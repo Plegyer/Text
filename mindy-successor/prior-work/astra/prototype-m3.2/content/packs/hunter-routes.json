@@ -1,0 +1,518 @@
+{
+  "schemaVersion": 1,
+  "id": "hunter.routes",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "careers": [
+        "hunter"
+      ],
+      "activities": [
+        "hunter.expedition"
+      ],
+      "itemCapabilities": [
+        "preserve_specimen"
+      ],
+      "relationships": [
+        "hunter.senior-guide"
+      ]
+    },
+    "writes": {
+      "careers": [
+        "hunter"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "hunter.routes.master-ready",
+      "title": "Master Hunter route ready",
+      "sourceDomain": "hunter",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerCounterChanged",
+          "career": "hunter",
+          "counter": "spring_contracts"
+        },
+        {
+          "kind": "careerCounterChanged",
+          "career": "hunter",
+          "counter": "summer_contracts"
+        },
+        {
+          "kind": "careerCounterChanged",
+          "career": "hunter",
+          "counter": "autumn_contracts"
+        },
+        {
+          "kind": "careerCounterChanged",
+          "career": "hunter",
+          "counter": "winter_contracts"
+        },
+        {
+          "kind": "careerCounterChanged",
+          "career": "hunter",
+          "counter": "successful_expeditions"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "hunter",
+          "fact": "expedition-preserved-sample"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "hunter",
+          "fact": "expedition-rough-route"
+        },
+        {
+          "kind": "careerTransition",
+          "career": "hunter"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 88,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "hunter",
+          "stage": "recognized-hunter"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "hunter",
+          "counter": "spring_contracts",
+          "op": "gte",
+          "value": 1
+        },
+        {
+          "kind": "careerCounter",
+          "career": "hunter",
+          "counter": "summer_contracts",
+          "op": "gte",
+          "value": 1
+        },
+        {
+          "kind": "careerCounter",
+          "career": "hunter",
+          "counter": "autumn_contracts",
+          "op": "gte",
+          "value": 1
+        },
+        {
+          "kind": "careerCounter",
+          "career": "hunter",
+          "counter": "winter_contracts",
+          "op": "gte",
+          "value": 1
+        },
+        {
+          "kind": "careerCounter",
+          "career": "hunter",
+          "counter": "successful_expeditions",
+          "op": "gte",
+          "value": 2
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "expedition-preserved-sample",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "expedition-rough-route",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "master-route-ready",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "A full season cycle, repeated successful returns, rough-route preparation, and preserved evidence now form the Master Hunter route. It is not a kill counter.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record Master Hunter readiness",
+          "text": "Open rare-contract preparation while keeping other late routes available.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "hunter",
+              "fact": "rare-contract-ready"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "hunter",
+              "fact": "master-route-ready"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hunter.routes.warden-ready",
+      "title": "Warden route ready",
+      "sourceDomain": "hunter",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "hunter",
+          "fact": "relationship-trust-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "hunter",
+          "fact": "protected-route-choice"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "hunter",
+          "fact": "forest-clue-known"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "hunter",
+          "fact": "lumber-clue-known"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "hunter",
+          "fact": "farm-clue-known"
+        },
+        {
+          "kind": "careerTransition",
+          "career": "hunter"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 87,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "hunter",
+          "stage": "recognized-hunter"
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "relationship-trust-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "protected-route-choice",
+          "present": true
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "hunter",
+              "fact": "forest-clue-known",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "hunter",
+              "fact": "lumber-clue-known",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "hunter",
+              "fact": "farm-clue-known",
+              "present": true
+            }
+          ]
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "warden-route-ready",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "A concrete protection choice, professional conflict resolution, and actual territory knowledge now support Warden as a distinct route rather than a morality score.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record Warden readiness",
+          "text": "Keep protection/stewardship as a typed late route.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "incrementCareerCounter",
+              "career": "hunter",
+              "counter": "protected_routes",
+              "amount": 1
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "hunter",
+              "fact": "warden-route-ready"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hunter.routes.legend-contract",
+      "title": "Rare multi-system contract",
+      "sourceDomain": "hunter",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "hunter",
+          "fact": "rare-contract-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "hunter",
+          "fact": "forest-clue-known"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "hunter",
+          "fact": "tavern-clue-known"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "hunter",
+          "fact": "farm-clue-known"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "hunter",
+          "fact": "lumber-clue-known"
+        },
+        {
+          "kind": "careerTransition",
+          "career": "hunter"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "hunter.shift"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 89,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 20,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "hunter",
+          "stage": "recognized-hunter"
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "rare-contract-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "forest-clue-known",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "tavern-clue-known",
+          "present": true
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "hunter",
+              "fact": "farm-clue-known",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "hunter",
+              "fact": "lumber-clue-known",
+              "present": true
+            }
+          ]
+        },
+        {
+          "kind": "itemCapability",
+          "capability": "preserve_specimen",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "rare-contract-active",
+          "present": false
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "rare-contract-complete",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Independent Forest and Tavern clues now overlap with a Farm or Lumber observation. You can accept a rare investigation contract without defining a fixed boss or combat system.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "accept",
+          "label": "Accept the rare contract",
+          "text": "Activate the dedicated rare route for the next Hunter expedition.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "hunter",
+              "fact": "rare-contract-active"
+            }
+          ]
+        },
+        {
+          "id": "defer",
+          "label": "Defer the rare contract",
+          "text": "Keep the clues without activating the rare route yet.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "hunter.routes.legend-return",
+      "title": "Rare route returned successfully",
+      "sourceDomain": "hunter",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "activityResult",
+          "activity": "hunter.expedition",
+          "outcome": "success",
+          "result": "hunter.expedition.success"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 90,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "rare-contract-active",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "rare-contract-complete",
+          "present": false
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "forest-clue-known",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "tavern-clue-known",
+          "present": true
+        },
+        {
+          "kind": "itemCapability",
+          "capability": "preserve_specimen",
+          "present": true
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The active rare contract returned successfully through the dedicated rare expedition route. The result is enough to mark Legend readiness without inventing a public ending identity.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record the rare return",
+          "text": "Close the rare contract and publish the Legend route fact.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "hunter",
+              "fact": "rare-contract-complete"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "hunter",
+              "fact": "legend-route-ready"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
