@@ -168,7 +168,7 @@ test('C2-173 through C2-175 status and item slots require real production backin
   }
 
   for(const itemId of GUARD_ITEM_IDS){
-    const item=catalog.definitions.itemDefinitions.find(item=>item.id===itemId);
+    const item=catalog.definitions.itemDefinitions.find(item=>String(item.id)===itemId);
     assert.equal(known.has(presentationIdForGuardItem(itemId)),!!item,itemId+' item backing');
     const label=`presentation.guard.item.${itemId}.label`;
     assert.ok(localization[label]?.ru?.trim(),label+' ru');
