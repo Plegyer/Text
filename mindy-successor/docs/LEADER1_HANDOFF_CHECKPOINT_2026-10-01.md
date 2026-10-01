@@ -1,3 +1,18 @@
+# Worker reallocation update — 2026-10-01
+
+User explicitly resumed/distributed work to idle workers.
+
+Current assignments:
+- Chat 1: **Guard Complete Career Runtime v14**, branch `chat1/guard-complete-v14`, queue `TASK_CHAT1_DEVELOPER_QUEUE_v14.md`, C1D-145..156. Start with Guard runtime contract; do not move frozen Hunter #201.
+- Chat 2: **Hunter Complete Career Presentation v15**, branch `chat2/hunter-presentation-v15`, queue `TASK_CHAT2_PRESENTATION_QUEUE_v15.md`, C2-157..168. Base is frozen Hunter runtime #201 exact head `8af661de2ce6d73e4db0f61fe4206d3334822998`; do not move frozen Tavern presentation #200.
+- Chat 3: already active on **Hunter Live Authored Content v16**, branch `chat3/hunter-live-authored-v16`, queue `TASK_CHAT3_CONTENT_QUEUE_v16.md`, C3-169..180. Main pointer/queue were synchronized so this work is visible.
+- Chat 4: remains active on existing QA/integration gates; no producer scope added.
+- Chat 5: Hunter School #199 remains frozen; no v16 self-queue assigned in this reallocation.
+
+Guard work may proceed in parallel but must not bypass Tavern/Hunter QA/integration ordering.
+
+---
+
 # Leader 1 Handoff Checkpoint — 2026-10-01
 
 ## LATEST USER-PAUSE RECOVERY NOTE
