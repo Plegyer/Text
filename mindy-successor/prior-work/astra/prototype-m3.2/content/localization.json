@@ -3913,6 +3913,86 @@
     "presentation.static.career.satyr-maid.event.veteran-service.caption": {
       "ru": "Рабочий этап: Опытная работа в напряжённую смену.",
       "en": "Work milestone: Veteran service under pressure."
+    },
+    "event.satyr-maid.recurring-guest.intro.title": {
+      "ru": "Знакомый гость замечает вашу работу",
+      "en": "A recurring guest notices your service"
+    },
+    "event.satyr-maid.recurring-guest.intro.variant.default.text": {
+      "ru": "Знакомый гость заводит разговор во время обычной смены. Общение можно оставить полностью профессиональным.",
+      "en": "A familiar guest starts a conversation during ordinary service. You can keep it entirely professional."
+    },
+    "presentation.static.relationship.satyr-maid.recurring-guest.intro.alt": {
+      "ru": "Знакомый гость разговаривает со служанкой во время обычного обслуживания в зале.",
+      "en": "A familiar guest speaks with the maid during ordinary service on the floor."
+    },
+    "presentation.static.relationship.satyr-maid.recurring-guest.intro.caption": {
+      "ru": "Первый профессиональный разговор с постоянным гостем.",
+      "en": "First professional conversation with a recurring guest."
+    },
+    "event.satyr-maid.recurring-guest.service.title": {
+      "ru": "Знакомый гость предлагает встретиться после работы",
+      "en": "A familiar guest asks about meeting after work"
+    },
+    "event.satyr-maid.recurring-guest.service.variant.default.text": {
+      "ru": "После ещё одного профессионального разговора гость спрашивает, захотите ли вы когда-нибудь поговорить после закрытия.",
+      "en": "After another professional exchange, the guest asks whether you would ever want to talk after closing."
+    },
+    "presentation.static.relationship.satyr-maid.recurring-guest.service.alt": {
+      "ru": "Служанка и знакомый гость разговаривают у стола после очередного профессионального обслуживания.",
+      "en": "The maid and a familiar guest talk at a table after another professional service exchange."
+    },
+    "presentation.static.relationship.satyr-maid.recurring-guest.service.caption": {
+      "ru": "Предложение добровольной встречи после смены.",
+      "en": "An invitation to a voluntary meeting after work."
+    },
+    "event.satyr-maid.recurring-guest.night.title": {
+      "ru": "Разговор после закрытия",
+      "en": "After-hours conversation"
+    },
+    "event.satyr-maid.recurring-guest.night.variant.default.text": {
+      "ru": "Вы встречаетесь после закрытия по собственному выбору. Разговор происходит вне оплачиваемой работы и сам по себе не создаёт автоматического штрафа к энергии следующего дня.",
+      "en": "You meet after closing by choice. The conversation stays outside paid work and does not create an automatic next-day Energy penalty."
+    },
+    "presentation.static.relationship.satyr-maid.recurring-guest.night.alt": {
+      "ru": "Добровольный спокойный разговор после закрытия, отдельно от рабочей смены.",
+      "en": "A calm voluntary conversation after closing, separate from the paid work shift."
+    },
+    "presentation.static.relationship.satyr-maid.recurring-guest.night.caption": {
+      "ru": "Добровольная встреча после работы.",
+      "en": "Voluntary after-hours meeting."
+    },
+    "event.satyr-maid.recurring-guest.request.title": {
+      "ru": "Профессиональная просьба",
+      "en": "A professional request"
+    },
+    "event.satyr-maid.recurring-guest.request.variant.default.text": {
+      "ru": "Гость просит помочь организовать сложный повторный визит. Это просьба, а не обязательство.",
+      "en": "The guest asks for help arranging a difficult return visit. It is a request, not an obligation."
+    },
+    "presentation.static.relationship.satyr-maid.recurring-guest.request.alt": {
+      "ru": "Знакомый гость формулирует дополнительную профессиональную просьбу служанке.",
+      "en": "A familiar guest makes an additional professional request to the maid."
+    },
+    "presentation.static.relationship.satyr-maid.recurring-guest.request.caption": {
+      "ru": "Дополнительная просьба без обязательства соглашаться.",
+      "en": "An additional request with no obligation to accept."
+    },
+    "event.satyr-maid.recurring-guest.return.title": {
+      "ru": "Просьба возвращается в рабочий зал",
+      "en": "The request returns to the work floor"
+    },
+    "event.satyr-maid.recurring-guest.return.variant.default.text": {
+      "ru": "Гость возвращается во время настоящей смены. Просьба решается через обычное обслуживание, а не как личное обязательство.",
+      "en": "The guest returns during a real shift. You resolve the request through ordinary service rather than private obligation."
+    },
+    "presentation.static.relationship.satyr-maid.recurring-guest.return.alt": {
+      "ru": "Знакомый гость снова приходит во время рабочей смены, и просьба решается в обычном профессиональном порядке.",
+      "en": "The familiar guest returns during a work shift and the request is handled through ordinary professional service."
+    },
+    "presentation.static.relationship.satyr-maid.recurring-guest.return.caption": {
+      "ru": "Возврат к рабочему формату и профессиональное завершение просьбы.",
+      "en": "Return to the work floor and professional resolution of the request."
     }
   }
 }
