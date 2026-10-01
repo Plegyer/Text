@@ -23,14 +23,16 @@
     "compatibilityOnlyEventPolicy": {
       "eventId": "school-life-content-v1.after-night-study",
       "reason": "Retained so historical queued instances can still resolve.",
-      "newRunReachability": "DISABLED",
-      "disabledBy": {
-        "kind": "not",
-        "condition": {
-          "kind": "calendarYear",
-          "op": "gte",
-          "value": 1
-        }
+      "newRunReachability": "ZERO_CHANCE",
+      "trigger": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.literacy_and_numbers.reason"
+      },
+      "chance": {
+        "base": 0,
+        "stat": "intelligence",
+        "perPoint": 0,
+        "max": 0
       }
     }
   },
