@@ -3748,6 +3748,53 @@
         }
       ],
       "epilogue": "You become one of the people who can set the house's working terms and keep its business running."
+    },
+    {
+      "id": "ending.satyr-maid.boundary-mastery",
+      "title": "Satyr Maid — Boundary Mastery",
+      "description": "A complex Satyr Maid ending built through explicit refusal, clear service terms, School-backed confidence, and a resolved customer-pressure crisis.",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "satyr-maid",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 15
+        },
+        {
+          "kind": "careerFact",
+          "career": "satyr-maid",
+          "fact": "school-boundaries-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "satyr-maid",
+          "fact": "crisis-boundaries",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "satyr-maid",
+          "fact": "boundaries-ready",
+          "present": true
+        },
+        {
+          "kind": "relationshipChoice",
+          "relationship": "satyr-maid.recurring-guest",
+          "choice": "night-response",
+          "value": "declined"
+        }
+      ],
+      "reward": "satyr-maid.clear-terms",
+      "metaRewards": [
+        {
+          "kind": "unlock",
+          "rewardId": "satyr-maid.clear-terms",
+          "unlock": "satyr-maid.clear-terms"
+        }
+      ],
+      "epilogue": "You become known for service on clear terms: professional warmth without surrendering control over your own boundaries."
     }
   ],
   "careers": [
