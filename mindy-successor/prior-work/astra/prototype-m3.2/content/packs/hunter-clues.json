@@ -25,7 +25,7 @@
   "events": [
     {
       "id": "hunter.clues.forest-trail",
-      "title": "Forest trail clue reaches Hunter",
+      "title": "A Forest trail clue becomes route evidence",
       "sourceDomain": "hunter",
       "trigger": [],
       "reactionTriggers": [
@@ -75,7 +75,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "The already-live Forest hunter-trail clue becomes useful Hunter route preparation without duplicating the Forest route or its lore.",
+          "text": "The Forest Hunter Trail clue gives you one verified piece of terrain knowledge: where sign was found and which approach produced it. Hunter records the route fact without copying Forest lore or claiming the clue explains every later track.",
           "conditions": [],
           "media": []
         }
@@ -83,8 +83,8 @@
       "choices": [
         {
           "id": "record",
-          "label": "Record the Forest clue",
-          "text": "Store only a Hunter-local route fact.",
+          "label": "Record the Forest route evidence",
+          "text": "Carry the existing Forest clue into Hunter as one narrow route-preparation fact.",
           "conditions": [],
           "effects": [
             {
@@ -98,7 +98,7 @@
     },
     {
       "id": "hunter.clues.lumber-truth",
-      "title": "Lumber Forest return reaches Hunter",
+      "title": "A Lumber observation crosses the same ground",
       "sourceDomain": "hunter",
       "trigger": [],
       "reactionTriggers": [
@@ -148,7 +148,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "A successful Lumber Forest result supplies a narrow route observation that Hunter can use without changing Lumber progression.",
+          "text": "Lumber's Forest result contributes a practical route observation—ground condition, access, and what changed along a worked corridor. Hunter can compare that observation with its own tracks without changing Lumber progression.",
           "conditions": [],
           "media": []
         }
@@ -156,8 +156,8 @@
       "choices": [
         {
           "id": "record",
-          "label": "Record the Lumber observation",
-          "text": "Keep the existing world result as a Hunter-local clue.",
+          "label": "Record the Lumber route observation",
+          "text": "Store the existing world result as a Hunter-local clue, not a shared lore currency.",
           "conditions": [],
           "effects": [
             {
@@ -171,7 +171,7 @@
     },
     {
       "id": "hunter.clues.tavern-rumour",
-      "title": "Confirmed Tavern route information reaches Hunter",
+      "title": "Confirmed Tavern information reaches the field",
       "sourceDomain": "hunter",
       "trigger": [],
       "reactionTriggers": [
@@ -223,7 +223,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "The Tavern's confirmed route information can now be used as one independent Hunter clue; it does not become a global information currency.",
+          "text": "The Tavern route report has already passed its own confirmation step. Hunter treats it as one sourced statement about time and place, useful beside physical sign but not strong enough to define the rare target by itself.",
           "conditions": [],
           "media": []
         }
@@ -231,8 +231,8 @@
       "choices": [
         {
           "id": "record",
-          "label": "Record the Tavern clue",
-          "text": "Carry only the confirmed route fact into Hunter preparation.",
+          "label": "Record the confirmed Tavern clue",
+          "text": "Carry only the confirmed route fact into Hunter preparation; gossip and private identity stay outside the clue.",
           "conditions": [],
           "effects": [
             {
@@ -246,7 +246,7 @@
     },
     {
       "id": "hunter.clues.farm-sample",
-      "title": "Farm specimen knowledge reaches Hunter",
+      "title": "A preserved Farm sample offers comparison",
       "sourceDomain": "hunter",
       "trigger": [],
       "reactionTriggers": [
@@ -298,7 +298,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "An already-preserved Farm specimen provides a biological comparison point for Hunter preparation without adding a new Farm economy or item system.",
+          "text": "The Farm sample is already preserved and documented, so Hunter can compare structure, damage, or residue against expedition evidence. A resemblance narrows questions; it does not create a new item economy or prove a legendary species.",
           "conditions": [],
           "media": []
         }
@@ -306,8 +306,8 @@
       "choices": [
         {
           "id": "record",
-          "label": "Record the Farm clue",
-          "text": "Keep one Hunter-local comparison fact.",
+          "label": "Record the Farm comparison",
+          "text": "Keep one Hunter-local comparison fact and leave Farm progression untouched.",
           "conditions": [],
           "effects": [
             {
