@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "chat3.regression-fixture-coverage.v10",
+  "status": "FOCUSED_CONTENT_REGRESSION_COVERAGE",
+  "task": "C3-107",
+  "baseMain": "6afc01061646bc52cec824863bf89e8ad8c309d0",
+  "sourceFixtures": [
+    "content/forest-continuity-depth-v5.fixture.json",
+    "content/forest-aftermath-depth-v5.fixture.json",
+    "content/ordinary-poverty-continuity-depth-v5.fixture.json"
+  ],
+  "auditFixtures": [
+    "content/ordinary-poverty-small-job-identity-boundary-v3.fixture.json",
+    "content/secret-debt-separation-audit-v6.fixture.json",
+    "content/chat3-voice-density-audit-v4.fixture.json",
+    "content/chat3-forest-poverty-parity-v10.fixture.json",
+    "content/chat3-ownership-collision-v6.fixture.json",
+    "content/chat3-selective-integration-handoff-v10.fixture.json"
+  ],
+  "expected": {
+    "sourceFixtureCount": 3,
+    "authoredLocalizationPairs": 33,
+    "forestContinuityPairs": 8,
+    "forestAftermathPairs": 9,
+    "povertyContinuityPairs": 16,
+    "smallJobSafeCount": 4,
+    "smallJobAmbiguousCount": 2,
+    "rootLocalizationCollisions": 0
+  }
+}
