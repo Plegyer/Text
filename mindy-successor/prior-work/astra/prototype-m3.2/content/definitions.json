@@ -2275,18 +2275,6 @@
             "delta": 1
           },
           {
-            "kind": "incrementCareerCounter",
-            "career": "tavern",
-            "counter": "traveler_flow",
-            "amount": 1
-          },
-          {
-            "kind": "incrementCareerCounter",
-            "career": "tavern",
-            "counter": "supply_pressure",
-            "amount": 2
-          },
-          {
             "kind": "addItem",
             "id": "farm_unstable_specimen",
             "count": 1
@@ -2565,18 +2553,6 @@
           {
             "kind": "incrementCareerCounter",
             "career": "tavern",
-            "counter": "supply_pressure",
-            "amount": 1
-          },
-          {
-            "kind": "incrementCareerCounter",
-            "career": "tavern",
-            "counter": "shelter_pressure",
-            "amount": 2
-          },
-          {
-            "kind": "incrementCareerCounter",
-            "career": "tavern",
             "counter": "traveler_flow",
             "amount": 1
           },
@@ -2621,6 +2597,18 @@
             "kind": "modifyStat",
             "stat": "reason",
             "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "tavern",
+            "counter": "traveler_flow",
+            "amount": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "tavern",
+            "counter": "supply_pressure",
+            "amount": 2
           }
         ],
         "winter": [
@@ -2633,6 +2621,18 @@
             "kind": "modifyStat",
             "stat": "wits",
             "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "tavern",
+            "counter": "supply_pressure",
+            "amount": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "tavern",
+            "counter": "shelter_pressure",
+            "amount": 2
           }
         ]
       }
@@ -5577,46 +5577,6 @@
       "nextDayEnergyDelta": 0
     },
     {
-      "id": "tavern.night.traveler-request",
-      "label": "Meet a recurring traveler after closing",
-      "conditions": [
-        {
-          "kind": "relationshipStage",
-          "relationship": "tavern.recurring-traveler",
-          "stage": "trusted"
-        },
-        {
-          "kind": "relationshipChoice",
-          "relationship": "tavern.recurring-traveler",
-          "choice": "night-response",
-          "value": "accepted"
-        }
-      ],
-      "effects": [],
-      "nextDayEffects": [],
-      "nextDayEnergyDelta": 0
-    },
-    {
-      "id": "tavern.night.house-notes",
-      "label": "Review house notes after closing",
-      "conditions": [
-        {
-          "kind": "careerStage",
-          "career": "tavern",
-          "stage": "house-node"
-        }
-      ],
-      "effects": [
-        {
-          "kind": "addCareerFact",
-          "career": "tavern",
-          "fact": "house-notes-reviewed"
-        }
-      ],
-      "nextDayEffects": [],
-      "nextDayEnergyDelta": 0
-    },
-    {
       "id": "school.night_study.literacy_and_numbers.reason",
       "label": "Night study: school.course.literacy_and_numbers / reason",
       "conditions": [
@@ -6511,6 +6471,46 @@
       ],
       "nextDayEffects": [],
       "nextDayEnergyDelta": 0
+    },
+    {
+      "id": "tavern.night.traveler-request",
+      "label": "Meet a recurring traveler after closing",
+      "conditions": [
+        {
+          "kind": "relationshipStage",
+          "relationship": "tavern.recurring-traveler",
+          "stage": "trusted"
+        },
+        {
+          "kind": "relationshipChoice",
+          "relationship": "tavern.recurring-traveler",
+          "choice": "night-response",
+          "value": "accepted"
+        }
+      ],
+      "effects": [],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": 0
+    },
+    {
+      "id": "tavern.night.house-notes",
+      "label": "Review house notes after closing",
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "tavern",
+          "stage": "house-node"
+        }
+      ],
+      "effects": [
+        {
+          "kind": "addCareerFact",
+          "career": "tavern",
+          "fact": "house-notes-reviewed"
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": 0
     }
   ],
   "activities": [
@@ -7024,13 +7024,6 @@
       ]
     },
     {
-      "id": "tavern_staff_key",
-      "label": "Tavern Staff Key",
-      "capabilities": [
-        "access_guest_rooms_staff"
-      ]
-    },
-    {
       "id": "farm_produce",
       "label": "Farm Produce",
       "capabilities": [
@@ -7056,6 +7049,13 @@
       "label": "Prepared Farm Delivery",
       "capabilities": [
         "farm_delivery_input"
+      ]
+    },
+    {
+      "id": "tavern_staff_key",
+      "label": "Tavern Staff Key",
+      "capabilities": [
+        "access_guest_rooms_staff"
       ]
     }
   ]
