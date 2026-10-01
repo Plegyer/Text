@@ -4318,6 +4318,38 @@
       "ru": "После первого настоящего занятия забрать в школе контейнеры, бирки и полевые заметки.",
       "en": "After a real lesson, collect containers, labels, and field notes from the School desk."
     },
+    "event.undead-farm.school.arcana-research.title": {
+      "ru": "Аркана как метод полевого исследования",
+      "en": "Arcana as a field research method"
+    },
+    "event.undead-farm.school.arcana-research.variant.default.text": {
+      "ru": "После третьего занятия Илира просит не угадывать природу странного образца, а записать признаки, отделить обычную нестабильность от повторяемого эффекта и только потом решать, что действительно стоит сохранять для исследования. Она подчёркивает: Школа даёт метод наблюдения, а не новый предмет и не готовый вывод о происхождении образца.",
+      "en": "After the third lesson, Ilyra asks you not to guess what a strange sample is. Record its signs, separate ordinary instability from a repeatable effect, and only then decide what is worth preserving for study. She stresses that School provides a method of observation, not a new item or a ready-made conclusion about the sample's origin."
+    },
+    "event.undead-farm.school.arcana-research.choice.apply.label": {
+      "ru": "Применить метод на ферме",
+      "en": "Apply the method at the farm"
+    },
+    "event.undead-farm.school.arcana-research.choice.apply.text": {
+      "ru": "Метод исследования готов к применению на ферме без дополнительной рабочей смены. Школа: Илира связала арканное наблюдение с фермерским исследованием. Это локальный карьерный крючок, а не сертификат.",
+      "en": "The research method is ready to apply at the farm without an additional work shift. School: Ilyra connected Arcana observation to farm research. This is a local career hook, not a certificate."
+    },
+    "event.undead-farm.school.management-records.title": {
+      "ru": "Записи, по которым можно управлять хозяйством",
+      "en": "Records you can actually manage a farm with"
+    },
+    "event.undead-farm.school.management-records.variant.default.text": {
+      "ru": "После третьего занятия Мара просит свести приход, расход и остаток так, чтобы следующая смена могла проверить записи без устных пояснений. Она отмечает, что такой порядок уже пригоден для фермы: он помогает видеть запасы и передачу ответственности, но сам по себе не повышает должность и не создаёт школьный milestone.",
+      "en": "After the third lesson, Mara asks you to reconcile incoming stock, usage, and balance so the next shift can verify the records without a spoken explanation. She notes that this is ready for farm work: it makes supplies and handoffs visible, but does not itself promote you or create a School milestone."
+    },
+    "event.undead-farm.school.management-records.choice.apply.label": {
+      "ru": "Применить записи",
+      "en": "Apply the records"
+    },
+    "event.undead-farm.school.management-records.choice.apply.text": {
+      "ru": "Метод учёта готов к применению в управлении фермой без дополнительной смены. Школа: Мара связала учёт с фермерскими запасами и передачей смены. Глобальное школьное правило не изменилось.",
+      "en": "The record-keeping method is ready for farm management without an additional shift. School: Mara connected bookkeeping to farm supplies and shift handoff. No global School rule changed."
+    },
     "event.poverty-closure-production-v14.normal-tight-budget.title": {
       "ru": "Оплаченная комната при пустеющем кошельке",
       "en": "A paid room on a tight budget"
