@@ -160,7 +160,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "A market bottleneck, a disputed gate decision, and public pressure collide in one shift. The problem can be stabilized through records, de-escalation, or negotiated access—without defining a universal law or morality system.",
+          "text": "The market compresses against a narrow gate: documents conflict, people are waiting, and each new decision changes the queue. The crisis requires a workable stabilization method, not a judgment about a 'good' or 'bad' Guard.",
           "conditions": [],
           "media": []
         }
@@ -169,7 +169,7 @@
         {
           "id": "stabilize-by-report",
           "label": "Stabilize through the documented record",
-          "text": "Use formal evidence and official access to make the case auditable.",
+          "text": "The report route relies on an auditable chain: who recorded the problem, which access was authorized, and which decision can be reviewed later. The point is reviewability, not greater severity.",
           "conditions": [
             {
               "kind": "careerFact",
@@ -200,7 +200,7 @@
         {
           "id": "deescalate-crowd",
           "label": "Resolve the pressure through de-escalation and relief routing",
-          "text": "Use the concrete dispute record and poverty-relief choice to change the immediate Guard practice.",
+          "text": "The de-escalation route changes immediate practice: restore movement, route people toward available assistance, and use what was learned from a resolved dispute. It is a concrete procedure, not a morality bonus.",
           "conditions": [
             {
               "kind": "careerFact",
@@ -237,7 +237,7 @@
         {
           "id": "trade-access-network",
           "label": "Resolve it through controlled access and contacts",
-          "text": "Use the cargo discrepancy, sealed pass, and professional relationship as a concrete network route—not a corruption currency.",
+          "text": "The controlled-access route uses a verified pass, a documented discrepancy, and professional contacts. Connections explain who can carry the review forward; they are not a corruption currency.",
           "conditions": [
             {
               "kind": "careerFact",
@@ -274,7 +274,7 @@
         {
           "id": "defer",
           "label": "Keep the situation contained for now",
-          "text": "Do not claim the larger crisis is resolved until a supported route is ready.",
+          "text": "If no supported route is ready, the crisis can be contained without claiming it has been solved. Deferral is better than manufactured certainty.",
           "conditions": [],
           "effects": []
         }
@@ -366,7 +366,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "Formal reporting, authorized access, and prepared School methods now support Officer readiness. No numeric Guard-local School threshold was invented here.",
+          "text": "The literacy-ready fact means the Guard can prepare and review a formal report. It implies no new numeric threshold and no Guard-specific course. The etiquette-ready fact supports formal encounters while keeping social status separate from evidence. Guard defines no numeric threshold for it. Officer is built around formal responsibility: a sound report, authorized access, and the ability to organize a decision so it can be reviewed later. It is neither an automatic ending nor a title without evidence.",
           "conditions": [],
           "media": []
         }
@@ -462,7 +462,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "A concrete relief choice, a resolved public dispute, and a professional conflict resolution now support Reform / Order as a practice route rather than a morality score.",
+          "text": "Reform / Order grows from concrete changes in practice: how disputes are handled, how poverty is addressed, and how professional conflict is resolved. The route represents procedure, not a hidden morality judgment.",
           "conditions": [],
           "media": []
         }
@@ -558,7 +558,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "Evidence, controlled access, and a resolved professional conflict now form a Network route. It is represented by concrete facts, never a corruption meter.",
+          "text": "Network uses access, verifiable contacts, and documents to move a case between people and institutions. Connections are a route of responsibility here, not a corruption meter or universal authority.",
           "conditions": [],
           "media": []
         }
@@ -681,7 +681,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "Independent evidence handling, a relationship source, a poverty-facing duty decision, and a resolved city crisis now form a Major Case route. No fixed crime, boss, or faction is defined.",
+          "text": "Major Case joins several independent lines: an internal report, external confirmation, a poverty-facing duty decision, a professional source, and a resolved city crisis. No culprit, faction, or canonical plot is predetermined.",
           "conditions": [],
           "media": []
         }
