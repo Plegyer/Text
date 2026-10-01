@@ -1,26 +1,25 @@
 # CURRENT CHAT2 TASK POINTER
 
-Status: **ACTIVE — FINISH SATYR v12 AGAINST FROZEN CHAT 1 RUNTIME**
+Status: **SATYR v12 FROZEN + UNDEAD v13 ACTIVE**
 Owner: Chat 2 / Presentation & Media Worker
 
-Current draft:
-- PR #166
-- current head `f2b17cd3a9a3dccb5552e56ae9867ee6dc2540c7`
-- CI #541 SUCCESS
-- C2-121..130 completed.
+Frozen Satyr presentation candidate:
+- PR #174
+- exact head: `56ca78ccb0210225136aeca1c68978296ba7d61d`
+- exact-head CI #582: **SUCCESS, 616/616**
+- do not move this PR while Chat 4 gates it.
 
-Dependency is now available:
-- Chat 1 Satyr runtime PR #164
-- frozen exact head `de27bb5ac70edb7238657fcb51c1f201a1b1908e`
-- exact-head CI #555 SUCCESS.
+Continue work immediately on a new branch; do not wait for QA.
 
-**Do not wait for PR #164 merge.**
+Next queue:
+- `TASK_CHAT2_PRESENTATION_QUEUE_v13.md`
+- C2-133..144
+- target: **Undead Farm Complete Career Presentation**
 
-Create a clean integration/finalization branch from Chat 1 frozen head (or transplant the v12 presentation delta onto that exact head), preserving current main/Chat 1 runtime semantics.
+Authoritative gameplay identity source:
+- `mindy-successor/docs/tasks/UNDEAD_FARM_RUNTIME_CONTRACT_v1.json`
+- currently published by Chat 1 v11 branch.
 
-Now execute:
-- C2-131 — prove the Satyr presentation slots are reached by the real C1D-97..108 production identities, not reserved/prep IDs;
-- C2-132 — full exact-head CI, finalize one focused frozen candidate for Chat 4.
+You may author against the stable contract before the full Undead runtime freezes, but C2-143 production reachability must wait for the final exact runtime candidate and must consume its real catalog IDs.
 
-Do not move old accepted PR #151 (already integrated/closed).
-Do not change gameplay, Save/RNG, progression or ending reward logic.
+No gameplay/Save/RNG/career/School/ending reward changes.
