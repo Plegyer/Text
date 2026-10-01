@@ -263,6 +263,10 @@
           "kind": "careerFactAdded",
           "career": "satyr-maid",
           "fact": "house-power-ready"
+        },
+        {
+          "kind": "careerTransition",
+          "career": "satyr-maid"
         }
       ],
       "priorityClass": "critical_progression",
@@ -321,6 +325,10 @@
           "kind": "careerFactAdded",
           "career": "satyr-maid",
           "fact": "personal-network-ready"
+        },
+        {
+          "kind": "careerTransition",
+          "career": "satyr-maid"
         }
       ],
       "priorityClass": "normal_progression",
@@ -379,6 +387,10 @@
           "kind": "careerFactAdded",
           "career": "satyr-maid",
           "fact": "boundaries-ready"
+        },
+        {
+          "kind": "careerTransition",
+          "career": "satyr-maid"
         }
       ],
       "priorityClass": "critical_progression",
