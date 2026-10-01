@@ -27,7 +27,8 @@ test('C5-119 production and preparation-only School event identities do not blur
   assert.equal(exact.length,24);
   const legacy=life.events.find((event:any)=>event.id==='school-life-content-v1.after-night-study');
   assert.ok(legacy);
-  assert.deepEqual(legacy.reactionTriggers,[]);
+  assert.deepEqual(legacy.reactionTriggers,[{kind:'nightChoiceCompleted',choice:'school.night_study.literacy_and_numbers.reason'}]);
+  assert.deepEqual(legacy.conditions,[{kind:'not',condition:{kind:'calendarYear',op:'gte',value:1}}]);
 
   const productionIds=new Set([...lesson.events,...life.events,...teachers.events].map((event:any)=>event.id));
   const stagingCourseIds=targetLesson.events
