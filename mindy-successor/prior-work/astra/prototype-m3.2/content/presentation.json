@@ -112,7 +112,7 @@
       "static": {
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
-        "alt": "Стражница на городском посту со щитом и оружием после патруля.",
+        "alt": "A city guard at an ordinary post after a shift; the scene presents duty and official access, not a combat mechanic.",
         "altKey": "presentation.static.career.guard.result.alt"
       }
     },
