@@ -1,5 +1,5 @@
 import {mountEditor} from './editor.ts';
-import {applyPresentation,emptyPresentation,resolvePresentation,presentationIdForActionResult,presentationIdForActivityRoute,presentationIdForEvent,presentationIdForEnding,presentationIdForSatyrMaidStage,type Presentation} from '../core/presentation.ts';
+import {applyPresentation,emptyPresentation,resolvePresentation,presentationIdForActionResult,presentationIdForActivityRoute,presentationIdForEvent,presentationIdForEnding,presentationIdForSatyrMaidStage,presentationIdForTavernNightChoice,presentationIdForTavernRelationshipStage,presentationIdForTavernStage,presentationIdForTavernState,TAVERN_NIGHT_CHOICE_IDS,type Presentation} from '../core/presentation.ts';
 import {loadCatalog} from '../core/content.ts';
 import {freshSave,dispatch,parseSave,eligible,calendar,actionCost,actionAvailable,meets,energyMax,rent,favorStat,availableActivityActions,type Command} from '../core/engine.ts';
 import {stats,type Save,type Catalog,type Condition,type Action} from '../core/schema.ts';
@@ -104,6 +104,36 @@ function lumberCareerProgress(){
  }).filter(Boolean).join(' · ');
  return `<section class="career-progress"><h4>${esc(tr('ui.stats.lumberProgressTitle','Карьера лесоруба'))}</h4><p>${esc(stage)}</p><p><strong>${esc(tr('ui.stats.outcomesTitle','Готовность судьбы'))}:</strong> ${outcomes}</p></section>`;
 }
+function tavernPresentationStates(){
+ const career=state.run.progression.careers.tavern;
+ const relationship=state.run.progression.relationships['tavern.recurring-traveler'];
+ const rows:{id:string;label:string}[]=[];
+ const add=(id:string,active:boolean)=>{if(active)rows.push({id,label:tr(`presentation.tavern.state.${id}.label`,id)});};
+ add('staff-room-access',(state.run.inventory['tavern_staff_key']??0)>0);
+ add('room-pressure',(career?.counters?.room_pressure??0)>0);
+ add('supply-pressure',(career?.counters?.supply_pressure??0)>0);
+ add('guest-ledger',!!career?.facts?.includes('guest-ledger-evidence-ready'));
+ add('traveler-rumour',!!career?.facts?.includes('traveler-rumour-known')||!!relationship?.facts?.includes('traveler-rumour-known'));
+ add('rumour-confirmed',!!career?.facts?.includes('rumour-confirmed'));
+ add('information-routing',career?.stage==='information-broker'||!!career?.facts?.includes('information-broker-ready'));
+ add('confidentiality-kept',!!relationship?.facts?.includes('confidentiality-kept'));
+ add('refusal-respected',!!relationship?.facts?.includes('refusal-respected'));
+ return rows;
+}
+function tavernPresentationStatusHTML(){
+ const career=state.run.progression.careers.tavern;
+ if(!career)return '';
+ const stage=career.stage;
+ const stageLabel=tr(`presentation.tavern.stage.${stage}.label`,stage);
+ const relationship=state.run.progression.relationships['tavern.recurring-traveler'];
+ const relationshipStage=relationship?.stage??'';
+ const relationshipLabel=relationshipStage?tr(`presentation.tavern.relationship.stage.${relationshipStage}.label`,relationshipStage):'';
+ const relationshipHtml=relationshipStage
+  ?`<p class="tavern-relationship-stage" data-tavern-relationship-stage="${esc(relationshipStage)}" data-presentation-id="${esc(presentationIdForTavernRelationshipStage(relationshipStage))}" tabindex="0" aria-label="${esc(fmt(tr('ui.tavern.relationshipAria','Профессиональная связь с постоянным путешественником: {stage}'),{stage:relationshipLabel}))}">${esc(relationshipLabel)}</p>`
+  :'';
+ const stateHtml=tavernPresentationStates().map(row=>`<span class="tavern-state-chip" data-tavern-state="${esc(row.id)}" data-presentation-id="${esc(presentationIdForTavernState(row.id))}" tabindex="0" aria-label="${esc(fmt(tr('ui.tavern.stateAria','Состояние таверны: {state}'),{state:row.label}))}">${esc(row.label)}</span>`).join('');
+ return `<div class="tavern-presentation-status"><p class="tavern-career-stage" data-tavern-stage="${esc(stage)}" data-presentation-id="${esc(presentationIdForTavernStage(stage))}" tabindex="0" aria-label="${esc(fmt(tr('ui.tavern.stageAria','Этап карьеры таверны: {stage}'),{stage:stageLabel}))}">${esc(stageLabel)}</p>${relationshipHtml}${stateHtml?`<div class="tavern-state-list">${stateHtml}</div>`:''}</div>`;
+}
 function explain(c:Condition):string{
  const cmp=(op:'gte'|'lte'|'eq',value:number)=>`${op==='gte'?'>=':op==='lte'?'<=':'='} ${value}`;
  const yes=()=>tr('ui.condition.state.yes','есть');
@@ -181,9 +211,13 @@ function satyrPresentationFeedback(before:Save,cmd:Command){
  if(cmd.type!=='choice'||before.run.pending?.eventId!=='satyr-maid.crisis.house-strain')return '';
  return tr(`ui.satyrMaid.crisisFeedback.${cmd.id}`,'');
 }
+function tavernPresentationFeedback(before:Save,cmd:Command){
+ if(cmd.type!=='choice'||before.run.pending?.eventId!=='tavern.crisis.occupancy-supply-confidentiality')return '';
+ return tr(`ui.tavern.crisisFeedback.${cmd.id}`,'');
+}
 async function perform(cmd:Command){
  if(busy||locked)return;busy=true;render();
- try{const next=dispatch(state,cmd,catalog);const discovery=lateCareerDiscoveryMessage(state,next);const presentationFeedback=satyrPresentationFeedback(state,cmd);await write(next);state=next;error=false;message=presentationFeedback||discovery;mediaIndex=0;
+ try{const next=dispatch(state,cmd,catalog);const discovery=lateCareerDiscoveryMessage(state,next);const presentationFeedback=satyrPresentationFeedback(state,cmd)||tavernPresentationFeedback(state,cmd);await write(next);state=next;error=false;message=presentationFeedback||discovery;mediaIndex=0;
   if(!['allocate','finishCreation'].includes(cmd.type)){panel='';screen=['restart','newLife'].includes(cmd.type)?'town':'scene';}
  }catch(e){message=e instanceof Error?e.message:String(e);error=true;}
  busy=false;render();
@@ -209,7 +243,8 @@ function actionList(ids:string[]){return `<div class="activity-list">${ids.map(i
  const satyrStageStatus=satyrStage?`<p class="career-stage" data-career-stage="${esc(satyrStage)}" data-stage-presentation-id="${esc(satyrStagePresentation)}" tabindex="0" aria-label="${esc(fmt(tr('ui.work.satyrMaidStageAria','Этап карьеры: {stage}'),{stage:satyrStageLabel}))}">${esc(satyrStageLabel)}</p>`:'';
  const availability=
   lateCareer?`<p class="career-availability" data-career-availability="${availabilityState}" tabindex="0" role="status" aria-label="${esc(fmt(tr('ui.work.lateCareer.stateAria','{career}: {state}'),{career:label,state:availabilityLabel}))}">${esc(availabilityLabel)}</p>`:'';
- return `<article class="activity" ${lateCareer?`data-late-career="${esc(a.id)}"`:''} ${satyrStage?`data-satyr-maid-stage="${esc(satyrStage)}"`:''}><div><h3>${esc(label)}</h3>${availability}${satyrStageStatus}<p>${esc(description)}</p><small>${a.cost.energy} ${esc(tr('ui.work.energy','энергии'))}${actionCost(a,state)?` · ${actionCost(a,state)} ${esc(tr('ui.work.coins','монет'))}`:''}${forecast!==null?` · ${esc(tr('ui.work.income','доход ≈'))} ${forecast}`:''}</small><div class="effect-tags">${statsEffects.map(e=>e.kind==='metric'?`<span class="${e.delta>0?'gain':'loss'}">${esc(labels[e.key])} ${e.delta>0?'+':''}${e.delta}</span>`:'').join('')}</div>${miss.length?`<p class="requirement">${esc(miss.map(explain).join(' · '))}</p>`:''}${careerLocked?`<p class="requirement" id="${esc(helpId)}" tabindex="0">${esc(lockHelp)}</p>`:''}</div>${a.mode==='brew'?`<div><button data-action="${a.id}" data-recipe="gentle" ${disabled(a)?'disabled':''}>${esc(tr('ui.work.recipeReliable','Надёжно'))}</button><button data-action="${a.id}" data-recipe="bold" ${disabled(a)?'disabled':''}>${esc(tr('ui.work.recipeFast','Быстро'))}</button></div>`:`<button data-action="${a.id}" ${careerButtonAria?`aria-label="${esc(careerButtonAria)}"`:''} ${careerLocked?`aria-describedby="${esc(helpId)}" aria-disabled="true"`:lateCareer?'aria-disabled="false"':''} ${disabled(a)?'disabled':''}>${professions.includes(a.id)?esc(tr('ui.work.button','Работать')):esc(tr('ui.generic.selectButton','Выбрать'))}</button>`}</article>`;
+ const tavernStatus=a.id==='tavern.shift'?tavernPresentationStatusHTML():'';
+ return `<article class="activity" ${lateCareer?`data-late-career="${esc(a.id)}"`:''} ${satyrStage?`data-satyr-maid-stage="${esc(satyrStage)}"`:''} ${a.id==='tavern.shift'?'data-tavern-presentation="true"':''}><div><h3>${esc(label)}</h3>${availability}${satyrStageStatus}${tavernStatus}<p>${esc(description)}</p><small>${a.cost.energy} ${esc(tr('ui.work.energy','энергии'))}${actionCost(a,state)?` · ${actionCost(a,state)} ${esc(tr('ui.work.coins','монет'))}`:''}${forecast!==null?` · ${esc(tr('ui.work.income','доход ≈'))} ${forecast}`:''}</small><div class="effect-tags">${statsEffects.map(e=>e.kind==='metric'?`<span class="${e.delta>0?'gain':'loss'}">${esc(labels[e.key])} ${e.delta>0?'+':''}${e.delta}</span>`:'').join('')}</div>${miss.length?`<p class="requirement">${esc(miss.map(explain).join(' · '))}</p>`:''}${careerLocked?`<p class="requirement" id="${esc(helpId)}" tabindex="0">${esc(lockHelp)}</p>`:''}</div>${a.mode==='brew'?`<div><button data-action="${a.id}" data-recipe="gentle" ${disabled(a)?'disabled':''}>${esc(tr('ui.work.recipeReliable','Надёжно'))}</button><button data-action="${a.id}" data-recipe="bold" ${disabled(a)?'disabled':''}>${esc(tr('ui.work.recipeFast','Быстро'))}</button></div>`:`<button data-action="${a.id}" ${careerButtonAria?`aria-label="${esc(careerButtonAria)}"`:''} ${careerLocked?`aria-describedby="${esc(helpId)}" aria-disabled="true"`:lateCareer?'aria-disabled="false"':''} ${disabled(a)?'disabled':''}>${professions.includes(a.id)?esc(tr('ui.work.button','Работать')):esc(tr('ui.generic.selectButton','Выбрать'))}</button>`}</article>`;
  }).join('')}</div>`;}
 function schoolCourseDisabled(course:SchoolCourse){
  return busy||locked||state.run.status!=='active'||!state.run.creation.complete||!state.run.flags['story.arrived']||
@@ -229,7 +264,7 @@ function activityEntryList(ids:string[]){
 }
 function nightChoiceList(){
  const choices=catalog.definitions.nightChoices.filter(choice=>eligible(choice.conditions,state,catalog));
- return `<div class="activity-list">${choices.map(choice=>{const schoolNight=choice.id.startsWith('school.night_study.');const satyrNight=choice.id.startsWith('satyr-maid.night.');const delta=choice.nextDayEnergyDelta?fmt(tr('ui.night.nextDayEnergy','Энергия завтра: {delta}'),{delta:`${choice.nextDayEnergyDelta>0?'+':''}${choice.nextDayEnergyDelta}`}):'';const choiceLabel=localizedNightChoiceLabel(choice.id,choice.label);return `<article class="activity" ${satyrNight?`data-satyr-night-option="${esc(choice.id)}"`:''}><div><h3>${esc(choiceLabel)}</h3><small>${schoolNight?esc(tr('ui.school.nightStudyContext','Ночная учёба: выбранная характеристика +2, Energy следующего дня −1.')):`${esc(tr('ui.night.choice.slot','Ночное занятие'))}${delta?` · ${esc(delta)}`:''}`}</small></div><button data-night-choice="${choice.id}" ${satyrNight?`aria-label="${esc(fmt(tr('ui.satyrMaid.nightChoiceAria','Ночной выбор: {choice}'),{choice:choiceLabel}))}"`:''} ${busy||locked?'disabled':''}>${schoolNight?esc(tr('ui.school.nightStudyButton','Учиться ночью')):esc(tr('ui.night.choice.select','Выбрать'))}</button></article>`;}).join('')}</div>`;
+ return `<div class="activity-list">${choices.map(choice=>{const schoolNight=choice.id.startsWith('school.night_study.');const satyrNight=choice.id.startsWith('satyr-maid.night.');const tavernNight=(TAVERN_NIGHT_CHOICE_IDS as readonly string[]).includes(choice.id);const delta=choice.nextDayEnergyDelta?fmt(tr('ui.night.nextDayEnergy','Энергия завтра: {delta}'),{delta:`${choice.nextDayEnergyDelta>0?'+':''}${choice.nextDayEnergyDelta}`}):'';const choiceLabel=localizedNightChoiceLabel(choice.id,choice.label);const tavernPresentationId=tavernNight?presentationIdForTavernNightChoice(choice.id):'';const nightAria=satyrNight?fmt(tr('ui.satyrMaid.nightChoiceAria','Ночной выбор: {choice}'),{choice:choiceLabel}):tavernNight?fmt(tr('ui.tavern.nightChoiceAria','Ночной выбор таверны: {choice}'),{choice:choiceLabel}):'';return `<article class="activity" ${satyrNight?`data-satyr-night-option="${esc(choice.id)}"`:''} ${tavernNight?`data-tavern-night-option="${esc(choice.id)}" data-presentation-id="${esc(tavernPresentationId)}"`:''}><div><h3>${esc(choiceLabel)}</h3><small>${schoolNight?esc(tr('ui.school.nightStudyContext','Ночная учёба: выбранная характеристика +2, Energy следующего дня −1.')):`${esc(tr('ui.night.choice.slot','Ночное занятие'))}${delta?` · ${esc(delta)}`:''}`}</small></div><button data-night-choice="${choice.id}" ${nightAria?`aria-label="${esc(nightAria)}"`:''} ${busy||locked?'disabled':''}>${schoolNight?esc(tr('ui.school.nightStudyButton','Учиться ночью')):esc(tr('ui.night.choice.select','Выбрать'))}</button></article>`;}).join('')}</div>`;
 }
 function presentationOccurrenceKey(presentationId:string){
  const r=state.run;
@@ -300,7 +335,10 @@ function central(){
   if(night.phase==='VoluntaryNightChoice'){
    return `<section class="stage scene">${mediaHTML('night/choice/default')}<div class="stage-title"><span class="eyebrow">${esc(tr('ui.night.eyebrow','Ночь'))}</span><h1>${esc(tr('ui.night.choice.title','Вечер'))}</h1></div></section><section class="dialogue"><p>${esc(tr('ui.night.choice.prompt','Выберите одно добровольное ночное занятие. Дневная Энергия при этом не расходуется.'))}</p>${nightChoiceList()}</section>`;
   }
-  return `<section class="stage scene">${mediaHTML('night/default')}<div class="stage-title"><span class="eyebrow">${esc(tr('ui.night.eyebrow','Ночь'))}</span><h1>${esc(tr('ui.night.sequence.title','Ход ночи'))}</h1></div></section><section class="dialogue"><p>${esc(night.phase)}</p></section>`;
+  const selectedTavernNight=night.selectedNightChoiceId&&(TAVERN_NIGHT_CHOICE_IDS as readonly string[]).includes(night.selectedNightChoiceId)
+   ?presentationIdForTavernNightChoice(night.selectedNightChoiceId)
+   :'night/default';
+  return `<section class="stage scene">${mediaHTML(selectedTavernNight)}<div class="stage-title"><span class="eyebrow">${esc(tr('ui.night.eyebrow','Ночь'))}</span><h1>${esc(tr('ui.night.sequence.title','Ход ночи'))}</h1></div></section><section class="dialogue"><p>${esc(night.phase)}</p></section>`;
  }
  if(screen==='scene'&&r.lastAction){const last=r.lastAction,a=catalog.definitions.actions.find(a=>a.id===last.id),isProfession=!!a&&professions.includes(a.id);
   const schoolCourse=last.id==='school'?SCHOOL_COURSES.find(course=>course.presentationId===last.presentationId):undefined;

@@ -241,6 +241,113 @@ export function presentationIdForSatyrMaidStage(stage:string){
   return `job/satyr-maid/stage/${clean(stage)}`;
 }
 
+export const TAVERN_PRESENTATION_STAGES=[
+  'new-hand','trusted-worker','house-node','veteran-service',
+  'innkeeper','information-broker','sanctuary','outcome-ready'
+] as const;
+
+export const TAVERN_CAREER_EVENT_IDS=[
+  'tavern.career.first-shift',
+  'tavern.career.house-node',
+  'tavern.career.veteran-service',
+  'tavern.career.innkeeper',
+  'tavern.career.information-broker',
+  'tavern.career.sanctuary',
+  'tavern.career.outcome-ready'
+] as const;
+
+export const TAVERN_SCHOOL_EVENT_IDS=[
+  'tavern.school.records',
+  'tavern.school.broker',
+  'tavern.school.etiquette',
+  'tavern.school.arcana'
+] as const;
+
+export const TAVERN_RELATIONSHIP_EVENT_IDS=[
+  'tavern.recurring-traveler.intro',
+  'tavern.recurring-traveler.trust',
+  'tavern.recurring-traveler.request',
+  'tavern.recurring-traveler.confidentiality'
+] as const;
+
+export const TAVERN_NIGHT_EVENT_IDS=[
+  'tavern.recurring-traveler.night',
+  'tavern.house-notes.night'
+] as const;
+
+export const TAVERN_INFORMATION_EVENT_IDS=[
+  'tavern.information.rumour-route'
+] as const;
+
+export const TAVERN_ACCESS_EVENT_IDS=[
+  'tavern.access.staff-key',
+  'tavern.access.guest-ledger'
+] as const;
+
+export const TAVERN_HOUSING_EVENT_IDS=[
+  'tavern.housing.meal-in-kind'
+] as const;
+
+export const TAVERN_ACTIVITY_EVENT_IDS=[
+  'tavern.activity.forest-return'
+] as const;
+
+export const TAVERN_CRISIS_EVENT_IDS=[
+  'tavern.crisis.occupancy-supply-confidentiality'
+] as const;
+
+export const TAVERN_NIGHT_CHOICE_IDS=[
+  'tavern.night.traveler-request',
+  'tavern.night.house-notes'
+] as const;
+
+export const TAVERN_RELATIONSHIP_STAGES=[
+  'introduced','trusted','night-request','request-resolved','confidentiality-resolved'
+] as const;
+
+export const TAVERN_PRESENTATION_STATE_IDS=[
+  'staff-room-access',
+  'room-pressure',
+  'supply-pressure',
+  'guest-ledger',
+  'traveler-rumour',
+  'rumour-confirmed',
+  'information-routing',
+  'confidentiality-kept',
+  'refusal-respected'
+] as const;
+
+export const TAVERN_ENDING_IDS=[
+  'tavern-stay',
+  'tavern-guild',
+  'tavern-court',
+  'ending.tavern.hard-work'
+] as const;
+
+export function presentationIdForTavernStage(stage:string){
+  return `job/tavern/stage/${clean(stage)}`;
+}
+
+export function presentationIdForTavernEvent(eventId:string){
+  return `job/tavern/event/${clean(eventId)}/default`;
+}
+
+export function presentationIdForTavernNightChoice(choiceId:string){
+  return `night/tavern/${clean(choiceId)}`;
+}
+
+export function presentationIdForTavernRelationshipRoot(){
+  return 'relationship/tavern-recurring-traveler/default';
+}
+
+export function presentationIdForTavernRelationshipStage(stage:string){
+  return `relationship/tavern-recurring-traveler/stage/${clean(stage)}`;
+}
+
+export function presentationIdForTavernState(stateId:string){
+  return `job/tavern/state/${clean(stateId)}`;
+}
+
 export function presentationIdForEnding(endingId:string){
   const parts=pathParts(endingId);
   if(parts[0]==='ending')parts.shift();
@@ -309,13 +416,59 @@ export function presentationSlots(cat:Catalog):PresentationSlot[]{
     });
   }
 
+  // Tavern stage/Night/relationship/status surfaces are presentation-owned.
+  // Tavern event slots are intentionally generated only from the live catalog.
+  for(const stage of TAVERN_PRESENTATION_STAGES){
+    add({
+      id:presentationIdForTavernStage(stage),
+      label:`Tavern · stage · ${stage}`,
+      baseMediaIds:[],
+      fallbackId:'job/tavern/result/default'
+    });
+  }
+  for(const choiceId of TAVERN_NIGHT_CHOICE_IDS){
+    add({
+      id:presentationIdForTavernNightChoice(choiceId),
+      label:`Tavern · Night · ${choiceId}`,
+      baseMediaIds:[],
+      fallbackId:'job/tavern/result/default'
+    });
+  }
+  add({
+    id:presentationIdForTavernRelationshipRoot(),
+    label:'Tavern · recurring traveler · default',
+    baseMediaIds:[],
+    fallbackId:'job/tavern/result/default'
+  });
+  for(const stage of TAVERN_RELATIONSHIP_STAGES){
+    add({
+      id:presentationIdForTavernRelationshipStage(stage),
+      label:`Tavern · recurring traveler · ${stage}`,
+      baseMediaIds:[],
+      fallbackId:presentationIdForTavernRelationshipRoot()
+    });
+  }
+  for(const stateId of TAVERN_PRESENTATION_STATE_IDS){
+    add({
+      id:presentationIdForTavernState(stateId),
+      label:`Tavern · state · ${stateId}`,
+      baseMediaIds:[],
+      fallbackId:'job/tavern/result/default'
+    });
+  }
+
   for(const event of cat.events){
+    const tavernFallback=event.sourceDomain==='tavern'
+      ?'job/tavern/result/default'
+      :event.sourceDomain==='tavern.recurring-traveler'
+       ?presentationIdForTavernRelationshipRoot()
+       :'location/town/default';
     for(const variant of event.variants){
       add({
         id:presentationIdForEvent(cat,event.id,variant.id),
         label:`${event.title} · ${variant.id}`,
         baseMediaIds:variant.media,
-        fallbackId:'location/town/default'
+        fallbackId:tavernFallback
       });
     }
   }
