@@ -45,5 +45,5 @@ test('C5-162 existing field-kit producer opens exact Hunter School event immedia
     {newEpoch:true}
   ).state;
   assert.equal(replay.run.pending,null);
-  assert.equal(replay.run.history['hunter.school.field-craft']?.shows,1);
+  assert.equal(replay.run.history['hunter.school.field-craft']?.count,1);
 });
