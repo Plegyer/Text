@@ -173,9 +173,13 @@ function lateCareerDiscoveryMessage(before:Save,after:Save){
   ?fmt(tr('ui.work.lateCareer.discovery','Новая профессия открыта: {career}'),{career:careers[0]!})
   :fmt(tr('ui.work.lateCareer.discoveryMany','Открыты новые профессии: {careers}'),{careers:careers.join(', ')});
 }
+function satyrPresentationFeedback(before:Save,cmd:Command){
+ if(cmd.type!=='choice'||before.run.pending?.eventId!=='satyr-maid.crisis.house-strain')return '';
+ return tr(`ui.satyrMaid.crisisFeedback.${cmd.id}`,'');
+}
 async function perform(cmd:Command){
  if(busy||locked)return;busy=true;render();
- try{const next=dispatch(state,cmd,catalog);const discovery=lateCareerDiscoveryMessage(state,next);await write(next);state=next;error=false;message=discovery;mediaIndex=0;
+ try{const next=dispatch(state,cmd,catalog);const discovery=lateCareerDiscoveryMessage(state,next);const presentationFeedback=satyrPresentationFeedback(state,cmd);await write(next);state=next;error=false;message=presentationFeedback||discovery;mediaIndex=0;
   if(!['allocate','finishCreation'].includes(cmd.type)){panel='';screen=['restart','newLife'].includes(cmd.type)?'town':'scene';}
  }catch(e){message=e instanceof Error?e.message:String(e);error=true;}
  busy=false;render();
