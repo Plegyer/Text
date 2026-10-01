@@ -6729,6 +6729,514 @@
     "event.tavern.school.arcana.choice.apply.text": {
       "ru": "Метод проверки странного сообщения готов к трактирной реакции без дополнительной смены. Школа: Илира связала арканное наблюдение с осторожной трактовкой слуха. Финальный лор и происхождение не определены.",
       "en": "The method for checking a strange report is ready for a Tavern reaction without an additional shift. School: Ilyra connected Arcana observation to careful rumor interpretation. Final lore and origin remain undetermined."
+    },
+    "presentation.tavern.stage.new-hand.label": {
+      "ru": "Новая работница",
+      "en": "New hand"
+    },
+    "presentation.static.career.tavern.stage.new-hand.alt": {
+      "ru": "Таверна: карьерный этап «Новая работница»; статичная рабочая сцена не меняет игровые условия.",
+      "en": "Tavern career stage “New hand”; a static work scene that does not change gameplay conditions."
+    },
+    "presentation.static.career.tavern.stage.new-hand.caption": {
+      "ru": "Карьерный этап таверны: Новая работница.",
+      "en": "Tavern career stage: New hand."
+    },
+    "presentation.tavern.stage.trusted-worker.label": {
+      "ru": "Проверенная работница",
+      "en": "Trusted worker"
+    },
+    "presentation.static.career.tavern.stage.trusted-worker.alt": {
+      "ru": "Таверна: карьерный этап «Проверенная работница»; статичная рабочая сцена не меняет игровые условия.",
+      "en": "Tavern career stage “Trusted worker”; a static work scene that does not change gameplay conditions."
+    },
+    "presentation.static.career.tavern.stage.trusted-worker.caption": {
+      "ru": "Карьерный этап таверны: Проверенная работница.",
+      "en": "Tavern career stage: Trusted worker."
+    },
+    "presentation.tavern.stage.house-node.label": {
+      "ru": "Опора заведения",
+      "en": "House node"
+    },
+    "presentation.static.career.tavern.stage.house-node.alt": {
+      "ru": "Таверна: карьерный этап «Опора заведения»; статичная рабочая сцена не меняет игровые условия.",
+      "en": "Tavern career stage “House node”; a static work scene that does not change gameplay conditions."
+    },
+    "presentation.static.career.tavern.stage.house-node.caption": {
+      "ru": "Карьерный этап таверны: Опора заведения.",
+      "en": "Tavern career stage: House node."
+    },
+    "presentation.tavern.stage.veteran-service.label": {
+      "ru": "Ветеран обслуживания",
+      "en": "Veteran service"
+    },
+    "presentation.static.career.tavern.stage.veteran-service.alt": {
+      "ru": "Таверна: карьерный этап «Ветеран обслуживания»; статичная рабочая сцена не меняет игровые условия.",
+      "en": "Tavern career stage “Veteran service”; a static work scene that does not change gameplay conditions."
+    },
+    "presentation.static.career.tavern.stage.veteran-service.caption": {
+      "ru": "Карьерный этап таверны: Ветеран обслуживания.",
+      "en": "Tavern career stage: Veteran service."
+    },
+    "presentation.tavern.stage.innkeeper.label": {
+      "ru": "Хозяйка таверны",
+      "en": "Innkeeper"
+    },
+    "presentation.static.career.tavern.stage.innkeeper.alt": {
+      "ru": "Таверна: карьерный этап «Хозяйка таверны»; статичная рабочая сцена не меняет игровые условия.",
+      "en": "Tavern career stage “Innkeeper”; a static work scene that does not change gameplay conditions."
+    },
+    "presentation.static.career.tavern.stage.innkeeper.caption": {
+      "ru": "Карьерный этап таверны: Хозяйка таверны.",
+      "en": "Tavern career stage: Innkeeper."
+    },
+    "presentation.tavern.stage.information-broker.label": {
+      "ru": "Информационный посредник",
+      "en": "Information broker"
+    },
+    "presentation.static.career.tavern.stage.information-broker.alt": {
+      "ru": "Таверна: карьерный этап «Информационный посредник»; статичная рабочая сцена не меняет игровые условия.",
+      "en": "Tavern career stage “Information broker”; a static work scene that does not change gameplay conditions."
+    },
+    "presentation.static.career.tavern.stage.information-broker.caption": {
+      "ru": "Карьерный этап таверны: Информационный посредник.",
+      "en": "Tavern career stage: Information broker."
+    },
+    "presentation.tavern.stage.sanctuary.label": {
+      "ru": "Убежище",
+      "en": "Sanctuary"
+    },
+    "presentation.static.career.tavern.stage.sanctuary.alt": {
+      "ru": "Таверна: карьерный этап «Убежище»; статичная рабочая сцена не меняет игровые условия.",
+      "en": "Tavern career stage “Sanctuary”; a static work scene that does not change gameplay conditions."
+    },
+    "presentation.static.career.tavern.stage.sanctuary.caption": {
+      "ru": "Карьерный этап таверны: Убежище.",
+      "en": "Tavern career stage: Sanctuary."
+    },
+    "presentation.tavern.stage.outcome-ready.label": {
+      "ru": "Готовность к исходу",
+      "en": "Outcome ready"
+    },
+    "presentation.static.career.tavern.stage.outcome-ready.alt": {
+      "ru": "Таверна: карьерный этап «Готовность к исходу»; статичная рабочая сцена не меняет игровые условия.",
+      "en": "Tavern career stage “Outcome ready”; a static work scene that does not change gameplay conditions."
+    },
+    "presentation.static.career.tavern.stage.outcome-ready.caption": {
+      "ru": "Карьерный этап таверны: Готовность к исходу.",
+      "en": "Tavern career stage: Outcome ready."
+    },
+    "presentation.static.career.tavern.event.career-first-shift.alt": {
+      "ru": "Таверна: Первый этап карьеры; статичная сцена отмечает событие без раскрытия скрытых порогов и без изменения механик.",
+      "en": "Tavern: First career milestone; the static scene marks the event without exposing hidden thresholds or changing mechanics."
+    },
+    "presentation.static.career.tavern.event.career-first-shift.caption": {
+      "ru": "Таверна: Первый этап карьеры.",
+      "en": "Tavern: First career milestone."
+    },
+    "presentation.static.career.tavern.event.career-house-node.alt": {
+      "ru": "Таверна: Опора заведения; статичная сцена отмечает событие без раскрытия скрытых порогов и без изменения механик.",
+      "en": "Tavern: House node; the static scene marks the event without exposing hidden thresholds or changing mechanics."
+    },
+    "presentation.static.career.tavern.event.career-house-node.caption": {
+      "ru": "Таверна: Опора заведения.",
+      "en": "Tavern: House node."
+    },
+    "presentation.static.career.tavern.event.career-veteran-service.alt": {
+      "ru": "Таверна: Ветеран обслуживания; статичная сцена отмечает событие без раскрытия скрытых порогов и без изменения механик.",
+      "en": "Tavern: Veteran service; the static scene marks the event without exposing hidden thresholds or changing mechanics."
+    },
+    "presentation.static.career.tavern.event.career-veteran-service.caption": {
+      "ru": "Таверна: Ветеран обслуживания.",
+      "en": "Tavern: Veteran service."
+    },
+    "presentation.static.career.tavern.event.career-innkeeper.alt": {
+      "ru": "Таверна: Путь хозяйки; статичная сцена отмечает событие без раскрытия скрытых порогов и без изменения механик.",
+      "en": "Tavern: Innkeeper route; the static scene marks the event without exposing hidden thresholds or changing mechanics."
+    },
+    "presentation.static.career.tavern.event.career-innkeeper.caption": {
+      "ru": "Таверна: Путь хозяйки.",
+      "en": "Tavern: Innkeeper route."
+    },
+    "presentation.static.career.tavern.event.career-information-broker.alt": {
+      "ru": "Таверна: Информационный путь; статичная сцена отмечает событие без раскрытия скрытых порогов и без изменения механик.",
+      "en": "Tavern: Information broker route; the static scene marks the event without exposing hidden thresholds or changing mechanics."
+    },
+    "presentation.static.career.tavern.event.career-information-broker.caption": {
+      "ru": "Таверна: Информационный путь.",
+      "en": "Tavern: Information broker route."
+    },
+    "presentation.static.career.tavern.event.career-sanctuary.alt": {
+      "ru": "Таверна: Путь убежища; статичная сцена отмечает событие без раскрытия скрытых порогов и без изменения механик.",
+      "en": "Tavern: Sanctuary route; the static scene marks the event without exposing hidden thresholds or changing mechanics."
+    },
+    "presentation.static.career.tavern.event.career-sanctuary.caption": {
+      "ru": "Таверна: Путь убежища.",
+      "en": "Tavern: Sanctuary route."
+    },
+    "presentation.static.career.tavern.event.career-outcome-ready.alt": {
+      "ru": "Таверна: Готовность к исходу; статичная сцена отмечает событие без раскрытия скрытых порогов и без изменения механик.",
+      "en": "Tavern: Outcome ready; the static scene marks the event without exposing hidden thresholds or changing mechanics."
+    },
+    "presentation.static.career.tavern.event.career-outcome-ready.caption": {
+      "ru": "Таверна: Готовность к исходу.",
+      "en": "Tavern: Outcome ready."
+    },
+    "presentation.static.career.tavern.event.school-records.alt": {
+      "ru": "Таверна: Школьные записи для таверны; статичная сцена отмечает событие без раскрытия скрытых порогов и без изменения механик.",
+      "en": "Tavern: Tavern school records; the static scene marks the event without exposing hidden thresholds or changing mechanics."
+    },
+    "presentation.static.career.tavern.event.school-records.caption": {
+      "ru": "Таверна: Школьные записи для таверны.",
+      "en": "Tavern: Tavern school records."
+    },
+    "presentation.static.career.tavern.event.school-broker.alt": {
+      "ru": "Таверна: Школьная риторика для информационного пути; статичная сцена отмечает событие без раскрытия скрытых порогов и без изменения механик.",
+      "en": "Tavern: Tavern rhetoric hook; the static scene marks the event without exposing hidden thresholds or changing mechanics."
+    },
+    "presentation.static.career.tavern.event.school-broker.caption": {
+      "ru": "Таверна: Школьная риторика для информационного пути.",
+      "en": "Tavern: Tavern rhetoric hook."
+    },
+    "presentation.static.career.tavern.event.school-etiquette.alt": {
+      "ru": "Таверна: Школьный этикет для таверны; статичная сцена отмечает событие без раскрытия скрытых порогов и без изменения механик.",
+      "en": "Tavern: Tavern etiquette hook; the static scene marks the event without exposing hidden thresholds or changing mechanics."
+    },
+    "presentation.static.career.tavern.event.school-etiquette.caption": {
+      "ru": "Таверна: Школьный этикет для таверны.",
+      "en": "Tavern: Tavern etiquette hook."
+    },
+    "presentation.static.career.tavern.event.school-arcana.alt": {
+      "ru": "Таверна: Аркана для таверны; статичная сцена отмечает событие без раскрытия скрытых порогов и без изменения механик.",
+      "en": "Tavern: Tavern Arcana hook; the static scene marks the event without exposing hidden thresholds or changing mechanics."
+    },
+    "presentation.static.career.tavern.event.school-arcana.caption": {
+      "ru": "Таверна: Аркана для таверны.",
+      "en": "Tavern: Tavern Arcana hook."
+    },
+    "presentation.static.career.tavern.event.access-staff-key.alt": {
+      "ru": "Таверна: Доступ персонала к комнатам; статичная сцена отмечает событие без раскрытия скрытых порогов и без изменения механик.",
+      "en": "Tavern: Staff room access; the static scene marks the event without exposing hidden thresholds or changing mechanics."
+    },
+    "presentation.static.career.tavern.event.access-staff-key.caption": {
+      "ru": "Таверна: Доступ персонала к комнатам.",
+      "en": "Tavern: Staff room access."
+    },
+    "presentation.static.career.tavern.event.access-guest-ledger.alt": {
+      "ru": "Таверна: Гостевая книга; статичная сцена отмечает событие без раскрытия скрытых порогов и без изменения механик.",
+      "en": "Tavern: Guest ledger; the static scene marks the event without exposing hidden thresholds or changing mechanics."
+    },
+    "presentation.static.career.tavern.event.access-guest-ledger.caption": {
+      "ru": "Таверна: Гостевая книга.",
+      "en": "Tavern: Guest ledger."
+    },
+    "presentation.static.career.tavern.event.housing-meal-in-kind.alt": {
+      "ru": "Таверна: Помощь жилью через таверну; статичная сцена отмечает событие без раскрытия скрытых порогов и без изменения механик.",
+      "en": "Tavern: Tavern housing assistance; the static scene marks the event without exposing hidden thresholds or changing mechanics."
+    },
+    "presentation.static.career.tavern.event.housing-meal-in-kind.caption": {
+      "ru": "Таверна: Помощь жилью через таверну.",
+      "en": "Tavern: Tavern housing assistance."
+    },
+    "presentation.static.career.tavern.event.activity-forest-return.alt": {
+      "ru": "Таверна: Возвращение из Леса в таверну; статичная сцена отмечает событие без раскрытия скрытых порогов и без изменения механик.",
+      "en": "Tavern: Forest return to tavern; the static scene marks the event without exposing hidden thresholds or changing mechanics."
+    },
+    "presentation.static.career.tavern.event.activity-forest-return.caption": {
+      "ru": "Таверна: Возвращение из Леса в таверну.",
+      "en": "Tavern: Forest return to tavern."
+    },
+    "presentation.static.career.tavern.event.crisis-occupancy-supply-confidentiality.alt": {
+      "ru": "Таверна: Кризис загрузки, снабжения и конфиденциальности; статичная сцена отмечает событие без раскрытия скрытых порогов и без изменения механик.",
+      "en": "Tavern: Occupancy, supply, and confidentiality crisis; the static scene marks the event without exposing hidden thresholds or changing mechanics."
+    },
+    "presentation.static.career.tavern.event.crisis-occupancy-supply-confidentiality.caption": {
+      "ru": "Таверна: Кризис загрузки, снабжения и конфиденциальности.",
+      "en": "Tavern: Occupancy, supply, and confidentiality crisis."
+    },
+    "presentation.tavern.night.tavern-night-traveler-request.label": {
+      "ru": "Добровольная встреча с постоянным путешественником",
+      "en": "Voluntary meeting with the recurring traveler"
+    },
+    "presentation.static.career.tavern.night.tavern-night-traveler-request.alt": {
+      "ru": "Таверна ночью: Добровольная встреча с постоянным путешественником; сцена обозначает добровольный ночной выбор без новых игровых последствий.",
+      "en": "Tavern at Night: Voluntary meeting with the recurring traveler; the scene marks the voluntary Night choice without adding gameplay consequences."
+    },
+    "presentation.static.career.tavern.night.tavern-night-traveler-request.caption": {
+      "ru": "Ночь в таверне: Добровольная встреча с постоянным путешественником.",
+      "en": "Tavern Night: Voluntary meeting with the recurring traveler."
+    },
+    "presentation.tavern.night.tavern-night-house-notes.label": {
+      "ru": "Ночные записи по работе таверны",
+      "en": "Night review of tavern house notes"
+    },
+    "presentation.static.career.tavern.night.tavern-night-house-notes.alt": {
+      "ru": "Таверна ночью: Ночные записи по работе таверны; сцена обозначает добровольный ночной выбор без новых игровых последствий.",
+      "en": "Tavern at Night: Night review of tavern house notes; the scene marks the voluntary Night choice without adding gameplay consequences."
+    },
+    "presentation.static.career.tavern.night.tavern-night-house-notes.caption": {
+      "ru": "Ночь в таверне: Ночные записи по работе таверны.",
+      "en": "Tavern Night: Night review of tavern house notes."
+    },
+    "presentation.tavern.relationship.stage.introduced.label": {
+      "ru": "Знакомство по работе",
+      "en": "Work introduction"
+    },
+    "presentation.static.relationship.tavern-recurring-traveler.stage.introduced.alt": {
+      "ru": "Таверна: состояние рабочей связи с постоянным путешественником — «Знакомство по работе»; без собственного имени и без романтического допущения.",
+      "en": "Tavern recurring-traveler work relationship state: “Work introduction”; no proper name and no romance assumption."
+    },
+    "presentation.static.relationship.tavern-recurring-traveler.stage.introduced.caption": {
+      "ru": "Постоянный путешественник: Знакомство по работе.",
+      "en": "Recurring traveler: Work introduction."
+    },
+    "presentation.tavern.relationship.stage.trusted.label": {
+      "ru": "Профессиональное доверие",
+      "en": "Professional trust"
+    },
+    "presentation.static.relationship.tavern-recurring-traveler.stage.trusted.alt": {
+      "ru": "Таверна: состояние рабочей связи с постоянным путешественником — «Профессиональное доверие»; без собственного имени и без романтического допущения.",
+      "en": "Tavern recurring-traveler work relationship state: “Professional trust”; no proper name and no romance assumption."
+    },
+    "presentation.static.relationship.tavern-recurring-traveler.stage.trusted.caption": {
+      "ru": "Постоянный путешественник: Профессиональное доверие.",
+      "en": "Recurring traveler: Professional trust."
+    },
+    "presentation.tavern.relationship.stage.night-request.label": {
+      "ru": "Добровольная ночная просьба",
+      "en": "Voluntary Night request"
+    },
+    "presentation.static.relationship.tavern-recurring-traveler.stage.night-request.alt": {
+      "ru": "Таверна: состояние рабочей связи с постоянным путешественником — «Добровольная ночная просьба»; без собственного имени и без романтического допущения.",
+      "en": "Tavern recurring-traveler work relationship state: “Voluntary Night request”; no proper name and no romance assumption."
+    },
+    "presentation.static.relationship.tavern-recurring-traveler.stage.night-request.caption": {
+      "ru": "Постоянный путешественник: Добровольная ночная просьба.",
+      "en": "Recurring traveler: Voluntary Night request."
+    },
+    "presentation.tavern.relationship.stage.request-resolved.label": {
+      "ru": "Просьба разобрана и возвращена в работу",
+      "en": "Request resolved and returned to work"
+    },
+    "presentation.static.relationship.tavern-recurring-traveler.stage.request-resolved.alt": {
+      "ru": "Таверна: состояние рабочей связи с постоянным путешественником — «Просьба разобрана и возвращена в работу»; без собственного имени и без романтического допущения.",
+      "en": "Tavern recurring-traveler work relationship state: “Request resolved and returned to work”; no proper name and no romance assumption."
+    },
+    "presentation.static.relationship.tavern-recurring-traveler.stage.request-resolved.caption": {
+      "ru": "Постоянный путешественник: Просьба разобрана и возвращена в работу.",
+      "en": "Recurring traveler: Request resolved and returned to work."
+    },
+    "presentation.tavern.relationship.stage.confidentiality-resolved.label": {
+      "ru": "Запрос конфиденциальности разрешён",
+      "en": "Confidentiality request resolved"
+    },
+    "presentation.static.relationship.tavern-recurring-traveler.stage.confidentiality-resolved.alt": {
+      "ru": "Таверна: состояние рабочей связи с постоянным путешественником — «Запрос конфиденциальности разрешён»; без собственного имени и без романтического допущения.",
+      "en": "Tavern recurring-traveler work relationship state: “Confidentiality request resolved”; no proper name and no romance assumption."
+    },
+    "presentation.static.relationship.tavern-recurring-traveler.stage.confidentiality-resolved.caption": {
+      "ru": "Постоянный путешественник: Запрос конфиденциальности разрешён.",
+      "en": "Recurring traveler: Confidentiality request resolved."
+    },
+    "presentation.tavern.state.staff-room-access.label": {
+      "ru": "Доступ персонала к гостевым комнатам",
+      "en": "Staff guest-room access"
+    },
+    "presentation.static.career.tavern.state.staff-room-access.alt": {
+      "ru": "Таверна: Доступ персонала к гостевым комнатам; статус показан качественно и не раскрывает скрытые числовые пороги.",
+      "en": "Tavern: Staff guest-room access; the status is shown qualitatively without exposing hidden numeric thresholds."
+    },
+    "presentation.static.career.tavern.state.staff-room-access.caption": {
+      "ru": "Состояние таверны: Доступ персонала к гостевым комнатам.",
+      "en": "Tavern state: Staff guest-room access."
+    },
+    "presentation.tavern.state.room-pressure.label": {
+      "ru": "Нагрузка на комнаты",
+      "en": "Room pressure"
+    },
+    "presentation.static.career.tavern.state.room-pressure.alt": {
+      "ru": "Таверна: Нагрузка на комнаты; статус показан качественно и не раскрывает скрытые числовые пороги.",
+      "en": "Tavern: Room pressure; the status is shown qualitatively without exposing hidden numeric thresholds."
+    },
+    "presentation.static.career.tavern.state.room-pressure.caption": {
+      "ru": "Состояние таверны: Нагрузка на комнаты.",
+      "en": "Tavern state: Room pressure."
+    },
+    "presentation.tavern.state.supply-pressure.label": {
+      "ru": "Давление на снабжение",
+      "en": "Supply pressure"
+    },
+    "presentation.static.career.tavern.state.supply-pressure.alt": {
+      "ru": "Таверна: Давление на снабжение; статус показан качественно и не раскрывает скрытые числовые пороги.",
+      "en": "Tavern: Supply pressure; the status is shown qualitatively without exposing hidden numeric thresholds."
+    },
+    "presentation.static.career.tavern.state.supply-pressure.caption": {
+      "ru": "Состояние таверны: Давление на снабжение.",
+      "en": "Tavern state: Supply pressure."
+    },
+    "presentation.tavern.state.guest-ledger.label": {
+      "ru": "Данные гостевой книги",
+      "en": "Guest ledger evidence"
+    },
+    "presentation.static.career.tavern.state.guest-ledger.alt": {
+      "ru": "Таверна: Данные гостевой книги; статус показан качественно и не раскрывает скрытые числовые пороги.",
+      "en": "Tavern: Guest ledger evidence; the status is shown qualitatively without exposing hidden numeric thresholds."
+    },
+    "presentation.static.career.tavern.state.guest-ledger.caption": {
+      "ru": "Состояние таверны: Данные гостевой книги.",
+      "en": "Tavern state: Guest ledger evidence."
+    },
+    "presentation.tavern.state.traveler-rumour.label": {
+      "ru": "Слух постоянного путешественника",
+      "en": "Recurring-traveler rumour"
+    },
+    "presentation.static.career.tavern.state.traveler-rumour.alt": {
+      "ru": "Таверна: Слух постоянного путешественника; статус показан качественно и не раскрывает скрытые числовые пороги.",
+      "en": "Tavern: Recurring-traveler rumour; the status is shown qualitatively without exposing hidden numeric thresholds."
+    },
+    "presentation.static.career.tavern.state.traveler-rumour.caption": {
+      "ru": "Состояние таверны: Слух постоянного путешественника.",
+      "en": "Tavern state: Recurring-traveler rumour."
+    },
+    "presentation.tavern.state.rumour-confirmed.label": {
+      "ru": "Подтверждённый слух",
+      "en": "Confirmed rumour"
+    },
+    "presentation.static.career.tavern.state.rumour-confirmed.alt": {
+      "ru": "Таверна: Подтверждённый слух; статус показан качественно и не раскрывает скрытые числовые пороги.",
+      "en": "Tavern: Confirmed rumour; the status is shown qualitatively without exposing hidden numeric thresholds."
+    },
+    "presentation.static.career.tavern.state.rumour-confirmed.caption": {
+      "ru": "Состояние таверны: Подтверждённый слух.",
+      "en": "Tavern state: Confirmed rumour."
+    },
+    "presentation.tavern.state.information-routing.label": {
+      "ru": "Информационный маршрут",
+      "en": "Information routing"
+    },
+    "presentation.static.career.tavern.state.information-routing.alt": {
+      "ru": "Таверна: Информационный маршрут; статус показан качественно и не раскрывает скрытые числовые пороги.",
+      "en": "Tavern: Information routing; the status is shown qualitatively without exposing hidden numeric thresholds."
+    },
+    "presentation.static.career.tavern.state.information-routing.caption": {
+      "ru": "Состояние таверны: Информационный маршрут.",
+      "en": "Tavern state: Information routing."
+    },
+    "presentation.tavern.state.confidentiality-kept.label": {
+      "ru": "Конфиденциальность сохранена",
+      "en": "Confidentiality kept"
+    },
+    "presentation.static.career.tavern.state.confidentiality-kept.alt": {
+      "ru": "Таверна: Конфиденциальность сохранена; статус показан качественно и не раскрывает скрытые числовые пороги.",
+      "en": "Tavern: Confidentiality kept; the status is shown qualitatively without exposing hidden numeric thresholds."
+    },
+    "presentation.static.career.tavern.state.confidentiality-kept.caption": {
+      "ru": "Состояние таверны: Конфиденциальность сохранена.",
+      "en": "Tavern state: Confidentiality kept."
+    },
+    "presentation.tavern.state.refusal-respected.label": {
+      "ru": "Отказ принят без потери профессионального пути",
+      "en": "Refusal respected without losing the professional route"
+    },
+    "presentation.static.career.tavern.state.refusal-respected.alt": {
+      "ru": "Таверна: Отказ принят без потери профессионального пути; статус показан качественно и не раскрывает скрытые числовые пороги.",
+      "en": "Tavern: Refusal respected without losing the professional route; the status is shown qualitatively without exposing hidden numeric thresholds."
+    },
+    "presentation.static.career.tavern.state.refusal-respected.caption": {
+      "ru": "Состояние таверны: Отказ принят без потери профессионального пути.",
+      "en": "Tavern state: Refusal respected without losing the professional route."
+    },
+    "ui.tavern.stageAria": {
+      "ru": "Этап карьеры таверны: {stage}",
+      "en": "Tavern career stage: {stage}"
+    },
+    "ui.tavern.relationshipAria": {
+      "ru": "Профессиональная связь с постоянным путешественником: {stage}",
+      "en": "Recurring traveler professional relationship: {stage}"
+    },
+    "ui.tavern.stateAria": {
+      "ru": "Состояние таверны: {state}",
+      "en": "Tavern presentation state: {state}"
+    },
+    "ui.tavern.nightChoiceAria": {
+      "ru": "Ночной выбор таверны: {choice}",
+      "en": "Tavern Night choice: {choice}"
+    },
+    "ui.tavern.crisisFeedback.stabilize-house": {
+      "ru": "Заведение стабилизировано через существующий путь управления домом.",
+      "en": "The house is stabilized through the existing house-management route."
+    },
+    "ui.tavern.crisisFeedback.manage-information": {
+      "ru": "Информация направлена через существующий информационный путь.",
+      "en": "Information is routed through the existing information path."
+    },
+    "ui.tavern.crisisFeedback.protect-shelter": {
+      "ru": "Защита убежища подтверждена существующим кризисным выбором.",
+      "en": "Shelter protection is confirmed by the existing crisis choice."
+    },
+    "presentation.static.relationship.tavern-recurring-traveler.default.alt": {
+      "ru": "Рабочая сцена таверны для профессионального разговора с постоянным путешественником; без собственного имени и без романтического допущения.",
+      "en": "A Tavern work scene for a professional conversation with the recurring traveler; no proper name and no romance assumption."
+    },
+    "presentation.static.relationship.tavern-recurring-traveler.default.caption": {
+      "ru": "Таверна: профессиональный разговор с постоянным путешественником.",
+      "en": "Tavern: a professional conversation with the recurring traveler."
+    },
+    "presentation.static.relationship.tavern-recurring-traveler.event.intro.alt": {
+      "ru": "Таверна: Рабочее знакомство с постоянным путешественником; статичная сцена сохраняет профессиональный контекст и не меняет игровой исход.",
+      "en": "Tavern: Professional introduction with the recurring traveler; the static scene preserves the professional context and does not change the gameplay outcome."
+    },
+    "presentation.static.relationship.tavern-recurring-traveler.event.intro.caption": {
+      "ru": "Таверна: Рабочее знакомство с постоянным путешественником.",
+      "en": "Tavern: Professional introduction with the recurring traveler."
+    },
+    "presentation.static.relationship.tavern-recurring-traveler.event.trust.alt": {
+      "ru": "Таверна: Профессиональное доверие постоянного путешественника; статичная сцена сохраняет профессиональный контекст и не меняет игровой исход.",
+      "en": "Tavern: Professional trust with the recurring traveler; the static scene preserves the professional context and does not change the gameplay outcome."
+    },
+    "presentation.static.relationship.tavern-recurring-traveler.event.trust.caption": {
+      "ru": "Таверна: Профессиональное доверие постоянного путешественника.",
+      "en": "Tavern: Professional trust with the recurring traveler."
+    },
+    "presentation.static.relationship.tavern-recurring-traveler.event.request.alt": {
+      "ru": "Таверна: Просьба постоянного путешественника; статичная сцена сохраняет профессиональный контекст и не меняет игровой исход.",
+      "en": "Tavern: Recurring traveler request; the static scene preserves the professional context and does not change the gameplay outcome."
+    },
+    "presentation.static.relationship.tavern-recurring-traveler.event.request.caption": {
+      "ru": "Таверна: Просьба постоянного путешественника.",
+      "en": "Tavern: Recurring traveler request."
+    },
+    "presentation.static.relationship.tavern-recurring-traveler.event.confidentiality.alt": {
+      "ru": "Таверна: Разговор о конфиденциальности в таверне; статичная сцена сохраняет профессиональный контекст и не меняет игровой исход.",
+      "en": "Tavern: Tavern confidentiality conversation; the static scene preserves the professional context and does not change the gameplay outcome."
+    },
+    "presentation.static.relationship.tavern-recurring-traveler.event.confidentiality.caption": {
+      "ru": "Таверна: Разговор о конфиденциальности в таверне.",
+      "en": "Tavern: Tavern confidentiality conversation."
+    },
+    "presentation.static.relationship.tavern-recurring-traveler.event.night.alt": {
+      "ru": "Таверна: Добровольная ночная встреча с постоянным путешественником; статичная сцена сохраняет профессиональный контекст и не меняет игровой исход.",
+      "en": "Tavern: Voluntary Night meeting with the recurring traveler; the static scene preserves the professional context and does not change the gameplay outcome."
+    },
+    "presentation.static.relationship.tavern-recurring-traveler.event.night.caption": {
+      "ru": "Таверна: Добровольная ночная встреча с постоянным путешественником.",
+      "en": "Tavern: Voluntary Night meeting with the recurring traveler."
+    },
+    "presentation.static.career.tavern.event.house-notes-night.alt": {
+      "ru": "Таверна: Ночные записи по работе таверны; статичная сцена сохраняет профессиональный контекст и не меняет игровой исход.",
+      "en": "Tavern: Night review of tavern house notes; the static scene preserves the professional context and does not change the gameplay outcome."
+    },
+    "presentation.static.career.tavern.event.house-notes-night.caption": {
+      "ru": "Таверна: Ночные записи по работе таверны.",
+      "en": "Tavern: Night review of tavern house notes."
+    },
+    "presentation.static.career.tavern.event.information-rumour-route.alt": {
+      "ru": "Таверна: Подтверждение информационного маршрута; статичная сцена сохраняет профессиональный контекст и не меняет игровой исход.",
+      "en": "Tavern: Information-route confirmation; the static scene preserves the professional context and does not change the gameplay outcome."
+    },
+    "presentation.static.career.tavern.event.information-rumour-route.caption": {
+      "ru": "Таверна: Подтверждение информационного маршрута.",
+      "en": "Tavern: Information-route confirmation."
     }
   }
 }
