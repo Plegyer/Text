@@ -31,7 +31,7 @@ test('C5-163 real Field Craft Night-study remains useful School progress but can
   }
 
   assert.equal(s.run.flow.night?.phase,'LodgingResolution');
-  s=dispatch(s,{type:'chooseLodging',id:'lodging.street'},catalog);
+  s=dispatch(s,{type:'chooseLodging',id:'lodging.cheap'},catalog);
   while(s.run.pending){
     const event=catalog.events.find(e=>e.id===s.run.pending!.eventId);
     assert.ok(event);
@@ -40,6 +40,8 @@ test('C5-163 real Field Craft Night-study remains useful School progress but can
     s=dispatch(s,{type:'choice',id:choice.id},catalog);
   }
   assert.equal(s.run.flow.night?.phase,'VoluntaryNightChoice');
+  const moneyAfterLodging=s.run.resources.money;
+  assert.equal(moneyAfterLodging,moneyBefore-50);
 
   s=dispatch(s,{type:'chooseNightChoice',id:'school.night_study.field_craft.wits'},catalog);
 
@@ -55,5 +57,5 @@ test('C5-163 real Field Craft Night-study remains useful School progress but can
   assert.equal(s.run.progression.worldFacts.includes('forest.school-field-notes'),false);
   assert.equal(s.run.progression.careers.hunter.facts.includes('school-field-craft-ready'),false);
   assert.equal(s.run.pending,null);
-  assert.equal(s.run.resources.money,moneyBefore);
+  assert.equal(s.run.resources.money,moneyAfterLodging);
 });
