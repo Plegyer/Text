@@ -496,6 +496,10 @@ test('renderer: project-owned static fallback keeps asset identity across RU EN 
  const s=started();
  const {w,dom,errors}=boot(JSON.stringify(s));try{
   await wait(()=>!!w.document.querySelector('[data-panel="work"]'));
+  w.document.querySelector('[data-panel="menu"]').click();
+  w.document.querySelector('#animation-toggle').click();
+  await wait(()=>w.localStorage.getItem('portal-life.presentation.animations')==='off');
+  w.document.querySelector('#close').click();
   w.document.querySelector('[data-panel="work"]').click();
   w.document.querySelector('[data-action="satyr-maid.shift"]').click();
   await wait(()=>!!w.document.querySelector('.media-window img')&&/career-satyr-maid-result\.svg$/.test(w.document.querySelector('.media-window img').getAttribute('src')??''));

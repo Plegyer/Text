@@ -3179,11 +3179,11 @@
       "en": "The management result is acknowledged within the professional Lumber route."
     },
     "presentation.static.lumber-ending-hard-work.alt": {
-      "ru": "Завершённая рабочая сцена лесоруба с древесиной и инструментом как визуал финала «Тяжёлый труд».",
+      "ru": "Завершённая рабочая сцена лесоруба с древесиной и инструментом как визуал финала «Тяжкий труд».",
       "en": "A completed lumber work scene with timber and tools as the visual for the Hard Work ending."
     },
     "presentation.static.lumber-ending-hard-work.caption": {
-      "ru": "Финал лесоруба: тяжёлый труд.",
+      "ru": "Финал лесоруба: тяжкий труд.",
       "en": "Lumber ending: Hard Work."
     },
     "presentation.static.lumber-ending-forewoman.alt": {
@@ -3327,8 +3327,8 @@
       "en": "Someone notices you in the shade and offers a short task before closing. You can take it for a little money or keep resting; neither choice turns the chance meeting into an obligation, career, or relationship."
     },
     "ui.work.lockedCareerHelp": {
-      "ru": "Этот карьерный путь пока недоступен. Необходимое условие открытия ещё не задано.",
-      "en": "This career path is currently unavailable. Its unlock requirement has not been defined yet."
+      "ru": "Этот карьерный путь пока недоступен. Выполните указанные условия открытия.",
+      "en": "This career path is not available yet. Meet the listed unlock requirements."
     },
     "ui.work.lockedCareerAria": {
       "ru": "{career}: недоступно. {reason}",
@@ -3525,6 +3525,250 @@
     "media.school.teacher.body-confidence.classroom.caption": {
       "ru": "Преподаватель: Сера Вей — «Уверенность в теле».",
       "en": "Teacher: Sera Vey — Body Confidence."
+    },
+    "ui.work.unlockedCareerAria": {
+      "ru": "{career}: доступно.",
+      "en": "{career}: available."
+    },
+    "ui.work.lateCareer.locked": {
+      "ru": "Закрыто",
+      "en": "Locked"
+    },
+    "ui.work.lateCareer.unlocked": {
+      "ru": "Открыто",
+      "en": "Unlocked"
+    },
+    "ui.work.lateCareer.stateAria": {
+      "ru": "{career}: {state}",
+      "en": "{career}: {state}"
+    },
+    "ui.work.lateCareer.discovery": {
+      "ru": "Новая профессия открыта: {career}",
+      "en": "New career unlocked: {career}"
+    },
+    "ui.work.lateCareer.discoveryMany": {
+      "ru": "Открыты новые профессии: {careers}",
+      "en": "New careers unlocked: {careers}"
+    },
+    "presentation.motion.career.satyr-maid.service.a.alt": {
+      "ru": "Анимированная рабочая сцена служанки-сатирки: поднос, стол и спокойное обслуживание в таверне.",
+      "en": "Animated Satyr Maid work scene with a tray, table, and calm tavern service."
+    },
+    "presentation.motion.career.satyr-maid.service.b.alt": {
+      "ru": "Анимированная рабочая сцена служанки-сатирки: смена у столов без изменения игрового исхода.",
+      "en": "Animated Satyr Maid work scene at the tables, without changing the gameplay outcome."
+    },
+    "presentation.motion.career.satyr-maid.service.c.alt": {
+      "ru": "Анимированная рабочая сцена служанки-сатирки: движение подноса и таверненный свет.",
+      "en": "Animated Satyr Maid work scene with a moving tray and tavern lights."
+    },
+    "presentation.motion.career.undead-farm.field.a.alt": {
+      "ru": "Анимированная рабочая сцена фермы нежити: грядки, ящик и помощница на обычной смене.",
+      "en": "Animated Undead Farm work scene with field rows, a crate, and a helper on an ordinary shift."
+    },
+    "presentation.motion.career.undead-farm.field.b.alt": {
+      "ru": "Анимированная рабочая сцена фермы нежити: перемещение припасов между рядами.",
+      "en": "Animated Undead Farm work scene with supplies moving between the field rows."
+    },
+    "presentation.motion.career.undead-farm.field.c.alt": {
+      "ru": "Анимированная рабочая сцена фермы нежити: спокойная полевая работа без изменения игрового исхода.",
+      "en": "Animated Undead Farm work scene showing calm field work without changing the gameplay outcome."
+    },
+    "ending.ending.satyr-maid.hard-work.title": {
+      "ru": "Служанка у сатиров: тяжкий труд",
+      "en": "Satyr Maid: Hard Work"
+    },
+    "ending.ending.satyr-maid.hard-work.description": {
+      "ru": "Долгая череда обычных смен в таверне складывается в карьерный финал, где главным итогом остаётся надёжная профессиональная работа.",
+      "en": "A long sequence of ordinary tavern shifts becomes a career ending whose defining result is dependable professional work."
+    },
+    "presentation.static.satyr-maid-ending-hard-work.alt": {
+      "ru": "Служанка у сатиров завершает долгую рабочую смену среди столов и подносов; визуал отмечает финал «Тяжкий труд».",
+      "en": "A Satyr Maid finishes a long work shift among tables and trays; the visual marks the Hard Work ending."
+    },
+    "presentation.static.satyr-maid-ending-hard-work.caption": {
+      "ru": "Финал служанки у сатиров: тяжкий труд.",
+      "en": "Satyr Maid ending: Hard Work."
+    },
+    "ending.ending.undead-farm.hard-work.title": {
+      "ru": "Ферма нежити: тяжкий труд",
+      "en": "Undead Farm: Hard Work"
+    },
+    "ending.ending.undead-farm.hard-work.description": {
+      "ru": "Последовательная работа на необычной ферме складывается в карьерный финал, подчёркивающий выдержку и надёжность без новых игровых условий.",
+      "en": "Steady work on the unusual farm becomes a career ending that emphasizes endurance and reliability without adding new gameplay requirements."
+    },
+    "presentation.static.undead-farm-ending-hard-work.alt": {
+      "ru": "Работница фермы нежити завершает долгую смену среди грядок и припасов; визуал отмечает финал «Тяжкий труд».",
+      "en": "An Undead Farm worker finishes a long shift among field rows and supplies; the visual marks the Hard Work ending."
+    },
+    "presentation.static.undead-farm-ending-hard-work.caption": {
+      "ru": "Финал фермы нежити: тяжкий труд.",
+      "en": "Undead Farm ending: Hard Work."
+    },
+    "ending.ending.tavern.hard-work.title": {
+      "ru": "Таверна: тяжкий труд",
+      "en": "Tavern: Hard Work"
+    },
+    "ending.ending.tavern.hard-work.description": {
+      "ru": "Много обычных смен за стойкой и в зале складываются в карьерный финал, посвящённый устойчивой работе в таверне.",
+      "en": "Many ordinary shifts behind the bar and across the room become a career ending centered on steady tavern work."
+    },
+    "presentation.static.tavern-ending-hard-work.alt": {
+      "ru": "Завершённая рабочая сцена таверны с залом и подносами как визуал финала «Тяжкий труд».",
+      "en": "A completed tavern work scene with the room and serving trays as the visual for the Hard Work ending."
+    },
+    "presentation.static.tavern-ending-hard-work.caption": {
+      "ru": "Финал таверны: тяжкий труд.",
+      "en": "Tavern ending: Hard Work."
+    },
+    "ending.ending.hunter.hard-work.title": {
+      "ru": "Охотница: тяжкий труд",
+      "en": "Hunter: Hard Work"
+    },
+    "ending.ending.hunter.hard-work.description": {
+      "ru": "Повторяющаяся полевая работа складывается в карьерный финал, где итогом становится опыт, набранный долгими обычными выходами.",
+      "en": "Repeated field work becomes a career ending defined by the experience built through many ordinary outings."
+    },
+    "presentation.static.hunter-ending-hard-work.alt": {
+      "ru": "Охотница завершает долгий рабочий выход; снаряжение и следы маршрута обозначают финал «Тяжкий труд».",
+      "en": "A hunter finishes a long work outing; gear and route traces mark the Hard Work ending."
+    },
+    "presentation.static.hunter-ending-hard-work.caption": {
+      "ru": "Финал охотницы: тяжкий труд.",
+      "en": "Hunter ending: Hard Work."
+    },
+    "ending.ending.guard.hard-work.title": {
+      "ru": "Стража: тяжкий труд",
+      "en": "Guard: Hard Work"
+    },
+    "ending.ending.guard.hard-work.description": {
+      "ru": "Долгая служба на патрулях и городских постах складывается в карьерный финал, посвящённый постоянству в работе стражи.",
+      "en": "Long service on patrols and city posts becomes a career ending centered on constancy in guard work."
+    },
+    "presentation.static.guard-ending-hard-work.alt": {
+      "ru": "Стражница завершает долгую смену на городском посту; визуал отмечает финал «Тяжкий труд».",
+      "en": "A guard finishes a long shift at a city post; the visual marks the Hard Work ending."
+    },
+    "presentation.static.guard-ending-hard-work.caption": {
+      "ru": "Финал стражи: тяжкий труд.",
+      "en": "Guard ending: Hard Work."
+    },
+    "ending.ending.merchant.hard-work.title": {
+      "ru": "Торговка: тяжкий труд",
+      "en": "Merchant: Hard Work"
+    },
+    "ending.ending.merchant.hard-work.description": {
+      "ru": "Множество обычных сделок, доставок и оценок складываются в карьерный финал, где важна накопленная профессиональная устойчивость.",
+      "en": "Many ordinary deals, deliveries, and appraisals become a career ending defined by accumulated professional steadiness."
+    },
+    "presentation.static.merchant-ending-hard-work.alt": {
+      "ru": "Торговка завершает долгий рабочий день среди товара и записей; визуал отмечает финал «Тяжкий труд».",
+      "en": "A merchant finishes a long workday among goods and records; the visual marks the Hard Work ending."
+    },
+    "presentation.static.merchant-ending-hard-work.caption": {
+      "ru": "Финал торговки: тяжкий труд.",
+      "en": "Merchant ending: Hard Work."
+    },
+    "ending.ending.artist-geisha.hard-work.title": {
+      "ru": "Дом искусств: тяжкий труд",
+      "en": "Artist House: Hard Work"
+    },
+    "ending.ending.artist-geisha.hard-work.description": {
+      "ru": "Долгая практика, подготовка и работа с гостями складываются в карьерный финал, посвящённый выносливости профессионального ремесла.",
+      "en": "Long practice, preparation, and guest-facing work become a career ending centered on the endurance of the craft."
+    },
+    "presentation.static.artist-geisha-ending-hard-work.alt": {
+      "ru": "Исполнительница завершает долгую смену в Доме искусств; сцена подготовки отмечает финал «Тяжкий труд».",
+      "en": "A performer finishes a long Artist House shift; the preparation scene marks the Hard Work ending."
+    },
+    "presentation.static.artist-geisha-ending-hard-work.caption": {
+      "ru": "Финал Дома искусств: тяжкий труд.",
+      "en": "Artist House ending: Hard Work."
+    },
+    "ending.ending.assassin.hard-work.title": {
+      "ru": "Ассасин: тяжкий труд",
+      "en": "Assassin: Hard Work"
+    },
+    "ending.ending.assassin.hard-work.description": {
+      "ru": "Множество обычных скрытых поручений складываются в карьерный финал, подчёркивающий дисциплину и рутинную профессиональную точность.",
+      "en": "Many ordinary covert assignments become a career ending emphasizing discipline and routine professional precision."
+    },
+    "presentation.static.assassin-ending-hard-work.alt": {
+      "ru": "Ассасин завершает долгую рабочую задачу; подготовленное снаряжение отмечает финал «Тяжкий труд» без сцены насилия.",
+      "en": "An assassin finishes a long work assignment; prepared gear marks the Hard Work ending without depicting violence."
+    },
+    "presentation.static.assassin-ending-hard-work.caption": {
+      "ru": "Финал ассасина: тяжкий труд.",
+      "en": "Assassin ending: Hard Work."
+    },
+    "ending.ending.prostitute.hard-work.title": {
+      "ru": "Независимая профессия: тяжкий труд",
+      "en": "Professional: Hard Work"
+    },
+    "ending.ending.prostitute.hard-work.description": {
+      "ru": "Долгая последовательность добровольных профессиональных смен складывается в неэксплицитный карьерный финал с сохранением личных границ.",
+      "en": "A long sequence of voluntary professional shifts becomes a non-explicit career ending that keeps personal boundaries intact."
+    },
+    "presentation.static.prostitute-ending-hard-work.alt": {
+      "ru": "Неэксплицитная рабочая сцена после долгой добровольной профессиональной смены; визуал отмечает финал «Тяжкий труд».",
+      "en": "A non-explicit work scene after a long voluntary professional shift; the visual marks the Hard Work ending."
+    },
+    "presentation.static.prostitute-ending-hard-work.caption": {
+      "ru": "Финал независимой профессии: тяжкий труд.",
+      "en": "Professional ending: Hard Work."
+    },
+    "ui.ending.state.locked": {
+      "ru": "Не открыто",
+      "en": "Locked"
+    },
+    "ui.ending.state.eligible": {
+      "ru": "Доступно",
+      "en": "Eligible"
+    },
+    "ui.ending.state.committed": {
+      "ru": "Выбрано",
+      "en": "Committed"
+    },
+    "ui.ending.state.completed": {
+      "ru": "Завершено",
+      "en": "Completed"
+    },
+    "ui.ending.stateAria": {
+      "ru": "Состояние судьбы: {state}",
+      "en": "Ending state: {state}"
+    },
+    "ui.run.endingCommitted": {
+      "ru": "Судьба выбрана",
+      "en": "Ending committed"
+    },
+    "ui.run.endingCompleted": {
+      "ru": "Судьба завершена",
+      "en": "Ending completed"
+    },
+    "presentation.motion.career.satyr-maid.service.a.caption": {
+      "ru": "Смена служанки у сатиров: спокойное обслуживание.",
+      "en": "Satyr Maid shift: calm tavern service."
+    },
+    "presentation.motion.career.satyr-maid.service.b.caption": {
+      "ru": "Смена служанки у сатиров: работа у столов.",
+      "en": "Satyr Maid shift: table service."
+    },
+    "presentation.motion.career.satyr-maid.service.c.caption": {
+      "ru": "Смена служанки у сатиров: поднос и свет таверны.",
+      "en": "Satyr Maid shift: tray and tavern light."
+    },
+    "presentation.motion.career.undead-farm.field.a.caption": {
+      "ru": "Смена на ферме нежити: работа между грядками.",
+      "en": "Undead Farm shift: work among the field rows."
+    },
+    "presentation.motion.career.undead-farm.field.b.caption": {
+      "ru": "Смена на ферме нежити: перенос припасов.",
+      "en": "Undead Farm shift: moving supplies."
+    },
+    "presentation.motion.career.undead-farm.field.c.caption": {
+      "ru": "Смена на ферме нежити: спокойная полевая работа.",
+      "en": "Undead Farm shift: calm field work."
     }
   }
 }

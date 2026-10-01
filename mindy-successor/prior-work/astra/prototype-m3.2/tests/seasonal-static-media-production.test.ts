@@ -43,9 +43,16 @@ test('seasonal static selection remains deterministic and animation-mode indepen
  for(const row of expected){
   const on=resolvePresentation(checked,presentation,row.id,{animationsEnabled:true,occurrenceKey:'same'});
   const off=resolvePresentation(checked,presentation,row.id,{animationsEnabled:false,occurrenceKey:'same'});
-  assert.equal(on.selected?.src,row.src,row.id+' animations on');
+  const slot=presentation.slots[row.id];
+  if(slot.pool){
+   assert.equal(on.selected?.source,'override-pool',row.id+' animations on source');
+   assert.ok(slot.pool.candidates.some((candidate:any)=>candidate.src===on.selected?.src),row.id+' animations on pool member');
+   assert.ok(slot.pool.candidates.some((candidate:any)=>candidate.altKey===on.selected?.altKey),row.id+' animations on alt key');
+  }else{
+   assert.equal(on.selected?.src,row.src,row.id+' animations on');
+   assert.equal(on.selected?.altKey,row.altKey,row.id+' alt key');
+  }
   assert.equal(off.selected?.src,row.src,row.id+' animations off');
-  assert.equal(on.selected?.altKey,row.altKey,row.id+' alt key');
   assert.equal(off.selected?.altKey,row.altKey,row.id+' alt key off');
  }
 });
