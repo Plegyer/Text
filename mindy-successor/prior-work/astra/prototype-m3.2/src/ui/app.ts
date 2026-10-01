@@ -71,6 +71,7 @@ function localizedNightChoiceLabel(id:string,fallback:string){
  return tr(`nightChoice.${id}.label`,fallback);
 }
 const professions=['lumber.shift','satyr-maid.shift','undead-farm.shift','tavern.shift','hunter.shift','guard.shift','merchant.shift','artist-geisha.shift','assassin.shift','prostitute.shift'];
+const lateCareerProfessions=new Set(['tavern.shift','hunter.shift','guard.shift','merchant.shift','artist-geisha.shift','assassin.shift','prostitute.shift']);
 const lumberOutcomeIds=['ending.lumber.hard-work','ending.lumber.forewoman','ending.lumber.forest'] as const;
 function lumberCareerProgress(){
  const career=state.run.progression.careers.lumber;
@@ -148,15 +149,21 @@ async function perform(cmd:Command){
 function disabled(a:Action){return busy||locked||state.run.status!=='active'||!state.run.creation.complete||!!state.run.pending||!!state.run.flow.night||!!state.run.flow.activity||!actionAvailable(a,state,catalog)||state.run.metrics.money<actionCost(a,state)||state.run.metrics.energy<a.cost.energy;}
 function actionList(ids:string[]){return `<div class="activity-list">${ids.map(id=>catalog.definitions.actions.find(a=>a.id===id)).filter((a):a is Action=>!!a).map(a=>{
  const miss=a.conditions.filter(c=>!meets(c,state,catalog));
- const careerLocked=professions.includes(a.id)&&!actionAvailable(a,state,catalog);
- const lockHelp=careerLocked?tr('ui.work.lockedCareerHelp','Этот карьерный путь пока недоступен. Необходимое условие открытия ещё не задано.'):''; 
+ const careerAvailable=actionAvailable(a,state,catalog);
+ const careerLocked=professions.includes(a.id)&&!careerAvailable;
+ const lateCareer=lateCareerProfessions.has(a.id);
+ const availabilityState=lateCareer?(careerAvailable?'unlocked':'locked'):'';
+ const availabilityLabel=lateCareer?tr(`ui.work.lateCareer.${availabilityState}`,availabilityState==='unlocked'?'Открыто':'Закрыто'):'';
+ const lockHelp=careerLocked?tr('ui.work.lockedCareerHelp','Этот карьерный путь пока недоступен. Выполните указанные условия открытия.'):''; 
  const helpId=careerLocked?`work-lock-${a.id.replace(/[^a-z0-9_-]+/gi,'-')}`:'';
  const statsEffects=[...a.effects,...(a.seasonal?.[calendar(state.run.day).season]??[])].filter(e=>e.kind==='metric'&&(stats as readonly string[]).includes(e.key));
  const forecast=a.wage?Math.round(a.wage.base+a.wage.weights.reduce((sum,w)=>sum+state.run.metrics[w.stat]*w.factor,0)):null;
  const label=tr(`action.${a.id}.label`,a.label);
  const description=tr(`action.${a.id}.description`,a.description);
- const careerButtonAria=careerLocked?fmt(tr('ui.work.lockedCareerAria','{career}: недоступно. {reason}'),{career:label,reason:lockHelp}):'';
- return `<article class="activity"><div><h3>${esc(label)}</h3><p>${esc(description)}</p><small>${a.cost.energy} ${esc(tr('ui.work.energy','энергии'))}${actionCost(a,state)?` · ${actionCost(a,state)} ${esc(tr('ui.work.coins','монет'))}`:''}${forecast!==null?` · ${esc(tr('ui.work.income','доход ≈'))} ${forecast}`:''}</small><div class="effect-tags">${statsEffects.map(e=>e.kind==='metric'?`<span class="${e.delta>0?'gain':'loss'}">${esc(labels[e.key])} ${e.delta>0?'+':''}${e.delta}</span>`:'').join('')}</div>${miss.length?`<p class="requirement">${esc(miss.map(explain).join(' · '))}</p>`:''}${careerLocked?`<p class="requirement" id="${esc(helpId)}">${esc(lockHelp)}</p>`:''}</div>${a.mode==='brew'?`<div><button data-action="${a.id}" data-recipe="gentle" ${disabled(a)?'disabled':''}>${esc(tr('ui.work.recipeReliable','Надёжно'))}</button><button data-action="${a.id}" data-recipe="bold" ${disabled(a)?'disabled':''}>${esc(tr('ui.work.recipeFast','Быстро'))}</button></div>`:`<button data-action="${a.id}" ${careerLocked?`aria-label="${esc(careerButtonAria)}" aria-describedby="${esc(helpId)}" aria-disabled="true"`:''} ${disabled(a)?'disabled':''}>${professions.includes(a.id)?esc(tr('ui.work.button','Работать')):esc(tr('ui.generic.selectButton','Выбрать'))}</button>`}</article>`;
+ const careerButtonAria=careerLocked?fmt(tr('ui.work.lockedCareerAria','{career}: недоступно. {reason}'),{career:label,reason:lockHelp}):lateCareer?fmt(tr('ui.work.unlockedCareerAria','{career}: доступно.'),{career:label}):'';
+ const availability=
+  lateCareer?`<p class="career-availability" data-career-availability="${availabilityState}" aria-label="${esc(fmt(tr('ui.work.lateCareer.stateAria','{career}: {state}'),{career:label,state:availabilityLabel}))}">${esc(availabilityLabel)}</p>`:'';
+ return `<article class="activity" ${lateCareer?`data-late-career="${esc(a.id)}"`:''}><div><h3>${esc(label)}</h3>${availability}<p>${esc(description)}</p><small>${a.cost.energy} ${esc(tr('ui.work.energy','энергии'))}${actionCost(a,state)?` · ${actionCost(a,state)} ${esc(tr('ui.work.coins','монет'))}`:''}${forecast!==null?` · ${esc(tr('ui.work.income','доход ≈'))} ${forecast}`:''}</small><div class="effect-tags">${statsEffects.map(e=>e.kind==='metric'?`<span class="${e.delta>0?'gain':'loss'}">${esc(labels[e.key])} ${e.delta>0?'+':''}${e.delta}</span>`:'').join('')}</div>${miss.length?`<p class="requirement">${esc(miss.map(explain).join(' · '))}</p>`:''}${careerLocked?`<p class="requirement" id="${esc(helpId)}">${esc(lockHelp)}</p>`:''}</div>${a.mode==='brew'?`<div><button data-action="${a.id}" data-recipe="gentle" ${disabled(a)?'disabled':''}>${esc(tr('ui.work.recipeReliable','Надёжно'))}</button><button data-action="${a.id}" data-recipe="bold" ${disabled(a)?'disabled':''}>${esc(tr('ui.work.recipeFast','Быстро'))}</button></div>`:`<button data-action="${a.id}" ${careerButtonAria?`aria-label="${esc(careerButtonAria)}"`:''} ${careerLocked?`aria-describedby="${esc(helpId)}" aria-disabled="true"`:lateCareer?'aria-disabled="false"':''} ${disabled(a)?'disabled':''}>${professions.includes(a.id)?esc(tr('ui.work.button','Работать')):esc(tr('ui.generic.selectButton','Выбрать'))}</button>`}</article>`;
  }).join('')}</div>`;}
 function schoolCourseDisabled(course:SchoolCourse){
  return busy||locked||state.run.status!=='active'||!state.run.creation.complete||!state.run.flags['story.arrived']||
