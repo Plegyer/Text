@@ -97,5 +97,5 @@ test('C5-166 clean run reaches the live Hunter Field Craft hook through real Sch
   assert.ok(s.run.progression.careers.hunter.facts.includes('school-field-craft-ready'));
   assert.ok(s.run.progression.worldFacts.includes('forest.school-field-notes'));
   assert.equal(s.run.progression.careers.hunter.counters.completed_shifts,shiftsBefore);
-  assert.equal(s.run.history['hunter.school.field-craft']?.shows,1);
+  assert.equal(s.run.history['hunter.school.field-craft']?.count,1);
 });
