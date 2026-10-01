@@ -22,9 +22,9 @@ The v13 implementation intentionally does **not** add gameplay IDs or a second A
 
 v13 adds:
 - 14 seasonal/route narrative variants (Logging 8, Hunter 4, Old Boundary 2);
-- 46 challenge/solution narrative variants across navigation, physical obstacle, extraction and interpretation/ritual;
+- 44 challenge/solution narrative variants across navigation, physical obstacle, extraction and interpretation/ritual;
 - 8 entry-preparation variants covering career survey, School notes, equipment and combined preparation;
-- 8 specialized terminal variants plus four seasonal variants per outcome, while retaining each existing default;
+- 8 non-default terminal variants per outcome (4 seasonal + 4 equipment-specific), 24 new result variants total, while retaining each existing default;
 - 6 Lumber-return acknowledgement variants on the existing event.
 
 Selection is deterministic from persisted Activity state. No text selection changes progress, endurance, Energy, inventory, facts, item consumption, route gates or result effects.

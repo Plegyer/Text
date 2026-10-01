@@ -60,7 +60,7 @@ test('C3-133/C3-134/C3-135/C3-136 authored route and challenge pools are bilingu
   const challengeKeys=Object.keys(localization).filter(k=>k.startsWith('presentation.activity.forest.challenge.')&&/\.v[12]\.text$/.test(k));
   const prepKeys=Object.keys(localization).filter(k=>k.startsWith('presentation.activity.forest.entry.prep.')&&/\.v[12]\.text$/.test(k));
   assert.equal(routeKeys.length,14);
-  assert.equal(challengeKeys.length,46);
+  assert.equal(challengeKeys.length,44);
   assert.equal(prepKeys.length,8);
   for(const key of [...routeKeys,...challengeKeys,...prepKeys]){
     keyText(key,'ru');keyText(key,'en');
