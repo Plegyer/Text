@@ -1,5 +1,32 @@
 # Leader 1 — Live Dashboard
 
+## LIVE ACTION UPDATE — 2026-10-01 10:10+03
+
+Current main after Satyr School v12 integration:
+- `90512645a025323980b41165a0b2f24e35f36fdc`;
+- post-merge main CI #638 is running at this snapshot.
+
+Current frozen green QA wave:
+- PR #178 Undead Farm complete runtime — `b75e73c...`, CI #616 SUCCESS;
+- PR #180 Ordinary Poverty v14 — `4ba5d50...`, CI #624 SUCCESS;
+- PR #181 Undead Farm School — `47ce1b83...`, CI #623 SUCCESS;
+- PR #182 Undead Farm presentation — `703cabe...`, CI #626 SUCCESS.
+
+Chat 4 queue v14 is active and must gate #178 -> #180 -> #181 -> #182 without idling on one blocker.
+
+Next production wave is **Tavern complete career**:
+- Chat 1 C1D-121..132 — Tavern runtime/state/acceptance;
+- Chat 2 C2-145..156 — Tavern presentation/media/accessibility;
+- Chat 3 C3-157..168 — Tavern authored production content;
+- Chat 5 C5-145..156 — Tavern School cross-system content.
+
+Accepted previous-wave candidates #174 and #175 still require clean current-main integration branches; their frozen source heads remain immutable. PR #172 Satyr School has been merged.
+
+Old noise cleanup:
+- draft #179 closed as superseded by #182;
+- old presentation PR #136 closed after C4 classified it fully superseded.
+
+
 ## LIVE ACTION UPDATE — 2026-10-01 05:12Z
 
 Current main at assignment time: `fda3dcb66d6fdb40230712e65f4cc4605d9b1124`, main CI #488 SUCCESS.
