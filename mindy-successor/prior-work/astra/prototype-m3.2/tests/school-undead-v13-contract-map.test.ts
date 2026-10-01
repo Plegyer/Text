@@ -32,11 +32,14 @@ test('C5-133 binds only the published Undead Farm School identities',()=>{
 });
 
 test('C5-133 keeps both thresholds career-local at exactly three completed lessons',()=>{
-  assert.deepEqual(map.localHookPolicy,{
-    counter:'lessons_completed',
-    threshold:3,
-    scope:'undead-farm-only',
-    globalCertificateRule:false,
-    globalProjectRule:false
-  });
+  assert.equal(map.localHookPolicy.counter,'lessons_completed');
+  assert.equal(map.localHookPolicy.threshold,3);
+  assert.equal(map.localHookPolicy.scope,'undead-farm-only');
+  assert.equal(map.localHookPolicy.globalCertificateRule,false);
+  assert.equal(map.localHookPolicy.globalProjectRule,false);
+  assert.equal(map.localHookPolicy.nightParityCounter,'night_study_sessions');
+  assert.equal(map.localHookPolicy.nightParityThreshold,3);
+  assert.equal(map.localHookPolicy.nightParityScope,'undead-farm-only');
+  assert.equal(map.localHookPolicy.nightStudyChangesGlobalCertificateRule,false);
+  assert.equal(map.localHookPolicy.nightStudyChangesGlobalProjectRule,false);
 });
