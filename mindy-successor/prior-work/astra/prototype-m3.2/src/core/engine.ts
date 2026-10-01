@@ -333,11 +333,6 @@ function transitionFor(cat:Catalog,kind:DomainKind,id:string,transitionId:string
 function applyTransition(s:Save,kind:DomainKind,id:string,transitionId:string,cat:Catalog){
   const {t}=transitionFor(cat,kind,id,transitionId);
   const state=ensureDomainState(s,kind,id,cat);
-  // Repeating an action that carries its one-time transition must not make the
-  // action itself one-time. Once the machine is already at this transition's
-  // destination, the transition is an idempotent no-op; unrelated stages still
-  // fail the typed from-gate below.
-  if(state.stage===t.to)return;
   if(!t.from.includes(state.stage))throw new Error(`Transition ${kind}.${id}.${transitionId} недоступен из stage ${state.stage}`);
   if(!eligible(t.conditions,s,cat))throw new Error(`Условия transition ${kind}.${id}.${transitionId} не выполнены`);
   state.stage=t.to;
@@ -411,6 +406,14 @@ function applyOne(s:Save,e:Effect,cat:Catalog,allowTransitions:boolean){
 function applyEffectsMutable(s:Save,effects:Effect[],cat:Catalog,allowTransitions=true){
   const ordered=effects.map((effect,index)=>({effect,index,phase:effectPhase(effect)})).sort((a,b)=>a.phase-b.phase||a.index-b.index);
   for(const {effect} of ordered)applyOne(s,effect,cat,allowTransitions);
+}
+function applyActionEffectsMutable(s:Save,effects:Effect[],cat:Catalog){
+  const applicable=effects.filter(effect=>{
+    if(effect.kind!=='advanceCareer')return true;
+    const {t}=transitionFor(cat,'career',effect.career,effect.transition);
+    return readDomainState(s,'career',effect.career,cat)?.stage!==t.to;
+  });
+  applyEffectsMutable(s,applicable,cat,true);
 }
 export function applyEffects(input:Save,effects:Effect[],cat:Catalog):Save{
   const s=cloneSave(input);applyEffectsMutable(s,effects,cat,true);return s;
@@ -1218,7 +1221,7 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
   if(s.run.metrics.money<cost||s.run.metrics.energy<a.cost.energy)throw new Error('Не хватает денег или энергии.');
   if(a.mode==='brew'&&!['gentle','bold'].includes(command.recipe??''))throw new Error('Выберите способ приготовления.');
   s.run.metrics.money-=cost;s.run.metrics.energy-=a.cost.energy;
-  applyEffectsMutable(s,a.effects,cat,true);
+  applyActionEffectsMutable(s,a.effects,cat);
   if(a.seasonal)applyEffectsMutable(s,a.seasonal[calendar(s.run.day).season],cat,true);
   if(a.wage){
     const wage=Math.round(a.wage.base+a.wage.weights.reduce((sum,w)=>sum+getMetric(s,w.stat)*w.factor,0));
