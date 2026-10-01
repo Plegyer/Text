@@ -214,6 +214,12 @@ export const SATYR_MAID_RELATIONSHIP_EVENT_IDS=[
   'satyr-maid.recurring-guest.return'
 ] as const;
 
+export const SATYR_MAID_SCHOOL_EVENT_IDS=[
+  'satyr-maid.school.rhetoric',
+  'satyr-maid.school.management',
+  'satyr-maid.school.boundaries'
+] as const;
+
 export function presentationIdForSatyrMaidCareerEvent(eventId:string){
   return `job/satyr-maid/event/${clean(eventId)}/default`;
 }
@@ -311,6 +317,15 @@ export function presentationSlots(cat:Catalog):PresentationSlot[]{
     add({
       id:presentationIdForSatyrMaidRelationshipEvent(eventId),
       label:`Satyr Maid · recurring guest · ${eventId}`,
+      baseMediaIds:[],
+      fallbackId:'job/satyr-maid/result/default'
+    });
+  }
+
+  for(const eventId of SATYR_MAID_SCHOOL_EVENT_IDS){
+    add({
+      id:presentationIdForSatyrMaidCareerEvent(eventId),
+      label:`Satyr Maid · School reaction · ${eventId}`,
       baseMediaIds:[],
       fallbackId:'job/satyr-maid/result/default'
     });
