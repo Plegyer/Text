@@ -3696,6 +3696,58 @@
       "reward": "lumber.forest.compat",
       "metaRewards": [],
       "epilogue": "Fixture epilogue for the Forest outcome family."
+    },
+    {
+      "id": "ending.satyr-maid.house-power",
+      "title": "Satyr Maid — House Power",
+      "description": "A complex Satyr Maid ending built on veteran service, School-backed management or negotiation, and a resolved house crisis.",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "satyr-maid",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 15
+        },
+        {
+          "kind": "careerFact",
+          "career": "satyr-maid",
+          "fact": "crisis-house-power",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "satyr-maid",
+          "fact": "house-power-ready",
+          "present": true
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "satyr-maid",
+              "fact": "school-management-ready",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "satyr-maid",
+              "fact": "school-rhetoric-ready",
+              "present": true
+            }
+          ]
+        }
+      ],
+      "reward": "satyr-maid.house-credit",
+      "metaRewards": [
+        {
+          "kind": "unlock",
+          "rewardId": "satyr-maid.house-credit",
+          "unlock": "satyr-maid.house-credit"
+        }
+      ],
+      "epilogue": "You become one of the people who can set the house's working terms and keep its business running."
     }
   ],
   "careers": [
