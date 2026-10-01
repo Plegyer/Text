@@ -227,3 +227,38 @@ No fixture, preparation artifact, draft head or frozen-but-unmerged candidate is
 - Hunter runtime #201 and Hunter School #199 are frozen QA candidates. Their freeze/green status does not permit Hunter to bypass Tavern integration order.
 - The next incomplete ordinary career by shipped product truth is **Tavern**.
 - Frozen-but-unintegrated Hunter work is not promoted to shipped status by this closeout.
+
+
+## Hunter v15 frozen QA status
+
+### C4-150 — Hunter runtime #201
+
+- Exact frozen head: `8af661de2ce6d73e4db0f61fe4206d3334822998`.
+- Exact-head CI #734 / id `36844983432`: **SUCCESS**, 37 packs / 136 events / 39 actions / 20 endings, 681/681 tests.
+- Verdict: **PASS-WITH-NOTES**.
+- Ordinary `hunter.shift` remains 1 Energy with the existing stat/Year-2 unlock and wage.
+- `hunter.expedition` is a separate 2-Energy Activity with save/resume.
+- Natural acceptance reaches two real expeditions, Master/Warden readiness, 50 real Hunter shifts, Hard Work commit/completion and New Life without state priming.
+- Master/Warden/Legend remain typed states/facts only; their public ending IDs are `null`.
+- The only Hunter Meta reward remains `hardWork:hunter`.
+- All Hunter School numeric thresholds remain `null`.
+- No Secret Debt state, generic weapon/combat system or shared runtime rewrite is introduced.
+- This accepted candidate remains **unshipped** and must integrate after Tavern.
+
+### C4-151 — Hunter School #199
+
+- Exact frozen head: `f04c93db866b1d2603f6917b41297670f86b0bef`.
+- Frozen base: Hunter runtime #201 exact head.
+- Exact-head CI #745 / id `36846888973`: **SUCCESS**, 37 packs / 136 events / 39 actions / 20 endings, 704/704 tests.
+- Verdict: **PASS-WITH-NOTES**.
+- Focused 15-file School/text/test delta.
+- The only authorized live Hunter School event is `hunter.school.field-craft`.
+- It remains gated by existing `forest.school-field-notes`, produced by existing 0-Energy `forest.collect-field-kit`.
+- Arcana/Literacy/Physical remain fact-only with no invented live event IDs.
+- All four Hunter-local numeric School thresholds remain `null`.
+- Real Field Craft Night-study remains useful generic School progress but does not manufacture enrollment, field notes or a Hunter threshold.
+- Rowan Pike continuity, RU/EN, journal/ref, save/reload and exactly-once behavior are green.
+- No global School certificate/project rule or new curriculum is introduced.
+- This accepted candidate remains **unshipped** and must stay behind Tavern integration.
+
+C4-152/C4-153 wait independently for frozen exact-head green Hunter authored/presentation siblings. C4-154 is not final until those eligible sibling verdicts and Tavern-base effects are known.
