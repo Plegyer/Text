@@ -3549,6 +3549,18 @@
     "ui.work.lateCareer.discoveryMany": {
       "ru": "Открыты новые профессии: {careers}",
       "en": "New careers unlocked: {careers}"
+    },
+    "presentation.motion.career.satyr-maid.service.a.alt": {
+      "ru": "Анимированная рабочая сцена служанки-сатирки: поднос, стол и спокойное обслуживание в таверне.",
+      "en": "Animated Satyr Maid work scene with a tray, table, and calm tavern service."
+    },
+    "presentation.motion.career.satyr-maid.service.b.alt": {
+      "ru": "Анимированная рабочая сцена служанки-сатирки: смена у столов без изменения игрового исхода.",
+      "en": "Animated Satyr Maid work scene at the tables, without changing the gameplay outcome."
+    },
+    "presentation.motion.career.satyr-maid.service.c.alt": {
+      "ru": "Анимированная рабочая сцена служанки-сатирки: движение подноса и таверненный свет.",
+      "en": "Animated Satyr Maid work scene with a moving tray and tavern lights."
     }
   }
 }
