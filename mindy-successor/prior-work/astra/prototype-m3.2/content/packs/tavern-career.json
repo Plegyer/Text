@@ -333,6 +333,11 @@
           "kind": "careerFactAdded",
           "career": "tavern",
           "fact": "crisis-broker"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "tavern",
+          "fact": "rumour-route-open"
         }
       ],
       "priorityClass": "critical_progression",
@@ -354,6 +359,12 @@
           "kind": "careerFact",
           "career": "tavern",
           "fact": "school-broker-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "rumour-route-open",
           "present": true
         },
         {
