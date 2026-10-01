@@ -749,7 +749,7 @@ function runResultIdentity(s:Save,endingId:string){
   return resultIdentityFor(s.run.id,s.meta.runsStarted,endingId);
 }
 function endingRewards(ending:Catalog['definitions']['endings'][number]):MetaReward[]{
-  if(ending.metaRewards.length)return ending.metaRewards;
+  if(ending.metaRewards!==undefined)return ending.metaRewards;
   return [{kind:'unlock',rewardId:`legacy.reward.${stableIdHash(ending.id+'|'+ending.reward)}`,unlock:ending.reward}];
 }
 function applyMetaRewardMutable(meta:Meta,reward:MetaReward){

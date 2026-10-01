@@ -225,8 +225,9 @@ export function loadCatalog(definitions:unknown,packs:unknown[]):Catalog {
   }
   for(const e of d.endings){
     checkConditions(e.conditions);
-    unique(e.metaRewards.map(r=>r.rewardId),`ending.${e.id}.metaRewards`);
-    const hardWork=e.metaRewards.filter(r=>r.kind==='hardWork').map(r=>r.career);
+    const metaRewards=e.metaRewards??[];
+    unique(metaRewards.map(r=>r.rewardId),`ending.${e.id}.metaRewards`);
+    const hardWork=metaRewards.filter(r=>r.kind==='hardWork').map(r=>r.career);
     unique(hardWork,`ending.${e.id}.hardWork`);
   }
   for(const lodging of d.lodgings){

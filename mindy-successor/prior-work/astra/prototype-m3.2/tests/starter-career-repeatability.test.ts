@@ -7,7 +7,7 @@ import {catalog,started} from './helpers.ts';
 
 const cases=[
   {career:'satyr-maid',action:'satyr-maid.shift',firstStage:'floor-rhythm',finalStage:'veteran-service'},
-  {career:'undead-farm',action:'undead-farm.shift',firstStage:'reliable-helper',finalStage:'reliable-helper'}
+  {career:'undead-farm',action:'undead-farm.shift',firstStage:'reliable-helper',finalStage:'outcome-ready'}
 ] as const;
 
 function settlePending(s:Save){

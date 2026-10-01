@@ -78,7 +78,12 @@ test('Satyr Maid multi-scene action result uses the generic scene localization s
 });
 
 test('Undead Farm multi-scene action result uses the same localization seam',async()=>{
-  const {dom,w,errors}=boot();
+  const s=started();
+  s.run.progression.careers['undead-farm']={
+    stage:'outcome-ready',shifts:0,counters:{completed_shifts:1},choices:{},
+    facts:['first-shift-complete','basic-production-ready','outcome-ready']
+  };
+  const {dom,w,errors}=boot(s);
   try{
     await wait(()=>!!w.document.querySelector('[data-panel="work"]'));
     w.document.querySelector('[data-panel="work"]').click();
