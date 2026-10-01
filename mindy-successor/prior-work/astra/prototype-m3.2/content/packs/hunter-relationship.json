@@ -25,7 +25,7 @@
   "events": [
     {
       "id": "hunter.relationship.intro",
-      "title": "A senior hunter notices the work",
+      "title": "A senior guide checks the handoff",
       "sourceDomain": "hunter",
       "trigger": [],
       "reactionTriggers": [
@@ -61,8 +61,34 @@
       ],
       "variants": [
         {
+          "id": "client-handoff",
+          "text": "A client has brought a route question that matches information you already carried from town. A senior hunter checks your notes before either of you answers, keeping the client relationship practical rather than turning it into a private obligation.",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "hunter",
+              "fact": "tavern-clue-known",
+              "present": true
+            }
+          ],
+          "media": []
+        },
+        {
+          "id": "forest-local-context",
+          "text": "A forest-edge local has flagged a change near the route already recorded in your Hunter notes. The senior guide compares your field record with that local observation; the local remains a source, not a mandatory companion or named canon character.",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "hunter",
+              "fact": "forest-clue-known",
+              "present": true
+            }
+          ],
+          "media": []
+        },
+        {
           "id": "default",
-          "text": "A senior hunter starts checking your route notes as professional work. The role stays unnamed and does not require friendship or romance.",
+          "text": "A senior hunter starts treating your route notes as professional material worth checking. The role can be mentor, guide, colleague, or later rival; it stays unnamed and never requires friendship or romance.",
           "conditions": [],
           "media": []
         }
@@ -70,8 +96,8 @@
       "choices": [
         {
           "id": "professional",
-          "label": "Compare route notes",
-          "text": "Keep the first contact practical and work-focused.",
+          "label": "Compare the route notes",
+          "text": "Keep the first contact professional and useful without promising a personal relationship.",
           "conditions": [],
           "effects": [
             {
@@ -91,7 +117,7 @@
     },
     {
       "id": "hunter.relationship.trust",
-      "title": "Professional trust",
+      "title": "Professional trust becomes familiar",
       "sourceDomain": "hunter",
       "trigger": [],
       "reactionTriggers": [
@@ -132,7 +158,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "A second ordinary job is enough to establish professional trust. The senior hunter now treats your route decisions as worth arguing about.",
+          "text": "After repeated ordinary work, the senior guide trusts your notes enough to challenge them directly. That familiarity can stay professional, grow into friendship, or later become rivalry; none of those tones is required for Hunter progression.",
           "conditions": [],
           "media": []
         }
@@ -140,8 +166,8 @@
       "choices": [
         {
           "id": "continue",
-          "label": "Keep the professional contact",
-          "text": "Build trust without committing to friendship, rivalry, or expedition companionship.",
+          "label": "Keep the working trust",
+          "text": "Build professional trust while leaving friendship, rivalry, and expedition companionship optional.",
           "conditions": [],
           "effects": [
             {
@@ -166,7 +192,7 @@
     },
     {
       "id": "hunter.relationship.conflict-open",
-      "title": "A route conflict",
+      "title": "A real disagreement about the route",
       "sourceDomain": "hunter",
       "trigger": [],
       "reactionTriggers": [
@@ -204,7 +230,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "The senior hunter wants to push a pressured route; you think the territory needs either protection or a more careful contract line. The disagreement is professional, not a morality score.",
+          "text": "The senior guide wants to push a pressured route; your reading suggests protection, delay, or a narrower contract. The conflict is about field judgment and responsibility, not a hidden morality score.",
           "conditions": [],
           "media": []
         }
@@ -212,8 +238,8 @@
       "choices": [
         {
           "id": "open",
-          "label": "State your position",
-          "text": "Make the route conflict explicit and resolve it on the next relationship beat.",
+          "label": "State the field disagreement",
+          "text": "Make the route conflict explicit so the next beat can resolve it as cooperation, rivalry, or refusal.",
           "conditions": [],
           "effects": [
             {
@@ -232,7 +258,7 @@
     },
     {
       "id": "hunter.relationship.conflict-resolve",
-      "title": "Resolve the route conflict",
+      "title": "Choose how the professional conflict continues",
       "sourceDomain": "hunter",
       "trigger": [],
       "reactionTriggers": [
@@ -264,7 +290,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "The disagreement can become cooperation, a useful professional rivalry, or a clean refusal to carry the dispute further.",
+          "text": "You can turn the disagreement into cooperation, keep it as a productive rivalry, or decline the extra relationship route entirely. Ordinary Hunter work remains available in every case.",
           "conditions": [],
           "media": []
         }
@@ -273,7 +299,7 @@
         {
           "id": "cooperate",
           "label": "Protect the route together",
-          "text": "Resolve the conflict around route protection and keep expedition companionship possible.",
+          "text": "Resolve the disagreement around route protection and keep optional companionship open.",
           "conditions": [],
           "effects": [
             {
@@ -297,7 +323,7 @@
         {
           "id": "rivalry",
           "label": "Stay professional rivals",
-          "text": "Keep the disagreement as a productive rivalry without blocking ordinary Hunter work.",
+          "text": "Let the disagreement sharpen both hunters' field standards without blocking ordinary work.",
           "conditions": [],
           "effects": [
             {
@@ -315,8 +341,8 @@
         },
         {
           "id": "decline",
-          "label": "Step away from the dispute",
-          "text": "Decline the extra relationship route; ordinary Hunter progression remains available.",
+          "label": "Step away from the extra relationship",
+          "text": "Refuse the relationship route cleanly; professional work and Hunter progression remain intact.",
           "conditions": [],
           "effects": [
             {
@@ -336,7 +362,7 @@
     },
     {
       "id": "hunter.relationship.companion",
-      "title": "Optional expedition companion",
+      "title": "An optional guide or friend in the field",
       "sourceDomain": "hunter",
       "trigger": [],
       "reactionTriggers": [
@@ -368,7 +394,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "With the conflict resolved cooperatively, the senior hunter can join a later expedition. This is optional support, not a gate on ordinary paid work.",
+          "text": "After cooperative conflict resolution, the senior hunter can accompany a later expedition as a guide, colleague, or friend. The support is optional and never becomes a gate on paid shifts or solo expedition access.",
           "conditions": [],
           "media": []
         }
@@ -377,7 +403,7 @@
         {
           "id": "accept",
           "label": "Keep the companion option",
-          "text": "Accept the senior hunter as a possible expedition companion.",
+          "text": "Allow an optional expedition partnership without making the relationship compulsory.",
           "conditions": [],
           "effects": [
             {
@@ -407,7 +433,7 @@
         {
           "id": "decline",
           "label": "Hunt independently",
-          "text": "Decline companionship without losing the professional relationship or career.",
+          "text": "Decline companionship while preserving professional respect, ordinary work, and the rest of the career.",
           "conditions": [],
           "effects": [
             {

@@ -2550,7 +2550,7 @@
       "scenes": [
         {
           "id": "spring.default",
-          "text": "Hunter shift: a short local contract keeps the work inside the city edge instead of launching a full expedition.",
+          "text": "A thaw-season local contract stays close to the city edge: confirm the sign, finish the paid task, and return before a short job turns into an expedition.",
           "conditions": [],
           "media": [
             "stage.hunt.spring"
@@ -2558,7 +2558,7 @@
         },
         {
           "id": "spring.melt-tracks",
-          "text": "Spring melt exposes overlapping tracks near the forest edge; the job is to separate fresh signs from old runoff marks.",
+          "text": "Meltwater has crossed several track lines. You compare stride, depth, and broken crust so fresh movement is not confused with marks widened by runoff.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -2571,7 +2571,7 @@
         },
         {
           "id": "spring.trap-check",
-          "text": "A spring trap-check becomes maintenance and release work rather than a long pursuit.",
+          "text": "The spring trap-check is maintenance work: inspect the line, free a bad catch safely, reset only what is usable, and report damage instead of extending the job into a pursuit.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -2589,7 +2589,7 @@
         },
         {
           "id": "spring.edge-scout",
-          "text": "Recognized spring work means scouting muddy edge routes and marking which approaches are still safe for later contracts.",
+          "text": "Recognized spring work means scouting muddy edge approaches, marking washed crossings, and handing the next shift a route note that distinguishes passable ground from an expedition problem.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -2607,7 +2607,7 @@
         },
         {
           "id": "summer.default",
-          "text": "Summer heat turns a routine escort into route pacing, water checks, and keeping a nervous client on the marked path.",
+          "text": "A summer escort is ordinary paid work: pace the marked route, check water stops, keep the client inside the agreed line, and return before heat turns a local job into a larger hunt.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -2620,7 +2620,7 @@
         },
         {
           "id": "summer.training",
-          "text": "A summer local job is mostly training: reading disturbed brush, setting a safe line, and returning before the heat peaks.",
+          "text": "Training work stays practical. You read bent brush and disturbed dust, explain which sign is reliable, and end the exercise while there is still enough daylight for a clean handoff.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -2638,7 +2638,7 @@
         },
         {
           "id": "summer.edge-predator",
-          "text": "Recognized summer work focuses on active predator signs at the forest edge without turning the shift into a large hunt.",
+          "text": "Fresh predator sign near the settled edge calls for verification, not a dramatic chase. You confirm direction, warn the client route, and leave a clear boundary for any later expedition.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -2656,7 +2656,7 @@
         },
         {
           "id": "autumn.default",
-          "text": "Autumn brings the busiest handoff days: sorting ordinary trophies, checking tags, and keeping contract records attached to the right lot.",
+          "text": "Autumn handoff days are busy with ordinary returns. You sort tags, field notes, and usable trophies so each contract stays attached to the right place, time, and client.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -2669,7 +2669,7 @@
         },
         {
           "id": "autumn.migration",
-          "text": "A tracker shift follows migration signs long enough to update local routes, then returns before the work becomes an expedition.",
+          "text": "A tracker shift follows migration sign only far enough to update the local map. You separate seasonal movement from unusual disturbance and bring the distinction back for the next contract.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -2687,7 +2687,7 @@
         },
         {
           "id": "autumn.trophy-handoff",
-          "text": "Recognized autumn work includes a formal trophy handoff and the argument over which signs justify a rarer contract.",
+          "text": "A recognized handoff is less about display than provenance: match the specimen or trophy to its route notes, identify what is ordinary, and flag only the evidence that might justify rarer work.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -2705,7 +2705,7 @@
         },
         {
           "id": "winter.default",
-          "text": "Winter scarcity makes a short track-check valuable on its own: one wrong route can waste the whole daylight window.",
+          "text": "Winter daylight is too scarce to waste on guesswork. A short local track-check confirms what moved recently, what is old sign, and which route can be worked without gambling the whole day.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -2718,7 +2718,7 @@
         },
         {
           "id": "winter.route-limits",
-          "text": "Recognized winter work is route triage—mark what remains passable, what needs rope, and what should wait for a prepared expedition.",
+          "text": "Recognized winter work is route triage: mark what remains passable, what needs a Rope Kit, and what should wait for a properly prepared two-Energy expedition.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -6962,7 +6962,7 @@
     },
     {
       "id": "hunter.expedition",
-      "label": "Hunter Hunt Expedition",
+      "label": "Hunter field expedition",
       "version": 1,
       "entryConditions": [
         {
@@ -7021,7 +7021,7 @@
       "options": [
         {
           "id": "hunter.expedition.local-route",
-          "label": "Take the marked local route",
+          "label": "Take the marked local expedition route",
           "category": "route",
           "conditions": [
             {
@@ -7048,7 +7048,7 @@
         },
         {
           "id": "hunter.expedition.rough-route",
-          "label": "Cross the rough route with a Rope Kit",
+          "label": "Use the Rope Kit on the rough route",
           "category": "route",
           "conditions": [
             {
@@ -7080,7 +7080,7 @@
         },
         {
           "id": "hunter.expedition.rare-route",
-          "label": "Follow the prepared rare-route clues",
+          "label": "Follow the prepared rare-contract route",
           "category": "route",
           "conditions": [
             {
@@ -7125,7 +7125,7 @@
         },
         {
           "id": "hunter.expedition.local-track",
-          "label": "Read the local signs",
+          "label": "Read and compare the local signs",
           "category": "tracking",
           "conditions": [
             {
@@ -7152,7 +7152,7 @@
         },
         {
           "id": "hunter.expedition.local-observe",
-          "label": "Observe before closing distance",
+          "label": "Observe before closing the distance",
           "category": "study",
           "conditions": [
             {
@@ -7179,7 +7179,7 @@
         },
         {
           "id": "hunter.expedition.rough-crossing",
-          "label": "Secure the rough crossing",
+          "label": "Secure the crossing with the Rope Kit",
           "category": "route_support",
           "conditions": [
             {
@@ -7258,7 +7258,7 @@
         },
         {
           "id": "hunter.expedition.study-sign",
-          "label": "Study the unusual sign instead of forcing contact",
+          "label": "Study the unusual sign without forcing contact",
           "category": "interpretation",
           "conditions": [
             {
