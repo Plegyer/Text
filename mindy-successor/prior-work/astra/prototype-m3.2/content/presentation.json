@@ -1543,6 +1543,30 @@
         "alt": "Satyr Maid staff debrief after closing.",
         "altKey": "presentation.static.career.satyr-maid.event.staff-debrief-night.alt"
       }
+    },
+    "job/satyr-maid/event/satyr-maid.school.rhetoric/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-result.svg",
+        "alt": "The maid applies a learned negotiation technique during ordinary floor service.",
+        "altKey": "presentation.static.career.satyr-maid.school.rhetoric.alt"
+      }
+    },
+    "job/satyr-maid/event/satyr-maid.school.management/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-result.svg",
+        "alt": "The maid reviews work records and scheduling as part of managing a shift.",
+        "altKey": "presentation.static.career.satyr-maid.school.management.alt"
+      }
+    },
+    "job/satyr-maid/event/satyr-maid.school.boundaries/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-result.svg",
+        "alt": "The maid calmly states clear service terms during a work scene.",
+        "altKey": "presentation.static.career.satyr-maid.school.boundaries.alt"
+      }
     }
   }
 }
