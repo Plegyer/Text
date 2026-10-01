@@ -4365,6 +4365,430 @@
     "event.satyr-maid.school.boundaries.choice.apply.text": {
       "ru": "Навык границ готов к карьерной реакции без обязательного романтического маршрута. Школа: Сера связала уверенную самопрезентацию с правом назвать границу в сервисной работе.",
       "en": "The boundary skill is ready for a career reaction without requiring a romance route. School: Sera connected confident presentation with the right to state a boundary in service work."
+    },
+    "action.tavern.shift.scene.spring.default.text": {
+      "ru": "После зимы дороги снова открываются, и в зал заходят люди, которые впервые за месяцы видят незнакомые лица. На сапогах у них грязь, на столах — карты с перечёркнутыми объездами, а твоя работа состоит в том, чтобы быстро понять, кому нужен ужин, кому сухое место для вещей, а кому — только понятный ответ, где теперь проходит дорога.",
+      "en": "The roads reopen after winter, and the common room fills with people seeing unfamiliar faces for the first time in months. Their boots carry mud and their maps are crossed with abandoned detours; your job is to learn quickly who needs a meal, who needs a dry place for their gear, and who only needs a clear answer about where the road runs now."
+    },
+    "action.tavern.shift.scene.spring.rooms.text": {
+      "ru": "Весенняя смена идёт между обычным обслуживанием и мелким ремонтом: где-то сохнет штукатурка, где-то заедает дверь, а одна комната временно закрыта, пока чинят ставни. Ты предупреждаешь гостей заранее и перестраиваешь порядок работы, не обещая больше мест, чем дом действительно может дать.",
+      "en": "A spring shift runs between ordinary service and small repairs: plaster is drying in one corner, a door sticks in another, and one guest room is temporarily closed while its shutters are fixed. You warn travelers early and rearrange the work without promising more space than the house can actually provide."
+    },
+    "action.tavern.shift.scene.spring.supplies.text": {
+      "ru": "Первые караваны приходят неровными группами: одна повозка опоздала, другая приехала раньше проводника, третья просит место только до рассвета. Важнее всего не скорость, а точная передача информации между залом, комнатами и двором, чтобы никто не получил чужое обещание.",
+      "en": "The first caravans arrive in uneven groups: one wagon is late, another reaches town before its guide, and a third only wants a place until dawn. Speed matters less than passing accurate information between the hall, rooms, and yard so nobody inherits someone else's promise."
+    },
+    "action.tavern.shift.scene.summer.default.text": {
+      "ru": "Летом столы освобождаются и снова заполняются быстрее, чем успевает остыть посуда. Ты держишь в голове не лица, а последовательность: кто только ждёт попутчиков, кто остаётся на ночь и кто уже уходит к следующему перевалу.",
+      "en": "In summer, tables empty and fill again before the dishes have time to cool. You track sequence rather than faces: who is only waiting for companions, who needs a room tonight, and who is already leaving for the next pass."
+    },
+    "action.tavern.shift.scene.summer.occupancy.text": {
+      "ru": "К вечеру спрос на комнаты растёт быстрее свободных ключей. Ты не создаёшь места словами: отмечаешь, какие комнаты действительно готовы, кому уже обещан ночлег и где лучше сразу предложить другой вариант, пока человек ещё может его выбрать.",
+      "en": "By evening, demand for rooms grows faster than the supply of free keys. You cannot create space with words, so you track which rooms are actually ready, which beds are already promised, and where an alternative should be offered while the traveler still has time to choose it."
+    },
+    "action.tavern.shift.scene.summer.deliveries.text": {
+      "ru": "Группа после долгого перехода приносит в дом пыль, свёрнутые карты и слишком много версий одной и той же дороги. Ты отделяешь просьбы о воде, еде и комнате от рассказов о маршруте, чтобы полезная информация не потерялась в усталости и бахвальстве.",
+      "en": "A group returning from a long route brings dust, rolled maps, and too many versions of the same road. You separate requests for water, food, and rooms from route stories so useful information does not disappear into fatigue and boasting."
+    },
+    "action.tavern.shift.scene.autumn.default.text": {
+      "ru": "Осенью за соседними столами одновременно обсуждают поставки, обратные дороги и сроки ярмарок. Ты следишь, чтобы записка о заказе не превратилась в слух, а случайно услышанный разговор — в обещание от имени трактира.",
+      "en": "In autumn, nearby tables discuss supplies, return routes, and fair schedules all at once. You make sure an order note does not turn into a rumor and an overheard conversation does not become a promise made on behalf of the house."
+    },
+    "action.tavern.shift.scene.autumn.orders.text": {
+      "ru": "Фестивальные гости приносят футляры, ткани, списки выступлений и путаницу с размещением. Ты не пытаешься управлять самим праздником: твоя часть — сделать так, чтобы люди знали, где их вещи, когда освобождается комната и к кому обращаться дальше.",
+      "en": "Festival guests bring cases, cloth, performance lists, and confusion about lodging. You do not try to run the festival itself; your part is making sure people know where their belongings are, when a room becomes free, and who they should ask next."
+    },
+    "action.tavern.shift.scene.autumn.rumours.text": {
+      "ru": "Охотники возвращаются с мокрыми плащами, следами лесной дороги и привычкой говорить коротко. Им нужны место для снаряжения, горячая еда и ясность о том, что можно оставить в общей комнате, а что должно оставаться при хозяине.",
+      "en": "Hunters return with wet cloaks, signs of the forest road, and a habit of speaking briefly. They need space for gear, hot food, and a clear answer about what can be left in a common room and what should stay with its owner."
+    },
+    "action.tavern.shift.scene.winter.default.text": {
+      "ru": "Зимняя дорога закрывает людям планы быстрее, чем они успевают их изменить. Несколько гостей, собиравшихся уехать утром, теперь остаются дольше, и твоя работа — заново проверить комнаты, еду и границы общего пространства, не превращая вынужденную задержку в чужой долг.",
+      "en": "Winter closes a road faster than travelers can revise their plans. Several guests who expected to leave in the morning now need to stay longer, and your job is to check rooms, food, and shared-space boundaries again without turning an involuntary delay into someone else's debt."
+    },
+    "action.tavern.shift.scene.winter.shelter.text": {
+      "ru": "В холодную неделю важнее обычного знать, что действительно есть в кладовой, а что только числится в старой записи. Ты сверяешь фактические запасы и предупреждаешь зал до того, как привычный заказ превратится в спор.",
+      "en": "In a cold week, it matters more than usual to know what is actually in storage and what only exists in an old note. You check the real stock and warn the hall before an ordinary request can become an argument."
+    },
+    "action.tavern.shift.scene.winter.house-node.text": {
+      "ru": "Посыльный приносит новость о перекрытом участке дороги, и разговоры в зале меняются за минуту. Ты не изображаешь дорожную службу: отмечаешь источник сообщения, говоришь, что подтверждено, и не выдаёшь тревожную догадку за факт.",
+      "en": "A messenger brings word that part of the road is closed, and the room's conversations change within a minute. You do not pretend to be a road authority; you record the source, state what is confirmed, and refuse to present an anxious guess as fact."
+    },
+    "action.tavern.shift.scene.spring.new-travelers.text": {
+      "ru": "С потеплением появляется больше гостей, которые здесь никогда не были. Они спрашивают о правилах дома, соседних дорогах и безопасных местах для багажа, а ты замечаешь, насколько полезнее спокойное объяснение, чем уверенный ответ на то, чего сама не знаешь.",
+      "en": "Warmer weather brings more guests who have never stayed here before. They ask about house rules, nearby roads, and safe places for their luggage, and you notice how much more useful a calm explanation is than a confident answer to something you do not actually know."
+    },
+    "action.tavern.shift.scene.summer.late-arrivals.text": {
+      "ru": "Поздние летние гости входят почти одновременно, когда дом уже близок к пределу. Вместо обещаний наугад ты сверяешь комнаты, объясняешь очередь и оставляешь достаточно ясные записи, чтобы следующая смена не повторяла тот же разговор с нуля.",
+      "en": "Late summer arrivals come through the door almost at once when the house is already close to full. Instead of guessing, you check the rooms, explain the order, and leave notes clear enough that the next shift will not have to rebuild the same conversation from nothing."
+    },
+    "action.tavern.shift.scene.autumn.supply-pressure.text": {
+      "ru": "К концу смены несколько привычных запасов заканчиваются раньше ожидаемого. Ты не придумываешь новую цену и не обещаешь невозможную поставку: отмечаешь остаток, предлагаешь доступную замену и передаёшь следующей смене, что именно нужно проверить утром.",
+      "en": "By the end of the shift, several ordinary supplies run out earlier than expected. You do not invent a new price or promise an impossible delivery; you record what remains, offer an available substitute, and tell the next shift exactly what needs checking in the morning."
+    },
+    "action.tavern.shift.scene.winter.long-stays.text": {
+      "ru": "Зимой временные постояльцы быстрее становятся знакомыми лицами, просто потому что уходить некуда. Это не делает их личную жизнь общей собственностью: ты продолжаешь различать полезную рабочую информацию, обычную болтовню и то, что было сказано доверительно.",
+      "en": "In winter, temporary lodgers become familiar faces more quickly simply because there is nowhere to go. That does not make their private lives common property: you keep separating useful work information, ordinary conversation, and what was shared in confidence."
+    },
+    "event.tavern.career.veteran-service.title": {
+      "ru": "Служба, проверенная временем",
+      "en": "Service that holds over time"
+    },
+    "event.tavern.career.veteran-service.variant.default.text": {
+      "ru": "Пятьдесят обычных смен означают не один великий поступок, а длинную цепочку дней, когда работа была сделана надёжно. Этот путь остаётся самостоятельным: он не требует превращать каждый гостевой разговор в сеть, кризис или личную историю.",
+      "en": "Fifty ordinary shifts represent not one grand gesture but a long chain of days when the work was done reliably. This path stands on its own; it does not require turning every guest conversation into a network, crisis, or personal story."
+    },
+    "event.tavern.career.veteran-service.choice.take-route.label": {
+      "ru": "Выбрать путь опытной службы",
+      "en": "Choose veteran service"
+    },
+    "event.tavern.career.veteran-service.choice.take-route.text": {
+      "ru": "Сделать надёжную обычную службу поздним карьерным путём.",
+      "en": "Make reliable service the late-career route."
+    },
+    "event.tavern.career.veteran-service.choice.keep-options-open.label": {
+      "ru": "Оставить другие пути открытыми",
+      "en": "Keep other routes open"
+    },
+    "event.tavern.career.veteran-service.choice.keep-options-open.text": {
+      "ru": "Зафиксировать опыт, не закрывая остальные поздние пути.",
+      "en": "Record the experience without choosing the veteran branch."
+    },
+    "event.tavern.career.innkeeper.title": {
+      "ru": "Дом, которым можно управлять",
+      "en": "A house that can be run"
+    },
+    "event.tavern.career.innkeeper.variant.default.text": {
+      "ru": "Ты начинаешь с устойчивости дома: сверяешь доступные комнаты, рабочие записи и то, что действительно осталось в запасах. Решение не самое эффектное, зато после него следующая смена понимает, что обещано, чего не хватает и кто отвечает за продолжение.",
+      "en": "You start with the stability of the house: check available rooms, working records, and what actually remains in storage. It is not the most dramatic solution, but the next shift knows what was promised, what is missing, and who owns the follow-up."
+    },
+    "event.tavern.career.innkeeper.choice.continue.label": {
+      "ru": "Выбрать путь управляющей",
+      "en": "Take the Innkeeper route"
+    },
+    "event.tavern.career.innkeeper.choice.continue.text": {
+      "ru": "Сделать управление домом поздним карьерным путём.",
+      "en": "Make house management the late-career route."
+    },
+    "event.tavern.career.information-broker.title": {
+      "ru": "Информация с понятным происхождением",
+      "en": "Information with a chain of custody"
+    },
+    "event.tavern.career.information-broker.variant.default.text": {
+      "ru": "Ты начинаешь с информации: разделяешь подтверждённые сведения, слухи и личные детали, затем передаёшь только то, что нужно для решения проблемы. Ценность здесь не в количестве секретов, а в том, что люди могут действовать на точных данных.",
+      "en": "You start with information: separate confirmed details, rumors, and private facts, then pass on only what is needed to solve the problem. The value is not the number of secrets you possess, but that people can act on accurate information."
+    },
+    "event.tavern.career.information-broker.choice.continue.label": {
+      "ru": "Выбрать путь информационного посредника",
+      "en": "Take the Information Broker route"
+    },
+    "event.tavern.career.information-broker.choice.continue.text": {
+      "ru": "Обращаться с информацией как с ответственностью, а не отдельной валютой.",
+      "en": "Treat information as a routed responsibility rather than a global currency."
+    },
+    "event.tavern.career.sanctuary.title": {
+      "ru": "Убежище с правилами и границами",
+      "en": "Shelter with rules and limits"
+    },
+    "event.tavern.career.sanctuary.variant.default.text": {
+      "ru": "Ты начинаешь с безопасности людей, которым сейчас некуда уйти, и перестраиваешь общий порядок так, чтобы временная защита не стала обещанием бесконечного бесплатного жилья. Дом помогает, но сохраняет правила, границы и способность работать завтра.",
+      "en": "You start with the safety of people who have nowhere practical to go tonight, then adjust the house rules so temporary protection does not become a promise of unlimited free housing. The house helps while keeping boundaries, rules, and the ability to function tomorrow."
+    },
+    "event.tavern.career.sanctuary.choice.continue.label": {
+      "ru": "Выбрать путь убежища",
+      "en": "Take the Sanctuary route"
+    },
+    "event.tavern.career.sanctuary.choice.continue.text": {
+      "ru": "Сделать ограниченную и защищённую помощь поздним карьерным путём.",
+      "en": "Make selective shelter and protection the late-career route."
+    },
+    "event.tavern.career.outcome-ready.title": {
+      "ru": "Открыто больше одного будущего",
+      "en": "More than one future remains open"
+    },
+    "event.tavern.career.outcome-ready.variant.default.text": {
+      "ru": "Когда один из поздних путей становится доступен, остальные не обязаны исчезать только ради красивого финала. Управление домом, работа с информацией и роль убежища отражают разные способы отвечать за трактир; окончательный выбор остаётся отдельным решением.",
+      "en": "When one late path becomes available, the others do not have to vanish merely to make the story look tidy. Running the house, handling information, and making it a refuge represent different kinds of responsibility; the final commitment remains a separate decision."
+    },
+    "event.tavern.career.outcome-ready.choice.continue.label": {
+      "ru": "Продолжать жить",
+      "en": "Keep living"
+    },
+    "event.tavern.career.outcome-ready.choice.continue.text": {
+      "ru": "Перейти в состояние готовности к исходам, не выбирая финал сейчас.",
+      "en": "Move to outcome-ready without committing an ending."
+    },
+    "event.tavern.recurring-traveler.intro.title": {
+      "ru": "Знакомый путешественник возвращается",
+      "en": "A familiar traveler returns"
+    },
+    "event.tavern.recurring-traveler.intro.variant.default.text": {
+      "ru": "Постоянный путешественник начинает узнавать тебя по сменам и обращается к тебе как к сотруднице, которая знает порядок дома. Разговор остаётся дружелюбным и профессиональным; знакомство не требует личной близости.",
+      "en": "A recurring traveler begins to recognize you from your shifts and approaches you as a staff member who knows how the house works. The exchange stays friendly and professional; familiarity does not require personal intimacy."
+    },
+    "event.tavern.recurring-traveler.intro.choice.professional.label": {
+      "ru": "Оставить разговор профессиональным",
+      "en": "Keep the exchange professional"
+    },
+    "event.tavern.recurring-traveler.intro.choice.professional.text": {
+      "ru": "Поговорить о доме и дороге в рамках обычной работы.",
+      "en": "Talk about the house and the road while staying inside ordinary service."
+    },
+    "event.tavern.recurring-traveler.trust.title": {
+      "ru": "Профессиональное доверие становится привычным",
+      "en": "Professional trust becomes familiar"
+    },
+    "event.tavern.recurring-traveler.trust.variant.default.text": {
+      "ru": "После нескольких встреч человек уже не повторяет весь контекст с начала и доверяет тебе рабочие детали маршрута. Ты отвечаешь тем же — точностью и предсказуемостью, а не обещанием особого отношения.",
+      "en": "After several meetings, the traveler no longer repeats the whole context from the beginning and trusts you with practical route details. You answer in kind—with accuracy and predictability, not a promise of special treatment."
+    },
+    "event.tavern.recurring-traveler.trust.choice.accept-night.label": {
+      "ru": "Согласиться на добровольную встречу",
+      "en": "Agree to the voluntary meeting"
+    },
+    "event.tavern.recurring-traveler.trust.choice.accept-night.text": {
+      "ru": "Просьба поговорить после закрытия звучит как приглашение, а не как часть смены. Если ты соглашаешься, встреча остаётся добровольной и не превращает будущую работу в личную обязанность.",
+      "en": "A request to talk after closing is an invitation, not part of the shift. If you accept, the meeting remains voluntary and does not turn future work into a personal obligation."
+    },
+    "event.tavern.recurring-traveler.trust.choice.decline-night.label": {
+      "ru": "Оставить контакт в рамках работы",
+      "en": "Keep contact inside work"
+    },
+    "event.tavern.recurring-traveler.trust.choice.decline-night.text": {
+      "ru": "Ты отказываешься от разговора после закрытия, и человек принимает ответ без торга. На следующей смене профессиональный контакт продолжается как обычно — отказ не обнуляет доверие и не блокирует карьеру.",
+      "en": "You decline the after-hours conversation, and the traveler accepts the answer without bargaining. On the next shift, the professional connection continues normally; refusal does not erase trust or block the career."
+    },
+    "event.tavern.recurring-traveler.request.title": {
+      "ru": "Практическая просьба после разговора о дороге",
+      "en": "A practical request after the road talk"
+    },
+    "event.tavern.recurring-traveler.request.variant.default.text": {
+      "ru": "Практический запрос возвращается в рабочую плоскость: ты проверяешь то, что можешь проверить по правилам дома, и прямо называешь то, что остаётся неизвестным. Помощь заканчивается вместе с задачей, а не превращается в бессрочное обещание.",
+      "en": "A practical request returns to the work context: you check what the house rules allow you to check and state clearly what remains unknown. The help ends with the task rather than becoming an indefinite promise."
+    },
+    "event.tavern.recurring-traveler.request.choice.accept-request.label": {
+      "ru": "Принять просьбу на профессиональных условиях",
+      "en": "Keep the request on professional terms"
+    },
+    "event.tavern.recurring-traveler.request.choice.accept-request.text": {
+      "ru": "Взяться за работу с информацией, не обещая заранее раскрывать личные сведения.",
+      "en": "Accept the information-handling request without promising a particular disclosure."
+    },
+    "event.tavern.recurring-traveler.request.choice.decline-request.label": {
+      "ru": "Отказаться от дополнительной просьбы",
+      "en": "Decline the extra request"
+    },
+    "event.tavern.recurring-traveler.request.choice.decline-request.text": {
+      "ru": "Сохранить профессиональный контакт, не принимая ответственность за слух.",
+      "en": "Keep the traveler relationship professional without taking responsibility for the rumour."
+    },
+    "event.tavern.recurring-traveler.confidentiality.title": {
+      "ru": "Что конфиденциальность значит на работе",
+      "en": "What confidentiality means at work"
+    },
+    "event.tavern.recurring-traveler.confidentiality.variant.default.text": {
+      "ru": "Доверие становится сложнее, когда чужая просьба о конфиденциальности сталкивается с обязанностями перед домом. Ты выбираешь, какую информацию действительно нужно передать, и не используешь остальное как наказание за несогласие.",
+      "en": "Trust becomes more complicated when a request for confidentiality meets your responsibilities to the house. You decide what information genuinely needs to be passed on and do not use the rest as punishment for disagreement."
+    },
+    "event.tavern.recurring-traveler.confidentiality.choice.keep-private.label": {
+      "ru": "Сохранить личность путешественника в тайне",
+      "en": "Keep the traveler private"
+    },
+    "event.tavern.recurring-traveler.confidentiality.choice.keep-private.text": {
+      "ru": "Оставить только нужную рабочую деталь маршрута и защитить личность источника.",
+      "en": "Keep the traveler's identity private while retaining only the route detail the work actually needs."
+    },
+    "event.tavern.recurring-traveler.confidentiality.choice.share-route-only.label": {
+      "ru": "Передать только деталь маршрута",
+      "en": "Share only the route detail"
+    },
+    "event.tavern.recurring-traveler.confidentiality.choice.share-route-only.text": {
+      "ru": "Передать проверенную деталь маршрута, не раскрывая личность человека.",
+      "en": "Share only the verified route detail and keep personal identity outside the handoff."
+    },
+    "event.tavern.recurring-traveler.night.title": {
+      "ru": "Добровольный разговор после закрытия",
+      "en": "A voluntary conversation after closing"
+    },
+    "event.tavern.recurring-traveler.night.variant.default.text": {
+      "ru": "Просьба поговорить после закрытия звучит как приглашение, а не как часть смены. Если ты соглашаешься, встреча остаётся добровольной и не превращает будущую работу в личную обязанность.",
+      "en": "A request to talk after closing is an invitation, not part of the shift. If you accept, the meeting remains voluntary and does not turn future work into a personal obligation."
+    },
+    "event.tavern.recurring-traveler.night.choice.finish.label": {
+      "ru": "Закончить разговор",
+      "en": "Finish the conversation"
+    },
+    "event.tavern.recurring-traveler.night.choice.finish.text": {
+      "ru": "Закончить добровольный разговор на своих условиях; дальше контакт снова подчиняется обычным профессиональным правилам.",
+      "en": "End the voluntary conversation on your own terms; the contact returns to ordinary professional rules afterward."
+    },
+    "event.tavern.house-notes.night.title": {
+      "ru": "Комнаты, запасы и передача следующей смене",
+      "en": "Rooms, supplies, and the next handoff"
+    },
+    "event.tavern.house-notes.night.variant.default.text": {
+      "ru": "Гостевая книга полезна только тогда, когда понятно, зачем её открыли. Ты ищешь запись, связанную с текущей задачей, и не превращаешь соседние имена, даты и маршруты в материал для любопытства.",
+      "en": "The guest ledger is useful only when there is a clear reason to open it. You look for the entry connected to the current task and do not turn neighboring names, dates, and routes into material for curiosity."
+    },
+    "event.tavern.house-notes.night.choice.finish.label": {
+      "ru": "Закрыть записи",
+      "en": "Close the notes"
+    },
+    "event.tavern.house-notes.night.choice.finish.text": {
+      "ru": "Оставить наблюдения о комнатах и запасах доступными для следующих решений.",
+      "en": "Keep the observations available for later Tavern decisions."
+    },
+    "event.tavern.access.staff-key.title": {
+      "ru": "Служебный ключ — рабочий инструмент",
+      "en": "A staff key is a work tool"
+    },
+    "event.tavern.access.staff-key.variant.default.text": {
+      "ru": "Ключ от гостевых комнат даёт доступ для работы, а не право заходить без причины. Ты проверяешь, зачем нужна комната, стучишь даже тогда, когда уверена, что она пуста, и возвращаешь ключ туда, где следующая смена сможет его найти.",
+      "en": "A staff key grants access for work, not permission to enter without a reason. You check why the room needs attention, knock even when you believe it is empty, and return the key where the next shift can find it."
+    },
+    "event.tavern.access.staff-key.choice.take-key.label": {
+      "ru": "Взять служебный ключ",
+      "en": "Take the staff key"
+    },
+    "event.tavern.access.staff-key.choice.take-key.text": {
+      "ru": "Принять узкий рабочий инструмент: входить в гостевые комнаты только по служебной задаче, стучать и возвращать ключ следующей смене.",
+      "en": "Take the staff key as a narrow work tool: enter guest rooms only for a defined staff task, knock first, and return it for the next shift."
+    },
+    "event.tavern.access.staff-key.choice.leave-key.label": {
+      "ru": "Оставить ключ на стойке",
+      "en": "Leave the key at the desk"
+    },
+    "event.tavern.access.staff-key.choice.leave-key.text": {
+      "ru": "Продолжить карьеру без необязательного доступа к гостевым комнатам.",
+      "en": "Keep the career active without taking the optional access route yet."
+    },
+    "event.tavern.access.guest-ledger.title": {
+      "ru": "Читать только то, что нужно для задачи",
+      "en": "Read only what the task requires"
+    },
+    "event.tavern.access.guest-ledger.variant.default.text": {
+      "ru": "Гостевая книга полезна только тогда, когда понятно, зачем её открыли. Ты ищешь запись, связанную с текущей задачей, и не превращаешь соседние имена, даты и маршруты в материал для любопытства.",
+      "en": "The guest ledger is useful only when there is a clear reason to open it. You look for the entry connected to the current task and do not turn neighboring names, dates, and routes into material for curiosity."
+    },
+    "event.tavern.access.guest-ledger.choice.record-ledger.label": {
+      "ru": "Зафиксировать расхождение в книге",
+      "en": "Record the ledger evidence"
+    },
+    "event.tavern.access.guest-ledger.choice.record-ledger.text": {
+      "ru": "Записать только относящееся к задаче расхождение между комнатой и книгой; соседние имена и маршруты не становятся уликой.",
+      "en": "Record only the room-and-ledger discrepancy relevant to the current task; neighboring names and routes remain outside the evidence."
+    },
+    "event.tavern.information.rumour-route.title": {
+      "ru": "Сообщение ещё не стало фактом",
+      "en": "A report is not yet a fact"
+    },
+    "event.tavern.information.rumour-route.variant.ledger-crosscheck.text": {
+      "ru": "Запись в гостевой книге не доказывает чужую историю целиком, но помогает проверить время и последовательность поездки. Этого достаточно, чтобы отделить полезное совпадение от удобной легенды.",
+      "en": "A guest-ledger entry does not prove someone's whole story, but it can check the timing and sequence of a journey. That is enough to separate a useful match from a convenient legend."
+    },
+    "event.tavern.information.rumour-route.variant.default.text": {
+      "ru": "Путешественник уверенно рассказывает, что одна из дорог стала опасной. Ты записываешь это как сообщение конкретного человека, а не как установленный факт: источник и формулировка важнее громкости рассказа.",
+      "en": "A traveler confidently says that one road has become dangerous. You record it as one person's report rather than an established fact; the source and wording matter more than how loudly the story is told."
+    },
+    "event.tavern.information.rumour-route.choice.record-route.label": {
+      "ru": "Записать вопрос о маршруте",
+      "en": "Record the route question"
+    },
+    "event.tavern.information.rumour-route.choice.record-route.text": {
+      "ru": "Полезный слух помогает принять решение, но не становится отдельной монетой в кармане. Ты можешь передать подтверждённую деталь нужному человеку, сохранив границу между информацией, сплетней и оплатой.",
+      "en": "Useful information can shape a decision without becoming a new kind of currency. You can pass a confirmed detail to the person who needs it while keeping a boundary between information, gossip, and payment."
+    },
+    "event.tavern.housing.meal-in-kind.title": {
+      "ru": "Помощь натурой, а не новое правило жилья",
+      "en": "Help in kind, not a new housing rule"
+    },
+    "event.tavern.housing.meal-in-kind.variant.street.text": {
+      "ru": "После смены остаётся обычная еда для персонала, и сегодня её хватает, чтобы ты поела перед уходом. Это помощь в натуральной форме, а не бесплатная комната: выбор ночлега и его обычные последствия остаются отдельными.",
+      "en": "After the shift, ordinary staff food remains, and tonight there is enough for you to eat before leaving. It is help in kind, not a free room; your lodging choice and its ordinary consequences remain separate."
+    },
+    "event.tavern.housing.meal-in-kind.variant.cheap.text": {
+      "ru": "Когда бюджет и дешёвая комната уже съели большую часть запаса на день, еда после смены делает вечер проще. Она не возвращает оплату за комнату и не меняет цену жилья — просто один практический расход сегодня не ложится на тебя.",
+      "en": "When the day's budget and a cheap room have already taken most of what you can spare, a meal after the shift makes the evening easier. It does not refund the room or change lodging prices; it simply means one practical need is covered tonight."
+    },
+    "event.tavern.housing.meal-in-kind.variant.default.text": {
+      "ru": "Помощь трактира имеет ясные границы: еда после работы или разовая практическая поддержка не превращаются в постоянное право на жильё. Это сохраняет помощь полезной, не стирая обычную экономику ночлега.",
+      "en": "Tavern assistance has clear limits: a meal after work or one practical accommodation does not become a permanent entitlement to housing. That keeps the help useful without erasing the ordinary lodging economy."
+    },
+    "event.tavern.housing.meal-in-kind.choice.accept-meal.label": {
+      "ru": "Принять еду для персонала",
+      "en": "Accept the staff meal"
+    },
+    "event.tavern.housing.meal-in-kind.choice.accept-meal.text": {
+      "ru": "Никто не требует личной услуги, тайного долга или обещания в обмен на помощь. Поддержка остаётся частью понятных правил дома и может закончиться без того, чтобы твоя карьера или отношения были поставлены на кон.",
+      "en": "Nobody asks for a personal favor, hidden debt, or promise in exchange for the help. The support stays inside clear house rules and can end without putting your career or relationships at stake."
+    },
+    "event.tavern.housing.meal-in-kind.choice.decline-meal.label": {
+      "ru": "Отказаться от еды",
+      "en": "Decline the meal"
+    },
+    "event.tavern.housing.meal-in-kind.choice.decline-meal.text": {
+      "ru": "Сохранить рабочие отношения без изменений и пользоваться обычными вариантами жилья.",
+      "en": "Keep the work relationship unchanged and continue using ordinary housing choices."
+    },
+    "event.tavern.activity.forest-return.title": {
+      "ru": "Дорога, увиденная своими глазами",
+      "en": "The road seen with your own eyes"
+    },
+    "event.tavern.activity.forest-return.variant.ledger-context.text": {
+      "ru": "Ты отделяешь увиденное сама от того, что услышала уже после возвращения. Так лесной результат становится полезным фактом для трактира и не растворяется в общем шуме слухов.",
+      "en": "You separate what you saw yourself from what you heard only after returning. That lets the forest result become a useful Tavern fact without dissolving into the general noise of rumor."
+    },
+    "event.tavern.activity.forest-return.variant.default.text": {
+      "ru": "Вернувшись из леса, ты можешь ответить на вопрос о дороге из собственного опыта, а не со слов очередного гостя. Ты описываешь только тот участок, который действительно видела, и не превращаешь один удачный выход в обещание безопасного маршрута на весь сезон.",
+      "en": "After returning from the forest, you can answer a route question from direct experience rather than another guest's story. You describe only the stretch you actually saw and do not turn one successful outing into a promise that the whole route will stay safe all season."
+    },
+    "event.tavern.activity.forest-return.choice.confirm-rumour.label": {
+      "ru": "Подтвердить сведения о дороге",
+      "en": "Confirm the route information"
+    },
+    "event.tavern.activity.forest-return.choice.confirm-rumour.text": {
+      "ru": "Вторая независимая деталь совпадает с первым сообщением. Теперь у тебя есть подтверждённая рабочая информация, но не повод объявлять всё остальное в рассказе истинным.",
+      "en": "A second independent detail matches the first report. You now have confirmed working information, but not a reason to declare every other part of the story true."
+    },
+    "event.tavern.crisis.occupancy-supply-confidentiality.title": {
+      "ru": "Комнаты, запасы и конфиденциальность сталкиваются",
+      "en": "Rooms, supplies, and confidentiality collide"
+    },
+    "event.tavern.crisis.occupancy-supply-confidentiality.variant.default.text": {
+      "ru": "Дом одновременно сталкивается с переполненными комнатами, сбившейся поставкой и просьбой не раскрывать маршрут одного из гостей. Нельзя решить всё одной красивой фразой: нужно выбрать, какую ответственность ты берёшь на себя и какой риск оставляешь другим системам дома.",
+      "en": "The house faces crowded rooms, a disrupted supply, and a request to keep one guest's route private at the same time. There is no single clever sentence that solves all three; you have to choose which responsibility you take on and which risk remains for the rest of the house."
+    },
+    "event.tavern.crisis.occupancy-supply-confidentiality.choice.stabilize-house.label": {
+      "ru": "Стабилизировать комнаты и запасы по записям",
+      "en": "Stabilize rooms and supplies through records"
+    },
+    "event.tavern.crisis.occupancy-supply-confidentiality.choice.stabilize-house.text": {
+      "ru": "Ты начинаешь с устойчивости дома: сверяешь доступные комнаты, рабочие записи и то, что действительно осталось в запасах. Решение не самое эффектное, зато после него следующая смена понимает, что обещано, чего не хватает и кто отвечает за продолжение.",
+      "en": "You start with the stability of the house: check available rooms, working records, and what actually remains in storage. It is not the most dramatic solution, but the next shift knows what was promised, what is missing, and who owns the follow-up."
+    },
+    "event.tavern.crisis.occupancy-supply-confidentiality.choice.manage-information.label": {
+      "ru": "Разрешить конфликт через проверенную информацию",
+      "en": "Resolve the conflict through verified information"
+    },
+    "event.tavern.crisis.occupancy-supply-confidentiality.choice.manage-information.text": {
+      "ru": "Ты начинаешь с информации: разделяешь подтверждённые сведения, слухи и личные детали, затем передаёшь только то, что нужно для решения проблемы. Ценность здесь не в количестве секретов, а в том, что люди могут действовать на точных данных.",
+      "en": "You start with information: separate confirmed details, rumors, and private facts, then pass on only what is needed to solve the problem. The value is not the number of secrets you possess, but that people can act on accurate information."
+    },
+    "event.tavern.crisis.occupancy-supply-confidentiality.choice.protect-shelter.label": {
+      "ru": "Защитить временное убежище и конфиденциальность",
+      "en": "Protect temporary shelter and confidentiality"
+    },
+    "event.tavern.crisis.occupancy-supply-confidentiality.choice.protect-shelter.text": {
+      "ru": "Ты начинаешь с безопасности людей, которым сейчас некуда уйти, и перестраиваешь общий порядок так, чтобы временная защита не стала обещанием бесконечного бесплатного жилья. Дом помогает, но сохраняет правила, границы и способность работать завтра.",
+      "en": "You start with the safety of people who have nowhere practical to go tonight, then adjust the house rules so temporary protection does not become a promise of unlimited free housing. The house helps while keeping boundaries, rules, and the ability to function tomorrow."
+    },
+    "event.tavern.crisis.occupancy-supply-confidentiality.choice.defer.label": {
+      "ru": "Пока поддерживать работу дома",
+      "en": "Keep the house running for now"
+    },
+    "event.tavern.crisis.occupancy-supply-confidentiality.choice.defer.text": {
+      "ru": "Не закрывать большой кризис, пока не готов путь, который ты действительно поддерживаешь.",
+      "en": "Do not resolve the larger crisis until a route you actually support is ready."
     }
   }
 }
