@@ -1,0 +1,91 @@
+{
+  "formatVersion": 1,
+  "id": "school.localization-v10.terminology-audit.v1",
+  "status": "CONTENT_AUDIT_ONLY",
+  "baseline": "6afc01061646bc52cec824863bf89e8ad8c309d0",
+  "courseNames": [
+    {
+      "courseId": "school.course.literacy_and_numbers",
+      "canonicalRu": "Грамотность и счёт",
+      "presentationRu": "Грамота и числа",
+      "teacherMediaRu": "Грамота и числа",
+      "aligned": false
+    },
+    {
+      "courseId": "school.course.arcana",
+      "canonicalRu": "Аркана",
+      "presentationRu": "Аркана",
+      "teacherMediaRu": "Аркана",
+      "aligned": true
+    },
+    {
+      "courseId": "school.course.rhetoric_and_social",
+      "canonicalRu": "Риторика и общение",
+      "presentationRu": "Риторика и общение",
+      "teacherMediaRu": "Риторика и общение",
+      "aligned": true
+    },
+    {
+      "courseId": "school.course.etiquette_and_presentation",
+      "canonicalRu": "Этикет и самопрезентация",
+      "presentationRu": "Этикет и подача",
+      "teacherMediaRu": "Этикет и подача",
+      "aligned": false
+    },
+    {
+      "courseId": "school.course.field_craft",
+      "canonicalRu": "Полевая практика",
+      "presentationRu": "Полевая практика",
+      "teacherMediaRu": "Полевая практика",
+      "aligned": true
+    },
+    {
+      "courseId": "school.course.physical_training",
+      "canonicalRu": "Физическая подготовка",
+      "presentationRu": "Физическая подготовка",
+      "teacherMediaRu": "Физическая подготовка",
+      "aligned": true
+    },
+    {
+      "courseId": "school.course.arts_and_performance",
+      "canonicalRu": "Искусство и выступление",
+      "presentationRu": "Искусство и выступление",
+      "teacherMediaRu": "Искусство и выступление",
+      "aligned": true
+    },
+    {
+      "courseId": "school.course.body_confidence",
+      "canonicalRu": "Уверенность в теле",
+      "presentationRu": "Уверенность в теле",
+      "teacherMediaRu": "Уверенность в теле",
+      "aligned": true
+    }
+  ],
+  "accessibilityGrammarDebt": [
+    {
+      "key": "presentation.static.school-course-arcana.alt",
+      "currentEn": "A Arcana lesson scene with course-specific materials and no depicted teacher.",
+      "expectedArticle": "An"
+    },
+    {
+      "key": "presentation.static.school-course-etiquette-and-presentation.alt",
+      "currentEn": "A Etiquette & Presentation lesson scene with course-specific materials and no depicted teacher.",
+      "expectedArticle": "An"
+    },
+    {
+      "key": "presentation.static.school-course-arts-and-performance.alt",
+      "currentEn": "A Arts & Performance lesson scene with course-specific materials and no depicted teacher.",
+      "expectedArticle": "An"
+    }
+  ],
+  "mechanicsTerms": {
+    "paidLessonJournal": "Tuition / Energy raw English",
+    "localizedEventTerms": "RU/EN paired",
+    "nightStudyUi": "localized generic template"
+  },
+  "constraints": {
+    "changesRootLocalization": false,
+    "changesPresentation": false,
+    "changesMedia": false
+  }
+}
