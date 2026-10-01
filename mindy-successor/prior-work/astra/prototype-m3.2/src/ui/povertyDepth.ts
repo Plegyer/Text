@@ -187,7 +187,21 @@ const acceptedPovertyDepthAdditions=[
   ['poverty-recovery-production.herb-bundle','default','presentation.poverty.depth.poverty-recovery-production-herb-bundle.default.f.text'],
   ['poverty-street-production.helpful-summer','default','presentation.poverty.depth.poverty-street-production-helpful-summer.default.g.text'],
   ['poverty-street-production-v2.helpful-summer-shade','market-closing','presentation.poverty.depth.poverty-street-production-v2-helpful-summer-shade.market-closing.g.text'],
-  ['poverty-street-production-v2.helpful-summer-shade','late-shade','presentation.poverty.depth.poverty-street-production-v2-helpful-summer-shade.late-shade.g.text']
+  ['poverty-street-production-v2.helpful-summer-shade','late-shade','presentation.poverty.depth.poverty-street-production-v2-helpful-summer-shade.late-shade.g.text'],
+  ['poverty-pressure-production.cold-rain','default','presentation.poverty.housing-depth-v2.street.spring.doorway.text'],
+  ['poverty-street-production-v2.helpful-summer-shade','late-shade','presentation.poverty.housing-depth-v2.street.summer.late-wall.text'],
+  ['poverty-street-production-v2.neutral-autumn-crossing','dry-arcade','presentation.poverty.housing-depth-v2.street.autumn.arcade.text'],
+  ['poverty-street-production-v2.pressure-winter-wind','crosswind','presentation.poverty.housing-depth-v2.street.winter.crosswind.text'],
+  ['poverty-cheap-production-v2.shared-room-seasons','spring-window','presentation.poverty.housing-depth-v2.cheap.spring.window.text'],
+  ['poverty-cheap-production-v2.shared-room-seasons','summer-heat','presentation.poverty.housing-depth-v2.cheap.summer.floor-space.text'],
+  ['poverty-cheap-production.shared-quiet-autumn','default','presentation.poverty.housing-depth-v2.cheap.autumn.lamp.text'],
+  ['poverty-cheap-production-v2.shared-room-seasons','winter-stove','presentation.poverty.housing-depth-v2.cheap.winter.stove-turn.text'],
+  ['poverty-recovery-production.small-coin-help','default','presentation.poverty.contact-recovery-v2.help.breathing-space.text'],
+  ['poverty-recovery-production.short-cleanup','default','presentation.poverty.contact-recovery-v2.cleanup.familiar-face.text'],
+  ['poverty-recovery-production.herb-bundle','default','presentation.poverty.contact-recovery-v2.herb.no-owner.text'],
+  ['poverty-cheap-production-v2.shared-room-seasons','spring-window','presentation.poverty.contact-recovery-v2.shared-room.spring-routine.text'],
+  ['poverty-cheap-production.shared-quiet-autumn','default','presentation.poverty.contact-recovery-v2.shared-room.autumn-neighbors.text'],
+  ['poverty-street-production.helpful-summer','default','presentation.poverty.contact-recovery-v2.market.recognition.text']
 ] as const;
 
 export const povertyDepthLookupEntries:readonly PovertyDepthLookupEntry[]=basePovertyDepthLookupEntries.map(entry=>{

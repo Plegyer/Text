@@ -98,9 +98,14 @@ test('C5-59 eight v2 course fixtures bind exactly to current course track teache
   }
 });
 
-test('C5-59 prepared v2 localization is complete stable unique and collision-free',()=>{
+test('C5-59 prepared v2 localization is complete unique and only selected lesson-success bodies are integrated',()=>{
   const all=[...courseFixtures,teacherMatrix];
   const seen=new Set<string>();
+  const integrated=new Set<string>(
+    teacherMatrix.teachers.map((teacher:any)=>
+      teacher.variants.find((variant:any)=>variant.role==='lesson_success').keys.body
+    )
+  );
 
   for(const fixture of all){
     const expectedRefs=[...new Set(refs(fixture))].sort();
@@ -112,11 +117,13 @@ test('C5-59 prepared v2 localization is complete stable unique and collision-fre
       assert.ok(pair.ru.trim().length>0,`${key}: RU`);
       assert.ok(pair.en.trim().length>0,`${key}: EN`);
       assert.equal(seen.has(key),false,`duplicate prepared key: ${key}`);
-      assert.equal(localization.strings?.[key],undefined,`root localization collision: ${key}`);
+      if(integrated.has(key))assert.deepEqual(localization.strings?.[key],pair,`integrated body mismatch: ${key}`);
+      else assert.equal(localization.strings?.[key],undefined,`unselected prepared key entered root localization: ${key}`);
       seen.add(key);
     }
   }
 
+  assert.equal(integrated.size,8);
   assert.equal(seen.size,112);
 });
 
