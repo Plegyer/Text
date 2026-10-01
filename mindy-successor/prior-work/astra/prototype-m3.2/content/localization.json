@@ -327,8 +327,8 @@
       "en": "Literacy & Numbers"
     },
     "school.course.literacy_and_numbers.description": {
-      "ru": "Мара Фен ведёт практическую грамотность, счёт и работу с записями: главное — чтобы ход решения мог проверить другой человек.",
-      "en": "Mara Fen teaches practical literacy, numeracy, and record work, with an emphasis on reasoning another person can verify."
+      "ru": "Практическая грамотность, счёт и работа с записями под руководством Мары Фен: главное — чтобы ход решения мог проверить другой человек.",
+      "en": "Practical literacy, numeracy, and record work with Mara Fen: the reasoning should remain clear enough for another person to verify."
     },
     "school.course.arcana.label": {
       "ru": "Аркана",
@@ -1391,64 +1391,64 @@
       "en": "Winter shift: non-explicit work preparation."
     },
     "presentation.static.school-course-literacy-and-numbers.alt": {
-      "ru": "Учебная сцена курса «Грамотность и счёт» с материалами для записей и расчётов; преподаватель не изображён.",
-      "en": "A Literacy & Numbers lesson scene with materials for records and calculations; no teacher is depicted."
+      "ru": "Учебная сцена курса «Грамотность и счёт» с характерными материалами и без изображения преподавателя.",
+      "en": "A Literacy & Numbers lesson scene with course-specific materials and no depicted teacher."
     },
     "presentation.static.school-course-literacy-and-numbers.caption": {
       "ru": "Грамотность и счёт: учебное занятие.",
       "en": "Literacy & Numbers: lesson session."
     },
     "presentation.static.school-course-arcana.alt": {
-      "ru": "Учебная сцена курса «Аркана» с материалами для наблюдения и безопасной проверки гипотез; преподаватель не изображён.",
-      "en": "An Arcana lesson scene with materials for observation and safe hypothesis testing; no teacher is depicted."
+      "ru": "Учебная сцена курса «Аркана» с характерными материалами и без изображения преподавателя.",
+      "en": "An Arcana lesson scene with course-specific materials and no depicted teacher."
     },
     "presentation.static.school-course-arcana.caption": {
       "ru": "Аркана: учебное занятие.",
       "en": "Arcana: lesson session."
     },
     "presentation.static.school-course-rhetoric-and-social.alt": {
-      "ru": "Учебная сцена курса «Риторика и общение» с материалами для речи, слушания и разбора разговора; преподаватель не изображён.",
-      "en": "A Rhetoric & Social lesson scene with materials for speaking, listening, and conversation review; no teacher is depicted."
+      "ru": "Учебная сцена курса «Риторика и общение» с характерными материалами и без изображения преподавателя.",
+      "en": "A Rhetoric & Social lesson scene with course-specific materials and no depicted teacher."
     },
     "presentation.static.school-course-rhetoric-and-social.caption": {
       "ru": "Риторика и общение: учебное занятие.",
       "en": "Rhetoric & Social: lesson session."
     },
     "presentation.static.school-course-etiquette-and-presentation.alt": {
-      "ru": "Учебная сцена курса «Этикет и самопрезентация» с материалами по уместности и подготовке; преподаватель не изображён.",
-      "en": "An Etiquette & Presentation lesson scene with materials on context and preparation; no teacher is depicted."
+      "ru": "Учебная сцена курса «Этикет и самопрезентация» с характерными материалами и без изображения преподавателя.",
+      "en": "An Etiquette & Presentation lesson scene with course-specific materials and no depicted teacher."
     },
     "presentation.static.school-course-etiquette-and-presentation.caption": {
       "ru": "Этикет и самопрезентация: учебное занятие.",
       "en": "Etiquette & Presentation: lesson session."
     },
     "presentation.static.school-course-field-craft.alt": {
-      "ru": "Учебная сцена курса «Полевая практика» с маршрутными заметками и практическими материалами; преподаватель не изображён.",
-      "en": "A Field Craft lesson scene with route notes and practical materials; no teacher is depicted."
+      "ru": "Учебная сцена курса «Полевая практика» с характерными материалами и без изображения преподавателя.",
+      "en": "A Field Craft lesson scene with course-specific materials and no depicted teacher."
     },
     "presentation.static.school-course-field-craft.caption": {
       "ru": "Полевая практика: учебное занятие.",
       "en": "Field Craft: lesson session."
     },
     "presentation.static.school-course-physical-training.alt": {
-      "ru": "Учебная сцена курса «Физическая подготовка» с материалами по технике и темпу; преподаватель не изображён.",
-      "en": "A Physical Training lesson scene with materials on technique and pacing; no teacher is depicted."
+      "ru": "Учебная сцена курса «Физическая подготовка» с характерными материалами и без изображения преподавателя.",
+      "en": "A Physical Training lesson scene with course-specific materials and no depicted teacher."
     },
     "presentation.static.school-course-physical-training.caption": {
       "ru": "Физическая подготовка: учебное занятие.",
       "en": "Physical Training: lesson session."
     },
     "presentation.static.school-course-arts-and-performance.alt": {
-      "ru": "Учебная сцена курса «Искусство и выступление» с материалами для репетиции и работы с ритмом; преподаватель не изображён.",
-      "en": "An Arts & Performance lesson scene with rehearsal and rhythm materials; no teacher is depicted."
+      "ru": "Учебная сцена курса «Искусство и выступление» с характерными материалами и без изображения преподавателя.",
+      "en": "An Arts & Performance lesson scene with course-specific materials and no depicted teacher."
     },
     "presentation.static.school-course-arts-and-performance.caption": {
       "ru": "Искусство и выступление: учебное занятие.",
       "en": "Arts & Performance: lesson session."
     },
     "presentation.static.school-course-body-confidence.alt": {
-      "ru": "Учебная сцена курса «Уверенность в теле» с материалами по движению, комфорту и самопрезентации; преподаватель не изображён.",
-      "en": "A Body Confidence lesson scene with materials on movement, comfort, and self-presentation; no teacher is depicted."
+      "ru": "Учебная сцена курса «Уверенность в теле» с характерными материалами и без изображения преподавателя.",
+      "en": "A Body Confidence lesson scene with course-specific materials and no depicted teacher."
     },
     "presentation.static.school-course-body-confidence.caption": {
       "ru": "Уверенность в теле: учебное занятие.",
