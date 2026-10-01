@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "id": "ordinary-poverty.small-job-identity-boundary.v3",
+  "status": "CURRENT_MAIN_IDENTITY_AUDIT",
+  "task": "C3-101",
+  "baseMain": "6afc01061646bc52cec824863bf89e8ad8c309d0",
+  "sourceFixtureId": "ordinary-poverty.small-job-depth.v2",
+  "resultConsumer": {
+    "currentIdentityShape": [
+      "eventId",
+      "choiceId"
+    ],
+    "variantIdAvailableToResultConsumer": false,
+    "evidence": "src/ui/app.ts -> eventChoiceText(last.outcomeRef.eventId,last.outcomeRef.choiceId,last.text)"
+  },
+  "entries": [
+    {
+      "sourceId": "summer-crate-help",
+      "eventId": "poverty-street-production.helpful-summer",
+      "variantId": "default",
+      "choiceId": "take-errand",
+      "eventVariantCount": 1,
+      "classification": "SAFE_SINGLE_VARIANT_RESULT"
+    },
+    {
+      "sourceId": "market-awning",
+      "eventId": "poverty-street-production-v2.helpful-summer-shade",
+      "variantId": "market-closing",
+      "choiceId": "take-small-task",
+      "eventVariantCount": 2,
+      "classification": "PREPARATION_ONLY_AMBIGUOUS_RESULT"
+    },
+    {
+      "sourceId": "late-shade-carry",
+      "eventId": "poverty-street-production-v2.helpful-summer-shade",
+      "variantId": "late-shade",
+      "choiceId": "take-small-task",
+      "eventVariantCount": 2,
+      "classification": "PREPARATION_ONLY_AMBIGUOUS_RESULT"
+    },
+    {
+      "sourceId": "cleanup-back-step",
+      "eventId": "poverty-recovery-production.short-cleanup",
+      "variantId": "default",
+      "choiceId": "do-cleanup",
+      "eventVariantCount": 1,
+      "classification": "SAFE_SINGLE_VARIANT_RESULT"
+    },
+    {
+      "sourceId": "coin-no-name",
+      "eventId": "poverty-recovery-production.small-coin-help",
+      "variantId": "default",
+      "choiceId": "take-coins",
+      "eventVariantCount": 1,
+      "classification": "SAFE_SINGLE_VARIANT_RESULT"
+    },
+    {
+      "sourceId": "herb-useful-find",
+      "eventId": "poverty-recovery-production.herb-bundle",
+      "variantId": "default",
+      "choiceId": "take-herb",
+      "eventVariantCount": 1,
+      "classification": "SAFE_SINGLE_VARIANT_RESULT"
+    }
+  ],
+  "boundaries": {
+    "noRuntimeFixByChat3": true,
+    "noNewOutcomeIdentity": true,
+    "noVariantCollapse": true,
+    "noChoiceEffectChanges": true,
+    "noProductValues": true
+  },
+  "safeFallback": "Keep current shared choice-result copy for ambiguous multi-variant events until an approved variant-aware result seam exists."
+}
