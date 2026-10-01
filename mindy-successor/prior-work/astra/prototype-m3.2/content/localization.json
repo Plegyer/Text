@@ -243,8 +243,8 @@
       "en": "Return with a clear trail"
     },
     "event.forest-result-content-v1.success.variant.default.text": {
-      "ru": "К концу маршрута разрозненные приметы складываются в ясную картину. Теперь из леса можно вынести не догадку, а подтверждённый результат, с которым есть смысл возвращаться в артель.",
-      "en": "By the end of the route, scattered signs resolve into a clear picture. You can carry back more than a guess now: a confirmed result worth bringing to the lumber crew."
+      "ru": "К концу маршрута разрозненные приметы складываются в ясную картину. У кромки леса ты ещё раз проходишь путь в памяти от первой отметки до последней; последовательность не распадается, и её можно спокойно пересказать обратно в артели.",
+      "en": "By the end of the route, scattered signs resolve into a clear picture. At the forest edge, you run through the path once more from the first marker to the last; the sequence still holds together and can be explained calmly back at the worksite."
     },
     "event.forest-result-content-v1.success.choice.return.label": {
       "ru": "Вернуться с результатом",
@@ -263,8 +263,8 @@
       "en": "Turn back with the route still open"
     },
     "event.forest-result-content-v1.escape.variant.default.text": {
-      "ru": "Ты решаешь не продавливать маршрут дальше. Разворачиваешься по собственным следам, сохраняя то, что успела увидеть, но не выдавая незавершённую вылазку за успех.",
-      "en": "You decide not to force the route farther. You retrace your own steps, keeping what you managed to observe without pretending the unfinished expedition was a success."
+      "ru": "Ты поворачиваешь назад, пока обратный путь ещё читается уверенно. Нужный участок остаётся непроверенным, но выход получается спокойным и без лишнего риска.",
+      "en": "You turn back while the return route is still clear enough to trust. The needed stretch remains unverified, but the exit is calm and avoids unnecessary risk."
     },
     "event.forest-result-content-v1.escape.choice.return.label": {
       "ru": "Вернуться по своим следам",
@@ -283,8 +283,8 @@
       "en": "Return without an answer"
     },
     "event.forest-result-content-v1.failure.variant.default.text": {
-      "ru": "Сил на продолжение больше не остаётся. Приходится оборвать маршрут без результата, ради которого началась вылазка; этот исход остаётся отдельным от добровольного отступления.",
-      "en": "You no longer have the endurance to continue. The route has to end without the result that brought you here; this remains separate from a voluntary retreat."
+      "ru": "Последний уверенный ориентир остаётся позади, а дальше следы уже не складываются в понятную линию. Возвращаться приходится без ответа.",
+      "en": "The last reliable landmark is behind you, and beyond it the signs no longer form a clear line. You have to return without an answer."
     },
     "event.forest-result-content-v1.failure.choice.return.label": {
       "ru": "Вернуться и восстановиться",
@@ -535,8 +535,8 @@
       "en": "Take the short errand"
     },
     "event.poverty-street-production.helpful-summer.choice.take-errand.text": {
-      "ru": "Ты переносишь ящик под навес и получаешь небольшую плату за несколько минут работы.",
-      "en": "You carry the crate under cover and earn a small payment for a few minutes of work."
+      "ru": "Ты переносишь последний тяжёлый ящик под навес, ставишь его рядом с остальными и получаешь плату за это одно короткое поручение.",
+      "en": "You carry the last heavy crate under cover, set it with the others, and receive payment for this one short errand."
     },
     "event.poverty-street-production.helpful-summer.choice.keep-resting.label": {
       "ru": "Остаться на своём месте",
@@ -551,8 +551,8 @@
       "en": "A quiet corner after closing"
     },
     "event.poverty-street-production.neutral-autumn.variant.default.text": {
-      "ru": "После закрытия магазина под навесом остаётся сухая полоса мостовой. Никто не предлагает помощь и никто тебя не прогоняет; на эту ночь этого достаточно.",
-      "en": "A shop awning leaves a dry strip of pavement after closing. Nobody offers help and nobody drives you away; for tonight, that is enough."
+      "ru": "Под аркадой после закрытия лавок остаётся сухая полоса камня и приглушённый городской шум. На несколько часов этого достаточно, чтобы ночь стала тише.",
+      "en": "After the shops close, the arcade leaves a dry strip of stone and a muted city hum. For a few hours, that is enough to make the night quieter."
     },
     "event.poverty-street-production.neutral-autumn.choice.settle-in.label": {
       "ru": "Устроиться тихо",
@@ -619,12 +619,12 @@
       "en": "Footsteps under the arcade"
     },
     "event.poverty-street-production-v2.neutral-autumn-crossing.variant.drizzle.text": {
-      "ru": "Лёгкая осенняя морось загоняет поздних прохожих под аркаду. Они проходят мимо без комментариев, оставляя мокрые следы и разделяя с тобой укрытие всего на несколько минут.",
-      "en": "A light autumn drizzle sends late pedestrians beneath the arcade. They pass without comment, leaving wet footprints and sharing the shelter with you for a few minutes."
+      "ru": "Осенняя морось почти не слышна, но одежда постепенно намокает по краям. Лучше переждать её под карнизом и не тратить силы на бесконечные переходы между сухими местами.",
+      "en": "Autumn drizzle is barely audible, but the edges of your clothes grow damp little by little. It is better to wait beneath an overhang than spend energy moving endlessly between dry spots."
     },
     "event.poverty-street-production-v2.neutral-autumn-crossing.variant.dry-arcade.text": {
-      "ru": "Сегодня под аркадой сухо. Магазины закрыты, шаги затихают, и улица дарит редкий час, когда от тебя ничего не требуется.",
-      "en": "The arcade stays dry tonight. Shops are closed, footsteps fade, and the street offers a rare hour that asks nothing from you."
+      "ru": "Под аркадой после закрытия лавок остаётся сухая полоса камня и приглушённый городской шум. На несколько часов этого достаточно, чтобы ночь стала тише.",
+      "en": "After the shops close, the arcade leaves a dry strip of stone and a muted city hum. For a few hours, that is enough to make the night quieter."
     },
     "event.poverty-street-production-v2.neutral-autumn-crossing.choice.wait-out-night.label": {
       "ru": "Тихо переждать",
@@ -639,12 +639,12 @@
       "en": "Wind through the lane"
     },
     "event.poverty-street-production-v2.pressure-winter-wind.variant.crosswind.text": {
-      "ru": "Резкий боковой ветер проходит сквозь переулок и выдувает тепло из каждого открытого угла. Рядом есть утопленный дверной проём, где можно укрыться.",
-      "en": "A hard crosswind cuts through the lane and strips the warmth from every exposed corner. A recessed doorway nearby offers shelter."
+      "ru": "Зимний ветер идёт между домами под углом и меняет силу от перекрёстка к перекрёстку. Даже небольшой выступ стены может дать короткую передышку.",
+      "en": "Winter wind cuts between buildings at an angle and changes strength from one crossing to the next. Even a small projection in a wall can offer a brief reprieve."
     },
     "event.poverty-street-production-v2.pressure-winter-wind.variant.long-gusts.text": {
-      "ru": "Долгие порывы трясут ставни вдоль переулка. Можно остаться в укрытии или продолжить идти, пожертвовав частью завтрашних сил.",
-      "en": "Long gusts rattle shutters along the lane. You can stay sheltered or keep walking and give up some of tomorrow’s strength."
+      "ru": "Длинные порывы приходят реже, но выстуживают место до самого камня. Между ними приходится быстро поправлять одежду и искать более закрытый угол.",
+      "en": "The long gusts come less often, but they chill the spot down to the stone. Between them, you have to adjust your clothes quickly and look for a more sheltered corner."
     },
     "event.poverty-street-production-v2.pressure-winter-wind.choice.use-recess.label": {
       "ru": "Укрыться в дверном проёме",
@@ -667,8 +667,8 @@
       "en": "Thin walls, early quiet"
     },
     "event.poverty-cheap-production.shared-quiet-autumn.variant.default.text": {
-      "ru": "В дешёвом ночлеге рано становится тихо. Через тонкие стены слышны кашель, шаги и шорох вещей, поэтому общая комната сама собой переходит на полголоса.",
-      "en": "The cheap lodging settles early. Thin walls carry coughs, footsteps, and the rustle of belongings, so the shared room gradually drops to a whisper."
+      "ru": "Осенью под крышей особенно заметна разница между дождём снаружи и тихими разговорами внутри. Несколько спокойных часов дают возможность восстановить обычный ритм вечера.",
+      "en": "In autumn, the contrast between rain outside and quiet voices indoors is especially noticeable. A few calm hours make it possible to recover an ordinary evening rhythm."
     },
     "event.poverty-cheap-production.shared-quiet-autumn.choice.settle-quietly.label": {
       "ru": "Соблюдать общую тишину",
@@ -683,20 +683,20 @@
       "en": "A Shared Room Through the Seasons"
     },
     "event.poverty-cheap-production-v2.shared-room-seasons.variant.spring-window.text": {
-      "ru": "Весенний воздух просачивается через приоткрытое окно общей комнаты. Кто-то подпёр его щербатой чашкой, и никто не хочет спорить с первой мягкой ночью.",
-      "en": "Spring air slips through a cracked window in the shared room. Someone has wedged it open with a chipped cup, and nobody wants to argue with the first mild night."
+      "ru": "Весной окно приоткрывают ненадолго, чтобы выпустить сырой воздух после дождя. В общей комнате тесно, но вещи хотя бы могут просохнуть до утра.",
+      "en": "In spring, the window is opened for a short while to let out the damp air after rain. The shared room is cramped, but at least belongings can dry before morning."
     },
     "event.poverty-cheap-production-v2.shared-room-seasons.variant.summer-heat.text": {
-      "ru": "Дешёвая комната хранит дневной летний жар. Подстилки разложены настолько далеко друг от друга, насколько позволяет пол, и все согласны, что открытое окно принадлежит всем.",
-      "en": "The cheap room holds the day's summer heat. Bedrolls are spaced as far apart as the floor allows, and everyone agrees that the open window belongs to everybody."
+      "ru": "Летом воздух в дешёвой комнате долго остаётся тёплым, и люди стараются не загромождать проход к двери. Ночь всё равно проходит под крышей, пусть и без особого комфорта.",
+      "en": "In summer, the cheap room holds the heat for a long time, and people try not to block the way to the door. The night still passes under a roof, even without much comfort."
     },
     "event.poverty-cheap-production-v2.shared-room-seasons.variant.winter-stove.text": {
-      "ru": "В углу тихо потрескивает маленькая печь, а зимние пальто висят на каждом свободном крючке. Здесь тесно, достаточно тепло и тише, чем на улице.",
-      "en": "A small stove ticks in the corner while winter coats hang from every spare peg. The room is crowded, warm enough, and quieter than the street outside."
+      "ru": "Зимой возле маленькой печи всегда теснее обычного. Люди сушат рукавицы и обувь по очереди, стараясь не занимать тепло дольше необходимого.",
+      "en": "In winter, the space around the small stove is always more crowded than usual. People dry gloves and shoes in turns, trying not to hold the warmth longer than needed."
     },
     "event.poverty-cheap-production-v2.shared-room-seasons.variant.shared-room.text": {
-      "ru": "Дешёвая общая комната простая и тесная, но здесь есть крыша, дверь и место, где можно спокойно переждать ночь.",
-      "en": "The cheap shared room is plain and crowded, but it still has a roof, a door, and a place to wait out the night in relative quiet."
+      "ru": "Общая комната живёт простыми правилами: не перекрывать проход, не будить тех, кто уже лёг, держать вещи рядом с собой. Эти мелочи делают одну ночь предсказуемее.",
+      "en": "The shared room runs on simple rules: keep the passage clear, avoid waking those already asleep, and keep belongings close. Those small habits make one night more predictable."
     },
     "event.poverty-cheap-production-v2.shared-room-seasons.choice.settle-in.label": {
       "ru": "Устроиться на ночь",
@@ -711,16 +711,16 @@
       "en": "Coins left with the bread"
     },
     "event.poverty-recovery-production.small-coin-help.variant.default.text": {
-      "ru": "На общей полке оставили бумажный свёрток со вчерашним хлебом и несколько мелких монет рядом. Никакого имени или подписи.",
-      "en": "A paper parcel of yesterday's bread has been left on a public ledge with a few loose coins beside it and no name attached."
+      "ru": "Несколько монет не меняют положение целиком, но дают чуть больше свободы в ближайшем выборе. Иногда этого хватает, чтобы не принимать решение в спешке.",
+      "en": "A few coins do not change the whole situation, but they give a little more room in the next decision. Sometimes that is enough to avoid choosing in a rush."
     },
     "event.poverty-recovery-production.small-coin-help.choice.take-coins.label": {
       "ru": "Взять мелкие монеты",
       "en": "Take the loose coins"
     },
     "event.poverty-recovery-production.small-coin-help.choice.take-coins.text": {
-      "ru": "Ты берёшь только свободно лежащие монеты и оставляешь хлеб на месте. Небольшой суммы хватает, чтобы немного облегчить ближайшие расходы.",
-      "en": "You take only the loose coins and leave the bread where it is. The small amount makes the next few expenses a little easier."
+      "ru": "Ты берёшь только свободно лежащие монеты. Никто не ждёт ответа или услуги взамен, а небольшой запас делает ближайший выбор чуть спокойнее.",
+      "en": "You take only the loose coins. Nobody is waiting for an answer or a favor in return, and the small reserve makes the next choice a little easier."
     },
     "event.poverty-recovery-production.small-coin-help.choice.leave-them.label": {
       "ru": "Оставить монеты",
@@ -735,16 +735,16 @@
       "en": "One last sweep"
     },
     "event.poverty-recovery-production.short-cleanup.variant.default.text": {
-      "ru": "У закрывающегося прилавка осталось одно небольшое дело: сложить два табурета, подмести узкую полосу и отнести ведро к стоку.",
-      "en": "A closing stall has one small cleanup left: stack two stools, sweep a narrow strip, and carry a bucket to the drain."
+      "ru": "Короткая уборка заканчивается быстро: подмести край прохода, вернуть ведро, собрать оставшийся мусор. После неё вечер становится немного проще.",
+      "en": "The short cleanup ends quickly: sweep the edge of the passage, return the bucket, gather the remaining rubbish. Afterward, the evening becomes a little easier."
     },
     "event.poverty-recovery-production.short-cleanup.choice.do-cleanup.label": {
       "ru": "Сделать короткую уборку",
       "en": "Do the short cleanup"
     },
     "event.poverty-recovery-production.short-cleanup.choice.do-cleanup.text": {
-      "ru": "Работа занимает всего несколько минут. Ты складываешь табуреты, подметаешь у прилавка и получаешь небольшую плату.",
-      "en": "The work takes only a few minutes. You stack the stools, sweep around the stall, and receive a small payment."
+      "ru": "Ты заканчиваешь небольшую уборку: возвращаешь ведро, подметаешь край прохода и получаешь плату за завершённую работу.",
+      "en": "You finish the small cleanup: return the bucket, sweep the edge of the passage, and receive payment for the completed task."
     },
     "event.poverty-recovery-production.short-cleanup.choice.keep-resting.label": {
       "ru": "Продолжить отдыхать",
@@ -759,16 +759,16 @@
       "en": "A forgotten herb bundle"
     },
     "event.poverty-recovery-production.herb-bundle.variant.default.text": {
-      "ru": "Небольшой связанный пучок обычных трав забыли рядом с пустым рыночным ящиком. Ничто не указывает, что это чья-то особая собственность.",
-      "en": "A small tied bundle of ordinary herbs has been forgotten beside an empty market crate. Nothing marks it as anyone's special property."
+      "ru": "Пучок трав можно аккуратно убрать и оставить до момента, когда он действительно понадобится. Небольшой запас полезнее всего именно тем, что расширяет ближайшие варианты.",
+      "en": "The herb bundle can be put away carefully until it is actually needed. A small reserve is useful mainly because it widens the options immediately ahead."
     },
     "event.poverty-recovery-production.herb-bundle.choice.take-herb.label": {
       "ru": "Взять пучок трав",
       "en": "Take the herb bundle"
     },
     "event.poverty-recovery-production.herb-bundle.choice.take-herb.text": {
-      "ru": "Ты забираешь пучок обычных трав и убираешь его к своим вещам.",
-      "en": "You keep the bundle of ordinary herbs and tuck it in with your things."
+      "ru": "Ты забираешь пучок обычных трав и аккуратно убираешь его к своим вещам, чтобы воспользоваться им позже, если понадобится.",
+      "en": "You keep the bundle of ordinary herbs and tuck it away with your belongings to use later if it is needed."
     },
     "event.poverty-recovery-production.herb-bundle.choice.leave-herb.label": {
       "ru": "Оставить его",
@@ -783,8 +783,8 @@
       "en": "Cold rain at the curb"
     },
     "event.poverty-pressure-production.cold-rain.variant.default.text": {
-      "ru": "Холодный весенний дождь добирается до края тротуара и затекает под укрытие. Чуть дальше есть глубокий дверной проём, куда можно перебраться.",
-      "en": "Cold spring rain reaches the curb and creeps beneath the edge of your shelter. A deeper doorway nearby offers a drier place to move."
+      "ru": "Холодный дождь быстро пропитывает открытые края одежды, и даже короткий переход начинает казаться длиннее. Сухой дверной проём становится временной целью сам по себе.",
+      "en": "Cold rain quickly soaks the exposed edges of your clothes, and even a short walk starts to feel longer. A dry doorway becomes a temporary goal in itself."
     },
     "event.poverty-pressure-production.cold-rain.choice.take-doorway.label": {
       "ru": "Перебраться в глубокий дверной проём",
@@ -3223,12 +3223,12 @@
       "en": "Beyond the forest edge, the town noise fades quickly. Ahead, the familiar work road and an older line of trail pull apart; before going farther, you need to choose a route and keep enough strength for the way back."
     },
     "presentation.activity.forest.entry.logging-road.text": {
-      "ru": "Лесовозная дорога широкая и легко читается по колеям, свежим срезам веток и меткам на стволах. Здесь путь понятнее, но лес всё равно требует смотреть под ноги и не тратить силы впустую.",
-      "en": "The logging road is broad and easy to read from wheel ruts, freshly cut branches, and marks on trunks. The route is clearer here, but the forest still rewards careful footing and conserving strength."
+      "ru": "Лесовозная дорога широкая и легко читается по колеям и свежим следам работы. Весной колеи размокают, летом пыль ложится на траву, осенью заметнее свежая щепа, а зимой следы дольше держатся на промёрзшей середине; направление остаётся тем же рабочим путём.",
+      "en": "The logging road is broad and easy to read from wheel ruts and fresh signs of work. In spring the ruts soften, in summer dust settles on the grass, in autumn fresh chips stand out, and in winter tracks linger on the frozen center; the direction remains the same work road."
     },
     "presentation.activity.forest.entry.old-boundary.text": {
-      "ru": "Старая межевая линия уходит между замшелыми камнями и выветренными знаками, не совпадая с новой лесовозной дорогой. Тропа уже и тише, поэтому ориентироваться приходится по самим старым меткам.",
-      "en": "The old boundary line runs between moss-covered stones and weathered marks instead of following the newer logging road. The trail is narrower and quieter, so the old markers themselves have to guide the way."
+      "ru": "Старая межевая линия уходит между замшелыми камнями и выветренными метками, не совпадая с новой лесовозной дорогой. Весной воду видно между камнями, летом часть отметок прячется в папоротнике, осенью зарубки открываются дальше вперёд, а зимой снег подчёркивает неровную цепочку уже доступного пути.",
+      "en": "The old boundary line runs between moss-covered stones and weathered marks instead of following the newer logging road. In spring water shows between the stones, in summer some marks hide in ferns, in autumn the notches open farther ahead, and in winter snow outlines the uneven chain of the path already available."
     },
     "action.satyr-maid.shift.scene.spring.default.text": {
       "ru": "Весной зал снова заполняют путешественники. Ты принимаешь простой заказ, освобождаешь край стола от мокрых плащей и успеваешь объяснить новому гостю, что сегодня подают быстрее всего. Это обычное обслуживание: короткий разговор заканчивается вместе с заказом.",
