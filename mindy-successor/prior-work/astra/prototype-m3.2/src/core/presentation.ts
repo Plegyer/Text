@@ -234,7 +234,7 @@ export function presentationIdForSatyrMaidCareerEvent(eventId:string){
 }
 
 export function presentationIdForSatyrMaidRelationshipEvent(eventId:string){
-  return `relationship/satyr-maid.recurring-guest/${clean(eventId)}/default`;
+  return `relationship/${clean('satyr-maid.recurring-guest')}/${clean(eventId)}/default`;
 }
 
 export function presentationIdForSatyrMaidStage(stage:string){
