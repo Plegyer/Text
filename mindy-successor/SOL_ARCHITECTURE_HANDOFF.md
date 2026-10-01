@@ -1,5 +1,8 @@
 # SOL architecture handoff for Astra review
 
+> **Historical handoff notice — 2026-10-01:** this document preserves predecessor context and architecture history. It is **not** the current project-status entrypoint. A current/replacement Leader 1 must start with `docs/LEADER1_START_HERE.md` and `docs/LEADER1_LIVE_DASHBOARD.md`, then verify actual Git main/PRs/CI.
+
+
 Дата: 2026-09-25.
 
 Цель этого файла — дать Astra компактную точку входа после его передачи M3.2. Это не новая команда реализации.

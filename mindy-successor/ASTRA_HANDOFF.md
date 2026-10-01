@@ -1,5 +1,8 @@
 # Передача предыдущей работы Astra / Codex
 
+> **Historical handoff notice — 2026-10-01:** this document preserves predecessor context and architecture history. It is **not** the current project-status entrypoint. A current/replacement Leader 1 must start with `docs/LEADER1_START_HERE.md` and `docs/LEADER1_LIVE_DASHBOARD.md`, then verify actual Git main/PRs/CI.
+
+
 Дата: 2026-09-25. Пользователь попросил обмениваться материалами непосредственно через этот репозиторий. Здесь добавлены результаты предыдущего чата, чтобы SOL не проектировал систему, не зная о существующем прототипе. Это передача материалов, НЕ утверждение окончательного ТЗ и НЕ команда начинать реализацию.
 
 ## С чего начать
