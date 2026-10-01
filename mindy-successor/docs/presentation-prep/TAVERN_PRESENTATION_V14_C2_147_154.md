@@ -17,7 +17,7 @@ Presentation covers:
 - qualitative `confidentiality-kept` and `refusal-respected` states;
 - role-only copy using “recurring traveler”, with no proper NPC name and no romance assumption.
 
-The UI exposes relationship stage and refusal/confidentiality facts as focusable presentation status. Selected Tavern Night choices receive a dedicated static presentation surface during the existing Night flow.
+The UI exposes relationship stage and refusal/confidentiality facts as focusable presentation status. Selected Tavern Night choices receive a dedicated static presentation surface during the existing Night flow. In the live catalog, any event whose published source domain is `tavern.recurring-traveler` falls back through one role-only recurring-traveler static root, while any unbound `tavern`-domain event falls back through the Tavern result surface. This covers runtime events without inventing event IDs that the contract did not publish.
 
 ## C2-149 — rooms / supply / information
 
@@ -30,7 +30,7 @@ Presentation-only qualitative states cover:
 - confirmed rumour;
 - information routing.
 
-The Work panel shows only qualitative active states. It does not expose hidden numeric thresholds. Exact contract events `tavern.access.staff-key`, `tavern.access.guest-ledger`, and `tavern.housing.meal-in-kind` also have stable static event surfaces.
+The Work panel shows only qualitative active states. It does not expose hidden numeric thresholds. Exact contract events `tavern.access.staff-key`, `tavern.access.guest-ledger`, and `tavern.housing.meal-in-kind` also have stable static event surfaces. Any additional live Tavern information event remains covered by the Tavern-domain static fallback without Chat 2 naming an unpublished gameplay ID.
 
 ## C2-150 — School hooks
 
