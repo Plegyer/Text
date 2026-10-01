@@ -19,7 +19,7 @@
   "events": [
     {
       "id": "tavern.information.rumour-route",
-      "title": "A rumour becomes route state",
+      "title": "A report is not yet a fact",
       "sourceDomain": "tavern",
       "trigger": [],
       "reactionTriggers": [
@@ -59,8 +59,21 @@
       ],
       "variants": [
         {
+          "id": "ledger-crosscheck",
+          "text": "A guest-ledger entry does not prove someone's whole story, but it can check the timing and sequence of a journey. That is enough to separate a useful match from a convenient legend.",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "tavern",
+              "fact": "guest-ledger-evidence-ready",
+              "present": true
+            }
+          ],
+          "media": []
+        },
+        {
           "id": "default",
-          "text": "The traveler's rumour is now specific enough to become a route question: it can be checked against a live external result instead of becoming a generic information currency.",
+          "text": "A traveler confidently says that one road has become dangerous. You record it as one person's report rather than an established fact; the source and wording matter more than how loudly the story is told.",
           "conditions": [],
           "media": []
         }
@@ -69,7 +82,7 @@
         {
           "id": "record-route",
           "label": "Record the route question",
-          "text": "Keep one typed Tavern route fact for later verification.",
+          "text": "Useful information can shape a decision without becoming a new kind of currency. You can pass a confirmed detail to the person who needs it while keeping a boundary between information, gossip, and payment.",
           "conditions": [],
           "effects": [
             {
