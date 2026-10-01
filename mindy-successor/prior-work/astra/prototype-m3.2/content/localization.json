@@ -3658,21 +3658,13 @@
       "ru": "Жетон открывает маршрут, а preserve_specimen позволяет безопасно вынести образец.",
       "en": "The token opens the route, while preserve_specimen lets you carry out a sample safely."
     },
-    "event.forest-preparation-v12.school-field-kit.title": {
-      "ru": "Полевой комплект после занятия",
-      "en": "A field kit after class"
+    "action.forest.collect-field-kit.label": {
+      "ru": "Забрать полевой комплект",
+      "en": "Collect the field preservation kit"
     },
-    "event.forest-preparation-v12.school-field-kit.variant.default.text": {
-      "ru": "После занятия преподаватель замечает твои полевые вопросы и выдаёт простой набор для безопасного сохранения образцов.",
-      "en": "After class, the teacher notices your field questions and issues a simple kit for preserving samples safely."
-    },
-    "event.forest-preparation-v12.school-field-kit.choice.take-kit.label": {
-      "ru": "Взять полевой набор",
-      "en": "Take the field kit"
-    },
-    "event.forest-preparation-v12.school-field-kit.choice.take-kit.text": {
-      "ru": "Ты забираешь контейнеры, бирки и заметки по полевой фиксации.",
-      "en": "You take the containers, labels, and notes for field preservation."
+    "action.forest.collect-field-kit.description": {
+      "ru": "После первого настоящего занятия забрать в школе контейнеры, бирки и полевые заметки.",
+      "en": "After a real lesson, collect containers, labels, and field notes from the School desk."
     }
   }
 }
