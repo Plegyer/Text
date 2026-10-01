@@ -53,11 +53,11 @@ The runtime is not the bottleneck. The bottleneck is completing naturally reacha
 
 | Worker | Active assignment | Observed branch/head | Last observed progress | Leader interpretation |
 |---|---|---|---|---|
-| Chat 1 Developer | C1D-85..96 | `chat1/c1d-85-96-late-career-hard-work` @ `ddbe20a6527cea752befd530dbd29f1d4d33b019` | `C1D-94: add all-ten career availability smoke` at 2026-10-01 04:30Z | Actively deep in queue; candidate PR not yet observed at snapshot. |
-| Chat 2 Presentation | C2-109..120 | `chat2/presentation-c2-109-120` @ `3a3138211859370605b8a4f841afdf36f4f686a4` | `C2-111 document late-career visible accessibility states` at 04:27Z | Queue started; early/mid progress. |
+| Chat 1 Developer | C1D-85..96 | `chat1/c1d-85-96-late-career-hard-work` @ `8257571da18d24009f23d4e342dd494398536fbc` | `C1D-95: add Hard Work and Palace Meta smoke` at 2026-10-01 04:31Z | One task remains before candidate freeze if no repair is needed; candidate PR not yet observed at snapshot. |
+| Chat 2 Presentation | C2-109..120 | `chat2/presentation-c2-109-120` @ `89b33daa9378b8591e31309234edfcc3f8a95cb9` | `C2-114 bind Hard Work ending accessibility keys` at 04:34Z | Active mid-queue progress. |
 | Chat 3 Forest/Poverty | C3-109..120 | `chat3/forest-poverty-production-v11` @ `e750480404b1270ffbe47ca1dad2cb381bcf29d1` | v11 production candidate handoff at 04:30Z | Candidate PR #146 is open; ready for QA once CI/freeze evidence is confirmed. |
 | Chat 4 QA | C4-114..125 | last observed legacy branch `chat4/activation-ci-gate-next` @ `92e20a6a27691707528d6c8e6a68e1cb9b852890` | no fresh post-reset commit visible at snapshot | Assigned to backlog disposition. Verify immediately whether a new branch/commits appeared after this snapshot. |
-| Chat 5 School | C5-109..120 | `chat5/school-production-v11` @ `c3e12b248dec2c90196ecfad2ce27b97ee45a58b` | `C5-110-C5-115 promote reachable School RU EN text` at 04:30Z | Actively progressing; no v11 candidate PR observed yet. |
+| Chat 5 School | C5-109..120 | `chat5/school-production-v11` @ `54f1267d4d283d1af55822335a8fbf41d14282a9` | `Document SCHOOL_PRODUCTION_V11_MANIFEST_HANDOFF` at 04:34Z | Deep in queue / handoff material present; verify whether candidate freeze/PR has appeared. |
 
 The task pointers remain authoritative for queue scope.
 
