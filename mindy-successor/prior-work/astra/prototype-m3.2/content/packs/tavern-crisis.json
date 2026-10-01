@@ -1,0 +1,309 @@
+{
+  "schemaVersion": 1,
+  "id": "tavern.crisis",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "careers": [
+        "tavern"
+      ],
+      "relationships": [
+        "tavern.recurring-traveler"
+      ]
+    },
+    "writes": {
+      "careers": [
+        "tavern"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "tavern.crisis.occupancy-supply-confidentiality",
+      "title": "Rooms, supplies, and confidentiality collide",
+      "sourceDomain": "tavern",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "actionCompleted",
+          "action": "tavern.shift"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "tavern",
+          "fact": "school-records-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "tavern",
+          "fact": "guest-ledger-evidence-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "tavern",
+          "fact": "school-broker-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "tavern",
+          "fact": "rumour-confirmed"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "tavern",
+          "fact": "confidentiality-resolved"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "tavern",
+          "fact": "housing-assistance-complete"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "tavern",
+          "fact": "confidentiality-kept"
+        },
+        {
+          "kind": "careerCounterChanged",
+          "career": "tavern",
+          "counter": "supply_pressure"
+        },
+        {
+          "kind": "careerCounterChanged",
+          "career": "tavern",
+          "counter": "shelter_pressure"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 84,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 3,
+      "variantCooldownDays": 0,
+      "maxShows": 20,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "tavern",
+          "stage": "house-node"
+        },
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "crisis-resolved",
+          "present": false
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "careerFact",
+                  "career": "tavern",
+                  "fact": "school-records-ready",
+                  "present": true
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "tavern",
+                  "fact": "guest-ledger-evidence-ready",
+                  "present": true
+                },
+                {
+                  "kind": "careerCounter",
+                  "career": "tavern",
+                  "counter": "supply_pressure",
+                  "op": "gte",
+                  "value": 2
+                }
+              ]
+            },
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "careerFact",
+                  "career": "tavern",
+                  "fact": "school-broker-ready",
+                  "present": true
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "tavern",
+                  "fact": "rumour-confirmed",
+                  "present": true
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "tavern",
+                  "fact": "confidentiality-resolved",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "careerFact",
+                  "career": "tavern",
+                  "fact": "housing-assistance-complete",
+                  "present": true
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "tavern",
+                  "fact": "confidentiality-kept",
+                  "present": true
+                },
+                {
+                  "kind": "careerCounter",
+                  "career": "tavern",
+                  "counter": "shelter_pressure",
+                  "op": "gte",
+                  "value": 2
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "High occupancy, strained supplies, and a confidentiality problem land on the same house decision. The crisis has management, information, and shelter solutions rather than a universal morality score.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "stabilize-house",
+          "label": "Stabilize rooms and supplies through records",
+          "text": "Use the house ledger and School-backed records to make a defensible occupancy and supply plan.",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "tavern",
+              "fact": "school-records-ready",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "tavern",
+              "fact": "guest-ledger-evidence-ready",
+              "present": true
+            },
+            {
+              "kind": "careerCounter",
+              "career": "tavern",
+              "counter": "supply_pressure",
+              "op": "gte",
+              "value": 2
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "tavern",
+              "fact": "crisis-resolved"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "tavern",
+              "fact": "crisis-innkeeper"
+            }
+          ]
+        },
+        {
+          "id": "manage-information",
+          "label": "Resolve the conflict through verified information",
+          "text": "Use the confirmed route rumour and confidentiality decision to separate useful information from private identity.",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "tavern",
+              "fact": "school-broker-ready",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "tavern",
+              "fact": "rumour-confirmed",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "tavern",
+              "fact": "confidentiality-resolved",
+              "present": true
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "tavern",
+              "fact": "crisis-resolved"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "tavern",
+              "fact": "crisis-broker"
+            }
+          ]
+        },
+        {
+          "id": "protect-shelter",
+          "label": "Protect temporary shelter and confidentiality",
+          "text": "Use the house's existing assistance practice and the kept confidence to protect a narrow sanctuary policy.",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "tavern",
+              "fact": "housing-assistance-complete",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "tavern",
+              "fact": "confidentiality-kept",
+              "present": true
+            },
+            {
+              "kind": "careerCounter",
+              "career": "tavern",
+              "counter": "shelter_pressure",
+              "op": "gte",
+              "value": 2
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "tavern",
+              "fact": "crisis-resolved"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "tavern",
+              "fact": "crisis-sanctuary"
+            }
+          ]
+        },
+        {
+          "id": "defer",
+          "label": "Keep the house running for now",
+          "text": "Do not resolve the larger crisis until a route you actually support is ready.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    }
+  ]
+}
