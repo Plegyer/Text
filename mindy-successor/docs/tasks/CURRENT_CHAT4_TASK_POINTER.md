@@ -1,46 +1,37 @@
 # CURRENT CHAT4 TASK POINTER
 
-Status: **ACTIVE — C4-135 THEN THREE GREEN C4-136 GATES**
+Status: **ACTIVE — NEW GREEN WAVE QA + OLD ACCEPTED INTEGRATION FOLLOW-UP**
 Owner: Chat 4 / QA + Product Acceptance Gate
 
-Current main:
-- `a44d0f765fffd9f8b74307d116bf5f15e7688590`
-- CI #591 / id `36825365041`: **SUCCESS**
-- contains accepted Satyr runtime + Forest product slice + prior Forest/Poverty v11 + School v11.
+Queue:
+- `TASK_CHAT4_QA_QUEUE_v14.md`
+- C4-138..149
 
-## C4-135 — do now
-Verify exact current-main truth:
-- Forest/Poverty v11 live reachability;
-- School v11 live reachability + locale/save invariance;
-- Satyr complete-career runtime shipped;
-- Forest v12 natural item acquisition, 3 routes/challenge families, seasonal topology, extraction -> Lumber, deterministic save/resume shipped;
-- explicitly exclude still-unmerged presentation/School-v12/authored-depth candidates from shipped truth.
+Previous v13 facts:
+- C4-135 current-main truth PASS;
+- C4-136 PASS-WITH-NOTES for #174, #175, #172;
+- C4-137 waits only for Lead to integrate those accepted candidates and then requires final current-main truth.
 
-Record exact main SHA and CI #591.
+Do not idle on C4-137. Start v14 gates now.
 
-## C4-136 — continue immediately after C4-135
-Gate all currently eligible frozen green candidates; do not stop after one.
+Gate in this order:
+1. PR #178 — Undead runtime
+   - `b75e73c0f5e37b19277cb25cf0321587f6444ab4`
+   - CI #616 SUCCESS
+2. PR #180 — Ordinary Poverty v14
+   - `4ba5d50b50d8d263e998d13de4126de3119090f2`
+   - CI #624 SUCCESS
+3. PR #181 — Undead School
+   - `47ce1b83e7ef30a18462833c95df25af4d1e7190`
+   - CI #623 SUCCESS
+   - depends on frozen #178 runtime
+4. PR #182 — Undead presentation
+   - `703cabefff9cbf9f681089d1c0f0c1ae70880c2c`
+   - CI #626 SUCCESS
+   - depends on frozen #178 runtime
 
-1. PR #174 — Satyr complete-career presentation
-   - exact head `56ca78ccb0210225136aeca1c68978296ba7d61d`
-   - CI #582 SUCCESS, 616/616
-   - verify real runtime reachability, static fallback, animation-off/missing-GIF safety, RU/EN/accessibility, no gameplay drift.
+A blocker on one candidate does not stop the others.
 
-2. PR #175 — Forest Authored Depth v13
-   - exact head `234e1a6fac0d25b0393f7ffec84eac4007347c32`
-   - CI #593 SUCCESS
-   - verify seasonal/route/item/challenge copy is player-reachable, deterministic, save/reload-stable, and presentation-only with no Activity mechanics drift.
+After Lead integrates accepted #174/#175/#172, perform C4-143/C4-137-equivalent exact-main truth immediately.
 
-3. PR #172 — Satyr School v12 clean
-   - exact head `41ed6a9d54965a16bff004dae6e7fc79a2841883`
-   - CI #592 SUCCESS
-   - verify immediate 3-lesson local hooks, Night-study parity, exactly-once/save-reload, RU/EN, global-threshold firewall, no shared-runtime drift.
-
-Do not QA PR #178 until a new current-main-based exact head is green/frozen.
-
-After each verdict:
-- record exact SHA + CI;
-- PASS / PASS-WITH-NOTES / BLOCK with exact blocker;
-- continue to the next eligible candidate even if one blocks.
-
-C4-137 closes the wave only after these gates and resulting Lead integrations are reflected in current-main executable truth.
+Do not implement producer fixes.
