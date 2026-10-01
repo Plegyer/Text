@@ -1,26 +1,26 @@
 # CURRENT CHAT2 TASK POINTER
 
-Status: **PR #151 FROZEN + NEXT QUEUE ACTIVE**
+Status: **ACTIVE — FINISH SATYR v12 AGAINST FROZEN CHAT 1 RUNTIME**
 Owner: Chat 2 / Presentation & Media Worker
 
-Frozen predecessor candidate:
-- PR #151
-- exact head: `463d877009b5ecc1d255d7aa27a91bb7c38016e5`
-- exact-head CI #474: **SUCCESS**
-- do not mutate this PR unless Chat 4 reports a concrete blocker.
+Current draft:
+- PR #166
+- current head `f2b17cd3a9a3dccb5552e56ae9867ee6dc2540c7`
+- CI #541 SUCCESS
+- C2-121..130 completed.
 
-Continue work now on a **new stacked branch** from the frozen head.
+Dependency is now available:
+- Chat 1 Satyr runtime PR #164
+- frozen exact head `de27bb5ac70edb7238657fcb51c1f201a1b1908e`
+- exact-head CI #555 SUCCESS.
 
-Current queue:
-- `TASK_CHAT2_PRESENTATION_QUEUE_v12.md`
-- C2-121..132
-- target: Satyr Maid complete-career presentation/media/accessibility.
+**Do not wait for PR #164 merge.**
 
-Start C2-121 immediately. For gameplay IDs, consume Chat 1's C1D-97 runtime contract from `chat1/satyr-maid-complete-v10`; do not invent mechanics.
+Create a clean integration/finalization branch from Chat 1 frozen head (or transplant the v12 presentation delta onto that exact head), preserving current main/Chat 1 runtime semantics.
 
-Mandatory:
-- `../LEADER1_LIVE_DASHBOARD.md`
-- `../LEAD1_CURRENT_STATE_v1.md`
-- `CANDIDATE_QA_FREEZE_PROTOCOL.md`
+Now execute:
+- C2-131 — prove the Satyr presentation slots are reached by the real C1D-97..108 production identities, not reserved/prep IDs;
+- C2-132 — full exact-head CI, finalize one focused frozen candidate for Chat 4.
 
-Do not self-assign beyond C2-132.
+Do not move old accepted PR #151 (already integrated/closed).
+Do not change gameplay, Save/RNG, progression or ending reward logic.
