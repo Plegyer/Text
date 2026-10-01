@@ -1,5 +1,25 @@
 # Active Team Ownership Matrix
 
+## LIVE OWNERSHIP — 2026-10-01 10:10+03
+
+This section supersedes older queue ranges below.
+
+- **Chat 1 Developer / Integration** — C1D-121..132, `TASK_CHAT1_DEVELOPER_QUEUE_v12.md`: Tavern complete-career runtime. Owns gameplay/state/integration for Tavern only.
+- **Chat 2 Presentation & Media** — C2-145..156, `TASK_CHAT2_PRESENTATION_QUEUE_v14.md`: Tavern presentation/media/accessibility only.
+- **Chat 3 World + Career Content Bundles** — C3-157..168, `TASK_CHAT3_CONTENT_QUEUE_v15.md`: Tavern authored production content only. This is an intentional role expansion from Forest/Poverty after PR #180 freeze; it still does not own shared runtime, School mechanics, ending conditions or presentation/media plumbing.
+- **Chat 4 QA + Product Acceptance** — C4-138..149, `TASK_CHAT4_QA_QUEUE_v14.md`: exact-head gates, integration-order/collision review and current-main acceptance truth. No production fixes.
+- **Chat 5 School + Text Localization** — C5-145..156, `TASK_CHAT5_SCHOOL_QUEUE_v14.md`: Tavern School cross-system content/localization only.
+
+Current frozen candidates waiting for QA/integration:
+- #178 Undead runtime;
+- #180 Ordinary Poverty v14;
+- #181 Undead School;
+- #182 Undead presentation;
+- previously accepted #174/#175/#172 are in Lead integration follow-up.
+
+One file/slice = one active owner remains mandatory.
+
+
 ## LEADER 1 OWNERSHIP RESET — 2026-10-01
 
 This section supersedes old queue ranges below.
