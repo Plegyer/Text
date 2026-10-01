@@ -68,6 +68,7 @@ test('selected Activity route and one-shot option identity survive reload withou
 test('logging-road uses the same counter.v1 runtime and reaches success through authored challenges',()=>{
   let s=started();
   s.run.character.stats.strength=4;
+  s.run.character.stats.reason=3;
   s.run.resources.inventory.field_preservation_kit=1;
   s=dispatch(s,{type:'enterActivity',id:'lumber.forest'},catalog);
   s=dispatch(s,{type:'activityAction',id:'forest.route.logging-road'},catalog);
