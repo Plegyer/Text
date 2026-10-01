@@ -1,0 +1,85 @@
+{
+  "formatVersion": 1,
+  "id": "school.localization-v10.reachability-audit.v1",
+  "status": "CONTENT_AUDIT_ONLY",
+  "baseline": "6afc01061646bc52cec824863bf89e8ad8c309d0",
+  "surfaces": [
+    {
+      "id": "school-life-content-v1.after-paid-lesson",
+      "class": "PLAYER_FACING",
+      "consumerReady": true,
+      "identity": "actionCompleted:school",
+      "exactCourse": false,
+      "teacher": false
+    },
+    {
+      "id": "school-lesson-content-v1.after-school",
+      "class": "PLAYER_FACING",
+      "consumerReady": true,
+      "identity": "actionCompleted:school",
+      "exactCourse": false,
+      "teacher": false
+    },
+    {
+      "id": "school-life-content-v1.after-night-study",
+      "class": "PLAYER_FACING",
+      "consumerReady": true,
+      "identity": "24 exact nightChoiceCompleted(choice)",
+      "exactCourse": true,
+      "teacher": false
+    },
+    {
+      "id": "school.runtime.paid-lesson-journal",
+      "class": "PLAYER_FACING",
+      "consumerReady": true,
+      "identity": "exact English course label",
+      "localized": false,
+      "journalRef": null
+    },
+    {
+      "id": "school.course.presentation",
+      "class": "PLAYER_FACING",
+      "consumerReady": true,
+      "count": 8,
+      "accessibilityAlt": true
+    },
+    {
+      "id": "school.teacher.media",
+      "class": "CONSUMER_READY",
+      "consumerReady": true,
+      "count": 8,
+      "localizedAltCaption": true
+    },
+    {
+      "id": "school.teacher-milestone-depth.v1",
+      "class": "PREPARATION_ONLY",
+      "consumerReady": false,
+      "teacherCount": 2,
+      "selectedMilestoneIds": false
+    },
+    {
+      "id": "school-whole-career-transfer-atlas-v1",
+      "class": "PREPARATION_ONLY",
+      "consumerReady": false,
+      "careerCount": 10
+    },
+    {
+      "id": "school-target",
+      "class": "PREPARATION_ONLY",
+      "consumerReady": true,
+      "runtimeAttachmentSelected": false
+    }
+  ],
+  "obsolete": [],
+  "gaps": [
+    "Generic paid-lesson reaction facts do not expose exact course or teacher identity.",
+    "Night-study facts expose exact choice/course identity but not teacher presence.",
+    "Paid-lesson journal is raw English and has a null localization reference.",
+    "School-to-career transfer mappings have no approved thresholds or producer/public-result selections."
+  ],
+  "constraints": {
+    "changesRuntime": false,
+    "changesProductionPacks": false,
+    "changesRootLocalization": false
+  }
+}
