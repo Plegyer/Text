@@ -132,7 +132,7 @@ test('Night-study flavor content does not own Night-study mechanics',()=>{
   ).state;
 
   const offer=out.run.flow.reaction.queued.find(
-    q=>q.eventId==='school-life-content-v1.after-night-study'
+    q=>q.eventId==='school-life-content-v1.night-study.arcana-reason'
   );
   assert.ok(offer);
 
