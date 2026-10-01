@@ -16,5 +16,5 @@ The machine-readable manifest is `content/school-production-manifest-v11.json`. 
 
 Compatibility note:
 - `school-life-content-v1.after-night-study` is retained for historical queued Save identity;
-- the validator-required known reaction trigger is gated by `not calendarYear >= 1`, which is false for every playable year;
+- the validator-required known reaction trigger uses an exact zero-chance policy (`base=0`, `perPoint=0`, `max=0`);
 - new runs therefore use only the 24 exact Night-study events.
