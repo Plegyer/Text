@@ -1,5 +1,10 @@
 # PROJECT STATE
 
+## Corrected QA truth — 2026-10-01
+
+Current shipped main still has a Satyr Maid / Undead Farm second-shift repeatability defect. The repaired behavior exists only in frozen PR #147 until independent QA acceptance + merge. Any older prose calling both starter loops repeatable is superseded by this note.
+
+
 ## LIVE AUDIT UPDATE — 2026-10-01
 
 **Superseding status:** read `LEAD1_CURRENT_STATE_v1.md` before older milestone sections below.

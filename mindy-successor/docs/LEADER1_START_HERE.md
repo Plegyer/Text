@@ -1,5 +1,12 @@
 # Leader 1 — Start Here
 
+## Exact-head delivery rule
+
+A green workflow or QA verdict applies only to the exact PR head SHA it tested. If a producer branch moves afterward, old green/QA evidence is historical until the new head gets its own full CI and required QA gate.
+
+Workers may continue on a **new stacked branch** while a predecessor candidate is frozen; they must never move the frozen candidate merely to start the next queue.
+
+
 Status: **MANDATORY LEADER ENTRYPOINT**
 Updated: 2026-10-01
 Repository: `Plegyer/Text`

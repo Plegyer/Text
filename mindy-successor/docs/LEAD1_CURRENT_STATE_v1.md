@@ -1,5 +1,12 @@
 # Leader 1 Current State v1
 
+## Corrected QA truth — 2026-10-01
+
+Current main `fda3dcb66d6fdb40230712e65f4cc4605d9b1124` still has the confirmed Satyr Maid / Undead Farm post-first-shift repeatability defect: first real shift works, second shift replays a one-time career transition and fails. Do not call those loops repeatable on shipped main until repaired PR #147 is QA-accepted and merged.
+
+Repaired frozen PR #147 head `e9e1c4d5cdafcdf5e8571170cd9b699426536746` has exact-head CI #483 SUCCESS and is queued for fresh Chat 4 QA.
+
+
 ## Leader recovery entrypoint
 
 Before using this state snapshot, read:

@@ -1,5 +1,26 @@
 # Leader 1 — Live Dashboard
 
+## LIVE ACTION UPDATE — 2026-10-01 05:12Z
+
+Current main at assignment time: `fda3dcb66d6fdb40230712e65f4cc4605d9b1124`, main CI #488 SUCCESS.
+
+Current producer candidates are no longer a waiting problem:
+- Chat 1 PR #147: frozen `e9e1c4d5cdafcdf5e8571170cd9b699426536746`, CI #483 SUCCESS.
+- Chat 2 PR #151: frozen `463d877009b5ecc1d255d7aa27a91bb7c38016e5`, CI #474 SUCCESS.
+- Chat 3 PR #146: repaired/frozen `8fa771f212190e5ad9ba4145869d5ce0b04d2cf2`, CI #500 SUCCESS.
+- Chat 5 PR #156: frozen `97b659d78ac3a2ccfe72c556344631f7de570507`, CI #489 SUCCESS.
+
+Chat 4 is assigned a non-idling gate sequence: #147 -> #151 -> #146 -> #156. A blocker on one candidate does not stop QA of the others.
+
+Producer chats do not wait for QA. They keep their frozen PR immutable and continue on new stacked branches:
+- Chat 1 C1D-97..108: Satyr Maid complete career runtime.
+- Chat 2 C2-121..132: Satyr Maid presentation/media/accessibility.
+- Chat 3 C3-121..132: complete first Forest product slice + natural item acquisition.
+- Chat 5 C5-121..132: Satyr Maid School cross-system content.
+
+Next playable milestone remains **Satyr Maid — Complete Career Slice**, while Forest/item depth proceeds independently in parallel.
+
+
 Status: **LIVE / MUTABLE**
 Snapshot: 2026-10-01
 This file is the fastest current orientation for Leader 1. Verify Git before acting.
