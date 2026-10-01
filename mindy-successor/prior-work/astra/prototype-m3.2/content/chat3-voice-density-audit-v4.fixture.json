@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "chat3.voice-density-audit.v4",
+  "status": "CONTENT_VOICE_DENSITY_AUDIT",
+  "task": "C3-103",
+  "baseMain": "6afc01061646bc52cec824863bf89e8ad8c309d0",
+  "sourceFixtures": [
+    "content/forest-continuity-depth-v5.fixture.json",
+    "content/forest-aftermath-depth-v5.fixture.json",
+    "content/ordinary-poverty-continuity-depth-v5.fixture.json"
+  ],
+  "totals": {
+    "authoredLocalizationPairs": 33,
+    "forestContinuityPairs": 8,
+    "forestAftermathPairs": 9,
+    "povertyContinuityPairs": 16,
+    "exactDuplicateKeys": 0,
+    "exactDuplicateRuTexts": 0,
+    "exactDuplicateEnTexts": 0,
+    "productionLocalizationCollisions": 0,
+    "technicalJargonInPlayerFacingText": 0
+  },
+  "reachability": {
+    "forestContinuity": "PREPARATION_ONLY",
+    "forestAftermath": "PREPARATION_ONLY",
+    "povertyContinuity": "CONSUMER_READY_BY_EXISTING_EVENT_VARIANT_IDENTITIES",
+    "ambiguousSmallJobResults": "PREPARATION_ONLY_BY_C3_101"
+  },
+  "findings": [
+    "No queue-v10 source string requires trimming for exact duplication.",
+    "No queue-v10 source string contains implementation-facing technical jargon.",
+    "Forest v5 prose stays preparation-only until an approved presentation/content selector exists.",
+    "Poverty continuity uses current event/variant identities; publication remains selective integration work.",
+    "Ambiguous variant-specific small-job result prose remains excluded from player-facing consumption."
+  ],
+  "disposition": "VOICE_AND_DENSITY_CLEAN"
+}
