@@ -282,7 +282,7 @@ export function freshSave(metaInput?:Partial<Meta>&{completed?:string[];lives?:n
   const meta=defaultMeta(metaInput);
   const statRecord=Object.fromEntries(stats.map(k=>[k,1])) as Record<Stat,number>;
   applyHardWorkStartingBonuses(meta,statRecord);
-  const startingMoney=600+(meta.hardWorkProgress.includes('merchant')?600:0);
+  const startingMoney=600+(meta.hardWorkProgress.includes('merchant')?600:0)+(meta.unlocks.includes('satyr-maid.house-credit')?600:0);
   const save={
     schemaVersion:4 as const,
     contentVersion:'0.1.0',
