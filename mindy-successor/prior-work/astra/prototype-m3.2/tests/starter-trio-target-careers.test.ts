@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import {dispatch,parseSave} from '../src/core/engine.ts';
+import {dispatch,eligible,parseSave} from '../src/core/engine.ts';
 import {presentationSlots} from '../src/core/presentation.ts';
 import {catalog,started} from './helpers.ts';
 import type {Save} from '../src/core/schema.ts';
@@ -9,12 +9,25 @@ import type {Save} from '../src/core/schema.ts';
 function reload(state:Save){
   return parseSave(JSON.stringify(state),catalog);
 }
+function settlePending(state:Save){
+  let s=state,guard=0;
+  while(s.run.pending){
+    if(++guard>20)throw new Error('pending scene loop');
+    const event=catalog.events.find(e=>e.id===s.run.pending!.eventId);
+    assert.ok(event,s.run.pending.eventId);
+    const choice=event.choices.find(choice=>eligible(choice.conditions,s,catalog));
+    assert.ok(choice,event.id);
+    s=dispatch(s,{type:'choice',id:choice.id},catalog);
+  }
+  return s;
+}
 
 const cases=[
   {
     action:'satyr-maid.shift',
     career:'satyr-maid',
-    firstStage:'known-face',
+    firstStage:'floor-rhythm',
+    expectedEffects:[{kind:'incrementCareerCounter',career:'satyr-maid',counter:'completed_shifts',amount:1}] as const,
     firstFact:'first-shift-complete',
     resultPresentation:'job/satyr-maid/result/default',
     seasonalMedia:[
@@ -28,6 +41,10 @@ const cases=[
     action:'undead-farm.shift',
     career:'undead-farm',
     firstStage:'reliable-helper',
+    expectedEffects:[
+      {kind:'incrementCareerCounter',career:'undead-farm',counter:'completed_shifts',amount:1},
+      {kind:'advanceCareer',career:'undead-farm',transition:'first-shift'}
+    ] as const,
     firstFact:'first-shift-complete',
     resultPresentation:'job/undead-farm/result/default',
     seasonalMedia:[
@@ -45,10 +62,7 @@ test('starter trio exposes target Satyr Maid and Undead Farm repeatable 1-Energy
     assert.ok(action);
     assert.equal(action.cost.energy,1);
     assert.equal(action.cost.money,0);
-    assert.deepEqual(action.effects,[
-      {kind:'incrementCareerCounter',career:c.career,counter:'completed_shifts',amount:1},
-      {kind:'advanceCareer',career:c.career,transition:'first-shift'}
-    ]);
+    assert.deepEqual(action.effects,c.expectedEffects);
     assert.ok(catalog.definitions.careers?.some(career=>career.id===c.career));
   }
 });
@@ -58,6 +72,7 @@ test('Satyr Maid and Undead Farm first target shifts persist typed career progre
     let s=started();
     const energyBefore=s.run.dayState.energyCurrent;
     s=dispatch(s,{type:'action',id:c.action},catalog);
+    s=settlePending(s);
 
     assert.equal(s.run.dayState.energyCurrent,energyBefore-1);
     assert.equal(s.run.progression.careers[c.career]?.counters.completed_shifts,1);
@@ -98,9 +113,17 @@ test('starter target shifts expose deterministic seasonal presentation surfaces 
   ])assert.ok(slots.has(id),id);
 });
 
-test('new starter target layer does not create guessed Hard Work endings or alter Lumber Hard Work',()=>{
-  assert.equal(catalog.definitions.endings.some(e=>e.id==='ending.satyr-maid.hard-work'),false);
-  assert.equal(catalog.definitions.endings.some(e=>e.id==='ending.undead-farm.hard-work'),false);
+test('starter target layer exposes the approved 50-shift Hard Work endings and preserves Lumber Hard Work',()=>{
+  for(const career of ['satyr-maid','undead-farm'] as const){
+    const ending=catalog.definitions.endings.find(e=>e.id===`ending.${career}.hard-work`);
+    assert.ok(ending,career);
+    assert.deepEqual(ending.conditions,[{
+      kind:'careerCounter',career,counter:'completed_shifts',op:'gte',value:50
+    }],career);
+    assert.deepEqual(ending.metaRewards,[{
+      kind:'hardWork',rewardId:`hardWork:${career}`,career
+    }],career);
+  }
 
   const lumber=catalog.definitions.endings.find(e=>e.id==='ending.lumber.hard-work');
   assert.ok(lumber);

@@ -29,7 +29,7 @@ test('Day 1 command gate exposes exactly the three locked starter career shifts'
   for(const id of lateActions){
     const action=catalog.definitions.actions.find(a=>a.id===id);
     assert.ok(action,id);
-    assert.deepEqual(action.conditions,[],id+' starts without an approved unlock condition');
+    assert.ok(action.conditions.length>0,id+' has an approved derived unlock condition');
     assert.equal(actionAvailable(action,s,catalog),false,id);
     assert.throws(
       ()=>dispatch(s,{type:'action',id},catalog),

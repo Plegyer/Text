@@ -1603,11 +1603,6 @@
           "career": "satyr-maid",
           "counter": "completed_shifts",
           "amount": 1
-        },
-        {
-          "kind": "advanceCareer",
-          "career": "satyr-maid",
-          "transition": "first-shift"
         }
       ],
       "mode": "normal",
@@ -1666,6 +1661,270 @@
             {
               "kind": "calendarSeason",
               "value": "winter"
+            }
+          ],
+          "media": [
+            "stage.tavern.winter"
+          ]
+        },
+        {
+          "id": "spring.arrival-rush",
+          "text": "Spring arrival rush: you triage wet cloaks, fresh orders, and new travellers without letting one table capture the whole floor.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "spring"
+            },
+            {
+              "kind": "careerStage",
+              "career": "satyr-maid",
+              "stage": "known-face"
+            }
+          ],
+          "media": [
+            "stage.tavern.spring"
+          ]
+        },
+        {
+          "id": "spring.table-reset",
+          "text": "Spring table reset: you reorganize the room between waves, keeping service moving while staff and guests compete for the same narrow space.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "spring"
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "house-regular"
+                },
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "veteran-service"
+                },
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "house-power"
+                },
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "personal-network"
+                },
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "boundaries"
+                },
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "outcome-ready"
+                }
+              ]
+            }
+          ],
+          "media": [
+            "stage.tavern.spring"
+          ]
+        },
+        {
+          "id": "summer.split-order",
+          "text": "Summer split order: two crowded tables merge requests into one noisy list, and you keep the service sequence clear without promising special treatment.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "summer"
+            },
+            {
+              "kind": "careerStage",
+              "career": "satyr-maid",
+              "stage": "known-face"
+            }
+          ],
+          "media": [
+            "stage.tavern.summer"
+          ]
+        },
+        {
+          "id": "summer.refill-rush",
+          "text": "Summer refill rush: heat and evening traffic keep every tray in motion, so you coordinate refills and staff handoffs instead of racing alone.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "summer"
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "house-regular"
+                },
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "veteran-service"
+                },
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "house-power"
+                },
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "personal-network"
+                },
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "boundaries"
+                },
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "outcome-ready"
+                }
+              ]
+            }
+          ],
+          "media": [
+            "stage.tavern.summer"
+          ]
+        },
+        {
+          "id": "autumn.queue-control",
+          "text": "Autumn queue control: festival guests argue over priority, and you state the service order calmly enough that the room keeps moving.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "autumn"
+            },
+            {
+              "kind": "careerStage",
+              "career": "satyr-maid",
+              "stage": "known-face"
+            }
+          ],
+          "media": [
+            "stage.tavern.autumn"
+          ]
+        },
+        {
+          "id": "autumn.closing-reset",
+          "text": "Autumn closing reset: after the festival wave, you coordinate cleanup, missing cups, and the next shift's setup before the doors finally quiet.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "autumn"
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "house-regular"
+                },
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "veteran-service"
+                },
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "house-power"
+                },
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "personal-network"
+                },
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "boundaries"
+                },
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "outcome-ready"
+                }
+              ]
+            }
+          ],
+          "media": [
+            "stage.tavern.autumn"
+          ]
+        },
+        {
+          "id": "winter.familiar-order",
+          "text": "Winter familiar order: regular patrons know the routine, but recognition stays professional and does not become a promise of private access.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "winter"
+            },
+            {
+              "kind": "careerStage",
+              "career": "satyr-maid",
+              "stage": "known-face"
+            }
+          ],
+          "media": [
+            "stage.tavern.winter"
+          ]
+        },
+        {
+          "id": "winter.hearth-round",
+          "text": "Winter hearth round: a smaller room means every delay is visible, so you balance familiar requests, staff pacing, and the last supply checks of the night.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "winter"
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "house-regular"
+                },
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "veteran-service"
+                },
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "house-power"
+                },
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "personal-network"
+                },
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "boundaries"
+                },
+                {
+                  "kind": "careerStage",
+                  "career": "satyr-maid",
+                  "stage": "outcome-ready"
+                }
+              ]
             }
           ],
           "media": [
@@ -1872,7 +2131,35 @@
         "money": 0,
         "energy": 1
       },
-      "conditions": [],
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "stat",
+                  "stat": "charm",
+                  "op": "gte",
+                  "value": 45
+                },
+                {
+                  "kind": "stat",
+                  "stat": "sociability",
+                  "op": "gte",
+                  "value": 35
+                }
+              ]
+            },
+            {
+              "kind": "calendarYear",
+              "op": "gte",
+              "value": 2
+            }
+          ]
+        }
+      ],
       "effects": [
         {
           "kind": "incrementCareerCounter",
@@ -2007,7 +2294,41 @@
         "money": 0,
         "energy": 1
       },
-      "conditions": [],
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "stat",
+                  "stat": "dexterity",
+                  "op": "gte",
+                  "value": 25
+                },
+                {
+                  "kind": "stat",
+                  "stat": "endurance",
+                  "op": "gte",
+                  "value": 20
+                },
+                {
+                  "kind": "stat",
+                  "stat": "wits",
+                  "op": "gte",
+                  "value": 15
+                }
+              ]
+            },
+            {
+              "kind": "calendarYear",
+              "op": "gte",
+              "value": 2
+            }
+          ]
+        }
+      ],
       "effects": [
         {
           "kind": "incrementCareerCounter",
@@ -2142,7 +2463,41 @@
         "money": 0,
         "energy": 1
       },
-      "conditions": [],
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "stat",
+                  "stat": "strength",
+                  "op": "gte",
+                  "value": 30
+                },
+                {
+                  "kind": "stat",
+                  "stat": "endurance",
+                  "op": "gte",
+                  "value": 30
+                },
+                {
+                  "kind": "stat",
+                  "stat": "manners",
+                  "op": "gte",
+                  "value": 20
+                }
+              ]
+            },
+            {
+              "kind": "calendarYear",
+              "op": "gte",
+              "value": 2
+            }
+          ]
+        }
+      ],
       "effects": [
         {
           "kind": "incrementCareerCounter",
@@ -2281,7 +2636,41 @@
         "money": 0,
         "energy": 1
       },
-      "conditions": [],
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "stat",
+                  "stat": "wits",
+                  "op": "gte",
+                  "value": 20
+                },
+                {
+                  "kind": "stat",
+                  "stat": "reason",
+                  "op": "gte",
+                  "value": 20
+                },
+                {
+                  "kind": "stat",
+                  "stat": "sociability",
+                  "op": "gte",
+                  "value": 15
+                }
+              ]
+            },
+            {
+              "kind": "calendarYear",
+              "op": "gte",
+              "value": 2
+            }
+          ]
+        }
+      ],
       "effects": [
         {
           "kind": "incrementCareerCounter",
@@ -2420,7 +2809,41 @@
         "money": 0,
         "energy": 1
       },
-      "conditions": [],
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "stat",
+                  "stat": "creativity",
+                  "op": "gte",
+                  "value": 35
+                },
+                {
+                  "kind": "stat",
+                  "stat": "manners",
+                  "op": "gte",
+                  "value": 25
+                },
+                {
+                  "kind": "stat",
+                  "stat": "grooming",
+                  "op": "gte",
+                  "value": 30
+                }
+              ]
+            },
+            {
+              "kind": "calendarYear",
+              "op": "gte",
+              "value": 3
+            }
+          ]
+        }
+      ],
       "effects": [
         {
           "kind": "incrementCareerCounter",
@@ -2559,7 +2982,41 @@
         "money": 0,
         "energy": 1
       },
-      "conditions": [],
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "stat",
+                  "stat": "dexterity",
+                  "op": "gte",
+                  "value": 30
+                },
+                {
+                  "kind": "stat",
+                  "stat": "wits",
+                  "op": "gte",
+                  "value": 25
+                },
+                {
+                  "kind": "stat",
+                  "stat": "reason",
+                  "op": "gte",
+                  "value": 20
+                }
+              ]
+            },
+            {
+              "kind": "calendarYear",
+              "op": "gte",
+              "value": 3
+            }
+          ]
+        }
+      ],
       "effects": [
         {
           "kind": "incrementCareerCounter",
@@ -2698,7 +3155,41 @@
         "money": 0,
         "energy": 1
       },
-      "conditions": [],
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "stat",
+                  "stat": "sexuality",
+                  "op": "gte",
+                  "value": 55
+                },
+                {
+                  "kind": "stat",
+                  "stat": "charm",
+                  "op": "gte",
+                  "value": 40
+                },
+                {
+                  "kind": "stat",
+                  "stat": "sociability",
+                  "op": "gte",
+                  "value": 35
+                }
+              ]
+            },
+            {
+              "kind": "calendarYear",
+              "op": "gte",
+              "value": 3
+            }
+          ]
+        }
+      ],
       "effects": [
         {
           "kind": "incrementCareerCounter",
@@ -2951,6 +3442,213 @@
       "epilogue": "Fixture epilogue for Lumber Hard Work."
     },
     {
+      "id": "ending.satyr-maid.hard-work",
+      "title": "Satyr Maid Hard Work",
+      "description": "Persistence ending: fifty completed Satyr Maid shifts.",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "satyr-maid",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 50
+        }
+      ],
+      "reward": "satyr-maid.hardwork.compat",
+      "metaRewards": [
+        {
+          "kind": "hardWork",
+          "rewardId": "hardWork:satyr-maid",
+          "career": "satyr-maid"
+        }
+      ],
+      "epilogue": "Hard Work completion recorded for Satyr Maid."
+    },
+    {
+      "id": "ending.undead-farm.hard-work",
+      "title": "Undead Farm Hard Work",
+      "description": "Persistence ending: fifty completed Undead Farm shifts.",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "undead-farm",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 50
+        }
+      ],
+      "reward": "undead-farm.hardwork.compat",
+      "metaRewards": [
+        {
+          "kind": "hardWork",
+          "rewardId": "hardWork:undead-farm",
+          "career": "undead-farm"
+        }
+      ],
+      "epilogue": "Hard Work completion recorded for Undead Farm."
+    },
+    {
+      "id": "ending.tavern.hard-work",
+      "title": "Tavern Hard Work",
+      "description": "Persistence ending: fifty completed Tavern shifts.",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "tavern",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 50
+        }
+      ],
+      "reward": "tavern.hardwork.compat",
+      "metaRewards": [
+        {
+          "kind": "hardWork",
+          "rewardId": "hardWork:tavern",
+          "career": "tavern"
+        }
+      ],
+      "epilogue": "Hard Work completion recorded for Tavern."
+    },
+    {
+      "id": "ending.hunter.hard-work",
+      "title": "Hunter Hard Work",
+      "description": "Persistence ending: fifty completed Hunter shifts.",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "hunter",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 50
+        }
+      ],
+      "reward": "hunter.hardwork.compat",
+      "metaRewards": [
+        {
+          "kind": "hardWork",
+          "rewardId": "hardWork:hunter",
+          "career": "hunter"
+        }
+      ],
+      "epilogue": "Hard Work completion recorded for Hunter."
+    },
+    {
+      "id": "ending.guard.hard-work",
+      "title": "Guard Hard Work",
+      "description": "Persistence ending: fifty completed Guard shifts.",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "guard",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 50
+        }
+      ],
+      "reward": "guard.hardwork.compat",
+      "metaRewards": [
+        {
+          "kind": "hardWork",
+          "rewardId": "hardWork:guard",
+          "career": "guard"
+        }
+      ],
+      "epilogue": "Hard Work completion recorded for Guard."
+    },
+    {
+      "id": "ending.merchant.hard-work",
+      "title": "Merchant Hard Work",
+      "description": "Persistence ending: fifty completed Merchant shifts.",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "merchant",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 50
+        }
+      ],
+      "reward": "merchant.hardwork.compat",
+      "metaRewards": [
+        {
+          "kind": "hardWork",
+          "rewardId": "hardWork:merchant",
+          "career": "merchant"
+        }
+      ],
+      "epilogue": "Hard Work completion recorded for Merchant."
+    },
+    {
+      "id": "ending.artist-geisha.hard-work",
+      "title": "Artist/Geisha Hard Work",
+      "description": "Persistence ending: fifty completed Artist/Geisha shifts.",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "artist-geisha",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 50
+        }
+      ],
+      "reward": "artist-geisha.hardwork.compat",
+      "metaRewards": [
+        {
+          "kind": "hardWork",
+          "rewardId": "hardWork:artist-geisha",
+          "career": "artist-geisha"
+        }
+      ],
+      "epilogue": "Hard Work completion recorded for Artist/Geisha."
+    },
+    {
+      "id": "ending.assassin.hard-work",
+      "title": "Assassin Hard Work",
+      "description": "Persistence ending: fifty completed Assassin shifts.",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "assassin",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 50
+        }
+      ],
+      "reward": "assassin.hardwork.compat",
+      "metaRewards": [
+        {
+          "kind": "hardWork",
+          "rewardId": "hardWork:assassin",
+          "career": "assassin"
+        }
+      ],
+      "epilogue": "Hard Work completion recorded for Assassin."
+    },
+    {
+      "id": "ending.prostitute.hard-work",
+      "title": "Prostitute Hard Work",
+      "description": "Persistence ending: fifty completed Prostitute shifts.",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "prostitute",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 50
+        }
+      ],
+      "reward": "prostitute.hardwork.compat",
+      "metaRewards": [
+        {
+          "kind": "hardWork",
+          "rewardId": "hardWork:prostitute",
+          "career": "prostitute"
+        }
+      ],
+      "epilogue": "Hard Work completion recorded for Prostitute."
+    },
+    {
       "id": "ending.lumber.forewoman",
       "title": "Lumber Forewoman fixture",
       "description": "Cross-system fixture ending using the professional Foreman route and School-result career facts.",
@@ -3041,7 +3739,14 @@
       "initialStage": "new-maid",
       "stages": [
         "new-maid",
-        "known-face"
+        "floor-rhythm",
+        "known-face",
+        "house-regular",
+        "veteran-service",
+        "house-power",
+        "personal-network",
+        "boundaries",
+        "outcome-ready"
       ],
       "transitions": [
         {
@@ -3049,7 +3754,7 @@
           "from": [
             "new-maid"
           ],
-          "to": "known-face",
+          "to": "floor-rhythm",
           "conditions": [
             {
               "kind": "careerCounter",
@@ -3066,6 +3771,140 @@
               "fact": "first-shift-complete"
             }
           ]
+        },
+        {
+          "id": "known-face",
+          "from": [
+            "floor-rhythm"
+          ],
+          "to": "known-face",
+          "conditions": [
+            {
+              "kind": "careerCounter",
+              "career": "satyr-maid",
+              "counter": "completed_shifts",
+              "op": "gte",
+              "value": 3
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "satyr-maid",
+              "fact": "floor-rhythm-complete"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "satyr-maid",
+              "fact": "known-face-established"
+            }
+          ]
+        },
+        {
+          "id": "house-regular",
+          "from": [
+            "known-face"
+          ],
+          "to": "house-regular",
+          "conditions": [
+            {
+              "kind": "careerCounter",
+              "career": "satyr-maid",
+              "counter": "completed_shifts",
+              "op": "gte",
+              "value": 8
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "satyr-maid",
+              "fact": "house-regular-established"
+            }
+          ]
+        },
+        {
+          "id": "veteran-service",
+          "from": [
+            "house-regular"
+          ],
+          "to": "veteran-service",
+          "conditions": [
+            {
+              "kind": "careerCounter",
+              "career": "satyr-maid",
+              "counter": "completed_shifts",
+              "op": "gte",
+              "value": 15
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "branch-house-power",
+          "from": [
+            "veteran-service"
+          ],
+          "to": "house-power",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "satyr-maid",
+              "fact": "house-power-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "branch-personal-network",
+          "from": [
+            "veteran-service"
+          ],
+          "to": "personal-network",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "satyr-maid",
+              "fact": "personal-network-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "branch-boundaries",
+          "from": [
+            "veteran-service"
+          ],
+          "to": "boundaries",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "satyr-maid",
+              "fact": "boundaries-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "outcome-ready",
+          "from": [
+            "house-power",
+            "personal-network",
+            "boundaries"
+          ],
+          "to": "outcome-ready",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "satyr-maid",
+              "fact": "outcome-ready",
+              "present": true
+            }
+          ],
+          "effects": []
         }
       ]
     },
@@ -3209,6 +4048,97 @@
               "value": "professional"
             }
           ]
+        }
+      ]
+    },
+    {
+      "id": "satyr-maid.recurring-guest",
+      "label": "Recurring Guest",
+      "initialStage": "introduced",
+      "stages": [
+        "introduced",
+        "professional-trust",
+        "night-contact",
+        "request-open",
+        "request-resolved"
+      ],
+      "transitions": [
+        {
+          "id": "build-trust",
+          "from": [
+            "introduced"
+          ],
+          "to": "professional-trust",
+          "conditions": [
+            {
+              "kind": "relationshipFact",
+              "relationship": "satyr-maid.recurring-guest",
+              "fact": "introduced-at-work",
+              "present": true
+            },
+            {
+              "kind": "relationshipCounter",
+              "relationship": "satyr-maid.recurring-guest",
+              "counter": "service-meetings",
+              "op": "gte",
+              "value": 2
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "satyr-maid.recurring-guest",
+              "fact": "professional-trust-earned"
+            }
+          ]
+        },
+        {
+          "id": "night-contact",
+          "from": [
+            "professional-trust"
+          ],
+          "to": "night-contact",
+          "conditions": [
+            {
+              "kind": "relationshipFact",
+              "relationship": "satyr-maid.recurring-guest",
+              "fact": "night-met",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "request-open",
+          "from": [
+            "night-contact"
+          ],
+          "to": "request-open",
+          "conditions": [
+            {
+              "kind": "relationshipFact",
+              "relationship": "satyr-maid.recurring-guest",
+              "fact": "request-open",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "request-resolved",
+          "from": [
+            "request-open"
+          ],
+          "to": "request-resolved",
+          "conditions": [
+            {
+              "kind": "relationshipFact",
+              "relationship": "satyr-maid.recurring-guest",
+              "fact": "request-resolved",
+              "present": true
+            }
+          ],
+          "effects": []
         }
       ]
     }
@@ -4095,6 +5025,46 @@
       ],
       "nextDayEffects": [],
       "nextDayEnergyDelta": -1
+    },
+    {
+      "id": "satyr-maid.night.recurring-guest",
+      "label": "Meet the recurring guest",
+      "conditions": [
+        {
+          "kind": "relationshipStage",
+          "relationship": "satyr-maid.recurring-guest",
+          "stage": "professional-trust"
+        },
+        {
+          "kind": "relationshipChoice",
+          "relationship": "satyr-maid.recurring-guest",
+          "choice": "night-response",
+          "value": "accepted"
+        }
+      ],
+      "effects": [],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": 0
+    },
+    {
+      "id": "satyr-maid.night.staff-debrief",
+      "label": "Stay for a staff debrief",
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "satyr-maid",
+          "stage": "house-regular"
+        }
+      ],
+      "effects": [
+        {
+          "kind": "addCareerFact",
+          "career": "satyr-maid",
+          "fact": "staff-debrief-attended"
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": 0
     }
   ],
   "activities": [
