@@ -16,13 +16,14 @@ test('C5-121 maps every exact live School course and track once',()=>{
 });
 
 test('C5-121 keeps the Satyr local threshold narrow and explicit',()=>{
-  assert.deepEqual(map.localMinorHookPolicy,{
-    counter:'lessons_completed',
-    threshold:3,
-    scope:'satyr-maid-only',
-    globalCertificateRule:false,
-    globalProjectRule:false
-  });
+  assert.equal(map.localMinorHookPolicy.counter,'lessons_completed');
+  assert.equal(map.localMinorHookPolicy.threshold,3);
+  assert.equal(map.localMinorHookPolicy.scope,'satyr-maid-only');
+  assert.equal(map.localMinorHookPolicy.globalCertificateRule,false);
+  assert.equal(map.localMinorHookPolicy.globalProjectRule,false);
+  assert.equal(map.localMinorHookPolicy.nightParityCounter,'night_study_sessions');
+  assert.equal(map.localMinorHookPolicy.nightParityThreshold,3);
+  assert.equal(map.localMinorHookPolicy.nightParityScope,'satyr-maid-only');
   assert.deepEqual(
     map.tracks.filter((x:any)=>x.minorHookRelevant).map((x:any)=>x.satyrRole).sort(),
     ['accounting_management','body_confidence_boundary','rhetoric_social']
