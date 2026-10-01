@@ -220,6 +220,10 @@ export const SATYR_MAID_SCHOOL_EVENT_IDS=[
   'satyr-maid.school.boundaries'
 ] as const;
 
+export const SATYR_MAID_CRISIS_EVENT_IDS=[
+  'satyr-maid.crisis.house-strain'
+] as const;
+
 export function presentationIdForSatyrMaidCareerEvent(eventId:string){
   return `job/satyr-maid/event/${clean(eventId)}/default`;
 }
@@ -326,6 +330,15 @@ export function presentationSlots(cat:Catalog):PresentationSlot[]{
     add({
       id:presentationIdForSatyrMaidCareerEvent(eventId),
       label:`Satyr Maid · School reaction · ${eventId}`,
+      baseMediaIds:[],
+      fallbackId:'job/satyr-maid/result/default'
+    });
+  }
+
+  for(const eventId of SATYR_MAID_CRISIS_EVENT_IDS){
+    add({
+      id:presentationIdForSatyrMaidCareerEvent(eventId),
+      label:`Satyr Maid · crisis · ${eventId}`,
       baseMediaIds:[],
       fallbackId:'job/satyr-maid/result/default'
     });
