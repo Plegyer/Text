@@ -23,7 +23,8 @@ Then inspect actual Git:
 - latest main CI/workflow;
 - open PRs;
 - current branch heads for all five workers;
-- exact candidate/QA state.
+- exact candidate/QA state;
+- for every live candidate, verify the PR head SHA equals the SHA named by its green CI/freeze evidence. Head movement invalidates stale green/QA evidence.
 
 Git overrides stale docs.
 
