@@ -6,6 +6,7 @@ import {stats,type Save,type Catalog,type Condition,type Action} from '../core/s
 import {SCHOOL_COURSES,type SchoolCourse} from '../core/school.ts';
 import {labels,hints} from './labels.ts';
 import {povertyPendingLocalizationKey} from './povertyDepth.ts';
+import {forestActivityNarrativeKey} from './forestNarrative.ts';
 import {emptyLocalization,localizationSchema,normalizeLocale,resolveLocalizedText,type Locale,type LocalizationBundle} from '../core/localization.ts';
 declare global {interface Window {gameStorage?:{load:()=>Promise<{text:string;recovered:boolean}|null>;save:(text:string)=>Promise<void>}}}
 const app=document.querySelector<HTMLDivElement>('#app')!;
@@ -22,7 +23,9 @@ const activityOptionHelp=(id:string)=>tr(`activityOption.${id}.help`,'');
 const activityNarrative=(activityId:string,routeId:string|null)=>{
  if(activityId!=='lumber.forest')return '';
  const suffix=routeId??'default';
- return tr(`presentation.activity.forest.entry.${suffix}.text`,'');
+ const fallback=tr(`presentation.activity.forest.entry.${suffix}.text`,'');
+ const key=forestActivityNarrativeKey(state,catalog);
+ return key?tr(key,fallback):fallback;
 };
 const eventTitle=(id:string,fallback:string)=>tr(`event.${id}.title`,fallback);
 const eventVariantText=(eventId:string,variantId:string,fallback:string)=>tr(`event.${eventId}.variant.${variantId}.text`,fallback);

@@ -3665,6 +3665,390 @@
     "action.forest.collect-field-kit.description": {
       "ru": "После первого настоящего занятия забрать в школе контейнеры, бирки и полевые заметки.",
       "en": "After a real lesson, collect containers, labels, and field notes from the School desk."
+    },
+    "presentation.activity.forest.entry.prep.career.v1.text": {
+      "ru": "Перед входом ты ещё раз сверяешь лесную линию с тем, что уже отмечала для артели. Старые рабочие ориентиры теперь не просто фон: они дают точку отсчёта для новой вылазки.",
+      "en": "Before entering, you compare the forest line with what you already surveyed for the crew. The old work markers are no longer background detail; they give this expedition a firm starting reference."
+    },
+    "presentation.activity.forest.entry.prep.career.v2.text": {
+      "ru": "Разведка для артели остаётся в памяти как рабочая схема: где дорога расходится, какие метки свежие и где стоит проверять ответвление внимательнее.",
+      "en": "The survey work for the crew remains a practical map in your head: where the road splits, which marks are fresh, and where a branch deserves a closer look."
+    },
+    "presentation.activity.forest.entry.prep.school.v1.text": {
+      "ru": "Школьные полевые заметки меняют сам взгляд на лес: ты заранее отделяешь наблюдение от догадки и оставляешь место для образцов, которые нужно подписать на месте.",
+      "en": "School field notes change how you look at the Forest: you separate observation from guesswork before starting and leave room for samples that need to be labeled on site."
+    },
+    "presentation.activity.forest.entry.prep.school.v2.text": {
+      "ru": "Перед дорогой ты перечитываешь короткие школьные пометки о фиксации следов. Это не подсказывает ответ, но помогает не смешивать разные признаки по пути.",
+      "en": "Before setting out, you review the short School notes on recording evidence. They do not provide an answer, but they help keep different signs from being confused along the way."
+    },
+    "presentation.activity.forest.entry.prep.equipment.v1.text": {
+      "ru": "Снаряжение ощущается ещё до первого шага: ремни затянуты, инструмент уложен так, чтобы доставать его на ходу, а не искать в траве в нужный момент.",
+      "en": "You feel the preparation before the first step: straps are tightened and tools are packed to be reached on the move instead of searched for in the grass at the wrong moment."
+    },
+    "presentation.activity.forest.entry.prep.equipment.v2.text": {
+      "ru": "У кромки леса ты быстро проверяешь снаряжение. Оно не выбирает маршрут за тебя, зато несколько опасных мест теперь имеют практический ответ.",
+      "en": "At the forest edge, you make a quick gear check. It does not choose the route for you, but several dangerous places now have a practical answer."
+    },
+    "presentation.activity.forest.entry.prep.combined.v1.text": {
+      "ru": "Подготовка складывается слоями: рабочая разведка даёт ориентиры, заметки — порядок наблюдений, а снаряжение — реальные способы пройти трудные места.",
+      "en": "Preparation comes in layers: work survey gives landmarks, notes give a method for observation, and equipment gives real ways through difficult ground."
+    },
+    "presentation.activity.forest.entry.prep.combined.v2.text": {
+      "ru": "Ты входишь не вслепую: часть леса уже знакома по работе и записям, а нужные инструменты лежат под рукой. Всё это расширяет варианты, но не отменяет выбора.",
+      "en": "You are not entering blind: part of the Forest is familiar from work and notes, and the right tools are within reach. That expands your options without making the choices for you."
+    },
+    "presentation.activity.forest.route.logging-road.spring.v1.text": {
+      "ru": "Весенняя лесовозная дорога держится на высокой середине, а колеи по краям уже полны воды. Свежие срезы и грязные следы показывают, где техника прошла совсем недавно.",
+      "en": "In spring, the logging road holds together along its raised center while the wheel ruts are already full of water. Fresh cuts and muddy tracks show where crews passed recently."
+    },
+    "presentation.activity.forest.route.logging-road.spring.v2.text": {
+      "ru": "Талая вода размывает привычную геометрию дороги. Приходится читать путь по щепе, следам сапог и сухим островкам между глубокими колеями.",
+      "en": "Meltwater blurs the road's usual geometry. You read the route from wood chips, boot prints, and dry islands between deep ruts."
+    },
+    "presentation.activity.forest.route.logging-road.summer.v1.text": {
+      "ru": "Летом лесовозная дорога сухая и открытая, но пыль скрывает мелкие следы. Дальше виден тяжёлый завал, которого не было на старых рабочих отметках.",
+      "en": "In summer the logging road is dry and open, but dust hides smaller signs. Farther ahead, a heavy deadfall blocks a stretch that was clear on older work marks."
+    },
+    "presentation.activity.forest.route.logging-road.summer.v2.text": {
+      "ru": "Сухая колея ведёт глубже без весенних обходов, зато поваленный лес становится главным препятствием. Свежая древесина заметна по светлым изломам.",
+      "en": "The dry ruts lead deeper without spring detours, but fallen timber becomes the main obstacle. Fresh wood stands out by its pale breaks."
+    },
+    "presentation.activity.forest.route.logging-road.autumn.v1.text": {
+      "ru": "Осенью дорога читается по новой щепе и тяжёлым следам вывоза. Между ними появляется свежий древесный затор, который сжимает рабочий проход.",
+      "en": "In autumn the road is readable from fresh chips and heavy hauling tracks. Between them, a new timber choke narrows the working passage."
+    },
+    "presentation.activity.forest.route.logging-road.autumn.v2.text": {
+      "ru": "Мокрые листья скрывают старые отпечатки, зато недавние работы видны особенно ясно. Дальше маршрут упирается в спутанную массу стволов.",
+      "en": "Wet leaves hide older tracks, while recent work stands out sharply. Ahead, the route runs into a tangled mass of trunks."
+    },
+    "presentation.activity.forest.route.logging-road.winter.v1.text": {
+      "ru": "Зимой промёрзшая середина дороги кажется надёжной, но глубокие колеи превращаются в жёсткие канавы. Баланс важнее скорости.",
+      "en": "In winter the frozen center of the road looks reliable, but deep ruts become hard channels. Balance matters more than speed."
+    },
+    "presentation.activity.forest.route.logging-road.winter.v2.text": {
+      "ru": "Снег подчёркивает рабочую линию дороги и одновременно прячет её неровности. Замёрзшие колеи требуют точных шагов там, где летом можно было просто пройти.",
+      "en": "Snow outlines the working line of the road while hiding its unevenness. Frozen ruts demand precise footing where summer would allow an ordinary walk."
+    },
+    "presentation.activity.forest.route.hunter-trail.summer.v1.text": {
+      "ru": "Летняя Охотничья тропа читается по примятой зелени и редким меткам на коре. Подсказка из города связывает эти мелочи в одну линию, но промоины всё равно приходится проходить самому.",
+      "en": "The summer Hunter Trail is readable through pressed greenery and sparse bark marks. The city clue ties those small signs into one line, but you still have to cross the washed ground yourself."
+    },
+    "presentation.activity.forest.route.hunter-trail.summer.v2.text": {
+      "ru": "В густой летней траве тропа то исчезает, то снова проявляется у деревьев с нужными отметками. Без свежей охотничьей подсказки эти разрывы выглядели бы случайными.",
+      "en": "In thick summer growth, the trail disappears and reappears beside trees carrying the right marks. Without the fresh hunter clue, those gaps would look accidental."
+    },
+    "presentation.activity.forest.route.hunter-trail.autumn.v1.text": {
+      "ru": "Осенью следы на Охотничьей тропе становятся богаче: примятая листва, шерсть на ветке и знакомые метки идут рядом. Это облегчает чтение направления, но не сам переход.",
+      "en": "In autumn the Hunter Trail carries more signs: pressed leaves, hair on a branch, and familiar marks run together. That makes direction easier to read, not the crossing itself."
+    },
+    "presentation.activity.forest.route.hunter-trail.autumn.v2.text": {
+      "ru": "Листья показывают недавнее движение лучше летней травы. Охотничья подсказка помогает не спутать звериный след с линией, по которой действительно можно пройти.",
+      "en": "Leaves reveal recent movement better than summer grass. The hunter clue helps separate animal tracks from the line that can actually be followed."
+    },
+    "presentation.activity.forest.route.old-boundary.token.v1.text": {
+      "ru": "Старый жетон совпадает с выветренным знаком на первом камне. После этого межевая линия перестаёт быть набором случайных зарубок и становится доступным маршрутом.",
+      "en": "The old token matches the weathered sign on the first stone. After that, the boundary line stops looking like random cuts and becomes a route you can actually follow."
+    },
+    "presentation.activity.forest.route.old-boundary.token.v2.text": {
+      "ru": "Ты прикладываешь жетон к знакомой форме на камне и находишь следующий знак дальше в лесу. Предмет не объясняет старую линию, но подтверждает, где её искать.",
+      "en": "You compare the token with the familiar shape on the stone and find the next mark farther in. The item does not explain the old line, but it confirms where to look for it."
+    },
+    "presentation.activity.forest.challenge.logging-navigation.reason.v1.text": {
+      "ru": "Ты сравниваешь направление колей, возраст срезов и расположение меток. Несколько старых знаков отпадают как ложная линия, оставляя один рабочий путь.",
+      "en": "You compare rut direction, the age of cuts, and marker placement. Several older signs fall away as a false line, leaving one working route."
+    },
+    "presentation.activity.forest.challenge.logging-navigation.reason.v2.text": {
+      "ru": "Логика маршрута проявляется не в одной метке, а в их порядке. Свежая щепа подтверждает вывод там, где старая зарубка могла бы увести в сторону.",
+      "en": "The route's logic appears not in one mark but in their sequence. Fresh chips confirm the conclusion where an old notch could have led you aside."
+    },
+    "presentation.activity.forest.challenge.logging-navigation.career.v1.text": {
+      "ru": "Разведка для артели сразу отделяет знакомые рабочие метки от старых. Ты узнаёшь линию, которую уже отмечала как пригодную для проверки.",
+      "en": "Your survey work for the crew immediately separates familiar work marks from older ones. You recognize the line you had already marked as worth checking."
+    },
+    "presentation.activity.forest.challenge.logging-navigation.career.v2.text": {
+      "ru": "Предыдущая рабочая разведка экономит время: спорное ответвление уже есть в памяти, и свежие следы подтверждают, что оно всё ещё используется.",
+      "en": "Earlier survey work saves time: the questionable branch is already in your memory, and fresh tracks confirm it is still in use."
+    },
+    "presentation.activity.forest.challenge.logging-spring-mud.strength.v1.text": {
+      "ru": "Ты проходишь размокшие колеи силой, переставляя вес с одного твёрдого края на другой и вытягивая себя из вязкой грязи без длинного обхода.",
+      "en": "You force your way through the softened ruts, shifting weight from one firm edge to the next and pulling free of the mud without taking the long detour."
+    },
+    "presentation.activity.forest.challenge.logging-spring-mud.strength.v2.text": {
+      "ru": "Грязь забирает темп, но не останавливает. Несколько тяжёлых шагов выводят на сухую середину дороги, где снова можно двигаться ровно.",
+      "en": "The mud steals your pace but does not stop you. A few heavy steps bring you onto the dry center of the road, where movement becomes steady again."
+    },
+    "presentation.activity.forest.challenge.logging-spring-mud.rope.v1.text": {
+      "ru": "Верёвочный набор превращает скользкую колею в контролируемый переход: ты закрепляешь линию за корень и проходишь по сухому краю без борьбы с глубокой грязью.",
+      "en": "The rope kit turns the slippery rut into a controlled crossing: you anchor a line around a root and move along the dry edge without fighting the deepest mud."
+    },
+    "presentation.activity.forest.challenge.logging-spring-mud.rope.v2.text": {
+      "ru": "Ты натягиваешь короткую страховочную линию между двумя устойчивыми точками. Весенняя грязь остаётся внизу, а переход становится аккуратным техническим обходом.",
+      "en": "You stretch a short safety line between two stable points. The spring mud stays below while the crossing becomes a careful technical bypass."
+    },
+    "presentation.activity.forest.challenge.logging-summer-deadfall.strength.v1.text": {
+      "ru": "Ты не пытаешься разбирать весь завал. Два подвижных ствола удаётся сдвинуть достаточно, чтобы открыть узкий проход между ними.",
+      "en": "You do not try to dismantle the whole deadfall. Two movable trunks shift far enough to open a narrow passage between them."
+    },
+    "presentation.activity.forest.challenge.logging-summer-deadfall.strength.v2.text": {
+      "ru": "Сила уходит на один точный участок завала: ты выворачиваешь зажатую ветвь и освобождаешь место, через которое можно протиснуться дальше.",
+      "en": "You spend your strength on one precise part of the deadfall, wrenching a trapped branch aside and clearing enough room to squeeze through."
+    },
+    "presentation.activity.forest.challenge.logging-summer-deadfall.axe.v1.text": {
+      "ru": "Усиленный топор берёт тяжёлую древесину там, где обычный инструмент только застрял бы. Несколько точных ударов открывают рабочий проход.",
+      "en": "The reinforced axe bites into heavy timber where an ordinary tool would only bind. A few precise strikes open a usable passage."
+    },
+    "presentation.activity.forest.challenge.logging-summer-deadfall.axe.v2.text": {
+      "ru": "Ты выбираешь один несущий сучок и перерубаешь его усиленным топором. Завал оседает ровно настолько, чтобы пройти, не разбирая всё дерево.",
+      "en": "You pick one load-bearing limb and cut it with the reinforced axe. The deadfall settles just enough to pass without dismantling the entire tree."
+    },
+    "presentation.activity.forest.challenge.logging-autumn-deadfall.endurance.v1.text": {
+      "ru": "Осенний затор приходится разбирать постепенно: ветвь за ветвью, без резкого рывка. Выносливость важнее силы одного движения.",
+      "en": "The autumn timber choke has to be worked apart gradually, branch by branch, without one dramatic push. Endurance matters more than a single burst of strength."
+    },
+    "presentation.activity.forest.challenge.logging-autumn-deadfall.endurance.v2.text": {
+      "ru": "Ты долго освобождаешь проход от переплетённых ветвей, сохраняя ровный темп. К концу остаётся узкая, но стабильная линия движения.",
+      "en": "You spend time freeing the path from interlocked branches at a steady pace. By the end, a narrow but stable line remains."
+    },
+    "presentation.activity.forest.challenge.logging-autumn-deadfall.axe.v1.text": {
+      "ru": "Усиленный топор позволяет не тратить силы на весь затор. Ты срезаешь два ключевых упора, и масса ветвей раскрывает проход.",
+      "en": "The reinforced axe keeps you from spending endurance on the whole choke. You cut two key supports and the mass of branches opens a passage."
+    },
+    "presentation.activity.forest.challenge.logging-autumn-deadfall.axe.v2.text": {
+      "ru": "Свежая древесина светлее старой, и усиленный топор быстро отделяет именно её. Затор перестаёт держать дорогу поперёк.",
+      "en": "Fresh wood is paler than the old, and the reinforced axe quickly separates exactly those pieces. The choke stops holding the road shut."
+    },
+    "presentation.activity.forest.challenge.logging-winter-ruts.dexterity.v1.text": {
+      "ru": "Ты проходишь по узкой промёрзшей кромке, заранее выбирая точки для каждого шага. Ошибка означала бы соскользнуть в жёсткую колею, поэтому скорость не нужна.",
+      "en": "You move along the narrow frozen edge, choosing every foothold in advance. A mistake would mean slipping into the hard rut, so speed is useless."
+    },
+    "presentation.activity.forest.challenge.logging-winter-ruts.dexterity.v2.text": {
+      "ru": "Несколько коротких переходов по ледяным выступам заменяют прямой путь. Ловкость позволяет удержать баланс там, где дорога стала неровной лестницей.",
+      "en": "Several short moves over icy ridges replace the direct path. Dexterity keeps your balance where the road has become an uneven staircase."
+    },
+    "presentation.activity.forest.challenge.logging-winter-ruts.rope.v1.text": {
+      "ru": "Ты закрепляешь верёвку вдоль промёрзшей колеи и переносишь вес на страховочную линию в самых скользких местах. Переход становится медленным, но предсказуемым.",
+      "en": "You anchor the rope along the frozen rut and transfer weight to the safety line at the slickest points. The crossing becomes slow but predictable."
+    },
+    "presentation.activity.forest.challenge.logging-winter-ruts.rope.v2.text": {
+      "ru": "Верёвочный набор даёт опору между двумя деревьями у дороги. Вместо балансирования по льду ты проходишь с постоянной страховкой.",
+      "en": "The rope kit gives you support between two trees beside the road. Instead of balancing freely on ice, you cross with continuous protection."
+    },
+    "presentation.activity.forest.challenge.logging-preserve-sample.kit.v1.text": {
+      "ru": "Полевой набор позволяет отделить смоляной образец, подписать место и закрыть контейнер до того, как лесная влажность смешает следы.",
+      "en": "The field kit lets you separate the resin sample, label the location, and seal the container before forest moisture can blur the evidence."
+    },
+    "presentation.activity.forest.challenge.logging-preserve-sample.kit.v2.text": {
+      "ru": "Ты не складываешь образец к обычным находкам: контейнер, бирка и короткая запись сохраняют его как отдельный проверяемый материал.",
+      "en": "You do not toss the sample in with ordinary finds: container, label, and a short note preserve it as distinct, checkable material."
+    },
+    "presentation.activity.forest.challenge.hunter-navigation.wits.v1.text": {
+      "ru": "Ты замечаешь, что примятая трава и зарубки совпадают только на одном направлении. Остальные следы принадлежат зверю или старому обходу.",
+      "en": "You notice that pressed grass and bark marks align in only one direction. The other signs belong to an animal or an older detour."
+    },
+    "presentation.activity.forest.challenge.hunter-navigation.wits.v2.text": {
+      "ru": "Охотничья подсказка задаёт правило, а смекалка соединяет отдельные признаки. Между двумя разрывами тропы находится продолжение, которого сначала не видно.",
+      "en": "The hunter clue gives the rule, and wits connect the separate signs. Between two gaps in the trail, you find a continuation that was invisible at first."
+    },
+    "presentation.activity.forest.challenge.hunter-navigation.school.v1.text": {
+      "ru": "Школьная привычка фиксировать признаки по отдельности не даёт первой догадке стать ответом. После сравнения меток остаётся одна согласованная линия тропы.",
+      "en": "The School habit of recording signs separately keeps the first guess from becoming the answer. After comparison, one consistent trail line remains."
+    },
+    "presentation.activity.forest.challenge.hunter-navigation.school.v2.text": {
+      "ru": "Ты раскладываешь наблюдения как в полевой записи: положение, свежесть, повторяемость. Тропа проявляется только после такого сравнения.",
+      "en": "You break the observations down like a field note: position, freshness, repetition. The trail becomes clear only after that comparison."
+    },
+    "presentation.activity.forest.challenge.hunter-rough-crossing.dexterity.v1.text": {
+      "ru": "Промоина слишком широка для обычного шага, но по корням и выступам можно собрать короткую последовательность точных переходов.",
+      "en": "The washout is too wide for an ordinary step, but roots and ledges form a short sequence of precise crossings."
+    },
+    "presentation.activity.forest.challenge.hunter-rough-crossing.dexterity.v2.text": {
+      "ru": "Ты обходишь рыхлый край и находишь три устойчивые точки. Ловкость превращает опасный прыжок в несколько контролируемых движений.",
+      "en": "You avoid the loose edge and find three stable holds. Dexterity turns a dangerous jump into several controlled movements."
+    },
+    "presentation.activity.forest.challenge.hunter-rough-crossing.rope.v1.text": {
+      "ru": "Верёвочный набор открывает прямой переход через промоину. Ты закрепляешь линию выше осыпи и проходишь там, где без страховки пришлось бы искать длинный обход.",
+      "en": "The rope kit opens a direct crossing over the washout. You anchor above the loose slope and cross where, without protection, you would need a long detour."
+    },
+    "presentation.activity.forest.challenge.hunter-rough-crossing.rope.v2.text": {
+      "ru": "Ты ставишь страховку на живом корне и спускаешься ниже осыпающегося края. Верёвка делает сложный участок частью маршрута, а не тупиком.",
+      "en": "You anchor to a living root and descend below the crumbling edge. The rope turns the difficult section into part of the route instead of a dead end."
+    },
+    "presentation.activity.forest.challenge.hunter-preserve-sample.kit.v1.text": {
+      "ru": "Следовой образец легко испортить прикосновением, поэтому полевой набор оказывается важнее скорости. Ты изолируешь материал и отмечаешь точное место.",
+      "en": "A trace sample is easy to spoil by handling, so the field kit matters more than speed. You isolate the material and mark the exact location."
+    },
+    "presentation.activity.forest.challenge.hunter-preserve-sample.kit.v2.text": {
+      "ru": "Контейнер и бирка превращают хрупкую находку в материал, который можно вынести из леса без смешения с обычной грязью и растениями.",
+      "en": "Container and label turn a fragile find into material that can leave the Forest without being mixed with ordinary soil and plants."
+    },
+    "presentation.activity.forest.challenge.boundary-interpretation.magic.v1.text": {
+      "ru": "Ты воспринимаешь старые знаки не как алфавит, а как последовательность повторяющихся акцентов. Магическая чувствительность помогает заметить, где порядок нарушен.",
+      "en": "You read the old marks not as an alphabet but as a sequence of repeating accents. Magical sensitivity helps you notice where that order is broken."
+    },
+    "presentation.activity.forest.challenge.boundary-interpretation.magic.v2.text": {
+      "ru": "В нескольких зарубках ощущается одинаковый ритм, хотя формы различаются. Магия не объясняет смысл, но показывает, какие знаки принадлежат одной последовательности.",
+      "en": "Several cuts carry the same rhythm despite different shapes. Magic does not explain their meaning, but it reveals which marks belong to one sequence."
+    },
+    "presentation.activity.forest.challenge.boundary-interpretation.reason.v1.text": {
+      "ru": "Ты сравниваешь расстояние между камнями, направление зарубок и повторяющиеся формы. Рациональная схема отделяет намеренный порядок от случайных повреждений.",
+      "en": "You compare spacing between stones, notch direction, and repeating shapes. A rational pattern separates deliberate order from accidental damage."
+    },
+    "presentation.activity.forest.challenge.boundary-interpretation.reason.v2.text": {
+      "ru": "Старая линия начинает читаться через повторение: одинаковый интервал, затем поворот, затем знак. Разум позволяет восстановить правило без догадки о его происхождении.",
+      "en": "The old line becomes readable through repetition: the same interval, then a turn, then a mark. Reason reconstructs the rule without guessing at its origin."
+    },
+    "presentation.activity.forest.challenge.boundary-interpretation.school.v1.text": {
+      "ru": "Ты применяешь школьный принцип: сначала описать знак, потом сравнивать. Это удерживает старую межу от превращения в удобную легенду и оставляет только наблюдаемый порядок.",
+      "en": "You apply the School rule: describe the sign first, compare it second. That keeps the old boundary from turning into a convenient legend and leaves only the observable pattern."
+    },
+    "presentation.activity.forest.challenge.boundary-interpretation.school.v2.text": {
+      "ru": "Полевые заметки дают форму работе: отдельные камни получают номера, направление и расстояние. После этого повторяющаяся последовательность становится видимой.",
+      "en": "Field notes give the work structure: individual stones get numbers, direction, and distance. Only then does the repeating sequence become visible."
+    },
+    "presentation.activity.forest.challenge.boundary-rough-crossing.dexterity.v1.text": {
+      "ru": "Разрушенная межевая стенка держится на нескольких крупных камнях. Ты выбираешь устойчивые опоры и проходишь, не расшатывая остальную кладку.",
+      "en": "The broken boundary wall still rests on a few large stones. You choose stable supports and cross without loosening the rest of the masonry."
+    },
+    "presentation.activity.forest.challenge.boundary-rough-crossing.dexterity.v2.text": {
+      "ru": "Вместо прыжка через провал ты используешь боковые камни как ступени. Точный перенос веса сохраняет равновесие и старую кладку.",
+      "en": "Instead of jumping the gap, you use side stones as steps. Precise weight shifts preserve both your balance and the old masonry."
+    },
+    "presentation.activity.forest.challenge.boundary-rough-crossing.rope.v1.text": {
+      "ru": "Верёвка ложится вдоль разрушенной стены как временный поручень. Она позволяет пройти по старым камням, не проверяя каждый из них всем весом.",
+      "en": "The rope runs along the broken wall as a temporary handrail. It lets you cross the old stones without testing each one with your full weight."
+    },
+    "presentation.activity.forest.challenge.boundary-rough-crossing.rope.v2.text": {
+      "ru": "Ты закрепляешь страховку за дерево по другую сторону межи. Теперь даже шаткие камни можно пройти контролируемо, не превращая стену в новый обвал.",
+      "en": "You anchor a safety line to a tree beyond the boundary. Even loose stones can now be crossed under control without turning the wall into a fresh collapse."
+    },
+    "presentation.activity.forest.challenge.boundary-preserve-sample.kit.v1.text": {
+      "ru": "Полевой набор позволяет взять материал с межевого камня отдельно от мха и грунта. Бирка связывает образец с конкретным местом старой линии.",
+      "en": "The field kit lets you take material from the boundary stone separately from moss and soil. The label ties the sample to one exact point on the old line."
+    },
+    "presentation.activity.forest.challenge.boundary-preserve-sample.kit.v2.text": {
+      "ru": "Ты сохраняешь небольшой образец так, чтобы позже было понятно не только что найдено, но и откуда именно оно взято. Для этой линии контекст важнее размера находки.",
+      "en": "You preserve a small sample so that later it is clear not only what was found, but exactly where it came from. On this boundary line, context matters more than the size of the find."
+    },
+    "event.forest-result-content-v1.success.variant.season-spring.text": {
+      "ru": "Весенняя вылазка заканчивается с подтверждённой последовательностью наблюдений: вода и размокшие обходы больше не скрывают, как связаны найденные признаки.",
+      "en": "The spring expedition ends with a confirmed sequence of observations: water and softened detours no longer hide how the signs connect."
+    },
+    "event.forest-result-content-v1.success.variant.season-summer.text": {
+      "ru": "Летний маршрут даёт цельную картину после сухих дальних проходов и тяжёлых завалов. Наблюдения можно унести из леса как связанный результат.",
+      "en": "The summer route produces a coherent picture after dry long passages and heavy deadfall. The observations can leave the Forest as one connected result."
+    },
+    "event.forest-result-content-v1.success.variant.season-autumn.text": {
+      "ru": "Осенние следы, рабочие метки и изменения на маршруте складываются в подтверждённый результат. Его уже можно обсуждать вне леса без догадок.",
+      "en": "Autumn tracks, work marks, and route changes resolve into a confirmed result that can be discussed outside the Forest without guesswork."
+    },
+    "event.forest-result-content-v1.success.variant.season-winter.text": {
+      "ru": "Зимний путь оставляет меньше случайных следов, и проверенная линия наблюдений сохраняется особенно чётко. Ты возвращаешься с результатом, а не с предположением.",
+      "en": "The winter route leaves fewer incidental traces, and the verified line of observations stays especially clear. You return with a result rather than a guess."
+    },
+    "event.forest-result-content-v1.success.variant.equipment-rope-kit.text": {
+      "ru": "Верёвочный набор помогает пройти отдельные сложные места, но сам по себе не даёт ответа: итог зависит от того, удалось ли связать наблюдения. На этот раз подготовка встроилась в успешную последовательность действий.",
+      "en": "The rope kit helps with specific difficult crossings, but it does not provide the answer by itself; the outcome still depends on connecting the observations. This time, that preparation became part of a successful sequence."
+    },
+    "event.forest-result-content-v1.success.variant.equipment-preservation-kit.text": {
+      "ru": "Полевой набор сохраняет образцы в проверяемом виде. Даже при сложном исходе ясно, что снаряжение решает задачу сохранения материала, а не весь маршрут. На этот раз подготовка встроилась в успешную последовательность действий.",
+      "en": "The field kit preserves samples in a checkable form. Even in a difficult outcome, it is clear that the gear solves preservation, not the entire route. This time, that preparation became part of a successful sequence."
+    },
+    "event.forest-result-content-v1.success.variant.equipment-reinforced-axe.text": {
+      "ru": "Усиленный топор действительно открывает тяжёлую древесину, но проходимый завал ещё не равен разгаданному маршруту. На этот раз подготовка встроилась в успешную последовательность действий.",
+      "en": "The reinforced axe genuinely opens heavy timber, but a cleared obstacle is still not the same as a solved route. This time, that preparation became part of a successful sequence."
+    },
+    "event.forest-result-content-v1.success.variant.equipment-boundary-token.text": {
+      "ru": "Старый жетон подтверждает доступ к межевой линии, но не объясняет найденные там знаки. Он открывает путь, а не готовый вывод. На этот раз подготовка встроилась в успешную последовательность действий.",
+      "en": "The old token confirms access to the boundary line, but does not explain the signs found there. It opens the route, not a ready-made conclusion. This time, that preparation became part of a successful sequence."
+    },
+    "event.forest-result-content-v1.escape.variant.season-spring.text": {
+      "ru": "Весенняя вода делает следующий участок слишком неопределённым. Ты разворачиваешься там, где обратный путь ещё читается по сухим островкам и рабочим следам.",
+      "en": "Spring water makes the next stretch too uncertain. You turn back while the return route is still readable from dry patches and work signs."
+    },
+    "event.forest-result-content-v1.escape.variant.season-summer.text": {
+      "ru": "Сухой летний путь позволяет отступить без спешки: ты запоминаешь последний надёжный ориентир и возвращаешься до того, как дальний участок превратит риск в ставку вслепую.",
+      "en": "The dry summer route allows a calm retreat: you mark the last reliable landmark and return before the distant stretch turns risk into a blind wager."
+    },
+    "event.forest-result-content-v1.escape.variant.season-autumn.text": {
+      "ru": "Осенние следы быстро смешиваются под новой листвой, поэтому ты выбираешь вернуться, пока собственная линия движения ещё отличается от чужих следов.",
+      "en": "Autumn signs disappear quickly under fresh leaves, so you turn back while your own line of travel can still be separated from other tracks."
+    },
+    "event.forest-result-content-v1.escape.variant.season-winter.text": {
+      "ru": "Зимой обратный путь виден хорошо, но цена ошибки на промёрзшем участке выше. Ты используешь эту ясность для своевременного отступления.",
+      "en": "In winter the return route is easy to see, but a mistake on frozen ground costs more. You use that clarity to retreat in time."
+    },
+    "event.forest-result-content-v1.escape.variant.equipment-rope-kit.text": {
+      "ru": "Верёвочный набор помогает пройти отдельные сложные места, но сам по себе не даёт ответа: итог зависит от того, удалось ли связать наблюдения. Ты возвращаешь снаряжение вместе с собой и можешь использовать его в следующей попытке.",
+      "en": "The rope kit helps with specific difficult crossings, but it does not provide the answer by itself; the outcome still depends on connecting the observations. You bring the gear back with you and can use it on another attempt."
+    },
+    "event.forest-result-content-v1.escape.variant.equipment-preservation-kit.text": {
+      "ru": "Полевой набор сохраняет образцы в проверяемом виде. Даже при сложном исходе ясно, что снаряжение решает задачу сохранения материала, а не весь маршрут. Ты возвращаешь снаряжение вместе с собой и можешь использовать его в следующей попытке.",
+      "en": "The field kit preserves samples in a checkable form. Even in a difficult outcome, it is clear that the gear solves preservation, not the entire route. You bring the gear back with you and can use it on another attempt."
+    },
+    "event.forest-result-content-v1.escape.variant.equipment-reinforced-axe.text": {
+      "ru": "Усиленный топор действительно открывает тяжёлую древесину, но проходимый завал ещё не равен разгаданному маршруту. Ты возвращаешь снаряжение вместе с собой и можешь использовать его в следующей попытке.",
+      "en": "The reinforced axe genuinely opens heavy timber, but a cleared obstacle is still not the same as a solved route. You bring the gear back with you and can use it on another attempt."
+    },
+    "event.forest-result-content-v1.escape.variant.equipment-boundary-token.text": {
+      "ru": "Старый жетон подтверждает доступ к межевой линии, но не объясняет найденные там знаки. Он открывает путь, а не готовый вывод. Ты возвращаешь снаряжение вместе с собой и можешь использовать его в следующей попытке.",
+      "en": "The old token confirms access to the boundary line, but does not explain the signs found there. It opens the route, not a ready-made conclusion. You bring the gear back with you and can use it on another attempt."
+    },
+    "event.forest-result-content-v1.failure.variant.season-spring.text": {
+      "ru": "Весенняя грязь и вода съедают запас сил раньше, чем отдельные признаки складываются в проверяемую линию. В этот раз приходится выйти без ответа.",
+      "en": "Spring mud and water consume your reserve before the separate signs form a verifiable line. This attempt ends without an answer."
+    },
+    "event.forest-result-content-v1.failure.variant.season-summer.text": {
+      "ru": "Летняя доступность заводит дальше, но запас сил заканчивается прежде, чем дальние наблюдения удаётся связать. Возвращение становится вынужденным.",
+      "en": "Summer access carries you farther, but endurance runs out before the distant observations can be connected. The return becomes forced."
+    },
+    "event.forest-result-content-v1.failure.variant.season-autumn.text": {
+      "ru": "Осенний лес даёт много следов сразу, и на исходе сил они перестают складываться в надёжный порядок. Приходится закончить попытку без подтверждения.",
+      "en": "Autumn offers many signs at once, and as endurance runs out they stop forming a reliable order. The attempt ends without confirmation."
+    },
+    "event.forest-result-content-v1.failure.variant.season-winter.text": {
+      "ru": "Промёрзший маршрут требует слишком много точных переходов подряд. Силы заканчиваются раньше, чем удаётся завершить проверку, и лес приходится покинуть.",
+      "en": "The frozen route demands too many precise crossings in succession. Endurance runs out before the investigation is complete, forcing you out of the Forest."
+    },
+    "event.forest-result-content-v1.failure.variant.equipment-rope-kit.text": {
+      "ru": "Верёвочный набор помогает пройти отдельные сложные места, но сам по себе не даёт ответа: итог зависит от того, удалось ли связать наблюдения. Неудачный исход показывает границу его пользы без скрытого штрафа или потери предмета.",
+      "en": "The rope kit helps with specific difficult crossings, but it does not provide the answer by itself; the outcome still depends on connecting the observations. The failed outcome shows the limit of its usefulness without a hidden penalty or item loss."
+    },
+    "event.forest-result-content-v1.failure.variant.equipment-preservation-kit.text": {
+      "ru": "Полевой набор сохраняет образцы в проверяемом виде. Даже при сложном исходе ясно, что снаряжение решает задачу сохранения материала, а не весь маршрут. Неудачный исход показывает границу его пользы без скрытого штрафа или потери предмета.",
+      "en": "The field kit preserves samples in a checkable form. Even in a difficult outcome, it is clear that the gear solves preservation, not the entire route. The failed outcome shows the limit of its usefulness without a hidden penalty or item loss."
+    },
+    "event.forest-result-content-v1.failure.variant.equipment-reinforced-axe.text": {
+      "ru": "Усиленный топор действительно открывает тяжёлую древесину, но проходимый завал ещё не равен разгаданному маршруту. Неудачный исход показывает границу его пользы без скрытого штрафа или потери предмета.",
+      "en": "The reinforced axe genuinely opens heavy timber, but a cleared obstacle is still not the same as a solved route. The failed outcome shows the limit of its usefulness without a hidden penalty or item loss."
+    },
+    "event.forest-result-content-v1.failure.variant.equipment-boundary-token.text": {
+      "ru": "Старый жетон подтверждает доступ к межевой линии, но не объясняет найденные там знаки. Он открывает путь, а не готовый вывод. Неудачный исход показывает границу его пользы без скрытого штрафа или потери предмета.",
+      "en": "The old token confirms access to the boundary line, but does not explain the signs found there. It opens the route, not a ready-made conclusion. The failed outcome shows the limit of its usefulness without a hidden penalty or item loss."
+    },
+    "event.lumber-cross.activity-forest-return.variant.career-surveyed.text": {
+      "ru": "Бригадир сразу узнаёт рабочую основу твоего рассказа: часть ориентиров совпадает с прежней разведкой, а новые наблюдения заполняют пробелы между ними.",
+      "en": "The foreman immediately recognizes the work basis of your account: some landmarks match the earlier survey, while the new observations fill the gaps between them."
+    },
+    "event.lumber-cross.activity-forest-return.variant.school-field-notes.text": {
+      "ru": "Полевые записи делают разговор точнее: место, последовательность и образец разделены так, что артель может обсуждать результат без пересказа по памяти.",
+      "en": "The field notes make the discussion more precise: location, sequence, and sample are separated clearly enough for the crew to discuss the result without relying on memory."
+    },
+    "event.lumber-cross.activity-forest-return.variant.boundary-token.text": {
+      "ru": "Старый жетон лежит рядом с записями как подтверждение того, что межевая линия была доступна не случайно. Бригадир отделяет факт доступа от того, что ещё предстоит понять.",
+      "en": "The old token sits beside the notes as proof that access to the boundary line was not accidental. The foreman separates the fact of access from what still remains to be understood."
+    },
+    "event.lumber-cross.activity-forest-return.variant.preservation-kit.text": {
+      "ru": "Сохранённый образец можно положить на стол отдельно от рассказа. Артель получает не только описание леса, но и материал с понятным местом происхождения.",
+      "en": "The preserved sample can be placed on the table separately from the account. The crew receives not only a description of the Forest, but material with a clear point of origin."
+    },
+    "event.lumber-cross.activity-forest-return.variant.reinforced-axe.text": {
+      "ru": "По записям видно, где усиленный топор изменил сам маршрут: тяжёлый завал перестал быть причиной для обхода. Бригадир отмечает это как практическую часть результата.",
+      "en": "The notes show exactly where the reinforced axe changed the route itself: a heavy deadfall stopped forcing a detour. The foreman marks that as a practical part of the result."
+    },
+    "event.lumber-cross.activity-forest-return.variant.rope-kit.text": {
+      "ru": "В рассказе ясно отмечено место, где верёвочный набор сделал опасный переход контролируемым. Для артели это важно как доказательство проходимости, а не как украшение истории.",
+      "en": "Your account clearly marks where the rope kit turned a dangerous crossing into a controlled one. For the crew, that matters as evidence of passability rather than decoration for the story."
     }
   }
 }
