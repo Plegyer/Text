@@ -1675,6 +1675,38 @@
           }
         ]
       }
+    },
+    "job/satyr-maid/event/satyr-maid-career-house-power/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-result.svg",
+        "alt": "Satyr Maid career milestone: House power.",
+        "altKey": "presentation.static.career.satyr-maid.stage.house-power.alt"
+      }
+    },
+    "job/satyr-maid/event/satyr-maid-career-personal-network/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-result.svg",
+        "alt": "Satyr Maid career milestone: Personal network.",
+        "altKey": "presentation.static.career.satyr-maid.stage.personal-network.alt"
+      }
+    },
+    "job/satyr-maid/event/satyr-maid-career-boundaries/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-result.svg",
+        "alt": "Satyr Maid career milestone: House rules.",
+        "altKey": "presentation.static.career.satyr-maid.stage.boundaries.alt"
+      }
+    },
+    "job/satyr-maid/event/satyr-maid-career-outcome-ready/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-result.svg",
+        "alt": "Satyr Maid career milestone: Outcome ready.",
+        "altKey": "presentation.static.career.satyr-maid.stage.outcome-ready.alt"
+      }
     }
   }
 }
