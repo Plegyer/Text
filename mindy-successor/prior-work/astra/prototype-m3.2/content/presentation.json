@@ -26,6 +26,34 @@
         "src": "assets/presentation/career-satyr-maid-result.svg",
         "alt": "Служанка в таверне завершает обслуживание стола с подносом.",
         "altKey": "presentation.static.career.satyr-maid.result.alt"
+      },
+      "pool": {
+        "version": 1,
+        "ordering": "ordered",
+        "selectionPolicy": "unweighted",
+        "candidates": [
+          {
+            "key": "service-a",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-a.gif",
+            "alt": "Animated Satyr Maid service-work presentation candidate A.",
+            "altKey": "presentation.motion.career.satyr-maid.service.a.alt"
+          },
+          {
+            "key": "service-b",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-b.gif",
+            "alt": "Animated Satyr Maid service-work presentation candidate B.",
+            "altKey": "presentation.motion.career.satyr-maid.service.b.alt"
+          },
+          {
+            "key": "service-c",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-c.gif",
+            "alt": "Animated Satyr Maid service-work presentation candidate C.",
+            "altKey": "presentation.motion.career.satyr-maid.service.c.alt"
+          }
+        ]
       }
     },
     "job/undead-farm/result/default": {
@@ -362,6 +390,34 @@
         "src": "assets/presentation/career-satyr-maid-shift-spring.svg",
         "alt": "Служанка работает в таверне весной; сезон показан окружением и не меняет игровой исход.",
         "altKey": "presentation.static.career.satyr-maid.shift.spring.alt"
+      },
+      "pool": {
+        "version": 1,
+        "ordering": "ordered",
+        "selectionPolicy": "unweighted",
+        "candidates": [
+          {
+            "key": "service-a",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-a.gif",
+            "alt": "Animated Satyr Maid service-work presentation candidate A.",
+            "altKey": "presentation.motion.career.satyr-maid.service.a.alt"
+          },
+          {
+            "key": "service-b",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-b.gif",
+            "alt": "Animated Satyr Maid service-work presentation candidate B.",
+            "altKey": "presentation.motion.career.satyr-maid.service.b.alt"
+          },
+          {
+            "key": "service-c",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-c.gif",
+            "alt": "Animated Satyr Maid service-work presentation candidate C.",
+            "altKey": "presentation.motion.career.satyr-maid.service.c.alt"
+          }
+        ]
       }
     },
     "job/satyr-maid/shift/summer/default": {
@@ -370,6 +426,34 @@
         "src": "assets/presentation/career-satyr-maid-shift-summer.svg",
         "alt": "Служанка работает в таверне летом; сезон показан окружением и не меняет игровой исход.",
         "altKey": "presentation.static.career.satyr-maid.shift.summer.alt"
+      },
+      "pool": {
+        "version": 1,
+        "ordering": "ordered",
+        "selectionPolicy": "unweighted",
+        "candidates": [
+          {
+            "key": "service-a",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-a.gif",
+            "alt": "Animated Satyr Maid service-work presentation candidate A.",
+            "altKey": "presentation.motion.career.satyr-maid.service.a.alt"
+          },
+          {
+            "key": "service-b",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-b.gif",
+            "alt": "Animated Satyr Maid service-work presentation candidate B.",
+            "altKey": "presentation.motion.career.satyr-maid.service.b.alt"
+          },
+          {
+            "key": "service-c",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-c.gif",
+            "alt": "Animated Satyr Maid service-work presentation candidate C.",
+            "altKey": "presentation.motion.career.satyr-maid.service.c.alt"
+          }
+        ]
       }
     },
     "job/satyr-maid/shift/autumn/default": {
@@ -378,6 +462,34 @@
         "src": "assets/presentation/career-satyr-maid-shift-autumn.svg",
         "alt": "Служанка работает в таверне осенью; сезон показан окружением и не меняет игровой исход.",
         "altKey": "presentation.static.career.satyr-maid.shift.autumn.alt"
+      },
+      "pool": {
+        "version": 1,
+        "ordering": "ordered",
+        "selectionPolicy": "unweighted",
+        "candidates": [
+          {
+            "key": "service-a",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-a.gif",
+            "alt": "Animated Satyr Maid service-work presentation candidate A.",
+            "altKey": "presentation.motion.career.satyr-maid.service.a.alt"
+          },
+          {
+            "key": "service-b",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-b.gif",
+            "alt": "Animated Satyr Maid service-work presentation candidate B.",
+            "altKey": "presentation.motion.career.satyr-maid.service.b.alt"
+          },
+          {
+            "key": "service-c",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-c.gif",
+            "alt": "Animated Satyr Maid service-work presentation candidate C.",
+            "altKey": "presentation.motion.career.satyr-maid.service.c.alt"
+          }
+        ]
       }
     },
     "job/satyr-maid/shift/winter/default": {
@@ -386,6 +498,34 @@
         "src": "assets/presentation/career-satyr-maid-shift-winter.svg",
         "alt": "Служанка работает в таверне зимой; сезон показан окружением и не меняет игровой исход.",
         "altKey": "presentation.static.career.satyr-maid.shift.winter.alt"
+      },
+      "pool": {
+        "version": 1,
+        "ordering": "ordered",
+        "selectionPolicy": "unweighted",
+        "candidates": [
+          {
+            "key": "service-a",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-a.gif",
+            "alt": "Animated Satyr Maid service-work presentation candidate A.",
+            "altKey": "presentation.motion.career.satyr-maid.service.a.alt"
+          },
+          {
+            "key": "service-b",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-b.gif",
+            "alt": "Animated Satyr Maid service-work presentation candidate B.",
+            "altKey": "presentation.motion.career.satyr-maid.service.b.alt"
+          },
+          {
+            "key": "service-c",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-c.gif",
+            "alt": "Animated Satyr Maid service-work presentation candidate C.",
+            "altKey": "presentation.motion.career.satyr-maid.service.c.alt"
+          }
+        ]
       }
     },
     "job/undead-farm/shift/spring/default": {
