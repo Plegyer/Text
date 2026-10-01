@@ -54,9 +54,29 @@
       "maxShows": 1,
       "conditions": [
         {
-          "kind": "careerStage",
-          "career": "satyr-maid",
-          "stage": "veteran-service"
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "satyr-maid",
+              "stage": "veteran-service"
+            },
+            {
+              "kind": "careerStage",
+              "career": "satyr-maid",
+              "stage": "personal-network"
+            },
+            {
+              "kind": "careerStage",
+              "career": "satyr-maid",
+              "stage": "house-power"
+            },
+            {
+              "kind": "careerStage",
+              "career": "satyr-maid",
+              "stage": "boundaries"
+            }
+          ]
         },
         {
           "kind": "careerFact",
