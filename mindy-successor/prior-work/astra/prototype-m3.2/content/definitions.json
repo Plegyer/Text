@@ -2360,7 +2360,7 @@
       "scenes": [
         {
           "id": "spring.default",
-          "text": "Tavern shift: the common hall, guest rooms, supplies, travelers, and house information all compete for attention.",
+          "text": "The roads reopen after winter, and the common room fills with people seeing unfamiliar faces for the first time in months. Their boots carry mud and their maps are crossed with abandoned detours; your job is to learn quickly who needs a meal, who needs a dry place for their gear, and who only needs a clear answer about where the road runs now. Warmer weather brings more guests who have never stayed here before. They ask about house rules, nearby roads, and safe places for their luggage, and you notice how much more useful a calm explanation is than a confident answer to something you do not actually know.",
           "conditions": [],
           "media": [
             "stage.tavern.spring"
@@ -2368,7 +2368,7 @@
         },
         {
           "id": "spring.rooms",
-          "text": "A spring arrival wave turns room assignment into the main pressure of the shift.",
+          "text": "A spring shift runs between ordinary service and small repairs: plaster is drying in one corner, a door sticks in another, and one guest room is temporarily closed while its shutters are fixed. You warn travelers early and rearrange the work without promising more space than the house can actually provide.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -2386,7 +2386,7 @@
         },
         {
           "id": "spring.supplies",
-          "text": "Early caravans arrive unevenly, so a house-node shift is partly about deciding which supplies can wait.",
+          "text": "The first caravans arrive in uneven groups: one wagon is late, another reaches town before its guide, and a third only wants a place until dawn. Speed matters less than passing accurate information between the hall, rooms, and yard so nobody inherits someone else's promise.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -2404,7 +2404,7 @@
         },
         {
           "id": "summer.default",
-          "text": "Summer transit keeps the hall busy from meal service through late arrivals.",
+          "text": "In summer, tables empty and fill again before the dishes have time to cool. You track sequence rather than faces: who is only waiting for companions, who needs a room tonight, and who is already leaving for the next pass.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -2417,7 +2417,7 @@
         },
         {
           "id": "summer.occupancy",
-          "text": "High summer occupancy means every room decision affects another traveler waiting downstairs.",
+          "text": "By evening, demand for rooms grows faster than the supply of free keys. You cannot create space with words, so you track which rooms are actually ready, which beds are already promised, and where an alternative should be offered while the traveler still has time to choose it.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -2435,7 +2435,7 @@
         },
         {
           "id": "summer.deliveries",
-          "text": "At house-node level, summer work is a loop of deliveries, room turnover, and conflicting traveler priorities.",
+          "text": "A group returning from a long route brings dust, rolled maps, and too many versions of the same road. You separate requests for water, food, and rooms from route stories so useful information does not disappear into fatigue and boasting.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -2453,7 +2453,7 @@
         },
         {
           "id": "autumn.default",
-          "text": "Autumn trade brings large orders and travelers carrying more goods than time.",
+          "text": "In autumn, nearby tables discuss supplies, return routes, and fair schedules all at once. You make sure an order note does not turn into a rumor and an overheard conversation does not become a promise made on behalf of the house. Festival guests bring cases, cloth, performance lists, and confusion about lodging. You do not try to run the festival itself; your part is making sure people know where their belongings are, when a room becomes free, and who they should ask next.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -2466,7 +2466,7 @@
         },
         {
           "id": "autumn.orders",
-          "text": "A trusted-worker autumn shift is dominated by order sequencing and keeping the common room moving.",
+          "text": "By the end of the shift, several ordinary supplies run out earlier than expected. You do not invent a new price or promise an impossible delivery; you record what remains, offer an available substitute, and tell the next shift exactly what needs checking in the morning.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -2484,7 +2484,7 @@
         },
         {
           "id": "autumn.rumours",
-          "text": "As house node, you notice that supply pressure and traveler rumours arrive together during the trade peak.",
+          "text": "Hunters return with wet cloaks, signs of the forest road, and a habit of speaking briefly. They need space for gear, hot food, and a clear answer about what can be left in a common room and what should stay with its owner.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -2502,7 +2502,7 @@
         },
         {
           "id": "winter.default",
-          "text": "Winter reduces through-traffic but turns every stranded arrival into a room and supply decision.",
+          "text": "Winter closes a road faster than travelers can revise their plans. Several guests who expected to leave in the morning now need to stay longer, and your job is to check rooms, food, and shared-space boundaries again without turning an involuntary delay into someone else's debt.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -2515,7 +2515,7 @@
         },
         {
           "id": "winter.shelter",
-          "text": "A trusted-worker winter shift puts warm rooms and temporary shelter ahead of fast turnover.",
+          "text": "In a cold week, it matters more than usual to know what is actually in storage and what only exists in an old note. You check the real stock and warn the hall before an ordinary request can become an argument.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -2533,7 +2533,7 @@
         },
         {
           "id": "winter.house-node",
-          "text": "At house-node level, winter service means balancing shelter, scarce stock, and information about closed roads.",
+          "text": "A messenger brings word that part of the road is closed, and the room's conversations change within a minute. You do not pretend to be a road authority; you record the source, state what is confirmed, and refuse to present an anxious guess as fact.",
           "conditions": [
             {
               "kind": "calendarSeason",
