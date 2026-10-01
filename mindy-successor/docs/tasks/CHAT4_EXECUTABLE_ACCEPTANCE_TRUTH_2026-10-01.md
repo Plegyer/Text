@@ -1,22 +1,21 @@
 # Chat 4 Executable Acceptance Truth — 2026-10-01
 
-Status: C4-143 exact-current-main truth; closes v13 C4-137-equivalent  
+Status: C4-149 durable current-main closeout; Hunter v15 QA follows  
 Owner: Chat 4 / QA + Product Acceptance Gate  
 Repository: `Plegyer/Text`
 
 ## Exact executable baseline
 
-Exact current-main evidence after integration of the accepted #172/#174/#175 wave:
+C4-149 exact current-main evidence:
 
-- SHA: `afed43c73b7c964bc6e42eb2955eca5165a3c1f7`;
+- SHA: `c122d829dd3c143cbc63fb1aaea0af54216bfffb`;
 - workflow: `mindy-successor check`;
-- run #679 / id `36833488957`;
-- event: push on `main`;
+- push run #758 / id `36857025229`;
 - result: **SUCCESS**;
-- validator: **22 packs / 88 events / 39 actions / 20 endings**;
-- tests: **672 / 672 pass, 0 fail**.
+- validator: **31 packs / 119 events / 39 actions / 22 endings**;
+- tests: **711 / 711 pass, 0 fail**.
 
-This exact SHA contains Satyr School v12, Satyr complete-career presentation v12 and Forest Authored Depth v13. C4-143 revalidated the combined shipped tree rather than reusing producer-head CI.
+The accepted combined Undead product baseline is `d97a970283612ce25591741a521aa31d2a982c95`. The full comparison `d97a970... -> c122d829...` is 13 commits and changes only Leader handoff/dashboard and worker task-pointer/queue Markdown files. There is no production, runtime, content, localization, UI, Save/schema, test or media-path drift. Therefore the shipped executable product truth is unchanged while the exact current-main CI is independently green.
 
 Open/frozen PR behavior is not counted as shipped until integrated.
 
@@ -156,15 +155,17 @@ Forest Authored Depth v13 #175 is shipped.
 
 ## Still incomplete / not shipped
 
-- Undead Farm still lacks a complete career life comparable to the now-shipped Satyr complete-career runtime.
-- The seven later ordinary careers still lack their intended deep career-specific milestone/relationship/crisis/outcome structures.
+- Tavern is the **next incomplete ordinary career in shipped product truth**: its runtime/authored/School/presentation siblings are QA-accepted but not yet integrated.
+- Hunter runtime/School are frozen QA candidates and are not shipped; Hunter presentation/authored siblings are still producer work.
+- Guard, Merchant, Artist-Geisha, Assassin and Prostitute also remain base-work/Hard-Work careers without their intended deep career-specific milestone/relationship/crisis/outcome structures.
 - Playable Palace content is absent beyond the 10/10 derived availability seam.
 - Secret Debt is absent as a production hidden career/state machine.
 - Lumber Forewoman lacks its natural School producer.
 - Full School certificate/project/ending design remains incomplete.
-- The accepted Undead complete-runtime / School / presentation wave (#178/#181/#182) is not shipped until Lead integration and the required C4-144/C4-146 exact-main gates.
-- Ordinary Poverty closure v14 #180 is accepted by QA but not shipped until Lead integration and C4-145.
-- Tavern complete-career runtime/content/presentation/School remains the next active producer wave and is not shipped until frozen green candidates pass C4-147/C4-148 and integration.
+- Undead complete-runtime + School + presentation is shipped and passed C4-144/C4-146 exact-main gates.
+- Ordinary Poverty closure v14 is shipped and passed C4-145.
+- Tavern complete-career runtime/content/presentation/School siblings (#187/#185/#191/#200) are QA-accepted but remain unintegrated; do not count Tavern complete-career depth as shipped.
+- Hunter runtime #201 and School #199 are frozen but unintegrated and must remain behind Tavern in Lead integration order.
 
 ## C4-133 legacy selective-source disposition
 
@@ -197,7 +198,7 @@ QA has gated all three frozen candidates assigned by the current Chat 4 pointer:
 
 All three C4-136 candidates are now integrated. C4-143 re-gated exact current main `afed43c...` with CI #679 / 672 of 672 and closed the v13 current-main truth requirement.
 
-The v14 candidates #178, #180, #181 and #182 have separately received C4-138..C4-141 PASS-WITH-NOTES verdicts on their frozen exact heads. They remain unshipped until their Lead integrations and post-merge main gates.
+The v14 Undead/Poverty candidates #178/#180/#181/#182 were integrated and passed C4-144/C4-145/C4-146 post-merge exact-main gates. Their shipped behavior is part of the current product baseline.
 
 ## Acceptance conclusion
 
@@ -205,8 +206,24 @@ Current main is a healthy executable product baseline.
 
 The trustworthy split is:
 
-- **directly/naturally player-reachable:** all three starter work loops; all-ten Hard Work/Meta; late-career base unlock/work; complete Satyr runtime + School v12 + presentation slice; eight paid School courses; Forest v12 natural item acquisition/three-route challenge product plus Forest v13 authored depth; ordinary poverty/Night recovery; current RU/EN/save/presentation infrastructure.
+- **directly/naturally player-reachable:** all three starter work loops; all-ten Hard Work/Meta; complete Satyr runtime + School + presentation; complete Undead runtime + School + presentation; eight paid School courses; Forest v12 product + Forest v13 authored depth; Ordinary Poverty v14/Night recovery; current RU/EN/save/presentation infrastructure.
 - **test/dependency-accelerated:** Lumber Forewoman's missing natural School producer and some repetition-heavy acceptance setup.
-- **not yet complete/shipped:** accepted but unintegrated Undead runtime/School/presentation wave, accepted but unintegrated Poverty v14 closure, deep lives for the remaining later careers, playable Palace, Secret Debt, complete global School certificate/project/endings, and the active Tavern wave.
+- **not yet complete/shipped:** Tavern complete-career wave despite completed sibling QA; frozen Hunter runtime/School and pending Hunter presentation/authored work; deep lives for Guard/Merchant/Artist-Geisha/Assassin/Prostitute; playable Palace; Secret Debt; complete global School certificate/project/endings.
 
 No fixture, preparation artifact, draft head or frozen-but-unmerged candidate is promoted to shipped status by this document.
+
+
+## C4-149 durable closeout — v15 handoff
+
+- Exact current main: `c122d829dd3c143cbc63fb1aaea0af54216bfffb`.
+- Exact push CI #758 / id `36857025229`: **SUCCESS**, 31 packs / 119 events / 39 actions / 22 endings, 711/711 tests.
+- Product tree is unchanged from combined Undead main `d97a970...`; every descendant change is coordination/docs only.
+- Tavern sibling QA is complete:
+  - runtime #187 — PASS-WITH-NOTES;
+  - authored #185 — PASS-WITH-NOTES;
+  - School #191 — PASS-WITH-NOTES;
+  - presentation #200 — PASS-WITH-NOTES.
+- Tavern is nevertheless **not shipped** until Lead performs collision-safe integration and an exact-current-main gate validates the result.
+- Hunter runtime #201 and Hunter School #199 are frozen QA candidates. Their freeze/green status does not permit Hunter to bypass Tavern integration order.
+- The next incomplete ordinary career by shipped product truth is **Tavern**.
+- Frozen-but-unintegrated Hunter work is not promoted to shipped status by this closeout.
