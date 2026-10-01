@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "id": "chat3.selective-integration-handoff.v10",
+  "status": "CONTENT_HANDOFF_CLEANUP",
+  "task": "C3-106",
+  "baseMain": "6afc01061646bc52cec824863bf89e8ad8c309d0",
+  "forest": [
+    {
+      "sourceFixture": "content/forest-continuity-depth-v5.fixture.json",
+      "classification": "PREPARATION_ONLY",
+      "currentIdentityInputs": [
+        "lumber.forest",
+        "forest.route.logging-road",
+        "forest.route.old-boundary",
+        "logging-road",
+        "old-boundary",
+        "enter_old_boundary"
+      ],
+      "integrationOwner": "Chat 1 Developer / Integration",
+      "runtimeCapabilityRequired": "approved presentation/content selector only",
+      "fallback": "current production Forest route copy"
+    },
+    {
+      "sourceFixture": "content/forest-aftermath-depth-v5.fixture.json",
+      "classification": "PREPARATION_ONLY",
+      "currentIdentityInputs": [
+        "lumber.forest.success",
+        "lumber.forest.escape",
+        "lumber.forest.failure",
+        "forest-result-content-v1.success",
+        "forest-result-content-v1.escape",
+        "forest-result-content-v1.failure",
+        "lumber-cross.activity-forest-return"
+      ],
+      "integrationOwner": "Chat 1 Developer / Integration",
+      "runtimeCapabilityRequired": "approved aftermath presentation/content selector only",
+      "fallback": "current production terminal result and return copy"
+    }
+  ],
+  "ordinaryPoverty": [
+    {
+      "sourceFixture": "content/ordinary-poverty-continuity-depth-v5.fixture.json",
+      "classification": "CONSUMER_READY",
+      "currentConsumer": "src/ui/povertyDepth.ts -> povertyPendingLocalizationKey(eventId,variantId,showCount)",
+      "integrationShape": "publish selected RU/EN keys to root localization and append exact eventId/variantId mappings",
+      "runtimeCapabilityRequired": false,
+      "fallback": "current production event/variant copy"
+    },
+    {
+      "sourceFixture": "content/ordinary-poverty-small-job-depth-v2.fixture.json",
+      "boundaryAudit": "content/ordinary-poverty-small-job-identity-boundary-v3.fixture.json",
+      "classification": "MIXED_SAFE_AND_PREPARATION_ONLY",
+      "safeSingleVariantResultIds": [
+        "summer-crate-help",
+        "cleanup-back-step",
+        "coin-no-name",
+        "herb-useful-find"
+      ],
+      "preparationOnlyAmbiguousIds": [
+        "market-awning",
+        "late-shade-carry"
+      ],
+      "fallback": "current shared choice-result copy for ambiguous multi-variant event"
+    }
+  ],
+  "secretDebt": {
+    "audit": "content/secret-debt-separation-audit-v6.fixture.json",
+    "ordinaryPovertyIndependent": true,
+    "productValuesOpen": true
+  },
+  "cleanup": {
+    "duplicateC3_97AuditRemoved": true,
+    "currentMainRevalidated": true,
+    "staleHandoffAliasIntroduced": false,
+    "noProductionMutation": true
+  }
+}
