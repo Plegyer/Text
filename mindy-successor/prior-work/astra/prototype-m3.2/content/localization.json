@@ -943,12 +943,12 @@
       "en": "The ordinary hunting shift is complete."
     },
     "presentation.static.career.guard.result.alt": {
-      "ru": "Стражница на городском посту со щитом и оружием после патруля.",
-      "en": "A guard at a city watch post with shield and weapon after patrol."
+      "ru": "Городская стражница на обычном посту после смены; сцена показывает службу и служебный доступ, а не боевую механику.",
+      "en": "A city guard at an ordinary post after a shift; the scene presents duty and official access, not a combat mechanic."
     },
     "presentation.static.career.guard.result.caption": {
-      "ru": "Смена городской стражи завершена.",
-      "en": "The city guard shift is complete."
+      "ru": "Обычная городская служба стражи.",
+      "en": "Ordinary city guard duty."
     },
     "presentation.static.career.merchant.result.alt": {
       "ru": "Торговая стойка с товарами и записями после обычной рабочей смены.",
@@ -7237,6 +7237,186 @@
     "presentation.static.career.tavern.event.information-rumour-route.caption": {
       "ru": "Таверна: Подтверждение информационного маршрута.",
       "en": "Tavern: Information-route confirmation."
+    },
+    "presentation.guard.stage.recruit.label": {
+      "ru": "Новобранец",
+      "en": "Recruit"
+    },
+    "presentation.guard.stage.trusted-guard.label": {
+      "ru": "Доверенная стражница",
+      "en": "Trusted guard"
+    },
+    "presentation.guard.stage.senior-guard.label": {
+      "ru": "Старшая стражница",
+      "en": "Senior guard"
+    },
+    "presentation.guard.stage.veteran.label": {
+      "ru": "Ветеран",
+      "en": "Veteran"
+    },
+    "presentation.guard.stage.officer.label": {
+      "ru": "Офицер",
+      "en": "Officer"
+    },
+    "presentation.guard.stage.reform-order.label": {
+      "ru": "Порядок реформ",
+      "en": "Reform order"
+    },
+    "presentation.guard.stage.network.label": {
+      "ru": "Сеть контактов",
+      "en": "Network"
+    },
+    "presentation.guard.stage.major-case.label": {
+      "ru": "Крупное дело",
+      "en": "Major case"
+    },
+    "presentation.guard.stage.outcome-ready.label": {
+      "ru": "Исход готов",
+      "en": "Outcome ready"
+    },
+    "presentation.guard.relationship.stage.introduced.label": {
+      "ru": "Знакомство по службе",
+      "en": "Work introduction"
+    },
+    "presentation.guard.relationship.stage.professional-trust.label": {
+      "ru": "Профессиональное доверие",
+      "en": "Professional trust"
+    },
+    "presentation.guard.relationship.stage.conflict-open.label": {
+      "ru": "Открытый служебный конфликт",
+      "en": "Professional conflict open"
+    },
+    "presentation.guard.relationship.stage.cooperation-ready.label": {
+      "ru": "Готовность к сотрудничеству",
+      "en": "Cooperation ready"
+    },
+    "presentation.guard.relationship.stage.route-resolved.label": {
+      "ru": "Профессиональный маршрут разрешён",
+      "en": "Professional route resolved"
+    },
+    "presentation.guard.item.guard_badge.label": {
+      "ru": "Знак стражи",
+      "en": "Guard Badge"
+    },
+    "presentation.guard.item.guard_sealed_pass.label": {
+      "ru": "Опечатанный пропуск стражи",
+      "en": "Sealed Guard Pass"
+    },
+    "presentation.guard.state.city-dispute-resolved.label": {
+      "ru": "Городской спор зафиксирован",
+      "en": "City dispute resolved"
+    },
+    "presentation.guard.state.crowd-pressure-resolved.label": {
+      "ru": "Давление толпы урегулировано",
+      "en": "Crowd pressure resolved"
+    },
+    "presentation.guard.state.duty-report-evidence.label": {
+      "ru": "Служебный отчёт в деле",
+      "en": "Duty report evidence"
+    },
+    "presentation.guard.state.cargo-pass-evidence.label": {
+      "ru": "Несоответствие пропуска зафиксировано",
+      "en": "Pass discrepancy recorded"
+    },
+    "presentation.guard.state.poverty-response-recorded.label": {
+      "ru": "Ответ на ситуацию бедности зафиксирован",
+      "en": "Poverty response recorded"
+    },
+    "presentation.guard.state.tavern-evidence-known.label": {
+      "ru": "Квитанция таверны учтена",
+      "en": "Tavern receipt evidence known"
+    },
+    "presentation.guard.state.veteran-ready.label": {
+      "ru": "Готовность ветеранского маршрута",
+      "en": "Veteran route ready"
+    },
+    "presentation.guard.state.officer-ready.label": {
+      "ru": "Готовность офицерского маршрута",
+      "en": "Officer route ready"
+    },
+    "presentation.guard.state.reform-ready.label": {
+      "ru": "Готовность маршрута реформ",
+      "en": "Reform route ready"
+    },
+    "presentation.guard.state.network-ready.label": {
+      "ru": "Готовность маршрута сети",
+      "en": "Network route ready"
+    },
+    "presentation.guard.state.major-case-thread.label": {
+      "ru": "Нить крупного дела собрана",
+      "en": "Major-case thread assembled"
+    },
+    "presentation.guard.state.major-case-ready.label": {
+      "ru": "Крупное дело готово",
+      "en": "Major case ready"
+    },
+    "presentation.guard.state.crisis-resolved.label": {
+      "ru": "Кризис у рыночных ворот разрешён",
+      "en": "Market-gate crisis resolved"
+    },
+    "presentation.guard.state.refusal-respected.label": {
+      "ru": "Отказ принят без потери обычной службы",
+      "en": "Refusal respected without loss of ordinary duty"
+    },
+    "presentation.guard.state.partner-case-support.label": {
+      "ru": "Поддержка напарницы по делу доступна",
+      "en": "Partner case support available"
+    },
+    "ui.guard.stageAria": {
+      "ru": "Этап карьеры стражи: {stage}",
+      "en": "Guard career stage: {stage}"
+    },
+    "ui.guard.relationshipAria": {
+      "ru": "Профессиональная связь с напарницей стражи: {stage}",
+      "en": "Professional guard-partner relationship: {stage}"
+    },
+    "ui.guard.itemAria": {
+      "ru": "Служебный доступ: {item}",
+      "en": "Official access item: {item}"
+    },
+    "ui.guard.stateAria": {
+      "ru": "Состояние службы стражи: {state}",
+      "en": "Guard duty state: {state}"
+    },
+    "ui.guard.relationshipEventAria": {
+      "ru": "Профессиональная сцена с напарницей стражи: {state}",
+      "en": "Professional guard-partner scene: {state}"
+    },
+    "ui.guard.relationshipEvent.intro": {
+      "ru": "Рабочее знакомство",
+      "en": "Work introduction"
+    },
+    "ui.guard.relationshipEvent.professional-trust": {
+      "ru": "Профессиональное доверие",
+      "en": "Professional trust"
+    },
+    "ui.guard.relationshipEvent.conflict-open": {
+      "ru": "Служебный конфликт открыт",
+      "en": "Professional conflict open"
+    },
+    "ui.guard.relationshipEvent.conflict-resolve": {
+      "ru": "Разрешение служебного конфликта",
+      "en": "Professional conflict resolution"
+    },
+    "ui.guard.relationshipEvent.case-support": {
+      "ru": "Поддержка по делу",
+      "en": "Case support"
+    },
+    "ui.guard.crisisFeedback.stabilize-by-report": {
+      "ru": "Решение зафиксировано через служебный отчёт; дальнейшая готовность определяется только runtime-состоянием.",
+      "en": "The choice was recorded through an official report; any further readiness is determined only by runtime state."
+    },
+    "ui.guard.crisisFeedback.deescalate-crowd": {
+      "ru": "Решение зафиксировано как деэскалация толпы; презентация не добавляет отдельную моральную шкалу.",
+      "en": "The choice was recorded as crowd de-escalation; presentation adds no separate morality meter."
+    },
+    "ui.guard.crisisFeedback.trade-access-network": {
+      "ru": "Решение зафиксировано как использование существующего служебного доступа и сети; новых прав доступа презентация не выдаёт.",
+      "en": "The choice was recorded as using existing official access and network ties; presentation grants no new access."
+    },
+    "ui.guard.crisisFeedback.defer": {
+      "ru": "Решение отложено; обычная служба остаётся доступной согласно runtime-условиям.",
+      "en": "The decision was deferred; ordinary duty remains available according to runtime conditions."
     }
   }
 }
