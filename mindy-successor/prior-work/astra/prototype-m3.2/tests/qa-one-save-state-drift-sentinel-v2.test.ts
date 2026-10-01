@@ -12,6 +12,21 @@ import type {Save} from '../src/core/schema.ts';
 function reload(state:Save){
   return parseSave(JSON.stringify(state),catalog);
 }
+function resolveV14PovertyNight(state:Save){
+  let s=state;
+  let guard=0;
+  while(s.run.pending?.eventId.startsWith('poverty-closure-production-v14.')){
+    if(++guard>4)throw new Error('v14 poverty Night cascade exceeded guard');
+    const pending=s.run.pending;
+    const event=catalog.events.find(entry=>entry.id===pending.eventId);
+    assert.ok(event,pending.eventId);
+    const choice=event.choices.find(entry=>(pending.allowedChoiceIds??event.choices.map(candidate=>candidate.id)).includes(entry.id));
+    assert.ok(choice,pending.eventId);
+    s=dispatch(s,{type:'choice',id:choice.id},catalog);
+  }
+  return s;
+}
+
 
 function arcanaLessons(state:Save){
   return state.run.progression.school.tracks['school.track.arcana']?.counters.lessons_completed??0;
@@ -125,6 +140,8 @@ test('final one-Save drift sentinel v2 preserves PR24 state across School, Night
   s=reload(s);
   assert.equal(s.run.resources.money,lumberMoney-600);
   assert.equal(s.run.flow.night?.lodgingPaymentCommitted,true);
+  s=resolveV14PovertyNight(s);
+  assert.equal(s.run.flow.night?.phase,'VoluntaryNightChoice');
 
   s=dispatch(s,{type:'chooseNightChoice',id:'lumber.foreman.night'},catalog);
   assert.equal(s.run.flow.pendingScene?.eventId,'lumber-night.foreman-professional');

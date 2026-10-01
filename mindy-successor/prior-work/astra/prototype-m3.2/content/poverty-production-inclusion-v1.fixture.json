@@ -45,6 +45,12 @@
       "packId": "poverty-pressure-production",
       "path": "content/packs/poverty-pressure-production.json",
       "role": "non-terminal ordinary bad-luck pressure events"
+    },
+    {
+      "order": 7,
+      "packId": "poverty-closure-production-v14",
+      "path": "content/packs/poverty-closure-production-v14.json",
+      "role": "ordinary poverty closure: housing distinction, street/cheap breadth, recovery, School/work, item and public relationship acknowledgement"
     }
   ],
   "excluded": [
@@ -57,6 +63,7 @@
     "No shared engine/schema modification is implied by this manifest.",
     "Initial tuning values remain non-locked.",
     "Street zero-money recovery remains mandatory.",
-    "Manifest records proposed inclusion only and does not modify current catalog loading."
+    "v14 closure adds no choice effects and does not change lodging prices, wages, tuition or baseline penalties.",
+    "Secret Debt remains outside ordinary poverty."
   ]
 }

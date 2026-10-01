@@ -6,7 +6,7 @@ import {catalog,started} from './helpers.ts';
 import {povertyPendingLocalizationKey} from '../src/ui/povertyDepth.ts';
 import type {Save} from '../src/core/schema.ts';
 
-const PREFIXES=['poverty-street-production.','poverty-street-production-v2.','poverty-cheap-production.','poverty-cheap-production-v2.','poverty-recovery-production.','poverty-pressure-production.'];
+const PREFIXES=['poverty-street-production.','poverty-street-production-v2.','poverty-cheap-production.','poverty-cheap-production-v2.','poverty-recovery-production.','poverty-pressure-production.','poverty-closure-production-v14.'];
 const isOrdinary=(id:string)=>PREFIXES.some(prefix=>id.startsWith(prefix));
 function pressureScore(choice:any){
  return choice.effects.reduce((score:number,effect:any)=>{
