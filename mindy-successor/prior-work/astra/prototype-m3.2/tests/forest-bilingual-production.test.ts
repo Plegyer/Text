@@ -66,7 +66,7 @@ test('Forest production identities have complete RU and EN localization without 
 test('Forest RU source text matches localization fallback and Lumber Hard Work stays exact',()=>{
   for(const event of pack.events){
     assert.equal(event.title,localization.strings[`event.${event.id}.title`].ru);
-    assert.equal(event.variants[0]?.text,localization.strings[`event.${event.id}.variant.default.text`].ru);
+    assert.equal(event.variants.find(variant=>variant.id==='default')?.text,localization.strings[`event.${event.id}.variant.default.text`].ru);
     assert.equal(event.choices[0]?.label,localization.strings[`event.${event.id}.choice.return.label`].ru);
     assert.equal(event.choices[0]?.text,localization.strings[`event.${event.id}.choice.return.text`].ru);
     const media=pack.media.find(entry=>entry.id===event.id);

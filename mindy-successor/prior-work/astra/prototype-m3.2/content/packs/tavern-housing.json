@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "tavern-housing",
+  "id": "tavern.housing",
   "reads": [],
   "writes": [],
   "capabilities": {
@@ -20,7 +20,7 @@
   "events": [
     {
       "id": "tavern.housing.meal-in-kind",
-      "title": "Help in kind, not a new housing rule",
+      "title": "A staff meal when housing is thin",
       "sourceDomain": "tavern",
       "trigger": [],
       "reactionTriggers": [
@@ -81,30 +81,8 @@
       ],
       "variants": [
         {
-          "id": "street",
-          "text": "After the shift, ordinary staff food remains, and tonight there is enough for you to eat before leaving. It is help in kind, not a free room; your lodging choice and its ordinary consequences remain separate.",
-          "conditions": [
-            {
-              "kind": "housingTier",
-              "value": "street"
-            }
-          ],
-          "media": []
-        },
-        {
-          "id": "cheap",
-          "text": "When the day's budget and a cheap room have already taken most of what you can spare, a meal after the shift makes the evening easier. It does not refund the room or change lodging prices; it simply means one practical need is covered tonight.",
-          "conditions": [
-            {
-              "kind": "housingTier",
-              "value": "cheap"
-            }
-          ],
-          "media": []
-        },
-        {
           "id": "default",
-          "text": "Tavern assistance has clear limits: a meal after work or one practical accommodation does not become a permanent entitlement to housing. That keeps the help useful without erasing the ordinary lodging economy.",
+          "text": "Because your current housing is cheap or street-level, the house can offer one staff meal in kind. It does not pay rent, change your lodging tier, or erase the normal Night housing choice.",
           "conditions": [],
           "media": []
         }
@@ -113,7 +91,7 @@
         {
           "id": "accept-meal",
           "label": "Accept the staff meal",
-          "text": "Nobody asks for a personal favor, hidden debt, or promise in exchange for the help. The support stays inside clear house rules and can end without putting your career or relationships at stake.",
+          "text": "Take the narrow in-kind assistance and keep the ordinary housing economy intact.",
           "conditions": [],
           "effects": [
             {

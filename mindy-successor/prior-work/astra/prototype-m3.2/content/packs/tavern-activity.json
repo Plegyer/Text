@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "tavern-activity",
+  "id": "tavern.activity",
   "reads": [],
   "writes": [],
   "capabilities": {
@@ -22,7 +22,7 @@
   "events": [
     {
       "id": "tavern.activity.forest-return",
-      "title": "The road seen with your own eyes",
+      "title": "A Forest return confirms the road rumour",
       "sourceDomain": "tavern",
       "trigger": [],
       "reactionTriggers": [
@@ -78,21 +78,8 @@
       ],
       "variants": [
         {
-          "id": "ledger-context",
-          "text": "You separate what you saw yourself from what you heard only after returning. That lets the forest result become a useful Tavern fact without dissolving into the general noise of rumor.",
-          "conditions": [
-            {
-              "kind": "careerFact",
-              "career": "tavern",
-              "fact": "guest-ledger-evidence-ready",
-              "present": true
-            }
-          ],
-          "media": []
-        },
-        {
           "id": "default",
-          "text": "After returning from the forest, you can answer a route question from direct experience rather than another guest's story. You describe only the stretch you actually saw and do not turn one successful outing into a promise that the whole route will stay safe all season.",
+          "text": "A successful Forest return matches the road detail recorded at the Tavern. The Activity result is consumed here as confirmation; no new Activity action or extra daytime Energy is added.",
           "conditions": [],
           "media": []
         }
@@ -101,7 +88,7 @@
         {
           "id": "confirm-rumour",
           "label": "Confirm the route information",
-          "text": "A second independent detail matches the first report. You now have confirmed working information, but not a reason to declare every other part of the story true.",
+          "text": "Turn the existing Forest result into typed Tavern route evidence.",
           "conditions": [],
           "effects": [
             {

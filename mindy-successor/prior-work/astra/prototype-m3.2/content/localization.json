@@ -4366,429 +4366,837 @@
       "ru": "Навык границ готов к карьерной реакции без обязательного романтического маршрута. Школа: Сера связала уверенную самопрезентацию с правом назвать границу в сервисной работе.",
       "en": "The boundary skill is ready for a career reaction without requiring a romance route. School: Sera connected confident presentation with the right to state a boundary in service work."
     },
-    "action.tavern.shift.scene.spring.default.text": {
-      "ru": "После зимы дороги снова открываются, и в зал заходят люди, которые впервые за месяцы видят незнакомые лица. На сапогах у них грязь, на столах — карты с перечёркнутыми объездами, а твоя работа состоит в том, чтобы быстро понять, кому нужен ужин, кому сухое место для вещей, а кому — только понятный ответ, где теперь проходит дорога.",
-      "en": "The roads reopen after winter, and the common room fills with people seeing unfamiliar faces for the first time in months. Their boots carry mud and their maps are crossed with abandoned detours; your job is to learn quickly who needs a meal, who needs a dry place for their gear, and who only needs a clear answer about where the road runs now."
+    "presentation.satyr-maid.stage.new-maid.label": {
+      "ru": "Новая служанка",
+      "en": "New maid"
     },
-    "action.tavern.shift.scene.spring.rooms.text": {
-      "ru": "Весенняя смена идёт между обычным обслуживанием и мелким ремонтом: где-то сохнет штукатурка, где-то заедает дверь, а одна комната временно закрыта, пока чинят ставни. Ты предупреждаешь гостей заранее и перестраиваешь порядок работы, не обещая больше мест, чем дом действительно может дать.",
-      "en": "A spring shift runs between ordinary service and small repairs: plaster is drying in one corner, a door sticks in another, and one guest room is temporarily closed while its shutters are fixed. You warn travelers early and rearrange the work without promising more space than the house can actually provide."
+    "presentation.static.career.satyr-maid.stage.new-maid.alt": {
+      "ru": "Служанка у сатиров: карьерный этап «Новая служанка»; статичный рабочий визуал без изменения игрового состояния.",
+      "en": "Satyr Maid career stage “New maid”; a static work visual that does not change gameplay state."
     },
-    "action.tavern.shift.scene.spring.supplies.text": {
-      "ru": "Первые караваны приходят неровными группами: одна повозка опоздала, другая приехала раньше проводника, третья просит место только до рассвета. Важнее всего не скорость, а точная передача информации между залом, комнатами и двором, чтобы никто не получил чужое обещание.",
-      "en": "The first caravans arrive in uneven groups: one wagon is late, another reaches town before its guide, and a third only wants a place until dawn. Speed matters less than passing accurate information between the hall, rooms, and yard so nobody inherits someone else's promise."
+    "presentation.static.career.satyr-maid.stage.new-maid.caption": {
+      "ru": "Карьерный этап: Новая служанка.",
+      "en": "Career stage: New maid."
     },
-    "action.tavern.shift.scene.summer.default.text": {
-      "ru": "Летом столы освобождаются и снова заполняются быстрее, чем успевает остыть посуда. Ты держишь в голове не лица, а последовательность: кто только ждёт попутчиков, кто остаётся на ночь и кто уже уходит к следующему перевалу.",
-      "en": "In summer, tables empty and fill again before the dishes have time to cool. You track sequence rather than faces: who is only waiting for companions, who needs a room tonight, and who is already leaving for the next pass."
+    "presentation.satyr-maid.stage.floor-rhythm.label": {
+      "ru": "Ритм зала",
+      "en": "Floor rhythm"
     },
-    "action.tavern.shift.scene.summer.occupancy.text": {
-      "ru": "К вечеру спрос на комнаты растёт быстрее свободных ключей. Ты не создаёшь места словами: отмечаешь, какие комнаты действительно готовы, кому уже обещан ночлег и где лучше сразу предложить другой вариант, пока человек ещё может его выбрать.",
-      "en": "By evening, demand for rooms grows faster than the supply of free keys. You cannot create space with words, so you track which rooms are actually ready, which beds are already promised, and where an alternative should be offered while the traveler still has time to choose it."
+    "presentation.static.career.satyr-maid.stage.floor-rhythm.alt": {
+      "ru": "Служанка у сатиров: карьерный этап «Ритм зала»; статичный рабочий визуал без изменения игрового состояния.",
+      "en": "Satyr Maid career stage “Floor rhythm”; a static work visual that does not change gameplay state."
     },
-    "action.tavern.shift.scene.summer.deliveries.text": {
-      "ru": "Группа после долгого перехода приносит в дом пыль, свёрнутые карты и слишком много версий одной и той же дороги. Ты отделяешь просьбы о воде, еде и комнате от рассказов о маршруте, чтобы полезная информация не потерялась в усталости и бахвальстве.",
-      "en": "A group returning from a long route brings dust, rolled maps, and too many versions of the same road. You separate requests for water, food, and rooms from route stories so useful information does not disappear into fatigue and boasting."
+    "presentation.static.career.satyr-maid.stage.floor-rhythm.caption": {
+      "ru": "Карьерный этап: Ритм зала.",
+      "en": "Career stage: Floor rhythm."
     },
-    "action.tavern.shift.scene.autumn.default.text": {
-      "ru": "Осенью за соседними столами одновременно обсуждают поставки, обратные дороги и сроки ярмарок. Ты следишь, чтобы записка о заказе не превратилась в слух, а случайно услышанный разговор — в обещание от имени трактира.",
-      "en": "In autumn, nearby tables discuss supplies, return routes, and fair schedules all at once. You make sure an order note does not turn into a rumor and an overheard conversation does not become a promise made on behalf of the house."
+    "presentation.satyr-maid.stage.known-face.label": {
+      "ru": "Знакомое лицо",
+      "en": "Known face"
     },
-    "action.tavern.shift.scene.autumn.orders.text": {
-      "ru": "Фестивальные гости приносят футляры, ткани, списки выступлений и путаницу с размещением. Ты не пытаешься управлять самим праздником: твоя часть — сделать так, чтобы люди знали, где их вещи, когда освобождается комната и к кому обращаться дальше.",
-      "en": "Festival guests bring cases, cloth, performance lists, and confusion about lodging. You do not try to run the festival itself; your part is making sure people know where their belongings are, when a room becomes free, and who they should ask next."
+    "presentation.static.career.satyr-maid.stage.known-face.alt": {
+      "ru": "Служанка у сатиров: карьерный этап «Знакомое лицо»; статичный рабочий визуал без изменения игрового состояния.",
+      "en": "Satyr Maid career stage “Known face”; a static work visual that does not change gameplay state."
     },
-    "action.tavern.shift.scene.autumn.rumours.text": {
-      "ru": "Охотники возвращаются с мокрыми плащами, следами лесной дороги и привычкой говорить коротко. Им нужны место для снаряжения, горячая еда и ясность о том, что можно оставить в общей комнате, а что должно оставаться при хозяине.",
-      "en": "Hunters return with wet cloaks, signs of the forest road, and a habit of speaking briefly. They need space for gear, hot food, and a clear answer about what can be left in a common room and what should stay with its owner."
+    "presentation.static.career.satyr-maid.stage.known-face.caption": {
+      "ru": "Карьерный этап: Знакомое лицо.",
+      "en": "Career stage: Known face."
     },
-    "action.tavern.shift.scene.winter.default.text": {
-      "ru": "Зимняя дорога закрывает людям планы быстрее, чем они успевают их изменить. Несколько гостей, собиравшихся уехать утром, теперь остаются дольше, и твоя работа — заново проверить комнаты, еду и границы общего пространства, не превращая вынужденную задержку в чужой долг.",
-      "en": "Winter closes a road faster than travelers can revise their plans. Several guests who expected to leave in the morning now need to stay longer, and your job is to check rooms, food, and shared-space boundaries again without turning an involuntary delay into someone else's debt."
+    "presentation.satyr-maid.stage.house-regular.label": {
+      "ru": "Своя в доме",
+      "en": "House regular"
     },
-    "action.tavern.shift.scene.winter.shelter.text": {
-      "ru": "В холодную неделю важнее обычного знать, что действительно есть в кладовой, а что только числится в старой записи. Ты сверяешь фактические запасы и предупреждаешь зал до того, как привычный заказ превратится в спор.",
-      "en": "In a cold week, it matters more than usual to know what is actually in storage and what only exists in an old note. You check the real stock and warn the hall before an ordinary request can become an argument."
+    "presentation.static.career.satyr-maid.stage.house-regular.alt": {
+      "ru": "Служанка у сатиров: карьерный этап «Своя в доме»; статичный рабочий визуал без изменения игрового состояния.",
+      "en": "Satyr Maid career stage “House regular”; a static work visual that does not change gameplay state."
     },
-    "action.tavern.shift.scene.winter.house-node.text": {
-      "ru": "Посыльный приносит новость о перекрытом участке дороги, и разговоры в зале меняются за минуту. Ты не изображаешь дорожную службу: отмечаешь источник сообщения, говоришь, что подтверждено, и не выдаёшь тревожную догадку за факт.",
-      "en": "A messenger brings word that part of the road is closed, and the room's conversations change within a minute. You do not pretend to be a road authority; you record the source, state what is confirmed, and refuse to present an anxious guess as fact."
+    "presentation.static.career.satyr-maid.stage.house-regular.caption": {
+      "ru": "Карьерный этап: Своя в доме.",
+      "en": "Career stage: House regular."
     },
-    "action.tavern.shift.scene.spring.new-travelers.text": {
-      "ru": "С потеплением появляется больше гостей, которые здесь никогда не были. Они спрашивают о правилах дома, соседних дорогах и безопасных местах для багажа, а ты замечаешь, насколько полезнее спокойное объяснение, чем уверенный ответ на то, чего сама не знаешь.",
-      "en": "Warmer weather brings more guests who have never stayed here before. They ask about house rules, nearby roads, and safe places for their luggage, and you notice how much more useful a calm explanation is than a confident answer to something you do not actually know."
+    "presentation.satyr-maid.stage.veteran-service.label": {
+      "ru": "Опытная смена",
+      "en": "Veteran service"
     },
-    "action.tavern.shift.scene.summer.late-arrivals.text": {
-      "ru": "Поздние летние гости входят почти одновременно, когда дом уже близок к пределу. Вместо обещаний наугад ты сверяешь комнаты, объясняешь очередь и оставляешь достаточно ясные записи, чтобы следующая смена не повторяла тот же разговор с нуля.",
-      "en": "Late summer arrivals come through the door almost at once when the house is already close to full. Instead of guessing, you check the rooms, explain the order, and leave notes clear enough that the next shift will not have to rebuild the same conversation from nothing."
+    "presentation.static.career.satyr-maid.stage.veteran-service.alt": {
+      "ru": "Служанка у сатиров: карьерный этап «Опытная смена»; статичный рабочий визуал без изменения игрового состояния.",
+      "en": "Satyr Maid career stage “Veteran service”; a static work visual that does not change gameplay state."
     },
-    "action.tavern.shift.scene.autumn.supply-pressure.text": {
-      "ru": "К концу смены несколько привычных запасов заканчиваются раньше ожидаемого. Ты не придумываешь новую цену и не обещаешь невозможную поставку: отмечаешь остаток, предлагаешь доступную замену и передаёшь следующей смене, что именно нужно проверить утром.",
-      "en": "By the end of the shift, several ordinary supplies run out earlier than expected. You do not invent a new price or promise an impossible delivery; you record what remains, offer an available substitute, and tell the next shift exactly what needs checking in the morning."
+    "presentation.static.career.satyr-maid.stage.veteran-service.caption": {
+      "ru": "Карьерный этап: Опытная смена.",
+      "en": "Career stage: Veteran service."
     },
-    "action.tavern.shift.scene.winter.long-stays.text": {
-      "ru": "Зимой временные постояльцы быстрее становятся знакомыми лицами, просто потому что уходить некуда. Это не делает их личную жизнь общей собственностью: ты продолжаешь различать полезную рабочую информацию, обычную болтовню и то, что было сказано доверительно.",
-      "en": "In winter, temporary lodgers become familiar faces more quickly simply because there is nowhere to go. That does not make their private lives common property: you keep separating useful work information, ordinary conversation, and what was shared in confidence."
+    "presentation.satyr-maid.stage.house-power.label": {
+      "ru": "Влияние в доме",
+      "en": "House power"
     },
-    "event.tavern.career.veteran-service.title": {
-      "ru": "Служба, проверенная временем",
-      "en": "Service that holds over time"
+    "presentation.static.career.satyr-maid.stage.house-power.alt": {
+      "ru": "Служанка у сатиров: карьерный этап «Влияние в доме»; статичный рабочий визуал без изменения игрового состояния.",
+      "en": "Satyr Maid career stage “House power”; a static work visual that does not change gameplay state."
     },
-    "event.tavern.career.veteran-service.variant.default.text": {
-      "ru": "Пятьдесят обычных смен означают не один великий поступок, а длинную цепочку дней, когда работа была сделана надёжно. Этот путь остаётся самостоятельным: он не требует превращать каждый гостевой разговор в сеть, кризис или личную историю.",
-      "en": "Fifty ordinary shifts represent not one grand gesture but a long chain of days when the work was done reliably. This path stands on its own; it does not require turning every guest conversation into a network, crisis, or personal story."
+    "presentation.static.career.satyr-maid.stage.house-power.caption": {
+      "ru": "Карьерный этап: Влияние в доме.",
+      "en": "Career stage: House power."
     },
-    "event.tavern.career.veteran-service.choice.take-route.label": {
-      "ru": "Выбрать путь опытной службы",
-      "en": "Choose veteran service"
+    "presentation.satyr-maid.stage.personal-network.label": {
+      "ru": "Личная сеть",
+      "en": "Personal network"
     },
-    "event.tavern.career.veteran-service.choice.take-route.text": {
-      "ru": "Сделать надёжную обычную службу поздним карьерным путём.",
-      "en": "Make reliable service the late-career route."
+    "presentation.static.career.satyr-maid.stage.personal-network.alt": {
+      "ru": "Служанка у сатиров: карьерный этап «Личная сеть»; статичный рабочий визуал без изменения игрового состояния.",
+      "en": "Satyr Maid career stage “Personal network”; a static work visual that does not change gameplay state."
     },
-    "event.tavern.career.veteran-service.choice.keep-options-open.label": {
-      "ru": "Оставить другие пути открытыми",
-      "en": "Keep other routes open"
+    "presentation.static.career.satyr-maid.stage.personal-network.caption": {
+      "ru": "Карьерный этап: Личная сеть.",
+      "en": "Career stage: Personal network."
     },
-    "event.tavern.career.veteran-service.choice.keep-options-open.text": {
-      "ru": "Зафиксировать опыт, не закрывая остальные поздние пути.",
-      "en": "Record the experience without choosing the veteran branch."
+    "presentation.satyr-maid.stage.boundaries.label": {
+      "ru": "Правила и границы",
+      "en": "House rules"
     },
-    "event.tavern.career.innkeeper.title": {
-      "ru": "Дом, которым можно управлять",
-      "en": "A house that can be run"
+    "presentation.static.career.satyr-maid.stage.boundaries.alt": {
+      "ru": "Служанка у сатиров: карьерный этап «Правила и границы»; статичный рабочий визуал без изменения игрового состояния.",
+      "en": "Satyr Maid career stage “House rules”; a static work visual that does not change gameplay state."
     },
-    "event.tavern.career.innkeeper.variant.default.text": {
-      "ru": "Ты начинаешь с устойчивости дома: сверяешь доступные комнаты, рабочие записи и то, что действительно осталось в запасах. Решение не самое эффектное, зато после него следующая смена понимает, что обещано, чего не хватает и кто отвечает за продолжение.",
-      "en": "You start with the stability of the house: check available rooms, working records, and what actually remains in storage. It is not the most dramatic solution, but the next shift knows what was promised, what is missing, and who owns the follow-up."
+    "presentation.static.career.satyr-maid.stage.boundaries.caption": {
+      "ru": "Карьерный этап: Правила и границы.",
+      "en": "Career stage: House rules."
     },
-    "event.tavern.career.innkeeper.choice.continue.label": {
-      "ru": "Выбрать путь управляющей",
-      "en": "Take the Innkeeper route"
+    "presentation.satyr-maid.stage.outcome-ready.label": {
+      "ru": "Готовность к исходу",
+      "en": "Outcome ready"
     },
-    "event.tavern.career.innkeeper.choice.continue.text": {
-      "ru": "Сделать управление домом поздним карьерным путём.",
-      "en": "Make house management the late-career route."
+    "presentation.static.career.satyr-maid.stage.outcome-ready.alt": {
+      "ru": "Служанка у сатиров: карьерный этап «Готовность к исходу»; статичный рабочий визуал без изменения игрового состояния.",
+      "en": "Satyr Maid career stage “Outcome ready”; a static work visual that does not change gameplay state."
     },
-    "event.tavern.career.information-broker.title": {
-      "ru": "Информация с понятным происхождением",
-      "en": "Information with a chain of custody"
+    "presentation.static.career.satyr-maid.stage.outcome-ready.caption": {
+      "ru": "Карьерный этап: Готовность к исходу.",
+      "en": "Career stage: Outcome ready."
     },
-    "event.tavern.career.information-broker.variant.default.text": {
-      "ru": "Ты начинаешь с информации: разделяешь подтверждённые сведения, слухи и личные детали, затем передаёшь только то, что нужно для решения проблемы. Ценность здесь не в количестве секретов, а в том, что люди могут действовать на точных данных.",
-      "en": "You start with information: separate confirmed details, rumors, and private facts, then pass on only what is needed to solve the problem. The value is not the number of secrets you possess, but that people can act on accurate information."
+    "ui.work.satyrMaidStageAria": {
+      "ru": "Этап карьеры: {stage}",
+      "en": "Career stage: {stage}"
     },
-    "event.tavern.career.information-broker.choice.continue.label": {
-      "ru": "Выбрать путь информационного посредника",
-      "en": "Take the Information Broker route"
+    "presentation.static.career.satyr-maid.event.first-shift.alt": {
+      "ru": "Служанка у сатиров во время рабочего этапа «Первая устойчивая смена»; статичный визуал сохраняет смысл без анимации.",
+      "en": "Satyr Maid during the work milestone “First steady shift”; the static visual preserves meaning without animation."
     },
-    "event.tavern.career.information-broker.choice.continue.text": {
-      "ru": "Обращаться с информацией как с ответственностью, а не отдельной валютой.",
-      "en": "Treat information as a routed responsibility rather than a global currency."
+    "presentation.static.career.satyr-maid.event.first-shift.caption": {
+      "ru": "Рабочий этап: Первая устойчивая смена.",
+      "en": "Work milestone: First steady shift."
     },
-    "event.tavern.career.sanctuary.title": {
-      "ru": "Убежище с правилами и границами",
-      "en": "Shelter with rules and limits"
+    "presentation.static.career.satyr-maid.event.known-face.alt": {
+      "ru": "Служанка у сатиров во время рабочего этапа «Знакомое лицо в зале»; статичный визуал сохраняет смысл без анимации.",
+      "en": "Satyr Maid during the work milestone “Known face on the floor”; the static visual preserves meaning without animation."
     },
-    "event.tavern.career.sanctuary.variant.default.text": {
-      "ru": "Ты начинаешь с безопасности людей, которым сейчас некуда уйти, и перестраиваешь общий порядок так, чтобы временная защита не стала обещанием бесконечного бесплатного жилья. Дом помогает, но сохраняет правила, границы и способность работать завтра.",
-      "en": "You start with the safety of people who have nowhere practical to go tonight, then adjust the house rules so temporary protection does not become a promise of unlimited free housing. The house helps while keeping boundaries, rules, and the ability to function tomorrow."
+    "presentation.static.career.satyr-maid.event.known-face.caption": {
+      "ru": "Рабочий этап: Знакомое лицо в зале.",
+      "en": "Work milestone: Known face on the floor."
     },
-    "event.tavern.career.sanctuary.choice.continue.label": {
-      "ru": "Выбрать путь убежища",
-      "en": "Take the Sanctuary route"
+    "presentation.static.career.satyr-maid.event.house-regular.alt": {
+      "ru": "Служанка у сатиров во время рабочего этапа «Своя в рабочем ритме дома»; статичный визуал сохраняет смысл без анимации.",
+      "en": "Satyr Maid during the work milestone “House regular at work”; the static visual preserves meaning without animation."
     },
-    "event.tavern.career.sanctuary.choice.continue.text": {
-      "ru": "Сделать ограниченную и защищённую помощь поздним карьерным путём.",
-      "en": "Make selective shelter and protection the late-career route."
+    "presentation.static.career.satyr-maid.event.house-regular.caption": {
+      "ru": "Рабочий этап: Своя в рабочем ритме дома.",
+      "en": "Work milestone: House regular at work."
     },
-    "event.tavern.career.outcome-ready.title": {
-      "ru": "Открыто больше одного будущего",
-      "en": "More than one future remains open"
+    "presentation.static.career.satyr-maid.event.veteran-service.alt": {
+      "ru": "Служанка у сатиров во время рабочего этапа «Опытная работа в напряжённую смену»; статичный визуал сохраняет смысл без анимации.",
+      "en": "Satyr Maid during the work milestone “Veteran service under pressure”; the static visual preserves meaning without animation."
     },
-    "event.tavern.career.outcome-ready.variant.default.text": {
-      "ru": "Когда один из поздних путей становится доступен, остальные не обязаны исчезать только ради красивого финала. Управление домом, работа с информацией и роль убежища отражают разные способы отвечать за трактир; окончательный выбор остаётся отдельным решением.",
-      "en": "When one late path becomes available, the others do not have to vanish merely to make the story look tidy. Running the house, handling information, and making it a refuge represent different kinds of responsibility; the final commitment remains a separate decision."
+    "presentation.static.career.satyr-maid.event.veteran-service.caption": {
+      "ru": "Рабочий этап: Опытная работа в напряжённую смену.",
+      "en": "Work milestone: Veteran service under pressure."
     },
-    "event.tavern.career.outcome-ready.choice.continue.label": {
-      "ru": "Продолжать жить",
-      "en": "Keep living"
+    "event.satyr-maid.recurring-guest.intro.title": {
+      "ru": "Знакомый гость замечает вашу работу",
+      "en": "A recurring guest notices your service"
     },
-    "event.tavern.career.outcome-ready.choice.continue.text": {
-      "ru": "Перейти в состояние готовности к исходам, не выбирая финал сейчас.",
-      "en": "Move to outcome-ready without committing an ending."
+    "event.satyr-maid.recurring-guest.intro.variant.default.text": {
+      "ru": "Знакомый гость заводит разговор во время обычной смены. Общение можно оставить полностью профессиональным.",
+      "en": "A familiar guest starts a conversation during ordinary service. You can keep it entirely professional."
     },
-    "event.tavern.recurring-traveler.intro.title": {
-      "ru": "Знакомый путешественник возвращается",
-      "en": "A familiar traveler returns"
+    "presentation.static.relationship.satyr-maid.recurring-guest.intro.alt": {
+      "ru": "Знакомый гость разговаривает со служанкой во время обычного обслуживания в зале.",
+      "en": "A familiar guest speaks with the maid during ordinary service on the floor."
     },
-    "event.tavern.recurring-traveler.intro.variant.default.text": {
-      "ru": "Постоянный путешественник начинает узнавать тебя по сменам и обращается к тебе как к сотруднице, которая знает порядок дома. Разговор остаётся дружелюбным и профессиональным; знакомство не требует личной близости.",
-      "en": "A recurring traveler begins to recognize you from your shifts and approaches you as a staff member who knows how the house works. The exchange stays friendly and professional; familiarity does not require personal intimacy."
+    "presentation.static.relationship.satyr-maid.recurring-guest.intro.caption": {
+      "ru": "Первый профессиональный разговор с постоянным гостем.",
+      "en": "First professional conversation with a recurring guest."
     },
-    "event.tavern.recurring-traveler.intro.choice.professional.label": {
-      "ru": "Оставить разговор профессиональным",
-      "en": "Keep the exchange professional"
+    "event.satyr-maid.recurring-guest.service.title": {
+      "ru": "Знакомый гость предлагает встретиться после работы",
+      "en": "A familiar guest asks about meeting after work"
     },
-    "event.tavern.recurring-traveler.intro.choice.professional.text": {
-      "ru": "Поговорить о доме и дороге в рамках обычной работы.",
-      "en": "Talk about the house and the road while staying inside ordinary service."
+    "event.satyr-maid.recurring-guest.service.variant.default.text": {
+      "ru": "После ещё одного профессионального разговора гость спрашивает, захотите ли вы когда-нибудь поговорить после закрытия.",
+      "en": "After another professional exchange, the guest asks whether you would ever want to talk after closing."
     },
-    "event.tavern.recurring-traveler.trust.title": {
-      "ru": "Профессиональное доверие становится привычным",
-      "en": "Professional trust becomes familiar"
+    "presentation.static.relationship.satyr-maid.recurring-guest.service.alt": {
+      "ru": "Служанка и знакомый гость разговаривают у стола после очередного профессионального обслуживания.",
+      "en": "The maid and a familiar guest talk at a table after another professional service exchange."
     },
-    "event.tavern.recurring-traveler.trust.variant.default.text": {
-      "ru": "После нескольких встреч человек уже не повторяет весь контекст с начала и доверяет тебе рабочие детали маршрута. Ты отвечаешь тем же — точностью и предсказуемостью, а не обещанием особого отношения.",
-      "en": "After several meetings, the traveler no longer repeats the whole context from the beginning and trusts you with practical route details. You answer in kind—with accuracy and predictability, not a promise of special treatment."
+    "presentation.static.relationship.satyr-maid.recurring-guest.service.caption": {
+      "ru": "Предложение добровольной встречи после смены.",
+      "en": "An invitation to a voluntary meeting after work."
     },
-    "event.tavern.recurring-traveler.trust.choice.accept-night.label": {
+    "event.satyr-maid.recurring-guest.night.title": {
+      "ru": "Разговор после закрытия",
+      "en": "After-hours conversation"
+    },
+    "event.satyr-maid.recurring-guest.night.variant.default.text": {
+      "ru": "Вы встречаетесь после закрытия по собственному выбору. Разговор происходит вне оплачиваемой работы и сам по себе не создаёт автоматического штрафа к энергии следующего дня.",
+      "en": "You meet after closing by choice. The conversation stays outside paid work and does not create an automatic next-day Energy penalty."
+    },
+    "presentation.static.relationship.satyr-maid.recurring-guest.night.alt": {
+      "ru": "Добровольный спокойный разговор после закрытия, отдельно от рабочей смены.",
+      "en": "A calm voluntary conversation after closing, separate from the paid work shift."
+    },
+    "presentation.static.relationship.satyr-maid.recurring-guest.night.caption": {
+      "ru": "Добровольная встреча после работы.",
+      "en": "Voluntary after-hours meeting."
+    },
+    "event.satyr-maid.recurring-guest.request.title": {
+      "ru": "Профессиональная просьба",
+      "en": "A professional request"
+    },
+    "event.satyr-maid.recurring-guest.request.variant.default.text": {
+      "ru": "Гость просит помочь организовать сложный повторный визит. Это просьба, а не обязательство.",
+      "en": "The guest asks for help arranging a difficult return visit. It is a request, not an obligation."
+    },
+    "presentation.static.relationship.satyr-maid.recurring-guest.request.alt": {
+      "ru": "Знакомый гость формулирует дополнительную профессиональную просьбу служанке.",
+      "en": "A familiar guest makes an additional professional request to the maid."
+    },
+    "presentation.static.relationship.satyr-maid.recurring-guest.request.caption": {
+      "ru": "Дополнительная просьба без обязательства соглашаться.",
+      "en": "An additional request with no obligation to accept."
+    },
+    "event.satyr-maid.recurring-guest.return.title": {
+      "ru": "Просьба возвращается в рабочий зал",
+      "en": "The request returns to the work floor"
+    },
+    "event.satyr-maid.recurring-guest.return.variant.default.text": {
+      "ru": "Гость возвращается во время настоящей смены. Просьба решается через обычное обслуживание, а не как личное обязательство.",
+      "en": "The guest returns during a real shift. You resolve the request through ordinary service rather than private obligation."
+    },
+    "presentation.static.relationship.satyr-maid.recurring-guest.return.alt": {
+      "ru": "Знакомый гость снова приходит во время рабочей смены, и просьба решается в обычном профессиональном порядке.",
+      "en": "The familiar guest returns during a work shift and the request is handled through ordinary professional service."
+    },
+    "presentation.static.relationship.satyr-maid.recurring-guest.return.caption": {
+      "ru": "Возврат к рабочему формату и профессиональное завершение просьбы.",
+      "en": "Return to the work floor and professional resolution of the request."
+    },
+    "event.satyr-maid.recurring-guest.service.choice.accept-night.label": {
       "ru": "Согласиться на добровольную встречу",
-      "en": "Agree to the voluntary meeting"
+      "en": "Agree to a voluntary meeting"
     },
-    "event.tavern.recurring-traveler.trust.choice.accept-night.text": {
-      "ru": "Просьба поговорить после закрытия звучит как приглашение, а не как часть смены. Если ты соглашаешься, встреча остаётся добровольной и не превращает будущую работу в личную обязанность.",
-      "en": "A request to talk after closing is an invitation, not part of the shift. If you accept, the meeting remains voluntary and does not turn future work into a personal obligation."
+    "event.satyr-maid.recurring-guest.service.choice.accept-night.text": {
+      "ru": "Вы соглашаетесь встретиться после работы на собственных условиях.",
+      "en": "You agree to meet after work on your own terms."
     },
-    "event.tavern.recurring-traveler.trust.choice.decline-night.label": {
-      "ru": "Оставить контакт в рамках работы",
-      "en": "Keep contact inside work"
+    "event.satyr-maid.recurring-guest.service.choice.decline-night.label": {
+      "ru": "Отказаться от личной встречи",
+      "en": "Decline the private meeting"
     },
-    "event.tavern.recurring-traveler.trust.choice.decline-night.text": {
-      "ru": "Ты отказываешься от разговора после закрытия, и человек принимает ответ без торга. На следующей смене профессиональный контакт продолжается как обычно — отказ не обнуляет доверие и не блокирует карьеру.",
-      "en": "You decline the after-hours conversation, and the traveler accepts the answer without bargaining. On the next shift, the professional connection continues normally; refusal does not erase trust or block the career."
+    "event.satyr-maid.recurring-guest.service.choice.decline-night.text": {
+      "ru": "Вы отказываетесь от встречи после закрытия, не разрывая профессиональное знакомство.",
+      "en": "You decline the after-hours meeting without ending the professional connection."
     },
-    "event.tavern.recurring-traveler.request.title": {
-      "ru": "Практическая просьба после разговора о дороге",
-      "en": "A practical request after the road talk"
+    "event.satyr-maid.recurring-guest.night.choice.talk.label": {
+      "ru": "Поговорить на своих условиях",
+      "en": "Talk on your own terms"
     },
-    "event.tavern.recurring-traveler.request.variant.default.text": {
-      "ru": "Практический запрос возвращается в рабочую плоскость: ты проверяешь то, что можешь проверить по правилам дома, и прямо называешь то, что остаётся неизвестным. Помощь заканчивается вместе с задачей, а не превращается в бессрочное обещание.",
-      "en": "A practical request returns to the work context: you check what the house rules allow you to check and state clearly what remains unknown. The help ends with the task rather than becoming an indefinite promise."
+    "event.satyr-maid.recurring-guest.night.choice.talk.text": {
+      "ru": "Вы разговариваете достаточно долго, чтобы сохранить добровольный контакт после работы, а затем нормально завершаете ночь.",
+      "en": "You talk long enough to establish a voluntary after-hours contact, then end the night normally."
     },
-    "event.tavern.recurring-traveler.request.choice.accept-request.label": {
-      "ru": "Принять просьбу на профессиональных условиях",
-      "en": "Keep the request on professional terms"
+    "event.satyr-maid.recurring-guest.request.choice.accept-request.label": {
+      "ru": "Принять профессиональную просьбу",
+      "en": "Accept the professional request"
     },
-    "event.tavern.recurring-traveler.request.choice.accept-request.text": {
-      "ru": "Взяться за работу с информацией, не обещая заранее раскрывать личные сведения.",
-      "en": "Accept the information-handling request without promising a particular disclosure."
+    "event.satyr-maid.recurring-guest.request.choice.accept-request.text": {
+      "ru": "Вы соглашаетесь выполнить просьбу через обычную работу заведения.",
+      "en": "You agree to handle the request through the bar's normal work."
     },
-    "event.tavern.recurring-traveler.request.choice.decline-request.label": {
-      "ru": "Отказаться от дополнительной просьбы",
-      "en": "Decline the extra request"
+    "event.satyr-maid.recurring-guest.request.choice.decline-request.label": {
+      "ru": "Отказаться от просьбы",
+      "en": "Decline the request"
     },
-    "event.tavern.recurring-traveler.request.choice.decline-request.text": {
-      "ru": "Сохранить профессиональный контакт, не принимая ответственность за слух.",
-      "en": "Keep the traveler relationship professional without taking responsibility for the rumour."
+    "event.satyr-maid.recurring-guest.request.choice.decline-request.text": {
+      "ru": "Вы отказываетесь от дополнительной просьбы и сохраняете профессиональные отношения.",
+      "en": "You decline the extra request and keep the relationship professional."
     },
-    "event.tavern.recurring-traveler.confidentiality.title": {
-      "ru": "Что конфиденциальность значит на работе",
-      "en": "What confidentiality means at work"
+    "event.satyr-maid.recurring-guest.return.choice.resolve-professionally.label": {
+      "ru": "Решить вопрос профессионально",
+      "en": "Resolve it professionally"
     },
-    "event.tavern.recurring-traveler.confidentiality.variant.default.text": {
-      "ru": "Доверие становится сложнее, когда чужая просьба о конфиденциальности сталкивается с обязанностями перед домом. Ты выбираешь, какую информацию действительно нужно передать, и не используешь остальное как наказание за несогласие.",
-      "en": "Trust becomes more complicated when a request for confidentiality meets your responsibilities to the house. You decide what information genuinely needs to be passed on and do not use the rest as punishment for disagreement."
+    "event.satyr-maid.recurring-guest.return.choice.resolve-professionally.text": {
+      "ru": "Вы завершаете просьбу в рамках работы и превращаете повторяющийся профессиональный контакт в надёжную сеть знакомств.",
+      "en": "You complete the request, turning repeated professional contact into a reliable personal network."
     },
-    "event.tavern.recurring-traveler.confidentiality.choice.keep-private.label": {
-      "ru": "Сохранить личность путешественника в тайне",
-      "en": "Keep the traveler private"
+    "nightChoice.satyr-maid.night.recurring-guest.label": {
+      "ru": "Встретиться со знакомым гостем",
+      "en": "Meet the recurring guest"
     },
-    "event.tavern.recurring-traveler.confidentiality.choice.keep-private.text": {
-      "ru": "Оставить только нужную рабочую деталь маршрута и защитить личность источника.",
-      "en": "Keep the traveler's identity private while retaining only the route detail the work actually needs."
+    "nightChoice.satyr-maid.night.staff-debrief.label": {
+      "ru": "Остаться на разбор смены с персоналом",
+      "en": "Stay for a staff debrief"
     },
-    "event.tavern.recurring-traveler.confidentiality.choice.share-route-only.label": {
-      "ru": "Передать только деталь маршрута",
-      "en": "Share only the route detail"
+    "event.satyr-maid.staff-debrief.night.title": {
+      "ru": "Разбор смены после закрытия",
+      "en": "Staff debrief after closing"
     },
-    "event.tavern.recurring-traveler.confidentiality.choice.share-route-only.text": {
-      "ru": "Передать проверенную деталь маршрута, не раскрывая личность человека.",
-      "en": "Share only the verified route detail and keep personal identity outside the handoff."
+    "event.satyr-maid.staff-debrief.night.variant.default.text": {
+      "ru": "После закрытия сотрудники обсуждают проблемы обслуживания и подготовку к завтрашнему дню, не расходуя ещё одно дневное действие.",
+      "en": "After closing, the staff compare service problems and tomorrow's setup without consuming another daytime action."
     },
-    "event.tavern.recurring-traveler.night.title": {
-      "ru": "Добровольный разговор после закрытия",
-      "en": "A voluntary conversation after closing"
+    "event.satyr-maid.staff-debrief.night.choice.finish.label": {
+      "ru": "Завершить разбор",
+      "en": "Finish the debrief"
     },
-    "event.tavern.recurring-traveler.night.variant.default.text": {
-      "ru": "Просьба поговорить после закрытия звучит как приглашение, а не как часть смены. Если ты соглашаешься, встреча остаётся добровольной и не превращает будущую работу в личную обязанность.",
-      "en": "A request to talk after closing is an invitation, not part of the shift. If you accept, the meeting remains voluntary and does not turn future work into a personal obligation."
+    "event.satyr-maid.staff-debrief.night.choice.finish.text": {
+      "ru": "Вы уходите с более ясным планом работы дома и отправляетесь спать.",
+      "en": "You leave the house plan clearer and go to sleep."
     },
-    "event.tavern.recurring-traveler.night.choice.finish.label": {
-      "ru": "Закончить разговор",
-      "en": "Finish the conversation"
+    "presentation.static.career.satyr-maid.event.staff-debrief-night.alt": {
+      "ru": "Служанка и сотрудники спокойно обсуждают прошедшую смену после закрытия.",
+      "en": "The maid and staff calmly review the completed shift after closing."
     },
-    "event.tavern.recurring-traveler.night.choice.finish.text": {
-      "ru": "Закончить добровольный разговор на своих условиях; дальше контакт снова подчиняется обычным профессиональным правилам.",
-      "en": "End the voluntary conversation on your own terms; the contact returns to ordinary professional rules afterward."
+    "presentation.static.career.satyr-maid.event.staff-debrief-night.caption": {
+      "ru": "Добровольный разбор рабочей смены после закрытия.",
+      "en": "Voluntary staff debrief after closing."
     },
-    "event.tavern.house-notes.night.title": {
-      "ru": "Комнаты, запасы и передача следующей смене",
-      "en": "Rooms, supplies, and the next handoff"
+    "ui.satyrMaid.relationshipState.work-introduction": {
+      "ru": "Знакомство на работе",
+      "en": "Work introduction"
     },
-    "event.tavern.house-notes.night.variant.default.text": {
-      "ru": "Гостевая книга полезна только тогда, когда понятно, зачем её открыли. Ты ищешь запись, связанную с текущей задачей, и не превращаешь соседние имена, даты и маршруты в материал для любопытства.",
-      "en": "The guest ledger is useful only when there is a clear reason to open it. You look for the entry connected to the current task and do not turn neighboring names, dates, and routes into material for curiosity."
+    "ui.satyrMaid.relationshipState.night-invitation": {
+      "ru": "Добровольное приглашение после смены",
+      "en": "Voluntary after-work invitation"
     },
-    "event.tavern.house-notes.night.choice.finish.label": {
-      "ru": "Закрыть записи",
-      "en": "Close the notes"
+    "ui.satyrMaid.relationshipState.accepted-meeting": {
+      "ru": "Принятая добровольная встреча",
+      "en": "Accepted voluntary meeting"
     },
-    "event.tavern.house-notes.night.choice.finish.text": {
-      "ru": "Оставить наблюдения о комнатах и запасах доступными для следующих решений.",
-      "en": "Keep the observations available for later Tavern decisions."
+    "ui.satyrMaid.relationshipState.external-request": {
+      "ru": "Дополнительная профессиональная просьба",
+      "en": "External professional request"
     },
-    "event.tavern.access.staff-key.title": {
-      "ru": "Служебный ключ — рабочий инструмент",
-      "en": "A staff key is a work tool"
+    "ui.satyrMaid.relationshipState.return-to-work": {
+      "ru": "Возврат к рабочему формату",
+      "en": "Return to work"
     },
-    "event.tavern.access.staff-key.variant.default.text": {
-      "ru": "Ключ от гостевых комнат даёт доступ для работы, а не право заходить без причины. Ты проверяешь, зачем нужна комната, стучишь даже тогда, когда уверена, что она пуста, и возвращаешь ключ туда, где следующая смена сможет его найти.",
-      "en": "A staff key grants access for work, not permission to enter without a reason. You check why the room needs attention, knock even when you believe it is empty, and return the key where the next shift can find it."
+    "ui.satyrMaid.relationshipStateAria": {
+      "ru": "Состояние цепочки: {state}",
+      "en": "Relationship presentation state: {state}"
     },
-    "event.tavern.access.staff-key.choice.take-key.label": {
-      "ru": "Взять служебный ключ",
-      "en": "Take the staff key"
+    "ui.satyrMaid.nightChoiceAria": {
+      "ru": "Ночной выбор: {choice}",
+      "en": "Night choice: {choice}"
     },
-    "event.tavern.access.staff-key.choice.take-key.text": {
-      "ru": "Принять узкий рабочий инструмент: входить в гостевые комнаты только по служебной задаче, стучать и возвращать ключ следующей смене.",
-      "en": "Take the staff key as a narrow work tool: enter guest rooms only for a defined staff task, knock first, and return it for the next shift."
+    "presentation.static.career.satyr-maid.school.rhetoric.alt": {
+      "ru": "Служанка применяет выученный приём переговоров во время обычного обслуживания в зале.",
+      "en": "The maid applies a learned negotiation technique during ordinary floor service."
     },
-    "event.tavern.access.staff-key.choice.leave-key.label": {
-      "ru": "Оставить ключ на стойке",
-      "en": "Leave the key at the desk"
+    "presentation.static.career.satyr-maid.school.rhetoric.caption": {
+      "ru": "Школьный приём риторики применяется в работе.",
+      "en": "A School rhetoric technique is applied at work."
     },
-    "event.tavern.access.staff-key.choice.leave-key.text": {
-      "ru": "Продолжить карьеру без необязательного доступа к гостевым комнатам.",
-      "en": "Keep the career active without taking the optional access route yet."
+    "presentation.static.career.satyr-maid.school.management.alt": {
+      "ru": "Служанка сверяет рабочие записи и расписание как часть управления сменой.",
+      "en": "The maid reviews work records and scheduling as part of managing a shift."
     },
-    "event.tavern.access.guest-ledger.title": {
-      "ru": "Читать только то, что нужно для задачи",
-      "en": "Read only what the task requires"
+    "presentation.static.career.satyr-maid.school.management.caption": {
+      "ru": "Школьные навыки счёта становятся рабочим инструментом.",
+      "en": "School number skills become a work tool."
     },
-    "event.tavern.access.guest-ledger.variant.default.text": {
-      "ru": "Гостевая книга полезна только тогда, когда понятно, зачем её открыли. Ты ищешь запись, связанную с текущей задачей, и не превращаешь соседние имена, даты и маршруты в материал для любопытства.",
-      "en": "The guest ledger is useful only when there is a clear reason to open it. You look for the entry connected to the current task and do not turn neighboring names, dates, and routes into material for curiosity."
+    "presentation.static.career.satyr-maid.school.boundaries.alt": {
+      "ru": "Служанка спокойно обозначает ясные условия обслуживания во время рабочей сцены.",
+      "en": "The maid calmly states clear service terms during a work scene."
     },
-    "event.tavern.access.guest-ledger.choice.record-ledger.label": {
-      "ru": "Зафиксировать расхождение в книге",
-      "en": "Record the ledger evidence"
+    "presentation.static.career.satyr-maid.school.boundaries.caption": {
+      "ru": "Школьная уверенность превращается в профессиональную границу.",
+      "en": "School confidence becomes a professional boundary."
     },
-    "event.tavern.access.guest-ledger.choice.record-ledger.text": {
-      "ru": "Записать только относящееся к задаче расхождение между комнатой и книгой; соседние имена и маршруты не становятся уликой.",
-      "en": "Record only the room-and-ledger discrepancy relevant to the current task; neighboring names and routes remain outside the evidence."
+    "event.satyr-maid.crisis.house-strain.title": {
+      "ru": "Заведение работает на пределе",
+      "en": "The house is stretched thin"
     },
-    "event.tavern.information.rumour-route.title": {
-      "ru": "Сообщение ещё не стало фактом",
-      "en": "A report is not yet a fact"
+    "event.satyr-maid.crisis.house-strain.variant.default.text": {
+      "ru": "Нехватка персонала, неопределённые запасы и требовательные посетители сходятся в одну тяжёлую смену. Единственного правильного решения здесь нет.",
+      "en": "A staffing shortage, uncertain supplies, and demanding customers hit the same service night. There is no single correct build for solving it."
     },
-    "event.tavern.information.rumour-route.variant.ledger-crosscheck.text": {
-      "ru": "Запись в гостевой книге не доказывает чужую историю целиком, но помогает проверить время и последовательность поездки. Этого достаточно, чтобы отделить полезное совпадение от удобной легенды.",
-      "en": "A guest-ledger entry does not prove someone's whole story, but it can check the timing and sequence of a journey. That is enough to separate a useful match from a convenient legend."
+    "event.satyr-maid.crisis.house-strain.choice.supply-plan.label": {
+      "ru": "Перестроить план запасов и смен",
+      "en": "Rebuild the supply and staffing plan"
     },
-    "event.tavern.information.rumour-route.variant.default.text": {
-      "ru": "Путешественник уверенно рассказывает, что одна из дорог стала опасной. Ты записываешь это как сообщение конкретного человека, а не как установленный факт: источник и формулировка важнее громкости рассказа.",
-      "en": "A traveler confidently says that one road has become dangerous. You record it as one person's report rather than an established fact; the source and wording matter more than how loudly the story is told."
+    "event.satyr-maid.crisis.house-strain.choice.supply-plan.text": {
+      "ru": "Использовать записи и расписание, чтобы стабилизировать работу заведения до того, как обслуживание развалится.",
+      "en": "You use records and scheduling to stabilize the house before service collapses."
     },
-    "event.tavern.information.rumour-route.choice.record-route.label": {
-      "ru": "Записать вопрос о маршруте",
-      "en": "Record the route question"
+    "event.satyr-maid.crisis.house-strain.choice.staff-protection.label": {
+      "ru": "Согласовать рабочий план обслуживания",
+      "en": "Negotiate a workable service plan"
     },
-    "event.tavern.information.rumour-route.choice.record-route.text": {
-      "ru": "Полезный слух помогает принять решение, но не становится отдельной монетой в кармане. Ты можешь передать подтверждённую деталь нужному человеку, сохранив границу между информацией, сплетней и оплатой.",
-      "en": "Useful information can shape a decision without becoming a new kind of currency. You can pass a confirmed detail to the person who needs it while keeping a boundary between information, gossip, and payment."
+    "event.satyr-maid.crisis.house-strain.choice.staff-protection.text": {
+      "ru": "Использовать переговоры, чтобы защитить нагрузку персонала и при этом сохранить заведение открытым.",
+      "en": "You use social negotiation to protect the staff load while keeping the house open."
     },
-    "event.tavern.housing.meal-in-kind.title": {
-      "ru": "Помощь натурой, а не новое правило жилья",
-      "en": "Help in kind, not a new housing rule"
+    "event.satyr-maid.crisis.house-strain.choice.customer-terms.label": {
+      "ru": "Установить ясные условия для посетителей",
+      "en": "Set clear customer terms"
     },
-    "event.tavern.housing.meal-in-kind.variant.street.text": {
-      "ru": "После смены остаётся обычная еда для персонала, и сегодня её хватает, чтобы ты поела перед уходом. Это помощь в натуральной форме, а не бесплатная комната: выбор ночлега и его обычные последствия остаются отдельными.",
-      "en": "After the shift, ordinary staff food remains, and tonight there is enough for you to eat before leaving. It is help in kind, not a free room; your lodging choice and its ordinary consequences remain separate."
+    "event.satyr-maid.crisis.house-strain.choice.customer-terms.text": {
+      "ru": "Снизить давление, явно обозначив пределы обслуживания и поддержав персонал, когда посетители пытаются их нарушить.",
+      "en": "You solve the pressure by setting explicit service limits and backing the staff when customers push past them."
     },
-    "event.tavern.housing.meal-in-kind.variant.cheap.text": {
-      "ru": "Когда бюджет и дешёвая комната уже съели большую часть запаса на день, еда после смены делает вечер проще. Она не возвращает оплату за комнату и не меняет цену жилья — просто один практический расход сегодня не ложится на тебя.",
-      "en": "When the day's budget and a cheap room have already taken most of what you can spare, a meal after the shift makes the evening easier. It does not refund the room or change lodging prices; it simply means one practical need is covered tonight."
+    "presentation.static.career.satyr-maid.crisis.house-strain.alt": {
+      "ru": "Напряжённая рабочая смена: персонал, запасы и поток посетителей требуют одновременного внимания.",
+      "en": "A strained service shift where staffing, supplies, and customer flow all need attention at once."
     },
-    "event.tavern.housing.meal-in-kind.variant.default.text": {
-      "ru": "Помощь трактира имеет ясные границы: еда после работы или разовая практическая поддержка не превращаются в постоянное право на жильё. Это сохраняет помощь полезной, не стирая обычную экономику ночлега.",
-      "en": "Tavern assistance has clear limits: a meal after work or one practical accommodation does not become a permanent entitlement to housing. That keeps the help useful without erasing the ordinary lodging economy."
+    "presentation.static.career.satyr-maid.crisis.house-strain.caption": {
+      "ru": "Кризис смены: несколько рабочих проблем требуют решения.",
+      "en": "Shift crisis: several work problems need a response."
     },
-    "event.tavern.housing.meal-in-kind.choice.accept-meal.label": {
-      "ru": "Принять еду для персонала",
-      "en": "Accept the staff meal"
+    "ui.satyrMaid.crisisFeedback.supply-plan": {
+      "ru": "План работы и запасов перестроен; кризисная сцена завершена.",
+      "en": "The work and supply plan is rebuilt; the crisis scene is resolved."
     },
-    "event.tavern.housing.meal-in-kind.choice.accept-meal.text": {
-      "ru": "Никто не требует личной услуги, тайного долга или обещания в обмен на помощь. Поддержка остаётся частью понятных правил дома и может закончиться без того, чтобы твоя карьера или отношения были поставлены на кон.",
-      "en": "Nobody asks for a personal favor, hidden debt, or promise in exchange for the help. The support stays inside clear house rules and can end without putting your career or relationships at stake."
+    "ui.satyrMaid.crisisFeedback.staff-protection": {
+      "ru": "Нагрузка персонала согласована; кризисная сцена завершена.",
+      "en": "The staff workload is negotiated; the crisis scene is resolved."
     },
-    "event.tavern.housing.meal-in-kind.choice.decline-meal.label": {
-      "ru": "Отказаться от еды",
-      "en": "Decline the meal"
+    "ui.satyrMaid.crisisFeedback.customer-terms": {
+      "ru": "Условия обслуживания обозначены; кризисная сцена завершена.",
+      "en": "Service terms are made clear; the crisis scene is resolved."
     },
-    "event.tavern.housing.meal-in-kind.choice.decline-meal.text": {
-      "ru": "Сохранить рабочие отношения без изменений и пользоваться обычными вариантами жилья.",
-      "en": "Keep the work relationship unchanged and continue using ordinary housing choices."
+    "ending.ending.satyr-maid.house-power.title": {
+      "ru": "Служанка у сатиров — влияние в доме",
+      "en": "Satyr Maid — House Power"
     },
-    "event.tavern.activity.forest-return.title": {
-      "ru": "Дорога, увиденная своими глазами",
-      "en": "The road seen with your own eyes"
+    "ending.ending.satyr-maid.house-power.description": {
+      "ru": "Сложный карьерный исход, в котором опытная работа, школьные навыки управления или переговоров и успешно разрешённый кризис превращаются в реальное влияние на правила работы заведения.",
+      "en": "A complex Satyr Maid ending built on veteran service, School-backed management or negotiation, and a resolved house crisis."
     },
-    "event.tavern.activity.forest-return.variant.ledger-context.text": {
-      "ru": "Ты отделяешь увиденное сама от того, что услышала уже после возвращения. Так лесной результат становится полезным фактом для трактира и не растворяется в общем шуме слухов.",
-      "en": "You separate what you saw yourself from what you heard only after returning. That lets the forest result become a useful Tavern fact without dissolving into the general noise of rumor."
+    "ending.ending.satyr-maid.house-power.epilogue": {
+      "ru": "Вы становитесь одной из тех, кто определяет рабочие правила заведения и помогает ему оставаться на плаву.",
+      "en": "You become one of the people who can set the house's working terms and keep its business running."
     },
-    "event.tavern.activity.forest-return.variant.default.text": {
-      "ru": "Вернувшись из леса, ты можешь ответить на вопрос о дороге из собственного опыта, а не со слов очередного гостя. Ты описываешь только тот участок, который действительно видела, и не превращаешь один удачный выход в обещание безопасного маршрута на весь сезон.",
-      "en": "After returning from the forest, you can answer a route question from direct experience rather than another guest's story. You describe only the stretch you actually saw and do not turn one successful outing into a promise that the whole route will stay safe all season."
+    "presentation.static.satyr-maid-ending-house-power.alt": {
+      "ru": "Служанка у сатиров завершает карьерный путь как опытная сотрудница, влияющая на организацию работы заведения.",
+      "en": "A Satyr Maid completes her career path as an experienced worker who helps shape how the house is run."
     },
-    "event.tavern.activity.forest-return.choice.confirm-rumour.label": {
-      "ru": "Подтвердить сведения о дороге",
-      "en": "Confirm the route information"
+    "presentation.static.satyr-maid-ending-house-power.caption": {
+      "ru": "Финал «Влияние в доме».",
+      "en": "House Power ending."
     },
-    "event.tavern.activity.forest-return.choice.confirm-rumour.text": {
-      "ru": "Вторая независимая деталь совпадает с первым сообщением. Теперь у тебя есть подтверждённая рабочая информация, но не повод объявлять всё остальное в рассказе истинным.",
-      "en": "A second independent detail matches the first report. You now have confirmed working information, but not a reason to declare every other part of the story true."
+    "ending.ending.satyr-maid.boundary-mastery.title": {
+      "ru": "Служанка у сатиров — мастерство границ",
+      "en": "Satyr Maid — Boundary Mastery"
     },
-    "event.tavern.crisis.occupancy-supply-confidentiality.title": {
-      "ru": "Комнаты, запасы и конфиденциальность сталкиваются",
-      "en": "Rooms, supplies, and confidentiality collide"
+    "ending.ending.satyr-maid.boundary-mastery.description": {
+      "ru": "Сложный карьерный исход, основанный на явном отказе, ясных условиях обслуживания, уверенности, подкреплённой школой, и разрешённом кризисе давления со стороны посетителей.",
+      "en": "A complex Satyr Maid ending built through explicit refusal, clear service terms, School-backed confidence, and a resolved customer-pressure crisis."
     },
-    "event.tavern.crisis.occupancy-supply-confidentiality.variant.default.text": {
-      "ru": "Дом одновременно сталкивается с переполненными комнатами, сбившейся поставкой и просьбой не раскрывать маршрут одного из гостей. Нельзя решить всё одной красивой фразой: нужно выбрать, какую ответственность ты берёшь на себя и какой риск оставляешь другим системам дома.",
-      "en": "The house faces crowded rooms, a disrupted supply, and a request to keep one guest's route private at the same time. There is no single clever sentence that solves all three; you have to choose which responsibility you take on and which risk remains for the rest of the house."
+    "ending.ending.satyr-maid.boundary-mastery.epilogue": {
+      "ru": "Вас знают по тёплому профессиональному обслуживанию на ясных условиях, не требующему отказываться от собственных границ.",
+      "en": "You become known for service on clear terms: professional warmth without surrendering control over your own boundaries."
     },
-    "event.tavern.crisis.occupancy-supply-confidentiality.choice.stabilize-house.label": {
-      "ru": "Стабилизировать комнаты и запасы по записям",
-      "en": "Stabilize rooms and supplies through records"
+    "presentation.static.satyr-maid-ending-boundary-mastery.alt": {
+      "ru": "Служанка у сатиров завершает карьерный путь, сохраняя ясные профессиональные условия и личные границы.",
+      "en": "A Satyr Maid completes her career path while keeping clear professional terms and personal boundaries."
     },
-    "event.tavern.crisis.occupancy-supply-confidentiality.choice.stabilize-house.text": {
-      "ru": "Ты начинаешь с устойчивости дома: сверяешь доступные комнаты, рабочие записи и то, что действительно осталось в запасах. Решение не самое эффектное, зато после него следующая смена понимает, что обещано, чего не хватает и кто отвечает за продолжение.",
-      "en": "You start with the stability of the house: check available rooms, working records, and what actually remains in storage. It is not the most dramatic solution, but the next shift knows what was promised, what is missing, and who owns the follow-up."
+    "presentation.static.satyr-maid-ending-boundary-mastery.caption": {
+      "ru": "Финал «Мастерство границ».",
+      "en": "Boundary Mastery ending."
     },
-    "event.tavern.crisis.occupancy-supply-confidentiality.choice.manage-information.label": {
-      "ru": "Разрешить конфликт через проверенную информацию",
-      "en": "Resolve the conflict through verified information"
+    "presentation.activity.forest.entry.prep.career.v1.text": {
+      "ru": "Перед входом ты ещё раз сверяешь лесную линию с тем, что уже отмечала для артели. Старые рабочие ориентиры теперь не просто фон: они дают точку отсчёта для новой вылазки.",
+      "en": "Before entering, you compare the forest line with what you already surveyed for the crew. The old work markers are no longer background detail; they give this expedition a firm starting reference."
     },
-    "event.tavern.crisis.occupancy-supply-confidentiality.choice.manage-information.text": {
-      "ru": "Ты начинаешь с информации: разделяешь подтверждённые сведения, слухи и личные детали, затем передаёшь только то, что нужно для решения проблемы. Ценность здесь не в количестве секретов, а в том, что люди могут действовать на точных данных.",
-      "en": "You start with information: separate confirmed details, rumors, and private facts, then pass on only what is needed to solve the problem. The value is not the number of secrets you possess, but that people can act on accurate information."
+    "presentation.activity.forest.entry.prep.career.v2.text": {
+      "ru": "Разведка для артели остаётся в памяти как рабочая схема: где дорога расходится, какие метки свежие и где стоит проверять ответвление внимательнее.",
+      "en": "The survey work for the crew remains a practical map in your head: where the road splits, which marks are fresh, and where a branch deserves a closer look."
     },
-    "event.tavern.crisis.occupancy-supply-confidentiality.choice.protect-shelter.label": {
-      "ru": "Защитить временное убежище и конфиденциальность",
-      "en": "Protect temporary shelter and confidentiality"
+    "presentation.activity.forest.entry.prep.school.v1.text": {
+      "ru": "Школьные полевые заметки меняют сам взгляд на лес: ты заранее отделяешь наблюдение от догадки и оставляешь место для образцов, которые нужно подписать на месте.",
+      "en": "School field notes change how you look at the Forest: you separate observation from guesswork before starting and leave room for samples that need to be labeled on site."
     },
-    "event.tavern.crisis.occupancy-supply-confidentiality.choice.protect-shelter.text": {
-      "ru": "Ты начинаешь с безопасности людей, которым сейчас некуда уйти, и перестраиваешь общий порядок так, чтобы временная защита не стала обещанием бесконечного бесплатного жилья. Дом помогает, но сохраняет правила, границы и способность работать завтра.",
-      "en": "You start with the safety of people who have nowhere practical to go tonight, then adjust the house rules so temporary protection does not become a promise of unlimited free housing. The house helps while keeping boundaries, rules, and the ability to function tomorrow."
+    "presentation.activity.forest.entry.prep.school.v2.text": {
+      "ru": "Перед дорогой ты перечитываешь короткие школьные пометки о фиксации следов. Это не подсказывает ответ, но помогает не смешивать разные признаки по пути.",
+      "en": "Before setting out, you review the short School notes on recording evidence. They do not provide an answer, but they help keep different signs from being confused along the way."
     },
-    "event.tavern.crisis.occupancy-supply-confidentiality.choice.defer.label": {
-      "ru": "Пока поддерживать работу дома",
-      "en": "Keep the house running for now"
+    "presentation.activity.forest.entry.prep.equipment.v1.text": {
+      "ru": "Снаряжение ощущается ещё до первого шага: ремни затянуты, инструмент уложен так, чтобы доставать его на ходу, а не искать в траве в нужный момент.",
+      "en": "You feel the preparation before the first step: straps are tightened and tools are packed to be reached on the move instead of searched for in the grass at the wrong moment."
     },
-    "event.tavern.crisis.occupancy-supply-confidentiality.choice.defer.text": {
-      "ru": "Не закрывать большой кризис, пока не готов путь, который ты действительно поддерживаешь.",
-      "en": "Do not resolve the larger crisis until a route you actually support is ready."
+    "presentation.activity.forest.entry.prep.equipment.v2.text": {
+      "ru": "У кромки леса ты быстро проверяешь снаряжение. Оно не выбирает маршрут за тебя, зато несколько опасных мест теперь имеют практический ответ.",
+      "en": "At the forest edge, you make a quick gear check. It does not choose the route for you, but several dangerous places now have a practical answer."
+    },
+    "presentation.activity.forest.entry.prep.combined.v1.text": {
+      "ru": "Подготовка складывается слоями: рабочая разведка даёт ориентиры, заметки — порядок наблюдений, а снаряжение — реальные способы пройти трудные места.",
+      "en": "Preparation comes in layers: work survey gives landmarks, notes give a method for observation, and equipment gives real ways through difficult ground."
+    },
+    "presentation.activity.forest.entry.prep.combined.v2.text": {
+      "ru": "Ты входишь не вслепую: часть леса уже знакома по работе и записям, а нужные инструменты лежат под рукой. Всё это расширяет варианты, но не отменяет выбора.",
+      "en": "You are not entering blind: part of the Forest is familiar from work and notes, and the right tools are within reach. That expands your options without making the choices for you."
+    },
+    "presentation.activity.forest.route.logging-road.spring.v1.text": {
+      "ru": "Весенняя лесовозная дорога держится на высокой середине, а колеи по краям уже полны воды. Свежие срезы и грязные следы показывают, где техника прошла совсем недавно.",
+      "en": "In spring, the logging road holds together along its raised center while the wheel ruts are already full of water. Fresh cuts and muddy tracks show where crews passed recently."
+    },
+    "presentation.activity.forest.route.logging-road.spring.v2.text": {
+      "ru": "Талая вода размывает привычную геометрию дороги. Приходится читать путь по щепе, следам сапог и сухим островкам между глубокими колеями.",
+      "en": "Meltwater blurs the road's usual geometry. You read the route from wood chips, boot prints, and dry islands between deep ruts."
+    },
+    "presentation.activity.forest.route.logging-road.summer.v1.text": {
+      "ru": "Летом лесовозная дорога сухая и открытая, но пыль скрывает мелкие следы. Дальше виден тяжёлый завал, которого не было на старых рабочих отметках.",
+      "en": "In summer the logging road is dry and open, but dust hides smaller signs. Farther ahead, a heavy deadfall blocks a stretch that was clear on older work marks."
+    },
+    "presentation.activity.forest.route.logging-road.summer.v2.text": {
+      "ru": "Сухая колея ведёт глубже без весенних обходов, зато поваленный лес становится главным препятствием. Свежая древесина заметна по светлым изломам.",
+      "en": "The dry ruts lead deeper without spring detours, but fallen timber becomes the main obstacle. Fresh wood stands out by its pale breaks."
+    },
+    "presentation.activity.forest.route.logging-road.autumn.v1.text": {
+      "ru": "Осенью дорога читается по новой щепе и тяжёлым следам вывоза. Между ними появляется свежий древесный затор, который сжимает рабочий проход.",
+      "en": "In autumn the road is readable from fresh chips and heavy hauling tracks. Between them, a new timber choke narrows the working passage."
+    },
+    "presentation.activity.forest.route.logging-road.autumn.v2.text": {
+      "ru": "Мокрые листья скрывают старые отпечатки, зато недавние работы видны особенно ясно. Дальше маршрут упирается в спутанную массу стволов.",
+      "en": "Wet leaves hide older tracks, while recent work stands out sharply. Ahead, the route runs into a tangled mass of trunks."
+    },
+    "presentation.activity.forest.route.logging-road.winter.v1.text": {
+      "ru": "Зимой промёрзшая середина дороги кажется надёжной, но глубокие колеи превращаются в жёсткие канавы. Баланс важнее скорости.",
+      "en": "In winter the frozen center of the road looks reliable, but deep ruts become hard channels. Balance matters more than speed."
+    },
+    "presentation.activity.forest.route.logging-road.winter.v2.text": {
+      "ru": "Снег подчёркивает рабочую линию дороги и одновременно прячет её неровности. Замёрзшие колеи требуют точных шагов там, где летом можно было просто пройти.",
+      "en": "Snow outlines the working line of the road while hiding its unevenness. Frozen ruts demand precise footing where summer would allow an ordinary walk."
+    },
+    "presentation.activity.forest.route.hunter-trail.summer.v1.text": {
+      "ru": "Летняя Охотничья тропа читается по примятой зелени и редким меткам на коре. Подсказка из города связывает эти мелочи в одну линию, но промоины всё равно приходится проходить самому.",
+      "en": "The summer Hunter Trail is readable through pressed greenery and sparse bark marks. The city clue ties those small signs into one line, but you still have to cross the washed ground yourself."
+    },
+    "presentation.activity.forest.route.hunter-trail.summer.v2.text": {
+      "ru": "В густой летней траве тропа то исчезает, то снова проявляется у деревьев с нужными отметками. Без свежей охотничьей подсказки эти разрывы выглядели бы случайными.",
+      "en": "In thick summer growth, the trail disappears and reappears beside trees carrying the right marks. Without the fresh hunter clue, those gaps would look accidental."
+    },
+    "presentation.activity.forest.route.hunter-trail.autumn.v1.text": {
+      "ru": "Осенью следы на Охотничьей тропе становятся богаче: примятая листва, шерсть на ветке и знакомые метки идут рядом. Это облегчает чтение направления, но не сам переход.",
+      "en": "In autumn the Hunter Trail carries more signs: pressed leaves, hair on a branch, and familiar marks run together. That makes direction easier to read, not the crossing itself."
+    },
+    "presentation.activity.forest.route.hunter-trail.autumn.v2.text": {
+      "ru": "Листья показывают недавнее движение лучше летней травы. Охотничья подсказка помогает не спутать звериный след с линией, по которой действительно можно пройти.",
+      "en": "Leaves reveal recent movement better than summer grass. The hunter clue helps separate animal tracks from the line that can actually be followed."
+    },
+    "presentation.activity.forest.route.old-boundary.token.v1.text": {
+      "ru": "Старый жетон совпадает с выветренным знаком на первом камне. После этого межевая линия перестаёт быть набором случайных зарубок и становится доступным маршрутом.",
+      "en": "The old token matches the weathered sign on the first stone. After that, the boundary line stops looking like random cuts and becomes a route you can actually follow."
+    },
+    "presentation.activity.forest.route.old-boundary.token.v2.text": {
+      "ru": "Ты прикладываешь жетон к знакомой форме на камне и находишь следующий знак дальше в лесу. Предмет не объясняет старую линию, но подтверждает, где её искать.",
+      "en": "You compare the token with the familiar shape on the stone and find the next mark farther in. The item does not explain the old line, but it confirms where to look for it."
+    },
+    "presentation.activity.forest.challenge.logging-navigation.reason.v1.text": {
+      "ru": "Ты сравниваешь направление колей, возраст срезов и расположение меток. Несколько старых знаков отпадают как ложная линия, оставляя один рабочий путь.",
+      "en": "You compare rut direction, the age of cuts, and marker placement. Several older signs fall away as a false line, leaving one working route."
+    },
+    "presentation.activity.forest.challenge.logging-navigation.reason.v2.text": {
+      "ru": "Логика маршрута проявляется не в одной метке, а в их порядке. Свежая щепа подтверждает вывод там, где старая зарубка могла бы увести в сторону.",
+      "en": "The route's logic appears not in one mark but in their sequence. Fresh chips confirm the conclusion where an old notch could have led you aside."
+    },
+    "presentation.activity.forest.challenge.logging-navigation.career.v1.text": {
+      "ru": "Разведка для артели сразу отделяет знакомые рабочие метки от старых. Ты узнаёшь линию, которую уже отмечала как пригодную для проверки.",
+      "en": "Your survey work for the crew immediately separates familiar work marks from older ones. You recognize the line you had already marked as worth checking."
+    },
+    "presentation.activity.forest.challenge.logging-navigation.career.v2.text": {
+      "ru": "Предыдущая рабочая разведка экономит время: спорное ответвление уже есть в памяти, и свежие следы подтверждают, что оно всё ещё используется.",
+      "en": "Earlier survey work saves time: the questionable branch is already in your memory, and fresh tracks confirm it is still in use."
+    },
+    "presentation.activity.forest.challenge.logging-spring-mud.strength.v1.text": {
+      "ru": "Ты проходишь размокшие колеи силой, переставляя вес с одного твёрдого края на другой и вытягивая себя из вязкой грязи без длинного обхода.",
+      "en": "You force your way through the softened ruts, shifting weight from one firm edge to the next and pulling free of the mud without taking the long detour."
+    },
+    "presentation.activity.forest.challenge.logging-spring-mud.strength.v2.text": {
+      "ru": "Грязь забирает темп, но не останавливает. Несколько тяжёлых шагов выводят на сухую середину дороги, где снова можно двигаться ровно.",
+      "en": "The mud steals your pace but does not stop you. A few heavy steps bring you onto the dry center of the road, where movement becomes steady again."
+    },
+    "presentation.activity.forest.challenge.logging-spring-mud.rope.v1.text": {
+      "ru": "Верёвочный набор превращает скользкую колею в контролируемый переход: ты закрепляешь линию за корень и проходишь по сухому краю без борьбы с глубокой грязью.",
+      "en": "The rope kit turns the slippery rut into a controlled crossing: you anchor a line around a root and move along the dry edge without fighting the deepest mud."
+    },
+    "presentation.activity.forest.challenge.logging-spring-mud.rope.v2.text": {
+      "ru": "Ты натягиваешь короткую страховочную линию между двумя устойчивыми точками. Весенняя грязь остаётся внизу, а переход становится аккуратным техническим обходом.",
+      "en": "You stretch a short safety line between two stable points. The spring mud stays below while the crossing becomes a careful technical bypass."
+    },
+    "presentation.activity.forest.challenge.logging-summer-deadfall.strength.v1.text": {
+      "ru": "Ты не пытаешься разбирать весь завал. Два подвижных ствола удаётся сдвинуть достаточно, чтобы открыть узкий проход между ними.",
+      "en": "You do not try to dismantle the whole deadfall. Two movable trunks shift far enough to open a narrow passage between them."
+    },
+    "presentation.activity.forest.challenge.logging-summer-deadfall.strength.v2.text": {
+      "ru": "Сила уходит на один точный участок завала: ты выворачиваешь зажатую ветвь и освобождаешь место, через которое можно протиснуться дальше.",
+      "en": "You spend your strength on one precise part of the deadfall, wrenching a trapped branch aside and clearing enough room to squeeze through."
+    },
+    "presentation.activity.forest.challenge.logging-summer-deadfall.axe.v1.text": {
+      "ru": "Усиленный топор берёт тяжёлую древесину там, где обычный инструмент только застрял бы. Несколько точных ударов открывают рабочий проход.",
+      "en": "The reinforced axe bites into heavy timber where an ordinary tool would only bind. A few precise strikes open a usable passage."
+    },
+    "presentation.activity.forest.challenge.logging-summer-deadfall.axe.v2.text": {
+      "ru": "Ты выбираешь один несущий сучок и перерубаешь его усиленным топором. Завал оседает ровно настолько, чтобы пройти, не разбирая всё дерево.",
+      "en": "You pick one load-bearing limb and cut it with the reinforced axe. The deadfall settles just enough to pass without dismantling the entire tree."
+    },
+    "presentation.activity.forest.challenge.logging-autumn-deadfall.endurance.v1.text": {
+      "ru": "Осенний затор приходится разбирать постепенно: ветвь за ветвью, без резкого рывка. Выносливость важнее силы одного движения.",
+      "en": "The autumn timber choke has to be worked apart gradually, branch by branch, without one dramatic push. Endurance matters more than a single burst of strength."
+    },
+    "presentation.activity.forest.challenge.logging-autumn-deadfall.endurance.v2.text": {
+      "ru": "Ты долго освобождаешь проход от переплетённых ветвей, сохраняя ровный темп. К концу остаётся узкая, но стабильная линия движения.",
+      "en": "You spend time freeing the path from interlocked branches at a steady pace. By the end, a narrow but stable line remains."
+    },
+    "presentation.activity.forest.challenge.logging-autumn-deadfall.axe.v1.text": {
+      "ru": "Усиленный топор позволяет не тратить силы на весь затор. Ты срезаешь два ключевых упора, и масса ветвей раскрывает проход.",
+      "en": "The reinforced axe keeps you from spending endurance on the whole choke. You cut two key supports and the mass of branches opens a passage."
+    },
+    "presentation.activity.forest.challenge.logging-autumn-deadfall.axe.v2.text": {
+      "ru": "Свежая древесина светлее старой, и усиленный топор быстро отделяет именно её. Затор перестаёт держать дорогу поперёк.",
+      "en": "Fresh wood is paler than the old, and the reinforced axe quickly separates exactly those pieces. The choke stops holding the road shut."
+    },
+    "presentation.activity.forest.challenge.logging-winter-ruts.dexterity.v1.text": {
+      "ru": "Ты проходишь по узкой промёрзшей кромке, заранее выбирая точки для каждого шага. Ошибка означала бы соскользнуть в жёсткую колею, поэтому скорость не нужна.",
+      "en": "You move along the narrow frozen edge, choosing every foothold in advance. A mistake would mean slipping into the hard rut, so speed is useless."
+    },
+    "presentation.activity.forest.challenge.logging-winter-ruts.dexterity.v2.text": {
+      "ru": "Несколько коротких переходов по ледяным выступам заменяют прямой путь. Ловкость позволяет удержать баланс там, где дорога стала неровной лестницей.",
+      "en": "Several short moves over icy ridges replace the direct path. Dexterity keeps your balance where the road has become an uneven staircase."
+    },
+    "presentation.activity.forest.challenge.logging-winter-ruts.rope.v1.text": {
+      "ru": "Ты закрепляешь верёвку вдоль промёрзшей колеи и переносишь вес на страховочную линию в самых скользких местах. Переход становится медленным, но предсказуемым.",
+      "en": "You anchor the rope along the frozen rut and transfer weight to the safety line at the slickest points. The crossing becomes slow but predictable."
+    },
+    "presentation.activity.forest.challenge.logging-winter-ruts.rope.v2.text": {
+      "ru": "Верёвочный набор даёт опору между двумя деревьями у дороги. Вместо балансирования по льду ты проходишь с постоянной страховкой.",
+      "en": "The rope kit gives you support between two trees beside the road. Instead of balancing freely on ice, you cross with continuous protection."
+    },
+    "presentation.activity.forest.challenge.logging-preserve-sample.kit.v1.text": {
+      "ru": "Полевой набор позволяет отделить смоляной образец, подписать место и закрыть контейнер до того, как лесная влажность смешает следы.",
+      "en": "The field kit lets you separate the resin sample, label the location, and seal the container before forest moisture can blur the evidence."
+    },
+    "presentation.activity.forest.challenge.logging-preserve-sample.kit.v2.text": {
+      "ru": "Ты не складываешь образец к обычным находкам: контейнер, бирка и короткая запись сохраняют его как отдельный проверяемый материал.",
+      "en": "You do not toss the sample in with ordinary finds: container, label, and a short note preserve it as distinct, checkable material."
+    },
+    "presentation.activity.forest.challenge.hunter-navigation.wits.v1.text": {
+      "ru": "Ты замечаешь, что примятая трава и зарубки совпадают только на одном направлении. Остальные следы принадлежат зверю или старому обходу.",
+      "en": "You notice that pressed grass and bark marks align in only one direction. The other signs belong to an animal or an older detour."
+    },
+    "presentation.activity.forest.challenge.hunter-navigation.wits.v2.text": {
+      "ru": "Охотничья подсказка задаёт правило, а смекалка соединяет отдельные признаки. Между двумя разрывами тропы находится продолжение, которого сначала не видно.",
+      "en": "The hunter clue gives the rule, and wits connect the separate signs. Between two gaps in the trail, you find a continuation that was invisible at first."
+    },
+    "presentation.activity.forest.challenge.hunter-navigation.school.v1.text": {
+      "ru": "Школьная привычка фиксировать признаки по отдельности не даёт первой догадке стать ответом. После сравнения меток остаётся одна согласованная линия тропы.",
+      "en": "The School habit of recording signs separately keeps the first guess from becoming the answer. After comparison, one consistent trail line remains."
+    },
+    "presentation.activity.forest.challenge.hunter-navigation.school.v2.text": {
+      "ru": "Ты раскладываешь наблюдения как в полевой записи: положение, свежесть, повторяемость. Тропа проявляется только после такого сравнения.",
+      "en": "You break the observations down like a field note: position, freshness, repetition. The trail becomes clear only after that comparison."
+    },
+    "presentation.activity.forest.challenge.hunter-rough-crossing.dexterity.v1.text": {
+      "ru": "Промоина слишком широка для обычного шага, но по корням и выступам можно собрать короткую последовательность точных переходов.",
+      "en": "The washout is too wide for an ordinary step, but roots and ledges form a short sequence of precise crossings."
+    },
+    "presentation.activity.forest.challenge.hunter-rough-crossing.dexterity.v2.text": {
+      "ru": "Ты обходишь рыхлый край и находишь три устойчивые точки. Ловкость превращает опасный прыжок в несколько контролируемых движений.",
+      "en": "You avoid the loose edge and find three stable holds. Dexterity turns a dangerous jump into several controlled movements."
+    },
+    "presentation.activity.forest.challenge.hunter-rough-crossing.rope.v1.text": {
+      "ru": "Верёвочный набор открывает прямой переход через промоину. Ты закрепляешь линию выше осыпи и проходишь там, где без страховки пришлось бы искать длинный обход.",
+      "en": "The rope kit opens a direct crossing over the washout. You anchor above the loose slope and cross where, without protection, you would need a long detour."
+    },
+    "presentation.activity.forest.challenge.hunter-rough-crossing.rope.v2.text": {
+      "ru": "Ты ставишь страховку на живом корне и спускаешься ниже осыпающегося края. Верёвка делает сложный участок частью маршрута, а не тупиком.",
+      "en": "You anchor to a living root and descend below the crumbling edge. The rope turns the difficult section into part of the route instead of a dead end."
+    },
+    "presentation.activity.forest.challenge.hunter-preserve-sample.kit.v1.text": {
+      "ru": "Следовой образец легко испортить прикосновением, поэтому полевой набор оказывается важнее скорости. Ты изолируешь материал и отмечаешь точное место.",
+      "en": "A trace sample is easy to spoil by handling, so the field kit matters more than speed. You isolate the material and mark the exact location."
+    },
+    "presentation.activity.forest.challenge.hunter-preserve-sample.kit.v2.text": {
+      "ru": "Контейнер и бирка превращают хрупкую находку в материал, который можно вынести из леса без смешения с обычной грязью и растениями.",
+      "en": "Container and label turn a fragile find into material that can leave the Forest without being mixed with ordinary soil and plants."
+    },
+    "presentation.activity.forest.challenge.boundary-interpretation.magic.v1.text": {
+      "ru": "Ты воспринимаешь старые знаки не как алфавит, а как последовательность повторяющихся акцентов. Магическая чувствительность помогает заметить, где порядок нарушен.",
+      "en": "You read the old marks not as an alphabet but as a sequence of repeating accents. Magical sensitivity helps you notice where that order is broken."
+    },
+    "presentation.activity.forest.challenge.boundary-interpretation.magic.v2.text": {
+      "ru": "В нескольких зарубках ощущается одинаковый ритм, хотя формы различаются. Магия не объясняет смысл, но показывает, какие знаки принадлежат одной последовательности.",
+      "en": "Several cuts carry the same rhythm despite different shapes. Magic does not explain their meaning, but it reveals which marks belong to one sequence."
+    },
+    "presentation.activity.forest.challenge.boundary-interpretation.reason.v1.text": {
+      "ru": "Ты сравниваешь расстояние между камнями, направление зарубок и повторяющиеся формы. Рациональная схема отделяет намеренный порядок от случайных повреждений.",
+      "en": "You compare spacing between stones, notch direction, and repeating shapes. A rational pattern separates deliberate order from accidental damage."
+    },
+    "presentation.activity.forest.challenge.boundary-interpretation.reason.v2.text": {
+      "ru": "Старая линия начинает читаться через повторение: одинаковый интервал, затем поворот, затем знак. Разум позволяет восстановить правило без догадки о его происхождении.",
+      "en": "The old line becomes readable through repetition: the same interval, then a turn, then a mark. Reason reconstructs the rule without guessing at its origin."
+    },
+    "presentation.activity.forest.challenge.boundary-interpretation.school.v1.text": {
+      "ru": "Ты применяешь школьный принцип: сначала описать знак, потом сравнивать. Это удерживает старую межу от превращения в удобную легенду и оставляет только наблюдаемый порядок.",
+      "en": "You apply the School rule: describe the sign first, compare it second. That keeps the old boundary from turning into a convenient legend and leaves only the observable pattern."
+    },
+    "presentation.activity.forest.challenge.boundary-interpretation.school.v2.text": {
+      "ru": "Полевые заметки дают форму работе: отдельные камни получают номера, направление и расстояние. После этого повторяющаяся последовательность становится видимой.",
+      "en": "Field notes give the work structure: individual stones get numbers, direction, and distance. Only then does the repeating sequence become visible."
+    },
+    "presentation.activity.forest.challenge.boundary-rough-crossing.dexterity.v1.text": {
+      "ru": "Разрушенная межевая стенка держится на нескольких крупных камнях. Ты выбираешь устойчивые опоры и проходишь, не расшатывая остальную кладку.",
+      "en": "The broken boundary wall still rests on a few large stones. You choose stable supports and cross without loosening the rest of the masonry."
+    },
+    "presentation.activity.forest.challenge.boundary-rough-crossing.dexterity.v2.text": {
+      "ru": "Вместо прыжка через провал ты используешь боковые камни как ступени. Точный перенос веса сохраняет равновесие и старую кладку.",
+      "en": "Instead of jumping the gap, you use side stones as steps. Precise weight shifts preserve both your balance and the old masonry."
+    },
+    "presentation.activity.forest.challenge.boundary-rough-crossing.rope.v1.text": {
+      "ru": "Верёвка ложится вдоль разрушенной стены как временный поручень. Она позволяет пройти по старым камням, не проверяя каждый из них всем весом.",
+      "en": "The rope runs along the broken wall as a temporary handrail. It lets you cross the old stones without testing each one with your full weight."
+    },
+    "presentation.activity.forest.challenge.boundary-rough-crossing.rope.v2.text": {
+      "ru": "Ты закрепляешь страховку за дерево по другую сторону межи. Теперь даже шаткие камни можно пройти контролируемо, не превращая стену в новый обвал.",
+      "en": "You anchor a safety line to a tree beyond the boundary. Even loose stones can now be crossed under control without turning the wall into a fresh collapse."
+    },
+    "presentation.activity.forest.challenge.boundary-preserve-sample.kit.v1.text": {
+      "ru": "Полевой набор позволяет взять материал с межевого камня отдельно от мха и грунта. Бирка связывает образец с конкретным местом старой линии.",
+      "en": "The field kit lets you take material from the boundary stone separately from moss and soil. The label ties the sample to one exact point on the old line."
+    },
+    "presentation.activity.forest.challenge.boundary-preserve-sample.kit.v2.text": {
+      "ru": "Ты сохраняешь небольшой образец так, чтобы позже было понятно не только что найдено, но и откуда именно оно взято. Для этой линии контекст важнее размера находки.",
+      "en": "You preserve a small sample so that later it is clear not only what was found, but exactly where it came from. On this boundary line, context matters more than the size of the find."
+    },
+    "event.forest-result-content-v1.success.variant.season-spring.text": {
+      "ru": "Весенняя вылазка заканчивается с подтверждённой последовательностью наблюдений: вода и размокшие обходы больше не скрывают, как связаны найденные признаки.",
+      "en": "The spring expedition ends with a confirmed sequence of observations: water and softened detours no longer hide how the signs connect."
+    },
+    "event.forest-result-content-v1.success.variant.season-summer.text": {
+      "ru": "Летний маршрут даёт цельную картину после сухих дальних проходов и тяжёлых завалов. Наблюдения можно унести из леса как связанный результат.",
+      "en": "The summer route produces a coherent picture after dry long passages and heavy deadfall. The observations can leave the Forest as one connected result."
+    },
+    "event.forest-result-content-v1.success.variant.season-autumn.text": {
+      "ru": "Осенние следы, рабочие метки и изменения на маршруте складываются в подтверждённый результат. Его уже можно обсуждать вне леса без догадок.",
+      "en": "Autumn tracks, work marks, and route changes resolve into a confirmed result that can be discussed outside the Forest without guesswork."
+    },
+    "event.forest-result-content-v1.success.variant.season-winter.text": {
+      "ru": "Зимний путь оставляет меньше случайных следов, и проверенная линия наблюдений сохраняется особенно чётко. Ты возвращаешься с результатом, а не с предположением.",
+      "en": "The winter route leaves fewer incidental traces, and the verified line of observations stays especially clear. You return with a result rather than a guess."
+    },
+    "event.forest-result-content-v1.success.variant.equipment-rope-kit.text": {
+      "ru": "Верёвочный набор помогает пройти отдельные сложные места, но сам по себе не даёт ответа: итог зависит от того, удалось ли связать наблюдения. На этот раз подготовка встроилась в успешную последовательность действий.",
+      "en": "The rope kit helps with specific difficult crossings, but it does not provide the answer by itself; the outcome still depends on connecting the observations. This time, that preparation became part of a successful sequence."
+    },
+    "event.forest-result-content-v1.success.variant.equipment-preservation-kit.text": {
+      "ru": "Полевой набор сохраняет образцы в проверяемом виде. Даже при сложном исходе ясно, что снаряжение решает задачу сохранения материала, а не весь маршрут. На этот раз подготовка встроилась в успешную последовательность действий.",
+      "en": "The field kit preserves samples in a checkable form. Even in a difficult outcome, it is clear that the gear solves preservation, not the entire route. This time, that preparation became part of a successful sequence."
+    },
+    "event.forest-result-content-v1.success.variant.equipment-reinforced-axe.text": {
+      "ru": "Усиленный топор действительно открывает тяжёлую древесину, но проходимый завал ещё не равен разгаданному маршруту. На этот раз подготовка встроилась в успешную последовательность действий.",
+      "en": "The reinforced axe genuinely opens heavy timber, but a cleared obstacle is still not the same as a solved route. This time, that preparation became part of a successful sequence."
+    },
+    "event.forest-result-content-v1.success.variant.equipment-boundary-token.text": {
+      "ru": "Старый жетон подтверждает доступ к межевой линии, но не объясняет найденные там знаки. Он открывает путь, а не готовый вывод. На этот раз подготовка встроилась в успешную последовательность действий.",
+      "en": "The old token confirms access to the boundary line, but does not explain the signs found there. It opens the route, not a ready-made conclusion. This time, that preparation became part of a successful sequence."
+    },
+    "event.forest-result-content-v1.escape.variant.season-spring.text": {
+      "ru": "Весенняя вода делает следующий участок слишком неопределённым. Ты разворачиваешься там, где обратный путь ещё читается по сухим островкам и рабочим следам.",
+      "en": "Spring water makes the next stretch too uncertain. You turn back while the return route is still readable from dry patches and work signs."
+    },
+    "event.forest-result-content-v1.escape.variant.season-summer.text": {
+      "ru": "Сухой летний путь позволяет отступить без спешки: ты запоминаешь последний надёжный ориентир и возвращаешься до того, как дальний участок превратит риск в ставку вслепую.",
+      "en": "The dry summer route allows a calm retreat: you mark the last reliable landmark and return before the distant stretch turns risk into a blind wager."
+    },
+    "event.forest-result-content-v1.escape.variant.season-autumn.text": {
+      "ru": "Осенние следы быстро смешиваются под новой листвой, поэтому ты выбираешь вернуться, пока собственная линия движения ещё отличается от чужих следов.",
+      "en": "Autumn signs disappear quickly under fresh leaves, so you turn back while your own line of travel can still be separated from other tracks."
+    },
+    "event.forest-result-content-v1.escape.variant.season-winter.text": {
+      "ru": "Зимой обратный путь виден хорошо, но цена ошибки на промёрзшем участке выше. Ты используешь эту ясность для своевременного отступления.",
+      "en": "In winter the return route is easy to see, but a mistake on frozen ground costs more. You use that clarity to retreat in time."
+    },
+    "event.forest-result-content-v1.escape.variant.equipment-rope-kit.text": {
+      "ru": "Верёвочный набор помогает пройти отдельные сложные места, но сам по себе не даёт ответа: итог зависит от того, удалось ли связать наблюдения. Ты возвращаешь снаряжение вместе с собой и можешь использовать его в следующей попытке.",
+      "en": "The rope kit helps with specific difficult crossings, but it does not provide the answer by itself; the outcome still depends on connecting the observations. You bring the gear back with you and can use it on another attempt."
+    },
+    "event.forest-result-content-v1.escape.variant.equipment-preservation-kit.text": {
+      "ru": "Полевой набор сохраняет образцы в проверяемом виде. Даже при сложном исходе ясно, что снаряжение решает задачу сохранения материала, а не весь маршрут. Ты возвращаешь снаряжение вместе с собой и можешь использовать его в следующей попытке.",
+      "en": "The field kit preserves samples in a checkable form. Even in a difficult outcome, it is clear that the gear solves preservation, not the entire route. You bring the gear back with you and can use it on another attempt."
+    },
+    "event.forest-result-content-v1.escape.variant.equipment-reinforced-axe.text": {
+      "ru": "Усиленный топор действительно открывает тяжёлую древесину, но проходимый завал ещё не равен разгаданному маршруту. Ты возвращаешь снаряжение вместе с собой и можешь использовать его в следующей попытке.",
+      "en": "The reinforced axe genuinely opens heavy timber, but a cleared obstacle is still not the same as a solved route. You bring the gear back with you and can use it on another attempt."
+    },
+    "event.forest-result-content-v1.escape.variant.equipment-boundary-token.text": {
+      "ru": "Старый жетон подтверждает доступ к межевой линии, но не объясняет найденные там знаки. Он открывает путь, а не готовый вывод. Ты возвращаешь снаряжение вместе с собой и можешь использовать его в следующей попытке.",
+      "en": "The old token confirms access to the boundary line, but does not explain the signs found there. It opens the route, not a ready-made conclusion. You bring the gear back with you and can use it on another attempt."
+    },
+    "event.forest-result-content-v1.failure.variant.season-spring.text": {
+      "ru": "Весенняя грязь и вода съедают запас сил раньше, чем отдельные признаки складываются в проверяемую линию. В этот раз приходится выйти без ответа.",
+      "en": "Spring mud and water consume your reserve before the separate signs form a verifiable line. This attempt ends without an answer."
+    },
+    "event.forest-result-content-v1.failure.variant.season-summer.text": {
+      "ru": "Летняя доступность заводит дальше, но запас сил заканчивается прежде, чем дальние наблюдения удаётся связать. Возвращение становится вынужденным.",
+      "en": "Summer access carries you farther, but endurance runs out before the distant observations can be connected. The return becomes forced."
+    },
+    "event.forest-result-content-v1.failure.variant.season-autumn.text": {
+      "ru": "Осенний лес даёт много следов сразу, и на исходе сил они перестают складываться в надёжный порядок. Приходится закончить попытку без подтверждения.",
+      "en": "Autumn offers many signs at once, and as endurance runs out they stop forming a reliable order. The attempt ends without confirmation."
+    },
+    "event.forest-result-content-v1.failure.variant.season-winter.text": {
+      "ru": "Промёрзший маршрут требует слишком много точных переходов подряд. Силы заканчиваются раньше, чем удаётся завершить проверку, и лес приходится покинуть.",
+      "en": "The frozen route demands too many precise crossings in succession. Endurance runs out before the investigation is complete, forcing you out of the Forest."
+    },
+    "event.forest-result-content-v1.failure.variant.equipment-rope-kit.text": {
+      "ru": "Верёвочный набор помогает пройти отдельные сложные места, но сам по себе не даёт ответа: итог зависит от того, удалось ли связать наблюдения. Неудачный исход показывает границу его пользы без скрытого штрафа или потери предмета.",
+      "en": "The rope kit helps with specific difficult crossings, but it does not provide the answer by itself; the outcome still depends on connecting the observations. The failed outcome shows the limit of its usefulness without a hidden penalty or item loss."
+    },
+    "event.forest-result-content-v1.failure.variant.equipment-preservation-kit.text": {
+      "ru": "Полевой набор сохраняет образцы в проверяемом виде. Даже при сложном исходе ясно, что снаряжение решает задачу сохранения материала, а не весь маршрут. Неудачный исход показывает границу его пользы без скрытого штрафа или потери предмета.",
+      "en": "The field kit preserves samples in a checkable form. Even in a difficult outcome, it is clear that the gear solves preservation, not the entire route. The failed outcome shows the limit of its usefulness without a hidden penalty or item loss."
+    },
+    "event.forest-result-content-v1.failure.variant.equipment-reinforced-axe.text": {
+      "ru": "Усиленный топор действительно открывает тяжёлую древесину, но проходимый завал ещё не равен разгаданному маршруту. Неудачный исход показывает границу его пользы без скрытого штрафа или потери предмета.",
+      "en": "The reinforced axe genuinely opens heavy timber, but a cleared obstacle is still not the same as a solved route. The failed outcome shows the limit of its usefulness without a hidden penalty or item loss."
+    },
+    "event.forest-result-content-v1.failure.variant.equipment-boundary-token.text": {
+      "ru": "Старый жетон подтверждает доступ к межевой линии, но не объясняет найденные там знаки. Он открывает путь, а не готовый вывод. Неудачный исход показывает границу его пользы без скрытого штрафа или потери предмета.",
+      "en": "The old token confirms access to the boundary line, but does not explain the signs found there. It opens the route, not a ready-made conclusion. The failed outcome shows the limit of its usefulness without a hidden penalty or item loss."
+    },
+    "event.lumber-cross.activity-forest-return.variant.career-surveyed.text": {
+      "ru": "Бригадир сразу узнаёт рабочую основу твоего рассказа: часть ориентиров совпадает с прежней разведкой, а новые наблюдения заполняют пробелы между ними.",
+      "en": "The foreman immediately recognizes the work basis of your account: some landmarks match the earlier survey, while the new observations fill the gaps between them."
+    },
+    "event.lumber-cross.activity-forest-return.variant.school-field-notes.text": {
+      "ru": "Полевые записи делают разговор точнее: место, последовательность и образец разделены так, что артель может обсуждать результат без пересказа по памяти.",
+      "en": "The field notes make the discussion more precise: location, sequence, and sample are separated clearly enough for the crew to discuss the result without relying on memory."
+    },
+    "event.lumber-cross.activity-forest-return.variant.boundary-token.text": {
+      "ru": "Старый жетон лежит рядом с записями как подтверждение того, что межевая линия была доступна не случайно. Бригадир отделяет факт доступа от того, что ещё предстоит понять.",
+      "en": "The old token sits beside the notes as proof that access to the boundary line was not accidental. The foreman separates the fact of access from what still remains to be understood."
+    },
+    "event.lumber-cross.activity-forest-return.variant.preservation-kit.text": {
+      "ru": "Сохранённый образец можно положить на стол отдельно от рассказа. Артель получает не только описание леса, но и материал с понятным местом происхождения.",
+      "en": "The preserved sample can be placed on the table separately from the account. The crew receives not only a description of the Forest, but material with a clear point of origin."
+    },
+    "event.lumber-cross.activity-forest-return.variant.reinforced-axe.text": {
+      "ru": "По записям видно, где усиленный топор изменил сам маршрут: тяжёлый завал перестал быть причиной для обхода. Бригадир отмечает это как практическую часть результата.",
+      "en": "The notes show exactly where the reinforced axe changed the route itself: a heavy deadfall stopped forcing a detour. The foreman marks that as a practical part of the result."
+    },
+    "event.lumber-cross.activity-forest-return.variant.rope-kit.text": {
+      "ru": "В рассказе ясно отмечено место, где верёвочный набор сделал опасный переход контролируемым. Для артели это важно как доказательство проходимости, а не как украшение истории.",
+      "en": "Your account clearly marks where the rope kit turned a dangerous crossing into a controlled one. For the crew, that matters as evidence of passability rather than decoration for the story."
     }
   }
 }

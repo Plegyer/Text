@@ -189,6 +189,58 @@ export function presentationIdForEvent(cat:Catalog,eventId:string,variantId:stri
   return `location/town/event/${clean(eventId)}/${clean(variantId)}`;
 }
 
+export const SATYR_MAID_PRESENTATION_STAGES=[
+  'new-maid','floor-rhythm','known-face','house-regular','veteran-service',
+  'house-power','personal-network','boundaries','outcome-ready'
+] as const;
+
+export const SATYR_MAID_CAREER_EVENT_IDS=[
+  'satyr-maid.career.first-shift',
+  'satyr-maid.career.known-face',
+  'satyr-maid.career.house-regular',
+  'satyr-maid.career.veteran-service',
+  'satyr-maid.career.house-power',
+  'satyr-maid.career.personal-network',
+  'satyr-maid.career.boundaries',
+  'satyr-maid.career.outcome-ready',
+  'satyr-maid.staff-debrief.night'
+] as const;
+
+export const SATYR_MAID_RELATIONSHIP_EVENT_IDS=[
+  'satyr-maid.recurring-guest.intro',
+  'satyr-maid.recurring-guest.service',
+  'satyr-maid.recurring-guest.night',
+  'satyr-maid.recurring-guest.request',
+  'satyr-maid.recurring-guest.return'
+] as const;
+
+export const SATYR_MAID_SCHOOL_EVENT_IDS=[
+  'satyr-maid.school.rhetoric',
+  'satyr-maid.school.management',
+  'satyr-maid.school.boundaries'
+] as const;
+
+export const SATYR_MAID_CRISIS_EVENT_IDS=[
+  'satyr-maid.crisis.house-strain'
+] as const;
+
+export const SATYR_MAID_COMPLEX_ENDING_IDS=[
+  'ending.satyr-maid.house-power',
+  'ending.satyr-maid.boundary-mastery'
+] as const;
+
+export function presentationIdForSatyrMaidCareerEvent(eventId:string){
+  return `job/satyr-maid/event/${clean(eventId)}/default`;
+}
+
+export function presentationIdForSatyrMaidRelationshipEvent(eventId:string){
+  return `relationship/${clean('satyr-maid.recurring-guest')}/${clean(eventId)}/default`;
+}
+
+export function presentationIdForSatyrMaidStage(stage:string){
+  return `job/satyr-maid/stage/${clean(stage)}`;
+}
+
 export function presentationIdForEnding(endingId:string){
   const parts=pathParts(endingId);
   if(parts[0]==='ending')parts.shift();
@@ -243,6 +295,18 @@ export function presentationSlots(cat:Catalog):PresentationSlot[]{
         });
       }
     }
+  }
+
+  // Stage surfaces consume persisted production career state. Event and ending
+  // surfaces below are intentionally generated only from the live catalog so
+  // C2-131 cannot pass on reserved/preparation IDs alone.
+  for(const stage of SATYR_MAID_PRESENTATION_STAGES){
+    add({
+      id:presentationIdForSatyrMaidStage(stage),
+      label:`Satyr Maid · stage · ${stage}`,
+      baseMediaIds:[],
+      fallbackId:'job/satyr-maid/result/default'
+    });
   }
 
   for(const event of cat.events){

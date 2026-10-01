@@ -29,13 +29,13 @@ test('C3-110/C3-111 route continuity uses existing live route entry keys',()=>{
  assert.equal(localization['activityOption.forest.route.logging-road.help'].ru,'Широкая рабочая дорога со свежими следами лесозаготовок.');
 });
 
-test('C3-112 aftermath keeps exact default-only result variant identities',()=>{
+test('C3-112 frozen default aftermath remains present under intentional v13 result depth',()=>{
  for(const event of forest.events){
-  assert.deepEqual(event.variants.map((variant:any)=>variant.id),['default'],event.id);
+  assert.ok(event.variants.some((variant:any)=>variant.id==='default'),event.id);
   const key='event.'+event.id+'.variant.default.text';
   assert.ok(localization[key]?.ru?.trim(),key+' ru');
   assert.ok(localization[key]?.en?.trim(),key+' en');
-  assert.equal(event.variants[0].text,localization[key].ru,event.id);
+  assert.equal(event.variants.find((variant:any)=>variant.id==='default')?.text,localization[key].ru,event.id);
   assert.ok(event.choices.every((choice:any)=>choice.effects.length===0),event.id);
  }
 });
