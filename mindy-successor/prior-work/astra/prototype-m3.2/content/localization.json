@@ -3993,6 +3993,114 @@
     "presentation.static.relationship.satyr-maid.recurring-guest.return.caption": {
       "ru": "Возврат к рабочему формату и профессиональное завершение просьбы.",
       "en": "Return to the work floor and professional resolution of the request."
+    },
+    "event.satyr-maid.recurring-guest.service.choice.accept-night.label": {
+      "ru": "Согласиться на добровольную встречу",
+      "en": "Agree to a voluntary meeting"
+    },
+    "event.satyr-maid.recurring-guest.service.choice.accept-night.text": {
+      "ru": "Вы соглашаетесь встретиться после работы на собственных условиях.",
+      "en": "You agree to meet after work on your own terms."
+    },
+    "event.satyr-maid.recurring-guest.service.choice.decline-night.label": {
+      "ru": "Отказаться от личной встречи",
+      "en": "Decline the private meeting"
+    },
+    "event.satyr-maid.recurring-guest.service.choice.decline-night.text": {
+      "ru": "Вы отказываетесь от встречи после закрытия, не разрывая профессиональное знакомство.",
+      "en": "You decline the after-hours meeting without ending the professional connection."
+    },
+    "event.satyr-maid.recurring-guest.night.choice.talk.label": {
+      "ru": "Поговорить на своих условиях",
+      "en": "Talk on your own terms"
+    },
+    "event.satyr-maid.recurring-guest.night.choice.talk.text": {
+      "ru": "Вы разговариваете достаточно долго, чтобы сохранить добровольный контакт после работы, а затем нормально завершаете ночь.",
+      "en": "You talk long enough to establish a voluntary after-hours contact, then end the night normally."
+    },
+    "event.satyr-maid.recurring-guest.request.choice.accept-request.label": {
+      "ru": "Принять профессиональную просьбу",
+      "en": "Accept the professional request"
+    },
+    "event.satyr-maid.recurring-guest.request.choice.accept-request.text": {
+      "ru": "Вы соглашаетесь выполнить просьбу через обычную работу заведения.",
+      "en": "You agree to handle the request through the bar's normal work."
+    },
+    "event.satyr-maid.recurring-guest.request.choice.decline-request.label": {
+      "ru": "Отказаться от просьбы",
+      "en": "Decline the request"
+    },
+    "event.satyr-maid.recurring-guest.request.choice.decline-request.text": {
+      "ru": "Вы отказываетесь от дополнительной просьбы и сохраняете профессиональные отношения.",
+      "en": "You decline the extra request and keep the relationship professional."
+    },
+    "event.satyr-maid.recurring-guest.return.choice.resolve-professionally.label": {
+      "ru": "Решить вопрос профессионально",
+      "en": "Resolve it professionally"
+    },
+    "event.satyr-maid.recurring-guest.return.choice.resolve-professionally.text": {
+      "ru": "Вы завершаете просьбу в рамках работы и превращаете повторяющийся профессиональный контакт в надёжную сеть знакомств.",
+      "en": "You complete the request, turning repeated professional contact into a reliable personal network."
+    },
+    "nightChoice.satyr-maid.night.recurring-guest.label": {
+      "ru": "Встретиться со знакомым гостем",
+      "en": "Meet the recurring guest"
+    },
+    "nightChoice.satyr-maid.night.staff-debrief.label": {
+      "ru": "Остаться на разбор смены с персоналом",
+      "en": "Stay for a staff debrief"
+    },
+    "event.satyr-maid.staff-debrief.night.title": {
+      "ru": "Разбор смены после закрытия",
+      "en": "Staff debrief after closing"
+    },
+    "event.satyr-maid.staff-debrief.night.variant.default.text": {
+      "ru": "После закрытия сотрудники обсуждают проблемы обслуживания и подготовку к завтрашнему дню, не расходуя ещё одно дневное действие.",
+      "en": "After closing, the staff compare service problems and tomorrow's setup without consuming another daytime action."
+    },
+    "event.satyr-maid.staff-debrief.night.choice.finish.label": {
+      "ru": "Завершить разбор",
+      "en": "Finish the debrief"
+    },
+    "event.satyr-maid.staff-debrief.night.choice.finish.text": {
+      "ru": "Вы уходите с более ясным планом работы дома и отправляетесь спать.",
+      "en": "You leave the house plan clearer and go to sleep."
+    },
+    "presentation.static.career.satyr-maid.event.staff-debrief-night.alt": {
+      "ru": "Служанка и сотрудники спокойно обсуждают прошедшую смену после закрытия.",
+      "en": "The maid and staff calmly review the completed shift after closing."
+    },
+    "presentation.static.career.satyr-maid.event.staff-debrief-night.caption": {
+      "ru": "Добровольный разбор рабочей смены после закрытия.",
+      "en": "Voluntary staff debrief after closing."
+    },
+    "ui.satyrMaid.relationshipState.work-introduction": {
+      "ru": "Знакомство на работе",
+      "en": "Work introduction"
+    },
+    "ui.satyrMaid.relationshipState.night-invitation": {
+      "ru": "Добровольное приглашение после смены",
+      "en": "Voluntary after-work invitation"
+    },
+    "ui.satyrMaid.relationshipState.accepted-meeting": {
+      "ru": "Принятая добровольная встреча",
+      "en": "Accepted voluntary meeting"
+    },
+    "ui.satyrMaid.relationshipState.external-request": {
+      "ru": "Дополнительная профессиональная просьба",
+      "en": "External professional request"
+    },
+    "ui.satyrMaid.relationshipState.return-to-work": {
+      "ru": "Возврат к рабочему формату",
+      "en": "Return to work"
+    },
+    "ui.satyrMaid.relationshipStateAria": {
+      "ru": "Состояние цепочки: {state}",
+      "en": "Relationship presentation state: {state}"
+    },
+    "ui.satyrMaid.nightChoiceAria": {
+      "ru": "Ночной выбор: {choice}",
+      "en": "Night choice: {choice}"
     }
   }
 }
