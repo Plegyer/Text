@@ -29,6 +29,7 @@ export type Condition =
   | {kind:'calendarDayInYear';op:CompareOp;value:number}
   | {kind:'calendarElapsedDays';op:CompareOp;value:number}
   | {kind:'housingTier';value:typeof targetHousing[number]}
+  | {kind:'schoolCounter';track:string;counter:string;op:CompareOp;value:number}
   | {kind:'careerStage';career:string;stage:string}
   | {kind:'careerShifts';career:string;op:CompareOp;value:number}
   | {kind:'careerCounter';career:string;counter:string;op:CompareOp;value:number}
@@ -77,6 +78,7 @@ export const conditionSchema: z.ZodType<Condition> = z.lazy(()=>z.union([
   z.object({kind:z.literal('calendarDayInYear'),op:compareOp,value:n.max(40)}).strict(),
   z.object({kind:z.literal('calendarElapsedDays'),op:compareOp,value:n.max(159)}).strict(),
   z.object({kind:z.literal('housingTier'),value:z.enum(targetHousing)}).strict(),
+  z.object({kind:z.literal('schoolCounter'),track:id,counter:id,op:compareOp,value:n}).strict(),
   z.object({kind:z.literal('careerStage'),career:id,stage:id}).strict(),
   z.object({kind:z.literal('careerShifts'),career:id,op:compareOp,value:n}).strict(),
   z.object({kind:z.literal('careerCounter'),career:id,counter:id,op:compareOp,value:n}).strict(),
@@ -175,6 +177,7 @@ const capabilityReads=z.object({
   itemCapabilities:z.array(id).optional(),
   calendar:z.boolean().optional(),
   housing:z.boolean().optional(),
+  schoolTracks:z.array(id).optional(),
   careers:z.array(id).optional(),
   quests:z.array(id).optional(),
   relationships:z.array(id).optional(),
