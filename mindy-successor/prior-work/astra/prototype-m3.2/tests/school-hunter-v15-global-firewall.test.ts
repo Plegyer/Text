@@ -16,7 +16,7 @@ test('C5-167 Hunter identities and thresholds do not enter global School runtime
   assert.equal(schoolSource.includes('school-field-craft-ready'),false);
   assert.equal(inventory.localHookPolicy.threshold,null);
   assert.equal(inventory.localHookPolicy.nightParityThreshold,null);
-  assert.equal(inventory.localHookPolicy.thresholdAuthority,'C1D_133_EXPLICITLY_NULL');
+  assert.equal(inventory.localHookPolicy.thresholdAuthority,'FROZEN_CONTRACT_EXPLICITLY_NULL');
   assert.equal(inventory.localHookPolicy.nightParityAuthority,'BLOCKED_NO_AUTHORIZED_NIGHT_PATH');
   assert.equal(inventory.localHookPolicy.scope,'hunter-only');
   assert.equal(inventory.localHookPolicy.nightParityScope,'hunter-only');
@@ -30,7 +30,7 @@ test('C5-167 every producer keeps threshold null and forbids global policy write
   for(const fixture of fixtures){
     assert.equal(fixture.localThreshold.value,null,fixture.id);
     assert.equal(fixture.localThreshold.scope,'hunter-only',fixture.id);
-    assert.equal(fixture.localThreshold.authority,'C1D_133_EXPLICITLY_NULL',fixture.id);
+    assert.equal(fixture.localThreshold.authority,'FROZEN_CONTRACT_EXPLICITLY_NULL',fixture.id);
     assert.equal(fixture.constraints.publishesGlobalCertificate,false,fixture.id);
     assert.equal(fixture.constraints.publishesGlobalProject,false,fixture.id);
     assert.equal(fixture.constraints.advancesCareerDirectly,false,fixture.id);
@@ -43,7 +43,7 @@ test('C5-167 C1D-139 authorizes only the existing-world-fact Field Craft consume
   });
   assert.equal(fixtures[0].reactionEvent,'hunter.school.field-craft');
   for(const fixture of fixtures.slice(1)){
-    assert.equal(fixture.reactionEvent,'BLOCKED_NOT_PUBLISHED_BY_C1D_133',fixture.id);
+    assert.equal(fixture.reactionEvent,'BLOCKED_NOT_PUBLISHED_BY_FROZEN_HUNTER_RUNTIME',fixture.id);
   }
   assert.deepEqual(fixtures[0].authorizedCondition,{kind:'worldFact',fact:'forest.school-field-notes',present:true});
 });
