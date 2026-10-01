@@ -225,7 +225,8 @@ export const SATYR_MAID_CRISIS_EVENT_IDS=[
 ] as const;
 
 export const SATYR_MAID_COMPLEX_ENDING_IDS=[
-  'ending.satyr-maid.house-power'
+  'ending.satyr-maid.house-power',
+  'ending.satyr-maid.boundary-mastery'
 ] as const;
 
 export function presentationIdForSatyrMaidCareerEvent(eventId:string){
