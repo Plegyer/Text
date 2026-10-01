@@ -62,6 +62,7 @@ test('C3-125/C3-129 a real School lesson yields preservation kit + knowledge pre
 test('C3-127/C3-128 real challenge families read stats/capabilities and season changes availability',()=>{
   let spring=started();
   spring.run.character.stats.strength=4;
+  spring.run.character.stats.reason=3;
   spring=dispatch(spring,{type:'enterActivity',id:'lumber.forest'},catalog);
   assert.ok(ids(spring).includes('forest.challenge.logging-navigation'));
   assert.ok(ids(spring).includes('forest.challenge.logging-spring-mud'));
@@ -87,6 +88,7 @@ test('C3-127/C3-128 real challenge families read stats/capabilities and season c
 test('C3-125 extraction capability is mechanically required for success',()=>{
   let s=started();
   s.run.character.stats.strength=4;
+  s.run.character.stats.reason=3;
   s=dispatch(s,{type:'enterActivity',id:'lumber.forest'},catalog);
   s=dispatch(s,{type:'activityAction',id:'forest.route.logging-road'},catalog);
   s=dispatch(s,{type:'activityAction',id:'forest.challenge.logging-navigation'},catalog);
