@@ -1,8 +1,9 @@
 # Tavern Presentation v14 baseline — C2-145 / C2-146 / C2-153
 
 Owner: Chat 2 / Presentation & Media
-Branch: `chat2/tavern-presentation-v14`
-Baseline: `main@778494d2d2bcefdfa714630e01a0331c570d7d94`
+Branch: `chat2/tavern-presentation-v14-final`
+Preparation baseline: `main@778494d2d2bcefdfa714630e01a0331c570d7d94`
+Final frozen runtime base: PR #187 exact head `38c58ccdaa1d357f189cd640053d0b2a8605b9b4`
 C1D-121 contract first read at `chat1/tavern-complete-v12@7bf2531f208c8b3faf5f83c16064885b6295167b`.
 
 ## C2-145 — COMPLETE
@@ -10,7 +11,7 @@ C1D-121 contract first read at `chat1/tavern-complete-v12@7bf2531f208c8b3faf5f83
 The full contract-backed identity inventory now lives in:
 `mindy-successor/docs/presentation-prep/TAVERN_RUNTIME_IDENTITY_INVENTORY_C2_145.md`.
 
-Before the contract appeared, Chat 2 inventoried only already-live Tavern shift/result/seasonal/ending identities. After publication, presentation IDs were added only for identities explicitly present in the C1D-121 contract. No traveler relationship event IDs were invented because the contract publishes relationship stages/facts/choices and Night choices, but not separate relationship event IDs.
+Before the contract appeared, Chat 2 inventoried only already-live Tavern shift/result/seasonal/ending identities. After contract publication, no traveler relationship event IDs were invented. Finalization binds the additional exact relationship/Night/information event IDs only after they exist in frozen runtime PR #187.
 
 ## C2-146 — COMPLETE
 
@@ -32,6 +33,6 @@ The four assigned ending IDs map to four distinct semantic presentation IDs:
 
 All four are live production ending definitions, have stable project-owned static fallback, and keep RU/EN title/description plus presentation alt/caption coverage. Gameplay IDs, conditions, rewards and epilogues are preserved.
 
-## Remaining dependency gate
+## Finalization gate
 
-C2-147..154 can be authored against the published contract and are covered by the focused v14 regression. C2-155 remains gated on the final frozen Chat 1 runtime candidate: contract-backed event reservations must be removed and the same presentation IDs must be proven to originate from the real catalog/runtime. C2-156 follows only after exact-head full repository CI is green.
+C2-147..154 are finalized against frozen runtime PR #187. C2-155 removes preparation-only Tavern event reservations and proves live production reachability plus animation-off/missing-GIF fallback safety. C2-156 freezes only after full exact-head repository CI is green.
