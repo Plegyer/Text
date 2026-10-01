@@ -19,7 +19,7 @@ async function wait(check:()=>boolean){
   throw new Error('UI update timed out');
 }
 
-function boot(){
+function boot(initial=started()){
   const errors:string[]=[];
   const vc=new VirtualConsole();
   vc.on('jsdomError',(e:Error)=>errors.push(e.message));
@@ -28,7 +28,7 @@ function boot(){
   w.structuredClone=structuredClone;
   w.fetch=async()=>({ok:true,json:async()=>structuredClone(data)});
   w.confirm=()=>true;
-  w.localStorage.setItem('portal-life.v1',JSON.stringify(started()));
+  w.localStorage.setItem('portal-life.v1',JSON.stringify(initial));
   w.eval(bundle);
   return {dom,w,errors};
 }
@@ -52,7 +52,11 @@ test('QA-accepted starter-career scene bundles have complete RU/EN localization'
 });
 
 test('Satyr Maid multi-scene action result uses the generic scene localization seam',async()=>{
-  const {dom,w,errors}=boot();
+  const s=started();
+  s.run.progression.careers['satyr-maid']={
+    stage:'floor-rhythm',shifts:0,counters:{completed_shifts:1},choices:{},facts:['first-shift-complete']
+  };
+  const {dom,w,errors}=boot(s);
   try{
     await wait(()=>!!w.document.querySelector('[data-panel="work"]'));
     w.document.querySelector('[data-panel="work"]').click();

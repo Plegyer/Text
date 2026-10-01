@@ -116,6 +116,7 @@ function checkTypedRead(c:Condition,p:Pack){
   if(c.kind==='itemCapability')needCapability(has(r?.itemCapabilities,c.capability),`read item capability ${c.capability}`);
   if(c.kind==='calendarYear'||c.kind==='calendarSeason'||c.kind==='calendarDayInYear'||c.kind==='calendarElapsedDays')needCapability(r?.calendar===true,'read calendar');
   if(c.kind==='housingTier')needCapability(r?.housing===true,'read housing');
+  if(c.kind==='schoolCounter')needCapability(has(r?.schoolTracks,c.track),`read School track ${c.track}`);
   if(c.kind==='careerStage'||c.kind==='careerShifts'||c.kind==='careerCounter'||c.kind==='careerFact'||c.kind==='careerChoice')needCapability(has(r?.careers,c.career),`read career ${c.career}`);
   if(c.kind==='questStage'||c.kind==='questCounter'||c.kind==='questFact'||c.kind==='questChoice')needCapability(has(r?.quests,c.quest),`read quest ${c.quest}`);
   if(c.kind==='relationshipStage'||c.kind==='relationshipCounter'||c.kind==='relationshipFact'||c.kind==='relationshipChoice')needCapability(has(r?.relationships,c.relationship),`read relationship ${c.relationship}`);
