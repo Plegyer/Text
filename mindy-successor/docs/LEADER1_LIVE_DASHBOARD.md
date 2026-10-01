@@ -53,10 +53,10 @@ The runtime is not the bottleneck. The bottleneck is completing naturally reacha
 
 | Worker | Active assignment | Observed branch/head | Last observed progress | Leader interpretation |
 |---|---|---|---|---|
-| Chat 1 Developer | C1D-85..96 | `chat1/c1d-85-96-late-career-hard-work` @ `8257571da18d24009f23d4e342dd494398536fbc` | `C1D-95: add Hard Work and Palace Meta smoke` at 2026-10-01 04:31Z | One task remains before candidate freeze if no repair is needed; candidate PR not yet observed at snapshot. |
+| Chat 1 Developer | C1D-85..96 | `chat1/c1d-85-96-late-career-hard-work` @ `8257571da18d24009f23d4e342dd494398536fbc` | `C1D-95: add Hard Work and Palace Meta smoke` at 2026-10-01 04:31Z | Candidate PR #147 is open as a draft on this exact observed head; verify exact-head CI/freeze and Chat 4 disposition before integration. |
 | Chat 2 Presentation | C2-109..120 | `chat2/presentation-c2-109-120` @ `89b33daa9378b8591e31309234edfcc3f8a95cb9` | `C2-114 bind Hard Work ending accessibility keys` at 04:34Z | Active mid-queue progress. |
 | Chat 3 Forest/Poverty | C3-109..120 | `chat3/forest-poverty-production-v11` @ `e750480404b1270ffbe47ca1dad2cb381bcf29d1` | v11 production candidate handoff at 04:30Z | Candidate PR #146 is open; ready for QA once CI/freeze evidence is confirmed. |
-| Chat 4 QA | C4-114..125 | last observed legacy branch `chat4/activation-ci-gate-next` @ `92e20a6a27691707528d6c8e6a68e1cb9b852890` | no fresh post-reset commit visible at snapshot | Assigned to backlog disposition. Verify immediately whether a new branch/commits appeared after this snapshot. |
+| Chat 4 QA | C4-114..125 | `chat4/c4-123-125-qa-evidence` @ `cdf3ccea0bb2045e325cd324adc6a042cde97848` | PR #148 `QA disposition ledger and acceptance evidence` observed at 04:35Z | QA work is now visible in Git; inspect PR #148 for the latest backlog dispositions/acceptance truth. |
 | Chat 5 School | C5-109..120 | `chat5/school-production-v11` @ `54f1267d4d283d1af55822335a8fbf41d14282a9` | `Document SCHOOL_PRODUCTION_V11_MANIFEST_HANDOFF` at 04:34Z | Deep in queue / handoff material present; verify whether candidate freeze/PR has appeared. |
 
 The task pointers remain authoritative for queue scope.
@@ -75,7 +75,9 @@ Current open PRs include:
 - #142 — Chat 1 v8 regression candidate;
 - #143 — Chat 5 v10 candidate;
 - #145 — Chat 3 v10 candidate;
-- #146 — Chat 3 v11 production promotion candidate.
+- #146 — Chat 3 v11 production promotion candidate;
+- #147 — Chat 1 v9 late-career unlock / all-ten Hard Work Meta candidate (draft at snapshot);
+- #148 — Chat 4 QA disposition ledger / acceptance evidence.
 
 Do **not** assume this list is still complete after the snapshot.
 
