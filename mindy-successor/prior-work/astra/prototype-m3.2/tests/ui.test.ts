@@ -353,7 +353,7 @@ test('renderer: School RU EN localization preserves course command and pending s
   assert.match(w.document.querySelector('.stage-title h1')?.textContent??'',/Грамотность и счёт/);
   assert.match(w.document.querySelector('.dialogue p')?.textContent??'',/Урок завершён: Грамотность и счёт/);
   assert.match(w.document.querySelector('.media-window img')?.getAttribute('src')??'',/assets\/presentation\/school-course-literacy-and-numbers\.svg$/);
-  assert.match(w.document.querySelector('.media-window img')?.getAttribute('alt')??'',/Грамота и числа/);
+  assert.match(w.document.querySelector('.media-window img')?.getAttribute('alt')??'',/Грамотность и счёт/);
   assert.deepEqual(errors,[]);
  }finally{dom.window.close();}
 });
