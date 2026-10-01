@@ -54,7 +54,7 @@ function stateAt(stage:string,season:string){
 }
 function localizationForEvent(id:string){
   const e=event(id);
-  assert.ok(loc['event.'+id+'.title]?.ru?.trim()&&loc['event.'+id+'.title]?.en?.trim(),id+' title');
+  assert.ok(loc['event.'+id+'.title']?.ru?.trim()&&loc['event.'+id+'.title']?.en?.trim(),id+' title');
   for(const v of e.variants){
     const k='event.'+id+'.variant.'+v.id+'.text';
     assert.ok(loc[k]?.ru?.trim()&&loc[k]?.en?.trim(),k);
