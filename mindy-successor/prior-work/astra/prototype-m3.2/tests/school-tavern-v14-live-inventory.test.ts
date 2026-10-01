@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 
-import {SCHOOL_COURSES} from '../src/core/school.ts';
+import {SCHOOL_COURSES,schoolNightStudyChoices} from '../src/core/school.ts';
 
 const inventory=JSON.parse(readFileSync('content/school-tavern-v14-live-inventory.fixture.json','utf8'));
 const localization=JSON.parse(readFileSync('content/localization.json','utf8')).strings;
@@ -43,4 +43,17 @@ test('C5-145/C5-155 C1D-121 binding keeps the approved three-lesson thresholds T
   assert.equal(inventory.status,'CONTRACT_BOUND_PRE_RUNTIME');
   assert.equal(inventory.runtimeContract.head,'7bf2531f208c8b3faf5f83c16064885b6295167b');
   assert.equal(inventory.runtimeContract.blob,'48120605195463dddbc34205b2246fa4b7276907');
+});
+
+test('C5-151 inventory maps only existing typed Night-study choices for the four Tavern tracks',()=>{
+  const live=new Set(schoolNightStudyChoices().map(x=>x.id));
+  for(const hook of inventory.hooks){
+    assert.ok(hook.nightChoiceIds.length>=2,hook.role);
+    for(const id of hook.nightChoiceIds)assert.ok(live.has(id),id);
+  }
+  assert.equal(inventory.localHookPolicy.nightParityCounter,'night_study_sessions');
+  assert.equal(inventory.localHookPolicy.nightParityThreshold,3);
+  assert.equal(inventory.localHookPolicy.nightParityScope,'tavern-only');
+  assert.equal(inventory.localHookPolicy.nightStudyChangesGlobalCertificateRule,false);
+  assert.equal(inventory.localHookPolicy.nightStudyChangesGlobalProjectRule,false);
 });
