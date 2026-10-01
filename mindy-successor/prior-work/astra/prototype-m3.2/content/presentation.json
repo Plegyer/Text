@@ -1195,6 +1195,486 @@
         "alt": "Hard Work ending static presentation for prostitute.",
         "altKey": "presentation.static.prostitute-ending-hard-work.alt"
       }
+    },
+    "job/satyr-maid/stage/new-maid": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-result.svg",
+        "alt": "Satyr Maid career stage: New maid.",
+        "altKey": "presentation.static.career.satyr-maid.stage.new-maid.alt"
+      }
+    },
+    "job/satyr-maid/stage/floor-rhythm": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-result.svg",
+        "alt": "Satyr Maid career stage: Floor rhythm.",
+        "altKey": "presentation.static.career.satyr-maid.stage.floor-rhythm.alt"
+      }
+    },
+    "job/satyr-maid/stage/known-face": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-result.svg",
+        "alt": "Satyr Maid career stage: Known face.",
+        "altKey": "presentation.static.career.satyr-maid.stage.known-face.alt"
+      }
+    },
+    "job/satyr-maid/stage/house-regular": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-result.svg",
+        "alt": "Satyr Maid career stage: House regular.",
+        "altKey": "presentation.static.career.satyr-maid.stage.house-regular.alt"
+      }
+    },
+    "job/satyr-maid/stage/veteran-service": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-result.svg",
+        "alt": "Satyr Maid career stage: Veteran service.",
+        "altKey": "presentation.static.career.satyr-maid.stage.veteran-service.alt"
+      }
+    },
+    "job/satyr-maid/stage/house-power": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-result.svg",
+        "alt": "Satyr Maid career stage: House power.",
+        "altKey": "presentation.static.career.satyr-maid.stage.house-power.alt"
+      }
+    },
+    "job/satyr-maid/stage/personal-network": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-result.svg",
+        "alt": "Satyr Maid career stage: Personal network.",
+        "altKey": "presentation.static.career.satyr-maid.stage.personal-network.alt"
+      }
+    },
+    "job/satyr-maid/stage/boundaries": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-result.svg",
+        "alt": "Satyr Maid career stage: House rules.",
+        "altKey": "presentation.static.career.satyr-maid.stage.boundaries.alt"
+      }
+    },
+    "job/satyr-maid/stage/outcome-ready": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-result.svg",
+        "alt": "Satyr Maid career stage: Outcome ready.",
+        "altKey": "presentation.static.career.satyr-maid.stage.outcome-ready.alt"
+      }
+    },
+    "ending/satyr-maid/house-power": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-result.svg",
+        "alt": "Satyr Maid House Power ending static presentation.",
+        "altKey": "presentation.static.satyr-maid-ending-house-power.alt"
+      },
+      "pool": {
+        "version": 1,
+        "ordering": "ordered",
+        "selectionPolicy": "unweighted",
+        "candidates": [
+          {
+            "key": "service-a",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-a.gif",
+            "alt": "Satyr Maid service work candidate A.",
+            "altKey": "presentation.motion.career.satyr-maid.service.a.alt"
+          },
+          {
+            "key": "service-b",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-b.gif",
+            "alt": "Satyr Maid service work candidate B.",
+            "altKey": "presentation.motion.career.satyr-maid.service.b.alt"
+          },
+          {
+            "key": "service-c",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-c.gif",
+            "alt": "Satyr Maid service work candidate C.",
+            "altKey": "presentation.motion.career.satyr-maid.service.c.alt"
+          }
+        ]
+      }
+    },
+    "ending/satyr-maid/boundary-mastery": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-result.svg",
+        "alt": "Satyr Maid Boundary Mastery ending static presentation.",
+        "altKey": "presentation.static.satyr-maid-ending-boundary-mastery.alt"
+      },
+      "pool": {
+        "version": 1,
+        "ordering": "ordered",
+        "selectionPolicy": "unweighted",
+        "candidates": [
+          {
+            "key": "service-a",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-a.gif",
+            "alt": "Satyr Maid service work candidate A.",
+            "altKey": "presentation.motion.career.satyr-maid.service.a.alt"
+          },
+          {
+            "key": "service-b",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-b.gif",
+            "alt": "Satyr Maid service work candidate B.",
+            "altKey": "presentation.motion.career.satyr-maid.service.b.alt"
+          },
+          {
+            "key": "service-c",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-c.gif",
+            "alt": "Satyr Maid service work candidate C.",
+            "altKey": "presentation.motion.career.satyr-maid.service.c.alt"
+          }
+        ]
+      }
+    },
+    "job/satyr-maid/event/satyr-maid-career-first-shift/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-result.svg",
+        "alt": "Static Satyr Maid milestone: First steady shift.",
+        "altKey": "presentation.static.career.satyr-maid.event.first-shift.alt"
+      },
+      "pool": {
+        "version": 1,
+        "ordering": "ordered",
+        "selectionPolicy": "unweighted",
+        "candidates": [
+          {
+            "key": "service-a",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-a.gif",
+            "alt": "Satyr Maid service work candidate A.",
+            "altKey": "presentation.motion.career.satyr-maid.service.a.alt"
+          },
+          {
+            "key": "service-b",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-b.gif",
+            "alt": "Satyr Maid service work candidate B.",
+            "altKey": "presentation.motion.career.satyr-maid.service.b.alt"
+          },
+          {
+            "key": "service-c",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-c.gif",
+            "alt": "Satyr Maid service work candidate C.",
+            "altKey": "presentation.motion.career.satyr-maid.service.c.alt"
+          }
+        ]
+      }
+    },
+    "job/satyr-maid/event/satyr-maid-career-known-face/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-result.svg",
+        "alt": "Static Satyr Maid milestone: Known face on the floor.",
+        "altKey": "presentation.static.career.satyr-maid.event.known-face.alt"
+      },
+      "pool": {
+        "version": 1,
+        "ordering": "ordered",
+        "selectionPolicy": "unweighted",
+        "candidates": [
+          {
+            "key": "service-a",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-a.gif",
+            "alt": "Satyr Maid service work candidate A.",
+            "altKey": "presentation.motion.career.satyr-maid.service.a.alt"
+          },
+          {
+            "key": "service-b",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-b.gif",
+            "alt": "Satyr Maid service work candidate B.",
+            "altKey": "presentation.motion.career.satyr-maid.service.b.alt"
+          },
+          {
+            "key": "service-c",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-c.gif",
+            "alt": "Satyr Maid service work candidate C.",
+            "altKey": "presentation.motion.career.satyr-maid.service.c.alt"
+          }
+        ]
+      }
+    },
+    "job/satyr-maid/event/satyr-maid-career-house-regular/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-result.svg",
+        "alt": "Static Satyr Maid milestone: House regular at work.",
+        "altKey": "presentation.static.career.satyr-maid.event.house-regular.alt"
+      },
+      "pool": {
+        "version": 1,
+        "ordering": "ordered",
+        "selectionPolicy": "unweighted",
+        "candidates": [
+          {
+            "key": "service-a",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-a.gif",
+            "alt": "Satyr Maid service work candidate A.",
+            "altKey": "presentation.motion.career.satyr-maid.service.a.alt"
+          },
+          {
+            "key": "service-b",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-b.gif",
+            "alt": "Satyr Maid service work candidate B.",
+            "altKey": "presentation.motion.career.satyr-maid.service.b.alt"
+          },
+          {
+            "key": "service-c",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-c.gif",
+            "alt": "Satyr Maid service work candidate C.",
+            "altKey": "presentation.motion.career.satyr-maid.service.c.alt"
+          }
+        ]
+      }
+    },
+    "job/satyr-maid/event/satyr-maid-career-veteran-service/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-result.svg",
+        "alt": "Static Satyr Maid milestone: Veteran service under pressure.",
+        "altKey": "presentation.static.career.satyr-maid.event.veteran-service.alt"
+      },
+      "pool": {
+        "version": 1,
+        "ordering": "ordered",
+        "selectionPolicy": "unweighted",
+        "candidates": [
+          {
+            "key": "service-a",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-a.gif",
+            "alt": "Satyr Maid service work candidate A.",
+            "altKey": "presentation.motion.career.satyr-maid.service.a.alt"
+          },
+          {
+            "key": "service-b",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-b.gif",
+            "alt": "Satyr Maid service work candidate B.",
+            "altKey": "presentation.motion.career.satyr-maid.service.b.alt"
+          },
+          {
+            "key": "service-c",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-c.gif",
+            "alt": "Satyr Maid service work candidate C.",
+            "altKey": "presentation.motion.career.satyr-maid.service.c.alt"
+          }
+        ]
+      }
+    },
+    "relationship/satyr-maid-recurring-guest/satyr-maid-recurring-guest-intro/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-result.svg",
+        "alt": "A familiar guest speaks with the maid during ordinary service on the floor.",
+        "altKey": "presentation.static.relationship.satyr-maid.recurring-guest.intro.alt"
+      },
+      "pool": {
+        "version": 1,
+        "ordering": "ordered",
+        "selectionPolicy": "unweighted",
+        "candidates": [
+          {
+            "key": "service-a",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-a.gif",
+            "alt": "Satyr Maid service work candidate A.",
+            "altKey": "presentation.motion.career.satyr-maid.service.a.alt"
+          },
+          {
+            "key": "service-b",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-b.gif",
+            "alt": "Satyr Maid service work candidate B.",
+            "altKey": "presentation.motion.career.satyr-maid.service.b.alt"
+          },
+          {
+            "key": "service-c",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-c.gif",
+            "alt": "Satyr Maid service work candidate C.",
+            "altKey": "presentation.motion.career.satyr-maid.service.c.alt"
+          }
+        ]
+      }
+    },
+    "relationship/satyr-maid-recurring-guest/satyr-maid-recurring-guest-service/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-result.svg",
+        "alt": "The maid and a familiar guest talk at a table after another professional service exchange.",
+        "altKey": "presentation.static.relationship.satyr-maid.recurring-guest.service.alt"
+      },
+      "pool": {
+        "version": 1,
+        "ordering": "ordered",
+        "selectionPolicy": "unweighted",
+        "candidates": [
+          {
+            "key": "service-a",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-a.gif",
+            "alt": "Satyr Maid service work candidate A.",
+            "altKey": "presentation.motion.career.satyr-maid.service.a.alt"
+          },
+          {
+            "key": "service-b",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-b.gif",
+            "alt": "Satyr Maid service work candidate B.",
+            "altKey": "presentation.motion.career.satyr-maid.service.b.alt"
+          },
+          {
+            "key": "service-c",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-c.gif",
+            "alt": "Satyr Maid service work candidate C.",
+            "altKey": "presentation.motion.career.satyr-maid.service.c.alt"
+          }
+        ]
+      }
+    },
+    "relationship/satyr-maid-recurring-guest/satyr-maid-recurring-guest-night/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-result.svg",
+        "alt": "A calm voluntary conversation after closing, separate from the paid work shift.",
+        "altKey": "presentation.static.relationship.satyr-maid.recurring-guest.night.alt"
+      }
+    },
+    "relationship/satyr-maid-recurring-guest/satyr-maid-recurring-guest-request/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-result.svg",
+        "alt": "A familiar guest makes an additional professional request to the maid.",
+        "altKey": "presentation.static.relationship.satyr-maid.recurring-guest.request.alt"
+      }
+    },
+    "relationship/satyr-maid-recurring-guest/satyr-maid-recurring-guest-return/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-result.svg",
+        "alt": "The familiar guest returns during a work shift and the request is handled through ordinary professional service.",
+        "altKey": "presentation.static.relationship.satyr-maid.recurring-guest.return.alt"
+      },
+      "pool": {
+        "version": 1,
+        "ordering": "ordered",
+        "selectionPolicy": "unweighted",
+        "candidates": [
+          {
+            "key": "service-a",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-a.gif",
+            "alt": "Satyr Maid service work candidate A.",
+            "altKey": "presentation.motion.career.satyr-maid.service.a.alt"
+          },
+          {
+            "key": "service-b",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-b.gif",
+            "alt": "Satyr Maid service work candidate B.",
+            "altKey": "presentation.motion.career.satyr-maid.service.b.alt"
+          },
+          {
+            "key": "service-c",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-c.gif",
+            "alt": "Satyr Maid service work candidate C.",
+            "altKey": "presentation.motion.career.satyr-maid.service.c.alt"
+          }
+        ]
+      }
+    },
+    "job/satyr-maid/event/satyr-maid-staff-debrief-night/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-result.svg",
+        "alt": "Satyr Maid staff debrief after closing.",
+        "altKey": "presentation.static.career.satyr-maid.event.staff-debrief-night.alt"
+      }
+    },
+    "job/satyr-maid/event/satyr-maid-school-rhetoric/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-result.svg",
+        "alt": "The maid applies a learned negotiation technique during ordinary floor service.",
+        "altKey": "presentation.static.career.satyr-maid.school.rhetoric.alt"
+      }
+    },
+    "job/satyr-maid/event/satyr-maid-school-management/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-result.svg",
+        "alt": "The maid reviews work records and scheduling as part of managing a shift.",
+        "altKey": "presentation.static.career.satyr-maid.school.management.alt"
+      }
+    },
+    "job/satyr-maid/event/satyr-maid-school-boundaries/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-result.svg",
+        "alt": "The maid calmly states clear service terms during a work scene.",
+        "altKey": "presentation.static.career.satyr-maid.school.boundaries.alt"
+      }
+    },
+    "job/satyr-maid/event/satyr-maid-crisis-house-strain/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-result.svg",
+        "alt": "Satyr Maid house crisis during a busy service night.",
+        "altKey": "presentation.static.career.satyr-maid.crisis.house-strain.alt"
+      },
+      "pool": {
+        "version": 1,
+        "ordering": "ordered",
+        "selectionPolicy": "unweighted",
+        "candidates": [
+          {
+            "key": "service-a",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-a.gif",
+            "alt": "Satyr Maid service work candidate A.",
+            "altKey": "presentation.motion.career.satyr-maid.service.a.alt"
+          },
+          {
+            "key": "service-b",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-b.gif",
+            "alt": "Satyr Maid service work candidate B.",
+            "altKey": "presentation.motion.career.satyr-maid.service.b.alt"
+          },
+          {
+            "key": "service-c",
+            "kind": "gif",
+            "src": "assets/presentation/career-satyr-maid-motion-service-c.gif",
+            "alt": "Satyr Maid service work candidate C.",
+            "altKey": "presentation.motion.career.satyr-maid.service.c.alt"
+          }
+        ]
+      }
     }
   }
 }
