@@ -210,9 +210,10 @@ test('C5-71 teacher tone matrix preserves exactly eight current educator identit
   assert.deepEqual(teacherTone.mechanics.lustEffects,[]);
 });
 
-test('C5-71 all prepared queue-v7 strings have RU EN parity unique stable refs and no root collision',()=>{
+test('C5-71 prepared strings remain unique while only exact Night-study consumer keys enter root localization',()=>{
   const fixtures=[genericDepth,nightDepth,starterTransfer,lateTransfer,costWording,teacherTone];
   const seen=new Set<string>();
+  const integrated=new Set<string>(nightDepth.entries.flatMap((entry:any)=>[entry.keys.title,entry.keys.body]));
 
   for(const fixture of fixtures){
     const expected=[...new Set(refs(fixture))].sort();
@@ -224,10 +225,12 @@ test('C5-71 all prepared queue-v7 strings have RU EN parity unique stable refs a
       assert.ok(pair.ru.trim().length>0,`${key}: RU`);
       assert.ok(pair.en.trim().length>0,`${key}: EN`);
       assert.equal(seen.has(key),false,`duplicate prepared key: ${key}`);
-      assert.equal(localization.strings?.[key],undefined,`root localization collision: ${key}`);
+      if(integrated.has(key))assert.deepEqual(localization.strings?.[key],pair,`integrated Night-study key mismatch: ${key}`);
+      else assert.equal(localization.strings?.[key],undefined,`unselected prepared key entered root localization: ${key}`);
       seen.add(key);
     }
   }
 
+  assert.equal(integrated.size,48);
   assert.equal(seen.size,124);
 });

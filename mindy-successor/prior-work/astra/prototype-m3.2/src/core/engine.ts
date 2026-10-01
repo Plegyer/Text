@@ -245,11 +245,67 @@ export function ordinaryCareerForShiftAction(action:Action):OrdinaryHardWorkCare
   return ordinaryCareerSet.has(career)?career as OrdinaryHardWorkCareer:null;
 }
 
-export function actionAvailable(action:Action,s:Save,cat?:Catalog):boolean{
-  if(!eligible(action.conditions,s,cat))return false;
+export type ActionAvailabilityBlocker=
+  |'run-inactive'
+  |'creation-incomplete'
+  |'pending-scene'
+  |'night-active'
+  |'activity-active'
+  |'arrival-incomplete'
+  |'authored-condition'
+  |'career-contract-missing'
+  |'money'
+  |'energy';
+
+export type ActionAvailabilityResult={
+  available:boolean;
+  eligible:boolean;
+  missingConditions:Condition[];
+  careerContractMissing:boolean;
+  blockers:ActionAvailabilityBlocker[];
+  moneyCost:number;
+  energyCost:number;
+};
+
+function actionEligibility(action:Action,s:Save,cat?:Catalog){
+  const missingConditions=action.conditions.filter(condition=>!meets(condition,s,cat));
   const career=ordinaryCareerForShiftAction(action);
-  if(!career||starterCareerSet.has(career))return true;
-  return action.conditions.length>0;
+  const careerContractMissing=!!career&&!starterCareerSet.has(career)&&action.conditions.length===0;
+  return {
+    eligible:missingConditions.length===0&&!careerContractMissing,
+    missingConditions,
+    careerContractMissing
+  };
+}
+
+export function actionAvailable(action:Action,s:Save,cat?:Catalog):boolean{
+  return actionEligibility(action,s,cat).eligible;
+}
+
+export function actionAvailability(action:Action,s:Save,cat?:Catalog):ActionAvailabilityResult{
+  const {eligible:actionEligible,missingConditions,careerContractMissing}=actionEligibility(action,s,cat);
+  const moneyCost=actionCost(action,s);
+  const energyCost=action.cost.energy;
+  const blockers:ActionAvailabilityBlocker[]=[];
+  if(s.run.status!=='active')blockers.push('run-inactive');
+  if(!s.run.creation.complete)blockers.push('creation-incomplete');
+  if(s.run.pending)blockers.push('pending-scene');
+  if(s.run.flow.night)blockers.push('night-active');
+  if(s.run.flow.activity)blockers.push('activity-active');
+  if(action.id!=='arrival'&&!s.run.flags['story.arrived'])blockers.push('arrival-incomplete');
+  if(missingConditions.length)blockers.push('authored-condition');
+  if(careerContractMissing)blockers.push('career-contract-missing');
+  if(s.run.metrics.money<moneyCost)blockers.push('money');
+  if(s.run.metrics.energy<energyCost)blockers.push('energy');
+  return {
+    available:blockers.length===0,
+    eligible:actionEligible,
+    missingConditions,
+    careerContractMissing,
+    blockers,
+    moneyCost,
+    energyCost
+  };
 }
 
 export function actionCost(a:Action,s:Save){
@@ -1199,12 +1255,14 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
   if(s.run.flow.activity)throw new Error('Сначала завершите Activity.');
   if(command.id==='rest')throw new Error('Выберите способ ночлега.');
   const a=cat.definitions.actions.find(a=>a.id===command.id);
-  if(!a||!actionAvailable(a,s,cat))throw new Error('Условия действия не выполнены.');
-  if(a.id!=='arrival'&&!s.run.flags['story.arrived'])throw new Error('Сначала завершите вступление.');
+  if(!a)throw new Error('Неизвестное действие.');
+  const availability=actionAvailability(a,s,cat);
+  if(!availability.eligible)throw new Error('Условия действия не выполнены.');
+  if(availability.blockers.includes('arrival-incomplete'))throw new Error('Сначала завершите вступление.');
+  if(availability.blockers.includes('money')||availability.blockers.includes('energy'))throw new Error('Не хватает денег или энергии.');
   const before={...s.run.metrics};
-  const cost=actionCost(a,s);
+  const cost=availability.moneyCost;
   const freeLesson=a.id==='school'&&s.meta.unlocks.includes('scholar')&&!s.run.flags[`system.scholar.${Math.floor(s.run.day/7)}`];
-  if(s.run.metrics.money<cost||s.run.metrics.energy<a.cost.energy)throw new Error('Не хватает денег или энергии.');
   if(a.mode==='brew'&&!['gentle','bold'].includes(command.recipe??''))throw new Error('Выберите способ приготовления.');
   s.run.metrics.money-=cost;s.run.metrics.energy-=a.cost.energy;
   applyEffectsMutable(s,a.effects,cat,true);
