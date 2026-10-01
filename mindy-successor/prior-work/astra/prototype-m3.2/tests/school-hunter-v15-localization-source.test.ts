@@ -27,9 +27,15 @@ test('C5-164/C5-165 Rowan teacher continuity is bilingual and wired into the liv
   assert.deepEqual(event.variants[0].media,['school.teacher.field-craft.classroom']);
 });
 
-test('C5-165 Hunter v15 does not carry Tavern School v14 localization through the restack',()=>{
-  assert.equal(localization['event.tavern.school.records.title'],undefined);
-  assert.equal(localization['event.tavern.school.broker.title'],undefined);
-  assert.equal(localization['event.tavern.school.etiquette.title'],undefined);
-  assert.equal(localization['event.tavern.school.arcana.title'],undefined);
+test('C5-165 Hunter v15 integration preserves shipped Tavern School localization',()=>{
+  for(const key of [
+    'event.tavern.school.records.title',
+    'event.tavern.school.broker.title',
+    'event.tavern.school.etiquette.title',
+    'event.tavern.school.arcana.title'
+  ]){
+    const pair=localization[key];
+    assert.ok(pair?.ru?.trim(),key+' ru');
+    assert.ok(pair?.en?.trim(),key+' en');
+  }
 });
