@@ -14,8 +14,9 @@ const lumberCross=JSON.parse(readFileSync('content/packs/lumber-cross-production
 function reload(s:Save){return parseSave(JSON.stringify(s),catalog);}
 function finishPending(s:Save){
   while(s.run.pending){
-    const e=catalog.events.find(x=>x.id===s.run.pending!.eventId)!;
-    const choice=e.choices.find(c=>s.run.pending!.allowedChoiceIds.includes(c.id))!;
+    const pending=s.run.pending;
+    const e=catalog.events.find(x=>x.id===pending.eventId)!;
+    const choice=e.choices.find(c=>pending.allowedChoiceIds.includes(c.id))!;
     s=dispatch(s,{type:'choice',id:choice.id},catalog);
   }
   return s;
