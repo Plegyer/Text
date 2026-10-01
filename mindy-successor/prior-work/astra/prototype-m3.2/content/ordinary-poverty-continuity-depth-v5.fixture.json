@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 1,
+  "id": "ordinary-poverty.continuity-depth.v5",
+  "status": "CONTENT_SIDE_PREPARATION",
+  "task": "C3-100",
+  "baseMain": "6afc01061646bc52cec824863bf89e8ad8c309d0",
+  "routeIdentity": "ordinary-poverty",
+  "entries": [
+    {
+      "id": "summer-helpful-default",
+      "eventId": "poverty-street-production.helpful-summer",
+      "variantId": "default",
+      "localizationKey": "presentation.poverty.continuity-v5.street.summer.helpful-default.text"
+    },
+    {
+      "id": "summer-market-closing",
+      "eventId": "poverty-street-production-v2.helpful-summer-shade",
+      "variantId": "market-closing",
+      "localizationKey": "presentation.poverty.continuity-v5.street.summer.market-closing.text"
+    },
+    {
+      "id": "summer-late-shade",
+      "eventId": "poverty-street-production-v2.helpful-summer-shade",
+      "variantId": "late-shade",
+      "localizationKey": "presentation.poverty.continuity-v5.street.summer.late-shade.text"
+    },
+    {
+      "id": "autumn-drizzle",
+      "eventId": "poverty-street-production-v2.neutral-autumn-crossing",
+      "variantId": "drizzle",
+      "localizationKey": "presentation.poverty.continuity-v5.street.autumn.drizzle.text"
+    },
+    {
+      "id": "autumn-dry-arcade",
+      "eventId": "poverty-street-production-v2.neutral-autumn-crossing",
+      "variantId": "dry-arcade",
+      "localizationKey": "presentation.poverty.continuity-v5.street.autumn.dry-arcade.text"
+    },
+    {
+      "id": "winter-crosswind",
+      "eventId": "poverty-street-production-v2.pressure-winter-wind",
+      "variantId": "crosswind",
+      "localizationKey": "presentation.poverty.continuity-v5.street.winter.crosswind.text"
+    },
+    {
+      "id": "winter-long-gusts",
+      "eventId": "poverty-street-production-v2.pressure-winter-wind",
+      "variantId": "long-gusts",
+      "localizationKey": "presentation.poverty.continuity-v5.street.winter.long-gusts.text"
+    },
+    {
+      "id": "cheap-spring-window",
+      "eventId": "poverty-cheap-production-v2.shared-room-seasons",
+      "variantId": "spring-window",
+      "localizationKey": "presentation.poverty.continuity-v5.cheap.spring-window.text"
+    },
+    {
+      "id": "cheap-summer-heat",
+      "eventId": "poverty-cheap-production-v2.shared-room-seasons",
+      "variantId": "summer-heat",
+      "localizationKey": "presentation.poverty.continuity-v5.cheap.summer-heat.text"
+    },
+    {
+      "id": "cheap-winter-stove",
+      "eventId": "poverty-cheap-production-v2.shared-room-seasons",
+      "variantId": "winter-stove",
+      "localizationKey": "presentation.poverty.continuity-v5.cheap.winter-stove.text"
+    },
+    {
+      "id": "cheap-shared-room",
+      "eventId": "poverty-cheap-production-v2.shared-room-seasons",
+      "variantId": "shared-room",
+      "localizationKey": "presentation.poverty.continuity-v5.cheap.shared-room.text"
+    },
+    {
+      "id": "cheap-autumn-quiet",
+      "eventId": "poverty-cheap-production.shared-quiet-autumn",
+      "variantId": "default",
+      "localizationKey": "presentation.poverty.continuity-v5.cheap.autumn-quiet.text"
+    },
+    {
+      "id": "recovery-small-coins",
+      "eventId": "poverty-recovery-production.small-coin-help",
+      "variantId": "default",
+      "localizationKey": "presentation.poverty.continuity-v5.recovery.small-coins.text"
+    },
+    {
+      "id": "recovery-short-cleanup",
+      "eventId": "poverty-recovery-production.short-cleanup",
+      "variantId": "default",
+      "localizationKey": "presentation.poverty.continuity-v5.recovery.short-cleanup.text"
+    },
+    {
+      "id": "recovery-herb-bundle",
+      "eventId": "poverty-recovery-production.herb-bundle",
+      "variantId": "default",
+      "localizationKey": "presentation.poverty.continuity-v5.recovery.herb-bundle.text"
+    },
+    {
+      "id": "pressure-cold-rain",
+      "eventId": "poverty-pressure-production.cold-rain",
+      "variantId": "default",
+      "localizationKey": "presentation.poverty.continuity-v5.pressure.cold-rain.text"
+    }
+  ],
+  "strings": {
+    "presentation.poverty.continuity-v5.street.summer.helpful-default.text": {
+      "ru": "К вечеру жара спадает, и у рынка становится легче сидеть в тени. Иногда именно в это время появляется короткое поручение или несколько спокойных минут без необходимости куда-то идти.",
+      "en": "By evening, the heat eases and the shade near the market becomes easier to rest in. Sometimes that is when a short errand appears, or when there are simply a few calm minutes with nowhere else to go."
+    },
+    "presentation.poverty.continuity-v5.street.summer.market-closing.text": {
+      "ru": "Перед закрытием прилавков всё происходит быстро: сворачивают ткань, складывают пустую тару, считают мелочь. Рядом легко найти маленькую работу на несколько минут.",
+      "en": "Before the stalls close, everything happens quickly: cloth is rolled up, empty containers are stacked, and small change is counted. It is easy to find a few minutes of work nearby."
+    },
+    "presentation.poverty.continuity-v5.street.summer.late-shade.text": {
+      "ru": "Поздняя тень медленно ползёт вдоль стены, и место наконец перестаёт быть слишком жарким. Пауза короткая, но её хватает, чтобы решить, отдыхать дальше или взяться за мелкое дело.",
+      "en": "Late shade moves slowly along the wall until the spot finally stops being too hot. The pause is brief, but long enough to decide whether to keep resting or take on a small task."
+    },
+    "presentation.poverty.continuity-v5.street.autumn.drizzle.text": {
+      "ru": "Осенняя морось почти не слышна, но одежда постепенно намокает по краям. Лучше переждать её под карнизом и не тратить силы на бесконечные переходы между сухими местами.",
+      "en": "Autumn drizzle is barely audible, but the edges of your clothes grow damp little by little. It is better to wait beneath an overhang than spend energy moving endlessly between dry spots."
+    },
+    "presentation.poverty.continuity-v5.street.autumn.dry-arcade.text": {
+      "ru": "Под аркадой после закрытия лавок остаётся сухая полоса камня и приглушённый городской шум. На несколько часов этого достаточно, чтобы ночь стала тише.",
+      "en": "After the shops close, the arcade leaves a dry strip of stone and a muted city hum. For a few hours, that is enough to make the night quieter."
+    },
+    "presentation.poverty.continuity-v5.street.winter.crosswind.text": {
+      "ru": "Зимний ветер идёт между домами под углом и меняет силу от перекрёстка к перекрёстку. Даже небольшой выступ стены может дать короткую передышку.",
+      "en": "Winter wind cuts between buildings at an angle and changes strength from one crossing to the next. Even a small projection in a wall can offer a brief reprieve."
+    },
+    "presentation.poverty.continuity-v5.street.winter.long-gusts.text": {
+      "ru": "Длинные порывы приходят реже, но выстуживают место до самого камня. Между ними приходится быстро поправлять одежду и искать более закрытый угол.",
+      "en": "The long gusts come less often, but they chill the spot down to the stone. Between them, you have to adjust your clothes quickly and look for a more sheltered corner."
+    },
+    "presentation.poverty.continuity-v5.cheap.spring-window.text": {
+      "ru": "Весной окно приоткрывают ненадолго, чтобы выпустить сырой воздух после дождя. В общей комнате тесно, но вещи хотя бы могут просохнуть до утра.",
+      "en": "In spring, the window is opened for a short while to let out the damp air after rain. The shared room is cramped, but at least belongings can dry before morning."
+    },
+    "presentation.poverty.continuity-v5.cheap.summer-heat.text": {
+      "ru": "Летом воздух в дешёвой комнате долго остаётся тёплым, и люди стараются не загромождать проход к двери. Ночь всё равно проходит под крышей, пусть и без особого комфорта.",
+      "en": "In summer, the cheap room holds the heat for a long time, and people try not to block the way to the door. The night still passes under a roof, even without much comfort."
+    },
+    "presentation.poverty.continuity-v5.cheap.winter-stove.text": {
+      "ru": "Зимой возле маленькой печи всегда теснее обычного. Люди сушат рукавицы и обувь по очереди, стараясь не занимать тепло дольше необходимого.",
+      "en": "In winter, the space around the small stove is always more crowded than usual. People dry gloves and shoes in turns, trying not to hold the warmth longer than needed."
+    },
+    "presentation.poverty.continuity-v5.cheap.shared-room.text": {
+      "ru": "Общая комната живёт простыми правилами: не перекрывать проход, не будить тех, кто уже лёг, держать вещи рядом с собой. Эти мелочи делают одну ночь предсказуемее.",
+      "en": "The shared room runs on simple rules: keep the passage clear, avoid waking those already asleep, and keep belongings close. Those small habits make one night more predictable."
+    },
+    "presentation.poverty.continuity-v5.cheap.autumn-quiet.text": {
+      "ru": "Осенью под крышей особенно заметна разница между дождём снаружи и тихими разговорами внутри. Несколько спокойных часов дают возможность восстановить обычный ритм вечера.",
+      "en": "In autumn, the contrast between rain outside and quiet voices indoors is especially noticeable. A few calm hours make it possible to recover an ordinary evening rhythm."
+    },
+    "presentation.poverty.continuity-v5.recovery.small-coins.text": {
+      "ru": "Несколько монет не меняют положение целиком, но дают чуть больше свободы в ближайшем выборе. Иногда этого хватает, чтобы не принимать решение в спешке.",
+      "en": "A few coins do not change the whole situation, but they give a little more room in the next decision. Sometimes that is enough to avoid choosing in a rush."
+    },
+    "presentation.poverty.continuity-v5.recovery.short-cleanup.text": {
+      "ru": "Короткая уборка заканчивается быстро: подмести край прохода, вернуть ведро, собрать оставшийся мусор. После неё вечер становится немного проще.",
+      "en": "The short cleanup ends quickly: sweep the edge of the passage, return the bucket, gather the remaining rubbish. Afterward, the evening becomes a little easier."
+    },
+    "presentation.poverty.continuity-v5.recovery.herb-bundle.text": {
+      "ru": "Пучок трав можно аккуратно убрать и оставить до момента, когда он действительно понадобится. Небольшой запас полезнее всего именно тем, что расширяет ближайшие варианты.",
+      "en": "The herb bundle can be put away carefully until it is actually needed. A small reserve is useful mainly because it widens the options immediately ahead."
+    },
+    "presentation.poverty.continuity-v5.pressure.cold-rain.text": {
+      "ru": "Холодный дождь быстро пропитывает открытые края одежды, и даже короткий переход начинает казаться длиннее. Сухой дверной проём становится временной целью сам по себе.",
+      "en": "Cold rain quickly soaks the exposed edges of your clothes, and even a short walk starts to feel longer. A dry doorway becomes a temporary goal in itself."
+    }
+  },
+  "invariants": {
+    "existingEventVariantIdsOnly": true,
+    "noChoiceEffectChanges": true,
+    "noNightFlowChanges": true,
+    "noHousingStateChanges": true,
+    "noPersistentRelationship": true,
+    "noRecoveryState": true,
+    "noSecretDebt": true,
+    "noSaveOrRngChanges": true,
+    "noMediaChanges": true
+  }
+}
