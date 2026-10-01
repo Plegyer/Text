@@ -9,14 +9,14 @@ This file is the fastest current orientation for Leader 1. Verify Git before act
 The project is in **full-game production/integration after a green technical runtime baseline**.
 
 Current main at this snapshot:
-`6f0e8803ea327b55c5079afb137b5aa016f614ec`
+`a30272dc91cab3d5286558a189d5d816f1841db7`
 
-Latest main workflow:
-- `mindy-successor check` run #435 / id `36814269258`;
+Latest fully completed main workflow before the QA-evidence merge:
+- `mindy-successor check` run #449 / id `36816070912` on `9d2a528951b472bc76266bf985c1d850589d3f0f`;
 - SUCCESS;
-- typecheck/validate/build PASS;
-- **556/556 tests PASS**;
-- validator: **17 packs / 46 events / 35 actions / 9 endings**.
+- typecheck/validate/build PASS.
+
+Current main `a30272dc...` was created by merging the Chat 4 QA disposition/acceptance evidence. Post-merge main run #459 was still in progress at this snapshot. The last verified product baseline remains **556/556 tests PASS**, validator **17 packs / 46 events / 35 actions / 9 endings** until #459 completes.
 
 The runtime is not the bottleneck. The bottleneck is completing naturally reachable full-game career/content progression.
 
@@ -51,40 +51,40 @@ The runtime is not the bottleneck. The bottleneck is completing naturally reacha
 
 ## Current worker activity observed in Git
 
-| Worker | Active assignment | Observed branch/head | Last observed progress | Leader interpretation |
-|---|---|---|---|---|
-| Chat 1 Developer | C1D-85..96 | `chat1/c1d-85-96-late-career-hard-work` @ `8257571da18d24009f23d4e342dd494398536fbc` | `C1D-95: add Hard Work and Palace Meta smoke` at 2026-10-01 04:31Z | Candidate PR #147 is open as a draft on this exact observed head; verify exact-head CI/freeze and Chat 4 disposition before integration. |
-| Chat 2 Presentation | C2-109..120 | `chat2/presentation-c2-109-120` @ `89b33daa9378b8591e31309234edfcc3f8a95cb9` | `C2-114 bind Hard Work ending accessibility keys` at 04:34Z | Active mid-queue progress. |
-| Chat 3 Forest/Poverty | C3-109..120 | `chat3/forest-poverty-production-v11` @ `e750480404b1270ffbe47ca1dad2cb381bcf29d1` | v11 production candidate handoff at 04:30Z | Candidate PR #146 is open; ready for QA once CI/freeze evidence is confirmed. |
-| Chat 4 QA | C4-114..125 | `chat4/c4-123-125-qa-evidence` @ `cdf3ccea0bb2045e325cd324adc6a042cde97848` | PR #148 `QA disposition ledger and acceptance evidence` observed at 04:35Z | QA work is now visible in Git; inspect PR #148 for the latest backlog dispositions/acceptance truth. |
-| Chat 5 School | C5-109..120 | `chat5/school-production-v11` @ `54f1267d4d283d1af55822335a8fbf41d14282a9` | `Document SCHOOL_PRODUCTION_V11_MANIFEST_HANDOFF` at 04:34Z | Deep in queue / handoff material present; verify whether candidate freeze/PR has appeared. |
+| Worker | Active assignment | Current Git state | Leader interpretation |
+|---|---|---|---|
+| Chat 1 Developer | C1D-85..96 | PR #147 open on `chat1/c1d-85-96-late-career-hard-work`; current PR head `987438954cfec9739281a512a1589cb2707095e5`; CI #451 in progress. PR body records an earlier green/frozen head `15d6ee3...`, but the branch moved afterward. | **Do not treat the old freeze as acceptance.** Chat 4 must gate the current exact head after it is green/frozen. |
+| Chat 2 Presentation | C2-109..120 | PR #151 open on `chat2/presentation-c2-109-120` at `b4cd3865813b996fcbed7cf8ac952fc2d605b213`; exact-head CI #457/#458 in progress. Duplicate draft PR #152 exists on the same head. | Wait for exact-head green/freeze, then QA one canonical PR and close the duplicate. |
+| Chat 3 Forest/Poverty | C3-109..120 | PR #146 open at `e750480404b1270ffbe47ca1dad2cb381bcf29d1`; exact-head CI #436 **FAILED**. | Not QA-eligible. Producer must repair/rebase/re-run before Chat 4 gate. |
+| Chat 4 QA | C4-114..125 | PR #148 merged into main as `a30272dc91cab3d5286558a189d5d816f1841db7`. | Backlog disposition ledger and executable acceptance truth are now durable in main. Next QA priority is the first genuinely frozen green fresh candidate. |
+| Chat 5 School | C5-109..120 | PR #150 open; current head `fc0751e48c78f260d3516258bd2c33719ab89f33`; exact-head CI #456 **FAILED**. | Not QA-eligible. Producer must repair current head and rerun exact-head CI. |
 
-The task pointers remain authoritative for queue scope.
+Authoritative QA context now lives in:
+- `docs/tasks/CHAT4_OPEN_PR_DISPOSITION_LEDGER_2026-10-01.md`;
+- `docs/tasks/CHAT4_EXECUTABLE_ACCEPTANCE_TRUTH_2026-10-01.md`.
+
+The five current task pointers remain authoritative for queue scope.
 
 ## Open PR situation at snapshot
 
-Current open PRs include:
+Current fresh-wave candidates:
+- #147 — Chat 1 v9 late-career unlock / all-ten Hard Work Meta;
+- #151 — Chat 2 v11 full-roster presentation;
+- #146 — Chat 3 v11 Forest/poverty production promotion;
+- #150 — Chat 5 v11 School production promotion.
 
-- #124 — old Chat 1 v6 current-main cross-domain candidate;
-- #132 — old Chat 5 School v8;
-- #134 — old Chat 3 Forest/poverty v8;
-- #136 — old Chat 2 presentation candidate;
-- #138 — Chat 3 Forest/poverty v9;
-- #139 — Chat 1 v7 runtime/UI candidate;
-- #140 — Chat 5 School v9;
-- #142 — Chat 1 v8 regression candidate;
-- #143 — Chat 5 v10 candidate;
-- #145 — Chat 3 v10 candidate;
-- #146 — Chat 3 v11 production promotion candidate;
-- #147 — Chat 1 v9 late-career unlock / all-ten Hard Work Meta candidate (draft at snapshot);
-- #148 — Chat 4 QA disposition ledger / acceptance evidence.
+Duplicate/current-noise:
+- #152 duplicates Chat 2 #151 on the same head and should not become a second QA path.
 
-Do **not** assume this list is still complete after the snapshot.
+Older backlog still open at this snapshot:
+- #124, #132, #134, #136, #138, #139, #140, #142, #143, #145.
 
-Chat 4's immediate responsibility is to classify old candidates against current main as:
-- useful current delta;
-- selective source / partially superseded;
-- fully superseded/stale.
+Their current QA dispositions are already recorded in the merged Chat 4 ledger. In short:
+- useful/selective live predecessors: #124, #136, #139, #142, #143;
+- superseded/stale as whole PRs: #132, #134, #138, #140;
+- #145 is newer preparation-only evidence than old Chat 3 candidates.
+
+Do **not** merge old long-lived branches wholesale. Use the Chat 4 ledger and current-main comparison.
 
 ## Current critical path
 
@@ -110,15 +110,18 @@ The goal is fewer "prepared-only" assets and more actual player-facing content.
 
 ## Next Leader integration decisions
 
-When the current worker wave finishes, the default order is:
+Current default order:
 
-1. get Chat 4 disposition for old PRs and close/merge/selectively integrate them;
-2. QA and integrate Chat 1 v9 shared career runtime;
-3. QA/integrate Chat 3 v11 production content;
-4. QA/integrate safe Chat 5 v11 School production content;
-5. integrate Chat 2 v11 presentation coverage where it matches merged gameplay identities;
-6. refresh main CI and this dashboard;
-7. assign the next product wave toward **full Satyr Maid career** and **full Undead Farm career**, not another generic audit wave.
+1. wait for fresh candidates to become exact-head green and frozen;
+2. Chat 4 gates the **current** exact head, never an earlier freeze after branch movement;
+3. integrate Chat 1 v9 first if accepted, because it supplies shared late-career unlock/Hard-Work/Palace seams;
+4. then integrate accepted Chat 3/Chat 5 production-content deltas;
+5. integrate Chat 2 presentation after gameplay/ending identities are stable on main;
+6. close duplicate/superseded PRs rather than leaving them as fake active work;
+7. rerun main CI and update this dashboard;
+8. issue the next wave toward **full Satyr Maid career**, then **full Undead Farm career**.
+
+At this snapshot, #146 and #150 are red and must not enter QA acceptance; #147 and #151 are still awaiting current-head CI completion.
 
 ## First product result after this wave
 
