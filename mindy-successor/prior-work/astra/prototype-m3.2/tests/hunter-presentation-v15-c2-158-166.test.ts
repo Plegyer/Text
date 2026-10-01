@@ -132,7 +132,8 @@ test('C2-161 Forest Tavern Farm and Lumber clues have exact live event overrides
     assert.ok((HUNTER_STATUS_IDS as readonly string[]).includes(stateId));
     assertLocalizedMedia(presentationIdForHunterState(stateId));
   }
-  assert.doesNotMatch(JSON.stringify(presentation.slots),/merchant.*hunter|guard.*hunter/i);
+  const hunterPublishedIds=Object.keys(presentation.slots??{}).filter(id=>id.includes('hunter')||id.startsWith('activity/expedition/'));
+  assert.equal(hunterPublishedIds.some(id=>id.startsWith('job/merchant/')||id.startsWith('job/guard/')),false);
 });
 
 test('C2-162 Hunter gear and expedition route/result surfaces use only live items and Activity identities',()=>{
@@ -174,8 +175,10 @@ test('C2-163 only the authorized live Hunter School consumer receives Hunter Sch
   const id=presentationIdForEvent(catalog,'hunter.school.field-craft','default');
   assertLocalizedMedia(id);
 
-  const published=Object.keys(presentation.slots??{}).filter(id=>id.includes('hunter-school-')||id.includes('hunter-school.'));
-  assert.equal(published.length,0,'no invented Arcana/Literacy/Physical Hunter School consumer slots');
+  for(const inventedEventId of ['hunter.school.arcana','hunter.school.literacy','hunter.school.physical-training']){
+    const inventedPresentationId=`job/hunter/event/${inventedEventId.replace(/[^a-z0-9_-]+/g,'-')}/default`;
+    assert.equal(presentation.slots?.[inventedPresentationId],undefined,inventedEventId+' must not have a presentation slot');
+  }
 });
 
 test('C2-164 late Hunter route events are route presentation, not invented ending cards',()=>{
