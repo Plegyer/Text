@@ -19,7 +19,20 @@
     },
     "compatibilityOnlyEventIds": [
       "school-life-content-v1.after-night-study"
-    ]
+    ],
+    "compatibilityOnlyEventPolicy": {
+      "eventId": "school-life-content-v1.after-night-study",
+      "reason": "Retained so historical queued instances can still resolve.",
+      "newRunReachability": "DISABLED",
+      "disabledBy": {
+        "kind": "not",
+        "condition": {
+          "kind": "calendarYear",
+          "op": "gte",
+          "value": 1
+        }
+      }
+    }
   },
   "preparationOnly": [
     "content/packs/school-target/school-lesson-content-v1.json",
