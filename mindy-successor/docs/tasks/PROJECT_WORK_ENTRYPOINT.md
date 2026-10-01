@@ -1,5 +1,10 @@
 # Project Work Entry Point
 
+## Current entrypoint — 2026-10-01
+
+Read `mindy-successor/docs/LEAD1_CURRENT_STATE_v1.md` first, then the role's current task pointer. Older queue documents are historical unless the current pointer names them.
+
+
 Status: ACTIVE
 Repository: `Plegyer/Text`
 

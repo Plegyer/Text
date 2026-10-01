@@ -1,5 +1,26 @@
 # Parallel Work Board v2
 
+## LEADER 1 LIVE BOARD — 2026-10-01
+
+This section supersedes older queue ranges below.
+
+Product-reported worker state at reset: **all workers idle**.
+
+Current assignments:
+- Chat 1 — **C1D-85..96**, restart required, queue `TASK_CHAT1_DEVELOPER_QUEUE_v9.md`.
+- Chat 2 — **C2-109..120**, restart required, queue `TASK_CHAT2_PRESENTATION_QUEUE_v11.md`.
+- Chat 3 — **C3-109..120**, resume now, queue `TASK_CHAT3_CONTENT_QUEUE_v11.md`.
+- Chat 4 — **C4-114..125**, restart required, queue `TASK_CHAT4_QA_QUEUE_v12.md`.
+- Chat 5 — **C5-109..120**, resume now, queue `TASK_CHAT5_SCHOOL_QUEUE_v11.md`.
+
+Immediate critical path:
+1. Chat 1 closes locked runtime gaps: late unlocks + ordinary Hard Work/Meta + Palace 10/10 seam.
+2. Chat 4 clears the accumulated frozen/open PR backlog.
+3. Chats 2/3/5 convert existing prepared material into live production coverage instead of another audit-only wave.
+
+Verified pre-update main floor: `6afc01061646bc52cec824863bf89e8ad8c309d0`, CI #417 green, 556/556.
+
+
 Status: LIVE COORDINATION BOARD.
 
 Current main baseline:

@@ -1,5 +1,18 @@
 # Active Team Ownership Matrix
 
+## LEADER 1 OWNERSHIP RESET — 2026-10-01
+
+This section supersedes old queue ranges below.
+
+- **Chat 1 Developer** owns C1D-85..96: seven late-career derived unlocks, ordinary Hard Work/Meta and Palace 10/10 unlock seam.
+- **Chat 2 Presentation** owns C2-109..120: presentation/media/accessibility coverage for full-roster unlock/Hard Work surfaces and starter career media pools. No gameplay changes.
+- **Chat 3 Forest/Poverty Content** owns C3-109..120: promotion of already-safe Forest/ordinary-poverty prepared content into production packs. No shared runtime/School/ending mechanics.
+- **Chat 4 QA** owns C4-114..125: open PR disposition, exact-head CI/scope/collision gates and acceptance truth. No production fixes.
+- **Chat 5 School Content** owns C5-109..120: promotion of safe School text/teacher/Night-study content into production using existing mechanics. No unresolved milestone/public-result invention.
+
+One file/slice = one active owner remains mandatory.
+
+
 Status: ACTIVE
 Repository: `Plegyer/Text`
 Owner: Chat 1 / Lead

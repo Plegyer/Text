@@ -1,5 +1,16 @@
 # PROJECT STATE
 
+## LIVE AUDIT UPDATE — 2026-10-01
+
+**Superseding status:** read `LEAD1_CURRENT_STATE_v1.md` before older milestone sections below.
+
+Verified audit baseline `6afc01061646bc52cec824863bf89e8ad8c309d0`: main CI #417 SUCCESS, full `npm run check` **556/556 PASS**, production validator **17 packs / 46 events / 35 actions / 9 endings**.
+
+Architecture/runtime is working. Current bottleneck is full authored game progression: late-career unlocks/Hard Work coverage, complete non-Lumber career lives, School depth, Forest depth/natural item acquisition, Secret Debt and Palace.
+
+Product reports all worker chats idle at this reset. Current assignments are the five current task pointers; chats 1/2/4 use the new restart prompts.
+
+
 Дата фиксации: 2026-09-26.
 
 ## Что уже решено
