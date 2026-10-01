@@ -6368,6 +6368,13 @@
       "capabilities": [
         "enter_old_boundary"
       ]
+    },
+    {
+      "id": "tavern_staff_key",
+      "label": "Tavern Staff Key",
+      "capabilities": [
+        "access_guest_rooms_staff"
+      ]
     }
   ]
 }
