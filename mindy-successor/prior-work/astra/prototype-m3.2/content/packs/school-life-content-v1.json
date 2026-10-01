@@ -88,7 +88,12 @@
       "title": "After Night study",
       "sourceDomain": "school",
       "trigger": [],
-      "reactionTriggers": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.literacy_and_numbers.reason"
+        }
+      ],
       "priorityClass": "notification",
       "priority": 0,
       "blocking": false,
@@ -98,7 +103,16 @@
       "cooldownDays": 0,
       "variantCooldownDays": 0,
       "maxShows": 160,
-      "conditions": [],
+      "conditions": [
+        {
+          "kind": "not",
+          "condition": {
+            "kind": "calendarYear",
+            "op": "gte",
+            "value": 1
+          }
+        }
+      ],
       "variants": [
         {
           "id": "default",
