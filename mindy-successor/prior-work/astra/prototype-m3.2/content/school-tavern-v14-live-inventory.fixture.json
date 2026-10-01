@@ -9,7 +9,12 @@
     "threshold": 3,
     "scope": "tavern-only",
     "globalCertificateRule": false,
-    "globalProjectRule": false
+    "globalProjectRule": false,
+    "nightParityCounter": "night_study_sessions",
+    "nightParityThreshold": 3,
+    "nightParityScope": "tavern-only",
+    "nightStudyChangesGlobalCertificateRule": false,
+    "nightStudyChangesGlobalProjectRule": false
   },
   "hooks": [
     {
@@ -19,7 +24,11 @@
       "teacherContentId": "school.teacher.mara-fen",
       "teacherMediaId": "school.teacher.literacy-and-numbers.classroom",
       "reactionEvent": "tavern.school.records",
-      "careerFact": "school-records-ready"
+      "careerFact": "school-records-ready",
+      "nightChoiceIds": [
+        "school.night_study.literacy_and_numbers.reason",
+        "school.night_study.literacy_and_numbers.wits"
+      ]
     },
     {
       "role": "broker_conflict",
@@ -28,7 +37,12 @@
       "teacherContentId": "school.teacher.cassian-reed",
       "teacherMediaId": "school.teacher.rhetoric-and-social.classroom",
       "reactionEvent": "tavern.school.broker",
-      "careerFact": "school-broker-ready"
+      "careerFact": "school-broker-ready",
+      "nightChoiceIds": [
+        "school.night_study.rhetoric_and_social.charm",
+        "school.night_study.rhetoric_and_social.sociability",
+        "school.night_study.rhetoric_and_social.wits"
+      ]
     },
     {
       "role": "high_status_guest",
@@ -37,7 +51,12 @@
       "teacherContentId": "school.teacher.eliane-marrow",
       "teacherMediaId": "school.teacher.etiquette-and-presentation.classroom",
       "reactionEvent": "tavern.school.etiquette",
-      "careerFact": "school-etiquette-ready"
+      "careerFact": "school-etiquette-ready",
+      "nightChoiceIds": [
+        "school.night_study.etiquette_and_presentation.manners",
+        "school.night_study.etiquette_and_presentation.grooming",
+        "school.night_study.etiquette_and_presentation.charm"
+      ]
     },
     {
       "role": "strange_rumour_guest_interpretation",
@@ -46,7 +65,12 @@
       "teacherContentId": "school.teacher.ilyra-venn",
       "teacherMediaId": "school.teacher.arcana.classroom",
       "reactionEvent": "tavern.school.arcana",
-      "careerFact": "school-arcana-ready"
+      "careerFact": "school-arcana-ready",
+      "nightChoiceIds": [
+        "school.night_study.arcana.magic",
+        "school.night_study.arcana.reason",
+        "school.night_study.arcana.creativity"
+      ]
     }
   ],
   "sourcePrep": [
