@@ -94,6 +94,28 @@ Owns School player-facing authored content/localization and content-side tests. 
 
 One file/slice has one active owner.
 
+## 4A. Pipeline / no-idle operating rule
+
+Use a **pipeline**, not a stop-the-world wave.
+
+The worker roles above stay stable, but task queues advance independently. Do **not** wait for every worker to become idle before assigning the next safe scope.
+
+Default model:
+- publish one small immutable career/runtime authority contract for the current wave;
+- producer siblings (runtime, presentation, authored content, School) should branch from the same frozen product base whenever practical, rather than stacking on one another;
+- a worker that freezes an exact-head candidate immediately moves to the next non-conflicting queue on a new branch; it does not wait for QA, Lead integration, or sibling completion;
+- Chat 4 gates each frozen/green sibling independently as it becomes eligible;
+- Lead integrates the QA-accepted current wave while workers are already producing the next wave;
+- the next wave may do contract-independent inventory/copy/preparation before its runtime contract freezes, but must not invent IDs, thresholds, mechanics, rewards, or lore to guess missing authority;
+- coordination pointers/queues belong on `main`; avoid contaminating producer candidate branches with Leader-only coordination commits;
+- only Lead performs the collision-safe union onto current main, followed by exact-main QA.
+
+A healthy steady state therefore looks like:
+
+`Lead integrates career N` while `Chats 1/2/3/5 produce career N+1`, and `Chat 4 gates frozen candidates from either wave as they become eligible`.
+
+Reassign **tasks incrementally when a lane becomes free**. Do not reshuffle stable worker roles merely because one candidate is waiting on CI/QA. Waiting on one sibling must not idle unrelated lanes.
+
 ## 5. How to recover after a Leader context loss
 
 Before changing anything:
