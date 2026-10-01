@@ -101,11 +101,23 @@
           ]
         },
         {
-          "kind": "schoolCounter",
-          "track": "school.track.rhetoric_and_social",
-          "counter": "lessons_completed",
-          "op": "gte",
-          "value": 3
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "schoolCounter",
+              "track": "school.track.rhetoric_and_social",
+              "counter": "lessons_completed",
+              "op": "gte",
+              "value": 3
+            },
+            {
+              "kind": "schoolCounter",
+              "track": "school.track.rhetoric_and_social",
+              "counter": "night_study_sessions",
+              "op": "gte",
+              "value": 3
+            }
+          ]
         },
         {
           "kind": "careerFact",
@@ -119,7 +131,9 @@
           "id": "default",
           "text": "Three completed Rhetoric & Social lessons give you a concrete negotiation pattern you can use on the bar floor immediately.",
           "conditions": [],
-          "media": []
+          "media": [
+            "school.teacher.rhetoric-and-social.classroom"
+          ]
         }
       ],
       "choices": [
@@ -213,11 +227,23 @@
           ]
         },
         {
-          "kind": "schoolCounter",
-          "track": "school.track.literacy_and_numbers",
-          "counter": "lessons_completed",
-          "op": "gte",
-          "value": 3
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "schoolCounter",
+              "track": "school.track.literacy_and_numbers",
+              "counter": "lessons_completed",
+              "op": "gte",
+              "value": 3
+            },
+            {
+              "kind": "schoolCounter",
+              "track": "school.track.literacy_and_numbers",
+              "counter": "night_study_sessions",
+              "op": "gte",
+              "value": 3
+            }
+          ]
         },
         {
           "kind": "careerFact",
@@ -231,7 +257,9 @@
           "id": "default",
           "text": "Three completed Literacy & Numbers lessons make schedules and supply records usable as a real management tool.",
           "conditions": [],
-          "media": []
+          "media": [
+            "school.teacher.literacy-and-numbers.classroom"
+          ]
         }
       ],
       "choices": [
@@ -329,11 +357,23 @@
           ]
         },
         {
-          "kind": "schoolCounter",
-          "track": "school.track.body_confidence",
-          "counter": "lessons_completed",
-          "op": "gte",
-          "value": 3
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "schoolCounter",
+              "track": "school.track.body_confidence",
+              "counter": "lessons_completed",
+              "op": "gte",
+              "value": 3
+            },
+            {
+              "kind": "schoolCounter",
+              "track": "school.track.body_confidence",
+              "counter": "night_study_sessions",
+              "op": "gte",
+              "value": 3
+            }
+          ]
         },
         {
           "kind": "careerFact",
@@ -347,7 +387,9 @@
           "id": "default",
           "text": "Three completed Body Confidence lessons help turn a personal refusal into a clear professional service boundary.",
           "conditions": [],
-          "media": []
+          "media": [
+            "school.teacher.body-confidence.classroom"
+          ]
         }
       ],
       "choices": [
