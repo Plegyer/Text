@@ -1,29 +1,21 @@
 # CURRENT CHAT1 DEVELOPER TASK POINTER
 
-Status: **ACTIVE — REPAIR/FINISH C1D-119..120 ON CURRENT MAIN**
+Status: **UNDEAD v11 FROZEN + TAVERN v12 ACTIVE**
 Owner: Chat 1 Developer / Integration Developer
 
-Current working PR:
-- #178 — Undead Farm complete career runtime
-- last red head observed: `880f47a711eecfac4b61f2e8ef59166926d4d64f`
-- CI #587: 593/600, 7 failures.
+Frozen Undead candidate:
+- PR #178
+- exact head `b75e73c0f5e37b19277cb25cf0321587f6444ab4`
+- CI #616 SUCCESS
+- do not move it while Chat 4 gates it.
 
-Current main includes the accepted Satyr runtime and Forest product slice. Transplant/rebase the Undead v11 delta onto current main before final freeze.
-
-Do not restore obsolete starter assumptions. The known red failures split into:
-- stale tests that still assume the old 2-stage Undead shell / direct first-shift transition / reliable-helper after 50 shifts;
-- one real generic ending-reward issue: authored complex endings with explicit no-Meta intent still receive legacy fallback unlocks;
-- one natural acceptance test still calling legacy Activity `advance` without selecting a v12 Forest route.
-
-Follow the exact repair direction recorded on PR #178.
+Continue immediately on a new Tavern branch.
 
 Current queue:
-- `TASK_CHAT1_DEVELOPER_QUEUE_v11.md`
-- finish C1D-119 and C1D-120.
+- `TASK_CHAT1_DEVELOPER_QUEUE_v12.md`
+- C1D-121..132
+- target: **Tavern Complete Career Runtime**
 
-Required final state:
-- clean current-main-based PR;
-- full exact-head repository CI green;
-- then freeze for Chat 4.
+Start C1D-121 now: publish the Tavern runtime contract first, then continue automatically through every unblocked task.
 
-Do not move the old Satyr source PR; it is already integrated and closed.
+Do not wait for #178 QA.
