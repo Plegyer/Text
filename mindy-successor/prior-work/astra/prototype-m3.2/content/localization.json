@@ -3583,11 +3583,11 @@
       "en": "A long sequence of ordinary tavern shifts becomes a career ending whose defining result is dependable professional work."
     },
     "presentation.static.satyr-maid-ending-hard-work.alt": {
-      "ru": "Служанка-сатирка после долгой череды обычных смен; поднос и прибранный стол обозначают финал «Тяжкий труд».",
-      "en": "A Satyr Maid after a long run of ordinary shifts; a tray and reset table mark the Hard Work ending."
+      "ru": "Служанка у сатиров завершает долгую рабочую смену среди столов и подносов; визуал отмечает финал «Тяжкий труд».",
+      "en": "A Satyr Maid finishes a long work shift among tables and trays; the visual marks the Hard Work ending."
     },
     "presentation.static.satyr-maid-ending-hard-work.caption": {
-      "ru": "Финал служанки-сатирки: тяжкий труд.",
+      "ru": "Финал служанки у сатиров: тяжкий труд.",
       "en": "Satyr Maid ending: Hard Work."
     },
     "ending.ending.undead-farm.hard-work.title": {
@@ -3599,8 +3599,8 @@
       "en": "Steady work on the unusual farm becomes a career ending that emphasizes endurance and reliability without adding new gameplay requirements."
     },
     "presentation.static.undead-farm-ending-hard-work.alt": {
-      "ru": "Работница фермы нежити после долгой череды обычных смен среди полей и припасов как визуал финала «Тяжкий труд».",
-      "en": "An Undead Farm worker after a long run of ordinary shifts among fields and supplies as the Hard Work ending visual."
+      "ru": "Работница фермы нежити завершает долгую смену среди грядок и припасов; визуал отмечает финал «Тяжкий труд».",
+      "en": "An Undead Farm worker finishes a long shift among field rows and supplies; the visual marks the Hard Work ending."
     },
     "presentation.static.undead-farm-ending-hard-work.caption": {
       "ru": "Финал фермы нежити: тяжкий труд.",
@@ -3615,8 +3615,8 @@
       "en": "Many ordinary shifts behind the bar and across the room become a career ending centered on steady tavern work."
     },
     "presentation.static.tavern-ending-hard-work.alt": {
-      "ru": "Работница таверны после долгой череды обычных смен у стойки и столов как визуал финала «Тяжкий труд».",
-      "en": "A tavern worker after a long run of ordinary shifts at the counter and tables as the Hard Work ending visual."
+      "ru": "Завершённая рабочая сцена таверны с залом и подносами как визуал финала «Тяжкий труд».",
+      "en": "A completed tavern work scene with the room and serving trays as the visual for the Hard Work ending."
     },
     "presentation.static.tavern-ending-hard-work.caption": {
       "ru": "Финал таверны: тяжкий труд.",
@@ -3631,8 +3631,8 @@
       "en": "Repeated field work becomes a career ending defined by the experience built through many ordinary outings."
     },
     "presentation.static.hunter-ending-hard-work.alt": {
-      "ru": "Охотница после долгой череды обычных выходов возвращается со снаряжением как визуал финала «Тяжкий труд».",
-      "en": "A hunter returns with her gear after a long run of ordinary outings as the Hard Work ending visual."
+      "ru": "Охотница завершает долгий рабочий выход; снаряжение и следы маршрута обозначают финал «Тяжкий труд».",
+      "en": "A hunter finishes a long work outing; gear and route traces mark the Hard Work ending."
     },
     "presentation.static.hunter-ending-hard-work.caption": {
       "ru": "Финал охотницы: тяжкий труд.",
@@ -3647,11 +3647,11 @@
       "en": "Long service on patrols and city posts becomes a career ending centered on constancy in guard work."
     },
     "presentation.static.guard-ending-hard-work.alt": {
-      "ru": "Стражница после долгой череды патрулей стоит на городском посту как визуал финала «Тяжкий труд».",
-      "en": "A guard stands at a city watch post after a long run of patrols as the Hard Work ending visual."
+      "ru": "Стражница завершает долгую смену на городском посту; визуал отмечает финал «Тяжкий труд».",
+      "en": "A guard finishes a long shift at a city post; the visual marks the Hard Work ending."
     },
     "presentation.static.guard-ending-hard-work.caption": {
-      "ru": "Финал городской стражи: тяжкий труд.",
+      "ru": "Финал стражи: тяжкий труд.",
       "en": "Guard ending: Hard Work."
     },
     "ending.ending.merchant.hard-work.title": {
@@ -3663,8 +3663,8 @@
       "en": "Many ordinary deals, deliveries, and appraisals become a career ending defined by accumulated professional steadiness."
     },
     "presentation.static.merchant-ending-hard-work.alt": {
-      "ru": "Торговка после долгой череды обычных смен у стойки с товарами и записями как визуал финала «Тяжкий труд».",
-      "en": "A merchant after a long run of ordinary shifts at a stall with goods and records as the Hard Work ending visual."
+      "ru": "Торговка завершает долгий рабочий день среди товара и записей; визуал отмечает финал «Тяжкий труд».",
+      "en": "A merchant finishes a long workday among goods and records; the visual marks the Hard Work ending."
     },
     "presentation.static.merchant-ending-hard-work.caption": {
       "ru": "Финал торговки: тяжкий труд.",
@@ -3679,8 +3679,8 @@
       "en": "Long practice, preparation, and guest-facing work become a career ending centered on the endurance of the craft."
     },
     "presentation.static.artist-geisha-ending-hard-work.alt": {
-      "ru": "Исполнительница после долгой череды репетиций на подготовленной сцене как визуал финала «Тяжкий труд».",
-      "en": "A performer after a long run of rehearsals on a prepared stage as the Hard Work ending visual."
+      "ru": "Исполнительница завершает долгую смену в Доме искусств; сцена подготовки отмечает финал «Тяжкий труд».",
+      "en": "A performer finishes a long Artist House shift; the preparation scene marks the Hard Work ending."
     },
     "presentation.static.artist-geisha-ending-hard-work.caption": {
       "ru": "Финал Дома искусств: тяжкий труд.",
@@ -3695,11 +3695,11 @@
       "en": "Many ordinary covert assignments become a career ending emphasizing discipline and routine professional precision."
     },
     "presentation.static.assassin-ending-hard-work.alt": {
-      "ru": "Тихая неэксплицитная рабочая сцена с подготовленным снаряжением после долгой череды смен как визуал финала «Тяжкий труд».",
-      "en": "A quiet non-explicit work scene with prepared gear after a long run of shifts as the Hard Work ending visual."
+      "ru": "Ассасин завершает долгую рабочую задачу; подготовленное снаряжение отмечает финал «Тяжкий труд» без сцены насилия.",
+      "en": "An assassin finishes a long work assignment; prepared gear marks the Hard Work ending without depicting violence."
     },
     "presentation.static.assassin-ending-hard-work.caption": {
-      "ru": "Финал ассасинки: тяжкий труд.",
+      "ru": "Финал ассасина: тяжкий труд.",
       "en": "Assassin ending: Hard Work."
     },
     "ending.ending.prostitute.hard-work.title": {
@@ -3711,82 +3711,10 @@
       "en": "A long sequence of voluntary professional shifts becomes a non-explicit career ending that keeps personal boundaries intact."
     },
     "presentation.static.prostitute-ending-hard-work.alt": {
-      "ru": "Неэксплицитная рабочая сцена в подготовленной комнате после долгой череды добровольных смен как визуал финала «Тяжкий труд».",
-      "en": "A non-explicit work scene in a prepared room after a long run of voluntary shifts as the Hard Work ending visual."
-    },
-    "presentation.static.prostitute-ending-hard-work.caption": {
-      "ru": "Финал независимой профессионалки: тяжкий труд.",
-      "en": "Independent Professional ending: Hard Work."
-    },
-    "presentation.static.career.satyr-maid.ending.hard-work.alt": {
-      "ru": "Служанка у сатиров завершает долгую рабочую смену среди столов и подносов; визуал отмечает финал «Тяжкий труд».",
-      "en": "A Satyr Maid finishes a long work shift among tables and trays; the visual marks the Hard Work ending."
-    },
-    "presentation.static.career.satyr-maid.ending.hard-work.caption": {
-      "ru": "Финал служанки у сатиров: тяжкий труд.",
-      "en": "Satyr Maid ending: Hard Work."
-    },
-    "presentation.static.career.undead-farm.ending.hard-work.alt": {
-      "ru": "Работница фермы нежити завершает долгую смену среди грядок и припасов; визуал отмечает финал «Тяжкий труд».",
-      "en": "An Undead Farm worker finishes a long shift among field rows and supplies; the visual marks the Hard Work ending."
-    },
-    "presentation.static.career.undead-farm.ending.hard-work.caption": {
-      "ru": "Финал фермы нежити: тяжкий труд.",
-      "en": "Undead Farm ending: Hard Work."
-    },
-    "presentation.static.career.tavern.ending.hard-work.alt": {
-      "ru": "Завершённая рабочая сцена таверны с залом и подносами как визуал финала «Тяжкий труд».",
-      "en": "A completed tavern work scene with the room and serving trays as the visual for the Hard Work ending."
-    },
-    "presentation.static.career.tavern.ending.hard-work.caption": {
-      "ru": "Финал таверны: тяжкий труд.",
-      "en": "Tavern ending: Hard Work."
-    },
-    "presentation.static.career.hunter.ending.hard-work.alt": {
-      "ru": "Охотница завершает долгий рабочий выход; снаряжение и следы маршрута обозначают финал «Тяжкий труд».",
-      "en": "A hunter finishes a long work outing; gear and route traces mark the Hard Work ending."
-    },
-    "presentation.static.career.hunter.ending.hard-work.caption": {
-      "ru": "Финал охотницы: тяжкий труд.",
-      "en": "Hunter ending: Hard Work."
-    },
-    "presentation.static.career.guard.ending.hard-work.alt": {
-      "ru": "Стражница завершает долгую смену на городском посту; визуал отмечает финал «Тяжкий труд».",
-      "en": "A guard finishes a long shift at a city post; the visual marks the Hard Work ending."
-    },
-    "presentation.static.career.guard.ending.hard-work.caption": {
-      "ru": "Финал стражи: тяжкий труд.",
-      "en": "Guard ending: Hard Work."
-    },
-    "presentation.static.career.merchant.ending.hard-work.alt": {
-      "ru": "Торговка завершает долгий рабочий день среди товара и записей; визуал отмечает финал «Тяжкий труд».",
-      "en": "A merchant finishes a long workday among goods and records; the visual marks the Hard Work ending."
-    },
-    "presentation.static.career.merchant.ending.hard-work.caption": {
-      "ru": "Финал торговки: тяжкий труд.",
-      "en": "Merchant ending: Hard Work."
-    },
-    "presentation.static.career.artist-geisha.ending.hard-work.alt": {
-      "ru": "Исполнительница завершает долгую смену в Доме искусств; сцена подготовки отмечает финал «Тяжкий труд».",
-      "en": "A performer finishes a long Artist House shift; the preparation scene marks the Hard Work ending."
-    },
-    "presentation.static.career.artist-geisha.ending.hard-work.caption": {
-      "ru": "Финал Дома искусств: тяжкий труд.",
-      "en": "Artist House ending: Hard Work."
-    },
-    "presentation.static.career.assassin.ending.hard-work.alt": {
-      "ru": "Ассасин завершает долгую рабочую задачу; подготовленное снаряжение отмечает финал «Тяжкий труд» без сцены насилия.",
-      "en": "An assassin finishes a long work assignment; prepared gear marks the Hard Work ending without depicting violence."
-    },
-    "presentation.static.career.assassin.ending.hard-work.caption": {
-      "ru": "Финал ассасина: тяжкий труд.",
-      "en": "Assassin ending: Hard Work."
-    },
-    "presentation.static.career.prostitute.ending.hard-work.alt": {
       "ru": "Неэксплицитная рабочая сцена после долгой добровольной профессиональной смены; визуал отмечает финал «Тяжкий труд».",
       "en": "A non-explicit work scene after a long voluntary professional shift; the visual marks the Hard Work ending."
     },
-    "presentation.static.career.prostitute.ending.hard-work.caption": {
+    "presentation.static.prostitute-ending-hard-work.caption": {
       "ru": "Финал независимой профессии: тяжкий труд.",
       "en": "Professional ending: Hard Work."
     },
