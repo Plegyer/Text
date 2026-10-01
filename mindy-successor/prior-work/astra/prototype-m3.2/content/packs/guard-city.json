@@ -69,7 +69,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "A property dispute reaches you as professional Guard work. The task is to separate what each person claims from what can actually be recorded.",
+          "text": "Both sides of a dispute want the Guard to declare them right immediately. A professional record instead separates claims, shared facts, and what remains unverified; the shift decision should be reproducible from that record.",
           "conditions": [],
           "media": []
         }
@@ -78,7 +78,7 @@
         {
           "id": "record-both-sides",
           "label": "Record both claims before deciding access",
-          "text": "Resolve the immediate dispute by preserving a usable report instead of inventing a universal law model.",
+          "text": "Both sides of a dispute want the Guard to declare them right immediately. A professional record instead separates claims, shared facts, and what remains unverified; the shift decision should be reproducible from that record.",
           "conditions": [],
           "effects": [
             {
@@ -102,7 +102,7 @@
         {
           "id": "separate-and-release",
           "label": "Separate the parties and release the scene",
-          "text": "End the immediate conflict without creating an evidence route.",
+          "text": "Sometimes the best result is to separate the participants, restore passage, and release them without unnecessary punishment while keeping a minimal record in case the problem repeats. That is practical resolution, not a virtue score.",
           "conditions": [],
           "effects": [
             {
@@ -171,7 +171,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "A summer crowd starts compressing around a blocked lane. This is a routing and communication problem before it is anything else.",
+          "text": "A market crowd is most dangerous where usable movement disappears. Opening a lane, explaining direction, and removing the source of compression are concrete duties that require no abstract toughness meter.",
           "conditions": [],
           "media": []
         }
@@ -180,7 +180,7 @@
         {
           "id": "open-lane",
           "label": "Open a clear lane and explain the boundary",
-          "text": "Resolve the crowd through route control and communication rather than a combat mechanic.",
+          "text": "A market crowd is most dangerous where usable movement disappears. Opening a lane, explaining direction, and removing the source of compression are concrete duties that require no abstract toughness meter.",
           "conditions": [],
           "effects": [
             {
@@ -199,7 +199,7 @@
         {
           "id": "hold-line",
           "label": "Hold the existing line",
-          "text": "Keep the crowd contained without escalating the response.",
+          "text": "Sometimes a passage cannot reopen immediately: the Guard must hold a limited line, explain why, and give people a clear next step. A temporary boundary is not unlimited authority over the crowd.",
           "conditions": [],
           "effects": [
             {
@@ -275,7 +275,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "A cargo pass is internally inconsistent. You can preserve the discrepancy as case evidence or close the check after a satisfactory explanation.",
+          "text": "A mismatch in a pass becomes evidence only after a concrete check. Date, seal, route, and cargo description should be recorded separately from assumptions about the holder.",
           "conditions": [],
           "media": []
         }
@@ -284,7 +284,7 @@
         {
           "id": "record-discrepancy",
           "label": "Record the discrepancy",
-          "text": "Create one Guard-local evidence fact without inventing a global crime/faction system.",
+          "text": "A mismatch in a pass becomes evidence only after a concrete check. Date, seal, route, and cargo description should be recorded separately from assumptions about the holder.",
           "conditions": [],
           "effects": [
             {
@@ -303,7 +303,7 @@
         {
           "id": "release-after-check",
           "label": "Release after the check",
-          "text": "Close the duty without manufacturing a case.",
+          "text": "If the check explains the discrepancy, the professional result can be simple: return the documents, note that the review was completed, and do not manufacture a case from uncertainty that has already been resolved.",
           "conditions": [],
           "effects": [
             {
@@ -374,8 +374,30 @@
       ],
       "variants": [
         {
+          "id": "street-survival",
+          "text": "Personal experience of sleeping rough changes which details the Guard notices: where a blocked passage is dangerous and where someone is simply looking for a dry place. That perspective changes the wording of a decision, not lodging rules, wages, or existing debt. Neither assistance nor an order to clear a passage creates or clears a separate Guard debt. Existing obligations belong to their own systems; Guard content records only the concrete city-duty decision.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "street"
+            }
+          ],
+          "media": []
+        },
+        {
+          "id": "cheap-room",
+          "text": "Experience with cheap shared lodging makes it easier to understand why people protect a queue place, late entry, or somewhere to keep belongings. The Guard response can become more precise without turning into free housing or a new financial system. Neither assistance nor an order to clear a passage creates or clears a separate Guard debt. Existing obligations belong to their own systems; Guard content records only the concrete city-duty decision.",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            }
+          ],
+          "media": []
+        },
+        {
           "id": "default",
-          "text": "Your own thin housing makes a winter lodging dispute impossible to treat as an abstract category. Guard authority still does not erase rent, debt, or the Night housing system.",
+          "text": "Neither assistance nor an order to clear a passage creates or clears a separate Guard debt. Existing obligations belong to their own systems; Guard content records only the concrete city-duty decision.",
           "conditions": [],
           "media": []
         }
@@ -384,7 +406,7 @@
         {
           "id": "route-to-shelter",
           "label": "Route people toward existing shelter contacts",
-          "text": "Record a concrete relief choice without changing housing tier or generic debt.",
+          "text": "A person on the street or in cheap lodging does not become a suspect because of housing status alone. The shift can route them toward available shelter or assistance while preserving ordinary passage rules and creating no new debt.",
           "conditions": [],
           "effects": [
             {
@@ -408,7 +430,7 @@
         {
           "id": "enforce-clear-route",
           "label": "Enforce the clear-route requirement",
-          "text": "Record the enforcement choice as a fact, not a morality score.",
+          "text": "When a passage is genuinely blocked, the Guard can require it to be cleared, but the record should describe the specific obstruction rather than poverty as an offense. Housing status and the duty problem remain different facts.",
           "conditions": [],
           "effects": [
             {
@@ -485,7 +507,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "Several unrelated city incidents now need one formal report trail. The report records what happened without turning the city into a fixed universal law simulation.",
+          "text": "A formal report is useful not because it sounds official, but because it links source, observation, decision, and later review. The reader should be able to see where fact ends and inference begins. A report does not need to absorb everything that happened nearby. Professional documentation includes only relevant observations and does not replace unknown details with a confident story.",
           "conditions": [],
           "media": []
         }
@@ -494,7 +516,7 @@
         {
           "id": "write-report",
           "label": "Write the formal report",
-          "text": "Create a typed report-evidence fact for later Officer and Major Case preparation.",
+          "text": "A report does not need to absorb everything that happened nearby. Professional documentation includes only relevant observations and does not replace unknown details with a confident story.",
           "conditions": [],
           "effects": [
             {
