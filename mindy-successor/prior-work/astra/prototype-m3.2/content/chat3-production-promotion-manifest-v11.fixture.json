@@ -32,14 +32,14 @@
       "event.poverty-recovery-production.short-cleanup.variant.default.text",
       "event.poverty-recovery-production.herb-bundle.variant.default.text"
     ],
-    "contactDepthLocalizationKeys": [
-      "presentation.poverty.depth.poverty-street-production-helpful-summer.default.g.text"
-    ],
     "unambiguousResultLocalizationKeys": [
       "event.poverty-street-production.helpful-summer.choice.take-errand.text",
       "event.poverty-recovery-production.short-cleanup.choice.do-cleanup.text",
       "event.poverty-recovery-production.small-coin-help.choice.take-coins.text",
       "event.poverty-recovery-production.herb-bundle.choice.take-herb.text"
+    ],
+    "alreadyLiveContactLocalizationKeys": [
+      "presentation.poverty.depth.poverty-street-production-helpful-summer.default.g.text"
     ]
   },
   "preparationOnly": {

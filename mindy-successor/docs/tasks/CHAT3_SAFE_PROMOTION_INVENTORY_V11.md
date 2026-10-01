@@ -8,7 +8,7 @@ Fixture: `prior-work/astra/prototype-m3.2/content/chat3-safe-promotion-inventory
 
 Safe promotion uses existing consumers and identities only. Logging Road and Old Boundary continuity is folded into existing route-entry localization while route help and the `enter_old_boundary` gate remain unchanged. Forest terminal aftermath refreshes each existing `default` result variant rather than adding result variant IDs.
 
-Street/cheap continuity and recovery/help content reuse existing event/variant identities. Existing poverty-depth rotation supplies the contact seam. Four single-variant small-job result identities are safe through the current `eventId + choiceId` result lookup.
+Street/cheap continuity and recovery/help content reuse existing event/variant identities. The previously accepted poverty-depth contact key is already live and is preserved unchanged. Four single-variant small-job result identities are safe through the current `eventId + choiceId` result lookup.
 
 Preparation-only: the shared `take-small-task` result cannot distinguish `market-closing` from `late-shade`.
 

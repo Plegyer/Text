@@ -243,8 +243,8 @@
       "en": "Return with a clear trail"
     },
     "event.forest-result-content-v1.success.variant.default.text": {
-      "ru": "У кромки леса ты ещё раз проходишь маршрут в памяти от первой отметки до последней. Последовательность не распадается, и её можно спокойно пересказать обратно в артели.",
-      "en": "At the forest edge, you run through the route once more from the first marker to the last. The sequence still holds together and can be explained calmly back at the worksite."
+      "ru": "К концу маршрута разрозненные приметы складываются в ясную картину. У кромки леса ты ещё раз проходишь путь в памяти от первой отметки до последней; последовательность не распадается, и её можно спокойно пересказать обратно в артели.",
+      "en": "By the end of the route, scattered signs resolve into a clear picture. At the forest edge, you run through the path once more from the first marker to the last; the sequence still holds together and can be explained calmly back at the worksite."
     },
     "event.forest-result-content-v1.success.choice.return.label": {
       "ru": "Вернуться с результатом",
@@ -3315,8 +3315,8 @@
       "en": "A tied bundle of herbs lies beside an empty crate, and no one is nearby anymore. It is a useful find, not the start of an acquaintance: taking it gives exactly the resource already present in the scene, with no new debt or promise."
     },
     "presentation.poverty.depth.poverty-street-production-helpful-summer.default.g.text": {
-      "ru": "У прилавка тебя узнают по прошлой короткой подработке и кивают, пока убирают последние ящики. Узнавание не обещает следующей смены: сегодня всё снова решается только на этот вечер.",
-      "en": "Someone at the stall recognizes you from an earlier short errand and nods while the last crates are put away. Recognition promises no next shift; today is still only about this evening."
+      "ru": "Продавец просит помочь с последним ящиком и по пути объясняет только, куда его поставить. Когда работа закончена, вы прощаетесь без договорённости о следующем дне; короткий контакт остаётся частью этой одной подработки.",
+      "en": "The seller asks for help with the last crate and explains only where it should go. When the work is done, you part without arranging another day; the brief contact remains part of this single errand."
     },
     "presentation.poverty.depth.poverty-street-production-v2-helpful-summer-shade.market-closing.g.text": {
       "ru": "У закрывающегося прилавка нужен ещё один человек, чтобы быстро свернуть тент. Вы договариваетесь о паре движений, заканчиваете дело и расходитесь; сцена не создаёт постоянной работы или нового знакомого в состоянии игры.",

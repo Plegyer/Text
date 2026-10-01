@@ -6,7 +6,7 @@ Baseline main: `5394983a69560b24be7aa2af7069b327be10da0b`.
 
 Fixture: `prior-work/astra/prototype-m3.2/content/chat3-production-promotion-manifest-v11.fixture.json`.
 
-Live: two existing Forest route-entry localization keys; one refreshed `default` aftermath text for each current success/escape/failure event; street/cheap housing text on existing event/variant IDs; recovery/help text on existing default variants; one already-live poverty-depth contact key; and four unambiguous small-job result keys.
+Live: two existing Forest route-entry localization keys; one refreshed `default` aftermath text for each current success/escape/failure event; street/cheap housing text on existing event/variant IDs; recovery/help text on existing default variants; the already-live poverty-depth contact key preserved unchanged; and four unambiguous small-job result keys.
 
 Preparation-only: distinct `market-closing` versus `late-shade` post-choice copy for shared `take-small-task`; remaining Forest prepared seasonal/aftermath strings without an exact selector; all hidden Secret Debt content.
 

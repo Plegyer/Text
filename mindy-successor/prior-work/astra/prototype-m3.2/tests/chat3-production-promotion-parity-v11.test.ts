@@ -41,7 +41,7 @@ test('C3-112 aftermath keeps exact default-only result variant identities',()=>{
 });
 
 test('C3-113/C3-114 promoted poverty text stays on existing event and variant IDs',()=>{
- for(const key of [...manifest.live.povertyEventVariantLocalizationKeys,...manifest.live.recoveryVariantLocalizationKeys,...manifest.live.contactDepthLocalizationKeys]){
+ for(const key of [...manifest.live.povertyEventVariantLocalizationKeys,...manifest.live.recoveryVariantLocalizationKeys,...manifest.live.alreadyLiveContactLocalizationKeys]){
   assert.ok(localization[key]?.ru?.trim(),key+' ru');
   assert.ok(localization[key]?.en?.trim(),key+' en');
  }

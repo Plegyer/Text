@@ -8,7 +8,7 @@ C3-109 through C3-119 now promote only content that fits current production iden
 
 Forest route continuity is live through the existing route-entry localization keys. Route option help, route IDs, the `enter_old_boundary` gate, Activity tuning and result effects stay unchanged. Each terminal Forest event keeps exactly one `default` variant; only its text is refreshed through the existing success/escape/failure `activityResult` boundary.
 
-Ordinary-poverty street/cheap continuity replaces text on existing event/variant IDs only. Recovery/help continuity uses existing default variants, while brief contact flavor uses an already-live poverty-depth key. No new ordinary-poverty event, variant, Night intercept, housing rule, relationship/contact state or recovery state is introduced.
+Ordinary-poverty street/cheap continuity replaces text on existing event/variant IDs only. Recovery/help continuity uses existing default variants. The previously accepted brief-contact poverty-depth key is already live and remains unchanged. No new ordinary-poverty event, variant, Night intercept, housing rule, relationship/contact state or recovery state is introduced.
 
 Current main has no ordinary-poverty normal-housing event identity, so normal-room continuity remains blocked/preparation-only instead of adding a new blocking Night surface.
 

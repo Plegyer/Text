@@ -32,7 +32,8 @@
     {
       "id": "poverty.recovery-help-contact",
       "classification": "PROMOTE_NOW",
-      "consumer": "existing recovery default variants + existing poverty-depth selector"
+      "consumer": "existing recovery default variants; accepted contact depth key remains already live",
+      "reason": "Recovery/help defaults are promoted. Existing accepted contact-depth localization is preserved unchanged."
     },
     {
       "id": "poverty.small-job.single-variant-results",
