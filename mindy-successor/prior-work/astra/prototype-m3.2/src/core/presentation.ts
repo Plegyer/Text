@@ -241,6 +241,109 @@ export function presentationIdForSatyrMaidStage(stage:string){
   return `job/satyr-maid/stage/${clean(stage)}`;
 }
 
+export const HUNTER_PRESENTATION_STAGES=[
+  'novice','tracker','recognized-hunter','veteran',
+  'master-hunter','warden','legend','outcome-ready'
+] as const;
+
+export const HUNTER_CAREER_EVENT_IDS=[
+  'hunter.career.first-shift',
+  'hunter.career.recognized-hunter',
+  'hunter.career.expedition-qualified',
+  'hunter.career.veteran-ready',
+  'hunter.career.veteran',
+  'hunter.career.master-hunter',
+  'hunter.career.warden',
+  'hunter.career.legend',
+  'hunter.career.outcome-ready'
+] as const;
+
+export const HUNTER_RELATIONSHIP_EVENT_IDS=[
+  'hunter.relationship.intro',
+  'hunter.relationship.trust',
+  'hunter.relationship.conflict-open',
+  'hunter.relationship.conflict-resolve',
+  'hunter.relationship.companion'
+] as const;
+
+export const HUNTER_CLUE_EVENT_IDS=[
+  'hunter.clues.forest-trail',
+  'hunter.clues.lumber-truth',
+  'hunter.clues.tavern-rumour',
+  'hunter.clues.farm-sample'
+] as const;
+
+export const HUNTER_ITEM_EVENT_IDS=[
+  'hunter.items.preserve-return',
+  'hunter.items.rough-route-return'
+] as const;
+
+export const HUNTER_ROUTE_EVENT_IDS=[
+  'hunter.routes.master-ready',
+  'hunter.routes.warden-ready',
+  'hunter.routes.legend-contract',
+  'hunter.routes.legend-return'
+] as const;
+
+export const HUNTER_SCHOOL_EVENT_IDS=[
+  'hunter.school.field-craft'
+] as const;
+
+export const HUNTER_ITEM_IDS=[
+  'rope_kit',
+  'field_preservation_kit'
+] as const;
+
+export const HUNTER_RELATIONSHIP_STAGES=[
+  'introduced',
+  'professional-trust',
+  'conflict-open',
+  'companion-ready',
+  'route-resolved'
+] as const;
+
+export const HUNTER_STATUS_IDS=[
+  'forest-clue',
+  'tavern-clue',
+  'farm-clue',
+  'lumber-clue',
+  'school-field-craft',
+  'master-ready',
+  'warden-ready',
+  'legend-ready',
+  'rare-contract-active',
+  'refusal-respected',
+  'companion-ready'
+] as const;
+
+export const HUNTER_EXPEDITION_ROUTES=[
+  'local-route',
+  'rough-route',
+  'rare-route'
+] as const;
+
+export const HUNTER_EXPEDITION_OUTCOMES=[
+  'success',
+  'escape',
+  'failure'
+] as const;
+
+export function presentationIdForHunterStage(stage:string){
+  return `job/hunter/stage/${clean(stage)}`;
+}
+
+export function presentationIdForHunterRelationshipStage(stage:string){
+  return `relationship/hunter-senior-guide/stage/${clean(stage)}`;
+}
+
+export function presentationIdForHunterItem(itemId:string){
+  return `job/hunter/item/${clean(itemId)}`;
+}
+
+export function presentationIdForHunterState(stateId:string){
+  return `job/hunter/state/${clean(stateId)}`;
+}
+
 export function presentationIdForEnding(endingId:string){
   const parts=pathParts(endingId);
   if(parts[0]==='ending')parts.shift();
@@ -307,6 +410,75 @@ export function presentationSlots(cat:Catalog):PresentationSlot[]{
       baseMediaIds:[],
       fallbackId:'job/satyr-maid/result/default'
     });
+  }
+
+  const hunterCareer=(cat.definitions.careers??[]).find(item=>item.id==='hunter');
+  if(hunterCareer){
+    for(const stage of HUNTER_PRESENTATION_STAGES){
+      if(hunterCareer.stages.includes(stage)){
+        add({
+          id:presentationIdForHunterStage(stage),
+          label:`Hunter · stage · ${stage}`,
+          baseMediaIds:[],
+          fallbackId:'job/hunter/result/default'
+        });
+      }
+    }
+  }
+
+  const hunterRelationship=(cat.definitions.relationships??[]).find(item=>item.id==='hunter.senior-guide');
+  if(hunterRelationship){
+    for(const stage of HUNTER_RELATIONSHIP_STAGES){
+      if(hunterRelationship.stages.includes(stage)){
+        add({
+          id:presentationIdForHunterRelationshipStage(stage),
+          label:`Hunter · senior guide · ${stage}`,
+          baseMediaIds:[],
+          fallbackId:'job/hunter/result/default'
+        });
+      }
+    }
+  }
+
+  for(const itemId of HUNTER_ITEM_IDS){
+    if((cat.definitions.itemDefinitions??[]).some(item=>item.id===itemId)){
+      add({
+        id:presentationIdForHunterItem(itemId),
+        label:`Hunter · item · ${itemId}`,
+        baseMediaIds:[],
+        fallbackId:'job/hunter/result/default'
+      });
+    }
+  }
+
+  const hunterRuntimeText=JSON.stringify({
+    career:hunterCareer,
+    relationship:hunterRelationship,
+    events:cat.events.filter(event=>event.sourceDomain==='hunter'),
+    activities:(cat.definitions.activities??[]).filter(activity=>activity.id==='hunter.expedition')
+  });
+  const hunterStateBackings:Record<(typeof HUNTER_STATUS_IDS)[number],boolean>={
+    'forest-clue':hunterRuntimeText.includes('forest-clue-known'),
+    'tavern-clue':hunterRuntimeText.includes('tavern-clue-known'),
+    'farm-clue':hunterRuntimeText.includes('farm-clue-known'),
+    'lumber-clue':hunterRuntimeText.includes('lumber-clue-known'),
+    'school-field-craft':hunterRuntimeText.includes('school-field-craft-ready'),
+    'master-ready':hunterRuntimeText.includes('master-route-ready'),
+    'warden-ready':hunterRuntimeText.includes('warden-route-ready'),
+    'legend-ready':hunterRuntimeText.includes('legend-route-ready'),
+    'rare-contract-active':hunterRuntimeText.includes('rare-contract-active'),
+    'refusal-respected':hunterRuntimeText.includes('refusal-respected'),
+    'companion-ready':hunterRuntimeText.includes('companion-ready')
+  };
+  for(const stateId of HUNTER_STATUS_IDS){
+    if(hunterStateBackings[stateId]){
+      add({
+        id:presentationIdForHunterState(stateId),
+        label:`Hunter · state · ${stateId}`,
+        baseMediaIds:[],
+        fallbackId:'job/hunter/result/default'
+      });
+    }
   }
 
   for(const event of cat.events){

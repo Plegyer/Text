@@ -1707,6 +1707,470 @@
         "alt": "Satyr Maid career milestone: Outcome ready.",
         "altKey": "presentation.static.career.satyr-maid.stage.outcome-ready.alt"
       }
+    },
+    "job/hunter/stage/novice": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter career stage “Novice”; the static scene shows only the current career route..",
+        "altKey": "presentation.static.career.hunter.stage.novice.alt"
+      }
+    },
+    "job/hunter/stage/tracker": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter career stage “Tracker”; the static scene shows only the current career route..",
+        "altKey": "presentation.static.career.hunter.stage.tracker.alt"
+      }
+    },
+    "job/hunter/stage/recognized-hunter": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter career stage “Recognized Hunter”; the static scene shows only the current career route..",
+        "altKey": "presentation.static.career.hunter.stage.recognized-hunter.alt"
+      }
+    },
+    "job/hunter/stage/veteran": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter career stage “Veteran”; the static scene shows only the current career route..",
+        "altKey": "presentation.static.career.hunter.stage.veteran.alt"
+      }
+    },
+    "job/hunter/stage/master-hunter": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter career stage “Master Hunter”; the static scene shows only the current career route..",
+        "altKey": "presentation.static.career.hunter.stage.master-hunter.alt"
+      }
+    },
+    "job/hunter/stage/warden": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter career stage “Warden”; the static scene shows only the current career route..",
+        "altKey": "presentation.static.career.hunter.stage.warden.alt"
+      }
+    },
+    "job/hunter/stage/legend": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter career stage “Legend route”; the static scene shows only the current career route..",
+        "altKey": "presentation.static.career.hunter.stage.legend.alt"
+      }
+    },
+    "job/hunter/stage/outcome-ready": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter career stage “Outcome ready”; the static scene shows only the current career route..",
+        "altKey": "presentation.static.career.hunter.stage.outcome-ready.alt"
+      }
+    },
+    "relationship/hunter-senior-guide/stage/introduced": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Senior hunter/guide: Work introduction; the scene remains professional and does not imply romance..",
+        "altKey": "presentation.static.relationship.hunter-senior-guide.stage.introduced.alt"
+      }
+    },
+    "relationship/hunter-senior-guide/stage/professional-trust": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Senior hunter/guide: Professional trust; the scene remains professional and does not imply romance..",
+        "altKey": "presentation.static.relationship.hunter-senior-guide.stage.professional-trust.alt"
+      }
+    },
+    "relationship/hunter-senior-guide/stage/conflict-open": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Senior hunter/guide: Professional conflict open; the scene remains professional and does not imply romance..",
+        "altKey": "presentation.static.relationship.hunter-senior-guide.stage.conflict-open.alt"
+      }
+    },
+    "relationship/hunter-senior-guide/stage/companion-ready": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Senior hunter/guide: Companion option ready; the scene remains professional and does not imply romance..",
+        "altKey": "presentation.static.relationship.hunter-senior-guide.stage.companion-ready.alt"
+      }
+    },
+    "relationship/hunter-senior-guide/stage/route-resolved": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Senior hunter/guide: Professional route resolved; the scene remains professional and does not imply romance..",
+        "altKey": "presentation.static.relationship.hunter-senior-guide.stage.route-resolved.alt"
+      }
+    },
+    "job/hunter/item/rope_kit": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter gear: Rope Kit; shown for rough-route access, without adding a weapon or combat system..",
+        "altKey": "presentation.static.career.hunter.item.rope_kit.alt"
+      }
+    },
+    "job/hunter/item/field_preservation_kit": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter gear: Field Preservation Kit; shown for field specimen preservation, without adding a weapon or combat system..",
+        "altKey": "presentation.static.career.hunter.item.field_preservation_kit.alt"
+      }
+    },
+    "job/hunter/state/forest-clue": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter route state: Forest clue recorded; shown qualitatively without exposing hidden numeric thresholds..",
+        "altKey": "presentation.static.career.hunter.state.forest-clue.alt"
+      }
+    },
+    "job/hunter/state/tavern-clue": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter route state: Tavern clue recorded; shown qualitatively without exposing hidden numeric thresholds..",
+        "altKey": "presentation.static.career.hunter.state.tavern-clue.alt"
+      }
+    },
+    "job/hunter/state/farm-clue": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter route state: Farm clue recorded; shown qualitatively without exposing hidden numeric thresholds..",
+        "altKey": "presentation.static.career.hunter.state.farm-clue.alt"
+      }
+    },
+    "job/hunter/state/lumber-clue": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter route state: Lumber clue recorded; shown qualitatively without exposing hidden numeric thresholds..",
+        "altKey": "presentation.static.career.hunter.state.lumber-clue.alt"
+      }
+    },
+    "job/hunter/state/school-field-craft": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter route state: School Field Craft applied; shown qualitatively without exposing hidden numeric thresholds..",
+        "altKey": "presentation.static.career.hunter.state.school-field-craft.alt"
+      }
+    },
+    "job/hunter/state/master-ready": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter route state: Master Hunter route ready; shown qualitatively without exposing hidden numeric thresholds..",
+        "altKey": "presentation.static.career.hunter.state.master-ready.alt"
+      }
+    },
+    "job/hunter/state/warden-ready": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter route state: Warden route ready; shown qualitatively without exposing hidden numeric thresholds..",
+        "altKey": "presentation.static.career.hunter.state.warden-ready.alt"
+      }
+    },
+    "job/hunter/state/legend-ready": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter route state: Legend route ready; shown qualitatively without exposing hidden numeric thresholds..",
+        "altKey": "presentation.static.career.hunter.state.legend-ready.alt"
+      }
+    },
+    "job/hunter/state/rare-contract-active": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter route state: Rare contract active; shown qualitatively without exposing hidden numeric thresholds..",
+        "altKey": "presentation.static.career.hunter.state.rare-contract-active.alt"
+      }
+    },
+    "job/hunter/state/refusal-respected": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter route state: Refusal respected without career loss; shown qualitatively without exposing hidden numeric thresholds..",
+        "altKey": "presentation.static.career.hunter.state.refusal-respected.alt"
+      }
+    },
+    "job/hunter/state/companion-ready": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter route state: Companion expedition available as an option; shown qualitatively without exposing hidden numeric thresholds..",
+        "altKey": "presentation.static.career.hunter.state.companion-ready.alt"
+      }
+    },
+    "job/hunter/event/hunter-career-first-shift/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter scene: First completed contract; the static presentation does not change event conditions, effects, or outcome..",
+        "altKey": "presentation.static.career.hunter.event.career-first-shift.alt"
+      }
+    },
+    "job/hunter/event/hunter-career-recognized-hunter/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter scene: Recognized Hunter milestone; the static presentation does not change event conditions, effects, or outcome..",
+        "altKey": "presentation.static.career.hunter.event.career-recognized-hunter.alt"
+      }
+    },
+    "job/hunter/event/hunter-career-expedition-qualified/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter scene: Expedition qualification; the static presentation does not change event conditions, effects, or outcome..",
+        "altKey": "presentation.static.career.hunter.event.career-expedition-qualified.alt"
+      }
+    },
+    "job/hunter/event/hunter-career-veteran-ready/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter scene: Veteran route readiness; the static presentation does not change event conditions, effects, or outcome..",
+        "altKey": "presentation.static.career.hunter.event.career-veteran-ready.alt"
+      }
+    },
+    "job/hunter/event/hunter-career-veteran/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter scene: Veteran route choice; the static presentation does not change event conditions, effects, or outcome..",
+        "altKey": "presentation.static.career.hunter.event.career-veteran.alt"
+      }
+    },
+    "job/hunter/event/hunter-career-master-hunter/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter scene: Master Hunter route; the static presentation does not change event conditions, effects, or outcome..",
+        "altKey": "presentation.static.career.hunter.event.career-master-hunter.alt"
+      }
+    },
+    "job/hunter/event/hunter-career-warden/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter scene: Warden route; the static presentation does not change event conditions, effects, or outcome..",
+        "altKey": "presentation.static.career.hunter.event.career-warden.alt"
+      }
+    },
+    "job/hunter/event/hunter-career-legend/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter scene: Legend route; the static presentation does not change event conditions, effects, or outcome..",
+        "altKey": "presentation.static.career.hunter.event.career-legend.alt"
+      }
+    },
+    "job/hunter/event/hunter-career-outcome-ready/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter scene: Career route outcome-ready; the static presentation does not change event conditions, effects, or outcome..",
+        "altKey": "presentation.static.career.hunter.event.career-outcome-ready.alt"
+      }
+    },
+    "job/hunter/event/hunter-relationship-intro/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter scene: First work contact with the senior guide; the static presentation does not change event conditions, effects, or outcome..",
+        "altKey": "presentation.static.career.hunter.event.relationship-intro.alt"
+      }
+    },
+    "job/hunter/event/hunter-relationship-trust/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter scene: Senior-guide professional trust; the static presentation does not change event conditions, effects, or outcome..",
+        "altKey": "presentation.static.career.hunter.event.relationship-trust.alt"
+      }
+    },
+    "job/hunter/event/hunter-relationship-conflict-open/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter scene: Professional route conflict; the static presentation does not change event conditions, effects, or outcome..",
+        "altKey": "presentation.static.career.hunter.event.relationship-conflict-open.alt"
+      }
+    },
+    "job/hunter/event/hunter-relationship-conflict-resolve/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter scene: Professional conflict resolution; the static presentation does not change event conditions, effects, or outcome..",
+        "altKey": "presentation.static.career.hunter.event.relationship-conflict-resolve.alt"
+      }
+    },
+    "job/hunter/event/hunter-relationship-companion/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter scene: Companion decision; the static presentation does not change event conditions, effects, or outcome..",
+        "altKey": "presentation.static.career.hunter.event.relationship-companion.alt"
+      }
+    },
+    "job/hunter/event/hunter-clues-forest-trail/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter scene: Forest clue for Hunter; the static presentation does not change event conditions, effects, or outcome..",
+        "altKey": "presentation.static.career.hunter.event.clues-forest-trail.alt"
+      }
+    },
+    "job/hunter/event/hunter-clues-lumber-truth/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter scene: Lumber observation for Hunter; the static presentation does not change event conditions, effects, or outcome..",
+        "altKey": "presentation.static.career.hunter.event.clues-lumber-truth.alt"
+      }
+    },
+    "job/hunter/event/hunter-clues-tavern-rumour/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter scene: Confirmed Tavern clue for Hunter; the static presentation does not change event conditions, effects, or outcome..",
+        "altKey": "presentation.static.career.hunter.event.clues-tavern-rumour.alt"
+      }
+    },
+    "job/hunter/event/hunter-clues-farm-sample/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter scene: Farm sample as Hunter clue; the static presentation does not change event conditions, effects, or outcome..",
+        "altKey": "presentation.static.career.hunter.event.clues-farm-sample.alt"
+      }
+    },
+    "job/hunter/event/hunter-items-preserve-return/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter scene: Preserve expedition evidence; the static presentation does not change event conditions, effects, or outcome..",
+        "altKey": "presentation.static.career.hunter.event.items-preserve-return.alt"
+      }
+    },
+    "job/hunter/event/hunter-items-rough-route-return/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter scene: Record rope-assisted route; the static presentation does not change event conditions, effects, or outcome..",
+        "altKey": "presentation.static.career.hunter.event.items-rough-route-return.alt"
+      }
+    },
+    "job/hunter/event/hunter-routes-master-ready/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter scene: Master Hunter readiness; the static presentation does not change event conditions, effects, or outcome..",
+        "altKey": "presentation.static.career.hunter.event.routes-master-ready.alt"
+      }
+    },
+    "job/hunter/event/hunter-routes-warden-ready/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter scene: Warden readiness; the static presentation does not change event conditions, effects, or outcome..",
+        "altKey": "presentation.static.career.hunter.event.routes-warden-ready.alt"
+      }
+    },
+    "job/hunter/event/hunter-routes-legend-contract/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter scene: Rare multi-system contract; the static presentation does not change event conditions, effects, or outcome..",
+        "altKey": "presentation.static.career.hunter.event.routes-legend-contract.alt"
+      }
+    },
+    "job/hunter/event/hunter-routes-legend-return/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter scene: Rare-route successful return; the static presentation does not change event conditions, effects, or outcome..",
+        "altKey": "presentation.static.career.hunter.event.routes-legend-return.alt"
+      }
+    },
+    "job/hunter/event/hunter-school-field-craft/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter scene: Field Craft reaches Hunter; the static presentation does not change event conditions, effects, or outcome..",
+        "altKey": "presentation.static.career.hunter.event.school-field-craft.alt"
+      }
+    },
+    "activity/expedition/route/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter expedition: Expedition preparation; the scene does not depict a fixed boss or creature..",
+        "altKey": "presentation.static.activity.hunter-expedition.route.default.alt"
+      }
+    },
+    "activity/expedition/route/local-route": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter expedition: Local route; the scene does not depict a fixed boss or creature..",
+        "altKey": "presentation.static.activity.hunter-expedition.route.local-route.alt"
+      }
+    },
+    "activity/expedition/route/rough-route": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter expedition: Rough route; the scene does not depict a fixed boss or creature..",
+        "altKey": "presentation.static.activity.hunter-expedition.route.rough-route.alt"
+      }
+    },
+    "activity/expedition/route/rare-route": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter expedition: Rare route from independent clues; the scene does not depict a fixed boss or creature..",
+        "altKey": "presentation.static.activity.hunter-expedition.route.rare-route.alt"
+      }
+    },
+    "activity/expedition/return/success": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter expedition return: Successful return; the result is shown without a fixed quarry or creature..",
+        "altKey": "presentation.static.activity.hunter-expedition.return.success.alt"
+      }
+    },
+    "activity/expedition/return/escape": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter expedition return: Safe escape without full success; the result is shown without a fixed quarry or creature..",
+        "altKey": "presentation.static.activity.hunter-expedition.return.escape.alt"
+      }
+    },
+    "activity/expedition/return/failure": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter presentation: Hunter expedition return: Expedition failure; the result is shown without a fixed quarry or creature..",
+        "altKey": "presentation.static.activity.hunter-expedition.return.failure.alt"
+      }
     }
   }
 }
