@@ -110,7 +110,7 @@ test('C3-149/C3-150 recovery map stays optional and herb acknowledgement never c
 });
 
 test('C3-151 stable public relationship fact can be acknowledged without a rescuer contract',()=>{
-  const relationship=catalog.definitions.relationships.find(r=>r.id==='satyr-maid.recurring-guest');
+  const relationship=catalog.definitions.relationships?.find(r=>r.id==='satyr-maid.recurring-guest');
   assert.ok(relationship);
   assert.ok(relationship.transitions.some(t=>t.effects.some((e:any)=>e.kind==='addRelationshipFact'&&e.fact==='professional-trust-earned')));
 
