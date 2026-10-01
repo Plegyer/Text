@@ -1,5 +1,14 @@
 # Leader 1 Current State v1
 
+## Leader recovery entrypoint
+
+Before using this state snapshot, read:
+- `LEADER1_START_HERE.md` for the durable operating model;
+- `LEADER1_LIVE_DASHBOARD.md` for the latest compact project/worker snapshot.
+
+This file remains the audited product-state baseline, not the sole live coordination surface.
+
+
 Date: 2026-10-01
 Status: **CURRENT LIVE PROJECT STATE — supersedes older status prose where Git/current CI disagrees**
 
