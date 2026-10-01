@@ -60,7 +60,8 @@ function hunterState(stage:string,season:'spring'|'summer'|'autumn'|'winter'){
  s.run.character.stats.wits=15;
  s.run.dayState.energyCurrent=3;
  (s.run.progression.careers as any).hunter={
-  stage,counters:{completed_shifts:8,spring_contracts:1,summer_contracts:1,autumn_contracts:1,winter_contracts:1,successful_expeditions:0,rare_contracts:0,protected_routes:0},
+  stage,shifts:8,
+  counters:{completed_shifts:8,spring_contracts:1,summer_contracts:1,autumn_contracts:1,winter_contracts:1,successful_expeditions:0,rare_contracts:0,protected_routes:0},
   choices:{},facts:['first-shift-complete','tracker-ready','recognized-ready','expedition-qualified']
  };
  return s;
