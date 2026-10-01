@@ -163,6 +163,8 @@ For any other exact number or Product choice, consult the authority documents ra
 
 When a worker candidate arrives:
 
+**Exact-head rule:** a green workflow is valid evidence only for the exact current/frozen PR head. If the producer branch moves after that run, the old green result and old QA verdict are historical until the new head gets its own CI and, where required, a fresh QA gate.
+
 - compare it against **current main**, not its old base;
 - inspect changed files and ownership;
 - require exact-head CI for code/content integration;
