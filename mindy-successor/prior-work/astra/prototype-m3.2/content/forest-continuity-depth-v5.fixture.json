@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "id": "forest.continuity-depth.v5",
+  "status": "CONTENT_SIDE_PREPARATION",
+  "task": "C3-98",
+  "baseMain": "6afc01061646bc52cec824863bf89e8ad8c309d0",
+  "activityId": "lumber.forest",
+  "routes": [
+    {
+      "routeOptionId": "forest.route.logging-road",
+      "routeId": "logging-road",
+      "variants": [
+        {
+          "id": "spring-soft-ruts",
+          "season": "spring",
+          "localizationKey": "presentation.activity.forest.continuity-v5.logging-road.spring.soft-ruts.text"
+        },
+        {
+          "id": "summer-dust-line",
+          "season": "summer",
+          "localizationKey": "presentation.activity.forest.continuity-v5.logging-road.summer.dust-line.text"
+        },
+        {
+          "id": "autumn-cut-branches",
+          "season": "autumn",
+          "localizationKey": "presentation.activity.forest.continuity-v5.logging-road.autumn.cut-branches.text"
+        },
+        {
+          "id": "winter-hard-center",
+          "season": "winter",
+          "localizationKey": "presentation.activity.forest.continuity-v5.logging-road.winter.hard-center.text"
+        }
+      ]
+    },
+    {
+      "routeOptionId": "forest.route.old-boundary",
+      "routeId": "old-boundary",
+      "unlockCondition": {
+        "kind": "itemCapability",
+        "capability": "enter_old_boundary",
+        "present": true
+      },
+      "variants": [
+        {
+          "id": "spring-runoff-stones",
+          "season": "spring",
+          "localizationKey": "presentation.activity.forest.continuity-v5.old-boundary.spring.runoff-stones.text"
+        },
+        {
+          "id": "summer-fern-breaks",
+          "season": "summer",
+          "localizationKey": "presentation.activity.forest.continuity-v5.old-boundary.summer.fern-breaks.text"
+        },
+        {
+          "id": "autumn-clear-notches",
+          "season": "autumn",
+          "localizationKey": "presentation.activity.forest.continuity-v5.old-boundary.autumn.clear-notches.text"
+        },
+        {
+          "id": "winter-snow-shadow",
+          "season": "winter",
+          "localizationKey": "presentation.activity.forest.continuity-v5.old-boundary.winter.snow-shadow.text"
+        }
+      ]
+    }
+  ],
+  "strings": {
+    "presentation.activity.forest.continuity-v5.logging-road.spring.soft-ruts.text": {
+      "ru": "Весной колеи становятся мягче после дождя, и дорога местами блестит водой. Направление всё равно читается по следам работы и остаётся тем же лесовозным путём.",
+      "en": "In spring, the ruts soften after rain and the road shines with water in places. The direction is still readable from work traces and remains the same logging road."
+    },
+    "presentation.activity.forest.continuity-v5.logging-road.summer.dust-line.text": {
+      "ru": "Летом сухая пыль тонкой полосой лежит на траве у обочины. По ней видно, где недавно проходили телеги, не меняя выбранного маршрута.",
+      "en": "In summer, dry dust settles in a thin line on the grass beside the road. It shows where carts passed recently without changing the route already chosen."
+    },
+    "presentation.activity.forest.continuity-v5.logging-road.autumn.cut-branches.text": {
+      "ru": "Осенью на краю дороги чаще заметны свежесрезанные ветки и мокрая щепа. Они подтверждают рабочее направление, но не делают путь короче или безопаснее.",
+      "en": "In autumn, freshly cut branches and damp chips are easier to spot along the road edge. They confirm the work direction without making the route shorter or safer."
+    },
+    "presentation.activity.forest.continuity-v5.logging-road.winter.hard-center.text": {
+      "ru": "Зимой середина дороги промерзает плотнее краёв, и следы дольше остаются заметными. Линия пути яснее, но сама вылазка от этого не становится другой.",
+      "en": "In winter, the center of the road freezes harder than the edges and tracks remain visible longer. The line is clearer, but the expedition itself does not become a different one."
+    },
+    "presentation.activity.forest.continuity-v5.old-boundary.spring.runoff-stones.text": {
+      "ru": "Весной вода обходит старые камни и оставляет между ними тёмные полосы земли. Они помогают держать межу в поле зрения после того, как путь уже открыт.",
+      "en": "In spring, water bends around the old stones and leaves dark strips of earth between them. They help keep the boundary in view after the path is already available."
+    },
+    "presentation.activity.forest.continuity-v5.old-boundary.summer.fern-breaks.text": {
+      "ru": "Летом папоротник закрывает низкие отметки, но повторяющиеся просветы между зарослями выдают старую линию. Это всё тот же пограничный путь.",
+      "en": "In summer, ferns hide the low markers, but repeating gaps in the growth reveal the old line. It is still the same boundary path."
+    },
+    "presentation.activity.forest.continuity-v5.old-boundary.autumn.clear-notches.text": {
+      "ru": "Осенью после листопада зарубки на нескольких стволах видны одновременно. Их порядок легче сверить, не превращая сезон в отдельное преимущество.",
+      "en": "In autumn, after leaf fall, notches on several trunks are visible at once. Their order is easier to compare without turning the season into a separate advantage."
+    },
+    "presentation.activity.forest.continuity-v5.old-boundary.winter.snow-shadow.text": {
+      "ru": "Зимой снег ложится с одной стороны межевых камней и подчёркивает их неровную цепочку. Это только ориентир внутри уже доступного Old Boundary.",
+      "en": "In winter, snow settles on one side of the boundary stones and outlines their uneven chain. It is only a landmark within the already accessible Old Boundary."
+    }
+  },
+  "invariants": {
+    "existingRoutesOnly": true,
+    "existingOldBoundaryCapabilityOnly": true,
+    "noNewResults": true,
+    "noProgressOrEnduranceChanges": true,
+    "noMechanics": true,
+    "noSaveOrRngChanges": true,
+    "noMediaChanges": true
+  }
+}
