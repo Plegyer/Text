@@ -4101,6 +4101,78 @@
     "ui.satyrMaid.nightChoiceAria": {
       "ru": "Ночной выбор: {choice}",
       "en": "Night choice: {choice}"
+    },
+    "event.satyr-maid.school.rhetoric.title": {
+      "ru": "Риторика начинает работать в зале",
+      "en": "Service rhetoric clicks"
+    },
+    "event.satyr-maid.school.rhetoric.variant.default.text": {
+      "ru": "Три завершённых занятия по риторике и общению дают конкретный приём переговоров, который можно сразу применить в работе за стойкой.",
+      "en": "Three completed Rhetoric & Social lessons give you a concrete negotiation pattern you can use on the bar floor immediately."
+    },
+    "event.satyr-maid.school.rhetoric.choice.apply.label": {
+      "ru": "Применить это в работе",
+      "en": "Apply it at work"
+    },
+    "event.satyr-maid.school.rhetoric.choice.apply.text": {
+      "ru": "Перенести переговорный приём в работу служанки без дополнительной траты дневной энергии.",
+      "en": "Carry the negotiation technique into Satyr Maid work without spending another daytime Energy."
+    },
+    "presentation.static.career.satyr-maid.school.rhetoric.alt": {
+      "ru": "Служанка применяет выученный приём переговоров во время обычного обслуживания в зале.",
+      "en": "The maid applies a learned negotiation technique during ordinary floor service."
+    },
+    "presentation.static.career.satyr-maid.school.rhetoric.caption": {
+      "ru": "Школьный приём риторики применяется в работе.",
+      "en": "A School rhetoric technique is applied at work."
+    },
+    "event.satyr-maid.school.management.title": {
+      "ru": "Записи становятся инструментом управления",
+      "en": "Records become management tools"
+    },
+    "event.satyr-maid.school.management.variant.default.text": {
+      "ru": "Три завершённых занятия по грамотности и счёту превращают расписания и записи о запасах в практический рабочий инструмент.",
+      "en": "Three completed Literacy & Numbers lessons make schedules and supply records usable as a real management tool."
+    },
+    "event.satyr-maid.school.management.choice.apply.label": {
+      "ru": "Применить это в работе",
+      "en": "Apply it at work"
+    },
+    "event.satyr-maid.school.management.choice.apply.text": {
+      "ru": "Применить метод ведения записей в работе заведения.",
+      "en": "Apply the record-keeping method to the house."
+    },
+    "presentation.static.career.satyr-maid.school.management.alt": {
+      "ru": "Служанка сверяет рабочие записи и расписание как часть управления сменой.",
+      "en": "The maid reviews work records and scheduling as part of managing a shift."
+    },
+    "presentation.static.career.satyr-maid.school.management.caption": {
+      "ru": "Школьные навыки счёта становятся рабочим инструментом.",
+      "en": "School number skills become a work tool."
+    },
+    "event.satyr-maid.school.boundaries.title": {
+      "ru": "Уверенность становится рабочей границей",
+      "en": "Confidence becomes a work boundary"
+    },
+    "event.satyr-maid.school.boundaries.variant.default.text": {
+      "ru": "Три завершённых занятия по уверенности в теле помогают превратить личный отказ в ясную профессиональную границу обслуживания.",
+      "en": "Three completed Body Confidence lessons help turn a personal refusal into a clear professional service boundary."
+    },
+    "event.satyr-maid.school.boundaries.choice.apply.label": {
+      "ru": "Применить это в работе",
+      "en": "Apply it at work"
+    },
+    "event.satyr-maid.school.boundaries.choice.apply.text": {
+      "ru": "Использовать более ясные формулировки границ в работе.",
+      "en": "Use the clearer boundary language at work."
+    },
+    "presentation.static.career.satyr-maid.school.boundaries.alt": {
+      "ru": "Служанка спокойно обозначает ясные условия обслуживания во время рабочей сцены.",
+      "en": "The maid calmly states clear service terms during a work scene."
+    },
+    "presentation.static.career.satyr-maid.school.boundaries.caption": {
+      "ru": "Школьная уверенность превращается в профессиональную границу.",
+      "en": "School confidence becomes a professional boundary."
     }
   }
 }
