@@ -2275,6 +2275,18 @@
             "delta": 1
           },
           {
+            "kind": "incrementCareerCounter",
+            "career": "tavern",
+            "counter": "traveler_flow",
+            "amount": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "tavern",
+            "counter": "supply_pressure",
+            "amount": 2
+          },
+          {
             "kind": "addItem",
             "id": "farm_unstable_specimen",
             "count": 1
@@ -2348,15 +2360,51 @@
       "scenes": [
         {
           "id": "spring.default",
-          "text": "Spring tavern shift: the season changes the ordinary work context.",
+          "text": "Tavern shift: the common hall, guest rooms, supplies, travelers, and house information all compete for attention.",
           "conditions": [],
           "media": [
             "stage.tavern.spring"
           ]
         },
         {
+          "id": "spring.rooms",
+          "text": "A spring arrival wave turns room assignment into the main pressure of the shift.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "spring"
+            },
+            {
+              "kind": "careerStage",
+              "career": "tavern",
+              "stage": "trusted-worker"
+            }
+          ],
+          "media": [
+            "stage.tavern.spring"
+          ]
+        },
+        {
+          "id": "spring.supplies",
+          "text": "Early caravans arrive unevenly, so a house-node shift is partly about deciding which supplies can wait.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "spring"
+            },
+            {
+              "kind": "careerStage",
+              "career": "tavern",
+              "stage": "house-node"
+            }
+          ],
+          "media": [
+            "stage.tavern.spring"
+          ]
+        },
+        {
           "id": "summer.default",
-          "text": "Summer tavern shift: demand, routes, or crowds shift with the season.",
+          "text": "Summer transit keeps the hall busy from meal service through late arrivals.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -2368,8 +2416,44 @@
           ]
         },
         {
+          "id": "summer.occupancy",
+          "text": "High summer occupancy means every room decision affects another traveler waiting downstairs.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "summer"
+            },
+            {
+              "kind": "careerStage",
+              "career": "tavern",
+              "stage": "trusted-worker"
+            }
+          ],
+          "media": [
+            "stage.tavern.summer"
+          ]
+        },
+        {
+          "id": "summer.deliveries",
+          "text": "At house-node level, summer work is a loop of deliveries, room turnover, and conflicting traveler priorities.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "summer"
+            },
+            {
+              "kind": "careerStage",
+              "career": "tavern",
+              "stage": "house-node"
+            }
+          ],
+          "media": [
+            "stage.tavern.summer"
+          ]
+        },
+        {
           "id": "autumn.default",
-          "text": "Autumn tavern shift: seasonal pressure changes the work mix.",
+          "text": "Autumn trade brings large orders and travelers carrying more goods than time.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -2381,12 +2465,84 @@
           ]
         },
         {
+          "id": "autumn.orders",
+          "text": "A trusted-worker autumn shift is dominated by order sequencing and keeping the common room moving.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "autumn"
+            },
+            {
+              "kind": "careerStage",
+              "career": "tavern",
+              "stage": "trusted-worker"
+            }
+          ],
+          "media": [
+            "stage.tavern.autumn"
+          ]
+        },
+        {
+          "id": "autumn.rumours",
+          "text": "As house node, you notice that supply pressure and traveler rumours arrive together during the trade peak.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "autumn"
+            },
+            {
+              "kind": "careerStage",
+              "career": "tavern",
+              "stage": "house-node"
+            }
+          ],
+          "media": [
+            "stage.tavern.autumn"
+          ]
+        },
+        {
           "id": "winter.default",
-          "text": "Winter tavern shift: scarcity, access, or regular clients change the routine.",
+          "text": "Winter reduces through-traffic but turns every stranded arrival into a room and supply decision.",
           "conditions": [
             {
               "kind": "calendarSeason",
               "value": "winter"
+            }
+          ],
+          "media": [
+            "stage.tavern.winter"
+          ]
+        },
+        {
+          "id": "winter.shelter",
+          "text": "A trusted-worker winter shift puts warm rooms and temporary shelter ahead of fast turnover.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "winter"
+            },
+            {
+              "kind": "careerStage",
+              "career": "tavern",
+              "stage": "trusted-worker"
+            }
+          ],
+          "media": [
+            "stage.tavern.winter"
+          ]
+        },
+        {
+          "id": "winter.house-node",
+          "text": "At house-node level, winter service means balancing shelter, scarce stock, and information about closed roads.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "winter"
+            },
+            {
+              "kind": "careerStage",
+              "career": "tavern",
+              "stage": "house-node"
             }
           ],
           "media": [
@@ -2405,6 +2561,30 @@
             "kind": "modifyStat",
             "stat": "wits",
             "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "tavern",
+            "counter": "supply_pressure",
+            "amount": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "tavern",
+            "counter": "shelter_pressure",
+            "amount": 2
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "tavern",
+            "counter": "traveler_flow",
+            "amount": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "tavern",
+            "counter": "room_pressure",
+            "amount": 1
           }
         ],
         "summer": [
@@ -2417,6 +2597,18 @@
             "kind": "modifyStat",
             "stat": "manners",
             "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "tavern",
+            "counter": "traveler_flow",
+            "amount": 2
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "tavern",
+            "counter": "room_pressure",
+            "amount": 2
           }
         ],
         "autumn": [
@@ -3659,9 +3851,50 @@
       "title": "Хозяйка третьего тоста",
       "conditions": [
         {
-          "kind": "visits",
-          "action": "tavern",
-          "value": 18
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "visits",
+              "action": "tavern",
+              "value": 18
+            },
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "careerCounter",
+                  "career": "tavern",
+                  "counter": "completed_shifts",
+                  "op": "gte",
+                  "value": 18
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "tavern",
+                  "fact": "school-records-ready",
+                  "present": true
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "tavern",
+                  "fact": "guest-ledger-evidence-ready",
+                  "present": true
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "tavern",
+                  "fact": "crisis-resolved",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "careerFact",
+              "career": "tavern",
+              "fact": "innkeeper-ready",
+              "present": true
+            }
+          ]
         }
       ],
       "reward": "host",
@@ -3673,9 +3906,43 @@
       "title": "Праздник без разрешения",
       "conditions": [
         {
-          "kind": "flag",
-          "key": "tavern.guild",
-          "value": true
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "flag",
+              "key": "tavern.guild",
+              "value": true
+            },
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "careerFact",
+                  "career": "tavern",
+                  "fact": "housing-assistance-complete",
+                  "present": true
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "tavern",
+                  "fact": "confidentiality-kept",
+                  "present": true
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "tavern",
+                  "fact": "crisis-resolved",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "careerFact",
+              "career": "tavern",
+              "fact": "sanctuary-ready",
+              "present": true
+            }
+          ]
         }
       ],
       "reward": "mediator",
@@ -3687,9 +3954,55 @@
       "title": "Приглашение под печатью",
       "conditions": [
         {
-          "kind": "flag",
-          "key": "tavern.prince",
-          "value": true
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "flag",
+              "key": "tavern.prince",
+              "value": true
+            },
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "careerFact",
+                  "career": "tavern",
+                  "fact": "school-broker-ready",
+                  "present": true
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "tavern",
+                  "fact": "rumour-route-open",
+                  "present": true
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "tavern",
+                  "fact": "rumour-confirmed",
+                  "present": true
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "tavern",
+                  "fact": "confidentiality-resolved",
+                  "present": true
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "tavern",
+                  "fact": "crisis-resolved",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "careerFact",
+              "career": "tavern",
+              "fact": "information-broker-ready",
+              "present": true
+            }
+          ]
         }
       ],
       "reward": "court",
@@ -4576,13 +4889,336 @@
       ]
     },
     {
+      "id": "tavern.recurring-traveler",
+      "label": "Recurring Traveler",
+      "initialStage": "introduced",
+      "stages": [
+        "introduced",
+        "trusted",
+        "night-request",
+        "request-resolved",
+        "confidentiality-resolved"
+      ],
+      "transitions": [
+        {
+          "id": "build-trust",
+          "from": [
+            "introduced"
+          ],
+          "to": "trusted",
+          "conditions": [
+            {
+              "kind": "relationshipFact",
+              "relationship": "tavern.recurring-traveler",
+              "fact": "introduced-at-work",
+              "present": true
+            },
+            {
+              "kind": "relationshipCounter",
+              "relationship": "tavern.recurring-traveler",
+              "counter": "work-meetings",
+              "op": "gte",
+              "value": 2
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "tavern.recurring-traveler",
+              "fact": "professional-trust-earned"
+            }
+          ]
+        },
+        {
+          "id": "night-request",
+          "from": [
+            "trusted"
+          ],
+          "to": "night-request",
+          "conditions": [
+            {
+              "kind": "relationshipFact",
+              "relationship": "tavern.recurring-traveler",
+              "fact": "night-met",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "request-resolved",
+          "from": [
+            "night-request"
+          ],
+          "to": "request-resolved",
+          "conditions": [
+            {
+              "kind": "relationshipFact",
+              "relationship": "tavern.recurring-traveler",
+              "fact": "request-resolved",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "confidentiality-kept",
+          "from": [
+            "request-resolved"
+          ],
+          "to": "confidentiality-resolved",
+          "conditions": [
+            {
+              "kind": "relationshipChoice",
+              "relationship": "tavern.recurring-traveler",
+              "choice": "confidentiality-response",
+              "value": "keep-private"
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "tavern.recurring-traveler",
+              "fact": "confidentiality-kept"
+            }
+          ]
+        },
+        {
+          "id": "confidentiality-shared",
+          "from": [
+            "request-resolved"
+          ],
+          "to": "confidentiality-resolved",
+          "conditions": [
+            {
+              "kind": "relationshipChoice",
+              "relationship": "tavern.recurring-traveler",
+              "choice": "confidentiality-response",
+              "value": "share-route-only"
+            }
+          ],
+          "effects": []
+        }
+      ]
+    },
+    {
       "id": "tavern",
       "label": "Tavern",
       "initialStage": "new-hand",
       "stages": [
-        "new-hand"
+        "new-hand",
+        "trusted-worker",
+        "house-node",
+        "veteran-service",
+        "innkeeper",
+        "information-broker",
+        "sanctuary",
+        "outcome-ready"
       ],
-      "transitions": []
+      "transitions": [
+        {
+          "id": "first-shift",
+          "from": [
+            "new-hand"
+          ],
+          "to": "trusted-worker",
+          "conditions": [
+            {
+              "kind": "careerCounter",
+              "career": "tavern",
+              "counter": "completed_shifts",
+              "op": "gte",
+              "value": 1
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "tavern",
+              "fact": "first-shift-complete"
+            }
+          ]
+        },
+        {
+          "id": "house-node",
+          "from": [
+            "trusted-worker"
+          ],
+          "to": "house-node",
+          "conditions": [
+            {
+              "kind": "careerCounter",
+              "career": "tavern",
+              "counter": "completed_shifts",
+              "op": "gte",
+              "value": 8
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "tavern",
+              "fact": "house-node-ready"
+            }
+          ]
+        },
+        {
+          "id": "branch-veteran-service",
+          "from": [
+            "house-node"
+          ],
+          "to": "veteran-service",
+          "conditions": [
+            {
+              "kind": "careerCounter",
+              "career": "tavern",
+              "counter": "completed_shifts",
+              "op": "gte",
+              "value": 20
+            },
+            {
+              "kind": "careerFact",
+              "career": "tavern",
+              "fact": "veteran-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "branch-innkeeper",
+          "from": [
+            "house-node"
+          ],
+          "to": "innkeeper",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "tavern",
+              "fact": "school-records-ready",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "tavern",
+              "fact": "guest-ledger-evidence-ready",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "tavern",
+              "fact": "crisis-innkeeper",
+              "present": true
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "tavern",
+              "fact": "innkeeper-ready"
+            }
+          ]
+        },
+        {
+          "id": "branch-information-broker",
+          "from": [
+            "house-node"
+          ],
+          "to": "information-broker",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "tavern",
+              "fact": "school-broker-ready",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "tavern",
+              "fact": "rumour-route-open",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "tavern",
+              "fact": "rumour-confirmed",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "tavern",
+              "fact": "confidentiality-resolved",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "tavern",
+              "fact": "crisis-broker",
+              "present": true
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "tavern",
+              "fact": "information-broker-ready"
+            }
+          ]
+        },
+        {
+          "id": "branch-sanctuary",
+          "from": [
+            "house-node"
+          ],
+          "to": "sanctuary",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "tavern",
+              "fact": "housing-assistance-complete",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "tavern",
+              "fact": "confidentiality-kept",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "tavern",
+              "fact": "crisis-sanctuary",
+              "present": true
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "tavern",
+              "fact": "sanctuary-ready"
+            }
+          ]
+        },
+        {
+          "id": "outcome-ready",
+          "from": [
+            "veteran-service",
+            "innkeeper",
+            "information-broker",
+            "sanctuary"
+          ],
+          "to": "outcome-ready",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "tavern",
+              "fact": "outcome-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        }
+      ]
     },
     {
       "id": "hunter",
@@ -4935,6 +5571,46 @@
           "relationship": "lumber.foreman",
           "counter": "night_meetings",
           "amount": 1
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": 0
+    },
+    {
+      "id": "tavern.night.traveler-request",
+      "label": "Meet a recurring traveler after closing",
+      "conditions": [
+        {
+          "kind": "relationshipStage",
+          "relationship": "tavern.recurring-traveler",
+          "stage": "trusted"
+        },
+        {
+          "kind": "relationshipChoice",
+          "relationship": "tavern.recurring-traveler",
+          "choice": "night-response",
+          "value": "accepted"
+        }
+      ],
+      "effects": [],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": 0
+    },
+    {
+      "id": "tavern.night.house-notes",
+      "label": "Review house notes after closing",
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "tavern",
+          "stage": "house-node"
+        }
+      ],
+      "effects": [
+        {
+          "kind": "addCareerFact",
+          "career": "tavern",
+          "fact": "house-notes-reviewed"
         }
       ],
       "nextDayEffects": [],
@@ -6345,6 +7021,13 @@
       "label": "Old Boundary Token",
       "capabilities": [
         "enter_old_boundary"
+      ]
+    },
+    {
+      "id": "tavern_staff_key",
+      "label": "Tavern Staff Key",
+      "capabilities": [
+        "access_guest_rooms_staff"
       ]
     },
     {
