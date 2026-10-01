@@ -98,3 +98,9 @@ Therefore:
 - C3-169 is complete;
 - C3-170 may proceed as contract-independent semantic RU/EN source authoring;
 - no new gameplay/event/fact/relationship IDs may be invented or bound until exact C1D-133 identities are published.
+
+## Post-inventory runtime binding update
+
+After the initial C3-169 snapshot, Chat 1 published and froze Hunter runtime PR #201 at exact head `8af661de2ce6d73e4db0f61fe4206d3334822998`, CI #734 SUCCESS. C3-170..179 bind only to `HUNTER_RUNTIME_CONTRACT_v1.json` and the producer files from that exact head.
+
+The contract reserves `hunter.activity.expedition-return` as a return-event identity, but no event with that ID exists in the frozen producer packs. Chat 3 therefore does **not** invent it. Preparation/departure copy binds to the real `hunter.expedition` Activity and its option IDs; successful-return copy binds to the real `activityResult` consumers `hunter.items.preserve-return`, `hunter.items.rough-route-return`, and `hunter.routes.legend-return`. Generic escape/failure return prose remains unavailable until a producer seam exists.
