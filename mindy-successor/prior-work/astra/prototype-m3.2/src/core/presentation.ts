@@ -224,6 +224,10 @@ export const SATYR_MAID_CRISIS_EVENT_IDS=[
   'satyr-maid.crisis.house-strain'
 ] as const;
 
+export const SATYR_MAID_COMPLEX_ENDING_IDS=[
+  'ending.satyr-maid.house-power'
+] as const;
+
 export function presentationIdForSatyrMaidCareerEvent(eventId:string){
   return `job/satyr-maid/event/${clean(eventId)}/default`;
 }
@@ -402,6 +406,15 @@ export function presentationSlots(cat:Catalog):PresentationSlot[]{
       label:`${career.label} · Hard Work · финал`,
       baseMediaIds:[],
       fallbackId:careerId==='lumber'?'location/town/default':slots.has(resultId)?resultId:'location/town/default'
+    });
+  }
+
+  for(const endingId of SATYR_MAID_COMPLEX_ENDING_IDS){
+    add({
+      id:presentationIdForEnding(endingId),
+      label:`Satyr Maid · complex ending · ${endingId}`,
+      baseMediaIds:[],
+      fallbackId:'job/satyr-maid/result/default'
     });
   }
 
