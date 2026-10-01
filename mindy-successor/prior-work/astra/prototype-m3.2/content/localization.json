@@ -7881,6 +7881,662 @@
     "event.hunter.school.field-craft.choice.apply.text": {
       "ru": "Полевой метод готов к Hunter-local реакции через существующие школьные полевые записи без дополнительной охотничьей смены. Школа: Роуэн связал полевую практику с маршрутом, запасным планом и существующими `forest.school-field-notes`. Новый числовой порог не вводится.",
       "en": "The field method is ready for a Hunter-local reaction through the existing School field notes without an additional Hunter shift. School: Rowan connected Field Craft to route choice, fallback planning, and the existing `forest.school-field-notes`. No new numeric threshold is introduced."
+    },
+    "presentation.static.career.hunter.stage.novice.alt": {
+      "ru": "Охотничья карьера: этап «Новичок»; статичная сцена показывает только текущий маршрут карьеры.",
+      "en": "Hunter career stage “Novice”; the static scene shows only the current career route."
+    },
+    "presentation.static.career.hunter.stage.novice.caption": {
+      "ru": "Этап охотничьей карьеры: Новичок.",
+      "en": "Hunter career stage: Novice."
+    },
+    "presentation.hunter.stage.novice.label": {
+      "ru": "Новичок",
+      "en": "Novice"
+    },
+    "presentation.static.career.hunter.stage.tracker.alt": {
+      "ru": "Охотничья карьера: этап «Следопыт»; статичная сцена показывает только текущий маршрут карьеры.",
+      "en": "Hunter career stage “Tracker”; the static scene shows only the current career route."
+    },
+    "presentation.static.career.hunter.stage.tracker.caption": {
+      "ru": "Этап охотничьей карьеры: Следопыт.",
+      "en": "Hunter career stage: Tracker."
+    },
+    "presentation.hunter.stage.tracker.label": {
+      "ru": "Следопыт",
+      "en": "Tracker"
+    },
+    "presentation.static.career.hunter.stage.recognized-hunter.alt": {
+      "ru": "Охотничья карьера: этап «Признанная охотница»; статичная сцена показывает только текущий маршрут карьеры.",
+      "en": "Hunter career stage “Recognized Hunter”; the static scene shows only the current career route."
+    },
+    "presentation.static.career.hunter.stage.recognized-hunter.caption": {
+      "ru": "Этап охотничьей карьеры: Признанная охотница.",
+      "en": "Hunter career stage: Recognized Hunter."
+    },
+    "presentation.hunter.stage.recognized-hunter.label": {
+      "ru": "Признанная охотница",
+      "en": "Recognized Hunter"
+    },
+    "presentation.static.career.hunter.stage.veteran.alt": {
+      "ru": "Охотничья карьера: этап «Ветеран»; статичная сцена показывает только текущий маршрут карьеры.",
+      "en": "Hunter career stage “Veteran”; the static scene shows only the current career route."
+    },
+    "presentation.static.career.hunter.stage.veteran.caption": {
+      "ru": "Этап охотничьей карьеры: Ветеран.",
+      "en": "Hunter career stage: Veteran."
+    },
+    "presentation.hunter.stage.veteran.label": {
+      "ru": "Ветеран",
+      "en": "Veteran"
+    },
+    "presentation.static.career.hunter.stage.master-hunter.alt": {
+      "ru": "Охотничья карьера: этап «Мастер-охотница»; статичная сцена показывает только текущий маршрут карьеры.",
+      "en": "Hunter career stage “Master Hunter”; the static scene shows only the current career route."
+    },
+    "presentation.static.career.hunter.stage.master-hunter.caption": {
+      "ru": "Этап охотничьей карьеры: Мастер-охотница.",
+      "en": "Hunter career stage: Master Hunter."
+    },
+    "presentation.hunter.stage.master-hunter.label": {
+      "ru": "Мастер-охотница",
+      "en": "Master Hunter"
+    },
+    "presentation.static.career.hunter.stage.warden.alt": {
+      "ru": "Охотничья карьера: этап «Страж маршрутов»; статичная сцена показывает только текущий маршрут карьеры.",
+      "en": "Hunter career stage “Warden”; the static scene shows only the current career route."
+    },
+    "presentation.static.career.hunter.stage.warden.caption": {
+      "ru": "Этап охотничьей карьеры: Страж маршрутов.",
+      "en": "Hunter career stage: Warden."
+    },
+    "presentation.hunter.stage.warden.label": {
+      "ru": "Страж маршрутов",
+      "en": "Warden"
+    },
+    "presentation.static.career.hunter.stage.legend.alt": {
+      "ru": "Охотничья карьера: этап «Легендарный маршрут»; статичная сцена показывает только текущий маршрут карьеры.",
+      "en": "Hunter career stage “Legend route”; the static scene shows only the current career route."
+    },
+    "presentation.static.career.hunter.stage.legend.caption": {
+      "ru": "Этап охотничьей карьеры: Легендарный маршрут.",
+      "en": "Hunter career stage: Legend route."
+    },
+    "presentation.hunter.stage.legend.label": {
+      "ru": "Легендарный маршрут",
+      "en": "Legend route"
+    },
+    "presentation.static.career.hunter.stage.outcome-ready.alt": {
+      "ru": "Охотничья карьера: этап «Готовность к исходу»; статичная сцена показывает только текущий маршрут карьеры.",
+      "en": "Hunter career stage “Outcome ready”; the static scene shows only the current career route."
+    },
+    "presentation.static.career.hunter.stage.outcome-ready.caption": {
+      "ru": "Этап охотничьей карьеры: Готовность к исходу.",
+      "en": "Hunter career stage: Outcome ready."
+    },
+    "presentation.hunter.stage.outcome-ready.label": {
+      "ru": "Готовность к исходу",
+      "en": "Outcome ready"
+    },
+    "presentation.static.relationship.hunter-senior-guide.stage.introduced.alt": {
+      "ru": "Старший охотник/проводник: Рабочее знакомство; сцена остаётся профессиональной и не предполагает романтический маршрут.",
+      "en": "Senior hunter/guide: Work introduction; the scene remains professional and does not imply romance."
+    },
+    "presentation.static.relationship.hunter-senior-guide.stage.introduced.caption": {
+      "ru": "Старший проводник: Рабочее знакомство.",
+      "en": "Senior guide: Work introduction."
+    },
+    "presentation.hunter.relationship.stage.introduced.label": {
+      "ru": "Рабочее знакомство",
+      "en": "Work introduction"
+    },
+    "presentation.static.relationship.hunter-senior-guide.stage.professional-trust.alt": {
+      "ru": "Старший охотник/проводник: Профессиональное доверие; сцена остаётся профессиональной и не предполагает романтический маршрут.",
+      "en": "Senior hunter/guide: Professional trust; the scene remains professional and does not imply romance."
+    },
+    "presentation.static.relationship.hunter-senior-guide.stage.professional-trust.caption": {
+      "ru": "Старший проводник: Профессиональное доверие.",
+      "en": "Senior guide: Professional trust."
+    },
+    "presentation.hunter.relationship.stage.professional-trust.label": {
+      "ru": "Профессиональное доверие",
+      "en": "Professional trust"
+    },
+    "presentation.static.relationship.hunter-senior-guide.stage.conflict-open.alt": {
+      "ru": "Старший охотник/проводник: Открытый профессиональный спор; сцена остаётся профессиональной и не предполагает романтический маршрут.",
+      "en": "Senior hunter/guide: Professional conflict open; the scene remains professional and does not imply romance."
+    },
+    "presentation.static.relationship.hunter-senior-guide.stage.conflict-open.caption": {
+      "ru": "Старший проводник: Открытый профессиональный спор.",
+      "en": "Senior guide: Professional conflict open."
+    },
+    "presentation.hunter.relationship.stage.conflict-open.label": {
+      "ru": "Открытый профессиональный спор",
+      "en": "Professional conflict open"
+    },
+    "presentation.static.relationship.hunter-senior-guide.stage.companion-ready.alt": {
+      "ru": "Старший охотник/проводник: Возможна совместная экспедиция; сцена остаётся профессиональной и не предполагает романтический маршрут.",
+      "en": "Senior hunter/guide: Companion option ready; the scene remains professional and does not imply romance."
+    },
+    "presentation.static.relationship.hunter-senior-guide.stage.companion-ready.caption": {
+      "ru": "Старший проводник: Возможна совместная экспедиция.",
+      "en": "Senior guide: Companion option ready."
+    },
+    "presentation.hunter.relationship.stage.companion-ready.label": {
+      "ru": "Возможна совместная экспедиция",
+      "en": "Companion option ready"
+    },
+    "presentation.static.relationship.hunter-senior-guide.stage.route-resolved.alt": {
+      "ru": "Старший охотник/проводник: Профессиональный маршрут разрешён; сцена остаётся профессиональной и не предполагает романтический маршрут.",
+      "en": "Senior hunter/guide: Professional route resolved; the scene remains professional and does not imply romance."
+    },
+    "presentation.static.relationship.hunter-senior-guide.stage.route-resolved.caption": {
+      "ru": "Старший проводник: Профессиональный маршрут разрешён.",
+      "en": "Senior guide: Professional route resolved."
+    },
+    "presentation.hunter.relationship.stage.route-resolved.label": {
+      "ru": "Профессиональный маршрут разрешён",
+      "en": "Professional route resolved"
+    },
+    "presentation.static.career.hunter.item.rope_kit.alt": {
+      "ru": "Снаряжение охотницы: Верёвочный набор; показано как инструмент для «маршрут по пересечённой местности», без оружейной или боевой системы.",
+      "en": "Hunter gear: Rope Kit; shown for rough-route access, without adding a weapon or combat system."
+    },
+    "presentation.static.career.hunter.item.rope_kit.caption": {
+      "ru": "Снаряжение: Верёвочный набор.",
+      "en": "Gear: Rope Kit."
+    },
+    "presentation.hunter.item.rope_kit.label": {
+      "ru": "Верёвочный набор",
+      "en": "Rope Kit"
+    },
+    "presentation.static.career.hunter.item.field_preservation_kit.alt": {
+      "ru": "Снаряжение охотницы: Полевой набор для консервации; показано как инструмент для «сохранение полевого образца», без оружейной или боевой системы.",
+      "en": "Hunter gear: Field Preservation Kit; shown for field specimen preservation, without adding a weapon or combat system."
+    },
+    "presentation.static.career.hunter.item.field_preservation_kit.caption": {
+      "ru": "Снаряжение: Полевой набор для консервации.",
+      "en": "Gear: Field Preservation Kit."
+    },
+    "presentation.hunter.item.field_preservation_kit.label": {
+      "ru": "Полевой набор для консервации",
+      "en": "Field Preservation Kit"
+    },
+    "presentation.static.career.hunter.state.forest-clue.alt": {
+      "ru": "Состояние охотничьего маршрута: Лесная подсказка записана; показано качественно, без скрытых числовых порогов.",
+      "en": "Hunter route state: Forest clue recorded; shown qualitatively without exposing hidden numeric thresholds."
+    },
+    "presentation.static.career.hunter.state.forest-clue.caption": {
+      "ru": "Состояние охотницы: Лесная подсказка записана.",
+      "en": "Hunter state: Forest clue recorded."
+    },
+    "presentation.hunter.state.forest-clue.label": {
+      "ru": "Лесная подсказка записана",
+      "en": "Forest clue recorded"
+    },
+    "presentation.static.career.hunter.state.tavern-clue.alt": {
+      "ru": "Состояние охотничьего маршрута: Тавернская подсказка записана; показано качественно, без скрытых числовых порогов.",
+      "en": "Hunter route state: Tavern clue recorded; shown qualitatively without exposing hidden numeric thresholds."
+    },
+    "presentation.static.career.hunter.state.tavern-clue.caption": {
+      "ru": "Состояние охотницы: Тавернская подсказка записана.",
+      "en": "Hunter state: Tavern clue recorded."
+    },
+    "presentation.hunter.state.tavern-clue.label": {
+      "ru": "Тавернская подсказка записана",
+      "en": "Tavern clue recorded"
+    },
+    "presentation.static.career.hunter.state.farm-clue.alt": {
+      "ru": "Состояние охотничьего маршрута: Фермерская подсказка записана; показано качественно, без скрытых числовых порогов.",
+      "en": "Hunter route state: Farm clue recorded; shown qualitatively without exposing hidden numeric thresholds."
+    },
+    "presentation.static.career.hunter.state.farm-clue.caption": {
+      "ru": "Состояние охотницы: Фермерская подсказка записана.",
+      "en": "Hunter state: Farm clue recorded."
+    },
+    "presentation.hunter.state.farm-clue.label": {
+      "ru": "Фермерская подсказка записана",
+      "en": "Farm clue recorded"
+    },
+    "presentation.static.career.hunter.state.lumber-clue.alt": {
+      "ru": "Состояние охотничьего маршрута: Наблюдение лесоруба записано; показано качественно, без скрытых числовых порогов.",
+      "en": "Hunter route state: Lumber clue recorded; shown qualitatively without exposing hidden numeric thresholds."
+    },
+    "presentation.static.career.hunter.state.lumber-clue.caption": {
+      "ru": "Состояние охотницы: Наблюдение лесоруба записано.",
+      "en": "Hunter state: Lumber clue recorded."
+    },
+    "presentation.hunter.state.lumber-clue.label": {
+      "ru": "Наблюдение лесоруба записано",
+      "en": "Lumber clue recorded"
+    },
+    "presentation.static.career.hunter.state.school-field-craft.alt": {
+      "ru": "Состояние охотничьего маршрута: Полевой школьный метод применён; показано качественно, без скрытых числовых порогов.",
+      "en": "Hunter route state: School Field Craft applied; shown qualitatively without exposing hidden numeric thresholds."
+    },
+    "presentation.static.career.hunter.state.school-field-craft.caption": {
+      "ru": "Состояние охотницы: Полевой школьный метод применён.",
+      "en": "Hunter state: School Field Craft applied."
+    },
+    "presentation.hunter.state.school-field-craft.label": {
+      "ru": "Полевой школьный метод применён",
+      "en": "School Field Craft applied"
+    },
+    "presentation.static.career.hunter.state.master-ready.alt": {
+      "ru": "Состояние охотничьего маршрута: Маршрут Мастера готов; показано качественно, без скрытых числовых порогов.",
+      "en": "Hunter route state: Master Hunter route ready; shown qualitatively without exposing hidden numeric thresholds."
+    },
+    "presentation.static.career.hunter.state.master-ready.caption": {
+      "ru": "Состояние охотницы: Маршрут Мастера готов.",
+      "en": "Hunter state: Master Hunter route ready."
+    },
+    "presentation.hunter.state.master-ready.label": {
+      "ru": "Маршрут Мастера готов",
+      "en": "Master Hunter route ready"
+    },
+    "presentation.static.career.hunter.state.warden-ready.alt": {
+      "ru": "Состояние охотничьего маршрута: Маршрут Стража готов; показано качественно, без скрытых числовых порогов.",
+      "en": "Hunter route state: Warden route ready; shown qualitatively without exposing hidden numeric thresholds."
+    },
+    "presentation.static.career.hunter.state.warden-ready.caption": {
+      "ru": "Состояние охотницы: Маршрут Стража готов.",
+      "en": "Hunter state: Warden route ready."
+    },
+    "presentation.hunter.state.warden-ready.label": {
+      "ru": "Маршрут Стража готов",
+      "en": "Warden route ready"
+    },
+    "presentation.static.career.hunter.state.legend-ready.alt": {
+      "ru": "Состояние охотничьего маршрута: Легендарный маршрут готов; показано качественно, без скрытых числовых порогов.",
+      "en": "Hunter route state: Legend route ready; shown qualitatively without exposing hidden numeric thresholds."
+    },
+    "presentation.static.career.hunter.state.legend-ready.caption": {
+      "ru": "Состояние охотницы: Легендарный маршрут готов.",
+      "en": "Hunter state: Legend route ready."
+    },
+    "presentation.hunter.state.legend-ready.label": {
+      "ru": "Легендарный маршрут готов",
+      "en": "Legend route ready"
+    },
+    "presentation.static.career.hunter.state.rare-contract-active.alt": {
+      "ru": "Состояние охотничьего маршрута: Редкий контракт активен; показано качественно, без скрытых числовых порогов.",
+      "en": "Hunter route state: Rare contract active; shown qualitatively without exposing hidden numeric thresholds."
+    },
+    "presentation.static.career.hunter.state.rare-contract-active.caption": {
+      "ru": "Состояние охотницы: Редкий контракт активен.",
+      "en": "Hunter state: Rare contract active."
+    },
+    "presentation.hunter.state.rare-contract-active.label": {
+      "ru": "Редкий контракт активен",
+      "en": "Rare contract active"
+    },
+    "presentation.static.career.hunter.state.refusal-respected.alt": {
+      "ru": "Состояние охотничьего маршрута: Отказ принят без потери карьеры; показано качественно, без скрытых числовых порогов.",
+      "en": "Hunter route state: Refusal respected without career loss; shown qualitatively without exposing hidden numeric thresholds."
+    },
+    "presentation.static.career.hunter.state.refusal-respected.caption": {
+      "ru": "Состояние охотницы: Отказ принят без потери карьеры.",
+      "en": "Hunter state: Refusal respected without career loss."
+    },
+    "presentation.hunter.state.refusal-respected.label": {
+      "ru": "Отказ принят без потери карьеры",
+      "en": "Refusal respected without career loss"
+    },
+    "presentation.static.career.hunter.state.companion-ready.alt": {
+      "ru": "Состояние охотничьего маршрута: Совместная экспедиция доступна как опция; показано качественно, без скрытых числовых порогов.",
+      "en": "Hunter route state: Companion expedition available as an option; shown qualitatively without exposing hidden numeric thresholds."
+    },
+    "presentation.static.career.hunter.state.companion-ready.caption": {
+      "ru": "Состояние охотницы: Совместная экспедиция доступна как опция.",
+      "en": "Hunter state: Companion expedition available as an option."
+    },
+    "presentation.hunter.state.companion-ready.label": {
+      "ru": "Совместная экспедиция доступна как опция",
+      "en": "Companion expedition available as an option"
+    },
+    "presentation.static.career.hunter.event.career-first-shift.alt": {
+      "ru": "Охотничья сцена: Первый завершённый контракт; статичная подача не меняет условия, эффекты или исход события.",
+      "en": "Hunter scene: First completed contract; the static presentation does not change event conditions, effects, or outcome."
+    },
+    "presentation.static.career.hunter.event.career-first-shift.caption": {
+      "ru": "Охотничье событие: Первый завершённый контракт.",
+      "en": "Hunter event: First completed contract."
+    },
+    "presentation.static.career.hunter.event.career-recognized-hunter.alt": {
+      "ru": "Охотничья сцена: Признанный охотничий путь; статичная подача не меняет условия, эффекты или исход события.",
+      "en": "Hunter scene: Recognized Hunter milestone; the static presentation does not change event conditions, effects, or outcome."
+    },
+    "presentation.static.career.hunter.event.career-recognized-hunter.caption": {
+      "ru": "Охотничье событие: Признанный охотничий путь.",
+      "en": "Hunter event: Recognized Hunter milestone."
+    },
+    "presentation.static.career.hunter.event.career-expedition-qualified.alt": {
+      "ru": "Охотничья сцена: Допуск к экспедиции; статичная подача не меняет условия, эффекты или исход события.",
+      "en": "Hunter scene: Expedition qualification; the static presentation does not change event conditions, effects, or outcome."
+    },
+    "presentation.static.career.hunter.event.career-expedition-qualified.caption": {
+      "ru": "Охотничье событие: Допуск к экспедиции.",
+      "en": "Hunter event: Expedition qualification."
+    },
+    "presentation.static.career.hunter.event.career-veteran-ready.alt": {
+      "ru": "Охотничья сцена: Готовность ветеранского пути; статичная подача не меняет условия, эффекты или исход события.",
+      "en": "Hunter scene: Veteran route readiness; the static presentation does not change event conditions, effects, or outcome."
+    },
+    "presentation.static.career.hunter.event.career-veteran-ready.caption": {
+      "ru": "Охотничье событие: Готовность ветеранского пути.",
+      "en": "Hunter event: Veteran route readiness."
+    },
+    "presentation.static.career.hunter.event.career-veteran.alt": {
+      "ru": "Охотничья сцена: Выбор ветеранского пути; статичная подача не меняет условия, эффекты или исход события.",
+      "en": "Hunter scene: Veteran route choice; the static presentation does not change event conditions, effects, or outcome."
+    },
+    "presentation.static.career.hunter.event.career-veteran.caption": {
+      "ru": "Охотничье событие: Выбор ветеранского пути.",
+      "en": "Hunter event: Veteran route choice."
+    },
+    "presentation.static.career.hunter.event.career-master-hunter.alt": {
+      "ru": "Охотничья сцена: Маршрут Мастера-охотницы; статичная подача не меняет условия, эффекты или исход события.",
+      "en": "Hunter scene: Master Hunter route; the static presentation does not change event conditions, effects, or outcome."
+    },
+    "presentation.static.career.hunter.event.career-master-hunter.caption": {
+      "ru": "Охотничье событие: Маршрут Мастера-охотницы.",
+      "en": "Hunter event: Master Hunter route."
+    },
+    "presentation.static.career.hunter.event.career-warden.alt": {
+      "ru": "Охотничья сцена: Маршрут Стража; статичная подача не меняет условия, эффекты или исход события.",
+      "en": "Hunter scene: Warden route; the static presentation does not change event conditions, effects, or outcome."
+    },
+    "presentation.static.career.hunter.event.career-warden.caption": {
+      "ru": "Охотничье событие: Маршрут Стража.",
+      "en": "Hunter event: Warden route."
+    },
+    "presentation.static.career.hunter.event.career-legend.alt": {
+      "ru": "Охотничья сцена: Легендарный маршрут; статичная подача не меняет условия, эффекты или исход события.",
+      "en": "Hunter scene: Legend route; the static presentation does not change event conditions, effects, or outcome."
+    },
+    "presentation.static.career.hunter.event.career-legend.caption": {
+      "ru": "Охотничье событие: Легендарный маршрут.",
+      "en": "Hunter event: Legend route."
+    },
+    "presentation.static.career.hunter.event.career-outcome-ready.alt": {
+      "ru": "Охотничья сцена: Карьерный маршрут завершён; статичная подача не меняет условия, эффекты или исход события.",
+      "en": "Hunter scene: Career route outcome-ready; the static presentation does not change event conditions, effects, or outcome."
+    },
+    "presentation.static.career.hunter.event.career-outcome-ready.caption": {
+      "ru": "Охотничье событие: Карьерный маршрут завершён.",
+      "en": "Hunter event: Career route outcome-ready."
+    },
+    "presentation.static.career.hunter.event.relationship-intro.alt": {
+      "ru": "Охотничья сцена: Первый рабочий контакт со старшим проводником; статичная подача не меняет условия, эффекты или исход события.",
+      "en": "Hunter scene: First work contact with the senior guide; the static presentation does not change event conditions, effects, or outcome."
+    },
+    "presentation.static.career.hunter.event.relationship-intro.caption": {
+      "ru": "Охотничье событие: Первый рабочий контакт со старшим проводником.",
+      "en": "Hunter event: First work contact with the senior guide."
+    },
+    "presentation.static.career.hunter.event.relationship-trust.alt": {
+      "ru": "Охотничья сцена: Профессиональное доверие проводника; статичная подача не меняет условия, эффекты или исход события.",
+      "en": "Hunter scene: Senior-guide professional trust; the static presentation does not change event conditions, effects, or outcome."
+    },
+    "presentation.static.career.hunter.event.relationship-trust.caption": {
+      "ru": "Охотничье событие: Профессиональное доверие проводника.",
+      "en": "Hunter event: Senior-guide professional trust."
+    },
+    "presentation.static.career.hunter.event.relationship-conflict-open.alt": {
+      "ru": "Охотничья сцена: Профессиональный спор о маршруте; статичная подача не меняет условия, эффекты или исход события.",
+      "en": "Hunter scene: Professional route conflict; the static presentation does not change event conditions, effects, or outcome."
+    },
+    "presentation.static.career.hunter.event.relationship-conflict-open.caption": {
+      "ru": "Охотничье событие: Профессиональный спор о маршруте.",
+      "en": "Hunter event: Professional route conflict."
+    },
+    "presentation.static.career.hunter.event.relationship-conflict-resolve.alt": {
+      "ru": "Охотничья сцена: Разрешение профессионального спора; статичная подача не меняет условия, эффекты или исход события.",
+      "en": "Hunter scene: Professional conflict resolution; the static presentation does not change event conditions, effects, or outcome."
+    },
+    "presentation.static.career.hunter.event.relationship-conflict-resolve.caption": {
+      "ru": "Охотничье событие: Разрешение профессионального спора.",
+      "en": "Hunter event: Professional conflict resolution."
+    },
+    "presentation.static.career.hunter.event.relationship-companion.alt": {
+      "ru": "Охотничья сцена: Решение о совместной экспедиции; статичная подача не меняет условия, эффекты или исход события.",
+      "en": "Hunter scene: Companion decision; the static presentation does not change event conditions, effects, or outcome."
+    },
+    "presentation.static.career.hunter.event.relationship-companion.caption": {
+      "ru": "Охотничье событие: Решение о совместной экспедиции.",
+      "en": "Hunter event: Companion decision."
+    },
+    "presentation.static.career.hunter.event.clues-forest-trail.alt": {
+      "ru": "Охотничья сцена: Лесная подсказка для охотницы; статичная подача не меняет условия, эффекты или исход события.",
+      "en": "Hunter scene: Forest clue for Hunter; the static presentation does not change event conditions, effects, or outcome."
+    },
+    "presentation.static.career.hunter.event.clues-forest-trail.caption": {
+      "ru": "Охотничье событие: Лесная подсказка для охотницы.",
+      "en": "Hunter event: Forest clue for Hunter."
+    },
+    "presentation.static.career.hunter.event.clues-lumber-truth.alt": {
+      "ru": "Охотничья сцена: Наблюдение лесоруба для охотницы; статичная подача не меняет условия, эффекты или исход события.",
+      "en": "Hunter scene: Lumber observation for Hunter; the static presentation does not change event conditions, effects, or outcome."
+    },
+    "presentation.static.career.hunter.event.clues-lumber-truth.caption": {
+      "ru": "Охотничье событие: Наблюдение лесоруба для охотницы.",
+      "en": "Hunter event: Lumber observation for Hunter."
+    },
+    "presentation.static.career.hunter.event.clues-tavern-rumour.alt": {
+      "ru": "Охотничья сцена: Подтверждённый слух таверны для охотницы; статичная подача не меняет условия, эффекты или исход события.",
+      "en": "Hunter scene: Confirmed Tavern clue for Hunter; the static presentation does not change event conditions, effects, or outcome."
+    },
+    "presentation.static.career.hunter.event.clues-tavern-rumour.caption": {
+      "ru": "Охотничье событие: Подтверждённый слух таверны для охотницы.",
+      "en": "Hunter event: Confirmed Tavern clue for Hunter."
+    },
+    "presentation.static.career.hunter.event.clues-farm-sample.alt": {
+      "ru": "Охотничья сцена: Фермерский образец как охотничья подсказка; статичная подача не меняет условия, эффекты или исход события.",
+      "en": "Hunter scene: Farm sample as Hunter clue; the static presentation does not change event conditions, effects, or outcome."
+    },
+    "presentation.static.career.hunter.event.clues-farm-sample.caption": {
+      "ru": "Охотничье событие: Фермерский образец как охотничья подсказка.",
+      "en": "Hunter event: Farm sample as Hunter clue."
+    },
+    "presentation.static.career.hunter.event.items-preserve-return.alt": {
+      "ru": "Охотничья сцена: Сохранение результата экспедиции; статичная подача не меняет условия, эффекты или исход события.",
+      "en": "Hunter scene: Preserve expedition evidence; the static presentation does not change event conditions, effects, or outcome."
+    },
+    "presentation.static.career.hunter.event.items-preserve-return.caption": {
+      "ru": "Охотничье событие: Сохранение результата экспедиции.",
+      "en": "Hunter event: Preserve expedition evidence."
+    },
+    "presentation.static.career.hunter.event.items-rough-route-return.alt": {
+      "ru": "Охотничья сцена: Запись верёвочного маршрута; статичная подача не меняет условия, эффекты или исход события.",
+      "en": "Hunter scene: Record rope-assisted route; the static presentation does not change event conditions, effects, or outcome."
+    },
+    "presentation.static.career.hunter.event.items-rough-route-return.caption": {
+      "ru": "Охотничье событие: Запись верёвочного маршрута.",
+      "en": "Hunter event: Record rope-assisted route."
+    },
+    "presentation.static.career.hunter.event.routes-master-ready.alt": {
+      "ru": "Охотничья сцена: Готовность маршрута Мастера; статичная подача не меняет условия, эффекты или исход события.",
+      "en": "Hunter scene: Master Hunter readiness; the static presentation does not change event conditions, effects, or outcome."
+    },
+    "presentation.static.career.hunter.event.routes-master-ready.caption": {
+      "ru": "Охотничье событие: Готовность маршрута Мастера.",
+      "en": "Hunter event: Master Hunter readiness."
+    },
+    "presentation.static.career.hunter.event.routes-warden-ready.alt": {
+      "ru": "Охотничья сцена: Готовность маршрута Стража; статичная подача не меняет условия, эффекты или исход события.",
+      "en": "Hunter scene: Warden readiness; the static presentation does not change event conditions, effects, or outcome."
+    },
+    "presentation.static.career.hunter.event.routes-warden-ready.caption": {
+      "ru": "Охотничье событие: Готовность маршрута Стража.",
+      "en": "Hunter event: Warden readiness."
+    },
+    "presentation.static.career.hunter.event.routes-legend-contract.alt": {
+      "ru": "Охотничья сцена: Редкий межсистемный контракт; статичная подача не меняет условия, эффекты или исход события.",
+      "en": "Hunter scene: Rare multi-system contract; the static presentation does not change event conditions, effects, or outcome."
+    },
+    "presentation.static.career.hunter.event.routes-legend-contract.caption": {
+      "ru": "Охотничье событие: Редкий межсистемный контракт.",
+      "en": "Hunter event: Rare multi-system contract."
+    },
+    "presentation.static.career.hunter.event.routes-legend-return.alt": {
+      "ru": "Охотничья сцена: Успешное возвращение редкого маршрута; статичная подача не меняет условия, эффекты или исход события.",
+      "en": "Hunter scene: Rare-route successful return; the static presentation does not change event conditions, effects, or outcome."
+    },
+    "presentation.static.career.hunter.event.routes-legend-return.caption": {
+      "ru": "Охотничье событие: Успешное возвращение редкого маршрута.",
+      "en": "Hunter event: Rare-route successful return."
+    },
+    "presentation.static.career.hunter.event.school-field-craft.alt": {
+      "ru": "Охотничья сцена: Полевой школьный метод достигает охотничьей карьеры; статичная подача не меняет условия, эффекты или исход события.",
+      "en": "Hunter scene: Field Craft reaches Hunter; the static presentation does not change event conditions, effects, or outcome."
+    },
+    "presentation.static.career.hunter.event.school-field-craft.caption": {
+      "ru": "Охотничье событие: Полевой школьный метод достигает охотничьей карьеры.",
+      "en": "Hunter event: Field Craft reaches Hunter."
+    },
+    "presentation.static.activity.hunter-expedition.route.default.alt": {
+      "ru": "Охотничья экспедиция: Подготовка экспедиции; сцена не изображает фиксированного босса или существа.",
+      "en": "Hunter expedition: Expedition preparation; the scene does not depict a fixed boss or creature."
+    },
+    "presentation.static.activity.hunter-expedition.route.default.caption": {
+      "ru": "Экспедиция: Подготовка экспедиции.",
+      "en": "Expedition: Expedition preparation."
+    },
+    "presentation.hunter.expedition.route.default.label": {
+      "ru": "Подготовка экспедиции",
+      "en": "Expedition preparation"
+    },
+    "presentation.static.activity.hunter-expedition.route.local-route.alt": {
+      "ru": "Охотничья экспедиция: Локальный маршрут; сцена не изображает фиксированного босса или существа.",
+      "en": "Hunter expedition: Local route; the scene does not depict a fixed boss or creature."
+    },
+    "presentation.static.activity.hunter-expedition.route.local-route.caption": {
+      "ru": "Экспедиция: Локальный маршрут.",
+      "en": "Expedition: Local route."
+    },
+    "presentation.hunter.expedition.route.local-route.label": {
+      "ru": "Локальный маршрут",
+      "en": "Local route"
+    },
+    "presentation.static.activity.hunter-expedition.route.rough-route.alt": {
+      "ru": "Охотничья экспедиция: Пересечённый маршрут; сцена не изображает фиксированного босса или существа.",
+      "en": "Hunter expedition: Rough route; the scene does not depict a fixed boss or creature."
+    },
+    "presentation.static.activity.hunter-expedition.route.rough-route.caption": {
+      "ru": "Экспедиция: Пересечённый маршрут.",
+      "en": "Expedition: Rough route."
+    },
+    "presentation.hunter.expedition.route.rough-route.label": {
+      "ru": "Пересечённый маршрут",
+      "en": "Rough route"
+    },
+    "presentation.static.activity.hunter-expedition.route.rare-route.alt": {
+      "ru": "Охотничья экспедиция: Редкий маршрут по независимым подсказкам; сцена не изображает фиксированного босса или существа.",
+      "en": "Hunter expedition: Rare route from independent clues; the scene does not depict a fixed boss or creature."
+    },
+    "presentation.static.activity.hunter-expedition.route.rare-route.caption": {
+      "ru": "Экспедиция: Редкий маршрут по независимым подсказкам.",
+      "en": "Expedition: Rare route from independent clues."
+    },
+    "presentation.hunter.expedition.route.rare-route.label": {
+      "ru": "Редкий маршрут по независимым подсказкам",
+      "en": "Rare route from independent clues"
+    },
+    "presentation.static.activity.hunter-expedition.return.success.alt": {
+      "ru": "Возвращение охотничьей экспедиции: Успешное возвращение; результат показан без фиксированной добычи или существа.",
+      "en": "Hunter expedition return: Successful return; the result is shown without a fixed quarry or creature."
+    },
+    "presentation.static.activity.hunter-expedition.return.success.caption": {
+      "ru": "Возвращение экспедиции: Успешное возвращение.",
+      "en": "Expedition return: Successful return."
+    },
+    "presentation.hunter.expedition.return.success.label": {
+      "ru": "Успешное возвращение",
+      "en": "Successful return"
+    },
+    "presentation.static.activity.hunter-expedition.return.escape.alt": {
+      "ru": "Возвращение охотничьей экспедиции: Безопасный выход без полного успеха; результат показан без фиксированной добычи или существа.",
+      "en": "Hunter expedition return: Safe escape without full success; the result is shown without a fixed quarry or creature."
+    },
+    "presentation.static.activity.hunter-expedition.return.escape.caption": {
+      "ru": "Возвращение экспедиции: Безопасный выход без полного успеха.",
+      "en": "Expedition return: Safe escape without full success."
+    },
+    "presentation.hunter.expedition.return.escape.label": {
+      "ru": "Безопасный выход без полного успеха",
+      "en": "Safe escape without full success"
+    },
+    "presentation.static.activity.hunter-expedition.return.failure.alt": {
+      "ru": "Возвращение охотничьей экспедиции: Неудачное завершение экспедиции; результат показан без фиксированной добычи или существа.",
+      "en": "Hunter expedition return: Expedition failure; the result is shown without a fixed quarry or creature."
+    },
+    "presentation.static.activity.hunter-expedition.return.failure.caption": {
+      "ru": "Возвращение экспедиции: Неудачное завершение экспедиции.",
+      "en": "Expedition return: Expedition failure."
+    },
+    "presentation.hunter.expedition.return.failure.label": {
+      "ru": "Неудачное завершение экспедиции",
+      "en": "Expedition failure"
+    },
+    "ui.hunter.stageAria": {
+      "ru": "Этап карьеры охотницы: {stage}",
+      "en": "Hunter career stage: {stage}"
+    },
+    "ui.hunter.relationshipAria": {
+      "ru": "Профессиональная связь со старшим проводником: {stage}",
+      "en": "Senior-guide professional relationship: {stage}"
+    },
+    "ui.hunter.stateAria": {
+      "ru": "Состояние охотничьего маршрута: {state}",
+      "en": "Hunter route state: {state}"
+    },
+    "ui.hunter.itemAria": {
+      "ru": "Снаряжение охотницы: {item}",
+      "en": "Hunter gear: {item}"
+    },
+    "ui.hunter.expeditionHelp": {
+      "ru": "Отдельная большая экспедиция: вход стоит 2 энергии. Обычная охотничья смена остаётся отдельной работой за 1 энергию.",
+      "en": "A separate large expedition with a 2-Energy entry cost. Ordinary Hunter work remains a separate 1-Energy shift."
+    },
+    "ui.hunter.relationshipEventAria": {
+      "ru": "Профессиональная сцена со старшим проводником: {state}",
+      "en": "Senior-guide professional scene: {state}"
+    },
+    "ui.hunter.relationshipEvent.intro": {
+      "ru": "Рабочий контакт",
+      "en": "Work contact"
+    },
+    "ui.hunter.relationshipEvent.trust": {
+      "ru": "Профессиональное доверие",
+      "en": "Professional trust"
+    },
+    "ui.hunter.relationshipEvent.conflict-open": {
+      "ru": "Открытый спор",
+      "en": "Conflict open"
+    },
+    "ui.hunter.relationshipEvent.conflict-resolve": {
+      "ru": "Разрешение спора",
+      "en": "Conflict resolution"
+    },
+    "ui.hunter.relationshipEvent.companion": {
+      "ru": "Решение о спутнике",
+      "en": "Companion decision"
+    },
+    "ui.hunter.expedition.route.default.text": {
+      "ru": "Это отдельная двухэнергетическая экспедиция. Сначала выбирается маршрут; обычная смена охотницы остаётся отдельной работой.",
+      "en": "This is a separate two-Energy expedition. Choose a route first; ordinary Hunter work remains a separate shift."
+    },
+    "ui.hunter.expedition.route.local-route.text": {
+      "ru": "Локальный маршрут держится отмеченных троп и обычной полевой работы. Он не превращает каждый контракт в большую охоту.",
+      "en": "The local route stays on marked ground and ordinary field practice. It does not turn every contract into a large hunt."
+    },
+    "ui.hunter.expedition.route.rough-route.text": {
+      "ru": "Пересечённый маршрут использует существующую возможность верёвочного набора и показывает подготовленный переход, а не боевую сцену.",
+      "en": "The rough route uses the existing Rope Kit capability and presents a prepared crossing, not a combat scene."
+    },
+    "ui.hunter.expedition.route.rare-route.text": {
+      "ru": "Редкий маршрут соединяет уже записанные подсказки и полевую подготовку. Неизвестная цель остаётся неопределённой и не получает фиксированного образа.",
+      "en": "The rare route combines already-recorded clues with field preparation. Its unknown target remains unspecified and receives no fixed depiction."
     }
   }
 }
