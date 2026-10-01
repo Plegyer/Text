@@ -16,7 +16,10 @@
       "paidLessonGenericEvents": 2,
       "exactNightStudyEvents": 24,
       "teacherMediaIdentities": 8
-    }
+    },
+    "compatibilityOnlyEventIds": [
+      "school-life-content-v1.after-night-study"
+    ]
   },
   "preparationOnly": [
     "content/packs/school-target/school-lesson-content-v1.json",
