@@ -69,3 +69,13 @@ This ledger is disposition/evidence only. It does not:
 - convert fixture/preparation material into shipped content;
 - choose missing Product thresholds or mechanics;
 - resolve producer-owned blockers.
+
+
+## C4-124 dependency state
+
+At the first fresh-candidate check after C4-123:
+
+- Chat 1 v9 PR #147 was still draft/mutable. Its first head `8257571da18d24009f23d4e342dd494398536fbc` failed exact-head CI run #437 (560/570 pass); producer then moved the branch to a new mutable head, so the failed head is not QA-gated.
+- Chat 3 v11 PR #146 was the first fresh C2/C3/C5-v11 candidate visible, but head `e750480404b1270ffbe47ca1dad2cb381bcf29d1` failed exact-head CI run #436 (539/568 pass) and was not declared frozen.
+- Therefore C4-124 had **no eligible frozen candidate** at that snapshot. QA does not gate mutable or red heads and does not repair producer branches.
+- C4-124 remains pending until Chat 1 v9 freezes first, or—if it is not frozen—the first green/frozen C2/C3/C5 v11 candidate appears.
