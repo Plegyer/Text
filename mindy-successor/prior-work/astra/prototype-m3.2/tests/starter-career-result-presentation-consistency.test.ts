@@ -39,7 +39,13 @@ test('starter career result presentation is animation-mode independent',()=>{
     const id=`job/${career}/result/default`;
     const on=resolvePresentation(checked,presentation,id,{animationsEnabled:true,occurrenceKey:'starter-result'});
     const off=resolvePresentation(checked,presentation,id,{animationsEnabled:false,occurrenceKey:'starter-result'});
-    assert.equal(on.selected?.src,`assets/presentation/${file}`,id+' on');
+    const slot=presentation.slots[id];
+    if(slot.pool){
+      assert.equal(on.selected?.source,'override-pool',id+' on source');
+      assert.ok(slot.pool.candidates.some((candidate:any)=>candidate.src===on.selected?.src),id+' on pool member');
+    }else{
+      assert.equal(on.selected?.src,`assets/presentation/${file}`,id+' on');
+    }
     assert.equal(off.selected?.src,`assets/presentation/${file}`,id+' off');
     assert.equal(on.textOnly,false,id+' on');
     assert.equal(off.textOnly,false,id+' off');
