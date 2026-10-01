@@ -64,7 +64,7 @@
       "variants": [
         {
           "id": "spring-window",
-          "text": "Spring air slips through a cracked window in the shared room. Someone has wedged it open with a chipped cup, and nobody wants to argue with the first mild night.",
+          "text": "In spring, the window is opened for a short while to let out the damp air after rain. The shared room is cramped, but at least belongings can dry before morning.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -77,7 +77,7 @@
         },
         {
           "id": "summer-heat",
-          "text": "The cheap room holds the day's summer heat. Bedrolls are spaced as far apart as the floor allows, and everyone agrees that the open window belongs to everybody.",
+          "text": "In summer, the cheap room holds the heat for a long time, and people try not to block the way to the door. The night still passes under a roof, even without much comfort.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -90,7 +90,7 @@
         },
         {
           "id": "winter-stove",
-          "text": "A small stove ticks in the corner while winter coats hang from every spare peg. The room is crowded, warm enough, and quieter than the street outside.",
+          "text": "In winter, the space around the small stove is always more crowded than usual. People dry gloves and shoes in turns, trying not to hold the warmth longer than needed.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -103,7 +103,7 @@
         },
         {
           "id": "shared-room",
-          "text": "The cheap shared room is plain and crowded, but it is still a roof, a door, and a place to sleep without adding another street-night risk.",
+          "text": "The shared room runs on simple rules: keep the passage clear, avoid waking those already asleep, and keep belongings close. Those small habits make one night more predictable.",
           "conditions": [],
           "media": [
             "stage.room"
