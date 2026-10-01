@@ -268,6 +268,10 @@ export function presentationIdForTavernNightChoice(choiceId:string){
   return `night/tavern/${clean(choiceId)}`;
 }
 
+export function presentationIdForTavernRelationshipRoot(){
+  return 'relationship/tavern-recurring-traveler/default';
+}
+
 export function presentationIdForTavernRelationshipStage(stage:string){
   return `relationship/tavern-recurring-traveler/stage/${clean(stage)}`;
 }
@@ -344,20 +348,26 @@ export function presentationSlots(cat:Catalog):PresentationSlot[]{
   for(const choiceId of TAVERN_NIGHT_CHOICE_IDS){
     add({id:presentationIdForTavernNightChoice(choiceId),label:`Tavern · Night · ${choiceId}`,baseMediaIds:[],fallbackId:'job/tavern/result/default'});
   }
+  add({id:presentationIdForTavernRelationshipRoot(),label:'Tavern · recurring traveler · default',baseMediaIds:[],fallbackId:'job/tavern/result/default'});
   for(const stage of TAVERN_RELATIONSHIP_STAGES){
-    add({id:presentationIdForTavernRelationshipStage(stage),label:`Tavern · recurring traveler · ${stage}`,baseMediaIds:[],fallbackId:'job/tavern/result/default'});
+    add({id:presentationIdForTavernRelationshipStage(stage),label:`Tavern · recurring traveler · ${stage}`,baseMediaIds:[],fallbackId:presentationIdForTavernRelationshipRoot()});
   }
   for(const stateId of TAVERN_PRESENTATION_STATE_IDS){
     add({id:presentationIdForTavernState(stateId),label:`Tavern · state · ${stateId}`,baseMediaIds:[],fallbackId:'job/tavern/result/default'});
   }
 
   for(const event of cat.events){
+    const tavernFallback=event.sourceDomain==='tavern'
+      ?'job/tavern/result/default'
+      :event.sourceDomain==='tavern.recurring-traveler'
+       ?presentationIdForTavernRelationshipRoot()
+       :'location/town/default';
     for(const variant of event.variants){
       add({
         id:presentationIdForEvent(cat,event.id,variant.id),
         label:`${event.title} · ${variant.id}`,
         baseMediaIds:variant.media,
-        fallbackId:'location/town/default'
+        fallbackId:tavernFallback
       });
     }
   }
