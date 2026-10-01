@@ -7237,6 +7237,614 @@
     "presentation.static.career.tavern.event.information-rumour-route.caption": {
       "ru": "Таверна: Подтверждение информационного маршрута.",
       "en": "Tavern: Information-route confirmation."
+    },
+    "action.guard.shift.scene.spring.default.text": {
+      "ru": "Весенняя смена начинается с талой воды, разбитых дорог и новых споров о границах. Обычная работа стражи — выслушать стороны, удержать проход открытым и записать, что именно произошло, не превращая каждый конфликт в силовое столкновение.",
+      "en": "Spring duty begins with meltwater, damaged roads, and renewed boundary disputes. Ordinary Guard work is to hear both sides, keep passage usable, and record what actually happened without turning every disagreement into a use-of-force scene."
+    },
+    "action.guard.shift.scene.spring.property-dispute.text": {
+      "ru": "В споре о дворе, заборе или проходе важны конкретные предметы разногласия: где стояла метка, кто пользовался дорогой и что изменилось после зимы. Страж фиксирует версии обеих сторон и отделяет проверяемые детали от требований.",
+      "en": "In a yard, fence, or passage dispute, the useful questions are concrete: where the marker stood, who used the road, and what changed after winter. The Guard records both accounts and separates verifiable details from demands."
+    },
+    "action.guard.shift.scene.spring.road-reopen.text": {
+      "ru": "Открытая после зимы дорога быстро собирает ремонтников, торговые телеги и путешественников. Задача смены — установить понятный порядок прохода и передать следующему патрулю запись о повреждениях и временных ограничениях.",
+      "en": "A road reopened after winter quickly fills with repair crews, trade carts, and travelers. The shift is about establishing a clear passage order and handing the next patrol a record of damage and temporary limits."
+    },
+    "action.guard.shift.scene.summer.default.text": {
+      "ru": "Летняя смена у праздника — это потерянные вещи, перегруженные переулки и люди, которые не слышат обычных указаний из-за шума. Страж освобождает узкие проходы и решает мелкие споры до того, как толпа сама усилит давление.",
+      "en": "Summer festival duty means lost property, overloaded lanes, and people who cannot hear ordinary directions through the noise. The Guard keeps narrow routes open and resolves small disputes before the crowd amplifies the pressure."
+    },
+    "action.guard.shift.scene.summer.festival.text": {
+      "ru": "Хорошая летняя смена заметна тем, что люди понимают, куда идти и что происходит. Короткие объяснения, повторённые одинаково нескольким группам, снижают давление лучше, чем демонстративная угроза.",
+      "en": "A good summer shift is visible in whether people know where to go and what is happening. Short instructions repeated consistently to several groups reduce pressure better than performative threats."
+    },
+    "action.guard.shift.scene.summer.market-crowd.text": {
+      "ru": "На жарком рынке спор часто начинается не с преступления, а с очереди, тесного прохода или несовпадающих ожиданий. Профессиональная смена сначала восстанавливает поток людей и только потом разбирается с заявлением по существу.",
+      "en": "In a hot market, conflict often begins with a queue, a blocked passage, or mismatched expectations rather than a crime. Professional duty restores safe movement first and then handles the underlying complaint."
+    },
+    "action.guard.shift.scene.autumn.default.text": {
+      "ru": "Осенью у ворот становится больше грузов, пропусков и письменных отметок. Страж проверяет несоответствие по документам и фактам, а не обращается с неопределённостью как с доказанной виной.",
+      "en": "Autumn brings more cargo, passes, and written marks to the gate. The Guard checks discrepancies against documents and facts rather than treating uncertainty as proven guilt."
+    },
+    "action.guard.shift.scene.autumn.cargo-check.text": {
+      "ru": "Подозрительный пропуск — это повод проверить дату, печать, маршрут и описание груза. Если данные сходятся, задержание не становится самоцелью; если нет, различие должно быть записано так, чтобы другой человек мог его проверить.",
+      "en": "A suspicious pass is a reason to check date, seal, route, and cargo description. If the details match, detention is not an end in itself; if they do not, the discrepancy should be recorded so another person can verify it."
+    },
+    "action.guard.shift.scene.autumn.market-records.text": {
+      "ru": "К концу торгового дня память уже ненадёжна. Письменный отчёт связывает жалобу, пропуск и фактическое решение смены, чтобы следующая проверка не зависела от слухов или статуса участника.",
+      "en": "By the end of a trade day, memory is already unreliable. A written report links the complaint, the pass, and the actual shift decision so the next review does not depend on rumor or a participant's status."
+    },
+    "action.guard.shift.scene.winter.default.text": {
+      "ru": "Зимний патруль сталкивается с закрытыми дорогами, нехваткой мест и людьми, застрявшими между ночлегом и движением по городу. Бедность не становится категорией преступления: задача — сохранить доступные проходы и зафиксировать реальную проблему.",
+      "en": "Winter patrols face closed roads, scarce beds, and people caught between shelter and movement through the city. Poverty is not a crime category; the job is to keep usable access open and record the actual problem."
+    },
+    "action.guard.shift.scene.winter.lodging-pressure.text": {
+      "ru": "Когда возле дешёвого ночлега или улицы скапливаются люди, служебная задача требует различать опасную блокировку, обычную нехватку места и человека, которому просто некуда идти. Одно состояние не должно автоматически означать другое.",
+      "en": "When people gather near cheap lodging or on the street, professional duty requires distinguishing a dangerous blockage, ordinary lack of space, and someone who simply has nowhere to go. One condition should not automatically imply another."
+    },
+    "action.guard.shift.scene.winter.closed-quarter.text": {
+      "ru": "Закрытый квартал требует ясных маршрутов обхода, учёта поставок и одинаковых инструкций для разных групп. Угроза сама по себе не создаёт порядка; полезнее сообщить, что закрыто, почему и какой путь остаётся доступным.",
+      "en": "A closed quarter needs clear detours, supply awareness, and consistent instructions for different groups. Threats do not create order by themselves; it is more useful to state what is closed, why, and which route remains available."
+    },
+    "event.guard.access.badge.title": {
+      "ru": "Служебный значок стражи",
+      "en": "Official Guard badge"
+    },
+    "event.guard.access.badge.variant.default.text": {
+      "ru": "Значок подтверждает, что человек действительно выполняет назначенную работу стражи. Он может объяснить узкий служебный доступ, но не даёт иммунитета, права на любую дверь или автоматической правоты в споре.",
+      "en": "The badge confirms that the holder is performing assigned Guard duty. It can justify narrow official access, but it grants no immunity, no right to every door, and no automatic correctness in a dispute."
+    },
+    "event.guard.access.badge.choice.take-badge.label": {
+      "ru": "Взять значок",
+      "en": "Take the badge"
+    },
+    "event.guard.access.badge.choice.take-badge.text": {
+      "ru": "Принять узкую возможность официального доступа.",
+      "en": "Accept the narrow official-access capability."
+    },
+    "event.guard.access.badge.choice.leave-badge.label": {
+      "ru": "Оставить значок в караулке",
+      "en": "Leave the badge at the desk"
+    },
+    "event.guard.access.badge.choice.leave-badge.text": {
+      "ru": "Сохранить обычную службу стражи, пока не принимая дополнительный доступ.",
+      "en": "Keep ordinary Guard work without taking the optional access route yet."
+    },
+    "event.guard.access.sealed-pass.title": {
+      "ru": "Запечатанный служебный пропуск",
+      "en": "Sealed Guard pass"
+    },
+    "event.guard.access.sealed-pass.variant.default.text": {
+      "ru": "Запечатанный пропуск относится к конкретной последующей проверке. Он подтверждает разрешение пройти дальше в рамках этого дела и не превращается в универсальный пропуск по городу.",
+      "en": "The sealed pass belongs to a specific follow-up. It confirms permission to proceed within that case and does not become a universal city-wide pass."
+    },
+    "event.guard.access.sealed-pass.choice.take-pass.label": {
+      "ru": "Взять запечатанный пропуск",
+      "en": "Take the sealed pass"
+    },
+    "event.guard.access.sealed-pass.choice.take-pass.text": {
+      "ru": "Принять узкий инструмент доступа для последующей проверки.",
+      "en": "Accept the narrow follow-up access tool."
+    },
+    "event.guard.access.sealed-pass.choice.defer-pass.label": {
+      "ru": "Отложить ограниченный доступ",
+      "en": "Defer restricted access"
+    },
+    "event.guard.access.sealed-pass.choice.defer-pass.text": {
+      "ru": "Сохранить доказательство, не заявляя особый доступ.",
+      "en": "Keep the evidence without claiming special access."
+    },
+    "event.guard.access.evidence-ledger.title": {
+      "ru": "Связать отчёты в цепочку доказательств",
+      "en": "Link reports into an evidence thread"
+    },
+    "event.guard.access.evidence-ledger.variant.default.text": {
+      "ru": "Связать два документа в одну цепочку — значит показать, почему они относятся к одному вопросу и где каждый был получен. Это локальный след доказательств, а не глобальный реестр преступлений.",
+      "en": "Linking two documents into one thread means showing why they concern the same question and where each came from. It is a local evidence trail, not a global crime ledger."
+    },
+    "event.guard.access.evidence-ledger.choice.link.label": {
+      "ru": "Связать цепочку доказательств",
+      "en": "Link the evidence thread"
+    },
+    "event.guard.access.evidence-ledger.choice.link.text": {
+      "ru": "Опубликовать один типизированный факт подготовки Major Case.",
+      "en": "Publish one typed Major Case preparation fact."
+    },
+    "event.guard.career.first-shift.title": {
+      "ru": "Доверенная служба",
+      "en": "Trusted Guard"
+    },
+    "event.guard.career.first-shift.variant.default.text": {
+      "ru": "Одна полностью отработанная городская смена выводит тебя из поручений новобранца к обычной службе, которой уже доверяют.",
+      "en": "One complete city-duty shift is enough to move from recruit errands into trusted ordinary Guard work."
+    },
+    "event.guard.career.first-shift.choice.continue.label": {
+      "ru": "Принять доверенную службу",
+      "en": "Take trusted duty"
+    },
+    "event.guard.career.first-shift.choice.continue.text": {
+      "ru": "Принять обычные отчёты, доступ и повторяющиеся профессиональные контакты без изменения зарплатного договора.",
+      "en": "Accept ordinary reports, access, and recurring professional contacts without changing the wage contract."
+    },
+    "event.guard.career.senior.title": {
+      "ru": "Старшая служба",
+      "en": "Senior Guard"
+    },
+    "event.guard.career.senior.variant.default.text": {
+      "ru": "Повторяющаяся обычная служба показала достаточную надёжность, чтобы работать с доказательствами, доступом, конфликтами с напарником и решениями городских маршрутов.",
+      "en": "Repeated ordinary duty has made you reliable enough to handle evidence, access, partner conflicts, and route-level city decisions."
+    },
+    "event.guard.career.senior.choice.continue.label": {
+      "ru": "Принять старшую ответственность",
+      "en": "Take senior responsibility"
+    },
+    "event.guard.career.senior.choice.continue.text": {
+      "ru": "Открыть подготовку продвинутых путей стражи, не навязывая поздний исход.",
+      "en": "Open advanced Guard route preparation without forcing a late outcome."
+    },
+    "event.guard.career.duty-breadth.title": {
+      "ru": "Широта службы",
+      "en": "Duty breadth"
+    },
+    "event.guard.career.duty-breadth.variant.default.text": {
+      "ru": "Ты уже работала со спорами, толпами, давлением рынка, отчётами и зимней помощью. Запись достаточно широка, чтобы поддержать готовность Veteran.",
+      "en": "You have now worked disputes, crowds, market pressure, reports, and winter relief. The record is broad enough to support Veteran readiness."
+    },
+    "event.guard.career.duty-breadth.choice.record.label": {
+      "ru": "Зафиксировать широту службы",
+      "en": "Record the breadth"
+    },
+    "event.guard.career.duty-breadth.choice.record.text": {
+      "ru": "Сохранить запись о широте службы как локальный факт прогрессии стражи.",
+      "en": "Keep the duty record as a Guard-local progression fact."
+    },
+    "event.guard.career.veteran-ready.title": {
+      "ru": "Готовность пути Veteran",
+      "en": "Veteran route ready"
+    },
+    "event.guard.career.veteran-ready.variant.default.text": {
+      "ru": "Veteran — это путь широкой обычной службы: много смен, разные сезоны, споры, толпы, рынок, отчёты и зимняя помощь. Его ценность в повторяемой надёжности, а не в крупном деле.",
+      "en": "Veteran is the route of broad ordinary service: many shifts across seasons, disputes, crowds, market duty, reports, and winter relief. Its identity is repeatable reliability rather than a Major Case."
+    },
+    "event.guard.career.veteran-ready.choice.record.label": {
+      "ru": "Зафиксировать готовность Veteran",
+      "en": "Record Veteran readiness"
+    },
+    "event.guard.career.veteran-ready.choice.record.text": {
+      "ru": "Сохранить готовность Veteran рядом с возможной готовностью Officer, Reform, Network или Major Case.",
+      "en": "Keep Veteran eligibility alongside any Officer, Reform, Network, or Major Case readiness."
+    },
+    "event.guard.career.choose-route.title": {
+      "ru": "Выбрать поздний путь стражи",
+      "en": "Choose a late Guard route"
+    },
+    "event.guard.career.choose-route.variant.default.text": {
+      "ru": "Готовность позднего маршрута означает, что собраны условия для выбора ветки. Она не обязана немедленно менять карьеру и тем более не создаёт новую публичную концовку.",
+      "en": "Late-route readiness means the prerequisites for choosing a branch are present. It need not commit the career immediately and it does not create a new public ending."
+    },
+    "event.guard.career.choose-route.choice.veteran.label": {
+      "ru": "Выбрать Veteran",
+      "en": "Take Veteran"
+    },
+    "event.guard.career.choose-route.choice.veteran.text": {
+      "ru": "Выбрать опытную обычную службу.",
+      "en": "Choose seasoned ordinary service."
+    },
+    "event.guard.career.choose-route.choice.officer.label": {
+      "ru": "Выбрать Officer",
+      "en": "Take Officer"
+    },
+    "event.guard.career.choose-route.choice.officer.text": {
+      "ru": "Выбрать командную и формальную работу с делами.",
+      "en": "Choose command and formal case management."
+    },
+    "event.guard.career.choose-route.choice.reform.label": {
+      "ru": "Выбрать Reform / Order",
+      "en": "Take Reform / Order"
+    },
+    "event.guard.career.choose-route.choice.reform.text": {
+      "ru": "Выбрать конкретное изменение практики без шкалы морали.",
+      "en": "Choose concrete practice reform without a morality meter."
+    },
+    "event.guard.career.choose-route.choice.network.label": {
+      "ru": "Выбрать Network",
+      "en": "Take Network"
+    },
+    "event.guard.career.choose-route.choice.network.text": {
+      "ru": "Выбрать доступ и согласованное институциональное влияние без валюты коррупции.",
+      "en": "Choose access and negotiated institutional influence without a corruption currency."
+    },
+    "event.guard.career.choose-route.choice.defer.label": {
+      "ru": "Оставить пути открытыми",
+      "en": "Keep routes open"
+    },
+    "event.guard.career.choose-route.choice.defer.text": {
+      "ru": "Пока не выбирать позднюю ветку.",
+      "en": "Do not choose a late branch yet."
+    },
+    "event.guard.career.choose-major-case.title": {
+      "ru": "Выбрать путь Major Case",
+      "en": "Choose the Major Case route"
+    },
+    "event.guard.career.choose-major-case.variant.default.text": {
+      "ru": "Много-системный путь Major Case готов, но сама готовность всё ещё не заставляет немедленно выбирать позднюю ветку.",
+      "en": "The multi-system Major Case route is ready, but readiness still does not force a late-branch choice."
+    },
+    "event.guard.career.choose-major-case.choice.major-case.label": {
+      "ru": "Выбрать Major Case",
+      "en": "Take Major Case"
+    },
+    "event.guard.career.choose-major-case.choice.major-case.text": {
+      "ru": "Выбрать много-системный исследовательский путь.",
+      "en": "Choose the multi-system investigation route."
+    },
+    "event.guard.career.choose-major-case.choice.defer.label": {
+      "ru": "Оставить Major Case открытым",
+      "en": "Keep Major Case open"
+    },
+    "event.guard.career.choose-major-case.choice.defer.text": {
+      "ru": "Оставить путь готовым, пока не выбирая его.",
+      "en": "Leave the route ready without choosing it yet."
+    },
+    "event.guard.career.outcome-ready.title": {
+      "ru": "Стража: поздний путь оформлен",
+      "en": "Guard outcome-ready"
+    },
+    "event.guard.career.outcome-ready.variant.default.text": {
+      "ru": "У карьеры стражи оформлено полное состояние позднего пути. Hard Work остаётся независимо доступным, а любая сложная публичная концовка требует отдельного разрешения.",
+      "en": "The Guard career has a complete late-route state. Hard Work remains independently eligible and any complex public ending still requires separate authorization."
+    },
+    "event.guard.career.outcome-ready.choice.continue.label": {
+      "ru": "Продолжить жить",
+      "en": "Keep living"
+    },
+    "event.guard.career.outcome-ready.choice.continue.text": {
+      "ru": "Перейти в состояние готового исхода без автоматического принятия концовки.",
+      "en": "Move to outcome-ready without auto-committing an ending."
+    },
+    "event.guard.city.dispute.title": {
+      "ru": "Профессиональное урегулирование спора",
+      "en": "Professional dispute response"
+    },
+    "event.guard.city.dispute.variant.default.text": {
+      "ru": "В споре обе стороны хотят, чтобы страж сразу признал их правыми. Профессиональная запись вместо этого фиксирует отдельные утверждения, общие факты и то, что остаётся неподтверждённым; решение смены должно быть воспроизводимо по этим данным.",
+      "en": "Both sides of a dispute want the Guard to declare them right immediately. A professional record instead separates claims, shared facts, and what remains unverified; the shift decision should be reproducible from that record."
+    },
+    "event.guard.city.dispute.choice.record-both-sides.label": {
+      "ru": "Записать обе версии до решения о доступе",
+      "en": "Record both claims before deciding access"
+    },
+    "event.guard.city.dispute.choice.record-both-sides.text": {
+      "ru": "В споре обе стороны хотят, чтобы страж сразу признал их правыми. Профессиональная запись вместо этого фиксирует отдельные утверждения, общие факты и то, что остаётся неподтверждённым; решение смены должно быть воспроизводимо по этим данным.",
+      "en": "Both sides of a dispute want the Guard to declare them right immediately. A professional record instead separates claims, shared facts, and what remains unverified; the shift decision should be reproducible from that record."
+    },
+    "event.guard.city.dispute.choice.separate-and-release.label": {
+      "ru": "Развести стороны и завершить сцену",
+      "en": "Separate the parties and release the scene"
+    },
+    "event.guard.city.dispute.choice.separate-and-release.text": {
+      "ru": "Иногда лучший результат — развести участников, восстановить проход и отпустить их без лишнего наказания, сохранив минимальную запись на случай повторения. Это практическое урегулирование, а не шкала добродетели.",
+      "en": "Sometimes the best result is to separate the participants, restore passage, and release them without unnecessary punishment while keeping a minimal record in case the problem repeats. That is practical resolution, not a virtue score."
+    },
+    "event.guard.city.crowd-pressure.title": {
+      "ru": "Давление толпы на оживлённой смене",
+      "en": "Crowd pressure at a busy duty"
+    },
+    "event.guard.city.crowd-pressure.variant.default.text": {
+      "ru": "Толпа у рынка опасна прежде всего там, где исчезает пространство для движения. Открыть полосу, объяснить направление и убрать источник давки — конкретная служебная работа, не требующая абстрактного показателя «жёсткости».",
+      "en": "A market crowd is most dangerous where usable movement disappears. Opening a lane, explaining direction, and removing the source of compression are concrete duties that require no abstract toughness meter."
+    },
+    "event.guard.city.crowd-pressure.choice.open-lane.label": {
+      "ru": "Открыть проход и объяснить границу",
+      "en": "Open a clear lane and explain the boundary"
+    },
+    "event.guard.city.crowd-pressure.choice.open-lane.text": {
+      "ru": "Толпа у рынка опасна прежде всего там, где исчезает пространство для движения. Открыть полосу, объяснить направление и убрать источник давки — конкретная служебная работа, не требующая абстрактного показателя «жёсткости».",
+      "en": "A market crowd is most dangerous where usable movement disappears. Opening a lane, explaining direction, and removing the source of compression are concrete duties that require no abstract toughness meter."
+    },
+    "event.guard.city.crowd-pressure.choice.hold-line.label": {
+      "ru": "Удержать текущую линию",
+      "en": "Hold the existing line"
+    },
+    "event.guard.city.crowd-pressure.choice.hold-line.text": {
+      "ru": "Иногда проход нельзя открыть сразу: сначала нужно удержать ограниченную линию, объяснить причину и дать людям понятный следующий шаг. Временная граница не означает неограниченную власть над толпой.",
+      "en": "Sometimes a passage cannot reopen immediately: the Guard must hold a limited line, explain why, and give people a clear next step. A temporary boundary is not unlimited authority over the crowd."
+    },
+    "event.guard.city.suspicious-pass.title": {
+      "ru": "Подозрительный пропуск на груз",
+      "en": "Suspicious cargo pass"
+    },
+    "event.guard.city.suspicious-pass.variant.default.text": {
+      "ru": "Несовпадение в пропуске становится доказательством только после конкретной проверки. Дата, печать, маршрут и описание груза должны быть записаны отдельно от предположений о владельце.",
+      "en": "A mismatch in a pass becomes evidence only after a concrete check. Date, seal, route, and cargo description should be recorded separately from assumptions about the holder."
+    },
+    "event.guard.city.suspicious-pass.choice.record-discrepancy.label": {
+      "ru": "Зафиксировать несоответствие",
+      "en": "Record the discrepancy"
+    },
+    "event.guard.city.suspicious-pass.choice.record-discrepancy.text": {
+      "ru": "Несовпадение в пропуске становится доказательством только после конкретной проверки. Дата, печать, маршрут и описание груза должны быть записаны отдельно от предположений о владельце.",
+      "en": "A mismatch in a pass becomes evidence only after a concrete check. Date, seal, route, and cargo description should be recorded separately from assumptions about the holder."
+    },
+    "event.guard.city.suspicious-pass.choice.release-after-check.label": {
+      "ru": "Отпустить после проверки",
+      "en": "Release after the check"
+    },
+    "event.guard.city.suspicious-pass.choice.release-after-check.text": {
+      "ru": "Если проверка объяснила несоответствие, профессиональный результат может быть простым: вернуть документы, отметить выполненную проверку и не создавать дело из уже разрешённой неопределённости.",
+      "en": "If the check explains the discrepancy, the professional result can be simple: return the documents, note that the review was completed, and do not manufacture a case from uncertainty that has already been resolved."
+    },
+    "event.guard.city.poverty-response.title": {
+      "ru": "Зимнее давление на ночлег",
+      "en": "Winter lodging pressure"
+    },
+    "event.guard.city.poverty-response.variant.street-survival.text": {
+      "ru": "Собственный опыт уличной ночёвки меняет то, какие детали замечает страж: где закрытый проход означает опасность, а где человек просто ищет сухое место. Этот опыт влияет на формулировку решения, но не отменяет жильё, зарплату или существующие долги. Ни помощь, ни требование освободить проход не создают и не погашают отдельный Guard-долг. Любые существующие обязательства принадлежат своим системам; стража фиксирует только конкретное городское решение.",
+      "en": "Personal experience of sleeping rough changes which details the Guard notices: where a blocked passage is dangerous and where someone is simply looking for a dry place. That perspective changes the wording of a decision, not lodging rules, wages, or existing debt. Neither assistance nor an order to clear a passage creates or clears a separate Guard debt. Existing obligations belong to their own systems; Guard content records only the concrete city-duty decision."
+    },
+    "event.guard.city.poverty-response.variant.cheap-room.text": {
+      "ru": "Опыт дешёвого общего жилья делает понятнее, почему люди защищают место в очереди, поздний вход или право оставить вещи. Служебная реакция может быть точнее, не превращаясь в бесплатное жильё или новый финансовый режим. Ни помощь, ни требование освободить проход не создают и не погашают отдельный Guard-долг. Любые существующие обязательства принадлежат своим системам; стража фиксирует только конкретное городское решение.",
+      "en": "Experience with cheap shared lodging makes it easier to understand why people protect a queue place, late entry, or somewhere to keep belongings. The Guard response can become more precise without turning into free housing or a new financial system. Neither assistance nor an order to clear a passage creates or clears a separate Guard debt. Existing obligations belong to their own systems; Guard content records only the concrete city-duty decision."
+    },
+    "event.guard.city.poverty-response.variant.default.text": {
+      "ru": "Ни помощь, ни требование освободить проход не создают и не погашают отдельный Guard-долг. Любые существующие обязательства принадлежат своим системам; стража фиксирует только конкретное городское решение.",
+      "en": "Neither assistance nor an order to clear a passage creates or clears a separate Guard debt. Existing obligations belong to their own systems; Guard content records only the concrete city-duty decision."
+    },
+    "event.guard.city.poverty-response.choice.route-to-shelter.label": {
+      "ru": "Направить к существующей помощи с ночлегом",
+      "en": "Route people toward existing shelter contacts"
+    },
+    "event.guard.city.poverty-response.choice.route-to-shelter.text": {
+      "ru": "Человек на улице или в дешёвом ночлеге не становится подозреваемым из-за самого жилищного положения. Смена может направить к доступному убежищу или службе, сохраняя обычные правила прохода и не создавая новый долг.",
+      "en": "A person on the street or in cheap lodging does not become a suspect because of housing status alone. The shift can route them toward available shelter or assistance while preserving ordinary passage rules and creating no new debt."
+    },
+    "event.guard.city.poverty-response.choice.enforce-clear-route.label": {
+      "ru": "Потребовать освободить проход",
+      "en": "Enforce the clear-route requirement"
+    },
+    "event.guard.city.poverty-response.choice.enforce-clear-route.text": {
+      "ru": "Когда проход действительно заблокирован, страж может потребовать освободить его, но запись должна описывать конкретную помеху, а не бедность как нарушение. Жилищное положение и служебная проблема остаются разными фактами.",
+      "en": "When a passage is genuinely blocked, the Guard can require it to be cleared, but the record should describe the specific obstruction rather than poverty as an offense. Housing status and the duty problem remain different facts."
+    },
+    "event.guard.city.formal-report.title": {
+      "ru": "Оформить городские происшествия в отчёт",
+      "en": "Turn city incidents into a formal report"
+    },
+    "event.guard.city.formal-report.variant.default.text": {
+      "ru": "Формальный отчёт полезен не потому, что звучит официально, а потому, что связывает источник, наблюдение, решение и последующую проверку. Читатель должен видеть, где заканчивается факт и начинается вывод. В отчёт не нужно превращать всё, что произошло рядом. Профессиональная запись включает только относящиеся к делу наблюдения и не подменяет неизвестные детали уверенным рассказом.",
+      "en": "A formal report is useful not because it sounds official, but because it links source, observation, decision, and later review. The reader should be able to see where fact ends and inference begins. A report does not need to absorb everything that happened nearby. Professional documentation includes only relevant observations and does not replace unknown details with a confident story."
+    },
+    "event.guard.city.formal-report.choice.write-report.label": {
+      "ru": "Написать формальный отчёт",
+      "en": "Write the formal report"
+    },
+    "event.guard.city.formal-report.choice.write-report.text": {
+      "ru": "В отчёт не нужно превращать всё, что произошло рядом. Профессиональная запись включает только относящиеся к делу наблюдения и не подменяет неизвестные детали уверенным рассказом.",
+      "en": "A report does not need to absorb everything that happened nearby. Professional documentation includes only relevant observations and does not replace unknown details with a confident story."
+    },
+    "event.guard.cross.tavern-receipt.title": {
+      "ru": "Квитанция Tavern входит в доказательства стражи",
+      "en": "Existing Tavern receipt enters Guard evidence"
+    },
+    "event.guard.cross.tavern-receipt.variant.default.text": {
+      "ru": "Квитанция и уже завершённая цепочка Tavern могут служить внешним подтверждением времени, места или передачи. Guard использует только этот существующий след и не превращает его в общую валюту свидетельств. Если Tavern-след не подтверждает нужную деталь, страж не дописывает Merchant, Palace или будущего свидетеля для удобства дела. Отсутствие источника остаётся отсутствием источника.",
+      "en": "A receipt and an already resolved Tavern chain can serve as external confirmation of time, place, or handoff. Guard uses only that existing trail and does not turn it into a general evidence currency. If the Tavern trail does not confirm the needed detail, the Guard does not invent a Merchant, Palace, or future-career witness to complete the case. A missing source remains a missing source."
+    },
+    "event.guard.cross.tavern-receipt.choice.record.label": {
+      "ru": "Зафиксировать доказательство Tavern",
+      "en": "Record the Tavern evidence"
+    },
+    "event.guard.cross.tavern-receipt.choice.record.text": {
+      "ru": "Перенести в подготовку дела только существующий результат цепочки квитанции и её разрешения.",
+      "en": "Carry only the existing receipt/resolution result into Guard case preparation."
+    },
+    "event.guard.relationship.intro.title": {
+      "ru": "Напарник начинает сверять твои отчёты",
+      "en": "A partner starts checking your reports"
+    },
+    "event.guard.relationship.intro.variant.default.text": {
+      "ru": "Напарник появляется как коллега по смене: сравнивает записи, делит участок и замечает, где твой способ работы расходится с его. Роль остаётся без имени и не предполагает дружбу, романтику или обязательное личное доверие.",
+      "en": "The partner enters as a colleague on duty: comparing notes, sharing an area, and noticing where your working methods differ. The role remains unnamed and assumes neither friendship, romance, nor mandatory personal trust."
+    },
+    "event.guard.relationship.intro.choice.professional.label": {
+      "ru": "Сверить отчёты",
+      "en": "Compare reports"
+    },
+    "event.guard.relationship.intro.choice.professional.text": {
+      "ru": "Оставить первый контакт практичным и неромантическим.",
+      "en": "Keep the first contact practical and non-romantic."
+    },
+    "event.guard.relationship.trust.title": {
+      "ru": "Профессиональное доверие",
+      "en": "Professional trust"
+    },
+    "event.guard.relationship.trust.variant.default.text": {
+      "ru": "Профессиональное доверие растёт из повторяемых мелочей: человек приходит на передачу вовремя, не приписывает себе чужое наблюдение и прямо говорит, где не уверен. Этого достаточно для рабочей связи без личной близости.",
+      "en": "Professional trust grows from repeatable details: arriving for handoff on time, not claiming someone else's observation, and saying plainly where uncertainty remains. That is enough for a working relationship without personal intimacy."
+    },
+    "event.guard.relationship.trust.choice.continue.label": {
+      "ru": "Сохранить профессиональный контакт",
+      "en": "Keep the professional contact"
+    },
+    "event.guard.relationship.trust.choice.continue.text": {
+      "ru": "Развивать доверие без обязательства дружбы, соперничества или особых услуг.",
+      "en": "Build trust without committing to friendship, rivalry, or special favors."
+    },
+    "event.guard.relationship.conflict-open.title": {
+      "ru": "Профессиональный конфликт",
+      "en": "A professional conflict"
+    },
+    "event.guard.relationship.conflict-open.variant.default.text": {
+      "ru": "Конфликт возникает не из абстрактной неприязни, а из разного решения по делу: задержать проверку, открыть проход, принять свидетельство или потребовать дополнительную запись. Спор касается практики и ответственности.",
+      "en": "The conflict comes from a different case decision rather than abstract dislike: delay a check, open a passage, accept testimony, or require another record. The disagreement is about practice and responsibility."
+    },
+    "event.guard.relationship.conflict-open.choice.open.label": {
+      "ru": "Чётко обозначить разногласие",
+      "en": "State the disagreement clearly"
+    },
+    "event.guard.relationship.conflict-open.choice.open.text": {
+      "ru": "Перевести конфликт в явное состояние отношений вместо скрытой шкалы близости.",
+      "en": "Move the conflict into an explicit relationship state instead of a hidden affinity score."
+    },
+    "event.guard.relationship.conflict-resolve.title": {
+      "ru": "Разрешить конфликт с напарником",
+      "en": "Resolve the Guard conflict"
+    },
+    "event.guard.relationship.conflict-resolve.variant.default.text": {
+      "ru": "Конфликт может перейти в сотрудничество, профессиональное соперничество или чистый отказ от дальнейшего углубления этой линии отношений.",
+      "en": "The conflict can become cooperation, professional rivalry, or a clean refusal to take the relationship route further."
+    },
+    "event.guard.relationship.conflict-resolve.choice.cooperate.label": {
+      "ru": "Выстроить документированный компромисс",
+      "en": "Build a documented compromise"
+    },
+    "event.guard.relationship.conflict-resolve.choice.cooperate.text": {
+      "ru": "Сотрудничество после спора означает не полное согласие, а понятный способ проверить решение друг друга. Напарники могут разделить работу и оставить письменный след того, где они согласились и где нет.",
+      "en": "Cooperation after conflict does not mean total agreement; it means a clear way to review each other's decisions. Partners can divide the work and leave a written trail of where they agreed and where they did not."
+    },
+    "event.guard.relationship.conflict-resolve.choice.rivalry.label": {
+      "ru": "Остаться профессиональными соперниками",
+      "en": "Remain professional rivals"
+    },
+    "event.guard.relationship.conflict-resolve.choice.rivalry.text": {
+      "ru": "Профессиональное соперничество может остаться полезным: каждый требует от другого более точной записи и лучше обоснованного решения. Оно не блокирует обычные смены и не превращается в скрытую шкалу отношений.",
+      "en": "Professional rivalry can remain useful: each Guard demands cleaner records and better-supported decisions from the other. It does not block ordinary shifts or become a hidden relationship meter."
+    },
+    "event.guard.relationship.conflict-resolve.choice.decline.label": {
+      "ru": "Отказаться от дополнительной линии отношений",
+      "en": "Step away from the extra relationship route"
+    },
+    "event.guard.relationship.conflict-resolve.choice.decline.text": {
+      "ru": "Отказ от дополнительной совместной работы должен быть чистым. Напарник принимает границу, обычные смены продолжаются, а уже заработанное профессиональное доверие не исчезает как наказание за отказ.",
+      "en": "Refusing additional joint work should be clean. The partner respects the boundary, ordinary shifts continue, and previously earned professional trust is not erased as punishment for saying no."
+    },
+    "event.guard.relationship.case-support.title": {
+      "ru": "Необязательная поддержка по делу",
+      "en": "Optional case support"
+    },
+    "event.guard.relationship.case-support.variant.default.text": {
+      "ru": "Если сотрудничество продолжается, напарник может дать вторую проверяемую линию по крупному делу: подтвердить передачу, сверить отчёт или заметить расхождение. Это поддержка источника, а не обязательный ключ к карьере.",
+      "en": "If cooperation continues, the partner can provide a second verifiable line for a major case: confirming a handoff, checking a report, or noticing a mismatch. That is source support, not a mandatory key to the career."
+    },
+    "event.guard.relationship.case-support.choice.accept.label": {
+      "ru": "Оставить поддержку по делу доступной",
+      "en": "Keep case support available"
+    },
+    "event.guard.relationship.case-support.choice.accept.text": {
+      "ru": "Зафиксировать один узкий факт сотрудничества для дальнейшей подготовки Officer/Major Case.",
+      "en": "Record one narrow cooperation fact for later Officer/Major Case preparation."
+    },
+    "event.guard.relationship.case-support.choice.decline.label": {
+      "ru": "Работать самостоятельно",
+      "en": "Work independently"
+    },
+    "event.guard.relationship.case-support.choice.decline.text": {
+      "ru": "Отказаться от поддержки напарника по делу, не теряя доверия или обычной службы.",
+      "en": "Decline partner case support without losing trust or ordinary Guard work."
+    },
+    "event.guard.crisis.market-gate-pressure.title": {
+      "ru": "Кризис рынка, ворот и общественного давления",
+      "en": "Market, gate, and public-pressure crisis"
+    },
+    "event.guard.crisis.market-gate-pressure.variant.default.text": {
+      "ru": "Рынок упирается в узкий проход у ворот: документы расходятся, люди ждут, а каждое новое решение влияет на очередь. Кризис требует выбрать рабочий способ стабилизации, а не определить «хорошую» и «плохую» стражу.",
+      "en": "The market compresses against a narrow gate: documents conflict, people are waiting, and each new decision changes the queue. The crisis requires a workable stabilization method, not a judgment about a 'good' or 'bad' Guard."
+    },
+    "event.guard.crisis.market-gate-pressure.choice.stabilize-by-report.label": {
+      "ru": "Стабилизировать через документированную запись",
+      "en": "Stabilize through the documented record"
+    },
+    "event.guard.crisis.market-gate-pressure.choice.stabilize-by-report.text": {
+      "ru": "Путь через отчёт опирается на проверяемую цепочку: кто зафиксировал проблему, какой доступ был разрешён и какое решение можно пересмотреть позже. Смысл — сделать решение аудируемым, а не более суровым.",
+      "en": "The report route relies on an auditable chain: who recorded the problem, which access was authorized, and which decision can be reviewed later. The point is reviewability, not greater severity."
+    },
+    "event.guard.crisis.market-gate-pressure.choice.deescalate-crowd.label": {
+      "ru": "Снять давление деэскалацией и направлением к помощи",
+      "en": "Resolve the pressure through de-escalation and relief routing"
+    },
+    "event.guard.crisis.market-gate-pressure.choice.deescalate-crowd.text": {
+      "ru": "Путь деэскалации меняет непосредственную практику: освободить движение, направить людей к доступной помощи и использовать опыт уже разрешённого спора. Это конкретная процедура, не моральный бонус.",
+      "en": "The de-escalation route changes immediate practice: restore movement, route people toward available assistance, and use what was learned from a resolved dispute. It is a concrete procedure, not a morality bonus."
+    },
+    "event.guard.crisis.market-gate-pressure.choice.trade-access-network.label": {
+      "ru": "Решить через контролируемый доступ и контакты",
+      "en": "Resolve it through controlled access and contacts"
+    },
+    "event.guard.crisis.market-gate-pressure.choice.trade-access-network.text": {
+      "ru": "Путь через контролируемый доступ использует проверенный пропуск, документированное несоответствие и профессиональные контакты. Связи объясняют, кому можно передать проверку дальше, а не дают валюту коррупции.",
+      "en": "The controlled-access route uses a verified pass, a documented discrepancy, and professional contacts. Connections explain who can carry the review forward; they are not a corruption currency."
+    },
+    "event.guard.crisis.market-gate-pressure.choice.defer.label": {
+      "ru": "Пока удерживать ситуацию в рамках",
+      "en": "Keep the situation contained for now"
+    },
+    "event.guard.crisis.market-gate-pressure.choice.defer.text": {
+      "ru": "Если ни один поддержанный путь ещё не готов, кризис можно удерживать в ограниченных рамках и не объявлять решённым. Отсрочка лучше, чем фиктивная уверенность.",
+      "en": "If no supported route is ready, the crisis can be contained without claiming it has been solved. Deferral is better than manufactured certainty."
+    },
+    "event.guard.routes.officer-ready.title": {
+      "ru": "Готовность пути Officer",
+      "en": "Officer route ready"
+    },
+    "event.guard.routes.officer-ready.variant.default.text": {
+      "ru": "Факт подготовленности по грамотности означает, что страж умеет оформить и проверить служебный отчёт. Он не подразумевает нового числового порога или дополнительного курса Guard. Факт подготовки по этикету помогает вести формальную встречу и не путать статус человека с доказательством. Guard не задаёт для него числовой порог. Officer строится на формальной ответственности: качественный отчёт, законный служебный доступ и способность организовать решение так, чтобы его можно было проверить позже. Это не автоматическая концовка и не титул без доказательств.",
+      "en": "The literacy-ready fact means the Guard can prepare and review a formal report. It implies no new numeric threshold and no Guard-specific course. The etiquette-ready fact supports formal encounters while keeping social status separate from evidence. Guard defines no numeric threshold for it. Officer is built around formal responsibility: a sound report, authorized access, and the ability to organize a decision so it can be reviewed later. It is neither an automatic ending nor a title without evidence."
+    },
+    "event.guard.routes.officer-ready.choice.record.label": {
+      "ru": "Зафиксировать готовность Officer",
+      "en": "Record Officer readiness"
+    },
+    "event.guard.routes.officer-ready.choice.record.text": {
+      "ru": "Сохранить готовность к формальной ответственности как один факт позднего пути.",
+      "en": "Keep command/formal-case readiness as one late-route fact."
+    },
+    "event.guard.routes.reform-ready.title": {
+      "ru": "Готовность пути Reform / Order",
+      "en": "Reform / Order route ready"
+    },
+    "event.guard.routes.reform-ready.variant.default.text": {
+      "ru": "Reform / Order вырастает из конкретных изменений практики: как обрабатывать спор, как отвечать на бедность и как разрешать профессиональный конфликт. Маршрут показывает процедуру, а не скрытую моральную оценку.",
+      "en": "Reform / Order grows from concrete changes in practice: how disputes are handled, how poverty is addressed, and how professional conflict is resolved. The route represents procedure, not a hidden morality judgment."
+    },
+    "event.guard.routes.reform-ready.choice.record.label": {
+      "ru": "Зафиксировать готовность Reform",
+      "en": "Record Reform readiness"
+    },
+    "event.guard.routes.reform-ready.choice.record.text": {
+      "ru": "Оставить путь изменения практики доступным рядом с другими исходами стражи.",
+      "en": "Keep the practice-change route available alongside other Guard outcomes."
+    },
+    "event.guard.routes.network-ready.title": {
+      "ru": "Готовность пути Network",
+      "en": "Network route ready"
+    },
+    "event.guard.routes.network-ready.variant.default.text": {
+      "ru": "Network использует доступ, проверяемые контакты и документы, чтобы провести дело между людьми и учреждениями. Связи здесь — маршрут ответственности, а не шкала коррупции или универсальная власть.",
+      "en": "Network uses access, verifiable contacts, and documents to move a case between people and institutions. Connections are a route of responsibility here, not a corruption meter or universal authority."
+    },
+    "event.guard.routes.network-ready.choice.record.label": {
+      "ru": "Зафиксировать готовность Network",
+      "en": "Record Network readiness"
+    },
+    "event.guard.routes.network-ready.choice.record.text": {
+      "ru": "Оставить путь доступа и контактов доступным без принудительного выбора.",
+      "en": "Keep the access/contact route available without forcing commitment."
+    },
+    "event.guard.routes.major-case-ready.title": {
+      "ru": "Готовность пути Major Case",
+      "en": "Major Case route ready"
+    },
+    "event.guard.routes.major-case-ready.variant.default.text": {
+      "ru": "Major Case соединяет несколько независимых линий: внутренний отчёт, внешнее подтверждение, решение по городской бедности, профессиональный источник и уже разрешённый кризис. Ни преступник, ни фракция, ни канонический сюжет заранее не определены.",
+      "en": "Major Case joins several independent lines: an internal report, external confirmation, a poverty-facing duty decision, a professional source, and a resolved city crisis. No culprit, faction, or canonical plot is predetermined."
+    },
+    "event.guard.routes.major-case-ready.choice.record.label": {
+      "ru": "Зафиксировать готовность Major Case",
+      "en": "Record Major Case readiness"
+    },
+    "event.guard.routes.major-case-ready.choice.record.text": {
+      "ru": "Открыть много-системный путь без принудительного выбора поздней ветки.",
+      "en": "Open the multi-system route without forcing a late-branch choice."
     }
   }
 }
