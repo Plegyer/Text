@@ -3697,9 +3697,50 @@
       "title": "Хозяйка третьего тоста",
       "conditions": [
         {
-          "kind": "visits",
-          "action": "tavern",
-          "value": 18
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "visits",
+              "action": "tavern",
+              "value": 18
+            },
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "careerCounter",
+                  "career": "tavern",
+                  "counter": "completed_shifts",
+                  "op": "gte",
+                  "value": 18
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "tavern",
+                  "fact": "school-records-ready",
+                  "present": true
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "tavern",
+                  "fact": "guest-ledger-evidence-ready",
+                  "present": true
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "tavern",
+                  "fact": "crisis-resolved",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "careerFact",
+              "career": "tavern",
+              "fact": "innkeeper-ready",
+              "present": true
+            }
+          ]
         }
       ],
       "reward": "host",
@@ -3711,9 +3752,43 @@
       "title": "Праздник без разрешения",
       "conditions": [
         {
-          "kind": "flag",
-          "key": "tavern.guild",
-          "value": true
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "flag",
+              "key": "tavern.guild",
+              "value": true
+            },
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "careerFact",
+                  "career": "tavern",
+                  "fact": "housing-assistance-complete",
+                  "present": true
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "tavern",
+                  "fact": "confidentiality-kept",
+                  "present": true
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "tavern",
+                  "fact": "crisis-resolved",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "careerFact",
+              "career": "tavern",
+              "fact": "sanctuary-ready",
+              "present": true
+            }
+          ]
         }
       ],
       "reward": "mediator",
@@ -3725,9 +3800,55 @@
       "title": "Приглашение под печатью",
       "conditions": [
         {
-          "kind": "flag",
-          "key": "tavern.prince",
-          "value": true
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "flag",
+              "key": "tavern.prince",
+              "value": true
+            },
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "careerFact",
+                  "career": "tavern",
+                  "fact": "school-broker-ready",
+                  "present": true
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "tavern",
+                  "fact": "rumour-route-open",
+                  "present": true
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "tavern",
+                  "fact": "rumour-confirmed",
+                  "present": true
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "tavern",
+                  "fact": "confidentiality-resolved",
+                  "present": true
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "tavern",
+                  "fact": "crisis-resolved",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "careerFact",
+              "career": "tavern",
+              "fact": "information-broker-ready",
+              "present": true
+            }
+          ]
         }
       ],
       "reward": "court",
