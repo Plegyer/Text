@@ -33,7 +33,11 @@ function project(){
   items:defs.itemDefinitions.filter((x:any)=>x.id==='rope_kit'||x.id==='field_preservation_kit'),
   ending:defs.endings.find((x:any)=>x.id==='ending.hunter.hard-work'),
   packs:packs.map((p:any)=>({
-   id:p.id,capabilities:p.capabilities,
+   id:p.id,capabilities:(()=>{
+    const c=JSON.parse(JSON.stringify(p.capabilities));
+    if(p.id==='hunter.career'&&c.reads?.housing===true)delete c.reads.housing;
+    return c;
+   })(),
    events:(p.events??[]).map((e:any)=>({
     id:e.id,sourceDomain:e.sourceDomain,trigger:e.trigger,reactionTriggers:e.reactionTriggers,
     priorityClass:e.priorityClass,priority:e.priority,blocking:e.blocking,delivery:e.delivery,nightPolicy:e.nightPolicy??null,
