@@ -207,6 +207,7 @@ export function meets(c:Condition,s:Save,cat?:Catalog):boolean {
     case 'calendarDayInYear': return compare(cal().dayInYear,c.op,c.value);
     case 'calendarElapsedDays': return compare(s.run.calendar.elapsedDays,c.op,c.value);
     case 'housingTier': return s.run.housingState.current===c.value;
+    case 'schoolCounter': return compare(s.run.progression.school.tracks[c.track]?.counters[c.counter]??0,c.op,c.value);
     case 'careerStage': return readDomainState(s,'career',c.career,cat)?.stage===c.stage;
     case 'careerShifts': return compare(readDomainState(s,'career',c.career,cat)?.shifts??0,c.op,c.value);
     case 'careerCounter': return compare(readDomainState(s,'career',c.career,cat)?.counters[c.counter]??0,c.op,c.value);
