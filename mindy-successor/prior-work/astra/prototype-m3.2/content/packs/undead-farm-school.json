@@ -95,11 +95,23 @@
           ]
         },
         {
-          "kind": "schoolCounter",
-          "track": "school.track.arcana",
-          "counter": "lessons_completed",
-          "op": "gte",
-          "value": 3
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "schoolCounter",
+              "track": "school.track.arcana",
+              "counter": "lessons_completed",
+              "op": "gte",
+              "value": 3
+            },
+            {
+              "kind": "schoolCounter",
+              "track": "school.track.arcana",
+              "counter": "night_study_sessions",
+              "op": "gte",
+              "value": 3
+            }
+          ]
         },
         {
           "kind": "careerFact",
@@ -113,7 +125,9 @@
           "id": "default",
           "text": "Three completed Arcana lessons give you a repeatable way to distinguish ordinary farm instability from a sample worth preserving and studying.",
           "conditions": [],
-          "media": []
+          "media": [
+            "school.teacher.arcana.classroom"
+          ]
         }
       ],
       "choices": [
@@ -187,11 +201,23 @@
           ]
         },
         {
-          "kind": "schoolCounter",
-          "track": "school.track.literacy_and_numbers",
-          "counter": "lessons_completed",
-          "op": "gte",
-          "value": 3
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "schoolCounter",
+              "track": "school.track.literacy_and_numbers",
+              "counter": "lessons_completed",
+              "op": "gte",
+              "value": 3
+            },
+            {
+              "kind": "schoolCounter",
+              "track": "school.track.literacy_and_numbers",
+              "counter": "night_study_sessions",
+              "op": "gte",
+              "value": 3
+            }
+          ]
         },
         {
           "kind": "careerFact",
@@ -205,7 +231,9 @@
           "id": "default",
           "text": "Three Literacy & Numbers lessons turn stock counts and supply notes into usable management records for the farm.",
           "conditions": [],
-          "media": []
+          "media": [
+            "school.teacher.literacy-and-numbers.classroom"
+          ]
         }
       ],
       "choices": [
