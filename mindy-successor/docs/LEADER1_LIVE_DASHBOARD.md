@@ -1,5 +1,25 @@
 # Leader 1 — Live Dashboard
 
+## HANDOFF LIVE UPDATE — 2026-10-01 11:33+03
+
+Canonical takeover snapshot:
+- `LEADER1_HANDOFF_CHECKPOINT_2026-10-01.md`.
+
+Product main at handoff before coordination-only checkpoint commits:
+- `152413eb31086905967cdcff6a4d9a8e839e6088`
+- Undead Farm complete runtime integrated.
+- main CI #695 was in progress at snapshot.
+- previous main CI #679 was green.
+
+Current critical path:
+1. C4-144 post-Undead current-main gate;
+2. integrate #180 Ordinary Poverty -> C4-145;
+3. integrate #181 Undead School then #182 Undead presentation -> C4-146;
+4. Tavern: runtime #187 QA accepted; #185 and #191 green/frozen; Chat 2 must still finalize #183 into a clean production-reachable candidate.
+
+This block supersedes older worker/PR snapshots below.
+
+
 ## LIVE ACTION UPDATE — 2026-10-01 10:10+03
 
 Current main after Satyr School v12 integration:
