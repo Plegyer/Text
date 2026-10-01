@@ -2927,6 +2927,40 @@
         }
       ],
       "mode": "normal"
+    },
+    {
+      "id": "forest.collect-field-kit",
+      "label": "Collect the field preservation kit",
+      "description": "Collect the School field kit after enrolling in a real lesson.",
+      "cost": {
+        "money": 0,
+        "energy": 0
+      },
+      "conditions": [
+        {
+          "kind": "flag",
+          "key": "school.enrolled",
+          "value": true
+        },
+        {
+          "kind": "itemCount",
+          "id": "field_preservation_kit",
+          "op": "eq",
+          "count": 0
+        }
+      ],
+      "effects": [
+        {
+          "kind": "addItem",
+          "id": "field_preservation_kit",
+          "count": 1
+        },
+        {
+          "kind": "addWorldFact",
+          "fact": "forest.school-field-notes"
+        }
+      ],
+      "mode": "normal"
     }
   ],
   "endings": [
