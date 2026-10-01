@@ -1,0 +1,505 @@
+{
+  "formatVersion": 1,
+  "id": "school.localization-v10.night-study-text-preparation.v1",
+  "status": "CONTENT_PREP_ONLY",
+  "exactChoiceCount": 24,
+  "selectedRuntimeConsumerId": null,
+  "entries": [
+    {
+      "choiceId": "school.night_study.literacy_and_numbers.reason",
+      "sourceCourseId": "school.course.literacy_and_numbers",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.literacy_and_numbers.reason"
+      },
+      "keys": {
+        "title": "school.night_v10.literacy_and_numbers.reason.title",
+        "body": "school.night_v10.literacy_and_numbers.reason.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.literacy_and_numbers.wits",
+      "sourceCourseId": "school.course.literacy_and_numbers",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.literacy_and_numbers.wits"
+      },
+      "keys": {
+        "title": "school.night_v10.literacy_and_numbers.wits.title",
+        "body": "school.night_v10.literacy_and_numbers.wits.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.arcana.magic",
+      "sourceCourseId": "school.course.arcana",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.arcana.magic"
+      },
+      "keys": {
+        "title": "school.night_v10.arcana.magic.title",
+        "body": "school.night_v10.arcana.magic.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.arcana.reason",
+      "sourceCourseId": "school.course.arcana",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.arcana.reason"
+      },
+      "keys": {
+        "title": "school.night_v10.arcana.reason.title",
+        "body": "school.night_v10.arcana.reason.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.arcana.creativity",
+      "sourceCourseId": "school.course.arcana",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.arcana.creativity"
+      },
+      "keys": {
+        "title": "school.night_v10.arcana.creativity.title",
+        "body": "school.night_v10.arcana.creativity.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.rhetoric_and_social.charm",
+      "sourceCourseId": "school.course.rhetoric_and_social",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.rhetoric_and_social.charm"
+      },
+      "keys": {
+        "title": "school.night_v10.rhetoric_and_social.charm.title",
+        "body": "school.night_v10.rhetoric_and_social.charm.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.rhetoric_and_social.sociability",
+      "sourceCourseId": "school.course.rhetoric_and_social",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.rhetoric_and_social.sociability"
+      },
+      "keys": {
+        "title": "school.night_v10.rhetoric_and_social.sociability.title",
+        "body": "school.night_v10.rhetoric_and_social.sociability.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.rhetoric_and_social.wits",
+      "sourceCourseId": "school.course.rhetoric_and_social",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.rhetoric_and_social.wits"
+      },
+      "keys": {
+        "title": "school.night_v10.rhetoric_and_social.wits.title",
+        "body": "school.night_v10.rhetoric_and_social.wits.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.etiquette_and_presentation.manners",
+      "sourceCourseId": "school.course.etiquette_and_presentation",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.etiquette_and_presentation.manners"
+      },
+      "keys": {
+        "title": "school.night_v10.etiquette_and_presentation.manners.title",
+        "body": "school.night_v10.etiquette_and_presentation.manners.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.etiquette_and_presentation.grooming",
+      "sourceCourseId": "school.course.etiquette_and_presentation",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.etiquette_and_presentation.grooming"
+      },
+      "keys": {
+        "title": "school.night_v10.etiquette_and_presentation.grooming.title",
+        "body": "school.night_v10.etiquette_and_presentation.grooming.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.etiquette_and_presentation.charm",
+      "sourceCourseId": "school.course.etiquette_and_presentation",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.etiquette_and_presentation.charm"
+      },
+      "keys": {
+        "title": "school.night_v10.etiquette_and_presentation.charm.title",
+        "body": "school.night_v10.etiquette_and_presentation.charm.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.field_craft.dexterity",
+      "sourceCourseId": "school.course.field_craft",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.field_craft.dexterity"
+      },
+      "keys": {
+        "title": "school.night_v10.field_craft.dexterity.title",
+        "body": "school.night_v10.field_craft.dexterity.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.field_craft.wits",
+      "sourceCourseId": "school.course.field_craft",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.field_craft.wits"
+      },
+      "keys": {
+        "title": "school.night_v10.field_craft.wits.title",
+        "body": "school.night_v10.field_craft.wits.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.field_craft.creativity",
+      "sourceCourseId": "school.course.field_craft",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.field_craft.creativity"
+      },
+      "keys": {
+        "title": "school.night_v10.field_craft.creativity.title",
+        "body": "school.night_v10.field_craft.creativity.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.physical_training.strength",
+      "sourceCourseId": "school.course.physical_training",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.physical_training.strength"
+      },
+      "keys": {
+        "title": "school.night_v10.physical_training.strength.title",
+        "body": "school.night_v10.physical_training.strength.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.physical_training.endurance",
+      "sourceCourseId": "school.course.physical_training",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.physical_training.endurance"
+      },
+      "keys": {
+        "title": "school.night_v10.physical_training.endurance.title",
+        "body": "school.night_v10.physical_training.endurance.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.physical_training.dexterity",
+      "sourceCourseId": "school.course.physical_training",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.physical_training.dexterity"
+      },
+      "keys": {
+        "title": "school.night_v10.physical_training.dexterity.title",
+        "body": "school.night_v10.physical_training.dexterity.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.arts_and_performance.creativity",
+      "sourceCourseId": "school.course.arts_and_performance",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.arts_and_performance.creativity"
+      },
+      "keys": {
+        "title": "school.night_v10.arts_and_performance.creativity.title",
+        "body": "school.night_v10.arts_and_performance.creativity.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.arts_and_performance.charm",
+      "sourceCourseId": "school.course.arts_and_performance",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.arts_and_performance.charm"
+      },
+      "keys": {
+        "title": "school.night_v10.arts_and_performance.charm.title",
+        "body": "school.night_v10.arts_and_performance.charm.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.arts_and_performance.sociability",
+      "sourceCourseId": "school.course.arts_and_performance",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.arts_and_performance.sociability"
+      },
+      "keys": {
+        "title": "school.night_v10.arts_and_performance.sociability.title",
+        "body": "school.night_v10.arts_and_performance.sociability.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.arts_and_performance.dexterity",
+      "sourceCourseId": "school.course.arts_and_performance",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.arts_and_performance.dexterity"
+      },
+      "keys": {
+        "title": "school.night_v10.arts_and_performance.dexterity.title",
+        "body": "school.night_v10.arts_and_performance.dexterity.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.body_confidence.sexuality",
+      "sourceCourseId": "school.course.body_confidence",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.body_confidence.sexuality"
+      },
+      "keys": {
+        "title": "school.night_v10.body_confidence.sexuality.title",
+        "body": "school.night_v10.body_confidence.sexuality.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.body_confidence.grooming",
+      "sourceCourseId": "school.course.body_confidence",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.body_confidence.grooming"
+      },
+      "keys": {
+        "title": "school.night_v10.body_confidence.grooming.title",
+        "body": "school.night_v10.body_confidence.grooming.body"
+      }
+    },
+    {
+      "choiceId": "school.night_study.body_confidence.endurance",
+      "sourceCourseId": "school.course.body_confidence",
+      "reactionFact": {
+        "kind": "nightChoiceCompleted",
+        "choice": "school.night_study.body_confidence.endurance"
+      },
+      "keys": {
+        "title": "school.night_v10.body_confidence.endurance.title",
+        "body": "school.night_v10.body_confidence.endurance.body"
+      }
+    }
+  ],
+  "strings": {
+    "school.night_v10.literacy_and_numbers.reason.title": {
+      "ru": "Ночная практика: рассуждение",
+      "en": "Night practice: reason"
+    },
+    "school.night_v10.literacy_and_numbers.reason.body": {
+      "ru": "Ты возвращаешься к материалу курса «Грамотность и счёт» и выбираешь одно короткое упражнение на рассуждение. На этом ночная практика заканчивается: без оплаты и расхода текущей Energy сверх уже заданного действия.",
+      "en": "You return to the Literacy & Numbers material and choose one short reason exercise. The night practice stops there, with no tuition or current-day Energy cost beyond the existing action."
+    },
+    "school.night_v10.literacy_and_numbers.wits.title": {
+      "ru": "Ночная практика: сообразительность",
+      "en": "Night practice: wits"
+    },
+    "school.night_v10.literacy_and_numbers.wits.body": {
+      "ru": "Ты возвращаешься к материалу курса «Грамотность и счёт» и выбираешь одно короткое упражнение на сообразительность. На этом ночная практика заканчивается: без оплаты и расхода текущей Energy сверх уже заданного действия.",
+      "en": "You return to the Literacy & Numbers material and choose one short wits exercise. The night practice stops there, with no tuition or current-day Energy cost beyond the existing action."
+    },
+    "school.night_v10.arcana.magic.title": {
+      "ru": "Ночная практика: магия",
+      "en": "Night practice: magic"
+    },
+    "school.night_v10.arcana.magic.body": {
+      "ru": "Ты возвращаешься к материалу курса «Аркана» и выбираешь одно короткое упражнение на магия. На этом ночная практика заканчивается: без оплаты и расхода текущей Energy сверх уже заданного действия.",
+      "en": "You return to the Arcana material and choose one short magic exercise. The night practice stops there, with no tuition or current-day Energy cost beyond the existing action."
+    },
+    "school.night_v10.arcana.reason.title": {
+      "ru": "Ночная практика: рассуждение",
+      "en": "Night practice: reason"
+    },
+    "school.night_v10.arcana.reason.body": {
+      "ru": "Ты возвращаешься к материалу курса «Аркана» и выбираешь одно короткое упражнение на рассуждение. На этом ночная практика заканчивается: без оплаты и расхода текущей Energy сверх уже заданного действия.",
+      "en": "You return to the Arcana material and choose one short reason exercise. The night practice stops there, with no tuition or current-day Energy cost beyond the existing action."
+    },
+    "school.night_v10.arcana.creativity.title": {
+      "ru": "Ночная практика: творчество",
+      "en": "Night practice: creativity"
+    },
+    "school.night_v10.arcana.creativity.body": {
+      "ru": "Ты возвращаешься к материалу курса «Аркана» и выбираешь одно короткое упражнение на творчество. На этом ночная практика заканчивается: без оплаты и расхода текущей Energy сверх уже заданного действия.",
+      "en": "You return to the Arcana material and choose one short creativity exercise. The night practice stops there, with no tuition or current-day Energy cost beyond the existing action."
+    },
+    "school.night_v10.rhetoric_and_social.charm.title": {
+      "ru": "Ночная практика: обаяние",
+      "en": "Night practice: charm"
+    },
+    "school.night_v10.rhetoric_and_social.charm.body": {
+      "ru": "Ты возвращаешься к материалу курса «Риторика и общение» и выбираешь одно короткое упражнение на обаяние. На этом ночная практика заканчивается: без оплаты и расхода текущей Energy сверх уже заданного действия.",
+      "en": "You return to the Rhetoric & Social material and choose one short charm exercise. The night practice stops there, with no tuition or current-day Energy cost beyond the existing action."
+    },
+    "school.night_v10.rhetoric_and_social.sociability.title": {
+      "ru": "Ночная практика: общительность",
+      "en": "Night practice: sociability"
+    },
+    "school.night_v10.rhetoric_and_social.sociability.body": {
+      "ru": "Ты возвращаешься к материалу курса «Риторика и общение» и выбираешь одно короткое упражнение на общительность. На этом ночная практика заканчивается: без оплаты и расхода текущей Energy сверх уже заданного действия.",
+      "en": "You return to the Rhetoric & Social material and choose one short sociability exercise. The night practice stops there, with no tuition or current-day Energy cost beyond the existing action."
+    },
+    "school.night_v10.rhetoric_and_social.wits.title": {
+      "ru": "Ночная практика: сообразительность",
+      "en": "Night practice: wits"
+    },
+    "school.night_v10.rhetoric_and_social.wits.body": {
+      "ru": "Ты возвращаешься к материалу курса «Риторика и общение» и выбираешь одно короткое упражнение на сообразительность. На этом ночная практика заканчивается: без оплаты и расхода текущей Energy сверх уже заданного действия.",
+      "en": "You return to the Rhetoric & Social material and choose one short wits exercise. The night practice stops there, with no tuition or current-day Energy cost beyond the existing action."
+    },
+    "school.night_v10.etiquette_and_presentation.manners.title": {
+      "ru": "Ночная практика: манеры",
+      "en": "Night practice: manners"
+    },
+    "school.night_v10.etiquette_and_presentation.manners.body": {
+      "ru": "Ты возвращаешься к материалу курса «Этикет и самопрезентация» и выбираешь одно короткое упражнение на манеры. На этом ночная практика заканчивается: без оплаты и расхода текущей Energy сверх уже заданного действия.",
+      "en": "You return to the Etiquette & Presentation material and choose one short manners exercise. The night practice stops there, with no tuition or current-day Energy cost beyond the existing action."
+    },
+    "school.night_v10.etiquette_and_presentation.grooming.title": {
+      "ru": "Ночная практика: уход",
+      "en": "Night practice: grooming"
+    },
+    "school.night_v10.etiquette_and_presentation.grooming.body": {
+      "ru": "Ты возвращаешься к материалу курса «Этикет и самопрезентация» и выбираешь одно короткое упражнение на уход. На этом ночная практика заканчивается: без оплаты и расхода текущей Energy сверх уже заданного действия.",
+      "en": "You return to the Etiquette & Presentation material and choose one short grooming exercise. The night practice stops there, with no tuition or current-day Energy cost beyond the existing action."
+    },
+    "school.night_v10.etiquette_and_presentation.charm.title": {
+      "ru": "Ночная практика: обаяние",
+      "en": "Night practice: charm"
+    },
+    "school.night_v10.etiquette_and_presentation.charm.body": {
+      "ru": "Ты возвращаешься к материалу курса «Этикет и самопрезентация» и выбираешь одно короткое упражнение на обаяние. На этом ночная практика заканчивается: без оплаты и расхода текущей Energy сверх уже заданного действия.",
+      "en": "You return to the Etiquette & Presentation material and choose one short charm exercise. The night practice stops there, with no tuition or current-day Energy cost beyond the existing action."
+    },
+    "school.night_v10.field_craft.dexterity.title": {
+      "ru": "Ночная практика: ловкость",
+      "en": "Night practice: dexterity"
+    },
+    "school.night_v10.field_craft.dexterity.body": {
+      "ru": "Ты возвращаешься к материалу курса «Полевая практика» и выбираешь одно короткое упражнение на ловкость. На этом ночная практика заканчивается: без оплаты и расхода текущей Energy сверх уже заданного действия.",
+      "en": "You return to the Field Craft material and choose one short dexterity exercise. The night practice stops there, with no tuition or current-day Energy cost beyond the existing action."
+    },
+    "school.night_v10.field_craft.wits.title": {
+      "ru": "Ночная практика: сообразительность",
+      "en": "Night practice: wits"
+    },
+    "school.night_v10.field_craft.wits.body": {
+      "ru": "Ты возвращаешься к материалу курса «Полевая практика» и выбираешь одно короткое упражнение на сообразительность. На этом ночная практика заканчивается: без оплаты и расхода текущей Energy сверх уже заданного действия.",
+      "en": "You return to the Field Craft material and choose one short wits exercise. The night practice stops there, with no tuition or current-day Energy cost beyond the existing action."
+    },
+    "school.night_v10.field_craft.creativity.title": {
+      "ru": "Ночная практика: творчество",
+      "en": "Night practice: creativity"
+    },
+    "school.night_v10.field_craft.creativity.body": {
+      "ru": "Ты возвращаешься к материалу курса «Полевая практика» и выбираешь одно короткое упражнение на творчество. На этом ночная практика заканчивается: без оплаты и расхода текущей Energy сверх уже заданного действия.",
+      "en": "You return to the Field Craft material and choose one short creativity exercise. The night practice stops there, with no tuition or current-day Energy cost beyond the existing action."
+    },
+    "school.night_v10.physical_training.strength.title": {
+      "ru": "Ночная практика: сила",
+      "en": "Night practice: strength"
+    },
+    "school.night_v10.physical_training.strength.body": {
+      "ru": "Ты возвращаешься к материалу курса «Физическая подготовка» и выбираешь одно короткое упражнение на сила. На этом ночная практика заканчивается: без оплаты и расхода текущей Energy сверх уже заданного действия.",
+      "en": "You return to the Physical Training material and choose one short strength exercise. The night practice stops there, with no tuition or current-day Energy cost beyond the existing action."
+    },
+    "school.night_v10.physical_training.endurance.title": {
+      "ru": "Ночная практика: выносливость",
+      "en": "Night practice: endurance"
+    },
+    "school.night_v10.physical_training.endurance.body": {
+      "ru": "Ты возвращаешься к материалу курса «Физическая подготовка» и выбираешь одно короткое упражнение на выносливость. На этом ночная практика заканчивается: без оплаты и расхода текущей Energy сверх уже заданного действия.",
+      "en": "You return to the Physical Training material and choose one short endurance exercise. The night practice stops there, with no tuition or current-day Energy cost beyond the existing action."
+    },
+    "school.night_v10.physical_training.dexterity.title": {
+      "ru": "Ночная практика: ловкость",
+      "en": "Night practice: dexterity"
+    },
+    "school.night_v10.physical_training.dexterity.body": {
+      "ru": "Ты возвращаешься к материалу курса «Физическая подготовка» и выбираешь одно короткое упражнение на ловкость. На этом ночная практика заканчивается: без оплаты и расхода текущей Energy сверх уже заданного действия.",
+      "en": "You return to the Physical Training material and choose one short dexterity exercise. The night practice stops there, with no tuition or current-day Energy cost beyond the existing action."
+    },
+    "school.night_v10.arts_and_performance.creativity.title": {
+      "ru": "Ночная практика: творчество",
+      "en": "Night practice: creativity"
+    },
+    "school.night_v10.arts_and_performance.creativity.body": {
+      "ru": "Ты возвращаешься к материалу курса «Искусство и выступление» и выбираешь одно короткое упражнение на творчество. На этом ночная практика заканчивается: без оплаты и расхода текущей Energy сверх уже заданного действия.",
+      "en": "You return to the Arts & Performance material and choose one short creativity exercise. The night practice stops there, with no tuition or current-day Energy cost beyond the existing action."
+    },
+    "school.night_v10.arts_and_performance.charm.title": {
+      "ru": "Ночная практика: обаяние",
+      "en": "Night practice: charm"
+    },
+    "school.night_v10.arts_and_performance.charm.body": {
+      "ru": "Ты возвращаешься к материалу курса «Искусство и выступление» и выбираешь одно короткое упражнение на обаяние. На этом ночная практика заканчивается: без оплаты и расхода текущей Energy сверх уже заданного действия.",
+      "en": "You return to the Arts & Performance material and choose one short charm exercise. The night practice stops there, with no tuition or current-day Energy cost beyond the existing action."
+    },
+    "school.night_v10.arts_and_performance.sociability.title": {
+      "ru": "Ночная практика: общительность",
+      "en": "Night practice: sociability"
+    },
+    "school.night_v10.arts_and_performance.sociability.body": {
+      "ru": "Ты возвращаешься к материалу курса «Искусство и выступление» и выбираешь одно короткое упражнение на общительность. На этом ночная практика заканчивается: без оплаты и расхода текущей Energy сверх уже заданного действия.",
+      "en": "You return to the Arts & Performance material and choose one short sociability exercise. The night practice stops there, with no tuition or current-day Energy cost beyond the existing action."
+    },
+    "school.night_v10.arts_and_performance.dexterity.title": {
+      "ru": "Ночная практика: ловкость",
+      "en": "Night practice: dexterity"
+    },
+    "school.night_v10.arts_and_performance.dexterity.body": {
+      "ru": "Ты возвращаешься к материалу курса «Искусство и выступление» и выбираешь одно короткое упражнение на ловкость. На этом ночная практика заканчивается: без оплаты и расхода текущей Energy сверх уже заданного действия.",
+      "en": "You return to the Arts & Performance material and choose one short dexterity exercise. The night practice stops there, with no tuition or current-day Energy cost beyond the existing action."
+    },
+    "school.night_v10.body_confidence.sexuality.title": {
+      "ru": "Ночная практика: сексуальность",
+      "en": "Night practice: sexuality"
+    },
+    "school.night_v10.body_confidence.sexuality.body": {
+      "ru": "Ты возвращаешься к материалу курса «Уверенность в теле» и выбираешь одно короткое упражнение на сексуальность. На этом ночная практика заканчивается: без оплаты и расхода текущей Energy сверх уже заданного действия.",
+      "en": "You return to the Body Confidence material and choose one short sexuality exercise. The night practice stops there, with no tuition or current-day Energy cost beyond the existing action."
+    },
+    "school.night_v10.body_confidence.grooming.title": {
+      "ru": "Ночная практика: уход",
+      "en": "Night practice: grooming"
+    },
+    "school.night_v10.body_confidence.grooming.body": {
+      "ru": "Ты возвращаешься к материалу курса «Уверенность в теле» и выбираешь одно короткое упражнение на уход. На этом ночная практика заканчивается: без оплаты и расхода текущей Energy сверх уже заданного действия.",
+      "en": "You return to the Body Confidence material and choose one short grooming exercise. The night practice stops there, with no tuition or current-day Energy cost beyond the existing action."
+    },
+    "school.night_v10.body_confidence.endurance.title": {
+      "ru": "Ночная практика: выносливость",
+      "en": "Night practice: endurance"
+    },
+    "school.night_v10.body_confidence.endurance.body": {
+      "ru": "Ты возвращаешься к материалу курса «Уверенность в теле» и выбираешь одно короткое упражнение на выносливость. На этом ночная практика заканчивается: без оплаты и расхода текущей Energy сверх уже заданного действия.",
+      "en": "You return to the Body Confidence material and choose one short endurance exercise. The night practice stops there, with no tuition or current-day Energy cost beyond the existing action."
+    }
+  },
+  "invariants": {
+    "tuitionDelta": 0,
+    "currentDayEnergyDelta": 0,
+    "statGain": 2,
+    "nextDayEnergyDelta": -1,
+    "counter": "night_study_sessions"
+  },
+  "mechanics": {
+    "effects": [],
+    "careerWrites": [],
+    "relationshipWrites": [],
+    "nightFlowChanges": [],
+    "publishesWorldFacts": []
+  }
+}
