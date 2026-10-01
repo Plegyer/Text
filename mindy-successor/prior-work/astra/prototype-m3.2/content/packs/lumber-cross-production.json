@@ -17,6 +17,9 @@
       "worldFacts": [
         "lumber.school.management-ready",
         "lumber.forest.truth-known"
+      ],
+      "inventory": [
+        "forest_preserved_specimen"
       ]
     },
     "writes": {
@@ -121,6 +124,12 @@
           "kind": "worldFact",
           "fact": "lumber.forest.truth-known",
           "present": true
+        },
+        {
+          "kind": "itemCount",
+          "id": "forest_preserved_specimen",
+          "op": "gte",
+          "count": 1
         }
       ],
       "variants": [
@@ -140,6 +149,11 @@
           "text": "Carry the Forest result into Lumber progression.",
           "conditions": [],
           "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "lumber",
+              "fact": "forest-specimen-catalogued"
+            },
             {
               "kind": "addCareerFact",
               "career": "lumber",

@@ -4177,6 +4177,146 @@
     "event.school-life-content-v1.night-study.body-confidence-endurance.choice.continue.text": {
       "ru": "Ночная учёба завершена; ночь продолжается без дополнительных эффектов.",
       "en": "Night study is complete; the Night continues with no additional effects."
+    },
+    "action.forest.hunter-outfitter.label": {
+      "ru": "Снарядиться у охотника",
+      "en": "Prepare with the hunter outfitter"
+    },
+    "action.forest.hunter-outfitter.description": {
+      "ru": "Получить набор верёвок и свежую подсказку о Лесной охотничьей тропе.",
+      "en": "Obtain a rope kit and a fresh clue about the Forest Hunter Trail."
+    },
+    "action.forest.collect-reinforced-axe.label": {
+      "ru": "Забрать усиленный топор",
+      "en": "Collect the reinforced axe"
+    },
+    "action.forest.collect-reinforced-axe.description": {
+      "ru": "Забрать усиленный рабочий топор после признания в артели.",
+      "en": "Collect the reinforced work axe after being accepted by the Lumber crew."
+    },
+    "action.forest.claim-boundary-token.label": {
+      "ru": "Получить жетон Старой границы",
+      "en": "Claim the Old Boundary token"
+    },
+    "action.forest.claim-boundary-token.description": {
+      "ru": "Попросить у бригадира старый жетон после закрепления профессионального доверия.",
+      "en": "Ask the foreman for the old token after establishing professional trust."
+    },
+    "activityOption.forest.route.hunter-trail.label": {
+      "ru": "Охотничья тропа",
+      "en": "Hunter Trail"
+    },
+    "activityOption.forest.route.hunter-trail.help": {
+      "ru": "Сезонная тропа по свежим охотничьим меткам; открывается после городской подсказки.",
+      "en": "A seasonal trail read from fresh hunter signs; unlocked by a city clue."
+    },
+    "presentation.activity.forest.entry.hunter-trail.text": {
+      "ru": "Охотничья тропа почти не похожа на дорогу: её держат тонкие метки на коре, примятый папоротник и переходы через промоины. Летом и осенью свежая подсказка позволяет связать эти знаки в проходящий маршрут.",
+      "en": "The Hunter Trail barely resembles a road: it is held together by subtle bark marks, pressed fern, and crossings over washed ground. In summer and autumn, a fresh clue lets those signs resolve into a usable route."
+    },
+    "activityOption.forest.challenge.logging-navigation.label": {
+      "ru": "Прочитать рабочие метки",
+      "en": "Read the work marks"
+    },
+    "activityOption.forest.challenge.logging-navigation.help": {
+      "ru": "Reason или опыт артельной разведки помогают отделить старые метки от свежего маршрута.",
+      "en": "Reason or a Lumber survey clue helps separate old marks from the current route."
+    },
+    "activityOption.forest.challenge.logging-spring-mud.label": {
+      "ru": "Перейти весенние колеи",
+      "en": "Cross the spring ruts"
+    },
+    "activityOption.forest.challenge.logging-spring-mud.help": {
+      "ru": "Нужна Strength либо способность cross_rough_route.",
+      "en": "Requires Strength or the cross_rough_route capability."
+    },
+    "activityOption.forest.challenge.logging-summer-deadfall.label": {
+      "ru": "Расчистить летний завал",
+      "en": "Clear the summer deadfall"
+    },
+    "activityOption.forest.challenge.logging-summer-deadfall.help": {
+      "ru": "Нужна Strength либо усиленный топор с cut_heavy_wood.",
+      "en": "Requires Strength or a reinforced axe with cut_heavy_wood."
+    },
+    "activityOption.forest.challenge.logging-autumn-deadfall.label": {
+      "ru": "Открыть осенний древесный затор",
+      "en": "Open the autumn timber choke"
+    },
+    "activityOption.forest.challenge.logging-autumn-deadfall.help": {
+      "ru": "Нужна Endurance либо усиленный топор с cut_heavy_wood.",
+      "en": "Requires Endurance or a reinforced axe with cut_heavy_wood."
+    },
+    "activityOption.forest.challenge.logging-winter-ruts.label": {
+      "ru": "Пройти по замёрзшим колеям",
+      "en": "Balance across frozen ruts"
+    },
+    "activityOption.forest.challenge.logging-winter-ruts.help": {
+      "ru": "Нужна Dexterity либо способность cross_rough_route.",
+      "en": "Requires Dexterity or the cross_rough_route capability."
+    },
+    "activityOption.forest.challenge.logging-preserve-sample.label": {
+      "ru": "Сохранить образец смолы",
+      "en": "Preserve the resin sample"
+    },
+    "activityOption.forest.challenge.logging-preserve-sample.help": {
+      "ru": "Требуется field preservation kit с preserve_specimen.",
+      "en": "Requires a field preservation kit with preserve_specimen."
+    },
+    "activityOption.forest.challenge.hunter-navigation.label": {
+      "ru": "Сверить охотничьи знаки",
+      "en": "Follow the hunter signs"
+    },
+    "activityOption.forest.challenge.hunter-navigation.help": {
+      "ru": "Wits или школьные полевые заметки позволяют удержать сезонную линию тропы.",
+      "en": "Wits or School field notes keep the seasonal trail readable."
+    },
+    "activityOption.forest.challenge.hunter-rough-crossing.label": {
+      "ru": "Перейти промоину",
+      "en": "Cross the washed ravine"
+    },
+    "activityOption.forest.challenge.hunter-rough-crossing.help": {
+      "ru": "Нужен rope kit с cross_rough_route либо высокая Dexterity.",
+      "en": "Requires a rope kit with cross_rough_route or high Dexterity."
+    },
+    "activityOption.forest.challenge.hunter-preserve-sample.label": {
+      "ru": "Сохранить следовой образец",
+      "en": "Preserve the trail specimen"
+    },
+    "activityOption.forest.challenge.hunter-preserve-sample.help": {
+      "ru": "Требуется preserve_specimen; вариант существует только в сезон Охотничьей тропы.",
+      "en": "Requires preserve_specimen and is available only during the Hunter Trail season."
+    },
+    "activityOption.forest.challenge.boundary-interpretation.label": {
+      "ru": "Истолковать межевой обряд",
+      "en": "Interpret the boundary rite"
+    },
+    "activityOption.forest.challenge.boundary-interpretation.help": {
+      "ru": "Magic, Reason или школьные полевые заметки помогают понять порядок старых знаков.",
+      "en": "Magic, Reason, or School field notes help interpret the old sequence of marks."
+    },
+    "activityOption.forest.challenge.boundary-rough-crossing.label": {
+      "ru": "Перейти разрушенную межу",
+      "en": "Cross the broken boundary wall"
+    },
+    "activityOption.forest.challenge.boundary-rough-crossing.help": {
+      "ru": "Нужен rope kit с cross_rough_route либо высокая Dexterity.",
+      "en": "Requires a rope kit with cross_rough_route or high Dexterity."
+    },
+    "activityOption.forest.challenge.boundary-preserve-sample.label": {
+      "ru": "Сохранить межевой образец",
+      "en": "Preserve the boundary sample"
+    },
+    "activityOption.forest.challenge.boundary-preserve-sample.help": {
+      "ru": "Жетон открывает маршрут, а preserve_specimen позволяет безопасно вынести образец.",
+      "en": "The token opens the route, while preserve_specimen lets you carry out a sample safely."
+    },
+    "action.forest.collect-field-kit.label": {
+      "ru": "Забрать полевой комплект",
+      "en": "Collect the field preservation kit"
+    },
+    "action.forest.collect-field-kit.description": {
+      "ru": "После первого настоящего занятия забрать в школе контейнеры, бирки и полевые заметки.",
+      "en": "After a real lesson, collect containers, labels, and field notes from the School desk."
     }
   }
 }

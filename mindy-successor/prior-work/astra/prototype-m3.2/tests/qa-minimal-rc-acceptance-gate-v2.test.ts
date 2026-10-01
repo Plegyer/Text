@@ -146,6 +146,10 @@ test('minimal RC one-Save path proves School, Night, natural Forest and Hard Wor
     );
   }
 
+  s=runtime.dispatch(s,{type:'action',id:'forest.collect-field-kit'},catalog);
+  assert.equal(s.run.resources.inventory.field_preservation_kit,1);
+  assert.ok(s.run.progression.worldFacts.includes('forest.school-field-notes'));
+
   s=reload(s);
   s=runtime.dispatch(s,{type:'endDay'},catalog);
   s=runtime.dispatch(s,{type:'chooseLodging',id:'lodging.normal'},catalog);
@@ -190,6 +194,12 @@ test('minimal RC one-Save path proves School, Night, natural Forest and Hard Wor
   assert.ok(actions.includes('advance'));
   assert.ok(actions.includes('escape'));
 
+  s=runtime.dispatch(s,{type:'activityAction',id:'forest.challenge.logging-navigation'},catalog);
+  s=reload(s);
+  s=runtime.dispatch(s,{type:'activityAction',id:'forest.challenge.logging-spring-mud'},catalog);
+  s=reload(s);
+  s=runtime.dispatch(s,{type:'activityAction',id:'forest.challenge.logging-preserve-sample'},catalog);
+  s=reload(s);
   s=runtime.dispatch(s,{type:'activityAction',id:'advance'},catalog);
   s=reload(s);
   s=runtime.dispatch(s,{type:'activityAction',id:'advance'},catalog);
