@@ -205,8 +205,20 @@ export const SATYR_MAID_CAREER_EVENT_IDS=[
   'satyr-maid.career.outcome-ready'
 ] as const;
 
+export const SATYR_MAID_RELATIONSHIP_EVENT_IDS=[
+  'satyr-maid.recurring-guest.intro',
+  'satyr-maid.recurring-guest.service',
+  'satyr-maid.recurring-guest.night',
+  'satyr-maid.recurring-guest.request',
+  'satyr-maid.recurring-guest.return'
+] as const;
+
 export function presentationIdForSatyrMaidCareerEvent(eventId:string){
   return `job/satyr-maid/event/${clean(eventId)}/default`;
+}
+
+export function presentationIdForSatyrMaidRelationshipEvent(eventId:string){
+  return `relationship/satyr-maid.recurring-guest/${clean(eventId)}/default`;
 }
 
 export function presentationIdForSatyrMaidStage(stage:string){
@@ -288,6 +300,16 @@ export function presentationSlots(cat:Catalog):PresentationSlot[]{
     add({
       id:presentationIdForSatyrMaidCareerEvent(eventId),
       label:`Satyr Maid · career event · ${eventId}`,
+      baseMediaIds:[],
+      fallbackId:'job/satyr-maid/result/default'
+    });
+  }
+
+  // C1D-100/C1D-101 recurring-guest identities use the relationship domain.
+  for(const eventId of SATYR_MAID_RELATIONSHIP_EVENT_IDS){
+    add({
+      id:presentationIdForSatyrMaidRelationshipEvent(eventId),
+      label:`Satyr Maid · recurring guest · ${eventId}`,
       baseMediaIds:[],
       fallbackId:'job/satyr-maid/result/default'
     });
