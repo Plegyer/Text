@@ -2,21 +2,17 @@
 
 Owner: Chat 2 / Presentation & Media
 Branch: `chat2/tavern-presentation-v14`
-Baseline: current `main@778494d2d2bcefdfa714630e01a0331c570d7d94`
+Baseline: `main@778494d2d2bcefdfa714630e01a0331c570d7d94`
+C1D-121 contract first read at `chat1/tavern-complete-v12@7bf2531f208c8b3faf5f83c16064885b6295167b`.
 
-## C2-145 pre-contract inventory
+## C2-145 — COMPLETE
 
-The C1D-121 Tavern runtime contract is not yet published on the authoritative branch or an available Tavern runtime branch, so gameplay-stage/event/relationship/Night/School/item/Activity/crisis IDs are deliberately not invented or pre-bound.
+The full contract-backed identity inventory now lives in:
+`mindy-successor/docs/presentation-prep/TAVERN_RUNTIME_IDENTITY_INVENTORY_C2_145.md`.
 
-Existing production identities already safe to inventory:
-- action: `tavern.shift`;
-- result presentation: `job/tavern/result/default`;
-- seasonal presentation: `job/tavern/shift/{spring|summer|autumn|winter}/default`;
-- existing endings: `tavern-stay`, `tavern-guild`, `tavern-court`, `ending.tavern.hard-work`.
+Before the contract appeared, Chat 2 inventoried only already-live Tavern shift/result/seasonal/ending identities. After publication, presentation IDs were added only for identities explicitly present in the C1D-121 contract. No traveler relationship event IDs were invented because the contract publishes relationship stages/facts/choices and Night choices, but not separate relationship event IDs.
 
-C2-145 remains open until the C1D-121 contract appears; this document records the safe baseline only.
-
-## C2-146 seasonal work pools — COMPLETE
+## C2-146 — COMPLETE
 
 Current production already owns four dedicated Tavern seasonal SVGs:
 - `career-tavern-shift-spring.svg`;
@@ -24,18 +20,18 @@ Current production already owns four dedicated Tavern seasonal SVGs:
 - `career-tavern-shift-autumn.svg`;
 - `career-tavern-shift-winter.svg`.
 
-No project-owned Tavern motion candidate exists in the presentation asset directory. The v14 baseline therefore intentionally keeps the four seasonal slots static-only rather than fabricating GIF/video sources. The focused regression proves animations-on and animations-off both resolve to the same project-owned seasonal static asset with RU/EN alt/caption parity.
+No project-owned Tavern motion candidate exists in the presentation asset directory. The v14 candidate therefore intentionally keeps the four seasonal slots static-only rather than fabricating GIF/video sources. Regression coverage proves animations-on and animations-off both resolve to the same project-owned seasonal static asset with RU/EN alt/caption parity.
 
-## C2-153 endings — COMPLETE on current assigned identities
+## C2-153 — COMPLETE
 
-The four queue-assigned ending IDs map to four distinct semantic presentation IDs:
+The four assigned ending IDs map to four distinct semantic presentation IDs:
 - `tavern-stay` -> `ending/tavern-stay`;
 - `tavern-guild` -> `ending/tavern-guild`;
 - `tavern-court` -> `ending/tavern-court`;
 - `ending.tavern.hard-work` -> `ending/tavern/hard-work`.
 
-All four are live production ending definitions, have stable project-owned static fallback, and have RU/EN title/description plus alt/caption coverage. Gameplay IDs, conditions, rewards and epilogues are preserved.
+All four are live production ending definitions, have stable project-owned static fallback, and keep RU/EN title/description plus presentation alt/caption coverage. Gameplay IDs, conditions, rewards and epilogues are preserved.
 
-## Dependency gate
+## Remaining dependency gate
 
-C2-147..152 and the full C2-154 surface depend on the exact C1D-121 Tavern runtime contract. C2-155 production reachability must wait for a frozen exact runtime candidate and must consume its real catalog IDs. No preparation-only event reservation is added here.
+C2-147..154 can be authored against the published contract and are covered by the focused v14 regression. C2-155 remains gated on the final frozen Chat 1 runtime candidate: contract-backed event reservations must be removed and the same presentation IDs must be proven to originate from the real catalog/runtime. C2-156 follows only after exact-head full repository CI is green.
