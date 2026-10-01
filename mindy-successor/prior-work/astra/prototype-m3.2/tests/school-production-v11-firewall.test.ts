@@ -54,9 +54,10 @@ test('C5-117 School reaction routing uses only existing safe paid-lesson and exa
   assert.deepEqual(unsafe,[]);
 });
 
-test('C5-117 legacy generic Night-study event is retained only as compatibility identity',()=>{
+test('C5-117 legacy generic Night-study event is retained but unreachable for new runs',()=>{
   const legacy=life.events.find((event:any)=>event.id==='school-life-content-v1.after-night-study');
   assert.ok(legacy);
-  assert.deepEqual(legacy.reactionTriggers,[]);
   assert.deepEqual(legacy.trigger,[]);
+  assert.deepEqual(legacy.reactionTriggers,[{kind:'nightChoiceCompleted',choice:'school.night_study.literacy_and_numbers.reason'}]);
+  assert.deepEqual(legacy.conditions,[{kind:'not',condition:{kind:'calendarYear',op:'gte',value:1}}]);
 });
