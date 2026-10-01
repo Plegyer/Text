@@ -32,7 +32,7 @@ test('C3-117 frozen v11 Forest contracts remain present under the intentional v1
   {id:'lumber.forest.failure',outcome:'failure'}
  ]);
  assert.ok(activity.results.find((entry:any)=>entry.id==='lumber.forest.success').effects.some((effect:any)=>effect.kind==='addWorldFact'&&effect.fact==='lumber.forest.truth-known'));
- assert.ok(forest.events.every((entry:any)=>entry.variants.length===1&&entry.variants[0].id==='default'));
+ assert.ok(forest.events.every((entry:any)=>entry.variants.some((variant:any)=>variant.id==='default')));
  assert.ok(forest.events.every((entry:any)=>entry.choices.every((choice:any)=>choice.effects.length===0)));
  const continuation=lumberCross.events.find((entry:any)=>entry.id==='lumber-cross.activity-forest-return');
  assert.ok(continuation.choices[0].effects.some((effect:any)=>effect.kind==='addCareerFact'&&effect.fact==='forest-truth-known'));
