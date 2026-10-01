@@ -161,8 +161,8 @@ test('C2-175 Guard Badge and Sealed Pass presentation is access-only and live-it
     assert.ok(item,itemId);
     assertLocalizedStatic(presentationIdForGuardItem(itemId));
   }
-  assert.match(localization['presentation.guard.item.guard_badge.alt'].en,/access to options/i);
-  assert.match(localization['presentation.guard.item.guard_sealed_pass.alt'].en,/not immunity or a combat bonus/i);
+  assert.match(localization['presentation.static.guard.item.guard_badge.alt'].en,/access to options/i);
+  assert.match(localization['presentation.static.guard.item.guard_sealed_pass.alt'].en,/not immunity or a combat bonus/i);
   assert.match(app,/data-guard-item=/);
 });
 
