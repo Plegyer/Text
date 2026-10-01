@@ -3789,6 +3789,34 @@
     "presentation.static.career.prostitute.ending.hard-work.caption": {
       "ru": "Финал независимой профессии: тяжкий труд.",
       "en": "Professional ending: Hard Work."
+    },
+    "ui.ending.state.locked": {
+      "ru": "Не открыто",
+      "en": "Locked"
+    },
+    "ui.ending.state.eligible": {
+      "ru": "Доступно",
+      "en": "Eligible"
+    },
+    "ui.ending.state.committed": {
+      "ru": "Выбрано",
+      "en": "Committed"
+    },
+    "ui.ending.state.completed": {
+      "ru": "Завершено",
+      "en": "Completed"
+    },
+    "ui.ending.stateAria": {
+      "ru": "Состояние судьбы: {state}",
+      "en": "Ending state: {state}"
+    },
+    "ui.run.endingCommitted": {
+      "ru": "Судьба выбрана",
+      "en": "Ending committed"
+    },
+    "ui.run.endingCompleted": {
+      "ru": "Судьба завершена",
+      "en": "Ending completed"
     }
   }
 }
