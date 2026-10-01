@@ -1,5 +1,26 @@
 # Worker reallocation update — 2026-10-01
 
+## RESUMED LEADER CHECKPOINT — 2026-10-01 12:55Z
+
+This block is newer than every snapshot below.
+
+- User resumed Leader execution after a temporary stop.
+- Exact main before this checkpoint write: `fb6a75923a56124d927035eee5b0a88d89c9445f`.
+- Tavern integration has advanced in accepted order:
+  - PR #202 runtime merged -> `a0ef816ed1fb8d6c7c2df720fa2c58e78c4af80a`;
+  - PR #203 authored content merged -> `5992060f7e028ac938a5a03237c3cf985fca46f7`;
+  - PR #204 School merged -> `fb6a75923a56124d927035eee5b0a88d89c9445f`.
+- Tavern presentation integration PR #205 is now the only remaining Tavern layer:
+  - exact head `74c1b93b197ec0473990f2c6c33bf4f4d0d85c05`;
+  - focused delta: 11 files, +1941/-6;
+  - existing Satyr/Undead/Forest presentation/UI consumers preserved;
+  - exact-head workflow #759 / id `36864462679`: **SUCCESS**.
+- Next Lead action: retarget #205 to current main, merge it if exact diff remains focused, then run exact-current-main Tavern verification before any Hunter integration.
+- Hunter runtime #201 and Hunter School #199 remain QA-accepted but unshipped; Hunter stays behind Tavern.
+- Chat 4 prior context window ended; replacement Chat 4 must re-read current pointers/QA truth and continue C4-152+ only from Git.
+- If execution is interrupted again, this block is the durable recovery point.
+
+
 User explicitly resumed/distributed work to idle workers.
 
 Current assignments:
