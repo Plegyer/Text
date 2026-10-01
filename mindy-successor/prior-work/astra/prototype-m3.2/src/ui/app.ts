@@ -1,5 +1,5 @@
 import {mountEditor} from './editor.ts';
-import {applyPresentation,emptyPresentation,resolvePresentation,presentationIdForActionResult,presentationIdForActivityRoute,presentationIdForEvent,presentationIdForEnding,presentationIdForSatyrMaidStage,type Presentation} from '../core/presentation.ts';
+import {applyPresentation,emptyPresentation,resolvePresentation,presentationIdForActionResult,presentationIdForActivityRoute,presentationIdForEvent,presentationIdForEnding,presentationIdForHunterItem,presentationIdForHunterRelationshipStage,presentationIdForHunterStage,presentationIdForHunterState,presentationIdForSatyrMaidStage,type Presentation} from '../core/presentation.ts';
 import {loadCatalog} from '../core/content.ts';
 import {freshSave,dispatch,parseSave,eligible,calendar,actionCost,actionAvailable,meets,energyMax,rent,favorStat,availableActivityActions,type Command} from '../core/engine.ts';
 import {stats,type Save,type Catalog,type Condition,type Action} from '../core/schema.ts';
@@ -21,6 +21,10 @@ const activityLabel=(id:string,fallback:string)=>tr(`activity.${id}.label`,fallb
 const activityOptionLabel=(id:string,fallback:string)=>tr(`activityOption.${id}.label`,fallback);
 const activityOptionHelp=(id:string)=>tr(`activityOption.${id}.help`,'');
 const activityNarrative=(activityId:string,routeId:string|null)=>{
+ if(activityId==='hunter.expedition'){
+  const suffix=routeId??'default';
+  return tr(`ui.hunter.expedition.route.${suffix}.text`,tr('ui.hunter.expedition.route.default.text',''));
+ }
  if(activityId!=='lumber.forest')return '';
  const suffix=routeId??'default';
  const fallback=tr(`presentation.activity.forest.entry.${suffix}.text`,'');
@@ -87,6 +91,58 @@ function satyrRelationshipChoiceState(eventId:string,choiceId:string){
  if(eventId==='satyr-maid.recurring-guest.request'&&choiceId==='decline-request')return 'request-refusal';
  if(eventId==='satyr-maid.recurring-guest.request'&&choiceId==='accept-request')return 'request-accepted';
  return '';
+}
+const hunterRelationshipEventStates:Record<string,string>={
+ 'hunter.relationship.intro':'intro',
+ 'hunter.relationship.trust':'trust',
+ 'hunter.relationship.conflict-open':'conflict-open',
+ 'hunter.relationship.conflict-resolve':'conflict-resolve',
+ 'hunter.relationship.companion':'companion'
+};
+function hunterRelationshipEventState(eventId:string){return hunterRelationshipEventStates[eventId]??'';}
+function hunterRelationshipChoiceState(eventId:string,choiceId:string){
+ if(eventId==='hunter.relationship.conflict-resolve'&&choiceId==='cooperate')return 'cooperate';
+ if(eventId==='hunter.relationship.conflict-resolve'&&choiceId==='rivalry')return 'rivalry';
+ if(eventId==='hunter.relationship.conflict-resolve'&&choiceId==='decline')return 'refusal';
+ if(eventId==='hunter.relationship.companion'&&choiceId==='accept')return 'companion-accepted';
+ if(eventId==='hunter.relationship.companion'&&choiceId==='decline')return 'companion-refused';
+ return '';
+}
+function hunterPresentationStatusHTML(){
+ const career=state.run.progression.careers.hunter;
+ if(!career)return '';
+ const stage=career.stage;
+ const stageLabel=tr(`presentation.hunter.stage.${stage}.label`,stage);
+ const relationship=state.run.progression.relationships['hunter.senior-guide'];
+ const relationshipStage=relationship?.stage??'';
+ const relationshipLabel=relationshipStage?tr(`presentation.hunter.relationship.stage.${relationshipStage}.label`,relationshipStage):'';
+ const itemRows=[
+  ['rope_kit','Rope Kit'],
+  ['field_preservation_kit','Field Preservation Kit']
+ ].filter(([itemId])=>(state.run.resources.inventory[itemId]??0)>0).map(([itemId,fallback])=>({
+  id:itemId,label:tr(`presentation.hunter.item.${itemId}.label`,fallback)
+ }));
+ const stateRows=[
+  ['forest-clue',career.facts.includes('forest-clue-known')],
+  ['tavern-clue',career.facts.includes('tavern-clue-known')],
+  ['farm-clue',career.facts.includes('farm-clue-known')],
+  ['lumber-clue',career.facts.includes('lumber-clue-known')],
+  ['school-field-craft',career.facts.includes('school-field-craft-ready')],
+  ['master-ready',career.facts.includes('master-route-ready')],
+  ['warden-ready',career.facts.includes('warden-route-ready')],
+  ['legend-ready',career.facts.includes('legend-route-ready')],
+  ['rare-contract-active',career.facts.includes('rare-contract-active')],
+  ['refusal-respected',!!relationship?.facts.includes('refusal-respected')],
+  ['companion-ready',!!relationship?.facts.includes('companion-ready')]
+ ].filter(([,active])=>active).map(([id])=>({
+  id:String(id),label:tr(`presentation.hunter.state.${id}.label`,String(id))
+ }));
+ const relationshipHtml=relationshipStage
+  ?`<p class="hunter-relationship-stage" data-hunter-relationship-stage="${esc(relationshipStage)}" data-presentation-id="${esc(presentationIdForHunterRelationshipStage(relationshipStage))}" tabindex="0" aria-label="${esc(fmt(tr('ui.hunter.relationshipAria','Профессиональная связь со старшим проводником: {stage}'),{stage:relationshipLabel}))}">${esc(relationshipLabel)}</p>`
+  :'';
+ const itemHtml=itemRows.map(row=>`<span class="hunter-item-chip" data-hunter-item="${esc(row.id)}" data-presentation-id="${esc(presentationIdForHunterItem(row.id))}" tabindex="0" aria-label="${esc(fmt(tr('ui.hunter.itemAria','Снаряжение охотницы: {item}'),{item:row.label}))}">${esc(row.label)}</span>`).join('');
+ const stateHtml=stateRows.map(row=>`<span class="hunter-state-chip" data-hunter-state="${esc(row.id)}" data-presentation-id="${esc(presentationIdForHunterState(row.id))}" tabindex="0" aria-label="${esc(fmt(tr('ui.hunter.stateAria','Состояние охотничьего маршрута: {state}'),{state:row.label}))}">${esc(row.label)}</span>`).join('');
+ return `<div class="hunter-presentation-status"><p class="hunter-career-stage" data-hunter-stage="${esc(stage)}" data-presentation-id="${esc(presentationIdForHunterStage(stage))}" tabindex="0" aria-label="${esc(fmt(tr('ui.hunter.stageAria','Этап карьеры охотницы: {stage}'),{stage:stageLabel}))}">${esc(stageLabel)}</p>${relationshipHtml}${itemHtml||stateHtml?`<div class="hunter-status-list">${itemHtml}${stateHtml}</div>`:''}</div>`;
 }
 const professions=['lumber.shift','satyr-maid.shift','undead-farm.shift','tavern.shift','hunter.shift','guard.shift','merchant.shift','artist-geisha.shift','assassin.shift','prostitute.shift'];
 const lateCareerProfessions=new Set(['tavern.shift','hunter.shift','guard.shift','merchant.shift','artist-geisha.shift','assassin.shift','prostitute.shift']);
@@ -207,9 +263,10 @@ function actionList(ids:string[]){return `<div class="activity-list">${ids.map(i
  const satyrStagePresentation=satyrStage?presentationIdForSatyrMaidStage(satyrStage):'';
  const satyrStageLabel=satyrStage?tr(`presentation.satyr-maid.stage.${satyrStage}.label`,satyrStage):'';
  const satyrStageStatus=satyrStage?`<p class="career-stage" data-career-stage="${esc(satyrStage)}" data-stage-presentation-id="${esc(satyrStagePresentation)}" tabindex="0" aria-label="${esc(fmt(tr('ui.work.satyrMaidStageAria','Этап карьеры: {stage}'),{stage:satyrStageLabel}))}">${esc(satyrStageLabel)}</p>`:'';
+ const hunterStatus=a.id==='hunter.shift'?hunterPresentationStatusHTML():'';
  const availability=
   lateCareer?`<p class="career-availability" data-career-availability="${availabilityState}" tabindex="0" role="status" aria-label="${esc(fmt(tr('ui.work.lateCareer.stateAria','{career}: {state}'),{career:label,state:availabilityLabel}))}">${esc(availabilityLabel)}</p>`:'';
- return `<article class="activity" ${lateCareer?`data-late-career="${esc(a.id)}"`:''} ${satyrStage?`data-satyr-maid-stage="${esc(satyrStage)}"`:''}><div><h3>${esc(label)}</h3>${availability}${satyrStageStatus}<p>${esc(description)}</p><small>${a.cost.energy} ${esc(tr('ui.work.energy','энергии'))}${actionCost(a,state)?` · ${actionCost(a,state)} ${esc(tr('ui.work.coins','монет'))}`:''}${forecast!==null?` · ${esc(tr('ui.work.income','доход ≈'))} ${forecast}`:''}</small><div class="effect-tags">${statsEffects.map(e=>e.kind==='metric'?`<span class="${e.delta>0?'gain':'loss'}">${esc(labels[e.key])} ${e.delta>0?'+':''}${e.delta}</span>`:'').join('')}</div>${miss.length?`<p class="requirement">${esc(miss.map(explain).join(' · '))}</p>`:''}${careerLocked?`<p class="requirement" id="${esc(helpId)}" tabindex="0">${esc(lockHelp)}</p>`:''}</div>${a.mode==='brew'?`<div><button data-action="${a.id}" data-recipe="gentle" ${disabled(a)?'disabled':''}>${esc(tr('ui.work.recipeReliable','Надёжно'))}</button><button data-action="${a.id}" data-recipe="bold" ${disabled(a)?'disabled':''}>${esc(tr('ui.work.recipeFast','Быстро'))}</button></div>`:`<button data-action="${a.id}" ${careerButtonAria?`aria-label="${esc(careerButtonAria)}"`:''} ${careerLocked?`aria-describedby="${esc(helpId)}" aria-disabled="true"`:lateCareer?'aria-disabled="false"':''} ${disabled(a)?'disabled':''}>${professions.includes(a.id)?esc(tr('ui.work.button','Работать')):esc(tr('ui.generic.selectButton','Выбрать'))}</button>`}</article>`;
+ return `<article class="activity" ${lateCareer?`data-late-career="${esc(a.id)}"`:''} ${satyrStage?`data-satyr-maid-stage="${esc(satyrStage)}"`:''} ${a.id==='hunter.shift'?'data-hunter-presentation="true"':''}><div><h3>${esc(label)}</h3>${availability}${satyrStageStatus}${hunterStatus}<p>${esc(description)}</p><small>${a.cost.energy} ${esc(tr('ui.work.energy','энергии'))}${actionCost(a,state)?` · ${actionCost(a,state)} ${esc(tr('ui.work.coins','монет'))}`:''}${forecast!==null?` · ${esc(tr('ui.work.income','доход ≈'))} ${forecast}`:''}</small><div class="effect-tags">${statsEffects.map(e=>e.kind==='metric'?`<span class="${e.delta>0?'gain':'loss'}">${esc(labels[e.key])} ${e.delta>0?'+':''}${e.delta}</span>`:'').join('')}</div>${miss.length?`<p class="requirement">${esc(miss.map(explain).join(' · '))}</p>`:''}${careerLocked?`<p class="requirement" id="${esc(helpId)}" tabindex="0">${esc(lockHelp)}</p>`:''}</div>${a.mode==='brew'?`<div><button data-action="${a.id}" data-recipe="gentle" ${disabled(a)?'disabled':''}>${esc(tr('ui.work.recipeReliable','Надёжно'))}</button><button data-action="${a.id}" data-recipe="bold" ${disabled(a)?'disabled':''}>${esc(tr('ui.work.recipeFast','Быстро'))}</button></div>`:`<button data-action="${a.id}" ${careerButtonAria?`aria-label="${esc(careerButtonAria)}"`:''} ${careerLocked?`aria-describedby="${esc(helpId)}" aria-disabled="true"`:lateCareer?'aria-disabled="false"':''} ${disabled(a)?'disabled':''}>${professions.includes(a.id)?esc(tr('ui.work.button','Работать')):esc(tr('ui.generic.selectButton','Выбрать'))}</button>`}</article>`;
  }).join('')}</div>`;}
 function schoolCourseDisabled(course:SchoolCourse){
  return busy||locked||state.run.status!=='active'||!state.run.creation.complete||!state.run.flags['story.arrived']||
@@ -225,7 +282,7 @@ function activityEntryDisabled(id:string){
   !eligible(activity.entryConditions,state,catalog)||state.run.dayState.energyCurrent<activity.entryEnergyCost;
 }
 function activityEntryList(ids:string[]){
- return `<div class="activity-list">${ids.map(id=>catalog.definitions.activities.find(item=>item.id===id)).filter(Boolean).map(activity=>`<article class="activity"><div><h3>${esc(activityLabel(activity!.id,activity!.label))}</h3><p>${esc(tr('ui.explore.activityHelp','Отдельная вылазка с собственным прогрессом и контрольными точками.'))}</p><small>${esc(fmt(tr('ui.explore.entryEnergy','Энергия на вход: {energy}'),{energy:activity!.entryEnergyCost}))}</small></div><button data-enter-activity="${activity!.id}" ${activityEntryDisabled(activity!.id)?'disabled':''}>${esc(tr('ui.explore.enterButton','Войти'))}</button></article>`).join('')}</div>`;
+ return `<div class="activity-list">${ids.map(id=>catalog.definitions.activities.find(item=>item.id===id)).filter(Boolean).map(activity=>{const hunterExpedition=activity!.id==='hunter.expedition';const help=hunterExpedition?tr('ui.hunter.expeditionHelp',''):tr('ui.explore.activityHelp','Отдельная вылазка с собственным прогрессом и контрольными точками.');return `<article class="activity" ${hunterExpedition?'data-hunter-expedition-entry="true"':''}><div><h3>${esc(activityLabel(activity!.id,activity!.label))}</h3><p>${esc(help)}</p><small>${esc(fmt(tr('ui.explore.entryEnergy','Энергия на вход: {energy}'),{energy:activity!.entryEnergyCost}))}</small></div><button data-enter-activity="${activity!.id}" ${activityEntryDisabled(activity!.id)?'disabled':''}>${esc(tr('ui.explore.enterButton','Войти'))}</button></article>`;}).join('')}</div>`;
 }
 function nightChoiceList(){
  const choices=catalog.definitions.nightChoices.filter(choice=>eligible(choice.conditions,state,catalog));
@@ -267,8 +324,8 @@ function mediaHTML(presentationId:string){
 function central(){
  const r=state.run,p=r.pending;
  if(!r.creation.complete)return `<section class="creation"><div class="creation-art">${mediaHTML('location/town/default')}<div><span class="eyebrow">${esc(tr('ui.creation.eyebrow','До первого шага'))}</span><h1>${esc(tr('ui.creation.title','Кем вы войдёте в этот мир?'))}</h1><p>${esc(tr('ui.creation.body','Новый город ещё ничего о вас не знает.'))}</p></div></div><div class="creation-form"><h2>${esc(tr('ui.creation.heroineTitle','Ваша героиня'))}</h2><p>${esc(tr('ui.creation.freePoints','25 лет · свободных очков: {points}').replace('{points}',''))}<strong id="points">${r.creation.remaining}</strong></p><div class="creation-stats">${stats.map(k=>`<div class="allocate" title="${esc(statHint(k))}"><span>${esc(statLabel(k))}</span><button data-stat="${k}" data-delta="-1" aria-label="${esc(fmt(tr('ui.creation.decreaseStatAria','Уменьшить {stat}'),{stat:statLabel(k)}))}" ${busy||locked||!r.creation.allocated[k]?'disabled':''}>−</button><strong>${r.metrics[k]}</strong><button data-stat="${k}" data-delta="1" aria-label="${esc(fmt(tr('ui.creation.increaseStatAria','Увеличить {stat}'),{stat:statLabel(k)}))}" ${busy||locked||!r.creation.remaining?'disabled':''}>+</button></div>`).join('')}</div><button id="create" class="primary" ${r.creation.remaining||busy||locked?'disabled':''}>${esc(tr('ui.creation.startButton','Начать историю'))}</button></div></section>`;
- if(p){const e=catalog.events.find(e=>e.id===p.eventId)!,v=e.variants.find(v=>v.id===p.variantId)!;const satyrState=satyrRelationshipEventState(e.id);const satyrStateLabel=satyrState?tr(`ui.satyrMaid.relationshipState.${satyrState}`,satyrState):'';
- return `<section class="stage scene" ${satyrState?`data-satyr-relationship-state="${esc(satyrState)}"`:''}>${mediaHTML(p.presentationId??presentationIdForEvent(catalog,e.id,v.id))}<div class="stage-title"><span class="eyebrow">${esc(tr('ui.event.eyebrow','Встреча'))}</span><h1>${esc(eventTitle(e.id,e.title))}</h1></div></section><section class="dialogue" ${satyrState?`tabindex="0" role="region" aria-label="${esc(fmt(tr('ui.satyrMaid.relationshipStateAria','Состояние цепочки: {state}'),{state:satyrStateLabel}))}"`:''}><p>${esc(pendingEventVariantText(e.id,v.id,v.text))}</p><div class="choices">${e.choices.map(c=>{const satyrChoiceState=satyrRelationshipChoiceState(e.id,c.id);const choiceLabel=eventChoiceLabel(e.id,c.id,c.label);return `<button data-choice="${c.id}" ${satyrChoiceState?`data-satyr-choice-state="${esc(satyrChoiceState)}" aria-label="${esc(choiceLabel)}"`:''} ${busy||locked||!eligible(c.conditions,state)?'disabled':''}>${esc(choiceLabel)}</button>`;}).join('')}</div></section>`;}
+ if(p){const e=catalog.events.find(e=>e.id===p.eventId)!,v=e.variants.find(v=>v.id===p.variantId)!;const satyrState=satyrRelationshipEventState(e.id);const satyrStateLabel=satyrState?tr(`ui.satyrMaid.relationshipState.${satyrState}`,satyrState):'';const hunterState=hunterRelationshipEventState(e.id);const hunterStateLabel=hunterState?tr(`ui.hunter.relationshipEvent.${hunterState}`,hunterState):'';const focusLabel=satyrState?fmt(tr('ui.satyrMaid.relationshipStateAria','Состояние цепочки: {state}'),{state:satyrStateLabel}):hunterState?fmt(tr('ui.hunter.relationshipEventAria','Профессиональная сцена со старшим проводником: {state}'),{state:hunterStateLabel}):'';
+ return `<section class="stage scene" ${satyrState?`data-satyr-relationship-state="${esc(satyrState)}"`:''} ${hunterState?`data-hunter-relationship-event="${esc(hunterState)}"`:''}>${mediaHTML(p.presentationId??presentationIdForEvent(catalog,e.id,v.id))}<div class="stage-title"><span class="eyebrow">${esc(tr('ui.event.eyebrow','Встреча'))}</span><h1>${esc(eventTitle(e.id,e.title))}</h1></div></section><section class="dialogue" ${focusLabel?`tabindex="0" role="region" aria-label="${esc(focusLabel)}"`:''}><p>${esc(pendingEventVariantText(e.id,v.id,v.text))}</p><div class="choices">${e.choices.map(c=>{const satyrChoiceState=satyrRelationshipChoiceState(e.id,c.id);const hunterChoiceState=hunterRelationshipChoiceState(e.id,c.id);const choiceLabel=eventChoiceLabel(e.id,c.id,c.label);return `<button data-choice="${c.id}" ${satyrChoiceState?`data-satyr-choice-state="${esc(satyrChoiceState)}"`:''} ${hunterChoiceState?`data-hunter-choice-state="${esc(hunterChoiceState)}"`:''} ${satyrChoiceState||hunterChoiceState?`aria-label="${esc(choiceLabel)}"`:''} ${busy||locked||!eligible(c.conditions,state)?'disabled':''}>${esc(choiceLabel)}</button>`;}).join('')}</div></section>`;}
  if(r.status!=='active'){
   const endingId=r.endings.result?.endingId??r.endings.committed??r.acceptedEnding;
   const endingDef=endingId?catalog.definitions.endings.find(item=>item.id===endingId):undefined;
@@ -320,7 +377,7 @@ function endingPresentationState(endingId:string){
 function panelContent(){
  if(panel==='work')return `<h2>${esc(tr('ui.work.title','Куда устроимся?'))}</h2>${actionList(professions)}`;
  if(panel==='school')return `<h2>${esc(tr('ui.school.title','Школа'))}</h2><p>${esc(tr('ui.school.help','Восемь оплачиваемых курсов. Урок списывает tuition + 1 Energy атомарно.'))}</p>${schoolList()}`;
- if(panel==='explore')return `<h2>${esc(tr('ui.explore.title','Окрестности и поручения'))}</h2>${activityEntryList(['lumber.forest'])}<details><summary>${esc(tr('ui.explore.errandsSummary','Обычные поручения'))}</summary>${actionList(['forest-search','tavern-talk','forage','landlord','visit','oddjob'])}</details>`;
+ if(panel==='explore')return `<h2>${esc(tr('ui.explore.title','Окрестности и поручения'))}</h2>${activityEntryList(['lumber.forest','hunter.expedition'])}<details><summary>${esc(tr('ui.explore.errandsSummary','Обычные поручения'))}</summary>${actionList(['forest-search','tavern-talk','forage','landlord','visit','oddjob'])}</details>`;
  if(panel==='sleep')return `<h2>${esc(tr('ui.sleep.title','Ночь'))}</h2><p>${esc(tr('ui.sleep.help','Сначала выбирается ночлег, затем — добровольное вечернее действие, после чего начинается следующий день.'))}</p><button data-end-day class="primary" ${busy||locked||!!state.run.pending||!!state.run.flow.night||!!state.run.flow.activity?'disabled':''}>${esc(tr('ui.sleep.startButton','Начать ночную последовательность'))}</button>`;
  if(panel==='stats')return `<h2>${esc(tr('ui.panel.stats','Героиня'))}</h2><p>${esc(tr('ui.stats.help','Характеристики показывают текущие возможности героини.'))}</p><div class="character-stats">${stats.map(k=>`<article><div><strong>${esc(statLabel(k))}</strong><b>${state.run.metrics[k]}</b></div><progress value="${state.run.metrics[k]}" max="100"></progress><p>${esc(statHint(k))}</p></article>`).join('')}</div><h3>${esc(tr('ui.stats.professionsTitle','Профессии'))}</h3><p>${esc(tr('ui.stats.professionsHelp','Здесь показано, сколько обычных смен завершено в каждой профессии.'))}</p><p>${professions.map(id=>{const action=catalog.definitions.actions.find(a=>a.id===id)!;const career=id.replace(/\.shift$/,'');return `${esc(tr(`profession.${career}.label`,tr(`action.${id}.label`,action.label)))}: ${state.run.actionCounts[id]??0}`;}).join(' · ')}</p>${lumberCareerProgress()}`;
  if(panel==='journal'){
