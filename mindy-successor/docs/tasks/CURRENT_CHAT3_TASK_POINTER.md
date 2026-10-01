@@ -1,23 +1,22 @@
 # CURRENT CHAT3 TASK POINTER
 
-Status: **POVERTY v14 FROZEN + TAVERN CONTENT v15 ACTIVE**
+Status: **TAVERN CONTENT v15 FROZEN / HUNTER CONTENT v16 ACTIVE**
 Owner: Chat 3 / World + Career Content Bundles
 
-Frozen ordinary-poverty candidate:
-- PR #180
-- exact head `4ba5d50b50d8d263e998d13de4126de3119090f2`
-- CI #624 SUCCESS
-- do not move it while Chat 4 gates it.
+Frozen Tavern authored candidate:
+- PR #185
+- exact head `d2a5447a25a32253eb5ff5a6ab7821fb33a10600`
+- CI #694 SUCCESS
+- do not move it.
 
-Continue immediately on a new branch.
+Active stacked branch:
+- `chat3/hunter-live-authored-v16`
 
 Current queue:
-- `TASK_CHAT3_CONTENT_QUEUE_v15.md`
-- C3-157..168
-- target: **Tavern Live Authored Content**
+- `TASK_CHAT3_CONTENT_QUEUE_v16.md`
+- C3-169..180
+- target: **Hunter Live Authored Content**
 
-Role for this queue is intentionally expanded from Forest/Poverty into data-driven Tavern content. Chat 1 owns Tavern mechanics; Chat 3 owns authored production variants only.
+Start C3-169 immediately. Complete contract-independent inventory/seasonal authoring first; bind gameplay identities only to C1D-133 once Chat 1 publishes them.
 
-Start C3-157 now. Consume C1D-121 contract once published; do not create competing gameplay IDs.
-
-Do not wait for #180 QA.
+Do not wait for Tavern integration. Do not alter PR #185.
