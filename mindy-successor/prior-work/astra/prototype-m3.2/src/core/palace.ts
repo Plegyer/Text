@@ -87,3 +87,64 @@ export const palaceTrueEndingResult={
   returnsHome:true,
   grantsPermanentOptionalDoubleAllProgressionStats:true
 } as const;
+
+
+/**
+ * Current shipped read-only School seams revalidated on the assignment
+ * baseline. These are inputs only; Palace owns no School progression writes.
+ */
+export const palaceSchoolReadInputs=[
+  'school.course.literacy_and_numbers',
+  'school.course.etiquette_and_presentation',
+  'school.course.arcana',
+  'school.course.rhetoric_and_social'
+] as const;
+
+/**
+ * Current shipped Activity seams that Palace may consume as external evidence
+ * once a Palace runtime consumer receives authority. No new Activity behavior
+ * is created here.
+ */
+export const palaceActivityReadInputs={
+  lumberForest:{
+    activity:'lumber.forest',
+    worldFact:'lumber.forest.truth-known'
+  },
+  hunterExpedition:{
+    activity:'hunter.expedition',
+    career:'hunter',
+    careerFact:'expedition-returned'
+  }
+} as const;
+
+/**
+ * Semantic relationship roles from the Palace design. These are deliberately
+ * not relationship IDs and do not choose identities, thresholds or romance
+ * gates.
+ */
+export const palaceRelationshipRoles=[
+  'professional-patron',
+  'rival',
+  'servant-or-official-contact',
+  'optional-romance'
+] as const;
+
+/**
+ * Semantic capability-item roles only. Acquisition, concrete item IDs and
+ * exact action gates remain Product/runtime decisions.
+ */
+export const palaceItemCapabilityRoles=[
+  'invitation-or-seal',
+  'formal-outfit',
+  'archive-key',
+  'ceremonial-component',
+  'proof-or-document'
+] as const;
+
+export const palaceCalendarThemes=[
+  'ceremonies',
+  'receptions',
+  'supplies-and-taxes',
+  'delegations',
+  'rituals-and-festivals'
+] as const;
