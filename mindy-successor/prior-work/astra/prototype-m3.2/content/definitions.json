@@ -4162,6 +4162,80 @@
         }
       ],
       "mode": "normal"
+    },
+    {
+      "id": "secret-debt.shift",
+      "label": "Bound work shift",
+      "description": "A compulsory work shift after the Secret Debt trap activates. Exact stat gains and debt economics remain Product-open.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "secret-debt",
+          "stage": "bound"
+        }
+      ],
+      "effects": [
+        {
+          "kind": "incrementCareerCounter",
+          "career": "secret-debt",
+          "counter": "completed_shifts",
+          "amount": 1
+        }
+      ],
+      "mode": "normal",
+      "scenes": [
+        {
+          "id": "spring.default",
+          "text": "The compulsory shift follows a fixed order of assigned work. The route records only completed service until Product locks its exact progression gains.",
+          "conditions": [],
+          "media": [
+            "stage.room"
+          ]
+        },
+        {
+          "id": "summer.default",
+          "text": "The summer shift is still compulsory work: the day is counted, but no unapproved stat package or debt reduction is invented here.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "summer"
+            }
+          ],
+          "media": [
+            "stage.room"
+          ]
+        },
+        {
+          "id": "autumn.default",
+          "text": "The autumn shift continues the bound career routine while preserving the same Product-open boundaries around gains, debt, and rewards.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "autumn"
+            }
+          ],
+          "media": [
+            "stage.room"
+          ]
+        },
+        {
+          "id": "winter.default",
+          "text": "The winter shift records completed bound work without converting historical draft numbers into current authority.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "winter"
+            }
+          ],
+          "media": [
+            "stage.room"
+          ]
+        }
+      ]
     }
   ],
   "endings": [
@@ -4840,6 +4914,51 @@
       "reward": "undead-farm.successor.compat",
       "metaRewards": [],
       "epilogue": "You take responsibility for the farm through production records and professional trust, not a romance shortcut."
+    },
+    {
+      "id": "ending.secret-debt.paid-freedom",
+      "title": "Paid Freedom",
+      "description": "The debt route has been resolved through the paid-freedom branch. Exact debt tuning and Meta reward remain Product-open.",
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "secret-debt",
+          "stage": "resolved-paid"
+        }
+      ],
+      "reward": "secret-debt.reward.pending",
+      "metaRewards": [],
+      "epilogue": "The obligation is closed. Ordinary work is no longer blocked by the Secret Debt route."
+    },
+    {
+      "id": "ending.secret-debt.bound-life",
+      "title": "Bound Life",
+      "description": "The bound-life branch has reached its distinct resolved state. Its exact tenure threshold and Meta reward remain Product-open.",
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "secret-debt",
+          "stage": "resolved-bound"
+        }
+      ],
+      "reward": "secret-debt.reward.pending",
+      "metaRewards": [],
+      "epilogue": "The life resolves inside the bound route rather than being treated as Paid Freedom or Takeover."
+    },
+    {
+      "id": "ending.secret-debt.takeover",
+      "title": "Takeover",
+      "description": "The takeover branch has reached its distinct resolved state after its route and external-condition gates. Exact build thresholds and Meta reward remain Product-open.",
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "secret-debt",
+          "stage": "resolved-takeover"
+        }
+      ],
+      "reward": "secret-debt.reward.pending",
+      "metaRewards": [],
+      "epilogue": "The route ends in a takeover outcome, separate from both repayment and remaining bound."
     }
   ],
   "careers": [
@@ -6031,6 +6150,133 @@
         "new-independent-worker"
       ],
       "transitions": []
+    },
+    {
+      "id": "secret-debt",
+      "label": "Secret Debt",
+      "initialStage": "unseen",
+      "stages": [
+        "unseen",
+        "offered",
+        "refused",
+        "accepted",
+        "bound",
+        "resolved-paid",
+        "resolved-bound",
+        "resolved-takeover"
+      ],
+      "transitions": [
+        {
+          "id": "surface-offer",
+          "from": [
+            "unseen"
+          ],
+          "to": "offered",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "secret-debt",
+              "fact": "encounter-authorized",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "refuse-offer",
+          "from": [
+            "offered"
+          ],
+          "to": "refused",
+          "conditions": [],
+          "effects": []
+        },
+        {
+          "id": "accept-offer",
+          "from": [
+            "offered"
+          ],
+          "to": "accepted",
+          "conditions": [],
+          "effects": []
+        },
+        {
+          "id": "activate-bound",
+          "from": [
+            "accepted"
+          ],
+          "to": "bound",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "secret-debt",
+              "fact": "activation-authorized",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "resolve-paid",
+          "from": [
+            "bound"
+          ],
+          "to": "resolved-paid",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "secret-debt",
+              "fact": "debt-cleared",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "resolve-bound",
+          "from": [
+            "bound"
+          ],
+          "to": "resolved-bound",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "secret-debt",
+              "fact": "bound-life-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "resolve-takeover",
+          "from": [
+            "bound"
+          ],
+          "to": "resolved-takeover",
+          "conditions": [
+            {
+              "kind": "careerChoice",
+              "career": "secret-debt",
+              "choice": "outcome-route",
+              "value": "takeover"
+            },
+            {
+              "kind": "careerFact",
+              "career": "secret-debt",
+              "fact": "takeover-route-ready",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "secret-debt",
+              "fact": "takeover-external-condition-met",
+              "present": true
+            }
+          ],
+          "effects": []
+        }
+      ]
     }
   ],
   "quests": [],
