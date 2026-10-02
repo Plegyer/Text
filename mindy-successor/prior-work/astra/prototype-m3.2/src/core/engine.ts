@@ -1,7 +1,7 @@
 import { metrics, stats, seasons, priorityClasses, saveSchema, type Stat, type Save, type Meta, type Condition, type Effect, type Catalog, type StoryEvent, type Action, type MachineDefinition, type ReactionFact, type ReactionTrigger, type PriorityClass, type LodgingDefinition, type NightChoiceDefinition, type ActivityDefinition, type ActivityOutcome, type ActivityEnvelope, ordinaryHardWorkCareers, type MetaReward, type OrdinaryHardWorkCareer } from './schema.ts';
 import {SCHOOL_ACTION_ID,SCHOOL_COURSES,executeSchoolLesson,type SchoolCourseId} from './school.ts';
 import {presentationIdForActionResult,presentationIdForEvent} from './presentation.ts';
-import {SECRET_DEBT_CAREER_ID,SECRET_DEBT_SHIFT_ACTION_ID,captureSecretDebtAcceptanceDay,secretDebtActivationDue,secretDebtBlocksCareerId,secretDebtBlocksEnding,secretDebtBlocksOrdinaryShift,secretDebtBlocksSourceDomain,secretDebtShiftStatEffects,secretDebtShiftTuningReady,secretDebtWageDefinition} from './secretDebt.ts';
+import {SECRET_DEBT_CAREER_ID,SECRET_DEBT_SHIFT_ACTION_ID,captureSecretDebtAcceptanceDay,secretDebtActivationDue,secretDebtBlocksCareerId,secretDebtBlocksEnding,secretDebtBlocksOrdinaryAction,secretDebtBlocksSourceDomain,secretDebtShiftStatEffects,secretDebtShiftTuningReady,secretDebtWageDefinition} from './secretDebt.ts';
 
 const statSet=new Set<string>(stats);
 const cappedLegacy=new Set(['health','stress','trust']);
@@ -254,7 +254,7 @@ export function ordinaryCareerForShiftAction(action:Action):OrdinaryHardWorkCare
 }
 
 export function actionAvailable(action:Action,s:Save,cat?:Catalog):boolean{
-  if(secretDebtBlocksOrdinaryShift(s,action))return false;
+  if(secretDebtBlocksOrdinaryAction(s,action))return false;
   if(action.id===SECRET_DEBT_SHIFT_ACTION_ID&&!secretDebtShiftTuningReady())return false;
   if(!eligible(action.conditions,s,cat))return false;
   const career=ordinaryCareerForShiftAction(action);
