@@ -6028,12 +6028,261 @@
       "label": "Professional",
       "initialStage": "new-independent-worker",
       "stages": [
-        "new-independent-worker"
+        "new-independent-worker",
+        "known-professional",
+        "established",
+        "veteran",
+        "independent-house",
+        "elite-clientele",
+        "network-protection",
+        "outcome-ready"
       ],
-      "transitions": []
+      "transitions": [
+        {
+          "id": "first-shift",
+          "from": [
+            "new-independent-worker"
+          ],
+          "to": "known-professional",
+          "conditions": [
+            {
+              "kind": "careerCounter",
+              "career": "prostitute",
+              "counter": "completed_shifts",
+              "op": "gte",
+              "value": 1
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "prostitute",
+              "fact": "first-shift-complete"
+            }
+          ]
+        },
+        {
+          "id": "established",
+          "from": [
+            "known-professional"
+          ],
+          "to": "established",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "prostitute",
+              "fact": "seasonal-breadth-ready",
+              "present": true
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "prostitute",
+              "fact": "established-ready"
+            }
+          ]
+        },
+        {
+          "id": "branch-veteran",
+          "from": [
+            "established"
+          ],
+          "to": "veteran",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "prostitute",
+              "fact": "veteran-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "branch-independent-house",
+          "from": [
+            "established"
+          ],
+          "to": "independent-house",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "prostitute",
+              "fact": "independent-house-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "branch-elite-clientele",
+          "from": [
+            "established"
+          ],
+          "to": "elite-clientele",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "prostitute",
+              "fact": "elite-clientele-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "branch-network-protection",
+          "from": [
+            "established"
+          ],
+          "to": "network-protection",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "prostitute",
+              "fact": "network-protection-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "outcome-ready",
+          "from": [
+            "veteran",
+            "independent-house",
+            "elite-clientele",
+            "network-protection"
+          ],
+          "to": "outcome-ready",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "prostitute",
+              "fact": "outcome-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        }
+      ]
     }
   ],
-  "quests": [],
+  "quests": [
+    {
+      "id": "prostitute.client-flow",
+      "label": "Voluntary professional client flow prep",
+      "initialStage": "dormant",
+      "stages": [
+        "dormant",
+        "intake",
+        "terms",
+        "boundary",
+        "work-result",
+        "payment-admin",
+        "closed"
+      ],
+      "transitions": [
+        {
+          "id": "start-intake",
+          "from": [
+            "dormant"
+          ],
+          "to": "intake",
+          "conditions": [
+            {
+              "kind": "questFact",
+              "quest": "prostitute.client-flow",
+              "fact": "intake-opened",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "record-terms",
+          "from": [
+            "intake"
+          ],
+          "to": "terms",
+          "conditions": [
+            {
+              "kind": "questFact",
+              "quest": "prostitute.client-flow",
+              "fact": "terms-recorded",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "open-boundary",
+          "from": [
+            "terms"
+          ],
+          "to": "boundary",
+          "conditions": [
+            {
+              "kind": "questFact",
+              "quest": "prostitute.client-flow",
+              "fact": "boundary-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "record-boundary",
+          "from": [
+            "boundary"
+          ],
+          "to": "work-result",
+          "conditions": [
+            {
+              "kind": "questFact",
+              "quest": "prostitute.client-flow",
+              "fact": "boundary-response-recorded",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "record-result",
+          "from": [
+            "work-result"
+          ],
+          "to": "payment-admin",
+          "conditions": [
+            {
+              "kind": "questFact",
+              "quest": "prostitute.client-flow",
+              "fact": "work-result-recorded",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "close-admin",
+          "from": [
+            "payment-admin"
+          ],
+          "to": "closed",
+          "conditions": [
+            {
+              "kind": "questFact",
+              "quest": "prostitute.client-flow",
+              "fact": "admin-recorded",
+              "present": true
+            }
+          ],
+          "effects": []
+        }
+      ]
+    }
+  ],
   "relationships": [
     {
       "id": "lumber.foreman",
@@ -6829,6 +7078,201 @@
             }
           ],
           "effects": []
+        }
+      ]
+    },
+    {
+      "id": "prostitute.recurring-client",
+      "label": "Recurring professional client",
+      "initialStage": "introduced",
+      "stages": [
+        "introduced",
+        "professional-trust",
+        "mode-open",
+        "mode-defined",
+        "conflict-open",
+        "route-resolved"
+      ],
+      "transitions": [
+        {
+          "id": "build-trust",
+          "from": [
+            "introduced"
+          ],
+          "to": "professional-trust",
+          "conditions": [
+            {
+              "kind": "relationshipFact",
+              "relationship": "prostitute.recurring-client",
+              "fact": "introduced-at-work",
+              "present": true
+            },
+            {
+              "kind": "relationshipCounter",
+              "relationship": "prostitute.recurring-client",
+              "counter": "work-meetings",
+              "op": "gte",
+              "value": 2
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "prostitute.recurring-client",
+              "fact": "professional-trust-earned"
+            }
+          ]
+        },
+        {
+          "id": "open-mode",
+          "from": [
+            "professional-trust"
+          ],
+          "to": "mode-open",
+          "conditions": [
+            {
+              "kind": "relationshipFact",
+              "relationship": "prostitute.recurring-client",
+              "fact": "mode-discussion-opened",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "mode-professional",
+          "from": [
+            "mode-open"
+          ],
+          "to": "mode-defined",
+          "conditions": [
+            {
+              "kind": "relationshipChoice",
+              "relationship": "prostitute.recurring-client",
+              "choice": "relationship-mode",
+              "value": "professional-only"
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "mode-friendship",
+          "from": [
+            "mode-open"
+          ],
+          "to": "mode-defined",
+          "conditions": [
+            {
+              "kind": "relationshipChoice",
+              "relationship": "prostitute.recurring-client",
+              "choice": "relationship-mode",
+              "value": "friendship"
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "mode-romance",
+          "from": [
+            "mode-open"
+          ],
+          "to": "mode-defined",
+          "conditions": [
+            {
+              "kind": "relationshipChoice",
+              "relationship": "prostitute.recurring-client",
+              "choice": "relationship-mode",
+              "value": "romance"
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "open-conflict",
+          "from": [
+            "mode-defined"
+          ],
+          "to": "conflict-open",
+          "conditions": [
+            {
+              "kind": "relationshipFact",
+              "relationship": "prostitute.recurring-client",
+              "fact": "conflict-opened",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "cooperate",
+          "from": [
+            "conflict-open"
+          ],
+          "to": "route-resolved",
+          "conditions": [
+            {
+              "kind": "relationshipChoice",
+              "relationship": "prostitute.recurring-client",
+              "choice": "conflict-response",
+              "value": "cooperate"
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "prostitute.recurring-client",
+              "fact": "conflict-resolved"
+            }
+          ]
+        },
+        {
+          "id": "rivalry",
+          "from": [
+            "conflict-open"
+          ],
+          "to": "route-resolved",
+          "conditions": [
+            {
+              "kind": "relationshipChoice",
+              "relationship": "prostitute.recurring-client",
+              "choice": "conflict-response",
+              "value": "rivalry"
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "prostitute.recurring-client",
+              "fact": "conflict-resolved"
+            }
+          ]
+        },
+        {
+          "id": "refusal",
+          "from": [
+            "conflict-open"
+          ],
+          "to": "route-resolved",
+          "conditions": [
+            {
+              "kind": "relationshipChoice",
+              "relationship": "prostitute.recurring-client",
+              "choice": "conflict-response",
+              "value": "declined"
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "prostitute.recurring-client",
+              "fact": "conflict-resolved"
+            },
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "prostitute.recurring-client",
+              "fact": "refusal-respected"
+            }
+          ]
         }
       ]
     }
@@ -7835,6 +8279,52 @@
       ],
       "nextDayEffects": [],
       "nextDayEnergyDelta": 0
+    },
+    {
+      "id": "prostitute.night.client-followup",
+      "label": "Optional professional client follow-up",
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "relationshipStage",
+              "relationship": "prostitute.recurring-client",
+              "stage": "professional-trust"
+            },
+            {
+              "kind": "relationshipStage",
+              "relationship": "prostitute.recurring-client",
+              "stage": "mode-open"
+            },
+            {
+              "kind": "relationshipStage",
+              "relationship": "prostitute.recurring-client",
+              "stage": "mode-defined"
+            },
+            {
+              "kind": "relationshipStage",
+              "relationship": "prostitute.recurring-client",
+              "stage": "route-resolved"
+            }
+          ]
+        }
+      ],
+      "effects": [
+        {
+          "kind": "incrementRelationshipCounter",
+          "relationship": "prostitute.recurring-client",
+          "counter": "night-meetings",
+          "amount": 1
+        },
+        {
+          "kind": "addCareerFact",
+          "career": "prostitute",
+          "fact": "night-continuation-seen"
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": 0
     }
   ],
   "activities": [
@@ -8758,6 +9248,34 @@
       "label": "Merchant Sample Kit",
       "capabilities": [
         "merchant_handle_samples"
+      ]
+    },
+    {
+      "id": "prostitute_formal_attire",
+      "label": "Professional Formal Attire",
+      "capabilities": [
+        "prostitute_formal_presence"
+      ]
+    },
+    {
+      "id": "prostitute_private_room_key",
+      "label": "Private Room Key",
+      "capabilities": [
+        "prostitute_private_room_access"
+      ]
+    },
+    {
+      "id": "prostitute_client_token",
+      "label": "Recurring Client Token",
+      "capabilities": [
+        "prostitute_client_token"
+      ]
+    },
+    {
+      "id": "prostitute_evidence_case",
+      "label": "Professional Evidence Case",
+      "capabilities": [
+        "prostitute_handle_evidence"
       ]
     }
   ]

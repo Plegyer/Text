@@ -1,0 +1,540 @@
+{
+  "schemaVersion": 1,
+  "id": "prostitute.client-flow",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "careers": [
+        "prostitute"
+      ],
+      "quests": [
+        "prostitute.client-flow"
+      ]
+    },
+    "writes": {
+      "careers": [
+        "prostitute"
+      ],
+      "quests": [
+        "prostitute.client-flow"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "prostitute.client-flow.intake",
+      "title": "A voluntary client intake can be accepted or deferred",
+      "sourceDomain": "prostitute",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "actionCompleted",
+          "action": "prostitute.shift"
+        },
+        {
+          "kind": "careerTransition",
+          "career": "prostitute"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 72,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "prostitute",
+              "stage": "known-professional"
+            },
+            {
+              "kind": "careerStage",
+              "career": "prostitute",
+              "stage": "established"
+            }
+          ]
+        },
+        {
+          "kind": "questStage",
+          "quest": "prostitute.client-flow",
+          "stage": "dormant"
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "A voluntary client intake can be accepted or deferred. This safe-prep scene stays non-graphic and records only voluntary professional state. It does not define a Lust threshold, persisted consent mechanic, explicit presentation gate, Secret Debt state, or Palace access.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "accept",
+          "label": "Open a voluntary professional intake",
+          "text": "Open a voluntary professional intake.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addQuestFact",
+              "quest": "prostitute.client-flow",
+              "fact": "intake-opened"
+            },
+            {
+              "kind": "advanceQuest",
+              "quest": "prostitute.client-flow",
+              "transition": "start-intake"
+            }
+          ]
+        },
+        {
+          "id": "defer",
+          "label": "Defer this client flow and keep ordinary work available",
+          "text": "Defer this client flow and keep ordinary work available.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "prostitute.client-flow.terms",
+      "title": "Record professional terms before any work result",
+      "sourceDomain": "prostitute",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "questTransition",
+          "quest": "prostitute.client-flow"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 86,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "questStage",
+          "quest": "prostitute.client-flow",
+          "stage": "intake"
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Record professional terms before any work result. This safe-prep scene stays non-graphic and records only voluntary professional state. It does not define a Lust threshold, persisted consent mechanic, explicit presentation gate, Secret Debt state, or Palace access.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record clear terms without setting an adult-content gate",
+          "text": "Record clear terms without setting an adult-content gate.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "setQuestChoice",
+              "quest": "prostitute.client-flow",
+              "choice": "terms",
+              "value": "clear"
+            },
+            {
+              "kind": "addQuestFact",
+              "quest": "prostitute.client-flow",
+              "fact": "terms-recorded"
+            },
+            {
+              "kind": "advanceQuest",
+              "quest": "prostitute.client-flow",
+              "transition": "record-terms"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prostitute.client-flow.boundary-open",
+      "title": "Open a local boundary/refusal decision",
+      "sourceDomain": "prostitute",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "questTransition",
+          "quest": "prostitute.client-flow"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 85,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "questStage",
+          "quest": "prostitute.client-flow",
+          "stage": "terms"
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Open a local boundary/refusal decision. This safe-prep scene stays non-graphic and records only voluntary professional state. It does not define a Lust threshold, persisted consent mechanic, explicit presentation gate, Secret Debt state, or Palace access.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Move to the local boundary decision",
+          "text": "Move to the local boundary decision.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addQuestFact",
+              "quest": "prostitute.client-flow",
+              "fact": "boundary-ready"
+            },
+            {
+              "kind": "advanceQuest",
+              "quest": "prostitute.client-flow",
+              "transition": "open-boundary"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prostitute.client-flow.boundary",
+      "title": "Choose terms, narrow them, or refuse this local client flow",
+      "sourceDomain": "prostitute",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "questTransition",
+          "quest": "prostitute.client-flow"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 84,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "questStage",
+          "quest": "prostitute.client-flow",
+          "stage": "boundary"
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Choose terms, narrow them, or refuse this local client flow. This safe-prep scene stays non-graphic and records only voluntary professional state. It does not define a Lust threshold, persisted consent mechanic, explicit presentation gate, Secret Debt state, or Palace access.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "accept-terms",
+          "label": "Accept the recorded terms for this local flow",
+          "text": "Accept the recorded terms for this local flow.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "setQuestChoice",
+              "quest": "prostitute.client-flow",
+              "choice": "boundary-response",
+              "value": "accepted-terms"
+            },
+            {
+              "kind": "addQuestFact",
+              "quest": "prostitute.client-flow",
+              "fact": "boundary-response-recorded"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "prostitute",
+              "fact": "professional-boundary-recorded"
+            },
+            {
+              "kind": "advanceQuest",
+              "quest": "prostitute.client-flow",
+              "transition": "record-boundary"
+            }
+          ]
+        },
+        {
+          "id": "narrow-terms",
+          "label": "Narrow the local terms and continue",
+          "text": "Narrow the local terms and continue.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "setQuestChoice",
+              "quest": "prostitute.client-flow",
+              "choice": "boundary-response",
+              "value": "narrowed-terms"
+            },
+            {
+              "kind": "addQuestFact",
+              "quest": "prostitute.client-flow",
+              "fact": "boundary-response-recorded"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "prostitute",
+              "fact": "professional-boundary-recorded"
+            },
+            {
+              "kind": "advanceQuest",
+              "quest": "prostitute.client-flow",
+              "transition": "record-boundary"
+            }
+          ]
+        },
+        {
+          "id": "refuse",
+          "label": "Refuse this client flow without career penalty",
+          "text": "Refuse this client flow without career penalty.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "setQuestChoice",
+              "quest": "prostitute.client-flow",
+              "choice": "boundary-response",
+              "value": "refused"
+            },
+            {
+              "kind": "addQuestFact",
+              "quest": "prostitute.client-flow",
+              "fact": "boundary-response-recorded"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "prostitute",
+              "fact": "professional-boundary-recorded"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "prostitute",
+              "fact": "client-refusal-recorded"
+            },
+            {
+              "kind": "advanceQuest",
+              "quest": "prostitute.client-flow",
+              "transition": "record-boundary"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prostitute.client-flow.result",
+      "title": "Record the non-graphic professional result or respected refusal",
+      "sourceDomain": "prostitute",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "questTransition",
+          "quest": "prostitute.client-flow"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 83,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "questStage",
+          "quest": "prostitute.client-flow",
+          "stage": "work-result"
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Record the non-graphic professional result or respected refusal. This safe-prep scene stays non-graphic and records only voluntary professional state. It does not define a Lust threshold, persisted consent mechanic, explicit presentation gate, Secret Debt state, or Palace access.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "complete",
+          "label": "Record a completed professional result",
+          "text": "Record a completed professional result.",
+          "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "questChoice",
+                  "quest": "prostitute.client-flow",
+                  "choice": "boundary-response",
+                  "value": "accepted-terms"
+                },
+                {
+                  "kind": "questChoice",
+                  "quest": "prostitute.client-flow",
+                  "choice": "boundary-response",
+                  "value": "narrowed-terms"
+                }
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "kind": "setQuestChoice",
+              "quest": "prostitute.client-flow",
+              "choice": "work-result",
+              "value": "completed"
+            },
+            {
+              "kind": "addQuestFact",
+              "quest": "prostitute.client-flow",
+              "fact": "work-result-recorded"
+            },
+            {
+              "kind": "advanceQuest",
+              "quest": "prostitute.client-flow",
+              "transition": "record-result"
+            }
+          ]
+        },
+        {
+          "id": "respect-refusal",
+          "label": "Close the work result as a respected refusal",
+          "text": "Close the work result as a respected refusal.",
+          "conditions": [
+            {
+              "kind": "questChoice",
+              "quest": "prostitute.client-flow",
+              "choice": "boundary-response",
+              "value": "refused"
+            }
+          ],
+          "effects": [
+            {
+              "kind": "setQuestChoice",
+              "quest": "prostitute.client-flow",
+              "choice": "work-result",
+              "value": "declined"
+            },
+            {
+              "kind": "addQuestFact",
+              "quest": "prostitute.client-flow",
+              "fact": "work-result-recorded"
+            },
+            {
+              "kind": "advanceQuest",
+              "quest": "prostitute.client-flow",
+              "transition": "record-result"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prostitute.client-flow.admin",
+      "title": "Record payment/admin completion without retuning income",
+      "sourceDomain": "prostitute",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "questTransition",
+          "quest": "prostitute.client-flow"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 82,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "questStage",
+          "quest": "prostitute.client-flow",
+          "stage": "payment-admin"
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Record payment/admin completion without retuning income. This safe-prep scene stays non-graphic and records only voluntary professional state. It does not define a Lust threshold, persisted consent mechanic, explicit presentation gate, Secret Debt state, or Palace access.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Close administrative records with no extra money effect",
+          "text": "Close administrative records with no extra money effect.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "setQuestChoice",
+              "quest": "prostitute.client-flow",
+              "choice": "admin",
+              "value": "recorded"
+            },
+            {
+              "kind": "addQuestFact",
+              "quest": "prostitute.client-flow",
+              "fact": "admin-recorded"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "prostitute",
+              "fact": "client-cycle-complete"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "prostitute",
+              "fact": "admin-cycle-complete"
+            },
+            {
+              "kind": "advanceQuest",
+              "quest": "prostitute.client-flow",
+              "transition": "close-admin"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
