@@ -1,0 +1,216 @@
+{
+  "formatVersion": 1,
+  "id": "chat3.artist-geisha-authored-v19.activation-mechanics",
+  "sourceHead": "8067539a606714fad8400ccbba30fd7ccf4a9158",
+  "status": "ACTIVATION_BASELINE_FOR_SAFE_PREP_ONLY",
+  "artistGeisha": {
+    "action": {
+      "id": "artist-geisha.shift",
+      "label": "Artist House shift",
+      "description": "Work an ordinary rehearsal, performance, or guest-facing Artist House shift. Initial tuning remains balance-owned.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "stat",
+                  "stat": "creativity",
+                  "op": "gte",
+                  "value": 35
+                },
+                {
+                  "kind": "stat",
+                  "stat": "manners",
+                  "op": "gte",
+                  "value": 25
+                },
+                {
+                  "kind": "stat",
+                  "stat": "grooming",
+                  "op": "gte",
+                  "value": 30
+                }
+              ]
+            },
+            {
+              "kind": "calendarYear",
+              "op": "gte",
+              "value": 3
+            }
+          ]
+        }
+      ],
+      "effects": [
+        {
+          "kind": "incrementCareerCounter",
+          "career": "artist-geisha",
+          "counter": "completed_shifts",
+          "amount": 1
+        }
+      ],
+      "mode": "normal",
+      "wage": {
+        "base": 15,
+        "weights": [
+          {
+            "stat": "manners",
+            "factor": 0.3
+          },
+          {
+            "stat": "charm",
+            "factor": 0.3
+          },
+          {
+            "stat": "sexuality",
+            "factor": 0.15
+          },
+          {
+            "stat": "dexterity",
+            "factor": 0.15
+          }
+        ]
+      },
+      "scenes": [
+        {
+          "id": "spring.default",
+          "text": "Spring artist house shift: the season changes the ordinary work context.",
+          "conditions": [],
+          "media": [
+            "stage.tavern.spring"
+          ]
+        },
+        {
+          "id": "summer.default",
+          "text": "Summer artist house shift: demand, routes, or crowds shift with the season.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "summer"
+            }
+          ],
+          "media": [
+            "stage.tavern.summer"
+          ]
+        },
+        {
+          "id": "autumn.default",
+          "text": "Autumn artist house shift: seasonal pressure changes the work mix.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "autumn"
+            }
+          ],
+          "media": [
+            "stage.tavern.autumn"
+          ]
+        },
+        {
+          "id": "winter.default",
+          "text": "Winter artist house shift: scarcity, access, or regular clients change the routine.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "winter"
+            }
+          ],
+          "media": [
+            "stage.tavern.winter"
+          ]
+        }
+      ],
+      "seasonal": {
+        "spring": [
+          {
+            "kind": "modifyStat",
+            "stat": "manners",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "charm",
+            "delta": 1
+          }
+        ],
+        "summer": [
+          {
+            "kind": "modifyStat",
+            "stat": "charm",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "dexterity",
+            "delta": 1
+          }
+        ],
+        "autumn": [
+          {
+            "kind": "modifyStat",
+            "stat": "manners",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "sexuality",
+            "delta": 1
+          }
+        ],
+        "winter": [
+          {
+            "kind": "modifyStat",
+            "stat": "charm",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "reason",
+            "delta": 1
+          }
+        ]
+      }
+    },
+    "career": {
+      "id": "artist-geisha",
+      "label": "Artist House",
+      "initialStage": "novice",
+      "stages": [
+        "novice"
+      ],
+      "transitions": []
+    },
+    "ending": {
+      "id": "ending.artist-geisha.hard-work",
+      "title": "Artist/Geisha Hard Work",
+      "description": "Persistence ending: fifty completed Artist/Geisha shifts.",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "artist-geisha",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 50
+        }
+      ],
+      "reward": "artist-geisha.hardwork.compat",
+      "metaRewards": [
+        {
+          "kind": "hardWork",
+          "rewardId": "hardWork:artist-geisha",
+          "career": "artist-geisha"
+        }
+      ],
+      "epilogue": "Hard Work completion recorded for Artist/Geisha."
+    },
+    "itemDefinitions": []
+  },
+  "finalFrozenRuntimeProjectionRequiredAt": "C3-216",
+  "naturalReachabilityRequiredAt": "C3-216"
+}
