@@ -14,8 +14,17 @@ const lateIds=[
   'prostitute.shift'
 ] as const;
 
-function availability(text:string){
-  const s=parseSave(text,catalog);
+function legacySchema4(){
+  const raw=JSON.parse(JSON.stringify(started()));
+  raw.schemaVersion=4;
+  delete raw.run.character.progressionStatCap;
+  delete raw.run.character.creation.activeHardWorkPackages;
+  delete raw.run.character.creation.hardWorkPackagesApplied;
+  return raw;
+}
+
+function availability(raw:any){
+  const s=parseSave(JSON.stringify(raw),catalog);
   return Object.fromEntries(lateIds.map(id=>{
     const action=catalog.definitions.actions.find(item=>item.id===id);
     assert.ok(action,id);
@@ -23,32 +32,33 @@ function availability(text:string){
   }));
 }
 
-test('existing schema-4 saves derive late-career availability without new unlock fields',()=>{
-  const raw=JSON.parse(JSON.stringify(started()));
+test('existing schema-4 saves migrate and still derive late-career availability without redundant unlock fields',()=>{
+  const raw=legacySchema4();
   assert.equal(raw.schemaVersion,4);
   assert.equal('careerUnlocks' in raw.run,false);
   assert.equal('lateCareerUnlocks' in raw.run,false);
   assert.equal('careerUnlocks' in raw.meta,false);
   assert.equal('lateCareerUnlocks' in raw.meta,false);
 
-  const locked=availability(JSON.stringify(raw));
+  const locked=availability(raw);
   for(const id of lateIds)assert.equal(locked[id],false,id);
 
   for(const stat of Object.keys(raw.run.character.stats))raw.run.character.stats[stat]=100;
-  const statUnlocked=availability(JSON.stringify(raw));
+  const statUnlocked=availability(raw);
   for(const id of lateIds)assert.equal(statUnlocked[id],true,id);
 
   for(const stat of Object.keys(raw.run.character.stats))raw.run.character.stats[stat]=1;
   raw.run.calendar.elapsedDays=80;
-  const calendarUnlocked=availability(JSON.stringify(raw));
+  const calendarUnlocked=availability(raw);
   for(const id of lateIds)assert.equal(calendarUnlocked[id],true,id);
 });
 
-test('schema-4 round-trip does not synthesize redundant late-career unlock state',()=>{
-  const first=parseSave(JSON.stringify(started()),catalog);
+test('schema-4 migration round-trip does not synthesize redundant late-career unlock state',()=>{
+  const first=parseSave(JSON.stringify(legacySchema4()),catalog);
   const second=parseSave(JSON.stringify(first),catalog);
   const raw=JSON.parse(JSON.stringify(second));
 
+  assert.equal(raw.schemaVersion,5);
   assert.equal('careerUnlocks' in raw.run,false);
   assert.equal('lateCareerUnlocks' in raw.run,false);
   assert.equal('careerUnlocks' in raw.meta,false);
