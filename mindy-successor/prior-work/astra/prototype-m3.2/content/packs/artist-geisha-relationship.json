@@ -62,7 +62,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "A senior artist begins checking your rehearsal and guest-facing handoffs as professional work. The role stays unnamed and does not require friendship, romance, or patronage.",
+          "text": "A senior artist or mentor enters as a professional role: someone who has seen enough rehearsals to ask precise questions and notice repeated mistakes. A personal name or biography is not required for this line to work.",
           "conditions": [],
           "media": []
         }
@@ -132,7 +132,7 @@
       "variants": [
         {
           "id": "school-rhetoric",
-          "text": "School preparation in rhetoric and social listening gives you a clearer method for receiving direct professional criticism without turning every pause into a defense.",
+          "text": "Rhetoric & Social is useful as practice in listening, clarifying questions, and calm pauses. It grants no automatic influence over a guest, mentor, or future patron and creates no persuasion meter.",
           "conditions": [
             {
               "kind": "careerFact",
@@ -145,7 +145,7 @@
         },
         {
           "id": "default",
-          "text": "Repeated ordinary work makes the senior artist willing to give direct professional criticism. The trust is about rehearsal and presentation standards, not a mandatory personal bond.",
+          "text": "Professional trust grows when a note can be tested in the next rehearsal. The mentor requires neither admiration nor personal loyalty; it is enough to show honestly what changed and what still does not work.",
           "conditions": [],
           "media": []
         }
@@ -217,7 +217,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "The senior artist wants a safer formal presentation while you argue for a different professional choice. The disagreement concerns timing, standards, and responsibility rather than affection or a hidden reputation meter.",
+          "text": "The conflict concerns a concrete practice—a late program change, an overly rigid presentation, an unclear note, or distribution of attention. You discuss the decision rather than a hidden degree of personal closeness.",
           "conditions": [],
           "media": []
         }
@@ -277,7 +277,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "You can turn the disagreement into cooperation, keep a productive rivalry, or step away from the extra relationship route. Ordinary Artist House work remains available in every case.",
+          "text": "A competitive tone can be useful when it stays about the work: prepare more carefully, explain a choice more clearly, and listen to a partner more closely. It does not become sabotage or a global artist ranking.",
           "conditions": [],
           "media": []
         }
@@ -286,7 +286,7 @@
         {
           "id": "cooperate",
           "label": "Rehearse a compromise",
-          "text": "Resolve the disagreement around professional standards and keep optional later utility open.",
+          "text": "After disagreement, collaboration means agreeing on how to test the change: what to adjust, when to review the result, and who owns the next part. It is a professional compromise rather than a promise of permanent agreement.",
           "conditions": [],
           "effects": [
             {
@@ -315,7 +315,7 @@
         {
           "id": "rivalry",
           "label": "Stay professional rivals",
-          "text": "Keep the disagreement as productive rivalry without blocking ordinary work.",
+          "text": "Professional rivalry can preserve respect when each side recognizes the boundaries of the role and does not block the other's ordinary work. Another strong result becomes material for review rather than a reason to close the career.",
           "conditions": [],
           "effects": [
             {
@@ -339,7 +339,7 @@
         {
           "id": "decline",
           "label": "Step away from the extra relationship",
-          "text": "Refuse the relationship route cleanly while preserving the career and Hard Work path.",
+          "text": "Declining to deepen the mentoring line does not close the Artist House. You can keep ordinary shifts, rehearsals, and professional courtesy without an additional personal or career dependency.",
           "conditions": [],
           "effects": [
             {
@@ -396,7 +396,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "After resolving the disagreement cooperatively, the senior artist can help review one later rehearsal or formal handoff. The help is optional and remains career-local.",
+          "text": "Later mentor utility is narrow help: notice a weak transition, warn about the shape of an evening, or suggest what to check before an entrance. It grants no universal access, status, or guaranteed success.",
           "conditions": [],
           "media": []
         }

@@ -322,7 +322,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "Several Artist House routes may be ready at once. Readiness does not force a commitment and Court Invitation is not Palace access.",
+          "text": "If several late routes are ready, the decision can be deferred. Readiness remains a possibility while ordinary Artist House work stays available without mandatory branch selection.\n\nVeteran, Master Artist, Patron Network, and Court Invitation describe career readiness. None of these states is a new public ending by itself or grants a Meta reward.",
           "conditions": [],
           "media": []
         }
@@ -331,7 +331,7 @@
         {
           "id": "veteran",
           "label": "Take Veteran",
-          "text": "Choose seasoned ordinary Artist House work.",
+          "text": "Veteran is the route of broad ordinary practice: seasons, guests, rehearsals, and repeatable ability to carry a shift without mandatory specialization. Its value is consistency rather than a title.\n\nVeteran readiness should reflect breadth of work already accumulated without forcing an immediate career change. The option can remain open while ordinary shifts continue.",
           "conditions": [
             {
               "kind": "careerFact",
@@ -356,7 +356,7 @@
         {
           "id": "master-artist",
           "label": "Take Master Artist",
-          "text": "Choose the advanced performance route.",
+          "text": "Master Artist is depth of professional preparation: clear intention, repeatable rehearsal, usable records, and the ability to explain one's choices. It is not a universal ranking of artistic worth.\n\nThe Master Artist route does not choose an exact list of music, dance, craft, or other disciplines for the project. It describes quality of process on top of the existing Arts & Performance preparation.",
           "conditions": [
             {
               "kind": "careerFact",
@@ -381,7 +381,7 @@
         {
           "id": "patron-network",
           "label": "Take Patron Network",
-          "text": "Choose the professional social-network route without creating a generic patron system.",
+          "text": "Patron Network is several durable professional contacts where context, expectations, and the next conversation are understood. The network does not become a separate influence currency or a global patron system.\n\nA useful contact may explain the shape of an evening or introduce one specific person, but guarantees no invitation, work, or success. Each next step remains a separate Artist situation.",
           "conditions": [
             {
               "kind": "careerFact",
@@ -406,7 +406,7 @@
         {
           "id": "court-invitation",
           "label": "Take Court Invitation",
-          "text": "Choose Artist-local court-contact readiness. Palace unlock remains external.",
+          "text": "Court Invitation is Artist-local evidence that a formal contact or invitation actually occurred. It describes career readiness for a formal context rather than access to the Palace.\n\nEven with an Invitation Token, the route remains narrow: show which invitation the token belongs to and what the specific event expects. The token is not a universal pass.\n\nNeither formal attire, invitation, nor court contact replaces the existing Palace 10/10 Hard Work unlock. Artist content neither writes nor satisfies that global gate.",
           "conditions": [
             {
               "kind": "careerFact",
@@ -431,7 +431,7 @@
         {
           "id": "defer",
           "label": "Keep routes open",
-          "text": "Do not choose a late branch yet.",
+          "text": "If several late routes are ready, the decision can be deferred. Readiness remains a possibility while ordinary Artist House work stays available without mandatory branch selection.",
           "conditions": [],
           "effects": []
         }

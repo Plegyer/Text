@@ -63,7 +63,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "A real Satyr Maid professional network overlaps with one Artist House event. The seam records only that the social context is known; the two careers remain mechanically distinct.",
+          "text": "The shipped Satyr Maid `personal-network-ready` fact can give Artist context a confirmed professional overlap in audience or contacts. Artist records only its own event context and does not take ownership of Satyr relationship or career state.",
           "conditions": [],
           "media": []
         }
@@ -126,7 +126,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "A rumour already confirmed through the Tavern becomes useful context for travelling guests and performance scheduling. Artist House consumes the shipped fact without owning Tavern information flow.",
+          "text": "The shipped Tavern `rumour-confirmed` fact can give Artist context checked information about a place, event, or audience without guaranteeing program success. Artist keeps only local context and creates no universal rumour system.",
           "conditions": [],
           "media": []
         }
@@ -189,7 +189,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "A Merchant delivery already documented by the shipped Merchant runtime provides a concrete materials handoff for Artist House work. No global market, price, or patron system is created.",
+          "text": "The shipped Merchant `delivery-recorded` fact can give Artist context information about material delivery or preparation for a specific event. This is a narrow material/delivery seam: it creates no global economy, patron system, or automatic status.",
           "conditions": [],
           "media": []
         }
@@ -252,7 +252,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "Existing Guard cargo-pass evidence clarifies one formal event handoff. Artist House records the security context without creating Guard authority, covert work, or Palace access.",
+          "text": "The shipped Guard `cargo-pass-evidence` fact can provide security or constraint context for a specific formal event when Artist runtime consumes it. Artist receives no Guard authority, covert route, or Palace access.",
           "conditions": [],
           "media": []
         }

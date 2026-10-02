@@ -3587,7 +3587,7 @@
       "scenes": [
         {
           "id": "spring.default",
-          "text": "Spring artist house shift: the season changes the ordinary work context.",
+          "text": "A spring shift begins by returning to fundamentals: entrance, pacing, space, and agreement with a partner. The novelty of the season does not replace rehearsal; it only changes what the audience and coworkers notice.\n\nSpring brings more unfamiliar guests to the Artist House, and ordinary work means reading the context of the evening quickly. You welcome people and explain the program without turning attention to a guest into a promise of personal intimacy.\n\nBefore a new program, it helps to leave a short note: what changed since the last rehearsal, what needs repeating, and what the next partner should know. The note supports the work rather than creating a separate art-rating system.",
           "conditions": [],
           "media": [
             "stage.tavern.spring"
@@ -3595,7 +3595,7 @@
         },
         {
           "id": "summer.default",
-          "text": "Summer artist house shift: demand, routes, or crowds shift with the season.",
+          "text": "A summer evening makes performance more open and noisy: people arrive later, conversations take longer to settle, and the room fills more quickly. You keep the shape of the piece and preserve clear transitions between stage and guests.\n\nIn the hot season, a strong piece depends less on who stands out most and more on who listens to a partner and changes pace at the right moment. You leave room for another entrance and do not turn a shared scene into a contest for attention.\n\nWhen there are many guests, attention has to be distributed rather than held at any cost. You close one conversation gently, hand the guest to the next part of the evening, and preserve the house rhythm without a hidden favor meter.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -3608,7 +3608,7 @@
         },
         {
           "id": "autumn.default",
-          "text": "Autumn artist house shift: seasonal pressure changes the work mix.",
+          "text": "In autumn, ordinary shifts more often sit beside preparation for public events. You check costume, entrance order, and a fallback without assuming that the existence of a festival automatically makes a performance prestigious or victorious.\n\nA bolder stage presence remains a chosen professional technique. It does not imply agreement to every expectation from an audience, guest, or coworker and does not remove the right to change presentation in the next piece.\n\nAfter a busy evening, you review concrete moments: where an entrance was missed, where a conversation ran long, and where the scene became clearer. The review helps the next shift without becoming a universal talent or reputation rating.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -3621,7 +3621,7 @@
         },
         {
           "id": "winter.default",
-          "text": "Winter artist house shift: scarcity, access, or regular clients change the routine.",
+          "text": "A winter shift takes place in a tighter salon setting where a pause, a phrase, and a response to one person are easier to notice. You work with more precision, but the intimacy of the room does not become special social status.\n\nWhen there are fewer events, it is easier to see what makes a program sustainable: repeatable preparation, clear notes, and partners who know the order of work. You use the quiet season to improve ordinary work rather than trigger an automatic career leap.\n\nIn winter, familiar guests more often return with established expectations. You remember the context of earlier evenings, but each new conversation remains separate: prior attention creates no permanent promise or mandatory personal route.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -4570,7 +4570,7 @@
     {
       "id": "ending.artist-geisha.hard-work",
       "title": "Artist/Geisha Hard Work",
-      "description": "Persistence ending: fifty completed Artist/Geisha shifts.",
+      "description": "The public Artist/Geisha ending in this wave remains `ending.artist-geisha.hard-work` for sustained career work. Advanced routes add distinct professional meaning without new ending IDs.",
       "conditions": [
         {
           "kind": "careerCounter",

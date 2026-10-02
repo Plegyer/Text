@@ -65,7 +65,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "You spend the voluntary Night slot on rehearsal rather than School night study. The scene uses the existing Night flow, costs no extra daytime Energy, and creates no automatic next-day penalty.",
+          "text": "A night rehearsal makes sense only as an Artist-local opportunity inside the existing night choice. It competes with sleep, study, and other uses of time and adds no new NightFlow.",
           "conditions": [],
           "media": []
         }
@@ -74,7 +74,7 @@
         {
           "id": "finish",
           "label": "Finish the rehearsal",
-          "text": "Close the rehearsal and continue with the normal NightFlow transition.",
+          "text": "A night opportunity is not a free extra action layered on top of an already chosen night. Authored text should reflect competition for time rather than promise a new independent slot.",
           "conditions": [],
           "effects": []
         }
@@ -151,7 +151,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "You use the Night slot for a formal Artist House salon. Formal attire changes this local option only; the salon is not a generic patron system and does not create Palace access.",
+          "text": "A late salon can provide a distinct professional context: fewer people, longer conversations, and pauses that are easier to notice. Nightfall itself guarantees no invitation, contact, or career progress.",
           "conditions": [],
           "media": []
         }
@@ -160,7 +160,7 @@
         {
           "id": "finish",
           "label": "Leave after the salon",
-          "text": "End the professional salon and return to the existing Night flow.",
+          "text": "A night opportunity is not a free extra action layered on top of an already chosen night. Authored text should reflect competition for time rather than promise a new independent slot.",
           "conditions": [],
           "effects": []
         }
@@ -202,7 +202,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "You spend the Night slot on the optional professional review. It remains mentorship rather than romance, and declining it was never required for Artist House progression.",
+          "text": "A post-shift review with a mentor is useful when there is concrete material: a transition, line, pace, or note. It requires no personal intimacy and does not become a mandatory night route.",
           "conditions": [],
           "media": []
         }
@@ -211,7 +211,7 @@
         {
           "id": "finish",
           "label": "Finish the review",
-          "text": "Resolve the optional mentor utility and continue independently afterward.",
+          "text": "A night opportunity is not a free extra action layered on top of an already chosen night. Authored text should reflect competition for time rather than promise a new independent slot.",
           "conditions": [],
           "effects": [
             {
