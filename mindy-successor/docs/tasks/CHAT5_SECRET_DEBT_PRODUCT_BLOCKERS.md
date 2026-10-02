@@ -1,123 +1,127 @@
-# Chat 5 — Secret Debt Product blockers
+# Chat 5 — Secret Debt remaining Product blockers
 
-Status: **ACTIVE / NOT COMPLETE**
+Status: **ACTIVE / D19 AUTHORIZED WORK IMPLEMENTED / BALANCE BLOCKED**
 Owner: Chat 5 / Full-Career Producer C
 Branch: `chat5/secret-debt-complete-reset-v1`
-Baseline: `9ee5dd227db85b1987acd099e15ed274cb085110`
-Authority: current role pointer + `POVERTY_HIDDEN_CAREER_DRAFT_v0.md` + `USER_DECISIONS_LOCKED_v1.md` + `EXECUTABLE_TZ_v1.md`
+Preserved resumed-work foundation: `8dd0b12bb2257981f4a6b72bca2017aad9d00e73`
 
-This ledger records Product decisions that are still required before Secret Debt can be called naturally complete. Historical values such as 2000 / 20000 / 10 days are not authority and are intentionally absent from the implementation.
+Authority:
+- `CURRENT_CHAT5_TASK_POINTER.md`;
+- `USER_DECISIONS_LOCKED_v1.md` D19-D20;
+- current-authority override in `POVERTY_HIDDEN_CAREER_DRAFT_v0.md`.
 
-## SD-PRODUCT-01 — natural lender trigger
+The former non-numeric blocker ledger is superseded. The values below are now locked and implemented as production authority, not historical examples:
 
-OPEN:
-- trigger probability;
-- exact street-lender eligibility beyond the locked street context.
+- lender chance: **20%** on each eligible unseen street night;
+- acceptance grant: **2000**;
+- activation delay: **10 days** after acceptance;
+- activated debt: **20000**;
+- forced bound Night next-day Energy: **-1**;
+- all-at-once repayment: **20000**;
+- hidden Hard Work / Bound Life baseline: **50 daytime shifts**;
+- Takeover School requirement: **10 paid lessons**;
+- School remains available while bound;
+- Large Activity remains available while bound;
+- Secret Debt remains outside ordinary 10 / Palace 10-of-10.
 
-Implemented around the blocker:
-- one-time `secret-debt.lender-encounter`;
-- explicit accept/refuse;
-- terminal refusal for this run;
-- `unseen -> offered` state-machine seam guarded by `encounter-authorized`;
-- deterministic pending-scene/save behavior once an offer has actually been authorized.
+## Implemented value-independent and D19-locked behavior
 
-Blocked:
-- production code must not set `encounter-authorized` until Product supplies the trigger policy.
-- the encounter therefore must not be described as naturally reachable yet.
+- natural RNG lender encounter with flat 20% chance and one-life refusal closure;
+- exact +2000 acceptance grant and persisted `accepted_day`;
+- automatic `accepted -> bound` transition on the morning exactly 10 elapsed days after acceptance;
+- exact `debt_current = 20000` activation state, independent from legacy generic `debt`;
+- domain lock for all ten ordinary careers:
+  - shift actions unavailable;
+  - ordinary-career state writes suppressed;
+  - ordinary-career resolver source domains and queued events suppressed while bound;
+  - ordinary-career ending commit blocked while bound;
+  - stored progression and pre-existing ending eligibility are preserved for release;
+- School remains executable while bound;
+- Large Activity entry remains executable while bound;
+- forced Night after lodging on every bound night, voluntary Night suppressed, next-day Energy -1 exactly once;
+- explicit all-at-once repayment action at 20000, with clean release and Paid Freedom eligibility;
+- Bound Life eligibility at 50 completed daytime shifts without releasing the lock before ending commit;
+- explicit Takeover action structure with 50-shift + 10-paid-School structural gates plus separate numeric build/Lust seams;
+- Paid Freedom / Bound Life / Takeover remain distinct ending IDs using the common eligible -> commit -> RunResult lifecycle;
+- all Secret Debt endings currently use `metaRewards: []`, preventing invented rewards;
+- RU/EN presentation and fallback identities;
+- save/reload coverage for chance outcome, pending encounter, acceptance anchor, activation, forced Night, repayment and ending lifecycle.
 
-## SD-PRODUCT-02 — immediate help amount
+## SD-BALANCE-01 — exact daytime shift stat gains
 
-OPEN:
-- exact amount granted on acceptance.
+Locked semantic axes:
+- Strength increases;
+- Endurance increases;
+- Sexuality increases;
+- Sexuality is not Lust.
 
-Implemented around the blocker:
-- acceptance is persisted;
-- acceptance day is captured exactly;
-- no generic legacy `debt` metric is reused.
+Still OPEN:
+- exact per-shift/seasonal numeric deltas.
 
-Blocked:
-- acceptance currently grants no invented money/resource amount.
+Current seam:
+- `SECRET_DEBT_SHIFT_STAT_GAINS = { strength: null, endurance: null, sexuality: null }`;
+- production shift does not invent a seasonal/stat package until these values are locked.
 
-## SD-PRODUCT-03 — delayed trap activation and principal
+## SD-BALANCE-02 — hidden-work wage coefficients
 
-OPEN:
-- activation delay;
-- debt/principal amount and resulting payment economics.
+Locked semantics:
+- hidden daytime work is paid;
+- it uses the normal action wage system;
+- income scales upward with relevant stats;
+- Lust is a positive wage input.
 
-Implemented around the blocker:
-- acceptance day persists as `accepted_day`;
-- `secretDebtActivationDue(save, activationDelayDays)` accepts the future Product value as an explicit parameter and owns no fallback/default;
-- `accepted -> bound` exists behind the `activation-authorized` seam;
-- Paid Freedom waits for a distinct `debt-cleared` fact instead of reusing the old generic debt surface.
+Still OPEN:
+- base wage;
+- Strength factor;
+- Endurance factor;
+- Lust factor.
 
-Blocked:
-- production code must not set `activation-authorized` or `debt-cleared` from guessed timing/economy values.
+Current seam:
+- `SECRET_DEBT_WAGE_INPUTS = ['strength','endurance','lust']`;
+- `SECRET_DEBT_WAGE_POLICY` keeps all four numbers `null`;
+- `secretDebtWagePolicyReady()` requires every stat factor, including Lust, to be strictly positive;
+- `secretDebtWageDefinition()` produces the normal `Action.wage` shape only after those values are locked;
+- production shift therefore does not silently choose a wage.
 
-## SD-PRODUCT-04 — bound-work numeric progression
+This blocker means the daytime shift is not yet economically final and Secret Debt must not be called COMPLETE.
 
-OPEN:
-- exact Strength / Endurance / Sexuality gains;
-- any exact debt reduction, wage, or other per-shift economic value;
-- the Product-facing Secret Debt progression-stage ladder beyond the minimum technical lifecycle states needed to represent offer / acceptance / binding / resolution.
+## SD-BALANCE-03 — Takeover build and high-Lust thresholds
 
-Implemented around the blocker:
-- the current `unseen / offered / refused / accepted / bound / resolved-*` values are internal lifecycle states only, not a claimed Product progression ladder;
-- bound work costs the globally locked Work cost of 1 Energy;
-- completed bound shifts are counted;
-- ordinary profession shifts are blocked while bound;
-- all prior ordinary-profession progress is preserved.
+Already locked and implemented:
+- bound route;
+- career progress gate uses the locked 50-shift baseline;
+- exactly 10 paid School lessons;
+- separate explicit player action;
+- Takeover is distinct from repayment and Bound Life.
 
-Blocked:
-- no Secret Debt stat package or debt-economic effect is applied yet.
+Still OPEN:
+- which exact stat thresholds constitute the required build;
+- exact high-Lust threshold.
 
-## SD-PRODUCT-05 — forced Night Energy consequence
+Current seam:
+- explicit `takeover-build-authorized` and `takeover-lust-authorized` career facts;
+- `SECRET_DEBT_TAKEOVER_GATES` remains null;
+- the Takeover action cannot become naturally available until both numeric policies are supplied.
 
-OPEN:
-- exact next-day Energy penalty.
+## SD-BALANCE-04 — ending Meta rewards
 
-Implemented around the blocker:
-- forced Night event runs after lodging;
-- lodging is committed exactly once;
-- voluntary Night choices are suppressed;
-- Night is consumed and forced-night work is counted;
-- pending Night state survives save/reload.
+Still OPEN:
+- exact Meta reward for Paid Freedom;
+- exact Meta reward for Bound Life;
+- exact Meta reward for Takeover.
 
-Blocked:
-- no next-day Secret Debt Energy modifier is applied until Product locks the value.
+Current behavior:
+- all three endings explicitly declare `metaRewards: []`;
+- Secret Debt never writes ordinary `hardWorkProgress` and never contributes to Palace 10/10.
 
-## SD-PRODUCT-06 — outcome gates and rewards
+## Cross-owner D20 note
 
-OPEN:
-- Bound Life exact tenure/milestone threshold;
-- Takeover exact build thresholds;
-- exact external-system source/condition for Takeover;
-- exact rewards / Meta rewards for Paid Freedom, Bound Life, and Takeover.
+Body Confidence `Lust +2` per paid lesson is locked by D20 but owned by Chat 3 according to the current Chat 5 pointer. Chat 5 does **not** duplicate or patch that shared School-owned effect locally.
 
-Implemented around the blocker:
-- Paid Freedom resolves only from `debt-cleared`;
-- Bound Life resolves only from `bound-life-ready`;
-- Takeover requires both `takeover-route-ready` and `takeover-external-condition-met`, plus the explicit takeover route choice;
-- all three produce distinct ending IDs through the common eligible -> commit -> RunResult lifecycle;
-- all three currently declare `metaRewards: []`, so no reward is silently invented;
-- Secret Debt never contributes to Palace 10/10.
-
-Blocked:
-- the facts above must not be generated from guessed thresholds.
-- final Meta rewards remain intentionally absent.
-
-## SD-PRODUCT-07 — School and Activity while bound
-
-OPEN in current Secret Debt authority:
-- whether School remains available while bound;
-- whether Activity remains available while bound.
-
-Implemented around the blocker:
-- no shared School/Activity framework was changed;
-- the profession-specific ordinary-job lock is independent of these systems.
-
-Blocked:
-- Chat 5 will not disable or enable these systems specially until Product resolves the policy.
+The Takeover School requirement counts paid School lessons through the existing `actionCounts['school']` runtime proof, so it remains compatible with the D20 implementation when integrated.
 
 ## Completion rule
 
-Secret Debt is **not COMPLETE** while any blocker above remains OPEN. The current branch may be implementation-complete only for the independent architecture around those decisions; natural playable acceptance still requires the missing Product policy to be supplied and wired without historical-number fallback.
+Secret Debt is **not COMPLETE** while SD-BALANCE-01 through SD-BALANCE-04 remain unresolved.
+
+No early PR should be opened from this branch. Once Product locks the remaining constants, wire them into the existing seams, run focused regressions, freeze the exact head, and hand the candidate to Chat 2 according to the team flow.
