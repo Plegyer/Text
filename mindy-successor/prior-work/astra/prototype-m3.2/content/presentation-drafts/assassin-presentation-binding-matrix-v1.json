@@ -1,0 +1,329 @@
+{
+  "version": 1,
+  "owner": "Chat 2 / Presentation & Media",
+  "queue": "C2-205..216",
+  "status": "PREP_ONLY_NO_PRODUCTION_FREEZE",
+  "activationCheckpoint": "d3b7fe038b35cdc53d786189ef7ba44853a7610d",
+  "rules": {
+    "productionFreezeAllowed": false,
+    "futureBindingAuthority": "Future Lead-activated Assassin runtime exact IDs only",
+    "ordinaryAssassinUnlocksPalace": false,
+    "noInventedCombat": true,
+    "noMoralityStat": true,
+    "noUniversalBlackMarket": true
+  },
+  "liveBound": [
+    {
+      "kind": "ordinary-result",
+      "runtimeId": "assassin.shift",
+      "presentationId": "job/assassin/result/default",
+      "status": "LIVE_BOUND"
+    },
+    {
+      "kind": "ordinary-seasonal-work",
+      "runtimeId": "assassin.shift:spring.default",
+      "presentationId": "job/assassin/shift/spring/default",
+      "status": "LIVE_BOUND"
+    },
+    {
+      "kind": "ordinary-seasonal-work",
+      "runtimeId": "assassin.shift:summer.default",
+      "presentationId": "job/assassin/shift/summer/default",
+      "status": "LIVE_BOUND"
+    },
+    {
+      "kind": "ordinary-seasonal-work",
+      "runtimeId": "assassin.shift:autumn.default",
+      "presentationId": "job/assassin/shift/autumn/default",
+      "status": "LIVE_BOUND"
+    },
+    {
+      "kind": "ordinary-seasonal-work",
+      "runtimeId": "assassin.shift:winter.default",
+      "presentationId": "job/assassin/shift/winter/default",
+      "status": "LIVE_BOUND"
+    },
+    {
+      "kind": "ending",
+      "runtimeId": "ending.assassin.hard-work",
+      "presentationId": "ending/assassin/hard-work",
+      "status": "LIVE_BOUND"
+    }
+  ],
+  "shippedRuntimeContext": [
+    {
+      "kind": "career",
+      "runtimeId": "assassin",
+      "detail": "initial/current shipped stage runner",
+      "presentationId": null,
+      "status": "SHIPPED_RUNTIME_NO_DEDICATED_PRESENTATION_ID"
+    },
+    {
+      "kind": "guard-input",
+      "runtimeId": "guard:cargo-pass-evidence",
+      "presentationId": null,
+      "status": "SHIPPED_INPUT_ONLY_NO_ASSASSIN_CONSUMER"
+    },
+    {
+      "kind": "tavern-input",
+      "runtimeId": "tavern:rumour-confirmed",
+      "presentationId": null,
+      "status": "SHIPPED_INPUT_ONLY_NO_ASSASSIN_CONSUMER"
+    },
+    {
+      "kind": "merchant-input",
+      "runtimeId": "merchant:delivery-recorded",
+      "presentationId": null,
+      "status": "SHIPPED_INPUT_ONLY_NO_ASSASSIN_CONSUMER"
+    }
+  ],
+  "pendingRuntimeIdentities": [
+    {
+      "family": "career-stage",
+      "concept": "Operative",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "career-stage",
+      "concept": "Trusted Blade",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "career-stage",
+      "concept": "Veteran",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "career-stage",
+      "concept": "Ghost",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "career-stage",
+      "concept": "Turncoat",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "career-stage",
+      "concept": "Handler Takeover",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "career-stage",
+      "concept": "Refusal Chain",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "career-stage",
+      "concept": "Outcome-ready",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "contract-phase",
+      "concept": "offer",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "contract-phase",
+      "concept": "intel gathering",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "contract-phase",
+      "concept": "prep",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "contract-phase",
+      "concept": "choose method",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "contract-phase",
+      "concept": "execute",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "contract-phase",
+      "concept": "abort",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "contract-phase",
+      "concept": "redirect",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "contract-phase",
+      "concept": "fallout",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "method",
+      "concept": "stealth",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "method",
+      "concept": "social access",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "method",
+      "concept": "staged",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "method",
+      "concept": "indirect",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "method",
+      "concept": "refusal / alternative resolution",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "relationship",
+      "concept": "handler",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "relationship",
+      "concept": "rival operative",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "relationship",
+      "concept": "informant",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "relationship",
+      "concept": "recurring contact",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "item-capability",
+      "concept": "Concealed Toolset",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "item-capability",
+      "concept": "Sealed Pass",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "item-capability",
+      "concept": "disguise / formal attire",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "item-capability",
+      "concept": "evidence / document",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "item-capability",
+      "concept": "Activity route tool",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "activity",
+      "concept": "infiltration site / route",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "activity",
+      "concept": "target tracking",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "activity",
+      "concept": "extraction / withdrawal",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "cross-system",
+      "concept": "Assassin consumer of Guard cargo-pass-evidence",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "cross-system",
+      "concept": "Assassin consumer of Tavern rumour-confirmed",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "cross-system",
+      "concept": "Assassin consumer of Merchant delivery-recorded",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "school-consumer",
+      "concept": "Field Craft capability match",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "school-consumer",
+      "concept": "Rhetoric & Social capability match",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "school-consumer",
+      "concept": "Etiquette & Presentation capability match",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "school-consumer",
+      "concept": "Literacy & Numbers capability match",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "school-consumer",
+      "concept": "Physical Training capability match",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "advanced-ending",
+      "concept": "Ghost",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "advanced-ending",
+      "concept": "Handler Takeover",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "advanced-ending",
+      "concept": "Refusal / Turncoat",
+      "status": "PENDING_RUNTIME_ID"
+    }
+  ],
+  "forbiddenOrUnowned": [
+    {
+      "concept": "Assassin Palace unlock/access",
+      "status": "NO_AUTHORITY_NOT_BINDABLE"
+    },
+    {
+      "concept": "Morality stat or alignment presentation",
+      "status": "NO_AUTHORITY_NOT_BINDABLE"
+    },
+    {
+      "concept": "generic combat / lethal-nonlethal subsystem",
+      "status": "NO_AUTHORITY_NOT_BINDABLE"
+    },
+    {
+      "concept": "universal black-market shop or covert currency",
+      "status": "NO_AUTHORITY_NOT_BINDABLE"
+    },
+    {
+      "concept": "global fallout/reputation/wanted meter",
+      "status": "NO_AUTHORITY_NOT_BINDABLE"
+    }
+  ],
+  "media": {
+    "shippedStaticSources": 5,
+    "assassinAnimationSourceSequences": 0,
+    "fabricatedGifPathsAllowed": false
+  }
+}
