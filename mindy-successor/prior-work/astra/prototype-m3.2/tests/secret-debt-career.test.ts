@@ -34,6 +34,14 @@ function reactToCareerFact(input:Save,fact:string){
   return resolveReactions(input,[{kind:'careerFactAdded',career:'secret-debt',fact}],catalog).state;
 }
 
+test('Secret Debt stays hidden and virtual before the one-time encounter is authorized',()=>{
+  const s=started();
+  assert.equal(s.run.progression.careers['secret-debt'],undefined);
+  const shift=catalog.definitions.actions.find(action=>action.id==='secret-debt.shift')!;
+  assert.equal(actionAvailable(shift,s,catalog),false);
+  assert.equal(s.run.endings.eligible.some(id=>id.startsWith('ending.secret-debt.')),false);
+});
+
 test('Secret Debt keeps every still-open Product number absent from production data',()=>{
   const encounter=secretPack.events.find((event:any)=>event.id==='secret-debt.lender-encounter');
   const forcedNight=secretPack.events.find((event:any)=>event.id==='secret-debt.forced-night-work');
