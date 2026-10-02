@@ -1,0 +1,370 @@
+{
+  "version": 1,
+  "status": "SAFE_PREP_ONLY",
+  "owner": "Chat 1 / Runtime + Integration Developer",
+  "queue": "C1D-181..192",
+  "activationCommit": "8c8b88e2518549cf43e1373638216e4a072c0484",
+  "observedMainAtInventory": "4eba381c160ccd5b2dc539b09b98e727207c6aee",
+  "finalRebuildRequired": true,
+  "finalRebuildRule": "Rebuild on exact post-Artist main after Artist/Geisha integration and require one executable exact-head required-workflow SUCCESS before any Assassin freeze.",
+  "shippedAuthority": {
+    "ordinaryShift": {
+      "id": "assassin.shift",
+      "label": "Assassin shift",
+      "description": "Complete an ordinary covert work shift such as surveillance, delivery, route preparation, or cleanup. Initial tuning remains balance-owned.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "stat",
+                  "stat": "dexterity",
+                  "op": "gte",
+                  "value": 30
+                },
+                {
+                  "kind": "stat",
+                  "stat": "wits",
+                  "op": "gte",
+                  "value": 25
+                },
+                {
+                  "kind": "stat",
+                  "stat": "reason",
+                  "op": "gte",
+                  "value": 20
+                }
+              ]
+            },
+            {
+              "kind": "calendarYear",
+              "op": "gte",
+              "value": 3
+            }
+          ]
+        }
+      ],
+      "effects": [
+        {
+          "kind": "incrementCareerCounter",
+          "career": "assassin",
+          "counter": "completed_shifts",
+          "amount": 1
+        }
+      ],
+      "mode": "normal",
+      "wage": {
+        "base": 15,
+        "weights": [
+          {
+            "stat": "dexterity",
+            "factor": 0.35
+          },
+          {
+            "stat": "wits",
+            "factor": 0.3
+          },
+          {
+            "stat": "reason",
+            "factor": 0.2
+          },
+          {
+            "stat": "manners",
+            "factor": 0.1
+          }
+        ]
+      },
+      "scenes": [
+        {
+          "id": "spring.default",
+          "text": "Spring assassin shift: the season changes the ordinary work context.",
+          "conditions": [],
+          "media": [
+            "stage.town"
+          ]
+        },
+        {
+          "id": "summer.default",
+          "text": "Summer assassin shift: demand, routes, or crowds shift with the season.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "summer"
+            }
+          ],
+          "media": [
+            "stage.town"
+          ]
+        },
+        {
+          "id": "autumn.default",
+          "text": "Autumn assassin shift: seasonal pressure changes the work mix.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "autumn"
+            }
+          ],
+          "media": [
+            "stage.town"
+          ]
+        },
+        {
+          "id": "winter.default",
+          "text": "Winter assassin shift: scarcity, access, or regular clients change the routine.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "winter"
+            }
+          ],
+          "media": [
+            "stage.town"
+          ]
+        }
+      ],
+      "seasonal": {
+        "spring": [
+          {
+            "kind": "modifyStat",
+            "stat": "dexterity",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "wits",
+            "delta": 1
+          }
+        ],
+        "summer": [
+          {
+            "kind": "modifyStat",
+            "stat": "dexterity",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "manners",
+            "delta": 1
+          }
+        ],
+        "autumn": [
+          {
+            "kind": "modifyStat",
+            "stat": "wits",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "reason",
+            "delta": 1
+          }
+        ],
+        "winter": [
+          {
+            "kind": "modifyStat",
+            "stat": "dexterity",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "reason",
+            "delta": 1
+          }
+        ]
+      }
+    },
+    "hardWorkEnding": {
+      "id": "ending.assassin.hard-work",
+      "title": "Assassin Hard Work",
+      "description": "Persistence ending: fifty completed Assassin shifts.",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "assassin",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 50
+        }
+      ],
+      "reward": "assassin.hardwork.compat",
+      "metaRewards": [
+        {
+          "kind": "hardWork",
+          "rewardId": "hardWork:assassin",
+          "career": "assassin"
+        }
+      ],
+      "epilogue": "Hard Work completion recorded for Assassin."
+    },
+    "schoolAuthority": "capability-match-only",
+    "schoolDocs": [
+      "mindy-successor/docs/school-prep/SCHOOL_ASSASSIN_PREPARATION_V1.md",
+      "mindy-successor/docs/school-prep/SCHOOL_ASSASSIN_REACTIVE_DEPTH_V1.md"
+    ],
+    "existingPresentationAssets": [
+      "career-assassin-result.svg",
+      "career-assassin-shift-spring.svg",
+      "career-assassin-shift-summer.svg",
+      "career-assassin-shift-autumn.svg",
+      "career-assassin-shift-winter.svg"
+    ]
+  },
+  "provisionalRuntimePrep": {
+    "career": {
+      "id": "assassin",
+      "stages": [
+        "runner",
+        "operative",
+        "trusted-blade",
+        "veteran",
+        "ghost",
+        "turncoat",
+        "handler-takeover",
+        "refusal-chain",
+        "outcome-ready"
+      ],
+      "publicComplexEndingIds": null,
+      "exactContractCount": null
+    },
+    "contractQuest": {
+      "id": "assassin.contract",
+      "lifecycle": [
+        "dormant",
+        "offered",
+        "intel",
+        "prep",
+        "method",
+        "resolved",
+        "fallout",
+        "closed"
+      ],
+      "targetIdentity": null,
+      "lethalNonlethalRule": null,
+      "falloutModel": null,
+      "rewards": null
+    },
+    "relationship": {
+      "id": "assassin.handler",
+      "role": "handler / professional contact",
+      "romanceRequired": false
+    },
+    "items": [
+      {
+        "id": "assassin_concealed_toolset",
+        "capability": "assassin_concealed_entry",
+        "scope": "Assassin-local route/prep option only"
+      },
+      {
+        "id": "assassin_sealed_pass",
+        "capability": "assassin_sealed_access",
+        "scope": "Assassin-local contextual access only; not Guard or Palace authority"
+      },
+      {
+        "id": "assassin_disguise_kit",
+        "capability": "assassin_context_disguise",
+        "scope": "Assassin-local context fit only; no universal status"
+      },
+      {
+        "id": "assassin_evidence_case",
+        "capability": "assassin_handle_evidence",
+        "scope": "Assassin-local evidence handling only"
+      }
+    ],
+    "activity": {
+      "id": "assassin.infiltration",
+      "ordinaryShiftUsesActivity": false,
+      "advancedOnly": true,
+      "combatRequired": false
+    }
+  },
+  "crossSystemReadOnlyInputs": {
+    "tavern": {
+      "career": "tavern",
+      "fact": "rumour-confirmed"
+    },
+    "merchant": {
+      "career": "merchant",
+      "fact": "delivery-recorded"
+    },
+    "guard": {
+      "career": "guard",
+      "fact": "cargo-pass-evidence"
+    },
+    "rule": "Assassin may read these shipped facts and write Assassin-local state only."
+  },
+  "schoolHooks": [
+    {
+      "trackId": "school.track.field_craft",
+      "producerThreshold": null,
+      "producerPublicFact": null,
+      "canonicalGate": false
+    },
+    {
+      "trackId": "school.track.rhetoric_and_social",
+      "producerThreshold": null,
+      "producerPublicFact": null,
+      "canonicalGate": false
+    },
+    {
+      "trackId": "school.track.etiquette_and_presentation",
+      "producerThreshold": null,
+      "producerPublicFact": null,
+      "canonicalGate": false
+    },
+    {
+      "trackId": "school.track.literacy_and_numbers",
+      "producerThreshold": null,
+      "producerPublicFact": null,
+      "canonicalGate": false
+    },
+    {
+      "trackId": "school.track.physical_training",
+      "producerThreshold": null,
+      "producerPublicFact": null,
+      "canonicalGate": false
+    }
+  ],
+  "unresolved": {
+    "lethalNonlethalScope": null,
+    "combatPresence": null,
+    "targetContent": null,
+    "networkStructure": null,
+    "exactContractCount": null,
+    "falloutModel": null,
+    "rewards": null,
+    "newPublicComplexEndingIds": null,
+    "moralityStat": null,
+    "universalBlackMarket": null,
+    "palaceAccessFromOrdinaryAssassin": null
+  },
+  "collisionSurface": {
+    "sharedFiles": [
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/definitions.json",
+      "mindy-successor/prior-work/astra/prototype-m3.2/src/core/schema.ts"
+    ],
+    "additiveFamilies": [
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/packs/assassin-*.json",
+      "mindy-successor/prior-work/astra/prototype-m3.2/tests/assassin-*.test.ts",
+      "mindy-successor/docs/tasks/ASSASSIN_RUNTIME_PREP_CONTRACT_v1.json"
+    ],
+    "rebuildNote": "Shared definitions/schema edits are prototype collision points and must be replayed onto post-Artist main rather than merging this prep branch blindly."
+  },
+  "invariants": [
+    "assassin.shift remains 1 Energy ordinary covert work and is not a mandatory kill/combat action",
+    "unlock remains Dexterity 30 + Wits 25 + Reason 20 OR Year 3",
+    "wage remains base 15 with the shipped stat weights",
+    "all four shipped seasonal scene/stat packages remain unchanged",
+    "ending.assassin.hard-work, reward assassin.hardwork.compat, and Meta hardWork:assassin remain unchanged",
+    "no Morality stat, mandatory combat subsystem, universal black-market system, or Palace bypass is introduced",
+    "School mappings remain capability matches only with null producer thresholds/public facts",
+    "late route readiness never creates new public complex ending IDs in prep"
+  ]
+}
