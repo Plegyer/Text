@@ -1,5 +1,31 @@
 # Worker reallocation update — 2026-10-01
 
+## NEW LEADER 1 TAKEOVER — GUARD INTEGRATION READY — 2026-10-02 05:15Z
+
+This is the newest recovery block. Re-query Git before mutating anything.
+
+- Coordination main before this handoff write: `37a7d01aa06806bba9f3f9f07e7fdeda68cbf676`; exact main CI #843 / id `36887560777`: SUCCESS.
+- Shipped product baseline is Hunter-complete main `80855b78faef15205b0fcfb1660acd98eb78aefa`; exact product CI #828 / id `36876266116`: SUCCESS; validator 46 packs / 167 events / 39 actions / 22 endings; tests 817/817; C4-155 PASS.
+- Guard is the current product wave. All four producer siblings are frozen, green, and QA-accepted:
+  - runtime #208 @ `89030816f07be16ab5071ebb9af859fc3c756115`, CI #820 SUCCESS — C4-156 PASS-WITH-NOTES;
+  - School #206 @ `788625b8cc83d795f3e4897ab120fd0b2a5f9109`, CI #837 SUCCESS, 783/783 — C4-157 PASS-WITH-NOTES;
+  - authored #213 @ `c7e6a346a0bc934bf9db464af29470e1299d6ffc`, CI #836 SUCCESS, 777/777 — C4-158 PASS-WITH-NOTES;
+  - presentation #217 @ `717aa69fa3c607905a616c048f9bd4dd439b0bfd`, CI #841 SUCCESS, 788/788 — C4-159 PASS-WITH-NOTES.
+- C4-160 Guard collision/ownership ledger: PASS, PR #170 comment `5935478228`.
+- C4-161 is intentionally BLOCKED until Lead completes Guard integration and exact-current-main CI is green.
+- Lead Guard integration has started:
+  - draft PR #218 `lead/integrate-guard-runtime-current-main`;
+  - exact head `9b934d72b3d70f15a0f8734c399d2a30d070881a`;
+  - base current main;
+  - exact-head CI #844 / id `36967680470`: SUCCESS;
+  - validator: 52 packs / 193 events / 39 actions / 22 endings;
+  - tests: 824/824 pass.
+- First unfinished Lead action: continue collision-safe Guard integration after #218 using only accepted focused sibling deltas, preserving all shipped Hunter/Tavern/Satyr/Undead/Forest ownership. Build/verify the remaining authored, School and presentation layers, then merge the complete Guard stack in safe order and require exact-main green CI.
+- After Guard integration, activate Chat 4 C4-161 on exact current main. Do not call Guard shipped before C4-161 PASS / PASS-WITH-NOTES.
+- All worker producer lanes are currently at frozen Guard candidates; do not move those exact heads. Assign the next ordinary-career wave only on new branches under the pipeline/no-idle rule.
+- Stable roles remain unchanged. Coordination pointers/queues stay on main; producer candidates stay immutable.
+
+
 ## NEW LEADER 1 TAKEOVER — HUNTER INTEGRATION IN PROGRESS — 2026-10-01 14:04Z
 
 This is the newest recovery block. Re-query Git before acting.
