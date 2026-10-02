@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "status": "PRODUCTION_MAPPING_UNBOUND",
+  "status": "PRODUCTION_MAPPING_BOUND_SHARED_RUNTIME",
   "selectionPolicy": {
     "mode": "arbitrary-earned-subset",
     "allowNone": true,
