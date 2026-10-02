@@ -10321,6 +10321,166 @@
     "event.merchant.routes.patron-ready.choice.record.text": {
       "ru": "Связь с Lumber даёт сети понимание одного устойчивого источника и ограничений маршрута. Patron of Routes ценит подтверждённую связь, а не присваивает себе производство древесины или Forest.",
       "en": "Keep this readiness alongside other Merchant routes."
+    },
+    "event.merchant.trade.appraisal.title": {
+      "ru": "Осторожная оценка товара",
+      "en": "A lot needs an appraisal before a promise is made"
+    },
+    "event.merchant.trade.appraisal.variant.default.text": {
+      "ru": "У товара есть заметная особенность, но её происхождение неясно. Ты записываешь, что известно, какие проверки ещё нужны и где оценка остаётся предположением, вместо того чтобы выдавать уверенность за экспертизу.\n\nПервая оценка не сходится с состоянием упаковки и заметками поставщика. Ты проводишь вторую проверку и сохраняешь расхождение в записи, чтобы решение опиралось на наблюдение, а не на желаемый результат.\n\nЕсли показания весов не объясняют странное свойство товара, ты сохраняешь неопределённость в записи. Инструмент помогает увидеть расхождение, а не превращает неполные данные в уверенный ответ.\n\nАркана полезна там, где у редкого товара есть заметное, но не до конца понятное свойство. Грамотная оценка может закончиться честным «пока неизвестно» и не превращается в универсальный способ узнать цену.",
+      "en": "The goods have a noticeable feature, but its origin is unclear. You record what is known, which checks are still needed, and where the appraisal remains an inference instead of presenting confidence as expertise.\n\nThe first appraisal does not fit the package condition or the supplier notes. You make a second check and preserve the discrepancy in the record so the decision rests on observation rather than a desired result.\n\nIf the scale reading does not explain an unusual property of the goods, you preserve that uncertainty in the record. The tool helps expose a discrepancy rather than turning incomplete data into a confident answer.\n\nArcana helps when unusual goods have a noticeable but incompletely understood property. A competent appraisal may end with an honest 'not yet known' and does not become a universal way to discover price."
+    },
+    "event.merchant.trade.appraisal.choice.apply-arcana-method.label": {
+      "ru": "Применить осторожный метод Arcana",
+      "en": "Apply the Arcana uncertainty method"
+    },
+    "event.merchant.trade.appraisal.choice.apply-arcana-method.text": {
+      "ru": "У товара есть заметная особенность, но её происхождение неясно. Ты записываешь, что известно, какие проверки ещё нужны и где оценка остаётся предположением, вместо того чтобы выдавать уверенность за экспертизу.",
+      "en": "Use the published Merchant-local School fact to record what is known and what remains uncertain; it does not set a price."
+    },
+    "event.merchant.trade.appraisal.choice.use-scales.label": {
+      "ru": "Использовать весы",
+      "en": "Use the appraisal scales"
+    },
+    "event.merchant.trade.appraisal.choice.use-scales.text": {
+      "ru": "Первая оценка не сходится с состоянием упаковки и заметками поставщика. Ты проводишь вторую проверку и сохраняешь расхождение в записи, чтобы решение опиралось на наблюдение, а не на желаемый результат.",
+      "en": "Compare the lot with a concrete Merchant tool; the result improves evidence quality, not a universal price formula."
+    },
+    "event.merchant.trade.appraisal.choice.compare-notes.label": {
+      "ru": "Сравнить записи",
+      "en": "Compare condition and notes"
+    },
+    "event.merchant.trade.appraisal.choice.compare-notes.text": {
+      "ru": "Если показания весов не объясняют странное свойство товара, ты сохраняешь неопределённость в записи. Инструмент помогает увидеть расхождение, а не превращает неполные данные в уверенный ответ.",
+      "en": "Record what can be observed and keep uncertainty explicit."
+    },
+    "event.merchant.trade.appraisal.choice.decline-uncertain.label": {
+      "ru": "Отказаться от уверенной оценки",
+      "en": "Decline a confident valuation"
+    },
+    "event.merchant.trade.appraisal.choice.decline-uncertain.text": {
+      "ru": "Аркана полезна там, где у редкого товара есть заметное, но не до конца понятное свойство. Грамотная оценка может закончиться честным «пока неизвестно» и не превращается в универсальный способ узнать цену.",
+      "en": "Refuse to pretend certainty; ordinary trade remains available."
+    },
+    "event.merchant.trade.records.title": {
+      "ru": "Проверка торговых записей",
+      "en": "A trade needs terms that can be checked later"
+    },
+    "event.merchant.trade.records.variant.default.text": {
+      "ru": "Печать на накладной выглядит знакомо, но одна строка не совпадает с фактическим грузом. Ты приостанавливаешь подтверждение, сверяешь копии и просишь исправить запись до передачи товара.\n\nЗапись показывает прибыль после завершения сделки, но следующая поставка требует расходов раньше оплаты. Ты различаешь итоговую выгоду и доступные сейчас средства, не создавая отдельной финансовой системы.\n\nФормальная формулировка может звучать внушительно и всё равно скрывать, кто за что отвечает. Ты пересказываешь условие простыми словами и проверяешь, одинаково ли обе стороны поняли обязательство.\n\nК накладной полезно приложить короткое объяснение сложного условия своими словами. Футляр сохраняет обе версии рядом, чтобы формальный документ не становился удобным местом для двусмысленности.",
+      "en": "The seal on the manifest looks familiar, but one line does not match the actual cargo. You pause confirmation, compare the copies, and ask for the record to be corrected before handing the goods over.\n\nThe record shows a profit after the trade completes, but the next delivery requires costs before payment arrives. You distinguish final gain from funds available now without creating a separate finance system.\n\nFormal wording can sound impressive while still obscuring who is responsible for what. You restate the term in plain language and check that both sides understand the obligation the same way.\n\nIt helps to keep a short plain-language explanation beside a complicated manifest term. The case keeps both versions together so a formal document does not become a convenient place for ambiguity."
+    },
+    "event.merchant.trade.records.choice.verify-with-case.label": {
+      "ru": "Сверить по футляру накладных",
+      "en": "Verify against the manifest case"
+    },
+    "event.merchant.trade.records.choice.verify-with-case.text": {
+      "ru": "Печать на накладной выглядит знакомо, но одна строка не совпадает с фактическим грузом. Ты приостанавливаешь подтверждение, сверяешь копии и просишь исправить запись до передачи товара.",
+      "en": "Use the prepared manifest tool to compare terms and cargo evidence without creating a global inventory ledger."
+    },
+    "event.merchant.trade.records.choice.write-plain-terms.label": {
+      "ru": "Записать условие простыми словами",
+      "en": "Write the terms plainly"
+    },
+    "event.merchant.trade.records.choice.write-plain-terms.text": {
+      "ru": "Запись показывает прибыль после завершения сделки, но следующая поставка требует расходов раньше оплаты. Ты различаешь итоговую выгоду и доступные сейчас средства, не создавая отдельной финансовой системы.",
+      "en": "Separate quantity, delivery timing, and unresolved points so later checking does not depend on memory."
+    },
+    "event.merchant.trade.records.choice.verify-before-signing.label": {
+      "ru": "Проверить перед подтверждением",
+      "en": "Verify before signing"
+    },
+    "event.merchant.trade.records.choice.verify-before-signing.text": {
+      "ru": "Формальная формулировка может звучать внушительно и всё равно скрывать, кто за что отвечает. Ты пересказываешь условие простыми словами и проверяешь, одинаково ли обе стороны поняли обязательство.",
+      "en": "Delay the promise until the record matches what is actually being moved."
+    },
+    "event.merchant.trade.delivery.title": {
+      "ru": "Решение по доставке",
+      "en": "A delivery tests timing rather than a global price formula"
+    },
+    "event.merchant.trade.delivery.variant.default.text": {
+      "ru": "Предложение выглядит выгоднее обычного, но появляется слишком поздно для надёжной доставки. Ты сравниваешь дополнительную выгоду с риском сорвать срок и оставляешь возможность отказаться без выдуманного штрафа.\n\nПоставщик обещает ускорить следующую партию, но прошлые записи показывают несколько задержек. Ты обсуждаешь конкретный срок и резервный вариант, не превращая рабочее сомнение в личное обвинение.\n\nПокупателю нужна часть заказа сегодня, а остальное может подождать. Ты предлагаешь разделённую доставку только после того, как обе стороны понимают объём и сроки каждой части.\n\nБольший объём не всегда означает лучшую сделку для покупателя. Ты сначала выясняешь, сколько действительно нужно и когда, а затем обсуждаешь поставку без давления продать лишнее.\n\nНадёжный поставщик сообщает о возможной задержке заранее. Вместо наказания за честное предупреждение ты уточняешь резервный маршрут и минимальный объём, который всё ещё можно выполнить.\n\nПеред отправкой ты повторяешь адрес, окно времени и количество в партии. Простая проверка занимает минуту и снижает риск спорить потом о том, что каждая сторона считала очевидным.",
+      "en": "An offer looks better than usual, but it arrives too late for a reliable delivery. You compare the extra upside with the risk of missing the window and keep the option to decline without inventing a penalty.\n\nA supplier promises to speed up the next lot, but previous records show several delays. You discuss a concrete date and a backup plan without turning a professional concern into a personal accusation.\n\nThe buyer needs part of the order today while the rest can wait. You offer a split delivery only after both sides understand the quantity and timing of each part.\n\nA larger quantity is not always a better deal for the buyer. You first establish how much is actually needed and when, then discuss the delivery without pushing unnecessary volume.\n\nA reliable supplier warns about a possible delay early. Instead of punishing an honest warning, you clarify a backup route and the minimum quantity that can still be delivered.\n\nBefore dispatch, you repeat the address, time window, and lot quantity. A simple check takes a minute and reduces the risk of later arguing about what each side thought was obvious."
+    },
+    "event.merchant.trade.delivery.choice.confirm-window.label": {
+      "ru": "Подтвердить окно доставки",
+      "en": "Confirm the delivery window"
+    },
+    "event.merchant.trade.delivery.choice.confirm-window.text": {
+      "ru": "Предложение выглядит выгоднее обычного, но появляется слишком поздно для надёжной доставки. Ты сравниваешь дополнительную выгоду с риском сорвать срок и оставляешь возможность отказаться без выдуманного штрафа.",
+      "en": "Choose a concrete handoff window and record who is responsible for the next step."
+    },
+    "event.merchant.trade.delivery.choice.split-delivery.label": {
+      "ru": "Разделить доставку",
+      "en": "Split the delivery"
+    },
+    "event.merchant.trade.delivery.choice.split-delivery.text": {
+      "ru": "Поставщик обещает ускорить следующую партию, но прошлые записи показывают несколько задержек. Ты обсуждаешь конкретный срок и резервный вариант, не превращая рабочее сомнение в личное обвинение.",
+      "en": "Use a narrower delivery commitment to reduce route risk without creating an inventory-capacity system."
+    },
+    "event.merchant.trade.shortage.title": {
+      "ru": "Решение при дефиците",
+      "en": "Winter shortage changes the decision, not the global economy"
+    },
+    "event.merchant.trade.shortage.variant.default.text": {
+      "ru": "При нехватке товара есть смысл продать быстро, но есть и цена потерянных обязательств перед теми, кому ты уже обещала поставку. Ты выбираешь между скоростью и надёжностью конкретной сделки.",
+      "en": "When goods are scarce, selling quickly can be tempting, but there is also a cost to breaking commitments already made. You choose between speed and reliability for the specific trade in front of you."
+    },
+    "event.merchant.trade.shortage.choice.delay-sale.label": {
+      "ru": "Отложить продажу",
+      "en": "Delay the sale"
+    },
+    "event.merchant.trade.shortage.choice.delay-sale.text": {
+      "ru": "При нехватке товара есть смысл продать быстро, но есть и цена потерянных обязательств перед теми, кому ты уже обещала поставку. Ты выбираешь между скоростью и надёжностью конкретной сделки.",
+      "en": "Keep the goods and promise narrower timing rather than inventing a universal scarcity multiplier."
+    },
+    "event.merchant.trade.shortage.choice.reserve-regulars.label": {
+      "ru": "Сохранить часть для постоянных покупателей",
+      "en": "Reserve a known share for regular buyers"
+    },
+    "event.merchant.trade.shortage.choice.reserve-regulars.text": {
+      "ru": "При нехватке товара есть смысл продать быстро, но есть и цена потерянных обязательств перед теми, кому ты уже обещала поставку. Ты выбираешь между скоростью и надёжностью конкретной сделки.",
+      "en": "Use relationship knowledge rather than a global allocation engine."
+    },
+    "event.merchant.trade.shortage.choice.accept-risk.label": {
+      "ru": "Принять узкий риск",
+      "en": "Accept a narrow high-risk trade"
+    },
+    "event.merchant.trade.shortage.choice.accept-risk.text": {
+      "ru": "При нехватке товара есть смысл продать быстро, но есть и цена потерянных обязательств перед теми, кому ты уже обещала поставку. Ты выбираешь между скоростью и надёжностью конкретной сделки.",
+      "en": "Record willingness to carry timing and route risk; this is not a morality or crime label."
+    },
+    "event.merchant.crisis.delivery-pressure.title": {
+      "ru": "Кризис давления на доставку",
+      "en": "A pressured delivery forces a concrete trade-off"
+    },
+    "event.merchant.crisis.delivery-pressure.variant.default.text": {
+      "ru": "Торговая ситуация: Кризис давления на доставку.",
+      "en": "A pressured delivery forces a concrete trade-off. The choice records Merchant-local evidence without introducing a universal economy model."
+    },
+    "event.merchant.crisis.delivery-pressure.choice.verify-and-delay.label": {
+      "ru": "Проверить и задержать",
+      "en": "Verify records and delay"
+    },
+    "event.merchant.crisis.delivery-pressure.choice.verify-and-delay.text": {
+      "ru": "Выбор сохраняет текущие условия Merchant без новой системы.",
+      "en": "Choose evidence quality over a rushed promise."
+    },
+    "event.merchant.crisis.delivery-pressure.choice.ask-supplier-reroute.label": {
+      "ru": "Попросить поставщика изменить маршрут",
+      "en": "Ask the supplier for a reroute"
+    },
+    "event.merchant.crisis.delivery-pressure.choice.ask-supplier-reroute.text": {
+      "ru": "Выбор сохраняет текущие условия Merchant без новой системы.",
+      "en": "Use the professional relationship if it is available, but do not create a generic logistics network."
+    },
+    "event.merchant.crisis.delivery-pressure.choice.accept-narrow-risk.label": {
+      "ru": "Принять ограниченный риск",
+      "en": "Accept the narrow route risk"
+    },
+    "event.merchant.crisis.delivery-pressure.choice.accept-narrow-risk.text": {
+      "ru": "Выбор сохраняет текущие условия Merchant без новой системы.",
+      "en": "Take a documented trade risk without creating an illegal-goods law or morality score."
     }
   }
 }
