@@ -106,7 +106,7 @@ export interface ResolvedPresentation {
 
 export const emptyPresentation=():Presentation=>({version:1,texts:{},media:{}});
 
-const jobIds=new Set(['tavern','lumber','hunt','hunter','guard','satyr-maid','undead-farm','artist-geisha','assassin','merchant','prostitute']);
+const jobIds=new Set(['tavern','lumber','hunt','hunter','guard','satyr-maid','undead-farm','artist-geisha','assassin','merchant','prostitute','secret-debt']);
 const clean=(value:string)=>value.toLowerCase().replace(/[^a-z0-9_-]+/g,'-').replace(/^-+|-+$/g,'')||'default';
 const pathParts=(value:string)=>value.toLowerCase().split(/[./]+/).map(clean).filter(Boolean);
 const semanticPath=(value:string)=>pathParts(value).join('/');
