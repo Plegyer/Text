@@ -157,6 +157,7 @@ Design lesson for successor:
 - Career event density should prevent Hard Work=50 from feeling like a silent counter.
 - New Start+ bonus design should favor distinct playstyle changes and route access, not only additive stats.
 - Secret Debt should be judged as a complete alternate route with its own economy and exits, not as a punishment minigame.
+- Current successor Large Activities cost 2 Energy. Therefore the locked Secret Debt next-day -1 Energy is already a meaningful systemic penalty: normal/cheap lodging leaves 2 Energy, so a Large Activity consumes the whole productive day; Street also has its own -1, leaving only 1 Energy and making 2-Energy Activity unavailable. This is useful difficulty pressure and should be preserved unless later balance evidence shows a problem.
 
 ## What not to copy automatically
 
