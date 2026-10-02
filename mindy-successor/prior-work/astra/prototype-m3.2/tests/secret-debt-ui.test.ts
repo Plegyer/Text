@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {createRequire} from 'node:module';
 
-import {applyEffects} from '../src/core/engine.ts';
+import {applyEffects,dispatch,resolveReactions} from '../src/core/engine.ts';
 import {ordinaryHardWorkCareers} from '../src/core/schema.ts';
 import {catalog,started} from './helpers.ts';
 
@@ -51,6 +51,31 @@ async function boot(locale:'ru'|'en'){
   return {dom,w,errors};
 }
 
+function paidFreedomSave(){
+  let s=boundSave();
+  s=applyEffects(s,[{kind:'addCareerFact',career:'secret-debt',fact:'debt-cleared'}],catalog);
+  s=resolveReactions(s,[{kind:'careerFactAdded',career:'secret-debt',fact:'debt-cleared'}],catalog).state;
+  s=dispatch(s,{type:'choice',id:'leave'},catalog);
+  s=dispatch(s,{type:'commitEnding',id:'ending.secret-debt.paid-freedom'},catalog);
+  return dispatch(s,{type:'completeEnding'},catalog);
+}
+
+async function bootSave(save:any,locale:'ru'|'en'){
+  const errors:string[]=[];
+  const vc=new VirtualConsole();
+  vc.on('jsdomError',(e:Error)=>errors.push(e.message));
+  const dom=new JSDOM(html,{url:'http://localhost:4173',runScripts:'outside-only',virtualConsole:vc});
+  const w=dom.window;
+  w.structuredClone=structuredClone;
+  w.fetch=async()=>({ok:true,json:async()=>structuredClone(data)});
+  w.confirm=()=>true;
+  w.localStorage.setItem('portal-life.v1',JSON.stringify(save));
+  w.localStorage.setItem('portal-life.locale',locale);
+  w.eval(bundle);
+  await wait(()=>!!w.document.querySelector('[data-ending-id="ending.secret-debt.paid-freedom"]'));
+  return {dom,w,errors};
+}
+
 test('bound Secret Debt UI locks ordinary work, preserves its progress, and exposes only the hidden bound shift',async()=>{
   for(const locale of ['ru','en'] as const){
     const save=boundSave();
@@ -79,6 +104,30 @@ test('bound Secret Debt UI locks ordinary work, preserves its progress, and expo
       if(locale==='ru')assert.match(panelText,/Связывающий долг/);
       else assert.match(panelText,/Binding debt/);
 
+      assert.deepEqual(errors,[]);
+    }finally{
+      dom.window.close();
+    }
+  }
+});
+
+test('completed Paid Freedom screen uses localized Secret Debt identity and epilogue across reload',async()=>{
+  const save=paidFreedomSave();
+  assert.equal(save.run.status,'ended');
+  assert.equal(save.run.endings.result?.endingId,'ending.secret-debt.paid-freedom');
+
+  for(const locale of ['ru','en'] as const){
+    const {dom,w,errors}=await bootSave(save,locale);
+    try{
+      const identity=w.document.querySelector('.ending-identity')?.textContent?.trim()??'';
+      const body=w.document.querySelector('.dialogue p')?.textContent?.trim()??'';
+      if(locale==='ru'){
+        assert.equal(identity,'Выкупленная свобода');
+        assert.match(body,/Обязательство закрыто/);
+      }else{
+        assert.equal(identity,'Paid Freedom');
+        assert.match(body,/obligation is closed/i);
+      }
       assert.deepEqual(errors,[]);
     }finally{
       dom.window.close();
