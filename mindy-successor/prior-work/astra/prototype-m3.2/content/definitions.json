@@ -6671,6 +6671,157 @@
           "effects": []
         }
       ]
+    },
+    {
+      "id": "artist-geisha.mentor",
+      "label": "Senior Artist / Mentor",
+      "initialStage": "introduced",
+      "stages": [
+        "introduced",
+        "professional-trust",
+        "conflict-open",
+        "utility-ready",
+        "route-resolved"
+      ],
+      "transitions": [
+        {
+          "id": "build-trust",
+          "from": [
+            "introduced"
+          ],
+          "to": "professional-trust",
+          "conditions": [
+            {
+              "kind": "relationshipFact",
+              "relationship": "artist-geisha.mentor",
+              "fact": "introduced-at-work",
+              "present": true
+            },
+            {
+              "kind": "relationshipCounter",
+              "relationship": "artist-geisha.mentor",
+              "counter": "work-meetings",
+              "op": "gte",
+              "value": 2
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "artist-geisha.mentor",
+              "fact": "professional-trust-earned"
+            }
+          ]
+        },
+        {
+          "id": "open-conflict",
+          "from": [
+            "professional-trust"
+          ],
+          "to": "conflict-open",
+          "conditions": [
+            {
+              "kind": "relationshipFact",
+              "relationship": "artist-geisha.mentor",
+              "fact": "conflict-opened",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "utility-cooperate",
+          "from": [
+            "conflict-open"
+          ],
+          "to": "utility-ready",
+          "conditions": [
+            {
+              "kind": "relationshipChoice",
+              "relationship": "artist-geisha.mentor",
+              "choice": "conflict-response",
+              "value": "cooperate"
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "artist-geisha.mentor",
+              "fact": "conflict-resolved"
+            },
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "artist-geisha.mentor",
+              "fact": "utility-ready"
+            }
+          ]
+        },
+        {
+          "id": "resolve-rivalry",
+          "from": [
+            "conflict-open"
+          ],
+          "to": "route-resolved",
+          "conditions": [
+            {
+              "kind": "relationshipChoice",
+              "relationship": "artist-geisha.mentor",
+              "choice": "conflict-response",
+              "value": "rivalry"
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "artist-geisha.mentor",
+              "fact": "conflict-resolved"
+            }
+          ]
+        },
+        {
+          "id": "resolve-refusal",
+          "from": [
+            "conflict-open"
+          ],
+          "to": "route-resolved",
+          "conditions": [
+            {
+              "kind": "relationshipChoice",
+              "relationship": "artist-geisha.mentor",
+              "choice": "conflict-response",
+              "value": "declined"
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "artist-geisha.mentor",
+              "fact": "conflict-resolved"
+            },
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "artist-geisha.mentor",
+              "fact": "refusal-respected"
+            }
+          ]
+        },
+        {
+          "id": "finish-utility",
+          "from": [
+            "utility-ready"
+          ],
+          "to": "route-resolved",
+          "conditions": [
+            {
+              "kind": "relationshipFact",
+              "relationship": "artist-geisha.mentor",
+              "fact": "utility-response-resolved",
+              "present": true
+            }
+          ],
+          "effects": []
+        }
+      ]
     }
   ],
   "lodgings": [
