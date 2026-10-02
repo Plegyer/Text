@@ -1,18 +1,19 @@
 # CURRENT CHAT2 TASK POINTER
 
-Status: **GUARD PRESENTATION v16 FROZEN / QA ACCEPTED / STANDBY**
+Status: **MERCHANT PRESENTATION v17 ACTIVE**
 Owner: Chat 2 / Presentation & Media Worker
+Queue: C2-181..192
+Target branch: `chat2/merchant-presentation-v17`
 
-Frozen Guard presentation:
-- PR #217
-- exact head `717aa69fa3c607905a616c048f9bd4dd439b0bfd`
-- base frozen Guard runtime `89030816f07be16ab5071ebb9af859fc3c756115`
-- CI #841 / id `36885302779`: SUCCESS
-- tests: 788/788
-- C4-159: PASS-WITH-NOTES
-- do not move this head.
+Guard presentation PR #217 is frozen shipped history and must not move.
 
-Previous frozen Hunter presentation #210 is already shipped through Hunter integration.
+Authoritative queue:
+- `TASK_CHAT2_PRESENTATION_QUEUE_v17.md`
 
-No new presentation queue is active at this checkpoint.
-Wait for Lead to assign the next ordinary-career presentation wave on a new branch.
+Start rule:
+- Lead creates `chat2/merchant-presentation-v17` from the same Merchant activation commit that publishes this pointer;
+- begin **C2-181 immediately** and continue all safe preparation work in parallel;
+- final advanced binding/rebuild and freeze at C2-192 must use the exact frozen Merchant runtime from Chat 1;
+- presentation/media/accessibility only: no gameplay, Save/RNG, economy, ending-eligibility or Meta ownership changes.
+
+Preserve all already-shipped career presentation consumers while adding Merchant-owned surfaces only.

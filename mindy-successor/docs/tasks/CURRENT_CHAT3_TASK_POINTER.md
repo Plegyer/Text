@@ -1,18 +1,19 @@
 # CURRENT CHAT3 TASK POINTER
 
-Status: **GUARD AUTHORED v17 FROZEN / QA ACCEPTED / STANDBY**
+Status: **MERCHANT AUTHORED CONTENT v18 ACTIVE**
 Owner: Chat 3 / World + Career Content Bundles
+Queue: C3-193..204
+Target branch: `chat3/merchant-live-authored-v18`
 
-Frozen Guard authored candidate:
-- PR #213
-- exact head `c7e6a346a0bc934bf9db464af29470e1299d6ffc`
-- base frozen Guard runtime `89030816f07be16ab5071ebb9af859fc3c756115`
-- CI #836 / id `36877265932`: SUCCESS
-- tests: 777/777
-- C4-158: PASS-WITH-NOTES
-- do not move this head.
+Frozen Guard authored PR #213 is shipped history and must not move.
 
-Previous Hunter authored #209 is shipped.
+Authoritative queue:
+- `TASK_CHAT3_CONTENT_QUEUE_v18.md`
 
-No new authored queue is active at this checkpoint.
-Wait for Lead to assign the next ordinary-career authored wave on a new branch.
+Start rule:
+- Lead creates `chat3/merchant-live-authored-v18` from the same Merchant activation commit that publishes this pointer;
+- begin **C3-193 immediately** and continue all safe authored preparation in parallel;
+- final live-ID binding/natural reachability/freeze at C3-204 waits for the exact frozen Merchant runtime from Chat 1;
+- authored content/localization only: no shared runtime, Save/RNG, economy ownership, ending eligibility/reward or Meta changes.
+
+Do not fabricate future-career or Palace identities and do not turn prose keys into gameplay authority.

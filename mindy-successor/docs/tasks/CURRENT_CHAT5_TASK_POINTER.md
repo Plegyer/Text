@@ -1,19 +1,20 @@
 # CURRENT CHAT5 TASK POINTER
 
-Status: **GUARD SCHOOL v16 FROZEN / QA ACCEPTED / STANDBY**
+Status: **MERCHANT SCHOOL v17 ACTIVE**
 Owner: Chat 5 / School + Text Localization Worker
+Queue: C5-181..192
+Target branch: `chat5/merchant-school-v17`
 
-Frozen Guard School:
-- PR #206
-- exact head `788625b8cc83d795f3e4897ab120fd0b2a5f9109`
-- base frozen Guard runtime `89030816f07be16ab5071ebb9af859fc3c756115`
-- CI #837 / id `36884031693`: SUCCESS
-- tests: 783/783
-- C4-157: PASS-WITH-NOTES
-- five Guard School facts remain fact-only; numeric thresholds remain null; no live consumer invented.
-- do not move this head.
+Frozen Guard School PR #206 is shipped history and must not move.
 
-Previous Hunter School #199 is already shipped through Hunter integration.
+Authoritative queue:
+- `TASK_CHAT5_SCHOOL_QUEUE_v17.md`
 
-No new School queue is active at this checkpoint.
-Wait for Lead to assign the next ordinary-career School wave on a new branch.
+Start rule:
+- Lead creates `chat5/merchant-school-v17` from the same Merchant activation commit that publishes this pointer;
+- begin **C5-181 immediately** and continue C5-182..185 preparation in parallel;
+- C5-186+ binds only exact Merchant School consumers published by the Merchant runtime contract;
+- null thresholds/public facts stay null unless Chat 1 runtime explicitly authorizes a consumer;
+- final natural acceptance/freeze at C5-192 uses the exact frozen Merchant runtime.
+
+Reuse existing courses, teachers, media and Night-study machinery; no new curriculum, price engine, credit/debt subsystem or direct career transition.
