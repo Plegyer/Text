@@ -4,7 +4,7 @@ import {stats} from '../src/core/schema.ts';import {catalog,act,started,created}
 
 test('creation: twelve low stats, ten points, separate lust, no play before completion',()=>{
  let s=freshSave();
- assert.equal(s.schemaVersion,4);
+ assert.equal(s.schemaVersion,5);
  for(const k of stats)assert.equal(s.run.character.stats[k],1);
  assert.equal(s.run.character.lust,1);
  assert.equal(s.run.resources.money,600);
@@ -93,7 +93,7 @@ test('lust is separate from progression stats but still changes legacy content p
  const low=structuredClone(a) as any;low.run.character.lust=1;const restored=parseSave(JSON.stringify(low),catalog);assert.throws(()=>dispatch(restored,{type:'choice',id:'flirt'},catalog));assert.doesNotThrow(()=>dispatch(restored,{type:'choice',id:'work'},catalog));
 });
 
-test('variant cooldown and scarce events persist across schema4 saves',()=>{
+test('variant cooldown and scarce events persist across schema5 saves',()=>{
  let s=started();for(let i=0;i<5;i++)s=act(s,'work');const count=s.run.history['base.workday'].count;s=parseSave(JSON.stringify(s),catalog);s=act(s,'work');assert.equal(s.run.history['base.workday'].count,count);
 });
 
@@ -111,9 +111,9 @@ test('all/any/not conditions still compose',()=>{
  const s=started();assert.ok(meets({kind:'all',conditions:[{kind:'season',value:'spring'},{kind:'not',condition:{kind:'unlock',value:'guild'}}]},s));
 });
 
-test('schema4 JSON has one authoritative owner for money energy stats and calendar',()=>{
+test('schema5 JSON has one authoritative owner for money energy stats and calendar',()=>{
  const s=started();const raw=JSON.parse(JSON.stringify(s));
- assert.equal(raw.schemaVersion,4);
+ assert.equal(raw.schemaVersion,5);
  assert.equal(raw.run.resources.money,s.run.metrics.money);
  assert.equal(raw.run.dayState.energyCurrent,s.run.metrics.energy);
  assert.equal(raw.run.character.stats.strength,s.run.metrics.strength);
