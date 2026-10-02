@@ -81,3 +81,43 @@ test('Assassin prep contract keeps open design open and School producer authorit
   assert.ok(contract.schoolHooks.every((x:any)=>x.producerPublicFact===null));
   assert.ok(contract.schoolHooks.every((x:any)=>x.canonicalGate===false));
 });
+
+
+test('Assassin safe prep publishes typed local machines, narrow items, and advanced-only Activity without new endings',()=>{
+  const career=definitions.careers.find((x:any)=>x.id==='assassin');
+  assert.ok(career);
+  assert.deepEqual(career.stages,contract.provisionalRuntimePrep.career.stages);
+
+  const quest=definitions.quests.find((x:any)=>x.id==='assassin.contract');
+  assert.ok(quest);
+  assert.deepEqual(quest.stages,contract.provisionalRuntimePrep.contractQuest.lifecycle);
+
+  const handler=definitions.relationships.find((x:any)=>x.id==='assassin.handler');
+  assert.ok(handler);
+  assert.deepEqual(handler.stages,['introduced','professional-trust','conflict-open','utility-ready','route-resolved']);
+
+  const exactItems:any={
+    assassin_concealed_toolset:['assassin_concealed_entry'],
+    assassin_sealed_pass:['assassin_sealed_access'],
+    assassin_disguise_kit:['assassin_context_disguise'],
+    assassin_evidence_case:['assassin_handle_evidence']
+  };
+  for(const [id,capabilities] of Object.entries(exactItems)){
+    const item=definitions.itemDefinitions.find((x:any)=>x.id===id);
+    assert.ok(item,id);
+    assert.deepEqual(item.capabilities,capabilities,id);
+  }
+
+  const activity=definitions.activities.find((x:any)=>x.id==='assassin.infiltration');
+  assert.ok(activity);
+  assert.equal(activity.adapter,'counter.v1');
+  assert.equal(activity.timePolicy,'same_day');
+  assert.equal(activity.failurePolicy,'exit_to_day');
+  assert.ok(activity.entryConditions.some((c:any)=>c.kind==='careerFact'&&c.career==='assassin'&&c.fact==='infiltration-qualified'&&c.present===true));
+  assert.deepEqual(activity.results.map((x:any)=>x.outcome).sort(),['escape','failure','success']);
+
+  assert.deepEqual(
+    definitions.endings.filter((e:any)=>e.id.startsWith('ending.assassin.')).map((e:any)=>e.id),
+    ['ending.assassin.hard-work']
+  );
+});
