@@ -46,6 +46,10 @@
         {
           "kind": "careerTransition",
           "career": "merchant"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "merchant.shift"
         }
       ],
       "priorityClass": "normal_progression",
@@ -129,6 +133,10 @@
         {
           "kind": "careerTransition",
           "career": "merchant"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "merchant.shift"
         }
       ],
       "priorityClass": "normal_progression",
@@ -208,6 +216,10 @@
         {
           "kind": "careerTransition",
           "career": "merchant"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "merchant.shift"
         }
       ],
       "priorityClass": "normal_progression",
