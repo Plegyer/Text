@@ -3390,7 +3390,7 @@
       "scenes": [
         {
           "id": "spring.default",
-          "text": "Spring merchant shift: the season changes the ordinary work context.",
+          "text": "After winter the market does not reopen all at once: some stalls are active while others are still waiting for deliveries. You compare promised timing with what actually arrived and do not treat early demand as guaranteed profit.\n\nThe spring road is open again, but washouts make an ordinary delivery less predictable. You confirm an arrival window in advance and give the buyer a clear margin of time instead of making an impressive promise.\n\nThe first large spring lot looks promising until the records show a difference between the manifest count and what reached the stall. You reconcile the notes first and only then discuss the next trade.",
           "conditions": [],
           "media": [
             "stage.town"
@@ -3398,7 +3398,7 @@
         },
         {
           "id": "summer.default",
-          "text": "Summer merchant shift: demand, routes, or crowds shift with the season.",
+          "text": "A summer crowd creates fast demand, but not every buyer wants the same thing. You ask short questions about timing and needed quantity so a busy market does not turn into a chain of random concessions.\n\nIn the heat, some goods cannot be held indefinitely. You mark what must move today, what can wait until tomorrow, and what should not be promised at all when delivery already falls outside a safe window.\n\nAt the stall, people argue about price, timing, and condition at the same time. Instead of offering one broad discount, you separate the questions: one buyer needs a date, another needs lot condition, and another needs clear return terms.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -3411,7 +3411,7 @@
         },
         {
           "id": "autumn.default",
-          "text": "Autumn merchant shift: seasonal pressure changes the work mix.",
+          "text": "Autumn abundance looks uniform only from a distance. You compare lots by condition, storage time, and supplier reliability without assuming that a large harvest automatically makes every purchase worthwhile.\n\nBefore the cold season, storage notes matter more than an attractive display. You separate goods that can safely be held longer from those better sold or returned earlier, and record the reason.\n\nTwo suppliers offer similar lots, but one reliably keeps timing while the other promises more volume without confirmation. You compare not only the offer but also the history of meeting obligations.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -3424,7 +3424,7 @@
         },
         {
           "id": "winter.default",
-          "text": "Winter merchant shift: scarcity, access, or regular clients change the routine.",
+          "text": "In winter, scarce goods quickly draw a queue, which is exactly why you do not treat scarcity as proof of any price. You record available quantity, promises already made, and buyers who need predictable supply.\n\nA closed stretch of road changes an ordinary delivery: some orders can be delayed, some split, and some are better cancelled honestly. You explain the constraint before the delay turns into a dispute.\n\nWith limited stock, regular buyers ask for their usual quantity. You clarify actual needs and distribute commitments so scarcity does not become a contest of loud promises.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -4523,7 +4523,7 @@
     {
       "id": "ending.merchant.hard-work",
       "title": "Merchant Hard Work",
-      "description": "Persistence ending: fifty completed Merchant shifts.",
+      "description": "The public Merchant ending in this wave remains the ordinary Hard Work outcome for a sustained career. Advanced routes add identity and choice without creating new public ending IDs.",
       "conditions": [
         {
           "kind": "careerCounter",
