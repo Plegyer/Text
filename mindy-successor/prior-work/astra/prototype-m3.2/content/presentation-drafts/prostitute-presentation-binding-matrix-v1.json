@@ -1,0 +1,411 @@
+{
+  "version": 1,
+  "owner": "Chat 2 / Presentation + Media",
+  "queue": "C2-217..228",
+  "status": "PREP_ONLY_NO_PRODUCTION_FREEZE",
+  "activationCheckpoint": "8c8b88e2518549cf43e1373638216e4a072c0484",
+  "rules": {
+    "productionFreezeAllowed": false,
+    "futureBindingAuthority": "Future Lead-activated Prostitute runtime/content exact IDs only",
+    "ordinaryWorkIsVoluntary": true,
+    "ordinaryWorkInheritsSecretDebtForcedNight": false,
+    "adultMediaRequiresExplicitAdultOnlyGate": true,
+    "ordinaryDefaultShiftIdsRemainNeutral": true,
+    "confidencePresentationEqualsConsent": false
+  },
+  "liveBound": [
+    {
+      "kind": "ordinary-result",
+      "runtimeId": "prostitute.shift",
+      "presentationId": "job/prostitute/result/default",
+      "status": "LIVE_BOUND"
+    },
+    {
+      "kind": "ordinary-seasonal-work",
+      "runtimeId": "prostitute.shift:spring.default",
+      "presentationId": "job/prostitute/shift/spring/default",
+      "status": "LIVE_BOUND"
+    },
+    {
+      "kind": "ordinary-seasonal-work",
+      "runtimeId": "prostitute.shift:summer.default",
+      "presentationId": "job/prostitute/shift/summer/default",
+      "status": "LIVE_BOUND"
+    },
+    {
+      "kind": "ordinary-seasonal-work",
+      "runtimeId": "prostitute.shift:autumn.default",
+      "presentationId": "job/prostitute/shift/autumn/default",
+      "status": "LIVE_BOUND"
+    },
+    {
+      "kind": "ordinary-seasonal-work",
+      "runtimeId": "prostitute.shift:winter.default",
+      "presentationId": "job/prostitute/shift/winter/default",
+      "status": "LIVE_BOUND"
+    },
+    {
+      "kind": "ending",
+      "runtimeId": "ending.prostitute.hard-work",
+      "presentationId": "ending/prostitute/hard-work",
+      "status": "LIVE_BOUND"
+    }
+  ],
+  "shippedRuntimeContext": [
+    {
+      "kind": "career",
+      "runtimeId": "prostitute",
+      "detail": "initial/current shipped stage new-independent-worker",
+      "presentationId": null,
+      "status": "SHIPPED_RUNTIME_NO_DEDICATED_PRESENTATION_ID"
+    },
+    {
+      "kind": "school-prep",
+      "runtimeId": "school.track.rhetoric_and_social",
+      "presentationId": null,
+      "status": "PREP_ONLY_NO_PROSTITUTE_CONSUMER"
+    },
+    {
+      "kind": "school-prep",
+      "runtimeId": "school.track.literacy_and_numbers",
+      "presentationId": null,
+      "status": "PREP_ONLY_NO_PROSTITUTE_CONSUMER"
+    },
+    {
+      "kind": "school-prep",
+      "runtimeId": "school.track.etiquette_and_presentation",
+      "presentationId": null,
+      "status": "PREP_ONLY_NO_PROSTITUTE_CONSUMER"
+    },
+    {
+      "kind": "school-prep",
+      "runtimeId": "school.track.arts_and_performance",
+      "presentationId": null,
+      "status": "PREP_ONLY_NO_PROSTITUTE_CONSUMER"
+    },
+    {
+      "kind": "school-prep",
+      "runtimeId": "school.track.body_confidence",
+      "presentationId": null,
+      "status": "PREP_ONLY_NO_PROSTITUTE_CONSUMER"
+    }
+  ],
+  "pendingRuntimeIdentities": [
+    {
+      "family": "career-stage",
+      "concept": "Known Professional",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "career-stage",
+      "concept": "Established",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "career-stage",
+      "concept": "Veteran",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "career-stage",
+      "concept": "Independent House",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "career-stage",
+      "concept": "Elite Clientele",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "career-stage",
+      "concept": "Network / Protection",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "career-stage",
+      "concept": "Outcome-ready",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "client-flow",
+      "concept": "arrival",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "client-flow",
+      "concept": "terms",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "client-flow",
+      "concept": "boundaries",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "client-flow",
+      "concept": "work",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "client-flow",
+      "concept": "result",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "client-flow",
+      "concept": "departure",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "client-flow",
+      "concept": "aftermath",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "adult-presentation",
+      "concept": "professional work reusable variants",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "adult-presentation",
+      "concept": "new-client variant",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "adult-presentation",
+      "concept": "regular-client variant",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "adult-presentation",
+      "concept": "elite/high-status client variant",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "adult-presentation",
+      "concept": "seasonal-demand variant",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "adult-presentation",
+      "concept": "private-room variant",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "adult-presentation",
+      "concept": "voluntary Night variant",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "adult-presentation",
+      "concept": "relationship variant",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "adult-presentation",
+      "concept": "ending-layer variant",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "client-relationship",
+      "concept": "recurring client",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "client-relationship",
+      "concept": "elite client",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "relationship",
+      "concept": "regular client",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "relationship",
+      "concept": "colleague",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "relationship",
+      "concept": "manager / landlord",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "relationship",
+      "concept": "protector / contact",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "relationship",
+      "concept": "rival",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "relationship-route",
+      "concept": "professional only",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "relationship-route",
+      "concept": "friendship",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "relationship-route",
+      "concept": "romance",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "relationship-route",
+      "concept": "patronage",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "relationship-route",
+      "concept": "exploitation / conflict",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "night",
+      "concept": "voluntary client continuation",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "night",
+      "concept": "voluntary adult continuation",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "night",
+      "concept": "voluntary decline",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "night",
+      "concept": "Night result / reset",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "late-route",
+      "concept": "Independent House readiness/outcome",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "late-route",
+      "concept": "Elite Clientele readiness/outcome",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "late-route",
+      "concept": "Network / Protection readiness/outcome",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "item-capability",
+      "concept": "formal attire",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "item-capability",
+      "concept": "staff / private-room key",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "item-capability",
+      "concept": "contract / token",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "item-capability",
+      "concept": "evidence / document",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "school-consumer",
+      "concept": "Rhetoric & Social",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "school-consumer",
+      "concept": "Literacy & Numbers",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "school-consumer",
+      "concept": "Etiquette & Presentation",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "school-consumer",
+      "concept": "Arts & Performance",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "school-consumer",
+      "concept": "Body Confidence",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "advanced-ending",
+      "concept": "Independent House",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "advanced-ending",
+      "concept": "Elite Clientele",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "advanced-ending",
+      "concept": "Network / Protection",
+      "status": "PENDING_RUNTIME_ID"
+    }
+  ],
+  "forbiddenOrUnowned": [
+    {
+      "concept": "Secret Debt lock or owner state on ordinary Prostitute presentation",
+      "status": "NO_AUTHORITY_NOT_BINDABLE"
+    },
+    {
+      "concept": "Secret Debt forced Night semantics on ordinary Prostitute presentation",
+      "status": "NO_AUTHORITY_NOT_BINDABLE"
+    },
+    {
+      "concept": "universal persisted consent state",
+      "status": "NO_AUTHORITY_NOT_BINDABLE"
+    },
+    {
+      "concept": "confidence/presentation treated as consent",
+      "status": "NO_AUTHORITY_NOT_BINDABLE"
+    },
+    {
+      "concept": "automatic romance from client familiarity or adult scene",
+      "status": "NO_AUTHORITY_NOT_BINDABLE"
+    },
+    {
+      "concept": "universal reputation/status meter",
+      "status": "NO_AUTHORITY_NOT_BINDABLE"
+    },
+    {
+      "concept": "Palace access from Elite Clientele or formal attire",
+      "status": "NO_AUTHORITY_NOT_BINDABLE"
+    },
+    {
+      "concept": "generic patron system",
+      "status": "NO_AUTHORITY_NOT_BINDABLE"
+    },
+    {
+      "concept": "adult shopping-list filename used as gameplay authority",
+      "status": "NO_AUTHORITY_NOT_BINDABLE"
+    }
+  ],
+  "media": {
+    "shippedStaticSources": 5,
+    "hardWorkReusesResultStatic": true,
+    "prostituteAnimationSourceSequences": 0,
+    "adultAnimationSourceSequences": 0,
+    "shoppingListIsPlanningOnly": true,
+    "fabricatedGifPathsAllowed": false
+  }
+}
