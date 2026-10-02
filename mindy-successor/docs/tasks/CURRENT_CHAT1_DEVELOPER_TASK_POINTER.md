@@ -1,18 +1,14 @@
 # CURRENT CHAT1 DEVELOPER TASK POINTER
 
-Status: **ARTIST RUNTIME FROZEN+QA-ACCEPTED / ASSASSIN RUNTIME PREP v17 ACTIVE**
+Status: **ASSASSIN PREP COMPLETE / PROSTITUTE RUNTIME PREP v18 ACTIVE**
 Owner: Chat 1 / Runtime + Integration Developer
 
-Artist history:
-- PR #234 @ `955f4accf7e25c42e0384ddb9f76e5612f41dd00`
-- C1D-180 frozen
-- CI #978 SUCCESS, 915/915
-- C4-168 PASS-WITH-NOTES
-- do not move #234.
+Immutable/held:
+- Artist runtime #234 frozen + C4-168 accepted.
+- Assassin runtime prep #242 @ `8a5fd800c7f97613c9181e25f36bf0e344fb2691` is C1D-181..192 SAFE PREP COMPLETE; required CI failed before runner; not frozen.
 
-No-idle current work:
-- queue `TASK_CHAT1_DEVELOPER_QUEUE_v17.md`
-- branch `chat1/assassin-runtime-prep-v17`
-- execute C1D-181..192.
-
-Assassin work is prep until Artist/Geisha is integrated and shipped. Final Assassin candidate must be rebuilt on exact post-Artist main and receive a real executable exact-head SUCCESS before freeze.
+Active no-idle:
+- queue `TASK_CHAT1_DEVELOPER_QUEUE_v18.md`
+- branch `chat1/prostitute-runtime-prep-v18`
+- execute C1D-193..204.
+- prep only; final production candidate waits exact future shipped baseline + executable CI.
