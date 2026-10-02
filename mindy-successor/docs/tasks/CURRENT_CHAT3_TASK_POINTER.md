@@ -1,42 +1,24 @@
 # CURRENT CHAT3 TASK POINTER
 
-Status: **ACTIVE — ASSASSIN / REPAIR BEFORE READY_FOR_CHAT2**
-Owner: Chat 3 / Full-Career Producer A
-Branch: `chat3/assassin-complete-reset-v1`
-Current observed head before this coordination change: `88918ca95fc775afca4137384c4ea24c6cf7c0ac`
-Producer PR: #252
+Status: **ACTIVE — SCHOOL BODY CONFIDENCE / VOLUNTARY LUST +2**
+Owner: Chat 3
+New branch: `chat3/school-body-confidence-lust-v1`
+Base: fresh current main `6a6029df8e9c007227da0173eb499d59ba51648e`
+
+Assassin producer head `0976b4fefdc4d6b379243cc0f3d3429e0e1a3642` is frozen and already handed to Chat 2. Do not move that old branch.
 
 ## Assignment
 
-Finish **Assassin** as one whole ordinary-career production slice under:
-- `CAREER_ASSASSIN_DRAFT_v0.md`;
-- `USER_DECISIONS_LOCKED_v1.md`;
-- current shipped main facts.
+Implement D20 as a narrow School-owned slice:
 
-Historical Assassin prep PRs #242/#235/#236/#238 are source-only.
+- existing `school.course.body_confidence` grants **Lust +2** per paid lesson;
+- keep its current progression-stat gains and tuition/Energy rules intact;
+- Lust remains separate from Sexuality;
+- save/reload must not duplicate the effect;
+- night study must not accidentally inherit the Lust gain unless Product separately authorizes it;
+- update current School tests/fixtures/copy only where needed for the new authority;
+- do not modify Secret Debt runtime or any profession runtime.
 
-## CI correction
+Own only the School files needed for this slice. Avoid `engine.ts` / Secret Debt files unless absolutely required; escalate if the current School API cannot express the effect cleanly.
 
-Do **not** trigger more producer full-CI runs.
-
-The prior process was wrong for a single runner. Runs #1097–#1102 consumed repeated full checks while the branch was still being repaired.
-
-Latest inspected full run:
-- #1102 / `37017616082`;
-- producer head `88918ca95fc775afca4137384c4ea24c6cf7c0ac`;
-- typecheck/validate/build passed;
-- tests: 968 total, 965 pass, **3 fail**.
-
-Known actionable failures from that single run:
-1. `assassin-natural-acceptance.test.ts`: clean Assassin run expected contract stage `closed`, actual `intel`.
-2. `generic-display-label-consumers-production.test.ts`: Assassin profession description regression still expects the older RU/EN copy instead of the candidate copy.
-3. `hunter-presentation-v15-c2-158-166.test.ts`: old Hunter preservation assertion hard-codes only Lumber/Hunter Activity entries and now conflicts with the Assassin Activity entry.
-
-Fix these as one coherent repair and perform all static/focused checks available without requesting another full run.
-
-When you believe all known failures and the complete Assassin scope are resolved:
-- freeze one exact SHA;
-- write `READY_FOR_CHAT2` with the SHA and concise evidence;
-- stop pushing until Chat 2 takes the CI slot.
-
-Chat 2, not Chat 3, owns the next full executable CI.
+No producer full CI. Run focused/static checks available to you, freeze exact SHA, report `READY_FOR_CHAT2`, and stop pushing.

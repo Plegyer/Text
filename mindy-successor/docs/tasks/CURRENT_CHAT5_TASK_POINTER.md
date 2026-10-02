@@ -1,64 +1,47 @@
 # CURRENT CHAT5 TASK POINTER
 
-Status: **WAITING ON PRODUCT AUTHORITY — SECRET DEBT NOT COMPLETE**
+Status: **ACTIVE — SECRET DEBT / HIDDEN POVERTY ROUTE RESUMED**
 Owner: Chat 5 / Full-Career Producer C
 Branch: `chat5/secret-debt-complete-reset-v1`
-Verified authority-safe head: `8dd0b12bb2257981f4a6b72bca2017aad9d00e73`
+Preserved foundation head before resumed work: `8dd0b12bb2257981f4a6b72bca2017aad9d00e73`
 
-## Verified completed independent work
+## Authority
 
-The branch is exactly 30 commits ahead of assignment baseline `9ee5dd227db85b1987acd099e15ed274cb085110`, with no rebase.
+Read `USER_DECISIONS_LOCKED_v1.md` D19-D20 and the current-authority override in
+`POVERTY_HIDDEN_CAREER_DRAFT_v0.md`.
 
-Implemented authority-safe Secret Debt foundation includes:
-- dedicated hidden-career state machine;
-- one-time street lender encounter with accept/refuse;
-- persisted acceptance day;
-- parameterized delayed-activation seam with no guessed delay;
-- ordinary-job lock while bound without erasing ordinary-career progress;
-- separate compulsory bound shift;
-- forced NightFlow after lodging with voluntary Night suppression;
-- save/reload persistence for encounter, activation, forced Night and ending lifecycle;
-- distinct Paid Freedom / Bound Life / Takeover routes;
-- common eligible -> commit -> RunResult lifecycle;
-- explicit exclusion from ordinary Hard Work / Palace 10/10;
-- RU/EN and UI regressions;
-- player-facing copy scrubbed of internal Product-open/historical-number commentary.
+The old blocker ledger is superseded wherever it conflicts with D19-D20.
 
-No PR is open and no executable candidate CI was intentionally triggered because the route is not naturally complete.
+Now locked:
+- street-night lender chance 20% while unseen;
+- refusal closes the route for that life;
+- +2000 immediately on acceptance;
+- activation exactly 10 days later;
+- debt exactly 20000;
+- all 10 ordinary professions domain-locked from activation until actual exit, while preserving their progress;
+- School available;
+- Activity available but not an easy repeatable 20000-money farm;
+- hidden daytime work is paid and Lust contributes positively to wage;
+- forced Night every bound night, voluntary Night suppressed, next-day Energy -1;
+- one all-at-once 20000 repayment action, no partial payments;
+- hidden Hard Work = 50 daytime shifts, excluded from Palace 10/10;
+- owner-kill/control route requires career progress + stat build + high Lust + 10 paid School lessons + a separate explicit player action;
+- Body Confidence Lust +2 is owned by Chat 3; do not duplicate it locally.
 
-## Current blockers
+## Work now
 
-Canonical ledger:
-`mindy-successor/docs/tasks/CHAT5_SECRET_DEBT_PRODUCT_BLOCKERS.md`
+Continue the profession-owned implementation:
+- natural encounter / accept-refuse / deterministic 20% behavior;
+- exact 2000 grant and 10-day activation;
+- exact 20000 debt and one-shot repayment action;
+- ordinary-profession domain lock and clean release;
+- paid hidden daytime job using the normal wage system with Lust as one input;
+- every-night forced flow and -1 next-day Energy;
+- 50-shift Hard Work;
+- School/Activity availability policy;
+- owner-kill/control route structure and explicit action;
+- RU/EN, presentation/fallbacks, save/reload exactly-once, focused tests.
 
-Do not invent:
-- lender trigger probability / exact eligibility policy;
-- immediate help amount;
-- activation delay;
-- debt amount/growth/economics;
-- Strength / Endurance / Sexuality gain values;
-- forced-night next-day Energy penalty;
-- exact progression-stage thresholds;
-- Paid Freedom / Bound Life / Takeover gates and rewards where authority remains open;
-- School / Activity availability while bound.
+Still open: exact per-shift stat gains, exact wage coefficients, exact owner-kill stat/Lust gates, and ending Meta rewards. Put these behind clear constants/seams; do not invent final numbers.
 
-Historical examples such as 2000 / 20000 / 10 days remain non-authoritative.
-
-## Integration state
-
-Current main has advanced beyond the assignment baseline and the branch now diverges from main.
-Shared production files overlap with shipped Artist/current-main changes, including:
-- `content/definitions.json`;
-- `content/localization.json`;
-- `src/core/presentation.ts`;
-- `src/ui/app.ts`.
-
-Do not rebase/cherry-pick/merge main merely to reduce drift.
-Preserve this exact branch as the authority-safe Secret Debt foundation.
-When Product blockers are resolved and a real candidate can be formed, Chat 2 owns current-main collision analysis/assembly.
-
-## Working rule
-
-Do not continue speculative Secret Debt tuning merely to stay busy.
-Resume only when Leader 1 resolves a listed Product blocker or explicitly assigns a narrowly-scoped shared seam.
-Do not claim COMPLETE and do not open a PR until natural acceptance is actually possible.
+No producer full CI. When all authorized work is complete, freeze SHA and report remaining Product-open constants. If no blockers remain, report `READY_FOR_CHAT2`.

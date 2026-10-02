@@ -9,17 +9,34 @@
 - последнее прямое решение пользователя: ветка должна быть **секретной**, запускаться через редкое одноразовое событие помощи во время ночёвки на улице и только позже раскрывать настоящую цену;
 - пользователь зафиксировал три обязательных outcome families: выплата долга, жизнь в зависимости по типу «Упорного труда», убийство рабовладельца и занятие его места.
 
-## Current-authority override
+## Current-authority override — 2026-10-02
 
-This draft preserves the Secret Debt concept, but its historical numeric examples are **not current user locks**.
+The prior non-numeric firewall is superseded by the user's direct Product decisions recorded in
+`USER_DECISIONS_LOCKED_v1.md` D19-D20.
 
-Current authority:
-- ordinary poverty and Secret Debt remain distinct;
-- Secret Debt is an extra hidden/forced route outside the 10 ordinary professions;
-- exact trigger probability, immediate offer amount, activation delay, debt amount, penalties and rewards are OPEN;
-- historical examples such as 10–20%, 2000, 10 days and 20000 must not be implemented unless a later explicit user decision locks them.
+Locked baseline:
+- lender chance on each eligible unseen street night: **20%**;
+- refusal closes the encounter for the current life;
+- immediate accepted help: **2000**;
+- activation: **10 days** after acceptance;
+- activated debt: **20000**;
+- activation domain-locks all 10 ordinary professions until exit while preserving their stored progress;
+- School remains available;
+- Activity remains available, but must not be an easy repeatable 20000-money farm;
+- hidden daytime work is paid profession work and Lust contributes positively to wage scaling;
+- every bound night is forced and gives next-day Energy **-1**;
+- repayment is a single explicit all-at-once 20000 action;
+- hidden Hard Work baseline is **50 daytime shifts**, excluded from Palace 10/10;
+- owner-kill/control route requires career progress + stat build + high Lust + **10 paid School lessons** and a separate explicit player action;
+- Body Confidence School gives voluntary **Lust +2** per paid lesson.
 
+Still balance-owned:
+- exact per-shift Strength / Endurance / Sexuality gains;
+- exact hidden-work wage coefficients;
+- exact stat and high-Lust thresholds for owner-kill/control;
+- exact ending Meta rewards.
 
+Any older line in this draft that calls 20% / 2000 / 10 days / 20000 / -1 Energy / 50 shifts merely historical or OPEN is stale.
 
 ---
 

@@ -1,40 +1,26 @@
 # CURRENT CHAT4 TASK POINTER
 
-Status: **ACTIVE — VOLUNTARY PROSTITUTE / PREPARE READY_FOR_CHAT2**
-Owner: Chat 4 / Full-Career Producer B
-Branch: `chat4/prostitute-complete-reset-v1`
-Current observed head before this coordination change: `8f06e840adcb92a379bcff5179bae54b1c4062e5`
-Producer PR: #251
+Status: **ACTIVE — HARD WORK NEXT-LIFE META DESIGN / IMPLEMENTATION PACKET**
+Owner: Chat 4
+New branch: `chat4/hard-work-next-life-meta-packet-v1`
+Base: fresh current main `6a6029df8e9c007227da0173eb499d59ba51648e`
+
+The voluntary Prostitute producer branch is finished and must remain frozen. Prostitute is already shipped on main.
 
 ## Assignment
 
-Finish the **voluntary Prostitute / Professional** ordinary career as one whole production slice under:
-- `CAREER_PROSTITUTE_DRAFT_v0.md`;
-- `USER_DECISIONS_LOCKED_v1.md`;
-- current shipped main facts.
+Prepare the production-ready packet for D21 without touching shared runtime yet.
 
-Historical Prostitute prep PRs #245/#240/#243/#239 are source-only.
+Deliver:
+- inventory of the current 10 ordinary profession unlock gates;
+- inventory of current Hard Work completion/meta plumbing;
+- exact files/functions that must change so a completed Hard Work profession is available from the start of later lives;
+- a generic design for a selectable profession-specific **+5 starting-stat bonus**;
+- a concrete profession -> +5 stat mapping proposal for all 10 ordinary professions, clearly marked **PROPOSAL / awaiting Product lock**;
+- save/migration and UI implications;
+- focused acceptance tests that the eventual implementation must satisfy;
+- collision analysis against current Secret Debt, Palace and New Game+ work.
 
-## CI correction
+Do not implement guessed profession -> stat mappings in runtime code. Do not touch Chat 5 or Chat 6 owned files. No full CI.
 
-Do **not** trigger more producer full-CI runs.
-
-This branch already generated a sequence of full checks while still changing:
-- #1090/#1092 failures;
-- several cancelled stale attempts;
-- #1096 SUCCESS on earlier head `1c640ff4de25f3739b33fc8f2e477a68688c0119`;
-- #1103 is the final already-running producer CI at the time this rule was introduced.
-
-Let #1103 finish; do not create another producer-triggered full run afterward.
-
-After #1103:
-- read the complete result once;
-- if it fails, fix all known failures together without self-triggering another full run;
-- if it succeeds, treat that as useful evidence, but still freeze the final producer SHA and hand it to Chat 2 because current-main collision/integration QA remains required.
-
-When the profession is genuinely complete:
-- freeze exact SHA;
-- report `READY_FOR_CHAT2`;
-- stop pushing until Chat 2 takes the single CI slot.
-
-Chat 2 owns the next integration/full-CI gate.
+Freeze the packet SHA and report `READY_FOR_LEADER_DECISION`.

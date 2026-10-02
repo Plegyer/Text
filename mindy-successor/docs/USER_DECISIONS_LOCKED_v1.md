@@ -143,15 +143,56 @@ This supersedes the earlier nine-deep queue target.
 
 Само условие `all 12 progression stats > 90`, победа над Принцем, возвращение домой и NG+ x2 reward **LOCKED**.
 
+### D19 — Secret Debt / hidden poverty route baseline
+
+Locked Product baseline for the hidden street-lender route:
+
+- while the one-time encounter is unseen, every eligible street night has a **20%** lender-event chance;
+- refusal closes that encounter for the current life;
+- acceptance grants exactly **2000** money immediately;
+- the trap activates exactly **10 days** after acceptance;
+- activation creates an exact **20000** debt;
+- from activation until real exit from the hidden route, **all 10 ordinary professions are domain-locked**; their existing progress is preserved and becomes usable again after exit;
+- School remains available while bound;
+- Large Activity remains available, but its repeatable economy must not become an easy 20000-money farm;
+- hidden daytime work is paid profession work: income scales upward with relevant stats, and **Lust is also a positive wage input**;
+- while bound, forced Night happens **every night**, suppresses the voluntary Night menu, and applies **next-day Energy -1**;
+- repayment is one explicit all-at-once action for **20000** when enough money is held; no partial repayment;
+- hidden-route Hard Work uses the same production baseline as ordinary professions: **50 completed daytime shifts**;
+- Secret Debt remains outside the ordinary 10 and its Hard Work does not count toward Palace 10/10;
+- the owner-kill/control outcome requires career progress, an appropriate stat build, high Lust, and School participation, and must expose a separate explicit player action;
+- for that owner-kill route, the current School requirement is **10 paid lessons**; the exact high-Lust/stat thresholds remain balance-owned.
+
+### D20 — voluntary School Lust growth
+
+The existing **Body Confidence** School course must grant **Lust +2** per paid lesson in addition to its existing progression-stat package.
+
+- this is voluntary growth, because the player chooses and pays for the course;
+- Lust remains a separate content axis and is not Sexuality;
+- the effect must apply exactly once per paid lesson and survive save/reload without duplication;
+- forced Secret Debt Night does not automatically increase Lust.
+
+### D21 — ordinary Hard Work next-life benefit
+
+Completing an ordinary profession through its Hard Work ending permanently changes later lives:
+
+- that specific ordinary profession becomes available from the start of subsequent runs, regardless of its normal in-run stat/year unlock gate;
+- it also unlocks a profession-specific selectable **+5 starting-stat bonus** for New Game setup;
+- the +5 bonus is not forced: the player chooses whether to equip/use it under the Meta/New Game setup;
+- professions have different +5 target stats;
+- exact profession -> +5 stat mapping is a separate Product mapping pass and must not be guessed in runtime code;
+- this supersedes older design text that said Hard Work did not need an explicit early-profession unlock.
+
 ## Still open after this lock
 
 - exact seasonal packages per job;
 - exact numeric economy;
 - exact Lust starting value;
 - meta loadout slot/budget count;
+- exact ordinary profession -> selectable +5 stat mapping;
 - exact School curriculum/prices;
 - exact Activity region count/mechanics;
 - exact Palace role/content outside the locked True Ending requirements;
 - macro mystery/lore;
-- exact Secret Debt numbers/penalties/rewards;
+- exact Secret Debt shift stat gains, wage coefficients, owner-kill stat/Lust thresholds, and ending Meta rewards;
 - production art/media budget.
