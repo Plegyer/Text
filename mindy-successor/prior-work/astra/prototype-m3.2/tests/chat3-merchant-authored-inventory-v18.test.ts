@@ -7,7 +7,7 @@ const baseline=JSON.parse(readFileSync('content/merchant-authored-v18-activation
 const definitions=JSON.parse(readFileSync('content/definitions.json','utf8'));
 
 test('C3-193 Merchant authored inventory preserves activation truth and defers final binding',()=>{
-  assert.equal(inventory.status,'PREP_AUTHORITY_PENDING_FROZEN_MERCHANT_RUNTIME');
+  assert.equal(inventory.status,'FROZEN_MERCHANT_RUNTIME_AUTHORITY');
   assert.equal(inventory.activation.mainHead,'d7dad76d47d71144a5788f762cedd72d9fc95ae5');
   assert.equal(inventory.activation.branchStart,inventory.activation.mainHead);
   assert.equal(inventory.activation.shipped.action.id,'merchant.shift');
@@ -21,7 +21,7 @@ test('C3-193 Merchant authored inventory preserves activation truth and defers f
     transitions:[],
   });
   assert.equal(inventory.activation.shipped.ending.id,'ending.merchant.hard-work');
-  assert.equal(inventory.runtimeAuthority.frozen,false);
+  assert.equal(inventory.runtimeAuthority.frozen,true);
   assert.equal(inventory.runtimeAuthority.finalBindingRequiredAt,'C3-204');
   assert.equal(inventory.invariants.finalLiveBindingDeferred,true);
 });
