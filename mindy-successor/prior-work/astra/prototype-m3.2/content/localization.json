@@ -212,11 +212,11 @@
     },
     "action.assassin.shift.label": {
       "ru": "Тайная работа",
-      "en": "Assassin shift"
+      "en": "Covert work"
     },
     "action.assassin.shift.description": {
-      "ru": "Выполнить обычную скрытую работу: наблюдение, доставка, подготовка маршрута или зачистка следов.",
-      "en": "Complete ordinary covert work such as surveillance, delivery, route preparation, or cleanup."
+      "ru": "Обычная скрытая работа: наблюдение, передача, проверка контекста, подготовка маршрута или закрытие записей. Боевой исход не обязателен.",
+      "en": "Ordinary covert work: observation, handoff, context checks, route preparation, or closing records. A combat outcome is not required."
     },
     "action.prostitute.shift.label": {
       "ru": "Профессиональная смена",
@@ -3691,8 +3691,8 @@
       "en": "Assassin: Hard Work"
     },
     "ending.ending.assassin.hard-work.description": {
-      "ru": "Множество обычных скрытых поручений складываются в карьерный финал, подчёркивающий дисциплину и рутинную профессиональную точность.",
-      "en": "Many ordinary covert assignments become a career ending emphasizing discipline and routine professional precision."
+      "ru": "Пятьдесят обычных скрытых смен подтверждают дисциплину и профессиональную надёжность независимо от продвинутой специализации.",
+      "en": "Fifty ordinary covert shifts establish discipline and professional reliability independently of any advanced specialization."
     },
     "presentation.static.assassin-ending-hard-work.alt": {
       "ru": "Ассасин завершает долгую рабочую задачу; подготовленное снаряжение отмечает финал «Тяжкий труд» без сцены насилия.",
@@ -11129,6 +11129,1034 @@
     "ui.artistGeisha.nightChoiceAria": {
       "ru": "Ночной выбор Дома искусств: {choice}",
       "en": "Artist House Night choice: {choice}"
+    },
+    "action.assassin.shift.scene.spring.default.text": {
+      "ru": "Весной новые маршруты и возвращение уличной активности меняют плотность людей вокруг обычной работы. Ты замечаешь, что прежнее тихое окно стало публичнее, и корректируешь ожидания без обещания нового stealth mechanic.",
+      "en": "Spring routes and returning street activity change how many people surround ordinary work. You notice that an old quiet window has become more public and adjust expectations without promising a new stealth mechanic."
+    },
+    "action.assassin.shift.scene.summer.default.text": {
+      "ru": "Фестиваль меняет обычные routines — время встреч, одежду, очереди и то, кто присутствует в районе. Это контекст для observation и false meeting, а не отдельный Assassin festival subsystem.",
+      "en": "A festival changes ordinary routines—meeting times, clothing, queues, and who is present in an area. It is context for observation and false meetings rather than a separate Assassin festival subsystem."
+    },
+    "action.assassin.shift.scene.autumn.default.text": {
+      "ru": "Осенние поставки и смена погоды делают некоторые маршруты менее предсказуемыми. Ты отделяешь изменение логистики от изменения цели задания и не считаешь любой обход преимуществом.",
+      "en": "Autumn deliveries and changing weather make some routes less predictable. You separate a logistics change from a change in job objective and do not treat every detour as an advantage."
+    },
+    "action.assassin.shift.scene.winter.default.text": {
+      "ru": "Зимой пустая улица может сделать одиночное присутствие заметнее, даже если вокруг меньше людей. Это повышает цену неверного timing decision и не даёт бесплатного stealth bonus.",
+      "en": "In winter, an empty street can make a lone presence more noticeable even when fewer people are around. That raises the cost of a poor timing decision and grants no free stealth bonus."
+    },
+    "nightChoice.assassin.night.review-notes.label": {
+      "ru": "Разобрать записи тайной работы",
+      "en": "Review covert-work notes"
+    },
+    "career.assassin.stage.runner.label": {
+      "ru": "Бегунья",
+      "en": "Runner"
+    },
+    "career.assassin.stage.operative.label": {
+      "ru": "Оперативница",
+      "en": "Operative"
+    },
+    "career.assassin.stage.trusted-blade.label": {
+      "ru": "Доверенная исполнительница",
+      "en": "Trusted Blade"
+    },
+    "career.assassin.stage.veteran.label": {
+      "ru": "Ветеран",
+      "en": "Veteran"
+    },
+    "career.assassin.stage.ghost.label": {
+      "ru": "Призрак",
+      "en": "Ghost"
+    },
+    "career.assassin.stage.turncoat.label": {
+      "ru": "Перебежчица",
+      "en": "Turncoat"
+    },
+    "career.assassin.stage.handler-takeover.label": {
+      "ru": "Координатор",
+      "en": "Handler Takeover"
+    },
+    "career.assassin.stage.refusal-chain.label": {
+      "ru": "Последовательный отказ",
+      "en": "Refusal Chain"
+    },
+    "career.assassin.stage.outcome-ready.label": {
+      "ru": "Сформировавшаяся карьера",
+      "en": "Outcome-ready"
+    },
+    "item.assassin_concealed_toolset.label": {
+      "ru": "Скрытый набор инструментов",
+      "en": "Concealed Toolset"
+    },
+    "item.assassin_sealed_pass.label": {
+      "ru": "Опечатанный пропуск",
+      "en": "Sealed Pass"
+    },
+    "item.assassin_disguise_kit.label": {
+      "ru": "Набор для уместной роли",
+      "en": "Context Disguise Kit"
+    },
+    "item.assassin_evidence_case.label": {
+      "ru": "Футляр для документов",
+      "en": "Evidence Case"
+    },
+    "activity.assassin.infiltration.label": {
+      "ru": "Тихая разведка доступа",
+      "en": "Quiet Access Reconnaissance"
+    },
+    "activityOption.assassin.infiltration.local-route.label": {
+      "ru": "Обычный местный маршрут",
+      "en": "Ordinary local route"
+    },
+    "activityOption.assassin.infiltration.local-route.help": {
+      "ru": "Сюжетная возможность этой вылазки; она не описывает реальный обход защиты.",
+      "en": "A narrative option for this outing; it does not describe real-world security bypass."
+    },
+    "activityOption.assassin.infiltration.concealed-route.label": {
+      "ru": "Маршрут со скрытым набором",
+      "en": "Concealed Toolset route"
+    },
+    "activityOption.assassin.infiltration.concealed-route.help": {
+      "ru": "Сюжетная возможность этой вылазки; она не описывает реальный обход защиты.",
+      "en": "A narrative option for this outing; it does not describe real-world security bypass."
+    },
+    "activityOption.assassin.infiltration.sealed-route.label": {
+      "ru": "Маршрут с опечатанным пропуском",
+      "en": "Sealed Pass route"
+    },
+    "activityOption.assassin.infiltration.sealed-route.help": {
+      "ru": "Сюжетная возможность этой вылазки; она не описывает реальный обход защиты.",
+      "en": "A narrative option for this outing; it does not describe real-world security bypass."
+    },
+    "activityOption.assassin.infiltration.disguise-route.label": {
+      "ru": "Маршрут через уместную роль",
+      "en": "Context disguise route"
+    },
+    "activityOption.assassin.infiltration.disguise-route.help": {
+      "ru": "Сюжетная возможность этой вылазки; она не описывает реальный обход защиты.",
+      "en": "A narrative option for this outing; it does not describe real-world security bypass."
+    },
+    "activityOption.assassin.infiltration.observe-window.label": {
+      "ru": "Проверить время и сохранить запасной вариант",
+      "en": "Check timing and preserve a fallback"
+    },
+    "activityOption.assassin.infiltration.observe-window.help": {
+      "ru": "Сюжетная возможность этой вылазки; она не описывает реальный обход защиты.",
+      "en": "A narrative option for this outing; it does not describe real-world security bypass."
+    },
+    "activityOption.assassin.infiltration.concealed-entry.label": {
+      "ru": "Использовать подготовленную скрытую возможность",
+      "en": "Use the prepared concealed option"
+    },
+    "activityOption.assassin.infiltration.concealed-entry.help": {
+      "ru": "Сюжетная возможность этой вылазки; она не описывает реальный обход защиты.",
+      "en": "A narrative option for this outing; it does not describe real-world security bypass."
+    },
+    "activityOption.assassin.infiltration.sealed-entry.label": {
+      "ru": "Использовать пропуск в его контексте",
+      "en": "Use the pass in its context"
+    },
+    "activityOption.assassin.infiltration.sealed-entry.help": {
+      "ru": "Сюжетная возможность этой вылазки; она не описывает реальный обход защиты.",
+      "en": "A narrative option for this outing; it does not describe real-world security bypass."
+    },
+    "activityOption.assassin.infiltration.disguise-entry.label": {
+      "ru": "Соответствовать подготовленной роли",
+      "en": "Fit the prepared role"
+    },
+    "activityOption.assassin.infiltration.disguise-entry.help": {
+      "ru": "Сюжетная возможность этой вылазки; она не описывает реальный обход защиты.",
+      "en": "A narrative option for this outing; it does not describe real-world security bypass."
+    },
+    "activityOption.assassin.infiltration.preserve-evidence.label": {
+      "ru": "Сохранить подтверждённые документы",
+      "en": "Preserve confirmed records"
+    },
+    "activityOption.assassin.infiltration.preserve-evidence.help": {
+      "ru": "Сюжетная возможность этой вылазки; она не описывает реальный обход защиты.",
+      "en": "A narrative option for this outing; it does not describe real-world security bypass."
+    },
+    "event.assassin.career.first-shift.title": {
+      "ru": "Первая тихая смена",
+      "en": "First Assassin ordinary shift"
+    },
+    "event.assassin.career.first-shift.variant.default.text": {
+      "ru": "Обычная смена может быть простой наблюдательной работой: понять, когда место оживляется, кто отвечает за передачу информации и где контекст меняется сам по себе. Задача — собрать пригодную для следующего решения картину, а не искать повод для столкновения.",
+      "en": "An ordinary shift can be simple observation: learn when a place becomes busy, who handles information, and where the context changes on its own. The goal is a usable picture for the next decision, not an excuse for confrontation."
+    },
+    "event.assassin.career.season-spring.title": {
+      "ru": "Весенний рисунок города",
+      "en": "Record spring ordinary covert work"
+    },
+    "event.assassin.career.season-spring.variant.default.text": {
+      "ru": "Весной новые маршруты и возвращение уличной активности меняют плотность людей вокруг обычной работы. Ты замечаешь, что прежнее тихое окно стало публичнее, и корректируешь ожидания без обещания нового stealth mechanic.",
+      "en": "Spring routes and returning street activity change how many people surround ordinary work. You notice that an old quiet window has become more public and adjust expectations without promising a new stealth mechanic."
+    },
+    "event.assassin.career.season-summer.title": {
+      "ru": "Летняя толпа",
+      "en": "Record summer ordinary covert work"
+    },
+    "event.assassin.career.season-summer.variant.default.text": {
+      "ru": "Летние толпы могут одновременно скрывать и мешать: легче потерять конкретный взгляд, но труднее предсказать движение людей. Текст подчёркивает неопределённость, а не гарантированный бонус скрытности.",
+      "en": "Summer crowds can both conceal and obstruct: one particular glance may be easier to lose, while people's movement is harder to predict. The text emphasizes uncertainty rather than a guaranteed stealth bonus."
+    },
+    "event.assassin.career.season-autumn.title": {
+      "ru": "Осенние перемены маршрутов",
+      "en": "Record autumn ordinary covert work"
+    },
+    "event.assassin.career.season-autumn.variant.default.text": {
+      "ru": "Осенние поставки и смена погоды делают некоторые маршруты менее предсказуемыми. Ты отделяешь изменение логистики от изменения цели задания и не считаешь любой обход преимуществом.",
+      "en": "Autumn deliveries and changing weather make some routes less predictable. You separate a logistics change from a change in job objective and do not treat every detour as an advantage."
+    },
+    "event.assassin.career.season-winter.title": {
+      "ru": "Зимняя видимость",
+      "en": "Record winter ordinary covert work"
+    },
+    "event.assassin.career.season-winter.variant.default.text": {
+      "ru": "Зимой пустая улица может сделать одиночное присутствие заметнее, даже если вокруг меньше людей. Это повышает цену неверного timing decision и не даёт бесплатного stealth bonus.",
+      "en": "In winter, an empty street can make a lone presence more noticeable even when fewer people are around. That raises the cost of a poor timing decision and grants no free stealth bonus."
+    },
+    "event.assassin.career.seasonal-breadth.title": {
+      "ru": "Четыре сезона работы",
+      "en": "Record four-season Assassin breadth"
+    },
+    "event.assassin.career.seasonal-breadth.variant.default.text": {
+      "ru": "Весна, лето, осень и зима потребовали разных привычек. Опыт складывается не в одну идеальную схему, а в умение заново читать контекст.",
+      "en": "Four seasons have demanded four different readings of the city. Experience is the habit of checking context again, not memorizing one perfect route."
+    },
+    "event.assassin.career.trusted-blade.title": {
+      "ru": "Доверенная исполнительница",
+      "en": "Trusted Blade readiness from breadth"
+    },
+    "event.assassin.career.trusted-blade.variant.default.text": {
+      "ru": "После работы в разных сезонных условиях тебе доверяют более сложную подготовку. Это открывает ответственность и выбор, а не обязательный путь к насилию.",
+      "en": "Work across changing conditions earns more demanding preparation. Trust opens responsibility and choice, not a mandatory violent path."
+    },
+    "event.assassin.career.veteran-ready.title": {
+      "ru": "Рутинная надёжность",
+      "en": "Veteran readiness remains ordinary-career breadth"
+    },
+    "event.assassin.career.veteran-ready.variant.default.text": {
+      "ru": "Veteran — маршрут устойчивой широты работы: ordinary shifts, несколько типов minor tasks и способность завершать задачи без обязательной специализации. Он остаётся отличим от Ghost и network-control routes.",
+      "en": "Veteran is the route of broad sustained work: ordinary shifts, several minor-task types, and the ability to complete jobs without mandatory specialization. It remains distinct from Ghost and network-control routes."
+    },
+    "event.assassin.contract.offer.title": {
+      "ru": "Предложение без обязательства",
+      "en": "A provisional covert brief can be accepted or deferred"
+    },
+    "event.assassin.contract.offer.variant.default.text": {
+      "ru": "Крупный контракт начинается с предложения, где важнее всего понять предмет задачи, источник запроса и то, что ещё неизвестно. Принять разговор не означает заранее согласиться на финальное действие.",
+      "en": "A major contract begins with an offer where the important questions are the subject of the job, the source of the request, and what remains unknown. Entering the conversation does not mean agreeing in advance to the final action."
+    },
+    "event.assassin.contract.intel.title": {
+      "ru": "Сначала факты",
+      "en": "Gather neutral intelligence before committing to a method"
+    },
+    "event.assassin.contract.intel.variant.default.text": {
+      "ru": "Этап intel собирает противоречия, подтверждённые источники и отсутствующие части картины. Он должен давать игроку основания изменить план, отказаться или перенаправить контракт, а не просто заполнять шкалу подготовки.",
+      "en": "The intel phase gathers contradictions, confirmed sources, and missing parts of the picture. It should give the player grounds to change the plan, refuse, or redirect the contract rather than merely fill a preparation meter."
+    },
+    "event.assassin.contract.prep.title": {
+      "ru": "Подготовка с запасным выходом",
+      "en": "Prepare a reversible contract approach"
+    },
+    "event.assassin.contract.prep.variant.default.text": {
+      "ru": "Prep переводит собранную информацию в несколько игровых возможностей: подходящий контакт, документ, одежду, route context или отказ от неподходящего метода. Подготовка не гарантирует успех и не делает все методы доступными.",
+      "en": "Prep turns gathered information into a few game options: an appropriate contact, document, clothing, route context, or rejection of an unsuitable method. Preparation does not guarantee success or make every method available."
+    },
+    "event.assassin.contract.method.title": {
+      "ru": "Как именно действовать",
+      "en": "Choose a non-combat-specific method family"
+    },
+    "event.assassin.contract.method.variant.default.text": {
+      "ru": "Выбор метода — отдельное решение между только теми вариантами, которые разрешены конкретным контрактом и текущим контекстом. Отсутствующий вариант остаётся отсутствующим; авторский текст не обещает полный набор способов каждый раз.",
+      "en": "Method choice is a separate decision among only the options permitted by the specific contract and current context. A missing option remains missing; authored text does not promise the full method set every time."
+    },
+    "event.assassin.contract.resolve.title": {
+      "ru": "Продолжить, остановиться или перенаправить",
+      "en": "Execute, abort, or redirect without defining lethal scope"
+    },
+    "event.assassin.contract.resolve.variant.default.text": {
+      "ru": "Финальная сцена должна оставлять явное различие между продолжить, остановиться и, где разрешено, изменить направление задачи. Abort — полноценный выбор с последствиями, а не скрытая кнопка провала.",
+      "en": "The final scene should preserve a clear distinction between proceeding, stopping, and—where allowed—changing the direction of the job. Abort is a complete choice with consequences rather than a disguised failure button."
+    },
+    "event.assassin.contract.fallout.title": {
+      "ru": "Что изменилось после решения",
+      "en": "Record local contract fallout without a global law or Morality model"
+    },
+    "event.assassin.contract.fallout.variant.default.text": {
+      "ru": "Fallout фиксирует, что после решения меняется: доверие, доступность контакта, Guard attention, пригодность документа или состояние route. Он остаётся конкретным последствием события, а не универсальной шкалой преступности.",
+      "en": "Fallout records what changed after the decision: trust, contact availability, Guard attention, usefulness of a document, or route state. It remains a concrete event consequence rather than a universal crime meter."
+    },
+    "event.assassin.contract.close.title": {
+      "ru": "Закрыть дело",
+      "en": "Close the provisional lifecycle without reward invention"
+    },
+    "event.assassin.contract.close.variant.default.text": {
+      "ru": "Ты сводишь заметки, возвращаешь временный реквизит и отделяешь подтверждённое от предположений. Это конкретное дело закрыто.",
+      "en": "Reconcile notes, return temporary props, and separate confirmed facts from assumptions. This specific job is closed."
+    },
+    "event.assassin.items.concealed-toolset.title": {
+      "ru": "Скрытый набор инструментов",
+      "en": "A narrow Concealed Toolset becomes available"
+    },
+    "event.assassin.items.concealed-toolset.variant.default.text": {
+      "ru": "Concealed Toolset — draft-концепт узкой covert capability для будущих сцен, а не инструкция по инструментам или оружию. Пока runtime ID отсутствует, authored source описывает только смысл: подготовленный набор может открыть один разрешённый method choice.",
+      "en": "Concealed Toolset is a draft concept for a narrow covert capability in future scenes, not instruction for tools or weapons. While no runtime ID exists, authored source describes only the meaning: a prepared kit may enable one permitted method choice."
+    },
+    "event.assassin.items.sealed-pass.title": {
+      "ru": "Опечатанный пропуск",
+      "en": "A Sealed Pass is prepared for one Assassin context"
+    },
+    "event.assassin.items.sealed-pass.variant.default.text": {
+      "ru": "Sealed Pass в Assassin draft — идея social/legal context, но существующий shipped `guard_sealed_pass` остаётся собственностью Guard authority. Assassin prep не переименовывает, не копирует и не присваивает этот предмет.",
+      "en": "Sealed Pass in the Assassin draft is an idea for social or legal context, while the shipped `guard_sealed_pass` remains owned by Guard authority. Assassin prep does not rename, duplicate, or take ownership of that item."
+    },
+    "event.assassin.items.disguise-kit.title": {
+      "ru": "Уместная роль",
+      "en": "A context disguise kit supports social access"
+    },
+    "event.assassin.items.disguise-kit.variant.default.text": {
+      "ru": "Disguise или formal attire меняют уместность внешнего контекста конкретной сцены, если future runtime публикует такую capability. Они не создают общий disguise score и не дают Palace access.",
+      "en": "Disguise or formal attire changes the appropriateness of visual context in a specific scene when future runtime publishes such a capability. They create no general disguise score and grant no Palace access."
+    },
+    "event.assassin.items.evidence-case.title": {
+      "ru": "Футляр для документов",
+      "en": "An Evidence Case supports local evidence handling"
+    },
+    "event.assassin.items.evidence-case.variant.default.text": {
+      "ru": "Evidence/document нужен для доказуемого redirect, Turncoat или Handler Takeover только если контракт действительно публикует такой объект или факт. Авторский текст не создаёт доказательство сам по себе.",
+      "en": "Evidence or a document matters for a provable redirect, Turncoat, or Handler Takeover only when the contract actually publishes such an object or fact. Authored text does not create evidence by itself."
+    },
+    "event.assassin.relationship.intro.title": {
+      "ru": "Профессиональный координатор",
+      "en": "Professional handler introduction"
+    },
+    "event.assassin.relationship.intro.variant.default.text": {
+      "ru": "Handler — профессиональная роль, которая передаёт задачи, сравнивает результат с договорённостью и может скрывать часть контекста. До runtime authority у роли нет обязательного имени, биографии или уникального gameplay ID.",
+      "en": "A Handler is a professional role that passes jobs, compares outcomes with agreements, and may withhold part of the context. Until runtime authority exists, the role has no required name, biography, or unique gameplay ID."
+    },
+    "event.assassin.relationship.trust.title": {
+      "ru": "Рабочее доверие",
+      "en": "Build professional handler trust"
+    },
+    "event.assassin.relationship.trust.variant.default.text": {
+      "ru": "Лояльность к handler выражается конкретными решениями: кому передали результат, сохранили ли договорённость и что сделали после противоречия. Она не становится общей loyalty currency.",
+      "en": "Loyalty to a handler is expressed through concrete decisions: who received the result, whether the agreement was kept, and what happened after a contradiction. It does not become a general loyalty currency."
+    },
+    "event.assassin.relationship.conflict-open.title": {
+      "ru": "Кто управляет заданием",
+      "en": "Open a professional conflict over control of the brief"
+    },
+    "event.assassin.relationship.conflict-open.variant.default.text": {
+      "ru": "Manipulation в relationship source означает, что одна сторона пытается управлять информационным контекстом конкретной сцены. Авторский текст не описывает техники психологического давления вне игрового выбора.",
+      "en": "Manipulation in relationship source means one side tries to control the informational context of a specific scene. Authored text does not describe psychological coercion techniques outside the game choice."
+    },
+    "event.assassin.relationship.conflict-resolve.title": {
+      "ru": "Границы сотрудничества",
+      "en": "Resolve handler conflict without blocking ordinary work"
+    },
+    "event.assassin.relationship.conflict-resolve.variant.default.text": {
+      "ru": "Спор можно закончить сотрудничеством на ясных условиях, профессиональным соперничеством или отказом от связки. Обычная работа остаётся доступной.",
+      "en": "Choose cooperation on clear terms, professional rivalry, or refusal to continue the arrangement. Ordinary work survives every option."
+    },
+    "event.assassin.relationship.utility.title": {
+      "ru": "Одна услуга позже",
+      "en": "Optional handler utility after cooperation"
+    },
+    "event.assassin.relationship.utility.variant.default.text": {
+      "ru": "Partnership означает устойчивый способ распределять работу и информацию, если future runtime разрешит такую линию. Это не автоматическое слияние карьер и не общий party system.",
+      "en": "Partnership means a durable way to divide work and information if future runtime permits such a line. It is not an automatic merger of careers or a general party system."
+    },
+    "event.assassin.cross.tavern-rumour.title": {
+      "ru": "Слух из таверны",
+      "en": "Read an existing Tavern rumour as Assassin-local intel context"
+    },
+    "event.assassin.cross.tavern-rumour.variant.default.text": {
+      "ru": "Shipped Tavern факт `rumour-confirmed` может дать подтверждённый intel context о месте или распорядке. Он не гарантирует точность всех последующих выводов и не заменяет Assassin intel phase.",
+      "en": "The shipped Tavern fact `rumour-confirmed` can provide confirmed intel context about a place or routine. It does not guarantee every later inference and does not replace the Assassin intel phase."
+    },
+    "event.assassin.cross.merchant-route.title": {
+      "ru": "Маршрут торговой доставки",
+      "en": "Read an existing Merchant delivery fact as route context"
+    },
+    "event.assassin.cross.merchant-route.variant.default.text": {
+      "ru": "Shipped Merchant факт `delivery-recorded` может обозначать, что нужный материал или обычная поставка реально прошли через существующую карьеру. Это не black-market shop и не автоматический источник covert gear.",
+      "en": "The shipped Merchant fact `delivery-recorded` can indicate that a needed material or ordinary delivery actually moved through the existing career. It is not a black-market shop or an automatic source of covert gear."
+    },
+    "event.assassin.cross.guard-pressure.title": {
+      "ru": "Внимание стражи к грузу",
+      "en": "Read an existing Guard cargo-pass fact as pressure context"
+    },
+    "event.assassin.cross.guard-pressure.variant.default.text": {
+      "ru": "Shipped Guard факт `cargo-pass-evidence` может стать внешним контекстом маршрута или документа только если future Assassin runtime его читает. Assassin prep не меняет Guard fact и не получает Guard authority.",
+      "en": "The shipped Guard fact `cargo-pass-evidence` may become external route or document context only if future Assassin runtime reads it. Assassin prep does not change the Guard fact or acquire Guard authority."
+    },
+    "event.assassin.routes.infiltration-qualified.title": {
+      "ru": "Сложная разведка доступа",
+      "en": "Qualify selective advanced infiltration after a closed lifecycle"
+    },
+    "event.assassin.routes.infiltration-qualified.variant.default.text": {
+      "ru": "Закрытый контракт и накопленная практика открывают отдельную сложную вылазку. Это ограниченная карьерная Activity, а не универсальная система проникновения.",
+      "en": "A closed contract and accumulated practice make one advanced reconnaissance outing available. This remains a bounded career Activity, not a universal infiltration framework."
+    },
+    "event.assassin.routes.ghost-ready.title": {
+      "ru": "Тихая специализация",
+      "en": "Ghost readiness requires selective infiltration evidence"
+    },
+    "event.assassin.routes.ghost-ready.variant.default.text": {
+      "ru": "Ghost — authored identity для сложных задач с минимальным fallout, разнообразием разрешённых methods и качественной подготовкой. Это не обещание невидимости, безошибочности или отсутствия последствий.",
+      "en": "Ghost is authored identity for difficult jobs with limited fallout, varied permitted methods, and strong preparation. It is not a promise of invisibility, infallibility, or consequence-free play."
+    },
+    "event.assassin.routes.turncoat-ready.title": {
+      "ru": "Перенаправленная работа",
+      "en": "Turncoat readiness uses redirect or abort plus handled evidence"
+    },
+    "event.assassin.routes.turncoat-ready.variant.default.text": {
+      "ru": "Turncoat отражает последовательные решения против исходной network logic: redirect, warning, evidence или refusal там, где контракт это разрешает. Он не выводится из Morality score.",
+      "en": "Turncoat reflects a sequence of decisions against the original network logic: redirect, warning, evidence, or refusal where a contract permits it. It is not derived from a Morality score."
+    },
+    "event.assassin.routes.handler-takeover-ready.title": {
+      "ru": "Самостоятельная координация",
+      "en": "Handler Takeover readiness stays local to evidence and professional utility"
+    },
+    "event.assassin.routes.handler-takeover-ready.variant.default.text": {
+      "ru": "Handler Takeover — контроль над потоком заказов и информацией, а не просто более высокий ранг исполнителя. Для него нужен будущий runtime authority на network facts; authored source не создаёт такую сеть сам.",
+      "en": "Handler Takeover means control over the flow of jobs and information rather than simply a higher operative rank. It requires future runtime authority for network facts; authored source does not create that network itself."
+    },
+    "event.assassin.routes.refusal-evidence.title": {
+      "ru": "Отказ как профессиональная позиция",
+      "en": "Record refusal evidence without inventing the open chain threshold"
+    },
+    "event.assassin.routes.refusal-evidence.variant.default.text": {
+      "ru": "Refusal Chain требует различимых ключевых моментов, где игрок сознательно не выполняет исходный order или меняет направление. Повторение безопасного текста само по себе не должно считаться прогрессом ветки.",
+      "en": "Refusal Chain requires distinct key moments where the player deliberately does not follow the original order or changes direction. Repeating safe text by itself should not count as route progress."
+    },
+    "event.assassin.routes.choose-practice.title": {
+      "ru": "Выбрать специализацию",
+      "en": "Choose or defer ordinary/advanced practice readiness"
+    },
+    "event.assassin.routes.choose-practice.variant.default.text": {
+      "ru": "Несколько способов работы уже доказаны на практике. Можно выбрать специализацию сейчас или оставить готовые варианты открытыми.",
+      "en": "Several practices may be ready. Choose Veteran, Ghost, or Turncoat now, or defer without losing ordinary career play."
+    },
+    "event.assassin.routes.choose-network.title": {
+      "ru": "Выбрать координационную специализацию",
+      "en": "Choose or defer network/refusal readiness"
+    },
+    "event.assassin.routes.choose-network.variant.default.text": {
+      "ru": "Профессиональная координация может стать отдельной специализацией, если для неё уже есть реальные рабочие опоры. Решение можно отложить.",
+      "en": "If a network/refusal specialization is already authorized by local facts, choose it now or defer without changing other careers."
+    },
+    "event.assassin.routes.outcome-ready.title": {
+      "ru": "Карьера сформировалась",
+      "en": "Late Assassin career state can become outcome-ready without committing an ending"
+    },
+    "event.assassin.routes.outcome-ready.variant.default.text": {
+      "ru": "Outcome-ready означает, что career route уже подтверждён конкретными игровыми фактами будущего runtime. Authored prep не публикует этот state и не выбирает точные thresholds заранее.",
+      "en": "Outcome-ready means a career route has already been confirmed by concrete future-runtime facts. Authored prep does not publish that state or choose exact thresholds in advance."
+    },
+    "event.assassin.activity.infiltration-return.title": {
+      "ru": "Разбор вылазки",
+      "en": "Review an advanced infiltration return"
+    },
+    "event.assassin.activity.infiltration-return.variant.default.text": {
+      "ru": "Infiltration остаётся draft authored source для selective field contract и не означает новый Activity ID. Future runtime должен сам опубликовать adapter/consumer, если такая сцена вообще войдёт в игру.",
+      "en": "Infiltration remains draft authored source for a selective field contract and does not imply a new Activity ID. Future runtime must publish the adapter or consumer itself if such a scene enters the game."
+    },
+    "event.assassin.school.practice-reflection.title": {
+      "ru": "Школьная практика встречается с тайной работой",
+      "en": "School practice meets covert work"
+    },
+    "event.assassin.school.practice-reflection.variant.field.text": {
+      "ru": "Роуэн замечает, что в плане есть не только маршрут, но и чёткий признак, после которого ты его бросишь. Он считает это не осторожностью, а нормальной частью любой работы, где условия могут измениться раньше тебя.",
+      "en": "Rowan notices that the plan contains not only a route, but a clear sign that would make you abandon it. He treats that not as timidity, but as a normal part of any work where conditions can change before you do."
+    },
+    "event.assassin.school.practice-reflection.variant.rhetoric.text": {
+      "ru": "Кассиан переписывает одну твою фразу и показывает, как легко вопрос выдаёт желаемый ответ. Ты пробуешь снова — теперь собеседнику приходится рассказывать собственную версию, а не подтверждать твою.",
+      "en": "Cassian rewrites one of your lines and shows how easily a question can reveal the answer you hope to hear. You try again—this time the other person has to give their own account instead of confirming yours."
+    },
+    "event.assassin.school.practice-reflection.variant.etiquette.text": {
+      "ru": "Элиан замечает, что слишком тщательно подготовленная манера поведения сама начинает привлекать внимание. Она просит убрать лишнее и оставить только то, что действительно соответствует месту и роли.",
+      "en": "Eliane notes that an overprepared manner can begin attracting attention on its own. She asks you to remove the excess and keep only what genuinely fits the place and role."
+    },
+    "event.assassin.school.practice-reflection.variant.literacy.text": {
+      "ru": "Мара хвалит хронологию, где неизвестный отрезок времени не заполнен красивой догадкой. Отмеченный пробел полезнее выдуманной точности: он показывает, какую информацию ещё нужно искать.",
+      "en": "Mara approves a timeline in which an unknown span has not been filled with an elegant guess. A marked gap is more useful than invented precision because it shows what information still needs to be found."
+    },
+    "event.assassin.school.practice-reflection.variant.physical.text": {
+      "ru": "Тован оценивает не скорость, а способность двигаться тихо, менять направление и останавливаться без потери равновесия. Это общая школа контроля тела, не обучение бою или нападению.",
+      "en": "Tovan evaluates not speed, but the ability to move quietly, change direction, and stop without losing balance. This is general body control, not combat or attack training."
+    },
+    "event.assassin.career.first-shift.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue"
+    },
+    "event.assassin.career.first-shift.choice.continue.text": {
+      "ru": "Ты продолжаешь карьеру, не меняя её базовых правил.",
+      "en": "Continue the career without changing its baseline rules."
+    },
+    "event.assassin.career.season-spring.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Record"
+    },
+    "event.assassin.career.season-spring.choice.record.text": {
+      "ru": "Наблюдение сохранено как локальный карьерный опыт.",
+      "en": "Record this as local career evidence."
+    },
+    "event.assassin.career.season-summer.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Record"
+    },
+    "event.assassin.career.season-summer.choice.record.text": {
+      "ru": "Наблюдение сохранено как локальный карьерный опыт.",
+      "en": "Record this as local career evidence."
+    },
+    "event.assassin.career.season-autumn.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Record"
+    },
+    "event.assassin.career.season-autumn.choice.record.text": {
+      "ru": "Наблюдение сохранено как локальный карьерный опыт.",
+      "en": "Record this as local career evidence."
+    },
+    "event.assassin.career.season-winter.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Record"
+    },
+    "event.assassin.career.season-winter.choice.record.text": {
+      "ru": "Наблюдение сохранено как локальный карьерный опыт.",
+      "en": "Record this as local career evidence."
+    },
+    "event.assassin.career.seasonal-breadth.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Record"
+    },
+    "event.assassin.career.seasonal-breadth.choice.record.text": {
+      "ru": "Наблюдение сохранено как локальный карьерный опыт.",
+      "en": "Record this as local career evidence."
+    },
+    "event.assassin.career.trusted-blade.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue"
+    },
+    "event.assassin.career.trusted-blade.choice.continue.text": {
+      "ru": "Ты продолжаешь карьеру, не меняя её базовых правил.",
+      "en": "Continue the career without changing its baseline rules."
+    },
+    "event.assassin.career.veteran-ready.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Record"
+    },
+    "event.assassin.career.veteran-ready.choice.record.text": {
+      "ru": "Наблюдение сохранено как локальный карьерный опыт.",
+      "en": "Record this as local career evidence."
+    },
+    "event.assassin.contract.offer.choice.accept.label": {
+      "ru": "Принять предложение",
+      "en": "Accept the brief"
+    },
+    "event.assassin.contract.offer.choice.accept.text": {
+      "ru": "Ты соглашаешься проверить предложение, не обещая финальный способ решения.",
+      "en": "Hear and verify the brief without promising a final method."
+    },
+    "event.assassin.contract.offer.choice.defer.label": {
+      "ru": "Отложить",
+      "en": "Defer"
+    },
+    "event.assassin.contract.offer.choice.defer.text": {
+      "ru": "Предложение остаётся на потом; обычные смены доступны.",
+      "en": "Leave the offer for later; ordinary shifts remain available."
+    },
+    "event.assassin.contract.intel.choice.observe.label": {
+      "ru": "Собрать факты",
+      "en": "Gather the facts"
+    },
+    "event.assassin.contract.intel.choice.observe.text": {
+      "ru": "Отдели подтверждённые факты, пробелы и противоречия до выбора метода.",
+      "en": "Separate confirmed facts, gaps, and contradictions before choosing a method."
+    },
+    "event.assassin.contract.prep.choice.standard.label": {
+      "ru": "Обычная подготовка",
+      "en": "Use standard preparation"
+    },
+    "event.assassin.contract.prep.choice.standard.text": {
+      "ru": "Подготовь время, контекст и запасной вариант без специального снаряжения.",
+      "en": "Prepare timing, context, and a fallback without special gear."
+    },
+    "event.assassin.contract.prep.choice.concealed-toolset.label": {
+      "ru": "Использовать скрытый набор",
+      "en": "Use the Concealed Toolset"
+    },
+    "event.assassin.contract.prep.choice.concealed-toolset.text": {
+      "ru": "Используй только узкую возможность, которую действительно даёт набор.",
+      "en": "Use only the narrow capability the toolset actually provides."
+    },
+    "event.assassin.contract.prep.choice.sealed-pass.label": {
+      "ru": "Использовать пропуск",
+      "en": "Use the Sealed Pass"
+    },
+    "event.assassin.contract.prep.choice.sealed-pass.text": {
+      "ru": "Используй пропуск только в подготовленном для него контексте.",
+      "en": "Use the pass only in the context prepared for it."
+    },
+    "event.assassin.contract.prep.choice.disguise.label": {
+      "ru": "Подготовить уместную роль",
+      "en": "Prepare a context-appropriate role"
+    },
+    "event.assassin.contract.prep.choice.disguise.text": {
+      "ru": "Подбери роль под конкретную ситуацию, не превращая её в универсальный доступ.",
+      "en": "Fit a role to this situation without turning it into universal access."
+    },
+    "event.assassin.contract.method.choice.stealth.label": {
+      "ru": "Тихий подход",
+      "en": "Choose a quiet approach"
+    },
+    "event.assassin.contract.method.choice.stealth.text": {
+      "ru": "Выбери тихое решение с правом отменить план при изменении условий.",
+      "en": "Choose a quiet solution while keeping the right to abort if conditions change."
+    },
+    "event.assassin.contract.method.choice.social.label": {
+      "ru": "Социальный доступ",
+      "en": "Use social access"
+    },
+    "event.assassin.contract.method.choice.social.text": {
+      "ru": "Используй существующий повод для разговора и разрешённую сценой роль.",
+      "en": "Use an existing reason to speak and a role the scene supports."
+    },
+    "event.assassin.contract.method.choice.staged.label": {
+      "ru": "Сценарный отвлекающий ход",
+      "en": "Use an abstract staged option"
+    },
+    "event.assassin.contract.method.choice.staged.text": {
+      "ru": "Оставь вариант абстрактным: без описания физического механизма причинения вреда.",
+      "en": "Keep the option abstract, without describing a physical mechanism for causing harm."
+    },
+    "event.assassin.contract.method.choice.indirect.label": {
+      "ru": "Изменить информационный контекст",
+      "en": "Change the information context"
+    },
+    "event.assassin.contract.method.choice.indirect.text": {
+      "ru": "Измени информационный контекст этой сцены, а не создавай систему контроля людей.",
+      "en": "Change this scene's information context rather than creating a people-control system."
+    },
+    "event.assassin.contract.method.choice.refusal.label": {
+      "ru": "Отказаться",
+      "en": "Refuse the brief"
+    },
+    "event.assassin.contract.method.choice.refusal.text": {
+      "ru": "Откажись от неподходящего задания без скрытой шкалы морали.",
+      "en": "Refuse an unsuitable brief without a hidden Morality score."
+    },
+    "event.assassin.contract.method.choice.expose.label": {
+      "ru": "Работать с подтверждёнными документами",
+      "en": "Use confirmed evidence"
+    },
+    "event.assassin.contract.method.choice.expose.text": {
+      "ru": "Построй решение вокруг уже подтверждённых документов; вариант доступен только через соответствующую capability.",
+      "en": "Build the resolution around confirmed records; the option exists only through the matching capability."
+    },
+    "event.assassin.contract.resolve.choice.execute.label": {
+      "ru": "Продолжить",
+      "en": "Proceed"
+    },
+    "event.assassin.contract.resolve.choice.execute.text": {
+      "ru": "Заверши согласованную скрытую задачу без определения способа причинения вреда.",
+      "en": "Complete the agreed covert objective without defining a harm method."
+    },
+    "event.assassin.contract.resolve.choice.abort.label": {
+      "ru": "Остановиться",
+      "en": "Abort"
+    },
+    "event.assassin.contract.resolve.choice.abort.text": {
+      "ru": "Останови выполнение и сохрани отказ как полноценный профессиональный выбор.",
+      "en": "Stop the job and keep refusal as a complete professional choice."
+    },
+    "event.assassin.contract.resolve.choice.redirect.label": {
+      "ru": "Перенаправить",
+      "en": "Redirect"
+    },
+    "event.assassin.contract.resolve.choice.redirect.text": {
+      "ru": "Измени направление конкретной договорённости там, где этот контракт это допускает.",
+      "en": "Redirect this specific agreement where the brief permits it."
+    },
+    "event.assassin.contract.fallout.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Record"
+    },
+    "event.assassin.contract.fallout.choice.record.text": {
+      "ru": "Наблюдение сохранено как локальный карьерный опыт.",
+      "en": "Record this as local career evidence."
+    },
+    "event.assassin.contract.close.choice.close.label": {
+      "ru": "Закрыть дело",
+      "en": "Close the job"
+    },
+    "event.assassin.contract.close.choice.close.text": {
+      "ru": "Закрой дело и вернись к обычной работе.",
+      "en": "Close the job and return to ordinary work."
+    },
+    "event.assassin.items.concealed-toolset.choice.take.label": {
+      "ru": "Взять",
+      "en": "Take it"
+    },
+    "event.assassin.items.concealed-toolset.choice.take.text": {
+      "ru": "Возьми предмет как узкую карьерную возможность, а не универсальный ключ.",
+      "en": "Take the item as a narrow career capability, not a universal key."
+    },
+    "event.assassin.items.concealed-toolset.choice.defer.label": {
+      "ru": "Отложить",
+      "en": "Defer"
+    },
+    "event.assassin.items.concealed-toolset.choice.defer.text": {
+      "ru": "Предложение остаётся на потом; обычные смены доступны.",
+      "en": "Leave the offer for later; ordinary shifts remain available."
+    },
+    "event.assassin.items.sealed-pass.choice.take.label": {
+      "ru": "Взять",
+      "en": "Take it"
+    },
+    "event.assassin.items.sealed-pass.choice.take.text": {
+      "ru": "Возьми предмет как узкую карьерную возможность, а не универсальный ключ.",
+      "en": "Take the item as a narrow career capability, not a universal key."
+    },
+    "event.assassin.items.sealed-pass.choice.defer.label": {
+      "ru": "Отложить",
+      "en": "Defer"
+    },
+    "event.assassin.items.sealed-pass.choice.defer.text": {
+      "ru": "Предложение остаётся на потом; обычные смены доступны.",
+      "en": "Leave the offer for later; ordinary shifts remain available."
+    },
+    "event.assassin.items.disguise-kit.choice.take.label": {
+      "ru": "Взять",
+      "en": "Take it"
+    },
+    "event.assassin.items.disguise-kit.choice.take.text": {
+      "ru": "Возьми предмет как узкую карьерную возможность, а не универсальный ключ.",
+      "en": "Take the item as a narrow career capability, not a universal key."
+    },
+    "event.assassin.items.disguise-kit.choice.defer.label": {
+      "ru": "Отложить",
+      "en": "Defer"
+    },
+    "event.assassin.items.disguise-kit.choice.defer.text": {
+      "ru": "Предложение остаётся на потом; обычные смены доступны.",
+      "en": "Leave the offer for later; ordinary shifts remain available."
+    },
+    "event.assassin.items.evidence-case.choice.take.label": {
+      "ru": "Взять",
+      "en": "Take it"
+    },
+    "event.assassin.items.evidence-case.choice.take.text": {
+      "ru": "Возьми предмет как узкую карьерную возможность, а не универсальный ключ.",
+      "en": "Take the item as a narrow career capability, not a universal key."
+    },
+    "event.assassin.items.evidence-case.choice.defer.label": {
+      "ru": "Отложить",
+      "en": "Defer"
+    },
+    "event.assassin.items.evidence-case.choice.defer.text": {
+      "ru": "Предложение остаётся на потом; обычные смены доступны.",
+      "en": "Leave the offer for later; ordinary shifts remain available."
+    },
+    "event.assassin.relationship.intro.choice.professional.label": {
+      "ru": "Сохранить профессиональные рамки",
+      "en": "Keep it professional"
+    },
+    "event.assassin.relationship.intro.choice.professional.text": {
+      "ru": "Сохрани рабочие границы и начни с координации, а не личной зависимости.",
+      "en": "Keep professional boundaries and begin with coordination, not personal dependency."
+    },
+    "event.assassin.relationship.trust.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue"
+    },
+    "event.assassin.relationship.trust.choice.continue.text": {
+      "ru": "Ты продолжаешь карьеру, не меняя её базовых правил.",
+      "en": "Continue the career without changing its baseline rules."
+    },
+    "event.assassin.relationship.conflict-open.choice.open.label": {
+      "ru": "Обсудить конфликт",
+      "en": "Address the conflict"
+    },
+    "event.assassin.relationship.conflict-open.choice.open.text": {
+      "ru": "Прямо обозначь спор о контроле над заданием.",
+      "en": "State the disagreement over control of the brief directly."
+    },
+    "event.assassin.relationship.conflict-resolve.choice.cooperate.label": {
+      "ru": "Сотрудничать на ясных условиях",
+      "en": "Cooperate on clear terms"
+    },
+    "event.assassin.relationship.conflict-resolve.choice.cooperate.text": {
+      "ru": "Договоритесь о ясных профессиональных условиях.",
+      "en": "Agree on explicit professional terms."
+    },
+    "event.assassin.relationship.conflict-resolve.choice.rivalry.label": {
+      "ru": "Сохранить соперничество",
+      "en": "Keep a professional rivalry"
+    },
+    "event.assassin.relationship.conflict-resolve.choice.rivalry.text": {
+      "ru": "Сохрани рабочее соперничество без блокировки карьеры.",
+      "en": "Keep a professional rivalry without blocking the career."
+    },
+    "event.assassin.relationship.conflict-resolve.choice.decline.label": {
+      "ru": "Отказаться от связки",
+      "en": "Decline the arrangement"
+    },
+    "event.assassin.relationship.conflict-resolve.choice.decline.text": {
+      "ru": "Выйди из этой связки; обычная работа продолжается.",
+      "en": "Leave this arrangement; ordinary work continues."
+    },
+    "event.assassin.relationship.utility.choice.accept.label": {
+      "ru": "Принять предложение",
+      "en": "Accept the brief"
+    },
+    "event.assassin.relationship.utility.choice.accept.text": {
+      "ru": "Ты соглашаешься проверить предложение, не обещая финальный способ решения.",
+      "en": "Hear and verify the brief without promising a final method."
+    },
+    "event.assassin.relationship.utility.choice.decline.label": {
+      "ru": "Отказаться от связки",
+      "en": "Decline the arrangement"
+    },
+    "event.assassin.relationship.utility.choice.decline.text": {
+      "ru": "Выйди из этой связки; обычная работа продолжается.",
+      "en": "Leave this arrangement; ordinary work continues."
+    },
+    "event.assassin.cross.tavern-rumour.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Record"
+    },
+    "event.assassin.cross.tavern-rumour.choice.record.text": {
+      "ru": "Наблюдение сохранено как локальный карьерный опыт.",
+      "en": "Record this as local career evidence."
+    },
+    "event.assassin.cross.merchant-route.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Record"
+    },
+    "event.assassin.cross.merchant-route.choice.record.text": {
+      "ru": "Наблюдение сохранено как локальный карьерный опыт.",
+      "en": "Record this as local career evidence."
+    },
+    "event.assassin.cross.guard-pressure.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Record"
+    },
+    "event.assassin.cross.guard-pressure.choice.record.text": {
+      "ru": "Наблюдение сохранено как локальный карьерный опыт.",
+      "en": "Record this as local career evidence."
+    },
+    "event.assassin.routes.infiltration-qualified.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Record"
+    },
+    "event.assassin.routes.infiltration-qualified.choice.record.text": {
+      "ru": "Наблюдение сохранено как локальный карьерный опыт.",
+      "en": "Record this as local career evidence."
+    },
+    "event.assassin.routes.ghost-ready.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Record"
+    },
+    "event.assassin.routes.ghost-ready.choice.record.text": {
+      "ru": "Наблюдение сохранено как локальный карьерный опыт.",
+      "en": "Record this as local career evidence."
+    },
+    "event.assassin.routes.turncoat-ready.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Record"
+    },
+    "event.assassin.routes.turncoat-ready.choice.record.text": {
+      "ru": "Наблюдение сохранено как локальный карьерный опыт.",
+      "en": "Record this as local career evidence."
+    },
+    "event.assassin.routes.handler-takeover-ready.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Record"
+    },
+    "event.assassin.routes.handler-takeover-ready.choice.record.text": {
+      "ru": "Наблюдение сохранено как локальный карьерный опыт.",
+      "en": "Record this as local career evidence."
+    },
+    "event.assassin.routes.refusal-evidence.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Record"
+    },
+    "event.assassin.routes.refusal-evidence.choice.record.text": {
+      "ru": "Наблюдение сохранено как локальный карьерный опыт.",
+      "en": "Record this as local career evidence."
+    },
+    "event.assassin.routes.choose-practice.choice.veteran.label": {
+      "ru": "Выбрать ветерана",
+      "en": "Choose Veteran"
+    },
+    "event.assassin.routes.choose-practice.choice.veteran.text": {
+      "ru": "Выбери устойчивую профессиональную практику.",
+      "en": "Choose sustained professional practice."
+    },
+    "event.assassin.routes.choose-practice.choice.ghost.label": {
+      "ru": "Выбрать Призрака",
+      "en": "Choose Ghost"
+    },
+    "event.assassin.routes.choose-practice.choice.ghost.text": {
+      "ru": "Выбери специализацию на тихой подготовке и ограниченных вылазках.",
+      "en": "Choose a specialization in quiet preparation and bounded outings."
+    },
+    "event.assassin.routes.choose-practice.choice.turncoat.label": {
+      "ru": "Выбрать перебежчицу",
+      "en": "Choose Turncoat"
+    },
+    "event.assassin.routes.choose-practice.choice.turncoat.text": {
+      "ru": "Выбери специализацию на отказе, предупреждении и перенаправлении.",
+      "en": "Choose a specialization in refusal, warning, and redirection."
+    },
+    "event.assassin.routes.choose-practice.choice.defer.label": {
+      "ru": "Отложить",
+      "en": "Defer"
+    },
+    "event.assassin.routes.choose-practice.choice.defer.text": {
+      "ru": "Предложение остаётся на потом; обычные смены доступны.",
+      "en": "Leave the offer for later; ordinary shifts remain available."
+    },
+    "event.assassin.routes.choose-network.choice.handler-takeover.label": {
+      "ru": "Взять координацию на себя",
+      "en": "Take over coordination"
+    },
+    "event.assassin.routes.choose-network.choice.handler-takeover.text": {
+      "ru": "Возьми на себя локальную координацию уже известных контактов.",
+      "en": "Take local coordination of already-known contacts."
+    },
+    "event.assassin.routes.choose-network.choice.refusal-chain.label": {
+      "ru": "Выбрать последовательный отказ",
+      "en": "Choose Refusal Chain"
+    },
+    "event.assassin.routes.choose-network.choice.refusal-chain.text": {
+      "ru": "Выбирай этот путь только если его готовность уже подтверждена отдельно.",
+      "en": "Take this route only if its readiness has already been established separately."
+    },
+    "event.assassin.routes.choose-network.choice.defer.label": {
+      "ru": "Отложить",
+      "en": "Defer"
+    },
+    "event.assassin.routes.choose-network.choice.defer.text": {
+      "ru": "Предложение остаётся на потом; обычные смены доступны.",
+      "en": "Leave the offer for later; ordinary shifts remain available."
+    },
+    "event.assassin.routes.outcome-ready.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue"
+    },
+    "event.assassin.routes.outcome-ready.choice.continue.text": {
+      "ru": "Ты продолжаешь карьеру, не меняя её базовых правил.",
+      "en": "Continue the career without changing its baseline rules."
+    },
+    "event.assassin.activity.infiltration-return.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Record"
+    },
+    "event.assassin.activity.infiltration-return.choice.record.text": {
+      "ru": "Наблюдение сохранено как локальный карьерный опыт.",
+      "en": "Record this as local career evidence."
+    },
+    "event.assassin.school.practice-reflection.choice.continue.label": {
+      "ru": "Перенести урок в обычную подготовку",
+      "en": "Carry the lesson into ordinary preparation"
+    },
+    "event.assassin.school.practice-reflection.choice.continue.text": {
+      "ru": "Урок остаётся контекстом и не выдаёт карьерный допуск, предмет или универсальное право доступа.",
+      "en": "The lesson remains context and grants no career gate, item, or universal access right."
+    },
+    "event.assassin.routes.choose-network.choice.veteran.label": {
+      "ru": "Выбрать путь ветерана",
+      "en": "Choose Veteran practice"
+    },
+    "event.assassin.routes.choose-network.choice.veteran.text": {
+      "ru": "Оставить карьеру на устойчивой профессиональной практике, не связывая Hard Work с координационной специализацией.",
+      "en": "Keep the career grounded in sustained professional practice without tying Hard Work to a coordination specialization."
+    },
+    "event.assassin.school.field.title": {
+      "ru": "Роуэн хвалит условие отмены",
+      "en": "Rowan praises the abort condition"
+    },
+    "event.assassin.school.field.variant.default.text": {
+      "ru": "Роуэн замечает, что в плане есть не только маршрут, но и чёткий признак, после которого ты его бросишь. Он считает это не осторожностью, а нормальной частью любой работы, где условия могут измениться раньше тебя.",
+      "en": "Rowan notices that the plan contains not only a route, but a clear sign that would make you abandon it. He treats that not as timidity, but as a normal part of any work where conditions can change before you do."
+    },
+    "event.assassin.school.field.choice.continue.label": {
+      "ru": "Перенести урок в обычную подготовку",
+      "en": "Carry the lesson into ordinary preparation"
+    },
+    "event.assassin.school.field.choice.continue.text": {
+      "ru": "Урок остаётся контекстом и не выдаёт карьерный допуск, предмет или универсальное право доступа.",
+      "en": "The lesson remains context and grants no career gate, item, or universal access right."
+    },
+    "event.assassin.school.rhetoric.title": {
+      "ru": "Кассиан убирает ответ из вопроса",
+      "en": "Cassian removes the answer from the question"
+    },
+    "event.assassin.school.rhetoric.variant.default.text": {
+      "ru": "Кассиан переписывает одну твою фразу и показывает, как легко вопрос выдаёт желаемый ответ. Ты пробуешь снова — теперь собеседнику приходится рассказывать собственную версию, а не подтверждать твою.",
+      "en": "Cassian rewrites one of your lines and shows how easily a question can reveal the answer you hope to hear. You try again—this time the other person has to give their own account instead of confirming yours."
+    },
+    "event.assassin.school.rhetoric.choice.continue.label": {
+      "ru": "Перенести урок в обычную подготовку",
+      "en": "Carry the lesson into ordinary preparation"
+    },
+    "event.assassin.school.rhetoric.choice.continue.text": {
+      "ru": "Урок остаётся контекстом и не выдаёт карьерный допуск, предмет или универсальное право доступа.",
+      "en": "The lesson remains context and grants no career gate, item, or universal access right."
+    },
+    "event.assassin.school.etiquette.title": {
+      "ru": "Уместность не должна выглядеть как спектакль",
+      "en": "Fitting in should not look like a performance"
+    },
+    "event.assassin.school.etiquette.variant.default.text": {
+      "ru": "Элиан замечает, что слишком тщательно подготовленная манера поведения сама начинает привлекать внимание. Она просит убрать лишнее и оставить только то, что действительно соответствует месту и роли.",
+      "en": "Eliane notes that an overprepared manner can begin attracting attention on its own. She asks you to remove the excess and keep only what genuinely fits the place and role."
+    },
+    "event.assassin.school.etiquette.choice.continue.label": {
+      "ru": "Перенести урок в обычную подготовку",
+      "en": "Carry the lesson into ordinary preparation"
+    },
+    "event.assassin.school.etiquette.choice.continue.text": {
+      "ru": "Урок остаётся контекстом и не выдаёт карьерный допуск, предмет или универсальное право доступа.",
+      "en": "The lesson remains context and grants no career gate, item, or universal access right."
+    },
+    "event.assassin.school.literacy.title": {
+      "ru": "Мара оставляет пробел как пробел",
+      "en": "Mara leaves a gap as a gap"
+    },
+    "event.assassin.school.literacy.variant.default.text": {
+      "ru": "Мара хвалит хронологию, где неизвестный отрезок времени не заполнен красивой догадкой. Отмеченный пробел полезнее выдуманной точности: он показывает, какую информацию ещё нужно искать.",
+      "en": "Mara approves a timeline in which an unknown span has not been filled with an elegant guess. A marked gap is more useful than invented precision because it shows what information still needs to be found."
+    },
+    "event.assassin.school.literacy.choice.continue.label": {
+      "ru": "Перенести урок в обычную подготовку",
+      "en": "Carry the lesson into ordinary preparation"
+    },
+    "event.assassin.school.literacy.choice.continue.text": {
+      "ru": "Урок остаётся контекстом и не выдаёт карьерный допуск, предмет или универсальное право доступа.",
+      "en": "The lesson remains context and grants no career gate, item, or universal access right."
+    },
+    "event.assassin.school.physical.title": {
+      "ru": "Тован считает точную остановку частью движения",
+      "en": "Tovan treats the stop as part of the movement"
+    },
+    "event.assassin.school.physical.variant.default.text": {
+      "ru": "Тован оценивает не скорость, а способность двигаться тихо, менять направление и останавливаться без потери равновесия. Это общая школа контроля тела, не обучение бою или нападению.",
+      "en": "Tovan evaluates not speed, but the ability to move quietly, change direction, and stop without losing balance. This is general body control, not combat or attack training."
+    },
+    "event.assassin.school.physical.choice.continue.label": {
+      "ru": "Перенести урок в обычную подготовку",
+      "en": "Carry the lesson into ordinary preparation"
+    },
+    "event.assassin.school.physical.choice.continue.text": {
+      "ru": "Урок остаётся контекстом и не выдаёт карьерный допуск, предмет или универсальное право доступа.",
+      "en": "The lesson remains context and grants no career gate, item, or universal access right."
     }
   }
 }

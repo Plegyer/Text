@@ -3784,7 +3784,7 @@
       "scenes": [
         {
           "id": "spring.default",
-          "text": "Spring assassin shift: the season changes the ordinary work context.",
+          "text": "Spring work follows changing crowds and newly busy routes: observe what shifted, verify the handoff context, and keep a fallback if the plan no longer fits.",
           "conditions": [],
           "media": [
             "stage.town"
@@ -3792,7 +3792,7 @@
         },
         {
           "id": "summer.default",
-          "text": "Summer assassin shift: demand, routes, or crowds shift with the season.",
+          "text": "Long light and crowded streets make timing less predictable. The shift rewards patient observation, clear handoffs, and the willingness to abandon a bad window.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -3805,7 +3805,7 @@
         },
         {
           "id": "autumn.default",
-          "text": "Autumn assassin shift: seasonal pressure changes the work mix.",
+          "text": "Routes and routines change with the season. Compare what was expected with what is actually happening before deciding how to finish the ordinary assignment.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -3818,7 +3818,7 @@
         },
         {
           "id": "winter.default",
-          "text": "Winter assassin shift: scarcity, access, or regular clients change the routine.",
+          "text": "Short light and formal indoor traffic change what can be seen and when. Keep the task bounded, confirm the context, and close the records when the work is done.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -6189,9 +6189,163 @@
       "label": "Assassin",
       "initialStage": "runner",
       "stages": [
-        "runner"
+        "runner",
+        "operative",
+        "trusted-blade",
+        "veteran",
+        "ghost",
+        "turncoat",
+        "handler-takeover",
+        "refusal-chain",
+        "outcome-ready"
       ],
-      "transitions": []
+      "transitions": [
+        {
+          "id": "first-shift",
+          "from": [
+            "runner"
+          ],
+          "to": "operative",
+          "conditions": [
+            {
+              "kind": "careerCounter",
+              "career": "assassin",
+              "counter": "completed_shifts",
+              "op": "gte",
+              "value": 1
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "assassin",
+              "fact": "first-shift-complete"
+            }
+          ]
+        },
+        {
+          "id": "trusted-blade",
+          "from": [
+            "operative"
+          ],
+          "to": "trusted-blade",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "assassin",
+              "fact": "seasonal-breadth-ready",
+              "present": true
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "assassin",
+              "fact": "trusted-blade-ready"
+            }
+          ]
+        },
+        {
+          "id": "branch-veteran",
+          "from": [
+            "trusted-blade"
+          ],
+          "to": "veteran",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "assassin",
+              "fact": "veteran-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "branch-ghost",
+          "from": [
+            "trusted-blade"
+          ],
+          "to": "ghost",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "assassin",
+              "fact": "ghost-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "branch-turncoat",
+          "from": [
+            "trusted-blade"
+          ],
+          "to": "turncoat",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "assassin",
+              "fact": "turncoat-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "branch-handler-takeover",
+          "from": [
+            "trusted-blade"
+          ],
+          "to": "handler-takeover",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "assassin",
+              "fact": "handler-takeover-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "branch-refusal-chain",
+          "from": [
+            "trusted-blade"
+          ],
+          "to": "refusal-chain",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "assassin",
+              "fact": "refusal-chain-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "outcome-ready",
+          "from": [
+            "veteran",
+            "ghost",
+            "turncoat",
+            "handler-takeover",
+            "refusal-chain"
+          ],
+          "to": "outcome-ready",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "assassin",
+              "fact": "outcome-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        }
+      ]
     },
     {
       "id": "prostitute",
@@ -6203,7 +6357,169 @@
       "transitions": []
     }
   ],
-  "quests": [],
+  "quests": [
+    {
+      "id": "assassin.contract",
+      "label": "Assassin contract lifecycle prep",
+      "initialStage": "dormant",
+      "stages": [
+        "dormant",
+        "offered",
+        "intel",
+        "prep",
+        "method",
+        "resolved",
+        "fallout",
+        "closed"
+      ],
+      "transitions": [
+        {
+          "id": "accept-offer",
+          "from": [
+            "dormant"
+          ],
+          "to": "offered",
+          "conditions": [
+            {
+              "kind": "questFact",
+              "quest": "assassin.contract",
+              "fact": "offer-accepted",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "intel-complete",
+          "from": [
+            "offered"
+          ],
+          "to": "intel",
+          "conditions": [
+            {
+              "kind": "questFact",
+              "quest": "assassin.contract",
+              "fact": "intel-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "prep-complete",
+          "from": [
+            "intel"
+          ],
+          "to": "prep",
+          "conditions": [
+            {
+              "kind": "questFact",
+              "quest": "assassin.contract",
+              "fact": "prep-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "method-selected",
+          "from": [
+            "prep"
+          ],
+          "to": "method",
+          "conditions": [
+            {
+              "kind": "questFact",
+              "quest": "assassin.contract",
+              "fact": "method-selected",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "resolve-execute",
+          "from": [
+            "method"
+          ],
+          "to": "resolved",
+          "conditions": [
+            {
+              "kind": "questChoice",
+              "quest": "assassin.contract",
+              "choice": "resolution",
+              "value": "execute"
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "resolve-abort",
+          "from": [
+            "method"
+          ],
+          "to": "resolved",
+          "conditions": [
+            {
+              "kind": "questChoice",
+              "quest": "assassin.contract",
+              "choice": "resolution",
+              "value": "abort"
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "resolve-redirect",
+          "from": [
+            "method"
+          ],
+          "to": "resolved",
+          "conditions": [
+            {
+              "kind": "questChoice",
+              "quest": "assassin.contract",
+              "choice": "resolution",
+              "value": "redirect"
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "fallout-recorded",
+          "from": [
+            "resolved"
+          ],
+          "to": "fallout",
+          "conditions": [
+            {
+              "kind": "questFact",
+              "quest": "assassin.contract",
+              "fact": "fallout-recorded",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "close-contract",
+          "from": [
+            "fallout"
+          ],
+          "to": "closed",
+          "conditions": [
+            {
+              "kind": "questFact",
+              "quest": "assassin.contract",
+              "fact": "contract-closed",
+              "present": true
+            }
+          ],
+          "effects": []
+        }
+      ]
+    }
+  ],
   "relationships": [
     {
       "id": "lumber.foreman",
@@ -7145,6 +7461,150 @@
             {
               "kind": "relationshipFact",
               "relationship": "artist-geisha.mentor",
+              "fact": "utility-response-resolved",
+              "present": true
+            }
+          ],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "assassin.handler",
+      "label": "Assassin handler",
+      "initialStage": "introduced",
+      "stages": [
+        "introduced",
+        "professional-trust",
+        "conflict-open",
+        "utility-ready",
+        "route-resolved"
+      ],
+      "transitions": [
+        {
+          "id": "build-trust",
+          "from": [
+            "introduced"
+          ],
+          "to": "professional-trust",
+          "conditions": [
+            {
+              "kind": "relationshipFact",
+              "relationship": "assassin.handler",
+              "fact": "introduced-at-work",
+              "present": true
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "assassin.handler",
+              "fact": "professional-trust-earned"
+            }
+          ]
+        },
+        {
+          "id": "open-conflict",
+          "from": [
+            "professional-trust"
+          ],
+          "to": "conflict-open",
+          "conditions": [
+            {
+              "kind": "relationshipFact",
+              "relationship": "assassin.handler",
+              "fact": "conflict-opened",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "cooperate",
+          "from": [
+            "conflict-open"
+          ],
+          "to": "utility-ready",
+          "conditions": [
+            {
+              "kind": "relationshipChoice",
+              "relationship": "assassin.handler",
+              "choice": "conflict-response",
+              "value": "cooperate"
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "assassin.handler",
+              "fact": "conflict-resolved"
+            },
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "assassin.handler",
+              "fact": "utility-ready"
+            }
+          ]
+        },
+        {
+          "id": "rivalry",
+          "from": [
+            "conflict-open"
+          ],
+          "to": "route-resolved",
+          "conditions": [
+            {
+              "kind": "relationshipChoice",
+              "relationship": "assassin.handler",
+              "choice": "conflict-response",
+              "value": "rivalry"
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "assassin.handler",
+              "fact": "conflict-resolved"
+            }
+          ]
+        },
+        {
+          "id": "refusal",
+          "from": [
+            "conflict-open"
+          ],
+          "to": "route-resolved",
+          "conditions": [
+            {
+              "kind": "relationshipChoice",
+              "relationship": "assassin.handler",
+              "choice": "conflict-response",
+              "value": "declined"
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "assassin.handler",
+              "fact": "conflict-resolved"
+            },
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "assassin.handler",
+              "fact": "refusal-respected"
+            }
+          ]
+        },
+        {
+          "id": "finish-utility",
+          "from": [
+            "utility-ready"
+          ],
+          "to": "route-resolved",
+          "conditions": [
+            {
+              "kind": "relationshipFact",
+              "relationship": "assassin.handler",
               "fact": "utility-response-resolved",
               "present": true
             }
@@ -8250,6 +8710,66 @@
       "effects": [],
       "nextDayEffects": [],
       "nextDayEnergyDelta": 0
+    },
+    {
+      "id": "assassin.night.review-notes",
+      "label": "Review covert-work notes",
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "operative"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "trusted-blade"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "veteran"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "ghost"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "turncoat"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "handler-takeover"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "refusal-chain"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "outcome-ready"
+            }
+          ]
+        }
+      ],
+      "effects": [
+        {
+          "kind": "addCareerFact",
+          "career": "assassin",
+          "fact": "night-notes-reviewed"
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": 0
     }
   ],
   "activities": [
@@ -9074,6 +9594,223 @@
           "effects": []
         }
       ]
+    },
+    {
+      "id": "assassin.infiltration",
+      "label": "Assassin advanced infiltration prep",
+      "version": 1,
+      "entryConditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "trusted-blade"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "veteran"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "ghost"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "turncoat"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "handler-takeover"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "refusal-chain"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "outcome-ready"
+            }
+          ]
+        },
+        {
+          "kind": "careerFact",
+          "career": "assassin",
+          "fact": "infiltration-qualified",
+          "present": true
+        }
+      ],
+      "entryEnergyCost": 2,
+      "resumePolicy": "allowed",
+      "timePolicy": "same_day",
+      "failurePolicy": "exit_to_day",
+      "adapter": "counter.v1",
+      "adapterConfig": {
+        "initialEndurance": 8,
+        "advanceEnduranceCost": 2,
+        "successAtProgress": 6,
+        "failAtEndurance": 0
+      },
+      "options": [
+        {
+          "id": "assassin.infiltration.local-route",
+          "label": "Use the ordinary local access route",
+          "category": "route",
+          "conditions": [],
+          "progressDelta": 0,
+          "enduranceCost": 0,
+          "setRoute": "local-route"
+        },
+        {
+          "id": "assassin.infiltration.concealed-route",
+          "label": "Use the Concealed Toolset route",
+          "category": "route",
+          "conditions": [
+            {
+              "kind": "itemCapability",
+              "capability": "assassin_concealed_entry",
+              "present": true
+            }
+          ],
+          "progressDelta": 0,
+          "enduranceCost": 0,
+          "setRoute": "concealed-route"
+        },
+        {
+          "id": "assassin.infiltration.sealed-route",
+          "label": "Use the Sealed Pass route",
+          "category": "route",
+          "conditions": [
+            {
+              "kind": "itemCapability",
+              "capability": "assassin_sealed_access",
+              "present": true
+            }
+          ],
+          "progressDelta": 0,
+          "enduranceCost": 0,
+          "setRoute": "sealed-route"
+        },
+        {
+          "id": "assassin.infiltration.disguise-route",
+          "label": "Use the context disguise route",
+          "category": "route",
+          "conditions": [
+            {
+              "kind": "itemCapability",
+              "capability": "assassin_context_disguise",
+              "present": true
+            }
+          ],
+          "progressDelta": 0,
+          "enduranceCost": 0,
+          "setRoute": "disguise-route"
+        },
+        {
+          "id": "assassin.infiltration.observe-window",
+          "label": "Observe timing and preserve a fallback",
+          "category": "observation",
+          "conditions": [],
+          "progressDelta": 2,
+          "enduranceCost": 1,
+          "setRoute": "local-route"
+        },
+        {
+          "id": "assassin.infiltration.concealed-entry",
+          "label": "Use the narrow concealed-entry option",
+          "category": "access",
+          "conditions": [
+            {
+              "kind": "itemCapability",
+              "capability": "assassin_concealed_entry",
+              "present": true
+            }
+          ],
+          "progressDelta": 2,
+          "enduranceCost": 0,
+          "setRoute": "concealed-route"
+        },
+        {
+          "id": "assassin.infiltration.sealed-entry",
+          "label": "Use the pass only in its prepared context",
+          "category": "access",
+          "conditions": [
+            {
+              "kind": "itemCapability",
+              "capability": "assassin_sealed_access",
+              "present": true
+            }
+          ],
+          "progressDelta": 2,
+          "enduranceCost": 0,
+          "setRoute": "sealed-route"
+        },
+        {
+          "id": "assassin.infiltration.disguise-entry",
+          "label": "Match the prepared social context",
+          "category": "access",
+          "conditions": [
+            {
+              "kind": "itemCapability",
+              "capability": "assassin_context_disguise",
+              "present": true
+            }
+          ],
+          "progressDelta": 2,
+          "enduranceCost": 0,
+          "setRoute": "disguise-route"
+        },
+        {
+          "id": "assassin.infiltration.preserve-evidence",
+          "label": "Preserve evidence without changing the objective",
+          "category": "evidence",
+          "conditions": [
+            {
+              "kind": "itemCapability",
+              "capability": "assassin_handle_evidence",
+              "present": true
+            }
+          ],
+          "progressDelta": 2,
+          "enduranceCost": 0
+        }
+      ],
+      "results": [
+        {
+          "id": "assassin.infiltration.success",
+          "outcome": "success",
+          "effects": [
+            {
+              "kind": "incrementCareerCounter",
+              "career": "assassin",
+              "counter": "successful_infiltrations",
+              "amount": 1
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "assassin",
+              "fact": "infiltration-returned"
+            }
+          ]
+        },
+        {
+          "id": "assassin.infiltration.escape",
+          "outcome": "escape",
+          "effects": []
+        },
+        {
+          "id": "assassin.infiltration.failure",
+          "outcome": "failure",
+          "effects": []
+        }
+      ]
     }
   ],
   "itemDefinitions": [
@@ -9194,6 +9931,34 @@
       "label": "Artist House Invitation Token",
       "capabilities": [
         "artist_handle_invitation"
+      ]
+    },
+    {
+      "id": "assassin_concealed_toolset",
+      "label": "Concealed Toolset",
+      "capabilities": [
+        "assassin_concealed_entry"
+      ]
+    },
+    {
+      "id": "assassin_sealed_pass",
+      "label": "Sealed Pass",
+      "capabilities": [
+        "assassin_sealed_access"
+      ]
+    },
+    {
+      "id": "assassin_disguise_kit",
+      "label": "Context Disguise Kit",
+      "capabilities": [
+        "assassin_context_disguise"
+      ]
+    },
+    {
+      "id": "assassin_evidence_case",
+      "label": "Evidence Case",
+      "capabilities": [
+        "assassin_handle_evidence"
       ]
     }
   ]
