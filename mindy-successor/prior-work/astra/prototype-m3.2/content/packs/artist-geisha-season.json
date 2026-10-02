@@ -232,6 +232,19 @@
       ],
       "variants": [
         {
+          "id": "school-body-confidence",
+          "text": "The autumn festival window lets you use prepared body-confidence work as intentional stage presence while keeping personal boundaries explicit.",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "artist-geisha",
+              "fact": "school-body-confidence-ready",
+              "present": true
+            }
+          ],
+          "media": []
+        },
+        {
           "id": "default",
           "text": "An autumn festival creates a local performance opportunity. Participation records only Artist/Geisha evidence; no generic contest engine or ranking is created.",
           "conditions": [],
