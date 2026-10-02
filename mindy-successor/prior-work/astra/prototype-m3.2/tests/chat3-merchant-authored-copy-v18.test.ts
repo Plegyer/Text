@@ -10,7 +10,7 @@ const enNegation=/\b(?:no|not|without|does not|do not|cannot|never)\b/i;
 const ruNegation=/(?:^|[^\p{L}])(?:не|ни|без)(?:[^\p{L}]|$)/iu;
 
 test('C3-194..203 Merchant source bank is bilingual, unique and mechanics-free',()=>{
-  assert.equal(bank.status,'CONTENT_PREP_ONLY_PENDING_FROZEN_MERCHANT_RUNTIME');
+  assert.equal(bank.status,'LIVE_BOUND_ON_FROZEN_MERCHANT_RUNTIME_WITH_AUTHORITY_GAP');
   assert.equal(bank.invariants.createsGameplayIds,false);
   assert.equal(bank.invariants.changesMechanics,false);
   assert.equal(bank.invariants.changesEconomy,false);
@@ -196,15 +196,15 @@ test('Merchant authored prep creates no future-career or unauthorized ending sea
 
 
 test('C3-203 provisional binding plan covers every source key without claiming frozen authority',()=>{
-  assert.equal(plan.status,'PROVISIONAL_ONLY_PENDING_FROZEN_MERCHANT_RUNTIME');
-  assert.equal(plan.authority.frozen,false);
+  assert.equal(plan.status,'FINAL_BINDING_AUDITED_ON_FROZEN_MERCHANT_RUNTIME');
+  assert.equal(plan.authority.frozen,true);
   assert.equal(plan.finalBindingRequiredAt,'C3-204');
 
   const sourceKeys=bank.entries.map((x:any)=>x.contentKey).sort();
   const bindingKeys=plan.bindings.map((x:any)=>x.contentKey).sort();
   assert.deepEqual(bindingKeys,sourceKeys);
 
-  const unbound=plan.bindings.filter((x:any)=>x.status==='UNBOUND_NO_CURRENT_CONSUMER');
+  const unbound=plan.bindings.filter((x:any)=>x.status==='UNBOUND_NO_FROZEN_MERCHANT_CONSUMER');
   assert.deepEqual(unbound.map((x:any)=>x.contentKey),['school.formal-terms']);
   assert.deepEqual(unbound[0].provisionalTargetIds,[]);
 
