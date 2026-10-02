@@ -1,7 +1,7 @@
 import { metrics, stats, seasons, priorityClasses, saveSchema, type Stat, type Save, type Meta, type Condition, type Effect, type Catalog, type StoryEvent, type Action, type MachineDefinition, type ReactionFact, type ReactionTrigger, type PriorityClass, type LodgingDefinition, type NightChoiceDefinition, type ActivityDefinition, type ActivityOutcome, type ActivityEnvelope, ordinaryHardWorkCareers, type MetaReward, type OrdinaryHardWorkCareer } from './schema.ts';
 import {SCHOOL_ACTION_ID,SCHOOL_COURSES,executeSchoolLesson,type SchoolCourseId} from './school.ts';
 import {presentationIdForActionResult,presentationIdForEvent} from './presentation.ts';
-import {SECRET_DEBT_CAREER_ID,SECRET_DEBT_SHIFT_ACTION_ID,captureSecretDebtAcceptanceDay,secretDebtActivationDue,secretDebtBlocksCareerId,secretDebtBlocksEnding,secretDebtBlocksOrdinaryAction,secretDebtBlocksSourceDomain,secretDebtShiftStatEffects,secretDebtShiftTuningReady,secretDebtWageDefinition} from './secretDebt.ts';
+import {SECRET_DEBT_CAREER_ID,SECRET_DEBT_ENCOUNTER_EVENT_ID,SECRET_DEBT_SHIFT_ACTION_ID,captureSecretDebtAcceptanceDay,secretDebtActivationDue,secretDebtBlocksCareerId,secretDebtBlocksEnding,secretDebtBlocksOrdinaryAction,secretDebtBlocksSourceDomain,secretDebtShiftStatEffects,secretDebtShiftTuningReady,secretDebtWageDefinition} from './secretDebt.ts';
 
 const statSet=new Set<string>(stats);
 const cappedLegacy=new Set(['health','stress','trust']);
@@ -587,6 +587,7 @@ function attemptChance(s:Save,e:StoryEvent,trace:ResolverTrace){
   if(r.attemptedEventIds.includes(e.id)){trace.steps.push(`reject:${e.id}:already-attempted`);return false;}
   r.attemptedEventIds.push(e.id);
   const roll=random(s),chance=eventChance(e,s),pass=roll<chance;
+  if(e.id===SECRET_DEBT_ENCOUNTER_EVENT_ID&&s.run.flow.night)addUnique(s.run.flow.night.handledEventIds,e.id);
   trace.steps.push(`chance:${e.id}:${roll.toFixed(8)}<${chance.toFixed(8)}:${pass?'pass':'fail'}`);
   return pass;
 }
