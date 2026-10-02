@@ -133,3 +133,30 @@ test('Assassin School publishes five one-shot capability reactions with no tunin
   for(const choice of event.choices)assert.deepEqual(choice.effects,[],event.id);
  }
 });
+
+
+test('refusal evidence survives Turncoat readiness collision before leaving trusted-blade',()=>{
+ const routes=packs.find((p:any)=>p.id==='assassin.routes');
+ const turncoat=routes.events.find((e:any)=>e.id==='assassin.routes.turncoat-ready');
+ const refusal=routes.events.find((e:any)=>e.id==='assassin.routes.refusal-evidence');
+ const choose=routes.events.find((e:any)=>e.id==='assassin.routes.choose-practice');
+ assert.ok(turncoat);
+ assert.ok(refusal);
+ assert.ok(choose);
+
+ assert.ok(turncoat.priority>refusal.priority,
+  'the existing actionCompleted collision ordering remains unchanged');
+ assert.ok(refusal.priority>choose.priority,
+  'after Turncoat readiness is recorded, refusal evidence must resolve before practice selection');
+
+ assert.ok(refusal.reactionTriggers.some((t:any)=>
+  t.kind==='careerFactAdded'&&t.career==='assassin'&&t.fact==='turncoat-ready'
+ ),'Turncoat readiness must re-trigger refusal evidence after consuming the shared actionCompleted slot');
+
+ assert.deepEqual(
+  refusal.conditions.find((c:any)=>c.kind==='careerStage'),
+  {kind:'careerStage',career:'assassin',stage:'trusted-blade'}
+ );
+ assert.equal(JSON.stringify(refusal).includes('careerCounter'),false);
+ assert.equal(JSON.stringify(refusal).includes('completed_shifts'),false);
+});
