@@ -252,7 +252,7 @@ test('every bound night suppresses voluntary Night and applies next-day Energy -
   let s=directBound(started());
   s.run.resources.money=5_000;
 
-  s=dispatch(s,{type:'endDay'},catalog);
+  s=dispatch(s,{type:'endDay'},secretDebtCatalog);
   s=dispatch(s,{type:'chooseLodging',id:'lodging.normal'},secretDebtCatalog);
   assert.equal(s.run.pending?.eventId,'secret-debt.forced-night-work');
   assert.equal(s.run.flow.night?.suppressVoluntaryMenu,true);
@@ -291,7 +291,7 @@ test('repayment is one all-at-once 20000 action and releases the ordinary career
   const lumber=catalog.definitions.actions.find(action=>action.id==='lumber.shift')!;
   assert.equal(actionAvailable(lumber,s,catalog),true);
 
-  s=dispatch(s,{type:'endDay'},catalog);
+  s=dispatch(s,{type:'endDay'},secretDebtCatalog);
   s=dispatch(s,{type:'chooseLodging',id:'lodging.normal'},secretDebtCatalog);
   assert.equal(s.run.pending?.eventId==='secret-debt.forced-night-work',false);
   assert.equal(s.run.flow.night?.phase,'VoluntaryNightChoice');
