@@ -10481,6 +10481,706 @@
     "event.merchant.crisis.delivery-pressure.choice.accept-narrow-risk.text": {
       "ru": "Выбор сохраняет текущие условия Merchant без новой системы.",
       "en": "Take a documented trade risk without creating an illegal-goods law or morality score."
+    },
+    "event.prostitute.career.first-shift.title": {
+      "ru": "Первая добровольная профессиональная смена",
+      "en": "First voluntary professional shift"
+    },
+    "event.prostitute.career.first-shift.variant.default.text": {
+      "ru": "Первая завершённая добровольная смена закрепляет профессиональный ритм. Героиня сама решает, какие условия принимать, и обычная работа остаётся доступной без долгового владельца или обязательной ночи.",
+      "en": "The first completed voluntary shift establishes a professional routine while the heroine keeps control of what she accepts and ordinary work remains open."
+    },
+    "event.prostitute.career.first-shift.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue as a known professional"
+    },
+    "event.prostitute.career.first-shift.choice.continue.text": {
+      "ru": "Продолжить добровольную карьеру без скрытых ограничений.",
+      "en": "Continue as a known professional."
+    },
+    "event.prostitute.career.season-spring.title": {
+      "ru": "Весенний рабочий контекст",
+      "en": "Record spring voluntary work context"
+    },
+    "event.prostitute.career.season-spring.variant.default.text": {
+      "ru": "Весной становится больше незнакомых запросов, поэтому особенно важно заранее уточнять время, условия и то, подходит ли встреча. Сезон меняет контекст, а не вводит скрытый ценовой множитель.",
+      "en": "Spring brings more unfamiliar requests, so timing, terms, and fit are checked clearly before the heroine chooses whether to continue."
+    },
+    "event.prostitute.career.season-spring.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Record this shipped seasonal work context"
+    },
+    "event.prostitute.career.season-spring.choice.record.text": {
+      "ru": "Сохранить этот результат только в локальном состоянии профессии.",
+      "en": "Record this shipped seasonal work context."
+    },
+    "event.prostitute.career.season-summer.title": {
+      "ru": "Летний рабочий контекст",
+      "en": "Record summer voluntary work context"
+    },
+    "event.prostitute.career.season-summer.variant.default.text": {
+      "ru": "Летняя многолюдность делает заметнее управление временем и выбор встреч. Высокий спрос не отменяет право отказаться или оставить время для отдыха и безопасности.",
+      "en": "Summer crowds make selective bookings and time management more visible while preserving the option to decline or reserve time for rest."
+    },
+    "event.prostitute.career.season-summer.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Record this shipped seasonal work context"
+    },
+    "event.prostitute.career.season-summer.choice.record.text": {
+      "ru": "Сохранить этот результат только в локальном состоянии профессии.",
+      "en": "Record this shipped seasonal work context."
+    },
+    "event.prostitute.career.season-autumn.title": {
+      "ru": "Осенний рабочий контекст",
+      "en": "Record autumn voluntary work context"
+    },
+    "event.prostitute.career.season-autumn.variant.default.text": {
+      "ru": "Осенние формальные события делают важнее подачу и точное согласование ожиданий. Высокий статус меняет уровень формальности, но не отменяет личные границы.",
+      "en": "Autumn formal events make presentation and careful alignment of expectations more important without changing personal boundaries."
+    },
+    "event.prostitute.career.season-autumn.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Record this shipped seasonal work context"
+    },
+    "event.prostitute.career.season-autumn.choice.record.text": {
+      "ru": "Сохранить этот результат только в локальном состоянии профессии.",
+      "en": "Record this shipped seasonal work context."
+    },
+    "event.prostitute.career.season-winter.title": {
+      "ru": "Зимний рабочий контекст",
+      "en": "Record winter voluntary work context"
+    },
+    "event.prostitute.career.season-winter.variant.default.text": {
+      "ru": "Зимой при меньшем случайном потоке заметнее постоянные клиенты и надёжность договорённостей. Экономическое давление остаётся контекстом, а не принуждением.",
+      "en": "Winter makes recurring clients and dependable agreements more visible while economic pressure remains context rather than coercion."
+    },
+    "event.prostitute.career.season-winter.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Record this shipped seasonal work context"
+    },
+    "event.prostitute.career.season-winter.choice.record.text": {
+      "ru": "Сохранить этот результат только в локальном состоянии профессии.",
+      "en": "Record this shipped seasonal work context."
+    },
+    "event.prostitute.career.seasonal-breadth.title": {
+      "ru": "Профессиональный опыт четырёх сезонов",
+      "en": "Record four-season professional breadth"
+    },
+    "event.prostitute.career.seasonal-breadth.variant.default.text": {
+      "ru": "Работа во все четыре сезона показывает профессиональную широту и умение адаптировать подготовку без изменения уже действующих правил оплаты.",
+      "en": "Working through all four seasons demonstrates professional breadth without changing the shipped wage rules."
+    },
+    "event.prostitute.career.seasonal-breadth.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Record seasonal breadth"
+    },
+    "event.prostitute.career.seasonal-breadth.choice.record.text": {
+      "ru": "Сохранить этот результат только в локальном состоянии профессии.",
+      "en": "Record seasonal breadth."
+    },
+    "event.prostitute.career.established.title": {
+      "ru": "Сложившаяся добровольная карьера",
+      "en": "Seasonal breadth can establish the voluntary career"
+    },
+    "event.prostitute.career.established.variant.default.text": {
+      "ru": "Повторяемые договорённости, ясные границы и работа в разных контекстах позволяют считать добровольную карьеру сложившейся. Поздний маршрут при этом не выбирается автоматически.",
+      "en": "Repeated agreements, clear boundaries, and work across changing contexts mark an established voluntary career; no late route is chosen automatically."
+    },
+    "event.prostitute.career.established.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Enter Established without choosing a late route"
+    },
+    "event.prostitute.career.established.choice.continue.text": {
+      "ru": "Продолжить добровольную карьеру без скрытых ограничений.",
+      "en": "Enter Established without choosing a late route."
+    },
+    "event.prostitute.client-flow.intake.title": {
+      "ru": "Добровольный приём клиента",
+      "en": "A voluntary client intake can be accepted or deferred"
+    },
+    "event.prostitute.client-flow.intake.variant.default.text": {
+      "ru": "Приём клиента начинается с делового контекста: нужно понять запрос, время и то, подходит ли встреча текущим условиям. Решение продолжать остаётся отдельным от самого знакомства.",
+      "en": "This professional client-flow step keeps terms and boundaries explicit. The heroine may continue, narrow the terms, or refuse where the choice is offered without losing access to ordinary voluntary work."
+    },
+    "event.prostitute.client-flow.intake.choice.accept.label": {
+      "ru": "Принять встречу",
+      "en": "Open a voluntary professional intake"
+    },
+    "event.prostitute.client-flow.intake.choice.accept.text": {
+      "ru": "Открыть добровольный профессиональный приём клиента.",
+      "en": "Open a voluntary professional intake."
+    },
+    "event.prostitute.client-flow.intake.choice.defer.label": {
+      "ru": "Отложить",
+      "en": "Defer this client flow and keep ordinary work available"
+    },
+    "event.prostitute.client-flow.intake.choice.defer.text": {
+      "ru": "Оставить этот путь необязательным и продолжить обычную работу.",
+      "en": "Defer this client flow and keep ordinary work available."
+    },
+    "event.prostitute.client-flow.terms.title": {
+      "ru": "Ясные профессиональные условия",
+      "en": "Record professional terms before any work result"
+    },
+    "event.prostitute.client-flow.terms.variant.default.text": {
+      "ru": "До начала работы условия проговариваются ясно: время, формат встречи, оплата и границы не должны оставаться догадкой. Точная формула цены здесь не создаётся.",
+      "en": "This professional client-flow step keeps terms and boundaries explicit. The heroine may continue, narrow the terms, or refuse where the choice is offered without losing access to ordinary voluntary work."
+    },
+    "event.prostitute.client-flow.terms.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Record clear terms without setting an adult-content gate"
+    },
+    "event.prostitute.client-flow.terms.choice.record.text": {
+      "ru": "Сохранить этот результат только в локальном состоянии профессии.",
+      "en": "Record clear terms without setting an adult-content gate."
+    },
+    "event.prostitute.client-flow.boundary-open.title": {
+      "ru": "Пауза для уточнения границ",
+      "en": "Open a local boundary/refusal decision"
+    },
+    "event.prostitute.client-flow.boundary-open.variant.default.text": {
+      "ru": "Сложный или изменившийся запрос создаёт паузу: нужно уточнить, что поменялось, подходит ли это героине и стоит ли вообще продолжать встречу.",
+      "en": "This professional client-flow step keeps terms and boundaries explicit. The heroine may continue, narrow the terms, or refuse where the choice is offered without losing access to ordinary voluntary work."
+    },
+    "event.prostitute.client-flow.boundary-open.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Move to the local boundary decision"
+    },
+    "event.prostitute.client-flow.boundary-open.choice.continue.text": {
+      "ru": "Продолжить добровольную карьеру без скрытых ограничений.",
+      "en": "Move to the local boundary decision."
+    },
+    "event.prostitute.client-flow.boundary.title": {
+      "ru": "Выбор границ встречи",
+      "en": "Choose terms, narrow them, or refuse this local client flow"
+    },
+    "event.prostitute.client-flow.boundary.variant.default.text": {
+      "ru": "Условия можно принять, сузить или повторно обозначить границу. Профессиональная уверенность не означает автоматического согласия на изменившийся запрос.",
+      "en": "This professional client-flow step keeps terms and boundaries explicit. The heroine may continue, narrow the terms, or refuse where the choice is offered without losing access to ordinary voluntary work."
+    },
+    "event.prostitute.client-flow.boundary.choice.accept-terms.label": {
+      "ru": "Принять условия",
+      "en": "Accept the recorded terms for this local flow"
+    },
+    "event.prostitute.client-flow.boundary.choice.accept-terms.text": {
+      "ru": "Продолжить в пределах согласованных условий.",
+      "en": "Accept the recorded terms for this local flow."
+    },
+    "event.prostitute.client-flow.boundary.choice.narrow-terms.label": {
+      "ru": "Сузить условия",
+      "en": "Narrow the local terms and continue"
+    },
+    "event.prostitute.client-flow.boundary.choice.narrow-terms.text": {
+      "ru": "Уточнить более узкие условия и продолжить только в их пределах.",
+      "en": "Narrow the local terms and continue."
+    },
+    "event.prostitute.client-flow.boundary.choice.refuse.label": {
+      "ru": "Отказаться",
+      "en": "Refuse this client flow without career penalty"
+    },
+    "event.prostitute.client-flow.boundary.choice.refuse.text": {
+      "ru": "Завершить этот клиентский эпизод без карьерного штрафа.",
+      "en": "Refuse this client flow without career penalty."
+    },
+    "event.prostitute.client-flow.result.title": {
+      "ru": "Результат профессиональной встречи",
+      "en": "Record the non-graphic professional result or respected refusal"
+    },
+    "event.prostitute.client-flow.result.variant.default.text": {
+      "ru": "Результат фиксирует либо завершённую встречу в выбранных условиях, либо уважённый отказ. Отказ является нормальным исходом и не несёт скрытого карьерного штрафа.",
+      "en": "This professional client-flow step keeps terms and boundaries explicit. The heroine may continue, narrow the terms, or refuse where the choice is offered without losing access to ordinary voluntary work."
+    },
+    "event.prostitute.client-flow.result.choice.complete.label": {
+      "ru": "Зафиксировать завершение",
+      "en": "Record a completed professional result"
+    },
+    "event.prostitute.client-flow.result.choice.complete.text": {
+      "ru": "Записать результат в согласованных условиях.",
+      "en": "Record a completed professional result."
+    },
+    "event.prostitute.client-flow.result.choice.respect-refusal.label": {
+      "ru": "Уважить отказ",
+      "en": "Close the work result as a respected refusal"
+    },
+    "event.prostitute.client-flow.result.choice.respect-refusal.text": {
+      "ru": "Закрыть рабочий результат как уважённый отказ.",
+      "en": "Close the work result as a respected refusal."
+    },
+    "event.prostitute.client-flow.admin.title": {
+      "ru": "Рабочая запись и оплата",
+      "en": "Record payment/admin completion without retuning income"
+    },
+    "event.prostitute.client-flow.admin.variant.default.text": {
+      "ru": "Рабочая администрация фиксирует завершённую встречу и контекст оплаты, не создавая второй выплаты поверх уже существующей оплаты смены.",
+      "en": "This professional client-flow step keeps terms and boundaries explicit. The heroine may continue, narrow the terms, or refuse where the choice is offered without losing access to ordinary voluntary work."
+    },
+    "event.prostitute.client-flow.admin.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Close administrative records with no extra money effect"
+    },
+    "event.prostitute.client-flow.admin.choice.record.text": {
+      "ru": "Сохранить этот результат только в локальном состоянии профессии.",
+      "en": "Close administrative records with no extra money effect."
+    },
+    "event.prostitute.cross.satyr-network.title": {
+      "ru": "Профессиональный контакт из Satyr Maid",
+      "en": "Read an existing Satyr Maid professional-network fact"
+    },
+    "event.prostitute.cross.satyr-network.variant.default.text": {
+      "ru": "Уже существующий результат другой системы учитывается только как локальный профессиональный контекст. Исходная карьера сохраняет владение своим состоянием, предметами и правилами.",
+      "en": "An already-shipped system result is acknowledged only as local professional context. The source career or lodging system keeps ownership of its state and rules."
+    },
+    "event.prostitute.cross.satyr-network.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Record only the Prostitute-local Satyr input"
+    },
+    "event.prostitute.cross.satyr-network.choice.record.text": {
+      "ru": "Сохранить этот результат только в локальном состоянии профессии.",
+      "en": "Record only the Prostitute-local Satyr input."
+    },
+    "event.prostitute.cross.tavern-information.title": {
+      "ru": "Подтверждённая информация из Tavern",
+      "en": "Read an existing Tavern information fact"
+    },
+    "event.prostitute.cross.tavern-information.variant.default.text": {
+      "ru": "Уже существующий результат другой системы учитывается только как локальный профессиональный контекст. Исходная карьера сохраняет владение своим состоянием, предметами и правилами.",
+      "en": "An already-shipped system result is acknowledged only as local professional context. The source career or lodging system keeps ownership of its state and rules."
+    },
+    "event.prostitute.cross.tavern-information.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Record only the Prostitute-local Tavern input"
+    },
+    "event.prostitute.cross.tavern-information.choice.record.text": {
+      "ru": "Сохранить этот результат только в локальном состоянии профессии.",
+      "en": "Record only the Prostitute-local Tavern input."
+    },
+    "event.prostitute.cross.guard-safety.title": {
+      "ru": "Контекст безопасности из Guard",
+      "en": "Read an existing Guard city-resolution fact"
+    },
+    "event.prostitute.cross.guard-safety.variant.default.text": {
+      "ru": "Уже существующий результат другой системы учитывается только как локальный профессиональный контекст. Исходная карьера сохраняет владение своим состоянием, предметами и правилами.",
+      "en": "An already-shipped system result is acknowledged only as local professional context. The source career or lodging system keeps ownership of its state and rules."
+    },
+    "event.prostitute.cross.guard-safety.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Record only the Prostitute-local Guard input"
+    },
+    "event.prostitute.cross.guard-safety.choice.record.text": {
+      "ru": "Сохранить этот результат только в локальном состоянии профессии.",
+      "en": "Record only the Prostitute-local Guard input."
+    },
+    "event.prostitute.cross.merchant-business.title": {
+      "ru": "Деловой контекст из Merchant",
+      "en": "Read an existing Merchant delivery fact"
+    },
+    "event.prostitute.cross.merchant-business.variant.default.text": {
+      "ru": "Уже существующий результат другой системы учитывается только как локальный профессиональный контекст. Исходная карьера сохраняет владение своим состоянием, предметами и правилами.",
+      "en": "An already-shipped system result is acknowledged only as local professional context. The source career or lodging system keeps ownership of its state and rules."
+    },
+    "event.prostitute.cross.merchant-business.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Record only the Prostitute-local Merchant input"
+    },
+    "event.prostitute.cross.merchant-business.choice.record.text": {
+      "ru": "Сохранить этот результат только в локальном состоянии профессии.",
+      "en": "Record only the Prostitute-local Merchant input."
+    },
+    "event.prostitute.cross.housing-context.title": {
+      "ru": "Жильё и рабочее пространство",
+      "en": "Separate lodging from professional work-space context"
+    },
+    "event.prostitute.cross.housing-context.variant.default.text": {
+      "ru": "Текущее жильё и профессиональное рабочее пространство рассматриваются как разные вопросы. Карьера фиксирует контекст, но не меняет уровень жилья героини.",
+      "en": "Current lodging and professional work space are reviewed as separate concerns. The existing lodging system keeps ownership of housing while the career records only local context."
+    },
+    "event.prostitute.cross.housing-context.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Keep lodging and work space separate"
+    },
+    "event.prostitute.cross.housing-context.choice.record.text": {
+      "ru": "Сохранить этот результат только в локальном состоянии профессии.",
+      "en": "Record the housing context without changing lodging state."
+    },
+    "event.prostitute.items.formal-attire.title": {
+      "ru": "Формальная профессиональная одежда",
+      "en": "Formal attire becomes available for professional presentation"
+    },
+    "event.prostitute.items.formal-attire.variant.default.text": {
+      "ru": "Этот предмет поддерживает один узкий профессиональный контекст и не создаёт универсальный статус, согласие, доступ к жилью или Palace authority.",
+      "en": "This career-specific item supports one narrow professional context without creating universal status, consent, housing access, or Palace authority."
+    },
+    "event.prostitute.items.formal-attire.choice.take.label": {
+      "ru": "Взять",
+      "en": "Keep formal attire for Prostitute-local professional context"
+    },
+    "event.prostitute.items.formal-attire.choice.take.text": {
+      "ru": "Взять предмет только для локального профессионального контекста.",
+      "en": "Keep formal attire for Prostitute-local professional context."
+    },
+    "event.prostitute.items.formal-attire.choice.defer.label": {
+      "ru": "Отложить",
+      "en": "Continue ordinary work without formal attire"
+    },
+    "event.prostitute.items.formal-attire.choice.defer.text": {
+      "ru": "Оставить этот путь необязательным и продолжить обычную работу.",
+      "en": "Continue ordinary work without formal attire."
+    },
+    "event.prostitute.items.private-room-key.title": {
+      "ru": "Ключ от частного рабочего помещения",
+      "en": "A narrow private-room key becomes available"
+    },
+    "event.prostitute.items.private-room-key.variant.default.text": {
+      "ru": "Этот предмет поддерживает один узкий профессиональный контекст и не создаёт универсальный статус, согласие, доступ к жилью или Palace authority.",
+      "en": "This career-specific item supports one narrow professional context without creating universal status, consent, housing access, or Palace authority."
+    },
+    "event.prostitute.items.private-room-key.choice.take.label": {
+      "ru": "Взять",
+      "en": "Keep the private-room key without changing housing rules"
+    },
+    "event.prostitute.items.private-room-key.choice.take.text": {
+      "ru": "Взять предмет только для локального профессионального контекста.",
+      "en": "Keep the private-room key without changing housing rules."
+    },
+    "event.prostitute.items.private-room-key.choice.defer.label": {
+      "ru": "Отложить",
+      "en": "Keep using ordinary workplace arrangements"
+    },
+    "event.prostitute.items.private-room-key.choice.defer.text": {
+      "ru": "Оставить этот путь необязательным и продолжить обычную работу.",
+      "en": "Keep using ordinary workplace arrangements."
+    },
+    "event.prostitute.items.client-token.title": {
+      "ru": "Жетон постоянного клиента",
+      "en": "A recurring-client token records one professional route"
+    },
+    "event.prostitute.items.client-token.variant.default.text": {
+      "ru": "Этот предмет поддерживает один узкий профессиональный контекст и не создаёт универсальный статус, согласие, доступ к жилью или Palace authority.",
+      "en": "This career-specific item supports one narrow professional context without creating universal status, consent, housing access, or Palace authority."
+    },
+    "event.prostitute.items.client-token.choice.take.label": {
+      "ru": "Взять",
+      "en": "Keep the client token as local route evidence"
+    },
+    "event.prostitute.items.client-token.choice.take.text": {
+      "ru": "Взять предмет только для локального профессионального контекста.",
+      "en": "Keep the client token as local route evidence."
+    },
+    "event.prostitute.items.client-token.choice.defer.label": {
+      "ru": "Отложить",
+      "en": "Keep the relationship without a token"
+    },
+    "event.prostitute.items.client-token.choice.defer.text": {
+      "ru": "Оставить этот путь необязательным и продолжить обычную работу.",
+      "en": "Keep the relationship without a token."
+    },
+    "event.prostitute.items.evidence-case.title": {
+      "ru": "Папка профессиональных записей",
+      "en": "An evidence case supports local documentation"
+    },
+    "event.prostitute.items.evidence-case.variant.default.text": {
+      "ru": "Этот предмет поддерживает один узкий профессиональный контекст и не создаёт универсальный статус, согласие, доступ к жилью или Palace authority.",
+      "en": "This career-specific item supports one narrow professional context without creating universal status, consent, housing access, or Palace authority."
+    },
+    "event.prostitute.items.evidence-case.choice.take.label": {
+      "ru": "Взять",
+      "en": "Keep the evidence case for local documentation only"
+    },
+    "event.prostitute.items.evidence-case.choice.take.text": {
+      "ru": "Взять предмет только для локального профессионального контекста.",
+      "en": "Keep the evidence case for local documentation only."
+    },
+    "event.prostitute.items.evidence-case.choice.defer.label": {
+      "ru": "Отложить",
+      "en": "Continue without the optional evidence case"
+    },
+    "event.prostitute.items.evidence-case.choice.defer.text": {
+      "ru": "Оставить этот путь необязательным и продолжить обычную работу.",
+      "en": "Continue without the optional evidence case."
+    },
+    "event.prostitute.relationship.intro.title": {
+      "ru": "Постоянный профессиональный клиент",
+      "en": "Introduce a recurring professional client without implying romance"
+    },
+    "event.prostitute.relationship.intro.variant.default.text": {
+      "ru": "Постоянный клиент узнаётся по истории договорённостей и предсказуемости общения, а не по автоматической близости. Связь может оставаться полностью профессиональной.",
+      "en": "This recurring-client step keeps professional trust distinct from friendship and romance. Relationship choices never become a requirement for ordinary career progression."
+    },
+    "event.prostitute.relationship.intro.choice.professional.label": {
+      "ru": "Оставить контакт профессиональным",
+      "en": "Keep the introduction professional"
+    },
+    "event.prostitute.relationship.intro.choice.professional.text": {
+      "ru": "Сохранить знакомство как профессиональную связь.",
+      "en": "Keep the introduction professional."
+    },
+    "event.prostitute.relationship.trust.title": {
+      "ru": "Профессиональное доверие",
+      "en": "Build recurring-client professional trust"
+    },
+    "event.prostitute.relationship.trust.variant.default.text": {
+      "ru": "Профессиональное доверие растёт из повторяемых договорённостей и соблюдённых границ. Оно не определяет автоматически дружбу, романтику или карьерный прогресс.",
+      "en": "This recurring-client step keeps professional trust distinct from friendship and romance. Relationship choices never become a requirement for ordinary career progression."
+    },
+    "event.prostitute.relationship.trust.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue professional coordination"
+    },
+    "event.prostitute.relationship.trust.choice.continue.text": {
+      "ru": "Продолжить добровольную карьеру без скрытых ограничений.",
+      "en": "Continue professional coordination."
+    },
+    "event.prostitute.relationship.mode-open.title": {
+      "ru": "Отдельный выбор характера отношений",
+      "en": "Separate professional, friendship, and romance modes"
+    },
+    "event.prostitute.relationship.mode-open.variant.default.text": {
+      "ru": "Профессиональное доверие не определяет личный смысл отношений. Героиня может отдельно решить, остаётся ли контакт профессиональным или меняется.",
+      "en": "This recurring-client step keeps professional trust distinct from friendship and romance. Relationship choices never become a requirement for ordinary career progression."
+    },
+    "event.prostitute.relationship.mode-open.choice.open.label": {
+      "ru": "Обсудить",
+      "en": "Discuss the relationship mode without changing career access"
+    },
+    "event.prostitute.relationship.mode-open.choice.open.text": {
+      "ru": "Открыто обсудить ситуацию без автоматического изменения карьеры.",
+      "en": "Discuss the relationship mode without changing career access."
+    },
+    "event.prostitute.relationship.mode.title": {
+      "ru": "Характер отношений с постоянным клиентом",
+      "en": "Choose a relationship mode independently of career progression"
+    },
+    "event.prostitute.relationship.mode.variant.default.text": {
+      "ru": "Только профессиональные отношения, дружба и романтика являются отдельными явными выборами. Ни один вариант не выводится автоматически из повторной работы или статуса.",
+      "en": "This recurring-client step keeps professional trust distinct from friendship and romance. Relationship choices never become a requirement for ordinary career progression."
+    },
+    "event.prostitute.relationship.mode.choice.professional-only.label": {
+      "ru": "Только профессионально",
+      "en": "Keep the relationship professional only"
+    },
+    "event.prostitute.relationship.mode.choice.professional-only.text": {
+      "ru": "Оставить отношения только профессиональными.",
+      "en": "Keep the relationship professional only."
+    },
+    "event.prostitute.relationship.mode.choice.friendship.label": {
+      "ru": "Дружба",
+      "en": "Allow friendship without romance"
+    },
+    "event.prostitute.relationship.mode.choice.friendship.text": {
+      "ru": "Разрешить дружбу как отдельный выбор без автоматической романтики.",
+      "en": "Allow friendship without romance."
+    },
+    "event.prostitute.relationship.mode.choice.romance.label": {
+      "ru": "Романтика",
+      "en": "Allow romance as an optional relationship mode"
+    },
+    "event.prostitute.relationship.mode.choice.romance.text": {
+      "ru": "Разрешить романтику как отдельный добровольный выбор.",
+      "en": "Allow romance as an optional relationship mode."
+    },
+    "event.prostitute.relationship.conflict-open.title": {
+      "ru": "Профессиональный конфликт",
+      "en": "Open a professional conflict without forcing a relationship route"
+    },
+    "event.prostitute.relationship.conflict-open.variant.default.text": {
+      "ru": "Разногласие можно обсудить прямо, не превращая профессиональное напряжение во владение, романтику или обязательную постоянную вражду.",
+      "en": "This recurring-client step keeps professional trust distinct from friendship and romance. Relationship choices never become a requirement for ordinary career progression."
+    },
+    "event.prostitute.relationship.conflict-open.choice.open.label": {
+      "ru": "Обсудить",
+      "en": "Address the conflict directly"
+    },
+    "event.prostitute.relationship.conflict-open.choice.open.text": {
+      "ru": "Открыто обсудить ситуацию без автоматического изменения карьеры.",
+      "en": "Address the conflict directly."
+    },
+    "event.prostitute.relationship.conflict-resolve.title": {
+      "ru": "Разрешение конфликта",
+      "en": "Resolve recurring-client conflict with refusal-safe continuation"
+    },
+    "event.prostitute.relationship.conflict-resolve.variant.default.text": {
+      "ru": "Конфликт может завершиться сотрудничеством, ограниченным соперничеством или отказом. Завершение маршрута клиента не блокирует обычную добровольную работу.",
+      "en": "This recurring-client step keeps professional trust distinct from friendship and romance. Relationship choices never become a requirement for ordinary career progression."
+    },
+    "event.prostitute.relationship.conflict-resolve.choice.cooperate.label": {
+      "ru": "Сотрудничать",
+      "en": "Resolve the conflict cooperatively"
+    },
+    "event.prostitute.relationship.conflict-resolve.choice.cooperate.text": {
+      "ru": "Разрешить конфликт через профессиональное сотрудничество.",
+      "en": "Resolve the conflict cooperatively."
+    },
+    "event.prostitute.relationship.conflict-resolve.choice.rivalry.label": {
+      "ru": "Соперничество",
+      "en": "Keep a bounded professional rivalry"
+    },
+    "event.prostitute.relationship.conflict-resolve.choice.rivalry.text": {
+      "ru": "Сохранить ограниченное профессиональное соперничество.",
+      "en": "Keep a bounded professional rivalry."
+    },
+    "event.prostitute.relationship.conflict-resolve.choice.decline.label": {
+      "ru": "Прекратить контакт",
+      "en": "End the recurring-client route without blocking ordinary work"
+    },
+    "event.prostitute.relationship.conflict-resolve.choice.decline.text": {
+      "ru": "Завершить этот маршрут отношений, не блокируя обычную работу.",
+      "en": "End the recurring-client route without blocking ordinary work."
+    },
+    "event.prostitute.routes.veteran-ready.title": {
+      "ru": "Готовность маршрута Veteran",
+      "en": "Veteran readiness reflects stable voluntary professional breadth"
+    },
+    "event.prostitute.routes.veteran-ready.variant.default.text": {
+      "ru": "Готовность Veteran отражает устойчивую добровольную практику в разных контекстах и сезонах, с ясными границами и повторяемой работой с клиентами. Романтика не требуется.",
+      "en": "This late-career step records a voluntary professional direction without auto-committing an ending or closing ordinary work."
+    },
+    "event.prostitute.routes.veteran-ready.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Record Veteran readiness without route commitment"
+    },
+    "event.prostitute.routes.veteran-ready.choice.record.text": {
+      "ru": "Сохранить этот результат только в локальном состоянии профессии.",
+      "en": "Record Veteran readiness without route commitment."
+    },
+    "event.prostitute.routes.house-ready.title": {
+      "ru": "Готовность Independent House",
+      "en": "Independent House readiness uses local workplace and business evidence"
+    },
+    "event.prostitute.routes.house-ready.variant.default.text": {
+      "ru": "Independent House сочетает локальный контроль рабочего пространства, рассмотренный жилищный контекст и существующий Merchant business input, не создавая цены недвижимости или новую систему жилья.",
+      "en": "This late-career step records a voluntary professional direction without auto-committing an ending or closing ordinary work."
+    },
+    "event.prostitute.routes.house-ready.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Record Independent House readiness without housing/economy rewrite"
+    },
+    "event.prostitute.routes.house-ready.choice.record.text": {
+      "ru": "Сохранить этот результат только в локальном состоянии профессии.",
+      "en": "Record Independent House readiness without housing/economy rewrite."
+    },
+    "event.prostitute.routes.elite-ready.title": {
+      "ru": "Готовность Elite Clientele",
+      "en": "Elite Clientele readiness stays social and never grants Palace access"
+    },
+    "event.prostitute.routes.elite-ready.variant.default.text": {
+      "ru": "Elite Clientele сочетает формальную подачу с заслуженным доверием постоянного клиента. Формальность и приватность не означают романтику и не дают доступ во Дворец.",
+      "en": "This late-career step records a voluntary professional direction without auto-committing an ending or closing ordinary work."
+    },
+    "event.prostitute.routes.elite-ready.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Record Elite Clientele readiness without Palace authority"
+    },
+    "event.prostitute.routes.elite-ready.choice.record.text": {
+      "ru": "Сохранить этот результат только в локальном состоянии профессии.",
+      "en": "Record Elite Clientele readiness without Palace authority."
+    },
+    "event.prostitute.routes.network-ready.title": {
+      "ru": "Готовность Network/Protection",
+      "en": "Network Protection readiness uses local documentation plus shipped contacts"
+    },
+    "event.prostitute.routes.network-ready.variant.default.text": {
+      "ru": "Network/Protection сочетает локальную документацию с существующим профессиональным контактом. Сеть означает взаимную поддержку и информацию, а не владельца или обязательного защитника.",
+      "en": "This late-career step records a voluntary professional direction without auto-committing an ending or closing ordinary work."
+    },
+    "event.prostitute.routes.network-ready.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Record Network Protection readiness without a global protection system"
+    },
+    "event.prostitute.routes.network-ready.choice.record.text": {
+      "ru": "Сохранить этот результат только в локальном состоянии профессии.",
+      "en": "Record Network Protection readiness without a global protection system."
+    },
+    "event.prostitute.routes.choose.title": {
+      "ru": "Выбор позднего карьерного маршрута",
+      "en": "Choose or defer one prepared late-career route"
+    },
+    "event.prostitute.routes.choose.variant.default.text": {
+      "ru": "Несколько поздних маршрутов могут быть готовы одновременно. Их можно выбрать отдельно или отложить выбор, сохранив обычную работу доступной.",
+      "en": "This late-career step records a voluntary professional direction without auto-committing an ending or closing ordinary work."
+    },
+    "event.prostitute.routes.choose.choice.veteran.label": {
+      "ru": "Veteran",
+      "en": "Take Veteran"
+    },
+    "event.prostitute.routes.choose.choice.veteran.text": {
+      "ru": "Выбрать устойчивую профессиональную практику Veteran.",
+      "en": "Take Veteran."
+    },
+    "event.prostitute.routes.choose.choice.independent-house.label": {
+      "ru": "Independent House",
+      "en": "Take Independent House"
+    },
+    "event.prostitute.routes.choose.choice.independent-house.text": {
+      "ru": "Выбрать маршрут контроля рабочего пространства и условий.",
+      "en": "Take Independent House."
+    },
+    "event.prostitute.routes.choose.choice.elite-clientele.label": {
+      "ru": "Elite Clientele",
+      "en": "Take Elite Clientele"
+    },
+    "event.prostitute.routes.choose.choice.elite-clientele.text": {
+      "ru": "Выбрать формальный маршрут Elite Clientele без Palace authority.",
+      "en": "Take Elite Clientele."
+    },
+    "event.prostitute.routes.choose.choice.network-protection.label": {
+      "ru": "Network/Protection",
+      "en": "Take Network Protection"
+    },
+    "event.prostitute.routes.choose.choice.network-protection.text": {
+      "ru": "Выбрать маршрут взаимной сети и профессиональной поддержки.",
+      "en": "Take Network Protection."
+    },
+    "event.prostitute.routes.choose.choice.defer.label": {
+      "ru": "Отложить",
+      "en": "Keep all ready routes open"
+    },
+    "event.prostitute.routes.choose.choice.defer.text": {
+      "ru": "Оставить этот путь необязательным и продолжить обычную работу.",
+      "en": "Keep all ready routes open."
+    },
+    "event.prostitute.routes.outcome-ready.title": {
+      "ru": "Карьерный маршрут готов к исходу",
+      "en": "Late career state can become outcome-ready without committing an ending"
+    },
+    "event.prostitute.routes.outcome-ready.variant.default.text": {
+      "ru": "Поздний карьерный маршрут может стать готовым к исходу без автоматического завершения жизни. Hard Work остаётся независимым и требует отдельного commit.",
+      "en": "This late-career step records a voluntary professional direction without auto-committing an ending or closing ordinary work."
+    },
+    "event.prostitute.routes.outcome-ready.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Enter outcome-ready without auto-committing an ending"
+    },
+    "event.prostitute.routes.outcome-ready.choice.continue.text": {
+      "ru": "Продолжить добровольную карьеру без скрытых ограничений.",
+      "en": "Enter outcome-ready without auto-committing an ending."
+    },
+    "nightChoice.prostitute.night.client-followup.label": {
+      "ru": "Добровольная встреча с постоянным клиентом",
+      "en": "Optional professional client follow-up"
+    },
+    "item.prostitute_formal_attire.label": {
+      "ru": "Формальная профессиональная одежда",
+      "en": "Professional formal attire"
+    },
+    "item.prostitute_private_room_key.label": {
+      "ru": "Ключ от частного рабочего помещения",
+      "en": "Private room key"
+    },
+    "item.prostitute_client_token.label": {
+      "ru": "Жетон постоянного клиента",
+      "en": "Recurring client token"
+    },
+    "item.prostitute_evidence_case.label": {
+      "ru": "Папка профессиональных записей",
+      "en": "Professional evidence case"
+    },
+    "presentation.static.career.prostitute.event.alt": {
+      "ru": "Неэксплицитная профессиональная сцена добровольной карьеры; изображение не определяет игровой выбор или согласие.",
+      "en": "A non-explicit scene from the voluntary professional career; the image does not determine gameplay choice or consent."
+    },
+    "presentation.static.career.prostitute.event.caption": {
+      "ru": "Добровольная профессиональная карьера.",
+      "en": "Voluntary professional career."
     }
   }
 }
