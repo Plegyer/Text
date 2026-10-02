@@ -278,7 +278,7 @@ test('School and Large Activity remain available while bound',()=>{
       const directMoney=result.effects
         .filter((effect:any)=>effect.kind==='modifyResource'&&effect.resource==='money')
         .reduce((sum:number,effect:any)=>sum+Math.max(0,effect.delta),0);
-      assert.notEqual(directMoney,20000,`${definition.id}/${result.id} must not be a trivial 20000-money farm`);
+      assert.ok(directMoney<20000,`${definition.id}/${result.id} must not directly fund the full 20000 debt`);
     }
   }
 });
@@ -329,7 +329,7 @@ test('repayment is one all-at-once 20000 action and releases the ordinary career
   assert.equal(actionAvailable(lumber,s,catalog),true);
 
   s=dispatch(s,{type:'endDay'},secretDebtCatalog);
-  s=dispatch(s,{type:'chooseLodging',id:'lodging.normal'},secretDebtCatalog);
+  s=dispatch(s,{type:'chooseLodging',id:'lodging.street'},secretDebtCatalog);
   assert.equal(s.run.pending?.eventId==='secret-debt.forced-night-work',false);
   assert.equal(s.run.flow.night?.phase,'VoluntaryNightChoice');
 });
