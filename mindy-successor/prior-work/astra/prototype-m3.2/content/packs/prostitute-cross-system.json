@@ -1,0 +1,257 @@
+{
+  "schemaVersion": 1,
+  "id": "prostitute.cross",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "careers": [
+        "prostitute",
+        "satyr-maid",
+        "tavern",
+        "guard",
+        "merchant"
+      ]
+    },
+    "writes": {
+      "careers": [
+        "prostitute"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "prostitute.cross.satyr-network",
+      "title": "Read an existing Satyr Maid professional-network fact",
+      "sourceDomain": "prostitute",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "actionCompleted",
+          "action": "prostitute.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 64,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerFact",
+          "career": "satyr-maid",
+          "fact": "personal-network-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "prostitute",
+          "fact": "satyr-network-known",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Read an existing Satyr Maid professional-network fact. This safe-prep scene stays non-graphic and records only voluntary professional state. It does not define a Lust threshold, persisted consent mechanic, explicit presentation gate, Secret Debt state, or Palace access.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record only the Prostitute-local Satyr input",
+          "text": "Record only the Prostitute-local Satyr input.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "prostitute",
+              "fact": "satyr-network-known"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prostitute.cross.tavern-information",
+      "title": "Read an existing Tavern information fact",
+      "sourceDomain": "prostitute",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "actionCompleted",
+          "action": "prostitute.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 63,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "rumour-confirmed",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "prostitute",
+          "fact": "tavern-information-known",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Read an existing Tavern information fact. This safe-prep scene stays non-graphic and records only voluntary professional state. It does not define a Lust threshold, persisted consent mechanic, explicit presentation gate, Secret Debt state, or Palace access.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record only the Prostitute-local Tavern input",
+          "text": "Record only the Prostitute-local Tavern input.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "prostitute",
+              "fact": "tavern-information-known"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prostitute.cross.guard-safety",
+      "title": "Read an existing Guard city-resolution fact",
+      "sourceDomain": "prostitute",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "actionCompleted",
+          "action": "prostitute.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 62,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerFact",
+          "career": "guard",
+          "fact": "city-dispute-resolved",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "prostitute",
+          "fact": "guard-safety-context-known",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Read an existing Guard city-resolution fact. This safe-prep scene stays non-graphic and records only voluntary professional state. It does not define a Lust threshold, persisted consent mechanic, explicit presentation gate, Secret Debt state, or Palace access.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record only the Prostitute-local Guard input",
+          "text": "Record only the Prostitute-local Guard input.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "prostitute",
+              "fact": "guard-safety-context-known"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prostitute.cross.merchant-business",
+      "title": "Read an existing Merchant delivery fact",
+      "sourceDomain": "prostitute",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "actionCompleted",
+          "action": "prostitute.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 61,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerFact",
+          "career": "merchant",
+          "fact": "delivery-recorded",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "prostitute",
+          "fact": "merchant-business-context-known",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Read an existing Merchant delivery fact. This safe-prep scene stays non-graphic and records only voluntary professional state. It does not define a Lust threshold, persisted consent mechanic, explicit presentation gate, Secret Debt state, or Palace access.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record only the Prostitute-local Merchant input",
+          "text": "Record only the Prostitute-local Merchant input.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "prostitute",
+              "fact": "merchant-business-context-known"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

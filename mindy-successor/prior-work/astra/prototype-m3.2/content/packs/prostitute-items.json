@@ -1,0 +1,355 @@
+{
+  "schemaVersion": 1,
+  "id": "prostitute.items",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "careers": [
+        "prostitute"
+      ],
+      "quests": [
+        "prostitute.client-flow"
+      ],
+      "relationships": [
+        "prostitute.recurring-client"
+      ],
+      "inventory": [
+        "prostitute_formal_attire",
+        "prostitute_private_room_key",
+        "prostitute_client_token",
+        "prostitute_evidence_case"
+      ],
+      "itemCapabilities": [
+        "prostitute_formal_presence",
+        "prostitute_private_room_access",
+        "prostitute_client_token",
+        "prostitute_handle_evidence"
+      ]
+    },
+    "writes": {
+      "careers": [
+        "prostitute"
+      ],
+      "inventory": [
+        "prostitute_formal_attire",
+        "prostitute_private_room_key",
+        "prostitute_client_token",
+        "prostitute_evidence_case"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "prostitute.items.formal-attire",
+      "title": "Formal attire becomes available for professional presentation",
+      "sourceDomain": "prostitute",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerTransition",
+          "career": "prostitute"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "prostitute.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 68,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "prostitute",
+              "stage": "known-professional"
+            },
+            {
+              "kind": "careerStage",
+              "career": "prostitute",
+              "stage": "established"
+            }
+          ]
+        },
+        {
+          "kind": "careerFact",
+          "career": "prostitute",
+          "fact": "professional-boundary-recorded",
+          "present": true
+        },
+        {
+          "kind": "itemCapability",
+          "capability": "prostitute_formal_presence",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Formal attire becomes available for professional presentation. This safe-prep scene stays non-graphic and records only voluntary professional state. It does not define a Lust threshold, persisted consent mechanic, explicit presentation gate, Secret Debt state, or Palace access.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "take",
+          "label": "Keep formal attire for Prostitute-local professional context",
+          "text": "Keep formal attire for Prostitute-local professional context.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addItem",
+              "id": "prostitute_formal_attire",
+              "count": 1
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "prostitute",
+              "fact": "formal-attire-issued"
+            }
+          ]
+        },
+        {
+          "id": "defer",
+          "label": "Continue ordinary work without formal attire",
+          "text": "Continue ordinary work without formal attire.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "prostitute.items.private-room-key",
+      "title": "A narrow private-room key becomes available",
+      "sourceDomain": "prostitute",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "prostitute",
+          "fact": "admin-cycle-complete"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "prostitute.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 67,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerFact",
+          "career": "prostitute",
+          "fact": "admin-cycle-complete",
+          "present": true
+        },
+        {
+          "kind": "itemCapability",
+          "capability": "prostitute_private_room_access",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "A narrow private-room key becomes available. This safe-prep scene stays non-graphic and records only voluntary professional state. It does not define a Lust threshold, persisted consent mechanic, explicit presentation gate, Secret Debt state, or Palace access.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "take",
+          "label": "Keep the private-room key without changing housing rules",
+          "text": "Keep the private-room key without changing housing rules.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addItem",
+              "id": "prostitute_private_room_key",
+              "count": 1
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "prostitute",
+              "fact": "private-room-key-issued"
+            }
+          ]
+        },
+        {
+          "id": "defer",
+          "label": "Keep using ordinary workplace arrangements",
+          "text": "Keep using ordinary workplace arrangements.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "prostitute.items.client-token",
+      "title": "A recurring-client token records one professional route",
+      "sourceDomain": "prostitute",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "relationshipFactAdded",
+          "relationship": "prostitute.recurring-client",
+          "fact": "professional-trust-earned"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "prostitute.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 66,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "relationshipFact",
+          "relationship": "prostitute.recurring-client",
+          "fact": "professional-trust-earned",
+          "present": true
+        },
+        {
+          "kind": "itemCapability",
+          "capability": "prostitute_client_token",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "A recurring-client token records one professional route. This safe-prep scene stays non-graphic and records only voluntary professional state. It does not define a Lust threshold, persisted consent mechanic, explicit presentation gate, Secret Debt state, or Palace access.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "take",
+          "label": "Keep the client token as local route evidence",
+          "text": "Keep the client token as local route evidence.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addItem",
+              "id": "prostitute_client_token",
+              "count": 1
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "prostitute",
+              "fact": "client-token-issued"
+            }
+          ]
+        },
+        {
+          "id": "defer",
+          "label": "Keep the relationship without a token",
+          "text": "Keep the relationship without a token.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "prostitute.items.evidence-case",
+      "title": "An evidence case supports local documentation",
+      "sourceDomain": "prostitute",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "prostitute",
+          "fact": "client-refusal-recorded"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "prostitute.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 65,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerFact",
+          "career": "prostitute",
+          "fact": "client-refusal-recorded",
+          "present": true
+        },
+        {
+          "kind": "itemCapability",
+          "capability": "prostitute_handle_evidence",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "An evidence case supports local documentation. This safe-prep scene stays non-graphic and records only voluntary professional state. It does not define a Lust threshold, persisted consent mechanic, explicit presentation gate, Secret Debt state, or Palace access.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "take",
+          "label": "Keep the evidence case for local documentation only",
+          "text": "Keep the evidence case for local documentation only.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addItem",
+              "id": "prostitute_evidence_case",
+              "count": 1
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "prostitute",
+              "fact": "evidence-case-issued"
+            }
+          ]
+        },
+        {
+          "id": "defer",
+          "label": "Continue without the optional evidence case",
+          "text": "Continue without the optional evidence case.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    }
+  ]
+}
