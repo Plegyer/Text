@@ -441,7 +441,9 @@ export const definitionsSchema=z.object({
 }).strict();
 export type Definitions=z.infer<typeof definitionsSchema>;
 
-export const progressionStatCapSchema=z.union([z.literal(100),z.literal(200)]);\nexport type ProgressionStatCap=z.infer<typeof progressionStatCapSchema>;\nconst progressionStatRecord = z.object(Object.fromEntries(stats.map(k=>[k,z.number().int().min(0).max(200)])) as Record<Stat,ReturnType<typeof z.number>>).strict();
+export const progressionStatCapSchema=z.union([z.literal(100),z.literal(200)]);
+export type ProgressionStatCap=z.infer<typeof progressionStatCapSchema>;
+const progressionStatRecord = z.object(Object.fromEntries(stats.map(k=>[k,z.number().int().min(0).max(200)])) as Record<Stat,ReturnType<typeof z.number>>).strict();
 const historyEntry=z.object({count:n,lastDay:n,variants:z.record(z.string(),n)}).strict();
 const legacyMetricRecord=z.record(z.string(),z.number().int().min(0).max(1_000_000));
 const inventoryRecord=z.record(z.string(),n);
