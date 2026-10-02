@@ -10481,6 +10481,170 @@
     "event.merchant.crisis.delivery-pressure.choice.accept-narrow-risk.text": {
       "ru": "Выбор сохраняет текущие условия Merchant без новой системы.",
       "en": "Take a documented trade risk without creating an illegal-goods law or morality score."
+    },
+    "ui.secretDebt.workTitle": {
+      "ru": "Связывающий долг",
+      "en": "Binding debt"
+    },
+    "ui.secretDebt.ordinaryWorkLocked": {
+      "ru": "Обычные профессии недоступны, пока действует связывающий долг. Их прежний прогресс сохранён.",
+      "en": "Ordinary profession shifts are unavailable while the binding debt is active. Their prior progress is preserved."
+    },
+    "action.secret-debt.shift.label": {
+      "ru": "Принудительная смена",
+      "en": "Bound work shift"
+    },
+    "action.secret-debt.shift.description": {
+      "ru": "Обязательная рабочая смена после активации скрытого долга. Точные приросты характеристик и экономика долга остаются открытым Product-решением.",
+      "en": "A compulsory work shift after the hidden debt activates. Exact stat gains and debt economics remain Product-open."
+    },
+    "action.secret-debt.shift.scene.spring.default.text": {
+      "ru": "Обязательная смена идёт по навязанному распорядку. Сейчас маршрут записывает только факт завершённой работы, не подставляя незакрытые числовые приросты.",
+      "en": "The compulsory shift follows an imposed routine. For now the route records only completed work instead of inventing unlocked numeric gains."
+    },
+    "action.secret-debt.shift.scene.summer.default.text": {
+      "ru": "Летняя смена остаётся принудительной работой: день засчитан, но выдуманного прироста характеристик или уменьшения долга здесь нет.",
+      "en": "The summer shift remains compulsory work: the day is counted, but no unapproved stat package or debt reduction is invented here."
+    },
+    "action.secret-debt.shift.scene.autumn.default.text": {
+      "ru": "Осенняя смена продолжает связанную карьеру, сохраняя открытыми точные приросты, долг и награды.",
+      "en": "The autumn shift continues the bound career while exact gains, debt tuning, and rewards remain open."
+    },
+    "action.secret-debt.shift.scene.winter.default.text": {
+      "ru": "Зимняя смена фиксирует завершённую обязательную работу, не превращая старые черновые числа в текущую authority.",
+      "en": "The winter shift records completed compulsory work without turning historical draft numbers into current authority."
+    },
+    "profession.secret-debt.label": {
+      "ru": "Связывающий долг",
+      "en": "Secret Debt"
+    },
+    "profession.secret-debt.description": {
+      "ru": "Отдельный скрытый принудительный маршрут, не входящий в десять обычных профессий.",
+      "en": "A separate hidden forced route outside the ten ordinary professions."
+    },
+    "career.secret-debt.stage.unseen.label": {
+      "ru": "Не начат",
+      "en": "Unseen"
+    },
+    "career.secret-debt.stage.offered.label": {
+      "ru": "Предложение помощи",
+      "en": "Offer surfaced"
+    },
+    "career.secret-debt.stage.refused.label": {
+      "ru": "Отказано",
+      "en": "Refused"
+    },
+    "career.secret-debt.stage.accepted.label": {
+      "ru": "Помощь принята",
+      "en": "Accepted"
+    },
+    "career.secret-debt.stage.bound.label": {
+      "ru": "Связана долгом",
+      "en": "Bound"
+    },
+    "career.secret-debt.stage.resolved-paid.label": {
+      "ru": "Свобода выкуплена",
+      "en": "Paid freedom resolved"
+    },
+    "career.secret-debt.stage.resolved-bound.label": {
+      "ru": "Связанная жизнь",
+      "en": "Bound life resolved"
+    },
+    "career.secret-debt.stage.resolved-takeover.label": {
+      "ru": "Перехват власти",
+      "en": "Takeover resolved"
+    },
+    "event.secret-debt.lender-encounter.title": {
+      "ru": "Помощь с ценой возврата",
+      "en": "Help with a return price"
+    },
+    "event.secret-debt.lender-encounter.variant.default.text": {
+      "ru": "Незнакомец замечает, что ты ночуешь на улице, и предлагает немедленную помощь. Объяснение звучит просто: вернёшь позже. Ничто в предложении не раскрывает ловушку за этими словами.",
+      "en": "A stranger notices that you are sleeping outside and offers immediate help. The explanation sounds simple: return it later. Nothing in the offer reveals the trap behind those words."
+    },
+    "event.secret-debt.lender-encounter.choice.accept.label": {
+      "ru": "Принять помощь",
+      "en": "Accept the help"
+    },
+    "event.secret-debt.lender-encounter.choice.accept.text": {
+      "ru": "Ты принимаешь помощь. Маршрут фиксирует выбор и день принятия, но не подставляет ещё не утверждённую сумму.",
+      "en": "You accept the help. The route records the choice and acceptance day without inventing the still-open amount."
+    },
+    "event.secret-debt.lender-encounter.choice.refuse.label": {
+      "ru": "Отказаться",
+      "en": "Refuse"
+    },
+    "event.secret-debt.lender-encounter.choice.refuse.text": {
+      "ru": "Ты отказываешься. Эта встреча закрыта и больше не предлагается в этой жизни.",
+      "en": "You refuse. This encounter is closed and will not be offered again in this life."
+    },
+    "event.secret-debt.activation.title": {
+      "ru": "Долг захлопывается",
+      "en": "The debt closes around you"
+    },
+    "event.secret-debt.activation.variant.default.text": {
+      "ru": "Прежнее обещание раскрывается как связывающая долговая ловушка. Точная сумма и задержка активации остаются открытыми; сцена лишь подтверждает, что состояние bound действительно началось.",
+      "en": "The earlier promise is revealed as a binding debt trap. The exact amount and activation delay remain Product-open; this scene only confirms that the bound state has actually begun."
+    },
+    "event.secret-debt.activation.choice.acknowledge.label": {
+      "ru": "Принять новые условия как факт",
+      "en": "Face the new terms"
+    },
+    "event.secret-debt.activation.choice.acknowledge.text": {
+      "ru": "Обычные профессиональные смены теперь заблокированы, но весь уже накопленный в них прогресс сохранён.",
+      "en": "Ordinary profession shifts are now blocked while all progress already earned in them remains intact."
+    },
+    "event.secret-debt.forced-night-work.title": {
+      "ru": "Эта ночь больше не твоя",
+      "en": "The night is no longer yours"
+    },
+    "event.secret-debt.forced-night-work.variant.default.text": {
+      "ru": "После выбора ночлега держатель долга забирает оставшийся ночной слот под принудительную работу. Точный штраф Energy следующего дня намеренно не применяется, пока Product не зафиксирует значение.",
+      "en": "After lodging is resolved, the debt holder claims the remaining Night slot for compulsory work. The exact next-day Energy penalty is intentionally not applied until Product locks that value."
+    },
+    "event.secret-debt.forced-night-work.choice.finish.label": {
+      "ru": "Пережить принудительную работу",
+      "en": "Get through the forced work"
+    },
+    "event.secret-debt.forced-night-work.choice.finish.text": {
+      "ru": "Принудительная ночь фиксируется один раз, а добровольное ночное меню пропускается.",
+      "en": "The compulsory night is recorded once and the voluntary Night menu is skipped."
+    },
+    "ending.ending.secret-debt.paid-freedom.title": {
+      "ru": "Выкупленная свобода",
+      "en": "Paid Freedom"
+    },
+    "ending.ending.secret-debt.paid-freedom.description": {
+      "ru": "Долговой маршрут разрешён через ветку выплаты. Точная экономика долга и Meta-награда остаются открытыми.",
+      "en": "The debt route has been resolved through repayment. Exact debt tuning and its Meta reward remain Product-open."
+    },
+    "ending.ending.secret-debt.paid-freedom.epilogue": {
+      "ru": "Обязательство закрыто. Обычные профессии снова доступны.",
+      "en": "The obligation is closed. Ordinary profession shifts are available again."
+    },
+    "ending.ending.secret-debt.bound-life.title": {
+      "ru": "Связанная жизнь",
+      "en": "Bound Life"
+    },
+    "ending.ending.secret-debt.bound-life.description": {
+      "ru": "Ветка связанной жизни дошла до отдельного разрешённого состояния. Точный порог стажа и Meta-награда остаются открытыми.",
+      "en": "The Bound Life branch has reached its distinct resolved state. Its exact tenure threshold and Meta reward remain Product-open."
+    },
+    "ending.ending.secret-debt.bound-life.epilogue": {
+      "ru": "Эта жизнь завершается внутри связанного маршрута, а не как выплата долга или захват власти.",
+      "en": "This life resolves inside the bound route rather than as repayment or takeover."
+    },
+    "ending.ending.secret-debt.takeover.title": {
+      "ru": "Перехват власти",
+      "en": "Takeover"
+    },
+    "ending.ending.secret-debt.takeover.description": {
+      "ru": "Ветка захвата власти дошла до отдельного разрешённого состояния через маршрут и внешний межсистемный гейт. Точные пороги билда и Meta-награда остаются открытыми.",
+      "en": "The Takeover branch has reached its distinct resolved state through route and external cross-system gates. Exact build thresholds and Meta reward remain Product-open."
+    },
+    "ending.ending.secret-debt.takeover.epilogue": {
+      "ru": "Маршрут завершается захватом власти — отдельно от выплаты и сохранения подчинённого положения.",
+      "en": "The route ends in takeover, separate from repayment and remaining bound."
     }
   }
 }
