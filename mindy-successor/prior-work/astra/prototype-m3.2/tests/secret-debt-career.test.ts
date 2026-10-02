@@ -69,6 +69,7 @@ test('Secret Debt has stable career presentation IDs and bilingual authored surf
   assert.equal(slots.get(shiftId)?.baseMediaIds.includes('stage.room'),true);
   assert.equal(slots.get(encounterId)?.fallbackId,shiftId);
   assert.equal(slots.get(paidEndingId)?.fallbackId,'location/town/default');
+  assert.equal(slots.has('ending/secret-debt/hard-work'),false,'Secret Debt must not expose an ordinary Hard Work presentation identity');
 
   const keys=[
     'ui.secretDebt.ordinaryWorkLocked',
