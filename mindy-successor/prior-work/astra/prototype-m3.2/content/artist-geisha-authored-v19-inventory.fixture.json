@@ -1,7 +1,7 @@
 {
   "formatVersion": 1,
   "id": "chat3.artist-geisha-authored-v19.inventory",
-  "status": "PREP_AUTHORITY_PENDING_FROZEN_ARTIST_RUNTIME",
+  "status": "FROZEN_ARTIST_RUNTIME_AUTHORITY",
   "activation": {
     "exactBase": "8067539a606714fad8400ccbba30fd7ccf4a9158",
     "shipped": {
@@ -64,10 +64,10 @@
   },
   "runtimeAuthority": {
     "branch": "chat1/artist-geisha-complete-v16",
-    "observedHead": "58d993e98c015e9138efbcc6af77665189ee199a",
+    "observedHead": "955f4accf7e25c42e0384ddb9f76e5612f41dd00",
     "contractPath": "mindy-successor/docs/tasks/ARTIST_GEISHA_RUNTIME_CONTRACT_v1.json",
     "contractBlob": "1cda9f558b8a7c0e0f113904f99ce0acd4b1e791",
-    "frozen": false,
+    "frozen": true,
     "finalBindingRequiredAt": "C3-216",
     "contractSchemaNote": "School null-authority, exact Night choices, Satyr/Tavern/Merchant/Guard cross consumers and all late-route readiness events are now published on mutable Artist runtime."
   },
@@ -237,6 +237,7 @@
     "createsContestSubsystem": false,
     "createsUniversalReputation": false,
     "createsGenericPatronSystem": false,
-    "finalLiveBindingDeferred": true
+    "finalLiveBindingDeferred": false,
+    "finalLiveBindingComplete": true
   }
 }
