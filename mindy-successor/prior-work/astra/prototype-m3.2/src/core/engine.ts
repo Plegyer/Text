@@ -1,7 +1,7 @@
 import { metrics, stats, seasons, priorityClasses, saveSchema, type Stat, type Save, type Meta, type Condition, type Effect, type Catalog, type StoryEvent, type Action, type MachineDefinition, type ReactionFact, type ReactionTrigger, type PriorityClass, type LodgingDefinition, type NightChoiceDefinition, type ActivityDefinition, type ActivityOutcome, type ActivityEnvelope, ordinaryHardWorkCareers, type MetaReward, type OrdinaryHardWorkCareer } from './schema.ts';
 import {SCHOOL_ACTION_ID,SCHOOL_COURSES,executeSchoolLesson,type SchoolCourseId} from './school.ts';
 import {presentationIdForActionResult,presentationIdForEvent} from './presentation.ts';
-import {captureSecretDebtAcceptanceDay,secretDebtBlocksOrdinaryShift} from './secretDebt.ts';
+import {SECRET_DEBT_CAREER_ID,captureSecretDebtAcceptanceDay,secretDebtActivationDue,secretDebtBlocksCareerId,secretDebtBlocksEnding,secretDebtBlocksOrdinaryShift,secretDebtBlocksSourceDomain} from './secretDebt.ts';
 
 const statSet=new Set<string>(stats);
 const cappedLegacy=new Set(['health','stress','trust']);
@@ -370,9 +370,9 @@ function applyOne(s:Save,e:Effect,cat:Catalog,allowTransitions:boolean){
       track.counters[e.counter]=Math.max(0,(track.counters[e.counter]??0)+e.amount);return;
     }
 
-    case 'incrementCareerCounter': {const st=ensureDomainState(s,'career',e.career,cat);st.counters[e.counter]=Math.max(0,(st.counters[e.counter]??0)+e.amount);return;}
-    case 'addCareerFact': addUnique(ensureDomainState(s,'career',e.career,cat).facts,e.fact);return;
-    case 'setCareerChoice': ensureDomainState(s,'career',e.career,cat).choices[e.choice]=e.value;return;
+    case 'incrementCareerCounter': {if(secretDebtBlocksCareerId(s,e.career))return;const st=ensureDomainState(s,'career',e.career,cat);st.counters[e.counter]=Math.max(0,(st.counters[e.counter]??0)+e.amount);return;}
+    case 'addCareerFact': if(secretDebtBlocksCareerId(s,e.career))return;addUnique(ensureDomainState(s,'career',e.career,cat).facts,e.fact);return;
+    case 'setCareerChoice': if(secretDebtBlocksCareerId(s,e.career))return;ensureDomainState(s,'career',e.career,cat).choices[e.choice]=e.value;return;
     case 'incrementQuestCounter': {const st=ensureDomainState(s,'quest',e.quest,cat);st.counters[e.counter]=Math.max(0,(st.counters[e.counter]??0)+e.amount);return;}
     case 'addQuestFact': addUnique(ensureDomainState(s,'quest',e.quest,cat).facts,e.fact);return;
     case 'setQuestChoice': ensureDomainState(s,'quest',e.quest,cat).choices[e.choice]=e.value;return;
@@ -382,7 +382,7 @@ function applyOne(s:Save,e:Effect,cat:Catalog,allowTransitions:boolean){
     case 'addWorldFact': addUnique(s.run.progression.worldFacts,e.fact);return;
     case 'removeWorldFact': removeValue(s.run.progression.worldFacts,e.fact);return;
 
-    case 'advanceCareer': if(!allowTransitions)throw new Error('Nested career transition запрещён');applyTransition(s,'career',e.career,e.transition,cat);return;
+    case 'advanceCareer': if(secretDebtBlocksCareerId(s,e.career))return;if(!allowTransitions)throw new Error('Nested career transition запрещён');applyTransition(s,'career',e.career,e.transition,cat);return;
     case 'advanceQuest': if(!allowTransitions)throw new Error('Nested quest transition запрещён');applyTransition(s,'quest',e.quest,e.transition,cat);return;
     case 'advanceRelationship': if(!allowTransitions)throw new Error('Nested relationship transition запрещён');applyTransition(s,'relationship',e.relationship,e.transition,cat);return;
 
@@ -616,6 +616,7 @@ function resolveReactionsMutable(s:Save,facts:ReactionFact[],cat:Catalog,trace:R
   const live:ResolverCandidate[]=[];
 
   for(const e of sortedEvents){
+    if(secretDebtBlocksSourceDomain(s,e.sourceDomain)){trace.steps.push(`reject:${e.id}:secret-debt-domain-lock`);continue;}
     if(s.run.flow.night?.handledEventIds.includes(e.id)){trace.steps.push(`reject:${e.id}:night-handled`);continue;}
     if(committedSuppresses(s,e)){trace.steps.push(`reject:${e.id}:ending-committed`);continue;}
     if(queuedForEvent(s,e.id)){trace.steps.push(`defer:${e.id}:already-queued`);continue;}
@@ -646,6 +647,7 @@ function resolveReactionsMutable(s:Save,facts:ReactionFact[],cat:Catalog,trace:R
     if(q.kind==='optional')continue;
     const e=cat.events.find(x=>x.id===q.eventId);
     if(!e){trace.steps.push(`reject:${q.eventId}:queued-missing-definition`);continue;}
+    if(secretDebtBlocksSourceDomain(s,e.sourceDomain)){trace.steps.push(`reject:${e.id}:queued-secret-debt-domain-lock`);continue;}
     if(committedSuppresses(s,e)){trace.steps.push(`reject:${e.id}:queued-ending-committed`);continue;}
     queuedCandidates.push({event:e,variantId:q.variantId,allowedChoiceIds:[...q.allowedChoiceIds],eligibleSince:q.createdDay,queuedInstanceId:q.instanceId,needsChance:false});
   }
@@ -771,6 +773,7 @@ function commitEndingMutable(s:Save,endingId:string,cat:Catalog){
   if(s.run.status!=='active'&&s.run.status!=='expired')throw new Error('Сейчас нельзя выбрать судьбу.');
   if(s.run.pending||s.run.flow.night||s.run.flow.activity)throw new Error('Завершите текущую сцену, ночь или Activity.');
   const ending=cat.definitions.endings.find(e=>e.id===endingId);
+  if(secretDebtBlocksEnding(s,endingId))throw new Error('Обычная профессиональная судьба недоступна, пока действует связывающий долг.');
   if(!ending||!s.run.endings.eligible.includes(endingId))throw new Error('Эта судьба сейчас недоступна.');
   const before=cloneSave(s);
   s.run.endings.committed=endingId;
@@ -967,6 +970,7 @@ function finishNightMutable(s:Save,cat:Catalog){
   for(const effect of queued.statEffects)setMetric(s,effect.stat,getMetric(s,effect.stat)+effect.delta);
   s.run.metrics.energy=Math.max(1,energyMax(s)+queued.energyDelta);
   s.run.dayState.nextDayModifiers={energyDelta:0,statEffects:[],tags:[]};
+  if(secretDebtActivationDue(s))applyEffectsMutable(s,[{kind:'advanceCareer',career:SECRET_DEBT_CAREER_ID,transition:'activate-bound'}],cat,true);
   s.run.housingState.paidForCurrentNight=false;
   for(const q of [...s.run.flow.reaction.queued])if(q.kind==='optional')removeQueuedInstance(s,q.instanceId);
   s.run.lastAction={
