@@ -184,6 +184,7 @@
     "changesEconomy": false,
     "changesEndings": false,
     "changesSchoolMechanics": false,
-    "finalLiveBindingDeferred": true
+    "finalLiveBindingDeferred": false,
+    "finalLiveBindingComplete": true
   }
 }
