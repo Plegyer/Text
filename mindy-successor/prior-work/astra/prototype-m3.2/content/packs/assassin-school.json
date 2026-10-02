@@ -43,7 +43,7 @@
           "choice": "school.night_study.field_craft.creativity"
         }
       ],
-      "priorityClass": "ambient",
+      "priorityClass": "optional_world",
       "priority": 25,
       "blocking": true,
       "delivery": {
@@ -159,7 +159,7 @@
           "choice": "school.night_study.rhetoric_and_social.wits"
         }
       ],
-      "priorityClass": "ambient",
+      "priorityClass": "optional_world",
       "priority": 25,
       "blocking": true,
       "delivery": {
@@ -275,7 +275,7 @@
           "choice": "school.night_study.etiquette_and_presentation.charm"
         }
       ],
-      "priorityClass": "ambient",
+      "priorityClass": "optional_world",
       "priority": 25,
       "blocking": true,
       "delivery": {
@@ -387,7 +387,7 @@
           "choice": "school.night_study.literacy_and_numbers.wits"
         }
       ],
-      "priorityClass": "ambient",
+      "priorityClass": "optional_world",
       "priority": 25,
       "blocking": true,
       "delivery": {
@@ -503,7 +503,7 @@
           "choice": "school.night_study.physical_training.dexterity"
         }
       ],
-      "priorityClass": "ambient",
+      "priorityClass": "optional_world",
       "priority": 25,
       "blocking": true,
       "delivery": {
