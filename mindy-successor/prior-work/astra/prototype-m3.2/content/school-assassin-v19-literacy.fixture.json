@@ -1,0 +1,45 @@
+{
+  "formatVersion": 1,
+  "id": "school.assassin.v19.literacy",
+  "task": "C5-209",
+  "targetCareerId": "assassin",
+  "role": "evidence_timeline_records",
+  "courseId": "school.course.literacy_and_numbers",
+  "trackId": "school.track.literacy_and_numbers",
+  "teacherContentId": "school.teacher.mara-fen",
+  "teacherMediaId": "school.teacher.literacy-and-numbers.classroom",
+  "mappingAuthority": "CAPABILITY_MATCH_ONLY",
+  "futureConsumerStatus": "PENDING_RUNTIME_ID",
+  "threshold": null,
+  "publicFactId": null,
+  "copy": {
+    "title": {
+      "ru": "Хронология, которая показывает пробелы",
+      "en": "A timeline that shows its gaps"
+    },
+    "body": {
+      "ru": "Мара даёт несколько записей с разной точностью времени и просит выстроить последовательность, не заполняя неизвестное догадками. Ты отдельно отмечаешь подтверждённое, приблизительное и противоречивое. Хорошая запись делает пробелы видимыми, а не маскирует их уверенностью.",
+      "en": "Mara gives you records with different levels of timing precision and asks you to build a sequence without filling the unknowns with guesses. You separately mark what is confirmed, approximate, and contradictory. A useful record makes gaps visible instead of hiding them behind confidence."
+    },
+    "result": {
+      "ru": "Хронология сохраняет подтверждения и пробелы без создания evidence item, target dossier, contract ledger или Assassin progression.",
+      "en": "The timeline preserves confirmations and gaps without creating an evidence item, target dossier, contract ledger, or Assassin progression."
+    },
+    "journal": {
+      "ru": "Школа: хронология собрана с отдельными отметками подтверждённых и неизвестных промежутков.",
+      "en": "School: assembled a timeline with confirmed and unknown intervals marked separately."
+    },
+    "accessibility": {
+      "ru": "Текстовый результат урока работы с записями; целевое досье и контрактное состояние не создаются.",
+      "en": "Text result for a records lesson; no target dossier or contract state is created."
+    }
+  },
+  "constraints": {
+    "createsEvidenceItem": false,
+    "createsTargetDossier": false,
+    "createsContractLedger": false,
+    "createsDirectCareerTransition": false,
+    "publishesGlobalCertificate": false,
+    "publishesGlobalProject": false
+  }
+}

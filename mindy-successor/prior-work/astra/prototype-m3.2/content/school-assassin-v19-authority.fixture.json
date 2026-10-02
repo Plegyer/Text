@@ -1,0 +1,128 @@
+{
+  "formatVersion": 1,
+  "id": "school.assassin.v19.authority",
+  "tasks": [
+    "C5-211",
+    "C5-212",
+    "C5-213",
+    "C5-214",
+    "C5-215",
+    "C5-216"
+  ],
+  "targetCareerId": "assassin",
+  "status": "SAFE_PREP_ONLY_UNBOUND",
+  "activationBase": "d3b7fe038b35cdc53d786189ef7ba44853a7610d",
+  "sourceAudit": {
+    "preparationFixture": {
+      "path": "content/school-assassin-preparation-v1.fixture.json",
+      "blob": "138a3867d2480b8fa274feb12d8d9fdd9a4c6840",
+      "status": "CONTENT_PREP_ONLY"
+    },
+    "reactiveFixture": {
+      "path": "content/school-assassin-reactive-depth-v1.fixture.json",
+      "blob": "b6e08c5ae5f47023dd0bd00b5e46108f43a69fe7",
+      "status": "CONTENT_PREP_ONLY"
+    },
+    "careerDraft": {
+      "path": "docs/CAREER_ASSASSIN_DRAFT_v0.md",
+      "canonicalRuntimeAuthority": false,
+      "canonicalSchoolSection": false
+    },
+    "runtimeObservation": {
+      "actionId": "assassin.shift",
+      "actionExists": true,
+      "actionEnergyCost": 1,
+      "assassinPackCount": 0,
+      "schoolConsumerContract": null
+    }
+  },
+  "producerAuthority": {
+    "numericThresholdAuthorized": false,
+    "publicFactAuthorized": false,
+    "consumerIdsAuthorized": false,
+    "threshold": null,
+    "publicFactId": null
+  },
+  "mappings": [
+    {
+      "courseId": "school.course.field_craft",
+      "trackId": "school.track.field_craft",
+      "teacherContentId": "school.teacher.rowan-pike",
+      "teacherMediaId": "school.teacher.field-craft.classroom",
+      "futureConsumerStatus": "PENDING_RUNTIME_ID",
+      "threshold": null,
+      "publicFactId": null,
+      "immediateResolverStatus": "UNBOUND_NO_AUTHORITY",
+      "nightParityStatus": "UNBOUND_NO_AUTHORITY"
+    },
+    {
+      "courseId": "school.course.rhetoric_and_social",
+      "trackId": "school.track.rhetoric_and_social",
+      "teacherContentId": "school.teacher.cassian-reed",
+      "teacherMediaId": "school.teacher.rhetoric-and-social.classroom",
+      "futureConsumerStatus": "PENDING_RUNTIME_ID",
+      "threshold": null,
+      "publicFactId": null,
+      "immediateResolverStatus": "UNBOUND_NO_AUTHORITY",
+      "nightParityStatus": "UNBOUND_NO_AUTHORITY"
+    },
+    {
+      "courseId": "school.course.etiquette_and_presentation",
+      "trackId": "school.track.etiquette_and_presentation",
+      "teacherContentId": "school.teacher.eliane-marrow",
+      "teacherMediaId": "school.teacher.etiquette-and-presentation.classroom",
+      "futureConsumerStatus": "PENDING_RUNTIME_ID",
+      "threshold": null,
+      "publicFactId": null,
+      "immediateResolverStatus": "UNBOUND_NO_AUTHORITY",
+      "nightParityStatus": "UNBOUND_NO_AUTHORITY"
+    },
+    {
+      "courseId": "school.course.literacy_and_numbers",
+      "trackId": "school.track.literacy_and_numbers",
+      "teacherContentId": "school.teacher.mara-fen",
+      "teacherMediaId": "school.teacher.literacy-and-numbers.classroom",
+      "futureConsumerStatus": "PENDING_RUNTIME_ID",
+      "threshold": null,
+      "publicFactId": null,
+      "immediateResolverStatus": "UNBOUND_NO_AUTHORITY",
+      "nightParityStatus": "UNBOUND_NO_AUTHORITY"
+    },
+    {
+      "courseId": "school.course.physical_training",
+      "trackId": "school.track.physical_training",
+      "teacherContentId": "school.teacher.tovan-kest",
+      "teacherMediaId": "school.teacher.physical-training.classroom",
+      "futureConsumerStatus": "PENDING_RUNTIME_ID",
+      "threshold": null,
+      "publicFactId": null,
+      "immediateResolverStatus": "UNBOUND_NO_AUTHORITY",
+      "nightParityStatus": "UNBOUND_NO_AUTHORITY"
+    }
+  ],
+  "forbiddenOwnership": {
+    "contractState": false,
+    "targetState": false,
+    "lethalRule": false,
+    "nonlethalRule": false,
+    "combatCurriculum": false,
+    "activityMechanic": false,
+    "activityRoute": false,
+    "guardFalloutState": false,
+    "palaceAccess": false,
+    "palacePrivilege": false,
+    "careerStage": false,
+    "directCareerTransition": false,
+    "newCurriculum": false,
+    "newTeacher": false,
+    "globalCertificate": false,
+    "globalProject": false
+  },
+  "futureAcceptanceDesign": {
+    "paidLessonPersistence": "EXACTLY_ONCE_EXISTING_SCHOOL_COUNTER_ONLY",
+    "nightStudyPersistence": "EXACTLY_ONCE_EXISTING_SCHOOL_COUNTER_ONLY",
+    "saveReloadRequired": true,
+    "consumerReactionExpectation": "PENDING_RUNTIME_ID",
+    "producerFactExpectation": "UNBOUND_NO_AUTHORITY"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "formatVersion": 1,
+  "id": "school.assassin.v19.rhetoric",
+  "task": "C5-207",
+  "targetCareerId": "assassin",
+  "role": "neutral_questioning_information",
+  "courseId": "school.course.rhetoric_and_social",
+  "trackId": "school.track.rhetoric_and_social",
+  "teacherContentId": "school.teacher.cassian-reed",
+  "teacherMediaId": "school.teacher.rhetoric-and-social.classroom",
+  "mappingAuthority": "CAPABILITY_MATCH_ONLY",
+  "futureConsumerStatus": "PENDING_RUNTIME_ID",
+  "threshold": null,
+  "publicFactId": null,
+  "copy": {
+    "title": {
+      "ru": "Вопрос без готового ответа",
+      "en": "A question without a ready-made answer"
+    },
+    "body": {
+      "ru": "Кассиан показывает, как наводящий вопрос смешивает наблюдение и догадку. Ты переписываешь формулировки так, чтобы собеседник описывал собственную версию событий. Цель упражнения — получить более чистую информацию, а не давить на ответ.",
+      "en": "Cassian shows how a leading question mixes observation with assumption. You rewrite prompts so the other person describes their own account of events. The exercise aims for cleaner information, not pressure toward an answer."
+    },
+    "result": {
+      "ru": "Формулировка отделяет известное от предполагаемого и не создаёт допрос, манипуляцию целью или Assassin relationship-state.",
+      "en": "The wording separates known facts from assumptions and creates no interrogation, target manipulation, or Assassin relationship state."
+    },
+    "journal": {
+      "ru": "Школа: вопросы переписаны так, чтобы не подсказывать желаемый ответ.",
+      "en": "School: rewrote questions so they do not suggest the desired answer."
+    },
+    "accessibility": {
+      "ru": "Текстовый результат урока нейтрального опроса; принуждение и целевая механика не добавляются.",
+      "en": "Text result for neutral questioning; no coercion or target mechanic is added."
+    }
+  },
+  "constraints": {
+    "createsInterrogationSystem": false,
+    "createsTargetState": false,
+    "createsPatronOrHandlerState": false,
+    "createsDirectCareerTransition": false,
+    "publishesGlobalCertificate": false,
+    "publishesGlobalProject": false
+  }
+}
