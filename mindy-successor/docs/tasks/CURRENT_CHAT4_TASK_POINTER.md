@@ -1,6 +1,6 @@
 # CURRENT CHAT4 TASK POINTER
 
-Status: **ARTIST/GEISHA QA v18 ACTIVE — C4-168 PREFLIGHT COMPLETE / WAITING FROZEN GREEN RUNTIME**
+Status: **ARTIST/GEISHA QA v18 ACTIVE — C4-168 PREFLIGHT COMPLETE / EXACT HEAD GREEN / WAITING FREEZE**
 Owner: Chat 4 / QA + Product Acceptance Gate
 Queue: C4-168..173
 Authoritative queue: `TASK_CHAT4_QA_QUEUE_v18.md`
@@ -14,14 +14,17 @@ Shipped baseline:
 
 ## C4-168 runtime
 
-PREFLIGHT is complete and recorded in PR #170 comment `5948466967`.
+PREFLIGHT is complete:
+- QA ledger preflight comment `5948466967`
+- exact-green status comment `5948477563`
 
 Current observed producer:
 - PR #234
-- current observed head `955f4accf7e25c42e0384ddb9f76e5612f41dd00`
-- open / non-draft
-- body still explicitly says **CANDIDATE_BUILDING / NOT FROZEN**
-- exact-head workflow #978 / id `36985517198` is in progress
+- exact observed head `955f4accf7e25c42e0384ddb9f76e5612f41dd00`
+- exact-head workflow #978 / id `36985517198`: **SUCCESS**
+- validator **67 packs / 252 events / 39 actions / 22 endings**
+- tests **915 / 915 pass**
+- PR body still explicitly says **CANDIDATE_BUILDING / NOT FROZEN**
 - therefore **NO C4-168 VERDICT YET**
 
 Preflight ownership:
@@ -29,9 +32,9 @@ Preflight ownership:
 - shared production: `content/definitions.json`, `src/core/schema.ts`
 - shared regression test: `tests/content.test.ts`
 - remaining product files are Artist-local contract / School authority / packs / focused tests
-- shipped baseline -> current main drift is coordination/GIF documentation only; no product-byte drift
+- shipped baseline -> current main drift before this coordination update was docs/queue/GIF-only; no product-byte drift
 
-Locked runtime invariants already verified from the current candidate:
+Verified runtime invariants on the exact green head:
 - `artist-geisha.shift` remains 1 Energy
 - exact Creativity35 + Manners25 + Grooming30 OR Year3 unlock preserved
 - wage preserved
@@ -42,18 +45,16 @@ Locked runtime invariants already verified from the current candidate:
 - five School consumer mappings keep producer thresholds/public facts null
 - Court Invitation remains Artist-local evidence only, not Palace access
 
-Acceptance matrix prepared:
-- natural Year3 unlock, scheduled seasonal windows, 50 real shifts, reload, Hard Work -> New Life
+Exact-green acceptance evidence already present:
+- natural scheduled seasonal windows + advanced readiness + Hard Work
 - mentor refusal-safe continuation
-- Night competition without NightFlow rewrite
-- five-track School null producer authority
-- read-only Satyr/Tavern/Merchant/Guard inputs
-- distinct Veteran / Master / Patron / Court readiness
-- no Palace, Assassin, Prostitute, global reputation/economy/patron/contest/new-ending authority
+- Night choice consumes existing voluntary Night slot without NightFlow rewrite
+- School five-track null producer authority
+- read-only cross-system inputs
+- no other career / Palace / economy / global reputation ownership
+- shipped action / seasonal / Hard Work identity preservation
 
-Previous red #973 failures were addressed in the current head by test-only changes; this is diagnostic only until #978 finishes.
-
-Execute C4-168 immediately only when the exact head is explicitly **CANDIDATE_FROZEN / READY FOR CHAT 4 QA** and exact-head full CI is SUCCESS.
+Execute C4-168 immediately only when this exact head, or a later exact-green head, is explicitly **CANDIDATE_FROZEN / READY FOR CHAT 4 QA**. Re-query head and exact run before verdict.
 
 Future:
 - C4-169 School after C5-204 frozen runtime-based candidate
