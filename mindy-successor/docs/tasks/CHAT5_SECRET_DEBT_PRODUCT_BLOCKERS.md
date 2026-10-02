@@ -60,7 +60,9 @@ Still OPEN:
 
 Current seam:
 - `SECRET_DEBT_SHIFT_STAT_GAINS = { strength: null, endurance: null, sexuality: null }`;
-- production shift does not invent a seasonal/stat package until these values are locked.
+- `secretDebtShiftStatGainsReady()` requires all three gains to be positive;
+- `secretDebtShiftTuningReady()` requires both stat gains and the wage policy;
+- `actionAvailable` keeps `secret-debt.shift` disabled until that full tuning is ready, so production never exposes an unpaid/no-gain fake shift.
 
 ## SD-BALANCE-02 — hidden-work wage coefficients
 
