@@ -110,6 +110,18 @@ Recovered ending rewards come from career repetition, relationship/NPC arcs, pov
 
 Design lesson: avoid one canonical “best” ending family. Hard Work can be the dependable profession route while complex alternatives reward different playstyles, choices and builds.
 
+### 17. Stats have broad world utility
+The original includes a large recurring "minor crisis" layer where the player chooses a stat to solve an everyday problem. Different choices can succeed in different ways and reward/penalize money, Energy or other stats.
+
+The challenge also scales with time: the recovered crisis system adds a year-dependent random difficulty modifier, roughly 5–15 in Year 1, 15–25 in Year 2, 20–50 in Year 3 and 30–60 from later years.
+
+Design lesson: progression stats should matter outside their home career. Successor random/Activity/cross-system events can give multiple stats recurring utility so a stat is not just an unlock key or wage coefficient. Exact original thresholds/randomness should not be copied.
+
+### 18. The world gets harder as the run advances
+Original unlocks become easier through year-based fallbacks, but generic world checks become harder over time.
+
+Design lesson: time progression can simultaneously open content and increase pressure. That creates a useful curve: early specialization gives advantages, while late access prevents lockout but does not make the world trivial.
+
 ## Successor implications to test, not auto-lock
 
 - Current approved successor seasonal-tradeoff candidate yields **+1.5 net progression-stat points per ordinary shift on average for all ten careers**. That is roughly +75 summed stat points across 50 shifts, versus about +25 in the recovered original work model. This is a balance-test flag, not a command to copy the original: verify progression speed and cap timing over a full 160-day run, especially with School and NG+.
