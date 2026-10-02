@@ -15,14 +15,14 @@ Revise the packet to the locked model:
 - later five (Guard, Merchant, Artist/Geisha, Assassin, Prostitute): up to two separate +5 stat bonuses each; prepare a concrete two-stat proposal for each;
 - New Start+ may activate any subset of earned profession bonus packages, including none or all ten;
 - no single-slot restriction for these profession packages;
-- include a meaningful Lust Hard Work bonus proposal, but do not guess whether the user's latest 'minimum 3 to Lust' means amount +3 or three profession packages until Leader resolves that wording;
+- include at least one Lust Hard Work bonus in the mapping; **a Lust bonus must be at least +3 Lust in magnitude**. This is not a requirement that three professions contain Lust. Exact profession placement remains for Product/Leader approval;
 - remove/replace the old automatic +3/+3 and Merchant +600 model in the eventual implementation plan;
 - Palace eligibility in a life requires all ten ordinary Hard Work achievements earned **and all ten bonus packages active for that life**; when satisfied, an automatic Palace invitation arrives on Day 1 and opens access;
 - Palace x2 is **cap-only**: when active, the 12 progression-stat caps are 200 instead of 100. It never multiplies current/start values, +5 bonuses, or the 10 allocation points.
 
 ## Deliverable
 
-Produce a revised concrete profession-bonus mapping proposal satisfying the above; keep the exact Lust interpretation visibly pending one Leader clarification, plus:
+Produce a revised concrete profession-bonus mapping proposal satisfying the above, including the locked Lust >= +3 magnitude rule, plus:
 - generic save/setup representation for arbitrary subset activation;
 - exact current-runtime touchpoints;
 - migration from old automatic rewards;

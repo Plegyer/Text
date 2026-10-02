@@ -1,47 +1,43 @@
 # CURRENT CHAT5 TASK POINTER
 
-Status: **ACTIVE — SECRET DEBT / HIDDEN POVERTY ROUTE RESUMED**
+Status: **WAITING ON PRODUCT BALANCE — D19 AUTHORIZED IMPLEMENTATION COMPLETE**
 Owner: Chat 5 / Full-Career Producer C
 Branch: `chat5/secret-debt-complete-reset-v1`
-Preserved foundation head before resumed work: `8dd0b12bb2257981f4a6b72bca2017aad9d00e73`
+Current observed head: `dbc210987ee2c2df9f992867cf12587a1e037f08`
 
-## Authority
+## Verified progress
 
-Read `USER_DECISIONS_LOCKED_v1.md` D19-D20 and the current-authority override in
-`POVERTY_HIDDEN_CAREER_DRAFT_v0.md`.
+Since the preserved foundation `8dd0b12bb2257981f4a6b72bca2017aad9d00e73`, Chat 5 is 45 commits ahead and has implemented the locked D19 route mechanics, including:
 
-The old blocker ledger is superseded wherever it conflicts with D19-D20.
+- 20% one-life street encounter and refusal closure;
+- exact +2000 acceptance;
+- exact 10-day delayed activation;
+- exact 20000 debt;
+- all-ten ordinary-profession domain lock with progress preservation;
+- School and Activity availability while bound;
+- forced Night every bound night and next-day Energy -1;
+- one-shot full 20000 repayment and clean release;
+- 50 daytime-shift Hard Work/Bound Life baseline;
+- Takeover structure with 50 shifts + 10 paid School lessons + explicit action;
+- distinct endings with no invented Meta rewards;
+- RU/EN, persistence, repayment-release and Activity-economy regressions.
 
-Now locked:
-- street-night lender chance 20% while unseen;
-- refusal closes the route for that life;
-- +2000 immediately on acceptance;
-- activation exactly 10 days later;
-- debt exactly 20000;
-- all 10 ordinary professions domain-locked from activation until actual exit, while preserving their progress;
-- School available;
-- Activity available but not an easy repeatable 20000-money farm;
-- hidden daytime work is paid and Lust contributes positively to wage;
-- forced Night every bound night, voluntary Night suppressed, next-day Energy -1;
-- one all-at-once 20000 repayment action, no partial payments;
-- hidden Hard Work = 50 daytime shifts, excluded from Palace 10/10;
-- owner-kill/control route requires career progress + stat build + high Lust + 10 paid School lessons + a separate explicit player action;
-- Body Confidence Lust +2 is owned by Chat 3; do not duplicate it locally.
+Chat 5 correctly does not duplicate Chat 3's Body Confidence Lust +2.
 
-## Work now
+## Remaining Product balance blockers
 
-Continue the profession-owned implementation:
-- natural encounter / accept-refuse / deterministic 20% behavior;
-- exact 2000 grant and 10-day activation;
-- exact 20000 debt and one-shot repayment action;
-- ordinary-profession domain lock and clean release;
-- paid hidden daytime job using the normal wage system with Lust as one input;
-- every-night forced flow and -1 next-day Energy;
-- 50-shift Hard Work;
-- School/Activity availability policy;
-- owner-kill/control route structure and explicit action;
-- RU/EN, presentation/fallbacks, save/reload exactly-once, focused tests.
+Do not guess final values for:
 
-Still open: exact per-shift stat gains, exact wage coefficients, exact owner-kill stat/Lust gates, and ending Meta rewards. Put these behind clear constants/seams; do not invent final numbers.
+1. daytime shift gains for Strength / Endurance / Sexuality;
+2. wage base and Strength / Endurance / Lust wage factors;
+3. Takeover exact stat build thresholds and exact high-Lust threshold;
+4. three ending Meta rewards.
 
-No producer full CI. When all authorized work is complete, freeze SHA and report remaining Product-open constants. If no blockers remain, report `READY_FOR_CHAT2`.
+Current runtime keeps these behind explicit seams/null policy so the hidden shift cannot masquerade as final tuning.
+
+## Working rule
+
+Stop balance implementation until Leader/Product locks those values.
+Do not open a candidate PR and do not use full CI.
+Preserve the current branch and focused evidence.
+After values are locked, finish them as one coherent tuning package, freeze exact SHA, and hand `READY_FOR_CHAT2`.

@@ -191,7 +191,7 @@ D21 is refined as follows:
 - the later five (Guard, Merchant, Artist/Geisha, Assassin, Prostitute) may each unlock **two separate +5 stat bonuses**;
 - on New Start+ the player may activate **any subset** of earned Hard Work bonuses: none, some, or all;
 - there is no one-slot restriction for these earned profession bonuses;
-- Lust must receive a meaningful Hard Work bonus because it is deliberately harder to grow; the exact interpretation/amount from the latest Product wording is awaiting one direct clarification and must not be guessed;
+- the Hard Work bonus system must include a Lust bonus, and **any such Lust bonus is at least +3 Lust** because Lust is deliberately harder to grow; this means magnitude, not a requirement that three professions grant Lust; exact profession placement remains Product mapping work;
 - the old automatic +3/+3 and Merchant +600 model is superseded by this selectable-bonus direction.
 
 ### D23 — Palace per-run activation gate and Day-1 invitation
