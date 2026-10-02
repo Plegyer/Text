@@ -1,0 +1,543 @@
+{
+  "schemaVersion": 1,
+  "id": "merchant.trade",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "careers": [
+        "merchant"
+      ],
+      "calendar": true
+    },
+    "writes": {
+      "careers": [
+        "merchant"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "merchant.trade.appraisal",
+      "title": "A lot needs an appraisal before a promise is made",
+      "sourceDomain": "merchant",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerTransition",
+          "career": "merchant"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "merchant.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 77,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "merchant",
+          "stage": "independent-trader"
+        },
+        {
+          "kind": "careerFact",
+          "career": "merchant",
+          "fact": "appraisal-recorded",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "A lot needs an appraisal before a promise is made. The choice records Merchant-local evidence without introducing a universal economy model.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "compare-notes",
+          "label": "Compare condition and notes",
+          "text": "Record what can be observed and keep uncertainty explicit.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "incrementCareerCounter",
+              "career": "merchant",
+              "counter": "appraisals",
+              "amount": 1
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "merchant",
+              "fact": "appraisal-recorded"
+            }
+          ]
+        },
+        {
+          "id": "decline-uncertain",
+          "label": "Decline a confident valuation",
+          "text": "Refuse to pretend certainty; ordinary trade remains available.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "incrementCareerCounter",
+              "career": "merchant",
+              "counter": "appraisals",
+              "amount": 1
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "merchant",
+              "fact": "appraisal-recorded"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "merchant.trade.records",
+      "title": "A trade needs terms that can be checked later",
+      "sourceDomain": "merchant",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerCounterChanged",
+          "career": "merchant",
+          "counter": "completed_shifts"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "merchant",
+          "fact": "appraisal-recorded"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 79,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerFact",
+          "career": "merchant",
+          "fact": "appraisal-recorded",
+          "present": true
+        },
+        {
+          "kind": "careerCounter",
+          "career": "merchant",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 3
+        },
+        {
+          "kind": "careerFact",
+          "career": "merchant",
+          "fact": "manifest-verified",
+          "present": false
+        },
+        {
+          "kind": "not",
+          "condition": {
+            "kind": "careerStage",
+            "career": "merchant",
+            "stage": "stall-hand"
+          }
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "A trade needs terms that can be checked later. The choice records Merchant-local evidence without introducing a universal economy model.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "write-plain-terms",
+          "label": "Write the terms plainly",
+          "text": "Separate quantity, delivery timing, and unresolved points so later checking does not depend on memory.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "merchant",
+              "fact": "manifest-verified"
+            }
+          ]
+        },
+        {
+          "id": "verify-before-signing",
+          "label": "Verify before signing",
+          "text": "Delay the promise until the record matches what is actually being moved.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "merchant",
+              "fact": "manifest-verified"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "merchant.trade.delivery",
+      "title": "A delivery tests timing rather than a global price formula",
+      "sourceDomain": "merchant",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerTransition",
+          "career": "merchant"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "merchant.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 78,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "merchant",
+          "stage": "networked-merchant"
+        },
+        {
+          "kind": "careerFact",
+          "career": "merchant",
+          "fact": "manifest-verified",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "merchant",
+          "fact": "delivery-recorded",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "A delivery tests timing rather than a global price formula. The choice records Merchant-local evidence without introducing a universal economy model.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "confirm-window",
+          "label": "Confirm the delivery window",
+          "text": "Choose a concrete handoff window and record who is responsible for the next step.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "incrementCareerCounter",
+              "career": "merchant",
+              "counter": "deliveries",
+              "amount": 1
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "merchant",
+              "fact": "delivery-recorded"
+            }
+          ]
+        },
+        {
+          "id": "split-delivery",
+          "label": "Split the delivery",
+          "text": "Use a narrower delivery commitment to reduce route risk without creating an inventory-capacity system.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "incrementCareerCounter",
+              "career": "merchant",
+              "counter": "deliveries",
+              "amount": 1
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "merchant",
+              "fact": "delivery-recorded"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "merchant.trade.shortage",
+      "title": "Winter shortage changes the decision, not the global economy",
+      "sourceDomain": "merchant",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "calendarAdvanced"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "merchant.shift"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 81,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "calendarSeason",
+          "value": "winter"
+        },
+        {
+          "kind": "careerStage",
+          "career": "merchant",
+          "stage": "networked-merchant"
+        },
+        {
+          "kind": "careerFact",
+          "career": "merchant",
+          "fact": "delivery-recorded",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "merchant",
+          "fact": "shortage-handled",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Winter shortage changes the decision, not the global economy. The choice records Merchant-local evidence without introducing a universal economy model.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "delay-sale",
+          "label": "Delay the sale",
+          "text": "Keep the goods and promise narrower timing rather than inventing a universal scarcity multiplier.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "merchant",
+              "fact": "shortage-handled"
+            }
+          ]
+        },
+        {
+          "id": "reserve-regulars",
+          "label": "Reserve a known share for regular buyers",
+          "text": "Use relationship knowledge rather than a global allocation engine.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "merchant",
+              "fact": "shortage-handled"
+            }
+          ]
+        },
+        {
+          "id": "accept-risk",
+          "label": "Accept a narrow high-risk trade",
+          "text": "Record willingness to carry timing and route risk; this is not a morality or crime label.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "merchant",
+              "fact": "shortage-handled"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "merchant",
+              "fact": "risk-accepted"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "merchant.crisis.delivery-pressure",
+      "title": "A pressured delivery forces a concrete trade-off",
+      "sourceDomain": "merchant",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "merchant",
+          "fact": "delivery-recorded"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "merchant",
+          "fact": "shortage-handled"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "merchant.shift"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 90,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "merchant",
+          "stage": "networked-merchant"
+        },
+        {
+          "kind": "careerFact",
+          "career": "merchant",
+          "fact": "delivery-recorded",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "merchant",
+          "fact": "shortage-handled",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "merchant",
+          "fact": "crisis-resolved",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "A pressured delivery forces a concrete trade-off. The choice records Merchant-local evidence without introducing a universal economy model.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "verify-and-delay",
+          "label": "Verify records and delay",
+          "text": "Choose evidence quality over a rushed promise.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "incrementCareerCounter",
+              "career": "merchant",
+              "counter": "crisis_resolutions",
+              "amount": 1
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "merchant",
+              "fact": "crisis-records"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "merchant",
+              "fact": "crisis-resolved"
+            }
+          ]
+        },
+        {
+          "id": "ask-supplier-reroute",
+          "label": "Ask the supplier for a reroute",
+          "text": "Use the professional relationship if it is available, but do not create a generic logistics network.",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "merchant",
+              "fact": "supplier-trust-ready",
+              "present": true
+            }
+          ],
+          "effects": [
+            {
+              "kind": "incrementCareerCounter",
+              "career": "merchant",
+              "counter": "crisis_resolutions",
+              "amount": 1
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "merchant",
+              "fact": "crisis-supplier"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "merchant",
+              "fact": "crisis-resolved"
+            }
+          ]
+        },
+        {
+          "id": "accept-narrow-risk",
+          "label": "Accept the narrow route risk",
+          "text": "Take a documented trade risk without creating an illegal-goods law or morality score.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "incrementCareerCounter",
+              "career": "merchant",
+              "counter": "crisis_resolutions",
+              "amount": 1
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "merchant",
+              "fact": "risk-accepted"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "merchant",
+              "fact": "crisis-risk"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "merchant",
+              "fact": "crisis-resolved"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
