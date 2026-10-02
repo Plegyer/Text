@@ -150,6 +150,11 @@ Design lesson for successor:
 - stronger reward does not have to mean a larger raw stat number;
 - keep such strong modifiers optional in New Start+ so Meta expands player agency rather than forcing power creep.
 
+### 22. Active Meta can itself be part of challenge design
+In the original Finale mode, earned bonuses are individually toggled: enabling one increments an active-bonus counter and disabling it decrements the counter. The Finale encounter changes its challenge behavior across active-bonus-count bands.
+
+Design lesson: player-selected Meta does not need an arbitrary one-slot cap to stay interesting. Special content can react to the active loadout itself. The successor Palace rule — all ten ordinary Hard Work packages must be active in that New Start+ life to receive the Day-1 invitation — is a clean example of using loadout state as content gating rather than forcing a universal bonus limit.
+
 ## Successor implications to test, not auto-lock
 
 - Current approved successor seasonal-tradeoff candidate yields **+1.5 net progression-stat points per ordinary shift on average for all ten careers**. That is roughly +75 summed stat points across 50 shifts, versus about +25 in the recovered original work model. This is a balance-test flag, not a command to copy the original: verify progression speed and cap timing over a full 160-day run, especially with School and NG+.
