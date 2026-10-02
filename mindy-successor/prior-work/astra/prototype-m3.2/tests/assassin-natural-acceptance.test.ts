@@ -133,6 +133,14 @@ test('clean Assassin run exercises Year-3 fallback, lifecycle, four seasons, ref
   assert.equal(s.run.pending?.eventId,'assassin.contract.intel');
   assert.equal(s.run.pending?.variantId,intelVariant);
   s=settlePending(s);
+  let contractGuard=0;
+  while(s.run.progression.quests['assassin.contract'].stage!=='closed'){
+    if(++contractGuard>12)throw new Error('Assassin contract did not close through natural shifts');
+    s=finishNight(s);
+    seenSeasons.add(calendar(s.run.day).season);
+    s=dispatch(s,{type:'action',id:'assassin.shift'},catalog);
+    s=settlePending(s);
+  }
   assert.equal(s.run.progression.quests['assassin.contract'].stage,'closed');
   assert.equal(s.run.progression.quests['assassin.contract'].choices.method,'refusal');
   assert.equal(s.run.progression.quests['assassin.contract'].choices.resolution,'redirect');

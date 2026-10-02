@@ -41,5 +41,5 @@ test('Assassin action, event, Activity, and ending have stable semantic presenta
 
 test('natural Explore UI exposes the Assassin-owned Activity through the existing shared consumer',()=>{
  const app=readFileSync('src/ui/app.ts','utf8');
- assert.match(app,/activityEntryList\(\['lumber\.forest','hunter\.expedition','assassin\.infiltration'\]\)/);
+ assert.match(app,/activityEntryList\(\['assassin\.infiltration'\]\)/);
 });

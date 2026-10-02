@@ -2975,8 +2975,8 @@
       "en": "Covert Work"
     },
     "profession.assassin.description": {
-      "ru": "Скрытая работа с наблюдением, передачами, контекстной подготовкой и правом отказаться от неподходящего задания.",
-      "en": "Covert work built around observation, handoffs, contextual preparation, and the right to refuse an unsuitable brief."
+      "ru": "Скрытая работа: наблюдение, доставка, подготовка маршрутов и зачистка следов.",
+      "en": "Covert work involving surveillance, delivery, route preparation, and cleanup."
     },
     "profession.prostitute.label": {
       "ru": "Независимая профессиональная работа",
