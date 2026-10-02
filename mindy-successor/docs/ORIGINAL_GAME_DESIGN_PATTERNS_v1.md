@@ -160,6 +160,11 @@ Recovered relationship/job routing contains parallel lover/spurn branches. Farme
 
 Design lesson: a meaningful “no” should often choose a different authored route instead of simply removing content. This supports refusal-safe relationships and career choices in the successor: refusal can change trust, pacing or outcome identity while preserving useful play.
 
+### 24. Meta can have separate activation layers
+The original has a distinct Title layer in addition to ending rewards. UI text identifies one active Title that can be changed. Title effects range from small apartment-sleep bonuses (+1 to one stat), to +1 daily Stamina, combat-only stat boosts, extra combat behavior and status immunity.
+
+Design lesson: different Meta families do not need the same activation rule. Successor Hard Work packages can remain freely combinable as Product already locked, while unusually strong complex-ending modifiers may later use a separate loadout/slot layer if balance needs it. This is a reference pattern, not authority for a one-title rule in the successor.
+
 ## Successor implications to test, not auto-lock
 
 - Current approved successor seasonal-tradeoff candidate yields **+1.5 net progression-stat points per ordinary shift on average for all ten careers**. That is roughly +75 summed stat points across 50 shifts, versus about +25 in the recovered original work model. This is a balance-test flag, not a command to copy the original: verify progression speed and cap timing over a full 160-day run, especially with School and NG+.
