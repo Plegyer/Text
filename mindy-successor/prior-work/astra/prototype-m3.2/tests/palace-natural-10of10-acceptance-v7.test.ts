@@ -173,7 +173,7 @@ test('v7 D23 truth table matches permanent 10/10 plus current-run active 10/10 s
 test('duplicates, Secret Debt and Palace cannot substitute for a missing ordinary package',()=>{
   const ten=[...ordinary];
   const nine=ten.slice(0,9);
-  const missing=ten[9];
+  const missing=ten[9]!;
 
   assert.equal(qualifies(
     [...ten,'secret-debt','palace'],
