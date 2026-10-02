@@ -11829,6 +11829,14 @@
     "presentation.static.career.prostitute.event.caption": {
       "ru": "Добровольная профессиональная карьера.",
       "en": "Voluntary professional career."
+    },
+    "event.prostitute.client-flow.result.choice.stop.label": {
+      "ru": "Остановиться и закрыть встречу",
+      "en": "Stop and close without work"
+    },
+    "event.prostitute.client-flow.result.choice.stop.text": {
+      "ru": "Завершить этот клиентский эпизод сейчас. Отказ будет уважён, а обычная добровольная работа останется доступной.",
+      "en": "End this client flow now. The refusal is respected and ordinary voluntary work stays available."
     }
   }
 }
