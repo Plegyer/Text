@@ -1,24 +1,34 @@
 # CURRENT CHAT3 TASK POINTER
 
-Status: **ACTIVE — SCHOOL BODY CONFIDENCE / VOLUNTARY LUST +2**
+Status: **ACTIVE — ORDINARY WORK NEGATIVE-STAT TRADEOFF AUDIT / PACKET**
 Owner: Chat 3
-New branch: `chat3/school-body-confidence-lust-v1`
-Base: fresh current main `6a6029df8e9c007227da0173eb499d59ba51648e`
+Preserve frozen School candidate: `chat3/school-body-confidence-lust-v1` @ `877927cf747ba9f69a53ddccf4373b795561f3a0`.
+PR #254 remains READY_FOR_CHAT2 and must not move.
 
-Assassin producer head `0976b4fefdc4d6b379243cc0f3d3429e0e1a3642` is frozen and already handed to Chat 2. Do not move that old branch.
+New branch: `chat3/work-seasonal-negative-tradeoffs-v1`
+Base: fresh current main `04d1c0afff2dbb776fde4842d1fea6041fef4061`
+
+## Verified current defect
+
+Current production audit shows:
+- Lumber has seasonal negative stat effects;
+- the other nine ordinary profession shifts currently contain only positive stat changes.
+
+User/Product intent is that work has tradeoffs rather than pure stat growth. Exact frequency is awaiting one Product clarification:
+- negative on every seasonal shift package, or
+- negative only in selected seasons per profession.
 
 ## Assignment
 
-Implement D20 as a narrow School-owned slice:
+Prepare a production-ready packet only:
+- inventory all 10 current seasonal stat packages;
+- identify sensible negative-stat candidates per profession and season, grounded in profession identity;
+- keep Lust separate from the 12 progression stats unless explicitly authorized;
+- preserve current wages, unlock gates, counters, Hard Work thresholds and career-specific events;
+- flag any balance risk where repeated work could drive an important gate stat down too aggressively;
+- give two mappings: A = at least one negative every season; B = negatives only in selected seasons;
+- provide focused regression/acceptance test plan.
 
-- existing `school.course.body_confidence` grants **Lust +2** per paid lesson;
-- keep its current progression-stat gains and tuition/Energy rules intact;
-- Lust remains separate from Sexuality;
-- save/reload must not duplicate the effect;
-- night study must not accidentally inherit the Lust gain unless Product separately authorizes it;
-- update current School tests/fixtures/copy only where needed for the new authority;
-- do not modify Secret Debt runtime or any profession runtime.
-
-Own only the School files needed for this slice. Avoid `engine.ts` / Secret Debt files unless absolutely required; escalate if the current School API cannot express the effect cleanly.
-
-No producer full CI. Run focused/static checks available to you, freeze exact SHA, report `READY_FOR_CHAT2`, and stop pushing.
+Do not change runtime/content seasonal numbers until Leader locks the frequency/mapping.
+No full CI.
+Freeze packet SHA and report `READY_FOR_LEADER_DECISION`.

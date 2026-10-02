@@ -183,13 +183,44 @@ Completing an ordinary profession through its Hard Work ending permanently chang
 - exact profession -> +5 stat mapping is a separate Product mapping pass and must not be guessed in runtime code;
 - this supersedes older design text that said Hard Work did not need an explicit early-profession unlock.
 
+### D22 — Hard Work bonus breadth and New Start+ selection
+
+D21 is refined as follows:
+
+- the first five ordinary professions in the locked ordinary roster order (Lumber, Satyr Maid, Undead Farm, Tavern, Hunter) each unlock **one +5 stat bonus**;
+- the later five (Guard, Merchant, Artist/Geisha, Assassin, Prostitute) may each unlock **two separate +5 stat bonuses**;
+- on New Start+ the player may activate **any subset** of earned Hard Work bonuses: none, some, or all;
+- there is no one-slot restriction for these earned profession bonuses;
+- Product intent is that Lust, as a deliberately harder-to-grow axis, appears in at least three profession bonus packages; exact profession mapping remains to be locked;
+- the old automatic +3/+3 and Merchant +600 model is superseded by this selectable-bonus direction.
+
+### D23 — Palace per-run activation gate
+
+The Palace is not available merely because all ten Hard Work achievements exist in permanent Meta.
+
+For a particular New Start+ life:
+- all ten ordinary Hard Work achievements must already be earned;
+- **all ten corresponding Hard Work bonus packages must be actively selected for that new life**;
+- only then is Palace work available immediately in that life;
+- no mandatory invitation/item may substitute for or weaken this all-ten-active requirement;
+- Secret Debt never counts toward the ten.
+
+Therefore Palace eligibility is a conjunction of permanent 10/10 completion plus current-run all-ten bonus activation.
+
+### D24 — Palace True Ending stat ceiling
+
+The permanent optional Palace True Ending x2 reward raises the maximum of each of the 12 progression stats from **100 to 200** when that x2 legacy option is active.
+
+- Lust remains outside the 12-stat D18 requirement/reward;
+- the exact arithmetic order of x2 relative to Hard Work +5 packages and the 10 manual creation allocation points remains open until explicitly locked.
+
 ## Still open after this lock
 
-- exact seasonal packages per job;
+- exact negative-stat tradeoff mapping/frequency for ordinary job seasonal packages;
 - exact numeric economy;
 - exact Lust starting value;
-- meta loadout slot/budget count;
-- exact ordinary profession -> selectable +5 stat mapping;
+- meta loadout slot/budget count for non-Hard-Work strong modifiers;
+- exact ordinary profession -> selectable +5 stat mapping, under D22 breadth/Lust constraints;
 - exact School curriculum/prices;
 - exact Activity region count/mechanics;
 - exact Palace role/content outside the locked True Ending requirements;
