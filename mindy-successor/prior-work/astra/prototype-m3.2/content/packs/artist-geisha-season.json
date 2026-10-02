@@ -1,0 +1,354 @@
+{
+  "schemaVersion": 1,
+  "id": "artist-geisha.season",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "calendar": true,
+      "careers": [
+        "artist-geisha"
+      ]
+    },
+    "writes": {
+      "careers": [
+        "artist-geisha"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "artist-geisha.season.spring-program",
+      "title": "Spring program window",
+      "sourceDomain": "artist-geisha",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "dayStarted"
+        },
+        {
+          "kind": "calendarAdvanced"
+        },
+        {
+          "kind": "careerTransition",
+          "career": "artist-geisha"
+        }
+      ],
+      "priorityClass": "scheduled_mandatory",
+      "priority": 64,
+      "blocking": true,
+      "delivery": {
+        "policy": "scheduled"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "not",
+          "condition": {
+            "kind": "careerStage",
+            "career": "artist-geisha",
+            "stage": "novice"
+          }
+        },
+        {
+          "kind": "calendarSeason",
+          "value": "spring"
+        },
+        {
+          "kind": "careerFact",
+          "career": "artist-geisha",
+          "fact": "spring-window-seen",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "A spring program opens a small Artist House performance window. The opportunity is scheduled by the existing calendar and remains a local career scene.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "take-window",
+          "label": "Take the Artist House opportunity",
+          "text": "Use the seasonal window as Artist-local professional experience; it does not create a global contest or reputation system.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "artist-geisha",
+              "fact": "spring-window-seen"
+            }
+          ]
+        },
+        {
+          "id": "pass",
+          "label": "Let this window pass",
+          "text": "Decline this optional professional window. Ordinary work and later Artist/Geisha progression remain available.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "artist-geisha",
+              "fact": "spring-window-seen"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "artist-geisha.season.summer-evening",
+      "title": "Summer evening window",
+      "sourceDomain": "artist-geisha",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "dayStarted"
+        },
+        {
+          "kind": "calendarAdvanced"
+        },
+        {
+          "kind": "careerTransition",
+          "career": "artist-geisha"
+        }
+      ],
+      "priorityClass": "scheduled_mandatory",
+      "priority": 64,
+      "blocking": true,
+      "delivery": {
+        "policy": "scheduled"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "not",
+          "condition": {
+            "kind": "careerStage",
+            "career": "artist-geisha",
+            "stage": "novice"
+          }
+        },
+        {
+          "kind": "calendarSeason",
+          "value": "summer"
+        },
+        {
+          "kind": "careerFact",
+          "career": "artist-geisha",
+          "fact": "summer-window-seen",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "A summer evening brings a larger reception window. It is an Artist House opportunity only and does not introduce a global festival subsystem.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "take-window",
+          "label": "Take the Artist House opportunity",
+          "text": "Use the seasonal window as Artist-local professional experience; it does not create a global contest or reputation system.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "artist-geisha",
+              "fact": "summer-window-seen"
+            }
+          ]
+        },
+        {
+          "id": "pass",
+          "label": "Let this window pass",
+          "text": "Decline this optional professional window. Ordinary work and later Artist/Geisha progression remain available.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "artist-geisha",
+              "fact": "summer-window-seen"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "artist-geisha.season.autumn-festival",
+      "title": "Autumn festival window",
+      "sourceDomain": "artist-geisha",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "dayStarted"
+        },
+        {
+          "kind": "calendarAdvanced"
+        },
+        {
+          "kind": "careerTransition",
+          "career": "artist-geisha"
+        }
+      ],
+      "priorityClass": "scheduled_mandatory",
+      "priority": 64,
+      "blocking": true,
+      "delivery": {
+        "policy": "scheduled"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "not",
+          "condition": {
+            "kind": "careerStage",
+            "career": "artist-geisha",
+            "stage": "novice"
+          }
+        },
+        {
+          "kind": "calendarSeason",
+          "value": "autumn"
+        },
+        {
+          "kind": "careerFact",
+          "career": "artist-geisha",
+          "fact": "autumn-window-seen",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "An autumn festival creates a local performance opportunity. Participation records only Artist/Geisha evidence; no generic contest engine or ranking is created.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "take-window",
+          "label": "Take the Artist House opportunity",
+          "text": "Use the seasonal window as Artist-local professional experience; it does not create a global contest or reputation system.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "artist-geisha",
+              "fact": "autumn-window-seen"
+            }
+          ]
+        },
+        {
+          "id": "pass",
+          "label": "Let this window pass",
+          "text": "Decline this optional professional window. Ordinary work and later Artist/Geisha progression remain available.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "artist-geisha",
+              "fact": "autumn-window-seen"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "artist-geisha.season.winter-salon",
+      "title": "Winter salon window",
+      "sourceDomain": "artist-geisha",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "dayStarted"
+        },
+        {
+          "kind": "calendarAdvanced"
+        },
+        {
+          "kind": "careerTransition",
+          "career": "artist-geisha"
+        }
+      ],
+      "priorityClass": "scheduled_mandatory",
+      "priority": 64,
+      "blocking": true,
+      "delivery": {
+        "policy": "scheduled"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "not",
+          "condition": {
+            "kind": "careerStage",
+            "career": "artist-geisha",
+            "stage": "novice"
+          }
+        },
+        {
+          "kind": "calendarSeason",
+          "value": "winter"
+        },
+        {
+          "kind": "careerFact",
+          "career": "artist-geisha",
+          "fact": "winter-window-seen",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "A winter salon opens a formal Artist House opportunity. The scene can support later career evidence but does not grant Palace access.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "take-window",
+          "label": "Take the Artist House opportunity",
+          "text": "Use the seasonal window as Artist-local professional experience; it does not create a global contest or reputation system.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "artist-geisha",
+              "fact": "winter-window-seen"
+            }
+          ]
+        },
+        {
+          "id": "pass",
+          "label": "Let this window pass",
+          "text": "Decline this optional professional window. Ordinary work and later Artist/Geisha progression remain available.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "artist-geisha",
+              "fact": "winter-window-seen"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
