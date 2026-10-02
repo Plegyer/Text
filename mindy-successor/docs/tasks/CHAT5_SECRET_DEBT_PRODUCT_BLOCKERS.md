@@ -57,9 +57,11 @@ Blocked:
 
 OPEN:
 - exact Strength / Endurance / Sexuality gains;
-- any exact debt reduction, wage, or other per-shift economic value.
+- any exact debt reduction, wage, or other per-shift economic value;
+- the Product-facing Secret Debt progression-stage ladder beyond the minimum technical lifecycle states needed to represent offer / acceptance / binding / resolution.
 
 Implemented around the blocker:
+- the current `unseen / offered / refused / accepted / bound / resolved-*` values are internal lifecycle states only, not a claimed Product progression ladder;
 - bound work costs the globally locked Work cost of 1 Energy;
 - completed bound shifts are counted;
 - ordinary profession shifts are blocked while bound;
