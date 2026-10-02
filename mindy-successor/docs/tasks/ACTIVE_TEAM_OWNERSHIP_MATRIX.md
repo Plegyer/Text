@@ -10,17 +10,17 @@ Repository: `Plegyer/Text`
 Only project coordinator and final integration authority.
 Owns scope, worker assignment, Product decisions, final QA acceptance, merge order, main protection and durable project memory.
 
-There is **no worker Chat 1**. Any old Chat 1 role prompt, queue, branch or PR is historical evidence unless Leader explicitly reuses a narrow artifact.
+There is **no worker Chat 1**. Historical Chat 1 material is evidence only.
 
 ## Workers
 
-| Chat | Role | Current state | Ownership |
-|---|---|---|---|
-| Chat 2 | Integration / Assembly + Technical QA | ACTIVE | exact-head review, collision/base-drift analysis, narrow integration fixes, current-main assembly branches, merge-ready handoff |
-| Chat 3 | Full-Career Producer A | RESET / awaiting profession | one whole Lead-assigned profession |
-| Chat 4 | Full-Career Producer B | RESET / awaiting profession | one whole Lead-assigned profession |
-| Chat 5 | Full-Career Producer C | RESET / awaiting profession | one whole Lead-assigned profession |
-| Chat 6 | Full-Career Producer D | RESET / awaiting profession | one whole Lead-assigned profession |
+| Chat | Role | Active ownership |
+|---|---|---|
+| Chat 2 | Integration / Assembly + Technical QA | Artist #229/#237 technical QA, collision gate and current-main assembly |
+| Chat 3 | Full-Career Producer A | **Assassin** complete ordinary career |
+| Chat 4 | Full-Career Producer B | **Voluntary Prostitute / Professional** complete ordinary career |
+| Chat 5 | Full-Career Producer C | **Secret Debt / Slave** hidden career, with open-value firewall |
+| Chat 6 | Full-Career Producer D | **Palace** hidden/meta career, dependency-gated |
 
 ## Whole-career producer contract
 
@@ -39,19 +39,17 @@ When such a shared change is genuinely required, stop and escalate to Leader 1. 
 
 ## Candidate flow
 
-1. Producer starts a new branch from fresh current main.
-2. Do not open a draft PR merely to show work; Git branch history is sufficient during implementation.
-3. When the profession is candidate-ready, open one focused PR and freeze the exact head.
+1. Producer uses the clean branch named in its current pointer, created from this assignment baseline.
+2. Do not open a draft PR merely to show work.
+3. When candidate-ready, open one focused PR and freeze the exact head.
 4. Required executable CI runs on that head.
-5. Chat 2 performs independent technical QA and integration/collision review.
-6. Chat 2 may prepare a fresh current-main assembly branch; it never silently expands product scope.
+5. Chat 2 performs independent technical QA and collision/integration review.
+6. Chat 2 may prepare a fresh current-main assembly branch.
 7. Leader 1 gives final acceptance and performs/authorizes main merge.
 8. Exact-current-main CI closes the integration.
 
 ## Current transition
 
-- Old not-started Palace queues for Chats 1/2/3/5 are superseded by this topology reset.
-- Their branches remain untouched history.
-- Artist #229 and #237 are preserved exact-head candidates with executable self-hosted SUCCESS.
-- Chat 2 inherits the remaining Artist QA/integration gate.
-- Chats 3..6 receive no old specialization debt. Their first profession assignments must come from a fresh Leader Git audit.
+Artist remains first integration-critical package in Chat 2.
+Assassin and Prostitute are the two remaining ordinary careers after Artist.
+Secret Debt and Palace proceed in parallel only under their explicit authority/dependency firewalls; producers must not invent unresolved numbers, lore or future sibling facts.
