@@ -1,6 +1,8 @@
-import { metrics, stats, seasons, priorityClasses, saveSchema, type Stat, type Save, type Meta, type Condition, type Effect, type Catalog, type StoryEvent, type Action, type MachineDefinition, type ReactionFact, type ReactionTrigger, type PriorityClass, type LodgingDefinition, type NightChoiceDefinition, type ActivityDefinition, type ActivityOutcome, type ActivityEnvelope, ordinaryHardWorkCareers, type MetaReward, type OrdinaryHardWorkCareer } from './schema.ts';
+import { metrics, stats, seasons, priorityClasses, saveSchema, type Stat, type Save, type Meta, type Condition, type Effect, type Catalog, type StoryEvent, type Action, type MachineDefinition, type ReactionFact, type ReactionTrigger, type PriorityClass, type LodgingDefinition, type NightChoiceDefinition, type ActivityDefinition, type ActivityOutcome, type ActivityEnvelope, ordinaryHardWorkCareers, type MetaReward, type OrdinaryHardWorkCareer, type ProgressionStatCap } from './schema.ts';
 import {SCHOOL_ACTION_ID,SCHOOL_COURSES,executeSchoolLesson,type SchoolCourseId} from './school.ts';
 import {presentationIdForActionResult,presentationIdForEvent} from './presentation.ts';
+import {applyHardWorkPackagesAtCreation,ordinaryCareerAvailableWithHardWork,palaceNewStartQualified,validateHardWorkPackageSelection} from './hardWorkMeta.ts';
+import {hardWorkPackageDefinitions} from './hardWorkPackageCatalog.ts';
 
 const statSet=new Set<string>(stats);
 const cappedLegacy=new Set(['health','stress','trust']);
@@ -36,14 +38,11 @@ function defaultLegacyMetrics(){
   } as Record<string,number>;
 }
 
-export function palaceAvailable(meta:Meta):boolean{
-  return ordinaryHardWorkCareers.every(c=>meta.hardWorkProgress.includes(c));
+export function palaceAvailable(meta:Meta,activePackages:readonly string[]=[]):boolean{
+  return palaceNewStartQualified({earnedHardWork:meta.hardWorkProgress,activePackages});
 }
-function ensurePalaceUnlock(meta:Meta){
-  const earned=palaceAvailable(meta);
-  const index=meta.unlocks.indexOf('palace');
-  if(earned&&index<0)meta.unlocks.push('palace');
-  else if(!earned&&index>=0)meta.unlocks.splice(index,1);
+export function palaceRunQualified(s:Save):boolean{
+  return palaceAvailable(s.meta,s.run.character.creation.activeHardWorkPackages);
 }
 function defaultMeta(input?:Partial<Meta>&{completed?:string[];lives?:number}):Meta {
   const completed=[...new Set(input?.completedEndings??input?.completed??[])];
@@ -51,7 +50,7 @@ function defaultMeta(input?:Partial<Meta>&{completed?:string[];lives?:number}):M
   const core={
     profileVersion:input?.profileVersion??1,
     completedEndings:completed,
-    unlocks:[...new Set(input?.unlocks??[])],
+    unlocks:[...new Set(input?.unlocks??[])].filter(unlock=>unlock!=='palace'),
     ruleModifiers:structuredClone(input?.ruleModifiers??{}),
     hardWorkProgress:[...new Set(input?.hardWorkProgress??[])],
     persistentChoices:structuredClone(input?.persistentChoices??{}),
@@ -60,7 +59,6 @@ function defaultMeta(input?:Partial<Meta>&{completed?:string[];lives?:number}):M
     runsStarted,
     runsCompleted:Math.max(0,input?.runsCompleted??Math.min(completed.length,runsStarted-1))
   } as Meta;
-  ensurePalaceUnlock(core);
   return attachMetaFacade(core);
 }
 
@@ -84,9 +82,12 @@ export function getMetric(s:Save,key:string):number {
   if(key==='energy')return s.run.dayState.energyCurrent;
   return ensureLegacy(s).metrics[key]??0;
 }
+export function effectiveProgressionStatCap(s:Save):ProgressionStatCap{
+  return s.run.character.progressionStatCap;
+}
 export function setMetric(s:Save,key:string,value:number){
-  if(statSet.has(key)){s.run.character.stats[key as Stat]=Math.min(100,Math.max(0,Math.trunc(value)));return;}
-  const alias=safeAlias[key];if(alias){s.run.character.stats[alias]=Math.min(100,Math.max(0,Math.trunc(value)));return;}
+  if(statSet.has(key)){s.run.character.stats[key as Stat]=Math.min(effectiveProgressionStatCap(s),Math.max(0,Math.trunc(value)));return;}
+  const alias=safeAlias[key];if(alias){s.run.character.stats[alias]=Math.min(effectiveProgressionStatCap(s),Math.max(0,Math.trunc(value)));return;}
   if(key==='lust'){s.run.character.lust=Math.min(100,Math.max(0,Math.trunc(value)));return;}
   if(key==='money'){s.run.resources.money=Math.min(1_000_000,Math.max(0,Math.trunc(value)));return;}
   if(key==='energy'){s.run.dayState.energyCurrent=Math.min(100,Math.max(0,Math.trunc(value)));return;}
@@ -222,7 +223,7 @@ export function meets(c:Condition,s:Save,cat?:Catalog):boolean {
     case 'relationshipFact': return (readDomainState(s,'relationship',c.relationship,cat)?.facts.includes(c.fact)??false)===c.present;
     case 'relationshipChoice': return readDomainState(s,'relationship',c.relationship,cat)?.choices[c.choice]===c.value;
     case 'worldFact': return s.run.progression.worldFacts.includes(c.fact)===c.present;
-    case 'metaUnlock': return (c.unlock==='palace'?palaceAvailable(s.meta):s.meta.unlocks.includes(c.unlock))===c.present;
+    case 'metaUnlock': return s.meta.unlocks.includes(c.unlock)===c.present;
     case 'metaEndingCompleted': return s.meta.completedEndings.includes(c.ending)===c.present;
     case 'metaHardWork': return s.meta.hardWorkProgress.includes(c.career)===c.present;
 
@@ -252,11 +253,18 @@ export function ordinaryCareerForShiftAction(action:Action):OrdinaryHardWorkCare
   return ordinaryCareerSet.has(career)?career as OrdinaryHardWorkCareer:null;
 }
 
-export function actionAvailable(action:Action,s:Save,cat?:Catalog):boolean{
-  if(!eligible(action.conditions,s,cat))return false;
+export type ActionAvailabilityOptions=Readonly<{ordinaryCareersDomainLocked?:boolean}>;
+
+export function actionAvailable(action:Action,s:Save,cat?:Catalog,options:ActionAvailabilityOptions={}):boolean{
+  const normalGateSatisfied=eligible(action.conditions,s,cat);
   const career=ordinaryCareerForShiftAction(action);
-  if(!career||starterCareerSet.has(career))return true;
-  return action.conditions.length>0;
+  if(!career)return normalGateSatisfied;
+  return ordinaryCareerAvailableWithHardWork({
+    career,
+    normalGateSatisfied,
+    ordinaryCareersDomainLocked:options.ordinaryCareersDomainLocked??false,
+    earnedHardWork:s.meta.hardWorkProgress
+  });
 }
 
 export function actionCost(a:Action,s:Save){
@@ -264,34 +272,27 @@ export function actionCost(a:Action,s:Save){
   return a.id==='school'&&s.meta.unlocks.includes('scholar')&&!s.run.flags[`system.scholar.${Math.floor(s.run.day/7)}`]?0:a.cost.money;
 }
 
-function applyHardWorkStartingBonuses(meta:Meta,statRecord:Record<Stat,number>){
-  const add=(stat:Stat,value:number)=>{statRecord[stat]=Math.min(100,statRecord[stat]+value);};
-  for(const career of meta.hardWorkProgress as OrdinaryHardWorkCareer[]){
-    if(career==='lumber'){add('strength',3);add('endurance',3);}
-    else if(career==='satyr-maid'){add('charm',3);add('grooming',3);}
-    else if(career==='undead-farm'){add('reason',3);add('magic',3);}
-    else if(career==='tavern'){add('sociability',3);add('manners',3);}
-    else if(career==='hunter'){add('dexterity',3);add('wits',3);}
-    else if(career==='guard'){add('endurance',3);add('manners',3);}
-    else if(career==='artist-geisha'){add('creativity',3);add('grooming',3);}
-    else if(career==='assassin'){add('dexterity',3);add('wits',3);}
-    else if(career==='prostitute'){add('sexuality',3);add('charm',3);}
-  }
-}
-export function freshSave(metaInput?:Partial<Meta>&{completed?:string[];lives?:number}):Save {
+export type NewLifeRuntimeSetup=Readonly<{progressionStatCap?:ProgressionStatCap}>;
+
+export function freshSave(metaInput?:Partial<Meta>&{completed?:string[];lives?:number},setup:NewLifeRuntimeSetup={}):Save {
   const meta=defaultMeta(metaInput);
   const statRecord=Object.fromEntries(stats.map(k=>[k,1])) as Record<Stat,number>;
-  applyHardWorkStartingBonuses(meta,statRecord);
-  const startingMoney=600+(meta.hardWorkProgress.includes('merchant')?600:0)+(meta.unlocks.includes('satyr-maid.house-credit')?600:0);
+  const startingMoney=600+(meta.unlocks.includes('satyr-maid.house-credit')?600:0);
   const save={
-    schemaVersion:4 as const,
+    schemaVersion:5 as const,
     contentVersion:'0.1.0',
     meta,
     run:{
       id:`life-${meta.runsStarted}`,
       status:'active' as const,
       calendar:{elapsedDays:0},
-      character:{stats:statRecord,lust:1,creation:{remaining:10,allocated:{},complete:false},conditions:{}},
+      character:{
+        stats:statRecord,
+        lust:1,
+        progressionStatCap:setup.progressionStatCap??100,
+        creation:{remaining:10,allocated:{},activeHardWorkPackages:[],hardWorkPackagesApplied:false,complete:false},
+        conditions:{}
+      },
       resources:{money:startingMoney,inventory:{herb:2,tonic:0,scales:0}},
       dayState:{energyCurrent:3,nextDayModifiers:{energyDelta:0,statEffects:[],tags:[]},optionalOfferIds:[],scheduledEventIds:[]},
       housingState:{current:'normal' as const,paidForCurrentNight:false},
@@ -755,7 +756,6 @@ function endingRewards(ending:Catalog['definitions']['endings'][number]):MetaRew
 function applyMetaRewardMutable(meta:Meta,reward:MetaReward){
   if(reward.kind==='unlock')addUnique(meta.unlocks,reward.unlock);
   else if(reward.kind==='hardWork')addUnique(meta.hardWorkProgress,reward.career);
-  ensurePalaceUnlock(meta);
 }
 function commitEndingMutable(s:Save,endingId:string,cat:Catalog){
   if(s.run.status==='ended'){
@@ -1086,6 +1086,7 @@ export type Command=
   |{type:'accept';id:string}
   |{type:'newLife'}
   |{type:'restart'}
+  |{type:'setHardWorkPackageActive';career:OrdinaryHardWorkCareer;active:boolean}
   |{type:'allocate';stat:Stat;delta:1|-1}
   |{type:'finishCreation'}
   |{type:'openOffer';id:string}
@@ -1106,6 +1107,16 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
     if(s.run.status==='ending_committed')throw new Error('Сначала завершите выбранную судьбу.');
     const meta=defaultMeta(s.meta);meta.runsStarted++;return freshSave(meta);
   }
+  if(command.type==='setHardWorkPackageActive'){
+    const creation=s.run.creation;
+    if(creation.complete||creation.hardWorkPackagesApplied||s.run.status!=='active'||s.run.pending)throw new Error('Выбор наследия для этой жизни уже закрыт.');
+    if(!s.meta.hardWorkProgress.includes(command.career))throw new Error('Этот Hard Work пакет ещё не заработан.');
+    const next=command.active
+      ?[...creation.activeHardWorkPackages,command.career]
+      :creation.activeHardWorkPackages.filter(career=>career!==command.career);
+    creation.activeHardWorkPackages=validateHardWorkPackageSelection(next,s.meta.hardWorkProgress);
+    return s;
+  }
   if(command.type==='allocate'){
     if(s.run.creation.complete||s.run.status!=='active'||s.run.pending)throw new Error('Создание персонажа завершено.');
     if(!stats.includes(command.stat))throw new Error('Неизвестная характеристика.');
@@ -1115,6 +1126,21 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
   }
   if(command.type==='finishCreation'){
     if(s.run.creation.complete||s.run.creation.remaining!==0)throw new Error('Распределите все 10 очков.');
+    const application=applyHardWorkPackagesAtCreation({
+      definitions:hardWorkPackageDefinitions,
+      earnedHardWork:s.meta.hardWorkProgress,
+      activePackages:s.run.creation.activeHardWorkPackages,
+      snapshot:{
+        stats:s.run.character.stats,
+        lust:s.run.character.lust,
+        packagesApplied:s.run.creation.hardWorkPackagesApplied
+      },
+      progressionStatCap:effectiveProgressionStatCap(s)
+    });
+    s.run.character.stats=application.stats;
+    s.run.character.lust=application.lust;
+    s.run.creation.activeHardWorkPackages=[...application.appliedPackages];
+    s.run.creation.hardWorkPackagesApplied=application.packagesApplied;
     s.run.creation.complete=true;
     register(s,cat);
     runResolverBoundary(s,input,cat,[{kind:'creationCompleted'}],true);
@@ -1332,9 +1358,22 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
       raw.run.endings.result={resultId:ids.resultId,endingId:committed,transactionId:ids.transactionId,completedAtDay:raw.run.calendar?.elapsedDays??raw.run.day??0,firstCompletion:false,appliedMetaRewardIds:[]};
       if(!raw.meta.appliedResultTransactions.includes(ids.transactionId))raw.meta.appliedResultTransactions.push(ids.transactionId);
     }
+    raw.schemaVersion=5;
+    raw.meta.unlocks=(raw.meta.unlocks??[]).filter((unlock:string)=>unlock!=='palace');
+    raw.run.character.progressionStatCap=100;
+    raw.run.character.creation.activeHardWorkPackages=[];
+    raw.run.character.creation.hardWorkPackagesApplied=true;
   }
   const parsed=saveSchema.parse(raw) as unknown as Save;
   const s=attachLegacyFacade(parsed);
+  s.meta.unlocks=s.meta.unlocks.filter(unlock=>unlock!=='palace');
+  s.run.creation.activeHardWorkPackages=validateHardWorkPackageSelection(
+    s.run.creation.activeHardWorkPackages,
+    s.meta.hardWorkProgress
+  );
+  if(s.run.creation.complete&&!s.run.creation.hardWorkPackagesApplied)throw new Error('Завершённое создание должно иметь зафиксированный Hard Work package state.');
+  if(!s.run.creation.complete&&s.run.creation.hardWorkPackagesApplied&&s.run.creation.activeHardWorkPackages.length)throw new Error('Legacy-settled создание не может содержать активные Hard Work пакеты.');
+  for(const stat of stats)if(s.run.character.stats[stat]>effectiveProgressionStatCap(s))throw new Error(`Характеристика ${stat} превышает эффективный потолок.`);
   if(s.run.metrics.energy>energyMax(s))throw new Error('Некорректный запас энергии.');
   if(!s.run.creation.complete&&s.run.creation.remaining+Object.values(s.run.creation.allocated).reduce((a,b)=>a+b,0)!==10)throw new Error('Некорректные стартовые очки.');
   if(s.run.lastAction&&s.run.lastAction.id!==SCHOOL_ACTION_ID&&!cat.definitions.actions.some(a=>a.id===s.run.lastAction!.id))throw new Error('Неизвестное последнее занятие.');
@@ -1430,7 +1469,7 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
   if(currentMeta){
     const current=defaultMeta(currentMeta);
     s.meta.completedEndings=[...new Set([...current.completedEndings,...s.meta.completedEndings])];
-    s.meta.unlocks=[...new Set([...current.unlocks,...s.meta.unlocks])];
+    s.meta.unlocks=[...new Set([...current.unlocks,...s.meta.unlocks])].filter(unlock=>unlock!=='palace');
     s.meta.hardWorkProgress=[...new Set([...current.hardWorkProgress,...s.meta.hardWorkProgress])];
     s.meta.appliedResultTransactions=[...new Set([...current.appliedResultTransactions,...s.meta.appliedResultTransactions])];
     s.meta.runsStarted=Math.max(current.runsStarted,s.meta.runsStarted);
@@ -1438,7 +1477,6 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
     s.meta.ruleModifiers={...s.meta.ruleModifiers,...current.ruleModifiers};
     s.meta.persistentChoices={...s.meta.persistentChoices,...current.persistentChoices};
     s.meta.activeLegacyPerks=[...new Set([...s.meta.activeLegacyPerks,...current.activeLegacyPerks])];
-    ensurePalaceUnlock(s.meta);
     attachMetaFacade(s.meta);
   }
   return s;
