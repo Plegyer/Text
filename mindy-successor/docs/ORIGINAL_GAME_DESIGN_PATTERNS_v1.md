@@ -105,6 +105,11 @@ Some original career routing is explicitly shared. The Prostitute/Arm-Candy trig
 
 Design lesson: successor cross-career hooks can create authored continuity between professions while keeping ownership boundaries clean. Prefer read-only evidence/capability inputs and career-local consequences over global mutable meters.
 
+### 16. Endings belong to many systems, not only careers
+Recovered ending rewards come from career repetition, relationship/NPC arcs, poverty, contests/side systems, combat/story routes and the run deadline.
+
+Design lesson: avoid one canonical “best” ending family. Hard Work can be the dependable profession route while complex alternatives reward different playstyles, choices and builds.
+
 ## Successor implications to test, not auto-lock
 
 - Current approved successor seasonal-tradeoff candidate yields **+1.5 net progression-stat points per ordinary shift on average for all ten careers**. That is roughly +75 summed stat points across 50 shifts, versus about +25 in the recovered original work model. This is a balance-test flag, not a command to copy the original: verify progression speed and cap timing over a full 160-day run, especially with School and NG+.
