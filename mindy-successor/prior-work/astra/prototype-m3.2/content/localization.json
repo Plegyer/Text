@@ -11402,19 +11402,19 @@
       "ru": "Сохранить этот результат только в локальном состоянии профессии.",
       "en": "Record only the Prostitute-local Tavern input."
     },
-    "event.prostitute.cross.guard-safety.title": {
+    "event.prostitute.cross.city-safety.title": {
       "ru": "Контекст безопасности из Guard",
       "en": "Read an existing Guard city-resolution fact"
     },
-    "event.prostitute.cross.guard-safety.variant.default.text": {
+    "event.prostitute.cross.city-safety.variant.default.text": {
       "ru": "Уже существующий результат другой системы учитывается только как локальный профессиональный контекст. Исходная карьера сохраняет владение своим состоянием, предметами и правилами.",
       "en": "An already-shipped system result is acknowledged only as local professional context. The source career or lodging system keeps ownership of its state and rules."
     },
-    "event.prostitute.cross.guard-safety.choice.record.label": {
+    "event.prostitute.cross.city-safety.choice.record.label": {
       "ru": "Зафиксировать",
       "en": "Record only the Prostitute-local Guard input"
     },
-    "event.prostitute.cross.guard-safety.choice.record.text": {
+    "event.prostitute.cross.city-safety.choice.record.text": {
       "ru": "Сохранить этот результат только в локальном состоянии профессии.",
       "en": "Record only the Prostitute-local Guard input."
     },
