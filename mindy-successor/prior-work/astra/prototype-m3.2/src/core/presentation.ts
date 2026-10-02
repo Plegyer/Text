@@ -620,6 +620,15 @@ export function presentationIdForGuardState(stateId:string){
   return `job/guard/state/${clean(stateId)}`;
 }
 
+export const ARTIST_GEISHA_DRAFT_STAGE_FAMILIES=[
+  'novice','performer','recognized-artist','veteran',
+  'master-artist','patron-network','court-invitation','outcome-ready'
+] as const;
+
+export function presentationIdForArtistGeishaStage(stage:string){
+  return `job/artist-geisha/stage/${clean(stage)}`;
+}
+
 export function presentationIdForEnding(endingId:string){
   const parts=pathParts(endingId);
   if(parts[0]==='ending')parts.shift();
@@ -877,6 +886,23 @@ export function presentationSlots(cat:Catalog):PresentationSlot[]{
         baseMediaIds:[],
         fallbackId:'job/guard/result/default'
       });
+    }
+  }
+
+  // Artist/Geisha draft stage families are preparation vocabulary only.
+  // A semantic stage slot exists only when the live catalog publishes the exact
+  // matching Artist House stage, so draft names cannot activate production IDs.
+  const artistGeishaCareer=(cat.definitions.careers??[]).find(item=>item.id==='artist-geisha');
+  if(artistGeishaCareer){
+    for(const stage of ARTIST_GEISHA_DRAFT_STAGE_FAMILIES){
+      if(artistGeishaCareer.stages.includes(stage)){
+        add({
+          id:presentationIdForArtistGeishaStage(stage),
+          label:`Artist House · stage · ${stage}`,
+          baseMediaIds:[],
+          fallbackId:'job/artist-geisha/result/default'
+        });
+      }
     }
   }
 
