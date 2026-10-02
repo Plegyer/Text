@@ -1,13 +1,13 @@
 {
   "formatVersion": 1,
   "id": "chat3.merchant-authored-copy.v18",
-  "status": "CONTENT_PREP_ONLY_PENDING_FROZEN_MERCHANT_RUNTIME",
+  "status": "LIVE_BOUND_ON_FROZEN_MERCHANT_RUNTIME_WITH_AUTHORITY_GAP",
   "activationHead": "d7dad76d47d71144a5788f762cedd72d9fc95ae5",
   "observedRuntimeAuthority": {
     "branch": "chat1/merchant-complete-v15",
+    "observedHead": "88422257f618c7182dd6d1f3eca7596c9972eb0a",
     "contractBlob": "31e353c0284700ff29d658fff9c1032193c0e563",
-    "frozen": false,
-    "observedHead": "2d37e7a24fb90f40e08322f2bd9438711cf70455"
+    "frozen": true
   },
   "invariants": {
     "createsGameplayIds": false,
@@ -770,5 +770,9 @@
         "hard-work"
       ]
     }
+  ],
+  "producerHead": "88422257f618c7182dd6d1f3eca7596c9972eb0a",
+  "authorityUnbound": [
+    "school.formal-terms"
   ]
 }
