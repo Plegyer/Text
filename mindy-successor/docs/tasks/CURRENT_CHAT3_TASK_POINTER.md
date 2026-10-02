@@ -1,46 +1,27 @@
 # CURRENT CHAT3 TASK POINTER
 
-Status: **ACTIVE — ASSASSIN AUTHOR REPAIR #2, THEN ORDINARY-WORK TRADEOFF IMPLEMENTATION**
+Status: **ACTIVE — 160-DAY PROGRESSION / CAREER-MILESTONE BALANCE AUDIT**
 Owner: Chat 3
 
-## Task A — Assassin author repair #2
+Completed:
+- Assassin shipped;
+- advanced endings packet frozen at `6d9f5e19a800b2502c85d3cabf3f6ea079ca84f0`;
+- seasonal tradeoff implementation frozen at `d94a6a236a87267221a386406189a93a13615f47`.
 
-Current producer PR #252
-Current repaired producer head:
-`e81053b203655486896b7926f4aeb07d1871a49d`
+Create `chat3/progression-160day-balance-audit-v1` from fresh main.
 
-Chat 2 CI #1111 proved:
-- 982 total / 981 pass / 1 fail;
-- the previous contract-close repair works;
-- remaining failure: natural 50-shift path lacks Assassin-local `refusal-chain-evidence`.
+## Assignment
 
-Exact routing cause:
-- contract already has method=refusal and resolution=redirect;
-- at trusted-blade, `turncoat-ready` priority 73 and `refusal-evidence` priority 71 can collide;
-- turncoat-ready wins the one blocking slot;
-- choose-practice then advances out of trusted-blade;
-- refusal-evidence required exact trusted-blade and permanently loses its actionCompleted opportunity.
+Use successor mechanics as authority. Use `ORIGINAL_GAME_DESIGN_PATTERNS_v1.md` only as design reference.
 
-Repair only the Assassin-owned reachability/order so already-authorized refusal evidence can still be recorded naturally before/through that transition.
-Do not invent arbitrary shift thresholds.
-Preserve Hard Work=50 and all other boundaries.
+Audit:
+- relevant-stat growth across 50 shifts for each ordinary career under approved 2-of-4 negatives;
+- representative 160-day total stat growth;
+- School impact on cap timing;
+- whether any ordinary stat reaches 100 too easily;
+- career milestone/event density before Hard Work=50;
+- careers with sparse early/mid/late authored milestones.
 
-Focused/static checks only, no producer full CI.
-Freeze new exact Assassin SHA, update PR #252, report READY_FOR_CHAT2.
-
-## Task B — immediately after freezing Assassin
-
-The proposal packet at
-`chat3/work-seasonal-negative-tradeoffs-v1@8f115f922d9a0ca05fe4b0ed96755b0ee45e1f7c`
-is **Leader-approved for implementation** under the user's locked 2-of-4 seasonal-tradeoff direction.
-
-Create a fresh implementation branch from then-current main and apply exactly the packet mapping:
-- exactly 2 negative seasons per ordinary profession;
-- each negative is one -1 progression-stat effect;
-- no Lust negative;
-- preserve all positive effects, wages, unlocks, counters/items, events and Hard Work=50;
-- normalize Lumber to only Spring Grooming -1 and Winter Sociability -1;
-- add the focused regression described in the packet.
-
+Deliver numeric tables, risks and proposals only. Do not alter production tuning/content.
 No full CI.
-Freeze SHA and report READY_FOR_CHAT2.
+Freeze SHA and report `READY_FOR_LEADER_BALANCE_DECISION`.
