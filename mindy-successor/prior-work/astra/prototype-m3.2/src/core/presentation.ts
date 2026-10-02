@@ -625,6 +625,13 @@ export const ARTIST_GEISHA_DRAFT_STAGE_FAMILIES=[
   'master-artist','patron-network','court-invitation','outcome-ready'
 ] as const;
 
+export const ARTIST_GEISHA_SEASONAL_EVENT_IDS=[
+  'artist-geisha.season.spring-program',
+  'artist-geisha.season.summer-evening',
+  'artist-geisha.season.autumn-festival',
+  'artist-geisha.season.winter-salon'
+] as const;
+
 export function presentationIdForArtistGeishaStage(stage:string){
   return `job/artist-geisha/stage/${clean(stage)}`;
 }
@@ -913,7 +920,9 @@ export function presentationSlots(cat:Catalog):PresentationSlot[]{
        ?presentationIdForTavernRelationshipRoot()
        :event.sourceDomain==='guard'
         ?'job/guard/result/default'
-        :'location/town/default';
+        :event.sourceDomain==='artist-geisha'
+         ?'job/artist-geisha/result/default'
+         :'location/town/default';
     for(const variant of event.variants){
       add({
         id:presentationIdForEvent(cat,event.id,variant.id),
