@@ -1,0 +1,523 @@
+{
+  "schemaVersion": 1,
+  "id": "artist-geisha.career",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "careers": [
+        "artist-geisha"
+      ]
+    },
+    "writes": {
+      "careers": [
+        "artist-geisha"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "artist-geisha.career.first-shift",
+      "title": "First Artist House step",
+      "sourceDomain": "artist-geisha",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerCounterChanged",
+          "career": "artist-geisha",
+          "counter": "completed_shifts"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 100,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "artist-geisha",
+          "stage": "novice"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "artist-geisha",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 1
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "A completed ordinary Artist House shift is enough to move from novice tasks into performer work without changing the wage contract.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue as a performer",
+          "text": "Keep ordinary Artist House work open while the career starts tracking seasonal breadth.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "advanceCareer",
+              "career": "artist-geisha",
+              "transition": "first-shift"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "artist-geisha.career.seasonal-breadth",
+      "title": "A full seasonal repertoire",
+      "sourceDomain": "artist-geisha",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerCounterChanged",
+          "career": "artist-geisha",
+          "counter": "spring_performances"
+        },
+        {
+          "kind": "careerCounterChanged",
+          "career": "artist-geisha",
+          "counter": "summer_performances"
+        },
+        {
+          "kind": "careerCounterChanged",
+          "career": "artist-geisha",
+          "counter": "autumn_performances"
+        },
+        {
+          "kind": "careerCounterChanged",
+          "career": "artist-geisha",
+          "counter": "winter_performances"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "artist-geisha.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 82,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "artist-geisha",
+          "stage": "performer"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "artist-geisha",
+          "counter": "spring_performances",
+          "op": "gte",
+          "value": 1
+        },
+        {
+          "kind": "careerCounter",
+          "career": "artist-geisha",
+          "counter": "summer_performances",
+          "op": "gte",
+          "value": 1
+        },
+        {
+          "kind": "careerCounter",
+          "career": "artist-geisha",
+          "counter": "autumn_performances",
+          "op": "gte",
+          "value": 1
+        },
+        {
+          "kind": "careerCounter",
+          "career": "artist-geisha",
+          "counter": "winter_performances",
+          "op": "gte",
+          "value": 1
+        },
+        {
+          "kind": "careerFact",
+          "career": "artist-geisha",
+          "fact": "seasonal-breadth-ready",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Ordinary work now covers all four seasonal Artist House contexts. The breadth is recorded locally instead of creating a global festival or reputation system.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record seasonal breadth",
+          "text": "Keep the seasonal record as Artist/Geisha career evidence.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "artist-geisha",
+              "fact": "seasonal-breadth-ready"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "artist-geisha.career.recognized",
+      "title": "Recognized Artist",
+      "sourceDomain": "artist-geisha",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "artist-geisha",
+          "fact": "seasonal-breadth-ready"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "artist-geisha.shift"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 92,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "artist-geisha",
+          "stage": "performer"
+        },
+        {
+          "kind": "careerFact",
+          "career": "artist-geisha",
+          "fact": "seasonal-breadth-ready",
+          "present": true
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Breadth across the shipped seasonal work contexts is enough to enter the Recognized Artist state. Advanced routes remain separate readiness decisions.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Work as a recognized artist",
+          "text": "Open advanced readiness without committing to a late route.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "advanceCareer",
+              "career": "artist-geisha",
+              "transition": "recognized-artist"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "artist-geisha.career.choose-route",
+      "title": "Choose a late Artist House route",
+      "sourceDomain": "artist-geisha",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "artist-geisha",
+          "fact": "veteran-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "artist-geisha",
+          "fact": "master-artist-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "artist-geisha",
+          "fact": "patron-network-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "artist-geisha",
+          "fact": "court-invitation-ready"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "artist-geisha.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 58,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 1,
+      "variantCooldownDays": 0,
+      "maxShows": 12,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "artist-geisha",
+          "stage": "recognized-artist"
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "artist-geisha",
+              "fact": "veteran-ready",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "artist-geisha",
+              "fact": "master-artist-ready",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "artist-geisha",
+              "fact": "patron-network-ready",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "artist-geisha",
+              "fact": "court-invitation-ready",
+              "present": true
+            }
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Several Artist House routes may be ready at once. Readiness does not force a commitment and Court Invitation is not Palace access.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "veteran",
+          "label": "Take Veteran",
+          "text": "Choose seasoned ordinary Artist House work.",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "artist-geisha",
+              "fact": "veteran-ready",
+              "present": true
+            }
+          ],
+          "effects": [
+            {
+              "kind": "advanceCareer",
+              "career": "artist-geisha",
+              "transition": "branch-veteran"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "artist-geisha",
+              "fact": "outcome-ready"
+            }
+          ]
+        },
+        {
+          "id": "master-artist",
+          "label": "Take Master Artist",
+          "text": "Choose the advanced performance route.",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "artist-geisha",
+              "fact": "master-artist-ready",
+              "present": true
+            }
+          ],
+          "effects": [
+            {
+              "kind": "advanceCareer",
+              "career": "artist-geisha",
+              "transition": "branch-master-artist"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "artist-geisha",
+              "fact": "outcome-ready"
+            }
+          ]
+        },
+        {
+          "id": "patron-network",
+          "label": "Take Patron Network",
+          "text": "Choose the professional social-network route without creating a generic patron system.",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "artist-geisha",
+              "fact": "patron-network-ready",
+              "present": true
+            }
+          ],
+          "effects": [
+            {
+              "kind": "advanceCareer",
+              "career": "artist-geisha",
+              "transition": "branch-patron-network"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "artist-geisha",
+              "fact": "outcome-ready"
+            }
+          ]
+        },
+        {
+          "id": "court-invitation",
+          "label": "Take Court Invitation",
+          "text": "Choose Artist-local court-contact readiness. Palace unlock remains external.",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "artist-geisha",
+              "fact": "court-invitation-ready",
+              "present": true
+            }
+          ],
+          "effects": [
+            {
+              "kind": "advanceCareer",
+              "career": "artist-geisha",
+              "transition": "branch-court-invitation"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "artist-geisha",
+              "fact": "outcome-ready"
+            }
+          ]
+        },
+        {
+          "id": "defer",
+          "label": "Keep routes open",
+          "text": "Do not choose a late branch yet.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "artist-geisha.career.outcome-ready",
+      "title": "Artist House outcome-ready",
+      "sourceDomain": "artist-geisha",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerTransition",
+          "career": "artist-geisha"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "artist-geisha",
+          "fact": "outcome-ready"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 80,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "artist-geisha",
+              "stage": "veteran"
+            },
+            {
+              "kind": "careerStage",
+              "career": "artist-geisha",
+              "stage": "master-artist"
+            },
+            {
+              "kind": "careerStage",
+              "career": "artist-geisha",
+              "stage": "patron-network"
+            },
+            {
+              "kind": "careerStage",
+              "career": "artist-geisha",
+              "stage": "court-invitation"
+            }
+          ]
+        },
+        {
+          "kind": "careerFact",
+          "career": "artist-geisha",
+          "fact": "outcome-ready",
+          "present": true
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The Artist/Geisha career has a complete late-route state. Hard Work remains independently eligible and complex public endings remain unassigned.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Keep living",
+          "text": "Move to outcome-ready without auto-committing an ending.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "advanceCareer",
+              "career": "artist-geisha",
+              "transition": "outcome-ready"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
