@@ -8,6 +8,7 @@ import {labels,hints} from './labels.ts';
 import {povertyPendingLocalizationKey} from './povertyDepth.ts';
 import {emptyLocalization,localizationSchema,normalizeLocale,resolveLocalizedText,type Locale,type LocalizationBundle} from '../core/localization.ts';
 import {forestActivityNarrativeKey} from './forestNarrative.ts';
+import {SECRET_DEBT_SHIFT_ACTION_ID,secretDebtWorkVisible} from '../core/secretDebt.ts';
 declare global {interface Window {gameStorage?:{load:()=>Promise<{text:string;recovered:boolean}|null>;save:(text:string)=>Promise<void>}}}
 const app=document.querySelector<HTMLDivElement>('#app')!;
 const esc=(s:unknown)=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]!));
@@ -176,6 +177,7 @@ function guardRelationshipChoiceState(eventId:string,choiceId:string){
  return '';
 }
 const professions=['lumber.shift','satyr-maid.shift','undead-farm.shift','tavern.shift','hunter.shift','guard.shift','merchant.shift','artist-geisha.shift','assassin.shift','prostitute.shift'];
+const isProfessionAction=(id:string)=>professions.includes(id)||id===SECRET_DEBT_SHIFT_ACTION_ID;
 const lateCareerProfessions=new Set(['tavern.shift','hunter.shift','guard.shift','merchant.shift','artist-geisha.shift','assassin.shift','prostitute.shift']);
 const lumberOutcomeIds=['ending.lumber.hard-work','ending.lumber.forewoman','ending.lumber.forest'] as const;
 function lumberCareerProgress(){
@@ -361,11 +363,12 @@ function disabled(a:Action){return busy||locked||state.run.status!=='active'||!s
 function actionList(ids:string[]){return `<div class="activity-list">${ids.map(id=>catalog.definitions.actions.find(a=>a.id===id)).filter((a):a is Action=>!!a).map(a=>{
  const miss=a.conditions.filter(c=>!meets(c,state,catalog));
  const careerAvailable=actionAvailable(a,state,catalog);
- const careerLocked=professions.includes(a.id)&&!careerAvailable;
+ const debtLock=professions.includes(a.id)&&secretDebtWorkVisible(state);
+  const careerLocked=professions.includes(a.id)&&!careerAvailable;
  const lateCareer=lateCareerProfessions.has(a.id);
  const availabilityState=lateCareer?(careerAvailable?'unlocked':'locked'):'';
  const availabilityLabel=lateCareer?tr(`ui.work.lateCareer.${availabilityState}`,availabilityState==='unlocked'?'Открыто':'Закрыто'):'';
- const lockHelp=careerLocked?tr('ui.work.lockedCareerHelp','Этот карьерный путь пока недоступен. Выполните указанные условия открытия.'):''; 
+ const lockHelp=careerLocked?(debtLock?tr('ui.secretDebt.ordinaryWorkLocked','Обычные профессии недоступны, пока действует связывающий долг. Их прежний прогресс сохранён.'):tr('ui.work.lockedCareerHelp','Этот карьерный путь пока недоступен. Выполните указанные условия открытия.')):''; 
  const helpId=careerLocked?`work-lock-${a.id.replace(/[^a-z0-9_-]+/gi,'-')}`:'';
  const statsEffects=[...a.effects,...(a.seasonal?.[calendar(state.run.day).season]??[])].filter(e=>e.kind==='metric'&&(stats as readonly string[]).includes(e.key));
  const forecast=a.wage?Math.round(a.wage.base+a.wage.weights.reduce((sum,w)=>sum+state.run.metrics[w.stat]*w.factor,0)):null;
@@ -385,7 +388,7 @@ function actionList(ids:string[]){return `<div class="activity-list">${ids.map(i
  const guardStatus=a.id==='guard.shift'?guardPresentationStatusHTML():'';
  const availability=
   lateCareer?`<p class="career-availability" data-career-availability="${availabilityState}" tabindex="0" role="status" aria-label="${esc(fmt(tr('ui.work.lateCareer.stateAria','{career}: {state}'),{career:label,state:availabilityLabel}))}">${esc(availabilityLabel)}</p>`:'';
- return `<article class="activity" ${lateCareer?`data-late-career="${esc(a.id)}"`:''} ${satyrStage?`data-satyr-maid-stage="${esc(satyrStage)}"`:''} ${undeadFarmStage?`data-undead-farm-stage="${esc(undeadFarmStage)}"`:''} ${a.id==='tavern.shift'?'data-tavern-presentation="true"':''} ${a.id==='hunter.shift'?'data-hunter-presentation="true"':''} ${a.id==='guard.shift'?'data-guard-presentation="true"':''}><div><h3>${esc(label)}</h3>${availability}${satyrStageStatus}${undeadFarmStageStatus}${tavernStatus}${hunterStatus}${guardStatus}<p>${esc(description)}</p><small>${a.cost.energy} ${esc(tr('ui.work.energy','энергии'))}${actionCost(a,state)?` · ${actionCost(a,state)} ${esc(tr('ui.work.coins','монет'))}`:''}${forecast!==null?` · ${esc(tr('ui.work.income','доход ≈'))} ${forecast}`:''}</small><div class="effect-tags">${statsEffects.map(e=>e.kind==='metric'?`<span class="${e.delta>0?'gain':'loss'}">${esc(labels[e.key])} ${e.delta>0?'+':''}${e.delta}</span>`:'').join('')}</div>${miss.length?`<p class="requirement">${esc(miss.map(explain).join(' · '))}</p>`:''}${careerLocked?`<p class="requirement" id="${esc(helpId)}" tabindex="0">${esc(lockHelp)}</p>`:''}</div>${a.mode==='brew'?`<div><button data-action="${a.id}" data-recipe="gentle" ${disabled(a)?'disabled':''}>${esc(tr('ui.work.recipeReliable','Надёжно'))}</button><button data-action="${a.id}" data-recipe="bold" ${disabled(a)?'disabled':''}>${esc(tr('ui.work.recipeFast','Быстро'))}</button></div>`:`<button data-action="${a.id}" ${careerButtonAria?`aria-label="${esc(careerButtonAria)}"`:''} ${careerLocked?`aria-describedby="${esc(helpId)}" aria-disabled="true"`:lateCareer?'aria-disabled="false"':''} ${disabled(a)?'disabled':''}>${professions.includes(a.id)?esc(tr('ui.work.button','Работать')):esc(tr('ui.generic.selectButton','Выбрать'))}</button>`}</article>`;
+ return `<article class="activity" ${lateCareer?`data-late-career="${esc(a.id)}"`:''} ${satyrStage?`data-satyr-maid-stage="${esc(satyrStage)}"`:''} ${undeadFarmStage?`data-undead-farm-stage="${esc(undeadFarmStage)}"`:''} ${a.id==='tavern.shift'?'data-tavern-presentation="true"':''} ${a.id==='hunter.shift'?'data-hunter-presentation="true"':''} ${a.id==='guard.shift'?'data-guard-presentation="true"':''}><div><h3>${esc(label)}</h3>${availability}${satyrStageStatus}${undeadFarmStageStatus}${tavernStatus}${hunterStatus}${guardStatus}<p>${esc(description)}</p><small>${a.cost.energy} ${esc(tr('ui.work.energy','энергии'))}${actionCost(a,state)?` · ${actionCost(a,state)} ${esc(tr('ui.work.coins','монет'))}`:''}${forecast!==null?` · ${esc(tr('ui.work.income','доход ≈'))} ${forecast}`:''}</small><div class="effect-tags">${statsEffects.map(e=>e.kind==='metric'?`<span class="${e.delta>0?'gain':'loss'}">${esc(labels[e.key])} ${e.delta>0?'+':''}${e.delta}</span>`:'').join('')}</div>${miss.length?`<p class="requirement">${esc(miss.map(explain).join(' · '))}</p>`:''}${careerLocked?`<p class="requirement" id="${esc(helpId)}" tabindex="0">${esc(lockHelp)}</p>`:''}</div>${a.mode==='brew'?`<div><button data-action="${a.id}" data-recipe="gentle" ${disabled(a)?'disabled':''}>${esc(tr('ui.work.recipeReliable','Надёжно'))}</button><button data-action="${a.id}" data-recipe="bold" ${disabled(a)?'disabled':''}>${esc(tr('ui.work.recipeFast','Быстро'))}</button></div>`:`<button data-action="${a.id}" ${careerButtonAria?`aria-label="${esc(careerButtonAria)}"`:''} ${careerLocked?`aria-describedby="${esc(helpId)}" aria-disabled="true"`:lateCareer?'aria-disabled="false"':''} ${disabled(a)?'disabled':''}>${isProfessionAction(a.id)?esc(tr('ui.work.button','Работать')):esc(tr('ui.generic.selectButton','Выбрать'))}</button>`}</article>`;
  }).join('')}</div>`;}
 function schoolCourseDisabled(course:SchoolCourse){
  return busy||locked||state.run.status!=='active'||!state.run.creation.complete||!state.run.flags['story.arrived']||
@@ -481,7 +484,7 @@ function central(){
    :'night/default';
   return `<section class="stage scene">${mediaHTML(selectedTavernNight)}<div class="stage-title"><span class="eyebrow">${esc(tr('ui.night.eyebrow','Ночь'))}</span><h1>${esc(tr('ui.night.sequence.title','Ход ночи'))}</h1></div></section><section class="dialogue"><p>${esc(night.phase)}</p></section>`;
  }
- if(screen==='scene'&&r.lastAction){const last=r.lastAction,a=catalog.definitions.actions.find(a=>a.id===last.id),isProfession=!!a&&professions.includes(a.id);
+ if(screen==='scene'&&r.lastAction){const last=r.lastAction,a=catalog.definitions.actions.find(a=>a.id===last.id),isProfession=!!a&&isProfessionAction(a.id);
   const schoolCourse=last.id==='school'?SCHOOL_COURSES.find(course=>course.presentationId===last.presentationId):undefined;
   const shownTitle=schoolCourse?schoolCourseLabel(schoolCourse):last.outcomeRef?eventTitle(last.outcomeRef.eventId,last.title):a?tr(`action.${a.id}.label`,last.title):last.title;
   const shownText=schoolCourse?fmt(tr('ui.school.lessonResult','Урок завершён: {course}.'),{course:schoolCourseLabel(schoolCourse)}):last.outcomeRef?eventChoiceText(last.outcomeRef.eventId,last.outcomeRef.choiceId,last.text):a?localizedActionSceneText(a,last.text):last.text;
@@ -497,7 +500,7 @@ function endingPresentationState(endingId:string){
  return 'locked' as const;
 }
 function panelContent(){
- if(panel==='work')return `<h2>${esc(tr('ui.work.title','Куда устроимся?'))}</h2>${actionList(professions)}`;
+ if(panel==='work'){const boundWork=secretDebtWorkVisible(state)?`<h3>${esc(tr('ui.secretDebt.workTitle','Связывающий долг'))}</h3>${actionList([SECRET_DEBT_SHIFT_ACTION_ID])}`:'';return `<h2>${esc(tr('ui.work.title','Куда устроимся?'))}</h2>${actionList(professions)}${boundWork}`;}
  if(panel==='school')return `<h2>${esc(tr('ui.school.title','Школа'))}</h2><p>${esc(tr('ui.school.help','Восемь оплачиваемых курсов. Урок списывает tuition + 1 Energy атомарно.'))}</p>${schoolList()}`;
  if(panel==='explore')return `<h2>${esc(tr('ui.explore.title','Окрестности и поручения'))}</h2>${activityEntryList(['lumber.forest','hunter.expedition'])}<details><summary>${esc(tr('ui.explore.errandsSummary','Обычные поручения'))}</summary>${actionList(['forest-search','tavern-talk','forage','landlord','visit','oddjob'])}</details>`;
  if(panel==='sleep')return `<h2>${esc(tr('ui.sleep.title','Ночь'))}</h2><p>${esc(tr('ui.sleep.help','Сначала выбирается ночлег, затем — добровольное вечернее действие, после чего начинается следующий день.'))}</p><button data-end-day class="primary" ${busy||locked||!!state.run.pending||!!state.run.flow.night||!!state.run.flow.activity?'disabled':''}>${esc(tr('ui.sleep.startButton','Начать ночную последовательность'))}</button>`;
