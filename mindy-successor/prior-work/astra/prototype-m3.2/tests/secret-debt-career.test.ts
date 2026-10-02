@@ -138,6 +138,41 @@ test('20% street lender roll is deterministic across reload and refusal closes t
   assert.equal(again.state.run.history['secret-debt.lender-encounter']?.count,1);
 });
 
+test('lender chance is attempted only once per eligible street night even across another blocking scene',()=>{
+  const encounter=secretPack.events.find((event:any)=>event.id==='secret-debt.lender-encounter');
+  const otherEvent:any={
+    id:'test.after-lodging-blocker',
+    title:'Test blocker',
+    sourceDomain:'test',
+    trigger:[],
+    reactionTriggers:[{kind:'nightPhase',point:'after_lodging'}],
+    priorityClass:'normal_progression',
+    priority:0,
+    blocking:true,
+    delivery:{policy:'live'},
+    cooldownDays:0,
+    variantCooldownDays:0,
+    maxShows:1,
+    conditions:[],
+    variants:[{id:'default',text:'test',conditions:[],media:['stage.town']}],
+    choices:[{id:'continue',label:'Continue',text:'continue',conditions:[],effects:[]}]
+  };
+  const local={...catalog,events:[encounter,otherEvent]};
+  let s=started();
+  s.run.rng=8; // first roll 0.239168... fails 20%; second roll would be 0.004197... and pass.
+  s=dispatch(s,{type:'endDay'},local);
+  s=dispatch(s,{type:'chooseLodging',id:'lodging.street'},local);
+  assert.equal(s.run.pending?.eventId,'test.after-lodging-blocker');
+  assert.equal(s.run.rng,1027220423,'exactly one lender RNG roll was consumed');
+  assert.equal(s.run.flow.night?.handledEventIds.includes('secret-debt.lender-encounter'),true);
+
+  s=dispatch(s,{type:'choice',id:'continue'},local);
+  assert.equal(s.run.pending,null,'lender must not retry after the other blocker closes');
+  assert.equal(s.run.flow.night?.phase,'VoluntaryNightChoice');
+  assert.equal(s.run.rng,1027220423,'no second lender roll in the same night');
+  assert.equal(s.run.history['secret-debt.lender-encounter'],undefined,'failed check must not consume the one-life encounter');
+});
+
 test('acceptance grants exactly 2000 once, captures acceptance day, and survives reload',()=>{
   let s=started();
   s.run.housingState.current='street';
