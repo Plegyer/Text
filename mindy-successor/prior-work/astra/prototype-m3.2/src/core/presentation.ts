@@ -655,6 +655,8 @@ export const MERCHANT_ITEM_IDS=[
   'merchant_sample_kit'
 ] as const;
 
+export const MERCHANT_SCHOOL_EVENT_IDS=[] as const;
+
 export function presentationIdForMerchantStage(stage:string){
   return `job/merchant/stage/${clean(stage)}`;
 }
