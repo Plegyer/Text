@@ -1,0 +1,336 @@
+{
+  "formatVersion": 1,
+  "id": "chat3.prostitute-authored-v21.inventory",
+  "task": "C3-229",
+  "status": "SAFE_PREP_ONLY_SHIPPED_AUTHORITY_NARROW",
+  "activation": {
+    "branchStart": "a1e2061f93b24d063c182236edc53bf9502c2d75",
+    "authorityDocs": [
+      "mindy-successor/docs/CAREER_PROSTITUTE_DRAFT_v0.md",
+      "mindy-successor/docs/ADULT_CONTENT_CORE_DIRECTION_v1.md",
+      "mindy-successor/docs/tasks/TASK_CHAT3_CONTENT_QUEUE_v21.md"
+    ]
+  },
+  "shipped": {
+    "action": {
+      "id": "prostitute.shift",
+      "label": "Professional shift",
+      "energyCost": 1,
+      "unlock": {
+        "any": [
+          {
+            "allStats": {
+              "sexuality": 55,
+              "charm": 40,
+              "sociability": 35
+            }
+          },
+          {
+            "calendarYearGte": 3
+          }
+        ]
+      },
+      "counterWrite": {
+        "career": "prostitute",
+        "counter": "completed_shifts",
+        "amount": 1
+      },
+      "wage": {
+        "base": 15,
+        "weights": {
+          "sexuality": 0.35,
+          "charm": 0.3,
+          "manners": 0.2,
+          "endurance": 0.15
+        }
+      },
+      "scenes": [
+        {
+          "id": "spring.default",
+          "seasonCondition": null,
+          "media": [
+            "stage.room"
+          ]
+        },
+        {
+          "id": "summer.default",
+          "seasonCondition": "summer",
+          "media": [
+            "stage.room"
+          ]
+        },
+        {
+          "id": "autumn.default",
+          "seasonCondition": "autumn",
+          "media": [
+            "stage.room"
+          ]
+        },
+        {
+          "id": "winter.default",
+          "seasonCondition": "winter",
+          "media": [
+            "stage.room"
+          ]
+        }
+      ],
+      "seasonalEffects": {
+        "spring": [
+          {
+            "stat": "sexuality",
+            "delta": 1
+          },
+          {
+            "stat": "charm",
+            "delta": 1
+          }
+        ],
+        "summer": [
+          {
+            "stat": "charm",
+            "delta": 1
+          },
+          {
+            "stat": "endurance",
+            "delta": 1
+          }
+        ],
+        "autumn": [
+          {
+            "stat": "manners",
+            "delta": 1
+          },
+          {
+            "stat": "sexuality",
+            "delta": 1
+          }
+        ],
+        "winter": [
+          {
+            "stat": "charm",
+            "delta": 1
+          },
+          {
+            "stat": "manners",
+            "delta": 1
+          }
+        ]
+      }
+    },
+    "career": {
+      "id": "prostitute",
+      "label": "Professional",
+      "initialStage": "new-independent-worker",
+      "stages": [
+        "new-independent-worker"
+      ],
+      "transitions": []
+    },
+    "ending": {
+      "id": "ending.prostitute.hard-work",
+      "completedShiftThreshold": 50,
+      "reward": "prostitute.hardwork.compat",
+      "metaRewardId": "hardWork:prostitute"
+    },
+    "authoredLocalizationKeys": [
+      "action.prostitute.shift.label",
+      "action.prostitute.shift.description",
+      "profession.prostitute.label",
+      "profession.prostitute.description",
+      "ending.ending.prostitute.hard-work.title",
+      "ending.ending.prostitute.hard-work.description"
+    ],
+    "presentation": {
+      "staticAssets": [
+        "assets/presentation/career-prostitute-result.svg",
+        "assets/presentation/career-prostitute-shift-spring.svg",
+        "assets/presentation/career-prostitute-shift-summer.svg",
+        "assets/presentation/career-prostitute-shift-autumn.svg",
+        "assets/presentation/career-prostitute-shift-winter.svg"
+      ],
+      "seasonalLocalizationFamilies": [
+        "presentation.static.career.prostitute.shift.spring",
+        "presentation.static.career.prostitute.shift.summer",
+        "presentation.static.career.prostitute.shift.autumn",
+        "presentation.static.career.prostitute.shift.winter"
+      ],
+      "resultLocalizationFamily": "presentation.static.career.prostitute.result",
+      "endingLocalizationFamily": "presentation.static.prostitute-ending-hard-work"
+    },
+    "schoolPrep": {
+      "status": "CONTENT_PREP_ONLY",
+      "courseIds": [
+        "school.course.rhetoric_and_social",
+        "school.course.literacy_and_numbers",
+        "school.course.etiquette_and_presentation",
+        "school.course.arts_and_performance",
+        "school.course.body_confidence"
+      ],
+      "selectedThreshold": null,
+      "selectedPublicFactId": null,
+      "publishesWorldFacts": false,
+      "writesCareer": false,
+      "changesLust": false,
+      "changesConsent": false,
+      "changesNightFlow": false
+    },
+    "secretDebtRuntime": {
+      "dedicatedSecretDebtIdentityPresent": false,
+      "dedicatedForcedNightIdentityPresent": false,
+      "note": "Current production definitions contain no dedicated Secret Debt or forced-night identity; legacy generic debt is separate authority."
+    }
+  },
+  "draftVsProduction": {
+    "authority": "DESIGN_DRAFT_PLUS_PRODUCT_DIRECTION_ONLY_WHERE_NOT_SHIPPED",
+    "ordinaryWorkFamilies": [
+      "client-intake",
+      "terms",
+      "boundaries",
+      "recurring-client",
+      "difficult-request",
+      "refusal",
+      "safety",
+      "competition",
+      "reputation",
+      "high-status-booking",
+      "payment-admin"
+    ],
+    "careerStages": [
+      {
+        "draft": "P0 New Independent Worker",
+        "shippedMatch": "new-independent-worker"
+      },
+      {
+        "draft": "P1 Known Professional",
+        "runtimeId": "PENDING_RUNTIME_ID"
+      },
+      {
+        "draft": "P2 Established",
+        "runtimeId": "PENDING_RUNTIME_ID"
+      },
+      {
+        "draft": "P3A Veteran",
+        "runtimeId": "PENDING_RUNTIME_ID"
+      },
+      {
+        "draft": "P3B Independent House",
+        "runtimeId": "PENDING_RUNTIME_ID"
+      },
+      {
+        "draft": "P3C Elite Clientele",
+        "runtimeId": "PENDING_RUNTIME_ID"
+      },
+      {
+        "draft": "P3D Network / Advocacy",
+        "runtimeId": "PENDING_RUNTIME_ID"
+      },
+      {
+        "draft": "P4 Outcome-ready",
+        "runtimeId": "PENDING_RUNTIME_ID"
+      }
+    ],
+    "outcomes": [
+      {
+        "draft": "Hard Work",
+        "runtimeId": "ending.prostitute.hard-work",
+        "status": "LIVE_BOUND"
+      },
+      {
+        "draft": "Independent House",
+        "runtimeId": "PENDING_RUNTIME_ID"
+      },
+      {
+        "draft": "Elite Clientele",
+        "runtimeId": "PENDING_RUNTIME_ID"
+      },
+      {
+        "draft": "Network / Protection",
+        "runtimeId": "PENDING_RUNTIME_ID"
+      }
+    ],
+    "relationships": {
+      "roles": [
+        "recurring-client",
+        "colleague",
+        "manager-landlord",
+        "protector-contact",
+        "rival"
+      ],
+      "routes": [
+        "professional-only",
+        "friendship",
+        "romance",
+        "patronage",
+        "exploitation-conflict"
+      ],
+      "runtimeId": "PENDING_RUNTIME_ID"
+    },
+    "night": {
+      "voluntaryCareerNightConsumers": "PENDING_RUNTIME_ID",
+      "secretDebtForcedNightConsumers": "PENDING_RUNTIME_ID",
+      "separationRequired": true
+    },
+    "itemConcepts": [
+      {
+        "concept": "formal-attire",
+        "runtimeId": "PENDING_RUNTIME_ID"
+      },
+      {
+        "concept": "private-room-or-staff-key",
+        "runtimeId": "PENDING_RUNTIME_ID"
+      },
+      {
+        "concept": "contract-or-token",
+        "runtimeId": "PENDING_RUNTIME_ID"
+      },
+      {
+        "concept": "evidence-or-document",
+        "runtimeId": "PENDING_RUNTIME_ID"
+      }
+    ],
+    "schoolProducerAuthority": {
+      "rhetoric": "NO_AUTHORITY_NOT_BINDABLE",
+      "literacy": "NO_AUTHORITY_NOT_BINDABLE",
+      "etiquette": "NO_AUTHORITY_NOT_BINDABLE",
+      "artsAndPerformance": "NO_AUTHORITY_NOT_BINDABLE",
+      "bodyConfidence": "NO_AUTHORITY_NOT_BINDABLE",
+      "note": "Existing School copy is preparatory/reactive content only; selectedThreshold and selectedPublicFactId remain null."
+    },
+    "adultCoreDirection": {
+      "status": "PRODUCT_DIRECTION_NOT_RUNTIME_AUTHORITY",
+      "workVariants": "PENDING_RUNTIME_ID",
+      "nightVariants": "PENDING_RUNTIME_ID",
+      "relationshipVariants": "PENDING_RUNTIME_ID",
+      "routeVariants": "PENDING_RUNTIME_ID",
+      "nonKillingEndingPayoffs": "PENDING_RUNTIME_ID",
+      "exactLustThreshold": "PENDING_RUNTIME_ID",
+      "exactPartnerIdentities": "PENDING_RUNTIME_ID",
+      "exactConsentMechanics": "PENDING_RUNTIME_ID"
+    }
+  },
+  "forbiddenAssumptions": [
+    "ordinaryProstituteEqualsSecretDebt",
+    "confidenceOrPresentationEqualsConsent",
+    "recurringClientAutomaticallyRomance",
+    "SchoolOwnsProstituteProducerThreshold",
+    "prostituteGrantsPalaceAccess",
+    "inventedPricingEconomyEngine",
+    "inventedLustThreshold",
+    "inventedConsentStateMechanic",
+    "newPublicEndingIds"
+  ],
+  "invariants": {
+    "createsGameplayIds": false,
+    "changesRuntimeMechanics": false,
+    "changesSaveOrRng": false,
+    "changesNightFlow": false,
+    "changesSchoolProducerAuthority": false,
+    "changesLustMechanics": false,
+    "changesConsentMechanics": false,
+    "changesPricingOrEconomyEngine": false,
+    "changesEndingEligibilityRewardOrMeta": false,
+    "changesPalaceAccess": false,
+    "changesProductionLocalization": false,
+    "finalRuntimeBindingDeferred": true
+  }
+}
