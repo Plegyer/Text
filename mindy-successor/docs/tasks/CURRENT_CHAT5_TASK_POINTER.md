@@ -1,32 +1,20 @@
 # CURRENT CHAT5 TASK POINTER
 
-Status: **MERCHANT SCHOOL v17 ACTIVE — FINALIZATION UNBLOCKED**
+Status: **ARTIST/GEISHA SCHOOL v18 ACTIVE**
 Owner: Chat 5 / School + Text Localization Worker
-Queue: C5-181..192
-Target branch: `chat5/merchant-school-v17`
+Queue: C5-193..204
+Target branch: `chat5/artist-geisha-school-v18`
+Exact activation base: `8067539a606714fad8400ccbba30fd7ccf4a9158`
 
-Frozen Guard School PR #206 is shipped history and must not move.
+Frozen Merchant School history:
+- PR #224 @ `7bda6840a896fb3c75515b652e1bb959c674705d`
+- CI #921 SUCCESS
+- CANDIDATE_FROZEN / READY FOR CHAT 4 QA
+- do not move it.
 
 Authoritative queue:
-- `TASK_CHAT5_SCHOOL_QUEUE_v17.md`
+- `TASK_CHAT5_SCHOOL_QUEUE_v18.md`
 
-Exact Merchant runtime dependency is now frozen and green:
-- PR #226
-- exact head `88422257f618c7182dd6d1f3eca7596c9972eb0a`
-- CI #898 / id `36977507786`: SUCCESS
-- validator 60 packs / 222 events / 39 actions / 22 endings
-- tests 866 / 866 pass
+Begin **C5-193 immediately** and continue all safe prep through C5-203. C5-204 final rebuild/freeze waits only for the exact frozen Artist runtime from Chat 1.
 
-C5-181..188 and C5-190 safe prep may be treated as completed only where the current branch evidence proves it. **Proceed now with the remaining runtime-based finalization, especially C5-189, C5-191 and C5-192.**
-
-Runtime School authority remains strict:
-- Literacy Merchant fact `school-literacy-ready` -> consumer `merchant.routes.house-ready`;
-- Rhetoric Merchant fact `school-rhetoric-ready` -> consumer `merchant.relationship.trust`;
-- Etiquette Merchant fact `school-etiquette-ready`, consumer remains null;
-- Arcana Merchant fact `school-arcana-ready` -> consumer `merchant.trade.appraisal`;
-- every `producerThreshold` remains null unless exact School authority explicitly publishes otherwise;
-- every `selectedPublicFactId` remains null unless exact School authority explicitly publishes otherwise.
-
-Do not invent a qualifying paid-lesson condition, dummy `merchant.shift`, numeric threshold, public School fact, alternate producer trigger, new curriculum/teacher, price engine, credit/debt system, inventory-capacity rule or direct Merchant career transition.
-
-C5-192 must rebuild on exact frozen runtime head `88422257f618c7182dd6d1f3eca7596c9972eb0a`, run full exact-head CI, freeze one focused Merchant School candidate and record exact head/run plus live consumers vs fact-only blocked mappings for Chat 4 C4-163.
+Use only existing Artist-Geisha School domains: Arts & Performance, Etiquette & Presentation, Rhetoric & Social, Body Confidence, Literacy & Numbers. No new curriculum, teacher, threshold, public fact, Palace privilege, NightFlow rewrite or direct career transition.
