@@ -10,7 +10,7 @@ export const seasons = ['spring','summer','autumn','winter'] as const;
 export const housing = ['room','hostel','shelter'] as const;
 export const targetHousing = ['normal','cheap','street'] as const;
 export const unlocks = ['guild','scholar','calendar','host','mediator','court','vitality'] as const;
-export const items = ['herb','tonic','scales','reinforced_axe','rope_kit','field_preservation_kit','old_boundary_token','farm_produce','farm_unstable_specimen','farm_preserved_specimen','farm_delivery_input','tavern_staff_key','guard_badge','guard_sealed_pass','merchant_appraisal_scales','merchant_manifest_case','merchant_sample_kit'] as const;
+export const items = ['herb','tonic','scales','reinforced_axe','rope_kit','field_preservation_kit','old_boundary_token','farm_produce','farm_unstable_specimen','farm_preserved_specimen','farm_delivery_input','tavern_staff_key','guard_badge','guard_sealed_pass','merchant_appraisal_scales','merchant_manifest_case','merchant_sample_kit','prostitute_formal_attire','prostitute_private_room_key','prostitute_client_token','prostitute_evidence_case'] as const;
 
 export type Stat = typeof stats[number];
 export type ResourceId = typeof targetResources[number];
