@@ -327,14 +327,20 @@ test('Takeover has a separate explicit action with 50-shift, 10-paid-School, bui
 
 test('Secret Debt presentation IDs and RU EN surfaces remain stable',()=>{
   const shiftId=presentationIdForActionResult(catalog,'secret-debt.shift',['stage.room']);
+  const repayId=presentationIdForActionResult(catalog,'secret-debt.repay',['stage.town']);
+  const takeoverId=presentationIdForActionResult(catalog,'secret-debt.takeover',['stage.town']);
   const encounterId=presentationIdForEvent(catalog,'secret-debt.lender-encounter','default');
   const paidEndingId=presentationIdForEnding('ending.secret-debt.paid-freedom');
   assert.equal(shiftId,'job/secret-debt/result/default');
+  assert.equal(repayId,'job/secret-debt/result/repayment');
+  assert.equal(takeoverId,'job/secret-debt/result/takeover');
   assert.equal(encounterId,'job/secret-debt/event/secret-debt-lender-encounter/default');
   assert.equal(paidEndingId,'ending/secret-debt/paid-freedom');
 
   const slots=new Map(presentationSlots(catalog).map(slot=>[slot.id,slot] as const));
   assert.equal(slots.get(shiftId)?.baseMediaIds.includes('stage.room'),true);
+  assert.equal(slots.get(repayId)?.baseMediaIds.includes('stage.town'),true);
+  assert.equal(slots.get(takeoverId)?.baseMediaIds.includes('stage.town'),true);
   assert.equal(slots.get(encounterId)?.fallbackId,shiftId);
   assert.equal(slots.get(paidEndingId)?.fallbackId,'location/town/default');
   assert.equal(slots.has('ending/secret-debt/hard-work'),false);
