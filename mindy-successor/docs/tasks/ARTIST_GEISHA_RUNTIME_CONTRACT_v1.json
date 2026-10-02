@@ -16,7 +16,6 @@
     ],
     "transitions": [
       "first-shift",
-      "performer",
       "recognized-artist",
       "branch-veteran",
       "branch-master-artist",
