@@ -640,12 +640,32 @@ export const ARTIST_GEISHA_ITEM_IDS=[
   'artist_invitation_token'
 ] as const;
 
+export const ARTIST_GEISHA_RELATIONSHIP_STAGES=[
+  'introduced','professional-trust','conflict-open','utility-ready','route-resolved'
+] as const;
+
+export const ARTIST_GEISHA_ADVANCED_STATUS_IDS=[
+  'veteran-ready',
+  'master-artist-ready',
+  'patron-network-ready',
+  'court-invitation-ready',
+  'outcome-ready'
+] as const;
+
 export function presentationIdForArtistGeishaStage(stage:string){
   return `job/artist-geisha/stage/${clean(stage)}`;
 }
 
 export function presentationIdForArtistGeishaItem(itemId:string){
   return `job/artist-geisha/item/${clean(itemId)}`;
+}
+
+export function presentationIdForArtistGeishaRelationshipStage(stage:string){
+  return `relationship/artist-geisha-mentor/stage/${clean(stage)}`;
+}
+
+export function presentationIdForArtistGeishaState(stateId:string){
+  return `job/artist-geisha/state/${clean(stateId)}`;
 }
 
 export function presentationIdForEnding(endingId:string){
@@ -925,11 +945,49 @@ export function presentationSlots(cat:Catalog):PresentationSlot[]{
     }
   }
 
+  const artistGeishaRelationship=(cat.definitions.relationships??[]).find(item=>item.id==='artist-geisha.mentor');
+  if(artistGeishaRelationship){
+    for(const stage of ARTIST_GEISHA_RELATIONSHIP_STAGES){
+      if(artistGeishaRelationship.stages.includes(stage)){
+        add({
+          id:presentationIdForArtistGeishaRelationshipStage(stage),
+          label:`Artist House · mentor · ${stage}`,
+          baseMediaIds:[],
+          fallbackId:'job/artist-geisha/result/default'
+        });
+      }
+    }
+  }
+
   for(const itemId of ARTIST_GEISHA_ITEM_IDS){
     if((cat.definitions.itemDefinitions??[]).some(item=>String(item.id)===itemId)){
       add({
         id:presentationIdForArtistGeishaItem(itemId),
         label:`Artist House · item · ${itemId}`,
+        baseMediaIds:[],
+        fallbackId:'job/artist-geisha/result/default'
+      });
+    }
+  }
+
+  const artistGeishaRuntimeText=JSON.stringify({
+    career:artistGeishaCareer,
+    relationship:artistGeishaRelationship,
+    items:(cat.definitions.itemDefinitions??[]).filter(item=>ARTIST_GEISHA_ITEM_IDS.includes(String(item.id) as (typeof ARTIST_GEISHA_ITEM_IDS)[number])),
+    events:cat.events.filter(event=>event.sourceDomain==='artist-geisha')
+  });
+  const artistGeishaAdvancedStateBackings:Record<(typeof ARTIST_GEISHA_ADVANCED_STATUS_IDS)[number],boolean>={
+    'veteran-ready':artistGeishaRuntimeText.includes('veteran-ready'),
+    'master-artist-ready':artistGeishaRuntimeText.includes('master-artist-ready'),
+    'patron-network-ready':artistGeishaRuntimeText.includes('patron-network-ready'),
+    'court-invitation-ready':artistGeishaRuntimeText.includes('court-invitation-ready'),
+    'outcome-ready':artistGeishaRuntimeText.includes('outcome-ready')
+  };
+  for(const stateId of ARTIST_GEISHA_ADVANCED_STATUS_IDS){
+    if(artistGeishaAdvancedStateBackings[stateId]){
+      add({
+        id:presentationIdForArtistGeishaState(stateId),
+        label:`Artist House · readiness · ${stateId}`,
         baseMediaIds:[],
         fallbackId:'job/artist-geisha/result/default'
       });
