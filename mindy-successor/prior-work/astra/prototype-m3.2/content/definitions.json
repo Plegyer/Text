@@ -4166,7 +4166,7 @@
     {
       "id": "secret-debt.shift",
       "label": "Bound work shift",
-      "description": "A compulsory shift carried out under the binding debt. The work belongs to this hidden career while progress earned in ordinary professions remains intact.",
+      "description": "A compulsory daytime profession shift under the binding debt. It counts toward this hidden career while ordinary-profession progress remains preserved.",
       "cost": {
         "money": 0,
         "energy": 1
@@ -4233,6 +4233,128 @@
           ],
           "media": [
             "stage.room"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "secret-debt.repay",
+      "label": "Repay the binding debt",
+      "description": "Pay the entire outstanding debt in one transaction and leave the binding route.",
+      "cost": {
+        "money": 20000,
+        "energy": 0
+      },
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "secret-debt",
+          "stage": "bound"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "secret-debt",
+          "counter": "debt_current",
+          "op": "gte",
+          "value": 20000
+        }
+      ],
+      "effects": [
+        {
+          "kind": "incrementCareerCounter",
+          "career": "secret-debt",
+          "counter": "debt_current",
+          "amount": -20000
+        },
+        {
+          "kind": "addCareerFact",
+          "career": "secret-debt",
+          "fact": "debt-cleared"
+        },
+        {
+          "kind": "setCareerChoice",
+          "career": "secret-debt",
+          "choice": "outcome-route",
+          "value": "paid-freedom"
+        },
+        {
+          "kind": "advanceCareer",
+          "career": "secret-debt",
+          "transition": "resolve-paid"
+        }
+      ],
+      "mode": "story",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "You put the full sum down at once. The ledger closes, the claim on your work ends, and the ordinary professions are yours to choose again.",
+          "conditions": [],
+          "media": [
+            "stage.town"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "secret-debt.takeover",
+      "label": "Turn on the debt holder",
+      "description": "Use the route preparation, School experience, and the required build to kill the holder and take control.",
+      "cost": {
+        "money": 0,
+        "energy": 0
+      },
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "secret-debt",
+          "stage": "bound"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "secret-debt",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 50
+        },
+        {
+          "kind": "visits",
+          "action": "school",
+          "value": 10
+        },
+        {
+          "kind": "careerFact",
+          "career": "secret-debt",
+          "fact": "takeover-build-authorized",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "secret-debt",
+          "fact": "takeover-lust-authorized",
+          "present": true
+        }
+      ],
+      "effects": [
+        {
+          "kind": "setCareerChoice",
+          "career": "secret-debt",
+          "choice": "outcome-route",
+          "value": "takeover"
+        },
+        {
+          "kind": "advanceCareer",
+          "career": "secret-debt",
+          "transition": "resolve-takeover"
+        }
+      ],
+      "mode": "story",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "Preparation turns into action. The debt holder is removed, and the structure that once controlled you is now under your control.",
+          "conditions": [],
+          "media": [
+            "stage.town"
           ]
         }
       ]
@@ -4933,12 +5055,19 @@
     {
       "id": "ending.secret-debt.bound-life",
       "title": "Bound Life",
-      "description": "This life closes inside the binding arrangement, as its own outcome rather than repayment or takeover.",
+      "description": "Fifty completed daytime shifts make Bound Life available as this hidden route's Hard Work analogue. Eligibility does not release the professional lock.",
       "conditions": [
         {
           "kind": "careerStage",
           "career": "secret-debt",
-          "stage": "resolved-bound"
+          "stage": "bound"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "secret-debt",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 50
         }
       ],
       "reward": "secret-debt.reward.pending",
@@ -6157,35 +6286,17 @@
       "initialStage": "unseen",
       "stages": [
         "unseen",
-        "offered",
         "refused",
         "accepted",
         "bound",
         "resolved-paid",
-        "resolved-bound",
         "resolved-takeover"
       ],
       "transitions": [
         {
-          "id": "surface-offer",
-          "from": [
-            "unseen"
-          ],
-          "to": "offered",
-          "conditions": [
-            {
-              "kind": "careerFact",
-              "career": "secret-debt",
-              "fact": "encounter-authorized",
-              "present": true
-            }
-          ],
-          "effects": []
-        },
-        {
           "id": "refuse-offer",
           "from": [
-            "offered"
+            "unseen"
           ],
           "to": "refused",
           "conditions": [],
@@ -6194,11 +6305,18 @@
         {
           "id": "accept-offer",
           "from": [
-            "offered"
+            "unseen"
           ],
           "to": "accepted",
           "conditions": [],
-          "effects": []
+          "effects": [
+            {
+              "kind": "incrementCareerCounter",
+              "career": "secret-debt",
+              "counter": "principal_received",
+              "amount": 2000
+            }
+          ]
         },
         {
           "id": "activate-bound",
@@ -6206,15 +6324,20 @@
             "accepted"
           ],
           "to": "bound",
-          "conditions": [
+          "conditions": [],
+          "effects": [
             {
-              "kind": "careerFact",
+              "kind": "incrementCareerCounter",
               "career": "secret-debt",
-              "fact": "activation-authorized",
-              "present": true
+              "counter": "debt_current",
+              "amount": 20000
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "secret-debt",
+              "fact": "debt-active"
             }
-          ],
-          "effects": []
+          ]
         },
         {
           "id": "resolve-paid",
@@ -6233,22 +6356,6 @@
           "effects": []
         },
         {
-          "id": "resolve-bound",
-          "from": [
-            "bound"
-          ],
-          "to": "resolved-bound",
-          "conditions": [
-            {
-              "kind": "careerFact",
-              "career": "secret-debt",
-              "fact": "bound-life-ready",
-              "present": true
-            }
-          ],
-          "effects": []
-        },
-        {
           "id": "resolve-takeover",
           "from": [
             "bound"
@@ -6256,22 +6363,34 @@
           "to": "resolved-takeover",
           "conditions": [
             {
+              "kind": "careerCounter",
+              "career": "secret-debt",
+              "counter": "completed_shifts",
+              "op": "gte",
+              "value": 50
+            },
+            {
+              "kind": "visits",
+              "action": "school",
+              "value": 10
+            },
+            {
+              "kind": "careerFact",
+              "career": "secret-debt",
+              "fact": "takeover-build-authorized",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "secret-debt",
+              "fact": "takeover-lust-authorized",
+              "present": true
+            },
+            {
               "kind": "careerChoice",
               "career": "secret-debt",
               "choice": "outcome-route",
               "value": "takeover"
-            },
-            {
-              "kind": "careerFact",
-              "career": "secret-debt",
-              "fact": "takeover-route-ready",
-              "present": true
-            },
-            {
-              "kind": "careerFact",
-              "career": "secret-debt",
-              "fact": "takeover-external-condition-met",
-              "present": true
             }
           ],
           "effects": []
