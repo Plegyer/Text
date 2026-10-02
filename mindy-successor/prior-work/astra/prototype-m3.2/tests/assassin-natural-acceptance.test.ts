@@ -133,17 +133,6 @@ test('clean Assassin run exercises Year-3 fallback, lifecycle, four seasons, ref
   assert.equal(s.run.pending?.eventId,'assassin.contract.intel');
   assert.equal(s.run.pending?.variantId,intelVariant);
   s=settlePending(s);
-  let contractGuard=0;
-  while(s.run.progression.quests['assassin.contract'].stage!=='closed'){
-    if(++contractGuard>12)throw new Error('Assassin contract did not close through natural shifts');
-    s=finishNight(s);
-    seenSeasons.add(calendar(s.run.day).season);
-    s=dispatch(s,{type:'action',id:'assassin.shift'},catalog);
-    s=settlePending(s);
-  }
-  assert.equal(s.run.progression.quests['assassin.contract'].stage,'closed');
-  assert.equal(s.run.progression.quests['assassin.contract'].choices.method,'refusal');
-  assert.equal(s.run.progression.quests['assassin.contract'].choices.resolution,'redirect');
   s=finishNight(s);
 
   // First-shift milestone is exactly once.
@@ -165,6 +154,13 @@ test('clean Assassin run exercises Year-3 fallback, lifecycle, four seasons, ref
   assert.equal(assassin.counters.completed_shifts,50);
   assert.ok(['trusted-blade','outcome-ready'].includes(assassin.stage),
     'Hard Work progress must remain valid regardless of whether the optional Veteran branch has resolved');
+
+  const contract=s.run.progression.quests['assassin.contract'];
+  assert.ok(contract);
+  assert.equal(contract.stage,'closed',
+    'the major contract must close naturally during the ordinary 50-shift Hard Work path');
+  assert.equal(contract.choices.method,'refusal');
+  assert.equal(contract.choices.resolution,'redirect');
 
   for(const fact of [
     'season-spring-worked','season-summer-worked','season-autumn-worked','season-winter-worked',
