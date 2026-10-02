@@ -620,6 +620,80 @@ export function presentationIdForGuardState(stateId:string){
   return `job/guard/state/${clean(stateId)}`;
 }
 
+export const MERCHANT_PRESENTATION_STAGES=[
+  'stall-hand','independent-trader','networked-merchant','veteran',
+  'merchant-house','speculator-smuggler','patron-of-routes','outcome-ready'
+] as const;
+
+export const MERCHANT_RELATIONSHIP_STAGES=[
+  'introduced','professional-trust','conflict-open','utility-ready','route-resolved'
+] as const;
+
+export const MERCHANT_TRADE_EVENT_IDS=[
+  'merchant.trade.appraisal',
+  'merchant.trade.records',
+  'merchant.trade.delivery',
+  'merchant.trade.shortage'
+] as const;
+
+export const MERCHANT_TRADE_STATUS_IDS=[
+  'appraisal-recorded',
+  'manifest-verified',
+  'delivery-recorded',
+  'shortage-handled',
+  'risk-accepted'
+] as const;
+
+export const MERCHANT_POVERTY_STATUS_IDS=[
+  'low-liquidity-handled',
+  'poverty-response-recorded'
+] as const;
+
+export const MERCHANT_ITEM_IDS=[
+  'merchant_appraisal_scales',
+  'merchant_manifest_case',
+  'merchant_sample_kit'
+] as const;
+
+export const MERCHANT_SCHOOL_EVENT_IDS=[] as const;
+
+export const MERCHANT_CROSS_SYSTEM_EVENT_IDS=[
+  'merchant.cross.lumber-route',
+  'merchant.cross.farm-sample',
+  'merchant.cross.hunter-return',
+  'merchant.cross.tavern-rumour',
+  'merchant.cross.guard-pass'
+] as const;
+
+export const MERCHANT_ADVANCED_STATUS_IDS=[
+  'veteran-ready',
+  'crisis-resolved',
+  'merchant-house-ready',
+  'speculator-route-ready',
+  'patron-route-ready',
+  'outcome-ready'
+] as const;
+
+export const MERCHANT_PUBLIC_ENDING_IDS=[
+  'ending.merchant.hard-work'
+] as const;
+
+export function presentationIdForMerchantStage(stage:string){
+  return `job/merchant/stage/${clean(stage)}`;
+}
+
+export function presentationIdForMerchantRelationshipStage(stage:string){
+  return `relationship/merchant-supplier/stage/${clean(stage)}`;
+}
+
+export function presentationIdForMerchantState(stateId:string){
+  return `job/merchant/state/${clean(stateId)}`;
+}
+
+export function presentationIdForMerchantItem(itemId:string){
+  return `job/merchant/item/${clean(itemId)}`;
+}
+
 export function presentationIdForEnding(endingId:string){
   const parts=pathParts(endingId);
   if(parts[0]==='ending')parts.shift();
@@ -880,6 +954,103 @@ export function presentationSlots(cat:Catalog):PresentationSlot[]{
     }
   }
 
+  const merchantCareer=(cat.definitions.careers??[]).find(item=>item.id==='merchant');
+  if(merchantCareer){
+    for(const stage of MERCHANT_PRESENTATION_STAGES){
+      if(merchantCareer.stages.includes(stage)){
+        add({
+          id:presentationIdForMerchantStage(stage),
+          label:`Merchant · stage · ${stage}`,
+          baseMediaIds:[],
+          fallbackId:'job/merchant/result/default'
+        });
+      }
+    }
+  }
+
+  const merchantRelationship=(cat.definitions.relationships??[]).find(item=>item.id==='merchant.supplier');
+  if(merchantRelationship){
+    for(const stage of MERCHANT_RELATIONSHIP_STAGES){
+      if(merchantRelationship.stages.includes(stage)){
+        add({
+          id:presentationIdForMerchantRelationshipStage(stage),
+          label:`Merchant · supplier · ${stage}`,
+          baseMediaIds:[],
+          fallbackId:'job/merchant/result/default'
+        });
+      }
+    }
+  }
+
+  for(const itemId of MERCHANT_ITEM_IDS){
+    if((cat.definitions.itemDefinitions??[]).some(item=>String(item.id)===itemId)){
+      add({
+        id:presentationIdForMerchantItem(itemId),
+        label:`Merchant · item · ${itemId}`,
+        baseMediaIds:[],
+        fallbackId:'job/merchant/result/default'
+      });
+    }
+  }
+
+  const merchantRuntimeText=JSON.stringify({
+    career:merchantCareer,
+    relationship:merchantRelationship,
+    items:(cat.definitions.itemDefinitions??[]).filter(item=>MERCHANT_ITEM_IDS.includes(String(item.id) as (typeof MERCHANT_ITEM_IDS)[number])),
+    events:cat.events.filter(event=>event.sourceDomain==='merchant')
+  });
+  const merchantTradeStateBackings:Record<(typeof MERCHANT_TRADE_STATUS_IDS)[number],boolean>={
+    'appraisal-recorded':merchantRuntimeText.includes('appraisal-recorded'),
+    'manifest-verified':merchantRuntimeText.includes('manifest-verified'),
+    'delivery-recorded':merchantRuntimeText.includes('delivery-recorded'),
+    'shortage-handled':merchantRuntimeText.includes('shortage-handled'),
+    'risk-accepted':merchantRuntimeText.includes('risk-accepted')
+  };
+  for(const stateId of MERCHANT_TRADE_STATUS_IDS){
+    if(merchantTradeStateBackings[stateId]){
+      add({
+        id:presentationIdForMerchantState(stateId),
+        label:`Merchant · trade state · ${stateId}`,
+        baseMediaIds:[],
+        fallbackId:'job/merchant/result/default'
+      });
+    }
+  }
+
+  const merchantPovertyStateBackings:Record<(typeof MERCHANT_POVERTY_STATUS_IDS)[number],boolean>={
+    'low-liquidity-handled':merchantRuntimeText.includes('low-liquidity-handled'),
+    'poverty-response-recorded':merchantRuntimeText.includes('poverty-response-recorded')
+  };
+  for(const stateId of MERCHANT_POVERTY_STATUS_IDS){
+    if(merchantPovertyStateBackings[stateId]){
+      add({
+        id:presentationIdForMerchantState(stateId),
+        label:`Merchant · liquidity state · ${stateId}`,
+        baseMediaIds:[],
+        fallbackId:'job/merchant/result/default'
+      });
+    }
+  }
+
+  const merchantAdvancedStateBackings:Record<(typeof MERCHANT_ADVANCED_STATUS_IDS)[number],boolean>={
+    'veteran-ready':merchantRuntimeText.includes('veteran-ready'),
+    'crisis-resolved':merchantRuntimeText.includes('crisis-resolved'),
+    'merchant-house-ready':merchantRuntimeText.includes('merchant-house-ready'),
+    'speculator-route-ready':merchantRuntimeText.includes('speculator-route-ready'),
+    'patron-route-ready':merchantRuntimeText.includes('patron-route-ready'),
+    'outcome-ready':merchantRuntimeText.includes('outcome-ready')
+  };
+  for(const stateId of MERCHANT_ADVANCED_STATUS_IDS){
+    if(merchantAdvancedStateBackings[stateId]){
+      add({
+        id:presentationIdForMerchantState(stateId),
+        label:`Merchant · readiness · ${stateId}`,
+        baseMediaIds:[],
+        fallbackId:'job/merchant/result/default'
+      });
+    }
+  }
+
   for(const event of cat.events){
     const tavernFallback=event.sourceDomain==='tavern'
       ?'job/tavern/result/default'
@@ -887,7 +1058,9 @@ export function presentationSlots(cat:Catalog):PresentationSlot[]{
        ?presentationIdForTavernRelationshipRoot()
        :event.sourceDomain==='guard'
         ?'job/guard/result/default'
-        :'location/town/default';
+        :event.sourceDomain==='merchant'
+         ?'job/merchant/result/default'
+         :'location/town/default';
     for(const variant of event.variants){
       add({
         id:presentationIdForEvent(cat,event.id,variant.id),
