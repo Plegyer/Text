@@ -165,6 +165,11 @@ The original has a distinct Title layer in addition to ending rewards. UI text i
 
 Design lesson: different Meta families do not need the same activation rule. Successor Hard Work packages can remain freely combinable as Product already locked, while unusually strong complex-ending modifiers may later use a separate loadout/slot layer if balance needs it. This is a reference pattern, not authority for a one-title rule in the successor.
 
+### 25. Strong rule modifiers should be explicit because they can reshape content
+At least one original ending reward disables rent entirely and also disables a related storyline. Other rewards add automatic daily income or starting capabilities.
+
+Design lesson: world-rule Meta can have consequences far beyond raw balance. In the successor, strong modifiers should be opt-in, clearly described at New Start+, and tested for route interactions. Avoid silently activating a permanent reward that removes or bypasses authored content the player may want to see.
+
 ## Successor implications to test, not auto-lock
 
 - Current approved successor seasonal-tradeoff candidate yields **+1.5 net progression-stat points per ordinary shift on average for all ten careers**. That is roughly +75 summed stat points across 50 shifts, versus about +25 in the recovered original work model. This is a balance-test flag, not a command to copy the original: verify progression speed and cap timing over a full 160-day run, especially with School and NG+.
