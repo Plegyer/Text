@@ -61,7 +61,11 @@
       "master-artist-ready",
       "patron-network-ready",
       "court-invitation-ready",
-      "outcome-ready"
+      "outcome-ready",
+      "satyr-network-known",
+      "tavern-rumour-known",
+      "merchant-material-route-known",
+      "guard-event-context-known"
     ]
   },
   "ordinaryShift": {
@@ -356,5 +360,60 @@
       "artist-geisha.night.mentor-review"
     ],
     "rule": "All Artist/Geisha night opportunities use the existing single voluntary Night choice and after-choice intercept. They compete with School night study without changing NightFlow semantics, lodging payment, or next-day Energy rules."
+  },
+  "crossSystem": {
+    "satyrMaid": {
+      "input": {
+        "kind": "careerFact",
+        "career": "satyr-maid",
+        "fact": "personal-network-ready"
+      },
+      "event": "artist-geisha.cross.satyr-overlap",
+      "consumerFact": "satyr-network-known",
+      "rule": "Professional event overlap only; Artist House and Satyr Maid remain distinct careers."
+    },
+    "tavern": {
+      "input": {
+        "kind": "careerFact",
+        "career": "tavern",
+        "fact": "rumour-confirmed"
+      },
+      "event": "artist-geisha.cross.tavern-rumour",
+      "consumerFact": "tavern-rumour-known"
+    },
+    "merchant": {
+      "integrationAuthority": "merged main effca71298e4b2b2d1722b320c612382199deb18",
+      "input": {
+        "kind": "careerFact",
+        "career": "merchant",
+        "fact": "delivery-recorded"
+      },
+      "event": "artist-geisha.cross.merchant-delivery",
+      "consumerFact": "merchant-material-route-known",
+      "rule": "Materials/delivery context only; no global economy or patron subsystem."
+    },
+    "guard": {
+      "input": {
+        "kind": "careerFact",
+        "career": "guard",
+        "fact": "cargo-pass-evidence"
+      },
+      "event": "artist-geisha.cross.guard-context",
+      "consumerFact": "guard-event-context-known",
+      "rule": "Formal-event security context only; no Guard authority, covert route, or Palace access."
+    },
+    "school": {
+      "authority": "artist-geisha.school-authority.v1",
+      "rule": "Five exact prepared School consumer facts are handled by C1D-174; producer ownership remains Chat 5 School."
+    },
+    "activity": {
+      "consumer": null,
+      "rule": "No Artist-specific Activity consumer is justified by current Git authority, so no Activity gameplay dependency is fabricated."
+    },
+    "forbidden": [
+      "assassin dependency",
+      "prostitute dependency",
+      "palace dependency"
+    ]
   }
 }
