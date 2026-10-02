@@ -7826,6 +7826,100 @@
       ],
       "nextDayEffects": [],
       "nextDayEnergyDelta": 0
+    },
+    {
+      "id": "artist-geisha.night.rehearsal",
+      "label": "Stay for an Artist House rehearsal",
+      "conditions": [
+        {
+          "kind": "not",
+          "condition": {
+            "kind": "careerStage",
+            "career": "artist-geisha",
+            "stage": "novice"
+          }
+        }
+      ],
+      "effects": [
+        {
+          "kind": "incrementCareerCounter",
+          "career": "artist-geisha",
+          "counter": "night_opportunities",
+          "amount": 1
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": 0
+    },
+    {
+      "id": "artist-geisha.night.salon",
+      "label": "Attend a formal Artist House salon",
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "artist-geisha",
+              "stage": "recognized-artist"
+            },
+            {
+              "kind": "careerStage",
+              "career": "artist-geisha",
+              "stage": "veteran"
+            },
+            {
+              "kind": "careerStage",
+              "career": "artist-geisha",
+              "stage": "master-artist"
+            },
+            {
+              "kind": "careerStage",
+              "career": "artist-geisha",
+              "stage": "patron-network"
+            },
+            {
+              "kind": "careerStage",
+              "career": "artist-geisha",
+              "stage": "court-invitation"
+            },
+            {
+              "kind": "careerStage",
+              "career": "artist-geisha",
+              "stage": "outcome-ready"
+            }
+          ]
+        },
+        {
+          "kind": "itemCapability",
+          "capability": "artist_formal_presence",
+          "present": true
+        }
+      ],
+      "effects": [
+        {
+          "kind": "incrementCareerCounter",
+          "career": "artist-geisha",
+          "counter": "night_opportunities",
+          "amount": 1
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": 0
+    },
+    {
+      "id": "artist-geisha.night.mentor-review",
+      "label": "Use the mentor's optional night review",
+      "conditions": [
+        {
+          "kind": "relationshipStage",
+          "relationship": "artist-geisha.mentor",
+          "stage": "utility-ready"
+        }
+      ],
+      "effects": [],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": 0
     }
   ],
   "activities": [
