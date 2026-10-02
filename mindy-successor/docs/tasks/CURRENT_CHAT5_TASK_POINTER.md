@@ -1,49 +1,19 @@
 # CURRENT CHAT5 TASK POINTER
 
-Status: **HUNTER SCHOOL v15 FROZEN + GUARD SCHOOL v16 ACTIVE**
+Status: **GUARD SCHOOL v16 FROZEN / QA ACCEPTED / STANDBY**
 Owner: Chat 5 / School + Text Localization Worker
 
-Frozen Hunter School candidate:
-- PR #199
-- branch `chat5/hunter-school-v15`
-- exact head `f04c93db866b1d2603f6917b41297670f86b0bef`
-- exact-head CI #745 / id `36846888973`: **SUCCESS**
-- C4-151: **PASS-WITH-NOTES**
-- do not move it.
+Frozen Guard School:
+- PR #206
+- exact head `788625b8cc83d795f3e4897ab120fd0b2a5f9109`
+- base frozen Guard runtime `89030816f07be16ab5071ebb9af859fc3c756115`
+- CI #837 / id `36884031693`: SUCCESS
+- tests: 783/783
+- C4-157: PASS-WITH-NOTES
+- five Guard School facts remain fact-only; numeric thresholds remain null; no live consumer invented.
+- do not move this head.
 
-Active Guard School queue:
-- `TASK_CHAT5_SCHOOL_QUEUE_v16.md`
-- C5-169..180
-- target: **Guard School Cross-System Slice**
-- start C5-169 immediately and continue through every unblocked task.
+Previous Hunter School #199 is already shipped through Hunter integration.
 
-Runtime authority:
-- Chat 1 is active on Guard runtime v14, branch `chat1/guard-complete-v14`, C1D-145..156.
-- C1D-145 must publish exact Guard runtime contract IDs before Chat 5 binds gameplay event/fact IDs.
-- Guard School numeric thresholds remain `null` unless an existing/Lead-approved authority supplies values.
-- If a track has no authorized live consumer, keep it fact-only/blocked; never invent an event.
-
-Exact prepared School tracks:
-- `school.track.literacy_and_numbers`
-- `school.track.rhetoric_and_social`
-- `school.track.etiquette_and_presentation`
-- `school.track.physical_training`
-- `school.track.arcana`
-
-Global boundaries:
-- reuse current courses/teachers/media/Night-study choices;
-- no new curriculum;
-- no Morality stat;
-- no generic combat/use-of-force subsystem;
-- no corruption currency;
-- no global School certificate/project rule;
-- no shared Save/RNG/NightFlow/Activity rewrite;
-- no public Guard ending/reward invention.
-
-Parallelism:
-- complete contract-independent inventory and RU/EN producer copy immediately;
-- consume C1D-145 exact identities as soon as published;
-- final C5-180 freeze must be rebuilt on the exact frozen Guard runtime dependency head.
-
-Current project handoff:
-- `../LEADER1_HANDOFF_CHECKPOINT_2026-10-01.md`
+No new School queue is active at this checkpoint.
+Wait for Lead to assign the next ordinary-career School wave on a new branch.
