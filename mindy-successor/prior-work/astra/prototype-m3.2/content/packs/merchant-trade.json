@@ -8,7 +8,11 @@
       "careers": [
         "merchant"
       ],
-      "calendar": true
+      "calendar": true,
+      "itemCapabilities": [
+        "merchant_appraise_goods",
+        "merchant_verify_manifest"
+      ]
     },
     "writes": {
       "careers": [
@@ -64,6 +68,31 @@
         }
       ],
       "choices": [
+        {
+          "id": "use-scales",
+          "label": "Use the appraisal scales",
+          "text": "Compare the lot with a concrete Merchant tool; the result improves evidence quality, not a universal price formula.",
+          "conditions": [
+            {
+              "kind": "itemCapability",
+              "capability": "merchant_appraise_goods",
+              "present": true
+            }
+          ],
+          "effects": [
+            {
+              "kind": "incrementCareerCounter",
+              "career": "merchant",
+              "counter": "appraisals",
+              "amount": 1
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "merchant",
+              "fact": "appraisal-recorded"
+            }
+          ]
+        },
         {
           "id": "compare-notes",
           "label": "Compare condition and notes",
@@ -168,6 +197,25 @@
         }
       ],
       "choices": [
+        {
+          "id": "verify-with-case",
+          "label": "Verify against the manifest case",
+          "text": "Use the prepared manifest tool to compare terms and cargo evidence without creating a global inventory ledger.",
+          "conditions": [
+            {
+              "kind": "itemCapability",
+              "capability": "merchant_verify_manifest",
+              "present": true
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "merchant",
+              "fact": "manifest-verified"
+            }
+          ]
+        },
         {
           "id": "write-plain-terms",
           "label": "Write the terms plainly",

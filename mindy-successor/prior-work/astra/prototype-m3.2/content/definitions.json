@@ -8738,6 +8738,27 @@
       "capabilities": [
         "guard_sealed_pass"
       ]
+    },
+    {
+      "id": "merchant_appraisal_scales",
+      "label": "Merchant Appraisal Scales",
+      "capabilities": [
+        "merchant_appraise_goods"
+      ]
+    },
+    {
+      "id": "merchant_manifest_case",
+      "label": "Merchant Manifest Case",
+      "capabilities": [
+        "merchant_verify_manifest"
+      ]
+    },
+    {
+      "id": "merchant_sample_kit",
+      "label": "Merchant Sample Kit",
+      "capabilities": [
+        "merchant_handle_samples"
+      ]
     }
   ]
 }
