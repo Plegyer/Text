@@ -1,13 +1,13 @@
 {
   "formatVersion": 1,
   "id": "chat3.artist-geisha-authored-copy.v19",
-  "status": "CONTENT_PREP_ONLY_PENDING_FROZEN_ARTIST_RUNTIME",
+  "status": "LIVE_BOUND_ON_FROZEN_ARTIST_RUNTIME_WITH_AUTHORITY_GAPS",
   "activationHead": "8067539a606714fad8400ccbba30fd7ccf4a9158",
   "observedRuntimeAuthority": {
     "branch": "chat1/artist-geisha-complete-v16",
-    "observedHead": "58d993e98c015e9138efbcc6af77665189ee199a",
+    "observedHead": "955f4accf7e25c42e0384ddb9f76e5612f41dd00",
     "contractBlob": "1cda9f558b8a7c0e0f113904f99ce0acd4b1e791",
-    "frozen": false
+    "frozen": true
   },
   "invariants": {
     "createsGameplayIds": false,
@@ -712,5 +712,15 @@
         "hard-work"
       ]
     }
+  ],
+  "producerHead": "955f4accf7e25c42e0384ddb9f76e5612f41dd00",
+  "authorityUnbound": [
+    "rehearsal.shared-scene",
+    "performance.no-global-score",
+    "night.coworker-debrief",
+    "night.patron-context",
+    "cross.lumber-forest-return",
+    "cross.undead-sample",
+    "cross.hunter-return"
   ]
 }
