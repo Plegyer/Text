@@ -1,0 +1,520 @@
+{
+  "schemaVersion": 1,
+  "id": "prostitute.relationship",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "careers": [
+        "prostitute"
+      ],
+      "relationships": [
+        "prostitute.recurring-client"
+      ]
+    },
+    "writes": {
+      "careers": [
+        "prostitute"
+      ],
+      "relationships": [
+        "prostitute.recurring-client"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "prostitute.relationship.intro",
+      "title": "Introduce a recurring professional client without implying romance",
+      "sourceDomain": "prostitute",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "actionCompleted",
+          "action": "prostitute.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 70,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "prostitute",
+              "stage": "known-professional"
+            },
+            {
+              "kind": "careerStage",
+              "career": "prostitute",
+              "stage": "established"
+            }
+          ]
+        },
+        {
+          "kind": "relationshipFact",
+          "relationship": "prostitute.recurring-client",
+          "fact": "introduced-at-work",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "This recurring-client step keeps professional trust distinct from friendship and romance. Relationship choices never become a requirement for ordinary career progression.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "professional",
+          "label": "Keep the introduction professional",
+          "text": "Keep the introduction professional.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "prostitute.recurring-client",
+              "fact": "introduced-at-work"
+            },
+            {
+              "kind": "incrementRelationshipCounter",
+              "relationship": "prostitute.recurring-client",
+              "counter": "work-meetings",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prostitute.relationship.trust",
+      "title": "Build recurring-client professional trust",
+      "sourceDomain": "prostitute",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "actionCompleted",
+          "action": "prostitute.shift"
+        },
+        {
+          "kind": "relationshipFactAdded",
+          "relationship": "prostitute.recurring-client",
+          "fact": "introduced-at-work"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 75,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "relationshipStage",
+          "relationship": "prostitute.recurring-client",
+          "stage": "introduced"
+        },
+        {
+          "kind": "relationshipFact",
+          "relationship": "prostitute.recurring-client",
+          "fact": "introduced-at-work",
+          "present": true
+        },
+        {
+          "kind": "relationshipCounter",
+          "relationship": "prostitute.recurring-client",
+          "counter": "work-meetings",
+          "op": "gte",
+          "value": 1
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "This recurring-client step keeps professional trust distinct from friendship and romance. Relationship choices never become a requirement for ordinary career progression.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue professional coordination",
+          "text": "Continue professional coordination.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "incrementRelationshipCounter",
+              "relationship": "prostitute.recurring-client",
+              "counter": "work-meetings",
+              "amount": 1
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "prostitute",
+              "fact": "recurring-client-trust-ready"
+            },
+            {
+              "kind": "advanceRelationship",
+              "relationship": "prostitute.recurring-client",
+              "transition": "build-trust"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prostitute.relationship.mode-open",
+      "title": "Separate professional, friendship, and romance modes",
+      "sourceDomain": "prostitute",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "relationshipTransition",
+          "relationship": "prostitute.recurring-client"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "prostitute.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 74,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "relationshipStage",
+          "relationship": "prostitute.recurring-client",
+          "stage": "professional-trust"
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "This recurring-client step keeps professional trust distinct from friendship and romance. Relationship choices never become a requirement for ordinary career progression.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "open",
+          "label": "Discuss the relationship mode without changing career access",
+          "text": "Discuss the relationship mode without changing career access.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "prostitute.recurring-client",
+              "fact": "mode-discussion-opened"
+            },
+            {
+              "kind": "advanceRelationship",
+              "relationship": "prostitute.recurring-client",
+              "transition": "open-mode"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prostitute.relationship.mode",
+      "title": "Choose a relationship mode independently of career progression",
+      "sourceDomain": "prostitute",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "relationshipTransition",
+          "relationship": "prostitute.recurring-client"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 73,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "relationshipStage",
+          "relationship": "prostitute.recurring-client",
+          "stage": "mode-open"
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "This recurring-client step keeps professional trust distinct from friendship and romance. Relationship choices never become a requirement for ordinary career progression.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "professional-only",
+          "label": "Keep the relationship professional only",
+          "text": "Keep the relationship professional only.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "setRelationshipChoice",
+              "relationship": "prostitute.recurring-client",
+              "choice": "relationship-mode",
+              "value": "professional-only"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "prostitute",
+              "fact": "relationship-mode-defined"
+            },
+            {
+              "kind": "advanceRelationship",
+              "relationship": "prostitute.recurring-client",
+              "transition": "mode-professional"
+            }
+          ]
+        },
+        {
+          "id": "friendship",
+          "label": "Allow friendship without romance",
+          "text": "Allow friendship without romance.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "setRelationshipChoice",
+              "relationship": "prostitute.recurring-client",
+              "choice": "relationship-mode",
+              "value": "friendship"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "prostitute",
+              "fact": "relationship-mode-defined"
+            },
+            {
+              "kind": "advanceRelationship",
+              "relationship": "prostitute.recurring-client",
+              "transition": "mode-friendship"
+            }
+          ]
+        },
+        {
+          "id": "romance",
+          "label": "Allow romance as an optional relationship mode",
+          "text": "Allow romance as an optional relationship mode.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "setRelationshipChoice",
+              "relationship": "prostitute.recurring-client",
+              "choice": "relationship-mode",
+              "value": "romance"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "prostitute",
+              "fact": "relationship-mode-defined"
+            },
+            {
+              "kind": "advanceRelationship",
+              "relationship": "prostitute.recurring-client",
+              "transition": "mode-romance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prostitute.relationship.conflict-open",
+      "title": "Open a professional conflict without forcing a relationship route",
+      "sourceDomain": "prostitute",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "relationshipTransition",
+          "relationship": "prostitute.recurring-client"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "prostitute.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 72,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "relationshipStage",
+          "relationship": "prostitute.recurring-client",
+          "stage": "mode-defined"
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "This recurring-client step keeps professional trust distinct from friendship and romance. Relationship choices never become a requirement for ordinary career progression.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "open",
+          "label": "Address the conflict directly",
+          "text": "Address the conflict directly.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "prostitute.recurring-client",
+              "fact": "conflict-opened"
+            },
+            {
+              "kind": "advanceRelationship",
+              "relationship": "prostitute.recurring-client",
+              "transition": "open-conflict"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prostitute.relationship.conflict-resolve",
+      "title": "Resolve recurring-client conflict with refusal-safe continuation",
+      "sourceDomain": "prostitute",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "relationshipTransition",
+          "relationship": "prostitute.recurring-client"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 80,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "relationshipStage",
+          "relationship": "prostitute.recurring-client",
+          "stage": "conflict-open"
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "This recurring-client step keeps professional trust distinct from friendship and romance. Relationship choices never become a requirement for ordinary career progression.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "cooperate",
+          "label": "Resolve the conflict cooperatively",
+          "text": "Resolve the conflict cooperatively.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "setRelationshipChoice",
+              "relationship": "prostitute.recurring-client",
+              "choice": "conflict-response",
+              "value": "cooperate"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "prostitute",
+              "fact": "relationship-conflict-resolved"
+            },
+            {
+              "kind": "advanceRelationship",
+              "relationship": "prostitute.recurring-client",
+              "transition": "cooperate"
+            }
+          ]
+        },
+        {
+          "id": "rivalry",
+          "label": "Keep a bounded professional rivalry",
+          "text": "Keep a bounded professional rivalry.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "setRelationshipChoice",
+              "relationship": "prostitute.recurring-client",
+              "choice": "conflict-response",
+              "value": "rivalry"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "prostitute",
+              "fact": "relationship-conflict-resolved"
+            },
+            {
+              "kind": "advanceRelationship",
+              "relationship": "prostitute.recurring-client",
+              "transition": "rivalry"
+            }
+          ]
+        },
+        {
+          "id": "decline",
+          "label": "End the recurring-client route without blocking ordinary work",
+          "text": "End the recurring-client route without blocking ordinary work.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "setRelationshipChoice",
+              "relationship": "prostitute.recurring-client",
+              "choice": "conflict-response",
+              "value": "declined"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "prostitute",
+              "fact": "relationship-conflict-resolved"
+            },
+            {
+              "kind": "advanceRelationship",
+              "relationship": "prostitute.recurring-client",
+              "transition": "refusal"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
