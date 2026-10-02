@@ -8729,6 +8729,27 @@
       "capabilities": [
         "guard_sealed_pass"
       ]
+    },
+    {
+      "id": "artist_formal_attire",
+      "label": "Artist House Formal Attire",
+      "capabilities": [
+        "artist_formal_presence"
+      ]
+    },
+    {
+      "id": "artist_performance_kit",
+      "label": "Artist House Performance Kit",
+      "capabilities": [
+        "artist_performance_ready"
+      ]
+    },
+    {
+      "id": "artist_invitation_token",
+      "label": "Artist House Invitation Token",
+      "capabilities": [
+        "artist_handle_invitation"
+      ]
     }
   ]
 }
