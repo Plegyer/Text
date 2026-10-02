@@ -1,0 +1,974 @@
+{
+  "formatVersion": 1,
+  "id": "chat3.palace-authored-v22.binding-plan",
+  "status": "SAFE_PREP_BINDING_PLAN_NO_PALACE_RUNTIME",
+  "activationHead": "5a34260c4e52a8de01718598bdec818f277d1f16",
+  "policy": {
+    "fixedUnlockCondition": "10_UNIQUE_ORDINARY_HARD_WORK",
+    "futureConsumerMarker": "PENDING_RUNTIME_ID",
+    "forbiddenMarker": "NO_AUTHORITY_NOT_BINDABLE",
+    "modifiesProduction": false,
+    "createsGameplayIds": false,
+    "freezeCandidate": false
+  },
+  "liveAuthority": [
+    {
+      "identity": "metaUnlock:palace",
+      "status": "LIVE_BOUND",
+      "kind": "derivedMetaUnlock"
+    },
+    {
+      "identity": "unlock.palace.label",
+      "status": "LIVE_BOUND",
+      "kind": "localization"
+    },
+    {
+      "identity": "metaHardWork:lumber",
+      "status": "LIVE_BOUND",
+      "kind": "legacyInput"
+    },
+    {
+      "identity": "metaHardWork:satyr-maid",
+      "status": "LIVE_BOUND",
+      "kind": "legacyInput"
+    },
+    {
+      "identity": "metaHardWork:undead-farm",
+      "status": "LIVE_BOUND",
+      "kind": "legacyInput"
+    },
+    {
+      "identity": "metaHardWork:tavern",
+      "status": "LIVE_BOUND",
+      "kind": "legacyInput"
+    },
+    {
+      "identity": "metaHardWork:hunter",
+      "status": "LIVE_BOUND",
+      "kind": "legacyInput"
+    },
+    {
+      "identity": "metaHardWork:guard",
+      "status": "LIVE_BOUND",
+      "kind": "legacyInput"
+    },
+    {
+      "identity": "metaHardWork:merchant",
+      "status": "LIVE_BOUND",
+      "kind": "legacyInput"
+    },
+    {
+      "identity": "metaHardWork:artist-geisha",
+      "status": "LIVE_BOUND",
+      "kind": "legacyInput"
+    },
+    {
+      "identity": "metaHardWork:assassin",
+      "status": "LIVE_BOUND",
+      "kind": "legacyInput"
+    },
+    {
+      "identity": "metaHardWork:prostitute",
+      "status": "LIVE_BOUND",
+      "kind": "legacyInput"
+    }
+  ],
+  "exactSchoolInputs": [
+    "school.course.literacy_and_numbers",
+    "school.course.etiquette_and_presentation",
+    "school.course.arcana",
+    "school.course.rhetoric_and_social"
+  ],
+  "exactActivityInputs": [
+    "lumber.forest",
+    "lumber.forest.truth-known",
+    "hunter.expedition",
+    "careerFact:hunter:expedition-returned"
+  ],
+  "entries": [
+    {
+      "task": "C3-242",
+      "section": "discovery",
+      "contentKey": "hint.overheard-protocol",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-242",
+      "section": "discovery",
+      "contentKey": "hint.sealed-correspondence",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-242",
+      "section": "discovery",
+      "contentKey": "hint.high-status-messenger",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-242",
+      "section": "discovery",
+      "contentKey": "hint.epilogue-echo",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-242",
+      "section": "discovery",
+      "contentKey": "hint.court-rumour",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-242",
+      "section": "discovery",
+      "contentKey": "hint.after-unlock-clear-entry",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-242",
+      "section": "discovery",
+      "contentKey": "hint.no-progress-card",
+      "status": "NO_AUTHORITY_NOT_BINDABLE",
+      "targetKind": "unownedOrForbiddenAssumption",
+      "runtimeConsumerId": null,
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-243",
+      "section": "work",
+      "contentKey": "work.protocol-reception",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-243",
+      "section": "work",
+      "contentKey": "work.documents-logistics",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-243",
+      "section": "work",
+      "contentKey": "work.escort",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-243",
+      "section": "work",
+      "contentKey": "work.negotiation",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-243",
+      "section": "work",
+      "contentKey": "work.ceremony-prep",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-243",
+      "section": "work",
+      "contentKey": "work.errands",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-243",
+      "section": "work",
+      "contentKey": "work.household",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-243",
+      "section": "work",
+      "contentKey": "work.assignment-choice",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-244",
+      "section": "legacy",
+      "contentKey": "legacy.lumber-supply",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [
+        "metaHardWork:lumber"
+      ],
+      "metaCondition": {
+        "kind": "metaHardWork",
+        "career": "lumber",
+        "present": true
+      }
+    },
+    {
+      "task": "C3-244",
+      "section": "legacy",
+      "contentKey": "legacy.satyr-maid-service",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [
+        "metaHardWork:satyr-maid"
+      ],
+      "metaCondition": {
+        "kind": "metaHardWork",
+        "career": "satyr-maid",
+        "present": true
+      }
+    },
+    {
+      "task": "C3-244",
+      "section": "legacy",
+      "contentKey": "legacy.undead-farm-supply",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [
+        "metaHardWork:undead-farm"
+      ],
+      "metaCondition": {
+        "kind": "metaHardWork",
+        "career": "undead-farm",
+        "present": true
+      }
+    },
+    {
+      "task": "C3-244",
+      "section": "legacy",
+      "contentKey": "legacy.tavern-network",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [
+        "metaHardWork:tavern"
+      ],
+      "metaCondition": {
+        "kind": "metaHardWork",
+        "career": "tavern",
+        "present": true
+      }
+    },
+    {
+      "task": "C3-244",
+      "section": "legacy",
+      "contentKey": "legacy.hunter-field",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [
+        "metaHardWork:hunter"
+      ],
+      "metaCondition": {
+        "kind": "metaHardWork",
+        "career": "hunter",
+        "present": true
+      }
+    },
+    {
+      "task": "C3-244",
+      "section": "legacy",
+      "contentKey": "legacy.guard-security",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [
+        "metaHardWork:guard"
+      ],
+      "metaCondition": {
+        "kind": "metaHardWork",
+        "career": "guard",
+        "present": true
+      }
+    },
+    {
+      "task": "C3-244",
+      "section": "legacy",
+      "contentKey": "legacy.merchant-contracts",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [
+        "metaHardWork:merchant"
+      ],
+      "metaCondition": {
+        "kind": "metaHardWork",
+        "career": "merchant",
+        "present": true
+      }
+    },
+    {
+      "task": "C3-244",
+      "section": "legacy",
+      "contentKey": "legacy.artist-ceremony",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [
+        "metaHardWork:artist-geisha"
+      ],
+      "metaCondition": {
+        "kind": "metaHardWork",
+        "career": "artist-geisha",
+        "present": true
+      }
+    },
+    {
+      "task": "C3-244",
+      "section": "legacy",
+      "contentKey": "legacy.assassin-covert",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [
+        "metaHardWork:assassin"
+      ],
+      "metaCondition": {
+        "kind": "metaHardWork",
+        "career": "assassin",
+        "present": true
+      }
+    },
+    {
+      "task": "C3-244",
+      "section": "legacy",
+      "contentKey": "legacy.prostitute-high-status",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [
+        "metaHardWork:prostitute"
+      ],
+      "metaCondition": {
+        "kind": "metaHardWork",
+        "career": "prostitute",
+        "present": true
+      }
+    },
+    {
+      "task": "C3-244",
+      "section": "legacy",
+      "contentKey": "legacy.no-public-fact-invention",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-245",
+      "section": "stages",
+      "contentKey": "stage.outsider-invited",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-245",
+      "section": "stages",
+      "contentKey": "stage.probation",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-245",
+      "section": "stages",
+      "contentKey": "stage.trusted",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-245",
+      "section": "stages",
+      "contentKey": "stage.chosen-sphere",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-245",
+      "section": "stages",
+      "contentKey": "stage.inner-court",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-245",
+      "section": "stages",
+      "contentKey": "stage.outcome-ready",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-246",
+      "section": "relationship",
+      "contentKey": "relationship.professional-patron",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-246",
+      "section": "relationship",
+      "contentKey": "relationship.rival",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-246",
+      "section": "relationship",
+      "contentKey": "relationship.official-contact",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-246",
+      "section": "relationship",
+      "contentKey": "relationship.staff-contact",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-246",
+      "section": "relationship",
+      "contentKey": "relationship.optional-romance",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-246",
+      "section": "relationship",
+      "contentKey": "relationship.adult-intimacy-optional",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-246",
+      "section": "relationship",
+      "contentKey": "relationship.no-single-ruler",
+      "status": "NO_AUTHORITY_NOT_BINDABLE",
+      "targetKind": "unownedOrForbiddenAssumption",
+      "runtimeConsumerId": null,
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-247",
+      "section": "seasonal",
+      "contentKey": "spring.delegations",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-247",
+      "section": "seasonal",
+      "contentKey": "spring.supplies",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-247",
+      "section": "seasonal",
+      "contentKey": "summer.receptions",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-247",
+      "section": "seasonal",
+      "contentKey": "summer.festival",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-247",
+      "section": "seasonal",
+      "contentKey": "autumn.taxes-supplies",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-247",
+      "section": "seasonal",
+      "contentKey": "autumn.ceremony",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-247",
+      "section": "seasonal",
+      "contentKey": "winter.household-pressure",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-247",
+      "section": "seasonal",
+      "contentKey": "winter.formal-ritual",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-248",
+      "section": "school-item",
+      "contentKey": "school.literacy-numbers",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [
+        "school.course.literacy_and_numbers"
+      ],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-248",
+      "section": "school-item",
+      "contentKey": "school.etiquette",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [
+        "school.course.etiquette_and_presentation"
+      ],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-248",
+      "section": "school-item",
+      "contentKey": "school.arcana",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [
+        "school.course.arcana"
+      ],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-248",
+      "section": "school-item",
+      "contentKey": "school.rhetoric",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [
+        "school.course.rhetoric_and_social"
+      ],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-248",
+      "section": "school-item",
+      "contentKey": "school.no-producer-facts",
+      "status": "NO_AUTHORITY_NOT_BINDABLE",
+      "targetKind": "unownedOrForbiddenAssumption",
+      "runtimeConsumerId": null,
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-248",
+      "section": "school-item",
+      "contentKey": "item.invitation-seal",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-248",
+      "section": "school-item",
+      "contentKey": "item.formal-outfit",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-248",
+      "section": "school-item",
+      "contentKey": "item.archive-key",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-248",
+      "section": "school-item",
+      "contentKey": "item.ceremonial-component",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-248",
+      "section": "school-item",
+      "contentKey": "item.proof-document",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-248",
+      "section": "school-item",
+      "contentKey": "item.no-current-palace-items",
+      "status": "NO_AUTHORITY_NOT_BINDABLE",
+      "targetKind": "unownedOrForbiddenAssumption",
+      "runtimeConsumerId": null,
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-249",
+      "section": "service-life",
+      "contentKey": "service.identity",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-249",
+      "section": "service-life",
+      "contentKey": "service.assignment-continuity",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-249",
+      "section": "service-life",
+      "contentKey": "service.relationship-continuity",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-249",
+      "section": "service-life",
+      "contentKey": "service.adult-payoff",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-249",
+      "section": "service-life",
+      "contentKey": "service.no-hardwork-meta",
+      "status": "NO_AUTHORITY_NOT_BINDABLE",
+      "targetKind": "unownedOrForbiddenAssumption",
+      "runtimeConsumerId": null,
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-250",
+      "section": "court-power",
+      "contentKey": "power.identity",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-250",
+      "section": "court-power",
+      "contentKey": "power.administration",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-250",
+      "section": "court-power",
+      "contentKey": "power.network",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-250",
+      "section": "court-power",
+      "contentKey": "power.reform-choice",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-250",
+      "section": "court-power",
+      "contentKey": "power.adult-payoff",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-250",
+      "section": "court-power",
+      "contentKey": "power.no-office-ruler-reward",
+      "status": "NO_AUTHORITY_NOT_BINDABLE",
+      "targetKind": "unownedOrForbiddenAssumption",
+      "runtimeConsumerId": null,
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-251",
+      "section": "inner-truth",
+      "contentKey": "truth.identity",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-251",
+      "section": "inner-truth",
+      "contentKey": "truth.multilife-fragments",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-251",
+      "section": "inner-truth",
+      "contentKey": "truth.lumber-forest-input",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [
+        "lumber.forest",
+        "lumber.forest.truth-known"
+      ],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-251",
+      "section": "inner-truth",
+      "contentKey": "truth.hunter-expedition-input",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [
+        "hunter.expedition",
+        "careerFact:hunter:expedition-returned"
+      ],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-251",
+      "section": "inner-truth",
+      "contentKey": "truth.story-mystery-boundary",
+      "status": "NO_AUTHORITY_NOT_BINDABLE",
+      "targetKind": "unownedOrForbiddenAssumption",
+      "runtimeConsumerId": null,
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-251",
+      "section": "inner-truth",
+      "contentKey": "truth.no-auto-macro-ending",
+      "status": "NO_AUTHORITY_NOT_BINDABLE",
+      "targetKind": "unownedOrForbiddenAssumption",
+      "runtimeConsumerId": null,
+      "sourceInputs": [],
+      "metaCondition": null
+    },
+    {
+      "task": "C3-251",
+      "section": "inner-truth",
+      "contentKey": "truth.adult-payoff",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futurePalaceConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [],
+      "metaCondition": null
+    }
+  ],
+  "forbiddenAssumptions": [
+    {
+      "identity": "pre-unlock visible Palace Hard Work counter",
+      "status": "NO_AUTHORITY_NOT_BINDABLE"
+    },
+    {
+      "identity": "Artist Court Invitation unlocks Palace",
+      "status": "NO_AUTHORITY_NOT_BINDABLE"
+    },
+    {
+      "identity": "Secret Debt substitutes for ordinary Hard Work",
+      "status": "NO_AUTHORITY_NOT_BINDABLE"
+    },
+    {
+      "identity": "duplicate ordinary Hard Work counts twice",
+      "status": "NO_AUTHORITY_NOT_BINDABLE"
+    },
+    {
+      "identity": "standalone School accounting course exists",
+      "status": "NO_AUTHORITY_NOT_BINDABLE"
+    },
+    {
+      "identity": "School course completion publishes Palace producer fact",
+      "status": "NO_AUTHORITY_NOT_BINDABLE"
+    },
+    {
+      "identity": "existing Guard/Tavern/Merchant item is a Palace item",
+      "status": "NO_AUTHORITY_NOT_BINDABLE"
+    },
+    {
+      "identity": "story.mystery equals Palace Inner Truth",
+      "status": "NO_AUTHORITY_NOT_BINDABLE"
+    },
+    {
+      "identity": "hardWork:palace reward exists",
+      "status": "NO_AUTHORITY_NOT_BINDABLE"
+    },
+    {
+      "identity": "single ruler NPC owns Palace progression",
+      "status": "NO_AUTHORITY_NOT_BINDABLE"
+    },
+    {
+      "identity": "exact Palace ruler/court/mystery/reward chosen by Chat 3",
+      "status": "NO_AUTHORITY_NOT_BINDABLE"
+    },
+    {
+      "identity": "adult Lust threshold or consent state chosen by Chat 3",
+      "status": "NO_AUTHORITY_NOT_BINDABLE"
+    }
+  ]
+}

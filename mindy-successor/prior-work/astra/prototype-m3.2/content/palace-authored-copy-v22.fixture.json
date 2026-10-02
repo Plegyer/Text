@@ -1,0 +1,962 @@
+{
+  "formatVersion": 1,
+  "id": "chat3.palace-authored-copy.v22",
+  "status": "SAFE_PREP_ONLY_ALL_PALACE_CONSUMERS_FUTURE",
+  "activationHead": "5a34260c4e52a8de01718598bdec818f277d1f16",
+  "contentPolicy": {
+    "palaceUnlockFixedAtTenOrdinaryHardWork": true,
+    "preUnlockProgressCounterVisible": false,
+    "adultIntimacyIsCorePayoffPlanning": true,
+    "neutralNonGraphicDescriptions": true,
+    "exactLustThreshold": "PENDING_RUNTIME_ID",
+    "exactPartnerIdentities": "PENDING_RUNTIME_ID",
+    "exactConsentMechanics": "PENDING_RUNTIME_ID",
+    "exactRulerCourtMysteryRewards": "OPEN"
+  },
+  "invariants": {
+    "createsPalaceGameplayIds": false,
+    "changesPalaceUnlockRule": false,
+    "changesHardWorkMeta": false,
+    "changesRuntimeMechanics": false,
+    "changesSaveOrRng": false,
+    "changesSchoolProducerAuthority": false,
+    "changesActivityEngine": false,
+    "changesEndingEligibilityRewardOrMeta": false,
+    "changesAdultLustOrConsentMechanics": false,
+    "changesProductionLocalization": false
+  },
+  "entries": [
+    {
+      "task": "C3-242",
+      "section": "discovery",
+      "contentKey": "hint.overheard-protocol",
+      "ru": "До открытия Дворец может появляться в разговорах как место со строгим протоколом и собственной внутренней жизнью, но без числового счётчика прогресса к unlock.",
+      "en": "Before unlock, the Palace can appear in conversations as a place with strict protocol and its own internal life, but without a numeric progress counter toward unlock.",
+      "tags": [
+        "hint",
+        "no-progress-card"
+      ]
+    },
+    {
+      "task": "C3-242",
+      "section": "discovery",
+      "contentKey": "hint.sealed-correspondence",
+      "ru": "Письмо с печатью может намекать на существование дворцовых поручений и закрытых маршрутов, не обещая, что предмет сам открывает профессию.",
+      "en": "Sealed correspondence can hint at palace assignments and closed routes without promising that the item itself unlocks the profession.",
+      "tags": [
+        "hint",
+        "seal",
+        "no-unlock-item"
+      ]
+    },
+    {
+      "task": "C3-242",
+      "section": "discovery",
+      "contentKey": "hint.high-status-messenger",
+      "ru": "Посланник высокого статуса может упомянуть, что к определённым людям во дворце возвращаются после долгой профессиональной истории. Точный unlock остаётся скрытым от pre-unlock UI.",
+      "en": "A high-status messenger can mention that the Palace remembers people with long professional histories. The exact unlock remains hidden from pre-unlock UI.",
+      "tags": [
+        "hint",
+        "messenger"
+      ]
+    },
+    {
+      "task": "C3-242",
+      "section": "discovery",
+      "contentKey": "hint.epilogue-echo",
+      "ru": "Обычный ending может дать краткий эпилогический намёк на дворцовые двери, не публикуя дробь вроде «7/10» и не создавая отдельный Palace ending.",
+      "en": "An ordinary ending can give a brief epilogue hint about palace doors without publishing a fraction such as “7/10” or creating a separate Palace ending.",
+      "tags": [
+        "hint",
+        "epilogue",
+        "no-counter"
+      ]
+    },
+    {
+      "task": "C3-242",
+      "section": "discovery",
+      "contentKey": "hint.court-rumour",
+      "ru": "Слух о дворе может связывать разные профессии с разными способами быть замеченной, но не должен утверждать, что один конкретный NPC или одна профессия владеет доступом.",
+      "en": "A court rumour can connect different professions with different ways of being noticed without claiming that one NPC or one profession owns access.",
+      "tags": [
+        "hint",
+        "multi-career"
+      ]
+    },
+    {
+      "task": "C3-242",
+      "section": "discovery",
+      "contentKey": "hint.after-unlock-clear-entry",
+      "ru": "После реального 10/10 unlock будущий authored consumer должен дать понятный способ начать Palace path. Будет ли это прямой доступ или приглашение, остаётся runtime/design authority.",
+      "en": "After the real 10/10 unlock, a future authored consumer should give a clear way to begin the Palace path. Whether that is direct access or an invitation remains runtime/design authority.",
+      "tags": [
+        "post-unlock",
+        "pending-runtime"
+      ]
+    },
+    {
+      "task": "C3-242",
+      "section": "discovery",
+      "contentKey": "hint.no-progress-card",
+      "ru": "Pre-unlock authored UI не должна превращать Дворец в закрытую карточку с видимым количеством собранных Hard Work. Сам unlock вычисляется в Meta, но его счётчик не является authored presentation authority.",
+      "en": "Pre-unlock authored UI must not turn the Palace into a locked card showing the number of Hard Work completions collected. The unlock is derived in Meta, but its counter is not authored presentation authority.",
+      "tags": [
+        "boundary",
+        "no-progress-card"
+      ]
+    },
+    {
+      "task": "C3-243",
+      "section": "work",
+      "contentKey": "work.protocol-reception",
+      "ru": "Протокольная смена строится вокруг порядка приёма, очередности встреч и точной передачи поручений. Точная должность героини и Palace action ID ещё не определены.",
+      "en": "A protocol shift centers on reception order, sequencing meetings, and precise handoffs. The heroine's exact office and Palace action ID are not yet defined.",
+      "tags": [
+        "protocol"
+      ]
+    },
+    {
+      "task": "C3-243",
+      "section": "work",
+      "contentKey": "work.documents-logistics",
+      "ru": "Документы и логистика дают работу с реестрами, маршрутами поставок и сверкой поручений без превращения Palace career в чистую бухгалтерию.",
+      "en": "Documents and logistics provide work with ledgers, supply routes, and assignment checks without reducing the Palace career to bookkeeping.",
+      "tags": [
+        "documents",
+        "logistics"
+      ]
+    },
+    {
+      "task": "C3-243",
+      "section": "work",
+      "contentKey": "work.escort",
+      "ru": "Сопровождение описывается как организационная и социальная ответственность за маршрут, расписание и контакты, а не как обязательная боевая роль.",
+      "en": "Escort work is framed as organizational and social responsibility for route, schedule, and contacts rather than mandatory combat duty.",
+      "tags": [
+        "escort",
+        "non-combat"
+      ]
+    },
+    {
+      "task": "C3-243",
+      "section": "work",
+      "contentKey": "work.negotiation",
+      "ru": "Переговорная задача требует понять позиции сторон, ограничения и допустимый компромисс. Authored layer не создаёт универсальную дипломатию или глобальную репутацию.",
+      "en": "A negotiation task requires understanding positions, constraints, and acceptable compromise. The authored layer creates no universal diplomacy or global reputation system.",
+      "tags": [
+        "negotiation"
+      ]
+    },
+    {
+      "task": "C3-243",
+      "section": "work",
+      "contentKey": "work.ceremony-prep",
+      "ru": "Подготовка церемонии соединяет расписание, людей, помещения, материалы и протокол. Она может использовать прошлый профессиональный опыт, но не требует одного фиксированного Palace role.",
+      "en": "Ceremony preparation connects schedule, people, rooms, materials, and protocol. It may use prior professional experience without requiring one fixed Palace role.",
+      "tags": [
+        "ceremony"
+      ]
+    },
+    {
+      "task": "C3-243",
+      "section": "work",
+      "contentKey": "work.errands",
+      "ru": "Поручения дают небольшие повторяемые задачи между крупными дворцовыми сценами: доставить документ, подтвердить встречу, проверить готовность помещения или связаться с внешним специалистом.",
+      "en": "Errands provide small repeatable tasks between larger palace scenes: deliver a document, confirm a meeting, check a room's readiness, or contact an outside specialist.",
+      "tags": [
+        "errands"
+      ]
+    },
+    {
+      "task": "C3-243",
+      "section": "work",
+      "contentKey": "work.household",
+      "ru": "Закрытые хозяйственные задачи показывают Дворец как работающую систему: запасы, помещения, персонал и расписание требуют внимания даже вне больших церемоний.",
+      "en": "Closed household tasks show the Palace as a functioning system: supplies, rooms, staff, and schedules need attention even outside major ceremonies.",
+      "tags": [
+        "household"
+      ]
+    },
+    {
+      "task": "C3-243",
+      "section": "work",
+      "contentKey": "work.assignment-choice",
+      "ru": "Будущий Palace work может иметь несколько assignments, чтобы разные прошлые builds открывали разные стили работы. Список assignments и условия выбора остаются `PENDING_RUNTIME_ID`.",
+      "en": "Future Palace work may offer multiple assignments so different past builds can open different work styles. The assignment list and selection conditions remain `PENDING_RUNTIME_ID`.",
+      "tags": [
+        "assignments",
+        "pending-runtime"
+      ]
+    },
+    {
+      "task": "C3-244",
+      "section": "legacy",
+      "contentKey": "legacy.lumber-supply",
+      "ru": "Опыт Lumber может дать отдельный вариант для поставок древесины, ремонта или оценки сезонного материала. Единственный точный legacy gate сейчас — `metaHardWork:lumber`; никаких Palace-specific forest facts не создаётся.",
+      "en": "Lumber history can support a distinct option for timber supply, repairs, or seasonal material assessment. The only exact legacy gate here is `metaHardWork:lumber`; no Palace-specific forest fact is created.",
+      "tags": [
+        "legacy",
+        "lumber"
+      ],
+      "sourceInputs": [
+        "metaHardWork:lumber"
+      ],
+      "metaCondition": {
+        "kind": "metaHardWork",
+        "career": "lumber",
+        "present": true
+      }
+    },
+    {
+      "task": "C3-244",
+      "section": "legacy",
+      "contentKey": "legacy.satyr-maid-service",
+      "ru": "Опыт Satyr Maid может дать вариант для приёмов, гостевого потока и координации обслуживания, сохраняя различие между сервисом и личной доступностью.",
+      "en": "Satyr Maid history can support an option for receptions, guest flow, and service coordination while preserving the distinction between service and personal availability.",
+      "tags": [
+        "legacy",
+        "satyr-maid"
+      ],
+      "sourceInputs": [
+        "metaHardWork:satyr-maid"
+      ],
+      "metaCondition": {
+        "kind": "metaHardWork",
+        "career": "satyr-maid",
+        "present": true
+      }
+    },
+    {
+      "task": "C3-244",
+      "section": "legacy",
+      "contentKey": "legacy.undead-farm-supply",
+      "ru": "Опыт Undead Farm может пригодиться в необычных поставках, хранении или наблюдении за нестандартным материалом, не создавая новую магическую систему.",
+      "en": "Undead Farm history can help with unusual supplies, storage, or observation of uncommon material without creating a new magic system.",
+      "tags": [
+        "legacy",
+        "undead-farm"
+      ],
+      "sourceInputs": [
+        "metaHardWork:undead-farm"
+      ],
+      "metaCondition": {
+        "kind": "metaHardWork",
+        "career": "undead-farm",
+        "present": true
+      }
+    },
+    {
+      "task": "C3-244",
+      "section": "legacy",
+      "contentKey": "legacy.tavern-network",
+      "ru": "Опыт Tavern может дать способ работать с гостями, слухами и внешними контактами, но не превращает таверну в универсальную разведывательную сеть.",
+      "en": "Tavern history can support working with guests, rumours, and external contacts without turning the tavern into a universal intelligence network.",
+      "tags": [
+        "legacy",
+        "tavern"
+      ],
+      "sourceInputs": [
+        "metaHardWork:tavern"
+      ],
+      "metaCondition": {
+        "kind": "metaHardWork",
+        "career": "tavern",
+        "present": true
+      }
+    },
+    {
+      "task": "C3-244",
+      "section": "legacy",
+      "contentKey": "legacy.hunter-field",
+      "ru": "Опыт Hunter может открыть полевую проверку маршрута, редкого материала или внешней делегации, не превращая Palace work в обязательную экспедицию.",
+      "en": "Hunter history can open a field check of a route, rare material, or outside delegation without making Palace work a mandatory expedition.",
+      "tags": [
+        "legacy",
+        "hunter"
+      ],
+      "sourceInputs": [
+        "metaHardWork:hunter"
+      ],
+      "metaCondition": {
+        "kind": "metaHardWork",
+        "career": "hunter",
+        "present": true
+      }
+    },
+    {
+      "task": "C3-244",
+      "section": "legacy",
+      "contentKey": "legacy.guard-security",
+      "ru": "Опыт Guard может дать вариант официального сопровождения, проверки доступа или деэскалации, не выдавая Palace-owned badge или новый legal system.",
+      "en": "Guard history can support official escort, access checking, or de-escalation without issuing a Palace-owned badge or creating a new legal system.",
+      "tags": [
+        "legacy",
+        "guard"
+      ],
+      "sourceInputs": [
+        "metaHardWork:guard"
+      ],
+      "metaCondition": {
+        "kind": "metaHardWork",
+        "career": "guard",
+        "present": true
+      }
+    },
+    {
+      "task": "C3-244",
+      "section": "legacy",
+      "contentKey": "legacy.merchant-contracts",
+      "ru": "Опыт Merchant может дать вариант для контрактов, поставок и сверки манифестов, но exact Palace economy и цены остаются открытыми.",
+      "en": "Merchant history can support contracts, supplies, and manifest review while exact Palace economics and prices remain open.",
+      "tags": [
+        "legacy",
+        "merchant"
+      ],
+      "sourceInputs": [
+        "metaHardWork:merchant"
+      ],
+      "metaCondition": {
+        "kind": "metaHardWork",
+        "career": "merchant",
+        "present": true
+      }
+    },
+    {
+      "task": "C3-244",
+      "section": "legacy",
+      "contentKey": "legacy.artist-ceremony",
+      "ru": "Опыт Artist/Geisha может дать вариант для церемонии, формальной подачи или общения с гостями. Court Invitation не заменяет 10/10 unlock.",
+      "en": "Artist/Geisha history can support ceremony, formal presentation, or guest interaction. Court Invitation does not replace the 10/10 unlock.",
+      "tags": [
+        "legacy",
+        "artist-geisha"
+      ],
+      "sourceInputs": [
+        "metaHardWork:artist-geisha"
+      ],
+      "metaCondition": {
+        "kind": "metaHardWork",
+        "career": "artist-geisha",
+        "present": true
+      }
+    },
+    {
+      "task": "C3-244",
+      "section": "legacy",
+      "contentKey": "legacy.assassin-covert",
+      "ru": "Опыт Assassin может дать нейтральный covert-context вариант — незаметная доставка, проверка противоречий или тихий маршрут — без процедурных инструкций и без автоматического насилия.",
+      "en": "Assassin history can support a neutral covert-context option such as discreet delivery, contradiction checking, or a quiet route without procedural instructions or automatic violence.",
+      "tags": [
+        "legacy",
+        "assassin"
+      ],
+      "sourceInputs": [
+        "metaHardWork:assassin"
+      ],
+      "metaCondition": {
+        "kind": "metaHardWork",
+        "career": "assassin",
+        "present": true
+      }
+    },
+    {
+      "task": "C3-244",
+      "section": "legacy",
+      "contentKey": "legacy.prostitute-high-status",
+      "ru": "Опыт Prostitute может дать вариант для high-status переговоров, приватного профессионального контекста и ясных границ. Он не создаёт автоматическую romance/adult routing authority.",
+      "en": "Prostitute history can support high-status negotiation, private professional context, and clear boundaries. It creates no automatic romance or adult-routing authority.",
+      "tags": [
+        "legacy",
+        "prostitute"
+      ],
+      "sourceInputs": [
+        "metaHardWork:prostitute"
+      ],
+      "metaCondition": {
+        "kind": "metaHardWork",
+        "career": "prostitute",
+        "present": true
+      }
+    },
+    {
+      "task": "C3-244",
+      "section": "legacy",
+      "contentKey": "legacy.no-public-fact-invention",
+      "ru": "Legacy-sensitive Palace authoring использует точные `metaHardWork` conditions как текущую authority. Отсутствующий career/world public fact остаётся отсутствующим и не создаётся ради удобства Palace.",
+      "en": "Legacy-sensitive Palace authoring uses exact `metaHardWork` conditions as current authority. A missing career/world public fact remains missing and is not created for Palace convenience.",
+      "tags": [
+        "boundary",
+        "meta-hard-work"
+      ]
+    },
+    {
+      "task": "C3-245",
+      "section": "stages",
+      "contentKey": "stage.outsider-invited",
+      "ru": "Outsider/invited — provisional authored stage входа: героиня уже имеет Meta право на Palace path, но ещё не обладает внутренним доверием или должностью.",
+      "en": "Outsider/invited is a provisional authored entry stage: the heroine has Meta eligibility for the Palace path but does not yet hold internal trust or office.",
+      "tags": [
+        "stage",
+        "provisional"
+      ]
+    },
+    {
+      "task": "C3-245",
+      "section": "stages",
+      "contentKey": "stage.probation",
+      "ru": "Probation — период ограниченных задач и проверки надёжности, где прошлые компетенции дают варианты, но не заменяют собственную Palace progression.",
+      "en": "Probation is a period of limited assignments and reliability checks where prior competencies provide options but do not replace Palace progression.",
+      "tags": [
+        "stage",
+        "provisional"
+      ]
+    },
+    {
+      "task": "C3-245",
+      "section": "stages",
+      "contentKey": "stage.trusted",
+      "ru": "Trusted — authored состояние, в котором героине доверяют самостоятельные поручения и чувствительные контексты, без утверждения точного титула.",
+      "en": "Trusted is an authored state in which the heroine receives independent assignments and sensitive contexts without asserting an exact title.",
+      "tags": [
+        "stage",
+        "provisional"
+      ]
+    },
+    {
+      "task": "C3-245",
+      "section": "stages",
+      "contentKey": "stage.chosen-sphere",
+      "ru": "Chosen sphere означает специализацию внутри Palace work — протокол, логистика, переговоры, церемония или другая будущая ветка. Exact sphere IDs остаются открытыми.",
+      "en": "Chosen sphere means specialization within Palace work—protocol, logistics, negotiation, ceremony, or another future branch. Exact sphere IDs remain open.",
+      "tags": [
+        "stage",
+        "branch"
+      ]
+    },
+    {
+      "task": "C3-245",
+      "section": "stages",
+      "contentKey": "stage.inner-court",
+      "ru": "Inner court означает доступ к более чувствительным решениям и отношениям, но не автоматически Court Power и не раскрытие global mystery.",
+      "en": "Inner court means access to more sensitive decisions and relationships without automatically granting Court Power or revealing the global mystery.",
+      "tags": [
+        "stage",
+        "inner-court"
+      ]
+    },
+    {
+      "task": "C3-245",
+      "section": "stages",
+      "contentKey": "stage.outcome-ready",
+      "ru": "Outcome-ready — future runtime state, где одна или несколько Palace payoff families могут стать eligible. Commitment и награды остаются отдельной authority.",
+      "en": "Outcome-ready is a future runtime state where one or more Palace payoff families may become eligible. Commitment and rewards remain separate authority.",
+      "tags": [
+        "stage",
+        "outcome-ready"
+      ]
+    },
+    {
+      "task": "C3-246",
+      "section": "relationship",
+      "contentKey": "relationship.professional-patron",
+      "ru": "Professional patron может открывать поручения, представлять героиню другим людям и проверять её работу, не становясь владельцем всей Palace career.",
+      "en": "A professional patron can open assignments, introduce the heroine to others, and evaluate her work without becoming the owner of the entire Palace career.",
+      "tags": [
+        "patron",
+        "professional"
+      ]
+    },
+    {
+      "task": "C3-246",
+      "section": "relationship",
+      "contentKey": "relationship.rival",
+      "ru": "Rival показывает альтернативный способ двигаться во дворце: борьба за доверие, влияние или assignment может завершаться конкуренцией, сотрудничеством или взаимным признанием.",
+      "en": "A rival shows an alternative way to advance in the Palace: competition for trust, influence, or assignments can end in rivalry, cooperation, or mutual recognition.",
+      "tags": [
+        "rival"
+      ]
+    },
+    {
+      "task": "C3-246",
+      "section": "relationship",
+      "contentKey": "relationship.official-contact",
+      "ru": "Official contact связывает героиню с документами, расписанием, внешними учреждениями или protocol chain без обязательной личной близости.",
+      "en": "An official contact connects the heroine to documents, schedules, outside institutions, or protocol chains without requiring personal intimacy.",
+      "tags": [
+        "official-contact"
+      ]
+    },
+    {
+      "task": "C3-246",
+      "section": "relationship",
+      "contentKey": "relationship.staff-contact",
+      "ru": "Servant/staff contact показывает внутреннюю бытовую сторону Дворца и может давать контекст для взаимопомощи, информации или конфликта без иерархической романтизации.",
+      "en": "A servant or staff contact shows the Palace's internal practical side and can support mutual aid, information, or conflict without romanticizing hierarchy.",
+      "tags": [
+        "staff-contact"
+      ]
+    },
+    {
+      "task": "C3-246",
+      "section": "relationship",
+      "contentKey": "relationship.optional-romance",
+      "ru": "Optional romance должна быть отдельной relationship branch с собственным future consumer. Patron, rival, official или ruler-like figure не становится романтическим партнёром автоматически.",
+      "en": "Optional romance must be a separate relationship branch with its own future consumer. A patron, rival, official, or ruler-like figure does not become a romantic partner automatically.",
+      "tags": [
+        "romance",
+        "optional"
+      ]
+    },
+    {
+      "task": "C3-246",
+      "section": "relationship",
+      "contentKey": "relationship.adult-intimacy-optional",
+      "ru": "Adult/intimacy relationship payoff может быть core presentation family для неубийственных Palace outcomes, но точный партнёр, Lust routing и consent state остаются будущей authority.",
+      "en": "An adult/intimacy relationship payoff can be a core presentation family for non-killing Palace outcomes, but exact partner identity, Lust routing, and consent state remain future authority.",
+      "tags": [
+        "adult-core",
+        "relationship"
+      ]
+    },
+    {
+      "task": "C3-246",
+      "section": "relationship",
+      "contentKey": "relationship.no-single-ruler",
+      "ru": "Ни один правитель или один NPC не должен быть единственным владельцем Palace progression. Exact ruler/court structure остаётся open и не кодируется authored prep.",
+      "en": "No ruler or single NPC should be the sole owner of Palace progression. The exact ruler and court structure remain open and are not encoded by authored prep.",
+      "tags": [
+        "boundary",
+        "no-single-ruler"
+      ]
+    },
+    {
+      "task": "C3-247",
+      "section": "seasonal",
+      "contentKey": "spring.delegations",
+      "ru": "Весной новые делегации и возобновившиеся дороги могут увеличить число внешних встреч и протокольных задач без введения отдельной economy multiplier.",
+      "en": "In spring, new delegations and reopened roads can increase outside meetings and protocol tasks without introducing a separate economy multiplier.",
+      "tags": [
+        "spring",
+        "delegations"
+      ]
+    },
+    {
+      "task": "C3-247",
+      "section": "seasonal",
+      "contentKey": "spring.supplies",
+      "ru": "Весенние поставки дают контекст для проверки запасов, ремонта помещений и новых контрактов. Точные цены и supply engine остаются вне authored authority.",
+      "en": "Spring supplies create context for checking stores, repairing rooms, and new contracts. Exact prices and a supply engine remain outside authored authority.",
+      "tags": [
+        "spring",
+        "supplies"
+      ]
+    },
+    {
+      "task": "C3-247",
+      "section": "seasonal",
+      "contentKey": "summer.receptions",
+      "ru": "Летние приёмы увеличивают плотность гостей, церемоний и formal presentation, но не делают Palace work автоматически social-only.",
+      "en": "Summer receptions increase guest flow, ceremonies, and formal presentation without making Palace work automatically social-only.",
+      "tags": [
+        "summer",
+        "receptions"
+      ]
+    },
+    {
+      "task": "C3-247",
+      "section": "seasonal",
+      "contentKey": "summer.festival",
+      "ru": "Летний ритуал или фестиваль может объединить ceremonial, logistics и public-facing assignments. Exact ritual meaning и magic rules не выдумываются.",
+      "en": "A summer ritual or festival can combine ceremonial, logistics, and public-facing assignments. Exact ritual meaning and magic rules are not invented.",
+      "tags": [
+        "summer",
+        "festival"
+      ]
+    },
+    {
+      "task": "C3-247",
+      "section": "seasonal",
+      "contentKey": "autumn.taxes-supplies",
+      "ru": "Осенний цикл налогов и поставок создаёт документы, сверку обязательств и переговоры с внешними сторонами без выбора конкретной fiscal system.",
+      "en": "An autumn tax and supply cycle creates documents, obligation checks, and negotiation with outside parties without choosing a specific fiscal system.",
+      "tags": [
+        "autumn",
+        "taxes",
+        "supplies"
+      ]
+    },
+    {
+      "task": "C3-247",
+      "section": "seasonal",
+      "contentKey": "autumn.ceremony",
+      "ru": "Осенняя церемония может требовать координации гостей, материалов и protocol order, создавая разные возможности для прошлых careers.",
+      "en": "An autumn ceremony can require coordination of guests, materials, and protocol order, creating different opportunities for past careers.",
+      "tags": [
+        "autumn",
+        "ceremony"
+      ]
+    },
+    {
+      "task": "C3-247",
+      "section": "seasonal",
+      "contentKey": "winter.household-pressure",
+      "ru": "Зимой закрытые помещения, ограниченные поставки и нагрузка на персонал делают household/logistics work заметнее без автоматической бедности или долговой механики.",
+      "en": "In winter, closed rooms, constrained supplies, and staff pressure make household and logistics work more prominent without automatic poverty or debt mechanics.",
+      "tags": [
+        "winter",
+        "household"
+      ]
+    },
+    {
+      "task": "C3-247",
+      "section": "seasonal",
+      "contentKey": "winter.formal-ritual",
+      "ru": "Зимний формальный ритуал может усилить значение Etiquette, Arcana или ceremonial components, но School producer facts и exact ritual gate не создаются.",
+      "en": "A winter formal ritual can increase the relevance of Etiquette, Arcana, or ceremonial components, but School producer facts and an exact ritual gate are not created.",
+      "tags": [
+        "winter",
+        "ritual",
+        "school-boundary"
+      ]
+    },
+    {
+      "task": "C3-248",
+      "section": "school-item",
+      "contentKey": "school.literacy-numbers",
+      "ru": "`school.course.literacy_and_numbers` поддерживает Palace документы, реестры, расчёты и accounting context. Accounting здесь capability meaning, а не отдельный существующий course ID.",
+      "en": "`school.course.literacy_and_numbers` supports Palace documents, ledgers, calculations, and accounting context. Accounting is a capability meaning here, not a separate existing course ID.",
+      "tags": [
+        "school",
+        "literacy"
+      ],
+      "sourceInputs": [
+        "school.course.literacy_and_numbers"
+      ]
+    },
+    {
+      "task": "C3-248",
+      "section": "school-item",
+      "contentKey": "school.etiquette",
+      "ru": "`school.course.etiquette_and_presentation` поддерживает protocol, formal reception и церемониальную самопрезентацию без автоматического social rank.",
+      "en": "`school.course.etiquette_and_presentation` supports protocol, formal receptions, and ceremonial presentation without creating automatic social rank.",
+      "tags": [
+        "school",
+        "etiquette"
+      ],
+      "sourceInputs": [
+        "school.course.etiquette_and_presentation"
+      ]
+    },
+    {
+      "task": "C3-248",
+      "section": "school-item",
+      "contentKey": "school.arcana",
+      "ru": "`school.course.arcana` может поддерживать интерпретацию ритуального или необычного контекста, но не производит Palace mystery fact или universal magic clearance.",
+      "en": "`school.course.arcana` can support interpretation of ritual or unusual context without producing a Palace mystery fact or universal magic clearance.",
+      "tags": [
+        "school",
+        "arcana"
+      ],
+      "sourceInputs": [
+        "school.course.arcana"
+      ]
+    },
+    {
+      "task": "C3-248",
+      "section": "school-item",
+      "contentKey": "school.rhetoric",
+      "ru": "`school.course.rhetoric_and_social` поддерживает переговоры, mediation и ясную передачу позиции, не создавая Court Power само по себе.",
+      "en": "`school.course.rhetoric_and_social` supports negotiation, mediation, and clear presentation of a position without creating Court Power by itself.",
+      "tags": [
+        "school",
+        "rhetoric"
+      ],
+      "sourceInputs": [
+        "school.course.rhetoric_and_social"
+      ]
+    },
+    {
+      "task": "C3-248",
+      "section": "school-item",
+      "contentKey": "school.no-producer-facts",
+      "ru": "Palace authored prep не выбирает School threshold или producer public fact. Existing course identities — read-only inputs; будущие Palace consumers остаются pending.",
+      "en": "Palace authored prep does not choose a School threshold or producer public fact. Existing course identities are read-only inputs; future Palace consumers remain pending.",
+      "tags": [
+        "school",
+        "boundary"
+      ]
+    },
+    {
+      "task": "C3-248",
+      "section": "school-item",
+      "contentKey": "item.invitation-seal",
+      "ru": "Invitation/seal означает подтверждённый локальный Palace access context, если будущий runtime публикует такую capability. Он не заменяет 10/10 Meta unlock.",
+      "en": "An invitation or seal means confirmed local Palace access context if future runtime publishes such a capability. It does not replace the 10/10 Meta unlock.",
+      "tags": [
+        "item",
+        "invitation-seal"
+      ]
+    },
+    {
+      "task": "C3-248",
+      "section": "school-item",
+      "contentKey": "item.formal-outfit",
+      "ru": "Formal outfit может открывать конкретный protocol/presentation context, но не является универсальным статусом, romance flag или Palace unlock.",
+      "en": "A formal outfit can open a specific protocol or presentation context without becoming universal status, a romance flag, or the Palace unlock.",
+      "tags": [
+        "item",
+        "formal-outfit"
+      ]
+    },
+    {
+      "task": "C3-248",
+      "section": "school-item",
+      "contentKey": "item.archive-key",
+      "ru": "Archive key означает локальный доступ к определённому архивному пространству или документам, а не универсальный доступ ко всем Palace secrets.",
+      "en": "An archive key means local access to a specific archive space or documents, not universal access to every Palace secret.",
+      "tags": [
+        "item",
+        "archive-key"
+      ]
+    },
+    {
+      "task": "C3-248",
+      "section": "school-item",
+      "contentKey": "item.ceremonial-component",
+      "ru": "Ceremonial component — future capability для конкретной подготовки или ритуального контекста, но authored prep не определяет магические свойства или расходование.",
+      "en": "A ceremonial component is a future capability for a specific preparation or ritual context, but authored prep does not define magical properties or consumption rules.",
+      "tags": [
+        "item",
+        "ceremonial-component"
+      ]
+    },
+    {
+      "task": "C3-248",
+      "section": "school-item",
+      "contentKey": "item.proof-document",
+      "ru": "Proof/document может подтверждать конкретный факт или договорённость в Palace scene, но не превращается в универсальную evidence currency.",
+      "en": "A proof or document can confirm a specific fact or agreement in a Palace scene without becoming a universal evidence currency.",
+      "tags": [
+        "item",
+        "proof-document"
+      ]
+    },
+    {
+      "task": "C3-248",
+      "section": "school-item",
+      "contentKey": "item.no-current-palace-items",
+      "ru": "В current production нет Palace item definitions, поэтому все пять Palace item concepts остаются `PENDING_RUNTIME_ID` и не привязываются к похожим Guard/Tavern/Merchant предметам.",
+      "en": "Current production contains no Palace item definitions, so all five Palace item concepts remain `PENDING_RUNTIME_ID` and are not bound to similar Guard, Tavern, or Merchant items.",
+      "tags": [
+        "item",
+        "boundary"
+      ]
+    },
+    {
+      "task": "C3-249",
+      "section": "service-life",
+      "contentKey": "service.identity",
+      "ru": "Service Life — базовая Palace payoff family для героини, которая остаётся частью дворцовой системы и превращает поздний career опыт в устойчивую профессиональную жизнь.",
+      "en": "Service Life is the baseline Palace payoff family for a heroine who remains part of the palace system and turns late-career experience into a stable professional life.",
+      "tags": [
+        "payoff",
+        "service-life"
+      ]
+    },
+    {
+      "task": "C3-249",
+      "section": "service-life",
+      "contentKey": "service.assignment-continuity",
+      "ru": "Payoff может отражать выбранную сферу работы — протокол, логистику, церемонии или другой future assignment — без отдельной reward механики.",
+      "en": "The payoff can reflect the chosen work sphere—protocol, logistics, ceremonies, or another future assignment—without defining a reward mechanic.",
+      "tags": [
+        "payoff",
+        "assignment"
+      ]
+    },
+    {
+      "task": "C3-249",
+      "section": "service-life",
+      "contentKey": "service.relationship-continuity",
+      "ru": "Service Life может сохранять профессиональные отношения и выбранные личные связи, но не требует romance и не делает patron обязательным.",
+      "en": "Service Life can preserve professional relationships and chosen personal ties without requiring romance or making a patron mandatory.",
+      "tags": [
+        "payoff",
+        "relationship"
+      ]
+    },
+    {
+      "task": "C3-249",
+      "section": "service-life",
+      "contentKey": "service.adult-payoff",
+      "ru": "Как неубийственный outcome, Service Life должен иметь semantic planning для adult/intimacy payoff presentation, если future presentation authority это поддержит. Exact partner/gate остаётся pending.",
+      "en": "As a non-killing outcome, Service Life should have semantic planning for adult/intimacy payoff presentation if future presentation authority supports it. Exact partner and gate remain pending.",
+      "tags": [
+        "adult-core",
+        "payoff"
+      ]
+    },
+    {
+      "task": "C3-249",
+      "section": "service-life",
+      "contentKey": "service.no-hardwork-meta",
+      "ru": "Draft оставляет открытым, даёт ли Palace собственный Hard Work progress. Поэтому authored prep не создаёт `hardWork:palace`, не меняет Meta и не выбирает reward.",
+      "en": "The draft leaves open whether Palace grants its own Hard Work progress. Authored prep therefore creates no `hardWork:palace`, changes no Meta, and chooses no reward.",
+      "tags": [
+        "boundary",
+        "no-meta-authority"
+      ]
+    },
+    {
+      "task": "C3-250",
+      "section": "court-power",
+      "contentKey": "power.identity",
+      "ru": "Court Power — payoff family реального влияния на Palace decisions, управление или сеть контактов без заранее выбранной должности.",
+      "en": "Court Power is a payoff family for real influence over Palace decisions, administration, or a contact network without choosing an office in advance.",
+      "tags": [
+        "payoff",
+        "court-power"
+      ]
+    },
+    {
+      "task": "C3-250",
+      "section": "court-power",
+      "contentKey": "power.administration",
+      "ru": "Административный вариант может подчёркивать способность координировать людей, документы и ресурсы, но не создаёт глобальный management engine.",
+      "en": "An administrative variant can emphasize coordinating people, documents, and resources without creating a global management engine.",
+      "tags": [
+        "court-power",
+        "administration"
+      ]
+    },
+    {
+      "task": "C3-250",
+      "section": "court-power",
+      "contentKey": "power.network",
+      "ru": "Network-вариант показывает влияние через доверенные контакты и договорённости, не превращая его в универсальную репутацию или patron meter.",
+      "en": "A network variant shows influence through trusted contacts and agreements without turning it into universal reputation or a patron meter.",
+      "tags": [
+        "court-power",
+        "network"
+      ]
+    },
+    {
+      "task": "C3-250",
+      "section": "court-power",
+      "contentKey": "power.reform-choice",
+      "ru": "Future runtime может позволить использовать Court Power для изменения конкретного Palace rule/context, но authored prep не выбирает, какое именно правило и какой systemic reward меняется.",
+      "en": "Future runtime may allow Court Power to change a specific Palace rule or context, but authored prep does not choose which rule or systemic reward changes.",
+      "tags": [
+        "court-power",
+        "reform"
+      ]
+    },
+    {
+      "task": "C3-250",
+      "section": "court-power",
+      "contentKey": "power.adult-payoff",
+      "ru": "Court Power как неубийственный outcome получает отдельную semantic adult/intimacy payoff family, но власть не должна автоматически конвертироваться в consent или обязательную близость.",
+      "en": "As a non-killing outcome, Court Power receives a distinct semantic adult/intimacy payoff family, but power must not automatically convert into consent or mandatory intimacy.",
+      "tags": [
+        "adult-core",
+        "power-boundary"
+      ]
+    },
+    {
+      "task": "C3-250",
+      "section": "court-power",
+      "contentKey": "power.no-office-ruler-reward",
+      "ru": "Exact office, ruler identity, court constitution и Meta reward остаются open. Нельзя создавать public ending ID или награду только из authored source.",
+      "en": "Exact office, ruler identity, court constitution, and Meta reward remain open. A public ending ID or reward cannot be created from authored source alone.",
+      "tags": [
+        "boundary",
+        "no-authority"
+      ]
+    },
+    {
+      "task": "C3-251",
+      "section": "inner-truth",
+      "contentKey": "truth.identity",
+      "ru": "Inner Truth — world-route authored family, где Palace access помогает связать несколько legacy knowledge fragments, но не гарантирует раскрытие всей macro-goal тайны.",
+      "en": "Inner Truth is a world-route authored family where Palace access helps connect several legacy knowledge fragments without guaranteeing revelation of the entire macro-goal mystery.",
+      "tags": [
+        "world-route",
+        "inner-truth"
+      ]
+    },
+    {
+      "task": "C3-251",
+      "section": "inner-truth",
+      "contentKey": "truth.multilife-fragments",
+      "ru": "Путь должен требовать знаний из нескольких жизней или внешних routes, а не одного Palace shift. Exact fragment IDs и required set остаются будущей authority.",
+      "en": "The route should require knowledge from multiple lives or external routes rather than a single Palace shift. Exact fragment IDs and the required set remain future authority.",
+      "tags": [
+        "world-route",
+        "multi-life"
+      ]
+    },
+    {
+      "task": "C3-251",
+      "section": "inner-truth",
+      "contentKey": "truth.lumber-forest-input",
+      "ru": "`lumber.forest.truth-known` — реальный shipped Activity result fact и может быть read-only примером внешнего knowledge input. Он не становится Palace gate без отдельного consumer.",
+      "en": "`lumber.forest.truth-known` is a real shipped Activity result fact and can serve as a read-only example of external knowledge input. It does not become a Palace gate without a separate consumer.",
+      "tags": [
+        "activity",
+        "exact-input"
+      ],
+      "sourceInputs": [
+        "lumber.forest",
+        "lumber.forest.truth-known"
+      ]
+    },
+    {
+      "task": "C3-251",
+      "section": "inner-truth",
+      "contentKey": "truth.hunter-expedition-input",
+      "ru": "`hunter.expedition` и career fact `expedition-returned` — реальные shipped Activity surfaces, которые future Palace world-route может читать только при явной runtime связи.",
+      "en": "`hunter.expedition` and the career fact `expedition-returned` are real shipped Activity surfaces that a future Palace world-route may read only through an explicit runtime bridge.",
+      "tags": [
+        "activity",
+        "exact-input"
+      ],
+      "sourceInputs": [
+        "hunter.expedition",
+        "careerFact:hunter:expedition-returned"
+      ]
+    },
+    {
+      "task": "C3-251",
+      "section": "inner-truth",
+      "contentKey": "truth.story-mystery-boundary",
+      "ru": "Current engine мигрирует legacy `story.mystery` в одноимённый world fact, но это не authority на Palace Inner Truth. Authored prep не объявляет его ответом или обязательным fragment.",
+      "en": "The current engine migrates legacy `story.mystery` into a world fact of the same name, but that is not authority for Palace Inner Truth. Authored prep does not declare it the answer or a required fragment.",
+      "tags": [
+        "boundary",
+        "story-mystery"
+      ]
+    },
+    {
+      "task": "C3-251",
+      "section": "inner-truth",
+      "contentKey": "truth.no-auto-macro-ending",
+      "ru": "Inner Truth может открыть новый meta layer или final-choice eligibility в будущем, но не обязана автоматически завершать macro-goal и не создаёт final ending ID сейчас.",
+      "en": "Inner Truth may open a new meta layer or final-choice eligibility in the future, but it need not automatically finish the macro-goal and creates no final ending ID now.",
+      "tags": [
+        "world-route",
+        "no-final-id"
+      ]
+    },
+    {
+      "task": "C3-251",
+      "section": "inner-truth",
+      "contentKey": "truth.adult-payoff",
+      "ru": "Если Inner Truth оформляется как неубийственный Palace outcome, adult/intimacy payoff planning остаётся route-specific semantic family; mystery knowledge само по себе не определяет партнёра или consent.",
+      "en": "If Inner Truth is implemented as a non-killing Palace outcome, adult/intimacy payoff planning remains a route-specific semantic family; mystery knowledge alone does not determine a partner or consent.",
+      "tags": [
+        "adult-core",
+        "world-route"
+      ]
+    }
+  ]
+}
