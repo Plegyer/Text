@@ -3,6 +3,8 @@ import assert from 'node:assert/strict';
 
 import {
   hasRequiredPalaceProgressionEvidence,
+  palaceDiscoveryPolicy,
+  palaceLegacyOpportunityCareers,
   palaceOutcomeFamilies,
   palaceTrueEndingEligibility,
   palaceTrueEndingProgressionStats,
@@ -111,4 +113,17 @@ test('True Ending semantic result records Return Home and permanent optional x2 
     'grantsPermanentOptionalDoubleAllProgressionStats',
     'returnsHome'
   ]);
+});
+
+
+test('Palace legacy opportunity inputs derive only from the published ordinary Hard Work ledger',()=>{
+  const input=['lumber','artist-geisha','assassin','prostitute','secret-debt','assassin'];
+  assert.deepEqual(
+    palaceLegacyOpportunityCareers(input),
+    ['lumber','artist-geisha','assassin','prostitute']
+  );
+});
+
+test('Palace discovery policy exposes no numeric Hard Work progress before unlock',()=>{
+  assert.deepEqual(palaceDiscoveryPolicy,{showNumericHardWorkProgressBeforeUnlock:false});
 });
