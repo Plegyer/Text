@@ -1,7 +1,7 @@
 {
   "formatVersion": 1,
   "id": "chat3.artist-geisha-authored-v19.localization-prep",
-  "status": "PREPARED_KEYS_ONLY_NOT_ROOT_LOCALIZATION",
+  "status": "SOURCE_MANIFEST_SUPERSEDED_BY_LIVE_SURFACE_LOCALIZATION",
   "activationHead": "8067539a606714fad8400ccbba30fd7ccf4a9158",
   "count": 64,
   "rootCollisionCount": 0,
@@ -584,5 +584,8 @@
       "ru": "Публичная Artist/Geisha-концовка этой волны остаётся `ending.artist-geisha.hard-work` за устойчивую карьеру. Продвинутые маршруты добавляют различимый профессиональный смысл, но не новые ending IDs.",
       "en": "The public Artist/Geisha ending in this wave remains `ending.artist-geisha.hard-work` for sustained career work. Advanced routes add distinct professional meaning without new ending IDs."
     }
-  }
+  },
+  "producerHead": "955f4accf7e25c42e0384ddb9f76e5612f41dd00",
+  "preparedKeysRemainNonProduction": true,
+  "liveSurfaceBindingComplete": true
 }
