@@ -16,7 +16,6 @@
     ],
     "transitions": [
       "first-shift",
-      "independent-trader",
       "networked-merchant",
       "branch-veteran",
       "branch-merchant-house",
