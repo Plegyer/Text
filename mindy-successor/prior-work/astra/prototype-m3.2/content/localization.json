@@ -943,12 +943,12 @@
       "en": "The ordinary hunting shift is complete."
     },
     "presentation.static.career.guard.result.alt": {
-      "ru": "Стражница на городском посту со щитом и оружием после патруля.",
-      "en": "A guard at a city watch post with shield and weapon after patrol."
+      "ru": "Стражница на обычном городском посту после смены; показаны служба и служебный доступ, а не боевая механика.",
+      "en": "A city guard at an ordinary post after a shift; the scene presents duty and official access, not a combat mechanic."
     },
     "presentation.static.career.guard.result.caption": {
-      "ru": "Смена городской стражи завершена.",
-      "en": "The city guard shift is complete."
+      "ru": "Обычная городская служба стражи.",
+      "en": "Ordinary city guard duty."
     },
     "presentation.static.career.merchant.result.alt": {
       "ru": "Торговая стойка с товарами и записями после обычной рабочей смены.",
@@ -3647,11 +3647,11 @@
       "en": "Long service on patrols and city posts becomes a career ending centered on constancy in guard work."
     },
     "presentation.static.guard-ending-hard-work.alt": {
-      "ru": "Стражница завершает долгую смену на городском посту; визуал отмечает финал «Тяжкий труд».",
-      "en": "A guard finishes a long shift at a city post; the visual marks the Hard Work ending."
+      "ru": "Стражница завершает долгий путь обычной службы; это существующий финал «Тяжкий труд», без добавления новых исходов.",
+      "en": "A guard completes a long path of ordinary duty; this is the existing Hard Work ending, with no new outcome added."
     },
     "presentation.static.guard-ending-hard-work.caption": {
-      "ru": "Финал стражи: тяжкий труд.",
+      "ru": "Финал стражи: Тяжкий труд.",
       "en": "Guard ending: Hard Work."
     },
     "ending.ending.merchant.hard-work.title": {
@@ -9145,6 +9145,642 @@
     "event.guard.routes.major-case-ready.choice.record.text": {
       "ru": "Открыть много-системный путь без принудительного выбора поздней ветки.",
       "en": "Open the multi-system route without forcing a late-branch choice."
+    },
+    "presentation.guard.stage.recruit.label": {
+      "ru": "Новобранец",
+      "en": "Recruit"
+    },
+    "presentation.guard.stage.trusted-guard.label": {
+      "ru": "Доверенная стражница",
+      "en": "Trusted guard"
+    },
+    "presentation.guard.stage.senior-guard.label": {
+      "ru": "Старшая стражница",
+      "en": "Senior guard"
+    },
+    "presentation.guard.stage.veteran.label": {
+      "ru": "Ветеран",
+      "en": "Veteran"
+    },
+    "presentation.guard.stage.officer.label": {
+      "ru": "Офицер",
+      "en": "Officer"
+    },
+    "presentation.guard.stage.reform-order.label": {
+      "ru": "Порядок реформ",
+      "en": "Reform order"
+    },
+    "presentation.guard.stage.network.label": {
+      "ru": "Сеть контактов",
+      "en": "Network"
+    },
+    "presentation.guard.stage.major-case.label": {
+      "ru": "Крупное дело",
+      "en": "Major case"
+    },
+    "presentation.guard.stage.outcome-ready.label": {
+      "ru": "Исход готов",
+      "en": "Outcome ready"
+    },
+    "presentation.guard.relationship.stage.introduced.label": {
+      "ru": "Знакомство по службе",
+      "en": "Work introduction"
+    },
+    "presentation.guard.relationship.stage.professional-trust.label": {
+      "ru": "Профессиональное доверие",
+      "en": "Professional trust"
+    },
+    "presentation.guard.relationship.stage.conflict-open.label": {
+      "ru": "Открытый служебный конфликт",
+      "en": "Professional conflict open"
+    },
+    "presentation.guard.relationship.stage.cooperation-ready.label": {
+      "ru": "Готовность к сотрудничеству",
+      "en": "Cooperation ready"
+    },
+    "presentation.guard.relationship.stage.route-resolved.label": {
+      "ru": "Профессиональный маршрут разрешён",
+      "en": "Professional route resolved"
+    },
+    "presentation.guard.item.guard_badge.label": {
+      "ru": "Знак стражи",
+      "en": "Guard Badge"
+    },
+    "presentation.guard.item.guard_sealed_pass.label": {
+      "ru": "Опечатанный пропуск стражи",
+      "en": "Sealed Guard Pass"
+    },
+    "presentation.guard.state.city-dispute-resolved.label": {
+      "ru": "Городской спор зафиксирован",
+      "en": "City dispute resolved"
+    },
+    "presentation.guard.state.crowd-pressure-resolved.label": {
+      "ru": "Давление толпы урегулировано",
+      "en": "Crowd pressure resolved"
+    },
+    "presentation.guard.state.duty-report-evidence.label": {
+      "ru": "Служебный отчёт в деле",
+      "en": "Duty report evidence"
+    },
+    "presentation.guard.state.cargo-pass-evidence.label": {
+      "ru": "Несоответствие пропуска зафиксировано",
+      "en": "Pass discrepancy recorded"
+    },
+    "presentation.guard.state.poverty-response-recorded.label": {
+      "ru": "Ответ на ситуацию бедности зафиксирован",
+      "en": "Poverty response recorded"
+    },
+    "presentation.guard.state.tavern-evidence-known.label": {
+      "ru": "Квитанция таверны учтена",
+      "en": "Tavern receipt evidence known"
+    },
+    "presentation.guard.state.veteran-ready.label": {
+      "ru": "Готовность ветеранского маршрута",
+      "en": "Veteran route ready"
+    },
+    "presentation.guard.state.officer-ready.label": {
+      "ru": "Готовность офицерского маршрута",
+      "en": "Officer route ready"
+    },
+    "presentation.guard.state.reform-ready.label": {
+      "ru": "Готовность маршрута реформ",
+      "en": "Reform route ready"
+    },
+    "presentation.guard.state.network-ready.label": {
+      "ru": "Готовность маршрута сети",
+      "en": "Network route ready"
+    },
+    "presentation.guard.state.major-case-thread.label": {
+      "ru": "Нить крупного дела собрана",
+      "en": "Major-case thread assembled"
+    },
+    "presentation.guard.state.major-case-ready.label": {
+      "ru": "Крупное дело готово",
+      "en": "Major case ready"
+    },
+    "presentation.guard.state.crisis-resolved.label": {
+      "ru": "Кризис у рыночных ворот разрешён",
+      "en": "Market-gate crisis resolved"
+    },
+    "presentation.guard.state.refusal-respected.label": {
+      "ru": "Отказ принят без потери обычной службы",
+      "en": "Refusal respected without loss of ordinary duty"
+    },
+    "presentation.guard.state.partner-case-support.label": {
+      "ru": "Поддержка напарницы по делу доступна",
+      "en": "Partner case support available"
+    },
+    "ui.guard.stageAria": {
+      "ru": "Этап карьеры стражи: {stage}",
+      "en": "Guard career stage: {stage}"
+    },
+    "ui.guard.relationshipAria": {
+      "ru": "Профессиональная связь с напарницей стражи: {stage}",
+      "en": "Professional guard-partner relationship: {stage}"
+    },
+    "ui.guard.itemAria": {
+      "ru": "Служебный доступ: {item}",
+      "en": "Official access item: {item}"
+    },
+    "ui.guard.stateAria": {
+      "ru": "Состояние службы стражи: {state}",
+      "en": "Guard duty state: {state}"
+    },
+    "ui.guard.relationshipEventAria": {
+      "ru": "Профессиональная сцена с напарницей стражи: {state}",
+      "en": "Professional guard-partner scene: {state}"
+    },
+    "ui.guard.relationshipEvent.intro": {
+      "ru": "Рабочее знакомство",
+      "en": "Work introduction"
+    },
+    "ui.guard.relationshipEvent.professional-trust": {
+      "ru": "Профессиональное доверие",
+      "en": "Professional trust"
+    },
+    "ui.guard.relationshipEvent.conflict-open": {
+      "ru": "Служебный конфликт открыт",
+      "en": "Professional conflict open"
+    },
+    "ui.guard.relationshipEvent.conflict-resolve": {
+      "ru": "Разрешение служебного конфликта",
+      "en": "Professional conflict resolution"
+    },
+    "ui.guard.relationshipEvent.case-support": {
+      "ru": "Поддержка по делу",
+      "en": "Case support"
+    },
+    "ui.guard.crisisFeedback.stabilize-by-report": {
+      "ru": "Решение зафиксировано через служебный отчёт; дальнейшая готовность определяется только runtime-состоянием.",
+      "en": "The choice was recorded through an official report; any further readiness is determined only by runtime state."
+    },
+    "ui.guard.crisisFeedback.deescalate-crowd": {
+      "ru": "Решение зафиксировано как деэскалация толпы; презентация не добавляет отдельную моральную шкалу.",
+      "en": "The choice was recorded as crowd de-escalation; presentation adds no separate morality meter."
+    },
+    "ui.guard.crisisFeedback.trade-access-network": {
+      "ru": "Решение зафиксировано как использование существующего служебного доступа и сети; новых прав доступа презентация не выдаёт.",
+      "en": "The choice was recorded as using existing official access and network ties; presentation grants no new access."
+    },
+    "ui.guard.crisisFeedback.defer": {
+      "ru": "Решение отложено; обычная служба остаётся доступной согласно runtime-условиям.",
+      "en": "The decision was deferred; ordinary duty remains available according to runtime conditions."
+    },
+    "presentation.static.guard.stage.recruit.alt": {
+      "ru": "Этап карьеры стражи «Новобранец»; статичная сцена показывает служебный статус без изменения механики или финала.",
+      "en": "Guard career stage “Recruit”; the static scene presents professional status without changing mechanics or ending eligibility."
+    },
+    "presentation.static.guard.stage.recruit.caption": {
+      "ru": "Новобранец",
+      "en": "Recruit"
+    },
+    "presentation.static.guard.stage.trusted-guard.alt": {
+      "ru": "Этап карьеры стражи «Доверенная стражница»; статичная сцена показывает служебный статус без изменения механики или финала.",
+      "en": "Guard career stage “Trusted guard”; the static scene presents professional status without changing mechanics or ending eligibility."
+    },
+    "presentation.static.guard.stage.trusted-guard.caption": {
+      "ru": "Доверенная стражница",
+      "en": "Trusted guard"
+    },
+    "presentation.static.guard.stage.senior-guard.alt": {
+      "ru": "Этап карьеры стражи «Старшая стражница»; статичная сцена показывает служебный статус без изменения механики или финала.",
+      "en": "Guard career stage “Senior guard”; the static scene presents professional status without changing mechanics or ending eligibility."
+    },
+    "presentation.static.guard.stage.senior-guard.caption": {
+      "ru": "Старшая стражница",
+      "en": "Senior guard"
+    },
+    "presentation.static.guard.stage.veteran.alt": {
+      "ru": "Этап карьеры стражи «Ветеран»; статичная сцена показывает служебный статус без изменения механики или финала.",
+      "en": "Guard career stage “Veteran”; the static scene presents professional status without changing mechanics or ending eligibility."
+    },
+    "presentation.static.guard.stage.veteran.caption": {
+      "ru": "Ветеран",
+      "en": "Veteran"
+    },
+    "presentation.static.guard.stage.officer.alt": {
+      "ru": "Этап карьеры стражи «Офицер»; статичная сцена показывает служебный статус без изменения механики или финала.",
+      "en": "Guard career stage “Officer”; the static scene presents professional status without changing mechanics or ending eligibility."
+    },
+    "presentation.static.guard.stage.officer.caption": {
+      "ru": "Офицер",
+      "en": "Officer"
+    },
+    "presentation.static.guard.stage.reform-order.alt": {
+      "ru": "Этап карьеры стражи «Порядок реформ»; статичная сцена показывает служебный статус без изменения механики или финала.",
+      "en": "Guard career stage “Reform order”; the static scene presents professional status without changing mechanics or ending eligibility."
+    },
+    "presentation.static.guard.stage.reform-order.caption": {
+      "ru": "Порядок реформ",
+      "en": "Reform order"
+    },
+    "presentation.static.guard.stage.network.alt": {
+      "ru": "Этап карьеры стражи «Сеть контактов»; статичная сцена показывает служебный статус без изменения механики или финала.",
+      "en": "Guard career stage “Network”; the static scene presents professional status without changing mechanics or ending eligibility."
+    },
+    "presentation.static.guard.stage.network.caption": {
+      "ru": "Сеть контактов",
+      "en": "Network"
+    },
+    "presentation.static.guard.stage.major-case.alt": {
+      "ru": "Этап карьеры стражи «Крупное дело»; статичная сцена показывает служебный статус без изменения механики или финала.",
+      "en": "Guard career stage “Major case”; the static scene presents professional status without changing mechanics or ending eligibility."
+    },
+    "presentation.static.guard.stage.major-case.caption": {
+      "ru": "Крупное дело",
+      "en": "Major case"
+    },
+    "presentation.static.guard.stage.outcome-ready.alt": {
+      "ru": "Этап карьеры стражи «Исход готов»; статичная сцена показывает служебный статус без изменения механики или финала.",
+      "en": "Guard career stage “Outcome ready”; the static scene presents professional status without changing mechanics or ending eligibility."
+    },
+    "presentation.static.guard.stage.outcome-ready.caption": {
+      "ru": "Исход готов",
+      "en": "Outcome ready"
+    },
+    "presentation.static.guard.relationship.stage.introduced.alt": {
+      "ru": "Профессиональная связь с напарницей: «Знакомство по службе»; сцена не требует романтики и не меняет доступность обычной службы.",
+      "en": "Professional guard-partner relationship: “Work introduction”; the scene requires no romance and does not change ordinary duty availability."
+    },
+    "presentation.static.guard.relationship.stage.introduced.caption": {
+      "ru": "Знакомство по службе",
+      "en": "Work introduction"
+    },
+    "presentation.static.guard.relationship.stage.professional-trust.alt": {
+      "ru": "Профессиональная связь с напарницей: «Профессиональное доверие»; сцена не требует романтики и не меняет доступность обычной службы.",
+      "en": "Professional guard-partner relationship: “Professional trust”; the scene requires no romance and does not change ordinary duty availability."
+    },
+    "presentation.static.guard.relationship.stage.professional-trust.caption": {
+      "ru": "Профессиональное доверие",
+      "en": "Professional trust"
+    },
+    "presentation.static.guard.relationship.stage.conflict-open.alt": {
+      "ru": "Профессиональная связь с напарницей: «Открытый служебный конфликт»; сцена не требует романтики и не меняет доступность обычной службы.",
+      "en": "Professional guard-partner relationship: “Professional conflict open”; the scene requires no romance and does not change ordinary duty availability."
+    },
+    "presentation.static.guard.relationship.stage.conflict-open.caption": {
+      "ru": "Открытый служебный конфликт",
+      "en": "Professional conflict open"
+    },
+    "presentation.static.guard.relationship.stage.cooperation-ready.alt": {
+      "ru": "Профессиональная связь с напарницей: «Готовность к сотрудничеству»; сцена не требует романтики и не меняет доступность обычной службы.",
+      "en": "Professional guard-partner relationship: “Cooperation ready”; the scene requires no romance and does not change ordinary duty availability."
+    },
+    "presentation.static.guard.relationship.stage.cooperation-ready.caption": {
+      "ru": "Готовность к сотрудничеству",
+      "en": "Cooperation ready"
+    },
+    "presentation.static.guard.relationship.stage.route-resolved.alt": {
+      "ru": "Профессиональная связь с напарницей: «Профессиональный маршрут разрешён»; сцена не требует романтики и не меняет доступность обычной службы.",
+      "en": "Professional guard-partner relationship: “Professional route resolved”; the scene requires no romance and does not change ordinary duty availability."
+    },
+    "presentation.static.guard.relationship.stage.route-resolved.caption": {
+      "ru": "Профессиональный маршрут разрешён",
+      "en": "Professional route resolved"
+    },
+    "presentation.static.guard.item.guard_badge.alt": {
+      "ru": "Служебный предмет «Знак стражи»; он представлен как доступ к вариантам, а не как иммунитет или боевой бонус.",
+      "en": "Official item “Guard Badge”; it is presented as access to options, not immunity or a combat bonus."
+    },
+    "presentation.static.guard.item.guard_badge.caption": {
+      "ru": "Знак стражи",
+      "en": "Guard Badge"
+    },
+    "presentation.static.guard.item.guard_sealed_pass.alt": {
+      "ru": "Служебный предмет «Опечатанный пропуск стражи»; он представлен как доступ к вариантам, а не как иммунитет или боевой бонус.",
+      "en": "Official item “Sealed Guard Pass”; it is presented as access to options, not immunity or a combat bonus."
+    },
+    "presentation.static.guard.item.guard_sealed_pass.caption": {
+      "ru": "Опечатанный пропуск стражи",
+      "en": "Sealed Guard Pass"
+    },
+    "presentation.static.guard.state.city-dispute-resolved.alt": {
+      "ru": "Качественное состояние службы: «Городской спор зафиксирован»; презентация не создаёт новую характеристику, валюту или условие.",
+      "en": "Qualitative duty state: “City dispute resolved”; presentation creates no new stat, currency, or condition."
+    },
+    "presentation.static.guard.state.city-dispute-resolved.caption": {
+      "ru": "Городской спор зафиксирован",
+      "en": "City dispute resolved"
+    },
+    "presentation.static.guard.state.crowd-pressure-resolved.alt": {
+      "ru": "Качественное состояние службы: «Давление толпы урегулировано»; презентация не создаёт новую характеристику, валюту или условие.",
+      "en": "Qualitative duty state: “Crowd pressure resolved”; presentation creates no new stat, currency, or condition."
+    },
+    "presentation.static.guard.state.crowd-pressure-resolved.caption": {
+      "ru": "Давление толпы урегулировано",
+      "en": "Crowd pressure resolved"
+    },
+    "presentation.static.guard.state.duty-report-evidence.alt": {
+      "ru": "Качественное состояние службы: «Служебный отчёт в деле»; презентация не создаёт новую характеристику, валюту или условие.",
+      "en": "Qualitative duty state: “Duty report evidence”; presentation creates no new stat, currency, or condition."
+    },
+    "presentation.static.guard.state.duty-report-evidence.caption": {
+      "ru": "Служебный отчёт в деле",
+      "en": "Duty report evidence"
+    },
+    "presentation.static.guard.state.cargo-pass-evidence.alt": {
+      "ru": "Качественное состояние службы: «Несоответствие пропуска зафиксировано»; презентация не создаёт новую характеристику, валюту или условие.",
+      "en": "Qualitative duty state: “Pass discrepancy recorded”; presentation creates no new stat, currency, or condition."
+    },
+    "presentation.static.guard.state.cargo-pass-evidence.caption": {
+      "ru": "Несоответствие пропуска зафиксировано",
+      "en": "Pass discrepancy recorded"
+    },
+    "presentation.static.guard.state.poverty-response-recorded.alt": {
+      "ru": "Качественное состояние службы: «Ответ на ситуацию бедности зафиксирован»; презентация не создаёт новую характеристику, валюту или условие.",
+      "en": "Qualitative duty state: “Poverty response recorded”; presentation creates no new stat, currency, or condition."
+    },
+    "presentation.static.guard.state.poverty-response-recorded.caption": {
+      "ru": "Ответ на ситуацию бедности зафиксирован",
+      "en": "Poverty response recorded"
+    },
+    "presentation.static.guard.state.tavern-evidence-known.alt": {
+      "ru": "Качественное состояние службы: «Квитанция таверны учтена»; презентация не создаёт новую характеристику, валюту или условие.",
+      "en": "Qualitative duty state: “Tavern receipt evidence known”; presentation creates no new stat, currency, or condition."
+    },
+    "presentation.static.guard.state.tavern-evidence-known.caption": {
+      "ru": "Квитанция таверны учтена",
+      "en": "Tavern receipt evidence known"
+    },
+    "presentation.static.guard.state.veteran-ready.alt": {
+      "ru": "Качественное состояние службы: «Готовность ветеранского маршрута»; презентация не создаёт новую характеристику, валюту или условие.",
+      "en": "Qualitative duty state: “Veteran route ready”; presentation creates no new stat, currency, or condition."
+    },
+    "presentation.static.guard.state.veteran-ready.caption": {
+      "ru": "Готовность ветеранского маршрута",
+      "en": "Veteran route ready"
+    },
+    "presentation.static.guard.state.officer-ready.alt": {
+      "ru": "Качественное состояние службы: «Готовность офицерского маршрута»; презентация не создаёт новую характеристику, валюту или условие.",
+      "en": "Qualitative duty state: “Officer route ready”; presentation creates no new stat, currency, or condition."
+    },
+    "presentation.static.guard.state.officer-ready.caption": {
+      "ru": "Готовность офицерского маршрута",
+      "en": "Officer route ready"
+    },
+    "presentation.static.guard.state.reform-ready.alt": {
+      "ru": "Качественное состояние службы: «Готовность маршрута реформ»; презентация не создаёт новую характеристику, валюту или условие.",
+      "en": "Qualitative duty state: “Reform route ready”; presentation creates no new stat, currency, or condition."
+    },
+    "presentation.static.guard.state.reform-ready.caption": {
+      "ru": "Готовность маршрута реформ",
+      "en": "Reform route ready"
+    },
+    "presentation.static.guard.state.network-ready.alt": {
+      "ru": "Качественное состояние службы: «Готовность маршрута сети»; презентация не создаёт новую характеристику, валюту или условие.",
+      "en": "Qualitative duty state: “Network route ready”; presentation creates no new stat, currency, or condition."
+    },
+    "presentation.static.guard.state.network-ready.caption": {
+      "ru": "Готовность маршрута сети",
+      "en": "Network route ready"
+    },
+    "presentation.static.guard.state.major-case-thread.alt": {
+      "ru": "Качественное состояние службы: «Нить крупного дела собрана»; презентация не создаёт новую характеристику, валюту или условие.",
+      "en": "Qualitative duty state: “Major-case thread assembled”; presentation creates no new stat, currency, or condition."
+    },
+    "presentation.static.guard.state.major-case-thread.caption": {
+      "ru": "Нить крупного дела собрана",
+      "en": "Major-case thread assembled"
+    },
+    "presentation.static.guard.state.major-case-ready.alt": {
+      "ru": "Качественное состояние службы: «Крупное дело готово»; презентация не создаёт новую характеристику, валюту или условие.",
+      "en": "Qualitative duty state: “Major case ready”; presentation creates no new stat, currency, or condition."
+    },
+    "presentation.static.guard.state.major-case-ready.caption": {
+      "ru": "Крупное дело готово",
+      "en": "Major case ready"
+    },
+    "presentation.static.guard.state.crisis-resolved.alt": {
+      "ru": "Качественное состояние службы: «Кризис у рыночных ворот разрешён»; презентация не создаёт новую характеристику, валюту или условие.",
+      "en": "Qualitative duty state: “Market-gate crisis resolved”; presentation creates no new stat, currency, or condition."
+    },
+    "presentation.static.guard.state.crisis-resolved.caption": {
+      "ru": "Кризис у рыночных ворот разрешён",
+      "en": "Market-gate crisis resolved"
+    },
+    "presentation.static.guard.state.refusal-respected.alt": {
+      "ru": "Качественное состояние службы: «Отказ принят без потери обычной службы»; презентация не создаёт новую характеристику, валюту или условие.",
+      "en": "Qualitative duty state: “Refusal respected without loss of ordinary duty”; presentation creates no new stat, currency, or condition."
+    },
+    "presentation.static.guard.state.refusal-respected.caption": {
+      "ru": "Отказ принят без потери обычной службы",
+      "en": "Refusal respected without loss of ordinary duty"
+    },
+    "presentation.static.guard.state.partner-case-support.alt": {
+      "ru": "Качественное состояние службы: «Поддержка напарницы по делу доступна»; презентация не создаёт новую характеристику, валюту или условие.",
+      "en": "Qualitative duty state: “Partner case support available”; presentation creates no new stat, currency, or condition."
+    },
+    "presentation.static.guard.state.partner-case-support.caption": {
+      "ru": "Поддержка напарницы по делу доступна",
+      "en": "Partner case support available"
+    },
+    "presentation.static.guard.event.guard-career-first-shift.alt": {
+      "ru": "Сцена службы стражи: «Первая смена»; показаны только существующие обязанности, доступ или готовность без новой механики.",
+      "en": "Guard duty scene: “First shift”; it presents only existing duties, access, or readiness without adding mechanics."
+    },
+    "presentation.static.guard.event.guard-career-first-shift.caption": {
+      "ru": "Первая смена",
+      "en": "First shift"
+    },
+    "presentation.static.guard.event.guard-career-senior.alt": {
+      "ru": "Сцена службы стражи: «Старшая служба»; показаны только существующие обязанности, доступ или готовность без новой механики.",
+      "en": "Guard duty scene: “Senior duty”; it presents only existing duties, access, or readiness without adding mechanics."
+    },
+    "presentation.static.guard.event.guard-career-senior.caption": {
+      "ru": "Старшая служба",
+      "en": "Senior duty"
+    },
+    "presentation.static.guard.event.guard-career-duty-breadth.alt": {
+      "ru": "Сцена службы стражи: «Широта городской службы»; показаны только существующие обязанности, доступ или готовность без новой механики.",
+      "en": "Guard duty scene: “Breadth of city duty”; it presents only existing duties, access, or readiness without adding mechanics."
+    },
+    "presentation.static.guard.event.guard-career-duty-breadth.caption": {
+      "ru": "Широта городской службы",
+      "en": "Breadth of city duty"
+    },
+    "presentation.static.guard.event.guard-career-veteran-ready.alt": {
+      "ru": "Сцена службы стражи: «Готовность ветерана»; показаны только существующие обязанности, доступ или готовность без новой механики.",
+      "en": "Guard duty scene: “Veteran readiness”; it presents only existing duties, access, or readiness without adding mechanics."
+    },
+    "presentation.static.guard.event.guard-career-veteran-ready.caption": {
+      "ru": "Готовность ветерана",
+      "en": "Veteran readiness"
+    },
+    "presentation.static.guard.event.guard-career-choose-route.alt": {
+      "ru": "Сцена службы стражи: «Выбор служебного маршрута»; показаны только существующие обязанности, доступ или готовность без новой механики.",
+      "en": "Guard duty scene: “Career route choice”; it presents only existing duties, access, or readiness without adding mechanics."
+    },
+    "presentation.static.guard.event.guard-career-choose-route.caption": {
+      "ru": "Выбор служебного маршрута",
+      "en": "Career route choice"
+    },
+    "presentation.static.guard.event.guard-career-choose-major-case.alt": {
+      "ru": "Сцена службы стражи: «Выбор крупного дела»; показаны только существующие обязанности, доступ или готовность без новой механики.",
+      "en": "Guard duty scene: “Major-case choice”; it presents only existing duties, access, or readiness without adding mechanics."
+    },
+    "presentation.static.guard.event.guard-career-choose-major-case.caption": {
+      "ru": "Выбор крупного дела",
+      "en": "Major-case choice"
+    },
+    "presentation.static.guard.event.guard-career-outcome-ready.alt": {
+      "ru": "Сцена службы стражи: «Готовность исхода»; показаны только существующие обязанности, доступ или готовность без новой механики.",
+      "en": "Guard duty scene: “Outcome readiness”; it presents only existing duties, access, or readiness without adding mechanics."
+    },
+    "presentation.static.guard.event.guard-career-outcome-ready.caption": {
+      "ru": "Готовность исхода",
+      "en": "Outcome readiness"
+    },
+    "presentation.static.guard.event.guard-city-dispute.alt": {
+      "ru": "Сцена службы стражи: «Городской спор»; показаны только существующие обязанности, доступ или готовность без новой механики.",
+      "en": "Guard duty scene: “City dispute”; it presents only existing duties, access, or readiness without adding mechanics."
+    },
+    "presentation.static.guard.event.guard-city-dispute.caption": {
+      "ru": "Городской спор",
+      "en": "City dispute"
+    },
+    "presentation.static.guard.event.guard-city-crowd-pressure.alt": {
+      "ru": "Сцена службы стражи: «Давление толпы»; показаны только существующие обязанности, доступ или готовность без новой механики.",
+      "en": "Guard duty scene: “Crowd pressure”; it presents only existing duties, access, or readiness without adding mechanics."
+    },
+    "presentation.static.guard.event.guard-city-crowd-pressure.caption": {
+      "ru": "Давление толпы",
+      "en": "Crowd pressure"
+    },
+    "presentation.static.guard.event.guard-city-suspicious-pass.alt": {
+      "ru": "Сцена службы стражи: «Подозрительный пропуск»; показаны только существующие обязанности, доступ или готовность без новой механики.",
+      "en": "Guard duty scene: “Suspicious pass”; it presents only existing duties, access, or readiness without adding mechanics."
+    },
+    "presentation.static.guard.event.guard-city-suspicious-pass.caption": {
+      "ru": "Подозрительный пропуск",
+      "en": "Suspicious pass"
+    },
+    "presentation.static.guard.event.guard-city-poverty-response.alt": {
+      "ru": "Сцена службы стражи: «Ответ на ситуацию бедности»; показаны только существующие обязанности, доступ или готовность без новой механики.",
+      "en": "Guard duty scene: “Poverty response”; it presents only existing duties, access, or readiness without adding mechanics."
+    },
+    "presentation.static.guard.event.guard-city-poverty-response.caption": {
+      "ru": "Ответ на ситуацию бедности",
+      "en": "Poverty response"
+    },
+    "presentation.static.guard.event.guard-city-formal-report.alt": {
+      "ru": "Сцена службы стражи: «Формальный отчёт»; показаны только существующие обязанности, доступ или готовность без новой механики.",
+      "en": "Guard duty scene: “Formal report”; it presents only existing duties, access, or readiness without adding mechanics."
+    },
+    "presentation.static.guard.event.guard-city-formal-report.caption": {
+      "ru": "Формальный отчёт",
+      "en": "Formal report"
+    },
+    "presentation.static.guard.event.guard-relationship-intro.alt": {
+      "ru": "Сцена службы стражи: «Рабочее знакомство с напарницей»; показаны только существующие обязанности, доступ или готовность без новой механики.",
+      "en": "Guard duty scene: “Partner work introduction”; it presents only existing duties, access, or readiness without adding mechanics."
+    },
+    "presentation.static.guard.event.guard-relationship-intro.caption": {
+      "ru": "Рабочее знакомство с напарницей",
+      "en": "Partner work introduction"
+    },
+    "presentation.static.guard.event.guard-relationship-trust.alt": {
+      "ru": "Сцена службы стражи: «Профессиональное доверие»; показаны только существующие обязанности, доступ или готовность без новой механики.",
+      "en": "Guard duty scene: “Professional trust”; it presents only existing duties, access, or readiness without adding mechanics."
+    },
+    "presentation.static.guard.event.guard-relationship-trust.caption": {
+      "ru": "Профессиональное доверие",
+      "en": "Professional trust"
+    },
+    "presentation.static.guard.event.guard-relationship-conflict-open.alt": {
+      "ru": "Сцена службы стражи: «Открытый служебный конфликт»; показаны только существующие обязанности, доступ или готовность без новой механики.",
+      "en": "Guard duty scene: “Professional conflict opens”; it presents only existing duties, access, or readiness without adding mechanics."
+    },
+    "presentation.static.guard.event.guard-relationship-conflict-open.caption": {
+      "ru": "Открытый служебный конфликт",
+      "en": "Professional conflict opens"
+    },
+    "presentation.static.guard.event.guard-relationship-conflict-resolve.alt": {
+      "ru": "Сцена службы стражи: «Разрешение служебного конфликта»; показаны только существующие обязанности, доступ или готовность без новой механики.",
+      "en": "Guard duty scene: “Professional conflict resolution”; it presents only existing duties, access, or readiness without adding mechanics."
+    },
+    "presentation.static.guard.event.guard-relationship-conflict-resolve.caption": {
+      "ru": "Разрешение служебного конфликта",
+      "en": "Professional conflict resolution"
+    },
+    "presentation.static.guard.event.guard-relationship-case-support.alt": {
+      "ru": "Сцена службы стражи: «Поддержка по делу»; показаны только существующие обязанности, доступ или готовность без новой механики.",
+      "en": "Guard duty scene: “Case support”; it presents only existing duties, access, or readiness without adding mechanics."
+    },
+    "presentation.static.guard.event.guard-relationship-case-support.caption": {
+      "ru": "Поддержка по делу",
+      "en": "Case support"
+    },
+    "presentation.static.guard.event.guard-access-badge.alt": {
+      "ru": "Сцена службы стражи: «Выдача знака стражи»; показаны только существующие обязанности, доступ или готовность без новой механики.",
+      "en": "Guard duty scene: “Guard Badge access”; it presents only existing duties, access, or readiness without adding mechanics."
+    },
+    "presentation.static.guard.event.guard-access-badge.caption": {
+      "ru": "Выдача знака стражи",
+      "en": "Guard Badge access"
+    },
+    "presentation.static.guard.event.guard-access-sealed-pass.alt": {
+      "ru": "Сцена службы стражи: «Опечатанный служебный пропуск»; показаны только существующие обязанности, доступ или готовность без новой механики.",
+      "en": "Guard duty scene: “Sealed Guard Pass”; it presents only existing duties, access, or readiness without adding mechanics."
+    },
+    "presentation.static.guard.event.guard-access-sealed-pass.caption": {
+      "ru": "Опечатанный служебный пропуск",
+      "en": "Sealed Guard Pass"
+    },
+    "presentation.static.guard.event.guard-access-evidence-ledger.alt": {
+      "ru": "Сцена службы стражи: «Связь с журналом доказательств»; показаны только существующие обязанности, доступ или готовность без новой механики.",
+      "en": "Guard duty scene: “Evidence ledger link”; it presents only existing duties, access, or readiness without adding mechanics."
+    },
+    "presentation.static.guard.event.guard-access-evidence-ledger.caption": {
+      "ru": "Связь с журналом доказательств",
+      "en": "Evidence ledger link"
+    },
+    "presentation.static.guard.event.guard-cross-tavern-receipt.alt": {
+      "ru": "Сцена службы стражи: «Квитанция таверны как доказательство»; показаны только существующие обязанности, доступ или готовность без новой механики.",
+      "en": "Guard duty scene: “Tavern receipt evidence”; it presents only existing duties, access, or readiness without adding mechanics."
+    },
+    "presentation.static.guard.event.guard-cross-tavern-receipt.caption": {
+      "ru": "Квитанция таверны как доказательство",
+      "en": "Tavern receipt evidence"
+    },
+    "presentation.static.guard.event.guard-crisis-market-gate-pressure.alt": {
+      "ru": "Сцена службы стражи: «Кризис у рыночных ворот»; показаны только существующие обязанности, доступ или готовность без новой механики.",
+      "en": "Guard duty scene: “Market-gate pressure crisis”; it presents only existing duties, access, or readiness without adding mechanics."
+    },
+    "presentation.static.guard.event.guard-crisis-market-gate-pressure.caption": {
+      "ru": "Кризис у рыночных ворот",
+      "en": "Market-gate pressure crisis"
+    },
+    "presentation.static.guard.event.guard-routes-officer-ready.alt": {
+      "ru": "Сцена службы стражи: «Готовность офицерского маршрута»; показаны только существующие обязанности, доступ или готовность без новой механики.",
+      "en": "Guard duty scene: “Officer route readiness”; it presents only existing duties, access, or readiness without adding mechanics."
+    },
+    "presentation.static.guard.event.guard-routes-officer-ready.caption": {
+      "ru": "Готовность офицерского маршрута",
+      "en": "Officer route readiness"
+    },
+    "presentation.static.guard.event.guard-routes-reform-ready.alt": {
+      "ru": "Сцена службы стражи: «Готовность маршрута реформ»; показаны только существующие обязанности, доступ или готовность без новой механики.",
+      "en": "Guard duty scene: “Reform route readiness”; it presents only existing duties, access, or readiness without adding mechanics."
+    },
+    "presentation.static.guard.event.guard-routes-reform-ready.caption": {
+      "ru": "Готовность маршрута реформ",
+      "en": "Reform route readiness"
+    },
+    "presentation.static.guard.event.guard-routes-network-ready.alt": {
+      "ru": "Сцена службы стражи: «Готовность маршрута сети»; показаны только существующие обязанности, доступ или готовность без новой механики.",
+      "en": "Guard duty scene: “Network route readiness”; it presents only existing duties, access, or readiness without adding mechanics."
+    },
+    "presentation.static.guard.event.guard-routes-network-ready.caption": {
+      "ru": "Готовность маршрута сети",
+      "en": "Network route readiness"
+    },
+    "presentation.static.guard.event.guard-routes-major-case-ready.alt": {
+      "ru": "Сцена службы стражи: «Готовность крупного дела»; показаны только существующие обязанности, доступ или готовность без новой механики.",
+      "en": "Guard duty scene: “Major-case readiness”; it presents only existing duties, access, or readiness without adding mechanics."
+    },
+    "presentation.static.guard.event.guard-routes-major-case-ready.caption": {
+      "ru": "Готовность крупного дела",
+      "en": "Major-case readiness"
     }
   }
 }

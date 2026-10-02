@@ -112,7 +112,7 @@
       "static": {
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
-        "alt": "Стражница на городском посту со щитом и оружием после патруля.",
+        "alt": "A city guard at an ordinary post after a shift; the scene presents duty and official access, not a combat mechanic.",
         "altKey": "presentation.static.career.guard.result.alt"
       }
     },
@@ -1160,7 +1160,7 @@
       "static": {
         "kind": "image",
         "src": "assets/presentation/career-guard-result.svg",
-        "alt": "Hard Work ending static presentation for guard.",
+        "alt": "The existing Guard Hard Work ending; no additional Guard ending is implied.",
         "altKey": "presentation.static.guard-ending-hard-work.alt"
       }
     },
@@ -2834,6 +2834,462 @@
         "src": "assets/presentation/career-hunter-result.svg",
         "alt": "Hunter presentation: Hunter expedition return: Expedition failure; the result is shown without a fixed quarry or creature..",
         "altKey": "presentation.static.activity.hunter-expedition.return.failure.alt"
+      }
+    },
+    "job/guard/stage/recruit": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Guard career stage recruit; static professional presentation only.",
+        "altKey": "presentation.static.guard.stage.recruit.alt"
+      }
+    },
+    "job/guard/stage/trusted-guard": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Guard career stage trusted-guard; static professional presentation only.",
+        "altKey": "presentation.static.guard.stage.trusted-guard.alt"
+      }
+    },
+    "job/guard/stage/senior-guard": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Guard career stage senior-guard; static professional presentation only.",
+        "altKey": "presentation.static.guard.stage.senior-guard.alt"
+      }
+    },
+    "job/guard/stage/veteran": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Guard career stage veteran; static professional presentation only.",
+        "altKey": "presentation.static.guard.stage.veteran.alt"
+      }
+    },
+    "job/guard/stage/officer": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Guard career stage officer; static professional presentation only.",
+        "altKey": "presentation.static.guard.stage.officer.alt"
+      }
+    },
+    "job/guard/stage/reform-order": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Guard career stage reform-order; static professional presentation only.",
+        "altKey": "presentation.static.guard.stage.reform-order.alt"
+      }
+    },
+    "job/guard/stage/network": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Guard career stage network; static professional presentation only.",
+        "altKey": "presentation.static.guard.stage.network.alt"
+      }
+    },
+    "job/guard/stage/major-case": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Guard career stage major-case; static professional presentation only.",
+        "altKey": "presentation.static.guard.stage.major-case.alt"
+      }
+    },
+    "job/guard/stage/outcome-ready": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Guard career stage outcome-ready; static professional presentation only.",
+        "altKey": "presentation.static.guard.stage.outcome-ready.alt"
+      }
+    },
+    "relationship/guard-partner/stage/introduced": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Professional guard-partner relationship stage introduced.",
+        "altKey": "presentation.static.guard.relationship.stage.introduced.alt"
+      }
+    },
+    "relationship/guard-partner/stage/professional-trust": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Professional guard-partner relationship stage professional-trust.",
+        "altKey": "presentation.static.guard.relationship.stage.professional-trust.alt"
+      }
+    },
+    "relationship/guard-partner/stage/conflict-open": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Professional guard-partner relationship stage conflict-open.",
+        "altKey": "presentation.static.guard.relationship.stage.conflict-open.alt"
+      }
+    },
+    "relationship/guard-partner/stage/cooperation-ready": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Professional guard-partner relationship stage cooperation-ready.",
+        "altKey": "presentation.static.guard.relationship.stage.cooperation-ready.alt"
+      }
+    },
+    "relationship/guard-partner/stage/route-resolved": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Professional guard-partner relationship stage route-resolved.",
+        "altKey": "presentation.static.guard.relationship.stage.route-resolved.alt"
+      }
+    },
+    "job/guard/item/guard_badge": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Guard official-access item guard_badge.",
+        "altKey": "presentation.static.guard.item.guard_badge.alt"
+      }
+    },
+    "job/guard/item/guard_sealed_pass": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Guard official-access item guard_sealed_pass.",
+        "altKey": "presentation.static.guard.item.guard_sealed_pass.alt"
+      }
+    },
+    "job/guard/state/city-dispute-resolved": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Qualitative Guard duty state city-dispute-resolved.",
+        "altKey": "presentation.static.guard.state.city-dispute-resolved.alt"
+      }
+    },
+    "job/guard/state/crowd-pressure-resolved": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Qualitative Guard duty state crowd-pressure-resolved.",
+        "altKey": "presentation.static.guard.state.crowd-pressure-resolved.alt"
+      }
+    },
+    "job/guard/state/duty-report-evidence": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Qualitative Guard duty state duty-report-evidence.",
+        "altKey": "presentation.static.guard.state.duty-report-evidence.alt"
+      }
+    },
+    "job/guard/state/cargo-pass-evidence": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Qualitative Guard duty state cargo-pass-evidence.",
+        "altKey": "presentation.static.guard.state.cargo-pass-evidence.alt"
+      }
+    },
+    "job/guard/state/poverty-response-recorded": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Qualitative Guard duty state poverty-response-recorded.",
+        "altKey": "presentation.static.guard.state.poverty-response-recorded.alt"
+      }
+    },
+    "job/guard/state/tavern-evidence-known": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Qualitative Guard duty state tavern-evidence-known.",
+        "altKey": "presentation.static.guard.state.tavern-evidence-known.alt"
+      }
+    },
+    "job/guard/state/veteran-ready": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Qualitative Guard duty state veteran-ready.",
+        "altKey": "presentation.static.guard.state.veteran-ready.alt"
+      }
+    },
+    "job/guard/state/officer-ready": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Qualitative Guard duty state officer-ready.",
+        "altKey": "presentation.static.guard.state.officer-ready.alt"
+      }
+    },
+    "job/guard/state/reform-ready": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Qualitative Guard duty state reform-ready.",
+        "altKey": "presentation.static.guard.state.reform-ready.alt"
+      }
+    },
+    "job/guard/state/network-ready": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Qualitative Guard duty state network-ready.",
+        "altKey": "presentation.static.guard.state.network-ready.alt"
+      }
+    },
+    "job/guard/state/major-case-thread": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Qualitative Guard duty state major-case-thread.",
+        "altKey": "presentation.static.guard.state.major-case-thread.alt"
+      }
+    },
+    "job/guard/state/major-case-ready": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Qualitative Guard duty state major-case-ready.",
+        "altKey": "presentation.static.guard.state.major-case-ready.alt"
+      }
+    },
+    "job/guard/state/crisis-resolved": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Qualitative Guard duty state crisis-resolved.",
+        "altKey": "presentation.static.guard.state.crisis-resolved.alt"
+      }
+    },
+    "job/guard/state/refusal-respected": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Qualitative Guard duty state refusal-respected.",
+        "altKey": "presentation.static.guard.state.refusal-respected.alt"
+      }
+    },
+    "job/guard/state/partner-case-support": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Qualitative Guard duty state partner-case-support.",
+        "altKey": "presentation.static.guard.state.partner-case-support.alt"
+      }
+    },
+    "job/guard/event/guard-career-first-shift/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Guard production event guard.career.first-shift; static presentation only.",
+        "altKey": "presentation.static.guard.event.guard-career-first-shift.alt"
+      }
+    },
+    "job/guard/event/guard-career-senior/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Guard production event guard.career.senior; static presentation only.",
+        "altKey": "presentation.static.guard.event.guard-career-senior.alt"
+      }
+    },
+    "job/guard/event/guard-career-duty-breadth/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Guard production event guard.career.duty-breadth; static presentation only.",
+        "altKey": "presentation.static.guard.event.guard-career-duty-breadth.alt"
+      }
+    },
+    "job/guard/event/guard-career-veteran-ready/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Guard production event guard.career.veteran-ready; static presentation only.",
+        "altKey": "presentation.static.guard.event.guard-career-veteran-ready.alt"
+      }
+    },
+    "job/guard/event/guard-career-choose-route/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Guard production event guard.career.choose-route; static presentation only.",
+        "altKey": "presentation.static.guard.event.guard-career-choose-route.alt"
+      }
+    },
+    "job/guard/event/guard-career-choose-major-case/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Guard production event guard.career.choose-major-case; static presentation only.",
+        "altKey": "presentation.static.guard.event.guard-career-choose-major-case.alt"
+      }
+    },
+    "job/guard/event/guard-career-outcome-ready/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Guard production event guard.career.outcome-ready; static presentation only.",
+        "altKey": "presentation.static.guard.event.guard-career-outcome-ready.alt"
+      }
+    },
+    "job/guard/event/guard-city-dispute/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Guard production event guard.city.dispute; static presentation only.",
+        "altKey": "presentation.static.guard.event.guard-city-dispute.alt"
+      }
+    },
+    "job/guard/event/guard-city-crowd-pressure/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Guard production event guard.city.crowd-pressure; static presentation only.",
+        "altKey": "presentation.static.guard.event.guard-city-crowd-pressure.alt"
+      }
+    },
+    "job/guard/event/guard-city-suspicious-pass/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Guard production event guard.city.suspicious-pass; static presentation only.",
+        "altKey": "presentation.static.guard.event.guard-city-suspicious-pass.alt"
+      }
+    },
+    "job/guard/event/guard-city-poverty-response/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Guard production event guard.city.poverty-response; static presentation only.",
+        "altKey": "presentation.static.guard.event.guard-city-poverty-response.alt"
+      }
+    },
+    "job/guard/event/guard-city-formal-report/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Guard production event guard.city.formal-report; static presentation only.",
+        "altKey": "presentation.static.guard.event.guard-city-formal-report.alt"
+      }
+    },
+    "job/guard/event/guard-relationship-intro/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Guard production event guard.relationship.intro; static presentation only.",
+        "altKey": "presentation.static.guard.event.guard-relationship-intro.alt"
+      }
+    },
+    "job/guard/event/guard-relationship-trust/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Guard production event guard.relationship.trust; static presentation only.",
+        "altKey": "presentation.static.guard.event.guard-relationship-trust.alt"
+      }
+    },
+    "job/guard/event/guard-relationship-conflict-open/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Guard production event guard.relationship.conflict-open; static presentation only.",
+        "altKey": "presentation.static.guard.event.guard-relationship-conflict-open.alt"
+      }
+    },
+    "job/guard/event/guard-relationship-conflict-resolve/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Guard production event guard.relationship.conflict-resolve; static presentation only.",
+        "altKey": "presentation.static.guard.event.guard-relationship-conflict-resolve.alt"
+      }
+    },
+    "job/guard/event/guard-relationship-case-support/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Guard production event guard.relationship.case-support; static presentation only.",
+        "altKey": "presentation.static.guard.event.guard-relationship-case-support.alt"
+      }
+    },
+    "job/guard/event/guard-access-badge/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Guard production event guard.access.badge; static presentation only.",
+        "altKey": "presentation.static.guard.event.guard-access-badge.alt"
+      }
+    },
+    "job/guard/event/guard-access-sealed-pass/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Guard production event guard.access.sealed-pass; static presentation only.",
+        "altKey": "presentation.static.guard.event.guard-access-sealed-pass.alt"
+      }
+    },
+    "job/guard/event/guard-access-evidence-ledger/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Guard production event guard.access.evidence-ledger; static presentation only.",
+        "altKey": "presentation.static.guard.event.guard-access-evidence-ledger.alt"
+      }
+    },
+    "job/guard/event/guard-cross-tavern-receipt/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Guard production event guard.cross.tavern-receipt; static presentation only.",
+        "altKey": "presentation.static.guard.event.guard-cross-tavern-receipt.alt"
+      }
+    },
+    "job/guard/event/guard-crisis-market-gate-pressure/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Guard production event guard.crisis.market-gate-pressure; static presentation only.",
+        "altKey": "presentation.static.guard.event.guard-crisis-market-gate-pressure.alt"
+      }
+    },
+    "job/guard/event/guard-routes-officer-ready/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Guard production event guard.routes.officer-ready; static presentation only.",
+        "altKey": "presentation.static.guard.event.guard-routes-officer-ready.alt"
+      }
+    },
+    "job/guard/event/guard-routes-reform-ready/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Guard production event guard.routes.reform-ready; static presentation only.",
+        "altKey": "presentation.static.guard.event.guard-routes-reform-ready.alt"
+      }
+    },
+    "job/guard/event/guard-routes-network-ready/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Guard production event guard.routes.network-ready; static presentation only.",
+        "altKey": "presentation.static.guard.event.guard-routes-network-ready.alt"
+      }
+    },
+    "job/guard/event/guard-routes-major-case-ready/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Guard production event guard.routes.major-case-ready; static presentation only.",
+        "altKey": "presentation.static.guard.event.guard-routes-major-case-ready.alt"
       }
     }
   }
