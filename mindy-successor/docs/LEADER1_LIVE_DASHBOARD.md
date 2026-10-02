@@ -1,5 +1,23 @@
 # Leader 1 — Live Dashboard
 
+## ARTIST SHIPPED + PALACE AUTHORITY STOP — 2026-10-02
+
+Verified Git state:
+- Artist/Geisha assembly PR #250 merged to main;
+- exact shipped main: `a3afe650a05a4a27be5953b4f3965db0a420573c`;
+- exact-current-main workflow #1089 / `37013091326`: **SUCCESS**;
+- Chat 2 is now free and waits for the next frozen producer candidate.
+
+Palace:
+- Chat 6 branch `chat6/palace-complete-reset-v1` head `8919a3686c1952d700c4c1377130918e0e181fa3`;
+- exactly 12 commits ahead of assignment baseline, no rebase;
+- 7 authority-safe files only;
+- no PR and no candidate CI;
+- independent Palace work is complete for current authority;
+- status is **WAITING ON PRODUCT / DEPENDENCY AUTHORITY**, not COMPLETE and not abandoned;
+- canonical blockers: `docs/tasks/CHAT6_PALACE_PRODUCTION_BLOCKERS_v1.md`;
+- do not assign speculative Palace filler while those blockers remain.
+
 ## WHOLE-CAREER WAVE STARTED — 2026-10-02
 
 User confirms all new worker chats have started.

@@ -16,11 +16,11 @@ There is **no worker Chat 1**. Historical Chat 1 material is evidence only.
 
 | Chat | Role | Active ownership |
 |---|---|---|
-| Chat 2 | Integration / Assembly + Technical QA | Artist #229/#237 technical QA, collision gate and current-main assembly |
+| Chat 2 | Integration / Assembly + Technical QA | **WAITING** for next frozen producer candidate; Artist is shipped |
 | Chat 3 | Full-Career Producer A | **Assassin** complete ordinary career |
 | Chat 4 | Full-Career Producer B | **Voluntary Prostitute / Professional** complete ordinary career |
 | Chat 5 | Full-Career Producer C | **Secret Debt / Slave** hidden career, with open-value firewall |
-| Chat 6 | Full-Career Producer D | **Palace** hidden/meta career, dependency-gated |
+| Chat 6 | Full-Career Producer D | **Palace** authority-safe foundation complete; WAITING on explicit Product/shared dependencies |
 
 ## Whole-career producer contract
 
@@ -39,7 +39,7 @@ When such a shared change is genuinely required, stop and escalate to Leader 1. 
 
 ## Candidate flow
 
-1. Producer uses the clean branch named in its current pointer, created from this assignment baseline.
+1. Producer uses the clean branch named in its current pointer.
 2. Do not open a draft PR merely to show work.
 3. When candidate-ready, open one focused PR and freeze the exact head.
 4. Required executable CI runs on that head.
@@ -50,6 +50,7 @@ When such a shared change is genuinely required, stop and escalate to Leader 1. 
 
 ## Current transition
 
-Artist remains first integration-critical package in Chat 2.
-Assassin and Prostitute are the two remaining ordinary careers after Artist.
-Secret Debt and Palace proceed in parallel only under their explicit authority/dependency firewalls; producers must not invent unresolved numbers, lore or future sibling facts.
+Artist/Geisha is now shipped on main `a3afe650a05a4a27be5953b4f3965db0a420573c`; exact-main run #1089 is SUCCESS.
+Assassin and voluntary Prostitute are the two remaining ordinary-career production lanes.
+Secret Debt continues under its open-value firewall.
+Palace independent authority-safe work is complete at `8919a3686c1952d700c4c1377130918e0e181fa3` and is intentionally waiting on explicit Product/shared blockers plus the final natural 10/10 ordinary baseline.
