@@ -10065,6 +10065,102 @@
     "event.merchant.cross.guard-pass.choice.record.text": {
       "ru": "Проверенное Guard-свидетельство о пропуске показывает, что на маршруте есть конкретное ограничение или несоответствие. Merchant учитывает его при планировании, не создавая собственную систему закона или разрешений.",
       "en": "Use the existing Guard evidence as one route constraint without creating a Merchant law system."
+    },
+    "event.merchant.items.appraisal-scales.title": {
+      "ru": "Оценочные весы Merchant",
+      "en": "A narrow appraisal tool becomes available"
+    },
+    "event.merchant.items.appraisal-scales.variant.default.text": {
+      "ru": "Оценочные весы помогают повторяемо сравнить вес и состояние двух образцов. Они улучшают качество одной проверки, но не называют истинную цену рынка и не гарантируют прибыль.\n\nЕсли показания весов не объясняют странное свойство товара, ты сохраняешь неопределённость в записи. Инструмент помогает увидеть расхождение, а не превращает неполные данные в уверенный ответ.\n\nТри инструмента меняют только качество конкретных Merchant-проверок и доступных вариантов. Они не создают систему вместимости склада, автоматическую оценку стоимости или гарантированный торговый бонус.",
+      "en": "Appraisal scales help compare the weight and condition of two samples consistently. They improve the quality of one check but do not reveal a true market price or guarantee profit.\n\nIf the scale reading does not explain an unusual property of the goods, you preserve that uncertainty in the record. The tool helps expose a discrepancy rather than turning incomplete data into a confident answer.\n\nThe three tools change only the quality of specific Merchant checks and available options. They create no storage-capacity system, automatic valuation, or guaranteed trading bonus."
+    },
+    "event.merchant.items.appraisal-scales.choice.take.label": {
+      "ru": "Взять",
+      "en": "Take the appraisal scales"
+    },
+    "event.merchant.items.appraisal-scales.choice.take.text": {
+      "ru": "Оценочные весы помогают повторяемо сравнить вес и состояние двух образцов. Они улучшают качество одной проверки, но не называют истинную цену рынка и не гарантируют прибыль.",
+      "en": "Keep the tool for future appraisal checks."
+    },
+    "event.merchant.items.appraisal-scales.choice.defer.label": {
+      "ru": "Отложить",
+      "en": "Keep working without them"
+    },
+    "event.merchant.items.appraisal-scales.choice.defer.text": {
+      "ru": "Если показания весов не объясняют странное свойство товара, ты сохраняешь неопределённость в записи. Инструмент помогает увидеть расхождение, а не превращает неполные данные в уверенный ответ.",
+      "en": "Ordinary Merchant work remains available."
+    },
+    "event.merchant.items.manifest-case.title": {
+      "ru": "Футляр для накладных Merchant",
+      "en": "A manifest case supports repeatable records"
+    },
+    "event.merchant.items.manifest-case.variant.default.text": {
+      "ru": "Футляр для накладных хранит копии условий, печатей и отметок доставки вместе. Его ценность в том, что спор можно сверить с записью, а не в особом праве проходить любые проверки.\n\nК накладной полезно приложить короткое объяснение сложного условия своими словами. Футляр сохраняет обе версии рядом, чтобы формальный документ не становился удобным местом для двусмысленности.\n\nТри инструмента меняют только качество конкретных Merchant-проверок и доступных вариантов. Они не создают систему вместимости склада, автоматическую оценку стоимости или гарантированный торговый бонус.",
+      "en": "The manifest case keeps copies of terms, seals, and delivery notes together. Its value is that a dispute can be checked against a record, not that it grants special permission to bypass checks.\n\nIt helps to keep a short plain-language explanation beside a complicated manifest term. The case keeps both versions together so a formal document does not become a convenient place for ambiguity.\n\nThe three tools change only the quality of specific Merchant checks and available options. They create no storage-capacity system, automatic valuation, or guaranteed trading bonus."
+    },
+    "event.merchant.items.manifest-case.choice.take.label": {
+      "ru": "Взять",
+      "en": "Keep the manifest case"
+    },
+    "event.merchant.items.manifest-case.choice.take.text": {
+      "ru": "Футляр для накладных хранит копии условий, печатей и отметок доставки вместе. Его ценность в том, что спор можно сверить с записью, а не в особом праве проходить любые проверки.",
+      "en": "Use it for later delivery verification."
+    },
+    "event.merchant.items.manifest-case.choice.defer.label": {
+      "ru": "Отложить",
+      "en": "Use ordinary records"
+    },
+    "event.merchant.items.manifest-case.choice.defer.text": {
+      "ru": "К накладной полезно приложить короткое объяснение сложного условия своими словами. Футляр сохраняет обе версии рядом, чтобы формальный документ не становился удобным местом для двусмысленности.",
+      "en": "Keep the career playable without the optional tool."
+    },
+    "event.merchant.items.sample-kit.title": {
+      "ru": "Набор Merchant для образцов",
+      "en": "A sample kit makes cross-system goods easier to document"
+    },
+    "event.merchant.items.sample-kit.variant.default.text": {
+      "ru": "Набор для образцов позволяет отделить небольшой подписанный пример от основной партии и позже сравнить его с результатом поставки. Он не расширяет общий инвентарь и не создаёт новые товары.\n\nТри инструмента меняют только качество конкретных Merchant-проверок и доступных вариантов. Они не создают систему вместимости склада, автоматическую оценку стоимости или гарантированный торговый бонус.",
+      "en": "The sample kit lets you separate a small labeled example from the main lot and compare it with the delivered result later. It does not expand general inventory or create new goods.\n\nThe three tools change only the quality of specific Merchant checks and available options. They create no storage-capacity system, automatic valuation, or guaranteed trading bonus."
+    },
+    "event.merchant.items.sample-kit.choice.take.label": {
+      "ru": "Взять",
+      "en": "Keep the sample kit"
+    },
+    "event.merchant.items.sample-kit.choice.take.text": {
+      "ru": "Набор для образцов позволяет отделить небольшой подписанный пример от основной партии и позже сравнить его с результатом поставки. Он не расширяет общий инвентарь и не создаёт новые товары.",
+      "en": "Use it when an existing Farm or Hunter result reaches Merchant."
+    },
+    "event.merchant.items.sample-kit.choice.defer.label": {
+      "ru": "Отложить",
+      "en": "Do not take the kit"
+    },
+    "event.merchant.items.sample-kit.choice.defer.text": {
+      "ru": "Три инструмента меняют только качество конкретных Merchant-проверок и доступных вариантов. Они не создают систему вместимости склада, автоматическую оценку стоимости или гарантированный торговый бонус.",
+      "en": "Continue ordinary trade without sample handling."
+    },
+    "event.merchant.poverty.liquidity-response.title": {
+      "ru": "Торговля при ограниченной ликвидности",
+      "en": "Trade under a tight liquidity constraint"
+    },
+    "event.merchant.poverty.liquidity-response.variant.default.text": {
+      "ru": "Когда ночлег нестабилен, даже небольшая задержка оплаты сильнее давит на решение. Ты выбираешь работу с комиссией и коротким циклом вместо обещания крупной закупки, для которой сейчас нет запаса.\n\nДешёвая комната даёт крышу, но не делает оборотный запас бесконечным. Ты планируешь сделки так, чтобы следующий обязательный расход не зависел от одной рискованной продажи.\n\nКомиссионная работа позволяет участвовать в торговле без необходимости заранее выкупать всю партию. Ты получаешь оплату за выполненную работу, а не бесплатный капитал или скрытую субсидию.\n\nНебольшой бартер может закрыть конкретную потребность сделки, если обе стороны понимают, что именно меняют. Он не превращается в универсальную валюту и не стирает стоимость жилья или обычной работы.\n\nMerchant не создаёт отдельный долг, кредитную шкалу или способ незаметно убрать существующую задолженность. Бедность влияет на контекст и осторожность выбора, но не переписывается новой карьерной механикой.",
+      "en": "When lodging is unstable, even a small payment delay puts more pressure on a decision. You choose commission work and a short cycle instead of promising a large purchase for which there is no current buffer.\n\nA cheap room provides shelter, but it does not make working funds unlimited. You plan trades so the next required expense does not depend on one risky sale.\n\nCommission work lets you participate in trade without buying the entire lot in advance. You are paid for completed work rather than receiving free capital or a hidden subsidy.\n\nA narrow barter can solve one concrete need in a trade when both sides understand what is exchanged. It does not become a universal currency or erase the cost of housing or ordinary work.\n\nMerchant creates no separate debt, credit meter, or hidden way to erase existing obligations. Poverty changes the context and caution of a choice, but it is not rewritten by a new career mechanic."
+    },
+    "event.merchant.poverty.liquidity-response.choice.commission-only.label": {
+      "ru": "Работать за комиссию",
+      "en": "Take commission work only"
+    },
+    "event.merchant.poverty.liquidity-response.choice.commission-only.text": {
+      "ru": "Когда ночлег нестабилен, даже небольшая задержка оплаты сильнее давит на решение. Ты выбираешь работу с комиссией и коротким циклом вместо обещания крупной закупки, для которой сейчас нет запаса.",
+      "en": "Reduce exposure by handling a sale for someone else without creating Merchant-owned credit state."
+    },
+    "event.merchant.poverty.liquidity-response.choice.narrow-barter.label": {
+      "ru": "Выбрать узкий бартер",
+      "en": "Keep the obligation narrow"
+    },
+    "event.merchant.poverty.liquidity-response.choice.narrow-barter.text": {
+      "ru": "Дешёвая комната даёт крышу, но не делает оборотный запас бесконечным. Ты планируешь сделки так, чтобы следующий обязательный расход не зависел от одной рискованной продажи.",
+      "en": "Record only what is exchanged and when; do not create a new balance subsystem or clear any shared obligation."
     }
   }
 }
