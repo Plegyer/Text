@@ -32,10 +32,10 @@
   },
   "runtimeAuthority": {
     "branch": "chat1/merchant-complete-v15",
-    "observedHead": "2d37e7a24fb90f40e08322f2bd9438711cf70455",
+    "observedHead": "88422257f618c7182dd6d1f3eca7596c9972eb0a",
     "contractPath": "mindy-successor/docs/tasks/MERCHANT_RUNTIME_CONTRACT_v1.json",
     "contractBlob": "31e353c0284700ff29d658fff9c1032193c0e563",
-    "frozen": false,
+    "frozen": true,
     "finalBindingRequiredAt": "C3-204"
   },
   "provisionalContract": {
