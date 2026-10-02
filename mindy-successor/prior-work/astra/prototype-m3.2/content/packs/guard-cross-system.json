@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "id": "guard.cross",
+  "reads": [
+    "forest.receipt",
+    "tavern.resolved"
+  ],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "careers": [
+        "guard"
+      ]
+    },
+    "writes": {
+      "careers": [
+        "guard"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "guard.cross.tavern-receipt",
+      "title": "Existing Tavern receipt enters Guard evidence",
+      "sourceDomain": "guard",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "actionCompleted",
+          "action": "guard.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 67,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "flag",
+          "key": "forest.receipt",
+          "value": true
+        },
+        {
+          "kind": "flag",
+          "key": "tavern.resolved",
+          "value": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "guard",
+          "fact": "tavern-evidence-known",
+          "present": false
+        },
+        {
+          "kind": "not",
+          "condition": {
+            "kind": "careerStage",
+            "career": "guard",
+            "stage": "recruit"
+          }
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The already-resolved Tavern receipt chain gives you one concrete supporting document. It is evidence from a live identity, not a fabricated Tavern career state.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record the Tavern evidence",
+          "text": "Carry only the existing receipt/resolution result into Guard case preparation.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "guard",
+              "fact": "tavern-evidence-known"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

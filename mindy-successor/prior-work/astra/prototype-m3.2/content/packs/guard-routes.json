@@ -1,0 +1,706 @@
+{
+  "schemaVersion": 1,
+  "id": "guard",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "careers": [
+        "guard"
+      ],
+      "inventory": [
+        "guard_badge",
+        "guard_sealed_pass"
+      ],
+      "itemCapabilities": [
+        "official_guard_access",
+        "guard_sealed_pass"
+      ]
+    },
+    "writes": {
+      "careers": [
+        "guard"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "guard.crisis.market-gate-pressure",
+      "title": "Market, gate, and public-pressure crisis",
+      "sourceDomain": "guard",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "guard",
+          "fact": "duty-report-evidence"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "guard",
+          "fact": "official-access-issued"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "guard",
+          "fact": "city-dispute-resolved"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "guard",
+          "fact": "cargo-pass-evidence"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "guard",
+          "fact": "poverty-relief-choice"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "guard",
+          "fact": "relationship-conflict-resolved"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "guard",
+          "fact": "sealed-pass-issued"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 84,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 30,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "guard",
+          "stage": "senior-guard"
+        },
+        {
+          "kind": "careerFact",
+          "career": "guard",
+          "fact": "crisis-resolved",
+          "present": false
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "careerFact",
+                  "career": "guard",
+                  "fact": "duty-report-evidence",
+                  "present": true
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "guard",
+                  "fact": "official-access-issued",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "careerFact",
+                  "career": "guard",
+                  "fact": "city-dispute-resolved",
+                  "present": true
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "guard",
+                  "fact": "poverty-relief-choice",
+                  "present": true
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "guard",
+                  "fact": "relationship-conflict-resolved",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "careerFact",
+                  "career": "guard",
+                  "fact": "cargo-pass-evidence",
+                  "present": true
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "guard",
+                  "fact": "sealed-pass-issued",
+                  "present": true
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "guard",
+                  "fact": "relationship-conflict-resolved",
+                  "present": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "A market bottleneck, a disputed gate decision, and public pressure collide in one shift. The problem can be stabilized through records, de-escalation, or negotiated access—without defining a universal law or morality system.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "stabilize-by-report",
+          "label": "Stabilize through the documented record",
+          "text": "Use formal evidence and official access to make the case auditable.",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "guard",
+              "fact": "duty-report-evidence",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "guard",
+              "fact": "official-access-issued",
+              "present": true
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "guard",
+              "fact": "crisis-resolved"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "guard",
+              "fact": "crisis-officer"
+            }
+          ]
+        },
+        {
+          "id": "deescalate-crowd",
+          "label": "Resolve the pressure through de-escalation and relief routing",
+          "text": "Use the concrete dispute record and poverty-relief choice to change the immediate Guard practice.",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "guard",
+              "fact": "city-dispute-resolved",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "guard",
+              "fact": "poverty-relief-choice",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "guard",
+              "fact": "relationship-conflict-resolved",
+              "present": true
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "guard",
+              "fact": "crisis-resolved"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "guard",
+              "fact": "crisis-reform"
+            }
+          ]
+        },
+        {
+          "id": "trade-access-network",
+          "label": "Resolve it through controlled access and contacts",
+          "text": "Use the cargo discrepancy, sealed pass, and professional relationship as a concrete network route—not a corruption currency.",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "guard",
+              "fact": "cargo-pass-evidence",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "guard",
+              "fact": "sealed-pass-issued",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "guard",
+              "fact": "relationship-conflict-resolved",
+              "present": true
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "guard",
+              "fact": "crisis-resolved"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "guard",
+              "fact": "crisis-network"
+            }
+          ]
+        },
+        {
+          "id": "defer",
+          "label": "Keep the situation contained for now",
+          "text": "Do not claim the larger crisis is resolved until a supported route is ready.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "guard.routes.officer-ready",
+      "title": "Officer route ready",
+      "sourceDomain": "guard",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "guard",
+          "fact": "crisis-officer"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "guard",
+          "fact": "school-literacy-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "guard",
+          "fact": "school-etiquette-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "guard",
+          "fact": "duty-report-evidence"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "guard.shift"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 82,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "guard",
+          "stage": "senior-guard"
+        },
+        {
+          "kind": "careerFact",
+          "career": "guard",
+          "fact": "crisis-officer",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "guard",
+          "fact": "school-literacy-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "guard",
+          "fact": "school-etiquette-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "guard",
+          "fact": "duty-report-evidence",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "guard",
+          "fact": "official-access-issued",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "guard",
+          "fact": "officer-route-ready",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Formal reporting, authorized access, and prepared School methods now support Officer readiness. No numeric Guard-local School threshold was invented here.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record Officer readiness",
+          "text": "Keep command/formal-case readiness as one late-route fact.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "guard",
+              "fact": "officer-route-ready"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "guard.routes.reform-ready",
+      "title": "Reform / Order route ready",
+      "sourceDomain": "guard",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "guard",
+          "fact": "crisis-reform"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "guard",
+          "fact": "poverty-relief-choice"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "guard",
+          "fact": "relationship-conflict-resolved"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "guard.shift"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 83,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "guard",
+          "stage": "senior-guard"
+        },
+        {
+          "kind": "careerFact",
+          "career": "guard",
+          "fact": "crisis-reform",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "guard",
+          "fact": "poverty-relief-choice",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "guard",
+          "fact": "city-dispute-resolved",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "guard",
+          "fact": "relationship-conflict-resolved",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "guard",
+          "fact": "reform-route-ready",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "A concrete relief choice, a resolved public dispute, and a professional conflict resolution now support Reform / Order as a practice route rather than a morality score.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record Reform readiness",
+          "text": "Keep the practice-change route available alongside other Guard outcomes.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "guard",
+              "fact": "reform-route-ready"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "guard.routes.network-ready",
+      "title": "Network route ready",
+      "sourceDomain": "guard",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "guard",
+          "fact": "crisis-network"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "guard",
+          "fact": "sealed-pass-issued"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "guard",
+          "fact": "relationship-conflict-resolved"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "guard.shift"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 81,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "guard",
+          "stage": "senior-guard"
+        },
+        {
+          "kind": "careerFact",
+          "career": "guard",
+          "fact": "crisis-network",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "guard",
+          "fact": "cargo-pass-evidence",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "guard",
+          "fact": "sealed-pass-issued",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "guard",
+          "fact": "relationship-conflict-resolved",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "guard",
+          "fact": "network-route-ready",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Evidence, controlled access, and a resolved professional conflict now form a Network route. It is represented by concrete facts, never a corruption meter.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record Network readiness",
+          "text": "Keep the access/contact route available without forcing commitment.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "guard",
+              "fact": "network-route-ready"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "guard.routes.major-case-ready",
+      "title": "Major Case route ready",
+      "sourceDomain": "guard",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "guard",
+          "fact": "major-case-thread-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "guard",
+          "fact": "partner-case-support"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "guard",
+          "fact": "tavern-evidence-known"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "guard",
+          "fact": "poverty-response-recorded"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "guard",
+          "fact": "crisis-resolved"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "guard.shift"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 85,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "guard",
+          "stage": "senior-guard"
+        },
+        {
+          "kind": "careerFact",
+          "career": "guard",
+          "fact": "major-case-thread-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "guard",
+          "fact": "relationship-trust-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "guard",
+          "fact": "poverty-response-recorded",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "guard",
+          "fact": "crisis-resolved",
+          "present": true
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "guard",
+              "fact": "partner-case-support",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "guard",
+              "fact": "tavern-evidence-known",
+              "present": true
+            }
+          ]
+        },
+        {
+          "kind": "careerFact",
+          "career": "guard",
+          "fact": "major-case-ready",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Independent evidence handling, a relationship source, a poverty-facing duty decision, and a resolved city crisis now form a Major Case route. No fixed crime, boss, or faction is defined.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record Major Case readiness",
+          "text": "Open the multi-system route without forcing a late-branch choice.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "guard",
+              "fact": "major-case-ready"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
