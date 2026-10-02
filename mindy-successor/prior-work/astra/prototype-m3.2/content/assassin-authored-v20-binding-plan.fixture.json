@@ -1,0 +1,865 @@
+{
+  "formatVersion": 1,
+  "id": "chat3.assassin-authored-v20.binding-plan",
+  "status": "SAFE_PREP_BINDING_PLAN_NO_RUNTIME_AUTHORITY",
+  "activationHead": "d3b7fe038b35cdc53d786189ef7ba44853a7610d",
+  "shippedAuthority": {
+    "action": "assassin.shift",
+    "scenes": [
+      "assassin.shift#spring.default",
+      "assassin.shift#summer.default",
+      "assassin.shift#autumn.default",
+      "assassin.shift#winter.default"
+    ],
+    "career": "assassin",
+    "ending": "ending.assassin.hard-work",
+    "activities": [
+      "lumber.forest",
+      "hunter.expedition"
+    ]
+  },
+  "policy": {
+    "futureConsumerMarker": "PENDING_RUNTIME_ID",
+    "modifiesProduction": false,
+    "createsGameplayIds": false,
+    "bindsOnlyAfterFrozenAssassinRuntime": true
+  },
+  "bindings": [
+    {
+      "contentKey": "observe.routine",
+      "section": "ordinary-work",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [
+        "assassin.shift"
+      ],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "handoff.package",
+      "section": "ordinary-work",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [
+        "assassin.shift"
+      ],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "tailing.distance",
+      "section": "ordinary-work",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [
+        "assassin.shift"
+      ],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "route.prep",
+      "section": "ordinary-work",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [
+        "assassin.shift"
+      ],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "window.finding",
+      "section": "ordinary-work",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [
+        "assassin.shift"
+      ],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "tool.test",
+      "section": "ordinary-work",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [
+        "assassin.shift"
+      ],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "false.meeting",
+      "section": "ordinary-work",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [
+        "assassin.shift"
+      ],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "cleanup.records",
+      "section": "ordinary-work",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [
+        "assassin.shift"
+      ],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "minor.contract",
+      "section": "ordinary-work",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [
+        "assassin.shift"
+      ],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "phase.offer",
+      "section": "major-contract",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "phase.intel",
+      "section": "major-contract",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "phase.prep",
+      "section": "major-contract",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "phase.method-choice",
+      "section": "major-contract",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "phase.execute-or-abort",
+      "section": "major-contract",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "phase.redirect",
+      "section": "major-contract",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "phase.fallout",
+      "section": "major-contract",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "method.stealth",
+      "section": "method",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "method.social-access",
+      "section": "method",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "method.staged-accident",
+      "section": "method",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "method.indirect-manipulation",
+      "section": "method",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "method.nonlethal-substitution",
+      "section": "method",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "method.expose-target",
+      "section": "method",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "refusal.initial",
+      "section": "refusal",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "refusal.after-intel",
+      "section": "refusal",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "redirect.warning",
+      "section": "refusal",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "redirect.evidence",
+      "section": "refusal",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "turncoat.identity",
+      "section": "refusal",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "refusal.chain",
+      "section": "refusal",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "no.morality.stat",
+      "section": "refusal",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "spring.crowd-pattern",
+      "section": "seasonal",
+      "status": "SHIPPED_SURFACE_AVAILABLE_NOT_BOUND",
+      "targetKind": "actionScene",
+      "targetIds": [
+        "assassin.shift#spring.default"
+      ],
+      "shippedContextIds": [],
+      "runtimeConsumerId": null
+    },
+    {
+      "contentKey": "spring.travel-reset",
+      "section": "seasonal",
+      "status": "SHIPPED_SURFACE_AVAILABLE_NOT_BOUND",
+      "targetKind": "actionScene",
+      "targetIds": [
+        "assassin.shift#spring.default"
+      ],
+      "shippedContextIds": [],
+      "runtimeConsumerId": null
+    },
+    {
+      "contentKey": "spring.clothing-context",
+      "section": "seasonal",
+      "status": "SHIPPED_SURFACE_AVAILABLE_NOT_BOUND",
+      "targetKind": "actionScene",
+      "targetIds": [
+        "assassin.shift#spring.default"
+      ],
+      "shippedContextIds": [],
+      "runtimeConsumerId": null
+    },
+    {
+      "contentKey": "summer.crowded-streets",
+      "section": "seasonal",
+      "status": "SHIPPED_SURFACE_AVAILABLE_NOT_BOUND",
+      "targetKind": "actionScene",
+      "targetIds": [
+        "assassin.shift#summer.default"
+      ],
+      "shippedContextIds": [],
+      "runtimeConsumerId": null
+    },
+    {
+      "contentKey": "summer.festival-routine",
+      "section": "seasonal",
+      "status": "SHIPPED_SURFACE_AVAILABLE_NOT_BOUND",
+      "targetKind": "actionScene",
+      "targetIds": [
+        "assassin.shift#summer.default"
+      ],
+      "shippedContextIds": [],
+      "runtimeConsumerId": null
+    },
+    {
+      "contentKey": "summer.late-light",
+      "section": "seasonal",
+      "status": "SHIPPED_SURFACE_AVAILABLE_NOT_BOUND",
+      "targetKind": "actionScene",
+      "targetIds": [
+        "assassin.shift#summer.default"
+      ],
+      "shippedContextIds": [],
+      "runtimeConsumerId": null
+    },
+    {
+      "contentKey": "autumn.route-change",
+      "section": "seasonal",
+      "status": "SHIPPED_SURFACE_AVAILABLE_NOT_BOUND",
+      "targetKind": "actionScene",
+      "targetIds": [
+        "assassin.shift#autumn.default"
+      ],
+      "shippedContextIds": [],
+      "runtimeConsumerId": null
+    },
+    {
+      "contentKey": "autumn.layers",
+      "section": "seasonal",
+      "status": "SHIPPED_SURFACE_AVAILABLE_NOT_BOUND",
+      "targetKind": "actionScene",
+      "targetIds": [
+        "assassin.shift#autumn.default"
+      ],
+      "shippedContextIds": [],
+      "runtimeConsumerId": null
+    },
+    {
+      "contentKey": "autumn.routine-shift",
+      "section": "seasonal",
+      "status": "SHIPPED_SURFACE_AVAILABLE_NOT_BOUND",
+      "targetKind": "actionScene",
+      "targetIds": [
+        "assassin.shift#autumn.default"
+      ],
+      "shippedContextIds": [],
+      "runtimeConsumerId": null
+    },
+    {
+      "contentKey": "winter.visibility",
+      "section": "seasonal",
+      "status": "SHIPPED_SURFACE_AVAILABLE_NOT_BOUND",
+      "targetKind": "actionScene",
+      "targetIds": [
+        "assassin.shift#winter.default"
+      ],
+      "shippedContextIds": [],
+      "runtimeConsumerId": null
+    },
+    {
+      "contentKey": "winter.travel",
+      "section": "seasonal",
+      "status": "SHIPPED_SURFACE_AVAILABLE_NOT_BOUND",
+      "targetKind": "actionScene",
+      "targetIds": [
+        "assassin.shift#winter.default"
+      ],
+      "shippedContextIds": [],
+      "runtimeConsumerId": null
+    },
+    {
+      "contentKey": "winter.formal-context",
+      "section": "seasonal",
+      "status": "SHIPPED_SURFACE_AVAILABLE_NOT_BOUND",
+      "targetKind": "actionScene",
+      "targetIds": [
+        "assassin.shift#winter.default"
+      ],
+      "shippedContextIds": [],
+      "runtimeConsumerId": null
+    },
+    {
+      "contentKey": "handler.role",
+      "section": "relationship",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "handler.loyalty",
+      "section": "relationship",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "handler.manipulation",
+      "section": "relationship",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "rival.operative",
+      "section": "relationship",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "contact.friendship",
+      "section": "relationship",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "contact.romance",
+      "section": "relationship",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "informant.boundary",
+      "section": "relationship",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "betrayal.source",
+      "section": "relationship",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "partnership.source",
+      "section": "relationship",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "refusal.safe",
+      "section": "relationship",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "concealed-toolset.meaning",
+      "section": "items",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "concealed-toolset.boundary",
+      "section": "items",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "sealed-pass.meaning",
+      "section": "items",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [
+        "item:guard_sealed_pass"
+      ],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "disguise-formal.meaning",
+      "section": "items",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "evidence-document.meaning",
+      "section": "items",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "activity-route-tool.meaning",
+      "section": "items",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "guard-sealed-pass.shipped-boundary",
+      "section": "items",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [
+        "item:guard_sealed_pass"
+      ],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "items.no-shop",
+      "section": "items",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "guard.cargo-pass-evidence",
+      "section": "cross-system",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [
+        "careerFact:guard:cargo-pass-evidence"
+      ],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "guard.tavern-evidence",
+      "section": "cross-system",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [
+        "careerFact:guard:tavern-evidence-known"
+      ],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "guard.sealed-pass-issued",
+      "section": "cross-system",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [
+        "careerFact:guard:sealed-pass-issued",
+        "item:guard_sealed_pass"
+      ],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "tavern.rumour-confirmed",
+      "section": "cross-system",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [
+        "careerFact:tavern:rumour-confirmed"
+      ],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "tavern.guest-ledger",
+      "section": "cross-system",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [
+        "careerFact:tavern:guest-ledger-evidence-ready"
+      ],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "merchant.delivery-recorded",
+      "section": "cross-system",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [
+        "careerFact:merchant:delivery-recorded"
+      ],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "cross.no-palace",
+      "section": "cross-system",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "activity.hunter-return",
+      "section": "activity",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [
+        "careerFact:hunter:expedition-returned"
+      ],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "activity.rough-route",
+      "section": "activity",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [
+        "careerFact:hunter:expedition-rough-route"
+      ],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "activity.preserved-sample",
+      "section": "activity",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [
+        "careerFact:hunter:expedition-preserved-sample"
+      ],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "activity.tavern-return",
+      "section": "activity",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [
+        "careerFact:tavern:activity-returned"
+      ],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "activity.infiltration-source",
+      "section": "activity",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "activity.extraction-source",
+      "section": "activity",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "activity.city-side-boundary",
+      "section": "activity",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "veteran.identity",
+      "section": "routes",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "veteran.hard-work-independence",
+      "section": "routes",
+      "status": "SHIPPED_SURFACE_AVAILABLE_NOT_BOUND",
+      "targetKind": "endingBoundary",
+      "targetIds": [
+        "ending.assassin.hard-work"
+      ],
+      "shippedContextIds": [],
+      "runtimeConsumerId": null
+    },
+    {
+      "contentKey": "ghost.identity",
+      "section": "routes",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "ghost.boundary",
+      "section": "routes",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "turncoat.identity",
+      "section": "routes",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "handler-takeover.identity",
+      "section": "routes",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "refusal-chain.identity",
+      "section": "routes",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "outcome-ready.identity",
+      "section": "routes",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "route.defer",
+      "section": "routes",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "hard-work.identity",
+      "section": "routes",
+      "status": "SHIPPED_SURFACE_AVAILABLE_NOT_BOUND",
+      "targetKind": "endingBoundary",
+      "targetIds": [
+        "ending.assassin.hard-work"
+      ],
+      "shippedContextIds": [],
+      "runtimeConsumerId": null
+    },
+    {
+      "contentKey": "complex-endings.pending",
+      "section": "routes",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    },
+    {
+      "contentKey": "palace.boundary",
+      "section": "routes",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureAssassinConsumer",
+      "targetIds": [],
+      "shippedContextIds": [],
+      "runtimeConsumerId": "PENDING_RUNTIME_ID"
+    }
+  ]
+}
