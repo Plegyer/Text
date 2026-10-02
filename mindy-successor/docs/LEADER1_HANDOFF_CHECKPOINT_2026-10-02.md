@@ -1,5 +1,18 @@
 # Leader 1 Handoff Checkpoint — 2026-10-02
 
+## SUCCESSOR WAKE CHECKPOINT — 2026-10-02 10:33Z
+
+The first unfinished takeover Lead action is now durably executed.
+
+- All five current pointers explicitly record ASSIGNED / VERIFIED NOT STARTED where applicable.
+- Coordination commits through `5fcfc5bf358cfce9a55dadb6310664cf585728ff` re-wake the existing post-D18 queues without changing scope.
+- PR #170 comment `5950454854` is the wake ledger.
+- Latest observed main workflow #1080 / `36996004561` again failed before runner execution (`runner_id=0`, `steps=[]`).
+- Re-query after wake: Chat 1/2/3/5 active Palace branches still equal activation `d7865216e510e0d55ad960fa34dd4408e7ffe772` with no branch runs; Chat 4 branch remains `67669666ad5576b83052dcab9dbbfafe3fd374c7`.
+- Artist #229/#237 remain held for executable exact-head CI; do not mutate heads to provoke CI.
+
+Next Lead behavior is event-driven from Git truth: if a Palace worker actually completes its current queue, verify head/PR/CI before issuing safe follow-on work; if Artist executable CI appears, immediately preempt and resume C4-170/C4-171 -> C4-172 -> collision-safe Artist integration.
+
 ## SUCCESSOR LIVE CHECKPOINT — 2026-10-02 10:26Z
 
 Successor re-query completed against Git after the final context-reset handoff.

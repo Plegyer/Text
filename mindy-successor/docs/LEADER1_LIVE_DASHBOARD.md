@@ -1,5 +1,15 @@
 # Leader 1 — Live Dashboard
 
+## SUCCESSOR WAKE CHECKPOINT — 2026-10-02 10:33Z
+
+Coordination sequence completed from the live re-query:
+- pointer commits: `3c497b39f057a509746345cdcb94c4dff4380793` (Chats 1/2), `0bfef3ba0e317d25c038e75401b0bbe87fbb1d7c` (Chats 3/4), `5fcfc5bf358cfce9a55dadb6310664cf585728ff` (Chat 5);
+- PR #170 wake ledger comment: `5950454854`;
+- latest observed main workflow #1080 / id `36996004561`: pre-runner infrastructure failure, check job `110802739709`, `runner_id=0`, `steps=[]`;
+- post-write re-query still shows Chat 1/2/3/5 Palace True Ending branches at activation `d7865216e510e0d55ad960fa34dd4408e7ffe772`, with no branch workflow runs; Chat 4 branch remains `67669666ad5576b83052dcab9dbbfafe3fd374c7`.
+
+No producer completion or Artist executable-CI recovery has occurred. Existing queues remain the only safe assignments; do not issue replacement work until Git shows completion. Artist remains the immediate preemption path on real exact-head SUCCESS.
+
 ## SUCCESSOR LIVE REQUERY — 2026-10-02 10:26Z
 
 Git re-query after Leader context reset:
