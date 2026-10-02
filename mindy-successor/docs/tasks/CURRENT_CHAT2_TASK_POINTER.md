@@ -1,31 +1,25 @@
 # CURRENT CHAT2 TASK POINTER
 
-Status: **WAITING ON ASSASSIN AUTHOR REPAIR — HOLD CI SLOT**
+Status: **ACTIVE — ASSASSIN REPAIR CURRENT-MAIN ASSEMBLY / SOLE FULL-CI SLOT**
 Owner: Chat 2 / Integration + Assembly + Technical QA
-Assembly PR: #255
-Current failed assembly head: `c51d37e2a9d30cd7fc94bf9154203ca4ceefc2f8`
 
-## Executable evidence
+## New producer authority
 
-Workflow #1110 ran normally on the self-hosted runner:
-- typecheck: PASS;
-- validate: PASS;
-- build: PASS;
-- tests: **981 total / 980 pass / 1 fail**.
+Repaired Assassin producer PR #252
+Frozen repaired head: `e81053b203655486896b7926f4aeb07d1871a49d`
 
-The sole failure is the natural Assassin acceptance path:
-- after 50 real shifts the major contract remains `intel`;
-- expected `closed`;
-- cause is a real resolver/lifecycle routing collision after the intel transition: a higher-priority item event consumes the transition opportunity and the prep event cannot reopen later.
+The previous assembly #255 / workflow #1110 proved one real lifecycle defect and is now historical QA evidence. The producer has repaired exactly that defect without a new shift threshold.
 
-## Ownership
+## Assignment now
 
-This is now an **AUTHOR_FIX**, not an integration guess.
+1. build a fresh assembly branch from current main `fe59b931c8f432c8aa6b66c4fc1a699195616065` (do not mutate producer branch);
+2. selectively apply/review the repaired Assassin delta;
+3. preserve shipped Artist + Prostitute and current coordination authority;
+4. open/update one Chat 2 assembly PR;
+5. consume the **single full-CI slot** once;
+6. if failure occurs, mine all failures before any rerun;
+7. if green, freeze exact assembly SHA and report `READY_FOR_LEADER_MERGE`.
 
-- Chat 3 owns the repair on the Assassin producer branch.
-- Do not mutate the frozen producer semantics yourself while waiting.
-- Do not rerun #1110 unchanged.
-- When Chat 3 freezes a repaired Assassin SHA, rebuild/review current-main assembly from the new exact producer head and use one full CI run.
-- PR #254 School @ `877927cf747ba9f69a53ddccf4373b795561f3a0` is next in the queue only after Assassin is green/accepted.
+After Assassin is accepted, next candidate is School PR #254 frozen at `877927cf747ba9f69a53ddccf4373b795561f3a0`.
 
-No other worker may consume full CI.
+No other worker uses full CI.

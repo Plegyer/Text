@@ -1,42 +1,42 @@
 # CURRENT CHAT6 TASK POINTER
 
-Status: **ACTIVE — PALACE DECISION / DEPENDENCY PACKET v3**
+Status: **ACTIVE — PALACE SAFE CONTENT / LOCAL INFRA PREP**
 Owner: Chat 6
-Preserve Palace foundation: `chat6/palace-complete-reset-v1` @ `8919a3686c1952d700c4c1377130918e0e181fa3`.
-Previous packet head: `719316fa3189a0254b151a27dbf8b0b4c7fdc2d3`
-New branch: `chat6/palace-decision-packet-v3`
-Base: fresh current main `04d1c0afff2dbb776fde4842d1fea6041fef4061`
 
-## Newly locked Product decisions
+Packet v3 frozen at:
+`b419bdc21f039f9598d802bfd9e8dc19ba8dbfba`
+Preserve Palace foundation:
+`chat6/palace-complete-reset-v1` @ `8919a3686c1952d700c4c1377130918e0e181fa3`
 
-- In a given New Start+ life Palace eligibility exists **only if**:
-  1. all ten ordinary Hard Work achievements are permanently earned; and
-  2. all ten corresponding Hard Work bonus packages are actively selected for that life.
-- Permanent 10/10 alone is insufficient if the player leaves any earned bonus package inactive for that run.
-- When all ten are active, the player receives an **automatic Palace invitation on Day 1**; that invitation is the authored reveal/entry step and opens Palace access without another random/stat/item gate.
-- Secret Debt never substitutes for any of the ten.
-- Current 0..100 progression stats are the D18 percentage scale for earning the True Ending.
-- Palace True Ending optional x2 is **cap-only**: it raises the cap of each of the 12 progression stats to **200**, and does not multiply current/start values, Hard Work +5 bonuses, or manual allocation points.
-- three non-True Palace outcome families may remain completion-only for now; Palace does not need a `hardWork:palace` entry.
-- Palace relationships may use generic role-based NPC identities; romance optional/non-required.
-- shipped legacy item capabilities may be optional Palace paths but never entry gates.
-- Palace may have a voluntary non-forced work-context Night choice.
+Create a fresh prep branch from current main:
+`chat6/palace-safe-prep-v4`
 
-Still open:
-- final Prince confrontation implementation details;
-- exact Palace progression topology/content IDs where prior packet only proposed options.
+## Locked Product facts
 
-## Assignment
+- Palace requires permanent 10/10 ordinary Hard Work plus all 10 packages active in this New Start+;
+- when satisfied, deterministic Palace invitation arrives on **Day 1**;
+- invitation is the authored reveal/entry and opens Palace access;
+- no random/stat/item substitute entry gate;
+- D18 True Ending stat threshold remains each of 12 progression stats >=91;
+- Lust excluded from D18;
+- True reward raises only the 12-stat cap from 100 to 200;
+- no values/start bonuses are multiplied;
+- generic role-based relationships, optional romance, optional legacy-item branches and voluntary Palace Night are authorized;
+- non-True Palace outcomes may remain completion-only; no Palace Hard Work meta entry.
 
-Revise the Palace packet/foundation plan around the all-ten-active per-run gate and cap 200:
-- specify the generic gate contract using current-run selected Hard Work packages plus permanent meta ledger;
-- show how the gate composes with Secret Debt domain lock;
-- update D18 >90 eligibility semantics for a world where x2 can raise cap to 200: distinguish the *unlock-era* 0..100 percentage check from any post-x2 stat representation and identify the safest implementation;
-- revise NG+ cap-200 save/UI plan with no stat-value multiplication;
-- implement/design the deterministic Day-1 Palace invitation as the reveal/entry step once the all-ten-active gate is satisfied;
-- preserve generic-role relationships, optional legacy items, and voluntary Night plan;
-- reduce remaining Product questions to the minimum.
+## Work now without waiting for shared Meta integration
 
-Do not mutate shared runtime until Leader assigns the implementation owner after this corrected packet.
+Prepare Palace-owned pieces that are safe and local:
+- deterministic Day-1 invitation authored event/copy contract, latched/reload-safe;
+- Palace-local access state contract after invitation resolution;
+- RU/EN presentation/fallbacks for invitation and entry;
+- generic role relationship state machines/content skeletons;
+- voluntary Palace Night content skeleton;
+- True Ending fixed >=91 acceptance tests as Palace-owned tests/fixtures;
+- optional legacy-item branch contract without making items entry gates.
+
+Do not modify shared New Start+/Meta/cap infrastructure owned by Chat 4/integration.
+Do not choose final Prince multi-stage mechanics or final 3-vs-6 Palace progression topology yet; isolate safe content from those decisions.
+
 No full CI.
-Freeze SHA and report `READY_FOR_LEADER_DECISION`.
+Freeze exact SHA and report `READY_FOR_CHAT2_OR_LEADER`.

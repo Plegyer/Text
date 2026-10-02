@@ -1,43 +1,26 @@
 # CURRENT CHAT5 TASK POINTER
 
-Status: **WAITING ON PRODUCT BALANCE — D19 AUTHORIZED IMPLEMENTATION COMPLETE**
-Owner: Chat 5 / Full-Career Producer C
+Status: **ACTIVE — SECRET DEBT BALANCE PROPOSAL WHILE ORIGINAL IS RESEARCHED**
+Owner: Chat 5
 Branch: `chat5/secret-debt-complete-reset-v1`
-Current observed head: `dbc210987ee2c2df9f992867cf12587a1e037f08`
+Current observed head: `25cba43b35200a71a700a70d4631a1785f9775ea`
 
-## Verified progress
+The D19 mechanics already implemented on this branch remain frozen semantically.
 
-Since the preserved foundation `8dd0b12bb2257981f4a6b72bca2017aad9d00e73`, Chat 5 is 45 commits ahead and has implemented the locked D19 route mechanics, including:
+## Do not wait idle for SWF research
 
-- 20% one-life street encounter and refusal closure;
-- exact +2000 acceptance;
-- exact 10-day delayed activation;
-- exact 20000 debt;
-- all-ten ordinary-profession domain lock with progress preservation;
-- School and Activity availability while bound;
-- forced Night every bound night and next-day Energy -1;
-- one-shot full 20000 repayment and clean release;
-- 50 daytime-shift Hard Work/Bound Life baseline;
-- Takeover structure with 50 shifts + 10 paid School lessons + explicit action;
-- distinct endings with no invented Meta rewards;
-- RU/EN, persistence, repayment-release and Activity-economy regressions.
+Prepare a narrow balance proposal grounded in the **current shipped ordinary careers**, not guesses from the original:
 
-Chat 5 correctly does not duplicate Chat 3's Body Confidence Lust +2.
+1. propose seasonal/per-shift Strength, Endurance, Sexuality gains for hidden daytime work;
+2. propose wage base + Strength / Endurance / Lust factors by comparing actual ordinary-career wage ranges and the intended 20000-debt difficulty;
+3. propose exact owner-kill build thresholds + high-Lust threshold consistent with 50 shifts + 10 paid School lessons;
+4. propose three Secret Debt ending Meta rewards, clearly marked PROPOSAL;
+5. calculate rough days/shifts needed to repay 20000 under low/mid/high relevant stats and explain whether the route remains intentionally harsh with next-day Energy -1.
 
-## Remaining Product balance blockers
+Do **not** wire proposal numbers into production yet.
+Do not alter already-locked D19 behavior.
+No PR / no full CI.
 
-Do not guess final values for:
+Freeze the proposal SHA and report `READY_FOR_LEADER_BALANCE_DECISION`.
 
-1. daytime shift gains for Strength / Endurance / Sexuality;
-2. wage base and Strength / Endurance / Lust wage factors;
-3. Takeover exact stat build thresholds and exact high-Lust threshold;
-4. three ending Meta rewards.
-
-Current runtime keeps these behind explicit seams/null policy so the hidden shift cannot masquerade as final tuning.
-
-## Working rule
-
-Stop balance implementation until Leader/Product locks those values.
-Do not open a candidate PR and do not use full CI.
-Preserve the current branch and focused evidence.
-After values are locked, finish them as one coherent tuning package, freeze exact SHA, and hand `READY_FOR_CHAT2`.
+Leader is separately extracting original-game mechanics; if trustworthy original values are found later, they will be compared against this proposal rather than blocking it.
