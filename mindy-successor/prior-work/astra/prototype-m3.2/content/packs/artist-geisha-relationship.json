@@ -131,6 +131,19 @@
       ],
       "variants": [
         {
+          "id": "school-rhetoric",
+          "text": "School preparation in rhetoric and social listening gives you a clearer method for receiving direct professional criticism without turning every pause into a defense.",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "artist-geisha",
+              "fact": "school-rhetoric-ready",
+              "present": true
+            }
+          ],
+          "media": []
+        },
+        {
           "id": "default",
           "text": "Repeated ordinary work makes the senior artist willing to give direct professional criticism. The trust is about rehearsal and presentation standards, not a mandatory personal bond.",
           "conditions": [],
