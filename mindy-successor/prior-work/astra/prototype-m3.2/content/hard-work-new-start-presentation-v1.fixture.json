@@ -1,0 +1,167 @@
+{
+  "version": 1,
+  "status": "UNBOUND_PRESENTATION_SOURCE",
+  "surface": "new-start-plus",
+  "selectionPolicy": {
+    "wholePackageOnly": true,
+    "arbitraryEarnedSubset": true,
+    "allowNone": true,
+    "allowAllEarned": true
+  },
+  "common": {
+    "ru": {
+      "sectionTitle": "Наследие тяжёлого труда",
+      "sectionDescription": "Выберите любые заработанные профессиональные пакеты для этой новой жизни. Можно не выбирать ни одного или включить все доступные.",
+      "selectedState": "Пакет выбран для этой жизни.",
+      "unselectedState": "Пакет не выбран для этой жизни."
+    },
+    "en": {
+      "sectionTitle": "Hard Work legacy",
+      "sectionDescription": "Choose any earned profession packages for this new life. You may choose none, some, or every available package.",
+      "selectedState": "Package selected for this life.",
+      "unselectedState": "Package not selected for this life."
+    }
+  },
+  "packages": {
+    "lumber": {
+      "ru": {
+        "title": "Лесоруб — закалка артели",
+        "description": "Пакет новой жизни: Сила +5.",
+        "selectedAria": "Лесоруб: пакет выбран. Сила плюс 5.",
+        "unselectedAria": "Лесоруб: пакет не выбран. При выборе Сила плюс 5."
+      },
+      "en": {
+        "title": "Lumber — crew-forged strength",
+        "description": "New Start+ package: Strength +5.",
+        "selectedAria": "Lumber package selected. Strength plus 5.",
+        "unselectedAria": "Lumber package not selected. Selecting it grants Strength plus 5."
+      }
+    },
+    "satyr-maid": {
+      "ru": {
+        "title": "Горничная сатира — безупречный уход",
+        "description": "Пакет новой жизни: Ухоженность +5.",
+        "selectedAria": "Горничная сатира: пакет выбран. Ухоженность плюс 5.",
+        "unselectedAria": "Горничная сатира: пакет не выбран. При выборе Ухоженность плюс 5."
+      },
+      "en": {
+        "title": "Satyr Maid — impeccable presentation",
+        "description": "New Start+ package: Grooming +5.",
+        "selectedAria": "Satyr Maid package selected. Grooming plus 5.",
+        "unselectedAria": "Satyr Maid package not selected. Selecting it grants Grooming plus 5."
+      }
+    },
+    "undead-farm": {
+      "ru": {
+        "title": "Ферма нежити — знание мёртвых полей",
+        "description": "Пакет новой жизни: Магия +5.",
+        "selectedAria": "Ферма нежити: пакет выбран. Магия плюс 5.",
+        "unselectedAria": "Ферма нежити: пакет не выбран. При выборе Магия плюс 5."
+      },
+      "en": {
+        "title": "Undead Farm — knowledge of dead fields",
+        "description": "New Start+ package: Magic +5.",
+        "selectedAria": "Undead Farm package selected. Magic plus 5.",
+        "unselectedAria": "Undead Farm package not selected. Selecting it grants Magic plus 5."
+      }
+    },
+    "tavern": {
+      "ru": {
+        "title": "Таверна — лёгкость общения",
+        "description": "Пакет новой жизни: Общительность +5.",
+        "selectedAria": "Таверна: пакет выбран. Общительность плюс 5.",
+        "unselectedAria": "Таверна: пакет не выбран. При выборе Общительность плюс 5."
+      },
+      "en": {
+        "title": "Tavern — social ease",
+        "description": "New Start+ package: Sociability +5.",
+        "selectedAria": "Tavern package selected. Sociability plus 5.",
+        "unselectedAria": "Tavern package not selected. Selecting it grants Sociability plus 5."
+      }
+    },
+    "hunter": {
+      "ru": {
+        "title": "Охотник — точность следопыта",
+        "description": "Пакет новой жизни: Ловкость +5.",
+        "selectedAria": "Охотник: пакет выбран. Ловкость плюс 5.",
+        "unselectedAria": "Охотник: пакет не выбран. При выборе Ловкость плюс 5."
+      },
+      "en": {
+        "title": "Hunter — tracker precision",
+        "description": "New Start+ package: Dexterity +5.",
+        "selectedAria": "Hunter package selected. Dexterity plus 5.",
+        "unselectedAria": "Hunter package not selected. Selecting it grants Dexterity plus 5."
+      }
+    },
+    "guard": {
+      "ru": {
+        "title": "Стража — выучка и выдержка",
+        "description": "Пакет новой жизни: Выносливость +5 и Манеры +5.",
+        "selectedAria": "Стража: пакет выбран. Выносливость плюс 5, Манеры плюс 5.",
+        "unselectedAria": "Стража: пакет не выбран. При выборе Выносливость плюс 5 и Манеры плюс 5."
+      },
+      "en": {
+        "title": "Guard — discipline and stamina",
+        "description": "New Start+ package: Endurance +5 and Manners +5.",
+        "selectedAria": "Guard package selected. Endurance plus 5, Manners plus 5.",
+        "unselectedAria": "Guard package not selected. Selecting it grants Endurance plus 5 and Manners plus 5."
+      }
+    },
+    "merchant": {
+      "ru": {
+        "title": "Торговец — расчёт и смекалка",
+        "description": "Пакет новой жизни: Смекалка +5 и Рассудок +5.",
+        "selectedAria": "Торговец: пакет выбран. Смекалка плюс 5, Рассудок плюс 5.",
+        "unselectedAria": "Торговец: пакет не выбран. При выборе Смекалка плюс 5 и Рассудок плюс 5."
+      },
+      "en": {
+        "title": "Merchant — judgment and calculation",
+        "description": "New Start+ package: Wits +5 and Reason +5.",
+        "selectedAria": "Merchant package selected. Wits plus 5, Reason plus 5.",
+        "unselectedAria": "Merchant package not selected. Selecting it grants Wits plus 5 and Reason plus 5."
+      }
+    },
+    "artist-geisha": {
+      "ru": {
+        "title": "Артистка / гейша — творчество и образ",
+        "description": "Пакет новой жизни: Творчество +5 и Ухоженность +5.",
+        "selectedAria": "Артистка или гейша: пакет выбран. Творчество плюс 5, Ухоженность плюс 5.",
+        "unselectedAria": "Артистка или гейша: пакет не выбран. При выборе Творчество плюс 5 и Ухоженность плюс 5."
+      },
+      "en": {
+        "title": "Artist / Geisha — craft and presentation",
+        "description": "New Start+ package: Creativity +5 and Grooming +5.",
+        "selectedAria": "Artist or Geisha package selected. Creativity plus 5, Grooming plus 5.",
+        "unselectedAria": "Artist or Geisha package not selected. Selecting it grants Creativity plus 5 and Grooming plus 5."
+      }
+    },
+    "assassin": {
+      "ru": {
+        "title": "Ассасин — точность и хладнокровная смекалка",
+        "description": "Пакет новой жизни: Ловкость +5 и Смекалка +5.",
+        "selectedAria": "Ассасин: пакет выбран. Ловкость плюс 5, Смекалка плюс 5.",
+        "unselectedAria": "Ассасин: пакет не выбран. При выборе Ловкость плюс 5 и Смекалка плюс 5."
+      },
+      "en": {
+        "title": "Assassin — precision and tactical wits",
+        "description": "New Start+ package: Dexterity +5 and Wits +5.",
+        "selectedAria": "Assassin package selected. Dexterity plus 5, Wits plus 5.",
+        "unselectedAria": "Assassin package not selected. Selecting it grants Dexterity plus 5 and Wits plus 5."
+      }
+    },
+    "prostitute": {
+      "ru": {
+        "title": "Профессионалка — уверенность и притягательность",
+        "description": "Пакет новой жизни: Сексуальность +5, Обаяние +5 и Похоть +3.",
+        "selectedAria": "Профессионалка: пакет выбран. Сексуальность плюс 5, Обаяние плюс 5, Похоть плюс 3.",
+        "unselectedAria": "Профессионалка: пакет не выбран. При выборе Сексуальность плюс 5, Обаяние плюс 5 и Похоть плюс 3."
+      },
+      "en": {
+        "title": "Professional — confidence and allure",
+        "description": "New Start+ package: Sexuality +5, Charm +5, and Lust +3.",
+        "selectedAria": "Professional package selected. Sexuality plus 5, Charm plus 5, Lust plus 3.",
+        "unselectedAria": "Professional package not selected. Selecting it grants Sexuality plus 5, Charm plus 5, and Lust plus 3."
+      }
+    }
+  }
+}
