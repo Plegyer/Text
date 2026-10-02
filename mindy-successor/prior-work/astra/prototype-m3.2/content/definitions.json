@@ -3587,7 +3587,7 @@
       "scenes": [
         {
           "id": "spring.default",
-          "text": "Spring artist house shift: the season changes the ordinary work context.",
+          "text": "A spring shift begins by returning to fundamentals: entrance, pacing, space, and agreement with a partner. The novelty of the season does not replace rehearsal; it only changes what the audience and coworkers notice.\n\nSpring brings more unfamiliar guests to the Artist House, and ordinary work means reading the context of the evening quickly. You welcome people and explain the program without turning attention to a guest into a promise of personal intimacy.\n\nBefore a new program, it helps to leave a short note: what changed since the last rehearsal, what needs repeating, and what the next partner should know. The note supports the work rather than creating a separate art-rating system.",
           "conditions": [],
           "media": [
             "stage.tavern.spring"
@@ -3595,7 +3595,7 @@
         },
         {
           "id": "summer.default",
-          "text": "Summer artist house shift: demand, routes, or crowds shift with the season.",
+          "text": "A summer evening makes performance more open and noisy: people arrive later, conversations take longer to settle, and the room fills more quickly. You keep the shape of the piece and preserve clear transitions between stage and guests.\n\nIn the hot season, a strong piece depends less on who stands out most and more on who listens to a partner and changes pace at the right moment. You leave room for another entrance and do not turn a shared scene into a contest for attention.\n\nWhen there are many guests, attention has to be distributed rather than held at any cost. You close one conversation gently, hand the guest to the next part of the evening, and preserve the house rhythm without a hidden favor meter.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -3608,7 +3608,7 @@
         },
         {
           "id": "autumn.default",
-          "text": "Autumn artist house shift: seasonal pressure changes the work mix.",
+          "text": "In autumn, ordinary shifts more often sit beside preparation for public events. You check costume, entrance order, and a fallback without assuming that the existence of a festival automatically makes a performance prestigious or victorious.\n\nA bolder stage presence remains a chosen professional technique. It does not imply agreement to every expectation from an audience, guest, or coworker and does not remove the right to change presentation in the next piece.\n\nAfter a busy evening, you review concrete moments: where an entrance was missed, where a conversation ran long, and where the scene became clearer. The review helps the next shift without becoming a universal talent or reputation rating.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -3621,7 +3621,7 @@
         },
         {
           "id": "winter.default",
-          "text": "Winter artist house shift: scarcity, access, or regular clients change the routine.",
+          "text": "A winter shift takes place in a tighter salon setting where a pause, a phrase, and a response to one person are easier to notice. You work with more precision, but the intimacy of the room does not become special social status.\n\nWhen there are fewer events, it is easier to see what makes a program sustainable: repeatable preparation, clear notes, and partners who know the order of work. You use the quiet season to improve ordinary work rather than trigger an automatic career leap.\n\nIn winter, familiar guests more often return with established expectations. You remember the context of earlier evenings, but each new conversation remains separate: prior attention creates no permanent promise or mandatory personal route.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -3644,6 +3644,12 @@
             "kind": "modifyStat",
             "stat": "charm",
             "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "artist-geisha",
+            "counter": "spring_performances",
+            "amount": 1
           }
         ],
         "summer": [
@@ -3656,6 +3662,12 @@
             "kind": "modifyStat",
             "stat": "dexterity",
             "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "artist-geisha",
+            "counter": "summer_performances",
+            "amount": 1
           }
         ],
         "autumn": [
@@ -3668,6 +3680,12 @@
             "kind": "modifyStat",
             "stat": "sexuality",
             "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "artist-geisha",
+            "counter": "autumn_performances",
+            "amount": 1
           }
         ],
         "winter": [
@@ -3680,6 +3698,12 @@
             "kind": "modifyStat",
             "stat": "reason",
             "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "artist-geisha",
+            "counter": "winter_performances",
+            "amount": 1
           }
         ]
       }
@@ -4546,7 +4570,7 @@
     {
       "id": "ending.artist-geisha.hard-work",
       "title": "Artist/Geisha Hard Work",
-      "description": "Persistence ending: fifty completed Artist/Geisha shifts.",
+      "description": "The public Artist/Geisha ending in this wave remains `ending.artist-geisha.hard-work` for sustained career work. Advanced routes add distinct professional meaning without new ending IDs.",
       "conditions": [
         {
           "kind": "careerCounter",
@@ -6010,9 +6034,155 @@
       "label": "Artist House",
       "initialStage": "novice",
       "stages": [
-        "novice"
+        "novice",
+        "performer",
+        "recognized-artist",
+        "veteran",
+        "master-artist",
+        "patron-network",
+        "court-invitation",
+        "outcome-ready"
       ],
-      "transitions": []
+      "transitions": [
+        {
+          "id": "first-shift",
+          "from": [
+            "novice"
+          ],
+          "to": "performer",
+          "conditions": [
+            {
+              "kind": "careerCounter",
+              "career": "artist-geisha",
+              "counter": "completed_shifts",
+              "op": "gte",
+              "value": 1
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "artist-geisha",
+              "fact": "first-shift-complete"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "artist-geisha",
+              "fact": "performer-ready"
+            }
+          ]
+        },
+        {
+          "id": "recognized-artist",
+          "from": [
+            "performer"
+          ],
+          "to": "recognized-artist",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "artist-geisha",
+              "fact": "seasonal-breadth-ready",
+              "present": true
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "artist-geisha",
+              "fact": "recognized-ready"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "artist-geisha",
+              "fact": "performance-breadth-ready"
+            }
+          ]
+        },
+        {
+          "id": "branch-veteran",
+          "from": [
+            "recognized-artist"
+          ],
+          "to": "veteran",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "artist-geisha",
+              "fact": "veteran-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "branch-master-artist",
+          "from": [
+            "recognized-artist"
+          ],
+          "to": "master-artist",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "artist-geisha",
+              "fact": "master-artist-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "branch-patron-network",
+          "from": [
+            "recognized-artist"
+          ],
+          "to": "patron-network",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "artist-geisha",
+              "fact": "patron-network-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "branch-court-invitation",
+          "from": [
+            "recognized-artist"
+          ],
+          "to": "court-invitation",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "artist-geisha",
+              "fact": "court-invitation-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "outcome-ready",
+          "from": [
+            "veteran",
+            "master-artist",
+            "patron-network",
+            "court-invitation"
+          ],
+          "to": "outcome-ready",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "artist-geisha",
+              "fact": "outcome-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        }
+      ]
     },
     {
       "id": "assassin",
@@ -6824,6 +6994,157 @@
             {
               "kind": "relationshipFact",
               "relationship": "merchant.supplier",
+              "fact": "utility-response-resolved",
+              "present": true
+            }
+          ],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "artist-geisha.mentor",
+      "label": "Senior Artist / Mentor",
+      "initialStage": "introduced",
+      "stages": [
+        "introduced",
+        "professional-trust",
+        "conflict-open",
+        "utility-ready",
+        "route-resolved"
+      ],
+      "transitions": [
+        {
+          "id": "build-trust",
+          "from": [
+            "introduced"
+          ],
+          "to": "professional-trust",
+          "conditions": [
+            {
+              "kind": "relationshipFact",
+              "relationship": "artist-geisha.mentor",
+              "fact": "introduced-at-work",
+              "present": true
+            },
+            {
+              "kind": "relationshipCounter",
+              "relationship": "artist-geisha.mentor",
+              "counter": "work-meetings",
+              "op": "gte",
+              "value": 2
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "artist-geisha.mentor",
+              "fact": "professional-trust-earned"
+            }
+          ]
+        },
+        {
+          "id": "open-conflict",
+          "from": [
+            "professional-trust"
+          ],
+          "to": "conflict-open",
+          "conditions": [
+            {
+              "kind": "relationshipFact",
+              "relationship": "artist-geisha.mentor",
+              "fact": "conflict-opened",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "utility-cooperate",
+          "from": [
+            "conflict-open"
+          ],
+          "to": "utility-ready",
+          "conditions": [
+            {
+              "kind": "relationshipChoice",
+              "relationship": "artist-geisha.mentor",
+              "choice": "conflict-response",
+              "value": "cooperate"
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "artist-geisha.mentor",
+              "fact": "conflict-resolved"
+            },
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "artist-geisha.mentor",
+              "fact": "utility-ready"
+            }
+          ]
+        },
+        {
+          "id": "resolve-rivalry",
+          "from": [
+            "conflict-open"
+          ],
+          "to": "route-resolved",
+          "conditions": [
+            {
+              "kind": "relationshipChoice",
+              "relationship": "artist-geisha.mentor",
+              "choice": "conflict-response",
+              "value": "rivalry"
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "artist-geisha.mentor",
+              "fact": "conflict-resolved"
+            }
+          ]
+        },
+        {
+          "id": "resolve-refusal",
+          "from": [
+            "conflict-open"
+          ],
+          "to": "route-resolved",
+          "conditions": [
+            {
+              "kind": "relationshipChoice",
+              "relationship": "artist-geisha.mentor",
+              "choice": "conflict-response",
+              "value": "declined"
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "artist-geisha.mentor",
+              "fact": "conflict-resolved"
+            },
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "artist-geisha.mentor",
+              "fact": "refusal-respected"
+            }
+          ]
+        },
+        {
+          "id": "finish-utility",
+          "from": [
+            "utility-ready"
+          ],
+          "to": "route-resolved",
+          "conditions": [
+            {
+              "kind": "relationshipFact",
+              "relationship": "artist-geisha.mentor",
               "fact": "utility-response-resolved",
               "present": true
             }
@@ -7835,6 +8156,100 @@
       ],
       "nextDayEffects": [],
       "nextDayEnergyDelta": 0
+    },
+    {
+      "id": "artist-geisha.night.rehearsal",
+      "label": "Stay for an Artist House rehearsal",
+      "conditions": [
+        {
+          "kind": "not",
+          "condition": {
+            "kind": "careerStage",
+            "career": "artist-geisha",
+            "stage": "novice"
+          }
+        }
+      ],
+      "effects": [
+        {
+          "kind": "incrementCareerCounter",
+          "career": "artist-geisha",
+          "counter": "night_opportunities",
+          "amount": 1
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": 0
+    },
+    {
+      "id": "artist-geisha.night.salon",
+      "label": "Attend a formal Artist House salon",
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "artist-geisha",
+              "stage": "recognized-artist"
+            },
+            {
+              "kind": "careerStage",
+              "career": "artist-geisha",
+              "stage": "veteran"
+            },
+            {
+              "kind": "careerStage",
+              "career": "artist-geisha",
+              "stage": "master-artist"
+            },
+            {
+              "kind": "careerStage",
+              "career": "artist-geisha",
+              "stage": "patron-network"
+            },
+            {
+              "kind": "careerStage",
+              "career": "artist-geisha",
+              "stage": "court-invitation"
+            },
+            {
+              "kind": "careerStage",
+              "career": "artist-geisha",
+              "stage": "outcome-ready"
+            }
+          ]
+        },
+        {
+          "kind": "itemCapability",
+          "capability": "artist_formal_presence",
+          "present": true
+        }
+      ],
+      "effects": [
+        {
+          "kind": "incrementCareerCounter",
+          "career": "artist-geisha",
+          "counter": "night_opportunities",
+          "amount": 1
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": 0
+    },
+    {
+      "id": "artist-geisha.night.mentor-review",
+      "label": "Use the mentor's optional night review",
+      "conditions": [
+        {
+          "kind": "relationshipStage",
+          "relationship": "artist-geisha.mentor",
+          "stage": "utility-ready"
+        }
+      ],
+      "effects": [],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": 0
     }
   ],
   "activities": [
@@ -8758,6 +9173,27 @@
       "label": "Merchant Sample Kit",
       "capabilities": [
         "merchant_handle_samples"
+      ]
+    },
+    {
+      "id": "artist_formal_attire",
+      "label": "Artist House Formal Attire",
+      "capabilities": [
+        "artist_formal_presence"
+      ]
+    },
+    {
+      "id": "artist_performance_kit",
+      "label": "Artist House Performance Kit",
+      "capabilities": [
+        "artist_performance_ready"
+      ]
+    },
+    {
+      "id": "artist_invitation_token",
+      "label": "Artist House Invitation Token",
+      "capabilities": [
+        "artist_handle_invitation"
       ]
     }
   ]

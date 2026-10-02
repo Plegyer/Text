@@ -10481,6 +10481,654 @@
     "event.merchant.crisis.delivery-pressure.choice.accept-narrow-risk.text": {
       "ru": "Выбор сохраняет текущие условия Merchant без новой системы.",
       "en": "Take a documented trade risk without creating an illegal-goods law or morality score."
+    },
+    "action.artist-geisha.shift.scene.spring.default.text": {
+      "ru": "Весенняя смена начинается с возвращения к базовой форме: проверить вход, темп, пространство и договорённость с партнёром. Новизна сезона не заменяет репетицию — она лишь меняет то, на что зритель и коллеги обращают внимание.\n\nВесной в доме искусства появляется больше новых гостей, и обычная работа требует быстро понять контекст вечера. Ты приветствуешь людей, объясняешь порядок программы и не превращаешь внимание к гостю в обещание личной близости.\n\nПеред новой программой полезно оставить короткую запись: что изменилось с прошлой репетиции, где нужен повтор и что должен знать следующий партнёр. Такая запись поддерживает работу, а не создаёт отдельную систему оценок искусства.",
+      "en": "A spring shift begins by returning to fundamentals: entrance, pacing, space, and agreement with a partner. The novelty of the season does not replace rehearsal; it only changes what the audience and coworkers notice.\n\nSpring brings more unfamiliar guests to the Artist House, and ordinary work means reading the context of the evening quickly. You welcome people and explain the program without turning attention to a guest into a promise of personal intimacy.\n\nBefore a new program, it helps to leave a short note: what changed since the last rehearsal, what needs repeating, and what the next partner should know. The note supports the work rather than creating a separate art-rating system."
+    },
+    "action.artist-geisha.shift.scene.summer.default.text": {
+      "ru": "Летний вечер делает выступление более открытым и шумным: люди приходят позже, разговоры дольше не затихают, а пространство быстрее переполняется. Ты держишь форму номера и оставляешь понятные переходы между сценой и гостями.\n\nВ жаркий сезон хороший номер зависит не от того, кто сильнее выделяется, а от того, кто слышит партнёра и вовремя меняет темп. Ты оставляешь место чужому входу и не превращаешь совместную сцену в соревнование за внимание.\n\nКогда гостей много, внимание приходится распределять, а не удерживать любой ценой. Ты мягко завершаешь один разговор, передаёшь человека следующему участнику вечера и сохраняешь ритм дома без скрытой шкалы расположения.",
+      "en": "A summer evening makes performance more open and noisy: people arrive later, conversations take longer to settle, and the room fills more quickly. You keep the shape of the piece and preserve clear transitions between stage and guests.\n\nIn the hot season, a strong piece depends less on who stands out most and more on who listens to a partner and changes pace at the right moment. You leave room for another entrance and do not turn a shared scene into a contest for attention.\n\nWhen there are many guests, attention has to be distributed rather than held at any cost. You close one conversation gently, hand the guest to the next part of the evening, and preserve the house rhythm without a hidden favor meter."
+    },
+    "action.artist-geisha.shift.scene.autumn.default.text": {
+      "ru": "Осенью обычная смена чаще соседствует с подготовкой к публичным событиям. Ты проверяешь костюм, порядок выхода и запасной вариант, но не предполагаешь, что сам факт фестиваля автоматически делает выступление престижным или победным.\n\nБолее яркая сценическая подача остаётся выбранным профессиональным приёмом. Она не означает согласия на любые ожидания зрителя, гостя или коллеги и не отменяет право изменить способ подачи в следующем номере.\n\nПосле насыщенного вечера ты разбираешь конкретные моменты: где потерялся вход, где разговор затянулся, где сцена стала яснее. Разбор помогает следующей смене, не превращаясь в универсальный рейтинг таланта или репутации.",
+      "en": "In autumn, ordinary shifts more often sit beside preparation for public events. You check costume, entrance order, and a fallback without assuming that the existence of a festival automatically makes a performance prestigious or victorious.\n\nA bolder stage presence remains a chosen professional technique. It does not imply agreement to every expectation from an audience, guest, or coworker and does not remove the right to change presentation in the next piece.\n\nAfter a busy evening, you review concrete moments: where an entrance was missed, where a conversation ran long, and where the scene became clearer. The review helps the next shift without becoming a universal talent or reputation rating."
+    },
+    "action.artist-geisha.shift.scene.winter.default.text": {
+      "ru": "Зимняя смена проходит в более тесном салонном пространстве, где заметнее пауза, формулировка и реакция на одного собеседника. Ты работаешь точнее, но камерность вечера не превращается в особый социальный статус.\n\nКогда событий меньше, легче увидеть, что делает программу устойчивой: повторяемая подготовка, понятные записи и партнёры, которые знают порядок действий. Ты используешь спокойный сезон для качества обычной работы, а не для автоматического карьерного скачка.\n\nЗимой знакомые гости чаще возвращаются с привычными ожиданиями. Ты помнишь контекст прошлых вечеров, но каждый новый разговор остаётся отдельным: прошлое внимание не создаёт бессрочного обещания или обязательной личной линии.",
+      "en": "A winter shift takes place in a tighter salon setting where a pause, a phrase, and a response to one person are easier to notice. You work with more precision, but the intimacy of the room does not become special social status.\n\nWhen there are fewer events, it is easier to see what makes a program sustainable: repeatable preparation, clear notes, and partners who know the order of work. You use the quiet season to improve ordinary work rather than trigger an automatic career leap.\n\nIn winter, familiar guests more often return with established expectations. You remember the context of earlier evenings, but each new conversation remains separate: prior attention creates no permanent promise or mandatory personal route."
+    },
+    "ending.artist-geisha.hard-work.title": {
+      "ru": "Artist/Geisha: упорный труд",
+      "en": "Artist/Geisha Hard Work"
+    },
+    "ending.artist-geisha.hard-work.description": {
+      "ru": "Публичная Artist/Geisha-концовка этой волны остаётся `ending.artist-geisha.hard-work` за устойчивую карьеру. Продвинутые маршруты добавляют различимый профессиональный смысл, но не новые ending IDs.",
+      "en": "The public Artist/Geisha ending in this wave remains `ending.artist-geisha.hard-work` for sustained career work. Advanced routes add distinct professional meaning without new ending IDs."
+    },
+    "ending.artist-geisha.hard-work.epilogue": {
+      "ru": "Устойчивая карьера Artist/Geisha завершена как путь Hard Work.",
+      "en": "Hard Work completion recorded for Artist/Geisha."
+    },
+    "event.artist-geisha.career.first-shift.title": {
+      "ru": "Первый шаг в Artist House",
+      "en": "First Artist House step"
+    },
+    "event.artist-geisha.career.first-shift.variant.default.text": {
+      "ru": "Одна завершённая обычная смена Artist House позволяет перейти от задач новичка к работе performer, не меняя текущий wage contract.",
+      "en": "A completed ordinary Artist House shift is enough to move from novice tasks into performer work without changing the wage contract."
+    },
+    "event.artist-geisha.career.first-shift.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue as a performer"
+    },
+    "event.artist-geisha.career.first-shift.choice.continue.text": {
+      "ru": "Продолжить обычную работу и сохранить текущие правила карьеры.",
+      "en": "Keep ordinary Artist House work open while the career starts tracking seasonal breadth."
+    },
+    "event.artist-geisha.career.seasonal-breadth.title": {
+      "ru": "Полный сезонный репертуар",
+      "en": "A full seasonal repertoire"
+    },
+    "event.artist-geisha.career.seasonal-breadth.variant.default.text": {
+      "ru": "Обычная работа теперь охватывает все четыре сезонных контекста Artist House. Широта фиксируется внутри карьеры и не создаёт глобальную систему фестивалей или репутации.",
+      "en": "Ordinary work now covers all four seasonal Artist House contexts. The breadth is recorded locally instead of creating a global festival or reputation system."
+    },
+    "event.artist-geisha.career.seasonal-breadth.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Record seasonal breadth"
+    },
+    "event.artist-geisha.career.seasonal-breadth.choice.record.text": {
+      "ru": "Зафиксировать этот факт только внутри Artist/Geisha контекста.",
+      "en": "Keep the seasonal record as Artist/Geisha career evidence."
+    },
+    "event.artist-geisha.career.recognized.title": {
+      "ru": "Признанная артистка",
+      "en": "Recognized Artist"
+    },
+    "event.artist-geisha.career.recognized.variant.default.text": {
+      "ru": "Широты shipped сезонной работы достаточно, чтобы перейти в состояние Recognized Artist. Продвинутые маршруты остаются отдельными решениями readiness.",
+      "en": "Breadth across the shipped seasonal work contexts is enough to enter the Recognized Artist state. Advanced routes remain separate readiness decisions."
+    },
+    "event.artist-geisha.career.recognized.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Work as a recognized artist"
+    },
+    "event.artist-geisha.career.recognized.choice.continue.text": {
+      "ru": "Продолжить обычную работу и сохранить текущие правила карьеры.",
+      "en": "Open advanced readiness without committing to a late route."
+    },
+    "event.artist-geisha.career.choose-route.title": {
+      "ru": "Выбор позднего пути Artist House",
+      "en": "Choose a late Artist House route"
+    },
+    "event.artist-geisha.career.choose-route.variant.default.text": {
+      "ru": "Если готовы несколько поздних направлений, решение можно отложить. Readiness остаётся возможностью, а обычная Artist House работа — доступным профессиональным путём без обязательного выбора ветки.\n\nVeteran, Master Artist, Patron Network и Court Invitation описывают карьерную готовность. Ни одно из этих состояний само по себе не является новой публичной концовкой и не выдаёт Meta-награду.",
+      "en": "If several late routes are ready, the decision can be deferred. Readiness remains a possibility while ordinary Artist House work stays available without mandatory branch selection.\n\nVeteran, Master Artist, Patron Network, and Court Invitation describe career readiness. None of these states is a new public ending by itself or grants a Meta reward."
+    },
+    "event.artist-geisha.career.choose-route.choice.veteran.label": {
+      "ru": "Выбрать Veteran",
+      "en": "Take Veteran"
+    },
+    "event.artist-geisha.career.choose-route.choice.veteran.text": {
+      "ru": "Veteran — это путь широкой обычной практики: сезоны, гости, репетиции и повторяемая способность провести смену без обязательной специализации. Его ценность в устойчивости, а не в титуле.\n\nГотовность Veteran должна отражать уже накопленную широту работы и не заставлять немедленно менять обычную карьеру. Можно оставить эту возможность открытой и продолжать стандартные смены.",
+      "en": "Veteran is the route of broad ordinary practice: seasons, guests, rehearsals, and repeatable ability to carry a shift without mandatory specialization. Its value is consistency rather than a title.\n\nVeteran readiness should reflect breadth of work already accumulated without forcing an immediate career change. The option can remain open while ordinary shifts continue."
+    },
+    "event.artist-geisha.career.choose-route.choice.master-artist.label": {
+      "ru": "Выбрать Master Artist",
+      "en": "Take Master Artist"
+    },
+    "event.artist-geisha.career.choose-route.choice.master-artist.text": {
+      "ru": "Master Artist — это глубина профессиональной подготовки: ясное намерение, повторяемая репетиция, работа с записью и способность объяснить собственный выбор. Это не универсальный рейтинг художественной ценности.\n\nМаршрут Master Artist не выбирает за проект точный список музыки, танца, ремесла или иных дисциплин. Он описывает качество процесса поверх уже существующей Arts & Performance подготовки.",
+      "en": "Master Artist is depth of professional preparation: clear intention, repeatable rehearsal, usable records, and the ability to explain one's choices. It is not a universal ranking of artistic worth.\n\nThe Master Artist route does not choose an exact list of music, dance, craft, or other disciplines for the project. It describes quality of process on top of the existing Arts & Performance preparation."
+    },
+    "event.artist-geisha.career.choose-route.choice.patron-network.label": {
+      "ru": "Выбрать Patron Network",
+      "en": "Take Patron Network"
+    },
+    "event.artist-geisha.career.choose-route.choice.patron-network.text": {
+      "ru": "Patron Network — это несколько устойчивых профессиональных контактов, где известны контекст, ожидания и способ следующего разговора. Сеть не становится отдельной валютой влияния или глобальной системой покровителей.\n\nПолезный контакт может сообщить о формате вечера или познакомить с конкретным человеком, но не гарантирует приглашение, работу или успех. Каждый следующий шаг остаётся отдельной Artist-ситуацией.",
+      "en": "Patron Network is several durable professional contacts where context, expectations, and the next conversation are understood. The network does not become a separate influence currency or a global patron system.\n\nA useful contact may explain the shape of an evening or introduce one specific person, but guarantees no invitation, work, or success. Each next step remains a separate Artist situation."
+    },
+    "event.artist-geisha.career.choose-route.choice.court-invitation.label": {
+      "ru": "Выбрать Court Invitation",
+      "en": "Take Court Invitation"
+    },
+    "event.artist-geisha.career.choose-route.choice.court-invitation.text": {
+      "ru": "Court Invitation — это Artist-local доказательство, что официальный контакт или приглашение действительно возникли. Оно описывает карьерную готовность к формальному контексту, а не доступ в Palace.\n\nДаже при наличии Invitation Token смысл маршрута остаётся узким: показать, к какому приглашению относится знак и какие ожидания у конкретного события. Токен не является универсальным пропуском.\n\nНи формальная одежда, ни приглашение, ни контакт двора не заменяют существующий Palace 10/10 Hard Work unlock. Artist-контент не пишет и не удовлетворяет этот глобальный gate.",
+      "en": "Court Invitation is Artist-local evidence that a formal contact or invitation actually occurred. It describes career readiness for a formal context rather than access to the Palace.\n\nEven with an Invitation Token, the route remains narrow: show which invitation the token belongs to and what the specific event expects. The token is not a universal pass.\n\nNeither formal attire, invitation, nor court contact replaces the existing Palace 10/10 Hard Work unlock. Artist content neither writes nor satisfies that global gate."
+    },
+    "event.artist-geisha.career.choose-route.choice.defer.label": {
+      "ru": "Оставить открытым",
+      "en": "Keep routes open"
+    },
+    "event.artist-geisha.career.choose-route.choice.defer.text": {
+      "ru": "Если готовы несколько поздних направлений, решение можно отложить. Readiness остаётся возможностью, а обычная Artist House работа — доступным профессиональным путём без обязательного выбора ветки.",
+      "en": "If several late routes are ready, the decision can be deferred. Readiness remains a possibility while ordinary Artist House work stays available without mandatory branch selection."
+    },
+    "event.artist-geisha.career.outcome-ready.title": {
+      "ru": "Artist House: готовность к исходу",
+      "en": "Artist House outcome-ready"
+    },
+    "event.artist-geisha.career.outcome-ready.variant.default.text": {
+      "ru": "Карьера Artist/Geisha получила завершённое позднее состояние route. Hard Work остаётся независимо доступным, а новые публичные сложные концовки не назначаются.",
+      "en": "The Artist/Geisha career has a complete late-route state. Hard Work remains independently eligible and complex public endings remain unassigned."
+    },
+    "event.artist-geisha.career.outcome-ready.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Keep living"
+    },
+    "event.artist-geisha.career.outcome-ready.choice.continue.text": {
+      "ru": "Продолжить обычную работу и сохранить текущие правила карьеры.",
+      "en": "Move to outcome-ready without auto-committing an ending."
+    },
+    "event.artist-geisha.cross.satyr-overlap.title": {
+      "ru": "Пересечение сети Satyr Maid с событием Artist House",
+      "en": "A service-house network overlaps with an Artist House event"
+    },
+    "event.artist-geisha.cross.satyr-overlap.variant.default.text": {
+      "ru": "Shipped факт Satyr Maid `personal-network-ready` может дать Artist-контексту подтверждённое профессиональное пересечение аудитории или контактов. Artist записывает только собственный контекст события и не присваивает Satyr relationship или career state.",
+      "en": "The shipped Satyr Maid `personal-network-ready` fact can give Artist context a confirmed professional overlap in audience or contacts. Artist records only its own event context and does not take ownership of Satyr relationship or career state."
+    },
+    "event.artist-geisha.cross.satyr-overlap.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Record the overlap"
+    },
+    "event.artist-geisha.cross.satyr-overlap.choice.record.text": {
+      "ru": "Зафиксировать этот факт только внутри Artist/Geisha контекста.",
+      "en": "Keep the existing service-house contact as Artist-local context."
+    },
+    "event.artist-geisha.cross.tavern-rumour.title": {
+      "ru": "Подтверждённый слух Tavern достигает Artist House",
+      "en": "A confirmed Tavern rumour reaches the Artist House"
+    },
+    "event.artist-geisha.cross.tavern-rumour.variant.default.text": {
+      "ru": "Shipped факт Tavern `rumour-confirmed` может дать Artist-контексту проверенную информацию о месте, событии или аудитории, но не гарантирует успех программы. Artist сохраняет только локальный контекст и не создаёт универсальную систему слухов.",
+      "en": "The shipped Tavern `rumour-confirmed` fact can give Artist context checked information about a place, event, or audience without guaranteeing program success. Artist keeps only local context and creates no universal rumour system."
+    },
+    "event.artist-geisha.cross.tavern-rumour.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Keep the confirmed context"
+    },
+    "event.artist-geisha.cross.tavern-rumour.choice.record.text": {
+      "ru": "Зафиксировать этот факт только внутри Artist/Geisha контекста.",
+      "en": "Record the Tavern input as Artist-local evidence."
+    },
+    "event.artist-geisha.cross.merchant-delivery.title": {
+      "ru": "Доставка Merchant поддерживает событие Artist House",
+      "en": "A documented Merchant delivery supports an Artist House handoff"
+    },
+    "event.artist-geisha.cross.merchant-delivery.variant.default.text": {
+      "ru": "Shipped Merchant факт `delivery-recorded` может дать Artist-контексту сведения о доставке материалов или подготовке конкретного события. Это узкий material/delivery seam: он не создаёт глобальную экономику, patron system или автоматический статус.",
+      "en": "The shipped Merchant `delivery-recorded` fact can give Artist context information about material delivery or preparation for a specific event. This is a narrow material/delivery seam: it creates no global economy, patron system, or automatic status."
+    },
+    "event.artist-geisha.cross.merchant-delivery.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Record the material route"
+    },
+    "event.artist-geisha.cross.merchant-delivery.choice.record.text": {
+      "ru": "Зафиксировать этот факт только внутри Artist/Geisha контекста.",
+      "en": "Keep the Merchant handoff as Artist-local professional context."
+    },
+    "event.artist-geisha.cross.guard-context.title": {
+      "ru": "Свидетельство Guard уточняет формальный контекст",
+      "en": "Guard cargo evidence clarifies a formal event handoff"
+    },
+    "event.artist-geisha.cross.guard-context.variant.default.text": {
+      "ru": "Shipped факт Guard `cargo-pass-evidence` может дать контекст безопасности или ограничения конкретного формального события, если Artist runtime его потребляет. Artist не получает Guard authority, covert route или Palace access.",
+      "en": "The shipped Guard `cargo-pass-evidence` fact can provide security or constraint context for a specific formal event when Artist runtime consumes it. Artist receives no Guard authority, covert route, or Palace access."
+    },
+    "event.artist-geisha.cross.guard-context.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Record the event context"
+    },
+    "event.artist-geisha.cross.guard-context.choice.record.text": {
+      "ru": "Зафиксировать этот факт только внутри Artist/Geisha контекста.",
+      "en": "Keep the Guard evidence as Artist-local context only."
+    },
+    "event.artist-geisha.items.performance_kit.title": {
+      "ru": "Практический набор для выступления",
+      "en": "A practical performance kit becomes available"
+    },
+    "event.artist-geisha.items.performance_kit.variant.default.text": {
+      "ru": "Performance Kit собирает то, что нужно для подготовленного номера: реквизит, простой инструмент или элементы костюма в рамках текущей сцены. Он не расширяет общий инвентарь и не создаёт универсальный список художественных дисциплин.\n\nНаличие набора означает, что конкретную сцену можно подготовить без импровизированной замены в последнюю минуту. Это доказательство Artist-local readiness, а не автоматический бонус к любому выступлению.",
+      "en": "The Performance Kit gathers what a prepared piece needs: props, a simple instrument, or costume elements within the current scene. It does not expand general inventory or define a universal list of artistic disciplines.\n\nHaving the kit means a specific piece can be prepared without a last-minute improvised substitute. It is evidence of Artist-local readiness rather than an automatic bonus to every performance."
+    },
+    "event.artist-geisha.items.performance_kit.choice.take.label": {
+      "ru": "Взять",
+      "en": "Take the Artist House item"
+    },
+    "event.artist-geisha.items.performance_kit.choice.take.text": {
+      "ru": "Взять предмет ради его узкой Artist-local возможности.",
+      "en": "Keep the item for its narrow Artist-local capability."
+    },
+    "event.artist-geisha.items.performance_kit.choice.defer.label": {
+      "ru": "Оставить открытым",
+      "en": "Keep working without it"
+    },
+    "event.artist-geisha.items.performance_kit.choice.defer.text": {
+      "ru": "Formal Attire, Performance Kit и Invitation Token меняют только узкие Artist-возможности и доказательства. Они не создают общий статус, систему славы, patron currency, конкурсный бонус или новый Palace rule.",
+      "en": "Formal Attire, Performance Kit, and Invitation Token change only narrow Artist options and evidence. They create no general status, fame system, patron currency, contest bonus, or new Palace rule."
+    },
+    "event.artist-geisha.items.formal_attire.title": {
+      "ru": "Формальная одежда Artist House",
+      "en": "Formal Artist House attire becomes available"
+    },
+    "event.artist-geisha.items.formal_attire.variant.default.text": {
+      "ru": "Формальная одежда помогает соответствовать конкретному формату выступления или приёма. Она не превращает героиню в члена высшего круга, не гарантирует уважение и не открывает Palace.\n\nВыбрать формальный костюм — значит подготовить внешний язык конкретного вечера: степень строгости, удобство движения и уместность. Это Artist-local capability, а не постоянный статус персонажа.",
+      "en": "Formal attire helps fit the expectations of a specific performance or reception. It does not make the heroine a member of a higher social circle, guarantee respect, or open the Palace.\n\nChoosing formal attire means preparing the visual language of one evening: degree of formality, freedom of movement, and appropriateness. It is an Artist-local capability rather than permanent character status."
+    },
+    "event.artist-geisha.items.formal_attire.choice.take.label": {
+      "ru": "Взять",
+      "en": "Take the Artist House item"
+    },
+    "event.artist-geisha.items.formal_attire.choice.take.text": {
+      "ru": "Взять предмет ради его узкой Artist-local возможности.",
+      "en": "Keep the item for its narrow Artist-local capability."
+    },
+    "event.artist-geisha.items.formal_attire.choice.defer.label": {
+      "ru": "Оставить открытым",
+      "en": "Keep working without it"
+    },
+    "event.artist-geisha.items.formal_attire.choice.defer.text": {
+      "ru": "Formal Attire, Performance Kit и Invitation Token меняют только узкие Artist-возможности и доказательства. Они не создают общий статус, систему славы, patron currency, конкурсный бонус или новый Palace rule.",
+      "en": "Formal Attire, Performance Kit, and Invitation Token change only narrow Artist options and evidence. They create no general status, fame system, patron currency, contest bonus, or new Palace rule."
+    },
+    "event.artist-geisha.items.invitation_token.title": {
+      "ru": "Токен приглашения Artist House",
+      "en": "An Artist House invitation token can be carried"
+    },
+    "event.artist-geisha.items.invitation_token.variant.default.text": {
+      "ru": "Invitation Token подтверждает, что существует конкретное приглашение или контакт, который можно предъявить в Artist-контексте. Он не является универсальным пропуском и не удовлетворяет Palace unlock.\n\nДаже при наличии Invitation Token смысл маршрута остаётся узким: показать, к какому приглашению относится знак и какие ожидания у конкретного события. Токен не является универсальным пропуском.",
+      "en": "An Invitation Token confirms that a specific invitation or contact exists and can be presented in an Artist context. It is not a universal pass and does not satisfy the Palace unlock.\n\nEven with an Invitation Token, the route remains narrow: show which invitation the token belongs to and what the specific event expects. The token is not a universal pass."
+    },
+    "event.artist-geisha.items.invitation_token.choice.take.label": {
+      "ru": "Взять",
+      "en": "Take the Artist House item"
+    },
+    "event.artist-geisha.items.invitation_token.choice.take.text": {
+      "ru": "Взять предмет ради его узкой Artist-local возможности.",
+      "en": "Keep the item for its narrow Artist-local capability."
+    },
+    "event.artist-geisha.items.invitation_token.choice.defer.label": {
+      "ru": "Оставить открытым",
+      "en": "Keep working without it"
+    },
+    "event.artist-geisha.items.invitation_token.choice.defer.text": {
+      "ru": "Formal Attire, Performance Kit и Invitation Token меняют только узкие Artist-возможности и доказательства. Они не создают общий статус, систему славы, patron currency, конкурсный бонус или новый Palace rule.",
+      "en": "Formal Attire, Performance Kit, and Invitation Token change only narrow Artist options and evidence. They create no general status, fame system, patron currency, contest bonus, or new Palace rule."
+    },
+    "event.artist-geisha.night.rehearsal-scene.title": {
+      "ru": "Добровольная ночная репетиция",
+      "en": "A voluntary rehearsal after ordinary work"
+    },
+    "event.artist-geisha.night.rehearsal-scene.variant.default.text": {
+      "ru": "Ночная репетиция имеет смысл только как Artist-local возможность в уже существующем ночном выборе. Она конкурирует со сном, учёбой и другими вариантами времени и не добавляет новый NightFlow.",
+      "en": "A night rehearsal makes sense only as an Artist-local opportunity inside the existing night choice. It competes with sleep, study, and other uses of time and adds no new NightFlow."
+    },
+    "event.artist-geisha.night.rehearsal-scene.choice.finish.label": {
+      "ru": "Завершить",
+      "en": "Finish the rehearsal"
+    },
+    "event.artist-geisha.night.rehearsal-scene.choice.finish.text": {
+      "ru": "Ночная возможность не является бесплатным дополнительным действием поверх уже выбранной ночи. Авторский текст должен отражать конкуренцию за время, а не обещать новый независимый слот.",
+      "en": "A night opportunity is not a free extra action layered on top of an already chosen night. Authored text should reflect competition for time rather than promise a new independent slot."
+    },
+    "event.artist-geisha.night.salon-scene.title": {
+      "ru": "Формальный ночной салон Artist House",
+      "en": "A formal Artist House salon at Night"
+    },
+    "event.artist-geisha.night.salon-scene.variant.default.text": {
+      "ru": "Поздний салон может дать отдельный профессиональный контекст: меньше людей, длиннее разговоры, точнее заметны паузы. Само наступление ночи не гарантирует приглашение, контакт или карьерный прогресс.",
+      "en": "A late salon can provide a distinct professional context: fewer people, longer conversations, and pauses that are easier to notice. Nightfall itself guarantees no invitation, contact, or career progress."
+    },
+    "event.artist-geisha.night.salon-scene.choice.finish.label": {
+      "ru": "Завершить",
+      "en": "Leave after the salon"
+    },
+    "event.artist-geisha.night.salon-scene.choice.finish.text": {
+      "ru": "Ночная возможность не является бесплатным дополнительным действием поверх уже выбранной ночи. Авторский текст должен отражать конкуренцию за время, а не обещать новый независимый слот.",
+      "en": "A night opportunity is not a free extra action layered on top of an already chosen night. Authored text should reflect competition for time rather than promise a new independent slot."
+    },
+    "event.artist-geisha.night.mentor-review-scene.title": {
+      "ru": "Опциональный ночной разбор с наставником",
+      "en": "Optional mentor review at Night"
+    },
+    "event.artist-geisha.night.mentor-review-scene.variant.default.text": {
+      "ru": "Разбор с наставником после смены полезен, когда есть конкретный материал: переход, реплика, темп или запись. Он не требует личной близости и не становится обязательным ночным маршрутом.",
+      "en": "A post-shift review with a mentor is useful when there is concrete material: a transition, line, pace, or note. It requires no personal intimacy and does not become a mandatory night route."
+    },
+    "event.artist-geisha.night.mentor-review-scene.choice.finish.label": {
+      "ru": "Завершить",
+      "en": "Finish the review"
+    },
+    "event.artist-geisha.night.mentor-review-scene.choice.finish.text": {
+      "ru": "Ночная возможность не является бесплатным дополнительным действием поверх уже выбранной ночи. Авторский текст должен отражать конкуренцию за время, а не обещать новый независимый слот.",
+      "en": "A night opportunity is not a free extra action layered on top of an already chosen night. Authored text should reflect competition for time rather than promise a new independent slot."
+    },
+    "event.artist-geisha.relationship.intro.title": {
+      "ru": "Старшая артистка проверяет рабочую передачу",
+      "en": "A senior artist reviews the handoff"
+    },
+    "event.artist-geisha.relationship.intro.variant.default.text": {
+      "ru": "Старшая артистка или наставник появляется как профессиональная роль: человек, который видел достаточно репетиций, чтобы задавать точные вопросы и замечать повторяющиеся ошибки. Имя и личная биография не требуются для работы этой линии.",
+      "en": "A senior artist or mentor enters as a professional role: someone who has seen enough rehearsals to ask precise questions and notice repeated mistakes. A personal name or biography is not required for this line to work."
+    },
+    "event.artist-geisha.relationship.intro.choice.professional.label": {
+      "ru": "Сравнить рабочие заметки",
+      "en": "Compare the work notes"
+    },
+    "event.artist-geisha.relationship.intro.choice.professional.text": {
+      "ru": "Сохранить первый контакт практичным и профессиональным.",
+      "en": "Keep the first contact practical and professional."
+    },
+    "event.artist-geisha.relationship.trust.title": {
+      "ru": "Профессиональное доверие становится привычным",
+      "en": "Professional trust becomes familiar"
+    },
+    "event.artist-geisha.relationship.trust.variant.school-rhetoric.text": {
+      "ru": "Rhetoric & Social полезна как практика слушания, уточняющих вопросов и спокойных пауз. Она не даёт автоматического влияния на гостя, наставника или будущего patron и не создаёт шкалу убеждения.",
+      "en": "Rhetoric & Social is useful as practice in listening, clarifying questions, and calm pauses. It grants no automatic influence over a guest, mentor, or future patron and creates no persuasion meter."
+    },
+    "event.artist-geisha.relationship.trust.variant.default.text": {
+      "ru": "Профессиональное доверие растёт из того, что замечание можно проверить на следующей репетиции. Наставник не требует восхищения или личной преданности; достаточно честно показать, что изменилось и что всё ещё не получается.",
+      "en": "Professional trust grows when a note can be tested in the next rehearsal. The mentor requires neither admiration nor personal loyalty; it is enough to show honestly what changed and what still does not work."
+    },
+    "event.artist-geisha.relationship.trust.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Keep the working trust"
+    },
+    "event.artist-geisha.relationship.trust.choice.continue.text": {
+      "ru": "Продолжить обычную работу и сохранить текущие правила карьеры.",
+      "en": "Build professional trust while keeping personal closeness optional."
+    },
+    "event.artist-geisha.relationship.conflict-open.title": {
+      "ru": "Реальное разногласие о выступлении",
+      "en": "A real disagreement about the performance"
+    },
+    "event.artist-geisha.relationship.conflict-open.variant.default.text": {
+      "ru": "Конфликт возникает вокруг конкретной практики — слишком позднего изменения программы, жёсткой подачи, неясной записи или распределения внимания. Ты обсуждаешь решение, а не скрытую степень личной близости.",
+      "en": "The conflict concerns a concrete practice—a late program change, an overly rigid presentation, an unclear note, or distribution of attention. You discuss the decision rather than a hidden degree of personal closeness."
+    },
+    "event.artist-geisha.relationship.conflict-open.choice.open.label": {
+      "ru": "Обозначить разногласие",
+      "en": "State the professional disagreement"
+    },
+    "event.artist-geisha.relationship.conflict-open.choice.open.text": {
+      "ru": "Сделать профессиональное разногласие явным и оставить дальнейший выбор открытым.",
+      "en": "Make the disagreement explicit so the relationship can continue through cooperation, rivalry, or refusal."
+    },
+    "event.artist-geisha.relationship.conflict-resolve.title": {
+      "ru": "Как продолжить профессиональные отношения",
+      "en": "Choose how the professional relationship continues"
+    },
+    "event.artist-geisha.relationship.conflict-resolve.variant.default.text": {
+      "ru": "Соревновательный тон может быть полезным, если он остаётся про работу: точнее подготовиться, яснее объяснить выбор, внимательнее слушать партнёра. Он не превращается в саботаж или глобальный рейтинг артистов.",
+      "en": "A competitive tone can be useful when it stays about the work: prepare more carefully, explain a choice more clearly, and listen to a partner more closely. It does not become sabotage or a global artist ranking."
+    },
+    "event.artist-geisha.relationship.conflict-resolve.choice.cooperate.label": {
+      "ru": "Репетировать компромисс",
+      "en": "Rehearse a compromise"
+    },
+    "event.artist-geisha.relationship.conflict-resolve.choice.cooperate.text": {
+      "ru": "После разногласия сотрудничество означает договориться о способе проверки: что изменить, когда посмотреть результат и кто отвечает за следующую часть. Это рабочий компромисс, а не обещание постоянного согласия.",
+      "en": "After disagreement, collaboration means agreeing on how to test the change: what to adjust, when to review the result, and who owns the next part. It is a professional compromise rather than a promise of permanent agreement."
+    },
+    "event.artist-geisha.relationship.conflict-resolve.choice.rivalry.label": {
+      "ru": "Остаться профессиональными соперниками",
+      "en": "Stay professional rivals"
+    },
+    "event.artist-geisha.relationship.conflict-resolve.choice.rivalry.text": {
+      "ru": "Профессиональное соперничество может сохранить уважение, если каждая сторона признаёт границы роли и не блокирует обычную работу другой. Сильный чужой результат становится ориентиром для разбора, а не поводом закрыть карьеру.",
+      "en": "Professional rivalry can preserve respect when each side recognizes the boundaries of the role and does not block the other's ordinary work. Another strong result becomes material for review rather than a reason to close the career."
+    },
+    "event.artist-geisha.relationship.conflict-resolve.choice.decline.label": {
+      "ru": "Отказаться",
+      "en": "Step away from the extra relationship"
+    },
+    "event.artist-geisha.relationship.conflict-resolve.choice.decline.text": {
+      "ru": "Отказ углублять линию наставничества не закрывает Artist House. Ты можешь сохранить обычные смены, репетиции и профессиональную вежливость без дополнительной личной или карьерной зависимости.",
+      "en": "Declining to deepen the mentoring line does not close the Artist House. You can keep ordinary shifts, rehearsals, and professional courtesy without an additional personal or career dependency."
+    },
+    "event.artist-geisha.relationship.utility.title": {
+      "ru": "Опциональная польза наставничества",
+      "en": "Optional later professional utility"
+    },
+    "event.artist-geisha.relationship.utility.variant.default.text": {
+      "ru": "Поздняя полезность наставника — это узкая помощь: заметить слабый переход, предупредить о формате вечера или подсказать, что стоит проверить до выхода. Она не даёт универсальный доступ, статус или гарантированный успех.",
+      "en": "Later mentor utility is narrow help: notice a weak transition, warn about the shape of an evening, or suggest what to check before an entrance. It grants no universal access, status, or guaranteed success."
+    },
+    "event.artist-geisha.relationship.utility.choice.accept.label": {
+      "ru": "Принять",
+      "en": "Use the professional review"
+    },
+    "event.artist-geisha.relationship.utility.choice.accept.text": {
+      "ru": "Принять опциональную профессиональную возможность.",
+      "en": "Accept one optional rehearsal review without making mentorship compulsory."
+    },
+    "event.artist-geisha.relationship.utility.choice.decline.label": {
+      "ru": "Отказаться",
+      "en": "Continue independently"
+    },
+    "event.artist-geisha.relationship.utility.choice.decline.text": {
+      "ru": "Отказаться от дополнительной возможности без закрытия обычной карьеры.",
+      "en": "Decline the extra review while preserving professional respect and all ordinary progression."
+    },
+    "event.artist-geisha.routes.veteran-ready.title": {
+      "ru": "Готовность Veteran",
+      "en": "Veteran Artist House route ready"
+    },
+    "event.artist-geisha.routes.veteran-ready.variant.default.text": {
+      "ru": "Veteran — это путь широкой обычной практики: сезоны, гости, репетиции и повторяемая способность провести смену без обязательной специализации. Его ценность в устойчивости, а не в титуле.\n\nГотовность Veteran должна отражать уже накопленную широту работы и не заставлять немедленно менять обычную карьеру. Можно оставить эту возможность открытой и продолжать стандартные смены.",
+      "en": "Veteran is the route of broad ordinary practice: seasons, guests, rehearsals, and repeatable ability to carry a shift without mandatory specialization. Its value is consistency rather than a title.\n\nVeteran readiness should reflect breadth of work already accumulated without forcing an immediate career change. The option can remain open while ordinary shifts continue."
+    },
+    "event.artist-geisha.routes.veteran-ready.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Record Veteran readiness"
+    },
+    "event.artist-geisha.routes.veteran-ready.choice.record.text": {
+      "ru": "Зафиксировать этот факт только внутри Artist/Geisha контекста.",
+      "en": "Keep this ordinary-career readiness alongside any other advanced route."
+    },
+    "event.artist-geisha.routes.master-ready.title": {
+      "ru": "Готовность Master Artist",
+      "en": "Master Artist route ready"
+    },
+    "event.artist-geisha.routes.master-ready.variant.default.text": {
+      "ru": "Arts & Performance помогает формулировать намерение сцены, работать с ритмом и отвечать партнёру. Текст не выбирает числовой порог, не публикует новый School-факт и не придумывает отдельный курс музыки, танца или ремесла.\n\nLiteracy & Numbers помогает вести программу, бронирование и репетиционные заметки так, чтобы следующая смена могла опереться на запись. Она не создаёт новый бухгалтерский subsystem и не выбирает School threshold.\n\nMaster Artist — это глубина профессиональной подготовки: ясное намерение, повторяемая репетиция, работа с записью и способность объяснить собственный выбор. Это не универсальный рейтинг художественной ценности.\n\nМаршрут Master Artist не выбирает за проект точный список музыки, танца, ремесла или иных дисциплин. Он описывает качество процесса поверх уже существующей Arts & Performance подготовки.",
+      "en": "Arts & Performance helps formulate stage intention, work with rhythm, and respond to a partner. This text selects no numeric threshold, publishes no new School fact, and invents no separate music, dance, or craft course.\n\nLiteracy & Numbers helps keep program, booking, and rehearsal notes so the next shift can rely on a record. It creates no new accounting subsystem and selects no School threshold.\n\nMaster Artist is depth of professional preparation: clear intention, repeatable rehearsal, usable records, and the ability to explain one's choices. It is not a universal ranking of artistic worth.\n\nThe Master Artist route does not choose an exact list of music, dance, craft, or other disciplines for the project. It describes quality of process on top of the existing Arts & Performance preparation."
+    },
+    "event.artist-geisha.routes.master-ready.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Record Master Artist readiness"
+    },
+    "event.artist-geisha.routes.master-ready.choice.record.text": {
+      "ru": "Зафиксировать этот факт только внутри Artist/Geisha контекста.",
+      "en": "Keep this performance-and-education route ready without committing to it."
+    },
+    "event.artist-geisha.routes.social-breadth.title": {
+      "ru": "Широта профессиональных социальных связей",
+      "en": "Professional social breadth is established"
+    },
+    "event.artist-geisha.routes.social-breadth.variant.default.text": {
+      "ru": "Полезный контакт может сообщить о формате вечера или познакомить с конкретным человеком, но не гарантирует приглашение, работу или успех. Каждый следующий шаг остаётся отдельной Artist-ситуацией.",
+      "en": "A useful contact may explain the shape of an evening or introduce one specific person, but guarantees no invitation, work, or success. Each next step remains a separate Artist situation."
+    },
+    "event.artist-geisha.routes.social-breadth.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Record social breadth"
+    },
+    "event.artist-geisha.routes.social-breadth.choice.record.text": {
+      "ru": "Зафиксировать этот факт только внутри Artist/Geisha контекста.",
+      "en": "Keep the independent professional inputs as Artist-local readiness evidence."
+    },
+    "event.artist-geisha.routes.patron-network-ready.title": {
+      "ru": "Готовность Patron Network",
+      "en": "Patron Network route ready"
+    },
+    "event.artist-geisha.routes.patron-network-ready.variant.default.text": {
+      "ru": "Patron Network — это несколько устойчивых профессиональных контактов, где известны контекст, ожидания и способ следующего разговора. Сеть не становится отдельной валютой влияния или глобальной системой покровителей.\n\nПолезный контакт может сообщить о формате вечера или познакомить с конкретным человеком, но не гарантирует приглашение, работу или успех. Каждый следующий шаг остаётся отдельной Artist-ситуацией.",
+      "en": "Patron Network is several durable professional contacts where context, expectations, and the next conversation are understood. The network does not become a separate influence currency or a global patron system.\n\nA useful contact may explain the shape of an evening or introduce one specific person, but guarantees no invitation, work, or success. Each next step remains a separate Artist situation."
+    },
+    "event.artist-geisha.routes.patron-network-ready.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Record Patron Network readiness"
+    },
+    "event.artist-geisha.routes.patron-network-ready.choice.record.text": {
+      "ru": "Зафиксировать этот факт только внутри Artist/Geisha контекста.",
+      "en": "Keep the social route ready without choosing it yet."
+    },
+    "event.artist-geisha.routes.court-contact.title": {
+      "ru": "Формальный контакт двора",
+      "en": "A court-facing contact can be prepared"
+    },
+    "event.artist-geisha.routes.court-contact.variant.default.text": {
+      "ru": "Court Invitation — это Artist-local доказательство, что официальный контакт или приглашение действительно возникли. Оно описывает карьерную готовность к формальному контексту, а не доступ в Palace.\n\nНи формальная одежда, ни приглашение, ни контакт двора не заменяют существующий Palace 10/10 Hard Work unlock. Artist-контент не пишет и не удовлетворяет этот глобальный gate.",
+      "en": "Court Invitation is Artist-local evidence that a formal contact or invitation actually occurred. It describes career readiness for a formal context rather than access to the Palace.\n\nNeither formal attire, invitation, nor court contact replaces the existing Palace 10/10 Hard Work unlock. Artist content neither writes nor satisfies that global gate."
+    },
+    "event.artist-geisha.routes.court-contact.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Record the court-facing contact"
+    },
+    "event.artist-geisha.routes.court-contact.choice.record.text": {
+      "ru": "Зафиксировать этот факт только внутри Artist/Geisha контекста.",
+      "en": "Keep the contact as Artist-local readiness evidence only."
+    },
+    "event.artist-geisha.routes.court-ready.title": {
+      "ru": "Готовность Court Invitation",
+      "en": "Court Invitation route ready"
+    },
+    "event.artist-geisha.routes.court-ready.variant.default.text": {
+      "ru": "Etiquette & Presentation помогает удерживать форму официального вечера, переходить между гостями и ясно завершать тему. Подготовка не создаёт общественный ранг и тем более не даёт Palace access.\n\nCourt Invitation — это Artist-local доказательство, что официальный контакт или приглашение действительно возникли. Оно описывает карьерную готовность к формальному контексту, а не доступ в Palace.\n\nДаже при наличии Invitation Token смысл маршрута остаётся узким: показать, к какому приглашению относится знак и какие ожидания у конкретного события. Токен не является универсальным пропуском.\n\nНи формальная одежда, ни приглашение, ни контакт двора не заменяют существующий Palace 10/10 Hard Work unlock. Artist-контент не пишет и не удовлетворяет этот глобальный gate.",
+      "en": "Etiquette & Presentation helps preserve the structure of a formal evening, move between guests, and close a topic clearly. The preparation creates no social rank and certainly no Palace access.\n\nCourt Invitation is Artist-local evidence that a formal contact or invitation actually occurred. It describes career readiness for a formal context rather than access to the Palace.\n\nEven with an Invitation Token, the route remains narrow: show which invitation the token belongs to and what the specific event expects. The token is not a universal pass.\n\nNeither formal attire, invitation, nor court contact replaces the existing Palace 10/10 Hard Work unlock. Artist content neither writes nor satisfies that global gate."
+    },
+    "event.artist-geisha.routes.court-ready.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Record Court Invitation readiness"
+    },
+    "event.artist-geisha.routes.court-ready.choice.record.text": {
+      "ru": "Зафиксировать этот факт только внутри Artist/Geisha контекста.",
+      "en": "Keep the invitation route ready without treating it as Palace access."
+    },
+    "event.artist-geisha.season.spring-program.title": {
+      "ru": "Весенняя программа Artist House",
+      "en": "Spring program window"
+    },
+    "event.artist-geisha.season.spring-program.variant.default.text": {
+      "ru": "Весенняя программа — это окно для подготовленного номера, а не отдельный глобальный фестиваль. Ты проверяешь, что основная мысль сцены держится без лишних украшений, и только после этого добавляешь детали.",
+      "en": "The spring program is a window for a prepared piece, not a separate global festival system. You check that the central intention survives without extra ornament and only then add detail."
+    },
+    "event.artist-geisha.season.spring-program.choice.take-window.label": {
+      "ru": "Использовать сезонное окно",
+      "en": "Take the Artist House opportunity"
+    },
+    "event.artist-geisha.season.spring-program.choice.take-window.text": {
+      "ru": "Использовать это Artist-local сезонное окно.",
+      "en": "Use the seasonal window as Artist-local professional experience; it does not create a global contest or reputation system."
+    },
+    "event.artist-geisha.season.spring-program.choice.pass.label": {
+      "ru": "Пропустить",
+      "en": "Let this window pass"
+    },
+    "event.artist-geisha.season.spring-program.choice.pass.text": {
+      "ru": "Пропустить возможность и сохранить обычную работу доступной.",
+      "en": "Decline this optional professional window. Ordinary work and later Artist/Geisha progression remain available."
+    },
+    "event.artist-geisha.season.summer-evening.title": {
+      "ru": "Летний вечер Artist House",
+      "en": "Summer evening window"
+    },
+    "event.artist-geisha.season.summer-evening.variant.default.text": {
+      "ru": "Летнее вечернее выступление требует учитывать шум, поздние входы и движение гостей. Задача — сохранить читаемую сцену и понятный финал, а не победить неизвестных соперников в несуществующем конкурсе.",
+      "en": "A summer evening performance has to account for noise, late arrivals, and guest movement. The task is to preserve a readable scene and a clear ending, not to defeat unknown rivals in a nonexistent contest."
+    },
+    "event.artist-geisha.season.summer-evening.choice.take-window.label": {
+      "ru": "Использовать сезонное окно",
+      "en": "Take the Artist House opportunity"
+    },
+    "event.artist-geisha.season.summer-evening.choice.take-window.text": {
+      "ru": "Использовать это Artist-local сезонное окно.",
+      "en": "Use the seasonal window as Artist-local professional experience; it does not create a global contest or reputation system."
+    },
+    "event.artist-geisha.season.summer-evening.choice.pass.label": {
+      "ru": "Пропустить",
+      "en": "Let this window pass"
+    },
+    "event.artist-geisha.season.summer-evening.choice.pass.text": {
+      "ru": "Пропустить возможность и сохранить обычную работу доступной.",
+      "en": "Decline this optional professional window. Ordinary work and later Artist/Geisha progression remain available."
+    },
+    "event.artist-geisha.season.autumn-festival.title": {
+      "ru": "Осенний фестиваль Artist House",
+      "en": "Autumn festival window"
+    },
+    "event.artist-geisha.season.autumn-festival.variant.school-body-confidence.text": {
+      "ru": "Body Confidence поддерживает намеренную сценическую подачу и умение обозначать границы. Выразительность остаётся выбором и не равна согласию, доступности или обязательству продолжать личный контакт.",
+      "en": "Body Confidence supports intentional stage presence and the ability to state boundaries. Expression remains a choice and is not consent, availability, or an obligation to continue personal contact."
+    },
+    "event.artist-geisha.season.autumn-festival.variant.default.text": {
+      "ru": "Осенний фестивальный слот усиливает давление ожиданий, но остаётся Artist-local событием календаря. Ты готовишь выход, запасной вариант и границы подачи, не создавая таблицу мест, призов или глобальную систему конкурса.\n\nПеред публичным выходом ожидание само становится частью работы: проверить реквизит, вспомнить порядок и не расходовать внимание на сравнение с чужими номерами. Чужая сильная сцена не уменьшает твой собственный профессиональный результат.",
+      "en": "An autumn festival slot raises expectations but remains an Artist-local calendar event. You prepare the entrance, a fallback, and presentation boundaries without creating rankings, prizes, or a global contest system.\n\nBefore a public entrance, waiting becomes part of the work: check the kit, recall the order, and avoid spending attention comparing yourself with other pieces. Another strong performance does not reduce your own professional result."
+    },
+    "event.artist-geisha.season.autumn-festival.choice.prepared-performance.label": {
+      "ru": "Выступить с подготовкой",
+      "en": "Use the prepared performance kit"
+    },
+    "event.artist-geisha.season.autumn-festival.choice.prepared-performance.text": {
+      "ru": "Использовать подготовленную Artist-local возможность выступления.",
+      "en": "Use the Artist-owned kit to handle this performance window. The capability changes this local option only."
+    },
+    "event.artist-geisha.season.autumn-festival.choice.take-window.label": {
+      "ru": "Использовать сезонное окно",
+      "en": "Take the Artist House opportunity"
+    },
+    "event.artist-geisha.season.autumn-festival.choice.take-window.text": {
+      "ru": "Использовать это Artist-local сезонное окно.",
+      "en": "Use the seasonal window as Artist-local professional experience; it does not create a global contest or reputation system."
+    },
+    "event.artist-geisha.season.autumn-festival.choice.pass.label": {
+      "ru": "Пропустить",
+      "en": "Let this window pass"
+    },
+    "event.artist-geisha.season.autumn-festival.choice.pass.text": {
+      "ru": "Пропустить возможность и сохранить обычную работу доступной.",
+      "en": "Decline this optional professional window. Ordinary work and later Artist/Geisha progression remain available."
+    },
+    "event.artist-geisha.season.winter-salon.title": {
+      "ru": "Зимний салон Artist House",
+      "en": "Winter salon window"
+    },
+    "event.artist-geisha.season.winter-salon.variant.default.text": {
+      "ru": "Зимний салон ценит точность переходов и умение слушать комнату. Ты оставляешь паузу, когда она помогает сцене или разговору, и не заполняешь тишину ради демонстрации постоянного контроля.\n\nСалонный вечер требует переходить от сцены к разговору без резкого разрыва. Ты замечаешь, когда собеседнику достаточно внимания, и освобождаешь место следующей части программы без манипуляции или обещаний.",
+      "en": "A winter salon rewards precise transitions and the ability to listen to the room. You leave a pause when it helps the scene or conversation and do not fill silence merely to display constant control.\n\nA salon evening requires moving from performance to conversation without an abrupt break. You notice when a guest has had enough attention and make room for the next part of the program without manipulation or promises."
+    },
+    "event.artist-geisha.season.winter-salon.choice.formal-presence.label": {
+      "ru": "Использовать формальную подачу",
+      "en": "Use formal Artist House attire"
+    },
+    "event.artist-geisha.season.winter-salon.choice.formal-presence.text": {
+      "ru": "Использовать формальную подачу только в этом контексте.",
+      "en": "Use formal-performance presence for this salon without treating clothing as universal status or Palace access."
+    },
+    "event.artist-geisha.season.winter-salon.choice.take-window.label": {
+      "ru": "Использовать сезонное окно",
+      "en": "Take the Artist House opportunity"
+    },
+    "event.artist-geisha.season.winter-salon.choice.take-window.text": {
+      "ru": "Использовать это Artist-local сезонное окно.",
+      "en": "Use the seasonal window as Artist-local professional experience; it does not create a global contest or reputation system."
+    },
+    "event.artist-geisha.season.winter-salon.choice.pass.label": {
+      "ru": "Пропустить",
+      "en": "Let this window pass"
+    },
+    "event.artist-geisha.season.winter-salon.choice.pass.text": {
+      "ru": "Пропустить возможность и сохранить обычную работу доступной.",
+      "en": "Decline this optional professional window. Ordinary work and later Artist/Geisha progression remain available."
+    },
+    "ui.artistGeisha.nightChoiceAria": {
+      "ru": "Ночной выбор Дома искусств: {choice}",
+      "en": "Artist House Night choice: {choice}"
     }
   }
 }
