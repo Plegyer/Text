@@ -2,20 +2,9 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 
 import {dispatch} from '../src/core/engine.ts';
-import {ordinaryHardWorkCareers,type OrdinaryHardWorkCareer,type Stat} from '../src/core/schema.ts';
+import {hardWorkPackageDefinitions} from '../src/core/hardWorkPackageCatalog.ts';
+import {ordinaryHardWorkCareers,type OrdinaryHardWorkCareer} from '../src/core/schema.ts';
 import {act,catalog,started} from './helpers.ts';
-
-const statRewards:Partial<Record<OrdinaryHardWorkCareer,readonly [Stat,Stat]>>={
-  lumber:['strength','endurance'],
-  'satyr-maid':['charm','grooming'],
-  'undead-farm':['reason','magic'],
-  tavern:['sociability','manners'],
-  hunter:['dexterity','wits'],
-  guard:['endurance','manners'],
-  'artist-geisha':['creativity','grooming'],
-  assassin:['dexterity','wits'],
-  prostitute:['sexuality','charm']
-};
 
 function completeProductionHardWork(career:OrdinaryHardWorkCareer){
   let s=started();
@@ -39,7 +28,7 @@ function completeProductionHardWork(career:OrdinaryHardWorkCareer){
   return s;
 }
 
-test('all ten production Hard Work endings wire the locked automatic Meta reward exactly once',()=>{
+test('all ten production Hard Work endings grant one permanent earned package and no automatic next-life reward',()=>{
   for(const career of ordinaryHardWorkCareers){
     let s=completeProductionHardWork(career);
     assert.deepEqual(s.meta.hardWorkProgress,[career],career);
@@ -50,14 +39,29 @@ test('all ten production Hard Work endings wire the locked automatic Meta reward
     assert.equal(JSON.stringify(s),snapshot,career);
 
     s=dispatch(s,{type:'newLife'},catalog);
-    if(career==='merchant'){
-      assert.equal(s.run.resources.money,1200,career);
-    }else{
-      const reward=statRewards[career];
-      assert.ok(reward,career);
-      assert.equal(s.run.character.stats[reward[0]],4,career);
-      assert.equal(s.run.character.stats[reward[1]],4,career);
+    assert.equal(s.run.resources.money,600,career);
+    assert.equal(Object.values(s.run.character.stats).every(value=>value===1),true,career);
+    assert.equal(s.run.character.lust,1,career);
+    assert.deepEqual(s.run.creation.activeHardWorkPackages,[],career);
+    assert.equal(s.run.creation.hardWorkPackagesApplied,false,career);
+
+    s=dispatch(s,{type:'setHardWorkPackageActive',career,active:true},catalog);
+    assert.deepEqual(s.run.creation.activeHardWorkPackages,[career],career);
+    s.run.creation.remaining=0;
+    s=dispatch(s,{type:'finishCreation'},catalog);
+
+    const packageDefinition=hardWorkPackageDefinitions.find(item=>item.career===career);
+    assert.ok(packageDefinition,career);
+    for(const bonus of packageDefinition.statBonuses){
+      assert.equal(s.run.character.stats[bonus.stat],6,`${career}.${bonus.stat}`);
     }
+    assert.equal(s.run.character.lust,1+(packageDefinition.lustBonus??0),career);
+    assert.equal(s.run.creation.hardWorkPackagesApplied,true,career);
+    assert.throws(
+      ()=>dispatch(s,{type:'setHardWorkPackageActive',career,active:false},catalog),
+      /выбор наследия.*закрыт/i,
+      career
+    );
   }
 });
 
