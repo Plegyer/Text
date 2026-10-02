@@ -10495,8 +10495,8 @@
       "en": "Bound work shift"
     },
     "action.secret-debt.shift.description": {
-      "ru": "Обязательная смена по связывающему долгу. Эта работа относится к скрытой карьере, а прогресс, уже заработанный в обычных профессиях, остаётся нетронутым.",
-      "en": "A compulsory shift carried out under the binding debt. The work belongs to this hidden career while progress earned in ordinary professions remains intact."
+      "ru": "Обязательная дневная смена по связывающему долгу. Она считается в отдельной скрытой карьере, а прогресс обычных профессий сохраняется.",
+      "en": "A compulsory daytime profession shift under the binding debt. It counts toward this hidden career while ordinary-profession progress remains preserved."
     },
     "action.secret-debt.shift.scene.spring.default.text": {
       "ru": "Обязательная смена идёт по навязанному распорядку: назначенная работа, постоянный надзор и никакого права решать, когда долг на сегодня считается отработанным.",
@@ -10567,32 +10567,32 @@
       "en": "Accept the help"
     },
     "event.secret-debt.lender-encounter.choice.accept.text": {
-      "ru": "Ты принимаешь помощь. Решение принимается быстро, прежде чем появляется возможность толком спросить, чего за него потребуют позже.",
-      "en": "You accept the help. The choice is made quickly, before there is much room to ask what will be expected later."
+      "ru": "Ты берёшь деньги. Обещание всё ещё звучит просто: вернёшь позже.",
+      "en": "You take the money. The promise still sounds simple: return it later."
     },
     "event.secret-debt.lender-encounter.choice.refuse.label": {
       "ru": "Отказаться",
       "en": "Refuse"
     },
     "event.secret-debt.lender-encounter.choice.refuse.text": {
-      "ru": "Ты отказываешься. Эта встреча закрыта и больше не предлагается в этой жизни.",
-      "en": "You refuse. This encounter is closed and will not be offered again in this life."
+      "ru": "Ты отказываешься. Незнакомец уходит, и в этой жизни этот путь закрывается.",
+      "en": "You refuse the offer. The stranger leaves, and this route closes for this life."
     },
     "event.secret-debt.activation.title": {
       "ru": "Долг захлопывается",
       "en": "The debt closes around you"
     },
     "event.secret-debt.activation.variant.default.text": {
-      "ru": "Старое обещание возвращается в другой форме. То, что звучало как временная помощь, теперь предъявляют как обязательство, которое забирает твоё время и работу. Скрытый долг перестаёт быть скрытым.",
-      "en": "The old promise returns in a different form. What sounded temporary is now presented as an obligation that claims your work and your time. The hidden debt is no longer hidden."
+      "ru": "Через десять дней после принятой помощи старое обещание возвращается требованием на 20000. Теперь долг претендует не только на деньги, но и на твою профессиональную жизнь и время.",
+      "en": "Ten days after the help was accepted, the old promise returns as a demand for 20000. The debt now claims your professional life as well as your time."
     },
     "event.secret-debt.activation.choice.acknowledge.label": {
-      "ru": "Принять новые условия как факт",
-      "en": "Face the new terms"
+      "ru": "Принять условия как факт",
+      "en": "Face the terms"
     },
     "event.secret-debt.activation.choice.acknowledge.text": {
-      "ru": "Обычные профессиональные смены теперь заблокированы, но весь уже накопленный в них прогресс сохранён.",
-      "en": "Ordinary profession shifts are now blocked while all progress already earned in them remains intact."
+      "ru": "Связывающий маршрут активен. Обычные профессии закрыты, но всё заработанное в них по-прежнему сохранено.",
+      "en": "The binding route is active. Ordinary professions are locked, but everything you earned in them is still there."
     },
     "event.secret-debt.forced-night-work.title": {
       "ru": "Эта ночь больше не твоя",
@@ -10607,8 +10607,8 @@
       "en": "Get through the forced work"
     },
     "event.secret-debt.forced-night-work.choice.finish.text": {
-      "ru": "Назначенная работа заканчивается только вместе с ночью. Утро приходит без вечера, которым можно было распорядиться самой.",
-      "en": "The assigned work ends only when the night is spent. Morning comes without an evening of your own."
+      "ru": "Принудительная ночь закончилась. Утро приходит с меньшим запасом Энергии на следующий день.",
+      "en": "The compulsory night is over. Morning arrives with less Energy available for the next day."
     },
     "ending.ending.secret-debt.paid-freedom.title": {
       "ru": "Выкупленная свобода",
@@ -10627,8 +10627,8 @@
       "en": "Bound Life"
     },
     "ending.ending.secret-debt.bound-life.description": {
-      "ru": "Эта жизнь завершается внутри связывающей договорённости — как отдельный исход, а не выплата долга и не захват власти.",
-      "en": "This life closes inside the binding arrangement, as its own outcome rather than repayment or takeover."
+      "ru": "Пятьдесят завершённых дневных смен открывают «Связанную жизнь» как аналог Hard Work этой скрытой карьеры. Само eligibility не снимает профессиональную блокировку.",
+      "en": "Fifty completed daytime shifts make Bound Life available as this hidden route's Hard Work analogue. Eligibility does not release the professional lock."
     },
     "ending.ending.secret-debt.bound-life.epilogue": {
       "ru": "Эта жизнь завершается внутри связанного маршрута, а не как выплата долга или захват власти.",
@@ -10693,6 +10693,54 @@
     "event.secret-debt.outcome.takeover.choice.takeover.text": {
       "ru": "Ты выбираешь захват власти, а не выплату долга и не сохранение связанного положения.",
       "en": "You choose Takeover rather than repayment or remaining bound."
+    },
+    "ui.secretDebt.currentDebt": {
+      "ru": "Текущий связывающий долг: {amount} монет.",
+      "en": "Current binding debt: {amount} coins."
+    },
+    "ui.secretDebt.ordinaryEndingLocked": {
+      "ru": "Эта обычная профессиональная судьба временно заблокирована связывающим долгом.",
+      "en": "This ordinary profession ending is temporarily blocked by the binding debt."
+    },
+    "action.secret-debt.repay.label": {
+      "ru": "Выплатить связывающий долг",
+      "en": "Repay the binding debt"
+    },
+    "action.secret-debt.repay.description": {
+      "ru": "Выплатить весь долг одним платежом и выйти из связывающего маршрута.",
+      "en": "Pay the entire outstanding debt in one transaction and leave the binding route."
+    },
+    "action.secret-debt.repay.scene.default.text": {
+      "ru": "Ты выкладываешь всю сумму сразу. Запись в долговой книге закрывается, право распоряжаться твоей работой прекращается, и обычные профессии снова становятся твоим выбором.",
+      "en": "You put the full sum down at once. The ledger closes, the claim on your work ends, and the ordinary professions are yours to choose again."
+    },
+    "action.secret-debt.takeover.label": {
+      "ru": "Повернуть систему против держателя",
+      "en": "Turn on the debt holder"
+    },
+    "action.secret-debt.takeover.description": {
+      "ru": "Использовать карьерную подготовку, опыт школы и нужный билд, чтобы устранить держателя долга и перехватить контроль.",
+      "en": "Use the route preparation, School experience, and the required build to kill the holder and take control."
+    },
+    "action.secret-debt.takeover.scene.default.text": {
+      "ru": "Подготовка превращается в действие. Держатель долга устранён, и устройство, которое раньше контролировало тебя, теперь оказывается под твоим контролем.",
+      "en": "Preparation turns into action. The debt holder is removed, and the structure that once controlled you is now under your control."
+    },
+    "event.secret-debt.bound-life-milestone.title": {
+      "ru": "Жизнь, измеренная связанными сменами",
+      "en": "A life measured in bound shifts"
+    },
+    "event.secret-debt.bound-life-milestone.variant.default.text": {
+      "ru": "Пятьдесят дневных смен превратили связывающую договорённость в отдельный жизненный путь. «Связанная жизнь» теперь доступна как судьба, но завершать run прямо сейчас не обязательно.",
+      "en": "Fifty daytime shifts have made the binding arrangement a life path of its own. Bound Life is now a fate you may choose, but nothing forces you to end the run here."
+    },
+    "event.secret-debt.bound-life-milestone.choice.continue.label": {
+      "ru": "Пока продолжить жить",
+      "en": "Keep living for now"
+    },
+    "event.secret-debt.bound-life-milestone.choice.continue.text": {
+      "ru": "Судьба остаётся доступной. Долг продолжает блокировать обычную профессиональную жизнь, пока ты действительно не выйдешь из маршрута.",
+      "en": "The fate remains available. The debt still binds your professional life until you actually leave the route."
     }
   }
 }
