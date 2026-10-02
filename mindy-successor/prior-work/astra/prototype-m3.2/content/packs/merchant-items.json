@@ -86,7 +86,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "Simple appraisal scales help compare weight and condition consistently. They improve one Merchant appraisal option; they do not calculate a universal market price.",
+          "text": "Appraisal scales help compare the weight and condition of two samples consistently. They improve the quality of one check but do not reveal a true market price or guarantee profit.\n\nIf the scale reading does not explain an unusual property of the goods, you preserve that uncertainty in the record. The tool helps expose a discrepancy rather than turning incomplete data into a confident answer.\n\nThe three tools change only the quality of specific Merchant checks and available options. They create no storage-capacity system, automatic valuation, or guaranteed trading bonus.",
           "conditions": [],
           "media": []
         }
@@ -169,7 +169,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "The manifest case keeps copied terms, seals, and delivery notes together. It changes evidence quality and available record checks, not global inventory capacity.",
+          "text": "The manifest case keeps copies of terms, seals, and delivery notes together. Its value is that a dispute can be checked against a record, not that it grants special permission to bypass checks.\n\nIt helps to keep a short plain-language explanation beside a complicated manifest term. The case keeps both versions together so a formal document does not become a convenient place for ambiguity.\n\nThe three tools change only the quality of specific Merchant checks and available options. They create no storage-capacity system, automatic valuation, or guaranteed trading bonus.",
           "conditions": [],
           "media": []
         }
@@ -252,7 +252,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "The sample kit keeps a small documented comparison separate from bulk goods. It supports evidence handling only; it is not a new inventory-capacity system.",
+          "text": "The sample kit lets you separate a small labeled example from the main lot and compare it with the delivered result later. It does not expand general inventory or create new goods.\n\nThe three tools change only the quality of specific Merchant checks and available options. They create no storage-capacity system, automatic valuation, or guaranteed trading bonus.",
           "conditions": [],
           "media": []
         }

@@ -294,7 +294,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "Veteran Merchant readiness is available. Merchant progression remains separate from ending commitment.",
+          "text": "A Veteran Merchant is defined by breadth of ordinary work across seasons, deliveries, records, and repeatable decisions without requiring commitment to one of the advanced network routes.",
           "conditions": [],
           "media": []
         }
@@ -383,7 +383,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "Several Merchant career routes can remain ready together. Merchant progression remains separate from ending commitment.",
+          "text": "Merchant House means stable operation across several agreements, not unlimited capital. What matters is repeatable records, clear timing, and the ability to absorb one failed delivery without the whole network collapsing.\n\nA network is valuable not because of the number of names in it, but because each contact covers a clear part of the work. You know who can confirm supply, where a record can be checked, and when to seek a backup route.\n\nStable logistics begins with promises that can actually be kept: quantity, delivery window, and a backup option. Merchant House does not turn the world into a price spreadsheet; it makes a complex chain easier to understand.\n\nGood records connect supplier, manifest, and actual delivery without replacing the player's decision. They expose discrepancies and consequences while leaving the next step open.\n\nMerchant House readiness means stable operations have already been demonstrated through concrete work, trust, and checks. It is career readiness, not an automatic ending or a promised reward.\n\nScarcity creates opportunity while also increasing the cost of a mistake. You may wait, reserve goods, or accept a narrow risk, but shortage alone does not prove that any decision is profitable.\n\nRisk here is concrete: timing, route, goods condition, or incomplete information. You can deliberately accept one of these when you understand exactly what remains uncertain.\n\nA grey route is a choice to operate under ambiguous constraints and incomplete information, not a license for arbitrary illegal trade. The text creates no global crime or faction system.\n\nSpeculator / Smuggler receives no hidden good-or-evil meter. The route is distinguished through risk, scarcity, source verification, and willingness to carry the consequences of a specific decision.\n\nReadiness for this route reflects experience with shortages, appraisal, and deliberate risk. It records no crime, does not close ordinary trade, and does not become an ending by itself.\n\nIf several routes are ready at the same time, you can choose none of them immediately. Ordinary Merchant work remains available, and readiness stays a possibility rather than an instruction.\n\nMerchant House, Speculator / Smuggler, and Patron of Routes describe career readiness and role direction. None of these states completes the life or grants a separate reward by itself.",
           "conditions": [],
           "media": []
         }
@@ -514,7 +514,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "Patron of Routes readiness remains a separate multi-system route. Merchant progression remains separate from ending commitment.",
+          "text": "Patron of Routes emerges from several verified links between systems that already exist. Its meaning is resilient logistics and route accessibility, not a universal business simulator.\n\nIf several routes are ready at the same time, you can choose none of them immediately. Ordinary Merchant work remains available, and readiness stays a possibility rather than an instruction.\n\nMerchant House, Speculator / Smuggler, and Patron of Routes describe career readiness and role direction. None of these states completes the life or grants a separate reward by itself.",
           "conditions": [],
           "media": []
         }
