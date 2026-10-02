@@ -180,6 +180,13 @@ test('bound domain lock preserves ordinary career progress and suppresses ordina
     const action=catalog.definitions.actions.find(candidate=>candidate.id===`${career}.shift`)!;
     assert.equal(actionAvailable(action,s,catalog),false,`${career}.shift`);
   }
+  for(const legacyId of ['lumber','tavern','guard']){
+    const action=catalog.definitions.actions.find(candidate=>candidate.id===legacyId)!;
+    assert.ok(action,legacyId);
+    assert.equal(actionAvailable(action,s,catalog),false,legacyId+' legacy profession action');
+  }
+  const genericTavernTalk=catalog.definitions.actions.find(candidate=>candidate.id==='tavern-talk')!;
+  assert.equal(actionAvailable(genericTavernTalk,s,catalog),true,'non-profession tavern-talk remains available');
 
   const afterBlockedWrite=applyEffects(s,[
     {kind:'incrementCareerCounter',career:'lumber',counter:'completed_shifts',amount:5},
