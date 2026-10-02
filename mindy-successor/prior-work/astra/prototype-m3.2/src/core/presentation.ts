@@ -1060,7 +1060,9 @@ export function presentationSlots(cat:Catalog):PresentationSlot[]{
         ?'job/guard/result/default'
         :event.sourceDomain==='merchant'
          ?'job/merchant/result/default'
-         :'location/town/default';
+         :event.sourceDomain==='secret-debt'
+          ?'job/secret-debt/result/default'
+          :'location/town/default';
     for(const variant of event.variants){
       add({
         id:presentationIdForEvent(cat,event.id,variant.id),
