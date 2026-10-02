@@ -4,8 +4,8 @@ import {readFileSync} from 'node:fs';
 
 const inventory=JSON.parse(readFileSync('content/artist-geisha-authored-v19-inventory.fixture.json','utf8'));
 
-test('C3-205 activation authority is exact and final live binding is deferred',()=>{
-  assert.equal(inventory.status,'PREP_AUTHORITY_PENDING_FROZEN_ARTIST_RUNTIME');
+test('C3-205/C3-216 activation history is exact and frozen authority is recorded',()=>{
+  assert.equal(inventory.status,'FROZEN_ARTIST_RUNTIME_AUTHORITY');
   assert.equal(inventory.activation.exactBase,'8067539a606714fad8400ccbba30fd7ccf4a9158');
   assert.deepEqual(inventory.activation.shipped.action,{
     id:'artist-geisha.shift',
@@ -21,9 +21,12 @@ test('C3-205 activation authority is exact and final live binding is deferred',(
   assert.equal(inventory.activation.shipped.ending.metaRewardId,'hardWork:artist-geisha');
   assert.equal(inventory.activation.shipped.presentationLocalizationKeys.length,12);
   assert.equal(new Set(inventory.activation.shipped.presentationLocalizationKeys).size,12);
-  assert.equal(inventory.runtimeAuthority.frozen,false);
+  assert.equal(inventory.runtimeAuthority.frozen,true);
   assert.equal(inventory.runtimeAuthority.finalBindingRequiredAt,'C3-216');
-  assert.equal(inventory.invariants.finalLiveBindingDeferred,true);
+  assert.equal(inventory.invariants.finalLiveBindingDeferred,false);
+  assert.equal(inventory.invariants.finalLiveBindingComplete,true);
+  assert.equal(inventory.runtimeAuthority.observedHead,'955f4accf7e25c42e0384ddb9f76e5612f41dd00');
+  assert.equal(inventory.runtimeAuthority.contractBlob,'1cda9f558b8a7c0e0f113904f99ce0acd4b1e791');
 });
 
 test('C3-205 School authority remains five existing courses with null producer decisions',()=>{
