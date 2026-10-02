@@ -1532,16 +1532,6 @@
             "kind": "modifyStat",
             "stat": "endurance",
             "delta": 1
-          },
-          {
-            "kind": "modifyStat",
-            "stat": "grooming",
-            "delta": -1
-          },
-          {
-            "kind": "modifyStat",
-            "stat": "manners",
-            "delta": -1
           }
         ],
         "autumn": [
@@ -1554,11 +1544,6 @@
             "kind": "modifyStat",
             "stat": "dexterity",
             "delta": 1
-          },
-          {
-            "kind": "modifyStat",
-            "stat": "endurance",
-            "delta": -1
           }
         ],
         "winter": [
@@ -1955,6 +1940,11 @@
             "kind": "modifyStat",
             "stat": "endurance",
             "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "grooming",
+            "delta": -1
           }
         ],
         "autumn": [
@@ -1967,6 +1957,11 @@
             "kind": "modifyStat",
             "stat": "manners",
             "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "endurance",
+            "delta": -1
           }
         ],
         "winter": [
@@ -2227,6 +2222,11 @@
             "kind": "addItem",
             "id": "farm_produce",
             "count": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "grooming",
+            "delta": -1
           }
         ],
         "summer": [
@@ -2261,6 +2261,11 @@
             "kind": "addItem",
             "id": "farm_produce",
             "count": 2
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "sociability",
+            "delta": -1
           }
         ],
         "winter": [
@@ -2561,6 +2566,11 @@
             "career": "tavern",
             "counter": "room_pressure",
             "amount": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "grooming",
+            "delta": -1
           }
         ],
         "summer": [
@@ -2585,6 +2595,11 @@
             "career": "tavern",
             "counter": "room_pressure",
             "amount": 2
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "endurance",
+            "delta": -1
           }
         ],
         "autumn": [
@@ -2911,6 +2926,11 @@
             "career": "hunter",
             "counter": "spring_contracts",
             "amount": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "grooming",
+            "delta": -1
           }
         ],
         "summer": [
@@ -2965,6 +2985,11 @@
             "career": "hunter",
             "counter": "winter_contracts",
             "amount": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "sociability",
+            "delta": -1
           }
         ]
       }
@@ -3262,6 +3287,11 @@
             "career": "guard",
             "counter": "crowd_duties",
             "amount": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "grooming",
+            "delta": -1
           }
         ],
         "autumn": [
@@ -3310,6 +3340,11 @@
             "career": "guard",
             "counter": "winter_relief_duties",
             "amount": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "sociability",
+            "delta": -1
           }
         ]
       }
@@ -3471,6 +3506,11 @@
             "career": "merchant",
             "counter": "summer_trades",
             "amount": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "endurance",
+            "delta": -1
           }
         ],
         "autumn": [
@@ -3507,6 +3547,11 @@
             "career": "merchant",
             "counter": "winter_trades",
             "amount": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "strength",
+            "delta": -1
           }
         ]
       }
@@ -3668,6 +3713,11 @@
             "career": "artist-geisha",
             "counter": "summer_performances",
             "amount": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "endurance",
+            "delta": -1
           }
         ],
         "autumn": [
@@ -3686,6 +3736,11 @@
             "career": "artist-geisha",
             "counter": "autumn_performances",
             "amount": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "reason",
+            "delta": -1
           }
         ],
         "winter": [
@@ -3841,6 +3896,11 @@
             "kind": "modifyStat",
             "stat": "wits",
             "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "grooming",
+            "delta": -1
           }
         ],
         "summer": [
@@ -3877,6 +3937,11 @@
             "kind": "modifyStat",
             "stat": "reason",
             "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "sociability",
+            "delta": -1
           }
         ]
       }
@@ -4026,6 +4091,11 @@
             "kind": "modifyStat",
             "stat": "endurance",
             "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "grooming",
+            "delta": -1
           }
         ],
         "autumn": [
@@ -4050,6 +4120,11 @@
             "kind": "modifyStat",
             "stat": "manners",
             "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "creativity",
+            "delta": -1
           }
         ]
       }
