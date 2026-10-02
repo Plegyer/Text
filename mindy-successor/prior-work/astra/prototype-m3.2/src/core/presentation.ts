@@ -629,12 +629,31 @@ export const MERCHANT_RELATIONSHIP_STAGES=[
   'introduced','professional-trust','conflict-open','utility-ready','route-resolved'
 ] as const;
 
+export const MERCHANT_TRADE_EVENT_IDS=[
+  'merchant.trade.appraisal',
+  'merchant.trade.records',
+  'merchant.trade.delivery',
+  'merchant.trade.shortage'
+] as const;
+
+export const MERCHANT_TRADE_STATUS_IDS=[
+  'appraisal-recorded',
+  'manifest-verified',
+  'delivery-recorded',
+  'shortage-handled',
+  'risk-accepted'
+] as const;
+
 export function presentationIdForMerchantStage(stage:string){
   return `job/merchant/stage/${clean(stage)}`;
 }
 
 export function presentationIdForMerchantRelationshipStage(stage:string){
   return `relationship/merchant-supplier/stage/${clean(stage)}`;
+}
+
+export function presentationIdForMerchantState(stateId:string){
+  return `job/merchant/state/${clean(stateId)}`;
 }
 
 export function presentationIdForEnding(endingId:string){
@@ -925,6 +944,29 @@ export function presentationSlots(cat:Catalog):PresentationSlot[]{
     }
   }
 
+  const merchantRuntimeText=JSON.stringify({
+    career:merchantCareer,
+    relationship:merchantRelationship,
+    events:cat.events.filter(event=>event.sourceDomain==='merchant')
+  });
+  const merchantTradeStateBackings:Record<(typeof MERCHANT_TRADE_STATUS_IDS)[number],boolean>={
+    'appraisal-recorded':merchantRuntimeText.includes('appraisal-recorded'),
+    'manifest-verified':merchantRuntimeText.includes('manifest-verified'),
+    'delivery-recorded':merchantRuntimeText.includes('delivery-recorded'),
+    'shortage-handled':merchantRuntimeText.includes('shortage-handled'),
+    'risk-accepted':merchantRuntimeText.includes('risk-accepted')
+  };
+  for(const stateId of MERCHANT_TRADE_STATUS_IDS){
+    if(merchantTradeStateBackings[stateId]){
+      add({
+        id:presentationIdForMerchantState(stateId),
+        label:`Merchant · trade state · ${stateId}`,
+        baseMediaIds:[],
+        fallbackId:'job/merchant/result/default'
+      });
+    }
+  }
+
   for(const event of cat.events){
     const tavernFallback=event.sourceDomain==='tavern'
       ?'job/tavern/result/default'
@@ -932,7 +974,9 @@ export function presentationSlots(cat:Catalog):PresentationSlot[]{
        ?presentationIdForTavernRelationshipRoot()
        :event.sourceDomain==='guard'
         ?'job/guard/result/default'
-        :'location/town/default';
+        :event.sourceDomain==='merchant'
+         ?'job/merchant/result/default'
+         :'location/town/default';
     for(const variant of event.variants){
       add({
         id:presentationIdForEvent(cat,event.id,variant.id),
