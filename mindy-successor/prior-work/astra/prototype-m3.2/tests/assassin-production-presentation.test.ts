@@ -27,7 +27,7 @@ test('every Assassin event surface has RU and EN production localization',()=>{
 test('Assassin action, event, Activity, and ending have stable semantic presentation fallbacks',()=>{
  const action=catalog.definitions.actions.find(a=>a.id==='assassin.shift'); assert.ok(action);
  for(const scene of action.scenes??[]){
-  const id=presentationIdForActionResult(catalog,'assassin.shift',scene.selected);
+  const id=presentationIdForActionResult(catalog,'assassin.shift',scene.media);
   const resolved=resolvePresentation(catalog,presentation,id,{animationsEnabled:false});
   assert.ok(resolved.selected,id);
  }
