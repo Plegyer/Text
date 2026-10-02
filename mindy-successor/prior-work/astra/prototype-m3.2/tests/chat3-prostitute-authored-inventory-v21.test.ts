@@ -68,7 +68,7 @@ test('C3-229 shipped career and Hard Work identity are the only exact career pro
 
 test('C3-229 current authored localization and static presentation surfaces exist without creating new consumers',()=>{
   for(const key of inventory.shipped.authoredLocalizationKeys){
-    const entry=key.split('.').reduce((node:any,part:string)=>node?.[part],localization.strings);
+    const entry=localization.strings[key];
     assert.equal(typeof entry?.ru,'string',key+' ru');
     assert.equal(typeof entry?.en,'string',key+' en');
   }
@@ -77,11 +77,12 @@ test('C3-229 current authored localization and static presentation surfaces exis
     inventory.shipped.presentation.resultLocalizationFamily,
     inventory.shipped.presentation.endingLocalizationFamily,
   ]){
-    const entry=family.split('.').reduce((node:any,part:string)=>node?.[part],localization.strings);
-    assert.equal(typeof entry?.alt?.ru,'string',family+' alt.ru');
-    assert.equal(typeof entry?.alt?.en,'string',family+' alt.en');
-    assert.equal(typeof entry?.caption?.ru,'string',family+' caption.ru');
-    assert.equal(typeof entry?.caption?.en,'string',family+' caption.en');
+    const alt=localization.strings[family+'.alt'];
+    const caption=localization.strings[family+'.caption'];
+    assert.equal(typeof alt?.ru,'string',family+' alt.ru');
+    assert.equal(typeof alt?.en,'string',family+' alt.en');
+    assert.equal(typeof caption?.ru,'string',family+' caption.ru');
+    assert.equal(typeof caption?.en,'string',family+' caption.en');
   }
 });
 

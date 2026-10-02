@@ -91,7 +91,7 @@ test('C3-238 cross-system inputs are exact shipped identities and Palace remains
   const actionIds=new Set(defs.actions.map((x:any)=>x.id));
   const relIds=new Set(defs.relationships.map((x:any)=>x.id));
   const nightIds=new Set(defs.nightChoices.map((x:any)=>x.id));
-  const itemById=new Map(defs.itemDefinitions.map((x:any)=>[x.id,x]));
+  const itemById=new Map<string,any>(defs.itemDefinitions.map((x:any)=>[x.id,x]));
   for(const id of ['satyr-maid.shift','artist-geisha.shift','tavern.shift','guard.shift','merchant.shift'])assert.ok(actionIds.has(id),id);
   for(const id of ['satyr-maid.recurring-guest','tavern.recurring-traveler','guard.partner','merchant.supplier'])assert.ok(relIds.has(id),id);
   for(const id of ['satyr-maid.night.recurring-guest','satyr-maid.night.staff-debrief','tavern.night.traveler-request','tavern.night.house-notes'])assert.ok(nightIds.has(id),id);
@@ -123,8 +123,7 @@ test('C3-240 localization prep is one-to-one, collision-free and does not touch 
     const src=byKey(e.contentKey);
     assert.equal(e.ru,src.ru,e.contentKey+' ru');
     assert.equal(e.en,src.en,e.contentKey+' en');
-    const root=e.localizationKey.split('.').reduce((node:any,part:string)=>node?.[part],rootLoc.strings);
-    assert.equal(root,undefined,e.localizationKey+' root collision');
+    assert.equal(rootLoc.strings[e.localizationKey],undefined,e.localizationKey+' root collision');
   }
   assert.equal(loc.rootCollisionCount,0);
   assert.equal(source.invariants.changesProductionLocalization,false);
