@@ -1,0 +1,134 @@
+{
+  "formatVersion": 1,
+  "id": "school.artist-geisha.v18.live-inventory",
+  "task": "C5-193",
+  "status": "C1D_180_FROZEN_GREEN_CONSUMER_AUTHORITY_PRODUCER_BLOCKED",
+  "careerId": "artist-geisha",
+  "actionId": "artist-geisha.shift",
+  "activationBase": {
+    "head": "8067539a606714fad8400ccbba30fd7ccf4a9158"
+  },
+  "preparationAuthority": {
+    "preparationFixture": "content/school-artist-geisha-preparation-v1.fixture.json",
+    "preparationBlob": "eebada391a2a4a85299a3473b91c6dc139e81c07",
+    "reactiveFixture": "content/school-artist-geisha-reactive-depth-v1.fixture.json",
+    "reactiveBlob": "e7db5130199c129205ab1f95b219aaec02a349ea",
+    "selectedThreshold": null,
+    "selectedPublicFactId": null
+  },
+  "runtimeAuthority": {
+    "branch": "chat1/artist-geisha-complete-v16",
+    "contractHead": "955f4accf7e25c42e0384ddb9f76e5612f41dd00",
+    "contractBlob": "1cda9f558b8a7c0e0f113904f99ce0acd4b1e791",
+    "schoolAuthorityBlob": "87f9d6dd039bcf9579dd4e832071ab1db1de8440",
+    "contractStatus": "C1D_180_FROZEN_GREEN",
+    "finalFreezePending": false,
+    "workflow": {
+      "runNumber": 978,
+      "id": 36985517198,
+      "result": "SUCCESS",
+      "validator": "67 packs / 252 events / 39 actions / 22 endings",
+      "tests": "915/915"
+    }
+  },
+  "localHookPolicy": {
+    "counter": "lessons_completed",
+    "threshold": null,
+    "publicFactId": null,
+    "scope": "artist-geisha-only",
+    "nightParityCounter": "night_study_sessions",
+    "nightParityThreshold": null,
+    "globalCertificateRule": false,
+    "globalProjectRule": false,
+    "directCareerTransition": false,
+    "palaceUnlock": false
+  },
+  "mappings": [
+    {
+      "role": "performance_repertoire",
+      "courseId": "school.course.arts_and_performance",
+      "trackId": "school.track.arts_and_performance",
+      "teacherContentId": "school.teacher.nessa-lark",
+      "teacherMediaId": "school.teacher.arts-and-performance.classroom",
+      "nightChoiceIds": [
+        "school.night_study.arts_and_performance.creativity",
+        "school.night_study.arts_and_performance.charm",
+        "school.night_study.arts_and_performance.sociability",
+        "school.night_study.arts_and_performance.dexterity"
+      ],
+      "merchantFactId": null,
+      "artistFactId": "school-arts-ready",
+      "selectedPublicFactId": null,
+      "consumerEventId": "artist-geisha.routes.master-ready",
+      "threshold": null,
+      "bindingStatus": "LIVE_EVENT_SCHOOL_CONDITION_PRODUCER_BLOCKED"
+    },
+    {
+      "role": "formal_event_guest_facing",
+      "courseId": "school.course.etiquette_and_presentation",
+      "trackId": "school.track.etiquette_and_presentation",
+      "teacherContentId": "school.teacher.eliane-marrow",
+      "teacherMediaId": "school.teacher.etiquette-and-presentation.classroom",
+      "nightChoiceIds": [
+        "school.night_study.etiquette_and_presentation.manners",
+        "school.night_study.etiquette_and_presentation.grooming",
+        "school.night_study.etiquette_and_presentation.charm"
+      ],
+      "artistFactId": "school-etiquette-ready",
+      "selectedPublicFactId": null,
+      "consumerEventId": "artist-geisha.routes.court-ready",
+      "threshold": null,
+      "bindingStatus": "LIVE_EVENT_SCHOOL_CONDITION_PRODUCER_BLOCKED"
+    },
+    {
+      "role": "conversation_patron_rival_method",
+      "courseId": "school.course.rhetoric_and_social",
+      "trackId": "school.track.rhetoric_and_social",
+      "teacherContentId": "school.teacher.cassian-reed",
+      "teacherMediaId": "school.teacher.rhetoric-and-social.classroom",
+      "nightChoiceIds": [
+        "school.night_study.rhetoric_and_social.charm",
+        "school.night_study.rhetoric_and_social.sociability",
+        "school.night_study.rhetoric_and_social.wits"
+      ],
+      "artistFactId": "school-rhetoric-ready",
+      "selectedPublicFactId": null,
+      "consumerEventId": "artist-geisha.relationship.trust",
+      "threshold": null,
+      "bindingStatus": "LIVE_EVENT_NO_SCHOOL_CONDITION_PRODUCER_BLOCKED"
+    },
+    {
+      "role": "performance_presence_boundaries",
+      "courseId": "school.course.body_confidence",
+      "trackId": "school.track.body_confidence",
+      "teacherContentId": "school.teacher.sera-vey",
+      "teacherMediaId": "school.teacher.body-confidence.classroom",
+      "nightChoiceIds": [
+        "school.night_study.body_confidence.sexuality",
+        "school.night_study.body_confidence.grooming",
+        "school.night_study.body_confidence.endurance"
+      ],
+      "artistFactId": "school-body-confidence-ready",
+      "selectedPublicFactId": null,
+      "consumerEventId": "artist-geisha.season.autumn-festival",
+      "threshold": null,
+      "bindingStatus": "LIVE_EVENT_NO_SCHOOL_CONDITION_PRODUCER_BLOCKED"
+    },
+    {
+      "role": "repertoire_records_history_adjacent",
+      "courseId": "school.course.literacy_and_numbers",
+      "trackId": "school.track.literacy_and_numbers",
+      "teacherContentId": "school.teacher.mara-fen",
+      "teacherMediaId": "school.teacher.literacy-and-numbers.classroom",
+      "nightChoiceIds": [
+        "school.night_study.literacy_and_numbers.reason",
+        "school.night_study.literacy_and_numbers.wits"
+      ],
+      "artistFactId": "school-literacy-ready",
+      "selectedPublicFactId": null,
+      "consumerEventId": "artist-geisha.routes.master-ready",
+      "threshold": null,
+      "bindingStatus": "LIVE_EVENT_SCHOOL_CONDITION_PRODUCER_BLOCKED"
+    }
+  ]
+}
