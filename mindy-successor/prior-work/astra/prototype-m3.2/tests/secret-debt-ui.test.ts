@@ -94,7 +94,7 @@ test('bound Secret Debt UI locks ordinary work, preserves its progress, and expo
 
       const hidden=w.document.querySelector('[data-action="secret-debt.shift"]');
       assert.ok(hidden,'hidden bound shift');
-      assert.equal(hidden.disabled,false);
+      assert.equal(hidden.disabled,true,'paid shift stays gated until Product locks wage/stat tuning');
       const repay=w.document.querySelector('[data-action="secret-debt.repay"]');
       assert.ok(repay,'explicit all-at-once repayment action');
       assert.equal(repay.disabled,true,'initial bound save does not yet hold 20000');
