@@ -41,6 +41,10 @@
           "kind": "careerFactAdded",
           "career": "assassin",
           "fact": "contract-cycle-complete"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "assassin.shift"
         }
       ],
       "priorityClass": "normal_progression",
