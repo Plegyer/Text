@@ -85,6 +85,16 @@ The original time-up/failure-type endings can still award future-run bonuses.
 
 Design lesson: avoid making an entire run worthless just because the player did not hit the ideal outcome.
 
+### 14. Careers remember choices, not only shift count
+Recovered career flags encode persistent branches such as help/ignore, lover/spurn, accept/reject, kill/plot and continue/decline.
+
+Design lesson: shift milestones should expose decisions whose consequences persist inside the career. Hard Work=50 should be the culmination of a route, not the only meaningful career state.
+
+### 15. Careers can converge into shared storylines
+Some original career routing is explicitly shared. The Prostitute/Arm-Candy trigger block, for example, also consumes a common later storyline rather than treating both jobs as sealed silos.
+
+Design lesson: successor cross-career hooks can create authored continuity between professions while keeping ownership boundaries clean. Prefer read-only evidence/capability inputs and career-local consequences over global mutable meters.
+
 ## Successor implications to test, not auto-lock
 
 - Current approved successor seasonal-tradeoff candidate yields **+1.5 net progression-stat points per ordinary shift on average for all ten careers**. That is roughly +75 summed stat points across 50 shifts, versus about +25 in the recovered original work model. This is a balance-test flag, not a command to copy the original: verify progression speed and cap timing over a full 160-day run, especially with School and NG+.
