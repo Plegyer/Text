@@ -9,7 +9,7 @@ const enNegation=/\b(?:no|not|without|does not|do not|cannot|never|neither)\b/i;
 const ruNegation=/(?:^|[^\p{L}])(?:не|ни|без)(?:[^\p{L}]|$)/iu;
 
 test('C3-206..214 Artist source bank is bilingual, unique and mechanics-free',()=>{
-  assert.equal(bank.status,'CONTENT_PREP_ONLY_PENDING_FROZEN_ARTIST_RUNTIME');
+  assert.equal(bank.status,'LIVE_BOUND_ON_FROZEN_ARTIST_RUNTIME_WITH_AUTHORITY_GAPS');
   assert.equal(bank.invariants.createsGameplayIds,false);
   assert.equal(bank.invariants.changesMechanics,false);
   assert.equal(bank.invariants.changesSaveOrRng,false);
