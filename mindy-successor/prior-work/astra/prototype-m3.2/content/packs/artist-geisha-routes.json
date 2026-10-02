@@ -96,7 +96,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "Veteran readiness comes from broad ordinary Artist House work across all four seasonal contexts and opportunity windows. It does not depend on School, patronage, romance, or Palace access.",
+          "text": "Veteran is the route of broad ordinary practice: seasons, guests, rehearsals, and repeatable ability to carry a shift without mandatory specialization. Its value is consistency rather than a title.\n\nVeteran readiness should reflect breadth of work already accumulated without forcing an immediate career change. The option can remain open while ordinary shifts continue.",
           "conditions": [],
           "media": []
         }
@@ -190,7 +190,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "Master Artist readiness combines shipped performance breadth, the prepared Arts and Literacy School consumer facts, and the Artist-owned performance kit. No new discipline or contest subsystem is implied.",
+          "text": "Arts & Performance helps formulate stage intention, work with rhythm, and respond to a partner. This text selects no numeric threshold, publishes no new School fact, and invents no separate music, dance, or craft course.\n\nLiteracy & Numbers helps keep program, booking, and rehearsal notes so the next shift can rely on a record. It creates no new accounting subsystem and selects no School threshold.\n\nMaster Artist is depth of professional preparation: clear intention, repeatable rehearsal, usable records, and the ability to explain one's choices. It is not a universal ranking of artistic worth.\n\nThe Master Artist route does not choose an exact list of music, dance, craft, or other disciplines for the project. It describes quality of process on top of the existing Arts & Performance preparation.",
           "conditions": [],
           "media": []
         }
@@ -270,7 +270,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "The Artist House now has several independent professional contexts: mentor trust, a Satyr service-house network, confirmed Tavern information, and a Merchant material route. This is breadth evidence, not a universal patron system.",
+          "text": "A useful contact may explain the shape of an evening or introduce one specific person, but guarantees no invitation, work, or success. Each next step remains a separate Artist situation.",
           "conditions": [],
           "media": []
         }
@@ -353,7 +353,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "Patron Network readiness is built from multiple professional contexts plus prepared Rhetoric School readiness. It is not one wealthy patron, a romance gate, or a generic patron currency.",
+          "text": "Patron Network is several durable professional contacts where context, expectations, and the next conversation are understood. The network does not become a separate influence currency or a global patron system.\n\nA useful contact may explain the shape of an evening or introduce one specific person, but guarantees no invitation, work, or success. Each next step remains a separate Artist situation.",
           "conditions": [],
           "media": []
         }
@@ -447,7 +447,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "Prepared etiquette, formal Artist House presence, a winter salon window, and real Guard event context are enough to record a court-facing contact seam. This is only Artist-local contact evidence and does not unlock the Palace.",
+          "text": "Court Invitation is Artist-local evidence that a formal contact or invitation actually occurred. It describes career readiness for a formal context rather than access to the Palace.\n\nNeither formal attire, invitation, nor court contact replaces the existing Palace 10/10 Hard Work unlock. Artist content neither writes nor satisfies that global gate.",
           "conditions": [],
           "media": []
         }
@@ -535,7 +535,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "The Artist House Court Invitation route is ready because a real contact and invitation token now exist. This readiness changes only the Artist career; the locked Palace 10/10 Hard Work rule remains untouched.",
+          "text": "Etiquette & Presentation helps preserve the structure of a formal evening, move between guests, and close a topic clearly. The preparation creates no social rank and certainly no Palace access.\n\nCourt Invitation is Artist-local evidence that a formal contact or invitation actually occurred. It describes career readiness for a formal context rather than access to the Palace.\n\nEven with an Invitation Token, the route remains narrow: show which invitation the token belongs to and what the specific event expects. The token is not a universal pass.\n\nNeither formal attire, invitation, nor court contact replaces the existing Palace 10/10 Hard Work unlock. Artist content neither writes nor satisfies that global gate.",
           "conditions": [],
           "media": []
         }

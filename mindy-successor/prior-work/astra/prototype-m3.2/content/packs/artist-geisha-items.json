@@ -76,7 +76,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "A compact Artist House performance kit supports one prepared performance method. It does not define a universal discipline or create a contest system.",
+          "text": "The Performance Kit gathers what a prepared piece needs: props, a simple instrument, or costume elements within the current scene. It does not expand general inventory or define a universal list of artistic disciplines.\n\nHaving the kit means a specific piece can be prepared without a last-minute improvised substitute. It is evidence of Artist-local readiness rather than an automatic bonus to every performance.",
           "conditions": [],
           "media": []
         }
@@ -103,7 +103,7 @@
         {
           "id": "defer",
           "label": "Keep working without it",
-          "text": "Ordinary Artist House work remains available.",
+          "text": "Formal Attire, Performance Kit, and Invitation Token change only narrow Artist options and evidence. They create no general status, fame system, patron currency, contest bonus, or new Palace rule.",
           "conditions": [],
           "effects": []
         }
@@ -153,7 +153,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "Formal Artist House attire supports a narrow formal-presence option. It is not a universal status score and never grants Palace access.",
+          "text": "Formal attire helps fit the expectations of a specific performance or reception. It does not make the heroine a member of a higher social circle, guarantee respect, or open the Palace.\n\nChoosing formal attire means preparing the visual language of one evening: degree of formality, freedom of movement, and appropriateness. It is an Artist-local capability rather than permanent character status.",
           "conditions": [],
           "media": []
         }
@@ -180,7 +180,7 @@
         {
           "id": "defer",
           "label": "Keep working without it",
-          "text": "Ordinary Artist House work remains available.",
+          "text": "Formal Attire, Performance Kit, and Invitation Token change only narrow Artist options and evidence. They create no general status, fame system, patron currency, contest bonus, or new Palace rule.",
           "conditions": [],
           "effects": []
         }
@@ -230,7 +230,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "The invitation token records an Artist-local professional contact. It can support Court Invitation readiness but can never satisfy the Palace unlock.",
+          "text": "An Invitation Token confirms that a specific invitation or contact exists and can be presented in an Artist context. It is not a universal pass and does not satisfy the Palace unlock.\n\nEven with an Invitation Token, the route remains narrow: show which invitation the token belongs to and what the specific event expects. The token is not a universal pass.",
           "conditions": [],
           "media": []
         }
@@ -257,7 +257,7 @@
         {
           "id": "defer",
           "label": "Keep working without it",
-          "text": "Ordinary Artist House work remains available.",
+          "text": "Formal Attire, Performance Kit, and Invitation Token change only narrow Artist options and evidence. They create no general status, fame system, patron currency, contest bonus, or new Palace rule.",
           "conditions": [],
           "effects": []
         }

@@ -72,7 +72,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "A spring program opens a small Artist House performance window. The opportunity is scheduled by the existing calendar and remains a local career scene.",
+          "text": "The spring program is a window for a prepared piece, not a separate global festival system. You check that the central intention survives without extra ornament and only then add detail.",
           "conditions": [],
           "media": []
         }
@@ -156,7 +156,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "A summer evening brings a larger reception window. It is an Artist House opportunity only and does not introduce a global festival subsystem.",
+          "text": "A summer evening performance has to account for noise, late arrivals, and guest movement. The task is to preserve a readable scene and a clear ending, not to defeat unknown rivals in a nonexistent contest.",
           "conditions": [],
           "media": []
         }
@@ -240,7 +240,7 @@
       "variants": [
         {
           "id": "school-body-confidence",
-          "text": "The autumn festival window lets you use prepared body-confidence work as intentional stage presence while keeping personal boundaries explicit.",
+          "text": "Body Confidence supports intentional stage presence and the ability to state boundaries. Expression remains a choice and is not consent, availability, or an obligation to continue personal contact.",
           "conditions": [
             {
               "kind": "careerFact",
@@ -253,7 +253,7 @@
         },
         {
           "id": "default",
-          "text": "An autumn festival creates a local performance opportunity. Participation records only Artist/Geisha evidence; no generic contest engine or ranking is created.",
+          "text": "An autumn festival slot raises expectations but remains an Artist-local calendar event. You prepare the entrance, a fallback, and presentation boundaries without creating rankings, prizes, or a global contest system.\n\nBefore a public entrance, waiting becomes part of the work: check the kit, recall the order, and avoid spending attention comparing yourself with other pieces. Another strong performance does not reduce your own professional result.",
           "conditions": [],
           "media": []
         }
@@ -356,7 +356,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "A winter salon opens a formal Artist House opportunity. The scene can support later career evidence but does not grant Palace access.",
+          "text": "A winter salon rewards precise transitions and the ability to listen to the room. You leave a pause when it helps the scene or conversation and do not fill silence merely to display constant control.\n\nA salon evening requires moving from performance to conversation without an abrupt break. You notice when a guest has had enough attention and make room for the next part of the program without manipulation or promises.",
           "conditions": [],
           "media": []
         }
