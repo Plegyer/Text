@@ -78,29 +78,6 @@ function finishNight(state:Save,overrides:Record<string,string>={}){
   return s;
 }
 
-function reachArtistSeasonPending(state:Save,overrides:Record<string,string>={}){
-  let s=dispatch(state,{type:'endDay'},catalog),guard=0;
-  while(s.run.flow.night||s.run.pending){
-    if(++guard>400)throw new Error('season-pending loop');
-    if(s.run.pending){
-      if(s.run.pending.eventId.startsWith('artist-geisha.season.'))return s;
-      s=resolveOnePending(s,overrides);
-      continue;
-    }
-    const phase=s.run.flow.night?.phase;
-    if(phase==='LodgingResolution'){
-      s=dispatch(s,{type:'chooseLodging',id:'lodging.street'},catalog);
-      continue;
-    }
-    if(phase==='VoluntaryNightChoice'){
-      s=dispatch(s,{type:'chooseNightChoice',id:'night.sleep'},catalog);
-      continue;
-    }
-    throw new Error('season-pending night stalled at '+phase);
-  }
-  throw new Error('Artist seasonal window did not schedule on the next eligible day');
-}
-
 function artistWorkDay(state:Save,seasons:Set<string>,overrides:Record<string,string>={}){
   seasons.add(calendar(state.run.day).season);
   let s=dispatch(state,{type:'action',id:'artist-geisha.shift'},catalog);
@@ -128,11 +105,13 @@ test('clean Artist/Geisha run preserves scheduled scenes, advanced readiness, an
   s=parseSave(JSON.stringify(s),catalog);
   assert.equal(s.run.pending?.eventId,'artist-geisha.career.first-shift');
   assert.equal(s.run.pending?.variantId,firstVariant);
-  s=settlePending(s);
+  // Resolving first-shift advances Novice -> Performer. Production scheduled delivery
+  // queues the current-season window on that careerTransition and selects it in
+  // the same resolver boundary; do not require an artificial extra day tick.
+  s=resolveOnePending(s);
   assert.equal(s.run.progression.careers['artist-geisha'].stage,'performer');
-
-  // The next eligible calendar start schedules an Artist-local seasonal window.
-  s=reachArtistSeasonPending(s);
+  assert.ok(s.run.pending?.eventId.startsWith('artist-geisha.season.'),
+    'Artist seasonal window must schedule naturally from the first career transition');
   const scheduledId=s.run.pending!.eventId;
   const scheduledVariant=s.run.pending!.variantId;
   const scheduledChoices=[...(s.run.pending!.allowedChoiceIds??[])];
