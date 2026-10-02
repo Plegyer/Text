@@ -80,3 +80,40 @@ test('Prostitute prep contract keeps adult routing, School producer authority, a
   assert.ok(contract.schoolHooks.every((x:any)=>x.consumerEventId===null));
   assert.equal(contract.crossSystemReadOnlyInputs.artistGeisha,null);
 });
+
+
+test('Prostitute safe prep publishes typed local machines, narrow items, and voluntary Night only',()=>{
+  const career=definitions.careers.find((x:any)=>x.id==='prostitute');
+  assert.ok(career);
+  assert.deepEqual(career.stages,contract.provisionalRuntimePrep.career.stages);
+
+  const flow=definitions.quests.find((x:any)=>x.id==='prostitute.client-flow');
+  assert.ok(flow);
+  assert.deepEqual(flow.stages,contract.provisionalRuntimePrep.clientFlow.lifecycle);
+
+  const relationship=definitions.relationships.find((x:any)=>x.id==='prostitute.recurring-client');
+  assert.ok(relationship);
+  assert.deepEqual(relationship.stages,['introduced','professional-trust','mode-open','mode-defined','conflict-open','route-resolved']);
+
+  const exactItems:any={
+    prostitute_formal_attire:['prostitute_formal_presence'],
+    prostitute_private_room_key:['prostitute_private_room_access'],
+    prostitute_client_token:['prostitute_client_token'],
+    prostitute_evidence_case:['prostitute_handle_evidence']
+  };
+  for(const [id,capabilities] of Object.entries(exactItems)){
+    const item=definitions.itemDefinitions.find((x:any)=>x.id===id);
+    assert.ok(item,id);
+    assert.deepEqual(item.capabilities,capabilities,id);
+  }
+
+  const night=definitions.nightChoices.find((x:any)=>x.id==='prostitute.night.client-followup');
+  assert.ok(night);
+  assert.equal(night.nextDayEnergyDelta,0);
+  assert.deepEqual(night.nextDayEffects,[]);
+
+  assert.deepEqual(
+    definitions.endings.filter((e:any)=>e.id.startsWith('ending.prostitute.')).map((e:any)=>e.id),
+    ['ending.prostitute.hard-work']
+  );
+});
