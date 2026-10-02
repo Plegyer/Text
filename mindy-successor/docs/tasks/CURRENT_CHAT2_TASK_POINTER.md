@@ -1,39 +1,26 @@
 # CURRENT CHAT2 TASK POINTER
 
-Status: **ACTIVE — SCHOOL D20 CURRENT-MAIN ASSEMBLY / SOLE FULL-CI SLOT**
+Status: **ACTIVE — ORDINARY WORK SEASONAL TRADEOFFS CURRENT-MAIN ASSEMBLY / SOLE FULL-CI SLOT**
 Owner: Chat 2 / Integration + Assembly + Technical QA
 
-## Current QA state
+Current main: `6a6f69f2a8f4f48a0767114ef41626e8f0cab61c`
 
-Assassin repaired assembly PR #257 / CI #1111:
-- 982 tests;
-- 981 pass;
-- 1 fail;
-- first #1110 contract-close defect is confirmed fixed;
-- remaining defect is Assassin-author-owned refusal-evidence reachability.
+Producer candidate:
+- PR #260
+- frozen SHA `d94a6a236a87267221a386406189a93a13615f47`
 
-Chat 3 owns that repair. Do not patch Assassin yourself while waiting.
+Assassin and School D20 are already shipped and exact-main green.
 
-## Assignment now
+## Assignment
 
-Use the free CI slot productively on School D20:
+1. create fresh `chat2/assembly-work-seasonal-tradeoffs-*` from current main;
+2. selectively apply PR #260, preserving shipped Assassin/School;
+3. verify exactly 2 negative seasons per ordinary profession, one -1 progression-stat effect each, no Lust negatives;
+4. preserve all positive effects, wages, unlocks, counters/items, events and Hard Work=50;
+5. audit `definitions.json` collisions carefully;
+6. run focused/static audit first;
+7. open one assembly PR and consume the sole full-CI slot once;
+8. mine all failures before any rerun;
+9. if green freeze exact SHA and report `READY_FOR_LEADER_MERGE`.
 
-Producer PR #254
-Frozen School head:
-`877927cf747ba9f69a53ddccf4373b795561f3a0`
-
-From fresh current main:
-`426ec9146716e1246d6b7bfdd4a570ef2fcb0a54`
-
-1. create a fresh Chat 2 School assembly branch;
-2. audit the frozen D20 delta against current main;
-3. preserve all current shipped careers and coordination/reference docs;
-4. verify Body Confidence paid lesson => Lust +2 exactly once;
-5. verify Night Study does not inherit that Lust gain;
-6. open one assembly PR and consume one full CI run;
-7. mine all failures before any rerun;
-8. if green, freeze exact assembly SHA and report READY_FOR_LEADER_MERGE.
-
-After School is green/closed, return to the newly repaired Assassin SHA from Chat 3.
-
-No other worker may use full CI.
+No other worker uses full CI.
