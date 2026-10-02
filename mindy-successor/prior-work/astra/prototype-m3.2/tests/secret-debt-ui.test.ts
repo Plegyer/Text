@@ -67,7 +67,7 @@ async function bootSave(save:any,locale:'ru'|'en'){
   w.localStorage.setItem('portal-life.v1',JSON.stringify(save));
   w.localStorage.setItem('portal-life.locale',locale);
   w.eval(bundle);
-  await wait(()=>!!w.document.querySelector('[data-ending-id="ending.secret-debt.paid-freedom"]'));
+  await wait(()=>!!w.document.querySelector('.game-shell'));
   return {dom,w,errors};
 }
 
