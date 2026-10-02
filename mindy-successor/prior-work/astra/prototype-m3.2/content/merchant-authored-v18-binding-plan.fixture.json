@@ -1,12 +1,12 @@
 {
   "formatVersion": 1,
   "id": "chat3.merchant-authored-v18.binding-plan",
-  "status": "PROVISIONAL_ONLY_PENDING_FROZEN_MERCHANT_RUNTIME",
+  "status": "FINAL_BINDING_AUDITED_ON_FROZEN_MERCHANT_RUNTIME",
   "authority": {
     "runtimeBranch": "chat1/merchant-complete-v15",
-    "observedHead": "2d37e7a24fb90f40e08322f2bd9438711cf70455",
+    "observedHead": "88422257f618c7182dd6d1f3eca7596c9972eb0a",
     "contractBlob": "31e353c0284700ff29d658fff9c1032193c0e563",
-    "frozen": false
+    "frozen": true
   },
   "allowedActionScenes": [
     "merchant.shift#spring.default",
@@ -57,7 +57,10 @@
       "provisionalTargetIds": [
         "merchant.shift#spring.default"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.shift#spring.default"
+      ]
     },
     {
       "contentKey": "spring.route-check",
@@ -66,7 +69,10 @@
       "provisionalTargetIds": [
         "merchant.shift#spring.default"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.shift#spring.default"
+      ]
     },
     {
       "contentKey": "spring.first-delivery",
@@ -75,7 +81,10 @@
       "provisionalTargetIds": [
         "merchant.shift#spring.default"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.shift#spring.default"
+      ]
     },
     {
       "contentKey": "summer.festival-demand",
@@ -84,7 +93,10 @@
       "provisionalTargetIds": [
         "merchant.shift#summer.default"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.shift#summer.default"
+      ]
     },
     {
       "contentKey": "summer.perishable-window",
@@ -93,7 +105,10 @@
       "provisionalTargetIds": [
         "merchant.shift#summer.default"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.shift#summer.default"
+      ]
     },
     {
       "contentKey": "summer.crowded-negotiation",
@@ -102,7 +117,10 @@
       "provisionalTargetIds": [
         "merchant.shift#summer.default"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.shift#summer.default"
+      ]
     },
     {
       "contentKey": "autumn.harvest-lots",
@@ -111,7 +129,10 @@
       "provisionalTargetIds": [
         "merchant.shift#autumn.default"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.shift#autumn.default"
+      ]
     },
     {
       "contentKey": "autumn.storage-notes",
@@ -120,7 +141,10 @@
       "provisionalTargetIds": [
         "merchant.shift#autumn.default"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.shift#autumn.default"
+      ]
     },
     {
       "contentKey": "autumn.supplier-comparison",
@@ -129,7 +153,10 @@
       "provisionalTargetIds": [
         "merchant.shift#autumn.default"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.shift#autumn.default"
+      ]
     },
     {
       "contentKey": "winter.scarcity-board",
@@ -138,7 +165,10 @@
       "provisionalTargetIds": [
         "merchant.shift#winter.default"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.shift#winter.default"
+      ]
     },
     {
       "contentKey": "winter.route-delay",
@@ -147,7 +177,10 @@
       "provisionalTargetIds": [
         "merchant.shift#winter.default"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.shift#winter.default"
+      ]
     },
     {
       "contentKey": "winter.regulars-first",
@@ -156,7 +189,10 @@
       "provisionalTargetIds": [
         "merchant.shift#winter.default"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.shift#winter.default"
+      ]
     },
     {
       "contentKey": "timing.late-offer",
@@ -165,7 +201,10 @@
       "provisionalTargetIds": [
         "merchant.trade.delivery"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.trade.delivery"
+      ]
     },
     {
       "contentKey": "uncertainty.appraisal-note",
@@ -174,7 +213,10 @@
       "provisionalTargetIds": [
         "merchant.trade.appraisal"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.trade.appraisal"
+      ]
     },
     {
       "contentKey": "supplier.promise-vs-history",
@@ -183,7 +225,10 @@
       "provisionalTargetIds": [
         "merchant.trade.delivery"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.trade.delivery"
+      ]
     },
     {
       "contentKey": "manifest.seal-mismatch",
@@ -192,7 +237,10 @@
       "provisionalTargetIds": [
         "merchant.trade.records"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.trade.records"
+      ]
     },
     {
       "contentKey": "delivery.partial-window",
@@ -201,7 +249,10 @@
       "provisionalTargetIds": [
         "merchant.trade.delivery"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.trade.delivery"
+      ]
     },
     {
       "contentKey": "buyer.need-vs-volume",
@@ -210,7 +261,10 @@
       "provisionalTargetIds": [
         "merchant.trade.delivery"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.trade.delivery"
+      ]
     },
     {
       "contentKey": "record.cash-timing",
@@ -219,7 +273,10 @@
       "provisionalTargetIds": [
         "merchant.trade.records"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.trade.records"
+      ]
     },
     {
       "contentKey": "shortage.wait-or-sell",
@@ -228,7 +285,10 @@
       "provisionalTargetIds": [
         "merchant.trade.shortage"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.trade.shortage"
+      ]
     },
     {
       "contentKey": "appraisal.second-check",
@@ -237,7 +297,10 @@
       "provisionalTargetIds": [
         "merchant.trade.appraisal"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.trade.appraisal"
+      ]
     },
     {
       "contentKey": "contract.plain-terms",
@@ -246,7 +309,10 @@
       "provisionalTargetIds": [
         "merchant.trade.records"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.trade.records"
+      ]
     },
     {
       "contentKey": "supplier.backup",
@@ -255,7 +321,10 @@
       "provisionalTargetIds": [
         "merchant.trade.delivery"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.trade.delivery"
+      ]
     },
     {
       "contentKey": "delivery.confirmation",
@@ -264,7 +333,10 @@
       "provisionalTargetIds": [
         "merchant.trade.delivery"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.trade.delivery"
+      ]
     },
     {
       "contentKey": "supplier.introduction",
@@ -273,7 +345,10 @@
       "provisionalTargetIds": [
         "merchant.relationship.intro"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.relationship.intro"
+      ]
     },
     {
       "contentKey": "supplier.trust",
@@ -282,7 +357,10 @@
       "provisionalTargetIds": [
         "merchant.relationship.trust"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.relationship.trust"
+      ]
     },
     {
       "contentKey": "supplier.conflict",
@@ -291,7 +369,10 @@
       "provisionalTargetIds": [
         "merchant.relationship.conflict-open"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.relationship.conflict-open"
+      ]
     },
     {
       "contentKey": "supplier.cooperate",
@@ -300,7 +381,10 @@
       "provisionalTargetIds": [
         "merchant.relationship.conflict-resolve"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.relationship.conflict-resolve"
+      ]
     },
     {
       "contentKey": "supplier.rivalry",
@@ -309,7 +393,10 @@
       "provisionalTargetIds": [
         "merchant.relationship.conflict-resolve"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.relationship.conflict-resolve"
+      ]
     },
     {
       "contentKey": "supplier.refusal",
@@ -318,7 +405,10 @@
       "provisionalTargetIds": [
         "merchant.relationship.conflict-resolve"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.relationship.conflict-resolve"
+      ]
     },
     {
       "contentKey": "supplier.utility",
@@ -327,7 +417,10 @@
       "provisionalTargetIds": [
         "merchant.relationship.utility"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.relationship.utility"
+      ]
     },
     {
       "contentKey": "supplier.boundary",
@@ -336,7 +429,10 @@
       "provisionalTargetIds": [
         "merchant.relationship.utility"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.relationship.utility"
+      ]
     },
     {
       "contentKey": "liquidity.street",
@@ -345,7 +441,10 @@
       "provisionalTargetIds": [
         "merchant.poverty.liquidity-response"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.poverty.liquidity-response"
+      ]
     },
     {
       "contentKey": "liquidity.cheap-room",
@@ -354,7 +453,10 @@
       "provisionalTargetIds": [
         "merchant.poverty.liquidity-response"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.poverty.liquidity-response"
+      ]
     },
     {
       "contentKey": "liquidity.commission-only",
@@ -363,7 +465,10 @@
       "provisionalTargetIds": [
         "merchant.poverty.liquidity-response"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.poverty.liquidity-response"
+      ]
     },
     {
       "contentKey": "liquidity.barter-narrow",
@@ -372,7 +477,10 @@
       "provisionalTargetIds": [
         "merchant.poverty.liquidity-response"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.poverty.liquidity-response"
+      ]
     },
     {
       "contentKey": "liquidity.no-debt-state",
@@ -381,7 +489,10 @@
       "provisionalTargetIds": [
         "merchant.poverty.liquidity-response"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.poverty.liquidity-response"
+      ]
     },
     {
       "contentKey": "scales.meaning",
@@ -390,7 +501,10 @@
       "provisionalTargetIds": [
         "merchant.items.appraisal-scales"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.items.appraisal-scales"
+      ]
     },
     {
       "contentKey": "scales.uncertainty",
@@ -400,7 +514,11 @@
         "merchant.items.appraisal-scales",
         "merchant.trade.appraisal"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.items.appraisal-scales",
+        "merchant.trade.appraisal"
+      ]
     },
     {
       "contentKey": "manifest.meaning",
@@ -409,7 +527,10 @@
       "provisionalTargetIds": [
         "merchant.items.manifest-case"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.items.manifest-case"
+      ]
     },
     {
       "contentKey": "manifest.plain-terms",
@@ -419,7 +540,11 @@
         "merchant.items.manifest-case",
         "merchant.trade.records"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.items.manifest-case",
+        "merchant.trade.records"
+      ]
     },
     {
       "contentKey": "sample-kit.meaning",
@@ -428,7 +553,10 @@
       "provisionalTargetIds": [
         "merchant.items.sample-kit"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.items.sample-kit"
+      ]
     },
     {
       "contentKey": "items.no-capacity-system",
@@ -439,7 +567,12 @@
         "merchant.items.manifest-case",
         "merchant.items.sample-kit"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.items.appraisal-scales",
+        "merchant.items.manifest-case",
+        "merchant.items.sample-kit"
+      ]
     },
     {
       "contentKey": "school.records",
@@ -448,7 +581,10 @@
       "provisionalTargetIds": [
         "merchant.routes.house-ready"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.routes.house-ready"
+      ]
     },
     {
       "contentKey": "school.negotiation",
@@ -457,14 +593,18 @@
       "provisionalTargetIds": [
         "merchant.relationship.trust"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.relationship.trust"
+      ]
     },
     {
       "contentKey": "school.formal-terms",
       "section": "school-boundary",
       "targetKind": "schoolConsumerBoundary",
       "provisionalTargetIds": [],
-      "status": "UNBOUND_NO_CURRENT_CONSUMER"
+      "status": "UNBOUND_NO_FROZEN_MERCHANT_CONSUMER",
+      "finalTargetIds": []
     },
     {
       "contentKey": "school.arcana",
@@ -473,7 +613,10 @@
       "provisionalTargetIds": [
         "merchant.trade.appraisal"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.trade.appraisal"
+      ]
     },
     {
       "contentKey": "cross.lumber",
@@ -482,7 +625,10 @@
       "provisionalTargetIds": [
         "merchant.cross.lumber-route"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.cross.lumber-route"
+      ]
     },
     {
       "contentKey": "cross.farm",
@@ -491,7 +637,10 @@
       "provisionalTargetIds": [
         "merchant.cross.farm-sample"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.cross.farm-sample"
+      ]
     },
     {
       "contentKey": "cross.hunter",
@@ -500,7 +649,10 @@
       "provisionalTargetIds": [
         "merchant.cross.hunter-return"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.cross.hunter-return"
+      ]
     },
     {
       "contentKey": "cross.tavern",
@@ -509,7 +661,10 @@
       "provisionalTargetIds": [
         "merchant.cross.tavern-rumour"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.cross.tavern-rumour"
+      ]
     },
     {
       "contentKey": "cross.guard",
@@ -518,7 +673,10 @@
       "provisionalTargetIds": [
         "merchant.cross.guard-pass"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.cross.guard-pass"
+      ]
     },
     {
       "contentKey": "cross.activity-boundary",
@@ -527,7 +685,10 @@
       "provisionalTargetIds": [
         "merchant.cross.hunter-return"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.cross.hunter-return"
+      ]
     },
     {
       "contentKey": "house.stable-operations",
@@ -537,7 +698,11 @@
         "merchant.routes.house-ready",
         "merchant.career.choose-route"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.routes.house-ready",
+        "merchant.career.choose-route"
+      ]
     },
     {
       "contentKey": "house.network",
@@ -547,7 +712,11 @@
         "merchant.routes.house-ready",
         "merchant.career.choose-route"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.routes.house-ready",
+        "merchant.career.choose-route"
+      ]
     },
     {
       "contentKey": "house.logistics",
@@ -557,7 +726,11 @@
         "merchant.routes.house-ready",
         "merchant.career.choose-route"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.routes.house-ready",
+        "merchant.career.choose-route"
+      ]
     },
     {
       "contentKey": "house.records",
@@ -567,7 +740,11 @@
         "merchant.routes.house-ready",
         "merchant.career.choose-route"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.routes.house-ready",
+        "merchant.career.choose-route"
+      ]
     },
     {
       "contentKey": "house.readiness",
@@ -577,7 +754,11 @@
         "merchant.routes.house-ready",
         "merchant.career.choose-route"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.routes.house-ready",
+        "merchant.career.choose-route"
+      ]
     },
     {
       "contentKey": "speculator.scarcity",
@@ -587,7 +768,11 @@
         "merchant.routes.speculator-ready",
         "merchant.career.choose-route"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.routes.speculator-ready",
+        "merchant.career.choose-route"
+      ]
     },
     {
       "contentKey": "speculator.risk",
@@ -597,7 +782,11 @@
         "merchant.routes.speculator-ready",
         "merchant.career.choose-route"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.routes.speculator-ready",
+        "merchant.career.choose-route"
+      ]
     },
     {
       "contentKey": "speculator.grey-route",
@@ -607,7 +796,11 @@
         "merchant.routes.speculator-ready",
         "merchant.career.choose-route"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.routes.speculator-ready",
+        "merchant.career.choose-route"
+      ]
     },
     {
       "contentKey": "speculator.not-morality",
@@ -617,7 +810,11 @@
         "merchant.routes.speculator-ready",
         "merchant.career.choose-route"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.routes.speculator-ready",
+        "merchant.career.choose-route"
+      ]
     },
     {
       "contentKey": "speculator.readiness",
@@ -627,7 +824,11 @@
         "merchant.routes.speculator-ready",
         "merchant.career.choose-route"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.routes.speculator-ready",
+        "merchant.career.choose-route"
+      ]
     },
     {
       "contentKey": "patron.lumber",
@@ -637,7 +838,11 @@
         "merchant.routes.patron-ready",
         "merchant.cross.lumber-route"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.routes.patron-ready",
+        "merchant.cross.lumber-route"
+      ]
     },
     {
       "contentKey": "patron.farm",
@@ -647,7 +852,11 @@
         "merchant.routes.patron-ready",
         "merchant.cross.farm-sample"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.routes.patron-ready",
+        "merchant.cross.farm-sample"
+      ]
     },
     {
       "contentKey": "patron.hunter",
@@ -657,7 +866,11 @@
         "merchant.routes.patron-ready",
         "merchant.cross.hunter-return"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.routes.patron-ready",
+        "merchant.cross.hunter-return"
+      ]
     },
     {
       "contentKey": "patron.tavern",
@@ -667,7 +880,11 @@
         "merchant.routes.patron-ready",
         "merchant.cross.tavern-rumour"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.routes.patron-ready",
+        "merchant.cross.tavern-rumour"
+      ]
     },
     {
       "contentKey": "patron.guard",
@@ -677,7 +894,11 @@
         "merchant.routes.patron-ready",
         "merchant.cross.guard-pass"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.routes.patron-ready",
+        "merchant.cross.guard-pass"
+      ]
     },
     {
       "contentKey": "patron.network",
@@ -687,7 +908,11 @@
         "merchant.routes.patron-ready",
         "merchant.career.choose-patron"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.routes.patron-ready",
+        "merchant.career.choose-patron"
+      ]
     },
     {
       "contentKey": "veteran.identity",
@@ -696,7 +921,10 @@
       "provisionalTargetIds": [
         "merchant.career.veteran-ready"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.career.veteran-ready"
+      ]
     },
     {
       "contentKey": "route.defer",
@@ -706,7 +934,11 @@
         "merchant.career.choose-route",
         "merchant.career.choose-patron"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.career.choose-route",
+        "merchant.career.choose-patron"
+      ]
     },
     {
       "contentKey": "readiness.not-ending",
@@ -716,7 +948,11 @@
         "merchant.career.choose-route",
         "merchant.career.choose-patron"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "merchant.career.choose-route",
+        "merchant.career.choose-patron"
+      ]
     },
     {
       "contentKey": "outcome.boundary",
@@ -725,7 +961,10 @@
       "provisionalTargetIds": [
         "ending.merchant.hard-work"
       ],
-      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "ending.merchant.hard-work"
+      ]
     }
   ]
 }
