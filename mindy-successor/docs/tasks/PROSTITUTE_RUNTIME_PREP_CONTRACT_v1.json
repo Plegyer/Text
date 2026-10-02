@@ -1,0 +1,384 @@
+{
+  "version": 1,
+  "status": "SAFE_PREP_ONLY",
+  "owner": "Chat 1 / Runtime + Integration Developer",
+  "queue": "C1D-193..204",
+  "activationCommit": "260e44daad22a6ab8eb879ee24f13b9ec2abf19b",
+  "finalRebuildRequired": true,
+  "finalRebuildRule": "Rebuild on the exact future shipped baseline after Artist/Assassin integration sequencing and require one real executable exact-head required-workflow SUCCESS before any Prostitute production freeze.",
+  "shippedAuthority": {
+    "ordinaryShift": {
+      "id": "prostitute.shift",
+      "label": "Professional shift",
+      "description": "Work a voluntary ordinary professional shift with player agency and boundaries. Initial tuning remains balance-owned.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "stat",
+                  "stat": "sexuality",
+                  "op": "gte",
+                  "value": 55
+                },
+                {
+                  "kind": "stat",
+                  "stat": "charm",
+                  "op": "gte",
+                  "value": 40
+                },
+                {
+                  "kind": "stat",
+                  "stat": "sociability",
+                  "op": "gte",
+                  "value": 35
+                }
+              ]
+            },
+            {
+              "kind": "calendarYear",
+              "op": "gte",
+              "value": 3
+            }
+          ]
+        }
+      ],
+      "effects": [
+        {
+          "kind": "incrementCareerCounter",
+          "career": "prostitute",
+          "counter": "completed_shifts",
+          "amount": 1
+        }
+      ],
+      "mode": "normal",
+      "wage": {
+        "base": 15,
+        "weights": [
+          {
+            "stat": "sexuality",
+            "factor": 0.35
+          },
+          {
+            "stat": "charm",
+            "factor": 0.3
+          },
+          {
+            "stat": "manners",
+            "factor": 0.2
+          },
+          {
+            "stat": "endurance",
+            "factor": 0.15
+          }
+        ]
+      },
+      "scenes": [
+        {
+          "id": "spring.default",
+          "text": "Spring professional shift: the season changes the ordinary work context.",
+          "conditions": [],
+          "media": [
+            "stage.room"
+          ]
+        },
+        {
+          "id": "summer.default",
+          "text": "Summer professional shift: demand, routes, or crowds shift with the season.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "summer"
+            }
+          ],
+          "media": [
+            "stage.room"
+          ]
+        },
+        {
+          "id": "autumn.default",
+          "text": "Autumn professional shift: seasonal pressure changes the work mix.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "autumn"
+            }
+          ],
+          "media": [
+            "stage.room"
+          ]
+        },
+        {
+          "id": "winter.default",
+          "text": "Winter professional shift: scarcity, access, or regular clients change the routine.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "winter"
+            }
+          ],
+          "media": [
+            "stage.room"
+          ]
+        }
+      ],
+      "seasonal": {
+        "spring": [
+          {
+            "kind": "modifyStat",
+            "stat": "sexuality",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "charm",
+            "delta": 1
+          }
+        ],
+        "summer": [
+          {
+            "kind": "modifyStat",
+            "stat": "charm",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "endurance",
+            "delta": 1
+          }
+        ],
+        "autumn": [
+          {
+            "kind": "modifyStat",
+            "stat": "manners",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "sexuality",
+            "delta": 1
+          }
+        ],
+        "winter": [
+          {
+            "kind": "modifyStat",
+            "stat": "charm",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "manners",
+            "delta": 1
+          }
+        ]
+      }
+    },
+    "hardWorkEnding": {
+      "id": "ending.prostitute.hard-work",
+      "title": "Prostitute Hard Work",
+      "description": "Persistence ending: fifty completed Prostitute shifts.",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "prostitute",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 50
+        }
+      ],
+      "reward": "prostitute.hardwork.compat",
+      "metaRewards": [
+        {
+          "kind": "hardWork",
+          "rewardId": "hardWork:prostitute",
+          "career": "prostitute"
+        }
+      ],
+      "epilogue": "Hard Work completion recorded for Prostitute."
+    },
+    "schoolAuthority": "capability-match-only",
+    "existingPresentationAssets": [
+      "career-prostitute-result.svg",
+      "career-prostitute-shift-spring.svg",
+      "career-prostitute-shift-summer.svg",
+      "career-prostitute-shift-autumn.svg",
+      "career-prostitute-shift-winter.svg"
+    ],
+    "secretDebtProductionState": "ABSENT_ON_ACTIVATION_BASE"
+  },
+  "provisionalRuntimePrep": {
+    "career": {
+      "id": "prostitute",
+      "stages": [
+        "new-independent-worker",
+        "known-professional",
+        "established",
+        "veteran",
+        "independent-house",
+        "elite-clientele",
+        "network-protection",
+        "outcome-ready"
+      ],
+      "publicComplexEndingIds": null
+    },
+    "clientFlow": {
+      "id": "prostitute.client-flow",
+      "lifecycle": [
+        "dormant",
+        "intake",
+        "terms",
+        "boundary",
+        "work-result",
+        "payment-admin",
+        "closed"
+      ],
+      "exactClientIdentity": null,
+      "exactSafetyMechanic": null,
+      "exactPriceOrPaymentRetune": null
+    },
+    "relationship": {
+      "id": "prostitute.recurring-client",
+      "role": "recurring client / professional contact",
+      "recurringImpliesRomance": false,
+      "modes": [
+        "professional-only",
+        "friendship",
+        "romance"
+      ],
+      "exactRelationshipScope": null
+    },
+    "night": {
+      "voluntaryChoiceId": "prostitute.night.client-followup",
+      "forced": false,
+      "nextDayEnergyDelta": 0,
+      "secretDebtSemanticsInherited": false
+    },
+    "items": [
+      {
+        "id": "prostitute_formal_attire",
+        "capability": "prostitute_formal_presence",
+        "scope": "Prostitute-local formal/social context only; never Palace access."
+      },
+      {
+        "id": "prostitute_private_room_key",
+        "capability": "prostitute_private_room_access",
+        "scope": "Prostitute-local private-room/workplace context only; no housing rewrite."
+      },
+      {
+        "id": "prostitute_client_token",
+        "capability": "prostitute_client_token",
+        "scope": "Prostitute-local recurring-client route token only."
+      },
+      {
+        "id": "prostitute_evidence_case",
+        "capability": "prostitute_handle_evidence",
+        "scope": "Prostitute-local documentation/protection context only."
+      }
+    ]
+  },
+  "adultContentRouter": {
+    "status": "AUTHORITY_NULL",
+    "lustThreshold": null,
+    "consentStateMechanic": null,
+    "explicitPresentationGate": null,
+    "productionEventIds": null,
+    "productionNightIds": null,
+    "rule": "Adult/intimacy is a core future authored/presentation family, but this runtime prep publishes no exact Lust threshold, persisted consent state, explicit gating rule, or automatic adult event binding."
+  },
+  "schoolHooks": [
+    {
+      "trackId": "school.track.rhetoric_and_social",
+      "producerThreshold": null,
+      "producerPublicFact": null,
+      "consumerEventId": null
+    },
+    {
+      "trackId": "school.track.literacy_and_numbers",
+      "producerThreshold": null,
+      "producerPublicFact": null,
+      "consumerEventId": null
+    },
+    {
+      "trackId": "school.track.etiquette_and_presentation",
+      "producerThreshold": null,
+      "producerPublicFact": null,
+      "consumerEventId": null
+    },
+    {
+      "trackId": "school.track.arts_and_performance",
+      "producerThreshold": null,
+      "producerPublicFact": null,
+      "consumerEventId": null
+    },
+    {
+      "trackId": "school.track.body_confidence",
+      "producerThreshold": null,
+      "producerPublicFact": null,
+      "consumerEventId": null
+    }
+  ],
+  "crossSystemReadOnlyInputs": {
+    "satyrMaid": {
+      "career": "satyr-maid",
+      "fact": "personal-network-ready"
+    },
+    "tavern": {
+      "career": "tavern",
+      "fact": "rumour-confirmed"
+    },
+    "guard": {
+      "career": "guard",
+      "fact": "city-dispute-resolved"
+    },
+    "merchant": {
+      "career": "merchant",
+      "fact": "delivery-recorded"
+    },
+    "artistGeisha": null,
+    "artistRule": "Activation main exposes only the baseline artist-geisha novice machine, so no Artist fact may be invented or read in this prep.",
+    "rule": "Cross-system events may read these exact shipped facts and write Prostitute-local state only."
+  },
+  "unresolved": {
+    "exactLustThresholdOrRouter": null,
+    "exactConsentStateMechanics": null,
+    "explicitPresentationGating": null,
+    "workplaceModel": null,
+    "clientSafetyMechanics": null,
+    "exactIncomeRetune": null,
+    "exactLegalContext": null,
+    "exactRelationshipScope": null,
+    "newPublicComplexEndingIds": null,
+    "newPublicComplexEndingRewards": null,
+    "palaceAccessFromProstituteCareer": null
+  },
+  "collisionSurface": {
+    "sharedFiles": [
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/definitions.json",
+      "mindy-successor/prior-work/astra/prototype-m3.2/src/core/schema.ts"
+    ],
+    "additiveFamilies": [
+      "mindy-successor/prior-work/astra/prototype-m3.2/content/packs/prostitute-*.json",
+      "mindy-successor/prior-work/astra/prototype-m3.2/tests/prostitute-*.test.ts",
+      "mindy-successor/docs/tasks/PROSTITUTE_RUNTIME_PREP_CONTRACT_v1.json"
+    ]
+  },
+  "invariants": [
+    "prostitute.shift remains voluntary ordinary 1-Energy work",
+    "unlock remains Sexuality 55 + Charm 40 + Sociability 35 OR Year 3",
+    "wage remains base 15 with shipped stat weights",
+    "all four shipped seasonal scene/stat packages remain unchanged",
+    "ending.prostitute.hard-work, reward prostitute.hardwork.compat, and Meta hardWork:prostitute remain unchanged",
+    "ordinary Prostitute never inherits Secret Debt owner/debt lock or forced-night semantics",
+    "confidence/presentation and Sexuality/Lust are not treated as consent",
+    "recurring client does not imply romance",
+    "School producer thresholds/public facts remain null",
+    "no Palace access, universal reputation/status, generic patron system, or new public complex Prostitute ending is introduced"
+  ]
+}
