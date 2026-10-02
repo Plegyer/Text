@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "id": "assassin.activity",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "activities": [
+        "assassin.infiltration"
+      ],
+      "careers": [
+        "assassin"
+      ]
+    },
+    "writes": {
+      "careers": [
+        "assassin"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "assassin.activity.infiltration-return",
+      "title": "Review an advanced infiltration return",
+      "sourceDomain": "assassin",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "activityResult",
+          "activity": "assassin.infiltration",
+          "outcome": "success",
+          "result": "assassin.infiltration.success"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 79,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerFact",
+          "career": "assassin",
+          "fact": "infiltration-returned",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "assassin",
+          "fact": "advanced-infiltration-reviewed",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Review the advanced outing as career evidence: what context held, which capability mattered, and where the fallback preserved the plan. No real-world bypass procedure is recorded.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record advanced infiltration evidence",
+          "text": "Record advanced infiltration evidence.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "assassin",
+              "fact": "advanced-infiltration-reviewed"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
