@@ -84,7 +84,7 @@ export const productAcceptanceSteps:HarnessStep[]=[
   {id:'PA23',label:'explicit ending commitment',apis:['commitEnding','saveReload'],requires:['hardWorkEnding','complexLumberEnding'],assertions:['state','ending','meta','resolver'],checkpoint:'committed-before-completion'},
   {id:'PA24',label:'central completion creates RunResult once',apis:['completeEnding','saveReload'],requires:[],assertions:['state','ending','meta'],checkpoint:'completed'},
   {id:'PA25',label:'reward remains exactly once before New Run',apis:['saveReload'],requires:[],assertions:['state','ending','meta'],checkpoint:'reward-before-new-run'},
-  {id:'PA26',label:'New Run preserves Meta and exposes visible difference',apis:['newLife','saveReload'],requires:[],assertions:['state','energy','money','calendar','meta'],checkpoint:'new-run'}
+  {id:'PA26',label:'New Run preserves Meta and resets run-local start state',apis:['newLife','saveReload'],requires:[],assertions:['state','energy','money','calendar','meta'],checkpoint:'new-run'}
 ];
 
 export interface ProductAcceptanceFixture {
