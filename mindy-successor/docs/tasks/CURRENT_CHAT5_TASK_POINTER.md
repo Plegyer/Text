@@ -1,16 +1,26 @@
 # CURRENT CHAT5 TASK POINTER
 
-Status: **ARTIST C5-204 WAITING / ASSASSIN SCHOOL PREP v19 ACTIVE**
+Status: **ARTIST SCHOOL FROZEN / QA ACTIVE — ASSASSIN PREP COMPLETE — PROSTITUTE SCHOOL PREP v20 ACTIVE**
 Owner: Chat 5 / School + Text Localization Worker
 
-Primary dependency:
-- Artist/Geisha PR #232 safe prep C5-193..203 is complete and green.
-- C5-204 must execute immediately when Chat 1 publishes one exact frozen green Artist runtime.
+Artist/Geisha frozen history:
+- PR #232
+- exact head `13bb952aa3afb99760edbb23a3c00dfa7f72fa86`
+- exact base runtime #234 `955f4accf7e25c42e0384ddb9f76e5612f41dd00`
+- CI #995 / id `36986582184`: SUCCESS
+- 924 / 924 tests
+- **CANDIDATE_FROZEN / READY FOR CHAT 4 QA**
+- do not move #232 except for a concrete QA blocker or explicit Lead request.
 
-No-idle work now:
-- queue `TASK_CHAT5_SCHOOL_QUEUE_v19.md`
-- branch `chat5/assassin-school-prep-v19`
-- execute C5-205..216 capability-only Assassin prep.
-- no canonical Assassin School gates, thresholds, public facts, contract/target state or Palace authority.
+Assassin safe prep:
+- PR #238 completed C5-205..216 capability-only prep.
+- latest required CI failures have no runner steps; do not reinterpret them as code failures or manufacture production authority.
+- keep Assassin prep production-unbound.
 
-**Interrupt Assassin prep immediately when Artist runtime #234 becomes frozen + exact-head green; C5-204 has priority.**
+No-idle next work:
+- queue `TASK_CHAT5_SCHOOL_QUEUE_v20.md`
+- branch `chat5/prostitute-school-prep-v20`
+- execute C5-217..228 safe, non-explicit voluntary-Prostitute School prep.
+- this work is prep-only; no runtime consumer IDs, thresholds, public facts, consent/Lust/client state, forced Night, Secret Debt mechanics, Palace privilege or career transitions may be invented.
+
+Artist QA requests always preempt the prep queue.

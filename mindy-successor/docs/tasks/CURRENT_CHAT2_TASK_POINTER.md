@@ -1,16 +1,28 @@
 # CURRENT CHAT2 TASK POINTER
 
-Status: **ARTIST C2-204 WAITING / ASSASSIN PRESENTATION PREP v19 ACTIVE**
+Status: **ARTIST C2-204 FINAL HEAD HELD — CI INFRA BLOCKED / ASSASSIN PREP MAY CONTINUE**
 Owner: Chat 2 / Presentation & Media Worker
 
-Primary dependency:
-- Artist/Geisha PR #228 safe prep C2-193..203 is complete.
-- C2-204 must execute immediately when Chat 1 publishes one exact frozen green Artist runtime.
+Artist priority:
+- final PR #237
+- branch `chat2/artist-geisha-presentation-v18-final`
+- exact current Artist head `ef9cc2df1edaf428ed44c34ba9832ff3a88032b4`
+- exact base runtime #234 `955f4accf7e25c42e0384ddb9f76e5612f41dd00`
+- required workflow #1007 / id `36987217980`: FAILURE **before runner steps**
+- job steps = `[]`; validator/build/tests did not execute
+- therefore this is infrastructure evidence, not a code verdict.
 
-No-idle work now:
-- queue `TASK_CHAT2_PRESENTATION_QUEUE_v19.md`
-- branch `chat2/assassin-presentation-prep-v19`
-- execute C2-205..216 safe Assassin prep.
-- do not publish/freeze Assassin production IDs.
+Do **not** move the Artist candidate merely to provoke CI. Hold `ef9cc2df...` unchanged unless a real executed workflow exposes a code blocker.
 
-**Interrupt Assassin prep immediately when Artist runtime #234 becomes frozen + exact-head green; C2-204 has priority.**
+When one required exact-head workflow actually runs on `ef9cc2df...` and succeeds:
+1. update #237 with exact run/counts;
+2. mark **CANDIDATE_FROZEN / READY FOR CHAT 4 QA**;
+3. hand to C4-171;
+4. do not move the frozen head afterward.
+
+No-idle while CI infrastructure is unavailable:
+- continue safe Assassin presentation prep only on separate PR #235 / branch `chat2/assassin-presentation-prep-v19`;
+- queue `TASK_CHAT2_PRESENTATION_QUEUE_v19.md`;
+- do not publish Assassin production IDs or freeze Assassin presentation.
+
+Artist finalization always preempts Assassin prep the moment executable CI returns.
