@@ -10526,10 +10526,6 @@
       "ru": "Не начат",
       "en": "Unseen"
     },
-    "career.secret-debt.stage.offered.label": {
-      "ru": "Предложение помощи",
-      "en": "Offer surfaced"
-    },
     "career.secret-debt.stage.refused.label": {
       "ru": "Отказано",
       "en": "Refused"
@@ -10545,10 +10541,6 @@
     "career.secret-debt.stage.resolved-paid.label": {
       "ru": "Свобода выкуплена",
       "en": "Paid freedom resolved"
-    },
-    "career.secret-debt.stage.resolved-bound.label": {
-      "ru": "Связанная жизнь",
-      "en": "Bound life resolved"
     },
     "career.secret-debt.stage.resolved-takeover.label": {
       "ru": "Перехват власти",
@@ -10645,54 +10637,6 @@
     "ending.ending.secret-debt.takeover.epilogue": {
       "ru": "Маршрут завершается захватом власти — отдельно от выплаты и сохранения подчинённого положения.",
       "en": "The route ends in takeover, separate from repayment and remaining bound."
-    },
-    "event.secret-debt.outcome.paid-freedom.title": {
-      "ru": "Долг, который наконец можно закрыть",
-      "en": "A debt that can finally close"
-    },
-    "event.secret-debt.outcome.paid-freedom.variant.default.text": {
-      "ru": "Запись о долге закрыта. Это ветка выплаты: уход сейчас не стирает прогресс, заработанный в обычных профессиях до ловушки.",
-      "en": "The debt ledger is clear. This is the repayment branch: leaving now does not erase progress earned in ordinary professions before the trap."
-    },
-    "event.secret-debt.outcome.paid-freedom.choice.leave.label": {
-      "ru": "Оставить связывающий долг позади",
-      "en": "Leave the binding debt behind"
-    },
-    "event.secret-debt.outcome.paid-freedom.choice.leave.text": {
-      "ru": "Ты выбираешь путь «Выкупленная свобода».",
-      "en": "You choose the Paid Freedom route."
-    },
-    "event.secret-debt.outcome.bound-life.title": {
-      "ru": "Жизнь внутри связи",
-      "en": "A life inside the bond"
-    },
-    "event.secret-debt.outcome.bound-life.variant.default.text": {
-      "ru": "Связывающая договорённость дошла до точки, где жизнь внутри неё становится самостоятельным исходом. Это не выплата долга и не захват власти.",
-      "en": "The binding arrangement has reached the point where remaining inside it becomes a life outcome of its own. This is neither repayment nor takeover."
-    },
-    "event.secret-debt.outcome.bound-life.choice.remain.label": {
-      "ru": "Принять исход «Связанная жизнь»",
-      "en": "Accept the Bound Life outcome"
-    },
-    "event.secret-debt.outcome.bound-life.choice.remain.text": {
-      "ru": "Ты выбираешь «Связанную жизнь» как самостоятельное разрешение маршрута.",
-      "en": "You choose Bound Life as its own route resolution."
-    },
-    "event.secret-debt.outcome.takeover.title": {
-      "ru": "Держателя можно заменить",
-      "en": "The holder can be replaced"
-    },
-    "event.secret-debt.outcome.takeover.variant.default.text": {
-      "ru": "Твоя подготовка совпадает с возможностью за пределами самого долга. Впервые устройство, которое удерживало тебя, можно развернуть в другую сторону и присвоить контроль.",
-      "en": "Your preparations and an opening outside the debt arrangement align. For the first time, the structure that held you can be turned around and claimed."
-    },
-    "event.secret-debt.outcome.takeover.choice.takeover.label": {
-      "ru": "Занять место держателя долга",
-      "en": "Take the holder's place"
-    },
-    "event.secret-debt.outcome.takeover.choice.takeover.text": {
-      "ru": "Ты выбираешь захват власти, а не выплату долга и не сохранение связанного положения.",
-      "en": "You choose Takeover rather than repayment or remaining bound."
     },
     "ui.secretDebt.currentDebt": {
       "ru": "Текущий связывающий долг: {amount} монет.",
