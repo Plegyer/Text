@@ -7,6 +7,7 @@ import {
   SCHOOL_COURSES,
   SCHOOL_COURSE_IDS,
   executeSchoolLesson,
+  SCHOOL_BODY_CONFIDENCE_LUST_GAIN,
   type SchoolCourseId
 } from '../src/core/school.ts';
 import type {Catalog,Save} from '../src/core/schema.ts';
@@ -131,7 +132,7 @@ test('engine adapter rejects insufficient money or Energy without mutating the i
   assert.equal(JSON.stringify(tired),tiredBefore);
 });
 
-test('each locked paid lesson charges tuition and one Energy exactly once, applies its full package, and never changes Lust',()=>{
+test('each locked paid lesson preserves its tuition/Energy/stat package and only Body Confidence adds Lust',()=>{
   const cat=catalog();
 
   for(const locked of expected){
@@ -148,7 +149,10 @@ test('each locked paid lesson charges tuition and one Energy exactly once, appli
     assert.equal(input.run.dayState.energyCurrent,energyBefore,locked.id);
     assert.equal(out.run.resources.money,moneyBefore-locked.tuition,locked.id);
     assert.equal(out.run.dayState.energyCurrent,energyBefore-1,locked.id);
-    assert.equal(out.run.character.lust,lustBefore,locked.id);
+    const expectedLustDelta=locked.id==='school.course.body_confidence'
+      ?SCHOOL_BODY_CONFIDENCE_LUST_GAIN
+      :0;
+    assert.equal(out.run.character.lust,Math.min(100,lustBefore+expectedLustDelta),locked.id);
 
     for(const effect of locked.statEffects){
       assert.equal(

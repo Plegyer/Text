@@ -24,6 +24,21 @@
       "reloadExpectation": "No duplicate tuition, Energy charge, stat gain, or lessons_completed increment."
     },
     {
+      "id": "body-confidence-lust-committed",
+      "sourceCourseId": "school.course.body_confidence",
+      "persists": [
+        "track.counters.lessons_completed",
+        "resources.money",
+        "dayState.energyCurrent",
+        "character.stats.sexuality/grooming/endurance",
+        "character.lust",
+        "flow.lastAction.presentationId",
+        "historyState.actionCounts.school"
+      ],
+      "reloadExpectation": "One paid Body Confidence lesson commits Lust +2 exactly once. Reload preserves the resulting Lust value without another +2, tuition charge, Energy charge, stat gain, or lessons_completed increment.",
+      "nightStudyBoundary": "school.night_study.body_confidence.* does not inherit the paid-lesson Lust gain."
+    },
+    {
       "id": "night-study-committed",
       "sourceChoiceId": "school.night_study.arcana.reason",
       "persists": [
