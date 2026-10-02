@@ -1,16 +1,12 @@
 # CURRENT CHAT5 TASK POINTER
 
-Status: **SCHOOL ACCESSIBILITY DEBT AUDITED / SCHOOL-NIGHT INTEROP v22 ACTIVE**
+Status: **SCHOOL-NIGHT AUDIT COMPLETE / PALACE TRUE ENDING STAT REACHABILITY v23 ACTIVE**
 Owner: Chat 5 / School + Text Localization
 
-History:
-- Artist School #232 frozen + C4-169 accepted.
-- Assassin School prep #238 complete.
-- Prostitute School prep #239 complete.
-- School accessibility v21 #241 proved the four historical alt defects were already corrected on activation base; only focused regression was added; CI pre-run failure; exact head held.
+School/Night #246 @ `2e636f52ab4913bc90b2ffa002158b913307d51f` complete, draft, CI pre-runner blocked.
 
-Active no-idle:
-- queue `TASK_CHAT5_SCHOOL_QUEUE_v22.md`
-- branch `chat5/school-night-interoperability-v22`
-- execute C5-235..244.
-- audit/prep only; no NightFlow mechanics, producer facts, thresholds or adult/consent/Lust state.
+Active:
+- queue `TASK_CHAT5_SCHOOL_QUEUE_v23.md`
+- branch `chat5/palace-true-ending-stat-reachability-v23`
+- C5-245..256.
+- audit natural 12-stat reachability; do not invent cap/prices/lesson counts or treat Lust as a progression stat.

@@ -1,14 +1,16 @@
 # CURRENT CHAT1 DEVELOPER TASK POINTER
 
-Status: **ASSASSIN PREP COMPLETE / PROSTITUTE RUNTIME PREP v18 ACTIVE**
+Status: **PROSTITUTE RUNTIME PREP COMPLETE / PALACE TRUE ENDING RUNTIME CONTRACT v19 ACTIVE**
 Owner: Chat 1 / Runtime + Integration Developer
 
-Immutable/held:
-- Artist runtime #234 frozen + C4-168 accepted.
-- Assassin runtime prep #242 @ `8a5fd800c7f97613c9181e25f36bf0e344fb2691` is C1D-181..192 SAFE PREP COMPLETE; required CI failed before runner; not frozen.
+Held history:
+- Artist runtime #234 frozen/accepted.
+- Assassin runtime prep #242 complete, not frozen.
+- Prostitute runtime prep #245 @ `10c2813f0b13eb58ae9283af2fb21ca2eb39b512` complete, draft, CI pre-runner blocked.
 
-Active no-idle:
-- queue `TASK_CHAT1_DEVELOPER_QUEUE_v18.md`
-- branch `chat1/prostitute-runtime-prep-v18`
-- execute C1D-193..204.
-- prep only; final production candidate waits exact future shipped baseline + executable CI.
+Active:
+- queue `TASK_CHAT1_DEVELOPER_QUEUE_v19.md`
+- branch `chat1/palace-true-ending-runtime-prep-v19`
+- C1D-205..216.
+
+D18 uses >90% for all 12 progression stats. Raw stat cap is not locked; do not assume >90 raw. Prep only, no Palace production freeze.

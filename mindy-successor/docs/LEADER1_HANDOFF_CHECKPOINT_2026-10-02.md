@@ -79,6 +79,25 @@ Adult/intimacy is core content, not a small optional category:
 
 See `ADULT_CONTENT_CORE_DIRECTION_v1.md`.
 
+## Post-D18 worker wave
+
+All prior no-idle prep queues were completed before/around the D18 lock. Current Actions still fail before runner execution, so the next safe independent work is:
+
+- Chat 1: `chat1/palace-true-ending-runtime-prep-v19`, C1D-205..216.
+- Chat 2: `chat2/palace-true-ending-presentation-v22`, C2-241..252.
+- Chat 3: `chat3/palace-true-ending-authored-v23`, C3-253..264.
+- Chat 4: `TASK_CHAT4_PALACE_TRUE_ENDING_PREFLIGHT_v1.md`, non-verdict QA/acceptance preflight.
+- Chat 5: `chat5/palace-true-ending-stat-reachability-v23`, C5-245..256.
+
+Critical D18 implementation note:
+- product authority is **>90% for every one of the 12 progression stats**;
+- current target-stat docs do not lock a raw max/cap;
+- no worker may convert >90% to raw `>90` unless a separate stat-cap authority proves a 0..100 scale;
+- Lust remains excluded.
+
+These assignments are prep/audit only and do not authorize Palace production IDs or merge/freeze while exact runtime authority and executable CI are absent.
+
+
 ## Recovery rule
 
 On takeover:

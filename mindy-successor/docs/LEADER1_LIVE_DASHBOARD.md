@@ -1,5 +1,29 @@
 # Leader 1 — Live Dashboard
 
+## LIVE UPDATE — 2026-10-02 — POST-D18 NO-IDLE WAVE
+
+Observed after D18 lock:
+- main: `6cbf76ebd92625bdb621a71c0523ba8c141e79c6`
+- main workflow #1074 / id `36994355522`: FAILURE before runner execution (`steps=null`)
+- Chat 1 #245 C1D-193..204 complete, head `10c2813f0b13eb58ae9283af2fb21ca2eb39b512`
+- Chat 2 #244 C2-229..240 complete, head `919b2faec2274a07513d385a3788d7bf26b9dd47`
+- Chat 3 #247 C3-241..252 complete under pre-D18 authority, head `5a2e72cc530e4edbe41d0d03e4904e2272614e9e`
+- Chat 4 available Artist/Assassin preflight work complete; real Artist C4-170/C4-171 remains CI-held
+- Chat 5 #246 C5-235..244 complete, head `2e636f52ab4913bc90b2ffa002158b913307d51f`
+
+New active no-idle assignments:
+- Chat 1 -> Palace True Ending runtime-contract prep v19, C1D-205..216
+- Chat 2 -> Palace True Ending presentation prep v22, C2-241..252
+- Chat 3 -> Palace True Ending authored delta v23, C3-253..264
+- Chat 4 -> Palace True Ending preliminary QA/acceptance preflight, non-verdict
+- Chat 5 -> Palace True Ending 12-stat reachability audit v23, C5-245..256
+
+Important implementation boundary:
+D18 says **all 12 progression stats strictly above 90%**. The current stat design does not yet lock a numeric maximum/cap. Therefore workers must not silently interpret this as raw value >90 unless a separate exact stat-cap authority proves 100. Runtime contract must preserve the percentage requirement and mark raw conversion/cap ordering OPEN.
+
+Artist integration remains the first real merge-critical path the instant Actions resumes executable jobs.
+
+
 ## LIVE UPDATE — 2026-10-02 — TRUE ENDING LOCK + ACTIONS RUNNER OUTAGE
 
 Snapshot main before this update commit:
