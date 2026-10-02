@@ -51,7 +51,7 @@ test('generic debt stays separate while Secret Debt has its own production ident
 
   const secretDebt=definitions.careers.find((career:any)=>career.id===expected.careerId);
   assert.ok(secretDebt);
-  assert.equal(JSON.stringify(secretDebt).includes('"debt"'),true);
+  assert.equal(JSON.stringify(secretDebt).includes('"key":"debt"'),false,'Secret Debt must not reuse the legacy generic debt metric');
   assert.equal(
     (definitions.relationships??[]).some((relationship:any)=>/secret.?debt|lender|slave/i.test(JSON.stringify(relationship))),
     false
