@@ -101,13 +101,6 @@
               "transition": "accept-offer"
             }
           ]
-        },
-        {
-          "id": "defer",
-          "label": "Defer this contract and keep ordinary work available",
-          "text": "Defer this contract and keep ordinary work available.",
-          "conditions": [],
-          "effects": []
         }
       ]
     },

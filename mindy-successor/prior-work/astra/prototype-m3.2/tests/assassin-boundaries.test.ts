@@ -114,3 +114,22 @@ test('Assassin removes prep-only numeric progression guesses while reusing shipp
  assert.equal(activity.timePolicy,hunter.timePolicy);
  assert.equal(activity.failurePolicy,hunter.failurePolicy);
 });
+
+
+test('Assassin major-contract offer is one authored entry point without a dead one-shot defer',()=>{
+ const contract=packs.find((p:any)=>p.id==='assassin.contract');
+ const offer=contract.events.find((e:any)=>e.id==='assassin.contract.offer');
+ assert.equal(offer.maxShows,1);
+ assert.deepEqual(offer.choices.map((c:any)=>c.id),['accept']);
+});
+
+test('Assassin School publishes five one-shot capability reactions with no tuning cadence or writes',()=>{
+ const school=packs.find((p:any)=>p.id==='assassin.school');
+ assert.equal(school.events.length,5);
+ for(const event of school.events){
+  assert.equal(event.maxShows,1,event.id);
+  assert.equal(event.cooldownDays,0,event.id);
+  assert.equal(event.variantCooldownDays,0,event.id);
+  for(const choice of event.choices)assert.deepEqual(choice.effects,[],event.id);
+ }
+});

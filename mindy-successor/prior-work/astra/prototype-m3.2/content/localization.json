@@ -12077,6 +12077,86 @@
     "event.assassin.routes.choose-network.choice.veteran.text": {
       "ru": "Оставить карьеру на устойчивой профессиональной практике, не связывая Hard Work с координационной специализацией.",
       "en": "Keep the career grounded in sustained professional practice without tying Hard Work to a coordination specialization."
+    },
+    "event.assassin.school.field.title": {
+      "ru": "Роуэн хвалит условие отмены",
+      "en": "Rowan praises the abort condition"
+    },
+    "event.assassin.school.field.variant.default.text": {
+      "ru": "Роуэн замечает, что в плане есть не только маршрут, но и чёткий признак, после которого ты его бросишь. Он считает это не осторожностью, а нормальной частью любой работы, где условия могут измениться раньше тебя.",
+      "en": "Rowan notices that the plan contains not only a route, but a clear sign that would make you abandon it. He treats that not as timidity, but as a normal part of any work where conditions can change before you do."
+    },
+    "event.assassin.school.field.choice.continue.label": {
+      "ru": "Перенести урок в обычную подготовку",
+      "en": "Carry the lesson into ordinary preparation"
+    },
+    "event.assassin.school.field.choice.continue.text": {
+      "ru": "Урок остаётся контекстом и не выдаёт карьерный допуск, предмет или универсальное право доступа.",
+      "en": "The lesson remains context and grants no career gate, item, or universal access right."
+    },
+    "event.assassin.school.rhetoric.title": {
+      "ru": "Кассиан убирает ответ из вопроса",
+      "en": "Cassian removes the answer from the question"
+    },
+    "event.assassin.school.rhetoric.variant.default.text": {
+      "ru": "Кассиан переписывает одну твою фразу и показывает, как легко вопрос выдаёт желаемый ответ. Ты пробуешь снова — теперь собеседнику приходится рассказывать собственную версию, а не подтверждать твою.",
+      "en": "Cassian rewrites one of your lines and shows how easily a question can reveal the answer you hope to hear. You try again—this time the other person has to give their own account instead of confirming yours."
+    },
+    "event.assassin.school.rhetoric.choice.continue.label": {
+      "ru": "Перенести урок в обычную подготовку",
+      "en": "Carry the lesson into ordinary preparation"
+    },
+    "event.assassin.school.rhetoric.choice.continue.text": {
+      "ru": "Урок остаётся контекстом и не выдаёт карьерный допуск, предмет или универсальное право доступа.",
+      "en": "The lesson remains context and grants no career gate, item, or universal access right."
+    },
+    "event.assassin.school.etiquette.title": {
+      "ru": "Уместность не должна выглядеть как спектакль",
+      "en": "Fitting in should not look like a performance"
+    },
+    "event.assassin.school.etiquette.variant.default.text": {
+      "ru": "Элиан замечает, что слишком тщательно подготовленная манера поведения сама начинает привлекать внимание. Она просит убрать лишнее и оставить только то, что действительно соответствует месту и роли.",
+      "en": "Eliane notes that an overprepared manner can begin attracting attention on its own. She asks you to remove the excess and keep only what genuinely fits the place and role."
+    },
+    "event.assassin.school.etiquette.choice.continue.label": {
+      "ru": "Перенести урок в обычную подготовку",
+      "en": "Carry the lesson into ordinary preparation"
+    },
+    "event.assassin.school.etiquette.choice.continue.text": {
+      "ru": "Урок остаётся контекстом и не выдаёт карьерный допуск, предмет или универсальное право доступа.",
+      "en": "The lesson remains context and grants no career gate, item, or universal access right."
+    },
+    "event.assassin.school.literacy.title": {
+      "ru": "Мара оставляет пробел как пробел",
+      "en": "Mara leaves a gap as a gap"
+    },
+    "event.assassin.school.literacy.variant.default.text": {
+      "ru": "Мара хвалит хронологию, где неизвестный отрезок времени не заполнен красивой догадкой. Отмеченный пробел полезнее выдуманной точности: он показывает, какую информацию ещё нужно искать.",
+      "en": "Mara approves a timeline in which an unknown span has not been filled with an elegant guess. A marked gap is more useful than invented precision because it shows what information still needs to be found."
+    },
+    "event.assassin.school.literacy.choice.continue.label": {
+      "ru": "Перенести урок в обычную подготовку",
+      "en": "Carry the lesson into ordinary preparation"
+    },
+    "event.assassin.school.literacy.choice.continue.text": {
+      "ru": "Урок остаётся контекстом и не выдаёт карьерный допуск, предмет или универсальное право доступа.",
+      "en": "The lesson remains context and grants no career gate, item, or universal access right."
+    },
+    "event.assassin.school.physical.title": {
+      "ru": "Тован считает точную остановку частью движения",
+      "en": "Tovan treats the stop as part of the movement"
+    },
+    "event.assassin.school.physical.variant.default.text": {
+      "ru": "Тован оценивает не скорость, а способность двигаться тихо, менять направление и останавливаться без потери равновесия. Это общая школа контроля тела, не обучение бою или нападению.",
+      "en": "Tovan evaluates not speed, but the ability to move quietly, change direction, and stop without losing balance. This is general body control, not combat or attack training."
+    },
+    "event.assassin.school.physical.choice.continue.label": {
+      "ru": "Перенести урок в обычную подготовку",
+      "en": "Carry the lesson into ordinary preparation"
+    },
+    "event.assassin.school.physical.choice.continue.text": {
+      "ru": "Урок остаётся контекстом и не выдаёт карьерный допуск, предмет или универсальное право доступа.",
+      "en": "The lesson remains context and grants no career gate, item, or universal access right."
     }
   }
 }

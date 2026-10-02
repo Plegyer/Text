@@ -21,8 +21,8 @@
   "media": [],
   "events": [
     {
-      "id": "assassin.school.practice-reflection",
-      "title": "School practice meets covert work",
+      "id": "assassin.school.field",
+      "title": "Rowan praises the abort condition",
       "sourceDomain": "assassin",
       "trigger": [],
       "reactionTriggers": [
@@ -36,19 +36,11 @@
         },
         {
           "kind": "nightChoiceCompleted",
-          "choice": "school.night_study.rhetoric_and_social.wits"
+          "choice": "school.night_study.field_craft.wits"
         },
         {
           "kind": "nightChoiceCompleted",
-          "choice": "school.night_study.etiquette_and_presentation.manners"
-        },
-        {
-          "kind": "nightChoiceCompleted",
-          "choice": "school.night_study.literacy_and_numbers.reason"
-        },
-        {
-          "kind": "nightChoiceCompleted",
-          "choice": "school.night_study.physical_training.dexterity"
+          "choice": "school.night_study.field_craft.creativity"
         }
       ],
       "priorityClass": "ambient",
@@ -57,9 +49,9 @@
       "delivery": {
         "policy": "live"
       },
-      "cooldownDays": 6,
-      "variantCooldownDays": 12,
-      "maxShows": 5,
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
       "conditions": [
         {
           "kind": "any",
@@ -122,7 +114,109 @@
               "counter": "night_study_sessions",
               "op": "gte",
               "value": 1
+            }
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Rowan notices that the plan contains not only a route, but a clear sign that would make you abandon it. He treats that not as timidity, but as a normal part of any work where conditions can change before you do.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Carry the lesson into ordinary preparation",
+          "text": "Use the lesson as context only; it grants no Assassin gate, item, or universal access.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "assassin.school.rhetoric",
+      "title": "Cassian removes the answer from the question",
+      "sourceDomain": "assassin",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "actionCompleted",
+          "action": "school"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.rhetoric_and_social.charm"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.rhetoric_and_social.sociability"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.rhetoric_and_social.wits"
+        }
+      ],
+      "priorityClass": "ambient",
+      "priority": 25,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "operative"
             },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "trusted-blade"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "veteran"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "ghost"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "turncoat"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "handler-takeover"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "refusal-chain"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "outcome-ready"
+            }
+          ]
+        },
+        {
+          "kind": "any",
+          "conditions": [
             {
               "kind": "schoolCounter",
               "track": "school.track.rhetoric_and_social",
@@ -136,7 +230,109 @@
               "counter": "night_study_sessions",
               "op": "gte",
               "value": 1
+            }
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Cassian rewrites one of your lines and shows how easily a question can reveal the answer you hope to hear. You try again—this time the other person has to give their own account instead of confirming yours.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Carry the lesson into ordinary preparation",
+          "text": "Use the lesson as context only; it grants no Assassin gate, item, or universal access.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "assassin.school.etiquette",
+      "title": "Fitting in should not look like a performance",
+      "sourceDomain": "assassin",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "actionCompleted",
+          "action": "school"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.etiquette_and_presentation.manners"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.etiquette_and_presentation.grooming"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.etiquette_and_presentation.charm"
+        }
+      ],
+      "priorityClass": "ambient",
+      "priority": 25,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "operative"
             },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "trusted-blade"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "veteran"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "ghost"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "turncoat"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "handler-takeover"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "refusal-chain"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "outcome-ready"
+            }
+          ]
+        },
+        {
+          "kind": "any",
+          "conditions": [
             {
               "kind": "schoolCounter",
               "track": "school.track.etiquette_and_presentation",
@@ -150,7 +346,105 @@
               "counter": "night_study_sessions",
               "op": "gte",
               "value": 1
+            }
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Eliane notes that an overprepared manner can begin attracting attention on its own. She asks you to remove the excess and keep only what genuinely fits the place and role.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Carry the lesson into ordinary preparation",
+          "text": "Use the lesson as context only; it grants no Assassin gate, item, or universal access.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "assassin.school.literacy",
+      "title": "Mara leaves a gap as a gap",
+      "sourceDomain": "assassin",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "actionCompleted",
+          "action": "school"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.literacy_and_numbers.reason"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.literacy_and_numbers.wits"
+        }
+      ],
+      "priorityClass": "ambient",
+      "priority": 25,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "operative"
             },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "trusted-blade"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "veteran"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "ghost"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "turncoat"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "handler-takeover"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "refusal-chain"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "outcome-ready"
+            }
+          ]
+        },
+        {
+          "kind": "any",
+          "conditions": [
             {
               "kind": "schoolCounter",
               "track": "school.track.literacy_and_numbers",
@@ -164,7 +458,109 @@
               "counter": "night_study_sessions",
               "op": "gte",
               "value": 1
+            }
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Mara approves a timeline in which an unknown span has not been filled with an elegant guess. A marked gap is more useful than invented precision because it shows what information still needs to be found.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Carry the lesson into ordinary preparation",
+          "text": "Use the lesson as context only; it grants no Assassin gate, item, or universal access.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "assassin.school.physical",
+      "title": "Tovan treats the stop as part of the movement",
+      "sourceDomain": "assassin",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "actionCompleted",
+          "action": "school"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.physical_training.strength"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.physical_training.endurance"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.physical_training.dexterity"
+        }
+      ],
+      "priorityClass": "ambient",
+      "priority": 25,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "operative"
             },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "trusted-blade"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "veteran"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "ghost"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "turncoat"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "handler-takeover"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "refusal-chain"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "outcome-ready"
+            }
+          ]
+        },
+        {
+          "kind": "any",
+          "conditions": [
             {
               "kind": "schoolCounter",
               "track": "school.track.physical_training",
@@ -184,133 +580,9 @@
       ],
       "variants": [
         {
-          "id": "field",
-          "text": "Rowan notices that the plan contains not only a route, but a clear sign that would make you abandon it. He treats that not as timidity, but as a normal part of any work where conditions can change before you do.",
-          "conditions": [
-            {
-              "kind": "any",
-              "conditions": [
-                {
-                  "kind": "schoolCounter",
-                  "track": "school.track.field_craft",
-                  "counter": "lessons_completed",
-                  "op": "gte",
-                  "value": 1
-                },
-                {
-                  "kind": "schoolCounter",
-                  "track": "school.track.field_craft",
-                  "counter": "night_study_sessions",
-                  "op": "gte",
-                  "value": 1
-                }
-              ]
-            }
-          ],
-          "media": []
-        },
-        {
-          "id": "rhetoric",
-          "text": "Cassian rewrites one of your lines and shows how easily a question can reveal the answer you hope to hear. You try again—this time the other person has to give their own account instead of confirming yours.",
-          "conditions": [
-            {
-              "kind": "any",
-              "conditions": [
-                {
-                  "kind": "schoolCounter",
-                  "track": "school.track.rhetoric_and_social",
-                  "counter": "lessons_completed",
-                  "op": "gte",
-                  "value": 1
-                },
-                {
-                  "kind": "schoolCounter",
-                  "track": "school.track.rhetoric_and_social",
-                  "counter": "night_study_sessions",
-                  "op": "gte",
-                  "value": 1
-                }
-              ]
-            }
-          ],
-          "media": []
-        },
-        {
-          "id": "etiquette",
-          "text": "Eliane notes that an overprepared manner can begin attracting attention on its own. She asks you to remove the excess and keep only what genuinely fits the place and role.",
-          "conditions": [
-            {
-              "kind": "any",
-              "conditions": [
-                {
-                  "kind": "schoolCounter",
-                  "track": "school.track.etiquette_and_presentation",
-                  "counter": "lessons_completed",
-                  "op": "gte",
-                  "value": 1
-                },
-                {
-                  "kind": "schoolCounter",
-                  "track": "school.track.etiquette_and_presentation",
-                  "counter": "night_study_sessions",
-                  "op": "gte",
-                  "value": 1
-                }
-              ]
-            }
-          ],
-          "media": []
-        },
-        {
-          "id": "literacy",
-          "text": "Mara approves a timeline in which an unknown span has not been filled with an elegant guess. A marked gap is more useful than invented precision because it shows what information still needs to be found.",
-          "conditions": [
-            {
-              "kind": "any",
-              "conditions": [
-                {
-                  "kind": "schoolCounter",
-                  "track": "school.track.literacy_and_numbers",
-                  "counter": "lessons_completed",
-                  "op": "gte",
-                  "value": 1
-                },
-                {
-                  "kind": "schoolCounter",
-                  "track": "school.track.literacy_and_numbers",
-                  "counter": "night_study_sessions",
-                  "op": "gte",
-                  "value": 1
-                }
-              ]
-            }
-          ],
-          "media": []
-        },
-        {
-          "id": "physical",
+          "id": "default",
           "text": "Tovan evaluates not speed, but the ability to move quietly, change direction, and stop without losing balance. This is general body control, not combat or attack training.",
-          "conditions": [
-            {
-              "kind": "any",
-              "conditions": [
-                {
-                  "kind": "schoolCounter",
-                  "track": "school.track.physical_training",
-                  "counter": "lessons_completed",
-                  "op": "gte",
-                  "value": 1
-                },
-                {
-                  "kind": "schoolCounter",
-                  "track": "school.track.physical_training",
-                  "counter": "night_study_sessions",
-                  "op": "gte",
-                  "value": 1
-                }
-              ]
-            }
-          ],
+          "conditions": [],
           "media": []
         }
       ],
