@@ -11421,6 +11421,14 @@
     "event.assassin.school.practice-reflection.choice.continue.text": {
       "ru": "Урок остаётся контекстом и не выдаёт карьерный допуск, предмет или универсальное право доступа.",
       "en": "The lesson remains context and grants no career gate, item, or universal access right."
+    },
+    "event.assassin.routes.choose-network.choice.veteran.label": {
+      "ru": "Выбрать путь ветерана",
+      "en": "Choose Veteran practice"
+    },
+    "event.assassin.routes.choose-network.choice.veteran.text": {
+      "ru": "Оставить карьеру на устойчивой профессиональной практике, не связывая Hard Work с координационной специализацией.",
+      "en": "Keep the career grounded in sustained professional practice without tying Hard Work to a coordination specialization."
     }
   }
 }
