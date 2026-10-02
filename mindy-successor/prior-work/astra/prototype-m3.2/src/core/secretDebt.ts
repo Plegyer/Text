@@ -24,6 +24,7 @@ export const SECRET_DEBT_SHIFT_STAT_GAINS={
   sexuality:null
 } as const;
 
+export const SECRET_DEBT_WAGE_INPUTS=['strength','endurance','lust'] as const;
 export const SECRET_DEBT_WAGE_POLICY={
   base:null,
   strengthFactor:null,
@@ -98,6 +99,18 @@ export function secretDebtTakeoverStructuralReady(s:Save){
 
 export function secretDebtWagePolicyReady(){
   return Object.values(SECRET_DEBT_WAGE_POLICY).every(value=>typeof value==='number');
+}
+
+export function secretDebtWageDefinition():Action['wage']|undefined{
+  if(!secretDebtWagePolicyReady())return undefined;
+  return {
+    base:Number(SECRET_DEBT_WAGE_POLICY.base),
+    weights:[
+      {stat:'strength',factor:Number(SECRET_DEBT_WAGE_POLICY.strengthFactor)},
+      {stat:'endurance',factor:Number(SECRET_DEBT_WAGE_POLICY.enduranceFactor)},
+      {stat:'lust',factor:Number(SECRET_DEBT_WAGE_POLICY.lustFactor)}
+    ]
+  };
 }
 
 export function secretDebtTakeoverNumericGatesReady(){
