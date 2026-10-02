@@ -649,6 +649,12 @@ export const MERCHANT_POVERTY_STATUS_IDS=[
   'poverty-response-recorded'
 ] as const;
 
+export const MERCHANT_ITEM_IDS=[
+  'merchant_appraisal_scales',
+  'merchant_manifest_case',
+  'merchant_sample_kit'
+] as const;
+
 export function presentationIdForMerchantStage(stage:string){
   return `job/merchant/stage/${clean(stage)}`;
 }
@@ -659,6 +665,10 @@ export function presentationIdForMerchantRelationshipStage(stage:string){
 
 export function presentationIdForMerchantState(stateId:string){
   return `job/merchant/state/${clean(stateId)}`;
+}
+
+export function presentationIdForMerchantItem(itemId:string){
+  return `job/merchant/item/${clean(itemId)}`;
 }
 
 export function presentationIdForEnding(endingId:string){
@@ -949,9 +959,21 @@ export function presentationSlots(cat:Catalog):PresentationSlot[]{
     }
   }
 
+  for(const itemId of MERCHANT_ITEM_IDS){
+    if((cat.definitions.itemDefinitions??[]).some(item=>String(item.id)===itemId)){
+      add({
+        id:presentationIdForMerchantItem(itemId),
+        label:`Merchant · item · ${itemId}`,
+        baseMediaIds:[],
+        fallbackId:'job/merchant/result/default'
+      });
+    }
+  }
+
   const merchantRuntimeText=JSON.stringify({
     career:merchantCareer,
     relationship:merchantRelationship,
+    items:(cat.definitions.itemDefinitions??[]).filter(item=>MERCHANT_ITEM_IDS.includes(String(item.id) as (typeof MERCHANT_ITEM_IDS)[number])),
     events:cat.events.filter(event=>event.sourceDomain==='merchant')
   });
   const merchantTradeStateBackings:Record<(typeof MERCHANT_TRADE_STATUS_IDS)[number],boolean>={
