@@ -1,5 +1,25 @@
 # Leader 1 — Live Dashboard
 
+## SUCCESSOR ARTIST CI RETRY — 2026-10-02 11:12Z
+
+Fresh Git re-query and exact-head retry:
+- current `main` before this coordination update: `475e70ea62c4a7f22b45cfd939ab260951460c05`;
+- latest main workflow #1081 / id `36996124040`: FAILURE before runner execution; check job `110803119625` has `steps=null`;
+- open PR count: 44;
+- Artist authored #229 remains draft at exact head `75664819e824187ea23531e39f6cf5cd952b1047`; workflow #1010 attempt 8 / id `36987374078` failed before runner execution, job `110814388137`, `steps=null`;
+- Artist presentation #237 remains open/non-draft at exact head `ef9cc2df1edaf428ed44c34ba9832ff3a88032b4`; workflow #1007 attempt 8 / id `36987217980` failed before runner execution, job `110814394636`, `steps=null`;
+- neither held Artist producer head moved.
+
+Post-D18 branches remain factually not started:
+- Chat 1 `chat1/palace-true-ending-runtime-prep-v19` = `d7865216e510e0d55ad960fa34dd4408e7ffe772`, no branch runs;
+- Chat 2 `chat2/palace-true-ending-presentation-v22` = same activation SHA, no branch runs;
+- Chat 3 `chat3/palace-true-ending-authored-v23` = same activation SHA, no branch runs;
+- Chat 5 `chat5/palace-true-ending-stat-reachability-v23` = same activation SHA, no branch runs;
+- Chat 4 coordination PR #170 head remains `67669666ad5576b83052dcab9dbbfafe3fd374c7`; no PT-1..PT-10 NON-VERDICT ledger exists yet.
+
+C4-170/C4-171 remain CI-held. Attempt-8 failures are infrastructure evidence, not code verdicts. Do not mutate clean held heads or issue replacement Palace scope; existing assigned queues remain the only safe no-idle work. Artist immediately preempts on a real executable exact-head SUCCESS.
+
+
 ## SUCCESSOR WAKE CHECKPOINT — 2026-10-02 10:33Z
 
 Coordination sequence completed from the live re-query:

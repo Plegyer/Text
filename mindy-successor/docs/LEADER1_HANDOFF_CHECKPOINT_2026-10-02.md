@@ -1,5 +1,18 @@
 # Leader 1 Handoff Checkpoint — 2026-10-02
 
+## SUCCESSOR CONTINUATION CHECKPOINT — 2026-10-02 11:12Z
+
+Fresh Git truth after takeover execution:
+- current `main` before this coordination write: `475e70ea62c4a7f22b45cfd939ab260951460c05`;
+- latest main workflow #1081 / `36996124040`: pre-runner FAILURE, job `110803119625`, `steps=null`;
+- #229 remains `75664819e824187ea23531e39f6cf5cd952b1047`, draft; exact workflow #1010 attempt 8 failed pre-runner, job `110814388137`, `steps=null`;
+- #237 remains `ef9cc2df1edaf428ed44c34ba9832ff3a88032b4`, open/non-draft; exact workflow #1007 attempt 8 failed pre-runner, job `110814394636`, `steps=null`;
+- Chats 1/2/3/5 Palace True Ending branches remain exactly at activation `d7865216e510e0d55ad960fa34dd4408e7ffe772` with no branch workflow runs;
+- Chat 4 PR #170 remains at `67669666ad5576b83052dcab9dbbfafe3fd374c7`; Palace PT-1..PT-10 NON-VERDICT ledger is still absent.
+
+Lead continued the product-critical action by retrying failed jobs on the immutable Artist heads only. Both attempt-8 retries again failed before runner execution, so there is still no executable Artist CI and no C4-170/C4-171 authority. Do not treat this as a code failure, do not move #229/#237, and do not replace the already-assigned Palace queues. The next real Lead transition remains: executable exact-head SUCCESS -> C4-170/C4-171 -> C4-172 -> collision-safe Artist integration -> exact-current-main executable CI -> C4-173.
+
+
 ## SUCCESSOR WAKE CHECKPOINT — 2026-10-02 10:33Z
 
 The first unfinished takeover Lead action is now durably executed.
