@@ -133,13 +133,21 @@ test('clean Assassin run exercises Year-3 fallback, lifecycle, four seasons, ref
   assert.equal(s.run.pending?.eventId,'assassin.contract.intel');
   assert.equal(s.run.pending?.variantId,intelVariant);
   s=settlePending(s);
+  assert.equal(s.run.progression.quests['assassin.contract'].stage,'intel');
+  assert.equal(s.run.resources.inventory.assassin_concealed_toolset,1,
+    'the higher-priority Toolset scene must still win the intel transition collision');
+  assert.equal(s.run.pending,null,
+    'after Toolset resolves, the consumed questTransition must not be assumed to remain live');
   s=finishNight(s);
 
-  // First-shift milestone is exactly once.
+  // The next ordinary Assassin shift is the collision-safe lifecycle fallback:
+  // prep reopens from the persisted intel stage, with no arbitrary shift threshold.
   seenSeasons.add(calendar(s.run.day).season);
   s=dispatch(s,{type:'action',id:'assassin.shift'},catalog);
+  assert.equal(s.run.pending?.eventId,'assassin.contract.prep');
   assert.notEqual(s.run.pending?.eventId,'assassin.career.first-shift');
   s=settlePending(s);
+  assert.equal(s.run.progression.quests['assassin.contract'].stage,'closed');
   s=finishNight(s);
 
   while((s.run.progression.careers.assassin?.counters.completed_shifts??0)<50){

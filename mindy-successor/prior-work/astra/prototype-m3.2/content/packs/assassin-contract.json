@@ -175,6 +175,10 @@
         {
           "kind": "questTransition",
           "quest": "assassin.contract"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "assassin.shift"
         }
       ],
       "priorityClass": "normal_progression",

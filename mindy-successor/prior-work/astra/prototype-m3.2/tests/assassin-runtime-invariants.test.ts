@@ -3,6 +3,8 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 
 const definitions=JSON.parse(readFileSync('content/definitions.json','utf8'));
+const contractPack=JSON.parse(readFileSync('content/packs/assassin-contract.json','utf8'));
+const itemPack=JSON.parse(readFileSync('content/packs/assassin-items.json','utf8'));
 
 test('Assassin preserves shipped ordinary-work unlock, seasonal tuning, and Hard Work authority',()=>{
  const action=definitions.actions.find((a:any)=>a.id==='assassin.shift');
@@ -60,4 +62,20 @@ test('Assassin publishes career-scoped machines, narrow capabilities, Night hook
  assert.ok(night);
  assert.deepEqual(night.effects,[{kind:'addCareerFact',career:'assassin',fact:'night-notes-reviewed'}]);
  assert.equal(night.nextDayEnergyDelta,0);
+});
+
+
+test('Assassin contract prep survives the intentional Toolset priority collision without a shift threshold',()=>{
+ const toolset=itemPack.events.find((e:any)=>e.id==='assassin.items.concealed-toolset');
+ const prep=contractPack.events.find((e:any)=>e.id==='assassin.contract.prep');
+ assert.ok(toolset);
+ assert.ok(prep);
+ assert.ok(toolset.priority>prep.priority,'Toolset must still win first so it can affect current-contract prep');
+ assert.deepEqual(prep.reactionTriggers,[
+  {kind:'questTransition',quest:'assassin.contract'},
+  {kind:'actionCompleted',action:'assassin.shift'}
+ ]);
+ assert.deepEqual(prep.conditions,[{kind:'questStage',quest:'assassin.contract',stage:'intel'}]);
+ assert.equal(JSON.stringify(prep).includes('careerCounter'),false);
+ assert.equal(JSON.stringify(prep).includes('completed_shifts'),false);
 });
