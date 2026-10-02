@@ -3620,6 +3620,12 @@
             "kind": "modifyStat",
             "stat": "charm",
             "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "artist-geisha",
+            "counter": "spring_performances",
+            "amount": 1
           }
         ],
         "summer": [
@@ -3632,6 +3638,12 @@
             "kind": "modifyStat",
             "stat": "dexterity",
             "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "artist-geisha",
+            "counter": "summer_performances",
+            "amount": 1
           }
         ],
         "autumn": [
@@ -3644,6 +3656,12 @@
             "kind": "modifyStat",
             "stat": "sexuality",
             "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "artist-geisha",
+            "counter": "autumn_performances",
+            "amount": 1
           }
         ],
         "winter": [
@@ -3656,6 +3674,12 @@
             "kind": "modifyStat",
             "stat": "reason",
             "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "artist-geisha",
+            "counter": "winter_performances",
+            "amount": 1
           }
         ]
       }
@@ -5831,9 +5855,155 @@
       "label": "Artist House",
       "initialStage": "novice",
       "stages": [
-        "novice"
+        "novice",
+        "performer",
+        "recognized-artist",
+        "veteran",
+        "master-artist",
+        "patron-network",
+        "court-invitation",
+        "outcome-ready"
       ],
-      "transitions": []
+      "transitions": [
+        {
+          "id": "first-shift",
+          "from": [
+            "novice"
+          ],
+          "to": "performer",
+          "conditions": [
+            {
+              "kind": "careerCounter",
+              "career": "artist-geisha",
+              "counter": "completed_shifts",
+              "op": "gte",
+              "value": 1
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "artist-geisha",
+              "fact": "first-shift-complete"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "artist-geisha",
+              "fact": "performer-ready"
+            }
+          ]
+        },
+        {
+          "id": "recognized-artist",
+          "from": [
+            "performer"
+          ],
+          "to": "recognized-artist",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "artist-geisha",
+              "fact": "seasonal-breadth-ready",
+              "present": true
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "artist-geisha",
+              "fact": "recognized-ready"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "artist-geisha",
+              "fact": "performance-breadth-ready"
+            }
+          ]
+        },
+        {
+          "id": "branch-veteran",
+          "from": [
+            "recognized-artist"
+          ],
+          "to": "veteran",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "artist-geisha",
+              "fact": "veteran-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "branch-master-artist",
+          "from": [
+            "recognized-artist"
+          ],
+          "to": "master-artist",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "artist-geisha",
+              "fact": "master-artist-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "branch-patron-network",
+          "from": [
+            "recognized-artist"
+          ],
+          "to": "patron-network",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "artist-geisha",
+              "fact": "patron-network-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "branch-court-invitation",
+          "from": [
+            "recognized-artist"
+          ],
+          "to": "court-invitation",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "artist-geisha",
+              "fact": "court-invitation-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "outcome-ready",
+          "from": [
+            "veteran",
+            "master-artist",
+            "patron-network",
+            "court-invitation"
+          ],
+          "to": "outcome-ready",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "artist-geisha",
+              "fact": "outcome-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        }
+      ]
     },
     {
       "id": "assassin",
