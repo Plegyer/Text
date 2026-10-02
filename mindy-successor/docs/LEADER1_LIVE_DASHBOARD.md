@@ -1,5 +1,23 @@
 # Leader 1 — Live Dashboard
 
+## SUCCESSOR LIVE REQUERY — 2026-10-02 10:26Z
+
+Git re-query after Leader context reset:
+- current `main`: `492afb842507f478f83446a8f2d2b374bf5124cc` (`Leader: finalize successor handoff`), parent `d7865216e510e0d55ad960fa34dd4408e7ffe772`;
+- latest main workflow #1076 / id `36995331714`: FAILURE before runner execution; check job `110800640517` has `runner_id=0`, empty runner name and `steps=[]`;
+- Artist authored #229 remains exact head `75664819e824187ea23531e39f6cf5cd952b1047`, draft; latest exact-head run #1010 attempt 3 remains pre-runner failure with `runner_id=0`, `steps=[]`;
+- Artist presentation #237 remains exact head `ef9cc2df1edaf428ed44c34ba9832ff3a88032b4`; latest exact-head run #1007 attempt 3 remains pre-runner failure with `runner_id=0`, `steps=[]`;
+- therefore C4-170/C4-171 are still CI-held; do not mutate either held head merely to create a new event.
+
+Post-D18 no-idle verification:
+- Chat 1 `chat1/palace-true-ending-runtime-prep-v19`: still `d7865216e510e0d55ad960fa34dd4408e7ffe772`, no branch workflow runs;
+- Chat 2 `chat2/palace-true-ending-presentation-v22`: still `d7865216e510e0d55ad960fa34dd4408e7ffe772`, no branch workflow runs;
+- Chat 3 `chat3/palace-true-ending-authored-v23`: still `d7865216e510e0d55ad960fa34dd4408e7ffe772`, no branch workflow runs;
+- Chat 5 `chat5/palace-true-ending-stat-reachability-v23`: still `d7865216e510e0d55ad960fa34dd4408e7ffe772`, no branch workflow runs;
+- Chat 4 coordination PR #170 is still on `67669666ad5576b83052dcab9dbbfafe3fd374c7`; latest observed comment is successor handoff `5950304075`, so PT-1..PT-10 has not yet produced its NON-VERDICT ledger.
+
+Lead action from Git truth: re-wake the existing five assignments without changing scope. Artist integration still preempts immediately if #229 or #237 obtains real executable exact-head SUCCESS.
+
 ## FINAL SUCCESSOR HANDOFF — 2026-10-02 — LEADER CONTEXT RESET
 
 This is the newest takeover block. **Re-query Git before acting.**

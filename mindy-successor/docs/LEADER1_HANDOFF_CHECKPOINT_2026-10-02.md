@@ -1,5 +1,19 @@
 # Leader 1 Handoff Checkpoint — 2026-10-02
 
+## SUCCESSOR LIVE CHECKPOINT — 2026-10-02 10:26Z
+
+Successor re-query completed against Git after the final context-reset handoff.
+
+- Current `main` is `492afb842507f478f83446a8f2d2b374bf5124cc`.
+- Latest main workflow #1076 / `36995331714` failed before runner execution: `runner_id=0`, `steps=[]`.
+- #229 is unchanged at `75664819e824187ea23531e39f6cf5cd952b1047`; #1010 attempt 3 is still pre-runner failure.
+- #237 is unchanged at `ef9cc2df1edaf428ed44c34ba9832ff3a88032b4`; #1007 attempt 3 is still pre-runner failure.
+- No executable Artist exact-head SUCCESS exists yet; C4-170/C4-171 remain held.
+- Chat 1/2/3/5 Palace True Ending branches are still exactly at activation `d7865216e510e0d55ad960fa34dd4408e7ffe772` and have no branch workflow runs.
+- Chat 4 has not yet posted the Palace True Ending PT-1..PT-10 NON-VERDICT ledger on PR #170.
+
+First unfinished Lead action executed: existing post-D18 queues are explicitly re-woken from Git truth. Do not assign replacement scope yet; none of those queues has started or completed. If executable Artist CI appears, preempt Palace prep and resume C4-170/C4-171 -> C4-172 -> collision-safe Artist integration.
+
 ## FINAL SUCCESSOR HANDOFF — 2026-10-02 — LEADER CONTEXT RESET
 
 This is the newest takeover block. **Re-query Git before acting.**
