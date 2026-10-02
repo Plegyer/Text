@@ -1,0 +1,491 @@
+{
+  "schemaVersion": 1,
+  "id": "prostitute.career",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "careers": [
+        "prostitute"
+      ],
+      "calendar": true
+    },
+    "writes": {
+      "careers": [
+        "prostitute"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "prostitute.career.first-shift",
+      "title": "First voluntary professional shift",
+      "sourceDomain": "prostitute",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerCounterChanged",
+          "career": "prostitute",
+          "counter": "completed_shifts"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 100,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "prostitute",
+          "stage": "new-independent-worker"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "prostitute",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 1
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The first completed voluntary shift establishes a professional routine while the heroine keeps control of what she accepts and ordinary work remains open.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue as a known professional",
+          "text": "Continue as a known professional.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "advanceCareer",
+              "career": "prostitute",
+              "transition": "first-shift"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prostitute.career.season-spring",
+      "title": "Record spring voluntary work context",
+      "sourceDomain": "prostitute",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "actionCompleted",
+          "action": "prostitute.shift"
+        },
+        {
+          "kind": "careerTransition",
+          "career": "prostitute"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 78,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "not",
+          "condition": {
+            "kind": "careerStage",
+            "career": "prostitute",
+            "stage": "new-independent-worker"
+          }
+        },
+        {
+          "kind": "calendarSeason",
+          "value": "spring"
+        },
+        {
+          "kind": "careerFact",
+          "career": "prostitute",
+          "fact": "season-spring-worked",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Spring brings more unfamiliar requests, so timing, terms, and fit are checked clearly before the heroine chooses whether to continue.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record this shipped seasonal work context",
+          "text": "Record this shipped seasonal work context.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "prostitute",
+              "fact": "season-spring-worked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prostitute.career.season-summer",
+      "title": "Record summer voluntary work context",
+      "sourceDomain": "prostitute",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "actionCompleted",
+          "action": "prostitute.shift"
+        },
+        {
+          "kind": "careerTransition",
+          "career": "prostitute"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 77,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "not",
+          "condition": {
+            "kind": "careerStage",
+            "career": "prostitute",
+            "stage": "new-independent-worker"
+          }
+        },
+        {
+          "kind": "calendarSeason",
+          "value": "summer"
+        },
+        {
+          "kind": "careerFact",
+          "career": "prostitute",
+          "fact": "season-summer-worked",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Summer crowds make selective bookings and time management more visible while preserving the option to decline or reserve time for rest.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record this shipped seasonal work context",
+          "text": "Record this shipped seasonal work context.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "prostitute",
+              "fact": "season-summer-worked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prostitute.career.season-autumn",
+      "title": "Record autumn voluntary work context",
+      "sourceDomain": "prostitute",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "actionCompleted",
+          "action": "prostitute.shift"
+        },
+        {
+          "kind": "careerTransition",
+          "career": "prostitute"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 76,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "not",
+          "condition": {
+            "kind": "careerStage",
+            "career": "prostitute",
+            "stage": "new-independent-worker"
+          }
+        },
+        {
+          "kind": "calendarSeason",
+          "value": "autumn"
+        },
+        {
+          "kind": "careerFact",
+          "career": "prostitute",
+          "fact": "season-autumn-worked",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Autumn formal events make presentation and careful alignment of expectations more important without changing personal boundaries.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record this shipped seasonal work context",
+          "text": "Record this shipped seasonal work context.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "prostitute",
+              "fact": "season-autumn-worked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prostitute.career.season-winter",
+      "title": "Record winter voluntary work context",
+      "sourceDomain": "prostitute",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "actionCompleted",
+          "action": "prostitute.shift"
+        },
+        {
+          "kind": "careerTransition",
+          "career": "prostitute"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 75,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "not",
+          "condition": {
+            "kind": "careerStage",
+            "career": "prostitute",
+            "stage": "new-independent-worker"
+          }
+        },
+        {
+          "kind": "calendarSeason",
+          "value": "winter"
+        },
+        {
+          "kind": "careerFact",
+          "career": "prostitute",
+          "fact": "season-winter-worked",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Winter makes recurring clients and dependable agreements more visible while economic pressure remains context rather than coercion.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record this shipped seasonal work context",
+          "text": "Record this shipped seasonal work context.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "prostitute",
+              "fact": "season-winter-worked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prostitute.career.seasonal-breadth",
+      "title": "Record four-season professional breadth",
+      "sourceDomain": "prostitute",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "prostitute"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 84,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerFact",
+          "career": "prostitute",
+          "fact": "season-spring-worked",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "prostitute",
+          "fact": "season-summer-worked",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "prostitute",
+          "fact": "season-autumn-worked",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "prostitute",
+          "fact": "season-winter-worked",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "prostitute",
+          "fact": "seasonal-breadth-ready",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Working through all four seasons demonstrates professional breadth without changing the shipped wage rules.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record seasonal breadth",
+          "text": "Record seasonal breadth.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "prostitute",
+              "fact": "seasonal-breadth-ready"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prostitute.career.established",
+      "title": "Seasonal breadth can establish the voluntary career",
+      "sourceDomain": "prostitute",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "prostitute",
+          "fact": "seasonal-breadth-ready"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "prostitute.shift"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 88,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "prostitute",
+          "stage": "known-professional"
+        },
+        {
+          "kind": "careerFact",
+          "career": "prostitute",
+          "fact": "seasonal-breadth-ready",
+          "present": true
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Repeated agreements, clear boundaries, and work across changing contexts mark an established voluntary career; no late route is chosen automatically.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Enter Established without choosing a late route",
+          "text": "Enter Established without choosing a late route.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "advanceCareer",
+              "career": "prostitute",
+              "transition": "established"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
