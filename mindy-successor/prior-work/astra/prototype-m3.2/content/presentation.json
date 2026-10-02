@@ -3428,7 +3428,7 @@
         "altKey": "presentation.static.career.prostitute.event.alt"
       }
     },
-    "job/prostitute/event/prostitute-cross-guard-safety/default": {
+    "job/prostitute/event/prostitute-cross-city-safety/default": {
       "static": {
         "kind": "image",
         "src": "assets/presentation/career-prostitute-result.svg",
