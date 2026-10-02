@@ -139,7 +139,7 @@
       ]
     },
     {
-      "id": "prostitute.cross.guard-safety",
+      "id": "prostitute.cross.city-safety",
       "title": "Read an existing Guard city-resolution fact",
       "sourceDomain": "prostitute",
       "trigger": [],
