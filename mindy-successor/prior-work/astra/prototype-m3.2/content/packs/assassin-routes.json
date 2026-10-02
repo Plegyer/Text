@@ -511,14 +511,7 @@
           "id": "veteran",
           "label": "Take Veteran",
           "text": "Take Veteran.",
-          "conditions": [
-            {
-              "kind": "careerFact",
-              "career": "assassin",
-              "fact": "veteran-ready",
-              "present": true
-            }
-          ],
+          "conditions": [],
           "effects": [
             {
               "kind": "advanceCareer",
@@ -651,14 +644,7 @@
           "id": "veteran",
           "label": "Choose Veteran practice",
           "text": "Keep the career grounded in sustained ordinary professional practice.",
-          "conditions": [
-            {
-              "kind": "careerFact",
-              "career": "assassin",
-              "fact": "veteran-ready",
-              "present": true
-            }
-          ],
+          "conditions": [],
           "effects": [
             {
               "kind": "advanceCareer",
