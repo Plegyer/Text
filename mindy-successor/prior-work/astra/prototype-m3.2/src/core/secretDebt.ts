@@ -22,6 +22,21 @@ export function secretDebtWorkVisible(s:Save){
   return secretDebtIsBound(s);
 }
 
+export function secretDebtAcceptanceDay(s:Save){
+  const day=secretDebtCareerState(s)?.counters.accepted_day;
+  return Number.isInteger(day)?day:undefined;
+}
+
+/**
+ * Product supplies activationDelayDays.  This function deliberately owns no
+ * default, historical value, or fallback for that still-open tuning input.
+ */
+export function secretDebtActivationDue(s:Save,activationDelayDays:number){
+  if(!Number.isInteger(activationDelayDays)||activationDelayDays<0)throw new Error('Secret Debt activation delay must be a non-negative integer.');
+  const acceptedDay=secretDebtAcceptanceDay(s);
+  return secretDebtCareerState(s)?.stage==='accepted'&&acceptedDay!==undefined&&s.run.calendar.elapsedDays>=acceptedDay+activationDelayDays;
+}
+
 /**
  * The acceptance day is structural state, not Product tuning.  It lets the
  * future activation policy compare a locked delay against the actual day on
