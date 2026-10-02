@@ -1,0 +1,103 @@
+# Original Simply Mindy — design-pattern synthesis v1
+
+Status: **REFERENCE ONLY.** This is not Product authority and does not ask the successor to copy original values/content 1:1.
+
+## Why this exists
+
+The original SWF is useful mainly as a systems-design reference: how work, School, housing pressure, career progression, endings and New Game+ interact. Current user decisions always override the original.
+
+## High-value patterns
+
+### 1. Small daily action economy
+- Original baseline Stamina is 3.
+- Ordinary work and paid School lessons consume 1 Stamina.
+- Some larger activities consume more.
+- Ending bonuses can permanently add +1 daily Stamina.
+
+Design lesson: Energy/Stamina is the main daily budget. A +1/day Meta reward is powerful because it changes the number of meaningful actions, not merely a stat number.
+
+### 2. Work is stat shaping, not pure stat inflation
+Across the 12 recovered original jobs, seasonal shift packages always mix gains and losses. Excluding the Stamina cost, the net stat movement per shift is either 0 or +1.
+
+Design lesson: work is primarily a way to shape a build while earning money. It should not be the fastest universal stat-growth engine. The successor deliberately uses a softer version (negative tradeoffs in about 2 of 4 seasons), but progression-speed tests should remember that the original had much stronger stat sinks.
+
+### 3. Seasons matter mechanically
+The same job changes different stats in different seasons. Seasons therefore affect build direction, not only presentation.
+
+Design lesson: seasonal packages should create meaningful variation without changing the career's identity.
+
+### 4. Wage = baseline income + build value
+Original job income uses a random base plus weighted relevant stats. A persistent sexuality-adjacent stat also contributes positively to many wages.
+
+Design lesson: wages feel better when character development changes earning power. Exact original coefficients/randomness are not important; the successor can keep deterministic or differently tuned formulas.
+
+### 5. School is a money-for-growth accelerator
+Original School lessons cost one Stamina but grant much larger stat packages than one work shift. Their money cost is high relative to early-job income.
+
+Design lesson: School occupies a distinct niche: sacrifice money and one daily action to accelerate a chosen build. It should not be free routine growth.
+
+### 6. Unlocks have build path + time fallback
+Many later original jobs unlock from a stat combination OR simply from reaching Year 2/3.
+
+Design lesson: specialization rewards early access, while the year fallback prevents a poor build from permanently locking content.
+
+### 7. Careers have milestones before the ending
+Recovered career visit counters commonly trigger authored events around 15 shifts; richer routes also use 5/10/30 milestones. Around 50 shifts, the career-ending opportunity appears.
+
+Design lesson: do not make 50 shifts a silent counter grind. A profession should change along the way.
+
+### 8. Ending eligibility is not automatic ending
+At the 50-shift Prostitute milestone, the original opens a dedicated scene with an explicit yes/no choice. Only the affirmative choice commits the ending selection.
+
+Design lesson: reaching conditions should create an explicit player-controlled ending action. This matches the successor's locked non-terminal eligibility rule.
+
+### 9. Housing/economy is a real pressure system
+Original rent can be paid with money or by sacrificing stats. If the chosen payment cannot be made, the heroine sleeps outside. Repeated nonpayment creates a dedicated poverty route and eventually an ending/alternate life state.
+
+Design lesson: housing pressure links money, stats and route selection. The successor does not need stat-paid rent, but it needs enough ongoing sinks that work/School choices remain meaningful.
+
+### 10. Poverty can become content, not a dead fail state
+The original street/no-rent path has repeated-night penalties, authored milestones, an alternate-life outcome and a useful New Game+ reward.
+
+Design lesson: an economic collapse route can become a deliberate hidden playstyle. This is the useful conceptual precedent for Secret Debt; exact original counts/penalties should not be copied.
+
+### 11. Meta rewards are heterogeneous rule changes
+Recovered original ending rewards include:
+- fixed starting-stat bonuses;
+- starting money;
+- +1 daily Stamina;
+- starting gear/spells/moves;
+- immediate unlocking of later jobs;
+- passive daily income;
+- disabling rent;
+- partial stat inheritance;
+- titles/other identity unlocks.
+
+Design lesson: New Game+ is strongest when endings change the next run in different ways, not when every ending is another small stat bundle.
+
+### 12. Career endings often combine “job learned” + bonus
+Multiple later-career endings explicitly grant a stat reward and permanently unlock that same job for later runs.
+
+Design lesson: the successor's D21 model — Hard Work permanently makes that profession available from the start and unlocks a selectable profession bonus — is conceptually consistent with the original while still being a new system.
+
+### 13. Failed/odd runs can still progress Meta
+The original time-up/failure-type endings can still award future-run bonuses.
+
+Design lesson: avoid making an entire run worthless just because the player did not hit the ideal outcome.
+
+## Successor implications to test, not auto-lock
+
+- Current successor work growth is intentionally softer than original penalties, but may still be much faster in net-stat terms because housing no longer drains stats in the same way. Verify progression speed over a full 160-day run.
+- School should remain meaningfully expensive relative to ordinary earnings so its large stat packages remain a strategic choice.
+- Career event density should prevent Hard Work=50 from feeling like a silent counter.
+- New Start+ bonus design should favor distinct playstyle changes and route access, not only additive stats.
+- Secret Debt should be judged as a complete alternate route with its own economy and exits, not as a punishment minigame.
+
+## What not to copy automatically
+
+- original stat names or 1:1 mappings;
+- original explicit-content framing;
+- original exact wages, rent prices, thresholds, or every-season penalties;
+- original randomness where successor deterministic systems are cleaner;
+- original ending reward magnitudes;
+- original persistent Fuckability as a substitute for successor Lust.
