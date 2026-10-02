@@ -155,6 +155,11 @@ In the original Finale mode, earned bonuses are individually toggled: enabling o
 
 Design lesson: player-selected Meta does not need an arbitrary one-slot cap to stay interesting. Special content can react to the active loadout itself. The successor Palace rule — all ten ordinary Hard Work packages must be active in that New Start+ life to receive the Day-1 invitation — is a clean example of using loadout state as content gating rather than forcing a universal bonus limit.
 
+### 23. Refusal often redirects content instead of deleting it
+Recovered relationship/job routing contains parallel lover/spurn branches. Farmer and Cabaresque both continue with authored follow-up scenes after refusal; Farmer even carries a dedicated spurn countdown before later refusal-route content.
+
+Design lesson: a meaningful “no” should often choose a different authored route instead of simply removing content. This supports refusal-safe relationships and career choices in the successor: refusal can change trust, pacing or outcome identity while preserving useful play.
+
 ## Successor implications to test, not auto-lock
 
 - Current approved successor seasonal-tradeoff candidate yields **+1.5 net progression-stat points per ordinary shift on average for all ten careers**. That is roughly +75 summed stat points across 50 shifts, versus about +25 in the recovered original work model. This is a balance-test flag, not a command to copy the original: verify progression speed and cap timing over a full 160-day run, especially with School and NG+.
