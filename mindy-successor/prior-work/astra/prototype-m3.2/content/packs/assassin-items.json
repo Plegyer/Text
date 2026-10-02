@@ -1,0 +1,357 @@
+{
+  "schemaVersion": 1,
+  "id": "assassin.items",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "careers": [
+        "assassin"
+      ],
+      "quests": [
+        "assassin.contract"
+      ],
+      "relationships": [
+        "assassin.handler"
+      ],
+      "inventory": [
+        "assassin_concealed_toolset",
+        "assassin_sealed_pass",
+        "assassin_disguise_kit",
+        "assassin_evidence_case"
+      ],
+      "itemCapabilities": [
+        "assassin_concealed_entry",
+        "assassin_sealed_access",
+        "assassin_context_disguise",
+        "assassin_handle_evidence"
+      ]
+    },
+    "writes": {
+      "careers": [
+        "assassin"
+      ],
+      "inventory": [
+        "assassin_concealed_toolset",
+        "assassin_sealed_pass",
+        "assassin_disguise_kit",
+        "assassin_evidence_case"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "assassin.items.concealed-toolset",
+      "title": "A narrow Concealed Toolset becomes available",
+      "sourceDomain": "assassin",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "questTransition",
+          "quest": "assassin.contract"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "assassin.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 66,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "questStage",
+              "quest": "assassin.contract",
+              "stage": "intel"
+            },
+            {
+              "kind": "questStage",
+              "quest": "assassin.contract",
+              "stage": "prep"
+            },
+            {
+              "kind": "questStage",
+              "quest": "assassin.contract",
+              "stage": "method"
+            },
+            {
+              "kind": "questStage",
+              "quest": "assassin.contract",
+              "stage": "closed"
+            }
+          ]
+        },
+        {
+          "kind": "itemCapability",
+          "capability": "assassin_concealed_entry",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The Concealed Toolset provides one narrow career capability where a scene explicitly supports it; it is not a universal bypass key.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "take",
+          "label": "Take the toolset for Assassin-local concealed entry",
+          "text": "Take the toolset for Assassin-local concealed entry.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addItem",
+              "id": "assassin_concealed_toolset",
+              "count": 1
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "assassin",
+              "fact": "concealed-toolset-issued"
+            }
+          ]
+        },
+        {
+          "id": "defer",
+          "label": "Continue without the optional toolset",
+          "text": "Continue without the optional toolset.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "assassin.items.sealed-pass",
+      "title": "A Sealed Pass is prepared for one Assassin context",
+      "sourceDomain": "assassin",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "assassin",
+          "fact": "contract-cycle-complete"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "assassin.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 65,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerFact",
+          "career": "assassin",
+          "fact": "contract-cycle-complete",
+          "present": true
+        },
+        {
+          "kind": "itemCapability",
+          "capability": "assassin_sealed_access",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The Sealed Pass is useful only in the prepared context that recognizes it. It does not create universal access or Palace privilege.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "take",
+          "label": "Keep the contextual Sealed Pass",
+          "text": "Keep the contextual Sealed Pass.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addItem",
+              "id": "assassin_sealed_pass",
+              "count": 1
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "assassin",
+              "fact": "sealed-pass-issued"
+            }
+          ]
+        },
+        {
+          "id": "defer",
+          "label": "Do not take the pass",
+          "text": "Do not take the pass.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "assassin.items.disguise-kit",
+      "title": "A context disguise kit supports social access",
+      "sourceDomain": "assassin",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "relationshipFactAdded",
+          "relationship": "assassin.handler",
+          "fact": "professional-trust-earned"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "assassin.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 64,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "relationshipFact",
+          "relationship": "assassin.handler",
+          "fact": "professional-trust-earned",
+          "present": true
+        },
+        {
+          "kind": "itemCapability",
+          "capability": "assassin_context_disguise",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The disguise kit helps fit a prepared social context. It is not a universal impersonation or access system.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "take",
+          "label": "Keep the disguise kit for context fit only",
+          "text": "Keep the disguise kit for context fit only.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addItem",
+              "id": "assassin_disguise_kit",
+              "count": 1
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "assassin",
+              "fact": "disguise-kit-issued"
+            }
+          ]
+        },
+        {
+          "id": "defer",
+          "label": "Continue without the disguise kit",
+          "text": "Continue without the disguise kit.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "assassin.items.evidence-case",
+      "title": "An Evidence Case supports local evidence handling",
+      "sourceDomain": "assassin",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "questTransition",
+          "quest": "assassin.contract"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "assassin.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 63,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "questStage",
+          "quest": "assassin.contract",
+          "stage": "closed"
+        },
+        {
+          "kind": "itemCapability",
+          "capability": "assassin_handle_evidence",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The Evidence Case keeps current-job records usable for later choices without creating a global evidence economy.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "take",
+          "label": "Keep the Evidence Case without creating a global evidence system",
+          "text": "Keep the Evidence Case without creating a global evidence system.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addItem",
+              "id": "assassin_evidence_case",
+              "count": 1
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "assassin",
+              "fact": "evidence-case-issued"
+            }
+          ]
+        },
+        {
+          "id": "defer",
+          "label": "Leave evidence handling manual",
+          "text": "Leave evidence handling manual.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    }
+  ]
+}
