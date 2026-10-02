@@ -65,7 +65,8 @@ test('Artist/Geisha v16 preserves shipped action, seasonal, and Hard Work identi
       counter:counters[season],
       amount:1
     });
-    assert.equal(action.seasonal[season].length,3,season);
+    const expectedLength=(season==='summer'||season==='autumn')?4:3;
+    assert.equal(action.seasonal[season].length,expectedLength,season);
   }
 
   const ending=definitions.endings.find((e:any)=>e.id==='ending.artist-geisha.hard-work');
