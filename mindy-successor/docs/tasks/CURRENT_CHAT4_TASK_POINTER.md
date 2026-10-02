@@ -15,20 +15,20 @@ Revise the packet to the locked model:
 - later five (Guard, Merchant, Artist/Geisha, Assassin, Prostitute): up to two separate +5 stat bonuses each; prepare a concrete two-stat proposal for each;
 - New Start+ may activate any subset of earned profession bonus packages, including none or all ten;
 - no single-slot restriction for these profession packages;
-- at least three profession packages must include a +5 Lust component; exact mapping is still Product-owned;
+- include a meaningful Lust Hard Work bonus proposal, but do not guess whether the user's latest 'minimum 3 to Lust' means amount +3 or three profession packages until Leader resolves that wording;
 - remove/replace the old automatic +3/+3 and Merchant +600 model in the eventual implementation plan;
-- Palace availability in a life requires all ten ordinary Hard Work achievements earned **and all ten bonus packages active for that life**;
-- Palace x2 raises the 12-stat cap to 200 when active; x2 arithmetic order vs +5/manual allocation is still open.
+- Palace eligibility in a life requires all ten ordinary Hard Work achievements earned **and all ten bonus packages active for that life**; when satisfied, an automatic Palace invitation arrives on Day 1 and opens access;
+- Palace x2 is **cap-only**: when active, the 12 progression-stat caps are 200 instead of 100. It never multiplies current/start values, +5 bonuses, or the 10 allocation points.
 
 ## Deliverable
 
-Produce a revised concrete profession-bonus mapping proposal satisfying the above, including at least three Lust-bearing packages, plus:
+Produce a revised concrete profession-bonus mapping proposal satisfying the above; keep the exact Lust interpretation visibly pending one Leader clarification, plus:
 - generic save/setup representation for arbitrary subset activation;
 - exact current-runtime touchpoints;
 - migration from old automatic rewards;
 - Palace all-ten-active gate integration;
 - tests for none/some/all selections;
-- explicit collision ordering with Secret Debt domain lock and Palace x2.
+- explicit collision ordering with Secret Debt domain lock and the Palace all-ten-active -> Day-1 invitation gate.
 
 Do not implement shared runtime yet.
 No full CI.

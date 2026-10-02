@@ -14,9 +14,8 @@ Current production audit shows:
 - Lumber has seasonal negative stat effects;
 - the other nine ordinary profession shifts currently contain only positive stat changes.
 
-User/Product intent is that work has tradeoffs rather than pure stat growth. Exact frequency is awaiting one Product clarification:
-- negative on every seasonal shift package, or
-- negative only in selected seasons per profession.
+User/Product intent is that work has tradeoffs rather than pure stat growth.
+Locked direction: **do not add a negative every season**. Target roughly **2 seasons out of 4 per profession** with a negative stat tradeoff, leaving the other seasons without a negative.
 
 ## Assignment
 
@@ -26,9 +25,9 @@ Prepare a production-ready packet only:
 - keep Lust separate from the 12 progression stats unless explicitly authorized;
 - preserve current wages, unlock gates, counters, Hard Work thresholds and career-specific events;
 - flag any balance risk where repeated work could drive an important gate stat down too aggressively;
-- give two mappings: A = at least one negative every season; B = negatives only in selected seasons;
+- propose the exact two negative seasons and negative stat for each profession, with balance rationale;
 - provide focused regression/acceptance test plan.
 
-Do not change runtime/content seasonal numbers until Leader locks the frequency/mapping.
+Do not change runtime/content seasonal numbers until Leader accepts the exact per-profession mapping; the 2-of-4 frequency direction is already locked.
 No full CI.
 Freeze packet SHA and report `READY_FOR_LEADER_DECISION`.

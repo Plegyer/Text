@@ -131,17 +131,17 @@ This supersedes the earlier nine-deep queue target.
 
 Результат:
 - героиня возвращается в свой исходный мир;
-- в Meta/New Game+ навсегда открывается **опция удвоения всех 12 progression stats** в новой жизни.
+- в Meta/New Game+ навсегда открывается **опция удвоенного потолка всех 12 progression stats**: их максимум в такой жизни становится 200 вместо 100.
 
 Это отдельная +1 True Ending и не заменяет Palace Hard Work / Court Power / Inner Truth.
 
 Не зафиксировано этим решением:
 - точная механика confrontation с Принцем;
 - имя/лор Принца;
-- порядок применения x2 относительно других NG+ бонусов и возможных stat caps;
+- UI/активация повышенного потолка 200 в New Game+;
 - UI/ID/анимация финала.
 
-Само условие `all 12 progression stats > 90`, победа над Принцем, возвращение домой и NG+ x2 reward **LOCKED**.
+Само условие `all 12 progression stats > 90`, победа над Принцем, возвращение домой и NG+ reward с повышением потолка 12 статов до 200 **LOCKED**.
 
 ### D19 — Secret Debt / hidden poverty route baseline
 
@@ -191,32 +191,38 @@ D21 is refined as follows:
 - the later five (Guard, Merchant, Artist/Geisha, Assassin, Prostitute) may each unlock **two separate +5 stat bonuses**;
 - on New Start+ the player may activate **any subset** of earned Hard Work bonuses: none, some, or all;
 - there is no one-slot restriction for these earned profession bonuses;
-- Product intent is that Lust, as a deliberately harder-to-grow axis, appears in at least three profession bonus packages; exact profession mapping remains to be locked;
+- Lust must receive a meaningful Hard Work bonus because it is deliberately harder to grow; the exact interpretation/amount from the latest Product wording is awaiting one direct clarification and must not be guessed;
 - the old automatic +3/+3 and Merchant +600 model is superseded by this selectable-bonus direction.
 
-### D23 — Palace per-run activation gate
+### D23 — Palace per-run activation gate and Day-1 invitation
 
 The Palace is not available merely because all ten Hard Work achievements exist in permanent Meta.
 
 For a particular New Start+ life:
 - all ten ordinary Hard Work achievements must already be earned;
 - **all ten corresponding Hard Work bonus packages must be actively selected for that new life**;
-- only then is Palace work available immediately in that life;
-- no mandatory invitation/item may substitute for or weaken this all-ten-active requirement;
+- if and only if that condition is satisfied, the player receives the **Palace invitation automatically on Day 1**;
+- the invitation is the authored reveal/entry step and then opens Palace access; it is not random and does not add another progression requirement;
+- no other invitation/item may substitute for or weaken the all-ten-active requirement;
 - Secret Debt never counts toward the ten.
 
-Therefore Palace eligibility is a conjunction of permanent 10/10 completion plus current-run all-ten bonus activation.
+Therefore Palace eligibility is permanent 10/10 completion + current-run all-ten bonus activation -> automatic Day-1 invitation -> Palace access.
 
 ### D24 — Palace True Ending stat ceiling
 
-The permanent optional Palace True Ending x2 reward raises the maximum of each of the 12 progression stats from **100 to 200** when that x2 legacy option is active.
+The permanent optional Palace True Ending x2 reward means **cap x2 only**.
 
-- Lust remains outside the 12-stat D18 requirement/reward;
-- the exact arithmetic order of x2 relative to Hard Work +5 packages and the 10 manual creation allocation points remains open until explicitly locked.
+When that legacy option is active:
+- the maximum of each of the 12 progression stats becomes **200 instead of 100**;
+- current/start values are **not multiplied**;
+- Hard Work +5 bonuses are not multiplied;
+- the 10 manual creation allocation points are not multiplied;
+- there is no before/after arithmetic-order question because x2 changes only the allowed maximum;
+- Lust remains outside the 12-stat D18 requirement/reward.
 
 ## Still open after this lock
 
-- exact negative-stat tradeoff mapping/frequency for ordinary job seasonal packages;
+- exact negative-stat mapping for ordinary jobs; target frequency is negative tradeoffs in about two seasons out of four per profession, not every season;
 - exact numeric economy;
 - exact Lust starting value;
 - meta loadout slot/budget count for non-Hard-Work strong modifiers;
