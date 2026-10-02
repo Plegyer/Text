@@ -1,7 +1,7 @@
 import { metrics, stats, seasons, priorityClasses, saveSchema, type Stat, type Save, type Meta, type Condition, type Effect, type Catalog, type StoryEvent, type Action, type MachineDefinition, type ReactionFact, type ReactionTrigger, type PriorityClass, type LodgingDefinition, type NightChoiceDefinition, type ActivityDefinition, type ActivityOutcome, type ActivityEnvelope, ordinaryHardWorkCareers, type MetaReward, type OrdinaryHardWorkCareer } from './schema.ts';
 import {SCHOOL_ACTION_ID,SCHOOL_COURSES,executeSchoolLesson,type SchoolCourseId} from './school.ts';
 import {presentationIdForActionResult,presentationIdForEvent} from './presentation.ts';
-import {SECRET_DEBT_CAREER_ID,SECRET_DEBT_SHIFT_ACTION_ID,captureSecretDebtAcceptanceDay,secretDebtActivationDue,secretDebtBlocksCareerId,secretDebtBlocksEnding,secretDebtBlocksOrdinaryShift,secretDebtBlocksSourceDomain,secretDebtShiftTuningReady} from './secretDebt.ts';
+import {SECRET_DEBT_CAREER_ID,SECRET_DEBT_SHIFT_ACTION_ID,captureSecretDebtAcceptanceDay,secretDebtActivationDue,secretDebtBlocksCareerId,secretDebtBlocksEnding,secretDebtBlocksOrdinaryShift,secretDebtBlocksSourceDomain,secretDebtShiftStatEffects,secretDebtShiftTuningReady,secretDebtWageDefinition} from './secretDebt.ts';
 
 const statSet=new Set<string>(stats);
 const cappedLegacy=new Set(['health','stress','trust']);
@@ -1231,9 +1231,11 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
   if(a.mode==='brew'&&!['gentle','bold'].includes(command.recipe??''))throw new Error('Выберите способ приготовления.');
   s.run.metrics.money-=cost;s.run.metrics.energy-=a.cost.energy;
   applyActionEffectsMutable(s,a.effects,cat);
-  if(a.seasonal)applyEffectsMutable(s,a.seasonal[calendar(s.run.day).season],cat,true);
-  if(a.wage){
-    const wage=Math.round(a.wage.base+a.wage.weights.reduce((sum,w)=>sum+getMetric(s,w.stat)*w.factor,0));
+  if(a.id===SECRET_DEBT_SHIFT_ACTION_ID)applyEffectsMutable(s,secretDebtShiftStatEffects(),cat,true);
+  else if(a.seasonal)applyEffectsMutable(s,a.seasonal[calendar(s.run.day).season],cat,true);
+  const wageDefinition=a.id===SECRET_DEBT_SHIFT_ACTION_ID?secretDebtWageDefinition():a.wage;
+  if(wageDefinition){
+    const wage=Math.round(wageDefinition.base+wageDefinition.weights.reduce((sum,w)=>sum+getMetric(s,w.stat)*w.factor,0));
     applyEffectsMutable(s,[{kind:'metric',key:'money',delta:wage}],cat,true);log(s,`Заработано: ${wage} монет.`);
   }
   s.run.actionCounts[a.id]=Math.min(1_000_000,(s.run.actionCounts[a.id]??0)+1);
