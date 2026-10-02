@@ -173,6 +173,27 @@ test('lender chance is attempted only once per eligible street night even across
   assert.equal(s.run.history['secret-debt.lender-encounter'],undefined,'failed check must not consume the one-life encounter');
 });
 
+test('failed lender roll is not consumed and the next street night retries from persisted RNG state',()=>{
+  let s=started();
+  s.run.rng=8; // first LCG roll > 0.20; second roll < 0.20
+
+  s=dispatch(s,{type:'endDay'},secretDebtCatalog);
+  s=dispatch(s,{type:'chooseLodging',id:'lodging.street'},secretDebtCatalog);
+  assert.equal(s.run.pending,null);
+  assert.equal(s.run.flow.night?.phase,'VoluntaryNightChoice');
+  assert.equal(s.run.progression.careers['secret-debt'],undefined);
+  assert.equal(s.run.history['secret-debt.lender-encounter'],undefined);
+
+  s=parseSave(JSON.stringify(s),catalog);
+  s=dispatch(s,{type:'chooseNightChoice',id:'night.sleep'},secretDebtCatalog);
+  assert.equal(s.run.day,1);
+
+  s=dispatch(s,{type:'endDay'},secretDebtCatalog);
+  s=dispatch(s,{type:'chooseLodging',id:'lodging.street'},secretDebtCatalog);
+  assert.equal(s.run.pending?.eventId,'secret-debt.lender-encounter');
+  assert.equal(s.run.history['secret-debt.lender-encounter']?.count,1);
+});
+
 test('acceptance grants exactly 2000 once, captures acceptance day, and survives reload',()=>{
   let s=started();
   s.run.housingState.current='street';
