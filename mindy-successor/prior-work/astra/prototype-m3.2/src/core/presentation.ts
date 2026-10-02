@@ -657,6 +657,23 @@ export const MERCHANT_ITEM_IDS=[
 
 export const MERCHANT_SCHOOL_EVENT_IDS=[] as const;
 
+export const MERCHANT_CROSS_SYSTEM_EVENT_IDS=[
+  'merchant.cross.lumber-route',
+  'merchant.cross.farm-sample',
+  'merchant.cross.hunter-return',
+  'merchant.cross.tavern-rumour',
+  'merchant.cross.guard-pass'
+] as const;
+
+export const MERCHANT_ADVANCED_STATUS_IDS=[
+  'veteran-ready',
+  'crisis-resolved',
+  'merchant-house-ready',
+  'speculator-route-ready',
+  'patron-route-ready',
+  'outcome-ready'
+] as const;
+
 export function presentationIdForMerchantStage(stage:string){
   return `job/merchant/stage/${clean(stage)}`;
 }
@@ -1005,6 +1022,25 @@ export function presentationSlots(cat:Catalog):PresentationSlot[]{
       add({
         id:presentationIdForMerchantState(stateId),
         label:`Merchant · liquidity state · ${stateId}`,
+        baseMediaIds:[],
+        fallbackId:'job/merchant/result/default'
+      });
+    }
+  }
+
+  const merchantAdvancedStateBackings:Record<(typeof MERCHANT_ADVANCED_STATUS_IDS)[number],boolean>={
+    'veteran-ready':merchantRuntimeText.includes('veteran-ready'),
+    'crisis-resolved':merchantRuntimeText.includes('crisis-resolved'),
+    'merchant-house-ready':merchantRuntimeText.includes('merchant-house-ready'),
+    'speculator-route-ready':merchantRuntimeText.includes('speculator-route-ready'),
+    'patron-route-ready':merchantRuntimeText.includes('patron-route-ready'),
+    'outcome-ready':merchantRuntimeText.includes('outcome-ready')
+  };
+  for(const stateId of MERCHANT_ADVANCED_STATUS_IDS){
+    if(merchantAdvancedStateBackings[stateId]){
+      add({
+        id:presentationIdForMerchantState(stateId),
+        label:`Merchant · readiness · ${stateId}`,
         baseMediaIds:[],
         fallbackId:'job/merchant/result/default'
       });
