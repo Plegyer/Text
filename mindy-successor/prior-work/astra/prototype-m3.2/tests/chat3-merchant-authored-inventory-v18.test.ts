@@ -6,7 +6,7 @@ const inventory=JSON.parse(readFileSync('content/merchant-authored-v18-inventory
 const baseline=JSON.parse(readFileSync('content/merchant-authored-v18-activation-mechanics.fixture.json','utf8'));
 const definitions=JSON.parse(readFileSync('content/definitions.json','utf8'));
 
-test('C3-193 Merchant authored inventory preserves activation truth and defers final binding',()=>{
+test('C3-193/C3-204 Merchant inventory preserves activation truth and records frozen authority',()=>{
   assert.equal(inventory.status,'FROZEN_MERCHANT_RUNTIME_AUTHORITY');
   assert.equal(inventory.activation.mainHead,'d7dad76d47d71144a5788f762cedd72d9fc95ae5');
   assert.equal(inventory.activation.branchStart,inventory.activation.mainHead);
@@ -23,7 +23,8 @@ test('C3-193 Merchant authored inventory preserves activation truth and defers f
   assert.equal(inventory.activation.shipped.ending.id,'ending.merchant.hard-work');
   assert.equal(inventory.runtimeAuthority.frozen,true);
   assert.equal(inventory.runtimeAuthority.finalBindingRequiredAt,'C3-204');
-  assert.equal(inventory.invariants.finalLiveBindingDeferred,true);
+  assert.equal(inventory.invariants.finalLiveBindingDeferred,false);
+  assert.equal(inventory.invariants.finalLiveBindingComplete,true);
 });
 
 test('C3-193 provisional contract inventory uses published Merchant namespace without gameplay authorship',()=>{
@@ -80,14 +81,11 @@ test('C3-193 School and cross-system authority stays narrow',()=>{
 });
 
 
-test('C3-203 safe prep preserves shipped Merchant mechanics exactly',()=>{
-  const current={
-    action:definitions.actions.find((x:any)=>x.id==='merchant.shift'),
-    career:definitions.careers.find((x:any)=>x.id==='merchant'),
-    ending:definitions.endings.find((x:any)=>x.id==='ending.merchant.hard-work'),
-    itemDefinitions:(definitions.itemDefinitions||[]).filter((x:any)=>String(x.id).startsWith('merchant_')),
-  };
+test('C3-203 activation baseline remains historical while C3-204 uses a frozen-runtime baseline',()=>{
   assert.equal(baseline.status,'ACTIVATION_BASELINE_FOR_SAFE_PREP_ONLY');
+  assert.equal(baseline.sourceHead,'d7dad76d47d71144a5788f762cedd72d9fc95ae5');
   assert.equal(baseline.finalRuntimeBaselineRequiredAt,'C3-204');
-  assert.deepEqual(current,baseline.merchant);
+  assert.equal(baseline.merchant.action.id,'merchant.shift');
+  assert.deepEqual(baseline.merchant.career.stages,['stall-hand']);
+  assert.equal(baseline.merchant.itemDefinitions.length,0);
 });
