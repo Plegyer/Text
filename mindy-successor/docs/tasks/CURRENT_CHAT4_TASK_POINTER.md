@@ -1,40 +1,30 @@
 # CURRENT CHAT4 TASK POINTER
 
-Status: **ACTIVE — HARD WORK PRODUCTION PACKAGE CATALOG + NEW START+ PRESENTATION PREP**
+Status: **ACTIVE — D21-D24 SHARED META INFRA CURRENT-MAIN IMPLEMENTATION v1**
 Owner: Chat 4
 
-Completed infra prep:
-`chat4/hard-work-meta-infra-prep-v1@50ede59ad96bd8059fcc15dca1ffdffc910563ab`
+Completed evidence:
+- infra prep `50ede59ad96bd8059fcc15dca1ffdffc910563ab`;
+- package catalog `54d87ad3db0fb1846ea2500153e34424c900f89f`;
+- integration manifest `7fd59932452c986c73a5617f0b3aff21ef58b77c`.
 
-## Assignment
+Create `chat4/hard-work-meta-shared-runtime-v1` from fresh main.
 
-Create fresh branch:
-`chat4/hard-work-package-catalog-v1`
-from current main `426ec9146716e1246d6b7bfdd4a570ef2fcb0a54`.
+## Implement
 
-Promote the previously prepared concrete mapping into a production **catalog/fixture + focused tests**, but do not integrate shared engine/schema yet:
+- Hard Work permanently grants early access to that profession in later lives;
+- New Start+ stores any subset of earned active Hard Work packages;
+- retire old automatic +3/+3 and Merchant +600 for new lives only, preserving migrated current-life values;
+- apply selected packages exactly once at creation completion;
+- freeze active package selection for the life;
+- expose shared permanent-10/10 + active-10/10 Palace qualification predicate;
+- Secret Debt domain lock outranks inherited early access;
+- implement effective progression-stat cap 100/200;
+- cap 200 changes only max, never values/bonuses/allocation;
+- Lust stays separate and unaffected by cap 200;
+- migrate old saves safely with no retroactive Palace invitation.
 
-- Lumber: Strength +5
-- Satyr Maid: Grooming +5
-- Undead Farm: Magic +5
-- Tavern: Sociability +5
-- Hunter: Dexterity +5
-- Guard: Endurance +5, Manners +5
-- Merchant: Wits +5, Reason +5
-- Artist/Geisha: Creativity +5, Grooming +5
-- Assassin: Dexterity +5, Wits +5
-- Prostitute/Professional: Sexuality +5, Charm +5, plus separate Lust +3
-
-Rules:
-- first five exactly one +5 progression-stat effect;
-- later five exactly two +5 progression-stat effects in this catalog;
-- Lust is separate and +3 satisfies the locked minimum magnitude;
-- no old automatic +3/+3 or Merchant +600 behavior in the catalog;
-- package activation remains arbitrary subset none/some/all;
-- package selection is whole-package, not individual effects.
-
-Also prepare RU/EN New Start+ package titles/descriptions and accessible selected/unselected copy as an unbound fixture/presentation source.
-
-Use the isolated `hardWorkMeta.ts` validator/tests where possible; do not wire shared engine/schema/UI yet.
-No full CI.
-Freeze exact SHA and report READY_FOR_CHAT2_OR_LEADER.
+Use centralized package catalog/data seam; do not scatter conditions.
+Do not author Palace content, Secret Debt runtime or strong-modifier loadout rules.
+Focused/static tests only, no full CI.
+Freeze SHA and report `READY_FOR_CHAT2`.
