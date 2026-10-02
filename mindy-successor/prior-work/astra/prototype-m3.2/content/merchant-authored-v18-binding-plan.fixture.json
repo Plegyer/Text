@@ -1,0 +1,731 @@
+{
+  "formatVersion": 1,
+  "id": "chat3.merchant-authored-v18.binding-plan",
+  "status": "PROVISIONAL_ONLY_PENDING_FROZEN_MERCHANT_RUNTIME",
+  "authority": {
+    "runtimeBranch": "chat1/merchant-complete-v15",
+    "observedHead": "2d37e7a24fb90f40e08322f2bd9438711cf70455",
+    "contractBlob": "31e353c0284700ff29d658fff9c1032193c0e563",
+    "frozen": false
+  },
+  "allowedActionScenes": [
+    "merchant.shift#spring.default",
+    "merchant.shift#summer.default",
+    "merchant.shift#autumn.default",
+    "merchant.shift#winter.default"
+  ],
+  "publishedRuntimeEventCatalog": [
+    "merchant.career.first-shift",
+    "merchant.career.networked",
+    "merchant.career.seasonal-breadth",
+    "merchant.career.veteran-ready",
+    "merchant.career.choose-route",
+    "merchant.career.choose-patron",
+    "merchant.career.outcome-ready",
+    "merchant.cross.lumber-route",
+    "merchant.cross.farm-sample",
+    "merchant.cross.hunter-return",
+    "merchant.cross.tavern-rumour",
+    "merchant.cross.guard-pass",
+    "merchant.items.appraisal-scales",
+    "merchant.items.manifest-case",
+    "merchant.items.sample-kit",
+    "merchant.poverty.liquidity-response",
+    "merchant.relationship.intro",
+    "merchant.relationship.trust",
+    "merchant.relationship.conflict-open",
+    "merchant.relationship.conflict-resolve",
+    "merchant.relationship.utility",
+    "merchant.routes.house-ready",
+    "merchant.routes.speculator-ready",
+    "merchant.routes.patron-ready",
+    "merchant.trade.appraisal",
+    "merchant.trade.records",
+    "merchant.trade.delivery",
+    "merchant.trade.shortage",
+    "merchant.crisis.delivery-pressure"
+  ],
+  "allowedPublicEndings": [
+    "ending.merchant.hard-work"
+  ],
+  "finalBindingRequiredAt": "C3-204",
+  "bindings": [
+    {
+      "contentKey": "spring.market-reopen",
+      "section": "seasonal",
+      "targetKind": "actionScene",
+      "provisionalTargetIds": [
+        "merchant.shift#spring.default"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "spring.route-check",
+      "section": "seasonal",
+      "targetKind": "actionScene",
+      "provisionalTargetIds": [
+        "merchant.shift#spring.default"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "spring.first-delivery",
+      "section": "seasonal",
+      "targetKind": "actionScene",
+      "provisionalTargetIds": [
+        "merchant.shift#spring.default"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "summer.festival-demand",
+      "section": "seasonal",
+      "targetKind": "actionScene",
+      "provisionalTargetIds": [
+        "merchant.shift#summer.default"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "summer.perishable-window",
+      "section": "seasonal",
+      "targetKind": "actionScene",
+      "provisionalTargetIds": [
+        "merchant.shift#summer.default"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "summer.crowded-negotiation",
+      "section": "seasonal",
+      "targetKind": "actionScene",
+      "provisionalTargetIds": [
+        "merchant.shift#summer.default"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "autumn.harvest-lots",
+      "section": "seasonal",
+      "targetKind": "actionScene",
+      "provisionalTargetIds": [
+        "merchant.shift#autumn.default"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "autumn.storage-notes",
+      "section": "seasonal",
+      "targetKind": "actionScene",
+      "provisionalTargetIds": [
+        "merchant.shift#autumn.default"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "autumn.supplier-comparison",
+      "section": "seasonal",
+      "targetKind": "actionScene",
+      "provisionalTargetIds": [
+        "merchant.shift#autumn.default"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "winter.scarcity-board",
+      "section": "seasonal",
+      "targetKind": "actionScene",
+      "provisionalTargetIds": [
+        "merchant.shift#winter.default"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "winter.route-delay",
+      "section": "seasonal",
+      "targetKind": "actionScene",
+      "provisionalTargetIds": [
+        "merchant.shift#winter.default"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "winter.regulars-first",
+      "section": "seasonal",
+      "targetKind": "actionScene",
+      "provisionalTargetIds": [
+        "merchant.shift#winter.default"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "timing.late-offer",
+      "section": "trade-decision",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.trade.delivery"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "uncertainty.appraisal-note",
+      "section": "trade-decision",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.trade.appraisal"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "supplier.promise-vs-history",
+      "section": "trade-decision",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.trade.delivery"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "manifest.seal-mismatch",
+      "section": "trade-decision",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.trade.records"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "delivery.partial-window",
+      "section": "trade-decision",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.trade.delivery"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "buyer.need-vs-volume",
+      "section": "trade-decision",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.trade.delivery"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "record.cash-timing",
+      "section": "trade-decision",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.trade.records"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "shortage.wait-or-sell",
+      "section": "trade-decision",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.trade.shortage"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "appraisal.second-check",
+      "section": "trade-decision",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.trade.appraisal"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "contract.plain-terms",
+      "section": "trade-decision",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.trade.records"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "supplier.backup",
+      "section": "trade-decision",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.trade.delivery"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "delivery.confirmation",
+      "section": "trade-decision",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.trade.delivery"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "supplier.introduction",
+      "section": "relationship",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.relationship.intro"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "supplier.trust",
+      "section": "relationship",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.relationship.trust"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "supplier.conflict",
+      "section": "relationship",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.relationship.conflict-open"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "supplier.cooperate",
+      "section": "relationship",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.relationship.conflict-resolve"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "supplier.rivalry",
+      "section": "relationship",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.relationship.conflict-resolve"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "supplier.refusal",
+      "section": "relationship",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.relationship.conflict-resolve"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "supplier.utility",
+      "section": "relationship",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.relationship.utility"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "supplier.boundary",
+      "section": "relationship",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.relationship.utility"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "liquidity.street",
+      "section": "poverty-liquidity",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.poverty.liquidity-response"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "liquidity.cheap-room",
+      "section": "poverty-liquidity",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.poverty.liquidity-response"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "liquidity.commission-only",
+      "section": "poverty-liquidity",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.poverty.liquidity-response"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "liquidity.barter-narrow",
+      "section": "poverty-liquidity",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.poverty.liquidity-response"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "liquidity.no-debt-state",
+      "section": "poverty-liquidity",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.poverty.liquidity-response"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "scales.meaning",
+      "section": "items",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.items.appraisal-scales"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "scales.uncertainty",
+      "section": "items",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.items.appraisal-scales",
+        "merchant.trade.appraisal"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "manifest.meaning",
+      "section": "items",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.items.manifest-case"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "manifest.plain-terms",
+      "section": "items",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.items.manifest-case",
+        "merchant.trade.records"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "sample-kit.meaning",
+      "section": "items",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.items.sample-kit"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "items.no-capacity-system",
+      "section": "items",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.items.appraisal-scales",
+        "merchant.items.manifest-case",
+        "merchant.items.sample-kit"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "school.records",
+      "section": "school-boundary",
+      "targetKind": "schoolConsumerBoundary",
+      "provisionalTargetIds": [
+        "merchant.routes.house-ready"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "school.negotiation",
+      "section": "school-boundary",
+      "targetKind": "schoolConsumerBoundary",
+      "provisionalTargetIds": [
+        "merchant.relationship.trust"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "school.formal-terms",
+      "section": "school-boundary",
+      "targetKind": "schoolConsumerBoundary",
+      "provisionalTargetIds": [],
+      "status": "UNBOUND_NO_CURRENT_CONSUMER"
+    },
+    {
+      "contentKey": "school.arcana",
+      "section": "school-boundary",
+      "targetKind": "schoolConsumerBoundary",
+      "provisionalTargetIds": [
+        "merchant.trade.appraisal"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "cross.lumber",
+      "section": "cross-system",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.cross.lumber-route"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "cross.farm",
+      "section": "cross-system",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.cross.farm-sample"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "cross.hunter",
+      "section": "cross-system",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.cross.hunter-return"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "cross.tavern",
+      "section": "cross-system",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.cross.tavern-rumour"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "cross.guard",
+      "section": "cross-system",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.cross.guard-pass"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "cross.activity-boundary",
+      "section": "cross-system",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.cross.hunter-return"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "house.stable-operations",
+      "section": "merchant-house",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.routes.house-ready",
+        "merchant.career.choose-route"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "house.network",
+      "section": "merchant-house",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.routes.house-ready",
+        "merchant.career.choose-route"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "house.logistics",
+      "section": "merchant-house",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.routes.house-ready",
+        "merchant.career.choose-route"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "house.records",
+      "section": "merchant-house",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.routes.house-ready",
+        "merchant.career.choose-route"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "house.readiness",
+      "section": "merchant-house",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.routes.house-ready",
+        "merchant.career.choose-route"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "speculator.scarcity",
+      "section": "speculator-smuggler",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.routes.speculator-ready",
+        "merchant.career.choose-route"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "speculator.risk",
+      "section": "speculator-smuggler",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.routes.speculator-ready",
+        "merchant.career.choose-route"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "speculator.grey-route",
+      "section": "speculator-smuggler",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.routes.speculator-ready",
+        "merchant.career.choose-route"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "speculator.not-morality",
+      "section": "speculator-smuggler",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.routes.speculator-ready",
+        "merchant.career.choose-route"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "speculator.readiness",
+      "section": "speculator-smuggler",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.routes.speculator-ready",
+        "merchant.career.choose-route"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "patron.lumber",
+      "section": "patron-routes",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.routes.patron-ready",
+        "merchant.cross.lumber-route"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "patron.farm",
+      "section": "patron-routes",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.routes.patron-ready",
+        "merchant.cross.farm-sample"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "patron.hunter",
+      "section": "patron-routes",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.routes.patron-ready",
+        "merchant.cross.hunter-return"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "patron.tavern",
+      "section": "patron-routes",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.routes.patron-ready",
+        "merchant.cross.tavern-rumour"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "patron.guard",
+      "section": "patron-routes",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.routes.patron-ready",
+        "merchant.cross.guard-pass"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "patron.network",
+      "section": "patron-routes",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.routes.patron-ready",
+        "merchant.career.choose-patron"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "veteran.identity",
+      "section": "career-boundary",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.career.veteran-ready"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "route.defer",
+      "section": "career-boundary",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.career.choose-route",
+        "merchant.career.choose-patron"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "readiness.not-ending",
+      "section": "career-boundary",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "merchant.career.choose-route",
+        "merchant.career.choose-patron"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    },
+    {
+      "contentKey": "outcome.boundary",
+      "section": "career-boundary",
+      "targetKind": "endingBoundary",
+      "provisionalTargetIds": [
+        "ending.merchant.hard-work"
+      ],
+      "status": "PROVISIONAL_PENDING_FROZEN_RUNTIME"
+    }
+  ]
+}
