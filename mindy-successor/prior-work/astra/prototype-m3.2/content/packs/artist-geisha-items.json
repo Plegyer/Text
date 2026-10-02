@@ -1,0 +1,267 @@
+{
+  "schemaVersion": 1,
+  "id": "artist-geisha.items",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "careers": [
+        "artist-geisha"
+      ],
+      "inventory": [
+        "artist_formal_attire",
+        "artist_performance_kit",
+        "artist_invitation_token"
+      ],
+      "itemCapabilities": [
+        "artist_formal_presence",
+        "artist_performance_ready",
+        "artist_handle_invitation"
+      ]
+    },
+    "writes": {
+      "careers": [
+        "artist-geisha"
+      ],
+      "inventory": [
+        "artist_formal_attire",
+        "artist_performance_kit",
+        "artist_invitation_token"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "artist-geisha.items.performance_kit",
+      "title": "A practical performance kit becomes available",
+      "sourceDomain": "artist-geisha",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "artist-geisha"
+        },
+        {
+          "kind": "careerTransition",
+          "career": "artist-geisha"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "artist-geisha.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 68,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 1,
+      "variantCooldownDays": 0,
+      "maxShows": 12,
+      "conditions": [
+        {
+          "kind": "careerFact",
+          "career": "artist-geisha",
+          "fact": "seasonal-breadth-ready",
+          "present": true
+        },
+        {
+          "kind": "itemCapability",
+          "capability": "artist_performance_ready",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The Performance Kit gathers what a prepared piece needs: props, a simple instrument, or costume elements within the current scene. It does not expand general inventory or define a universal list of artistic disciplines.\n\nHaving the kit means a specific piece can be prepared without a last-minute improvised substitute. It is evidence of Artist-local readiness rather than an automatic bonus to every performance.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "take",
+          "label": "Take the Artist House item",
+          "text": "Keep the item for its narrow Artist-local capability.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addItem",
+              "id": "artist_performance_kit",
+              "count": 1
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "artist-geisha",
+              "fact": "performance-kit-issued"
+            }
+          ]
+        },
+        {
+          "id": "defer",
+          "label": "Keep working without it",
+          "text": "Formal Attire, Performance Kit, and Invitation Token change only narrow Artist options and evidence. They create no general status, fame system, patron currency, contest bonus, or new Palace rule.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "artist-geisha.items.formal_attire",
+      "title": "Formal Artist House attire becomes available",
+      "sourceDomain": "artist-geisha",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "artist-geisha"
+        },
+        {
+          "kind": "careerTransition",
+          "career": "artist-geisha"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "artist-geisha.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 68,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 1,
+      "variantCooldownDays": 0,
+      "maxShows": 12,
+      "conditions": [
+        {
+          "kind": "careerFact",
+          "career": "artist-geisha",
+          "fact": "recognized-ready",
+          "present": true
+        },
+        {
+          "kind": "itemCapability",
+          "capability": "artist_formal_presence",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Formal attire helps fit the expectations of a specific performance or reception. It does not make the heroine a member of a higher social circle, guarantee respect, or open the Palace.\n\nChoosing formal attire means preparing the visual language of one evening: degree of formality, freedom of movement, and appropriateness. It is an Artist-local capability rather than permanent character status.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "take",
+          "label": "Take the Artist House item",
+          "text": "Keep the item for its narrow Artist-local capability.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addItem",
+              "id": "artist_formal_attire",
+              "count": 1
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "artist-geisha",
+              "fact": "formal-attire-issued"
+            }
+          ]
+        },
+        {
+          "id": "defer",
+          "label": "Keep working without it",
+          "text": "Formal Attire, Performance Kit, and Invitation Token change only narrow Artist options and evidence. They create no general status, fame system, patron currency, contest bonus, or new Palace rule.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "artist-geisha.items.invitation_token",
+      "title": "An Artist House invitation token can be carried",
+      "sourceDomain": "artist-geisha",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "artist-geisha"
+        },
+        {
+          "kind": "careerTransition",
+          "career": "artist-geisha"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "artist-geisha.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 68,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 1,
+      "variantCooldownDays": 0,
+      "maxShows": 12,
+      "conditions": [
+        {
+          "kind": "careerFact",
+          "career": "artist-geisha",
+          "fact": "court-contact-ready",
+          "present": true
+        },
+        {
+          "kind": "itemCapability",
+          "capability": "artist_handle_invitation",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "An Invitation Token confirms that a specific invitation or contact exists and can be presented in an Artist context. It is not a universal pass and does not satisfy the Palace unlock.\n\nEven with an Invitation Token, the route remains narrow: show which invitation the token belongs to and what the specific event expects. The token is not a universal pass.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "take",
+          "label": "Take the Artist House item",
+          "text": "Keep the item for its narrow Artist-local capability.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addItem",
+              "id": "artist_invitation_token",
+              "count": 1
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "artist-geisha",
+              "fact": "invitation-token-issued"
+            }
+          ]
+        },
+        {
+          "id": "defer",
+          "label": "Keep working without it",
+          "text": "Formal Attire, Performance Kit, and Invitation Token change only narrow Artist options and evidence. They create no general status, fame system, patron currency, contest bonus, or new Palace rule.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    }
+  ]
+}

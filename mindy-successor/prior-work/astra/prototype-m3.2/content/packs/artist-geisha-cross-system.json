@@ -1,0 +1,277 @@
+{
+  "schemaVersion": 1,
+  "id": "artist-geisha.cross",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "careers": [
+        "artist-geisha",
+        "satyr-maid",
+        "tavern",
+        "merchant",
+        "guard"
+      ]
+    },
+    "writes": {
+      "careers": [
+        "artist-geisha"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "artist-geisha.cross.satyr-overlap",
+      "title": "A service-house network overlaps with an Artist House event",
+      "sourceDomain": "artist-geisha",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "satyr-maid",
+          "fact": "personal-network-ready"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "artist-geisha.shift"
+        }
+      ],
+      "priorityClass": "optional_world",
+      "priority": 48,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerFact",
+          "career": "satyr-maid",
+          "fact": "personal-network-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "artist-geisha",
+          "fact": "satyr-network-known",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The shipped Satyr Maid `personal-network-ready` fact can give Artist context a confirmed professional overlap in audience or contacts. Artist records only its own event context and does not take ownership of Satyr relationship or career state.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record the overlap",
+          "text": "Keep the existing service-house contact as Artist-local context.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "artist-geisha",
+              "fact": "satyr-network-known"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "artist-geisha.cross.tavern-rumour",
+      "title": "A confirmed Tavern rumour reaches the Artist House",
+      "sourceDomain": "artist-geisha",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "tavern",
+          "fact": "rumour-confirmed"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "artist-geisha.shift"
+        }
+      ],
+      "priorityClass": "optional_world",
+      "priority": 47,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "rumour-confirmed",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "artist-geisha",
+          "fact": "tavern-rumour-known",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The shipped Tavern `rumour-confirmed` fact can give Artist context checked information about a place, event, or audience without guaranteeing program success. Artist keeps only local context and creates no universal rumour system.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Keep the confirmed context",
+          "text": "Record the Tavern input as Artist-local evidence.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "artist-geisha",
+              "fact": "tavern-rumour-known"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "artist-geisha.cross.merchant-delivery",
+      "title": "A documented Merchant delivery supports an Artist House handoff",
+      "sourceDomain": "artist-geisha",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "merchant",
+          "fact": "delivery-recorded"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "artist-geisha.shift"
+        }
+      ],
+      "priorityClass": "optional_world",
+      "priority": 46,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerFact",
+          "career": "merchant",
+          "fact": "delivery-recorded",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "artist-geisha",
+          "fact": "merchant-material-route-known",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The shipped Merchant `delivery-recorded` fact can give Artist context information about material delivery or preparation for a specific event. This is a narrow material/delivery seam: it creates no global economy, patron system, or automatic status.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record the material route",
+          "text": "Keep the Merchant handoff as Artist-local professional context.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "artist-geisha",
+              "fact": "merchant-material-route-known"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "artist-geisha.cross.guard-context",
+      "title": "Guard cargo evidence clarifies a formal event handoff",
+      "sourceDomain": "artist-geisha",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "guard",
+          "fact": "cargo-pass-evidence"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "artist-geisha.shift"
+        }
+      ],
+      "priorityClass": "optional_world",
+      "priority": 45,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerFact",
+          "career": "guard",
+          "fact": "cargo-pass-evidence",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "artist-geisha",
+          "fact": "guard-event-context-known",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The shipped Guard `cargo-pass-evidence` fact can provide security or constraint context for a specific formal event when Artist runtime consumes it. Artist receives no Guard authority, covert route, or Palace access.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record the event context",
+          "text": "Keep the Guard evidence as Artist-local context only.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "artist-geisha",
+              "fact": "guard-event-context-known"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
