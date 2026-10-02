@@ -14,7 +14,7 @@ on:
 
 jobs:
   check:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, Windows, X64]
     defaults:
       run:
         working-directory: mindy-successor/prior-work/astra/prototype-m3.2
