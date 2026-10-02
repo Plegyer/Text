@@ -4257,6 +4257,12 @@
           "counter": "debt_current",
           "op": "gte",
           "value": 20000
+        },
+        {
+          "kind": "resource",
+          "resource": "money",
+          "op": "gte",
+          "value": 20000
         }
       ],
       "effects": [
