@@ -101,3 +101,17 @@ PR #247 @ `5a2e72cc530e4edbe41d0d03e4904e2272614e9e` is source-only. It predates
 - non-True ending rewards.
 
 Its neutral RU/EN semantic text may be reused selectively only when a current production consumer has independent authority.
+
+
+### P7 — Relationship / item / Night production bind
+
+The Palace design authorizes semantic relationship roles (professional patron, rival, servant/official contact, optional romance) and capability-item roles (invitation/seal, formal outfit, archive key, ceremonial component, proof/document), but it does not authorize concrete NPC identities, thresholds, acquisition paths or runtime IDs.
+
+No Palace-specific Night behavior is currently locked.
+
+Required before player-facing binding:
+- exact Palace relationship consumers and gates;
+- authorized Palace item identities/acquisition and capability consumers;
+- a Palace-specific Night contract, if Product wants one.
+
+Chat 6 will keep these as semantic/read-only seams and will not alter global Relationship, Item or Night frameworks to manufacture missing authority.
