@@ -7162,6 +7162,10 @@
       "ru": "Ночной выбор таверны: {choice}",
       "en": "Tavern Night choice: {choice}"
     },
+    "ui.artistGeisha.nightChoiceAria": {
+      "ru": "Ночной выбор Дома искусств: {choice}",
+      "en": "Artist House Night choice: {choice}"
+    },
     "ui.tavern.crisisFeedback.stabilize-house": {
       "ru": "Заведение стабилизировано через существующий путь управления домом.",
       "en": "The house is stabilized through the existing house-management route."
