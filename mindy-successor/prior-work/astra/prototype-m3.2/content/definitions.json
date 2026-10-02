@@ -3390,7 +3390,7 @@
       "scenes": [
         {
           "id": "spring.default",
-          "text": "Spring merchant shift: the season changes the ordinary work context.",
+          "text": "After winter the market does not reopen all at once: some stalls are active while others are still waiting for deliveries. You compare promised timing with what actually arrived and do not treat early demand as guaranteed profit.\n\nThe spring road is open again, but washouts make an ordinary delivery less predictable. You confirm an arrival window in advance and give the buyer a clear margin of time instead of making an impressive promise.\n\nThe first large spring lot looks promising until the records show a difference between the manifest count and what reached the stall. You reconcile the notes first and only then discuss the next trade.",
           "conditions": [],
           "media": [
             "stage.town"
@@ -3398,7 +3398,7 @@
         },
         {
           "id": "summer.default",
-          "text": "Summer merchant shift: demand, routes, or crowds shift with the season.",
+          "text": "A summer crowd creates fast demand, but not every buyer wants the same thing. You ask short questions about timing and needed quantity so a busy market does not turn into a chain of random concessions.\n\nIn the heat, some goods cannot be held indefinitely. You mark what must move today, what can wait until tomorrow, and what should not be promised at all when delivery already falls outside a safe window.\n\nAt the stall, people argue about price, timing, and condition at the same time. Instead of offering one broad discount, you separate the questions: one buyer needs a date, another needs lot condition, and another needs clear return terms.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -3411,7 +3411,7 @@
         },
         {
           "id": "autumn.default",
-          "text": "Autumn merchant shift: seasonal pressure changes the work mix.",
+          "text": "Autumn abundance looks uniform only from a distance. You compare lots by condition, storage time, and supplier reliability without assuming that a large harvest automatically makes every purchase worthwhile.\n\nBefore the cold season, storage notes matter more than an attractive display. You separate goods that can safely be held longer from those better sold or returned earlier, and record the reason.\n\nTwo suppliers offer similar lots, but one reliably keeps timing while the other promises more volume without confirmation. You compare not only the offer but also the history of meeting obligations.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -3424,7 +3424,7 @@
         },
         {
           "id": "winter.default",
-          "text": "Winter merchant shift: scarcity, access, or regular clients change the routine.",
+          "text": "In winter, scarce goods quickly draw a queue, which is exactly why you do not treat scarcity as proof of any price. You record available quantity, promises already made, and buyers who need predictable supply.\n\nA closed stretch of road changes an ordinary delivery: some orders can be delayed, some split, and some are better cancelled honestly. You explain the constraint before the delay turns into a dispute.\n\nWith limited stock, regular buyers ask for their usual quantity. You clarify actual needs and distribute commitments so scarcity does not become a contest of loud promises.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -3447,6 +3447,12 @@
             "kind": "modifyStat",
             "stat": "charm",
             "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "merchant",
+            "counter": "spring_trades",
+            "amount": 1
           }
         ],
         "summer": [
@@ -3459,6 +3465,12 @@
             "kind": "modifyStat",
             "stat": "manners",
             "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "merchant",
+            "counter": "summer_trades",
+            "amount": 1
           }
         ],
         "autumn": [
@@ -3471,6 +3483,12 @@
             "kind": "modifyStat",
             "stat": "reason",
             "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "merchant",
+            "counter": "autumn_trades",
+            "amount": 1
           }
         ],
         "winter": [
@@ -3483,6 +3501,12 @@
             "kind": "modifyStat",
             "stat": "wits",
             "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "merchant",
+            "counter": "winter_trades",
+            "amount": 1
           }
         ]
       }
@@ -4523,7 +4547,7 @@
     {
       "id": "ending.merchant.hard-work",
       "title": "Merchant Hard Work",
-      "description": "Persistence ending: fifty completed Merchant shifts.",
+      "description": "The public Merchant ending in this wave remains the ordinary Hard Work outcome for a sustained career. Advanced routes add identity and choice without creating new public ending IDs.",
       "conditions": [
         {
           "kind": "careerCounter",
@@ -5846,9 +5870,164 @@
       "label": "Merchant",
       "initialStage": "stall-hand",
       "stages": [
-        "stall-hand"
+        "stall-hand",
+        "independent-trader",
+        "networked-merchant",
+        "veteran",
+        "merchant-house",
+        "speculator-smuggler",
+        "patron-of-routes",
+        "outcome-ready"
       ],
-      "transitions": []
+      "transitions": [
+        {
+          "id": "first-shift",
+          "from": [
+            "stall-hand"
+          ],
+          "to": "independent-trader",
+          "conditions": [
+            {
+              "kind": "careerCounter",
+              "career": "merchant",
+              "counter": "completed_shifts",
+              "op": "gte",
+              "value": 1
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "merchant",
+              "fact": "first-shift-complete"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "merchant",
+              "fact": "independent-ready"
+            }
+          ]
+        },
+        {
+          "id": "networked-merchant",
+          "from": [
+            "independent-trader"
+          ],
+          "to": "networked-merchant",
+          "conditions": [
+            {
+              "kind": "careerCounter",
+              "career": "merchant",
+              "counter": "completed_shifts",
+              "op": "gte",
+              "value": 8
+            },
+            {
+              "kind": "careerFact",
+              "career": "merchant",
+              "fact": "independent-ready",
+              "present": true
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "merchant",
+              "fact": "networked-ready"
+            }
+          ]
+        },
+        {
+          "id": "branch-veteran",
+          "from": [
+            "networked-merchant"
+          ],
+          "to": "veteran",
+          "conditions": [
+            {
+              "kind": "careerCounter",
+              "career": "merchant",
+              "counter": "completed_shifts",
+              "op": "gte",
+              "value": 20
+            },
+            {
+              "kind": "careerFact",
+              "career": "merchant",
+              "fact": "veteran-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "branch-merchant-house",
+          "from": [
+            "networked-merchant"
+          ],
+          "to": "merchant-house",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "merchant",
+              "fact": "merchant-house-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "branch-speculator-smuggler",
+          "from": [
+            "networked-merchant"
+          ],
+          "to": "speculator-smuggler",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "merchant",
+              "fact": "speculator-route-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "branch-patron-of-routes",
+          "from": [
+            "networked-merchant"
+          ],
+          "to": "patron-of-routes",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "merchant",
+              "fact": "patron-route-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "outcome-ready",
+          "from": [
+            "veteran",
+            "merchant-house",
+            "speculator-smuggler",
+            "patron-of-routes"
+          ],
+          "to": "outcome-ready",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "merchant",
+              "fact": "outcome-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        }
+      ]
     },
     {
       "id": "artist-geisha",
@@ -6665,6 +6844,157 @@
               "kind": "relationshipFact",
               "relationship": "guard.partner",
               "fact": "case-support-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "merchant.supplier",
+      "label": "Merchant Supplier",
+      "initialStage": "introduced",
+      "stages": [
+        "introduced",
+        "professional-trust",
+        "conflict-open",
+        "utility-ready",
+        "route-resolved"
+      ],
+      "transitions": [
+        {
+          "id": "build-trust",
+          "from": [
+            "introduced"
+          ],
+          "to": "professional-trust",
+          "conditions": [
+            {
+              "kind": "relationshipFact",
+              "relationship": "merchant.supplier",
+              "fact": "introduced-at-work",
+              "present": true
+            },
+            {
+              "kind": "relationshipCounter",
+              "relationship": "merchant.supplier",
+              "counter": "work-meetings",
+              "op": "gte",
+              "value": 2
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "merchant.supplier",
+              "fact": "professional-trust-earned"
+            }
+          ]
+        },
+        {
+          "id": "open-conflict",
+          "from": [
+            "professional-trust"
+          ],
+          "to": "conflict-open",
+          "conditions": [
+            {
+              "kind": "relationshipFact",
+              "relationship": "merchant.supplier",
+              "fact": "conflict-opened",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "cooperate",
+          "from": [
+            "conflict-open"
+          ],
+          "to": "utility-ready",
+          "conditions": [
+            {
+              "kind": "relationshipChoice",
+              "relationship": "merchant.supplier",
+              "choice": "conflict-response",
+              "value": "cooperate"
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "merchant.supplier",
+              "fact": "conflict-resolved"
+            },
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "merchant.supplier",
+              "fact": "utility-ready"
+            }
+          ]
+        },
+        {
+          "id": "rivalry",
+          "from": [
+            "conflict-open"
+          ],
+          "to": "route-resolved",
+          "conditions": [
+            {
+              "kind": "relationshipChoice",
+              "relationship": "merchant.supplier",
+              "choice": "conflict-response",
+              "value": "rivalry"
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "merchant.supplier",
+              "fact": "conflict-resolved"
+            }
+          ]
+        },
+        {
+          "id": "refusal",
+          "from": [
+            "conflict-open"
+          ],
+          "to": "route-resolved",
+          "conditions": [
+            {
+              "kind": "relationshipChoice",
+              "relationship": "merchant.supplier",
+              "choice": "conflict-response",
+              "value": "declined"
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "merchant.supplier",
+              "fact": "conflict-resolved"
+            },
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "merchant.supplier",
+              "fact": "refusal-respected"
+            }
+          ]
+        },
+        {
+          "id": "finish-utility",
+          "from": [
+            "utility-ready"
+          ],
+          "to": "route-resolved",
+          "conditions": [
+            {
+              "kind": "relationshipFact",
+              "relationship": "merchant.supplier",
+              "fact": "utility-response-resolved",
               "present": true
             }
           ],
@@ -8822,6 +9152,27 @@
       "label": "Sealed Guard Pass",
       "capabilities": [
         "guard_sealed_pass"
+      ]
+    },
+    {
+      "id": "merchant_appraisal_scales",
+      "label": "Merchant Appraisal Scales",
+      "capabilities": [
+        "merchant_appraise_goods"
+      ]
+    },
+    {
+      "id": "merchant_manifest_case",
+      "label": "Merchant Manifest Case",
+      "capabilities": [
+        "merchant_verify_manifest"
+      ]
+    },
+    {
+      "id": "merchant_sample_kit",
+      "label": "Merchant Sample Kit",
+      "capabilities": [
+        "merchant_handle_samples"
       ]
     },
     {
