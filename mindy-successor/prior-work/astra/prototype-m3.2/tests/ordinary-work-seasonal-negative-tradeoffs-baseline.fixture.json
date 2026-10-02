@@ -1,0 +1,1453 @@
+{
+  "ordinaryRoster": [
+    "lumber",
+    "satyr-maid",
+    "undead-farm",
+    "tavern",
+    "hunter",
+    "guard",
+    "merchant",
+    "artist-geisha",
+    "assassin",
+    "prostitute"
+  ],
+  "careers": {
+    "lumber": {
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "effects": [
+        {
+          "kind": "incrementCareerCounter",
+          "career": "lumber",
+          "counter": "completed_shifts",
+          "amount": 1
+        }
+      ],
+      "wage": {
+        "base": 13,
+        "weights": [
+          {
+            "stat": "strength",
+            "factor": 0.5
+          },
+          {
+            "stat": "endurance",
+            "factor": 0.25
+          }
+        ]
+      },
+      "conditions": [],
+      "seasonal": {
+        "spring": [
+          {
+            "kind": "modifyStat",
+            "stat": "strength",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "endurance",
+            "delta": 1
+          }
+        ],
+        "summer": [
+          {
+            "kind": "modifyStat",
+            "stat": "strength",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "endurance",
+            "delta": 1
+          }
+        ],
+        "autumn": [
+          {
+            "kind": "modifyStat",
+            "stat": "strength",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "dexterity",
+            "delta": 1
+          }
+        ],
+        "winter": [
+          {
+            "kind": "modifyStat",
+            "stat": "endurance",
+            "delta": 2
+          }
+        ]
+      },
+      "hardWork": {
+        "conditions": [
+          {
+            "kind": "careerCounter",
+            "career": "lumber",
+            "counter": "completed_shifts",
+            "op": "gte",
+            "value": 50
+          }
+        ],
+        "reward": "lumber.hardwork.compat",
+        "metaRewards": [
+          {
+            "kind": "hardWork",
+            "rewardId": "hardWork:lumber",
+            "career": "lumber"
+          }
+        ]
+      }
+    },
+    "satyr-maid": {
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "effects": [
+        {
+          "kind": "incrementCareerCounter",
+          "career": "satyr-maid",
+          "counter": "completed_shifts",
+          "amount": 1
+        }
+      ],
+      "wage": {
+        "base": 15,
+        "weights": [
+          {
+            "stat": "charm",
+            "factor": 0.35
+          },
+          {
+            "stat": "sexuality",
+            "factor": 0.25
+          }
+        ]
+      },
+      "conditions": [],
+      "seasonal": {
+        "spring": [
+          {
+            "kind": "modifyStat",
+            "stat": "charm",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "sociability",
+            "delta": 1
+          }
+        ],
+        "summer": [
+          {
+            "kind": "modifyStat",
+            "stat": "sexuality",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "endurance",
+            "delta": 1
+          }
+        ],
+        "autumn": [
+          {
+            "kind": "modifyStat",
+            "stat": "charm",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "manners",
+            "delta": 1
+          }
+        ],
+        "winter": [
+          {
+            "kind": "modifyStat",
+            "stat": "sociability",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "charm",
+            "delta": 1
+          }
+        ]
+      },
+      "hardWork": {
+        "conditions": [
+          {
+            "kind": "careerCounter",
+            "career": "satyr-maid",
+            "counter": "completed_shifts",
+            "op": "gte",
+            "value": 50
+          }
+        ],
+        "reward": "satyr-maid.hardwork.compat",
+        "metaRewards": [
+          {
+            "kind": "hardWork",
+            "rewardId": "hardWork:satyr-maid",
+            "career": "satyr-maid"
+          }
+        ]
+      }
+    },
+    "undead-farm": {
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "effects": [
+        {
+          "kind": "incrementCareerCounter",
+          "career": "undead-farm",
+          "counter": "completed_shifts",
+          "amount": 1
+        }
+      ],
+      "wage": {
+        "base": 15,
+        "weights": [
+          {
+            "stat": "endurance",
+            "factor": 0.3
+          },
+          {
+            "stat": "magic",
+            "factor": 0.3
+          },
+          {
+            "stat": "reason",
+            "factor": 0.2
+          }
+        ]
+      },
+      "conditions": [],
+      "seasonal": {
+        "spring": [
+          {
+            "kind": "modifyStat",
+            "stat": "endurance",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "magic",
+            "delta": 1
+          },
+          {
+            "kind": "addItem",
+            "id": "farm_produce",
+            "count": 1
+          }
+        ],
+        "summer": [
+          {
+            "kind": "modifyStat",
+            "stat": "endurance",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "strength",
+            "delta": 1
+          },
+          {
+            "kind": "addItem",
+            "id": "farm_produce",
+            "count": 2
+          }
+        ],
+        "autumn": [
+          {
+            "kind": "modifyStat",
+            "stat": "endurance",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "reason",
+            "delta": 1
+          },
+          {
+            "kind": "addItem",
+            "id": "farm_produce",
+            "count": 2
+          }
+        ],
+        "winter": [
+          {
+            "kind": "modifyStat",
+            "stat": "magic",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "reason",
+            "delta": 1
+          },
+          {
+            "kind": "addItem",
+            "id": "farm_unstable_specimen",
+            "count": 1
+          }
+        ]
+      },
+      "hardWork": {
+        "conditions": [
+          {
+            "kind": "careerCounter",
+            "career": "undead-farm",
+            "counter": "completed_shifts",
+            "op": "gte",
+            "value": 50
+          }
+        ],
+        "reward": "undead-farm.hardwork.compat",
+        "metaRewards": [
+          {
+            "kind": "hardWork",
+            "rewardId": "hardWork:undead-farm",
+            "career": "undead-farm"
+          }
+        ]
+      }
+    },
+    "tavern": {
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "effects": [
+        {
+          "kind": "incrementCareerCounter",
+          "career": "tavern",
+          "counter": "completed_shifts",
+          "amount": 1
+        }
+      ],
+      "wage": {
+        "base": 15,
+        "weights": [
+          {
+            "stat": "charm",
+            "factor": 0.3
+          },
+          {
+            "stat": "wits",
+            "factor": 0.3
+          },
+          {
+            "stat": "manners",
+            "factor": 0.2
+          }
+        ]
+      },
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "stat",
+                  "stat": "charm",
+                  "op": "gte",
+                  "value": 45
+                },
+                {
+                  "kind": "stat",
+                  "stat": "sociability",
+                  "op": "gte",
+                  "value": 35
+                }
+              ]
+            },
+            {
+              "kind": "calendarYear",
+              "op": "gte",
+              "value": 2
+            }
+          ]
+        }
+      ],
+      "seasonal": {
+        "spring": [
+          {
+            "kind": "modifyStat",
+            "stat": "charm",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "wits",
+            "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "tavern",
+            "counter": "traveler_flow",
+            "amount": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "tavern",
+            "counter": "room_pressure",
+            "amount": 1
+          }
+        ],
+        "summer": [
+          {
+            "kind": "modifyStat",
+            "stat": "charm",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "manners",
+            "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "tavern",
+            "counter": "traveler_flow",
+            "amount": 2
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "tavern",
+            "counter": "room_pressure",
+            "amount": 2
+          }
+        ],
+        "autumn": [
+          {
+            "kind": "modifyStat",
+            "stat": "wits",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "reason",
+            "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "tavern",
+            "counter": "traveler_flow",
+            "amount": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "tavern",
+            "counter": "supply_pressure",
+            "amount": 2
+          }
+        ],
+        "winter": [
+          {
+            "kind": "modifyStat",
+            "stat": "manners",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "wits",
+            "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "tavern",
+            "counter": "supply_pressure",
+            "amount": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "tavern",
+            "counter": "shelter_pressure",
+            "amount": 2
+          }
+        ]
+      },
+      "hardWork": {
+        "conditions": [
+          {
+            "kind": "careerCounter",
+            "career": "tavern",
+            "counter": "completed_shifts",
+            "op": "gte",
+            "value": 50
+          }
+        ],
+        "reward": "tavern.hardwork.compat",
+        "metaRewards": [
+          {
+            "kind": "hardWork",
+            "rewardId": "hardWork:tavern",
+            "career": "tavern"
+          }
+        ]
+      }
+    },
+    "hunter": {
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "effects": [
+        {
+          "kind": "incrementCareerCounter",
+          "career": "hunter",
+          "counter": "completed_shifts",
+          "amount": 1
+        }
+      ],
+      "wage": {
+        "base": 15,
+        "weights": [
+          {
+            "stat": "dexterity",
+            "factor": 0.35
+          },
+          {
+            "stat": "endurance",
+            "factor": 0.3
+          },
+          {
+            "stat": "wits",
+            "factor": 0.2
+          }
+        ]
+      },
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "stat",
+                  "stat": "dexterity",
+                  "op": "gte",
+                  "value": 25
+                },
+                {
+                  "kind": "stat",
+                  "stat": "endurance",
+                  "op": "gte",
+                  "value": 20
+                },
+                {
+                  "kind": "stat",
+                  "stat": "wits",
+                  "op": "gte",
+                  "value": 15
+                }
+              ]
+            },
+            {
+              "kind": "calendarYear",
+              "op": "gte",
+              "value": 2
+            }
+          ]
+        }
+      ],
+      "seasonal": {
+        "spring": [
+          {
+            "kind": "modifyStat",
+            "stat": "dexterity",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "wits",
+            "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "hunter",
+            "counter": "spring_contracts",
+            "amount": 1
+          }
+        ],
+        "summer": [
+          {
+            "kind": "modifyStat",
+            "stat": "endurance",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "dexterity",
+            "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "hunter",
+            "counter": "summer_contracts",
+            "amount": 1
+          }
+        ],
+        "autumn": [
+          {
+            "kind": "modifyStat",
+            "stat": "dexterity",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "endurance",
+            "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "hunter",
+            "counter": "autumn_contracts",
+            "amount": 1
+          }
+        ],
+        "winter": [
+          {
+            "kind": "modifyStat",
+            "stat": "wits",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "endurance",
+            "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "hunter",
+            "counter": "winter_contracts",
+            "amount": 1
+          }
+        ]
+      },
+      "hardWork": {
+        "conditions": [
+          {
+            "kind": "careerCounter",
+            "career": "hunter",
+            "counter": "completed_shifts",
+            "op": "gte",
+            "value": 50
+          }
+        ],
+        "reward": "hunter.hardwork.compat",
+        "metaRewards": [
+          {
+            "kind": "hardWork",
+            "rewardId": "hardWork:hunter",
+            "career": "hunter"
+          }
+        ]
+      }
+    },
+    "guard": {
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "effects": [
+        {
+          "kind": "incrementCareerCounter",
+          "career": "guard",
+          "counter": "completed_shifts",
+          "amount": 1
+        }
+      ],
+      "wage": {
+        "base": 15,
+        "weights": [
+          {
+            "stat": "endurance",
+            "factor": 0.3
+          },
+          {
+            "stat": "manners",
+            "factor": 0.25
+          },
+          {
+            "stat": "strength",
+            "factor": 0.2
+          },
+          {
+            "stat": "reason",
+            "factor": 0.15
+          }
+        ]
+      },
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "stat",
+                  "stat": "strength",
+                  "op": "gte",
+                  "value": 30
+                },
+                {
+                  "kind": "stat",
+                  "stat": "endurance",
+                  "op": "gte",
+                  "value": 30
+                },
+                {
+                  "kind": "stat",
+                  "stat": "manners",
+                  "op": "gte",
+                  "value": 20
+                }
+              ]
+            },
+            {
+              "kind": "calendarYear",
+              "op": "gte",
+              "value": 2
+            }
+          ]
+        }
+      ],
+      "seasonal": {
+        "spring": [
+          {
+            "kind": "modifyStat",
+            "stat": "endurance",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "manners",
+            "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "guard",
+            "counter": "patrol_duties",
+            "amount": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "guard",
+            "counter": "dispute_duties",
+            "amount": 1
+          }
+        ],
+        "summer": [
+          {
+            "kind": "modifyStat",
+            "stat": "endurance",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "strength",
+            "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "guard",
+            "counter": "patrol_duties",
+            "amount": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "guard",
+            "counter": "crowd_duties",
+            "amount": 1
+          }
+        ],
+        "autumn": [
+          {
+            "kind": "modifyStat",
+            "stat": "manners",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "reason",
+            "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "guard",
+            "counter": "market_duties",
+            "amount": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "guard",
+            "counter": "report_duties",
+            "amount": 1
+          }
+        ],
+        "winter": [
+          {
+            "kind": "modifyStat",
+            "stat": "endurance",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "dexterity",
+            "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "guard",
+            "counter": "patrol_duties",
+            "amount": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "guard",
+            "counter": "winter_relief_duties",
+            "amount": 1
+          }
+        ]
+      },
+      "hardWork": {
+        "conditions": [
+          {
+            "kind": "careerCounter",
+            "career": "guard",
+            "counter": "completed_shifts",
+            "op": "gte",
+            "value": 50
+          }
+        ],
+        "reward": "guard.hardwork.compat",
+        "metaRewards": [
+          {
+            "kind": "hardWork",
+            "rewardId": "hardWork:guard",
+            "career": "guard"
+          }
+        ]
+      }
+    },
+    "merchant": {
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "effects": [
+        {
+          "kind": "incrementCareerCounter",
+          "career": "merchant",
+          "counter": "completed_shifts",
+          "amount": 1
+        }
+      ],
+      "wage": {
+        "base": 15,
+        "weights": [
+          {
+            "stat": "wits",
+            "factor": 0.35
+          },
+          {
+            "stat": "charm",
+            "factor": 0.25
+          },
+          {
+            "stat": "manners",
+            "factor": 0.2
+          },
+          {
+            "stat": "reason",
+            "factor": 0.15
+          }
+        ]
+      },
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "stat",
+                  "stat": "wits",
+                  "op": "gte",
+                  "value": 20
+                },
+                {
+                  "kind": "stat",
+                  "stat": "reason",
+                  "op": "gte",
+                  "value": 20
+                },
+                {
+                  "kind": "stat",
+                  "stat": "sociability",
+                  "op": "gte",
+                  "value": 15
+                }
+              ]
+            },
+            {
+              "kind": "calendarYear",
+              "op": "gte",
+              "value": 2
+            }
+          ]
+        }
+      ],
+      "seasonal": {
+        "spring": [
+          {
+            "kind": "modifyStat",
+            "stat": "wits",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "charm",
+            "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "merchant",
+            "counter": "spring_trades",
+            "amount": 1
+          }
+        ],
+        "summer": [
+          {
+            "kind": "modifyStat",
+            "stat": "charm",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "manners",
+            "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "merchant",
+            "counter": "summer_trades",
+            "amount": 1
+          }
+        ],
+        "autumn": [
+          {
+            "kind": "modifyStat",
+            "stat": "wits",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "reason",
+            "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "merchant",
+            "counter": "autumn_trades",
+            "amount": 1
+          }
+        ],
+        "winter": [
+          {
+            "kind": "modifyStat",
+            "stat": "reason",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "wits",
+            "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "merchant",
+            "counter": "winter_trades",
+            "amount": 1
+          }
+        ]
+      },
+      "hardWork": {
+        "conditions": [
+          {
+            "kind": "careerCounter",
+            "career": "merchant",
+            "counter": "completed_shifts",
+            "op": "gte",
+            "value": 50
+          }
+        ],
+        "reward": "merchant.hardwork.compat",
+        "metaRewards": [
+          {
+            "kind": "hardWork",
+            "rewardId": "hardWork:merchant",
+            "career": "merchant"
+          }
+        ]
+      }
+    },
+    "artist-geisha": {
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "effects": [
+        {
+          "kind": "incrementCareerCounter",
+          "career": "artist-geisha",
+          "counter": "completed_shifts",
+          "amount": 1
+        }
+      ],
+      "wage": {
+        "base": 15,
+        "weights": [
+          {
+            "stat": "manners",
+            "factor": 0.3
+          },
+          {
+            "stat": "charm",
+            "factor": 0.3
+          },
+          {
+            "stat": "sexuality",
+            "factor": 0.15
+          },
+          {
+            "stat": "dexterity",
+            "factor": 0.15
+          }
+        ]
+      },
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "stat",
+                  "stat": "creativity",
+                  "op": "gte",
+                  "value": 35
+                },
+                {
+                  "kind": "stat",
+                  "stat": "manners",
+                  "op": "gte",
+                  "value": 25
+                },
+                {
+                  "kind": "stat",
+                  "stat": "grooming",
+                  "op": "gte",
+                  "value": 30
+                }
+              ]
+            },
+            {
+              "kind": "calendarYear",
+              "op": "gte",
+              "value": 3
+            }
+          ]
+        }
+      ],
+      "seasonal": {
+        "spring": [
+          {
+            "kind": "modifyStat",
+            "stat": "manners",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "charm",
+            "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "artist-geisha",
+            "counter": "spring_performances",
+            "amount": 1
+          }
+        ],
+        "summer": [
+          {
+            "kind": "modifyStat",
+            "stat": "charm",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "dexterity",
+            "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "artist-geisha",
+            "counter": "summer_performances",
+            "amount": 1
+          }
+        ],
+        "autumn": [
+          {
+            "kind": "modifyStat",
+            "stat": "manners",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "sexuality",
+            "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "artist-geisha",
+            "counter": "autumn_performances",
+            "amount": 1
+          }
+        ],
+        "winter": [
+          {
+            "kind": "modifyStat",
+            "stat": "charm",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "reason",
+            "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "artist-geisha",
+            "counter": "winter_performances",
+            "amount": 1
+          }
+        ]
+      },
+      "hardWork": {
+        "conditions": [
+          {
+            "kind": "careerCounter",
+            "career": "artist-geisha",
+            "counter": "completed_shifts",
+            "op": "gte",
+            "value": 50
+          }
+        ],
+        "reward": "artist-geisha.hardwork.compat",
+        "metaRewards": [
+          {
+            "kind": "hardWork",
+            "rewardId": "hardWork:artist-geisha",
+            "career": "artist-geisha"
+          }
+        ]
+      }
+    },
+    "assassin": {
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "effects": [
+        {
+          "kind": "incrementCareerCounter",
+          "career": "assassin",
+          "counter": "completed_shifts",
+          "amount": 1
+        }
+      ],
+      "wage": {
+        "base": 15,
+        "weights": [
+          {
+            "stat": "dexterity",
+            "factor": 0.35
+          },
+          {
+            "stat": "wits",
+            "factor": 0.3
+          },
+          {
+            "stat": "reason",
+            "factor": 0.2
+          },
+          {
+            "stat": "manners",
+            "factor": 0.1
+          }
+        ]
+      },
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "stat",
+                  "stat": "dexterity",
+                  "op": "gte",
+                  "value": 30
+                },
+                {
+                  "kind": "stat",
+                  "stat": "wits",
+                  "op": "gte",
+                  "value": 25
+                },
+                {
+                  "kind": "stat",
+                  "stat": "reason",
+                  "op": "gte",
+                  "value": 20
+                }
+              ]
+            },
+            {
+              "kind": "calendarYear",
+              "op": "gte",
+              "value": 3
+            }
+          ]
+        }
+      ],
+      "seasonal": {
+        "spring": [
+          {
+            "kind": "modifyStat",
+            "stat": "dexterity",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "wits",
+            "delta": 1
+          }
+        ],
+        "summer": [
+          {
+            "kind": "modifyStat",
+            "stat": "dexterity",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "manners",
+            "delta": 1
+          }
+        ],
+        "autumn": [
+          {
+            "kind": "modifyStat",
+            "stat": "wits",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "reason",
+            "delta": 1
+          }
+        ],
+        "winter": [
+          {
+            "kind": "modifyStat",
+            "stat": "dexterity",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "reason",
+            "delta": 1
+          }
+        ]
+      },
+      "hardWork": {
+        "conditions": [
+          {
+            "kind": "careerCounter",
+            "career": "assassin",
+            "counter": "completed_shifts",
+            "op": "gte",
+            "value": 50
+          }
+        ],
+        "reward": "assassin.hardwork.compat",
+        "metaRewards": [
+          {
+            "kind": "hardWork",
+            "rewardId": "hardWork:assassin",
+            "career": "assassin"
+          }
+        ]
+      }
+    },
+    "prostitute": {
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "effects": [
+        {
+          "kind": "incrementCareerCounter",
+          "career": "prostitute",
+          "counter": "completed_shifts",
+          "amount": 1
+        }
+      ],
+      "wage": {
+        "base": 15,
+        "weights": [
+          {
+            "stat": "sexuality",
+            "factor": 0.35
+          },
+          {
+            "stat": "charm",
+            "factor": 0.3
+          },
+          {
+            "stat": "manners",
+            "factor": 0.2
+          },
+          {
+            "stat": "endurance",
+            "factor": 0.15
+          }
+        ]
+      },
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "stat",
+                  "stat": "sexuality",
+                  "op": "gte",
+                  "value": 55
+                },
+                {
+                  "kind": "stat",
+                  "stat": "charm",
+                  "op": "gte",
+                  "value": 40
+                },
+                {
+                  "kind": "stat",
+                  "stat": "sociability",
+                  "op": "gte",
+                  "value": 35
+                }
+              ]
+            },
+            {
+              "kind": "calendarYear",
+              "op": "gte",
+              "value": 3
+            }
+          ]
+        }
+      ],
+      "seasonal": {
+        "spring": [
+          {
+            "kind": "modifyStat",
+            "stat": "sexuality",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "charm",
+            "delta": 1
+          }
+        ],
+        "summer": [
+          {
+            "kind": "modifyStat",
+            "stat": "charm",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "endurance",
+            "delta": 1
+          }
+        ],
+        "autumn": [
+          {
+            "kind": "modifyStat",
+            "stat": "manners",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "sexuality",
+            "delta": 1
+          }
+        ],
+        "winter": [
+          {
+            "kind": "modifyStat",
+            "stat": "charm",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "manners",
+            "delta": 1
+          }
+        ]
+      },
+      "hardWork": {
+        "conditions": [
+          {
+            "kind": "careerCounter",
+            "career": "prostitute",
+            "counter": "completed_shifts",
+            "op": "gte",
+            "value": 50
+          }
+        ],
+        "reward": "prostitute.hardwork.compat",
+        "metaRewards": [
+          {
+            "kind": "hardWork",
+            "rewardId": "hardWork:prostitute",
+            "career": "prostitute"
+          }
+        ]
+      }
+    }
+  }
+}
