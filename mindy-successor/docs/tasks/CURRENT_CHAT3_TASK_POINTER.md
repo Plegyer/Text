@@ -1,18 +1,16 @@
 # CURRENT CHAT3 TASK POINTER
 
-Status: **ARTIST/GEISHA AUTHORED CONTENT v19 ACTIVE**
+Status: **ARTIST C3-216 WAITING / ASSASSIN AUTHORED PREP v20 ACTIVE**
 Owner: Chat 3 / World + Career Content Bundles
-Queue: C3-205..216
-Target branch: `chat3/artist-geisha-live-authored-v19`
-Exact activation base: `8067539a606714fad8400ccbba30fd7ccf4a9158`
 
-Frozen Merchant authored history:
-- PR #225 @ `5a05de4fde291d0ce5b3f4d72dafc942e525bb40`
-- CI #920 SUCCESS
-- C4-164 PASS-WITH-NOTES
-- do not move it.
+Primary dependency:
+- Artist/Geisha PR #229 safe prep C3-205..215 is complete and green.
+- C3-216 must execute immediately when Chat 1 publishes one exact frozen green Artist runtime.
 
-Authoritative queue:
-- `TASK_CHAT3_CONTENT_QUEUE_v19.md`
+No-idle work now:
+- queue `TASK_CHAT3_CONTENT_QUEUE_v20.md`
+- branch `chat3/assassin-authored-prep-v20`
+- execute C3-217..228 safe Assassin prep.
+- future IDs remain `PENDING_RUNTIME_ID`.
 
-Begin **C3-205 immediately** and continue every safe prep item through C3-215 without waiting. C3-216 final live-ID rebuild/freeze waits only for the exact frozen Artist runtime from Chat 1. Do not bind Artist gameplay to mutable Merchant candidates or fabricate Palace/future-career identities.
+**Interrupt Assassin prep immediately when Artist runtime #234 becomes frozen + exact-head green; C3-216 has priority.**

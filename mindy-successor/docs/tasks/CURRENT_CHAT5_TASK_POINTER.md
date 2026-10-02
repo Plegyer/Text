@@ -1,20 +1,16 @@
 # CURRENT CHAT5 TASK POINTER
 
-Status: **ARTIST/GEISHA SCHOOL v18 ACTIVE**
+Status: **ARTIST C5-204 WAITING / ASSASSIN SCHOOL PREP v19 ACTIVE**
 Owner: Chat 5 / School + Text Localization Worker
-Queue: C5-193..204
-Target branch: `chat5/artist-geisha-school-v18`
-Exact activation base: `8067539a606714fad8400ccbba30fd7ccf4a9158`
 
-Frozen Merchant School history:
-- PR #224 @ `7bda6840a896fb3c75515b652e1bb959c674705d`
-- CI #921 SUCCESS
-- CANDIDATE_FROZEN / READY FOR CHAT 4 QA
-- do not move it.
+Primary dependency:
+- Artist/Geisha PR #232 safe prep C5-193..203 is complete and green.
+- C5-204 must execute immediately when Chat 1 publishes one exact frozen green Artist runtime.
 
-Authoritative queue:
-- `TASK_CHAT5_SCHOOL_QUEUE_v18.md`
+No-idle work now:
+- queue `TASK_CHAT5_SCHOOL_QUEUE_v19.md`
+- branch `chat5/assassin-school-prep-v19`
+- execute C5-205..216 capability-only Assassin prep.
+- no canonical Assassin School gates, thresholds, public facts, contract/target state or Palace authority.
 
-Begin **C5-193 immediately** and continue all safe prep through C5-203. C5-204 final rebuild/freeze waits only for the exact frozen Artist runtime from Chat 1.
-
-Use only existing Artist-Geisha School domains: Arts & Performance, Etiquette & Presentation, Rhetoric & Social, Body Confidence, Literacy & Numbers. No new curriculum, teacher, threshold, public fact, Palace privilege, NightFlow rewrite or direct career transition.
+**Interrupt Assassin prep immediately when Artist runtime #234 becomes frozen + exact-head green; C5-204 has priority.**
