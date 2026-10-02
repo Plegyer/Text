@@ -69,6 +69,32 @@
       ],
       "choices": [
         {
+          "id": "apply-arcana-method",
+          "label": "Apply the Arcana uncertainty method",
+          "text": "Use the published Merchant-local School fact to record what is known and what remains uncertain; it does not set a price.",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "merchant",
+              "fact": "school-arcana-ready",
+              "present": true
+            }
+          ],
+          "effects": [
+            {
+              "kind": "incrementCareerCounter",
+              "career": "merchant",
+              "counter": "appraisals",
+              "amount": 1
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "merchant",
+              "fact": "appraisal-recorded"
+            }
+          ]
+        },
+        {
           "id": "use-scales",
           "label": "Use the appraisal scales",
           "text": "Compare the lot with a concrete Merchant tool; the result improves evidence quality, not a universal price formula.",

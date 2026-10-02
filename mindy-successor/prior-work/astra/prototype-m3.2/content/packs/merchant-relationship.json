@@ -139,6 +139,43 @@
       ],
       "choices": [
         {
+          "id": "apply-rhetoric-method",
+          "label": "Use the prepared negotiation method",
+          "text": "Ask what is actually blocking the deal before changing terms; this consumes only the Merchant-local School fact.",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "merchant",
+              "fact": "school-rhetoric-ready",
+              "present": true
+            }
+          ],
+          "effects": [
+            {
+              "kind": "incrementRelationshipCounter",
+              "relationship": "merchant.supplier",
+              "counter": "work-meetings",
+              "amount": 1
+            },
+            {
+              "kind": "incrementCareerCounter",
+              "career": "merchant",
+              "counter": "supplier_meetings",
+              "amount": 1
+            },
+            {
+              "kind": "advanceRelationship",
+              "relationship": "merchant.supplier",
+              "transition": "build-trust"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "merchant",
+              "fact": "supplier-trust-ready"
+            }
+          ]
+        },
+        {
           "id": "continue",
           "label": "Keep the reliable contact",
           "text": "Build professional trust through another verifiable handoff.",
