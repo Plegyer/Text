@@ -19,7 +19,7 @@ There is **no worker Chat 1**. Historical Chat 1 material is evidence only.
 | Chat 2 | Integration / Assembly + Technical QA | **WAITING** for next frozen producer candidate; Artist is shipped |
 | Chat 3 | Full-Career Producer A | **Assassin** complete ordinary career |
 | Chat 4 | Full-Career Producer B | **Voluntary Prostitute / Professional** complete ordinary career |
-| Chat 5 | Full-Career Producer C | **Secret Debt / Slave** hidden career, with open-value firewall |
+| Chat 5 | Full-Career Producer C | **Secret Debt / Slave** authority-safe foundation complete; WAITING on Product authority |
 | Chat 6 | Full-Career Producer D | **Palace** authority-safe foundation complete; WAITING on explicit Product/shared dependencies |
 
 ## Whole-career producer contract
@@ -52,5 +52,5 @@ When such a shared change is genuinely required, stop and escalate to Leader 1. 
 
 Artist/Geisha is now shipped on main `a3afe650a05a4a27be5953b4f3965db0a420573c`; exact-main run #1089 is SUCCESS.
 Assassin and voluntary Prostitute are the two remaining ordinary-career production lanes.
-Secret Debt continues under its open-value firewall.
+Secret Debt independent authority-safe work is complete at `8dd0b12bb2257981f4a6b72bca2017aad9d00e73` and is intentionally waiting on explicit Product blockers; do not rebase its diverged branch before a real candidate exists.
 Palace independent authority-safe work is complete at `8919a3686c1952d700c4c1377130918e0e181fa3` and is intentionally waiting on explicit Product/shared blockers plus the final natural 10/10 ordinary baseline.
