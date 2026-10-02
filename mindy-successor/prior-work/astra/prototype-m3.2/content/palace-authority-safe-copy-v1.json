@@ -1,0 +1,119 @@
+{
+  "formatVersion": 1,
+  "status": "AUTHORITY_SAFE_UNBOUND_COPY",
+  "runtimeBinding": null,
+  "sourceRevalidation": {
+    "historicalSourcePr": 247,
+    "historicalSourceHead": "5a2e72cc530e4edbe41d0d03e4904e2272614e9e",
+    "revalidatedAgainst": [
+      "PALACE_HIDDEN_CAREER_DRAFT_v0",
+      "USER_DECISIONS_LOCKED_v1:D6",
+      "USER_DECISIONS_LOCKED_v1:D15",
+      "USER_DECISIONS_LOCKED_v1:D18"
+    ]
+  },
+  "discovery": [
+    {
+      "slot": "protocol-rumour",
+      "ru": "В разговорах о Дворце чаще звучат не титулы, а порядок: кто принимает послание, кто проверяет список гостей и почему одно неверное поручение может сорвать весь день.",
+      "en": "Talk about the Palace is less about titles than procedure: who receives a message, who checks the guest list, and how one bad handoff can derail an entire day."
+    },
+    {
+      "slot": "sealed-correspondence",
+      "ru": "Письмо с печатью намекает на закрытые поручения и внутренние маршруты Дворца, но сама печать ничего не открывает.",
+      "en": "A sealed letter hints at closed assignments and inner Palace routes, but the seal itself unlocks nothing."
+    }
+  ],
+  "repeatableWork": [
+    {
+      "family": "protocol",
+      "ru": "Приём начинается задолго до появления гостей. Нужно сверить порядок встреч, проверить, кому передают сообщения, и не дать двум важным поручениям столкнуться в одном коридоре.",
+      "en": "A reception begins long before the guests arrive. You check the meeting order, confirm who receives each message, and keep two important errands from colliding in the same corridor."
+    },
+    {
+      "family": "documents-logistics",
+      "ru": "Реестры, маршруты поставок и поручения сходятся на одном столе. Работа в том, чтобы заметить несостыковку раньше, чем она станет чужой срочной проблемой.",
+      "en": "Registers, supply routes, and assignments meet on one table. The job is to spot a mismatch before it becomes somebody else's emergency."
+    },
+    {
+      "family": "escort",
+      "ru": "Сопровождение здесь прежде всего означает маршрут, расписание и правильные контакты. Самая полезная победа — довести дело до конца без лишней суматохи.",
+      "en": "Escort duty here is first about route, schedule, and the right contacts. The most useful victory is getting the task finished without unnecessary chaos."
+    },
+    {
+      "family": "negotiation",
+      "ru": "За столом переговоров у каждой стороны есть пределы, обязательства и то, чем она действительно может уступить. Хороший результат начинается с того, что ты различаешь эти три вещи.",
+      "en": "At a negotiation table, every side has limits, obligations, and things it can actually concede. A good result starts with telling those three apart."
+    },
+    {
+      "family": "ceremony-prep",
+      "ru": "Церемония держится не на одном красивом жесте, а на десятках мелочей: помещениях, людях, материалах, времени и протоколе.",
+      "en": "A ceremony is held together not by one grand gesture but by dozens of details: rooms, people, materials, timing, and protocol."
+    },
+    {
+      "family": "errands",
+      "ru": "Между большими событиями остаются короткие поручения: доставить документ, подтвердить встречу, проверить помещение или найти нужного специалиста.",
+      "en": "Between larger events come smaller errands: deliver a document, confirm a meeting, check a room, or find the right specialist."
+    },
+    {
+      "family": "household",
+      "ru": "Даже без приёма Дворец остаётся работающим хозяйством. Запасы, помещения, персонал и расписания требуют внимания каждый день.",
+      "en": "Even without a reception, the Palace remains a working household. Supplies, rooms, staff, and schedules need attention every day."
+    }
+  ],
+  "outcomes": [
+    {
+      "family": "service-life",
+      "ru": "Ты остаёшься частью дворцовой системы и превращаешь поздний профессиональный опыт в устойчивую жизнь, где твоя работа нужна сама по себе, а не как ступень к чужому титулу.",
+      "en": "You remain part of the Palace system and turn late-career experience into a stable life where your work matters on its own, not merely as a step toward somebody else's title."
+    },
+    {
+      "family": "court-power",
+      "ru": "Годы работы превращаются в реальное влияние: решения начинают проходить через тебя, люди учитывают твоё слово, а часть дворцового порядка меняется потому, что ты умеешь им управлять.",
+      "en": "Years of work become real influence: decisions begin to pass through you, people account for your word, and part of Palace life changes because you know how to manage it."
+    },
+    {
+      "family": "inner-truth",
+      "ru": "Дворцовый доступ помогает связать знания, которые раньше существовали по отдельности. Это приближает тебя к большой тайне мира, но не делает один найденный факт готовым ответом.",
+      "en": "Palace access helps connect knowledge that previously existed in separate pieces. It brings you closer to the world's larger mystery without turning one discovered fact into a complete answer."
+    }
+  ],
+  "trueEnding": {
+    "family": "return-home",
+    "epilogue": {
+      "ru": "После победы над Принцем путь заканчивается не новым титулом. Ты возвращаешься в свой исходный мир, унося с собой память о прожитых здесь жизнях.",
+      "en": "After defeating the Prince, the path ends not with a new title. You return to your original world, carrying the memory of the lives you lived here."
+    },
+    "ngPlusNotice": {
+      "ru": "После завершения этой концовки в новых жизнях навсегда становится доступна отдельная опция удвоить все 12 характеристик развития. Она не включается автоматически.",
+      "en": "After completing this ending, future lives permanently gain a separate option to double all 12 progression stats. It is never enabled automatically."
+    }
+  },
+  "textFallbacks": [
+    {
+      "slot": "palace-work",
+      "ru": "Дворцовая работа продолжается через людей, документы, помещения и точные поручения.",
+      "en": "Palace work continues through people, documents, rooms, and precise assignments."
+    },
+    {
+      "slot": "service-life",
+      "ru": "Исход Service Life: профессиональная жизнь внутри дворцовой системы.",
+      "en": "Service Life outcome: a professional life within the Palace system."
+    },
+    {
+      "slot": "court-power",
+      "ru": "Исход Court Power: реальное влияние без заранее заданного титула.",
+      "en": "Court Power outcome: real influence without a predefined title."
+    },
+    {
+      "slot": "inner-truth",
+      "ru": "Исход Inner Truth: знания нескольких путей складываются в более широкую картину.",
+      "en": "Inner Truth outcome: knowledge from multiple paths forms a wider picture."
+    },
+    {
+      "slot": "return-home",
+      "ru": "Истинная концовка Return Home: после победы над Принцем героиня возвращается в исходный мир.",
+      "en": "Return Home True Ending: after defeating the Prince, the heroine returns to her original world."
+    }
+  ]
+}
