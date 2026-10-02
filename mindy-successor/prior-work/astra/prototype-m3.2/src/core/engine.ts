@@ -276,6 +276,8 @@ export type NewLifeRuntimeSetup=Readonly<{progressionStatCap?:ProgressionStatCap
 
 export function freshSave(metaInput?:Partial<Meta>&{completed?:string[];lives?:number},setup:NewLifeRuntimeSetup={}):Save {
   const meta=defaultMeta(metaInput);
+  const progressionStatCap=setup.progressionStatCap??100;
+  if(progressionStatCap!==100&&progressionStatCap!==200)throw new Error('Progression-stat cap must be 100 or 200.');
   const statRecord=Object.fromEntries(stats.map(k=>[k,1])) as Record<Stat,number>;
   const startingMoney=600+(meta.unlocks.includes('satyr-maid.house-credit')?600:0);
   const save={
@@ -289,7 +291,7 @@ export function freshSave(metaInput?:Partial<Meta>&{completed?:string[];lives?:n
       character:{
         stats:statRecord,
         lust:1,
-        progressionStatCap:setup.progressionStatCap??100,
+        progressionStatCap,
         creation:{remaining:10,allocated:{},activeHardWorkPackages:[],hardWorkPackagesApplied:false,complete:false},
         conditions:{}
       },
@@ -1367,12 +1369,6 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
   const parsed=saveSchema.parse(raw) as unknown as Save;
   const s=attachLegacyFacade(parsed);
   s.meta.unlocks=s.meta.unlocks.filter(unlock=>unlock!=='palace');
-  s.run.creation.activeHardWorkPackages=validateHardWorkPackageSelection(
-    s.run.creation.activeHardWorkPackages,
-    s.meta.hardWorkProgress
-  );
-  if(s.run.creation.complete&&!s.run.creation.hardWorkPackagesApplied)throw new Error('Завершённое создание должно иметь зафиксированный Hard Work package state.');
-  if(!s.run.creation.complete&&s.run.creation.hardWorkPackagesApplied&&s.run.creation.activeHardWorkPackages.length)throw new Error('Legacy-settled создание не может содержать активные Hard Work пакеты.');
   for(const stat of stats)if(s.run.character.stats[stat]>effectiveProgressionStatCap(s))throw new Error(`Характеристика ${stat} превышает эффективный потолок.`);
   if(s.run.metrics.energy>energyMax(s))throw new Error('Некорректный запас энергии.');
   if(!s.run.creation.complete&&s.run.creation.remaining+Object.values(s.run.creation.allocated).reduce((a,b)=>a+b,0)!==10)throw new Error('Некорректные стартовые очки.');
@@ -1479,5 +1475,11 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
     s.meta.activeLegacyPerks=[...new Set([...s.meta.activeLegacyPerks,...current.activeLegacyPerks])];
     attachMetaFacade(s.meta);
   }
+  s.run.creation.activeHardWorkPackages=validateHardWorkPackageSelection(
+    s.run.creation.activeHardWorkPackages,
+    s.meta.hardWorkProgress
+  );
+  if(s.run.creation.complete&&!s.run.creation.hardWorkPackagesApplied)throw new Error('Завершённое создание должно иметь зафиксированный Hard Work package state.');
+  if(!s.run.creation.complete&&s.run.creation.hardWorkPackagesApplied&&s.run.creation.activeHardWorkPackages.length)throw new Error('Legacy-settled создание не может содержать активные Hard Work пакеты.');
   return s;
 }
