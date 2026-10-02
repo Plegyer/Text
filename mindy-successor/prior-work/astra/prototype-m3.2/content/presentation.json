@@ -3307,6 +3307,278 @@
         "alt": "Guard poverty-response event variant shaped by cheap shared lodging experience; static presentation only.",
         "altKey": "presentation.static.guard.event.guard-city-poverty-response-cheap-room.alt"
       }
+    },
+    "job/prostitute/event/prostitute-career-first-shift/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-prostitute-result.svg",
+        "alt": "A non-explicit voluntary professional career scene.",
+        "altKey": "presentation.static.career.prostitute.event.alt"
+      }
+    },
+    "job/prostitute/event/prostitute-career-season-spring/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-prostitute-result.svg",
+        "alt": "A non-explicit voluntary professional career scene.",
+        "altKey": "presentation.static.career.prostitute.event.alt"
+      }
+    },
+    "job/prostitute/event/prostitute-career-season-summer/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-prostitute-result.svg",
+        "alt": "A non-explicit voluntary professional career scene.",
+        "altKey": "presentation.static.career.prostitute.event.alt"
+      }
+    },
+    "job/prostitute/event/prostitute-career-season-autumn/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-prostitute-result.svg",
+        "alt": "A non-explicit voluntary professional career scene.",
+        "altKey": "presentation.static.career.prostitute.event.alt"
+      }
+    },
+    "job/prostitute/event/prostitute-career-season-winter/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-prostitute-result.svg",
+        "alt": "A non-explicit voluntary professional career scene.",
+        "altKey": "presentation.static.career.prostitute.event.alt"
+      }
+    },
+    "job/prostitute/event/prostitute-career-seasonal-breadth/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-prostitute-result.svg",
+        "alt": "A non-explicit voluntary professional career scene.",
+        "altKey": "presentation.static.career.prostitute.event.alt"
+      }
+    },
+    "job/prostitute/event/prostitute-career-established/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-prostitute-result.svg",
+        "alt": "A non-explicit voluntary professional career scene.",
+        "altKey": "presentation.static.career.prostitute.event.alt"
+      }
+    },
+    "job/prostitute/event/prostitute-client-flow-intake/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-prostitute-result.svg",
+        "alt": "A non-explicit voluntary professional career scene.",
+        "altKey": "presentation.static.career.prostitute.event.alt"
+      }
+    },
+    "job/prostitute/event/prostitute-client-flow-terms/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-prostitute-result.svg",
+        "alt": "A non-explicit voluntary professional career scene.",
+        "altKey": "presentation.static.career.prostitute.event.alt"
+      }
+    },
+    "job/prostitute/event/prostitute-client-flow-boundary-open/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-prostitute-result.svg",
+        "alt": "A non-explicit voluntary professional career scene.",
+        "altKey": "presentation.static.career.prostitute.event.alt"
+      }
+    },
+    "job/prostitute/event/prostitute-client-flow-boundary/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-prostitute-result.svg",
+        "alt": "A non-explicit voluntary professional career scene.",
+        "altKey": "presentation.static.career.prostitute.event.alt"
+      }
+    },
+    "job/prostitute/event/prostitute-client-flow-result/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-prostitute-result.svg",
+        "alt": "A non-explicit voluntary professional career scene.",
+        "altKey": "presentation.static.career.prostitute.event.alt"
+      }
+    },
+    "job/prostitute/event/prostitute-client-flow-admin/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-prostitute-result.svg",
+        "alt": "A non-explicit voluntary professional career scene.",
+        "altKey": "presentation.static.career.prostitute.event.alt"
+      }
+    },
+    "job/prostitute/event/prostitute-cross-satyr-network/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-prostitute-result.svg",
+        "alt": "A non-explicit voluntary professional career scene.",
+        "altKey": "presentation.static.career.prostitute.event.alt"
+      }
+    },
+    "job/prostitute/event/prostitute-cross-tavern-information/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-prostitute-result.svg",
+        "alt": "A non-explicit voluntary professional career scene.",
+        "altKey": "presentation.static.career.prostitute.event.alt"
+      }
+    },
+    "job/prostitute/event/prostitute-cross-city-safety/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-prostitute-result.svg",
+        "alt": "A non-explicit voluntary professional career scene.",
+        "altKey": "presentation.static.career.prostitute.event.alt"
+      }
+    },
+    "job/prostitute/event/prostitute-cross-merchant-business/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-prostitute-result.svg",
+        "alt": "A non-explicit voluntary professional career scene.",
+        "altKey": "presentation.static.career.prostitute.event.alt"
+      }
+    },
+    "job/prostitute/event/prostitute-cross-housing-context/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-prostitute-result.svg",
+        "alt": "A non-explicit voluntary professional career scene.",
+        "altKey": "presentation.static.career.prostitute.event.alt"
+      }
+    },
+    "job/prostitute/event/prostitute-items-formal-attire/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-prostitute-result.svg",
+        "alt": "A non-explicit voluntary professional career scene.",
+        "altKey": "presentation.static.career.prostitute.event.alt"
+      }
+    },
+    "job/prostitute/event/prostitute-items-private-room-key/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-prostitute-result.svg",
+        "alt": "A non-explicit voluntary professional career scene.",
+        "altKey": "presentation.static.career.prostitute.event.alt"
+      }
+    },
+    "job/prostitute/event/prostitute-items-client-token/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-prostitute-result.svg",
+        "alt": "A non-explicit voluntary professional career scene.",
+        "altKey": "presentation.static.career.prostitute.event.alt"
+      }
+    },
+    "job/prostitute/event/prostitute-items-evidence-case/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-prostitute-result.svg",
+        "alt": "A non-explicit voluntary professional career scene.",
+        "altKey": "presentation.static.career.prostitute.event.alt"
+      }
+    },
+    "job/prostitute/event/prostitute-relationship-intro/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-prostitute-result.svg",
+        "alt": "A non-explicit voluntary professional career scene.",
+        "altKey": "presentation.static.career.prostitute.event.alt"
+      }
+    },
+    "job/prostitute/event/prostitute-relationship-trust/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-prostitute-result.svg",
+        "alt": "A non-explicit voluntary professional career scene.",
+        "altKey": "presentation.static.career.prostitute.event.alt"
+      }
+    },
+    "job/prostitute/event/prostitute-relationship-mode-open/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-prostitute-result.svg",
+        "alt": "A non-explicit voluntary professional career scene.",
+        "altKey": "presentation.static.career.prostitute.event.alt"
+      }
+    },
+    "job/prostitute/event/prostitute-relationship-mode/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-prostitute-result.svg",
+        "alt": "A non-explicit voluntary professional career scene.",
+        "altKey": "presentation.static.career.prostitute.event.alt"
+      }
+    },
+    "job/prostitute/event/prostitute-relationship-conflict-open/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-prostitute-result.svg",
+        "alt": "A non-explicit voluntary professional career scene.",
+        "altKey": "presentation.static.career.prostitute.event.alt"
+      }
+    },
+    "job/prostitute/event/prostitute-relationship-conflict-resolve/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-prostitute-result.svg",
+        "alt": "A non-explicit voluntary professional career scene.",
+        "altKey": "presentation.static.career.prostitute.event.alt"
+      }
+    },
+    "job/prostitute/event/prostitute-routes-veteran-ready/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-prostitute-result.svg",
+        "alt": "A non-explicit voluntary professional career scene.",
+        "altKey": "presentation.static.career.prostitute.event.alt"
+      }
+    },
+    "job/prostitute/event/prostitute-routes-house-ready/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-prostitute-result.svg",
+        "alt": "A non-explicit voluntary professional career scene.",
+        "altKey": "presentation.static.career.prostitute.event.alt"
+      }
+    },
+    "job/prostitute/event/prostitute-routes-elite-ready/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-prostitute-result.svg",
+        "alt": "A non-explicit voluntary professional career scene.",
+        "altKey": "presentation.static.career.prostitute.event.alt"
+      }
+    },
+    "job/prostitute/event/prostitute-routes-network-ready/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-prostitute-result.svg",
+        "alt": "A non-explicit voluntary professional career scene.",
+        "altKey": "presentation.static.career.prostitute.event.alt"
+      }
+    },
+    "job/prostitute/event/prostitute-routes-choose/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-prostitute-result.svg",
+        "alt": "A non-explicit voluntary professional career scene.",
+        "altKey": "presentation.static.career.prostitute.event.alt"
+      }
+    },
+    "job/prostitute/event/prostitute-routes-outcome-ready/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-prostitute-result.svg",
+        "alt": "A non-explicit voluntary professional career scene.",
+        "altKey": "presentation.static.career.prostitute.event.alt"
+      }
     }
   }
 }
