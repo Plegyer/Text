@@ -122,6 +122,25 @@ Original unlocks become easier through year-based fallbacks, but generic world c
 
 Design lesson: time progression can simultaneously open content and increase pressure. That creates a useful curve: early specialization gives advantages, while late access prevents lockout but does not make the world trivial.
 
+### 19. Housing is a recurring resource sink, not just flavor
+The original requires rent daily and allows payment with either money or a stat. Cash rent rises strongly with the year, while the alternative stat payment rotates by season and becomes more expensive later in the run.
+
+Historical shape:
+- money path: roughly 100 -> 300 -> 600 -> 1000 -> 1500 by year;
+- stat path rotates through different stats by season;
+- stat cost is mild early and rises later.
+
+Design lesson: the exact scheme is not something to copy, but the function matters. If work and School both create resources/stats, some recurring sinks must keep decisions meaningful. The successor can use lodging, Activity costs, School tuition, debt, event consequences and other sinks instead of stat-paid rent.
+
+### 20. Career pacing has shared anchors but route-specific texture
+Across all 12 recovered original jobs, the common structural anchors are:
+- a major profession event around visit/shift 15;
+- a career-ending opportunity around visit/shift 50.
+
+More developed routes insert extra milestones such as 5/10/30/40, stat checks, relationship choices or route-specific follow-ups.
+
+Design lesson: a dependable shared pacing skeleton is useful, but every profession should have its own intermediate authored rhythm. The successor's Hard Work=50 should be surrounded by enough early/mid/late events that 50 shifts never feels like a silent counter grind.
+
 ## Successor implications to test, not auto-lock
 
 - Current approved successor seasonal-tradeoff candidate yields **+1.5 net progression-stat points per ordinary shift on average for all ten careers**. That is roughly +75 summed stat points across 50 shifts, versus about +25 in the recovered original work model. This is a balance-test flag, not a command to copy the original: verify progression speed and cap timing over a full 160-day run, especially with School and NG+.
