@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "id": "merchant.poverty",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "careers": [
+        "merchant"
+      ],
+      "housing": true
+    },
+    "writes": {
+      "careers": [
+        "merchant"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "merchant.poverty.liquidity-response",
+      "title": "Trade under a tight liquidity constraint",
+      "sourceDomain": "merchant",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "actionCompleted",
+          "action": "merchant.shift"
+        },
+        {
+          "kind": "careerTransition",
+          "career": "merchant"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 65,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "housingTier",
+              "value": "cheap"
+            },
+            {
+              "kind": "housingTier",
+              "value": "street"
+            }
+          ]
+        },
+        {
+          "kind": "careerCounter",
+          "career": "merchant",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 3
+        },
+        {
+          "kind": "careerFact",
+          "career": "merchant",
+          "fact": "poverty-response-recorded",
+          "present": false
+        },
+        {
+          "kind": "not",
+          "condition": {
+            "kind": "careerStage",
+            "career": "merchant",
+            "stage": "stall-hand"
+          }
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "A Merchant with little room for loss cannot treat one sale as an instant escape. The next step can be narrower commission work or a carefully documented barter-sized obligation, while housing and shared lock ownership remain outside Merchant.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "commission-only",
+          "label": "Take commission work only",
+          "text": "Reduce exposure by handling a sale for someone else without creating Merchant-owned credit state.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "merchant",
+              "fact": "low-liquidity-handled"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "merchant",
+              "fact": "poverty-response-recorded"
+            }
+          ]
+        },
+        {
+          "id": "narrow-barter",
+          "label": "Keep the obligation narrow",
+          "text": "Record only what is exchanged and when; do not create a new balance subsystem or clear any shared obligation.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "merchant",
+              "fact": "low-liquidity-handled"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "merchant",
+              "fact": "poverty-response-recorded"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
