@@ -1,0 +1,725 @@
+{
+  "formatVersion": 1,
+  "id": "chat3.prostitute-authored-v21.localization-prep",
+  "status": "PREPARED_KEYS_ONLY_NOT_ROOT_LOCALIZATION",
+  "activationHead": "0d74171fb3b0d9eafe4081966d3698a20220f72f",
+  "keyScheme": "content.prostitute.v21.<section>.<contentKey>",
+  "count": 80,
+  "rootCollisionCount": 0,
+  "liveCurrentLocalization": [
+    {
+      "rootKey": "action.prostitute.shift.label",
+      "ru": "Профессиональная смена",
+      "en": "Professional shift",
+      "status": "LIVE_BOUND"
+    },
+    {
+      "rootKey": "action.prostitute.shift.description",
+      "ru": "Добровольная профессиональная смена с сохранением выбора и границ героини.",
+      "en": "Work a voluntary professional shift with player agency and boundaries.",
+      "status": "LIVE_BOUND"
+    },
+    {
+      "rootKey": "profession.prostitute.label",
+      "ru": "Независимая профессиональная работа",
+      "en": "Independent Professional Work",
+      "status": "LIVE_BOUND"
+    },
+    {
+      "rootKey": "profession.prostitute.description",
+      "ru": "Добровольная работа с клиентами, где героиня сохраняет выбор и личные границы.",
+      "en": "Voluntary client-facing work in which the heroine keeps agency and personal boundaries.",
+      "status": "LIVE_BOUND"
+    },
+    {
+      "rootKey": "ending.ending.prostitute.hard-work.title",
+      "ru": "Независимая профессия: тяжкий труд",
+      "en": "Professional: Hard Work",
+      "status": "LIVE_BOUND"
+    },
+    {
+      "rootKey": "ending.ending.prostitute.hard-work.description",
+      "ru": "Долгая последовательность добровольных профессиональных смен складывается в неэксплицитный карьерный финал с сохранением личных границ.",
+      "en": "A long sequence of voluntary professional shifts becomes a non-explicit career ending that keeps personal boundaries intact.",
+      "status": "LIVE_BOUND"
+    },
+    {
+      "rootKey": "presentation.static.career.prostitute.shift.spring.caption",
+      "ru": "Весенняя смена: неэксплицитная подготовка к работе.",
+      "en": "Spring shift: non-explicit work preparation.",
+      "status": "LIVE_BOUND"
+    },
+    {
+      "rootKey": "presentation.static.career.prostitute.shift.summer.caption",
+      "ru": "Летняя смена: неэксплицитная подготовка к работе.",
+      "en": "Summer shift: non-explicit work preparation.",
+      "status": "LIVE_BOUND"
+    },
+    {
+      "rootKey": "presentation.static.career.prostitute.shift.autumn.caption",
+      "ru": "Осенняя смена: неэксплицитная подготовка к работе.",
+      "en": "Autumn shift: non-explicit work preparation.",
+      "status": "LIVE_BOUND"
+    },
+    {
+      "rootKey": "presentation.static.career.prostitute.shift.winter.caption",
+      "ru": "Зимняя смена: неэксплицитная подготовка к работе.",
+      "en": "Winter shift: non-explicit work preparation.",
+      "status": "LIVE_BOUND"
+    },
+    {
+      "rootKey": "presentation.static.career.prostitute.result.caption",
+      "ru": "Рабочая смена завершена.",
+      "en": "The work shift is complete.",
+      "status": "LIVE_BOUND"
+    },
+    {
+      "rootKey": "presentation.static.prostitute-ending-hard-work.caption",
+      "ru": "Финал независимой профессии: тяжкий труд.",
+      "en": "Professional ending: Hard Work.",
+      "status": "LIVE_BOUND"
+    }
+  ],
+  "entries": [
+    {
+      "task": "C3-230",
+      "section": "ordinary-work",
+      "contentKey": "client-intake.arrival",
+      "localizationKey": "content.prostitute.v21.ordinary_work.client_intake_arrival",
+      "ru": "Приём клиента начинается с делового контекста: понять запрос, время и то, подходит ли встреча текущим условиям. Решение продолжать остаётся отдельным от самого знакомства.",
+      "en": "Client intake begins with the professional context: understand the request, timing, and whether the meeting fits the current terms. Choosing to continue remains separate from the introduction itself."
+    },
+    {
+      "task": "C3-230",
+      "section": "ordinary-work",
+      "contentKey": "terms.clarity",
+      "localizationKey": "content.prostitute.v21.ordinary_work.terms_clarity",
+      "ru": "До начала работы условия проговариваются коротко и ясно: время, формат встречи, оплата и границы не должны оставаться догадкой. Авторский слой не выбирает цену или формулу расчёта.",
+      "en": "Before work begins, terms are stated clearly: time, meeting format, payment, and boundaries should not be left to guesswork. The authored layer does not choose a price or pricing formula."
+    },
+    {
+      "task": "C3-230",
+      "section": "ordinary-work",
+      "contentKey": "boundaries.restate",
+      "localizationKey": "content.prostitute.v21.ordinary_work.boundaries_restate",
+      "ru": "Если ожидания меняются, границу можно повторить без оправданий и без превращения разговора в конфликт. Профессиональная уверенность не означает автоматического согласия на новый запрос.",
+      "en": "When expectations change, a boundary can be restated without apology and without turning the conversation into a conflict. Professional confidence does not imply automatic consent to a new request."
+    },
+    {
+      "task": "C3-230",
+      "section": "ordinary-work",
+      "contentKey": "recurring-client.continuity",
+      "localizationKey": "content.prostitute.v21.ordinary_work.recurring_client_continuity",
+      "ru": "Постоянный клиент узнаётся по истории договорённостей и предсказуемости общения, а не по автоматической близости. Повторная встреча может оставаться полностью профессиональной.",
+      "en": "A recurring client is defined by the history of agreements and predictable communication, not by automatic intimacy. A repeat meeting can remain entirely professional."
+    },
+    {
+      "task": "C3-230",
+      "section": "ordinary-work",
+      "contentKey": "difficult-request.pause",
+      "localizationKey": "content.prostitute.v21.ordinary_work.difficult_request_pause",
+      "ru": "Сложный запрос создаёт паузу для уточнения условий: что изменилось, подходит ли это героине и нужно ли завершить встречу. Сложность не должна скрыто превращаться в обязательное согласие.",
+      "en": "A difficult request creates a pause to clarify what changed, whether it suits the heroine, and whether the meeting should end. Difficulty must not silently become mandatory agreement."
+    },
+    {
+      "task": "C3-230",
+      "section": "ordinary-work",
+      "contentKey": "refusal.close",
+      "localizationKey": "content.prostitute.v21.ordinary_work.refusal_close",
+      "ru": "Отказ — нормальный профессиональный исход: встречу можно закончить спокойно, зафиксировав, что условия не совпали. Он не требует наказания или романтического объяснения.",
+      "en": "Refusal is a normal professional outcome: the meeting can end calmly once it is clear that the terms do not match. It does not require punishment or a romantic explanation."
+    },
+    {
+      "task": "C3-230",
+      "section": "ordinary-work",
+      "contentKey": "safety.check-in",
+      "localizationKey": "content.prostitute.v21.ordinary_work.safety_check_in",
+      "ru": "Безопасность описывается через подготовку места, понятный способ завершить встречу и контакт с доверенной сетью. Текст не создаёт новую систему риска или скрытый штраф.",
+      "en": "Safety is framed through preparing the location, having a clear way to end the meeting, and keeping contact with a trusted network. The text creates no new risk system or hidden penalty."
+    },
+    {
+      "task": "C3-230",
+      "section": "ordinary-work",
+      "contentKey": "competition.positioning",
+      "localizationKey": "content.prostitute.v21.ordinary_work.competition_positioning",
+      "ru": "Конкуренция меняет позиционирование и профессиональную репутацию, но не требует унижать коллег или превращать рынок в универсальную шкалу статуса. Выбор стиля работы остаётся локальным контекстом.",
+      "en": "Competition can change positioning and professional reputation without requiring hostility toward colleagues or a universal status meter. Working style remains a local context."
+    },
+    {
+      "task": "C3-230",
+      "section": "ordinary-work",
+      "contentKey": "reputation.follow-through",
+      "localizationKey": "content.prostitute.v21.ordinary_work.reputation_follow_through",
+      "ru": "Репутация строится на выполненных договорённостях, ясной коммуникации и умении не обещать лишнего. Авторский текст не вводит глобальную числовую репутацию.",
+      "en": "Reputation grows from keeping agreements, communicating clearly, and not promising more than can be delivered. Authored text does not introduce a global numeric reputation system."
+    },
+    {
+      "task": "C3-230",
+      "section": "ordinary-work",
+      "contentKey": "high-status.booking",
+      "localizationKey": "content.prostitute.v21.ordinary_work.high_status_booking",
+      "ru": "Высокостатусная встреча меняет требования к формальности и подготовке, но не отменяет обычные рабочие правила. Статус клиента не даёт ему отдельного права на исключения.",
+      "en": "A high-status booking changes the level of formality and preparation but does not cancel ordinary working rules. Client status does not create a special entitlement to exceptions."
+    },
+    {
+      "task": "C3-230",
+      "section": "ordinary-work",
+      "contentKey": "payment.admin",
+      "localizationKey": "content.prostitute.v21.ordinary_work.payment_admin",
+      "ru": "Рабочая администрация включает запись встречи, подтверждение оплаты и следующий деловой шаг без лишних личных деталей. Точная экономика и цены остаются за runtime/design authority.",
+      "en": "Work administration covers recording the appointment, confirming payment, and noting the next business step without unnecessary personal detail. Exact economics and prices remain runtime/design authority."
+    },
+    {
+      "task": "C3-231",
+      "section": "seasonal",
+      "contentKey": "spring.travelers",
+      "localizationKey": "content.prostitute.v21.seasonal.spring_travelers",
+      "ru": "Весной новый поток путешественников расширяет круг незнакомых запросов и делает первичную проверку условий особенно важной. Это семантическая вариация, а не новый ценовой множитель.",
+      "en": "In spring, a new flow of travelers broadens the range of unfamiliar requests and makes initial terms-checking especially important. This is semantic variation, not a new price multiplier."
+    },
+    {
+      "task": "C3-231",
+      "section": "seasonal",
+      "contentKey": "spring.returning-city",
+      "localizationKey": "content.prostitute.v21.seasonal.spring_returning_city",
+      "ru": "Весеннее оживление города позволяет сравнивать новых клиентов с теми, кто возвращается после зимы. Разница остаётся в контексте и ожиданиях, а не в придуманной экономической формуле.",
+      "en": "The city's spring revival allows new clients to be contrasted with people returning after winter. The difference stays in context and expectations rather than an invented economic formula."
+    },
+    {
+      "task": "C3-231",
+      "section": "seasonal",
+      "contentKey": "summer.festival",
+      "localizationKey": "content.prostitute.v21.seasonal.summer_festival",
+      "ru": "Летние праздники создают плотный поток встреч и больше шума вокруг работы. Смысл варианта — управление временем, условиями и выбором, а не обязательное повышение дохода.",
+      "en": "Summer festivals create a denser flow of meetings and more noise around the work. The variant is about managing time, terms, and choice rather than guaranteeing higher income."
+    },
+    {
+      "task": "C3-231",
+      "section": "seasonal",
+      "contentKey": "summer.high-demand",
+      "localizationKey": "content.prostitute.v21.seasonal.summer_high_demand",
+      "ru": "При высоком летнем спросе героиня решает, какие встречи принимать и где сохранить запас времени для безопасности и отдыха. Текст не устанавливает коэффициент спроса.",
+      "en": "During high summer demand, the heroine chooses which meetings to accept and where to preserve time for safety and rest. The text does not set a demand coefficient."
+    },
+    {
+      "task": "C3-231",
+      "section": "seasonal",
+      "contentKey": "autumn.elite-visitors",
+      "localizationKey": "content.prostitute.v21.seasonal.autumn_elite_visitors",
+      "ru": "Осенние визиты состоятельных гостей требуют более формальной подачи и внимательного согласования ожиданий. Элитарный контекст не означает Palace access или автоматическую route eligibility.",
+      "en": "Autumn visits from wealthy guests call for more formal presentation and careful alignment of expectations. An elite context does not imply Palace access or automatic route eligibility."
+    },
+    {
+      "task": "C3-231",
+      "section": "seasonal",
+      "contentKey": "autumn.events",
+      "localizationKey": "content.prostitute.v21.seasonal.autumn_events",
+      "ru": "Городские события осенью дают повод для разовых высокоформальных встреч, где важны одежда, расписание и деловой тон. Никакая новая экономика из этого не выводится.",
+      "en": "Autumn city events can create one-off formal bookings where clothing, schedule, and professional tone matter. No new economic system is inferred from this."
+    },
+    {
+      "task": "C3-231",
+      "section": "seasonal",
+      "contentKey": "winter.regular-pressure",
+      "localizationKey": "content.prostitute.v21.seasonal.winter_regular_pressure",
+      "ru": "Зимой случайный поток уменьшается, поэтому постоянные клиенты и надёжность договорённостей становятся заметнее. Это давление контекста, а не принудительная зависимость.",
+      "en": "In winter, casual traffic falls, making recurring clients and reliable agreements more visible. This is contextual pressure, not forced dependency."
+    },
+    {
+      "task": "C3-231",
+      "section": "seasonal",
+      "contentKey": "winter.housing-context",
+      "localizationKey": "content.prostitute.v21.seasonal.winter_housing_context",
+      "ru": "Зимние расходы и жильё могут усиливать экономический контекст, но бедность сама по себе не превращает добровольную карьеру в Secret Debt. Автоматического долга или принудительной ночи здесь нет.",
+      "en": "Winter expenses and housing can heighten economic context, but poverty alone does not turn the voluntary career into Secret Debt. There is no automatic debt or forced night here."
+    },
+    {
+      "task": "C3-232",
+      "section": "adult-work",
+      "contentKey": "adult.negotiated-context",
+      "localizationKey": "content.prostitute.v21.adult_work.adult_negotiated_context",
+      "ru": "Adult/intimacy-вариант рабочей встречи должен сохранять те же заранее согласованные условия, возможность остановиться и отдельность профессиональной подачи от согласия. Точный runtime consumer и Lust-routing ещё не определены.",
+      "en": "An adult/intimacy work variant should preserve the same agreed terms, ability to stop, and separation between professional presentation and consent. The exact runtime consumer and Lust routing are not yet defined."
+    },
+    {
+      "task": "C3-232",
+      "section": "adult-work",
+      "contentKey": "adult.recurring-client",
+      "localizationKey": "content.prostitute.v21.adult_work.adult_recurring_client",
+      "ru": "Adult/intimacy-вариант с постоянным клиентом опирается на историю профессиональных договорённостей, а не на предположение о романтике. Партнёрская личность и условия маршрута остаются открытыми.",
+      "en": "An adult/intimacy variant with a recurring client relies on a history of professional agreements rather than an assumption of romance. Partner identity and route conditions remain open."
+    },
+    {
+      "task": "C3-232",
+      "section": "adult-work",
+      "contentKey": "adult.high-status",
+      "localizationKey": "content.prostitute.v21.adult_work.adult_high_status",
+      "ru": "Высокостатусный adult/intimacy-вариант отличается формальностью, приватностью и ожиданиями сервиса, но не отменяет границы. Точный статусный gate не выдумывается.",
+      "en": "A high-status adult/intimacy variant differs in formality, privacy, and service expectations without canceling boundaries. No exact status gate is invented."
+    },
+    {
+      "task": "C3-232",
+      "section": "adult-work",
+      "contentKey": "adult.performance-context",
+      "localizationKey": "content.prostitute.v21.adult_work.adult_performance_context",
+      "ru": "Adult/intimacy-вариант может использовать профессиональную сценическую подачу как контекст, но Arts/Performance или Body Confidence сами по себе не являются согласием и не производят runtime gate.",
+      "en": "An adult/intimacy variant may use professional performance as context, but Arts/Performance or Body Confidence are not consent and do not themselves produce a runtime gate."
+    },
+    {
+      "task": "C3-232",
+      "section": "adult-work",
+      "contentKey": "adult.route-veteran",
+      "localizationKey": "content.prostitute.v21.adult_work.adult_route_veteran",
+      "ru": "В Veteran-контексте adult/intimacy-варианты должны ощущаться как работа опытного профессионала: меньше объяснений базовых правил, больше осознанного выбора подходящего контекста. Точный route consumer ожидает runtime authority.",
+      "en": "In a Veteran context, adult/intimacy variants should feel like experienced professional work: less explanation of basic rules and more deliberate choice of context. The exact route consumer awaits runtime authority."
+    },
+    {
+      "task": "C3-232",
+      "section": "adult-work",
+      "contentKey": "adult.route-house",
+      "localizationKey": "content.prostitute.v21.adult_work.adult_route_house",
+      "ru": "Для Independent House adult/intimacy-варианты должны подчёркивать контроль героини над местом и условиями, не создавая новой housing/economy механики. Consumer остаётся будущим.",
+      "en": "For Independent House, adult/intimacy variants should emphasize the heroine's control over location and terms without creating new housing or economy mechanics. The consumer remains future authority."
+    },
+    {
+      "task": "C3-232",
+      "section": "adult-work",
+      "contentKey": "adult.route-elite",
+      "localizationKey": "content.prostitute.v21.adult_work.adult_route_elite",
+      "ru": "Для Elite Clientele adult/intimacy-варианты должны различать приватность, формальность и социальный контекст, не превращая клиента автоматически в романтического партнёра.",
+      "en": "For Elite Clientele, adult/intimacy variants should distinguish privacy, formality, and social context without turning a client automatically into a romantic partner."
+    },
+    {
+      "task": "C3-232",
+      "section": "adult-work",
+      "contentKey": "adult.route-network",
+      "localizationKey": "content.prostitute.v21.adult_work.adult_route_network",
+      "ru": "Для Network/Protection adult/intimacy-варианты должны сохранять профессиональную агентность и возможность опереться на сеть безопасности, не делая защитника владельцем или обязательным партнёром.",
+      "en": "For Network/Protection, adult/intimacy variants should preserve professional agency and the option to rely on a safety network without making a protector an owner or mandatory partner."
+    },
+    {
+      "task": "C3-232",
+      "section": "adult-work",
+      "contentKey": "adult.boundary-preserved",
+      "localizationKey": "content.prostitute.v21.adult_work.adult_boundary_preserved",
+      "ru": "Adult/intimacy-контент является core family, но его authored identity всегда должна сохранять различие между желанием, профессиональной ролью, Lust-routing и согласием. Ни один из этих runtime states здесь не создаётся.",
+      "en": "Adult/intimacy content is a core family, but its authored identity must preserve the distinction between desire, professional role, Lust routing, and consent. None of those runtime states is created here."
+    },
+    {
+      "task": "C3-233",
+      "section": "night",
+      "contentKey": "night.voluntary-continuation",
+      "localizationKey": "content.prostitute.v21.night.night_voluntary_continuation",
+      "ru": "Добровольное ночное продолжение — отдельный выбор после дневной или вечерней работы, а не автоматическая часть каждой смены. Точный Night consumer остаётся будущим.",
+      "en": "A voluntary night continuation is a separate choice after daytime or evening work, not an automatic part of every shift. The exact Night consumer remains future authority."
+    },
+    {
+      "task": "C3-233",
+      "section": "night",
+      "contentKey": "night.recurring-client",
+      "localizationKey": "content.prostitute.v21.night.night_recurring_client",
+      "ru": "Ночная встреча с постоянным клиентом может быть отдельным профессиональным или relationship-контекстом, но не должна автоматически означать романтику или adult/intimacy-вариант.",
+      "en": "A night meeting with a recurring client can be a separate professional or relationship context, but it must not automatically imply romance or an adult/intimacy variant."
+    },
+    {
+      "task": "C3-233",
+      "section": "night",
+      "contentKey": "night.relationship-context",
+      "localizationKey": "content.prostitute.v21.night.night_relationship_context",
+      "ru": "Relationship Night-вариант должен явно знать, к какому типу связи он относится — professional, friendship, romance, patronage или conflict — вместо универсальной сцены близости.",
+      "en": "A relationship Night variant should explicitly know whether it belongs to a professional, friendship, romance, patronage, or conflict relationship instead of using one universal intimacy scene."
+    },
+    {
+      "task": "C3-233",
+      "section": "night",
+      "contentKey": "night.route-context",
+      "localizationKey": "content.prostitute.v21.night.night_route_context",
+      "ru": "Route-specific Night authored content должен различать Veteran, House, Elite и Network контексты, если будущий runtime публикует соответствующие consumers. Сейчас эти IDs не создаются.",
+      "en": "Route-specific Night authored content should distinguish Veteran, House, Elite, and Network contexts if future runtime publishes those consumers. No such IDs are created here."
+    },
+    {
+      "task": "C3-233",
+      "section": "night",
+      "contentKey": "night.after-work-debrief",
+      "localizationKey": "content.prostitute.v21.night.night_after_work_debrief",
+      "ru": "Не каждая ночь должна быть adult/intimacy-контентом: профессиональный разбор смены, организация записей или разговор с коллегой остаются отдельной семантической семьёй.",
+      "en": "Not every night should be adult/intimacy content: a professional debrief, organizing records, or talking with a colleague remains a separate semantic family."
+    },
+    {
+      "task": "C3-233",
+      "section": "night",
+      "contentKey": "night.secret-debt-firewall",
+      "localizationKey": "content.prostitute.v21.night.night_secret_debt_firewall",
+      "ru": "Secret Debt forced-night — отдельная принудительная система и не может быть переименована в добровольный Prostitute Night. Ordinary career authoring не получает права связываться с таким consumer без отдельной authority.",
+      "en": "Secret Debt forced-night is a separate coercive system and cannot be relabeled as voluntary Prostitute Night. Ordinary career authoring has no authority to bind to such a consumer without separate authority."
+    },
+    {
+      "task": "C3-233",
+      "section": "night",
+      "contentKey": "night.no-auto-consumption",
+      "localizationKey": "content.prostitute.v21.night.night_no_auto_consumption",
+      "ru": "Обычная рабочая смена не подразумевает автоматического потребления каждой следующей ночи. Любой будущий NextDay effect или Energy penalty остаётся runtime authority.",
+      "en": "An ordinary work shift does not imply automatic consumption of every following night. Any future NextDay effect or Energy penalty remains runtime authority."
+    },
+    {
+      "task": "C3-234",
+      "section": "relationship",
+      "contentKey": "relationship.recurring-client-professional",
+      "localizationKey": "content.prostitute.v21.relationship.relationship_recurring_client_professional",
+      "ru": "Постоянный клиент может оставаться исключительно профессиональным контактом: узнаваемые условия, история встреч и предсказуемая коммуникация уже создают полноценную связь.",
+      "en": "A recurring client can remain an entirely professional contact: recognizable terms, a history of meetings, and predictable communication already form a complete relationship."
+    },
+    {
+      "task": "C3-234",
+      "section": "relationship",
+      "contentKey": "relationship.recurring-client-friendship",
+      "localizationKey": "content.prostitute.v21.relationship.relationship_recurring_client_friendship",
+      "ru": "Дружба с постоянным клиентом возможна только как отдельная развилка, где забота и доверие выходят за рамки сделки без автоматического перехода к романтике.",
+      "en": "Friendship with a recurring client is possible only as a distinct branch where care and trust extend beyond the transaction without automatically becoming romance."
+    },
+    {
+      "task": "C3-234",
+      "section": "relationship",
+      "contentKey": "relationship.recurring-client-romance-optional",
+      "localizationKey": "content.prostitute.v21.relationship.relationship_recurring_client_romance_optional",
+      "ru": "Романтическая ветка с клиентом должна требовать отдельной future relationship authority и не выводиться из количества оплаченных встреч. Профессиональная история не является любовным счётчиком.",
+      "en": "A romantic branch with a client should require separate future relationship authority and must not be inferred from the number of paid meetings. Professional history is not a romance counter."
+    },
+    {
+      "task": "C3-234",
+      "section": "relationship",
+      "contentKey": "relationship.colleague",
+      "localizationKey": "content.prostitute.v21.relationship.relationship_colleague",
+      "ru": "Коллега даёт контекст взаимопомощи, обмена опытом, сравнения рабочих стратегий и возможного конфликта без превращения профессии в одиночный путь.",
+      "en": "A colleague provides context for mutual aid, shared experience, comparing work strategies, and possible conflict without making the profession a solitary path."
+    },
+    {
+      "task": "C3-234",
+      "section": "relationship",
+      "contentKey": "relationship.manager-landlord",
+      "localizationKey": "content.prostitute.v21.relationship.relationship_manager_landlord",
+      "ru": "Manager/landlord может влиять на место, расписание или бытовые договорённости, но не получает автоматического контроля над личными решениями героини. Housing/economy mechanics остаются отдельно.",
+      "en": "A manager or landlord may affect location, schedule, or practical arrangements but gains no automatic control over the heroine's personal decisions. Housing and economy mechanics remain separate."
+    },
+    {
+      "task": "C3-234",
+      "section": "relationship",
+      "contentKey": "relationship.protector-contact",
+      "localizationKey": "content.prostitute.v21.relationship.relationship_protector_contact",
+      "ru": "Protector/contact полезен как источник безопасного выхода, информации или поддержки, но не превращается в владельца, обязательного партнёра или универсальный Guard substitute.",
+      "en": "A protector/contact can provide a safe exit, information, or support without becoming an owner, mandatory partner, or universal substitute for Guard authority."
+    },
+    {
+      "task": "C3-234",
+      "section": "relationship",
+      "contentKey": "relationship.rival",
+      "localizationKey": "content.prostitute.v21.relationship.relationship_rival",
+      "ru": "Соперник показывает другой способ строить клиентскую сеть и репутацию; конфликт может быть профессиональным, личным или разрешимым без принуждения к вражде.",
+      "en": "A rival demonstrates another way to build a client network and reputation; conflict can be professional, personal, or resolvable without forcing permanent hostility."
+    },
+    {
+      "task": "C3-234",
+      "section": "relationship",
+      "contentKey": "relationship.patronage-boundary",
+      "localizationKey": "content.prostitute.v21.relationship.relationship_patronage_boundary",
+      "ru": "Patronage может давать стабильность или доступ, но authored layer должен отдельно отмечать риск зависимости и не маскировать контроль под романтику.",
+      "en": "Patronage can provide stability or access, but the authored layer should distinguish dependency risk rather than disguising control as romance."
+    },
+    {
+      "task": "C3-234",
+      "section": "relationship",
+      "contentKey": "relationship.conflict-resolution",
+      "localizationKey": "content.prostitute.v21.relationship.relationship_conflict_resolution",
+      "ru": "Relationship conflict может завершиться подтверждением границ, прекращением контакта, профессиональным перемирием или отдельной дружеской/романтической веткой только там, где future runtime это поддержит.",
+      "en": "Relationship conflict can end with reaffirmed boundaries, ending contact, a professional truce, or a separate friendship/romance branch only where future runtime supports it."
+    },
+    {
+      "task": "C3-234",
+      "section": "relationship",
+      "contentKey": "relationship.no-auto-romance",
+      "localizationKey": "content.prostitute.v21.relationship.relationship_no_auto_romance",
+      "ru": "Ни один recurring client, high-status client, protector или landlord не становится романтическим партнёром автоматически. Romance — отдельная семантическая и runtime-ветка.",
+      "en": "No recurring client, high-status client, protector, or landlord becomes a romantic partner automatically. Romance is a separate semantic and runtime branch."
+    },
+    {
+      "task": "C3-235",
+      "section": "routes",
+      "contentKey": "route.veteran",
+      "localizationKey": "content.prostitute.v21.routes.route_veteran",
+      "ru": "Veteran — путь устойчивой профессиональной практики: героиня знает свои правила, умеет выбирать контекст и не обязана владеть собственным заведением или обслуживать элиту.",
+      "en": "Veteran is a path of stable professional practice: the heroine knows her rules and chooses context without needing to own a house or serve elite clientele."
+    },
+    {
+      "task": "C3-235",
+      "section": "routes",
+      "contentKey": "route.independent-house",
+      "localizationKey": "content.prostitute.v21.routes.route_independent_house",
+      "ru": "Independent House означает контроль над рабочим пространством, условиями и организацией, но authored prep не устанавливает цену недвижимости, штат или универсальный бизнес-симулятор.",
+      "en": "Independent House means control over work space, terms, and organization, but authored prep does not set property prices, staffing rules, or a universal business simulator."
+    },
+    {
+      "task": "C3-235",
+      "section": "routes",
+      "contentKey": "route.elite-clientele",
+      "localizationKey": "content.prostitute.v21.routes.route_elite_clientele",
+      "ru": "Elite Clientele — путь формальности, приватности и сложной социальной навигации. Он не равен Palace route и не обещает романтический статус клиента.",
+      "en": "Elite Clientele is a path of formality, privacy, and complex social navigation. It is not equivalent to a Palace route and does not promise romantic client status."
+    },
+    {
+      "task": "C3-235",
+      "section": "routes",
+      "contentKey": "route.network-protection",
+      "localizationKey": "content.prostitute.v21.routes.route_network_protection",
+      "ru": "Network/Protection строится вокруг взаимопомощи, контактов и способов безопасно поддерживать условия работы. Он не создаёт владельца сети или обязательную зависимость.",
+      "en": "Network/Protection is built around mutual aid, contacts, and ways to support safe working conditions. It creates no network owner or mandatory dependency."
+    },
+    {
+      "task": "C3-235",
+      "section": "routes",
+      "contentKey": "route.outcome-ready",
+      "localizationKey": "content.prostitute.v21.routes.route_outcome_ready",
+      "ru": "Outcome-ready означает, что будущий runtime собрал достаточно route-specific authority для отдельного payoff, но authored layer не выбирает условия перехода и не создаёт ending ID.",
+      "en": "Outcome-ready means future runtime has accumulated enough route-specific authority for a distinct payoff, but the authored layer does not choose transition conditions or create an ending ID."
+    },
+    {
+      "task": "C3-235",
+      "section": "routes",
+      "contentKey": "route.hard-work-independent",
+      "localizationKey": "content.prostitute.v21.routes.route_hard_work_independent",
+      "ru": "Hard Work остаётся самостоятельным shipped outcome, не требующим romance, Elite, House или Network ветки. Новые authored route families не должны переписывать его eligibility.",
+      "en": "Hard Work remains an independent shipped outcome that does not require Romance, Elite, House, or Network routes. New authored route families must not rewrite its eligibility."
+    },
+    {
+      "task": "C3-235",
+      "section": "routes",
+      "contentKey": "route.defer",
+      "localizationKey": "content.prostitute.v21.routes.route_defer",
+      "ru": "Если future runtime не публикует точную route identity, authored source остаётся подготовленным и несвязанным. Нельзя привязывать его к похожему существующему ID ради удобства.",
+      "en": "If future runtime does not publish an exact route identity, authored source remains prepared and unbound. It must not be attached to a merely similar existing ID for convenience."
+    },
+    {
+      "task": "C3-236",
+      "section": "items",
+      "contentKey": "item.formal-attire",
+      "localizationKey": "content.prostitute.v21.items.item_formal_attire",
+      "ru": "Formal attire означает готовность к более формальному профессиональному контексту и может стать future capability input. Это не универсальный статус, не consent flag и не Palace pass.",
+      "en": "Formal attire means readiness for a more formal professional context and may become a future capability input. It is not universal status, a consent flag, or a Palace pass."
+    },
+    {
+      "task": "C3-236",
+      "section": "items",
+      "contentKey": "item.private-room-key",
+      "localizationKey": "content.prostitute.v21.items.item_private_room_key",
+      "ru": "Private-room/staff key означает локальный доступ к конкретному рабочему пространству, если future runtime публикует такую capability. Ключ не даёт глобального доступа к чужим комнатам.",
+      "en": "A private-room or staff key means local access to a specific work space if future runtime publishes that capability. It does not grant global access to other people's rooms."
+    },
+    {
+      "task": "C3-236",
+      "section": "items",
+      "contentKey": "item.contract-token",
+      "localizationKey": "content.prostitute.v21.items.item_contract_token",
+      "ru": "Contract/token служит подтверждением конкретной договорённости или client route context, но не создаёт универсальный client-state или право на встречу в любой момент.",
+      "en": "A contract or token confirms a specific agreement or client-route context without creating universal client state or entitlement to a meeting at any time."
+    },
+    {
+      "task": "C3-236",
+      "section": "items",
+      "contentKey": "item.evidence-document",
+      "localizationKey": "content.prostitute.v21.items.item_evidence_document",
+      "ru": "Evidence/document поддерживает Network/Protection контекст: запись договорённости, подтверждение проблемы или материал для trusted contact. Он не превращается в универсальную правовую победу.",
+      "en": "Evidence or a document supports Network/Protection context: a record of an agreement, confirmation of a problem, or material for a trusted contact. It does not become a universal legal victory."
+    },
+    {
+      "task": "C3-236",
+      "section": "items",
+      "contentKey": "item.no-universal-status",
+      "localizationKey": "content.prostitute.v21.items.item_no_universal_status",
+      "ru": "Ни один предмет этой authored family сам по себе не создаёт глобальную репутацию, согласие, Lust threshold, Palace access или ending eligibility.",
+      "en": "No item in this authored family creates global reputation, consent, a Lust threshold, Palace access, or ending eligibility by itself."
+    },
+    {
+      "task": "C3-237",
+      "section": "school",
+      "contentKey": "school.rhetoric",
+      "localizationKey": "content.prostitute.v21.school.school_rhetoric",
+      "ru": "Rhetoric поддерживает ясные переговоры об условиях и отказ без лишней эскалации. Existing School content уже описывает это, но producer threshold для Prostitute runtime не выбран.",
+      "en": "Rhetoric supports clear negotiation of terms and refusal without needless escalation. Existing School content already describes this, but no producer threshold for Prostitute runtime has been selected."
+    },
+    {
+      "task": "C3-237",
+      "section": "school",
+      "contentKey": "school.literacy",
+      "localizationKey": "content.prostitute.v21.school.school_literacy",
+      "ru": "Literacy & Numbers поддерживает нейтральные записи встреч, оплат и договорённостей без лишних личных данных. Это authored support, а не authority на pricing engine.",
+      "en": "Literacy & Numbers supports neutral records of appointments, payments, and agreements without unnecessary personal data. This is authored support, not authority over a pricing engine."
+    },
+    {
+      "task": "C3-237",
+      "section": "school",
+      "contentKey": "school.etiquette",
+      "localizationKey": "content.prostitute.v21.school.school_etiquette",
+      "ru": "Etiquette & Presentation помогает в high-status профессиональном контексте, сохраняя право повторить собственные правила. Формальность не создаёт consent.",
+      "en": "Etiquette & Presentation helps in high-status professional contexts while preserving the right to restate one's own rules. Formality does not create consent."
+    },
+    {
+      "task": "C3-237",
+      "section": "school",
+      "contentKey": "school.arts",
+      "localizationKey": "content.prostitute.v21.school.school_arts",
+      "ru": "Arts & Performance поддерживает профессиональную импровизацию и управление сценической ролью, но не обязывает принимать новый запрос и не создаёт adult-routing threshold.",
+      "en": "Arts & Performance supports professional improvisation and management of a performed role without obligating acceptance of a new request or creating an adult-routing threshold."
+    },
+    {
+      "task": "C3-237",
+      "section": "school",
+      "contentKey": "school.body-confidence",
+      "localizationKey": "content.prostitute.v21.school.school_body_confidence",
+      "ru": "Body Confidence поддерживает осознанное присутствие и самопрезентацию; уверенность, привлекательность и профессиональная подача не равны согласию.",
+      "en": "Body Confidence supports deliberate presence and self-presentation; confidence, attractiveness, and professional presentation are not consent."
+    },
+    {
+      "task": "C3-237",
+      "section": "school",
+      "contentKey": "school.no-producer-authority",
+      "localizationKey": "content.prostitute.v21.school.school_no_producer_authority",
+      "ru": "Chat 3 не выбирает School threshold, public fact или producer condition для Prostitute. Пока `selectedThreshold` и `selectedPublicFactId` null, bind такого consumer запрещён.",
+      "en": "Chat 3 does not choose a School threshold, public fact, or producer condition for Prostitute. While `selectedThreshold` and `selectedPublicFactId` are null, binding such a consumer is forbidden."
+    },
+    {
+      "task": "C3-238",
+      "section": "cross-system",
+      "contentKey": "cross.satyr-recurring-guest",
+      "localizationKey": "content.prostitute.v21.cross_system.cross_satyr_recurring_guest",
+      "ru": "Shipped Satyr Maid уже имеет `satyr-maid.recurring-guest` и добровольный Night choice. Prostitute authored prep может брать отсюда только семантический пример разделения профессионального доверия и ночного выбора, не наследуя Satyr state.",
+      "en": "Shipped Satyr Maid already has `satyr-maid.recurring-guest` and a voluntary Night choice. Prostitute authored prep may use it only as a semantic example of separating professional trust from a night choice, without inheriting Satyr state."
+    },
+    {
+      "task": "C3-238",
+      "section": "cross-system",
+      "contentKey": "cross.satyr-staff-debrief",
+      "localizationKey": "content.prostitute.v21.cross_system.cross_satyr_staff_debrief",
+      "ru": "`satyr-maid.night.staff-debrief` proves that a career Night family can be non-adult professional content. Prostitute Night planning should preserve the same semantic possibility without reusing the Satyr ID.",
+      "en": "`satyr-maid.night.staff-debrief` proves that a career Night family can be non-adult professional content. Prostitute Night planning should preserve the same semantic possibility without reusing the Satyr ID."
+    },
+    {
+      "task": "C3-238",
+      "section": "cross-system",
+      "contentKey": "cross.artist-status-overlap",
+      "localizationKey": "content.prostitute.v21.cross_system.cross_artist_status_overlap",
+      "ru": "Current shipped Artist/Geisha authority provides `artist-geisha.shift` and its Hard Work ending, but no shipped relationship/Night consumer in this baseline. Cross-authoring may acknowledge status/art overlap without inventing an Artist bridge ID.",
+      "en": "Current shipped Artist/Geisha authority provides `artist-geisha.shift` and its Hard Work ending, but no shipped relationship/Night consumer in this baseline. Cross-authoring may acknowledge status/art overlap without inventing an Artist bridge ID."
+    },
+    {
+      "task": "C3-238",
+      "section": "cross-system",
+      "contentKey": "cross.tavern-rooms-info",
+      "localizationKey": "content.prostitute.v21.cross_system.cross_tavern_rooms_info",
+      "ru": "Tavern ships `tavern_staff_key` with `access_guest_rooms_staff` plus `tavern.recurring-traveler`. These are Tavern-owned inputs only; a future Prostitute room or information hook needs its own consumer.",
+      "en": "Tavern ships `tavern_staff_key` with `access_guest_rooms_staff` plus `tavern.recurring-traveler`. These are Tavern-owned inputs only; a future Prostitute room or information hook needs its own consumer."
+    },
+    {
+      "task": "C3-238",
+      "section": "cross-system",
+      "contentKey": "cross.guard-safety",
+      "localizationKey": "content.prostitute.v21.cross_system.cross_guard_safety",
+      "ru": "Guard ships `guard_badge`, `guard_sealed_pass` and the `guard.partner` relationship. A future safety/protection authored seam may refer to Guard-owned access or contact context, but Prostitute does not acquire those capabilities automatically.",
+      "en": "Guard ships `guard_badge`, `guard_sealed_pass`, and the `guard.partner` relationship. A future safety/protection authored seam may refer to Guard-owned access or contact context, but Prostitute does not acquire those capabilities automatically."
+    },
+    {
+      "task": "C3-238",
+      "section": "cross-system",
+      "contentKey": "cross.merchant-business",
+      "localizationKey": "content.prostitute.v21.cross_system.cross_merchant_business",
+      "ru": "Merchant ships `merchant.shift` plus appraisal/manifest/sample capabilities. Prostitute authored prep may use Merchant only as an existing business/contact system input; it does not infer rent prices, clothing stock, or a new economy rule.",
+      "en": "Merchant ships `merchant.shift` plus appraisal, manifest, and sample capabilities. Prostitute authored prep may use Merchant only as an existing business/contact system input; it does not infer rent prices, clothing stock, or a new economy rule."
+    },
+    {
+      "task": "C3-238",
+      "section": "cross-system",
+      "contentKey": "cross.merchant-supplier",
+      "localizationKey": "content.prostitute.v21.cross_system.cross_merchant_supplier",
+      "ru": "`merchant.supplier` demonstrates a shipped professional relationship that can branch through cooperation, rivalry or refusal. It is an analogy for relationship breadth, not a Prostitute supplier state.",
+      "en": "`merchant.supplier` demonstrates a shipped professional relationship that can branch through cooperation, rivalry, or refusal. It is an analogy for relationship breadth, not a Prostitute supplier state."
+    },
+    {
+      "task": "C3-238",
+      "section": "cross-system",
+      "contentKey": "cross.palace-no-authority",
+      "localizationKey": "content.prostitute.v21.cross_system.cross_palace_no_authority",
+      "ru": "Current shipped definitions expose no Palace action, career, item, relationship or Night choice. Therefore Prostitute authored prep cannot bind Elite Clientele to Palace access or invent a Palace consumer.",
+      "en": "Current shipped definitions expose no Palace action, career, item, relationship, or Night choice. Therefore Prostitute authored prep cannot bind Elite Clientele to Palace access or invent a Palace consumer."
+    },
+    {
+      "task": "C3-238",
+      "section": "cross-system",
+      "contentKey": "cross.no-secret-debt-inheritance",
+      "localizationKey": "content.prostitute.v21.cross_system.cross_no_secret_debt_inheritance",
+      "ru": "Cross-system authoring must not inherit Secret Debt ownership, forced-night semantics or generic debt state into ordinary Prostitute. Any future bridge requires explicit separate runtime authority.",
+      "en": "Cross-system authoring must not inherit Secret Debt ownership, forced-night semantics, or generic debt state into ordinary Prostitute. Any future bridge requires explicit separate runtime authority."
+    },
+    {
+      "task": "C3-239",
+      "section": "ending-payoff",
+      "contentKey": "ending.hard-work-live",
+      "localizationKey": "content.prostitute.v21.ending_payoff.ending_hard_work_live",
+      "ru": "Shipped `ending.prostitute.hard-work` remains the exact current Prostitute ending authority: persistence through completed shifts with its existing reward and Meta. Authored prep does not alter eligibility or reward.",
+      "en": "Shipped `ending.prostitute.hard-work` remains the exact current Prostitute ending authority: persistence through completed shifts with its existing reward and Meta. Authored prep does not alter eligibility or reward."
+    },
+    {
+      "task": "C3-239",
+      "section": "ending-payoff",
+      "contentKey": "ending.hard-work-adult-payoff",
+      "localizationKey": "content.prostitute.v21.ending_payoff.ending_hard_work_adult_payoff",
+      "ru": "Product direction expects adult/intimacy payoff planning for non-killing outcomes, including Hard Work where presentation authority later allows it. The payoff consumer is separate from the shipped ending ID and is still pending.",
+      "en": "Product direction expects adult/intimacy payoff planning for non-killing outcomes, including Hard Work where presentation authority later allows it. The payoff consumer is separate from the shipped ending ID and is still pending."
+    },
+    {
+      "task": "C3-239",
+      "section": "ending-payoff",
+      "contentKey": "ending.house-payoff",
+      "localizationKey": "content.prostitute.v21.ending_payoff.ending_house_payoff",
+      "ru": "Independent House payoff should communicate control of place, schedule and professional terms, with an adult/intimacy presentation family where future authority calls for it. No public ending ID is created here.",
+      "en": "Independent House payoff should communicate control of place, schedule, and professional terms, with an adult/intimacy presentation family where future authority calls for it. No public ending ID is created here."
+    },
+    {
+      "task": "C3-239",
+      "section": "ending-payoff",
+      "contentKey": "ending.elite-payoff",
+      "localizationKey": "content.prostitute.v21.ending_payoff.ending_elite_payoff",
+      "ru": "Elite Clientele payoff should distinguish formal/private professional success from romance and from Palace ownership. Its adult/intimacy presentation family remains pending exact runtime/presentation IDs.",
+      "en": "Elite Clientele payoff should distinguish formal/private professional success from romance and from Palace ownership. Its adult/intimacy presentation family remains pending exact runtime/presentation IDs."
+    },
+    {
+      "task": "C3-239",
+      "section": "ending-payoff",
+      "contentKey": "ending.network-payoff",
+      "localizationKey": "content.prostitute.v21.ending_payoff.ending_network_payoff",
+      "ru": "Network/Protection payoff should center mutual safety, trusted contacts and chosen professional support rather than dependency on one protector. Adult/intimacy payoff presentation remains route-specific and pending.",
+      "en": "Network/Protection payoff should center mutual safety, trusted contacts, and chosen professional support rather than dependency on one protector. Adult/intimacy payoff presentation remains route-specific and pending."
+    },
+    {
+      "task": "C3-239",
+      "section": "ending-payoff",
+      "contentKey": "ending.non-killing-adult-planning",
+      "localizationKey": "content.prostitute.v21.ending_payoff.ending_non_killing_adult_planning",
+      "ru": "For future non-killing endings, adult/intimacy presentation is planned as a core family rather than a rare optional epilogue, but exact gating, partner identity and scene count remain outside authored authority.",
+      "en": "For future non-killing endings, adult/intimacy presentation is planned as a core family rather than a rare optional epilogue, but exact gating, partner identity, and scene count remain outside authored authority."
+    },
+    {
+      "task": "C3-239",
+      "section": "ending-payoff",
+      "contentKey": "ending.no-public-id",
+      "localizationKey": "content.prostitute.v21.ending_payoff.ending_no_public_id",
+      "ru": "House, Elite and Network payoff families remain conceptual authored source until authoritative public ending IDs exist. Similar existing ending IDs must not be reused as aliases.",
+      "en": "House, Elite, and Network payoff families remain conceptual authored source until authoritative public ending IDs exist. Similar existing ending IDs must not be reused as aliases."
+    },
+    {
+      "task": "C3-239",
+      "section": "ending-payoff",
+      "contentKey": "ending.no-meta-authority",
+      "localizationKey": "content.prostitute.v21.ending_payoff.ending_no_meta_authority",
+      "ru": "Authored payoff prep does not choose Meta rewards, starting bonuses, money rewards or universal unlocks. Those remain ending/runtime authority.",
+      "en": "Authored payoff prep does not choose Meta rewards, starting bonuses, money rewards, or universal unlocks. Those remain ending/runtime authority."
+    }
+  ]
+}
