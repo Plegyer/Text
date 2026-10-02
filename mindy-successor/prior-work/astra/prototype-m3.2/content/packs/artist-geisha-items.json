@@ -1,0 +1,267 @@
+{
+  "schemaVersion": 1,
+  "id": "artist-geisha.items",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "careers": [
+        "artist-geisha"
+      ],
+      "inventory": [
+        "artist_formal_attire",
+        "artist_performance_kit",
+        "artist_invitation_token"
+      ],
+      "itemCapabilities": [
+        "artist_formal_presence",
+        "artist_performance_ready",
+        "artist_handle_invitation"
+      ]
+    },
+    "writes": {
+      "careers": [
+        "artist-geisha"
+      ],
+      "inventory": [
+        "artist_formal_attire",
+        "artist_performance_kit",
+        "artist_invitation_token"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "artist-geisha.items.performance_kit",
+      "title": "A practical performance kit becomes available",
+      "sourceDomain": "artist-geisha",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "artist-geisha"
+        },
+        {
+          "kind": "careerTransition",
+          "career": "artist-geisha"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "artist-geisha.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 68,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 1,
+      "variantCooldownDays": 0,
+      "maxShows": 12,
+      "conditions": [
+        {
+          "kind": "careerFact",
+          "career": "artist-geisha",
+          "fact": "seasonal-breadth-ready",
+          "present": true
+        },
+        {
+          "kind": "itemCapability",
+          "capability": "artist_performance_ready",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "A compact Artist House performance kit supports one prepared performance method. It does not define a universal discipline or create a contest system.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "take",
+          "label": "Take the Artist House item",
+          "text": "Keep the item for its narrow Artist-local capability.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addItem",
+              "id": "artist_performance_kit",
+              "count": 1
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "artist-geisha",
+              "fact": "performance-kit-issued"
+            }
+          ]
+        },
+        {
+          "id": "defer",
+          "label": "Keep working without it",
+          "text": "Ordinary Artist House work remains available.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "artist-geisha.items.formal_attire",
+      "title": "Formal Artist House attire becomes available",
+      "sourceDomain": "artist-geisha",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "artist-geisha"
+        },
+        {
+          "kind": "careerTransition",
+          "career": "artist-geisha"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "artist-geisha.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 68,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 1,
+      "variantCooldownDays": 0,
+      "maxShows": 12,
+      "conditions": [
+        {
+          "kind": "careerFact",
+          "career": "artist-geisha",
+          "fact": "recognized-ready",
+          "present": true
+        },
+        {
+          "kind": "itemCapability",
+          "capability": "artist_formal_presence",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Formal Artist House attire supports a narrow formal-presence option. It is not a universal status score and never grants Palace access.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "take",
+          "label": "Take the Artist House item",
+          "text": "Keep the item for its narrow Artist-local capability.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addItem",
+              "id": "artist_formal_attire",
+              "count": 1
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "artist-geisha",
+              "fact": "formal-attire-issued"
+            }
+          ]
+        },
+        {
+          "id": "defer",
+          "label": "Keep working without it",
+          "text": "Ordinary Artist House work remains available.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "artist-geisha.items.invitation_token",
+      "title": "An Artist House invitation token can be carried",
+      "sourceDomain": "artist-geisha",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "artist-geisha"
+        },
+        {
+          "kind": "careerTransition",
+          "career": "artist-geisha"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "artist-geisha.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 68,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 1,
+      "variantCooldownDays": 0,
+      "maxShows": 12,
+      "conditions": [
+        {
+          "kind": "careerFact",
+          "career": "artist-geisha",
+          "fact": "court-contact-ready",
+          "present": true
+        },
+        {
+          "kind": "itemCapability",
+          "capability": "artist_handle_invitation",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The invitation token records an Artist-local professional contact. It can support Court Invitation readiness but can never satisfy the Palace unlock.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "take",
+          "label": "Take the Artist House item",
+          "text": "Keep the item for its narrow Artist-local capability.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addItem",
+              "id": "artist_invitation_token",
+              "count": 1
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "artist-geisha",
+              "fact": "invitation-token-issued"
+            }
+          ]
+        },
+        {
+          "id": "defer",
+          "label": "Keep working without it",
+          "text": "Ordinary Artist House work remains available.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    }
+  ]
+}
