@@ -1,0 +1,157 @@
+{
+  "formatVersion": 1,
+  "id": "chat3.palace-authored-v22.inventory",
+  "task": "C3-241",
+  "status": "SAFE_PREP_ONLY_DERIVED_UNLOCK_LIVE_NO_PALACE_CAREER_RUNTIME",
+  "activation": {
+    "branchStart": "260e44daad22a6ab8eb879ee24f13b9ec2abf19b",
+    "authorityDocs": [
+      "mindy-successor/docs/PALACE_HIDDEN_CAREER_DRAFT_v0.md",
+      "mindy-successor/docs/COMPLEX_ENDING_META_REWARD_CATALOG_v0.md",
+      "mindy-successor/docs/ADULT_CONTENT_CORE_DIRECTION_v1.md",
+      "mindy-successor/docs/tasks/TASK_CHAT3_CONTENT_QUEUE_v22.md"
+    ]
+  },
+  "fixedAuthority": {
+    "ordinaryHardWorkCareers": [
+      "lumber",
+      "satyr-maid",
+      "undead-farm",
+      "tavern",
+      "hunter",
+      "guard",
+      "merchant",
+      "artist-geisha",
+      "assassin",
+      "prostitute"
+    ],
+    "ordinaryHardWorkCount": 10,
+    "hardWorkEndingIds": [
+      "ending.lumber.hard-work",
+      "ending.satyr-maid.hard-work",
+      "ending.undead-farm.hard-work",
+      "ending.tavern.hard-work",
+      "ending.hunter.hard-work",
+      "ending.guard.hard-work",
+      "ending.merchant.hard-work",
+      "ending.artist-geisha.hard-work",
+      "ending.assassin.hard-work",
+      "ending.prostitute.hard-work"
+    ],
+    "hardWorkMetaRewardIds": [
+      "hardWork:lumber",
+      "hardWork:satyr-maid",
+      "hardWork:undead-farm",
+      "hardWork:tavern",
+      "hardWork:hunter",
+      "hardWork:guard",
+      "hardWork:merchant",
+      "hardWork:artist-geisha",
+      "hardWork:assassin",
+      "hardWork:prostitute"
+    ],
+    "palaceUnlock": {
+      "id": "palace",
+      "derivation": "ordinaryHardWorkCareers.every(c => meta.hardWorkProgress.includes(c))",
+      "uniqueCareersRequired": 10,
+      "duplicateCareerDoesNotSubstitute": true,
+      "secretDebtDoesNotSubstitute": true,
+      "staleStoredUnlockIsRepaired": true,
+      "conditionSurface": {
+        "kind": "metaUnlock",
+        "unlock": "palace",
+        "present": true
+      },
+      "localizationKey": "unlock.palace.label"
+    },
+    "artistCourtInvitationBoundary": {
+      "source": "COMPLEX_ENDING_META_REWARD_CATALOG_v0.md",
+      "rule": "Court Familiarity may shorten or alter Palace introduction only after Palace is unlocked by 10/10 Hard Work; it does not unlock Palace."
+    }
+  },
+  "currentProductionPalaceConsumers": {
+    "actionIds": [],
+    "careerIds": [],
+    "endingIds": [],
+    "relationshipIds": [],
+    "nightChoiceIds": [],
+    "itemIds": [],
+    "eventIds": [],
+    "status": "NO_PALACE_CAREER_RUNTIME_CONSUMER"
+  },
+  "currentNarrativeReferences": {
+    "localizationKeys": [
+      "event.gopher.tavern-quest.variant.default.text",
+      "event.gopher.receipt.variant.default.text",
+      "event.gopher.tavern-resolution.variant.default.text",
+      "event.gopher.tavern-resolution.choice.prince.label",
+      "event.gopher.landlord.variant.default.text"
+    ],
+    "classification": "LEGACY_OR_WORLD_NARRATIVE_REFERENCE_NOT_PALACE_CAREER_AUTHORITY"
+  },
+  "openVsFixed": {
+    "fixed": [
+      "late hidden/meta profession above ordinary roster",
+      "unlock requires all 10 unique ordinary Hard Work careers",
+      "Secret Debt and other hidden careers do not substitute",
+      "duplicate Hard Work from one career does not substitute",
+      "Artist Court Invitation does not unlock Palace",
+      "Palace must not be exposed as a pre-unlock progress-card counter"
+    ],
+    "open": [
+      "exact Palace role",
+      "exact Palace public career/action IDs",
+      "exact Palace work consumers",
+      "exact ruler identity",
+      "exact court structure",
+      "exact relationships and partner identities",
+      "exact career stage runtime IDs",
+      "exact item IDs/capabilities",
+      "exact global mystery",
+      "exact ending IDs",
+      "exact ending rewards and Meta",
+      "whether Palace itself contributes further Hard Work progress",
+      "whether an unlocked run starts with Palace immediately available or uses an invitation gate",
+      "exact adult/intimacy thresholds and routing"
+    ]
+  },
+  "futureConsumers": {
+    "discoveryHints": "PENDING_RUNTIME_ID",
+    "repeatableWork": "PENDING_RUNTIME_ID",
+    "legacyOpportunities": "PENDING_RUNTIME_ID",
+    "careerStages": "PENDING_RUNTIME_ID",
+    "relationships": "PENDING_RUNTIME_ID",
+    "seasons": "PENDING_RUNTIME_ID",
+    "schoolSeams": "PENDING_RUNTIME_ID",
+    "items": "PENDING_RUNTIME_ID",
+    "serviceLifePayoff": "PENDING_RUNTIME_ID",
+    "courtPowerPayoff": "PENDING_RUNTIME_ID",
+    "innerTruthPayoff": "PENDING_RUNTIME_ID",
+    "adultIntimacyPayoffs": "PENDING_RUNTIME_ID"
+  },
+  "forbiddenAssumptions": [
+    "progressCardShowsNineOfTenBeforeUnlock",
+    "artistCourtInvitationUnlocksPalace",
+    "secretDebtCountsAsOrdinaryHardWork",
+    "duplicateHardWorkCountsTwice",
+    "singleRulerOwnsEntireCareer",
+    "inventedPalacePublicIds",
+    "inventedPalaceRewardsOrMeta",
+    "inventedGlobalMystery",
+    "inventedSchoolProducerFacts",
+    "inventedAdultLustThreshold"
+  ],
+  "invariants": {
+    "createsPalaceGameplayIds": false,
+    "changesPalaceUnlockRule": false,
+    "changesHardWorkMeta": false,
+    "changesRuntimeMechanics": false,
+    "changesSaveOrRng": false,
+    "changesSchoolProducerAuthority": false,
+    "changesActivityEngine": false,
+    "changesEndingEligibilityRewardOrMeta": false,
+    "changesAdultLustOrConsentMechanics": false,
+    "changesProductionLocalization": false,
+    "finalRuntimeBindingDeferred": true
+  }
+}
