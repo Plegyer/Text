@@ -1,71 +1,327 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {actionAvailable,applyEffects,dispatch,parseSave,resolveReactions} from '../src/core/engine.ts';
-import {ordinaryHardWorkCareers,type Save} from '../src/core/schema.ts';
+
+import {actionAvailable,applyEffects,dispatch,eventChance,parseSave} from '../src/core/engine.ts';
+import {ordinaryHardWorkCareers,type Catalog,type Save} from '../src/core/schema.ts';
 import {presentationIdForActionResult,presentationIdForEnding,presentationIdForEvent,presentationSlots} from '../src/core/presentation.ts';
-import {secretDebtAcceptanceDay,secretDebtIsBound} from '../src/core/secretDebt.ts';
+import {
+  SECRET_DEBT_ACTIVATION_DELAY_DAYS,
+  SECRET_DEBT_FORCED_NIGHT_ENERGY_DELTA,
+  SECRET_DEBT_HARD_WORK_SHIFTS,
+  SECRET_DEBT_LENDER_CHANCE,
+  SECRET_DEBT_OFFER_AMOUNT,
+  SECRET_DEBT_PRINCIPAL,
+  SECRET_DEBT_REQUIRED_PAID_SCHOOL_LESSONS,
+  SECRET_DEBT_SHIFT_STAT_GAINS,
+  SECRET_DEBT_TAKEOVER_GATES,
+  SECRET_DEBT_WAGE_POLICY,
+  secretDebtAcceptanceDay,
+  secretDebtBlocksSourceDomain,
+  secretDebtCurrentDebt,
+  secretDebtIsBound,
+  secretDebtPaidSchoolLessons,
+  secretDebtTakeoverNumericGatesReady,
+  secretDebtTakeoverStructuralReady,
+  secretDebtWagePolicyReady
+} from '../src/core/secretDebt.ts';
 import {catalog,started} from './helpers.ts';
 
 const secretPack=JSON.parse(readFileSync('content/packs/secret-debt.json','utf8'));
 const localization=JSON.parse(readFileSync('content/localization.json','utf8'));
+const secretCatalog={...catalog,events:catalog.events.filter(event=>event.sourceDomain==='secret-debt')} as Catalog;
 
-function authorizeOffer(input:Save){
-  return applyEffects(input,[
-    {kind:'addCareerFact',career:'secret-debt',fact:'encounter-authorized'},
-    {kind:'advanceCareer',career:'secret-debt',transition:'surface-offer'}
-  ],catalog);
-}
-function acceptWithoutEncounter(input:Save){
-  return applyEffects(authorizeOffer(input),[
-    {kind:'advanceCareer',career:'secret-debt',transition:'accept-offer'}
-  ],catalog);
-}
-function bind(input:Save){
-  return applyEffects(acceptWithoutEncounter(input),[
-    {kind:'addCareerFact',career:'secret-debt',fact:'activation-authorized'},
-    {kind:'advanceCareer',career:'secret-debt',transition:'activate-bound'}
-  ],catalog);
-}
-function addFact(input:Save,fact:string){
-  return applyEffects(input,[{kind:'addCareerFact',career:'secret-debt',fact}],catalog);
-}
-function reactToCareerFact(input:Save,fact:string){
-  return resolveReactions(input,[{kind:'careerFactAdded',career:'secret-debt',fact}],catalog).state;
+function directBound(input:Save=started()){
+  let s=applyEffects(input,[{kind:'advanceCareer',career:'secret-debt',transition:'accept-offer'}],secretCatalog);
+  s.run.progression.careers['secret-debt']!.counters.accepted_day=s.run.day;
+  s=applyEffects(s,[{kind:'advanceCareer',career:'secret-debt',transition:'activate-bound'}],secretCatalog);
+  return s;
 }
 
-test('Secret Debt stays hidden and virtual before the one-time encounter is authorized',()=>{
-  const s=started();
-  assert.equal(s.run.progression.careers['secret-debt'],undefined);
-  const shift=catalog.definitions.actions.find(action=>action.id==='secret-debt.shift')!;
-  assert.equal(actionAvailable(shift,s,catalog),false);
-  assert.equal(s.run.endings.eligible.some(id=>id.startsWith('ending.secret-debt.')),false);
-});
+function streetNight(seed:number){
+  let s=started();
+  s.run.rng=seed;
+  s=dispatch(s,{type:'endDay'},secretCatalog);
+  s=dispatch(s,{type:'chooseLodging',id:'lodging.street'},secretCatalog);
+  return s;
+}
 
-test('Secret Debt keeps every still-open Product number absent from production data',()=>{
-  const encounter=secretPack.events.find((event:any)=>event.id==='secret-debt.lender-encounter');
-  const forcedNight=secretPack.events.find((event:any)=>event.id==='secret-debt.forced-night-work');
-  const shift=catalog.definitions.actions.find(action=>action.id==='secret-debt.shift')!;
+function finishOrdinaryNight(input:Save){
+  let s=dispatch(input,{type:'endDay'},secretCatalog);
+  s=dispatch(s,{type:'chooseLodging',id:'lodging.normal'},secretCatalog);
+  assert.equal(s.run.pending,null);
+  return dispatch(s,{type:'chooseNightChoice',id:'night.sleep'},secretCatalog);
+}
 
-  assert.equal(encounter.chance,undefined,'trigger probability must stay Product-open');
-  const accept=encounter.choices.find((choice:any)=>choice.id==='accept');
-  assert.equal(accept.effects.some((effect:any)=>effect.kind==='modifyResource'&&effect.resource==='money'),false,'offer amount must stay Product-open');
-  assert.equal(accept.effects.some((effect:any)=>effect.kind==='metric'&&effect.key==='debt'),false,'generic legacy debt must not become Secret Debt principal');
+function acceptedAtDayZero(){
+  let s=streetNight(1972); // first resolver roll is < 0.20
+  assert.equal(s.run.pending?.eventId,'secret-debt.lender-encounter');
+  s=dispatch(s,{type:'choice',id:'accept'},secretCatalog);
+  return s;
+}
 
-  const forcedEffects=forcedNight.choices.flatMap((choice:any)=>choice.effects);
-  assert.equal(forcedEffects.some((effect:any)=>effect.kind==='addNextDayModifier'),false,'forced Night Energy penalty must stay Product-open');
-  assert.equal(shift.seasonal,undefined,'exact Secret Debt stat gains must stay Product-open');
-  for(const ending of catalog.definitions.endings.filter(ending=>ending.id.startsWith('ending.secret-debt.'))){
-    assert.deepEqual(ending.metaRewards,[],'Secret Debt Meta rewards must stay Product-open');
+function naturallyActivate(){
+  let s=acceptedAtDayZero();
+  s=dispatch(s,{type:'chooseNightChoice',id:'night.sleep'},secretCatalog);
+  assert.equal(s.run.day,1);
+  for(let targetDay=2;targetDay<=9;targetDay++){
+    s=finishOrdinaryNight(s);
+    assert.equal(s.run.day,targetDay);
+    assert.equal(s.run.progression.careers['secret-debt']?.stage,'accepted');
   }
+  s=finishOrdinaryNight(s);
+  assert.equal(s.run.day,10);
+  assert.equal(s.run.progression.careers['secret-debt']?.stage,'bound');
+  assert.equal(s.run.pending?.eventId,'secret-debt.activation');
+  return s;
+}
 
-  const serialized=JSON.stringify({encounter,forcedNight,shift});
-  assert.equal(serialized.includes('20000'),false);
-  assert.equal(serialized.includes('2000'),false);
-  assert.equal(/10\s*days?/i.test(serialized),false);
+test('D19 constants are locked while balance-owned numbers remain explicit seams',()=>{
+  assert.equal(SECRET_DEBT_LENDER_CHANCE,0.20);
+  assert.equal(SECRET_DEBT_OFFER_AMOUNT,2000);
+  assert.equal(SECRET_DEBT_ACTIVATION_DELAY_DAYS,10);
+  assert.equal(SECRET_DEBT_PRINCIPAL,20000);
+  assert.equal(SECRET_DEBT_FORCED_NIGHT_ENERGY_DELTA,-1);
+  assert.equal(SECRET_DEBT_HARD_WORK_SHIFTS,50);
+  assert.equal(SECRET_DEBT_REQUIRED_PAID_SCHOOL_LESSONS,10);
+
+  const encounter=secretPack.events.find((event:any)=>event.id==='secret-debt.lender-encounter');
+  assert.deepEqual(encounter.chance,{base:0.2,stat:'lust',perPoint:0,max:0.2});
+  const accept=encounter.choices.find((choice:any)=>choice.id==='accept');
+  assert.ok(accept.effects.some((effect:any)=>effect.kind==='modifyResource'&&effect.resource==='money'&&effect.delta===2000));
+
+  const forced=secretPack.events.find((event:any)=>event.id==='secret-debt.forced-night-work');
+  assert.ok(forced.choices.flatMap((choice:any)=>choice.effects).some((effect:any)=>
+    effect.kind==='addNextDayModifier'&&effect.energyDelta===-1
+  ));
+
+  const shift=catalog.definitions.actions.find(action=>action.id==='secret-debt.shift')!;
+  assert.equal(shift.wage,undefined,'exact wage coefficients remain balance-owned');
+  assert.equal(shift.seasonal,undefined,'exact shift stat gains remain balance-owned');
+  assert.deepEqual(SECRET_DEBT_SHIFT_STAT_GAINS,{strength:null,endurance:null,sexuality:null});
+  assert.deepEqual(SECRET_DEBT_WAGE_POLICY,{base:null,strengthFactor:null,enduranceFactor:null,lustFactor:null});
+  assert.deepEqual(SECRET_DEBT_TAKEOVER_GATES,{statThresholds:null,lustThreshold:null});
+  assert.equal(secretDebtWagePolicyReady(),false);
+  assert.equal(secretDebtTakeoverNumericGatesReady(),false);
+
+  for(const ending of catalog.definitions.endings.filter(ending=>ending.id.startsWith('ending.secret-debt.'))){
+    assert.deepEqual(ending.metaRewards,[],'Secret Debt ending Meta rewards remain balance-owned');
+  }
 });
 
-test('Secret Debt has stable career presentation IDs and bilingual authored surfaces',()=>{
+test('flat 20% street lender chance is RNG-stable across reload and refusal closes the life route',()=>{
+  const encounter=catalog.events.find(event=>event.id==='secret-debt.lender-encounter')!;
+  const lowLust=started();lowLust.run.character.lust=0;
+  const highLust=started();highLust.run.character.lust=100;
+  assert.equal(eventChance(encounter,lowLust),0.20);
+  assert.equal(eventChance(encounter,highLust),0.20);
+
+  let miss=streetNight(0); // first roll ~= 0.236 > 0.20
+  assert.equal(miss.run.pending,null);
+  assert.equal(miss.run.flow.night?.phase,'VoluntaryNightChoice');
+  const missRng=miss.run.rng;
+  miss=parseSave(JSON.stringify(miss),secretCatalog);
+  assert.equal(miss.run.rng,missRng);
+  assert.equal(miss.run.pending,null);
+  assert.equal(miss.run.flow.night?.phase,'VoluntaryNightChoice');
+  assert.equal(miss.run.history['secret-debt.lender-encounter'],undefined);
+
+  let refused=streetNight(1972); // first roll ~= 0.00032 < 0.20
+  assert.equal(refused.run.pending?.eventId,'secret-debt.lender-encounter');
+  const pendingRng=refused.run.rng;
+  refused=parseSave(JSON.stringify(refused),secretCatalog);
+  assert.equal(refused.run.rng,pendingRng);
+  assert.equal(refused.run.pending?.eventId,'secret-debt.lender-encounter');
+
+  refused=dispatch(refused,{type:'choice',id:'refuse'},secretCatalog);
+  assert.equal(refused.run.progression.careers['secret-debt']?.stage,'refused');
+  assert.equal(refused.run.history['secret-debt.lender-encounter']?.count,1);
+  refused=dispatch(refused,{type:'chooseNightChoice',id:'night.sleep'},secretCatalog);
+  refused.run.rng=1972;
+  refused=dispatch(refused,{type:'endDay'},secretCatalog);
+  refused=dispatch(refused,{type:'chooseLodging',id:'lodging.street'},secretCatalog);
+  assert.notEqual(refused.run.pending?.eventId,'secret-debt.lender-encounter');
+  assert.equal(refused.run.progression.careers['secret-debt']?.stage,'refused');
+});
+
+test('accept grants exactly 2000 and preserves the acceptance-day anchor without touching legacy debt',()=>{
+  const before=started().run.resources.money;
+  let s=acceptedAtDayZero();
+  assert.equal(s.run.resources.money,before+2000);
+  assert.equal(s.run.progression.careers['secret-debt']?.counters.principal_received,2000);
+  assert.equal(s.run.progression.careers['secret-debt']?.stage,'accepted');
+  assert.equal(secretDebtAcceptanceDay(s),0);
+  assert.equal(s.run.metrics.debt,0,'Secret Debt must remain separate from the legacy generic debt metric');
+  assert.equal(s.run.flow.night?.phase,'VoluntaryNightChoice');
+
+  s=parseSave(JSON.stringify(s),secretCatalog);
+  assert.equal(s.run.resources.money,before+2000);
+  assert.equal(secretDebtAcceptanceDay(s),0);
+  assert.equal(s.run.history['secret-debt.lender-encounter']?.count,1);
+});
+
+test('trap activates exactly ten days after acceptance and creates exactly 20000 debt once',()=>{
+  let s=naturallyActivate();
+  assert.equal(secretDebtAcceptanceDay(s),0);
+  assert.equal(secretDebtCurrentDebt(s),20000);
+  assert.equal(s.run.progression.careers['secret-debt']?.facts.includes('debt-active'),true);
+
+  s=parseSave(JSON.stringify(s),secretCatalog);
+  assert.equal(s.run.pending?.eventId,'secret-debt.activation');
+  assert.equal(secretDebtCurrentDebt(s),20000);
+  s=dispatch(s,{type:'choice',id:'acknowledge'},secretCatalog);
+  assert.equal(s.run.pending,null);
+  assert.equal(secretDebtCurrentDebt(s),20000);
+  assert.equal(s.run.progression.careers['secret-debt']?.facts.includes('activation-seen'),true);
+});
+
+test('bound state domain-locks all ten ordinary professions without erasing or advancing their state',()=>{
+  let s=started();
+  s=applyEffects(s,[{kind:'incrementCareerCounter',career:'lumber',counter:'completed_shifts',amount:7}],secretCatalog);
+  const before=structuredClone(s.run.progression.careers.lumber);
+  s=directBound(s);
+  assert.equal(secretDebtIsBound(s),true);
+
+  for(const career of ordinaryHardWorkCareers){
+    const action=catalog.definitions.actions.find(candidate=>candidate.id===`${career}.shift`)!;
+    assert.equal(actionAvailable(action,s,secretCatalog),false,`${career}.shift`);
+  }
+  assert.equal(secretDebtBlocksSourceDomain(s,'lumber'),true);
+  assert.equal(secretDebtBlocksSourceDomain(s,'lumber.foreman'),true);
+  assert.equal(secretDebtBlocksSourceDomain(s,'school'),false);
+
+  const blockedWrite=applyEffects(s,[
+    {kind:'incrementCareerCounter',career:'lumber',counter:'completed_shifts',amount:5},
+    {kind:'addCareerFact',career:'lumber',fact:'should-not-progress'}
+  ],secretCatalog);
+  assert.deepEqual(blockedWrite.run.progression.careers.lumber,before);
+
+  s.run.availableEndings.push('ending.lumber.hard-work');
+  assert.throws(
+    ()=>dispatch(s,{type:'commitEnding',id:'ending.lumber.hard-work'},secretCatalog),
+    /связывающ.*долг/i
+  );
+  assert.deepEqual(s.run.progression.careers.lumber,before);
+});
+
+test('School and Large Activity remain available while bound, without a repeatable 20000-money Activity reward',()=>{
+  let school=directBound(started());
+  school.run.resources.money=10000;
+  const schoolBefore=secretDebtPaidSchoolLessons(school);
+  school=dispatch(school,{type:'schoolLesson',id:'school.course.literacy_and_numbers'},secretCatalog);
+  assert.equal(secretDebtPaidSchoolLessons(school),schoolBefore+1);
+  assert.equal(school.run.progression.careers['secret-debt']?.stage,'bound');
+
+  let activity=directBound(started());
+  activity=dispatch(activity,{type:'enterActivity',id:'lumber.forest'},secretCatalog);
+  assert.equal(activity.run.flow.activity?.activityId,'lumber.forest');
+  activity=dispatch(activity,{type:'activityAction',id:'escape'},secretCatalog);
+  assert.equal(activity.run.flow.activity,null);
+  assert.equal(activity.run.progression.careers['secret-debt']?.stage,'bound');
+
+  const hugeRepeatableMoney=catalog.definitions.activities.flatMap(definition=>definition.results)
+    .flatMap(result=>result.effects)
+    .some(effect=>effect.kind==='modifyResource'&&effect.resource==='money'&&effect.delta>=20000);
+  assert.equal(hugeRepeatableMoney,false);
+});
+
+test('forced Night happens every bound night, suppresses voluntary Night, and applies next-day Energy -1 exactly once',()=>{
+  let s=naturallyActivate();
+  s=dispatch(s,{type:'choice',id:'acknowledge'},secretCatalog);
+  const lustBefore=s.run.character.lust;
+
+  for(let expectedCount=1;expectedCount<=2;expectedCount++){
+    s=dispatch(s,{type:'endDay'},secretCatalog);
+    s=dispatch(s,{type:'chooseLodging',id:'lodging.normal'},secretCatalog);
+    assert.equal(s.run.pending?.eventId,'secret-debt.forced-night-work');
+    assert.equal(s.run.flow.night?.suppressVoluntaryMenu,true);
+    assert.equal(s.run.flow.night?.consumesNight,true);
+
+    s=parseSave(JSON.stringify(s),secretCatalog);
+    assert.equal(s.run.pending?.eventId,'secret-debt.forced-night-work');
+    s=dispatch(s,{type:'choice',id:'finish'},secretCatalog);
+    assert.equal(s.run.progression.careers['secret-debt']?.counters.forced_night_work,expectedCount);
+    assert.equal(s.run.flow.night,null);
+    assert.equal(s.run.dayState.energyCurrent,2);
+    assert.equal(s.run.character.lust,lustBefore,'forced Night must not increase Lust');
+  }
+});
+
+test('repayment is one explicit all-at-once 20000 action that releases the profession lock',()=>{
+  let s=directBound(started());
+  const repay=catalog.definitions.actions.find(action=>action.id==='secret-debt.repay')!;
+  s.run.resources.money=19999;
+  assert.equal(actionAvailable(repay,s,secretCatalog),false);
+  assert.throws(()=>dispatch(s,{type:'action',id:'secret-debt.repay'},secretCatalog),/Условия действия/);
+
+  s.run.resources.money=20000;
+  assert.equal(actionAvailable(repay,s,secretCatalog),true);
+  s=dispatch(s,{type:'action',id:'secret-debt.repay'},secretCatalog);
+  assert.equal(s.run.resources.money,0);
+  assert.equal(secretDebtCurrentDebt(s),0);
+  assert.equal(s.run.progression.careers['secret-debt']?.stage,'resolved-paid');
+  assert.ok(s.run.endings.eligible.includes('ending.secret-debt.paid-freedom'));
+  assert.equal(secretDebtIsBound(s),false);
+
+  const lumber=catalog.definitions.actions.find(action=>action.id==='lumber.shift')!;
+  assert.equal(actionAvailable(lumber,s,secretCatalog),true);
+
+  s=parseSave(JSON.stringify(s),secretCatalog);
+  s=dispatch(s,{type:'commitEnding',id:'ending.secret-debt.paid-freedom'},secretCatalog);
+  s=dispatch(s,{type:'completeEnding'},secretCatalog);
+  assert.equal(s.run.endings.result?.endingId,'ending.secret-debt.paid-freedom');
+  assert.deepEqual(s.run.endings.result?.appliedMetaRewardIds,[]);
+});
+
+test('50 daytime shifts unlock Bound Life eligibility but do not release the binding lock',()=>{
+  let s=directBound(started());
+  s=applyEffects(s,[{kind:'incrementCareerCounter',career:'secret-debt',counter:'completed_shifts',amount:49}],secretCatalog);
+  s=dispatch(s,{type:'action',id:'secret-debt.shift'},secretCatalog);
+  assert.equal(s.run.progression.careers['secret-debt']?.counters.completed_shifts,50);
+  assert.ok(s.run.endings.eligible.includes('ending.secret-debt.bound-life'));
+  assert.equal(s.run.progression.careers['secret-debt']?.stage,'bound');
+  assert.equal(secretDebtIsBound(s),true);
+  assert.equal(s.run.pending?.eventId,'secret-debt.bound-life-milestone');
+
+  s=dispatch(s,{type:'choice',id:'continue'},secretCatalog);
+  assert.equal(s.run.progression.careers['secret-debt']?.stage,'bound');
+  const lumber=catalog.definitions.actions.find(action=>action.id==='lumber.shift')!;
+  assert.equal(actionAvailable(lumber,s,secretCatalog),false);
+
+  s=dispatch(s,{type:'commitEnding',id:'ending.secret-debt.bound-life'},secretCatalog);
+  s=dispatch(s,{type:'completeEnding'},secretCatalog);
+  assert.equal(s.run.endings.result?.endingId,'ending.secret-debt.bound-life');
+  assert.equal((s.meta.hardWorkProgress as string[]).includes('secret-debt'),false);
+  assert.deepEqual(s.run.endings.result?.appliedMetaRewardIds,[]);
+});
+
+test('Takeover has a separate explicit action with 50-shift, 10-paid-School, build and Lust gates',()=>{
+  let s=directBound(started());
+  s=applyEffects(s,[{kind:'incrementCareerCounter',career:'secret-debt',counter:'completed_shifts',amount:50}],secretCatalog);
+  const takeover=catalog.definitions.actions.find(action=>action.id==='secret-debt.takeover')!;
+
+  s.run.actionCounts.school=9;
+  assert.equal(secretDebtTakeoverStructuralReady(s),false);
+  assert.equal(actionAvailable(takeover,s,secretCatalog),false);
+
+  s.run.actionCounts.school=10;
+  assert.equal(secretDebtTakeoverStructuralReady(s),true);
+  assert.equal(actionAvailable(takeover,s,secretCatalog),false,'numeric build/Lust seams are still unresolved');
+
+  s=applyEffects(s,[
+    {kind:'addCareerFact',career:'secret-debt',fact:'takeover-build-authorized'},
+    {kind:'addCareerFact',career:'secret-debt',fact:'takeover-lust-authorized'}
+  ],secretCatalog);
+  assert.equal(actionAvailable(takeover,s,secretCatalog),true);
+
+  s=dispatch(s,{type:'action',id:'secret-debt.takeover'},secretCatalog);
+  assert.equal(s.run.progression.careers['secret-debt']?.stage,'resolved-takeover');
+  assert.equal(s.run.progression.careers['secret-debt']?.choices['outcome-route'],'takeover');
+  assert.ok(s.run.endings.eligible.includes('ending.secret-debt.takeover'));
+  assert.equal(secretDebtIsBound(s),false);
+});
+
+test('Secret Debt presentation IDs and RU EN surfaces remain stable',()=>{
   const shiftId=presentationIdForActionResult(catalog,'secret-debt.shift',['stage.room']);
   const encounterId=presentationIdForEvent(catalog,'secret-debt.lender-encounter','default');
   const paidEndingId=presentationIdForEnding('ending.secret-debt.paid-freedom');
@@ -77,176 +333,25 @@ test('Secret Debt has stable career presentation IDs and bilingual authored surf
   assert.equal(slots.get(shiftId)?.baseMediaIds.includes('stage.room'),true);
   assert.equal(slots.get(encounterId)?.fallbackId,shiftId);
   assert.equal(slots.get(paidEndingId)?.fallbackId,'location/town/default');
-  assert.equal(slots.has('ending/secret-debt/hard-work'),false,'Secret Debt must not expose an ordinary Hard Work presentation identity');
+  assert.equal(slots.has('ending/secret-debt/hard-work'),false);
 
   const keys=[
+    'ui.secretDebt.currentDebt',
     'ui.secretDebt.ordinaryWorkLocked',
+    'ui.secretDebt.ordinaryEndingLocked',
     'action.secret-debt.shift.label',
-    'action.secret-debt.shift.description',
+    'action.secret-debt.repay.label',
+    'action.secret-debt.takeover.label',
     'event.secret-debt.lender-encounter.title',
+    'event.secret-debt.activation.title',
     'event.secret-debt.forced-night-work.title',
-    'event.secret-debt.outcome.paid-freedom.title',
-    'event.secret-debt.outcome.bound-life.title',
-    'event.secret-debt.outcome.takeover.title',
+    'event.secret-debt.bound-life-milestone.title',
     'ending.ending.secret-debt.paid-freedom.title',
-    'ending.ending.secret-debt.paid-freedom.epilogue',
     'ending.ending.secret-debt.bound-life.title',
     'ending.ending.secret-debt.takeover.title'
   ];
   for(const key of keys){
-    assert.equal(typeof localization.strings[key]?.ru,'string',`${key} RU`);
-    assert.equal(typeof localization.strings[key]?.en,'string',`${key} EN`);
-    assert.ok(localization.strings[key].ru.length>0,`${key} RU non-empty`);
-    assert.ok(localization.strings[key].en.length>0,`${key} EN non-empty`);
-  }
-});
-
-test('street encounter is one-shot and records accept/refuse without inventing the loan amount',()=>{
-  let accepted=authorizeOffer(started());
-  accepted=dispatch(accepted,{type:'endDay'},catalog);
-  accepted=dispatch(accepted,{type:'chooseLodging',id:'lodging.street'},catalog);
-  assert.equal(accepted.run.pending?.eventId,'secret-debt.lender-encounter');
-  const moneyBefore=accepted.run.resources.money;
-  accepted=dispatch(accepted,{type:'choice',id:'accept'},catalog);
-  assert.equal(accepted.run.progression.careers['secret-debt']?.stage,'accepted');
-  assert.equal(accepted.run.progression.careers['secret-debt']?.choices['encounter-response'],'accepted');
-  assert.equal(secretDebtAcceptanceDay(accepted),0);
-  assert.equal(accepted.run.resources.money,moneyBefore);
-  assert.equal(accepted.run.history['secret-debt.lender-encounter']?.count,1);
-  assert.equal(accepted.run.flow.night?.phase,'VoluntaryNightChoice','the offer itself must not consume the Night slot');
-
-  const acceptedReload=parseSave(JSON.stringify(accepted),catalog);
-  assert.equal(acceptedReload.run.progression.careers['secret-debt']?.stage,'accepted');
-  assert.equal(secretDebtAcceptanceDay(acceptedReload),0);
-  assert.equal(acceptedReload.run.history['secret-debt.lender-encounter']?.count,1);
-  assert.equal(acceptedReload.run.flow.night?.phase,'VoluntaryNightChoice');
-
-  let refused=authorizeOffer(started());
-  refused=dispatch(refused,{type:'endDay'},catalog);
-  refused=dispatch(refused,{type:'chooseLodging',id:'lodging.street'},catalog);
-  refused=dispatch(refused,{type:'choice',id:'refuse'},catalog);
-  assert.equal(refused.run.progression.careers['secret-debt']?.stage,'refused');
-  assert.equal(refused.run.progression.careers['secret-debt']?.choices['encounter-response'],'refused');
-  assert.equal(refused.run.history['secret-debt.lender-encounter']?.count,1);
-  assert.equal(refused.run.flow.night?.phase,'VoluntaryNightChoice');
-
-  const reloaded=parseSave(JSON.stringify(refused),catalog);
-  assert.equal(reloaded.run.progression.careers['secret-debt']?.stage,'refused');
-  assert.equal(reloaded.run.history['secret-debt.lender-encounter']?.count,1);
-});
-
-test('authorized delayed-trap activation persists as a distinct bound transition scene',()=>{
-  let s=acceptWithoutEncounter(started());
-  s=applyEffects(s,[
-    {kind:'addCareerFact',career:'secret-debt',fact:'activation-authorized'},
-    {kind:'advanceCareer',career:'secret-debt',transition:'activate-bound'}
-  ],catalog);
-  s=resolveReactions(s,[{kind:'careerTransition',career:'secret-debt',from:'accepted',to:'bound'}],catalog).state;
-  assert.equal(s.run.progression.careers['secret-debt']?.stage,'bound');
-  assert.equal(s.run.pending?.eventId,'secret-debt.activation');
-
-  s=parseSave(JSON.stringify(s),catalog);
-  assert.equal(s.run.pending?.eventId,'secret-debt.activation');
-  s=dispatch(s,{type:'choice',id:'acknowledge'},catalog);
-  assert.equal(s.run.progression.careers['secret-debt']?.facts.includes('activation-seen'),true);
-  assert.equal(s.run.pending,null);
-});
-
-test('bound activation locks all ten ordinary shifts without deleting their progress',()=>{
-  let s=started();
-  s=applyEffects(s,[{kind:'incrementCareerCounter',career:'lumber',counter:'completed_shifts',amount:1}],catalog);
-  const lumberBefore=s.run.progression.careers.lumber!.counters.completed_shifts;
-  s=bind(s);
-  assert.equal(secretDebtIsBound(s),true);
-
-  for(const career of ordinaryHardWorkCareers){
-    const action=catalog.definitions.actions.find(candidate=>candidate.id===`${career}.shift`)!;
-    assert.ok(action,`${career}.shift`);
-    assert.equal(actionAvailable(action,s,catalog),false,`${career}.shift must be locked while bound`);
-  }
-  const boundShift=catalog.definitions.actions.find(action=>action.id==='secret-debt.shift')!;
-  assert.equal(actionAvailable(boundShift,s,catalog),true);
-
-  const statsBefore=structuredClone(s.run.character.stats);
-  const energyBefore=s.run.dayState.energyCurrent;
-  s=dispatch(s,{type:'action',id:'secret-debt.shift'},catalog);
-  assert.equal(s.run.progression.careers['secret-debt']?.counters.completed_shifts,1);
-  assert.equal(s.run.dayState.energyCurrent,energyBefore-1);
-  assert.deepEqual(s.run.character.stats,statsBefore,'exact stat gains remain intentionally absent');
-  assert.equal(s.run.progression.careers.lumber!.counters.completed_shifts,lumberBefore,'ordinary progress must survive the lock');
-});
-
-test('bound state forces NightFlow after lodging and reload cannot duplicate the night',()=>{
-  let s=bind(started());
-  s=dispatch(s,{type:'endDay'},catalog);
-  s=dispatch(s,{type:'chooseLodging',id:'lodging.normal'},catalog);
-  assert.equal(s.run.pending?.eventId,'secret-debt.forced-night-work');
-  assert.equal(s.run.flow.night?.phase,'NightEventResolution');
-  assert.equal(s.run.flow.night?.suppressVoluntaryMenu,true);
-  assert.equal(s.run.flow.night?.consumesNight,true);
-  assert.equal(s.run.resources.money,500);
-
-  s=parseSave(JSON.stringify(s),catalog);
-  assert.equal(s.run.pending?.eventId,'secret-debt.forced-night-work');
-  s=dispatch(s,{type:'choice',id:'finish'},catalog);
-  assert.equal(s.run.progression.careers['secret-debt']?.counters.forced_night_work,1);
-  assert.equal(s.run.flow.night,null);
-  assert.equal(s.run.day,1);
-  assert.equal(s.run.resources.money,500,'lodging payment must not repeat after reload');
-  assert.equal(s.run.dayState.energyCurrent,3,'Product-open forced-night Energy penalty is not guessed');
-
-  s=parseSave(JSON.stringify(s),catalog);
-  assert.equal(s.run.progression.careers['secret-debt']?.counters.forced_night_work,1);
-});
-
-test('Paid Freedom, Bound Life and Takeover resolve through distinct gates and common ending lifecycle',()=>{
-  const cases=[
-    {
-      eventId:'secret-debt.outcome.paid-freedom',
-      choiceId:'leave',
-      stage:'resolved-paid',
-      endingId:'ending.secret-debt.paid-freedom',
-      facts:['debt-cleared']
-    },
-    {
-      eventId:'secret-debt.outcome.bound-life',
-      choiceId:'remain',
-      stage:'resolved-bound',
-      endingId:'ending.secret-debt.bound-life',
-      facts:['bound-life-ready']
-    },
-    {
-      eventId:'secret-debt.outcome.takeover',
-      choiceId:'takeover',
-      stage:'resolved-takeover',
-      endingId:'ending.secret-debt.takeover',
-      facts:['takeover-route-ready','takeover-external-condition-met']
-    }
-  ] as const;
-
-  for(const route of cases){
-    let s=bind(started());
-    for(const fact of route.facts)s=addFact(s,fact);
-    s=reactToCareerFact(s,route.facts.at(-1)!);
-    assert.equal(s.run.pending?.eventId,route.eventId);
-
-    s=dispatch(s,{type:'choice',id:route.choiceId},catalog);
-    assert.equal(s.run.progression.careers['secret-debt']?.stage,route.stage);
-    assert.ok(s.run.endings.eligible.includes(route.endingId));
-    assert.equal(secretDebtIsBound(s),false);
-
-    const ordinary=catalog.definitions.actions.find(action=>action.id==='lumber.shift')!;
-    assert.equal(actionAvailable(ordinary,s,catalog),true,'ordinary work unlocks again once the bound state resolves');
-
-    s=parseSave(JSON.stringify(s),catalog);
-    s=dispatch(s,{type:'commitEnding',id:route.endingId},catalog);
-    assert.equal(s.run.status,'ending_committed');
-    assert.equal(s.run.endings.result,null);
-    s=parseSave(JSON.stringify(s),catalog);
-    s=dispatch(s,{type:'completeEnding'},catalog);
-    assert.equal(s.run.status,'ended');
-    assert.equal(s.run.endings.result?.endingId,route.endingId);
-    assert.deepEqual(s.run.endings.result?.appliedMetaRewardIds,[]);
-    assert.equal((s.meta.hardWorkProgress as string[]).includes('secret-debt'),false,'Secret Debt never counts toward Palace 10/10');
+    assert.ok(localization.strings[key]?.ru?.trim(),`${key} RU`);
+    assert.ok(localization.strings[key]?.en?.trim(),`${key} EN`);
   }
 });
