@@ -1,53 +1,42 @@
 # CURRENT CHAT3 TASK POINTER
 
-Status: **ACTIVE — ASSASSIN COMPLETE CAREER**
+Status: **ACTIVE — ASSASSIN / REPAIR BEFORE READY_FOR_CHAT2**
 Owner: Chat 3 / Full-Career Producer A
-Branch to use: `chat3/assassin-complete-reset-v1`
+Branch: `chat3/assassin-complete-reset-v1`
+Current observed head before this coordination change: `88918ca95fc775afca4137384c4ea24c6cf7c0ac`
+Producer PR: #252
 
 ## Assignment
 
-Build **Assassin** as one whole ordinary-career production slice from the current main that contains this pointer.
+Finish **Assassin** as one whole ordinary-career production slice under:
+- `CAREER_ASSASSIN_DRAFT_v0.md`;
+- `USER_DECISIONS_LOCKED_v1.md`;
+- current shipped main facts.
 
-Authority:
-- `mindy-successor/docs/CAREER_ASSASSIN_DRAFT_v0.md`
-- `mindy-successor/docs/USER_DECISIONS_LOCKED_v1.md`
-- current production IDs/data on main
-- current shipped cross-system facts only
+Historical Assassin prep PRs #242/#235/#236/#238 are source-only.
 
-Useful historical prep, **source-only / selective reuse after current-main revalidation**:
-- runtime prep PR #242 @ `8a5fd800c7f97613c9181e25f36bf0e344fb2691`
-- presentation prep PR #235 @ `7b44b564409db00d92f97498aead80c7c74513ee`
-- authored prep PR #236 @ `c98c090d31b711fb3fc21c1634a3fede3b45e8b8`
-- School prep PR #238 @ `fd1ce9d5f895f8e07aedb61c063f2c64298d896c`
+## CI correction
 
-Do not merge or continue those prep branches wholesale.
+Do **not** trigger more producer full-CI runs.
 
-## Required product result
+The prior process was wrong for a single runner. Runs #1097–#1102 consumed repeated full checks while the branch was still being repaired.
 
-One coherent Assassin career candidate covering:
-- current ordinary shift/unlock and career-specific progression;
-- meaningful contract/prep/method/refusal progression without turning ordinary work into combat spam;
-- career-specific events/text and RU/EN;
-- career-specific presentation/fallback identities;
-- authorized School/Night/relationship/Activity hooks using real current consumers;
-- profession-specific items/capabilities where authority exists;
-- Hard Work remains independent from elite routes and existing all-ten Meta rules remain intact;
-- natural save/reload-safe acceptance path;
-- focused regressions.
+Latest inspected full run:
+- #1102 / `37017616082`;
+- producer head `88918ca95fc775afca4137384c4ea24c6cf7c0ac`;
+- typecheck/validate/build passed;
+- tests: 968 total, 965 pass, **3 fail**.
 
-## Firewall
+Known actionable failures from that single run:
+1. `assassin-natural-acceptance.test.ts`: clean Assassin run expected contract stage `closed`, actual `intel`.
+2. `generic-display-label-consumers-production.test.ts`: Assassin profession description regression still expects the older RU/EN copy instead of the candidate copy.
+3. `hunter-presentation-v15-c2-158-166.test.ts`: old Hunter preservation assertion hard-codes only Lumber/Hunter Activity entries and now conflicts with the Assassin Activity entry.
 
-Do not invent Product-open values or systems:
-- no Morality stat;
-- no universal fallout/crime/network system;
-- no universal black-market shop;
-- no Palace unlock bypass;
-- no procedural real-world harm instructions;
-- unresolved lethal/nonlethal scope, exact contract counts/rewards and network lore remain open unless current authority resolves them.
+Fix these as one coherent repair and perform all static/focused checks available without requesting another full run.
 
-If a shared-framework change is truly required, record an exact blocker for Leader 1 instead of taking ownership.
+When you believe all known failures and the complete Assassin scope are resolved:
+- freeze one exact SHA;
+- write `READY_FOR_CHAT2` with the SHA and concise evidence;
+- stop pushing until Chat 2 takes the CI slot.
 
-## Delivery
-
-Do not open a PR merely to show work.
-When candidate-ready: one focused PR -> freeze exact head -> executable CI -> Chat 2 technical QA/integration -> Leader 1 final acceptance/merge.
+Chat 2, not Chat 3, owns the next full executable CI.

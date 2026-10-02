@@ -1,5 +1,27 @@
 # Leader 1 — Live Dashboard
 
+## SINGLE-RUNNER CI SLOT CORRECTION — 2026-10-02
+
+Fresh Actions audit found a coordination defect:
+- producer Chat 4 created repeated full runs #1090..#1096 and then #1103 while still moving its head;
+- producer Chat 3 created repeated full runs #1097..#1102 while repairing Assassin;
+- one self-hosted runner therefore became a development-loop bottleneck.
+
+Verified exceptions:
+- Chat 5 Secret Debt did not open PR or consume CI;
+- Chat 6 Palace did not open PR or consume CI.
+
+Correction:
+- producer Chats 3–6 no longer own automatic PR full CI;
+- workflow PR full-check is gated to `chat2/qa-*`, `chat2/assembly-*`, `lead/ci-*`, and `lead/integrate-*`;
+- main push and manual dispatch remain executable;
+- producers freeze `READY_FOR_CHAT2` heads;
+- Chat 2 owns one CI slot and schedules candidates serially;
+- one failed full run must be mined for all actionable failures before another full run is allowed.
+
+Assassin latest inspected run #1102 reached real tests: 965/968 pass, 3 fail. Chat 3 must repair those three without self-triggering another full run.
+Prostitute had #1096 SUCCESS on an earlier head; #1103 was already running when the correction was introduced and is allowed to finish as the final legacy producer run.
+
 ## SECRET DEBT AUTHORITY STOP — 2026-10-02
 
 Verified Git state:

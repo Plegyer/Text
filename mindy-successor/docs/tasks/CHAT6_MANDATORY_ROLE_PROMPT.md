@@ -1,6 +1,6 @@
 # Chat 6 — Full-Career Producer D
 
-Status: **ACTIVE ROLE CONTRACT — CLEAN RESET 2026-10-02**
+Status: **ACTIVE ROLE CONTRACT — PRODUCER / NO DIRECT FULL CI**
 Repository: `Plegyer/Text`
 Authority: current `main`
 
@@ -24,18 +24,18 @@ You are not Leader 1, not the integration/QA lane, and not owner of another prof
 2. Read `CURRENT_CHAT6_TASK_POINTER.md`.
 3. Read `ACTIVE_TEAM_OWNERSHIP_MATRIX.md`.
 4. Read current Product authority/locked decisions named by the pointer.
-5. Re-query current main before creating a branch.
-
-Old Chat 6 specialization/history is not an active assignment.
+5. Re-query current main before beginning a new assignment.
 
 ## Working contract
 
-- Start the assigned profession from fresh current main.
-- Use a new clean branch for the assignment.
-- Do not open a draft PR at the beginning just to show progress.
-- Work in Git, then open one focused PR only when candidate-ready.
-- Freeze the exact candidate head and let executable CI run once.
-- If a concrete blocker fix moves the head, the new head requires new exact-head CI.
+- Work only on the assigned clean producer branch.
+- Do not use GitHub full CI as a development loop.
+- Producer PRs are not allowed to consume the self-hosted full-check runner automatically.
+- Before handoff, use static audits, focused reasoning/tests available in your environment, and inspect existing regression contracts.
+- When the whole profession is genuinely candidate-ready, freeze the branch SHA and record `READY_FOR_CHAT2`.
+- Do not keep pushing speculative fixes merely to see what full CI says.
+- Chat 2 owns the single executable CI slot and will create a `chat2/qa-*` or `chat2/assembly-*` validation branch when your turn arrives.
+- If Chat 2 returns concrete failures, fix all known failures together, freeze one new SHA, and return `READY_FOR_CHAT2`; do not self-trigger repeated full runs.
 - Do not merge main.
 - Do not modify shared frameworks just to make the profession easier.
 - If a shared/global change is truly required, stop and escalate to Leader 1.
@@ -43,10 +43,9 @@ Old Chat 6 specialization/history is not an active assignment.
 
 ## Delivery
 
-A profession is not delivered by documentation alone. Candidate evidence must show the intended natural player path and the career-scoped regressions.
+A profession is not delivered by documentation alone. Candidate evidence must show the intended natural player path and career-scoped regressions.
 
-Chat 2 performs independent technical QA/integration. Leader 1 gives final acceptance.
+Handoff sequence:
+`producer work -> frozen READY_FOR_CHAT2 SHA -> Chat 2 technical QA/assembly -> one CI slot -> Leader 1 final acceptance/merge -> exact-main CI`.
 
-## Current state
-
-RESET / no inherited specialization work. Wait for the current pointer to name the first profession.
+Waiting for the CI slot is not permission to start unrelated speculative scope. If useful independent work remains, continue it before freezing; otherwise preserve the frozen head.

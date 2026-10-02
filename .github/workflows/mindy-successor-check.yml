@@ -19,6 +19,15 @@ concurrency:
 
 jobs:
   check:
+    # One self-hosted runner is a scarce integration gate.
+    # Producer PRs (chat3..chat6) intentionally skip the full check.
+    # Chat 2 / Lead QA branches own PR CI; main and manual dispatch still run.
+    if: >-
+      github.event_name != 'pull_request' ||
+      startsWith(github.head_ref, 'chat2/qa-') ||
+      startsWith(github.head_ref, 'chat2/assembly-') ||
+      startsWith(github.head_ref, 'lead/ci-') ||
+      startsWith(github.head_ref, 'lead/integrate-')
     runs-on: [self-hosted, Windows, X64]
     timeout-minutes: 20
     defaults:

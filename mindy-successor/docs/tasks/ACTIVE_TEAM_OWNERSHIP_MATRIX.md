@@ -1,6 +1,6 @@
 # Active Team Ownership Matrix
 
-Status: **ACTIVE / SUPERSEDES ALL PRIOR CHAT ROLE MATRICES**
+Status: **ACTIVE / CI-SLOT MODEL**
 Effective: 2026-10-02
 Repository: `Plegyer/Text`
 
@@ -10,47 +10,45 @@ Repository: `Plegyer/Text`
 Only project coordinator and final integration authority.
 Owns scope, worker assignment, Product decisions, final QA acceptance, merge order, main protection and durable project memory.
 
-There is **no worker Chat 1**. Historical Chat 1 material is evidence only.
+There is **no worker Chat 1**.
 
 ## Workers
 
 | Chat | Role | Active ownership |
 |---|---|---|
-| Chat 2 | Integration / Assembly + Technical QA | **WAITING** for next frozen producer candidate; Artist is shipped |
-| Chat 3 | Full-Career Producer A | **Assassin** complete ordinary career |
-| Chat 4 | Full-Career Producer B | **Voluntary Prostitute / Professional** complete ordinary career |
-| Chat 5 | Full-Career Producer C | **Secret Debt / Slave** authority-safe foundation complete; WAITING on Product authority |
-| Chat 6 | Full-Career Producer D | **Palace** authority-safe foundation complete; WAITING on explicit Product/shared dependencies |
+| Chat 2 | Integration / Assembly + Technical QA | **SOLE WORKER CI-SLOT OWNER**; waits/takes one READY_FOR_CHAT2 candidate at a time |
+| Chat 3 | Full-Career Producer A | Assassin; repair current candidate, then freeze READY_FOR_CHAT2 |
+| Chat 4 | Full-Career Producer B | Voluntary Prostitute; finish current candidate, then freeze READY_FOR_CHAT2 |
+| Chat 5 | Full-Career Producer C | Secret Debt foundation parked on Product authority |
+| Chat 6 | Full-Career Producer D | Palace foundation parked on Product/shared authority |
 
-## Whole-career producer contract
+## Single-runner rule
 
-For its assigned profession, a producer owns the career-scoped implementation as one coherent slice:
-- career-specific runtime/data and natural unlock/progression;
-- authored events, choices and bilingual text;
-- presentation/localization/media identities and safe fallbacks;
-- School/Night/relationship/Activity hooks that are specific to that profession;
-- career-specific items/capabilities when authorized;
-- focused regressions and a natural acceptance path;
-- one candidate PR with an exact frozen head.
+There is one self-hosted Windows runner.
 
-A producer does **not** own shared Save/RNG architecture, global NightFlow/School/Activity frameworks, cross-career generic mechanics, global ending/Meta framework, repository-wide migrations, Product-open lore/numbers, or another producer's profession.
+Producer Chats 3–6 must never use full CI as a development loop and do not own automatic PR full CI.
 
-When such a shared change is genuinely required, stop and escalate to Leader 1. Leader may assign the shared seam to Chat 2 or issue a narrowly documented exception.
+Producer delivery is:
+1. implement/fix the whole assigned slice;
+2. perform static/focused checks available without the shared runner;
+3. freeze one candidate SHA;
+4. mark `READY_FOR_CHAT2`;
+5. stop pushing until Chat 2 returns concrete QA/CI findings.
 
-## Candidate flow
+Chat 2:
+1. reviews frozen candidates without moving them;
+2. takes exactly one candidate when the runner slot is free;
+3. creates `chat2/qa-*` or `chat2/assembly-*`;
+4. runs one full executable QA/integration check;
+5. extracts all failures from that run before asking for another;
+6. hands a green merge-ready candidate to Leader 1.
 
-1. Producer uses the clean branch named in its current pointer.
-2. Do not open a draft PR merely to show work.
-3. When candidate-ready, open one focused PR and freeze the exact head.
-4. Required executable CI runs on that head.
-5. Chat 2 performs independent technical QA and collision/integration review.
-6. Chat 2 may prepare a fresh current-main assembly branch.
-7. Leader 1 gives final acceptance and performs/authorizes main merge.
-8. Exact-current-main CI closes the integration.
+Leader 1 merges; exact-main CI remains mandatory.
 
-## Current transition
+Automatic PR full CI is gated to Chat 2 QA/assembly and Lead validation/integration branches. Producer PR workflow jobs intentionally skip and do not consume the runner.
 
-Artist/Geisha is now shipped on main `a3afe650a05a4a27be5953b4f3965db0a420573c`; exact-main run #1089 is SUCCESS.
-Assassin and voluntary Prostitute are the two remaining ordinary-career production lanes.
-Secret Debt independent authority-safe work is complete at `8dd0b12bb2257981f4a6b72bca2017aad9d00e73` and is intentionally waiting on explicit Product blockers; do not rebase its diverged branch before a real candidate exists.
-Palace independent authority-safe work is complete at `8919a3686c1952d700c4c1377130918e0e181fa3` and is intentionally waiting on explicit Product/shared blockers plus the final natural 10/10 ordinary baseline.
+## Current queue
+
+- Chat 4 has the last pre-rule producer run #1103 already in progress; let it finish.
+- Chat 3 run #1102 produced three actionable test failures; repair them without another producer CI.
+- After the gate change, Chat 2 schedules the next full checks serially rather than Chats 3/4 competing for the runner.
