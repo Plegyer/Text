@@ -1,5 +1,20 @@
 # Leader 1 — Live Dashboard
 
+## WHOLE-CAREER WAVE STARTED — 2026-10-02
+
+User confirms all new worker chats have started.
+
+Git observation immediately after start:
+- assignment baseline/current main: `9ee5dd227db85b1987acd099e15ed274cb085110`;
+- Chat 2: Artist technical QA/integration is active;
+- Chat 3: Assassin on `chat3/assassin-complete-reset-v1`;
+- Chat 4: voluntary Prostitute/Professional on `chat4/prostitute-complete-reset-v1`;
+- Chat 5: Secret Debt/Slave hidden career on `chat5/secret-debt-complete-reset-v1`;
+- Chat 6: Palace hidden/meta career on `chat6/palace-complete-reset-v1`.
+- At this first post-start Git query, Chats 3–6 branch heads are still exactly the common assignment baseline. This is expected before their first commits and must not be interpreted as inactivity.
+- Do not wake/reassign these lanes merely because no first commit exists yet. Re-query Git before any intervention.
+- Coordination-only tracking remains outside full CI paths.
+
 ## TEAM RESET LIVE STATE — 2026-10-02
 
 - Current worker topology is now Leader 1 + Chats 2..6. Worker Chat 1 is retired.
