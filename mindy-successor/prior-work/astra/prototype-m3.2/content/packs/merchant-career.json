@@ -1,0 +1,633 @@
+{
+  "schemaVersion": 1,
+  "id": "merchant.career",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "careers": [
+        "merchant"
+      ]
+    },
+    "writes": {
+      "careers": [
+        "merchant"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "merchant.career.first-shift",
+      "title": "The first completed Merchant shift opens independent trading",
+      "sourceDomain": "merchant",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerCounterChanged",
+          "career": "merchant",
+          "counter": "completed_shifts"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 88,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "merchant",
+          "stage": "stall-hand"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "merchant",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 1
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The first completed Merchant shift opens independent trading. Merchant progression remains separate from ending commitment.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Take independent responsibility",
+          "text": "Move beyond stall-hand work while preserving the ordinary shift contract.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "advanceCareer",
+              "career": "merchant",
+              "transition": "first-shift"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "merchant.career.networked",
+      "title": "Repeated ordinary work supports a networked Merchant role",
+      "sourceDomain": "merchant",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerCounterChanged",
+          "career": "merchant",
+          "counter": "completed_shifts"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 86,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "merchant",
+          "stage": "independent-trader"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "merchant",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 8
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Repeated ordinary work supports a networked Merchant role. Merchant progression remains separate from ending commitment.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Maintain several working contacts",
+          "text": "Enter the networked stage without forcing an advanced route.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "advanceCareer",
+              "career": "merchant",
+              "transition": "networked-merchant"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "merchant.career.seasonal-breadth",
+      "title": "A full seasonal trade cycle is recorded",
+      "sourceDomain": "merchant",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerCounterChanged",
+          "career": "merchant",
+          "counter": "spring_trades"
+        },
+        {
+          "kind": "careerCounterChanged",
+          "career": "merchant",
+          "counter": "summer_trades"
+        },
+        {
+          "kind": "careerCounterChanged",
+          "career": "merchant",
+          "counter": "autumn_trades"
+        },
+        {
+          "kind": "careerCounterChanged",
+          "career": "merchant",
+          "counter": "winter_trades"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 80,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "not",
+          "condition": {
+            "kind": "careerStage",
+            "career": "merchant",
+            "stage": "stall-hand"
+          }
+        },
+        {
+          "kind": "careerCounter",
+          "career": "merchant",
+          "counter": "spring_trades",
+          "op": "gte",
+          "value": 1
+        },
+        {
+          "kind": "careerCounter",
+          "career": "merchant",
+          "counter": "summer_trades",
+          "op": "gte",
+          "value": 1
+        },
+        {
+          "kind": "careerCounter",
+          "career": "merchant",
+          "counter": "autumn_trades",
+          "op": "gte",
+          "value": 1
+        },
+        {
+          "kind": "careerCounter",
+          "career": "merchant",
+          "counter": "winter_trades",
+          "op": "gte",
+          "value": 1
+        },
+        {
+          "kind": "careerFact",
+          "career": "merchant",
+          "fact": "seasonal-breadth-ready",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "A full seasonal trade cycle is recorded. Merchant progression remains separate from ending commitment.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record seasonal breadth",
+          "text": "Keep one Merchant-local fact that all four shipped seasons have been worked.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "merchant",
+              "fact": "seasonal-breadth-ready"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "merchant.career.veteran-ready",
+      "title": "Veteran Merchant readiness is available",
+      "sourceDomain": "merchant",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerCounterChanged",
+          "career": "merchant",
+          "counter": "completed_shifts"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "merchant",
+          "fact": "seasonal-breadth-ready"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 82,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "merchant",
+          "stage": "networked-merchant"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "merchant",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 20
+        },
+        {
+          "kind": "careerFact",
+          "career": "merchant",
+          "fact": "seasonal-breadth-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "merchant",
+          "fact": "veteran-ready",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Veteran Merchant readiness is available. Merchant progression remains separate from ending commitment.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record Veteran readiness",
+          "text": "Keep ordinary-career veteran readiness alongside advanced Merchant routes.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "merchant",
+              "fact": "veteran-ready"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "merchant.career.choose-route",
+      "title": "Several Merchant career routes can remain ready together",
+      "sourceDomain": "merchant",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "merchant",
+          "fact": "veteran-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "merchant",
+          "fact": "merchant-house-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "merchant",
+          "fact": "speculator-route-ready"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "merchant.shift"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 78,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "merchant",
+          "stage": "networked-merchant"
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "merchant",
+              "fact": "veteran-ready",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "merchant",
+              "fact": "merchant-house-ready",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "merchant",
+              "fact": "speculator-route-ready",
+              "present": true
+            }
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Several Merchant career routes can remain ready together. Merchant progression remains separate from ending commitment.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "veteran",
+          "label": "Take Veteran",
+          "text": "Choose seasoned ordinary trade.",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "merchant",
+              "fact": "veteran-ready",
+              "present": true
+            }
+          ],
+          "effects": [
+            {
+              "kind": "advanceCareer",
+              "career": "merchant",
+              "transition": "branch-veteran"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "merchant",
+              "fact": "outcome-ready"
+            }
+          ]
+        },
+        {
+          "id": "merchant-house",
+          "label": "Take Merchant House",
+          "text": "Choose the records, supplier, and logistics route.",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "merchant",
+              "fact": "merchant-house-ready",
+              "present": true
+            }
+          ],
+          "effects": [
+            {
+              "kind": "advanceCareer",
+              "career": "merchant",
+              "transition": "branch-merchant-house"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "merchant",
+              "fact": "outcome-ready"
+            }
+          ]
+        },
+        {
+          "id": "speculator-smuggler",
+          "label": "Take Speculator / Smuggler",
+          "text": "Choose typed high-risk trade readiness without a morality score or generic law system.",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "merchant",
+              "fact": "speculator-route-ready",
+              "present": true
+            }
+          ],
+          "effects": [
+            {
+              "kind": "advanceCareer",
+              "career": "merchant",
+              "transition": "branch-speculator-smuggler"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "merchant",
+              "fact": "outcome-ready"
+            }
+          ]
+        },
+        {
+          "id": "defer",
+          "label": "Keep routes open",
+          "text": "Leave all ready Merchant routes uncommitted.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "merchant.career.choose-patron",
+      "title": "Patron of Routes readiness remains a separate multi-system route",
+      "sourceDomain": "merchant",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "merchant",
+          "fact": "patron-route-ready"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "merchant.shift"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 79,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "merchant",
+          "stage": "networked-merchant"
+        },
+        {
+          "kind": "careerFact",
+          "career": "merchant",
+          "fact": "patron-route-ready",
+          "present": true
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Patron of Routes readiness remains a separate multi-system route. Merchant progression remains separate from ending commitment.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "patron",
+          "label": "Take Patron of Routes",
+          "text": "Choose the multi-system supply-network route.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "advanceCareer",
+              "career": "merchant",
+              "transition": "branch-patron-of-routes"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "merchant",
+              "fact": "outcome-ready"
+            }
+          ]
+        },
+        {
+          "id": "defer",
+          "label": "Keep Patron route open",
+          "text": "Keep readiness without choosing it.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "merchant.career.outcome-ready",
+      "title": "The chosen Merchant career route is outcome-ready",
+      "sourceDomain": "merchant",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerTransition",
+          "career": "merchant"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "merchant",
+          "fact": "outcome-ready"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 76,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "merchant",
+              "stage": "veteran"
+            },
+            {
+              "kind": "careerStage",
+              "career": "merchant",
+              "stage": "merchant-house"
+            },
+            {
+              "kind": "careerStage",
+              "career": "merchant",
+              "stage": "speculator-smuggler"
+            },
+            {
+              "kind": "careerStage",
+              "career": "merchant",
+              "stage": "patron-of-routes"
+            }
+          ]
+        },
+        {
+          "kind": "careerFact",
+          "career": "merchant",
+          "fact": "outcome-ready",
+          "present": true
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The chosen Merchant career route is outcome-ready. Merchant progression remains separate from ending commitment.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Keep living",
+          "text": "Move to outcome-ready without auto-committing an ending.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "advanceCareer",
+              "career": "merchant",
+              "transition": "outcome-ready"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
