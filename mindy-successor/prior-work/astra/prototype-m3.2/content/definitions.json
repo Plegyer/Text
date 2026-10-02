@@ -3447,6 +3447,12 @@
             "kind": "modifyStat",
             "stat": "charm",
             "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "merchant",
+            "counter": "spring_trades",
+            "amount": 1
           }
         ],
         "summer": [
@@ -3459,6 +3465,12 @@
             "kind": "modifyStat",
             "stat": "manners",
             "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "merchant",
+            "counter": "summer_trades",
+            "amount": 1
           }
         ],
         "autumn": [
@@ -3471,6 +3483,12 @@
             "kind": "modifyStat",
             "stat": "reason",
             "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "merchant",
+            "counter": "autumn_trades",
+            "amount": 1
           }
         ],
         "winter": [
@@ -3483,6 +3501,12 @@
             "kind": "modifyStat",
             "stat": "wits",
             "delta": 1
+          },
+          {
+            "kind": "incrementCareerCounter",
+            "career": "merchant",
+            "counter": "winter_trades",
+            "amount": 1
           }
         ]
       }
@@ -5822,9 +5846,164 @@
       "label": "Merchant",
       "initialStage": "stall-hand",
       "stages": [
-        "stall-hand"
+        "stall-hand",
+        "independent-trader",
+        "networked-merchant",
+        "veteran",
+        "merchant-house",
+        "speculator-smuggler",
+        "patron-of-routes",
+        "outcome-ready"
       ],
-      "transitions": []
+      "transitions": [
+        {
+          "id": "first-shift",
+          "from": [
+            "stall-hand"
+          ],
+          "to": "independent-trader",
+          "conditions": [
+            {
+              "kind": "careerCounter",
+              "career": "merchant",
+              "counter": "completed_shifts",
+              "op": "gte",
+              "value": 1
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "merchant",
+              "fact": "first-shift-complete"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "merchant",
+              "fact": "independent-ready"
+            }
+          ]
+        },
+        {
+          "id": "networked-merchant",
+          "from": [
+            "independent-trader"
+          ],
+          "to": "networked-merchant",
+          "conditions": [
+            {
+              "kind": "careerCounter",
+              "career": "merchant",
+              "counter": "completed_shifts",
+              "op": "gte",
+              "value": 8
+            },
+            {
+              "kind": "careerFact",
+              "career": "merchant",
+              "fact": "independent-ready",
+              "present": true
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "merchant",
+              "fact": "networked-ready"
+            }
+          ]
+        },
+        {
+          "id": "branch-veteran",
+          "from": [
+            "networked-merchant"
+          ],
+          "to": "veteran",
+          "conditions": [
+            {
+              "kind": "careerCounter",
+              "career": "merchant",
+              "counter": "completed_shifts",
+              "op": "gte",
+              "value": 20
+            },
+            {
+              "kind": "careerFact",
+              "career": "merchant",
+              "fact": "veteran-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "branch-merchant-house",
+          "from": [
+            "networked-merchant"
+          ],
+          "to": "merchant-house",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "merchant",
+              "fact": "merchant-house-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "branch-speculator-smuggler",
+          "from": [
+            "networked-merchant"
+          ],
+          "to": "speculator-smuggler",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "merchant",
+              "fact": "speculator-route-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "branch-patron-of-routes",
+          "from": [
+            "networked-merchant"
+          ],
+          "to": "patron-of-routes",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "merchant",
+              "fact": "patron-route-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "outcome-ready",
+          "from": [
+            "veteran",
+            "merchant-house",
+            "speculator-smuggler",
+            "patron-of-routes"
+          ],
+          "to": "outcome-ready",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "merchant",
+              "fact": "outcome-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        }
+      ]
     },
     {
       "id": "artist-geisha",
@@ -6495,6 +6674,157 @@
               "kind": "relationshipFact",
               "relationship": "guard.partner",
               "fact": "case-support-ready",
+              "present": true
+            }
+          ],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "merchant.supplier",
+      "label": "Merchant Supplier",
+      "initialStage": "introduced",
+      "stages": [
+        "introduced",
+        "professional-trust",
+        "conflict-open",
+        "utility-ready",
+        "route-resolved"
+      ],
+      "transitions": [
+        {
+          "id": "build-trust",
+          "from": [
+            "introduced"
+          ],
+          "to": "professional-trust",
+          "conditions": [
+            {
+              "kind": "relationshipFact",
+              "relationship": "merchant.supplier",
+              "fact": "introduced-at-work",
+              "present": true
+            },
+            {
+              "kind": "relationshipCounter",
+              "relationship": "merchant.supplier",
+              "counter": "work-meetings",
+              "op": "gte",
+              "value": 2
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "merchant.supplier",
+              "fact": "professional-trust-earned"
+            }
+          ]
+        },
+        {
+          "id": "open-conflict",
+          "from": [
+            "professional-trust"
+          ],
+          "to": "conflict-open",
+          "conditions": [
+            {
+              "kind": "relationshipFact",
+              "relationship": "merchant.supplier",
+              "fact": "conflict-opened",
+              "present": true
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "cooperate",
+          "from": [
+            "conflict-open"
+          ],
+          "to": "utility-ready",
+          "conditions": [
+            {
+              "kind": "relationshipChoice",
+              "relationship": "merchant.supplier",
+              "choice": "conflict-response",
+              "value": "cooperate"
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "merchant.supplier",
+              "fact": "conflict-resolved"
+            },
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "merchant.supplier",
+              "fact": "utility-ready"
+            }
+          ]
+        },
+        {
+          "id": "rivalry",
+          "from": [
+            "conflict-open"
+          ],
+          "to": "route-resolved",
+          "conditions": [
+            {
+              "kind": "relationshipChoice",
+              "relationship": "merchant.supplier",
+              "choice": "conflict-response",
+              "value": "rivalry"
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "merchant.supplier",
+              "fact": "conflict-resolved"
+            }
+          ]
+        },
+        {
+          "id": "refusal",
+          "from": [
+            "conflict-open"
+          ],
+          "to": "route-resolved",
+          "conditions": [
+            {
+              "kind": "relationshipChoice",
+              "relationship": "merchant.supplier",
+              "choice": "conflict-response",
+              "value": "declined"
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "merchant.supplier",
+              "fact": "conflict-resolved"
+            },
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "merchant.supplier",
+              "fact": "refusal-respected"
+            }
+          ]
+        },
+        {
+          "id": "finish-utility",
+          "from": [
+            "utility-ready"
+          ],
+          "to": "route-resolved",
+          "conditions": [
+            {
+              "kind": "relationshipFact",
+              "relationship": "merchant.supplier",
+              "fact": "utility-response-resolved",
               "present": true
             }
           ],
@@ -8407,6 +8737,27 @@
       "label": "Sealed Guard Pass",
       "capabilities": [
         "guard_sealed_pass"
+      ]
+    },
+    {
+      "id": "merchant_appraisal_scales",
+      "label": "Merchant Appraisal Scales",
+      "capabilities": [
+        "merchant_appraise_goods"
+      ]
+    },
+    {
+      "id": "merchant_manifest_case",
+      "label": "Merchant Manifest Case",
+      "capabilities": [
+        "merchant_verify_manifest"
+      ]
+    },
+    {
+      "id": "merchant_sample_kit",
+      "label": "Merchant Sample Kit",
+      "capabilities": [
+        "merchant_handle_samples"
       ]
     }
   ]

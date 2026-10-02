@@ -1,0 +1,355 @@
+{
+  "schemaVersion": 1,
+  "id": "merchant.routes",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "careers": [
+        "merchant"
+      ],
+      "itemCapabilities": [
+        "merchant_verify_manifest"
+      ]
+    },
+    "writes": {
+      "careers": [
+        "merchant"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "merchant.routes.house-ready",
+      "title": "Merchant House preparation is ready",
+      "sourceDomain": "merchant",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "merchant",
+          "fact": "supplier-trust-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "merchant",
+          "fact": "manifest-verified"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "merchant",
+          "fact": "manifest-case-issued"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "merchant",
+          "fact": "school-literacy-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "merchant",
+          "fact": "crisis-resolved"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "merchant.shift"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 87,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "merchant",
+          "stage": "networked-merchant"
+        },
+        {
+          "kind": "careerFact",
+          "career": "merchant",
+          "fact": "supplier-trust-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "merchant",
+          "fact": "manifest-verified",
+          "present": true
+        },
+        {
+          "kind": "itemCapability",
+          "capability": "merchant_verify_manifest",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "merchant",
+          "fact": "school-literacy-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "merchant",
+          "fact": "crisis-resolved",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "merchant",
+          "fact": "merchant-house-ready",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Merchant House preparation is ready. This records readiness only; it does not choose a branch or commit an ending.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record route readiness",
+          "text": "Keep this readiness alongside other Merchant routes.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "merchant",
+              "fact": "merchant-house-ready"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "merchant.routes.speculator-ready",
+      "title": "Speculator / Smuggler risk readiness is available",
+      "sourceDomain": "merchant",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "merchant",
+          "fact": "shortage-handled"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "merchant",
+          "fact": "risk-accepted"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "merchant",
+          "fact": "crisis-resolved"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "merchant.shift"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 88,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "merchant",
+          "stage": "networked-merchant"
+        },
+        {
+          "kind": "careerFact",
+          "career": "merchant",
+          "fact": "shortage-handled",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "merchant",
+          "fact": "risk-accepted",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "merchant",
+          "fact": "appraisal-recorded",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "merchant",
+          "fact": "crisis-resolved",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "merchant",
+          "fact": "speculator-route-ready",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Speculator / Smuggler risk readiness is available. This records readiness only; it does not choose a branch or commit an ending.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record route readiness",
+          "text": "Keep this readiness alongside other Merchant routes.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "merchant",
+              "fact": "speculator-route-ready"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "merchant.routes.patron-ready",
+      "title": "Patron of Routes multi-system readiness is available",
+      "sourceDomain": "merchant",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerCounterChanged",
+          "career": "merchant",
+          "counter": "route_inputs"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "merchant",
+          "fact": "lumber-input-known"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "merchant",
+          "fact": "farm-input-known"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "merchant",
+          "fact": "hunter-input-known"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "merchant",
+          "fact": "tavern-input-known"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "merchant",
+          "fact": "guard-input-known"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "merchant.shift"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 89,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "merchant",
+          "stage": "networked-merchant"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "merchant",
+          "counter": "route_inputs",
+          "op": "gte",
+          "value": 5
+        },
+        {
+          "kind": "careerFact",
+          "career": "merchant",
+          "fact": "lumber-input-known",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "merchant",
+          "fact": "farm-input-known",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "merchant",
+          "fact": "hunter-input-known",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "merchant",
+          "fact": "tavern-input-known",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "merchant",
+          "fact": "guard-input-known",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "merchant",
+          "fact": "patron-route-ready",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Patron of Routes multi-system readiness is available. This records readiness only; it does not choose a branch or commit an ending.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record route readiness",
+          "text": "Keep this readiness alongside other Merchant routes.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "merchant",
+              "fact": "patron-route-ready"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
