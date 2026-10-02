@@ -1,26 +1,30 @@
 # CURRENT CHAT5 TASK POINTER
 
-Status: **ACTIVE — SECRET DEBT BALANCE PROPOSAL WHILE ORIGINAL IS RESEARCHED**
+Status: **ACTIVE — SECRET DEBT CURRENT-MAIN INTEGRATION MANIFEST / COLLISION QA**
 Owner: Chat 5
-Branch: `chat5/secret-debt-complete-reset-v1`
-Current observed head: `25cba43b35200a71a700a70d4631a1785f9775ea`
 
-The D19 mechanics already implemented on this branch remain frozen semantically.
+Preserve current Secret Debt production candidate head:
+`9dd6c010d45bffe1fdca365f1c3d7033684ec5cf`
 
-## Do not wait idle for SWF research
+The balance proposal is useful but remains proposal-only while Leader continues original-game research.
 
-Prepare a narrow balance proposal grounded in the **current shipped ordinary careers**, not guesses from the original:
+## Assignment now — no balance-number waiting
 
-1. propose seasonal/per-shift Strength, Endurance, Sexuality gains for hidden daytime work;
-2. propose wage base + Strength / Endurance / Lust factors by comparing actual ordinary-career wage ranges and the intended 20000-debt difficulty;
-3. propose exact owner-kill build thresholds + high-Lust threshold consistent with 50 shifts + 10 paid School lessons;
-4. propose three Secret Debt ending Meta rewards, clearly marked PROPOSAL;
-5. calculate rough days/shifts needed to repay 20000 under low/mid/high relevant stats and explain whether the route remains intentionally harsh with next-day Energy -1.
+Create a fresh docs/QA branch from current main:
+`chat5/secret-debt-integration-manifest-v1`
 
-Do **not** wire proposal numbers into production yet.
-Do not alter already-locked D19 behavior.
-No PR / no full CI.
+Treat `9dd6c010...` as immutable candidate evidence and produce an integration-ready manifest:
 
-Freeze the proposal SHA and report `READY_FOR_LEADER_BALANCE_DECISION`.
+1. exact file-by-file delta from candidate vs its assigned foundation/current main;
+2. classify every changed file as Secret-Debt-local vs shared collision;
+3. for shared files (`engine.ts`, definitions/localization/UI/presentation etc.), enumerate exact semantic inserts/edits by IDs/functions;
+4. identify collisions with shipped Artist/Prostitute, pending Assassin, pending School D20, Hard Work/New Start work and Palace safe prep;
+5. produce selective-assembly instructions for Chat 2 — never "merge whole branch";
+6. verify locked D19 invariants still hold at candidate head with focused/static tests only;
+7. list exactly which lines/constants remain balance-open so Chat 2 cannot accidentally promote proposals;
+8. include migration/save/reload and ordinary-career-lock release acceptance checklist.
 
-Leader is separately extracting original-game mechanics; if trustworthy original values are found later, they will be compared against this proposal rather than blocking it.
+Do not change the candidate runtime while doing this manifest.
+Do not wire balance proposal values.
+No PR/full CI unless Leader later requests.
+Freeze manifest SHA and report READY_FOR_CHAT2_INTEGRATION_PLAN.

@@ -1,38 +1,40 @@
 # CURRENT CHAT4 TASK POINTER
 
-Status: **ACTIVE — HARD WORK / NEW START+ GENERIC INFRA PREP**
+Status: **ACTIVE — HARD WORK PRODUCTION PACKAGE CATALOG + NEW START+ PRESENTATION PREP**
 Owner: Chat 4
 
-Packet v2 is frozen at:
-`b5764e2edb531e62d063e1a18c2febd6da8d0899`
+Completed infra prep:
+`chat4/hard-work-meta-infra-prep-v1@50ede59ad96bd8059fcc15dca1ffdffc910563ab`
 
-Create a fresh implementation-prep branch from current main:
-`chat4/hard-work-meta-infra-prep-v1`
+## Assignment
 
-## Locked facts
+Create fresh branch:
+`chat4/hard-work-package-catalog-v1`
+from current main `426ec9146716e1246d6b7bfdd4a570ef2fcb0a54`.
 
-- first 5 ordinary careers: one +5 progression-stat bonus package effect;
-- later 5: up to two +5 progression-stat effects;
-- any earned package subset may be active on New Start+, including none/all;
-- any Lust Hard Work bonus is **at least +3 Lust** in magnitude;
-- earned Hard Work permanently grants early access to that profession;
-- old automatic +3/+3 and Merchant +600 model is superseded;
-- Palace gate consumes permanent 10/10 + current-run active 10/10;
-- Palace True reward is cap-only 100 -> 200, never value multiplication.
+Promote the previously prepared concrete mapping into a production **catalog/fixture + focused tests**, but do not integrate shared engine/schema yet:
 
-## Work now without waiting for final profession->stat mapping
+- Lumber: Strength +5
+- Satyr Maid: Grooming +5
+- Undead Farm: Magic +5
+- Tavern: Sociability +5
+- Hunter: Dexterity +5
+- Guard: Endurance +5, Manners +5
+- Merchant: Wits +5, Reason +5
+- Artist/Geisha: Creativity +5, Grooming +5
+- Assassin: Dexterity +5, Wits +5
+- Prostitute/Professional: Sexuality +5, Charm +5, plus separate Lust +3
 
-Prepare the generic, collision-minimized infrastructure as isolated code/tests where possible:
-- typed/data-driven Hard Work package definition shape and validator;
-- arbitrary subset selection representation for New Start+;
-- exactly-once package application contract at creation completion;
-- D21 inherited early-career access helper with Secret Debt domain-lock precedence;
-- migration/test plan for retiring old automatic rewards;
-- tests using synthetic/package fixtures rather than guessing final production mapping;
-- explicit integration seam for Palace to read all-ten-active;
-- no Palace authored content and no Secret Debt implementation changes.
+Rules:
+- first five exactly one +5 progression-stat effect;
+- later five exactly two +5 progression-stat effects in this catalog;
+- Lust is separate and +3 satisfies the locked minimum magnitude;
+- no old automatic +3/+3 or Merchant +600 behavior in the catalog;
+- package activation remains arbitrary subset none/some/all;
+- package selection is whole-package, not individual effects.
 
-Avoid broad engine/schema rewrites if they cannot be isolated safely; in that case produce compile-ready helper modules + tests and a minimal integration patch plan.
+Also prepare RU/EN New Start+ package titles/descriptions and accessible selected/unselected copy as an unbound fixture/presentation source.
 
+Use the isolated `hardWorkMeta.ts` validator/tests where possible; do not wire shared engine/schema/UI yet.
 No full CI.
-Freeze exact SHA and report `READY_FOR_CHAT2_OR_LEADER`.
+Freeze exact SHA and report READY_FOR_CHAT2_OR_LEADER.

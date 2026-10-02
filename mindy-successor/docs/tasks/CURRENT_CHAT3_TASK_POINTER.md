@@ -1,39 +1,46 @@
 # CURRENT CHAT3 TASK POINTER
 
-Status: **ACTIVE — ORDINARY WORK NEGATIVE-STAT TRADEOFF PACKET**
+Status: **ACTIVE — ASSASSIN AUTHOR REPAIR #2, THEN ORDINARY-WORK TRADEOFF IMPLEMENTATION**
 Owner: Chat 3
 
-## Completed first
+## Task A — Assassin author repair #2
 
-Assassin author repair is frozen at:
+Current producer PR #252
+Current repaired producer head:
 `e81053b203655486896b7926f4aeb07d1871a49d`
 
-Do not move that branch unless Chat 2 returns a new concrete defect.
+Chat 2 CI #1111 proved:
+- 982 total / 981 pass / 1 fail;
+- the previous contract-close repair works;
+- remaining failure: natural 50-shift path lacks Assassin-local `refusal-chain-evidence`.
 
-Preserve School candidate PR #254 at:
-`877927cf747ba9f69a53ddccf4373b795561f3a0`
+Exact routing cause:
+- contract already has method=refusal and resolution=redirect;
+- at trusted-blade, `turncoat-ready` priority 73 and `refusal-evidence` priority 71 can collide;
+- turncoat-ready wins the one blocking slot;
+- choose-practice then advances out of trusted-blade;
+- refusal-evidence required exact trusted-blade and permanently loses its actionCompleted opportunity.
 
-## Assignment now
+Repair only the Assassin-owned reachability/order so already-authorized refusal evidence can still be recorded naturally before/through that transition.
+Do not invent arbitrary shift thresholds.
+Preserve Hard Work=50 and all other boundaries.
 
-Create `chat3/work-seasonal-negative-tradeoffs-v1` from fresh current main.
+Focused/static checks only, no producer full CI.
+Freeze new exact Assassin SHA, update PR #252, report READY_FOR_CHAT2.
 
-Current production audit:
-- Lumber already has negative seasonal stat effects;
-- the other 9 ordinary professions currently have only positive stat changes.
+## Task B — immediately after freezing Assassin
 
-Locked Product direction:
-- work must not cause giant pure stat growth;
-- roughly **2 seasons out of 4 per profession** should carry a negative stat tradeoff;
-- not every season needs a negative;
-- Lust remains separate and is not an ordinary work negative unless separately authorized.
+The proposal packet at
+`chat3/work-seasonal-negative-tradeoffs-v1@8f115f922d9a0ca05fe4b0ed96755b0ee45e1f7c`
+is **Leader-approved for implementation** under the user's locked 2-of-4 seasonal-tradeoff direction.
 
-Deliver:
-- exact proposed negative stat for two seasons per profession;
-- rationale tied to profession identity;
-- audit that no negative destroys the same stat needed to unlock/operate the profession too aggressively;
-- focused regression test plan;
-- preserve wages, counters, Hard Work=50, career events and unlock gates.
+Create a fresh implementation branch from then-current main and apply exactly the packet mapping:
+- exactly 2 negative seasons per ordinary profession;
+- each negative is one -1 progression-stat effect;
+- no Lust negative;
+- preserve all positive effects, wages, unlocks, counters/items, events and Hard Work=50;
+- normalize Lumber to only Spring Grooming -1 and Winter Sociability -1;
+- add the focused regression described in the packet.
 
-Packet first; do not change production seasonal numbers until Leader accepts the exact mapping.
 No full CI.
-Freeze SHA and report `READY_FOR_LEADER_DECISION`.
+Freeze SHA and report READY_FOR_CHAT2.

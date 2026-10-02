@@ -1,42 +1,34 @@
 # CURRENT CHAT6 TASK POINTER
 
-Status: **ACTIVE — PALACE SAFE CONTENT / LOCAL INFRA PREP**
+Status: **ACTIVE — PALACE AUTHORED SAFE CONTENT v5**
 Owner: Chat 6
 
-Packet v3 frozen at:
-`b419bdc21f039f9598d802bfd9e8dc19ba8dbfba`
-Preserve Palace foundation:
-`chat6/palace-complete-reset-v1` @ `8919a3686c1952d700c4c1377130918e0e181fa3`
+Completed safe local prep:
+`chat6/palace-safe-prep-v4@302c5cd636b2389edd05de2b4e50d5df8f88133d`
 
-Create a fresh prep branch from current main:
-`chat6/palace-safe-prep-v4`
+Create fresh branch:
+`chat6/palace-authored-safe-v5`
+from current main `426ec9146716e1246d6b7bfdd4a570ef2fcb0a54`.
 
-## Locked Product facts
+## Assignment
 
-- Palace requires permanent 10/10 ordinary Hard Work plus all 10 packages active in this New Start+;
-- when satisfied, deterministic Palace invitation arrives on **Day 1**;
-- invitation is the authored reveal/entry and opens Palace access;
-- no random/stat/item substitute entry gate;
-- D18 True Ending stat threshold remains each of 12 progression stats >=91;
-- Lust excluded from D18;
-- True reward raises only the 12-stat cap from 100 to 200;
-- no values/start bonuses are multiplied;
-- generic role-based relationships, optional romance, optional legacy-item branches and voluntary Palace Night are authorized;
-- non-True Palace outcomes may remain completion-only; no Palace Hard Work meta entry.
+Expand only Palace-local authored content that does not depend on unresolved Prince mechanics or 3-vs-6 progression topology:
 
-## Work now without waiting for shared Meta integration
+- full RU/EN Day-1 invitation scene and acceptance/reveal flow;
+- Palace entry / first-day orientation copy;
+- professional patron relationship intro + trust/conflict/refusal-safe scenes;
+- rival relationship intro + cooperation/conflict scenes;
+- servant/official contact intro + practical-help/refusal-safe scenes;
+- optional romance invitation/decline-safe scenes, never required;
+- voluntary Palace Night work/social choice copy with no forced-night ownership;
+- optional reactions to already-shipped legacy item capabilities, never entry gates;
+- True Ending readiness copy using fixed all-12 >=91 semantics;
+- cap-200 reward explanation explicitly saying "maximum becomes 200", never "stats double".
 
-Prepare Palace-owned pieces that are safe and local:
-- deterministic Day-1 invitation authored event/copy contract, latched/reload-safe;
-- Palace-local access state contract after invitation resolution;
-- RU/EN presentation/fallbacks for invitation and entry;
-- generic role relationship state machines/content skeletons;
-- voluntary Palace Night content skeleton;
-- True Ending fixed >=91 acceptance tests as Palace-owned tests/fixtures;
-- optional legacy-item branch contract without making items entry gates.
-
-Do not modify shared New Start+/Meta/cap infrastructure owned by Chat 4/integration.
-Do not choose final Prince multi-stage mechanics or final 3-vs-6 Palace progression topology yet; isolate safe content from those decisions.
-
+Keep everything Palace-local and SAFE_PREP_UNBOUND until shared D23 seam exists.
+No final Prince victory mechanics.
+No final 3-vs-6 stage topology.
+No shared Meta/Save/cap/New Start code.
+Add focused localization/identity/boundary tests only.
 No full CI.
-Freeze exact SHA and report `READY_FOR_CHAT2_OR_LEADER`.
+Freeze SHA and report READY_FOR_CHAT2_OR_LEADER.
