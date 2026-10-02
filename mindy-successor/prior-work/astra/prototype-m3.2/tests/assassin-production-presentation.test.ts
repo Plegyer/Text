@@ -26,17 +26,17 @@ test('every Assassin event surface has RU and EN production localization',()=>{
 
 test('Assassin action, event, Activity, and ending have stable semantic presentation fallbacks',()=>{
  const action=catalog.definitions.actions.find(a=>a.id==='assassin.shift'); assert.ok(action);
- for(const scene of action.scenes){
-  const id=presentationIdForActionResult(catalog,'assassin.shift',scene.media);
+ for(const scene of action.scenes??[]){
+  const id=presentationIdForActionResult(catalog,'assassin.shift',scene.selected);
   const resolved=resolvePresentation(catalog,presentation,id,{animationsEnabled:false});
-  assert.ok(resolved.media,id);
+  assert.ok(resolved.selected,id);
  }
  const eventId=presentationIdForEvent(catalog,'assassin.contract.offer','default');
- assert.ok(resolvePresentation(catalog,presentation,eventId,{animationsEnabled:false}).media,eventId);
+ assert.ok(resolvePresentation(catalog,presentation,eventId,{animationsEnabled:false}).selected,eventId);
  const activityId=presentationIdForActivityRoute(catalog,'assassin.infiltration','local-route');
- assert.ok(resolvePresentation(catalog,presentation,activityId,{animationsEnabled:false}).media,activityId);
+ assert.ok(resolvePresentation(catalog,presentation,activityId,{animationsEnabled:false}).selected,activityId);
  const endingId=presentationIdForEnding('ending.assassin.hard-work');
- assert.ok(resolvePresentation(catalog,presentation,endingId,{animationsEnabled:false}).media,endingId);
+ assert.ok(resolvePresentation(catalog,presentation,endingId,{animationsEnabled:false}).selected,endingId);
 });
 
 test('natural Explore UI exposes the Assassin-owned Activity through the existing shared consumer',()=>{
