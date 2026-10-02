@@ -52,6 +52,11 @@ export function secretDebtBlocksCareerId(s:Save,careerId:string){
   return secretDebtIsBound(s)&&ordinaryCareerIds.has(careerId);
 }
 
+export function secretDebtBlocksOrdinaryAction(s:Save,action:Action){
+  if(!secretDebtIsBound(s))return false;
+  return ordinaryHardWorkCareers.some(career=>action.id===career||action.id.startsWith(`${career}.`));
+}
+
 export function secretDebtBlocksOrdinaryShift(s:Save,action:Action){
   return secretDebtIsBound(s)&&ordinaryShiftActionIds.has(action.id);
 }
