@@ -1,0 +1,554 @@
+{
+  "schemaVersion": 1,
+  "id": "assassin.career",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "careers": [
+        "assassin"
+      ],
+      "calendar": true
+    },
+    "writes": {
+      "careers": [
+        "assassin"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "assassin.career.first-shift",
+      "title": "First Assassin ordinary shift",
+      "sourceDomain": "assassin",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerCounterChanged",
+          "career": "assassin",
+          "counter": "completed_shifts"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 100,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "assassin",
+          "stage": "runner"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "assassin",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 1
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The first ordinary shift is observation and handoff discipline: learn the changing context, record what is known, and keep the assignment bounded rather than treating covert work as automatic combat.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue from Runner to Operative",
+          "text": "Continue from Runner to Operative.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "advanceCareer",
+              "career": "assassin",
+              "transition": "first-shift"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assassin.career.season-spring",
+      "title": "Record spring ordinary covert work",
+      "sourceDomain": "assassin",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "actionCompleted",
+          "action": "assassin.shift"
+        },
+        {
+          "kind": "careerTransition",
+          "career": "assassin"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 74,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "not",
+          "condition": {
+            "kind": "careerStage",
+            "career": "assassin",
+            "stage": "runner"
+          }
+        },
+        {
+          "kind": "calendarSeason",
+          "value": "spring"
+        },
+        {
+          "kind": "careerFact",
+          "career": "assassin",
+          "fact": "season-spring-worked",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Spring brings new foot traffic and changed routines. Record what is different before relying on yesterday's assumptions.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record this shipped seasonal work context",
+          "text": "Record this shipped seasonal work context.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "assassin",
+              "fact": "season-spring-worked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assassin.career.season-summer",
+      "title": "Record summer ordinary covert work",
+      "sourceDomain": "assassin",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "actionCompleted",
+          "action": "assassin.shift"
+        },
+        {
+          "kind": "careerTransition",
+          "career": "assassin"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 73,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "not",
+          "condition": {
+            "kind": "careerStage",
+            "career": "assassin",
+            "stage": "runner"
+          }
+        },
+        {
+          "kind": "calendarSeason",
+          "value": "summer"
+        },
+        {
+          "kind": "careerFact",
+          "career": "assassin",
+          "fact": "season-summer-worked",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Summer crowds and long light alter timing. A patient shift can be completed without forcing a confrontation.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record this shipped seasonal work context",
+          "text": "Record this shipped seasonal work context.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "assassin",
+              "fact": "season-summer-worked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assassin.career.season-autumn",
+      "title": "Record autumn ordinary covert work",
+      "sourceDomain": "assassin",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "actionCompleted",
+          "action": "assassin.shift"
+        },
+        {
+          "kind": "careerTransition",
+          "career": "assassin"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 72,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "not",
+          "condition": {
+            "kind": "careerStage",
+            "career": "assassin",
+            "stage": "runner"
+          }
+        },
+        {
+          "kind": "calendarSeason",
+          "value": "autumn"
+        },
+        {
+          "kind": "careerFact",
+          "career": "assassin",
+          "fact": "season-autumn-worked",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Autumn changes routes, layers, and familiar schedules. Re-check context before finishing the assignment.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record this shipped seasonal work context",
+          "text": "Record this shipped seasonal work context.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "assassin",
+              "fact": "season-autumn-worked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assassin.career.season-winter",
+      "title": "Record winter ordinary covert work",
+      "sourceDomain": "assassin",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "actionCompleted",
+          "action": "assassin.shift"
+        },
+        {
+          "kind": "careerTransition",
+          "career": "assassin"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 71,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "not",
+          "condition": {
+            "kind": "careerStage",
+            "career": "assassin",
+            "stage": "runner"
+          }
+        },
+        {
+          "kind": "calendarSeason",
+          "value": "winter"
+        },
+        {
+          "kind": "careerFact",
+          "career": "assassin",
+          "fact": "season-winter-worked",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Winter changes visibility and indoor traffic. Keep the task narrow and close the records once the work is complete.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record this shipped seasonal work context",
+          "text": "Record this shipped seasonal work context.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "assassin",
+              "fact": "season-winter-worked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assassin.career.seasonal-breadth",
+      "title": "Record four-season Assassin breadth",
+      "sourceDomain": "assassin",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "assassin"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 82,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerFact",
+          "career": "assassin",
+          "fact": "season-spring-worked",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "assassin",
+          "fact": "season-summer-worked",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "assassin",
+          "fact": "season-autumn-worked",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "assassin",
+          "fact": "season-winter-worked",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "assassin",
+          "fact": "seasonal-breadth-ready",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Four seasons have demanded four different readings of the city. Experience is the habit of checking context again, not memorizing one perfect route.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record seasonal breadth",
+          "text": "Record seasonal breadth.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "assassin",
+              "fact": "seasonal-breadth-ready"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assassin.career.trusted-blade",
+      "title": "Trusted Blade readiness from breadth",
+      "sourceDomain": "assassin",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "assassin",
+          "fact": "seasonal-breadth-ready"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 88,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "assassin",
+          "stage": "operative"
+        },
+        {
+          "kind": "careerFact",
+          "career": "assassin",
+          "fact": "seasonal-breadth-ready",
+          "present": true
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Work across changing conditions earns more demanding preparation. Trust opens responsibility and choice, not a mandatory violent path.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Enter Trusted Blade career state",
+          "text": "Enter Trusted Blade career state.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "advanceCareer",
+              "career": "assassin",
+              "transition": "trusted-blade"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assassin.career.veteran-ready",
+      "title": "Veteran readiness remains ordinary-career breadth",
+      "sourceDomain": "assassin",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerTransition",
+          "career": "assassin"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "assassin.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 76,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "assassin",
+          "stage": "trusted-blade"
+        },
+        {
+          "kind": "careerFact",
+          "career": "assassin",
+          "fact": "seasonal-breadth-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "assassin",
+          "fact": "veteran-ready",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Reliable ordinary work has become a practice of its own. Veteran readiness does not depend on an elite route.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record Veteran readiness",
+          "text": "Record Veteran readiness.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "assassin",
+              "fact": "veteran-ready"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
