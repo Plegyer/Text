@@ -16,6 +16,33 @@ A green workflow or QA verdict applies only to the exact PR head SHA it tested. 
 Workers may continue on a **new stacked branch** while a predecessor candidate is frozen; they must never move the frozen candidate merely to start the next queue.
 
 
+## Self-hosted CI / cost-control operating model — 2026-10-02
+
+GitHub remains the **source of truth** for branches, PRs, exact SHAs, comments, workflow state and merge history. The repository now also has a registered private Windows self-hosted runner `SOLV` with labels `self-hosted`, `Windows`, `X64`.
+
+Operating rule:
+- use GitHub for coordination, diffs, PR/branch state, QA ledgers and integration decisions exactly as before;
+- use `SOLV` only as compute for executable Actions jobs;
+- a self-hosted SUCCESS is valid CI evidence when the workflow actually executes on the required exact candidate head;
+- `steps=null` / no runner / no logs remains infrastructure evidence, never a code verdict;
+- do not mutate frozen producer heads merely to create a CI event;
+- old workflow reruns preserve the workflow definition from that historical run, so a historical `ubuntu-latest` run does **not** become self-hosted merely because main changed later;
+- for legacy frozen heads, use a collision-free validation base/PR or another mechanism that preserves the exact producer head while executing the current self-hosted workflow;
+- keep the runner window open only when executable CI is wanted; GitHub coordination work continues while `SOLV` is offline.
+
+Cost/time control:
+- full CI should trigger only for changes under the real executable prototype tree `mindy-successor/prior-work/astra/prototype-m3.2/**` or for the workflow file itself;
+- Leader dashboards, handoffs, task pointers and other coordination-only Markdown outside that prototype tree must not launch a full six-minute product check;
+- concurrency cancels an older in-progress run for the same PR/ref when a newer head supersedes it;
+- one `SOLV` runner means jobs execute serially; this is expected and is not evidence that the PC is slow.
+
+Verified recovery evidence on 2026-10-02:
+- main `53b80a10aa017761390d2060a00ebd95a2213314`, run #1084 attempt 2: executable self-hosted **SUCCESS**;
+- Artist authored exact head `75664819e824187ea23531e39f6cf5cd952b1047`, validation run #1085 / `37005612313`: executable **SUCCESS**;
+- Artist presentation exact head `ef9cc2df1edaf428ed44c34ba9832ff3a88032b4`, validation run #1086 / `37005617406`: executable **SUCCESS**.
+
+
+
 Status: **MANDATORY LEADER ENTRYPOINT**
 Updated: 2026-10-01
 Repository: `Plegyer/Text`

@@ -1,5 +1,21 @@
 # Leader 1 Handoff Checkpoint — 2026-10-02
 
+## SELF-HOSTED CI RECOVERY / ARTIST EXECUTABLE SUCCESS — 2026-10-02 12:28Z
+
+Fresh Git truth after moving Actions compute to the private self-hosted Windows runner `SOLV`:
+
+- main remained `53b80a10aa017761390d2060a00ebd95a2213314` during validation;
+- main workflow #1084 / `37003924795`, attempt 2: **SUCCESS** with real executed steps on `SOLV`;
+- #229 remains immutable at `75664819e824187ea23531e39f6cf5cd952b1047`; self-hosted validation PR #248 produced workflow #1085 / `37005612313`: **SUCCESS** on that exact head;
+- #237 remains immutable at `ef9cc2df1edaf428ed44c34ba9832ff3a88032b4`; self-hosted validation PR #249 produced workflow #1086 / `37005617406`: **SUCCESS** on that exact head;
+- historical reruns #1010/#1007 attempt 9 still failed pre-runner because rerunning an old run preserves its historical `ubuntu-latest` workflow definition. Those failures remain infrastructure-only and do not supersede #1085/#1086;
+- C4-170 and C4-171 are now CI-eligible; they are **not automatically QA-passed**. Chat 4 must still inspect the exact heads and publish its verdicts before C4-172;
+- producer heads were not moved to obtain the successful CI evidence.
+
+Durable CI operating model is now documented in `LEADER1_START_HERE.md`: GitHub remains source of truth; `SOLV` is compute only; coordination-only docs should not launch full product CI; exact-head and pre-runner rules remain unchanged.
+
+Next Artist transition: C4-170 + C4-171 -> C4-172 -> collision-safe integration runtime -> authored -> School -> presentation -> exact-current-main executable CI -> C4-173.
+
 ## SUCCESSOR CONTINUATION CHECKPOINT — 2026-10-02 11:12Z
 
 Fresh Git truth after takeover execution:
