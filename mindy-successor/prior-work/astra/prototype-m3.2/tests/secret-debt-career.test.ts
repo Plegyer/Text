@@ -90,6 +90,11 @@ test('D19 constants are exact while balance-owned Secret Debt numbers stay expli
   assert.ok(forced.choices.flatMap((choice:any)=>choice.effects).some((effect:any)=>
     effect.kind==='addNextDayModifier'&&effect.energyDelta===-1&&effect.tag==='secret-debt.forced-night'
   ));
+  assert.equal(
+    forced.choices.flatMap((choice:any)=>choice.effects).some((effect:any)=>effect.kind==='metric'&&effect.key==='lust'),
+    false,
+    'forced Night must not increase Lust'
+  );
 
   const repay=catalog.definitions.actions.find(action=>action.id==='secret-debt.repay')!;
   assert.equal(repay.cost.money,20000);
@@ -392,8 +397,16 @@ test('Takeover has locked structural gates, separate explicit action, and open n
   s=applyEffects(s,[{
     kind:'incrementCareerCounter',career:'secret-debt',counter:'completed_shifts',amount:50
   }],catalog);
-  s.run.historyState.actionCounts.school=10;
+  s.run.historyState.actionCounts.school=9;
+  s=applyEffects(s,[{
+    kind:'incrementSchoolCounter',
+    track:'school.track.body_confidence',
+    counter:'night_study_sessions',
+    amount:100
+  }],catalog);
+  assert.equal(secretDebtTakeoverStructuralReady(s),false,'night study is not a paid School lesson');
 
+  s.run.historyState.actionCounts.school=10;
   assert.equal(secretDebtTakeoverStructuralReady(s),true);
   const takeover=catalog.definitions.actions.find(action=>action.id==='secret-debt.takeover')!;
   assert.equal(actionAvailable(takeover,s,catalog),false,'numeric build/Lust gates are not invented');
