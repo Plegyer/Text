@@ -9781,6 +9781,22 @@
     "presentation.static.guard.event.guard-routes-major-case-ready.caption": {
       "ru": "Готовность крупного дела",
       "en": "Major-case readiness"
+    },
+    "presentation.static.guard.event.guard-city-poverty-response-street-survival.alt": {
+      "ru": "Сцена службы стражи: реакция на зимнее давление на ночлег с учётом собственного опыта уличной ночёвки; визуал не меняет правила жилья, долгов или службы.",
+      "en": "Guard duty scene: a winter lodging-pressure response informed by prior street survival; the visual changes no lodging, debt, or duty rules."
+    },
+    "presentation.static.guard.event.guard-city-poverty-response-street-survival.caption": {
+      "ru": "Ответ стражи: опыт уличной ночёвки",
+      "en": "Guard response: street-survival experience"
+    },
+    "presentation.static.guard.event.guard-city-poverty-response-cheap-room.alt": {
+      "ru": "Сцена службы стражи: реакция на зимнее давление на ночлег с учётом опыта дешёвого общего жилья; визуал не меняет правила жилья, долгов или службы.",
+      "en": "Guard duty scene: a winter lodging-pressure response informed by cheap shared lodging; the visual changes no lodging, debt, or duty rules."
+    },
+    "presentation.static.guard.event.guard-city-poverty-response-cheap-room.caption": {
+      "ru": "Ответ стражи: опыт дешёвого жилья",
+      "en": "Guard response: cheap-lodging experience"
     }
   }
 }
