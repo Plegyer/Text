@@ -1,45 +1,48 @@
 # CURRENT CHAT6 TASK POINTER
 
-Status: **ACTIVE — PALACE HIDDEN / META CAREER**
+Status: **WAITING ON PRODUCT / DEPENDENCY AUTHORITY — PALACE NOT COMPLETE**
 Owner: Chat 6 / Full-Career Producer D
-Branch to use: `chat6/palace-complete-reset-v1`
+Branch: `chat6/palace-complete-reset-v1`
+Verified authority-safe head: `8919a3686c1952d700c4c1377130918e0e181fa3`
 
-## Assignment
+## Verified completed independent work
 
-Build the **Palace hidden/meta career** as far as current authority permits, as one coherent late-game career slice.
+The branch is exactly 12 commits ahead of assignment baseline `9ee5dd227db85b1987acd099e15ed274cb085110`, with no rebase.
 
-Authority:
-- `mindy-successor/docs/PALACE_HIDDEN_CAREER_DRAFT_v0.md`
-- `mindy-successor/docs/USER_DECISIONS_LOCKED_v1.md` D6/D15/D18
-- current Meta/ending/career infrastructure on main
-- historical Palace authored prep PR #247 @ `5a2e72cc530e4edbe41d0d03e4904e2272614e9e` is source-only and predates D18; selectively reuse only after revalidation.
+It contains authority-safe Palace foundation only:
+- unique 10/10 ordinary Hard Work unlock derivation with Secret Debt/duplicate exclusion;
+- parity with published Palace meta unlock policy;
+- legacy opportunity derivation only from published ordinary Hard Work ledger;
+- distinct semantic Service Life / Court Power / Inner Truth families;
+- value-independent progression evidence;
+- D18 normalized-percentage eligibility: all 12 progression stats strictly >90%, Lust excluded, Prince victory separate;
+- semantic Return Home + permanent optional NG+ x2-all-12 result without invented reward/cap/order;
+- re-audited RU/EN Palace copy/fallbacks;
+- read-only current School and Activity seams;
+- semantic-only relationship/item/calendar roles without fabricated runtime IDs.
 
-Locked requirements:
-- Palace is outside the 10 ordinary careers;
-- unlock requires unique Hard Work completion for all 10 ordinary professions;
-- Secret Debt does not count;
-- Palace remains a real repeatable career with progression and legacy-sensitive options;
-- at least Service Life / Court Power / Inner Truth outcome families;
-- True Ending / Return Home additionally requires Palace unlocked, all 12 progression stats strictly >90%, Lust excluded, Prince victory, then return home and permanent optional NG+ x2-all-12-stats unlock;
-- ending eligibility remains non-terminal and completion/meta reward remains exactly-once.
+No PR is open and no executable CI was intentionally triggered because this is not candidate-ready.
 
-## Dependency and authority firewall
+## Current blockers
 
-Artist is currently in Chat 2 integration; Assassin and Prostitute are being built by Chats 3/4. Do not hardcode future unpublished career facts merely to make Palace tests pass.
+Canonical ledger:
+`mindy-successor/docs/tasks/CHAT6_PALACE_PRODUCTION_BLOCKERS_v1.md`
 
-Do not invent:
-- exact Palace role/name;
-- Prince identity/lore or confrontation mechanics;
-- global mystery;
-- exact non-True-Ending rewards;
-- exact runtime/presentation IDs where no authority exists;
-- x2 ordering/cap interaction;
-- raw stat-cap interpretation beyond the locked percentage requirement;
-- day-1 vs invitation availability after Meta unlock.
+Do not invent solutions for:
+- Prince confrontation signal/mechanics;
+- raw-stat -> percentage conversion/cap semantics;
+- shared NG+ x2 persistence/application/order/cap;
+- Palace entry policy after unlock;
+- exact Palace progression thresholds/stages;
+- Service Life / Court Power / Inner Truth rewards and any `hardWork:palace` policy;
+- concrete Palace relationship/item/Night bindings.
 
-Build all independent Palace state/progression/legacy/ending infrastructure that can safely use current shipped facts. Record exact blockers for unresolved dependencies and continue non-conflicting work.
+Dependency:
+- final natural 10/10 acceptance waits the shipped ordinary roster after Assassin and voluntary Prostitute integration. Artist is now shipped on main.
 
-## Delivery
+## Working rule
 
-Do not claim COMPLETE until 10/10 ordinary-career prerequisites are naturally achievable on the integration baseline and unresolved Product blockers needed for acceptance are resolved.
-No early draft PR. Candidate-ready -> focused PR -> frozen exact head -> executable CI -> Chat 2 technical QA/integration -> Leader 1 final acceptance.
+Do not continue speculative Palace production merely to stay busy.
+Preserve this branch/head as active foundation.
+Resume only when Leader 1 resolves a listed Product/shared blocker or when ordinary-career integration changes the natural 10/10 baseline.
+Do not open a PR until the branch is genuinely candidate-ready.

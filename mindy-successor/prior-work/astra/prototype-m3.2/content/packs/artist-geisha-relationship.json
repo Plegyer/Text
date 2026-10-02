@@ -1,0 +1,467 @@
+{
+  "schemaVersion": 1,
+  "id": "artist-geisha.relationship",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "careers": [
+        "artist-geisha"
+      ],
+      "relationships": [
+        "artist-geisha.mentor"
+      ]
+    },
+    "writes": {
+      "careers": [
+        "artist-geisha"
+      ],
+      "relationships": [
+        "artist-geisha.mentor"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "artist-geisha.relationship.intro",
+      "title": "A senior artist reviews the handoff",
+      "sourceDomain": "artist-geisha",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "actionCompleted",
+          "action": "artist-geisha.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 74,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "not",
+          "condition": {
+            "kind": "careerStage",
+            "career": "artist-geisha",
+            "stage": "novice"
+          }
+        },
+        {
+          "kind": "relationshipFact",
+          "relationship": "artist-geisha.mentor",
+          "fact": "introduced-at-work",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "A senior artist or mentor enters as a professional role: someone who has seen enough rehearsals to ask precise questions and notice repeated mistakes. A personal name or biography is not required for this line to work.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "professional",
+          "label": "Compare the work notes",
+          "text": "Keep the first contact practical and professional.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "artist-geisha.mentor",
+              "fact": "introduced-at-work"
+            },
+            {
+              "kind": "incrementRelationshipCounter",
+              "relationship": "artist-geisha.mentor",
+              "counter": "work-meetings",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "artist-geisha.relationship.trust",
+      "title": "Professional trust becomes familiar",
+      "sourceDomain": "artist-geisha",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "actionCompleted",
+          "action": "artist-geisha.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 73,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "relationshipStage",
+          "relationship": "artist-geisha.mentor",
+          "stage": "introduced"
+        },
+        {
+          "kind": "relationshipFact",
+          "relationship": "artist-geisha.mentor",
+          "fact": "introduced-at-work",
+          "present": true
+        },
+        {
+          "kind": "relationshipCounter",
+          "relationship": "artist-geisha.mentor",
+          "counter": "work-meetings",
+          "op": "eq",
+          "value": 1
+        }
+      ],
+      "variants": [
+        {
+          "id": "school-rhetoric",
+          "text": "Rhetoric & Social is useful as practice in listening, clarifying questions, and calm pauses. It grants no automatic influence over a guest, mentor, or future patron and creates no persuasion meter.",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "artist-geisha",
+              "fact": "school-rhetoric-ready",
+              "present": true
+            }
+          ],
+          "media": []
+        },
+        {
+          "id": "default",
+          "text": "Professional trust grows when a note can be tested in the next rehearsal. The mentor requires neither admiration nor personal loyalty; it is enough to show honestly what changed and what still does not work.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Keep the working trust",
+          "text": "Build professional trust while keeping personal closeness optional.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "incrementRelationshipCounter",
+              "relationship": "artist-geisha.mentor",
+              "counter": "work-meetings",
+              "amount": 1
+            },
+            {
+              "kind": "advanceRelationship",
+              "relationship": "artist-geisha.mentor",
+              "transition": "build-trust"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "artist-geisha",
+              "fact": "mentor-trust-ready"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "artist-geisha.relationship.conflict-open",
+      "title": "A real disagreement about the performance",
+      "sourceDomain": "artist-geisha",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "relationshipTransition",
+          "relationship": "artist-geisha.mentor"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "artist-geisha.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 72,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "relationshipStage",
+          "relationship": "artist-geisha.mentor",
+          "stage": "professional-trust"
+        },
+        {
+          "kind": "relationshipFact",
+          "relationship": "artist-geisha.mentor",
+          "fact": "conflict-opened",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The conflict concerns a concrete practice—a late program change, an overly rigid presentation, an unclear note, or distribution of attention. You discuss the decision rather than a hidden degree of personal closeness.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "open",
+          "label": "State the professional disagreement",
+          "text": "Make the disagreement explicit so the relationship can continue through cooperation, rivalry, or refusal.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "artist-geisha.mentor",
+              "fact": "conflict-opened"
+            },
+            {
+              "kind": "advanceRelationship",
+              "relationship": "artist-geisha.mentor",
+              "transition": "open-conflict"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "artist-geisha.relationship.conflict-resolve",
+      "title": "Choose how the professional relationship continues",
+      "sourceDomain": "artist-geisha",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "relationshipTransition",
+          "relationship": "artist-geisha.mentor"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "artist-geisha.shift"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 84,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "relationshipStage",
+          "relationship": "artist-geisha.mentor",
+          "stage": "conflict-open"
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "A competitive tone can be useful when it stays about the work: prepare more carefully, explain a choice more clearly, and listen to a partner more closely. It does not become sabotage or a global artist ranking.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "cooperate",
+          "label": "Rehearse a compromise",
+          "text": "After disagreement, collaboration means agreeing on how to test the change: what to adjust, when to review the result, and who owns the next part. It is a professional compromise rather than a promise of permanent agreement.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "setRelationshipChoice",
+              "relationship": "artist-geisha.mentor",
+              "choice": "conflict-response",
+              "value": "cooperate"
+            },
+            {
+              "kind": "advanceRelationship",
+              "relationship": "artist-geisha.mentor",
+              "transition": "utility-cooperate"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "artist-geisha",
+              "fact": "relationship-conflict-resolved"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "artist-geisha",
+              "fact": "relationship-utility-ready"
+            }
+          ]
+        },
+        {
+          "id": "rivalry",
+          "label": "Stay professional rivals",
+          "text": "Professional rivalry can preserve respect when each side recognizes the boundaries of the role and does not block the other's ordinary work. Another strong result becomes material for review rather than a reason to close the career.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "setRelationshipChoice",
+              "relationship": "artist-geisha.mentor",
+              "choice": "conflict-response",
+              "value": "rivalry"
+            },
+            {
+              "kind": "advanceRelationship",
+              "relationship": "artist-geisha.mentor",
+              "transition": "resolve-rivalry"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "artist-geisha",
+              "fact": "relationship-conflict-resolved"
+            }
+          ]
+        },
+        {
+          "id": "decline",
+          "label": "Step away from the extra relationship",
+          "text": "Declining to deepen the mentoring line does not close the Artist House. You can keep ordinary shifts, rehearsals, and professional courtesy without an additional personal or career dependency.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "setRelationshipChoice",
+              "relationship": "artist-geisha.mentor",
+              "choice": "conflict-response",
+              "value": "declined"
+            },
+            {
+              "kind": "advanceRelationship",
+              "relationship": "artist-geisha.mentor",
+              "transition": "resolve-refusal"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "artist-geisha",
+              "fact": "relationship-conflict-resolved"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "artist-geisha.relationship.utility",
+      "title": "Optional later professional utility",
+      "sourceDomain": "artist-geisha",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "relationshipTransition",
+          "relationship": "artist-geisha.mentor"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "artist-geisha.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 68,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "relationshipStage",
+          "relationship": "artist-geisha.mentor",
+          "stage": "utility-ready"
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Later mentor utility is narrow help: notice a weak transition, warn about the shape of an evening, or suggest what to check before an entrance. It grants no universal access, status, or guaranteed success.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "accept",
+          "label": "Use the professional review",
+          "text": "Accept one optional rehearsal review without making mentorship compulsory.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "setRelationshipChoice",
+              "relationship": "artist-geisha.mentor",
+              "choice": "utility-response",
+              "value": "accepted"
+            },
+            {
+              "kind": "incrementRelationshipCounter",
+              "relationship": "artist-geisha.mentor",
+              "counter": "rehearsal-meetings",
+              "amount": 1
+            },
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "artist-geisha.mentor",
+              "fact": "utility-response-resolved"
+            },
+            {
+              "kind": "advanceRelationship",
+              "relationship": "artist-geisha.mentor",
+              "transition": "finish-utility"
+            }
+          ]
+        },
+        {
+          "id": "decline",
+          "label": "Continue independently",
+          "text": "Decline the extra review while preserving professional respect and all ordinary progression.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "setRelationshipChoice",
+              "relationship": "artist-geisha.mentor",
+              "choice": "utility-response",
+              "value": "declined"
+            },
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "artist-geisha.mentor",
+              "fact": "refusal-respected"
+            },
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "artist-geisha.mentor",
+              "fact": "utility-response-resolved"
+            },
+            {
+              "kind": "advanceRelationship",
+              "relationship": "artist-geisha.mentor",
+              "transition": "finish-utility"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

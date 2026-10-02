@@ -1,0 +1,828 @@
+{
+  "formatVersion": 1,
+  "id": "chat3.artist-geisha-authored-v19.binding-plan",
+  "status": "FINAL_BINDING_AUDITED_ON_FROZEN_ARTIST_RUNTIME",
+  "authority": {
+    "runtimeBranch": "chat1/artist-geisha-complete-v16",
+    "observedHead": "955f4accf7e25c42e0384ddb9f76e5612f41dd00",
+    "contractBlob": "1cda9f558b8a7c0e0f113904f99ce0acd4b1e791",
+    "frozen": true
+  },
+  "allowedActionScenes": [
+    "artist-geisha.shift#spring.default",
+    "artist-geisha.shift#summer.default",
+    "artist-geisha.shift#autumn.default",
+    "artist-geisha.shift#winter.default"
+  ],
+  "publishedRuntimeEventCatalog": [
+    "artist-geisha.career.first-shift",
+    "artist-geisha.career.seasonal-breadth",
+    "artist-geisha.career.recognized",
+    "artist-geisha.career.choose-route",
+    "artist-geisha.career.outcome-ready",
+    "artist-geisha.items.performance_kit",
+    "artist-geisha.items.formal_attire",
+    "artist-geisha.items.invitation_token",
+    "artist-geisha.relationship.intro",
+    "artist-geisha.relationship.trust",
+    "artist-geisha.relationship.conflict-open",
+    "artist-geisha.relationship.conflict-resolve",
+    "artist-geisha.relationship.utility",
+    "artist-geisha.season.spring-program",
+    "artist-geisha.season.summer-evening",
+    "artist-geisha.season.autumn-festival",
+    "artist-geisha.season.winter-salon",
+    "artist-geisha.night.rehearsal-scene",
+    "artist-geisha.night.salon-scene",
+    "artist-geisha.night.mentor-review-scene",
+    "artist-geisha.cross.satyr-overlap",
+    "artist-geisha.cross.tavern-rumour",
+    "artist-geisha.cross.merchant-delivery",
+    "artist-geisha.cross.guard-context",
+    "artist-geisha.routes.veteran-ready",
+    "artist-geisha.routes.master-ready",
+    "artist-geisha.routes.social-breadth",
+    "artist-geisha.routes.patron-network-ready",
+    "artist-geisha.routes.court-contact",
+    "artist-geisha.routes.court-ready"
+  ],
+  "contractTargetsNotYetPublished": [],
+  "allowedPublicEndings": [
+    "ending.artist-geisha.hard-work"
+  ],
+  "finalBindingRequiredAt": "C3-216",
+  "bindings": [
+    {
+      "contentKey": "spring.rehearsal-reset",
+      "section": "seasonal",
+      "targetKind": "actionScene",
+      "provisionalTargetIds": [
+        "artist-geisha.shift#spring.default"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.shift#spring.default"
+      ]
+    },
+    {
+      "contentKey": "spring.guest-room",
+      "section": "seasonal",
+      "targetKind": "actionScene",
+      "provisionalTargetIds": [
+        "artist-geisha.shift#spring.default"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.shift#spring.default"
+      ]
+    },
+    {
+      "contentKey": "spring.program-notes",
+      "section": "seasonal",
+      "targetKind": "actionScene",
+      "provisionalTargetIds": [
+        "artist-geisha.shift#spring.default"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.shift#spring.default"
+      ]
+    },
+    {
+      "contentKey": "summer.open-evening",
+      "section": "seasonal",
+      "targetKind": "actionScene",
+      "provisionalTargetIds": [
+        "artist-geisha.shift#summer.default"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.shift#summer.default"
+      ]
+    },
+    {
+      "contentKey": "summer.partner-timing",
+      "section": "seasonal",
+      "targetKind": "actionScene",
+      "provisionalTargetIds": [
+        "artist-geisha.shift#summer.default"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.shift#summer.default"
+      ]
+    },
+    {
+      "contentKey": "summer.hosting-rotation",
+      "section": "seasonal",
+      "targetKind": "actionScene",
+      "provisionalTargetIds": [
+        "artist-geisha.shift#summer.default"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.shift#summer.default"
+      ]
+    },
+    {
+      "contentKey": "autumn.festival-prep",
+      "section": "seasonal",
+      "targetKind": "actionScene",
+      "provisionalTargetIds": [
+        "artist-geisha.shift#autumn.default"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.shift#autumn.default"
+      ]
+    },
+    {
+      "contentKey": "autumn.presence-boundary",
+      "section": "seasonal",
+      "targetKind": "actionScene",
+      "provisionalTargetIds": [
+        "artist-geisha.shift#autumn.default"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.shift#autumn.default"
+      ]
+    },
+    {
+      "contentKey": "autumn.review-without-score",
+      "section": "seasonal",
+      "targetKind": "actionScene",
+      "provisionalTargetIds": [
+        "artist-geisha.shift#autumn.default"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.shift#autumn.default"
+      ]
+    },
+    {
+      "contentKey": "winter.salon-focus",
+      "section": "seasonal",
+      "targetKind": "actionScene",
+      "provisionalTargetIds": [
+        "artist-geisha.shift#winter.default"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.shift#winter.default"
+      ]
+    },
+    {
+      "contentKey": "winter.program-continuity",
+      "section": "seasonal",
+      "targetKind": "actionScene",
+      "provisionalTargetIds": [
+        "artist-geisha.shift#winter.default"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.shift#winter.default"
+      ]
+    },
+    {
+      "contentKey": "winter.guest-expectations",
+      "section": "seasonal",
+      "targetKind": "actionScene",
+      "provisionalTargetIds": [
+        "artist-geisha.shift#winter.default"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.shift#winter.default"
+      ]
+    },
+    {
+      "contentKey": "program.spring-window",
+      "section": "performance",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "artist-geisha.season.spring-program"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.season.spring-program"
+      ]
+    },
+    {
+      "contentKey": "program.summer-evening",
+      "section": "performance",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "artist-geisha.season.summer-evening"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.season.summer-evening"
+      ]
+    },
+    {
+      "contentKey": "program.autumn-festival",
+      "section": "performance",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "artist-geisha.season.autumn-festival"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.season.autumn-festival"
+      ]
+    },
+    {
+      "contentKey": "program.winter-salon",
+      "section": "performance",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "artist-geisha.season.winter-salon"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.season.winter-salon"
+      ]
+    },
+    {
+      "contentKey": "rehearsal.shared-scene",
+      "section": "performance",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [],
+      "status": "UNBOUND_NO_FROZEN_ARTIST_CONSUMER",
+      "finalTargetIds": []
+    },
+    {
+      "contentKey": "festival.waiting-room",
+      "section": "performance",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "artist-geisha.season.autumn-festival"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.season.autumn-festival"
+      ]
+    },
+    {
+      "contentKey": "salon.conversation-transition",
+      "section": "performance",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "artist-geisha.season.winter-salon"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.season.winter-salon"
+      ]
+    },
+    {
+      "contentKey": "performance.no-global-score",
+      "section": "performance",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [],
+      "status": "UNBOUND_NO_FROZEN_ARTIST_CONSUMER",
+      "finalTargetIds": []
+    },
+    {
+      "contentKey": "mentor.introduction",
+      "section": "relationship",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "artist-geisha.relationship.intro"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.relationship.intro"
+      ]
+    },
+    {
+      "contentKey": "mentor.trust",
+      "section": "relationship",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "artist-geisha.relationship.trust"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.relationship.trust"
+      ]
+    },
+    {
+      "contentKey": "mentor.competition",
+      "section": "relationship",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "artist-geisha.relationship.conflict-resolve"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.relationship.conflict-resolve"
+      ]
+    },
+    {
+      "contentKey": "mentor.conflict",
+      "section": "relationship",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "artist-geisha.relationship.conflict-open"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.relationship.conflict-open"
+      ]
+    },
+    {
+      "contentKey": "mentor.collaboration",
+      "section": "relationship",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "artist-geisha.relationship.conflict-resolve"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.relationship.conflict-resolve"
+      ]
+    },
+    {
+      "contentKey": "mentor.respectful-rivalry",
+      "section": "relationship",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "artist-geisha.relationship.conflict-resolve"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.relationship.conflict-resolve"
+      ]
+    },
+    {
+      "contentKey": "mentor.refusal",
+      "section": "relationship",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "artist-geisha.relationship.conflict-resolve"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.relationship.conflict-resolve"
+      ]
+    },
+    {
+      "contentKey": "mentor.utility",
+      "section": "relationship",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "artist-geisha.relationship.utility"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.relationship.utility"
+      ]
+    },
+    {
+      "contentKey": "school.arts-performance",
+      "section": "school-boundary",
+      "targetKind": "schoolConsumerBoundary",
+      "provisionalTargetIds": [
+        "artist-geisha.routes.master-ready"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.routes.master-ready"
+      ]
+    },
+    {
+      "contentKey": "school.etiquette",
+      "section": "school-boundary",
+      "targetKind": "schoolConsumerBoundary",
+      "provisionalTargetIds": [
+        "artist-geisha.routes.court-ready"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.routes.court-ready"
+      ]
+    },
+    {
+      "contentKey": "school.rhetoric",
+      "section": "school-boundary",
+      "targetKind": "schoolConsumerBoundary",
+      "provisionalTargetIds": [
+        "artist-geisha.relationship.trust"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.relationship.trust"
+      ]
+    },
+    {
+      "contentKey": "school.body-confidence",
+      "section": "school-boundary",
+      "targetKind": "schoolConsumerBoundary",
+      "provisionalTargetIds": [
+        "artist-geisha.season.autumn-festival"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.season.autumn-festival"
+      ]
+    },
+    {
+      "contentKey": "school.literacy",
+      "section": "school-boundary",
+      "targetKind": "schoolConsumerBoundary",
+      "provisionalTargetIds": [
+        "artist-geisha.routes.master-ready"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.routes.master-ready"
+      ]
+    },
+    {
+      "contentKey": "formal-attire.meaning",
+      "section": "items",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "artist-geisha.items.formal_attire"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.items.formal_attire"
+      ]
+    },
+    {
+      "contentKey": "formal-attire.choice",
+      "section": "items",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "artist-geisha.items.formal_attire"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.items.formal_attire"
+      ]
+    },
+    {
+      "contentKey": "performance-kit.meaning",
+      "section": "items",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "artist-geisha.items.performance_kit"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.items.performance_kit"
+      ]
+    },
+    {
+      "contentKey": "performance-kit.readiness",
+      "section": "items",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "artist-geisha.items.performance_kit"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.items.performance_kit"
+      ]
+    },
+    {
+      "contentKey": "invitation-token.meaning",
+      "section": "items",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "artist-geisha.items.invitation_token"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.items.invitation_token"
+      ]
+    },
+    {
+      "contentKey": "items.no-status-system",
+      "section": "items",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "artist-geisha.items.formal_attire",
+        "artist-geisha.items.performance_kit",
+        "artist-geisha.items.invitation_token"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.items.formal_attire",
+        "artist-geisha.items.performance_kit",
+        "artist-geisha.items.invitation_token"
+      ]
+    },
+    {
+      "contentKey": "night.rehearsal",
+      "section": "night",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "artist-geisha.night.rehearsal-scene"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.night.rehearsal-scene"
+      ]
+    },
+    {
+      "contentKey": "night.salon",
+      "section": "night",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "artist-geisha.night.salon-scene"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.night.salon-scene"
+      ]
+    },
+    {
+      "contentKey": "night.mentor-review",
+      "section": "night",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "artist-geisha.night.mentor-review-scene"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.night.mentor-review-scene"
+      ]
+    },
+    {
+      "contentKey": "night.coworker-debrief",
+      "section": "night",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [],
+      "status": "UNBOUND_NO_FROZEN_ARTIST_CONSUMER",
+      "finalTargetIds": []
+    },
+    {
+      "contentKey": "night.patron-context",
+      "section": "night",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [],
+      "status": "UNBOUND_NO_FROZEN_ARTIST_CONSUMER",
+      "finalTargetIds": []
+    },
+    {
+      "contentKey": "night.no-free-action",
+      "section": "night",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "artist-geisha.night.rehearsal-scene",
+        "artist-geisha.night.salon-scene",
+        "artist-geisha.night.mentor-review-scene"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.night.rehearsal-scene",
+        "artist-geisha.night.salon-scene",
+        "artist-geisha.night.mentor-review-scene"
+      ]
+    },
+    {
+      "contentKey": "cross.lumber-forest-return",
+      "section": "cross-system",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [],
+      "status": "UNBOUND_NO_FROZEN_ARTIST_CONSUMER",
+      "finalTargetIds": []
+    },
+    {
+      "contentKey": "cross.satyr-network",
+      "section": "cross-system",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "artist-geisha.cross.satyr-overlap"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.cross.satyr-overlap"
+      ]
+    },
+    {
+      "contentKey": "cross.undead-sample",
+      "section": "cross-system",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [],
+      "status": "UNBOUND_NO_FROZEN_ARTIST_CONSUMER",
+      "finalTargetIds": []
+    },
+    {
+      "contentKey": "cross.tavern-rumour",
+      "section": "cross-system",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "artist-geisha.cross.tavern-rumour"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.cross.tavern-rumour"
+      ]
+    },
+    {
+      "contentKey": "cross.hunter-return",
+      "section": "cross-system",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [],
+      "status": "UNBOUND_NO_FROZEN_ARTIST_CONSUMER",
+      "finalTargetIds": []
+    },
+    {
+      "contentKey": "cross.guard-evidence",
+      "section": "cross-system",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "artist-geisha.cross.guard-context"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.cross.guard-context"
+      ]
+    },
+    {
+      "contentKey": "cross.merchant-delivery",
+      "section": "cross-system",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "artist-geisha.cross.merchant-delivery"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.cross.merchant-delivery"
+      ]
+    },
+    {
+      "contentKey": "veteran.identity",
+      "section": "advanced-route",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "artist-geisha.routes.veteran-ready",
+        "artist-geisha.career.choose-route"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.routes.veteran-ready",
+        "artist-geisha.career.choose-route"
+      ]
+    },
+    {
+      "contentKey": "veteran.readiness",
+      "section": "advanced-route",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "artist-geisha.routes.veteran-ready",
+        "artist-geisha.career.choose-route"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.routes.veteran-ready",
+        "artist-geisha.career.choose-route"
+      ]
+    },
+    {
+      "contentKey": "master-artist.identity",
+      "section": "advanced-route",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "artist-geisha.routes.master-ready",
+        "artist-geisha.career.choose-route"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.routes.master-ready",
+        "artist-geisha.career.choose-route"
+      ]
+    },
+    {
+      "contentKey": "master-artist.discipline-boundary",
+      "section": "advanced-route",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "artist-geisha.routes.master-ready",
+        "artist-geisha.career.choose-route"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.routes.master-ready",
+        "artist-geisha.career.choose-route"
+      ]
+    },
+    {
+      "contentKey": "patron-network.identity",
+      "section": "advanced-route",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "artist-geisha.routes.patron-network-ready",
+        "artist-geisha.career.choose-route"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.routes.patron-network-ready",
+        "artist-geisha.career.choose-route"
+      ]
+    },
+    {
+      "contentKey": "patron-network.boundary",
+      "section": "advanced-route",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "artist-geisha.routes.social-breadth",
+        "artist-geisha.routes.patron-network-ready"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.routes.social-breadth",
+        "artist-geisha.routes.patron-network-ready"
+      ]
+    },
+    {
+      "contentKey": "court-invitation.identity",
+      "section": "advanced-route",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "artist-geisha.routes.court-contact",
+        "artist-geisha.routes.court-ready",
+        "artist-geisha.career.choose-route"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.routes.court-contact",
+        "artist-geisha.routes.court-ready",
+        "artist-geisha.career.choose-route"
+      ]
+    },
+    {
+      "contentKey": "court-invitation.token",
+      "section": "advanced-route",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "artist-geisha.items.invitation_token",
+        "artist-geisha.routes.court-ready",
+        "artist-geisha.career.choose-route"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.items.invitation_token",
+        "artist-geisha.routes.court-ready",
+        "artist-geisha.career.choose-route"
+      ]
+    },
+    {
+      "contentKey": "court-invitation.no-palace-unlock",
+      "section": "advanced-route",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "artist-geisha.routes.court-contact",
+        "artist-geisha.routes.court-ready",
+        "artist-geisha.career.choose-route"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.routes.court-contact",
+        "artist-geisha.routes.court-ready",
+        "artist-geisha.career.choose-route"
+      ]
+    },
+    {
+      "contentKey": "route.defer",
+      "section": "advanced-route",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "artist-geisha.career.choose-route"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.career.choose-route"
+      ]
+    },
+    {
+      "contentKey": "readiness.not-ending",
+      "section": "advanced-route",
+      "targetKind": "runtimeEvent",
+      "provisionalTargetIds": [
+        "artist-geisha.career.choose-route"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "artist-geisha.career.choose-route"
+      ]
+    },
+    {
+      "contentKey": "hard-work.boundary",
+      "section": "advanced-route",
+      "targetKind": "endingBoundary",
+      "provisionalTargetIds": [
+        "ending.artist-geisha.hard-work"
+      ],
+      "status": "LIVE_BOUND",
+      "finalTargetIds": [
+        "ending.artist-geisha.hard-work"
+      ]
+    }
+  ]
+}

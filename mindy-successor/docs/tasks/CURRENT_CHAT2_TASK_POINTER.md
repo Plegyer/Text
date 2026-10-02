@@ -1,22 +1,20 @@
 # CURRENT CHAT2 TASK POINTER
 
-Status: **RESET ACTIVE — ARTIST TECHNICAL QA / INTEGRATION**
+Status: **IDLE / WAITING FOR NEXT CANDIDATE**
 Owner: Chat 2 / Integration + Assembly + Technical QA
 
-Topology reset 2026-10-02 supersedes old Chat 2 presentation ownership.
+Artist/Geisha package is complete and shipped.
 
-Immediate package:
-- Artist authored #229 exact head `75664819e824187ea23531e39f6cf5cd952b1047`
-  - executable validation workflow #1085 / `37005612313`: SUCCESS
-- Artist presentation #237 exact head `ef9cc2df1edaf428ed44c34ba9832ff3a88032b4`
-  - executable validation workflow #1086 / `37005617406`: SUCCESS
-- accepted dependencies remain runtime #234 and School #232 as recorded in the handoff.
+Verified closeout:
+- assembly PR #250 merged;
+- merge commit / current shipped Artist main: `a3afe650a05a4a27be5953b4f3965db0a420573c`;
+- exact-current-main workflow #1089 / run `37013091326`: **SUCCESS**;
+- assembly exact-head workflow #1088 / run `37011925908`: **SUCCESS**, 953/953.
 
-Tasks:
-1. perform the technical substance of former C4-170 on #229;
-2. perform the technical substance of former C4-171 on #237;
-3. perform the combined collision/integration gate formerly called C4-172;
-4. prepare a collision-safe current-main Artist assembly plan/branch if required;
-5. do not merge main; hand final evidence to Leader 1.
+Do not continue Artist work unless Leader 1 identifies a concrete regression.
 
-Do not move #229/#237 producer heads.
+Current role:
+- wait for the next producer candidate from Chat 3, 4, 5 or 6;
+- when a candidate is frozen, re-query current main, exact head, CI and diff before QA;
+- perform independent technical QA, collision/base-drift analysis and current-main assembly;
+- do not merge main; hand merge-ready evidence to Leader 1.
