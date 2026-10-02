@@ -253,6 +253,25 @@
       ],
       "choices": [
         {
+          "id": "prepared-performance",
+          "label": "Use the prepared performance kit",
+          "text": "Use the Artist-owned kit to handle this performance window. The capability changes this local option only.",
+          "conditions": [
+            {
+              "kind": "itemCapability",
+              "capability": "artist_performance_ready",
+              "present": true
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "artist-geisha",
+              "fact": "autumn-window-seen"
+            }
+          ]
+        },
+        {
           "id": "take-window",
           "label": "Take the Artist House opportunity",
           "text": "Use the seasonal window as Artist-local professional experience; it does not create a global contest or reputation system.",
@@ -335,6 +354,25 @@
         }
       ],
       "choices": [
+        {
+          "id": "formal-presence",
+          "label": "Use formal Artist House attire",
+          "text": "Use formal-performance presence for this salon without treating clothing as universal status or Palace access.",
+          "conditions": [
+            {
+              "kind": "itemCapability",
+              "capability": "artist_formal_presence",
+              "present": true
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "artist-geisha",
+              "fact": "winter-window-seen"
+            }
+          ]
+        },
         {
           "id": "take-window",
           "label": "Take the Artist House opportunity",
