@@ -625,8 +625,16 @@ export const MERCHANT_PRESENTATION_STAGES=[
   'merchant-house','speculator-smuggler','patron-of-routes','outcome-ready'
 ] as const;
 
+export const MERCHANT_RELATIONSHIP_STAGES=[
+  'introduced','professional-trust','conflict-open','utility-ready','route-resolved'
+] as const;
+
 export function presentationIdForMerchantStage(stage:string){
   return `job/merchant/stage/${clean(stage)}`;
+}
+
+export function presentationIdForMerchantRelationshipStage(stage:string){
+  return `relationship/merchant-supplier/stage/${clean(stage)}`;
 }
 
 export function presentationIdForEnding(endingId:string){
@@ -896,6 +904,20 @@ export function presentationSlots(cat:Catalog):PresentationSlot[]{
         add({
           id:presentationIdForMerchantStage(stage),
           label:`Merchant · stage · ${stage}`,
+          baseMediaIds:[],
+          fallbackId:'job/merchant/result/default'
+        });
+      }
+    }
+  }
+
+  const merchantRelationship=(cat.definitions.relationships??[]).find(item=>item.id==='merchant.supplier');
+  if(merchantRelationship){
+    for(const stage of MERCHANT_RELATIONSHIP_STAGES){
+      if(merchantRelationship.stages.includes(stage)){
+        add({
+          id:presentationIdForMerchantRelationshipStage(stage),
+          label:`Merchant · supplier · ${stage}`,
           baseMediaIds:[],
           fallbackId:'job/merchant/result/default'
         });
