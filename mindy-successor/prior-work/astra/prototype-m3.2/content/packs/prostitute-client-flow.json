@@ -461,6 +461,30 @@
               "transition": "record-result"
             }
           ]
+        },
+        {
+          "id": "stop",
+          "label": "Stop and close without work",
+          "text": "End this client flow now. The refusal is respected and ordinary voluntary work stays available.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "setQuestChoice",
+              "quest": "prostitute.client-flow",
+              "choice": "work-result",
+              "value": "declined"
+            },
+            {
+              "kind": "addQuestFact",
+              "quest": "prostitute.client-flow",
+              "fact": "work-result-recorded"
+            },
+            {
+              "kind": "advanceQuest",
+              "quest": "prostitute.client-flow",
+              "transition": "record-result"
+            }
+          ]
         }
       ]
     },
