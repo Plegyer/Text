@@ -4166,7 +4166,7 @@
     {
       "id": "secret-debt.shift",
       "label": "Bound work shift",
-      "description": "A compulsory work shift after the Secret Debt trap activates. Exact stat gains and debt economics remain Product-open.",
+      "description": "A compulsory shift carried out under the binding debt. The work belongs to this hidden career while progress earned in ordinary professions remains intact.",
       "cost": {
         "money": 0,
         "energy": 1
@@ -4190,7 +4190,7 @@
       "scenes": [
         {
           "id": "spring.default",
-          "text": "The compulsory shift follows a fixed order of assigned work. The route records only completed service until Product locks its exact progression gains.",
+          "text": "The compulsory shift follows an imposed routine: assigned work, close supervision, and no say over when the obligation is considered finished for the day.",
           "conditions": [],
           "media": [
             "stage.room"
@@ -4198,7 +4198,7 @@
         },
         {
           "id": "summer.default",
-          "text": "The summer shift is still compulsory work: the day is counted, but no unapproved stat package or debt reduction is invented here.",
+          "text": "Heat settles over the work, but the orders do not change. The shift is counted as service under the binding debt, separate from every ordinary profession.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -4211,7 +4211,7 @@
         },
         {
           "id": "autumn.default",
-          "text": "The autumn shift continues the bound career routine while preserving the same Product-open boundaries around gains, debt, and rewards.",
+          "text": "The season turns and the routine continues. Each completed shift belongs to the hidden debt career rather than replacing progress earned elsewhere.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -4224,7 +4224,7 @@
         },
         {
           "id": "winter.default",
-          "text": "The winter shift records completed bound work without converting historical draft numbers into current authority.",
+          "text": "Cold makes the work slower, not optional. The shift ends only after the assigned duties are accepted as complete.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -4918,7 +4918,7 @@
     {
       "id": "ending.secret-debt.paid-freedom",
       "title": "Paid Freedom",
-      "description": "The debt route has been resolved through the paid-freedom branch. Exact debt tuning and Meta reward remain Product-open.",
+      "description": "The obligation has been settled and the binding route finally releases its hold.",
       "conditions": [
         {
           "kind": "careerStage",
@@ -4933,7 +4933,7 @@
     {
       "id": "ending.secret-debt.bound-life",
       "title": "Bound Life",
-      "description": "The bound-life branch has reached its distinct resolved state. Its exact tenure threshold and Meta reward remain Product-open.",
+      "description": "This life closes inside the binding arrangement, as its own outcome rather than repayment or takeover.",
       "conditions": [
         {
           "kind": "careerStage",
@@ -4948,7 +4948,7 @@
     {
       "id": "ending.secret-debt.takeover",
       "title": "Takeover",
-      "description": "The takeover branch has reached its distinct resolved state after its route and external-condition gates. Exact build thresholds and Meta reward remain Product-open.",
+      "description": "The balance of power reverses: the route ends with control passing to the person it once bound.",
       "conditions": [
         {
           "kind": "careerStage",
