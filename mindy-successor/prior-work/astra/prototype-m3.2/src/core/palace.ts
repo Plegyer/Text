@@ -24,6 +24,21 @@ export function palaceUnlockSatisfied(hardWorkProgress:readonly string[]):boolea
   return palaceUnlockProgress(hardWorkProgress).unlocked;
 }
 
+
+/**
+ * Palace legacy-sensitive opportunities may safely derive from the published
+ * ordinary Hard Work ledger without depending on unpublished career internals.
+ * The returned career identities are evidence inputs, not Palace option IDs.
+ */
+export function palaceLegacyOpportunityCareers(hardWorkProgress:readonly string[]):OrdinaryHardWorkCareer[]{
+  const completedSet=new Set(hardWorkProgress);
+  return ordinaryHardWorkCareers.filter(c=>completedSet.has(c));
+}
+
+export const palaceDiscoveryPolicy={
+  showNumericHardWorkProgressBeforeUnlock:false
+} as const;
+
 export interface PalaceProgressionEvidence {
   hasPalaceShiftEvidence:boolean;
   hasBuildCheckEvidence:boolean;
