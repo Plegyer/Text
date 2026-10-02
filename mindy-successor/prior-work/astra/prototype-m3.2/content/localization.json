@@ -10645,6 +10645,54 @@
     "ending.ending.secret-debt.takeover.epilogue": {
       "ru": "Маршрут завершается захватом власти — отдельно от выплаты и сохранения подчинённого положения.",
       "en": "The route ends in takeover, separate from repayment and remaining bound."
+    },
+    "event.secret-debt.outcome.paid-freedom.title": {
+      "ru": "Долг, который наконец можно закрыть",
+      "en": "A debt that can finally close"
+    },
+    "event.secret-debt.outcome.paid-freedom.variant.default.text": {
+      "ru": "Запись о долге закрыта. Это ветка выплаты: уход сейчас не стирает прогресс, заработанный в обычных профессиях до ловушки.",
+      "en": "The debt ledger is clear. This is the repayment branch: leaving now does not erase progress earned in ordinary professions before the trap."
+    },
+    "event.secret-debt.outcome.paid-freedom.choice.leave.label": {
+      "ru": "Оставить связывающий долг позади",
+      "en": "Leave the binding debt behind"
+    },
+    "event.secret-debt.outcome.paid-freedom.choice.leave.text": {
+      "ru": "Ты выбираешь путь «Выкупленная свобода».",
+      "en": "You choose the Paid Freedom route."
+    },
+    "event.secret-debt.outcome.bound-life.title": {
+      "ru": "Жизнь внутри связи",
+      "en": "A life inside the bond"
+    },
+    "event.secret-debt.outcome.bound-life.variant.default.text": {
+      "ru": "Связанный маршрут достиг собственного рубежа обязательства. Это не выплата и не захват власти; точный порог стажа за этим фактом остаётся открытым Product-решением.",
+      "en": "The bound route has reached its own commitment milestone. This is not repayment and not takeover; the exact tenure threshold behind this fact remains Product-open."
+    },
+    "event.secret-debt.outcome.bound-life.choice.remain.label": {
+      "ru": "Принять исход «Связанная жизнь»",
+      "en": "Accept the Bound Life outcome"
+    },
+    "event.secret-debt.outcome.bound-life.choice.remain.text": {
+      "ru": "Ты выбираешь «Связанную жизнь» как самостоятельное разрешение маршрута.",
+      "en": "You choose Bound Life as its own route resolution."
+    },
+    "event.secret-debt.outcome.takeover.title": {
+      "ru": "Держателя можно заменить",
+      "en": "The holder can be replaced"
+    },
+    "event.secret-debt.outcome.takeover.variant.default.text": {
+      "ru": "Подготовка твоего маршрута совпала с внешним условием. Точный билд и система-источник этого условия остаются открытыми, но этот исход нельзя свести к одному числу смен.",
+      "en": "Your route preparation and an external condition have aligned. The exact build and outside-system source remain Product-open, but this outcome cannot be reduced to a shift count."
+    },
+    "event.secret-debt.outcome.takeover.choice.takeover.label": {
+      "ru": "Занять место держателя долга",
+      "en": "Take the holder's place"
+    },
+    "event.secret-debt.outcome.takeover.choice.takeover.text": {
+      "ru": "Ты выбираешь захват власти, а не выплату долга и не сохранение связанного положения.",
+      "en": "You choose Takeover rather than repayment or remaining bound."
     }
   }
 }
