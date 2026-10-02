@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 
-import {actionAvailable,applyEffects,dispatch,eventChance,parseSave} from '../src/core/engine.ts';
+import {actionAvailable,applyEffects,dispatch,eventChance,parseSave,resolveReactions} from '../src/core/engine.ts';
 import {ordinaryHardWorkCareers,type Catalog,type Save} from '../src/core/schema.ts';
 import {presentationIdForActionResult,presentationIdForEnding,presentationIdForEvent,presentationSlots} from '../src/core/presentation.ts';
 import {
@@ -23,6 +23,8 @@ import {
   secretDebtIsBound,
   secretDebtPaidSchoolLessons,
   secretDebtTakeoverNumericGatesReady,
+  secretDebtShiftStatGainsReady,
+  secretDebtShiftTuningReady,
   secretDebtTakeoverStructuralReady,
   secretDebtWageDefinition,
   secretDebtWagePolicyReady
@@ -104,8 +106,11 @@ test('D19 constants are locked while balance-owned numbers remain explicit seams
   assert.deepEqual(SECRET_DEBT_WAGE_INPUTS,['strength','endurance','lust']);
   assert.deepEqual(SECRET_DEBT_WAGE_POLICY,{base:null,strengthFactor:null,enduranceFactor:null,lustFactor:null});
   assert.deepEqual(SECRET_DEBT_TAKEOVER_GATES,{statThresholds:null,lustThreshold:null});
+  assert.equal(secretDebtShiftStatGainsReady(),false);
   assert.equal(secretDebtWagePolicyReady(),false);
+  assert.equal(secretDebtShiftTuningReady(),false);
   assert.equal(secretDebtWageDefinition(),undefined);
+  assert.equal(actionAvailable(shift,directBound(started()),secretCatalog),false,'untuned paid shift must not silently run for free');
   assert.equal(secretDebtTakeoverNumericGatesReady(),false);
 
   for(const ending of catalog.definitions.endings.filter(ending=>ending.id.startsWith('ending.secret-debt.'))){
@@ -279,16 +284,22 @@ test('repayment is one explicit all-at-once 20000 action that releases the profe
 
 test('50 daytime shifts unlock Bound Life eligibility but do not release the binding lock',()=>{
   let s=directBound(started());
-  s=applyEffects(s,[{kind:'incrementCareerCounter',career:'secret-debt',counter:'completed_shifts',amount:49}],secretCatalog);
-  s=dispatch(s,{type:'action',id:'secret-debt.shift'},secretCatalog);
+  s=applyEffects(s,[{kind:'incrementCareerCounter',career:'secret-debt',counter:'completed_shifts',amount:50}],secretCatalog);
   assert.equal(s.run.progression.careers['secret-debt']?.counters.completed_shifts,50);
+
+  // Any normal registered action can refresh ending eligibility; the shift itself
+  // remains correctly gated until Product locks its wage/stat tuning.
+  s.run.resources.money=10000;
+  s=dispatch(s,{type:'schoolLesson',id:'school.course.literacy_and_numbers'},secretCatalog);
   assert.ok(s.run.endings.eligible.includes('ending.secret-debt.bound-life'));
   assert.equal(s.run.progression.careers['secret-debt']?.stage,'bound');
   assert.equal(secretDebtIsBound(s),true);
-  assert.equal(s.run.pending?.eventId,'secret-debt.bound-life-milestone');
 
+  s=resolveReactions(s,[{kind:'careerCounterChanged',career:'secret-debt',counter:'completed_shifts',from:49,to:50}],secretCatalog).state;
+  assert.equal(s.run.pending?.eventId,'secret-debt.bound-life-milestone');
   s=dispatch(s,{type:'choice',id:'continue'},secretCatalog);
   assert.equal(s.run.progression.careers['secret-debt']?.stage,'bound');
+
   const lumber=catalog.definitions.actions.find(action=>action.id==='lumber.shift')!;
   assert.equal(actionAvailable(lumber,s,secretCatalog),false);
 
