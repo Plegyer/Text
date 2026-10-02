@@ -15,6 +15,7 @@ import {
   SECRET_DEBT_REQUIRED_PAID_SCHOOL_LESSONS,
   SECRET_DEBT_SHIFT_STAT_GAINS,
   SECRET_DEBT_TAKEOVER_GATES,
+  SECRET_DEBT_WAGE_INPUTS,
   SECRET_DEBT_WAGE_POLICY,
   secretDebtAcceptanceDay,
   secretDebtBlocksSourceDomain,
@@ -23,6 +24,7 @@ import {
   secretDebtPaidSchoolLessons,
   secretDebtTakeoverNumericGatesReady,
   secretDebtTakeoverStructuralReady,
+  secretDebtWageDefinition,
   secretDebtWagePolicyReady
 } from '../src/core/secretDebt.ts';
 import {catalog,started} from './helpers.ts';
@@ -99,9 +101,11 @@ test('D19 constants are locked while balance-owned numbers remain explicit seams
   assert.equal(shift.wage,undefined,'exact wage coefficients remain balance-owned');
   assert.equal(shift.seasonal,undefined,'exact shift stat gains remain balance-owned');
   assert.deepEqual(SECRET_DEBT_SHIFT_STAT_GAINS,{strength:null,endurance:null,sexuality:null});
+  assert.deepEqual(SECRET_DEBT_WAGE_INPUTS,['strength','endurance','lust']);
   assert.deepEqual(SECRET_DEBT_WAGE_POLICY,{base:null,strengthFactor:null,enduranceFactor:null,lustFactor:null});
   assert.deepEqual(SECRET_DEBT_TAKEOVER_GATES,{statThresholds:null,lustThreshold:null});
   assert.equal(secretDebtWagePolicyReady(),false);
+  assert.equal(secretDebtWageDefinition(),undefined);
   assert.equal(secretDebtTakeoverNumericGatesReady(),false);
 
   for(const ending of catalog.definitions.endings.filter(ending=>ending.id.startsWith('ending.secret-debt.'))){
