@@ -674,6 +674,10 @@ export const MERCHANT_ADVANCED_STATUS_IDS=[
   'outcome-ready'
 ] as const;
 
+export const MERCHANT_PUBLIC_ENDING_IDS=[
+  'ending.merchant.hard-work'
+] as const;
+
 export function presentationIdForMerchantStage(stage:string){
   return `job/merchant/stage/${clean(stage)}`;
 }
