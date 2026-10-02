@@ -50,9 +50,9 @@
       "delivery": {
         "policy": "live"
       },
-      "cooldownDays": 1,
+      "cooldownDays": 0,
       "variantCooldownDays": 0,
-      "maxShows": 8,
+      "maxShows": 1,
       "conditions": [
         {
           "kind": "any",

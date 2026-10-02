@@ -85,12 +85,6 @@
               "kind": "addRelationshipFact",
               "relationship": "assassin.handler",
               "fact": "introduced-at-work"
-            },
-            {
-              "kind": "incrementRelationshipCounter",
-              "relationship": "assassin.handler",
-              "counter": "work-meetings",
-              "amount": 1
             }
           ]
         }
@@ -132,13 +126,6 @@
           "relationship": "assassin.handler",
           "fact": "introduced-at-work",
           "present": true
-        },
-        {
-          "kind": "relationshipCounter",
-          "relationship": "assassin.handler",
-          "counter": "work-meetings",
-          "op": "gte",
-          "value": 1
         }
       ],
       "variants": [
@@ -156,12 +143,6 @@
           "text": "Continue professional coordination.",
           "conditions": [],
           "effects": [
-            {
-              "kind": "incrementRelationshipCounter",
-              "relationship": "assassin.handler",
-              "counter": "work-meetings",
-              "amount": 1
-            },
             {
               "kind": "addCareerFact",
               "career": "assassin",

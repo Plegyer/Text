@@ -465,9 +465,9 @@
       "delivery": {
         "policy": "live"
       },
-      "cooldownDays": 1,
+      "cooldownDays": 0,
       "variantCooldownDays": 0,
-      "maxShows": 12,
+      "maxShows": 1,
       "conditions": [
         {
           "kind": "careerStage",
@@ -475,14 +475,14 @@
           "stage": "trusted-blade"
         },
         {
+          "kind": "careerFact",
+          "career": "assassin",
+          "fact": "veteran-ready",
+          "present": true
+        },
+        {
           "kind": "any",
           "conditions": [
-            {
-              "kind": "careerFact",
-              "career": "assassin",
-              "fact": "veteran-ready",
-              "present": true
-            },
             {
               "kind": "careerFact",
               "career": "assassin",
@@ -581,13 +581,6 @@
               "fact": "outcome-ready"
             }
           ]
-        },
-        {
-          "id": "defer",
-          "label": "Keep all ready routes open",
-          "text": "Keep all ready routes open.",
-          "conditions": [],
-          "effects": []
         }
       ]
     },
@@ -612,14 +605,20 @@
       "delivery": {
         "policy": "live"
       },
-      "cooldownDays": 1,
+      "cooldownDays": 0,
       "variantCooldownDays": 0,
-      "maxShows": 12,
+      "maxShows": 1,
       "conditions": [
         {
           "kind": "careerStage",
           "career": "assassin",
           "stage": "trusted-blade"
+        },
+        {
+          "kind": "careerFact",
+          "career": "assassin",
+          "fact": "veteran-ready",
+          "present": true
         },
         {
           "kind": "any",
@@ -648,6 +647,31 @@
         }
       ],
       "choices": [
+        {
+          "id": "veteran",
+          "label": "Choose Veteran practice",
+          "text": "Keep the career grounded in sustained ordinary professional practice.",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "assassin",
+              "fact": "veteran-ready",
+              "present": true
+            }
+          ],
+          "effects": [
+            {
+              "kind": "advanceCareer",
+              "career": "assassin",
+              "transition": "branch-veteran"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "assassin",
+              "fact": "outcome-ready"
+            }
+          ]
+        },
         {
           "id": "handler-takeover",
           "label": "Take Handler Takeover",
@@ -697,13 +721,6 @@
               "fact": "outcome-ready"
             }
           ]
-        },
-        {
-          "id": "defer",
-          "label": "Keep network/refusal readiness open",
-          "text": "Keep network/refusal readiness open.",
-          "conditions": [],
-          "effects": []
         }
       ]
     },

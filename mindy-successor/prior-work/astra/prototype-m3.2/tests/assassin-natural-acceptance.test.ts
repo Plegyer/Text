@@ -35,8 +35,8 @@ const preferred:Record<string,string>={
   'assassin.routes.turncoat-ready':'record',
   'assassin.routes.handler-takeover-ready':'record',
   'assassin.routes.refusal-evidence':'record',
-  'assassin.routes.choose-practice':'defer',
-  'assassin.routes.choose-network':'defer',
+  'assassin.routes.choose-practice':'veteran',
+  'assassin.routes.choose-network':'veteran',
   'assassin.routes.outcome-ready':'continue',
   'assassin.activity.infiltration-return':'record'
 };
@@ -155,8 +155,8 @@ test('clean Assassin run exercises Year-3 fallback, lifecycle, four seasons, ref
   assert.deepEqual([...seenSeasons].sort(),['autumn','spring','summer','winter']);
   const assassin=s.run.progression.careers.assassin;
   assert.equal(assassin.counters.completed_shifts,50);
-  assert.equal(assassin.stage,'trusted-blade',
-    'late readiness must not force a route while route selection is deferred');
+  assert.ok(['trusted-blade','outcome-ready'].includes(assassin.stage),
+    'Hard Work progress must remain valid regardless of whether the optional Veteran branch has resolved');
 
   for(const fact of [
     'season-spring-worked','season-summer-worked','season-autumn-worked','season-winter-worked',

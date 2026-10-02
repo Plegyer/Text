@@ -90,3 +90,27 @@ test('open Product decisions remain open instead of being encoded as accidental 
  assert.equal(produced.length,0,'exact Refusal Chain promotion rule is still Product-open');
  assert.deepEqual(definitions.endings.filter((e:any)=>e.id.startsWith('ending.assassin.')).map((e:any)=>e.id),['ending.assassin.hard-work']);
 });
+
+
+test('Assassin removes prep-only numeric progression guesses while reusing shipped Activity mechanics',()=>{
+ const handler=definitions.relationships.find((x:any)=>x.id==='assassin.handler');
+ const trust=handler.transitions.find((x:any)=>x.id==='build-trust');
+ assert.equal(trust.conditions.some((c:any)=>c.kind==='relationshipCounter'),false);
+
+ const contract=packs.find((p:any)=>p.id==='assassin.contract');
+ assert.equal(contract.events.find((e:any)=>e.id==='assassin.contract.offer').maxShows,1);
+
+ const routes=packs.find((p:any)=>p.id==='assassin.routes');
+ for(const id of ['assassin.routes.choose-practice','assassin.routes.choose-network']){
+  const e=routes.events.find((x:any)=>x.id===id);
+  assert.equal(e.maxShows,1,id);
+  assert.equal(e.choices.some((c:any)=>c.id==='defer'),false,id);
+ }
+
+ const activity=definitions.activities.find((x:any)=>x.id==='assassin.infiltration');
+ const hunter=definitions.activities.find((x:any)=>x.id==='hunter.expedition');
+ assert.equal(activity.entryEnergyCost,hunter.entryEnergyCost);
+ assert.deepEqual(activity.adapterConfig,hunter.adapterConfig);
+ assert.equal(activity.timePolicy,hunter.timePolicy);
+ assert.equal(activity.failurePolicy,hunter.failurePolicy);
+});

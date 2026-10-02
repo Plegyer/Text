@@ -7172,13 +7172,6 @@
               "relationship": "assassin.handler",
               "fact": "introduced-at-work",
               "present": true
-            },
-            {
-              "kind": "relationshipCounter",
-              "relationship": "assassin.handler",
-              "counter": "work-meetings",
-              "op": "gte",
-              "value": 2
             }
           ],
           "effects": [
