@@ -1,34 +1,37 @@
 # CURRENT CHAT6 TASK POINTER
 
-Status: **ACTIVE — PALACE AUTHORED SAFE CONTENT v5**
+Status: **ACTIVE — PALACE NATURAL 10/10 + DAY-1 ENTRY ACCEPTANCE PREP v7**
 Owner: Chat 6
 
-Completed safe local prep:
-`chat6/palace-safe-prep-v4@302c5cd636b2389edd05de2b4e50d5df8f88133d`
+Completed:
+- safe prep v4;
+- authored safe v5;
+- integration manifest v6 `29def63f348ffd0bf46c16a7a3c7292b0877db9a`.
 
-Create fresh branch:
-`chat6/palace-authored-safe-v5`
-from current main `426ec9146716e1246d6b7bfdd4a570ef2fcb0a54`.
+Assassin is shipped; all ten ordinary careers now exist on main.
+
+Create `chat6/palace-natural-10of10-acceptance-v7` from fresh main.
 
 ## Assignment
 
-Expand only Palace-local authored content that does not depend on unresolved Prince mechanics or 3-vs-6 progression topology:
+Re-audit actual shipped roster:
+- exact 10 ordinary careers;
+- one real Hard Work ending each;
+- all remain completed_shifts >= 50;
+- Secret Debt excluded;
+- Palace excluded.
 
-- full RU/EN Day-1 invitation scene and acceptance/reveal flow;
-- Palace entry / first-day orientation copy;
-- professional patron relationship intro + trust/conflict/refusal-safe scenes;
-- rival relationship intro + cooperation/conflict scenes;
-- servant/official contact intro + practical-help/refusal-safe scenes;
-- optional romance invitation/decline-safe scenes, never required;
-- voluntary Palace Night work/social choice copy with no forced-night ownership;
-- optional reactions to already-shipped legacy item capabilities, never entry gates;
-- True Ending readiness copy using fixed all-12 >=91 semantics;
-- cap-200 reward explanation explicitly saying "maximum becomes 200", never "stats double".
+Prepare future D23 acceptance fixtures/tests:
+- 9/10 permanent + 9 active -> no Palace;
+- 10/10 + 0 active -> no Palace;
+- 10/10 + 9 active -> no Palace;
+- 10/10 + 10 active -> deterministic Day-1 invitation eligibility;
+- duplicates/Secret Debt cannot substitute;
+- invitation acceptance -> run-local `palace.access-granted`;
+- reload preserves pending invitation/access exactly once.
 
-Keep everything Palace-local and SAFE_PREP_UNBOUND until shared D23 seam exists.
-No final Prince victory mechanics.
-No final 3-vs-6 stage topology.
-No shared Meta/Save/cap/New Start code.
-Add focused localization/identity/boundary tests only.
+Use Palace v4-v6 as source. If shared D23 API is not yet landed, keep dependent checks as fixture/contract.
+Do not choose Prince mechanics or Palace 3-vs-6 topology.
+Do not modify shared Meta/Save/cap implementation.
 No full CI.
-Freeze SHA and report READY_FOR_CHAT2_OR_LEADER.
+Freeze SHA and report `READY_FOR_CHAT2_OR_LEADER`.
