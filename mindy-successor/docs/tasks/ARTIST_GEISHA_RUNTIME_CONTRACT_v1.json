@@ -348,5 +348,13 @@
     "late-route readiness may coexist and does not auto-commit an ending",
     "only ending.artist-geisha.hard-work is a public Artist/Geisha ending in this runtime wave",
     "no Assassin, Prostitute, Palace, new curriculum, universal reputation meter, generic patron system, or generic contest engine is invented without exact Git authority"
-  ]
+  ],
+  "night": {
+    "choices": [
+      "artist-geisha.night.rehearsal",
+      "artist-geisha.night.salon",
+      "artist-geisha.night.mentor-review"
+    ],
+    "rule": "All Artist/Geisha night opportunities use the existing single voluntary Night choice and after-choice intercept. They compete with School night study without changing NightFlow semantics, lodging payment, or next-day Energy rules."
+  }
 }
