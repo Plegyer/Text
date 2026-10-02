@@ -400,9 +400,9 @@
       "task": "C3-244",
       "section": "legacy",
       "contentKey": "legacy.no-public-fact-invention",
-      "status": "PENDING_RUNTIME_ID",
-      "targetKind": "futurePalaceConsumer",
-      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "status": "NO_AUTHORITY_NOT_BINDABLE",
+      "targetKind": "unownedOrForbiddenAssumption",
+      "runtimeConsumerId": null,
       "sourceInputs": [],
       "metaCondition": null
     },

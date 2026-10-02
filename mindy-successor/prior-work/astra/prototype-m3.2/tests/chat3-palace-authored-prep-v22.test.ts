@@ -51,7 +51,7 @@ test('C3-244 all ten ordinary careers use exact metaHardWork legacy inputs and n
     assert.deepEqual(e.sourceInputs,[`metaHardWork:${e.metaCondition.career}`]);
     assert.equal(bind(e.contentKey).status,'PENDING_RUNTIME_ID');
   }
-  assert.equal(bind('legacy.no-public-fact-invention').status,'PENDING_RUNTIME_ID');
+  assert.equal(bind('legacy.no-public-fact-invention').status,'NO_AUTHORITY_NOT_BINDABLE');
 });
 
 test('C3-245 provisional Palace stages remain authored-only',()=>{
