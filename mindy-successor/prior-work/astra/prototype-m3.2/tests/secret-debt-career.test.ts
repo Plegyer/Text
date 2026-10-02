@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 
-import {actionAvailable,applyEffects,dispatch,eligible,parseSave,resolveReactions} from '../src/core/engine.ts';
+import {actionAvailable,actionCost,applyEffects,dispatch,eligible,parseSave,resolveReactions} from '../src/core/engine.ts';
 import {ordinaryHardWorkCareers,type Save} from '../src/core/schema.ts';
 import {presentationIdForActionResult,presentationIdForEnding,presentationIdForEvent,presentationSlots} from '../src/core/presentation.ts';
 import {
@@ -310,10 +310,12 @@ test('repayment is one all-at-once 20000 action and releases the ordinary career
   let s=directBound(started());
   const repay=catalog.definitions.actions.find(action=>action.id==='secret-debt.repay')!;
   s.run.resources.money=19_999;
-  assert.equal(actionAvailable(repay,s,catalog),true,'route gate is open even when the player cannot yet afford the full payment');
-  assert.throws(()=>dispatch(s,{type:'action',id:'secret-debt.repay'},catalog),/денег|money|энергии/i);
+  assert.equal(actionCost(repay,s),20_000,'Secret Debt repayment is never discounted or partial');
+  assert.equal(actionAvailable(repay,s,catalog),false,'full 20000 must be on hand before repayment is available');
+  assert.throws(()=>dispatch(s,{type:'action',id:'secret-debt.repay'},catalog),/Условия действия/);
 
   s.run.resources.money=20_000;
+  assert.equal(actionCost(repay,s),20_000);
   assert.equal(actionAvailable(repay,s,catalog),true);
   s=dispatch(s,{type:'action',id:'secret-debt.repay'},catalog);
 
