@@ -644,6 +644,11 @@ export const MERCHANT_TRADE_STATUS_IDS=[
   'risk-accepted'
 ] as const;
 
+export const MERCHANT_POVERTY_STATUS_IDS=[
+  'low-liquidity-handled',
+  'poverty-response-recorded'
+] as const;
+
 export function presentationIdForMerchantStage(stage:string){
   return `job/merchant/stage/${clean(stage)}`;
 }
@@ -961,6 +966,21 @@ export function presentationSlots(cat:Catalog):PresentationSlot[]{
       add({
         id:presentationIdForMerchantState(stateId),
         label:`Merchant · trade state · ${stateId}`,
+        baseMediaIds:[],
+        fallbackId:'job/merchant/result/default'
+      });
+    }
+  }
+
+  const merchantPovertyStateBackings:Record<(typeof MERCHANT_POVERTY_STATUS_IDS)[number],boolean>={
+    'low-liquidity-handled':merchantRuntimeText.includes('low-liquidity-handled'),
+    'poverty-response-recorded':merchantRuntimeText.includes('poverty-response-recorded')
+  };
+  for(const stateId of MERCHANT_POVERTY_STATUS_IDS){
+    if(merchantPovertyStateBackings[stateId]){
+      add({
+        id:presentationIdForMerchantState(stateId),
+        label:`Merchant · liquidity state · ${stateId}`,
         baseMediaIds:[],
         fallbackId:'job/merchant/result/default'
       });
