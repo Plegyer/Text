@@ -9797,6 +9797,274 @@
     "presentation.static.guard.event.guard-city-poverty-response-cheap-room.caption": {
       "ru": "Ответ стражи: опыт дешёвого жилья",
       "en": "Guard response: cheap-lodging experience"
+    },
+    "action.merchant.shift.scene.spring.default.text": {
+      "ru": "После зимы рынок открывается не одним рывком: одни прилавки уже работают, другие ещё ждут поставок. Ты сверяешь обещанные сроки с тем, что действительно приехало, и не выдаёшь ранний спрос за гарантированную прибыль.\n\nВесенняя дорога снова проходима, но следы размытия делают обычную доставку менее предсказуемой. Ты заранее уточняешь окно прибытия и оставляешь покупателю понятный запас времени вместо громкого обещания.\n\nПервая крупная весенняя партия выглядит удачно, пока записи не показывают разницу между количеством на накладной и тем, что дошло до прилавка. Ты сначала приводишь записи в порядок, а уже потом обсуждаешь следующую сделку.",
+      "en": "After winter the market does not reopen all at once: some stalls are active while others are still waiting for deliveries. You compare promised timing with what actually arrived and do not treat early demand as guaranteed profit.\n\nThe spring road is open again, but washouts make an ordinary delivery less predictable. You confirm an arrival window in advance and give the buyer a clear margin of time instead of making an impressive promise.\n\nThe first large spring lot looks promising until the records show a difference between the manifest count and what reached the stall. You reconcile the notes first and only then discuss the next trade."
+    },
+    "action.merchant.shift.scene.summer.default.text": {
+      "ru": "Летняя толпа создаёт быстрый спрос, но не каждый покупатель ищет одно и то же. Ты задаёшь короткие вопросы о сроках и нужном объёме, чтобы не превращать оживлённый рынок в цепочку случайных уступок.\n\nВ жару часть товара нельзя держать бесконечно. Ты отмечаешь, что должно уйти сегодня, что выдержит до завтра, а что лучше не обещать вовсе, если доставка уже выходит за безопасное окно.\n\nУ прилавка одновременно спорят о цене, сроке и качестве. Вместо общей скидки ты разделяешь вопросы: одному покупателю важна дата, другому состояние партии, третьему понятные условия возврата.",
+      "en": "A summer crowd creates fast demand, but not every buyer wants the same thing. You ask short questions about timing and needed quantity so a busy market does not turn into a chain of random concessions.\n\nIn the heat, some goods cannot be held indefinitely. You mark what must move today, what can wait until tomorrow, and what should not be promised at all when delivery already falls outside a safe window.\n\nAt the stall, people argue about price, timing, and condition at the same time. Instead of offering one broad discount, you separate the questions: one buyer needs a date, another needs lot condition, and another needs clear return terms."
+    },
+    "action.merchant.shift.scene.autumn.default.text": {
+      "ru": "Осенний избыток выглядит одинаково только издалека. Ты сравниваешь партии по состоянию, сроку хранения и надёжности поставщика, не предполагая, что большой урожай автоматически делает любую закупку выгодной.\n\nПеред холодами записи о хранении становятся важнее красивой витрины. Ты отделяешь товар, который можно спокойно держать дольше, от того, что лучше продать или вернуть раньше, и фиксируешь причину.\n\nДва поставщика предлагают похожую партию, но один точно держит сроки, а другой обещает больший объём без подтверждения. Ты сравниваешь не только предложение, но и историю исполнения обязательств.",
+      "en": "Autumn abundance looks uniform only from a distance. You compare lots by condition, storage time, and supplier reliability without assuming that a large harvest automatically makes every purchase worthwhile.\n\nBefore the cold season, storage notes matter more than an attractive display. You separate goods that can safely be held longer from those better sold or returned earlier, and record the reason.\n\nTwo suppliers offer similar lots, but one reliably keeps timing while the other promises more volume without confirmation. You compare not only the offer but also the history of meeting obligations."
+    },
+    "action.merchant.shift.scene.winter.default.text": {
+      "ru": "Зимой редкий товар быстро собирает очередь, и именно поэтому ты не называешь нехватку доказательством любой цены. Ты отмечаешь доступный объём, уже данные обещания и тех, кому нужна предсказуемость поставки.\n\nЗакрытый участок дороги меняет обычную доставку: часть заказов можно перенести, часть разделить, а часть честнее отменить. Ты сообщаешь ограничения до того, как задержка превращается в конфликт.\n\nПри ограниченном запасе постоянные покупатели просят сохранить привычный объём. Ты уточняешь реальные потребности и распределяешь обещания так, чтобы дефицит не превращался в соревнование громких заявлений.",
+      "en": "In winter, scarce goods quickly draw a queue, which is exactly why you do not treat scarcity as proof of any price. You record available quantity, promises already made, and buyers who need predictable supply.\n\nA closed stretch of road changes an ordinary delivery: some orders can be delayed, some split, and some are better cancelled honestly. You explain the constraint before the delay turns into a dispute.\n\nWith limited stock, regular buyers ask for their usual quantity. You clarify actual needs and distribute commitments so scarcity does not become a contest of loud promises."
+    },
+    "ending.merchant.hard-work.title": {
+      "ru": "Merchant: упорный труд",
+      "en": "Merchant Hard Work"
+    },
+    "ending.merchant.hard-work.description": {
+      "ru": "Публичная Merchant-концовка этой волны остаётся обычным Hard Work за устойчивую карьеру. Продвинутые маршруты добавляют идентичность и выбор, но не создают новые публичные ending IDs.",
+      "en": "The public Merchant ending in this wave remains the ordinary Hard Work outcome for a sustained career. Advanced routes add identity and choice without creating new public ending IDs."
+    },
+    "ending.merchant.hard-work.epilogue": {
+      "ru": "Устойчивая торговая карьера завершена как путь Hard Work.",
+      "en": "Hard Work completion recorded for Merchant."
+    },
+    "event.merchant.career.first-shift.title": {
+      "ru": "Первая завершённая смена Merchant",
+      "en": "The first completed Merchant shift opens independent trading"
+    },
+    "event.merchant.career.first-shift.variant.default.text": {
+      "ru": "Торговая ситуация: Первая завершённая смена Merchant.",
+      "en": "The first completed Merchant shift opens independent trading. Merchant progression remains separate from ending commitment."
+    },
+    "event.merchant.career.first-shift.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Take independent responsibility"
+    },
+    "event.merchant.career.first-shift.choice.continue.text": {
+      "ru": "Выбор продолжает эту торговую ситуацию без новой системы.",
+      "en": "Move beyond stall-hand work while preserving the ordinary shift contract."
+    },
+    "event.merchant.career.networked.title": {
+      "ru": "Сетевая торговая работа",
+      "en": "Repeated ordinary work supports a networked Merchant role"
+    },
+    "event.merchant.career.networked.variant.default.text": {
+      "ru": "Торговая ситуация: Сетевая торговая работа.",
+      "en": "Repeated ordinary work supports a networked Merchant role. Merchant progression remains separate from ending commitment."
+    },
+    "event.merchant.career.networked.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Maintain several working contacts"
+    },
+    "event.merchant.career.networked.choice.continue.text": {
+      "ru": "Выбор продолжает эту торговую ситуацию без новой системы.",
+      "en": "Enter the networked stage without forcing an advanced route."
+    },
+    "event.merchant.career.seasonal-breadth.title": {
+      "ru": "Полный сезонный торговый цикл",
+      "en": "A full seasonal trade cycle is recorded"
+    },
+    "event.merchant.career.seasonal-breadth.variant.default.text": {
+      "ru": "Торговая ситуация: Полный сезонный торговый цикл.",
+      "en": "A full seasonal trade cycle is recorded. Merchant progression remains separate from ending commitment."
+    },
+    "event.merchant.career.seasonal-breadth.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Record seasonal breadth"
+    },
+    "event.merchant.career.seasonal-breadth.choice.record.text": {
+      "ru": "Выбор продолжает эту торговую ситуацию без новой системы.",
+      "en": "Keep one Merchant-local fact that all four shipped seasons have been worked."
+    },
+    "event.merchant.career.veteran-ready.title": {
+      "ru": "Готовность Veteran Merchant",
+      "en": "Veteran Merchant readiness is available"
+    },
+    "event.merchant.career.veteran-ready.variant.default.text": {
+      "ru": "Veteran Merchant узнаётся по широте обычной работы: разные сезоны, поставки, записи и повторяемые решения без обязательного перехода в одну из сложных сетевых ролей.",
+      "en": "A Veteran Merchant is defined by breadth of ordinary work across seasons, deliveries, records, and repeatable decisions without requiring commitment to one of the advanced network routes."
+    },
+    "event.merchant.career.veteran-ready.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Record Veteran readiness"
+    },
+    "event.merchant.career.veteran-ready.choice.record.text": {
+      "ru": "Veteran Merchant узнаётся по широте обычной работы: разные сезоны, поставки, записи и повторяемые решения без обязательного перехода в одну из сложных сетевых ролей.",
+      "en": "Keep ordinary-career veteran readiness alongside advanced Merchant routes."
+    },
+    "event.merchant.career.choose-route.title": {
+      "ru": "Выбор позднего маршрута Merchant",
+      "en": "Several Merchant career routes can remain ready together"
+    },
+    "event.merchant.career.choose-route.variant.default.text": {
+      "ru": "Merchant House означает устойчивую работу нескольких договорённостей, а не бесконечный капитал. Важны повторяемые записи, понятные сроки и способность пережить одну сорванную поставку без распада всей сети.\n\nСеть ценна не количеством имён, а тем, что каждый контакт отвечает за понятный участок работы. Ты знаешь, у кого уточнить поставку, где проверить запись и когда искать запасной маршрут.\n\nСтабильная логистика начинается с обещаний, которые можно выполнить: объём, окно доставки, резервный вариант. Merchant House не превращает мир в таблицу цен, а делает сложную цепочку понятнее.\n\nХорошие записи связывают поставщика, накладную и фактическую доставку, но не заменяют решение игрока. Они показывают расхождение и последствия, оставляя выбор следующего шага открытым.\n\nГотовность Merchant House означает, что устойчивые операции уже доказаны конкретной работой, доверием и проверками. Это карьерная готовность, а не автоматическая концовка или обещание награды.\n\nДефицит создаёт возможность и одновременно повышает цену ошибки. Ты можешь ждать, резервировать товар или принимать узкий риск, но нехватка сама по себе не доказывает, что любое решение выгодно.\n\nРиск здесь конкретный: срок, маршрут, состояние товара или неполная информация. Ты можешь сознательно принять один из них, если понимаешь, что именно остаётся неопределённым.\n\nСерый маршрут — это выбор работать при неоднозначных ограничениях и неполной информации, а не лицензия на любую незаконную торговлю. Текст не создаёт глобальную систему преступления или фракций.\n\nSpeculator / Smuggler не получает скрытую шкалу добра или зла. Разница маршрута описывается через риск, дефицит, проверку источника и готовность нести последствия конкретного решения.\n\nГотовность к этому маршруту показывает опыт работы с нехваткой, оценкой и осознанным риском. Она не фиксирует преступление, не закрывает обычную торговлю и не становится концовкой сама по себе.\n\nЕсли несколько маршрутов готовы одновременно, можно ничего не выбирать сразу. Обычная Merchant-работа остаётся доступной, а готовность сохраняет смысл как возможность, а не приказ.\n\nMerchant House, Speculator / Smuggler и Patron of Routes описывают карьерную готовность и направление роли. Ни одно из этих состояний само по себе не завершает жизнь и не выдаёт отдельную награду.",
+      "en": "Merchant House means stable operation across several agreements, not unlimited capital. What matters is repeatable records, clear timing, and the ability to absorb one failed delivery without the whole network collapsing.\n\nA network is valuable not because of the number of names in it, but because each contact covers a clear part of the work. You know who can confirm supply, where a record can be checked, and when to seek a backup route.\n\nStable logistics begins with promises that can actually be kept: quantity, delivery window, and a backup option. Merchant House does not turn the world into a price spreadsheet; it makes a complex chain easier to understand.\n\nGood records connect supplier, manifest, and actual delivery without replacing the player's decision. They expose discrepancies and consequences while leaving the next step open.\n\nMerchant House readiness means stable operations have already been demonstrated through concrete work, trust, and checks. It is career readiness, not an automatic ending or a promised reward.\n\nScarcity creates opportunity while also increasing the cost of a mistake. You may wait, reserve goods, or accept a narrow risk, but shortage alone does not prove that any decision is profitable.\n\nRisk here is concrete: timing, route, goods condition, or incomplete information. You can deliberately accept one of these when you understand exactly what remains uncertain.\n\nA grey route is a choice to operate under ambiguous constraints and incomplete information, not a license for arbitrary illegal trade. The text creates no global crime or faction system.\n\nSpeculator / Smuggler receives no hidden good-or-evil meter. The route is distinguished through risk, scarcity, source verification, and willingness to carry the consequences of a specific decision.\n\nReadiness for this route reflects experience with shortages, appraisal, and deliberate risk. It records no crime, does not close ordinary trade, and does not become an ending by itself.\n\nIf several routes are ready at the same time, you can choose none of them immediately. Ordinary Merchant work remains available, and readiness stays a possibility rather than an instruction.\n\nMerchant House, Speculator / Smuggler, and Patron of Routes describe career readiness and role direction. None of these states completes the life or grants a separate reward by itself."
+    },
+    "event.merchant.career.choose-route.choice.veteran.label": {
+      "ru": "Выбрать Veteran",
+      "en": "Take Veteran"
+    },
+    "event.merchant.career.choose-route.choice.veteran.text": {
+      "ru": "Merchant House означает устойчивую работу нескольких договорённостей, а не бесконечный капитал. Важны повторяемые записи, понятные сроки и способность пережить одну сорванную поставку без распада всей сети.",
+      "en": "Choose seasoned ordinary trade."
+    },
+    "event.merchant.career.choose-route.choice.merchant-house.label": {
+      "ru": "Выбрать Merchant House",
+      "en": "Take Merchant House"
+    },
+    "event.merchant.career.choose-route.choice.merchant-house.text": {
+      "ru": "Сеть ценна не количеством имён, а тем, что каждый контакт отвечает за понятный участок работы. Ты знаешь, у кого уточнить поставку, где проверить запись и когда искать запасной маршрут.",
+      "en": "Choose the records, supplier, and logistics route."
+    },
+    "event.merchant.career.choose-route.choice.speculator-smuggler.label": {
+      "ru": "Выбрать Speculator / Smuggler",
+      "en": "Take Speculator / Smuggler"
+    },
+    "event.merchant.career.choose-route.choice.speculator-smuggler.text": {
+      "ru": "Стабильная логистика начинается с обещаний, которые можно выполнить: объём, окно доставки, резервный вариант. Merchant House не превращает мир в таблицу цен, а делает сложную цепочку понятнее.",
+      "en": "Choose typed high-risk trade readiness without a morality score or generic law system."
+    },
+    "event.merchant.career.choose-route.choice.defer.label": {
+      "ru": "Оставить путь открытым",
+      "en": "Keep routes open"
+    },
+    "event.merchant.career.choose-route.choice.defer.text": {
+      "ru": "Хорошие записи связывают поставщика, накладную и фактическую доставку, но не заменяют решение игрока. Они показывают расхождение и последствия, оставляя выбор следующего шага открытым.",
+      "en": "Leave all ready Merchant routes uncommitted."
+    },
+    "event.merchant.career.choose-patron.title": {
+      "ru": "Готовность Patron of Routes",
+      "en": "Patron of Routes readiness remains a separate multi-system route"
+    },
+    "event.merchant.career.choose-patron.variant.default.text": {
+      "ru": "Patron of Routes — это результат нескольких подтверждённых связей между уже существующими системами. Его смысл в устойчивой логистике и доступности маршрутов, а не в универсальном бизнес-симуляторе.\n\nЕсли несколько маршрутов готовы одновременно, можно ничего не выбирать сразу. Обычная Merchant-работа остаётся доступной, а готовность сохраняет смысл как возможность, а не приказ.\n\nMerchant House, Speculator / Smuggler и Patron of Routes описывают карьерную готовность и направление роли. Ни одно из этих состояний само по себе не завершает жизнь и не выдаёт отдельную награду.",
+      "en": "Patron of Routes emerges from several verified links between systems that already exist. Its meaning is resilient logistics and route accessibility, not a universal business simulator.\n\nIf several routes are ready at the same time, you can choose none of them immediately. Ordinary Merchant work remains available, and readiness stays a possibility rather than an instruction.\n\nMerchant House, Speculator / Smuggler, and Patron of Routes describe career readiness and role direction. None of these states completes the life or grants a separate reward by itself."
+    },
+    "event.merchant.career.choose-patron.choice.patron.label": {
+      "ru": "Выбрать Patron of Routes",
+      "en": "Take Patron of Routes"
+    },
+    "event.merchant.career.choose-patron.choice.patron.text": {
+      "ru": "Patron of Routes — это результат нескольких подтверждённых связей между уже существующими системами. Его смысл в устойчивой логистике и доступности маршрутов, а не в универсальном бизнес-симуляторе.",
+      "en": "Choose the multi-system supply-network route."
+    },
+    "event.merchant.career.choose-patron.choice.defer.label": {
+      "ru": "Оставить путь открытым",
+      "en": "Keep Patron route open"
+    },
+    "event.merchant.career.choose-patron.choice.defer.text": {
+      "ru": "Если несколько маршрутов готовы одновременно, можно ничего не выбирать сразу. Обычная Merchant-работа остаётся доступной, а готовность сохраняет смысл как возможность, а не приказ.",
+      "en": "Keep readiness without choosing it."
+    },
+    "event.merchant.career.outcome-ready.title": {
+      "ru": "Готовность карьерного исхода",
+      "en": "The chosen Merchant career route is outcome-ready"
+    },
+    "event.merchant.career.outcome-ready.variant.default.text": {
+      "ru": "Торговая ситуация: Готовность карьерного исхода.",
+      "en": "The chosen Merchant career route is outcome-ready. Merchant progression remains separate from ending commitment."
+    },
+    "event.merchant.career.outcome-ready.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Keep living"
+    },
+    "event.merchant.career.outcome-ready.choice.continue.text": {
+      "ru": "Выбор продолжает эту торговую ситуацию без новой системы.",
+      "en": "Move to outcome-ready without auto-committing an ending."
+    },
+    "event.merchant.cross.lumber-route.title": {
+      "ru": "Маршрутный вход Lumber",
+      "en": "A Lumber route observation becomes a trade input"
+    },
+    "event.merchant.cross.lumber-route.variant.default.text": {
+      "ru": "Сведения Lumber о подтверждённой лесной границе становятся для Merchant только фактом о маршруте и источнике. Ты записываешь ограничение поставки, не меняя Forest, Lumber или право доступа к ним.\n\nСвязь с Lumber даёт сети понимание одного устойчивого источника и ограничений маршрута. Patron of Routes ценит подтверждённую связь, а не присваивает себе производство древесины или Forest.",
+      "en": "Lumber knowledge about a confirmed forest boundary becomes only a route and source fact for Merchant. You record the supply constraint without changing Forest, Lumber, or access rights within them.\n\nA Lumber connection gives the network knowledge of one dependable source and its route constraints. Patron of Routes values the verified link without taking ownership of lumber production or Forest."
+    },
+    "event.merchant.cross.lumber-route.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Record the Lumber route input"
+    },
+    "event.merchant.cross.lumber-route.choice.record.text": {
+      "ru": "Сведения Lumber о подтверждённой лесной границе становятся для Merchant только фактом о маршруте и источнике. Ты записываешь ограничение поставки, не меняя Forest, Lumber или право доступа к ним.",
+      "en": "Carry the shipped Lumber result into Merchant route preparation only."
+    },
+    "event.merchant.cross.farm-sample.title": {
+      "ru": "Документированный образец Farm",
+      "en": "A preserved Farm sample becomes a documented trade input"
+    },
+    "event.merchant.cross.farm-sample.variant.default.text": {
+      "ru": "Сохранённый Farm-образец можно использовать как документированную точку сравнения. Merchant учитывает источник и состояние образца, но не забирает владение Farm-инвентарём и не копирует результат.\n\nFarm-вход показывает, как документированный образец может пройти от производителя к покупателю без потери происхождения. Merchant связывает этапы, но не заменяет работу производителя.",
+      "en": "A preserved Farm sample can serve as a documented comparison point. Merchant records its source and condition without taking ownership of Farm inventory or duplicating the result.\n\nThe Farm input shows how a documented sample can move from producer to buyer without losing its provenance. Merchant connects the stages without replacing the producer's work."
+    },
+    "event.merchant.cross.farm-sample.choice.handle-with-kit.label": {
+      "ru": "Проверить образец набором",
+      "en": "Handle a comparison sample with the kit"
+    },
+    "event.merchant.cross.farm-sample.choice.handle-with-kit.text": {
+      "ru": "Сохранённый Farm-образец можно использовать как документированную точку сравнения. Merchant учитывает источник и состояние образца, но не забирает владение Farm-инвентарём и не копирует результат.",
+      "en": "Use the Merchant sample capability to improve evidence handling, not inventory capacity."
+    },
+    "event.merchant.cross.farm-sample.choice.record-source.label": {
+      "ru": "Зафиксировать источник",
+      "en": "Record the Farm source only"
+    },
+    "event.merchant.cross.farm-sample.choice.record-source.text": {
+      "ru": "Farm-вход показывает, как документированный образец может пройти от производителя к покупателю без потери происхождения. Merchant связывает этапы, но не заменяет работу производителя.",
+      "en": "Keep the shipped Farm fact as a route input without taking or cloning its inventory."
+    },
+    "event.merchant.cross.hunter-return.title": {
+      "ru": "Подтверждённое возвращение Hunter",
+      "en": "A successful Hunter return becomes route evidence"
+    },
+    "event.merchant.cross.hunter-return.variant.default.text": {
+      "ru": "Успешное возвращение Hunter даёт подтверждение, что конкретный маршрут был пройден и результат доставлен. Merchant использует этот факт как вход для логистики, не управляя самим походом.\n\nMerchant не получает отдельное управление Activity. В этой волне используется только уже завершённый Hunter-результат после успешного возвращения, поэтому состояние похода остаётся у его владельца.\n\nHunter-вход ценен потому, что маршрут уже был реально пройден и вернулся с результатом. Сеть может учитывать этот путь, но не превращает его в автоматический источник бесконечного товара.",
+      "en": "A successful Hunter return confirms that a specific route was completed and a result came back. Merchant uses that fact as a logistics input without controlling the expedition itself.\n\nMerchant receives no separate control over Activity. This wave uses only the already completed Hunter result after a successful return, so expedition state remains owned by its source system.\n\nThe Hunter input matters because the route was actually completed and returned with a result. The network can account for that path without turning it into an automatic source of unlimited goods."
+    },
+    "event.merchant.cross.hunter-return.choice.compare-with-kit.label": {
+      "ru": "Сравнить набором образцов",
+      "en": "Compare the returned evidence with the sample kit"
+    },
+    "event.merchant.cross.hunter-return.choice.compare-with-kit.text": {
+      "ru": "Успешное возвращение Hunter даёт подтверждение, что конкретный маршрут был пройден и результат доставлен. Merchant использует этот факт как вход для логистики, не управляя самим походом.",
+      "en": "Use the Merchant kit as an evidence option while Hunter keeps ownership of Activity state."
+    },
+    "event.merchant.cross.hunter-return.choice.record-return.label": {
+      "ru": "Зафиксировать возвращение",
+      "en": "Record the Hunter return"
+    },
+    "event.merchant.cross.hunter-return.choice.record-return.text": {
+      "ru": "Merchant не получает отдельное управление Activity. В этой волне используется только уже завершённый Hunter-результат после успешного возвращения, поэтому состояние похода остаётся у его владельца.",
+      "en": "Consume only the shipped expedition-return fact."
+    },
+    "event.merchant.cross.tavern-rumour.title": {
+      "ru": "Подтверждённый отчёт Tavern",
+      "en": "A confirmed Tavern route report reaches Merchant"
+    },
+    "event.merchant.cross.tavern-rumour.variant.default.text": {
+      "ru": "Подтверждённый Tavern-слух полезен не как магическое знание спроса, а как проверенный отчёт о месте или потребности. Ты отмечаешь источник и оставляешь решение о сделке отдельным.\n\nTavern даёт подтверждённый сигнал о месте, людях или потребности, который можно сопоставить с другими источниками. Patron of Routes соединяет сведения, а не объявляет один слух универсальной истиной рынка.",
+      "en": "A confirmed Tavern rumour is useful not as magical knowledge of demand but as a checked report about a place or need. You record the source and keep the trade decision separate.\n\nTavern provides a confirmed signal about a place, people, or need that can be compared with other sources. Patron of Routes connects information rather than declaring one rumour to be universal market truth."
+    },
+    "event.merchant.cross.tavern-rumour.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Record the confirmed demand route"
+    },
+    "event.merchant.cross.tavern-rumour.choice.record.text": {
+      "ru": "Подтверждённый Tavern-слух полезен не как магическое знание спроса, а как проверенный отчёт о месте или потребности. Ты отмечаешь источник и оставляешь решение о сделке отдельным.",
+      "en": "Use only the Tavern-confirmed route statement, not generic gossip."
+    },
+    "event.merchant.cross.guard-pass.title": {
+      "ru": "Проверенное свидетельство Guard",
+      "en": "A Guard cargo-pass discrepancy informs route planning"
+    },
+    "event.merchant.cross.guard-pass.variant.default.text": {
+      "ru": "Проверенное Guard-свидетельство о пропуске показывает, что на маршруте есть конкретное ограничение или несоответствие. Merchant учитывает его при планировании, не создавая собственную систему закона или разрешений.\n\nGuard-вход добавляет проверенное ограничение маршрута: пропуск, несоответствие или точку проверки. Сеть становится надёжнее, когда учитывает такое ограничение, а не когда пытается его магически отменить.",
+      "en": "Checked Guard evidence about a pass shows a concrete route constraint or discrepancy. Merchant accounts for it in planning without creating its own law or permit system.\n\nThe Guard input adds a checked route constraint: a pass, discrepancy, or inspection point. The network becomes more reliable by accounting for that constraint rather than magically removing it."
+    },
+    "event.merchant.cross.guard-pass.choice.record.label": {
+      "ru": "Зафиксировать",
+      "en": "Record the checked Guard route evidence"
+    },
+    "event.merchant.cross.guard-pass.choice.record.text": {
+      "ru": "Проверенное Guard-свидетельство о пропуске показывает, что на маршруте есть конкретное ограничение или несоответствие. Merchant учитывает его при планировании, не создавая собственную систему закона или разрешений.",
+      "en": "Use the existing Guard evidence as one route constraint without creating a Merchant law system."
     }
   }
 }
