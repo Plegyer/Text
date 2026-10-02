@@ -87,7 +87,7 @@ Design lesson: avoid making an entire run worthless just because the player did 
 
 ## Successor implications to test, not auto-lock
 
-- Current successor work growth is intentionally softer than original penalties, but may still be much faster in net-stat terms because housing no longer drains stats in the same way. Verify progression speed over a full 160-day run.
+- Current approved successor seasonal-tradeoff candidate yields **+1.5 net progression-stat points per ordinary shift on average for all ten careers**. That is roughly +75 summed stat points across 50 shifts, versus about +25 in the recovered original work model. This is a balance-test flag, not a command to copy the original: verify progression speed and cap timing over a full 160-day run, especially with School and NG+.
 - School should remain meaningfully expensive relative to ordinary earnings so its large stat packages remain a strategic choice.
 - Career event density should prevent Hard Work=50 from feeling like a silent counter.
 - New Start+ bonus design should favor distinct playstyle changes and route access, not only additive stats.
