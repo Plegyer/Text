@@ -383,8 +383,8 @@
       "en": "Body Confidence"
     },
     "school.course.body_confidence.description": {
-      "ru": "Сера Вей работает с движением, уходом, комфортом, границами и осознанной самопрезентацией без оценки тела и без подмены выбора согласием.",
-      "en": "Sera Vey works with movement, grooming, comfort, boundaries, and deliberate self-presentation without judging the body or treating presentation as consent."
+      "ru": "Сера Вей работает с движением, уходом, комфортом, границами и осознанной самопрезентацией без оценки тела и без подмены выбора согласием. Каждый оплаченный урок также даёт Похоть +2; Похоть остаётся отдельной от характеристики Сексуальность.",
+      "en": "Sera Vey works with movement, grooming, comfort, boundaries, and deliberate self-presentation without judging the body or treating presentation as consent. Each paid lesson also grants Lust +2; Lust remains separate from the Sexuality progression stat."
     },
     "ui.school.nightStudyChoice": {
       "ru": "Ночная учёба: {course} — {stat}",
