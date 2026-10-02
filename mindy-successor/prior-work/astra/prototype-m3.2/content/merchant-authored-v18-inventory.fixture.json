@@ -1,7 +1,7 @@
 {
   "formatVersion": 1,
   "id": "chat3.merchant-authored-v18.inventory",
-  "status": "PREP_AUTHORITY_PENDING_FROZEN_MERCHANT_RUNTIME",
+  "status": "FROZEN_MERCHANT_RUNTIME_AUTHORITY",
   "activation": {
     "mainHead": "d7dad76d47d71144a5788f762cedd72d9fc95ae5",
     "branchStart": "d7dad76d47d71144a5788f762cedd72d9fc95ae5",
