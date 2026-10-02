@@ -141,6 +141,15 @@ More developed routes insert extra milestones such as 5/10/30/40, stat checks, r
 
 Design lesson: a dependable shared pacing skeleton is useful, but every profession should have its own intermediate authored rhythm. The successor's Hard Work=50 should be surrounded by enough early/mid/late events that 50 shifts never feels like a silent counter grind.
 
+### 21. Meta reward strength follows route complexity
+A visible original pattern is that repeat-work career endings usually award modest build help and/or permanently open that profession for later runs. More elaborate story/relationship/contest outcomes are where the strongest rule-changing rewards appear: daily Energy, passive income, disabled rent, partial stat inheritance, starting equipment/spells and similar effects.
+
+Design lesson for successor:
+- ordinary Hard Work can be the dependable baseline: early profession access + a modest selectable package;
+- complex authored endings should earn more distinctive rule changes or route-opening tools;
+- stronger reward does not have to mean a larger raw stat number;
+- keep such strong modifiers optional in New Start+ so Meta expands player agency rather than forcing power creep.
+
 ## Successor implications to test, not auto-lock
 
 - Current approved successor seasonal-tradeoff candidate yields **+1.5 net progression-stat points per ordinary shift on average for all ten careers**. That is roughly +75 summed stat points across 50 shifts, versus about +25 in the recovered original work model. This is a balance-test flag, not a command to copy the original: verify progression speed and cap timing over a full 160-day run, especially with School and NG+.
