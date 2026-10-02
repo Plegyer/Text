@@ -65,7 +65,7 @@ test('Secret Debt has stable career presentation IDs and bilingual authored surf
   assert.equal(encounterId,'job/secret-debt/event/secret-debt-lender-encounter/default');
   assert.equal(paidEndingId,'ending/secret-debt/paid-freedom');
 
-  const slots=new Map(presentationSlots(catalog).map(slot=>[slot.id,slot]));
+  const slots=new Map(presentationSlots(catalog).map(slot=>[slot.id,slot] as const));
   assert.equal(slots.get(shiftId)?.baseMediaIds.includes('stage.room'),true);
   assert.equal(slots.get(encounterId)?.fallbackId,shiftId);
   assert.equal(slots.get(paidEndingId)?.fallbackId,'location/town/default');
@@ -104,6 +104,7 @@ test('street encounter is one-shot and records accept/refuse without inventing t
   assert.equal(secretDebtAcceptanceDay(accepted),0);
   assert.equal(accepted.run.resources.money,moneyBefore);
   assert.equal(accepted.run.history['secret-debt.lender-encounter']?.count,1);
+  assert.equal(accepted.run.flow.night?.phase,'VoluntaryNightChoice','the offer itself must not consume the Night slot');
 
   let refused=authorizeOffer(started());
   refused=dispatch(refused,{type:'endDay'},catalog);
@@ -112,6 +113,7 @@ test('street encounter is one-shot and records accept/refuse without inventing t
   assert.equal(refused.run.progression.careers['secret-debt']?.stage,'refused');
   assert.equal(refused.run.progression.careers['secret-debt']?.choices['encounter-response'],'refused');
   assert.equal(refused.run.history['secret-debt.lender-encounter']?.count,1);
+  assert.equal(refused.run.flow.night?.phase,'VoluntaryNightChoice');
 
   const reloaded=parseSave(JSON.stringify(refused),catalog);
   assert.equal(reloaded.run.progression.careers['secret-debt']?.stage,'refused');
