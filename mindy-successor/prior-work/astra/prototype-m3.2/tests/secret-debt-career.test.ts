@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {actionAvailable,applyEffects,dispatch,parseSave,resolveReactions} from '../src/core/engine.ts';
 import {ordinaryHardWorkCareers,type Save} from '../src/core/schema.ts';
-import {secretDebtAcceptanceDay,secretDebtActivationDue,secretDebtIsBound} from '../src/core/secretDebt.ts';
+import {secretDebtAcceptanceDay,secretDebtIsBound} from '../src/core/secretDebt.ts';
 import {catalog,started} from './helpers.ts';
 
 const secretPack=JSON.parse(readFileSync('content/packs/secret-debt.json','utf8'));
@@ -67,7 +67,6 @@ test('street encounter is one-shot and records accept/refuse without inventing t
   assert.equal(secretDebtAcceptanceDay(accepted),0);
   assert.equal(accepted.run.resources.money,moneyBefore);
   assert.equal(accepted.run.history['secret-debt.lender-encounter']?.count,1);
-  assert.equal(secretDebtActivationDue(accepted,0),true,'delay is supplied by policy; the runtime owns no default');
 
   let refused=authorizeOffer(started());
   refused=dispatch(refused,{type:'endDay'},catalog);
@@ -82,10 +81,27 @@ test('street encounter is one-shot and records accept/refuse without inventing t
   assert.equal(reloaded.run.history['secret-debt.lender-encounter']?.count,1);
 });
 
+test('authorized delayed-trap activation persists as a distinct bound transition scene',()=>{
+  let s=acceptWithoutEncounter(started());
+  s=applyEffects(s,[
+    {kind:'addCareerFact',career:'secret-debt',fact:'activation-authorized'},
+    {kind:'advanceCareer',career:'secret-debt',transition:'activate-bound'}
+  ],catalog);
+  s=resolveReactions(s,[{kind:'careerTransition',career:'secret-debt',from:'accepted',to:'bound'}],catalog).state;
+  assert.equal(s.run.progression.careers['secret-debt']?.stage,'bound');
+  assert.equal(s.run.pending?.eventId,'secret-debt.activation');
+
+  s=parseSave(JSON.stringify(s),catalog);
+  assert.equal(s.run.pending?.eventId,'secret-debt.activation');
+  s=dispatch(s,{type:'choice',id:'acknowledge'},catalog);
+  assert.equal(s.run.progression.careers['secret-debt']?.facts.includes('activation-seen'),true);
+  assert.equal(s.run.pending,null);
+});
+
 test('bound activation locks all ten ordinary shifts without deleting their progress',()=>{
   let s=started();
   s=applyEffects(s,[{kind:'incrementCareerCounter',career:'lumber',counter:'completed_shifts',amount:1}],catalog);
-  const lumberBefore=s.run.progression.careers.lumber.counters.completed_shifts;
+  const lumberBefore=s.run.progression.careers.lumber!.counters.completed_shifts;
   s=bind(s);
   assert.equal(secretDebtIsBound(s),true);
 
@@ -103,7 +119,7 @@ test('bound activation locks all ten ordinary shifts without deleting their prog
   assert.equal(s.run.progression.careers['secret-debt']?.counters.completed_shifts,1);
   assert.equal(s.run.dayState.energyCurrent,energyBefore-1);
   assert.deepEqual(s.run.character.stats,statsBefore,'exact stat gains remain intentionally absent');
-  assert.equal(s.run.progression.careers.lumber.counters.completed_shifts,lumberBefore,'ordinary progress must survive the lock');
+  assert.equal(s.run.progression.careers.lumber!.counters.completed_shifts,lumberBefore,'ordinary progress must survive the lock');
 });
 
 test('bound state forces NightFlow after lodging and reload cannot duplicate the night',()=>{
