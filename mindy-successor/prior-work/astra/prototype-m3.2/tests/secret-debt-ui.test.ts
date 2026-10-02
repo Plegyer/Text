@@ -133,3 +133,45 @@ test('completed Paid Freedom screen uses localized Secret Debt identity and epil
     }
   }
 });
+
+
+test('pre-earned ordinary ending stays visible but locked while bound and unlocks after full repayment',async()=>{
+  let bound=boundSave();
+  bound.run.progression.careers.lumber!.counters.completed_shifts=50;
+  if(!bound.run.endings.eligible.includes('ending.lumber.hard-work'))bound.run.endings.eligible.push('ending.lumber.hard-work');
+
+  for(const locale of ['ru','en'] as const){
+    const {dom,w,errors}=await bootSave(bound,locale);
+    try{
+      w.document.querySelector('[data-panel="legacy"]').click();
+      await wait(()=>!!w.document.querySelector('[data-ending-id="ending.lumber.hard-work"]'));
+      const article=w.document.querySelector('[data-ending-id="ending.lumber.hard-work"]');
+      const button=article?.querySelector('button[data-ending="ending.lumber.hard-work"]');
+      assert.ok(button);
+      assert.equal(button.disabled,true);
+      const text=article?.textContent??'';
+      if(locale==='ru')assert.match(text,/связывающ.*долг/i);
+      else assert.match(text,/binding debt/i);
+      assert.deepEqual(errors,[]);
+    }finally{
+      dom.window.close();
+    }
+  }
+
+  let released=structuredClone(bound);
+  released.run.resources.money=20000;
+  released=dispatch(released,{type:'action',id:'secret-debt.repay'},catalog);
+  assert.equal(released.run.endings.eligible.includes('ending.lumber.hard-work'),true,'ordinary ending eligibility is preserved');
+
+  const {dom,w,errors}=await bootSave(released,'en');
+  try{
+    w.document.querySelector('[data-panel="legacy"]').click();
+    await wait(()=>!!w.document.querySelector('[data-ending-id="ending.lumber.hard-work"]'));
+    const button=w.document.querySelector('[data-ending="ending.lumber.hard-work"]');
+    assert.ok(button);
+    assert.equal(button.disabled,false,'repayment releases the ordinary ending lock');
+    assert.deepEqual(errors,[]);
+  }finally{
+    dom.window.close();
+  }
+});
