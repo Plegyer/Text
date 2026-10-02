@@ -1,0 +1,57 @@
+{
+  "formatVersion": 1,
+  "id": "school.artist-geisha.v18.arts",
+  "task": "C5-194",
+  "careerId": "artist-geisha",
+  "role": "performance_repertoire",
+  "courseId": "school.course.arts_and_performance",
+  "trackId": "school.track.arts_and_performance",
+  "teacherContentId": "school.teacher.nessa-lark",
+  "teacherMediaId": "school.teacher.arts-and-performance.classroom",
+  "bindingStatus": "C1D_180_FROZEN_CONSUMER_AUTHORITY_PRODUCER_BLOCKED",
+  "artistFactId": "school-arts-ready",
+  "selectedPublicFactId": null,
+  "consumerEventId": "artist-geisha.routes.master-ready",
+  "runtimeContract": {
+    "head": "955f4accf7e25c42e0384ddb9f76e5612f41dd00",
+    "contractBlob": "1cda9f558b8a7c0e0f113904f99ce0acd4b1e791",
+    "schoolAuthorityBlob": "87f9d6dd039bcf9579dd4e832071ab1db1de8440",
+    "status": "C1D_180_FROZEN_GREEN",
+    "workflowRun": 978,
+    "workflowId": 36985517198
+  },
+  "localThreshold": {
+    "counter": "lessons_completed",
+    "value": null,
+    "scope": "artist-geisha-only"
+  },
+  "copy": {
+    "title": {
+      "ru": "Намерение до украшения",
+      "en": "Intention before ornament"
+    },
+    "body": {
+      "ru": "Несса просит исполнить короткий фрагмент сначала без украшений, чтобы стало ясно, что именно ты хочешь передать. Только потом возвращаются детали. Когда основная мысль держится сама, выразительность перестаёт быть набором эффектов.",
+      "en": "Nessa asks you to perform a short passage without ornament first, so it becomes clear what you actually mean to communicate. Only then do the details return. Once the central intention can stand on its own, expression stops being a collection of effects."
+    },
+    "result": {
+      "ru": "Репетиция фиксирует намерение, темп и взаимодействие до декоративных деталей; это подготовка к исполнению, а не новая художественная специализация.",
+      "en": "The rehearsal fixes intention, pacing, and interaction before decorative detail; it is performance preparation, not a new artistic specialization."
+    },
+    "journal": {
+      "ru": "Школа: намерение и взаимодействие удержаны до добавления сценических украшений.",
+      "en": "School: held intention and interaction before adding performance ornament."
+    },
+    "accessibility": {
+      "ru": "Текстовый результат урока сценического исполнения; специализированный курс музыки, танца или ремесла не создаётся.",
+      "en": "Text result for a performance lesson; no specialized music, dance, or craft course is created."
+    }
+  },
+  "constraints": {
+    "createsSpecializedArtCurriculum": false,
+    "createsContestSubsystem": false,
+    "createsDirectCareerTransition": false,
+    "publishesGlobalCertificate": false,
+    "publishesGlobalProject": false
+  }
+}
