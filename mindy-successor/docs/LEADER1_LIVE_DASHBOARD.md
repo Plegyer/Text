@@ -1,5 +1,78 @@
 # Leader 1 — Live Dashboard
 
+## FINAL SUCCESSOR HANDOFF — 2026-10-02 — LEADER CONTEXT RESET
+
+This is the newest takeover block. **Re-query Git before acting.**
+
+Exact main at handoff:
+- `d7865216e510e0d55ad960fa34dd4408e7ffe772`
+- message: `Leader: activate post-D18 Palace True Ending prep wave`
+- main workflow #1075 / id `36994932930`: FAILURE before runner execution, job steps = null.
+- This is current repository-wide Actions infrastructure behavior, not a code verdict.
+
+### Locked D18 True Ending
+Canonical authority:
+- `USER_DECISIONS_LOCKED_v1.md` D18
+- `NEW_GAME_SPEC_v1.md` §9A
+- `PALACE_HIDDEN_CAREER_DRAFT_v0.md`
+- `COMPLEX_ENDING_META_REWARD_CATALOG_v0.md`
+
+Locked semantics:
+- Palace prerequisite remains 10/10 ordinary Hard Work;
+- all 12 progression stats strictly >90%;
+- Lust excluded;
+- heroine defeats the Prince;
+- completion returns her to original world;
+- Meta unlocks optional x2 to all 12 progression stats in NG+;
+- +1 distinct True Ending; explicit minimum planned outcome families = 47.
+
+Open:
+- raw percentage conversion/stat cap;
+- Prince lore/name and encounter mechanics;
+- runtime/presentation IDs;
+- x2 ordering/stacking/cap behavior.
+
+### Artist critical path remains blocked only by executable CI
+Accepted:
+- runtime #234 @ `955f4accf7e25c42e0384ddb9f76e5612f41dd00` — C4-168 PASS-WITH-NOTES, exact CI #978 SUCCESS.
+- School #232 @ `13bb952aa3afb99760edbb23a3c00dfa7f72fa86` — C4-169 PASS-WITH-NOTES, exact CI #995 SUCCESS.
+
+Held:
+- authored #229 @ `75664819e824187ea23531e39f6cf5cd952b1047` — draft, no executable exact-head SUCCESS.
+- presentation #237 @ `ef9cc2df1edaf428ed44c34ba9832ff3a88032b4` — held, no executable exact-head SUCCESS.
+- final C4-172 waits C4-170 + C4-171.
+- provisional safe integration order remains runtime -> authored -> School -> presentation.
+
+**If Actions recovers on #229/#237, Artist immediately preempts prep work:** freeze eligible exact heads -> C4-170/C4-171 -> final C4-172 -> Lead collision-safe integration -> exact-current-main CI -> C4-173.
+
+### Active post-D18 no-idle wave at handoff
+All producer branches below exist and, at this exact handoff, are still at the activation SHA `d7865216e510e0d55ad960fa34dd4408e7ffe772` with no branch workflow runs yet:
+- Chat 1: `chat1/palace-true-ending-runtime-prep-v19` — C1D-205..216.
+- Chat 2: `chat2/palace-true-ending-presentation-v22` — C2-241..252.
+- Chat 3: `chat3/palace-true-ending-authored-v23` — C3-253..264.
+- Chat 5: `chat5/palace-true-ending-stat-reachability-v23` — C5-245..256.
+- Chat 4: `TASK_CHAT4_PALACE_TRUE_ENDING_PREFLIGHT_v1.md` — PT-1..PT-10 NON-VERDICT preflight.
+
+Do not infer inactivity after takeover without re-querying these branch heads first; workers may have moved after this checkpoint.
+
+### Completed prep history
+- Assassin runtime #242 / presentation #235 / authored #236 / School #238 are prep-only, not frozen/QA-ready; future production must rebuild after Artist.
+- Prostitute runtime #245 / presentation #240 / authored #243 / School #239 are prep-only; production rebuild waits future shipped baseline + executable CI.
+- Adult Core presentation #244 is safe architecture prep only.
+- School/Night interoperability #246 is audit/prep only.
+- Palace authored #247 is pre-D18 prep and is superseded in coverage by the active D18 delta queue; do not rewrite the old head.
+
+### First actions for successor Leader 1
+1. Re-query exact current main and Actions.
+2. Re-query all five current task pointers and active branch heads.
+3. Re-query #229/#237 first for any executable CI recovery.
+4. If Artist is still CI-held, verify Chats 1–5 have actually started the post-D18 queues; wake/reassign only from Git truth.
+5. Do not mutate held/frozen heads merely to provoke CI.
+6. Keep `LEADER1_LIVE_DASHBOARD.md`, this handoff, and current pointers synchronized after material state changes.
+
+Git is authoritative over every SHA/status in this block.
+
+
 ## LIVE UPDATE — 2026-10-02 — POST-D18 NO-IDLE WAVE
 
 Observed after D18 lock:

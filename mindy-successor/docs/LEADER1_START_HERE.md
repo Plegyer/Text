@@ -5,6 +5,8 @@
 For the current handoff, read immediately after this file:
 - `LEADER1_HANDOFF_CHECKPOINT_2026-10-02.md`
 
+Final successor checkpoint: use the newest `FINAL SUCCESSOR HANDOFF` block inside that file.
+
 Older checkpoints remain historical evidence only. Re-query Git after reading the new checkpoint because worker heads may have moved.
 
 ## Exact-head delivery rule
