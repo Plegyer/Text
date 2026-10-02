@@ -30,6 +30,7 @@ import {catalog,started} from './helpers.ts';
 
 const secretPack=JSON.parse(readFileSync('content/packs/secret-debt.json','utf8'));
 const localization=JSON.parse(readFileSync('content/localization.json','utf8'));
+const secretDebtCatalog={...catalog,events:catalog.events.filter(event=>event.sourceDomain==='secret-debt')};
 
 function directAccepted(input:Save,acceptedDay=0){
   return applyEffects(input,[
@@ -45,18 +46,18 @@ function directBound(input:Save){
 }
 
 function finishOrdinaryNight(input:Save,lodging='lodging.normal'){
-  let s=dispatch(input,{type:'endDay'},catalog);
-  s=dispatch(s,{type:'chooseLodging',id:lodging},catalog);
+  let s=dispatch(input,{type:'endDay'},secretDebtCatalog);
+  s=dispatch(s,{type:'chooseLodging',id:lodging},secretDebtCatalog);
   if(s.run.pending)return s;
   assert.equal(s.run.flow.night?.phase,'VoluntaryNightChoice');
-  return dispatch(s,{type:'chooseNightChoice',id:'night.sleep'},catalog);
+  return dispatch(s,{type:'chooseNightChoice',id:'night.sleep'},secretDebtCatalog);
 }
 
 function finishForcedNight(input:Save){
-  let s=dispatch(input,{type:'endDay'},catalog);
-  s=dispatch(s,{type:'chooseLodging',id:'lodging.normal'},catalog);
+  let s=dispatch(input,{type:'endDay'},secretDebtCatalog);
+  s=dispatch(s,{type:'chooseLodging',id:'lodging.normal'},secretDebtCatalog);
   assert.equal(s.run.pending?.eventId,'secret-debt.forced-night-work');
-  s=dispatch(s,{type:'choice',id:'finish'},catalog);
+  s=dispatch(s,{type:'choice',id:'finish'},secretDebtCatalog);
   return s;
 }
 
@@ -252,13 +253,13 @@ test('every bound night suppresses voluntary Night and applies next-day Energy -
   s.run.resources.money=5_000;
 
   s=dispatch(s,{type:'endDay'},catalog);
-  s=dispatch(s,{type:'chooseLodging',id:'lodging.normal'},catalog);
+  s=dispatch(s,{type:'chooseLodging',id:'lodging.normal'},secretDebtCatalog);
   assert.equal(s.run.pending?.eventId,'secret-debt.forced-night-work');
   assert.equal(s.run.flow.night?.suppressVoluntaryMenu,true);
   assert.equal(s.run.flow.night?.consumesNight,true);
 
   s=parseSave(JSON.stringify(s),catalog);
-  s=dispatch(s,{type:'choice',id:'finish'},catalog);
+  s=dispatch(s,{type:'choice',id:'finish'},secretDebtCatalog);
   assert.equal(s.run.day,1);
   assert.equal(s.run.dayState.energyCurrent,2);
   assert.equal(s.run.progression.careers['secret-debt']?.counters.forced_night_work,1);
@@ -291,7 +292,7 @@ test('repayment is one all-at-once 20000 action and releases the ordinary career
   assert.equal(actionAvailable(lumber,s,catalog),true);
 
   s=dispatch(s,{type:'endDay'},catalog);
-  s=dispatch(s,{type:'chooseLodging',id:'lodging.normal'},catalog);
+  s=dispatch(s,{type:'chooseLodging',id:'lodging.normal'},secretDebtCatalog);
   assert.equal(s.run.pending?.eventId==='secret-debt.forced-night-work',false);
   assert.equal(s.run.flow.night?.phase,'VoluntaryNightChoice');
 });
