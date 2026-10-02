@@ -1,4 +1,4 @@
-import {ordinaryHardWorkCareers,type Action,type Save} from './schema.ts';
+import {ordinaryHardWorkCareers,type Action,type Effect,type Save} from './schema.ts';
 
 export const SECRET_DEBT_CAREER_ID='secret-debt' as const;
 export const SECRET_DEBT_SHIFT_ACTION_ID='secret-debt.shift' as const;
@@ -107,6 +107,15 @@ export function secretDebtWagePolicyReady(){
     &&typeof policy.strengthFactor==='number'&&policy.strengthFactor>0
     &&typeof policy.enduranceFactor==='number'&&policy.enduranceFactor>0
     &&typeof policy.lustFactor==='number'&&policy.lustFactor>0;
+}
+
+export function secretDebtShiftStatEffects():Effect[]{
+  if(!secretDebtShiftStatGainsReady())return [];
+  return [
+    {kind:'modifyStat',stat:'strength',delta:Number(SECRET_DEBT_SHIFT_STAT_GAINS.strength)},
+    {kind:'modifyStat',stat:'endurance',delta:Number(SECRET_DEBT_SHIFT_STAT_GAINS.endurance)},
+    {kind:'modifyStat',stat:'sexuality',delta:Number(SECRET_DEBT_SHIFT_STAT_GAINS.sexuality)}
+  ];
 }
 
 export function secretDebtShiftTuningReady(){
