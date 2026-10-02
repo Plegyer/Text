@@ -1113,6 +1113,7 @@ export function presentationSlots(cat:Catalog):PresentationSlot[]{
   // create ending gameplay/state; they keep media/accessibility ready for the
   // ordinary career IDs already present in the production catalog.
   for(const career of cat.definitions.careers??[]){
+    if(career.id==='secret-debt')continue; // Hidden forced route is outside ordinary Hard Work / Palace 10/10.
     const careerId=clean(career.id);
     const resultId=`job/${careerId}/result/default`;
     add({
