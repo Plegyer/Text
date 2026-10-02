@@ -97,12 +97,20 @@ export function secretDebtTakeoverStructuralReady(s:Save){
     &&secretDebtPaidSchoolLessons(s)>=SECRET_DEBT_REQUIRED_PAID_SCHOOL_LESSONS;
 }
 
+export function secretDebtShiftStatGainsReady(){
+  return Object.values(SECRET_DEBT_SHIFT_STAT_GAINS).every(value=>typeof value==='number'&&value>0);
+}
+
 export function secretDebtWagePolicyReady(){
   const policy=SECRET_DEBT_WAGE_POLICY;
   return typeof policy.base==='number'
     &&typeof policy.strengthFactor==='number'&&policy.strengthFactor>0
     &&typeof policy.enduranceFactor==='number'&&policy.enduranceFactor>0
     &&typeof policy.lustFactor==='number'&&policy.lustFactor>0;
+}
+
+export function secretDebtShiftTuningReady(){
+  return secretDebtShiftStatGainsReady()&&secretDebtWagePolicyReady();
 }
 
 export function secretDebtWageDefinition():Action['wage']|undefined{
