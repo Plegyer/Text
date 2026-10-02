@@ -72,9 +72,13 @@ test('item-specific prep and evidence methods require their actual capabilities'
   const c=prep.choices.find((x:any)=>x.id===choiceId); assert.ok(c,choiceId);
   assert.deepEqual(c.conditions,[{kind:'itemCapability',capability,present:true}]);
  }
- const method=contract.events.find((e:any)=>e.id==='assassin.contract.method');
- const expose=method.choices.find((x:any)=>x.id==='expose'); assert.ok(expose);
- assert.deepEqual(expose.conditions,[{kind:'itemCapability',capability:'assassin_handle_evidence',present:true}]);
+ const itemPack=packs.find((p:any)=>p.id==='assassin.items');
+ const toolEvent=itemPack.events.find((e:any)=>e.id==='assassin.items.concealed-toolset');
+ const prepEvent=contract.events.find((e:any)=>e.id==='assassin.contract.prep');
+ assert.ok(toolEvent.priority>prepEvent.priority,'toolset offer must resolve before prep so its capability can change the current contract');
+ const activity=definitions.activities.find((x:any)=>x.id==='assassin.infiltration');
+ const preserve=activity.options.find((x:any)=>x.id==='assassin.infiltration.preserve-evidence'); assert.ok(preserve);
+ assert.deepEqual(preserve.conditions,[{kind:'itemCapability',capability:'assassin_handle_evidence',present:true}]);
 });
 
 test('open Product decisions remain open instead of being encoded as accidental mechanics',()=>{

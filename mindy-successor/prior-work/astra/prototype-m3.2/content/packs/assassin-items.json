@@ -57,7 +57,7 @@
         }
       ],
       "priorityClass": "normal_progression",
-      "priority": 66,
+      "priority": 87,
       "blocking": true,
       "delivery": {
         "policy": "live"

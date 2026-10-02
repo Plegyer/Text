@@ -62,12 +62,49 @@
       "maxShows": 5,
       "conditions": [
         {
-          "kind": "not",
-          "condition": {
-            "kind": "careerStage",
-            "career": "assassin",
-            "stage": "runner"
-          }
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "operative"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "trusted-blade"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "veteran"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "ghost"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "turncoat"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "handler-takeover"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "refusal-chain"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "outcome-ready"
+            }
+          ]
         },
         {
           "kind": "any",

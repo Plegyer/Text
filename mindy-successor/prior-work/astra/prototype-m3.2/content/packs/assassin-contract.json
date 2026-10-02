@@ -480,36 +480,6 @@
               "transition": "method-selected"
             }
           ]
-        },
-        {
-          "id": "expose",
-          "label": "Use confirmed evidence as the method",
-          "text": "Build the resolution around already-confirmed evidence; this option exists only when the Evidence Case capability is present.",
-          "conditions": [
-            {
-              "kind": "itemCapability",
-              "capability": "assassin_handle_evidence",
-              "present": true
-            }
-          ],
-          "effects": [
-            {
-              "kind": "setQuestChoice",
-              "quest": "assassin.contract",
-              "choice": "method",
-              "value": "expose"
-            },
-            {
-              "kind": "addQuestFact",
-              "quest": "assassin.contract",
-              "fact": "method-selected"
-            },
-            {
-              "kind": "advanceQuest",
-              "quest": "assassin.contract",
-              "transition": "method-selected"
-            }
-          ]
         }
       ]
     },
