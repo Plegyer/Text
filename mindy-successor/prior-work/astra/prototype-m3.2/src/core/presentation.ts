@@ -620,6 +620,15 @@ export function presentationIdForGuardState(stateId:string){
   return `job/guard/state/${clean(stateId)}`;
 }
 
+export const MERCHANT_PRESENTATION_STAGES=[
+  'stall-hand','independent-trader','networked-merchant','veteran',
+  'merchant-house','speculator-smuggler','patron-of-routes','outcome-ready'
+] as const;
+
+export function presentationIdForMerchantStage(stage:string){
+  return `job/merchant/stage/${clean(stage)}`;
+}
+
 export function presentationIdForEnding(endingId:string){
   const parts=pathParts(endingId);
   if(parts[0]==='ending')parts.shift();
@@ -877,6 +886,20 @@ export function presentationSlots(cat:Catalog):PresentationSlot[]{
         baseMediaIds:[],
         fallbackId:'job/guard/result/default'
       });
+    }
+  }
+
+  const merchantCareer=(cat.definitions.careers??[]).find(item=>item.id==='merchant');
+  if(merchantCareer){
+    for(const stage of MERCHANT_PRESENTATION_STAGES){
+      if(merchantCareer.stages.includes(stage)){
+        add({
+          id:presentationIdForMerchantStage(stage),
+          label:`Merchant · stage · ${stage}`,
+          baseMediaIds:[],
+          fallbackId:'job/merchant/result/default'
+        });
+      }
     }
   }
 
