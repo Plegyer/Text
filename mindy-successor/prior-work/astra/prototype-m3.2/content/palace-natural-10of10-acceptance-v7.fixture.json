@@ -1,0 +1,159 @@
+{
+  "formatVersion": 1,
+  "status": "FUTURE_D23_ACCEPTANCE_CONTRACT",
+  "baseline": "aff3a6de866ea40f8d2d6761d148888b22b73278",
+  "sources": {
+    "palaceV4": "302c5cd636b2389edd05de2b4e50d5df8f88133d",
+    "palaceV5": "c7b26032af9347af59c590de187abd7d44795050",
+    "palaceV6": "29def63f348ffd0bf46c16a7a3c7292b0877db9a"
+  },
+  "sharedD23ApiLanded": false,
+  "sharedD23Blocker": {
+    "missingModule": "src/core/hardWorkMeta.ts",
+    "missingRunSnapshot": "activeHardWorkPackages",
+    "currentEngineAuthority": "permanent hardWorkProgress only",
+    "requiredFutureAuthority": "permanent 10/10 AND current-run active package 10/10"
+  },
+  "shippedRoster": {
+    "ordinaryCareers": [
+      "lumber",
+      "satyr-maid",
+      "undead-farm",
+      "tavern",
+      "hunter",
+      "guard",
+      "merchant",
+      "artist-geisha",
+      "assassin",
+      "prostitute"
+    ],
+    "excluded": [
+      "secret-debt",
+      "palace"
+    ],
+    "hardWorkEndings": [
+      {"career":"lumber","endingId":"ending.lumber.hard-work","rewardId":"hardWork:lumber","counter":"completed_shifts","operator":"gte","threshold":50},
+      {"career":"satyr-maid","endingId":"ending.satyr-maid.hard-work","rewardId":"hardWork:satyr-maid","counter":"completed_shifts","operator":"gte","threshold":50},
+      {"career":"undead-farm","endingId":"ending.undead-farm.hard-work","rewardId":"hardWork:undead-farm","counter":"completed_shifts","operator":"gte","threshold":50},
+      {"career":"tavern","endingId":"ending.tavern.hard-work","rewardId":"hardWork:tavern","counter":"completed_shifts","operator":"gte","threshold":50},
+      {"career":"hunter","endingId":"ending.hunter.hard-work","rewardId":"hardWork:hunter","counter":"completed_shifts","operator":"gte","threshold":50},
+      {"career":"guard","endingId":"ending.guard.hard-work","rewardId":"hardWork:guard","counter":"completed_shifts","operator":"gte","threshold":50},
+      {"career":"merchant","endingId":"ending.merchant.hard-work","rewardId":"hardWork:merchant","counter":"completed_shifts","operator":"gte","threshold":50},
+      {"career":"artist-geisha","endingId":"ending.artist-geisha.hard-work","rewardId":"hardWork:artist-geisha","counter":"completed_shifts","operator":"gte","threshold":50},
+      {"career":"assassin","endingId":"ending.assassin.hard-work","rewardId":"hardWork:assassin","counter":"completed_shifts","operator":"gte","threshold":50},
+      {"career":"prostitute","endingId":"ending.prostitute.hard-work","rewardId":"hardWork:prostitute","counter":"completed_shifts","operator":"gte","threshold":50}
+    ]
+  },
+  "d23TruthTable": [
+    {
+      "id": "nine-permanent-nine-active",
+      "permanentCount": 9,
+      "activeCount": 9,
+      "eligible": false
+    },
+    {
+      "id": "ten-permanent-zero-active",
+      "permanentCount": 10,
+      "activeCount": 0,
+      "eligible": false
+    },
+    {
+      "id": "ten-permanent-nine-active",
+      "permanentCount": 10,
+      "activeCount": 9,
+      "eligible": false
+    },
+    {
+      "id": "ten-permanent-ten-active",
+      "permanentCount": 10,
+      "activeCount": 10,
+      "eligible": true
+    }
+  ],
+  "substitutionRules": {
+    "duplicatesCountOnce": true,
+    "secretDebtCountsAsOrdinaryPackage": false,
+    "palaceCountsAsOrdinaryPackage": false,
+    "missingOrdinaryCareerCanBeSubstituted": false
+  },
+  "invitationContract": {
+    "eventId": "palace.invitation.day1-arrival",
+    "trigger": "creationCompleted",
+    "calendarElapsedDay": 0,
+    "delivery": "latched",
+    "priorityClass": "critical_progression",
+    "blocking": true,
+    "maxShows": 1,
+    "usesGameplayRng": false,
+    "requiresStatGate": false,
+    "requiresItemGate": false,
+    "eligibilityInput": "shared D23 run-local qualification",
+    "acceptChoiceId": "accept",
+    "accessFact": "palace.access-granted",
+    "accessScope": "run-local"
+  },
+  "reloadContract": {
+    "queuedInvitationSurvivesReload": true,
+    "pendingInvitationSurvivesReload": true,
+    "acceptedAccessSurvivesReloadWithinRun": true,
+    "acceptedInvitationDoesNotShowAgain": true,
+    "newRunMustRequalifyD23": true
+  },
+  "futureAcceptanceCases": [
+    {
+      "id": "V7-A01",
+      "setup": "first 9 ordinary careers permanently earned; same 9 packages active",
+      "expect": "no Palace invitation eligibility"
+    },
+    {
+      "id": "V7-A02",
+      "setup": "all 10 ordinary careers permanently earned; no packages active",
+      "expect": "no Palace invitation eligibility"
+    },
+    {
+      "id": "V7-A03",
+      "setup": "all 10 permanently earned; only 9 ordinary career packages active",
+      "expect": "no Palace invitation eligibility"
+    },
+    {
+      "id": "V7-A04",
+      "setup": "all 10 permanently earned; all 10 ordinary career packages active",
+      "expect": "deterministic Day-1 invitation eligibility"
+    },
+    {
+      "id": "V7-A05",
+      "setup": "one ordinary package missing; duplicate active entries and secret-debt added",
+      "expect": "no substitution; no Palace invitation eligibility"
+    },
+    {
+      "id": "V7-A06",
+      "setup": "qualified life completes creation",
+      "expect": "latched invitation queued at elapsed day 0 exactly once"
+    },
+    {
+      "id": "V7-A07",
+      "setup": "qualified life accepts invitation",
+      "expect": "run-local palace.access-granted written exactly once"
+    },
+    {
+      "id": "V7-A08",
+      "setup": "save/reload with invitation pending",
+      "expect": "same pending invitation restored; no duplicate show"
+    },
+    {
+      "id": "V7-A09",
+      "setup": "save/reload after acceptance",
+      "expect": "palace.access-granted remains in the run; invitation cannot reappear"
+    },
+    {
+      "id": "V7-A10",
+      "setup": "new life after a previously accepted Palace run",
+      "expect": "run-local access does not carry; D23 must be evaluated again"
+    }
+  ],
+  "deferred": {
+    "princeMechanics": null,
+    "palaceCareerTopology": null,
+    "sharedMetaSaveCapImplementation": null
+  }
+}
