@@ -1,0 +1,343 @@
+{
+  "formatVersion": 1,
+  "status": "INTEGRATION_MANIFEST_UNBOUND",
+  "targetBaseline": "176d879f01edea725a331ffe7fb2fb17fb316889",
+  "sources": {
+    "palaceV4": {
+      "head": "302c5cd636b2389edd05de2b4e50d5df8f88133d",
+      "files": [
+        "src/core/palaceSafePrep.ts",
+        "content/palace-safe-prep-v4.fixture.json",
+        "tests/palace-safe-prep-v4.test.ts"
+      ]
+    },
+    "palaceV5": {
+      "head": "c7b26032af9347af59c590de187abd7d44795050",
+      "files": [
+        "content/palace-authored-safe-v5.fixture.json",
+        "tests/palace-authored-safe-v5.test.ts"
+      ]
+    },
+    "hardWorkSharedPrep": {
+      "head": "50ede59ad96bd8059fcc15dca1ffdffc910563ab",
+      "module": "src/core/hardWorkMeta.ts",
+      "requiredApi": "palaceNewStartQualified"
+    },
+    "hardWorkCatalog": {
+      "head": "54d87ad3db0fb1846ea2500153e34424c900f89f",
+      "file": "content/hard-work-package-catalog-v1.fixture.json"
+    }
+  },
+  "externalPrerequisites": {
+    "d23RunSnapshot": "run-local active ordinary Hard Work package selection must exist and be frozen for the life",
+    "d23Qualification": "shared runtime must expose palaceNewStartQualified(earnedHardWork, activePackages) as a condition-readable run-local predicate before creationCompleted resolution",
+    "d24CapRuntime": "shared owner supplies 100/200 effective progression-stat cap and persistence; Palace only supplies copy and fixed 91+ semantics",
+    "placeholderConditionName": "D23_QUALIFIED_CONDITION"
+  },
+  "selectiveSourceUse": [
+    {
+      "source": "v4 src/core/palaceSafePrep.ts",
+      "take": [
+        "PALACE_ACCESS_FACT semantics",
+        "Day-1 invitation contract semantics",
+        "fixed True Ending stat threshold 91",
+        "cap-only 100->200 semantic assertions",
+        "four generic relationship identities",
+        "voluntary Night contract",
+        "optional shipped legacy capability inventory"
+      ],
+      "doNotTakeAfterSharedD23Exists": [
+        "palaceRunGate",
+        "normalizeEarnedActiveHardWorkPackages"
+      ],
+      "reason": "shared Hard Work integration owns D23 package validation and qualification"
+    },
+    {
+      "source": "v5 content/palace-authored-safe-v5.fixture.json",
+      "take": [
+        "all RU/EN Day-1 invitation/reveal/entry copy",
+        "first-day orientation copy",
+        "patron/rival/official-contact relationship copy",
+        "optional romance copy",
+        "two voluntary Night choices",
+        "ten optional legacy-item reaction texts",
+        "fixed 91+ readiness copy",
+        "cap-200 maximum wording"
+      ],
+      "doNotTake": [
+        "any implied live binding",
+        "any Prince mechanics",
+        "any final Palace career stage topology"
+      ]
+    }
+  ],
+  "productionTargetPlan": {
+    "palaceEntryPack": {
+      "target": "content/packs/palace-entry.json",
+      "sourceScenes": [
+        "palace.invitation.day1-arrival",
+        "palace.invitation.reveal",
+        "palace.entry.gates",
+        "palace.orientation.first-day",
+        "palace.orientation.handoff"
+      ],
+      "binding": {
+        "day1Arrival": {
+          "reactionTrigger": "creationCompleted",
+          "condition": "D23_QUALIFIED_CONDITION",
+          "priorityClass": "critical_progression",
+          "blocking": true,
+          "delivery": "latched",
+          "maxShows": 1,
+          "chance": null
+        },
+        "chain": [
+          "day1-arrival choice open -> reveal",
+          "reveal choice accept -> addWorldFact palace.access-granted",
+          "worldFactAdded palace.access-granted -> entry.gates",
+          "entry.gates choice enter -> orientation.first-day",
+          "orientation.first-day choice listen -> orientation.handoff"
+        ]
+      }
+    },
+    "localAccessState": {
+      "kind": "run-local worldFact",
+      "id": "palace.access-granted",
+      "writeOwner": "Palace invitation acceptance only",
+      "persistentMeta": false,
+      "mayBeGrantedByItem": false,
+      "mayBeGrantedByStat": false,
+      "mayBeGrantedByRandomEvent": false
+    },
+    "relationships": {
+      "definitionsTarget": "content/definitions.json",
+      "packTarget": "content/packs/palace-relationships.json",
+      "machines": [
+        "palace.professional-patron",
+        "palace.rival",
+        "palace.official-contact",
+        "palace.optional-romance"
+      ],
+      "globalGate": "worldFact palace.access-granted present=true",
+      "careerStageDependency": false,
+      "rules": [
+        "relationship refusal never removes palace.access-granted",
+        "relationship refusal never blocks Palace work",
+        "romance is never required for access, career completion, or any ending",
+        "professional routes may be activated only by a topology-neutral Palace work/context signal; do not bind to a 3-stage or 6-stage career stage",
+        "romance invitation remains deferred until a topology-neutral familiarity signal exists; do not fire it merely because Day-1 access was granted"
+      ],
+      "localAdaptations": [
+        "v5 decline/professional romance choices need a direct refusal-safe terminal path in the relationship machine; this is relationship-local and must not alter Palace career topology"
+      ]
+    },
+    "night": {
+      "definitionsTarget": "content/definitions.json",
+      "packTarget": "content/packs/palace-night.json",
+      "choices": [
+        "palace.night.work-review",
+        "palace.night.social-conversation"
+      ],
+      "condition": "worldFact palace.access-granted present=true",
+      "forced": false,
+      "ownsForcedNight": false,
+      "consumesNormalNightChoice": true,
+      "sharedSecretDebtChangeRequired": false,
+      "eventPolicy": {
+        "reactionTrigger": "nightChoiceCompleted",
+        "nightIntercept": "after_choice",
+        "consumesNight": true,
+        "suppressVoluntaryMenu": true
+      }
+    },
+    "legacyItems": {
+      "packTarget": "content/packs/palace-legacy-items.json or variants inside Palace-owned packs",
+      "policy": "variant-or-choice-only",
+      "standaloneEntryEvent": false,
+      "entryGate": false,
+      "grantsAccess": false,
+      "capabilities": [
+        "artist_formal_presence",
+        "artist_handle_invitation",
+        "official_guard_access",
+        "guard_sealed_pass",
+        "merchant_verify_manifest",
+        "merchant_handle_samples",
+        "access_guest_rooms_staff",
+        "cross_rough_route",
+        "preserve_specimen",
+        "prostitute_handle_evidence"
+      ],
+      "preferredBindings": {
+        "artist_handle_invitation": "invitation/reveal variant",
+        "artist_formal_presence": "entry/orientation variant",
+        "official_guard_access": "entry/orientation variant",
+        "guard_sealed_pass": "entry/orientation variant",
+        "merchant_verify_manifest": "orientation/handoff variant",
+        "merchant_handle_samples": "orientation/handoff variant",
+        "access_guest_rooms_staff": "orientation variant",
+        "cross_rough_route": "orientation/handoff variant",
+        "preserve_specimen": "orientation/handoff variant",
+        "prostitute_handle_evidence": "relationship conflict or evidence-reading variant"
+      }
+    },
+    "trueEndingStatSubgate": {
+      "runtimeSchemaChangeRequired": false,
+      "conditions": {
+        "count": 12,
+        "operator": "gte",
+        "value": 91,
+        "lustIncluded": false
+      },
+      "activeCapNormalized": false,
+      "fullEndingDefinitionDeferredForPrinceSignal": true,
+      "careerTopologyRequired": false
+    },
+    "cap200Copy": {
+      "runtimeOwner": "shared D24 integration",
+      "palaceContribution": "localized explanation only until final shared option/reward ID exists",
+      "canonicalEnglish": "The maximum of each of the 12 progression stats becomes 200 instead of 100.",
+      "canonicalRussian": "Максимум каждой из 12 характеристик развития становится 200 вместо 100.",
+      "forbiddenMeaning": "stats double",
+      "multipliesCurrentValues": false,
+      "multipliesStartingBonuses": false,
+      "multipliesAllocationPoints": false,
+      "affectsLust": false
+    }
+  },
+  "sharedFileCollisions": [
+    {
+      "path": "src/core/schema.ts",
+      "risk": "very-high",
+      "owner": "shared D21-D24 integration",
+      "palaceAction": "do not edit from Palace selective bind",
+      "collisionReason": "active package snapshot and cap-200 save validation land here"
+    },
+    {
+      "path": "src/core/engine.ts",
+      "risk": "very-high",
+      "owner": "shared D21-D24 integration",
+      "palaceAction": "do not cherry-pick a Palace engine fork; consume shared D23 condition at content boundary",
+      "collisionReason": "freshSave, finishCreation, stat caps, stale permanent-only palaceAvailable/ensurePalaceUnlock and migration logic"
+    },
+    {
+      "path": "content/definitions.json",
+      "risk": "high",
+      "owner": "integration",
+      "palaceAction": "surgical insertion only: four relationship machines and two Night choices; no Palace career stages or True Ending yet"
+    },
+    {
+      "path": "content/localization.json",
+      "risk": "high",
+      "owner": "integration",
+      "palaceAction": "key-level merge under Palace namespaces only; use v5 RU/EN as source"
+    },
+    {
+      "path": "content/presentation.json",
+      "risk": "none-for-first-bind",
+      "owner": "presentation",
+      "palaceAction": "leave unchanged; Palace entry can be text-only initially"
+    },
+    {
+      "path": "src/core/presentation.ts",
+      "risk": "none-for-first-bind",
+      "owner": "shared presentation",
+      "palaceAction": "leave unchanged until Palace work action/media topology exists"
+    },
+    {
+      "path": "src/ui/app.ts",
+      "risk": "high-if-cap-ui-mixed",
+      "owner": "shared D21-D24 UI integration",
+      "palaceAction": "no Palace-specific edit for invitation/relationships/Night; generic event localization already works"
+    },
+    {
+      "path": "src/core/content.ts",
+      "risk": "none",
+      "owner": "shared content loader",
+      "palaceAction": "leave unchanged"
+    },
+    {
+      "path": "scripts/build.mjs",
+      "risk": "none",
+      "owner": "build",
+      "palaceAction": "leave unchanged; content/packs/*.json are auto-discovered"
+    },
+    {
+      "path": "scripts/validate.ts",
+      "risk": "none",
+      "owner": "validation",
+      "palaceAction": "leave unchanged; Palace packs are auto-validated"
+    },
+    {
+      "path": "tests/hard-work-palace-meta-smoke.test.ts",
+      "risk": "stale-authority",
+      "owner": "shared D23 integration",
+      "palaceAction": "replace permanent-10/10=>Palace assertion with permanent-10/10 + active-10/10 => Day-1 qualification"
+    },
+    {
+      "path": "tests/palace-derived-unlock.test.ts",
+      "risk": "stale-authority",
+      "owner": "shared D23 integration",
+      "palaceAction": "retire meta.unlocks palace as sufficient run access authority"
+    },
+    {
+      "path": "tests/ordinary-hard-work-meta-production.test.ts",
+      "risk": "high-shared",
+      "owner": "shared D21-D22 integration",
+      "palaceAction": "do not modify in Palace bind"
+    },
+    {
+      "path": "tests/ending-meta.test.ts",
+      "risk": "high-shared",
+      "owner": "shared D21-D22 integration",
+      "palaceAction": "do not modify in Palace bind except later shared owner updates old automatic reward assertions"
+    }
+  ],
+  "acceptanceMatrix": [
+    {"id":"A01","area":"D23","assertion":"9/10 permanent never produces Palace invitation"},
+    {"id":"A02","area":"D23","assertion":"10/10 permanent + 0 active packages never produces Palace invitation"},
+    {"id":"A03","area":"D23","assertion":"10/10 permanent + 9/10 active packages never produces Palace invitation"},
+    {"id":"A04","area":"D23","assertion":"10/10 permanent + 10/10 active packages qualifies exactly this life"},
+    {"id":"A05","area":"D23","assertion":"Secret Debt and duplicate package data never substitute for a missing ordinary package"},
+    {"id":"A06","area":"Invitation","assertion":"qualified run latches palace.invitation.day1-arrival on creationCompleted at elapsed day 0"},
+    {"id":"A07","area":"Invitation","assertion":"invitation consumes no gameplay RNG and has no stat/item condition"},
+    {"id":"A08","area":"Invitation","assertion":"higher-priority blocking scene cannot permanently lose the latched invitation"},
+    {"id":"A09","area":"Invitation","assertion":"save/reload while invitation is queued or pending preserves exact scene and maxShows=1"},
+    {"id":"A10","area":"Access","assertion":"palace.access-granted is absent before reveal acceptance and present afterward"},
+    {"id":"A11","area":"Access","assertion":"local access fact is run-local and is not permanent Meta"},
+    {"id":"A12","area":"Access","assertion":"legacy item capability cannot create palace.access-granted"},
+    {"id":"A13","area":"Orientation","assertion":"entry and first-day orientation chain resolves without requiring Palace career stage topology"},
+    {"id":"A14","area":"Relationships","assertion":"all four relationship machines require Palace access but no Palace career stage"},
+    {"id":"A15","area":"Relationships","assertion":"patron refusal/step-away preserves Palace access and ordinary Palace work"},
+    {"id":"A16","area":"Relationships","assertion":"rival disengagement preserves Palace access and ordinary Palace work"},
+    {"id":"A17","area":"Relationships","assertion":"official-contact refusal/step-away preserves Palace access and ordinary Palace work"},
+    {"id":"A18","area":"Romance","assertion":"decline/professional/friendship paths never gate access, career completion, or endings"},
+    {"id":"A19","area":"Night","assertion":"both Palace Night choices are unavailable before Palace access and voluntary afterward"},
+    {"id":"A20","area":"Night","assertion":"Palace Night consumes one normal Night choice and never owns forced-night interception"},
+    {"id":"A21","area":"Night","assertion":"when a separate forced-Night owner suppresses voluntary menu, Palace Night does not bypass it"},
+    {"id":"A22","area":"LegacyItems","assertion":"all ten referenced capabilities exist in shipped item definitions"},
+    {"id":"A23","area":"LegacyItems","assertion":"legacy capability changes only an eligible Palace variant/choice, never entry eligibility"},
+    {"id":"A24","area":"D18","assertion":"any one progression stat at 90 fails stat subgate"},
+    {"id":"A25","area":"D18","assertion":"all 12 progression stats at 91 pass stat subgate"},
+    {"id":"A26","area":"D18","assertion":"Lust is excluded from the 12-stat subgate"},
+    {"id":"A27","area":"D18","assertion":"cap-200 life still uses 91, never 181"},
+    {"id":"A28","area":"D24Copy","assertion":"RU/EN copy says maximum becomes 200 instead of 100"},
+    {"id":"A29","area":"D24Copy","assertion":"RU/EN copy never says stat values double"},
+    {"id":"A30","area":"Migration","assertion":"old active life without D23 run snapshot does not receive a retroactive Day-1 invitation"},
+    {"id":"A31","area":"Migration","assertion":"next New Start+ with all ten active packages can receive the Day-1 invitation"},
+    {"id":"A32","area":"Regression","assertion":"all ordinary career and Assassin natural acceptance tests remain unchanged by Palace content bind"},
+    {"id":"A33","area":"Catalog","assertion":"new Palace packs load through existing auto-discovery with no duplicate event IDs"},
+    {"id":"A34","area":"Localization","assertion":"every player-facing Palace event/choice has RU/EN parity and safe fallback"},
+    {"id":"A35","area":"Boundaries","assertion":"no test or production content assumes Prince confrontation mechanics"},
+    {"id":"A36","area":"Boundaries","assertion":"no test or production content assumes a 3-stage or 6-stage Palace career topology"},
+    {"id":"A37","area":"EndToEnd","assertion":"after natural ten-career Hard Work completion, a new life with all ten packages selected receives exactly one Day-1 invitation"}
+  ],
+  "explicitlyDeferred": [
+    "Prince victory signal implementation and confrontation mechanics",
+    "final Palace career stage count/topology",
+    "Palace career action/shift IDs and stage thresholds",
+    "full True Ending definition until Prince signal exists",
+    "final cap-200 reward/unlock ID and New Start+ UI binding",
+    "Palace presentation media"
+  ]
+}
