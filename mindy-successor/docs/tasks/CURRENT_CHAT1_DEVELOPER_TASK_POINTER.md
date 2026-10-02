@@ -1,18 +1,27 @@
 # CURRENT CHAT1 DEVELOPER TASK POINTER
 
-Status: **MERCHANT RUNTIME v15 FROZEN / QA ACTIVE / STANDBY**
+Status: **ARTIST/GEISHA RUNTIME v16 ACTIVE**
 Owner: Chat 1 Developer / Integration Developer
+Queue: C1D-169..180
+Target branch: `chat1/artist-geisha-complete-v16`
 
-Frozen Merchant runtime:
+Frozen Merchant runtime history remains immutable:
 - PR #226
 - exact head `88422257f618c7182dd6d1f3eca7596c9972eb0a`
-- activation base `d7dad76d47d71144a5788f762cedd72d9fc95ae5`
-- exact-head CI #898 / id `36977507786`: SUCCESS
-- validator 60 packs / 222 events / 39 actions / 22 endings
-- tests 866 / 866 pass
-- C1D-157..168 complete
-- do not move this head except for a concrete Chat 4 QA / required-CI blocker or explicit Lead request.
+- C4-162 PASS-WITH-NOTES
+- do not move that head.
 
-Chat 4 Merchant QA v17 starts with C4-162 on this exact head.
+Authoritative queue:
+- `TASK_CHAT1_DEVELOPER_QUEUE_v16.md`
 
-No new Chat 1 producer queue is active at this checkpoint. Do not start the next ordinary career before Merchant is shipped or Lead explicitly publishes a safe prep queue.
+Start rule:
+- Lead creates `chat1/artist-geisha-complete-v16` from the same Artist/Geisha activation commit that publishes this pointer;
+- begin **C1D-169 immediately**, then continue C1D-170..180 without waiting between safe queue items;
+- keep Merchant #226 frozen and untouched;
+- freeze one focused exact-head Artist/Geisha runtime PR at C1D-180.
+
+Preserve current Artist/Geisha ordinary-work invariants:
+- `artist-geisha.shift` = 1 Energy;
+- unlock = Creativity 35 + Manners 25 + Grooming 30 OR Year 3;
+- current wage + seasonal packages;
+- `ending.artist-geisha.hard-work`, `artist-geisha.hardwork.compat`, `hardWork:artist-geisha`.
