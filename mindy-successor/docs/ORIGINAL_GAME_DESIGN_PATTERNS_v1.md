@@ -6,6 +6,16 @@ Status: **REFERENCE ONLY.** This is not Product authority and does not ask the s
 
 The original SWF is useful mainly as a systems-design reference: how work, School, housing pressure, career progression, endings and New Game+ interact. Current user decisions always override the original.
 
+## Loop at a glance
+
+The useful original loop is systemic rather than numeric:
+
+`small daily action budget -> work / School / larger activity -> money + build changes -> housing pressure -> sleep or street consequence -> next day/season -> career/story milestones -> explicit ending choice -> Meta options for later lives`.
+
+The important lesson is that these systems pressure one another. Money spent on School is money not available for housing; work grows some axes while costing Energy and sometimes other stats; poverty can become a route; endings reshape later runs.
+
+The successor should preserve that kind of interaction without reproducing the original content or exact formulas.
+
 ## High-value patterns
 
 ### 1. Small daily action economy
