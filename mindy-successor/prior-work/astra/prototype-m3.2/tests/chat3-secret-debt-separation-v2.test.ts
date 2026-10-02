@@ -37,34 +37,25 @@ test('ordinary poverty keeps independent income/help/resource opportunities',()=
   }
 });
 
-test('generic debt surface exists but is not a hidden Secret Debt career',()=>{
+test('generic debt stays separate while Secret Debt has its own production identities',()=>{
   for(const actionId of fixture.genericDebtBoundary.actionIds){
     assert.ok(definitions.actions.some((action:any)=>action.id===actionId),actionId);
   }
 
-  for(const pattern of fixture.secretDebtProductionExpectedAbsent.careerPatterns){
-    assert.equal(
-      definitions.careers.some((career:any)=>JSON.stringify(career).toLowerCase().includes(pattern)),
-      false,
-      pattern
-    );
+  const expected=fixture.secretDebtProductionExpectedPresent;
+  assert.ok(definitions.careers.some((career:any)=>career.id===expected.careerId),expected.careerId);
+  assert.ok(definitions.actions.some((action:any)=>action.id===expected.actionId),expected.actionId);
+  for(const endingId of expected.endingIds){
+    assert.ok(definitions.endings.some((ending:any)=>ending.id===endingId),endingId);
   }
 
-  for(const pattern of fixture.secretDebtProductionExpectedAbsent.relationshipPatterns){
-    assert.equal(
-      (definitions.relationships??[]).some((relationship:any)=>JSON.stringify(relationship).toLowerCase().includes(pattern)),
-      false,
-      pattern
-    );
-  }
-
-  for(const pattern of fixture.secretDebtProductionExpectedAbsent.endingPatterns){
-    assert.equal(
-      definitions.endings.some((ending:any)=>JSON.stringify(ending).toLowerCase().includes(pattern)),
-      false,
-      pattern
-    );
-  }
+  const secretDebt=definitions.careers.find((career:any)=>career.id===expected.careerId);
+  assert.ok(secretDebt);
+  assert.equal(JSON.stringify(secretDebt).includes('"debt"'),true);
+  assert.equal(
+    (definitions.relationships??[]).some((relationship:any)=>/secret.?debt|lender|slave/i.test(JSON.stringify(relationship))),
+    false
+  );
 });
 
 test('C3-46 keeps Secret Debt product values open',()=>{
