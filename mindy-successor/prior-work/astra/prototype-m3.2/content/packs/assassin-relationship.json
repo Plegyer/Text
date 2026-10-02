@@ -1,0 +1,450 @@
+{
+  "schemaVersion": 1,
+  "id": "assassin.relationship",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "careers": [
+        "assassin"
+      ],
+      "relationships": [
+        "assassin.handler"
+      ]
+    },
+    "writes": {
+      "careers": [
+        "assassin"
+      ],
+      "relationships": [
+        "assassin.handler"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "assassin.relationship.intro",
+      "title": "Professional handler introduction",
+      "sourceDomain": "assassin",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "actionCompleted",
+          "action": "assassin.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 68,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "operative"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "trusted-blade"
+            }
+          ]
+        },
+        {
+          "kind": "relationshipFact",
+          "relationship": "assassin.handler",
+          "fact": "introduced-at-work",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Professional handler introduction. This safe-prep scene records only Assassin-local progression and leaves open target, lethal/nonlethal, combat, fallout, reward, and ending design unresolved.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "professional",
+          "label": "Keep the relationship strictly professional",
+          "text": "Keep the relationship strictly professional.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "assassin.handler",
+              "fact": "introduced-at-work"
+            },
+            {
+              "kind": "incrementRelationshipCounter",
+              "relationship": "assassin.handler",
+              "counter": "work-meetings",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assassin.relationship.trust",
+      "title": "Build professional handler trust",
+      "sourceDomain": "assassin",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "actionCompleted",
+          "action": "assassin.shift"
+        },
+        {
+          "kind": "relationshipFactAdded",
+          "relationship": "assassin.handler",
+          "fact": "introduced-at-work"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 72,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "relationshipStage",
+          "relationship": "assassin.handler",
+          "stage": "introduced"
+        },
+        {
+          "kind": "relationshipFact",
+          "relationship": "assassin.handler",
+          "fact": "introduced-at-work",
+          "present": true
+        },
+        {
+          "kind": "relationshipCounter",
+          "relationship": "assassin.handler",
+          "counter": "work-meetings",
+          "op": "gte",
+          "value": 1
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Build professional handler trust. This safe-prep scene records only Assassin-local progression and leaves open target, lethal/nonlethal, combat, fallout, reward, and ending design unresolved.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue professional coordination",
+          "text": "Continue professional coordination.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "incrementRelationshipCounter",
+              "relationship": "assassin.handler",
+              "counter": "work-meetings",
+              "amount": 1
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "assassin",
+              "fact": "handler-trust-ready"
+            },
+            {
+              "kind": "advanceRelationship",
+              "relationship": "assassin.handler",
+              "transition": "build-trust"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assassin.relationship.conflict-open",
+      "title": "Open a professional conflict over control of the brief",
+      "sourceDomain": "assassin",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "relationshipTransition",
+          "relationship": "assassin.handler"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "assassin.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 71,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "relationshipStage",
+          "relationship": "assassin.handler",
+          "stage": "professional-trust"
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Open a professional conflict over control of the brief. This safe-prep scene records only Assassin-local progression and leaves open target, lethal/nonlethal, combat, fallout, reward, and ending design unresolved.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "open",
+          "label": "Address the conflict directly",
+          "text": "Address the conflict directly.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "assassin.handler",
+              "fact": "conflict-opened"
+            },
+            {
+              "kind": "advanceRelationship",
+              "relationship": "assassin.handler",
+              "transition": "open-conflict"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assassin.relationship.conflict-resolve",
+      "title": "Resolve handler conflict without blocking ordinary work",
+      "sourceDomain": "assassin",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "relationshipTransition",
+          "relationship": "assassin.handler"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 80,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "relationshipStage",
+          "relationship": "assassin.handler",
+          "stage": "conflict-open"
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Resolve handler conflict without blocking ordinary work. This safe-prep scene records only Assassin-local progression and leaves open target, lethal/nonlethal, combat, fallout, reward, and ending design unresolved.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "cooperate",
+          "label": "Cooperate on explicit professional terms",
+          "text": "Cooperate on explicit professional terms.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "setRelationshipChoice",
+              "relationship": "assassin.handler",
+              "choice": "conflict-response",
+              "value": "cooperate"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "assassin",
+              "fact": "relationship-conflict-resolved"
+            },
+            {
+              "kind": "advanceRelationship",
+              "relationship": "assassin.handler",
+              "transition": "cooperate"
+            }
+          ]
+        },
+        {
+          "id": "rivalry",
+          "label": "Keep a professional rivalry",
+          "text": "Keep a professional rivalry.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "setRelationshipChoice",
+              "relationship": "assassin.handler",
+              "choice": "conflict-response",
+              "value": "rivalry"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "assassin",
+              "fact": "relationship-conflict-resolved"
+            },
+            {
+              "kind": "advanceRelationship",
+              "relationship": "assassin.handler",
+              "transition": "rivalry"
+            }
+          ]
+        },
+        {
+          "id": "decline",
+          "label": "Decline the handler route and keep ordinary work",
+          "text": "Decline the handler route and keep ordinary work.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "setRelationshipChoice",
+              "relationship": "assassin.handler",
+              "choice": "conflict-response",
+              "value": "declined"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "assassin",
+              "fact": "relationship-conflict-resolved"
+            },
+            {
+              "kind": "advanceRelationship",
+              "relationship": "assassin.handler",
+              "transition": "refusal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assassin.relationship.utility",
+      "title": "Optional handler utility after cooperation",
+      "sourceDomain": "assassin",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "relationshipTransition",
+          "relationship": "assassin.handler"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "assassin.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 67,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "relationshipStage",
+          "relationship": "assassin.handler",
+          "stage": "utility-ready"
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Optional handler utility after cooperation. This safe-prep scene records only Assassin-local progression and leaves open target, lethal/nonlethal, combat, fallout, reward, and ending design unresolved.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "accept",
+          "label": "Keep one later professional handoff available",
+          "text": "Keep one later professional handoff available.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "setRelationshipChoice",
+              "relationship": "assassin.handler",
+              "choice": "utility-response",
+              "value": "accepted"
+            },
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "assassin.handler",
+              "fact": "utility-response-resolved"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "assassin",
+              "fact": "handler-utility-ready"
+            },
+            {
+              "kind": "advanceRelationship",
+              "relationship": "assassin.handler",
+              "transition": "finish-utility"
+            }
+          ]
+        },
+        {
+          "id": "decline",
+          "label": "Decline later utility without losing ordinary work",
+          "text": "Decline later utility without losing ordinary work.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "setRelationshipChoice",
+              "relationship": "assassin.handler",
+              "choice": "utility-response",
+              "value": "declined"
+            },
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "assassin.handler",
+              "fact": "refusal-respected"
+            },
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "assassin.handler",
+              "fact": "utility-response-resolved"
+            },
+            {
+              "kind": "advanceRelationship",
+              "relationship": "assassin.handler",
+              "transition": "finish-utility"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
