@@ -76,7 +76,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "A Lumber route observation becomes a trade input. Merchant records only a narrow source-backed route input and leaves the producing system unchanged.",
+          "text": "Lumber knowledge about a confirmed forest boundary becomes only a route and source fact for Merchant. You record the supply constraint without changing Forest, Lumber, or access rights within them.\n\nA Lumber connection gives the network knowledge of one dependable source and its route constraints. Patron of Routes values the verified link without taking ownership of lumber production or Forest.",
           "conditions": [],
           "media": []
         }
@@ -154,7 +154,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "A preserved Farm sample becomes a documented trade input. Merchant records only a narrow source-backed route input and leaves the producing system unchanged.",
+          "text": "A preserved Farm sample can serve as a documented comparison point. Merchant records its source and condition without taking ownership of Farm inventory or duplicating the result.\n\nThe Farm input shows how a documented sample can move from producer to buyer without losing its provenance. Merchant connects the stages without replacing the producer's work.",
           "conditions": [],
           "media": []
         }
@@ -257,7 +257,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "A successful Hunter return becomes route evidence. Merchant records only a narrow source-backed route input and leaves the producing system unchanged.",
+          "text": "A successful Hunter return confirms that a specific route was completed and a result came back. Merchant uses that fact as a logistics input without controlling the expedition itself.\n\nMerchant receives no separate control over Activity. This wave uses only the already completed Hunter result after a successful return, so expedition state remains owned by its source system.\n\nThe Hunter input matters because the route was actually completed and returned with a result. The network can account for that path without turning it into an automatic source of unlimited goods.",
           "conditions": [],
           "media": []
         }
@@ -360,7 +360,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "A confirmed Tavern route report reaches Merchant. Merchant records only a narrow source-backed route input and leaves the producing system unchanged.",
+          "text": "A confirmed Tavern rumour is useful not as magical knowledge of demand but as a checked report about a place or need. You record the source and keep the trade decision separate.\n\nTavern provides a confirmed signal about a place, people, or need that can be compared with other sources. Patron of Routes connects information rather than declaring one rumour to be universal market truth.",
           "conditions": [],
           "media": []
         }
@@ -438,7 +438,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "A Guard cargo-pass discrepancy informs route planning. Merchant records only a narrow source-backed route input and leaves the producing system unchanged.",
+          "text": "Checked Guard evidence about a pass shows a concrete route constraint or discrepancy. Merchant accounts for it in planning without creating its own law or permit system.\n\nThe Guard input adds a checked route constraint: a pass, discrepancy, or inspection point. The network becomes more reliable by accounting for that constraint rather than magically removing it.",
           "conditions": [],
           "media": []
         }
