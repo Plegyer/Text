@@ -1,0 +1,418 @@
+{
+  "version": 1,
+  "owner": "Chat 1 Developer / Integration Developer",
+  "queue": "C1D-169..180",
+  "career": {
+    "id": "artist-geisha",
+    "stages": [
+      "novice",
+      "performer",
+      "recognized-artist",
+      "veteran",
+      "master-artist",
+      "patron-network",
+      "court-invitation",
+      "outcome-ready"
+    ],
+    "transitions": [
+      "first-shift",
+      "recognized-artist",
+      "branch-veteran",
+      "branch-master-artist",
+      "branch-patron-network",
+      "branch-court-invitation",
+      "outcome-ready"
+    ],
+    "counters": [
+      "completed_shifts",
+      "spring_performances",
+      "summer_performances",
+      "autumn_performances",
+      "winter_performances",
+      "mentor_meetings",
+      "night_opportunities"
+    ],
+    "facts": [
+      "first-shift-complete",
+      "performer-ready",
+      "recognized-ready",
+      "spring-window-seen",
+      "summer-window-seen",
+      "autumn-window-seen",
+      "winter-window-seen",
+      "seasonal-breadth-ready",
+      "mentor-introduced",
+      "mentor-trust-ready",
+      "relationship-conflict-resolved",
+      "relationship-utility-ready",
+      "formal-attire-issued",
+      "performance-kit-issued",
+      "invitation-token-issued",
+      "school-arts-ready",
+      "school-etiquette-ready",
+      "school-rhetoric-ready",
+      "school-body-confidence-ready",
+      "school-literacy-ready",
+      "performance-breadth-ready",
+      "social-network-breadth-ready",
+      "court-contact-ready",
+      "veteran-ready",
+      "master-artist-ready",
+      "patron-network-ready",
+      "court-invitation-ready",
+      "outcome-ready",
+      "satyr-network-known",
+      "tavern-rumour-known",
+      "merchant-material-route-known",
+      "guard-event-context-known"
+    ]
+  },
+  "ordinaryShift": {
+    "action": "artist-geisha.shift",
+    "energyCost": 1,
+    "unlock": {
+      "any": [
+        {
+          "all": [
+            {
+              "stat": "creativity",
+              "op": "gte",
+              "value": 35
+            },
+            {
+              "stat": "manners",
+              "op": "gte",
+              "value": 25
+            },
+            {
+              "stat": "grooming",
+              "op": "gte",
+              "value": 30
+            }
+          ]
+        },
+        {
+          "calendarYear": {
+            "op": "gte",
+            "value": 3
+          }
+        }
+      ]
+    },
+    "wage": {
+      "base": 15,
+      "weights": [
+        {
+          "stat": "manners",
+          "factor": 0.3
+        },
+        {
+          "stat": "charm",
+          "factor": 0.3
+        },
+        {
+          "stat": "sexuality",
+          "factor": 0.15
+        },
+        {
+          "stat": "dexterity",
+          "factor": 0.15
+        }
+      ]
+    },
+    "seasonalSceneIds": [
+      "spring.default",
+      "summer.default",
+      "autumn.default",
+      "winter.default"
+    ],
+    "seasonalEffects": {
+      "spring": [
+        {
+          "stat": "manners",
+          "delta": 1
+        },
+        {
+          "stat": "charm",
+          "delta": 1
+        }
+      ],
+      "summer": [
+        {
+          "stat": "charm",
+          "delta": 1
+        },
+        {
+          "stat": "dexterity",
+          "delta": 1
+        }
+      ],
+      "autumn": [
+        {
+          "stat": "manners",
+          "delta": 1
+        },
+        {
+          "stat": "sexuality",
+          "delta": 1
+        }
+      ],
+      "winter": [
+        {
+          "stat": "charm",
+          "delta": 1
+        },
+        {
+          "stat": "reason",
+          "delta": 1
+        }
+      ]
+    },
+    "seasonalCounters": {
+      "spring": "spring_performances",
+      "summer": "summer_performances",
+      "autumn": "autumn_performances",
+      "winter": "winter_performances"
+    }
+  },
+  "seasonalWindows": [
+    {
+      "season": "spring",
+      "event": "artist-geisha.season.spring-program",
+      "fact": "spring-window-seen"
+    },
+    {
+      "season": "summer",
+      "event": "artist-geisha.season.summer-evening",
+      "fact": "summer-window-seen"
+    },
+    {
+      "season": "autumn",
+      "event": "artist-geisha.season.autumn-festival",
+      "fact": "autumn-window-seen"
+    },
+    {
+      "season": "winter",
+      "event": "artist-geisha.season.winter-salon",
+      "fact": "winter-window-seen"
+    }
+  ],
+  "relationship": {
+    "id": "artist-geisha.mentor",
+    "role": "Senior artist / mentor",
+    "romanceRequired": false,
+    "stages": [
+      "introduced",
+      "professional-trust",
+      "conflict-open",
+      "utility-ready",
+      "route-resolved"
+    ],
+    "counters": [
+      "work-meetings",
+      "rehearsal-meetings"
+    ],
+    "choices": [
+      "conflict-response",
+      "utility-response"
+    ],
+    "facts": [
+      "introduced-at-work",
+      "professional-trust-earned",
+      "conflict-opened",
+      "conflict-resolved",
+      "refusal-respected",
+      "utility-ready"
+    ]
+  },
+  "items": {
+    "formalAttire": {
+      "id": "artist_formal_attire",
+      "capability": "artist_formal_presence",
+      "rule": "Formal performance presence only; never grants Palace access."
+    },
+    "performanceKit": {
+      "id": "artist_performance_kit",
+      "capability": "artist_performance_ready",
+      "rule": "Artist-local performance access/evidence only; no generic contest subsystem."
+    },
+    "invitationToken": {
+      "id": "artist_invitation_token",
+      "capability": "artist_handle_invitation",
+      "rule": "Artist-local invitation/contact evidence only; never satisfies Palace unlock."
+    }
+  },
+  "schoolHooks": [
+    {
+      "courseId": "school.course.arts_and_performance",
+      "trackId": "school.track.arts_and_performance",
+      "producerThreshold": null,
+      "producerPublicFact": null,
+      "fact": "school-arts-ready",
+      "consumer": "artist-geisha.routes.master-ready",
+      "use": "advanced performance preparation"
+    },
+    {
+      "courseId": "school.course.etiquette_and_presentation",
+      "trackId": "school.track.etiquette_and_presentation",
+      "producerThreshold": null,
+      "producerPublicFact": null,
+      "fact": "school-etiquette-ready",
+      "consumer": "artist-geisha.routes.court-ready",
+      "use": "formal presentation and Court Invitation readiness only"
+    },
+    {
+      "courseId": "school.course.rhetoric_and_social",
+      "trackId": "school.track.rhetoric_and_social",
+      "producerThreshold": null,
+      "producerPublicFact": null,
+      "fact": "school-rhetoric-ready",
+      "consumer": "artist-geisha.relationship.trust",
+      "use": "professional conversation and social-network preparation"
+    },
+    {
+      "courseId": "school.course.body_confidence",
+      "trackId": "school.track.body_confidence",
+      "producerThreshold": null,
+      "producerPublicFact": null,
+      "fact": "school-body-confidence-ready",
+      "consumer": "artist-geisha.season.autumn-festival",
+      "use": "intentional performance presence with boundaries"
+    },
+    {
+      "courseId": "school.course.literacy_and_numbers",
+      "trackId": "school.track.literacy_and_numbers",
+      "producerThreshold": null,
+      "producerPublicFact": null,
+      "fact": "school-literacy-ready",
+      "consumer": "artist-geisha.routes.master-ready",
+      "use": "rehearsal/program records and advanced preparation"
+    }
+  ],
+  "routeFacts": {
+    "veteran": [
+      "seasonal-breadth-ready",
+      "veteran-ready"
+    ],
+    "masterArtist": [
+      "performance-breadth-ready",
+      "school-arts-ready",
+      "school-literacy-ready",
+      "performance-kit-issued",
+      "master-artist-ready"
+    ],
+    "patronNetwork": [
+      "mentor-trust-ready",
+      "school-rhetoric-ready",
+      "social-network-breadth-ready",
+      "patron-network-ready"
+    ],
+    "courtInvitation": [
+      "school-etiquette-ready",
+      "formal-attire-issued",
+      "court-contact-ready",
+      "invitation-token-issued",
+      "court-invitation-ready"
+    ]
+  },
+  "endings": {
+    "hardWork": {
+      "id": "ending.artist-geisha.hard-work",
+      "reward": "artist-geisha.hardwork.compat",
+      "metaRewardId": "hardWork:artist-geisha"
+    },
+    "masterArtist": null,
+    "patronNetwork": null,
+    "courtInvitation": null,
+    "rule": "No new public complex Artist/Geisha ending or reward ID is authorized in queue v16."
+  },
+  "unresolved": {
+    "finalFantasyFramingOrName": null,
+    "exactArtDisciplines": null,
+    "contestSubsystem": null,
+    "npcIdentities": null,
+    "salaryRetuning": null,
+    "schoolThresholds": null,
+    "schoolProducerPublicFacts": null,
+    "complexEndingIds": null,
+    "genericPatronSystem": null,
+    "palaceAccessFromArtistCareer": null
+  },
+  "invariants": [
+    "artist-geisha.shift remains ordinary 1-Energy paid work with Creativity 35 + Manners 25 + Grooming 30 OR Year 3 unlock, current wage and shipped four-season scene/stat packages",
+    "ordinary Artist/Geisha work remains available independently of advanced-route readiness",
+    "seasonal/festival opportunities are Artist-local calendar windows, not a global contest or festival subsystem",
+    "the recurring relationship is role-only professional content; romance is optional and never required for ordinary progression or Hard Work",
+    "School is limited to the five prepared existing courses and publishes no numeric threshold or public producer fact from this runtime contract",
+    "items change Artist-local options/access/evidence only and never create universal status or Palace access",
+    "Night opportunities may consume existing typed Night machinery only; this runtime does not rewrite NightFlow semantics",
+    "Artist House remains distinct from Satyr Maid and voluntary Prostitute careers",
+    "Court Invitation is Artist-local readiness/contact evidence only and never satisfies or bypasses the Palace 10/10 Hard Work unlock",
+    "late-route readiness may coexist and does not auto-commit an ending",
+    "only ending.artist-geisha.hard-work is a public Artist/Geisha ending in this runtime wave",
+    "no Assassin, Prostitute, Palace, new curriculum, universal reputation meter, generic patron system, or generic contest engine is invented without exact Git authority"
+  ],
+  "night": {
+    "choices": [
+      "artist-geisha.night.rehearsal",
+      "artist-geisha.night.salon",
+      "artist-geisha.night.mentor-review"
+    ],
+    "rule": "All Artist/Geisha night opportunities use the existing single voluntary Night choice and after-choice intercept. They compete with School night study without changing NightFlow semantics, lodging payment, or next-day Energy rules."
+  },
+  "crossSystem": {
+    "satyrMaid": {
+      "input": {
+        "kind": "careerFact",
+        "career": "satyr-maid",
+        "fact": "personal-network-ready"
+      },
+      "event": "artist-geisha.cross.satyr-overlap",
+      "consumerFact": "satyr-network-known",
+      "rule": "Professional event overlap only; Artist House and Satyr Maid remain distinct careers."
+    },
+    "tavern": {
+      "input": {
+        "kind": "careerFact",
+        "career": "tavern",
+        "fact": "rumour-confirmed"
+      },
+      "event": "artist-geisha.cross.tavern-rumour",
+      "consumerFact": "tavern-rumour-known"
+    },
+    "merchant": {
+      "integrationAuthority": "merged main effca71298e4b2b2d1722b320c612382199deb18",
+      "input": {
+        "kind": "careerFact",
+        "career": "merchant",
+        "fact": "delivery-recorded"
+      },
+      "event": "artist-geisha.cross.merchant-delivery",
+      "consumerFact": "merchant-material-route-known",
+      "rule": "Materials/delivery context only; no global economy or patron subsystem."
+    },
+    "guard": {
+      "input": {
+        "kind": "careerFact",
+        "career": "guard",
+        "fact": "cargo-pass-evidence"
+      },
+      "event": "artist-geisha.cross.guard-context",
+      "consumerFact": "guard-event-context-known",
+      "rule": "Formal-event security context only; no Guard authority, covert route, or Palace access."
+    },
+    "school": {
+      "authority": "artist-geisha.school-authority.v1",
+      "rule": "Five exact prepared School consumer facts are handled by C1D-174; producer ownership remains Chat 5 School."
+    },
+    "activity": {
+      "consumer": null,
+      "rule": "No Artist-specific Activity consumer is justified by current Git authority, so no Activity gameplay dependency is fabricated."
+    },
+    "forbidden": [
+      "assassin dependency",
+      "prostitute dependency",
+      "palace dependency"
+    ]
+  }
+}
