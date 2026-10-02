@@ -4292,7 +4292,7 @@
       "mode": "story",
       "scenes": [
         {
-          "id": "default",
+          "id": "repayment",
           "text": "You put the full sum down at once. The ledger closes, the claim on your work ends, and the ordinary professions are yours to choose again.",
           "conditions": [],
           "media": [
@@ -4356,7 +4356,7 @@
       "mode": "story",
       "scenes": [
         {
-          "id": "default",
+          "id": "takeover",
           "text": "Preparation turns into action. The debt holder is removed, and the structure that once controlled you is now under your control.",
           "conditions": [],
           "media": [
