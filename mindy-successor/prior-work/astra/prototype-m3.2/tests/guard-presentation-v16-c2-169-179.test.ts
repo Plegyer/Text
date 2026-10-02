@@ -76,7 +76,8 @@ test('C2-169 frozen Guard identities match the exact production catalog and publ
     const event=catalog.events.find(item=>item.id===eventId);
     assert.ok(event,eventId);
     assert.equal(event.sourceDomain,'guard',eventId+' source domain');
-    assert.deepEqual(event.variants.map(v=>v.id),['default'],eventId+' variants');
+    const expectedVariants=eventId==='guard.city.poverty-response'?['street-survival','cheap-room','default']:['default'];
+    assert.deepEqual(event.variants.map(v=>v.id),expectedVariants,eventId+' variants');
   }
 
   assert.equal(catalog.events.some(event=>event.id.startsWith('guard.school.')),false);
@@ -203,10 +204,10 @@ test('C2-178 existing Guard Hard Work is the only Guard ending surface',()=>{
   );
 });
 
-test('C2-179 all 63 Guard surfaces have RU EN alt-caption parity and animation-off static safety',()=>{
+test('C2-179 integrated 65 Guard surfaces have RU EN alt-caption parity and animation-off static safety',()=>{
   const checked=applyPresentation(catalog,presentation);
   const guardSlots=Object.entries<any>(presentation.slots??{}).filter(([id])=>id.includes('guard'));
-  assert.equal(guardSlots.length,63,'complete frozen Guard surface count');
+  assert.equal(guardSlots.length,65,'complete integrated Guard surface count');
   for(const [id,slot] of guardSlots){
     assertLocalizedStatic(id);
     const off=resolvePresentation(checked,presentation,id,{animationsEnabled:false,occurrenceKey:'c2-179'});
@@ -225,8 +226,8 @@ test('C2-179 every published Guard event override maps to one exact frozen produ
       .filter(event=>event.sourceDomain==='guard')
       .flatMap(event=>event.variants.map(variant=>presentationIdForEvent(catalog,event.id,variant.id)))
   );
-  assert.equal(expected.size,26);
+  assert.equal(expected.size,28);
   const published=Object.keys(presentation.slots??{}).filter(id=>id.startsWith('job/guard/event/'));
-  assert.equal(published.length,26);
+  assert.equal(published.length,28);
   for(const id of published)assert.ok(expected.has(id),id+' exact catalog backing');
 });
