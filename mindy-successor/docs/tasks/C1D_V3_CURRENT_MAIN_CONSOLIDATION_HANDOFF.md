@@ -1,6 +1,6 @@
 # Chat 1 Developer v3 current-main consolidation handoff
 
-Status: WORKING
+Status: HISTORICAL — completed queue evidence; current work is governed by `CURRENT_CHAT1_DEVELOPER_TASK_POINTER.md`
 Owner: Chat 1 Developer / Integration Developer
 Queue: C1D-13..C1D-24
 Current-main baseline: `ef16d9fa0c85e3792e3dc223baadd247df95ec7f`
