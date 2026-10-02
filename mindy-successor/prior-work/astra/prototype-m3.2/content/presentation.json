@@ -3291,6 +3291,22 @@
         "alt": "Guard production event guard.routes.major-case-ready; static presentation only.",
         "altKey": "presentation.static.guard.event.guard-routes-major-case-ready.alt"
       }
+    },
+    "job/guard/event/guard-city-poverty-response/street-survival": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Guard poverty-response event variant shaped by prior street survival; static presentation only.",
+        "altKey": "presentation.static.guard.event.guard-city-poverty-response-street-survival.alt"
+      }
+    },
+    "job/guard/event/guard-city-poverty-response/cheap-room": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Guard poverty-response event variant shaped by cheap shared lodging experience; static presentation only.",
+        "altKey": "presentation.static.guard.event.guard-city-poverty-response-cheap-room.alt"
+      }
     }
   }
 }
