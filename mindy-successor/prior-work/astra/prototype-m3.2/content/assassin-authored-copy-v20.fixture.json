@@ -1,0 +1,975 @@
+{
+  "formatVersion": 1,
+  "id": "chat3.assassin-authored-copy.v20",
+  "status": "SAFE_PREP_ONLY_ALL_FUTURE_CONSUMERS_PENDING_RUNTIME_ID",
+  "activationHead": "d3b7fe038b35cdc53d786189ef7ba44853a7610d",
+  "authority": {
+    "shippedAction": "assassin.shift",
+    "shippedCareer": "assassin",
+    "shippedEnding": "ending.assassin.hard-work",
+    "futureRuntimeAuthority": false
+  },
+  "invariants": {
+    "createsGameplayIds": false,
+    "changesRuntimeMechanics": false,
+    "changesSaveOrRng": false,
+    "changesActivityEngine": false,
+    "changesEndingEligibilityRewardOrMeta": false,
+    "changesPalaceUnlock": false,
+    "createsCombatSystem": false,
+    "createsMoralityStat": false,
+    "createsBlackMarketShop": false,
+    "createsUniversalFalloutMeter": false,
+    "createsGenericNetworkSystem": false,
+    "changesProductionLocalization": false
+  },
+  "entries": [
+    {
+      "section": "ordinary-work",
+      "contentKey": "observe.routine",
+      "ru": "Обычная смена может быть простой наблюдательной работой: понять, когда место оживляется, кто отвечает за передачу информации и где контекст меняется сам по себе. Задача — собрать пригодную для следующего решения картину, а не искать повод для столкновения.",
+      "en": "An ordinary shift can be simple observation: learn when a place becomes busy, who handles information, and where the context changes on its own. The goal is a usable picture for the next decision, not an excuse for confrontation.",
+      "tags": [
+        "observation",
+        "city-side",
+        "non-combat"
+      ]
+    },
+    {
+      "section": "ordinary-work",
+      "contentKey": "handoff.package",
+      "ru": "Передача в обычной работе — это прежде всего точность договорённости: что именно передаётся, кому и как подтвердить завершение без лишней драматизации. Смена остаётся профессиональной задачей, а не обязательным насилием.",
+      "en": "A handoff in ordinary work is primarily about precision: what is being transferred, to whom, and how completion is confirmed without needless escalation. The shift remains professional work rather than mandatory violence.",
+      "tags": [
+        "handoff",
+        "city-side",
+        "non-combat"
+      ]
+    },
+    {
+      "section": "ordinary-work",
+      "contentKey": "tailing.distance",
+      "ru": "Слежка описывается через внимание к изменению маршрута и контекста, а не через технические приёмы преследования. Ты замечаешь, когда цель меняет привычный ритм, и записываешь наблюдение для будущего выбора.",
+      "en": "Tailing is described through attention to changes in route and context rather than technical pursuit tactics. You notice when a target changes an established rhythm and record the observation for a later choice.",
+      "tags": [
+        "tailing",
+        "observation",
+        "non-procedural"
+      ]
+    },
+    {
+      "section": "ordinary-work",
+      "contentKey": "route.prep",
+      "ru": "Подготовка маршрута означает проверить, какие точки действительно связаны одной задачей, где нужен запас времени и что может сделать план неактуальным. Авторский слой не превращает это в универсальную карту обхода охраны.",
+      "en": "Route preparation means checking which points actually belong to one job, where time margin is needed, and what could make the plan obsolete. The authored layer does not turn this into a universal map for bypassing security.",
+      "tags": [
+        "route-prep",
+        "planning",
+        "boundary"
+      ]
+    },
+    {
+      "section": "ordinary-work",
+      "contentKey": "window.finding",
+      "ru": "Поиск окна — это сюжетное решение о времени: когда нужный разговор, встреча или передача вообще возможны и когда лучше отказаться от попытки. Он не описывает технический способ проникновения.",
+      "en": "Window finding is a narrative timing decision: when a needed conversation, meeting, or handoff is possible at all and when it is better to abandon the attempt. It does not describe a technical method of entry.",
+      "tags": [
+        "window",
+        "timing",
+        "non-procedural"
+      ]
+    },
+    {
+      "section": "ordinary-work",
+      "contentKey": "tool.test",
+      "ru": "Проверка инструмента в обычной смене означает убедиться, что выбранная Artist-local или covert возможность подходит контексту задачи. Текст не даёт инструкции по оружию, замкам или реальному обходу защиты.",
+      "en": "Testing a tool in an ordinary shift means confirming that a chosen covert capability fits the context of the job. The text gives no instructions for weapons, locks, or real-world security bypass.",
+      "tags": [
+        "tool-test",
+        "boundary",
+        "non-procedural"
+      ]
+    },
+    {
+      "section": "ordinary-work",
+      "contentKey": "false.meeting",
+      "ru": "Ложная встреча работает как сюжетная проверка договорённостей: кто пришёл, какая версия задачи была передана и есть ли причина остановиться. Её смысл — выявить противоречие, а не обучать обману вне игрового контекста.",
+      "en": "A false meeting works as a narrative check of agreements: who arrived, what version of the job was passed along, and whether there is reason to stop. Its purpose is to expose inconsistency, not teach deception outside the game context.",
+      "tags": [
+        "false-meeting",
+        "intel",
+        "boundary"
+      ]
+    },
+    {
+      "section": "ordinary-work",
+      "contentKey": "cleanup.records",
+      "ru": "Cleanup после обычной задачи — это закрыть следы самой игровой работы: вернуть реквизит, сверить заметки и не оставить незавершённую договорённость. Он не описывает сокрытие реального преступления.",
+      "en": "Cleanup after an ordinary job means closing out the game work itself: return props, reconcile notes, and avoid leaving an unfinished agreement. It does not describe concealment of a real crime.",
+      "tags": [
+        "cleanup",
+        "records",
+        "boundary"
+      ]
+    },
+    {
+      "section": "ordinary-work",
+      "contentKey": "minor.contract",
+      "ru": "Minor contract — небольшая самостоятельная задача с понятным объёмом: наблюдение, доставка, проверка контакта или подготовка контекста. Успех не требует боевой сцены и не считается крупным сюжетным контрактом.",
+      "en": "A minor contract is a small self-contained assignment with a clear scope: observation, delivery, contact verification, or context preparation. Success requires no combat scene and does not count as a major narrative contract.",
+      "tags": [
+        "minor-contract",
+        "ordinary-work",
+        "non-combat"
+      ]
+    },
+    {
+      "section": "major-contract",
+      "contentKey": "phase.offer",
+      "ru": "Крупный контракт начинается с предложения, где важнее всего понять предмет задачи, источник запроса и то, что ещё неизвестно. Принять разговор не означает заранее согласиться на финальное действие.",
+      "en": "A major contract begins with an offer where the important questions are the subject of the job, the source of the request, and what remains unknown. Entering the conversation does not mean agreeing in advance to the final action.",
+      "tags": [
+        "offer",
+        "contract-phase"
+      ]
+    },
+    {
+      "section": "major-contract",
+      "contentKey": "phase.intel",
+      "ru": "Этап intel собирает противоречия, подтверждённые источники и отсутствующие части картины. Он должен давать игроку основания изменить план, отказаться или перенаправить контракт, а не просто заполнять шкалу подготовки.",
+      "en": "The intel phase gathers contradictions, confirmed sources, and missing parts of the picture. It should give the player grounds to change the plan, refuse, or redirect the contract rather than merely fill a preparation meter.",
+      "tags": [
+        "intel",
+        "contract-phase"
+      ]
+    },
+    {
+      "section": "major-contract",
+      "contentKey": "phase.prep",
+      "ru": "Prep переводит собранную информацию в несколько игровых возможностей: подходящий контакт, документ, одежду, route context или отказ от неподходящего метода. Подготовка не гарантирует успех и не делает все методы доступными.",
+      "en": "Prep turns gathered information into a few game options: an appropriate contact, document, clothing, route context, or rejection of an unsuitable method. Preparation does not guarantee success or make every method available.",
+      "tags": [
+        "prep",
+        "contract-phase"
+      ]
+    },
+    {
+      "section": "major-contract",
+      "contentKey": "phase.method-choice",
+      "ru": "Выбор метода — отдельное решение между только теми вариантами, которые разрешены конкретным контрактом и текущим контекстом. Отсутствующий вариант остаётся отсутствующим; авторский текст не обещает полный набор способов каждый раз.",
+      "en": "Method choice is a separate decision among only the options permitted by the specific contract and current context. A missing option remains missing; authored text does not promise the full method set every time.",
+      "tags": [
+        "method-choice",
+        "contract-phase",
+        "selective"
+      ]
+    },
+    {
+      "section": "major-contract",
+      "contentKey": "phase.execute-or-abort",
+      "ru": "Финальная сцена должна оставлять явное различие между продолжить, остановиться и, где разрешено, изменить направление задачи. Abort — полноценный выбор с последствиями, а не скрытая кнопка провала.",
+      "en": "The final scene should preserve a clear distinction between proceeding, stopping, and—where allowed—changing the direction of the job. Abort is a complete choice with consequences rather than a disguised failure button.",
+      "tags": [
+        "execute",
+        "abort",
+        "contract-phase"
+      ]
+    },
+    {
+      "section": "major-contract",
+      "contentKey": "phase.redirect",
+      "ru": "Redirect меняет адресата информации, цель договорённости или смысл финального шага только там, где это разрешает будущий runtime. Он не подразумевает, что любой контракт можно безопасно переписать на ходу.",
+      "en": "Redirect changes the recipient of information, the subject of an agreement, or the meaning of the final step only where future runtime permits it. It does not imply that every contract can be safely rewritten on the fly.",
+      "tags": [
+        "redirect",
+        "contract-phase",
+        "selective"
+      ]
+    },
+    {
+      "section": "major-contract",
+      "contentKey": "phase.fallout",
+      "ru": "Fallout фиксирует, что после решения меняется: доверие, доступность контакта, Guard attention, пригодность документа или состояние route. Он остаётся конкретным последствием события, а не универсальной шкалой преступности.",
+      "en": "Fallout records what changed after the decision: trust, contact availability, Guard attention, usefulness of a document, or route state. It remains a concrete event consequence rather than a universal crime meter.",
+      "tags": [
+        "fallout",
+        "contract-phase",
+        "boundary"
+      ]
+    },
+    {
+      "section": "method",
+      "contentKey": "method.stealth",
+      "ru": "Stealth в этой волне — сюжетная категория для тихого решения, когда runtime действительно её разрешает. Авторский текст описывает осторожность, ограничение контакта и право отменить план, но не реальные техники проникновения.",
+      "en": "Stealth in this wave is a narrative category for a quiet solution when runtime actually permits it. Authored text describes caution, limited contact, and the right to cancel the plan, but no real-world entry techniques.",
+      "tags": [
+        "stealth",
+        "method",
+        "non-procedural"
+      ]
+    },
+    {
+      "section": "method",
+      "contentKey": "method.social-access",
+      "ru": "Social access означает использовать уже существующий повод для разговора, приглашение или роль, разрешённую сценой. Это не инструкция по выдаче себя за реального человека и не универсальный способ пройти любую проверку.",
+      "en": "Social access means using an existing reason to speak, an invitation, or a role permitted by the scene. It is not instruction for impersonating a real person and not a universal way through every check.",
+      "tags": [
+        "social-access",
+        "method",
+        "boundary"
+      ]
+    },
+    {
+      "section": "method",
+      "contentKey": "method.staged-accident",
+      "ru": "Staged accident может существовать только как абстрактный сюжетный вариант там, где его публикует runtime. Авторский текст не описывает физический механизм причинения вреда и не предполагает его доступность в каждом контракте.",
+      "en": "A staged accident may exist only as an abstract narrative option where runtime publishes it. Authored text does not describe a physical mechanism for causing harm and does not assume it is available in every contract.",
+      "tags": [
+        "staged-accident",
+        "method",
+        "abstract-only"
+      ]
+    },
+    {
+      "section": "method",
+      "contentKey": "method.indirect-manipulation",
+      "ru": "Indirect manipulation описывает изменение информационного или социального контекста внутри конкретной сцены: показать документ, передать предупреждение, изменить адрес разговора. Она не становится системой массового контроля людей.",
+      "en": "Indirect manipulation describes changing the informational or social context inside one scene: show a document, pass a warning, or redirect a conversation. It does not become a system for broad control of people.",
+      "tags": [
+        "indirect-manipulation",
+        "method",
+        "boundary"
+      ]
+    },
+    {
+      "section": "method",
+      "contentKey": "method.nonlethal-substitution",
+      "ru": "Nonlethal substitution — отдельная возможность только если будущий контракт явно её допускает. Она меняет смысл результата без обещания, что любой lethal-like order имеет безопасную замену.",
+      "en": "Nonlethal substitution is a separate option only when a future contract explicitly permits it. It changes the meaning of the result without promising that every lethal-like order has a safe substitute.",
+      "tags": [
+        "nonlethal",
+        "method",
+        "selective"
+      ]
+    },
+    {
+      "section": "method",
+      "contentKey": "method.expose-target",
+      "ru": "Expose target переносит фокус с устранения на публикацию или передачу подтверждённой информации, если такой маршрут разрешён. Он требует доказательств конкретной сцены и не равен универсальной победе через разоблачение.",
+      "en": "Expose target shifts focus from removal to publishing or handing over confirmed information when that route is permitted. It requires evidence from the specific scene and is not a universal victory through exposure.",
+      "tags": [
+        "expose-target",
+        "method",
+        "evidence"
+      ]
+    },
+    {
+      "section": "refusal",
+      "contentKey": "refusal.initial",
+      "ru": "Отказ от задания может быть профессиональным решением: недостаточно данных, противоречивый источник, неподходящие условия или несовместимая цель. Он не записывает скрытый Morality score.",
+      "en": "Refusing a job can be a professional decision: insufficient information, a contradictory source, unsuitable conditions, or an incompatible objective. It writes no hidden Morality score.",
+      "tags": [
+        "refusal",
+        "no-morality"
+      ]
+    },
+    {
+      "section": "refusal",
+      "contentKey": "refusal.after-intel",
+      "ru": "После intel отказ получает иной смысл: игрок уже знает, какое противоречие делает исходное предложение ненадёжным. Такой отказ должен сохранять причинную связь с найденной информацией, а не быть абстрактным «добрым» выбором.",
+      "en": "After intel, refusal has a different meaning: the player already knows which contradiction makes the original offer unreliable. That refusal should remain causally tied to discovered information rather than become an abstract 'good' choice.",
+      "tags": [
+        "refusal",
+        "intel",
+        "no-morality"
+      ]
+    },
+    {
+      "section": "refusal",
+      "contentKey": "redirect.warning",
+      "ru": "Redirect может означать передать предупреждение вместо исходной части задания, если будущий runtime публикует такую ветку. Текст фиксирует осознанное изменение цели контакта, а не моральную оценку персонажа.",
+      "en": "Redirect can mean delivering a warning instead of the original part of the job when future runtime publishes such a branch. The text records a deliberate change in contact purpose rather than a moral rating of the character.",
+      "tags": [
+        "redirect",
+        "warning",
+        "no-morality"
+      ]
+    },
+    {
+      "section": "refusal",
+      "contentKey": "redirect.evidence",
+      "ru": "Если в контракте найдено доказательство против заказчика или исходной версии событий, его можно сделать основанием для смены направления только в разрешённой ветке. Само наличие документа не создаёт автоматический Turncoat route.",
+      "en": "If a contract reveals evidence against the client or the original version of events, it may justify redirection only in a permitted branch. The mere existence of a document does not automatically create a Turncoat route.",
+      "tags": [
+        "redirect",
+        "evidence",
+        "turncoat-boundary"
+      ]
+    },
+    {
+      "section": "refusal",
+      "contentKey": "turncoat.identity",
+      "ru": "Turncoat как поздняя идентичность — это последовательность подтверждённых решений против исходной сети, а не один случайный отказ. До runtime authority этот смысл остаётся authored source, а его gameplay ID — `PENDING_RUNTIME_ID`.",
+      "en": "Turncoat as a late identity is a sequence of confirmed decisions against the original network rather than one accidental refusal. Until runtime authority exists, this meaning remains authored source and its gameplay ID is `PENDING_RUNTIME_ID`.",
+      "tags": [
+        "turncoat",
+        "route-source",
+        "pending-runtime"
+      ]
+    },
+    {
+      "section": "refusal",
+      "contentKey": "refusal.chain",
+      "ru": "Refusal Chain требует различимых ключевых моментов, где игрок сознательно не выполняет исходный order или меняет направление. Повторение безопасного текста само по себе не должно считаться прогрессом ветки.",
+      "en": "Refusal Chain requires distinct key moments where the player deliberately does not follow the original order or changes direction. Repeating safe text by itself should not count as route progress.",
+      "tags": [
+        "refusal-chain",
+        "route-source",
+        "pending-runtime"
+      ]
+    },
+    {
+      "section": "refusal",
+      "contentKey": "no.morality.stat",
+      "ru": "Ни отказ, ни redirect, ни Turncoat не вводят общую шкалу добра и зла. Последствия должны храниться в конкретных фактах контрактов, отношений или cross-system context, если и когда runtime их публикует.",
+      "en": "Refusal, redirect, and Turncoat introduce no general good-versus-evil meter. Consequences should live in concrete contract, relationship, or cross-system facts if and when runtime publishes them.",
+      "tags": [
+        "boundary",
+        "no-morality"
+      ]
+    },
+    {
+      "section": "seasonal",
+      "contentKey": "spring.crowd-pattern",
+      "ru": "Весной новые маршруты и возвращение уличной активности меняют плотность людей вокруг обычной работы. Ты замечаешь, что прежнее тихое окно стало публичнее, и корректируешь ожидания без обещания нового stealth mechanic.",
+      "en": "Spring routes and returning street activity change how many people surround ordinary work. You notice that an old quiet window has become more public and adjust expectations without promising a new stealth mechanic.",
+      "tags": [
+        "spring",
+        "crowds",
+        "visibility"
+      ]
+    },
+    {
+      "section": "seasonal",
+      "contentKey": "spring.travel-reset",
+      "ru": "После зимы привычные дороги снова открываются не одновременно. Обычная смена учитывает, что путь может стать длиннее или короче, но не создаёт отдельную систему travel optimization.",
+      "en": "After winter, familiar roads do not reopen at the same time. An ordinary shift accounts for a path becoming longer or shorter without creating a separate travel-optimization system.",
+      "tags": [
+        "spring",
+        "travel",
+        "routes"
+      ]
+    },
+    {
+      "section": "seasonal",
+      "contentKey": "spring.clothing-context",
+      "ru": "Весенняя одежда меняет заметность только как сюжетный контекст сцены: что уместно, что бросается в глаза, что выглядит не по погоде. Она не становится глобальным disguise score.",
+      "en": "Spring clothing changes visibility only as narrative scene context: what fits, what stands out, and what looks wrong for the weather. It does not become a global disguise score.",
+      "tags": [
+        "spring",
+        "clothing",
+        "disguise-boundary"
+      ]
+    },
+    {
+      "section": "seasonal",
+      "contentKey": "summer.crowded-streets",
+      "ru": "Летние толпы могут одновременно скрывать и мешать: легче потерять конкретный взгляд, но труднее предсказать движение людей. Текст подчёркивает неопределённость, а не гарантированный бонус скрытности.",
+      "en": "Summer crowds can both conceal and obstruct: one particular glance may be easier to lose, while people's movement is harder to predict. The text emphasizes uncertainty rather than a guaranteed stealth bonus.",
+      "tags": [
+        "summer",
+        "crowds",
+        "uncertainty"
+      ]
+    },
+    {
+      "section": "seasonal",
+      "contentKey": "summer.festival-routine",
+      "ru": "Фестиваль меняет обычные routines — время встреч, одежду, очереди и то, кто присутствует в районе. Это контекст для observation и false meeting, а не отдельный Assassin festival subsystem.",
+      "en": "A festival changes ordinary routines—meeting times, clothing, queues, and who is present in an area. It is context for observation and false meetings rather than a separate Assassin festival subsystem.",
+      "tags": [
+        "summer",
+        "festival",
+        "routines"
+      ]
+    },
+    {
+      "section": "seasonal",
+      "contentKey": "summer.late-light",
+      "ru": "Длинный световой день сдвигает ожидания о том, когда место становится пустым или оживлённым. Смена использует этот факт для timing prose, не вводя новую visibility simulation.",
+      "en": "Long daylight shifts expectations for when a place becomes empty or busy. The shift uses that fact for timing prose without introducing a new visibility simulation.",
+      "tags": [
+        "summer",
+        "visibility",
+        "timing"
+      ]
+    },
+    {
+      "section": "seasonal",
+      "contentKey": "autumn.route-change",
+      "ru": "Осенние поставки и смена погоды делают некоторые маршруты менее предсказуемыми. Ты отделяешь изменение логистики от изменения цели задания и не считаешь любой обход преимуществом.",
+      "en": "Autumn deliveries and changing weather make some routes less predictable. You separate a logistics change from a change in job objective and do not treat every detour as an advantage.",
+      "tags": [
+        "autumn",
+        "routes",
+        "travel"
+      ]
+    },
+    {
+      "section": "seasonal",
+      "contentKey": "autumn.layers",
+      "ru": "Более тяжёлая одежда может изменить внешний контекст сцены, но не превращает внешний вид в универсальный disguise capability. Уместность зависит от конкретной встречи и места.",
+      "en": "Heavier clothing can change the visual context of a scene without turning appearance into a universal disguise capability. Appropriateness depends on the specific meeting and place.",
+      "tags": [
+        "autumn",
+        "clothing",
+        "disguise-boundary"
+      ]
+    },
+    {
+      "section": "seasonal",
+      "contentKey": "autumn.routine-shift",
+      "ru": "Сокращение дня меняет routines: кто уходит раньше, где задерживаются работники, какие встречи переносят. Наблюдение фиксирует изменение, не делая из него автоматическое окно для major contract.",
+      "en": "Shorter days change routines: who leaves earlier, where workers stay late, and which meetings move. Observation records the change without turning it into an automatic opening for a major contract.",
+      "tags": [
+        "autumn",
+        "routines",
+        "window"
+      ]
+    },
+    {
+      "section": "seasonal",
+      "contentKey": "winter.visibility",
+      "ru": "Зимой пустая улица может сделать одиночное присутствие заметнее, даже если вокруг меньше людей. Это повышает цену неверного timing decision и не даёт бесплатного stealth bonus.",
+      "en": "In winter, an empty street can make a lone presence more noticeable even when fewer people are around. That raises the cost of a poor timing decision and grants no free stealth bonus.",
+      "tags": [
+        "winter",
+        "visibility",
+        "timing"
+      ]
+    },
+    {
+      "section": "seasonal",
+      "contentKey": "winter.travel",
+      "ru": "Закрытые или медленные маршруты зимой ограничивают ordinary work до того, как начинается крупный контракт. Хорошая подготовка признаёт ограничение вместо того, чтобы обещать обход любого пути.",
+      "en": "Closed or slow winter routes constrain ordinary work before a major contract even begins. Good preparation acknowledges the limitation rather than promising a way around every route.",
+      "tags": [
+        "winter",
+        "travel",
+        "routes"
+      ]
+    },
+    {
+      "section": "seasonal",
+      "contentKey": "winter.formal-context",
+      "ru": "Зимние приёмы и закрытые помещения могут сделать formal attire более уместной сюжетной возможностью, если сцена её поддерживает. Одежда всё равно не даёт автоматический доступ или Palace unlock.",
+      "en": "Winter receptions and enclosed venues can make formal attire a more appropriate narrative option when the scene supports it. Clothing still grants no automatic access or Palace unlock.",
+      "tags": [
+        "winter",
+        "formal-attire",
+        "palace-boundary"
+      ]
+    },
+    {
+      "section": "relationship",
+      "contentKey": "handler.role",
+      "ru": "Handler — профессиональная роль, которая передаёт задачи, сравнивает результат с договорённостью и может скрывать часть контекста. До runtime authority у роли нет обязательного имени, биографии или уникального gameplay ID.",
+      "en": "A Handler is a professional role that passes jobs, compares outcomes with agreements, and may withhold part of the context. Until runtime authority exists, the role has no required name, biography, or unique gameplay ID.",
+      "tags": [
+        "handler",
+        "role-only",
+        "pending-runtime"
+      ]
+    },
+    {
+      "section": "relationship",
+      "contentKey": "handler.loyalty",
+      "ru": "Лояльность к handler выражается конкретными решениями: кому передали результат, сохранили ли договорённость и что сделали после противоречия. Она не становится общей loyalty currency.",
+      "en": "Loyalty to a handler is expressed through concrete decisions: who received the result, whether the agreement was kept, and what happened after a contradiction. It does not become a general loyalty currency.",
+      "tags": [
+        "handler",
+        "loyalty",
+        "boundary"
+      ]
+    },
+    {
+      "section": "relationship",
+      "contentKey": "handler.manipulation",
+      "ru": "Manipulation в relationship source означает, что одна сторона пытается управлять информационным контекстом конкретной сцены. Авторский текст не описывает техники психологического давления вне игрового выбора.",
+      "en": "Manipulation in relationship source means one side tries to control the informational context of a specific scene. Authored text does not describe psychological coercion techniques outside the game choice.",
+      "tags": [
+        "handler",
+        "manipulation",
+        "boundary"
+      ]
+    },
+    {
+      "section": "relationship",
+      "contentKey": "rival.operative",
+      "ru": "Rival operative может соревноваться за доверие сети, спорить о методе или первым заметить противоречие. Соперничество не требует саботажа и не блокирует ordinary shifts после отказа от углубления линии.",
+      "en": "A rival operative may compete for network trust, disagree about method, or notice a contradiction first. Rivalry requires no sabotage and does not block ordinary shifts after declining to deepen the line.",
+      "tags": [
+        "rival-operative",
+        "rivalry",
+        "refusal-safe"
+      ]
+    },
+    {
+      "section": "relationship",
+      "contentKey": "contact.friendship",
+      "ru": "Recurring contact может постепенно стать дружеской линией, если будущий runtime её публикует. Дружба остаётся опциональной authored possibility и не превращается в обязательный ресурс контрактов.",
+      "en": "A recurring contact may gradually become a friendship line if future runtime publishes it. Friendship remains an optional authored possibility and does not become a mandatory contract resource.",
+      "tags": [
+        "recurring-contact",
+        "friendship",
+        "optional"
+      ]
+    },
+    {
+      "section": "relationship",
+      "contentKey": "contact.romance",
+      "ru": "Romance допустима только как отдельная опциональная ветка после явного взаимного выбора. Assassin progression не требует романтики, и отказ от неё не закрывает работу, routes или outcome readiness.",
+      "en": "Romance is permitted only as a separate optional branch after an explicit mutual choice. Assassin progression requires no romance, and declining it does not close work, routes, or outcome readiness.",
+      "tags": [
+        "recurring-contact",
+        "romance",
+        "optional",
+        "refusal-safe"
+      ]
+    },
+    {
+      "section": "relationship",
+      "contentKey": "informant.boundary",
+      "ru": "Informant даёт конкретный кусок информации и может ошибаться, отказываться или менять условия контакта. Он не становится бесконечным источником точной разведки и не заменяет intel phase.",
+      "en": "An informant provides a specific piece of information and may be wrong, refuse, or change the terms of contact. They do not become an infinite source of accurate intelligence or replace the intel phase.",
+      "tags": [
+        "informant",
+        "boundary"
+      ]
+    },
+    {
+      "section": "relationship",
+      "contentKey": "betrayal.source",
+      "ru": "Предательство имеет смысл только когда можно показать, какая договорённость была нарушена и кем. До runtime оно остаётся authored source для возможной ветки, а не скрытым relationship trigger.",
+      "en": "Betrayal has meaning only when the broken agreement and responsible party can be shown. Until runtime exists, it remains authored source for a possible branch rather than a hidden relationship trigger.",
+      "tags": [
+        "betrayal",
+        "pending-runtime"
+      ]
+    },
+    {
+      "section": "relationship",
+      "contentKey": "partnership.source",
+      "ru": "Partnership означает устойчивый способ распределять работу и информацию, если future runtime разрешит такую линию. Это не автоматическое слияние карьер и не общий party system.",
+      "en": "Partnership means a durable way to divide work and information if future runtime permits such a line. It is not an automatic merger of careers or a general party system.",
+      "tags": [
+        "partnership",
+        "optional",
+        "boundary"
+      ]
+    },
+    {
+      "section": "relationship",
+      "contentKey": "refusal.safe",
+      "ru": "Отказ от дружбы, романтики, handler loyalty или партнёрства не должен закрывать ordinary Assassin work. Relationship source сохраняет право продолжить карьеру профессионально без дополнительной близости.",
+      "en": "Declining friendship, romance, handler loyalty, or partnership should not close ordinary Assassin work. Relationship source preserves the right to continue the career professionally without additional intimacy.",
+      "tags": [
+        "relationship",
+        "refusal-safe"
+      ]
+    },
+    {
+      "section": "items",
+      "contentKey": "concealed-toolset.meaning",
+      "ru": "Concealed Toolset — draft-концепт узкой covert capability для будущих сцен, а не инструкция по инструментам или оружию. Пока runtime ID отсутствует, authored source описывает только смысл: подготовленный набор может открыть один разрешённый method choice.",
+      "en": "Concealed Toolset is a draft concept for a narrow covert capability in future scenes, not instruction for tools or weapons. While no runtime ID exists, authored source describes only the meaning: a prepared kit may enable one permitted method choice.",
+      "tags": [
+        "concealed-toolset",
+        "pending-runtime",
+        "non-procedural"
+      ]
+    },
+    {
+      "section": "items",
+      "contentKey": "concealed-toolset.boundary",
+      "ru": "Набор не должен автоматически обходить все двери, проверки или последствия. Даже после runtime binding он обязан оставаться контекстной возможностью конкретной сцены.",
+      "en": "The kit should not automatically bypass every door, check, or consequence. Even after runtime binding it must remain a contextual option in a specific scene.",
+      "tags": [
+        "concealed-toolset",
+        "boundary"
+      ]
+    },
+    {
+      "section": "items",
+      "contentKey": "sealed-pass.meaning",
+      "ru": "Sealed Pass в Assassin draft — идея social/legal context, но существующий shipped `guard_sealed_pass` остаётся собственностью Guard authority. Assassin prep не переименовывает, не копирует и не присваивает этот предмет.",
+      "en": "Sealed Pass in the Assassin draft is an idea for social or legal context, while the shipped `guard_sealed_pass` remains owned by Guard authority. Assassin prep does not rename, duplicate, or take ownership of that item.",
+      "tags": [
+        "sealed-pass",
+        "guard-boundary"
+      ]
+    },
+    {
+      "section": "items",
+      "contentKey": "disguise-formal.meaning",
+      "ru": "Disguise или formal attire меняют уместность внешнего контекста конкретной сцены, если future runtime публикует такую capability. Они не создают общий disguise score и не дают Palace access.",
+      "en": "Disguise or formal attire changes the appropriateness of visual context in a specific scene when future runtime publishes such a capability. They create no general disguise score and grant no Palace access.",
+      "tags": [
+        "disguise",
+        "formal-attire",
+        "palace-boundary"
+      ]
+    },
+    {
+      "section": "items",
+      "contentKey": "evidence-document.meaning",
+      "ru": "Evidence/document нужен для доказуемого redirect, Turncoat или Handler Takeover только если контракт действительно публикует такой объект или факт. Авторский текст не создаёт доказательство сам по себе.",
+      "en": "Evidence or a document matters for a provable redirect, Turncoat, or Handler Takeover only when the contract actually publishes such an object or fact. Authored text does not create evidence by itself.",
+      "tags": [
+        "evidence",
+        "document",
+        "pending-runtime"
+      ]
+    },
+    {
+      "section": "items",
+      "contentKey": "activity-route-tool.meaning",
+      "ru": "Activity route tool — draft-концепт для selective field context. Он не создаёт новый Activity, не меняет Activity engine и не делает ordinary city-side shifts полевыми экспедициями.",
+      "en": "An Activity route tool is a draft concept for selective field context. It creates no new Activity, changes no Activity engine, and does not turn ordinary city-side shifts into field expeditions.",
+      "tags": [
+        "activity-tool",
+        "activity-boundary"
+      ]
+    },
+    {
+      "section": "items",
+      "contentKey": "guard-sealed-pass.shipped-boundary",
+      "ru": "Shipped `guard_sealed_pass` можно упоминать только как существующий Guard-owned контекст, если будущий Assassin runtime официально его читает. До этого он не является Assassin item и не даёт Assassin gameplay access.",
+      "en": "The shipped `guard_sealed_pass` may be referenced only as existing Guard-owned context if future Assassin runtime officially reads it. Until then it is not an Assassin item and grants no Assassin gameplay access.",
+      "tags": [
+        "guard_sealed_pass",
+        "shipped-source",
+        "ownership"
+      ]
+    },
+    {
+      "section": "items",
+      "contentKey": "items.no-shop",
+      "ru": "Ни один item concept этой волны не создаёт универсальный black-market shop, бесконечный каталог covert gear или автоматическую закупку нужного method. Предметы остаются узкими capabilities будущих сцен.",
+      "en": "No item concept in this wave creates a universal black-market shop, an endless covert-gear catalog, or automatic purchase of the needed method. Items remain narrow capabilities for future scenes.",
+      "tags": [
+        "boundary",
+        "no-black-market"
+      ]
+    },
+    {
+      "section": "cross-system",
+      "contentKey": "guard.cargo-pass-evidence",
+      "ru": "Shipped Guard факт `cargo-pass-evidence` может стать внешним контекстом маршрута или документа только если future Assassin runtime его читает. Assassin prep не меняет Guard fact и не получает Guard authority.",
+      "en": "The shipped Guard fact `cargo-pass-evidence` may become external route or document context only if future Assassin runtime reads it. Assassin prep does not change the Guard fact or acquire Guard authority.",
+      "tags": [
+        "guard",
+        "shipped-source"
+      ],
+      "sourceRefs": [
+        "careerFact:guard:cargo-pass-evidence"
+      ]
+    },
+    {
+      "section": "cross-system",
+      "contentKey": "guard.tavern-evidence",
+      "ru": "Shipped `tavern-evidence-known` показывает, что Guard уже связал собственные источники. Это может быть контекстом давления или риска раскрытия, но не становится автоматическим Assassin fallout meter.",
+      "en": "The shipped `tavern-evidence-known` fact shows that Guard has already linked its own sources. It may become context for pressure or exposure risk without becoming an automatic Assassin fallout meter.",
+      "tags": [
+        "guard",
+        "shipped-source"
+      ],
+      "sourceRefs": [
+        "careerFact:guard:tavern-evidence-known"
+      ]
+    },
+    {
+      "section": "cross-system",
+      "contentKey": "guard.sealed-pass-issued",
+      "ru": "Shipped Guard fact `sealed-pass-issued` и предмет `guard_sealed_pass` остаются Guard-owned. Assassin authored source может учитывать их существование только после точного runtime consumer и никогда не превращает их в Palace bypass.",
+      "en": "The shipped Guard fact `sealed-pass-issued` and item `guard_sealed_pass` remain Guard-owned. Assassin authored source may account for their existence only after an exact runtime consumer and never turns them into a Palace bypass.",
+      "tags": [
+        "guard",
+        "sealed-pass",
+        "palace-boundary"
+      ],
+      "sourceRefs": [
+        "careerFact:guard:sealed-pass-issued",
+        "item:guard_sealed_pass"
+      ]
+    },
+    {
+      "section": "cross-system",
+      "contentKey": "tavern.rumour-confirmed",
+      "ru": "Shipped Tavern факт `rumour-confirmed` может дать подтверждённый intel context о месте или распорядке. Он не гарантирует точность всех последующих выводов и не заменяет Assassin intel phase.",
+      "en": "The shipped Tavern fact `rumour-confirmed` can provide confirmed intel context about a place or routine. It does not guarantee every later inference and does not replace the Assassin intel phase.",
+      "tags": [
+        "tavern",
+        "shipped-source"
+      ],
+      "sourceRefs": [
+        "careerFact:tavern:rumour-confirmed"
+      ]
+    },
+    {
+      "section": "cross-system",
+      "contentKey": "tavern.guest-ledger",
+      "ru": "Shipped `guest-ledger-evidence-ready` — конкретный Tavern-owned evidence context. Assassin source не копирует ledger, не получает guest-room access и не создаёт новую систему доступа без runtime consumer.",
+      "en": "The shipped `guest-ledger-evidence-ready` fact is specific Tavern-owned evidence context. Assassin source does not copy the ledger, gain guest-room access, or create a new access system without a runtime consumer.",
+      "tags": [
+        "tavern",
+        "evidence",
+        "ownership"
+      ],
+      "sourceRefs": [
+        "careerFact:tavern:guest-ledger-evidence-ready"
+      ]
+    },
+    {
+      "section": "cross-system",
+      "contentKey": "merchant.delivery-recorded",
+      "ru": "Shipped Merchant факт `delivery-recorded` может обозначать, что нужный материал или обычная поставка реально прошли через существующую карьеру. Это не black-market shop и не автоматический источник covert gear.",
+      "en": "The shipped Merchant fact `delivery-recorded` can indicate that a needed material or ordinary delivery actually moved through the existing career. It is not a black-market shop or an automatic source of covert gear.",
+      "tags": [
+        "merchant",
+        "shipped-source",
+        "no-black-market"
+      ],
+      "sourceRefs": [
+        "careerFact:merchant:delivery-recorded"
+      ]
+    },
+    {
+      "section": "cross-system",
+      "contentKey": "cross.no-palace",
+      "ru": "Guard/Tavern/Merchant context этой волны не создаёт Palace access. Даже formal document или sealed pass остаются только своим shipped значением, пока отдельная Palace authority не публикует иной gate.",
+      "en": "Guard, Tavern, and Merchant context in this wave creates no Palace access. Even a formal document or sealed pass keeps only its shipped meaning unless separate Palace authority publishes another gate.",
+      "tags": [
+        "boundary",
+        "palace"
+      ]
+    },
+    {
+      "section": "activity",
+      "contentKey": "activity.hunter-return",
+      "ru": "Shipped Hunter факт `expedition-returned` показывает только то, что существующая Activity завершилась и вернула результат. Future Assassin consumer может использовать этот факт как внешний route context, но не управлять Hunter expedition.",
+      "en": "The shipped Hunter fact `expedition-returned` shows only that an existing Activity completed and returned a result. A future Assassin consumer may use that fact as external route context without controlling the Hunter expedition.",
+      "tags": [
+        "activity",
+        "hunter",
+        "shipped-source"
+      ],
+      "sourceRefs": [
+        "careerFact:hunter:expedition-returned"
+      ]
+    },
+    {
+      "section": "activity",
+      "contentKey": "activity.rough-route",
+      "ru": "Shipped `expedition-rough-route` может обозначить, что существующий Hunter route уже был пройден в сложном контексте. Это не Assassin route unlock само по себе и не новый Activity.",
+      "en": "The shipped `expedition-rough-route` fact can indicate that an existing Hunter route was already completed in a difficult context. It is not an Assassin route unlock by itself and creates no new Activity.",
+      "tags": [
+        "activity",
+        "hunter",
+        "route-context"
+      ],
+      "sourceRefs": [
+        "careerFact:hunter:expedition-rough-route"
+      ]
+    },
+    {
+      "section": "activity",
+      "contentKey": "activity.preserved-sample",
+      "ru": "Shipped `expedition-preserved-sample` может быть evidence-like внешним результатом только если future contract его потребляет. Assassin prep не меняет образец и не делает его универсальным доказательством.",
+      "en": "The shipped `expedition-preserved-sample` may serve as an evidence-like external result only when a future contract consumes it. Assassin prep does not change the sample or make it universal evidence.",
+      "tags": [
+        "activity",
+        "hunter",
+        "evidence-context"
+      ],
+      "sourceRefs": [
+        "careerFact:hunter:expedition-preserved-sample"
+      ]
+    },
+    {
+      "section": "activity",
+      "contentKey": "activity.tavern-return",
+      "ru": "Shipped Tavern факт `activity-returned` подтверждает, что Tavern уже получил собственный результат Activity. Assassin authored source может ссылаться на контекст только как на внешний факт, а не дублировать его.",
+      "en": "The shipped Tavern fact `activity-returned` confirms that Tavern already received its own Activity result. Assassin authored source may refer to the context only as an external fact rather than duplicating it.",
+      "tags": [
+        "activity",
+        "tavern",
+        "shipped-source"
+      ],
+      "sourceRefs": [
+        "careerFact:tavern:activity-returned"
+      ]
+    },
+    {
+      "section": "activity",
+      "contentKey": "activity.infiltration-source",
+      "ru": "Infiltration остаётся draft authored source для selective field contract и не означает новый Activity ID. Future runtime должен сам опубликовать adapter/consumer, если такая сцена вообще войдёт в игру.",
+      "en": "Infiltration remains draft authored source for a selective field contract and does not imply a new Activity ID. Future runtime must publish the adapter or consumer itself if such a scene enters the game.",
+      "tags": [
+        "activity",
+        "infiltration",
+        "pending-runtime"
+      ]
+    },
+    {
+      "section": "activity",
+      "contentKey": "activity.extraction-source",
+      "ru": "Extraction описывается только как возможная финальная цель field context — вывести объект, документ или контакт из конкретной сцены. Она не содержит реальных инструкций и не публикует gameplay mechanics.",
+      "en": "Extraction is described only as a possible final objective in field context—remove an object, document, or contact from a specific scene. It contains no real-world instructions and publishes no gameplay mechanics.",
+      "tags": [
+        "activity",
+        "extraction",
+        "pending-runtime",
+        "non-procedural"
+      ]
+    },
+    {
+      "section": "activity",
+      "contentKey": "activity.city-side-boundary",
+      "ru": "Ordinary `assassin.shift` остаётся city-side работой: observation, handoff, route prep, false meeting, cleanup и minor contract. Activity используется выборочно и не становится обязательной частью каждой смены.",
+      "en": "Ordinary `assassin.shift` remains city-side work: observation, handoff, route prep, false meeting, cleanup, and minor contract. Activity is selective and does not become a mandatory part of every shift.",
+      "tags": [
+        "activity",
+        "ordinary-work",
+        "boundary"
+      ]
+    },
+    {
+      "section": "routes",
+      "contentKey": "veteran.identity",
+      "ru": "Veteran — маршрут устойчивой широты работы: ordinary shifts, несколько типов minor tasks и способность завершать задачи без обязательной специализации. Он остаётся отличим от Ghost и network-control routes.",
+      "en": "Veteran is the route of broad sustained work: ordinary shifts, several minor-task types, and the ability to complete jobs without mandatory specialization. It remains distinct from Ghost and network-control routes.",
+      "tags": [
+        "veteran",
+        "route-source"
+      ]
+    },
+    {
+      "section": "routes",
+      "contentKey": "veteran.hard-work-independence",
+      "ru": "Veteran readiness не должна быть условием Hard Work. Shipped `ending.assassin.hard-work` уже принадлежит 50 completed shifts и остаётся независимой от будущих elite route IDs.",
+      "en": "Veteran readiness must not be a condition for Hard Work. The shipped `ending.assassin.hard-work` already belongs to fifty completed shifts and remains independent of future elite route IDs.",
+      "tags": [
+        "veteran",
+        "hard-work",
+        "ending-boundary"
+      ]
+    },
+    {
+      "section": "routes",
+      "contentKey": "ghost.identity",
+      "ru": "Ghost — authored identity для сложных задач с минимальным fallout, разнообразием разрешённых methods и качественной подготовкой. Это не обещание невидимости, безошибочности или отсутствия последствий.",
+      "en": "Ghost is authored identity for difficult jobs with limited fallout, varied permitted methods, and strong preparation. It is not a promise of invisibility, infallibility, or consequence-free play.",
+      "tags": [
+        "ghost",
+        "route-source",
+        "pending-runtime"
+      ]
+    },
+    {
+      "section": "routes",
+      "contentKey": "ghost.boundary",
+      "ru": "Ghost route не означает обязательный lethal gameplay и не превращает Assassin в combat class. Точная lethal/nonlethal scope остаётся unresolved runtime authority.",
+      "en": "Ghost route does not imply mandatory lethal gameplay or turn Assassin into a combat class. Exact lethal or nonlethal scope remains unresolved runtime authority.",
+      "tags": [
+        "ghost",
+        "combat-boundary"
+      ]
+    },
+    {
+      "section": "routes",
+      "contentKey": "turncoat.identity",
+      "ru": "Turncoat отражает последовательные решения против исходной network logic: redirect, warning, evidence или refusal там, где контракт это разрешает. Он не выводится из Morality score.",
+      "en": "Turncoat reflects a sequence of decisions against the original network logic: redirect, warning, evidence, or refusal where a contract permits it. It is not derived from a Morality score.",
+      "tags": [
+        "turncoat",
+        "route-source",
+        "no-morality"
+      ]
+    },
+    {
+      "section": "routes",
+      "contentKey": "handler-takeover.identity",
+      "ru": "Handler Takeover — контроль над потоком заказов и информацией, а не просто более высокий ранг исполнителя. Для него нужен будущий runtime authority на network facts; authored source не создаёт такую сеть сам.",
+      "en": "Handler Takeover means control over the flow of jobs and information rather than simply a higher operative rank. It requires future runtime authority for network facts; authored source does not create that network itself.",
+      "tags": [
+        "handler-takeover",
+        "route-source",
+        "pending-runtime"
+      ]
+    },
+    {
+      "section": "routes",
+      "contentKey": "refusal-chain.identity",
+      "ru": "Refusal Chain — отдельная поздняя идентичность последовательных сознательных отказов или перенаправлений ключевых orders. Она не равна случайному провалу и не должна зависеть от скрытой моральной шкалы.",
+      "en": "Refusal Chain is a distinct late identity built from deliberate refusals or redirects of key orders. It is not the same as accidental failure and should not depend on a hidden morality meter.",
+      "tags": [
+        "refusal-chain",
+        "route-source",
+        "no-morality"
+      ]
+    },
+    {
+      "section": "routes",
+      "contentKey": "outcome-ready.identity",
+      "ru": "Outcome-ready означает, что career route уже подтверждён конкретными игровыми фактами будущего runtime. Authored prep не публикует этот state и не выбирает точные thresholds заранее.",
+      "en": "Outcome-ready means a career route has already been confirmed by concrete future-runtime facts. Authored prep does not publish that state or choose exact thresholds in advance.",
+      "tags": [
+        "outcome-ready",
+        "pending-runtime"
+      ]
+    },
+    {
+      "section": "routes",
+      "contentKey": "route.defer",
+      "ru": "Если несколько поздних routes становятся доступны, выбор можно оставить открытым, пока future runtime это поддерживает. Ordinary shifts продолжаются и не должны исчезать только из-за готовности ветки.",
+      "en": "If several late routes become available, the decision may remain open where future runtime supports it. Ordinary shifts continue and should not disappear merely because a branch is ready.",
+      "tags": [
+        "routes",
+        "defer",
+        "ordinary-work"
+      ]
+    },
+    {
+      "section": "routes",
+      "contentKey": "hard-work.identity",
+      "ru": "Hard Work остаётся shipped public ending с текущим ID, reward и Meta identity. Assassin prep может углублять профессиональный смысл 50 смен, но не меняет eligibility, reward или Meta.",
+      "en": "Hard Work remains the shipped public ending with its current ID, reward, and Meta identity. Assassin prep may deepen the professional meaning of fifty shifts but changes no eligibility, reward, or Meta.",
+      "tags": [
+        "hard-work",
+        "shipped-ending",
+        "boundary"
+      ]
+    },
+    {
+      "section": "routes",
+      "contentKey": "complex-endings.pending",
+      "ru": "Ghost, Handler Takeover и Refusal/Turncoat могут иметь distinct authored outcome meaning, но новые public ending IDs отсутствуют. До runtime authority они остаются `PENDING_RUNTIME_ID`.",
+      "en": "Ghost, Handler Takeover, and Refusal or Turncoat may have distinct authored outcome meaning, but no new public ending IDs exist. Until runtime authority they remain `PENDING_RUNTIME_ID`.",
+      "tags": [
+        "complex-endings",
+        "pending-runtime"
+      ]
+    },
+    {
+      "section": "routes",
+      "contentKey": "palace.boundary",
+      "ru": "Ни Court-like contract, ни sealed pass, ни Handler Takeover не открывают Palace. Любая будущая Palace связь должна читать уже авторитетный Palace gate, а не переписывать его из Assassin career.",
+      "en": "No court-like contract, sealed pass, or Handler Takeover opens the Palace. Any future Palace connection must read the authoritative Palace gate rather than rewrite it from the Assassin career.",
+      "tags": [
+        "palace",
+        "boundary"
+      ]
+    }
+  ]
+}
