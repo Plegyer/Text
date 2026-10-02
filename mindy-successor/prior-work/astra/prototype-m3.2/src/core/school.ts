@@ -4,6 +4,7 @@ export const SCHOOL_ACTION_ID='school' as const;
 export const SCHOOL_LESSON_ENERGY_COST=1 as const;
 export const SCHOOL_NIGHT_STUDY_STAT_GAIN=2 as const;
 export const SCHOOL_NIGHT_STUDY_NEXT_DAY_ENERGY_DELTA=-1 as const;
+export const SCHOOL_BODY_CONFIDENCE_LUST_GAIN=2 as const;
 
 export const SCHOOL_COURSE_IDS=[
   'school.course.literacy_and_numbers',
@@ -31,6 +32,7 @@ export interface SchoolCourse {
   tuition:number;
   energyCost:typeof SCHOOL_LESSON_ENERGY_COST;
   statEffects:readonly SchoolStatEffect[];
+  lustGain?:number;
   presentationId:string;
 }
 
@@ -145,6 +147,7 @@ export const SCHOOL_COURSES:readonly SchoolCourse[]=[
       {stat:'grooming',amount:3},
       {stat:'endurance',amount:2}
     ],
+    lustGain:SCHOOL_BODY_CONFIDENCE_LUST_GAIN,
     presentationId:'school/body-confidence/lesson/default'
   }
 ];
@@ -167,10 +170,14 @@ export function schoolDirectCoverage():Stat[] {
 
 export function schoolLessonEffects(id:SchoolCourseId):Effect[] {
   const course=getSchoolCourse(id);
+  const lustEffects:Effect[]=course.lustGain
+    ?[{kind:'metric',key:'lust',delta:course.lustGain}]
+    :[];
   return [
     {kind:'modifyResource',resource:'money',delta:-course.tuition},
     {kind:'modifyEnergy',delta:-course.energyCost},
     ...course.statEffects.map(effect=>({kind:'modifyStat' as const,stat:effect.stat,delta:effect.amount})),
+    ...lustEffects,
     {kind:'incrementSchoolCounter' as const,track:course.trackId,counter:'lessons_completed',amount:1}
   ];
 }
@@ -231,6 +238,8 @@ export function executeSchoolLesson(
     const after=paid.run.character.stats[effect.stat];
     if(before!==after)deltas[effect.stat]=after-before;
   }
+  const lustDelta=paid.run.character.lust-input.run.character.lust;
+  if(lustDelta)deltas.lust=lustDelta;
   deltas.money=paid.run.resources.money-input.run.resources.money;
   deltas.energy=paid.run.dayState.energyCurrent-input.run.dayState.energyCurrent;
   paid.run.flow.lastAction={
