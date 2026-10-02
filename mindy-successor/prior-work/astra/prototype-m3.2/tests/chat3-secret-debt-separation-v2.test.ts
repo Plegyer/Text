@@ -58,13 +58,16 @@ test('generic debt stays separate while Secret Debt has its own production ident
   );
 });
 
-test('C3-46 keeps Secret Debt product values open',()=>{
-  assert.ok(fixture.productOpen.includes('trigger probability'));
-  assert.ok(fixture.productOpen.includes('offer amount'));
-  assert.ok(fixture.productOpen.includes('activation delay'));
-  assert.ok(fixture.productOpen.includes('future debt amount'));
-  assert.ok(fixture.productOpen.includes('forced Night penalty'));
-  for(const value of Object.values(fixture.assertions)){
-    assert.equal(value,true);
-  }
+test('D19 locks Secret Debt baseline values without leaking them into ordinary poverty',()=>{
+  assert.ok(fixture.productLocked.includes('trigger probability = 20%'));
+  assert.ok(fixture.productLocked.includes('offer amount = 2000'));
+  assert.ok(fixture.productLocked.includes('activation delay = 10 days'));
+  assert.ok(fixture.productLocked.includes('future debt amount = 20000'));
+  assert.ok(fixture.productLocked.includes('forced Night penalty = -1 Energy'));
+  assert.ok(fixture.productLocked.includes('Hard Work baseline = 50 daytime shifts'));
+  assert.ok(fixture.productStillOpen.includes('exact hidden-work wage coefficients'));
+  assert.ok(fixture.productStillOpen.includes('exact Takeover high-Lust threshold'));
+  assert.equal(fixture.assertions.ordinaryPovertyUsableWithoutSecretDebt,true);
+  assert.equal(fixture.assertions.genericDebtNotRepurposed,true);
+  assert.equal(fixture.assertions.lockedD19ValuesAreSecretDebtOnly,true);
 });
