@@ -632,6 +632,8 @@ export const ARTIST_GEISHA_SEASONAL_EVENT_IDS=[
   'artist-geisha.season.winter-salon'
 ] as const;
 
+export const ARTIST_GEISHA_SCHOOL_EVENT_IDS=[] as const;
+
 export function presentationIdForArtistGeishaStage(stage:string){
   return `job/artist-geisha/stage/${clean(stage)}`;
 }
