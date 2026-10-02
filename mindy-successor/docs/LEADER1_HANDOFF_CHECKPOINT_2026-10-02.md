@@ -1,5 +1,22 @@
 # Leader 1 Handoff Checkpoint — 2026-10-02
 
+## WORKER TOPOLOGY RESET — 2026-10-02
+
+User-directed organization change:
+
+- retire duplicate worker Chat 1; Leader 1 remains the only leadership role;
+- active workers are now Chats 2..6;
+- Chat 2 = Integration / Assembly + Technical QA;
+- Chats 3..6 = four clean whole-profession producer lanes;
+- old Chat 2 presentation, Chat 3 authored, Chat 4 QA and Chat 5 School permanent specializations are superseded;
+- old branches/PRs are not deleted and remain historical/product evidence;
+- not-started Palace worker queues are superseded by the reset;
+- Artist #229/#237 remain immutable and transfer to Chat 2 for technical QA/integration because their exact heads now have executable SUCCESS (#1085/#1086);
+- main `ab3749d4618daf830e8610aed6d9b6fcc2de52ed` has exact-main self-hosted workflow #1087 SUCCESS;
+- new worker chats must start from Git role prompts/pointers, not from old chat history.
+
+Next Leader action after this coordination reset: audit shipped/incomplete professions on current main, assign one distinct profession each to Chats 3..6, and keep Chat 2 focused on Artist QA/integration until that package is dispositioned.
+
 ## SELF-HOSTED CI RECOVERY / ARTIST EXECUTABLE SUCCESS — 2026-10-02 12:28Z
 
 Fresh Git truth after moving Actions compute to the private self-hosted Windows runner `SOLV`:

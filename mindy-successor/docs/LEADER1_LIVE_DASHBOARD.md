@@ -1,5 +1,18 @@
 # Leader 1 — Live Dashboard
 
+## TEAM RESET LIVE STATE — 2026-10-02
+
+- Current worker topology is now Leader 1 + Chats 2..6. Worker Chat 1 is retired.
+- Chat 2 becomes Integration / Assembly + Technical QA.
+- Chats 3..6 become four independent whole-profession producer lanes; old permanent specializations are superseded.
+- Previously assigned but not-started Palace queues are superseded by this reset; their branches remain historical and untouched.
+- Artist authored #229 exact `75664819e824187ea23531e39f6cf5cd952b1047` has executable validation run #1085 SUCCESS.
+- Artist presentation #237 exact `ef9cc2df1edaf428ed44c34ba9832ff3a88032b4` has executable validation run #1086 SUCCESS.
+- Main `ab3749d4618daf830e8610aed6d9b6fcc2de52ed` passed workflow #1087 SUCCESS after CI optimization.
+- First new Chat 2 package: inherit Artist technical QA/integration, without moving producer heads.
+- Chats 3..6 start clean and wait for fresh Lead profession assignments after a current-Git audit.
+- New PC self-hosted runner is operational; machine name is not contractual. Durable workflow labels remain `self-hosted, Windows, X64`.
+
 ## SUCCESSOR ARTIST CI RETRY — 2026-10-02 11:12Z
 
 Fresh Git re-query and exact-head retry:

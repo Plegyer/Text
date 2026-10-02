@@ -1,5 +1,30 @@
 # Leader 1 — Start Here
 
+## TEAM TOPOLOGY RESET — 2026-10-02
+
+This block supersedes the older Chat 1..5 specialization model below.
+
+Active topology:
+- **Leader 1** is the sole project coordinator, scope owner, final QA authority and merge-order owner. Leader 1 is not a worker lane.
+- **Worker Chat 1 is retired.** Do not create new Chat 1 assignments, branches or queues. Historical Chat 1 branches/PRs/files remain evidence only.
+- **Chat 2 = Integration / Assembly + Technical QA.** It reviews exact-head candidates, detects collisions/base drift, prepares current-main integration branches when needed, performs narrow integration fixes, and hands merge-ready evidence to Leader 1. It does not originate a full career unless Leader explicitly reassigns it.
+- **Chats 3, 4, 5 and 6 = four independent Full-Career Producer lanes.** Each owns exactly one Lead-assigned profession at a time, end-to-end inside that profession: career-specific runtime/data, authored events/text, presentation/localization, School/Night/cross-system hooks, focused tests and natural acceptance.
+- A producer may touch shared registry files only for its assigned profession. Any framework-wide/shared semantic change requires Leader approval and usually Chat 2 integration ownership.
+- Producer chats never merge to main. Chat 2 prepares/QA-checks; Leader 1 decides final acceptance and merge.
+- New Chats 2..6 start from current main and from their current role prompt + task pointer. Old chat transcripts and old specialization prompts are historical only.
+
+Reset rule:
+- the previously assigned but not-started Palace queues are superseded by this topology reset;
+- their branches are preserved and must not be deleted or repurposed;
+- existing frozen/valuable product candidates remain valid artifacts and are not discarded merely because worker roles changed;
+- Artist #229/#237 exact heads already have executable self-hosted SUCCESS and transfer to new Chat 2 as the first technical-QA/integration package.
+
+CI rule for the reset:
+- GitHub remains source of truth;
+- self-hosted Windows runners are replaceable compute hosts, not project identity;
+- runner machine names such as SOLV/SOLV2 are operational details, while workflow labels `self-hosted, Windows, X64` are the durable contract;
+- coordination-only docs/pointers do not run the full product CI.
+
 ## TAKEOVER CHECKPOINT — 2026-10-02
 
 For the current handoff, read immediately after this file:
@@ -18,23 +43,23 @@ Workers may continue on a **new stacked branch** while a predecessor candidate i
 
 ## Self-hosted CI / cost-control operating model — 2026-10-02
 
-GitHub remains the **source of truth** for branches, PRs, exact SHAs, comments, workflow state and merge history. The repository now also has a registered private Windows self-hosted runner `SOLV` with labels `self-hosted`, `Windows`, `X64`.
+GitHub remains the **source of truth** for branches, PRs, exact SHAs, comments, workflow state and merge history. The repository now also has a private Windows self-hosted runner(s) with labels `self-hosted`, `Windows`, `X64`.
 
 Operating rule:
 - use GitHub for coordination, diffs, PR/branch state, QA ledgers and integration decisions exactly as before;
-- use `SOLV` only as compute for executable Actions jobs;
+- use the connected self-hosted Windows runner only as compute for executable Actions jobs;
 - a self-hosted SUCCESS is valid CI evidence when the workflow actually executes on the required exact candidate head;
 - `steps=null` / no runner / no logs remains infrastructure evidence, never a code verdict;
 - do not mutate frozen producer heads merely to create a CI event;
 - old workflow reruns preserve the workflow definition from that historical run, so a historical `ubuntu-latest` run does **not** become self-hosted merely because main changed later;
 - for legacy frozen heads, use a collision-free validation base/PR or another mechanism that preserves the exact producer head while executing the current self-hosted workflow;
-- keep the runner window open only when executable CI is wanted; GitHub coordination work continues while `SOLV` is offline.
+- keep a runner window open only when executable CI is wanted; GitHub coordination work continues while `SOLV` is offline.
 
 Cost/time control:
 - full CI should trigger only for changes under the real executable prototype tree `mindy-successor/prior-work/astra/prototype-m3.2/**` or for the workflow file itself;
 - Leader dashboards, handoffs, task pointers and other coordination-only Markdown outside that prototype tree must not launch a full six-minute product check;
 - concurrency cancels an older in-progress run for the same PR/ref when a newer head supersedes it;
-- one `SOLV` runner means jobs execute serially; this is expected and is not evidence that the PC is slow.
+- one connected self-hosted runner means jobs execute serially; this is expected and is not evidence that the PC is slow.
 
 Verified recovery evidence on 2026-10-02:
 - main `53b80a10aa017761390d2060a00ebd95a2213314`, run #1084 attempt 2: executable self-hosted **SUCCESS**;
@@ -78,7 +103,7 @@ A new Leader 1 reads, in this order:
 5. `docs/USER_DECISIONS_LOCKED_v1.md` — decisions that must not be reopened silently.
 6. `docs/EXECUTABLE_TZ_v1.md` — implementation master spec.
 7. `docs/tasks/ACTIVE_TEAM_OWNERSHIP_MATRIX.md`.
-8. All five `docs/tasks/CURRENT_CHAT*_TASK_POINTER.md` files.
+8. All five current worker pointers: `CURRENT_CHAT2_TASK_POINTER.md` through `CURRENT_CHAT6_TASK_POINTER.md`.
 9. Actual current Git state: main HEAD, open PRs, active branch heads and latest workflow results.
 
 **Git beats prose whenever they disagree.**
@@ -106,44 +131,38 @@ Leader 1 should **not** spend time producing status documents instead of impleme
 
 ## 4. Stable worker roles
 
-### Chat 1 — Developer / Integration
-Owns shared runtime/UI integration, career/runtime implementation assigned by Lead, migrations and cross-domain integration regressions.
+### Chat 2 — Integration / Assembly + Technical QA
+Owns exact-head technical QA, collision/base-drift review, selective assembly onto current main, narrow integration repairs and merge-ready evidence. Leader 1 remains final acceptance and merge authority.
 
-### Chat 2 — Presentation & Media
-Owns semantic presentation IDs, media pools, fallbacks, RU/EN presentation metadata and accessibility. It does not own gameplay mechanics.
+### Chat 3 — Full-Career Producer A
+Owns one Lead-assigned profession end-to-end until frozen candidate delivery.
 
-### Chat 3 — Forest + Poverty Content
-Owns Forest/Expedition and ordinary-poverty player-facing content bundles, localization and content-side regressions. It does not own shared runtime.
+### Chat 4 — Full-Career Producer B
+Owns one Lead-assigned profession end-to-end until frozen candidate delivery.
 
-### Chat 4 — QA + Product Acceptance
-Owns exact-head PR/CI gates, scope/collision review and executable acceptance truth. It does not implement production fixes.
+### Chat 5 — Full-Career Producer C
+Owns one Lead-assigned profession end-to-end until frozen candidate delivery.
 
-### Chat 5 — School + Text Localization
-Owns School player-facing authored content/localization and content-side tests. It does not invent shared runtime, curriculum mechanics or unresolved Product decisions.
+### Chat 6 — Full-Career Producer D
+Owns one Lead-assigned profession end-to-end until frozen candidate delivery.
 
-One file/slice has one active owner.
+Worker Chat 1 is retired. Historical Chat 1 material is evidence only.
+
+One profession has one active producer owner. Shared-framework changes are not producer-owned unless Leader explicitly transfers them.
 
 ## 4A. Pipeline / no-idle operating rule
 
-Use a **pipeline**, not a stop-the-world wave.
+Default production flow:
+- Leader 1 assigns one whole profession to each free producer lane among Chats 3..6;
+- each producer branches from fresh current main and works without opening a PR until the candidate is actually ready, unless Lead explicitly requests early review;
+- candidate delivery is one focused PR with a frozen exact head;
+- exact-head executable CI runs only at candidate stage and again only after a concrete blocker fix;
+- Chat 2 independently reviews the frozen candidate, checks collisions/base drift and prepares a current-main integration branch if necessary;
+- Leader 1 gives final acceptance and controls merge order;
+- after merge, run exact-current-main CI;
+- a producer that freezes a candidate may receive the next non-conflicting profession on a new branch while Chat 2/Leader process the previous candidate.
 
-The worker roles above stay stable, but task queues advance independently. Do **not** wait for every worker to become idle before assigning the next safe scope.
-
-Default model:
-- publish one small immutable career/runtime authority contract for the current wave;
-- producer siblings (runtime, presentation, authored content, School) should branch from the same frozen product base whenever practical, rather than stacking on one another;
-- a worker that freezes an exact-head candidate immediately moves to the next non-conflicting queue on a new branch; it does not wait for QA, Lead integration, or sibling completion;
-- Chat 4 gates each frozen/green sibling independently as it becomes eligible;
-- Lead integrates the QA-accepted current wave while workers are already producing the next wave;
-- the next wave may do contract-independent inventory/copy/preparation before its runtime contract freezes, but must not invent IDs, thresholds, mechanics, rewards, or lore to guess missing authority;
-- coordination pointers/queues belong on `main`; avoid contaminating producer candidate branches with Leader-only coordination commits;
-- only Lead performs the collision-safe union onto current main, followed by exact-main QA.
-
-A healthy steady state therefore looks like:
-
-`Lead integrates career N` while `Chats 1/2/3/5 produce career N+1`, and `Chat 4 gates frozen candidates from either wave as they become eligible`.
-
-Reassign **tasks incrementally when a lane becomes free**. Do not reshuffle stable worker roles merely because one candidate is waiting on CI/QA. Waiting on one sibling must not idle unrelated lanes.
+Do not split one profession across runtime/presentation/authored/School worker chats by default. Split ownership only when Leader documents a concrete dependency reason.
 
 ## 5. How to recover after a Leader context loss
 
@@ -233,7 +252,7 @@ When a worker candidate arrives:
 - compare it against **current main**, not its old base;
 - inspect changed files and ownership;
 - require exact-head CI for code/content integration;
-- use Chat 4 for independent QA acceptance;
+- use Chat 2 for independent technical QA/integration review; Leader 1 retains final acceptance;
 - selectively integrate useful current deltas if the branch contains stale history;
 - never merge a long-lived worker branch merely because its PR is green;
 - rerun main CI after merge;

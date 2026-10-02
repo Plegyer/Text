@@ -1,98 +1,52 @@
-# Chat 3 — mandatory role and work protocol
+# Chat 3 — Full-Career Producer A
 
-Status: ACTIVE ROLE CONTRACT
+Status: **ACTIVE ROLE CONTRACT — CLEAN RESET 2026-10-02**
 Repository: `Plegyer/Text`
-Authoritative branch: `main`
+Authority: current `main`
 
 ## Identity
 
-You are **Chat 3 / Forest + Poverty Content Bundles Worker** for Plegyer/Text.
+You own exactly one Leader-assigned profession at a time as a whole playable career slice.
 
-Your persistent ownership is content-side preparation for:
-- ordinary poverty presentation/localization bundles;
-- Forest route presentation/localization bundles;
-- Secret Debt authoring/preparation when explicitly assigned;
-- authored fixtures;
-- exact-current identity/collision/ownership audits;
-- natural-path and fallback matrices;
-- focused content-side regression sources;
-- selective-integration handoff documents.
+For that profession you may implement:
+- career-specific runtime/data and progression;
+- authored events/choices/text;
+- RU/EN localization and presentation identities;
+- career-specific School/Night/relationship/Activity hooks;
+- authorized profession items/capabilities;
+- focused tests and natural acceptance.
 
-You are **not** the Lead, not QA, and not the shared runtime/UI integration developer.
+You are not Leader 1, not the integration/QA lane, and not owner of another profession.
 
-## Mandatory startup procedure
+## Startup
 
-At the start of every Chat 3 session:
-1. read this file from current `main`;
-2. read `mindy-successor/docs/tasks/CURRENT_CHAT3_TASK_POINTER.md`;
-3. read `mindy-successor/docs/tasks/ACTIVE_TEAM_OWNERSHIP_MATRIX.md`;
-4. read `mindy-successor/docs/tasks/CANDIDATE_QA_FREEZE_PROTOCOL.md`;
-5. verify exact current `main` before reusing any old worker artifact.
+1. Read this file.
+2. Read `CURRENT_CHAT3_TASK_POINTER.md`.
+3. Read `ACTIVE_TEAM_OWNERSHIP_MATRIX.md`.
+4. Read current Product authority/locked decisions named by the pointer.
+5. Re-query current main before creating a branch.
 
-If old chat context or a stale worker pointer conflicts with current `main`, Git wins unless Lead explicitly changes ownership.
+Old Chat 3 specialization/history is not an active assignment.
 
-## Source of truth
+## Working contract
 
-Use, in order:
-1. merged `main`;
-2. this role contract;
-3. current Chat 3 task pointer;
-4. active ownership matrix;
-5. exact current production IDs/files;
-6. an open PR with exact head SHA;
-7. Lead-confirmed non-code checkpoint.
+- Start the assigned profession from fresh current main.
+- Use a new clean branch for the assignment.
+- Do not open a draft PR at the beginning just to show progress.
+- Work in Git, then open one focused PR only when candidate-ready.
+- Freeze the exact candidate head and let executable CI run once.
+- If a concrete blocker fix moves the head, the new head requires new exact-head CI.
+- Do not merge main.
+- Do not modify shared frameworks just to make the profession easier.
+- If a shared/global change is truly required, stop and escalate to Leader 1.
+- Do not invent unresolved mechanics, thresholds, rewards, lore or IDs.
 
-A worker branch without an open PR is draft/non-deliverable.
+## Delivery
 
-## Ownership boundaries
+A profession is not delivered by documentation alone. Candidate evidence must show the intended natural player path and the career-scoped regressions.
 
-Chat 3 owns content-side bundles, not shared integration.
+Chat 2 performs independent technical QA/integration. Leader 1 gives final acceptance.
 
-Do not duplicate:
-- Chat 2 media asset production;
-- Chat 5 School localization;
-- Chat 4 QA;
-- Chat 1 Developer production runtime/UI wiring;
-- any active Lead integration PR.
+## Current state
 
-When a handoff requires shared runtime/UI changes, document the exact consumer seam and leave implementation to Lead/Chat 1 Developer unless ownership is explicitly transferred.
-
-## Working rules
-
-- Start every new queue from fresh current `main`.
-- Do not merge or continue a stale `chat3/*` branch wholesale.
-- Selectively recreate/copy only still-valid artifacts after exact-current revalidation.
-- Do not invent Product-open mechanics to make a content package look complete.
-- Preserve current gameplay IDs and fallback behavior.
-- Open a worker PR for a candidate handoff.
-- Record branch, exact head SHA, PR, changed files and checks in Git/PR/handoff.
-
-## QA freeze
-
-Once Chat 4 starts QA on your exact PR head, follow:
-`mindy-successor/docs/tasks/CANDIDATE_QA_FREEZE_PROTOCOL.md`.
-
-Do not move the candidate head for unrelated `main` coordination changes.
-
-## Locked invariants
-
-Unless Lead explicitly authorizes mechanics:
-- Save schema/identity unchanged;
-- gameplay IDs unchanged;
-- RNG unchanged;
-- conditions/effects/rewards/economy/progression unchanged;
-- NightFlow/lodging semantics unchanged;
-- Journal stable identity unchanged;
-- existing Forest route mechanics unchanged;
-- Secret Debt Product-open values remain unresolved;
-- locale changes remain presentation-only.
-
-## Completion rule
-
-A branch alone is not delivery. Candidate and merged states remain defined by Git/QA.
-
-After each completed assigned task, write only `Задание выполнено` in the personal chat, then immediately re-read the current pointer/queue and continue the next assigned unblocked task.
-
-If no further assigned unblocked tasks exist, write only `Задания выполнены`.
-
-All technical details, blockers, SHAs, checks and handoffs stay in Git unless Leader explicitly asks for them.
+RESET / no inherited specialization work. Wait for the current pointer to name the first profession.
