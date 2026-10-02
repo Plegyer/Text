@@ -634,8 +634,18 @@ export const ARTIST_GEISHA_SEASONAL_EVENT_IDS=[
 
 export const ARTIST_GEISHA_SCHOOL_EVENT_IDS=[] as const;
 
+export const ARTIST_GEISHA_ITEM_IDS=[
+  'artist_formal_attire',
+  'artist_performance_kit',
+  'artist_invitation_token'
+] as const;
+
 export function presentationIdForArtistGeishaStage(stage:string){
   return `job/artist-geisha/stage/${clean(stage)}`;
+}
+
+export function presentationIdForArtistGeishaItem(itemId:string){
+  return `job/artist-geisha/item/${clean(itemId)}`;
 }
 
 export function presentationIdForEnding(endingId:string){
@@ -912,6 +922,17 @@ export function presentationSlots(cat:Catalog):PresentationSlot[]{
           fallbackId:'job/artist-geisha/result/default'
         });
       }
+    }
+  }
+
+  for(const itemId of ARTIST_GEISHA_ITEM_IDS){
+    if((cat.definitions.itemDefinitions??[]).some(item=>String(item.id)===itemId)){
+      add({
+        id:presentationIdForArtistGeishaItem(itemId),
+        label:`Artist House · item · ${itemId}`,
+        baseMediaIds:[],
+        fallbackId:'job/artist-geisha/result/default'
+      });
     }
   }
 
