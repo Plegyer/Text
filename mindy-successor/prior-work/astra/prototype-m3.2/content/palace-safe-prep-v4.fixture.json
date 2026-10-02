@@ -1,0 +1,138 @@
+{
+  "formatVersion": 1,
+  "status": "SAFE_PREP_UNBOUND",
+  "authority": [
+    "D18",
+    "D23",
+    "D24"
+  ],
+  "sharedDependencies": {
+    "runGateInput": "palaceRunEligible",
+    "liveConditionBinding": null,
+    "capInfrastructureBinding": null,
+    "newStartPlusBinding": null
+  },
+  "invitation": {
+    "contract": {
+      "trigger": "creationCompleted",
+      "calendarElapsedDay": 0,
+      "deliveryPolicy": "latched",
+      "priorityClass": "critical_progression",
+      "blocking": true,
+      "maxShows": 1,
+      "usesGameplayRng": false,
+      "requiresStatGate": false,
+      "requiresItemGate": false,
+      "grantsAccessFact": "palace.access-granted"
+    },
+    "presentationKey": "palace.invitation.day1",
+    "ru": {
+      "title": "Приглашение во Дворец",
+      "text": "На первый день новой жизни приходит официальное приглашение. Все десять обычных путей уже пройдены, и все десять их выбранных наследий активны в этой жизни. Дворец открывает двери без дополнительного испытания.",
+      "choice": "Принять приглашение",
+      "entry": "Приглашение принято. Доступ к дворцовой работе открыт."
+    },
+    "en": {
+      "title": "An Invitation to the Palace",
+      "text": "On the first day of this new life, an official invitation arrives. All ten ordinary paths have already been completed, and all ten of their selected legacies are active in this life. The Palace opens without another test.",
+      "choice": "Accept the invitation",
+      "entry": "The invitation is accepted. Palace work is now accessible."
+    }
+  },
+  "fallbacks": {
+    "invitation": {
+      "ru": "Официальное приглашение во Дворец открывает доступ в первый день этой жизни.",
+      "en": "An official Palace invitation opens access on the first day of this life."
+    },
+    "entry": {
+      "ru": "Доступ во Дворец открыт.",
+      "en": "Palace access is open."
+    },
+    "night": {
+      "ru": "Добровольная вечерняя работа во Дворце занимает обычный ночной выбор.",
+      "en": "Voluntary Palace evening work uses the normal night choice."
+    },
+    "trueEndingRequirement": {
+      "ru": "Для истинной концовки каждая из 12 характеристик развития должна быть не ниже 91. Похоть в эту проверку не входит.",
+      "en": "For the True Ending, each of the 12 progression stats must be at least 91. Lust is not part of this check."
+    },
+    "capReward": {
+      "ru": "После истинной концовки можно активировать наследие, повышающее потолок 12 характеристик развития со 100 до 200. Значения и стартовые бонусы не умножаются.",
+      "en": "After the True Ending, a legacy option can raise the cap of all 12 progression stats from 100 to 200. Values and starting bonuses are not multiplied."
+    }
+  },
+  "relationships": [
+    {
+      "role": "professional-patron",
+      "machineId": "palace.professional-patron",
+      "ru": "Профессиональный покровитель оценивает надёжность и качество работы, не задавая героине титул или обязательную личную связь.",
+      "en": "A professional patron judges reliability and quality of work without assigning the heroine a fixed title or mandatory personal bond."
+    },
+    {
+      "role": "rival",
+      "machineId": "palace.rival",
+      "ru": "Соперник создаёт рабочее напряжение и конкуренцию за влияние, но конфликт можно завершить без романтики.",
+      "en": "A rival creates professional tension and competition for influence, but the conflict can resolve without romance."
+    },
+    {
+      "role": "servant-or-official-contact",
+      "machineId": "palace.official-contact",
+      "ru": "Служащий или чиновник помогает разбираться в маршрутах, документах и дворцовом распорядке через профессиональное доверие.",
+      "en": "A servant or official contact helps navigate routes, documents, and Palace procedure through professional trust."
+    },
+    {
+      "role": "optional-romance",
+      "machineId": "palace.optional-romance",
+      "ru": "Романтическая линия остаётся добровольной и не требуется для доступа, карьеры или концовки.",
+      "en": "The romance path remains optional and is never required for access, career progress, or an ending."
+    }
+  ],
+  "night": {
+    "contractId": "palace.night.work-review",
+    "ru": {
+      "label": "Остаться на вечерний разбор",
+      "text": "После дневной работы можно добровольно остаться на короткий разбор документов и поручений. Это обычный ночной выбор, а не дополнительный бесплатный слот."
+    },
+    "en": {
+      "label": "Stay for an evening work review",
+      "text": "After the day's work, you may voluntarily stay for a short review of documents and assignments. This uses the normal night choice rather than adding a free extra slot."
+    }
+  },
+  "optionalLegacyItemBranches": [
+    {
+      "capability": "artist_formal_presence",
+      "ru": "Опыт официального присутствия помогает выбрать более уверенный вариант в формальной дворцовой сцене.",
+      "en": "Formal-presence experience can open a more confident option in a formal Palace scene."
+    },
+    {
+      "capability": "artist_handle_invitation",
+      "ru": "Опыт работы с приглашениями помогает заметить детали протокола, но не открывает Дворец сам по себе.",
+      "en": "Experience handling invitations can reveal protocol details, but it never opens the Palace by itself."
+    },
+    {
+      "capability": "official_guard_access",
+      "ru": "Опыт официального доступа помогает в необязательной служебной ветке, но не заменяет приглашение первого дня.",
+      "en": "Official-access experience can help in an optional service branch, but it never substitutes for the Day-1 invitation."
+    },
+    {
+      "capability": "guard_sealed_pass",
+      "ru": "Опыт работы с пропусками помогает читать контекст закрытого поручения без изменения правил входа.",
+      "en": "Experience with sealed passes can add context to a restricted assignment without changing the entry rules."
+    },
+    {
+      "capability": "merchant_verify_manifest",
+      "ru": "Навык проверки манифестов помогает в необязательной документальной ветке.",
+      "en": "Manifest-verification experience can help in an optional document branch."
+    },
+    {
+      "capability": "merchant_handle_samples",
+      "ru": "Опыт работы с образцами помогает в необязательной хозяйственной ветке.",
+      "en": "Sample-handling experience can help in an optional household branch."
+    }
+  ],
+  "openBoundaries": {
+    "princeConfrontationMechanics": null,
+    "palaceCareerTopology": null,
+    "palaceCareerProductionIds": null
+  }
+}
