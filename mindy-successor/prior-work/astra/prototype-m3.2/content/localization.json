@@ -10710,10 +10710,6 @@
       "ru": "Выплатить весь долг одним платежом и выйти из связывающего маршрута.",
       "en": "Pay the entire outstanding debt in one transaction and leave the binding route."
     },
-    "action.secret-debt.repay.scene.default.text": {
-      "ru": "Ты выкладываешь всю сумму сразу. Запись в долговой книге закрывается, право распоряжаться твоей работой прекращается, и обычные профессии снова становятся твоим выбором.",
-      "en": "You put the full sum down at once. The ledger closes, the claim on your work ends, and the ordinary professions are yours to choose again."
-    },
     "action.secret-debt.takeover.label": {
       "ru": "Повернуть систему против держателя",
       "en": "Turn on the debt holder"
@@ -10721,10 +10717,6 @@
     "action.secret-debt.takeover.description": {
       "ru": "Использовать карьерную подготовку, опыт школы и нужный билд, чтобы устранить держателя долга и перехватить контроль.",
       "en": "Use the route preparation, School experience, and the required build to kill the holder and take control."
-    },
-    "action.secret-debt.takeover.scene.default.text": {
-      "ru": "Подготовка превращается в действие. Держатель долга устранён, и устройство, которое раньше контролировало тебя, теперь оказывается под твоим контролем.",
-      "en": "Preparation turns into action. The debt holder is removed, and the structure that once controlled you is now under your control."
     },
     "event.secret-debt.bound-life-milestone.title": {
       "ru": "Жизнь, измеренная связанными сменами",
@@ -10741,6 +10733,14 @@
     "event.secret-debt.bound-life-milestone.choice.continue.text": {
       "ru": "Судьба остаётся доступной. Долг продолжает блокировать обычную профессиональную жизнь, пока ты действительно не выйдешь из маршрута.",
       "en": "The fate remains available. The debt still binds your professional life until you actually leave the route."
+    },
+    "action.secret-debt.repay.scene.repayment.text": {
+      "ru": "Ты выкладываешь всю сумму сразу. Запись в долговой книге закрывается, право распоряжаться твоей работой прекращается, и обычные профессии снова становятся твоим выбором.",
+      "en": "You put the full sum down at once. The ledger closes, the claim on your work ends, and the ordinary professions are yours to choose again."
+    },
+    "action.secret-debt.takeover.scene.takeover.text": {
+      "ru": "Подготовка превращается в действие. Держатель долга устранён, и устройство, которое раньше контролировало тебя, теперь оказывается под твоим контролем.",
+      "en": "Preparation turns into action. The debt holder is removed, and the structure that once controlled you is now under your control."
     }
   }
 }
