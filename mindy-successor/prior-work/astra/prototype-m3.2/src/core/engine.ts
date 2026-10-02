@@ -1,6 +1,7 @@
 import { metrics, stats, seasons, priorityClasses, saveSchema, type Stat, type Save, type Meta, type Condition, type Effect, type Catalog, type StoryEvent, type Action, type MachineDefinition, type ReactionFact, type ReactionTrigger, type PriorityClass, type LodgingDefinition, type NightChoiceDefinition, type ActivityDefinition, type ActivityOutcome, type ActivityEnvelope, ordinaryHardWorkCareers, type MetaReward, type OrdinaryHardWorkCareer } from './schema.ts';
 import {SCHOOL_ACTION_ID,SCHOOL_COURSES,executeSchoolLesson,type SchoolCourseId} from './school.ts';
 import {presentationIdForActionResult,presentationIdForEvent} from './presentation.ts';
+import {captureSecretDebtAcceptanceDay,secretDebtBlocksOrdinaryShift} from './secretDebt.ts';
 
 const statSet=new Set<string>(stats);
 const cappedLegacy=new Set(['health','stress','trust']);
@@ -253,6 +254,7 @@ export function ordinaryCareerForShiftAction(action:Action):OrdinaryHardWorkCare
 }
 
 export function actionAvailable(action:Action,s:Save,cat?:Catalog):boolean{
+  if(secretDebtBlocksOrdinaryShift(s,action))return false;
   if(!eligible(action.conditions,s,cat))return false;
   const career=ordinaryCareerForShiftAction(action);
   if(!career||starterCareerSet.has(career))return true;
@@ -1195,7 +1197,7 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
     const nightPoint=s.run.flow.night?.currentIntercept??null;
     if(nightPoint&&s.run.flow.night)addUnique(s.run.flow.night.handledEventIds,pending.eventId);
     const outcomeRef={kind:'eventChoice' as const,eventId:pending.eventId,choiceId:command.id};
-    const beforeMetrics={...s.run.metrics};applyEffectsMutable(s,sceneChoice.effects,cat,true);log(s,sceneChoice.text,outcomeRef);
+    const beforeMetrics={...s.run.metrics};applyEffectsMutable(s,sceneChoice.effects,cat,true);captureSecretDebtAcceptanceDay(s,pending.eventId,command.id);log(s,sceneChoice.text,outcomeRef);
     if(s.run.lastAction){
       s.run.lastAction.title=e!.title;s.run.lastAction.text=sceneChoice.text;s.run.lastAction.outcomeRef=outcomeRef;
       if(sceneChoice.media)s.run.lastAction.media=sceneChoice.media;
