@@ -60,7 +60,7 @@ test('cross-system seams read shipped facts and housing context but write Prosti
   const exact:any={
     'prostitute.cross.satyr-network':['satyr-maid','personal-network-ready','satyr-network-known'],
     'prostitute.cross.tavern-information':['tavern','rumour-confirmed','tavern-information-known'],
-    'prostitute.cross.guard-safety':['guard','city-dispute-resolved','guard-safety-context-known'],
+    'prostitute.cross.city-safety':['guard','city-dispute-resolved','guard-safety-context-known'],
     'prostitute.cross.merchant-business':['merchant','delivery-recorded','merchant-business-context-known']
   };
   for(const [eventId,[career,fact,localFact]] of Object.entries(exact) as any){
