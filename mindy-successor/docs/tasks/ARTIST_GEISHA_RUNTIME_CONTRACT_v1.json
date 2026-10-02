@@ -241,40 +241,45 @@
   },
   "schoolHooks": [
     {
-      "track": "school.course.arts_and_performance",
-      "threshold": null,
+      "courseId": "school.course.arts_and_performance",
+      "trackId": "school.track.arts_and_performance",
+      "producerThreshold": null,
       "producerPublicFact": null,
       "fact": "school-arts-ready",
       "consumer": "artist-geisha.routes.master-ready",
       "use": "advanced performance preparation"
     },
     {
-      "track": "school.course.etiquette_and_presentation",
-      "threshold": null,
+      "courseId": "school.course.etiquette_and_presentation",
+      "trackId": "school.track.etiquette_and_presentation",
+      "producerThreshold": null,
       "producerPublicFact": null,
       "fact": "school-etiquette-ready",
       "consumer": "artist-geisha.routes.court-ready",
       "use": "formal presentation and Court Invitation readiness only"
     },
     {
-      "track": "school.course.rhetoric_and_social",
-      "threshold": null,
+      "courseId": "school.course.rhetoric_and_social",
+      "trackId": "school.track.rhetoric_and_social",
+      "producerThreshold": null,
       "producerPublicFact": null,
       "fact": "school-rhetoric-ready",
       "consumer": "artist-geisha.relationship.trust",
       "use": "professional conversation and social-network preparation"
     },
     {
-      "track": "school.course.body_confidence",
-      "threshold": null,
+      "courseId": "school.course.body_confidence",
+      "trackId": "school.track.body_confidence",
+      "producerThreshold": null,
       "producerPublicFact": null,
       "fact": "school-body-confidence-ready",
       "consumer": "artist-geisha.season.autumn-festival",
       "use": "intentional performance presence with boundaries"
     },
     {
-      "track": "school.course.literacy_and_numbers",
-      "threshold": null,
+      "courseId": "school.course.literacy_and_numbers",
+      "trackId": "school.track.literacy_and_numbers",
+      "producerThreshold": null,
       "producerPublicFact": null,
       "fact": "school-literacy-ready",
       "consumer": "artist-geisha.routes.master-ready",
