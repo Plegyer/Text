@@ -32,16 +32,86 @@
       "palace"
     ],
     "hardWorkEndings": [
-      {"career":"lumber","endingId":"ending.lumber.hard-work","rewardId":"hardWork:lumber","counter":"completed_shifts","operator":"gte","threshold":50},
-      {"career":"satyr-maid","endingId":"ending.satyr-maid.hard-work","rewardId":"hardWork:satyr-maid","counter":"completed_shifts","operator":"gte","threshold":50},
-      {"career":"undead-farm","endingId":"ending.undead-farm.hard-work","rewardId":"hardWork:undead-farm","counter":"completed_shifts","operator":"gte","threshold":50},
-      {"career":"tavern","endingId":"ending.tavern.hard-work","rewardId":"hardWork:tavern","counter":"completed_shifts","operator":"gte","threshold":50},
-      {"career":"hunter","endingId":"ending.hunter.hard-work","rewardId":"hardWork:hunter","counter":"completed_shifts","operator":"gte","threshold":50},
-      {"career":"guard","endingId":"ending.guard.hard-work","rewardId":"hardWork:guard","counter":"completed_shifts","operator":"gte","threshold":50},
-      {"career":"merchant","endingId":"ending.merchant.hard-work","rewardId":"hardWork:merchant","counter":"completed_shifts","operator":"gte","threshold":50},
-      {"career":"artist-geisha","endingId":"ending.artist-geisha.hard-work","rewardId":"hardWork:artist-geisha","counter":"completed_shifts","operator":"gte","threshold":50},
-      {"career":"assassin","endingId":"ending.assassin.hard-work","rewardId":"hardWork:assassin","counter":"completed_shifts","operator":"gte","threshold":50},
-      {"career":"prostitute","endingId":"ending.prostitute.hard-work","rewardId":"hardWork:prostitute","counter":"completed_shifts","operator":"gte","threshold":50}
+      {
+        "career": "lumber",
+        "endingId": "ending.lumber.hard-work",
+        "rewardId": "hardWork:lumber",
+        "counter": "completed_shifts",
+        "operator": "gte",
+        "threshold": 50
+      },
+      {
+        "career": "satyr-maid",
+        "endingId": "ending.satyr-maid.hard-work",
+        "rewardId": "hardWork:satyr-maid",
+        "counter": "completed_shifts",
+        "operator": "gte",
+        "threshold": 50
+      },
+      {
+        "career": "undead-farm",
+        "endingId": "ending.undead-farm.hard-work",
+        "rewardId": "hardWork:undead-farm",
+        "counter": "completed_shifts",
+        "operator": "gte",
+        "threshold": 50
+      },
+      {
+        "career": "tavern",
+        "endingId": "ending.tavern.hard-work",
+        "rewardId": "hardWork:tavern",
+        "counter": "completed_shifts",
+        "operator": "gte",
+        "threshold": 50
+      },
+      {
+        "career": "hunter",
+        "endingId": "ending.hunter.hard-work",
+        "rewardId": "hardWork:hunter",
+        "counter": "completed_shifts",
+        "operator": "gte",
+        "threshold": 50
+      },
+      {
+        "career": "guard",
+        "endingId": "ending.guard.hard-work",
+        "rewardId": "hardWork:guard",
+        "counter": "completed_shifts",
+        "operator": "gte",
+        "threshold": 50
+      },
+      {
+        "career": "merchant",
+        "endingId": "ending.merchant.hard-work",
+        "rewardId": "hardWork:merchant",
+        "counter": "completed_shifts",
+        "operator": "gte",
+        "threshold": 50
+      },
+      {
+        "career": "artist-geisha",
+        "endingId": "ending.artist-geisha.hard-work",
+        "rewardId": "hardWork:artist-geisha",
+        "counter": "completed_shifts",
+        "operator": "gte",
+        "threshold": 50
+      },
+      {
+        "career": "assassin",
+        "endingId": "ending.assassin.hard-work",
+        "rewardId": "hardWork:assassin",
+        "counter": "completed_shifts",
+        "operator": "gte",
+        "threshold": 50
+      },
+      {
+        "career": "prostitute",
+        "endingId": "ending.prostitute.hard-work",
+        "rewardId": "hardWork:prostitute",
+        "counter": "completed_shifts",
+        "operator": "gte",
+        "threshold": 50
+      }
     ]
   },
   "d23TruthTable": [
@@ -77,7 +147,6 @@
     "missingOrdinaryCareerCanBeSubstituted": false
   },
   "invitationContract": {
-    "eventId": "palace.invitation.day1-arrival",
     "trigger": "creationCompleted",
     "calendarElapsedDay": 0,
     "delivery": "latched",
@@ -90,7 +159,9 @@
     "eligibilityInput": "shared D23 run-local qualification",
     "acceptChoiceId": "accept",
     "accessFact": "palace.access-granted",
-    "accessScope": "run-local"
+    "accessScope": "run-local",
+    "arrivalEventId": "palace.invitation.day1-arrival",
+    "acceptanceSceneId": "palace.invitation.reveal"
   },
   "reloadContract": {
     "queuedInvitationSurvivesReload": true,
