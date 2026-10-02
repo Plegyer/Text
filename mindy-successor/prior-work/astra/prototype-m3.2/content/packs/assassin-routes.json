@@ -1,0 +1,801 @@
+{
+  "schemaVersion": 1,
+  "id": "assassin.routes",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "careers": [
+        "assassin"
+      ],
+      "quests": [
+        "assassin.contract"
+      ],
+      "relationships": [
+        "assassin.handler"
+      ],
+      "itemCapabilities": [
+        "assassin_concealed_entry",
+        "assassin_handle_evidence"
+      ]
+    },
+    "writes": {
+      "careers": [
+        "assassin"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "assassin.routes.infiltration-qualified",
+      "title": "Qualify selective advanced infiltration after a closed lifecycle",
+      "sourceDomain": "assassin",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerTransition",
+          "career": "assassin"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "assassin",
+          "fact": "contract-cycle-complete"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "assassin.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 75,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "assassin",
+          "stage": "trusted-blade"
+        },
+        {
+          "kind": "careerFact",
+          "career": "assassin",
+          "fact": "contract-cycle-complete",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "assassin",
+          "fact": "infiltration-qualified",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "A closed contract and accumulated practice make one advanced reconnaissance outing available. This remains a bounded career Activity, not a universal infiltration framework.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record advanced infiltration qualification",
+          "text": "Record advanced infiltration qualification.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "assassin",
+              "fact": "infiltration-qualified"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assassin.routes.ghost-ready",
+      "title": "Ghost readiness requires selective infiltration evidence",
+      "sourceDomain": "assassin",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "assassin",
+          "fact": "infiltration-returned"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "assassin.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 74,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "assassin",
+          "stage": "trusted-blade"
+        },
+        {
+          "kind": "careerFact",
+          "career": "assassin",
+          "fact": "infiltration-returned",
+          "present": true
+        },
+        {
+          "kind": "questChoice",
+          "quest": "assassin.contract",
+          "choice": "method",
+          "value": "stealth"
+        },
+        {
+          "kind": "itemCapability",
+          "capability": "assassin_concealed_entry",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "assassin",
+          "fact": "ghost-ready",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Quiet preparation, selective Activity evidence, and the matching capability support a Ghost specialization without inventing a new public ending.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record Ghost readiness without creating an ending",
+          "text": "Record Ghost readiness without creating an ending.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "assassin",
+              "fact": "ghost-ready"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assassin.routes.turncoat-ready",
+      "title": "Turncoat readiness uses redirect or abort plus handled evidence",
+      "sourceDomain": "assassin",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "questTransition",
+          "quest": "assassin.contract"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "assassin.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 73,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "assassin",
+          "stage": "trusted-blade"
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "questChoice",
+              "quest": "assassin.contract",
+              "choice": "resolution",
+              "value": "redirect"
+            },
+            {
+              "kind": "questChoice",
+              "quest": "assassin.contract",
+              "choice": "resolution",
+              "value": "abort"
+            }
+          ]
+        },
+        {
+          "kind": "itemCapability",
+          "capability": "assassin_handle_evidence",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "assassin",
+          "fact": "turncoat-ready",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Abort or redirect evidence plus controlled document handling supports a Turncoat specialization without a Morality score.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record Turncoat readiness without a Morality score",
+          "text": "Record Turncoat readiness without a Morality score.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "assassin",
+              "fact": "turncoat-ready"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assassin.routes.handler-takeover-ready",
+      "title": "Handler Takeover readiness stays local to evidence and professional utility",
+      "sourceDomain": "assassin",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "assassin"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "assassin.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 72,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "assassin",
+          "stage": "trusted-blade"
+        },
+        {
+          "kind": "careerFact",
+          "career": "assassin",
+          "fact": "handler-utility-ready",
+          "present": true
+        },
+        {
+          "kind": "itemCapability",
+          "capability": "assassin_handle_evidence",
+          "present": true
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "assassin",
+              "fact": "tavern-intel-known",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "assassin",
+              "fact": "merchant-route-known",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "assassin",
+              "fact": "guard-pressure-known",
+              "present": true
+            }
+          ]
+        },
+        {
+          "kind": "careerFact",
+          "career": "assassin",
+          "fact": "handler-takeover-ready",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Professional handler utility, usable records, and at least one shipped outside context can support local coordination without a generic network subsystem.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record Handler Takeover readiness without a network subsystem",
+          "text": "Record Handler Takeover readiness without a network subsystem.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "assassin",
+              "fact": "handler-takeover-ready"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assassin.routes.refusal-evidence",
+      "title": "Record refusal evidence without inventing the open chain threshold",
+      "sourceDomain": "assassin",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "questTransition",
+          "quest": "assassin.contract"
+        },
+        {
+          "kind": "relationshipTransition",
+          "relationship": "assassin.handler"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "assassin.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 71,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "assassin",
+          "stage": "trusted-blade"
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "questChoice",
+              "quest": "assassin.contract",
+              "choice": "method",
+              "value": "refusal"
+            },
+            {
+              "kind": "questChoice",
+              "quest": "assassin.contract",
+              "choice": "resolution",
+              "value": "abort"
+            },
+            {
+              "kind": "relationshipChoice",
+              "relationship": "assassin.handler",
+              "choice": "conflict-response",
+              "value": "declined"
+            }
+          ]
+        },
+        {
+          "kind": "careerFact",
+          "career": "assassin",
+          "fact": "refusal-chain-evidence",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "A deliberate refusal, abort, or handler decline is preserved as Assassin-local evidence. Exact promotion to Refusal Chain remains Product-owned and is not invented here.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record refusal evidence only",
+          "text": "Record refusal evidence only.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "assassin",
+              "fact": "refusal-chain-evidence"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assassin.routes.choose-practice",
+      "title": "Choose or defer ordinary/advanced practice readiness",
+      "sourceDomain": "assassin",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "assassin"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "assassin.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 58,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "assassin",
+          "stage": "trusted-blade"
+        },
+        {
+          "kind": "careerFact",
+          "career": "assassin",
+          "fact": "veteran-ready",
+          "present": true
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "assassin",
+              "fact": "ghost-ready",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "assassin",
+              "fact": "turncoat-ready",
+              "present": true
+            }
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Several practices may be ready. Choose Veteran, Ghost, or Turncoat now, or defer without losing ordinary career play.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "veteran",
+          "label": "Take Veteran",
+          "text": "Take Veteran.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "advanceCareer",
+              "career": "assassin",
+              "transition": "branch-veteran"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "assassin",
+              "fact": "outcome-ready"
+            }
+          ]
+        },
+        {
+          "id": "ghost",
+          "label": "Take Ghost",
+          "text": "Take Ghost.",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "assassin",
+              "fact": "ghost-ready",
+              "present": true
+            }
+          ],
+          "effects": [
+            {
+              "kind": "advanceCareer",
+              "career": "assassin",
+              "transition": "branch-ghost"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "assassin",
+              "fact": "outcome-ready"
+            }
+          ]
+        },
+        {
+          "id": "turncoat",
+          "label": "Take Turncoat",
+          "text": "Take Turncoat.",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "assassin",
+              "fact": "turncoat-ready",
+              "present": true
+            }
+          ],
+          "effects": [
+            {
+              "kind": "advanceCareer",
+              "career": "assassin",
+              "transition": "branch-turncoat"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "assassin",
+              "fact": "outcome-ready"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assassin.routes.choose-network",
+      "title": "Choose or defer network/refusal readiness",
+      "sourceDomain": "assassin",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "assassin"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "assassin.shift"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 57,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "assassin",
+          "stage": "trusted-blade"
+        },
+        {
+          "kind": "careerFact",
+          "career": "assassin",
+          "fact": "veteran-ready",
+          "present": true
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "assassin",
+              "fact": "handler-takeover-ready",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "assassin",
+              "fact": "refusal-chain-ready",
+              "present": true
+            }
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "If a network/refusal specialization is already authorized by local facts, choose it now or defer without changing other careers.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "veteran",
+          "label": "Choose Veteran practice",
+          "text": "Keep the career grounded in sustained ordinary professional practice.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "advanceCareer",
+              "career": "assassin",
+              "transition": "branch-veteran"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "assassin",
+              "fact": "outcome-ready"
+            }
+          ]
+        },
+        {
+          "id": "handler-takeover",
+          "label": "Take Handler Takeover",
+          "text": "Take Handler Takeover.",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "assassin",
+              "fact": "handler-takeover-ready",
+              "present": true
+            }
+          ],
+          "effects": [
+            {
+              "kind": "advanceCareer",
+              "career": "assassin",
+              "transition": "branch-handler-takeover"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "assassin",
+              "fact": "outcome-ready"
+            }
+          ]
+        },
+        {
+          "id": "refusal-chain",
+          "label": "Take Refusal Chain",
+          "text": "Take Refusal Chain.",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "assassin",
+              "fact": "refusal-chain-ready",
+              "present": true
+            }
+          ],
+          "effects": [
+            {
+              "kind": "advanceCareer",
+              "career": "assassin",
+              "transition": "branch-refusal-chain"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "assassin",
+              "fact": "outcome-ready"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assassin.routes.outcome-ready",
+      "title": "Late Assassin career state can become outcome-ready without committing an ending",
+      "sourceDomain": "assassin",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerTransition",
+          "career": "assassin"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "assassin",
+          "fact": "outcome-ready"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 80,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "veteran"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "ghost"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "turncoat"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "handler-takeover"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "refusal-chain"
+            }
+          ]
+        },
+        {
+          "kind": "careerFact",
+          "career": "assassin",
+          "fact": "outcome-ready",
+          "present": true
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The chosen specialization can settle into a late career state without committing or completing an ending.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Enter outcome-ready without auto-committing an ending",
+          "text": "Enter outcome-ready without auto-committing an ending.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "advanceCareer",
+              "career": "assassin",
+              "transition": "outcome-ready"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
