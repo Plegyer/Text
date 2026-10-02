@@ -3,10 +3,12 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {actionAvailable,applyEffects,dispatch,parseSave,resolveReactions} from '../src/core/engine.ts';
 import {ordinaryHardWorkCareers,type Save} from '../src/core/schema.ts';
+import {presentationIdForActionResult,presentationIdForEnding,presentationIdForEvent,presentationSlots} from '../src/core/presentation.ts';
 import {secretDebtAcceptanceDay,secretDebtIsBound} from '../src/core/secretDebt.ts';
 import {catalog,started} from './helpers.ts';
 
 const secretPack=JSON.parse(readFileSync('content/packs/secret-debt.json','utf8'));
+const localization=JSON.parse(readFileSync('content/localization.json','utf8'));
 
 function authorizeOffer(input:Save){
   return applyEffects(input,[
@@ -53,6 +55,41 @@ test('Secret Debt keeps every still-open Product number absent from production d
   assert.equal(serialized.includes('20000'),false);
   assert.equal(serialized.includes('2000'),false);
   assert.equal(/10\s*days?/i.test(serialized),false);
+});
+
+test('Secret Debt has stable career presentation IDs and bilingual authored surfaces',()=>{
+  const shiftId=presentationIdForActionResult(catalog,'secret-debt.shift',['stage.room']);
+  const encounterId=presentationIdForEvent(catalog,'secret-debt.lender-encounter','default');
+  const paidEndingId=presentationIdForEnding('ending.secret-debt.paid-freedom');
+  assert.equal(shiftId,'job/secret-debt/result/default');
+  assert.equal(encounterId,'job/secret-debt/event/secret-debt-lender-encounter/default');
+  assert.equal(paidEndingId,'ending/secret-debt/paid-freedom');
+
+  const slots=new Map(presentationSlots(catalog).map(slot=>[slot.id,slot]));
+  assert.equal(slots.get(shiftId)?.baseMediaIds.includes('stage.room'),true);
+  assert.equal(slots.get(encounterId)?.fallbackId,shiftId);
+  assert.equal(slots.get(paidEndingId)?.fallbackId,'location/town/default');
+
+  const keys=[
+    'ui.secretDebt.ordinaryWorkLocked',
+    'action.secret-debt.shift.label',
+    'action.secret-debt.shift.description',
+    'event.secret-debt.lender-encounter.title',
+    'event.secret-debt.forced-night-work.title',
+    'event.secret-debt.outcome.paid-freedom.title',
+    'event.secret-debt.outcome.bound-life.title',
+    'event.secret-debt.outcome.takeover.title',
+    'ending.ending.secret-debt.paid-freedom.title',
+    'ending.ending.secret-debt.paid-freedom.epilogue',
+    'ending.ending.secret-debt.bound-life.title',
+    'ending.ending.secret-debt.takeover.title'
+  ];
+  for(const key of keys){
+    assert.equal(typeof localization.strings[key]?.ru,'string',`${key} RU`);
+    assert.equal(typeof localization.strings[key]?.en,'string',`${key} EN`);
+    assert.ok(localization.strings[key].ru.length>0,`${key} RU non-empty`);
+    assert.ok(localization.strings[key].en.length>0,`${key} EN non-empty`);
+  }
 });
 
 test('street encounter is one-shot and records accept/refuse without inventing the loan amount',()=>{
