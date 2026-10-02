@@ -106,8 +106,7 @@ export function validateHardWorkPackageSelection(
 ): OrdinaryHardWorkCareer[] {
   const earned = new Set<OrdinaryHardWorkCareer>();
   for (const career of earnedHardWork) {
-    assertOrdinaryCareer(career);
-    earned.add(career);
+    if (ordinaryCareerSet.has(career)) earned.add(career as OrdinaryHardWorkCareer);
   }
 
   const selected = new Set<OrdinaryHardWorkCareer>();
