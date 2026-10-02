@@ -7,6 +7,7 @@ import {
   SCHOOL_COURSES,
   SCHOOL_COURSE_IDS,
   SCHOOL_LESSON_ENERGY_COST,
+  SCHOOL_BODY_CONFIDENCE_LUST_GAIN,
   SCHOOL_NIGHT_STUDY_NEXT_DAY_ENERGY_DELTA,
   SCHOOL_NIGHT_STUDY_STAT_GAIN,
   executeSchoolLesson,
@@ -137,6 +138,8 @@ test('School catalog locks all eight accepted packages and directly covers all 1
   ]);
   assert.deepEqual(schoolDirectCoverage(),[...stats].sort());
   assert.ok(!schoolDirectCoverage().includes('lust' as Stat));
+  assert.equal(course('school.course.body_confidence').lustGain,SCHOOL_BODY_CONFIDENCE_LUST_GAIN);
+  assert.equal(SCHOOL_COURSES.filter(item=>item.lustGain!==undefined).length,1);
 });
 
 test('School lesson rejects insufficient money atomically',()=>{
@@ -224,6 +227,30 @@ test('save/reload after a paid lesson preserves the committed transaction withou
   assert.equal(second.run.character.stats.wits,out.run.character.stats.wits);
 });
 
+test('Body Confidence paid lesson adds Lust +2 separately from Sexuality and survives save reload once',()=>{
+  const cat=catalog();
+  const s=schoolReady();
+  s.run.character.lust=11;
+  s.run.character.stats.sexuality=7;
+  const beforeMoney=s.run.resources.money;
+  const beforeEnergy=s.run.dayState.energyCurrent;
+
+  const out=executeSchoolLesson(s,'school.course.body_confidence',cat,runtime).state;
+
+  assert.equal(out.run.character.lust,13);
+  assert.equal(out.run.character.stats.sexuality,10);
+  assert.equal(out.run.resources.money,beforeMoney-400);
+  assert.equal(out.run.dayState.energyCurrent,beforeEnergy-1);
+  assert.equal(out.run.progression.school.tracks['school.track.body_confidence']?.counters.lessons_completed,1);
+
+  const first=parseSave(JSON.stringify(out),cat);
+  const second=parseSave(JSON.stringify(first),cat);
+  assert.equal(first.run.character.lust,13);
+  assert.equal(second.run.character.lust,13);
+  assert.equal(second.run.character.stats.sexuality,10);
+  assert.equal(second.run.progression.school.tracks['school.track.body_confidence']?.counters.lessons_completed,1);
+});
+
 test('Night study is a separate zero-tuition Night-slot action with +2 supported stat and next-day Energy -1',()=>{
   const cat=catalog();
   const nightChoice=schoolNightStudyChoice('school.course.arcana','reason');
@@ -264,4 +291,15 @@ test('Night study is a separate zero-tuition Night-slot action with +2 supported
   assert.equal(JSON.stringify(s.run.progression.careers),careersBefore);
   assert.equal(JSON.stringify(s.run.progression.quests),questsBefore);
   assert.equal(JSON.stringify(s.run.progression.relationships),relationshipsBefore);
+});
+
+
+test('Body Confidence Night study never inherits paid-lesson Lust growth',()=>{
+  const choice=schoolNightStudyChoice('school.course.body_confidence','sexuality');
+  assert.deepEqual(choice.effects,[
+    {kind:'modifyStat',stat:'sexuality',delta:SCHOOL_NIGHT_STUDY_STAT_GAIN},
+    {kind:'incrementSchoolCounter',track:'school.track.body_confidence',counter:'night_study_sessions',amount:1}
+  ]);
+  assert.equal(choice.effects.some(effect=>effect.kind==='metric'&&effect.key==='lust'),false);
+  assert.deepEqual(choice.nextDayEffects,[]);
 });
