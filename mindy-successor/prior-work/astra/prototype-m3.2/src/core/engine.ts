@@ -1160,6 +1160,7 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
     const q=s.run.flow.reaction.queued.find(x=>x.instanceId===command.id&&x.kind==='optional');
     if(!q||!s.run.dayState.optionalOfferIds.includes(command.id))throw new Error('Предложение недоступно.');
     const e=cat.events.find(x=>x.id===q.eventId);if(!e)throw new Error('Событие предложения отсутствует.');
+    if(secretDebtBlocksSourceDomain(s,e.sourceDomain))throw new Error('Предложение обычной профессии недоступно, пока действует связывающий долг.');
     s.run.flow.reaction.currentEpochId=q.reactionEpochId;
     removeQueuedInstance(s,q.instanceId);
     s.run.pending={eventId:q.eventId,variantId:q.variantId,presentationId:presentationIdForEvent(cat,q.eventId,q.variantId),reactionEpochId:q.reactionEpochId,allowedChoiceIds:[...q.allowedChoiceIds]};
