@@ -115,6 +115,12 @@ test('street encounter is one-shot and records accept/refuse without inventing t
   assert.equal(accepted.run.history['secret-debt.lender-encounter']?.count,1);
   assert.equal(accepted.run.flow.night?.phase,'VoluntaryNightChoice','the offer itself must not consume the Night slot');
 
+  const acceptedReload=parseSave(JSON.stringify(accepted),catalog);
+  assert.equal(acceptedReload.run.progression.careers['secret-debt']?.stage,'accepted');
+  assert.equal(secretDebtAcceptanceDay(acceptedReload),0);
+  assert.equal(acceptedReload.run.history['secret-debt.lender-encounter']?.count,1);
+  assert.equal(acceptedReload.run.flow.night?.phase,'VoluntaryNightChoice');
+
   let refused=authorizeOffer(started());
   refused=dispatch(refused,{type:'endDay'},catalog);
   refused=dispatch(refused,{type:'chooseLodging',id:'lodging.street'},catalog);
