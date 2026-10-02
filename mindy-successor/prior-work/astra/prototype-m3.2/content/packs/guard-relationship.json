@@ -62,7 +62,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "A Guard partner begins comparing reports and route decisions with you as ordinary professional work.",
+          "text": "The partner enters as a colleague on duty: comparing notes, sharing an area, and noticing where your working methods differ. The role remains unnamed and assumes neither friendship, romance, nor mandatory personal trust.",
           "conditions": [],
           "media": []
         }
@@ -132,7 +132,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "A second ordinary duty establishes enough trust for the partner to disagree with you openly about how a pressured route should be handled.",
+          "text": "Professional trust grows from repeatable details: arriving for handoff on time, not claiming someone else's observation, and saying plainly where uncertainty remains. That is enough for a working relationship without personal intimacy.",
           "conditions": [],
           "media": []
         }
@@ -204,7 +204,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "Your partner wants a faster, more forceful resolution; you want either a documented process or a negotiated route. The disagreement is concrete and professional.",
+          "text": "The conflict comes from a different case decision rather than abstract dislike: delay a check, open a passage, accept testimony, or require another record. The disagreement is about practice and responsibility.",
           "conditions": [],
           "media": []
         }
@@ -273,7 +273,7 @@
         {
           "id": "cooperate",
           "label": "Build a documented compromise",
-          "text": "Resolve the conflict cooperatively and keep later case support possible.",
+          "text": "Cooperation after conflict does not mean total agreement; it means a clear way to review each other's decisions. Partners can divide the work and leave a written trail of where they agreed and where they did not.",
           "conditions": [],
           "effects": [
             {
@@ -297,7 +297,7 @@
         {
           "id": "rivalry",
           "label": "Remain professional rivals",
-          "text": "Keep the disagreement productive without blocking ordinary Guard progression.",
+          "text": "Professional rivalry can remain useful: each Guard demands cleaner records and better-supported decisions from the other. It does not block ordinary shifts or become a hidden relationship meter.",
           "conditions": [],
           "effects": [
             {
@@ -321,7 +321,7 @@
         {
           "id": "decline",
           "label": "Step away from the extra relationship route",
-          "text": "Refuse deeper cooperation while keeping ordinary Guard work intact.",
+          "text": "Refusing additional joint work should be clean. The partner respects the boundary, ordinary shifts continue, and previously earned professional trust is not erased as punishment for saying no.",
           "conditions": [],
           "effects": [
             {
@@ -378,7 +378,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "After resolving the conflict cooperatively, your partner can support one later evidence thread. This is optional utility, not a gate on paid work.",
+          "text": "If cooperation continues, the partner can provide a second verifiable line for a major case: confirming a handoff, checking a report, or noticing a mismatch. That is source support, not a mandatory key to the career.",
           "conditions": [],
           "media": []
         }

@@ -3045,7 +3045,7 @@
       "scenes": [
         {
           "id": "spring.default",
-          "text": "Spring guard patrol: thawing roads, property disputes, and returning traffic reshape ordinary duty.",
+          "text": "Spring duty begins with meltwater, damaged roads, and renewed boundary disputes. Ordinary Guard work is to hear both sides, keep passage usable, and record what actually happened without turning every disagreement into a use-of-force scene.",
           "conditions": [],
           "media": [
             "stage.guard.spring"
@@ -3053,7 +3053,7 @@
         },
         {
           "id": "spring.property-dispute",
-          "text": "A spring patrol becomes a boundary and property dispute where the main work is hearing both sides and recording what is actually contested.",
+          "text": "In a yard, fence, or passage dispute, the useful questions are concrete: where the marker stood, who used the road, and what changed after winter. The Guard records both accounts and separates verifiable details from demands.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -3066,7 +3066,7 @@
         },
         {
           "id": "spring.road-reopen",
-          "text": "A reopened spring road brings travelers, repair crews, and arguments over who gets through first.",
+          "text": "A road reopened after winter quickly fills with repair crews, trade carts, and travelers. The shift is about establishing a clear passage order and handing the next patrol a record of damage and temporary limits.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -3084,7 +3084,7 @@
         },
         {
           "id": "summer.default",
-          "text": "Summer guard patrol: festivals, crowds, heat, and street pressure change the ordinary duty mix.",
+          "text": "Summer festival duty means lost property, overloaded lanes, and people who cannot hear ordinary directions through the noise. The Guard keeps narrow routes open and resolves small disputes before the crowd amplifies the pressure.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -3097,7 +3097,7 @@
         },
         {
           "id": "summer.festival",
-          "text": "Festival duty is crowd direction, lost-property questions, and keeping a narrow lane open without turning the shift into combat.",
+          "text": "A good summer shift is visible in whether people know where to go and what is happening. Short instructions repeated consistently to several groups reduce pressure better than performative threats.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -3110,7 +3110,7 @@
         },
         {
           "id": "summer.market-crowd",
-          "text": "A trusted summer shift means balancing market flow, arguments, and a growing crowd before anyone needs a harder intervention.",
+          "text": "In a hot market, conflict often begins with a queue, a blocked passage, or mismatched expectations rather than a crime. Professional duty restores safe movement first and then handles the underlying complaint.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -3128,7 +3128,7 @@
         },
         {
           "id": "autumn.default",
-          "text": "Autumn guard patrol: trade traffic, suspicious cargo, and harvest disputes make paperwork as important as walking the streets.",
+          "text": "Autumn brings more cargo, passes, and written marks to the gate. The Guard checks discrepancies against documents and facts rather than treating uncertainty as proven guilt.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -3141,7 +3141,7 @@
         },
         {
           "id": "autumn.cargo-check",
-          "text": "An autumn gate shift means checking a suspicious cargo pass without treating uncertainty as guilt.",
+          "text": "A suspicious pass is a reason to check date, seal, route, and cargo description. If the details match, detention is not an end in itself; if they do not, the discrepancy should be recorded so another person can verify it.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -3154,7 +3154,7 @@
         },
         {
           "id": "autumn.market-records",
-          "text": "A senior autumn duty turns on matching market complaints with written passes and prior reports rather than relying on memory.",
+          "text": "By the end of a trade day, memory is already unreliable. A written report links the complaint, the pass, and the actual shift decision so the next review does not depend on rumor or a participant's status.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -3172,7 +3172,7 @@
         },
         {
           "id": "winter.default",
-          "text": "Winter guard patrol: scarcity, lodging pressure, stranded travelers, and closed routes change what ordinary public duty looks like.",
+          "text": "Winter patrols face closed roads, scarce beds, and people caught between shelter and movement through the city. Poverty is not a crime category; the job is to keep usable access open and record the actual problem.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -3185,7 +3185,7 @@
         },
         {
           "id": "winter.lodging-pressure",
-          "text": "A winter street round becomes a question of shelter pressure and how to keep access routes clear without erasing poverty into a crime category.",
+          "text": "When people gather near cheap lodging or on the street, professional duty requires distinguishing a dangerous blockage, ordinary lack of space, and someone who simply has nowhere to go. One condition should not automatically imply another.",
           "conditions": [
             {
               "kind": "calendarSeason",
@@ -3198,7 +3198,7 @@
         },
         {
           "id": "winter.closed-quarter",
-          "text": "A senior winter shift is route triage around a closed quarter, scarce supplies, and travelers who need clear instructions more than threats.",
+          "text": "A closed quarter needs clear detours, supply awareness, and consistent instructions for different groups. Threats do not create order by themselves; it is more useful to state what is closed, why, and which route remains available.",
           "conditions": [
             {
               "kind": "calendarSeason",
