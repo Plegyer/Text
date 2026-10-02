@@ -1,0 +1,795 @@
+{
+  "formatVersion": 1,
+  "status": "SAFE_PREP_UNBOUND",
+  "source": {
+    "taskPointerMain": "223135d62b41c0add3cd621f756d8fad63072b39",
+    "branchBase": "426ec9146716e1246d6b7bfdd4a570ef2fcb0a54",
+    "safePrepV4": "302c5cd636b2389edd05de2b4e50d5df8f88133d"
+  },
+  "binding": {
+    "livePack": false,
+    "sharedD23Condition": null,
+    "sharedNewStartPlusBinding": null,
+    "sharedCapBinding": null,
+    "careerTopologyBinding": null,
+    "princeConfrontationBinding": null
+  },
+  "entryContract": {
+    "day": 1,
+    "trigger": "creationCompleted",
+    "delivery": "latched",
+    "deterministic": true,
+    "requiresPermanentTenOfTen": true,
+    "requiresActiveTenOfTenPackages": true,
+    "randomGate": false,
+    "statGate": false,
+    "itemGate": false,
+    "legacyItemSubstitution": false
+  },
+  "entryFlow": [
+    {
+      "sceneId": "palace.invitation.day1-arrival",
+      "purpose": "automatic-day1-reveal",
+      "ru": {
+        "title": "Письмо в первый день",
+        "body": "Утро новой жизни ещё не успевает стать привычным, когда у двери появляется посыльный с плотным конвертом и дворцовой печатью. На этот раз письмо не намекает и не проверяет тебя: приглашение уже выдано.",
+        "choices": [
+          {
+            "id": "open",
+            "label": "Вскрыть конверт",
+            "text": "Печать ломается легко. Внутри — официальное приглашение и время, когда тебя ждут у дворцового входа."
+          }
+        ]
+      },
+      "en": {
+        "title": "A Letter on the First Day",
+        "body": "The morning of a new life has barely begun when a courier appears at the door with a heavy envelope bearing the Palace seal. This time the letter is neither a hint nor a test: the invitation has already been issued.",
+        "choices": [
+          {
+            "id": "open",
+            "label": "Open the envelope",
+            "text": "The seal breaks cleanly. Inside is an official invitation and the time when you are expected at the Palace entrance."
+          }
+        ]
+      }
+    },
+    {
+      "sceneId": "palace.invitation.reveal",
+      "purpose": "explain-earned-and-active-gate-without-counter-ui",
+      "ru": {
+        "title": "Приглашение без нового испытания",
+        "body": "Формулировка короткая: накопленный опыт десяти обычных профессий признан, а выбранные в этой жизни наследия делают приглашение действительным сейчас. Ни экзамена, ни случайной проверки, ни дополнительного пропуска не требуется.",
+        "choices": [
+          {
+            "id": "accept",
+            "label": "Принять приглашение",
+            "text": "Ты подтверждаешь визит. Этого достаточно, чтобы открыть доступ к дворцовой работе в этой жизни."
+          }
+        ]
+      },
+      "en": {
+        "title": "An Invitation Without Another Test",
+        "body": "The wording is brief: experience from all ten ordinary professions has been recognized, and the legacies selected for this life make the invitation valid now. No exam, random check, or additional pass is required.",
+        "choices": [
+          {
+            "id": "accept",
+            "label": "Accept the invitation",
+            "text": "You confirm the visit. That is enough to open access to Palace work in this life."
+          }
+        ]
+      }
+    },
+    {
+      "sceneId": "palace.entry.gates",
+      "purpose": "first-entry-transition",
+      "ru": {
+        "title": "За воротами",
+        "body": "У входа сверяют письмо и сразу возвращают его тебе. Никто не просит доказать силу, манеры или происхождение. Приглашение уже решило вопрос доступа; дальше начинается обычная работа с людьми, поручениями и правилами места.",
+        "choices": [
+          {
+            "id": "enter",
+            "label": "Войти",
+            "text": "Ты проходишь внутрь и получаешь направление к первой рабочей встрече."
+          }
+        ]
+      },
+      "en": {
+        "title": "Beyond the Gates",
+        "body": "At the entrance, the letter is checked and immediately returned to you. Nobody asks you to prove strength, manners, or origin. The invitation has already settled access; from here, the work is about people, assignments, and the rules of the place.",
+        "choices": [
+          {
+            "id": "enter",
+            "label": "Enter",
+            "text": "You step inside and receive directions to your first work meeting."
+          }
+        ]
+      }
+    }
+  ],
+  "orientationFlow": [
+    {
+      "sceneId": "palace.orientation.first-day",
+      "ru": {
+        "title": "Первый рабочий день",
+        "body": "Вместо титула тебе дают список простых ориентиров: где принимают документы, кто подтверждает расписание, какие двери служебные и кому сообщать, если поручения сталкиваются между собой.",
+        "choices": [
+          {
+            "id": "listen",
+            "label": "Разобраться в порядке",
+            "text": "Ты отмечаешь маршруты и имена должностей, не пытаясь запомнить весь Дворец за один час."
+          }
+        ]
+      },
+      "en": {
+        "title": "The First Working Day",
+        "body": "Instead of a title, you are given a practical set of bearings: where documents are received, who confirms schedules, which doors are for staff, and whom to contact when assignments collide.",
+        "choices": [
+          {
+            "id": "listen",
+            "label": "Learn the procedure",
+            "text": "You note routes and roles without trying to memorize the whole Palace in an hour."
+          }
+        ]
+      }
+    },
+    {
+      "sceneId": "palace.orientation.handoff",
+      "ru": {
+        "title": "Первое поручение",
+        "body": "Небольшой пакет документов нужно передать между двумя службами до следующей встречи. Задача кажется простой, пока не выясняется, что одна сторона изменила расписание и забыла сообщить второй.",
+        "choices": [
+          {
+            "id": "confirm",
+            "label": "Сначала сверить расписание",
+            "text": "Ты уточняешь новое время и передаёшь документы уже с правильной пометкой."
+          },
+          {
+            "id": "ask",
+            "label": "Уточнить порядок у служащего",
+            "text": "Ты просишь короткое объяснение местного порядка и избегаешь лишней беготни."
+          }
+        ]
+      },
+      "en": {
+        "title": "The First Assignment",
+        "body": "A small packet of documents must move between two offices before the next meeting. The task seems simple until you learn that one side changed the schedule and forgot to tell the other.",
+        "choices": [
+          {
+            "id": "confirm",
+            "label": "Confirm the schedule first",
+            "text": "You verify the new time and deliver the documents with the correct note."
+          },
+          {
+            "id": "ask",
+            "label": "Ask a staff contact about procedure",
+            "text": "You get a short explanation of the local process and avoid an unnecessary runaround."
+          }
+        ]
+      }
+    }
+  ],
+  "relationships": {
+    "professionalPatron": {
+      "roleId": "professional-patron",
+      "relationshipId": "palace.professional-patron",
+      "requiredForAccess": false,
+      "requiredForCareerCompletion": false,
+      "scenes": [
+        {
+          "sceneId": "palace.relationship.patron.intro",
+          "ru": {
+            "title": "Внимание к работе",
+            "body": "Один из влиятельных дворцовых профессионалов замечает, что ты исправила чужую несостыковку без шума. Вместо похвалы следует вопрос: можешь ли ты так же аккуратно вести более длинную цепочку поручений?",
+            "choices": [
+              {
+                "id": "professional",
+                "label": "Ответить по делу",
+                "text": "Ты говоришь о сроках, проверках и том, что сможешь подтвердить результат."
+              }
+            ]
+          },
+          "en": {
+            "title": "Attention to the Work",
+            "body": "An influential Palace professional notices that you corrected someone else's mismatch without making a spectacle of it. Instead of praise comes a question: can you handle a longer chain of assignments with the same care?",
+            "choices": [
+              {
+                "id": "professional",
+                "label": "Answer professionally",
+                "text": "You talk about deadlines, checks, and the result you can actually confirm."
+              }
+            ]
+          }
+        },
+        {
+          "sceneId": "palace.relationship.patron.trust",
+          "ru": {
+            "title": "Проверка доверием",
+            "body": "Покровитель передаёт тебе задачу, где ошибка будет заметна не сразу. Здесь важнее не скорость, а то, заметишь ли ты спорное место и задашь ли вопрос до того, как оно станет проблемой.",
+            "choices": [
+              {
+                "id": "verify",
+                "label": "Проверить спорное место",
+                "text": "Ты возвращаешься с конкретным вопросом и предложением, как закрыть пробел."
+              },
+              {
+                "id": "request-context",
+                "label": "Попросить недостающий контекст",
+                "text": "Ты не делаешь вид, что знаешь больше, чем знаешь, и получаешь нужное уточнение."
+              }
+            ]
+          },
+          "en": {
+            "title": "A Test of Trust",
+            "body": "The patron gives you a task where a mistake would not be obvious at first. Speed matters less than whether you notice the uncertain point and ask before it becomes a problem.",
+            "choices": [
+              {
+                "id": "verify",
+                "label": "Check the uncertain point",
+                "text": "You return with a specific question and a proposal for closing the gap."
+              },
+              {
+                "id": "request-context",
+                "label": "Ask for missing context",
+                "text": "You do not pretend to know more than you do, and you get the clarification you need."
+              }
+            ]
+          }
+        },
+        {
+          "sceneId": "palace.relationship.patron.conflict",
+          "ru": {
+            "title": "Просьба за пределами договорённости",
+            "body": "Однажды покровитель предлагает ускорить дело так, что ответственность за чужое решение фактически окажется на тебе. Это полезно для него, но не входит в то, о чём вы договаривались.",
+            "choices": [
+              {
+                "id": "clarify",
+                "label": "Вернуть ответственность тому, кто принимает решение",
+                "text": "Ты предлагаешь подготовить материалы, но просишь, чтобы итоговое решение подписал его настоящий автор."
+              },
+              {
+                "id": "decline",
+                "label": "Отказаться от этой просьбы",
+                "text": "Ты спокойно отказываешься, не разрывая профессиональное сотрудничество и не теряя доступ к дворцовой работе."
+              },
+              {
+                "id": "step-away",
+                "label": "Завершить линию покровительства",
+                "text": "Ты отказываешься от дальнейшего покровительства, сохраняя обычную работу и другие дворцовые связи."
+              }
+            ]
+          },
+          "en": {
+            "title": "A Request Beyond the Agreement",
+            "body": "One day the patron suggests speeding something up in a way that would leave you carrying responsibility for someone else's decision. It would be convenient for them, but it is outside what you agreed to.",
+            "choices": [
+              {
+                "id": "clarify",
+                "label": "Return responsibility to the decision-maker",
+                "text": "You offer to prepare the material, but ask that the actual decision-maker sign the result."
+              },
+              {
+                "id": "decline",
+                "label": "Decline this request",
+                "text": "You refuse calmly without ending professional cooperation or losing access to Palace work."
+              },
+              {
+                "id": "step-away",
+                "label": "End the patronage route",
+                "text": "You step away from further patronage while keeping ordinary work and other Palace relationships available."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "rival": {
+      "roleId": "rival",
+      "relationshipId": "palace.rival",
+      "requiredForAccess": false,
+      "requiredForCareerCompletion": false,
+      "scenes": [
+        {
+          "sceneId": "palace.relationship.rival.intro",
+          "ru": {
+            "title": "Тот же список, другое решение",
+            "body": "Другой дворцовый работник берётся за похожие задачи и явно замечает, что вас начинают сравнивать. Враждебности пока нет, но каждый внимательно смотрит, какие решения выбирает другой.",
+            "choices": [
+              {
+                "id": "acknowledge",
+                "label": "Признать профессиональное соперничество",
+                "text": "Ты не притворяешься, что сравнения нет, но оставляешь его в рабочих рамках."
+              }
+            ]
+          },
+          "en": {
+            "title": "The Same List, a Different Answer",
+            "body": "Another Palace worker handles similar assignments and clearly notices that people have begun comparing the two of you. There is no hostility yet, but each of you watches how the other solves problems.",
+            "choices": [
+              {
+                "id": "acknowledge",
+                "label": "Acknowledge the professional rivalry",
+                "text": "You do not pretend the comparison is absent, but you keep it within professional bounds."
+              }
+            ]
+          }
+        },
+        {
+          "sceneId": "palace.relationship.rival.cooperation",
+          "ru": {
+            "title": "Поручение на двоих",
+            "body": "Сложная подготовка требует двух параллельных цепочек работы. Соперник предлагает разделить зоны ответственности так, чтобы потом было понятно, где чья ошибка и чей успех.",
+            "choices": [
+              {
+                "id": "cooperate",
+                "label": "Разделить работу прозрачно",
+                "text": "Вы фиксируете границы задач и соглашаетесь сверить результаты перед передачей дальше."
+              },
+              {
+                "id": "parallel",
+                "label": "Работать параллельно без личного сближения",
+                "text": "Вы сотрудничаете только настолько, насколько требует поручение."
+              }
+            ]
+          },
+          "en": {
+            "title": "A Shared Assignment",
+            "body": "A complicated preparation requires two parallel lines of work. The rival suggests splitting responsibility so that any later mistake or success can be traced clearly.",
+            "choices": [
+              {
+                "id": "cooperate",
+                "label": "Divide the work transparently",
+                "text": "You define the boundaries of each task and agree to cross-check the result before handing it on."
+              },
+              {
+                "id": "parallel",
+                "label": "Work in parallel without becoming close",
+                "text": "You cooperate only as far as the assignment requires."
+              }
+            ]
+          }
+        },
+        {
+          "sceneId": "palace.relationship.rival.conflict",
+          "ru": {
+            "title": "Кому принадлежит удачное решение",
+            "body": "После удачного результата кто-то приписывает всю идею сопернику, хотя часть решения появилась из твоих замечаний. Соперник это слышит и ждёт, что ты сделаешь.",
+            "choices": [
+              {
+                "id": "correct-record",
+                "label": "Спокойно уточнить вклад",
+                "text": "Ты поправляешь запись без попытки унизить соперника."
+              },
+              {
+                "id": "share-credit",
+                "label": "Подчеркнуть общий результат",
+                "text": "Ты называешь, что сделал каждый, и не превращаешь эпизод в борьбу за лицо."
+              },
+              {
+                "id": "disengage",
+                "label": "Не продолжать личное соперничество",
+                "text": "Ты закрываешь эту линию отношений и сохраняешь обычную дворцовую работу."
+              }
+            ]
+          },
+          "en": {
+            "title": "Who Gets Credit for the Solution",
+            "body": "After a successful result, someone credits the entire idea to the rival even though part of the solution came from your observations. The rival hears it and waits to see what you do.",
+            "choices": [
+              {
+                "id": "correct-record",
+                "label": "Correct the record calmly",
+                "text": "You clarify your contribution without trying to embarrass the rival."
+              },
+              {
+                "id": "share-credit",
+                "label": "Emphasize the shared result",
+                "text": "You state what each person did and refuse to turn the moment into a contest of pride."
+              },
+              {
+                "id": "disengage",
+                "label": "Stop pursuing the personal rivalry",
+                "text": "You close this relationship route while keeping ordinary Palace work available."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "officialContact": {
+      "roleId": "servant-or-official-contact",
+      "relationshipId": "palace.official-contact",
+      "requiredForAccess": false,
+      "requiredForCareerCompletion": false,
+      "scenes": [
+        {
+          "sceneId": "palace.relationship.contact.intro",
+          "ru": {
+            "title": "Кто знает, куда всё несут",
+            "body": "Служащий, который каждый день видит десятки передач и расписаний, замечает, что ты снова сверяешь таблички на дверях. Вместо насмешки он показывает короткий путь между двумя рабочими зонами.",
+            "choices": [
+              {
+                "id": "thank",
+                "label": "Поблагодарить и запомнить маршрут",
+                "text": "Ты относишься к практическому знанию как к профессиональной помощи, а не к чему-то само собой разумеющемуся."
+              }
+            ]
+          },
+          "en": {
+            "title": "The Person Who Knows Where Everything Goes",
+            "body": "A staff member who sees dozens of handoffs and schedules every day notices you checking the door signs again. Instead of mocking you, they show you a shorter route between two working areas.",
+            "choices": [
+              {
+                "id": "thank",
+                "label": "Thank them and remember the route",
+                "text": "You treat practical knowledge as professional help rather than something you are entitled to."
+              }
+            ]
+          }
+        },
+        {
+          "sceneId": "palace.relationship.contact.practical-help",
+          "ru": {
+            "title": "Помощь до того, как начнётся путаница",
+            "body": "Контакт предупреждает, что один зал сегодня занят дольше обычного и несколько поручений придётся перенаправить. Это не секрет, просто информация, которая редко доходит до нужных людей вовремя.",
+            "choices": [
+              {
+                "id": "adjust",
+                "label": "Перестроить маршрут",
+                "text": "Ты меняешь порядок передач и избавляешь несколько служб от взаимного ожидания."
+              },
+              {
+                "id": "share",
+                "label": "Передать предупреждение дальше",
+                "text": "Ты делишься полезной информацией с теми, кого она касается, не выдавая её за личное влияние."
+              }
+            ]
+          },
+          "en": {
+            "title": "Help Before Confusion Starts",
+            "body": "The contact warns you that one hall will be occupied longer than usual today and several assignments will need rerouting. It is not a secret, merely information that rarely reaches the right people in time.",
+            "choices": [
+              {
+                "id": "adjust",
+                "label": "Adjust the route",
+                "text": "You change the order of handoffs and spare several offices from waiting on one another."
+              },
+              {
+                "id": "share",
+                "label": "Pass the warning along",
+                "text": "You share useful information with the people affected without pretending it is personal influence."
+              }
+            ]
+          }
+        },
+        {
+          "sceneId": "palace.relationship.contact.boundary",
+          "ru": {
+            "title": "Просьба об одолжении",
+            "body": "Позже контакт просит тебя переставить чужое поручение в очереди. Причина понятна, но у тебя нет права обещать такой приоритет.",
+            "choices": [
+              {
+                "id": "help-within-role",
+                "label": "Помочь только в пределах полномочий",
+                "text": "Ты объясняешь, что можешь уточнить статус и передать просьбу, но не можешь сама менять очередь."
+              },
+              {
+                "id": "decline",
+                "label": "Отказать без разрыва контакта",
+                "text": "Ты отказываешься менять порядок и сохраняешь профессиональное общение."
+              },
+              {
+                "id": "step-away",
+                "label": "Завершить личные просьбы",
+                "text": "Ты просишь больше не приносить тебе такие запросы. Обычная дворцовая работа остаётся доступной."
+              }
+            ]
+          },
+          "en": {
+            "title": "A Request for a Favor",
+            "body": "Later, the contact asks you to move someone else's assignment forward in the queue. The reason is understandable, but you do not have the authority to promise that priority.",
+            "choices": [
+              {
+                "id": "help-within-role",
+                "label": "Help only within your role",
+                "text": "You explain that you can check the status and pass on the request, but cannot change the queue yourself."
+              },
+              {
+                "id": "decline",
+                "label": "Decline without ending the contact",
+                "text": "You refuse to change the order and keep the professional relationship intact."
+              },
+              {
+                "id": "step-away",
+                "label": "End personal favors",
+                "text": "You ask them not to bring you requests like this again. Ordinary Palace work remains available."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "optionalRomance": {
+      "roleId": "optional-romance",
+      "relationshipId": "palace.optional-romance",
+      "requiredForAccess": false,
+      "requiredForCareerCompletion": false,
+      "requiredForAnyEnding": false,
+      "scenes": [
+        {
+          "sceneId": "palace.relationship.romance.invitation",
+          "ru": {
+            "title": "Разговор после работы",
+            "body": "Знакомый дворцовый контакт предлагает встретиться после смены уже без повестки и документов. Предложение явно личное, но не связано с доступом, заданиями или оценкой твоей работы.",
+            "choices": [
+              {
+                "id": "consider",
+                "label": "Обсудить, чего вы оба хотите",
+                "text": "Ты не принимаешь близость по умолчанию и сначала уточняешь границы."
+              },
+              {
+                "id": "professional",
+                "label": "Оставить отношения профессиональными",
+                "text": "Ты прямо говоришь, что предпочитаешь рабочие отношения. Это не меняет доступ к Дворцу."
+              },
+              {
+                "id": "decline",
+                "label": "Отказаться от встречи",
+                "text": "Ты отказываешься без наказания для карьеры, доступа или других отношений."
+              }
+            ]
+          },
+          "en": {
+            "title": "A Conversation After Work",
+            "body": "A familiar Palace contact suggests meeting after the shift with no agenda and no documents. The invitation is clearly personal, but it has nothing to do with access, assignments, or evaluation of your work.",
+            "choices": [
+              {
+                "id": "consider",
+                "label": "Discuss what each of you wants",
+                "text": "You do not assume intimacy and first clarify boundaries."
+              },
+              {
+                "id": "professional",
+                "label": "Keep the relationship professional",
+                "text": "You say directly that you prefer a working relationship. Palace access does not change."
+              },
+              {
+                "id": "decline",
+                "label": "Decline the meeting",
+                "text": "You refuse without any penalty to career progress, access, or other relationships."
+              }
+            ]
+          }
+        },
+        {
+          "sceneId": "palace.relationship.romance.mode",
+          "ru": {
+            "title": "Определить границы",
+            "body": "Если вы всё же встречаетесь, разговор быстро возвращается к простому вопросу: это дружба, романтический интерес или просто редкая встреча вне работы?",
+            "choices": [
+              {
+                "id": "friendship",
+                "label": "Оставить дружбу",
+                "text": "Вы договариваетесь о дружеской связи без романтических ожиданий."
+              },
+              {
+                "id": "romance",
+                "label": "Попробовать романтические отношения",
+                "text": "Вы соглашаетесь на романтическую линию как на отдельный добровольный выбор."
+              },
+              {
+                "id": "close",
+                "label": "Вернуться к профессиональным отношениям",
+                "text": "Личная линия закрывается спокойно. Дворцовая работа продолжается как обычно."
+              }
+            ]
+          },
+          "en": {
+            "title": "Set the Boundaries",
+            "body": "If you do meet, the conversation soon comes back to a simple question: is this friendship, romantic interest, or merely an occasional meeting outside work?",
+            "choices": [
+              {
+                "id": "friendship",
+                "label": "Keep it as friendship",
+                "text": "You agree on a friendly connection without romantic expectations."
+              },
+              {
+                "id": "romance",
+                "label": "Try a romantic relationship",
+                "text": "You agree to a romance route as a separate voluntary choice."
+              },
+              {
+                "id": "close",
+                "label": "Return to a professional relationship",
+                "text": "The personal route closes calmly. Palace work continues as usual."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "voluntaryNight": [
+    {
+      "choiceId": "palace.night.work-review",
+      "forced": false,
+      "ownsForcedNight": false,
+      "consumesNormalNightChoice": true,
+      "requiresPalaceAccess": true,
+      "ru": {
+        "label": "Остаться на вечерний разбор",
+        "body": "После дневной работы можно добровольно остаться, чтобы спокойно сверить документы, маршруты и незакрытые поручения. Это занимает обычный ночной выбор и не добавляет бесплатного действия.",
+        "result": "Ты закрываешь несколько мелких вопросов и уходишь, когда разбор закончен."
+      },
+      "en": {
+        "label": "Stay for an evening work review",
+        "body": "After the day's work, you may voluntarily stay to review documents, routes, and unfinished assignments in a quieter setting. This uses the normal night choice and does not add a free action.",
+        "result": "You settle several small questions and leave when the review is finished."
+      }
+    },
+    {
+      "choiceId": "palace.night.social-conversation",
+      "forced": false,
+      "ownsForcedNight": false,
+      "consumesNormalNightChoice": true,
+      "requiresPalaceAccess": true,
+      "ru": {
+        "label": "Остаться на спокойный разговор",
+        "body": "Иногда после работы несколько людей задерживаются без официальной повестки. Можно остаться и послушать разговоры о расписании, людях и повседневных проблемах Дворца, не превращая вечер в обязательную светскую сцену.",
+        "result": "Разговор заканчивается без обещаний и обязательств; ты возвращаешься к обычному распорядку."
+      },
+      "en": {
+        "label": "Stay for a quiet conversation",
+        "body": "Sometimes a few people remain after work with no formal agenda. You may stay and listen to conversation about schedules, people, and everyday Palace problems without turning the evening into a mandatory social scene.",
+        "result": "The conversation ends without promises or obligations, and you return to the normal routine."
+      }
+    }
+  ],
+  "legacyItemReactions": [
+    {
+      "reactionId": "palace.legacy.artist-formal-presence",
+      "capability": "artist_formal_presence",
+      "entryGate": false,
+      "grantsAccess": false,
+      "ru": "Опыт официального присутствия помогает быстрее понять, где формальность действительно важна, а где достаточно ясного рабочего ответа.",
+      "en": "Formal-presence experience helps you recognize when ceremony truly matters and when a clear working answer is enough."
+    },
+    {
+      "reactionId": "palace.legacy.artist-invitation-handling",
+      "capability": "artist_handle_invitation",
+      "entryGate": false,
+      "grantsAccess": false,
+      "ru": "Ты узнаёшь знакомую структуру приглашения и сразу замечаешь служебные детали. Этот опыт помогает прочитать письмо, но не является причиной дворцового доступа.",
+      "en": "You recognize the structure of the invitation and notice the procedural details immediately. This experience helps you read the letter, but it is not the reason Palace access exists."
+    },
+    {
+      "reactionId": "palace.legacy.guard-access",
+      "capability": "official_guard_access",
+      "entryGate": false,
+      "grantsAccess": false,
+      "ru": "Опыт официального доступа помогает спокойно пройти служебную проверку внутри Дворца. Он не заменяет приглашение первого дня.",
+      "en": "Experience with official access helps you handle an internal staff checkpoint calmly. It never substitutes for the Day-1 invitation."
+    },
+    {
+      "reactionId": "palace.legacy.guard-sealed-pass",
+      "capability": "guard_sealed_pass",
+      "entryGate": false,
+      "grantsAccess": false,
+      "ru": "Знакомство с запечатанными пропусками помогает заметить, где документ подтверждает маршрут, а где лишь сопровождает поручение.",
+      "en": "Familiarity with sealed passes helps you tell when a document authorizes a route and when it merely accompanies an assignment."
+    },
+    {
+      "reactionId": "palace.legacy.merchant-manifest",
+      "capability": "merchant_verify_manifest",
+      "entryGate": false,
+      "grantsAccess": false,
+      "ru": "Опыт проверки манифестов помогает найти несоответствие между реестром и фактической поставкой до того, как оно станет срочной проблемой.",
+      "en": "Manifest-verification experience helps you catch a mismatch between the register and the actual delivery before it becomes an emergency."
+    },
+    {
+      "reactionId": "palace.legacy.merchant-samples",
+      "capability": "merchant_handle_samples",
+      "entryGate": false,
+      "grantsAccess": false,
+      "ru": "Привычка работать с образцами помогает аккуратно проверить хозяйственную поставку, не выдавая догадку за подтверждённый факт.",
+      "en": "Experience handling samples helps you inspect a household delivery carefully without presenting a guess as confirmed fact."
+    },
+    {
+      "reactionId": "palace.legacy.tavern-staff-key",
+      "capability": "access_guest_rooms_staff",
+      "entryGate": false,
+      "grantsAccess": false,
+      "ru": "Опыт служебных помещений учит сначала проверять, кому предназначен доступ, а уже потом открывать дверь.",
+      "en": "Experience with staff-only rooms teaches you to confirm who the access is for before opening a door."
+    },
+    {
+      "reactionId": "palace.legacy.hunter-rope",
+      "capability": "cross_rough_route",
+      "entryGate": false,
+      "grantsAccess": false,
+      "ru": "Привычка выбирать безопасный маршрут помогает оценить неудобный служебный проход как задачу логистики, а не как повод рисковать.",
+      "en": "Experience choosing safe routes helps you treat an awkward service passage as a logistics problem rather than a reason to take unnecessary risks."
+    },
+    {
+      "reactionId": "palace.legacy.farm-preservation",
+      "capability": "preserve_specimen",
+      "entryGate": false,
+      "grantsAccess": false,
+      "ru": "Опыт сохранения образцов помогает правильно упаковать хрупкий церемониальный материал для передачи между службами.",
+      "en": "Specimen-preservation experience helps you package a fragile ceremonial material correctly for transfer between offices."
+    },
+    {
+      "reactionId": "palace.legacy.prostitute-evidence",
+      "capability": "prostitute_handle_evidence",
+      "entryGate": false,
+      "grantsAccess": false,
+      "ru": "Опыт обращения с доказательствами напоминает отделять то, что ты видела сама, от чужих слов и предположений.",
+      "en": "Experience handling evidence reminds you to separate what you observed directly from what other people said or assumed."
+    }
+  ],
+  "trueEndingReadiness": {
+    "progressionStatCount": 12,
+    "minimumEach": 91,
+    "lustIncluded": false,
+    "normalizesAgainstActiveCap": false,
+    "ru": {
+      "title": "Готовность к истинной концовке",
+      "notReady": "Для этой части готовности каждая из 12 характеристик развития должна быть не ниже 91. Похоть не входит в проверку.",
+      "ready": "Все 12 характеристик развития достигли как минимум 91. Статовая часть условия истинной концовки выполнена.",
+      "cap200Life": "Даже если в этой жизни максимум характеристик равен 200, требование истинной концовки остаётся прежним: минимум 91 по каждой из 12 характеристик."
+    },
+    "en": {
+      "title": "True Ending Readiness",
+      "notReady": "For this part of readiness, each of the 12 progression stats must be at least 91. Lust is not part of the check.",
+      "ready": "All 12 progression stats have reached at least 91. The stat portion of the True Ending requirement is satisfied.",
+      "cap200Life": "Even if the maximum stat value in this life is 200, the True Ending requirement remains unchanged: at least 91 in each of the 12 progression stats."
+    }
+  },
+  "cap200Reward": {
+    "baseMaximum": 100,
+    "unlockedMaximum": 200,
+    "multipliesValues": false,
+    "multipliesStartingBonuses": false,
+    "multipliesAllocationPoints": false,
+    "affectsLust": false,
+    "ru": {
+      "title": "Наследие повышенного максимума",
+      "body": "После завершения истинной концовки в будущих New Start+ можно выбрать отдельное наследие: максимум каждой из 12 характеристик развития становится 200 вместо 100. Текущие значения, стартовые бонусы и 10 очков распределения не умножаются."
+    },
+    "en": {
+      "title": "Higher-Maximum Legacy",
+      "body": "After completing the True Ending, future New Start+ lives can select a separate legacy option: the maximum of each of the 12 progression stats becomes 200 instead of 100. Current values, starting bonuses, and the 10 allocation points are not multiplied."
+    }
+  },
+  "fallbacks": {
+    "invitation": {
+      "ru": "В первый день приходит официальное приглашение во Дворец. Дополнительная проверка для входа не требуется.",
+      "en": "An official Palace invitation arrives on the first day. No additional entry test is required."
+    },
+    "orientation": {
+      "ru": "Первый день знакомит с рабочими маршрутами, документами и порядком передачи поручений.",
+      "en": "The first day introduces working routes, documents, and the procedure for handing off assignments."
+    },
+    "relationshipDecline": {
+      "ru": "Отказ закрывает только эту личную линию и не блокирует дворцовую работу.",
+      "en": "Declining closes only this personal route and does not block Palace work."
+    },
+    "night": {
+      "ru": "Дворцовая вечерняя сцена остаётся добровольным обычным ночным выбором.",
+      "en": "A Palace evening scene remains an ordinary voluntary night choice."
+    },
+    "trueEndingStats": {
+      "ru": "Нужно не меньше 91 в каждой из 12 характеристик развития; Похоть исключена.",
+      "en": "At least 91 is required in each of the 12 progression stats; Lust is excluded."
+    },
+    "cap200": {
+      "ru": "Максимум каждой из 12 характеристик становится 200 вместо 100; сами значения не умножаются.",
+      "en": "The maximum of each of the 12 progression stats becomes 200 instead of 100; the values themselves are not multiplied."
+    }
+  },
+  "openBoundaries": {
+    "princeConfrontationMechanics": null,
+    "palaceCareerTopology": null,
+    "palaceCareerProductionIds": null,
+    "sharedD23RuntimeIds": null
+  }
+}
