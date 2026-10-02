@@ -1,5 +1,41 @@
 # Leader 1 — Live Dashboard
 
+## LIVE UPDATE — 2026-10-02 — TRUE ENDING LOCK + ACTIONS RUNNER OUTAGE
+
+Snapshot main before this update commit:
+- `25a29ed68408a2bb7b85de9997005b2a14c91469`
+- latest observed main workflow: #1061 / id `36993489022` — failure
+- latest job execution evidence: `[{"name":"check","conclusion":"failure","steps":null,"runner_id":null,"runner_name":null}]`
+- repository-wide current failure mode remains workflows completing before runner steps; do not interpret these as code/test verdicts.
+
+### Product decision added now
+Palace has a separate **True Ending / Return Home** in addition to its ordinary three+ outcome families:
+- Palace prerequisite remains 10/10 ordinary Hard Work;
+- all 12 progression stats strictly >90%;
+- Lust excluded;
+- victory over the Prince;
+- heroine returns to her original world;
+- completion unlocks an optional x2-to-all-12-progression-stats New Game+ reward.
+This raises the explicit minimum planned outcome-family count from 46 to **47** before relationship/global extras.
+
+### Artist critical path
+- runtime #234 `955f4accf7e25c42e0384ddb9f76e5612f41dd00`: frozen, C4-168 PASS-WITH-NOTES, CI #978 SUCCESS.
+- School #232 `13bb952aa3afb99760edbb23a3c00dfa7f72fa86`: frozen, C4-169 PASS-WITH-NOTES, CI #995 SUCCESS.
+- authored #229 `75664819e824187ea23531e39f6cf5cd952b1047`: held, draft, waiting executable exact-head CI before C4-170.
+- presentation #237 `ef9cc2df1edaf428ed44c34ba9832ff3a88032b4`: held, waiting executable exact-head CI before C4-171.
+- C4-172 preliminary collision preflight found provisional safe order runtime -> authored -> School -> presentation, but final C4-172 waits C4-170/C4-171.
+- First product-critical unblock remains executable CI on held Artist authored/presentation, then C4-170/C4-171 -> final C4-172 -> Lead integration -> exact-main C4-173.
+
+### No-idle/prep lanes at this snapshot
+- Chat 1 PR #245 `10c2813f0b13eb58ae9283af2fb21ca2eb39b512`: Prostitute runtime C1D-193..204 SAFE PREP COMPLETE, draft, CI pre-runner blocked.
+- Chat 2 PR #244 `919b2faec2274a07513d385a3788d7bf26b9dd47`: Adult Core presentation C2-229..240 SAFE PREP COMPLETE, draft, CI pre-runner blocked.
+- Chat 3 PR #247 `5a2e72cc530e4edbe41d0d03e4904e2272614e9e`: Palace authored C3-241..252 SAFE PREP COMPLETE under pre-D18 authority; now requires a later True Ending authored delta.
+- Chat 4: Artist available QA gates complete; Assassin preliminary preflight complete/non-verdict; waits executable Artist sibling CI for real C4-170/C4-171.
+- Chat 5 PR #246 `2e636f52ab4913bc90b2ffa002158b913307d51f`: School/Night interoperability C5-235..244 audit/prep complete, draft, CI pre-runner blocked.
+
+Do not move clean held/frozen heads merely to provoke Actions. Git remains authority over this snapshot if state changes.
+
+
 ## NEW LEADER 1 TAKEOVER — GUARD INTEGRATION READY — 2026-10-02 05:15Z
 
 This is the newest recovery block. Re-query Git before mutating anything.

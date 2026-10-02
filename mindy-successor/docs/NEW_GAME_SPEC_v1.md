@@ -153,6 +153,35 @@ Palace — скрытая late/meta profession сверх ordinary roster.
 
 Если ordinary roster позже официально расширяется, отдельно решается, входит ли новая профессия в Palace prerequisite; не менять threshold молча.
 
+## 9A. Palace True Ending / Return Home — LOCKED
+
+Palace имеет отдельную **истинную концовку** сверх своих обычных outcome families.
+
+Eligibility:
+- Palace уже открыт через Hard Work на всех 10 ordinary professions;
+- все **12 progression stats строго выше 90%**;
+- Lust/Похоть не входит в эту проверку, потому что остаётся отдельной content-axis;
+- финальный Palace confrontation с Принцем завершён победой героини.
+
+Completion:
+- героиня возвращается в свой исходный мир.
+
+Meta / New Game+ reward:
+- навсегда открывается опция **x2 ко всем 12 progression stats** при старте New Game+.
+
+True Ending:
+- не заменяет и не сокращает Palace 10/10 prerequisite;
+- является отдельной +1 концовкой сверх Palace Hard Work / Court Power / Inner Truth;
+- не отменяет другие одновременно eligible Palace outcomes.
+
+Exact encounter implementation, Prince lore/name, reward application order relative to other Meta modifiers, cap behavior, IDs and presentation remain implementation-owned/open until отдельного lock.
+
+При текущем minimum catalog это повышает явный нижний предел planned outcome families с **46 до 47**:
+- 40 ordinary-career families;
+- 3 Secret Debt;
+- минимум 3 ordinary Palace families;
+- 1 Palace True Ending.
+
 ## 10. Secret Debt / Slave Career
 
 Отдельная hidden career сверх ordinary roster и Palace.

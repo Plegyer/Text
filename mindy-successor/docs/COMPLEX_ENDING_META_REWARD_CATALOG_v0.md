@@ -243,7 +243,25 @@ Unlock:
 **Debt Network**:
 powerful underworld/economic route modifier, candidate strong Legacy perk.
 
-## 12. Reward-system intent
+## 12. Palace True Ending — Return Home — LOCKED
+
+Eligibility:
+- Palace unlocked by 10/10 ordinary Hard Work;
+- all 12 progression stats strictly above 90%;
+- Lust is excluded from this check;
+- Prince confrontation resolved as a victory.
+
+Completion:
+- heroine returns to her original world.
+
+Unlock:
+**NG+ Double Stats option**:
+- future New Game+ setup can apply **x2 to all 12 progression stats**.
+
+This reward is locked in effect but its final display name is not.
+Exact application order against other Meta modifiers and stat-cap interaction remain open.
+
+## 13. Reward-system intent
 
 Simple Hard Work:
 - automatic stats/money;
@@ -260,11 +278,11 @@ Complex ending:
 
 Thus difficult endings do not merely give larger +stat numbers.
 
-## 13. Still open
+## 14. Still open
 
 - exact numeric values;
 - which medium rewards are automatic vs slotted;
 - final names;
 - relationship-only ending rewards;
-- Palace outcome rewards;
+- non-True-Ending Palace outcome rewards;
 - conflict/exclusive perk groups.

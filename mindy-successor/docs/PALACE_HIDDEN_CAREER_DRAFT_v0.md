@@ -2,7 +2,7 @@
 
 Дата: 2026-09-25.
 
-Статус: **PRODUCT DESIGN DRAFT**.
+Статус: **PRODUCT DESIGN DRAFT + LOCKED TRUE ENDING ADDENDUM**.
 
 Покрывает: LIFE-01, LIFE-02, LIFE-03, LIFE-12, LIFE-14, LIFE-15.
 
@@ -136,7 +136,34 @@ Reward family:
 Это не обязано завершать macro-goal автоматически.
 Может открыть новый meta layer или final-choice eligibility.
 
-## 8. Дополнительные outcome families
+## 8. True Ending — Return Home — LOCKED
+
+Это отдельная **+1 истинная концовка**, а не замена трём базовым Palace outcome families.
+
+### Eligibility
+- Palace уже открыт через 10/10 unique ordinary Hard Work;
+- все **12 progression stats строго выше 90%**;
+- Lust/Похоть в stat-check не входит;
+- героиня побеждает **Принца** в финальном Palace confrontation.
+
+### Result
+Героиня **возвращается в свой исходный мир**.
+
+### Meta reward
+После completion навсегда открывается New Game+ option:
+- **удвоить все 12 progression stats** в новой жизни.
+
+Награда является возможностью/опцией NG+, а не скрытым изменением обычного fresh-profile старта.
+
+### Boundaries
+- True Ending не открывает Palace и не сокращает prerequisite 10/10;
+- Court Invitation по-прежнему не открывает Palace;
+- True Ending не заменяет Service Life / Court Power / Inner Truth;
+- eligibility остаётся non-terminal до обычного explicit ending commit;
+- Meta reward выдаётся только после completion по общему ending flow;
+- exact Prince encounter mechanics, имя/лор, runtime IDs, presentation, x2 ordering и cap interaction остаются OPEN до отдельной implementation authority.
+
+## 9. Дополнительные outcome families
 
 Можно добавить:
 - relationship/patron outcome;
@@ -146,7 +173,7 @@ Reward family:
 
 Но минимум три выше задают разные игровые оси.
 
-## 9. Связи с ordinary jobs
+## 10. Связи с ordinary jobs
 
 Palace должен получать входы минимум от:
 - Guard;
@@ -162,7 +189,7 @@ Lumber/Farm/Hunter тоже не должны быть бесполезны:
 - seasonal logistics;
 - external Activity facts.
 
-## 10. School
+## 11. School
 
 Некоторые Palace options должны требовать certificates/public facts:
 - literacy/accounting;
@@ -172,7 +199,7 @@ Lumber/Farm/Hunter тоже не должны быть бесполезны:
 
 Это делает School долгосрочно значимой.
 
-## 11. Items
+## 12. Items
 
 Palace хорошо подходит для capability items:
 - invitation/seal;
@@ -183,7 +210,7 @@ Palace хорошо подходит для capability items:
 
 Предметы открывают access/actions, а не дают декоративный процент.
 
-## 12. Relationships
+## 13. Relationships
 
 Во дворце нужны разные отношения:
 - professional patron;
@@ -193,7 +220,7 @@ Palace хорошо подходит для capability items:
 
 Не делать одного "короля-NPC", от которого зависит вся профессия.
 
-## 13. Seasons/calendar
+## 14. Seasons/calendar
 
 Palace должен иметь календарные пики:
 - церемонии;
@@ -204,7 +231,7 @@ Palace должен иметь календарные пики:
 
 Так calendar продолжает быть значим даже в late game.
 
-## 14. Acceptance
+## 15. Acceptance
 
 Palace career считается содержательной, если:
 1. unlock требует нескольких уникальных past-life achievements;
@@ -217,11 +244,11 @@ Palace career считается содержательной, если:
 8. commitment остаётся отдельным;
 9. Palace run имеет собственную replay value после первого unlock.
 
-## 15. Открыто
+## 16. Открыто
 
 - exact role/name;
-- ruler/court structure;
+- exact Prince identity/name and wider ruler/court structure;
 - exact global mystery;
-- exact three+ rewards;
+- exact non-True-Ending Palace rewards;
 - whether Palace itself grants Hard Work progress further;
 - whether Palace is available from day 1 of a new unlocked run or appears through an invitation.

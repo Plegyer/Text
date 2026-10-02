@@ -1,12 +1,11 @@
 # Leader 1 — Start Here
 
-## TAKEOVER CHECKPOINT — 2026-10-01
+## TAKEOVER CHECKPOINT — 2026-10-02
 
 For the current handoff, read immediately after this file:
-- `LEADER1_HANDOFF_CHECKPOINT_2026-10-01.md`
+- `LEADER1_HANDOFF_CHECKPOINT_2026-10-02.md`
 
-It contains the exact current integration/QA order and worker states at the previous Leader 1 context boundary. Verify Git afterward because worker heads may have moved.
-
+Older checkpoints remain historical evidence only. Re-query Git after reading the new checkpoint because worker heads may have moved.
 
 ## Exact-head delivery rule
 
@@ -44,13 +43,14 @@ Lumber is the reference career, not the intended scope of the game.
 A new Leader 1 reads, in this order:
 
 1. `docs/LEADER1_START_HERE.md` — this durable operating model.
-2. `docs/LEADER1_LIVE_DASHBOARD.md` — last known live Git/project snapshot.
-3. `docs/LEAD1_CURRENT_STATE_v1.md` — audited product state and main gaps.
-4. `docs/USER_DECISIONS_LOCKED_v1.md` — decisions that must not be reopened silently.
-5. `docs/EXECUTABLE_TZ_v1.md` — implementation master spec.
-6. `docs/tasks/ACTIVE_TEAM_OWNERSHIP_MATRIX.md`.
-7. All five `docs/tasks/CURRENT_CHAT*_TASK_POINTER.md` files.
-8. Actual current Git state: main HEAD, open PRs, active branch heads and latest workflow results.
+2. `docs/LEADER1_HANDOFF_CHECKPOINT_2026-10-02.md` — newest takeover snapshot and first unfinished Lead action.
+3. `docs/LEADER1_LIVE_DASHBOARD.md` — last known live Git/project snapshot.
+4. `docs/LEAD1_CURRENT_STATE_v1.md` — audited product state and main gaps.
+5. `docs/USER_DECISIONS_LOCKED_v1.md` — decisions that must not be reopened silently.
+6. `docs/EXECUTABLE_TZ_v1.md` — implementation master spec.
+7. `docs/tasks/ACTIVE_TEAM_OWNERSHIP_MATRIX.md`.
+8. All five `docs/tasks/CURRENT_CHAT*_TASK_POINTER.md` files.
+9. Actual current Git state: main HEAD, open PRs, active branch heads and latest workflow results.
 
 **Git beats prose whenever they disagree.**
 
@@ -184,6 +184,7 @@ At minimum, never silently change these currently locked rules:
 - 10 ordinary careers total;
 - Palace is outside those 10 and depends on all 10 ordinary Hard Work achievements;
 - Secret Debt is separate and does not count toward Palace 10/10;
+- Palace True Ending requires all 12 progression stats strictly above 90%, victory over the Prince, returns the heroine to her original world, and unlocks an optional x2-to-all-12-progression-stats New Game+ reward; Lust is separate and excluded from the >90 check;
 - 160-day run: 4 years × 40 days;
 - 3 baseline daily Energy;
 - Lumber Hard Work eligibility is **only** `completed_shifts >= 50`;

@@ -119,6 +119,30 @@ This supersedes the earlier nine-deep queue target.
 
 Старые промежуточные Lumber thresholds вроде 10/25/30 не считаются утверждёнными автоматически.
 
+### D18 — Palace True Ending / Return Home
+
+Зафиксирована отдельная **истинная концовка** Дворца сверх обычных Palace outcome families.
+
+Условия:
+- Дворец уже должен быть открыт обычным правилом 10/10 Hard Work;
+- **все 12 progression stats строго выше 90%**;
+- Похоть не входит в эту проверку: она остаётся отдельной content-axis;
+- героиня должна **победить Принца** в финальном Palace confrontation.
+
+Результат:
+- героиня возвращается в свой исходный мир;
+- в Meta/New Game+ навсегда открывается **опция удвоения всех 12 progression stats** в новой жизни.
+
+Это отдельная +1 True Ending и не заменяет Palace Hard Work / Court Power / Inner Truth.
+
+Не зафиксировано этим решением:
+- точная механика confrontation с Принцем;
+- имя/лор Принца;
+- порядок применения x2 относительно других NG+ бонусов и возможных stat caps;
+- UI/ID/анимация финала.
+
+Само условие `all 12 progression stats > 90`, победа над Принцем, возвращение домой и NG+ x2 reward **LOCKED**.
+
 ## Still open after this lock
 
 - exact seasonal packages per job;
@@ -127,7 +151,7 @@ This supersedes the earlier nine-deep queue target.
 - meta loadout slot/budget count;
 - exact School curriculum/prices;
 - exact Activity region count/mechanics;
-- exact Palace role/content;
+- exact Palace role/content outside the locked True Ending requirements;
 - macro mystery/lore;
 - exact Secret Debt numbers/penalties/rewards;
 - production art/media budget.
