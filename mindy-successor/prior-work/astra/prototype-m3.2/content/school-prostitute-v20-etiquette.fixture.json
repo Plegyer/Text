@@ -1,0 +1,50 @@
+{
+  "formatVersion": 1,
+  "id": "school.prostitute.v20.etiquette",
+  "task": "C5-220",
+  "targetCareerId": "prostitute",
+  "contentSafety": "NON_EXPLICIT_VOLUNTARY_ORDINARY_CAREER",
+  "role": "professional_presentation_context_fit",
+  "courseId": "school.course.etiquette_and_presentation",
+  "trackId": "school.track.etiquette_and_presentation",
+  "teacherContentId": "school.teacher.eliane-marrow",
+  "teacherMediaId": "school.teacher.etiquette-and-presentation.classroom",
+  "mappingAuthority": "CAPABILITY_MATCH_ONLY",
+  "futureConsumerStatus": "PENDING_RUNTIME_ID",
+  "threshold": null,
+  "publicFactId": null,
+  "copy": {
+    "title": {
+      "ru": "Уместность без привилегии",
+      "en": "Context fit without privilege"
+    },
+    "body": {
+      "ru": "Элиан предлагает несколько профессиональных ситуаций с разной степенью формальности. Ты выбираешь тон и подачу, которые подходят месту и собеседнику, но не подменяют рабочие условия демонстрацией статуса. Формальность — это способ читать контекст, а не право на доступ.",
+      "en": "Eliane presents several professional situations with different levels of formality. You choose a tone and presentation that fit the setting and the other person without replacing professional terms with a display of status. Formality is a way to read context, not a right of access."
+    },
+    "result": {
+      "ru": "Подача соответствует контексту, но не выдаёт Palace privilege, Elite Clientele gate, universal status или особый допуск.",
+      "en": "The presentation fits the context but grants no Palace privilege, Elite Clientele gate, universal status, or special access."
+    },
+    "journal": {
+      "ru": "Школа: профессиональная подача выбрана по контексту без обещания статуса или привилегий.",
+      "en": "School: chose professional presentation for the context without promising status or privilege."
+    },
+    "accessibility": {
+      "ru": "Текстовый результат урока уместной подачи; дворцовый или элитный доступ не создаётся.",
+      "en": "Text result for context-appropriate presentation; no Palace or elite access is created."
+    }
+  },
+  "constraints": {
+    "createsPalacePrivilege": false,
+    "createsEliteClienteleGate": false,
+    "createsUniversalStatus": false,
+    "createsAccessToken": false,
+    "createsSecretDebtState": false,
+    "createsForcedNight": false,
+    "createsOwnerState": false,
+    "createsDirectCareerTransition": false,
+    "publishesGlobalCertificate": false,
+    "publishesGlobalProject": false
+  }
+}

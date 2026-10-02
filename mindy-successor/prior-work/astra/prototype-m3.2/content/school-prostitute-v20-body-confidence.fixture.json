@@ -1,0 +1,50 @@
+{
+  "formatVersion": 1,
+  "id": "school.prostitute.v20.body-confidence",
+  "task": "C5-222",
+  "targetCareerId": "prostitute",
+  "contentSafety": "NON_EXPLICIT_VOLUNTARY_ORDINARY_CAREER",
+  "role": "body_confidence_boundary_awareness",
+  "courseId": "school.course.body_confidence",
+  "trackId": "school.track.body_confidence",
+  "teacherContentId": "school.teacher.sera-vey",
+  "teacherMediaId": "school.teacher.body-confidence.classroom",
+  "mappingAuthority": "CAPABILITY_MATCH_ONLY",
+  "futureConsumerStatus": "PENDING_RUNTIME_ID",
+  "threshold": null,
+  "publicFactId": null,
+  "copy": {
+    "title": {
+      "ru": "Уверенность и граница — разные решения",
+      "en": "Confidence and boundaries are separate choices"
+    },
+    "body": {
+      "ru": "Сера просит сначала выбрать уверенную манеру держаться, а затем отдельно сформулировать короткий отказ и условие остановки разговора. Уверенность, привлекательность или профессиональная подача не означают согласия. Навык — осознанно выбирать и присутствие, и границу.",
+      "en": "Sera asks you first to choose a confident way of carrying yourself, then separately state a brief refusal and a condition for ending the conversation. Confidence, attractiveness, or professional presentation does not imply consent. The skill is choosing both presence and boundaries deliberately."
+    },
+    "result": {
+      "ru": "Урок прямо сохраняет принцип confidence != consent и не создаёт consent state, Lust state, client state или forced-Night правило.",
+      "en": "The lesson explicitly preserves confidence != consent and creates no consent state, Lust state, client state, or forced-Night rule."
+    },
+    "journal": {
+      "ru": "Школа: уверенная подача и граница отработаны как отдельные решения; согласие не выводится из уверенности.",
+      "en": "School: practiced confident presentation and boundaries as separate choices; consent is not inferred from confidence."
+    },
+    "accessibility": {
+      "ru": "Текстовый результат урока телесной уверенности и границ; согласие не моделируется новым состоянием.",
+      "en": "Text result for body confidence and boundaries; consent is not modeled as a new state."
+    }
+  },
+  "constraints": {
+    "createsConsentState": false,
+    "createsLustState": false,
+    "createsClientState": false,
+    "createsForcedNightRule": false,
+    "createsSecretDebtState": false,
+    "createsForcedNight": false,
+    "createsOwnerState": false,
+    "createsDirectCareerTransition": false,
+    "publishesGlobalCertificate": false,
+    "publishesGlobalProject": false
+  }
+}

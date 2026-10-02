@@ -1,0 +1,50 @@
+{
+  "formatVersion": 1,
+  "id": "school.prostitute.v20.arts",
+  "task": "C5-221",
+  "targetCareerId": "prostitute",
+  "contentSafety": "NON_EXPLICIT_VOLUNTARY_ORDINARY_CAREER",
+  "role": "improvisation_performance_confidence",
+  "courseId": "school.course.arts_and_performance",
+  "trackId": "school.track.arts_and_performance",
+  "teacherContentId": "school.teacher.nessa-lark",
+  "teacherMediaId": "school.teacher.arts-and-performance.classroom",
+  "mappingAuthority": "CAPABILITY_MATCH_ONLY",
+  "futureConsumerStatus": "PENDING_RUNTIME_ID",
+  "threshold": null,
+  "publicFactId": null,
+  "copy": {
+    "title": {
+      "ru": "Импровизация с сохранением выбора",
+      "en": "Improvisation while keeping your choices"
+    },
+    "body": {
+      "ru": "Несса меняет темп, тему и порядок реплик в нейтральной профессиональной сцене. Ты учишься адаптироваться, не теряя собственную цель разговора и возможность остановить упражнение. Уверенная импровизация не превращает чужое ожидание в автоматический исход.",
+      "en": "Nessa changes the pace, topic, and order of lines in a neutral professional scene. You practice adapting without losing your own purpose or your ability to stop the exercise. Confident improvisation does not turn someone else's expectation into an automatic outcome."
+    },
+    "result": {
+      "ru": "Импровизация остаётся навыком коммуникации и подачи; сексуальная сцена, Lust rule, client outcome или карьерный переход не создаются.",
+      "en": "Improvisation remains a communication and presentation skill; no sexual scene, Lust rule, client outcome, or career transition is created."
+    },
+    "journal": {
+      "ru": "Школа: импровизация отработана без автоматического клиентского исхода или Lust-механики.",
+      "en": "School: practiced improvisation without an automatic client outcome or Lust mechanic."
+    },
+    "accessibility": {
+      "ru": "Текстовый результат неоткровенного урока импровизации; сексуальная сцена не добавляется.",
+      "en": "Text result for a non-explicit improvisation lesson; no sexual scene is added."
+    }
+  },
+  "constraints": {
+    "createsSexualSceneMechanic": false,
+    "createsLustRule": false,
+    "createsAutomaticClientOutcome": false,
+    "createsCareerTransition": false,
+    "createsSecretDebtState": false,
+    "createsForcedNight": false,
+    "createsOwnerState": false,
+    "createsDirectCareerTransition": false,
+    "publishesGlobalCertificate": false,
+    "publishesGlobalProject": false
+  }
+}

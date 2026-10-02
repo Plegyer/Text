@@ -1,0 +1,109 @@
+{
+  "formatVersion": 1,
+  "id": "school.prostitute.v20.live-inventory",
+  "task": "C5-217",
+  "status": "VOLUNTARY_NON_EXPLICIT_SAFE_PREP",
+  "targetCareerId": "prostitute",
+  "targetActionId": "prostitute.shift",
+  "activationBase": {
+    "head": "fb8ddb5ab0b23fdf90fa5c43570129c22cb94c6a"
+  },
+  "authority": {
+    "preparationFixture": "content/school-prostitute-preparation-v1.fixture.json",
+    "preparationBlob": "e649a2edbb8a0bdc7fc3b5fad9cbd4e2ecec79c3",
+    "reactiveFixture": "content/school-prostitute-reactive-depth-v1.fixture.json",
+    "reactiveBlob": "82e8e1cd3963ae16b5927867d6c1ef380fac8791",
+    "careerDraft": "docs/CAREER_PROSTITUTE_DRAFT_v0.md",
+    "mappingAuthority": "CAPABILITY_MATCH_ONLY",
+    "selectedThreshold": null,
+    "selectedPublicFactId": null,
+    "canonicalSchoolConsumerContract": false
+  },
+  "runtimeObservation": {
+    "actionExists": true,
+    "actionEnergyCost": 1,
+    "voluntaryOrdinaryCareer": true,
+    "prostitutePackCount": 0,
+    "schoolConsumerContract": null,
+    "schoolConsumerEvents": [],
+    "schoolPublicFacts": [],
+    "schoolThresholds": []
+  },
+  "mappings": [
+    {
+      "role": "negotiation_terms_boundaries",
+      "courseId": "school.course.rhetoric_and_social",
+      "trackId": "school.track.rhetoric_and_social",
+      "teacherContentId": "school.teacher.cassian-reed",
+      "teacherMediaId": "school.teacher.rhetoric-and-social.classroom",
+      "nightChoiceIds": [
+        "school.night_study.rhetoric_and_social.charm",
+        "school.night_study.rhetoric_and_social.sociability",
+        "school.night_study.rhetoric_and_social.wits"
+      ],
+      "futureConsumer": "PENDING_RUNTIME_ID",
+      "threshold": null,
+      "publicFactId": null
+    },
+    {
+      "role": "records_contracts_business_notes",
+      "courseId": "school.course.literacy_and_numbers",
+      "trackId": "school.track.literacy_and_numbers",
+      "teacherContentId": "school.teacher.mara-fen",
+      "teacherMediaId": "school.teacher.literacy-and-numbers.classroom",
+      "nightChoiceIds": [
+        "school.night_study.literacy_and_numbers.reason",
+        "school.night_study.literacy_and_numbers.wits"
+      ],
+      "futureConsumer": "PENDING_RUNTIME_ID",
+      "threshold": null,
+      "publicFactId": null
+    },
+    {
+      "role": "professional_presentation_context_fit",
+      "courseId": "school.course.etiquette_and_presentation",
+      "trackId": "school.track.etiquette_and_presentation",
+      "teacherContentId": "school.teacher.eliane-marrow",
+      "teacherMediaId": "school.teacher.etiquette-and-presentation.classroom",
+      "nightChoiceIds": [
+        "school.night_study.etiquette_and_presentation.manners",
+        "school.night_study.etiquette_and_presentation.grooming",
+        "school.night_study.etiquette_and_presentation.charm"
+      ],
+      "futureConsumer": "PENDING_RUNTIME_ID",
+      "threshold": null,
+      "publicFactId": null
+    },
+    {
+      "role": "improvisation_performance_confidence",
+      "courseId": "school.course.arts_and_performance",
+      "trackId": "school.track.arts_and_performance",
+      "teacherContentId": "school.teacher.nessa-lark",
+      "teacherMediaId": "school.teacher.arts-and-performance.classroom",
+      "nightChoiceIds": [
+        "school.night_study.arts_and_performance.creativity",
+        "school.night_study.arts_and_performance.charm",
+        "school.night_study.arts_and_performance.sociability",
+        "school.night_study.arts_and_performance.dexterity"
+      ],
+      "futureConsumer": "PENDING_RUNTIME_ID",
+      "threshold": null,
+      "publicFactId": null
+    },
+    {
+      "role": "body_confidence_boundary_awareness",
+      "courseId": "school.course.body_confidence",
+      "trackId": "school.track.body_confidence",
+      "teacherContentId": "school.teacher.sera-vey",
+      "teacherMediaId": "school.teacher.body-confidence.classroom",
+      "nightChoiceIds": [
+        "school.night_study.body_confidence.sexuality",
+        "school.night_study.body_confidence.grooming",
+        "school.night_study.body_confidence.endurance"
+      ],
+      "futureConsumer": "PENDING_RUNTIME_ID",
+      "threshold": null,
+      "publicFactId": null
+    }
+  ]
+}

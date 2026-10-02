@@ -1,0 +1,157 @@
+{
+  "formatVersion": 1,
+  "id": "school.prostitute.v20.authority",
+  "tasks": [
+    "C5-223",
+    "C5-224",
+    "C5-225",
+    "C5-226",
+    "C5-227",
+    "C5-228"
+  ],
+  "targetCareerId": "prostitute",
+  "contentSafety": "NON_EXPLICIT_VOLUNTARY_ORDINARY_CAREER",
+  "status": "SAFE_PREP_ONLY_UNBOUND",
+  "activationBase": "fb8ddb5ab0b23fdf90fa5c43570129c22cb94c6a",
+  "sourceAudit": {
+    "preparationFixture": {
+      "path": "content/school-prostitute-preparation-v1.fixture.json",
+      "blob": "e649a2edbb8a0bdc7fc3b5fad9cbd4e2ecec79c3",
+      "status": "CONTENT_PREP_ONLY"
+    },
+    "reactiveFixture": {
+      "path": "content/school-prostitute-reactive-depth-v1.fixture.json",
+      "blob": "82e8e1cd3963ae16b5927867d6c1ef380fac8791",
+      "status": "CONTENT_PREP_ONLY"
+    },
+    "careerDraft": {
+      "path": "docs/CAREER_PROSTITUTE_DRAFT_v0.md",
+      "canonicalRuntimeAuthority": false,
+      "canonicalSchoolConsumerContract": false,
+      "draftOnlyConcepts": [
+        "professional reputation",
+        "client network",
+        "pricing/status",
+        "recurring clients",
+        "Secret Debt contrast",
+        "Night continuation"
+      ]
+    },
+    "runtimeObservation": {
+      "actionId": "prostitute.shift",
+      "actionExists": true,
+      "actionEnergyCost": 1,
+      "voluntaryOrdinaryCareer": true,
+      "prostitutePackCount": 0,
+      "schoolConsumerContract": null
+    }
+  },
+  "producerAuthority": {
+    "numericThresholdAuthorized": false,
+    "publicFactAuthorized": false,
+    "consumerIdsAuthorized": false,
+    "threshold": null,
+    "publicFactId": null
+  },
+  "mappings": [
+    {
+      "courseId": "school.course.rhetoric_and_social",
+      "trackId": "school.track.rhetoric_and_social",
+      "teacherContentId": "school.teacher.cassian-reed",
+      "teacherMediaId": "school.teacher.rhetoric-and-social.classroom",
+      "futureConsumerStatus": "PENDING_RUNTIME_ID",
+      "threshold": null,
+      "publicFactId": null,
+      "immediateResolverStatus": "UNBOUND_NO_AUTHORITY",
+      "nightParityStatus": "UNBOUND_NO_AUTHORITY"
+    },
+    {
+      "courseId": "school.course.literacy_and_numbers",
+      "trackId": "school.track.literacy_and_numbers",
+      "teacherContentId": "school.teacher.mara-fen",
+      "teacherMediaId": "school.teacher.literacy-and-numbers.classroom",
+      "futureConsumerStatus": "PENDING_RUNTIME_ID",
+      "threshold": null,
+      "publicFactId": null,
+      "immediateResolverStatus": "UNBOUND_NO_AUTHORITY",
+      "nightParityStatus": "UNBOUND_NO_AUTHORITY"
+    },
+    {
+      "courseId": "school.course.etiquette_and_presentation",
+      "trackId": "school.track.etiquette_and_presentation",
+      "teacherContentId": "school.teacher.eliane-marrow",
+      "teacherMediaId": "school.teacher.etiquette-and-presentation.classroom",
+      "futureConsumerStatus": "PENDING_RUNTIME_ID",
+      "threshold": null,
+      "publicFactId": null,
+      "immediateResolverStatus": "UNBOUND_NO_AUTHORITY",
+      "nightParityStatus": "UNBOUND_NO_AUTHORITY"
+    },
+    {
+      "courseId": "school.course.arts_and_performance",
+      "trackId": "school.track.arts_and_performance",
+      "teacherContentId": "school.teacher.nessa-lark",
+      "teacherMediaId": "school.teacher.arts-and-performance.classroom",
+      "futureConsumerStatus": "PENDING_RUNTIME_ID",
+      "threshold": null,
+      "publicFactId": null,
+      "immediateResolverStatus": "UNBOUND_NO_AUTHORITY",
+      "nightParityStatus": "UNBOUND_NO_AUTHORITY"
+    },
+    {
+      "courseId": "school.course.body_confidence",
+      "trackId": "school.track.body_confidence",
+      "teacherContentId": "school.teacher.sera-vey",
+      "teacherMediaId": "school.teacher.body-confidence.classroom",
+      "futureConsumerStatus": "PENDING_RUNTIME_ID",
+      "threshold": null,
+      "publicFactId": null,
+      "immediateResolverStatus": "UNBOUND_NO_AUTHORITY",
+      "nightParityStatus": "UNBOUND_NO_AUTHORITY"
+    }
+  ],
+  "voluntarySecretDebtFirewall": {
+    "createsDebtLock": false,
+    "createsForcedNight": false,
+    "createsNextDayPenalty": false,
+    "createsOwnerState": false,
+    "createsMandatorySlaveOutcome": false,
+    "blocksOrdinaryJobs": false,
+    "mergesVoluntaryWithSecretDebt": false
+  },
+  "relationshipClientBoundary": {
+    "createsRecurringClientState": false,
+    "createsRomanceState": false,
+    "createsPatronageState": false,
+    "createsExploitationFlag": false,
+    "createsConsentState": false,
+    "createsLustState": false,
+    "createsPricingState": false
+  },
+  "forbiddenOwnership": {
+    "consentMechanic": false,
+    "lustRule": false,
+    "clientState": false,
+    "nightFlowRule": false,
+    "careerGate": false,
+    "careerStage": false,
+    "wageRule": false,
+    "pricingFormula": false,
+    "legalContext": false,
+    "palacePrivilege": false,
+    "eliteClienteleGate": false,
+    "directCareerTransition": false,
+    "newCurriculum": false,
+    "newTeacher": false,
+    "globalCertificate": false,
+    "globalProject": false
+  },
+  "futureAcceptanceDesign": {
+    "paidLessonPersistence": "EXACTLY_ONCE_EXISTING_SCHOOL_COUNTER_ONLY",
+    "nightStudyPersistence": "EXACTLY_ONCE_EXISTING_SCHOOL_COUNTER_ONLY",
+    "saveReloadRequired": true,
+    "consumerReactionExpectation": "PENDING_RUNTIME_ID",
+    "producerFactExpectation": "UNBOUND_NO_AUTHORITY",
+    "prostituteCareerStateExpectation": "ABSENT_UNLESS_PLAYER_EXPLICITLY_WORKS_SHIFT"
+  }
+}

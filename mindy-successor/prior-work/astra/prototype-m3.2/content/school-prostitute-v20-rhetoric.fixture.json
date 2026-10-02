@@ -1,0 +1,50 @@
+{
+  "formatVersion": 1,
+  "id": "school.prostitute.v20.rhetoric",
+  "task": "C5-218",
+  "targetCareerId": "prostitute",
+  "contentSafety": "NON_EXPLICIT_VOLUNTARY_ORDINARY_CAREER",
+  "role": "negotiation_terms_boundaries",
+  "courseId": "school.course.rhetoric_and_social",
+  "trackId": "school.track.rhetoric_and_social",
+  "teacherContentId": "school.teacher.cassian-reed",
+  "teacherMediaId": "school.teacher.rhetoric-and-social.classroom",
+  "mappingAuthority": "CAPABILITY_MATCH_ONLY",
+  "futureConsumerStatus": "PENDING_RUNTIME_ID",
+  "threshold": null,
+  "publicFactId": null,
+  "copy": {
+    "title": {
+      "ru": "Условия, которые можно повторить вслух",
+      "en": "Terms you can repeat out loud"
+    },
+    "body": {
+      "ru": "Кассиан даёт несколько нейтральных рабочих разговоров с расплывчатыми ожиданиями. Ты учишься отделять время, оплату и границы от дружелюбного тона, задавать уточняющие вопросы и кратко повторять договорённость. Ясная формулировка помогает заметить расхождение раньше, чем оно станет конфликтом.",
+      "en": "Cassian gives you several neutral professional conversations with vague expectations. You practice separating time, payment, and boundaries from a friendly tone, asking clarifying questions, and briefly restating the agreement. Clear wording helps reveal a mismatch before it becomes a conflict."
+    },
+    "result": {
+      "ru": "Условия сформулированы ясно, но урок не создаёт client state, consent state, pricing rule или карьерный переход.",
+      "en": "The terms are stated clearly, but the lesson creates no client state, consent state, pricing rule, or career transition."
+    },
+    "journal": {
+      "ru": "Школа: рабочие условия и границы проговорены без создания клиентского или согласительного состояния.",
+      "en": "School: stated professional terms and boundaries without creating client or consent state."
+    },
+    "accessibility": {
+      "ru": "Текстовый результат урока переговоров; контент остаётся неоткровенным и не создаёт механику согласия.",
+      "en": "Text result for a negotiation lesson; content remains non-explicit and creates no consent mechanic."
+    }
+  },
+  "constraints": {
+    "createsClientState": false,
+    "createsConsentMechanic": false,
+    "createsPricingRule": false,
+    "createsRomanceState": false,
+    "createsSecretDebtState": false,
+    "createsForcedNight": false,
+    "createsOwnerState": false,
+    "createsDirectCareerTransition": false,
+    "publishesGlobalCertificate": false,
+    "publishesGlobalProject": false
+  }
+}
