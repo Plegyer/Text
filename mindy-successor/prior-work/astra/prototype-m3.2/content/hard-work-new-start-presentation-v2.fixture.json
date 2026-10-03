@@ -11,11 +11,11 @@
       "packageEffectsTitle": "Эффекты пакета на эту жизнь",
       "selectedState": "Пакет выбран для этой жизни.",
       "unselectedState": "Пакет не выбран для этой жизни.",
-      "noneEarned": "Пока не заработано ни одного ordinary Hard Work пакета.",
+      "noneEarned": "Пока не заработано ни одного Hard Work-пакета обычной профессии.",
       "palaceRequirement": "Приглашение во Дворец в День 1 появляется только если заработаны все 10 ordinary Hard Work и в этой новой жизни активны все 10 соответствующих пакетов.",
       "palaceProgress": "Для Дворца: заработано {earned}/10 · активно {active}/10.",
       "cap100": "Максимум каждой progression-характеристики в этой жизни: 100.",
-      "cap200": "Максимум каждой из 12 progression-характеристик в этой жизни становится 200 вместо 100. Текущие и стартовые значения не удваиваются.",
+      "cap200": "Максимум каждой из 12 progression-характеристик в этой жизни становится 200 вместо 100. Меняется только максимум; текущие и стартовые значения остаются прежними.",
       "lustLabel": "Похоть"
     },
     "en": {
@@ -30,7 +30,7 @@
       "palaceRequirement": "The Day 1 Palace invitation appears only when all 10 ordinary Hard Work achievements are earned and all 10 corresponding packages are active for this new life.",
       "palaceProgress": "Palace requirement: {earned}/10 earned · {active}/10 active.",
       "cap100": "The maximum for each progression stat in this life is 100.",
-      "cap200": "The maximum for each of the 12 progression stats in this life becomes 200 instead of 100. Current and starting values are not doubled.",
+      "cap200": "The maximum for each of the 12 progression stats in this life becomes 200 instead of 100. This changes only the maximum; current and starting values stay unchanged.",
       "lustLabel": "Lust"
     }
   },
