@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 
 import {dispatch,freshSave,parseSave,resolveReactions} from '../src/core/engine.ts';
+import {emptyResolvedStrongMetaSnapshot} from '../src/core/strongMeta.ts';
 import {resolveLocalizedText} from '../src/core/localization.ts';
 import {catalog} from './helpers.ts';
 
@@ -14,6 +15,7 @@ function ready(){
   s.run.character.creation.allocated={};
   s.run.character.creation.complete=true;
   s.run.character.creation.hardWorkPackagesApplied=true;
+  s.run.strongMetaSnapshot=emptyResolvedStrongMetaSnapshot();
   return s;
 }
 

@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {loadCatalog} from '../src/core/content.ts';
 import {dispatch,freshSave,parseSave} from '../src/core/engine.ts';
+import {emptyResolvedStrongMetaSnapshot} from '../src/core/strongMeta.ts';
 import type {Catalog} from '../src/core/schema.ts';
 
 function catalog():Catalog{
@@ -68,6 +69,7 @@ function ready(){
   s.run.character.creation.allocated={};
   s.run.character.creation.complete=true;
   s.run.character.creation.hardWorkPackagesApplied=true;
+  s.run.strongMetaSnapshot=emptyResolvedStrongMetaSnapshot();
   s.run.flags['story.arrived']=true;
   s.run.resources.money=1_000;
   s.run.dayState.energyCurrent=3;

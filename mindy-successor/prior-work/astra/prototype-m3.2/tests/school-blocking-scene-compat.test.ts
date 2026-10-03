@@ -9,6 +9,7 @@ import {
   parseSave,
   resolveReactions
 } from '../src/core/engine.ts';
+import {emptyResolvedStrongMetaSnapshot} from '../src/core/strongMeta.ts';
 import {executeSchoolLesson} from '../src/core/school.ts';
 import type {Catalog,Save} from '../src/core/schema.ts';
 
@@ -79,6 +80,7 @@ function ready():Save{
   state.run.character.creation.allocated={};
   state.run.character.creation.complete=true;
   state.run.character.creation.hardWorkPackagesApplied=true;
+  state.run.strongMetaSnapshot=emptyResolvedStrongMetaSnapshot();
   state.run.flags['story.arrived']=true;
   state.run.resources.money=2_000;
   state.run.dayState.energyCurrent=3;

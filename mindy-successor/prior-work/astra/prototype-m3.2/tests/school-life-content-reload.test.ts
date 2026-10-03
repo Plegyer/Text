@@ -8,6 +8,7 @@ import {
   parseSave,
   resolveReactions
 } from '../src/core/engine.ts';
+import {emptyResolvedStrongMetaSnapshot} from '../src/core/strongMeta.ts';
 import {schoolNightStudyChoices} from '../src/core/school.ts';
 
 const pack=JSON.parse(
@@ -38,6 +39,7 @@ function ready(){
   s.run.character.creation.allocated={};
   s.run.character.creation.complete=true;
   s.run.character.creation.hardWorkPackagesApplied=true;
+  s.run.strongMetaSnapshot=emptyResolvedStrongMetaSnapshot();
   return s;
 }
 

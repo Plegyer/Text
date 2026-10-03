@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {loadCatalog} from '../src/core/content.ts';
 import {applyEffects,freshSave,parseSave,resolveReactions} from '../src/core/engine.ts';
+import {emptyResolvedStrongMetaSnapshot} from '../src/core/strongMeta.ts';
 import {
   SCHOOL_COURSES,
   SCHOOL_COURSE_IDS,
@@ -26,6 +27,7 @@ function ready():Save{
   s.run.character.creation.allocated={};
   s.run.character.creation.complete=true;
   s.run.character.creation.hardWorkPackagesApplied=true;
+  s.run.strongMetaSnapshot=emptyResolvedStrongMetaSnapshot();
   s.run.flags['story.arrived']=true;
   s.run.resources.money=2_000;
   s.run.dayState.energyCurrent=3;
