@@ -780,6 +780,57 @@ Four-region target:
 This is a production scope target, not a requirement for unique commissioned art per ID.
 
 
+### D37 — minimum Night completeness bar for ordinary careers
+
+Accepted Product packet:
+`chat4/night-system-completeness-audit-v8@63078afd37d4ef785043d443126e2be0061d559b`.
+
+The generic Night lifecycle is considered structurally mature enough for 1.0 content completion. 1.0 readiness is now judged by authored Night coverage, not by adding a new broad Night engine.
+
+For every ordinary career, the default minimum authored Night bar is:
+
+1. at least one **professional / non-romantic continuation** Night intent;
+2. at least one **personal / relationship continuation** Night intent.
+
+The two intents must be meaningfully distinct.
+
+A single branching Night scene may satisfy both only when:
+- professional and personal branches are independently chosen;
+- they have distinct authored consequences;
+- romance is never forced;
+- a confidence/Lust/Sexuality threshold is never treated as consent.
+
+A career whose fantasy is strongly Night-dependent should target a third meaningful system-specific Night intent rather than filler.
+
+Current Night-heavy examples:
+- Satyr Maid;
+- Tavern;
+- Artist/Geisha;
+- Prostitute.
+
+Current readiness implications:
+- Undead Farm meets the default bar;
+- Artist/Geisha meets the Night-heavy bar;
+- Hunter requires at least professional + Senior Guide/companion Night;
+- Guard requires at least professional + Partner Night;
+- Merchant requires at least professional + Supplier relationship Night;
+- Lumber requires a distinct personal/social continuation beyond the professional Foreman surface;
+- Assassin requires a distinct optional handler/informant relationship Night;
+- Prostitute requires a distinct optional personal/relationship continuation in addition to professional client follow-up;
+- D35 separately still requires private-space seed branches for Satyr Maid, Tavern and Prostitute.
+
+Locked precedence/invariants:
+- Secret Debt forced Night > Palace optional Night > ordinary voluntary Night;
+- Secret Debt forced Night does not automatically increase Lust;
+- ordinary Prostitute Night never inherits forced Secret Debt semantics;
+- every completed global Night advances the calendar exactly once;
+- pending/forced/relationship/private-space Night boundaries must be reload-safe;
+- School Night Study remains a distinct competing Night use;
+- Activity camp is not automatically global Night and must use the Activity/Night handoff contract rather than writing the calendar directly.
+
+This is a minimum content-quality rule, not a requirement to add filler scenes solely to hit a number.
+
+
 ## Still open after this lock
 
 - exact numeric economy;
