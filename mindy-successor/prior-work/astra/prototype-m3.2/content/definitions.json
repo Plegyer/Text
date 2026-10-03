@@ -10729,6 +10729,11 @@
                   "kind": "itemCapability",
                   "capability": "official_guard_access",
                   "present": true
+                },
+                {
+                  "kind": "itemCapability",
+                  "capability": "guard_sealed_pass",
+                  "present": true
                 }
               ]
             }
@@ -10856,6 +10861,23 @@
               "kind": "any",
               "conditions": [
                 {
+                  "kind": "calendarSeason",
+                  "value": "spring"
+                },
+                {
+                  "kind": "calendarSeason",
+                  "value": "summer"
+                },
+                {
+                  "kind": "calendarSeason",
+                  "value": "autumn"
+                }
+              ]
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
                   "kind": "stat",
                   "stat": "wits",
                   "op": "gte",
@@ -10881,6 +10903,23 @@
           "label": "Cross the spring washout",
           "category": "physical_obstacle",
           "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "calendarSeason",
+                  "value": "spring"
+                },
+                {
+                  "kind": "calendarSeason",
+                  "value": "summer"
+                },
+                {
+                  "kind": "calendarSeason",
+                  "value": "autumn"
+                }
+              ]
+            },
             {
               "kind": "calendarSeason",
               "value": "spring"
@@ -10912,7 +10951,25 @@
           "id": "trade.detour.tracking-observe",
           "label": "Detour: triangulate route signals",
           "category": "tracking_triangulation",
-          "conditions": [],
+          "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "calendarSeason",
+                  "value": "spring"
+                },
+                {
+                  "kind": "calendarSeason",
+                  "value": "summer"
+                },
+                {
+                  "kind": "calendarSeason",
+                  "value": "autumn"
+                }
+              ]
+            }
+          ],
           "progressDelta": 0,
           "enduranceCost": 0,
           "fieldTimeCost": 1,
@@ -10933,7 +10990,25 @@
           "id": "trade.tracking.cross-check",
           "label": "Cross-check wheel and marker traces",
           "category": "tracking_triangulation",
-          "conditions": [],
+          "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "calendarSeason",
+                  "value": "spring"
+                },
+                {
+                  "kind": "calendarSeason",
+                  "value": "summer"
+                },
+                {
+                  "kind": "calendarSeason",
+                  "value": "autumn"
+                }
+              ]
+            }
+          ],
           "progressDelta": 0,
           "enduranceCost": 0,
           "fieldTimeCost": 1,
@@ -10950,6 +11025,23 @@
           "label": "Follow the flagged transfer (+1 progress, -2 Endurance)",
           "category": "tracking_triangulation",
           "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "calendarSeason",
+                  "value": "spring"
+                },
+                {
+                  "kind": "calendarSeason",
+                  "value": "summer"
+                },
+                {
+                  "kind": "calendarSeason",
+                  "value": "autumn"
+                }
+              ]
+            },
             {
               "kind": "any",
               "conditions": [
@@ -10988,6 +11080,23 @@
               "kind": "any",
               "conditions": [
                 {
+                  "kind": "calendarSeason",
+                  "value": "spring"
+                },
+                {
+                  "kind": "calendarSeason",
+                  "value": "summer"
+                },
+                {
+                  "kind": "calendarSeason",
+                  "value": "autumn"
+                }
+              ]
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
                   "kind": "stat",
                   "stat": "wits",
                   "op": "gte",
@@ -11022,7 +11131,25 @@
           "id": "trade.tracking.force-conclusion",
           "label": "Force an uncertain route conclusion (-2 Endurance)",
           "category": "tracking_triangulation",
-          "conditions": [],
+          "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "calendarSeason",
+                  "value": "spring"
+                },
+                {
+                  "kind": "calendarSeason",
+                  "value": "summer"
+                },
+                {
+                  "kind": "calendarSeason",
+                  "value": "autumn"
+                }
+              ]
+            }
+          ],
           "progressDelta": 0,
           "enduranceCost": 2,
           "fieldTimeCost": 1,
@@ -11044,7 +11171,25 @@
           "id": "trade.tracking.abort",
           "label": "Abort triangulation and return to the spur",
           "category": "tracking_triangulation",
-          "conditions": [],
+          "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "calendarSeason",
+                  "value": "spring"
+                },
+                {
+                  "kind": "calendarSeason",
+                  "value": "summer"
+                },
+                {
+                  "kind": "calendarSeason",
+                  "value": "autumn"
+                }
+              ]
+            }
+          ],
           "progressDelta": 0,
           "enduranceCost": 0,
           "fieldTimeCost": 0,
@@ -11062,6 +11207,23 @@
           "label": "Take the triangulated turn",
           "category": "shortcut",
           "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "calendarSeason",
+                  "value": "spring"
+                },
+                {
+                  "kind": "calendarSeason",
+                  "value": "summer"
+                },
+                {
+                  "kind": "calendarSeason",
+                  "value": "autumn"
+                }
+              ]
+            },
             {
               "kind": "worldFact",
               "fact": "trade.corridor.tracking-verified",
@@ -11085,6 +11247,26 @@
           "category": "verification",
           "conditions": [
             {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "itemCapability",
+                  "capability": "merchant_verify_manifest",
+                  "present": true
+                },
+                {
+                  "kind": "itemCapability",
+                  "capability": "official_guard_access",
+                  "present": true
+                },
+                {
+                  "kind": "itemCapability",
+                  "capability": "guard_sealed_pass",
+                  "present": true
+                }
+              ]
+            },
+            {
               "kind": "itemCapability",
               "capability": "merchant_verify_manifest",
               "present": true
@@ -11106,6 +11288,26 @@
           "label": "Use the sealed gate",
           "category": "shortcut",
           "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "itemCapability",
+                  "capability": "merchant_verify_manifest",
+                  "present": true
+                },
+                {
+                  "kind": "itemCapability",
+                  "capability": "official_guard_access",
+                  "present": true
+                },
+                {
+                  "kind": "itemCapability",
+                  "capability": "guard_sealed_pass",
+                  "present": true
+                }
+              ]
+            },
             {
               "kind": "itemCapability",
               "capability": "guard_sealed_pass",
@@ -11133,6 +11335,26 @@
           "category": "verification",
           "conditions": [
             {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "itemCapability",
+                  "capability": "merchant_verify_manifest",
+                  "present": true
+                },
+                {
+                  "kind": "itemCapability",
+                  "capability": "official_guard_access",
+                  "present": true
+                },
+                {
+                  "kind": "itemCapability",
+                  "capability": "guard_sealed_pass",
+                  "present": true
+                }
+              ]
+            },
+            {
               "kind": "itemCapability",
               "capability": "merchant_appraise_goods",
               "present": true
@@ -11154,6 +11376,26 @@
           "label": "Secure a cargo sample",
           "category": "extraction",
           "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "itemCapability",
+                  "capability": "merchant_verify_manifest",
+                  "present": true
+                },
+                {
+                  "kind": "itemCapability",
+                  "capability": "official_guard_access",
+                  "present": true
+                },
+                {
+                  "kind": "itemCapability",
+                  "capability": "guard_sealed_pass",
+                  "present": true
+                }
+              ]
+            },
             {
               "kind": "itemCapability",
               "capability": "merchant_handle_samples",
@@ -11180,6 +11422,26 @@
           "label": "Confirm the handoff with the supplier contact",
           "category": "contact",
           "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "itemCapability",
+                  "capability": "merchant_verify_manifest",
+                  "present": true
+                },
+                {
+                  "kind": "itemCapability",
+                  "capability": "official_guard_access",
+                  "present": true
+                },
+                {
+                  "kind": "itemCapability",
+                  "capability": "guard_sealed_pass",
+                  "present": true
+                }
+              ]
+            },
             {
               "kind": "relationshipChoice",
               "relationship": "merchant.supplier",
