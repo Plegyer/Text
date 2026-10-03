@@ -12897,6 +12897,194 @@
     "event.palace.invitation.reveal.choice.accept.text": {
       "ru": "Ты подтверждаешь визит. Этого достаточно, чтобы открыть доступ к дворцовой работе в этой жизни.",
       "en": "You confirm the visit. That is enough to open access to Palace work in this life."
+    },
+    "action.secret-debt.hidden-work.label": {
+      "ru": "Тайный долг: скрытая смена",
+      "en": "Secret Debt: hidden work"
+    },
+    "action.secret-debt.hidden-work.description": {
+      "ru": "Отработать одну связанную дневную смену за 1 Energy. Оплата зависит от Выносливости, Сексуальности и Похоти, но сама работа не повышает Похоть.",
+      "en": "Perform one bound daytime shift for 1 Energy. Pay scales with Endurance, Sexuality and Lust, but the work itself never raises Lust."
+    },
+    "action.secret-debt.hidden-work.scene.spring.text": {
+      "ru": "Весенняя скрытая смена проходит как тяжёлая оплачиваемая работа. Вы отделяете рабочую обязанность от любых вопросов близости или согласия.",
+      "en": "The spring hidden shift remains difficult paid work. You keep the work obligation separate from any question of intimacy or consent."
+    },
+    "action.secret-debt.hidden-work.scene.summer.text": {
+      "ru": "Летняя смена выматывает и оставляет меньше сил на холодный анализ, но остаётся оплачиваемой дневной работой.",
+      "en": "The summer shift is wearing and leaves less room for detached analysis, but remains paid daytime work."
+    },
+    "action.secret-debt.hidden-work.scene.autumn.text": {
+      "ru": "Осенняя скрытая смена заканчивается обычной записью в расчётах: работа выполнена, оплата начислена, никакая близость не подразумевается.",
+      "en": "The autumn hidden shift ends with an ordinary ledger entry: work completed, wage recorded, no intimacy inferred."
+    },
+    "action.secret-debt.hidden-work.scene.winter.text": {
+      "ru": "Зимняя смена изолирует и сужает круг общения, но оплата всё так же считается по ограниченной формуле Тайного долга.",
+      "en": "The winter shift is isolating and socially narrowing, while pay still follows the bounded Secret Debt formula."
+    },
+    "action.secret-debt.hidden-work.scene.default.text": {
+      "ru": "Вы завершаете связанную дневную смену. Это оплачиваемая работа, и она не меняет Похоть.",
+      "en": "You complete a bound daytime shift. It is paid work and does not change Lust."
+    },
+    "action.secret-debt.repay.label": {
+      "ru": "Погасить Тайный долг: 20 000",
+      "en": "Repay Secret Debt: 20,000"
+    },
+    "action.secret-debt.repay.description": {
+      "ru": "Одним явным действием выплатить весь долг 20 000. Частичного погашения нет.",
+      "en": "Pay the full 20,000 principal in one explicit action. Partial repayment is not available."
+    },
+    "action.secret-debt.takeover.label": {
+      "ru": "Перехватить контроль над долгом",
+      "en": "Take control of the debt route"
+    },
+    "action.secret-debt.takeover.description": {
+      "ru": "Явно выбрать путь контроля только после 75 скрытых смен, требуемых характеристик, Похоти и 10 оплаченных уроков.",
+      "en": "Explicitly choose the control route only after 75 hidden shifts, the required stats and Lust, and 10 paid School lessons."
+    },
+    "event.secret-debt.lender-encounter.title": {
+      "ru": "Ростовщик на улице",
+      "en": "A lender on the street"
+    },
+    "event.secret-debt.lender-encounter.variant.default.text": {
+      "ru": "Ростовщик замечает, что вы ночуете на улице, и предлагает 2000 сейчас. Предложение добровольное: отказ закрывает эту встречу до конца текущей жизни.",
+      "en": "A lender notices that you are sleeping on the street and offers 2000 now. The offer is optional; refusing closes this encounter for the current life."
+    },
+    "event.secret-debt.lender-encounter.choice.refuse.label": {
+      "ru": "Отказаться",
+      "en": "Refuse"
+    },
+    "event.secret-debt.lender-encounter.choice.refuse.text": {
+      "ru": "Вы отказываетесь. В этой жизни ростовщик больше не предложит этот долг.",
+      "en": "You refuse. The lender will not offer this debt again in the current life."
+    },
+    "event.secret-debt.lender-encounter.choice.accept.label": {
+      "ru": "Принять 2000",
+      "en": "Accept 2000"
+    },
+    "event.secret-debt.lender-encounter.choice.accept.text": {
+      "ru": "Вы явно принимаете 2000. Деньги выдаются один раз, а отложенное последствие закрепляется за этой жизнью.",
+      "en": "You explicitly accept the 2000. The money is granted once and the delayed consequence is attached to this life."
+    },
+    "event.secret-debt.trap-activation.title": {
+      "ru": "Долг предъявлен",
+      "en": "The debt comes due"
+    },
+    "event.secret-debt.trap-activation.variant.default.text": {
+      "ru": "Ровно через десять календарных дней после принятого займа вступают в силу настоящие условия. Долг составляет 20 000, а десять обычных профессий закрыты, пока связь не разорвана.",
+      "en": "Exactly ten calendar days after the accepted loan, its real terms are enforced. The principal is now 20,000 and the ten ordinary careers are locked while the route remains bound."
+    },
+    "event.secret-debt.trap-activation.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue"
+    },
+    "event.secret-debt.trap-activation.choice.continue.text": {
+      "ru": "Долг 20 000 активен. Школа и Activity остаются доступны.",
+      "en": "The 20,000 debt is active. School and Activity remain available."
+    },
+    "event.secret-debt.forced-night.title": {
+      "ru": "Связанная ночь",
+      "en": "The bound night"
+    },
+    "event.secret-debt.forced-night.variant.default.text": {
+      "ru": "Активный долг забирает эту Ночь раньше любого добровольного ночного выбора. Ночлег всё ещё выбирается и оплачивается обычно, но отношения, приватная сцена или Дворец не могут вытеснить принудительную Ночь.",
+      "en": "The active debt claims this Night before any voluntary Night choice. Lodging is still resolved normally, but relationship, private-space, or Palace Night content cannot displace the forced Night."
+    },
+    "event.secret-debt.forced-night.choice.continue.label": {
+      "ru": "Пережить ночь",
+      "en": "Continue through the night"
+    },
+    "event.secret-debt.forced-night.choice.continue.text": {
+      "ru": "Принудительная Ночь завершена. Завтра штраф Тайного долга уменьшит доступную Energy ровно на 1.",
+      "en": "The forced Night resolves. Tomorrow the Secret Debt penalty reduces usable Energy by exactly 1."
+    },
+    "ending.ending.secret-debt.paid-freedom.title": {
+      "ru": "Свобода через выплату",
+      "en": "Paid Freedom"
+    },
+    "ending.ending.secret-debt.paid-freedom.description": {
+      "ru": "Полностью выплатить 20 000 одним явным действием и выйти из связанного состояния.",
+      "en": "Repay the full 20,000 principal in one explicit action and leave the bound state."
+    },
+    "ending.ending.secret-debt.bound-life.title": {
+      "ru": "Связанная жизнь",
+      "en": "Bound Life"
+    },
+    "ending.ending.secret-debt.bound-life.description": {
+      "ru": "Завершить 50 скрытых дневных смен, оставаясь связанным долгом, а затем явно принять эту судьбу.",
+      "en": "Complete 50 hidden daytime shifts while still bound, then explicitly commit to this ending."
+    },
+    "ending.ending.secret-debt.takeover.title": {
+      "ru": "Перехват контроля",
+      "en": "Takeover"
+    },
+    "ending.ending.secret-debt.takeover.description": {
+      "ru": "Выполнить точные требования D44 и отдельным явным действием перехватить контроль над долговым маршрутом.",
+      "en": "Meet the exact D44 requirements and use the separate explicit action to take control of the debt route."
+    },
+    "unlock.secret-debt.paid-freedom.earned-reserve-match.label": {
+      "ru": "Сопоставление заработанного резерва",
+      "en": "Earned Reserve Match"
+    },
+    "unlock.secret-debt.bound-life.work-rhythm.label": {
+      "ru": "Рабочий ритм",
+      "en": "Work Rhythm"
+    },
+    "unlock.secret-debt.takeover.network-retainer.label": {
+      "ru": "Сетевое содержание",
+      "en": "Network Retainer"
+    },
+    "ui.condition.schoolPaidLessons": {
+      "ru": "Оплаченных уроков Школы {comparison}",
+      "en": "Paid School lessons {comparison}"
+    },
+    "ui.condition.secretDebtStatus": {
+      "ru": "Тайный долг: {status}",
+      "en": "Secret Debt: {status}"
+    },
+    "ui.condition.secretDebtShifts": {
+      "ru": "Скрытых смен {comparison}",
+      "en": "Hidden shifts {comparison}"
+    },
+    "ui.condition.secretDebtLenderEligible": {
+      "ru": "Встреча с ростовщиком ещё возможна в этой жизни",
+      "en": "The lender encounter is still available in this life"
+    },
+    "ui.secretDebt.hiddenWorkTitle": {
+      "ru": "Скрытая работа по долгу",
+      "en": "Hidden debt work"
+    },
+    "ui.secretDebt.hiddenWorkHelp": {
+      "ru": "Обычные профессии временно закрыты, но оплачиваемая скрытая смена доступна за 1 Energy.",
+      "en": "Ordinary careers are temporarily locked, but paid hidden work remains available for 1 Energy."
+    },
+    "ui.secretDebt.statusLabel": {
+      "ru": "Тайный долг",
+      "en": "Secret Debt"
+    },
+    "secretDebt.status.unseen": {
+      "ru": "не встречен",
+      "en": "unseen"
+    },
+    "secretDebt.status.refused": {
+      "ru": "отказано",
+      "en": "refused"
+    },
+    "secretDebt.status.accepted": {
+      "ru": "заём принят, ловушка ещё не активна",
+      "en": "loan accepted; trap not yet active"
+    },
+    "secretDebt.status.bound": {
+      "ru": "связан",
+      "en": "bound"
+    },
+    "secretDebt.status.paid-freedom": {
+      "ru": "выплачен",
+      "en": "paid freedom"
+    },
+    "secretDebt.status.takeover": {
+      "ru": "контроль перехвачен",
+      "en": "takeover"
     }
   }
 }
