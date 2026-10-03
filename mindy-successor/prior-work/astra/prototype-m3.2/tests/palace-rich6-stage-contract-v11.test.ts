@@ -346,6 +346,7 @@ test('non-True preparation starts at the D29 stages and remains non-exclusive',(
   const routes=fixture.outcomePreparation.routes;
   assert.equal(fixture.outcomePreparation.nonExclusive,true);
   assert.equal(fixture.outcomePreparation.commitLockOnly,true);
+  assert.equal(fixture.outcomePreparation.factStorage,'run.progression.worldFacts');
 
   assert.deepEqual(
     routes.map((route:any)=>({
@@ -361,6 +362,8 @@ test('non-True preparation starts at the D29 stages and remains non-exclusive',(
 
   assert.equal(new Set(routes.map((route:any)=>route.preparationFact)).size,3);
   assert.equal(new Set(routes.map((route:any)=>route.finalReadyFact)).size,3);
+  assert.equal(routes.every((route:any)=>route.preparationFactKind==='worldFact'),true);
+  assert.equal(routes.every((route:any)=>route.finalReadyFactKind==='worldFact'),true);
   assert.match(fixture.outcomePreparation.coexistenceRule,/including all three/i);
   assert.match(fixture.outcomePreparation.progressionIndependence,/None .* required/i);
 });
