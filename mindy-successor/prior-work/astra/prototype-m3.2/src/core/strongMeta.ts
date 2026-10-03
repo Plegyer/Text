@@ -20,7 +20,7 @@ export const strongRewardIdPattern=/^[a-z0-9]+(?:-[a-z0-9]+)*\.[a-z0-9]+(?:-[a-z
 export const strongRewardIdSchema=z.string().regex(strongRewardIdPattern);
 export const knowledgeUnlockIdSchema=z.string().regex(strongRewardIdPattern);
 
-const nonNegativeInt=z.number().int().min(0);
+const nonNegativeInt=z.number().int().min(0).max(1_000_000);
 const calendarDay=z.number().int().min(0).max(159);
 
 const cap200EffectSchema=z.object({
@@ -29,19 +29,19 @@ const cap200EffectSchema=z.object({
 }).strict();
 const reserveMatchEffectSchema=z.object({
   kind:z.literal('earned-reserve-match'),
-  matchRatio:z.literal(1),
-  perRunCap:z.literal(1000)
+  matchRatio:z.number().int().min(1).max(100),
+  perRunCap:nonNegativeInt
 }).strict();
 const workRhythmEffectSchema=z.object({
   kind:z.literal('work-rhythm'),
-  energyDelta:z.literal(1),
-  maxBonusDays:z.literal(20)
+  energyDelta:z.number().int().min(0).max(100),
+  maxBonusDays:z.number().int().min(0).max(160)
 }).strict();
 const networkRetainerEffectSchema=z.object({
   kind:z.literal('network-retainer'),
-  paymentAmount:z.literal(25),
-  eligibleDayCount:z.literal(40),
-  perRunTotalCap:z.literal(1000)
+  paymentAmount:nonNegativeInt,
+  eligibleDayCount:z.number().int().min(0).max(160),
+  perRunTotalCap:nonNegativeInt
 }).strict();
 
 export const resolvedStrongRewardSchema=z.discriminatedUnion('class',[
@@ -92,12 +92,12 @@ export const strongMetaSnapshotSchema=z.object({
 export type ResolvedStrongMetaSnapshot=z.infer<typeof strongMetaSnapshotSchema>;
 
 export const strongMetaRuntimeSchema=z.object({
-  reserveMatchPaid:z.number().int().min(0).max(1000),
-  workRhythmBonusDaysTriggered:z.number().int().min(0).max(20),
+  reserveMatchPaid:nonNegativeInt,
+  workRhythmBonusDaysTriggered:z.number().int().min(0).max(160),
   workRhythmArmedForDay:calendarDay.nullable(),
   networkRetainerLastProcessedDay:calendarDay.nullable(),
-  networkRetainerPaidDays:z.number().int().min(0).max(40),
-  networkRetainerTotalPaid:z.number().int().min(0).max(1000)
+  networkRetainerPaidDays:z.number().int().min(0).max(160),
+  networkRetainerTotalPaid:nonNegativeInt
 }).strict();
 export type StrongMetaRuntime=z.infer<typeof strongMetaRuntimeSchema>;
 
@@ -332,6 +332,10 @@ export function hasResolvedStrongMetaReward(snapshot:ResolvedStrongMetaSnapshot|
   return !!snapshot?.resolvedRewards.some(reward=>reward.id===id);
 }
 
+function resolvedReward(snapshot:ResolvedStrongMetaSnapshot|null|undefined,id:ApprovedStrongRewardId):ResolvedStrongReward|undefined{
+  return snapshot?.resolvedRewards.find(reward=>reward.id===id);
+}
+
 export function strongMetaProgressionStatCap(snapshot:ResolvedStrongMetaSnapshot|null|undefined,current:100|200=100):100|200{
   return snapshot?.resolvedRewards.some(reward=>reward.effect.kind==='progression-stat-cap'&&reward.effect.cap===200)?200:current;
 }
@@ -343,11 +347,12 @@ export function applyEarnedReserveMatch(input:Readonly<{
   secretDebtBound:boolean;
 }>):Readonly<{runtime:StrongMetaRuntime;bonus:number}>{
   if(!Number.isInteger(input.ordinaryWage)||input.ordinaryWage<0)throw new Error('ordinaryWage must be a non-negative integer.');
-  if(!hasResolvedStrongMetaReward(input.snapshot,STRONG_META_IDS.earnedReserveMatch)||input.secretDebtBound||input.ordinaryWage===0){
+  const reward=resolvedReward(input.snapshot,STRONG_META_IDS.earnedReserveMatch);
+  if(!reward||reward.effect.kind!=='earned-reserve-match'||input.secretDebtBound||input.ordinaryWage===0){
     return {runtime:structuredClone(input.runtime),bonus:0};
   }
-  const remaining=Math.max(0,1000-input.runtime.reserveMatchPaid);
-  const bonus=Math.min(input.ordinaryWage,remaining);
+  const remaining=Math.max(0,reward.effect.perRunCap-input.runtime.reserveMatchPaid);
+  const bonus=Math.min(input.ordinaryWage*reward.effect.matchRatio,remaining);
   return {
     runtime:{...structuredClone(input.runtime),reserveMatchPaid:input.runtime.reserveMatchPaid+bonus},
     bonus
@@ -360,8 +365,9 @@ export function armWorkRhythmForNextDay(input:Readonly<{
   currentDay:number;
 }>):StrongMetaRuntime{
   const runtime=structuredClone(input.runtime);
-  if(!hasResolvedStrongMetaReward(input.snapshot,STRONG_META_IDS.workRhythm))return runtime;
-  if(runtime.workRhythmBonusDaysTriggered>=20)return runtime;
+  const reward=resolvedReward(input.snapshot,STRONG_META_IDS.workRhythm);
+  if(!reward||reward.effect.kind!=='work-rhythm')return runtime;
+  if(runtime.workRhythmBonusDaysTriggered>=reward.effect.maxBonusDays)return runtime;
   const target=input.currentDay+1;
   if(target<0||target>159)return runtime;
   if(runtime.workRhythmArmedForDay===target)return runtime;
@@ -375,12 +381,13 @@ export function applyWorkRhythmAtStartDay(input:Readonly<{
   day:number;
 }>):Readonly<{runtime:StrongMetaRuntime;energyBonus:number}>{
   const runtime=structuredClone(input.runtime);
-  if(!hasResolvedStrongMetaReward(input.snapshot,STRONG_META_IDS.workRhythm))return {runtime,energyBonus:0};
+  const reward=resolvedReward(input.snapshot,STRONG_META_IDS.workRhythm);
+  if(!reward||reward.effect.kind!=='work-rhythm')return {runtime,energyBonus:0};
   if(runtime.workRhythmArmedForDay!==input.day)return {runtime,energyBonus:0};
   runtime.workRhythmArmedForDay=null;
-  if(runtime.workRhythmBonusDaysTriggered>=20)return {runtime,energyBonus:0};
+  if(runtime.workRhythmBonusDaysTriggered>=reward.effect.maxBonusDays)return {runtime,energyBonus:0};
   runtime.workRhythmBonusDaysTriggered++;
-  return {runtime,energyBonus:1};
+  return {runtime,energyBonus:reward.effect.energyDelta};
 }
 
 export function applyNetworkRetainerAtStartDay(input:Readonly<{
@@ -390,16 +397,17 @@ export function applyNetworkRetainerAtStartDay(input:Readonly<{
   secretDebtBound:boolean;
 }>):Readonly<{runtime:StrongMetaRuntime;payment:number}>{
   const runtime=structuredClone(input.runtime);
-  if(!hasResolvedStrongMetaReward(input.snapshot,STRONG_META_IDS.networkRetainer))return {runtime,payment:0};
+  const reward=resolvedReward(input.snapshot,STRONG_META_IDS.networkRetainer);
+  if(!reward||reward.effect.kind!=='network-retainer')return {runtime,payment:0};
   if(!Number.isInteger(input.day)||input.day<0||input.day>159)throw new Error('day out of range.');
-  if(input.day>=40)return {runtime,payment:0};
+  if(input.day>=reward.effect.eligibleDayCount)return {runtime,payment:0};
   if(runtime.networkRetainerLastProcessedDay!==null&&input.day<=runtime.networkRetainerLastProcessedDay)return {runtime,payment:0};
   runtime.networkRetainerLastProcessedDay=input.day;
   if(input.secretDebtBound)return {runtime,payment:0};
-  const remaining=Math.max(0,1000-runtime.networkRetainerTotalPaid);
-  const payment=Math.min(25,remaining);
+  const remaining=Math.max(0,reward.effect.perRunTotalCap-runtime.networkRetainerTotalPaid);
+  const payment=Math.min(reward.effect.paymentAmount,remaining);
   if(payment===0)return {runtime,payment:0};
-  runtime.networkRetainerPaidDays=Math.min(40,runtime.networkRetainerPaidDays+1);
+  runtime.networkRetainerPaidDays=Math.min(reward.effect.eligibleDayCount,runtime.networkRetainerPaidDays+1);
   runtime.networkRetainerTotalPaid+=payment;
   return {runtime,payment};
 }
@@ -417,6 +425,12 @@ export function validateStrongMetaRegistry():void{
   const keystones=Object.values(strongMetaRegistry).filter(definition=>definition.class==='keystone');
   if(specialists.length!==1||specialists[0]?.id!==STRONG_META_IDS.palaceCap200)throw new Error('Strong Meta v7 Specialist registry drift.');
   if(keystones.length!==3)throw new Error('Strong Meta v7 Keystone registry drift.');
+  const reserve=strongMetaRegistry[STRONG_META_IDS.earnedReserveMatch].effect;
+  const rhythm=strongMetaRegistry[STRONG_META_IDS.workRhythm].effect;
+  const retainer=strongMetaRegistry[STRONG_META_IDS.networkRetainer].effect;
+  if(reserve.kind!=='earned-reserve-match'||reserve.matchRatio!==1||reserve.perRunCap!==1000)throw new Error('D32 Reserve Match parameter drift.');
+  if(rhythm.kind!=='work-rhythm'||rhythm.energyDelta!==1||rhythm.maxBonusDays!==20)throw new Error('D32 Work Rhythm parameter drift.');
+  if(retainer.kind!=='network-retainer'||retainer.paymentAmount!==25||retainer.eligibleDayCount!==40||retainer.perRunTotalCap!==1000)throw new Error('D32 Network Retainer parameter drift.');
 }
 
 validateStrongMetaRegistry();
