@@ -1072,6 +1072,115 @@ It does not reveal inaccessible scenes, bypass capability gates, reveal the fina
 - all three preserve D23 Palace entry, D26, D29, D30/D32, D35, D36/D38 and Secret Debt forced-Night precedence.
 
 
+### D40 — advanced ordinary endings tranche B (Guard / Merchant / Artist-Geisha / Assassin / Prostitute)
+
+Accepted Product packet:
+`chat3/ordinary-complex-endings-tranche-b-v10@7ed4ffbb97c1ab012a0c35a7703600623900fd28`.
+
+The packet is accepted as exact Product authority for all **16** advanced endings in:
+- Guard;
+- Merchant;
+- Artist/Geisha;
+- Assassin;
+- Prostitute.
+
+This includes, exactly as frozen in the packet:
+- stable ending IDs;
+- selected-route facts;
+- minimum career stage/shift gates;
+- mandatory/optional School, Night, relationship, Activity and item inputs;
+- D16 explicit commit boundaries;
+- permanent reward identities;
+- reward class;
+- exact bounded reward mechanics;
+- migration/ownership semantics;
+- network-domain separation;
+- no new raw ending-level stat thresholds.
+
+Additional shared authority from the packet:
+- every advanced branch writes exactly one persistent selected-route fact atomically with its outcome-ready transition;
+- ending eligibility requires outcome-ready + the exact selected-route fact, so merely having multiple route-ready facts never makes unselected endings eligible;
+- Guard/Merchant/Artist career-local School readiness facts use the D33-style publisher rule: corresponding track `lessons_completed >= 3` OR `night_study_sessions >= 3`, published exactly once; paid and Night Study counts are alternatives, not summed;
+- no new certificate/project/exam subsystem is added;
+- no Tranche B reward is a Keystone;
+- automatic knowledge/content consumes no strong-Meta slot;
+- Specialists consume one normal D28 Specialist slot;
+- no reward bypasses D23, reduces Activity entry Energy, creates free Specialist capacity, or suppresses Secret Debt forced Night.
+
+Final lore names/epilogues/presentation copy remain content-owned where the packet marks them OPEN.
+
+### D41 — advanced ordinary endings tranche A (Lumber / Satyr Maid / Undead Farm / Tavern / Hunter)
+
+Accepted Product packet:
+`chat5/ordinary-complex-endings-tranche-a-v10@95c0f06449e0a62241e5286c8a95050c82346956`.
+
+The packet is accepted as exact Product authority for all **14** advanced endings in:
+- Lumber;
+- Satyr Maid;
+- Undead Farm;
+- Tavern;
+- Hunter.
+
+This includes, exactly as frozen:
+- stable ending IDs and legacy-ID retirement/migration rules;
+- exact minimum shift/stage gates;
+- mandatory/optional School, Night, relationship, Activity and item inputs;
+- explicit D16 commit boundaries;
+- permanent reward identities/classes;
+- exact use limits/caps;
+- idempotent migration for existing completed modern-compatible endings;
+- retirement of stale broad legacy rewards where specified.
+
+Important preserved rules:
+- no new direct raw ending-level stat thresholds;
+- Lumber Forewoman/Forest cannot be eligible before trusted-worker (8 shifts) and preserve D33/D34;
+- Hard Work remains separate at 50;
+- romance never becomes mandatory;
+- Satyr Maid Boundary Mastery preserves explicit decline/consent semantics;
+- Tavern legacy `tavern-stay/guild/court` are migrated/retired as specified and may not retain old Palace-shortcut semantics;
+- Hunter advanced Activity routes remain distinct from D38 standalone Activity endings;
+- no Tranche A reward is a Keystone;
+- Specialists use normal D28 capacity;
+- automatic knowledge/content uses no slot;
+- no reward bypasses D23 or Secret Debt forced Night.
+
+Final lore/epilogue/presentation copy marked OPEN in the packet remains content-owned.
+
+### D42 — ordinary-career Night content gap blueprint
+
+Accepted implementation packet:
+`chat4/night-content-gap-blueprint-v9@1c52123c3e05b5d2ba2bfcf6f6b12e3291fd11e7`.
+
+The packet's **12 stable Night surface IDs and exact authored contracts** are accepted for production.
+
+Required surfaces:
+- Lumber personal/social continuation;
+- Hunter professional debrief;
+- Hunter Senior Guide/companion;
+- Guard professional case debrief;
+- Guard Partner;
+- Merchant professional ledger plan;
+- Merchant Supplier;
+- Assassin handler/informant;
+- Prostitute personal continuation;
+- D35 private-space seed: Satyr Maid recurring guest;
+- D35 private-space seed: Tavern recurring traveler;
+- D35 private-space seed: Prostitute recurring client.
+
+Exactly the three D35 seed branches require `housingTier=normal`.
+
+Shared invariants:
+- no forced romance;
+- confidence/Lust/Sexuality never imply consent;
+- refusal/back-out cannot secretly publish progression success;
+- ordinary Prostitute never inherits Secret Debt forced-route semantics;
+- cheap retains School Night Study and public/workplace Night;
+- Secret Debt forced Night suppresses voluntary/private-space Night;
+- one completed global Night advances calendar exactly once;
+- no broad affinity subsystem is introduced;
+- Night surfaces may contribute presentation/route facts only as explicitly listed in the accepted packet.
+
+
 ## Still open after this lock
 
 - exact numeric economy;
