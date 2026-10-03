@@ -1337,6 +1337,44 @@ function migrateV3(raw:any){
   }
   return migrated;
 }
+const D40_SELECTED_ROUTE_FACT_BY_STAGE:Record<string,Record<string,string>>={
+  guard:{
+    officer:'ending-route-officer-selected',
+    'reform-order':'ending-route-reform-selected',
+    network:'ending-route-network-selected',
+    'major-case':'ending-route-major-case-selected'
+  },
+  merchant:{
+    'merchant-house':'ending-route-merchant-house-selected',
+    'speculator-smuggler':'ending-route-speculator-smuggler-selected',
+    'patron-of-routes':'ending-route-patron-routes-selected'
+  },
+  'artist-geisha':{
+    'master-artist':'ending-route-master-artist-selected',
+    'patron-network':'ending-route-patron-network-selected',
+    'court-invitation':'ending-route-court-invitation-selected'
+  },
+  assassin:{
+    ghost:'ending-route-ghost-selected',
+    'handler-takeover':'ending-route-handler-takeover-selected',
+    turncoat:'ending-route-refusal-turncoat-selected',
+    'refusal-chain':'ending-route-refusal-turncoat-selected'
+  },
+  prostitute:{
+    'independent-house':'ending-route-independent-house-selected',
+    'elite-clientele':'ending-route-elite-clientele-selected',
+    'network-protection':'ending-route-network-protection-selected'
+  }
+};
+function repairD40SelectedRouteFactsMutable(s:Save){
+  for(const [career,byStage] of Object.entries(D40_SELECTED_ROUTE_FACT_BY_STAGE)){
+    const state=s.run.progression.careers[career];
+    if(!state)continue;
+    const fact=byStage[state.stage];
+    if(fact)addUnique(state.facts,fact);
+  }
+}
+
 export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
   let raw=JSON.parse(text);
   if(raw.schemaVersion===1){raw.schemaVersion=2;raw.run.actionCounts={work:raw.run.metrics.work};}
@@ -1369,6 +1407,7 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
   }
   const parsed=saveSchema.parse(raw) as unknown as Save;
   const s=attachLegacyFacade(parsed);
+  repairD40SelectedRouteFactsMutable(s);
   s.meta.unlocks=s.meta.unlocks.filter(unlock=>unlock!=='palace');
   for(const stat of stats)if(s.run.character.stats[stat]>effectiveProgressionStatCap(s))throw new Error(`Характеристика ${stat} превышает эффективный потолок.`);
   if(s.run.metrics.energy>energyMax(s))throw new Error('Некорректный запас энергии.');
