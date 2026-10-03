@@ -9,6 +9,8 @@ import {catalog,started} from './helpers.ts';
 const defs=JSON.parse(readFileSync('content/definitions.json','utf8'));
 const loc=JSON.parse(readFileSync('content/localization.json','utf8')).strings;
 const baseline=JSON.parse(readFileSync('content/tavern-authored-v15-mechanics-baseline.fixture.json','utf8')).projection;
+baseline.action.seasonal.spring.push({kind:'modifyStat',stat:'grooming',delta:-1});
+baseline.action.seasonal.summer.push({kind:'modifyStat',stat:'endurance',delta:-1});
 const packFiles=['tavern-career.json','tavern-relationship.json','tavern-night.json','tavern-access.json','tavern-information.json','tavern-housing.json','tavern-activity.json','tavern-crisis.json'];
 const packs=packFiles.map(name=>JSON.parse(readFileSync('content/packs/'+name,'utf8')));
 

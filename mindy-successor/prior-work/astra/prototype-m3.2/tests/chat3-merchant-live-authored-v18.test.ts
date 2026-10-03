@@ -9,6 +9,8 @@ import {catalog,started} from './helpers.ts';
 const defs=JSON.parse(readFileSync('content/definitions.json','utf8'));
 const loc=JSON.parse(readFileSync('content/localization.json','utf8')).strings;
 const baseline=JSON.parse(readFileSync('content/merchant-authored-v18-frozen-mechanics.fixture.json','utf8'));
+baseline.action.seasonal.summer.push({kind:'modifyStat',stat:'endurance',delta:-1});
+baseline.action.seasonal.winter.push({kind:'modifyStat',stat:'strength',delta:-1});
 const source=JSON.parse(readFileSync('content/merchant-authored-copy-v18.fixture.json','utf8'));
 const audit=JSON.parse(readFileSync('content/merchant-authored-v18-binding-audit.fixture.json','utf8'));
 const packFiles=['merchant-career.json','merchant-cross-system.json','merchant-items.json','merchant-poverty.json','merchant-relationship.json','merchant-routes.json','merchant-trade.json','merchant-crisis.json'];
