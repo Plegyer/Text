@@ -1,0 +1,22 @@
+stage,condition_or_choice,route_state,next_day_base_stamina,relative_to_normal_3,other_effect
+career_start,modelVisit>=15,Scene90,,,career authored route starts
+build_gate_1,Charisma>=30 and Prowess>=30,Scene91,,,next build target
+build_gate_2,Class>=40,Scene92,,,forced-night choice
+scene92_yes,accept nightly associate,sexWhitestWhite=true,,,forced Sleep override enabled; rent resolver bypassed
+scene92_no,reject nightly associate,shutterBugCountdown=3,,,alternate investigation branch
+forced_nights_1_10,whitestSexCount 1..10,forced active,2,-1,normal paid sleep/night options bypassed
+checkpoint_10,whitestSexCount>=10,doneModelScene05Cont=true,,,Scene98
+forced_nights_11_15,whitestSexCount 11..15,forced active,1,-2,normal paid sleep/night options bypassed
+checkpoint_15,whitestSexCount>=15,doneModelScene06Cont=true,,,Scene99 continue/quit choice
+scene99_quit,choose No,sexWhitestWhite=false,,,forced Night ends
+scene99_continue,choose Yes,sexWhitestWhite remains true,,,continues to harshest phase
+forced_nights_16_18,whitestSexCount 16..18,forced active,0,-3,normal paid sleep/night options bypassed
+checkpoint_18,whitestSexCount>=18,doneModelScene07Cont=true,,,Scene100 ending endpoint
+scene100_yes,only recovered continuation,endShutterBugModel path,,,switches directly to Scene97
+alternate_wait,scene92 rejected and countdown>0,shutterBugCountdown decrements daily,,,three-day wait
+alternate_scene93,countdown<=0,doneModelScene05Nope=true,,,investigation setup
+alternate_gate_1,Prowess>=35 and Intellect>=35,doneModelScene06Nope=true,,,Scene94
+alternate_gate_2,Intellect>=50,doneModelScene07Nope=true,,,Scene95 boss/orb branch
+ordinary_work_ending,modelVisit>=50,generic Model SinnersOrb,,,independent Scene102 opportunity
+derived_forced_burden,10 days at2 +5 days at1 +3 days at0,18 forced nights,25 total,-29 vs normal 54,minimum continue-route burden
+derived_band_income_loss,18 forced nights with bandBonus active,sleepPaid bypassed,,,$3600 max fixed opportunity cost
