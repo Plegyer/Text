@@ -1,40 +1,57 @@
 # CURRENT CHAT4 TASK POINTER
 
-Status: **ACTIVE — PRODUCT ECONOMY / START-BALANCE CLOSURE v13**
+Status: **ACTIVE — D46 ECONOMY / START-BALANCE PRODUCER v14**
 Owner: Chat 4
 
-Frozen previous producer:
+Accepted Product authority:
+`D46` in `mindy-successor/docs/USER_DECISIONS_LOCKED_v1.md`
+
+Source Product packet:
+`chat4/product-economy-balance-closure-v13@285b0de5189350131cb34b210357112da04bca3b`
+
+Frozen prior Secret Debt producer:
 `chat4/secret-debt-full-route-producer-v12@10a2ecebf02ce64bdaf54d74dbbb66d6bae6e59e`
 
-Do not mutate that producer.
+Do not mutate either frozen producer.
 
 New branch:
-`chat4/product-economy-balance-closure-v13`
-
-Branch task seed:
-`42f7f0ee20bb6d421422caa3f6a2785a6d83a7d4`
-
-Base:
-`main@9d3299627b9fa80460c49422568ce66f93dcdd10`
+`chat4/economy-start-balance-producer-v14`
 
 Task:
-produce a Product decision packet for the remaining 1.0 balance blockers:
-- exact starting Lust;
-- final ordinary-profession wage scale;
-- whether later-year lodging escalation exists; if yes, exact bounded schedule;
-- final School tuition/gain tuning.
+implement D46 exactly and only:
+- fresh new-life Lust = 5;
+- preserve stored Lust on existing saves;
+- Lumber wage base 35;
+- other nine ordinary wage bases 37;
+- ordinary shift wage cap 120;
+- no lodging escalation;
+- School tuition/gains unchanged;
+- starting money and base Energy unchanged.
 
-Rules:
-- research/audit only; no runtime implementation;
-- use current executable economy as evidence;
-- preserve D19/D20/D26/D30-D32/D35/D43/D44;
-- no Secret Debt farming loophole;
-- no Palace farming loop;
-- School must remain meaningful but affordable;
-- do not alter locked lodging baseline 100/50/0 unless the packet explicitly proposes a later-year rule and justifies it;
-- separate current facts from recommendations.
+Preserve:
+- D26 one same-career shift/day;
+- D31 wage stat weights/seasonal semantics;
+- D32 bounded money rewards;
+- D35 lodging/private-space rules;
+- D43 Palace wage;
+- D44 Secret Debt wage and career lock;
+- D24 cap-200 cannot exceed ordinary wage 120.
+
+No full CI.
+
+Focused QA minimum:
+- typecheck / validate / build;
+- fresh run Lust 5;
+- migration preserves existing Lust;
+- wage anchors 36 / 38 / 38 for starter careers at all-1;
+- three starter shifts gross 112;
+- cap-200 ordinary wage <=120;
+- lodging 100/50/0 across all years;
+- School exact tuition/gain regression;
+- Secret Debt / Palace / Strong Meta firewalls.
 
 Deliver:
-`mindy-successor/docs/tasks/CHAT4_PRODUCT_ECONOMY_BALANCE_CLOSURE_v13.md`
+`mindy-successor/docs/tasks/CHAT4_ECONOMY_START_BALANCE_PRODUCER_v14.md`
 
-Include exact recommended numbers, scenario tables, major edge cases, and implementation notes. No full CI. Report `READY_FOR_PRODUCT_LOCK`.
+Freeze exact SHA and report:
+`READY_FOR_CHAT2_ASSEMBLY`.
