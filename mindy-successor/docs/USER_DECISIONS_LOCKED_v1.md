@@ -831,6 +831,134 @@ Locked precedence/invariants:
 This is a minimum content-quality rule, not a requirement to add filler scenes solely to hit a number.
 
 
+### D38 — standalone Large Activity ending family = three separate endings with selectable Activity Specialists
+
+Accepted Product packet:
+`chat3/activity-ending-family-v9@37079bea92a0fa442035de310d8d21fb0b435d53`.
+
+D36's standalone Activity ending family is realized as **three separately completable ending IDs** under one player-facing Activity family:
+
+1. `ending.activity.pathfinder`;
+2. `ending.activity.preservation`;
+3. `ending.activity.network`.
+
+A single life commits at most one normal ending. Across multiple lives the player may permanently complete all three and own all three rewards, but D28 still limits active Specialists in any New Start+ life to **0..2 total**.
+
+All three share the D36 common baseline:
+- resolve regional anchors in at least **3 of 4** Activity regions;
+- complete specialized mechanics from at least **2 different mini-game families**;
+- secure/extract at least **1 meaningful Activity result**;
+- resolve at least **1 Activity contact/companion thread**;
+- no ordinary Hard Work requirement;
+- no Palace requirement;
+- eligibility remains non-terminal until explicit D16 commit.
+
+#### Pathfinder / Mapping
+
+Ending ID:
+`ending.activity.pathfinder`.
+
+Additional eligibility:
+- at least **2 Pathfinder-marked regional anchors in distinct regions**;
+- at least **1 successful Tracking Triangulation** encounter.
+
+Permanent reward:
+**Surveyor's Atlas**
+`specialist.activity.surveyors-atlas`.
+
+Class:
+**Specialist**.
+
+When selected in New Start+:
+- once per D36 region per run, the first authored route-survey/discovery action that normally costs exactly **1 Field Time** may cost **0 Field Time**;
+- maximum direct saving = **4 Field Time per run**, one per region;
+- only the normal survey information is revealed.
+
+It does not:
+- change the Field Time baseline of 6;
+- reduce the 2-Energy Activity entry cost;
+- unlock a region;
+- bypass capability/seasonal/ending gates;
+- resolve encounters or regional anchors automatically.
+
+#### Preservation / Research
+
+Ending ID:
+`ending.activity.preservation`.
+
+Additional eligibility:
+- at least **2 Preservation-marked regional anchors in distinct regions**;
+- at least **1 successful Pattern / Ritual Circuit** encounter;
+- the common meaningful extraction must be at least **1 research-grade secured result**.
+
+Permanent reward:
+**Field Archive Protocol**
+`specialist.activity.field-archive`.
+
+Class:
+**Specialist**.
+
+When selected:
+- once per region per run, after legally obtaining a result explicitly tagged `activity-secure-eligible`, the player may mark one carried result as **Secured** at a stable Activity checkpoint;
+- a Secured result survives later escape/failure from that Activity entry unless the authored result explicitly forbids securing before the secure action;
+- maximum **1 secured result per region**, **4 per run**.
+
+It does not:
+- create/duplicate a result;
+- waive the challenge or capability needed to obtain it;
+- refund spent consumables;
+- preserve generic inventory across lives;
+- bypass a system-critical key/evidence gate unless that content explicitly opts into `activity-secure-eligible`.
+
+#### Network / Access
+
+Ending ID:
+`ending.activity.network`.
+
+Additional eligibility:
+- at least **2 Network-marked regional anchors in distinct regions**;
+- at least **1 successful Infiltration / Suspicion** encounter;
+- the common Activity contact requirement must resolve through at least **1 network-capable contact**.
+
+Permanent reward:
+**Expedition Contact Network**
+`specialist.activity.contact-network`.
+
+Class:
+**Specialist**.
+
+When selected:
+- after a D36 region is already normally unlocked, that region may expose exactly **1 authored** `activity-network-introduction` lateral route option per run;
+- using it consumes that region's one introduction;
+- maximum **4 introductions per run**, one per region.
+
+It may change route/contact/risk/information options, but may not generically bypass:
+- region unlock;
+- career stage;
+- ordinary Hard Work;
+- relationship stage;
+- item capability;
+- Palace qualification/duty;
+- Secret Debt repayment/exit/forced Night;
+- ending eligibility.
+
+#### Shared reward rules
+
+All three rewards:
+- are selectable Specialists, not automatic active bonuses;
+- consume one of D28's normal two Specialist slots;
+- create no free Activity-only slot;
+- preserve Activity entry at **2 Energy**;
+- preserve D36 <=10-entry reference pacing for first completion;
+- grant no generic starting stats, money, daily Energy or calendar time;
+- never substitute for D23 Palace 10/10 permanent + 10/10 active;
+- never suppress Secret Debt forced Night.
+
+Pure completion knowledge/codex/retrospective content remains automatic and consumes no Specialist slot.
+
+Final player-facing lore names and epilogue prose remain content-owned; the stable functional ending/reward IDs and mechanics above are authority.
+
+
 ## Still open after this lock
 
 - exact numeric economy;
