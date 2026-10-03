@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 1,
+  "id": "d40.tranche-b.strong-meta-integration-seam",
+  "frozenDependency": "chat4/strong-meta-runtime-producer-v7@6c3865aec1283055ab0713ca4b2873d379f3ddc6",
+  "note": "Current main supports only unlock/hardWork metaRewards. These D40 Specialist rewards must be bound into Chat 4 strongMeta ownership/selection after assembly; do not grant them as ordinary meta.unlocks.",
+  "specialistCapacity": 2,
+  "entries": [
+    {
+      "endingId": "ending.guard.network",
+      "rewardId": "specialist.guard.institutional-favors",
+      "class": "specialist",
+      "effect": {
+        "kind": "guard-institutional-favors",
+        "maxUsesPerRun": 2
+      },
+      "forbidden": [
+        "money",
+        "palace-access",
+        "activity-region-unlock",
+        "secret-debt-change"
+      ]
+    },
+    {
+      "endingId": "ending.merchant.speculator-smuggler",
+      "rewardId": "specialist.merchant.risk-ledger",
+      "class": "specialist",
+      "effect": {
+        "kind": "merchant-risk-ledger",
+        "maxDealsPerRun": 2,
+        "reveal": [
+          "reward-band",
+          "downside-tag"
+        ],
+        "allowAbortBeforeCommit": true
+      },
+      "forbidden": [
+        "guaranteed-profit",
+        "passive-income",
+        "palace-bypass"
+      ]
+    },
+    {
+      "endingId": "ending.artist-geisha.patron-network",
+      "rewardId": "specialist.artist.salon-introductions",
+      "class": "specialist",
+      "effect": {
+        "kind": "artist-salon-introductions",
+        "maxUsesPerRun": 4,
+        "maxUsesPerSeason": 1
+      },
+      "forbidden": [
+        "money-stipend",
+        "automatic-relationship-stage",
+        "palace-access"
+      ]
+    },
+    {
+      "endingId": "ending.assassin.ghost",
+      "rewardId": "specialist.assassin.ghost-routes",
+      "class": "specialist",
+      "effect": {
+        "kind": "assassin-ghost-routes",
+        "maxContractsPerRun": 2
+      },
+      "forbidden": [
+        "contract-unlock",
+        "capability-waiver",
+        "palace-bypass",
+        "automatic-success"
+      ]
+    },
+    {
+      "endingId": "ending.assassin.handler-takeover",
+      "rewardId": "specialist.assassin.contract-ledger",
+      "class": "specialist",
+      "effect": {
+        "kind": "assassin-contract-ledger",
+        "maxContractsPerRun": 2,
+        "reveal": [
+          "sponsor-tag",
+          "fallout-tag"
+        ],
+        "allowAuthoredReroute": true
+      },
+      "forbidden": [
+        "passive-income",
+        "guard-authority",
+        "palace-access",
+        "automatic-success"
+      ]
+    },
+    {
+      "endingId": "ending.prostitute.independent-house",
+      "rewardId": "specialist.prostitute.housebook",
+      "class": "specialist",
+      "effect": {
+        "kind": "prostitute-housebook",
+        "maxBookingsPerRun": 2,
+        "reveal": [
+          "terms",
+          "risk"
+        ],
+        "allow": [
+          "decline",
+          "renegotiate"
+        ]
+      },
+      "forbidden": [
+        "private-space-creation",
+        "lodging-discount",
+        "cost-refund",
+        "secret-debt-night-change"
+      ]
+    },
+    {
+      "endingId": "ending.prostitute.network-protection",
+      "rewardId": "specialist.prostitute.mutual-aid-roster",
+      "class": "specialist",
+      "effect": {
+        "kind": "prostitute-mutual-aid-roster",
+        "maxRiskScenesPerRun": 2,
+        "allow": [
+          "safe-exit",
+          "request-help",
+          "contact-support"
+        ]
+      },
+      "forbidden": [
+        "normal-cost-refund",
+        "secret-debt-forced-night-suppression",
+        "money",
+        "guard-authority"
+      ]
+    }
+  ],
+  "chat2AssemblyContract": [
+    "extend strongMeta approved registry with these seven exact reward IDs",
+    "add D40 specialist effect schemas without weakening specialist capacity=2",
+    "on first completion of the source ending, grant strongMeta ownership instead of meta.unlock",
+    "snapshot selected specialists at New Start+ creation using existing strongMeta selection flow",
+    "do not change already-started run loadouts after later registry/catalog updates",
+    "keep current v11 definitions metaRewards=[] for these seven endings until assembly wiring replaces/bridges completion handling"
+  ]
+}
