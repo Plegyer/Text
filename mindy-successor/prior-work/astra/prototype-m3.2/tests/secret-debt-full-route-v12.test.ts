@@ -134,6 +134,9 @@ test('lender uses deterministic fixed 20% RNG and only one attempt per eligible 
   const event=catalog.events.find(item=>item.id===SECRET_DEBT_LENDER_EVENT_ID);
   assert.ok(event);
   assert.equal(eventChance(event,started()),0.2);
+  const highLust=started();
+  highLust.run.character.lust=100;
+  assert.equal(eventChance(event,highLust),0.2,'Lust cannot alter the locked 20% lender chance');
 
   let fail=beginStreetNightWithSeed(0);
   assert.notEqual(fail.run.pending?.eventId,SECRET_DEBT_LENDER_EVENT_ID);
@@ -249,6 +252,12 @@ test('bound state locks all ten ordinary careers without mutating their progress
     assert.ok(action,career);
     assert.equal(actionAvailable(action,s,catalog),false,career+' bound lock');
     assert.equal(actionAvailable(action,s,catalog,{ordinaryCareersDomainLocked:false}),false,career+' lock cannot be overridden');
+  }
+  for(const alias of ['lumber','tavern','guard']){
+    const action=catalog.definitions.actions.find(item=>item.id===alias);
+    assert.ok(action,alias+' legacy action');
+    assert.equal(actionAvailable(action,s,catalog),false,alias+' legacy alias cannot bypass bound lock');
+    assert.throws(()=>dispatch(s,{type:'action',id:alias},catalog),/условия действия/i,alias+' direct dispatch');
   }
   assert.deepEqual(s.run.progression.careers,before);
 
