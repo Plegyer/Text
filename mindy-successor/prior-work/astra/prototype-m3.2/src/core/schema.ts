@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import {strongMetaRuntimeSchema,strongMetaSnapshotSchema,strongMetaStateSchema,strongRewardIdSchema} from './strongMeta.ts';
+import {approvedStrongRewardIdSchema,strongMetaRuntimeSchema,strongMetaSnapshotSchema,strongMetaStateSchema} from './strongMeta.ts';
 
 export const stats = ['strength','endurance','dexterity','reason','magic','creativity','wits','charm','sociability','manners','grooming','sexuality'] as const;
 export const legacyStats = ['strength','endurance','dexterity','perception','intelligence','magic','empathy','persuasion','composure','organization','lust'] as const;
@@ -415,7 +415,7 @@ export type OrdinaryHardWorkCareer=typeof ordinaryHardWorkCareers[number];
 export const metaRewardSchema=z.discriminatedUnion('kind',[
   z.object({kind:z.literal('unlock'),rewardId:rewardId,unlock:id}).strict(),
   z.object({kind:z.literal('hardWork'),rewardId:rewardId,career:z.enum(ordinaryHardWorkCareers)}).strict(),
-  z.object({kind:z.literal('strongMeta'),rewardId:rewardId,reward:strongRewardIdSchema}).strict()
+  z.object({kind:z.literal('strongMeta'),rewardId:rewardId,reward:approvedStrongRewardIdSchema}).strict()
 ]);
 export type MetaReward=z.infer<typeof metaRewardSchema>;
 
