@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {loadCatalog} from '../src/core/content.ts';
 import {dispatch,freshSave,parseSave} from '../src/core/engine.ts';
+import {emptyResolvedStrongMetaSnapshot} from '../src/core/strongMeta.ts';
 import type {Catalog,Save} from '../src/core/schema.ts';
 
 const baseDefinitions=JSON.parse(readFileSync('content/lumber-target-definitions.fixture.json','utf8'));
@@ -50,6 +51,7 @@ function catalog():Catalog{
 function ready():Save{
   const s=freshSave();
   s.run.creation={remaining:0,allocated:{},activeHardWorkPackages:[],hardWorkPackagesApplied:true,complete:true};
+  s.run.strongMetaSnapshot=emptyResolvedStrongMetaSnapshot();
   s.run.flags['story.arrived']=true;
   s.run.dayState.energyCurrent=3;
   return s;

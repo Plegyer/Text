@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {loadCatalog} from '../src/core/content.ts';
 import {applyEffects,dispatch,freshSave,parseSave} from '../src/core/engine.ts';
+import {emptyResolvedStrongMetaSnapshot} from '../src/core/strongMeta.ts';
 import {
   SCHOOL_NIGHT_STUDY_NEXT_DAY_ENERGY_DELTA,
   SCHOOL_NIGHT_STUDY_STAT_GAIN,
@@ -37,6 +38,7 @@ function ready():Save{
   s.run.character.creation.allocated={};
   s.run.character.creation.complete=true;
   s.run.character.creation.hardWorkPackagesApplied=true;
+  s.run.strongMetaSnapshot=emptyResolvedStrongMetaSnapshot();
   s.run.resources.money=600;
   s.run.dayState.energyCurrent=1;
   s.run.character.stats.reason=10;
