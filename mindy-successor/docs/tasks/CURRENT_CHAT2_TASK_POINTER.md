@@ -1,84 +1,70 @@
 # CURRENT CHAT2 TASK POINTER
 
-Status: **ACTIVE — NEW START+ HARD WORK UI CURRENT-MAIN ASSEMBLY**
-Owner: Chat 2 / Integration + Assembly + Technical QA
+Status: **ACTIVE — PALACE D23 CONSUMER QA + D31 CURRENT-MAIN PREFLIGHT**
+Owner: Chat 2 / sole full-CI integration lane
 
-Shared D21-D24 foundation:
-- PR #264 merged;
-- merge SHA: `de6f95c89cdb43fb853bc569745e822bb1f2636b`;
-- branch full CI #1125: SUCCESS;
-- exact-main CI #1126: SUCCESS.
+## Priority A — Palace D23 consumer
 
-Frozen producer to integrate:
-`837156277f7329f0187b04442acb8d5258a2e189`
+Current focused QA PR:
+#268 `Chat 2 QA: focused Palace D23 consumer integration`
 
-Producer dependency base:
-`c085eda62dd39f71d3a4c75a6c31f4c72527039a`
+QA branch:
+`chat2/qa-palace-d23-consumer-20261003-v1`
 
-Current assembly branch:
-`chat2/assembly-hard-work-new-start-ui-20261003-v1`
+Exact feature candidate parent:
+`ef6eec1cbac89e2e7cc30392f6058222d2022b78`
 
-Read first:
-`mindy-successor/docs/tasks/LEADER_NEXT_INTEGRATION_RECON_2026-10-03.md`
+QA head:
+`0ea782b4439167350add1ec6cef798d6d92aa124`
 
-## Reconstruction rule
+Frozen producer authority:
+`9dfaab2a7b9e145c9753c0acd8e54d3f903be5fd`
 
-Do not cherry-pick only the final producer commit. The frozen head is an **8-commit delta** from its dependency base.
+Focused workflow #1133 is currently queued. Do not mutate production merely to provoke the runner.
 
-Whole accepted producer delta:
-- add `content/hard-work-new-start-presentation-v2.fixture.json`;
-- modify `src/ui/app.ts`;
-- add `src/ui/hardWorkNewStart.ts`;
-- modify `src/ui/style.css`;
-- add `tests/hard-work-newstart-presentation-v2.test.ts`;
-- add `tests/hard-work-newstart-ui-v2.test.ts`.
-
-Leader drift audit proved on current main:
-- `app.ts` byte-identical to frozen producer base;
-- `style.css` byte-identical to producer base;
-- `hardWorkMeta.ts`, `hardWorkPackageCatalog.ts`, `schema.ts` byte-identical to producer base;
-- the four added files do not exist on current main.
-
-Therefore reconstruct the full frozen UI delta onto fresh current main; do not modify shared runtime semantics.
-
-## Locked behavior
-
-Preserve:
-- only earned ordinary Hard Work packages shown;
-- Secret Debt/non-ordinary IDs never appear as ordinary package cards;
-- any earned subset selectable: none / some / all;
-- no package slot limit;
-- early profession access is permanent ownership and independent of package activation;
-- package effects come only from centralized package catalog;
-- Prostitute package includes its locked Lust component;
-- Palace help = permanent ordinary 10/10 + current-life active 10/10;
+Critical preservation:
+- do **not** copy frozen producer `engine.ts` wholesale;
+- current-main removal of `ensurePalaceUnlock(s.meta)` must survive;
+- legitimate engine delta is only import + one `markPalaceCreationQualification(s)` hook after creation/package freeze;
 - no permanent `meta.unlocks['palace']`;
-- cap-200 wording = maximum becomes 200; current values do not multiply.
+- D23 remains permanent ordinary 10/10 + active 10/10 -> deterministic Day-1 invitation.
 
-Do **not** add D27/D28 Keystone/Specialist UI in this assembly. That is a separate future strong-Meta surface.
+If #1133 succeeds:
+1. close QA PR #268 unmerged;
+2. publish exact production candidate without QA workflow files to a fresh assembly branch;
+3. open real current-main assembly PR;
+4. run exactly one full CI on that exact assembly head;
+5. freeze SHA and report `READY_FOR_LEADER_MERGE`.
 
-## QA gate
+If #1133 fails:
+- mine the complete failure set;
+- distinguish test/fixture drift from product defect;
+- no rerun unchanged head.
 
-Before any full CI:
-1. typecheck;
-2. build/validate;
-3. frozen New Start+ presentation tests;
-4. frozen New Start+ UI tests;
-5. D21-D24 focused tests;
-6. creation/schema-v5 migration tests;
-7. Palace shared predicate smoke;
-8. current UI smoke;
-9. School D20 / seasonal / Assassin / Prostitute preservation.
+## Priority B — while #1133 is queued: D31 integration preflight
 
-Mine all focused failures first.
+Use a separate docs-only branch:
+`chat2/preflight-d31-current-main-20261003-v1`.
 
-Only after focused green:
-- open/update current-main assembly PR;
-- consume Chat 2's one full-CI slot;
-- if full CI green, freeze exact SHA and report `READY_FOR_LEADER_MERGE`.
+Frozen D31 producer:
+`chat3/seasonal-negative-target-map-implementation-v6@79ff36c66947a1f1273ab0bde7a3c7f1b797a2a7`.
 
+Prepare a current-main reconstruction ledger only:
+- exact producer dependency base;
+- exact `definitions.json` semantic delta;
+- exact affected seasonal regression delta;
+- verify current main has no unrelated target-map change;
+- identify collisions introduced by New Start+ UI / Palace consumer / D35 docs;
+- prove D31 remains content-only target replacement;
+- list focused suites needed after reconstruction.
+
+Do not put D31 production changes on main or consume full CI before Palace D23 merge + exact-main green.
+
+## Queued integration order after Palace
+
+1. D31 seasonal target map `79ff36c...`;
+2. accepted strong-Meta runtime candidate after Leader technical acceptance of Chat 4 v7;
+3. later Palace rich-six production slices after their producer freezes.
+
+Chat 2 remains the only worker allowed full CI.
 Do not merge main.
-
-Queued after this merge + exact-main green:
-1. Palace D23 consumer frozen head `9dfaab2a7b9e145c9753c0acd8e54d3f903be5fd`;
-2. D31 seasonal target producer `79ff36c66947a1f1273ab0bde7a3c7f1b797a2a7`, unless Leader reorders.
