@@ -2,10 +2,10 @@
 
 Current durable recovery point:
 
-`mindy-successor/docs/tasks/LEADER1_CHECKPOINT_2026-10-03_1343.md`
+`mindy-successor/docs/tasks/LEADER1_CHECKPOINT_2026-10-03_POST_D37.md`
 
 Checkpoint commit:
-`5e456b8cb52f610072b1d93bbca5c9efabd81c85`
+`92a748381ab0efd97c5cd1144bb86feabd013d75`
 
 Recovery rule:
 - read this checkpoint after Leader-context rollover;
