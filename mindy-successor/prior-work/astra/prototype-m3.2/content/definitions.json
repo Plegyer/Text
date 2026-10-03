@@ -4939,6 +4939,396 @@
       "reward": "undead-farm.successor.compat",
       "metaRewards": [],
       "epilogue": "You take responsibility for the farm through production records and professional trust, not a romance shortcut."
+    },
+    {
+      "id": "ending.guard.officer",
+      "title": "Guard Officer",
+      "description": "D40 advanced Guard Officer ending. Eligibility is non-terminal until explicit commit.",
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "guard",
+          "stage": "outcome-ready"
+        },
+        {
+          "kind": "careerFact",
+          "career": "guard",
+          "fact": "ending-route-officer-selected",
+          "present": true
+        }
+      ],
+      "reward": "unlock.guard.command-briefing",
+      "metaRewards": [
+        {
+          "kind": "unlock",
+          "rewardId": "unlock.guard.command-briefing",
+          "unlock": "unlock.guard.command-briefing"
+        }
+      ],
+      "epilogue": "Guard Officer route completed. Final authored epilogue remains presentation-owned."
+    },
+    {
+      "id": "ending.guard.reform",
+      "title": "Guard Reform",
+      "description": "D40 advanced Guard Reform ending. Eligibility is non-terminal until explicit commit.",
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "guard",
+          "stage": "outcome-ready"
+        },
+        {
+          "kind": "careerFact",
+          "career": "guard",
+          "fact": "ending-route-reform-selected",
+          "present": true
+        }
+      ],
+      "reward": "unlock.guard.reform-practice",
+      "metaRewards": [
+        {
+          "kind": "unlock",
+          "rewardId": "unlock.guard.reform-practice",
+          "unlock": "unlock.guard.reform-practice"
+        }
+      ],
+      "epilogue": "Guard Reform route completed. Final authored epilogue remains presentation-owned."
+    },
+    {
+      "id": "ending.guard.network",
+      "title": "Guard Network / Corruption",
+      "description": "D40 advanced Guard Network / Corruption ending. Eligibility is non-terminal until explicit commit.",
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "guard",
+          "stage": "outcome-ready"
+        },
+        {
+          "kind": "careerFact",
+          "career": "guard",
+          "fact": "ending-route-network-selected",
+          "present": true
+        }
+      ],
+      "reward": "specialist.guard.institutional-favors",
+      "metaRewards": [],
+      "epilogue": "Guard Network / Corruption route completed. Final authored epilogue remains presentation-owned."
+    },
+    {
+      "id": "ending.guard.major-case",
+      "title": "Guard Major Case",
+      "description": "D40 advanced Guard Major Case ending. Eligibility is non-terminal until explicit commit.",
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "guard",
+          "stage": "outcome-ready"
+        },
+        {
+          "kind": "careerFact",
+          "career": "guard",
+          "fact": "ending-route-major-case-selected",
+          "present": true
+        }
+      ],
+      "reward": "unlock.guard.casebook-index",
+      "metaRewards": [
+        {
+          "kind": "unlock",
+          "rewardId": "unlock.guard.casebook-index",
+          "unlock": "unlock.guard.casebook-index"
+        }
+      ],
+      "epilogue": "Guard Major Case route completed. Final authored epilogue remains presentation-owned."
+    },
+    {
+      "id": "ending.merchant.house",
+      "title": "Merchant House",
+      "description": "D40 advanced Merchant House ending. Eligibility is non-terminal until explicit commit.",
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "merchant",
+          "stage": "outcome-ready"
+        },
+        {
+          "kind": "careerFact",
+          "career": "merchant",
+          "fact": "ending-route-merchant-house-selected",
+          "present": true
+        }
+      ],
+      "reward": "unlock.merchant.house-supplier",
+      "metaRewards": [
+        {
+          "kind": "unlock",
+          "rewardId": "unlock.merchant.house-supplier",
+          "unlock": "unlock.merchant.house-supplier"
+        }
+      ],
+      "epilogue": "Merchant House route completed. Final authored epilogue remains presentation-owned."
+    },
+    {
+      "id": "ending.merchant.speculator-smuggler",
+      "title": "Merchant Speculator / Smuggler",
+      "description": "D40 advanced Merchant Speculator / Smuggler ending. Eligibility is non-terminal until explicit commit.",
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "merchant",
+          "stage": "outcome-ready"
+        },
+        {
+          "kind": "careerFact",
+          "career": "merchant",
+          "fact": "ending-route-speculator-smuggler-selected",
+          "present": true
+        }
+      ],
+      "reward": "specialist.merchant.risk-ledger",
+      "metaRewards": [],
+      "epilogue": "Merchant Speculator / Smuggler route completed. Final authored epilogue remains presentation-owned."
+    },
+    {
+      "id": "ending.merchant.patron-of-routes",
+      "title": "Merchant Patron of Routes",
+      "description": "D40 advanced Merchant Patron of Routes ending. Eligibility is non-terminal until explicit commit.",
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "merchant",
+          "stage": "outcome-ready"
+        },
+        {
+          "kind": "careerFact",
+          "career": "merchant",
+          "fact": "ending-route-patron-routes-selected",
+          "present": true
+        }
+      ],
+      "reward": "unlock.merchant.patron-destinations",
+      "metaRewards": [
+        {
+          "kind": "unlock",
+          "rewardId": "unlock.merchant.patron-destinations",
+          "unlock": "unlock.merchant.patron-destinations"
+        }
+      ],
+      "epilogue": "Merchant Patron of Routes route completed. Final authored epilogue remains presentation-owned."
+    },
+    {
+      "id": "ending.artist-geisha.master-artist",
+      "title": "Artist / Geisha Master Artist",
+      "description": "D40 advanced Artist / Geisha Master Artist ending. Eligibility is non-terminal until explicit commit.",
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "artist-geisha",
+          "stage": "outcome-ready"
+        },
+        {
+          "kind": "careerFact",
+          "career": "artist-geisha",
+          "fact": "ending-route-master-artist-selected",
+          "present": true
+        }
+      ],
+      "reward": "unlock.artist.master-repertoire",
+      "metaRewards": [
+        {
+          "kind": "unlock",
+          "rewardId": "unlock.artist.master-repertoire",
+          "unlock": "unlock.artist.master-repertoire"
+        }
+      ],
+      "epilogue": "Artist / Geisha Master Artist route completed. Final authored epilogue remains presentation-owned."
+    },
+    {
+      "id": "ending.artist-geisha.patron-network",
+      "title": "Artist / Geisha Patron Network",
+      "description": "D40 advanced Artist / Geisha Patron Network ending. Eligibility is non-terminal until explicit commit.",
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "artist-geisha",
+          "stage": "outcome-ready"
+        },
+        {
+          "kind": "careerFact",
+          "career": "artist-geisha",
+          "fact": "ending-route-patron-network-selected",
+          "present": true
+        }
+      ],
+      "reward": "specialist.artist.salon-introductions",
+      "metaRewards": [],
+      "epilogue": "Artist / Geisha Patron Network route completed. Final authored epilogue remains presentation-owned."
+    },
+    {
+      "id": "ending.artist-geisha.court-invitation",
+      "title": "Artist / Geisha Court Invitation",
+      "description": "D40 advanced Artist / Geisha Court Invitation ending. Eligibility is non-terminal until explicit commit.",
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "artist-geisha",
+          "stage": "outcome-ready"
+        },
+        {
+          "kind": "careerFact",
+          "career": "artist-geisha",
+          "fact": "ending-route-court-invitation-selected",
+          "present": true
+        }
+      ],
+      "reward": "unlock.artist.court-context",
+      "metaRewards": [
+        {
+          "kind": "unlock",
+          "rewardId": "unlock.artist.court-context",
+          "unlock": "unlock.artist.court-context"
+        }
+      ],
+      "epilogue": "Artist / Geisha Court Invitation route completed. Final authored epilogue remains presentation-owned."
+    },
+    {
+      "id": "ending.assassin.ghost",
+      "title": "Assassin Ghost",
+      "description": "D40 advanced Assassin Ghost ending. Eligibility is non-terminal until explicit commit.",
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "assassin",
+          "stage": "outcome-ready"
+        },
+        {
+          "kind": "careerFact",
+          "career": "assassin",
+          "fact": "ending-route-ghost-selected",
+          "present": true
+        }
+      ],
+      "reward": "specialist.assassin.ghost-routes",
+      "metaRewards": [],
+      "epilogue": "Assassin Ghost route completed. Final authored epilogue remains presentation-owned."
+    },
+    {
+      "id": "ending.assassin.handler-takeover",
+      "title": "Assassin Handler Takeover",
+      "description": "D40 advanced Assassin Handler Takeover ending. Eligibility is non-terminal until explicit commit.",
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "assassin",
+          "stage": "outcome-ready"
+        },
+        {
+          "kind": "careerFact",
+          "career": "assassin",
+          "fact": "ending-route-handler-takeover-selected",
+          "present": true
+        }
+      ],
+      "reward": "specialist.assassin.contract-ledger",
+      "metaRewards": [],
+      "epilogue": "Assassin Handler Takeover route completed. Final authored epilogue remains presentation-owned."
+    },
+    {
+      "id": "ending.assassin.refusal-turncoat",
+      "title": "Assassin Refusal / Turncoat",
+      "description": "D40 advanced Assassin Refusal / Turncoat ending. Eligibility is non-terminal until explicit commit.",
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "assassin",
+          "stage": "outcome-ready"
+        },
+        {
+          "kind": "careerFact",
+          "career": "assassin",
+          "fact": "ending-route-refusal-turncoat-selected",
+          "present": true
+        }
+      ],
+      "reward": "unlock.assassin.refusal-protocol",
+      "metaRewards": [
+        {
+          "kind": "unlock",
+          "rewardId": "unlock.assassin.refusal-protocol",
+          "unlock": "unlock.assassin.refusal-protocol"
+        }
+      ],
+      "epilogue": "Assassin Refusal / Turncoat route completed. Final authored epilogue remains presentation-owned."
+    },
+    {
+      "id": "ending.prostitute.independent-house",
+      "title": "Prostitute Independent House",
+      "description": "D40 advanced Prostitute Independent House ending. Eligibility is non-terminal until explicit commit.",
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "prostitute",
+          "stage": "outcome-ready"
+        },
+        {
+          "kind": "careerFact",
+          "career": "prostitute",
+          "fact": "ending-route-independent-house-selected",
+          "present": true
+        }
+      ],
+      "reward": "specialist.prostitute.housebook",
+      "metaRewards": [],
+      "epilogue": "Prostitute Independent House route completed. Final authored epilogue remains presentation-owned."
+    },
+    {
+      "id": "ending.prostitute.elite-clientele",
+      "title": "Prostitute Elite Clientele",
+      "description": "D40 advanced Prostitute Elite Clientele ending. Eligibility is non-terminal until explicit commit.",
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "prostitute",
+          "stage": "outcome-ready"
+        },
+        {
+          "kind": "careerFact",
+          "career": "prostitute",
+          "fact": "ending-route-elite-clientele-selected",
+          "present": true
+        }
+      ],
+      "reward": "unlock.prostitute.elite-protocol",
+      "metaRewards": [
+        {
+          "kind": "unlock",
+          "rewardId": "unlock.prostitute.elite-protocol",
+          "unlock": "unlock.prostitute.elite-protocol"
+        }
+      ],
+      "epilogue": "Prostitute Elite Clientele route completed. Final authored epilogue remains presentation-owned."
+    },
+    {
+      "id": "ending.prostitute.network-protection",
+      "title": "Prostitute Network / Protection",
+      "description": "D40 advanced Prostitute Network / Protection ending. Eligibility is non-terminal until explicit commit.",
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "prostitute",
+          "stage": "outcome-ready"
+        },
+        {
+          "kind": "careerFact",
+          "career": "prostitute",
+          "fact": "ending-route-network-protection-selected",
+          "present": true
+        }
+      ],
+      "reward": "specialist.prostitute.mutual-aid-roster",
+      "metaRewards": [],
+      "epilogue": "Prostitute Network / Protection route completed. Final authored epilogue remains presentation-owned."
     }
   ],
   "careers": [
