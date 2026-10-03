@@ -3579,6 +3579,102 @@
         "alt": "A non-explicit voluntary professional career scene.",
         "altKey": "presentation.static.career.prostitute.event.alt"
       }
+    },
+    "relationship/lumber-foreman/lumber-night-foreman-social/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/foreman-night-voluntary-v2.svg",
+        "alt": "A voluntary personal conversation with the Lumber Foreman after work.",
+        "altKey": "presentation.static.lumber.night.foreman-social.alt"
+      }
+    },
+    "night/hunter/hunter-night-field-debrief": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter field notes and a professional debrief after dark.",
+        "altKey": "presentation.static.hunter.night.field-debrief.alt"
+      }
+    },
+    "relationship/hunter-senior-guide/hunter-night-senior-guide/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Optional off-duty time with the Senior Guide, without implied romance.",
+        "altKey": "presentation.static.hunter.night.senior-guide.alt"
+      }
+    },
+    "night/guard/guard-night-case-debrief": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "A professional Guard case debrief prepared after duty.",
+        "altKey": "presentation.static.guard.night.case-debrief.alt"
+      }
+    },
+    "relationship/guard-partner/guard-night-partner/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-result.svg",
+        "alt": "Optional off-duty time with the Guard Partner.",
+        "altKey": "presentation.static.guard.night.partner.alt"
+      }
+    },
+    "night/merchant/merchant-night-ledger-plan": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-merchant-result.svg",
+        "alt": "A Merchant reviewing the ledger and supplier plan after the market closes.",
+        "altKey": "presentation.static.merchant.night.ledger-plan.alt"
+      }
+    },
+    "relationship/merchant-supplier/merchant-night-supplier/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-merchant-result.svg",
+        "alt": "Optional off-hours conversation with the Merchant Supplier.",
+        "altKey": "presentation.static.merchant.night.supplier.alt"
+      }
+    },
+    "relationship/assassin-handler/assassin-night-handler-contact/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "A bounded off-hours conversation with the Handler or informant.",
+        "altKey": "presentation.static.assassin.night.handler-contact.alt"
+      }
+    },
+    "relationship/prostitute-recurring-client/prostitute-night-personal-continuation/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-prostitute-result.svg",
+        "alt": "An explicitly chosen personal continuation with the recurring client.",
+        "altKey": "presentation.static.prostitute.night.personal-continuation.alt"
+      }
+    },
+    "night/satyr-maid/satyr-maid-night-recurring-guest-private": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-result.svg",
+        "alt": "A voluntary private-space conversation with the Satyr Maid recurring guest.",
+        "altKey": "presentation.static.satyr-maid.night.recurring-guest-private.alt"
+      }
+    },
+    "night/tavern/tavern-night-traveler-private": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-result.svg",
+        "alt": "A voluntary private-space conversation with the Tavern recurring traveler.",
+        "altKey": "presentation.static.tavern.night.traveler-private.alt"
+      }
+    },
+    "night/prostitute/prostitute-night-client-private": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-prostitute-result.svg",
+        "alt": "A voluntary private-space continuation with the recurring client.",
+        "altKey": "presentation.static.prostitute.night.client-private.alt"
+      }
     }
   }
 }
