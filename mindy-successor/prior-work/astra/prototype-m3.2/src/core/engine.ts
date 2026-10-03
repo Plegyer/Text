@@ -333,8 +333,7 @@ export function freshSave(metaInput?:Partial<Meta>&{completed?:string[];lives?:n
   return s;
 }
 
-export function applyStrongMetaOrdinaryWork(input:Save,ordinaryWage:number,secretDebtBound:boolean):Save{
-  const s=cloneSave(input);
+function applyStrongMetaOrdinaryWorkMutable(s:Save,ordinaryWage:number,secretDebtBound:boolean):number{
   const match=applyEarnedReserveMatch({
     snapshot:s.run.strongMetaSnapshot,
     runtime:s.run.strongMetaRuntime,
@@ -348,11 +347,16 @@ export function applyStrongMetaOrdinaryWork(input:Save,ordinaryWage:number,secre
     runtime:s.run.strongMetaRuntime,
     currentDay:s.run.day
   });
+  return match.bonus;
+}
+
+export function applyStrongMetaOrdinaryWork(input:Save,ordinaryWage:number,secretDebtBound:boolean):Save{
+  const s=cloneSave(input);
+  applyStrongMetaOrdinaryWorkMutable(s,ordinaryWage,secretDebtBound);
   return s;
 }
 
-export function applyStrongMetaStartDay(input:Save,secretDebtBound:boolean):Readonly<{state:Save;energyBonus:number;retainerPayment:number}>{
-  const s=cloneSave(input);
+function applyStrongMetaStartDayMutable(s:Save,secretDebtBound:boolean):Readonly<{energyBonus:number;retainerPayment:number}>{
   const rhythm=applyWorkRhythmAtStartDay({
     snapshot:s.run.strongMetaSnapshot,
     runtime:s.run.strongMetaRuntime,
@@ -367,7 +371,13 @@ export function applyStrongMetaStartDay(input:Save,secretDebtBound:boolean):Read
   });
   s.run.strongMetaRuntime=retainer.runtime;
   if(retainer.payment>0)s.run.resources.money=Math.min(1_000_000,s.run.resources.money+retainer.payment);
-  return {state:s,energyBonus:rhythm.energyBonus,retainerPayment:retainer.payment};
+  return {energyBonus:rhythm.energyBonus,retainerPayment:retainer.payment};
+}
+
+export function applyStrongMetaStartDay(input:Save,secretDebtBound:boolean):Readonly<{state:Save;energyBonus:number;retainerPayment:number}>{
+  const s=cloneSave(input);
+  const result=applyStrongMetaStartDayMutable(s,secretDebtBound);
+  return {state:s,...result};
 }
 
 function delta(before:Record<string,number>,after:Record<string,number>){
