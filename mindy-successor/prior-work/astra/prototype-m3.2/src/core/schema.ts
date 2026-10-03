@@ -9,6 +9,8 @@ export const metrics = [...new Set([...stats,...legacyStats,...legacyExtras,...r
 export const seasons = ['spring','summer','autumn','winter'] as const;
 export const housing = ['room','hostel','shelter'] as const;
 export const targetHousing = ['normal','cheap','street'] as const;
+export const secretDebtStatuses = ['unseen','refused','accepted','bound','paid-freedom','takeover'] as const;
+export type SecretDebtStatus = typeof secretDebtStatuses[number];
 export const unlocks = ['guild','scholar','calendar','host','mediator','court','vitality'] as const;
 export const items = ['herb','tonic','scales','reinforced_axe','rope_kit','field_preservation_kit','old_boundary_token','farm_produce','farm_unstable_specimen','farm_preserved_specimen','farm_delivery_input','tavern_staff_key','guard_badge','guard_sealed_pass','merchant_appraisal_scales','merchant_manifest_case','merchant_sample_kit','artist_formal_attire','artist_performance_kit','artist_invitation_token','prostitute_formal_attire','prostitute_private_room_key','prostitute_client_token','prostitute_evidence_case','assassin_concealed_toolset','assassin_sealed_pass','assassin_disguise_kit','assassin_evidence_case'] as const;
 
@@ -30,6 +32,11 @@ export type Condition =
   | {kind:'calendarElapsedDays';op:CompareOp;value:number}
   | {kind:'housingTier';value:typeof targetHousing[number]}
   | {kind:'schoolCounter';track:string;counter:string;op:CompareOp;value:number}
+  | {kind:'schoolPaidLessons';op:CompareOp;value:number}
+  | {kind:'lust';op:CompareOp;value:number}
+  | {kind:'secretDebtStatus';value:SecretDebtStatus}
+  | {kind:'secretDebtShifts';op:CompareOp;value:number}
+  | {kind:'secretDebtLenderEligible'}
   | {kind:'careerStage';career:string;stage:string}
   | {kind:'careerShifts';career:string;op:CompareOp;value:number}
   | {kind:'careerCounter';career:string;counter:string;op:CompareOp;value:number}
@@ -79,6 +86,11 @@ export const conditionSchema: z.ZodType<Condition> = z.lazy(()=>z.union([
   z.object({kind:z.literal('calendarElapsedDays'),op:compareOp,value:n.max(159)}).strict(),
   z.object({kind:z.literal('housingTier'),value:z.enum(targetHousing)}).strict(),
   z.object({kind:z.literal('schoolCounter'),track:id,counter:id,op:compareOp,value:n}).strict(),
+  z.object({kind:z.literal('schoolPaidLessons'),op:compareOp,value:n}).strict(),
+  z.object({kind:z.literal('lust'),op:compareOp,value:n.max(100)}).strict(),
+  z.object({kind:z.literal('secretDebtStatus'),value:z.enum(secretDebtStatuses)}).strict(),
+  z.object({kind:z.literal('secretDebtShifts'),op:compareOp,value:n}).strict(),
+  z.object({kind:z.literal('secretDebtLenderEligible')}).strict(),
   z.object({kind:z.literal('careerStage'),career:id,stage:id}).strict(),
   z.object({kind:z.literal('careerShifts'),career:id,op:compareOp,value:n}).strict(),
   z.object({kind:z.literal('careerCounter'),career:id,counter:id,op:compareOp,value:n}).strict(),
@@ -139,6 +151,8 @@ export const effectSchema = z.discriminatedUnion('kind',[
 
   z.object({kind:z.literal('addWorldFact'),fact:id}).strict(),
   z.object({kind:z.literal('removeWorldFact'),fact:id}).strict(),
+  z.object({kind:z.literal('secretDebtAccept')}).strict(),
+  z.object({kind:z.literal('secretDebtRefuse')}).strict(),
   z.object({
     kind:z.literal('addNextDayModifier'),
     energyDelta:z.number().int().min(-10).max(10).default(0),
@@ -178,6 +192,9 @@ const capabilityReads=z.object({
   calendar:z.boolean().optional(),
   housing:z.boolean().optional(),
   schoolTracks:z.array(id).optional(),
+  schoolPaidLessons:z.boolean().optional(),
+  lust:z.boolean().optional(),
+  secretDebt:z.boolean().optional(),
   careers:z.array(id).optional(),
   quests:z.array(id).optional(),
   relationships:z.array(id).optional(),
@@ -195,7 +212,8 @@ const capabilityWrites=z.object({
   quests:z.array(id).optional(),
   relationships:z.array(id).optional(),
   worldFacts:z.array(id).optional(),
-  nextDay:z.boolean().optional()
+  nextDay:z.boolean().optional(),
+  secretDebt:z.boolean().optional()
 }).strict();
 const capabilitiesSchema=z.object({reads:capabilityReads,writes:capabilityWrites}).strict();
 
@@ -472,6 +490,30 @@ export const dayStateSchema=z.object({
 export const resourceStateSchema=z.object({money:n,inventory:inventoryRecord}).strict();
 export const housingStateSchema=z.object({current:z.enum(targetHousing),paidForCurrentNight:z.boolean()}).strict();
 
+export const secretDebtStateSchema=z.object({
+  status:z.enum(secretDebtStatuses),
+  acceptedDay:z.number().int().min(0).max(169).nullable(),
+  trapDay:z.number().int().min(0).max(169).nullable(),
+  boundDay:z.number().int().min(0).max(159).nullable(),
+  resolvedDay:z.number().int().min(0).max(159).nullable(),
+  debt:n,
+  hiddenShifts:n,
+  grantApplied:z.boolean(),
+  lastLenderAttemptDay:z.number().int().min(0).max(159).nullable()
+}).strict();
+export type SecretDebtState=z.infer<typeof secretDebtStateSchema>;
+const defaultSecretDebtState:SecretDebtState={
+  status:'unseen',
+  acceptedDay:null,
+  trapDay:null,
+  boundDay:null,
+  resolvedDay:null,
+  debt:0,
+  hiddenShifts:0,
+  grantApplied:false,
+  lastLenderAttemptDay:null
+};
+
 const careerState=z.object({stage:id,shifts:n,counters:z.record(z.string(),n),choices:z.record(z.string(),z.string()),facts:z.array(id)}).strict();
 const questState=z.object({stage:id,counters:z.record(z.string(),n),choices:z.record(z.string(),z.string()),facts:z.array(id)}).strict();
 const relationshipState=z.object({stage:id,counters:z.record(z.string(),n),choices:z.record(z.string(),z.string()),facts:z.array(id)}).strict();
@@ -572,6 +614,7 @@ export const runSchema=z.object({
   resources:resourceStateSchema,
   dayState:dayStateSchema,
   housingState:housingStateSchema,
+  secretDebt:secretDebtStateSchema.default(defaultSecretDebtState),
   progression:progressionStateSchema,
   endings:endingStateSchema,
   flow:flowStateSchema,
