@@ -228,3 +228,45 @@ test('parse rejects run-local Strong Meta counters without their resolved reward
   );
 });
 
+test('Work Rhythm bonus day survives save/reload with Energy 4 and resets on a later non-bonus day',()=>{
+  let state=owned(STRONG_META_IDS.workRhythm);
+  state=setPreferredStrongMetaKeystone(state,STRONG_META_IDS.workRhythm);
+  let s=freshSave({strongMeta:state});
+  s=allocateTen(s);
+  s=dispatch(s,{type:'finishCreation'},catalog);
+  s=act(s,'arrival');
+  s=act(s,'lumber.shift');
+
+  s=dispatch(s,{type:'sleep',payment:'money'},catalog);
+  assert.equal(s.run.day,1);
+  assert.equal(s.run.metrics.energy,4);
+  assert.equal(s.run.strongMetaRuntime.workRhythmAppliedDay,1);
+
+  s=parseSave(JSON.stringify(s),catalog);
+  assert.equal(s.run.metrics.energy,4);
+  assert.equal(s.run.strongMetaRuntime.workRhythmAppliedDay,1);
+
+  s=dispatch(s,{type:'sleep',payment:'money'},catalog);
+  assert.equal(s.run.day,2);
+  assert.equal(s.run.metrics.energy,3);
+  assert.equal(s.run.strongMetaRuntime.workRhythmAppliedDay,null);
+});
+
+test('queued Secret Debt-style next-day -1 applies after Work Rhythm and remains a relative loss',()=>{
+  let state=owned(STRONG_META_IDS.workRhythm);
+  state=setPreferredStrongMetaKeystone(state,STRONG_META_IDS.workRhythm);
+  let s=freshSave({strongMeta:state});
+  s=allocateTen(s);
+  s=dispatch(s,{type:'finishCreation'},catalog);
+  s=act(s,'arrival');
+  s=act(s,'lumber.shift');
+
+  s.run.dayState.nextDayModifiers.energyDelta=-1;
+  s.run.dayState.nextDayModifiers.tags=['secret-debt.next-day-energy'];
+  s=dispatch(s,{type:'sleep',payment:'money'},catalog);
+
+  assert.equal(s.run.day,1);
+  assert.equal(s.run.strongMetaRuntime.workRhythmAppliedDay,1);
+  assert.equal(s.run.metrics.energy,3);
+});
+
