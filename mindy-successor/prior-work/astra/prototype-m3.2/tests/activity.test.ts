@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {loadCatalog} from '../src/core/content.ts';
 import {dispatch,freshSave,parseSave} from '../src/core/engine.ts';
+import {emptyResolvedStrongMetaSnapshot} from '../src/core/strongMeta.ts';
 import type {Catalog,Effect,Save} from '../src/core/schema.ts';
 
 function workAction(){
@@ -81,6 +82,7 @@ function catalog():Catalog{return loadCatalog(definitions(),[returnPack()]);}
 function start():Save{
   const s=freshSave();
   s.run.creation={remaining:0,allocated:{},activeHardWorkPackages:[],hardWorkPackagesApplied:true,complete:true};
+  s.run.strongMetaSnapshot=emptyResolvedStrongMetaSnapshot();
   s.run.flags['story.arrived']=true;
   return s;
 }

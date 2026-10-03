@@ -4,6 +4,7 @@ import {readFileSync,readdirSync} from 'node:fs';
 
 import {loadCatalog} from '../src/core/content.ts';
 import {dispatch,eligible,freshSave,parseSave} from '../src/core/engine.ts';
+import {emptyResolvedStrongMetaSnapshot} from '../src/core/strongMeta.ts';
 import type {Catalog,Save} from '../src/core/schema.ts';
 
 const definitions=JSON.parse(readFileSync('content/definitions.json','utf8'));
@@ -27,6 +28,7 @@ function manifestPackIds(){
 function ready(day=0):Save{
   const s=freshSave();
   s.run.creation={remaining:0,allocated:{},activeHardWorkPackages:[],hardWorkPackagesApplied:true,complete:true};
+  s.run.strongMetaSnapshot=emptyResolvedStrongMetaSnapshot();
   s.run.flags['story.arrived']=true;
   s.run.calendar.elapsedDays=day;
   s.run.dayState.energyCurrent=3;

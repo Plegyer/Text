@@ -12,6 +12,7 @@ import {
   armWorkRhythmForNextDay,
   canonicalStrongMetaState,
   emptyResolvedStrongMetaSnapshot,
+  emptyStrongMetaState,
   emptyStrongMetaRuntime,
   grantStrongMetaReward,
   resolveStrongMetaSnapshot,
