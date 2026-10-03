@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "d40.tranche-b.meta-consumers",
+  "id": "d40.meta",
   "reads": [],
   "writes": [],
   "capabilities": {

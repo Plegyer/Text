@@ -49,7 +49,7 @@ test('Prostitute production preserves exact shipped ordinary-work and Hard Work 
   }]);
   assert.deepEqual(
     definitions.endings.filter((e:any)=>e.id.startsWith('ending.prostitute.')).map((e:any)=>e.id),
-    ['ending.prostitute.hard-work']
+    ['ending.prostitute.hard-work','ending.prostitute.independent-house','ending.prostitute.elite-clientele','ending.prostitute.network-protection']
   );
 });
 
