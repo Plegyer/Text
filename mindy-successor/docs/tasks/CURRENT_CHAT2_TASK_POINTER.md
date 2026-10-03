@@ -5,6 +5,36 @@ Owner: Chat 2 / sole full-CI integration lane
 
 ## Priority A — Palace D23 consumer
 
+### #1133 diagnosis — TEST-ONLY REPAIR REQUIRED
+
+Focused workflow #1133 completed FAILURE on QA head:
+`0ea782b4439167350add1ec6cef798d6d92aa124`.
+
+The only failure class:
+- 12 × TypeScript `TS7006` implicit-any errors in
+  `tests/palace-d23-consumer-integration-v8.test.ts`,
+  around lines 187–219;
+- affected callback parameters: `event`, `condition`, `variant`, `choice`, `effect`.
+
+Everything else passed:
+- validate: 82 packs / 329 events / 39 actions / 22 endings;
+- build PASS;
+- Palace consumer: 12/12;
+- shared D21-D24: 35/35;
+- creation/migration: 16/16;
+- New Start+ UI: 43/43;
+- School D20: 21/21;
+- seasonal + Assassin + Prostitute: 51/51.
+
+Therefore:
+1. repair **only test typing/helpers**;
+2. no production/content/runtime semantic changes;
+3. run typecheck locally/focused first;
+4. after local green, push one new QA head;
+5. allow one focused rerun;
+6. no rerun unchanged head.
+
+
 Current focused QA PR:
 #268 `Chat 2 QA: focused Palace D23 consumer integration`
 
