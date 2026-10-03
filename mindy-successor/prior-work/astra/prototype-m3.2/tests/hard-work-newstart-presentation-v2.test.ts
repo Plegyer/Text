@@ -105,7 +105,7 @@ test('RU/EN Palace help explicitly requires all ten earned and all ten active in
     assert.match(summary.palaceProgress,/10\/10/);
   }
   assert.match(hardWorkNewStartCopy('en').palaceRequirement,/all 10.*earned.*all 10.*active/i);
-  assert.match(hardWorkNewStartCopy('ru').palaceRequirement,/все 10.*заработаны.*все 10/i);
+  assert.match(hardWorkNewStartCopy('ru').palaceRequirement,/заработаны все 10.*активны все 10/i);
 });
 
 test('cap-200 wording describes a higher maximum and explicitly rejects value multiplication',()=>{
