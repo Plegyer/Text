@@ -1,0 +1,255 @@
+{
+  "schemaVersion": 1,
+  "id": "palace.outcome-finalize",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "careers": [
+        "palace"
+      ],
+      "worldFacts": [
+        "palace.access-granted",
+        "palace.progression-complete",
+        "palace.prep.service-life",
+        "palace.prep.court-power",
+        "palace.prep.inner-truth",
+        "palace.outcome.service-life-ready",
+        "palace.outcome.court-power-ready",
+        "palace.outcome.inner-truth-ready"
+      ]
+    },
+    "writes": {
+      "worldFacts": [
+        "palace.outcome.service-life-ready",
+        "palace.outcome.court-power-ready",
+        "palace.outcome.inner-truth-ready"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "palace.outcome-finalize.service-life",
+      "title": "Palace — Service Life ready",
+      "sourceDomain": "palace",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "worldFactAdded",
+          "fact": "palace.progression-complete"
+        },
+        {
+          "kind": "worldFactAdded",
+          "fact": "palace.prep.service-life"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 100,
+      "blocking": true,
+      "delivery": {
+        "policy": "latched"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "palace.access-granted",
+          "present": true
+        },
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "outcome-ready"
+        },
+        {
+          "kind": "worldFact",
+          "fact": "palace.progression-complete",
+          "present": true
+        },
+        {
+          "kind": "worldFact",
+          "fact": "palace.prep.service-life",
+          "present": true
+        },
+        {
+          "kind": "worldFact",
+          "fact": "palace.outcome.service-life-ready",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The Service Life preparation can now be finalized. This makes the ending eligible but does not commit it.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "finalize",
+          "label": "Finalize this outcome",
+          "text": "This outcome becomes eligible. No ending is committed until the player explicitly chooses it.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "palace.outcome.service-life-ready"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "palace.outcome-finalize.court-power",
+      "title": "Palace — Court Power ready",
+      "sourceDomain": "palace",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "worldFactAdded",
+          "fact": "palace.progression-complete"
+        },
+        {
+          "kind": "worldFactAdded",
+          "fact": "palace.prep.court-power"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 100,
+      "blocking": true,
+      "delivery": {
+        "policy": "latched"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "palace.access-granted",
+          "present": true
+        },
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "outcome-ready"
+        },
+        {
+          "kind": "worldFact",
+          "fact": "palace.progression-complete",
+          "present": true
+        },
+        {
+          "kind": "worldFact",
+          "fact": "palace.prep.court-power",
+          "present": true
+        },
+        {
+          "kind": "worldFact",
+          "fact": "palace.outcome.court-power-ready",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The Court Power preparation can now be finalized. Professional relationships may add context, but none is required.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "finalize",
+          "label": "Finalize this outcome",
+          "text": "This outcome becomes eligible. No ending is committed until the player explicitly chooses it.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "palace.outcome.court-power-ready"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "palace.outcome-finalize.inner-truth",
+      "title": "Palace — Inner Truth ready",
+      "sourceDomain": "palace",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "worldFactAdded",
+          "fact": "palace.progression-complete"
+        },
+        {
+          "kind": "worldFactAdded",
+          "fact": "palace.prep.inner-truth"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 100,
+      "blocking": true,
+      "delivery": {
+        "policy": "latched"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "palace.access-granted",
+          "present": true
+        },
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "outcome-ready"
+        },
+        {
+          "kind": "worldFact",
+          "fact": "palace.progression-complete",
+          "present": true
+        },
+        {
+          "kind": "worldFact",
+          "fact": "palace.prep.inner-truth",
+          "present": true
+        },
+        {
+          "kind": "worldFact",
+          "fact": "palace.outcome.inner-truth-ready",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The Inner Truth preparation can now be finalized without asserting a final answer to the larger mystery.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "finalize",
+          "label": "Finalize this outcome",
+          "text": "This outcome becomes eligible. No ending is committed until the player explicitly chooses it.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "palace.outcome.inner-truth-ready"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
