@@ -1,4 +1,4 @@
-import {readFileSync,readdirSync,statSync} from 'node:fs';
+import {readFileSync,readdirSync} from 'node:fs';
 import {resolve} from 'node:path';
 import {fileURLToPath,pathToFileURL} from 'node:url';
 import {
@@ -158,17 +158,6 @@ function freezeMovement(value:MutableMovement):MovementSummary {
   };
 }
 
-function walkJsonFiles(root:string):string[] {
-  const out:string[]=[];
-  for(const name of readdirSync(root)){
-    const path=resolve(root,name);
-    const info=statSync(path);
-    if(info.isDirectory())out.push(...walkJsonFiles(path));
-    else if(info.isFile()&&name.endsWith('.json'))out.push(path);
-  }
-  return out.sort();
-}
-
 export function loadLiveProgressionSource():ProgressionLiveSource {
   const scriptDir=resolve(fileURLToPath(new URL('.',import.meta.url)));
   const root=resolve(scriptDir,'..');
@@ -176,8 +165,9 @@ export function loadLiveProgressionSource():ProgressionLiveSource {
   const packsRoot=resolve(root,'content','packs');
 
   const definitions=definitionsSchema.parse(JSON.parse(readFileSync(definitionsPath,'utf8')));
-  const packs=walkJsonFiles(packsRoot).map(path=>
-    packSchema.parse(JSON.parse(readFileSync(path,'utf8')))
+  const packFiles=readdirSync(packsRoot).filter(name=>name.endsWith('.json')).sort();
+  const packs=packFiles.map(name=>
+    packSchema.parse(JSON.parse(readFileSync(resolve(packsRoot,name),'utf8')))
   );
   const events=packs.flatMap(pack=>pack.events);
   const baseDailyEnergy=freshSave().run.dayState.energyCurrent;
@@ -543,7 +533,7 @@ export function runProgressionBalanceHarness(
     throw new Error(`Unknown shift policy: ${input.shiftPolicy}`);
   }
   if(input.cap!==100&&input.cap!==200)throw new Error('Analysis cap must be 100 or 200.');
-  if(!Number.isInteger(input.days)||input.days!<1||input.days!>160){
+  if(!Number.isInteger(input.days)||input.days<1||input.days>160){
     throw new Error('Analysis days must be an integer from 1 to 160.');
   }
   if(
