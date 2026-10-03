@@ -170,6 +170,22 @@ At least one original ending reward disables rent entirely and also disables a r
 
 Design lesson: world-rule Meta can have consequences far beyond raw balance. In the successor, strong modifiers should be opt-in, clearly described at New Start+, and tested for route interactions. Avoid silently activating a permanent reward that removes or bypasses authored content the player may want to see.
 
+
+### 26. Career ending opportunity and ending commitment are separate states
+Direct bytecode recovery of the original Prostitute 50-shift route confirms a clean separation:
+- a work counter unlocks the special ending opportunity;
+- a dedicated scene asks the player explicitly whether to accept it;
+- only the affirmative action writes the actual ending selection.
+
+Design lesson: eligibility should be non-terminal. A player reaching a milestone should receive an explicit choice rather than have the run/career silently end. The successor already locks this principle independently.
+
+The original Prostitute scene also marks that particular opportunity consumed even if the player says no. That one-shot refusal behavior is historical reference only; the successor should use its own Product rule for whether an ending action remains available after deferral/refusal.
+
+### 27. Complex career routes mix counters, stats and prior choices
+The same recovered Prostitute router uses multiple kinds of prerequisites: a 15-shift milestone, a persistent sexuality-adjacent stat threshold, a later Strength+Durability threshold, and prior scene/route flags before the 50-shift ending opportunity.
+
+Design lesson: complex career outcomes are more interesting when they combine career experience with character build and authored choices. They need not be reducible to a single global score or only the final shift count.
+
 ## Successor implications to test, not auto-lock
 
 - Current approved successor seasonal-tradeoff candidate yields **+1.5 net progression-stat points per ordinary shift on average for all ten careers**. That is roughly +75 summed stat points across 50 shifts, versus about +25 in the recovered original work model. This is a balance-test flag, not a command to copy the original: verify progression speed and cap timing over a full 160-day run, especially with School and NG+.
