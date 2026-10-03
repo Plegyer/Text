@@ -438,9 +438,13 @@ export function applyWorkRhythmAtStartDay(input:Readonly<{
   day:number;
 }>):Readonly<{runtime:StrongMetaRuntime;energyBonus:number}>{
   const runtime=structuredClone(input.runtime);
-  runtime.workRhythmAppliedDay=null;
   const reward=resolvedReward(input.snapshot,STRONG_META_IDS.workRhythm);
-  if(!reward||reward.effect.kind!=='work-rhythm')return {runtime,energyBonus:0};
+  if(!reward||reward.effect.kind!=='work-rhythm'){
+    runtime.workRhythmAppliedDay=null;
+    return {runtime,energyBonus:0};
+  }
+  if(runtime.workRhythmAppliedDay===input.day)return {runtime,energyBonus:reward.effect.energyDelta};
+  runtime.workRhythmAppliedDay=null;
   if(runtime.workRhythmArmedForDay!==input.day)return {runtime,energyBonus:0};
   runtime.workRhythmArmedForDay=null;
   if(runtime.workRhythmBonusDaysTriggered>=reward.effect.maxBonusDays)return {runtime,energyBonus:0};
