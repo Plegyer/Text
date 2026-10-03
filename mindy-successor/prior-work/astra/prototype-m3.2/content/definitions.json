@@ -12784,7 +12784,7 @@
             "from": "inside",
             "to": "compromised",
             "outcome": "failure",
-            "suspicionDelta": 20,
+            "suspicionDelta": 80,
             "minSuspicion": 26
           }
         },
