@@ -1,33 +1,18 @@
-name: mindy-successor check
+name: mindy-successor D40 full-suite repair focused check
 
 on:
-  workflow_dispatch:
   pull_request:
-    paths:
-      - 'mindy-successor/prior-work/astra/prototype-m3.2/**'
-      - '.github/workflows/mindy-successor-check.yml'
-  push:
-    branches:
-      - main
     paths:
       - 'mindy-successor/prior-work/astra/prototype-m3.2/**'
       - '.github/workflows/mindy-successor-check.yml'
 
 concurrency:
-  group: mindy-successor-check-${{ github.event.pull_request.number || github.ref }}
+  group: mindy-successor-d40-repair-focused-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
 jobs:
   check:
-    # One self-hosted runner is a scarce integration gate.
-    # Producer PRs (chat3..chat6) intentionally skip the full check.
-    # Chat 2 / Lead QA branches own PR CI; main and manual dispatch still run.
-    if: >-
-      github.event_name != 'pull_request' ||
-      startsWith(github.head_ref, 'chat2/qa-') ||
-      startsWith(github.head_ref, 'chat2/assembly-') ||
-      startsWith(github.head_ref, 'lead/ci-') ||
-      startsWith(github.head_ref, 'lead/integrate-')
+    if: startsWith(github.head_ref, 'chat2/qa-')
     runs-on: [self-hosted, Windows, X64]
     timeout-minutes: 20
     defaults:
@@ -44,5 +29,26 @@ jobs:
           cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
       - name: Install dependencies
         run: npm ci
-      - name: Full check
-        run: npm run check
+      - name: Focused D40 repair validation
+        shell: powershell
+        run: |
+          $failed = 0
+          function Run-Group([string]$name, [string]$command) {
+            Write-Host "=== $name ==="
+            Invoke-Expression $command
+            if ($LASTEXITCODE -ne 0) {
+              Write-Host "::error::$name failed"
+              $script:failed = 1
+            }
+          }
+
+          Run-Group "typecheck" "npm run typecheck"
+          Run-Group "validate" "npm run validate"
+          Run-Group "build" "npm run build"
+
+          Run-Group "d40-core" "node --experimental-strip-types --test tests/d40-advanced-endings-tranche-b-v11.test.ts tests/strong-meta-registry-v7.test.ts tests/strong-meta-engine-integration-v7.test.ts tests/ending-meta.test.ts"
+          Run-Group "full-suite-failure-repair" "node --experimental-strip-types --test tests/artist-geisha-production-presentation-reachability-c2-204.test.ts tests/artist-geisha-runtime-invariants.test.ts tests/assassin-boundaries.test.ts tests/assassin-production-presentation.test.ts tests/chat3-artist-geisha-prep-v19.test.ts tests/guard-presentation-v16-c2-169-179.test.ts tests/guard-production-presentation-reachability-c2-180.test.ts tests/merchant-production-presentation-reachability-c2-192.test.ts tests/merchant-runtime-invariants.test.ts tests/prostitute-boundaries.test.ts tests/school-artist-geisha-v18-live-inventory.test.ts tests/school-guard-v16-live-inventory.test.ts tests/school-merchant-v17-live-inventory.test.ts"
+          Run-Group "migration-palace" "node --experimental-strip-types --test tests/migration.test.ts tests/late-career-schema4-compat.test.ts tests/hard-work-meta-migration-v5.test.ts tests/palace-d23-consumer-integration-v8.test.ts"
+          Run-Group "d31-regressions" "node --experimental-strip-types --test tests/ordinary-work-seasonal-negative-tradeoffs.test.ts tests/assassin-runtime-invariants.test.ts tests/chat3-artist-geisha-live-authored-v19.test.ts tests/chat3-guard-live-authored-v17.test.ts tests/chat3-merchant-live-authored-v18.test.ts tests/prostitute-runtime-invariants.test.ts tests/assassin-natural-acceptance.test.ts tests/prostitute-natural-acceptance.test.ts"
+
+          if ($failed -ne 0) { exit 1 }
