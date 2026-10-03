@@ -416,8 +416,18 @@ test('D39 reward ownership remains an explicit external seam rather than a dupli
   for(const endingId of Object.keys(palaceRewardIntegrationSeams)){
     const ending=catalog.definitions.endings.find(item=>item.id===endingId);
     assert.ok(ending,endingId);
+    assert.equal(ending.reward,palaceRewardIntegrationSeams[endingId as keyof typeof palaceRewardIntegrationSeams].rewardId,endingId);
     assert.deepEqual(ending.metaRewards,[],endingId);
   }
+});
+
+test('Palace remains outside ordinary Hard Work and no hardWork:palace is introduced',()=>{
+  assert.equal((ordinaryHardWorkCareers as readonly string[]).includes('palace'),false);
+  const serialized=JSON.stringify({
+    endings:catalog.definitions.endings.filter(ending=>ending.id.startsWith('ending.palace.')),
+    palace:catalog.definitions.careers.find(career=>career.id==='palace')
+  }).toLowerCase();
+  assert.equal(serialized.includes('hardwork:palace'),false);
 });
 
 test('all Palace v15 action/event/ending localization keys have RU and EN',()=>{
