@@ -1155,6 +1155,8 @@ export type Command=
   |{type:'accept';id:string}
   |{type:'newLife'}
   |{type:'restart'}
+  |{type:'setStrongMetaKeystone';id:string|null}
+  |{type:'setStrongMetaSpecialist';id:string;active:boolean}
   |{type:'setHardWorkPackageActive';career:OrdinaryHardWorkCareer;active:boolean}
   |{type:'allocate';stat:Stat;delta:1|-1}
   |{type:'finishCreation'}
@@ -1176,6 +1178,18 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
     if(s.run.status==='ending_committed')throw new Error('Сначала завершите выбранную судьбу.');
     const meta=defaultMeta(s.meta);meta.runsStarted++;return freshSave(meta);
   }
+  if(command.type==='setStrongMetaKeystone'){
+    const creation=s.run.creation;
+    if(creation.complete||s.run.status!=='active'||s.run.pending)throw new Error('Выбор Strong Meta для этой жизни уже закрыт.');
+    s.meta.strongMeta=setPreferredStrongMetaKeystone(s.meta.strongMeta,command.id);
+    return s;
+  }
+  if(command.type==='setStrongMetaSpecialist'){
+    const creation=s.run.creation;
+    if(creation.complete||s.run.status!=='active'||s.run.pending)throw new Error('Выбор Strong Meta для этой жизни уже закрыт.');
+    s.meta.strongMeta=setPreferredStrongMetaSpecialist(s.meta.strongMeta,command.id,command.active);
+    return s;
+  }
   if(command.type==='setHardWorkPackageActive'){
     const creation=s.run.creation;
     if(creation.complete||creation.hardWorkPackagesApplied||s.run.status!=='active'||s.run.pending)throw new Error('Выбор наследия для этой жизни уже закрыт.');
@@ -1195,6 +1209,10 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
   }
   if(command.type==='finishCreation'){
     if(s.run.creation.complete||s.run.creation.remaining!==0)throw new Error('Распределите все 10 очков.');
+    const strongSnapshot=resolveStrongMetaSnapshot(s.meta.strongMeta);
+    s.run.strongMetaSnapshot=strongSnapshot;
+    s.run.character.progressionStatCap=strongMetaProgressionStatCap(strongSnapshot,s.run.character.progressionStatCap);
+    applyStrongMetaStartDayMutable(s,false);
     const application=applyHardWorkPackagesAtCreation({
       definitions:hardWorkPackageDefinitions,
       earnedHardWork:s.meta.hardWorkProgress,
