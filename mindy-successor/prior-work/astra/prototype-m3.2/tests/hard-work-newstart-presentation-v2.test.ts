@@ -123,11 +123,13 @@ test('cap-200 wording describes a higher maximum and explicitly rejects value mu
   }).capText;
 
   assert.match(en,/maximum.*becomes 200 instead of 100/i);
-  assert.match(en,/not doubled/i);
+  assert.match(en,/changes only the maximum/i);
+  assert.match(en,/values stay unchanged/i);
   assert.doesNotMatch(en,/stats are doubled/i);
 
   assert.match(ru,/максимум.*становится 200 вместо 100/i);
-  assert.match(ru,/не удваиваются/i);
+  assert.match(ru,/меняется только максимум/i);
+  assert.match(ru,/значения остаются прежними/i);
 });
 
 test('all ten packages have non-empty bilingual titles and accessible selected/unselected labels',()=>{
