@@ -136,6 +136,7 @@ test('clean Tavern run reaches Year-2 unlock, cross-system routes, overlapping e
   s=settlePending(s);
   assert.equal(s.run.resources.inventory.rope_kit,1);
 
+  for(let day=0;day<3;day++)s=finishNight(s);
   while(
     !['summer','autumn'].includes(calendar(s.run.day).season)
     || s.run.dayState.energyCurrent<2

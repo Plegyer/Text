@@ -119,7 +119,7 @@ test('clean Undead Farm run exercises seasons, resources, relationship/Night, Sc
   s=settlePending(s);
   assert.equal(s.run.resources.inventory.rope_kit,1);
 
-  while(calendar(s.run.day).season!=='winter')s=finishNight(s,'lodging.cheap');
+  while(calendar(s.run.day).season!=='winter')s=finishNight(s);
   assert.ok(s.run.dayState.energyCurrent>=2);
   s=dispatch(s,{type:'enterActivity',id:'lumber.forest'},catalog);
   s=dispatch(s,{type:'activityAction',id:'forest.route.logging-road'},catalog);
