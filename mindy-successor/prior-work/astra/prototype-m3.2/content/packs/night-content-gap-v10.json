@@ -1,0 +1,549 @@
+{
+  "schemaVersion": 1,
+  "id": "night-content-gap-v10",
+  "reads": [],
+  "writes": [],
+  "media": [],
+  "events": [
+    {
+      "id": "lumber.night.foreman-social",
+      "title": "A conversation beyond the shift",
+      "sourceDomain": "lumber.foreman",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "lumber.night.foreman-social"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 68,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "nightPolicy": {
+        "intercept": "after_choice",
+        "suppressLodgingPayment": false,
+        "suppressVoluntaryMenu": true,
+        "consumesNight": true
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Choose time together that is personal rather than another work debrief. The route stays optional and does not imply romance.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "End the conversation on your own terms.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "hunter.night.field-debrief",
+      "title": "Field notes after dark",
+      "sourceDomain": "hunter",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "hunter.night.field-debrief"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 68,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "nightPolicy": {
+        "intercept": "after_choice",
+        "suppressLodgingPayment": false,
+        "suppressVoluntaryMenu": true,
+        "consumesNight": true
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Sort tracks, observations, and tomorrow's field plan as professional work. No relationship route or ending readiness is granted.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Close the field notes.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "hunter.night.senior-guide",
+      "title": "Off-duty time with the Senior Guide",
+      "sourceDomain": "hunter.senior-guide",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "hunter.night.senior-guide"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 68,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "nightPolicy": {
+        "intercept": "after_choice",
+        "suppressLodgingPayment": false,
+        "suppressVoluntaryMenu": true,
+        "consumesNight": true
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Share optional personal time with the Senior Guide or companion. Friendship is sufficient and romance is never assumed.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "End the evening when you choose.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "guard.night.case-debrief",
+      "title": "A case debrief after duty",
+      "sourceDomain": "guard",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "guard.night.case-debrief"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 68,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "nightPolicy": {
+        "intercept": "after_choice",
+        "suppressLodgingPayment": false,
+        "suppressVoluntaryMenu": true,
+        "consumesNight": true
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Review testimony and prepare a professional report without manufacturing evidence, duty counters, or route readiness.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Finish the debrief.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "guard.night.partner",
+      "title": "Off-duty time with your Partner",
+      "sourceDomain": "guard.partner",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "guard.night.partner"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 68,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "nightPolicy": {
+        "intercept": "after_choice",
+        "suppressLodgingPayment": false,
+        "suppressVoluntaryMenu": true,
+        "consumesNight": true
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Spend optional personal time with the Guard partner, separate from case work. Existing refusal choices remain authoritative.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Call it a night.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "merchant.night.ledger-plan",
+      "title": "Ledger planning after the market closes",
+      "sourceDomain": "merchant",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "merchant.night.ledger-plan"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 68,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "nightPolicy": {
+        "intercept": "after_choice",
+        "suppressLodgingPayment": false,
+        "suppressVoluntaryMenu": true,
+        "consumesNight": true
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Reconcile records and plan suppliers as professional work without granting trade, delivery, or route-readiness progress.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Close the ledger.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "merchant.night.supplier",
+      "title": "Off-hours time with the Supplier",
+      "sourceDomain": "merchant.supplier",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "merchant.night.supplier"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 68,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "nightPolicy": {
+        "intercept": "after_choice",
+        "suppressLodgingPayment": false,
+        "suppressVoluntaryMenu": true,
+        "consumesNight": true
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Talk outside the ledger and delivery workflow. The contact can remain friendship or personal context without becoming a progression gate.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "End the conversation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "assassin.night.handler-contact",
+      "title": "Off-hours contact with the Handler",
+      "sourceDomain": "assassin.handler",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "assassin.night.handler-contact"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 68,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "nightPolicy": {
+        "intercept": "after_choice",
+        "suppressLodgingPayment": false,
+        "suppressVoluntaryMenu": true,
+        "consumesNight": true
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Meet to discuss boundaries, trust, or loyalty outside the covert-work notes. The scene creates no route evidence or mandatory relationship state.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Leave on your own terms.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "prostitute.night.personal-continuation",
+      "title": "A personal continuation by explicit choice",
+      "sourceDomain": "prostitute.recurring-client",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "prostitute.night.personal-continuation"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 68,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "nightPolicy": {
+        "intercept": "after_choice",
+        "suppressLodgingPayment": false,
+        "suppressVoluntaryMenu": true,
+        "consumesNight": true
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Continue only after friendship or romance was explicitly chosen earlier. The scene never treats confidence, Lust, Sexuality, or privacy as consent.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "End the personal evening.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "satyr-maid.night.recurring-guest-private",
+      "title": "A private-space conversation with the recurring guest",
+      "sourceDomain": "satyr-maid",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "satyr-maid.night.recurring-guest-private"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 68,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "nightPolicy": {
+        "intercept": "after_choice",
+        "suppressLodgingPayment": false,
+        "suppressVoluntaryMenu": true,
+        "consumesNight": true
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Use the privacy of normal lodging for a deeper voluntary conversation or boundary-setting. Privacy does not imply intimacy or romance.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "End the private conversation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "tavern.night.traveler-private",
+      "title": "A private-space conversation with the recurring traveler",
+      "sourceDomain": "tavern",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "tavern.night.traveler-private"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 68,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "nightPolicy": {
+        "intercept": "after_choice",
+        "suppressLodgingPayment": false,
+        "suppressVoluntaryMenu": true,
+        "consumesNight": true
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Talk privately about personal context or safety without silently resolving confidentiality, rumours, or any information route.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "End the private conversation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "prostitute.night.client-private",
+      "title": "A voluntary private-space continuation",
+      "sourceDomain": "prostitute",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "prostitute.night.client-private"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 68,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "nightPolicy": {
+        "intercept": "after_choice",
+        "suppressLodgingPayment": false,
+        "suppressVoluntaryMenu": true,
+        "consumesNight": true
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Choose a private setting without changing the relationship mode or importing Secret Debt semantics. Any intimacy or romance remains a separate explicit choice.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "End the private-space continuation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    }
+  ]
+}
