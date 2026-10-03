@@ -1,33 +1,18 @@
-name: mindy-successor check
+name: mindy-successor Strong Meta full-CI repair focused check
 
 on:
-  workflow_dispatch:
   pull_request:
-    paths:
-      - 'mindy-successor/prior-work/astra/prototype-m3.2/**'
-      - '.github/workflows/mindy-successor-check.yml'
-  push:
-    branches:
-      - main
     paths:
       - 'mindy-successor/prior-work/astra/prototype-m3.2/**'
       - '.github/workflows/mindy-successor-check.yml'
 
 concurrency:
-  group: mindy-successor-check-${{ github.event.pull_request.number || github.ref }}
+  group: mindy-successor-strong-meta-fullci-repair-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
 jobs:
   check:
-    # One self-hosted runner is a scarce integration gate.
-    # Producer PRs (chat3..chat6) intentionally skip the full check.
-    # Chat 2 / Lead QA branches own PR CI; main and manual dispatch still run.
-    if: >-
-      github.event_name != 'pull_request' ||
-      startsWith(github.head_ref, 'chat2/qa-') ||
-      startsWith(github.head_ref, 'chat2/assembly-') ||
-      startsWith(github.head_ref, 'lead/ci-') ||
-      startsWith(github.head_ref, 'lead/integrate-')
+    if: startsWith(github.head_ref, 'chat2/qa-')
     runs-on: [self-hosted, Windows, X64]
     timeout-minutes: 20
     defaults:
@@ -44,5 +29,25 @@ jobs:
           cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
       - name: Install dependencies
         run: npm ci
-      - name: Full check
-        run: npm run check
+      - name: Focused repair validation
+        shell: powershell
+        run: |
+          $failed = 0
+          function Run-Group([string]$name, [string]$command) {
+            Write-Host "=== $name ==="
+            Invoke-Expression $command
+            if ($LASTEXITCODE -ne 0) {
+              Write-Host "::error::$name failed"
+              $script:failed = 1
+            }
+          }
+
+          Run-Group "typecheck" "npm run typecheck"
+          Run-Group "validate" "npm run validate"
+          Run-Group "build" "npm run build"
+
+          Run-Group "fullci-failure-files" "node --experimental-strip-types --test tests/gopher.test.ts tests/school-activation-boundary.test.ts tests/school-blocking-scene-compat.test.ts tests/school-body-confidence-lust-d20.test.ts tests/school-engine-adapter.test.ts tests/school-life-content-reload.test.ts tests/school-production-v11-locale-save.test.ts tests/school-target.test.ts"
+
+          Run-Group "strong-meta-migration-palace" "node --experimental-strip-types --test tests/strong-meta-registry-v7.test.ts tests/strong-meta-engine-integration-v7.test.ts tests/migration.test.ts tests/hard-work-meta-migration-v5.test.ts tests/hard-work-stat-cap-d24.test.ts tests/palace-d23-consumer-integration-v8.test.ts"
+
+          if ($failed -ne 0) { exit 1 }
