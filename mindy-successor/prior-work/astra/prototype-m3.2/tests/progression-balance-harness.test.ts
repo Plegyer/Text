@@ -6,13 +6,14 @@ import {
   loadLiveProgressionSource,
   runProgressionBalanceHarness,
   strongestWorkStat,
-  type ResearchNegativeTargetOverride
+  type ResearchNegativeTargetOverride,
+  type StartingAllocationVariant
 } from '../scripts/progression-balance-harness.ts';
 import {ordinaryHardWorkCareers,seasons,stats,type OrdinaryHardWorkCareer,type Stat} from '../src/core/schema.ts';
 import {SCHOOL_COURSES} from '../src/core/school.ts';
 
-function oneAllocation(){
-  return [{id:'base',mode:'base'}] as const;
+function oneAllocation():StartingAllocationVariant[]{
+  return [{id:'base',mode:'base'}];
 }
 
 function liveAction(career:OrdinaryHardWorkCareer){
