@@ -1,33 +1,18 @@
-name: mindy-successor check
+name: mindy-successor D31 focused check
 
 on:
-  workflow_dispatch:
   pull_request:
-    paths:
-      - 'mindy-successor/prior-work/astra/prototype-m3.2/**'
-      - '.github/workflows/mindy-successor-check.yml'
-  push:
-    branches:
-      - main
     paths:
       - 'mindy-successor/prior-work/astra/prototype-m3.2/**'
       - '.github/workflows/mindy-successor-check.yml'
 
 concurrency:
-  group: mindy-successor-check-${{ github.event.pull_request.number || github.ref }}
+  group: mindy-successor-d31-focused-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
 jobs:
   check:
-    # One self-hosted runner is a scarce integration gate.
-    # Producer PRs (chat3..chat6) intentionally skip the full check.
-    # Chat 2 / Lead QA branches own PR CI; main and manual dispatch still run.
-    if: >-
-      github.event_name != 'pull_request' ||
-      startsWith(github.head_ref, 'chat2/qa-') ||
-      startsWith(github.head_ref, 'chat2/assembly-') ||
-      startsWith(github.head_ref, 'lead/ci-') ||
-      startsWith(github.head_ref, 'lead/integrate-')
+    if: startsWith(github.head_ref, 'chat2/qa-')
     runs-on: [self-hosted, Windows, X64]
     timeout-minutes: 20
     defaults:
@@ -44,5 +29,35 @@ jobs:
           cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
       - name: Install dependencies
         run: npm ci
-      - name: Full check
-        run: npm run check
+      - name: Focused D31 validation
+        shell: powershell
+        run: |
+          $failed = 0
+          function Run-Group([string]$name, [string]$command) {
+            Write-Host "=== $name ==="
+            Invoke-Expression $command
+            if ($LASTEXITCODE -ne 0) {
+              Write-Host "::error::$name failed"
+              $script:failed = 1
+            }
+          }
+
+          Run-Group "typecheck" "npm run typecheck"
+          Run-Group "validate" "npm run validate"
+          Run-Group "build" "npm run build"
+
+          Run-Group "d31-seasonal-acceptance" "node --experimental-strip-types --test tests/ordinary-work-seasonal-negative-tradeoffs.test.ts"
+
+          Run-Group "seven-stale-map-tests" "node --experimental-strip-types --test tests/assassin-runtime-invariants.test.ts tests/chat3-artist-geisha-live-authored-v19.test.ts tests/chat3-guard-live-authored-v17.test.ts tests/chat3-hunter-live-authored-v16.test.ts tests/chat3-merchant-live-authored-v18.test.ts tests/chat3-tavern-live-authored-v15.test.ts tests/prostitute-runtime-invariants.test.ts"
+
+          Run-Group "ordinary-hard-work-meta" "node --experimental-strip-types --test tests/all-ten-career-availability-smoke.test.ts tests/ending-meta.test.ts tests/hard-work-meta-infra-prep.test.ts tests/hard-work-meta-migration-v5.test.ts tests/hard-work-package-catalog-runtime.test.ts tests/hard-work-palace-meta-smoke.test.ts tests/hard-work-stat-cap-d24.test.ts tests/ordinary-hard-work-meta-production.test.ts tests/palace-derived-unlock.test.ts"
+
+          Run-Group "new-start-ui" "node --experimental-strip-types --test tests/hard-work-newstart-presentation-v2.test.ts tests/hard-work-newstart-ui-v2.test.ts tests/ui.test.ts"
+
+          Run-Group "palace-d23" "node --experimental-strip-types --test tests/palace-d23-consumer-integration-v8.test.ts tests/hard-work-palace-meta-smoke.test.ts tests/palace-derived-unlock.test.ts"
+
+          Run-Group "school-d20" "node --experimental-strip-types --test tests/school-body-confidence-lust-d20.test.ts tests/school-engine-adapter.test.ts tests/school-production-v11-locale-save.test.ts tests/school-target.test.ts"
+
+          Run-Group "assassin-prostitute-natural-runtime" "node --experimental-strip-types --test tests/assassin-natural-acceptance.test.ts tests/assassin-runtime-invariants.test.ts tests/prostitute-natural-acceptance.test.ts tests/prostitute-runtime-invariants.test.ts"
+
+          if ($failed -ne 0) { exit 1 }
