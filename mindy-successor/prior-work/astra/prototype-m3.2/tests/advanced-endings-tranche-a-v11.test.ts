@@ -337,6 +337,11 @@ test('D41 migration is idempotent, retires Tavern legacy and House Power +600, a
     'specialist.tavern.house-ledger',
     'specialist.tavern.safehouse-network'
   ]);
+  assert.deepEqual(
+    d41PendingSpecialistRewardIds([],['satyr-maid.house-credit']),
+    ['specialist.satyr-maid.house-ledger'],
+    'legacy House Credit ownership survives as a strong-Meta migration signal'
+  );
 });
 
 test('completed legacy Tavern saves migrate canonically; uncompleted eligibility is retired',()=>{
@@ -367,4 +372,36 @@ test('completed legacy Tavern saves migrate canonically; uncompleted eligibility
   const twice=parseSave(JSON.stringify(migrated),catalog);
   assert.deepEqual(twice.meta.completedEndings,migrated.meta.completedEndings);
   assert.deepEqual(twice.meta.unlocks,migrated.meta.unlocks);
+});
+
+
+test('automatic D41 knowledge rewards have executable bounded content consumers',()=>{
+  const byId=new Map(catalog.events.map(e=>[e.id,e]));
+  const anomaly=byId.get('undead-farm.activity.anomaly-catalog-diagnosis');
+  assert.ok(anomaly);
+  assert.equal(anomaly.maxShows,1);
+  assert.ok(anomaly.conditions.some(c=>c.kind==='metaUnlock'&&c.unlock==='knowledge.undead-farm.anomaly-catalog'));
+
+  for(let year=1;year<=4;year++){
+    const event=byId.get(`tavern.information.broker-index-y${year}`);
+    assert.ok(event,`broker index year ${year}`);
+    assert.equal(event.maxShows,1);
+    assert.ok(event.conditions.some(c=>c.kind==='calendarYear'&&c.op==='eq'&&c.value===year));
+    assert.ok(event.conditions.some(c=>c.kind==='metaUnlock'&&c.unlock==='knowledge.tavern.broker-index'));
+    assert.ok(event.choices.every(c=>c.effects.length===0),'broker hint advances no route');
+  }
+
+  const forest=byId.get('forest-result-content-v1.success');
+  const warden=forest?.choices.find(c=>c.id==='warden-conservation-route');
+  assert.ok(warden);
+  assert.ok(warden.conditions.some(c=>c.kind==='metaUnlock'&&c.unlock==='knowledge.hunter.warden-signs'));
+  assert.deepEqual(warden.effects,[{kind:'addWorldFact',fact:'reward.hunter.warden-signs.used'}]);
+
+  const legend=byId.get('hunter.routes.legend-contract-variant');
+  assert.ok(legend);
+  assert.equal(legend.maxShows,1);
+  assert.ok(legend.conditions.some(c=>c.kind==='metaUnlock'&&c.unlock==='knowledge.hunter.legend-contracts'));
+  assert.ok(legend.conditions.some(c=>c.kind==='itemCapability'&&c.capability==='preserve_specimen'&&c.present===true));
+  assert.equal(legend.choices.find(c=>c.id==='accept')?.effects.some(e=>e.kind==='addCareerFact'&&e.fact==='rare-contract-active'),true);
+  assert.equal(legend.choices.some(c=>c.effects.some(e=>e.kind==='addCareerFact'&&e.fact==='rare-contract-complete')),false);
 });

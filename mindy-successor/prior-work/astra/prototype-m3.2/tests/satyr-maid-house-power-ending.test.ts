@@ -44,17 +44,17 @@ test('House Power eligibility is complex and remains non-terminal until explicit
   assert.equal(s.run.endings.committed,null);
 });
 
-test('House Credit grants exactly +600 starting money after completion and does not stack',()=>{
+test('House Power leaves its exact Specialist reward to strong-Meta and retires broad +600 money',()=>{
   let s=qualified();
   s.run.endings.eligible=[endingId];
   s=dispatch(s,{type:'commitEnding',id:endingId},catalog);
   s=dispatch(s,{type:'completeEnding'},catalog);
 
-  assert.ok(s.meta.unlocks.includes('satyr-maid.house-credit'));
-  assert.deepEqual(s.run.endings.result?.appliedMetaRewardIds,['satyr-maid.house-credit']);
+  assert.equal(s.meta.unlocks.includes('satyr-maid.house-credit'),false);
+  assert.deepEqual(s.run.endings.result?.appliedMetaRewardIds,[]);
 
   s=dispatch(s,{type:'newLife'},catalog);
-  assert.equal(s.run.resources.money,1200);
+  assert.equal(s.run.resources.money,600);
 
   s=makeRunActive(s);
   s.run.endings.eligible=[endingId];
@@ -63,5 +63,5 @@ test('House Credit grants exactly +600 starting money after completion and does 
   assert.deepEqual(s.run.endings.result?.appliedMetaRewardIds,[]);
 
   s=dispatch(s,{type:'newLife'},catalog);
-  assert.equal(s.run.resources.money,1200,'House Credit remains a single +600 starting-money reward');
+  assert.equal(s.run.resources.money,600,'D41 retires the old broad House Credit starting-money reward');
 });

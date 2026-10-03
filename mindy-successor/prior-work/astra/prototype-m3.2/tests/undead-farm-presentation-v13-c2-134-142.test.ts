@@ -176,7 +176,7 @@ test('C2-140 crisis presentation covers three systemic families and defer withou
   assert.match(app,/undead-farm\.crisis\.supply-labor-containment/);
 });
 
-test('C2-141 three Undead Farm endings have distinct stable static presentation identities',()=>{
+test('C2-141 four current Undead Farm endings have distinct stable static presentation identities',()=>{
   const known=new Set(presentationSlots(catalog).map(slot=>slot.id));
   for(const endingId of UNDEAD_FARM_ENDING_IDS){
     const id=presentationIdForEnding(endingId);
@@ -194,7 +194,7 @@ test('C2-141 three Undead Farm endings have distinct stable static presentation 
     assert.ok(localization[caption]?.ru?.trim(),caption+' ru');
     assert.ok(localization[caption]?.en?.trim(),caption+' en');
   }
-  assert.equal(new Set(UNDEAD_FARM_ENDING_IDS.map(presentationIdForEnding)).size,3);
+  assert.equal(new Set(UNDEAD_FARM_ENDING_IDS.map(presentationIdForEnding)).size,4);
 });
 
 test('C2-142 every Undead Farm static/motion alt key has RU EN parity and caption parity',()=>{
