@@ -13,6 +13,12 @@ export const STRONG_META_IDS={
 } as const;
 
 export type ApprovedStrongRewardId=typeof STRONG_META_IDS[keyof typeof STRONG_META_IDS];
+export const approvedStrongRewardIdSchema=z.enum([
+  STRONG_META_IDS.palaceCap200,
+  STRONG_META_IDS.earnedReserveMatch,
+  STRONG_META_IDS.workRhythm,
+  STRONG_META_IDS.networkRetainer
+]);
 export type StrongRewardClass='keystone'|'specialist';
 export type StrongRewardLifecycle='active'|'retired';
 
