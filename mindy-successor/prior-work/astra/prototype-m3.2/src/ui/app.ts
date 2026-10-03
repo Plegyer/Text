@@ -539,14 +539,15 @@ function palaceWorkPanelHTML(){
  const routes=model.routes.map(route=>{
   const label=palaceRouteLabel(route.route);
   const routeState=palaceRouteStateLabel(route.state);
-  return `<li data-palace-route="${esc(route.route)}"><strong>${esc(label)}</strong>: <span data-palace-route-state="${esc(route.state)}">${esc(routeState)}</span></li>`;
+  return `<li data-palace-route="${esc(route.route)}" tabindex="0" aria-label="${esc(fmt(tr('ui.palace.routeAria','Маршрут {route}: {state}.'),{route:label,state:routeState}))}"><strong>${esc(label)}</strong>: <span data-palace-route-state="${esc(route.state)}">${esc(routeState)}</span></li>`;
  }).join('');
  const nextDuty=model.nextDutyId?actionList([model.nextDutyId]):'';
  const supportActions=model.availableSupportIds.length?actionList(model.availableSupportIds):'';
  const outcome=model.outcomeReady
   ?`<p class="palace-outcome-ready" role="status">${esc(tr('ui.palace.outcomeReady','Outcome Ready: структурная дворцовая прогрессия этой жизни завершена.'))}</p>`
   :'';
- return `<section class="career-progress palace-progress" data-palace-access="granted" data-palace-stage="${esc(model.stage)}">
+ const summaryAria=fmt(tr('ui.palace.summaryAria','Дворец: этап {stage}; структурные обязанности {count} из {total}.'),{stage,count:model.dutyCount,total:model.dutyTotal});
+ return `<section class="career-progress palace-progress" data-palace-access="granted" data-palace-stage="${esc(model.stage)}" tabindex="0" aria-label="${esc(summaryAria)}">
   <h3>${esc(tr('ui.palace.title','Дворец'))}</h3>
   <p class="palace-access"><strong>${esc(tr('ui.palace.accessLabel','Доступ'))}:</strong> ${esc(tr('ui.palace.accessGranted','открыт в этой жизни'))}</p>
   <p class="palace-stage"><strong>${esc(tr('ui.palace.stageLabel','Этап'))}:</strong> ${esc(stage)}</p>
@@ -582,7 +583,8 @@ function palaceEndingRewardHTML(endingId:PalaceEndingId){
  const note=automatic
   ?tr('ui.palace.reward.automaticNote','Награда выдаётся после завершения этой судьбы и в будущих жизнях наследуется автоматически как знание; слот loadout не требуется.')
   :tr('ui.palace.reward.specialistNote','Награда выдаётся после завершения этой судьбы. В будущей New Start+ жизни её выбор и активация остаются в интерфейсе Strong Meta; отдельного дворцового слота нет.');
- return `<div class="palace-future-reward" data-palace-reward-id="${esc(reward.rewardId)}">
+ const aria=fmt(tr('ui.palace.rewardAria','Награда будущих жизней: {name}; слой {layer}; идентификатор {id}.'),{name,layer,id:reward.rewardId});
+ return `<div class="palace-future-reward" data-palace-reward-id="${esc(reward.rewardId)}" tabindex="0" aria-label="${esc(aria)}">
   <p><strong>${esc(tr('ui.palace.futureRewardLabel','Награда будущих жизней'))}:</strong> ${esc(name)} · ${esc(layer)}</p>
   <p><code>${esc(reward.rewardId)}</code></p>
   <p>${esc(note)}</p>
