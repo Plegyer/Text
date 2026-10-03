@@ -47,7 +47,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "The Custodian does not begin with a duel. The Prince asks what the fifteen duties actually proved. The record supports a real Palace institution, a Concordance that joins evidence across roles, and a protected function that ordinary service alone did not explain.",
+          "text": "The Prince receives you as Custodian, not as a duelist. He asks for the record before he asks for your conclusion. Fifteen duties gave you authenticated work, linked cases, and the shape of the Concordance. They did not give you permission to turn every institutional claim into a fact.",
           "conditions": [],
           "media": []
         }
@@ -55,8 +55,8 @@
       "choices": [
         {
           "id": "separate-record-from-claim",
-          "label": "Separate the record from the Palace's claims",
-          "text": "You distinguish authenticated work and records from the conclusions the institution draws from them.",
+          "label": "Separate record from claim",
+          "text": "You lay out what the Palace records establish, then mark where Palace interpretation begins. The distinction holds.",
           "conditions": [],
           "effects": [
             {
@@ -74,8 +74,8 @@
         },
         {
           "id": "unsupported-conclusion",
-          "label": "Claim the records prove more than they do",
-          "text": "You overstate the evidence. The Prince ends this attempt; the record remains available for another try.",
+          "label": "Claim more than the record proves",
+          "text": "You close a gap in the evidence with certainty. The Prince points to the unsupported step and ends the attempt. The records remain yours to review.",
           "conditions": [],
           "effects": [
             {
@@ -94,7 +94,7 @@
         {
           "id": "not-yet",
           "label": "Not yet",
-          "text": "You stop before making a claim you are not ready to defend. Nothing is lost, and the confrontation can be started again.",
+          "text": "You withdraw before committing to an argument you cannot defend. Nothing is forfeited; you may return to the record and try again.",
           "conditions": [],
           "effects": [
             {
@@ -142,7 +142,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "The Prince states the Custodian doctrine plainly: because the Palace controls access to the Threshold Archive, only the Custodian can finally judge what the records mean. The institutional power is real. The leap from control to exclusive truth is the point you must examine.",
+          "text": "The Prince states the Custodian doctrine without ornament: because the Palace controls access to the Threshold Archive, the Custodian must retain the final word on what the Archive means. The first half is an institutional fact. The second is a claim about knowledge. Your task is to keep them separate.",
           "conditions": [],
           "media": []
         }
@@ -151,7 +151,7 @@
         {
           "id": "authority-is-not-proof",
           "label": "Authority is not proof",
-          "text": "You accept that the Custodian controls access while rejecting the claim that access control makes one interpretation uniquely true.",
+          "text": "You accept the Custodian's power over access and reject the leap from custody to exclusive truth. An office can control a door without owning every valid conclusion beyond it.",
           "conditions": [],
           "effects": [
             {
@@ -170,7 +170,7 @@
         {
           "id": "accept-exclusive-veto",
           "label": "Treat custody as proof",
-          "text": "You let institutional control stand in for evidence. The attempt ends without changing the Prince's mandate.",
+          "text": "You let institutional control substitute for evidence. The contradiction remains unanswered, and the Prince's veto stands for this attempt.",
           "conditions": [],
           "effects": [
             {
@@ -189,7 +189,7 @@
         {
           "id": "not-yet",
           "label": "Not yet",
-          "text": "You withdraw from the argument. The Palace record and your eligibility remain unchanged for a later attempt.",
+          "text": "You end the exchange without conceding the doctrine. Your eligibility and the Palace record remain unchanged.",
           "conditions": [],
           "effects": [
             {
@@ -237,7 +237,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "The Prince presses the consequence of your claim. Returning cannot depend on declaring this world false, erasing the lives lived here, or destroying the Palace. A valid return must separate personal origin from ownership of everyone else's reality.",
+          "text": "The Prince presses on the consequence. If you claim a right to return, what exactly are you rejecting? A coherent answer cannot require this world to be false, its people to be disposable, or the Palace to be destroyed. Your origin is yours; everyone else's reality is not.",
           "conditions": [],
           "media": []
         }
@@ -246,7 +246,7 @@
         {
           "id": "leave-without-erasing",
           "label": "Leave without erasing this world",
-          "text": "You state the boundary: the successor world remains real, refusing permanent custody does not destroy the Palace, and choosing your origin does not rewrite anyone else's life.",
+          "text": "You draw the boundary clearly. The successor world remains real. Refusing permanent custody does not destroy the Palace. Choosing your origin does not rewrite anyone else's life.",
           "conditions": [],
           "effects": [
             {
@@ -264,8 +264,8 @@
         },
         {
           "id": "declare-world-unreal",
-          "label": "Claim this world is unreal",
-          "text": "That claim is not supported by the Palace record. The attempt closes without a defeat signal.",
+          "label": "Call this world unreal",
+          "text": "The Archive does not support that claim. The argument fails at the boundary, and the attempt ends without a defeat signal.",
           "conditions": [],
           "effects": [
             {
@@ -284,7 +284,7 @@
         {
           "id": "not-yet",
           "label": "Not yet",
-          "text": "You step away before the final reconstruction. No ending is chosen, and the confrontation remains retryable.",
+          "text": "You stop before the final reconstruction. No ending is chosen, nothing permanent is lost, and the confrontation remains retryable.",
           "conditions": [],
           "effects": [
             {
@@ -332,7 +332,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "The final task is reconstruction, not combat. You connect the authenticated arrival anomaly, the Threshold Archive's corroborating records, and the boundary you just established into an origin trace. You do not pretend to know what originally caused your displacement.",
+          "text": "The final test is reconstruction, not combat. You connect your authenticated arrival anomaly to corroborating Archive records and to the boundary you just defended. The chain can identify an origin trace without pretending to know the original cause of your displacement.",
           "conditions": [],
           "media": []
         }
@@ -341,7 +341,7 @@
         {
           "id": "present-origin-trace",
           "label": "Present the verified origin trace",
-          "text": "The reconstruction is coherent without relying on the Prince's private interpretation. His exclusive epistemic veto can no longer stand. Return Home becomes a separate choice; it is not committed here.",
+          "text": "The chain holds without relying on the Prince's private interpretation. His exclusive epistemic veto can no longer dismiss the case. The path to Return Home is now eligible—but whether to take it remains your decision.",
           "conditions": [],
           "effects": [
             {
@@ -363,8 +363,8 @@
         },
         {
           "id": "invent-original-cause",
-          "label": "Fill the unknown cause with a guess",
-          "text": "You replace an unresolved question with an assertion. The Prince rejects the reconstruction, and the attempt returns to a retryable state.",
+          "label": "Fill the missing cause with a guess",
+          "text": "You replace an unresolved cause with an assertion. The Prince rejects the reconstruction at that point. The attempt ends, and the record remains available for another try.",
           "conditions": [],
           "effects": [
             {
@@ -383,7 +383,7 @@
         {
           "id": "not-yet",
           "label": "Not yet",
-          "text": "You keep the unresolved cause unresolved and stop the attempt. The Prince is not defeated, and you may return later.",
+          "text": "You leave the cause unresolved and stop the attempt. The Prince is not defeated, no ending is committed, and you may return later.",
           "conditions": [],
           "effects": [
             {
