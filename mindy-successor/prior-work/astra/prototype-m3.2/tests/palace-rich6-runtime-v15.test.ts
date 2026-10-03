@@ -354,6 +354,21 @@ test('ordinary-career domain lock does not revoke legitimately opened Palace day
   assert.equal(actionAvailable(lumber,s,catalog,{ordinaryCareersDomainLocked:true}),false);
 });
 
+test('Palace daytime actions have no lodging gate and v15 adds no Palace Night owner',()=>{
+  const palaceActions=catalog.definitions.actions.filter(action=>
+    action.id.startsWith('palace.duty.')||action.id.startsWith('palace.outcome-prep.')
+  );
+  assert.equal(palaceActions.length,21);
+  for(const action of palaceActions){
+    const serialized=JSON.stringify(action.conditions);
+    assert.equal(serialized.includes('housingTier'),false,action.id);
+    assert.equal(serialized.includes('housing'),false,action.id);
+  }
+
+  const palaceNightChoices=catalog.definitions.nightChoices.filter(choice=>choice.id.startsWith('palace.'));
+  assert.deepEqual(palaceNightChoices,[]);
+});
+
 test('bound-like final Energy is spent normally and Palace leaves next-day penalty state untouched',()=>{
   let s=qualifiedPalaceLife();
   s.run.dayState.energyCurrent=2;
