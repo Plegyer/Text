@@ -1,0 +1,137 @@
+{
+  "formatVersion": 1,
+  "id": "school.night.interoperability.v22",
+  "tasks": [
+    "C5-235",
+    "C5-236",
+    "C5-237",
+    "C5-238",
+    "C5-239",
+    "C5-240",
+    "C5-241",
+    "C5-242",
+    "C5-243",
+    "C5-244"
+  ],
+  "activationBase": "260e44daad22a6ab8eb879ee24f13b9ec2abf19b",
+  "status": "AUDIT_PREP_ONLY",
+  "authority": {
+    "nightContract": "docs/NIGHT_AND_ACTIVITY_CONTRACT_v1.md",
+    "housingContract": "docs/HOUSING_AND_NIGHT_BALANCE_v1.md",
+    "nightFlowOwner": "shared-runtime",
+    "schoolOwner": "content-localization-regression-only",
+    "producerFactsAuthorized": false,
+    "numericThresholdsAuthorized": false,
+    "careerTransitionsAuthorized": false
+  },
+  "current": {
+    "schoolNightChoiceCount": 24,
+    "schoolNightChoiceIds": [
+      "school.night_study.literacy_and_numbers.reason",
+      "school.night_study.literacy_and_numbers.wits",
+      "school.night_study.arcana.magic",
+      "school.night_study.arcana.reason",
+      "school.night_study.arcana.creativity",
+      "school.night_study.rhetoric_and_social.charm",
+      "school.night_study.rhetoric_and_social.sociability",
+      "school.night_study.rhetoric_and_social.wits",
+      "school.night_study.etiquette_and_presentation.manners",
+      "school.night_study.etiquette_and_presentation.grooming",
+      "school.night_study.etiquette_and_presentation.charm",
+      "school.night_study.field_craft.dexterity",
+      "school.night_study.field_craft.wits",
+      "school.night_study.field_craft.creativity",
+      "school.night_study.physical_training.strength",
+      "school.night_study.physical_training.endurance",
+      "school.night_study.physical_training.dexterity",
+      "school.night_study.arts_and_performance.creativity",
+      "school.night_study.arts_and_performance.charm",
+      "school.night_study.arts_and_performance.sociability",
+      "school.night_study.arts_and_performance.dexterity",
+      "school.night_study.body_confidence.sexuality",
+      "school.night_study.body_confidence.grooming",
+      "school.night_study.body_confidence.endurance"
+    ],
+    "housingEligibility": [
+      "normal",
+      "cheap"
+    ],
+    "streetEligible": false,
+    "immediate": {
+      "statGain": 2,
+      "schoolCounter": "night_study_sessions",
+      "schoolCounterDelta": 1,
+      "tuitionCost": 0,
+      "currentDayEnergyCost": 0
+    },
+    "deferred": {
+      "nextDayEnergyDelta": -1,
+      "calendarAdvanceExactlyOnce": true
+    },
+    "saveReloadStablePoints": [
+      "before_lodging",
+      "after_lodging_before_voluntary_choice",
+      "pending_night_scene"
+    ],
+    "uiLocalizationKeys": [
+      "ui.school.nightStudyButton",
+      "ui.school.nightStudyContext",
+      "ui.school.nightStudyChoice",
+      "presentation.static.school-night-study-generic-v2.alt"
+    ],
+    "schoolLifePack": {
+      "id": "school-life-content-v1",
+      "nightStudyEventCount": 25,
+      "exactChoiceFollowupCount": 24,
+      "commonAfterNightStudyEvent": "school-life-content-v1.after-night-study",
+      "mediaId": "school.life.night-study.default"
+    }
+  },
+  "conflictMatrix": [
+    {
+      "surface": "before_lodging forced Night event",
+      "classification": "CURRENT",
+      "rule": "NightFlow forced intercept owns priority; School voluntary choice is unavailable while pending and must not bypass it."
+    },
+    {
+      "surface": "after_lodging forced Night event",
+      "classification": "CURRENT",
+      "rule": "NightFlow owns the pending scene after exactly one lodging payment; School must not charge or resume the menu through a side path."
+    },
+    {
+      "surface": "current relationship/career night choices",
+      "classification": "CURRENT",
+      "rule": "Existing lumber/satyr-maid/tavern/undead-farm night events trigger only from their own nightChoiceCompleted IDs, not from School Night-study IDs."
+    },
+    {
+      "surface": "future forced/adult Night route",
+      "classification": "FUTURE_RUNTIME_AUTHORITY",
+      "rule": "Any preemption/coexistence policy must be expressed through NightFlow intercept/suppress/consumesNight authority."
+    },
+    {
+      "surface": "adult consent/Lust/client state",
+      "classification": "NO_SCHOOL_AUTHORITY",
+      "rule": "School Night-study remains voluntary and must not create adult, consent, Lust, client, owner, or forced-night state."
+    },
+    {
+      "surface": "School producer facts/thresholds/career transitions",
+      "classification": "NO_SCHOOL_AUTHORITY",
+      "rule": "v22 publishes none."
+    }
+  ],
+  "noSchoolAuthority": {
+    "nightFlowMechanics": false,
+    "forcedNightPriority": false,
+    "adultState": false,
+    "consentState": false,
+    "lustState": false,
+    "clientState": false,
+    "ownerState": false,
+    "producerFacts": false,
+    "numericThresholds": false,
+    "careerTransitions": false,
+    "saveSchema": false,
+    "calendarMechanics": false,
+    "lodgingMechanics": false
+  }
+}
