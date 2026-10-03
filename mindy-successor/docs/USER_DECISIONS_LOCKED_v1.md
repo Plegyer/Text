@@ -626,13 +626,166 @@ Rejected for the current baseline:
 The exact authored copy/scenes of the three seed private branches are production content work, not a new Product gate.
 
 
+### D36 — Large Activity full 1.0 scope = four-region game-within-the-game
+
+Accepted Product packet:
+`chat3/large-activity-full-scope-v8@5d176da728d7a8b99efcc5970f97bbed411bae6f`.
+
+Large Activity is a real second gameplay mode inside the 160-day life-sim, not a flat event list and not a universal combat subsystem.
+
+#### Four-region target
+
+Intended 1.0 uses exactly **4 Activity regions**:
+
+1. **Forest Frontier** — early;
+2. **Trade Corridor** — early/mid;
+3. **Anomalous Reach** — mid/late;
+4. **Restricted Sites Network** — late.
+
+These are functional region identities, not final lore names.
+
+The current executable:
+- `lumber.forest` = vertical slice;
+- `hunter.expedition` = vertical slice;
+- `assassin.infiltration` = infrastructure-only proof.
+
+None of the three counts as a complete full-1.0 region yet.
+
+#### Activity loop
+
+Target loop:
+
+`prepare in city -> choose region/loadout -> navigate -> spend internal resources -> resolve encounter/mini-game -> continue/detour/escape/camp -> secure or risk finds -> typed ActivityResult -> city systems react`.
+
+Required systemic properties:
+- route graph, not a flat event picker;
+- persistent route/discovery state during the life;
+- internal resources separate from global daily Energy;
+- equipment/capabilities change legal routes/options;
+- success / escape / failure are materially different;
+- deterministic save/resume at internal checkpoints;
+- city preparation changes Activity options;
+- Activity results can change careers, relationships, School, items and ending eligibility.
+
+No universal Activity XP/progression bar is added.
+
+#### Entry and internal resources
+
+Default new Activity entry:
+- costs **2 daily Energy**, paid once;
+- reload/resume never repays entry cost;
+- explicit exit followed by same-day re-entry is a new paid entry.
+
+Universal internal resources:
+- **Field Time = 6 segments per field day**;
+- **Endurance** is Activity-adapter-defined in the current target range **6–8**;
+- capability-specific supplies/charges are contextual, not a universal third bar.
+
+Global daily Energy is not reused as Activity stamina.
+
+#### Specialized mini-game families
+
+Full 1.0 must contain at least these three distinct mechanic families:
+
+1. **Tracking Triangulation**;
+2. **Pattern / Ritual Circuit**;
+3. **Infiltration / Suspicion**.
+
+They share the Activity envelope but may use different internal state and UI.
+
+Do not add a generic universal combat system merely to make Activity feel game-like.
+
+#### Region structural bar
+
+Each production region must contain at minimum:
+- 3 route contexts;
+- at least one shortcut;
+- at least one capability/fact-gated route;
+- at least one season-dependent edge;
+- at least one information-dependent risk decision;
+- at least 2 meaningful equipment/capability hooks.
+
+Major encounters normally expose 2–4 build approaches where appropriate.
+
+#### Pacing
+
+Activity must not become a second grind ladder.
+
+Reference pacing:
+- no region requires more than **3 successful entries** to resolve its core regional anchor;
+- a complex ordinary-career Activity leg should require no more than **3 Activity entries after city preparation is complete**;
+- standalone Activity ending eligibility must be reachable with **10 or fewer Activity entries** in one life;
+- reference eligibility should be possible by roughly **Day 120**.
+
+Not every life is expected to clear all four regions.
+
+#### Camp
+
+Camp exists only for explicitly multi-day Activity objectives.
+
+Locked camp baseline:
+- maximum **2 field camp nights** in one Activity entry;
+- camp replaces city Night for that calendar day;
+- city lodging is not charged for that camp night;
+- ordinary city voluntary Night menu does not run;
+- camp may have its own contact/relationship scenes;
+- each camp advances global calendar exactly once;
+- next field day refreshes Field Time, not global daily Energy;
+- returning from a multi-day Activity does not grant a second full city workday for that consumed day.
+
+Secret Debt precedence is absolute:
+- a bound character may enter Activity;
+- forced Secret Debt Night cannot be replaced/suppressed by camp;
+- bound Activity therefore cannot continue through a camp boundary past the forced-Night intercept;
+- Activity cannot cancel the next-day Secret Debt Energy -1.
+
+#### Palace boundary
+
+Activity never substitutes for D23:
+- does not grant invitation;
+- does not count toward ordinary 10/10;
+- does not substitute for active 10/10 packages;
+- does not count as Palace duty;
+- does not bypass the 12-stat True Ending gate.
+
+After Palace access already exists, Activity may contribute optional Palace route variants.
+
+#### Standalone Activity ending family
+
+Intended 1.0 requires at least one ending family whose primary progression is Activity rather than an ordinary career.
+
+Baseline eligibility structure is locked:
+- resolve regional anchors in at least **3 of 4 regions**;
+- complete specialized mechanics from at least **2 different mini-game families**;
+- secure at least one meaningful extracted capability/evidence/sample result;
+- resolve at least one Activity contact/companion thread;
+- no ordinary Hard Work requirement;
+- no Palace requirement;
+- eligibility remains non-terminal until explicit commit under D16.
+
+The exact player-facing name, exact outcome directions and Meta rewards remain a separate Product pass.
+
+#### Production scale target
+
+Per region target:
+- approximately **18–22 authored content units**;
+- approximately **8 stable presentation IDs**.
+
+Four-region target:
+- approximately **72–88 regional content units**;
+- approximately **32 regional presentation IDs**;
+- plus 3 shared specialized mini-game shells and 3 generic success/escape/failure shells;
+- minimum total stable presentation target approximately **38 IDs**.
+
+This is a production scope target, not a requirement for unique commissioned art per ID.
+
+
 ## Still open after this lock
 
 - exact numeric economy;
 - exact Lust starting value;
 - exact ordinary profession -> selectable +5 stat mapping, under D22 breadth/Lust constraints;
 - exact School curriculum/prices;
-- exact Activity region count/mechanics;
 - exact Palace daily cadence and authored content within the locked six-stage topology;
 - macro mystery/lore;
 - exact Secret Debt shift stat gains, wage coefficients, and owner-kill stat/Lust thresholds;
