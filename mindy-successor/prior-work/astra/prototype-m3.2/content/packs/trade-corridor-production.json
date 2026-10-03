@@ -1,0 +1,448 @@
+{
+  "schemaVersion": 1,
+  "id": "trade-corridor.production",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "activities": [
+        "trade.corridor"
+      ],
+      "careers": [
+        "merchant",
+        "guard"
+      ],
+      "relationships": [
+        "merchant.supplier"
+      ],
+      "worldFacts": [
+        "activity.trade-corridor.anchor-secured",
+        "activity.trade-corridor.result.manifest-verified",
+        "activity.trade-corridor.result.sample-secured",
+        "trade.corridor.contact-thread-open",
+        "trade.corridor.sealed-pass-used"
+      ]
+    },
+    "writes": {
+      "careers": [
+        "merchant",
+        "guard"
+      ],
+      "relationships": [
+        "merchant.supplier"
+      ],
+      "worldFacts": [
+        "trade.corridor.city-return-recorded",
+        "activity.trade-corridor.mark.network"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "trade-corridor.production.city-return",
+      "title": "Trade Corridor return reaches the city",
+      "sourceDomain": "trade-corridor",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "activityResult",
+          "activity": "trade.corridor",
+          "outcome": "success",
+          "result": "trade.corridor.success"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 86,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "activity.trade-corridor.anchor-secured",
+          "present": true
+        },
+        {
+          "kind": "worldFact",
+          "fact": "trade.corridor.city-return-recorded",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The Trade Corridor return is entered into the city-facing route record without changing wages, debt, Night, or global Energy.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record the corridor return",
+          "text": "Store the regional return as a city fact.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "trade.corridor.city-return-recorded"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "trade-corridor.production.merchant-return",
+      "title": "Trade Corridor return reaches Merchant work",
+      "sourceDomain": "merchant",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "activityResult",
+          "activity": "trade.corridor",
+          "outcome": "success",
+          "result": "trade.corridor.success"
+        },
+        {
+          "kind": "dayStarted"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 74,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "activity.trade-corridor.anchor-secured",
+          "present": true
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "merchant",
+              "stage": "stall-hand"
+            },
+            {
+              "kind": "careerStage",
+              "career": "merchant",
+              "stage": "independent-trader"
+            },
+            {
+              "kind": "careerStage",
+              "career": "merchant",
+              "stage": "networked-merchant"
+            },
+            {
+              "kind": "careerStage",
+              "career": "merchant",
+              "stage": "veteran"
+            },
+            {
+              "kind": "careerStage",
+              "career": "merchant",
+              "stage": "merchant-house"
+            },
+            {
+              "kind": "careerStage",
+              "career": "merchant",
+              "stage": "speculator-smuggler"
+            },
+            {
+              "kind": "careerStage",
+              "career": "merchant",
+              "stage": "patron-of-routes"
+            },
+            {
+              "kind": "careerStage",
+              "career": "merchant",
+              "stage": "outcome-ready"
+            }
+          ]
+        },
+        {
+          "kind": "careerFact",
+          "career": "merchant",
+          "fact": "trade-corridor-returned",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "sample",
+          "text": "The corridor return includes a secured cargo sample, giving Merchant work a concrete field comparison without creating a new universal resource.",
+          "conditions": [
+            {
+              "kind": "worldFact",
+              "fact": "activity.trade-corridor.result.sample-secured",
+              "present": true
+            }
+          ],
+          "media": []
+        },
+        {
+          "id": "manifest",
+          "text": "The corridor return includes a verified manifest chain that Merchant work can record as route evidence.",
+          "conditions": [
+            {
+              "kind": "worldFact",
+              "fact": "activity.trade-corridor.result.manifest-verified",
+              "present": true
+            }
+          ],
+          "media": []
+        },
+        {
+          "id": "default",
+          "text": "The corridor return becomes a Merchant-local route fact while ordinary shifts and endings remain independently gated.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record the Merchant return",
+          "text": "Attach the regional return to the existing Merchant career state.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "merchant",
+              "fact": "trade-corridor-returned"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "trade-corridor.production.guard-return",
+      "title": "Trade Corridor evidence reaches Guard work",
+      "sourceDomain": "guard",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "activityResult",
+          "activity": "trade.corridor",
+          "outcome": "success",
+          "result": "trade.corridor.success"
+        },
+        {
+          "kind": "dayStarted"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 73,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "activity.trade-corridor.anchor-secured",
+          "present": true
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "guard",
+              "stage": "recruit"
+            },
+            {
+              "kind": "careerStage",
+              "career": "guard",
+              "stage": "trusted-guard"
+            },
+            {
+              "kind": "careerStage",
+              "career": "guard",
+              "stage": "senior-guard"
+            },
+            {
+              "kind": "careerStage",
+              "career": "guard",
+              "stage": "veteran"
+            },
+            {
+              "kind": "careerStage",
+              "career": "guard",
+              "stage": "officer"
+            },
+            {
+              "kind": "careerStage",
+              "career": "guard",
+              "stage": "reform-order"
+            },
+            {
+              "kind": "careerStage",
+              "career": "guard",
+              "stage": "network"
+            },
+            {
+              "kind": "careerStage",
+              "career": "guard",
+              "stage": "major-case"
+            },
+            {
+              "kind": "careerStage",
+              "career": "guard",
+              "stage": "outcome-ready"
+            }
+          ]
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "worldFact",
+              "fact": "activity.trade-corridor.result.manifest-verified",
+              "present": true
+            },
+            {
+              "kind": "worldFact",
+              "fact": "trade.corridor.sealed-pass-used",
+              "present": true
+            }
+          ]
+        },
+        {
+          "kind": "careerFact",
+          "career": "guard",
+          "fact": "trade-corridor-evidence-known",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "A verified corridor handoff can be recorded as Guard-local evidence without granting a Guard route or ending by itself.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record the Guard evidence",
+          "text": "Attach the corridor evidence to the existing Guard career state.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "guard",
+              "fact": "trade-corridor-evidence-known"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "trade-corridor.production.supplier-network",
+      "title": "Trade Corridor contact thread returns to the supplier",
+      "sourceDomain": "merchant.supplier",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "activityResult",
+          "activity": "trade.corridor",
+          "outcome": "success",
+          "result": "trade.corridor.success"
+        },
+        {
+          "kind": "dayStarted"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 72,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "activity.trade-corridor.anchor-secured",
+          "present": true
+        },
+        {
+          "kind": "worldFact",
+          "fact": "trade.corridor.contact-thread-open",
+          "present": true
+        },
+        {
+          "kind": "relationshipChoice",
+          "relationship": "merchant.supplier",
+          "choice": "utility-response",
+          "value": "accepted"
+        },
+        {
+          "kind": "relationshipFact",
+          "relationship": "merchant.supplier",
+          "fact": "utility-response-resolved",
+          "present": true
+        },
+        {
+          "kind": "relationshipFact",
+          "relationship": "merchant.supplier",
+          "fact": "trade-corridor-return-shared",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "An already accepted supplier utility thread can receive the corridor return as network-capable contact evidence.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "share",
+          "label": "Share the corridor return",
+          "text": "Record the return on the existing supplier relationship and mark this regional anchor as Network-capable.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "merchant.supplier",
+              "fact": "trade-corridor-return-shared"
+            },
+            {
+              "kind": "addWorldFact",
+              "fact": "activity.trade-corridor.mark.network"
+            }
+          ]
+        },
+        {
+          "id": "keep-local",
+          "label": "Keep it as a local route note",
+          "text": "Do not attach this regional result to the supplier network.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    }
+  ]
+}
