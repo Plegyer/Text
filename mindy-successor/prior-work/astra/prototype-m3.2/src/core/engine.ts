@@ -3,6 +3,26 @@ import {SCHOOL_ACTION_ID,SCHOOL_COURSES,executeSchoolLesson,type SchoolCourseId}
 import {presentationIdForActionResult,presentationIdForEvent} from './presentation.ts';
 import {applyHardWorkPackagesAtCreation,ordinaryCareerAvailableWithHardWork,palaceNewStartQualified,validateHardWorkPackageSelection} from './hardWorkMeta.ts';
 import {hardWorkPackageDefinitions} from './hardWorkPackageCatalog.ts';
+import {
+  STRONG_META_IDS,
+  STRONG_META_REGISTRY_VERSION,
+  applyEarnedReserveMatch,
+  applyNetworkRetainerAtStartDay,
+  applyWorkRhythmAtStartDay,
+  armWorkRhythmForNextDay,
+  canonicalStrongMetaState,
+  emptyResolvedStrongMetaSnapshot,
+  emptyStrongMetaRuntime,
+  grantStrongMetaReward,
+  resolveStrongMetaSnapshot,
+  setPreferredStrongMetaKeystone,
+  setPreferredStrongMetaSpecialist,
+  strongMetaProgressionStatCap,
+  strongMetaCurrentEnergyBonus,
+  validateResolvedStrongMetaSnapshot,
+  validateStrongMetaRuntimeAgainstSnapshot,
+  type ApprovedStrongRewardId
+} from './strongMeta.ts';
 import {markPalaceCreationQualification} from './palace.ts';
 
 const statSet=new Set<string>(stats);
@@ -54,6 +74,7 @@ function defaultMeta(input?:Partial<Meta>&{completed?:string[];lives?:number}):M
     unlocks:[...new Set(input?.unlocks??[])].filter(unlock=>unlock!=='palace'),
     ruleModifiers:structuredClone(input?.ruleModifiers??{}),
     hardWorkProgress:[...new Set(input?.hardWorkProgress??[])],
+    strongMeta:canonicalStrongMetaState(input?.strongMeta),
     persistentChoices:structuredClone(input?.persistentChoices??{}),
     activeLegacyPerks:[...new Set(input?.activeLegacyPerks??[])],
     appliedResultTransactions:[...new Set(input?.appliedResultTransactions??[])],
@@ -273,16 +294,13 @@ export function actionCost(a:Action,s:Save){
   return a.id==='school'&&s.meta.unlocks.includes('scholar')&&!s.run.flags[`system.scholar.${Math.floor(s.run.day/7)}`]?0:a.cost.money;
 }
 
-export type NewLifeRuntimeSetup=Readonly<{progressionStatCap?:ProgressionStatCap}>;
-
-export function freshSave(metaInput?:Partial<Meta>&{completed?:string[];lives?:number},setup:NewLifeRuntimeSetup={}):Save {
+export function freshSave(metaInput?:Partial<Meta>&{completed?:string[];lives?:number}):Save {
   const meta=defaultMeta(metaInput);
-  const progressionStatCap=setup.progressionStatCap??100;
-  if(progressionStatCap!==100&&progressionStatCap!==200)throw new Error('Progression-stat cap must be 100 or 200.');
+  const progressionStatCap:ProgressionStatCap=100;
   const statRecord=Object.fromEntries(stats.map(k=>[k,1])) as Record<Stat,number>;
   const startingMoney=600+(meta.unlocks.includes('satyr-maid.house-credit')?600:0);
   const save={
-    schemaVersion:5 as const,
+    schemaVersion:6 as const,
     contentVersion:'0.1.0',
     meta,
     run:{
@@ -304,6 +322,8 @@ export function freshSave(metaInput?:Partial<Meta>&{completed?:string[];lives?:n
       flow:{pendingScene:null,reaction:{epochCounter:0,currentEpochId:null,attemptedEventIds:[],cascadeDepth:0,queued:[]},night:null,activity:null,lastAction:null},
       rngState:{state:(meta.runsStarted*2654435761)>>>0},
       historyState:{eventHistory:{},actionCounts:{},dayActionCount:0,journal:['Белый суслик, открытый люк и совершенно незнакомое небо. Ваша новая жизнь начинается в Листограде.'],journalRefs:[null]},
+      strongMetaSnapshot:null,
+      strongMetaRuntime:emptyStrongMetaRuntime(),
       legacyCompat:{source:'m3.2' as const,metrics:defaultLegacyMetrics(),flags:{}}
     }
   } as unknown as Save;
@@ -312,6 +332,55 @@ export function freshSave(metaInput?:Partial<Meta>&{completed?:string[];lives?:n
   // starting-stat rewards are intentionally not projected into target stats.
   s.run.dayState.energyCurrent=energyMax(s);
   return s;
+}
+
+function applyStrongMetaOrdinaryWorkMutable(s:Save,ordinaryWage:number,secretDebtBound:boolean):number{
+  const match=applyEarnedReserveMatch({
+    snapshot:s.run.strongMetaSnapshot,
+    runtime:s.run.strongMetaRuntime,
+    ordinaryWage,
+    secretDebtBound
+  });
+  s.run.strongMetaRuntime=match.runtime;
+  if(match.bonus>0)s.run.resources.money=Math.min(1_000_000,s.run.resources.money+match.bonus);
+  if(!secretDebtBound){
+    s.run.strongMetaRuntime=armWorkRhythmForNextDay({
+      snapshot:s.run.strongMetaSnapshot,
+      runtime:s.run.strongMetaRuntime,
+      currentDay:s.run.day
+    });
+  }
+  return match.bonus;
+}
+
+export function applyStrongMetaOrdinaryWork(input:Save,ordinaryWage:number,secretDebtBound:boolean):Save{
+  const s=cloneSave(input);
+  applyStrongMetaOrdinaryWorkMutable(s,ordinaryWage,secretDebtBound);
+  return s;
+}
+
+function applyStrongMetaStartDayMutable(s:Save,secretDebtBound:boolean):Readonly<{energyBonus:number;retainerPayment:number}>{
+  const rhythm=applyWorkRhythmAtStartDay({
+    snapshot:s.run.strongMetaSnapshot,
+    runtime:s.run.strongMetaRuntime,
+    day:s.run.day
+  });
+  s.run.strongMetaRuntime=rhythm.runtime;
+  const retainer=applyNetworkRetainerAtStartDay({
+    snapshot:s.run.strongMetaSnapshot,
+    runtime:s.run.strongMetaRuntime,
+    day:s.run.day,
+    secretDebtBound
+  });
+  s.run.strongMetaRuntime=retainer.runtime;
+  if(retainer.payment>0)s.run.resources.money=Math.min(1_000_000,s.run.resources.money+retainer.payment);
+  return {energyBonus:rhythm.energyBonus,retainerPayment:retainer.payment};
+}
+
+export function applyStrongMetaStartDay(input:Save,secretDebtBound:boolean):Readonly<{state:Save;energyBonus:number;retainerPayment:number}>{
+  const s=cloneSave(input);
+  const result=applyStrongMetaStartDayMutable(s,secretDebtBound);
+  return {state:s,...result};
 }
 
 function delta(before:Record<string,number>,after:Record<string,number>){
@@ -721,7 +790,8 @@ function register(s:Save,cat:Catalog){
 
 export function energyMax(s:Save){
   const modifier=Number(s.meta.ruleModifiers['energy.daily']??0);
-  return Math.max(1,3+modifier+(s.meta.unlocks.includes('vitality')?1:0));
+  const strongBonus=strongMetaCurrentEnergyBonus(s.run.strongMetaSnapshot,s.run.strongMetaRuntime,s.run.day);
+  return Math.max(1,3+modifier+(s.meta.unlocks.includes('vitality')?1:0)+strongBonus);
 }
 export function rent(s:Save){
   const base=100;
@@ -759,6 +829,7 @@ function endingRewards(ending:Catalog['definitions']['endings'][number]):MetaRew
 function applyMetaRewardMutable(meta:Meta,reward:MetaReward){
   if(reward.kind==='unlock')addUnique(meta.unlocks,reward.unlock);
   else if(reward.kind==='hardWork')addUnique(meta.hardWorkProgress,reward.career);
+  else if(reward.kind==='strongMeta')meta.strongMeta=grantStrongMetaReward(meta.strongMeta,reward.reward as ApprovedStrongRewardId);
 }
 function commitEndingMutable(s:Save,endingId:string,cat:Catalog){
   if(s.run.status==='ended'){
@@ -944,7 +1015,7 @@ function applyPendingNightPolicy(s:Save,cat:Catalog,point:NightPoint){
   n.suppressVoluntaryMenu ||= policy.suppressVoluntaryMenu;
   n.consumesNight ||= policy.consumesNight;
 }
-function finishNightMutable(s:Save,cat:Catalog){
+function finishNightMutable(s:Save,cat:Catalog,secretDebtBound=false){
   const n=nightState(s);
   if(s.run.pending)throw new Error('Нельзя завершить ночь с активной сценой.');
   const before=cloneSave(s);
@@ -965,6 +1036,7 @@ function finishNightMutable(s:Save,cat:Catalog){
   n.phase='StartDay';
   const queued=s.run.dayState.nextDayModifiers;
   for(const effect of queued.statEffects)setMetric(s,effect.stat,getMetric(s,effect.stat)+effect.delta);
+  applyStrongMetaStartDayMutable(s,secretDebtBound);
   s.run.metrics.energy=Math.max(1,energyMax(s)+queued.energyDelta);
   s.run.dayState.nextDayModifiers={energyDelta:0,statEffects:[],tags:[]};
   s.run.housingState.paidForCurrentNight=false;
@@ -1088,6 +1160,8 @@ export type Command=
   |{type:'accept';id:string}
   |{type:'newLife'}
   |{type:'restart'}
+  |{type:'setStrongMetaKeystone';id:string|null}
+  |{type:'setStrongMetaSpecialist';id:string;active:boolean}
   |{type:'setHardWorkPackageActive';career:OrdinaryHardWorkCareer;active:boolean}
   |{type:'allocate';stat:Stat;delta:1|-1}
   |{type:'finishCreation'}
@@ -1109,6 +1183,18 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
     if(s.run.status==='ending_committed')throw new Error('Сначала завершите выбранную судьбу.');
     const meta=defaultMeta(s.meta);meta.runsStarted++;return freshSave(meta);
   }
+  if(command.type==='setStrongMetaKeystone'){
+    const creation=s.run.creation;
+    if(creation.complete||s.run.status!=='active'||s.run.pending)throw new Error('Выбор Strong Meta для этой жизни уже закрыт.');
+    s.meta.strongMeta=setPreferredStrongMetaKeystone(s.meta.strongMeta,command.id);
+    return s;
+  }
+  if(command.type==='setStrongMetaSpecialist'){
+    const creation=s.run.creation;
+    if(creation.complete||s.run.status!=='active'||s.run.pending)throw new Error('Выбор Strong Meta для этой жизни уже закрыт.');
+    s.meta.strongMeta=setPreferredStrongMetaSpecialist(s.meta.strongMeta,command.id,command.active);
+    return s;
+  }
   if(command.type==='setHardWorkPackageActive'){
     const creation=s.run.creation;
     if(creation.complete||creation.hardWorkPackagesApplied||s.run.status!=='active'||s.run.pending)throw new Error('Выбор наследия для этой жизни уже закрыт.');
@@ -1128,6 +1214,10 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
   }
   if(command.type==='finishCreation'){
     if(s.run.creation.complete||s.run.creation.remaining!==0)throw new Error('Распределите все 10 очков.');
+    const strongSnapshot=resolveStrongMetaSnapshot(s.meta.strongMeta);
+    s.run.strongMetaSnapshot=strongSnapshot;
+    s.run.character.progressionStatCap=strongMetaProgressionStatCap(strongSnapshot,s.run.character.progressionStatCap);
+    applyStrongMetaStartDayMutable(s,false);
     const application=applyHardWorkPackagesAtCreation({
       definitions:hardWorkPackageDefinitions,
       earnedHardWork:s.meta.hardWorkProgress,
@@ -1253,9 +1343,15 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
   s.run.metrics.money-=cost;s.run.metrics.energy-=a.cost.energy;
   applyActionEffectsMutable(s,a.effects,cat);
   if(a.seasonal)applyEffectsMutable(s,a.seasonal[calendar(s.run.day).season],cat,true);
+  let ordinaryWage=0;
   if(a.wage){
     const wage=Math.round(a.wage.base+a.wage.weights.reduce((sum,w)=>sum+getMetric(s,w.stat)*w.factor,0));
     applyEffectsMutable(s,[{kind:'metric',key:'money',delta:wage}],cat,true);log(s,`Заработано: ${wage} монет.`);
+    ordinaryWage=wage;
+  }
+  if(ordinaryCareerForShiftAction(a)){
+    const matchBonus=applyStrongMetaOrdinaryWorkMutable(s,ordinaryWage,false);
+    if(matchBonus>0)log(s,`Strong Meta: заработанный резерв добавил ${matchBonus} монет.`);
   }
   s.run.actionCounts[a.id]=Math.min(1_000_000,(s.run.actionCounts[a.id]??0)+1);
   if(freeLesson)s.run.flags[`system.scholar.${Math.floor(s.run.day/7)}`]=true;
@@ -1367,9 +1463,21 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
     raw.run.character.creation.activeHardWorkPackages=[];
     raw.run.character.creation.hardWorkPackagesApplied=true;
   }
+  if(raw.schemaVersion===5){
+    raw.meta=raw.meta??{};
+    raw.meta.strongMeta=emptyStrongMetaState();
+    const legacySnapshot=emptyResolvedStrongMetaSnapshot();
+    legacySnapshot.registryVersion='legacy-v5';
+    raw.run.strongMetaSnapshot=raw.run?.character?.creation?.complete?legacySnapshot:null;
+    raw.run.strongMetaRuntime=emptyStrongMetaRuntime();
+    raw.schemaVersion=6;
+  }
   const parsed=saveSchema.parse(raw) as unknown as Save;
   const s=attachLegacyFacade(parsed);
   s.meta.unlocks=s.meta.unlocks.filter(unlock=>unlock!=='palace');
+  if(s.run.strongMetaSnapshot)validateResolvedStrongMetaSnapshot(s.run.strongMetaSnapshot);
+  validateStrongMetaRuntimeAgainstSnapshot(s.run.strongMetaSnapshot,s.run.strongMetaRuntime);
+  if(s.run.strongMetaRuntime.workRhythmAppliedDay!==null&&s.run.strongMetaRuntime.workRhythmAppliedDay>s.run.day)throw new Error('Work Rhythm applied day cannot be in the future.');
   for(const stat of stats)if(s.run.character.stats[stat]>effectiveProgressionStatCap(s))throw new Error(`Характеристика ${stat} превышает эффективный потолок.`);
   if(s.run.metrics.energy>energyMax(s))throw new Error('Некорректный запас энергии.');
   if(!s.run.creation.complete&&s.run.creation.remaining+Object.values(s.run.creation.allocated).reduce((a,b)=>a+b,0)!==10)throw new Error('Некорректные стартовые очки.');
@@ -1468,6 +1576,11 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
     s.meta.completedEndings=[...new Set([...current.completedEndings,...s.meta.completedEndings])];
     s.meta.unlocks=[...new Set([...current.unlocks,...s.meta.unlocks])].filter(unlock=>unlock!=='palace');
     s.meta.hardWorkProgress=[...new Set([...current.hardWorkProgress,...s.meta.hardWorkProgress])];
+    s.meta.strongMeta=canonicalStrongMetaState({
+      ownership:{ownedRewardIds:[...new Set([...current.strongMeta.ownership.ownedRewardIds,...s.meta.strongMeta.ownership.ownedRewardIds])]},
+      knowledge:{inheritedKnowledgeIds:[...new Set([...current.strongMeta.knowledge.inheritedKnowledgeIds,...s.meta.strongMeta.knowledge.inheritedKnowledgeIds])]},
+      preferredSelection:structuredClone(current.strongMeta.preferredSelection)
+    });
     s.meta.appliedResultTransactions=[...new Set([...current.appliedResultTransactions,...s.meta.appliedResultTransactions])];
     s.meta.runsStarted=Math.max(current.runsStarted,s.meta.runsStarted);
     s.meta.runsCompleted=Math.max(current.runsCompleted,s.meta.runsCompleted);
@@ -1482,5 +1595,7 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
   );
   if(s.run.creation.complete&&!s.run.creation.hardWorkPackagesApplied)throw new Error('Завершённое создание должно иметь зафиксированный Hard Work package state.');
   if(!s.run.creation.complete&&s.run.creation.hardWorkPackagesApplied&&s.run.creation.activeHardWorkPackages.length)throw new Error('Legacy-settled создание не может содержать активные Hard Work пакеты.');
+  if(s.run.creation.complete&&!s.run.strongMetaSnapshot)throw new Error('Завершённое создание должно иметь Strong Meta snapshot.');
+  if(!s.run.creation.complete&&s.run.strongMetaSnapshot)throw new Error('Незавершённое создание не может иметь Strong Meta snapshot.');
   return s;
 }

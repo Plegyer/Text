@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import {approvedStrongRewardIdSchema,strongMetaRuntimeSchema,strongMetaSnapshotSchema,strongMetaStateSchema} from './strongMeta.ts';
 
 export const stats = ['strength','endurance','dexterity','reason','magic','creativity','wits','charm','sociability','manners','grooming','sexuality'] as const;
 export const legacyStats = ['strength','endurance','dexterity','perception','intelligence','magic','empathy','persuasion','composure','organization','lust'] as const;
@@ -413,7 +414,8 @@ export type OrdinaryHardWorkCareer=typeof ordinaryHardWorkCareers[number];
 
 export const metaRewardSchema=z.discriminatedUnion('kind',[
   z.object({kind:z.literal('unlock'),rewardId:rewardId,unlock:id}).strict(),
-  z.object({kind:z.literal('hardWork'),rewardId:rewardId,career:z.enum(ordinaryHardWorkCareers)}).strict()
+  z.object({kind:z.literal('hardWork'),rewardId:rewardId,career:z.enum(ordinaryHardWorkCareers)}).strict(),
+  z.object({kind:z.literal('strongMeta'),rewardId:rewardId,reward:approvedStrongRewardIdSchema}).strict()
 ]);
 export type MetaReward=z.infer<typeof metaRewardSchema>;
 
@@ -577,6 +579,8 @@ export const runSchema=z.object({
   flow:flowStateSchema,
   rngState:rngStateSchema,
   historyState:historyStateSchema,
+  strongMetaSnapshot:strongMetaSnapshotSchema.nullable(),
+  strongMetaRuntime:strongMetaRuntimeSchema,
   legacyCompat:legacyCompatSchema.optional()
 }).strict();
 
@@ -586,6 +590,7 @@ export const metaSchema=z.object({
   unlocks:z.array(id),
   ruleModifiers:z.record(z.string(),z.unknown()),
   hardWorkProgress:z.array(id),
+  strongMeta:strongMetaStateSchema,
   persistentChoices:z.record(z.string(),z.unknown()),
   activeLegacyPerks:z.array(id).max(16),
   appliedResultTransactions:z.array(id).max(10_000).default([]),
@@ -593,7 +598,7 @@ export const metaSchema=z.object({
   runsCompleted:n
 }).strict();
 
-export const saveSchema=z.object({schemaVersion:z.literal(5),contentVersion:z.string().min(1).max(80),run:runSchema,meta:metaSchema}).strict();
+export const saveSchema=z.object({schemaVersion:z.literal(6),contentVersion:z.string().min(1).max(80),run:runSchema,meta:metaSchema}).strict();
 
 type SaveCore=z.infer<typeof saveSchema>;
 type RunCore=SaveCore['run'];

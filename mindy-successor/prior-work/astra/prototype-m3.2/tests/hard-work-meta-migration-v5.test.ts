@@ -21,7 +21,7 @@ test('v4 migration preserves current-life values and defers selectable packages 
   delete raw.run.character.creation.hardWorkPackagesApplied;
 
   const migrated=parseSave(JSON.stringify(raw),catalog);
-  assert.equal(migrated.schemaVersion,5);
+  assert.equal(migrated.schemaVersion,6);
   assert.equal(migrated.run.character.stats.strength,4);
   assert.equal(migrated.run.character.stats.wits,4);
   assert.equal(migrated.run.character.lust,7);
