@@ -395,6 +395,63 @@ No selected Secret Debt reward may:
 
 
 
+### D31 — exact ordinary seasonal negative-stat target map
+
+Accepted research source:
+`chat3/progression-floor-aware-negative-map-v5@255c0c9b59870f91c8b7032863db6dd6966ec4bc`.
+
+D26 structure remains unchanged:
+- exactly two negative seasons out of four per ordinary profession;
+- exactly one `-1` progression-stat effect in each selected negative season;
+- exactly 20 negative cells total;
+- no Lust negatives;
+- negative seasons themselves do not move;
+- positive seasonal effects do not change;
+- wages, costs, unlocks and Hard Work=50 do not change;
+- D26 max one shift of the same ordinary profession per calendar day remains unchanged.
+
+The **negative target stat** in those 20 already-selected cells is now locked as follows:
+
+| Profession | Negative season | Target stat |
+| --- | --- | --- |
+| Lumber | Spring | Dexterity |
+| Lumber | Winter | Strength |
+| Satyr Maid | Summer | Sociability |
+| Satyr Maid | Autumn | Endurance |
+| Undead Farm | Spring | Reason |
+| Undead Farm | Autumn | Strength |
+| Tavern | Spring | Reason |
+| Tavern | Summer | Wits |
+| Hunter | Spring | Endurance |
+| Hunter | Winter | Dexterity |
+| Guard | Summer | Manners |
+| Guard | Winter | Reason |
+| Merchant | Summer | Wits |
+| Merchant | Winter | Manners |
+| Artist/Geisha | Summer | Manners |
+| Artist/Geisha | Autumn | Dexterity |
+| Assassin | Spring | Reason |
+| Assassin | Winter | Manners |
+| Prostitute | Summer | Sexuality |
+| Prostitute | Winter | Endurance |
+
+Design intent:
+- every negative target is positively replenished by the same career in another season, so the penalty remains mechanically live instead of permanently clipping at the floor;
+- no target is also positive in its own negative season;
+- starter careers preserve their existing strongest-stat Day-160 cap behavior;
+- Tavern, Hunter and Merchant are intentionally allowed to lose automatic work-only Day-160 cap reach on their strongest/co-primary axis;
+- targeted paid School is expected to restore Day-160 cap reach for those three, preserving School as a meaningful accelerator rather than making pure work universally self-sufficient.
+
+Accepted harness envelope:
+- Hard Work remains Day 50 for every ordinary career under D26;
+- realized negative pressure by shift 50 is approximately 82–86% of attempted negatives across tested starts/School cadence instead of the shipped map's ~11.6%;
+- long-run 160-day realized pressure is approximately 94–96%;
+- no starter profession loses its previous work-only strongest-stat cap reach;
+- wage reductions caused by live negative pressure are intentional tradeoffs and must not be compensated by silently changing wage formulas in the same implementation.
+
+Implementation should be content-only target replacement plus focused snapshots/invariants. Do not add deferred penalties, stat-debt systems, fallback negative mechanics or per-career imperative runtime code.
+
+
 ## Still open after this lock
 
 - exact numeric economy;
