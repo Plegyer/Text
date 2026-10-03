@@ -229,6 +229,54 @@ The original main event router interleaves Prostitute and Arm Candy conditions i
 
 This confirms that original careers were not always isolated silos: progress/choices in one profession could influence authored opportunities in another.
 
+
+## Original ending / Meta reward examples — exact historical evidence
+
+The original ending/bonus selection data confirms several distinct reward families.
+
+Representative exact reward shapes:
+
+### Ordinary/repeat-career style
+
+- Prostitute career ending: **+5 Fuckability + unlock Prostitute job**.
+- Arm Candy career ending: **+5 Sociability + unlock Arm Candy job**.
+- Geisha career ending: **+5 Class + unlock Geisha job**.
+- Mascot career ending: **+5 Creativity + unlock Mascot job**.
+- Cosplay career ending: **+5 Creativity + unlock Cosplay job**.
+- Cabaresque career ending: **+5 Fuckability + unlock Cabaresque job**.
+- Modeling career ending: **+3 Charisma +3 Durability + unlock Modeling job**.
+- Gloryhole career ending: **+5 Fuckability + unlock Gloryhole job**.
+
+### Stronger rule-changing/story rewards
+
+Verified examples include:
+
+- **+1 daily Stamina**;
+- **+$2,000 / +$4,000 / +$6,666 starting money** depending on ending;
+- **+$200 automatic daily income**;
+- **disable rent payments**;
+- **import 1/4 of most stats from previous game**;
+- start with specific equipment;
+- start with specific spells/moves;
+- start with all three dungeons unlocked;
+- set starting year to zero;
+- large one-time stat packages such as +20 to most stats.
+
+This is historical design evidence only. It supports separating:
+- dependable career-completion rewards;
+- stronger route/rule-changing rewards.
+
+It does **not** authorize any exact successor reward magnitude.
+
+### Selectable activation evidence
+
+In the original bonus-selection code, eligible ending rewards can be toggled on and off:
+
+- selecting the original Prostitute reward applies its +5 stat bonus, sets the Prostitute early-unlock trigger, and increments an active bonus counter;
+- deselecting it reverses the stat bonus, clears the early-unlock trigger, and decrements the active bonus counter.
+
+This is useful evidence that the original itself sometimes treated earned Meta as a selectable loadout rather than unconditional permanent power. The successor's exact New Start+ selection rules remain governed by current Product authority.
+
 ## Authority rule for using this reference
 
 When original and successor authority conflict:
