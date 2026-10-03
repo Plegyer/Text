@@ -19,6 +19,7 @@ import {
   palaceTrueEndingStatsReady
 } from '../src/core/palace.ts';
 import {ordinaryHardWorkCareers,stats,type Pack,type Save,type Stat} from '../src/core/schema.ts';
+import {STRONG_META_IDS,emptyStrongMetaState,grantStrongMetaReward,setPreferredStrongMetaSpecialist} from '../src/core/strongMeta.ts';
 import {catalog,rawPacks} from './helpers.ts';
 
 const all=[...ordinaryHardWorkCareers];
@@ -234,7 +235,7 @@ test('migrated old completed save never receives a retroactive Palace invitation
   delete raw.run.character.creation.hardWorkPackagesApplied;
 
   const migrated=parseSave(JSON.stringify(raw),catalog);
-  assert.equal(migrated.schemaVersion,5);
+  assert.equal(migrated.schemaVersion,6);
   assert.deepEqual(migrated.run.creation.activeHardWorkPackages,[]);
   assert.equal(migrated.run.creation.hardWorkPackagesApplied,true);
   assert.equal(migrated.run.progression.worldFacts.includes(PALACE_D23_QUALIFIED_FACT),false);
@@ -265,12 +266,16 @@ test('Palace cap-200 contribution is copy/semantics only and does not multiply v
   assert.match(palaceCap200Copy.ru,/не умножаются/i);
   assert.equal(/stats? double|stats? doubled|doubling stats/i.test(palaceCap200Copy.en),false);
 
-  let s=freshSave({hardWorkProgress:all},{progressionStatCap:200});
+  let strongMeta=grantStrongMetaReward(emptyStrongMetaState(),STRONG_META_IDS.palaceCap200);
+  strongMeta=setPreferredStrongMetaSpecialist(strongMeta,STRONG_META_IDS.palaceCap200,true);
+  let s=freshSave({hardWorkProgress:all,strongMeta});
   s=select(s,all);
   s=allocateTen(s);
   const before=structuredClone(s.run.character.stats);
   markPalaceCreationQualification(s);
   assert.deepEqual(s.run.character.stats,before,'Palace qualification must not modify or multiply stats');
+  s=dispatch(s,{type:'finishCreation'},catalog);
+  assert.equal(s.run.character.progressionStatCap,200,'cap-200 must activate through the selected Specialist');
 });
 
 test('v5 invitation/reveal RU/EN localization is bound to the live event identities',()=>{

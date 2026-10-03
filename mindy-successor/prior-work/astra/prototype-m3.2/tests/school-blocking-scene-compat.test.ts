@@ -11,6 +11,7 @@ import {
 } from '../src/core/engine.ts';
 import {executeSchoolLesson} from '../src/core/school.ts';
 import type {Catalog,Save} from '../src/core/schema.ts';
+import {emptyResolvedStrongMetaSnapshot} from '../src/core/strongMeta.ts';
 
 const fixture=JSON.parse(
   readFileSync('content/school-blocking-scene-compat.fixture.json','utf8')
@@ -79,6 +80,7 @@ function ready():Save{
   state.run.character.creation.allocated={};
   state.run.character.creation.complete=true;
   state.run.character.creation.hardWorkPackagesApplied=true;
+  state.run.strongMetaSnapshot=emptyResolvedStrongMetaSnapshot();
   state.run.flags['story.arrived']=true;
   state.run.resources.money=2_000;
   state.run.dayState.energyCurrent=3;
