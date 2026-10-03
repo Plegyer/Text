@@ -278,14 +278,24 @@ export function ordinaryCareerForShiftAction(action:Action):OrdinaryHardWorkCare
 
 export type ActionAvailabilityOptions=Readonly<{ordinaryCareersDomainLocked?:boolean}>;
 
+function ordinaryCareerDomainForAction(action:Action):OrdinaryHardWorkCareer|null{
+  const shiftCareer=ordinaryCareerForShiftAction(action);
+  if(shiftCareer)return shiftCareer;
+  return ordinaryCareerSet.has(action.id)?action.id as OrdinaryHardWorkCareer:null;
+}
+
 export function actionAvailable(action:Action,s:Save,cat?:Catalog,options:ActionAvailabilityOptions={}):boolean{
   const normalGateSatisfied=eligible(action.conditions,s,cat);
+  const domainCareer=ordinaryCareerDomainForAction(action);
+  const domainLocked=secretDebtBound(s)||(options.ordinaryCareersDomainLocked??false);
+  if(domainCareer&&domainLocked)return false;
+
   const career=ordinaryCareerForShiftAction(action);
   if(!career)return normalGateSatisfied;
   return ordinaryCareerAvailableWithHardWork({
     career,
     normalGateSatisfied,
-    ordinaryCareersDomainLocked:secretDebtBound(s)||(options.ordinaryCareersDomainLocked??false),
+    ordinaryCareersDomainLocked:false,
     earnedHardWork:s.meta.hardWorkProgress
   });
 }
