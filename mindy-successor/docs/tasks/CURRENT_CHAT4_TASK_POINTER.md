@@ -1,123 +1,148 @@
 # CURRENT CHAT4 TASK POINTER
 
-Status: **ACTIVE — SECRET DEBT BALANCE DECISION v11**
+Status: **ACTIVE — SECRET DEBT FULL ROUTE PRODUCER v12**
 Owner: Chat 4
 
-Accepted frozen producer candidate:
-`chat4/night-content-gap-producer-v10@9305d1da055203c51137041a78a345cbc64339c0`
+Accepted Product authority:
+`chat4/secret-debt-balance-decision-v11@fdef24962c751fa8d4d8595f64b7f00a0e4fff04`
 
-Focused verification:
-`chat4/night-content-gap-producer-v10-focused-check@560173e8598ee5dd3adad16d11733758d33e3e2b`
-is the producer head plus workflow-only QA commit and completed **SUCCESS**.
+Leader authority:
+D44 now locks hidden-work progression, wage and Takeover thresholds.
 
-Leader disposition:
-**D42 NIGHT PRODUCER ACCEPTED FOR CHAT2 ASSEMBLY QUEUE**.
-
-Do not mutate frozen v10.
-
-## New assignment
-
-Close the remaining exact Secret Debt balance blockers before full D19 production.
+Authority commit:
+`main@fe00dea96892687ba26898a1f52d023e24d11dc7`
 
 New branch:
-`chat4/secret-debt-balance-decision-v11`
+`chat4/secret-debt-full-route-producer-v12`
 
-Product/research only.
-No production runtime/UI.
+## Assignment
+
+Implement the full current-main Secret Debt route under D19/D30/D32/D44.
+
 No full CI.
 
-## Locked D19/D30/D32 authority
+### Trigger / trap
 
-Preserve:
-- unseen eligible street sleep: 20% lender encounter;
+Implement:
+- unseen eligible street sleep -> exactly 20% lender encounter;
 - refusal closes lender encounter for current life;
-- accept grants +2000;
-- trap exactly 10 days later;
-- debt = 20000;
-- ordinary 10 careers locked while bound, progress preserved;
-- School and Activity remain available;
-- hidden daytime work is profession-like and costs 1 Energy baseline;
-- hidden work does not automatically raise Lust;
+- acceptance grants +2000 exactly once;
+- trap activates exactly 10 days later;
+- debt becomes exactly 20000;
+- bound state is typed and save/reload safe.
+
+### While bound
+
+Implement:
+- all ten ordinary careers unavailable while bound;
+- existing ordinary-career progress preserved;
+- School remains available;
+- Activity remains available;
+- hidden daytime work available;
+- forced Secret Debt Night every bound night;
+- next-day Energy -1 exactly once;
+- no housing or Meta modifier suppresses forced Night.
+
+### Hidden work — D44 exact
+
+Each committed shift:
+- cost 1 Energy;
+- Endurance +1;
+- Sexuality +1;
+- Lust +0;
+- Summer Reason -1;
+- Winter Sociability -1;
+- no Spring/Autumn negative.
+
+Exact wage:
+`round(30 + min(110, 0.70 * Endurance + 0.60 * Sexuality + 0.35 * Lust))`
+
+Wage uses pre-shift values.
+Absolute cap 140.
+
+### Exits
+
+Paid Freedom:
+- repay only if holding full 20000;
+- one explicit action;
+- no partial repayment;
+- clears bound state;
+- D30/D32 future-run ownership binding through Strong Meta seam.
+
+Bound Life:
+- exactly 50 hidden completed shifts;
+- non-terminal eligibility until explicit D16 commit;
+- future reward Work Rhythm per D30/D32.
+
+Takeover:
+requires all:
+- hidden shifts >=75;
+- Endurance >=75;
+- Sexuality >=75;
+- Wits >=35;
+- Lust >=30;
+- paid School lessons >=10;
+- still bound;
+- explicit authored Takeover action.
+
+No threshold auto-commit.
+Sexuality/Lust do not imply consent.
+
+### Strong Meta integration
+
+Strong Meta current-main assembly is owned by Chat 2 and may move independently.
+
+Do not fork a duplicate registry.
+
+Use exact D30/D32 IDs:
+- `secret-debt.paid-freedom.earned-reserve-match`
+- `secret-debt.bound-life.work-rhythm`
+- `secret-debt.takeover.network-retainer`
+
+If current branch lacks final assembled Strong Meta runtime, leave precise ownership/grant seams and focused fixtures for Chat 2.
+
+### Palace interaction
+
+Preserve D43:
+if Palace access was legitimately opened before becoming bound:
+- Palace daytime access stays;
+- Palace progress stays;
+- ordinary ten careers remain locked;
+- forced Night still wins;
+- next-day Energy -1 still applies.
+
+Do not create Palace access from Secret Debt.
+
+### Focused QA
+
+No full CI.
+
+At minimum:
+- typecheck / validate / build;
+- lender 20% deterministic RNG test;
+- refusal closes route current life;
+- +2000 exactly once;
+- trap exactly +10 days;
+- debt exactly 20000;
+- ten ordinary careers locked while bound;
+- School/Activity still available;
+- hidden wage anchors 45 / 74 / 104 and cap 140;
+- hidden stat package exact;
+- seasonal negatives exact;
 - forced Night every bound night;
-- next-day Energy -1;
-- repayment only full 20000 explicit action;
-- hidden Hard Work milestone = 50;
-- D30/D32 future-run rewards unchanged.
+- Energy -1 exactly once across reload;
+- Street + bound penalty ordering;
+- full-only repayment;
+- Bound Life 49 fail / 50 eligible;
+- Takeover 74 fail / 75 + all thresholds eligible;
+- each Takeover threshold individually fails one below;
+- no auto commit;
+- consent/refusal unaffected;
+- Palace already-open preservation;
+- save/reload trap/bound/repayment/ending state;
+- no duplicate reward grants.
 
-Still open and owned by this packet:
-1. hidden-work wage formula / coefficients;
-2. hidden-work progression-stat gain package;
-3. exact owner-kill/control route stat thresholds;
-4. exact Lust threshold for that route.
+Freeze exact SHA and report:
+`READY_FOR_CHAT2_ASSEMBLY`.
 
-## Economy grounding
-
-Use current executable economy and accepted live affordability harness.
-Do not tune against old prototype numbers.
-
-The hidden route must:
-- not make 20,000 repayment trivial;
-- not make repayment mathematically impossible inside 160 days;
-- preserve meaningful School/Activity tradeoffs;
-- remain clearly distinct from ordinary work;
-- not require automatic Lust growth;
-- not make the owner-kill/control route the dominant universal strategy.
-
-Compare at least three wage shapes:
-- bounded flat-ish wage;
-- bounded relevant-stat scaling;
-- base + bounded stat component.
-
-Give exact day-count examples for low / mid / strong hidden-work builds.
-
-## Stat progression
-
-Recommend exact per-shift stat effects.
-
-Constraints:
-- no broad all-stat growth;
-- no automatic Lust;
-- route identity should use a narrow relevant subset;
-- compare 50-shift hidden Hard Work pacing with ordinary careers;
-- avoid making Secret Debt the best generic stat-training route.
-
-## Owner-kill/control route
-
-Recommend exact numeric gates for:
-- relevant progression stats;
-- Lust;
-- required 10 paid School lessons already locked by D19;
-- any required hidden-work progress count if justified.
-
-Explain why the threshold:
-- is reachable but late;
-- cannot be accidentally met by a fresh character;
-- does not turn Lust into a consent substitute;
-- remains distinct from simple repayment.
-
-## Required simulation table
-
-At minimum show:
-- starting debt 20000;
-- +2000 already received before trap;
-- hidden-work wage at representative relevant-stat values;
-- shifts required to gross 20000 if spending nothing;
-- realistic shifts after cheap lodging;
-- realistic shifts after normal lodging;
-- impact of School/Activity use;
-- effect of bound next-day Energy -1.
-
-Do not silently change lodging prices or School tuition.
-
-## Deliverable
-
-Create:
-`mindy-successor/docs/tasks/CHAT4_SECRET_DEBT_BALANCE_DECISION_v11.md`
-
-End with Russian table:
-`Параметр | Exact recommendation | Почему | Reachability | Abuse risk | Acceptance test`
-
-Then:
-`READY_FOR_LEADER_PRODUCT_DECISION`.
-
-Freeze exact SHA.
+Do not merge main.
