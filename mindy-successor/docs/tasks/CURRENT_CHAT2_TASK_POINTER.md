@@ -1,87 +1,74 @@
 # CURRENT CHAT2 TASK POINTER
 
-Status: **ACTIVE — STRONG META FULL-CI FIXTURE REPAIR**
+Status: **READY FOR LEADER MERGE — STRONG META CURRENT-MAIN ASSEMBLY**
 Owner: Chat 2 / sole full-CI integration lane
 
-Assembly PR:
+Assembly branch:
+`chat2/assembly-strong-meta-current-main-20261003-v1`
+
+Frozen assembly head:
+`22ea03a5028d8c5c1818f802f836f67b2b640fdb`
+
+PR:
 #277
 
-Assembly head that passed focused QA:
-`acfbfabe59e0a8e8504bc18f401d5f4967886553`
+## QA status
 
 Focused QA:
-#1154 **SUCCESS**
+- #1154: **SUCCESS**
 
-Full CI:
-#1155 **FAILURE**
+Schema6 fixture repair QA:
+- #1156: **SUCCESS**
 
-## Diagnosis
+Full CI on exact frozen assembly head:
+- #1157: **SUCCESS**
 
-Strong Meta core is not the failing area.
+Do not rerun unchanged head.
+Do not make additional changes unless Leader explicitly reopens the branch.
 
-#1155 failures are stale schema5 / hand-built completed-save fixtures after the accepted schema6 Strong Meta invariant.
+## Accepted assembly content
 
-The runtime invariant remains:
-**every completed-creation schema6 run must have a resolved Strong Meta snapshot.**
+Strong Meta current-main reconstruction includes:
+- `src/core/strongMeta.ts`;
+- selective schema6 Strong Meta state/migration;
+- selective current-main engine integration;
+- exact capacity 0..1 Keystone + 0..2 Specialists;
+- cap-200 only through selected `palace.true.cap-200` Specialist;
+- ordinary Hard Work packages outside Strong Meta capacity;
+- current-run resolved loadout snapshot;
+- D30/D32 Secret Debt reward runtime seams;
+- D23 Palace run-local qualification preserved;
+- no permanent Palace unlock;
+- no `ensurePalaceUnlock(s.meta)`;
+- D31 production content preserved.
 
-Do not weaken or remove that invariant.
+## Final repair accepted
 
-### Failure class 1 — stale schema version expectation
+Full-CI stale fixtures were repaired without weakening schema6:
+- current schema roundtrip now expects 6;
+- completed-save School fixtures carry the canonical empty resolved Strong Meta snapshot;
+- malformed schema6 completed saves still fail;
+- no reward ownership is inferred;
+- no direct cap-200 bypass restored.
 
-`tests/gopher.test.ts`
+## Current-main drift
 
-Test:
-`schema5 roundtrip preserves progress, pending state and metadata`
+Current main has moved after PR base only through docs/Product coordination files.
+No `prototype-m3.2` production overlap was found between current main drift and this assembly head.
 
-Current expectation is still schemaVersion 5.
-After Strong Meta migration the correct serialized/current schema is **6**.
+## Handoff
 
-Repair expectation only.
+Treat the branch as frozen.
 
-### Failure class 2 — manually constructed completed saves without snapshot
+Report:
+`READY_FOR_LEADER_MERGE`
 
-The following current-main tests call parse/save reload on fixtures that mark creation complete but do not include the mandatory schema6 Strong Meta snapshot:
-
-- `tests/school-activation-boundary.test.ts`
-- `tests/school-blocking-scene-compat.test.ts`
-- `tests/school-body-confidence-lust-d20.test.ts`
-- `tests/school-engine-adapter.test.ts`
-- `tests/school-life-content-reload.test.ts`
-- `tests/school-production-v11-locale-save.test.ts`
-- `tests/school-target.test.ts`
-
-Repair the shared/local test fixtures so a completed creation carries the canonical empty resolved Strong Meta snapshot.
-
-Preferred method:
-- reuse the exported Strong Meta empty snapshot helper or a canonical test helper;
-- do not duplicate ad-hoc snapshot shapes across files if a shared helper can safely serve them.
-
-Do not:
-- make parseSave silently invent a snapshot for arbitrary schema6 completed saves;
-- downgrade schema back to 5;
-- weaken malformed-save rejection;
-- auto-select rewards;
-- infer ownership.
-
-## Gate after repair
-
-Create a new repair commit on:
-`chat2/assembly-strong-meta-current-main-20261003-v1`.
-
-Run focused first:
-- typecheck;
-- validate;
-- build;
-- frozen Strong Meta suite;
-- Palace D23;
-- all seven repaired School/save files;
-- gopher schema roundtrip;
-- Night/Energy/Poverty;
-- D31 preservation.
-
-Only after focused green rerun full CI once.
-
-Freeze exact head and report:
-`READY_FOR_LEADER_MERGE`.
+with:
+- branch;
+- frozen SHA;
+- PR #277;
+- focused #1154 SUCCESS;
+- repair QA #1156 SUCCESS;
+- full CI #1157 SUCCESS.
 
 Do not merge main.
