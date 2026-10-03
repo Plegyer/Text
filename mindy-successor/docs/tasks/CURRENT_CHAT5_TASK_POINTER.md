@@ -1,81 +1,124 @@
 # CURRENT CHAT5 TASK POINTER
 
-Status: **ACTIVE — COMPLETE ENDING ATLAS v9**
+Status: **ACTIVE — ORDINARY COMPLEX ENDINGS TRANCHE A v10**
 Owner: Chat 5
 
-Frozen prior packet:
-`chat5/housing-tier-value-decision-v8@6e8f095339a4a426cee5e3facb801f71ce6b1b82`
+Completed inventory snapshot:
+`chat5/complete-ending-atlas-v9@7ff509343b7e41bd1790fc339023b46a6fcfa70d`
 
-Leader disposition:
-- housing recommendation accepted as D35: normal lodging gains explicit private-space capability;
-- do not edit v8.
+Leader disposition for v9:
+- accepted as a **research inventory snapshot**;
+- not accepted as final current Atlas because it predates D36/D37/D38 and Palace D23 current-main integration;
+- do not edit frozen v9.
 
-Current branch:
-`chat5/complete-ending-atlas-v9`
+Known v9 refresh items for the future Atlas:
+- Activity is now 3 separate endings, not one undefined family;
+- canonical family count therefore changes;
+- Palace D23 invitation consumer is now integrated on main;
+- D37 is now authority;
+- references claiming D35 left Hard Work +5 mapping OPEN are attribution errors; the mapping is still OPEN, but D35 is housing.
 
-## Assignment
+## New assignment
 
-Produce the complete user-readable successor Ending Atlas answering:
-**"Что даёт каждая концовка и как её получить?"**
+Close exact Product gates/rewards for the **early/mid advanced ordinary-career endings**.
 
-Deliver:
-1. `mindy-successor/docs/tasks/CHAT5_COMPLETE_ENDING_ATLAS_v9.md`
-2. `mindy-successor/research/successor_ending_atlas_v1.csv`
+New branch:
+`chat5/ordinary-complex-endings-tranche-a-v10`
 
-Read current authority D1-D35 plus:
-- all 10 career drafts;
-- Palace draft and D29/v11 contract;
-- Secret Debt draft + D19/D30/D32;
-- relationship system;
-- Large Activity role;
-- current executable `definitions.json`;
-- current ending presentation inventories;
-- old `COMPLEX_ENDING_META_REWARD_CATALOG_v0.md` only as historical proposal.
+Create:
+1. `mindy-successor/docs/tasks/CHAT5_ORDINARY_COMPLEX_ENDINGS_TRANCHE_A_v10.md`
+2. `mindy-successor/research/ordinary_complex_endings_tranche_a_v1.csv`
 
-For **every** ending/outcome family include:
-- player-facing name;
-- exact runtime ID if present;
-- domain/category;
-- authority status;
-- exact eligibility route;
-- exact numbers only where locked;
-- explicit OPEN markers where not decided;
-- eligibility vs explicit commit distinction;
-- current-life outcome;
-- permanent/New Start+ reward;
-- reward class: Hard Work package / Keystone / Specialist / automatic knowledge / undefined;
-- implementation status;
-- presentation status;
-- remaining blockers.
-
-Exhaustively cover:
-- all current executable ending IDs;
-- all designed outcome families for all 10 ordinary careers;
-- all 10 ordinary Hard Work endings;
-- 3 Secret Debt families;
-- Palace Service Life / Court Power / Inner Truth / Return Home True Ending;
-- existing global/education endings;
-- standalone Activity ending requirement;
-- actual relationship-specific endings;
-- required-but-undefined families without inventing fake names.
-
-Special sections:
-1. count reconciliation;
-2. 10-career Hard Work reward matrix;
-3. stale/conflict audit against D16/D23/D24/D27-D32/D35;
-4. one-line Russian player route for every family;
-5. exact 1.0 gap list: content-blocked vs Product-blocked vs runtime-blocked.
-
-Important:
-- old reward catalog cannot override current locks;
-- no old Palace shortcut may survive D23;
-- no original Plus Mode;
-- no auto-ending when D16 says eligibility is non-terminal;
-- exact ordinary +5 stat mappings remain OPEN unless current authority proves them;
-- Secret Debt D32 numbers are exact authority;
-- Palace True reward is cap 100->200 only, no value multiplication.
-
-No runtime/UI changes.
+No production runtime/UI/content changes.
 No full CI.
-Freeze SHA and report:
-`READY_FOR_LEADER_PRODUCT_REVIEW`.
+
+## Endings in scope — exactly 14
+
+### Lumber
+- Forewoman
+- Forest Compact
+
+### Satyr Maid
+- House Power
+- Favourite / Partner / Personal Network
+- Boundary Mastery
+
+### Undead Farm
+- Research Farmer
+- Farm Successor
+- External Anomaly
+
+### Tavern
+- Innkeeper
+- Information Broker
+- Sanctuary
+
+### Hunter
+- Master Hunter
+- Warden
+- Legend
+
+Do not change the ordinary Hard Work ending for any career.
+
+## For every ending define
+
+1. stable ending ID — preserve executable ID when modern-compatible, propose a new one where missing/stale;
+2. exact minimum career stage/shift requirement;
+3. exact route facts/counters;
+4. exact School requirement if any;
+5. exact Night/relationship requirement if any;
+6. exact Activity/item requirement if any;
+7. exact stat threshold if justified;
+8. optional vs mandatory inputs;
+9. explicit D16 commit boundary;
+10. current-life resolution;
+11. permanent/New Start+ reward;
+12. reward class under D27/D28;
+13. exact reward mechanics/caps/duration;
+14. migration/legacy cleanup;
+15. implementation status;
+16. remaining lore/presentation OPEN items.
+
+## Existing authority to preserve
+
+Lumber:
+- D33 School management publisher;
+- D34 stages newcomer / accepted-hand / trusted-worker / veteran;
+- shift milestones 1 / 8 / 20;
+- Forewoman and Forest cannot become eligible before trusted-worker;
+- Hard Work remains 50 and separate.
+
+Satyr Maid / Undead Farm / Tavern:
+- distinguish current executable gates from final Product authority;
+- do not silently preserve stale broad Meta rewards merely because runtime currently has them.
+
+Hunter:
+- Activity may contribute to advanced routes but no advanced Hunter ending may make Activity mandatory unless the route identity genuinely requires it;
+- D36/D38 standalone Activity endings remain separate.
+
+## Reward constraints
+
+Prefer identity-specific future-run changes over generic raw power.
+
+Do not use:
+- unconditional +1 daily Energy;
+- No Rent;
+- generic large starting cash;
+- extra calendar time;
+- broad stat carry-over;
+- free Specialist slots;
+- Palace entry shortcuts;
+- Secret Debt bypasses.
+
+If an existing runtime reward like +600 starting money or a stale +5/global unlock no longer fits D27/D28, classify it as legacy/stale and propose a modern replacement.
+
+Automatic knowledge/content unlocks should not consume Specialist slots.
+
+## Final deliverable
+
+End with a Russian table:
+
+`Ending | Как получить | Что происходит | Что даёт навсегда | Reward class | Exact numbers | Legacy cleanup | OPEN`
+
+Freeze exact SHA and report:
+`READY_FOR_LEADER_PRODUCT_DECISION`.
