@@ -191,6 +191,44 @@ Confirmed original facts useful for successor balance comparison:
 
 This shows the original sexual-work economy paid strongly while also carrying substantial stat tradeoffs.
 
+
+## Original Prostitute career routing — exact bytecode evidence
+
+The full Stencyl ActionScript bytecode has now been decoded far enough to trace the original Prostitute route directly rather than infer it from scene names.
+
+Verified career counters / gates:
+
+- a normal Prostitute shift increments `prostituteVisit` by 1;
+- `prostituteVisit >= 15`, combined with route flags, opens an intermediate Prostitute career scene;
+- persistent `fuckability >= 30`, combined with prior-route flags, opens another Prostitute scene;
+- `strength >= 40 AND durability >= 40`, after the preceding Prostitute scene, opens a later route scene;
+- `prostituteVisit >= 50 AND doneProstituteSinnersOrb == false` switches to the dedicated Prostitute Sinner's Orb scene.
+
+### Exact 50-shift ending-choice behavior
+
+The dedicated 50-shift scene sets `doneProstituteSinnersOrb = true` on entry, then later presents explicit **Yes / No** buttons.
+
+The scene copy explicitly warns that accepting the orb locks in the ending.
+
+Runtime behavior:
+
+- pressing **Yes** writes `endingSet = "prostitute"`;
+- pressing **No** does not write that ending selection;
+- both branches return to the ordinary game flow afterward;
+- because the scene's one-time flag was already set on entry, declining does not simply re-offer the same orb scene on the next shift.
+
+This is strong historical evidence for a two-step career-ending model:
+
+`reach career milestone -> receive explicit ending opportunity -> player commits or declines`
+
+It is **not** authority to copy the original one-shot-decline behavior. Successor Product authority separately decides whether a declined opportunity remains available later.
+
+### Cross-career routing
+
+The original main event router interleaves Prostitute and Arm Candy conditions in the same trigger block. Some scenes depend on flags from the other career.
+
+This confirms that original careers were not always isolated silos: progress/choices in one profession could influence authored opportunities in another.
+
 ## Authority rule for using this reference
 
 When original and successor authority conflict:
