@@ -1,89 +1,140 @@
 # CURRENT CHAT3 TASK POINTER
 
-Status: **ACTIVE — LARGE ACTIVITY / GAME-WITHIN-THE-GAME FULL-SCOPE v8**
+Status: **ACTIVE — STANDALONE ACTIVITY ENDING FAMILY v9**
 Owner: Chat 3
 
-Accepted prior research:
-`chat3/live-economy-affordability-harness-v7@7d9daa6f1faa69d42d5fbaa56e683a35aac447b0`
+Accepted Product packet:
+`chat3/large-activity-full-scope-v8@5d176da728d7a8b99efcc5970f97bbed411bae6f`
 
-Disposition:
-- live executable economy is viable under diversified cheap-lodging play without mandatory Meta;
-- one-career play remains economically tight;
-- D31 has real wage cost;
-- normal lodging dominance gap is now resolved at Product level by D35 private-space semantics;
-- no wage compensation was authorized.
+Leader authority:
+D36 now locks:
+- exactly 4 functional Activity regions;
+- Forest Frontier / Trade Corridor / Anomalous Reach / Restricted Sites Network;
+- 2 Energy entry;
+- Field Time 6;
+- Endurance target range 6–8 by adapter;
+- Tracking Triangulation / Pattern-Ritual Circuit / Infiltration-Suspicion;
+- selected multi-day camp with max 2 field nights;
+- standalone Activity ending eligibility baseline;
+- no universal Activity XP/combat grind.
 
-## New assignment
-
-Close the major remaining Product gap around the **Large Activity as a real second game mode**.
+Authority commit:
+`main@9e92ffbd0b7b68c0cf333d36dac19551e10465f5`
 
 New branch:
-`chat3/large-activity-full-scope-v8`
+`chat3/activity-ending-family-v9`
 
-Read:
-- `LARGE_ACTIVITY_PRODUCT_ROLE_v0.md`;
-- `FOREST_ACTIVITY_SLICE_v0.md`;
-- `NIGHT_AND_ACTIVITY_CONTRACT_v1.md`;
-- current `content/definitions.json`;
-- Lumber / Hunter / Assassin / Guard / Merchant career drafts;
-- relationship, items and School cross-system docs;
-- D4, D7, D8, D16, D26 and current Product blocker index.
+## Assignment
 
-Current executable activities include:
-- `lumber.forest`;
-- `hunter.expedition`;
-- `assassin.infiltration`.
+Close the remaining D36 ending gap so the user's complete Ending Atlas can eventually state exactly:
+**how the Activity ending is obtained and what it gives.**
 
-Do not confuse infrastructure existence with finished 1.0 scope.
-
-## Deliverables
+This is a Product decision packet only. Do not implement production runtime/content.
 
 Create:
-1. `mindy-successor/docs/tasks/CHAT3_LARGE_ACTIVITY_FULL_SCOPE_v8.md`
-2. `mindy-successor/research/large_activity_scope_matrix_v1.csv`
+`mindy-successor/docs/tasks/CHAT3_ACTIVITY_ENDING_FAMILY_v9.md`
 
-The packet must compare **3-region vs 4-region vs 5-region** 1.0 structures and recommend one exact target.
+Use D16, D27-D28, D36 and the current Meta architecture.
 
-For the recommended structure define at minimum:
+## Locked eligibility baseline
 
-1. exact region count;
-2. region identity/function without final lore prose;
-3. which regions are available early/mid/late;
-4. how 160-day pacing prevents Activity from becoming a separate grind;
-5. entry Energy policy;
-6. internal resource model;
-7. exploration/navigation layer;
-8. challenge/stat/equipment layer;
-9. at least 2–3 specialized mini-game families across the full Activity umbrella;
-10. save/resume and deterministic reload boundaries;
-11. success / escape / failure consequences;
-12. seasonal differences;
-13. city preparation -> Activity feedback;
-14. Activity result -> career/relationship/School feedback;
-15. item/capability hooks;
-16. relationship companion/contact hooks;
-17. camp policy and when city Night is replaced by field camp;
-18. Secret Debt compatibility;
-19. Palace compatibility;
-20. standalone Activity ending-family requirement;
-21. how Activity contributes to complex ordinary-career endings without becoming mandatory for every Hard Work;
-22. production content budget per region;
-23. minimum presentation/media budget;
-24. acceptance tests and milestone plan.
+The standalone Activity ending family must require:
+- regional anchors resolved in at least **3 of 4** D36 regions;
+- specialized mechanics completed from at least **2 different mini-game families**;
+- at least one meaningful extracted capability/evidence/sample result;
+- at least one Activity contact/companion thread resolved;
+- no ordinary Hard Work requirement;
+- no Palace requirement;
+- eligibility is non-terminal until explicit commit.
 
-Explicitly answer the user's product question:
-**what makes this feel like a game inside the game rather than another event menu?**
+Do not weaken or add hidden mandatory gates to that baseline.
 
-Audit current three executable activities against that bar and classify each as:
-- infrastructure only;
-- vertical slice;
-- production-ready;
-- missing major depth.
+## Required Product work
 
-Do not invent a universal combat system unless the evidence actually requires it.
-Do not make Activity mandatory for all careers.
-No production runtime/content changes.
-No full CI.
+Design **three distinct ending directions** under the one standalone Activity family.
 
-Freeze exact SHA and report:
+Use functional names until final lore copy is approved. The packet should evaluate and refine at least:
+
+1. **Pathfinder / Mapping**
+   - route mastery / safe access / exploration identity;
+
+2. **Preservation / Research**
+   - anomaly/sample/knowledge preservation identity;
+
+3. **Network / Access**
+   - trade/contact/route-network identity.
+
+If one of these is mechanically weak or duplicates an ordinary career, replace it and explain why.
+
+For each direction specify:
+
+### How the player gets it
+- which regional anchor/facts distinguish this direction after the common 3-of-4 baseline;
+- which mini-game family contribution matters;
+- any item/evidence/contact requirements;
+- exact numbers where justified;
+- what remains optional;
+- explicit commit action/boundary.
+
+### Current-life resolution
+- what the player has achieved in this life;
+- what route state closes/resolves;
+- what is intentionally left as final lore copy.
+
+### Permanent / New Start+ reward
+Propose a concrete reward and classify it under current Meta architecture:
+- automatic knowledge/content;
+- Specialist;
+- Keystone;
+- or another already-authorized layer.
+
+Strong rule-changing rewards must respect D27/D28. Do not invent a free extra slot.
+
+Prefer rewards that change future Activity options rather than generic raw stats/money/Energy.
+
+For each reward show:
+- exact mechanical effect;
+- why it fits its class;
+- interaction with D36;
+- interaction with Secret Debt;
+- interaction with Palace;
+- stacking risks;
+- whether it should be automatic or selectable.
+
+### Balance comparison
+Compare the three rewards against:
+- D30/D32 Keystones;
+- D24 cap-200 Specialist;
+- ordinary Hard Work packages;
+- current Activity entry cost 2 Energy;
+- D36 <=10-entry ending pacing.
+
+Avoid:
+- unconditional +1 daily Energy;
+- No Rent;
+- generic large starting cash;
+- extra calendar time;
+- bypassing D23;
+- bypassing Secret Debt forced Night.
+
+## Ending-family structure
+
+Decide whether:
+- the three directions are three separate ending IDs under one Activity family;
+or
+- one ending ID with three completion variants.
+
+Recommend one implementation shape and explain save/Meta implications.
+
+## Deliverable summary
+
+End with an exact user-facing table:
+
+`Направление | Как получить | Что происходит | Что даёт навсегда | Reward class | Что ещё OPEN`
+
+Mark the packet:
 `READY_FOR_LEADER_PRODUCT_DECISION`.
+
+No production code.
+No full CI.
+Freeze exact SHA.
