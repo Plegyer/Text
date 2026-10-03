@@ -13085,6 +13085,10 @@
     "secretDebt.status.takeover": {
       "ru": "контроль перехвачен",
       "en": "takeover"
+    },
+    "ui.secretDebt.principalLabel": {
+      "ru": "Тайный долг — основной долг",
+      "en": "Secret Debt principal"
     }
   }
 }
