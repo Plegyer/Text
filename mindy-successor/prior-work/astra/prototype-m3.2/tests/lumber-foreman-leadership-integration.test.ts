@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {applyEffects,dispatch,resolveReactions} from '../src/core/engine.ts';
+import {applyEffects,dispatch,eligible,resolveReactions} from '../src/core/engine.ts';
 import type {Save} from '../src/core/schema.ts';
 import {catalog,started} from './helpers.ts';
 
@@ -47,5 +47,12 @@ test('Foreman professional route is a required Lumber leadership gate and adds n
   assert.equal(career.counters.completed_shifts,shifts);
   assert.equal(s.run.progression.relationships['lumber.foreman'].stage,'route-professional');
   assert.equal(s.run.progression.relationships['lumber.foreman'].choices.route,'professional');
-  assert.ok(s.run.endings.eligible.includes('ending.lumber.forewoman'));
+  assert.ok(!s.run.endings.eligible.includes('ending.lumber.forewoman'),
+    'D34 forbids Forewoman before trusted-worker / 8 shifts');
+
+  const ending=catalog.definitions.endings.find(e=>e.id==='ending.lumber.forewoman');
+  assert.ok(ending);
+  s.run.progression.careers.lumber.stage='trusted-worker';
+  s.run.progression.careers.lumber.counters.completed_shifts=8;
+  assert.equal(eligible(ending.conditions,s,catalog),true);
 });

@@ -4545,6 +4545,36 @@
           "value": 15
         },
         {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "satyr-maid",
+              "stage": "veteran-service"
+            },
+            {
+              "kind": "careerStage",
+              "career": "satyr-maid",
+              "stage": "house-power"
+            },
+            {
+              "kind": "careerStage",
+              "career": "satyr-maid",
+              "stage": "personal-network"
+            },
+            {
+              "kind": "careerStage",
+              "career": "satyr-maid",
+              "stage": "boundaries"
+            },
+            {
+              "kind": "careerStage",
+              "career": "satyr-maid",
+              "stage": "outcome-ready"
+            }
+          ]
+        },
+        {
           "kind": "careerFact",
           "career": "satyr-maid",
           "fact": "crisis-house-power",
@@ -4595,6 +4625,36 @@
           "counter": "completed_shifts",
           "op": "gte",
           "value": 15
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "satyr-maid",
+              "stage": "veteran-service"
+            },
+            {
+              "kind": "careerStage",
+              "career": "satyr-maid",
+              "stage": "house-power"
+            },
+            {
+              "kind": "careerStage",
+              "career": "satyr-maid",
+              "stage": "personal-network"
+            },
+            {
+              "kind": "careerStage",
+              "career": "satyr-maid",
+              "stage": "boundaries"
+            },
+            {
+              "kind": "careerStage",
+              "career": "satyr-maid",
+              "stage": "outcome-ready"
+            }
+          ]
         },
         {
           "kind": "careerFact",
@@ -4655,6 +4715,36 @@
           "counter": "completed_shifts",
           "op": "gte",
           "value": 15
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "satyr-maid",
+              "stage": "veteran-service"
+            },
+            {
+              "kind": "careerStage",
+              "career": "satyr-maid",
+              "stage": "house-power"
+            },
+            {
+              "kind": "careerStage",
+              "career": "satyr-maid",
+              "stage": "personal-network"
+            },
+            {
+              "kind": "careerStage",
+              "career": "satyr-maid",
+              "stage": "boundaries"
+            },
+            {
+              "kind": "careerStage",
+              "career": "satyr-maid",
+              "stage": "outcome-ready"
+            }
+          ]
         },
         {
           "kind": "careerFact",

@@ -121,6 +121,12 @@
           "kind": "worldFact",
           "fact": "lumber.forest.truth-known",
           "present": true
+        },
+        {
+          "kind": "itemCount",
+          "id": "forest_preserved_specimen",
+          "op": "gte",
+          "count": 1
         }
       ],
       "variants": [
@@ -141,6 +147,11 @@
           "conditions": [],
           "effects": [
             {
+              "kind": "removeItem",
+              "id": "forest_preserved_specimen",
+              "count": 1
+            },
+            {
               "kind": "addCareerFact",
               "career": "lumber",
               "fact": "forest-truth-known"
@@ -149,6 +160,11 @@
               "kind": "addCareerFact",
               "career": "lumber",
               "fact": "forest-problem-resolved"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "lumber",
+              "fact": "forest-specimen-catalogued"
             }
           ]
         }

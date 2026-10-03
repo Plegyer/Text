@@ -69,7 +69,7 @@ test('Hard Work, House Power and Boundary Mastery can coexist without ending the
   assert.equal(s.run.status,'active');
 });
 
-test('explicit Satyr commit produces one RunResult and applies only the committed Meta reward once',()=>{
+test('explicit Satyr commit produces one RunResult while Specialist reward waits for strong-Meta assembly',()=>{
   let s=combinedAt49();
   s.run.dayState.energyCurrent=3;
   s=settlePending(dispatch(s,{type:'action',id:'satyr-maid.shift'},catalog));
@@ -85,9 +85,9 @@ test('explicit Satyr commit produces one RunResult and applies only the committe
   assert.ok(s.meta.completedEndings.includes('ending.satyr-maid.house-power'));
   assert.equal(s.meta.completedEndings.includes('ending.satyr-maid.boundary-mastery'),false);
   assert.equal(s.meta.completedEndings.includes('ending.satyr-maid.hard-work'),false);
-  assert.deepEqual(s.run.endings.result?.appliedMetaRewardIds,['satyr-maid.house-credit']);
+  assert.deepEqual(s.run.endings.result?.appliedMetaRewardIds,[]);
 
   const again=dispatch(s,{type:'completeEnding'},catalog);
   assert.equal(again.meta.runsCompleted,completedBefore+1);
-  assert.deepEqual(again.run.endings.result?.appliedMetaRewardIds,['satyr-maid.house-credit']);
+  assert.deepEqual(again.run.endings.result?.appliedMetaRewardIds,[]);
 });
