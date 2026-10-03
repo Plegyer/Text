@@ -1458,6 +1458,15 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
     raw.run.character.creation.activeHardWorkPackages=[];
     raw.run.character.creation.hardWorkPackagesApplied=true;
   }
+  if(raw.schemaVersion===5){
+    raw.meta=raw.meta??{};
+    raw.meta.strongMeta=emptyStrongMetaState();
+    const legacySnapshot=emptyResolvedStrongMetaSnapshot();
+    legacySnapshot.registryVersion='legacy-v5';
+    raw.run.strongMetaSnapshot=raw.run?.character?.creation?.complete?legacySnapshot:null;
+    raw.run.strongMetaRuntime=emptyStrongMetaRuntime();
+    raw.schemaVersion=6;
+  }
   const parsed=saveSchema.parse(raw) as unknown as Save;
   const s=attachLegacyFacade(parsed);
   s.meta.unlocks=s.meta.unlocks.filter(unlock=>unlock!=='palace');
@@ -1559,6 +1568,11 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
     s.meta.completedEndings=[...new Set([...current.completedEndings,...s.meta.completedEndings])];
     s.meta.unlocks=[...new Set([...current.unlocks,...s.meta.unlocks])].filter(unlock=>unlock!=='palace');
     s.meta.hardWorkProgress=[...new Set([...current.hardWorkProgress,...s.meta.hardWorkProgress])];
+    s.meta.strongMeta=canonicalStrongMetaState({
+      ownership:{ownedRewardIds:[...new Set([...current.strongMeta.ownership.ownedRewardIds,...s.meta.strongMeta.ownership.ownedRewardIds])]},
+      knowledge:{inheritedKnowledgeIds:[...new Set([...current.strongMeta.knowledge.inheritedKnowledgeIds,...s.meta.strongMeta.knowledge.inheritedKnowledgeIds])]},
+      preferredSelection:structuredClone(current.strongMeta.preferredSelection)
+    });
     s.meta.appliedResultTransactions=[...new Set([...current.appliedResultTransactions,...s.meta.appliedResultTransactions])];
     s.meta.runsStarted=Math.max(current.runsStarted,s.meta.runsStarted);
     s.meta.runsCompleted=Math.max(current.runsCompleted,s.meta.runsCompleted);
@@ -1573,5 +1587,7 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
   );
   if(s.run.creation.complete&&!s.run.creation.hardWorkPackagesApplied)throw new Error('Завершённое создание должно иметь зафиксированный Hard Work package state.');
   if(!s.run.creation.complete&&s.run.creation.hardWorkPackagesApplied&&s.run.creation.activeHardWorkPackages.length)throw new Error('Legacy-settled создание не может содержать активные Hard Work пакеты.');
+  if(s.run.creation.complete&&!s.run.strongMetaSnapshot)throw new Error('Завершённое создание должно иметь Strong Meta snapshot.');
+  if(!s.run.creation.complete&&s.run.strongMetaSnapshot)throw new Error('Незавершённое создание не может иметь Strong Meta snapshot.');
   return s;
 }
