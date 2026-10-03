@@ -213,6 +213,23 @@ Successor direction is intentionally different:
 
 Design lesson: borrow useful systemic ideas without inheriting the original endgame architecture wholesale.
 
+### 30. Action-economy rewards need a separate power budget
+The original illustrates a major comparability problem:
+- several Titles grant +1 to one stat after an apartment sleep;
+- the Busy Bee Title grants +1 daily Stamina;
+- separate ending bonuses can also grant +1 daily Stamina.
+
+On a 160-day successor calendar, an analogous +1 Energy/day effect is worth up to **160 additional Energy**: potentially 160 extra 1-Energy actions or 80 extra 2-Energy Large Activities before other constraints.
+
+That is fundamentally broader than a small starting-stat bonus or a narrow nightly stat gain.
+
+Design lesson: evaluate action-economy modifiers in their own power class. If a strong-modifier loadout later contains +daily Energy, competing choices need comparably meaningful opportunity value or explicit tradeoffs; otherwise +Energy becomes the obvious default and the loadout stops being a real choice.
+
+### 31. The original ending-bonus pool is broad but heavily stat-weighted
+The extracted original New Game+/Finale UI contains **66 ending-bonus descriptions**. Most are raw stat packages, but a meaningful minority instead alter economy, access, equipment/spells, inheritance or world rules.
+
+This is useful as a diversity reference, not a target distribution. A successor Meta catalog should avoid filling most slots with numerically similar stat packages if it wants choices to feel distinct.
+
 ## Successor implications to test, not auto-lock
 
 - Current approved successor seasonal-tradeoff candidate yields **+1.5 net progression-stat points per ordinary shift on average for all ten careers**. That is roughly +75 summed stat points across 50 shifts, versus about +25 in the recovered original work model. This is a balance-test flag, not a command to copy the original: verify progression speed and cap timing over a full 160-day run, especially with School and NG+.
