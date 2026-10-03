@@ -372,6 +372,20 @@ This exact list reinforces the user's balance criticism: +1 daily Stamina is bro
 
 Do not port these Titles as a successor feature by default.
 
+### Exact Stamina stacking evidence
+
+Direct bytecode from the original new-day flow confirms the two layers stack:
+
+1. daily Stamina is first set/raised using the persistent `staminaBoost` value from selected ending bonuses;
+2. the flow then separately checks `activeTitle == "busyBee"`;
+3. Busy Bee adds another **+1 Stamina**.
+
+So an enabled +1-daily-Stamina ending reward and the Busy Bee Title can both contribute in the same run.
+
+Direct bytecode from the apartment/home sleep scene separately checks one `activeTitle` identity and applies +1 to the corresponding stat (Charisma/Cleanliness/Fuckability/Sociability/Class/Creativity/Strength/Durability/Prowess/Intellect/Spirit).
+
+This is historical evidence of a balance hazard, not a system to port.
+
 ## Original Plus Mode and Titles — user clarification
 
 This section records user-provided clarification about the original game's structure; it is not a successor implementation requirement.
