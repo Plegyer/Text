@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import {emptyResolvedStrongMetaSnapshot} from '../src/core/strongMeta.ts';
 
 import {loadCatalog} from '../src/core/content.ts';
 import {applyEffects,freshSave,parseSave,resolveReactions} from '../src/core/engine.ts';
@@ -34,6 +35,7 @@ function ready():Save{
   s.run.character.creation.allocated={};
   s.run.character.creation.complete=true;
   s.run.character.creation.hardWorkPackagesApplied=true;
+  s.run.strongMetaSnapshot=emptyResolvedStrongMetaSnapshot();
   s.run.flags['story.arrived']=true;
   s.run.resources.money=2_000;
   s.run.dayState.energyCurrent=3;

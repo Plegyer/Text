@@ -17,6 +17,7 @@ import {
   type SchoolCourseId
 } from '../src/core/school.ts';
 import {stats,type Catalog,type Save,type Stat} from '../src/core/schema.ts';
+import {emptyResolvedStrongMetaSnapshot} from '../src/core/strongMeta.ts';
 
 const runtime={applyEffects,resolveReactions};
 
@@ -104,6 +105,7 @@ function schoolReady():Save{
   s.run.character.creation.allocated={};
   s.run.character.creation.complete=true;
   s.run.character.creation.hardWorkPackagesApplied=true;
+  s.run.strongMetaSnapshot=emptyResolvedStrongMetaSnapshot();
   s.run.flags['story.arrived']=true;
   return s;
 }

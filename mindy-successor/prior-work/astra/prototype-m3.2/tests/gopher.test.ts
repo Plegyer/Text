@@ -25,7 +25,7 @@ test('all three tavern endings reachable; branch choice excludes opposite route;
  }
 });
 test('schema5 roundtrip preserves progress, pending state and metadata',()=>{
- const s=act(start(),'work');const restored=parseSave(JSON.stringify(s),catalog);assert.equal(restored.schemaVersion,5);assert.equal(restored.run.actionCounts.work,1);assert.equal(restored.run.actionCounts.tavern,undefined);assert.deepEqual(JSON.parse(JSON.stringify(restored.meta)),JSON.parse(JSON.stringify(s.meta)));
+ const s=act(start(),'work');const restored=parseSave(JSON.stringify(s),catalog);assert.equal(restored.schemaVersion,6);assert.equal(restored.run.actionCounts.work,1);assert.equal(restored.run.actionCounts.tavern,undefined);assert.deepEqual(JSON.parse(JSON.stringify(restored.meta)),JSON.parse(JSON.stringify(s.meta)));
 });
 test('presentation replacements change prose and media only; unsafe and unknown targets rejected',()=>{
  const before=JSON.stringify(catalog);const patch={version:1,texts:{'event/gopher.arrival/variant/default':'Другая история.\n\nДобавленный абзац.'},media:{'gopher.tavern-intro.default':{kind:'image',src:'assets/town.svg',alt:'Новая сцена'}}};

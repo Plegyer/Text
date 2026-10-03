@@ -11,6 +11,7 @@ import {
   type SchoolCourseId
 } from '../src/core/school.ts';
 import type {Catalog,Save} from '../src/core/schema.ts';
+import {emptyResolvedStrongMetaSnapshot} from '../src/core/strongMeta.ts';
 
 const definitions=JSON.parse(readFileSync('content/school-target-definitions.fixture.json','utf8'));
 const pack=JSON.parse(readFileSync('content/packs/school-target/school-production.pack.json','utf8'));
@@ -26,6 +27,7 @@ function ready():Save{
   s.run.character.creation.allocated={};
   s.run.character.creation.complete=true;
   s.run.character.creation.hardWorkPackagesApplied=true;
+  s.run.strongMetaSnapshot=emptyResolvedStrongMetaSnapshot();
   s.run.flags['story.arrived']=true;
   s.run.resources.money=2_000;
   s.run.dayState.energyCurrent=3;
