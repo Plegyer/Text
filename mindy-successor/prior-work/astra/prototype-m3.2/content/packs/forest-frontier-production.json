@@ -20,9 +20,10 @@
       ],
       "worldFacts": [
         "activity.forest-frontier.anchor-secured",
+        "activity.forest-frontier.mark.pathfinder",
+        "activity.forest-frontier.mark.preservation",
         "forest.frontier.tracking-triangulated",
-        "forest.frontier.preservation-used",
-        "forest.frontier.pathfinder-evidence"
+        "forest.frontier.contact-thread-open"
       ]
     },
     "writes": {
@@ -34,8 +35,6 @@
         "hunter.senior-guide"
       ],
       "worldFacts": [
-        "activity.forest-frontier.mark.pathfinder",
-        "activity.forest-frontier.mark.preservation",
         "activity.forest-frontier.mark.network",
         "activity.forest-frontier.result.research-grade",
         "forest.frontier.school-reflection-recorded"
@@ -45,189 +44,6 @@
   "media": [],
   "events": [
     {
-      "id": "forest-frontier.production.lumber-anchor",
-      "title": "Forest Frontier anchor returns to Lumber",
-      "sourceDomain": "forest-frontier",
-      "trigger": [],
-      "reactionTriggers": [
-        {
-          "kind": "activityResult",
-          "activity": "lumber.forest",
-          "outcome": "success",
-          "result": "lumber.forest.success"
-        }
-      ],
-      "priorityClass": "critical_progression",
-      "priority": 82,
-      "blocking": true,
-      "delivery": {
-        "policy": "live"
-      },
-      "cooldownDays": 0,
-      "variantCooldownDays": 0,
-      "maxShows": 8,
-      "conditions": [
-        {
-          "kind": "worldFact",
-          "fact": "activity.forest-frontier.anchor-secured",
-          "present": true
-        },
-        {
-          "kind": "careerFact",
-          "career": "lumber",
-          "fact": "forest-frontier-anchor-returned",
-          "present": false
-        }
-      ],
-      "variants": [
-        {
-          "id": "default",
-          "text": "The Forest Frontier anchor has been secured. Lumber can record the regional return without changing the legacy Forest truth result.",
-          "conditions": [],
-          "media": []
-        }
-      ],
-      "choices": [
-        {
-          "id": "record",
-          "label": "Record the Forest Frontier return",
-          "text": "Keep the regional anchor as an additive typed career fact.",
-          "conditions": [],
-          "effects": [
-            {
-              "kind": "addCareerFact",
-              "career": "lumber",
-              "fact": "forest-frontier-anchor-returned"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "forest-frontier.production.pathfinder-mark",
-      "title": "Forest Frontier Pathfinder marker",
-      "sourceDomain": "forest-frontier",
-      "trigger": [],
-      "reactionTriggers": [
-        {
-          "kind": "activityResult",
-          "activity": "lumber.forest",
-          "outcome": "success",
-          "result": "lumber.forest.success"
-        }
-      ],
-      "priorityClass": "critical_progression",
-      "priority": 81,
-      "blocking": true,
-      "delivery": {
-        "policy": "live"
-      },
-      "cooldownDays": 0,
-      "variantCooldownDays": 0,
-      "maxShows": 1,
-      "conditions": [
-        {
-          "kind": "worldFact",
-          "fact": "activity.forest-frontier.anchor-secured",
-          "present": true
-        },
-        {
-          "kind": "worldFact",
-          "fact": "forest.frontier.pathfinder-evidence",
-          "present": true
-        },
-        {
-          "kind": "worldFact",
-          "fact": "activity.forest-frontier.mark.pathfinder",
-          "present": false
-        }
-      ],
-      "variants": [
-        {
-          "id": "default",
-          "text": "The secured Forest Frontier result carries a Pathfinder classification from an actually used triangulated shortcut.",
-          "conditions": [],
-          "media": []
-        }
-      ],
-      "choices": [
-        {
-          "id": "mark",
-          "label": "Mark Pathfinder evidence",
-          "text": "Record only the regional classification; do not complete an ending.",
-          "conditions": [],
-          "effects": [
-            {
-              "kind": "addWorldFact",
-              "fact": "activity.forest-frontier.mark.pathfinder"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "forest-frontier.production.preservation-mark",
-      "title": "Forest Frontier Preservation marker",
-      "sourceDomain": "forest-frontier",
-      "trigger": [],
-      "reactionTriggers": [
-        {
-          "kind": "activityResult",
-          "activity": "lumber.forest",
-          "outcome": "success",
-          "result": "lumber.forest.success"
-        }
-      ],
-      "priorityClass": "critical_progression",
-      "priority": 80,
-      "blocking": true,
-      "delivery": {
-        "policy": "live"
-      },
-      "cooldownDays": 0,
-      "variantCooldownDays": 0,
-      "maxShows": 1,
-      "conditions": [
-        {
-          "kind": "worldFact",
-          "fact": "activity.forest-frontier.anchor-secured",
-          "present": true
-        },
-        {
-          "kind": "worldFact",
-          "fact": "forest.frontier.preservation-used",
-          "present": true
-        },
-        {
-          "kind": "worldFact",
-          "fact": "activity.forest-frontier.mark.preservation",
-          "present": false
-        }
-      ],
-      "variants": [
-        {
-          "id": "default",
-          "text": "The secured Forest Frontier result carries a Preservation classification because a preservation step was actually used in the field.",
-          "conditions": [],
-          "media": []
-        }
-      ],
-      "choices": [
-        {
-          "id": "mark",
-          "label": "Mark Preservation evidence",
-          "text": "Record only the regional classification; do not complete an ending.",
-          "conditions": [],
-          "effects": [
-            {
-              "kind": "addWorldFact",
-              "fact": "activity.forest-frontier.mark.preservation"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "forest-frontier.production.research-grade",
       "title": "Forest Frontier research-grade candidate",
       "sourceDomain": "forest-frontier",
@@ -235,11 +51,18 @@
       "reactionTriggers": [
         {
           "kind": "worldFactAdded",
+          "fact": "activity.forest-frontier.anchor-secured"
+        },
+        {
+          "kind": "worldFactAdded",
           "fact": "activity.forest-frontier.mark.preservation"
         },
         {
           "kind": "worldFactAdded",
           "fact": "activity.forest-frontier.mark.pathfinder"
+        },
+        {
+          "kind": "dayStarted"
         }
       ],
       "priorityClass": "critical_progression",
@@ -307,6 +130,9 @@
           "activity": "lumber.forest",
           "outcome": "success",
           "result": "lumber.forest.success"
+        },
+        {
+          "kind": "dayStarted"
         }
       ],
       "priorityClass": "normal_progression",
@@ -322,6 +148,11 @@
         {
           "kind": "worldFact",
           "fact": "activity.forest-frontier.anchor-secured",
+          "present": true
+        },
+        {
+          "kind": "worldFact",
+          "fact": "forest.frontier.contact-thread-open",
           "present": true
         },
         {
@@ -389,6 +220,9 @@
           "activity": "lumber.forest",
           "outcome": "success",
           "result": "lumber.forest.success"
+        },
+        {
+          "kind": "dayStarted"
         }
       ],
       "priorityClass": "normal_progression",
