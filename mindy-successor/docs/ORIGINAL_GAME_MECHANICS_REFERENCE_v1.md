@@ -320,6 +320,39 @@ This ending-bonus selection layer is **not the same thing as Titles**.
 
 The successor's exact New Start+ rules are still governed by current Product authority; D22 independently allows any subset of earned ordinary Hard Work packages.
 
+## Original Title effect catalog — balance reference
+
+Recovered Title descriptions confirm a separate one-active-Title system.
+
+Apartment-sleep stat Titles:
+- +1 Charisma;
+- +1 Cleanliness;
+- +1 Fuckability;
+- +1 Sociability;
+- +1 Class;
+- +1 Creativity;
+- +1 Strength;
+- +1 Durability;
+- +1 Prowess;
+- +1 Intellect;
+- +1 Spirit.
+
+Broader/specialized Titles:
+- Busy Bee: +1 to the daily Stamina pool;
+- Buff as Fuck: +20% total HP;
+- Mentalist: +20% total MP;
+- Combat Vet: +30 Strength while in combat;
+- Come At Me: +30 Durability while in combat;
+- Knife Fighter: +30 Prowess while in combat;
+- The Wiz: +30 Intellect while in combat;
+- Spiritual Leader: +30 Spirit while in combat;
+- Blimp Enthusiast: chance to summon a guardian spirit at combat start;
+- Immunologist: total immunity to status ailments.
+
+This exact list reinforces the user's balance criticism: +1 daily Stamina is broadly useful across almost every day/system, while most alternatives are conditional or narrow.
+
+Do not port these Titles as a successor feature by default.
+
 ## Original Plus Mode and Titles — user clarification
 
 This section records user-provided clarification about the original game's structure; it is not a successor implementation requirement.
