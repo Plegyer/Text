@@ -17,6 +17,14 @@ const packFiles=['merchant-career.json','merchant-cross-system.json','merchant-i
 const packs=packFiles.map(name=>JSON.parse(readFileSync('content/packs/'+name,'utf8')));
 
 function compact<T>(x:T):T{return JSON.parse(JSON.stringify(x));}
+function withoutD40SelectedRouteEffects(effects:any[]){
+  return (effects??[]).filter((effect:any)=>!(
+    effect.kind==='addCareerFact'
+    && String(effect.fact??'').startsWith('ending-route-')
+    && String(effect.fact??'').endsWith('-selected')
+  ));
+}
+
 function project(){
  const shift=defs.actions.find((x:any)=>x.id==='merchant.shift');
  const ending={...defs.endings.find((x:any)=>x.id==='ending.merchant.hard-work')};
@@ -34,7 +42,7 @@ function project(){
     cooldownDays:e.cooldownDays,variantCooldownDays:e.variantCooldownDays,maxShows:e.maxShows,
     conditions:e.conditions,
     variants:(e.variants??[]).map((v:any)=>({id:v.id,conditions:v.conditions,media:v.media})),
-    choices:(e.choices??[]).map((c:any)=>({id:c.id,conditions:c.conditions,effects:c.effects}))
+    choices:(e.choices??[]).map((c:any)=>({id:c.id,conditions:c.conditions,effects:withoutD40SelectedRouteEffects(c.effects)}))
    }))
   }))
  });
@@ -100,7 +108,7 @@ test('C3-204 natural Year-2 Merchant shift uses authored scene and preserves sce
 test('C3-204 authored layer adds no future seams, economy subsystem, or public complex Merchant ending',()=>{
  const live=JSON.stringify({action:defs.actions.find((x:any)=>x.id==='merchant.shift'),packs});
  assert.doesNotMatch(live,/palace\.|artist-geisha\.|assassin\.|prostitute\./i);
- assert.deepEqual(defs.endings.filter((x:any)=>x.id.includes('merchant')).map((x:any)=>x.id),['ending.merchant.hard-work']);
+ assert.deepEqual(defs.endings.filter((x:any)=>x.id.includes('merchant')).map((x:any)=>x.id),['ending.merchant.hard-work','ending.merchant.house','ending.merchant.speculator-smuggler','ending.merchant.patron-of-routes']);
  assert.equal(source.invariants.createsGameplayIds,false);assert.equal(source.invariants.changesMechanics,false);assert.equal(source.invariants.changesEconomy,false);assert.equal(source.invariants.changesEndings,false);
  assert.equal(source.invariants.createsPriceEngine,false);assert.equal(source.invariants.createsInventoryCapacity,false);assert.equal(source.invariants.createsCreditOrDebtSystem,false);assert.equal(source.invariants.createsCrimeOrLawSystem,false);
 });
