@@ -497,6 +497,99 @@ Calibration authority uses the current executable economy:
 These numbers may be changed only by a later explicit Product balance decision. They are now runtime-authoritative for D30 implementation.
 
 
+### D33 — Literacy & Numbers publishes canonical Lumber management readiness at 3-track repetition
+
+The existing School-to-Lumber management seam is now fully specified.
+
+Canonical School source:
+- course: `school.course.literacy_and_numbers`;
+- track: `school.track.literacy_and_numbers`.
+
+School-owned readiness condition:
+- `lessons_completed >= 3`
+  **OR**
+- `night_study_sessions >= 3`
+  on that same Literacy & Numbers track.
+
+This intentionally matches the already-shipped readiness cadence used by starter-career School integrations such as Satyr Maid, Undead Farm and Tavern. It is not a new universal School milestone system.
+
+Publication contract:
+- School publishes the existing durable world fact
+  `lumber.school.management-ready`;
+- that existing transport identity is canonical;
+- publication is exactly once;
+- publication occurs in the same resolver epoch after the qualifying School transaction commits;
+- the School publisher is independent of Lumber career/relationship state;
+- no certificate, project, exam, second School progression layer or legacy `metrics.lessons` counter is introduced;
+- three Night Study sessions count because this contribution is now explicitly authored by Product.
+
+Order independence is required.
+
+The Lumber consumer
+`lumber-cross.school-management-return`
+must work both when:
+1. the professional Foreman route exists before the School fact is published; and
+2. the School fact is already present before the professional Foreman route is established.
+
+Therefore the Lumber consumer must not rely only on `worldFactAdded`. It must also be able to react when the `lumber.foreman` relationship transitions into the required professional route while the canonical School fact already exists.
+
+The downstream Lumber-owned effects remain:
+- `management-school-ready`;
+- `forewoman-problem-resolved`.
+
+School never writes those career facts directly, and Lumber never reads School-private counters directly.
+
+### D34 — Lumber ordinary career stages are 1 / 8 / 20; route readiness stays fact-based
+
+The Lumber career stage model is deliberately separated from Forewoman/Forest route readiness.
+
+True ordinary Lumber career stages are:
+
+1. `newcomer`;
+2. `accepted-hand`;
+3. `trusted-worker`;
+4. `veteran`.
+
+Transitions:
+
+- `newcomer -> accepted-hand` at **1 completed Lumber shift**;
+- `accepted-hand -> trusted-worker` at **8 completed Lumber shifts**;
+- `trusted-worker -> veteran` at **20 completed Lumber shifts**.
+
+These ordinary stage transitions are work-persistence milestones. They do not require School, romance, Activity, a specific season or route commitment.
+
+Hard Work remains a separate ending-eligibility axis:
+- exactly **50 completed Lumber shifts**;
+- no additional Lumber stage/fact/School/relationship/Activity requirement;
+- D26 still means no more than one Lumber shift per calendar day.
+
+The previously used design vocabulary
+`forewoman-ready`, `forest-ready` and `outcome-ready`
+must **not** become mutually exclusive Lumber career stages.
+
+Reason:
+the runtime career stage is one current enum value, while Lumber is explicitly allowed to have multiple ending families eligible at once. Encoding Forewoman and Forest as branch stages would make otherwise compatible eligibility paths compete for one stage slot.
+
+Instead:
+
+- Forewoman readiness remains represented by the existing School/relationship/career facts, including
+  `management-school-ready`,
+  `forewoman-problem-resolved`,
+  and professional `lumber.foreman` route;
+- Forest readiness remains represented by the existing Activity/Lumber facts, including
+  `forest-truth-known` and
+  `forest-problem-resolved`;
+- final readiness is represented by normal ending eligibility, not a duplicate `outcome-ready` career stage/fact.
+
+Both complex Lumber ending families require the character to have reached at least
+`trusted-worker`.
+Therefore neither Forewoman nor Forest complex outcome may become eligible before **8 completed Lumber shifts**, even if its external facts are prepared earlier.
+
+External preparation may happen before shift 8 and must be preserved. Reaching `trusted-worker` should allow the resolver to recognize already-satisfied route facts without requiring a redundant extra School lesson, Activity, relationship action or ninth Lumber shift.
+
+At 20 shifts, `veteran` is ordinary-career status only. It does not auto-commit or invalidate Forewoman/Forest routes and does not replace Hard Work=50.
+
+
 ## Still open after this lock
 
 - exact numeric economy;
