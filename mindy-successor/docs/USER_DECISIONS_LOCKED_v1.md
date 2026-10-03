@@ -1385,6 +1385,63 @@ D44 does not change:
 - ordinary-career wage formulas.
 
 
+### D45 — Palace / Prince narrative authority
+
+Accepted Product packet:
+`chat6/palace-prince-narrative-authority-v17@f81c15252ae63e7edbda0e678732b3a790b01ccd`.
+
+Canonical narrative model:
+**Palace Concordance / Threshold Archive**.
+
+Locked canon:
+- the Palace is a real institution in the successor world;
+- it performs ordinary visible administrative/service work and a protected second function;
+- the protected function is stewardship of a real inter-world Threshold;
+- the Palace maintains a Threshold Archive and Concordance that correlate evidence across otherwise separate life-sim domains;
+- the successor world is real, not a dream/simulation/disposable copy;
+- permanent ordinary Hard Work 10/10 represents lived breadth across all ten careers;
+- active 10/10 current-run packages represent deliberate synthesis in this life;
+- that exact D23 combination is what deterministic invitation protocol recognizes;
+- the Prince is a person holding the Palace Custodian office, not a deity/avatar/chosen-one oracle;
+- the Prince's doctrine is centralized closed custody of the Threshold;
+- Palace 15-duty rotation is the Concordance rotation and the six stages represent increasing operational visibility/authority;
+- `palace.progression-complete` means the heroine completed the full rotation and has enough authenticated context to judge Palace futures;
+- Inner Truth reveals Threshold stewardship and authenticated crossing evidence, but not the ultimate cause/origin of the Threshold;
+- Court Power controls institutional levers, not reality or the whole world;
+- Service Life preserves operational continuity, boundaries, handoffs and institutional memory;
+- Return Home is a real crossing to the heroine's original world; the successor world remains real and intact.
+
+True-route narrative authority:
+- all 12 progression stats >=91 remain the sole numeric readiness gate;
+- Lust remains excluded and has no moral meaning;
+- Prince confrontation is a deterministic authored proof/reconstruction challenge, not combat;
+- confrontation requires Outcome Ready + `palace.progression-complete` + all 12 >=91;
+- no additional numeric threshold is authorized;
+- no romance/Night/Activity item/School result/relationship/advanced-career outcome is required;
+- stable confrontation carrier: `palace.prince-confrontation`;
+- explicit begin action: `palace.confront-prince`;
+- durable success fact remains `palace.prince-defeated`;
+- failure/back-out writes no defeat fact and no ending;
+- retry is allowed while readiness remains true;
+- no new Energy/money/item/Night/calendar penalty for retry;
+- success never auto-commits Return Home;
+- explicit D16 Return Home commit remains required.
+
+Meaning of Prince defeat:
+- the Prince's exclusive epistemic veto is disproved using authenticated Palace evidence;
+- the heroine independently reconstructs a coherent return case;
+- the Prince is not killed, physically defeated, magically dominated, romanced or necessarily deposed.
+
+Intentionally unresolved:
+- original cause of the heroine's displacement;
+- who/what first created the Threshold;
+- whether all historical crossings were intentional;
+- whether the Prince's sincerity is pure, self-protective, political, or mixed;
+- personal name/species/appearance/voice and final line-by-line prose remain production/content choices.
+
+No D23/D29/D39/D43 mechanical gate or reward is changed by D45.
+
+
 ## Still open after this lock
 
 - exact numeric economy;
