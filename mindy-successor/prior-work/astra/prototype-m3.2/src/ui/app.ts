@@ -598,9 +598,10 @@ function palaceEligibleEndingsHTML(){
   if(!ending)return '';
   const title=tr(`ending.${ending.id}.title`,ending.title);
   const description=tr(`ending.${ending.id}.description`,ending.description);
-  const stateLabel=tr('ui.ending.state.eligible','eligible');
-  const trueFlag=id==='ending.palace.return-home'?' data-palace-true-ending="eligible"':'';
-  return `<article class="ending palace-ending" data-ending-id="${esc(id)}" data-ending-state="eligible"${trueFlag} tabindex="0" aria-label="${esc(fmt(tr('ui.ending.stateAria','Состояние судьбы: {state}'),{state:`${title} — ${stateLabel}`}))}">
+  const presentationState=endingPresentationState(id);
+  const stateLabel=tr(`ui.ending.state.${presentationState}`,presentationState);
+  const trueFlag=id==='ending.palace.return-home'?' data-palace-true-ending="runtime-eligible"':'';
+  return `<article class="ending palace-ending" data-ending-id="${esc(id)}" data-ending-state="${presentationState}"${trueFlag} tabindex="0" aria-label="${esc(fmt(tr('ui.ending.stateAria','Состояние судьбы: {state}'),{state:`${title} — ${stateLabel}`}))}">
    <span class="ending-state">${esc(stateLabel)}</span>
    <h3>${esc(title)}</h3>
    <p>${esc(description)}</p>
