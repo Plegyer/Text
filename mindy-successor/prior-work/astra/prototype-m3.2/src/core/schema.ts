@@ -358,7 +358,10 @@ const activityMiniGameTransitionSchema=z.object({
   game:id,
   from:id,
   to:id,
-  outcome:activityMiniGameOutcomeSchema.optional()
+  outcome:activityMiniGameOutcomeSchema.optional(),
+  suspicionDelta:z.number().int().min(-100).max(100).optional(),
+  minSuspicion:z.number().int().min(0).max(100).optional(),
+  maxSuspicion:z.number().int().min(0).max(100).optional()
 }).strict();
 
 const activityOptionSchema=z.object({
@@ -399,7 +402,8 @@ export type ActivityDefinition=z.infer<typeof activityDefinitionSchema>;
 const activityMiniGameStateSchema=z.object({
   stage:id,
   status:z.enum(['active','success','failure','abort']),
-  choiceIds:z.array(id).max(64).default([])
+  choiceIds:z.array(id).max(64).default([]),
+  suspicion:z.number().int().min(0).max(100).default(0)
 }).strict();
 
 const counterActivityStateSchema=z.object({
