@@ -155,7 +155,8 @@ export type StrongMetaSelectionIssueCode=
   |'reward_not_owned'
   |'wrong_reward_class'
   |'keystone_capacity_exceeded'
-  |'specialist_capacity_exceeded';
+  |'specialist_capacity_exceeded'
+  |'reclassification_conflict';
 
 export type StrongMetaSelectionIssue=Readonly<{
   code:StrongMetaSelectionIssueCode;
@@ -235,6 +236,43 @@ export function validatePreferredStrongMetaSelection(state:StrongMetaState):Stro
 
 function throwSelectionIssue(issue:StrongMetaSelectionIssue):never{
   throw new Error(`Strong Meta selection invalid: ${issue.code}${issue.rewardId?`:${issue.rewardId}`:''}`);
+}
+
+export type StrongRewardClassification=Readonly<{
+  id:string;
+  class:StrongRewardClass;
+  lifecycle:StrongRewardLifecycle;
+}>;
+
+export function migratePreferredStrongMetaSelectionForCatalog(
+  state:StrongMetaState,
+  classifications:Readonly<Record<string,StrongRewardClassification>>
+):Readonly<{state:StrongMetaState;issues:readonly StrongMetaSelectionIssue[]}>{
+  const ids=[
+    ...(state.preferredSelection.keystoneId?[state.preferredSelection.keystoneId]:[]),
+    ...state.preferredSelection.specialistIds
+  ];
+  const keystones:string[]=[];
+  const specialists:string[]=[];
+  const issues:StrongMetaSelectionIssue[]=[];
+  for(const id of ids){
+    const definition=classifications[id];
+    if(!definition){issues.push({code:'unknown_reward',rewardId:id});continue;}
+    if(definition.lifecycle==='retired'){issues.push({code:'retired_reward',rewardId:id});continue;}
+    if(definition.class==='keystone')keystones.push(id);else specialists.push(id);
+  }
+  if(issues.length)return {state:canonicalStrongMetaState(state),issues};
+  if(keystones.length>STRONG_META_KEYSTONE_CAPACITY||specialists.length>STRONG_META_SPECIALIST_CAPACITY){
+    return {state:canonicalStrongMetaState(state),issues:[{code:'reclassification_conflict'}]};
+  }
+  const next=canonicalStrongMetaState({
+    ...state,
+    preferredSelection:{
+      keystoneId:keystones[0]??null,
+      specialistIds:[...specialists].sort()
+    }
+  });
+  return {state:next,issues:[]};
 }
 
 export function setPreferredStrongMetaKeystone(state:StrongMetaState,id:string|null):StrongMetaState{
