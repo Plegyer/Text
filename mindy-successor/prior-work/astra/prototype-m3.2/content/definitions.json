@@ -12333,6 +12333,946 @@
           "setRoute": "old-boundary-rift"
         }
       ]
+    },
+    {
+      "id": "restricted.sites",
+      "label": "Restricted Sites",
+      "version": 1,
+      "entryConditions": [
+        {
+          "kind": "calendarYear",
+          "op": "gte",
+          "value": 3
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "assassin",
+              "fact": "infiltration-qualified",
+              "present": true
+            },
+            {
+              "kind": "itemCapability",
+              "capability": "assassin_concealed_entry",
+              "present": true
+            },
+            {
+              "kind": "itemCapability",
+              "capability": "assassin_sealed_access",
+              "present": true
+            },
+            {
+              "kind": "itemCapability",
+              "capability": "assassin_context_disguise",
+              "present": true
+            },
+            {
+              "kind": "itemCapability",
+              "capability": "official_guard_access",
+              "present": true
+            },
+            {
+              "kind": "worldFact",
+              "fact": "activity.trade-corridor.anchor-secured",
+              "present": true
+            },
+            {
+              "kind": "worldFact",
+              "fact": "activity.anomalous-reach.anchor-secured",
+              "present": true
+            }
+          ]
+        }
+      ],
+      "entryEnergyCost": 2,
+      "resumePolicy": "allowed",
+      "timePolicy": "same_day",
+      "failurePolicy": "exit_to_day",
+      "adapter": "counter.v1",
+      "adapterConfig": {
+        "initialEndurance": 10,
+        "advanceEnduranceCost": 3,
+        "successAtProgress": 6,
+        "failAtEndurance": 0,
+        "fieldTimeSegments": 6,
+        "advanceFieldTimeCost": 1
+      },
+      "results": [
+        {
+          "id": "restricted.sites.success",
+          "outcome": "success",
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "activity.restricted-sites.anchor-secured"
+            },
+            {
+              "kind": "addWorldFact",
+              "fact": "restricted.sites.returned"
+            }
+          ]
+        },
+        {
+          "id": "restricted.sites.escape",
+          "outcome": "escape",
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "restricted.sites.escaped"
+            }
+          ]
+        },
+        {
+          "id": "restricted.sites.failure",
+          "outcome": "failure",
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "restricted.sites.failed"
+            }
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "restricted.route.service-ring",
+          "label": "Service Ring",
+          "category": "route",
+          "conditions": [],
+          "progressDelta": 0,
+          "enduranceCost": 0,
+          "fieldTimeCost": 1,
+          "effects": [],
+          "setRoute": "service-ring"
+        },
+        {
+          "id": "restricted.route.sealed-annex",
+          "label": "Sealed Annex",
+          "category": "route",
+          "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "calendarSeason",
+                  "value": "autumn"
+                },
+                {
+                  "kind": "calendarSeason",
+                  "value": "winter"
+                }
+              ]
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "itemCapability",
+                  "capability": "assassin_sealed_access",
+                  "present": true
+                },
+                {
+                  "kind": "itemCapability",
+                  "capability": "official_guard_access",
+                  "present": true
+                },
+                {
+                  "kind": "itemCapability",
+                  "capability": "guard_sealed_pass",
+                  "present": true
+                }
+              ]
+            }
+          ],
+          "progressDelta": 0,
+          "enduranceCost": 0,
+          "fieldTimeCost": 1,
+          "effects": [],
+          "setRoute": "sealed-annex"
+        },
+        {
+          "id": "restricted.route.context-wing",
+          "label": "Context Wing",
+          "category": "route",
+          "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "itemCapability",
+                  "capability": "assassin_context_disguise",
+                  "present": true
+                },
+                {
+                  "kind": "schoolCounter",
+                  "track": "school.track.etiquette_and_presentation",
+                  "counter": "lessons_completed",
+                  "op": "gte",
+                  "value": 2
+                },
+                {
+                  "kind": "schoolCounter",
+                  "track": "school.track.etiquette_and_presentation",
+                  "counter": "night_study_sessions",
+                  "op": "gte",
+                  "value": 2
+                }
+              ]
+            }
+          ],
+          "progressDelta": 0,
+          "enduranceCost": 0,
+          "fieldTimeCost": 1,
+          "effects": [],
+          "setRoute": "context-wing"
+        },
+        {
+          "id": "restricted.challenge.service-survey",
+          "label": "Survey the service handoffs",
+          "category": "observation",
+          "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "stat",
+                  "stat": "wits",
+                  "op": "gte",
+                  "value": 5
+                },
+                {
+                  "kind": "itemCapability",
+                  "capability": "assassin_concealed_entry",
+                  "present": true
+                },
+                {
+                  "kind": "any",
+                  "conditions": [
+                    {
+                      "kind": "careerFact",
+                      "career": "assassin",
+                      "fact": "tavern-intel-known",
+                      "present": true
+                    },
+                    {
+                      "kind": "careerFact",
+                      "career": "assassin",
+                      "fact": "merchant-route-known",
+                      "present": true
+                    },
+                    {
+                      "kind": "careerFact",
+                      "career": "assassin",
+                      "fact": "guard-pressure-known",
+                      "present": true
+                    },
+                    {
+                      "kind": "careerFact",
+                      "career": "assassin",
+                      "fact": "handler-utility-ready",
+                      "present": true
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "progressDelta": 1,
+          "enduranceCost": 0,
+          "fieldTimeCost": 1,
+          "effects": [],
+          "setRoute": "service-ring"
+        },
+        {
+          "id": "restricted.detour.infiltration-observe",
+          "label": "Detour: enter the observation window",
+          "category": "infiltration_suspicion",
+          "conditions": [],
+          "progressDelta": 0,
+          "enduranceCost": 0,
+          "fieldTimeCost": 1,
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "restricted.sites.infiltration-observed"
+            }
+          ],
+          "setRoute": "service-ring",
+          "miniGameTransition": {
+            "game": "restricted.infiltration-suspicion",
+            "from": "start",
+            "to": "approach",
+            "suspicionDelta": 10
+          }
+        },
+        {
+          "id": "restricted.infiltration.intel-window",
+          "label": "Use the prepared timing window (-10 Suspicion)",
+          "category": "infiltration_suspicion",
+          "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "careerFact",
+                  "career": "assassin",
+                  "fact": "tavern-intel-known",
+                  "present": true
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "assassin",
+                  "fact": "merchant-route-known",
+                  "present": true
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "assassin",
+                  "fact": "guard-pressure-known",
+                  "present": true
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "assassin",
+                  "fact": "handler-utility-ready",
+                  "present": true
+                }
+              ]
+            }
+          ],
+          "progressDelta": 0,
+          "enduranceCost": 0,
+          "fieldTimeCost": 1,
+          "effects": [],
+          "setRoute": "service-ring",
+          "miniGameTransition": {
+            "game": "restricted.infiltration-suspicion",
+            "from": "approach",
+            "to": "inside",
+            "suspicionDelta": -10
+          }
+        },
+        {
+          "id": "restricted.infiltration.disguise-window",
+          "label": "Blend into the prepared context (-5 Suspicion)",
+          "category": "infiltration_suspicion",
+          "conditions": [
+            {
+              "kind": "itemCapability",
+              "capability": "assassin_context_disguise",
+              "present": true
+            }
+          ],
+          "progressDelta": 0,
+          "enduranceCost": 0,
+          "fieldTimeCost": 1,
+          "effects": [],
+          "setRoute": "service-ring",
+          "miniGameTransition": {
+            "game": "restricted.infiltration-suspicion",
+            "from": "approach",
+            "to": "inside",
+            "suspicionDelta": -5
+          }
+        },
+        {
+          "id": "restricted.infiltration.raw-window",
+          "label": "Cross on raw timing (+25 Suspicion)",
+          "category": "infiltration_suspicion",
+          "conditions": [],
+          "progressDelta": 0,
+          "enduranceCost": 1,
+          "fieldTimeCost": 1,
+          "effects": [],
+          "setRoute": "service-ring",
+          "miniGameTransition": {
+            "game": "restricted.infiltration-suspicion",
+            "from": "approach",
+            "to": "inside",
+            "suspicionDelta": 25
+          }
+        },
+        {
+          "id": "restricted.infiltration.clean-handoff",
+          "label": "Complete the clean handoff",
+          "category": "infiltration_suspicion",
+          "conditions": [],
+          "progressDelta": 2,
+          "enduranceCost": 0,
+          "fieldTimeCost": 1,
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "restricted.sites.infiltration-cleared"
+            },
+            {
+              "kind": "addWorldFact",
+              "fact": "activity.restricted-sites.minigame.infiltration-suspicion-complete"
+            }
+          ],
+          "setRoute": "service-ring",
+          "miniGameTransition": {
+            "game": "restricted.infiltration-suspicion",
+            "from": "inside",
+            "to": "cleared",
+            "outcome": "success",
+            "suspicionDelta": 5,
+            "maxSuspicion": 25
+          }
+        },
+        {
+          "id": "restricted.infiltration.secure-evidence",
+          "label": "Secure evidence under moderate scrutiny (+15 Suspicion)",
+          "category": "infiltration_suspicion",
+          "conditions": [
+            {
+              "kind": "itemCapability",
+              "capability": "assassin_handle_evidence",
+              "present": true
+            }
+          ],
+          "progressDelta": 2,
+          "enduranceCost": 0,
+          "fieldTimeCost": 1,
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "restricted.sites.infiltration-cleared"
+            },
+            {
+              "kind": "addWorldFact",
+              "fact": "activity.restricted-sites.minigame.infiltration-suspicion-complete"
+            },
+            {
+              "kind": "addWorldFact",
+              "fact": "activity.restricted-sites.result.evidence-secured"
+            },
+            {
+              "kind": "addWorldFact",
+              "fact": "activity.restricted-sites.mark.preservation"
+            }
+          ],
+          "setRoute": "service-ring",
+          "miniGameTransition": {
+            "game": "restricted.infiltration-suspicion",
+            "from": "inside",
+            "to": "evidence-secured",
+            "outcome": "success",
+            "suspicionDelta": 15,
+            "maxSuspicion": 45
+          }
+        },
+        {
+          "id": "restricted.infiltration.compromised",
+          "label": "Attention converges; abandon the infiltration",
+          "category": "infiltration_suspicion",
+          "conditions": [],
+          "progressDelta": 0,
+          "enduranceCost": 2,
+          "fieldTimeCost": 1,
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "restricted.sites.infiltration-compromised"
+            }
+          ],
+          "setRoute": "service-ring",
+          "miniGameTransition": {
+            "game": "restricted.infiltration-suspicion",
+            "from": "inside",
+            "to": "compromised",
+            "outcome": "failure",
+            "suspicionDelta": 20,
+            "minSuspicion": 26
+          }
+        },
+        {
+          "id": "restricted.infiltration.abort",
+          "label": "Abort before committing to the interior",
+          "category": "infiltration_suspicion",
+          "conditions": [],
+          "progressDelta": 0,
+          "enduranceCost": 0,
+          "fieldTimeCost": 0,
+          "effects": [],
+          "setRoute": "service-ring",
+          "miniGameTransition": {
+            "game": "restricted.infiltration-suspicion",
+            "from": "approach",
+            "to": "aborted",
+            "outcome": "abort",
+            "suspicionDelta": 0
+          }
+        },
+        {
+          "id": "restricted.shortcut.clean-route",
+          "label": "Use the cleared handoff corridor",
+          "category": "shortcut",
+          "conditions": [
+            {
+              "kind": "worldFact",
+              "fact": "restricted.sites.infiltration-cleared",
+              "present": true
+            }
+          ],
+          "progressDelta": 3,
+          "enduranceCost": 0,
+          "fieldTimeCost": 1,
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "activity.restricted-sites.mark.pathfinder"
+            }
+          ],
+          "setRoute": "service-ring"
+        },
+        {
+          "id": "restricted.challenge.handler-handoff",
+          "label": "Use the Handler's professional handoff",
+          "category": "contact",
+          "conditions": [
+            {
+              "kind": "relationshipFact",
+              "relationship": "assassin.handler",
+              "fact": "utility-response-resolved",
+              "present": true
+            },
+            {
+              "kind": "relationshipChoice",
+              "relationship": "assassin.handler",
+              "choice": "utility-response",
+              "value": "accepted"
+            }
+          ],
+          "progressDelta": 1,
+          "enduranceCost": 0,
+          "fieldTimeCost": 1,
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "restricted.sites.contact-thread-open"
+            },
+            {
+              "kind": "addWorldFact",
+              "fact": "activity.restricted-sites.contact-thread-open"
+            }
+          ],
+          "setRoute": "service-ring"
+        },
+        {
+          "id": "restricted.challenge.annex-pass",
+          "label": "Present the prepared sealed access",
+          "category": "access",
+          "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "calendarSeason",
+                  "value": "autumn"
+                },
+                {
+                  "kind": "calendarSeason",
+                  "value": "winter"
+                }
+              ]
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "itemCapability",
+                  "capability": "assassin_sealed_access",
+                  "present": true
+                },
+                {
+                  "kind": "itemCapability",
+                  "capability": "official_guard_access",
+                  "present": true
+                },
+                {
+                  "kind": "itemCapability",
+                  "capability": "guard_sealed_pass",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "itemCapability",
+                  "capability": "assassin_sealed_access",
+                  "present": true
+                },
+                {
+                  "kind": "itemCapability",
+                  "capability": "guard_sealed_pass",
+                  "present": true
+                }
+              ]
+            }
+          ],
+          "progressDelta": 2,
+          "enduranceCost": 0,
+          "fieldTimeCost": 1,
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "restricted.sites.sealed-access-used"
+            }
+          ],
+          "setRoute": "sealed-annex"
+        },
+        {
+          "id": "restricted.challenge.annex-official",
+          "label": "Move through the official access lane",
+          "category": "access",
+          "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "calendarSeason",
+                  "value": "autumn"
+                },
+                {
+                  "kind": "calendarSeason",
+                  "value": "winter"
+                }
+              ]
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "itemCapability",
+                  "capability": "assassin_sealed_access",
+                  "present": true
+                },
+                {
+                  "kind": "itemCapability",
+                  "capability": "official_guard_access",
+                  "present": true
+                },
+                {
+                  "kind": "itemCapability",
+                  "capability": "guard_sealed_pass",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "itemCapability",
+              "capability": "official_guard_access",
+              "present": true
+            }
+          ],
+          "progressDelta": 1,
+          "enduranceCost": 0,
+          "fieldTimeCost": 1,
+          "effects": [],
+          "setRoute": "sealed-annex"
+        },
+        {
+          "id": "restricted.challenge.annex-evidence",
+          "label": "Preserve the restricted-site record",
+          "category": "extraction",
+          "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "calendarSeason",
+                  "value": "autumn"
+                },
+                {
+                  "kind": "calendarSeason",
+                  "value": "winter"
+                }
+              ]
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "itemCapability",
+                  "capability": "assassin_sealed_access",
+                  "present": true
+                },
+                {
+                  "kind": "itemCapability",
+                  "capability": "official_guard_access",
+                  "present": true
+                },
+                {
+                  "kind": "itemCapability",
+                  "capability": "guard_sealed_pass",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "itemCapability",
+              "capability": "assassin_handle_evidence",
+              "present": true
+            }
+          ],
+          "progressDelta": 2,
+          "enduranceCost": 0,
+          "fieldTimeCost": 1,
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "activity.restricted-sites.result.evidence-secured"
+            },
+            {
+              "kind": "addWorldFact",
+              "fact": "activity.restricted-sites.mark.preservation"
+            }
+          ],
+          "setRoute": "sealed-annex"
+        },
+        {
+          "id": "restricted.shortcut.annex-service-door",
+          "label": "Take the authenticated service door",
+          "category": "shortcut",
+          "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "calendarSeason",
+                  "value": "autumn"
+                },
+                {
+                  "kind": "calendarSeason",
+                  "value": "winter"
+                }
+              ]
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "itemCapability",
+                  "capability": "assassin_sealed_access",
+                  "present": true
+                },
+                {
+                  "kind": "itemCapability",
+                  "capability": "official_guard_access",
+                  "present": true
+                },
+                {
+                  "kind": "itemCapability",
+                  "capability": "guard_sealed_pass",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "itemCapability",
+                  "capability": "assassin_sealed_access",
+                  "present": true
+                },
+                {
+                  "kind": "itemCapability",
+                  "capability": "guard_sealed_pass",
+                  "present": true
+                }
+              ]
+            }
+          ],
+          "progressDelta": 3,
+          "enduranceCost": 0,
+          "fieldTimeCost": 1,
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "activity.restricted-sites.mark.pathfinder"
+            }
+          ],
+          "setRoute": "sealed-annex"
+        },
+        {
+          "id": "restricted.challenge.context-blend",
+          "label": "Blend into the staffed context",
+          "category": "social_access",
+          "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "itemCapability",
+                  "capability": "assassin_context_disguise",
+                  "present": true
+                },
+                {
+                  "kind": "schoolCounter",
+                  "track": "school.track.etiquette_and_presentation",
+                  "counter": "lessons_completed",
+                  "op": "gte",
+                  "value": 2
+                },
+                {
+                  "kind": "schoolCounter",
+                  "track": "school.track.etiquette_and_presentation",
+                  "counter": "night_study_sessions",
+                  "op": "gte",
+                  "value": 2
+                }
+              ]
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "itemCapability",
+                  "capability": "assassin_context_disguise",
+                  "present": true
+                },
+                {
+                  "kind": "stat",
+                  "stat": "manners",
+                  "op": "gte",
+                  "value": 5
+                }
+              ]
+            }
+          ],
+          "progressDelta": 2,
+          "enduranceCost": 0,
+          "fieldTimeCost": 1,
+          "effects": [],
+          "setRoute": "context-wing"
+        },
+        {
+          "id": "restricted.challenge.context-intel-risk",
+          "label": "Follow the informed staff transfer (+2 progress, -3 Endurance)",
+          "category": "risk",
+          "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "itemCapability",
+                  "capability": "assassin_context_disguise",
+                  "present": true
+                },
+                {
+                  "kind": "schoolCounter",
+                  "track": "school.track.etiquette_and_presentation",
+                  "counter": "lessons_completed",
+                  "op": "gte",
+                  "value": 2
+                },
+                {
+                  "kind": "schoolCounter",
+                  "track": "school.track.etiquette_and_presentation",
+                  "counter": "night_study_sessions",
+                  "op": "gte",
+                  "value": 2
+                }
+              ]
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "careerFact",
+                  "career": "assassin",
+                  "fact": "tavern-intel-known",
+                  "present": true
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "assassin",
+                  "fact": "merchant-route-known",
+                  "present": true
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "assassin",
+                  "fact": "guard-pressure-known",
+                  "present": true
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "assassin",
+                  "fact": "handler-utility-ready",
+                  "present": true
+                }
+              ]
+            }
+          ],
+          "progressDelta": 2,
+          "enduranceCost": 3,
+          "fieldTimeCost": 1,
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "restricted.sites.staff-transfer-followed"
+            }
+          ],
+          "setRoute": "context-wing"
+        },
+        {
+          "id": "restricted.challenge.context-evidence",
+          "label": "Copy the contextual record into the Evidence Case",
+          "category": "extraction",
+          "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "itemCapability",
+                  "capability": "assassin_context_disguise",
+                  "present": true
+                },
+                {
+                  "kind": "schoolCounter",
+                  "track": "school.track.etiquette_and_presentation",
+                  "counter": "lessons_completed",
+                  "op": "gte",
+                  "value": 2
+                },
+                {
+                  "kind": "schoolCounter",
+                  "track": "school.track.etiquette_and_presentation",
+                  "counter": "night_study_sessions",
+                  "op": "gte",
+                  "value": 2
+                }
+              ]
+            },
+            {
+              "kind": "itemCapability",
+              "capability": "assassin_handle_evidence",
+              "present": true
+            }
+          ],
+          "progressDelta": 2,
+          "enduranceCost": 0,
+          "fieldTimeCost": 1,
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "activity.restricted-sites.result.evidence-secured"
+            },
+            {
+              "kind": "addWorldFact",
+              "fact": "activity.restricted-sites.mark.preservation"
+            }
+          ],
+          "setRoute": "context-wing"
+        }
+      ]
     }
   ],
   "itemDefinitions": [
