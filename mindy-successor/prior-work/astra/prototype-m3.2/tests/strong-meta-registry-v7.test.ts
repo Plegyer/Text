@@ -16,6 +16,7 @@ import {
   validatePreferredStrongMetaSelection,
   validateStrongMetaRegistry
 } from '../src/core/strongMeta.ts';
+import {metaRewardSchema} from '../src/core/schema.ts';
 
 test('v7 registry contains exactly the four approved strong Meta rewards',()=>{
   validateStrongMetaRegistry();
@@ -163,3 +164,18 @@ test('unknown owned stable IDs survive canonicalization without becoming approve
   assert.deepEqual(state.knowledge.inheritedKnowledgeIds,['future.knowledge.clue']);
   assert.equal(Object.hasOwn(strongMetaRegistry,'future.route.unknown'),false);
 });
+
+test('content metaReward schema accepts only the four approved strong Meta reward IDs',()=>{
+  assert.equal(metaRewardSchema.safeParse({
+    kind:'strongMeta',
+    rewardId:'strong.reward.cap200',
+    reward:STRONG_META_IDS.palaceCap200
+  }).success,true);
+
+  assert.equal(metaRewardSchema.safeParse({
+    kind:'strongMeta',
+    rewardId:'strong.reward.unapproved',
+    reward:'research.no-rent.unapproved'
+  }).success,false);
+});
+
