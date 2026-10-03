@@ -1,48 +1,78 @@
 # CURRENT CHAT2 TASK POINTER
 
-Status: **ACTIVE — CHAT4 D21-D24 SHARED META CURRENT-MAIN ASSEMBLY PREP / SOLE FULL-CI SLOT**
+Status: **ACTIVE — #1122 FULL FAILURE TRIAGE / REPAIR — SOLE FULL-CI SLOT**
 Owner: Chat 2 / Integration + Assembly + Technical QA
 
-Seasonal tradeoffs:
-- PR #263 merged;
-- merge commit `27f74e230f5e0e52e4120c8b97c99d250b869038`;
-- assembly CI #1119 SUCCESS;
-- exact-main CI #1120 is the current code gate. Do not consume another full CI until #1120 is green.
+PR: #264
+Branch: `chat2/assembly-hard-work-meta-shared-20261003-v1`
+Current tested head: `df18be22e0bc4677b20dada55f9b9cc8383d2e31`
+Workflow #1122: **1009 tests / 992 pass / 17 fail**
 
-## Next candidate
+## Rule
 
-Producer/foundation:
-`chat4/hard-work-meta-shared-runtime-v1@c085eda62dd39f71d3a4c75a6c31f4c72527039a`
+Do not request another full CI until every one of the 17 failures is locally/focused green.
 
-This branch is historically divergent. **Do not merge/rebase the whole branch into main.**
+## Failure groups
 
-## Assignment now
+### A — 12 shared schema-v5 creation-state failures
+All throw:
+`Завершённое создание должно иметь зафиксированный Hard Work package state.`
 
-While #1120 runs:
-1. audit the exact candidate semantic delta against fresh current main;
-2. inventory current-main collisions in `engine.ts`, `schema.ts` and legacy Meta/migration tests;
-3. create a fresh `chat2/assembly-hard-work-meta-shared-*` branch from current main when safe;
-4. selectively reconstruct only locked D21-D24 semantics:
-   - permanent Hard Work early-access for the exact profession;
-   - arbitrary subset of earned Hard Work packages active on New Start+;
-   - centralized package catalog;
-   - exactly-once application at creation completion;
-   - active package selection frozen for that life;
-   - old automatic +3/+3 and Merchant +600 retired for new lives, migration-safe;
-   - Secret Debt ordinary-career domain lock outranks inherited early access;
-   - shared permanent-10/10 + active-10/10 Palace qualification predicate;
-   - progression-stat cap 100/200 where 200 changes only the maximum;
-   - Lust unaffected by the 200 cap;
-   - no retroactive Palace invitation on migrated saves.
-5. preserve seasonal-tradeoff code just merged, Assassin, Prostitute, School D20 and all current-main docs/runtime;
-6. run focused/static checks before CI.
+Affected School/save tests:
+- school-activation-boundary
+- school-blocking-scene-compat x2
+- school-body-confidence-lust-d20
+- school-engine-adapter
+- school-life-content-reload x2
+- school-night-study-adapter
+- school-production-v11-locale-save x2
+- school-target x2
 
-After #1120 SUCCESS, open one assembly PR and consume the sole full-CI slot once.
-Mine all failures before any rerun.
-If green, freeze exact SHA and report `READY_FOR_LEADER_MERGE`.
+For each test determine:
+- legacy completed-save fixture -> migrate/default to a frozen empty/already-applied package state as D21-D24 requires; OR
+- invalid schema-v5 fixture -> complete creation via the real current creation path.
 
-Queued after this:
+Do not weaken the exactly-once/frozen package invariant.
+
+### B — schema version expectation
+`gopher.test.ts`: expected 4, actual 5.
+Audit/update the stale expectation while preserving migration coverage.
+
+### C — journal schema4 compatibility
+Two failures in `journal-outcome-localization.test.ts`.
+Treat as possible real migration regression:
+- old fallback journal text must survive;
+- null refs must remain index-aligned;
+- malformed alignment must still be rejected if that is the current compatibility contract.
+
+Fix migration/runtime if needed; do not blindly rewrite expected values.
+
+### D — Lumber reward expectation
+`lumber-target-production.test.ts`: expected 4, actual 1.
+Audit against D21:
+Hard Work completion records the permanent career achievement/early-access eligibility; selectable start-package effects belong to New Start+ selection/application, not the old automatic reward bundle.
+
+### E — UI Palace legacy expectation
+`ui.test.ts`: expected "Дворец" legacy unlock label but it is absent.
+Audit against D23:
+stale permanent `palace` Meta unlock is no longer authoritative; Palace is current-life 10/10-active qualification -> Day-1 invitation.
+
+## Before rerun
+
+Run:
+- all 17 failed tests;
+- migration/journal tests;
+- D21-D24 focused suite;
+- School D20 suite;
+- current seasonal-tradeoff suite.
+
+Write PR evidence classifying each failure as:
+- stale expectation/fixture; or
+- actual migration/runtime defect.
+
+Then exactly one full CI rerun.
+If green: freeze exact SHA and report `READY_FOR_LEADER_MERGE`.
+
+Queued after #264:
 1. Chat 4 New Start+ UI `837156277f7329f0187b04442acb8d5258a2e189`;
 2. Chat 6 Palace D23 consumer `9dfaab2a7b9e145c9753c0acd8e54d3f903be5fd`.
-
-No other worker uses full CI.

@@ -1,50 +1,46 @@
 # CURRENT CHAT3 TASK POINTER
 
-Status: **ACTIVE — LIVE ECONOMY + HOUSING 160-DAY HARNESS v4**
+Status: **ACTIVE — PROGRESSION POLICY COMPARISON v4**
 Owner: Chat 3
 
-Completed reusable progression harness:
+Reusable harness frozen:
 `chat3/progression-balance-harness-v3@e631af2e17675c27309aa1b8bd5a6161a1090ce8`
 
-Create:
-`chat3/live-economy-housing-harness-v4`
-from fresh main `836a716a017397d2e5768aada8a06299ee75e6fe`.
+Preserve the harness branch frozen.
 
-Read:
-- `docs/tasks/LEADER_LIVE_ECONOMY_DRIFT_AUDIT_v1.md`;
-- `ECONOMY_BALANCE_CANDIDATE_v3.md`;
-- `HOUSING_AND_WAGE_BACKBONE_v1.md`.
+Create:
+`chat3/progression-policy-comparison-v4`
+from the frozen harness head.
 
 ## Assignment
 
-Build a RESEARCH-ONLY simulator from current executable definitions/runtime constants.
+Use the harness to produce a compact Product decision packet. Do not change production mechanics.
 
-Model actual live:
-- starting money 600;
-- base Energy 3;
-- current ordinary wage formulas;
-- normal/cheap/street lodging prices/effects;
-- paid School tuition and stat packages;
-- School Night Study next-day Energy cost;
-- Activity 2-Energy opportunity cost where useful.
+Compare at minimum:
+- current Energy-only repeated same-career shifts;
+- max 2 same-career shifts/day;
+- max 1 same-career shift/day.
 
-Compare daily work policies:
-- current Energy-only repetition;
-- max 2 shifts of the same career/day;
-- max 1 shift of the same career/day while allowing different careers.
+For each, run:
+- base and focused starting allocation;
+- current seasonal negatives;
+- alternate research negative-target map;
+- no School;
+- one targeted School lesson every 10 days;
+- cap 100 analysis.
 
-Outputs for representative fresh builds:
-- money trajectory by day/year;
-- % days forced to cheap/street if player attempts normal lodging;
-- School lessons affordable at 5/10/20 lesson targets;
-- days/energy spent working;
-- 50-shift timing;
-- 0-money recovery paths;
-- normal vs cheap vs street opportunity cost;
-- sensitivity to +1 daily Energy;
-- exact point where current live wage scale materially diverges from the 1WU≈50 candidate.
+Report:
+- calendar day to Hard Work=50;
+- earliest/median/latest strongest-stat day-to-100 across the ten careers;
+- realized negative pressure vs floor clipping;
+- money earned by Hard Work=50;
+- event/milestone density risk.
 
-Also run a **research comparison only** with wages scaled to the old WU candidate; do not propose runtime changes merely to match it.
+Then give two smallest coherent successor policy packages:
+A. preserve faster work repetition with compensating stat/pacing controls;
+B. slower same-career repetition with minimal extra nerfs.
 
-No production tuning. No full CI.
-Freeze SHA and report `READY_FOR_LEADER_ECONOMY_DECISION`.
+Do not select Product authority.
+Do not use original-game numbers as targets.
+No production edits, no full CI.
+Freeze SHA and report `READY_FOR_LEADER_PRODUCT_DECISION`.
