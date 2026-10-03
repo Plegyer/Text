@@ -2,10 +2,16 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 
 import {actionAvailable,parseSave,starterCareerIds} from '../src/core/engine.ts';
-import {ordinaryHardWorkCareers} from '../src/core/schema.ts';
+import {ordinaryHardWorkCareers,type OrdinaryHardWorkCareer} from '../src/core/schema.ts';
 import {catalog,started} from './helpers.ts';
 
 const actionIds=ordinaryHardWorkCareers.map(career=>`${career}.shift`);
+
+function actionFor(career:OrdinaryHardWorkCareer){
+  const action=catalog.definitions.actions.find(item=>item.id===`${career}.shift`);
+  assert.ok(action,career);
+  return action;
+}
 
 function availableIds(state=started()){
   return actionIds.filter(id=>{
@@ -35,4 +41,28 @@ test('all-ten availability smoke: starters, stat unlocks, calendar unlocks, and 
   assert.deepEqual(new Set(availableIds(s)),new Set(actionIds));
   s=reload(s);
   assert.deepEqual(new Set(availableIds(s)),new Set(actionIds));
+});
+
+test('earned Hard Work grants exact inherited early access without requiring package activation',()=>{
+  let s=started();
+  const career:OrdinaryHardWorkCareer='assassin';
+  const action=actionFor(career);
+
+  assert.equal(actionAvailable(action,s,catalog),false);
+  s.meta.hardWorkProgress=[career];
+
+  assert.equal(actionAvailable(action,s,catalog),true);
+  assert.deepEqual(s.run.creation.activeHardWorkPackages,[]);
+  s=reload(s);
+  assert.equal(actionAvailable(action,s,catalog),true);
+});
+
+test('ordinary-career domain lock outranks D21 inherited early access',()=>{
+  const s=started();
+  const career:OrdinaryHardWorkCareer='artist-geisha';
+  const action=actionFor(career);
+  s.meta.hardWorkProgress=[career];
+
+  assert.equal(actionAvailable(action,s,catalog),true);
+  assert.equal(actionAvailable(action,s,catalog,{ordinaryCareersDomainLocked:true}),false);
 });

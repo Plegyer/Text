@@ -183,13 +183,13 @@ test('release-candidate shipped E2E keeps one Save coherent across Lumber, Schoo
   assert.deepEqual(retried.run.endings.result?.appliedMetaRewardIds,['hardWork:lumber']);
 
   s=dispatch(retried,{type:'newLife'},catalog);
-  assert.equal(s.run.character.stats.strength,4);
-  assert.equal(s.run.character.stats.endurance,4);
+  assert.equal(s.run.character.stats.strength,1);
+  assert.equal(s.run.character.stats.endurance,1);
   assert.deepEqual(s.meta.hardWorkProgress,['lumber']);
   assert.equal(s.run.progression.worldFacts.includes('lumber.school.management-ready'),false);
 
   const newRunReloaded=reload(s);
-  assert.equal(newRunReloaded.run.character.stats.strength,4);
-  assert.equal(newRunReloaded.run.character.stats.endurance,4);
+  assert.equal(newRunReloaded.run.character.stats.strength,1);
+  assert.equal(newRunReloaded.run.character.stats.endurance,1);
   assert.deepEqual(newRunReloaded.meta.hardWorkProgress,['lumber']);
 });
