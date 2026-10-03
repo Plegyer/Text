@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {loadCatalog} from '../src/core/content.ts';
-import {dispatch,freshSave,parseSave} from '../src/core/engine.ts';
+import {dispatch,freshSave,palaceRunQualified,parseSave} from '../src/core/engine.ts';
 import {ordinaryHardWorkCareers,type Catalog,type Save} from '../src/core/schema.ts';
 
 function ending(id:string,metaRewards?:any[],reward='legacy.placeholder'){
@@ -161,7 +161,7 @@ test('reload before completion applies reward once; reload after completion cann
   assert.equal(after.meta.unlocks.filter(x=>x==='advanced.school').length,1);
 });
 
-test('same ending in later run completes but does not reapply unique Hard Work reward',()=>{
+test('same ending in later run does not duplicate the earned package and its +5 stays selectable',()=>{
   const cat=catalog();
   let s=freshReady(cat);
   s=dispatch(s,{type:'commitEnding',id:'hardwork.lumber'},cat);
@@ -172,10 +172,14 @@ test('same ending in later run completes but does not reapply unique Hard Work r
   assert.deepEqual(s.run.endings.result?.appliedMetaRewardIds,['hardWork:lumber']);
 
   s=dispatch(s,{type:'newLife'},cat);
-  assert.equal(s.run.character.stats.strength,4);
-  assert.equal(s.run.character.stats.endurance,4);
+  assert.equal(s.run.character.stats.strength,1);
+  assert.equal(s.run.character.stats.endurance,1);
   assert.equal(s.run.creation.remaining,10);
+  s=dispatch(s,{type:'setHardWorkPackageActive',career:'lumber',active:true},cat);
   s=ready(s,cat);
+  assert.equal(s.run.character.stats.strength,6);
+  assert.equal(s.run.character.stats.endurance,1);
+
   s=dispatch(s,{type:'commitEnding',id:'hardwork.lumber'},cat);
   s=dispatch(s,{type:'completeEnding'},cat);
   assert.deepEqual(s.meta.hardWorkProgress,['lumber']);
@@ -184,26 +188,27 @@ test('same ending in later run completes but does not reapply unique Hard Work r
   assert.equal(s.meta.runsCompleted,2);
 
   s=dispatch(s,{type:'newLife'},cat);
-  assert.equal(s.run.character.stats.strength,4);
-  assert.equal(s.run.character.stats.endurance,4);
+  assert.equal(s.run.character.stats.strength,1);
+  assert.equal(s.run.character.stats.endurance,1);
+  assert.deepEqual(s.run.creation.activeHardWorkPackages,[]);
 });
 
-test('Merchant Hard Work adds exactly 600 starting money once',()=>{
+test('Merchant Hard Work no longer adds automatic starting money',()=>{
   const cat=catalog();
   let s=freshReady(cat);
   s=dispatch(s,{type:'commitEnding',id:'hardwork.merchant'},cat);
   s=dispatch(s,{type:'completeEnding'},cat);
   s=dispatch(s,{type:'newLife'},cat);
-  assert.equal(s.run.resources.money,1200);
+  assert.equal(s.run.resources.money,600);
 
+  s=dispatch(s,{type:'setHardWorkPackageActive',career:'merchant',active:true},cat);
   s=ready(s,cat);
-  s=dispatch(s,{type:'commitEnding',id:'hardwork.merchant'},cat);
-  s=dispatch(s,{type:'completeEnding'},cat);
-  s=dispatch(s,{type:'newLife'},cat);
-  assert.equal(s.run.resources.money,1200);
+  assert.equal(s.run.resources.money,600);
+  assert.equal(s.run.character.stats.wits,6);
+  assert.equal(s.run.character.stats.reason,6);
 });
 
-test('all ten unique Hard Work completions unlock Palace',()=>{
+test('all ten unique Hard Work completions require all ten active packages for Palace qualification',()=>{
   const cat=catalog();
   let s=freshReady(cat);
   for(let i=0;i<ordinaryHardWorkCareers.length;i++){
@@ -213,8 +218,13 @@ test('all ten unique Hard Work completions unlock Palace',()=>{
     if(i<ordinaryHardWorkCareers.length-1)s=ready(dispatch(s,{type:'newLife'},cat),cat);
   }
   assert.equal(new Set(s.meta.hardWorkProgress).size,10);
-  assert.ok(s.meta.unlocks.includes('palace'));
+  assert.equal(s.meta.unlocks.includes('palace'),false);
   assert.equal(s.meta.runsCompleted,10);
+
+  s=dispatch(s,{type:'newLife'},cat);
+  assert.equal(palaceRunQualified(s),false);
+  for(const career of ordinaryHardWorkCareers)s=dispatch(s,{type:'setHardWorkPackageActive',career,active:true},cat);
+  assert.equal(palaceRunQualified(s),true);
 });
 
 test('omitted metaRewards preserves legacy accept compatibility with RunResult proof',()=>{
@@ -268,21 +278,29 @@ test('protected Meta merge unions transaction proof',()=>{
   assert.ok(merged.meta.unlocks.includes('external.unlock'));
 });
 
-test('pre-A6 ended schema4 save receives compatibility RunResult without reward duplication',()=>{
+test('pre-A6 ended schema4 save migrates to v5 with compatibility RunResult and no reward duplication',()=>{
   const cat=catalog();
   let s=freshReady(cat);
   s=dispatch(s,{type:'accept',id:'legacy.test'},cat);
   const raw=JSON.parse(JSON.stringify(s));
+  raw.schemaVersion=4;
+  delete raw.run.character.progressionStatCap;
+  delete raw.run.character.creation.activeHardWorkPackages;
+  delete raw.run.character.creation.hardWorkPackagesApplied;
   raw.run.endings.result=null;
   delete raw.meta.appliedResultTransactions;
   const beforeUnlocks=[...raw.meta.unlocks];
 
   const restored=parseSave(JSON.stringify(raw),cat);
+  assert.equal(restored.schemaVersion,5);
   assert.equal(restored.run.status,'ended');
   assert.ok(restored.run.endings.result);
   assert.equal(restored.run.endings.result?.firstCompletion,false);
   assert.equal(restored.meta.appliedResultTransactions.length,1);
   assert.deepEqual(restored.meta.unlocks,beforeUnlocks);
+  assert.equal(restored.run.character.progressionStatCap,100);
+  assert.deepEqual(restored.run.creation.activeHardWorkPackages,[]);
+  assert.equal(restored.run.creation.hardWorkPackagesApplied,true);
   assert.equal(restored.meta.runsCompleted,1);
 });
 

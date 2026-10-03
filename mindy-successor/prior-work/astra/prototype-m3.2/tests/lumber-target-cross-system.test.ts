@@ -14,7 +14,7 @@ function catalog():Catalog{return loadCatalog(structuredClone(definitions),[stru
 
 function ready():Save{
   const s=freshSave();
-  s.run.creation={remaining:0,allocated:{},complete:true};
+  s.run.creation={remaining:0,allocated:{},activeHardWorkPackages:[],hardWorkPackagesApplied:true,complete:true};
   s.run.flags['story.arrived']=true;
   s.run.dayState.energyCurrent=3;
   return s;

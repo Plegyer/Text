@@ -269,11 +269,11 @@ test('minimal RC one-Save path proves School, Night, natural Forest and Hard Wor
   assert.deepEqual(s.meta.hardWorkProgress,['lumber']);
 
   s=runtime.dispatch(s,{type:'newLife'},catalog);
-  assert.equal(s.run.character.stats.strength,4);
-  assert.equal(s.run.character.stats.endurance,4);
+  assert.equal(s.run.character.stats.strength,1);
+  assert.equal(s.run.character.stats.endurance,1);
 
   s=reload(s);
-  assert.equal(s.run.character.stats.strength,4);
-  assert.equal(s.run.character.stats.endurance,4);
+  assert.equal(s.run.character.stats.strength,1);
+  assert.equal(s.run.character.stats.endurance,1);
   assert.deepEqual(s.meta.hardWorkProgress,['lumber']);
 });

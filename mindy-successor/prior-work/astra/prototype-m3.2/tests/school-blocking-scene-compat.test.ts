@@ -78,6 +78,7 @@ function ready():Save{
   state.run.character.creation.remaining=0;
   state.run.character.creation.allocated={};
   state.run.character.creation.complete=true;
+  state.run.character.creation.hardWorkPackagesApplied=true;
   state.run.flags['story.arrived']=true;
   state.run.resources.money=2_000;
   state.run.dayState.energyCurrent=3;

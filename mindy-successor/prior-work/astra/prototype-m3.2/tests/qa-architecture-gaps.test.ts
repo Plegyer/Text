@@ -38,7 +38,7 @@ function pack(events:any[]){
 function catalog(events:any[]):Catalog{return loadCatalog(definitions(),[pack(events)]);}
 function start():Save{
   const s=freshSave();
-  s.run.creation={remaining:0,allocated:{},complete:true};
+  s.run.creation={remaining:0,allocated:{},activeHardWorkPackages:[],hardWorkPackagesApplied:true,complete:true};
   s.run.flags['story.arrived']=true;
   return s;
 }

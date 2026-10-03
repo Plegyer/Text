@@ -261,7 +261,7 @@ test('PA21-PA26 accelerator: two Lumber endings may be eligible; ordinary play r
   assert.deepEqual(retried.run.endings.result?.appliedMetaRewardIds,['hardWork:lumber']);
 
   s=dispatch(retried,{type:'newLife'},catalog);
-  assert.equal(s.run.character.stats.strength,4);
-  assert.equal(s.run.character.stats.endurance,4);
+  assert.equal(s.run.character.stats.strength,1);
+  assert.equal(s.run.character.stats.endurance,1);
   assert.deepEqual(s.meta.hardWorkProgress,['lumber']);
 });

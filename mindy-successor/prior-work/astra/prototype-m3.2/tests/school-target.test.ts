@@ -103,6 +103,7 @@ function schoolReady():Save{
   s.run.character.creation.remaining=0;
   s.run.character.creation.allocated={};
   s.run.character.creation.complete=true;
+  s.run.character.creation.hardWorkPackagesApplied=true;
   s.run.flags['story.arrived']=true;
   return s;
 }

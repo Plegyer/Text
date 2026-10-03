@@ -319,8 +319,8 @@ test('final one-Save drift sentinel v2 preserves PR24 state across School, Night
   s=dispatch(s,{type:'newLife'},catalog);
 
   assert.equal(s.run.status,'active');
-  assert.equal(s.run.character.stats.strength,4);
-  assert.equal(s.run.character.stats.endurance,4);
+  assert.equal(s.run.character.stats.strength,1);
+  assert.equal(s.run.character.stats.endurance,1);
   assert.deepEqual(s.meta.hardWorkProgress,['lumber']);
   assert.equal(
     s.meta.appliedResultTransactions.filter(id=>id===transactionId).length,
@@ -330,8 +330,8 @@ test('final one-Save drift sentinel v2 preserves PR24 state across School, Night
   s=reload(s);
 
   assert.equal(s.run.status,'active');
-  assert.equal(s.run.character.stats.strength,4);
-  assert.equal(s.run.character.stats.endurance,4);
+  assert.equal(s.run.character.stats.strength,1);
+  assert.equal(s.run.character.stats.endurance,1);
   assert.deepEqual(s.meta.hardWorkProgress,['lumber']);
   assert.equal(
     s.meta.appliedResultTransactions.filter(id=>id===transactionId).length,

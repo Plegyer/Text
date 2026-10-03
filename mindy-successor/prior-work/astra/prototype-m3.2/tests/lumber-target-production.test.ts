@@ -12,7 +12,7 @@ function catalog(pack=productionPack):Catalog{return loadCatalog(structuredClone
 
 function ready(day=0):Save{
   const s=freshSave();
-  s.run.creation={remaining:0,allocated:{},complete:true};
+  s.run.creation={remaining:0,allocated:{},activeHardWorkPackages:[],hardWorkPackagesApplied:true,complete:true};
   s.run.flags['story.arrived']=true;
   s.run.calendar.elapsedDays=day;
   s.run.dayState.energyCurrent=3;
@@ -123,8 +123,8 @@ test('A6 applies exactly one hardWork:lumber reward on committed completion',()=
   assert.deepEqual(s.meta.hardWorkProgress,['lumber']);
 
   s=dispatch(s,{type:'newLife'},cat);
-  assert.equal(s.run.character.stats.strength,4);
-  assert.equal(s.run.character.stats.endurance,4);
+  assert.equal(s.run.character.stats.strength,1);
+  assert.equal(s.run.character.stats.endurance,1);
 });
 
 test('Lumber presentation IDs are semantic and remain stable when asset paths are replaced',()=>{

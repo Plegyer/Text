@@ -441,7 +441,9 @@ export const definitionsSchema=z.object({
 }).strict();
 export type Definitions=z.infer<typeof definitionsSchema>;
 
-const progressionStatRecord = z.object(Object.fromEntries(stats.map(k=>[k,z.number().int().min(0).max(100)])) as Record<Stat,ReturnType<typeof z.number>>).strict();
+export const progressionStatCapSchema=z.union([z.literal(100),z.literal(200)]);
+export type ProgressionStatCap=z.infer<typeof progressionStatCapSchema>;
+const progressionStatRecord = z.object(Object.fromEntries(stats.map(k=>[k,z.number().int().min(0).max(200)])) as Record<Stat,ReturnType<typeof z.number>>).strict();
 const historyEntry=z.object({count:n,lastDay:n,variants:z.record(z.string(),n)}).strict();
 const legacyMetricRecord=z.record(z.string(),z.number().int().min(0).max(1_000_000));
 const inventoryRecord=z.record(z.string(),n);
@@ -449,7 +451,14 @@ const inventoryRecord=z.record(z.string(),n);
 export const characterSchema=z.object({
   stats:progressionStatRecord,
   lust:z.number().int().min(0).max(100),
-  creation:z.object({remaining:n.max(10),allocated:z.partialRecord(z.enum(stats),n),complete:z.boolean()}).strict(),
+  progressionStatCap:progressionStatCapSchema,
+  creation:z.object({
+    remaining:n.max(10),
+    allocated:z.partialRecord(z.enum(stats),n),
+    activeHardWorkPackages:z.array(z.enum(ordinaryHardWorkCareers)).max(10),
+    hardWorkPackagesApplied:z.boolean(),
+    complete:z.boolean()
+  }).strict(),
   conditions:z.record(z.string(),z.unknown())
 }).strict();
 
@@ -584,7 +593,7 @@ export const metaSchema=z.object({
   runsCompleted:n
 }).strict();
 
-export const saveSchema=z.object({schemaVersion:z.literal(4),contentVersion:z.string().min(1).max(80),run:runSchema,meta:metaSchema}).strict();
+export const saveSchema=z.object({schemaVersion:z.literal(5),contentVersion:z.string().min(1).max(80),run:runSchema,meta:metaSchema}).strict();
 
 type SaveCore=z.infer<typeof saveSchema>;
 type RunCore=SaveCore['run'];
