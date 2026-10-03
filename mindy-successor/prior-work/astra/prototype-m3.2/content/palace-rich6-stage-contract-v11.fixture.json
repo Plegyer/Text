@@ -87,7 +87,7 @@
             "kind": "careerCounter",
             "career": "palace",
             "counter": "palace-duty-count",
-            "op": "gte",
+            "op": "eq",
             "value": 2
           }
         ],
@@ -104,7 +104,7 @@
             "kind": "careerCounter",
             "career": "palace",
             "counter": "palace-duty-count",
-            "op": "gte",
+            "op": "eq",
             "value": 5
           }
         ],
@@ -121,7 +121,7 @@
             "kind": "careerCounter",
             "career": "palace",
             "counter": "palace-duty-count",
-            "op": "gte",
+            "op": "eq",
             "value": 8
           }
         ],
@@ -138,7 +138,7 @@
             "kind": "careerCounter",
             "career": "palace",
             "counter": "palace-duty-count",
-            "op": "gte",
+            "op": "eq",
             "value": 12
           }
         ],
@@ -155,7 +155,7 @@
             "kind": "careerCounter",
             "career": "palace",
             "counter": "palace-duty-count",
-            "op": "gte",
+            "op": "eq",
             "value": 15
           }
         ],
@@ -178,7 +178,7 @@
         "kind": "careerCounter",
         "career": "palace",
         "counter": "palace-duty-count",
-        "op": "gte",
+        "op": "eq",
         "value": 2
       },
       "progressionCompleteWriter": false,
@@ -194,7 +194,7 @@
         "kind": "careerCounter",
         "career": "palace",
         "counter": "palace-duty-count",
-        "op": "gte",
+        "op": "eq",
         "value": 5
       },
       "progressionCompleteWriter": false,
@@ -210,7 +210,7 @@
         "kind": "careerCounter",
         "career": "palace",
         "counter": "palace-duty-count",
-        "op": "gte",
+        "op": "eq",
         "value": 8
       },
       "progressionCompleteWriter": false,
@@ -226,7 +226,7 @@
         "kind": "careerCounter",
         "career": "palace",
         "counter": "palace-duty-count",
-        "op": "gte",
+        "op": "eq",
         "value": 12
       },
       "progressionCompleteWriter": false,
@@ -242,7 +242,7 @@
         "kind": "careerCounter",
         "career": "palace",
         "counter": "palace-duty-count",
-        "op": "gte",
+        "op": "eq",
         "value": 15
       },
       "progressionCompleteWriter": true,
@@ -816,7 +816,13 @@
         ],
         "mandatoryOptionalDependencies": [],
         "optionalAttachments": [],
-        "presentationIdentity": "routine service / operational continuity"
+        "presentationIdentity": "routine service / operational continuity",
+        "mechanicalShape": {
+          "input": "direct baseline duty action",
+          "completion": "palaceDutyCount +1 on action commit",
+          "postDuty": "stage-conditioned presentation only",
+          "optionalFollowUpRequired": false
+        }
       },
       {
         "id": "logistics-support",
@@ -842,7 +848,13 @@
           "access_guest_rooms_staff",
           "cross_rough_route"
         ],
-        "presentationIdentity": "handoff / access / routing"
+        "presentationIdentity": "handoff / access / routing",
+        "mechanicalShape": {
+          "input": "direct duty action with route/access presentation variants",
+          "completion": "palaceDutyCount +1 on action commit",
+          "postDuty": "optional access-capability variant; no extra progression credit",
+          "optionalFollowUpRequired": false
+        }
       },
       {
         "id": "records-review",
@@ -866,7 +878,13 @@
           "merchant_handle_samples",
           "preserve_specimen"
         ],
-        "presentationIdentity": "records / verification / material review"
+        "presentationIdentity": "records / verification / material review",
+        "mechanicalShape": {
+          "input": "direct duty action with records/material presentation variants",
+          "completion": "palaceDutyCount +1 on action commit",
+          "postDuty": "optional verification/sample handling variant; no extra progression credit",
+          "optionalFollowUpRequired": false
+        }
       },
       {
         "id": "coordination",
@@ -889,7 +907,13 @@
           "palace.rival",
           "palace.official-contact"
         ],
-        "presentationIdentity": "coordination / professional responsibility"
+        "presentationIdentity": "coordination / professional responsibility",
+        "mechanicalShape": {
+          "input": "direct duty action",
+          "completion": "palaceDutyCount +1 on action commit",
+          "postDuty": "may emit optional relationship follow-up reaction after duty completion",
+          "optionalFollowUpRequired": false
+        }
       },
       {
         "id": "formal-interface",
@@ -912,7 +936,13 @@
           "official_guard_access",
           "guard_sealed_pass"
         ],
-        "presentationIdentity": "formal interface / protocol"
+        "presentationIdentity": "formal interface / protocol",
+        "mechanicalShape": {
+          "input": "direct duty action with formal/protocol presentation variants",
+          "completion": "palaceDutyCount +1 on action commit",
+          "postDuty": "optional formal/access capability variant; no extra progression credit",
+          "optionalFollowUpRequired": false
+        }
       },
       {
         "id": "evidence-review",
@@ -933,7 +963,13 @@
           "preserve_specimen",
           "merchant_verify_manifest"
         ],
-        "presentationIdentity": "evidence / interpretation / late review"
+        "presentationIdentity": "evidence / interpretation / late review",
+        "mechanicalShape": {
+          "input": "direct duty action",
+          "completion": "palaceDutyCount +1 on action commit",
+          "postDuty": "may emit optional evidence/interpretation follow-up used for outcome preparation, never for duty credit",
+          "optionalFollowUpRequired": false
+        }
       }
     ],
     "antiRepetitionGuarantees": [
@@ -942,7 +978,8 @@
       "No family requires romance, a relationship state, a legacy item or an optional Night choice.",
       "Optional item/relationship capabilities alter variants or efficiency/presentation only; they never change duty-count weight above +1.",
       "Night choices never increment palaceDutyCount.",
-      "Outcome-preparation events never increment palaceDutyCount."
+      "Outcome-preparation events never increment palaceDutyCount.",
+      "Duty credit commits before any optional family follow-up; declining or lacking that follow-up never loses the +1 duty already earned."
     ]
   },
   "outcomePreparation": {
