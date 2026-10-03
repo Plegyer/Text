@@ -285,7 +285,7 @@ export function actionAvailable(action:Action,s:Save,cat?:Catalog,options:Action
   return ordinaryCareerAvailableWithHardWork({
     career,
     normalGateSatisfied,
-    ordinaryCareersDomainLocked:options.ordinaryCareersDomainLocked??secretDebtBound(s),
+    ordinaryCareersDomainLocked:secretDebtBound(s)||(options.ordinaryCareersDomainLocked??false),
     earnedHardWork:s.meta.hardWorkProgress
   });
 }
