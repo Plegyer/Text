@@ -1,148 +1,60 @@
 # CURRENT CHAT4 TASK POINTER
 
-Status: **ACTIVE — SECRET DEBT FULL ROUTE PRODUCER v12**
+Status: **ACTIVE — SECRET DEBT v12 FOCUSED TYPECHECK REPAIR**
 Owner: Chat 4
 
-Accepted Product authority:
-`chat4/secret-debt-balance-decision-v11@fdef24962c751fa8d4d8595f64b7f00a0e4fff04`
-
-Leader authority:
-D44 now locks hidden-work progression, wage and Takeover thresholds.
-
-Authority commit:
-`main@fe00dea96892687ba26898a1f52d023e24d11dc7`
-
-New branch:
+Producer branch:
 `chat4/secret-debt-full-route-producer-v12`
 
-## Assignment
+Current producer candidate:
+`19681ae11adbb7544fdaeff63be26298a412ec95`
 
-Implement the full current-main Secret Debt route under D19/D30/D32/D44.
+Exact-head verification branch:
+`chat4/secret-debt-full-route-producer-v12-focused-check`
 
-No full CI.
+Verification PR:
+#280
 
-### Trigger / trap
+Latest exact-head verification:
+run `37130567889` — **FAILURE**
 
-Implement:
-- unseen eligible street sleep -> exactly 20% lender encounter;
-- refusal closes lender encounter for current life;
-- acceptance grants +2000 exactly once;
-- trap activates exactly 10 days later;
-- debt becomes exactly 20000;
-- bound state is typed and save/reload safe.
+## Exact failure
 
-### While bound
+Production logic is not the current blocker.
 
-Implement:
-- all ten ordinary careers unavailable while bound;
-- existing ordinary-career progress preserved;
-- School remains available;
-- Activity remains available;
-- hidden daytime work available;
-- forced Secret Debt Night every bound night;
-- next-day Energy -1 exactly once;
-- no housing or Meta modifier suppresses forced Night.
+Typecheck fails only in:
+`tests/secret-debt-full-route-v12.test.ts`
 
-### Hidden work — D44 exact
+Errors:
+- line 478: parameter `event` implicitly has `any`;
+- line 479: parameter `choice` implicitly has `any`;
+- line 480: parameter `effect` implicitly has `any`.
 
-Each committed shift:
-- cost 1 Energy;
-- Endurance +1;
-- Sexuality +1;
-- Lust +0;
-- Summer Reason -1;
-- Winter Sociability -1;
-- no Spring/Autumn negative.
+Because typecheck failed first, validate/build/focused tests were skipped.
 
-Exact wage:
-`round(30 + min(110, 0.70 * Endurance + 0.60 * Sexuality + 0.35 * Lust))`
+## Repair
 
-Wage uses pre-shift values.
-Absolute cap 140.
+On producer branch only:
+- add exact safe typings for those callback parameters;
+- do not change runtime behavior;
+- do not alter D19/D30/D32/D44 semantics;
+- do not loosen tsconfig;
+- do not use `any` just to silence the compiler if the existing schema/types can express the shape.
 
-### Exits
-
-Paid Freedom:
-- repay only if holding full 20000;
-- one explicit action;
-- no partial repayment;
-- clears bound state;
-- D30/D32 future-run ownership binding through Strong Meta seam.
-
-Bound Life:
-- exactly 50 hidden completed shifts;
-- non-terminal eligibility until explicit D16 commit;
-- future reward Work Rhythm per D30/D32.
-
-Takeover:
-requires all:
-- hidden shifts >=75;
-- Endurance >=75;
-- Sexuality >=75;
-- Wits >=35;
-- Lust >=30;
-- paid School lessons >=10;
-- still bound;
-- explicit authored Takeover action.
-
-No threshold auto-commit.
-Sexuality/Lust do not imply consent.
-
-### Strong Meta integration
-
-Strong Meta current-main assembly is owned by Chat 2 and may move independently.
-
-Do not fork a duplicate registry.
-
-Use exact D30/D32 IDs:
-- `secret-debt.paid-freedom.earned-reserve-match`
-- `secret-debt.bound-life.work-rhythm`
-- `secret-debt.takeover.network-retainer`
-
-If current branch lacks final assembled Strong Meta runtime, leave precise ownership/grant seams and focused fixtures for Chat 2.
-
-### Palace interaction
-
-Preserve D43:
-if Palace access was legitimately opened before becoming bound:
-- Palace daytime access stays;
-- Palace progress stays;
-- ordinary ten careers remain locked;
-- forced Night still wins;
-- next-day Energy -1 still applies.
-
-Do not create Palace access from Secret Debt.
-
-### Focused QA
+Then rebuild/update the focused-check branch from the repaired producer head and rerun:
+- typecheck;
+- validate;
+- build;
+- Secret Debt focused regressions.
 
 No full CI.
 
-At minimum:
-- typecheck / validate / build;
-- lender 20% deterministic RNG test;
-- refusal closes route current life;
-- +2000 exactly once;
-- trap exactly +10 days;
-- debt exactly 20000;
-- ten ordinary careers locked while bound;
-- School/Activity still available;
-- hidden wage anchors 45 / 74 / 104 and cap 140;
-- hidden stat package exact;
-- seasonal negatives exact;
-- forced Night every bound night;
-- Energy -1 exactly once across reload;
-- Street + bound penalty ordering;
-- full-only repayment;
-- Bound Life 49 fail / 50 eligible;
-- Takeover 74 fail / 75 + all thresholds eligible;
-- each Takeover threshold individually fails one below;
-- no auto commit;
-- consent/refusal unaffected;
-- Palace already-open preservation;
-- save/reload trap/bound/repayment/ending state;
-- no duplicate reward grants.
-
-Freeze exact SHA and report:
-`READY_FOR_CHAT2_ASSEMBLY`.
+If green:
+1. create
+   `mindy-successor/docs/tasks/CHAT4_SECRET_DEBT_FULL_ROUTE_PRODUCER_v12.md`;
+2. document exact production files, migrations/save behavior, Strong Meta seams and QA;
+3. freeze exact producer SHA;
+4. report
+   `READY_FOR_CHAT2_ASSEMBLY`.
 
 Do not merge main.
