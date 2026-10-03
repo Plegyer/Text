@@ -13,6 +13,7 @@ import {
 const fixture=JSON.parse(readFileSync('content/palace-prince-confrontation-decision-v9.fixture.json','utf8'));
 const definitions=JSON.parse(readFileSync('content/definitions.json','utf8'));
 const engineSource=readFileSync('src/core/engine.ts','utf8');
+const schemaSource=readFileSync('src/core/schema.ts','utf8');
 const appSource=readFileSync('src/ui/app.ts','utf8');
 
 const progressionComplete={kind:'worldFact',fact:'palace.progression-complete',present:true} as const;
