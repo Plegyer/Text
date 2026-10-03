@@ -1,0 +1,20 @@
+metric,value,notes
+selectable_ending_bonuses,66,each costs +1 finaleBonusCount when enabled
+fixed_stat_bonus_points,459,excludes dynamic endContest4Win quarter-stat import
+base_plus_allocation_plus_fixed_stat_points,480,11 base + 10 manual allocation + 459 fixed Meta
+fixed_starting_money_bonus,18666,sum of five fixed money bonuses
+starting_money_with_all_fixed_money,19266,base 600 + 18666
+ending_stamina_boost,2,two independent +1 staminaBoost bonuses
+normal_sleep_stamina_with_both,5,base 3 +2
+normal_sleep_stamina_with_both_and_busy_bee,6,Busy Bee is separate one-active Title
+extra_calendar_days,40,gasparButlerEnding starts at Year 0
+normal_calendar_days_with_extra_year,200,derived from Year 0 through Year 4
+late_job_triggers,8,all eight normally gated jobs can be early-access toggled
+normal_dungeon_intro_flags,3,endEmmWarrior sets all three true
+spell_slots_covered,12,spellHave[0..11]
+spell_disable_leaks,2,slots 0 and 10 can remain due reversal bugs
+title_indices_written_by_bonus_handlers,14,indices 6..18 excluding 19 plus 20
+theoretical_quarter_import_at_prev_cap100,275,11 * ceil(100/4)
+theoretical_quarter_import_at_prev_cap200,550,11 * ceil(200/4)
+derived_cash_rent_years1_4,80000,40 * (100+300+600+1000)
+derived_band_bonus_160_sleeps,32000,160 * 200 if every qualifying sleep fires
