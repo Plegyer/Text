@@ -167,6 +167,12 @@ test('route preparation is non-exclusive in UI and final-ready state is distinct
     const fact=`palace.outcome.${route}-ready`;
     if(!s.run.progression.worldFacts.includes(fact))s.run.progression.worldFacts.push(fact);
   }
+  s.run.endings.eligible=[
+    ...s.run.endings.eligible.filter(id=>!id.startsWith('ending.palace.')),
+    'ending.palace.service-life',
+    'ending.palace.court-power',
+    'ending.palace.inner-truth'
+  ];
   s=parseSave(JSON.stringify(s),catalog);
   model=palacePlayerUiModel(s)!;
   assert.deepEqual(model.routes.map(route=>[route.route,route.state]),[
@@ -186,6 +192,7 @@ test('Return Home is exposed only for the full runtime predicate and Lust is irr
   for(const stat of stats)s.run.character.stats[stat]=91;
   s.run.character.lust=100;
   s.run.progression.worldFacts.push(PALACE_PRINCE_DEFEATED_FACT);
+  s.run.endings.eligible.push('ending.palace.return-home');
   s=parseSave(JSON.stringify(s),catalog);
 
   assert.equal(palaceFullTrueEndingPredicate(s),true);
