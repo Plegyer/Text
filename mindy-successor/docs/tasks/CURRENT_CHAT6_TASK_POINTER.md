@@ -1,149 +1,196 @@
 # CURRENT CHAT6 TASK POINTER
 
-Status: **ACTIVE — PALACE DAILY CADENCE + DUTY ECONOMY v14**
+Status: **ACTIVE — PALACE RICH-SIX RUNTIME PRODUCER v15**
 Owner: Chat 6
 
-Accepted prior Product packet:
-`chat6/palace-nontrue-ending-rewards-v13@7673e9f47404468175567d952825cf0b0e981ed3`
+Accepted authority:
+- D23 Palace entry;
+- D29 rich-six topology / milestones 2-5-8-12-15;
+- v11 stage/duty contract:
+  `chat6/palace-rich6-stage-contract-v11@0d95f1e3f3267901efdb701f727e4cc54fec4ef0`;
+- v12 authored-content blueprint:
+  `chat6/palace-authored-content-blueprint-v12@ade2dfa807a0bf8eb063eaa8b2cbf3c8965365ab`;
+- D39 non-True Palace rewards:
+  `chat6/palace-nontrue-ending-rewards-v13@7673e9f47404468175567d952825cf0b0e981ed3`;
+- D43 cadence/economy:
+  `chat6/palace-daily-cadence-economy-v14@7235004c5f8098ccb153646442af90f85af70a69`.
 
-Leader authority:
-D39 now locks:
-- Service Life -> `palace.service-life.steady-practice` Specialist;
-- Court Power -> `palace.court-power.formal-introduction` Specialist;
-- Inner Truth -> `palace.inner-truth.source-method` automatic knowledge;
-- exact reward mechanics/caps from v13;
-- no free Palace Specialist slot.
-
-Authority commit:
-`main@3116eaef4f5e74b65435f8067fdf628bbdce6be9`
-
-## New assignment
-
-Close the largest remaining mechanical Palace Product blocker:
-**exact daily cadence and duty economy**.
+D43 authority commit:
+`main@a15f911e1aaefed1b8262acf672fc89cdcd2f26d`.
 
 New branch:
-`chat6/palace-daily-cadence-economy-v14`
+`chat6/palace-rich6-runtime-producer-v15`
 
-Create:
-1. `mindy-successor/docs/tasks/CHAT6_PALACE_DAILY_CADENCE_ECONOMY_v14.md`
-2. `mindy-successor/research/palace_cadence_economy_v1.csv`
+## Assignment
 
-No production runtime/UI/content changes.
+Produce the current-main Palace rich-six runtime/content implementation candidate.
+
+No full CI. Chat 2 remains the only full-CI lane.
+
+## Implement
+
+### Run-local Palace progression
+Implement typed run-local state needed for:
+- access already granted by D23 consumer;
+- stage progression through:
+  1. Entered Service
+  2. Working Rhythm
+  3. Trusted Service
+  4. Palace Network
+  5. Crossroads
+  6. Outcome Ready
+- structural duty count 0..15;
+- exact milestones 2 / 5 / 8 / 12 / 15;
+- exactly-once `palace.progression-complete`;
+- daily structural-duty lock;
+- committed duty ordinal/ID;
+- daily support-action lock;
+- non-exclusive route-prep facts.
+
+Do not add `hardWork:palace`.
+
+### Structural duty transaction — D43 exact
+At most one progression-counting structural duty per calendar day.
+
+Exact transaction:
+- cost 1 Energy;
+- does not end daytime;
+- max one/day regardless of extra Energy;
+- wage:
+  `35 + min(20, floor((Reason + Wits + Manners + Sociability) / 20))`;
+- wage bounded 35..55;
+- no routine stat gain;
+- no automatic Lust;
+- no routine negative stat effect;
+- no 16th paid progression duty.
+
+Commit must be atomic/reload-safe and must not duplicate:
+- Energy spend;
+- money;
+- duty count;
+- milestone;
+- daily lock.
+
+### Fifteen authored duties
+Use the accepted v12 exact 15-duty map across:
+- Service Rotation;
+- Logistics Support;
+- Records Review;
+- Coordination;
+- Formal Interface;
+- Evidence Review.
+
+Use functional production copy/localization only.
+Do not invent final Palace lore/mystery truth.
+
+### Optional Palace support/prep
+Implement accepted support envelope:
+- max 1 support action/day;
+- cost 1 Energy;
+- pays 0;
+- no duty count;
+- no routine stats;
+- may occur same day as duty if Energy remains.
+
+Implement the accepted route-prep beats:
+- Service Life prep available from Trusted Service / duty-5 threshold;
+- Court Power prep available from Palace Network / duty-8 threshold;
+- Inner Truth prep available from Crossroads / duty-12 threshold;
+- prep remains non-exclusive.
+
+### Endings
+Implement non-True Palace ending eligibility for:
+- `ending.palace.service-life`;
+- `ending.palace.court-power`;
+- `ending.palace.inner-truth`.
+
+Eligibility:
+- requires Outcome Ready + exact route final-ready fact;
+- non-terminal under D16;
+- multiple Palace non-True endings may coexist eligible;
+- only explicit commit selects one.
+
+Preserve True Ending separately:
+- Palace route;
+- `palace.progression-complete`;
+- all 12 progression stats >=91;
+- Lust excluded;
+- Prince confrontation;
+- explicit Return Home.
+
+Do not invent final Prince/mystery lore.
+
+### D39 reward seams
+Strong-Meta runtime dependency remains:
+`chat4/strong-meta-runtime-producer-v7@6c3865aec1283055ab0713ca4b2873d379f3ddc6`.
+
+Do NOT invent a second strong-Meta registry.
+
+If current main lacks the final Specialist infrastructure:
+- preserve exact reward IDs:
+  - `palace.service-life.steady-practice`;
+  - `palace.court-power.formal-introduction`;
+- provide explicit grant/binding seam for Chat 2;
+- do not silently replace their mechanics.
+
+Inner Truth:
+- `palace.inner-truth.source-method` is automatic knowledge/content;
+- wire only through an existing compatible automatic-knowledge mechanism or leave a precise integration seam if needed.
+
+### Secret Debt
+If Palace access was already legitimately granted under D23:
+- Secret Debt binding does not revoke Palace daytime access;
+- does not reset Palace progression;
+- ordinary ten careers remain locked;
+- forced Night still wins;
+- next-day Energy -1 is applied before Palace action spending;
+- Palace wage/cadence unchanged;
+- paid duty progression still ends permanently at duty 15.
+
+Do not make Palace a debt-repayment farm.
+
+### Lodging / Night
+- normal/cheap/street do not gate daytime Palace duty;
+- Palace optional Night never outranks forced Secret Debt Night;
+- no Palace Night duty count/wage/Energy refund.
+
+## Preserve current-main D23 consumer
+
+Critical:
+- do not restore legacy permanent `meta.unlocks['palace']`;
+- do not restore `ensurePalaceUnlock(s.meta)`;
+- Palace invitation/access remains run-local;
+- old completed saves receive no retroactive invitation;
+- D23 remains permanent ordinary 10/10 + current active 10/10 only.
+
+## Focused QA
+
+Run focused only:
+1. typecheck;
+2. validate;
+3. build;
+4. D23 invitation regression;
+5. Palace 9+9 / 10+0 / 10+9 / 10+10 matrix;
+6. duty 1..15 progression;
+7. milestone 2/5/8/12/15 exactly once;
+8. one structural duty/day;
+9. extra Energy cannot buy a second duty;
+10. exact wage 35..55 including cap-200;
+11. max total paid structural wage 825;
+12. no routine stat/Lust changes;
+13. support max1/day / cost1 / pay0 / no duty count;
+14. route-prep non-exclusive;
+15. three non-True endings coexist eligible at Outcome Ready;
+16. explicit commit required;
+17. True Ending 12×91 and Lust excluded;
+18. bound Secret Debt Palace access preserved;
+19. bound Energy -1 ordering;
+20. forced Night precedence;
+21. save/reload no duplicate duty/wage/milestone;
+22. migration/current-save compatibility.
+
 No full CI.
+Do not merge main.
 
-## Authority to preserve
-
-- D23: Palace entry only from permanent ordinary 10/10 + active 10/10, deterministic Day-1 invitation for that life;
-- D29: six stages and structural duty milestones **2 / 5 / 8 / 12 / 15**;
-- exactly 15 structural duties in the accepted v12 authored map;
-- no `hardWork:palace`;
-- D26 ordinary same-career cadence does **not** silently apply to Palace;
-- Palace Night remains optional and loses to Secret Debt forced Night;
-- True Ending still needs Outcome Ready + progression-complete + all 12 stats >=91 + Prince defeat + explicit Return Home;
-- Lust excluded from True stat gate;
-- D39 non-True rewards remain unchanged.
-
-## Required comparison
-
-Compare at minimum these Palace daytime models:
-
-### Model A — one structural duty per calendar day max
-A Palace duty consumes Energy but no second structural duty may be completed that day.
-
-### Model B — Energy-driven multiple duties per day
-Multiple structural duties may be completed in one day if Energy permits.
-
-### Model C — one structural duty + optional support work
-At most one progression-counting structural duty/day, but optional non-counting Palace support/review/social daytime actions may use remaining Energy.
-
-You may recommend a refined variant, but must explicitly compare A/B/C.
-
-## Exact decisions required
-
-Recommend exact values for:
-
-1. Palace structural duty Energy cost;
-2. max progression-counting duties per day;
-3. whether optional non-counting Palace daytime actions exist;
-4. their Energy cost;
-5. whether Palace duty itself ends daytime or merely consumes Energy;
-6. earliest realistic calendar day for duty 15 after a Day-1 invitation;
-7. reference completion windows for:
-   - Palace-focused life;
-   - mixed Palace + ordinary career life;
-   - Palace + School life;
-8. how Palace fits 160-day calendar without becoming either trivial burst content or 15-day dead waiting;
-9. exact wage/payment model for structural duty;
-10. whether optional Palace support work pays;
-11. exact stat gain package per duty family OR an explicit decision that duty families do not grant routine progression stats;
-12. any negative duty effects, with exact scope if recommended;
-13. whether Palace work uses ordinary wage-scaling stats or a distinct bounded formula;
-14. how normal/cheap/street lodging interacts with Palace daytime work;
-15. Palace Night interaction;
-16. Secret Debt next-day Energy -1 ordering;
-17. whether a bound Secret Debt character may perform Palace daytime duties after Palace was already legitimately opened — treat this as a Product question and recommend one explicit rule;
-18. save/reload boundaries;
-19. exactly-once duty-count increment;
-20. prevention of duty farming / duplicate progression;
-21. how optional route-prep beats coexist with cadence;
-22. how Service Life / Court Power / Inner Truth readiness timing stays non-exclusive;
-23. exact acceptance-test matrix.
-
-## Economy grounding
-
-Use **current executable economy**, not old WU assumptions.
-
-Read:
-- `LEADER_LIVE_ECONOMY_DRIFT_AUDIT_v1.md`;
-- Chat 3 live affordability harness v7;
-- current lodging prices 100 / 50 / 0;
-- current ordinary wage scale;
-- current School tuition.
-
-Do not make Palace wages so dominant that ordinary careers become obsolete.
-Do not require Palace work to finance a hidden 15-day loss with impossible costs.
-
-Compare at least 3 wage shapes:
-- flat bounded Palace wage;
-- stat-scaled Palace wage;
-- mixed base + bounded stat component.
-
-## Progression-stat caution
-
-Palace is a late/meta-gated career.
-
-Do not casually make its 15 duties the fastest way to raise all 12 stats toward 91.
-
-If duty stat gains exist:
-- keep them narrow by duty family;
-- quantify total maximum contribution over 15 duties;
-- compare against School and ordinary career progression.
-
-Do not increase Lust automatically from Palace duty unless explicitly justified; Lust remains outside the True gate.
-
-## Secret Debt precedence
-
-If you recommend Palace daytime work remains legal while bound:
-- ordinary 10 careers stay locked as D19 requires;
-- forced Night still occurs;
-- next-day Energy -1 remains a real loss;
-- Palace cannot become a trivial debt farm.
-
-If you recommend Palace daytime work is suspended while bound:
-- explain run-state semantics and how access/progress resumes after release.
-
-Pick one recommendation.
-
-## Final deliverable
-
-End with an exact Russian table:
-
-`Параметр | Рекомендованное значение | Почему | Balance risk | Acceptance test`
-
-Then give one exact reference timeline from Day-1 invitation to duty 15 and all three non-True route readiness windows.
-
-Mark:
-`READY_FOR_LEADER_PRODUCT_DECISION`.
-
-Freeze exact SHA.
+Freeze exact SHA and report:
+`READY_FOR_CHAT2_ASSEMBLY`.
