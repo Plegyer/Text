@@ -239,7 +239,10 @@ export function loadCatalog(definitions:unknown,packs:unknown[]):Catalog {
   for(const activity of d.activities){
     checkConditions(activity.entryConditions);
     unique(activity.options.map(option=>option.id),`activity.${activity.id}.options`);
-    for(const option of activity.options)checkConditions(option.conditions);
+    for(const option of activity.options){
+      checkConditions(option.conditions);
+      checkEffects(option.effects);
+    }
     unique(activity.results.map(r=>r.id),`activity.${activity.id}.results`);
     const outcomes=new Set(activity.results.map(r=>r.outcome));
     if(outcomes.size!==3||!['success','escape','failure'].every(x=>outcomes.has(x as any)))throw new Error(`Activity ${activity.id} должна иметь success/escape/failure result`);
@@ -249,6 +252,26 @@ export function loadCatalog(definitions:unknown,packs:unknown[]):Catalog {
       if(activity.timePolicy!=='same_day')throw new Error(`counter.v1 поддерживает только timePolicy=same_day: ${activity.id}`);
       if(activity.failurePolicy!=='exit_to_day')throw new Error(`counter.v1 поддерживает только failurePolicy=exit_to_day: ${activity.id}`);
       if(activity.adapterConfig.failAtEndurance>=activity.adapterConfig.initialEndurance)throw new Error(`Activity ${activity.id}: failAtEndurance должен быть ниже initialEndurance`);
+      const segments=activity.adapterConfig.fieldTimeSegments;
+      if(segments!==undefined){
+        if((activity.adapterConfig.advanceFieldTimeCost??0)>segments)throw new Error(`Activity ${activity.id}: advance Field Time cost exceeds segment budget`);
+        for(const option of activity.options)if((option.fieldTimeCost??0)>segments)throw new Error(`Activity ${activity.id}: option Field Time cost exceeds segment budget: ${option.id}`);
+      }else if((activity.adapterConfig.advanceFieldTimeCost??0)>0||activity.options.some(option=>(option.fieldTimeCost??0)>0)){
+        throw new Error(`Activity ${activity.id}: Field Time costs require fieldTimeSegments`);
+      }
+      const miniGames=new Map<string,typeof activity.options>();
+      for(const option of activity.options){
+        const transition=option.miniGameTransition;
+        if(!transition)continue;
+        const rows=miniGames.get(transition.game)??[];
+        rows.push(option);
+        miniGames.set(transition.game,rows);
+      }
+      for(const [game,options] of miniGames){
+        if(!options.some(option=>option.miniGameTransition?.from==='start'))throw new Error(`Activity ${activity.id}: mini-game ${game} has no start transition`);
+        const terminals=new Set(options.map(option=>option.miniGameTransition?.outcome).filter(Boolean));
+        for(const outcome of ['success','failure','abort'])if(!terminals.has(outcome as any))throw new Error(`Activity ${activity.id}: mini-game ${game} missing ${outcome} terminal`);
+      }
     }
   }
 
