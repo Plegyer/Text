@@ -9,6 +9,7 @@ import {povertyPendingLocalizationKey} from './povertyDepth.ts';
 import {emptyLocalization,localizationSchema,normalizeLocale,resolveLocalizedText,type Locale,type LocalizationBundle} from '../core/localization.ts';
 import {forestActivityNarrativeKey} from './forestNarrative.ts';
 import {hardWorkNewStartCopy,hardWorkNewStartSummary,hardWorkPackageCardModel} from './hardWorkNewStart.ts';
+import {isPalaceEndingId,palacePlayerUiModel,palaceRewardPreviewByEnding,type PalaceEndingId} from './palaceUi.ts';
 declare global {interface Window {gameStorage?:{load:()=>Promise<{text:string;recovered:boolean}|null>;save:(text:string)=>Promise<void>}}}
 const app=document.querySelector<HTMLDivElement>('#app')!;
 const esc=(s:unknown)=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]!));
@@ -517,8 +518,102 @@ function endingPresentationState(endingId:string){
  if(r.endings.eligible.includes(endingId))return 'eligible' as const;
  return 'locked' as const;
 }
+function palaceRouteLabel(route:string){
+ return tr(`ui.palace.route.${route}.label`,route);
+}
+function palaceRouteStateLabel(routeState:string){
+ return tr(`ui.palace.routeState.${routeState}`,routeState);
+}
+function palaceWorkPanelHTML(){
+ const model=palacePlayerUiModel(state);
+ if(!model)return '';
+ const stage=careerStageLabel('palace',model.stage);
+ const dutyStatus=model.outcomeReady
+  ?tr('ui.palace.duty.complete','Структурная служба завершена.')
+  :model.structuralDutyUsedToday
+   ?tr('ui.palace.duty.usedToday','Сегодняшняя структурная обязанность уже выполнена.')
+   :tr('ui.palace.duty.availableToday','Сегодня можно выполнить одну структурную обязанность.');
+ const supportStatus=model.supportUsedToday
+  ?tr('ui.palace.support.usedToday','Сегодняшнее действие поддержки уже использовано.')
+  :tr('ui.palace.support.availableToday','Сегодня можно выполнить одно доступное действие поддержки.');
+ const routes=model.routes.map(route=>{
+  const label=palaceRouteLabel(route.route);
+  const routeState=palaceRouteStateLabel(route.state);
+  return `<li data-palace-route="${esc(route.route)}"><strong>${esc(label)}</strong>: <span data-palace-route-state="${esc(route.state)}">${esc(routeState)}</span></li>`;
+ }).join('');
+ const nextDuty=model.nextDutyId?actionList([model.nextDutyId]):'';
+ const supportActions=model.availableSupportIds.length?actionList(model.availableSupportIds):'';
+ const outcome=model.outcomeReady
+  ?`<p class="palace-outcome-ready" role="status">${esc(tr('ui.palace.outcomeReady','Outcome Ready: структурная дворцовая прогрессия этой жизни завершена.'))}</p>`
+  :'';
+ return `<section class="career-progress palace-progress" data-palace-access="granted" data-palace-stage="${esc(model.stage)}">
+  <h3>${esc(tr('ui.palace.title','Дворец'))}</h3>
+  <p class="palace-access"><strong>${esc(tr('ui.palace.accessLabel','Доступ'))}:</strong> ${esc(tr('ui.palace.accessGranted','открыт в этой жизни'))}</p>
+  <p class="palace-stage"><strong>${esc(tr('ui.palace.stageLabel','Этап'))}:</strong> ${esc(stage)}</p>
+  <p class="palace-duty-progress" data-palace-duty-progress="${model.dutyCount}/${model.dutyTotal}"><strong>${esc(tr('ui.palace.dutyProgressLabel','Структурные обязанности'))}:</strong> ${esc(fmt(tr('ui.palace.dutyProgress','{count} / {total}'),{count:model.dutyCount,total:model.dutyTotal}))}</p>
+  <p class="palace-duty-lock" data-palace-duty-used-today="${model.structuralDutyUsedToday?'true':'false'}">${esc(dutyStatus)}</p>
+  <p class="palace-duty-economy"><strong>${esc(tr('ui.palace.dutyCostLabel','Стоимость обязанности'))}:</strong> ${model.structuralDutyEnergyCost} ${esc(tr('ui.work.energy','энергии'))} · <strong>${esc(tr('ui.palace.wagePreviewLabel','Доход этой обязанности'))}:</strong> ${model.wagePreview} ${esc(tr('ui.work.coins','монет'))}</p>
+  ${outcome}
+  ${model.nextDutyId?`<h4>${esc(tr('ui.palace.nextDutyTitle','Следующая структурная обязанность'))}</h4>${nextDuty}`:''}
+  <div class="palace-support" data-palace-support-used-today="${model.supportUsedToday?'true':'false'}">
+   <h4>${esc(tr('ui.palace.supportTitle','Поддержка и подготовка исходов'))}</h4>
+   <p>${esc(supportStatus)} ${esc(fmt(tr('ui.palace.supportCost','Стоимость: {energy} энергии · оплата: 0 монет · счётчик обязанностей не меняется.'),{energy:model.supportEnergyCost}))}</p>
+   ${routes?`<ul class="palace-route-list">${routes}</ul>`:''}
+   ${supportActions}
+  </div>
+ </section>`;
+}
+function genericEndingCardHTML(e:Catalog['definitions']['endings'][number]){
+ const presentationState=endingPresentationState(e.id);
+ const stateLabel=tr(`ui.ending.state.${presentationState}`,presentationState);
+ return `<article class="ending" data-ending-id="${esc(e.id)}" data-ending-state="${presentationState}" tabindex="0" aria-label="${esc(fmt(tr('ui.ending.stateAria','Состояние судьбы: {state}'),{state:`${tr(`ending.${e.id}.title`,e.title)} — ${stateLabel}`}))}">
+  <span class="ending-state" aria-label="${esc(fmt(tr('ui.ending.stateAria','Состояние судьбы: {state}'),{state:stateLabel}))}">${esc(stateLabel)}</span>
+  <h3>${esc(tr(`ending.${e.id}.title`,e.title))}</h3>
+  <p>${esc(tr(`ending.${e.id}.description`,e.description))}</p>
+  <small>${e.conditions.map(condition=>`${meets(condition,state,catalog)?'✓':'○'} ${esc(explain(condition))}`).join(' · ')}</small>
+  <button data-ending="${e.id}" ${busy||locked||state.run.status==='ended'||state.run.status==='ending_committed'||!!state.run.pending||!state.run.availableEndings.includes(e.id)||!eligible(e.conditions,state)?'disabled':''}>${esc(tr('ui.legacy.acceptButton','Принять судьбу'))}</button>
+ </article>`;
+}
+function palaceEndingRewardHTML(endingId:PalaceEndingId){
+ const reward=palaceRewardPreviewByEnding[endingId];
+ const name=tr(reward.nameKey,reward.fallbackName);
+ const layer=tr(reward.layerKey,reward.fallbackLayer);
+ const automatic=endingId==='ending.palace.inner-truth';
+ const note=automatic
+  ?tr('ui.palace.reward.automaticNote','Награда выдаётся после завершения этой судьбы и в будущих жизнях наследуется автоматически как знание; слот loadout не требуется.')
+  :tr('ui.palace.reward.specialistNote','Награда выдаётся после завершения этой судьбы. В будущей New Start+ жизни её выбор и активация остаются в интерфейсе Strong Meta; отдельного дворцового слота нет.');
+ return `<div class="palace-future-reward" data-palace-reward-id="${esc(reward.rewardId)}">
+  <p><strong>${esc(tr('ui.palace.futureRewardLabel','Награда будущих жизней'))}:</strong> ${esc(name)} · ${esc(layer)}</p>
+  <p><code>${esc(reward.rewardId)}</code></p>
+  <p>${esc(note)}</p>
+ </div>`;
+}
+function palaceEligibleEndingsHTML(){
+ const model=palacePlayerUiModel(state);
+ if(!model)return '';
+ const cards=model.eligibleEndingIds.map(id=>{
+  const ending=catalog.definitions.endings.find(item=>item.id===id);
+  if(!ending)return '';
+  const title=tr(`ending.${ending.id}.title`,ending.title);
+  const description=tr(`ending.${ending.id}.description`,ending.description);
+  const stateLabel=tr('ui.ending.state.eligible','eligible');
+  const trueFlag=id==='ending.palace.return-home'?' data-palace-true-ending="eligible"':'';
+  return `<article class="ending palace-ending" data-ending-id="${esc(id)}" data-ending-state="eligible"${trueFlag} tabindex="0" aria-label="${esc(fmt(tr('ui.ending.stateAria','Состояние судьбы: {state}'),{state:`${title} — ${stateLabel}`}))}">
+   <span class="ending-state">${esc(stateLabel)}</span>
+   <h3>${esc(title)}</h3>
+   <p>${esc(description)}</p>
+   ${palaceEndingRewardHTML(id)}
+   <button data-ending="${esc(id)}" ${busy||locked||state.run.status==='ended'||state.run.status==='ending_committed'||!!state.run.pending?'disabled':''}>${esc(tr('ui.legacy.acceptButton','Принять судьбу'))}</button>
+  </article>`;
+ }).join('');
+ const empty=cards?'':`<p class="palace-ending-empty">${esc(tr('ui.palace.endings.noneReady','Дворцовые судьбы появятся здесь только после выполнения их реальных условий.'))}</p>`;
+ return `<section class="palace-endings" data-palace-endings="eligible-only">
+  <h3>${esc(tr('ui.palace.endings.title','Дворцовые судьбы'))}</h3>
+  ${empty}${cards}
+ </section>`;
+}
 function panelContent(){
- if(panel==='work')return `<h2>${esc(tr('ui.work.title','Куда устроимся?'))}</h2>${actionList(professions)}`;
+ if(panel==='work')return `<h2>${esc(tr('ui.work.title','Куда устроимся?'))}</h2>${actionList(professions)}${palaceWorkPanelHTML()}`;
  if(panel==='school')return `<h2>${esc(tr('ui.school.title','Школа'))}</h2><p>${esc(tr('ui.school.help','Восемь оплачиваемых курсов. Урок списывает tuition + 1 Energy атомарно.'))}</p>${schoolList()}`;
  if(panel==='explore')return `<h2>${esc(tr('ui.explore.title','Окрестности и поручения'))}</h2>${activityEntryList(['lumber.forest','hunter.expedition'])}${activityEntryList(['assassin.infiltration'])}<details><summary>${esc(tr('ui.explore.errandsSummary','Обычные поручения'))}</summary>${actionList(['forest-search','tavern-talk','forage','landlord','visit','oddjob'])}</details>`;
  if(panel==='sleep')return `<h2>${esc(tr('ui.sleep.title','Ночь'))}</h2><p>${esc(tr('ui.sleep.help','Сначала выбирается ночлег, затем — добровольное вечернее действие, после чего начинается следующий день.'))}</p><button data-end-day class="primary" ${busy||locked||!!state.run.pending||!!state.run.flow.night||!!state.run.flow.activity?'disabled':''}>${esc(tr('ui.sleep.startButton','Начать ночную последовательность'))}</button>`;
@@ -529,7 +624,7 @@ function panelContent(){
   return `<h2>${esc(tr('ui.panel.journal','Дневник'))}</h2>${entries.length?[...entries].reverse().map(t=>`<p class="journal-entry">${esc(t)}</p>`).join(''):`<p>${esc(tr('ui.journal.empty','Пока записей нет.'))}</p>`}`;
  }
  if(panel==='bag')return `<h2>${esc(tr('ui.bag.title','Сумка и дела'))}</h2>${Object.entries(state.run.inventory).map(([k,v])=>`<p>${esc(itemLabel(k))}: ${v}</p>`).join('')}<p>${esc(tr('ui.bag.debtLabel','Долг'))}: ${state.run.metrics.debt}</p>${actionList(['repay','rent-room'])}`;
- if(panel==='legacy')return `<h2>${esc(tr('ui.panel.legacy','Судьбы'))}</h2><p>${esc(tr('ui.legacy.help','Достижение судьбы не завершает жизнь. Принятие выдаёт её наследие.'))}</p>${catalog.definitions.endings.map(e=>{const presentationState=endingPresentationState(e.id);const stateLabel=tr(`ui.ending.state.${presentationState}`,presentationState);return `<article class="ending" data-ending-id="${esc(e.id)}" data-ending-state="${presentationState}" tabindex="0" aria-label="${esc(fmt(tr('ui.ending.stateAria','Состояние судьбы: {state}'),{state:`${tr(`ending.${e.id}.title`,e.title)} — ${stateLabel}`}))}"><span class="ending-state" aria-label="${esc(fmt(tr('ui.ending.stateAria','Состояние судьбы: {state}'),{state:stateLabel}))}">${esc(stateLabel)}</span><h3>${esc(tr(`ending.${e.id}.title`,e.title))}</h3><p>${esc(tr(`ending.${e.id}.description`,e.description))}</p><small>${e.conditions.map(c=>`${meets(c,state,catalog)?'✓':'○'} ${esc(explain(c))}`).join(' · ')}</small><button data-ending="${e.id}" ${busy||locked||state.run.status==='ended'||state.run.status==='ending_committed'||!!state.run.pending||!state.run.availableEndings.includes(e.id)||!eligible(e.conditions,state)?'disabled':''}>${esc(tr('ui.legacy.acceptButton','Принять судьбу'))}</button></article>`;}).join('')}<h3>${esc(tr('ui.legacy.inheritanceTitle','Наследие'))}</h3><p>${state.meta.unlocks.map(k=>esc(tr(`unlock.${k}.label`,labels[k]??k))).join(' · ')||esc(tr('ui.legacy.emptyInheritance','Ещё впереди'))}</p>${state.run.status!=='active'?`<button id="new-life">${esc(tr('ui.legacy.nextLifeButton','Следующая жизнь'))}</button>`:''}`;
+ if(panel==='legacy')return `<h2>${esc(tr('ui.panel.legacy','Судьбы'))}</h2><p>${esc(tr('ui.legacy.help','Достижение судьбы не завершает жизнь. Принятие выдаёт её наследие.'))}</p>${catalog.definitions.endings.filter(e=>!isPalaceEndingId(e.id)).map(genericEndingCardHTML).join('')}${palaceEligibleEndingsHTML()}<h3>${esc(tr('ui.legacy.inheritanceTitle','Наследие'))}</h3><p>${state.meta.unlocks.map(k=>esc(tr(`unlock.${k}.label`,labels[k]??k))).join(' · ')||esc(tr('ui.legacy.emptyInheritance','Ещё впереди'))}</p>${state.run.status!=='active'?`<button id="new-life">${esc(tr('ui.legacy.nextLifeButton','Следующая жизнь'))}</button>`:''}`;
  if(panel==='editor')return '<div id="editor" class="editor"></div>';
  if(panel==='catalog')return `<h2>Инспектор событий</h2>${catalog.events.map(e=>`<details><summary>${esc(e.title)}</summary><pre>${esc(JSON.stringify(e,null,2))}</pre></details>`).join('')}`;
  return `<h2>${esc(tr('ui.menu.title','Меню'))}</h2><div class="menu-buttons"><button id="language-toggle">${esc(fmt(tr('ui.menu.languageButton','Язык: {language}'),{language:tr(locale==='ru'?'ui.language.ru':'ui.language.en',locale==='ru'?'Русский':'English')}))}</button><button id="export">${esc(tr('ui.menu.exportSave','Экспорт сохранения'))}</button><button id="import">${esc(tr('ui.menu.importSave','Импорт сохранения'))}</button><input type="file" id="file" accept=".json" hidden><button data-panel="editor">${esc(tr('ui.menu.editor','Тексты и изображения'))}</button><button id="animation-toggle">${esc(fmt(tr('ui.menu.animationToggle','Анимация GIF: {state}'),{state:tr(animationsEnabled?'ui.menu.animationOn':'ui.menu.animationOff',animationsEnabled?'включена':'выключена')}))}</button><button data-panel="catalog">Инспектор событий</button><button id="restart" ${busy||locked?'disabled':''}>${esc(tr('ui.menu.restart','Новая героиня с сохранением наследия'))}</button></div><p class="muted">${esc(tr('ui.menu.footer','M3 · Игровая оболочка. Иллюстрации — заменяемые эскизы. Новая героиня начинает со статами 1 и десятью очками. У загруженной старой жизни характеристики сохранены.'))}</p>`;
