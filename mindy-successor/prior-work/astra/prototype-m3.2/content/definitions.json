@@ -5191,6 +5191,130 @@
           "media": []
         }
       ]
+    },
+    {
+      "id": "palace.confront-prince",
+      "label": "Confront the Prince",
+      "description": "Present the Palace record and challenge the Custodian's exclusive veto without combat.",
+      "cost": {
+        "money": 0,
+        "energy": 0
+      },
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "palace.access-granted",
+          "present": true
+        },
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "outcome-ready"
+        },
+        {
+          "kind": "worldFact",
+          "fact": "palace.progression-complete",
+          "present": true
+        },
+        {
+          "kind": "stat",
+          "stat": "strength",
+          "op": "gte",
+          "value": 91
+        },
+        {
+          "kind": "stat",
+          "stat": "endurance",
+          "op": "gte",
+          "value": 91
+        },
+        {
+          "kind": "stat",
+          "stat": "dexterity",
+          "op": "gte",
+          "value": 91
+        },
+        {
+          "kind": "stat",
+          "stat": "reason",
+          "op": "gte",
+          "value": 91
+        },
+        {
+          "kind": "stat",
+          "stat": "magic",
+          "op": "gte",
+          "value": 91
+        },
+        {
+          "kind": "stat",
+          "stat": "creativity",
+          "op": "gte",
+          "value": 91
+        },
+        {
+          "kind": "stat",
+          "stat": "wits",
+          "op": "gte",
+          "value": 91
+        },
+        {
+          "kind": "stat",
+          "stat": "charm",
+          "op": "gte",
+          "value": 91
+        },
+        {
+          "kind": "stat",
+          "stat": "sociability",
+          "op": "gte",
+          "value": 91
+        },
+        {
+          "kind": "stat",
+          "stat": "manners",
+          "op": "gte",
+          "value": 91
+        },
+        {
+          "kind": "stat",
+          "stat": "grooming",
+          "op": "gte",
+          "value": 91
+        },
+        {
+          "kind": "stat",
+          "stat": "sexuality",
+          "op": "gte",
+          "value": 91
+        },
+        {
+          "kind": "worldFact",
+          "fact": "palace.prince-defeated",
+          "present": false
+        },
+        {
+          "kind": "questStage",
+          "quest": "palace.prince-confrontation",
+          "stage": "ready"
+        }
+      ],
+      "effects": [
+        {
+          "kind": "advanceQuest",
+          "quest": "palace.prince-confrontation",
+          "transition": "begin"
+        }
+      ],
+      "mode": "story",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "The Palace record is complete enough to challenge the Custodian's exclusive veto. You enter the confrontation with evidence already gathered, not with a weapon or a new hidden requirement.",
+          "conditions": [],
+          "media": []
+        }
+      ]
     }
   ],
   "endings": [
@@ -5873,7 +5997,7 @@
     {
       "id": "ending.palace.service-life",
       "title": "Palace — Service Life",
-      "description": "Outcome Ready plus the completed Service Life preparation route. Permanent reward binding is deferred to the accepted strong-Meta runtime seam.",
+      "description": "Outcome Ready plus completed Service Life preparation: choose continuity, clear handoffs, and professional boundaries without blind loyalty.",
       "conditions": [
         {
           "kind": "worldFact",
@@ -5898,12 +6022,12 @@
       ],
       "reward": "palace.service-life.steady-practice",
       "metaRewards": [],
-      "epilogue": "Palace Service Life is complete. The current-life resolution remains functional; its permanent reward is applied only after the strong-Meta assembly seam is integrated."
+      "epilogue": "You remain in Palace service as a continuity figure: responsibilities, handoffs, and institutional memory become less dependent on personal favour. The Palace remains imperfect and real, and you choose to help it keep working without claiming a throne or a final answer to every secret."
     },
     {
       "id": "ending.palace.court-power",
       "title": "Palace — Court Power",
-      "description": "Outcome Ready plus the completed Court Power preparation route. Professional relationships remain optional.",
+      "description": "Outcome Ready plus completed Court Power preparation: accept accountable authority over Palace appointments, access, audit, routing, and priorities.",
       "conditions": [
         {
           "kind": "worldFact",
@@ -5928,12 +6052,12 @@
       ],
       "reward": "palace.court-power.formal-introduction",
       "metaRewards": [],
-      "epilogue": "Palace Court Power is complete. The current-life resolution records accountable professional influence without adding a second Meta registry."
+      "epilogue": "You accept a formal Palace mandate and make access, responsibility, and review more traceable. Court politics remain real and constrained; your authority does not become sovereignty over the world or magical control of the Threshold."
     },
     {
       "id": "ending.palace.inner-truth",
       "title": "Palace — Inner Truth",
-      "description": "Outcome Ready plus the completed Inner Truth preparation route. The route preserves uncertainty and does not reveal a final macro mystery answer.",
+      "description": "Outcome Ready plus completed Inner Truth preparation: preserve a method for checking the Threshold Archive's sources, contradictions, and unresolved claims.",
       "conditions": [
         {
           "kind": "worldFact",
@@ -5958,12 +6082,12 @@
       ],
       "reward": "palace.inner-truth.source-method",
       "metaRewards": [],
-      "epilogue": "Palace Inner Truth is complete. The current-life resolution records a source-checking method while final mystery truth remains outside this implementation."
+      "epilogue": "You secure the Threshold Archive's provenance chain and record what is observed, reported, inferred, and still unknown. The Palace can no longer use secrecy as a substitute for evidence, but the original cause of your displacement remains genuinely unresolved."
     },
     {
       "id": "ending.palace.return-home",
       "title": "Palace — Return Home",
-      "description": "True Ending eligibility: Palace progression complete, all 12 progression stats at least 91, and the Prince-defeated signal present.",
+      "description": "True Return Home: Palace progression complete, all 12 progression stats at least 91, and the Custodian's exclusive veto defeated through the Prince confrontation.",
       "conditions": [
         {
           "kind": "worldFact",
@@ -6060,7 +6184,7 @@
       ],
       "reward": "palace.true.cap-200",
       "metaRewards": [],
-      "epilogue": "Return Home is complete. Final Prince and mystery prose remain outside this implementation; cap-200 reward binding waits for the accepted strong-Meta assembly seam."
+      "epilogue": "You explicitly choose the world you came from. The verified origin trace carries you across the Threshold; the successor world does not vanish or become unreal behind you. The Palace and its unfinished politics remain real and continue without being rewritten."
     }
   ],
   "careers": [
@@ -8065,6 +8189,195 @@
               "present": true
             }
           ],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "palace.prince-confrontation",
+      "label": "Palace Prince confrontation",
+      "initialStage": "ready",
+      "stages": [
+        "ready",
+        "audit-record",
+        "name-contradiction",
+        "define-boundary",
+        "reconstruct-return",
+        "defeated"
+      ],
+      "transitions": [
+        {
+          "id": "begin",
+          "from": [
+            "ready"
+          ],
+          "to": "audit-record",
+          "conditions": [
+            {
+              "kind": "worldFact",
+              "fact": "palace.access-granted",
+              "present": true
+            },
+            {
+              "kind": "careerStage",
+              "career": "palace",
+              "stage": "outcome-ready"
+            },
+            {
+              "kind": "worldFact",
+              "fact": "palace.progression-complete",
+              "present": true
+            },
+            {
+              "kind": "stat",
+              "stat": "strength",
+              "op": "gte",
+              "value": 91
+            },
+            {
+              "kind": "stat",
+              "stat": "endurance",
+              "op": "gte",
+              "value": 91
+            },
+            {
+              "kind": "stat",
+              "stat": "dexterity",
+              "op": "gte",
+              "value": 91
+            },
+            {
+              "kind": "stat",
+              "stat": "reason",
+              "op": "gte",
+              "value": 91
+            },
+            {
+              "kind": "stat",
+              "stat": "magic",
+              "op": "gte",
+              "value": 91
+            },
+            {
+              "kind": "stat",
+              "stat": "creativity",
+              "op": "gte",
+              "value": 91
+            },
+            {
+              "kind": "stat",
+              "stat": "wits",
+              "op": "gte",
+              "value": 91
+            },
+            {
+              "kind": "stat",
+              "stat": "charm",
+              "op": "gte",
+              "value": 91
+            },
+            {
+              "kind": "stat",
+              "stat": "sociability",
+              "op": "gte",
+              "value": 91
+            },
+            {
+              "kind": "stat",
+              "stat": "manners",
+              "op": "gte",
+              "value": 91
+            },
+            {
+              "kind": "stat",
+              "stat": "grooming",
+              "op": "gte",
+              "value": 91
+            },
+            {
+              "kind": "stat",
+              "stat": "sexuality",
+              "op": "gte",
+              "value": 91
+            },
+            {
+              "kind": "worldFact",
+              "fact": "palace.prince-defeated",
+              "present": false
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "audit-pass",
+          "from": [
+            "audit-record"
+          ],
+          "to": "name-contradiction",
+          "conditions": [],
+          "effects": []
+        },
+        {
+          "id": "audit-reset",
+          "from": [
+            "audit-record"
+          ],
+          "to": "ready",
+          "conditions": [],
+          "effects": []
+        },
+        {
+          "id": "contradiction-pass",
+          "from": [
+            "name-contradiction"
+          ],
+          "to": "define-boundary",
+          "conditions": [],
+          "effects": []
+        },
+        {
+          "id": "contradiction-reset",
+          "from": [
+            "name-contradiction"
+          ],
+          "to": "ready",
+          "conditions": [],
+          "effects": []
+        },
+        {
+          "id": "boundary-pass",
+          "from": [
+            "define-boundary"
+          ],
+          "to": "reconstruct-return",
+          "conditions": [],
+          "effects": []
+        },
+        {
+          "id": "boundary-reset",
+          "from": [
+            "define-boundary"
+          ],
+          "to": "ready",
+          "conditions": [],
+          "effects": []
+        },
+        {
+          "id": "proof-complete",
+          "from": [
+            "reconstruct-return"
+          ],
+          "to": "defeated",
+          "conditions": [],
+          "effects": []
+        },
+        {
+          "id": "proof-reset",
+          "from": [
+            "reconstruct-return"
+          ],
+          "to": "ready",
+          "conditions": [],
           "effects": []
         }
       ]
