@@ -1423,6 +1423,19 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
   }
   const parsed=saveSchema.parse(raw) as unknown as Save;
   const s=attachLegacyFacade(parsed);
+  if(s.run.flow.activity){
+    const active=s.run.flow.activity;
+    const definition=cat.definitions.activities.find(x=>x.id===active.activityId);
+    if(definition){
+      active.internalState.miniGames??={};
+      if(active.internalState.fieldTimeRemaining===undefined){
+        const segments=definition.adapterConfig.fieldTimeSegments;
+        active.internalState.fieldTimeRemaining=segments===undefined
+          ?null
+          :Math.max(0,segments-active.internalState.steps);
+      }
+    }
+  }
   s.meta.unlocks=s.meta.unlocks.filter(unlock=>unlock!=='palace');
   for(const stat of stats)if(s.run.character.stats[stat]>effectiveProgressionStatCap(s))throw new Error(`Характеристика ${stat} превышает эффективный потолок.`);
   if(s.run.metrics.energy>energyMax(s))throw new Error('Некорректный запас энергии.');
@@ -1497,6 +1510,22 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
     if(a.internalState.endurance>definition.adapterConfig.initialEndurance)throw new Error('Некорректный internal Endurance Activity.');
     if(a.internalState.progress>=definition.adapterConfig.successAtProgress)throw new Error('Activity должна была завершиться success до сохранения.');
     if(a.internalState.endurance<=definition.adapterConfig.failAtEndurance)throw new Error('Activity должна была завершиться failure до сохранения.');
+    const fieldTimeSegments=definition.adapterConfig.fieldTimeSegments;
+    if(fieldTimeSegments===undefined){
+      if(a.internalState.fieldTimeRemaining!==null)throw new Error('Activity без Field Time не может иметь finite Field Time state.');
+    }else if(
+      a.internalState.fieldTimeRemaining===null
+      || a.internalState.fieldTimeRemaining===undefined
+      || a.internalState.fieldTimeRemaining>fieldTimeSegments
+    ){
+      throw new Error('Некорректный Field Time Activity.');
+    }
+    const miniGameDefinitions=new Set(
+      definition.options.flatMap(option=>option.miniGameTransition?[option.miniGameTransition.game]:[])
+    );
+    for(const gameId of Object.keys(a.internalState.miniGames??{})){
+      if(!miniGameDefinitions.has(gameId))throw new Error(`Неизвестное mini-game state Activity: ${gameId}`);
+    }
     if(a.accumulatedRewards.length||a.emittedFacts.length)throw new Error('Активная synthetic Activity не должна содержать уже committed result.');
   }
   if(s.run.flow.night){
