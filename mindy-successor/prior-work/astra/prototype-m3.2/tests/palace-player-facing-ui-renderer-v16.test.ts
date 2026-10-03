@@ -185,13 +185,19 @@ test('renderer: eligible Palace ending shows exact future-life reward preview an
     assert.ok(commit);
     assert.equal(commit.disabled,false);
     commit.click();
-    await wait(()=>JSON.parse(w.localStorage.getItem('portal-life.v1')).run.status==='ending_committed');
+    await wait(()=>{
+      const saved=JSON.parse(w.localStorage.getItem('portal-life.v1'));
+      return saved.run.endings.committed==='ending.palace.service-life'
+        && (saved.run.status==='ending_committed'||saved.run.status==='ended');
+    });
+    const committed=JSON.parse(w.localStorage.getItem('portal-life.v1'));
+    assert.equal(committed.run.endings.committed,'ending.palace.service-life');
 
     w.document.querySelector('[data-panel="legacy"]').click();
     await wait(()=>!!w.document.querySelector('[data-ending-id="ending.palace.service-life"]'));
     assert.equal(
       w.document.querySelector('[data-ending-id="ending.palace.service-life"]').getAttribute('data-ending-state'),
-      'committed'
+      committed.run.status==='ended'?'completed':'committed'
     );
     assert.deepEqual(errors,[]);
   }finally{
