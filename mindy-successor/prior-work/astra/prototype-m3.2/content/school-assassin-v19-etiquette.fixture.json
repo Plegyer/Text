@@ -1,0 +1,46 @@
+{
+  "formatVersion": 1,
+  "id": "school.assassin.v19.etiquette",
+  "task": "C5-208",
+  "targetCareerId": "assassin",
+  "role": "context_fit_access",
+  "courseId": "school.course.etiquette_and_presentation",
+  "trackId": "school.track.etiquette_and_presentation",
+  "teacherContentId": "school.teacher.eliane-marrow",
+  "teacherMediaId": "school.teacher.etiquette-and-presentation.classroom",
+  "mappingAuthority": "CAPABILITY_MATCH_ONLY",
+  "futureConsumerStatus": "PENDING_RUNTIME_ID",
+  "threshold": null,
+  "publicFactId": null,
+  "copy": {
+    "title": {
+      "ru": "Подходить ситуации, а не играть статус",
+      "en": "Fit the situation, not a status"
+    },
+    "body": {
+      "ru": "Элиан предлагает несколько формальных ситуаций и просит выбрать подачу, которая выглядит уместно для контекста. Слишком демонстративная роль выделяется не меньше ошибки. Ты учишься замечать ожидания среды, не превращая это в право на доступ.",
+      "en": "Eliane presents several formal situations and asks you to choose a presentation that fits the context. An overly demonstrative role can stand out as much as a mistake. You learn to read expectations without turning that skill into a right of access."
+    },
+    "result": {
+      "ru": "Подача соответствует контексту, но не выдаёт Palace access, Sealed Pass, Court privilege или иной универсальный допуск.",
+      "en": "The presentation fits the context but grants no Palace access, Sealed Pass, Court privilege, or other universal authorization."
+    },
+    "journal": {
+      "ru": "Школа: формальная подача выбрана по контексту без обещания доступа или статуса.",
+      "en": "School: selected formal presentation for the context without promising access or status."
+    },
+    "accessibility": {
+      "ru": "Текстовый результат урока уместной подачи; дворцовые привилегии не создаются.",
+      "en": "Text result for context-appropriate presentation; no Palace privilege is created."
+    }
+  },
+  "constraints": {
+    "createsPalaceAccess": false,
+    "createsCourtPrivilege": false,
+    "createsSealedPass": false,
+    "createsUniversalAccess": false,
+    "createsDirectCareerTransition": false,
+    "publishesGlobalCertificate": false,
+    "publishesGlobalProject": false
+  }
+}

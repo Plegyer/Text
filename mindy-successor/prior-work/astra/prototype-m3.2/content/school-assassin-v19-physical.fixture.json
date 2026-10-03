@@ -1,0 +1,46 @@
+{
+  "formatVersion": 1,
+  "id": "school.assassin.v19.physical",
+  "task": "C5-210",
+  "targetCareerId": "assassin",
+  "role": "controlled_movement",
+  "courseId": "school.course.physical_training",
+  "trackId": "school.track.physical_training",
+  "teacherContentId": "school.teacher.tovan-kest",
+  "teacherMediaId": "school.teacher.physical-training.classroom",
+  "mappingAuthority": "CAPABILITY_MATCH_ONLY",
+  "futureConsumerStatus": "PENDING_RUNTIME_ID",
+  "threshold": null,
+  "publicFactId": null,
+  "copy": {
+    "title": {
+      "ru": "Контроль прежде скорости",
+      "en": "Control before speed"
+    },
+    "body": {
+      "ru": "Тован строит упражнение вокруг переноса веса, смены направления и точной остановки. Скорость добавляется только после того, как движение остаётся управляемым. Это тренировка координации и выносливости, не техника боя.",
+      "en": "Tovan builds the drill around weight transfer, changes of direction, and precise stops. Speed is added only after the movement remains controlled. This is coordination and endurance training, not a fighting technique."
+    },
+    "result": {
+      "ru": "Движение остаётся контролируемым и точным; урок не создаёт оружейную, боевую, lethal или nonlethal систему.",
+      "en": "Movement remains controlled and precise; the lesson creates no weapons, combat, lethal, or nonlethal system."
+    },
+    "journal": {
+      "ru": "Школа: отработаны перенос веса, смена направления и точная остановка без боевой техники.",
+      "en": "School: practiced weight transfer, direction changes, and precise stops without combat technique."
+    },
+    "accessibility": {
+      "ru": "Текстовый результат урока контролируемого движения; боевой учебный модуль отсутствует.",
+      "en": "Text result for controlled movement; no combat curriculum is introduced."
+    }
+  },
+  "constraints": {
+    "createsCombatCurriculum": false,
+    "createsWeaponTraining": false,
+    "createsLethalRule": false,
+    "createsNonlethalRule": false,
+    "createsDirectCareerTransition": false,
+    "publishesGlobalCertificate": false,
+    "publishesGlobalProject": false
+  }
+}
