@@ -242,6 +242,13 @@ The original stat-swap service lets the player trade one stat into another at 2:
 
 Design lesson: a late-game correction tool can reduce frustration from an early build mistake while preserving consequences through an efficiency loss. This is a useful future option for successor balance, not current Product scope.
 
+### 34. Independent power layers can accidentally stack into dominance
+The original implements selected ending-bonus Stamina and the Busy Bee Title as separate additive layers. They can stack in the same run.
+
+Design lesson: successor Meta layers must be audited **together**, not balanced in isolation. If a future strong modifier and another automatic/selected reward both affect daily Energy, economy, rent or action costs, their combined 160-day reach must be evaluated explicitly.
+
+This is especially important because ordinary Hard Work packages are intentionally freely combinable and should not accidentally become a second source of broad action-economy effects.
+
 ## Successor implications to test, not auto-lock
 
 - Current approved successor seasonal-tradeoff candidate yields **+1.5 net progression-stat points per ordinary shift on average for all ten careers**. That is roughly +75 summed stat points across 50 shifts, versus about +25 in the recovered original work model. This is a balance-test flag, not a command to copy the original: verify progression speed and cap timing over a full 160-day run, especially with School and NG+.
