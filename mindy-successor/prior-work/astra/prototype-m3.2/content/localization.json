@@ -13489,6 +13489,10 @@
     "ui.palace.rewardAria": {
       "ru": "Награда будущих жизней: {name}; слой {layer}; идентификатор {id}.",
       "en": "Future-life reward: {name}; layer {layer}; identifier {id}."
+    },
+    "ui.palace.actionButton": {
+      "ru": "Выполнить",
+      "en": "Perform"
     }
   }
 }
