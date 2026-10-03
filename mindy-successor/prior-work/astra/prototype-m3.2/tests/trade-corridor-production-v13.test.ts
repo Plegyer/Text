@@ -170,6 +170,11 @@ test('Caravan Spur is season-sensitive and Tracking Triangulation survives reloa
   winter.run.calendar.elapsedDays=30;
   winter=dispatch(winter,{type:'enterActivity',id:'trade.corridor'},catalog);
   assert.equal(ids(winter).includes('trade.route.caravan-spur'),false);
+  const caravanOptionIds=new Set(
+    trade().options.filter(x=>x.setRoute==='caravan-spur').map(x=>x.id)
+  );
+  assert.equal(ids(winter).some(id=>caravanOptionIds.has(id)),false,
+    'winter must not bypass Caravan Spur via a route-specific option');
 
   let s=spring;
   s=dispatch(s,{type:'activityAction',id:'trade.route.caravan-spur'},catalog);
@@ -239,6 +244,11 @@ test('Customs Lane capability hooks are distinct and can secure Pathfinder + Pre
   none.run.dayState.energyCurrent=3;
   none=dispatch(none,{type:'enterActivity',id:'trade.corridor'},catalog);
   assert.equal(ids(none).includes('trade.route.customs-lane'),false);
+  const customsOptionIds=new Set(
+    trade().options.filter(x=>x.setRoute==='customs-lane').map(x=>x.id)
+  );
+  assert.equal(ids(none).some(id=>customsOptionIds.has(id)),false,
+    'closed Customs Lane must not be bypassed via a route-specific option');
 
   let manifest=started();
   manifest.run.dayState.energyCurrent=3;
