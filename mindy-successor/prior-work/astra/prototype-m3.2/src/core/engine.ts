@@ -4,6 +4,7 @@ import {presentationIdForActionResult,presentationIdForEvent} from './presentati
 import {applyHardWorkPackagesAtCreation,ordinaryCareerAvailableWithHardWork,palaceNewStartQualified,validateHardWorkPackageSelection} from './hardWorkMeta.ts';
 import {hardWorkPackageDefinitions} from './hardWorkPackageCatalog.ts';
 import {markPalaceCreationQualification} from './palace.ts';
+import {canonicalD41EndingId,isRetiredD41TavernEnding,migrateD41MetaData} from './advancedEndingsD41.ts';
 
 const statSet=new Set<string>(stats);
 const cappedLegacy=new Set(['health','stress','trust']);
@@ -46,12 +47,16 @@ export function palaceRunQualified(s:Save):boolean{
   return palaceAvailable(s.meta,s.run.character.creation.activeHardWorkPackages);
 }
 function defaultMeta(input?:Partial<Meta>&{completed?:string[];lives?:number}):Meta {
-  const completed=[...new Set(input?.completedEndings??input?.completed??[])];
+  const migratedD41=migrateD41MetaData({
+    completedEndings:input?.completedEndings??input?.completed??[],
+    unlocks:input?.unlocks??[]
+  });
+  const completed=migratedD41.completedEndings;
   const runsStarted=Math.max(1,input?.runsStarted??input?.lives??1);
   const core={
     profileVersion:input?.profileVersion??1,
     completedEndings:completed,
-    unlocks:[...new Set(input?.unlocks??[])].filter(unlock=>unlock!=='palace'),
+    unlocks:migratedD41.unlocks.filter(unlock=>unlock!=='palace'),
     ruleModifiers:structuredClone(input?.ruleModifiers??{}),
     hardWorkProgress:[...new Set(input?.hardWorkProgress??[])],
     persistentChoices:structuredClone(input?.persistentChoices??{}),
@@ -280,7 +285,7 @@ export function freshSave(metaInput?:Partial<Meta>&{completed?:string[];lives?:n
   const progressionStatCap=setup.progressionStatCap??100;
   if(progressionStatCap!==100&&progressionStatCap!==200)throw new Error('Progression-stat cap must be 100 or 200.');
   const statRecord=Object.fromEntries(stats.map(k=>[k,1])) as Record<Stat,number>;
-  const startingMoney=600+(meta.unlocks.includes('satyr-maid.house-credit')?600:0);
+  const startingMoney=600;
   const save={
     schemaVersion:5 as const,
     contentVersion:'0.1.0',
@@ -1367,9 +1372,41 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
     raw.run.character.creation.activeHardWorkPackages=[];
     raw.run.character.creation.hardWorkPackagesApplied=true;
   }
+  // D41 migration runs before schema/reference validation so retired Tavern IDs
+  // cannot survive as modern ending contracts. Only already-completed legacy
+  // Tavern outcomes migrate; an uncompleted legacy commit is reopened instead.
+  raw.meta=raw.meta??{};
+  const d41Meta=migrateD41MetaData({
+    completedEndings:raw.meta.completedEndings??raw.meta.completed??[],
+    unlocks:raw.meta.unlocks??[]
+  });
+  raw.meta.completedEndings=d41Meta.completedEndings;
+  raw.meta.unlocks=d41Meta.unlocks;
+
+  const rawEndings=raw.run?.endings;
+  if(rawEndings){
+    rawEndings.eligible=(rawEndings.eligible??[]).filter((id:string)=>!isRetiredD41TavernEnding(id));
+    const committed=rawEndings.committed as string|null|undefined;
+    const resultEnding=rawEndings.result?.endingId as string|undefined;
+    const historicalLegacy=resultEnding&&isRetiredD41TavernEnding(resultEnding);
+    if(raw.run?.status==='ended'&&historicalLegacy){
+      const canonical=canonicalD41EndingId(resultEnding!);
+      rawEndings.committed=canonical;
+      rawEndings.result.endingId=canonical;
+      if(!raw.meta.completedEndings.includes(canonical))raw.meta.completedEndings.push(canonical);
+    }else if(committed&&isRetiredD41TavernEnding(committed)){
+      rawEndings.committed=null;
+      rawEndings.result=null;
+      if(raw.run?.status==='ending_committed')raw.run.status='active';
+    }
+  }
+
   const parsed=saveSchema.parse(raw) as unknown as Save;
   const s=attachLegacyFacade(parsed);
-  s.meta.unlocks=s.meta.unlocks.filter(unlock=>unlock!=='palace');
+  const migratedLoadedMeta=migrateD41MetaData({completedEndings:s.meta.completedEndings,unlocks:s.meta.unlocks});
+  s.meta.completedEndings=migratedLoadedMeta.completedEndings;
+  s.meta.unlocks=migratedLoadedMeta.unlocks.filter(unlock=>unlock!=='palace');
+  attachMetaFacade(s.meta);
   for(const stat of stats)if(s.run.character.stats[stat]>effectiveProgressionStatCap(s))throw new Error(`Характеристика ${stat} превышает эффективный потолок.`);
   if(s.run.metrics.energy>energyMax(s))throw new Error('Некорректный запас энергии.');
   if(!s.run.creation.complete&&s.run.creation.remaining+Object.values(s.run.creation.allocated).reduce((a,b)=>a+b,0)!==10)throw new Error('Некорректные стартовые очки.');

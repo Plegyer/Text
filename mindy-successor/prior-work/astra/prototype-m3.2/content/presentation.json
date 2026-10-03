@@ -1012,30 +1012,6 @@
         "altKey": "presentation.static.ending.scholar-life.alt"
       }
     },
-    "ending/tavern-stay": {
-      "static": {
-        "kind": "image",
-        "src": "assets/presentation/tavern-ending-stay.svg",
-        "alt": "Тёплая таверна после закрытия: стойка, кружка и связка ключей обозначают решение остаться и вести это место.",
-        "altKey": "presentation.static.ending.tavern-stay.alt"
-      }
-    },
-    "ending/tavern-guild": {
-      "static": {
-        "kind": "image",
-        "src": "assets/presentation/tavern-ending-guild.svg",
-        "alt": "Стол таверны с кружкой, книгой учёта и знаком артели обозначает переход от смен к более широкой работе с гильдией.",
-        "altKey": "presentation.static.ending.tavern-guild.alt"
-      }
-    },
-    "ending/tavern-court": {
-      "static": {
-        "kind": "image",
-        "src": "assets/presentation/tavern-ending-court.svg",
-        "alt": "Запечатанное приглашение рядом с таверной кружкой обозначает приглашение ко двору без изображения конкретных персонажей.",
-        "altKey": "presentation.static.ending.tavern-court.alt"
-      }
-    },
     "ending/lumber-stay": {
       "static": {
         "kind": "image",
@@ -3578,6 +3554,62 @@
         "src": "assets/presentation/career-prostitute-result.svg",
         "alt": "A non-explicit voluntary professional career scene.",
         "altKey": "presentation.static.career.prostitute.event.alt"
+      }
+    },
+    "ending/satyr-maid/personal-network": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-result.svg",
+        "alt": "Satyr Maid Personal Network ending presentation focused on professional connection rather than romance."
+      }
+    },
+    "ending/undead-farm/external-anomaly": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-result.svg",
+        "alt": "Undead Farm External Anomaly ending presentation."
+      }
+    },
+    "ending/tavern/innkeeper": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-result.svg",
+        "alt": "Tavern Innkeeper ending presentation with house records and ordinary inn work."
+      }
+    },
+    "ending/tavern/information-broker": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-result.svg",
+        "alt": "Tavern Information Broker ending presentation without court or Palace invitation imagery."
+      }
+    },
+    "ending/tavern/sanctuary": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-result.svg",
+        "alt": "Tavern Sanctuary ending presentation centered on shelter and confidentiality."
+      }
+    },
+    "ending/hunter/master-hunter": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter Master Hunter ending presentation."
+      }
+    },
+    "ending/hunter/warden": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter Warden ending presentation."
+      }
+    },
+    "ending/hunter/legend": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-result.svg",
+        "alt": "Hunter Legend ending presentation."
       }
     }
   }

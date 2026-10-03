@@ -246,7 +246,8 @@ export const UNDEAD_FARM_RESOURCE_IDS=[
 export const UNDEAD_FARM_ENDING_IDS=[
   'ending.undead-farm.hard-work',
   'ending.undead-farm.research-farmer',
-  'ending.undead-farm.successor'
+  'ending.undead-farm.successor',
+  'ending.undead-farm.external-anomaly'
 ] as const;
 
 export function presentationIdForUndeadFarmStage(stage:string){
@@ -302,6 +303,7 @@ export const SATYR_MAID_CRISIS_EVENT_IDS=[
 
 export const SATYR_MAID_COMPLEX_ENDING_IDS=[
   'ending.satyr-maid.house-power',
+  'ending.satyr-maid.personal-network',
   'ending.satyr-maid.boundary-mastery'
 ] as const;
 
@@ -497,10 +499,16 @@ export const TAVERN_PRESENTATION_STATE_IDS=[
 ] as const;
 
 export const TAVERN_ENDING_IDS=[
-  'tavern-stay',
-  'tavern-guild',
-  'tavern-court',
-  'ending.tavern.hard-work'
+  'ending.tavern.hard-work',
+  'ending.tavern.innkeeper',
+  'ending.tavern.information-broker',
+  'ending.tavern.sanctuary'
+] as const;
+
+export const HUNTER_ADVANCED_ENDING_IDS=[
+  'ending.hunter.master-hunter',
+  'ending.hunter.warden',
+  'ending.hunter.legend'
 ] as const;
 
 export function presentationIdForTavernStage(stage:string){
