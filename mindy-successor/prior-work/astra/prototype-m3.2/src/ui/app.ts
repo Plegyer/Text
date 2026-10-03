@@ -483,7 +483,8 @@ function central(){
   const slug=activity.activityId.split('.').at(-1)??'activity';
   const actions=availableActivityActions(state,catalog);
   const activityPresentationId=presentationIdForActivityRoute(catalog,activity.activityId,activity.internalState.routeId);
-  const checkpointLabel=activity.checkpoint.startsWith('forest.route.')?activityOptionLabel(activity.checkpoint,activity.checkpoint):activity.checkpoint;
+  const checkpointIsOption=!!definition?.options.some(option=>option.id===activity.checkpoint);
+  const checkpointLabel=checkpointIsOption?activityOptionLabel(activity.checkpoint,activity.checkpoint):activity.checkpoint;
   const narrative=activityNarrative(activity.activityId,activity.internalState.routeId);
   const fieldTime=activity.internalState.fieldTimeRemaining;
   const activeMiniGame=Object.entries(activity.internalState.miniGames??{}).find(([,game])=>game.status==='active');
@@ -524,7 +525,7 @@ function endingPresentationState(endingId:string){
 function panelContent(){
  if(panel==='work')return `<h2>${esc(tr('ui.work.title','Куда устроимся?'))}</h2>${actionList(professions)}`;
  if(panel==='school')return `<h2>${esc(tr('ui.school.title','Школа'))}</h2><p>${esc(tr('ui.school.help','Восемь оплачиваемых курсов. Урок списывает tuition + 1 Energy атомарно.'))}</p>${schoolList()}`;
- if(panel==='explore')return `<h2>${esc(tr('ui.explore.title','Окрестности и поручения'))}</h2>${activityEntryList(['lumber.forest','hunter.expedition'])}${activityEntryList(['assassin.infiltration'])}<details><summary>${esc(tr('ui.explore.errandsSummary','Обычные поручения'))}</summary>${actionList(['forest-search','tavern-talk','forage','landlord','visit','oddjob'])}</details>`;
+ if(panel==='explore')return `<h2>${esc(tr('ui.explore.title','Окрестности и поручения'))}</h2>${activityEntryList(['lumber.forest','trade.corridor','hunter.expedition'])}${activityEntryList(['assassin.infiltration'])}<details><summary>${esc(tr('ui.explore.errandsSummary','Обычные поручения'))}</summary>${actionList(['forest-search','tavern-talk','forage','landlord','visit','oddjob'])}</details>`;
  if(panel==='sleep')return `<h2>${esc(tr('ui.sleep.title','Ночь'))}</h2><p>${esc(tr('ui.sleep.help','Сначала выбирается ночлег, затем — добровольное вечернее действие, после чего начинается следующий день.'))}</p><button data-end-day class="primary" ${busy||locked||!!state.run.pending||!!state.run.flow.night||!!state.run.flow.activity?'disabled':''}>${esc(tr('ui.sleep.startButton','Начать ночную последовательность'))}</button>`;
  if(panel==='stats')return `<h2>${esc(tr('ui.panel.stats','Героиня'))}</h2><p>${esc(tr('ui.stats.help','Характеристики показывают текущие возможности героини.'))}</p><div class="character-stats">${stats.map(k=>`<article><div><strong>${esc(statLabel(k))}</strong><b>${state.run.metrics[k]}</b></div><progress value="${state.run.metrics[k]}" max="${state.run.character.progressionStatCap}"></progress><p>${esc(statHint(k))}</p></article>`).join('')}</div><h3>${esc(tr('ui.stats.professionsTitle','Профессии'))}</h3><p>${esc(tr('ui.stats.professionsHelp','Здесь показано, сколько обычных смен завершено в каждой профессии.'))}</p><p>${professions.map(id=>{const action=catalog.definitions.actions.find(a=>a.id===id)!;const career=id.replace(/\.shift$/,'');return `${esc(tr(`profession.${career}.label`,tr(`action.${id}.label`,action.label)))}: ${state.run.actionCounts[id]??0}`;}).join(' · ')}</p>${lumberCareerProgress()}`;
  if(panel==='journal'){
