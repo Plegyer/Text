@@ -78,12 +78,15 @@ test('C3-215 activation baseline remains historical after frozen-runtime rebuild
   assert.equal(baseline.artistGeisha.itemDefinitions.length,0);
 });
 
-test('C3-216 final authored layer records freeze without adding public complex endings',()=>{
+test('C3-216 historical authored-layer freeze coexists with D40 public complex endings',()=>{
   assert.equal(bank.status,'LIVE_BOUND_ON_FROZEN_ARTIST_RUNTIME_WITH_AUTHORITY_GAPS');
   assert.equal(bank.observedRuntimeAuthority.frozen,true);
   assert.equal(bank.observedRuntimeAuthority.observedHead,'955f4accf7e25c42e0384ddb9f76e5612f41dd00');
   assert.equal(plan.authority.frozen,true);
   assert.deepEqual(defs.endings.filter((x:any)=>x.id.includes('artist-geisha')).map((x:any)=>x.id),[
     'ending.artist-geisha.hard-work',
+    'ending.artist-geisha.master-artist',
+    'ending.artist-geisha.patron-network',
+    'ending.artist-geisha.court-invitation'
   ]);
 });

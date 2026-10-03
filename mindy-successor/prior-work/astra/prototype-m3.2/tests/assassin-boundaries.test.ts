@@ -14,7 +14,10 @@ function walk(value:any,visit:(x:any)=>void){
 }
 
 test('Assassin does not write other careers, Palace, Morality, or global crime/network state',()=>{
- assert.equal(definitions.endings.some((e:any)=>e.id.startsWith('ending.assassin.')&&e.id!=='ending.assassin.hard-work'),false);
+ assert.deepEqual(
+  definitions.endings.filter((e:any)=>e.id.startsWith('ending.assassin.')).map((e:any)=>e.id),
+  ['ending.assassin.hard-work','ending.assassin.ghost','ending.assassin.handler-takeover','ending.assassin.refusal-turncoat']
+ );
  for(const pack of packs){
   const foreignWrites=pack.capabilities?.writes?.careers?.filter((x:string)=>x!=='assassin')??[];
   assert.deepEqual(foreignWrites,[],pack.id);
@@ -81,16 +84,18 @@ test('item-specific prep and evidence methods require their actual capabilities'
  assert.deepEqual(preserve.conditions,[{kind:'itemCapability',capability:'assassin_handle_evidence',present:true}]);
 });
 
-test('open Product decisions remain open instead of being encoded as accidental mechanics',()=>{
- const assassin=definitions.careers.find((x:any)=>x.id==='assassin');
- const refusal=assassin.transitions.find((x:any)=>x.id==='branch-refusal-chain'); assert.ok(refusal);
- assert.ok(refusal.conditions.some((c:any)=>c.kind==='careerFact'&&c.fact==='refusal-chain-ready'));
- const produced:any[]=[];
- for(const pack of packs)walk(pack,(x:any)=>{if(x.kind==='addCareerFact'&&x.career==='assassin'&&x.fact==='refusal-chain-ready')produced.push(x);});
- assert.equal(produced.length,0,'exact Refusal Chain promotion rule is still Product-open');
- assert.deepEqual(definitions.endings.filter((e:any)=>e.id.startsWith('ending.assassin.')).map((e:any)=>e.id),['ending.assassin.hard-work']);
+test('D40 authors Refusal Chain readiness locally without Palace, Morality, or global-network mechanics',()=>{
+ const routes=packs.find((p:any)=>p.id==='assassin.routes'); assert.ok(routes);
+ const ready=routes.events.find((x:any)=>x.id==='assassin.routes.refusal-chain-ready'); assert.ok(ready);
+ const serialized=JSON.stringify(ready);
+ for(const required of ['refusal-chain-evidence','contract-cycle-complete','refusal-respected'])assert.ok(serialized.includes(required),required);
+ assert.ok(ready.choices.some((c:any)=>c.effects.some((x:any)=>x.kind==='addCareerFact'&&x.career==='assassin'&&x.fact==='refusal-chain-ready')));
+ assert.equal(/palace|morality|global.?network/i.test(serialized),false);
+ assert.deepEqual(
+  definitions.endings.filter((ending:any)=>ending.id.startsWith('ending.assassin.')).map((ending:any)=>ending.id),
+  ['ending.assassin.hard-work','ending.assassin.ghost','ending.assassin.handler-takeover','ending.assassin.refusal-turncoat']
+ );
 });
-
 
 test('Assassin removes prep-only numeric progression guesses while reusing shipped Activity mechanics',()=>{
  const handler=definitions.relationships.find((x:any)=>x.id==='assassin.handler');

@@ -118,64 +118,20 @@ test('C5-181/C5-186 frozen authority preserves null School producer threshold an
   assert.equal(schoolSource.includes('merchant.school.'),false);
 });
 
-test('C5-191/C5-192 natural negative acceptance: paid School and Night-study persist without manufacturing Merchant School facts or reactions',()=>{
+test('D40 Merchant School publisher creates literacy readiness at three sessions and persists it before and after career entry',()=>{
   let s=started();
-
   while(s.run.resources.money<20_000)s=work(s,'lumber.shift');
-
-  // Build the existing Merchant stat unlock naturally through the exact prepared School tracks.
-  for(let i=0;i<5;i++){
-    s=paidLesson(s,'school.course.literacy_and_numbers');
-    const consumers=authority.hooks.map((x:any)=>x.consumerEventId).filter(Boolean);
-    assert.equal(consumers.includes(s.run.pending?.eventId),false);
-    s=settlePending(s);
-    s=paidLesson(s,'school.course.rhetoric_and_social');
-    assert.equal(consumers.includes(s.run.pending?.eventId),false);
-    s=settlePending(s);
-  }
-
-  const merchantAction=catalog.definitions.actions.find(a=>a.id==='merchant.shift');
-  assert.ok(merchantAction);
-  assert.equal(actionAvailable(merchantAction,s,catalog),true,'School stat gains must reach the existing Merchant unlock without a direct career transition');
-
-  for(const hook of authority.hooks)assert.equal(merchantFacts(s).includes(hook.merchantFactId),false,hook.trackId+' pre-career');
-
+  for(let i=0;i<3;i++){s=paidLesson(s,'school.course.literacy_and_numbers');s=settlePending(s);}
+  assert.ok(merchantFacts(s).includes('school-literacy-ready'),'D40 readiness may be prepared before first Merchant shift');
+  s=parseSave(JSON.stringify(s),catalog);
+  assert.ok(merchantFacts(s).includes('school-literacy-ready'),'readiness survives reload');
+  for(let i=0;i<5;i++){s=paidLesson(s,'school.course.rhetoric_and_social');s=settlePending(s);}
+  const merchantAction=catalog.definitions.actions.find(a=>a.id==='merchant.shift');assert.ok(merchantAction);
+  while(!actionAvailable(merchantAction,s,catalog)){s=paidLesson(s,'school.course.literacy_and_numbers');s=settlePending(s);}
   s=work(s,'merchant.shift');
   assert.ok(s.run.progression.careers.merchant);
-  const merchantShifts=s.run.progression.careers.merchant.counters.completed_shifts;
-  const consumerIds=authority.hooks.map((x:any)=>x.consumerEventId).filter(Boolean);
-
-  for(const hook of authority.hooks){
-    for(let i=0;i<3;i++){
-      s=paidLesson(s,hook.courseId);
-      assert.equal(consumerIds.includes(s.run.pending?.eventId),false,hook.trackId+' lesson pending consumer');
-      assert.equal(merchantFacts(s).includes(hook.merchantFactId),false,hook.trackId+' lesson fact');
-      s=settlePending(s);
-      s=parseSave(JSON.stringify(s),catalog);
-      assert.equal(merchantFacts(s).includes(hook.merchantFactId),false,hook.trackId+' lesson reload fact');
-    }
-    assert.ok((s.run.progression.school.tracks[hook.trackId]?.counters.lessons_completed??0)>=3,hook.trackId+' lessons');
-    assert.equal(hook.producerThreshold,null,hook.trackId);
-    assert.equal(hook.selectedPublicFactId,null,hook.trackId);
-  }
-
-  for(const hook of authority.hooks){
-    const mapping=inventory.mappings.find((x:any)=>x.trackId===hook.trackId);
-    assert.ok(mapping,hook.trackId);
-    const choiceId=mapping.nightChoiceIds[0];
-    for(let i=0;i<3;i++){
-      s=studyNight(s,choiceId);
-      assert.equal(consumerIds.includes(s.run.pending?.eventId),false,hook.trackId+' night pending consumer');
-      assert.equal(merchantFacts(s).includes(hook.merchantFactId),false,hook.trackId+' night fact');
-      s=parseSave(JSON.stringify(s),catalog);
-      assert.equal(merchantFacts(s).includes(hook.merchantFactId),false,hook.trackId+' night reload fact');
-    }
-    assert.ok((s.run.progression.school.tracks[hook.trackId]?.counters.night_study_sessions??0)>=3,hook.trackId+' night sessions');
-  }
-
-  assert.equal(s.run.progression.careers.merchant.counters.completed_shifts,merchantShifts,
-    'School preparation must not require or manufacture a dummy merchant.shift');
-  for(const hook of authority.hooks){
-    assert.equal(merchantFacts(s).includes(hook.merchantFactId),false,hook.trackId+' final fact');
+  assert.ok(merchantFacts(s).includes('school-literacy-ready'));
+  for(const fact of ['school-rhetoric-ready','school-etiquette-ready','school-arcana-ready']){
+    assert.equal(merchantFacts(s).includes(fact),false,fact+' remains outside D40 Merchant publisher scope');
   }
 });

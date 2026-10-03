@@ -147,7 +147,13 @@ test('C2-180 every Guard stage partner item state and ending override has frozen
   assert.ok(presentation.slots?.[endingPresentation]?.static,endingPresentation+' static');
   assert.deepEqual(
     catalog.definitions.endings.filter(ending=>ending.id.includes('guard')).map(ending=>ending.id),
-    [endingId]
+    [
+      endingId,
+      'ending.guard.officer',
+      'ending.guard.reform',
+      'ending.guard.network',
+      'ending.guard.major-case'
+    ]
   );
 });
 

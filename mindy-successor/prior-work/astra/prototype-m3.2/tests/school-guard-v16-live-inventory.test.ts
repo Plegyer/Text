@@ -110,44 +110,31 @@ function studyNight(state:Save,choiceId:string){
   return dispatch(s,{type:'chooseNightChoice',id:choiceId},catalog);
 }
 
-test('C5-180 natural negative acceptance: real School and Night-study cannot manufacture blocked Guard facts or events',()=>{
+test('D40 Guard School publishers create only literacy and etiquette readiness at the exact three-session threshold',()=>{
   let s=started();
-  const guardAction=catalog.definitions.actions.find(a=>a.id==='guard.shift');
-  assert.ok(guardAction);
-  assert.equal(actionAvailable(guardAction,s,catalog),false);
-
   while(s.run.resources.money<20_000)s=work(s,'lumber.shift');
   while(calendar(s.run.day).year<2)s=finishNight(s);
-  assert.equal(actionAvailable(guardAction,s,catalog),true,'Year-2 fallback must naturally unlock Guard');
-
   s=work(s,'guard.shift');
   assert.ok(s.run.progression.careers.guard);
-  const guardShifts=s.run.progression.careers.guard.counters.completed_shifts;
-
-  for(const hook of inventory.hooks){
+  for(const [courseId,fact] of [
+    ['school.course.literacy_and_numbers','school-literacy-ready'],
+    ['school.course.etiquette_and_presentation','school-etiquette-ready']
+  ] as const){
     for(let i=0;i<3;i++){
       s=ensureEnergy(s);
-      s=dispatch(s,{type:'schoolLesson',id:hook.courseId},catalog);
-      assert.equal(s.run.pending?.eventId?.startsWith('guard.school.')??false,false,hook.role+' lesson event');
-      assert.equal(s.run.progression.careers.guard.facts.includes(hook.careerFact),false,hook.role+' lesson fact');
+      s=dispatch(s,{type:'schoolLesson',id:courseId},catalog);
       s=settlePending(s);
     }
-    assert.ok((s.run.progression.school.tracks[hook.trackId]?.counters.lessons_completed??0)>=3,hook.role);
-    assert.equal(s.run.progression.careers.guard.facts.includes(hook.careerFact),false,hook.role);
+    assert.ok(s.run.progression.careers.guard.facts.includes(fact),fact);
   }
-
-  for(const hook of inventory.hooks){
-    const choiceId=hook.nightChoiceIds[0];
-    for(let i=0;i<3;i++){
-      s=studyNight(s,choiceId);
-      assert.equal(s.run.pending?.eventId?.startsWith('guard.school.')??false,false,hook.role+' night event');
-      assert.equal(s.run.progression.careers.guard.facts.includes(hook.careerFact),false,hook.role+' night fact');
-      s=settlePending(s);
-    }
-    assert.ok((s.run.progression.school.tracks[hook.trackId]?.counters.night_study_sessions??0)>=3,hook.role);
-    assert.equal(s.run.progression.careers.guard.facts.includes(hook.careerFact),false,hook.role);
+  for(const fact of ['school-rhetoric-ready','school-physical-ready','school-arcana-ready']){
+    assert.equal(s.run.progression.careers.guard.facts.includes(fact),false,fact+' remains outside D40 publisher scope');
   }
-
-  assert.equal(s.run.progression.careers.guard.counters.completed_shifts,guardShifts,
-    'School preparation must not require or manufacture a dummy guard.shift');
+  let night=started();
+  while(night.run.resources.money<20_000)night=work(night,'lumber.shift');
+  while(calendar(night.run.day).year<2)night=finishNight(night);
+  night=work(night,'guard.shift');
+  const literacy=inventory.hooks.find((x:any)=>x.careerFact==='school-literacy-ready');assert.ok(literacy);
+  for(let i=0;i<3;i++)night=settlePending(studyNight(night,literacy.nightChoiceIds[0]));
+  assert.ok(night.run.progression.careers.guard.facts.includes('school-literacy-ready'),'Night Study remains an alternative threshold path');
 });
