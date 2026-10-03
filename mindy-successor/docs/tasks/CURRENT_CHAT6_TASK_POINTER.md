@@ -1,65 +1,113 @@
 # CURRENT CHAT6 TASK POINTER
 
-Status: **ACTIVE — PALACE RICH-6 STAGE CONTRACT v11**
+Status: **ACTIVE — PALACE AUTHORED CONTENT BLUEPRINT v12**
 Owner: Chat 6
 
-Accepted v10 packet:
-`chat6/palace-progression-topology-decision-v10@7a65f2dd88b53135c393be64f6e78ab46b9bcab8`
+Accepted implementation contract:
+`chat6/palace-rich6-stage-contract-v11@0d95f1e3f3267901efdb701f727e4cc54fec4ef0`
 
-Preserve v9 Prince confrontation packet frozen:
-`chat6/palace-prince-confrontation-decision-v9@4de1a3925d499a6337a3c40c05b8b4aba9f3cc03`
+v11 disposition:
+`READY_FOR_LEADER_ACCEPTANCE` and accepted as the implementation contract for D29 rich-six topology.
 
-Leader/Product authority:
-- D29 chooses the **rich six-stage Palace topology**;
-- stages: Entered Service -> Working Rhythm -> Trusted Service -> Palace Network -> Crossroads -> Outcome Ready;
-- structural Palace-duty milestones: 2 -> 5 -> 8 -> 12 -> 15;
-- non-True preparation remains non-exclusive until explicit ending commit;
-- Service Life prep may start at Trusted Service;
-- Court Power prep may start at Palace Network;
-- Inner Truth prep may start at Crossroads;
-- optional romance/items/Night are never gates;
-- no `hardWork:palace`;
-- D26 is not automatically applied to Palace;
-- exact Palace daily cadence remains open.
+Preserve frozen Prince packet:
+`chat6/palace-prince-confrontation-decision-v9@4de1a3925d499a6337a3c40c05b8b4aba9f3cc03`.
 
-Authority commit:
-`main@69eaedb1950e3ea712119388e1734c526a93be21`
+## New assignment
 
-Branch:
-`chat6/palace-rich6-stage-contract-v11`
+Turn the accepted rich-six mechanical contract into an implementation-ready **authored-content blueprint**, without final lore naming and without production runtime.
 
-The branch was created by Leader from the authority commit above.
-Branch existence is dispatch only; count work only after a real worker commit.
+New branch:
+`chat6/palace-authored-content-blueprint-v12`
 
-## Assignment
+Deliver:
+1. `mindy-successor/docs/tasks/CHAT6_PALACE_AUTHORED_CONTENT_BLUEPRINT_v12.md`
+2. `mindy-successor/prior-work/astra/prototype-m3.2/content/palace-authored-content-blueprint-v12.fixture.json`
+3. focused static contract test if useful.
 
-Turn D29 into an exact implementation-ready **Palace stage/duty contract** without adding final lore or production runtime.
+Required scope:
 
-Deliver stable machine-facing definitions for:
+### Fifteen-duty authored map
+Create an exact 15-duty progression map distributed across v11's six duty families:
+- Service Rotation;
+- Logistics Support;
+- Records Review;
+- Coordination;
+- Formal Interface;
+- Evidence Review.
 
-1. six stage IDs;
-2. `palaceDutyCount`;
-3. transitions at exactly 2 / 5 / 8 / 12 / 15;
-4. exactly-once `palace.progression-complete`;
-5. pending/reaction event ordering at each transition;
-6. save/reload behavior before, during and after each milestone;
-7. non-exclusive preparation facts for Service Life / Court Power / Inner Truth;
-8. explicit ending-commit separation;
-9. Prince availability prerequisites using D18/D29 and the frozen v9 confrontation contract;
-10. optional relationship/romance/Night/item attachment points that cannot become hidden gates.
+For every duty define:
+- stage availability;
+- presentation function;
+- stat/capability emphasis;
+- optional variant hooks;
+- what it must **not** gate;
+- milestone relation;
+- how repetition is avoided.
 
-Define a **functional duty taxonomy** sufficient for implementation/testing, but do not write final story/lore. Show how ~15 duties avoid feeling like fifteen identical work clicks:
-- at least several mechanically/presentationally distinct duty families;
-- stage-specific availability;
-- no mandatory romance/item/Night requirement;
-- no extra entry gate.
+Do not invent Palace daily cadence; duty count remains D29/v11 authority only.
 
-Preserve Secret Debt precedence:
-- forced Secret Debt Night wins over optional Palace Night;
-- Palace duty/progression must not silently unlock ordinary careers or clear debt.
+### Three non-True outcome routes
+Build authored route skeletons for:
+- Service Life;
+- Court Power;
+- Inner Truth.
 
-Static fixture/test updates on this branch are allowed.
-Do not implement production engine/UI.
-Do not name/write Prince lore.
+For each:
+- preparation beats;
+- optional School/item/Activity/relationship inputs;
+- minimum facts;
+- non-exclusive behavior before commit;
+- explicit commit scene boundary;
+- current-life resolution;
+- reward status (OPEN if not locked).
+
+No route may require romance, Palace Night or legacy items.
+
+### Optional Night / relationships
+Provide optional authored attachment points for:
+- professional review;
+- social conversation;
+- patron/contact;
+- rival;
+- optional romance.
+
+D35 private-space semantics may be used only where explicitly appropriate.
+Secret Debt forced Night always wins.
+
+### Cross-system hooks
+Map:
+- ordinary-career legacy knowledge;
+- School;
+- Activity;
+- items;
+- relationships;
+to optional variants, never Palace entry substitution.
+
+### True Ending handoff
+Preserve:
+- Outcome Ready;
+- `palace.progression-complete`;
+- all 12 progression stats >=91;
+- Lust excluded;
+- Prince confrontation;
+- explicit Return Home commit;
+- cap-200 reward only after completion.
+
+Do not name the Prince.
+Do not decide confrontation model beyond frozen v9 authority.
+Do not invent final mystery truth.
+
+### Content budget / production readiness
+Give:
+- exact number of required core scenes;
+- optional variant scene budget;
+- RU/EN localization surface count;
+- media slot classes;
+- which assets can reuse generic Palace staging;
+- acceptance matrix for content completeness.
+
+No production engine/UI changes.
 No full CI.
-Freeze exact SHA and report `READY_FOR_LEADER_ACCEPTANCE`.
+
+Freeze exact SHA and report:
+`READY_FOR_LEADER_ACCEPTANCE`.
