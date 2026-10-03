@@ -16,6 +16,9 @@
       ],
       "relationships": [
         "hunter.senior-guide"
+      ],
+      "meta": [
+        "unlock"
       ]
     },
     "writes": {
@@ -290,6 +293,150 @@
               "fact": "warden-route-ready"
             }
           ]
+        }
+      ]
+    },
+    {
+      "id": "hunter.routes.legend-contract-variant",
+      "title": "Legend Contracts: an inherited variant",
+      "sourceDomain": "hunter",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "hunter",
+          "fact": "rare-contract-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "hunter",
+          "fact": "forest-clue-known"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "hunter",
+          "fact": "tavern-clue-known"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "hunter",
+          "fact": "farm-clue-known"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "hunter",
+          "fact": "lumber-clue-known"
+        },
+        {
+          "kind": "careerTransition",
+          "career": "hunter"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "hunter.shift"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 90,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "metaUnlock",
+          "unlock": "knowledge.hunter.legend-contracts",
+          "present": true
+        },
+        {
+          "kind": "careerStage",
+          "career": "hunter",
+          "stage": "recognized-hunter"
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "rare-contract-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "forest-clue-known",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "tavern-clue-known",
+          "present": true
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "hunter",
+              "fact": "farm-clue-known",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "hunter",
+              "fact": "lumber-clue-known",
+              "present": true
+            }
+          ]
+        },
+        {
+          "kind": "itemCapability",
+          "capability": "preserve_specimen",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "rare-contract-active",
+          "present": false
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "rare-contract-complete",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "inherited-ledger",
+          "text": "An inherited contract ledger offers one additional legendary-contract framing. It still demands the same independent clues, preservation capability, acceptance, and successful expedition; the ledger supplies no answer or shortcut.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "accept",
+          "label": "Accept the inherited contract variant",
+          "text": "Take this additional authored contract framing under the normal rare-contract requirements.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "hunter",
+              "fact": "rare-contract-active"
+            }
+          ]
+        },
+        {
+          "id": "defer",
+          "label": "Defer the inherited variant",
+          "text": "Leave the inherited variant unused; the ordinary rare-contract route remains available.",
+          "conditions": [],
+          "effects": []
         }
       ]
     },

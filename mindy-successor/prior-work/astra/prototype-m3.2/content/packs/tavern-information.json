@@ -7,7 +7,11 @@
     "reads": {
       "careers": [
         "tavern"
-      ]
+      ],
+      "meta": [
+        "unlock"
+      ],
+      "calendar": true
     },
     "writes": {
       "careers": [
@@ -86,6 +90,242 @@
               "fact": "rumour-route-open"
             }
           ]
+        }
+      ]
+    },
+    {
+      "id": "tavern.information.broker-index-y1",
+      "title": "Broker Index: route risk note",
+      "sourceDomain": "tavern",
+      "trigger": [
+        "tavern.shift"
+      ],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "tavern",
+          "fact": "traveler-rumour-known"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 34,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "metaUnlock",
+          "unlock": "knowledge.tavern.broker-index",
+          "present": true
+        },
+        {
+          "kind": "calendarYear",
+          "op": "eq",
+          "value": 1
+        },
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "traveler-rumour-known",
+          "present": true
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The Broker Index marks one practical risk before you act on the rumour: a recorded report still needs an independent route confirmation. This hint changes no fact and completes no prerequisite.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "read-hint",
+          "label": "Read the broker hint",
+          "text": "Use the note as UI guidance only; it spends no resource and advances no route.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "tavern.information.broker-index-y2",
+      "title": "Broker Index: route risk note",
+      "sourceDomain": "tavern",
+      "trigger": [
+        "tavern.shift"
+      ],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "tavern",
+          "fact": "traveler-rumour-known"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 34,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "metaUnlock",
+          "unlock": "knowledge.tavern.broker-index",
+          "present": true
+        },
+        {
+          "kind": "calendarYear",
+          "op": "eq",
+          "value": 2
+        },
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "traveler-rumour-known",
+          "present": true
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The Broker Index marks one practical risk before you act on the rumour: a recorded report still needs an independent route confirmation. This hint changes no fact and completes no prerequisite.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "read-hint",
+          "label": "Read the broker hint",
+          "text": "Use the note as UI guidance only; it spends no resource and advances no route.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "tavern.information.broker-index-y3",
+      "title": "Broker Index: route risk note",
+      "sourceDomain": "tavern",
+      "trigger": [
+        "tavern.shift"
+      ],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "tavern",
+          "fact": "traveler-rumour-known"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 34,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "metaUnlock",
+          "unlock": "knowledge.tavern.broker-index",
+          "present": true
+        },
+        {
+          "kind": "calendarYear",
+          "op": "eq",
+          "value": 3
+        },
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "traveler-rumour-known",
+          "present": true
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The Broker Index marks one practical risk before you act on the rumour: a recorded report still needs an independent route confirmation. This hint changes no fact and completes no prerequisite.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "read-hint",
+          "label": "Read the broker hint",
+          "text": "Use the note as UI guidance only; it spends no resource and advances no route.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "tavern.information.broker-index-y4",
+      "title": "Broker Index: route risk note",
+      "sourceDomain": "tavern",
+      "trigger": [
+        "tavern.shift"
+      ],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "tavern",
+          "fact": "traveler-rumour-known"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 34,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "metaUnlock",
+          "unlock": "knowledge.tavern.broker-index",
+          "present": true
+        },
+        {
+          "kind": "calendarYear",
+          "op": "eq",
+          "value": 4
+        },
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "traveler-rumour-known",
+          "present": true
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The Broker Index marks one practical risk before you act on the rumour: a recorded report still needs an independent route confirmation. This hint changes no fact and completes no prerequisite.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "read-hint",
+          "label": "Read the broker hint",
+          "text": "Use the note as UI guidance only; it spends no resource and advances no route.",
+          "conditions": [],
+          "effects": []
         }
       ]
     }

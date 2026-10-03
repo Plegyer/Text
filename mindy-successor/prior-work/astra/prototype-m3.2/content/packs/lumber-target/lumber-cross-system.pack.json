@@ -17,11 +17,17 @@
       "worldFacts": [
         "lumber.school.management-ready",
         "lumber.forest.truth-known"
+      ],
+      "inventory": [
+        "forest_preserved_specimen"
       ]
     },
     "writes": {
       "careers": [
         "lumber"
+      ],
+      "inventory": [
+        "forest_preserved_specimen"
       ]
     }
   },

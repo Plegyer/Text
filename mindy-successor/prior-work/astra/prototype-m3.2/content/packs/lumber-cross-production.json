@@ -36,6 +36,9 @@
     "writes": {
       "careers": [
         "lumber"
+      ],
+      "inventory": [
+        "forest_preserved_specimen"
       ]
     }
   },
