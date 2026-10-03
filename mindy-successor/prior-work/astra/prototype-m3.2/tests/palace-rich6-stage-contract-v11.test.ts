@@ -130,11 +130,11 @@ test('machine contract has exact D29 thresholds 2 / 5 / 8 / 12 / 15',()=>{
       threshold:transition.conditions[0].value
     })),
     [
-      {from:'entered-service',to:'working-rhythm',threshold:2},
-      {from:'working-rhythm',to:'trusted-service',threshold:5},
-      {from:'trusted-service',to:'palace-network',threshold:8},
-      {from:'palace-network',to:'crossroads',threshold:12},
-      {from:'crossroads',to:'outcome-ready',threshold:15}
+      {from:'entered-service',to:'working-rhythm',op:'eq',threshold:2},
+      {from:'working-rhythm',to:'trusted-service',op:'eq',threshold:5},
+      {from:'trusted-service',to:'palace-network',op:'eq',threshold:8},
+      {from:'palace-network',to:'crossroads',op:'eq',threshold:12},
+      {from:'crossroads',to:'outcome-ready',op:'eq',threshold:15}
     ]
   );
 });
@@ -277,6 +277,9 @@ test('duty taxonomy provides distinct baseline families without optional hidden 
     assert.deepEqual(family.mandatoryOptionalDependencies,[],family.id);
     assert.ok(family.availableStages.includes(family.firstAvailableStage),family.id);
     assert.match(family.functionalPurpose,/work|duty|review|coordination|service/i,family.id);
+    assert.ok(family.mechanicalShape,family.id);
+    assert.match(family.mechanicalShape.completion,/palaceDutyCount \+1 on action commit/,family.id);
+    assert.equal(family.mechanicalShape.optionalFollowUpRequired,false,family.id);
   }
 
   const entered=families.filter((family:any)=>family.firstAvailableStage==='entered-service');
@@ -299,6 +302,9 @@ test('all duty families have identical progression weight: one committed duty eq
   assert.match(fixture.ids.dutyCount.increment,/exactly \+1/);
   assert.ok(fixture.dutyTaxonomy.antiRepetitionGuarantees.includes(
     'Optional item/relationship capabilities alter variants or efficiency/presentation only; they never change duty-count weight above +1.'
+  ));
+  assert.ok(fixture.dutyTaxonomy.antiRepetitionGuarantees.includes(
+    'Duty credit commits before any optional family follow-up; declining or lacking that follow-up never loses the +1 duty already earned.'
   ));
 });
 
