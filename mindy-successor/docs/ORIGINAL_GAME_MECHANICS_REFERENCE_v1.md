@@ -320,6 +320,25 @@ This ending-bonus selection layer is **not the same thing as Titles**.
 
 The successor's exact New Start+ rules are still governed by current Product authority; D22 independently allows any subset of earned ordinary Hard Work packages.
 
+## Original late-game sink / stat-swap evidence
+
+Recovered Carla/Title-shop presentation confirms:
+
+Purchasable basic Titles:
+- Yoo-Hoo: +1 Charisma after apartment sleep — 15,000;
+- Neat Freak: +1 Cleanliness after apartment sleep — 15,000;
+- Tits for Days: +1 Fuckability after apartment sleep — 20,000;
+- Gossip Girl: +1 Sociability after apartment sleep — 15,000;
+- Life of the Party: +1 Class after apartment sleep — 15,000;
+- Artiste: +1 Creativity after apartment sleep — 15,000.
+
+The same service provides a lossy stat exchange:
+- ratio explicitly stated as 2:1;
+- UI offers 1 / 2 / 3 points received for 2 / 4 / 6 points spent;
+- minimum-source-stat checks correspond to those 2 / 4 / 6 costs.
+
+Historical implication only: the original has substantial late-game money/stat sinks that help explain why its raw job wages can be much higher than successor values.
+
 ## Original Title effect catalog — balance reference
 
 Recovered Title descriptions confirm a separate one-active-Title system.
