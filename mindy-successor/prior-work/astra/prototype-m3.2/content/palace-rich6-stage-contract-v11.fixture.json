@@ -1,0 +1,1336 @@
+{
+  "formatVersion": 1,
+  "status": "READY_FOR_LEADER_ACCEPTANCE",
+  "authority": {
+    "decision": "D29",
+    "commit": "69eaedb1950e3ea712119388e1734c526a93be21",
+    "acceptedTopologySource": "chat6/palace-progression-topology-decision-v10@7a65f2dd88b53135c393be64f6e78ab46b9bcab8",
+    "frozenPrinceSource": "chat6/palace-prince-confrontation-decision-v9@4de1a3925d499a6337a3c40c05b8b4aba9f3cc03"
+  },
+  "ids": {
+    "careerId": "palace",
+    "stages": [
+      {
+        "ordinal": 1,
+        "id": "entered-service",
+        "label": "Entered Service",
+        "threshold": null
+      },
+      {
+        "ordinal": 2,
+        "id": "working-rhythm",
+        "label": "Working Rhythm",
+        "threshold": 2
+      },
+      {
+        "ordinal": 3,
+        "id": "trusted-service",
+        "label": "Trusted Service",
+        "threshold": 5
+      },
+      {
+        "ordinal": 4,
+        "id": "palace-network",
+        "label": "Palace Network",
+        "threshold": 8
+      },
+      {
+        "ordinal": 5,
+        "id": "crossroads",
+        "label": "Crossroads",
+        "threshold": 12
+      },
+      {
+        "ordinal": 6,
+        "id": "outcome-ready",
+        "label": "Outcome Ready",
+        "threshold": 15
+      }
+    ],
+    "dutyCount": {
+      "logicalName": "palaceDutyCount",
+      "serializedDomain": "run.progression.careers['palace'].counters",
+      "serializedCounterKey": "palace-duty-count",
+      "reasonForSerializedKey": "Current schema id regex is lowercase-only; camelCase palaceDutyCount is the stable contract/accessor name, while palace-duty-count is the schema-compatible persisted key.",
+      "initialValue": 0,
+      "increment": "exactly +1 per successfully committed Palace duty action",
+      "decreases": false,
+      "countsOptionalNight": false,
+      "countsRelationships": false,
+      "countsLegacyItemUse": false
+    },
+    "progressionCompleteFact": "palace.progression-complete",
+    "princeDefeatedFact": "palace.prince-defeated",
+    "accessFact": "palace.access-granted"
+  },
+  "machine": {
+    "id": "palace",
+    "label": "Palace progression",
+    "initialStage": "entered-service",
+    "stages": [
+      "entered-service",
+      "working-rhythm",
+      "trusted-service",
+      "palace-network",
+      "crossroads",
+      "outcome-ready"
+    ],
+    "transitions": [
+      {
+        "id": "duty-02-working-rhythm",
+        "from": [
+          "entered-service"
+        ],
+        "to": "working-rhythm",
+        "conditions": [
+          {
+            "kind": "careerCounter",
+            "career": "palace",
+            "counter": "palace-duty-count",
+            "op": "gte",
+            "value": 2
+          }
+        ],
+        "effects": []
+      },
+      {
+        "id": "duty-05-trusted-service",
+        "from": [
+          "working-rhythm"
+        ],
+        "to": "trusted-service",
+        "conditions": [
+          {
+            "kind": "careerCounter",
+            "career": "palace",
+            "counter": "palace-duty-count",
+            "op": "gte",
+            "value": 5
+          }
+        ],
+        "effects": []
+      },
+      {
+        "id": "duty-08-palace-network",
+        "from": [
+          "trusted-service"
+        ],
+        "to": "palace-network",
+        "conditions": [
+          {
+            "kind": "careerCounter",
+            "career": "palace",
+            "counter": "palace-duty-count",
+            "op": "gte",
+            "value": 8
+          }
+        ],
+        "effects": []
+      },
+      {
+        "id": "duty-12-crossroads",
+        "from": [
+          "palace-network"
+        ],
+        "to": "crossroads",
+        "conditions": [
+          {
+            "kind": "careerCounter",
+            "career": "palace",
+            "counter": "palace-duty-count",
+            "op": "gte",
+            "value": 12
+          }
+        ],
+        "effects": []
+      },
+      {
+        "id": "duty-15-outcome-ready",
+        "from": [
+          "crossroads"
+        ],
+        "to": "outcome-ready",
+        "conditions": [
+          {
+            "kind": "careerCounter",
+            "career": "palace",
+            "counter": "palace-duty-count",
+            "op": "gte",
+            "value": 15
+          }
+        ],
+        "effects": [
+          {
+            "kind": "addWorldFact",
+            "fact": "palace.progression-complete"
+          }
+        ]
+      }
+    ]
+  },
+  "transitions": [
+    {
+      "transitionId": "duty-02-working-rhythm",
+      "from": "entered-service",
+      "to": "working-rhythm",
+      "exactDutyMilestone": 2,
+      "condition": {
+        "kind": "careerCounter",
+        "career": "palace",
+        "counter": "palace-duty-count",
+        "op": "gte",
+        "value": 2
+      },
+      "progressionCompleteWriter": false,
+      "milestoneEventId": "palace.progression.milestone-02-working-rhythm",
+      "milestoneResolvedFact": "milestone-02-resolved"
+    },
+    {
+      "transitionId": "duty-05-trusted-service",
+      "from": "working-rhythm",
+      "to": "trusted-service",
+      "exactDutyMilestone": 5,
+      "condition": {
+        "kind": "careerCounter",
+        "career": "palace",
+        "counter": "palace-duty-count",
+        "op": "gte",
+        "value": 5
+      },
+      "progressionCompleteWriter": false,
+      "milestoneEventId": "palace.progression.milestone-05-trusted-service",
+      "milestoneResolvedFact": "milestone-05-resolved"
+    },
+    {
+      "transitionId": "duty-08-palace-network",
+      "from": "trusted-service",
+      "to": "palace-network",
+      "exactDutyMilestone": 8,
+      "condition": {
+        "kind": "careerCounter",
+        "career": "palace",
+        "counter": "palace-duty-count",
+        "op": "gte",
+        "value": 8
+      },
+      "progressionCompleteWriter": false,
+      "milestoneEventId": "palace.progression.milestone-08-palace-network",
+      "milestoneResolvedFact": "milestone-08-resolved"
+    },
+    {
+      "transitionId": "duty-12-crossroads",
+      "from": "palace-network",
+      "to": "crossroads",
+      "exactDutyMilestone": 12,
+      "condition": {
+        "kind": "careerCounter",
+        "career": "palace",
+        "counter": "palace-duty-count",
+        "op": "gte",
+        "value": 12
+      },
+      "progressionCompleteWriter": false,
+      "milestoneEventId": "palace.progression.milestone-12-crossroads",
+      "milestoneResolvedFact": "milestone-12-resolved"
+    },
+    {
+      "transitionId": "duty-15-outcome-ready",
+      "from": "crossroads",
+      "to": "outcome-ready",
+      "exactDutyMilestone": 15,
+      "condition": {
+        "kind": "careerCounter",
+        "career": "palace",
+        "counter": "palace-duty-count",
+        "op": "gte",
+        "value": 15
+      },
+      "progressionCompleteWriter": true,
+      "milestoneEventId": "palace.progression.milestone-15-outcome-ready",
+      "milestoneResolvedFact": "milestone-15-resolved"
+    }
+  ],
+  "dutyCompletionContract": {
+    "authority": "D29 structural milestones; exact Palace daily cadence remains Product-open.",
+    "preconditions": [
+      "palace.access-granted is present",
+      "run is active",
+      "no blocking pending scene / NightFlow / Activity prevents normal action execution",
+      "the chosen duty family is available at the current Palace stage"
+    ],
+    "atomicMutationOrder": [
+      "commit the selected Palace duty action once",
+      "increment palaceDutyCount serialized as palace-duty-count by exactly 1",
+      "if the new count is the next structural milestone for the current stage, apply exactly one matching Palace career transition in the same command after the counter increment",
+      "collect careerCounterChanged + careerTransition (+ worldFactAdded at duty 15) reaction facts",
+      "resolve the milestone reaction barrier"
+    ],
+    "thresholdRule": "Stage transitions occur on the duty completion that first brings palaceDutyCount to 2, 5, 8, 12 or 15. Counts above a threshold cannot skip an unresolved earlier stage transition.",
+    "after15": "Further optional Palace duties may increment the counter but never emit palace.progression-complete again and never create a seventh stage.",
+    "exactDailyCadence": null,
+    "d26Inherited": false,
+    "forbiddenWrites": [
+      "ordinary career unlocks",
+      "ordinary career Hard Work progress",
+      "hardWork:palace",
+      "Secret Debt amount/state clearance",
+      "forced Secret Debt Night suppression",
+      "Meta Palace stage persistence"
+    ]
+  },
+  "milestoneEvents": [
+    {
+      "id": "palace.progression.milestone-02-working-rhythm",
+      "title": "Palace milestone 02",
+      "sourceDomain": "palace",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerTransition",
+          "career": "palace"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 100,
+      "blocking": true,
+      "delivery": {
+        "policy": "latched"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "working-rhythm"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "palace",
+          "counter": "palace-duty-count",
+          "op": "gte",
+          "value": 2
+        },
+        {
+          "kind": "careerFact",
+          "career": "palace",
+          "fact": "milestone-02-resolved",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Functional Palace progression milestone at duty 2; final authored copy is content-owned.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Acknowledge the functional milestone and continue Palace progression.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "palace",
+              "fact": "milestone-02-resolved"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "palace.progression.milestone-05-trusted-service",
+      "title": "Palace milestone 05",
+      "sourceDomain": "palace",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerTransition",
+          "career": "palace"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 100,
+      "blocking": true,
+      "delivery": {
+        "policy": "latched"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "trusted-service"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "palace",
+          "counter": "palace-duty-count",
+          "op": "gte",
+          "value": 5
+        },
+        {
+          "kind": "careerFact",
+          "career": "palace",
+          "fact": "milestone-05-resolved",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Functional Palace progression milestone at duty 5; final authored copy is content-owned.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Acknowledge the functional milestone and continue Palace progression.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "palace",
+              "fact": "milestone-05-resolved"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "palace.progression.milestone-08-palace-network",
+      "title": "Palace milestone 08",
+      "sourceDomain": "palace",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerTransition",
+          "career": "palace"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 100,
+      "blocking": true,
+      "delivery": {
+        "policy": "latched"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "palace-network"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "palace",
+          "counter": "palace-duty-count",
+          "op": "gte",
+          "value": 8
+        },
+        {
+          "kind": "careerFact",
+          "career": "palace",
+          "fact": "milestone-08-resolved",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Functional Palace progression milestone at duty 8; final authored copy is content-owned.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Acknowledge the functional milestone and continue Palace progression.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "palace",
+              "fact": "milestone-08-resolved"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "palace.progression.milestone-12-crossroads",
+      "title": "Palace milestone 12",
+      "sourceDomain": "palace",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerTransition",
+          "career": "palace"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 100,
+      "blocking": true,
+      "delivery": {
+        "policy": "latched"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "crossroads"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "palace",
+          "counter": "palace-duty-count",
+          "op": "gte",
+          "value": 12
+        },
+        {
+          "kind": "careerFact",
+          "career": "palace",
+          "fact": "milestone-12-resolved",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Functional Palace progression milestone at duty 12; final authored copy is content-owned.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Acknowledge the functional milestone and continue Palace progression.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "palace",
+              "fact": "milestone-12-resolved"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "palace.progression.milestone-15-outcome-ready",
+      "title": "Palace milestone 15",
+      "sourceDomain": "palace",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerTransition",
+          "career": "palace"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 100,
+      "blocking": true,
+      "delivery": {
+        "policy": "latched"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "outcome-ready"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "palace",
+          "counter": "palace-duty-count",
+          "op": "gte",
+          "value": 15
+        },
+        {
+          "kind": "careerFact",
+          "career": "palace",
+          "fact": "milestone-15-resolved",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Functional Palace progression milestone at duty 15; final authored copy is content-owned.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Acknowledge the functional milestone and continue Palace progression.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "palace",
+              "fact": "milestone-15-resolved"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "reactionOrdering": {
+    "priorityBarrier": {
+      "priorityClass": "critical_progression",
+      "priority": 100,
+      "delivery": "latched",
+      "blocking": true,
+      "maxShows": 1
+    },
+    "exactOrder": [
+      "Duty command commits and increments palaceDutyCount.",
+      "If threshold reached, Palace career stage transitions immediately in the same command.",
+      "At duty 15 only, that final transition writes palace.progression-complete exactly once.",
+      "The resulting careerTransition reaction selects the one matching latched milestone event for the new stage.",
+      "While the milestone event is pending, the new stage/counter (and progression-complete at duty 15) are already serialized; no duty or transition is replayed on reload.",
+      "Player resolves the milestone event; its continue choice adds the stage-local milestone-XX-resolved Palace career fact.",
+      "Stage-specific optional relationships/Night/outcome-prep/events may require the resolved fact, so they cannot overtake the milestone barrier.",
+      "Normal/optional Palace surfaces may resolve only after the milestone barrier is cleared."
+    ],
+    "stageAttachmentBarrierFacts": {
+      "working-rhythm": "milestone-02-resolved",
+      "trusted-service": "milestone-05-resolved",
+      "palace-network": "milestone-08-resolved",
+      "crossroads": "milestone-12-resolved",
+      "outcome-ready": "milestone-15-resolved"
+    },
+    "finalMilestoneNote": "palace.progression-complete is present while milestone-15 is pending, but the blocking pending scene prevents the player from starting a Prince confrontation or committing an ending until the milestone scene is resolved."
+  },
+  "saveReloadMatrix": [
+    {
+      "milestone": 2,
+      "phase": "before",
+      "expected": {
+        "stage": "entered-service",
+        "palaceDutyCount": 1,
+        "pendingMilestone": null,
+        "milestoneResolvedFact": false,
+        "progressionComplete": "unchanged-false"
+      }
+    },
+    {
+      "milestone": 2,
+      "phase": "during",
+      "expected": {
+        "stage": "working-rhythm",
+        "palaceDutyCount": 2,
+        "pendingMilestone": "palace.progression.milestone-02-working-rhythm",
+        "milestoneResolvedFact": false,
+        "progressionComplete": false
+      }
+    },
+    {
+      "milestone": 2,
+      "phase": "after",
+      "expected": {
+        "stage": "working-rhythm",
+        "palaceDutyCount": 2,
+        "pendingMilestone": null,
+        "milestoneResolvedFact": true,
+        "progressionComplete": false
+      }
+    },
+    {
+      "milestone": 5,
+      "phase": "before",
+      "expected": {
+        "stage": "working-rhythm",
+        "palaceDutyCount": 4,
+        "pendingMilestone": null,
+        "milestoneResolvedFact": false,
+        "progressionComplete": "unchanged-false"
+      }
+    },
+    {
+      "milestone": 5,
+      "phase": "during",
+      "expected": {
+        "stage": "trusted-service",
+        "palaceDutyCount": 5,
+        "pendingMilestone": "palace.progression.milestone-05-trusted-service",
+        "milestoneResolvedFact": false,
+        "progressionComplete": false
+      }
+    },
+    {
+      "milestone": 5,
+      "phase": "after",
+      "expected": {
+        "stage": "trusted-service",
+        "palaceDutyCount": 5,
+        "pendingMilestone": null,
+        "milestoneResolvedFact": true,
+        "progressionComplete": false
+      }
+    },
+    {
+      "milestone": 8,
+      "phase": "before",
+      "expected": {
+        "stage": "trusted-service",
+        "palaceDutyCount": 7,
+        "pendingMilestone": null,
+        "milestoneResolvedFact": false,
+        "progressionComplete": "unchanged-false"
+      }
+    },
+    {
+      "milestone": 8,
+      "phase": "during",
+      "expected": {
+        "stage": "palace-network",
+        "palaceDutyCount": 8,
+        "pendingMilestone": "palace.progression.milestone-08-palace-network",
+        "milestoneResolvedFact": false,
+        "progressionComplete": false
+      }
+    },
+    {
+      "milestone": 8,
+      "phase": "after",
+      "expected": {
+        "stage": "palace-network",
+        "palaceDutyCount": 8,
+        "pendingMilestone": null,
+        "milestoneResolvedFact": true,
+        "progressionComplete": false
+      }
+    },
+    {
+      "milestone": 12,
+      "phase": "before",
+      "expected": {
+        "stage": "palace-network",
+        "palaceDutyCount": 11,
+        "pendingMilestone": null,
+        "milestoneResolvedFact": false,
+        "progressionComplete": "unchanged-false"
+      }
+    },
+    {
+      "milestone": 12,
+      "phase": "during",
+      "expected": {
+        "stage": "crossroads",
+        "palaceDutyCount": 12,
+        "pendingMilestone": "palace.progression.milestone-12-crossroads",
+        "milestoneResolvedFact": false,
+        "progressionComplete": false
+      }
+    },
+    {
+      "milestone": 12,
+      "phase": "after",
+      "expected": {
+        "stage": "crossroads",
+        "palaceDutyCount": 12,
+        "pendingMilestone": null,
+        "milestoneResolvedFact": true,
+        "progressionComplete": false
+      }
+    },
+    {
+      "milestone": 15,
+      "phase": "before",
+      "expected": {
+        "stage": "crossroads",
+        "palaceDutyCount": 14,
+        "pendingMilestone": null,
+        "milestoneResolvedFact": false,
+        "progressionComplete": false
+      }
+    },
+    {
+      "milestone": 15,
+      "phase": "during",
+      "expected": {
+        "stage": "outcome-ready",
+        "palaceDutyCount": 15,
+        "pendingMilestone": "palace.progression.milestone-15-outcome-ready",
+        "milestoneResolvedFact": false,
+        "progressionComplete": true
+      }
+    },
+    {
+      "milestone": 15,
+      "phase": "after",
+      "expected": {
+        "stage": "outcome-ready",
+        "palaceDutyCount": 15,
+        "pendingMilestone": null,
+        "milestoneResolvedFact": true,
+        "progressionComplete": true
+      }
+    }
+  ],
+  "dutyTaxonomy": {
+    "rule": "Every baseline duty family increments the same palaceDutyCount by one; families differ by stage availability, presentation/function, and optional variants rather than by progression weight.",
+    "families": [
+      {
+        "id": "service-rotation",
+        "candidateActionId": "palace.duty.service-rotation",
+        "functionalPurpose": "Baseline recurring service work; always provides a no-item, no-relationship duty path.",
+        "firstAvailableStage": "entered-service",
+        "availableStages": [
+          "entered-service",
+          "working-rhythm",
+          "trusted-service",
+          "palace-network",
+          "crossroads",
+          "outcome-ready"
+        ],
+        "baselineRequirements": [
+          "palace.access-granted",
+          "current Palace stage is in availableStages"
+        ],
+        "mandatoryOptionalDependencies": [],
+        "optionalAttachments": [],
+        "presentationIdentity": "routine service / operational continuity"
+      },
+      {
+        "id": "logistics-support",
+        "candidateActionId": "palace.duty.logistics-support",
+        "functionalPurpose": "Movement, handoff and access-support work distinct from routine service.",
+        "firstAvailableStage": "entered-service",
+        "availableStages": [
+          "entered-service",
+          "working-rhythm",
+          "trusted-service",
+          "palace-network",
+          "crossroads",
+          "outcome-ready"
+        ],
+        "baselineRequirements": [
+          "palace.access-granted",
+          "current Palace stage is in availableStages"
+        ],
+        "mandatoryOptionalDependencies": [],
+        "optionalAttachments": [
+          "official_guard_access",
+          "guard_sealed_pass",
+          "access_guest_rooms_staff",
+          "cross_rough_route"
+        ],
+        "presentationIdentity": "handoff / access / routing"
+      },
+      {
+        "id": "records-review",
+        "candidateActionId": "palace.duty.records-review",
+        "functionalPurpose": "Records, verification and material-review work; unlocked after the first structural milestone.",
+        "firstAvailableStage": "working-rhythm",
+        "availableStages": [
+          "working-rhythm",
+          "trusted-service",
+          "palace-network",
+          "crossroads",
+          "outcome-ready"
+        ],
+        "baselineRequirements": [
+          "palace.access-granted",
+          "stage >= working-rhythm"
+        ],
+        "mandatoryOptionalDependencies": [],
+        "optionalAttachments": [
+          "merchant_verify_manifest",
+          "merchant_handle_samples",
+          "preserve_specimen"
+        ],
+        "presentationIdentity": "records / verification / material review"
+      },
+      {
+        "id": "coordination",
+        "candidateActionId": "palace.duty.coordination",
+        "functionalPurpose": "Cross-role coordination work; provides a neutral baseline while relationships can add dialogue/choice variants.",
+        "firstAvailableStage": "trusted-service",
+        "availableStages": [
+          "trusted-service",
+          "palace-network",
+          "crossroads",
+          "outcome-ready"
+        ],
+        "baselineRequirements": [
+          "palace.access-granted",
+          "stage >= trusted-service"
+        ],
+        "mandatoryOptionalDependencies": [],
+        "optionalAttachments": [
+          "palace.professional-patron",
+          "palace.rival",
+          "palace.official-contact"
+        ],
+        "presentationIdentity": "coordination / professional responsibility"
+      },
+      {
+        "id": "formal-interface",
+        "candidateActionId": "palace.duty.formal-interface",
+        "functionalPurpose": "Formal-facing or protocol-sensitive duty family; available without a specific item or relationship.",
+        "firstAvailableStage": "palace-network",
+        "availableStages": [
+          "palace-network",
+          "crossroads",
+          "outcome-ready"
+        ],
+        "baselineRequirements": [
+          "palace.access-granted",
+          "stage >= palace-network"
+        ],
+        "mandatoryOptionalDependencies": [],
+        "optionalAttachments": [
+          "artist_formal_presence",
+          "artist_handle_invitation",
+          "official_guard_access",
+          "guard_sealed_pass"
+        ],
+        "presentationIdentity": "formal interface / protocol"
+      },
+      {
+        "id": "evidence-review",
+        "candidateActionId": "palace.duty.evidence-review",
+        "functionalPurpose": "Late-stage review/interpretation duty family supporting Inner Truth preparation without making evidence items mandatory.",
+        "firstAvailableStage": "crossroads",
+        "availableStages": [
+          "crossroads",
+          "outcome-ready"
+        ],
+        "baselineRequirements": [
+          "palace.access-granted",
+          "stage >= crossroads"
+        ],
+        "mandatoryOptionalDependencies": [],
+        "optionalAttachments": [
+          "prostitute_handle_evidence",
+          "preserve_specimen",
+          "merchant_verify_manifest"
+        ],
+        "presentationIdentity": "evidence / interpretation / late review"
+      }
+    ],
+    "antiRepetitionGuarantees": [
+      "At least two baseline duty families are available from Entered Service.",
+      "A new functional family becomes available at every middle stage through Crossroads.",
+      "No family requires romance, a relationship state, a legacy item or an optional Night choice.",
+      "Optional item/relationship capabilities alter variants or efficiency/presentation only; they never change duty-count weight above +1.",
+      "Night choices never increment palaceDutyCount.",
+      "Outcome-preparation events never increment palaceDutyCount."
+    ]
+  },
+  "outcomePreparation": {
+    "nonExclusive": true,
+    "commitLockOnly": true,
+    "routes": [
+      {
+        "family": "service-life",
+        "preparationFact": "palace.prep.service-life",
+        "earliestStage": "trusted-service",
+        "candidatePrepEventId": "palace.outcome-prep.service-life",
+        "finalReadyFact": "palace.outcome.service-life-ready",
+        "candidateFinalizeEventId": "palace.outcome-finalize.service-life",
+        "baselinePathRequired": true,
+        "optionalAttachments": [
+          "palace.official-contact",
+          "palace.professional-patron",
+          "palace.night.work-review"
+        ]
+      },
+      {
+        "family": "court-power",
+        "preparationFact": "palace.prep.court-power",
+        "earliestStage": "palace-network",
+        "candidatePrepEventId": "palace.outcome-prep.court-power",
+        "finalReadyFact": "palace.outcome.court-power-ready",
+        "candidateFinalizeEventId": "palace.outcome-finalize.court-power",
+        "baselinePathRequired": true,
+        "optionalAttachments": [
+          "palace.professional-patron",
+          "palace.rival",
+          "palace.official-contact"
+        ]
+      },
+      {
+        "family": "inner-truth",
+        "preparationFact": "palace.prep.inner-truth",
+        "earliestStage": "crossroads",
+        "candidatePrepEventId": "palace.outcome-prep.inner-truth",
+        "finalReadyFact": "palace.outcome.inner-truth-ready",
+        "candidateFinalizeEventId": "palace.outcome-finalize.inner-truth",
+        "baselinePathRequired": true,
+        "optionalAttachments": [
+          "palace.night.work-review",
+          "palace.night.social-conversation",
+          "preserve_specimen",
+          "prostitute_handle_evidence",
+          "merchant_verify_manifest"
+        ]
+      }
+    ],
+    "coexistenceRule": "Any subset, including all three preparation facts and all three final-ready facts, may coexist in one active run before explicit ending commit.",
+    "progressionIndependence": "None of the preparation or final-ready facts is required to reach outcome-ready or palace.progression-complete.",
+    "finalizationRule": "At Outcome Ready, each earned preparation fact may expose its own completion-only finalize event, which writes only that family's finalReadyFact. Finalizing one family does not remove or block the others.",
+    "trueRouteIndependence": "Preparation/final-ready facts do not block Prince availability or Return Home."
+  },
+  "endingCommitSeparation": {
+    "nonTrue": [
+      {
+        "endingFamily": "service-life",
+        "eligibilityInput": "palace.outcome.service-life-ready",
+        "commit": "existing ending commit/accept command only"
+      },
+      {
+        "endingFamily": "court-power",
+        "eligibilityInput": "palace.outcome.court-power-ready",
+        "commit": "existing ending commit/accept command only"
+      },
+      {
+        "endingFamily": "inner-truth",
+        "eligibilityInput": "palace.outcome.inner-truth-ready",
+        "commit": "existing ending commit/accept command only"
+      }
+    ],
+    "noPrepAutoCommit": true,
+    "noFinalizeAutoCommit": true,
+    "commitExclusivity": "Multiple Palace endings may be eligible simultaneously; exclusivity begins only when the player explicitly commits one ending using the existing ending lifecycle.",
+    "metaRewardTiming": "No Palace outcome grants Meta during preparation/finalization; existing completeEnding transaction remains the reward boundary."
+  },
+  "princeAvailability": {
+    "authority": [
+      "D18",
+      "D29",
+      "v9 frozen confrontation contract"
+    ],
+    "prerequisites": [
+      {
+        "kind": "worldFact",
+        "fact": "palace.access-granted",
+        "present": true
+      },
+      {
+        "kind": "careerStage",
+        "career": "palace",
+        "stage": "outcome-ready"
+      },
+      {
+        "kind": "worldFact",
+        "fact": "palace.progression-complete",
+        "present": true
+      },
+      {
+        "kind": "stat",
+        "stat": "strength",
+        "op": "gte",
+        "value": 91
+      },
+      {
+        "kind": "stat",
+        "stat": "endurance",
+        "op": "gte",
+        "value": 91
+      },
+      {
+        "kind": "stat",
+        "stat": "dexterity",
+        "op": "gte",
+        "value": 91
+      },
+      {
+        "kind": "stat",
+        "stat": "reason",
+        "op": "gte",
+        "value": 91
+      },
+      {
+        "kind": "stat",
+        "stat": "magic",
+        "op": "gte",
+        "value": 91
+      },
+      {
+        "kind": "stat",
+        "stat": "creativity",
+        "op": "gte",
+        "value": 91
+      },
+      {
+        "kind": "stat",
+        "stat": "wits",
+        "op": "gte",
+        "value": 91
+      },
+      {
+        "kind": "stat",
+        "stat": "charm",
+        "op": "gte",
+        "value": 91
+      },
+      {
+        "kind": "stat",
+        "stat": "sociability",
+        "op": "gte",
+        "value": 91
+      },
+      {
+        "kind": "stat",
+        "stat": "manners",
+        "op": "gte",
+        "value": 91
+      },
+      {
+        "kind": "stat",
+        "stat": "grooming",
+        "op": "gte",
+        "value": 91
+      },
+      {
+        "kind": "stat",
+        "stat": "sexuality",
+        "op": "gte",
+        "value": 91
+      },
+      {
+        "kind": "worldFact",
+        "fact": "palace.prince-defeated",
+        "present": false
+      }
+    ],
+    "lustIncluded": false,
+    "cap200Normalization": false,
+    "preparationFactsRequired": false,
+    "relationshipRequired": false,
+    "romanceRequired": false,
+    "nightRequired": false,
+    "itemRequired": false,
+    "v9ModelSelectionStillDeferred": true,
+    "defeatSignal": {
+      "kind": "worldFact",
+      "fact": "palace.prince-defeated",
+      "present": true
+    },
+    "returnHomeEligibilityAfterDefeat": [
+      "palace.access-granted",
+      "Palace stage outcome-ready",
+      "palace.progression-complete",
+      "all 12 progression stats >=91",
+      "palace.prince-defeated present"
+    ],
+    "returnHomeAutoCommit": false
+  },
+  "optionalAttachments": {
+    "relationships": {
+      "palace.official-contact": {
+        "firstStage": "working-rhythm",
+        "requiredBarrierFact": "milestone-02-resolved",
+        "requiredForProgression": false,
+        "requiredForEnding": false
+      },
+      "palace.professional-patron": {
+        "firstStage": "trusted-service",
+        "requiredBarrierFact": "milestone-05-resolved",
+        "requiredForProgression": false,
+        "requiredForEnding": false
+      },
+      "palace.rival": {
+        "firstStage": "trusted-service",
+        "requiredBarrierFact": "milestone-05-resolved",
+        "requiredForProgression": false,
+        "requiredForEnding": false
+      },
+      "palace.optional-romance": {
+        "firstStage": "crossroads",
+        "requiredBarrierFact": "milestone-12-resolved",
+        "requiredForProgression": false,
+        "requiredForAnyEnding": false,
+        "refusalSafe": true
+      }
+    },
+    "night": {
+      "palace.night.work-review": {
+        "firstStage": "working-rhythm",
+        "requiredBarrierFact": "milestone-02-resolved",
+        "countsAsDuty": false,
+        "requiredForProgression": false
+      },
+      "palace.night.social-conversation": {
+        "firstStage": "trusted-service",
+        "requiredBarrierFact": "milestone-05-resolved",
+        "countsAsDuty": false,
+        "requiredForProgression": false
+      }
+    },
+    "legacyCapabilities": [
+      "artist_formal_presence",
+      "artist_handle_invitation",
+      "official_guard_access",
+      "guard_sealed_pass",
+      "merchant_verify_manifest",
+      "merchant_handle_samples",
+      "access_guest_rooms_staff",
+      "cross_rough_route",
+      "preserve_specimen",
+      "prostitute_handle_evidence"
+    ],
+    "legacyRule": "All legacy capabilities are optional variants/choices only. None grants Palace access, increments palaceDutyCount without a duty action, skips a milestone, writes palace.progression-complete, or substitutes for a preparation fact."
+  },
+  "secretDebtPrecedence": {
+    "forcedNightWins": true,
+    "palaceNightOptionalOnly": true,
+    "requiredNightBehavior": "If another owner (including Secret Debt) suppresses the voluntary Night menu, Palace Night choices are simply unavailable for that Night and progression remains viable.",
+    "palaceDutyForbiddenDebtWrites": [
+      "remove/clear debt",
+      "change Secret Debt bound state",
+      "cancel forced Secret Debt Night",
+      "cancel forced next-day Energy penalty"
+    ],
+    "ordinaryCareerIsolation": "Palace duties and Palace stage transitions never unlock ordinary careers and never add ordinary Hard Work progress."
+  },
+  "acceptanceMatrix": [
+    {
+      "id": "V11-A01",
+      "assertion": "Exactly six stable stage IDs exist in D29 order."
+    },
+    {
+      "id": "V11-A02",
+      "assertion": "palaceDutyCount logical counter maps to schema-compatible persisted palace-duty-count and starts at 0."
+    },
+    {
+      "id": "V11-A03",
+      "assertion": "Each committed Palace duty increments palaceDutyCount exactly once; Night/relationship/item use does not."
+    },
+    {
+      "id": "V11-A04",
+      "assertion": "Transitions occur only at 2,5,8,12,15 and cannot skip an unresolved earlier stage."
+    },
+    {
+      "id": "V11-A05",
+      "assertion": "Only the 15 -> outcome-ready transition writes palace.progression-complete."
+    },
+    {
+      "id": "V11-A06",
+      "assertion": "palace.progression-complete cannot be removed or rewritten by later Palace duties."
+    },
+    {
+      "id": "V11-A07",
+      "assertion": "Each stage transition triggers exactly one critical latched milestone event with maxShows=1."
+    },
+    {
+      "id": "V11-A08",
+      "assertion": "During milestone pending state, new stage and counter are already serialized and duty is not replayed after reload."
+    },
+    {
+      "id": "V11-A09",
+      "assertion": "Stage-specific optional content requires the corresponding milestone-resolved barrier fact."
+    },
+    {
+      "id": "V11-A10",
+      "assertion": "Before/during/after save-reload state matches all five milestone rows."
+    },
+    {
+      "id": "V11-A11",
+      "assertion": "At least two duty families exist at Entered Service and at least one new family unlocks at each middle stage through Crossroads."
+    },
+    {
+      "id": "V11-A12",
+      "assertion": "Every baseline duty family remains usable without romance, relationship, legacy item or Palace Night."
+    },
+    {
+      "id": "V11-A13",
+      "assertion": "Every duty family has progression weight exactly +1; optional variants cannot accelerate duty count."
+    },
+    {
+      "id": "V11-A14",
+      "assertion": "Service Life prep cannot begin before Trusted Service."
+    },
+    {
+      "id": "V11-A15",
+      "assertion": "Court Power prep cannot begin before Palace Network."
+    },
+    {
+      "id": "V11-A16",
+      "assertion": "Inner Truth prep cannot begin before Crossroads."
+    },
+    {
+      "id": "V11-A17",
+      "assertion": "All three prep facts and final-ready facts may coexist before ending commit."
+    },
+    {
+      "id": "V11-A18",
+      "assertion": "Preparation/finalization never auto-commits an ending."
+    },
+    {
+      "id": "V11-A19",
+      "assertion": "Prince availability requires outcome-ready + progression-complete + all 12 stats >=91; Lust is excluded."
+    },
+    {
+      "id": "V11-A20",
+      "assertion": "cap-200 does not normalize the 91 threshold and does not create a Palace progression shortcut."
+    },
+    {
+      "id": "V11-A21",
+      "assertion": "No prep/relationship/romance/Night/item state is required for Prince availability."
+    },
+    {
+      "id": "V11-A22",
+      "assertion": "Prince defeat writes only the frozen v9 palace.prince-defeated signal; Return Home remains a separate explicit ending commit."
+    },
+    {
+      "id": "V11-A23",
+      "assertion": "Forced Secret Debt Night suppresses optional Palace Night without blocking Palace progression."
+    },
+    {
+      "id": "V11-A24",
+      "assertion": "Palace duty/progression cannot clear Secret Debt, suppress its forced penalties, unlock ordinary careers or add ordinary Hard Work."
+    },
+    {
+      "id": "V11-A25",
+      "assertion": "No hardWork:palace exists or is proposed."
+    },
+    {
+      "id": "V11-A26",
+      "assertion": "No Palace per-day cadence is invented; D26 remains ordinary-career-only."
+    },
+    {
+      "id": "V11-A27",
+      "assertion": "No Prince name/lore or v9 confrontation-model choice is introduced."
+    }
+  ],
+  "explicitNonGoals": [
+    "No production engine implementation.",
+    "No production UI implementation.",
+    "No final Palace authored story/lore text.",
+    "No Prince name/lore.",
+    "No choice among frozen v9 confrontation models.",
+    "No Palace daily cadence rule.",
+    "No Palace wage/stat-gain balance.",
+    "No hardWork:palace.",
+    "No D23 or Secret Debt rewrite."
+  ]
+}
