@@ -821,6 +821,99 @@
           ]
         }
       ]
+    },
+    {
+      "id": "assassin.routes.refusal-chain-ready",
+      "title": "Refusal Chain route ready",
+      "sourceDomain": "assassin",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "assassin"
+        },
+        {
+          "kind": "relationshipFactAdded",
+          "relationship": "assassin.handler"
+        },
+        {
+          "kind": "questFactAdded",
+          "quest": "assassin.contract"
+        },
+        {
+          "kind": "actionCompleted",
+          "action": "assassin.shift"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 84,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "assassin",
+          "stage": "trusted-blade"
+        },
+        {
+          "kind": "careerFact",
+          "career": "assassin",
+          "fact": "veteran-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "assassin",
+          "fact": "refusal-chain-evidence",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "assassin",
+          "fact": "contract-cycle-complete",
+          "present": true
+        },
+        {
+          "kind": "relationshipFact",
+          "relationship": "assassin.handler",
+          "fact": "refusal-respected",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "assassin",
+          "fact": "refusal-chain-ready",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Repeated refusal is now an authored late Assassin route: evidence, a completed contract cycle, and a respected handler refusal are all present.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record Refusal Chain readiness",
+          "text": "Record the route without auto-committing an ending.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "assassin",
+              "fact": "refusal-chain-ready"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
