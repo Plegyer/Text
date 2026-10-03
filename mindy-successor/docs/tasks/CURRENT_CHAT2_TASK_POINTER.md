@@ -1,7 +1,90 @@
 # CURRENT CHAT2 TASK POINTER
 
-Status: **ACTIVE — D31 SEASONAL TARGET CURRENT-MAIN ASSEMBLY**
+Status: **ACTIVE — D31 FULL-CI NATURAL-ROUTE REPAIR**
 Owner: Chat 2 / sole full-CI integration lane
+
+## #1139 diagnosis
+
+Assembly head:
+`6055275c1e5de1856e93f57b2c152741d72d5315`
+
+Focused QA #1138:
+**SUCCESS**
+
+Full CI #1139:
+**FAILURE — 1028 pass / 2 fail**
+
+Failures are only:
+1. `tavern-natural-acceptance.test.ts`
+   - old hard-coded winter logging route fails at `forest.challenge.logging-navigation`;
+   - D31's live Tavern Reason pressure makes the prior stat assumption stale.
+
+2. `undead-farm-natural-acceptance.test.ts`
+   - logging navigation succeeds;
+   - season-specific logging obstacle becomes unavailable after D31 stat pressure.
+
+Production D31 semantics are not to be changed.
+
+Both career consumers accept any successful typed:
+`lumber.forest.success`.
+
+### Required Tavern repair
+
+Use authored preparation, not direct state/stat injection:
+- current test already obtains `forest.school-field-notes` through `forest.collect-field-kit`;
+- obtain real `forest.hunter-outfitter` prep:
+  - Rope Kit / `cross_rough_route`;
+  - hunter-trail clue;
+- schedule the Forest Activity in summer or autumn;
+- use:
+  1. `forest.route.hunter-trail`
+  2. `forest.challenge.hunter-navigation`
+  3. `forest.challenge.hunter-rough-crossing`
+  4. `forest.challenge.hunter-preserve-sample`
+  5. normal advances to success.
+
+Do not restore Reason artificially.
+Do not weaken logging navigation.
+
+### Required Undead Farm repair
+
+Keep the legitimate logging-navigation behavior.
+
+Use authored capability prep:
+- acquire `forest.hunter-outfitter` Rope Kit;
+- wait to winter;
+- enter `lumber.forest`;
+- use logging road + logging navigation;
+- cross `forest.challenge.logging-winter-ruts` via `cross_rough_route`;
+- preserve sample;
+- advance normally to success.
+
+Do not weaken seasonal obstacle gates.
+Do not inject stats directly.
+Do not change D31 map.
+
+### Gate before another full CI
+
+Create a real new repair commit.
+
+Run focused:
+- typecheck;
+- validate;
+- build;
+- existing D31 focused set;
+- `tavern-natural-acceptance.test.ts`;
+- `undead-farm-natural-acceptance.test.ts`.
+
+Only after all green:
+- push new assembly head;
+- rerun full CI once;
+- freeze exact SHA;
+- report `READY_FOR_LEADER_MERGE`.
+
+No rerun on unchanged head.
+Do not merge main.
+
+---
 
 ## Gate cleared
 
