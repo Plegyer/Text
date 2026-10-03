@@ -9339,7 +9339,7 @@
   "activities": [
     {
       "id": "lumber.forest",
-      "label": "Lumber Forest Activity fixture",
+      "label": "Forest Frontier",
       "version": 1,
       "entryConditions": [],
       "entryEnergyCost": 2,
@@ -9351,7 +9351,9 @@
         "initialEndurance": 6,
         "advanceEnduranceCost": 2,
         "successAtProgress": 6,
-        "failAtEndurance": 0
+        "failAtEndurance": 0,
+        "fieldTimeSegments": 6,
+        "advanceFieldTimeCost": 1
       },
       "results": [
         {
@@ -9366,6 +9368,10 @@
               "kind": "addItem",
               "id": "forest_preserved_specimen",
               "count": 1
+            },
+            {
+              "kind": "addWorldFact",
+              "fact": "activity.forest-frontier.anchor-secured"
             }
           ]
         },
@@ -9398,7 +9404,8 @@
           "conditions": [],
           "progressDelta": 0,
           "enduranceCost": 0,
-          "setRoute": "logging-road"
+          "setRoute": "logging-road",
+          "fieldTimeCost": 1
         },
         {
           "id": "forest.route.hunter-trail",
@@ -9426,7 +9433,8 @@
           ],
           "progressDelta": 0,
           "enduranceCost": 0,
-          "setRoute": "hunter-trail"
+          "setRoute": "hunter-trail",
+          "fieldTimeCost": 1
         },
         {
           "id": "forest.route.old-boundary",
@@ -9441,7 +9449,8 @@
           ],
           "progressDelta": 0,
           "enduranceCost": 0,
-          "setRoute": "old-boundary"
+          "setRoute": "old-boundary",
+          "fieldTimeCost": 1
         },
         {
           "id": "forest.challenge.logging-navigation",
@@ -9468,7 +9477,8 @@
           ],
           "progressDelta": 1,
           "enduranceCost": 0,
-          "setRoute": "logging-road"
+          "setRoute": "logging-road",
+          "fieldTimeCost": 1
         },
         {
           "id": "forest.challenge.logging-spring-mud",
@@ -9498,7 +9508,8 @@
           ],
           "progressDelta": 1,
           "enduranceCost": 1,
-          "setRoute": "logging-road"
+          "setRoute": "logging-road",
+          "fieldTimeCost": 1
         },
         {
           "id": "forest.challenge.logging-summer-deadfall",
@@ -9528,7 +9539,8 @@
           ],
           "progressDelta": 1,
           "enduranceCost": 1,
-          "setRoute": "logging-road"
+          "setRoute": "logging-road",
+          "fieldTimeCost": 1
         },
         {
           "id": "forest.challenge.logging-autumn-deadfall",
@@ -9558,7 +9570,8 @@
           ],
           "progressDelta": 1,
           "enduranceCost": 1,
-          "setRoute": "logging-road"
+          "setRoute": "logging-road",
+          "fieldTimeCost": 1
         },
         {
           "id": "forest.challenge.logging-winter-ruts",
@@ -9588,7 +9601,8 @@
           ],
           "progressDelta": 1,
           "enduranceCost": 1,
-          "setRoute": "logging-road"
+          "setRoute": "logging-road",
+          "fieldTimeCost": 1
         },
         {
           "id": "forest.challenge.logging-preserve-sample",
@@ -9603,7 +9617,14 @@
           ],
           "progressDelta": 2,
           "enduranceCost": 0,
-          "setRoute": "logging-road"
+          "setRoute": "logging-road",
+          "fieldTimeCost": 1,
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "forest.frontier.preservation-used"
+            }
+          ]
         },
         {
           "id": "forest.challenge.hunter-navigation",
@@ -9647,7 +9668,8 @@
           ],
           "progressDelta": 1,
           "enduranceCost": 0,
-          "setRoute": "hunter-trail"
+          "setRoute": "hunter-trail",
+          "fieldTimeCost": 1
         },
         {
           "id": "forest.challenge.hunter-rough-crossing",
@@ -9691,7 +9713,8 @@
           ],
           "progressDelta": 1,
           "enduranceCost": 1,
-          "setRoute": "hunter-trail"
+          "setRoute": "hunter-trail",
+          "fieldTimeCost": 1
         },
         {
           "id": "forest.challenge.hunter-preserve-sample",
@@ -9724,7 +9747,14 @@
           ],
           "progressDelta": 2,
           "enduranceCost": 0,
-          "setRoute": "hunter-trail"
+          "setRoute": "hunter-trail",
+          "fieldTimeCost": 1,
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "forest.frontier.preservation-used"
+            }
+          ]
         },
         {
           "id": "forest.challenge.boundary-interpretation",
@@ -9761,7 +9791,8 @@
           ],
           "progressDelta": 1,
           "enduranceCost": 0,
-          "setRoute": "old-boundary"
+          "setRoute": "old-boundary",
+          "fieldTimeCost": 1
         },
         {
           "id": "forest.challenge.boundary-rough-crossing",
@@ -9792,7 +9823,8 @@
           ],
           "progressDelta": 1,
           "enduranceCost": 1,
-          "setRoute": "old-boundary"
+          "setRoute": "old-boundary",
+          "fieldTimeCost": 1
         },
         {
           "id": "forest.challenge.boundary-preserve-sample",
@@ -9812,7 +9844,205 @@
           ],
           "progressDelta": 2,
           "enduranceCost": 0,
-          "setRoute": "old-boundary"
+          "setRoute": "old-boundary",
+          "fieldTimeCost": 1,
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "forest.frontier.preservation-used"
+            }
+          ]
+        },
+        {
+          "id": "forest.detour.tracking-observe",
+          "label": "Detour: triangulate fresh signs",
+          "category": "tracking_triangulation",
+          "conditions": [
+            {
+              "kind": "worldFact",
+              "fact": "forest.hunter-trail-clue",
+              "present": true
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "calendarSeason",
+                  "value": "summer"
+                },
+                {
+                  "kind": "calendarSeason",
+                  "value": "autumn"
+                }
+              ]
+            }
+          ],
+          "progressDelta": 0,
+          "enduranceCost": 0,
+          "fieldTimeCost": 1,
+          "effects": [],
+          "setRoute": "hunter-trail",
+          "miniGameTransition": {
+            "game": "forest.tracking-triangulation",
+            "from": "start",
+            "to": "first-observation"
+          }
+        },
+        {
+          "id": "forest.tracking.cross-check",
+          "label": "Cross-check spoor and bark marks",
+          "category": "tracking_triangulation",
+          "conditions": [],
+          "progressDelta": 0,
+          "enduranceCost": 0,
+          "fieldTimeCost": 1,
+          "effects": [],
+          "setRoute": "hunter-trail",
+          "miniGameTransition": {
+            "game": "forest.tracking-triangulation",
+            "from": "first-observation",
+            "to": "second-observation"
+          }
+        },
+        {
+          "id": "forest.tracking.informed-risk",
+          "label": "Follow the fresh sign (+1 progress, -2 Endurance)",
+          "category": "tracking_triangulation",
+          "conditions": [
+            {
+              "kind": "worldFact",
+              "fact": "forest.school-field-notes",
+              "present": true
+            }
+          ],
+          "progressDelta": 1,
+          "enduranceCost": 2,
+          "fieldTimeCost": 1,
+          "effects": [],
+          "setRoute": "hunter-trail",
+          "miniGameTransition": {
+            "game": "forest.tracking-triangulation",
+            "from": "first-observation",
+            "to": "second-observation"
+          }
+        },
+        {
+          "id": "forest.tracking.complete",
+          "label": "Triangulate the three observations",
+          "category": "tracking_triangulation",
+          "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "stat",
+                  "stat": "wits",
+                  "op": "gte",
+                  "value": 4
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "forest.school-field-notes",
+                  "present": true
+                }
+              ]
+            }
+          ],
+          "progressDelta": 1,
+          "enduranceCost": 0,
+          "fieldTimeCost": 1,
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "forest.frontier.tracking-triangulated"
+            }
+          ],
+          "setRoute": "hunter-trail",
+          "miniGameTransition": {
+            "game": "forest.tracking-triangulation",
+            "from": "second-observation",
+            "to": "complete",
+            "outcome": "success"
+          }
+        },
+        {
+          "id": "forest.tracking.force-conclusion",
+          "label": "Force an uncertain conclusion (-2 Endurance)",
+          "category": "tracking_triangulation",
+          "conditions": [],
+          "progressDelta": 0,
+          "enduranceCost": 2,
+          "fieldTimeCost": 1,
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "forest.frontier.tracking-misread"
+            }
+          ],
+          "setRoute": "hunter-trail",
+          "miniGameTransition": {
+            "game": "forest.tracking-triangulation",
+            "from": "second-observation",
+            "to": "failed",
+            "outcome": "failure"
+          }
+        },
+        {
+          "id": "forest.tracking.abort",
+          "label": "Abort triangulation and return to the route",
+          "category": "tracking_triangulation",
+          "conditions": [],
+          "progressDelta": 0,
+          "enduranceCost": 0,
+          "fieldTimeCost": 0,
+          "effects": [],
+          "setRoute": "hunter-trail",
+          "miniGameTransition": {
+            "game": "forest.tracking-triangulation",
+            "from": "first-observation",
+            "to": "aborted",
+            "outcome": "abort"
+          }
+        },
+        {
+          "id": "forest.shortcut.triangulated-line",
+          "label": "Take the triangulated shortcut (+2 progress)",
+          "category": "shortcut",
+          "conditions": [
+            {
+              "kind": "worldFact",
+              "fact": "forest.frontier.tracking-triangulated",
+              "present": true
+            },
+            {
+              "kind": "worldFact",
+              "fact": "forest.hunter-trail-clue",
+              "present": true
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "calendarSeason",
+                  "value": "summer"
+                },
+                {
+                  "kind": "calendarSeason",
+                  "value": "autumn"
+                }
+              ]
+            }
+          ],
+          "progressDelta": 2,
+          "enduranceCost": 0,
+          "fieldTimeCost": 1,
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "forest.frontier.pathfinder-evidence"
+            }
+          ],
+          "setRoute": "hunter-trail"
         }
       ]
     },
