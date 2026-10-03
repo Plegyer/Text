@@ -185,10 +185,7 @@ function domainMap(s:Save,kind:DomainKind):Record<string,DomainState>{
   return (kind==='career'?s.run.progression.careers:kind==='quest'?s.run.progression.quests:s.run.progression.relationships) as Record<string,DomainState>;
 }
 function readDomainState(s:Save,kind:DomainKind,id:string,cat?:Catalog):DomainState|undefined{
-  if(kind==='career'&&id==='palace'){
-    if(!machineDefinition(cat,kind,id))return undefined;
-    return s.run.progression.palace;
-  }
+  if(kind==='career'&&id==='palace')return s.run.progression.palace;
   const existing=domainMap(s,kind)[id];if(existing)return existing;
   const def=machineDefinition(cat,kind,id);if(!def)return undefined;
   return {stage:def.initialStage,counters:{},choices:{},facts:[],...(kind==='career'?{shifts:0}:{})};
