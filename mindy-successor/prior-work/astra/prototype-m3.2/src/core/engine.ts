@@ -855,8 +855,11 @@ function applyActivityMiniGameTransition(
 ){
   const transition=option.miniGameTransition;
   if(!transition)return;
-  const games=envelope.internalState.miniGames??={};
-  const game=games[transition.game]??={stage:'start',status:'active' as const,choiceIds:[]};
+  type MiniGameState=NonNullable<ActivityEnvelope['internalState']['miniGames']>[string];
+  const games:NonNullable<ActivityEnvelope['internalState']['miniGames']>=envelope.internalState.miniGames??{};
+  envelope.internalState.miniGames=games;
+  const fresh:MiniGameState={stage:'start',status:'active',choiceIds:[]};
+  const game=games[transition.game]??fresh;
   if(game.status!=='active'||game.stage!==transition.from)throw new Error('Mini-game transition сейчас недоступен.');
   game.stage=transition.to;
   game.choiceIds.push(option.id);
