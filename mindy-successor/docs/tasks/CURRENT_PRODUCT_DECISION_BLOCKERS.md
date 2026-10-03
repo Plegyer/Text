@@ -106,9 +106,19 @@ Chat 6 currently owns the implementation-ready stage/duty contract.
 
 ### Activity
 
+D36 now resolves the full-scope structure:
+- exactly four functional regions;
+- route-graph Activity with Field Time + Endurance;
+- three specialized mini-game families;
+- selected multi-day camp;
+- standalone Activity ending baseline.
+
 Still open:
-- final region count;
-- final mechanic mix outside already-shipped/accepted Activity slices.
+- exact three-direction standalone Activity ending design/rewards;
+- final authored content inside each region;
+- final region/lore naming and media production.
+
+Chat 3 currently owns the standalone Activity ending Product packet.
 
 ### Production art/media budget
 
@@ -117,6 +127,7 @@ Still open.
 ## Decisions that are NOT open anymore
 
 - D35 normal lodging private-space capability;
+- D36 four-region Large Activity scope;
 
 Do not reopen without explicit Leader/Product action:
 - D26 same-career max one shift/day;
