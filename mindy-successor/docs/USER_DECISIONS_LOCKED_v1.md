@@ -230,9 +230,39 @@ Current successor Product authority:
 - original Plus Mode may be revisited only by a later explicit Product decision;
 - no worker may infer or implement original Plus-Mode job mutations as Palace requirements.
 
+
+### D26 — ordinary same-career daily pacing
+
+For the 10 ordinary professions, a character may complete **at most one shift of the same profession per calendar day**.
+
+- this is **not** a global one-work-action-per-day rule;
+- if Energy, unlocks and other conditions allow it, the player may work different ordinary professions on the same day;
+- ordinary Hard Work remains exactly **50 completed shifts**, so a single ordinary profession cannot reach Hard Work earlier than Day 50 from a Day-1 start;
+- this pacing decision does not by itself reduce existing positive seasonal stat gains;
+- the already-shipped seasonal-negative structure remains: about 2 negative seasons of 4 per ordinary profession, one `-1` progression-stat effect in each, no Lust negatives;
+- exact negative-stat target remapping is still a separate balance pass and must not be guessed in runtime. Research should prefer targets that create real pressure instead of immediately clipping at zero;
+- this decision applies to the 10 ordinary professions only. It does not silently impose the same cadence on Secret Debt hidden work or Palace progression.
+
+### D27 — strong Meta loadout architecture
+
+D5 strong rule modifiers use a **Keystone + Specialists** architecture.
+
+- a new run may activate **at most one Keystone**: a broad, run-defining rule modifier;
+- separately, the run may activate a limited number of **Specialists**: directed/narrow build, access, School, Activity, safety or late-build modifiers;
+- the exact Specialist capacity is still Product-open;
+- pure knowledge/content unlocks remain automatic and do not consume Keystone/Specialist capacity;
+- ordinary D21-D23 Hard Work packages remain a separate layer and may still be activated as any earned subset: none, some or all;
+- broad effects such as +1 daily Energy, No Rent, substantial passive income, extra calendar time, or broad stat carry-over are Keystone-class **if such rewards are later approved**. This classification is not approval to create those rewards;
+- directed School/Activity/access/safety effects are Specialist-class by default;
+- the D24 Palace True reward `cap 200` is Specialist-class by default because it changes only late stat ceiling and grants no Day-1 free stats;
+- Secret Debt forced next-day Energy `-1` applies after any selected max/base Energy modifier and must still remove one usable Energy relative to the same unbound loadout;
+- no housing/safety Meta effect may cancel forced Secret Debt Night;
+- no access Meta effect may substitute for D23 permanent 10/10 + active 10/10 -> Day-1 Palace invitation;
+- this architecture does not create Titles and does not port original Plus Mode.
+
+
 ## Still open after this lock
 
-- ordinary-work same-career daily frequency / long-run cap timing remediation;
 - exact numeric economy;
 - exact Lust starting value;
 - meta loadout slot/budget count for non-Hard-Work strong modifiers;
