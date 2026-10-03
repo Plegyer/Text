@@ -1,48 +1,71 @@
 # CURRENT CHAT3 TASK POINTER
 
-Status: **ACTIVE — FLOOR-AWARE NEGATIVE TARGET MAP v5**
+Status: **ACTIVE — SEASONAL NEGATIVE TARGET MAP IMPLEMENTATION v6**
 Owner: Chat 3
 
-Accepted prior packet:
-`chat3/progression-policy-comparison-v4@135efa45c291642fabc52bd49cbafc7111418cd3`
+Accepted research packet:
+`chat3/progression-floor-aware-negative-map-v5@255c0c9b59870f91c8b7032863db6dd6966ec4bc`
 
-Leader/Product lock:
-- D26 recorded on `main@0c8926049a4b4ee4fda0574cea588d39f39dd14e`.
-- For the 10 ordinary professions: max **1 shift of the same profession per calendar day**.
-- This is not a global work-action cap; different ordinary professions may still be worked on the same day if Energy/access allow.
-- Hard Work remains exactly 50 completed shifts.
-- No broad positive work-stat nerf is authorized by D26.
+Leader/Product authority:
+- D26 = max one shift of the same ordinary profession per calendar day;
+- D31 locks the exact 20-cell floor-aware negative-stat target map;
+- negative seasons remain unchanged;
+- each negative remains exactly `-1`;
+- no Lust negatives;
+- all positive seasonal effects, wages, costs, unlocks and Hard Work=50 remain unchanged.
+
+Authority commit:
+`main@67a61382c0171beaac007e8123fc007c6a01d1d3`
 
 Branch:
-`chat3/progression-floor-aware-negative-map-v5`
+`chat3/seasonal-negative-target-map-implementation-v6`
 
-Branch was created by Leader from `main@0c8926049a4b4ee4fda0574cea588d39f39dd14e`.
-Branch existence is only dispatch state; first real worker commit is required before this lane counts as moving.
+The branch was created from the authority commit above.
+Branch existence is dispatch only; count work only after a real worker commit.
 
 ## Assignment
 
-Produce an exact Product decision packet for the remaining ordinary seasonal-negative target question. No production edits.
+Produce the smallest implementation candidate for D31.
 
-Preserve the already-shipped structural rule:
-- two negative seasons out of four per ordinary profession;
-- one `-1` progression-stat effect in each selected negative season;
-- no Lust negatives;
-- no same-season positive/negative cancellation on the same stat;
-- do not change wages, costs, Hard Work=50, D26 cadence, unlocks, or positive seasonal effects.
+Production scope:
+- replace only the negative `stat` target in the 20 already-existing ordinary seasonal negative cells;
+- preserve negative seasons and magnitude;
+- do not change positive effects;
+- do not change wages/costs/unlocks/Hard Work;
+- do not add new schema/runtime mechanisms.
 
-Deliver:
-- exact proposed 20-cell profession/season -> negative-stat map;
-- current shipped map vs proposal;
-- rationale per profession based on actual work-grown/wage-relevant stats and floor clipping;
-- harness results under D26 max1/day for base + focused starts;
-- no School + targeted paid School every 10 days;
-- realized negative pressure by profession and aggregate;
-- strongest-stat day-to-100 / cap reach by Day 160;
-- money by Hard Work=50;
-- any proposal cell that creates a dominant build or over-punishes a starter profession;
-- minimal regression contract for later producer implementation.
+Exact D31 map:
+- Lumber: Spring Dexterity; Winter Strength;
+- Satyr Maid: Summer Sociability; Autumn Endurance;
+- Undead Farm: Spring Reason; Autumn Strength;
+- Tavern: Spring Reason; Summer Wits;
+- Hunter: Spring Endurance; Winter Dexterity;
+- Guard: Summer Manners; Winter Reason;
+- Merchant: Summer Wits; Winter Manners;
+- Artist/Geisha: Summer Manners; Autumn Dexterity;
+- Assassin: Spring Reason; Winter Manners;
+- Prostitute: Summer Sexuality; Winter Endurance.
 
-Do not use original-game numbers as targets.
-Do not implement runtime/content.
+Focused acceptance:
+1. exact 20 targets match D31;
+2. exactly two negative seasons per profession;
+3. exactly 20 total `-1` negatives;
+4. no Lust negative;
+5. no same-season positive/negative stat cancellation;
+6. all positive seasonal effects unchanged;
+7. wages/costs/unlocks unchanged;
+8. D26 same-career daily cap unchanged;
+9. Hard Work remains 50;
+10. progression harness reproduces the accepted D31 envelope:
+   - Hard Work Day 50 all 10;
+   - ~205/250 Base no-School realized negatives by 50;
+   - ~214/250 Focused no-School;
+   - ~207/250 Base School-10d;
+   - ~215/250 Focused School-10d;
+   - starter strongest-stat cap timing preserved.
+
+Do not compensate wage reductions.
+Do not add deferred/fallback negative mechanics.
+Run focused/static tests only.
 No full CI.
-Freeze exact SHA and report `READY_FOR_LEADER_PRODUCT_DECISION`.
+Freeze exact SHA and report `READY_FOR_CHAT2_ASSEMBLY`.
