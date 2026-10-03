@@ -5896,7 +5896,7 @@
           "present": true
         }
       ],
-      "reward": "palace.service-life.compat",
+      "reward": "palace.service-life.steady-practice",
       "metaRewards": [],
       "epilogue": "Palace Service Life is complete. The current-life resolution remains functional; its permanent reward is applied only after the strong-Meta assembly seam is integrated."
     },
@@ -5926,7 +5926,7 @@
           "present": true
         }
       ],
-      "reward": "palace.court-power.compat",
+      "reward": "palace.court-power.formal-introduction",
       "metaRewards": [],
       "epilogue": "Palace Court Power is complete. The current-life resolution records accountable professional influence without adding a second Meta registry."
     },
@@ -5956,7 +5956,7 @@
           "present": true
         }
       ],
-      "reward": "palace.inner-truth.compat",
+      "reward": "palace.inner-truth.source-method",
       "metaRewards": [],
       "epilogue": "Palace Inner Truth is complete. The current-life resolution records a source-checking method while final mystery truth remains outside this implementation."
     },
@@ -6058,7 +6058,7 @@
           "present": true
         }
       ],
-      "reward": "palace.return-home.compat",
+      "reward": "palace.true.cap-200",
       "metaRewards": [],
       "epilogue": "Return Home is complete. Final Prince and mystery prose remain outside this implementation; cap-200 reward binding waits for the accepted strong-Meta assembly seam."
     }
