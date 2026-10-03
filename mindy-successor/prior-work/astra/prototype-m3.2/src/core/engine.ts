@@ -18,6 +18,7 @@ import {
   setPreferredStrongMetaKeystone,
   setPreferredStrongMetaSpecialist,
   strongMetaProgressionStatCap,
+  strongMetaCurrentEnergyBonus,
   validateResolvedStrongMetaSnapshot,
   validateStrongMetaRuntimeAgainstSnapshot,
   type ApprovedStrongRewardId
@@ -344,11 +345,13 @@ function applyStrongMetaOrdinaryWorkMutable(s:Save,ordinaryWage:number,secretDeb
   });
   s.run.strongMetaRuntime=match.runtime;
   if(match.bonus>0)s.run.resources.money=Math.min(1_000_000,s.run.resources.money+match.bonus);
-  s.run.strongMetaRuntime=armWorkRhythmForNextDay({
-    snapshot:s.run.strongMetaSnapshot,
-    runtime:s.run.strongMetaRuntime,
-    currentDay:s.run.day
-  });
+  if(!secretDebtBound){
+    s.run.strongMetaRuntime=armWorkRhythmForNextDay({
+      snapshot:s.run.strongMetaSnapshot,
+      runtime:s.run.strongMetaRuntime,
+      currentDay:s.run.day
+    });
+  }
   return match.bonus;
 }
 
@@ -789,7 +792,8 @@ function register(s:Save,cat:Catalog){
 
 export function energyMax(s:Save){
   const modifier=Number(s.meta.ruleModifiers['energy.daily']??0);
-  return Math.max(1,3+modifier+(s.meta.unlocks.includes('vitality')?1:0));
+  const strongBonus=strongMetaCurrentEnergyBonus(s.run.strongMetaSnapshot,s.run.strongMetaRuntime,s.run.day);
+  return Math.max(1,3+modifier+(s.meta.unlocks.includes('vitality')?1:0)+strongBonus);
 }
 export function rent(s:Save){
   const base=100;
@@ -1034,8 +1038,8 @@ function finishNightMutable(s:Save,cat:Catalog,secretDebtBound=false){
   n.phase='StartDay';
   const queued=s.run.dayState.nextDayModifiers;
   for(const effect of queued.statEffects)setMetric(s,effect.stat,getMetric(s,effect.stat)+effect.delta);
-  const strongDay=applyStrongMetaStartDayMutable(s,secretDebtBound);
-  s.run.metrics.energy=Math.max(1,energyMax(s)+strongDay.energyBonus+queued.energyDelta);
+  applyStrongMetaStartDayMutable(s,secretDebtBound);
+  s.run.metrics.energy=Math.max(1,energyMax(s)+queued.energyDelta);
   s.run.dayState.nextDayModifiers={energyDelta:0,statEffects:[],tags:[]};
   s.run.housingState.paidForCurrentNight=false;
   for(const q of [...s.run.flow.reaction.queued])if(q.kind==='optional')removeQueuedInstance(s,q.instanceId);
@@ -1474,6 +1478,7 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
   s.meta.unlocks=s.meta.unlocks.filter(unlock=>unlock!=='palace');
   if(s.run.strongMetaSnapshot)validateResolvedStrongMetaSnapshot(s.run.strongMetaSnapshot);
   validateStrongMetaRuntimeAgainstSnapshot(s.run.strongMetaSnapshot,s.run.strongMetaRuntime);
+  if(s.run.strongMetaRuntime.workRhythmAppliedDay!==null&&s.run.strongMetaRuntime.workRhythmAppliedDay>s.run.day)throw new Error('Work Rhythm applied day cannot be in the future.');
   for(const stat of stats)if(s.run.character.stats[stat]>effectiveProgressionStatCap(s))throw new Error(`Характеристика ${stat} превышает эффективный потолок.`);
   if(s.run.metrics.energy>energyMax(s))throw new Error('Некорректный запас энергии.');
   if(!s.run.creation.complete&&s.run.creation.remaining+Object.values(s.run.creation.allocated).reduce((a,b)=>a+b,0)!==10)throw new Error('Некорректные стартовые очки.');
