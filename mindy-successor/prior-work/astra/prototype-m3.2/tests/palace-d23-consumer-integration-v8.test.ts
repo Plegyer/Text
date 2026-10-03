@@ -18,7 +18,7 @@ import {
   palaceHasAccess,
   palaceTrueEndingStatsReady
 } from '../src/core/palace.ts';
-import {ordinaryHardWorkCareers,stats,type Save,type Stat} from '../src/core/schema.ts';
+import {ordinaryHardWorkCareers,stats,type Pack,type Save,type Stat} from '../src/core/schema.ts';
 import {catalog,rawPacks} from './helpers.ts';
 
 const all=[...ordinaryHardWorkCareers];
@@ -178,7 +178,7 @@ test('duplicates, Secret Debt and Palace cannot substitute for a missing ordinar
 });
 
 test('Palace invitation pack has no RNG, stat gate, item gate or alternative access write',()=>{
-  const pack=rawPacks.find(item=>item.id==='palace.invitation');
+  const pack=rawPacks.find(item=>item.id==='palace.invitation') as Pack|undefined;
   assert.ok(pack);
 
   assert.deepEqual(pack.capabilities?.writes?.worldFacts,[PALACE_ACCESS_FACT]);
