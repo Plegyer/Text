@@ -1,0 +1,778 @@
+{
+  "formatVersion": 1,
+  "status": "READY_FOR_LEADER_PRODUCT_DECISION",
+  "branchBase": "0d0cf6657eab1cb0c81dafcf4f07c33707040789",
+  "dispatchAuthority": "0c8926049a4b4ee4fda0574cea588d39f39dd14e",
+  "sourcePalace": {
+    "authoredSafeV5": "c7b26032af9347af59c590de187abd7d44795050",
+    "integrationManifestV6": "29def63f348ffd0bf46c16a7a3c7292b0877db9a",
+    "d23ConsumerV8": "9dfaab2a7b9e145c9753c0acd8e54d3f903be5fd",
+    "princeDecisionV9": "4de1a3925d499a6337a3c40c05b8b4aba9f3cc03"
+  },
+  "locked": {
+    "d23": "permanent ordinary Hard Work 10/10 + active ordinary Hard Work package 10/10 -> deterministic Day-1 invitation",
+    "trueEnding": "Palace Return Home",
+    "originalPlusMode": false,
+    "trueStats": "all 12 progression stats >=91",
+    "lustExcluded": true,
+    "princeMustBeDefeated": true,
+    "palaceHardWorkMetaEntry": false,
+    "princeNameOrLore": null
+  },
+  "common": {
+    "palaceAccessFact": "palace.access-granted",
+    "progressionCompleteFact": "palace.progression-complete",
+    "princeDefeatedFact": "palace.prince-defeated",
+    "trueReadiness": {
+      "progressionCompleteRequired": true,
+      "statThreshold": 91,
+      "stats": [
+        "strength",
+        "endurance",
+        "dexterity",
+        "reason",
+        "magic",
+        "creativity",
+        "wits",
+        "charm",
+        "sociability",
+        "manners",
+        "grooming",
+        "sexuality"
+      ],
+      "lustIncluded": false,
+      "princeDefeatRequired": true
+    },
+    "outcomeFamilies": [
+      "service-life",
+      "court-power",
+      "inner-truth"
+    ],
+    "outcomeFacts": {
+      "service-life": "palace.outcome.service-life-ready",
+      "court-power": "palace.outcome.court-power-ready",
+      "inner-truth": "palace.outcome.inner-truth-ready"
+    },
+    "hardWorkMetaReward": false,
+    "ordinaryDailyPacingRuleAppliesToPalace": false,
+    "exactPalaceWorkActionId": null,
+    "princeMechanics": null
+  },
+  "existingSurfaceInventory": {
+    "entryOrientationScenes": [
+      "palace.invitation.day1-arrival",
+      "palace.invitation.reveal",
+      "palace.entry.gates",
+      "palace.orientation.first-day",
+      "palace.orientation.handoff"
+    ],
+    "relationships": {
+      "professionalPatron": [
+        "palace.relationship.patron.intro",
+        "palace.relationship.patron.trust",
+        "palace.relationship.patron.conflict"
+      ],
+      "rival": [
+        "palace.relationship.rival.intro",
+        "palace.relationship.rival.cooperation",
+        "palace.relationship.rival.conflict"
+      ],
+      "officialContact": [
+        "palace.relationship.contact.intro",
+        "palace.relationship.contact.practical-help",
+        "palace.relationship.contact.boundary"
+      ],
+      "optionalRomance": [
+        "palace.relationship.romance.invitation",
+        "palace.relationship.romance.mode"
+      ]
+    },
+    "voluntaryNight": [
+      "palace.night.work-review",
+      "palace.night.social-conversation"
+    ],
+    "optionalLegacyCapabilities": [
+      "artist_formal_presence",
+      "artist_handle_invitation",
+      "official_guard_access",
+      "guard_sealed_pass",
+      "merchant_verify_manifest",
+      "merchant_handle_samples",
+      "access_guest_rooms_staff",
+      "cross_rough_route",
+      "preserve_specimen",
+      "prostitute_handle_evidence"
+    ]
+  },
+  "planningOnlyNumbers": {
+    "note": "These counts are comparison targets for Product pacing review, not locked production thresholds.",
+    "compactTotalWorkCompletions": 8,
+    "richTotalWorkCompletions": 15
+  },
+  "topologies": [
+    {
+      "id": "COMPACT_3_STAGE",
+      "stageCount": 3,
+      "stages": [
+        {
+          "id": "entered-service",
+          "label": "Entered Service",
+          "function": "Invitation accepted; first-day orientation and basic Palace work begin."
+        },
+        {
+          "id": "trusted-service",
+          "label": "Trusted Service",
+          "function": "The heroine is established enough for professional relationships, optional Night context and outcome preparation."
+        },
+        {
+          "id": "outcome-ready",
+          "label": "Outcome Ready",
+          "function": "General Palace progression is complete; non-True outcomes may resolve and True confrontation may become available if 12x91 readiness is also met."
+        }
+      ],
+      "candidateMachine": {
+        "id": "palace",
+        "label": "Palace progression — compact planning skeleton",
+        "initialStage": "entered-service",
+        "stages": [
+          "entered-service",
+          "trusted-service",
+          "outcome-ready"
+        ],
+        "transitions": [
+          {
+            "id": "establish-trusted-service",
+            "from": [
+              "entered-service"
+            ],
+            "to": "trusted-service",
+            "conditions": [
+              {
+                "kind": "careerCounter",
+                "career": "palace",
+                "counter": "completed_duties",
+                "op": "gte",
+                "value": 3
+              },
+              {
+                "kind": "careerFact",
+                "career": "palace",
+                "fact": "orientation-complete",
+                "present": true
+              }
+            ],
+            "effects": []
+          },
+          {
+            "id": "complete-palace-progression",
+            "from": [
+              "trusted-service"
+            ],
+            "to": "outcome-ready",
+            "conditions": [
+              {
+                "kind": "careerCounter",
+                "career": "palace",
+                "counter": "completed_duties",
+                "op": "gte",
+                "value": 8
+              },
+              {
+                "kind": "careerFact",
+                "career": "palace",
+                "fact": "capstone-resolved",
+                "present": true
+              }
+            ],
+            "effects": [
+              {
+                "kind": "addWorldFact",
+                "fact": "palace.progression-complete"
+              }
+            ]
+          }
+        ]
+      },
+      "advancement": {
+        "repeatableWork": "One generic Palace daytime work/duty completion increments palace.completed_duties. Exact production action ID, wage/stat effects and per-day cadence remain separate implementation decisions.",
+        "enteredServiceToTrustedService": [
+          "Complete first-day orientation/handoff.",
+          "Complete 3 total Palace daytime duties."
+        ],
+        "trustedServiceToOutcomeReady": [
+          "Reach 8 total Palace daytime duties.",
+          "Resolve one topology-neutral capstone work event.",
+          "No relationship, romance, legacy item or voluntary Night choice is required."
+        ],
+        "expectedRepetition": "About 8 Palace duty completions plus 2 authored progression milestones. Because D26 is locked to the ten ordinary professions only, this packet does not impose one Palace duty per day."
+      },
+      "surfaceAttachment": {
+        "entryOrientation": {
+          "stage": "entered-service",
+          "scenes": [
+            "palace.invitation.day1-arrival",
+            "palace.invitation.reveal",
+            "palace.entry.gates",
+            "palace.orientation.first-day",
+            "palace.orientation.handoff"
+          ]
+        },
+        "relationships": {
+          "official-contact": {
+            "intro": "entered-service",
+            "practicalHelp": "trusted-service",
+            "boundary": "outcome-ready"
+          },
+          "professional-patron": {
+            "intro": "trusted-service",
+            "trust": "trusted-service",
+            "conflict": "outcome-ready"
+          },
+          "rival": {
+            "intro": "trusted-service",
+            "cooperation": "trusted-service",
+            "conflict": "outcome-ready"
+          },
+          "optional-romance": {
+            "invitation": "outcome-ready",
+            "mode": "outcome-ready",
+            "required": false
+          }
+        },
+        "night": {
+          "palace.night.work-review": "available after orientation from entered-service onward",
+          "palace.night.social-conversation": "available from trusted-service onward",
+          "forcedNightOwnership": false
+        },
+        "legacyItems": {
+          "entryAndOrientation": [
+            "artist_handle_invitation",
+            "artist_formal_presence",
+            "official_guard_access",
+            "guard_sealed_pass"
+          ],
+          "trustedServiceWorkVariants": [
+            "merchant_verify_manifest",
+            "merchant_handle_samples",
+            "access_guest_rooms_staff",
+            "cross_rough_route",
+            "preserve_specimen",
+            "prostitute_handle_evidence"
+          ],
+          "requiredForProgression": false,
+          "requiredForPalaceEntry": false
+        }
+      },
+      "nonTrueOutcomeBranchPoints": [
+        {
+          "family": "service-life",
+          "stage": "outcome-ready",
+          "branchPoint": "Completion-only Service Life resolution event after general Palace progression completes.",
+          "baselinePath": "General Palace work continuity; relationships/items/Night may add variants but are not required.",
+          "writes": "palace.outcome.service-life-ready",
+          "autoEndsRun": false
+        },
+        {
+          "family": "court-power",
+          "stage": "outcome-ready",
+          "branchPoint": "Completion-only Court Power resolution event after general Palace progression completes.",
+          "baselinePath": "Professional responsibility/network route; patron, rival and official-contact relationship states may add responses. Romance is never required.",
+          "writes": "palace.outcome.court-power-ready",
+          "autoEndsRun": false
+        },
+        {
+          "family": "inner-truth",
+          "stage": "outcome-ready",
+          "branchPoint": "Completion-only Inner Truth resolution event after general Palace progression completes.",
+          "baselinePath": "A neutral evidence/interpretation work path must exist; legacy-item and Night evidence options may add variants but cannot be mandatory.",
+          "writes": "palace.outcome.inner-truth-ready",
+          "autoEndsRun": false
+        }
+      ],
+      "progressionCompleteSignal": {
+        "kind": "worldFact",
+        "fact": "palace.progression-complete",
+        "emittedOn": "transition trusted-service -> outcome-ready"
+      },
+      "princeAvailability": {
+        "earliestStage": "outcome-ready",
+        "conditions": [
+          "palace.access-granted",
+          "palace.progression-complete",
+          "all 12 progression stats >=91",
+          "palace.prince-defeated absent"
+        ],
+        "confrontationModel": "deferred to v9 Leader/Product decision"
+      },
+      "saveReload": {
+        "careerState": "Existing run.progression.careers['palace'] persists stage/counters/facts/choices.",
+        "events": "Existing pendingScene and reaction.queued persist latched progression/branch scenes.",
+        "nights": "Existing NightFlow persistence applies; Palace voluntary Night never owns forced Night.",
+        "noMetaStagePersistence": true,
+        "replayRule": "Reload never recomputes a completed stage from scratch; serialized stage/counter/facts remain authoritative for the run."
+      },
+      "authoredProductionCost": {
+        "existingReusableSceneCount": 16,
+        "existingReusableNightChoiceCount": 2,
+        "newTopologySpecificEventsEstimate": "5-7",
+        "estimatedTotalPalaceScenesBeforePrince": "21-23",
+        "localizationCost": "medium",
+        "testMatrixCost": "medium-low",
+        "implementationSurface": "one Palace career machine + repeatable work action + 5-7 progression/outcome events + localization/UI exposure"
+      },
+      "riskAssessment": {
+        "grindRisk": "low",
+        "tooShortRisk": "medium-high",
+        "mainFailureMode": "After a very long 10-career meta journey, Palace itself may feel compressed if 8 duties and two transitions make relationships/outcome families appear too quickly.",
+        "mitigation": "Require orientation + neutral capstone and distribute existing relationship scenes between trusted-service and outcome-ready rather than firing them immediately."
+      }
+    },
+    {
+      "id": "RICH_6_STAGE",
+      "stageCount": 6,
+      "stages": [
+        {
+          "id": "entered-service",
+          "label": "Entered Service",
+          "function": "Invitation accepted; orientation and first practical duties."
+        },
+        {
+          "id": "working-rhythm",
+          "label": "Working Rhythm",
+          "function": "Routine Palace work is understood; practical contact and early optional legacy variants attach here."
+        },
+        {
+          "id": "trusted-service",
+          "label": "Trusted Service",
+          "function": "The heroine receives broader responsibility; professional patron/rival routes and Service Life branch preparation become meaningful."
+        },
+        {
+          "id": "palace-network",
+          "label": "Palace Network",
+          "function": "Cross-service coordination and professional relationship depth; Court Power branch preparation attaches here."
+        },
+        {
+          "id": "crossroads",
+          "label": "Crossroads",
+          "function": "Later responsibility/evidence/interpretation choices converge; Inner Truth branch preparation attaches here."
+        },
+        {
+          "id": "outcome-ready",
+          "label": "Outcome Ready",
+          "function": "General Palace progression is complete; all completion-only outcome checks and True confrontation gate can evaluate."
+        }
+      ],
+      "candidateMachine": {
+        "id": "palace",
+        "label": "Palace progression — rich planning skeleton",
+        "initialStage": "entered-service",
+        "stages": [
+          "entered-service",
+          "working-rhythm",
+          "trusted-service",
+          "palace-network",
+          "crossroads",
+          "outcome-ready"
+        ],
+        "transitions": [
+          {
+            "id": "establish-working-rhythm",
+            "from": [
+              "entered-service"
+            ],
+            "to": "working-rhythm",
+            "conditions": [
+              {
+                "kind": "careerCounter",
+                "career": "palace",
+                "counter": "completed_duties",
+                "op": "gte",
+                "value": 2
+              },
+              {
+                "kind": "careerFact",
+                "career": "palace",
+                "fact": "orientation-complete",
+                "present": true
+              }
+            ],
+            "effects": []
+          },
+          {
+            "id": "establish-trusted-service",
+            "from": [
+              "working-rhythm"
+            ],
+            "to": "trusted-service",
+            "conditions": [
+              {
+                "kind": "careerCounter",
+                "career": "palace",
+                "counter": "completed_duties",
+                "op": "gte",
+                "value": 5
+              }
+            ],
+            "effects": []
+          },
+          {
+            "id": "establish-palace-network",
+            "from": [
+              "trusted-service"
+            ],
+            "to": "palace-network",
+            "conditions": [
+              {
+                "kind": "careerCounter",
+                "career": "palace",
+                "counter": "completed_duties",
+                "op": "gte",
+                "value": 8
+              },
+              {
+                "kind": "careerFact",
+                "career": "palace",
+                "fact": "coordination-milestone-resolved",
+                "present": true
+              }
+            ],
+            "effects": []
+          },
+          {
+            "id": "reach-crossroads",
+            "from": [
+              "palace-network"
+            ],
+            "to": "crossroads",
+            "conditions": [
+              {
+                "kind": "careerCounter",
+                "career": "palace",
+                "counter": "completed_duties",
+                "op": "gte",
+                "value": 12
+              },
+              {
+                "kind": "careerFact",
+                "career": "palace",
+                "fact": "network-milestone-resolved",
+                "present": true
+              }
+            ],
+            "effects": []
+          },
+          {
+            "id": "complete-palace-progression",
+            "from": [
+              "crossroads"
+            ],
+            "to": "outcome-ready",
+            "conditions": [
+              {
+                "kind": "careerCounter",
+                "career": "palace",
+                "counter": "completed_duties",
+                "op": "gte",
+                "value": 15
+              },
+              {
+                "kind": "careerFact",
+                "career": "palace",
+                "fact": "capstone-resolved",
+                "present": true
+              }
+            ],
+            "effects": [
+              {
+                "kind": "addWorldFact",
+                "fact": "palace.progression-complete"
+              }
+            ]
+          }
+        ]
+      },
+      "advancement": {
+        "repeatableWork": "One generic Palace daytime work/duty completion increments palace.completed_duties. Exact production action ID, rewards and cadence remain separate implementation decisions.",
+        "stageTargets": [
+          "entered-service -> working-rhythm: orientation complete + 2 total duties",
+          "working-rhythm -> trusted-service: 5 total duties",
+          "trusted-service -> palace-network: 8 total duties + coordination milestone",
+          "palace-network -> crossroads: 12 total duties + network milestone",
+          "crossroads -> outcome-ready: 15 total duties + neutral capstone"
+        ],
+        "expectedRepetition": "About 15 Palace duty completions plus 4-5 authored stage milestones. This packet does not impose the ordinary one-same-career-shift-per-day rule on Palace."
+      },
+      "surfaceAttachment": {
+        "entryOrientation": {
+          "stage": "entered-service",
+          "scenes": [
+            "palace.invitation.day1-arrival",
+            "palace.invitation.reveal",
+            "palace.entry.gates",
+            "palace.orientation.first-day",
+            "palace.orientation.handoff"
+          ]
+        },
+        "relationships": {
+          "official-contact": {
+            "intro": "working-rhythm",
+            "practicalHelp": "trusted-service",
+            "boundary": "crossroads"
+          },
+          "professional-patron": {
+            "intro": "trusted-service",
+            "trust": "palace-network",
+            "conflict": "crossroads"
+          },
+          "rival": {
+            "intro": "trusted-service",
+            "cooperation": "palace-network",
+            "conflict": "crossroads"
+          },
+          "optional-romance": {
+            "invitation": "crossroads",
+            "mode": "crossroads or outcome-ready",
+            "required": false
+          }
+        },
+        "night": {
+          "palace.night.work-review": "available from working-rhythm onward",
+          "palace.night.social-conversation": "available from trusted-service onward",
+          "forcedNightOwnership": false
+        },
+        "legacyItems": {
+          "entryAndOrientation": [
+            "artist_handle_invitation",
+            "artist_formal_presence",
+            "official_guard_access",
+            "guard_sealed_pass"
+          ],
+          "workingRhythm": [
+            "access_guest_rooms_staff",
+            "cross_rough_route"
+          ],
+          "trustedServiceAndNetwork": [
+            "merchant_verify_manifest",
+            "merchant_handle_samples",
+            "preserve_specimen"
+          ],
+          "crossroads": [
+            "prostitute_handle_evidence",
+            "preserve_specimen",
+            "merchant_verify_manifest"
+          ],
+          "requiredForProgression": false,
+          "requiredForPalaceEntry": false
+        }
+      },
+      "nonTrueOutcomeBranchPoints": [
+        {
+          "family": "service-life",
+          "preparationStage": "trusted-service",
+          "completionStage": "outcome-ready",
+          "branchPoint": "At trusted-service, an optional continuity-of-service event can mark Service Life intent/readiness preparation.",
+          "baselinePath": "Palace duties alone provide a baseline route; optional contact/Night variants deepen the scene.",
+          "writes": "palace.outcome.service-life-ready only after completion-stage resolution",
+          "trueRouteStillOpen": true
+        },
+        {
+          "family": "court-power",
+          "preparationStage": "palace-network",
+          "completionStage": "outcome-ready",
+          "branchPoint": "At palace-network, a professional responsibility/network event begins Court Power preparation.",
+          "baselinePath": "Professional patron/rival/official-contact states can branch responses; romance remains irrelevant.",
+          "writes": "palace.outcome.court-power-ready only after completion-stage resolution",
+          "trueRouteStillOpen": true
+        },
+        {
+          "family": "inner-truth",
+          "preparationStage": "crossroads",
+          "completionStage": "outcome-ready",
+          "branchPoint": "At crossroads, an evidence/interpretation event begins Inner Truth preparation.",
+          "baselinePath": "A no-item work/evidence route is mandatory; legacy capabilities and voluntary Night can expose alternate evidence handling.",
+          "writes": "palace.outcome.inner-truth-ready only after completion-stage resolution",
+          "trueRouteStillOpen": true
+        }
+      ],
+      "progressionCompleteSignal": {
+        "kind": "worldFact",
+        "fact": "palace.progression-complete",
+        "emittedOn": "transition crossroads -> outcome-ready"
+      },
+      "princeAvailability": {
+        "earliestStage": "outcome-ready",
+        "conditions": [
+          "palace.access-granted",
+          "palace.progression-complete",
+          "all 12 progression stats >=91",
+          "palace.prince-defeated absent"
+        ],
+        "confrontationModel": "deferred to v9 Leader/Product decision"
+      },
+      "saveReload": {
+        "careerState": "Existing run.progression.careers['palace'] persists stage/counters/facts/choices across all six stages.",
+        "events": "Latched stage-milestone and branch scenes persist pending/queued identity and allowed choices.",
+        "relationships": "Existing relationship state persists independently of Palace stage; stage gates only control when scenes can first appear.",
+        "nights": "Existing NightFlow persistence applies; forced Night remains owned elsewhere.",
+        "noMetaStagePersistence": true,
+        "replayRule": "Reload resumes the serialized stage plus any pending milestone; it must not auto-skip intermediate stages because the duty counter is already above a later threshold."
+      },
+      "authoredProductionCost": {
+        "existingReusableSceneCount": 16,
+        "existingReusableNightChoiceCount": 2,
+        "newTopologySpecificEventsEstimate": "10-14",
+        "estimatedTotalPalaceScenesBeforePrince": "26-30",
+        "localizationCost": "medium-high",
+        "testMatrixCost": "high",
+        "implementationSurface": "one six-stage Palace career machine + repeatable work action + 10-14 progression/outcome events + more stage-gated localization/UI states"
+      },
+      "riskAssessment": {
+        "grindRisk": "medium",
+        "tooShortRisk": "low",
+        "mainFailureMode": "If all 15 duties are the same button, the extra stages become cosmetic gates and Palace can feel like another ordinary grind after the user already earned ten Hard Works.",
+        "mitigation": "Each middle stage must unlock a distinct authored surface or work-context choice; relationships/items/Night remain optional, while milestone events make stage changes perceptible without requiring 50-shift pacing."
+      }
+    }
+  ],
+  "comparison": {
+    "shared": [
+      "Same D23 Day-1 invitation/access rule.",
+      "Same three non-True outcome families.",
+      "Same completion-only outcome resolution policy.",
+      "Same palace.progression-complete signal for v9 confrontation gating.",
+      "Same all-12 >=91 True readiness and Lust exclusion.",
+      "Same separate Prince-defeat and Return Home ending commit.",
+      "No hardWork:palace.",
+      "No item/relationship/romance/Night requirement for general Palace progression."
+    ],
+    "compact": {
+      "strongestAdvantage": "Lowest production and regression surface; Palace feels like a short capstone route after the long 10-career Meta journey.",
+      "strongestRisk": "Relationship and outcome content crowds into only two post-entry states, making Palace progression feel abrupt.",
+      "planningWorkCompletions": 8,
+      "newEventEstimate": "5-7"
+    },
+    "rich": {
+      "strongestAdvantage": "Clear pacing space for existing v5 relationships, optional Night and three outcome families without stacking them into one final stage.",
+      "strongestRisk": "Can become grindy or cosmetically over-staged if stage changes are driven by repeated identical work.",
+      "planningWorkCompletions": 15,
+      "newEventEstimate": "10-14"
+    }
+  },
+  "acceptanceMatrix": [
+    {
+      "id": "V10-A01",
+      "scope": "both",
+      "assertion": "D23 invitation/access remains external to Palace progression stages and has no second gate."
+    },
+    {
+      "id": "V10-A02",
+      "scope": "both",
+      "assertion": "Palace progression begins only after palace.access-granted."
+    },
+    {
+      "id": "V10-A03",
+      "scope": "both",
+      "assertion": "General progression to outcome-ready requires no romance, relationship, legacy item or voluntary Night choice."
+    },
+    {
+      "id": "V10-A04",
+      "scope": "both",
+      "assertion": "No Palace stage or ending grants hardWork:palace or contributes to ordinary 10/10."
+    },
+    {
+      "id": "V10-A05",
+      "scope": "both",
+      "assertion": "palace.progression-complete is emitted exactly once on entry to outcome-ready."
+    },
+    {
+      "id": "V10-A06",
+      "scope": "both",
+      "assertion": "Prince confrontation cannot become available before palace.progression-complete."
+    },
+    {
+      "id": "V10-A07",
+      "scope": "both",
+      "assertion": "Prince confrontation additionally requires all 12 progression stats >=91 and excludes Lust."
+    },
+    {
+      "id": "V10-A08",
+      "scope": "both",
+      "assertion": "A cap-200 run still uses raw >=91 rather than a normalized threshold."
+    },
+    {
+      "id": "V10-A09",
+      "scope": "both",
+      "assertion": "Service Life, Court Power and Inner Truth remain completion-only; preparation does not auto-end or block True route."
+    },
+    {
+      "id": "V10-A10",
+      "scope": "both",
+      "assertion": "Optional romance refusal never blocks Palace progression or any ending family."
+    },
+    {
+      "id": "V10-A11",
+      "scope": "both",
+      "assertion": "Legacy item capabilities only add variants/choices and never substitute for Palace access or progression requirements."
+    },
+    {
+      "id": "V10-A12",
+      "scope": "both",
+      "assertion": "Palace voluntary Night does not own forced Night and cannot bypass a separate forced-Night owner."
+    },
+    {
+      "id": "V10-A13",
+      "scope": "both",
+      "assertion": "Save/reload preserves Palace career stage, duty counters, facts, choices, pending scene and queued latched events."
+    },
+    {
+      "id": "V10-A14",
+      "scope": "both",
+      "assertion": "Reload with a high duty counter does not auto-skip unresolved intermediate milestone events."
+    },
+    {
+      "id": "V10-A15",
+      "scope": "compact",
+      "assertion": "Compact topology has exactly 3 stages and completes general progression at 8 planned duty completions plus capstone."
+    },
+    {
+      "id": "V10-A16",
+      "scope": "compact",
+      "assertion": "All three non-True outcome branch resolutions attach at outcome-ready and remain distinct."
+    },
+    {
+      "id": "V10-A17",
+      "scope": "rich",
+      "assertion": "Rich topology has exactly 6 stages with planning targets 2,5,8,12,15 duties."
+    },
+    {
+      "id": "V10-A18",
+      "scope": "rich",
+      "assertion": "Service Life preparation attaches at trusted-service, Court Power at palace-network, Inner Truth at crossroads."
+    },
+    {
+      "id": "V10-A19",
+      "scope": "rich",
+      "assertion": "All three non-True outcomes still resolve only after outcome-ready despite earlier preparation points."
+    },
+    {
+      "id": "V10-A20",
+      "scope": "both",
+      "assertion": "No Prince name/lore or final confrontation mechanics are introduced by the topology decision."
+    }
+  ],
+  "leaderDecisionQuestions": [
+    "Choose COMPACT_3_STAGE or RICH_6_STAGE.",
+    "Are the planning targets (~8 vs ~15 Palace duty completions) acceptable as pacing envelopes, with exact thresholds left to the implementation/balance pass?",
+    "Should non-True branch preparation remain non-exclusive until the player commits an ending, or should Product later require one branch choice to lock the other non-True families?",
+    "Should Palace duty cadence remain unrestricted by D26, or should a separate Palace-specific per-day cadence be decided later?"
+  ],
+  "explicitNonGoals": [
+    "No production implementation.",
+    "No Prince name/lore/mechanics.",
+    "No choice among v9 confrontation models.",
+    "No original Plus Mode.",
+    "No hardWork:palace.",
+    "No shared Meta/Save/cap rewrite.",
+    "No Palace-specific daily pacing rule is invented."
+  ]
+}
