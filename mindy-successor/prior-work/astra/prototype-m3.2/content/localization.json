@@ -13093,6 +13093,10 @@
     "presentation.static.prostitute.night.client-private.alt": {
       "ru": "Добровольное приватное продолжение с постоянным клиентом в обычной комнате без подразумеваемого согласия.",
       "en": "A voluntary private-space continuation with the recurring client in normal lodging without implied consent."
+    },
+    "ui.night.sequence.finishText": {
+      "ru": "Завершить выбранную ночную сцену без дополнительных условий.",
+      "en": "Finish the chosen Night scene without adding any further condition."
     }
   }
 }
