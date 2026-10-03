@@ -1,102 +1,122 @@
 # CURRENT CHAT3 TASK POINTER
 
-Status: **ACTIVE — TRADE CORRIDOR PRODUCTION v13**
+Status: **ACTIVE — ANOMALOUS REACH PRODUCTION v14**
 Owner: Chat 3
 
 Accepted frozen producer candidate:
-`chat3/forest-frontier-production-hardening-v12@d151e4b99378d56bf17397cc0df8aa0fffa9d68a`
+`chat3/trade-corridor-production-v13@d176dea7c640d34e12dbb3abf94c9b7895fd43bb`
 
 Leader disposition:
 **ACCEPTED FOR CHAT2 ASSEMBLY QUEUE**.
 
-Forest v12 now provides the first production-ready D36 region candidate:
-- typed Field Time;
-- deterministic save/resume;
-- Tracking Triangulation state;
-- success / failure / escape;
-- seasonal/capability route structure;
-- compatibility with existing Lumber/Tavern/Undead/Hunter Forest consumers.
-
-Do not modify the frozen v12 head.
+Trade Corridor v13 remains frozen. Do not mutate it.
 
 ## New assignment
 
-Build D36 Region 2 — **Trade Corridor** — on top of the accepted Forest/shared Activity runtime.
+Build D36 Region 3 — **Anomalous Reach** — as the mid/late Activity region.
 
 New branch:
-`chat3/trade-corridor-production-v13`
+`chat3/anomalous-reach-production-v14`
 
 Base:
-`d151e4b99378d56bf17397cc0df8aa0fffa9d68a`
+`d176dea7c640d34e12dbb3abf94c9b7895fd43bb`
 
 No full CI.
 
 ## Production target
 
-Trade Corridor is early/mid Activity content and must be a real playable region, not a single event.
+Implement a real playable region using the shared Activity runtime from Forest/Trade Corridor.
 
-Implement a functional non-final-lore region with:
+Requirements:
 - at least 3 route contexts;
 - at least 1 shortcut;
-- at least 1 capability/fact-gated option;
+- at least 1 capability/fact-gated route;
 - at least 1 season-sensitive edge;
-- at least 1 information/risk choice;
+- at least 1 information/risk decision;
 - >=2 meaningful capability/equipment hooks;
-- Field Time through the shared D36 runtime;
-- explicit continue/detour/escape;
-- success/failure/escape;
+- Field Time through the shared runtime;
+- explicit continue / detour / escape;
+- success / failure / escape;
 - deterministic save/reload;
 - city preparation -> Activity feedback;
-- Activity -> city/career/contact feedback;
-- at least one contact/network thread suitable for the D38 Network family.
+- Activity -> city/career/School/contact feedback;
+- mid/late difficulty identity distinct from Forest and Trade Corridor;
+- no universal Activity XP.
 
-Do not create a universal Activity XP bar.
+## Specialized mini-game
 
-## Mini-game rule
+Anomalous Reach owns the first production instance of:
 
-Reuse the accepted D36 mini-game families only.
+**Pattern / Ritual Circuit**
 
-Trade Corridor may reuse Tracking Triangulation where route verification fits.
-Do not invent a fourth universal mini-game family.
+Implement a bounded deterministic typed mini-game/state machine.
 
-Do not implement final Restricted-Sites Infiltration ownership here unless only a minimal shared registry/interface is required.
+It must:
+- involve multiple player observations/choices;
+- persist safely across save/reload;
+- support success / failure / abort;
+- not be a single stat check;
+- not auto-complete the regional anchor;
+- produce typed result/fact/evidence;
+- remain distinct from Tracking Triangulation;
+- avoid becoming generic magic-combat.
+
+If a minimal shared registry/shell is needed for the mini-game family, keep it narrow and compatible with Forest/Trade Corridor.
 
 ## D38 seams
 
-Add typed Trade Corridor anchor/result markers sufficient for later:
-- Pathfinder;
-- Preservation where justified;
-- Network;
+Add stable typed Anomalous Reach markers for:
+- Pathfinder where appropriate;
+- Preservation;
+- Network only where a real contact/network thread exists;
 - meaningful extracted evidence/sample/capability;
-- contact thread.
+- research-grade secured-result candidate;
+- contact/companion thread.
 
-Do not make any standalone Activity ending reachable from Trade Corridor + Forest alone unless the exact D38 common baseline is genuinely satisfied.
+Do not make a D38 ending prematurely completable unless the exact common baseline is genuinely satisfied.
 
-## Compatibility
+## Existing systems
 
-Preserve all Forest v12 typed results and current ordinary-career consumers.
-Do not regress D23, NightFlow, Secret Debt boundaries or Activity entry cost = 2 Energy.
+Preserve:
+- Activity entry = 2 Energy;
+- Forest v12 behavior;
+- Trade Corridor v13 behavior;
+- D23 Palace gate;
+- NightFlow ownership;
+- Secret Debt Activity availability while bound;
+- no Activity item/capability becomes a Palace substitute.
+
+## Pacing
+
+Target:
+- regional anchor resolvable in <=3 successful entries after city prep;
+- do not make Anomalous Reach a 20-entry grind;
+- do not require all possible route contexts in one run.
 
 ## Focused QA
 
 Producer worker: no full CI.
 
-Run focused:
+Run/prepare focused checks for:
 - typecheck;
 - validate;
 - build;
 - Forest v12 regressions;
-- new Trade Corridor route tests;
-- Field Time/save-reload;
-- success/failure/escape;
+- Trade Corridor v13 regressions;
+- Anomalous Reach routes;
+- Pattern/Ritual Circuit transitions;
+- success/failure/abort;
+- Field Time;
+- save/reload mid-mini-game;
 - season edge;
 - capability hooks;
-- contact thread;
-- D38 non-premature ending eligibility;
-- 2-Energy entry preservation.
+- D38 marker correctness;
+- no premature ending eligibility;
+- 2-Energy entry preservation;
+- Palace/Secret Debt/Night firewalls.
 
 Deliver:
-`mindy-successor/docs/tasks/CHAT3_TRADE_CORRIDOR_PRODUCTION_v13.md`
+`mindy-successor/docs/tasks/CHAT3_ANOMALOUS_REACH_PRODUCTION_v14.md`
 
 Freeze exact SHA and report:
 `READY_FOR_CHAT2_ASSEMBLY`.
