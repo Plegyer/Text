@@ -179,6 +179,26 @@ function enterNight(state:Save,tier:HousingTier):Save{
   const lodging=catalog.definitions.lodgings.find(item=>item.housing===tier&&eligible(item.conditions,next,catalog));
   assert.ok(lodging,'missing '+tier+' lodging');
   next=dispatch(next,{type:'chooseLodging',id:lodging.id},catalog);
+
+  // Existing housing content may surface a non-consuming post-lodging scene
+  // before the voluntary menu. Resolve only those scenes. A consuming Night
+  // here is a real precedence failure and must remain a hard test failure.
+  let guard=0;
+  while(next.run.pending&&next.run.flow.night?.phase==='NightEventResolution'){
+    if(++guard>8)throw new Error('post-lodging Night setup loop');
+    const pendingEvent=catalog.events.find(event=>event.id===next.run.pending?.eventId);
+    assert.ok(pendingEvent,'missing pending post-lodging event');
+    assert.equal(
+      pendingEvent.nightPolicy?.consumesNight,
+      false,
+      pendingEvent.id+' unexpectedly consumes the voluntary Night slot'
+    );
+    const exit=pendingEvent.choices.find(choice=>eligible(choice.conditions,next,catalog)&&choice.effects.length===0)
+      ??pendingEvent.choices.find(choice=>eligible(choice.conditions,next,catalog));
+    assert.ok(exit,pendingEvent.id+' has no eligible setup exit');
+    next=dispatch(next,{type:'choice',id:exit.id},catalog);
+  }
+
   assert.equal(next.run.flow.night?.phase,'VoluntaryNightChoice');
   assert.equal(next.run.housingState.current,tier);
   return next;
