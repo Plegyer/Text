@@ -278,7 +278,7 @@ test('protected Meta merge unions transaction proof',()=>{
   assert.ok(merged.meta.unlocks.includes('external.unlock'));
 });
 
-test('pre-A6 ended schema4 save migrates to v5 with compatibility RunResult and no reward duplication',()=>{
+test('pre-A6 ended schema4 save migrates to v6 with compatibility RunResult and no reward duplication',()=>{
   const cat=catalog();
   let s=freshReady(cat);
   s=dispatch(s,{type:'accept',id:'legacy.test'},cat);
@@ -292,7 +292,7 @@ test('pre-A6 ended schema4 save migrates to v5 with compatibility RunResult and 
   const beforeUnlocks=[...raw.meta.unlocks];
 
   const restored=parseSave(JSON.stringify(raw),cat);
-  assert.equal(restored.schemaVersion,5);
+  assert.equal(restored.schemaVersion,6);
   assert.equal(restored.run.status,'ended');
   assert.ok(restored.run.endings.result);
   assert.equal(restored.run.endings.result?.firstCompletion,false);
