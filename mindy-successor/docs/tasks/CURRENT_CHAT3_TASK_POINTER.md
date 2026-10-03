@@ -1,46 +1,48 @@
 # CURRENT CHAT3 TASK POINTER
 
-Status: **ACTIVE — PROGRESSION POLICY COMPARISON v4**
+Status: **ACTIVE — FLOOR-AWARE NEGATIVE TARGET MAP v5**
 Owner: Chat 3
 
-Reusable harness frozen:
-`chat3/progression-balance-harness-v3@e631af2e17675c27309aa1b8bd5a6161a1090ce8`
+Accepted prior packet:
+`chat3/progression-policy-comparison-v4@135efa45c291642fabc52bd49cbafc7111418cd3`
 
-Preserve the harness branch frozen.
+Leader/Product lock:
+- D26 recorded on `main@0c8926049a4b4ee4fda0574cea588d39f39dd14e`.
+- For the 10 ordinary professions: max **1 shift of the same profession per calendar day**.
+- This is not a global work-action cap; different ordinary professions may still be worked on the same day if Energy/access allow.
+- Hard Work remains exactly 50 completed shifts.
+- No broad positive work-stat nerf is authorized by D26.
 
-Create:
-`chat3/progression-policy-comparison-v4`
-from the frozen harness head.
+Branch:
+`chat3/progression-floor-aware-negative-map-v5`
+
+Branch was created by Leader from `main@0c8926049a4b4ee4fda0574cea588d39f39dd14e`.
+Branch existence is only dispatch state; first real worker commit is required before this lane counts as moving.
 
 ## Assignment
 
-Use the harness to produce a compact Product decision packet. Do not change production mechanics.
+Produce an exact Product decision packet for the remaining ordinary seasonal-negative target question. No production edits.
 
-Compare at minimum:
-- current Energy-only repeated same-career shifts;
-- max 2 same-career shifts/day;
-- max 1 same-career shift/day.
+Preserve the already-shipped structural rule:
+- two negative seasons out of four per ordinary profession;
+- one `-1` progression-stat effect in each selected negative season;
+- no Lust negatives;
+- no same-season positive/negative cancellation on the same stat;
+- do not change wages, costs, Hard Work=50, D26 cadence, unlocks, or positive seasonal effects.
 
-For each, run:
-- base and focused starting allocation;
-- current seasonal negatives;
-- alternate research negative-target map;
-- no School;
-- one targeted School lesson every 10 days;
-- cap 100 analysis.
+Deliver:
+- exact proposed 20-cell profession/season -> negative-stat map;
+- current shipped map vs proposal;
+- rationale per profession based on actual work-grown/wage-relevant stats and floor clipping;
+- harness results under D26 max1/day for base + focused starts;
+- no School + targeted paid School every 10 days;
+- realized negative pressure by profession and aggregate;
+- strongest-stat day-to-100 / cap reach by Day 160;
+- money by Hard Work=50;
+- any proposal cell that creates a dominant build or over-punishes a starter profession;
+- minimal regression contract for later producer implementation.
 
-Report:
-- calendar day to Hard Work=50;
-- earliest/median/latest strongest-stat day-to-100 across the ten careers;
-- realized negative pressure vs floor clipping;
-- money earned by Hard Work=50;
-- event/milestone density risk.
-
-Then give two smallest coherent successor policy packages:
-A. preserve faster work repetition with compensating stat/pacing controls;
-B. slower same-career repetition with minimal extra nerfs.
-
-Do not select Product authority.
 Do not use original-game numbers as targets.
-No production edits, no full CI.
-Freeze SHA and report `READY_FOR_LEADER_PRODUCT_DECISION`.
+Do not implement runtime/content.
+No full CI.
+Freeze exact SHA and report `READY_FOR_LEADER_PRODUCT_DECISION`.
