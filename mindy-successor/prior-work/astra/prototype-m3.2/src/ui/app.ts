@@ -59,7 +59,7 @@ const eventChoiceLabel=(eventId:string,choiceId:string,fallback:string)=>{
 };
 const eventChoiceText=(eventId:string,choiceId:string,fallback:string)=>{
  const base=nightContentLocalizationBase(eventId);
- const localizedFallback=base&&choiceId==='continue'?tr(`${base}.body`,fallback):fallback;
+ const localizedFallback=base&&choiceId==='continue'?tr('ui.night.sequence.finishText',fallback):fallback;
  return tr(`event.${eventId}.choice.${choiceId}.text`,localizedFallback);
 };
 const mediaAlt=(mediaId:string|undefined,fallback:string)=>mediaId?tr(`media.${mediaId}.alt`,fallback):fallback;
