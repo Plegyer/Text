@@ -1,0 +1,45 @@
+{
+  "label": "v2-floor-aware-candidate",
+  "targets": {
+    "lumber": {
+      "spring": "dexterity",
+      "winter": "strength"
+    },
+    "satyr-maid": {
+      "summer": "sociability",
+      "autumn": "endurance"
+    },
+    "undead-farm": {
+      "spring": "strength",
+      "autumn": "magic"
+    },
+    "tavern": {
+      "spring": "manners",
+      "summer": "wits"
+    },
+    "hunter": {
+      "spring": "endurance",
+      "winter": "dexterity"
+    },
+    "guard": {
+      "summer": "manners",
+      "winter": "strength"
+    },
+    "merchant": {
+      "summer": "wits",
+      "winter": "charm"
+    },
+    "artist-geisha": {
+      "summer": "manners",
+      "autumn": "charm"
+    },
+    "assassin": {
+      "spring": "reason",
+      "winter": "wits"
+    },
+    "prostitute": {
+      "summer": "sexuality",
+      "winter": "manners"
+    }
+  }
+}
