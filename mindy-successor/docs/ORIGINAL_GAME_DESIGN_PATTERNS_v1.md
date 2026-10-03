@@ -230,6 +230,18 @@ The extracted original New Game+/Finale UI contains **66 ending-bonus descriptio
 
 This is useful as a diversity reference, not a target distribution. A successor Meta catalog should avoid filling most slots with numerically similar stat packages if it wants choices to feel distinct.
 
+### 32. Late-game sinks keep high wages meaningful
+The original pairs rising wages with expensive optional sinks:
+- six basic purchasable Titles cost roughly 15,000–20,000 each;
+- a separate stat-swap service exchanges progression at a lossy 2:1 ratio.
+
+Design lesson: high income is not automatically inflation if there are meaningful late-run goals that absorb money/progression. Successor economy tuning should evaluate wages together with School, lodging, Activities, debt and future optional sinks rather than compare wage numbers in isolation.
+
+### 33. Lossy respec can rescue a bad build without making choices free
+The original stat-swap service lets the player trade one stat into another at 2:1. UI supports 1/2/3 received points for 2/4/6 spent points.
+
+Design lesson: a late-game correction tool can reduce frustration from an early build mistake while preserving consequences through an efficiency loss. This is a useful future option for successor balance, not current Product scope.
+
 ## Successor implications to test, not auto-lock
 
 - Current approved successor seasonal-tradeoff candidate yields **+1.5 net progression-stat points per ordinary shift on average for all ten careers**. That is roughly +75 summed stat points across 50 shifts, versus about +25 in the recovered original work model. This is a balance-test flag, not a command to copy the original: verify progression speed and cap timing over a full 160-day run, especially with School and NG+.
