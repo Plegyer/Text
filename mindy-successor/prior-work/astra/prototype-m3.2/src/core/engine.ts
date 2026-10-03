@@ -346,6 +346,7 @@ function executePalaceSupportMutable(s:Save,a:Action,cat:Catalog){
   s.run.dayState.energyCurrent-=PALACE_SUPPORT_ENERGY_COST;
   palace.lastSupportActionDay=s.run.calendar.elapsedDays;
   palace.completedSupportIds.push(definition.id);
+  addUnique(palace.facts,definition.id);
   if(definition.writesPrep)markPalaceRoutePrepared(s,definition.route);
 
   s.run.actionCounts[a.id]=Math.min(1_000_000,(s.run.actionCounts[a.id]??0)+1);
