@@ -1,0 +1,1686 @@
+{
+  "formatVersion": 1,
+  "status": "READY_FOR_LEADER_ACCEPTANCE",
+  "authority": {
+    "richSixContract": "chat6/palace-rich6-stage-contract-v11@0d95f1e3f3267901efdb701f727e4cc54fec4ef0",
+    "princePacket": "chat6/palace-prince-confrontation-decision-v9@4de1a3925d499a6337a3c40c05b8b4aba9f3cc03",
+    "d29": true,
+    "d35PrivateSpace": true
+  },
+  "scope": {
+    "productionRuntime": false,
+    "productionUI": false,
+    "finalPrinceLore": false,
+    "finalMysteryTruth": false,
+    "palaceDailyCadence": null
+  },
+  "fifteenDutyMap": {
+    "exactDutyCount": 15,
+    "duties": [
+      {
+        "number": 1,
+        "id": "palace.duty.01-service-rotation",
+        "family": "service-rotation",
+        "stage": "entered-service",
+        "presentationFunction": "Establish repeatable service work: receive a bounded task, confirm ownership, complete the handoff, and close the loop.",
+        "emphasis": {
+          "stats": [
+            "manners",
+            "sociability"
+          ],
+          "capabilities": []
+        },
+        "optionalVariantHooks": {
+          "ordinaryCareerKnowledge": [
+            "satyr-maid",
+            "tavern"
+          ],
+          "schoolCourses": [
+            "school.course.rhetoric_and_social"
+          ],
+          "activities": [],
+          "itemCapabilities": [],
+          "relationships": []
+        },
+        "milestoneRelation": "No transition; establishes baseline duty grammar before the first milestone.",
+        "repetitionAvoidance": "Introduces the service-rotation grammar once; later Service Rotation duties change context rather than restating orientation.",
+        "mustNotGate": [
+          "Palace entry / D23 qualification",
+          "more than +1 palaceDutyCount credit",
+          "romance or relationship participation",
+          "Palace Night participation",
+          "legacy item ownership",
+          "School attendance",
+          "Activity completion",
+          "any non-True Palace outcome",
+          "Prince confrontation",
+          "Return Home"
+        ]
+      },
+      {
+        "number": 2,
+        "id": "palace.duty.02-logistics-support",
+        "family": "logistics-support",
+        "stage": "entered-service",
+        "presentationFunction": "Resolve a route/handoff mismatch using a baseline route, with optional access or pass recognition variants.",
+        "emphasis": {
+          "stats": [
+            "wits",
+            "dexterity"
+          ],
+          "capabilities": [
+            "official_guard_access",
+            "guard_sealed_pass"
+          ]
+        },
+        "optionalVariantHooks": {
+          "ordinaryCareerKnowledge": [
+            "guard",
+            "hunter"
+          ],
+          "schoolCourses": [
+            "school.course.field_craft"
+          ],
+          "activities": [
+            "hunter.expedition"
+          ],
+          "itemCapabilities": [
+            "official_guard_access",
+            "guard_sealed_pass",
+            "cross_rough_route"
+          ],
+          "relationships": []
+        },
+        "milestoneRelation": "This is the exact duty-2 completion that transitions Entered Service -> Working Rhythm and queues milestone-02.",
+        "repetitionAvoidance": "First route-focused duty; differs from Duty 1 by path selection and access-context variants.",
+        "mustNotGate": [
+          "Palace entry / D23 qualification",
+          "more than +1 palaceDutyCount credit",
+          "romance or relationship participation",
+          "Palace Night participation",
+          "legacy item ownership",
+          "School attendance",
+          "Activity completion",
+          "any non-True Palace outcome",
+          "Prince confrontation",
+          "Return Home"
+        ]
+      },
+      {
+        "number": 3,
+        "id": "palace.duty.03-records-review",
+        "family": "records-review",
+        "stage": "working-rhythm",
+        "presentationFunction": "Compare a register with a concrete handoff and distinguish verified information from an unchecked assumption.",
+        "emphasis": {
+          "stats": [
+            "reason",
+            "wits"
+          ],
+          "capabilities": [
+            "merchant_verify_manifest"
+          ]
+        },
+        "optionalVariantHooks": {
+          "ordinaryCareerKnowledge": [
+            "merchant"
+          ],
+          "schoolCourses": [
+            "school.course.literacy_and_numbers"
+          ],
+          "activities": [],
+          "itemCapabilities": [
+            "merchant_verify_manifest",
+            "merchant_handle_samples"
+          ],
+          "relationships": [
+            "palace.official-contact"
+          ]
+        },
+        "milestoneRelation": "First duty after milestone-02; demonstrates the newly unlocked Records Review family.",
+        "repetitionAvoidance": "Switches from physical routing to document/evidence verification.",
+        "mustNotGate": [
+          "Palace entry / D23 qualification",
+          "more than +1 palaceDutyCount credit",
+          "romance or relationship participation",
+          "Palace Night participation",
+          "legacy item ownership",
+          "School attendance",
+          "Activity completion",
+          "any non-True Palace outcome",
+          "Prince confrontation",
+          "Return Home"
+        ]
+      },
+      {
+        "number": 4,
+        "id": "palace.duty.04-service-rotation",
+        "family": "service-rotation",
+        "stage": "working-rhythm",
+        "presentationFunction": "Handle competing routine requests while preserving queue/order rather than solving the task by personal favor.",
+        "emphasis": {
+          "stats": [
+            "endurance",
+            "sociability"
+          ],
+          "capabilities": []
+        },
+        "optionalVariantHooks": {
+          "ordinaryCareerKnowledge": [
+            "satyr-maid",
+            "tavern",
+            "prostitute"
+          ],
+          "schoolCourses": [
+            "school.course.rhetoric_and_social"
+          ],
+          "activities": [],
+          "itemCapabilities": [],
+          "relationships": [
+            "palace.official-contact"
+          ]
+        },
+        "milestoneRelation": "Middle Working Rhythm duty; no stage transition.",
+        "repetitionAvoidance": "Reuses the family with queue-pressure and boundary presentation instead of the first-duty handoff.",
+        "mustNotGate": [
+          "Palace entry / D23 qualification",
+          "more than +1 palaceDutyCount credit",
+          "romance or relationship participation",
+          "Palace Night participation",
+          "legacy item ownership",
+          "School attendance",
+          "Activity completion",
+          "any non-True Palace outcome",
+          "Prince confrontation",
+          "Return Home"
+        ]
+      },
+      {
+        "number": 5,
+        "id": "palace.duty.05-logistics-support",
+        "family": "logistics-support",
+        "stage": "working-rhythm",
+        "presentationFunction": "Reroute a delayed handoff through a safe baseline route; optional terrain/staff-access knowledge changes presentation only.",
+        "emphasis": {
+          "stats": [
+            "dexterity",
+            "reason"
+          ],
+          "capabilities": [
+            "access_guest_rooms_staff",
+            "cross_rough_route"
+          ]
+        },
+        "optionalVariantHooks": {
+          "ordinaryCareerKnowledge": [
+            "hunter",
+            "tavern",
+            "guard"
+          ],
+          "schoolCourses": [
+            "school.course.field_craft"
+          ],
+          "activities": [
+            "hunter.expedition"
+          ],
+          "itemCapabilities": [
+            "access_guest_rooms_staff",
+            "cross_rough_route"
+          ],
+          "relationships": [
+            "palace.official-contact"
+          ]
+        },
+        "milestoneRelation": "Exact duty-5 completion transitions Working Rhythm -> Trusted Service and queues milestone-05.",
+        "repetitionAvoidance": "Second logistics duty introduces rerouting under delay rather than pass-checking from Duty 2.",
+        "mustNotGate": [
+          "Palace entry / D23 qualification",
+          "more than +1 palaceDutyCount credit",
+          "romance or relationship participation",
+          "Palace Night participation",
+          "legacy item ownership",
+          "School attendance",
+          "Activity completion",
+          "any non-True Palace outcome",
+          "Prince confrontation",
+          "Return Home"
+        ]
+      },
+      {
+        "number": 6,
+        "id": "palace.duty.06-coordination",
+        "family": "coordination",
+        "stage": "trusted-service",
+        "presentationFunction": "Coordinate two bounded workstreams with explicit responsibilities and a shared verification point.",
+        "emphasis": {
+          "stats": [
+            "charm",
+            "manners",
+            "sociability"
+          ],
+          "capabilities": []
+        },
+        "optionalVariantHooks": {
+          "ordinaryCareerKnowledge": [
+            "guard",
+            "merchant",
+            "artist-geisha"
+          ],
+          "schoolCourses": [
+            "school.course.rhetoric_and_social",
+            "school.course.etiquette_and_presentation"
+          ],
+          "activities": [],
+          "itemCapabilities": [],
+          "relationships": [
+            "palace.professional-patron",
+            "palace.rival",
+            "palace.official-contact"
+          ]
+        },
+        "milestoneRelation": "First Trusted Service duty; unlocks the coordination presentation surface after milestone-05.",
+        "repetitionAvoidance": "Introduces multi-person coordination rather than solo service/logistics/records work.",
+        "mustNotGate": [
+          "Palace entry / D23 qualification",
+          "more than +1 palaceDutyCount credit",
+          "romance or relationship participation",
+          "Palace Night participation",
+          "legacy item ownership",
+          "School attendance",
+          "Activity completion",
+          "any non-True Palace outcome",
+          "Prince confrontation",
+          "Return Home"
+        ]
+      },
+      {
+        "number": 7,
+        "id": "palace.duty.07-records-review",
+        "family": "records-review",
+        "stage": "trusted-service",
+        "presentationFunction": "Review a material record where observation and explanation must remain separate.",
+        "emphasis": {
+          "stats": [
+            "reason",
+            "magic"
+          ],
+          "capabilities": [
+            "preserve_specimen"
+          ]
+        },
+        "optionalVariantHooks": {
+          "ordinaryCareerKnowledge": [
+            "undead-farm",
+            "merchant"
+          ],
+          "schoolCourses": [
+            "school.course.arcana",
+            "school.course.literacy_and_numbers"
+          ],
+          "activities": [],
+          "itemCapabilities": [
+            "preserve_specimen",
+            "merchant_handle_samples"
+          ],
+          "relationships": [
+            "palace.professional-patron"
+          ]
+        },
+        "milestoneRelation": "Trusted Service duty with no transition.",
+        "repetitionAvoidance": "Records Review now concerns physical/material evidence rather than the register mismatch in Duty 3.",
+        "mustNotGate": [
+          "Palace entry / D23 qualification",
+          "more than +1 palaceDutyCount credit",
+          "romance or relationship participation",
+          "Palace Night participation",
+          "legacy item ownership",
+          "School attendance",
+          "Activity completion",
+          "any non-True Palace outcome",
+          "Prince confrontation",
+          "Return Home"
+        ]
+      },
+      {
+        "number": 8,
+        "id": "palace.duty.08-service-rotation",
+        "family": "service-rotation",
+        "stage": "trusted-service",
+        "presentationFunction": "Close a longer service chain by confirming what was completed, what remains open, and who owns the next step.",
+        "emphasis": {
+          "stats": [
+            "endurance",
+            "wits"
+          ],
+          "capabilities": []
+        },
+        "optionalVariantHooks": {
+          "ordinaryCareerKnowledge": [
+            "lumber",
+            "tavern",
+            "satyr-maid"
+          ],
+          "schoolCourses": [
+            "school.course.literacy_and_numbers"
+          ],
+          "activities": [
+            "lumber.forest"
+          ],
+          "itemCapabilities": [],
+          "relationships": [
+            "palace.professional-patron",
+            "palace.rival"
+          ]
+        },
+        "milestoneRelation": "Exact duty-8 completion transitions Trusted Service -> Palace Network and queues milestone-08.",
+        "repetitionAvoidance": "Third Service Rotation changes from direct handoff/queue pressure to multi-step closure and accountability.",
+        "mustNotGate": [
+          "Palace entry / D23 qualification",
+          "more than +1 palaceDutyCount credit",
+          "romance or relationship participation",
+          "Palace Night participation",
+          "legacy item ownership",
+          "School attendance",
+          "Activity completion",
+          "any non-True Palace outcome",
+          "Prince confrontation",
+          "Return Home"
+        ]
+      },
+      {
+        "number": 9,
+        "id": "palace.duty.09-formal-interface",
+        "family": "formal-interface",
+        "stage": "palace-network",
+        "presentationFunction": "Handle a formal-facing work exchange where protocol supports clarity but never substitutes for actual authorization.",
+        "emphasis": {
+          "stats": [
+            "manners",
+            "grooming",
+            "charm"
+          ],
+          "capabilities": [
+            "artist_formal_presence",
+            "artist_handle_invitation"
+          ]
+        },
+        "optionalVariantHooks": {
+          "ordinaryCareerKnowledge": [
+            "artist-geisha",
+            "guard"
+          ],
+          "schoolCourses": [
+            "school.course.etiquette_and_presentation",
+            "school.course.arts_and_performance"
+          ],
+          "activities": [],
+          "itemCapabilities": [
+            "artist_formal_presence",
+            "artist_handle_invitation",
+            "official_guard_access"
+          ],
+          "relationships": [
+            "palace.official-contact"
+          ]
+        },
+        "milestoneRelation": "First Palace Network duty; introduces the Formal Interface family.",
+        "repetitionAvoidance": "New protocol/formal presentation axis distinct from earlier work families.",
+        "mustNotGate": [
+          "Palace entry / D23 qualification",
+          "more than +1 palaceDutyCount credit",
+          "romance or relationship participation",
+          "Palace Night participation",
+          "legacy item ownership",
+          "School attendance",
+          "Activity completion",
+          "any non-True Palace outcome",
+          "Prince confrontation",
+          "Return Home"
+        ]
+      },
+      {
+        "number": 10,
+        "id": "palace.duty.10-coordination",
+        "family": "coordination",
+        "stage": "palace-network",
+        "presentationFunction": "Coordinate a shared result where credit, correction, and responsibility must remain traceable.",
+        "emphasis": {
+          "stats": [
+            "sociability",
+            "wits",
+            "charm"
+          ],
+          "capabilities": []
+        },
+        "optionalVariantHooks": {
+          "ordinaryCareerKnowledge": [
+            "merchant",
+            "artist-geisha",
+            "guard"
+          ],
+          "schoolCourses": [
+            "school.course.rhetoric_and_social"
+          ],
+          "activities": [],
+          "itemCapabilities": [],
+          "relationships": [
+            "palace.professional-patron",
+            "palace.rival",
+            "palace.official-contact"
+          ]
+        },
+        "milestoneRelation": "Palace Network duty; no structural transition.",
+        "repetitionAvoidance": "Coordination revisits the family through authorship/credit and boundary choices rather than task-splitting from Duty 6.",
+        "mustNotGate": [
+          "Palace entry / D23 qualification",
+          "more than +1 palaceDutyCount credit",
+          "romance or relationship participation",
+          "Palace Night participation",
+          "legacy item ownership",
+          "School attendance",
+          "Activity completion",
+          "any non-True Palace outcome",
+          "Prince confrontation",
+          "Return Home"
+        ]
+      },
+      {
+        "number": 11,
+        "id": "palace.duty.11-logistics-support",
+        "family": "logistics-support",
+        "stage": "palace-network",
+        "presentationFunction": "Plan a handoff through a constrained route while distinguishing official attention, route evidence, and actual access.",
+        "emphasis": {
+          "stats": [
+            "dexterity",
+            "wits"
+          ],
+          "capabilities": [
+            "guard_sealed_pass",
+            "cross_rough_route"
+          ]
+        },
+        "optionalVariantHooks": {
+          "ordinaryCareerKnowledge": [
+            "guard",
+            "hunter",
+            "assassin"
+          ],
+          "schoolCourses": [
+            "school.course.field_craft"
+          ],
+          "activities": [
+            "hunter.expedition",
+            "assassin.infiltration"
+          ],
+          "itemCapabilities": [
+            "guard_sealed_pass",
+            "cross_rough_route",
+            "official_guard_access"
+          ],
+          "relationships": [
+            "palace.rival"
+          ]
+        },
+        "milestoneRelation": "Palace Network duty; no structural transition.",
+        "repetitionAvoidance": "Third logistics duty combines route constraints and verified official context rather than simple access/rerouting.",
+        "mustNotGate": [
+          "Palace entry / D23 qualification",
+          "more than +1 palaceDutyCount credit",
+          "romance or relationship participation",
+          "Palace Night participation",
+          "legacy item ownership",
+          "School attendance",
+          "Activity completion",
+          "any non-True Palace outcome",
+          "Prince confrontation",
+          "Return Home"
+        ]
+      },
+      {
+        "number": 12,
+        "id": "palace.duty.12-records-review",
+        "family": "records-review",
+        "stage": "palace-network",
+        "presentationFunction": "Reconcile multiple records into a single checked summary while preserving source disagreements.",
+        "emphasis": {
+          "stats": [
+            "reason",
+            "wits"
+          ],
+          "capabilities": [
+            "merchant_verify_manifest",
+            "merchant_handle_samples"
+          ]
+        },
+        "optionalVariantHooks": {
+          "ordinaryCareerKnowledge": [
+            "merchant",
+            "assassin"
+          ],
+          "schoolCourses": [
+            "school.course.literacy_and_numbers"
+          ],
+          "activities": [
+            "assassin.infiltration"
+          ],
+          "itemCapabilities": [
+            "merchant_verify_manifest",
+            "merchant_handle_samples"
+          ],
+          "relationships": [
+            "palace.professional-patron",
+            "palace.rival"
+          ]
+        },
+        "milestoneRelation": "Exact duty-12 completion transitions Palace Network -> Crossroads and queues milestone-12.",
+        "repetitionAvoidance": "Third Records Review moves from one discrepancy/material observation to multi-source reconciliation.",
+        "mustNotGate": [
+          "Palace entry / D23 qualification",
+          "more than +1 palaceDutyCount credit",
+          "romance or relationship participation",
+          "Palace Night participation",
+          "legacy item ownership",
+          "School attendance",
+          "Activity completion",
+          "any non-True Palace outcome",
+          "Prince confrontation",
+          "Return Home"
+        ]
+      },
+      {
+        "number": 13,
+        "id": "palace.duty.13-evidence-review",
+        "family": "evidence-review",
+        "stage": "crossroads",
+        "presentationFunction": "Separate direct observation, sourced testimony, and unresolved interpretation without declaring a final mystery truth.",
+        "emphasis": {
+          "stats": [
+            "reason",
+            "wits",
+            "magic"
+          ],
+          "capabilities": [
+            "prostitute_handle_evidence",
+            "preserve_specimen"
+          ]
+        },
+        "optionalVariantHooks": {
+          "ordinaryCareerKnowledge": [
+            "prostitute",
+            "undead-farm",
+            "assassin"
+          ],
+          "schoolCourses": [
+            "school.course.arcana",
+            "school.course.literacy_and_numbers"
+          ],
+          "activities": [
+            "assassin.infiltration"
+          ],
+          "itemCapabilities": [
+            "prostitute_handle_evidence",
+            "preserve_specimen",
+            "merchant_verify_manifest"
+          ],
+          "relationships": [
+            "palace.official-contact"
+          ]
+        },
+        "milestoneRelation": "First Crossroads duty; introduces Evidence Review and may expose optional Inner Truth preparation afterward.",
+        "repetitionAvoidance": "Only Evidence Review duty in the required 15; creates a distinct late-stage analysis presentation.",
+        "mustNotGate": [
+          "Palace entry / D23 qualification",
+          "more than +1 palaceDutyCount credit",
+          "romance or relationship participation",
+          "Palace Night participation",
+          "legacy item ownership",
+          "School attendance",
+          "Activity completion",
+          "any non-True Palace outcome",
+          "Prince confrontation",
+          "Return Home"
+        ]
+      },
+      {
+        "number": 14,
+        "id": "palace.duty.14-formal-interface",
+        "family": "formal-interface",
+        "stage": "crossroads",
+        "presentationFunction": "Present a checked position in a formal setting while keeping performance, protocol, and factual certainty separate.",
+        "emphasis": {
+          "stats": [
+            "manners",
+            "charm",
+            "creativity"
+          ],
+          "capabilities": [
+            "artist_formal_presence"
+          ]
+        },
+        "optionalVariantHooks": {
+          "ordinaryCareerKnowledge": [
+            "artist-geisha",
+            "merchant"
+          ],
+          "schoolCourses": [
+            "school.course.etiquette_and_presentation",
+            "school.course.arts_and_performance"
+          ],
+          "activities": [],
+          "itemCapabilities": [
+            "artist_formal_presence",
+            "artist_handle_invitation"
+          ],
+          "relationships": [
+            "palace.professional-patron",
+            "palace.rival"
+          ]
+        },
+        "milestoneRelation": "Crossroads duty with no structural transition.",
+        "repetitionAvoidance": "Second formal duty shifts from protocol execution to presenting a bounded checked position.",
+        "mustNotGate": [
+          "Palace entry / D23 qualification",
+          "more than +1 palaceDutyCount credit",
+          "romance or relationship participation",
+          "Palace Night participation",
+          "legacy item ownership",
+          "School attendance",
+          "Activity completion",
+          "any non-True Palace outcome",
+          "Prince confrontation",
+          "Return Home"
+        ]
+      },
+      {
+        "number": 15,
+        "id": "palace.duty.15-coordination",
+        "family": "coordination",
+        "stage": "crossroads",
+        "presentationFunction": "Coordinate a final general-work handoff across several roles and close all ordinary Palace progression obligations without choosing an ending.",
+        "emphasis": {
+          "stats": [
+            "wits",
+            "sociability",
+            "manners"
+          ],
+          "capabilities": []
+        },
+        "optionalVariantHooks": {
+          "ordinaryCareerKnowledge": [
+            "guard",
+            "merchant",
+            "artist-geisha",
+            "assassin"
+          ],
+          "schoolCourses": [
+            "school.course.rhetoric_and_social",
+            "school.course.etiquette_and_presentation"
+          ],
+          "activities": [],
+          "itemCapabilities": [],
+          "relationships": [
+            "palace.professional-patron",
+            "palace.rival",
+            "palace.official-contact"
+          ]
+        },
+        "milestoneRelation": "Exact duty-15 completion transitions Crossroads -> Outcome Ready, writes palace.progression-complete exactly once, and queues milestone-15.",
+        "repetitionAvoidance": "Final coordination duty is a multi-role closure beat, not a repeat of Duty 6 task splitting or Duty 10 credit handling.",
+        "mustNotGate": [
+          "Palace entry / D23 qualification",
+          "more than +1 palaceDutyCount credit",
+          "romance or relationship participation",
+          "Palace Night participation",
+          "legacy item ownership",
+          "School attendance",
+          "Activity completion",
+          "any non-True Palace outcome",
+          "Prince confrontation",
+          "Return Home"
+        ]
+      }
+    ],
+    "familyDistribution": {
+      "service-rotation": [
+        1,
+        4,
+        8
+      ],
+      "logistics-support": [
+        2,
+        5,
+        11
+      ],
+      "records-review": [
+        3,
+        7,
+        12
+      ],
+      "coordination": [
+        6,
+        10,
+        15
+      ],
+      "formal-interface": [
+        9,
+        14
+      ],
+      "evidence-review": [
+        13
+      ]
+    },
+    "milestoneDuties": [
+      2,
+      5,
+      8,
+      12,
+      15
+    ],
+    "stageRanges": {
+      "entered-service": [
+        1,
+        2
+      ],
+      "working-rhythm": [
+        3,
+        4,
+        5
+      ],
+      "trusted-service": [
+        6,
+        7,
+        8
+      ],
+      "palace-network": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "crossroads": [
+        13,
+        14,
+        15
+      ]
+    },
+    "invariant": "Every required duty remains a normal +1 Palace duty under v11. Authoring changes presentation and optional variants only; it never changes count weight or daily cadence."
+  },
+  "outcomeRoutes": {
+    "nonExclusiveBeforeCommit": true,
+    "routes": [
+      {
+        "family": "service-life",
+        "preparationFact": "palace.prep.service-life",
+        "earliestStage": "trusted-service",
+        "preparationBeats": [
+          {
+            "id": "palace.outcome-prep.service-life.01-continuity",
+            "stage": "trusted-service",
+            "function": "Ask whether ordinary Palace service can be made sustainable through clear responsibilities and repeatable work rather than status.",
+            "baselineInput": "A completed Palace duty at Trusted Service or later.",
+            "optionalInputs": {
+              "school": [
+                "school.course.rhetoric_and_social"
+              ],
+              "itemCapabilities": [],
+              "activities": [],
+              "relationships": [
+                "palace.official-contact",
+                "palace.professional-patron"
+              ],
+              "ordinaryCareerKnowledge": [
+                "lumber",
+                "satyr-maid",
+                "tavern"
+              ]
+            },
+            "writesPreparationFact": false
+          },
+          {
+            "id": "palace.outcome-prep.service-life.02-boundaries",
+            "stage": "trusted-service or later",
+            "function": "Confirm a bounded service pattern and professional limits; accepting the beat records preparation without excluding other routes.",
+            "baselineInput": "Service Life beat 01 completed or available baseline continuation.",
+            "optionalInputs": {
+              "school": [
+                "school.course.etiquette_and_presentation"
+              ],
+              "itemCapabilities": [
+                "access_guest_rooms_staff"
+              ],
+              "activities": [],
+              "relationships": [
+                "palace.official-contact",
+                "palace.professional-patron"
+              ],
+              "ordinaryCareerKnowledge": [
+                "guard",
+                "prostitute"
+              ]
+            },
+            "writesPreparationFact": true
+          }
+        ],
+        "minimumFacts": [
+          "palace.prep.service-life"
+        ],
+        "finalize": {
+          "eventId": "palace.outcome-finalize.service-life",
+          "requires": [
+            "stage outcome-ready",
+            "palace.progression-complete",
+            "palace.prep.service-life"
+          ],
+          "writes": "palace.outcome.service-life-ready",
+          "autoCommit": false
+        },
+        "commitBoundary": {
+          "endingIdCandidate": "ending.palace.service-life",
+          "explicitPlayerCommitRequired": true,
+          "committedSceneId": "palace.ending.service-life.committed"
+        },
+        "currentLifeResolution": "After explicit ending commit, resolve a current-life continuation-of-service scene; final story details remain authored-content work and do not alter other runs before completeEnding.",
+        "rewardStatus": "OPEN",
+        "forbiddenRequirements": [
+          "romance",
+          "Palace Night",
+          "legacy item",
+          "School",
+          "Activity",
+          "specific relationship"
+        ]
+      },
+      {
+        "family": "court-power",
+        "preparationFact": "palace.prep.court-power",
+        "earliestStage": "palace-network",
+        "preparationBeats": [
+          {
+            "id": "palace.outcome-prep.court-power.01-responsibility",
+            "stage": "palace-network",
+            "function": "Frame influence as accountable coordination: what responsibility can be accepted, traced, and refused when outside authority.",
+            "baselineInput": "A completed Palace duty at Palace Network or later.",
+            "optionalInputs": {
+              "school": [
+                "school.course.rhetoric_and_social",
+                "school.course.etiquette_and_presentation"
+              ],
+              "itemCapabilities": [
+                "artist_formal_presence"
+              ],
+              "activities": [],
+              "relationships": [
+                "palace.professional-patron",
+                "palace.rival",
+                "palace.official-contact"
+              ],
+              "ordinaryCareerKnowledge": [
+                "guard",
+                "merchant",
+                "artist-geisha"
+              ]
+            },
+            "writesPreparationFact": false
+          },
+          {
+            "id": "palace.outcome-prep.court-power.02-network",
+            "stage": "palace-network or later",
+            "function": "Resolve a professional network/credit decision without requiring patronage, romance, or personal favor.",
+            "baselineInput": "Court Power beat 01 completed or available baseline continuation.",
+            "optionalInputs": {
+              "school": [
+                "school.course.rhetoric_and_social"
+              ],
+              "itemCapabilities": [
+                "official_guard_access",
+                "guard_sealed_pass"
+              ],
+              "activities": [],
+              "relationships": [
+                "palace.professional-patron",
+                "palace.rival",
+                "palace.official-contact"
+              ],
+              "ordinaryCareerKnowledge": [
+                "merchant",
+                "guard",
+                "artist-geisha"
+              ]
+            },
+            "writesPreparationFact": true
+          }
+        ],
+        "minimumFacts": [
+          "palace.prep.court-power"
+        ],
+        "finalize": {
+          "eventId": "palace.outcome-finalize.court-power",
+          "requires": [
+            "stage outcome-ready",
+            "palace.progression-complete",
+            "palace.prep.court-power"
+          ],
+          "writes": "palace.outcome.court-power-ready",
+          "autoCommit": false
+        },
+        "commitBoundary": {
+          "endingIdCandidate": "ending.palace.court-power",
+          "explicitPlayerCommitRequired": true,
+          "committedSceneId": "palace.ending.court-power.committed"
+        },
+        "currentLifeResolution": "After explicit ending commit, resolve the current-life professional-authority outcome; no reward mechanic is implied by the authored scene.",
+        "rewardStatus": "OPEN",
+        "forbiddenRequirements": [
+          "romance",
+          "Palace Night",
+          "legacy item",
+          "School",
+          "Activity",
+          "specific relationship"
+        ]
+      },
+      {
+        "family": "inner-truth",
+        "preparationFact": "palace.prep.inner-truth",
+        "earliestStage": "crossroads",
+        "preparationBeats": [
+          {
+            "id": "palace.outcome-prep.inner-truth.01-evidence",
+            "stage": "crossroads",
+            "function": "Sort evidence by observed / sourced / unresolved without naming a final mystery truth.",
+            "baselineInput": "A completed Evidence Review or another baseline Palace duty at Crossroads.",
+            "optionalInputs": {
+              "school": [
+                "school.course.literacy_and_numbers",
+                "school.course.arcana"
+              ],
+              "itemCapabilities": [
+                "prostitute_handle_evidence",
+                "preserve_specimen",
+                "merchant_verify_manifest"
+              ],
+              "activities": [
+                "assassin.infiltration",
+                "hunter.expedition"
+              ],
+              "relationships": [
+                "palace.official-contact"
+              ],
+              "ordinaryCareerKnowledge": [
+                "assassin",
+                "undead-farm",
+                "merchant",
+                "prostitute"
+              ]
+            },
+            "writesPreparationFact": false
+          },
+          {
+            "id": "palace.outcome-prep.inner-truth.02-contradiction",
+            "stage": "crossroads or later",
+            "function": "Compare two plausible accounts and preserve uncertainty where the evidence does not settle it.",
+            "baselineInput": "Inner Truth beat 01 completed or available no-item baseline continuation.",
+            "optionalInputs": {
+              "school": [
+                "school.course.arcana",
+                "school.course.field_craft"
+              ],
+              "itemCapabilities": [
+                "prostitute_handle_evidence",
+                "preserve_specimen"
+              ],
+              "activities": [
+                "assassin.infiltration"
+              ],
+              "relationships": [
+                "palace.rival",
+                "palace.official-contact"
+              ],
+              "ordinaryCareerKnowledge": [
+                "hunter",
+                "assassin",
+                "undead-farm"
+              ]
+            },
+            "writesPreparationFact": true
+          }
+        ],
+        "minimumFacts": [
+          "palace.prep.inner-truth"
+        ],
+        "finalize": {
+          "eventId": "palace.outcome-finalize.inner-truth",
+          "requires": [
+            "stage outcome-ready",
+            "palace.progression-complete",
+            "palace.prep.inner-truth"
+          ],
+          "writes": "palace.outcome.inner-truth-ready",
+          "autoCommit": false
+        },
+        "commitBoundary": {
+          "endingIdCandidate": "ending.palace.inner-truth",
+          "explicitPlayerCommitRequired": true,
+          "committedSceneId": "palace.ending.inner-truth.committed"
+        },
+        "currentLifeResolution": "After explicit ending commit, resolve a current-life inquiry/understanding outcome without declaring the game's final mystery answer.",
+        "rewardStatus": "OPEN",
+        "forbiddenRequirements": [
+          "romance",
+          "Palace Night",
+          "legacy item",
+          "School",
+          "Activity",
+          "specific relationship"
+        ]
+      }
+    ],
+    "coexistence": "All three preparation facts and all three ready facts may coexist before the player explicitly commits an ending.",
+    "noHiddenRequirements": [
+      "romance",
+      "Palace Night",
+      "legacy item",
+      "School",
+      "Activity",
+      "specific Palace relationship"
+    ]
+  },
+  "optionalAttachments": {
+    "relationships": [
+      {
+        "id": "palace.professional-patron",
+        "authoredScenes": [
+          "palace.relationship.patron.intro",
+          "palace.relationship.patron.trust",
+          "palace.relationship.patron.conflict"
+        ],
+        "stageWindow": "Trusted Service onward",
+        "use": "Optional professional-review/trust/boundary variants for Coordination, Court Power preparation, and post-duty reactions.",
+        "gate": false
+      },
+      {
+        "id": "palace.official-contact",
+        "authoredScenes": [
+          "palace.relationship.contact.intro",
+          "palace.relationship.contact.practical-help",
+          "palace.relationship.contact.boundary"
+        ],
+        "stageWindow": "Working Rhythm onward",
+        "use": "Optional route/logistics/practical-context variants.",
+        "gate": false
+      },
+      {
+        "id": "palace.rival",
+        "authoredScenes": [
+          "palace.relationship.rival.intro",
+          "palace.relationship.rival.cooperation",
+          "palace.relationship.rival.conflict"
+        ],
+        "stageWindow": "Trusted Service onward",
+        "use": "Optional coordination/credit/contradiction variants.",
+        "gate": false
+      },
+      {
+        "id": "palace.optional-romance",
+        "authoredScenes": [
+          "palace.relationship.romance.invitation",
+          "palace.relationship.romance.mode"
+        ],
+        "stageWindow": "Crossroads onward",
+        "use": "Optional personal route only; refusal-safe and irrelevant to all Palace progression/outcome gates.",
+        "gate": false
+      }
+    ],
+    "night": [
+      {
+        "id": "palace.night.work-review",
+        "firstStage": "working-rhythm",
+        "use": "Optional professional review of documents/routes/current work.",
+        "gate": false,
+        "countsAsDuty": false,
+        "privateSpaceRequired": false
+      },
+      {
+        "id": "palace.night.social-conversation",
+        "firstStage": "trusted-service",
+        "use": "Optional workplace/social context without mandatory relationship progression.",
+        "gate": false,
+        "countsAsDuty": false,
+        "privateSpaceRequired": false
+      }
+    ],
+    "d35PrivateSpaceBranch": {
+      "candidateId": "palace.relationship.romance.private-conversation",
+      "firstStage": "crossroads",
+      "prerequisiteMode": "Only after the player has voluntarily kept a personal/romance-capable relationship route open.",
+      "housingRequirement": "normal lodging only",
+      "cheapOrStreetBehavior": "Branch is unavailable; romance/progression/outcomes remain otherwise unchanged.",
+      "secretDebtBehavior": "Forced Secret Debt Night suppresses this voluntary branch.",
+      "requiredForProgression": false,
+      "requiredForAnyEnding": false,
+      "requiredForRomanceContinuation": false,
+      "countsAsDuty": false
+    }
+  },
+  "crossSystemHooks": {
+    "ordinaryCareerLegacyKnowledge": {
+      "bindingStatus": "CONTENT-SLOT READY; exact pure-knowledge unlock IDs are not authored here because D27 locks semantics but not this Palace naming layer.",
+      "rule": "Career knowledge may change explanatory/presentation variants only. It never substitutes for D23, items, School, Activities, Palace relationships, or duty completion.",
+      "topics": [
+        {
+          "career": "lumber",
+          "use": "bounded repetitive work, closure, route/work safety context",
+          "dutyNumbers": [
+            8
+          ]
+        },
+        {
+          "career": "satyr-maid",
+          "use": "service queue, guest-facing boundaries, routine continuity",
+          "dutyNumbers": [
+            1,
+            4
+          ]
+        },
+        {
+          "career": "undead-farm",
+          "use": "material handling, preservation, observed-vs-explained evidence",
+          "dutyNumbers": [
+            7,
+            13
+          ]
+        },
+        {
+          "career": "tavern",
+          "use": "service flow, confirmed information, staff-space context",
+          "dutyNumbers": [
+            1,
+            4,
+            5
+          ]
+        },
+        {
+          "career": "hunter",
+          "use": "route choice, observation, safe-path context",
+          "dutyNumbers": [
+            2,
+            5,
+            11,
+            13
+          ]
+        },
+        {
+          "career": "guard",
+          "use": "official access, responsibility, checked route constraints",
+          "dutyNumbers": [
+            2,
+            6,
+            9,
+            11,
+            15
+          ]
+        },
+        {
+          "career": "merchant",
+          "use": "records, manifests, sources, network/accountability context",
+          "dutyNumbers": [
+            3,
+            6,
+            10,
+            12,
+            14,
+            15
+          ]
+        },
+        {
+          "career": "artist-geisha",
+          "use": "formal presentation, shared credit, protocol-facing context",
+          "dutyNumbers": [
+            6,
+            9,
+            10,
+            14,
+            15
+          ]
+        },
+        {
+          "career": "assassin",
+          "use": "route/evidence separation, conflicting accounts, bounded intel context",
+          "dutyNumbers": [
+            11,
+            12,
+            13,
+            15
+          ]
+        },
+        {
+          "career": "prostitute",
+          "use": "boundaries, direct-observation/evidence handling, professional choice",
+          "dutyNumbers": [
+            4,
+            13
+          ]
+        }
+      ]
+    },
+    "school": {
+      "shippedCourseIds": [
+        "school.course.literacy_and_numbers",
+        "school.course.arcana",
+        "school.course.rhetoric_and_social",
+        "school.course.etiquette_and_presentation",
+        "school.course.field_craft",
+        "school.course.physical_training",
+        "school.course.arts_and_performance",
+        "school.course.body_confidence"
+      ],
+      "rule": "School is optional context only. A course may add a variant when its subject matches the duty/route; no School counter/course is a Palace gate.",
+      "suggestedBindings": {
+        "school.course.literacy_and_numbers": [
+          "records-review",
+          "evidence-review",
+          "inner-truth"
+        ],
+        "school.course.arcana": [
+          "records-review",
+          "evidence-review",
+          "inner-truth"
+        ],
+        "school.course.rhetoric_and_social": [
+          "service-rotation",
+          "coordination",
+          "service-life",
+          "court-power"
+        ],
+        "school.course.etiquette_and_presentation": [
+          "coordination",
+          "formal-interface",
+          "court-power"
+        ],
+        "school.course.field_craft": [
+          "logistics-support",
+          "inner-truth"
+        ],
+        "school.course.physical_training": [
+          "service-rotation",
+          "logistics-support"
+        ],
+        "school.course.arts_and_performance": [
+          "formal-interface",
+          "court-power"
+        ],
+        "school.course.body_confidence": [
+          "formal-interface"
+        ]
+      }
+    },
+    "activities": {
+      "shippedActivityIds": [
+        "lumber.forest",
+        "hunter.expedition",
+        "assassin.infiltration"
+      ],
+      "rule": "Activity experience/result may add one optional contextual response; no Activity is required and no Activity result increments palaceDutyCount.",
+      "suggestedBindings": {
+        "lumber.forest": [
+          8
+        ],
+        "hunter.expedition": [
+          2,
+          5,
+          11,
+          13
+        ],
+        "assassin.infiltration": [
+          11,
+          12,
+          13
+        ]
+      }
+    },
+    "items": {
+      "shippedPalaceCapabilityIds": [
+        "artist_formal_presence",
+        "artist_handle_invitation",
+        "official_guard_access",
+        "guard_sealed_pass",
+        "merchant_verify_manifest",
+        "merchant_handle_samples",
+        "access_guest_rooms_staff",
+        "cross_rough_route",
+        "preserve_specimen",
+        "prostitute_handle_evidence"
+      ],
+      "rule": "Capabilities provide variants/choices only; no item grants access, stage progression, outcome readiness, Prince access, or Return Home."
+    },
+    "relationships": {
+      "palaceRelationshipIds": [
+        "palace.professional-patron",
+        "palace.official-contact",
+        "palace.rival",
+        "palace.optional-romance"
+      ],
+      "rule": "Relationship state changes optional responses only. Baseline duty/route choices remain available without each relationship."
+    }
+  },
+  "trueEndingHandoff": {
+    "requiredStage": "outcome-ready",
+    "progressionCompleteFact": "palace.progression-complete",
+    "statThreshold": 91,
+    "progressionStats": [
+      "strength",
+      "endurance",
+      "dexterity",
+      "reason",
+      "magic",
+      "creativity",
+      "wits",
+      "charm",
+      "sociability",
+      "manners",
+      "grooming",
+      "sexuality"
+    ],
+    "lustIncluded": false,
+    "princeDefeatRequired": true,
+    "princeDefeatedFact": "palace.prince-defeated",
+    "confrontationModel": "FROZEN v9 authority; not selected by v12.",
+    "returnHomeEndingCandidate": "ending.palace.return-home",
+    "explicitReturnHomeCommit": true,
+    "automaticCommitOnPrinceDefeat": false,
+    "cap200Reward": {
+      "timing": "only after Return Home completion through the normal ending transaction",
+      "classification": "Specialist under D27/D28",
+      "capacityCost": 1,
+      "effect": "maximum of each of the 12 progression stats becomes 200 instead of 100",
+      "multipliesCurrentValues": false,
+      "lustAffected": false
+    }
+  },
+  "contentBudget": {
+    "requiredCoreSceneCount": 37,
+    "requiredCoreBreakdown": {
+      "entryAndOrientation": 5,
+      "dutyPresentations": 15,
+      "structuralMilestones": 5,
+      "nonTruePreparationBeats": 6,
+      "nonTrueFinalizeScenes": 3,
+      "nonTruePostCommitResolutionScenes": 3
+    },
+    "excludedFromCoreCount": [
+      "Prince confrontation scenes: frozen v9 model is not selected.",
+      "Return Home final authored scene/epilogue: final mystery/lore is not locked.",
+      "Optional relationships/Night/cross-system variants."
+    ],
+    "optionalAuthoredUnitBudget": {
+      "total": 45,
+      "reusableFromV5": 23,
+      "newVariantSlots": 22,
+      "breakdown": {
+        "v5RelationshipScenes": 11,
+        "v5PalaceNightScenes": 2,
+        "v5LegacyCapabilityReactionVariants": 10,
+        "schoolCourseVariantSlots": 8,
+        "activityVariantSlots": 3,
+        "ordinaryCareerKnowledgeVariantSlots": 10,
+        "d35PrivateSpaceRomanceScene": 1
+      }
+    },
+    "localizationSurface": {
+      "definition": "A surface is one localized title/body/choice-label/choice-result/action-label/action-description field. Counts are minimum blueprint fields, not final prose length.",
+      "requiredPerLanguage": {
+        "sceneTitles": 37,
+        "sceneBodies": 37,
+        "choiceLabels": 32,
+        "choiceResults": 32,
+        "dutyFamilyActionLabels": 6,
+        "dutyFamilyActionDescriptions": 6,
+        "total": 150
+      },
+      "requiredBilingualTotal": 300,
+      "optionalPerLanguage": {
+        "v5Relationships": 70,
+        "v5Night": 6,
+        "v5LegacyReactionBodies": 10,
+        "schoolVariantBodies": 8,
+        "activityVariantBodies": 3,
+        "ordinaryCareerKnowledgeVariantBodies": 10,
+        "d35PrivateSpaceScene": 6,
+        "total": 113
+      },
+      "optionalBilingualBudget": 226,
+      "excludedOpenLocalization": [
+        "final Prince confrontation copy",
+        "Return Home mystery/epilogue copy",
+        "non-True reward description copy while reward status is OPEN"
+      ]
+    },
+    "mediaSlotClasses": [
+      {
+        "id": "palace.entry.generic",
+        "use": "Day-1 entry, gates, orientation/handoff",
+        "genericReuse": true
+      },
+      {
+        "id": "palace.work.generic",
+        "use": "Service Rotation, Logistics Support, Records Review, Coordination baseline staging",
+        "genericReuse": true
+      },
+      {
+        "id": "palace.formal.generic",
+        "use": "Formal Interface, Court Power preparation/finalization",
+        "genericReuse": true
+      },
+      {
+        "id": "palace.review.generic",
+        "use": "Evidence Review, Inner Truth preparation/finalization",
+        "genericReuse": true
+      },
+      {
+        "id": "palace.relationship.generic",
+        "use": "Patron/contact/rival/optional-romance workplace scenes",
+        "genericReuse": true
+      },
+      {
+        "id": "palace.night.workplace",
+        "use": "Public/workplace optional Palace Night scenes",
+        "genericReuse": true
+      },
+      {
+        "id": "lodging.private.normal",
+        "use": "D35 optional private-space branch only",
+        "genericReuse": true,
+        "palaceSpecificArtRequired": false
+      }
+    ],
+    "genericStagingReuse": "All required Palace core scenes can ship with generic Palace entry/work/formal/review staging classes. Only later presentation polish may request unique art. D35 private-space content can reuse a generic normal-lodging private-room class and must not appear for cheap/street."
+  },
+  "sceneInventory": {
+    "entryAndOrientation": [
+      "palace.invitation.day1-arrival",
+      "palace.invitation.reveal",
+      "palace.entry.gates",
+      "palace.orientation.first-day",
+      "palace.orientation.handoff"
+    ],
+    "duties": [
+      "palace.duty.01-service-rotation",
+      "palace.duty.02-logistics-support",
+      "palace.duty.03-records-review",
+      "palace.duty.04-service-rotation",
+      "palace.duty.05-logistics-support",
+      "palace.duty.06-coordination",
+      "palace.duty.07-records-review",
+      "palace.duty.08-service-rotation",
+      "palace.duty.09-formal-interface",
+      "palace.duty.10-coordination",
+      "palace.duty.11-logistics-support",
+      "palace.duty.12-records-review",
+      "palace.duty.13-evidence-review",
+      "palace.duty.14-formal-interface",
+      "palace.duty.15-coordination"
+    ],
+    "milestones": [
+      "palace.progression.milestone-02-working-rhythm",
+      "palace.progression.milestone-05-trusted-service",
+      "palace.progression.milestone-08-palace-network",
+      "palace.progression.milestone-12-crossroads",
+      "palace.progression.milestone-15-outcome-ready"
+    ],
+    "routePreparation": [
+      "palace.outcome-prep.service-life.01-continuity",
+      "palace.outcome-prep.service-life.02-boundaries",
+      "palace.outcome-prep.court-power.01-responsibility",
+      "palace.outcome-prep.court-power.02-network",
+      "palace.outcome-prep.inner-truth.01-evidence",
+      "palace.outcome-prep.inner-truth.02-contradiction"
+    ],
+    "routeFinalize": [
+      "palace.outcome-finalize.service-life",
+      "palace.outcome-finalize.court-power",
+      "palace.outcome-finalize.inner-truth"
+    ],
+    "routeCommittedResolution": [
+      "palace.ending.service-life.committed",
+      "palace.ending.court-power.committed",
+      "palace.ending.inner-truth.committed"
+    ]
+  },
+  "acceptanceMatrix": [
+    {
+      "id": "V12-A01",
+      "assertion": "Exactly 15 authored duty entries exist and duty numbers are 1..15 without gaps or duplicates."
+    },
+    {
+      "id": "V12-A02",
+      "assertion": "Duty family distribution matches v11 stage availability and all six families appear."
+    },
+    {
+      "id": "V12-A03",
+      "assertion": "Structural transitions remain exactly duties 2,5,8,12,15; authored mapping cannot move milestones."
+    },
+    {
+      "id": "V12-A04",
+      "assertion": "Every duty has a presentation function, stat/capability emphasis, optional hooks, must-not-gate list, milestone relation and repetition-avoidance note."
+    },
+    {
+      "id": "V12-A05",
+      "assertion": "Every duty remains +1 palaceDutyCount and no optional hook changes duty weight."
+    },
+    {
+      "id": "V12-A06",
+      "assertion": "No Palace daily cadence is created by the authored map."
+    },
+    {
+      "id": "V12-A07",
+      "assertion": "Service Life prep starts no earlier than Trusted Service."
+    },
+    {
+      "id": "V12-A08",
+      "assertion": "Court Power prep starts no earlier than Palace Network."
+    },
+    {
+      "id": "V12-A09",
+      "assertion": "Inner Truth prep starts no earlier than Crossroads."
+    },
+    {
+      "id": "V12-A10",
+      "assertion": "Each non-True route has two preparation beats, one preparation fact, one Outcome Ready finalize scene, one final-ready fact, and one post-commit current-life resolution scene."
+    },
+    {
+      "id": "V12-A11",
+      "assertion": "All non-True preparation and ready facts may coexist before explicit ending commit."
+    },
+    {
+      "id": "V12-A12",
+      "assertion": "No route requires romance, Palace Night, legacy items, School, Activities or a specific relationship."
+    },
+    {
+      "id": "V12-A13",
+      "assertion": "Non-True reward status remains OPEN and authored route text cannot imply a permanent reward."
+    },
+    {
+      "id": "V12-A14",
+      "assertion": "Professional review/social Night are optional and never count as Palace duties."
+    },
+    {
+      "id": "V12-A15",
+      "assertion": "Patron/contact/rival relationships only add optional variants and refusal/disengagement never removes baseline Palace content."
+    },
+    {
+      "id": "V12-A16",
+      "assertion": "Optional romance is refusal-safe and never gates Palace progression/outcomes/True Ending."
+    },
+    {
+      "id": "V12-A17",
+      "assertion": "D35 private-space branch requires normal lodging only, disappears on cheap/street, and is never required for romance/progression/endings."
+    },
+    {
+      "id": "V12-A18",
+      "assertion": "Forced Secret Debt Night suppresses both ordinary Palace Night and D35 private-space Palace branch."
+    },
+    {
+      "id": "V12-A19",
+      "assertion": "All eight shipped School courses are optional variant sources only."
+    },
+    {
+      "id": "V12-A20",
+      "assertion": "All three shipped Activities are optional variant sources only and cannot increment Palace duty count."
+    },
+    {
+      "id": "V12-A21",
+      "assertion": "All ten v5 Palace legacy capability hooks exist and remain non-gating."
+    },
+    {
+      "id": "V12-A22",
+      "assertion": "Ordinary-career knowledge has one authored slot per ordinary career but exact pure-knowledge machine IDs remain unguessed."
+    },
+    {
+      "id": "V12-A23",
+      "assertion": "True handoff requires Outcome Ready + palace.progression-complete + all 12 stats >=91, excludes Lust, and then uses frozen v9 confrontation authority."
+    },
+    {
+      "id": "V12-A24",
+      "assertion": "Prince defeat never auto-commits Return Home."
+    },
+    {
+      "id": "V12-A25",
+      "assertion": "cap-200 appears only after Return Home completion, is a one-slot Specialist under D27/D28, and never multiplies current values."
+    },
+    {
+      "id": "V12-A26",
+      "assertion": "Required core scene budget is exactly 37 and reconciles to the scene inventory."
+    },
+    {
+      "id": "V12-A27",
+      "assertion": "Optional authored-unit budget is exactly 45: 23 reusable v5 units + 22 new variant slots."
+    },
+    {
+      "id": "V12-A28",
+      "assertion": "Minimum required localization surface is exactly 150 fields per language / 300 bilingual fields, excluding explicitly open Prince/Return Home/reward prose."
+    },
+    {
+      "id": "V12-A29",
+      "assertion": "Optional localization budget is 113 fields per language / 226 bilingual fields."
+    },
+    {
+      "id": "V12-A30",
+      "assertion": "Seven media slot classes cover the blueprint and required core content can reuse generic Palace staging."
+    },
+    {
+      "id": "V12-A31",
+      "assertion": "No final Prince name/lore, confrontation-model selection, mystery truth or production runtime/UI is introduced."
+    }
+  ],
+  "explicitNonGoals": [
+    "No production engine/UI changes.",
+    "No Palace daily cadence.",
+    "No final Prince name/lore.",
+    "No confrontation model selection beyond frozen v9 authority.",
+    "No final mystery truth.",
+    "No permanent rewards for the three non-True outcomes until Product locks them.",
+    "No new Palace entry gate.",
+    "No romance, Night, item, School, Activity or relationship gate."
+  ]
+}
