@@ -590,6 +590,42 @@ External preparation may happen before shift 8 and must be preserved. Reaching `
 At 20 shifts, `veteran` is ordinary-career status only. It does not auto-commit or invalidate Forewoman/Forest routes and does not replace Hard Work=50.
 
 
+### D35 — normal lodging value = explicit private-space capability
+
+Accepted Product packet:
+`chat5/housing-tier-value-decision-v8@6e8f095339a4a426cee5e3facb801f71ce6b1b82`.
+
+Supporting live-economy evidence:
+`chat3/live-economy-affordability-harness-v7@7d9daa6f1faa69d42d5fbaa56e683a35aac447b0`.
+
+Current lodging prices remain:
+- normal = **100**;
+- cheap = **50**;
+- street = **0**.
+
+Normal lodging earns its extra price through **explicit private-space access**, not through universal free Energy, money or stat protection.
+
+Locked semantics:
+- `normal` may satisfy explicitly authored private-space Night/relationship choices;
+- `cheap` does not satisfy private-space-only choices;
+- `street` does not satisfy private-space-only choices;
+- existing School Night Study remains available from normal **or** cheap lodging;
+- existing public/workplace Night choices are not globally re-gated by housing tier;
+- existing relationship content is not globally blocked on cheap/street; only individually authored private-space branches may require normal lodging;
+- initial production must seed at least three optional private-space branches across Satyr Maid recurring-guest, Tavern recurring-traveler and Prostitute recurring-client/relationship content;
+- those private branches may not gate ordinary career progression, Hard Work or Palace qualification;
+- Secret Debt forced Night always overrides voluntary private-space choices;
+- Palace optional Night cannot bypass that precedence;
+- housing choice never cancels a forced Night.
+
+Rejected for the current baseline:
+- unconditional normal-room +1 Energy/day;
+- broad normal-room stat protection;
+- a new generic storage subsystem solely to justify lodging price.
+
+The exact authored copy/scenes of the three seed private branches are production content work, not a new Product gate.
+
+
 ## Still open after this lock
 
 - exact numeric economy;
