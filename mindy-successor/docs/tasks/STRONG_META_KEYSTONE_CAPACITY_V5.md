@@ -1522,7 +1522,69 @@ Classification is part of the balance contract.
 
 ---
 
-# 45. Recommendation confidence and open dependencies
+# 45. Historical stacking stress-test from newly verified original research
+
+Fresh research on current main (`original_meta_stacking_scale_verified_v1.md`) strengthens the D27 containment rationale.
+
+The original selectable ending-bonus layer used one flat count unit even though effects had radically different reach.
+
+Verified historical stacking included, simultaneously:
+- two independent +1 daily Stamina ending bonuses -> +2/day;
+- extra 40 calendar days;
+- No Rent;
+- passive paid-sleep income;
+- large fixed starting-money stack;
+- broad early-job access;
+- multiple equipment/spell/access grants.
+
+This is reference evidence only; successor values are not copied.
+
+The key successor lesson is:
+**a flat "one selection = one equal-cost effect" model makes broad stacking cheap even when each individual effect appears reasonable.**
+
+The one-Keystone rule prevents the successor's broad equivalents from recreating that stack.
+
+Specialist capacity should then remain low enough that the directed layer does not reconstruct broad coverage by accumulation.
+
+This is additional evidence for capacity 2 over 3.
+
+## Required composition / inverse regression
+
+For every production selectable strong modifier, test both isolation and composition.
+
+Minimum pattern:
+
+```text
+baseline
+-> activate Keystone A
+-> activate Specialist B
+-> activate Specialist C (when capacity permits)
+-> verify composed state
+-> deactivate B for next-run selection
+-> verify only B is absent in the next resolved loadout
+-> deactivate A
+-> verify only A is absent
+-> verify automatic permanent knowledge remains when intentionally persistent
+```
+
+The important semantic distinction is:
+- deselecting a run modifier removes only that modifier from the future resolved loadout;
+- permanently earned knowledge/content remains earned;
+- current-run snapshots are immutable after the run starts.
+
+This avoids the original class of reversal bugs where disabling one selectable bonus failed to reverse exactly the state it had enabled.
+
+For recommended capacity 2, pairwise combination coverage is tractable:
+- every Keystone × every Specialist;
+- every Specialist pair;
+- D19 collision pairs;
+- cap-200 pairings.
+
+Capacity 3 materially increases required triple-combination coverage and makes reversal QA more expensive, another practical argument against it.
+
+---
+
+# 46. Recommendation confidence and open dependencies
 
 ## High-confidence recommendation
 
@@ -1549,7 +1611,7 @@ Those should be locked after the capacity decision.
 
 ---
 
-# 46. Recommended Product lock text if accepted
+# 47. Recommended Product lock text if accepted
 
 Proposed wording for a future decision record:
 
@@ -1559,7 +1621,7 @@ This paragraph is a recommendation for Leader/Product review, not a lock created
 
 ---
 
-# 47. Final comparison
+# 48. Final comparison
 
 | Capacity | Non-dominance | Build expression | cap-200 usability | D19 containment | UI/QA burden |
 |---|---|---|---|---|---|
