@@ -3,6 +3,23 @@ import {SCHOOL_ACTION_ID,SCHOOL_COURSES,executeSchoolLesson,type SchoolCourseId}
 import {presentationIdForActionResult,presentationIdForEvent} from './presentation.ts';
 import {applyHardWorkPackagesAtCreation,ordinaryCareerAvailableWithHardWork,palaceNewStartQualified,validateHardWorkPackageSelection} from './hardWorkMeta.ts';
 import {hardWorkPackageDefinitions} from './hardWorkPackageCatalog.ts';
+import {
+  STRONG_META_IDS,
+  STRONG_META_REGISTRY_VERSION,
+  applyEarnedReserveMatch,
+  applyNetworkRetainerAtStartDay,
+  applyWorkRhythmAtStartDay,
+  armWorkRhythmForNextDay,
+  canonicalStrongMetaState,
+  emptyResolvedStrongMetaSnapshot,
+  emptyStrongMetaRuntime,
+  grantStrongMetaReward,
+  resolveStrongMetaSnapshot,
+  setPreferredStrongMetaKeystone,
+  setPreferredStrongMetaSpecialist,
+  strongMetaProgressionStatCap,
+  type ApprovedStrongRewardId
+} from './strongMeta.ts';
 
 const statSet=new Set<string>(stats);
 const cappedLegacy=new Set(['health','stress','trust']);
@@ -53,6 +70,7 @@ function defaultMeta(input?:Partial<Meta>&{completed?:string[];lives?:number}):M
     unlocks:[...new Set(input?.unlocks??[])].filter(unlock=>unlock!=='palace'),
     ruleModifiers:structuredClone(input?.ruleModifiers??{}),
     hardWorkProgress:[...new Set(input?.hardWorkProgress??[])],
+    strongMeta:canonicalStrongMetaState(input?.strongMeta),
     persistentChoices:structuredClone(input?.persistentChoices??{}),
     activeLegacyPerks:[...new Set(input?.activeLegacyPerks??[])],
     appliedResultTransactions:[...new Set(input?.appliedResultTransactions??[])],
@@ -281,7 +299,7 @@ export function freshSave(metaInput?:Partial<Meta>&{completed?:string[];lives?:n
   const statRecord=Object.fromEntries(stats.map(k=>[k,1])) as Record<Stat,number>;
   const startingMoney=600+(meta.unlocks.includes('satyr-maid.house-credit')?600:0);
   const save={
-    schemaVersion:5 as const,
+    schemaVersion:6 as const,
     contentVersion:'0.1.0',
     meta,
     run:{
@@ -303,6 +321,8 @@ export function freshSave(metaInput?:Partial<Meta>&{completed?:string[];lives?:n
       flow:{pendingScene:null,reaction:{epochCounter:0,currentEpochId:null,attemptedEventIds:[],cascadeDepth:0,queued:[]},night:null,activity:null,lastAction:null},
       rngState:{state:(meta.runsStarted*2654435761)>>>0},
       historyState:{eventHistory:{},actionCounts:{},dayActionCount:0,journal:['Белый суслик, открытый люк и совершенно незнакомое небо. Ваша новая жизнь начинается в Листограде.'],journalRefs:[null]},
+      strongMetaSnapshot:null,
+      strongMetaRuntime:emptyStrongMetaRuntime(),
       legacyCompat:{source:'m3.2' as const,metrics:defaultLegacyMetrics(),flags:{}}
     }
   } as unknown as Save;
@@ -758,6 +778,7 @@ function endingRewards(ending:Catalog['definitions']['endings'][number]):MetaRew
 function applyMetaRewardMutable(meta:Meta,reward:MetaReward){
   if(reward.kind==='unlock')addUnique(meta.unlocks,reward.unlock);
   else if(reward.kind==='hardWork')addUnique(meta.hardWorkProgress,reward.career);
+  else if(reward.kind==='strongMeta')meta.strongMeta=grantStrongMetaReward(meta.strongMeta,reward.reward as ApprovedStrongRewardId);
 }
 function commitEndingMutable(s:Save,endingId:string,cat:Catalog){
   if(s.run.status==='ended'){
