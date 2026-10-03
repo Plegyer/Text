@@ -2,12 +2,13 @@
 
 Current durable recovery point:
 
-`mindy-successor/docs/tasks/LEADER1_CHECKPOINT_2026-10-03_0805.md`
+`mindy-successor/docs/tasks/LEADER1_CHECKPOINT_2026-10-03_0825.md`
 
 Checkpoint commit:
-`319fe6f2a3ed8dbda2f989e8f3b36e2ddc06810c`
+`e07248f6086371b88516146bb317a84992e90f4c`
 
-Rule:
-- read this checkpoint on Leader-context rollover;
+Recovery rule:
+- read the checkpoint first after Leader-context rollover;
 - then requery fresh Git state before acting;
-- do not assume worker activity from stale pointers or branch existence.
+- Git remains source of truth;
+- do not infer worker activity from pointers or branch existence.
