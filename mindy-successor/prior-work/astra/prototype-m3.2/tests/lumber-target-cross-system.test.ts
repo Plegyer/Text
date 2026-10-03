@@ -107,7 +107,7 @@ test('A5 activityResult success triggers immediate Lumber continuation with 0 ex
   assert.ok(s.run.progression.careers.lumber.facts.includes('forest-specimen-catalogued'));
   assert.ok(s.run.progression.careers.lumber.facts.includes('forest-truth-known'));
   assert.ok(s.run.progression.careers.lumber.facts.includes('forest-problem-resolved'));
-  assert.equal(s.run.inventory.forest_preserved_specimen??0,0,'preserved specimen is consumed by the return chain');
+  assert.equal(s.run.inventory.forest_preserved_specimen??0,1,'D41 does not consume the preserved Forest specimen');
   assert.ok(s.run.endings.eligible.includes('ending.lumber.forest'));
 });
 
