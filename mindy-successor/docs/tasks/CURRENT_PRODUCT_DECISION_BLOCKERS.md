@@ -1,6 +1,6 @@
 # Current Product Decision Blockers
 
-Status: **ACTIVE — REFRESHED AFTER D35**
+Status: **ACTIVE — REFRESHED AFTER D38**
 Owner: Leader / Product coordination
 
 Authority rule:
@@ -106,19 +106,34 @@ Chat 6 currently owns the implementation-ready stage/duty contract.
 
 ### Activity
 
-D36 now resolves the full-scope structure:
-- exactly four functional regions;
-- route-graph Activity with Field Time + Endurance;
-- three specialized mini-game families;
-- selected multi-day camp;
-- standalone Activity ending baseline.
+D36 resolves the full-scope structure.
+D38 now also resolves the standalone Activity ending family:
+- three separate endings: Pathfinder / Preservation / Network;
+- exact direction-specific eligibility;
+- exact selectable Specialist rewards;
+- no Hard Work / Palace substitution;
+- no entry-Energy reduction.
 
 Still open:
-- exact three-direction standalone Activity ending design/rewards;
 - final authored content inside each region;
-- final region/lore naming and media production.
+- final player-facing lore names/epilogues;
+- exact tagged survey/secure/network route content;
+- final media production.
 
-Chat 3 currently owns the standalone Activity ending Product packet.
+### Ordinary complex endings
+
+The current Ending Atlas audit confirms the largest remaining ending-design gap is the **30 advanced ordinary-career outcomes** outside the 10 Hard Work endings.
+
+Still open across many of them:
+- exact final eligibility thresholds;
+- exact stable ending IDs where absent;
+- exact permanent/New Start+ reward;
+- modern reward classification under D27/D28;
+- retirement/migration of stale legacy reward semantics where applicable.
+
+This work is now split into two parallel Product packets:
+- Chat 5: Lumber / Satyr Maid / Undead Farm / Tavern / Hunter;
+- Chat 3: Guard / Merchant / Artist-Geisha / Assassin / Prostitute.
 
 ### Production art/media budget
 
@@ -128,6 +143,8 @@ Still open.
 
 - D35 normal lodging private-space capability;
 - D36 four-region Large Activity scope;
+- D37 minimum Night completeness bar;
+- D38 three standalone Activity endings + Specialist rewards;
 
 Do not reopen without explicit Leader/Product action:
 - D26 same-career max one shift/day;
