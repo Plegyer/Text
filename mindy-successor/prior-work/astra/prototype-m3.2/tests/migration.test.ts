@@ -21,13 +21,13 @@ function rawV3(overrides:any={}){
  };
 }
 
-test('genuine M2 save migrates through v3 into schema5 without losing pending scene/meta',()=>{
+test('genuine M2 save migrates through v3 into schema6 without losing pending scene/meta',()=>{
  const raw={
   schemaVersion:2,contentVersion:'0.1.0',meta:{unlocks:['guild'],completed:['guild-life'],lives:2},
   run:{id:'life-2',day:3,slot:1,limitDays:448,status:'active',housing:'room',metrics:oldMetrics({energy:75}),flags:{'story.arrived':true},inventory:{herb:2,tonic:0,scales:0},actionCounts:{work:1},history:{'base.arrival':{count:1,lastDay:3,variants:{welcome:3}}},pending:{eventId:'base.arrival',variantId:'welcome'},availableEndings:[],acceptedEnding:null,journal:['Старая запись']}
  };
  let s=parseSave(JSON.stringify(raw),catalog);
- assert.equal(s.schemaVersion,5);
+ assert.equal(s.schemaVersion,6);
  assert.equal(s.run.dayState.energyCurrent,2);
  assert.equal(s.run.character.stats.strength,20);
  assert.equal(s.run.character.stats.reason,16);
