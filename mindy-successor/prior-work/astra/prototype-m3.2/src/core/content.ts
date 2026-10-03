@@ -269,6 +269,14 @@ export function loadCatalog(definitions:unknown,packs:unknown[]):Catalog {
       }
       for(const [game,options] of miniGames){
         if(!options.some(option=>option.miniGameTransition?.from==='start'))throw new Error(`Activity ${activity.id}: mini-game ${game} has no start transition`);
+        for(const option of options){
+          const transition=option.miniGameTransition!;
+          if(
+            transition.minSuspicion!==undefined
+            &&transition.maxSuspicion!==undefined
+            &&transition.minSuspicion>transition.maxSuspicion
+          )throw new Error(`Activity ${activity.id}: mini-game ${game} has inverted suspicion bounds: ${option.id}`);
+        }
         const terminals=new Set(options.map(option=>option.miniGameTransition?.outcome).filter(Boolean));
         for(const outcome of ['success','failure','abort'])if(!terminals.has(outcome as any))throw new Error(`Activity ${activity.id}: mini-game ${game} missing ${outcome} terminal`);
       }
