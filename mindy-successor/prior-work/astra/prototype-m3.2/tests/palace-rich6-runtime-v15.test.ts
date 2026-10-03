@@ -487,6 +487,7 @@ test('Palace progression invariants reject duplicate or skipped duty saves',()=>
   const s=qualifiedPalaceLife();
   const bad=JSON.parse(JSON.stringify(s));
   bad.run.progression.palace.counters[PALACE_DUTY_COUNTER]=2;
+  bad.run.progression.palace.shifts=2;
   bad.run.progression.palace.stage='working-rhythm';
   bad.run.progression.palace.committedDutyIds=[
     'palace.duty.01-service-rotation',
