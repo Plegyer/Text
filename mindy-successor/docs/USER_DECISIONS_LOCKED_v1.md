@@ -452,6 +452,51 @@ Accepted harness envelope:
 Implementation should be content-only target replacement plus focused snapshots/invariants. Do not add deferred penalties, stat-debt systems, fallback negative mechanics or per-career imperative runtime code.
 
 
+### D32 — exact Secret Debt Keystone numeric parameters
+
+Accepted calibration source:
+`chat5/secret-debt-keystone-calibration-v7@e8e759b5470e45c94b6827ce5dbecede478d60ff`.
+
+The three D30 Keystone identities remain unchanged. Their previously open numeric parameters are now locked.
+
+#### Paid Freedom — Earned Reserve Match
+
+- match rate remains **1:1** on eligible ordinary-profession wage;
+- maximum matched bonus per run: **1000 money**;
+- only eligible ordinary wage earned while not bound counts;
+- Secret Debt hidden work, lender grant, repayment and non-work income remain excluded;
+- once 1000 bonus has been paid, further eligible wages receive no additional match that run.
+
+#### Bound Life — Work Rhythm
+
+- one qualifying ordinary-work day may arm exactly **+1 usable Energy** for the next calendar day;
+- multiple ordinary shifts on the same day do not stack;
+- maximum rewarded days per run: **20**;
+- therefore maximum lifetime value is **20 extra Energy/actions**;
+- hidden Secret Debt work, School-only days and Activity-only days do not arm it;
+- D26 remains binding, so same-career Hard Work cannot occur before Day 50;
+- on a bound bonus day, Secret Debt next-day Energy `-1` applies after the selected Energy modifier and remains a real one-Energy loss relative to the same unbound loadout.
+
+#### Takeover — Network Retainer
+
+- payment: **25 money**;
+- payment window: first **40 eligible calendar days**;
+- maximum possible payment total: **1000 money per run**;
+- while Secret Debt is actively bound, payment is paused;
+- missed bound-day payments are lost and are not banked or reimbursed later;
+- no payment occurs after the 40-day window even if fewer than 40 payments were actually received.
+
+Calibration authority uses the current executable economy:
+- fresh money 600;
+- base Energy 3;
+- normal lodging 100;
+- cheap lodging 50;
+- current School tuition 300–500;
+- current executable ordinary wages, not older WU candidate assumptions.
+
+These numbers may be changed only by a later explicit Product balance decision. They are now runtime-authoritative for D30 implementation.
+
+
 ## Still open after this lock
 
 - exact numeric economy;
@@ -461,5 +506,5 @@ Implementation should be content-only target replacement plus focused snapshots/
 - exact Activity region count/mechanics;
 - exact Palace daily cadence and authored content within the locked six-stage topology;
 - macro mystery/lore;
-- exact Secret Debt shift stat gains, wage coefficients, owner-kill stat/Lust thresholds, and D30 Keystone numeric parameters;
+- exact Secret Debt shift stat gains, wage coefficients, and owner-kill stat/Lust thresholds;
 - production art/media budget.
