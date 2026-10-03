@@ -170,3 +170,13 @@ test('harness reports before-day-160 impossibility explicitly instead of inventi
     harshLow.dayToFull20000Repayment===null||harshLow.dayToFull20000Repayment>160
   );
 });
+
+test('160-day impossibility output rejects a shorter simulation horizon',()=>{
+  assert.throws(
+    ()=>simulateSecretDebtBalance(
+      RESEARCH_PRESETS.v3,
+      scenario({maxDays:120})
+    ),
+    /at least 160/
+  );
+});
