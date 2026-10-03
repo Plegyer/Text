@@ -3560,56 +3560,64 @@
       "static": {
         "kind": "image",
         "src": "assets/presentation/career-satyr-maid-result.svg",
-        "alt": "Satyr Maid Personal Network ending presentation focused on professional connection rather than romance."
+        "alt": "Satyr Maid Personal Network ending presentation focused on professional connection rather than romance.",
+        "altKey": "presentation.static.satyr-maid-ending-personal-network.alt"
       }
     },
     "ending/undead-farm/external-anomaly": {
       "static": {
         "kind": "image",
         "src": "assets/presentation/career-undead-farm-result.svg",
-        "alt": "Undead Farm External Anomaly ending presentation."
+        "alt": "Undead Farm External Anomaly ending presentation.",
+        "altKey": "presentation.static.undead-farm-ending-external-anomaly.alt"
       }
     },
     "ending/tavern/innkeeper": {
       "static": {
         "kind": "image",
         "src": "assets/presentation/career-tavern-result.svg",
-        "alt": "Tavern Innkeeper ending presentation with house records and ordinary inn work."
+        "alt": "Tavern Innkeeper ending presentation with house records and ordinary inn work.",
+        "altKey": "presentation.static.tavern-ending-innkeeper.alt"
       }
     },
     "ending/tavern/information-broker": {
       "static": {
         "kind": "image",
         "src": "assets/presentation/career-tavern-result.svg",
-        "alt": "Tavern Information Broker ending presentation without court or Palace invitation imagery."
+        "alt": "Tavern Information Broker ending presentation without court or Palace invitation imagery.",
+        "altKey": "presentation.static.tavern-ending-information-broker.alt"
       }
     },
     "ending/tavern/sanctuary": {
       "static": {
         "kind": "image",
         "src": "assets/presentation/career-tavern-result.svg",
-        "alt": "Tavern Sanctuary ending presentation centered on shelter and confidentiality."
+        "alt": "Tavern Sanctuary ending presentation centered on shelter and confidentiality.",
+        "altKey": "presentation.static.tavern-ending-sanctuary.alt"
       }
     },
     "ending/hunter/master-hunter": {
       "static": {
         "kind": "image",
         "src": "assets/presentation/career-hunter-result.svg",
-        "alt": "Hunter Master Hunter ending presentation."
+        "alt": "Hunter Master Hunter ending presentation.",
+        "altKey": "presentation.static.hunter-ending-master-hunter.alt"
       }
     },
     "ending/hunter/warden": {
       "static": {
         "kind": "image",
         "src": "assets/presentation/career-hunter-result.svg",
-        "alt": "Hunter Warden ending presentation."
+        "alt": "Hunter Warden ending presentation.",
+        "altKey": "presentation.static.hunter-ending-warden.alt"
       }
     },
     "ending/hunter/legend": {
       "static": {
         "kind": "image",
         "src": "assets/presentation/career-hunter-result.svg",
-        "alt": "Hunter Legend ending presentation."
+        "alt": "Hunter Legend ending presentation.",
+        "altKey": "presentation.static.hunter-ending-legend.alt"
       }
     }
   }

@@ -257,62 +257,62 @@
       "captionKey": "presentation.static.poverty-pressure-muddy-splash.caption"
     },
     {
-      "presentationId": "ending/tavern-stay",
+      "presentationId": "ending/tavern/innkeeper",
       "state": "prepared-override",
       "role": "tavern-ending",
-      "sourceAsset": "assets/presentation/tavern-ending-stay.svg",
+      "sourceAsset": "assets/presentation/career-tavern-result.svg",
       "sourceKind": "static",
       "fallbackId": "location/town/default",
-      "proposedAltKey": "presentation.prepared.ending.tavern-stay.alt",
-      "proposedCaptionKey": "presentation.prepared.ending.tavern-stay.caption",
+      "proposedAltKey": "presentation.prepared.ending.tavern-innkeeper.alt",
+      "proposedCaptionKey": "presentation.prepared.ending.tavern-innkeeper.caption",
       "accessibility": {
         "alt": {
-          "ru": "Тёплая таверна после закрытия: стойка, кружка и связка ключей обозначают решение остаться и вести это место.",
-          "en": "A warm tavern after closing, with a counter, mug, and keys representing the choice to stay and run the place."
+          "ru": "Рабочая сцена таверны с учётом и ключами персонала обозначает принятие ответственности за дом.",
+          "en": "A tavern work scene with records and staff keys represents taking operational responsibility for the house."
         },
         "caption": {
-          "ru": "Финал таверны: остаться в «Третьем тосте».",
-          "en": "Tavern ending: staying at the Third Toast."
+          "ru": "Финал таверны: хозяйка.",
+          "en": "Tavern ending: Innkeeper."
         }
       }
     },
     {
-      "presentationId": "ending/tavern-guild",
+      "presentationId": "ending/tavern/sanctuary",
       "state": "prepared-override",
       "role": "tavern-ending",
-      "sourceAsset": "assets/presentation/tavern-ending-guild.svg",
+      "sourceAsset": "assets/presentation/career-tavern-result.svg",
       "sourceKind": "static",
       "fallbackId": "location/town/default",
-      "proposedAltKey": "presentation.prepared.ending.tavern-guild.alt",
-      "proposedCaptionKey": "presentation.prepared.ending.tavern-guild.caption",
+      "proposedAltKey": "presentation.prepared.ending.tavern-sanctuary.alt",
+      "proposedCaptionKey": "presentation.prepared.ending.tavern-sanctuary.caption",
       "accessibility": {
         "alt": {
-          "ru": "Стол таверны с кружкой, книгой учёта и знаком артели обозначает переход от смен к более широкой работе с гильдией.",
-          "en": "A tavern table with a mug, ledger, and guild mark representing a move from shifts into broader guild work."
+          "ru": "Рабочая сцена таверны обозначает защищённое убежище, где практическая помощь сочетается с конфиденциальностью.",
+          "en": "A tavern work scene represents a protected sanctuary combining practical shelter with confidentiality."
         },
         "caption": {
-          "ru": "Финал таверны: путь через гильдию.",
-          "en": "Tavern ending: the guild route."
+          "ru": "Финал таверны: убежище.",
+          "en": "Tavern ending: Sanctuary."
         }
       }
     },
     {
-      "presentationId": "ending/tavern-court",
+      "presentationId": "ending/tavern/information-broker",
       "state": "prepared-override",
       "role": "tavern-ending",
-      "sourceAsset": "assets/presentation/tavern-ending-court.svg",
+      "sourceAsset": "assets/presentation/career-tavern-result.svg",
       "sourceKind": "static",
       "fallbackId": "location/town/default",
-      "proposedAltKey": "presentation.prepared.ending.tavern-court.alt",
-      "proposedCaptionKey": "presentation.prepared.ending.tavern-court.caption",
+      "proposedAltKey": "presentation.prepared.ending.tavern-information-broker.alt",
+      "proposedCaptionKey": "presentation.prepared.ending.tavern-information-broker.caption",
       "accessibility": {
         "alt": {
-          "ru": "Запечатанное приглашение рядом с таверной кружкой обозначает приглашение ко двору без изображения конкретных персонажей.",
-          "en": "A sealed invitation beside a tavern mug represents a court invitation without depicting specific characters."
+          "ru": "Рабочая сцена таверны с записями обозначает профессиональный информационный узел без дворцового приглашения.",
+          "en": "A tavern work scene with records represents a professional information node without any Palace invitation."
         },
         "caption": {
-          "ru": "Финал таверны: приглашение ко двору.",
-          "en": "Tavern ending: an invitation to court."
+          "ru": "Финал таверны: информационный посредник.",
+          "en": "Tavern ending: Information Broker."
         }
       }
     },
