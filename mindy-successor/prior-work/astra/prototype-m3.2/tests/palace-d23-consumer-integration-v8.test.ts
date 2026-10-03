@@ -235,7 +235,7 @@ test('migrated old completed save never receives a retroactive Palace invitation
   delete raw.run.character.creation.hardWorkPackagesApplied;
 
   const migrated=parseSave(JSON.stringify(raw),catalog);
-  assert.equal(migrated.schemaVersion,5);
+  assert.equal(migrated.schemaVersion,6);
   assert.deepEqual(migrated.run.creation.activeHardWorkPackages,[]);
   assert.equal(migrated.run.creation.hardWorkPackagesApplied,true);
   assert.equal(migrated.run.progression.worldFacts.includes(PALACE_D23_QUALIFIED_FACT),false);
