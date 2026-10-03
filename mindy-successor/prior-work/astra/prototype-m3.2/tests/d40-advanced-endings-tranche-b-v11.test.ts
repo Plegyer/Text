@@ -156,7 +156,7 @@ test('D40 School publishers use exact 3 paid OR 3 Night Study rule and never sum
     assert.ok(any,event.id);
     const tracks=[...new Set(any.conditions.map((c:any)=>c.track))];
     assert.equal(tracks.length,1,event.id);
-    const track=tracks[0];
+    const track=tracks[0] as string;
     assert.equal(eligible(event.conditions,schoolState(track,3,0),catalog),true,event.id+' paid');
     assert.equal(eligible(event.conditions,schoolState(track,0,3),catalog),true,event.id+' night');
     assert.equal(eligible(event.conditions,schoolState(track,2,1),catalog),false,event.id+' no sum');

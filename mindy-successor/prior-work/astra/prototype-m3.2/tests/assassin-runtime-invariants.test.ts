@@ -34,7 +34,7 @@ test('Assassin preserves shipped ordinary-work unlock, seasonal tuning, and Hard
  assert.deepEqual(ending.conditions,[{kind:'careerCounter',career:'assassin',counter:'completed_shifts',op:'gte',value:50}]);
  assert.equal(ending.reward,'assassin.hardwork.compat');
  assert.deepEqual(ending.metaRewards,[{kind:'hardWork',rewardId:'hardWork:assassin',career:'assassin'}]);
- assert.deepEqual(definitions.endings.filter((e:any)=>e.id.startsWith('ending.assassin.')).map((e:any)=>e.id),['ending.assassin.hard-work']);
+ assert.deepEqual(definitions.endings.filter((e:any)=>e.id.startsWith('ending.assassin.')).map((e:any)=>e.id),['ending.assassin.hard-work','ending.assassin.ghost','ending.assassin.handler-takeover','ending.assassin.refusal-turncoat']);
 });
 
 test('Assassin publishes career-scoped machines, narrow capabilities, Night hook, and advanced Activity',()=>{
