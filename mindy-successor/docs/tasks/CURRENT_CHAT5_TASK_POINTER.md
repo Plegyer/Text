@@ -1,44 +1,110 @@
 # CURRENT CHAT5 TASK POINTER
 
-Status: **ACTIVE — SECRET DEBT ENDING META REWARD DESIGN v6**
+Status: **ACTIVE — SECRET DEBT KEYSTONE CALIBRATION v7**
 Owner: Chat 5
 
-Completed parameter sweep:
-`chat5/secret-debt-balance-sweep-v5@c6ba3fdaab21321d94b1fe8a00dccb9b81672975`
+Accepted v6 packet:
+`chat5/secret-debt-ending-meta-rewards-v6@461bfa161e00bea15bbda15baea2c08b2f6aa52a`
+
+Leader/Product authority:
+- D28 = 0..1 Keystone + 0..2 Specialists;
+- D30 selects the **strong-but-bounded Keystone identities**:
+  1. Paid Freedom -> Earned Reserve Match;
+  2. Bound Life -> Work Rhythm;
+  3. Takeover -> Network Retainer.
+- reward identities/classes/invariants are locked;
+- exact D30 numeric parameters remain balance-open.
+
+Authority commit:
+`main@69eaedb1950e3ea712119388e1734c526a93be21`
 
 Branch:
-`chat5/secret-debt-ending-meta-rewards-v6`
+`chat5/secret-debt-keystone-calibration-v7`
 
-Leader created/advanced the dispatch branch to:
-`main@0c8926049a4b4ee4fda0574cea588d39f39dd14e`
-
-Branch existence is not proof of work. This lane counts as moving only after a real new worker commit appears.
+The branch was created by Leader from the authority commit above.
+Branch existence is dispatch only; count work only after a real worker commit.
 
 ## Assignment
 
-Design distinct Meta reward proposals for the three locked Secret Debt exits:
+Calibrate the still-open numeric parameters for the three D30 Keystones using current successor systems and the existing Secret Debt balance harness. No production implementation.
 
-1. full 20000 repayment / freedom;
-2. Hard Work after 50 hidden day shifts / voluntarily remain in this life;
-3. owner-kill/control outcome.
+Locked mechanics must not change.
 
-Requirements:
-- each ending supports a different future playstyle;
-- avoid three versions of raw +stats;
-- rewards are optional/selectable for later runs;
-- apply D27: classify every strong reward concept as **Keystone** or **Specialist**; pure knowledge/content may be automatic;
-- ordinary Hard Work packages remain a separate unrestricted layer;
-- do not create Titles or copy original no-rent/+2000 literally;
-- explicitly assess dominance against +1 daily Energy, cap 200, No Rent, starting money and passive income;
-- no reward may silently suppress Secret Debt discovery, forced Night, next-day Energy -1, ordinary-career lock, repayment tension, or Palace D23 gating.
+### Earned Reserve Match
 
-For each ending provide 3 candidate reward concepts:
-- conservative;
-- distinctive;
-- strong-but-bounded.
+Locked:
+- 1:1 match on eligible ordinary-profession wage earned;
+- only while not bound;
+- hidden work / lender grant / repayment / non-work money excluded;
+- finite per-run money cap.
 
-For each: mechanical effect, D27 class, future-run use case, interaction risks, required save/UI representation, and tests.
+Sweep at minimum:
+- cap 500 / 750 / 1000 / 1500.
 
-Do not implement runtime.
+Report:
+- calendar day cap is normally reached under starter/mid/late ordinary wages;
+- value by Day 40 / Hard Work 50 / Day 160;
+- School/lodging purchasing-power equivalent;
+- whether the cap changes ordinary-career unlock timing or makes economy pressure trivial.
+
+### Work Rhythm
+
+Locked:
+- at least one ordinary shift on a day arms +1 usable Energy next day;
+- non-stacking;
+- hidden work / School / Activity do not arm it;
+- D26 unchanged;
+- finite trigger count;
+- bound Secret Debt -1 remains relative to same unbound loadout.
+
+Sweep at minimum:
+- 10 / 15 / 20 / 25 triggered bonus days.
+
+Report:
+- extra action count;
+- conversion into work / School / Activity under realistic mixes;
+- earliest Hard Work effects under D26;
+- comparison with unconditional +1 daily Energy;
+- interaction with a later Secret Debt bind.
+
+### Network Retainer
+
+Locked:
+- fixed payment on eligible early-run days;
+- paused while bound;
+- missed bound payments are not banked;
+- finite duration and total.
+
+Compare at least four total-power envelopes:
+- about 500;
+- about 750;
+- about 1000;
+- about 1500;
+
+with multiple amount × duration shapes where useful.
+
+Report:
+- front-loading vs long-tail effects;
+- School/lodging affordability;
+- effect on work necessity;
+- effect of becoming bound during the payment window;
+- why it remains Keystone-class.
+
+## Cross-reward requirement
+
+Recommend one exact parameter set for each D30 Keystone, but mark it `READY_FOR_LEADER_PRODUCT_DECISION`, not authority.
+
+Test all three against:
+- current 160-day calendar;
+- D26 ordinary max-one-same-career shift/day;
+- Hard Work = 50;
+- +2000 / 10-day / 20000 Secret Debt;
+- forced Night + next-day Energy -1;
+- cap-200 Specialist;
+- no reward stacking with another Keystone;
+- ordinary Hard Work packages remaining separate.
+
+Use original-game numbers only as scale/reference, never as targets.
+No runtime/UI changes.
 No full CI.
-Freeze SHA and report `READY_FOR_LEADER_PRODUCT_DECISION`.
+Freeze exact SHA.
