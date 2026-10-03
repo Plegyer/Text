@@ -276,6 +276,16 @@ export function ordinaryCareerForShiftAction(action:Action):OrdinaryHardWorkCare
   return ordinaryCareerSet.has(career)?career as OrdinaryHardWorkCareer:null;
 }
 
+export const ORDINARY_SHIFT_WAGE_CAP=120 as const;
+
+export function ordinaryShiftWage(action:Action,s:Save):number|null{
+  if(!ordinaryCareerForShiftAction(action)||!action.wage)return null;
+  return Math.min(
+    ORDINARY_SHIFT_WAGE_CAP,
+    Math.round(action.wage.base+action.wage.weights.reduce((sum,w)=>sum+getMetric(s,w.stat)*w.factor,0))
+  );
+}
+
 export type ActionAvailabilityOptions=Readonly<{ordinaryCareersDomainLocked?:boolean}>;
 
 export function actionAvailable(action:Action,s:Save,cat?:Catalog,options:ActionAvailabilityOptions={}):boolean{
@@ -310,7 +320,7 @@ export function freshSave(metaInput?:Partial<Meta>&{completed?:string[];lives?:n
       calendar:{elapsedDays:0},
       character:{
         stats:statRecord,
-        lust:1,
+        lust:5,
         progressionStatCap,
         creation:{remaining:10,allocated:{},activeHardWorkPackages:[],hardWorkPackagesApplied:false,complete:false},
         conditions:{}
@@ -1341,16 +1351,18 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
   const freeLesson=a.id==='school'&&s.meta.unlocks.includes('scholar')&&!s.run.flags[`system.scholar.${Math.floor(s.run.day/7)}`];
   if(s.run.metrics.money<cost||s.run.metrics.energy<a.cost.energy)throw new Error('Не хватает денег или энергии.');
   if(a.mode==='brew'&&!['gentle','bold'].includes(command.recipe??''))throw new Error('Выберите способ приготовления.');
+  const committedOrdinaryWage=ordinaryShiftWage(a,s);
   s.run.metrics.money-=cost;s.run.metrics.energy-=a.cost.energy;
   applyActionEffectsMutable(s,a.effects,cat);
   if(a.seasonal)applyEffectsMutable(s,a.seasonal[calendar(s.run.day).season],cat,true);
   let ordinaryWage=0;
   if(a.wage){
-    const wage=Math.round(a.wage.base+a.wage.weights.reduce((sum,w)=>sum+getMetric(s,w.stat)*w.factor,0));
+    const wage=committedOrdinaryWage
+      ??Math.round(a.wage.base+a.wage.weights.reduce((sum,w)=>sum+getMetric(s,w.stat)*w.factor,0));
     applyEffectsMutable(s,[{kind:'metric',key:'money',delta:wage}],cat,true);log(s,`Заработано: ${wage} монет.`);
-    ordinaryWage=wage;
+    ordinaryWage=committedOrdinaryWage??0;
   }
-  if(ordinaryCareerForShiftAction(a)){
+  if(committedOrdinaryWage!==null){
     const matchBonus=applyStrongMetaOrdinaryWorkMutable(s,ordinaryWage,false);
     if(matchBonus>0)log(s,`Strong Meta: заработанный резерв добавил ${matchBonus} монет.`);
   }
