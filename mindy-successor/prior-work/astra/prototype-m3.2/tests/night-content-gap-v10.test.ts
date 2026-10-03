@@ -273,10 +273,10 @@ test('all 12 D42 Night choices survive pending reload and advance the calendar e
     assert.equal(state.run.day,dayBefore,id+' cannot advance before scene resolves');
     assert.equal(state.run.dayState.energyCurrent,energyBefore,id+' cannot spend daytime Energy');
 
-    const progressionSnapshot=JSON.stringify(state.run.progression);
+    const progressionSnapshot=structuredClone(state.run.progression);
     state=parseSave(JSON.stringify(state),catalog);
     assert.equal(state.run.pending?.eventId,id,id+' pending event after reload');
-    assert.equal(JSON.stringify(state.run.progression),progressionSnapshot,id+' effects cannot duplicate on reload');
+    assert.deepEqual(state.run.progression,progressionSnapshot,id+' effects cannot duplicate on reload');
 
     state=dispatch(state,{type:'choice',id:'continue'},catalog);
     assert.equal(state.run.pending,null,id+' resolution');
