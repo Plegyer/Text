@@ -41,7 +41,7 @@ test('all ten production Hard Work endings grant one permanent earned package an
     s=dispatch(s,{type:'newLife'},catalog);
     assert.equal(s.run.resources.money,600,career);
     assert.equal(Object.values(s.run.character.stats).every(value=>value===1),true,career);
-    assert.equal(s.run.character.lust,1,career);
+    assert.equal(s.run.character.lust,5,career);
     assert.deepEqual(s.run.creation.activeHardWorkPackages,[],career);
     assert.equal(s.run.creation.hardWorkPackagesApplied,false,career);
 
