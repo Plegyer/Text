@@ -16,6 +16,13 @@ const audit=JSON.parse(readFileSync('content/guard-authored-v17-binding-audit.fi
 const packFiles=['guard-access.json','guard-career.json','guard-city.json','guard-cross-system.json','guard-relationship.json','guard-routes.json'];
 const packs=packFiles.map(name=>JSON.parse(readFileSync('content/packs/'+name,'utf8')));
 
+function withoutD40SelectedRouteEffects(effects:any[]){
+  return (effects??[]).filter((effect:any)=>!(
+    effect.kind==='addCareerFact'
+    && String(effect.fact??'').startsWith('ending-route-')
+    && String(effect.fact??'').endsWith('-selected')
+  ));
+}
 function project(){
  const shift=defs.actions.find((x:any)=>x.id==='guard.shift');
  return {
@@ -35,7 +42,7 @@ function project(){
     priorityClass:e.priorityClass,priority:e.priority,blocking:e.blocking,delivery:e.delivery,
     nightPolicy:e.nightPolicy??null,chance:e.chance??null,cooldownDays:e.cooldownDays,
     variantCooldownDays:e.variantCooldownDays,maxShows:e.maxShows,conditions:e.conditions,
-    choices:e.choices.map((c:any)=>({id:c.id,conditions:c.conditions,effects:c.effects}))
+    choices:e.choices.map((c:any)=>({id:c.id,conditions:c.conditions,effects:withoutD40SelectedRouteEffects(c.effects)}))
    }))
   }))
  };
@@ -195,7 +202,7 @@ test('authored Guard scene and housing-aware poverty variant are deterministic a
 test('C3-192 authored layer creates no forbidden systems, foreign seams, or new public Guard ending',()=>{
  const serialized=JSON.stringify({packs,action:defs.actions.find((x:any)=>x.id==='guard.shift')});
  assert.doesNotMatch(serialized,/merchant\.(?:shift|result)|palace\.|assassin\.|prostitute\./i);
- assert.deepEqual(defs.endings.filter((x:any)=>x.id.includes('guard')).map((x:any)=>x.id),['ending.guard.hard-work']);
+ assert.deepEqual(defs.endings.filter((x:any)=>x.id.includes('guard')).map((x:any)=>x.id),['ending.guard.hard-work','ending.guard.officer','ending.guard.reform','ending.guard.network','ending.guard.major-case']);
  assert.equal(source.invariants.createsGameplayIds,false);
  assert.equal(source.invariants.changesMechanics,false);
  assert.equal(source.invariants.changesEconomy,false);

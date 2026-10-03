@@ -21,6 +21,14 @@ const packFiles=[
 const packs=packFiles.map(name=>JSON.parse(readFileSync('content/packs/'+name,'utf8')));
 
 function compact<T>(x:T):T{return JSON.parse(JSON.stringify(x));}
+function withoutD40SelectedRouteEffects(effects:any[]){
+  return (effects??[]).filter((effect:any)=>!(
+    effect.kind==='addCareerFact'
+    && String(effect.fact??'').startsWith('ending-route-')
+    && String(effect.fact??'').endsWith('-selected')
+  ));
+}
+
 function project(){
   const shift=defs.actions.find((x:any)=>x.id==='artist-geisha.shift');
   const ending={...defs.endings.find((x:any)=>x.id==='ending.artist-geisha.hard-work')};
@@ -38,7 +46,7 @@ function project(){
         cooldownDays:e.cooldownDays,variantCooldownDays:e.variantCooldownDays,maxShows:e.maxShows,
         conditions:e.conditions,
         variants:(e.variants??[]).map((v:any)=>({id:v.id,conditions:v.conditions,media:v.media})),
-        choices:(e.choices??[]).map((c:any)=>({id:c.id,conditions:c.conditions,effects:c.effects})),
+        choices:(e.choices??[]).map((c:any)=>({id:c.id,conditions:c.conditions,effects:withoutD40SelectedRouteEffects(c.effects)})),
       })),
     })),
   });
@@ -186,9 +194,7 @@ test('C3-216 natural Year-3 first shift reaches authored scene and preserves sch
 });
 
 test('C3-216 authored layer preserves ending, School and global-system boundaries',()=>{
-  assert.deepEqual(defs.endings.filter((x:any)=>x.id.includes('artist-geisha')).map((x:any)=>x.id),[
-    'ending.artist-geisha.hard-work',
-  ]);
+  assert.deepEqual(defs.endings.filter((x:any)=>x.id.includes('artist-geisha')).map((x:any)=>x.id),['ending.artist-geisha.hard-work','ending.artist-geisha.master-artist','ending.artist-geisha.patron-network','ending.artist-geisha.court-invitation']);
   assert.equal(source.invariants.createsGameplayIds,false);
   assert.equal(source.invariants.changesMechanics,false);
   assert.equal(source.invariants.changesSaveOrRng,false);

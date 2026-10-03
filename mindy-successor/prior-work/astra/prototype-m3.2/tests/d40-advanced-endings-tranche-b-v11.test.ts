@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 
-import {catalog} from './helpers.ts';
+import {catalog,created} from './helpers.ts';
 import {dispatch,eligible,freshSave,palaceRunQualified,parseSave} from '../src/core/engine.ts';
 import type {Save} from '../src/core/schema.ts';
 import {STRONG_META_IDS,STRONG_META_SPECIALIST_CAPACITY,emptyStrongMetaState,grantStrongMetaReward,resolveStrongMetaSnapshot,setPreferredStrongMetaSpecialist,strongMetaRegistry} from '../src/core/strongMeta.ts';
@@ -32,7 +32,7 @@ function ending(id:string){
   return e;
 }
 function withCareer(career:string,stage:string,facts:string[]):Save{
-  const s=freshSave();
+  const s=created();
   s.run.progression.careers[career]={stage,shifts:0,counters:{},choices:{},facts:[...facts]};
   return s;
 }
@@ -58,7 +58,7 @@ test('D40 catalog contains exactly the 16 stable advanced ending IDs with select
     if(kind==='automatic'){
       assert.deepEqual(e.metaRewards,[{kind:'unlock',rewardId:reward,unlock:reward}],id);
     }else{
-      assert.deepEqual(e.metaRewards,[],id);
+      assert.deepEqual(e.metaRewards,[{kind:'strongMeta',rewardId:reward,reward}],id);
     }
 
     const yes=withCareer(career,'outcome-ready',[fact]);
