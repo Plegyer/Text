@@ -135,6 +135,7 @@ test('clean Tavern run reaches Year-2 unlock, cross-system routes, overlapping e
   assert.ok(s.run.dayState.energyCurrent>=2);
   s=dispatch(s,{type:'enterActivity',id:'lumber.forest'},catalog);
   s=dispatch(s,{type:'activityAction',id:'forest.route.logging-road'},catalog);
+  console.log('D31_DIAG_TAVERN',JSON.stringify({day:s.run.day,season:calendar(s.run.day).season,stats:s.run.character.stats,inventory:s.run.resources.inventory,worldFacts:s.run.worldFacts}));
   s=dispatch(s,{type:'activityAction',id:'forest.challenge.logging-navigation'},catalog);
   s=dispatch(s,{type:'activityAction',id:'forest.challenge.logging-winter-ruts'},catalog);
   s=dispatch(s,{type:'activityAction',id:'forest.challenge.logging-preserve-sample'},catalog);

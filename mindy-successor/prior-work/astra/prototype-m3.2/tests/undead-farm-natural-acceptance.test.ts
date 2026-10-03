@@ -124,6 +124,7 @@ test('clean Undead Farm run exercises seasons, resources, relationship/Night, Sc
     autumn:'forest.challenge.logging-autumn-deadfall',
     winter:'forest.challenge.logging-winter-ruts'
   }[calendar(s.run.day).season];
+  console.log('D31_DIAG_UNDEAD',JSON.stringify({day:s.run.day,season:calendar(s.run.day).season,obstacle,stats:s.run.character.stats,inventory:s.run.resources.inventory,worldFacts:s.run.worldFacts}));
   s=dispatch(s,{type:'activityAction',id:obstacle},catalog);
   s=dispatch(s,{type:'activityAction',id:'forest.challenge.logging-preserve-sample'},catalog);
   s=dispatch(s,{type:'activityAction',id:'advance'},catalog);

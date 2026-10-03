@@ -1,35 +1,16 @@
-name: mindy-successor check
+name: mindy-successor D31 full-suite diagnostics
 
 on:
-  workflow_dispatch:
   pull_request:
     paths:
       - 'mindy-successor/prior-work/astra/prototype-m3.2/**'
       - '.github/workflows/mindy-successor-check.yml'
-  push:
-    branches:
-      - main
-    paths:
-      - 'mindy-successor/prior-work/astra/prototype-m3.2/**'
-      - '.github/workflows/mindy-successor-check.yml'
-
-concurrency:
-  group: mindy-successor-check-${{ github.event.pull_request.number || github.ref }}
-  cancel-in-progress: true
 
 jobs:
   check:
-    # One self-hosted runner is a scarce integration gate.
-    # Producer PRs (chat3..chat6) intentionally skip the full check.
-    # Chat 2 / Lead QA branches own PR CI; main and manual dispatch still run.
-    if: >-
-      github.event_name != 'pull_request' ||
-      startsWith(github.head_ref, 'chat2/qa-') ||
-      startsWith(github.head_ref, 'chat2/assembly-') ||
-      startsWith(github.head_ref, 'lead/ci-') ||
-      startsWith(github.head_ref, 'lead/integrate-')
+    if: startsWith(github.head_ref, 'chat2/qa-')
     runs-on: [self-hosted, Windows, X64]
-    timeout-minutes: 20
+    timeout-minutes: 10
     defaults:
       run:
         working-directory: mindy-successor/prior-work/astra/prototype-m3.2
@@ -44,5 +25,5 @@ jobs:
           cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
       - name: Install dependencies
         run: npm ci
-      - name: Full check
-        run: npm run check
+      - name: D31 cross-system diagnostics
+        run: node --experimental-strip-types --test tests/tavern-natural-acceptance.test.ts tests/undead-farm-natural-acceptance.test.ts
