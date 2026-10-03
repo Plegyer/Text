@@ -473,6 +473,11 @@
               "kind": "addCareerFact",
               "career": "prostitute",
               "fact": "outcome-ready"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "prostitute",
+              "fact": "ending-route-independent-house-selected"
             }
           ]
         },
@@ -498,6 +503,11 @@
               "kind": "addCareerFact",
               "career": "prostitute",
               "fact": "outcome-ready"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "prostitute",
+              "fact": "ending-route-elite-clientele-selected"
             }
           ]
         },
@@ -523,6 +533,11 @@
               "kind": "addCareerFact",
               "career": "prostitute",
               "fact": "outcome-ready"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "prostitute",
+              "fact": "ending-route-network-protection-selected"
             }
           ]
         },
