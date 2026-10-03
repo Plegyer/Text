@@ -293,12 +293,9 @@ export function actionCost(a:Action,s:Save){
   return a.id==='school'&&s.meta.unlocks.includes('scholar')&&!s.run.flags[`system.scholar.${Math.floor(s.run.day/7)}`]?0:a.cost.money;
 }
 
-export type NewLifeRuntimeSetup=Readonly<{progressionStatCap?:ProgressionStatCap}>;
-
-export function freshSave(metaInput?:Partial<Meta>&{completed?:string[];lives?:number},setup:NewLifeRuntimeSetup={}):Save {
+export function freshSave(metaInput?:Partial<Meta>&{completed?:string[];lives?:number}):Save {
   const meta=defaultMeta(metaInput);
-  const progressionStatCap=setup.progressionStatCap??100;
-  if(progressionStatCap!==100&&progressionStatCap!==200)throw new Error('Progression-stat cap must be 100 or 200.');
+  const progressionStatCap:ProgressionStatCap=100;
   const statRecord=Object.fromEntries(stats.map(k=>[k,1])) as Record<Stat,number>;
   const startingMoney=600+(meta.unlocks.includes('satyr-maid.house-credit')?600:0);
   const save={
