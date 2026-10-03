@@ -9334,6 +9334,707 @@
       ],
       "nextDayEffects": [],
       "nextDayEnergyDelta": 0
+    },
+    {
+      "id": "lumber.night.foreman-social",
+      "label": "Spend personal time with the Foreman",
+      "conditions": [
+        {
+          "kind": "relationshipStage",
+          "relationship": "lumber.foreman",
+          "stage": "route-professional"
+        },
+        {
+          "kind": "not",
+          "condition": {
+            "kind": "relationshipFact",
+            "relationship": "lumber.foreman",
+            "fact": "social-night-seen",
+            "present": true
+          }
+        }
+      ],
+      "effects": [
+        {
+          "kind": "incrementRelationshipCounter",
+          "relationship": "lumber.foreman",
+          "counter": "night_meetings",
+          "amount": 1
+        },
+        {
+          "kind": "addRelationshipFact",
+          "relationship": "lumber.foreman",
+          "fact": "social-night-seen"
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": 0
+    },
+    {
+      "id": "hunter.night.field-debrief",
+      "label": "Hold a field debrief",
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "hunter",
+              "stage": "tracker"
+            },
+            {
+              "kind": "careerStage",
+              "career": "hunter",
+              "stage": "recognized-hunter"
+            },
+            {
+              "kind": "careerStage",
+              "career": "hunter",
+              "stage": "veteran"
+            },
+            {
+              "kind": "careerStage",
+              "career": "hunter",
+              "stage": "master-hunter"
+            },
+            {
+              "kind": "careerStage",
+              "career": "hunter",
+              "stage": "warden"
+            },
+            {
+              "kind": "careerStage",
+              "career": "hunter",
+              "stage": "legend"
+            },
+            {
+              "kind": "careerStage",
+              "career": "hunter",
+              "stage": "outcome-ready"
+            }
+          ]
+        },
+        {
+          "kind": "not",
+          "condition": {
+            "kind": "careerFact",
+            "career": "hunter",
+            "fact": "night-field-debrief-seen",
+            "present": true
+          }
+        }
+      ],
+      "effects": [
+        {
+          "kind": "addCareerFact",
+          "career": "hunter",
+          "fact": "night-field-debrief-seen"
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": 0
+    },
+    {
+      "id": "hunter.night.senior-guide",
+      "label": "Spend optional off-duty time with the Senior Guide",
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "relationshipStage",
+              "relationship": "hunter.senior-guide",
+              "stage": "professional-trust"
+            },
+            {
+              "kind": "relationshipStage",
+              "relationship": "hunter.senior-guide",
+              "stage": "conflict-open"
+            },
+            {
+              "kind": "relationshipStage",
+              "relationship": "hunter.senior-guide",
+              "stage": "companion-ready"
+            },
+            {
+              "kind": "relationshipStage",
+              "relationship": "hunter.senior-guide",
+              "stage": "route-resolved"
+            }
+          ]
+        },
+        {
+          "kind": "not",
+          "condition": {
+            "kind": "relationshipFact",
+            "relationship": "hunter.senior-guide",
+            "fact": "night-companion-seen",
+            "present": true
+          }
+        }
+      ],
+      "effects": [
+        {
+          "kind": "incrementRelationshipCounter",
+          "relationship": "hunter.senior-guide",
+          "counter": "night-meetings",
+          "amount": 1
+        },
+        {
+          "kind": "addRelationshipFact",
+          "relationship": "hunter.senior-guide",
+          "fact": "night-companion-seen"
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": 0
+    },
+    {
+      "id": "guard.night.case-debrief",
+      "label": "Prepare a case debrief",
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "guard",
+              "stage": "trusted-guard"
+            },
+            {
+              "kind": "careerStage",
+              "career": "guard",
+              "stage": "senior-guard"
+            },
+            {
+              "kind": "careerStage",
+              "career": "guard",
+              "stage": "veteran"
+            },
+            {
+              "kind": "careerStage",
+              "career": "guard",
+              "stage": "officer"
+            },
+            {
+              "kind": "careerStage",
+              "career": "guard",
+              "stage": "reform-order"
+            },
+            {
+              "kind": "careerStage",
+              "career": "guard",
+              "stage": "network"
+            },
+            {
+              "kind": "careerStage",
+              "career": "guard",
+              "stage": "major-case"
+            },
+            {
+              "kind": "careerStage",
+              "career": "guard",
+              "stage": "outcome-ready"
+            }
+          ]
+        },
+        {
+          "kind": "not",
+          "condition": {
+            "kind": "careerFact",
+            "career": "guard",
+            "fact": "night-case-debrief-seen",
+            "present": true
+          }
+        }
+      ],
+      "effects": [
+        {
+          "kind": "addCareerFact",
+          "career": "guard",
+          "fact": "night-case-debrief-seen"
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": 0
+    },
+    {
+      "id": "guard.night.partner",
+      "label": "Spend optional off-duty time with your Partner",
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "relationshipStage",
+              "relationship": "guard.partner",
+              "stage": "professional-trust"
+            },
+            {
+              "kind": "relationshipStage",
+              "relationship": "guard.partner",
+              "stage": "conflict-open"
+            },
+            {
+              "kind": "relationshipStage",
+              "relationship": "guard.partner",
+              "stage": "cooperation-ready"
+            },
+            {
+              "kind": "relationshipStage",
+              "relationship": "guard.partner",
+              "stage": "route-resolved"
+            }
+          ]
+        },
+        {
+          "kind": "not",
+          "condition": {
+            "kind": "relationshipFact",
+            "relationship": "guard.partner",
+            "fact": "night-partner-seen",
+            "present": true
+          }
+        }
+      ],
+      "effects": [
+        {
+          "kind": "incrementRelationshipCounter",
+          "relationship": "guard.partner",
+          "counter": "night-meetings",
+          "amount": 1
+        },
+        {
+          "kind": "addRelationshipFact",
+          "relationship": "guard.partner",
+          "fact": "night-partner-seen"
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": 0
+    },
+    {
+      "id": "merchant.night.ledger-plan",
+      "label": "Review the ledger and plan suppliers",
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "merchant",
+              "stage": "independent-trader"
+            },
+            {
+              "kind": "careerStage",
+              "career": "merchant",
+              "stage": "networked-merchant"
+            },
+            {
+              "kind": "careerStage",
+              "career": "merchant",
+              "stage": "veteran"
+            },
+            {
+              "kind": "careerStage",
+              "career": "merchant",
+              "stage": "merchant-house"
+            },
+            {
+              "kind": "careerStage",
+              "career": "merchant",
+              "stage": "speculator-smuggler"
+            },
+            {
+              "kind": "careerStage",
+              "career": "merchant",
+              "stage": "patron-of-routes"
+            },
+            {
+              "kind": "careerStage",
+              "career": "merchant",
+              "stage": "outcome-ready"
+            }
+          ]
+        },
+        {
+          "kind": "not",
+          "condition": {
+            "kind": "careerFact",
+            "career": "merchant",
+            "fact": "night-ledger-plan-seen",
+            "present": true
+          }
+        }
+      ],
+      "effects": [
+        {
+          "kind": "addCareerFact",
+          "career": "merchant",
+          "fact": "night-ledger-plan-seen"
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": 0
+    },
+    {
+      "id": "merchant.night.supplier",
+      "label": "Spend optional off-hours time with the Supplier",
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "relationshipStage",
+              "relationship": "merchant.supplier",
+              "stage": "professional-trust"
+            },
+            {
+              "kind": "relationshipStage",
+              "relationship": "merchant.supplier",
+              "stage": "conflict-open"
+            },
+            {
+              "kind": "relationshipStage",
+              "relationship": "merchant.supplier",
+              "stage": "utility-ready"
+            },
+            {
+              "kind": "relationshipStage",
+              "relationship": "merchant.supplier",
+              "stage": "route-resolved"
+            }
+          ]
+        },
+        {
+          "kind": "not",
+          "condition": {
+            "kind": "relationshipFact",
+            "relationship": "merchant.supplier",
+            "fact": "night-supplier-seen",
+            "present": true
+          }
+        }
+      ],
+      "effects": [
+        {
+          "kind": "incrementRelationshipCounter",
+          "relationship": "merchant.supplier",
+          "counter": "night-meetings",
+          "amount": 1
+        },
+        {
+          "kind": "addRelationshipFact",
+          "relationship": "merchant.supplier",
+          "fact": "night-supplier-seen"
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": 0
+    },
+    {
+      "id": "assassin.night.handler-contact",
+      "label": "Meet the Handler or informant off-hours",
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "relationshipStage",
+              "relationship": "assassin.handler",
+              "stage": "professional-trust"
+            },
+            {
+              "kind": "relationshipStage",
+              "relationship": "assassin.handler",
+              "stage": "conflict-open"
+            },
+            {
+              "kind": "relationshipStage",
+              "relationship": "assassin.handler",
+              "stage": "utility-ready"
+            },
+            {
+              "kind": "relationshipStage",
+              "relationship": "assassin.handler",
+              "stage": "route-resolved"
+            }
+          ]
+        },
+        {
+          "kind": "not",
+          "condition": {
+            "kind": "relationshipFact",
+            "relationship": "assassin.handler",
+            "fact": "night-handler-seen",
+            "present": true
+          }
+        }
+      ],
+      "effects": [
+        {
+          "kind": "incrementRelationshipCounter",
+          "relationship": "assassin.handler",
+          "counter": "night-meetings",
+          "amount": 1
+        },
+        {
+          "kind": "addRelationshipFact",
+          "relationship": "assassin.handler",
+          "fact": "night-handler-seen"
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": 0
+    },
+    {
+      "id": "prostitute.night.personal-continuation",
+      "label": "Continue the relationship personally",
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "relationshipStage",
+              "relationship": "prostitute.recurring-client",
+              "stage": "mode-defined"
+            },
+            {
+              "kind": "relationshipStage",
+              "relationship": "prostitute.recurring-client",
+              "stage": "route-resolved"
+            }
+          ]
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "relationshipChoice",
+              "relationship": "prostitute.recurring-client",
+              "choice": "relationship-mode",
+              "value": "friendship"
+            },
+            {
+              "kind": "relationshipChoice",
+              "relationship": "prostitute.recurring-client",
+              "choice": "relationship-mode",
+              "value": "romance"
+            }
+          ]
+        },
+        {
+          "kind": "not",
+          "condition": {
+            "kind": "relationshipFact",
+            "relationship": "prostitute.recurring-client",
+            "fact": "personal-night-seen",
+            "present": true
+          }
+        }
+      ],
+      "effects": [
+        {
+          "kind": "incrementRelationshipCounter",
+          "relationship": "prostitute.recurring-client",
+          "counter": "night-meetings",
+          "amount": 1
+        },
+        {
+          "kind": "addRelationshipFact",
+          "relationship": "prostitute.recurring-client",
+          "fact": "personal-night-seen"
+        },
+        {
+          "kind": "addCareerFact",
+          "career": "prostitute",
+          "fact": "personal-night-continuation-seen"
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": 0
+    },
+    {
+      "id": "satyr-maid.night.recurring-guest-private",
+      "label": "Continue privately with the recurring guest",
+      "conditions": [
+        {
+          "kind": "housingTier",
+          "value": "normal"
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "relationshipStage",
+              "relationship": "satyr-maid.recurring-guest",
+              "stage": "professional-trust"
+            },
+            {
+              "kind": "relationshipStage",
+              "relationship": "satyr-maid.recurring-guest",
+              "stage": "night-contact"
+            },
+            {
+              "kind": "relationshipStage",
+              "relationship": "satyr-maid.recurring-guest",
+              "stage": "request-open"
+            },
+            {
+              "kind": "relationshipStage",
+              "relationship": "satyr-maid.recurring-guest",
+              "stage": "request-resolved"
+            }
+          ]
+        },
+        {
+          "kind": "not",
+          "condition": {
+            "kind": "relationshipFact",
+            "relationship": "satyr-maid.recurring-guest",
+            "fact": "private-space-night-seen",
+            "present": true
+          }
+        }
+      ],
+      "effects": [
+        {
+          "kind": "incrementRelationshipCounter",
+          "relationship": "satyr-maid.recurring-guest",
+          "counter": "night-meetings",
+          "amount": 1
+        },
+        {
+          "kind": "addRelationshipFact",
+          "relationship": "satyr-maid.recurring-guest",
+          "fact": "private-space-night-seen"
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": 0
+    },
+    {
+      "id": "tavern.night.traveler-private",
+      "label": "Continue privately with the recurring traveler",
+      "conditions": [
+        {
+          "kind": "housingTier",
+          "value": "normal"
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "relationshipStage",
+              "relationship": "tavern.recurring-traveler",
+              "stage": "trusted"
+            },
+            {
+              "kind": "relationshipStage",
+              "relationship": "tavern.recurring-traveler",
+              "stage": "night-request"
+            },
+            {
+              "kind": "relationshipStage",
+              "relationship": "tavern.recurring-traveler",
+              "stage": "request-resolved"
+            },
+            {
+              "kind": "relationshipStage",
+              "relationship": "tavern.recurring-traveler",
+              "stage": "confidentiality-resolved"
+            }
+          ]
+        },
+        {
+          "kind": "not",
+          "condition": {
+            "kind": "relationshipFact",
+            "relationship": "tavern.recurring-traveler",
+            "fact": "private-space-night-seen",
+            "present": true
+          }
+        }
+      ],
+      "effects": [
+        {
+          "kind": "incrementRelationshipCounter",
+          "relationship": "tavern.recurring-traveler",
+          "counter": "night-meetings",
+          "amount": 1
+        },
+        {
+          "kind": "addRelationshipFact",
+          "relationship": "tavern.recurring-traveler",
+          "fact": "private-space-night-seen"
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": 0
+    },
+    {
+      "id": "prostitute.night.client-private",
+      "label": "Choose a voluntary private-space continuation",
+      "conditions": [
+        {
+          "kind": "housingTier",
+          "value": "normal"
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "relationshipStage",
+              "relationship": "prostitute.recurring-client",
+              "stage": "professional-trust"
+            },
+            {
+              "kind": "relationshipStage",
+              "relationship": "prostitute.recurring-client",
+              "stage": "mode-open"
+            },
+            {
+              "kind": "relationshipStage",
+              "relationship": "prostitute.recurring-client",
+              "stage": "mode-defined"
+            },
+            {
+              "kind": "relationshipStage",
+              "relationship": "prostitute.recurring-client",
+              "stage": "route-resolved"
+            }
+          ]
+        },
+        {
+          "kind": "not",
+          "condition": {
+            "kind": "relationshipFact",
+            "relationship": "prostitute.recurring-client",
+            "fact": "private-space-night-seen",
+            "present": true
+          }
+        }
+      ],
+      "effects": [
+        {
+          "kind": "incrementRelationshipCounter",
+          "relationship": "prostitute.recurring-client",
+          "counter": "night-meetings",
+          "amount": 1
+        },
+        {
+          "kind": "addRelationshipFact",
+          "relationship": "prostitute.recurring-client",
+          "fact": "private-space-night-seen"
+        },
+        {
+          "kind": "addCareerFact",
+          "career": "prostitute",
+          "fact": "private-space-night-seen"
+        }
+      ],
+      "nextDayEffects": [],
+      "nextDayEnergyDelta": 0
     }
   ],
   "activities": [
