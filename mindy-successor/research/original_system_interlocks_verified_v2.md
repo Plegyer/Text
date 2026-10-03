@@ -287,7 +287,55 @@ This is a concrete historical implementation of:
 
 `more pre-run Meta power -> stronger late challenge`.
 
-## 9. Why these interlocks matter for successor design
+## 9. No Rent and passive income form a direct broad-power stack
+
+The main sleep resolver checks `disableRent` before showing the ordinary rent choice.
+
+When `disableRent == true`, the resolver switches directly to Scene 15 `sleepPaid`.
+
+That matters because Scene 15 is exactly where `bandBonus` pays +200.
+
+Therefore, if both ending bonuses are selected:
+- lodging payment is skipped;
+- the run still enters the paid-sleep implementation;
+- the +200 sleep payment still fires.
+
+Under a full 160-night normal timeout run, if every night reaches the qualifying normal sleep path, the fixed +200 stream has a **derived maximum gross value of $32,000**:
+
+`160 × 200 = 32,000`.
+
+Compare that with the derived all-cash Years-1–4 rent burden of $80,000:
+- passive +200 alone is about 40% of that gross rent scale;
+- No Rent alone can remove the full nominal $80,000 sink;
+- together they remove the sink and add up to $32,000 cash, before other earnings.
+
+The Froglord relationship income has midpoint expectation $200/night from its $180–220 roll. If it were active for all 160 qualifying normal sleeps, its derived expectation would also be about $32,000. In real play it is not available from Day 1, so this is a scale comparison, not an expected run total.
+
+This is direct historical evidence that independently toggleable broad bonuses can compound strongly even when each looks understandable in isolation.
+
+## 10. Finale difficulty prices bonus count, not bonus power
+
+`finaleBonusCount` increments by exactly 1 for each enabled ending bonus.
+
+The final battle tiers therefore price:
+- a narrow +stat reward;
+- a job unlock;
+- a broad +1 daily Stamina reward;
+- No Rent;
+- passive income;
+- an access/item reward
+
+as the same **one unit of Finale loadout size**.
+
+The challenge response is count-based, not reach-weighted.
+
+This creates a structural asymmetry:
+one very broad modifier can buy much more normal-run power per Finale-count point than a narrow modifier, while both advance the boss difficulty tier equally.
+
+This is useful historical evidence for successor D27:
+the Keystone/Specialist split should classify effects by systemic reach rather than assuming all earned Meta choices have equal opportunity cost.
+
+## 11. Why these interlocks matter for successor design
 
 These findings are reference, not authority.
 
@@ -311,7 +359,7 @@ Useful lessons:
 6. **Numbers only make sense in the whole economy.**  
    Large wages, $3,000 contest prizes, $15k–$20k Titles and multi-thousand-dollar Meta rewards coexist with a derived full-run cash-rent burden around $80k.
 
-## 10. Next raw-extraction priorities
+## 12. Next raw-extraction priorities
 
 High-value remaining catalog work:
 
