@@ -23,7 +23,8 @@
         "anomalous.reach.ritual-circuit-resolved",
         "anomalous.reach.contact-thread-open",
         "anomalous.reach.city-return-recorded",
-        "activity.anomalous-reach.result.research-grade"
+        "activity.anomalous-reach.result.research-grade",
+        "anomalous.reach.school-reflection-recorded"
       ]
     },
     "writes": {
