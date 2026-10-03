@@ -1518,7 +1518,7 @@
           },
           {
             "kind": "modifyStat",
-            "stat": "grooming",
+            "stat": "dexterity",
             "delta": -1
           }
         ],
@@ -1554,7 +1554,7 @@
           },
           {
             "kind": "modifyStat",
-            "stat": "sociability",
+            "stat": "strength",
             "delta": -1
           }
         ]
@@ -1943,7 +1943,7 @@
           },
           {
             "kind": "modifyStat",
-            "stat": "grooming",
+            "stat": "sociability",
             "delta": -1
           }
         ],
@@ -2225,7 +2225,7 @@
           },
           {
             "kind": "modifyStat",
-            "stat": "grooming",
+            "stat": "reason",
             "delta": -1
           }
         ],
@@ -2264,7 +2264,7 @@
           },
           {
             "kind": "modifyStat",
-            "stat": "sociability",
+            "stat": "strength",
             "delta": -1
           }
         ],
@@ -2569,7 +2569,7 @@
           },
           {
             "kind": "modifyStat",
-            "stat": "grooming",
+            "stat": "reason",
             "delta": -1
           }
         ],
@@ -2598,7 +2598,7 @@
           },
           {
             "kind": "modifyStat",
-            "stat": "endurance",
+            "stat": "wits",
             "delta": -1
           }
         ],
@@ -2929,7 +2929,7 @@
           },
           {
             "kind": "modifyStat",
-            "stat": "grooming",
+            "stat": "endurance",
             "delta": -1
           }
         ],
@@ -2988,7 +2988,7 @@
           },
           {
             "kind": "modifyStat",
-            "stat": "sociability",
+            "stat": "dexterity",
             "delta": -1
           }
         ]
@@ -3290,7 +3290,7 @@
           },
           {
             "kind": "modifyStat",
-            "stat": "grooming",
+            "stat": "manners",
             "delta": -1
           }
         ],
@@ -3343,7 +3343,7 @@
           },
           {
             "kind": "modifyStat",
-            "stat": "sociability",
+            "stat": "reason",
             "delta": -1
           }
         ]
@@ -3509,7 +3509,7 @@
           },
           {
             "kind": "modifyStat",
-            "stat": "endurance",
+            "stat": "wits",
             "delta": -1
           }
         ],
@@ -3550,7 +3550,7 @@
           },
           {
             "kind": "modifyStat",
-            "stat": "strength",
+            "stat": "manners",
             "delta": -1
           }
         ]
@@ -3716,7 +3716,7 @@
           },
           {
             "kind": "modifyStat",
-            "stat": "endurance",
+            "stat": "manners",
             "delta": -1
           }
         ],
@@ -3739,7 +3739,7 @@
           },
           {
             "kind": "modifyStat",
-            "stat": "reason",
+            "stat": "dexterity",
             "delta": -1
           }
         ],
@@ -3899,7 +3899,7 @@
           },
           {
             "kind": "modifyStat",
-            "stat": "grooming",
+            "stat": "reason",
             "delta": -1
           }
         ],
@@ -3940,7 +3940,7 @@
           },
           {
             "kind": "modifyStat",
-            "stat": "sociability",
+            "stat": "manners",
             "delta": -1
           }
         ]
@@ -4094,7 +4094,7 @@
           },
           {
             "kind": "modifyStat",
-            "stat": "grooming",
+            "stat": "sexuality",
             "delta": -1
           }
         ],
@@ -4123,7 +4123,7 @@
           },
           {
             "kind": "modifyStat",
-            "stat": "creativity",
+            "stat": "endurance",
             "delta": -1
           }
         ]
