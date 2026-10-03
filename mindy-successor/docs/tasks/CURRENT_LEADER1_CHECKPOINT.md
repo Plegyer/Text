@@ -2,13 +2,15 @@
 
 Current durable recovery point:
 
-`mindy-successor/docs/tasks/LEADER1_CHECKPOINT_2026-10-03_POST_D39.md`
+`mindy-successor/docs/tasks/LEADER1_CHECKPOINT_2026-10-03_POST_STRONG_META_D45_HANDOFF.md`
 
 Checkpoint commit:
-`bd721ec9eb03d087d5fb2749f0c8cda86f8dba33`
+`9e893475eb70b7b40df07711916064cb313c9a4b`
 
 Recovery rule:
 - read this checkpoint after Leader-context rollover;
 - then requery fresh Git state before acting;
 - Git remains source of truth;
-- do not infer worker activity from pointers or branch existence.
+- do not infer worker activity from pointers or branch existence;
+- verify Chat 4/5 green candidate heads before freezing;
+- Chat 2 remains the sole full-CI assembly lane.
