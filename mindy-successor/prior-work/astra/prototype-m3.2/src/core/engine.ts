@@ -847,7 +847,11 @@ function activityMiniGameTransitionAvailable(
   if(!transition)return true;
   const game=envelope.internalState.miniGames?.[transition.game];
   if(game&&game.status!=='active')return false;
-  return (game?.stage??'start')===transition.from;
+  if((game?.stage??'start')!==transition.from)return false;
+  const suspicion=game?.suspicion??0;
+  if(transition.minSuspicion!==undefined&&suspicion<transition.minSuspicion)return false;
+  if(transition.maxSuspicion!==undefined&&suspicion>transition.maxSuspicion)return false;
+  return true;
 }
 function applyActivityMiniGameTransition(
   envelope:ActivityEnvelope,
@@ -858,11 +862,12 @@ function applyActivityMiniGameTransition(
   type MiniGameState=NonNullable<ActivityEnvelope['internalState']['miniGames']>[string];
   const games:NonNullable<ActivityEnvelope['internalState']['miniGames']>=envelope.internalState.miniGames??{};
   envelope.internalState.miniGames=games;
-  const fresh:MiniGameState={stage:'start',status:'active',choiceIds:[]};
+  const fresh:MiniGameState={stage:'start',status:'active',choiceIds:[],suspicion:0};
   const game=games[transition.game]??fresh;
-  if(game.status!=='active'||game.stage!==transition.from)throw new Error('Mini-game transition сейчас недоступен.');
+  if(!activityMiniGameTransitionAvailable(envelope,option))throw new Error('Mini-game transition сейчас недоступен.');
   game.stage=transition.to;
   game.choiceIds.push(option.id);
+  game.suspicion=Math.max(0,Math.min(100,game.suspicion+(transition.suspicionDelta??0)));
   if(transition.outcome)game.status=transition.outcome;
   games[transition.game]=game;
 }
