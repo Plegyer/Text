@@ -1,0 +1,28 @@
+phase,field,value_or_range,meaning,verified_producer,verified_consumer
+reset,proArmCountdown,10,initial shared-route countdown,run reset,new-day route logic
+career_order,sooGirlsCollected,99,Arm Candy 15-shift stage first then Prostitute second,SceneEvents_256,main shared Prostitute/Arm Candy listener
+career_order,sooGirlsCollected,100,Prostitute 15-shift stage first then Arm Candy second,SceneEvents_255,main shared Prostitute/Arm Candy listener
+proposal,sooGirlsCollected,999,Pimpy proposal pending,SceneEvents_256 or SceneEvents_263,main shared route -> SceneEvents_258
+proposal,sooGirlsCollected,1000,Pimpy backstab proposal accepted,SceneEvents_258,main shared route -> SceneEvents_277
+alignment,sooPoints,integer,hidden accumulated Soo-vs-Pimpy alignment,Scenes 255/256/257/258/263/264/265/274,SceneEvents_265 sign check
+faction,proArmAlly,soo,final faction resolved when sooPoints >= 0,SceneEvents_265,Night/crisis/recruit/final-route consumers
+faction,proArmAlly,pimpy,final faction resolved when sooPoints < 0,SceneEvents_265,Night/crisis/weaken/final-route consumers
+preparation,proArmCountdown,20,post-faction preparation window,SceneEvents_265,main shared route final-phase gate
+soo_recruit,sooAllyList[0],yes,Dungeon 1 recruit,SceneEvents_42,SceneEvents_254 final minigame
+soo_recruit,sooAllyList[1],yes,Dungeon 2 recruit,SceneEvents_104,SceneEvents_254 final minigame
+soo_recruit,sooAllyList[2],yes,intended Dungeon 3 recruit; verified producer missing due index bug,SceneEvents_205 incorrectly writes slot 0,SceneEvents_254 final minigame
+soo_recruit,sooAllyList[3],yes,Soo relationship recruit,SceneEvents_266,SceneEvents_254 final minigame
+soo_recruit,sooAllyList[4],yes,special minor-crisis recruit,SceneEvents_249,SceneEvents_254 final minigame
+soo_recruit,sooAllyList[5..7],yes,repeated recruit interactions fill first free slot,ActorEvents_1940,SceneEvents_254 final minigame
+soo_final,sooGirlsCollected,0..8 intended,currently available allies derived from recruited slots,SceneEvents_254,ally deploy/recycle and minigame outcome
+pimpy_power,sooGirlsCollected,<=0,no combat / direct Pimpy win path,relationship/crisis/Night reductions,SceneEvents_270
+pimpy_power,sooGirlsCollected,1..5,Soo combat tier monsterRandomPick 50,pre-fight state,SceneEvents_44
+pimpy_power,sooGirlsCollected,6..10,Soo combat tier monsterRandomPick 49,pre-fight state,SceneEvents_44
+pimpy_power,sooGirlsCollected,11..15,Soo combat tier monsterRandomPick 48,pre-fight state,SceneEvents_44
+pimpy_power,sooGirlsCollected,16+,Soo combat tier monsterRandomPick 47,pre-fight state,SceneEvents_44
+ending,endPimpyBackstab,true,backstab ending,SceneEvents_277,persistent ending/meta
+ending,endSooLose,true,Soo-side minigame loss,SceneEvents_271,persistent ending/meta
+ending,endingSet,sooWon,Soo-side minigame win accepted via Orb,SceneEvents_272,central ending router -> SceneEvents_273
+ending,endSooWin,true,Soo win finalized,SceneEvents_273,persistent ending/meta
+ending,endPimpyWin,true,Pimpy pre-fight auto-win or combat win,SceneEvents_275,persistent ending/meta
+ending,endPimpyLose,true,Pimpy-side sexual/seduction combat loss,SceneEvents_276,persistent ending/meta
