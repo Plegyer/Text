@@ -176,6 +176,47 @@ export function palaceStageAtLeast(current:PalaceStage,required:PalaceStage):boo
   return palaceStages.indexOf(current)>=palaceStages.indexOf(required);
 }
 
+export function palaceExpectedStageForDutyCount(count:number):PalaceStage{
+  if(count>=15)return 'outcome-ready';
+  if(count>=12)return 'crossroads';
+  if(count>=8)return 'palace-network';
+  if(count>=5)return 'trusted-service';
+  if(count>=2)return 'working-rhythm';
+  return 'entered-service';
+}
+
+export function assertPalaceProgressionState(s:Save):void{
+  const state=s.run.progression.palace;
+  const count=palaceDutyCount(s);
+  if(!Number.isInteger(count)||count<0||count>PALACE_MAX_STRUCTURAL_DUTIES)throw new Error('Некорректный Palace duty count.');
+  const expectedStage=palaceExpectedStageForDutyCount(count);
+  if(state.stage!==expectedStage)throw new Error(`Palace stage/count mismatch: ${state.stage} / ${count}.`);
+
+  const expectedDutyIds=palaceDutyDefinitions.slice(0,count).map(definition=>definition.id);
+  if(state.committedDutyIds.length!==expectedDutyIds.length||state.committedDutyIds.some((id,index)=>id!==expectedDutyIds[index])){
+    throw new Error('Некорректная последовательность committed Palace duties.');
+  }
+  if(new Set(state.completedSupportIds).size!==state.completedSupportIds.length)throw new Error('Дублированный Palace support action.');
+  if(state.completedSupportIds.some(id=>!palaceSupportDefinition(id)))throw new Error('Неизвестный Palace support action в сохранении.');
+  if(new Set(state.routePrepFacts).size!==state.routePrepFacts.length)throw new Error('Дублированный Palace route-prep fact.');
+
+  for(const route of state.routePrepFacts){
+    if(!s.run.progression.worldFacts.includes(palaceRoutePrepWorldFacts[route]))throw new Error('Palace route-prep projection mismatch.');
+  }
+  for(const route of Object.keys(palaceRoutePrepWorldFacts) as PalaceRoutePrepFact[]){
+    const projected=s.run.progression.worldFacts.includes(palaceRoutePrepWorldFacts[route]);
+    if(projected!==state.routePrepFacts.includes(route))throw new Error('Palace route-prep worldFact mismatch.');
+  }
+
+  const complete=s.run.progression.worldFacts.includes(PALACE_PROGRESSION_COMPLETE_FACT);
+  if(complete!==(count===PALACE_MAX_STRUCTURAL_DUTIES&&state.stage==='outcome-ready')){
+    throw new Error('Palace progression-complete mismatch.');
+  }
+  if(state.lastStructuralDutyDay>s.run.calendar.elapsedDays||state.lastSupportActionDay>s.run.calendar.elapsedDays){
+    throw new Error('Palace daily-lock day находится в будущем.');
+  }
+}
+
 export function palaceDutyDefinition(id:string){
   return palaceDutyDefinitions.find(definition=>definition.id===id);
 }
