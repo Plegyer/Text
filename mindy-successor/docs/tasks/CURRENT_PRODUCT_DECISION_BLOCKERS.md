@@ -1,129 +1,141 @@
 # Current Product Decision Blockers
 
-Status: ACTIVE
-Owner: Lead / Product coordination
-Scope: decisions that currently block completion of the connected Lumber product slice.
+Status: **ACTIVE — REFRESHED AFTER D33/D34**
+Owner: Leader / Product coordination
 
-This file is not permission to invent values. It records only the minimum unresolved decisions that must be made before Integration may implement them.
+Authority rule:
+`USER_DECISIONS_LOCKED_v1.md` is canonical. This file is only a current queue/index and must not override locked decisions.
 
-## 1. Natural School -> Lumber management publisher
+## Recently resolved blockers
 
-### Existing downstream contract
+### Lumber School -> management publisher — RESOLVED by D33
 
-Already present and tested:
-- transport fact: `lumber.school.management-ready`;
-- Lumber reaction event: `lumber-cross.school-management-return`;
-- required Foreman relationship stage: `route-professional`;
-- Lumber apply choice writes:
-  - `management-school-ready`;
-  - `forewoman-problem-resolved`.
+Canonical source:
+- `school.course.literacy_and_numbers`;
+- `school.track.literacy_and_numbers`.
 
-Current tests prove this downstream seam works only after test-only injection of `lumber.school.management-ready`.
+Readiness:
+- paid `lessons_completed >= 3`
+  OR
+- `night_study_sessions >= 3`.
 
-### Current School preparation
+Canonical public result:
+`lumber.school.management-ready`.
 
-The existing handoff references:
-- course: `school.course.literacy_and_numbers`;
-- track: `school.track.literacy_and_numbers`;
-- private counter: `lessons_completed`.
+Publication is School-owned, exactly once, and independent of Lumber state.
 
-But the following remain deliberately null/open:
-- selected provider type;
-- threshold or named milestone;
-- School publisher event/identity;
-- publication timing;
-- whether `lumber.school.management-ready` is the final canonical transport identity.
+Lumber consumer must be order-independent:
+- School fact after professional Foreman route;
+- or professional Foreman route after School fact.
 
-### Product decisions required
+No certificate/project/exam/parallel progression system is introduced.
 
-Before production implementation, Product/Lead must explicitly choose:
-1. which existing School source authorizes the management result;
-2. whether eligibility is a lesson-count threshold, named milestone, stat condition, or another existing supported condition;
-3. the exact condition/value if numeric;
-4. when the public result is published;
-5. whether the current world-fact transport identity is canonical.
+### Intermediate Lumber progression — RESOLVED by D34
 
-### Forbidden until resolved
-
-Do not:
-- guess a lesson count;
-- infer a threshold from old drafts;
-- treat one Literacy & Numbers lesson as the production milestone;
-- publish the world fact directly from generic School completion;
-- make Lumber inspect private School track state directly;
-- create a second School progression system.
-
-## 2. Intermediate Lumber progression
-
-### Current production state
-
-Current runtime has the minimal career progression:
+True ordinary stages:
 - `newcomer`;
 - `accepted-hand`;
-- transition `accept-hand` after the existing first-shift flow.
-
-Locked ending rule:
-- Hard Work eligibility is exactly `completed_shifts >= 50`.
-
-### Current approved product vocabulary
-
-The following Lumber progression identities exist in current coordination/product vocabulary:
 - `trusted-worker`;
-- `veteran`;
-- `forewoman-ready`;
-- `forest-ready`;
-- `outcome-ready`.
+- `veteran`.
 
-They are not permission to infer numeric gates or a linear topology.
+Shift milestones:
+- 1;
+- 8;
+- 20.
 
-### Product decisions required
+Hard Work remains exactly 50 and independent.
 
-Before production transitions are added, Product/Lead must explicitly choose:
-1. which of these identities are true career stages versus route/readiness markers;
-2. their transition topology from `accepted-hand`;
-3. exact eligibility conditions for each transition;
-4. whether any route-readiness state belongs in career stages or existing facts/relationships instead;
-5. how route readiness interacts with Forewoman/Forest endings without changing Hard Work = 50.
+Forewoman / Forest / outcome readiness remains fact/ending based and must not become mutually exclusive career stages.
 
-### Forbidden until resolved
+Both complex Lumber outcome families require at least `trusted-worker`, so they cannot become eligible before 8 completed Lumber shifts.
 
-Do not:
-- restore historical 10/25/30 shift thresholds;
-- derive intermediate gates by dividing the 50-shift Hard Work rule;
-- treat `forewoman-ready`, `forest-ready`, and `outcome-ready` as automatically linear;
-- add a parallel career state system;
-- weaken or move the fixed Hard Work 50 rule.
+## Current project-wide Product gaps
 
-## 3. Open but not blocking the current Lumber slice
+These are open Product/balance/content questions. They do **not** authorize workers to invent values.
 
-These remain open product/balance decisions but are not excuses to block unrelated accepted work:
-- exact stat thresholds for the seven late ordinary careers;
-- exact calendar fallback values if retained in the final unlock model;
-- exact Secret Debt probability, amounts, activation delay, penalties and rewards;
-- exact intermediate progression for Satyr Maid and Undead Farm;
-- production art/media budget.
+### Economy
 
-## 4. Worker handling
+Still open:
+- final ordinary wage scale;
+- final lodging price/value relationship;
+- whether any later-year lodging escalation exists;
+- final School tuition/gain ratio.
 
-Chat 1 / Integration:
-- may implement only after a current decision locks the missing contract;
-- otherwise preserve existing seams and record BLOCK/no-op.
+Current executable scale is authority for testing until changed.
 
-Chat 5 / School:
-- may prepare text/mappings/fixtures;
-- must not choose the School management provider/threshold/publication contract.
+Leader audit:
+`LEADER_LIVE_ECONOMY_DRIFT_AUDIT_v1.md`.
 
-Chat 4 / QA:
-- must keep the missing natural School publisher and missing approved intermediate Lumber contract visible as product blockers;
-- must not repair them itself.
+### Housing tier value
 
-Chat 2 / Chat 3:
-- continue presentation/content work that does not require these decisions.
+Current live normal lodging (100) is mechanically dominated by cheap lodging (50).
 
-## 5. Acceptance rule
+Leader audit:
+`LEADER_HOUSING_SEMANTIC_AUDIT_v1.md`.
 
-A future integrated Lumber candidate may only claim these blockers resolved when:
-- the chosen product decision is recorded in the current locked-decision source;
-- implementation exists on one frozen exact head;
-- repository CI is green;
-- Chat 4 verifies natural reachability and no invented thresholds/state.
+Chat 5 currently owns the Product comparison packet for:
+- private-space allowlist;
+- bounded storage/preparation utility;
+- narrow rest/recovery utility.
+
+No production housing change is authorized before that decision.
+
+### Exact Lust starting value
+
+Still open.
+
+Workers must not infer the value from original-game Lust, School Body Confidence or Secret Debt thresholds.
+
+### Remaining Secret Debt balance values
+
+D19/D30/D32 already lock trigger/debt timing, forced Night, Energy penalty, exits and future-run Keystone identities/numbers.
+
+Still open:
+- hidden-work shift stat gains;
+- hidden-work wage coefficients;
+- owner-kill exact stat/Lust thresholds.
+
+### Palace
+
+D29 locks rich six-stage topology and 2/5/8/12/15 structural duty milestones.
+
+Still open:
+- exact Palace daily cadence;
+- final authored content/lore within the topology;
+- macro mystery/lore.
+
+Chat 6 currently owns the implementation-ready stage/duty contract.
+
+### Activity
+
+Still open:
+- final region count;
+- final mechanic mix outside already-shipped/accepted Activity slices.
+
+### Production art/media budget
+
+Still open.
+
+## Decisions that are NOT open anymore
+
+Do not reopen without explicit Leader/Product action:
+- D26 same-career max one shift/day;
+- D28 0..1 Keystone + 0..2 Specialists;
+- D29 rich-six Palace topology;
+- D30 Secret Debt reward identities;
+- D31 seasonal negative target map;
+- D32 Secret Debt Keystone exact numbers;
+- D33 Lumber School management publisher;
+- D34 Lumber 1/8/20 career topology;
+- Hard Work = 50;
+- Palace D23 10/10 permanent + 10/10 active -> Day-1 invitation;
+- Palace True cap-only 100 -> 200;
+- Secret Debt +2000 / 10 days / 20000 / forced Night / next-day Energy -1.
+
+## Worker handling
+
+- Product/research workers may prepare decision packets but not silently lock open values.
+- Producer workers implement only locked authority.
+- Chat 2 remains the only full-CI integration lane.
+- Leader is the only merge authority.
+- Git exact SHA + tests, not verbal completion, determine acceptance.
