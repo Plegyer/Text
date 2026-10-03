@@ -58,7 +58,7 @@ test('schema-4 migration round-trip does not synthesize redundant late-career un
   const second=parseSave(JSON.stringify(first),catalog);
   const raw=JSON.parse(JSON.stringify(second));
 
-  assert.equal(raw.schemaVersion,5);
+  assert.equal(raw.schemaVersion,6);
   assert.equal('careerUnlocks' in raw.run,false);
   assert.equal('lateCareerUnlocks' in raw.run,false);
   assert.equal('careerUnlocks' in raw.meta,false);
