@@ -261,15 +261,148 @@ D5 strong rule modifiers use a **Keystone + Specialists** architecture.
 - this architecture does not create Titles and does not port original Plus Mode.
 
 
+### D28 — strong Meta Specialist capacity = 2
+
+D27 is now numerically resolved for Specialist capacity.
+
+For each New Start+ life:
+- active Keystones: **0..1**;
+- active Specialists: **0..2**;
+- ordinary D21-D23 Hard Work packages remain outside both limits and may still use any earned subset;
+- pure knowledge/content unlocks remain outside both limits and are automatic;
+- D24 Palace cap-200 consumes **one normal Specialist slot** when active;
+- there is no hidden/free Palace Specialist slot;
+- adding a third Specialist is invalid for a newly resolved run.
+
+Reasoning accepted from:
+`chat4/strong-meta-keystone-capacity-v5@68d480c46d604da4f298ba03241011f8a55550d9`.
+
+Capacity 1 made cap-200 consume the entire directed build layer. Capacity 3 let directed effects compose into an almost-general second power layer. Capacity 2 preserves a meaningful pair while requiring the player to leave another useful Specialist inactive.
+
+Current-run loadout resolution must be snapshotted. A later catalog/capacity change must not rewrite an in-progress life.
+
+### D29 — Palace uses the rich six-stage progression topology
+
+The Palace is a substantial final profession/route, not a short postscript after D23 entry.
+
+Accepted topology source:
+`chat6/palace-progression-topology-decision-v10@7a65f2dd88b53135c393be64f6e78ab46b9bcab8`.
+
+The run-local Palace progression uses six functional stages:
+
+1. **Entered Service**;
+2. **Working Rhythm**;
+3. **Trusted Service**;
+4. **Palace Network**;
+5. **Crossroads**;
+6. **Outcome Ready**.
+
+Current structural duty milestones are:
+- 2;
+- 5;
+- 8;
+- 12;
+- 15 completed Palace duties.
+
+These are Palace progression milestones, not additional entry requirements. D23 remains the sole Palace entry authority:
+permanent ordinary 10/10 + current-run active 10/10 -> automatic Day-1 invitation -> Palace access.
+
+Locked Palace topology rules:
+- `palace.progression-complete` is emitted exactly once when the run reaches Outcome Ready;
+- Prince confrontation cannot become available before Palace progression completion;
+- Palace True Ending still additionally requires all 12 progression stats >=91; Lust is excluded;
+- the three non-True Palace outcome families may begin preparation at different middle stages but remain **non-exclusive until explicit ending commit**;
+- Service Life preparation may begin at Trusted Service;
+- Court Power preparation may begin at Palace Network;
+- Inner Truth preparation may begin at Crossroads;
+- all three still finalize only from Outcome Ready;
+- romance, Palace Night, relationships and legacy items are optional authored variants, never mandatory progression gates;
+- refusing romance cannot block any Palace outcome;
+- Palace Night cannot override a forced Secret Debt Night;
+- Palace has no `hardWork:palace` requirement;
+- D26 ordinary same-career one-shift/day pacing is **not** silently applied to Palace.
+
+Exact Palace daily cadence and exact authored event text remain separate tuning/content work. The chosen topology targets a substantial capstone and accepts the higher production/test cost in exchange for lower "too short" risk and more room for the three outcome families.
+
+### D30 — Secret Debt ending rewards use three distinct bounded Keystones
+
+Accepted design source:
+`chat5/secret-debt-ending-meta-rewards-v6@461bfa161e00bea15bbda15baea2c08b2f6aa52a`.
+
+Each of the three Secret Debt endings permanently earns a distinct **Keystone** option for future New Start+ lives. Ownership may accumulate across lives, but D27/D28 means at most one Keystone can be active in a particular life.
+
+#### Paid Freedom -> Earned Reserve Match
+
+Mechanical identity:
+- future-run Keystone;
+- while not bound by Secret Debt, ordinary-profession wage earned in the run can receive a bounded 1:1 matching contribution;
+- only legitimate ordinary profession wage counts;
+- School/Activity/item/passive-income money does not count;
+- the +2000 lender grant never counts;
+- Secret Debt hidden-work wage never counts while bound;
+- repayment never counts;
+- the match has a finite per-run cap.
+
+This reward supports a work-first solvency/economic-planning playstyle without becoming starting cash or a permanent stipend.
+
+#### Bound Life -> Work Rhythm
+
+Mechanical identity:
+- future-run Keystone;
+- after completing at least one ordinary-profession shift on a day, the next calendar day can receive +1 usable Energy;
+- multiple shifts on the same day do not stack this benefit;
+- only a finite number of bonus days may trigger per run;
+- Secret Debt hidden work does not arm the reward;
+- School/Activity alone do not arm it;
+- D26 same-career pacing remains unchanged;
+- if a bonus day is also Secret-Debt-bound, forced next-day Energy -1 applies after the selected Energy modifier and must still leave the bound loadout one usable Energy below the same unbound loadout.
+
+This reward supports a labor-rhythm / multi-career playstyle without becoming unconditional +1 daily Energy.
+
+#### Takeover -> Network Retainer
+
+Mechanical identity:
+- future-run Keystone;
+- pays a small fixed amount at the start of eligible early-run days for a bounded initial calendar period;
+- while Secret Debt is actively bound, payment is paused;
+- paused payments are not banked or repaid later;
+- the reward has a finite per-run total;
+- it never changes lender discovery, debt size, repayment, forced Night, ordinary-career lock or Palace D23 gating.
+
+This reward supports a capital-first / network-income playstyle and is intentionally broad enough to require the one Keystone slot.
+
+#### Secret Debt reward parameter status
+
+The three **reward identities, classes and invariants above are locked**.
+
+Exact numeric balance remains open until the successor economy pass:
+- Earned Reserve Match per-run money cap;
+- Work Rhythm maximum triggered bonus days;
+- Network Retainer daily payment, duration and therefore total cap.
+
+The v6 packet's `1000`, `20 bonus days`, and `25 × 40` values are accepted as current research targets, **not yet runtime constants**.
+
+No selected Secret Debt reward may:
+- alter the unseen 20% lender chance;
+- auto-refuse or pre-reveal the encounter;
+- change +2000 / 10-day activation / 20000 debt;
+- cancel forced Night;
+- cancel next-day Energy -1;
+- unlock ordinary careers while bound;
+- count toward ordinary Hard Work 10/10;
+- substitute for Palace qualification;
+- silently enable cap-200.
+
+
+
 ## Still open after this lock
 
 - exact numeric economy;
 - exact Lust starting value;
-- meta loadout slot/budget count for non-Hard-Work strong modifiers;
 - exact ordinary profession -> selectable +5 stat mapping, under D22 breadth/Lust constraints;
 - exact School curriculum/prices;
 - exact Activity region count/mechanics;
-- exact Palace role/content outside the locked True Ending requirements;
+- exact Palace daily cadence and authored content within the locked six-stage topology;
 - macro mystery/lore;
-- exact Secret Debt shift stat gains, wage coefficients, owner-kill stat/Lust thresholds, and ending Meta rewards;
+- exact Secret Debt shift stat gains, wage coefficients, owner-kill stat/Lust thresholds, and D30 Keystone numeric parameters;
 - production art/media budget.
