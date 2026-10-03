@@ -11467,6 +11467,864 @@
           "setRoute": "customs-lane"
         }
       ]
+    },
+    {
+      "id": "anomalous.reach",
+      "label": "Anomalous Reach",
+      "version": 1,
+      "entryConditions": [
+        {
+          "kind": "calendarYear",
+          "op": "gte",
+          "value": 2
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "schoolCounter",
+              "track": "school.track.arcana",
+              "counter": "lessons_completed",
+              "op": "gte",
+              "value": 1
+            },
+            {
+              "kind": "schoolCounter",
+              "track": "school.track.arcana",
+              "counter": "night_study_sessions",
+              "op": "gte",
+              "value": 1
+            },
+            {
+              "kind": "careerFact",
+              "career": "undead-farm",
+              "fact": "school-research-ready",
+              "present": true
+            },
+            {
+              "kind": "itemCapability",
+              "capability": "preserved_farm_sample",
+              "present": true
+            },
+            {
+              "kind": "worldFact",
+              "fact": "activity.forest-frontier.anchor-secured",
+              "present": true
+            },
+            {
+              "kind": "worldFact",
+              "fact": "activity.trade-corridor.anchor-secured",
+              "present": true
+            }
+          ]
+        }
+      ],
+      "entryEnergyCost": 2,
+      "resumePolicy": "allowed",
+      "timePolicy": "same_day",
+      "failurePolicy": "exit_to_day",
+      "adapter": "counter.v1",
+      "adapterConfig": {
+        "initialEndurance": 8,
+        "advanceEnduranceCost": 2,
+        "successAtProgress": 6,
+        "failAtEndurance": 0,
+        "fieldTimeSegments": 6,
+        "advanceFieldTimeCost": 1
+      },
+      "results": [
+        {
+          "id": "anomalous.reach.success",
+          "outcome": "success",
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "activity.anomalous-reach.anchor-secured"
+            },
+            {
+              "kind": "addWorldFact",
+              "fact": "anomalous.reach.returned"
+            }
+          ]
+        },
+        {
+          "id": "anomalous.reach.escape",
+          "outcome": "escape",
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "anomalous.reach.escaped"
+            }
+          ]
+        },
+        {
+          "id": "anomalous.reach.failure",
+          "outcome": "failure",
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "anomalous.reach.failed"
+            }
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "anomaly.route.echo-ridge",
+          "label": "Echo Ridge",
+          "category": "route",
+          "conditions": [],
+          "progressDelta": 0,
+          "enduranceCost": 0,
+          "fieldTimeCost": 1,
+          "effects": [],
+          "setRoute": "echo-ridge"
+        },
+        {
+          "id": "anomaly.route.preserved-basin",
+          "label": "Preserved Basin",
+          "category": "route",
+          "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "itemCapability",
+                  "capability": "preserved_farm_sample",
+                  "present": true
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "undead-farm",
+                  "fact": "sample-preserved",
+                  "present": true
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "undead-farm",
+                  "fact": "school-research-ready",
+                  "present": true
+                }
+              ]
+            }
+          ],
+          "progressDelta": 0,
+          "enduranceCost": 0,
+          "fieldTimeCost": 1,
+          "effects": [],
+          "setRoute": "preserved-basin"
+        },
+        {
+          "id": "anomaly.route.old-boundary-rift",
+          "label": "Old Boundary Rift",
+          "category": "route",
+          "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "calendarSeason",
+                  "value": "autumn"
+                },
+                {
+                  "kind": "calendarSeason",
+                  "value": "winter"
+                }
+              ]
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "itemCapability",
+                  "capability": "enter_old_boundary",
+                  "present": true
+                },
+                {
+                  "kind": "schoolCounter",
+                  "track": "school.track.arcana",
+                  "counter": "lessons_completed",
+                  "op": "gte",
+                  "value": 3
+                },
+                {
+                  "kind": "schoolCounter",
+                  "track": "school.track.arcana",
+                  "counter": "night_study_sessions",
+                  "op": "gte",
+                  "value": 3
+                }
+              ]
+            }
+          ],
+          "progressDelta": 0,
+          "enduranceCost": 0,
+          "fieldTimeCost": 1,
+          "effects": [],
+          "setRoute": "old-boundary-rift"
+        },
+        {
+          "id": "anomaly.challenge.echo-survey",
+          "label": "Survey the repeating marks",
+          "category": "interpretation",
+          "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "stat",
+                  "stat": "reason",
+                  "op": "gte",
+                  "value": 4
+                },
+                {
+                  "kind": "schoolCounter",
+                  "track": "school.track.literacy_and_numbers",
+                  "counter": "lessons_completed",
+                  "op": "gte",
+                  "value": 1
+                },
+                {
+                  "kind": "schoolCounter",
+                  "track": "school.track.arcana",
+                  "counter": "lessons_completed",
+                  "op": "gte",
+                  "value": 1
+                }
+              ]
+            }
+          ],
+          "progressDelta": 1,
+          "enduranceCost": 0,
+          "fieldTimeCost": 1,
+          "effects": [],
+          "setRoute": "echo-ridge"
+        },
+        {
+          "id": "anomaly.detour.ritual-observe",
+          "label": "Detour: observe the circuit without touching it",
+          "category": "pattern_ritual_circuit",
+          "conditions": [],
+          "progressDelta": 0,
+          "enduranceCost": 0,
+          "fieldTimeCost": 1,
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "anomalous.reach.pattern-observed"
+            }
+          ],
+          "setRoute": "echo-ridge",
+          "miniGameTransition": {
+            "game": "anomaly.pattern-ritual-circuit",
+            "from": "start",
+            "to": "observed"
+          }
+        },
+        {
+          "id": "anomaly.ritual.trace-symmetry",
+          "label": "Trace the repeating symmetry",
+          "category": "pattern_ritual_circuit",
+          "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "stat",
+                  "stat": "reason",
+                  "op": "gte",
+                  "value": 4
+                },
+                {
+                  "kind": "schoolCounter",
+                  "track": "school.track.literacy_and_numbers",
+                  "counter": "lessons_completed",
+                  "op": "gte",
+                  "value": 1
+                }
+              ]
+            }
+          ],
+          "progressDelta": 0,
+          "enduranceCost": 0,
+          "fieldTimeCost": 1,
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "anomalous.reach.pattern-reasoned"
+            }
+          ],
+          "setRoute": "echo-ridge",
+          "miniGameTransition": {
+            "game": "anomaly.pattern-ritual-circuit",
+            "from": "observed",
+            "to": "aligned"
+          }
+        },
+        {
+          "id": "anomaly.ritual.arcana-inversion",
+          "label": "Invert the outer ring (+1 progress, -2 Endurance)",
+          "category": "pattern_ritual_circuit",
+          "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "careerFact",
+                  "career": "undead-farm",
+                  "fact": "school-research-ready",
+                  "present": true
+                },
+                {
+                  "kind": "schoolCounter",
+                  "track": "school.track.arcana",
+                  "counter": "lessons_completed",
+                  "op": "gte",
+                  "value": 2
+                },
+                {
+                  "kind": "schoolCounter",
+                  "track": "school.track.arcana",
+                  "counter": "night_study_sessions",
+                  "op": "gte",
+                  "value": 2
+                }
+              ]
+            }
+          ],
+          "progressDelta": 1,
+          "enduranceCost": 2,
+          "fieldTimeCost": 1,
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "anomalous.reach.pattern-inverted"
+            }
+          ],
+          "setRoute": "echo-ridge",
+          "miniGameTransition": {
+            "game": "anomaly.pattern-ritual-circuit",
+            "from": "observed",
+            "to": "aligned"
+          }
+        },
+        {
+          "id": "anomaly.ritual.resolve",
+          "label": "Close the aligned circuit",
+          "category": "pattern_ritual_circuit",
+          "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "stat",
+                  "stat": "magic",
+                  "op": "gte",
+                  "value": 5
+                },
+                {
+                  "kind": "stat",
+                  "stat": "reason",
+                  "op": "gte",
+                  "value": 5
+                },
+                {
+                  "kind": "itemCapability",
+                  "capability": "preserved_farm_sample",
+                  "present": true
+                }
+              ]
+            }
+          ],
+          "progressDelta": 2,
+          "enduranceCost": 0,
+          "fieldTimeCost": 1,
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "anomalous.reach.ritual-circuit-resolved"
+            }
+          ],
+          "setRoute": "echo-ridge",
+          "miniGameTransition": {
+            "game": "anomaly.pattern-ritual-circuit",
+            "from": "aligned",
+            "to": "resolved",
+            "outcome": "success"
+          }
+        },
+        {
+          "id": "anomaly.ritual.overload",
+          "label": "Force the unresolved circuit (-3 Endurance)",
+          "category": "pattern_ritual_circuit",
+          "conditions": [],
+          "progressDelta": 0,
+          "enduranceCost": 3,
+          "fieldTimeCost": 1,
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "anomalous.reach.ritual-circuit-fractured"
+            }
+          ],
+          "setRoute": "echo-ridge",
+          "miniGameTransition": {
+            "game": "anomaly.pattern-ritual-circuit",
+            "from": "aligned",
+            "to": "fractured",
+            "outcome": "failure"
+          }
+        },
+        {
+          "id": "anomaly.ritual.abort",
+          "label": "Break observation and withdraw from the circuit",
+          "category": "pattern_ritual_circuit",
+          "conditions": [],
+          "progressDelta": 0,
+          "enduranceCost": 0,
+          "fieldTimeCost": 0,
+          "effects": [],
+          "setRoute": "echo-ridge",
+          "miniGameTransition": {
+            "game": "anomaly.pattern-ritual-circuit",
+            "from": "observed",
+            "to": "aborted",
+            "outcome": "abort"
+          }
+        },
+        {
+          "id": "anomaly.shortcut.stabilized-fold",
+          "label": "Cross the stabilized fold",
+          "category": "shortcut",
+          "conditions": [
+            {
+              "kind": "worldFact",
+              "fact": "anomalous.reach.ritual-circuit-resolved",
+              "present": true
+            }
+          ],
+          "progressDelta": 3,
+          "enduranceCost": 0,
+          "fieldTimeCost": 1,
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "activity.anomalous-reach.mark.pathfinder"
+            }
+          ],
+          "setRoute": "echo-ridge"
+        },
+        {
+          "id": "anomaly.challenge.basin-compare-sample",
+          "label": "Compare the basin against a preserved farm specimen",
+          "category": "interpretation",
+          "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "itemCapability",
+                  "capability": "preserved_farm_sample",
+                  "present": true
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "undead-farm",
+                  "fact": "sample-preserved",
+                  "present": true
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "undead-farm",
+                  "fact": "school-research-ready",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "itemCapability",
+              "capability": "preserved_farm_sample",
+              "present": true
+            }
+          ],
+          "progressDelta": 2,
+          "enduranceCost": 0,
+          "fieldTimeCost": 1,
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "anomalous.reach.farm-comparison-made"
+            }
+          ],
+          "setRoute": "preserved-basin"
+        },
+        {
+          "id": "anomaly.challenge.basin-field-preserve",
+          "label": "Preserve an anomalous residue",
+          "category": "extraction",
+          "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "itemCapability",
+                  "capability": "preserved_farm_sample",
+                  "present": true
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "undead-farm",
+                  "fact": "sample-preserved",
+                  "present": true
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "undead-farm",
+                  "fact": "school-research-ready",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "itemCapability",
+              "capability": "preserve_specimen",
+              "present": true
+            }
+          ],
+          "progressDelta": 2,
+          "enduranceCost": 0,
+          "fieldTimeCost": 1,
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "activity.anomalous-reach.result.sample-secured"
+            },
+            {
+              "kind": "addWorldFact",
+              "fact": "activity.anomalous-reach.mark.preservation"
+            }
+          ],
+          "setRoute": "preserved-basin"
+        },
+        {
+          "id": "anomaly.challenge.basin-merchant-secure",
+          "label": "Seal a field aliquot in the Merchant sample kit",
+          "category": "extraction",
+          "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "itemCapability",
+                  "capability": "preserved_farm_sample",
+                  "present": true
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "undead-farm",
+                  "fact": "sample-preserved",
+                  "present": true
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "undead-farm",
+                  "fact": "school-research-ready",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "itemCapability",
+              "capability": "merchant_handle_samples",
+              "present": true
+            }
+          ],
+          "progressDelta": 2,
+          "enduranceCost": 0,
+          "fieldTimeCost": 1,
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "activity.anomalous-reach.result.sample-secured"
+            },
+            {
+              "kind": "addWorldFact",
+              "fact": "activity.anomalous-reach.mark.preservation"
+            }
+          ],
+          "setRoute": "preserved-basin"
+        },
+        {
+          "id": "anomaly.challenge.basin-arcana-record",
+          "label": "Record the anomaly against Arcana notes",
+          "category": "research",
+          "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "itemCapability",
+                  "capability": "preserved_farm_sample",
+                  "present": true
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "undead-farm",
+                  "fact": "sample-preserved",
+                  "present": true
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "undead-farm",
+                  "fact": "school-research-ready",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "schoolCounter",
+                  "track": "school.track.arcana",
+                  "counter": "lessons_completed",
+                  "op": "gte",
+                  "value": 2
+                },
+                {
+                  "kind": "schoolCounter",
+                  "track": "school.track.arcana",
+                  "counter": "night_study_sessions",
+                  "op": "gte",
+                  "value": 2
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "undead-farm",
+                  "fact": "school-research-ready",
+                  "present": true
+                }
+              ]
+            }
+          ],
+          "progressDelta": 1,
+          "enduranceCost": 0,
+          "fieldTimeCost": 1,
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "anomalous.reach.arcana-recorded"
+            }
+          ],
+          "setRoute": "preserved-basin"
+        },
+        {
+          "id": "anomaly.challenge.rift-boundary-read",
+          "label": "Read the old boundary deformation",
+          "category": "interpretation",
+          "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "calendarSeason",
+                  "value": "autumn"
+                },
+                {
+                  "kind": "calendarSeason",
+                  "value": "winter"
+                }
+              ]
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "itemCapability",
+                  "capability": "enter_old_boundary",
+                  "present": true
+                },
+                {
+                  "kind": "schoolCounter",
+                  "track": "school.track.arcana",
+                  "counter": "lessons_completed",
+                  "op": "gte",
+                  "value": 3
+                },
+                {
+                  "kind": "schoolCounter",
+                  "track": "school.track.arcana",
+                  "counter": "night_study_sessions",
+                  "op": "gte",
+                  "value": 3
+                }
+              ]
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "itemCapability",
+                  "capability": "enter_old_boundary",
+                  "present": true
+                },
+                {
+                  "kind": "stat",
+                  "stat": "magic",
+                  "op": "gte",
+                  "value": 5
+                }
+              ]
+            }
+          ],
+          "progressDelta": 2,
+          "enduranceCost": 1,
+          "fieldTimeCost": 1,
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "anomalous.reach.boundary-read"
+            }
+          ],
+          "setRoute": "old-boundary-rift"
+        },
+        {
+          "id": "anomaly.challenge.rift-risk",
+          "label": "Cross during the unstable pulse (+2 progress, -3 Endurance)",
+          "category": "risk",
+          "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "calendarSeason",
+                  "value": "autumn"
+                },
+                {
+                  "kind": "calendarSeason",
+                  "value": "winter"
+                }
+              ]
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "itemCapability",
+                  "capability": "enter_old_boundary",
+                  "present": true
+                },
+                {
+                  "kind": "schoolCounter",
+                  "track": "school.track.arcana",
+                  "counter": "lessons_completed",
+                  "op": "gte",
+                  "value": 3
+                },
+                {
+                  "kind": "schoolCounter",
+                  "track": "school.track.arcana",
+                  "counter": "night_study_sessions",
+                  "op": "gte",
+                  "value": 3
+                }
+              ]
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "worldFact",
+                  "fact": "anomalous.reach.arcana-recorded",
+                  "present": true
+                },
+                {
+                  "kind": "careerFact",
+                  "career": "undead-farm",
+                  "fact": "school-research-ready",
+                  "present": true
+                }
+              ]
+            }
+          ],
+          "progressDelta": 2,
+          "enduranceCost": 3,
+          "fieldTimeCost": 1,
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "anomalous.reach.rift-crossed"
+            }
+          ],
+          "setRoute": "old-boundary-rift"
+        },
+        {
+          "id": "anomaly.challenge.rift-keeper-contact",
+          "label": "Use the Keeper's anomaly comparison",
+          "category": "contact",
+          "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "calendarSeason",
+                  "value": "autumn"
+                },
+                {
+                  "kind": "calendarSeason",
+                  "value": "winter"
+                }
+              ]
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "itemCapability",
+                  "capability": "enter_old_boundary",
+                  "present": true
+                },
+                {
+                  "kind": "schoolCounter",
+                  "track": "school.track.arcana",
+                  "counter": "lessons_completed",
+                  "op": "gte",
+                  "value": 3
+                },
+                {
+                  "kind": "schoolCounter",
+                  "track": "school.track.arcana",
+                  "counter": "night_study_sessions",
+                  "op": "gte",
+                  "value": 3
+                }
+              ]
+            },
+            {
+              "kind": "relationshipFact",
+              "relationship": "undead-farm.keeper",
+              "fact": "request-resolved",
+              "present": true
+            },
+            {
+              "kind": "relationshipChoice",
+              "relationship": "undead-farm.keeper",
+              "choice": "request-response",
+              "value": "accepted"
+            }
+          ],
+          "progressDelta": 1,
+          "enduranceCost": 0,
+          "fieldTimeCost": 1,
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "anomalous.reach.contact-thread-open"
+            }
+          ],
+          "setRoute": "old-boundary-rift"
+        }
+      ]
     }
   ],
   "itemDefinitions": [
