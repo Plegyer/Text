@@ -199,3 +199,32 @@ test('D23 Palace qualification is unaffected by selected strong Meta rewards',()
   assert.equal(palaceRunQualified(s),false);
   assert.equal(s.meta.unlocks.includes('palace'),false);
 });
+
+test('parse rejects a mismatched resolved selection/reward snapshot',()=>{
+  let state=owned(STRONG_META_IDS.palaceCap200);
+  state=setPreferredStrongMetaSpecialist(state,STRONG_META_IDS.palaceCap200,true);
+  let s=freshSave({strongMeta:state});
+  s=allocateTen(s);
+  s=dispatch(s,{type:'finishCreation'},catalog);
+
+  const raw=JSON.parse(JSON.stringify(s));
+  raw.run.strongMetaSnapshot.specialistIds=[];
+  assert.throws(
+    ()=>parseSave(JSON.stringify(raw),catalog),
+    /selection\/reward mismatch/i
+  );
+});
+
+test('parse rejects run-local Strong Meta counters without their resolved reward',()=>{
+  let s=freshSave();
+  s=allocateTen(s);
+  s=dispatch(s,{type:'finishCreation'},catalog);
+
+  const raw=JSON.parse(JSON.stringify(s));
+  raw.run.strongMetaRuntime.reserveMatchPaid=1;
+  assert.throws(
+    ()=>parseSave(JSON.stringify(raw),catalog),
+    /Reserve Match runtime state exists without resolved reward/i
+  );
+});
+
