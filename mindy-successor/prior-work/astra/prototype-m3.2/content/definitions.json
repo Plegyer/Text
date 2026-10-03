@@ -11843,6 +11843,10 @@
             {
               "kind": "addWorldFact",
               "fact": "anomalous.reach.ritual-circuit-resolved"
+            },
+            {
+              "kind": "addWorldFact",
+              "fact": "activity.anomalous-reach.minigame.pattern-ritual-complete"
             }
           ],
           "setRoute": "echo-ridge",
@@ -12320,6 +12324,10 @@
             {
               "kind": "addWorldFact",
               "fact": "anomalous.reach.contact-thread-open"
+            },
+            {
+              "kind": "addWorldFact",
+              "fact": "activity.anomalous-reach.contact-thread-open"
             }
           ],
           "setRoute": "old-boundary-rift"
