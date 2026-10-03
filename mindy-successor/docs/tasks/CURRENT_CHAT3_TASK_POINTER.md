@@ -1,124 +1,61 @@
 # CURRENT CHAT3 TASK POINTER
 
-Status: **ACTIVE — ORDINARY COMPLEX ENDINGS TRANCHE B v10**
+Status: **ACTIVE — ADVANCED ENDINGS TRANCHE B PRODUCER v11**
 Owner: Chat 3
 
-Accepted prior Product packet:
-`chat3/activity-ending-family-v9@37079bea92a0fa442035de310d8d21fb0b435d53`
+Accepted Product authority:
+`chat3/ordinary-complex-endings-tranche-b-v10@7ed4ffbb97c1ab012a0c35a7703600623900fd28`
 
 Leader authority:
-D38 now locks:
-- three separate Activity ending IDs;
-- Pathfinder / Preservation / Network eligibility;
-- Surveyor's Atlas / Field Archive Protocol / Expedition Contact Network;
-- all three rewards are selectable Specialists;
-- D28 0..2 Specialist capacity remains binding.
+D40 accepts the frozen packet as exact Product contract for 16 endings across Guard / Merchant / Artist-Geisha / Assassin / Prostitute.
 
 Authority commit:
-`main@20553cff531dcbc328df8b786829b7409e5d521f`
-
-## New assignment
-
-Close exact Product gates/rewards for the **later-half advanced ordinary-career endings**.
+`main@0072f07b0f8188d4ff0732fb5ce557fe4f9a8434`
 
 New branch:
-`chat3/ordinary-complex-endings-tranche-b-v10`
+`chat3/advanced-endings-tranche-b-producer-v11`
 
-Create:
-1. `mindy-successor/docs/tasks/CHAT3_ORDINARY_COMPLEX_ENDINGS_TRANCHE_B_v10.md`
-2. `mindy-successor/research/ordinary_complex_endings_tranche_b_v1.csv`
+## Assignment
 
-No production runtime/UI/content changes.
+Produce the current-main implementation candidate for the D40 endings.
+
+Implement:
+- exact stable ending IDs;
+- persistent selected-route facts;
+- atomic route-selection writes;
+- exact eligibility conditions;
+- D16 non-terminal eligibility;
+- explicit commit/completion integration;
+- accepted School publisher rules;
+- automatic knowledge/content reward records and consumers that fit current runtime;
+- migration scaffolding that is possible on current main;
+- focused tests for all 16 endings and selected-route isolation.
+
+Do NOT invent a second strong-Meta runtime.
+
+Frozen strong-Meta producer dependency:
+`chat4/strong-meta-runtime-producer-v7@6c3865aec1283055ab0713ca4b2873d379f3ddc6`
+
+If current main lacks the exact Specialist ownership/loadout infrastructure needed by D40:
+- do not reimplement it locally;
+- keep Specialist reward IDs/effects in an explicit integration seam/fixture;
+- document exactly what Chat 2 must bind after strong-Meta assembly;
+- automatic knowledge/content may be wired only through existing compatible mechanisms.
+
 No full CI.
 
-## Endings in scope — exactly 16
+Focused minimum:
+- typecheck;
+- validate;
+- build;
+- all new D40 ending tests;
+- existing Guard/Merchant/Artist/Assassin/Prostitute natural/runtime tests;
+- D16 overlapping-ending preservation;
+- D23 Palace non-bypass;
+- D26 same-career cadence preservation;
+- Secret Debt separation for ordinary Prostitute;
+- save/reload selected-route persistence.
 
-### Guard
-- Officer
-- Reform
-- Network / Corruption
-- Major Case
-
-### Merchant
-- Merchant House
-- Speculator / Smuggler
-- Patron of Routes
-
-### Artist / Geisha
-- Master Artist
-- Patron Network
-- Court Invitation
-
-### Assassin
-- Ghost
-- Handler Takeover
-- Refusal / Turncoat
-
-### Prostitute
-- Independent House
-- Elite Clientele
-- Network / Protection
-
-Do not change the ordinary Hard Work ending for any career.
-
-## For every ending define
-
-1. proposed stable ending ID if none exists;
-2. exact minimum career progression/stage requirement;
-3. exact route facts/counters;
-4. exact School requirement if any;
-5. exact Night/relationship requirement if any;
-6. exact Activity/item requirement if any;
-7. exact stat threshold if justified;
-8. what is optional vs mandatory;
-9. explicit D16 commit boundary;
-10. current-life resolution;
-11. permanent/New Start+ reward;
-12. reward class under D27/D28;
-13. exact reward mechanics/caps/duration;
-14. save/migration implications;
-15. implementation status;
-16. remaining lore/presentation OPEN items.
-
-## Reward constraints
-
-Prefer identity-specific future-run changes over generic power.
-
-Do not use:
-- unconditional +1 daily Energy;
-- No Rent;
-- broad passive money unless it clearly belongs in Keystone class and is proven necessary;
-- generic extra calendar time;
-- broad stat carry-over;
-- free Specialist slots;
-- Palace entry shortcuts;
-- Secret Debt bypasses.
-
-Ordinary Hard Work packages remain a separate unrestricted layer and do not consume Specialist capacity.
-
-If a complex ending only merits automatic knowledge/content rather than a selectable strong modifier, say so.
-
-## Cross-system authority
-
-Preserve:
-- D16 eligibility != automatic ending;
-- D23 Palace sole 10/10 permanent + 10/10 active entry;
-- D26 same-career max one shift/day;
-- D27/D28 strong Meta architecture;
-- D35 housing/private-space semantics;
-- D37 Night completeness bar;
-- D36/D38 Activity boundaries;
-- ordinary Prostitute never inherits Secret Debt forced-route semantics.
-
-Court Invitation may create Palace-related knowledge/context only; it may **not** grant Palace access or substitute for D23.
-
-Network/Corruption, Merchant network, Assassin network and Prostitute network endings must remain mechanically distinct from one another and from D30 Network Retainer.
-
-## Final deliverable
-
-End with a Russian user-facing table:
-
-`Ending | Как получить | Что происходит | Что даёт навсегда | Reward class | Exact numbers | OPEN`
-
+Do not merge main.
 Freeze exact SHA and report:
-`READY_FOR_LEADER_PRODUCT_DECISION`.
+`READY_FOR_CHAT2_ASSEMBLY`.
