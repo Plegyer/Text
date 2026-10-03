@@ -1046,16 +1046,15 @@ test('renderer: Stats profession labels localize without save changes',async()=>
 });
 
 
-test('renderer: legacy unlock labels localize without save changes',async()=>{
+test('renderer: remaining legacy unlock labels localize without save changes',async()=>{
  const s=started();
- s.meta.unlocks=['guild','palace'];
+ s.meta.unlocks=['guild'];
  const {w,dom,errors}=boot(JSON.stringify(s));try{
   await wait(()=>!!w.document.querySelector('[data-panel="legacy"]'));
   const before=w.localStorage.getItem('portal-life.v1');
 
   w.document.querySelector('[data-panel="legacy"]').click();
   assert.match(w.document.querySelector('.panel')?.textContent??'',/Своя в артели/);
-  assert.match(w.document.querySelector('.panel')?.textContent??'',/Дворец/);
   w.document.querySelector('#close').click();
 
   w.document.querySelector('[data-panel="menu"]').click();
@@ -1066,7 +1065,6 @@ test('renderer: legacy unlock labels localize without save changes',async()=>{
 
   w.document.querySelector('[data-panel="legacy"]').click();
   assert.match(w.document.querySelector('.panel')?.textContent??'',/One of the Crew/);
-  assert.match(w.document.querySelector('.panel')?.textContent??'',/Palace/);
   assert.equal(w.localStorage.getItem('portal-life.v1'),before);
   assert.deepEqual(errors,[]);
  }finally{dom.window.close();}

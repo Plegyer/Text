@@ -29,6 +29,7 @@ test('resolved event choice stores locale-neutral outcome refs beside fallback t
 test('schema4 save without journal refs loads with null refs and keeps old text fallback',()=>{
  const before=started();
  const raw=JSON.parse(JSON.stringify(before));
+ raw.schemaVersion=4;
  delete raw.run.historyState.journalRefs;
  if(raw.run.flow.lastAction)delete raw.run.flow.lastAction.outcomeRef;
 
@@ -41,6 +42,7 @@ test('schema4 save without journal refs loads with null refs and keeps old text 
 
 test('journal refs must stay index-aligned with fallback journal text',()=>{
  const raw=JSON.parse(JSON.stringify(started()));
+ raw.schemaVersion=4;
  raw.run.historyState.journalRefs=[];
  assert.throws(()=>parseSave(JSON.stringify(raw),catalog),/Некорректные ссылки дневника/);
 });

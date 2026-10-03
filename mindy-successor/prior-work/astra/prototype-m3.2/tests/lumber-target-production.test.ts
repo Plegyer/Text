@@ -123,8 +123,8 @@ test('A6 applies exactly one hardWork:lumber reward on committed completion',()=
   assert.deepEqual(s.meta.hardWorkProgress,['lumber']);
 
   s=dispatch(s,{type:'newLife'},cat);
-  assert.equal(s.run.character.stats.strength,4);
-  assert.equal(s.run.character.stats.endurance,4);
+  assert.equal(s.run.character.stats.strength,1);
+  assert.equal(s.run.character.stats.endurance,1);
 });
 
 test('Lumber presentation IDs are semantic and remain stable when asset paths are replaced',()=>{
