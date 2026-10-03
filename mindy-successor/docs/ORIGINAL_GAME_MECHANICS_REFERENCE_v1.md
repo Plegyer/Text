@@ -310,12 +310,28 @@ It does **not** authorize any exact successor reward magnitude.
 
 ### Selectable activation evidence
 
-In the original bonus-selection code, eligible ending rewards can be toggled on and off:
+User clarification about the original: **all earned ending bonuses can be toggled on/off independently** for the new run.
 
-- selecting the original Prostitute reward applies its +5 stat bonus, sets the Prostitute early-unlock trigger, and increments an active bonus counter;
-- deselecting it reverses the stat bonus, clears the early-unlock trigger, and decrements the active bonus counter.
+Recovered per-bonus code is consistent with that model. For example:
+- selecting the original Prostitute reward applies its stat bonus, sets its early-job unlock trigger, and increments the active-bonus counter;
+- deselecting it reverses the stat bonus, clears the early-job trigger, and decrements the active-bonus counter.
 
-This is useful evidence that the original itself sometimes treated earned Meta as a selectable loadout rather than unconditional permanent power. The successor's exact New Start+ selection rules remain governed by current Product authority.
+This ending-bonus selection layer is **not the same thing as Titles**.
+
+The successor's exact New Start+ rules are still governed by current Product authority; D22 independently allows any subset of earned ordinary Hard Work packages.
+
+## Original Plus Mode and Titles — user clarification
+
+This section records user-provided clarification about the original game's structure; it is not a successor implementation requirement.
+
+- The original has a separate **Plus Mode** where jobs/progression change and the route leads toward the original true ending.
+- The successor is not currently porting that structure; Palace is the successor True Ending path.
+- All earned original ending bonuses can be independently enabled/disabled for a new run.
+- **Titles are separate** from those ending bonuses.
+- Title examples include narrow nightly stat growth and a much stronger +1 daily Stamina/Energy effect.
+- The user identifies the obvious balance failure: +1 daily Energy is broadly superior to many narrow Titles, making those alternatives unattractive.
+
+Research implication: if the successor later creates any title-like strong-modifier layer, do not reproduce a set where one universal action-economy option trivially dominates the rest.
 
 ## Authority rule for using this reference
 

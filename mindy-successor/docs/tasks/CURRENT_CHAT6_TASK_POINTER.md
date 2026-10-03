@@ -1,39 +1,43 @@
 # CURRENT CHAT6 TASK POINTER
 
-Status: **ACTIVE — PALACE D23 CONSUMER INTEGRATION v8 ON FROZEN CHAT4 SEAM**
+Status: **ACTIVE — PALACE PRINCE CONFRONTATION DECISION PACKET v9**
 Owner: Chat 6
 
-Completed v7:
-`chat6/palace-natural-10of10-acceptance-v7@c9125e7acc6639b90be36693707fde95382a8a71`
+Frozen Palace D23 consumer:
+`chat6/palace-d23-consumer-integration-v8@9dfaab2a7b9e145c9753c0acd8e54d3f903be5fd`
+Preserve it frozen; it is queued after Chat 4 shared runtime + UI integration.
 
-Dependency now exists on frozen Chat 4 runtime:
-`chat4/hard-work-meta-shared-runtime-v1@c085eda62dd39f71d3a4c75a6c31f4c72527039a`
+Create:
+`chat6/palace-prince-confrontation-decision-v9`
+from fresh main.
 
-Create dependent branch from that exact Chat 4 head:
-`chat6/palace-d23-consumer-integration-v8`
+## Product direction
+
+- successor True Ending is Palace Return Home;
+- do **not** port the original Plus Mode/job-replacement true-ending structure;
+- True readiness remains all 12 progression stats >=91;
+- Lust excluded;
+- the Prince must be defeated in a final Palace confrontation;
+- exact confrontation mechanics remain Product-open.
 
 ## Assignment
 
-Wire Palace-owned logic to the existing shared D23 API without modifying Chat 4's generic semantics.
+Prepare 2-3 concrete, implementable confrontation models using systems that already exist in the successor where possible.
 
-Use the actual shared predicate:
-`palaceNewStartQualified({ earnedHardWork, activePackages })`
+For each option define:
+- how confrontation becomes available after Palace progression + all-12 >=91;
+- explicit player action to begin it;
+- sequence length / save-reload behavior;
+- which existing mechanics are reused (Activity-like choices, authored event chain, relationships/items/capabilities, stat checks);
+- what exact signal constitutes `prince-defeated`;
+- failure/refusal/retry behavior;
+- how it avoids becoming a single automatic stat check;
+- how it preserves the separate Return Home ending commit;
+- production files/systems touched;
+- focused acceptance tests.
 
-Implement/verify Palace-local consumer behavior:
-- permanent 10/10 + active 10/10 at New Start+ creation -> deterministic Day-1 invitation eligibility;
-- any 9/10 or inactive package -> no invitation;
-- duplicates/Secret Debt/Palace cannot substitute;
-- invitation arrival is exactly once and reload-safe;
-- acceptance writes run-local `palace.access-granted`;
-- access persists in the same run only;
-- next life must qualify again;
-- no random/stat/item alternative entry gate;
-- no retroactive invitation on migrated old save;
-- use existing v4-v7 authored invitation/reveal content and RU/EN presentation;
-- preserve fixed True readiness all 12 progression stats >=91;
-- cap 200 remains shared-rule output only; Palace does not multiply values.
-
-Do not choose Prince mechanics or 3-vs-6 topology.
-Do not alter shared New Start+/Meta package semantics.
-Focused/static tests only, no full CI.
-Freeze SHA and report `READY_FOR_CHAT2_AFTER_CHAT4`.
+Do not invent a new generic combat subsystem unless every lower-complexity option is demonstrably insufficient.
+Do not choose final Prince lore/name.
+Do not implement production runtime.
+No full CI.
+Freeze SHA and report `READY_FOR_LEADER_PRODUCT_DECISION`.

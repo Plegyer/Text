@@ -220,9 +220,19 @@ When that legacy option is active:
 - there is no before/after arithmetic-order question because x2 changes only the allowed maximum;
 - Lust remains outside the 12-stat D18 requirement/reward.
 
+### D25 — original Plus Mode is not successor scope
+
+The original game has a separate Plus/New-Game-plus-style mode in which jobs change and the altered progression leads toward the original game's true ending.
+
+Current successor Product authority:
+- **do not port the original Plus Mode/job-replacement structure into the current intended build**;
+- the successor's true-ending role belongs to the **Palace True Ending / Return Home** defined in D18;
+- original Plus Mode may be revisited only by a later explicit Product decision;
+- no worker may infer or implement original Plus-Mode job mutations as Palace requirements.
+
 ## Still open after this lock
 
-- exact negative-stat mapping for ordinary jobs; target frequency is negative tradeoffs in about two seasons out of four per profession, not every season;
+- ordinary-work same-career daily frequency / long-run cap timing remediation;
 - exact numeric economy;
 - exact Lust starting value;
 - meta loadout slot/budget count for non-Hard-Work strong modifiers;

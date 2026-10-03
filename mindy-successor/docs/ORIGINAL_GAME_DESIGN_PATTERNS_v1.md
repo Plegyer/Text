@@ -150,20 +150,24 @@ Design lesson for successor:
 - stronger reward does not have to mean a larger raw stat number;
 - keep such strong modifiers optional in New Start+ so Meta expands player agency rather than forcing power creep.
 
-### 22. Active Meta can itself be part of challenge design
-In the original Finale mode, earned bonuses are individually toggled: enabling one increments an active-bonus counter and disabling it decrements the counter. The Finale encounter changes its challenge behavior across active-bonus-count bands.
+### 22. All earned ending bonuses in the original are selectable
+User clarification about the original: **all earned ending bonuses can be switched on or off independently** for a new run. The per-bonus selection code recovered from the SWF is consistent with that model: selecting applies that bonus and increments the active-bonus count; deselecting reverses it.
 
-Design lesson: player-selected Meta does not need an arbitrary one-slot cap to stay interesting. Special content can react to the active loadout itself. The successor Palace rule — all ten ordinary Hard Work packages must be active in that New Start+ life to receive the Day-1 invitation — is a clean example of using loadout state as content gating rather than forcing a universal bonus limit.
+This selectable ending-bonus layer is separate from the original Title system.
+
+The original Plus Mode can react to the active bonus loadout, but the successor is **not importing the original Plus Mode**. The useful design lesson is narrower: earned Meta can remain player-controlled rather than becoming forced permanent power. Successor D22 independently locks the same agency principle for Hard Work packages.
 
 ### 23. Refusal often redirects content instead of deleting it
 Recovered relationship/job routing contains parallel lover/spurn branches. Farmer and Cabaresque both continue with authored follow-up scenes after refusal; Farmer even carries a dedicated spurn countdown before later refusal-route content.
 
 Design lesson: a meaningful “no” should often choose a different authored route instead of simply removing content. This supports refusal-safe relationships and career choices in the successor: refusal can change trust, pacing or outcome identity while preserving useful play.
 
-### 24. Meta can have separate activation layers
-The original has a distinct Title layer in addition to ending rewards. UI text identifies one active Title that can be changed. Title effects range from small apartment-sleep bonuses (+1 to one stat), to +1 daily Stamina, combat-only stat boosts, extra combat behavior and status immunity.
+### 24. Titles are a separate original mechanic — and a balance warning
+The original Title system is distinct from the independently toggleable ending-bonus layer. A Title is an additional reward/identity effect; examples include effects such as +1 Strength after a night or +1 daily Stamina/Energy.
 
-Design lesson: different Meta families do not need the same activation rule. Successor Hard Work packages can remain freely combinable as Product already locked, while unusually strong complex-ending modifiers may later use a separate loadout/slot layer if balance needs it. This is a reference pattern, not authority for a one-title rule in the successor.
+The user correctly flags a major balance problem in that design: a universal action-economy benefit such as **+1 Energy every day** can dominate a narrow effect such as +1 Strength per night so strongly that the weaker Titles become practically irrelevant.
+
+Design lesson: do **not** copy the original Title system as-is. If the successor later uses a separate layer for strong complex-ending modifiers, it needs anti-dominance design: meaningful tradeoffs, situational roles, mutually incomparable benefits, or other balancing that prevents one universally optimal choice. No Title system is currently required by Product authority.
 
 ### 25. Strong rule modifiers should be explicit because they can reshape content
 At least one original ending reward disables rent entirely and also disables a related storyline. Other rewards add automatic daily income or starting capabilities.
@@ -199,6 +203,16 @@ Follow-up scenes require combinations of those facts rather than one universal s
 
 Design lesson: a complex successor ending can combine relevant stats with evidence that the player actually lived that route — career progress, School, relationship choices, items/capabilities, Activity results or prior decisions. Avoid reducing every advanced ending to only a very high stat wall.
 
+### 29. Original Plus Mode is not the successor True Ending structure
+User clarification about the original: its Plus Mode changes the job/progression structure and leads toward the original game's true ending.
+
+Successor direction is intentionally different:
+- the current intended build does not port that Plus Mode structure;
+- the successor's True Ending is the Palace Return Home route;
+- original Plus Mode is useful only as historical design context unless Product explicitly revisits it later.
+
+Design lesson: borrow useful systemic ideas without inheriting the original endgame architecture wholesale.
+
 ## Successor implications to test, not auto-lock
 
 - Current approved successor seasonal-tradeoff candidate yields **+1.5 net progression-stat points per ordinary shift on average for all ten careers**. That is roughly +75 summed stat points across 50 shifts, versus about +25 in the recovered original work model. This is a balance-test flag, not a command to copy the original: verify progression speed and cap timing over a full 160-day run, especially with School and NG+.
@@ -215,4 +229,6 @@ Design lesson: a complex successor ending can combine relevant stats with eviden
 - original exact wages, rent prices, thresholds, or every-season penalties;
 - original randomness where successor deterministic systems are cleaner;
 - original ending reward magnitudes;
-- original persistent Fuckability as a substitute for successor Lust.
+- original persistent Fuckability as a substitute for successor Lust;
+- original Plus-Mode job replacement / true-ending structure;
+- original Titles as-is, especially any layer with one universally dominant modifier.

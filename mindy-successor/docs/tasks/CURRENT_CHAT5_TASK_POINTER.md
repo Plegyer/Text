@@ -1,45 +1,46 @@
 # CURRENT CHAT5 TASK POINTER
 
-Status: **ACTIVE — SECRET DEBT PARAMETRIC BALANCE HARNESS v4**
+Status: **ACTIVE — SECRET DEBT PARAMETER SWEEP / SHORTLIST v5**
 Owner: Chat 5
 
-Completed balance model:
-`chat5/secret-debt-successor-balance-model-v3@5d72d625ddef0bd3ba8125bcb07f94dcf7ed88b7`
+Reusable harness frozen at:
+`chat5/secret-debt-balance-harness-v4@c4352102bb242753ae1429bbadbb6f403d188850`
 
-Its numbers remain PROPOSAL, not Product authority.
-
-Create:
-`chat5/secret-debt-balance-harness-v4`
-from fresh main.
+Create dependent research branch:
+`chat5/secret-debt-balance-sweep-v5`
+from that exact harness head.
 
 ## Assignment
 
-Build an isolated research/test harness that can evaluate Secret Debt tuning without wiring proposal values into production runtime.
+Use the harness to run a bounded successor-first parameter sweep. Do not wire any values into production.
 
-Parameter inputs:
-- per-shift Strength / Endurance / Sexuality gains;
-- wage base;
-- Strength / Endurance / Lust wage factors;
-- Takeover Strength / Endurance / Sexuality / Lust thresholds;
-- lodging choice;
-- +1 daily Energy on/off;
-- School lesson mix;
-- Activity cadence.
+Respect locked design:
+- +2000 acceptance;
+- activation after 10 days;
+- debt 20000;
+- forced Night every bound night;
+- next-day Energy -1;
+- 50 hidden shifts for Hard Work;
+- 10 paid School lessons for Takeover structure;
+- Lust positively affects wage;
+- route is intentionally hard and is expected to become substantially more practical with the NG+ +1 daily Energy benefit.
 
-Outputs:
-- day to 50 hidden shifts;
-- day to 10 School lessons;
-- day to full 20000 repayment;
-- day Takeover first becomes eligible;
-- money/energy trajectory;
-- whether the route is impossible before day 160.
+Produce:
+- feasible ranges for shift Strength/Endurance/Sexuality gains;
+- feasible wage base and Strength/Endurance/Lust factors;
+- feasible Takeover stat/Lust thresholds;
+- low/mid/high build results;
+- with and without +1 daily Energy;
+- repayment day, 50-shift day, 10-School-lesson day, Takeover-ready day;
+- identify sets that trivialize 20000 and sets that are effectively impossible.
 
-Include at least three presets:
-- conservative/harsh;
-- current v3 proposal;
-- more forgiving.
+Shortlist **three** clearly labeled proposals:
+1. harsh / NG+-leaning;
+2. balanced-hard;
+3. forgiving-but-still-secret.
 
-The harness must label all presets as research only.
-Do not modify Secret Debt production constants/runtime.
-No full CI.
-Freeze SHA and report `READY_FOR_LEADER_BALANCE_TOOL`.
+For each explain player experience, not just numbers.
+Original-game values may be cited only as historical shape, never copied as authority.
+
+No production runtime changes. No full CI.
+Freeze SHA and report `READY_FOR_LEADER_BALANCE_DECISION`.

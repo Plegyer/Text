@@ -1,46 +1,47 @@
 # CURRENT CHAT3 TASK POINTER
 
-Status: **ACTIVE — PROGRESSION REMEDIATION DECISION PACKET v2**
+Status: **ACTIVE — REUSABLE PROGRESSION BALANCE HARNESS v3**
 Owner: Chat 3
 
-Completed audit:
-`chat3/progression-160day-balance-audit-v1@465c9a2a21bad6188597ca19cbe8ca339ab5ef9d`
+Completed decision packet:
+`chat3/progression-remediation-decision-v2@f0644a705e4c30762ecd84d099d54d48a6c86a0a`
 
-Key proven risks:
-- Hard Work=50 can be compressed to 17 calendar days at 3 shifts/day;
-- approved negatives often floor out at stat 0 and stop acting as a real sink;
-- focused work can cap a primary stat before run end;
-- targeted School + work can cap around early Year 3;
-- no ordinary profession has a guaranteed direct 31-49 shift milestone;
-- Lumber has the sparsest authored career density.
+Do not implement its Product proposals yet.
 
 Create:
-`chat3/progression-remediation-decision-v2`
-from fresh main.
+`chat3/progression-balance-harness-v3`
+from fresh current main.
 
 ## Assignment
 
-Prepare a Product-ready remediation packet, no runtime changes.
+Turn the one-off analysis into a reusable research harness that reads live successor definitions and can compare policy choices without changing production mechanics.
 
-Give concrete alternatives for:
-1. same-career shift frequency per day:
-   - unlimited current behavior;
-   - max 2/day;
-   - max 1/day;
-   and quantify Hard Work calendar timing/economy impact for each.
-2. floor-aware seasonal negatives:
-   - keep current mapping;
-   - retarget negatives toward stats the same career also replenishes;
-   - other low-complexity alternative if justified.
-3. career pacing:
-   - exact proposed authored milestone positions for sparse careers, especially Lumber;
-   - a common early/mid/late pacing skeleton that does NOT alter Hard Work=50 eligibility itself.
-4. cap timing:
-   - quantify whether any stat-growth reduction is still needed after a daily-shift policy change.
+Inputs:
+- same-career shifts/day: 1, 2, or current Energy-only repetition;
+- starting allocation variants;
+- current seasonal-negative map;
+- an alternate negative-target map supplied as research data only;
+- School cadence/course overlap;
+- cap 100 vs cap 200 for analysis only.
 
-For every option: benefits, costs, affected systems/files, migration risk, and a smallest safe implementation path.
+Outputs per ordinary career:
+- calendar day to 50 shifts;
+- strongest-stat day-to-100;
+- total realized positive/negative stat movement with floor-at-zero effects;
+- money earned by 50 shifts;
+- milestone/event density bands before 50;
+- effect of targeted School cadence;
+- 160-day summary.
 
-Do not change production mechanics/content.
-Do not copy original-game numbers.
+Requirements:
+- no production rule changes;
+- no original-game values copied as inputs;
+- machine-readable result plus human summary;
+- focused tests proving the harness matches current live definitions;
+- clearly label all alternative policies as RESEARCH, not authority.
+
 No full CI.
-Freeze SHA and report `READY_FOR_LEADER_PRODUCT_DECISION`.
+Freeze exact SHA and report `READY_FOR_LEADER_BALANCE_TOOL`.
+
+Next useful follow-up after freeze:
+prepare a compact comparison using the harness for the Product choices in the v2 decision packet.

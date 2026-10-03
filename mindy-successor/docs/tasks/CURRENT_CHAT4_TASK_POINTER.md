@@ -1,35 +1,46 @@
 # CURRENT CHAT4 TASK POINTER
 
-Status: **ACTIVE — NEW START+ HARD WORK PACKAGE UI / PRESENTATION v2**
+Status: **ACTIVE — STRONG META MODIFIER DOMINANCE AUDIT v3**
 Owner: Chat 4
 
-Shared D21-D24 runtime is frozen and ready for integration:
-`chat4/hard-work-meta-shared-runtime-v1@c085eda62dd39f71d3a4c75a6c31f4c72527039a`
+Frozen implementation candidates:
+- shared D21-D24 runtime: `c085eda62dd39f71d3a4c75a6c31f4c72527039a` — now queued for Chat 2;
+- New Start+ Hard Work UI: `837156277f7329f0187b04442acb8d5258a2e189` — preserve frozen.
 
-Preserve that runtime branch. Do not move it.
+Create:
+`chat4/strong-meta-dominance-audit-v3`
+from fresh main.
 
-Create a dependent presentation branch from the frozen runtime head:
-`chat4/hard-work-meta-newstart-ui-v2`
+## Product/research clarification
+
+Do not import the original Title system.
+Original ending bonuses were independently toggleable; Titles were separate.
+The original +1 daily Energy Title is a balance warning because it can dominate narrow nightly-stat Titles.
 
 ## Assignment
 
-Implement the New Start+ presentation/selection layer that consumes the existing shared runtime API without changing its semantics:
+Audit the successor's current/proposed **strong complex-ending modifiers** separately from ordinary Hard Work packages.
 
-- show all earned ordinary Hard Work packages;
-- each package has independent selected/unselected control;
-- player may select none, some, or all;
-- selection is whole-package, not individual effects;
-- clearly show profession early-access benefit separately from selected stat/Lust package effects;
-- show locked package definitions from the centralized catalog;
-- make Prostitute package clearly show Sexuality +5, Charm +5, Lust +3;
-- accessible selected/unselected state;
-- RU/EN labels/help;
-- explicit explanation that Palace invitation requires all ten earned packages to be active in that new life;
-- cap-200 option wording must say "maximum becomes 200", never "stats are doubled";
-- do not introduce a one-slot limit for Hard Work packages;
-- do not mix strong complex-ending modifier slots into this UI yet.
+Inventory current docs/runtime proposals such as:
+- +1 daily Energy;
+- cap 200 option;
+- starting money/economic reserve;
+- passive-income-like concepts;
+- route/access modifiers;
+- any housing/rent-style rule modifiers;
+- inheritance/starting capability proposals.
 
-Add focused presentation/state tests.
-Do not change Palace authored content or Secret Debt runtime.
+For each:
+- estimate action-economy / 160-day impact;
+- identify whether it universally dominates another option;
+- classify as raw power, economy, access, safety, or build-shaping;
+- list major route/content bypass risks.
+
+Produce 2-3 viable loadout models that avoid a single obvious best choice:
+- e.g. incomparable roles / category budget / opportunity-cost approach;
+- keep ordinary Hard Work packages outside this restriction because D22 allows any subset.
+
+Do not choose final slot count or implement runtime.
+Do not create Titles.
 No full CI.
-Freeze exact SHA and report `READY_FOR_CHAT2_AFTER_SHARED_RUNTIME`.
+Freeze SHA and report `READY_FOR_LEADER_PRODUCT_DECISION`.
