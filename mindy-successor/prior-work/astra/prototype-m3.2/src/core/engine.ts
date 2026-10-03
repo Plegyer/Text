@@ -817,6 +817,9 @@ function commitEndingMutable(s:Save,endingId:string,cat:Catalog){
   if(s.run.pending||s.run.flow.night||s.run.flow.activity)throw new Error('Завершите текущую сцену, ночь или Activity.');
   const ending=cat.definitions.endings.find(e=>e.id===endingId);
   if(!ending||!s.run.endings.eligible.includes(endingId))throw new Error('Эта судьба сейчас недоступна.');
+  if(endingId.startsWith('ending.secret-debt.')&&!eligible(ending.conditions,s,cat)){
+    throw new Error('Эта Secret Debt судьба больше не соответствует текущему исходу маршрута.');
+  }
   const before=cloneSave(s);
   s.run.endings.committed=endingId;
   s.run.status='ending_committed';
