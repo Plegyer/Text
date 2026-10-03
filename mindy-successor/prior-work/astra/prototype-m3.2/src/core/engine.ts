@@ -4,6 +4,23 @@ import {presentationIdForActionResult,presentationIdForEvent} from './presentati
 import {applyHardWorkPackagesAtCreation,ordinaryCareerAvailableWithHardWork,palaceNewStartQualified,validateHardWorkPackageSelection} from './hardWorkMeta.ts';
 import {hardWorkPackageDefinitions} from './hardWorkPackageCatalog.ts';
 import {markPalaceCreationQualification} from './palace.ts';
+import {
+  SECRET_DEBT_LENDER_EVENT_ID,
+  SECRET_DEBT_HIDDEN_WORK_ACTION_ID,
+  SECRET_DEBT_REPAY_ACTION_ID,
+  SECRET_DEBT_TAKEOVER_ACTION_ID,
+  acceptSecretDebtMutable,
+  activateSecretDebtIfDueMutable,
+  applySecretDebtHiddenShiftMutable,
+  markSecretDebtLenderAttemptMutable,
+  refuseSecretDebtMutable,
+  repaySecretDebtMutable,
+  resolveSecretDebtTakeoverMutable,
+  secretDebtBound,
+  secretDebtLenderEligible,
+  totalPaidSchoolLessons,
+  validateSecretDebtState
+} from './secretDebt.ts';
 
 const statSet=new Set<string>(stats);
 const cappedLegacy=new Set(['health','stress','trust']);
@@ -210,6 +227,11 @@ export function meets(c:Condition,s:Save,cat?:Catalog):boolean {
     case 'calendarElapsedDays': return compare(s.run.calendar.elapsedDays,c.op,c.value);
     case 'housingTier': return s.run.housingState.current===c.value;
     case 'schoolCounter': return compare(s.run.progression.school.tracks[c.track]?.counters[c.counter]??0,c.op,c.value);
+    case 'schoolPaidLessons': return compare(totalPaidSchoolLessons(s),c.op,c.value);
+    case 'lust': return compare(s.run.character.lust,c.op,c.value);
+    case 'secretDebtStatus': return s.run.secretDebt.status===c.value;
+    case 'secretDebtShifts': return compare(s.run.secretDebt.hiddenShifts,c.op,c.value);
+    case 'secretDebtLenderEligible': return secretDebtLenderEligible(s);
     case 'careerStage': return readDomainState(s,'career',c.career,cat)?.stage===c.stage;
     case 'careerShifts': return compare(readDomainState(s,'career',c.career,cat)?.shifts??0,c.op,c.value);
     case 'careerCounter': return compare(readDomainState(s,'career',c.career,cat)?.counters[c.counter]??0,c.op,c.value);
@@ -263,7 +285,7 @@ export function actionAvailable(action:Action,s:Save,cat?:Catalog,options:Action
   return ordinaryCareerAvailableWithHardWork({
     career,
     normalGateSatisfied,
-    ordinaryCareersDomainLocked:options.ordinaryCareersDomainLocked??false,
+    ordinaryCareersDomainLocked:options.ordinaryCareersDomainLocked??secretDebtBound(s),
     earnedHardWork:s.meta.hardWorkProgress
   });
 }
@@ -299,6 +321,17 @@ export function freshSave(metaInput?:Partial<Meta>&{completed?:string[];lives?:n
       resources:{money:startingMoney,inventory:{herb:2,tonic:0,scales:0}},
       dayState:{energyCurrent:3,nextDayModifiers:{energyDelta:0,statEffects:[],tags:[]},optionalOfferIds:[],scheduledEventIds:[]},
       housingState:{current:'normal' as const,paidForCurrentNight:false},
+      secretDebt:{
+        status:'unseen' as const,
+        acceptedDay:null,
+        trapDay:null,
+        boundDay:null,
+        resolvedDay:null,
+        debt:0,
+        hiddenShifts:0,
+        grantApplied:false,
+        lastLenderAttemptDay:null
+      },
       progression:{careers:{},quests:{},relationships:{},school:{tracks:{}},worldFacts:[]},
       endings:{eligible:[],committed:null,result:null},
       flow:{pendingScene:null,reaction:{epochCounter:0,currentEpochId:null,attemptedEventIds:[],cascadeDepth:0,queued:[]},night:null,activity:null,lastAction:null},
@@ -326,7 +359,7 @@ function addUnique(target:string[],value:string){if(!target.includes(value))targ
 function removeValue(target:string[],value:string){const i=target.indexOf(value);if(i>=0)target.splice(i,1);}
 function effectPhase(e:Effect){
   if(['modifyStat','modifyResource','modifyEnergy','addItem','removeItem','setHousing','metric','item','housing','flag'].includes(e.kind))return 1;
-  if(['incrementSchoolCounter','incrementCareerCounter','addCareerFact','setCareerChoice','incrementQuestCounter','addQuestFact','setQuestChoice','incrementRelationshipCounter','addRelationshipFact','setRelationshipChoice','addWorldFact','removeWorldFact'].includes(e.kind))return 2;
+  if(['incrementSchoolCounter','incrementCareerCounter','addCareerFact','setCareerChoice','incrementQuestCounter','addQuestFact','setQuestChoice','incrementRelationshipCounter','addRelationshipFact','setRelationshipChoice','addWorldFact','removeWorldFact','secretDebtAccept','secretDebtRefuse'].includes(e.kind))return 2;
   if(['advanceCareer','advanceQuest','advanceRelationship'].includes(e.kind))return 3;
   return 4;
 }
@@ -383,6 +416,8 @@ function applyOne(s:Save,e:Effect,cat:Catalog,allowTransitions:boolean){
     case 'setRelationshipChoice': ensureDomainState(s,'relationship',e.relationship,cat).choices[e.choice]=e.value;return;
     case 'addWorldFact': addUnique(s.run.progression.worldFacts,e.fact);return;
     case 'removeWorldFact': removeValue(s.run.progression.worldFacts,e.fact);return;
+    case 'secretDebtAccept': acceptSecretDebtMutable(s);return;
+    case 'secretDebtRefuse': refuseSecretDebtMutable(s);return;
 
     case 'advanceCareer': if(!allowTransitions)throw new Error('Nested career transition запрещён');applyTransition(s,'career',e.career,e.transition,cat);return;
     case 'advanceQuest': if(!allowTransitions)throw new Error('Nested quest transition запрещён');applyTransition(s,'quest',e.quest,e.transition,cat);return;
@@ -587,6 +622,7 @@ function attemptChance(s:Save,e:StoryEvent,trace:ResolverTrace){
   const r=s.run.flow.reaction;
   if(r.attemptedEventIds.includes(e.id)){trace.steps.push(`reject:${e.id}:already-attempted`);return false;}
   r.attemptedEventIds.push(e.id);
+  if(e.id===SECRET_DEBT_LENDER_EVENT_ID)markSecretDebtLenderAttemptMutable(s);
   const roll=random(s),chance=eventChance(e,s),pass=roll<chance;
   trace.steps.push(`chance:${e.id}:${roll.toFixed(8)}<${chance.toFixed(8)}:${pass?'pass':'fail'}`);
   return pass;
@@ -618,6 +654,14 @@ function resolveReactionsMutable(s:Save,facts:ReactionFact[],cat:Catalog,trace:R
   const live:ResolverCandidate[]=[];
 
   for(const e of sortedEvents){
+    if(
+      s.run.flow.night?.consumesNight
+      && s.run.flow.night.currentIntercept!=='before_lodging'
+      && e.nightPolicy
+    ){
+      trace.steps.push(`reject:${e.id}:night-already-consumed`);
+      continue;
+    }
     if(s.run.flow.night?.handledEventIds.includes(e.id)){trace.steps.push(`reject:${e.id}:night-handled`);continue;}
     if(committedSuppresses(s,e)){trace.steps.push(`reject:${e.id}:ending-committed`);continue;}
     if(queuedForEvent(s,e.id)){trace.steps.push(`defer:${e.id}:already-queued`);continue;}
@@ -963,6 +1007,7 @@ function finishNightMutable(s:Save,cat:Catalog){
     n.calendarAdvanceCommitted=true;
   }
   n.phase='StartDay';
+  activateSecretDebtIfDueMutable(s);
   const queued=s.run.dayState.nextDayModifiers;
   for(const effect of queued.statEffects)setMetric(s,effect.stat,getMetric(s,effect.stat)+effect.delta);
   s.run.metrics.energy=Math.max(1,energyMax(s)+queued.energyDelta);
@@ -1251,11 +1296,22 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
   if(s.run.metrics.money<cost||s.run.metrics.energy<a.cost.energy)throw new Error('Не хватает денег или энергии.');
   if(a.mode==='brew'&&!['gentle','bold'].includes(command.recipe??''))throw new Error('Выберите способ приготовления.');
   s.run.metrics.money-=cost;s.run.metrics.energy-=a.cost.energy;
-  applyActionEffectsMutable(s,a.effects,cat);
-  if(a.seasonal)applyEffectsMutable(s,a.seasonal[calendar(s.run.day).season],cat,true);
-  if(a.wage){
-    const wage=Math.round(a.wage.base+a.wage.weights.reduce((sum,w)=>sum+getMetric(s,w.stat)*w.factor,0));
-    applyEffectsMutable(s,[{kind:'metric',key:'money',delta:wage}],cat,true);log(s,`Заработано: ${wage} монет.`);
+  if(a.id===SECRET_DEBT_HIDDEN_WORK_ACTION_ID){
+    const result=applySecretDebtHiddenShiftMutable(s);
+    log(s,`Заработано: ${result.wage} монет.`);
+  }else if(a.id===SECRET_DEBT_REPAY_ACTION_ID){
+    repaySecretDebtMutable(s);
+    log(s,'Долг погашен полностью: 20000 монет.');
+  }else if(a.id===SECRET_DEBT_TAKEOVER_ACTION_ID){
+    resolveSecretDebtTakeoverMutable(s);
+    log(s,'Вы перехватили контроль над долговым маршрутом.');
+  }else{
+    applyActionEffectsMutable(s,a.effects,cat);
+    if(a.seasonal)applyEffectsMutable(s,a.seasonal[calendar(s.run.day).season],cat,true);
+    if(a.wage){
+      const wage=Math.round(a.wage.base+a.wage.weights.reduce((sum,w)=>sum+getMetric(s,w.stat)*w.factor,0));
+      applyEffectsMutable(s,[{kind:'metric',key:'money',delta:wage}],cat,true);log(s,`Заработано: ${wage} монет.`);
+    }
   }
   s.run.actionCounts[a.id]=Math.min(1_000_000,(s.run.actionCounts[a.id]??0)+1);
   if(freeLesson)s.run.flags[`system.scholar.${Math.floor(s.run.day/7)}`]=true;
@@ -1369,6 +1425,7 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
   }
   const parsed=saveSchema.parse(raw) as unknown as Save;
   const s=attachLegacyFacade(parsed);
+  validateSecretDebtState(s.run.secretDebt);
   s.meta.unlocks=s.meta.unlocks.filter(unlock=>unlock!=='palace');
   for(const stat of stats)if(s.run.character.stats[stat]>effectiveProgressionStatCap(s))throw new Error(`Характеристика ${stat} превышает эффективный потолок.`);
   if(s.run.metrics.energy>energyMax(s))throw new Error('Некорректный запас энергии.');
