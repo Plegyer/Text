@@ -28,6 +28,18 @@ Branch existence is dispatch only; count work only after a real worker commit.
 
 Calibrate the still-open numeric parameters for the three D30 Keystones using current successor systems and the existing Secret Debt balance harness. No production implementation.
 
+Use the **current executable economy** as baseline. Read:
+`mindy-successor/docs/tasks/LEADER_LIVE_ECONOMY_DRIFT_AUDIT_v1.md`
+
+Important:
+- current starter wages are materially below older WU candidate assumptions;
+- current lodging is normal 100 / cheap 50 / street 0;
+- current paid School tuition is 300–500/lesson with 1 Energy cost;
+- fresh money is 600 and base daily Energy is 3;
+- do **not** calibrate D30 against stale `1 WU ~= 50` wage assumptions;
+- old economy-candidate docs and original-game numbers are comparison/reference only;
+- D26 is now locked Product authority even if an older audit paragraph still calls the same-career policy a research option.
+
 Locked mechanics must not change.
 
 ### Earned Reserve Match
