@@ -186,3 +186,50 @@ test('D30 Keystone plus cap-200 Specialist resolves together without stat multip
   assert.equal(snap.resolvedRewards.some(r=>r.effect.kind==='work-rhythm'),true);
   assert.equal(snap.resolvedRewards.some(r=>r.effect.kind==='progression-stat-cap'),true);
 });
+
+test('in-progress D30 runtime reads resolved snapshot parameters rather than current registry constants',()=>{
+  const reserveSnap=structuredClone(snapshot(STRONG_META_IDS.earnedReserveMatch));
+  const reserveReward=reserveSnap.resolvedRewards.find(r=>r.id===STRONG_META_IDS.earnedReserveMatch)!;
+  if(reserveReward.effect.kind!=='earned-reserve-match')throw new Error('fixture mismatch');
+  reserveReward.effect.perRunCap=50;
+  const reserve=applyEarnedReserveMatch({
+    snapshot:reserveSnap,
+    runtime:emptyStrongMetaRuntime(),
+    ordinaryWage:100,
+    secretDebtBound:false
+  });
+  assert.equal(reserve.bonus,50);
+  assert.equal(reserve.runtime.reserveMatchPaid,50);
+
+  const rhythmSnap=structuredClone(snapshot(STRONG_META_IDS.workRhythm));
+  const rhythmReward=rhythmSnap.resolvedRewards.find(r=>r.id===STRONG_META_IDS.workRhythm)!;
+  if(rhythmReward.effect.kind!=='work-rhythm')throw new Error('fixture mismatch');
+  rhythmReward.effect.maxBonusDays=1;
+  let rhythmRuntime=armWorkRhythmForNextDay({
+    snapshot:rhythmSnap,
+    runtime:emptyStrongMetaRuntime(),
+    currentDay:0
+  });
+  let rhythm=applyWorkRhythmAtStartDay({snapshot:rhythmSnap,runtime:rhythmRuntime,day:1});
+  assert.equal(rhythm.energyBonus,1);
+  rhythmRuntime=armWorkRhythmForNextDay({snapshot:rhythmSnap,runtime:rhythm.runtime,currentDay:1});
+  rhythm=applyWorkRhythmAtStartDay({snapshot:rhythmSnap,runtime:rhythmRuntime,day:2});
+  assert.equal(rhythm.energyBonus,0);
+
+  const retainerSnap=structuredClone(snapshot(STRONG_META_IDS.networkRetainer));
+  const retainerReward=retainerSnap.resolvedRewards.find(r=>r.id===STRONG_META_IDS.networkRetainer)!;
+  if(retainerReward.effect.kind!=='network-retainer')throw new Error('fixture mismatch');
+  retainerReward.effect.paymentAmount=10;
+  retainerReward.effect.eligibleDayCount=2;
+  retainerReward.effect.perRunTotalCap=20;
+  let retainerRuntime=emptyStrongMetaRuntime();
+  let payment=applyNetworkRetainerAtStartDay({snapshot:retainerSnap,runtime:retainerRuntime,day:0,secretDebtBound:false});
+  retainerRuntime=payment.runtime;
+  assert.equal(payment.payment,10);
+  payment=applyNetworkRetainerAtStartDay({snapshot:retainerSnap,runtime:retainerRuntime,day:1,secretDebtBound:false});
+  retainerRuntime=payment.runtime;
+  assert.equal(payment.payment,10);
+  assert.equal(retainerRuntime.networkRetainerTotalPaid,20);
+  assert.equal(applyNetworkRetainerAtStartDay({snapshot:retainerSnap,runtime:retainerRuntime,day:2,secretDebtBound:false}).payment,0);
+});
+
