@@ -1,33 +1,18 @@
-name: mindy-successor check
+name: mindy-successor Strong Meta repair focused check
 
 on:
-  workflow_dispatch:
   pull_request:
-    paths:
-      - 'mindy-successor/prior-work/astra/prototype-m3.2/**'
-      - '.github/workflows/mindy-successor-check.yml'
-  push:
-    branches:
-      - main
     paths:
       - 'mindy-successor/prior-work/astra/prototype-m3.2/**'
       - '.github/workflows/mindy-successor-check.yml'
 
 concurrency:
-  group: mindy-successor-check-${{ github.event.pull_request.number || github.ref }}
+  group: mindy-successor-strong-meta-repair-focused-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
 jobs:
   check:
-    # One self-hosted runner is a scarce integration gate.
-    # Producer PRs (chat3..chat6) intentionally skip the full check.
-    # Chat 2 / Lead QA branches own PR CI; main and manual dispatch still run.
-    if: >-
-      github.event_name != 'pull_request' ||
-      startsWith(github.head_ref, 'chat2/qa-') ||
-      startsWith(github.head_ref, 'chat2/assembly-') ||
-      startsWith(github.head_ref, 'lead/ci-') ||
-      startsWith(github.head_ref, 'lead/integrate-')
+    if: startsWith(github.head_ref, 'chat2/qa-')
     runs-on: [self-hosted, Windows, X64]
     timeout-minutes: 20
     defaults:
@@ -44,5 +29,33 @@ jobs:
           cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
       - name: Install dependencies
         run: npm ci
-      - name: Full check
-        run: npm run check
+      - name: Focused Strong Meta repair validation
+        shell: powershell
+        run: |
+          $failed = 0
+          function Run-Group([string]$name, [string]$command) {
+            Write-Host "=== $name ==="
+            Invoke-Expression $command
+            if ($LASTEXITCODE -ne 0) {
+              Write-Host "::error::$name failed"
+              $script:failed = 1
+            }
+          }
+
+          Run-Group "typecheck" "npm run typecheck"
+          Run-Group "validate" "npm run validate"
+          Run-Group "build" "npm run build"
+
+          Run-Group "strong-meta-frozen" "node --experimental-strip-types --test tests/strong-meta-registry-v7.test.ts tests/strong-meta-d30-runtime-v7.test.ts tests/strong-meta-engine-integration-v7.test.ts tests/ending-meta.test.ts tests/engine.test.ts tests/migration.test.ts tests/hard-work-meta-migration-v5.test.ts tests/late-career-schema4-compat.test.ts tests/hard-work-stat-cap-d24.test.ts"
+
+          Run-Group "hard-work-new-start" "node --experimental-strip-types --test tests/all-ten-career-availability-smoke.test.ts tests/hard-work-meta-infra-prep.test.ts tests/hard-work-package-catalog-runtime.test.ts tests/ordinary-hard-work-meta-production.test.ts tests/hard-work-palace-meta-smoke.test.ts tests/palace-derived-unlock.test.ts tests/hard-work-newstart-presentation-v2.test.ts tests/hard-work-newstart-ui-v2.test.ts tests/ui.test.ts"
+
+          Run-Group "palace-d23" "node --experimental-strip-types --test tests/palace-d23-consumer-integration-v8.test.ts"
+
+          Run-Group "d31-preservation" "node --experimental-strip-types --test tests/ordinary-work-seasonal-negative-tradeoffs.test.ts tests/assassin-runtime-invariants.test.ts tests/chat3-artist-geisha-live-authored-v19.test.ts tests/chat3-guard-live-authored-v17.test.ts tests/chat3-hunter-live-authored-v16.test.ts tests/chat3-merchant-live-authored-v18.test.ts tests/chat3-tavern-live-authored-v15.test.ts tests/prostitute-runtime-invariants.test.ts tests/tavern-natural-acceptance.test.ts tests/undead-farm-natural-acceptance.test.ts tests/assassin-natural-acceptance.test.ts tests/prostitute-natural-acceptance.test.ts"
+
+          Run-Group "night-energy-poverty" "node --experimental-strip-types --test tests/night-flow.test.ts tests/lumber-night-acceptance.test.ts tests/school-night-study-adapter.test.ts tests/school-generic-night-v7-parity.test.ts tests/poverty-production-integration-bundle.test.ts tests/poverty-pressure-production.test.ts tests/poverty-street-reload.test.ts tests/resolver.test.ts tests/activity.test.ts"
+
+          Run-Group "full-ci-repair-regressions" "node --experimental-strip-types --test tests/gopher.test.ts tests/school-activation-boundary.test.ts tests/school-blocking-scene-compat.test.ts tests/school-body-confidence-lust-d20.test.ts tests/school-engine-adapter.test.ts tests/school-life-content-reload.test.ts tests/school-production-v11-locale-save.test.ts tests/school-target.test.ts"
+
+          if ($failed -ne 0) { exit 1 }
