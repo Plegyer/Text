@@ -2,6 +2,7 @@ import {
   PALACE_ACCESS_FACT,
   PALACE_MAX_STRUCTURAL_DUTIES,
   PALACE_PRINCE_DEFEATED_FACT,
+  palacePrinceConfrontationReady,
   PALACE_PROGRESSION_COMPLETE_FACT,
   PALACE_STRUCTURAL_DUTY_ENERGY_COST,
   PALACE_SUPPORT_ENERGY_COST,
@@ -113,6 +114,8 @@ export type PalaceUiModel=Readonly<{
   outcomeReady:boolean;
   eligibleEndingIds:PalaceEndingId[];
   trueEndingEligible:boolean;
+  princeConfrontationAvailable:boolean;
+  princeDefeated:boolean;
 }>;
 
 export function isPalaceEndingId(value:string):value is PalaceEndingId{
@@ -162,6 +165,8 @@ export function palacePlayerUiModel(s:Save):PalaceUiModel|null{
       };
     });
 
+  const princeDefeated=s.run.progression.worldFacts.includes(PALACE_PRINCE_DEFEATED_FACT);
+  const princeConfrontationAvailable=palacePrinceConfrontationReady(s);
   const trueEndingEligible=palaceFullTrueEndingPredicate(s)
     && s.run.endings.eligible.includes('ending.palace.return-home');
 
@@ -186,6 +191,8 @@ export function palacePlayerUiModel(s:Save):PalaceUiModel|null{
     outcomeReady:state.stage==='outcome-ready'
       && s.run.progression.worldFacts.includes(PALACE_PROGRESSION_COMPLETE_FACT),
     eligibleEndingIds,
-    trueEndingEligible
+    trueEndingEligible,
+    princeConfrontationAvailable,
+    princeDefeated
   };
 }
