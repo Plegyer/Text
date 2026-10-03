@@ -24,7 +24,9 @@
         "anomalous.reach.contact-thread-open",
         "anomalous.reach.city-return-recorded",
         "activity.anomalous-reach.result.research-grade",
-        "anomalous.reach.school-reflection-recorded"
+        "anomalous.reach.school-reflection-recorded",
+        "activity.anomalous-reach.minigame.pattern-ritual-complete",
+        "activity.anomalous-reach.contact-thread-open"
       ]
     },
     "writes": {
@@ -308,7 +310,7 @@
         },
         {
           "kind": "worldFactAdded",
-          "fact": "anomalous.reach.ritual-circuit-resolved"
+          "fact": "activity.anomalous-reach.minigame.pattern-ritual-complete"
         },
         {
           "kind": "dayStarted"
@@ -336,7 +338,7 @@
         },
         {
           "kind": "worldFact",
-          "fact": "anomalous.reach.ritual-circuit-resolved",
+          "fact": "activity.anomalous-reach.minigame.pattern-ritual-complete",
           "present": true
         },
         {
@@ -401,7 +403,7 @@
         },
         {
           "kind": "worldFact",
-          "fact": "anomalous.reach.contact-thread-open",
+          "fact": "activity.anomalous-reach.contact-thread-open",
           "present": true
         },
         {
