@@ -291,11 +291,6 @@
           "conditions": [],
           "effects": [
             {
-              "kind": "removeItem",
-              "id": "forest_preserved_specimen",
-              "count": 1
-            },
-            {
               "kind": "addCareerFact",
               "career": "lumber",
               "fact": "forest-specimen-catalogued"
