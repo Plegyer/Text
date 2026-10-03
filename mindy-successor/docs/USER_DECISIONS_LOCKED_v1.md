@@ -1298,6 +1298,93 @@ Failed validation changes no Energy, money, duty count or daily lock.
 Reload may resume pending reactions/milestones but may not duplicate Energy spend, wage, duty count or milestone publication.
 
 
+### D44 — Secret Debt hidden-work economy and Takeover thresholds
+
+Accepted Product packet:
+`chat4/secret-debt-balance-decision-v11@fdef24962c751fa8d4d8595f64b7f00a0e4fff04`.
+
+#### Hidden daytime work
+
+Every committed hidden-work shift:
+- costs the already-locked **1 Energy**;
+- grants **Endurance +1**;
+- grants **Sexuality +1**;
+- grants **Lust +0**.
+
+Seasonal negatives:
+- **Summer: Reason -1**;
+- **Winter: Sociability -1**;
+- Spring/Autumn: no hidden-work negative package.
+
+No other progression stat changes are routine hidden-work effects.
+
+#### Hidden-work wage
+
+Exact wage, evaluated from pre-shift values:
+
+`round(30 + min(110, 0.70 * Endurance + 0.60 * Sexuality + 0.35 * Lust))`
+
+Therefore:
+- base = 30;
+- Endurance coefficient = 0.70;
+- Sexuality coefficient = 0.60;
+- Lust coefficient = 0.35;
+- weighted component cap = 110;
+- absolute wage cap = **140**.
+
+Acceptance anchors:
+- E10 / Sexuality10 / Lust5 -> **45**;
+- E30 / Sexuality30 / Lust15 -> **74**;
+- E50 / Sexuality50 / Lust25 -> **104**.
+
+Lust remains a positive wage input as required by D19, but hidden work and forced Night never raise Lust automatically.
+
+#### Bound Life
+
+The existing D19 milestone remains exactly:
+- **50 hidden completed shifts**.
+
+It is not ordinary Hard Work and does not modify the 10 ordinary-career Hard Work system.
+
+#### Takeover / owner-kill-control route
+
+The explicit Takeover action requires all of:
+- hidden completed shifts >= **75**;
+- Endurance >= **75**;
+- Sexuality >= **75**;
+- Wits >= **35**;
+- Lust >= **30**;
+- paid School lessons >= **10**;
+- Secret Debt bound state active;
+- explicit authored Takeover choice.
+
+No threshold auto-commits the ending.
+
+Sexuality and Lust are route/stat gates only:
+- neither implies consent;
+- neither overrides refusal;
+- neither auto-selects intimacy/relationship actions.
+
+Paid School lessons means paid lessons only; Night Study does not satisfy the 10-lesson Takeover requirement.
+
+#### Existing D19 authority unchanged
+
+D44 does not change:
+- lender chance 20%;
+- +2000 acceptance payment;
+- exactly 10-day trap;
+- 20000 debt;
+- ordinary-career lock while bound;
+- School/Activity availability;
+- forced Night;
+- next-day Energy -1;
+- full-only 20000 repayment;
+- D30/D32 future-run rewards;
+- lodging prices;
+- School tuition;
+- ordinary-career wage formulas.
+
+
 ## Still open after this lock
 
 - exact numeric economy;
