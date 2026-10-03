@@ -1181,13 +1181,130 @@ Shared invariants:
 - Night surfaces may contribute presentation/route facts only as explicitly listed in the accepted packet.
 
 
+### D43 — Palace daily cadence and duty economy
+
+Accepted Product packet:
+`chat6/palace-daily-cadence-economy-v14@7235004c5f8098ccb153646442af90f85af70a69`.
+
+Palace uses a refined one-duty-per-day model independent of D26:
+
+#### Structural duty cadence
+
+- at most **1 progression-counting Palace structural duty per calendar day**;
+- structural duty costs exactly **1 Energy**;
+- structural duty does **not** end daytime;
+- additional remaining Energy may be spent on other legal systems;
+- extra Energy never permits a second structural duty that day;
+- structural progression is capped at the accepted **15 duties**;
+- there is no paid progression-counting duty 16+.
+
+With a Day-1 D23 invitation and uninterrupted daily duties:
+- duty 1 = Day 1;
+- duty 15 = **Day 15**;
+- earliest Outcome Ready / `palace.progression-complete` = **Day 15**.
+
+#### Optional Palace support/prep
+
+At most **1 Palace support/preparation daytime action per calendar day** may be performed.
+
+It:
+- costs **1 Energy**;
+- pays **0 money**;
+- does not increment Palace duty count;
+- grants no routine progression stats;
+- may occur on the same day as the structural duty if Energy remains;
+- may continue as authored review/social/support content after duty 15 without reopening paid duty progression.
+
+Accepted route-prep reference timing:
+- Service Life prep may begin at duty 5 and complete its prep fact by duty 6;
+- Court Power prep may begin at duty 8 and complete by duty 9;
+- Inner Truth prep may begin at duty 12 and complete by duty 13;
+- all three non-True route readiness states may coexist at Outcome Ready on Day 15 before explicit ending commit.
+
+#### Structural duty wage
+
+Each successfully committed structural duty pays:
+
+`35 + min(20, floor((Reason + Wits + Manners + Sociability) / 20))`
+
+money.
+
+Properties:
+- minimum wage = **35**;
+- maximum wage = **55**;
+- at 91 in all four wage stats = **53**;
+- maximum total structural Palace pay over 15 duties = **825**;
+- formula remains bounded even under cap-200;
+- support/prep pays 0;
+- no repeatable paid structural duty exists after duty 15.
+
+Palace uses this distinct bounded wage formula rather than ordinary-career wage scaling.
+
+#### Progression effects
+
+Routine Palace structural duties:
+- grant **no routine progression-stat package**;
+- grant **no automatic Lust**;
+- apply **no routine negative-stat package**.
+
+Palace therefore does not become the main 12×91 stat-training engine.
+
+One-time authored story consequences may exist later, but they are not routine Palace duty economy.
+
+#### Lodging / Night
+
+Normal, cheap and street lodging do not gate Palace daytime duty/support if final available Energy permits.
+
+Palace Night:
+- is optional;
+- grants no duty count;
+- grants no structural wage;
+- refunds no daytime Energy;
+- remains below Secret Debt forced Night in precedence.
+
+#### Secret Debt interaction
+
+If Palace access was legitimately opened under D23 in the current life, becoming Secret-Debt-bound:
+- does **not** remove Palace access;
+- does **not** reset Palace progression;
+- does **not** suspend structural duty/support.
+
+However:
+- all ten ordinary careers remain locked under D19;
+- Secret Debt forced Night still occurs;
+- next-day Energy -1 is applied after relevant selected Energy modifier and before daytime spending;
+- Palace duty/support spends from that final reduced Energy;
+- Palace pay remains finite and capped by the remaining uncompleted structural duties;
+- Palace cannot become a repeatable 20,000-money debt farm.
+
+#### Atomicity / save safety
+
+A structural duty commit must atomically:
+1. validate Palace access;
+2. validate `palaceDutyCount < 15`;
+3. validate no structural duty already committed that calendar day;
+4. validate Energy >=1;
+5. resolve exact next duty ordinal;
+6. compute wage from pre-duty wage stats;
+7. spend 1 Energy;
+8. pay wage;
+9. increment duty count exactly once;
+10. record the calendar-day duty lock and committed duty ID/ordinal;
+11. apply milestone transition at 2/5/8/12/15;
+12. write `palace.progression-complete` exactly once at duty 15.
+
+Failed validation changes no Energy, money, duty count or daily lock.
+
+Reload may resume pending reactions/milestones but may not duplicate Energy spend, wage, duty count or milestone publication.
+
+
 ## Still open after this lock
 
 - exact numeric economy;
 - exact Lust starting value;
 - exact ordinary profession -> selectable +5 stat mapping, under D22 breadth/Lust constraints;
 - exact School curriculum/prices;
-- exact Palace daily cadence and authored content within the locked six-stage topology;
+- final authored Palace lore/prose within the locked six-stage topology;
 - macro mystery/lore;
 - exact Secret Debt shift stat gains, wage coefficients, and owner-kill stat/Lust thresholds;
 - production art/media budget.
