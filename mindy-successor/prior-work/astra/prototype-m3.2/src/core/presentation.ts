@@ -576,7 +576,10 @@ export const GUARD_ROUTE_EVENT_IDS=[
   'guard.routes.major-case-ready'
 ] as const;
 
-export const GUARD_SCHOOL_EVENT_IDS=[] as const;
+export const GUARD_SCHOOL_EVENT_IDS=[
+  'd40.school.guard.literacy',
+  'd40.school.guard.etiquette'
+] as const;
 
 export const GUARD_RELATIONSHIP_STAGES=[
   'introduced','professional-trust','conflict-open','cooperation-ready','route-resolved'
@@ -655,7 +658,9 @@ export const MERCHANT_ITEM_IDS=[
   'merchant_sample_kit'
 ] as const;
 
-export const MERCHANT_SCHOOL_EVENT_IDS=[] as const;
+export const MERCHANT_SCHOOL_EVENT_IDS=[
+  'd40.school.merchant.literacy'
+] as const;
 
 export const MERCHANT_CROSS_SYSTEM_EVENT_IDS=[
   'merchant.cross.lumber-route',
@@ -675,7 +680,10 @@ export const MERCHANT_ADVANCED_STATUS_IDS=[
 ] as const;
 
 export const MERCHANT_PUBLIC_ENDING_IDS=[
-  'ending.merchant.hard-work'
+  'ending.merchant.hard-work',
+  'ending.merchant.house',
+  'ending.merchant.speculator-smuggler',
+  'ending.merchant.patron-of-routes'
 ] as const;
 
 export function presentationIdForMerchantStage(stage:string){
@@ -721,10 +729,18 @@ export const ARTIST_GEISHA_ADVANCED_STATUS_IDS=[
   'outcome-ready'
 ] as const;
 
-export const ARTIST_GEISHA_SCHOOL_EVENT_IDS=[] as const;
+export const ARTIST_GEISHA_SCHOOL_EVENT_IDS=[
+  'd40.school.artist-geisha.arts',
+  'd40.school.artist-geisha.literacy',
+  'd40.school.artist-geisha.rhetoric',
+  'd40.school.artist-geisha.etiquette'
+] as const;
 
 export const ARTIST_GEISHA_PUBLIC_ENDING_IDS=[
-  'ending.artist-geisha.hard-work'
+  'ending.artist-geisha.hard-work',
+  'ending.artist-geisha.master-artist',
+  'ending.artist-geisha.patron-network',
+  'ending.artist-geisha.court-invitation'
 ] as const;
 
 export function presentationIdForArtistGeishaStage(stage:string){

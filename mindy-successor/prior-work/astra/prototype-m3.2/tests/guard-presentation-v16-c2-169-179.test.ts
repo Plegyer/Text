@@ -50,7 +50,10 @@ test('C2-169 frozen Guard identities match the exact production catalog and publ
   assert.ok(relationship);
   assert.deepEqual([...GUARD_PRESENTATION_STAGES],career.stages);
   assert.deepEqual([...GUARD_RELATIONSHIP_STAGES],relationship.stages);
-  assert.deepEqual([...GUARD_SCHOOL_EVENT_IDS],[]);
+  assert.deepEqual([...GUARD_SCHOOL_EVENT_IDS],[
+    'd40.school.guard.literacy',
+    'd40.school.guard.etiquette'
+  ]);
 
   const capability:Record<string,string>={
     guard_badge:'official_guard_access',
@@ -83,7 +86,13 @@ test('C2-169 frozen Guard identities match the exact production catalog and publ
   assert.equal(catalog.events.some(event=>event.id.startsWith('guard.school.')),false);
   assert.deepEqual(
     catalog.definitions.endings.filter(ending=>ending.id.includes('guard')).map(ending=>ending.id),
-    ['ending.guard.hard-work']
+    [
+      'ending.guard.hard-work',
+      'ending.guard.officer',
+      'ending.guard.reform',
+      'ending.guard.network',
+      'ending.guard.major-case'
+    ]
   );
 });
 
@@ -167,8 +176,11 @@ test('C2-175 Guard Badge and Sealed Pass presentation is access-only and live-it
   assert.match(app,/data-guard-item=/);
 });
 
-test('C2-176 Guard School boundary remains empty without a frozen live consumer',()=>{
-  assert.deepEqual([...GUARD_SCHOOL_EVENT_IDS],[]);
+test('C2-176 Guard School boundary exposes only the two D40 publishers and no legacy guard.school namespace',()=>{
+  assert.deepEqual([...GUARD_SCHOOL_EVENT_IDS],[
+    'd40.school.guard.literacy',
+    'd40.school.guard.etiquette'
+  ]);
   assert.equal(catalog.events.some(event=>event.id.startsWith('guard.school.')),false);
   const published=Object.keys(presentation.slots??{}).filter(id=>id.includes('guard-school')||id.includes('guard.school'));
   assert.deepEqual(published,[]);
@@ -193,14 +205,20 @@ test('C2-177 crisis and late routes are readiness presentation rather than inven
   }
 });
 
-test('C2-178 existing Guard Hard Work is the only Guard ending surface',()=>{
+test('C2-178 Guard Hard Work remains present alongside the exact D40 ending surfaces',()=>{
   const endingId='ending.guard.hard-work';
   assert.ok(catalog.definitions.endings.some(ending=>ending.id===endingId));
   assert.equal(presentationIdForEnding(endingId),'ending/guard/hard-work');
   assertLocalizedStatic('ending/guard/hard-work');
   assert.deepEqual(
     catalog.definitions.endings.filter(ending=>ending.id.includes('guard')).map(ending=>ending.id),
-    [endingId]
+    [
+      endingId,
+      'ending.guard.officer',
+      'ending.guard.reform',
+      'ending.guard.network',
+      'ending.guard.major-case'
+    ]
   );
 });
 

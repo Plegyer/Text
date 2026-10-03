@@ -1,6 +1,6 @@
 import {z} from 'zod';
 
-export const STRONG_META_REGISTRY_VERSION='strong-meta-v1' as const;
+export const STRONG_META_REGISTRY_VERSION='strong-meta-v2' as const;
 export const STRONG_META_CONTRACT_VERSION=1 as const;
 export const STRONG_META_KEYSTONE_CAPACITY=1 as const;
 export const STRONG_META_SPECIALIST_CAPACITY=2 as const;
@@ -9,15 +9,22 @@ export const STRONG_META_IDS={
   palaceCap200:'palace.true.cap-200',
   earnedReserveMatch:'secret-debt.paid-freedom.earned-reserve-match',
   workRhythm:'secret-debt.bound-life.work-rhythm',
-  networkRetainer:'secret-debt.takeover.network-retainer'
+  networkRetainer:'secret-debt.takeover.network-retainer',
+  guardInstitutionalFavors:'specialist.guard.institutional-favors',
+  merchantRiskLedger:'specialist.merchant.risk-ledger',
+  artistSalonIntroductions:'specialist.artist.salon-introductions',
+  assassinGhostRoutes:'specialist.assassin.ghost-routes',
+  assassinContractLedger:'specialist.assassin.contract-ledger',
+  prostituteHousebook:'specialist.prostitute.housebook',
+  prostituteMutualAidRoster:'specialist.prostitute.mutual-aid-roster'
 } as const;
 
 export type ApprovedStrongRewardId=typeof STRONG_META_IDS[keyof typeof STRONG_META_IDS];
 export const approvedStrongRewardIdSchema=z.enum([
-  STRONG_META_IDS.palaceCap200,
-  STRONG_META_IDS.earnedReserveMatch,
-  STRONG_META_IDS.workRhythm,
-  STRONG_META_IDS.networkRetainer
+  STRONG_META_IDS.palaceCap200,STRONG_META_IDS.earnedReserveMatch,STRONG_META_IDS.workRhythm,STRONG_META_IDS.networkRetainer,
+  STRONG_META_IDS.guardInstitutionalFavors,STRONG_META_IDS.merchantRiskLedger,STRONG_META_IDS.artistSalonIntroductions,
+  STRONG_META_IDS.assassinGhostRoutes,STRONG_META_IDS.assassinContractLedger,STRONG_META_IDS.prostituteHousebook,
+  STRONG_META_IDS.prostituteMutualAidRoster
 ]);
 export type StrongRewardClass='keystone'|'specialist';
 export type StrongRewardLifecycle='active'|'retired';
@@ -50,12 +57,20 @@ const networkRetainerEffectSchema=z.object({
   perRunTotalCap:nonNegativeInt
 }).strict();
 
+const guardInstitutionalFavorsEffectSchema=z.object({kind:z.literal('guard-institutional-favors'),maxUsesPerRun:z.literal(2)}).strict();
+const merchantRiskLedgerEffectSchema=z.object({kind:z.literal('merchant-risk-ledger'),maxDealsPerRun:z.literal(2),reveal:z.tuple([z.literal('reward-band'),z.literal('downside-tag')]),allowAbortBeforeCommit:z.literal(true)}).strict();
+const artistSalonIntroductionsEffectSchema=z.object({kind:z.literal('artist-salon-introductions'),maxUsesPerRun:z.literal(4),maxUsesPerSeason:z.literal(1)}).strict();
+const assassinGhostRoutesEffectSchema=z.object({kind:z.literal('assassin-ghost-routes'),maxContractsPerRun:z.literal(2)}).strict();
+const assassinContractLedgerEffectSchema=z.object({kind:z.literal('assassin-contract-ledger'),maxContractsPerRun:z.literal(2),reveal:z.tuple([z.literal('sponsor-tag'),z.literal('fallout-tag')]),allowAuthoredReroute:z.literal(true)}).strict();
+const prostituteHousebookEffectSchema=z.object({kind:z.literal('prostitute-housebook'),maxBookingsPerRun:z.literal(2),reveal:z.tuple([z.literal('terms'),z.literal('risk')]),allow:z.tuple([z.literal('decline'),z.literal('renegotiate')])}).strict();
+const prostituteMutualAidRosterEffectSchema=z.object({kind:z.literal('prostitute-mutual-aid-roster'),maxRiskScenesPerRun:z.literal(2),allow:z.tuple([z.literal('safe-exit'),z.literal('request-help'),z.literal('contact-support')])}).strict();
+
 export const resolvedStrongRewardSchema=z.discriminatedUnion('class',[
   z.object({
     id:strongRewardIdSchema,
     class:z.literal('specialist'),
     definitionVersion:z.number().int().min(1),
-    effect:cap200EffectSchema
+    effect:z.union([cap200EffectSchema,guardInstitutionalFavorsEffectSchema,merchantRiskLedgerEffectSchema,artistSalonIntroductionsEffectSchema,assassinGhostRoutesEffectSchema,assassinContractLedgerEffectSchema,prostituteHousebookEffectSchema,prostituteMutualAidRosterEffectSchema])
   }).strict(),
   z.object({
     id:strongRewardIdSchema,
@@ -113,43 +128,22 @@ export type StrongRewardDefinition=Readonly<{
   class:StrongRewardClass;
   lifecycle:StrongRewardLifecycle;
   definitionVersion:1;
-  authority:'D24'|'D30'|'D32';
+  authority:'D24'|'D30'|'D32'|'D40';
   effect:ResolvedStrongReward['effect'];
 }>;
 
 export const strongMetaRegistry:Readonly<Record<ApprovedStrongRewardId,StrongRewardDefinition>>={
-  [STRONG_META_IDS.palaceCap200]:{
-    id:STRONG_META_IDS.palaceCap200,
-    class:'specialist',
-    lifecycle:'active',
-    definitionVersion:1,
-    authority:'D24',
-    effect:{kind:'progression-stat-cap',cap:200}
-  },
-  [STRONG_META_IDS.earnedReserveMatch]:{
-    id:STRONG_META_IDS.earnedReserveMatch,
-    class:'keystone',
-    lifecycle:'active',
-    definitionVersion:1,
-    authority:'D32',
-    effect:{kind:'earned-reserve-match',matchRatio:1,perRunCap:1000}
-  },
-  [STRONG_META_IDS.workRhythm]:{
-    id:STRONG_META_IDS.workRhythm,
-    class:'keystone',
-    lifecycle:'active',
-    definitionVersion:1,
-    authority:'D32',
-    effect:{kind:'work-rhythm',energyDelta:1,maxBonusDays:20}
-  },
-  [STRONG_META_IDS.networkRetainer]:{
-    id:STRONG_META_IDS.networkRetainer,
-    class:'keystone',
-    lifecycle:'active',
-    definitionVersion:1,
-    authority:'D32',
-    effect:{kind:'network-retainer',paymentAmount:25,eligibleDayCount:40,perRunTotalCap:1000}
-  }
+  [STRONG_META_IDS.palaceCap200]:{id:STRONG_META_IDS.palaceCap200,class:'specialist',lifecycle:'active',definitionVersion:1,authority:'D24',effect:{kind:'progression-stat-cap',cap:200}},
+  [STRONG_META_IDS.earnedReserveMatch]:{id:STRONG_META_IDS.earnedReserveMatch,class:'keystone',lifecycle:'active',definitionVersion:1,authority:'D32',effect:{kind:'earned-reserve-match',matchRatio:1,perRunCap:1000}},
+  [STRONG_META_IDS.workRhythm]:{id:STRONG_META_IDS.workRhythm,class:'keystone',lifecycle:'active',definitionVersion:1,authority:'D32',effect:{kind:'work-rhythm',energyDelta:1,maxBonusDays:20}},
+  [STRONG_META_IDS.networkRetainer]:{id:STRONG_META_IDS.networkRetainer,class:'keystone',lifecycle:'active',definitionVersion:1,authority:'D32',effect:{kind:'network-retainer',paymentAmount:25,eligibleDayCount:40,perRunTotalCap:1000}},
+  [STRONG_META_IDS.guardInstitutionalFavors]:{id:STRONG_META_IDS.guardInstitutionalFavors,class:'specialist',lifecycle:'active',definitionVersion:1,authority:'D40',effect:{kind:'guard-institutional-favors',maxUsesPerRun:2}},
+  [STRONG_META_IDS.merchantRiskLedger]:{id:STRONG_META_IDS.merchantRiskLedger,class:'specialist',lifecycle:'active',definitionVersion:1,authority:'D40',effect:{kind:'merchant-risk-ledger',maxDealsPerRun:2,reveal:['reward-band','downside-tag'],allowAbortBeforeCommit:true}},
+  [STRONG_META_IDS.artistSalonIntroductions]:{id:STRONG_META_IDS.artistSalonIntroductions,class:'specialist',lifecycle:'active',definitionVersion:1,authority:'D40',effect:{kind:'artist-salon-introductions',maxUsesPerRun:4,maxUsesPerSeason:1}},
+  [STRONG_META_IDS.assassinGhostRoutes]:{id:STRONG_META_IDS.assassinGhostRoutes,class:'specialist',lifecycle:'active',definitionVersion:1,authority:'D40',effect:{kind:'assassin-ghost-routes',maxContractsPerRun:2}},
+  [STRONG_META_IDS.assassinContractLedger]:{id:STRONG_META_IDS.assassinContractLedger,class:'specialist',lifecycle:'active',definitionVersion:1,authority:'D40',effect:{kind:'assassin-contract-ledger',maxContractsPerRun:2,reveal:['sponsor-tag','fallout-tag'],allowAuthoredReroute:true}},
+  [STRONG_META_IDS.prostituteHousebook]:{id:STRONG_META_IDS.prostituteHousebook,class:'specialist',lifecycle:'active',definitionVersion:1,authority:'D40',effect:{kind:'prostitute-housebook',maxBookingsPerRun:2,reveal:['terms','risk'],allow:['decline','renegotiate']}},
+  [STRONG_META_IDS.prostituteMutualAidRoster]:{id:STRONG_META_IDS.prostituteMutualAidRoster,class:'specialist',lifecycle:'active',definitionVersion:1,authority:'D40',effect:{kind:'prostitute-mutual-aid-roster',maxRiskScenesPerRun:2,allow:['safe-exit','request-help','contact-support']}}
 };
 
 const approvedIdSet=new Set<string>(Object.keys(strongMetaRegistry));
@@ -477,17 +471,20 @@ export function applyNetworkRetainerAtStartDay(input:Readonly<{
 
 export function validateStrongMetaRegistry():void{
   const ids=Object.keys(strongMetaRegistry);
-  if(ids.length!==4)throw new Error('Strong Meta v7 registry must contain exactly four approved rewards.');
+  if(ids.length!==11)throw new Error('Strong Meta registry must contain four v7 rewards plus seven D40 Specialists.');
   for(const [key,definition] of Object.entries(strongMetaRegistry)){
     if(key!==definition.id)throw new Error(`Strong Meta registry key mismatch: ${key}`);
     if(!strongRewardIdPattern.test(key))throw new Error(`Invalid Strong Meta reward ID: ${key}`);
   }
   if(new Set(ids).size!==ids.length)throw new Error('Duplicate Strong Meta reward ID.');
-  if(!approvedIdSet.has(STRONG_META_IDS.palaceCap200))throw new Error('Missing Palace cap-200 Specialist.');
-  const specialists=Object.values(strongMetaRegistry).filter(definition=>definition.class==='specialist');
-  const keystones=Object.values(strongMetaRegistry).filter(definition=>definition.class==='keystone');
-  if(specialists.length!==1||specialists[0]?.id!==STRONG_META_IDS.palaceCap200)throw new Error('Strong Meta v7 Specialist registry drift.');
-  if(keystones.length!==3)throw new Error('Strong Meta v7 Keystone registry drift.');
+  const specialists=Object.values(strongMetaRegistry).filter(x=>x.class==='specialist');
+  const keystones=Object.values(strongMetaRegistry).filter(x=>x.class==='keystone');
+  if(specialists.length!==8)throw new Error('Strong Meta Specialist registry drift.');
+  if(keystones.length!==3)throw new Error('Strong Meta Keystone registry drift.');
+  for(const id of [STRONG_META_IDS.guardInstitutionalFavors,STRONG_META_IDS.merchantRiskLedger,STRONG_META_IDS.artistSalonIntroductions,STRONG_META_IDS.assassinGhostRoutes,STRONG_META_IDS.assassinContractLedger,STRONG_META_IDS.prostituteHousebook,STRONG_META_IDS.prostituteMutualAidRoster]){
+    const definition=strongMetaRegistry[id];
+    if(definition.class!=='specialist'||definition.authority!=='D40')throw new Error(`D40 Specialist registry drift: ${id}`);
+  }
   const reserve=strongMetaRegistry[STRONG_META_IDS.earnedReserveMatch].effect;
   const rhythm=strongMetaRegistry[STRONG_META_IDS.workRhythm].effect;
   const retainer=strongMetaRegistry[STRONG_META_IDS.networkRetainer].effect;
