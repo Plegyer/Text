@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {loadCatalog} from '../src/core/content.ts';
 import {dispatch,freshSave,palaceRunQualified,parseSave} from '../src/core/engine.ts';
 import {ordinaryHardWorkCareers,type Catalog,type Save} from '../src/core/schema.ts';
+import {STRONG_META_IDS} from '../src/core/strongMeta.ts';
 
 function ending(id:string,metaRewards?:any[],reward='legacy.placeholder'){
   return {
@@ -28,6 +29,7 @@ function definitions(){
     endings:[
       ending('test.unlock',[{kind:'unlock',rewardId:'reward.test.unlock',unlock:'advanced.school'}]),
       ending('legacy.test',undefined,'legacy.unlock'),
+      ending('strong.test',[{kind:'strongMeta',rewardId:'reward.strong.test',reward:STRONG_META_IDS.workRhythm}]),
       ...hardWork
     ]
   };
@@ -70,6 +72,25 @@ test('commitEnding changes flow state but does not grant Meta reward',()=>{
   assert.equal(s.meta.unlocks.includes('advanced.school'),false);
   assert.equal(s.meta.runsCompleted,0);
   assert.throws(()=>dispatch(s,{type:'newLife'},cat),/завершите выбранную судьбу/i);
+});
+
+
+
+test('strong Meta ending reward grants permanent ownership exactly once and never auto-selects it',()=>{
+  const cat=catalog();
+  let s=freshReady(cat);
+  s=dispatch(s,{type:'commitEnding',id:'strong.test'},cat);
+  assert.deepEqual(s.meta.strongMeta.ownership.ownedRewardIds,[]);
+  s=dispatch(s,{type:'completeEnding'},cat);
+  assert.deepEqual(s.meta.strongMeta.ownership.ownedRewardIds,[STRONG_META_IDS.workRhythm]);
+  assert.deepEqual(s.meta.strongMeta.preferredSelection,{keystoneId:null,specialistIds:[]});
+  assert.deepEqual(s.run.endings.result?.appliedMetaRewardIds,['reward.strong.test']);
+
+  s=ready(dispatch(s,{type:'newLife'},cat),cat);
+  s=dispatch(s,{type:'commitEnding',id:'strong.test'},cat);
+  s=dispatch(s,{type:'completeEnding'},cat);
+  assert.deepEqual(s.meta.strongMeta.ownership.ownedRewardIds,[STRONG_META_IDS.workRhythm]);
+  assert.deepEqual(s.run.endings.result?.appliedMetaRewardIds,[]);
 });
 
 test('normal progression event is suppressed after ending commitment',()=>{
