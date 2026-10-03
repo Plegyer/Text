@@ -1,0 +1,965 @@
+{
+  "formatVersion": 1,
+  "id": "chat3.prostitute-authored-v21.binding-plan",
+  "status": "SAFE_PREP_BINDING_PLAN_NO_PRODUCTION_FREEZE",
+  "activationHead": "0d74171fb3b0d9eafe4081966d3698a20220f72f",
+  "policy": {
+    "live": "LIVE_BOUND",
+    "future": "PENDING_RUNTIME_ID",
+    "forbidden": "NO_AUTHORITY_NOT_BINDABLE",
+    "modifiesProduction": false,
+    "createsGameplayIds": false,
+    "freezeCandidate": false
+  },
+  "shippedAuthorityBindings": [
+    {
+      "consumerId": "prostitute.shift",
+      "status": "LIVE_BOUND",
+      "kind": "action"
+    },
+    {
+      "consumerId": "prostitute",
+      "status": "LIVE_BOUND",
+      "kind": "career"
+    },
+    {
+      "consumerId": "prostitute.shift#spring.default",
+      "status": "LIVE_BOUND",
+      "kind": "actionScene"
+    },
+    {
+      "consumerId": "prostitute.shift#summer.default",
+      "status": "LIVE_BOUND",
+      "kind": "actionScene"
+    },
+    {
+      "consumerId": "prostitute.shift#autumn.default",
+      "status": "LIVE_BOUND",
+      "kind": "actionScene"
+    },
+    {
+      "consumerId": "prostitute.shift#winter.default",
+      "status": "LIVE_BOUND",
+      "kind": "actionScene"
+    },
+    {
+      "consumerId": "ending.prostitute.hard-work",
+      "status": "LIVE_BOUND",
+      "kind": "ending"
+    }
+  ],
+  "liveCurrentLocalization": [
+    {
+      "rootKey": "action.prostitute.shift.label",
+      "ru": "Профессиональная смена",
+      "en": "Professional shift",
+      "status": "LIVE_BOUND"
+    },
+    {
+      "rootKey": "action.prostitute.shift.description",
+      "ru": "Добровольная профессиональная смена с сохранением выбора и границ героини.",
+      "en": "Work a voluntary professional shift with player agency and boundaries.",
+      "status": "LIVE_BOUND"
+    },
+    {
+      "rootKey": "profession.prostitute.label",
+      "ru": "Независимая профессиональная работа",
+      "en": "Independent Professional Work",
+      "status": "LIVE_BOUND"
+    },
+    {
+      "rootKey": "profession.prostitute.description",
+      "ru": "Добровольная работа с клиентами, где героиня сохраняет выбор и личные границы.",
+      "en": "Voluntary client-facing work in which the heroine keeps agency and personal boundaries.",
+      "status": "LIVE_BOUND"
+    },
+    {
+      "rootKey": "ending.ending.prostitute.hard-work.title",
+      "ru": "Независимая профессия: тяжкий труд",
+      "en": "Professional: Hard Work",
+      "status": "LIVE_BOUND"
+    },
+    {
+      "rootKey": "ending.ending.prostitute.hard-work.description",
+      "ru": "Долгая последовательность добровольных профессиональных смен складывается в неэксплицитный карьерный финал с сохранением личных границ.",
+      "en": "A long sequence of voluntary professional shifts becomes a non-explicit career ending that keeps personal boundaries intact.",
+      "status": "LIVE_BOUND"
+    },
+    {
+      "rootKey": "presentation.static.career.prostitute.shift.spring.caption",
+      "ru": "Весенняя смена: неэксплицитная подготовка к работе.",
+      "en": "Spring shift: non-explicit work preparation.",
+      "status": "LIVE_BOUND"
+    },
+    {
+      "rootKey": "presentation.static.career.prostitute.shift.summer.caption",
+      "ru": "Летняя смена: неэксплицитная подготовка к работе.",
+      "en": "Summer shift: non-explicit work preparation.",
+      "status": "LIVE_BOUND"
+    },
+    {
+      "rootKey": "presentation.static.career.prostitute.shift.autumn.caption",
+      "ru": "Осенняя смена: неэксплицитная подготовка к работе.",
+      "en": "Autumn shift: non-explicit work preparation.",
+      "status": "LIVE_BOUND"
+    },
+    {
+      "rootKey": "presentation.static.career.prostitute.shift.winter.caption",
+      "ru": "Зимняя смена: неэксплицитная подготовка к работе.",
+      "en": "Winter shift: non-explicit work preparation.",
+      "status": "LIVE_BOUND"
+    },
+    {
+      "rootKey": "presentation.static.career.prostitute.result.caption",
+      "ru": "Рабочая смена завершена.",
+      "en": "The work shift is complete.",
+      "status": "LIVE_BOUND"
+    },
+    {
+      "rootKey": "presentation.static.prostitute-ending-hard-work.caption",
+      "ru": "Финал независимой профессии: тяжкий труд.",
+      "en": "Professional ending: Hard Work.",
+      "status": "LIVE_BOUND"
+    }
+  ],
+  "exactCrossAuthority": {
+    "satyrMaid": {
+      "action": "satyr-maid.shift",
+      "relationship": "satyr-maid.recurring-guest",
+      "nightChoices": [
+        "satyr-maid.night.recurring-guest",
+        "satyr-maid.night.staff-debrief"
+      ]
+    },
+    "artistGeisha": {
+      "action": "artist-geisha.shift",
+      "ending": "ending.artist-geisha.hard-work",
+      "currentRelationshipConsumers": [],
+      "currentNightConsumers": []
+    },
+    "tavern": {
+      "action": "tavern.shift",
+      "relationship": "tavern.recurring-traveler",
+      "itemCapability": [
+        "tavern_staff_key",
+        "access_guest_rooms_staff"
+      ],
+      "nightChoices": [
+        "tavern.night.traveler-request",
+        "tavern.night.house-notes"
+      ]
+    },
+    "guard": {
+      "action": "guard.shift",
+      "relationship": "guard.partner",
+      "itemCapabilities": [
+        [
+          "guard_badge",
+          "official_guard_access"
+        ],
+        [
+          "guard_sealed_pass",
+          "guard_sealed_pass"
+        ]
+      ]
+    },
+    "merchant": {
+      "action": "merchant.shift",
+      "relationship": "merchant.supplier",
+      "itemCapabilities": [
+        [
+          "merchant_appraisal_scales",
+          "merchant_appraise_goods"
+        ],
+        [
+          "merchant_manifest_case",
+          "merchant_verify_manifest"
+        ],
+        [
+          "merchant_sample_kit",
+          "merchant_handle_samples"
+        ]
+      ]
+    },
+    "palace": {
+      "currentActionConsumers": [],
+      "currentCareerConsumers": [],
+      "currentItemConsumers": [],
+      "currentRelationshipConsumers": [],
+      "currentNightConsumers": [],
+      "status": "NO_AUTHORITY_NOT_BINDABLE"
+    }
+  },
+  "entries": [
+    {
+      "task": "C3-230",
+      "section": "ordinary-work",
+      "contentKey": "client-intake.arrival",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-230",
+      "section": "ordinary-work",
+      "contentKey": "terms.clarity",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-230",
+      "section": "ordinary-work",
+      "contentKey": "boundaries.restate",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-230",
+      "section": "ordinary-work",
+      "contentKey": "recurring-client.continuity",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-230",
+      "section": "ordinary-work",
+      "contentKey": "difficult-request.pause",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-230",
+      "section": "ordinary-work",
+      "contentKey": "refusal.close",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-230",
+      "section": "ordinary-work",
+      "contentKey": "safety.check-in",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-230",
+      "section": "ordinary-work",
+      "contentKey": "competition.positioning",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-230",
+      "section": "ordinary-work",
+      "contentKey": "reputation.follow-through",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-230",
+      "section": "ordinary-work",
+      "contentKey": "high-status.booking",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-230",
+      "section": "ordinary-work",
+      "contentKey": "payment.admin",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-231",
+      "section": "seasonal",
+      "contentKey": "spring.travelers",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-231",
+      "section": "seasonal",
+      "contentKey": "spring.returning-city",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-231",
+      "section": "seasonal",
+      "contentKey": "summer.festival",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-231",
+      "section": "seasonal",
+      "contentKey": "summer.high-demand",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-231",
+      "section": "seasonal",
+      "contentKey": "autumn.elite-visitors",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-231",
+      "section": "seasonal",
+      "contentKey": "autumn.events",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-231",
+      "section": "seasonal",
+      "contentKey": "winter.regular-pressure",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-231",
+      "section": "seasonal",
+      "contentKey": "winter.housing-context",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-232",
+      "section": "adult-work",
+      "contentKey": "adult.negotiated-context",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-232",
+      "section": "adult-work",
+      "contentKey": "adult.recurring-client",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-232",
+      "section": "adult-work",
+      "contentKey": "adult.high-status",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-232",
+      "section": "adult-work",
+      "contentKey": "adult.performance-context",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-232",
+      "section": "adult-work",
+      "contentKey": "adult.route-veteran",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-232",
+      "section": "adult-work",
+      "contentKey": "adult.route-house",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-232",
+      "section": "adult-work",
+      "contentKey": "adult.route-elite",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-232",
+      "section": "adult-work",
+      "contentKey": "adult.route-network",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-232",
+      "section": "adult-work",
+      "contentKey": "adult.boundary-preserved",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-233",
+      "section": "night",
+      "contentKey": "night.voluntary-continuation",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-233",
+      "section": "night",
+      "contentKey": "night.recurring-client",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-233",
+      "section": "night",
+      "contentKey": "night.relationship-context",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-233",
+      "section": "night",
+      "contentKey": "night.route-context",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-233",
+      "section": "night",
+      "contentKey": "night.after-work-debrief",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-233",
+      "section": "night",
+      "contentKey": "night.secret-debt-firewall",
+      "status": "NO_AUTHORITY_NOT_BINDABLE",
+      "targetKind": "unownedOrForbiddenAssumption",
+      "runtimeConsumerId": null,
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-233",
+      "section": "night",
+      "contentKey": "night.no-auto-consumption",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-234",
+      "section": "relationship",
+      "contentKey": "relationship.recurring-client-professional",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-234",
+      "section": "relationship",
+      "contentKey": "relationship.recurring-client-friendship",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-234",
+      "section": "relationship",
+      "contentKey": "relationship.recurring-client-romance-optional",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-234",
+      "section": "relationship",
+      "contentKey": "relationship.colleague",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-234",
+      "section": "relationship",
+      "contentKey": "relationship.manager-landlord",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-234",
+      "section": "relationship",
+      "contentKey": "relationship.protector-contact",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-234",
+      "section": "relationship",
+      "contentKey": "relationship.rival",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-234",
+      "section": "relationship",
+      "contentKey": "relationship.patronage-boundary",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-234",
+      "section": "relationship",
+      "contentKey": "relationship.conflict-resolution",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-234",
+      "section": "relationship",
+      "contentKey": "relationship.no-auto-romance",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-235",
+      "section": "routes",
+      "contentKey": "route.veteran",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-235",
+      "section": "routes",
+      "contentKey": "route.independent-house",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-235",
+      "section": "routes",
+      "contentKey": "route.elite-clientele",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-235",
+      "section": "routes",
+      "contentKey": "route.network-protection",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-235",
+      "section": "routes",
+      "contentKey": "route.outcome-ready",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-235",
+      "section": "routes",
+      "contentKey": "route.hard-work-independent",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-235",
+      "section": "routes",
+      "contentKey": "route.defer",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-236",
+      "section": "items",
+      "contentKey": "item.formal-attire",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-236",
+      "section": "items",
+      "contentKey": "item.private-room-key",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-236",
+      "section": "items",
+      "contentKey": "item.contract-token",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-236",
+      "section": "items",
+      "contentKey": "item.evidence-document",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-236",
+      "section": "items",
+      "contentKey": "item.no-universal-status",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-237",
+      "section": "school",
+      "contentKey": "school.rhetoric",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-237",
+      "section": "school",
+      "contentKey": "school.literacy",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-237",
+      "section": "school",
+      "contentKey": "school.etiquette",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-237",
+      "section": "school",
+      "contentKey": "school.arts",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-237",
+      "section": "school",
+      "contentKey": "school.body-confidence",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-237",
+      "section": "school",
+      "contentKey": "school.no-producer-authority",
+      "status": "NO_AUTHORITY_NOT_BINDABLE",
+      "targetKind": "unownedOrForbiddenAssumption",
+      "runtimeConsumerId": null,
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-238",
+      "section": "cross-system",
+      "contentKey": "cross.satyr-recurring-guest",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [
+        "satyr-maid.recurring-guest",
+        "satyr-maid.night.recurring-guest"
+      ]
+    },
+    {
+      "task": "C3-238",
+      "section": "cross-system",
+      "contentKey": "cross.satyr-staff-debrief",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [
+        "satyr-maid.night.staff-debrief"
+      ]
+    },
+    {
+      "task": "C3-238",
+      "section": "cross-system",
+      "contentKey": "cross.artist-status-overlap",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [
+        "artist-geisha.shift",
+        "ending.artist-geisha.hard-work"
+      ]
+    },
+    {
+      "task": "C3-238",
+      "section": "cross-system",
+      "contentKey": "cross.tavern-rooms-info",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [
+        "tavern_staff_key",
+        "access_guest_rooms_staff",
+        "tavern.recurring-traveler"
+      ]
+    },
+    {
+      "task": "C3-238",
+      "section": "cross-system",
+      "contentKey": "cross.guard-safety",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [
+        "guard_badge",
+        "official_guard_access",
+        "guard_sealed_pass",
+        "guard.partner"
+      ]
+    },
+    {
+      "task": "C3-238",
+      "section": "cross-system",
+      "contentKey": "cross.merchant-business",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [
+        "merchant.shift",
+        "merchant_appraisal_scales",
+        "merchant_manifest_case",
+        "merchant_sample_kit"
+      ]
+    },
+    {
+      "task": "C3-238",
+      "section": "cross-system",
+      "contentKey": "cross.merchant-supplier",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": [
+        "merchant.supplier"
+      ]
+    },
+    {
+      "task": "C3-238",
+      "section": "cross-system",
+      "contentKey": "cross.palace-no-authority",
+      "status": "NO_AUTHORITY_NOT_BINDABLE",
+      "targetKind": "unownedOrForbiddenAssumption",
+      "runtimeConsumerId": null,
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-238",
+      "section": "cross-system",
+      "contentKey": "cross.no-secret-debt-inheritance",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-239",
+      "section": "ending-payoff",
+      "contentKey": "ending.hard-work-live",
+      "status": "LIVE_BOUND",
+      "targetKind": "existingProstituteConsumer",
+      "runtimeConsumerId": "ending.prostitute.hard-work",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-239",
+      "section": "ending-payoff",
+      "contentKey": "ending.hard-work-adult-payoff",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-239",
+      "section": "ending-payoff",
+      "contentKey": "ending.house-payoff",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-239",
+      "section": "ending-payoff",
+      "contentKey": "ending.elite-payoff",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-239",
+      "section": "ending-payoff",
+      "contentKey": "ending.network-payoff",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-239",
+      "section": "ending-payoff",
+      "contentKey": "ending.non-killing-adult-planning",
+      "status": "PENDING_RUNTIME_ID",
+      "targetKind": "futureProstituteConsumer",
+      "runtimeConsumerId": "PENDING_RUNTIME_ID",
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-239",
+      "section": "ending-payoff",
+      "contentKey": "ending.no-public-id",
+      "status": "NO_AUTHORITY_NOT_BINDABLE",
+      "targetKind": "unownedOrForbiddenAssumption",
+      "runtimeConsumerId": null,
+      "sourceInputs": []
+    },
+    {
+      "task": "C3-239",
+      "section": "ending-payoff",
+      "contentKey": "ending.no-meta-authority",
+      "status": "NO_AUTHORITY_NOT_BINDABLE",
+      "targetKind": "unownedOrForbiddenAssumption",
+      "runtimeConsumerId": null,
+      "sourceInputs": []
+    }
+  ],
+  "forbiddenAssumptions": [
+    {
+      "identity": "exact Lust threshold chosen by Chat 3",
+      "status": "NO_AUTHORITY_NOT_BINDABLE"
+    },
+    {
+      "identity": "client or partner runtime identity invented by Chat 3",
+      "status": "NO_AUTHORITY_NOT_BINDABLE"
+    },
+    {
+      "identity": "confidence/presentation treated as consent",
+      "status": "NO_AUTHORITY_NOT_BINDABLE"
+    },
+    {
+      "identity": "ordinary Prostitute inherits Secret Debt forced-night",
+      "status": "NO_AUTHORITY_NOT_BINDABLE"
+    },
+    {
+      "identity": "Prostitute grants Palace access",
+      "status": "NO_AUTHORITY_NOT_BINDABLE"
+    },
+    {
+      "identity": "new public House/Elite/Network ending IDs",
+      "status": "NO_AUTHORITY_NOT_BINDABLE"
+    }
+  ]
+}
