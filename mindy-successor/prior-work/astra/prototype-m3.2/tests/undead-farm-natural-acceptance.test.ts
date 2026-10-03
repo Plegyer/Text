@@ -115,16 +115,16 @@ test('clean Undead Farm run exercises seasons, resources, relationship/Night, Sc
 
   s=finishNight(s,'lodging.cheap');
   assert.equal(s.run.dayState.energyCurrent,3);
+  s=dispatch(s,{type:'action',id:'forest.hunter-outfitter'},catalog);
+  s=settlePending(s);
+  assert.equal(s.run.resources.inventory.rope_kit,1);
+
+  while(calendar(s.run.day).season!=='winter')s=finishNight(s);
+  assert.ok(s.run.dayState.energyCurrent>=2);
   s=dispatch(s,{type:'enterActivity',id:'lumber.forest'},catalog);
   s=dispatch(s,{type:'activityAction',id:'forest.route.logging-road'},catalog);
   s=dispatch(s,{type:'activityAction',id:'forest.challenge.logging-navigation'},catalog);
-  const obstacle={
-    spring:'forest.challenge.logging-spring-mud',
-    summer:'forest.challenge.logging-summer-deadfall',
-    autumn:'forest.challenge.logging-autumn-deadfall',
-    winter:'forest.challenge.logging-winter-ruts'
-  }[calendar(s.run.day).season];
-  s=dispatch(s,{type:'activityAction',id:obstacle},catalog);
+  s=dispatch(s,{type:'activityAction',id:'forest.challenge.logging-winter-ruts'},catalog);
   s=dispatch(s,{type:'activityAction',id:'forest.challenge.logging-preserve-sample'},catalog);
   s=dispatch(s,{type:'activityAction',id:'advance'},catalog);
   s=dispatch(s,{type:'activityAction',id:'advance'},catalog);
