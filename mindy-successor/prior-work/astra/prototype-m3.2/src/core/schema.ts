@@ -348,7 +348,17 @@ const counterActivityConfigSchema=z.object({
   initialEndurance:z.number().int().min(1).max(1000),
   advanceEnduranceCost:z.number().int().min(1).max(1000),
   successAtProgress:z.number().int().min(1).max(1000),
-  failAtEndurance:z.number().int().min(0).max(1000)
+  failAtEndurance:z.number().int().min(0).max(1000),
+  fieldTimeSegments:z.number().int().min(1).max(24).optional(),
+  advanceFieldTimeCost:z.number().int().min(0).max(24).optional()
+}).strict();
+
+const activityMiniGameOutcomeSchema=z.enum(['success','failure','abort']);
+const activityMiniGameTransitionSchema=z.object({
+  game:id,
+  from:id,
+  to:id,
+  outcome:activityMiniGameOutcomeSchema.optional()
 }).strict();
 
 const activityOptionSchema=z.object({
@@ -358,7 +368,10 @@ const activityOptionSchema=z.object({
   conditions:z.array(conditionSchema).max(24).default([]),
   progressDelta:z.number().int().min(0).max(1000).default(0),
   enduranceCost:z.number().int().min(0).max(1000).default(0),
-  setRoute:id.optional()
+  fieldTimeCost:z.number().int().min(0).max(24).optional(),
+  effects:z.array(effectSchema).max(12).default([]),
+  setRoute:id.optional(),
+  miniGameTransition:activityMiniGameTransitionSchema.optional()
 }).strict();
 
 const activityResultDefinitionSchema=z.object({
@@ -383,13 +396,21 @@ export const activityDefinitionSchema=z.object({
 }).strict();
 export type ActivityDefinition=z.infer<typeof activityDefinitionSchema>;
 
+const activityMiniGameStateSchema=z.object({
+  stage:id,
+  status:z.enum(['active','success','failure','abort']),
+  choiceIds:z.array(id).max(64).default([])
+}).strict();
+
 const counterActivityStateSchema=z.object({
   progress:z.number().int().min(0).max(1_000_000),
   endurance:z.number().int().min(0).max(1_000_000),
   steps:z.number().int().min(0).max(1_000_000),
   lastRoll:z.number().min(0).max(1).nullable(),
   routeId:id.nullable().default(null),
-  resolvedOptionIds:z.array(id).max(128).default([])
+  resolvedOptionIds:z.array(id).max(128).default([]),
+  fieldTimeRemaining:z.number().int().min(0).max(24).nullable().optional(),
+  miniGames:z.record(z.string(),activityMiniGameStateSchema).optional()
 }).strict();
 
 export const activityEnvelopeSchema=z.object({
