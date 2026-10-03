@@ -1,77 +1,99 @@
 # CURRENT CHAT4 TASK POINTER
 
-Status: **ACTIVE — STRONG META TYPED RUNTIME PRODUCER v7**
+Status: **ACTIVE — NIGHT SYSTEM COMPLETENESS AUDIT v8**
 Owner: Chat 4
 
-Accepted contract:
-`chat4/strong-meta-catalog-contract-v6@b16afe2ea2195807b2e5dff564309c9123b3bde4`
+Strong-Meta runtime producer v7 current frozen candidate:
+`chat4/strong-meta-runtime-producer-v7@6c3865aec1283055ab0713ca4b2873d379f3ddc6`
 
-Leader/Product authority:
-- D27: Keystone + Specialists architecture;
-- D28: 0..1 Keystone + 0..2 Specialists;
-- D24 cap-200 = Specialist;
-- D30 three Secret Debt Keystone identities;
-- D32 exact numeric parameters:
-  - Reserve Match cap 1000;
-  - Work Rhythm max 20 bonus days;
-  - Network Retainer 25/day for first 40 eligible days, max 1000.
+Leader will separately perform current-main assembly acceptance. Do not mutate that frozen head further.
+
+## New assignment
+
+Audit Night as a **full 1.0 gameplay system**, not just Sleep + School.
 
 New branch:
-`chat4/strong-meta-runtime-producer-v7`
+`chat4/night-system-completeness-audit-v8`
 
-## Assignment
+Read:
+- `NIGHT_AND_ACTIVITY_CONTRACT_v1.md`;
+- `RELATIONSHIP_SYSTEM_DRAFT_v0.md`;
+- `HOUSING_AND_NIGHT_BALANCE_v1.md`;
+- all 10 career drafts;
+- Secret Debt draft + D19;
+- Palace D29/v11 contract;
+- D20 Body Confidence rule;
+- D35 normal-lodging private-space rule;
+- current executable `definitions.json` and all Night-related packs.
 
-Implement the smallest typed production runtime/data layer described by accepted v6 contract.
+Current executable baseline at last Leader audit:
+- 37 voluntary Night choices;
+- 1 ordinary Sleep;
+- 24 School Night Study choices;
+- 12 career/relationship Night choices;
+- forced Secret Debt Night is Product-locked but not complete 1.0 production;
+- Palace Night is optional and must lose to forced Secret Debt Night.
 
-Approved strong-Meta registry entries only:
-- `palace.true.cap-200` — Specialist;
-- Paid Freedom / Earned Reserve Match — Keystone;
-- Bound Life / Work Rhythm — Keystone;
-- Takeover / Network Retainer — Keystone.
+## Deliverables
 
-Do not create No Rent, unconditional +1 Energy, extra calendar time, generic starting Capital, generic School/access perks or any other research-only reward.
+Create:
+1. `mindy-successor/docs/tasks/CHAT4_NIGHT_SYSTEM_COMPLETENESS_AUDIT_v8.md`
+2. `mindy-successor/research/night_system_coverage_v1.csv`
 
-Required production scope:
-- typed stable-ID registry;
-- permanent ownership state;
-- automatic knowledge separation;
-- preferred New Start+ strong-Meta selection;
-- immutable resolved current-run snapshot;
-- validation 0..1 Keystone / 0..2 Specialists;
-- migration from current generic Meta scaffolding without inventing ownership;
-- unknown/retired ID handling per v6;
-- current-run snapshot preservation across catalog changes;
-- run-local counters for the three D30 Keystones;
-- exact D32 runtime behavior;
-- cap-200 projected through the typed Specialist layer without multiplying stat values;
-- exact inverse/reselection safety;
-- save/reload idempotence.
+Inventory every current Night surface and map it to:
+- housing tier;
+- career;
+- relationship;
+- School;
+- Activity/camp;
+- forced/voluntary;
+- consumesNight?;
+- next-day effect;
+- progression fact/counter;
+- presentation binding;
+- current implementation status.
 
-Secret Debt invariants:
-- forced Night cannot be cancelled;
-- bound next-day Energy -1 applies after Work Rhythm and remains relative loss;
-- hidden work does not arm Work Rhythm;
-- Reserve Match does not match hidden wage/lender grant/repayment/non-work money;
-- Retainer pauses while bound and missed payments are lost.
+Then produce a **10-career Night matrix**.
 
-Palace invariants:
-- no strong-Meta reward substitutes for D23 10/10 permanent + 10/10 active ordinary packages;
-- do not implement Palace invitation/consumer here;
-- no permanent Palace unlock.
+For each ordinary profession answer:
+1. current Night choices;
+2. professional/non-romantic continuation;
+3. optional relationship/romance continuation;
+4. School transfer/reflection;
+5. housing/private-space opportunities;
+6. Activity/camp hook;
+7. route/ending contribution;
+8. missing 1.0 surfaces.
 
-Do not implement final strong-Meta UI; only minimal schema/runtime APIs needed for later UI binding.
-Do not touch ordinary Hard Work package selection semantics except typed coexistence.
+Special required audits:
+- Hunter, Guard and Merchant current Night gaps;
+- D35 initial private-space seed surfaces:
+  Satyr Maid recurring guest,
+  Tavern recurring traveler,
+  Prostitute recurring client;
+- Secret Debt forced-Night interception and next-day Energy -1 ordering;
+- Palace optional Night precedence;
+- no forced-route semantics leaking into ordinary Prostitute content;
+- no relationship route treating consent/confidence as the same state;
+- save/reload at pending Night boundaries;
+- exactly-one calendar advance.
+
+Compare minimum 1.0 Night coverage bars such as:
+- 1 professional continuation + 1 optional personal/relationship continuation per major career;
+- richer exceptions for careers whose fantasy strongly depends on Night;
+- no filler quota if a different authored pattern is stronger.
+
+Recommend an exact minimum coverage rule, but do not lock it yourself.
+
+Also identify which missing Night surfaces are:
+- content-only;
+- require new relationship state;
+- require housing/private-space support;
+- require forced-Night runtime;
+- require Palace runtime.
+
+No production code changes.
 No full CI.
 
-Run focused:
-- registry/validation;
-- migration;
-- exact inverse;
-- save/reload;
-- D24;
-- D30 each in isolation;
-- D30 + cap-200;
-- Secret Debt ordering;
-- D23 non-substitution.
-
-Freeze exact SHA and report `READY_FOR_CHAT2_ASSEMBLY`.
+Freeze exact SHA and report:
+`READY_FOR_LEADER_PRODUCT_DECISION`.
