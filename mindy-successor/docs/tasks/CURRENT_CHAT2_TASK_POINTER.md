@@ -1,114 +1,87 @@
 # CURRENT CHAT2 TASK POINTER
 
-Status: **ACTIVE — STRONG META CURRENT-MAIN ASSEMBLY**
+Status: **ACTIVE — STRONG META FULL-CI FIXTURE REPAIR**
 Owner: Chat 2 / sole full-CI integration lane
 
-Completed preflight:
-`chat2/preflight-strong-meta-current-main-20261003-v1@08d337be6ce16fdfce1c032bbe5a1bb18abe22cd`
+Assembly PR:
+#277
 
-Preflight verdict:
-`READY_FOR_CURRENT_MAIN_ASSEMBLY`
+Assembly head that passed focused QA:
+`acfbfabe59e0a8e8504bc18f401d5f4967886553`
 
-Frozen producer:
-`chat4/strong-meta-runtime-producer-v7@6c3865aec1283055ab0713ca4b2873d379f3ddc6`
+Focused QA:
+#1154 **SUCCESS**
 
-Exact producer dependency base:
-`a579bd868d07a9fe10d504f6294ca7a7e3cea023`
+Full CI:
+#1155 **FAILURE**
 
-Fresh assembly base:
-`main@ecaf2af5de0932b3c9bd4d87b62533c74ed1e61e`
+## Diagnosis
 
-New branch:
-`chat2/assembly-strong-meta-current-main-20261003-v1`
+Strong Meta core is not the failing area.
 
-## Assignment
+#1155 failures are stale schema5 / hand-built completed-save fixtures after the accepted schema6 Strong Meta invariant.
 
-Reconstruct the frozen Strong Meta runtime safely on fresh current main.
+The runtime invariant remains:
+**every completed-creation schema6 run must have a resolved Strong Meta snapshot.**
 
-Do NOT merge the old producer branch wholesale.
-Do NOT copy old-base `engine.ts` or `schema.ts` wholesale.
+Do not weaken or remove that invariant.
 
-### Production reconstruction
+### Failure class 1 — stale schema version expectation
 
-1. Add frozen `src/core/strongMeta.ts` exact producer blob.
-2. Reconstruct only the accepted Strong Meta schema v6 hunks:
-   - strong Meta reward variant;
-   - run strongMetaSnapshot;
-   - run strongMetaRuntime;
-   - permanent meta.strongMeta;
-   - schema v5 -> v6 migration.
-3. Manually merge frozen Strong Meta `engine.ts` hunks into current engine.
-4. Preserve current D23:
-   - import `markPalaceCreationQualification`;
-   - call it after creation completion/package/snapshot freeze;
-   - no permanent Palace unlock;
-   - never restore `ensurePalaceUnlock(s.meta)`.
-5. Remove the old direct fresh-life cap-200 bypass:
-   cap 200 must come only from selected `palace.true.cap-200` Specialist.
-6. Preserve ordinary Hard Work packages completely outside Strong Meta capacity.
-7. Preserve D31 content byte-for-byte.
+`tests/gopher.test.ts`
 
-### Exact capacity
+Test:
+`schema5 roundtrip preserves progress, pending state and metadata`
 
-Keep:
-- 0..1 Keystone;
-- 0..2 Specialists;
-- cap-200 consumes one normal Specialist slot;
-- no hidden/free Palace slot.
+Current expectation is still schemaVersion 5.
+After Strong Meta migration the correct serialized/current schema is **6**.
 
-Run snapshot must preserve resolved selected effects for the life.
+Repair expectation only.
 
-### Registry scope for this assembly
+### Failure class 2 — manually constructed completed saves without snapshot
 
-Do not speculatively broaden beyond frozen v7 approved runtime IDs:
-- `palace.true.cap-200`
-- `secret-debt.paid-freedom.earned-reserve-match`
-- `secret-debt.bound-life.work-rhythm`
-- `secret-debt.takeover.network-retainer`
+The following current-main tests call parse/save reload on fixtures that mark creation complete but do not include the mandatory schema6 Strong Meta snapshot:
 
-D38-D41 reward extensions are later typed integrations after this base runtime lands.
+- `tests/school-activation-boundary.test.ts`
+- `tests/school-blocking-scene-compat.test.ts`
+- `tests/school-body-confidence-lust-d20.test.ts`
+- `tests/school-engine-adapter.test.ts`
+- `tests/school-life-content-reload.test.ts`
+- `tests/school-production-v11-locale-save.test.ts`
+- `tests/school-target.test.ts`
 
-### Secret Debt seam
+Repair the shared/local test fixtures so a completed creation carries the canonical empty resolved Strong Meta snapshot.
 
-Current executable main still lacks canonical bound runtime state.
+Preferred method:
+- reuse the exported Strong Meta empty snapshot helper or a canonical test helper;
+- do not duplicate ad-hoc snapshot shapes across files if a shared helper can safely serve them.
 
-Do not invent one in this assembly.
+Do not:
+- make parseSave silently invent a snapshot for arbitrary schema6 completed saves;
+- downgrade schema back to 5;
+- weaken malformed-save rejection;
+- auto-select rewards;
+- infer ownership.
 
-Preserve the frozen explicit `secretDebtBound` seam and ordering:
-selected modifier -> bound next-day Energy -1 -> final available Energy.
+## Gate after repair
 
-### Tests
+Create a new repair commit on:
+`chat2/assembly-strong-meta-current-main-20261003-v1`.
 
-Reconstruct the nine frozen producer tests.
-
-Repair current:
-`tests/palace-d23-consumer-integration-v8.test.ts`
-only so cap-200 is activated through the typed Specialist path rather than the deleted direct setup argument.
-
-Keep all current D31/natural-route tests from main.
-
-## Focused gate before full CI
-
-Run:
+Run focused first:
 - typecheck;
 - validate;
 - build;
-- all frozen Strong Meta tests;
-- D21-D24 Hard Work preservation;
-- New Start+ UI preservation;
-- Palace D23 consumer;
-- D31 exact-map and natural routes;
-- Night/Energy/poverty preservation;
-- save migration v4/v5 -> v6;
-- snapshot immutability/coherence;
-- ending reward exactly-once ownership.
+- frozen Strong Meta suite;
+- Palace D23;
+- all seven repaired School/save files;
+- gopher schema roundtrip;
+- Night/Energy/Poverty;
+- D31 preservation.
 
-Mine all failures first.
+Only after focused green rerun full CI once.
 
-Only after focused green:
-1. open assembly PR;
-2. consume one full-CI run;
-3. freeze exact head;
-4. report `READY_FOR_LEADER_MERGE`.
+Freeze exact head and report:
+`READY_FOR_LEADER_MERGE`.
 
 Do not merge main.
