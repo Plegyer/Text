@@ -1,39 +1,42 @@
 # CURRENT CHAT4 TASK POINTER
 
-Status: **ACTIVE — STRONG META NON-DOMINANCE MODELS v4**
+Status: **ACTIVE — KEYSTONE / SPECIALIST CAPACITY v5**
 Owner: Chat 4
 
-Completed dominance audit:
-`chat4/strong-meta-dominance-audit-v3@a583549a88f9abf881fe130aec6d07044177eb9e`
+Accepted prior packet:
+`chat4/strong-meta-nondominance-models-v4@1dda2de690e889fed0ce4d76ebcda1e7f62e37da`
 
-Create:
-`chat4/strong-meta-nondominance-models-v4`
-from fresh main.
+Leader/Product lock:
+- D27 recorded on `main@0c8926049a4b4ee4fda0574cea588d39f39dd14e`.
+- Strong Meta architecture is **one Keystone + separate Specialists**.
+- Ordinary Hard Work packages remain outside this restriction and may use any earned subset.
+- Pure knowledge/content unlocks remain automatic.
+- Exact Specialist capacity and final reward catalog remain open.
+
+Branch:
+`chat4/strong-meta-keystone-capacity-v5`
+
+Branch was created by Leader from `main@0c8926049a4b4ee4fda0574cea588d39f39dd14e`.
+Branch existence is only dispatch state; first real worker commit is required before this lane counts as moving.
 
 ## Assignment
 
-Turn the audit into 3 concrete pre-run strong-modifier models without implementing runtime.
+Compare exact Specialist capacities **1 vs 2 vs 3** with the D27 one-Keystone rule fixed.
 
-Constraints:
-- ordinary Hard Work packages remain outside this restriction and may use any earned subset;
-- do not port Titles;
-- do not port original Plus Mode;
-- avoid one universally best strong modifier;
-- +1 daily Energy is the key dominance warning;
-- cap-200 remains an optional Palace True reward and changes max only.
+Use current candidate categories only as test cases; do not invent/lock Secret Debt ending rewards that belong to Chat 5.
 
-For each model define:
-- selection rule / budget;
-- how raw-power, economy, access, safety and build-shaping modifiers are priced or separated;
-- how +1 daily Energy is prevented from trivializing narrower options;
-- how Secret Debt -1 next-day Energy remains meaningful;
-- how No Rent / passive income / School discount / Activity discounts avoid broad dominance;
-- migration/save representation;
-- UI explanation burden.
+For each capacity:
+- show representative loadouts for work-heavy, School-heavy, Activity/covert, economy, and Palace cap-200 goals;
+- test broad-stack containment against +1 Energy, No Rent, substantial passive income, starting Capital and extra calendar time only as candidates, not approved rewards;
+- show whether cap-200 remains meaningfully selectable;
+- show Secret Debt interactions, preserving forced Night and next-day Energy -1;
+- identify any Specialist pair/triple that becomes an always-correct stack;
+- define classification rules for borderline effects;
+- define save/migration/current-run snapshot rules;
+- define UI explanation burden and acceptance/regression scenarios.
 
-Include a concrete example loadout using currently proposed strong modifiers and show why no single choice is always correct.
-
-No final slot count authority unless required as an example.
-No runtime/UI changes.
+Recommend one Specialist capacity, but do not implement it.
+Do not create Titles or port original Plus Mode.
+No runtime/UI production changes.
 No full CI.
-Freeze SHA and report `READY_FOR_LEADER_PRODUCT_DECISION`.
+Freeze exact SHA and report `READY_FOR_LEADER_PRODUCT_DECISION`.
