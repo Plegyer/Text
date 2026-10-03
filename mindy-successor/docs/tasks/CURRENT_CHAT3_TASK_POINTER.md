@@ -1,71 +1,73 @@
 # CURRENT CHAT3 TASK POINTER
 
-Status: **ACTIVE — SEASONAL NEGATIVE TARGET MAP IMPLEMENTATION v6**
+Status: **ACTIVE — LIVE ECONOMY AFFORDABILITY HARNESS v7**
 Owner: Chat 3
 
-Accepted research packet:
-`chat3/progression-floor-aware-negative-map-v5@255c0c9b59870f91c8b7032863db6dd6966ec4bc`
+Accepted D31 producer candidate:
+`chat3/seasonal-negative-target-map-implementation-v6@79ff36c66947a1f1273ab0bde7a3c7f1b797a2a7`
 
-Leader/Product authority:
-- D26 = max one shift of the same ordinary profession per calendar day;
-- D31 locks the exact 20-cell floor-aware negative-stat target map;
-- negative seasons remain unchanged;
-- each negative remains exactly `-1`;
-- no Lust negatives;
-- all positive seasonal effects, wages, costs, unlocks and Hard Work=50 remain unchanged.
+Producer disposition:
+- exact D31 content-only target map accepted for later Chat 2 assembly;
+- diff is limited to `definitions.json` target stats + seasonal acceptance test;
+- no runtime/schema expansion;
+- full CI remains Chat 2 responsibility.
 
-Authority commit:
-`main@67a61382c0171beaac007e8123fc007c6a01d1d3`
+New branch:
+`chat3/live-economy-affordability-harness-v7`
 
-Branch:
-`chat3/seasonal-negative-target-map-implementation-v6`
-
-The branch was created from the authority commit above.
-Branch existence is dispatch only; count work only after a real worker commit.
+Read:
+- `LEADER_LIVE_ECONOMY_DRIFT_AUDIT_v1.md`;
+- `LEADER_HOUSING_SEMANTIC_AUDIT_v1.md`;
+- D26, D31, D32 in `USER_DECISIONS_LOCKED_v1.md`.
 
 ## Assignment
 
-Produce the smallest implementation candidate for D31.
+Build a research-only 160-day affordability/progression harness using the **current executable successor economy**, not old WU candidate assumptions.
 
-Production scope:
-- replace only the negative `stat` target in the 20 already-existing ordinary seasonal negative cells;
-- preserve negative seasons and magnitude;
-- do not change positive effects;
-- do not change wages/costs/unlocks/Hard Work;
-- do not add new schema/runtime mechanisms.
+No production changes.
 
-Exact D31 map:
-- Lumber: Spring Dexterity; Winter Strength;
-- Satyr Maid: Summer Sociability; Autumn Endurance;
-- Undead Farm: Spring Reason; Autumn Strength;
-- Tavern: Spring Reason; Summer Wits;
-- Hunter: Spring Endurance; Winter Dexterity;
-- Guard: Summer Manners; Winter Reason;
-- Merchant: Summer Wits; Winter Manners;
-- Artist/Geisha: Summer Manners; Autumn Dexterity;
-- Assassin: Spring Reason; Winter Manners;
-- Prostitute: Summer Sexuality; Winter Endurance.
+Baseline must use current live values:
+- fresh money 600;
+- base Energy 3;
+- lodging normal 100 / cheap 50 / street 0;
+- street next-day Energy -1 + Grooming -1;
+- current paid School tuition/effects;
+- current ordinary wage formulas;
+- D26 max one same-career shift/day;
+- D31 seasonal negatives;
+- Hard Work 50.
 
-Focused acceptance:
-1. exact 20 targets match D31;
-2. exactly two negative seasons per profession;
-3. exactly 20 total `-1` negatives;
-4. no Lust negative;
-5. no same-season positive/negative stat cancellation;
-6. all positive seasonal effects unchanged;
-7. wages/costs/unlocks unchanged;
-8. D26 same-career daily cap unchanged;
-9. Hard Work remains 50;
-10. progression harness reproduces the accepted D31 envelope:
-   - Hard Work Day 50 all 10;
-   - ~205/250 Base no-School realized negatives by 50;
-   - ~214/250 Focused no-School;
-   - ~207/250 Base School-10d;
-   - ~215/250 Focused School-10d;
-   - starter strongest-stat cap timing preserved.
+Model at least these strategy families:
+1. survival-first cheap lodging + diversified starter work;
+2. normal-lodging preference;
+3. School-investment build;
+4. one-career Hard Work focus;
+5. diversified multi-career Hard Work;
+6. poverty/street fallback;
+7. mixed earned Hard Work New Start+ profile.
 
-Do not compensate wage reductions.
-Do not add deferred/fallback negative mechanics.
-Run focused/static tests only.
+For each, report at minimum:
+- money trajectory at Days 10 / 20 / 40 / 50 / 80 / 120 / 160;
+- number of normal / cheap / street nights;
+- paid School lessons affordable/completed;
+- Energy lost to street;
+- Hard Work completion days;
+- career unlock timing where applicable;
+- whether the run enters a debt spiral solely from ordinary prices;
+- effect of D31 wage-readable negative targets;
+- how often normal lodging is rationally chosen under current semantics.
+
+Add separate **research comparison** scenarios for D32 Keystones:
+- Reserve Match 1000;
+- Work Rhythm 20;
+- Retainer 25×40.
+
+Do not assume those are already implemented in current runtime; model them as explicit overlays.
+
+Key question:
+does the current executable wage/lodging/School ratio support a viable 160-day game without requiring chronic street use or a Meta Keystone?
+
+Produce a reproducible script + focused research tests if practical.
+No production definitions/runtime edits.
 No full CI.
-Freeze exact SHA and report `READY_FOR_CHAT2_ASSEMBLY`.
+Freeze SHA and report `READY_FOR_LEADER_PRODUCT_DECISION`.
