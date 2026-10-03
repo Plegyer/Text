@@ -1,37 +1,39 @@
 # CURRENT CHAT6 TASK POINTER
 
-Status: **ACTIVE — PALACE NATURAL 10/10 + DAY-1 ENTRY ACCEPTANCE PREP v7**
+Status: **ACTIVE — PALACE D23 CONSUMER INTEGRATION v8 ON FROZEN CHAT4 SEAM**
 Owner: Chat 6
 
-Completed:
-- safe prep v4;
-- authored safe v5;
-- integration manifest v6 `29def63f348ffd0bf46c16a7a3c7292b0877db9a`.
+Completed v7:
+`chat6/palace-natural-10of10-acceptance-v7@c9125e7acc6639b90be36693707fde95382a8a71`
 
-Assassin is shipped; all ten ordinary careers now exist on main.
+Dependency now exists on frozen Chat 4 runtime:
+`chat4/hard-work-meta-shared-runtime-v1@c085eda62dd39f71d3a4c75a6c31f4c72527039a`
 
-Create `chat6/palace-natural-10of10-acceptance-v7` from fresh main.
+Create dependent branch from that exact Chat 4 head:
+`chat6/palace-d23-consumer-integration-v8`
 
 ## Assignment
 
-Re-audit actual shipped roster:
-- exact 10 ordinary careers;
-- one real Hard Work ending each;
-- all remain completed_shifts >= 50;
-- Secret Debt excluded;
-- Palace excluded.
+Wire Palace-owned logic to the existing shared D23 API without modifying Chat 4's generic semantics.
 
-Prepare future D23 acceptance fixtures/tests:
-- 9/10 permanent + 9 active -> no Palace;
-- 10/10 + 0 active -> no Palace;
-- 10/10 + 9 active -> no Palace;
-- 10/10 + 10 active -> deterministic Day-1 invitation eligibility;
-- duplicates/Secret Debt cannot substitute;
-- invitation acceptance -> run-local `palace.access-granted`;
-- reload preserves pending invitation/access exactly once.
+Use the actual shared predicate:
+`palaceNewStartQualified({ earnedHardWork, activePackages })`
 
-Use Palace v4-v6 as source. If shared D23 API is not yet landed, keep dependent checks as fixture/contract.
-Do not choose Prince mechanics or Palace 3-vs-6 topology.
-Do not modify shared Meta/Save/cap implementation.
-No full CI.
-Freeze SHA and report `READY_FOR_CHAT2_OR_LEADER`.
+Implement/verify Palace-local consumer behavior:
+- permanent 10/10 + active 10/10 at New Start+ creation -> deterministic Day-1 invitation eligibility;
+- any 9/10 or inactive package -> no invitation;
+- duplicates/Secret Debt/Palace cannot substitute;
+- invitation arrival is exactly once and reload-safe;
+- acceptance writes run-local `palace.access-granted`;
+- access persists in the same run only;
+- next life must qualify again;
+- no random/stat/item alternative entry gate;
+- no retroactive invitation on migrated old save;
+- use existing v4-v7 authored invitation/reveal content and RU/EN presentation;
+- preserve fixed True readiness all 12 progression stats >=91;
+- cap 200 remains shared-rule output only; Palace does not multiply values.
+
+Do not choose Prince mechanics or 3-vs-6 topology.
+Do not alter shared New Start+/Meta package semantics.
+Focused/static tests only, no full CI.
+Freeze SHA and report `READY_FOR_CHAT2_AFTER_CHAT4`.

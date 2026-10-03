@@ -1,30 +1,35 @@
 # CURRENT CHAT4 TASK POINTER
 
-Status: **ACTIVE — D21-D24 SHARED META INFRA CURRENT-MAIN IMPLEMENTATION v1**
+Status: **ACTIVE — NEW START+ HARD WORK PACKAGE UI / PRESENTATION v2**
 Owner: Chat 4
 
-Completed evidence:
-- infra prep `50ede59ad96bd8059fcc15dca1ffdffc910563ab`;
-- package catalog `54d87ad3db0fb1846ea2500153e34424c900f89f`;
-- integration manifest `7fd59932452c986c73a5617f0b3aff21ef58b77c`.
+Shared D21-D24 runtime is frozen and ready for integration:
+`chat4/hard-work-meta-shared-runtime-v1@c085eda62dd39f71d3a4c75a6c31f4c72527039a`
 
-Create `chat4/hard-work-meta-shared-runtime-v1` from fresh main.
+Preserve that runtime branch. Do not move it.
 
-## Implement
+Create a dependent presentation branch from the frozen runtime head:
+`chat4/hard-work-meta-newstart-ui-v2`
 
-- Hard Work permanently grants early access to that profession in later lives;
-- New Start+ stores any subset of earned active Hard Work packages;
-- retire old automatic +3/+3 and Merchant +600 for new lives only, preserving migrated current-life values;
-- apply selected packages exactly once at creation completion;
-- freeze active package selection for the life;
-- expose shared permanent-10/10 + active-10/10 Palace qualification predicate;
-- Secret Debt domain lock outranks inherited early access;
-- implement effective progression-stat cap 100/200;
-- cap 200 changes only max, never values/bonuses/allocation;
-- Lust stays separate and unaffected by cap 200;
-- migrate old saves safely with no retroactive Palace invitation.
+## Assignment
 
-Use centralized package catalog/data seam; do not scatter conditions.
-Do not author Palace content, Secret Debt runtime or strong-modifier loadout rules.
-Focused/static tests only, no full CI.
-Freeze SHA and report `READY_FOR_CHAT2`.
+Implement the New Start+ presentation/selection layer that consumes the existing shared runtime API without changing its semantics:
+
+- show all earned ordinary Hard Work packages;
+- each package has independent selected/unselected control;
+- player may select none, some, or all;
+- selection is whole-package, not individual effects;
+- clearly show profession early-access benefit separately from selected stat/Lust package effects;
+- show locked package definitions from the centralized catalog;
+- make Prostitute package clearly show Sexuality +5, Charm +5, Lust +3;
+- accessible selected/unselected state;
+- RU/EN labels/help;
+- explicit explanation that Palace invitation requires all ten earned packages to be active in that new life;
+- cap-200 option wording must say "maximum becomes 200", never "stats are doubled";
+- do not introduce a one-slot limit for Hard Work packages;
+- do not mix strong complex-ending modifier slots into this UI yet.
+
+Add focused presentation/state tests.
+Do not change Palace authored content or Secret Debt runtime.
+No full CI.
+Freeze exact SHA and report `READY_FOR_CHAT2_AFTER_SHARED_RUNTIME`.
