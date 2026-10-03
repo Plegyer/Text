@@ -3,6 +3,7 @@ import {SCHOOL_ACTION_ID,SCHOOL_COURSES,executeSchoolLesson,type SchoolCourseId}
 import {presentationIdForActionResult,presentationIdForEvent} from './presentation.ts';
 import {applyHardWorkPackagesAtCreation,ordinaryCareerAvailableWithHardWork,palaceNewStartQualified,validateHardWorkPackageSelection} from './hardWorkMeta.ts';
 import {hardWorkPackageDefinitions} from './hardWorkPackageCatalog.ts';
+import {markPalaceCreationQualification} from './palace.ts';
 
 const statSet=new Set<string>(stats);
 const cappedLegacy=new Set(['health','stress','trust']);
@@ -1144,6 +1145,7 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
     s.run.creation.activeHardWorkPackages=[...application.appliedPackages];
     s.run.creation.hardWorkPackagesApplied=application.packagesApplied;
     s.run.creation.complete=true;
+    markPalaceCreationQualification(s);
     register(s,cat);
     runResolverBoundary(s,input,cat,[{kind:'creationCompleted'}],true);
     return s;
