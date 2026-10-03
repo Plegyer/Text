@@ -1,0 +1,341 @@
+{
+  "schemaVersion": 1,
+  "id": "palace.progression",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "careers": [
+        "palace"
+      ]
+    },
+    "writes": {
+      "careers": [
+        "palace"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "palace.progression.milestone-02-working-rhythm",
+      "title": "Palace — Working Rhythm",
+      "sourceDomain": "palace",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerTransition",
+          "career": "palace"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 100,
+      "blocking": true,
+      "delivery": {
+        "policy": "latched"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "working-rhythm"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "palace",
+          "counter": "palace-duty-count",
+          "op": "gte",
+          "value": 2
+        },
+        {
+          "kind": "careerFact",
+          "career": "palace",
+          "fact": "milestone-02-resolved",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The first Palace work pattern is established. The structural duty is already committed; this scene only acknowledges the new working rhythm.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "The milestone is acknowledged. Palace progression continues from the already committed stage.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "palace",
+              "fact": "milestone-02-resolved"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "palace.progression.milestone-05-trusted-service",
+      "title": "Palace — Trusted Service",
+      "sourceDomain": "palace",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerTransition",
+          "career": "palace"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 100,
+      "blocking": true,
+      "delivery": {
+        "policy": "latched"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "trusted-service"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "palace",
+          "counter": "palace-duty-count",
+          "op": "gte",
+          "value": 5
+        },
+        {
+          "kind": "careerFact",
+          "career": "palace",
+          "fact": "milestone-05-resolved",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Repeated work has become trusted service. The new stage is already saved, and optional professional content may open after this milestone is acknowledged.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "The milestone is acknowledged. Palace progression continues from the already committed stage.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "palace",
+              "fact": "milestone-05-resolved"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "palace.progression.milestone-08-palace-network",
+      "title": "Palace — Palace Network",
+      "sourceDomain": "palace",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerTransition",
+          "career": "palace"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 100,
+      "blocking": true,
+      "delivery": {
+        "policy": "latched"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "palace-network"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "palace",
+          "counter": "palace-duty-count",
+          "op": "gte",
+          "value": 8
+        },
+        {
+          "kind": "careerFact",
+          "career": "palace",
+          "fact": "milestone-08-resolved",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The work now crosses more than one role. The Palace Network stage is already committed before this blocking milestone is shown.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "The milestone is acknowledged. Palace progression continues from the already committed stage.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "palace",
+              "fact": "milestone-08-resolved"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "palace.progression.milestone-12-crossroads",
+      "title": "Palace — Crossroads",
+      "sourceDomain": "palace",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerTransition",
+          "career": "palace"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 100,
+      "blocking": true,
+      "delivery": {
+        "policy": "latched"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "crossroads"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "palace",
+          "counter": "palace-duty-count",
+          "op": "gte",
+          "value": 12
+        },
+        {
+          "kind": "careerFact",
+          "career": "palace",
+          "fact": "milestone-12-resolved",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The route reaches Crossroads. Later evidence and outcome-preparation content may open only after this milestone barrier is resolved.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "The milestone is acknowledged. Palace progression continues from the already committed stage.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "palace",
+              "fact": "milestone-12-resolved"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "palace.progression.milestone-15-outcome-ready",
+      "title": "Palace — Outcome Ready",
+      "sourceDomain": "palace",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerTransition",
+          "career": "palace"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 100,
+      "blocking": true,
+      "delivery": {
+        "policy": "latched"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "outcome-ready"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "palace",
+          "counter": "palace-duty-count",
+          "op": "gte",
+          "value": 15
+        },
+        {
+          "kind": "careerFact",
+          "career": "palace",
+          "fact": "milestone-15-resolved",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The fifteenth structural duty is complete. Palace progression is finished for this life, while ending choice remains a separate player decision.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "The milestone is acknowledged. Palace progression continues from the already committed stage.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "palace",
+              "fact": "milestone-15-resolved"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
