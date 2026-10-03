@@ -26,27 +26,27 @@ export const palaceCap200Copy={
 } as const;
 
 export const palaceDutyDefinitions=[
-  {ordinal:1,id:'palace.duty.01-service-rotation',family:'service-rotation',stage:'entered-service'},
+  {ordinal:1,id:'palace.duty.01-service-rotation',family:'service-rotation',stage:'entered-service',transition:null},
   {ordinal:2,id:'palace.duty.02-logistics-support',family:'logistics-support',stage:'entered-service',transition:'duty-02-working-rhythm'},
-  {ordinal:3,id:'palace.duty.03-records-review',family:'records-review',stage:'working-rhythm'},
-  {ordinal:4,id:'palace.duty.04-service-rotation',family:'service-rotation',stage:'working-rhythm'},
+  {ordinal:3,id:'palace.duty.03-records-review',family:'records-review',stage:'working-rhythm',transition:null},
+  {ordinal:4,id:'palace.duty.04-service-rotation',family:'service-rotation',stage:'working-rhythm',transition:null},
   {ordinal:5,id:'palace.duty.05-logistics-support',family:'logistics-support',stage:'working-rhythm',transition:'duty-05-trusted-service'},
-  {ordinal:6,id:'palace.duty.06-coordination',family:'coordination',stage:'trusted-service'},
-  {ordinal:7,id:'palace.duty.07-records-review',family:'records-review',stage:'trusted-service'},
+  {ordinal:6,id:'palace.duty.06-coordination',family:'coordination',stage:'trusted-service',transition:null},
+  {ordinal:7,id:'palace.duty.07-records-review',family:'records-review',stage:'trusted-service',transition:null},
   {ordinal:8,id:'palace.duty.08-service-rotation',family:'service-rotation',stage:'trusted-service',transition:'duty-08-palace-network'},
-  {ordinal:9,id:'palace.duty.09-formal-interface',family:'formal-interface',stage:'palace-network'},
-  {ordinal:10,id:'palace.duty.10-coordination',family:'coordination',stage:'palace-network'},
-  {ordinal:11,id:'palace.duty.11-logistics-support',family:'logistics-support',stage:'palace-network'},
+  {ordinal:9,id:'palace.duty.09-formal-interface',family:'formal-interface',stage:'palace-network',transition:null},
+  {ordinal:10,id:'palace.duty.10-coordination',family:'coordination',stage:'palace-network',transition:null},
+  {ordinal:11,id:'palace.duty.11-logistics-support',family:'logistics-support',stage:'palace-network',transition:null},
   {ordinal:12,id:'palace.duty.12-records-review',family:'records-review',stage:'palace-network',transition:'duty-12-crossroads'},
-  {ordinal:13,id:'palace.duty.13-evidence-review',family:'evidence-review',stage:'crossroads'},
-  {ordinal:14,id:'palace.duty.14-formal-interface',family:'formal-interface',stage:'crossroads'},
+  {ordinal:13,id:'palace.duty.13-evidence-review',family:'evidence-review',stage:'crossroads',transition:null},
+  {ordinal:14,id:'palace.duty.14-formal-interface',family:'formal-interface',stage:'crossroads',transition:null},
   {ordinal:15,id:'palace.duty.15-coordination',family:'coordination',stage:'crossroads',transition:'duty-15-outcome-ready'}
 ] as const satisfies readonly {
   ordinal:number;
   id:string;
   family:string;
   stage:PalaceStage;
-  transition?:string;
+  transition:string|null;
 }[];
 
 export type PalaceDutyId=typeof palaceDutyDefinitions[number]['id'];
