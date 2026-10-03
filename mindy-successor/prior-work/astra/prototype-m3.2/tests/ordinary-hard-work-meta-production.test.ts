@@ -55,7 +55,7 @@ test('all ten production Hard Work endings grant one permanent earned package an
     for(const bonus of packageDefinition.statBonuses){
       assert.equal(s.run.character.stats[bonus.stat],6,`${career}.${bonus.stat}`);
     }
-    assert.equal(s.run.character.lust,1+(packageDefinition.lustBonus??0),career);
+    assert.equal(s.run.character.lust,5+(packageDefinition.lustBonus??0),career);
     assert.equal(s.run.creation.hardWorkPackagesApplied,true,career);
     assert.throws(
       ()=>dispatch(s,{type:'setHardWorkPackageActive',career,active:false},catalog),
