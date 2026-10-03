@@ -1,0 +1,306 @@
+{
+  "version": 1,
+  "owner": "Chat 2 / Presentation + Media",
+  "queue": "C2-229..240",
+  "status": "PREP_ONLY_NO_PRODUCTION_BINDING",
+  "activationCheckpoint": "260e44daad22a6ab8eb879ee24f13b9ec2abf19b",
+  "currentState": {
+    "dedicatedAdultProductionConsumerCount": 0,
+    "adultMediaProductionBindingCount": 0,
+    "safeDefaultsRemainNonAdult": true,
+    "chat6AssetInventoryIsGameplayAuthority": false
+  },
+  "familyTaxonomy": [
+    {
+      "family": "work-adult",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "Night-adult",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "relationship-adult",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "route-adult",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "ending-adult",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "dependency-adult",
+      "status": "PENDING_RUNTIME_ID"
+    }
+  ],
+  "liveBound": [
+    {
+      "kind": "adult-career-safe-default",
+      "runtimeId": "prostitute.shift",
+      "presentationId": "job/prostitute/result/default",
+      "adult": false,
+      "status": "LIVE_BOUND"
+    },
+    {
+      "kind": "adult-career-safe-default",
+      "runtimeId": "prostitute.shift:spring.default",
+      "presentationId": "job/prostitute/shift/spring/default",
+      "adult": false,
+      "status": "LIVE_BOUND"
+    },
+    {
+      "kind": "adult-career-safe-default",
+      "runtimeId": "prostitute.shift:summer.default",
+      "presentationId": "job/prostitute/shift/summer/default",
+      "adult": false,
+      "status": "LIVE_BOUND"
+    },
+    {
+      "kind": "adult-career-safe-default",
+      "runtimeId": "prostitute.shift:autumn.default",
+      "presentationId": "job/prostitute/shift/autumn/default",
+      "adult": false,
+      "status": "LIVE_BOUND"
+    },
+    {
+      "kind": "adult-career-safe-default",
+      "runtimeId": "prostitute.shift:winter.default",
+      "presentationId": "job/prostitute/shift/winter/default",
+      "adult": false,
+      "status": "LIVE_BOUND"
+    },
+    {
+      "kind": "adult-career-safe-ending",
+      "runtimeId": "ending.prostitute.hard-work",
+      "presentationId": "ending/prostitute/hard-work",
+      "adult": false,
+      "status": "LIVE_BOUND"
+    },
+    {
+      "kind": "voluntary-night-non-adult-precedent",
+      "runtimeId": "lumber-night.foreman-professional",
+      "presentationId": "relationship/lumber-foreman/lumber-night-foreman-professional/default",
+      "adult": false,
+      "status": "LIVE_BOUND"
+    },
+    {
+      "kind": "voluntary-night-non-adult-precedent",
+      "runtimeId": "satyr-maid.recurring-guest.night",
+      "presentationId": "relationship/satyr-maid-recurring-guest/satyr-maid-recurring-guest-night/default",
+      "adult": false,
+      "status": "LIVE_BOUND"
+    },
+    {
+      "kind": "voluntary-night-non-adult-precedent",
+      "runtimeId": "tavern.recurring-traveler.night",
+      "presentationId": "night/tavern/tavern-night-traveler-request",
+      "adult": false,
+      "status": "LIVE_BOUND"
+    },
+    {
+      "kind": "voluntary-night-non-adult-precedent",
+      "runtimeId": "tavern.recurring-traveler.night",
+      "presentationId": "relationship/tavern-recurring-traveler/tavern-recurring-traveler-night/default",
+      "adult": false,
+      "status": "LIVE_BOUND"
+    },
+    {
+      "kind": "voluntary-night-non-adult-precedent",
+      "runtimeId": "undead-farm.night.keeper-request",
+      "presentationId": "relationship/undead-farm-keeper/undead-farm-night-keeper-request/default",
+      "adult": false,
+      "status": "LIVE_BOUND"
+    }
+  ],
+  "pendingRuntimeIdentities": [
+    {
+      "family": "work-adult",
+      "concept": "career work adult variant",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "work-adult",
+      "concept": "profession-specific high-Lust/content-router result",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "Night-adult",
+      "concept": "voluntary Night adult choice/event",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "Night-adult",
+      "concept": "after-lodging adult Night context",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "Night-adult",
+      "concept": "after-choice adult Night context",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "dependency-adult",
+      "concept": "before-lodging forced/dependency adult context",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "dependency-adult",
+      "concept": "after-lodging forced/dependency adult context",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "dependency-adult",
+      "concept": "after-choice forced/dependency adult context",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "relationship-adult",
+      "concept": "romance-authorized relationship intimacy",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "relationship-adult",
+      "concept": "partner-authorized relationship intimacy",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "relationship-adult",
+      "concept": "recurring-client adult scene",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "relationship-adult",
+      "concept": "elite/high-status client adult scene",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "route-adult",
+      "concept": "route-specific adult payoff",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "ending-adult",
+      "concept": "non-killing ending adult payoff",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "ending-adult",
+      "concept": "partner-specific ending adult payoff",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "housing-adult",
+      "concept": "normal-room compatible adult variant",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "housing-adult",
+      "concept": "cheap-lodging compatible adult variant",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "housing-adult",
+      "concept": "street/public compatible adult variant",
+      "status": "PENDING_RUNTIME_ID"
+    },
+    {
+      "family": "media-binding",
+      "concept": "Chat 6 candidate filename bound to exact adult semantic",
+      "status": "PENDING_RUNTIME_ID"
+    }
+  ],
+  "architectureVocabulary": {
+    "nightInterceptPoints": [
+      "before_lodging",
+      "after_lodging",
+      "after_choice"
+    ],
+    "housingContexts": [
+      "normal room",
+      "cheap lodging",
+      "street / no lodging"
+    ],
+    "privacyLabels": [
+      "privacy.private",
+      "privacy.limited",
+      "privacy.public"
+    ],
+    "fallbackOrder": [
+      "exact semantic",
+      "compatible adult family fallback",
+      "safe exact/context static",
+      "generic safe fallback"
+    ]
+  },
+  "forbiddenOrUnowned": [
+    {
+      "concept": "safe/default presentation ID silently treated as adult consumer",
+      "status": "NO_AUTHORITY_NOT_BINDABLE"
+    },
+    {
+      "concept": "asset filename treated as runtime or presentation authority",
+      "status": "NO_AUTHORITY_NOT_BINDABLE"
+    },
+    {
+      "concept": "Night/private context automatically treated as adult eligibility",
+      "status": "NO_AUTHORITY_NOT_BINDABLE"
+    },
+    {
+      "concept": "partner automatically treated as romance",
+      "status": "NO_AUTHORITY_NOT_BINDABLE"
+    },
+    {
+      "concept": "client automatically treated as relationship or romance",
+      "status": "NO_AUTHORITY_NOT_BINDABLE"
+    },
+    {
+      "concept": "adult scene automatically advances relationship",
+      "status": "NO_AUTHORITY_NOT_BINDABLE"
+    },
+    {
+      "concept": "private room treated as consent",
+      "status": "NO_AUTHORITY_NOT_BINDABLE"
+    },
+    {
+      "concept": "presentation layer evaluates Lust threshold",
+      "status": "NO_AUTHORITY_NOT_BINDABLE"
+    },
+    {
+      "concept": "one numeric Lust threshold assumed by presentation",
+      "status": "NO_AUTHORITY_NOT_BINDABLE"
+    },
+    {
+      "concept": "voluntary and coercive/dependency adult semantics share one generic identity",
+      "status": "NO_AUTHORITY_NOT_BINDABLE"
+    },
+    {
+      "concept": "adult ending payoff creates ending eligibility or Meta reward",
+      "status": "NO_AUTHORITY_NOT_BINDABLE"
+    },
+    {
+      "concept": "housing presentation changes lodging payment or availability",
+      "status": "NO_AUTHORITY_NOT_BINDABLE"
+    },
+    {
+      "concept": "Chat 2 sources or procures Chat 6 media inventory",
+      "status": "NO_AUTHORITY_NOT_BINDABLE"
+    }
+  ],
+  "fallbackRules": {
+    "adultAssetMayAttachToSafeDefault": false,
+    "crossVoluntaryDependencyFallback": false,
+    "safeStaticRequiredForFutureAdultConsumer": true,
+    "missingMediaMayChangeGameplay": false,
+    "animationOffMayChangeSemanticIdentity": false
+  },
+  "accessibilityRules": {
+    "ruEnParityRequired": true,
+    "neutralProductionLabels": true,
+    "filenameDerivedAltForbidden": true,
+    "inferRomanceForbidden": true,
+    "inferConsentForbidden": true
+  }
+}
