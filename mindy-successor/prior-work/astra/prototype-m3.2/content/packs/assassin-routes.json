@@ -552,6 +552,11 @@
               "kind": "addCareerFact",
               "career": "assassin",
               "fact": "outcome-ready"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "assassin",
+              "fact": "ending-route-ghost-selected"
             }
           ]
         },
@@ -577,6 +582,11 @@
               "kind": "addCareerFact",
               "career": "assassin",
               "fact": "outcome-ready"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "assassin",
+              "fact": "ending-route-refusal-turncoat-selected"
             }
           ]
         }
@@ -685,6 +695,11 @@
               "kind": "addCareerFact",
               "career": "assassin",
               "fact": "outcome-ready"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "assassin",
+              "fact": "ending-route-handler-takeover-selected"
             }
           ]
         },
@@ -710,6 +725,11 @@
               "kind": "addCareerFact",
               "career": "assassin",
               "fact": "outcome-ready"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "assassin",
+              "fact": "ending-route-refusal-turncoat-selected"
             }
           ]
         }
