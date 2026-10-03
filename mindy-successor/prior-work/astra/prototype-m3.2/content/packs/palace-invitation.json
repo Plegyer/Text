@@ -20,7 +20,7 @@
   "events": [
     {
       "id": "palace.invitation.day1-arrival",
-      "title": "Письмо в первый день",
+      "title": "Palace — A Sealed Invitation",
       "sourceDomain": "palace",
       "trigger": [],
       "reactionTriggers": [
@@ -52,7 +52,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "On the first morning, a sealed Palace letter arrives under a standing protocol rather than a test. Your completed work across all ten ordinary professions is the reason the institution has noticed you; the letter does not yet explain what the Palace ultimately wants with that breadth.",
+          "text": "Before the first morning has settled into routine, a Palace courier leaves a heavy envelope at your door. The seal is official, the wording exact: your work across all ten ordinary professions has already been recognized. This is not a test, and the letter does not pretend to explain why such breadth matters.",
           "conditions": [],
           "media": []
         }
@@ -60,8 +60,8 @@
       "choices": [
         {
           "id": "open",
-          "label": "Вскрыть конверт",
-          "text": "The seal opens onto a formal invitation. It names your breadth of lived work as the basis for contact and adds no exam, random check, or substitute qualification.",
+          "label": "Break the seal",
+          "text": "Inside is a formal summons with a time and entrance named. No examination, lottery, patron, or private recommendation is attached to it.",
           "conditions": [],
           "effects": []
         }
@@ -69,7 +69,7 @@
     },
     {
       "id": "palace.invitation.reveal",
-      "title": "Приглашение без нового испытания",
+      "title": "Palace — Invitation Confirmed",
       "sourceDomain": "palace",
       "trigger": [],
       "reactionTriggers": [
@@ -102,7 +102,7 @@
       "variants": [
         {
           "id": "default",
-          "text": "The invitation confirms a narrow fact: ten ordinary Hard Work careers have been earned, and all ten corresponding packages are active in this life. Under Palace protocol that combination is sufficient. No prophecy, item, romance, or second gate is hiding behind the wording.",
+          "text": "The second page removes the last procedural doubt. You completed Hard Work in all ten ordinary careers, and all ten corresponding packages are active in this life. Under standing Palace protocol, that combination is sufficient. Nothing in the small print adds a prophecy, an item, a romance, or an eleventh profession.",
           "conditions": [],
           "media": []
         }
@@ -110,8 +110,8 @@
       "choices": [
         {
           "id": "accept",
-          "label": "Принять приглашение",
-          "text": "You accept the standing invitation. Palace access opens for this life; the deeper reason the institution values cross-domain experience remains to be learned through the work itself.",
+          "label": "Accept the invitation",
+          "text": "You confirm the visit. Palace access opens for this life. The institution's deeper reason for valuing cross-domain experience remains unanswered—and must be learned inside.",
           "conditions": [],
           "effects": [
             {
