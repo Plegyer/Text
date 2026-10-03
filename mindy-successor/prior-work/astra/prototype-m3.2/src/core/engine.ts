@@ -798,7 +798,6 @@ function completeEndingMutable(s:Save,cat:Catalog){
   }
   addUnique(s.meta.completedEndings,ending.id);
   addUnique(s.meta.appliedResultTransactions,transactionId);
-  ensurePalaceUnlock(s.meta);
   s.run.endings.result={
     resultId,
     endingId:ending.id,
