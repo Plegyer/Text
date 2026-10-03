@@ -1442,7 +1442,74 @@ Intentionally unresolved:
 No D23/D29/D39/D43 mechanical gate or reward is changed by D45.
 
 
+### D46 — 1.0 economy / start-balance closure
+
+Accepted Product packet:
+`chat4/product-economy-balance-closure-v13@285b0de5189350131cb34b210357112da04bca3b`.
+
+Locked 1.0 values:
+
+- fresh new-life starting Lust = **5**;
+- existing/in-progress saves preserve stored Lust exactly; migration never rewrites it;
+- ordinary-career wage stat weights remain unchanged;
+- Lumber ordinary wage base = **35**;
+- the other nine ordinary-career wage bases = **37**;
+- final ordinary shift wage is capped at **120**;
+- ordinary wage cap applies only to the ten ordinary professions;
+- normal / cheap / street lodging remain **100 / 50 / 0** for all 160 days;
+- there is **no later-year lodging escalation**;
+- starting money remains **600**;
+- base Energy remains **3**;
+- all paid School tuition values and direct gain packages remain unchanged;
+- Body Confidence remains exactly **+2 Lust** per paid lesson;
+- School Night Study remains unchanged.
+
+Exact ordinary wage policy:
+
+```
+ordinary_wage =
+  min(
+    120,
+    round(
+      current_career_base
+      + 22
+      + sum(wage_stat * existing_career_factor)
+    )
+  )
+```
+
+Equivalent base migration:
+- Lumber: 13 -> **35**;
+- Satyr Maid / Undead Farm / Tavern / Hunter / Guard / Merchant / Artist-Geisha / Assassin / Prostitute: 15 -> **37**.
+
+Required preservation:
+- D26 one same-career shift/day remains unchanged;
+- D31 seasonal pressure and existing per-career wage identities remain unchanged;
+- D32 money rewards remain capped at their accepted 1000/1000 limits and Work Rhythm remains max 20 rewarded days;
+- D35 lodging/private-space semantics remain unchanged;
+- D43 Palace wage remains its separate finite 35..55 formula with max 15 structural duties;
+- D44 Secret Debt hidden-work wage remains its separate accepted formula with cap 140;
+- ordinary professions remain unavailable while Secret-Debt-bound, so D46 ordinary wage changes cannot farm repayment;
+- D24 cap-200 never raises an ordinary shift above 120.
+
+Acceptance anchors for a later runtime producer:
+- fresh all-1 Lumber wage = **36**;
+- fresh all-1 Satyr Maid wage = **38**;
+- fresh all-1 Undead Farm wage = **38**;
+- the three Day-1 starter shifts gross **112**;
+- no ordinary shift wage exceeds **120**;
+- normal/cheap/street are still 100/50/0 on Days 1, 41, 81 and 121;
+- paid School tuition/gains, Body Confidence +2 Lust and Night Study remain exact.
+
+D46 closes the remaining numeric economy, starting-Lust, lodging-escalation and School-tuning Product blockers. Runtime implementation remains separate and must preserve existing saves.
+
+
 ## Still open after this lock
+
+- exact ordinary profession -> selectable +5 stat mapping, under D22 breadth/Lust constraints;
+- final authored Palace lore/prose within the locked D45 topology;
+- macro mystery/lore not fixed by D45;
+- final production art/media budget and missing-asset decisions.
 
 - exact numeric economy;
 - exact Lust starting value;
