@@ -12897,6 +12897,446 @@
     "event.palace.invitation.reveal.choice.accept.text": {
       "ru": "Ты подтверждаешь визит. Этого достаточно, чтобы открыть доступ к дворцовой работе в этой жизни.",
       "en": "You confirm the visit. That is enough to open access to Palace work in this life."
+    },
+    "action.palace.duty.01-service-rotation.label": {
+      "ru": "Дворец: служебная ротация",
+      "en": "Palace: Service Rotation"
+    },
+    "action.palace.duty.01-service-rotation.description": {
+      "ru": "Выполнить ограниченное служебное поручение и закрыть передачу работы.",
+      "en": "Complete a bounded service handoff and close the loop."
+    },
+    "action.palace.duty.01-service-rotation.scene.default.text": {
+      "ru": "Ты принимаешь ограниченную задачу, подтверждаешь ответственность, завершаешь передачу и отмечаешь, что именно закрыто.",
+      "en": "You receive a bounded task, confirm ownership, complete the handoff, and record what is finished."
+    },
+    "action.palace.duty.02-logistics-support.label": {
+      "ru": "Дворец: логистическая поддержка",
+      "en": "Palace: Logistics Support"
+    },
+    "action.palace.duty.02-logistics-support.description": {
+      "ru": "Разобрать несоответствие маршрута или передачи по безопасной базовой схеме.",
+      "en": "Resolve a route or handoff mismatch through a safe baseline path."
+    },
+    "action.palace.duty.02-logistics-support.scene.default.text": {
+      "ru": "Ты проверяешь маршрут, отделяешь доступ от предположений и завершаешь передачу без лишнего обхода.",
+      "en": "You check the route, separate access from assumption, and complete the handoff without turning the task into a detour."
+    },
+    "action.palace.duty.03-records-review.label": {
+      "ru": "Дворец: проверка записей",
+      "en": "Palace: Records Review"
+    },
+    "action.palace.duty.03-records-review.description": {
+      "ru": "Сверить реестр с фактической передачей и проверить расхождение.",
+      "en": "Compare a register with a concrete handoff and verify the discrepancy."
+    },
+    "action.palace.duty.03-records-review.scene.default.text": {
+      "ru": "Ты сверяешь запись с передачей, отмечаешь подтверждённое и отдельно оставляешь непроверенные предположения.",
+      "en": "You compare the record with the handoff, mark what is verified, and leave unchecked assumptions clearly identified."
+    },
+    "action.palace.duty.04-service-rotation.label": {
+      "ru": "Дворец: служебная ротация",
+      "en": "Palace: Service Rotation"
+    },
+    "action.palace.duty.04-service-rotation.description": {
+      "ru": "Разобрать несколько обычных запросов, сохранив очередь и профессиональные границы.",
+      "en": "Handle competing routine requests while preserving queue and boundaries."
+    },
+    "action.palace.duty.04-service-rotation.scene.default.text": {
+      "ru": "Ты упорядочиваешь запросы, сохраняешь видимой ответственность и не превращаешь срочность в личную услугу.",
+      "en": "You order the requests, keep responsibility visible, and finish the routine work without converting urgency into personal favour."
+    },
+    "action.palace.duty.05-logistics-support.label": {
+      "ru": "Дворец: логистическая поддержка",
+      "en": "Palace: Logistics Support"
+    },
+    "action.palace.duty.05-logistics-support.description": {
+      "ru": "Перенаправить задержанную передачу по безопасному базовому маршруту.",
+      "en": "Reroute a delayed handoff through a safe baseline route."
+    },
+    "action.palace.duty.05-logistics-support.scene.default.text": {
+      "ru": "Задержанной передаче нужен новый путь. Ты проверяешь маршрут, выбираешь безопасную точку передачи и закрываешь задержку без выдуманного доступа.",
+      "en": "A delayed handoff needs a new path. You verify the route, choose a safe transfer point, and close the delay without inventing access."
+    },
+    "action.palace.duty.06-coordination.label": {
+      "ru": "Дворец: координация",
+      "en": "Palace: Coordination"
+    },
+    "action.palace.duty.06-coordination.description": {
+      "ru": "Согласовать два ограниченных рабочих потока через общую точку проверки.",
+      "en": "Coordinate two bounded workstreams with one shared verification point."
+    },
+    "action.palace.duty.06-coordination.scene.default.text": {
+      "ru": "Ты распределяешь ответственность, сохраняешь оба потока проверяемыми и сводишь их в одной подтверждённой передаче.",
+      "en": "You assign responsibilities, keep both workstreams traceable, and bring them back together at one checked handoff."
+    },
+    "action.palace.duty.07-records-review.label": {
+      "ru": "Дворец: проверка записей",
+      "en": "Palace: Records Review"
+    },
+    "action.palace.duty.07-records-review.description": {
+      "ru": "Проверить материальные свидетельства, отделяя наблюдение от объяснения.",
+      "en": "Review material evidence while separating observation from explanation."
+    },
+    "action.palace.duty.07-records-review.scene.default.text": {
+      "ru": "Ты записываешь, что видно напрямую, что известно только со слов и что всё ещё требует объяснения.",
+      "en": "You record what can be observed directly, what is only reported, and what still needs explanation."
+    },
+    "action.palace.duty.08-service-rotation.label": {
+      "ru": "Дворец: служебная ротация",
+      "en": "Palace: Service Rotation"
+    },
+    "action.palace.duty.08-service-rotation.description": {
+      "ru": "Закрыть длинную цепочку обслуживания и явно назначить следующий шаг.",
+      "en": "Close a longer service chain and make the next owner explicit."
+    },
+    "action.palace.duty.08-service-rotation.scene.default.text": {
+      "ru": "Ты сверяешь открытые задачи, закрываешь завершённое и назначаешь ответственного за каждый оставшийся шаг.",
+      "en": "You reconcile the open tasks, close what is complete, and name the owner of every remaining step."
+    },
+    "action.palace.duty.09-formal-interface.label": {
+      "ru": "Дворец: формальное взаимодействие",
+      "en": "Palace: Formal Interface"
+    },
+    "action.palace.duty.09-formal-interface.description": {
+      "ru": "Провести формальный рабочий обмен, не подменяя полномочия протоколом.",
+      "en": "Handle a formal-facing exchange without confusing protocol with authorization."
+    },
+    "action.palace.duty.09-formal-interface.scene.default.text": {
+      "ru": "Ты сохраняешь обмен формальным и ясным, используя протокол как структуру работы, но не как замену полномочиям.",
+      "en": "You keep the exchange formal and clear, using protocol to structure the work without treating presentation as authority."
+    },
+    "action.palace.duty.10-coordination.label": {
+      "ru": "Дворец: координация",
+      "en": "Palace: Coordination"
+    },
+    "action.palace.duty.10-coordination.description": {
+      "ru": "Согласовать общий результат, сохранив проверяемыми авторство и исправления.",
+      "en": "Coordinate a shared result while keeping credit and correction traceable."
+    },
+    "action.palace.duty.10-coordination.scene.default.text": {
+      "ru": "Ты сводишь исправления, сохраняешь вклад каждого и закрываешь общий результат без размывания ответственности.",
+      "en": "You reconcile corrections, preserve who contributed what, and close the shared result without erasing responsibility."
+    },
+    "action.palace.duty.11-logistics-support.label": {
+      "ru": "Дворец: логистическая поддержка",
+      "en": "Palace: Logistics Support"
+    },
+    "action.palace.duty.11-logistics-support.description": {
+      "ru": "Спланировать ограниченную передачу по проверенным данным о маршруте и доступе.",
+      "en": "Plan a constrained handoff using verified route and access information."
+    },
+    "action.palace.duty.11-logistics-support.scene.default.text": {
+      "ru": "Ты отделяешь сведения о маршруте, официальное внимание и реальный доступ, затем проводишь передачу по проверенному пути.",
+      "en": "You separate route evidence, official attention, and actual access, then complete the constrained handoff on the verified path."
+    },
+    "action.palace.duty.12-records-review.label": {
+      "ru": "Дворец: проверка записей",
+      "en": "Palace: Records Review"
+    },
+    "action.palace.duty.12-records-review.description": {
+      "ru": "Свести несколько записей, не скрывая неразрешённые противоречия источников.",
+      "en": "Reconcile multiple records while preserving unresolved source disagreement."
+    },
+    "action.palace.duty.12-records-review.scene.default.text": {
+      "ru": "Ты собираешь одну проверенную сводку, отмечаешь совпадения источников и сохраняешь расхождения, которые записи не позволяют снять.",
+      "en": "You build one checked summary, mark where sources agree, and preserve the disagreements that the records do not settle."
+    },
+    "action.palace.duty.13-evidence-review.label": {
+      "ru": "Дворец: разбор свидетельств",
+      "en": "Palace: Evidence Review"
+    },
+    "action.palace.duty.13-evidence-review.description": {
+      "ru": "Отделить прямое наблюдение, сведения источников и неразрешённое толкование.",
+      "en": "Separate direct observation, sourced testimony, and unresolved interpretation."
+    },
+    "action.palace.duty.13-evidence-review.scene.default.text": {
+      "ru": "Ты делишь материал на наблюдаемое, сообщённое источниками и неразрешённое, не объявляя окончательный ответ там, где доказательств недостаточно.",
+      "en": "You sort the material into observed, sourced, and unresolved claims without declaring a final answer that the evidence does not support."
+    },
+    "action.palace.duty.14-formal-interface.label": {
+      "ru": "Дворец: формальное взаимодействие",
+      "en": "Palace: Formal Interface"
+    },
+    "action.palace.duty.14-formal-interface.description": {
+      "ru": "Представить проверенную позицию, не смешивая подачу, протокол и достоверность.",
+      "en": "Present a checked position while keeping performance and certainty separate."
+    },
+    "action.palace.duty.14-formal-interface.scene.default.text": {
+      "ru": "Ты ясно представляешь проверенную позицию, отделяешь протокол от доказательств и оставляешь неопределённость видимой там, где она сохраняется.",
+      "en": "You present the checked position clearly, distinguish protocol from evidence, and leave uncertainty visible where it remains."
+    },
+    "action.palace.duty.15-coordination.label": {
+      "ru": "Дворец: координация",
+      "en": "Palace: Coordination"
+    },
+    "action.palace.duty.15-coordination.description": {
+      "ru": "Закрыть обычную дворцовую рабочую цепочку, не выбирая концовку.",
+      "en": "Close the ordinary Palace work chain without choosing an ending."
+    },
+    "action.palace.duty.15-coordination.scene.default.text": {
+      "ru": "Ты координируешь итоговую передачу между несколькими ролями, закрываешь обычные обязательства и оставляешь дальнейший выбор игроку.",
+      "en": "You coordinate the final general-work handoff across several roles, close the remaining obligations, and leave the next life decision to the player."
+    },
+    "action.palace.outcome-prep.service-life.01-continuity.label": {
+      "ru": "Дворец: устойчивость службы",
+      "en": "Palace: Service Continuity"
+    },
+    "action.palace.outcome-prep.service-life.01-continuity.description": {
+      "ru": "Проверить, может ли служба оставаться устойчивой благодаря ясной ответственности.",
+      "en": "Review whether Palace service can remain sustainable through clear responsibilities."
+    },
+    "action.palace.outcome-prep.service-life.01-continuity.scene.default.text": {
+      "ru": "Ты разбираешь рабочий уклад как систему: что повторяется надёжно, чему нужен ответственный и где должна оставаться граница.",
+      "en": "You review the work pattern as a professional system: what repeats cleanly, what needs an owner, and what should remain a boundary."
+    },
+    "action.palace.outcome-prep.service-life.02-boundaries.label": {
+      "ru": "Дворец: границы службы",
+      "en": "Palace: Service Boundaries"
+    },
+    "action.palace.outcome-prep.service-life.02-boundaries.description": {
+      "ru": "Закрепить профессиональные границы продолжения службы, не исключая другие исходы.",
+      "en": "Confirm a bounded service pattern without excluding other Palace outcomes."
+    },
+    "action.palace.outcome-prep.service-life.02-boundaries.scene.default.text": {
+      "ru": "Ты задаёшь ясные профессиональные пределы для продолжения службы и фиксируешь договорённость, не превращая её в выбор концовки.",
+      "en": "You set clear professional limits for continued service and record the arrangement without treating it as an ending commitment."
+    },
+    "action.palace.outcome-prep.court-power.01-responsibility.label": {
+      "ru": "Дворец: ответственность влияния",
+      "en": "Palace: Accountable Influence"
+    },
+    "action.palace.outcome-prep.court-power.01-responsibility.description": {
+      "ru": "Рассмотреть влияние как проверяемую профессиональную ответственность.",
+      "en": "Review influence as accountable professional responsibility."
+    },
+    "action.palace.outcome-prep.court-power.01-responsibility.scene.default.text": {
+      "ru": "Ты отмечаешь, какие решения можно принять, проверить, исправить или отклонить без опоры на личное покровительство.",
+      "en": "You map which decisions can be accepted, traced, corrected, or refused without relying on personal favour."
+    },
+    "action.palace.outcome-prep.court-power.02-network.label": {
+      "ru": "Дворец: профессиональная сеть",
+      "en": "Palace: Professional Network"
+    },
+    "action.palace.outcome-prep.court-power.02-network.description": {
+      "ru": "Разобрать сеть ответственности и влияния без обязательного покровительства.",
+      "en": "Resolve a professional network and credit decision without requiring patronage."
+    },
+    "action.palace.outcome-prep.court-power.02-network.scene.default.text": {
+      "ru": "Ты прослеживаешь профессиональные связи, сохраняешь ответственность за решения и фиксируешь путь к подотчётному влиянию.",
+      "en": "You trace the professional network, preserve responsibility for decisions, and record a route toward accountable influence."
+    },
+    "action.palace.outcome-prep.inner-truth.01-evidence.label": {
+      "ru": "Дворец: проверка свидетельств",
+      "en": "Palace: Evidence Check"
+    },
+    "action.palace.outcome-prep.inner-truth.01-evidence.description": {
+      "ru": "Разделить свидетельства на наблюдение, источник и неразрешённое толкование.",
+      "en": "Sort evidence by observation, source, and unresolved interpretation."
+    },
+    "action.palace.outcome-prep.inner-truth.01-evidence.scene.default.text": {
+      "ru": "Ты перекрёстно проверяешь материал, отделяешь прямое наблюдение от сообщений источников и оставляешь неразрешённое неразрешённым.",
+      "en": "You cross-check the available material, separating direct observation from sourced reports and leaving unresolved claims unresolved."
+    },
+    "action.palace.outcome-prep.inner-truth.02-contradiction.label": {
+      "ru": "Дворец: противоречие источников",
+      "en": "Palace: Source Contradiction"
+    },
+    "action.palace.outcome-prep.inner-truth.02-contradiction.description": {
+      "ru": "Сравнить правдоподобные версии, не навязывая окончательный ответ тайны.",
+      "en": "Compare plausible accounts without forcing a final mystery answer."
+    },
+    "action.palace.outcome-prep.inner-truth.02-contradiction.scene.default.text": {
+      "ru": "Ты сравниваешь конкурирующие версии, фиксируешь противоречие и сохраняешь неопределённость там, где доказательства не дают решения.",
+      "en": "You compare the competing accounts, record the contradiction, and preserve uncertainty where the evidence cannot settle it."
+    },
+    "career.palace.label": {
+      "ru": "Дворец",
+      "en": "Palace"
+    },
+    "career.palace.stage.entered-service.label": {
+      "ru": "Начало службы",
+      "en": "Entered Service"
+    },
+    "career.palace.stage.working-rhythm.label": {
+      "ru": "Рабочий ритм",
+      "en": "Working Rhythm"
+    },
+    "career.palace.stage.trusted-service.label": {
+      "ru": "Доверенная служба",
+      "en": "Trusted Service"
+    },
+    "career.palace.stage.palace-network.label": {
+      "ru": "Дворцовая сеть",
+      "en": "Palace Network"
+    },
+    "career.palace.stage.crossroads.label": {
+      "ru": "Перекрёсток",
+      "en": "Crossroads"
+    },
+    "career.palace.stage.outcome-ready.label": {
+      "ru": "Готовность к исходу",
+      "en": "Outcome Ready"
+    },
+    "event.palace.progression.milestone-02-working-rhythm.title": {
+      "ru": "Дворец — рабочий ритм",
+      "en": "Palace — Working Rhythm"
+    },
+    "event.palace.progression.milestone-02-working-rhythm.variant.default.text": {
+      "ru": "Первый рабочий уклад во дворце сложился. Смена уже сохранена; эта сцена только отмечает переход к новому ритму.",
+      "en": "The first Palace work pattern is established. The structural duty is already committed; this scene only acknowledges the new working rhythm."
+    },
+    "event.palace.progression.milestone-02-working-rhythm.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue"
+    },
+    "event.palace.progression.milestone-02-working-rhythm.choice.continue.text": {
+      "ru": "Веха подтверждена. Дворцовая прогрессия продолжается с уже сохранённого этапа.",
+      "en": "The milestone is acknowledged. Palace progression continues from the already committed stage."
+    },
+    "event.palace.progression.milestone-05-trusted-service.title": {
+      "ru": "Дворец — доверенная служба",
+      "en": "Palace — Trusted Service"
+    },
+    "event.palace.progression.milestone-05-trusted-service.variant.default.text": {
+      "ru": "Повторяющаяся работа стала доверенной службой. Новый этап уже сохранён; после подтверждения могут открываться дополнительные профессиональные сцены.",
+      "en": "Repeated work has become trusted service. The new stage is already saved, and optional professional content may open after this milestone is acknowledged."
+    },
+    "event.palace.progression.milestone-05-trusted-service.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue"
+    },
+    "event.palace.progression.milestone-05-trusted-service.choice.continue.text": {
+      "ru": "Веха подтверждена. Дворцовая прогрессия продолжается с уже сохранённого этапа.",
+      "en": "The milestone is acknowledged. Palace progression continues from the already committed stage."
+    },
+    "event.palace.progression.milestone-08-palace-network.title": {
+      "ru": "Дворец — дворцовая сеть",
+      "en": "Palace — Palace Network"
+    },
+    "event.palace.progression.milestone-08-palace-network.variant.default.text": {
+      "ru": "Работа теперь связывает несколько ролей. Этап дворцовой сети уже зафиксирован до показа этой обязательной вехи.",
+      "en": "The work now crosses more than one role. The Palace Network stage is already committed before this blocking milestone is shown."
+    },
+    "event.palace.progression.milestone-08-palace-network.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue"
+    },
+    "event.palace.progression.milestone-08-palace-network.choice.continue.text": {
+      "ru": "Веха подтверждена. Дворцовая прогрессия продолжается с уже сохранённого этапа.",
+      "en": "The milestone is acknowledged. Palace progression continues from the already committed stage."
+    },
+    "event.palace.progression.milestone-12-crossroads.title": {
+      "ru": "Дворец — перекрёсток",
+      "en": "Palace — Crossroads"
+    },
+    "event.palace.progression.milestone-12-crossroads.variant.default.text": {
+      "ru": "Маршрут дошёл до перекрёстка. Поздние сцены свидетельств и подготовки исходов открываются только после этой вехи.",
+      "en": "The route reaches Crossroads. Later evidence and outcome-preparation content may open only after this milestone barrier is resolved."
+    },
+    "event.palace.progression.milestone-12-crossroads.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue"
+    },
+    "event.palace.progression.milestone-12-crossroads.choice.continue.text": {
+      "ru": "Веха подтверждена. Дворцовая прогрессия продолжается с уже сохранённого этапа.",
+      "en": "The milestone is acknowledged. Palace progression continues from the already committed stage."
+    },
+    "event.palace.progression.milestone-15-outcome-ready.title": {
+      "ru": "Дворец — готовность к исходу",
+      "en": "Palace — Outcome Ready"
+    },
+    "event.palace.progression.milestone-15-outcome-ready.variant.default.text": {
+      "ru": "Пятнадцатая структурная обязанность завершена. Дворцовая прогрессия этой жизни закончена, но выбор концовки остаётся отдельным решением игрока.",
+      "en": "The fifteenth structural duty is complete. Palace progression is finished for this life, while ending choice remains a separate player decision."
+    },
+    "event.palace.progression.milestone-15-outcome-ready.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue"
+    },
+    "event.palace.progression.milestone-15-outcome-ready.choice.continue.text": {
+      "ru": "Веха подтверждена. Дворцовая прогрессия продолжается с уже сохранённого этапа.",
+      "en": "The milestone is acknowledged. Palace progression continues from the already committed stage."
+    },
+    "event.palace.outcome-finalize.service-life.title": {
+      "ru": "Дворец — готовность к жизни в службе",
+      "en": "Palace — Service Life ready"
+    },
+    "event.palace.outcome-finalize.service-life.variant.default.text": {
+      "ru": "Подготовку «Жизни в службе» можно завершить. Это сделает исход доступным, но не выберет его.",
+      "en": "The Service Life preparation can now be finalized. This makes the ending eligible but does not commit it."
+    },
+    "event.palace.outcome-finalize.service-life.choice.finalize.label": {
+      "ru": "Завершить подготовку исхода",
+      "en": "Finalize this outcome"
+    },
+    "event.palace.outcome-finalize.service-life.choice.finalize.text": {
+      "ru": "Исход становится доступным. Он не выбран, пока игрок явно не примет эту судьбу.",
+      "en": "This outcome becomes eligible. No ending is committed until the player explicitly chooses it."
+    },
+    "event.palace.outcome-finalize.court-power.title": {
+      "ru": "Дворец — готовность к придворному влиянию",
+      "en": "Palace — Court Power ready"
+    },
+    "event.palace.outcome-finalize.court-power.variant.default.text": {
+      "ru": "Подготовку «Придворного влияния» можно завершить. Профессиональные отношения дают только дополнительный контекст.",
+      "en": "The Court Power preparation can now be finalized. Professional relationships may add context, but none is required."
+    },
+    "event.palace.outcome-finalize.court-power.choice.finalize.label": {
+      "ru": "Завершить подготовку исхода",
+      "en": "Finalize this outcome"
+    },
+    "event.palace.outcome-finalize.court-power.choice.finalize.text": {
+      "ru": "Исход становится доступным. Он не выбран, пока игрок явно не примет эту судьбу.",
+      "en": "This outcome becomes eligible. No ending is committed until the player explicitly chooses it."
+    },
+    "event.palace.outcome-finalize.inner-truth.title": {
+      "ru": "Дворец — готовность к внутренней истине",
+      "en": "Palace — Inner Truth ready"
+    },
+    "event.palace.outcome-finalize.inner-truth.variant.default.text": {
+      "ru": "Подготовку «Внутренней истины» можно завершить, не объявляя окончательный ответ большой тайны.",
+      "en": "The Inner Truth preparation can now be finalized without asserting a final answer to the larger mystery."
+    },
+    "event.palace.outcome-finalize.inner-truth.choice.finalize.label": {
+      "ru": "Завершить подготовку исхода",
+      "en": "Finalize this outcome"
+    },
+    "event.palace.outcome-finalize.inner-truth.choice.finalize.text": {
+      "ru": "Исход становится доступным. Он не выбран, пока игрок явно не примет эту судьбу.",
+      "en": "This outcome becomes eligible. No ending is committed until the player explicitly chooses it."
+    },
+    "ending.ending.palace.service-life.title": {
+      "ru": "Дворец — Жизнь в службе",
+      "en": "Palace — Service Life"
+    },
+    "ending.ending.palace.service-life.description": {
+      "ru": "Готовность к исходу и завершённая подготовка «Жизни в службе». Постоянная награда подключается через принятый strong-Meta seam.",
+      "en": "Outcome Ready plus the completed Service Life preparation route. Permanent reward binding is deferred to the accepted strong-Meta runtime seam."
+    },
+    "ending.ending.palace.court-power.title": {
+      "ru": "Дворец — Придворное влияние",
+      "en": "Palace — Court Power"
+    },
+    "ending.ending.palace.court-power.description": {
+      "ru": "Готовность к исходу и завершённая подготовка «Придворного влияния». Профессиональные отношения остаются необязательными.",
+      "en": "Outcome Ready plus the completed Court Power preparation route. Professional relationships remain optional."
+    },
+    "ending.ending.palace.inner-truth.title": {
+      "ru": "Дворец — Внутренняя истина",
+      "en": "Palace — Inner Truth"
+    },
+    "ending.ending.palace.inner-truth.description": {
+      "ru": "Готовность к исходу и завершённая подготовка «Внутренней истины». Маршрут сохраняет неопределённость и не раскрывает окончательную макро-тайну.",
+      "en": "Outcome Ready plus the completed Inner Truth preparation route. The route preserves uncertainty and does not reveal a final macro mystery answer."
+    },
+    "ending.ending.palace.return-home.title": {
+      "ru": "Дворец — Возвращение домой",
+      "en": "Palace — Return Home"
+    },
+    "ending.ending.palace.return-home.description": {
+      "ru": "Истинная концовка: дворцовая прогрессия завершена, все 12 характеристик развития не ниже 91 и присутствует сигнал победы над Принцем.",
+      "en": "True Ending eligibility: Palace progression complete, all 12 progression stats at least 91, and the Prince-defeated signal present."
     }
   }
 }
