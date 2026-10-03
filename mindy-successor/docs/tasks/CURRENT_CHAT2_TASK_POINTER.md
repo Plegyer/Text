@@ -1,78 +1,84 @@
 # CURRENT CHAT2 TASK POINTER
 
-Status: **ACTIVE — #1122 FULL FAILURE TRIAGE / REPAIR — SOLE FULL-CI SLOT**
+Status: **ACTIVE — NEW START+ HARD WORK UI CURRENT-MAIN ASSEMBLY**
 Owner: Chat 2 / Integration + Assembly + Technical QA
 
-PR: #264
-Branch: `chat2/assembly-hard-work-meta-shared-20261003-v1`
-Current tested head: `df18be22e0bc4677b20dada55f9b9cc8383d2e31`
-Workflow #1122: **1009 tests / 992 pass / 17 fail**
+Shared D21-D24 foundation:
+- PR #264 merged;
+- merge SHA: `de6f95c89cdb43fb853bc569745e822bb1f2636b`;
+- branch full CI #1125: SUCCESS;
+- exact-main CI #1126: SUCCESS.
 
-## Rule
+Frozen producer to integrate:
+`837156277f7329f0187b04442acb8d5258a2e189`
 
-Do not request another full CI until every one of the 17 failures is locally/focused green.
+Producer dependency base:
+`c085eda62dd39f71d3a4c75a6c31f4c72527039a`
 
-## Failure groups
+Current assembly branch:
+`chat2/assembly-hard-work-new-start-ui-20261003-v1`
 
-### A — 12 shared schema-v5 creation-state failures
-All throw:
-`Завершённое создание должно иметь зафиксированный Hard Work package state.`
+Read first:
+`mindy-successor/docs/tasks/LEADER_NEXT_INTEGRATION_RECON_2026-10-03.md`
 
-Affected School/save tests:
-- school-activation-boundary
-- school-blocking-scene-compat x2
-- school-body-confidence-lust-d20
-- school-engine-adapter
-- school-life-content-reload x2
-- school-night-study-adapter
-- school-production-v11-locale-save x2
-- school-target x2
+## Reconstruction rule
 
-For each test determine:
-- legacy completed-save fixture -> migrate/default to a frozen empty/already-applied package state as D21-D24 requires; OR
-- invalid schema-v5 fixture -> complete creation via the real current creation path.
+Do not cherry-pick only the final producer commit. The frozen head is an **8-commit delta** from its dependency base.
 
-Do not weaken the exactly-once/frozen package invariant.
+Whole accepted producer delta:
+- add `content/hard-work-new-start-presentation-v2.fixture.json`;
+- modify `src/ui/app.ts`;
+- add `src/ui/hardWorkNewStart.ts`;
+- modify `src/ui/style.css`;
+- add `tests/hard-work-newstart-presentation-v2.test.ts`;
+- add `tests/hard-work-newstart-ui-v2.test.ts`.
 
-### B — schema version expectation
-`gopher.test.ts`: expected 4, actual 5.
-Audit/update the stale expectation while preserving migration coverage.
+Leader drift audit proved on current main:
+- `app.ts` byte-identical to frozen producer base;
+- `style.css` byte-identical to producer base;
+- `hardWorkMeta.ts`, `hardWorkPackageCatalog.ts`, `schema.ts` byte-identical to producer base;
+- the four added files do not exist on current main.
 
-### C — journal schema4 compatibility
-Two failures in `journal-outcome-localization.test.ts`.
-Treat as possible real migration regression:
-- old fallback journal text must survive;
-- null refs must remain index-aligned;
-- malformed alignment must still be rejected if that is the current compatibility contract.
+Therefore reconstruct the full frozen UI delta onto fresh current main; do not modify shared runtime semantics.
 
-Fix migration/runtime if needed; do not blindly rewrite expected values.
+## Locked behavior
 
-### D — Lumber reward expectation
-`lumber-target-production.test.ts`: expected 4, actual 1.
-Audit against D21:
-Hard Work completion records the permanent career achievement/early-access eligibility; selectable start-package effects belong to New Start+ selection/application, not the old automatic reward bundle.
+Preserve:
+- only earned ordinary Hard Work packages shown;
+- Secret Debt/non-ordinary IDs never appear as ordinary package cards;
+- any earned subset selectable: none / some / all;
+- no package slot limit;
+- early profession access is permanent ownership and independent of package activation;
+- package effects come only from centralized package catalog;
+- Prostitute package includes its locked Lust component;
+- Palace help = permanent ordinary 10/10 + current-life active 10/10;
+- no permanent `meta.unlocks['palace']`;
+- cap-200 wording = maximum becomes 200; current values do not multiply.
 
-### E — UI Palace legacy expectation
-`ui.test.ts`: expected "Дворец" legacy unlock label but it is absent.
-Audit against D23:
-stale permanent `palace` Meta unlock is no longer authoritative; Palace is current-life 10/10-active qualification -> Day-1 invitation.
+Do **not** add D27/D28 Keystone/Specialist UI in this assembly. That is a separate future strong-Meta surface.
 
-## Before rerun
+## QA gate
 
-Run:
-- all 17 failed tests;
-- migration/journal tests;
-- D21-D24 focused suite;
-- School D20 suite;
-- current seasonal-tradeoff suite.
+Before any full CI:
+1. typecheck;
+2. build/validate;
+3. frozen New Start+ presentation tests;
+4. frozen New Start+ UI tests;
+5. D21-D24 focused tests;
+6. creation/schema-v5 migration tests;
+7. Palace shared predicate smoke;
+8. current UI smoke;
+9. School D20 / seasonal / Assassin / Prostitute preservation.
 
-Write PR evidence classifying each failure as:
-- stale expectation/fixture; or
-- actual migration/runtime defect.
+Mine all focused failures first.
 
-Then exactly one full CI rerun.
-If green: freeze exact SHA and report `READY_FOR_LEADER_MERGE`.
+Only after focused green:
+- open/update current-main assembly PR;
+- consume Chat 2's one full-CI slot;
+- if full CI green, freeze exact SHA and report `READY_FOR_LEADER_MERGE`.
 
-Queued after #264:
-1. Chat 4 New Start+ UI `837156277f7329f0187b04442acb8d5258a2e189`;
-2. Chat 6 Palace D23 consumer `9dfaab2a7b9e145c9753c0acd8e54d3f903be5fd`.
+Do not merge main.
+
+Queued after this merge + exact-main green:
+1. Palace D23 consumer frozen head `9dfaab2a7b9e145c9753c0acd8e54d3f903be5fd`;
+2. D31 seasonal target producer `79ff36c66947a1f1273ab0bde7a3c7f1b797a2a7`, unless Leader reorders.
