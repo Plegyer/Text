@@ -825,6 +825,44 @@ function activityResult(definition:ActivityDefinition,outcome:ActivityOutcome){
   if(!result)throw new Error(`Activity ${definition.id} не имеет result ${outcome}`);
   return result;
 }
+function activityFieldTimeRemaining(envelope:ActivityEnvelope){
+  return envelope.internalState.fieldTimeRemaining??null;
+}
+function activityFieldTimeAffordable(envelope:ActivityEnvelope,cost:number){
+  const remaining=activityFieldTimeRemaining(envelope);
+  return remaining===null||remaining>=cost;
+}
+function activitySpendFieldTime(envelope:ActivityEnvelope,cost:number){
+  if(cost<=0)return;
+  const remaining=activityFieldTimeRemaining(envelope);
+  if(remaining===null)return;
+  if(remaining<cost)throw new Error('Не хватает Field Time для этого действия.');
+  envelope.internalState.fieldTimeRemaining=remaining-cost;
+}
+function activityMiniGameTransitionAvailable(
+  envelope:ActivityEnvelope,
+  option:ActivityDefinition['options'][number]
+){
+  const transition=option.miniGameTransition;
+  if(!transition)return true;
+  const game=envelope.internalState.miniGames?.[transition.game];
+  if(game&&game.status!=='active')return false;
+  return (game?.stage??'start')===transition.from;
+}
+function applyActivityMiniGameTransition(
+  envelope:ActivityEnvelope,
+  option:ActivityDefinition['options'][number]
+){
+  const transition=option.miniGameTransition;
+  if(!transition)return;
+  const games=envelope.internalState.miniGames??={};
+  const game=games[transition.game]??={stage:'start',status:'active' as const,choiceIds:[]};
+  if(game.status!=='active'||game.stage!==transition.from)throw new Error('Mini-game transition сейчас недоступен.');
+  game.stage=transition.to;
+  game.choiceIds.push(option.id);
+  if(transition.outcome)game.status=transition.outcome;
+  games[transition.game]=game;
+}
 function finalizeActivityMutable(s:Save,cat:Catalog,outcome:ActivityOutcome){
   const envelope=s.run.flow.activity;if(!envelope)throw new Error('Нет активной Activity.');
   const definition=activityDefinition(cat,envelope.activityId);
@@ -863,7 +901,9 @@ function enterActivityMutable(s:Save,cat:Catalog,id:string){
       steps:0,
       lastRoll:null,
       routeId:null,
-      resolvedOptionIds:[]
+      resolvedOptionIds:[],
+      fieldTimeRemaining:definition.adapterConfig.fieldTimeSegments??null,
+      miniGames:{}
     },
     rngState:s.run.rngState.state,
     checkpoint:'entry',
@@ -888,17 +928,26 @@ function activityActionMutable(s:Save,cat:Catalog,action:string){
     if(state.resolvedOptionIds.includes(option.id))throw new Error('Activity option уже использована.');
     if(!eligible(option.conditions,s,cat))throw new Error('Activity option недоступна.');
     if(option.setRoute&&state.routeId&&state.routeId!==option.setRoute)throw new Error('Activity route уже выбрана.');
+    if(!activityMiniGameTransitionAvailable(envelope,option))throw new Error('Mini-game transition сейчас недоступен.');
+    const fieldTimeCost=option.fieldTimeCost??0;
+    if(!activityFieldTimeAffordable(envelope,fieldTimeCost))throw new Error('Не хватает Field Time для этого действия.');
     state.steps++;
     if(option.setRoute)state.routeId=option.setRoute;
     state.progress=Math.min(1_000_000,state.progress+option.progressDelta);
     state.endurance=Math.max(0,state.endurance-option.enduranceCost);
+    activitySpendFieldTime(envelope,fieldTimeCost);
+    applyActivityMiniGameTransition(envelope,option);
+    if(option.effects.length)applyEffectsMutable(s,option.effects,cat,true);
     state.lastRoll=activityRandom(envelope);
     addUnique(state.resolvedOptionIds,option.id);
     envelope.checkpoint=option.id;
   }else{
+    const fieldTimeCost=definition.adapterConfig.advanceFieldTimeCost??0;
+    if(!activityFieldTimeAffordable(envelope,fieldTimeCost))throw new Error('Не хватает Field Time для продолжения.');
     state.steps++;
     state.progress++;
     state.endurance=Math.max(0,state.endurance-definition.adapterConfig.advanceEnduranceCost);
+    activitySpendFieldTime(envelope,fieldTimeCost);
     state.lastRoll=activityRandom(envelope);
     envelope.checkpoint=`counter.step.${state.steps}`;
   }
@@ -915,9 +964,14 @@ export function availableActivityActions(s:Save,cat:Catalog):Array<{id:string;la
     .filter(option=>!state.resolvedOptionIds.includes(option.id))
     .filter(option=>eligible(option.conditions,s,cat))
     .filter(option=>!option.setRoute||!state.routeId||state.routeId===option.setRoute)
+    .filter(option=>activityMiniGameTransitionAvailable(envelope,option))
+    .filter(option=>activityFieldTimeAffordable(envelope,option.fieldTimeCost??0))
     .map(option=>({id:option.id,label:option.label}));
   const requiresRouteSelection=definition.options.some(option=>option.category==='route');
-  const ordinary=requiresRouteSelection&&!state.routeId?[]:[{id:'advance',label:'Продолжить'}];
+  const advanceCost=definition.adapterConfig.advanceFieldTimeCost??0;
+  const ordinary=requiresRouteSelection&&!state.routeId||!activityFieldTimeAffordable(envelope,advanceCost)
+    ?[]
+    :[{id:'advance',label:'Продолжить'}];
   return [...custom,...ordinary,{id:'escape',label:'Отступить'}];
 }
 
