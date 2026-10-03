@@ -1,47 +1,50 @@
 # CURRENT CHAT3 TASK POINTER
 
-Status: **ACTIVE — REUSABLE PROGRESSION BALANCE HARNESS v3**
+Status: **ACTIVE — LIVE ECONOMY + HOUSING 160-DAY HARNESS v4**
 Owner: Chat 3
 
-Completed decision packet:
-`chat3/progression-remediation-decision-v2@f0644a705e4c30762ecd84d099d54d48a6c86a0a`
-
-Do not implement its Product proposals yet.
+Completed reusable progression harness:
+`chat3/progression-balance-harness-v3@e631af2e17675c27309aa1b8bd5a6161a1090ce8`
 
 Create:
-`chat3/progression-balance-harness-v3`
-from fresh current main.
+`chat3/live-economy-housing-harness-v4`
+from fresh main `836a716a017397d2e5768aada8a06299ee75e6fe`.
+
+Read:
+- `docs/tasks/LEADER_LIVE_ECONOMY_DRIFT_AUDIT_v1.md`;
+- `ECONOMY_BALANCE_CANDIDATE_v3.md`;
+- `HOUSING_AND_WAGE_BACKBONE_v1.md`.
 
 ## Assignment
 
-Turn the one-off analysis into a reusable research harness that reads live successor definitions and can compare policy choices without changing production mechanics.
+Build a RESEARCH-ONLY simulator from current executable definitions/runtime constants.
 
-Inputs:
-- same-career shifts/day: 1, 2, or current Energy-only repetition;
-- starting allocation variants;
-- current seasonal-negative map;
-- an alternate negative-target map supplied as research data only;
-- School cadence/course overlap;
-- cap 100 vs cap 200 for analysis only.
+Model actual live:
+- starting money 600;
+- base Energy 3;
+- current ordinary wage formulas;
+- normal/cheap/street lodging prices/effects;
+- paid School tuition and stat packages;
+- School Night Study next-day Energy cost;
+- Activity 2-Energy opportunity cost where useful.
 
-Outputs per ordinary career:
-- calendar day to 50 shifts;
-- strongest-stat day-to-100;
-- total realized positive/negative stat movement with floor-at-zero effects;
-- money earned by 50 shifts;
-- milestone/event density bands before 50;
-- effect of targeted School cadence;
-- 160-day summary.
+Compare daily work policies:
+- current Energy-only repetition;
+- max 2 shifts of the same career/day;
+- max 1 shift of the same career/day while allowing different careers.
 
-Requirements:
-- no production rule changes;
-- no original-game values copied as inputs;
-- machine-readable result plus human summary;
-- focused tests proving the harness matches current live definitions;
-- clearly label all alternative policies as RESEARCH, not authority.
+Outputs for representative fresh builds:
+- money trajectory by day/year;
+- % days forced to cheap/street if player attempts normal lodging;
+- School lessons affordable at 5/10/20 lesson targets;
+- days/energy spent working;
+- 50-shift timing;
+- 0-money recovery paths;
+- normal vs cheap vs street opportunity cost;
+- sensitivity to +1 daily Energy;
+- exact point where current live wage scale materially diverges from the 1WU≈50 candidate.
 
-No full CI.
-Freeze exact SHA and report `READY_FOR_LEADER_BALANCE_TOOL`.
+Also run a **research comparison only** with wages scaled to the old WU candidate; do not propose runtime changes merely to match it.
 
-Next useful follow-up after freeze:
-prepare a compact comparison using the harness for the Product choices in the v2 decision packet.
+No production tuning. No full CI.
+Freeze SHA and report `READY_FOR_LEADER_ECONOMY_DECISION`.

@@ -1,46 +1,49 @@
 # CURRENT CHAT4 TASK POINTER
 
-Status: **ACTIVE — STRONG META MODIFIER DOMINANCE AUDIT v3**
+Status: **ACTIVE — STRONG META QUANTITATIVE COMPARISON HARNESS v4**
 Owner: Chat 4
 
-Frozen implementation candidates:
-- shared D21-D24 runtime: `c085eda62dd39f71d3a4c75a6c31f4c72527039a` — now queued for Chat 2;
-- New Start+ Hard Work UI: `837156277f7329f0187b04442acb8d5258a2e189` — preserve frozen.
+Completed dominance audit:
+`chat4/strong-meta-dominance-audit-v3@a583549a88f9abf881fe130aec6d07044177eb9e`
 
 Create:
-`chat4/strong-meta-dominance-audit-v3`
-from fresh main.
-
-## Product/research clarification
-
-Do not import the original Title system.
-Original ending bonuses were independently toggleable; Titles were separate.
-The original +1 daily Energy Title is a balance warning because it can dominate narrow nightly-stat Titles.
+`chat4/strong-meta-comparison-harness-v4`
+from fresh main `836a716a017397d2e5768aada8a06299ee75e6fe`.
 
 ## Assignment
 
-Audit the successor's current/proposed **strong complex-ending modifiers** separately from ordinary Hard Work packages.
+Build a RESEARCH-ONLY comparison tool, not a loadout implementation.
 
-Inventory current docs/runtime proposals such as:
+Represent candidate strong modifiers as parameters:
 - +1 daily Energy;
-- cap 200 option;
-- starting money/economic reserve;
-- passive-income-like concepts;
-- route/access modifiers;
-- any housing/rent-style rule modifiers;
-- inheritance/starting capability proposals.
+- No Rent / lodging discount;
+- starting-money bonus;
+- passive money/day;
+- first Large Activity discount 2->1;
+- School discount;
+- cap 200 (headroom only);
+- optional extra-calendar-days candidate, if it still exists in docs;
+- narrow access/safety modifiers as non-numeric annotations.
 
-For each:
-- estimate action-economy / 160-day impact;
-- identify whether it universally dominates another option;
-- classify as raw power, economy, access, safety, or build-shaping;
-- list major route/content bypass risks.
+Evaluate over 160 days using ranges from **live executable economy** plus the documented candidate economy where values are still open.
 
-Produce 2-3 viable loadout models that avoid a single obvious best choice:
-- e.g. incomparable roles / category budget / opportunity-cost approach;
-- keep ordinary Hard Work packages outside this restriction because D22 allows any subset.
+Report:
+- added/saved Energy;
+- work-shift equivalents of money saved/earned;
+- day when passive income overtakes starting cash;
+- common pair synergies (+Energy+NoRent, +Energy+passive, NoRent+passive, +Energy+Activity discount);
+- Secret Debt collision risk;
+- Palace/D23 collision risk;
+- dominance flags.
 
-Do not choose final slot count or implement runtime.
-Do not create Titles.
-No full CI.
-Freeze SHA and report `READY_FOR_LEADER_PRODUCT_DECISION`.
+Compare the three v3 structures (category budget / impact points / exclusivity families) without selecting one.
+
+Important:
+- ordinary D22 Hard Work packages remain outside this system;
+- do not create Titles;
+- do not assume original Plus Mode;
+- do not choose slot count/budget;
+- no production runtime changes.
+
+Focused tests for arithmetic/tool only. No full CI.
+Freeze SHA and report `READY_FOR_LEADER_META_TOOL`.

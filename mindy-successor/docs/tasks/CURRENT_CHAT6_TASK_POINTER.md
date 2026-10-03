@@ -1,43 +1,49 @@
 # CURRENT CHAT6 TASK POINTER
 
-Status: **ACTIVE — PALACE PRINCE CONFRONTATION DECISION PACKET v9**
+Status: **ACTIVE — PALACE PROGRESSION TOPOLOGY DECISION PACKET v10**
 Owner: Chat 6
 
-Frozen Palace D23 consumer:
-`chat6/palace-d23-consumer-integration-v8@9dfaab2a7b9e145c9753c0acd8e54d3f903be5fd`
-Preserve it frozen; it is queued after Chat 4 shared runtime + UI integration.
+Completed Prince confrontation packet:
+`chat6/palace-prince-confrontation-decision-v9@4de1a3925d499a6337a3c40c05b8b4aba9f3cc03`
+
+Do not implement a Prince option yet.
 
 Create:
-`chat6/palace-prince-confrontation-decision-v9`
-from fresh main.
+`chat6/palace-progression-topology-decision-v10`
+from fresh main `836a716a017397d2e5768aada8a06299ee75e6fe`.
 
-## Product direction
+## Locked boundaries
 
+- Day-1 invitation only when permanent 10/10 + active 10/10;
+- invitation opens Palace access;
 - successor True Ending is Palace Return Home;
-- do **not** port the original Plus Mode/job-replacement true-ending structure;
-- True readiness remains all 12 progression stats >=91;
+- all 12 stats >=91 + Prince defeated;
 - Lust excluded;
-- the Prince must be defeated in a final Palace confrontation;
-- exact confrontation mechanics remain Product-open.
+- cap-200 reward changes only max;
+- original Plus Mode/job replacement is NOT being ported.
 
 ## Assignment
 
-Prepare 2-3 concrete, implementable confrontation models using systems that already exist in the successor where possible.
+Prepare 2-3 concrete Palace profession progression structures using existing systems.
 
-For each option define:
-- how confrontation becomes available after Palace progression + all-12 >=91;
-- explicit player action to begin it;
-- sequence length / save-reload behavior;
-- which existing mechanics are reused (Activity-like choices, authored event chain, relationships/items/capabilities, stat checks);
-- what exact signal constitutes `prince-defeated`;
-- failure/refusal/retry behavior;
-- how it avoids becoming a single automatic stat check;
-- how it preserves the separate Return Home ending commit;
-- production files/systems touched;
-- focused acceptance tests.
+At minimum compare:
+- compact 3-stage Palace career;
+- deeper 6-stage Palace career;
+- one hybrid if meaningfully distinct.
 
-Do not invent a new generic combat subsystem unless every lower-complexity option is demonstrably insufficient.
-Do not choose final Prince lore/name.
-Do not implement production runtime.
-No full CI.
+For each define:
+- stage names as neutral working identities, RU/EN;
+- exact advancement evidence types (shifts, Palace-local choices, relationships, School/Activity/item capabilities);
+- where Service Life, Court Power and Inner Truth outcomes become eligible;
+- how ordinary Palace work remains playable without forcing True Ending;
+- authored milestone cadence;
+- what exact signal becomes `PALACE_PROGRESSION_COMPLETE_SIGNAL` for the Prince packet;
+- save/reload and refusal-safe behavior;
+- expected content volume;
+- implementation/collision surface.
+
+Do not decide Prince lore/mechanics.
+Do not make Palace Hard Work count toward ordinary 10.
+Do not make Secret Debt count.
+No runtime changes. No full CI.
 Freeze SHA and report `READY_FOR_LEADER_PRODUCT_DECISION`.
