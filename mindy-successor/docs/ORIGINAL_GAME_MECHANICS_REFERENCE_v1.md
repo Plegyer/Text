@@ -230,6 +230,46 @@ The original main event router interleaves Prostitute and Arm Candy conditions i
 This confirms that original careers were not always isolated silos: progress/choices in one profession could influence authored opportunities in another.
 
 
+
+## Original 12-job milestone scan — exact counter evidence
+
+A direct scan of the original main career router confirms that **all twelve ordinary original jobs use a 50-visit/work milestone for their Sinner's Orb career-ending opportunity**:
+
+- Camwhore: `camwhoreVisit >= 50`;
+- Guard: `wallVisits >= 50`;
+- Gloryhole: `gloryHoleVisit >= 50`;
+- Maid: `hotelVisit >= 50`;
+- Cosplay: `cosplayVisit >= 50`;
+- Farmer: `zombieVisit >= 50`;
+- Mascot: `mascotVisit >= 50`;
+- Model: `modelVisit >= 50`;
+- Cabaresque: `cabaresqueVisit >= 50`;
+- Geisha: `geishaVisit >= 50`;
+- Prostitute: `prostituteVisit >= 50`;
+- Arm Candy: `armCandyVisit >= 50`.
+
+The same router confirms a broad intermediate-pacing pattern:
+
+- Camwhore: 15 before 50;
+- Guard: 15 and an additional 30-visit check before 50;
+- Gloryhole: 15 before 50;
+- Maid: 15 before 50;
+- Cosplay: 5, 10 and 15 checks before 50;
+- Farmer: 15 before 50;
+- Mascot: 15 before 50;
+- Model: 15 before 50;
+- Cabaresque: 5, 10 and 15 checks before 50;
+- Geisha: 15 before 50;
+- Prostitute: 15 before 50;
+- Arm Candy: 15 before 50.
+
+These counters do not mean every milestone is a guaranteed standalone scene; route flags and other conditions can also gate the event. They do establish the original pacing skeleton.
+
+Historical design implication only:
+- 50 is a final career anchor;
+- authored progress before 50 is intentional;
+- successor Hard Work=50 remains Product authority for its own reasons, not because the original used the same number.
+
 ## Original ending / Meta reward examples — exact historical evidence
 
 The original ending/bonus selection data confirms several distinct reward families.
