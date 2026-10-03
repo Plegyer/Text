@@ -232,10 +232,6 @@ function applyLesson(build:ActivationBuild,lesson:Lesson){
   build.lust=capped(build.lust+2);
 }
 
-function milestoneImpossible(day:number|null){
-  return day===null||day>DEFAULT_MAX_DAYS;
-}
-
 /**
  * Isolated research model.
  *
@@ -258,6 +254,7 @@ export function simulateSecretDebtBalance(
   if(!Number.isFinite(scenario.startingMoney)||scenario.startingMoney<0)throw new Error('startingMoney must be finite and non-negative.');
   const maxDays=scenario.maxDays??DEFAULT_MAX_DAYS;
   positiveInteger('maxDays',maxDays);
+  if(maxDays<DEFAULT_MAX_DAYS)throw new Error('maxDays must be at least 160 so impossibleBeforeDay160 is meaningful.');
   if(scenario.activityCadenceDays!==null)positiveInteger('activityCadenceDays',scenario.activityCadenceDays);
 
   const lodging=LODGING[scenario.lodging];
