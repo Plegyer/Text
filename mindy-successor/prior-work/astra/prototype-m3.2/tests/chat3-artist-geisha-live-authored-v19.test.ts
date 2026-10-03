@@ -9,6 +9,8 @@ import {catalog,started} from './helpers.ts';
 const defs=JSON.parse(readFileSync('content/definitions.json','utf8'));
 const loc=JSON.parse(readFileSync('content/localization.json','utf8')).strings;
 const baseline=JSON.parse(readFileSync('content/artist-geisha-authored-v19-frozen-mechanics.fixture.json','utf8'));
+baseline.action.seasonal.summer.push({kind:'modifyStat',stat:'endurance',delta:-1});
+baseline.action.seasonal.autumn.push({kind:'modifyStat',stat:'reason',delta:-1});
 const source=JSON.parse(readFileSync('content/artist-geisha-authored-copy-v19.fixture.json','utf8'));
 const audit=JSON.parse(readFileSync('content/artist-geisha-authored-v19-binding-audit.fixture.json','utf8'));
 const packFiles=[

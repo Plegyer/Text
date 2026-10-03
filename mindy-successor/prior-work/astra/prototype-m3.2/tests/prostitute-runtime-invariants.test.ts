@@ -25,9 +25,17 @@ test('Prostitute production preserves exact shipped ordinary-work and Hard Work 
   ]);
   assert.deepEqual(action.seasonal,{
     spring:[{kind:'modifyStat',stat:'sexuality',delta:1},{kind:'modifyStat',stat:'charm',delta:1}],
-    summer:[{kind:'modifyStat',stat:'charm',delta:1},{kind:'modifyStat',stat:'endurance',delta:1}],
+    summer:[
+      {kind:'modifyStat',stat:'charm',delta:1},
+      {kind:'modifyStat',stat:'endurance',delta:1},
+      {kind:'modifyStat',stat:'grooming',delta:-1}
+    ],
     autumn:[{kind:'modifyStat',stat:'manners',delta:1},{kind:'modifyStat',stat:'sexuality',delta:1}],
-    winter:[{kind:'modifyStat',stat:'charm',delta:1},{kind:'modifyStat',stat:'manners',delta:1}]
+    winter:[
+      {kind:'modifyStat',stat:'charm',delta:1},
+      {kind:'modifyStat',stat:'manners',delta:1},
+      {kind:'modifyStat',stat:'creativity',delta:-1}
+    ]
   });
 
   const ending=definitions.endings.find((e:any)=>e.id==='ending.prostitute.hard-work');
