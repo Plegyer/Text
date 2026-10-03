@@ -1,60 +1,40 @@
 # CURRENT CHAT4 TASK POINTER
 
-Status: **ACTIVE — SECRET DEBT v12 FOCUSED TYPECHECK REPAIR**
+Status: **ACTIVE — PRODUCT ECONOMY / START-BALANCE CLOSURE v13**
 Owner: Chat 4
 
-Producer branch:
-`chat4/secret-debt-full-route-producer-v12`
+Frozen previous producer:
+`chat4/secret-debt-full-route-producer-v12@10a2ecebf02ce64bdaf54d74dbbb66d6bae6e59e`
 
-Current producer candidate:
-`19681ae11adbb7544fdaeff63be26298a412ec95`
+Do not mutate that producer.
 
-Exact-head verification branch:
-`chat4/secret-debt-full-route-producer-v12-focused-check`
+New branch:
+`chat4/product-economy-balance-closure-v13`
 
-Verification PR:
-#280
+Branch task seed:
+`42f7f0ee20bb6d421422caa3f6a2785a6d83a7d4`
 
-Latest exact-head verification:
-run `37130567889` — **FAILURE**
+Base:
+`main@9d3299627b9fa80460c49422568ce66f93dcdd10`
 
-## Exact failure
+Task:
+produce a Product decision packet for the remaining 1.0 balance blockers:
+- exact starting Lust;
+- final ordinary-profession wage scale;
+- whether later-year lodging escalation exists; if yes, exact bounded schedule;
+- final School tuition/gain tuning.
 
-Production logic is not the current blocker.
+Rules:
+- research/audit only; no runtime implementation;
+- use current executable economy as evidence;
+- preserve D19/D20/D26/D30-D32/D35/D43/D44;
+- no Secret Debt farming loophole;
+- no Palace farming loop;
+- School must remain meaningful but affordable;
+- do not alter locked lodging baseline 100/50/0 unless the packet explicitly proposes a later-year rule and justifies it;
+- separate current facts from recommendations.
 
-Typecheck fails only in:
-`tests/secret-debt-full-route-v12.test.ts`
+Deliver:
+`mindy-successor/docs/tasks/CHAT4_PRODUCT_ECONOMY_BALANCE_CLOSURE_v13.md`
 
-Errors:
-- line 478: parameter `event` implicitly has `any`;
-- line 479: parameter `choice` implicitly has `any`;
-- line 480: parameter `effect` implicitly has `any`.
-
-Because typecheck failed first, validate/build/focused tests were skipped.
-
-## Repair
-
-On producer branch only:
-- add exact safe typings for those callback parameters;
-- do not change runtime behavior;
-- do not alter D19/D30/D32/D44 semantics;
-- do not loosen tsconfig;
-- do not use `any` just to silence the compiler if the existing schema/types can express the shape.
-
-Then rebuild/update the focused-check branch from the repaired producer head and rerun:
-- typecheck;
-- validate;
-- build;
-- Secret Debt focused regressions.
-
-No full CI.
-
-If green:
-1. create
-   `mindy-successor/docs/tasks/CHAT4_SECRET_DEBT_FULL_ROUTE_PRODUCER_v12.md`;
-2. document exact production files, migrations/save behavior, Strong Meta seams and QA;
-3. freeze exact producer SHA;
-4. report
-   `READY_FOR_CHAT2_ASSEMBLY`.
-
-Do not merge main.
+Include exact recommended numbers, scenario tables, major edge cases, and implementation notes. No full CI. Report `READY_FOR_PRODUCT_LOCK`.
